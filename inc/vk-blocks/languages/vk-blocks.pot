@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.48.1.0\n"
+"Project-Id-Version: VK Blocks Pro 1.49.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-01-19T06:27:30+00:00\n"
+"POT-Creation-Date: 2023-01-23T00:42:44+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: vk-blocks\n"
@@ -369,7 +369,7 @@ msgstr ""
 #: src/admin/margin.js:41
 #: src/blocks/_pro/outer/edit.js:638
 #: src/blocks/button/edit.js:526
-#: src/blocks/slider/edit.js:337
+#: src/blocks/slider/edit.js:313
 #: src/components/advanced-viewport-control/index.js:25
 msgid "PC"
 msgstr ""
@@ -377,7 +377,7 @@ msgstr ""
 #: src/admin/margin.js:45
 #: src/blocks/_pro/outer/edit.js:623
 #: src/blocks/button/edit.js:461
-#: src/blocks/slider/edit.js:348
+#: src/blocks/slider/edit.js:324
 #: src/components/advanced-viewport-control/index.js:31
 msgid "Tablet"
 msgstr ""
@@ -385,7 +385,7 @@ msgstr ""
 #: src/admin/margin.js:49
 #: src/blocks/_pro/outer/edit.js:608
 #: src/blocks/button/edit.js:396
-#: src/blocks/slider/edit.js:359
+#: src/blocks/slider/edit.js:335
 #: src/components/advanced-viewport-control/index.js:39
 msgid "Mobile"
 msgstr ""
@@ -508,7 +508,7 @@ msgstr ""
 #: src/blocks/button/edit.js:319
 #: src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:21
-#: src/blocks/slider/edit.js:314
+#: src/blocks/slider/edit.js:290
 #: src/extensions/common/inline-font-size/inline.js:28
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:252
 msgid "Normal"
@@ -702,7 +702,7 @@ msgid "Image Height"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:88
-#: src/blocks/slider/edit.js:333
+#: src/blocks/slider/edit.js:309
 msgid "Slide Height for each device."
 msgstr ""
 
@@ -851,7 +851,7 @@ msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:147
 #: src/blocks/heading/edit.js:374
-#: src/blocks/slider/edit.js:497
+#: src/blocks/slider/edit.js:473
 msgid "Hide"
 msgstr ""
 
@@ -1051,7 +1051,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:367
 #: src/blocks/balloon/edit.js:515
-#: src/blocks/slider/edit.js:305
+#: src/blocks/slider/edit.js:281
 msgid "Width"
 msgstr ""
 
@@ -1307,7 +1307,7 @@ msgstr ""
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
 #: src/blocks/_pro/timeline-item/edit.js:103
 #: src/blocks/heading/edit.js:264
-#: src/blocks/slider/edit.js:476
+#: src/blocks/slider/edit.js:452
 #: src/blocks/staff/edit.js:173
 #: src/extensions/core/heading/style.js:11
 #: src/extensions/core/list/style.js:152
@@ -1640,7 +1640,7 @@ msgid "Button Position:"
 msgstr ""
 
 #: src/blocks/button/edit.js:354
-#: src/blocks/slider/edit.js:501
+#: src/blocks/slider/edit.js:477
 #: src/components/display-items-control/index.js:127
 msgid "Center"
 msgstr ""
@@ -2071,99 +2071,99 @@ msgstr ""
 msgid "repeat"
 msgstr ""
 
-#: src/blocks/slider/edit.js:174
+#: src/blocks/slider/edit.js:149
 msgid "Multi-image Display Setting"
 msgstr ""
 
-#: src/blocks/slider/edit.js:178
+#: src/blocks/slider/edit.js:153
 msgid "Display Multi Images per View"
 msgstr ""
 
-#: src/blocks/slider/edit.js:182
+#: src/blocks/slider/edit.js:157
 msgid "Images per View for Mobile"
 msgstr ""
 
-#: src/blocks/slider/edit.js:194
+#: src/blocks/slider/edit.js:170
 msgid "Images per View for Tablet"
 msgstr ""
 
-#: src/blocks/slider/edit.js:206
+#: src/blocks/slider/edit.js:183
 msgid "Images per View for PC"
 msgstr ""
 
-#: src/blocks/slider/edit.js:219
+#: src/blocks/slider/edit.js:197
 msgid "Move Images per Slide"
 msgstr ""
 
-#: src/blocks/slider/edit.js:223
-msgid "Image Slides for Mobile"
+#: src/blocks/slider/edit.js:212
+msgid "One by One"
 msgstr ""
 
-#: src/blocks/slider/edit.js:235
-msgid "Image Slides for Tablet"
+#: src/blocks/slider/edit.js:227
+msgid "Same as Display Multi Images per View"
 msgstr ""
 
-#: src/blocks/slider/edit.js:247
-msgid "Image Slides for PC"
+#: src/blocks/slider/edit.js:233
+msgid "Truncate after decimal point"
 msgstr ""
 
-#: src/blocks/slider/edit.js:322
+#: src/blocks/slider/edit.js:298
 msgid "Full Wide"
 msgstr ""
 
-#: src/blocks/slider/edit.js:328
+#: src/blocks/slider/edit.js:304
 msgid "Height"
 msgstr ""
 
-#: src/blocks/slider/edit.js:372
+#: src/blocks/slider/edit.js:348
 msgid "Slider Settings"
 msgstr ""
 
-#: src/blocks/slider/edit.js:376
+#: src/blocks/slider/edit.js:352
 msgid "Effect "
 msgstr ""
 
-#: src/blocks/slider/edit.js:386
+#: src/blocks/slider/edit.js:362
 msgid "Slide"
 msgstr ""
 
-#: src/blocks/slider/edit.js:390
+#: src/blocks/slider/edit.js:366
 msgid "Fade"
 msgstr ""
 
-#: src/blocks/slider/edit.js:397
+#: src/blocks/slider/edit.js:373
 msgid "Loop "
 msgstr ""
 
-#: src/blocks/slider/edit.js:407
+#: src/blocks/slider/edit.js:383
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/slider/edit.js:417
+#: src/blocks/slider/edit.js:393
 msgid "Stop AutoPlay when swipe"
 msgstr ""
 
-#: src/blocks/slider/edit.js:427
+#: src/blocks/slider/edit.js:403
 msgid "Display Time"
 msgstr ""
 
-#: src/blocks/slider/edit.js:446
+#: src/blocks/slider/edit.js:422
 msgid "Change Speed"
 msgstr ""
 
-#: src/blocks/slider/edit.js:465
+#: src/blocks/slider/edit.js:441
 msgid "Pagination Type"
 msgstr ""
 
-#: src/blocks/slider/edit.js:480
+#: src/blocks/slider/edit.js:456
 msgid "Number of slides"
 msgstr ""
 
-#: src/blocks/slider/edit.js:490
+#: src/blocks/slider/edit.js:466
 msgid "Navigation Position"
 msgstr ""
 
-#: src/blocks/slider/edit.js:505
+#: src/blocks/slider/edit.js:481
 msgid "Bottom on Mobile device"
 msgstr ""
 

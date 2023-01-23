@@ -310,13 +310,10 @@ export default function SliderEdit(props) {
 						<RangeControl
 							label={__('PC', 'vk-blocks')}
 							value={pc}
-							onChange={(value) => {
-								if (Number(value)) {
-									setAttributes({
-										pc: parseFloat(value),
-									});
-								}
-							}}
+							
+							onChange={(value) =>
+								setAttributes({ pc: parseFloat(value) })
+							}
 							min={0}
 							max={1000}
 							allowReset={true}
@@ -325,13 +322,9 @@ export default function SliderEdit(props) {
 						<RangeControl
 							label={__('Tablet', 'vk-blocks')}
 							value={tablet}
-							onChange={(value) => {
-								if (Number(value)) {
-									setAttributes({
-										tablet: parseFloat(value),
-									});
-								}
-							}}
+							onChange={(value) =>
+								setAttributes({ tablet: parseFloat(value) })
+							}
 							min={0}
 							max={1000}
 							allowReset={true}
@@ -340,13 +333,9 @@ export default function SliderEdit(props) {
 						<RangeControl
 							label={__('Mobile', 'vk-blocks')}
 							value={mobile}
-							onChange={(value) => {
-								if (Number(value)) {
-									setAttributes({
-										mobile: parseFloat(value),
-									});
-								}
-							}}
+							onChange={(value) =>
+								setAttributes({ mobile: parseFloat(value) })
+							}
 							min={0}
 							max={1000}
 							allowReset={true}

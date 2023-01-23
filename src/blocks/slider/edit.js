@@ -161,37 +161,37 @@ export default function SliderEdit(props) {
 					<TextControl
 						label={__('Images per View for Mobile', 'vk-blocks')}
 						value={slidesPerViewMobile}
-						onChange={(value) =>
-							setAttributes({
-								slidesPerViewMobile: !Number.isNaN(value)
-									? parseInt(value, 10)
-									: 1,
-							})
-						}
+						onChange={(value) => {
+							if (Number(value)) {
+								setAttributes({
+									slidesPerViewMobile: parseInt(value, 10),
+								});
+							}
+						}}
 						type={'number'}
 					/>
 					<TextControl
 						label={__('Images per View for Tablet', 'vk-blocks')}
 						value={slidesPerViewTablet}
-						onChange={(value) =>
-							setAttributes({
-								slidesPerViewTablet: !Number.isNaN(value)
-									? parseInt(value, 10)
-									: 1,
-							})
-						}
+						onChange={(value) => {
+							if (Number(value)) {
+								setAttributes({
+									slidesPerViewTablet: parseInt(value, 10),
+								});
+							}
+						}}
 						type={'number'}
 					/>
 					<TextControl
 						label={__('Images per View for PC', 'vk-blocks')}
 						value={slidesPerViewPC}
-						onChange={(value) =>
-							setAttributes({
-								slidesPerViewPC: !Number.isNaN(value)
-									? parseInt(value, 10)
-									: 1,
-							})
-						}
+						onChange={(value) => {
+							if (Number(value)) {
+								setAttributes({
+									slidesPerViewPC: parseInt(value, 10),
+								});
+							}
+						}}
 						type={'number'}
 					/>
 				</BaseControl>
@@ -280,17 +280,17 @@ export default function SliderEdit(props) {
 					<BaseControl id={`vk_slider-width`}>
 						<ButtonGroup>
 							<Button
-								isSmall
-								isPrimary={width === ''}
-								isSecondary={width !== ''}
+								isSmall={true}
+								variant={width === '' ? 'primary' : 'secondary'}
 								onClick={() => setAttributes({ width: '' })}
 							>
 								{__('Normal', 'vk-blocks')}
 							</Button>
 							<Button
-								isSmall
-								isPrimary={width === 'full'}
-								isSecondary={width !== 'full'}
+								isSmall={true}
+								variant={
+									width === 'full' ? 'primary' : 'secondary'
+								}
 								onClick={() => setAttributes({ width: 'full' })}
 							>
 								{__('Full Wide', 'vk-blocks')}
@@ -310,9 +310,13 @@ export default function SliderEdit(props) {
 						<RangeControl
 							label={__('PC', 'vk-blocks')}
 							value={pc}
-							onChange={(value) =>
-								setAttributes({ pc: parseFloat(value) })
-							}
+							onChange={(value) => {
+								if (Number(value)) {
+									setAttributes({
+										pc: parseFloat(value),
+									});
+								}
+							}}
 							min={0}
 							max={1000}
 							allowReset={true}
@@ -321,9 +325,13 @@ export default function SliderEdit(props) {
 						<RangeControl
 							label={__('Tablet', 'vk-blocks')}
 							value={tablet}
-							onChange={(value) =>
-								setAttributes({ tablet: parseFloat(value) })
-							}
+							onChange={(value) => {
+								if (Number(value)) {
+									setAttributes({
+										tablet: parseFloat(value),
+									});
+								}
+							}}
 							min={0}
 							max={1000}
 							allowReset={true}
@@ -332,9 +340,13 @@ export default function SliderEdit(props) {
 						<RangeControl
 							label={__('Mobile', 'vk-blocks')}
 							value={mobile}
-							onChange={(value) =>
-								setAttributes({ mobile: parseFloat(value) })
-							}
+							onChange={(value) => {
+								if (Number(value)) {
+									setAttributes({
+										mobile: parseFloat(value),
+									});
+								}
+							}}
 							min={0}
 							max={1000}
 							allowReset={true}
@@ -404,14 +416,11 @@ export default function SliderEdit(props) {
 						<TextControl
 							value={autoPlayDelay}
 							onChange={(value) => {
-								setAttributes({
-									autoPlayDelay:
-										value === undefined ||
-										value === null ||
-										value === ''
-											? 2500
-											: parseInt(value, 10),
-								});
+								if (Number(value)) {
+									setAttributes({
+										autoPlayDelay: parseInt(value, 10),
+									});
+								}
 							}}
 							type={'number'}
 						/>
@@ -422,16 +431,13 @@ export default function SliderEdit(props) {
 					>
 						<TextControl
 							value={speed}
-							onChange={(value) =>
-								setAttributes({
-									speed:
-										value === undefined ||
-										value === null ||
-										value === ''
-											? 500
-											: parseInt(value, 10),
-								})
-							}
+							onChange={(value) => {
+								if (Number(value)) {
+									setAttributes({
+										speed: parseInt(value, 10),
+									});
+								}
+							}}
 							type={'number'}
 						/>
 					</BaseControl>

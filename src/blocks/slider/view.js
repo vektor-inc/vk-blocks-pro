@@ -54,29 +54,25 @@ document.defaultView.addEventListener('load', function () {
 			if (attributes.effect !== 'fade') {
 				if (attributes.slidesPerViewMobile) {
 					SwiperSetting += `slidesPerView: ${attributes.slidesPerViewMobile},`;
-					if (attributes.slidesPerGroupMobile) {
-						if (
-							attributes.slidesPerGroupMobile <=
-							attributes.slidesPerViewMobile
-						) {
-							SwiperSetting += `slidesPerGroup: ${attributes.slidesPerGroupMobile},`;
-						} else {
-							SwiperSetting += `slidesPerGroup: ${attributes.slidesPerViewMobile},`;
-						}
+					if (
+						attributes.slidesPerGroup &&
+						attributes.slidesPerGroup === 'slides-per-view'
+					) {
+						SwiperSetting += `slidesPerGroup: ${parseInt(
+							attributes.slidesPerGroupMobile
+						)},`;
 					} else {
 						SwiperSetting += `slidesPerGroup: 1,`;
 					}
 				} else if (attributes.slidesPerView) {
 					SwiperSetting += `slidesPerView: ${attributes.slidesPerView},`;
-					if (attributes.slidesPerGroup) {
-						if (
-							attributes.slidesPerGroup <=
+					if (
+						attributes.slidesPerGroup &&
+						attributes.slidesPerGroup === 'slides-per-view'
+					) {
+						SwiperSetting += `slidesPerGroup: ${parseInt(
 							attributes.slidesPerView
-						) {
-							SwiperSetting += `slidesPerGroup: ${attributes.slidesPerGroup},`;
-						} else {
-							SwiperSetting += `slidesPerGroup: ${attributes.slidesPerView},`;
-						}
+						)},`;
 					} else {
 						SwiperSetting += `slidesPerGroup: 1,`;
 					}
@@ -93,30 +89,26 @@ document.defaultView.addEventListener('load', function () {
 					if (attributes.slidesPerViewTablet) {
 						SwiperSetting += `576: {`;
 						SwiperSetting += `slidesPerView: ${attributes.slidesPerViewTablet},`;
-						if (attributes.slidesPerGroupTablet) {
-							if (
-								attributes.slidesPerGroupTablet <=
+						if (
+							attributes.slidesPerGroup &&
+							attributes.slidesPerGroup === 'slides-per-view'
+						) {
+							SwiperSetting += `slidesPerGroup: ${parseInt(
 								attributes.slidesPerViewTablet
-							) {
-								SwiperSetting += `slidesPerGroup: ${attributes.slidesPerGroupTablet},`;
-							} else {
-								SwiperSetting += `slidesPerGroup: ${attributes.slidesPerViewTablet},`;
-							}
+							)},`;
 						}
 						SwiperSetting += `},`;
 					}
 					if (attributes.slidesPerViewPC) {
 						SwiperSetting += `992: {`;
 						SwiperSetting += `slidesPerView: ${attributes.slidesPerViewPC},`;
-						if (attributes.slidesPerGroupPC) {
-							if (
-								attributes.slidesPerGroupPC <=
+						if (
+							attributes.slidesPerGroup &&
+							attributes.slidesPerGroup === 'slides-per-view'
+						) {
+							SwiperSetting += `slidesPerGroup: ${parseInt(
 								attributes.slidesPerViewPC
-							) {
-								SwiperSetting += `slidesPerGroup: ${attributes.slidesPerGroupPC},`;
-							} else {
-								SwiperSetting += `slidesPerGroup: ${attributes.slidesPerViewPC},`;
-							}
+							)},`;
 						}
 						SwiperSetting += `},`;
 					}

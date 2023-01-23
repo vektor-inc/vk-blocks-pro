@@ -39,9 +39,6 @@ export default function SliderEdit(props) {
 		slidesPerViewTablet,
 		slidesPerViewPC,
 		slidesPerGroup,
-		slidesPerGroupMobile,
-		slidesPerGroupTablet,
-		slidesPerGroupPC,
 		navigationPosition,
 		blockId,
 	} = attributes;
@@ -88,34 +85,14 @@ export default function SliderEdit(props) {
 				slidesPerView: 1,
 			});
 		}
-		// slidesPerGroupMobile 互換設定
-		if (slidesPerGroupMobile === undefined) {
-			setAttributes({
-				slidesPerGroupMobile: 1,
-			});
-		}
-		// slidesPerGroupTablet 互換設定
-		if (slidesPerGroupTablet === undefined) {
-			setAttributes({
-				slidesPerGroupTablet: 1,
-			});
-		}
-		// slidesPerGroupPC 互換設定
-		if (slidesPerGroupPC === undefined) {
-			if (slidesPerGroup !== undefined) {
-				setAttributes({
-					slidesPerGroupPC: slidesPerGroup,
-				});
-			} else {
-				setAttributes({
-					slidesPerGroupPC: 1,
-				});
-			}
-		}
 		// slidesPerGroup 互換設定
-		if (slidesPerGroup === undefined) {
+		if (Number(slidesPerGroup) === 0 || Number(slidesPerGroup) === 1) {
 			setAttributes({
-				slidesPerGroup: 1,
+				slidesPerGroup: 'one-by-one',
+			});
+		} else {
+			setAttributes({
+				slidesPerGroup: 'slides-per-view',
 			});
 		}
 		// pagination 互換設定
@@ -161,9 +138,7 @@ export default function SliderEdit(props) {
 		slidesPerViewMobile,
 		slidesPerViewTablet,
 		slidesPerViewPC,
-		slidesPerGroupMobile,
-		slidesPerGroupTablet,
-		slidesPerGroupPC,
+		slidesPerGroup,
 	};
 
 	// 複数枚表示設定
@@ -181,10 +156,11 @@ export default function SliderEdit(props) {
 					<TextControl
 						label={__('Images per View for Mobile', 'vk-blocks')}
 						value={slidesPerViewMobile}
+						step="0.1"
 						onChange={(value) => {
 							if (parseInt(value, 10)) {
 								setAttributes({
-									slidesPerViewMobile: parseInt(value, 10),
+									slidesPerViewMobile: Number(value),
 								});
 							}
 						}}
@@ -193,10 +169,11 @@ export default function SliderEdit(props) {
 					<TextControl
 						label={__('Images per View for Tablet', 'vk-blocks')}
 						value={slidesPerViewTablet}
+						step="0.1"
 						onChange={(value) => {
 							if (parseInt(value, 10)) {
 								setAttributes({
-									slidesPerViewTablet: parseInt(value, 10),
+									slidesPerViewTablet: Number(value),
 								});
 							}
 						}}
@@ -205,10 +182,11 @@ export default function SliderEdit(props) {
 					<TextControl
 						label={__('Images per View for PC', 'vk-blocks')}
 						value={slidesPerViewPC}
+						step="0.1"
 						onChange={(value) => {
 							if (parseInt(value, 10)) {
 								setAttributes({
-									slidesPerViewPC: parseInt(value, 10),
+									slidesPerViewPC: Number(value),
 								});
 							}
 						}}
@@ -219,42 +197,40 @@ export default function SliderEdit(props) {
 					label={__('Move Images per Slide', 'vk-blocks')}
 					id={`vk_slider-MultiImage`}
 				>
-					<TextControl
-						label={__('Image Slides for Mobile', 'vk-blocks')}
-						value={slidesPerGroupMobile}
-						onChange={(value) => {
-							if (parseInt(value, 10)) {
-								setAttributes({
-									slidesPerGroupMobile: parseInt(value, 10),
-								});
+					<ButtonGroup className="mb-3">
+						<Button
+							isSmall={true}
+							variant={
+								slidesPerGroup === 'one-by-one'
+									? 'primary'
+									: 'secondary'
 							}
-						}}
-						type={'number'}
-					/>
-					<TextControl
-						label={__('Image Slides for Tablet', 'vk-blocks')}
-						value={slidesPerGroupTablet}
-						onChange={(value) => {
-							if (parseInt(value, 10)) {
-								setAttributes({
-									slidesPerGroupTablet: parseInt(value, 10),
-								});
+							onClick={() =>
+								setAttributes({ slidesPerGroup: 'one-by-one' })
 							}
-						}}
-						type={'number'}
-					/>
-					<TextControl
-						label={__('Image Slides for PC', 'vk-blocks')}
-						value={slidesPerGroupPC}
-						onChange={(value) => {
-							if (parseInt(value, 10)) {
-								setAttributes({
-									slidesPerGroupPC: parseInt(value, 10),
-								});
+						>
+							{__('One by One', 'vk-blocks')}
+						</Button>
+						<Button
+							isSmall={true}
+							variant={
+								slidesPerGroup === 'slides-per-view'
+									? 'primary'
+									: 'secondary'
 							}
-						}}
-						type={'number'}
-					/>
+							onClick={() =>
+								setAttributes({
+									slidesPerGroup: 'slides-per-view',
+								})
+							}
+						>
+							{__(
+								'Same as Display Multi Images per View',
+								'vk-blocks'
+							)}
+						</Button>
+					</ButtonGroup>
+					<p>{__('Truncate after decimal point', 'vk-blocks')}</p>
 				</BaseControl>
 			</PanelBody>
 		);

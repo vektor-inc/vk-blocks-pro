@@ -14,9 +14,7 @@ export default function save({ attributes }) {
 		slidesPerViewMobile,
 		slidesPerViewTablet,
 		slidesPerViewPC,
-		slidesPerGroupMobile,
-		slidesPerGroupTablet,
-		slidesPerGroupPC,
+		slidesPerGroup,
 		navigationPosition,
 	} = attributes;
 
@@ -33,9 +31,7 @@ export default function save({ attributes }) {
 		slidesPerViewMobile,
 		slidesPerViewTablet,
 		slidesPerViewPC,
-		slidesPerGroupMobile,
-		slidesPerGroupTablet,
-		slidesPerGroupPC,
+		slidesPerGroup,
 	};
 
 	let alignClass = '';

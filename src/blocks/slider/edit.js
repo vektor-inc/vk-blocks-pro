@@ -86,11 +86,16 @@ export default function SliderEdit(props) {
 			});
 		}
 		// slidesPerGroup 互換設定
-		if (Number(slidesPerGroup) === 0 || Number(slidesPerGroup) === 1) {
+		if (
+			slidesPerGroup === undefined ||
+			slidesPerGroup === null ||
+			slidesPerGroup === '' ||
+			slidesPerGroup === 1
+		) {
 			setAttributes({
 				slidesPerGroup: 'one-by-one',
 			});
-		} else {
+		} else if ( slidesPerGroup !== 'one-by-one' ) {
 			setAttributes({
 				slidesPerGroup: 'slides-per-view',
 			});

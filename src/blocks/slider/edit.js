@@ -95,7 +95,7 @@ export default function SliderEdit(props) {
 			setAttributes({
 				slidesPerGroup: 'one-by-one',
 			});
-		} else if ( slidesPerGroup !== 'one-by-one' ) {
+		} else if (slidesPerGroup !== 'one-by-one') {
 			setAttributes({
 				slidesPerGroup: 'slides-per-view',
 			});

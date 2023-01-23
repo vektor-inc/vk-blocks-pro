@@ -155,7 +155,7 @@ export default function SliderEdit(props) {
 				initialOpen={false}
 			>
 				<BaseControl
-					label={__('Display Multi Images per View', 'vk-blocks')}
+					label={__('Display Images per View', 'vk-blocks')}
 					id={`vk_slider-MultiImage`}
 				>
 					<TextControl
@@ -196,7 +196,7 @@ export default function SliderEdit(props) {
 					/>
 				</BaseControl>
 				<BaseControl
-					label={__('Move Images per Slide', 'vk-blocks')}
+					label={__('Move Views per Slide', 'vk-blocks')}
 					id={`vk_slider-MultiImage`}
 				>
 					<ButtonGroup className="mb-3">
@@ -226,13 +226,9 @@ export default function SliderEdit(props) {
 								})
 							}
 						>
-							{__(
-								'Same as Display Multi Images per View',
-								'vk-blocks'
-							)}
+							{__('Display Images per View', 'vk-blocks')}
 						</Button>
 					</ButtonGroup>
-					<p>{__('Truncate after decimal point', 'vk-blocks')}</p>
 				</BaseControl>
 			</PanelBody>
 		);

@@ -310,7 +310,6 @@ export default function SliderEdit(props) {
 						<RangeControl
 							label={__('PC', 'vk-blocks')}
 							value={pc}
-							
 							onChange={(value) =>
 								setAttributes({ pc: parseFloat(value) })
 							}

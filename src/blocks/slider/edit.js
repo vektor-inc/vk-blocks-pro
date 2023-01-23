@@ -161,40 +161,37 @@ export default function SliderEdit(props) {
 					<TextControl
 						label={__('Images per View for Mobile', 'vk-blocks')}
 						value={slidesPerViewMobile}
-						step="0.1"
-						onChange={(value) => {
-							if (parseInt(value, 10)) {
-								setAttributes({
-									slidesPerViewMobile: Number(value),
-								});
-							}
-						}}
+						onChange={(value) =>
+							setAttributes({
+								slidesPerViewMobile: !Number.isNaN(value)
+									? parseInt(value, 10)
+									: 1,
+							})
+						}
 						type={'number'}
 					/>
 					<TextControl
 						label={__('Images per View for Tablet', 'vk-blocks')}
 						value={slidesPerViewTablet}
-						step="0.1"
-						onChange={(value) => {
-							if (parseInt(value, 10)) {
-								setAttributes({
-									slidesPerViewTablet: Number(value),
-								});
-							}
-						}}
+						onChange={(value) =>
+							setAttributes({
+								slidesPerViewTablet: !Number.isNaN(value)
+									? parseInt(value, 10)
+									: 1,
+							})
+						}
 						type={'number'}
 					/>
 					<TextControl
 						label={__('Images per View for PC', 'vk-blocks')}
 						value={slidesPerViewPC}
-						step="0.1"
-						onChange={(value) => {
-							if (parseInt(value, 10)) {
-								setAttributes({
-									slidesPerViewPC: Number(value),
-								});
-							}
-						}}
+						onChange={(value) =>
+							setAttributes({
+								slidesPerViewPC: !Number.isNaN(value)
+									? parseInt(value, 10)
+									: 1,
+							})
+						}
 						type={'number'}
 					/>
 				</BaseControl>

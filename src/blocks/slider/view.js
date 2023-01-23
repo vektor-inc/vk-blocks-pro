@@ -58,9 +58,7 @@ document.defaultView.addEventListener('load', function () {
 						attributes.slidesPerGroup &&
 						attributes.slidesPerGroup === 'slides-per-view'
 					) {
-						SwiperSetting += `slidesPerGroup: ${parseInt(
-							attributes.slidesPerGroupMobile
-						)},`;
+						SwiperSetting += `slidesPerGroup: ${attributes.slidesPerViewMobile},`;
 					} else {
 						SwiperSetting += `slidesPerGroup: 1,`;
 					}
@@ -70,9 +68,7 @@ document.defaultView.addEventListener('load', function () {
 						attributes.slidesPerGroup &&
 						attributes.slidesPerGroup === 'slides-per-view'
 					) {
-						SwiperSetting += `slidesPerGroup: ${parseInt(
-							attributes.slidesPerView
-						)},`;
+						SwiperSetting += `slidesPerGroup: ${attributes.slidesPerView},`;
 					} else {
 						SwiperSetting += `slidesPerGroup: 1,`;
 					}
@@ -93,9 +89,7 @@ document.defaultView.addEventListener('load', function () {
 							attributes.slidesPerGroup &&
 							attributes.slidesPerGroup === 'slides-per-view'
 						) {
-							SwiperSetting += `slidesPerGroup: ${parseInt(
-								attributes.slidesPerViewTablet
-							)},`;
+							SwiperSetting += `slidesPerGroup: ${attributes.slidesPerViewTablet},`;
 						}
 						SwiperSetting += `},`;
 					}
@@ -106,9 +100,7 @@ document.defaultView.addEventListener('load', function () {
 							attributes.slidesPerGroup &&
 							attributes.slidesPerGroup === 'slides-per-view'
 						) {
-							SwiperSetting += `slidesPerGroup: ${parseInt(
-								attributes.slidesPerViewPC
-							)},`;
+							SwiperSetting += `slidesPerGroup: ${attributes.slidesPerViewPC},`;
 						}
 						SwiperSetting += `},`;
 					}

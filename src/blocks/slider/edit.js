@@ -95,6 +95,9 @@ export default function SliderEdit(props) {
 
 		// 以前のバージョンでは slidesPerGroup が定義されていないので互換設定を追加
 		// 以前のバージョンでは slidesPerGroup は数値だったが文字列なったときの処理も含む
+		@since 1.50
+		1.49 までは slidesPerGroup は 数字での保存のみだったため、
+		1 の場合は one-by-one に、 1 以外の数字指定だった場合は slides-per-view になるように
 		if (
 			slidesPerGroup === undefined ||
 			slidesPerGroup === null ||

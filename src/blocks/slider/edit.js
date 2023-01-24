@@ -45,7 +45,6 @@ export default function SliderEdit(props) {
 	} = attributes;
 
 	useEffect(() => {
-
 		// attributes の clientId は使わなくなったので削除
 		if (attributes.clientId !== undefined) {
 			setAttributes({ clientId: undefined });
@@ -170,7 +169,6 @@ export default function SliderEdit(props) {
 		slidesPerViewTabletAlert = slidesPerViewAlert;
 	}
 
-	
 	// 上記アラートを表示するか否かの PC 時の処理
 	let slidesPerViewPCAlert = '';
 	if (

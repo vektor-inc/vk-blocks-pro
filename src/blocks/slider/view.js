@@ -10,6 +10,9 @@ document.defaultView.addEventListener('load', function () {
 			const attributes = JSON.parse(
 				sliderNode.getAttribute('data-vkb-slider')
 			);
+			if (!sliderNode.classList.contains('swiper')) {
+				sliderNode.classList.add('swiper');
+			}
 			let sliderId = '';
 			if (attributes.blockId !== undefined) {
 				sliderId = attributes.blockId;

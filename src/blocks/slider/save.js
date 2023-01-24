@@ -68,7 +68,7 @@ export default function save({ attributes }) {
 	}
 
 	const blockProps = useBlockProps.save({
-		className: `swiper-container vk_slider vk_slider_${blockId}${alignClass}`,
+		className: `swiper swiper-container vk_slider vk_slider_${blockId}${alignClass}`,
 	});
 
 	return (

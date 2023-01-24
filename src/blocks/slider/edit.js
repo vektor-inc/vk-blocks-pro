@@ -18,6 +18,7 @@ import {
 	SelectControl,
 	RangeControl,
 } from '@wordpress/components';
+import { useSelect } from '@wordpress/data';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 
 export default function SliderEdit(props) {
@@ -123,6 +124,37 @@ export default function SliderEdit(props) {
 	const ALLOWED_BLOCKS = ['vk-blocks/slider-item'];
 	const TEMPLATE = [['vk-blocks/slider-item']];
 
+	// インナーブロックを取得
+	const innerBlocks = useSelect((select) =>
+		select('core/block-editor').getBlocks(clientId)
+	);
+
+	const slidesPerViewAlert = (
+		<div className="alert alert-denger">
+			<p>
+				{__(
+					'Specify a number that divides the number of slide items.',
+					'vk-blocks'
+				)}
+			</p>
+		</div>
+	);
+
+	let slidesPerViewMobileAlert = '';
+	if (innerBlocks.length % slidesPerViewMobile !== 0) {
+		slidesPerViewMobileAlert = slidesPerViewAlert;
+	}
+
+	let slidesPerViewTabletAlert = '';
+	if (innerBlocks.length % slidesPerViewTablet !== 0) {
+		slidesPerViewTabletAlert = slidesPerViewAlert;
+	}
+
+	let slidesPerViewPCAlert = '';
+	if (innerBlocks.length % slidesPerViewPC !== 0) {
+		slidesPerViewPCAlert = slidesPerViewAlert;
+	}
+
 	let alignClass = '';
 	if ('full' === width) {
 		alignClass = ' alignfull';
@@ -158,6 +190,20 @@ export default function SliderEdit(props) {
 					label={__('Display Images per View', 'vk-blocks')}
 					id={`vk_slider-MultiImage`}
 				>
+					<div className="alert alert-denger">
+						<p>
+							{__(
+								'Specify a number that divides the number of slide items by the number of display items.',
+								'vk-blocks'
+							)}
+						</p>
+						<p>
+							{__(
+								'If the number is not divisible, the slide behavior will be unnatural.',
+								'vk-blocks'
+							)}
+						</p>
+					</div>
 					<TextControl
 						label={__('Images per View for Mobile', 'vk-blocks')}
 						value={slidesPerViewMobile}
@@ -170,6 +216,7 @@ export default function SliderEdit(props) {
 						}}
 						type={'number'}
 					/>
+					{slidesPerViewMobileAlert}
 					<TextControl
 						label={__('Images per View for Tablet', 'vk-blocks')}
 						value={slidesPerViewTablet}
@@ -182,6 +229,7 @@ export default function SliderEdit(props) {
 						}}
 						type={'number'}
 					/>
+					{slidesPerViewTabletAlert}
 					<TextControl
 						label={__('Images per View for PC', 'vk-blocks')}
 						value={slidesPerViewPC}
@@ -194,6 +242,7 @@ export default function SliderEdit(props) {
 						}}
 						type={'number'}
 					/>
+					{slidesPerViewPCAlert}
 				</BaseControl>
 				<BaseControl
 					label={__('Move Views per Slide', 'vk-blocks')}
@@ -261,7 +310,7 @@ export default function SliderEdit(props) {
 	}
 
 	const blockProps = useBlockProps({
-		className: `swiper-container vk_slider vk_slider_${clientId}${alignClass}`,
+		className: `swiper swiper-container vk_slider vk_slider_${clientId}${alignClass}`,
 	});
 
 	return (

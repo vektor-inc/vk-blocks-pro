@@ -45,30 +45,36 @@ export default function SliderEdit(props) {
 	} = attributes;
 
 	useEffect(() => {
-		// clientId 互換設定
+
+		// attributes の clientId は使わなくなったので削除
 		if (attributes.clientId !== undefined) {
 			setAttributes({ clientId: undefined });
 		}
-		// blockId 互換設定
+
+		// blockID が定義されていない場合は blockID に clientID を挿入
+		// 再利用ブロックのインナーブロックではない場合 blockID を更新
 		if (
 			blockId === undefined ||
 			isParentReusableBlock(clientId) === false
 		) {
 			setAttributes({ blockId: clientId });
 		}
-		// slidesPerViewMobile 互換設定
+
+		// 以前のバージョンでは slidesPerViewMobile が定義されていないので互換設定を追加
 		if (slidesPerViewMobile === undefined) {
 			setAttributes({
 				slidesPerViewMobile: 1,
 			});
 		}
-		// slidesPerViewTablet 互換設定
+
+		// 以前のバージョンでは slidesPerViewTablet が定義されていないので互換設定を追加
 		if (slidesPerViewTablet === undefined) {
 			setAttributes({
 				slidesPerViewTablet: 1,
 			});
 		}
-		// slidesPerViewPC 互換設定
+
+		// 以前のバージョンでは slidesPerViewPC が定義されていないので互換設定を追加
 		if (slidesPerViewPC === undefined) {
 			if (slidesPerView !== undefined) {
 				setAttributes({
@@ -80,28 +86,33 @@ export default function SliderEdit(props) {
 				});
 			}
 		}
-		// slidesPerView 互換設定
+
+		// 以前のバージョンでは slidesPerView が定義されていないので互換設定を追加
 		if (slidesPerView === undefined) {
 			setAttributes({
 				slidesPerView: 1,
 			});
 		}
-		// slidesPerGroup 互換設定
+
+		// 以前のバージョンでは slidesPerGroup が定義されていないので互換設定を追加
+		// 以前のバージョンでは slidesPerGroup は数値だったが文字列なったときの処理も含む
 		if (
 			slidesPerGroup === undefined ||
 			slidesPerGroup === null ||
 			slidesPerGroup === '' ||
-			slidesPerGroup === 1
+			slidesPerGroup === 1 ||
+			slidesPerGroup === 'one-by-one'
 		) {
 			setAttributes({
 				slidesPerGroup: 'one-by-one',
 			});
-		} else if (slidesPerGroup !== 'one-by-one') {
+		} else {
 			setAttributes({
 				slidesPerGroup: 'slides-per-view',
 			});
 		}
-		// pagination 互換設定
+
+		// 以前のバージョンでは pagination はブール型だったが文字列型になっための互換処理
 		if (pagination === false) {
 			setAttributes({ pagination: 'hide' });
 		}
@@ -109,12 +120,12 @@ export default function SliderEdit(props) {
 			setAttributes({ pagination: 'bullets' });
 		}
 
-		// autoPlayStop 互換設定
+		// 以前のバージョンでは autoPlayStop が定義されていないので互換設定を追加
 		if (autoPlayStop === undefined) {
 			setAttributes({ autoPlayStop: false });
 		}
 
-		// navigationPosition 互換設定
+		// 以前のバージョンでは navigationPosition が定義されていないので互換設定を追加
 		if (navigationPosition === undefined) {
 			setAttributes({ navigationPosition: 'mobile-bottom' });
 		}
@@ -129,6 +140,7 @@ export default function SliderEdit(props) {
 		select('core/block-editor').getBlocks(clientId)
 	);
 
+	// １スライドあたりの表示枚数がスライダーの総枚数の約数出なかったときに表示するアラート
 	const slidesPerViewAlert = (
 		<div className="alert alert-denger">
 			<p>
@@ -140,6 +152,7 @@ export default function SliderEdit(props) {
 		</div>
 	);
 
+	// 上記アラートを表示するか否かのモバイル時の処理
 	let slidesPerViewMobileAlert = '';
 	if (
 		innerBlocks.length % slidesPerViewMobile !== 0 &&
@@ -148,6 +161,7 @@ export default function SliderEdit(props) {
 		slidesPerViewMobileAlert = slidesPerViewAlert;
 	}
 
+	// 上記アラートを表示するか否かのタブレット時の処理
 	let slidesPerViewTabletAlert = '';
 	if (
 		innerBlocks.length % slidesPerViewTablet !== 0 &&
@@ -156,6 +170,8 @@ export default function SliderEdit(props) {
 		slidesPerViewTabletAlert = slidesPerViewAlert;
 	}
 
+	
+	// 上記アラートを表示するか否かの PC 時の処理
 	let slidesPerViewPCAlert = '';
 	if (
 		innerBlocks.length % slidesPerViewPC !== 0 &&
@@ -164,6 +180,7 @@ export default function SliderEdit(props) {
 		slidesPerViewPCAlert = slidesPerViewAlert;
 	}
 
+	// 幅のクラス名変更
 	let alignClass = '';
 	if ('full' === width) {
 		alignClass = ' alignfull';
@@ -171,6 +188,7 @@ export default function SliderEdit(props) {
 		alignClass = ' alignwide';
 	}
 
+	// JS に渡す値の構造体
 	const sliderData = {
 		autoPlay,
 		autoPlayStop,

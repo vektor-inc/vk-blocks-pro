@@ -141,17 +141,26 @@ export default function SliderEdit(props) {
 	);
 
 	let slidesPerViewMobileAlert = '';
-	if (innerBlocks.length % slidesPerViewMobile !== 0 && slidesPerGroup === 'slides-per-view') {
+	if (
+		innerBlocks.length % slidesPerViewMobile !== 0 &&
+		slidesPerGroup === 'slides-per-view'
+	) {
 		slidesPerViewMobileAlert = slidesPerViewAlert;
 	}
 
 	let slidesPerViewTabletAlert = '';
-	if (innerBlocks.length % slidesPerViewTablet !== 0 && slidesPerGroup === 'slides-per-view') {
+	if (
+		innerBlocks.length % slidesPerViewTablet !== 0 &&
+		slidesPerGroup === 'slides-per-view'
+	) {
 		slidesPerViewTabletAlert = slidesPerViewAlert;
 	}
 
 	let slidesPerViewPCAlert = '';
-	if (innerBlocks.length % slidesPerViewPC !== 0 && slidesPerGroup === 'slides-per-view') {
+	if (
+		innerBlocks.length % slidesPerViewPC !== 0 &&
+		slidesPerGroup === 'slides-per-view'
+	) {
 		slidesPerViewPCAlert = slidesPerViewAlert;
 	}
 

@@ -59,21 +59,21 @@ export default function SliderEdit(props) {
 			setAttributes({ blockId: clientId });
 		}
 
-		// 以前のバージョンでは slidesPerViewMobile が定義されていないので互換設定を追加
+		// 1.49 以前では slidesPerViewMobile が定義されていないので互換設定を追加
 		if (slidesPerViewMobile === undefined) {
 			setAttributes({
 				slidesPerViewMobile: 1,
 			});
 		}
 
-		// 以前のバージョンでは slidesPerViewTablet が定義されていないので互換設定を追加
+		// 1.49 以前では slidesPerViewTablet が定義されていないので互換設定を追加
 		if (slidesPerViewTablet === undefined) {
 			setAttributes({
 				slidesPerViewTablet: 1,
 			});
 		}
 
-		// 以前のバージョンでは slidesPerViewPC が定義されていないので互換設定を追加
+		// 1.49 以前では slidesPerViewPC が定義されていないので互換設定を追加
 		if (slidesPerViewPC === undefined) {
 			if (slidesPerView !== undefined) {
 				setAttributes({
@@ -86,18 +86,16 @@ export default function SliderEdit(props) {
 			}
 		}
 
-		// 以前のバージョンでは slidesPerView が定義されていないので互換設定を追加
+		// 1.49 以前では slidesPerView が定義されていないので互換設定を追加
 		if (slidesPerView === undefined) {
 			setAttributes({
 				slidesPerView: 1,
 			});
 		}
 
-		// 以前のバージョンでは slidesPerGroup が定義されていないので互換設定を追加
-		// 以前のバージョンでは slidesPerGroup は数値だったが文字列なったときの処理も含む
-		@since 1.50
-		1.49 までは slidesPerGroup は 数字での保存のみだったため、
-		1 の場合は one-by-one に、 1 以外の数字指定だった場合は slides-per-view になるように
+		// @since 1.50
+		// 1.49 までは slidesPerGroup は 数字での保存のみだったため、
+		// 1 の場合は one-by-one に、 1 以外の数字指定だった場合は slides-per-view になるように
 		if (
 			slidesPerGroup === undefined ||
 			slidesPerGroup === null ||
@@ -114,7 +112,7 @@ export default function SliderEdit(props) {
 			});
 		}
 
-		// 以前のバージョンでは pagination はブール型だったが文字列型になっための互換処理
+		// 1.49 以前では pagination はブール型だったが文字列型になっための互換処理
 		if (pagination === false) {
 			setAttributes({ pagination: 'hide' });
 		}
@@ -122,12 +120,12 @@ export default function SliderEdit(props) {
 			setAttributes({ pagination: 'bullets' });
 		}
 
-		// 以前のバージョンでは autoPlayStop が定義されていないので互換設定を追加
+		// 1.49 以前では autoPlayStop が定義されていないので互換設定を追加
 		if (autoPlayStop === undefined) {
 			setAttributes({ autoPlayStop: false });
 		}
 
-		// 以前のバージョンでは navigationPosition が定義されていないので互換設定を追加
+		// 1.49 以前では navigationPosition が定義されていないので互換設定を追加
 		if (navigationPosition === undefined) {
 			setAttributes({ navigationPosition: 'mobile-bottom' });
 		}

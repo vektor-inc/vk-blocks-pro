@@ -142,13 +142,11 @@ export default function SliderEdit(props) {
 
 	// １スライドあたりの表示枚数がスライダーの総枚数の約数出なかったときに表示するアラート
 	const slidesPerViewAlert = (
-		<div className="alert alert-denger">
-			<p>
-				{__(
-					'Specify a number that divides the number of slide items.',
-					'vk-blocks'
-				)}
-			</p>
+		<div className="alert alert-danger">
+			{__(
+				'Specify a number that divides the number of slide items.',
+				'vk-blocks'
+			)}
 		</div>
 	);
 
@@ -216,19 +214,11 @@ export default function SliderEdit(props) {
 					label={__('Display Images per View', 'vk-blocks')}
 					id={`vk_slider-MultiImage`}
 				>
-					<div className="alert alert-denger">
-						<p>
-							{__(
-								'Specify a number that divides the number of slide items by the number of display items.',
-								'vk-blocks'
-							)}
-						</p>
-						<p>
-							{__(
-								'If the number is not divisible, the slide behavior will be unnatural.',
-								'vk-blocks'
-							)}
-						</p>
+					<div className="alert alert-danger">
+						{__(
+							'Specify a number that divides the number of slide items by the number of display items. If the number is not divisible, the slide behavior will be unnatural.',
+							'vk-blocks'
+						)}
 					</div>
 					<TextControl
 						label={__('Images per View for Mobile', 'vk-blocks')}

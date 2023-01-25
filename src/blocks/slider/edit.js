@@ -18,6 +18,7 @@ import {
 	SelectControl,
 	RangeControl,
 } from '@wordpress/components';
+import { useSelect } from '@wordpress/data';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 
 export default function SliderEdit(props) {
@@ -35,34 +36,83 @@ export default function SliderEdit(props) {
 		effect,
 		speed,
 		slidesPerView,
+		slidesPerViewMobile,
+		slidesPerViewTablet,
+		slidesPerViewPC,
 		slidesPerGroup,
 		navigationPosition,
 		blockId,
 	} = attributes;
 
 	useEffect(() => {
+		// attributes の clientId は使わなくなったので削除
 		if (attributes.clientId !== undefined) {
 			setAttributes({ clientId: undefined });
 		}
+
+		// blockID が定義されていない場合は blockID に clientID を挿入
+		// 再利用ブロックのインナーブロックではない場合 blockID を更新
 		if (
 			blockId === undefined ||
 			isParentReusableBlock(clientId) === false
 		) {
 			setAttributes({ blockId: clientId });
 		}
-		// slidesPerView 互換設定
+
+		// 1.49 以前では slidesPerViewMobile が定義されていないので互換設定を追加
+		if (slidesPerViewMobile === undefined) {
+			setAttributes({
+				slidesPerViewMobile: 1,
+			});
+		}
+
+		// 1.49 以前では slidesPerViewTablet が定義されていないので互換設定を追加
+		if (slidesPerViewTablet === undefined) {
+			setAttributes({
+				slidesPerViewTablet: 1,
+			});
+		}
+
+		// 1.49 以前では slidesPerViewPC が定義されていないので互換設定を追加
+		if (slidesPerViewPC === undefined) {
+			if (slidesPerView !== undefined) {
+				setAttributes({
+					slidesPerViewPC: slidesPerView,
+				});
+			} else {
+				setAttributes({
+					slidesPerViewPC: 1,
+				});
+			}
+		}
+
+		// 1.49 以前では slidesPerView が定義されていないので互換設定を追加
 		if (slidesPerView === undefined) {
 			setAttributes({
 				slidesPerView: 1,
 			});
 		}
-		// slidesPerGroup 互換設定
-		if (slidesPerGroup === undefined) {
+
+		// @since 1.50
+		// 1.49 までは slidesPerGroup は 数字での保存のみだったため、
+		// 1 の場合は one-by-one に、 1 以外の数字指定だった場合は slides-per-view になるように
+		if (
+			slidesPerGroup === undefined ||
+			slidesPerGroup === null ||
+			slidesPerGroup === '' ||
+			slidesPerGroup === 1 ||
+			slidesPerGroup === 'one-by-one'
+		) {
 			setAttributes({
-				slidesPerGroup: 1,
+				slidesPerGroup: 'one-by-one',
+			});
+		} else {
+			setAttributes({
+				slidesPerGroup: 'slides-per-view',
 			});
 		}
-		// pagination 互換設定
+
+		// 1.49 以前では pagination はブール型だったが文字列型になっための互換処理
 		if (pagination === false) {
 			setAttributes({ pagination: 'hide' });
 		}
@@ -70,12 +120,12 @@ export default function SliderEdit(props) {
 			setAttributes({ pagination: 'bullets' });
 		}
 
-		// autoPlayStop 互換設定
+		// 1.49 以前では autoPlayStop が定義されていないので互換設定を追加
 		if (autoPlayStop === undefined) {
 			setAttributes({ autoPlayStop: false });
 		}
 
-		// navigationPosition 互換設定
+		// 1.49 以前では navigationPosition が定義されていないので互換設定を追加
 		if (navigationPosition === undefined) {
 			setAttributes({ navigationPosition: 'mobile-bottom' });
 		}
@@ -85,6 +135,49 @@ export default function SliderEdit(props) {
 	const ALLOWED_BLOCKS = ['vk-blocks/slider-item'];
 	const TEMPLATE = [['vk-blocks/slider-item']];
 
+	// インナーブロックを取得
+	const innerBlocks = useSelect((select) =>
+		select('core/block-editor').getBlocks(clientId)
+	);
+
+	// １スライドあたりの表示枚数がスライダーの総枚数の約数出なかったときに表示するアラート
+	const slidesPerViewAlert = (
+		<div className="alert alert-danger">
+			{__(
+				'Specify a number that divides the number of slide items.',
+				'vk-blocks'
+			)}
+		</div>
+	);
+
+	// 上記アラートを表示するか否かのモバイル時の処理
+	let slidesPerViewMobileAlert = '';
+	if (
+		innerBlocks.length % slidesPerViewMobile !== 0 &&
+		slidesPerGroup === 'slides-per-view'
+	) {
+		slidesPerViewMobileAlert = slidesPerViewAlert;
+	}
+
+	// 上記アラートを表示するか否かのタブレット時の処理
+	let slidesPerViewTabletAlert = '';
+	if (
+		innerBlocks.length % slidesPerViewTablet !== 0 &&
+		slidesPerGroup === 'slides-per-view'
+	) {
+		slidesPerViewTabletAlert = slidesPerViewAlert;
+	}
+
+	// 上記アラートを表示するか否かの PC 時の処理
+	let slidesPerViewPCAlert = '';
+	if (
+		innerBlocks.length % slidesPerViewPC !== 0 &&
+		slidesPerGroup === 'slides-per-view'
+	) {
+		slidesPerViewPCAlert = slidesPerViewAlert;
+	}
+
+	// 幅のクラス名変更
 	let alignClass = '';
 	if ('full' === width) {
 		alignClass = ' alignfull';
@@ -92,6 +185,7 @@ export default function SliderEdit(props) {
 		alignClass = ' alignwide';
 	}
 
+	// JS に渡す値の構造体
 	const sliderData = {
 		autoPlay,
 		autoPlayStop,
@@ -102,7 +196,9 @@ export default function SliderEdit(props) {
 		loop,
 		effect,
 		speed,
-		slidesPerView,
+		slidesPerViewMobile,
+		slidesPerViewTablet,
+		slidesPerViewPC,
 		slidesPerGroup,
 	};
 
@@ -115,33 +211,89 @@ export default function SliderEdit(props) {
 				initialOpen={false}
 			>
 				<BaseControl
-					label={__('Display Multi Images per View', 'vk-blocks')}
+					label={__('Display Images per View', 'vk-blocks')}
 					id={`vk_slider-MultiImage`}
 				>
+					<div className="alert alert-danger">
+						{__(
+							'Specify a number that divides the number of slide items by the number of display items. If the number is not divisible, the slide behavior will be unnatural.',
+							'vk-blocks'
+						)}
+					</div>
 					<TextControl
-						label={__('Images per View', 'vk-blocks')}
-						value={slidesPerView}
-						onChange={(value) =>
-							setAttributes({
-								slidesPerView: parseInt(value, 10),
-							})
-						}
+						label={__('Images per View for Mobile', 'vk-blocks')}
+						value={slidesPerViewMobile}
+						onChange={(value) => {
+							if (Number(value)) {
+								setAttributes({
+									slidesPerViewMobile: parseInt(value, 10),
+								});
+							}
+						}}
 						type={'number'}
 					/>
+					{slidesPerViewMobileAlert}
+					<TextControl
+						label={__('Images per View for Tablet', 'vk-blocks')}
+						value={slidesPerViewTablet}
+						onChange={(value) => {
+							if (Number(value)) {
+								setAttributes({
+									slidesPerViewTablet: parseInt(value, 10),
+								});
+							}
+						}}
+						type={'number'}
+					/>
+					{slidesPerViewTabletAlert}
+					<TextControl
+						label={__('Images per View for PC', 'vk-blocks')}
+						value={slidesPerViewPC}
+						onChange={(value) => {
+							if (Number(value)) {
+								setAttributes({
+									slidesPerViewPC: parseInt(value, 10),
+								});
+							}
+						}}
+						type={'number'}
+					/>
+					{slidesPerViewPCAlert}
 				</BaseControl>
 				<BaseControl
-					label={__('Move Images per Slide', 'vk-blocks')}
+					label={__('Move Views per Slide', 'vk-blocks')}
 					id={`vk_slider-MultiImage`}
 				>
-					<TextControl
-						value={slidesPerGroup}
-						onChange={(value) =>
-							setAttributes({
-								slidesPerGroup: parseInt(value, 10),
-							})
-						}
-						type={'number'}
-					/>
+					<ButtonGroup className="mb-3">
+						<Button
+							isSmall={true}
+							variant={
+								slidesPerGroup === 'one-by-one'
+									? 'primary'
+									: 'secondary'
+							}
+							onClick={() =>
+								setAttributes({ slidesPerGroup: 'one-by-one' })
+							}
+						>
+							{__('One by One', 'vk-blocks')}
+						</Button>
+						<Button
+							isSmall={true}
+							variant={
+								slidesPerGroup === 'slides-per-view'
+									? 'primary'
+									: 'secondary'
+							}
+							onClick={() =>
+								setAttributes({
+									slidesPerGroup: 'slides-per-view',
+								})
+							}
+						>
+							{__('Display Images per View', 'vk-blocks')}
+						</Button>
+					</ButtonGroup>
 				</BaseControl>
 			</PanelBody>
 		);
@@ -174,7 +326,7 @@ export default function SliderEdit(props) {
 	}
 
 	const blockProps = useBlockProps({
-		className: `swiper-container vk_slider vk_slider_${clientId}${alignClass}`,
+		className: `swiper swiper-container vk_slider vk_slider_${clientId}${alignClass}`,
 	});
 
 	return (
@@ -193,17 +345,17 @@ export default function SliderEdit(props) {
 					<BaseControl id={`vk_slider-width`}>
 						<ButtonGroup>
 							<Button
-								isSmall
-								isPrimary={width === ''}
-								isSecondary={width !== ''}
+								isSmall={true}
+								variant={width === '' ? 'primary' : 'secondary'}
 								onClick={() => setAttributes({ width: '' })}
 							>
 								{__('Normal', 'vk-blocks')}
 							</Button>
 							<Button
-								isSmall
-								isPrimary={width === 'full'}
-								isSecondary={width !== 'full'}
+								isSmall={true}
+								variant={
+									width === 'full' ? 'primary' : 'secondary'
+								}
 								onClick={() => setAttributes({ width: 'full' })}
 							>
 								{__('Full Wide', 'vk-blocks')}
@@ -317,14 +469,11 @@ export default function SliderEdit(props) {
 						<TextControl
 							value={autoPlayDelay}
 							onChange={(value) => {
-								setAttributes({
-									autoPlayDelay:
-										value === undefined ||
-										value === null ||
-										value === ''
-											? 2500
-											: parseInt(value, 10),
-								});
+								if (Number(value)) {
+									setAttributes({
+										autoPlayDelay: parseInt(value, 10),
+									});
+								}
 							}}
 							type={'number'}
 						/>
@@ -335,16 +484,13 @@ export default function SliderEdit(props) {
 					>
 						<TextControl
 							value={speed}
-							onChange={(value) =>
-								setAttributes({
-									speed:
-										value === undefined ||
-										value === null ||
-										value === ''
-											? 500
-											: parseInt(value, 10),
-								})
-							}
+							onChange={(value) => {
+								if (Number(value)) {
+									setAttributes({
+										speed: parseInt(value, 10),
+									});
+								}
+							}}
 							type={'number'}
 						/>
 					</BaseControl>

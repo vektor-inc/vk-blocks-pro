@@ -5,29 +5,22 @@
  * @package VK Blocks
  */
 
-/**
- * VK CSS Optimize 本体はExUnitなどで読み込むのでここでは読み込まず
- * 追加したいファイルのみフックで投げるはずだったが単体売りするかもしれないので一応本体を同梱
- */
-if ( ! class_exists( 'VK_CSS_Optimize' ) ) {
-	require_once dirname( __FILE__ ) . '/package/class-vk-css-optimize.php';
-}
+ use VektorInc\VK_CSS_Optimize\VkCssOptimize;
+ new VkCssOptimize();
+ 
+ global $prefix_customize_panel;
+ $prefix_customize_panel = __( 'VK Blocks ', 'vk-blocks' );
 
 /**
  * CSS Tree Shaking Array
  *
  * @param array $vk_css_tree_shaking_array CSS Tree Shaking Array Paramator.
  */
-function vk_blocks_css_tree_shaking_array( $vk_css_tree_shaking_array ) {
-	$vk_css_tree_shaking_array[] = array(
-		'id'      => 'vk-blocks-build-css',
-		'url'     => VK_BLOCKS_DIR_URL . 'build/block-build.css',
-		'path'    => VK_BLOCKS_DIR_PATH . 'build/block-build.css',
-		'version' => VK_BLOCKS_VERSION,
-	);
-	return $vk_css_tree_shaking_array;
+function vk_blocks_css_tree_shaking_handles( $vk_css_tree_shaking_handles ) {
+	$vk_css_tree_shaking_handles[] = 'vk-blocks-build-css';
+	return $vk_css_tree_shaking_handles;
 }
-add_filter( 'vk_css_tree_shaking_array', 'vk_blocks_css_tree_shaking_array' );
+add_filter( 'vk_css_tree_shaking_handles', 'vk_blocks_css_tree_shaking_handles' );
 
 /**
  * CSS Tree Shaking Exclude
@@ -85,3 +78,18 @@ function vk_blocks_css_tree_shaking_exclude_class( $inidata ) {
 	return $inidata;
 }
 add_filter( 'css_tree_shaking_exclude', 'vk_blocks_css_tree_shaking_exclude_class' );
+
+/**
+ * CSS Optimize option default
+ *
+ * @param array $vk_css_optimize_options_default : recieve array.
+ * @return array $vk_css_optimize_options_default : return modefied array.
+ */
+function VK_blocks_css_optimize_options_default( $vk_css_optimize_options_default ) {
+	$vk_css_optimize_options_default = array(
+		'tree_shaking' => 'active',
+		'preload'      => '',
+	);
+	return $vk_css_optimize_options_default;
+}
+add_filter( 'vk_css_optimize_options_default', 'VK_blocks_css_optimize_options_default' );

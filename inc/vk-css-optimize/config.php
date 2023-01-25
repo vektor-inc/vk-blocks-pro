@@ -7,7 +7,7 @@
 
  use VektorInc\VK_CSS_Optimize\VkCssOptimize;
  new VkCssOptimize();
- 
+
  global $prefix_customize_panel;
  $prefix_customize_panel = __( 'VK Blocks ', 'vk-blocks' );
 

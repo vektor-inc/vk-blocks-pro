@@ -64,9 +64,11 @@ e.g.
 
 == Changelog ==
 
+= 1.50.0 =
+[ Add Function ][ Slider ] Add Slider per view Setting for Mobile, Tablet, PC.
+
 = 1.49.0 =
 [ Add Function ][ Custom Block Style Setting (Pro) ] Add Custom Block Style Setting extension in admin.
-[ Add Function ][ Slider ] Add Slider per view Setting for Mobile, Tablet, PC.
 [ Specification Change ][ Post List ( Pro ) ] Lightweight data acquisition process
 [ Bug fix ][ Step(Pro) / Time Line(Pro) ] Fix item content overflow hidden
 

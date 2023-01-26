@@ -143,10 +143,7 @@ export default function SliderEdit(props) {
 	// １スライドあたりの表示枚数がスライダーの総枚数の約数出なかったときに表示するアラート
 	const slidesPerViewAlert = (
 		<div className="text-danger font-size-11px offset-mt-18px">
-			{__(
-				'Enter in the divisors of the placed slide item.',
-				'vk-blocks'
-			)}
+			{__('Enter in the divisors of the placed slide item.', 'vk-blocks')}
 		</div>
 	);
 
@@ -211,7 +208,10 @@ export default function SliderEdit(props) {
 				initialOpen={false}
 			>
 				<BaseControl
-					label={__('Number of Items to display per view', 'vk-blocks')}
+					label={__(
+						'Number of Items to display per view',
+						'vk-blocks'
+					)}
 					id={`vk_slider-MultiItem`}
 				>
 					<p className="font-size-11px">
@@ -225,7 +225,10 @@ export default function SliderEdit(props) {
 						)}
 					</p>
 					<TextControl
-						label={__('Number of display items ( PC )', 'vk-blocks')}
+						label={__(
+							'Number of display items ( PC )',
+							'vk-blocks'
+						)}
 						value={slidesPerViewPC}
 						onChange={(value) => {
 							if (Number(value)) {
@@ -238,7 +241,10 @@ export default function SliderEdit(props) {
 					/>
 					{slidesPerViewPCAlert}
 					<TextControl
-						label={__('Number of display items ( Tablet )', 'vk-blocks')}
+						label={__(
+							'Number of display items ( Tablet )',
+							'vk-blocks'
+						)}
 						value={slidesPerViewTablet}
 						onChange={(value) => {
 							if (Number(value)) {
@@ -251,7 +257,10 @@ export default function SliderEdit(props) {
 					/>
 					{slidesPerViewTabletAlert}
 					<TextControl
-						label={__('Number of display items ( Mobile )', 'vk-blocks')}
+						label={__(
+							'Number of display items ( Mobile )',
+							'vk-blocks'
+						)}
 						value={slidesPerViewMobile}
 						onChange={(value) => {
 							if (Number(value)) {

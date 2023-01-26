@@ -11,7 +11,7 @@
 	<exclude-pattern type="relative">^inc/tgm-plugin-activation/*</exclude-pattern>
 	<exclude-pattern type="relative">^inc/vk-blocks-pro/plugin-update-checker/*</exclude-pattern>
 	<exclude-pattern type="relative">^inc/font-awesome/package/*</exclude-pattern>
-	<exclude-pattern type="relative">^inc/vk-css-optimize/package/*</exclude-pattern>
+	<exclude-pattern type="relative">^inc/vk-css-optimize/*</exclude-pattern>
 	<exclude-pattern type="relative">^inc/vk-swiper/*</exclude-pattern>
 	<exclude-pattern type="relative">^inc/vk-components/package/*</exclude-pattern>
 	<exclude-pattern type="relative">^inc/vk-customize-helpers/package/*</exclude-pattern>

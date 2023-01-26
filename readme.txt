@@ -1,5 +1,5 @@
 === VK Blocks ===
-Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird
+Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird,chiakikouno
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.9

@@ -1,4 +1,5 @@
 /* eslint camelcase: 0 */
+import save1_48_1 from './1.48.1/save';
 import save1_34_1 from './1.34.1/save';
 import save1_13_1 from './1.13.1/save';
 import save1_10_0 from './1.10.0/save';
@@ -123,7 +124,21 @@ const blockAttributes6 = {
 	}
 }
 
+/**
+ * 1.34.1 で blockID を追加
+ */
+const blockAttributes7 = {
+	...blockAttributes6,
+	blockId: {
+		type: 'string'
+	}
+}
+
 const deprecated = [
+	{
+		attributes: blockAttributes7,
+		save: save1_48_1,
+	},
 	{
 		attributes: blockAttributes6,
 		save: save1_34_1,

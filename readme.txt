@@ -1,5 +1,5 @@
 === VK Blocks ===
-Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird
+Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird,chiakikouno
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.9
@@ -63,6 +63,9 @@ e.g.
 
 
 == Changelog ==
+
+= 1.50.0 =
+[ Add Function ][ Slider ] Add Slider per view Setting for Mobile, Tablet, PC.
 
 = 1.49.0 =
 [ Add Function ][ Custom Block Style Setting (Pro) ] Add Custom Block Style Setting extension in admin.

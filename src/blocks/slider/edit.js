@@ -13,6 +13,7 @@ import {
 	PanelBody,
 	BaseControl,
 	TextControl,
+	RadioControl,
 	ButtonGroup,
 	Button,
 	SelectControl,
@@ -143,7 +144,7 @@ export default function SliderEdit(props) {
 	// １スライドあたりの表示枚数がスライダーの総枚数の約数出なかったときに表示するアラート
 	const slidesPerViewAlert = (
 		<div className="text-danger font-size-11px offset-mt-18px">
-			{__('Enter in the divisors of the placed slide item.', 'vk-blocks')}
+			{__('Enter divisors for the number of placed slide items for each display size.', 'vk-blocks')}
 		</div>
 	);
 
@@ -216,17 +217,17 @@ export default function SliderEdit(props) {
 				>
 					<p className="font-size-11px">
 						{__(
-							'Enter in the divisors of the placed slide item.',
+							'Enter divisors for the number of placed slide items for each display size.',
 							'vk-blocks'
 						)}
 						{__(
-							'If the number is not divisible, the slide behavior will be unnatural.',
+							'If the number is not divisible, the sliding behaviour will be unnatural',
 							'vk-blocks'
 						)}
 					</p>
 					<TextControl
 						label={__(
-							'Number of display items ( PC )',
+							'PC',
 							'vk-blocks'
 						)}
 						value={slidesPerViewPC}
@@ -242,7 +243,7 @@ export default function SliderEdit(props) {
 					{slidesPerViewPCAlert}
 					<TextControl
 						label={__(
-							'Number of display items ( Tablet )',
+							'Tablet',
 							'vk-blocks'
 						)}
 						value={slidesPerViewTablet}
@@ -258,7 +259,7 @@ export default function SliderEdit(props) {
 					{slidesPerViewTabletAlert}
 					<TextControl
 						label={__(
-							'Number of display items ( Mobile )',
+							'Mobile',
 							'vk-blocks'
 						)}
 						value={slidesPerViewMobile}
@@ -274,39 +275,35 @@ export default function SliderEdit(props) {
 					{slidesPerViewMobileAlert}
 				</BaseControl>
 				<BaseControl
-					label={__('Number of items to change at once', 'vk-blocks')}
-					id={`vk_slider-MultiItem`}
+					label={__('Number of items to change in a transition', 'vk-blocks')}
+					id={`vk_slider-slidesPerGroup`}
 				>
-					<ButtonGroup className="mb-3">
-						<Button
-							isSmall={true}
-							variant={
-								slidesPerGroup === 'one-by-one'
-									? 'primary'
-									: 'secondary'
-							}
-							onClick={() =>
-								setAttributes({ slidesPerGroup: 'one-by-one' })
-							}
-						>
-							{__('One by One', 'vk-blocks')}
-						</Button>
-						<Button
-							isSmall={true}
-							variant={
-								slidesPerGroup === 'slides-per-view'
-									? 'primary'
-									: 'secondary'
-							}
-							onClick={() =>
-								setAttributes({
-									slidesPerGroup: 'slides-per-view',
-								})
-							}
-						>
-							{__('Same as display item number', 'vk-blocks')}
-						</Button>
-					</ButtonGroup>
+					<RadioControl
+						selected={slidesPerGroup}
+						className={'vk-radioControl'}
+						options={[
+							{
+								label: __(
+									'One by One',
+									'vk-blocks'
+								),
+								value: 'one-by-one',
+							},
+							{
+								label: __(
+									'Same as the number of items to display',
+									'vk-blocks'
+								),
+								value: 'slides-per-view',
+							},
+
+						]}
+						onChange={(value) =>
+							setAttributes({
+								slidesPerGroup: value,
+							})
+						}
+						/>
 				</BaseControl>
 			</PanelBody>
 		);

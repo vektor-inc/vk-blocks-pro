@@ -1,7 +1,11 @@
 /* * * * * * * * * * * * * * * * * * * * * 
 Admin Setting Sidebar utility
 */
-
+.vk-radioControl {
+	.components-radio-control__option{
+		display: flex;
+	}
+}
 .font-size-11px {
 	font-size: 11px;
 }

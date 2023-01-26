@@ -203,16 +203,16 @@ export default function SliderEdit(props) {
 	};
 
 	// 複数枚表示設定
-	let multiImageSetting = '';
+	let multiItemSetting = '';
 	if (effect !== 'fade') {
-		multiImageSetting = (
+		multiItemSetting = (
 			<PanelBody
-				title={__('Multi-image Display Setting', 'vk-blocks')}
+				title={__('Multi-item Display Setting', 'vk-blocks')}
 				initialOpen={false}
 			>
 				<BaseControl
 					label={__('Number of Items to display per view', 'vk-blocks')}
-					id={`vk_slider-MultiImage`}
+					id={`vk_slider-MultiItem`}
 				>
 					<p className="font-size-11px">
 						{__(
@@ -265,8 +265,8 @@ export default function SliderEdit(props) {
 					{slidesPerViewMobileAlert}
 				</BaseControl>
 				<BaseControl
-					label={__('Number of items to move at once', 'vk-blocks')}
-					id={`vk_slider-MultiImage`}
+					label={__('Number of items to change at once', 'vk-blocks')}
+					id={`vk_slider-MultiItem`}
 				>
 					<ButtonGroup className="mb-3">
 						<Button
@@ -552,7 +552,7 @@ export default function SliderEdit(props) {
 						/>
 					</BaseControl>
 				</PanelBody>
-				{multiImageSetting}
+				{multiItemSetting}
 			</InspectorControls>
 			<div {...blockProps} data-vkb-slider={JSON.stringify(sliderData)}>
 				<div className={`swiper-wrapper`}>

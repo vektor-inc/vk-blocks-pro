@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2023-01-26T04:53:16+00:00\n"
-"PO-Revision-Date: 2023-01-26 13:55+0900\n"
+"POT-Creation-Date: 2023-01-26T05:31:40+00:00\n"
+"PO-Revision-Date: 2023-01-26 14:36+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -79,7 +79,7 @@ msgid "image"
 msgstr "画像"
 
 #: src/admin/block-manager/index.js:51
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:85
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:81
 #: inc/vk-blocks/admin/admin.php:81
 msgid "Block Manager Setting"
 msgstr "ブロックマネージャー設定"
@@ -153,6 +153,7 @@ msgstr "(例) %s-block-style"
 
 #: src/admin/custom-block-style/index.js:85
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:31
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:76
 #: inc/vk-blocks/admin/admin.php:76
 msgid "Custom Block Style Setting"
 msgstr "カスタムブロックスタイル設定"
@@ -409,7 +410,7 @@ msgstr "タブレット"
 msgid "Mobile"
 msgstr "モバイル"
 
-#: src/admin/margin.js:61 dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:82
+#: src/admin/margin.js:61 dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:78
 #: inc/vk-blocks/admin/admin.php:78
 msgid "Common Margin Setting"
 msgstr "共通余白設定"
@@ -2044,8 +2045,8 @@ msgid "repeat"
 msgstr "リピート"
 
 #: src/blocks/slider/edit.js:210
-msgid "Multi-image Display Setting"
-msgstr "複数の表示設定"
+msgid "Multi-item Display Setting"
+msgstr "アイテムの複数表示設定"
 
 #: src/blocks/slider/edit.js:214
 msgid "Number of Items to display per view"
@@ -2072,8 +2073,8 @@ msgid "Number of display items ( Mobile )"
 msgstr "表示アイテム数（ モバイル ）"
 
 #: src/blocks/slider/edit.js:268
-msgid "Number of items to move at once"
-msgstr "一度に動かすスライドアイテムの数"
+msgid "Number of items to change at once"
+msgstr "一度に変更するスライドアイテムの数"
 
 #: src/blocks/slider/edit.js:283
 msgid "One by One"
@@ -2966,16 +2967,12 @@ msgstr "ライセンスキー"
 msgid "Balloon Block Setting"
 msgstr "吹き出しブロック設定"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:76
-msgid "カスタムブロックスタイル設定"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:83
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:79
 #: inc/vk-blocks/admin/admin.php:79
 msgid "Load Separete Setting"
 msgstr "分割読み込み設定"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:100
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:96
 #: inc/vk-blocks/admin/admin.php:96
 msgid "Setting"
 msgstr "設定"

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-01-26T04:57:12+00:00\n"
+"POT-Creation-Date: 2023-01-26T05:36:53+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks\n"
@@ -70,7 +70,7 @@ msgid "image"
 msgstr ""
 
 #: src/admin/block-manager/index.js:51
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:85
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:81
 #: inc/vk-blocks/admin/admin.php:81
 msgid "Block Manager Setting"
 msgstr ""
@@ -142,6 +142,7 @@ msgstr ""
 
 #: src/admin/custom-block-style/index.js:85
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:31
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:76
 #: inc/vk-blocks/admin/admin.php:76
 msgid "Custom Block Style Setting"
 msgstr ""
@@ -397,7 +398,7 @@ msgid "Mobile"
 msgstr ""
 
 #: src/admin/margin.js:61
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:82
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:78
 #: inc/vk-blocks/admin/admin.php:78
 msgid "Common Margin Setting"
 msgstr ""
@@ -2081,7 +2082,7 @@ msgid "repeat"
 msgstr ""
 
 #: src/blocks/slider/edit.js:210
-msgid "Multi-image Display Setting"
+msgid "Multi-item Display Setting"
 msgstr ""
 
 #: src/blocks/slider/edit.js:214
@@ -2109,7 +2110,7 @@ msgid "Number of display items ( Mobile )"
 msgstr ""
 
 #: src/blocks/slider/edit.js:268
-msgid "Number of items to move at once"
+msgid "Number of items to change at once"
 msgstr ""
 
 #: src/blocks/slider/edit.js:283
@@ -2959,16 +2960,12 @@ msgstr ""
 msgid "Balloon Block Setting"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:76
-msgid "カスタムブロックスタイル設定"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:83
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:79
 #: inc/vk-blocks/admin/admin.php:79
 msgid "Load Separete Setting"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:100
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:96
 #: inc/vk-blocks/admin/admin.php:96
 msgid "Setting"
 msgstr ""

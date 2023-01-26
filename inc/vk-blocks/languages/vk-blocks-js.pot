@@ -2090,7 +2090,7 @@ msgid "repeat"
 msgstr ""
 
 #: src/blocks/slider/edit.js:210
-msgid "Multi-image Display Setting"
+msgid "Multi-item Display Setting"
 msgstr ""
 
 #: src/blocks/slider/edit.js:214
@@ -2118,7 +2118,7 @@ msgid "Number of display items ( Mobile )"
 msgstr ""
 
 #: src/blocks/slider/edit.js:268
-msgid "Number of items to move at once"
+msgid "Number of items to change at once"
 msgstr ""
 
 #: src/blocks/slider/edit.js:283

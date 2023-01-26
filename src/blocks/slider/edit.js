@@ -144,7 +144,10 @@ export default function SliderEdit(props) {
 	// １スライドあたりの表示枚数がスライダーの総枚数の約数出なかったときに表示するアラート
 	const slidesPerViewAlert = (
 		<div className="text-danger font-size-11px offset-mt-18px">
-			{__('Enter divisors for the number of placed slide items for each display size.', 'vk-blocks')}
+			{__(
+				'Enter divisors for the number of placed slide items for each display size.',
+				'vk-blocks'
+			)}
 		</div>
 	);
 
@@ -226,10 +229,7 @@ export default function SliderEdit(props) {
 						)}
 					</p>
 					<TextControl
-						label={__(
-							'PC',
-							'vk-blocks'
-						)}
+						label={__('PC', 'vk-blocks')}
 						value={slidesPerViewPC}
 						onChange={(value) => {
 							if (Number(value)) {
@@ -242,10 +242,7 @@ export default function SliderEdit(props) {
 					/>
 					{slidesPerViewPCAlert}
 					<TextControl
-						label={__(
-							'Tablet',
-							'vk-blocks'
-						)}
+						label={__('Tablet', 'vk-blocks')}
 						value={slidesPerViewTablet}
 						onChange={(value) => {
 							if (Number(value)) {
@@ -258,10 +255,7 @@ export default function SliderEdit(props) {
 					/>
 					{slidesPerViewTabletAlert}
 					<TextControl
-						label={__(
-							'Mobile',
-							'vk-blocks'
-						)}
+						label={__('Mobile', 'vk-blocks')}
 						value={slidesPerViewMobile}
 						onChange={(value) => {
 							if (Number(value)) {
@@ -275,7 +269,10 @@ export default function SliderEdit(props) {
 					{slidesPerViewMobileAlert}
 				</BaseControl>
 				<BaseControl
-					label={__('Number of items to change in a transition', 'vk-blocks')}
+					label={__(
+						'Number of items to change in a transition',
+						'vk-blocks'
+					)}
 					id={`vk_slider-slidesPerGroup`}
 				>
 					<RadioControl
@@ -283,10 +280,7 @@ export default function SliderEdit(props) {
 						className={'vk-radioControl'}
 						options={[
 							{
-								label: __(
-									'One by One',
-									'vk-blocks'
-								),
+								label: __('One by One', 'vk-blocks'),
 								value: 'one-by-one',
 							},
 							{
@@ -296,14 +290,13 @@ export default function SliderEdit(props) {
 								),
 								value: 'slides-per-view',
 							},
-
 						]}
 						onChange={(value) =>
 							setAttributes({
 								slidesPerGroup: value,
 							})
 						}
-						/>
+					/>
 				</BaseControl>
 			</PanelBody>
 		);

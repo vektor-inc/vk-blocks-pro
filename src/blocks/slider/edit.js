@@ -142,9 +142,9 @@ export default function SliderEdit(props) {
 
 	// １スライドあたりの表示枚数がスライダーの総枚数の約数出なかったときに表示するアラート
 	const slidesPerViewAlert = (
-		<div className="alert alert-danger">
+		<div className="text-danger font-size-11px offset-mt-18px">
 			{__(
-				'Specify a number that divides the number of slide items.',
+				'Enter in the divisors of the placed slide item.',
 				'vk-blocks'
 			)}
 		</div>
@@ -211,30 +211,34 @@ export default function SliderEdit(props) {
 				initialOpen={false}
 			>
 				<BaseControl
-					label={__('Display Images per View', 'vk-blocks')}
+					label={__('Number of Items to display per view', 'vk-blocks')}
 					id={`vk_slider-MultiImage`}
 				>
-					<div className="alert alert-danger">
+					<p className="font-size-11px">
 						{__(
-							'Specify a number that divides the number of slide items by the number of display items. If the number is not divisible, the slide behavior will be unnatural.',
+							'Enter in the divisors of the placed slide item.',
 							'vk-blocks'
 						)}
-					</div>
+						{__(
+							'If the number is not divisible, the slide behavior will be unnatural.',
+							'vk-blocks'
+						)}
+					</p>
 					<TextControl
-						label={__('Images per View for Mobile', 'vk-blocks')}
-						value={slidesPerViewMobile}
+						label={__('Number of display items ( PC )', 'vk-blocks')}
+						value={slidesPerViewPC}
 						onChange={(value) => {
 							if (Number(value)) {
 								setAttributes({
-									slidesPerViewMobile: parseInt(value, 10),
+									slidesPerViewPC: parseInt(value, 10),
 								});
 							}
 						}}
 						type={'number'}
 					/>
-					{slidesPerViewMobileAlert}
+					{slidesPerViewPCAlert}
 					<TextControl
-						label={__('Images per View for Tablet', 'vk-blocks')}
+						label={__('Number of display items ( Tablet )', 'vk-blocks')}
 						value={slidesPerViewTablet}
 						onChange={(value) => {
 							if (Number(value)) {
@@ -247,21 +251,21 @@ export default function SliderEdit(props) {
 					/>
 					{slidesPerViewTabletAlert}
 					<TextControl
-						label={__('Images per View for PC', 'vk-blocks')}
-						value={slidesPerViewPC}
+						label={__('Number of display items ( Mobile )', 'vk-blocks')}
+						value={slidesPerViewMobile}
 						onChange={(value) => {
 							if (Number(value)) {
 								setAttributes({
-									slidesPerViewPC: parseInt(value, 10),
+									slidesPerViewMobile: parseInt(value, 10),
 								});
 							}
 						}}
 						type={'number'}
 					/>
-					{slidesPerViewPCAlert}
+					{slidesPerViewMobileAlert}
 				</BaseControl>
 				<BaseControl
-					label={__('Move Views per Slide', 'vk-blocks')}
+					label={__('Number of items to move at once', 'vk-blocks')}
 					id={`vk_slider-MultiImage`}
 				>
 					<ButtonGroup className="mb-3">
@@ -291,7 +295,7 @@ export default function SliderEdit(props) {
 								})
 							}
 						>
-							{__('Display Images per View', 'vk-blocks')}
+							{__('Same as display item number', 'vk-blocks')}
 						</Button>
 					</ButtonGroup>
 				</BaseControl>

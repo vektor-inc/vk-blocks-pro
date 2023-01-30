@@ -543,7 +543,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 				),
 				'correct' => array(),
 			),
-			// 吹き出し
+			// 吹き出し画像設定
 			array(
 				'option_check_target' => 'balloon_meta_lists',
 				'option'  => array(

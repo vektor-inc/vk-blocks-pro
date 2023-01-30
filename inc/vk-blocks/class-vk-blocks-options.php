@@ -227,7 +227,7 @@ class VK_Blocks_Options {
 				),
 			),
 			'balloon_meta_lists'          => array(
-				'type' => 'array',
+				'type'  => 'array',
 				'items' => array(
 					'type'       => 'object',
 					'properties' => array(
@@ -236,7 +236,7 @@ class VK_Blocks_Options {
 						),
 						'src'  => array(
 							'type' => 'string',
-						)
+						),
 					),
 				),
 			),
@@ -335,7 +335,7 @@ class VK_Blocks_Options {
 		return apply_filters_deprecated(
 			'vk_blocks_image_number',
 			array( 15 ),
-			'VK Blocks 1.48.1',
+			'VK Blocks 1.51.0',
 			'',
 			__(
 				'吹き出し画像の数はフックを利用しなくても任意の数、登録出来るようになりました。',

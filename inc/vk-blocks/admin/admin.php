@@ -73,6 +73,7 @@ function vk_blocks_setting_page() {
 	$get_menu_html .= '<li><a href="#balloon-setting">' . __( 'Balloon Block Setting', 'vk-blocks' ) . '</a></li>';
 	if ( vk_blocks_is_pro() ) {
 		$get_menu_html .= '<li><a href="#custom-format-setting">' . __( 'Custom Format Setting', 'vk-blocks' ) . '</a></li>';
+		$get_menu_html .= '<li><a href="#custom-block-style-setting">' . __( 'Custom Block Style Setting', 'vk-blocks' ) . '</a></li>';
 	}
 	$get_menu_html .= '<li><a href="#margin-setting">' . __( 'Common Margin Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= '<li><a href="#load-separete-setting">' . __( 'Load Separete Setting', 'vk-blocks' ) . '</a></li>';

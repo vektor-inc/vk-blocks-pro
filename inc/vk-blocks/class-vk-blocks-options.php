@@ -206,8 +206,28 @@ class VK_Blocks_Options {
 			'disable_block_lists'         => array(
 				'type' => 'array',
 			),
-			'balloon_meta_lists'          => array(
+			'custom_block_style_lists'    => array(
 				'type'  => 'array',
+				'items' => array(
+					'type'       => 'object',
+					'properties' => array(
+						'block_name'            => array(
+							'type' => 'string',
+						),
+						'property_name'         => array(
+							'type' => 'string',
+						),
+						'property_label'        => array(
+							'type' => 'string',
+						),
+						'property_inline_style' => array(
+							'type' => 'string',
+						),
+					),
+				),
+			),
+			'balloon_meta_lists'          => array(
+				'type' => 'array',
 				'items' => array(
 					'type'       => 'object',
 					'properties' => array(
@@ -216,7 +236,7 @@ class VK_Blocks_Options {
 						),
 						'src'  => array(
 							'type' => 'string',
-						),
+						)
 					),
 				),
 			),
@@ -284,20 +304,8 @@ class VK_Blocks_Options {
 				),
 			),
 			'disable_block_lists'         => $activation ? self::get_deprecated_lists() : array(),
-			'balloon_meta_lists'          => array(
-				array(
-					'name' => null,
-					'src'  => null,
-				),
-				array(
-					'name' => null,
-					'src'  => null,
-				),
-				array(
-					'name' => null,
-					'src'  => null,
-				),
-			),
+			'custom_block_style_lists'    => array(),
+			'balloon_meta_lists'          => array(),
 		);
 		return $default;
 	}

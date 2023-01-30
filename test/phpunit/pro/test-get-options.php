@@ -105,20 +105,8 @@ class GetOptionsTest extends WP_UnitTestCase {
 						),
 					),
 					'disable_block_lists' => array(),
-					'balloon_meta_lists' => array(
-						array(
-							'name' => null,
-							'src'  => null,
-						),
-						array(
-							'name' => null,
-							'src'  => null,
-						),
-						array(
-							'name' => null,
-							'src'  => null,
-						),
-					),
+					'custom_block_style_lists' => array(),
+					'balloon_meta_lists' => array(),
 				),
 			),
 			// デフォルトの表示非表示調整 v0.44.13
@@ -475,6 +463,171 @@ class GetOptionsTest extends WP_UnitTestCase {
 						),
 					),
 				),
+				'correct' => array(),
+			),
+			// カスタムブロックスタイル
+			array(
+				'option_check_target' => 'custom_block_style_lists',
+				'option'  => array(
+					'display_vk_block_template' => 'hide',
+					'new_faq_accordion' => 'open',
+					'balloon_border_width' => 2,
+					'margin_unit' => 'px',
+					'margin_size' => array(
+						'xl' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'lg' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'md' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'sm' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'xs' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+					),
+					'load_separate_option' => true,
+					'vk_blocks_pro_license_key' => 'test_license_key',
+					'show_custom_css_editor_flag' => 'hide',
+					'custom_format_lists' => array(
+						array(
+							'title' => '書式設定1',
+							'font_weight_bold' => true,
+							'font_italic' => true,
+							'font_strikethrough' => true,
+							'color' => '#fff',
+							'background_color' => '#fff',
+							'is_active_highlighter' => true,
+							'highlighter' => '#fffd6b',
+							'font_size' => '#fff',
+							'nowrap' => true,
+							'class_name' => 'vk-format--1',
+							'custom_css' => '.vk-format--1 { border:1px red solid; }',
+						),
+						array(
+							'title' => '書式設定2',
+							'font_weight_bold' => true,
+							'font_italic' => true,
+							'font_strikethrough' => true,
+							'color' => '#fff',
+							'background_color' => '#fff',
+							'is_active_highlighter' => true,
+							'highlighter' => '#fffd6b',
+							'font_size' => '#fff',
+							'nowrap' => true,
+							'class_name' => 'vk-format--2',
+							'custom_css' => null,
+						),
+					),
+					'disable_block_lists' => array(
+						'vk-blocks/pr-blocks',
+						'vk-blocks/pr-content',
+						'vk-blocks/staff',
+						'vk-blocks/card',
+						'vk-blocks/icon-card',
+					),
+				),
+				'correct' => array(),
+			),
+			// 吹き出し
+			array(
+				'option_check_target' => 'balloon_meta_lists',
+				'option'  => array(
+					'display_vk_block_template' => 'hide',
+					'new_faq_accordion' => 'open',
+					'balloon_border_width' => 2,
+					'margin_unit' => 'px',
+					'margin_size' => array(
+						'xl' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'lg' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'md' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'sm' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'xs' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+					),
+					'load_separate_option' => true,
+					'vk_blocks_pro_license_key' => 'test_license_key',
+					'show_custom_css_editor_flag' => 'hide',
+					'custom_format_lists' => array(
+						array(
+							'title' => '書式設定1',
+							'font_weight_bold' => true,
+							'font_italic' => true,
+							'font_strikethrough' => true,
+							'color' => '#fff',
+							'background_color' => '#fff',
+							'is_active_highlighter' => true,
+							'highlighter' => '#fffd6b',
+							'font_size' => '#fff',
+							'nowrap' => true,
+							'class_name' => 'vk-format--1',
+							'custom_css' => '.vk-format--1 { border:1px red solid; }',
+						),
+						array(
+							'title' => '書式設定2',
+							'font_weight_bold' => true,
+							'font_italic' => true,
+							'font_strikethrough' => true,
+							'color' => '#fff',
+							'background_color' => '#fff',
+							'is_active_highlighter' => true,
+							'highlighter' => '#fffd6b',
+							'font_size' => '#fff',
+							'nowrap' => true,
+							'class_name' => 'vk-format--2',
+							'custom_css' => null,
+						),
+					),
+					'disable_block_lists' => array(
+						'vk-blocks/pr-blocks',
+						'vk-blocks/pr-content',
+						'vk-blocks/staff',
+						'vk-blocks/card',
+						'vk-blocks/icon-card',
+					),
+					'custom_block_style_lists' => array(
+						array(
+							'block_name'            => 'core/paragraph',
+							'property_name'         => 'vk-block-style-paragraph-1',
+							'property_label'        => '段落カスタムブロックスタイル１',
+							'property_inline_style' => '.vk-block-style-paragraph-1 { color:red; }',
+						),
+					),
+				),
+				'correct' => array(),
 			),
 			// 全てのオプション値を変更した時
 			array(
@@ -550,17 +703,17 @@ class GetOptionsTest extends WP_UnitTestCase {
 						'vk-blocks/card',
 						'vk-blocks/icon-card',
 					),
+					'custom_block_style_lists' => array(
+						array(
+							'block_name'            => 'core/paragraph',
+							'property_name'         => 'vk-block-style-paragraph-1',
+							'property_label'        => '段落カスタムブロックスタイル１',
+							'property_inline_style' => '.vk-block-style-paragraph-1 { color:red; }',
+						),
+					),
 					'balloon_meta_lists' => array(
 						array(
 							'name' => 'test-name-1',
-							'src'  => 'https://www.vektor-inc.co.jp/wp-content/uploads/2020/04/vws_logo_2020_og.png',
-						),
-						array(
-							'name' => null,
-							'src'  => 'https://www.vektor-inc.co.jp/wp-content/uploads/2020/04/vws_logo_2020_og.png',
-						),
-						array(
-							'name' => null,
 							'src'  => 'https://www.vektor-inc.co.jp/wp-content/uploads/2020/04/vws_logo_2020_og.png',
 						),
 					),
@@ -637,17 +790,17 @@ class GetOptionsTest extends WP_UnitTestCase {
 						'vk-blocks/card',
 						'vk-blocks/icon-card',
 					),
+					'custom_block_style_lists' => array(
+						array(
+							'block_name'            => 'core/paragraph',
+							'property_name'         => 'vk-block-style-paragraph-1',
+							'property_label'        => '段落カスタムブロックスタイル１',
+							'property_inline_style' => '.vk-block-style-paragraph-1 { color:red; }',
+						),
+					),
 					'balloon_meta_lists' => array(
 						array(
 							'name' => 'test-name-1',
-							'src'  => 'https://www.vektor-inc.co.jp/wp-content/uploads/2020/04/vws_logo_2020_og.png',
-						),
-						array(
-							'name' => null,
-							'src'  => 'https://www.vektor-inc.co.jp/wp-content/uploads/2020/04/vws_logo_2020_og.png',
-						),
-						array(
-							'name' => null,
 							'src'  => 'https://www.vektor-inc.co.jp/wp-content/uploads/2020/04/vws_logo_2020_og.png',
 						),
 					),

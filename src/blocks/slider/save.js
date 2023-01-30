@@ -1,7 +1,7 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 export default function save({ attributes }) {
-	let {
+	const {
 		pagination,
 		blockId,
 		width,
@@ -11,19 +11,12 @@ export default function save({ attributes }) {
 		loop,
 		effect,
 		speed,
-		slidesPerView,
+		slidesPerViewMobile,
+		slidesPerViewTablet,
+		slidesPerViewPC,
 		slidesPerGroup,
 		navigationPosition,
 	} = attributes;
-
-	// slidesPerView 互換設定
-	if (slidesPerView === undefined) {
-		slidesPerView = 1;
-	}
-	// slidesPerGroup 互換設定
-	if (slidesPerGroup === undefined) {
-		slidesPerGroup = 1;
-	}
 
 	const sliderData = {
 		autoPlay,
@@ -35,7 +28,9 @@ export default function save({ attributes }) {
 		loop,
 		effect,
 		speed,
-		slidesPerView,
+		slidesPerViewMobile,
+		slidesPerViewTablet,
+		slidesPerViewPC,
 		slidesPerGroup,
 	};
 
@@ -73,7 +68,7 @@ export default function save({ attributes }) {
 	}
 
 	const blockProps = useBlockProps.save({
-		className: `swiper-container vk_slider vk_slider_${blockId}${alignClass}`,
+		className: `swiper swiper-container vk_slider vk_slider_${blockId}${alignClass}`,
 	});
 
 	return (

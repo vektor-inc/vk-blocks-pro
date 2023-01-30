@@ -54,12 +54,12 @@ export const DeleteButton = (props) => {
 						),
 						balloonTitle
 					)}
-					className="custom_format_delete_modal"
+					className="balloon_image_delete_modal"
 					onRequestClose={closeModal}
 					isDismissible={false}
 				>
-					<div className="custom_format_delete_modal_content">
-						<div className="custom_format_delete_modal_button_area">
+					<div className="balloon_image_delete_modal_content">
+						<div className="balloon_image_delete_modal_button_area">
 							<Flex justify="flex-end">
 								<FlexItem>
 									<Button isSecondary onClick={closeModal}>

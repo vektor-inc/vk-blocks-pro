@@ -221,5 +221,4 @@ class ArrayMergeTest extends WP_UnitTestCase {
 
 		}
 	}
-
 }

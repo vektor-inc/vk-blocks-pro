@@ -27,7 +27,7 @@ export const AddButton = () => {
 	};
 
 	return (
-		<div className="custom_format_lists_item_add">
+		<div className="balloon_image_lists_item_add">
 			<Button
 				className="add-item-button"
 				icon={plusCircle}
@@ -37,7 +37,7 @@ export const AddButton = () => {
 			>
 				{__(
 					'吹き出し画像設定を追加',
-					// 'Added callout image setting',
+					// 'Added balloon image setting',
 					'vk-blocks'
 				)}
 			</Button>

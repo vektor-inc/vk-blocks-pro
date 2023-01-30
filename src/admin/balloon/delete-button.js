@@ -28,11 +28,7 @@ export const DeleteButton = (props) => {
 
 	const balloonTitle = !!balloonMetaListObj.name
 		? balloonMetaListObj.name
-		: __(
-				'吹き出し画像設定',
-				// 'Custom Format',
-				'vk-blocks'
-		  );
+		: __('Balloon Image Setting', 'vk-blocks');
 
 	return (
 		<>
@@ -47,11 +43,7 @@ export const DeleteButton = (props) => {
 				<Modal
 					title={sprintf(
 						// translators: Would you like to delete %s
-						__(
-							'%sを削除しますか？',
-							// 'Would you like to delete %s?',
-							'vk-blocks'
-						),
+						__('Would you like to delete %s?', 'vk-blocks'),
 						balloonTitle
 					)}
 					className="balloon_image_delete_modal"

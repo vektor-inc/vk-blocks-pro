@@ -8,7 +8,7 @@ export const AdvancedMediaUpload = (props) => {
 	const { schema, clientId, setAttributes, attributes } = props;
 
 	const deleteImgBtn = () => {
-		dispatch('core/editor').updateBlockAttributes(clientId, {
+		dispatch('core/block-editor').updateBlockAttributes(clientId, {
 			[schema]: null,
 		});
 	};

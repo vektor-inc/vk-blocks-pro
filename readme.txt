@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.9
 Tested up to: 6.1.0
-Stable tag: 1.48.1.1
+Stable tag: 1.50.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -65,6 +65,9 @@ e.g.
 == Changelog ==
 
 [ Improvement ][ Balloon ] Improvement to allow any number of registrations in admin.
+
+= 1.50.１ =
+[ Other ] CSS Optimize ( Tree Shaking ) Library update
 
 = 1.50.0 =
 [ Add Function ][ Slider ] Add Slider per view Setting for Mobile, Tablet, PC.

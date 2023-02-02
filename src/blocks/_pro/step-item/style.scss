@@ -25,6 +25,12 @@
 			& > *:last-child{
 				margin-bottom:var(--vk-margin-md);
 			}
+			//親のブロックがdisplay:grid;になっており、 
+			//デザイン設定>見出しデザインで設定すると、marginのleftとrightに auto が入り中央に寄ってしまう為、unsetを追加
+			h1,h2,h3,h4,h5,h6{
+				margin-left:unset;
+				margin-right: unset;
+			}
 		}
 		&_content > p:first-child {
 			// 見出しのキャプション的な使われ方を想定して余白を少なくしている

@@ -63,7 +63,7 @@ export default function CardItemEdit(props) {
 	}
 
 	const deleteImgBtn = () => {
-		dispatch('core/editor').updateBlockAttributes(clientId, {
+		dispatch('core/block-editor').updateBlockAttributes(clientId, {
 			image: null,
 		});
 	};

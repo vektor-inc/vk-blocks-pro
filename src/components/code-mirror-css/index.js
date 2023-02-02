@@ -11,6 +11,11 @@ import CodeMirror from '@uiw/react-codemirror';
 import { css } from '@codemirror/lang-css';
 import { EditorView } from '@codemirror/view';
 
+/**
+ * Internal dependencies
+ */
+import { stripHTML } from '@vkblocks/utils/strip-html';
+
 export const CodeMirrorCss = (props) => {
 	const {
 		id = 'vk-custom-css-code-mirror',
@@ -35,8 +40,7 @@ export const CodeMirrorCss = (props) => {
 				extensions={[css(), EditorView.lineWrapping]}
 				value={value}
 				onChange={(newValue) => {
-					newValue = newValue.replace(/(<([^>]+)>)/gi, '');
-					onChange(newValue);
+					onChange(stripHTML(newValue));
 				}}
 				style={style}
 			/>

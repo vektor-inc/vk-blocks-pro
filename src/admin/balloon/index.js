@@ -13,6 +13,7 @@ import noImage from '@vkblocks/admin/balloon/images/no-image.png';
 import { AdminContext } from '@vkblocks/admin/index';
 import { AddButton } from '@vkblocks/admin/balloon/add-button';
 import { DeleteButton } from '@vkblocks/admin/balloon/delete-button';
+import { stripHTML } from '@vkblocks/utils/strip-html';
 
 export default function AdminBalloon() {
 	const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
@@ -166,7 +167,11 @@ export default function AdminBalloon() {
 										className="balloonIconList_name_input"
 										name={`vk_blocks_balloon_meta[default_icons][${index}][name]`}
 										onChange={(value) =>
-											onChange('name', value, index)
+											onChange(
+												'name',
+												stripHTML(value),
+												index
+											)
 										}
 										value={balloonMetaListObj.name ?? ''}
 									/>

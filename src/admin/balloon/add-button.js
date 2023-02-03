@@ -35,10 +35,7 @@ export const AddButton = () => {
 				variant="secondary"
 				onClick={addItem}
 			>
-				{__(
-					'Added balloon image setting',
-					'vk-blocks'
-				)}
+				{__('Added balloon image setting', 'vk-blocks')}
 			</Button>
 		</div>
 	);

@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Improvement ][ Balloon ] Improvement to allow any number of registrations in admin.
+
 = 1.50.１ =
 [ Other ] CSS Optimize ( Tree Shaking ) Library update
 

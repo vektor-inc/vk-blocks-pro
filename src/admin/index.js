@@ -24,9 +24,6 @@ export default function VKBlocksAdmin() {
 	const [vkBlocksOption, setVkBlocksOption] = useState(
 		vkBlocksObject.options
 	);
-	const [vkBlocksBalloonMeta, setVkBlocksBalloonMeta] = useState(
-		vkBlocksObject.balloonMeta
-	);
 
 	return (
 		<>
@@ -35,8 +32,6 @@ export default function VKBlocksAdmin() {
 				value={{
 					vkBlocksOption,
 					setVkBlocksOption,
-					vkBlocksBalloonMeta,
-					setVkBlocksBalloonMeta,
 				}}
 			>
 				{vkBlocksObject.isLicenseSetting && <AdminLicense />}
@@ -51,7 +46,6 @@ export default function VKBlocksAdmin() {
 				<SaveButton
 					classOption={'sticky'}
 					vkBlocksOption={vkBlocksOption}
-					vkBlocksBalloonMeta={vkBlocksBalloonMeta}
 				/>
 			</AdminContext.Provider>
 		</>

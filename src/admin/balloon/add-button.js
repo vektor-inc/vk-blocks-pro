@@ -35,11 +35,7 @@ export const AddButton = () => {
 				variant="secondary"
 				onClick={addItem}
 			>
-				{__(
-					'吹き出し画像設定を追加',
-					// 'Added balloon image setting',
-					'vk-blocks'
-				)}
+				{__('Added balloon image setting', 'vk-blocks')}
 			</Button>
 		</div>
 	);

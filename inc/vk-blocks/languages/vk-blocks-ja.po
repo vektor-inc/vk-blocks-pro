@@ -23,6 +23,10 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 
+#: src/admin/balloon/add-button.js:38
+msgid "Added balloon image setting"
+msgstr "吹き出し画像設定を追加"
+
 #: src/admin/balloon/index.js:206
 msgid "Select"
 msgstr "選択"

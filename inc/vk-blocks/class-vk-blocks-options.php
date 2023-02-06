@@ -327,25 +327,6 @@ class VK_Blocks_Options {
 	}
 
 	/**
-	 * 吹き出し数(非推奨フック)
-	 *
-	 * @return number
-	 */
-	public static function balloon_image_number() {
-		return apply_filters_deprecated(
-			'vk_blocks_image_number',
-			array( 15 ),
-			'VK Blocks 1.51.0',
-			'',
-			__(
-				'吹き出し画像の数はフックを利用しなくても任意の数、登録出来るようになりました。',
-				// 'Any number of callout images can be registered without using hooks.',
-				'vk-blocks'
-			)
-		);
-	}
-
-	/**
 	 * Get vk_blocks_options
 	 *
 	 * @return array

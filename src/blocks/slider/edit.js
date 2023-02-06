@@ -231,39 +231,33 @@ export default function SliderEdit(props) {
 					<TextControl
 						label={__('PC', 'vk-blocks')}
 						value={slidesPerViewPC}
-						onChange={(value) => {
-							if (Number(value)) {
-								setAttributes({
-									slidesPerViewPC: parseInt(value, 10),
-								});
-							}
-						}}
+						onChange={(value) =>
+							setAttributes({
+								slidesPerViewPC: Number(value),
+							})
+						}
 						type={'number'}
 					/>
 					{slidesPerViewPCAlert}
 					<TextControl
 						label={__('Tablet', 'vk-blocks')}
 						value={slidesPerViewTablet}
-						onChange={(value) => {
-							if (Number(value)) {
-								setAttributes({
-									slidesPerViewTablet: parseInt(value, 10),
-								});
-							}
-						}}
+						onChange={(value) =>
+							setAttributes({
+								slidesPerViewTablet: Number(value),
+							})
+						}
 						type={'number'}
 					/>
 					{slidesPerViewTabletAlert}
 					<TextControl
 						label={__('Mobile', 'vk-blocks')}
 						value={slidesPerViewMobile}
-						onChange={(value) => {
-							if (Number(value)) {
-								setAttributes({
-									slidesPerViewMobile: parseInt(value, 10),
-								});
-							}
-						}}
+						onChange={(value) =>
+							setAttributes({
+								slidesPerViewMobile: Number(value),
+							})
+						}
 						type={'number'}
 					/>
 					{slidesPerViewMobileAlert}
@@ -472,11 +466,9 @@ export default function SliderEdit(props) {
 						<TextControl
 							value={autoPlayDelay}
 							onChange={(value) => {
-								if (Number(value)) {
-									setAttributes({
-										autoPlayDelay: parseInt(value, 10),
-									});
-								}
+								setAttributes({
+									autoPlayDelay: Number(value),
+								});
 							}}
 							type={'number'}
 						/>
@@ -487,13 +479,11 @@ export default function SliderEdit(props) {
 					>
 						<TextControl
 							value={speed}
-							onChange={(value) => {
-								if (Number(value)) {
-									setAttributes({
-										speed: parseInt(value, 10),
-									});
-								}
-							}}
+							onChange={(value) =>
+								setAttributes({
+									speed: Number(value),
+								})
+							}
 							type={'number'}
 						/>
 					</BaseControl>

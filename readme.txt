@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Slider ] Allow 0 to be entered in numeric form.
 [ Improvement ][ Balloon ] Improvement to allow any number of registrations in admin.
 
 = 1.50.１ =

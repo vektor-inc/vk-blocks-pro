@@ -246,6 +246,7 @@ export default function SliderEdit(props) {
 						}
 						type={'number'}
 						min={0}
+						steps={0.1}
 					/>
 					{slidesPerViewPCAlert}
 					<TextControl
@@ -258,6 +259,7 @@ export default function SliderEdit(props) {
 						}
 						type={'number'}
 						min={0}
+						steps={0.1}
 					/>
 					{slidesPerViewTabletAlert}
 					<TextControl
@@ -270,6 +272,7 @@ export default function SliderEdit(props) {
 						}
 						type={'number'}
 						min={0}
+						steps={0.1}
 					/>
 					{slidesPerViewMobileAlert}
 				</BaseControl>

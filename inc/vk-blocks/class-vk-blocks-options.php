@@ -54,6 +54,12 @@ class VK_Blocks_Options {
 		if ( ! empty( $old_balloon_options ) ) {
 			delete_option( 'vk_blocks_balloon_meta' );
 		}
+
+		// 使わなくなったdisplay_vk_block_templateを削除する
+		if ( ! empty( $options['display_vk_block_template'] ) ) {
+			unset($options['display_vk_block_template']);
+			update_option( 'vk_blocks_options', $options );
+		}
 	}
 
 	/**
@@ -148,9 +154,6 @@ class VK_Blocks_Options {
 				'type' => 'boolean',
 			),
 			'vk_blocks_pro_license_key'   => array(
-				'type' => 'string',
-			),
-			'display_vk_block_template'   => array(
 				'type' => 'string',
 			),
 			'new_faq_accordion'           => array(
@@ -284,7 +287,6 @@ class VK_Blocks_Options {
 			),
 			'load_separate_option'        => false,
 			'vk_blocks_pro_license_key'   => null,
-			'display_vk_block_template'   => 'display',
 			'new_faq_accordion'           => 'disable',
 			'show_custom_css_editor_flag' => 'show',
 			'custom_format_lists'         => array(

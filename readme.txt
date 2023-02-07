@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Improvement ] Removed unused display_vk_block_template option value.
 [ Improvement ][ Balloon ] Improvement to allow any number of registrations in admin.
 
 = 1.50.１ =

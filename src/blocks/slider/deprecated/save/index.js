@@ -144,7 +144,7 @@ const blockAttributes8 = {
 		type: 'number',
 		default: 1
 	},
-	slidesPerViewTable: {
+	slidesPerViewTablet: {
 		type: 'number',
 		default: 1
 	},

@@ -33,16 +33,16 @@ const generateHeightCss = (attributes, cssSelector = '') => {
 
 
 export default function SliderHook( {el,attributes}) {
-    const cssSelector = `.vk_slider_${attributes.blockId},`;
-    const cssTag = generateHeightCss(attributes, cssSelector);
-    return (
-        <>
-            {el}
-            {(() => {
-                if (cssTag) {
-                    return <style type="text/css">{cssTag}</style>;
-                }
-            })()}
-        </>
-    );
+	const cssSelector = `.vk_slider_${attributes.blockId},`;
+	const cssTag = generateHeightCss(attributes, cssSelector);
+	return (
+		<>
+			{el}
+			{(() => {
+				if (cssTag) {
+					return <style type="text/css">{cssTag}</style>;
+				}
+			})()}
+		</>
+	);
 }

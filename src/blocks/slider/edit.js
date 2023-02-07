@@ -18,6 +18,7 @@ import {
 	Button,
 	SelectControl,
 	RangeControl,
+	ToggleControl,
 } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
@@ -41,6 +42,7 @@ export default function SliderEdit(props) {
 		slidesPerViewTablet,
 		slidesPerViewPC,
 		slidesPerGroup,
+		centeredSlides,
 		navigationPosition,
 		blockId,
 	} = attributes;
@@ -130,6 +132,11 @@ export default function SliderEdit(props) {
 		if (navigationPosition === undefined) {
 			setAttributes({ navigationPosition: 'mobile-bottom' });
 		}
+
+		// 1.50.1 時点から centeredSlides が追加されたので互換設定を追加
+		if (centeredSlides === undefined) {
+			setAttributes({ centeredSlides: false });
+		}
 	}, [clientId]);
 
 	const containerClass = ' vk_grid-column';
@@ -201,6 +208,7 @@ export default function SliderEdit(props) {
 		slidesPerViewTablet,
 		slidesPerViewPC,
 		slidesPerGroup,
+		centeredSlides,
 	};
 
 	// 複数枚表示設定
@@ -237,6 +245,7 @@ export default function SliderEdit(props) {
 							})
 						}
 						type={'number'}
+						min={0}
 					/>
 					{slidesPerViewPCAlert}
 					<TextControl
@@ -248,6 +257,7 @@ export default function SliderEdit(props) {
 							})
 						}
 						type={'number'}
+						min={0}
 					/>
 					{slidesPerViewTabletAlert}
 					<TextControl
@@ -259,6 +269,7 @@ export default function SliderEdit(props) {
 							})
 						}
 						type={'number'}
+						min={0}
 					/>
 					{slidesPerViewMobileAlert}
 				</BaseControl>
@@ -289,6 +300,18 @@ export default function SliderEdit(props) {
 							setAttributes({
 								slidesPerGroup: value,
 							})
+						}
+					/>
+				</BaseControl>
+				<BaseControl
+					label={__('Slide alignment settings', 'vk-blocks')}
+					id={`vk_slider-slidesPerGroup`}
+				>
+					<ToggleControl
+						label={__('Center the current slide', 'vk-blocks')}
+						checked={centeredSlides}
+						onChange={(checked) =>
+							setAttributes({ centeredSlides: checked })
 						}
 					/>
 				</BaseControl>
@@ -471,6 +494,7 @@ export default function SliderEdit(props) {
 								});
 							}}
 							type={'number'}
+							min={0}
 						/>
 					</BaseControl>
 					<BaseControl
@@ -485,6 +509,7 @@ export default function SliderEdit(props) {
 								})
 							}
 							type={'number'}
+							min={0}
 						/>
 					</BaseControl>
 					<BaseControl

@@ -18,7 +18,6 @@ import {
 	Button,
 	SelectControl,
 	RangeControl,
-	ToggleControl,
 } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
@@ -42,7 +41,6 @@ export default function SliderEdit(props) {
 		slidesPerViewTablet,
 		slidesPerViewPC,
 		slidesPerGroup,
-		centeredSlides,
 		navigationPosition,
 		blockId,
 	} = attributes;
@@ -132,11 +130,6 @@ export default function SliderEdit(props) {
 		if (navigationPosition === undefined) {
 			setAttributes({ navigationPosition: 'mobile-bottom' });
 		}
-
-		// 1.50.1 時点から centeredSlides が追加されたので互換設定を追加
-		if (centeredSlides === undefined) {
-			setAttributes({ centeredSlides: false });
-		}
 	}, [clientId]);
 
 	const containerClass = ' vk_grid-column';
@@ -208,7 +201,6 @@ export default function SliderEdit(props) {
 		slidesPerViewTablet,
 		slidesPerViewPC,
 		slidesPerGroup,
-		centeredSlides,
 	};
 
 	// 複数枚表示設定
@@ -237,39 +229,66 @@ export default function SliderEdit(props) {
 						)}
 					</p>
 					<TextControl
+						type={'number'}
 						label={__('PC', 'vk-blocks')}
 						value={slidesPerViewPC}
-						onChange={(value) =>
-							setAttributes({
-								slidesPerViewPC: Number(value),
-							})
-						}
-						type={'number'}
-						min={0}
+						onChange={(value) => {
+							if (Number(value) === NaN || Number(value) < 1) {
+								setAttributes({
+									slidesPerViewPC: 1,
+								});
+							} else {
+								setAttributes({
+									slidesPerViewPC: parseInt(
+										Number(value),
+										10
+									),
+								});
+							}
+						}}
+						min={1}
 					/>
 					{slidesPerViewPCAlert}
 					<TextControl
+						type={'number'}
 						label={__('Tablet', 'vk-blocks')}
 						value={slidesPerViewTablet}
-						onChange={(value) =>
-							setAttributes({
-								slidesPerViewTablet: Number(value),
-							})
-						}
-						type={'number'}
-						min={0}
+						onChange={(value) => {
+							if (Number(value) === NaN || Number(value) < 1) {
+								setAttributes({
+									slidesPerViewTablet: 1,
+								});
+							} else {
+								setAttributes({
+									slidesPerViewTablet: parseInt(
+										Number(value),
+										10
+									),
+								});
+							}
+						}}
+						min={1}
 					/>
 					{slidesPerViewTabletAlert}
 					<TextControl
+						type={'number'}
 						label={__('Mobile', 'vk-blocks')}
 						value={slidesPerViewMobile}
-						onChange={(value) =>
-							setAttributes({
-								slidesPerViewMobile: Number(value),
-							})
-						}
-						type={'number'}
-						min={0}
+						onChange={(value) => {
+							if (Number(value) === NaN || Number(value) < 1) {
+								setAttributes({
+									slidesPerViewMobile: 1,
+								});
+							} else {
+								setAttributes({
+									slidesPerViewMobile: parseInt(
+										Number(value),
+										10
+									),
+								});
+							}
+						}}
+						min={1}
 					/>
 					{slidesPerViewMobileAlert}
 				</BaseControl>
@@ -300,18 +319,6 @@ export default function SliderEdit(props) {
 							setAttributes({
 								slidesPerGroup: value,
 							})
-						}
-					/>
-				</BaseControl>
-				<BaseControl
-					label={__('Slide alignment settings', 'vk-blocks')}
-					id={`vk_slider-slidesPerGroup`}
-				>
-					<ToggleControl
-						label={__('Center the current slide', 'vk-blocks')}
-						checked={centeredSlides}
-						onChange={(checked) =>
-							setAttributes({ centeredSlides: checked })
 						}
 					/>
 				</BaseControl>
@@ -395,9 +402,19 @@ export default function SliderEdit(props) {
 						<RangeControl
 							label={__('PC', 'vk-blocks')}
 							value={pc}
-							onChange={(value) =>
-								setAttributes({ pc: parseFloat(value) })
-							}
+							onChange={(value) => {
+								if (
+									value === null ||
+									value === '' ||
+									value === undefined
+								) {
+									setAttributes({ pc: null });
+								} else {
+									setAttributes({
+										pc: parseFloat(Number(value)),
+									});
+								}
+							}}
 							min={0}
 							max={1000}
 							allowReset={true}
@@ -406,9 +423,19 @@ export default function SliderEdit(props) {
 						<RangeControl
 							label={__('Tablet', 'vk-blocks')}
 							value={tablet}
-							onChange={(value) =>
-								setAttributes({ tablet: parseFloat(value) })
-							}
+							onChange={(value) => {
+								if (
+									value === null ||
+									value === '' ||
+									value === undefined
+								) {
+									setAttributes({ tablet: null });
+								} else {
+									setAttributes({
+										tablet: parseFloat(Number(value)),
+									});
+								}
+							}}
 							min={0}
 							max={1000}
 							allowReset={true}
@@ -417,9 +444,19 @@ export default function SliderEdit(props) {
 						<RangeControl
 							label={__('Mobile', 'vk-blocks')}
 							value={mobile}
-							onChange={(value) =>
-								setAttributes({ mobile: parseFloat(value) })
-							}
+							onChange={(value) => {
+								if (
+									value === null ||
+									value === '' ||
+									value === undefined
+								) {
+									setAttributes({ mobile: null });
+								} else {
+									setAttributes({
+										mobile: parseFloat(Number(value)),
+									});
+								}
+							}}
 							min={0}
 							max={1000}
 							allowReset={true}
@@ -487,13 +524,25 @@ export default function SliderEdit(props) {
 						id={`vk_slider-autoPlay`}
 					>
 						<TextControl
+							type={'number'}
 							value={autoPlayDelay}
 							onChange={(value) => {
-								setAttributes({
-									autoPlayDelay: Number(value),
-								});
+								if (
+									Number(value) === NaN &&
+									Number(value) < 0
+								) {
+									setAttributes({
+										autoPlayDelay: 0,
+									});
+								} else {
+									setAttributes({
+										autoPlayDelay: parseInt(
+											Number(value),
+											10
+										),
+									});
+								}
 							}}
-							type={'number'}
 							min={0}
 						/>
 					</BaseControl>
@@ -502,13 +551,22 @@ export default function SliderEdit(props) {
 						id={`vk_slider-changeSpeed`}
 					>
 						<TextControl
-							value={speed}
-							onChange={(value) =>
-								setAttributes({
-									speed: Number(value),
-								})
-							}
 							type={'number'}
+							value={speed}
+							onChange={(value) => {
+								if (
+									Number(value) === NaN &&
+									Number(value) < 0
+								) {
+									setAttributes({
+										speed: 0,
+									});
+								} else {
+									setAttributes({
+										speed: parseInt(Number(value), 10),
+									});
+								}
+							}}
 							min={0}
 						/>
 					</BaseControl>

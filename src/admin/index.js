@@ -1,7 +1,12 @@
 /**
  * WordPress dependencies
  */
-import { render, createRoot,useState, createContext } from '@wordpress/element';
+import {
+	render,
+	createRoot,
+	useState,
+	createContext,
+} from '@wordpress/element';
 
 /**
  * Internal dependencies

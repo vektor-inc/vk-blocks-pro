@@ -55,9 +55,6 @@ document.defaultView.addEventListener('load', function () {
 			}
 
 			if (attributes.effect !== 'fade') {
-				if (attributes.centeredSlides !== undefined) {
-					SwiperSetting += `centeredSlides: ${attributes.centeredSlides},`;
-				}
 				if (attributes.slidesPerViewMobile) {
 					SwiperSetting += `slidesPerView: ${attributes.slidesPerViewMobile},`;
 					if (

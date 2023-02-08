@@ -224,15 +224,15 @@ export default function Edit(props) {
 						}}
 						renderContent={(params) => {
 							return (
-								<div className="block-editor-url-input__button block-editor-link-control">
-									<form
-										className="block-editor-link-control__search-input-wrapper"
-										onSubmit={() => {
-											params.onClose();
-										}}
-									>
-										<div className="block-editor-link-control__search-input">
+								<form
+									onSubmit={() => {
+										params.onClose();
+									}}
+								>
+									<div className="vk-block-editor-url-input-wrapper">
+										<div className="block-editor-url-input">
 											<URLInput
+												__nextHasNoMarginBottom
 												value={url}
 												onChange={(value) => {
 													setAttributes({
@@ -240,28 +240,26 @@ export default function Edit(props) {
 													});
 												}}
 											/>
-											<CheckboxControl
-												label={__(
-													'Open link new tab.',
-													'vk-blocks'
-												)}
-												checked={urlOpenType}
-												onChange={(checked) =>
-													setAttributes({
-														urlOpenType: checked,
-													})
-												}
-											/>
-											<div className="block-editor-link-control__search-actions">
-												<Button
-													icon={keyboardReturn}
-													label={__('Submit')}
-													type="submit"
-												/>
-											</div>
 										</div>
-									</form>
-								</div>
+										<Button
+											icon={keyboardReturn}
+											label={__('Submit')}
+											type="submit"
+										/>
+									</div>
+									<CheckboxControl
+										label={__(
+											'Open link new tab.',
+											'vk-blocks'
+										)}
+										checked={urlOpenType}
+										onChange={(checked) =>
+											setAttributes({
+												urlOpenType: checked,
+											})
+										}
+									/>
+								</form>
 							);
 						}}
 					/>

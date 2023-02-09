@@ -709,6 +709,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'property_name'         => 'vk-block-style-paragraph-1',
 							'property_label'        => '段落カスタムブロックスタイル１',
 							'property_inline_style' => '.vk-block-style-paragraph-1 { color:red; }',
+							'property_transform_inline_style' => '.editor-styles-wrapper .vk-block-style-paragraph-1 { color:red; }',
 						),
 					),
 					'balloon_meta_lists' => array(
@@ -796,6 +797,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'property_name'         => 'vk-block-style-paragraph-1',
 							'property_label'        => '段落カスタムブロックスタイル１',
 							'property_inline_style' => '.vk-block-style-paragraph-1 { color:red; }',
+							'property_transform_inline_style' => '.editor-styles-wrapper .vk-block-style-paragraph-1 { color:red; }',
 						),
 					),
 					'balloon_meta_lists' => array(

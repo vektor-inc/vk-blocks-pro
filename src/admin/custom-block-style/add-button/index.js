@@ -25,6 +25,7 @@ const CUSTOM_BLOCK_STYLE_DEFAULT_OBJ = {
 	property_name: '',
 	property_label: '',
 	property_inline_style: '',
+	property_transform_inline_style: '',
 };
 
 export const AddButton = ({

@@ -211,16 +211,19 @@ class VK_Blocks_Options {
 				'items' => array(
 					'type'       => 'object',
 					'properties' => array(
-						'block_name'            => array(
+						'block_name'                      => array(
 							'type' => 'string',
 						),
-						'property_name'         => array(
+						'property_name'                   => array(
 							'type' => 'string',
 						),
-						'property_label'        => array(
+						'property_label'                  => array(
 							'type' => 'string',
 						),
-						'property_inline_style' => array(
+						'property_inline_style'           => array(
+							'type' => 'string',
+						),
+						'property_transform_inline_style' => array(
 							'type' => 'string',
 						),
 					),

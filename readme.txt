@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ][ Outer( Pro ) ] When the block is made full width, the class name of "alignfull" will be given.
 [ Improvement ][ Balloon ] Improvement to allow any number of registrations in admin.
 
 = 1.50.１ =

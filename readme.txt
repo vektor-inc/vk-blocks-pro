@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.9
 Tested up to: 6.1.0
-Stable tag: 1.50.0.1
+Stable tag: 1.51.0.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+= 1.51.0 =
 [ Improvement ][ Balloon ] Improvement to allow any number of registrations in admin.
 
 = 1.50.１ =

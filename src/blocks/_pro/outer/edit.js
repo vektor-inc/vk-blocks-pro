@@ -150,9 +150,10 @@ export default function OuterEdit(props) {
 
 	//幅のクラス切り替え
 	// eslint-disable-next-line prefer-const
-	 const classWidth = outerWidth === 'full' || outerWidth === 'wide'
-		? `vk_outer-width-${outerWidth} align${outerWidth}`
-		: 'vk_outer-width-normal';
+	const classWidth =
+		outerWidth === 'full' || outerWidth === 'wide'
+			? `vk_outer-width-${outerWidth} align${outerWidth}`
+			: 'vk_outer-width-normal';
 
 	//classBgPositionのクラス切り替え
 	if (bgPosition === 'parallax') {

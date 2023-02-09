@@ -5,7 +5,6 @@ import {
 	InnerBlocks,
 	useBlockProps,
 } from '@wordpress/block-editor';
-import apiFetch from '@wordpress/api-fetch';
 import {
 	ButtonGroup,
 	PanelBody,
@@ -14,10 +13,14 @@ import {
 	BaseControl,
 	ToggleControl,
 } from '@wordpress/components';
-import { useState, useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
+
+/**
+ * Internal dependencies
+ */
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
+/*globals vk_blocks_params */
 
 export default function BalloonEdit(props) {
 	const { attributes, setAttributes } = props;
@@ -35,54 +38,40 @@ export default function BalloonEdit(props) {
 		balloonImageType,
 		balloonAnimation,
 	} = attributes;
-	const [blockMeta, setBlockMeta] = useState(null);
 
-	useEffect(() => {
-		apiFetch({
-			path: '/vk-blocks/v1/block-meta/balloon/',
-			method: 'GET',
-			parse: true,
-		}).then((result) => {
-			setBlockMeta(result);
-		});
-	}, []);
-
+	const blockMeta = vk_blocks_params.balloon_meta_lists;
 	let defautIconButtons;
-	if (blockMeta && blockMeta.default_icons) {
-		defautIconButtons = Object.keys(blockMeta.default_icons).map(
-			(index) => {
-				const defaultIcon = blockMeta.default_icons[index];
+	if (blockMeta) {
+		defautIconButtons = Object.keys(blockMeta).map((index) => {
+			const defaultIcon = blockMeta[index];
 
-				let contentIcon = '';
+			let contentIcon = '';
 
-				if (defaultIcon.src) {
-					contentIcon = (
-						<div key={index}>
-							<Button
-								onClick={() => {
-									setAttributes({
-										IconImage: defaultIcon.src,
-									});
-									setAttributes({
-										balloonName: defaultIcon.name,
-									});
-								}}
-								className={
-									'button button-large components-button'
-								}
-							>
-								<img
-									className={'icon-image'}
-									src={defaultIcon.src}
-									alt={defaultIcon.name}
-								/>
-							</Button>
-						</div>
-					);
-				}
-				return contentIcon;
+			if (defaultIcon.src) {
+				contentIcon = (
+					<div key={index}>
+						<Button
+							onClick={() => {
+								setAttributes({
+									IconImage: defaultIcon.src,
+								});
+								setAttributes({
+									balloonName: defaultIcon.name,
+								});
+							}}
+							className={'button button-large components-button'}
+						>
+							<img
+								className={'icon-image'}
+								src={defaultIcon.src}
+								alt={defaultIcon.name}
+							/>
+						</Button>
+					</div>
+				);
 			}
-		);
+			return contentIcon;
+		});
 	}
 
 	if ('type-serif' === balloonType) {

@@ -353,6 +353,7 @@ export default function SliderEdit(props) {
 	}
 
 	const blockProps = useBlockProps({
+		// swiper-container は Swiper 7 以降に完全移行したあとは不要
 		className: `swiper swiper-container vk_slider vk_slider_${clientId}${alignClass}`,
 	});
 

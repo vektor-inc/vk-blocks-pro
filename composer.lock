@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0acaf227d930efd88d6f000c89ccf7a6",
+    "content-hash": "d87aa9a8f589fabc82972dfdd916f1fd",
     "packages": [
         {
             "name": "tgmpa/tgm-plugin-activation",
@@ -273,6 +273,47 @@
                 "source": "https://github.com/vektor-inc/vk-helpers/tree/0.0.3"
             },
             "time": "2022-12-23T08:22:18+00:00"
+        },
+        {
+            "name": "vektor-inc/vk-swiper",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vektor-inc/vk-swiper.git",
+                "reference": "67c324c35b676cc8acf6df1c74d1c73bcc753f18"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vektor-inc/vk-swiper/zipball/67c324c35b676cc8acf6df1c74d1c73bcc753f18",
+                "reference": "67c324c35b676cc8acf6df1c74d1c73bcc753f18",
+                "shasum": ""
+            },
+            "require-dev": {
+                "wp-phpunit/wp-phpunit": "^5.4",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "VektorInc\\VK_Swiper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Vektor,Inc.",
+                    "email": "kurudrive@gmail.com"
+                }
+            ],
+            "description": "swiper for vektor",
+            "support": {
+                "issues": "https://github.com/vektor-inc/vk-swiper/issues",
+                "source": "https://github.com/vektor-inc/vk-swiper/tree/0.2.0"
+            },
+            "time": "2023-01-26T04:04:17+00:00"
         },
         {
             "name": "vektor-inc/vk-term-color",

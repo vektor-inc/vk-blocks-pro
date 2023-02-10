@@ -10,6 +10,7 @@ document.defaultView.addEventListener('load', function () {
 			const attributes = JSON.parse(
 				sliderNode.getAttribute('data-vkb-slider')
 			);
+			// Swiper 7 以上の場合 swiper-container ではなくswiper が使われるので挿入
 			if (!sliderNode.classList.contains('swiper')) {
 				sliderNode.classList.add('swiper');
 			}

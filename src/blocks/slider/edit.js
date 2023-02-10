@@ -229,42 +229,66 @@ export default function SliderEdit(props) {
 						)}
 					</p>
 					<TextControl
+						type={'number'}
 						label={__('PC', 'vk-blocks')}
 						value={slidesPerViewPC}
 						onChange={(value) => {
-							if (Number(value)) {
+							if (Number(value) === NaN || Number(value) < 1) {
 								setAttributes({
-									slidesPerViewPC: parseInt(value, 10),
+									slidesPerViewPC: 1,
+								});
+							} else {
+								setAttributes({
+									slidesPerViewPC: parseInt(
+										Number(value),
+										10
+									),
 								});
 							}
 						}}
-						type={'number'}
+						min={1}
 					/>
 					{slidesPerViewPCAlert}
 					<TextControl
+						type={'number'}
 						label={__('Tablet', 'vk-blocks')}
 						value={slidesPerViewTablet}
 						onChange={(value) => {
-							if (Number(value)) {
+							if (Number(value) === NaN || Number(value) < 1) {
 								setAttributes({
-									slidesPerViewTablet: parseInt(value, 10),
+									slidesPerViewTablet: 1,
+								});
+							} else {
+								setAttributes({
+									slidesPerViewTablet: parseInt(
+										Number(value),
+										10
+									),
 								});
 							}
 						}}
-						type={'number'}
+						min={1}
 					/>
 					{slidesPerViewTabletAlert}
 					<TextControl
+						type={'number'}
 						label={__('Mobile', 'vk-blocks')}
 						value={slidesPerViewMobile}
 						onChange={(value) => {
-							if (Number(value)) {
+							if (Number(value) === NaN || Number(value) < 1) {
 								setAttributes({
-									slidesPerViewMobile: parseInt(value, 10),
+									slidesPerViewMobile: 1,
+								});
+							} else {
+								setAttributes({
+									slidesPerViewMobile: parseInt(
+										Number(value),
+										10
+									),
 								});
 							}
 						}}
-						type={'number'}
+						min={1}
 					/>
 					{slidesPerViewMobileAlert}
 				</BaseControl>
@@ -378,9 +402,19 @@ export default function SliderEdit(props) {
 						<RangeControl
 							label={__('PC', 'vk-blocks')}
 							value={pc}
-							onChange={(value) =>
-								setAttributes({ pc: parseFloat(value) })
-							}
+							onChange={(value) => {
+								if (
+									value === null ||
+									value === '' ||
+									value === undefined
+								) {
+									setAttributes({ pc: null });
+								} else {
+									setAttributes({
+										pc: parseFloat(Number(value)),
+									});
+								}
+							}}
 							min={0}
 							max={1000}
 							allowReset={true}
@@ -389,9 +423,19 @@ export default function SliderEdit(props) {
 						<RangeControl
 							label={__('Tablet', 'vk-blocks')}
 							value={tablet}
-							onChange={(value) =>
-								setAttributes({ tablet: parseFloat(value) })
-							}
+							onChange={(value) => {
+								if (
+									value === null ||
+									value === '' ||
+									value === undefined
+								) {
+									setAttributes({ tablet: null });
+								} else {
+									setAttributes({
+										tablet: parseFloat(Number(value)),
+									});
+								}
+							}}
 							min={0}
 							max={1000}
 							allowReset={true}
@@ -400,9 +444,19 @@ export default function SliderEdit(props) {
 						<RangeControl
 							label={__('Mobile', 'vk-blocks')}
 							value={mobile}
-							onChange={(value) =>
-								setAttributes({ mobile: parseFloat(value) })
-							}
+							onChange={(value) => {
+								if (
+									value === null ||
+									value === '' ||
+									value === undefined
+								) {
+									setAttributes({ mobile: null });
+								} else {
+									setAttributes({
+										mobile: parseFloat(Number(value)),
+									});
+								}
+							}}
 							min={0}
 							max={1000}
 							allowReset={true}
@@ -470,15 +524,26 @@ export default function SliderEdit(props) {
 						id={`vk_slider-autoPlay`}
 					>
 						<TextControl
+							type={'number'}
 							value={autoPlayDelay}
 							onChange={(value) => {
-								if (Number(value)) {
+								if (
+									Number(value) === NaN ||
+									Number(value) < 0
+								) {
 									setAttributes({
-										autoPlayDelay: parseInt(value, 10),
+										autoPlayDelay: 0,
+									});
+								} else {
+									setAttributes({
+										autoPlayDelay: parseInt(
+											Number(value),
+											10
+										),
 									});
 								}
 							}}
-							type={'number'}
+							min={0}
 						/>
 					</BaseControl>
 					<BaseControl
@@ -486,15 +551,23 @@ export default function SliderEdit(props) {
 						id={`vk_slider-changeSpeed`}
 					>
 						<TextControl
+							type={'number'}
 							value={speed}
 							onChange={(value) => {
-								if (Number(value)) {
+								if (
+									Number(value) === NaN ||
+									Number(value) < 0
+								) {
 									setAttributes({
-										speed: parseInt(value, 10),
+										speed: 0,
+									});
+								} else {
+									setAttributes({
+										speed: parseInt(Number(value), 10),
 									});
 								}
 							}}
-							type={'number'}
+							min={0}
 						/>
 					</BaseControl>
 					<BaseControl

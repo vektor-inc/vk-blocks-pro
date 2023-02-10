@@ -65,7 +65,10 @@ e.g.
 == Changelog ==
 
 [ Specification Change ][ Outer( Pro ) ] When the block is made full width, the class name of "alignfull" will be given.
+
+= 1.51.0 =
 [ Improvement ][ Balloon ] Improvement to allow any number of registrations in admin.
+[ Bug fix ][ Step/timeline ] Fix title align center
 
 = 1.50.１ =
 [ Other ] CSS Optimize ( Tree Shaking ) Library update

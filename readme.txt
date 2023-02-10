@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] Add multiple length units.
+
 = 1.51.0 =
 [ Improvement ][ Balloon ] Improvement to allow any number of registrations in admin.
 [ Bug fix ][ Step/timeline ] Fix title align center

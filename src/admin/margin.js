@@ -7,6 +7,7 @@ import {
 	__experimentalNumberControl as NumberControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
 } from '@wordpress/components';
 import { useContext } from '@wordpress/element';
+import unitOptions from '@vkblocks/utils/unit-options';
 
 /**
  * Internal dependencies
@@ -78,20 +79,7 @@ export default function AdminMargin() {
 								margin_unit: newValue,
 							});
 						}}
-						options={[
-							{
-								label: __('px', 'vk-blocks'),
-								value: 'px',
-							},
-							{
-								label: __('em', 'vk-blocks'),
-								value: 'em',
-							},
-							{
-								label: __('rem', 'vk-blocks'),
-								value: 'rem',
-							},
-						]}
+						options={unitOptions}
 					/>
 				</div>
 				<ul className="no-style spacer-input">

@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] [ Custom Block Style Setting (Pro) ] Changed the specification to save the CSS wrapped in .editor-styles-wrapper and output that CSS in the block editor.
+
 = 1.51.0 =
 [ Improvement ][ Balloon ] Improvement to allow any number of registrations in admin.
 [ Bug fix ][ Step/timeline ] Fix title align center

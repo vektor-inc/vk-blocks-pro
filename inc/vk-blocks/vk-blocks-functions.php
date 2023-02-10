@@ -188,7 +188,6 @@ if ( ! function_exists( 'vk_blocks_set_wp_version' ) ) {
  */
 function vk_blocks_load_scripts() {
 	// Slider Block
-	VKSwiper::enqueue_swiper();
 	wp_enqueue_script( 'vk-blocks-slider', VK_BLOCKS_DIR_URL . 'build/vk-slider.min.js', array( 'vk-swiper-script' ), VK_BLOCKS_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'vk_blocks_load_scripts' );

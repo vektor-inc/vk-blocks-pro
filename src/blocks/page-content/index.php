@@ -142,7 +142,6 @@ function vk_blocks_content_enqueue_scripts( $page_content ) {
 		wp_enqueue_script( 'vk-blocks-animation', VK_BLOCKS_DIR_URL . 'build/vk-animation.min.js', array(), VK_BLOCKS_VERSION, true );
 	}
 	if ( has_block( 'vk-blocks/slider', $page_content ) ) {
-		VKSwiper::enqueue_swiper();
 		wp_enqueue_script( 'vk-blocks-slider', VK_BLOCKS_DIR_URL . 'build/vk-slider.min.js', array( 'vk-blocks-swiper' ), VK_BLOCKS_VERSION, true );
 	}
 }

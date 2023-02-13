@@ -14,6 +14,7 @@ import save1_0_13 from './1.0.13/save';
 import save1_26_0 from './1.26.0/save';
 import save1_34_1 from './1.34.1/save';
 import save1_36_2 from './1.36.2/save';
+import save1_50_1 from './1.50.1/save';
 
 const blockAttributes = {
 	bgColor: {
@@ -139,6 +140,10 @@ const blockAttributes5 = {
 };
 
 const deprecated = [
+	{
+		attributes: blockAttributes5,
+		save: save1_50_1,
+	},
 	//ブロックテンプレート用のdeprecated
 	{
 		attributes: blockAttributes5,

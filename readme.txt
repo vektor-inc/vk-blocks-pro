@@ -64,6 +64,9 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ][ Outer( Pro ) ] When the block is made full width, the class name of "alignfull" will be given.
+[ Bug fix ][ Slider ] Allow 0 to be entered in numeric form.
+
 = 1.51.0 =
 [ Improvement ][ Balloon ] Improvement to allow any number of registrations in admin.
 [ Bug fix ][ Step/timeline ] Fix title align center

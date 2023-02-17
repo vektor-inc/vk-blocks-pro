@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
 
-const unitOption = [
+export const hightUnitOptions = [
 	{
 		value: 'px',
 		label: __('px', 'vk-blocks'),
@@ -18,18 +18,6 @@ const unitOption = [
 		label: __('vw', 'vk-blocks'),
 	},
 	{
-		value: 'svw',
-		label: __('svw', 'vk-blocks'),
-	},
-	{
-		value: 'lvw',
-		label: __('lvw', 'vk-blocks'),
-	},
-	{
-		value: 'dvw',
-		label: __('dvw', 'vk-blocks'),
-	},
-	{
 		value: 'vh',
 		label: __('vh', 'vk-blocks'),
 	},
@@ -45,42 +33,4 @@ const unitOption = [
 		value: 'dvh',
 		label: __('dvh', 'vk-blocks'),
 	},
-	{
-		value: 'vmin',
-		label: __('vmin', 'vk-blocks'),
-	},
-	{
-		value: 'svmin',
-		label: __('svmin', 'vk-blocks'),
-	},
-	{
-		value: 'lvmin',
-		label: __('lvmin', 'vk-blocks'),
-	},
-	{
-		value: 'dvmin',
-		label: __('dvmin', 'vk-blocks'),
-	},
-
-	{
-		value: 'vmax',
-		label: __('vmax', 'vk-blocks'),
-	},
-
-	{
-		value: 'svmax',
-		label: __('svmax', 'vk-blocks'),
-	},
-
-	{
-		value: 'lvmax',
-		label: __('lvmax', 'vk-blocks'),
-	},
-
-	{
-		value: 'dvmax',
-		label: __('dvmax', 'vk-blocks'),
-	},
 ];
-
-export default unitOption;

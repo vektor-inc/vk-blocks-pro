@@ -2,6 +2,10 @@
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
+import { transformStyles } from '@wordpress/block-editor';
+import { useState } from '@wordpress/element';
+import { Tooltip, Icon } from '@wordpress/components';
+import { info } from '@wordpress/icons';
 
 /**
  * External dependencies
@@ -28,10 +32,34 @@ export const CodeMirrorCss = (props) => {
 			marginTop: '0.5em',
 			border: '1px solid #ccc',
 		},
+		onBlur = (event) => {
+			if (!event?.target?.textContent) {
+				setCSSError(null);
+				return;
+			}
+
+			const [transformed] = transformStyles(
+				[{ css: event.target.textContent }],
+				'.editor-styles-wrapper'
+			);
+
+			setCSSError(
+				transformed === null
+					? __(
+							'There is an error with your CSS structure.',
+							'vk-blocks'
+					  )
+					: null
+			);
+		},
 	} = props;
+	const [cssError, setCSSError] = useState(null);
 
 	return (
-		<>
+		<div
+			className="vk_custom-css-editor-wrapper"
+			style={{ position: 'relative' }}
+		>
 			<CodeMirror
 				id={id}
 				className={classnames(`vk_custom-css-editor`, className)}
@@ -41,9 +69,33 @@ export const CodeMirrorCss = (props) => {
 				value={value}
 				onChange={(newValue) => {
 					onChange(stripHTML(newValue));
+
+					const [transformed] = transformStyles(
+						[{ css: newValue }],
+						'.editor-styles-wrapper'
+					);
+					if (transformed) {
+						setCSSError(null);
+					}
 				}}
 				style={style}
+				onBlur={(event) => {
+					onBlur(event);
+				}}
 			/>
+			{cssError && (
+				<Tooltip text={cssError}>
+					<div
+						style={{
+							position: 'absolute',
+							bottom: '0px',
+							right: '5px',
+						}}
+					>
+						<Icon icon={info} style={{ fill: '#cc1818' }} />
+					</div>
+				</Tooltip>
+			)}
 			{(() => {
 				if (value && value.indexOf('　') !== -1) {
 					return (
@@ -56,6 +108,6 @@ export const CodeMirrorCss = (props) => {
 					);
 				}
 			})()}
-		</>
+		</div>
 	);
 };

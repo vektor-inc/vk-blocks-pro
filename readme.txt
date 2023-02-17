@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] [ Custom Block Style Setting (Pro) ] Changed the specification to save the CSS wrapped in .editor-styles-wrapper and output that CSS in the block editor.
 [ Specification Change ][ Outer( Pro ) ] When the block is made full width, the class name of "alignfull" will be given.
 [ Bug fix ][ Slider ] Allow 0 to be entered in numeric form.
 

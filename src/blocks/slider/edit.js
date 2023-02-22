@@ -115,6 +115,11 @@ export default function SliderEdit(props) {
 			});
 		}
 
+		// 1.51 以前では centeredSlides が定義されていないので互換設定を追加
+		if (centeredSlides === undefined) {
+			setAttributes({ centeredSlides: false });
+		}
+
 		// 1.49 以前では pagination はブール型だったが文字列型になっための互換処理
 		if (pagination === false) {
 			setAttributes({ pagination: 'hide' });
@@ -133,10 +138,6 @@ export default function SliderEdit(props) {
 			setAttributes({ navigationPosition: 'mobile-bottom' });
 		}
 
-		// 1.51 以前では centeredSlides が定義されていないので互換設定を追加
-		if (centeredSlides === undefined) {
-			setAttributes({ centeredSlides: false });
-		}
 	}, [clientId]);
 
 	// 複数枚動かすときに sliderPerView が小数だと微妙なので対処

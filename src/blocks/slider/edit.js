@@ -137,7 +137,6 @@ export default function SliderEdit(props) {
 		if (navigationPosition === undefined) {
 			setAttributes({ navigationPosition: 'mobile-bottom' });
 		}
-
 	}, [clientId]);
 
 	// 複数枚動かすときに sliderPerView が小数だと微妙なので対処

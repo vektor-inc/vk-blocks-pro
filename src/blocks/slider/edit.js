@@ -132,6 +132,12 @@ export default function SliderEdit(props) {
 		if (navigationPosition === undefined) {
 			setAttributes({ navigationPosition: 'mobile-bottom' });
 		}
+
+		// 1.51 以前では centeredSlides が定義されていないので互換設定を追加
+		if ( centeredSlides === undefined) {
+			setAttributes({ centeredSlides: false });
+		}
+		
 	}, [clientId]);
 
 	// 複数枚動かすときに sliderPerView が小数だと微妙なので対処

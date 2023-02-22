@@ -16,7 +16,6 @@ export default function save({ attributes }) {
 		slidesPerViewPC,
 		slidesPerGroup,
 		navigationPosition,
-		centeredSlides,
 	} = attributes;
 
 	const sliderData = {
@@ -33,7 +32,6 @@ export default function save({ attributes }) {
 		slidesPerViewTablet,
 		slidesPerViewPC,
 		slidesPerGroup,
-		centeredSlides,
 	};
 
 	let alignClass = '';

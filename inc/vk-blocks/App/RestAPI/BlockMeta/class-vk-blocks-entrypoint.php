@@ -24,26 +24,33 @@ class Vk_Blocks_EntryPoint {
 	public function vk_blocks_rest_api_init() {
 		register_rest_route(
 			'vk-blocks/v1',
-			'/block-meta/(?P<name>.+)',
+			'/update_vk_blocks_options',
 			array(
-				'methods'             => 'GET',
-				'callback'            => array( $this, 'vk_blocks_callback' ),
-				'permission_callback' => function () {
-					return current_user_can( 'edit_posts' );
-				},
+				array(
+					'methods'             => 'POST',
+					'callback'            => array( $this, 'update_vk_blocks_options' ),
+					'permission_callback' => function () {
+						return current_user_can( 'edit_posts' );
+					},
+				),
 			)
 		);
 	}
 
 	/**
-	 * Vk Blocks Rest Route Callback
+	 * VK Blocks Rest Update Callback
 	 *
-	 * @param string $request — .
+	 * @param object $request — .
 	 * @return \WP_REST_Response|\WP_Error
 	 */
-	public function vk_blocks_callback( $request ) {
-		$block_name = esc_html( $request['name'] );
-		$block_meta = get_option( 'vk_blocks_' . $block_name . '_meta' );
-		return rest_ensure_response( $block_meta );
+	public function update_vk_blocks_options( $request ) {
+		$json_params = $request->get_json_params();
+		update_option( 'vk_blocks_options', $json_params['vkBlocksOption'] );
+		return rest_ensure_response(
+			array(
+				'success' => true,
+			)
+		);
 	}
+
 }

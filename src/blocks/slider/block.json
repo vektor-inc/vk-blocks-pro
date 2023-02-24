@@ -1,0 +1,88 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/slider",
+	"title": "Slider",
+	"description": "This slider allows you to place various items.Slider is do not move in edit screen.",
+	"textdomain": "vk-blocks",
+	"category": "vk-blocks-cat-layout",
+	"attributes": {
+		"unit": {
+			"type": "string",
+			"default": "px"
+		},
+		"pc": {
+			"type": "number"
+		},
+		"tablet": {
+			"type": "number"
+		},
+		"mobile": {
+			"type": "number"
+		},
+		"autoPlay": {
+			"type": "boolean",
+			"default": true
+		},
+		"autoPlayStop": {
+			"type": "boolean",
+			"default": false
+		},
+		"autoPlayDelay": {
+			"type": "number",
+			"default": 2500
+		},
+		"pagination": {
+			"type": "string",
+			"default": "bullets"
+		},
+		"clientId": {
+			"type": "string"
+		},
+		"width": {
+			"type": "string",
+			"default": ""
+		},
+		"loop": {
+			"type": "boolean",
+			"default": true
+		},
+		"effect": {
+			"type": "string",
+			"default": "slide"
+		},
+		"speed": {
+			"type": "number",
+			"default": 500
+		},
+		"slidesPerView": {
+			"type": "number",
+			"default": 1
+		},
+		"slidesPerViewMobile": {
+			"type": "number",
+			"default": 1
+		},
+		"slidesPerViewTablet": {
+			"type": "number",
+			"default": 1
+		},
+		"slidesPerViewPC": {
+			"type": "number",
+			"default": 1
+		},
+		"slidesPerGroup": {
+			"type": "string",
+			"default": "one-by-one"
+		},
+		"navigationPosition": {
+			"type": "string",
+			"default": "mobile-bottom"
+		},
+		"blockId": {
+			"type": "string"
+		}
+	},
+	"supports": {
+		"className": true
+	}
+}

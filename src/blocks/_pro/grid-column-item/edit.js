@@ -132,6 +132,7 @@ export default function GridColumnItemEdit(props) {
 						}}
 						min={0}
 						max={300}
+						step={'px' === paddingUnit ? 1 : 0.1}
 						allowReset={true}
 						resetFallbackValue={null}
 					/>
@@ -147,6 +148,7 @@ export default function GridColumnItemEdit(props) {
 						}}
 						min={0}
 						max={300}
+						step={'px' === paddingUnit ? 1 : 0.1}
 						allowReset={true}
 						resetFallbackValue={null}
 					/>
@@ -162,15 +164,23 @@ export default function GridColumnItemEdit(props) {
 						}}
 						min={0}
 						max={300}
+						step={'px' === paddingUnit ? 1 : 0.1}
 						allowReset={true}
 						resetFallbackValue={null}
 					/>
 					<SelectControl
 						label={__('Unit', 'vk-blocks')}
 						value={paddingUnit}
-						onChange={(value) =>
-							setAttributes({ paddingUnit: value })
-						}
+						onChange={(value) => {
+							setAttributes({ paddingUnit: value });
+							if ('px' === value) {
+								setAttributes({
+									paddingTop: parseInt(paddingTop),
+									paddingX: parseInt(paddingX),
+									paddingBottom: parseInt(paddingBottom),
+								});
+							}
+						}}
 						options={[
 							{
 								value: 'px',

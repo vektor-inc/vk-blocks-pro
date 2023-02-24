@@ -11,19 +11,7 @@
 		}
 	}
 
-	.vk-blocks-format-popover {
-		// WP5.9でPopoverコンポーネントにpaddingがなくなったため
-		.components-popover__content > div {
-				padding: 20px 18px;
-		}
-
-		// インライン文字サイズを再編集時に選択されたフォントサイズが黒バックの白抜きになるため
-		.components-toggle-group-control > div[data-active=true] {
-			background: rgb(30, 30, 30);
-			border-radius: 2px;
-		}
-	}
-		//他テーマ（Twenty Twenty）上書き用
+	//他テーマ（Twenty Twenty）上書き用
 		.wp-block-image figcaption{
 			display: block;
 		}
@@ -34,3 +22,20 @@
 		}
 }
 
+.vk-blocks-format-popover {
+	// WP5.9でPopoverコンポーネントにpaddingがなくなったため
+	.components-popover__content > div {
+			padding: 20px 18px;
+	}
+
+	// インライン文字サイズを再編集時に選択されたフォントサイズが黒バックの白抜きになるため
+	.components-toggle-group-control > div[data-active=true] {
+		background: rgb(30, 30, 30);
+		border-radius: 2px;
+	}
+}
+
+.vk-block-editor-url-input-wrapper {
+	display: flex;
+	margin-bottom: 8px;
+}

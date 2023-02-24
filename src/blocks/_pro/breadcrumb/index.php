@@ -14,12 +14,12 @@ use VektorInc\VK_Breadcrumb\VkBreadcrumb;
  * @return string
  */
 function vk_blocks_breadcrumb_render_callback( $attributes ) {
+	if ( is_front_page() ) {
+		return;
+	}
 	$vk_breadcrumb = new VkBreadcrumb();
 
 	$outer_classes = 'vk_breadcrumb';
-	if ( ! empty( $attributes['className'] ) ) {
-		$outer_classes .= ' ' . $attributes['className'];
-	}
 	if ( isset( $attributes['vkb_hidden'] ) && $attributes['vkb_hidden'] ) {
 		$outer_classes .= ' vk_hidden';
 	}

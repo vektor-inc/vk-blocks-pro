@@ -18,10 +18,16 @@ $lg-min: 992px;
 $xl-min: 1200px;
 $xxl-min: 1400px;
 
+// theme.json があるとコアに a:where(:not(.wp-element-button)) { text-decoration: underline; } が入るため打ち消し
+a.vk_button_link {
+	text-decoration: none;
+}
 :root,
 :root .editor-styles-wrapper {
-	.has-vk-color-primary-background-color {
-		background-color: var(--vk-color-primary);
+	.has-vk-color-primary-background-color,
+	.has-undefined-background-color {
+		// has-vk-color-primary-background-colorクラスはデフォルトで設定される。Lightning以外のテーマに対応するため代替値を設定
+		background-color: var(--wp--preset--color--vk-color-primary,#337ab7);
 	}
 	.has-vk-color-secondary-background-color {
 		background-color: $vk-color-secondary;
@@ -35,6 +41,7 @@ $xxl-min: 1400px;
 	.has-vk-color-warning-background-color {
 		background-color: $vk-color-warning;
 	}
+	// https://getbootstrap.jp/docs/5.0/components/buttons/
 	.has-vk-color-danger-background-color {
 		background-color: $vk-color-danger;
 	}
@@ -45,7 +52,7 @@ $xxl-min: 1400px;
 		background-color: $vk-color-dark;
 	}
 	.has-vk-color-primary-color {
-		color: var(--vk-color-primary);
+		color: var(--wp--preset--color--vk-color-primary);
 	}
 	.has-vk-color-secondary-color {
 		color: $vk-color-secondary;
@@ -168,7 +175,7 @@ $xxl-min: 1400px;
 	.btn.has-background:not(.has-text-color) {
 		color: #fff;
 		/* 白っぽい色に対する対策 */
-		&.has-vk-color-light-background-color,
+		&.has-vk-color-light-background-color, // https://getbootstrap.jp/docs/5.0/components/buttons/
 		&.has-white-background-color {
 			color:#212529;
 		}
@@ -181,7 +188,7 @@ $xxl-min: 1400px;
 		&:hover {
 			/* 応急処置：規定カラー */
 			&.has-vk-color-primary-color {
-				background-color: var(--vk-color-primary);
+				background-color: var(--wp--preset--color--vk-color-primary);
 			}
 			&.has-vk-color-secondary-color {
 				background-color: $vk-color-secondary;
@@ -243,28 +250,28 @@ $xxl-min: 1400px;
 			}
 			/* 応急処置：カラーパレットVK */
 			&.has-vk-color-primary-color {
-				background-color: var(--vk-color-primary);
+				background-color: var(--wp--preset--color--vk-color-primary);
 			}
 			&.has-vk-color-primary-dark-color {
-				background-color: var(--vk-color-primary-dark);
+				background-color: var(--wp--preset--color--vk-color-primary-dark);
 			}
 			&.has-vk-color-primary-vivid-color {
-				background-color: var(--vk-color-primary-vivid);
+				background-color: var(--wp--preset--color--vk-color-primary-vivid);
 			}
 			&.has-vk-color-custom-1-color {
-				background-color: var(--vk-color-custom-1);
+				background-color: var(--wp--preset--color--vk-color-custom-1);
 			}
 			&.has-vk-color-custom-2-color {
-				background-color: var(--vk-color-custom-2);
+				background-color: var(--wp--preset--color--vk-color-custom-2);
 			}
 			&.has-vk-color-custom-3-color {
-				background-color: var(--vk-color-custom-3);
+				background-color: var(--wp--preset--color--vk-color-custom-3);
 			}
 			&.has-vk-color-custom-4-color {
-				background-color: var(--vk-color-custom-4);
+				background-color: var(--wp--preset--color--vk-color-custom-4);
 			}
 			&.has-vk-color-custom-5-color {
-				background-color: var(--vk-color-custom-5);
+				background-color: var(--wp--preset--color--vk-color-custom-5);
 			}
 			// ここから標準装備
 			// background-color: currentColor;
@@ -291,6 +298,15 @@ $xxl-min: 1400px;
 
 	// テキストのみ
 	.has-text-color.vk_button_link-type-text {
+		&:hover .vk_button_link_txt,
+		&:hover .vk_button_link_subCaption {
+			text-decoration: underline;
+			text-decoration-style: dotted;
+			text-underline-offset:2px;
+			text-decoration-color:currentColor;
+			text-decoration-thickness: 1px;
+		}
+
 		&:hover {
 			/* 白っぽい色に対する対策 */
 			&.has-vk-color-light-background-color .vk_button_link_before,
@@ -302,15 +318,52 @@ $xxl-min: 1400px;
 			&.has-white-color .vk_button_link_after,
 			&.has-white-color .vk_button_link_subCaption {
 				color:#212529;
+				text-decoration: none;
 			}
-			text-decoration: underline;
-			text-decoration-style: dotted;
-			text-underline-offset:2px;
-			text-decoration-color:currentColor;
-			text-decoration-thickness: 1px;
 		}
 	}
 
+	//光る
+	&.is-style-shine {		
+
+		// 光るボタン
+		@keyframes shine {//光る速さのキーフレーム
+			0% { left: -40%; }
+			10% { left: 120%; }
+			100% { left: 120%; }
+		}
+
+		.btn.has-background {
+			// テキスト色が入ってない場合は白にしたいので追加
+			&:not(.has-text-color){
+				color: #fff;
+			}
+
+			overflow:hidden;
+			position: relative;
+			&::before { // 光りの擬似要素
+				content: '';
+				position: absolute;
+				top: 0;
+				left: -40%;
+				width: 50%;
+				height: 100%;
+				background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+				transform: skewX(-25deg);		
+				/* アニメーション */
+				animation-name: shine;
+				animation-duration: 3s;
+				animation-timing-function: ease-in-out;
+				animation-iteration-count: infinite;//無制限に繰り返し
+			}
+			/* 白っぽい色に対する対策 */
+			&.has-vk-color-light-background-color,
+			&.has-white-background-color {
+				color:#212529;
+			}
+		}
+	}
+		
 	&.vk_button-align {
 		&-left {
 			text-align: left;
@@ -362,6 +415,8 @@ $xxl-min: 1400px;
 			user-select: text;
 			text-decoration: none;
 			font-size: calc( var(--vk-size-text) * 1 );
+
+			
 		}
 		&.btn-lg{
 			font-size:calc( var(--vk-size-text) * 1.25 );
@@ -375,6 +430,15 @@ $xxl-min: 1400px;
 
 		&_after {
 			margin-left: 0.7rem;
+		}
+
+		&_caption {
+			display: inline-flex;
+			align-items: center;
+ 			justify-content: center;
+			.vk_button_link_after {
+				margin-right: 0;
+			}
 		}
 
 		&_subCaption {

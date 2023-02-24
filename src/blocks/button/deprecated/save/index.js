@@ -1,15 +1,3 @@
-import save0_0_0 from './0.0.0/save';
-import save0_0_1 from './0.0.1/save';
-import save0_0_2 from './0.0.2/save';
-import save0_0_3 from './0.0.3/save';
-import save0_0_4 from './0.0.4/save';
-import save0_0_5 from './0.0.5/save';
-import save0_0_6 from './0.0.6/save';
-import save0_41_0 from './0.41.0/save';
-import save0_59_0 from './0.59.0/save';
-import save0_59_1 from './0.59.1/save';
-import save0_60_0 from './0.60.0/save';
-import save0_60_1 from './0.60.1/save';
 import save1_16_2 from './1.16.2/save';
 import save1_16_4 from './1.16.4/save';
 import save1_18_1 from './1.18.1/save';
@@ -17,6 +5,8 @@ import save1_18_6 from './1.18.6/save';
 import save1_29_2 from './1.29.2/save';
 import save1_31_0 from './1.31.0/save';
 import save1_35_0 from './1.35.0/save';
+import save1_39_2 from './1.39.2/save';
+import save1_43_0 from './1.43.0/save';
 
 const blockAttributes = {
 	content: {
@@ -90,33 +80,33 @@ const blockAttributes3 = {
 	clientId: {
 		type: 'string',
 	},
-}
+};
 
 const blockAttributes4 = {
 	...blockAttributes3,
 	blockId: {
 		type: 'string',
 	},
-}
+};
 
 const blockAttributes5 = {
 	...blockAttributes4,
 	buttonTextColorCustom: {
 		type: 'string',
 	},
-}
+};
 
 const blockAttributes6 = {
-	...blockAttributes4,
+	...blockAttributes5,
 	buttonWidth: {
 		type: 'number',
 		default: 0,
 	},
-}
+};
 
 const blockAttributes7 = {
-	...blockAttributes4,
-	buttonWidthMobioe: {
+	...blockAttributes6,
+	buttonWidthMobile: {
 		type: 'number',
 		default: 0,
 	},
@@ -128,17 +118,55 @@ const blockAttributes7 = {
 		type: 'number',
 		default: 0,
 	},
-}
+};
 
 const blockAttributes8 = {
 	...blockAttributes7,
-	"old_1_31_0": {
-		'type': 'string',
-		'default': true
+	old_1_31_0: {
+		type: 'string',
+		default: true,
 	}
+};
+
+const blockAttributes9 = {
+	...blockAttributes8,
+	outerGap: {
+		type: 'string',
+		default: null,
+	},
+};
+
+const blockAttributes10 = {
+	...blockAttributes9,
+	iconSizeBefore: {
+		type: 'string',
+		default: null,
+	},
+	iconSizeAfter: {
+		type: 'string',
+		default: null,
+	},
+};
+
+/* 次回対応おねがいします
+const blockAttributes11 = {
+	...blockAttributes10,
+	buttonEffect: {
+		type: 'string',
+		default: ''
+	},
 }
+*/
 
 export const deprecated = [
+	{
+		attributes: blockAttributes10,
+		save: save1_43_0,
+	},
+	{
+		attributes: blockAttributes9,
+		save: save1_39_2,
+	},
 	{
 		attributes: blockAttributes8,
 		save: save1_35_0,
@@ -169,104 +197,4 @@ export const deprecated = [
 	},
 	// Fix: https://github.com/vektor-inc/vk-blocks-pro/issues/356
 	// 独自後方互換処理のための、後方互換を追加
-	{
-		attributes: blockAttributes2,
-		save: save0_0_6,
-	},
-	{
-		attributes: blockAttributes2,
-		save: save0_60_0,
-	},
-	{
-		attributes: {
-			...blockAttributes,
-			subCaption: {
-				type: 'string',
-				default: '',
-			},
-		},
-		save: save0_59_1,
-	},
-	{
-		attributes: {
-			...blockAttributes,
-			subCaption: {
-				type: 'string',
-				default: '',
-			},
-		},
-		save: save0_59_0,
-	},
-	{
-		attributes: {
-			...blockAttributes,
-			subCaption: {
-				type: 'string',
-				default: '',
-			},
-		},
-		save: save0_41_0,
-	},
-	{
-		attributes: {
-			...blockAttributes,
-			subCaption: {
-				type: 'string',
-				default: '',
-			},
-		},
-		save: save0_0_5,
-	},
-	{
-		attributes: {
-			...blockAttributes,
-			subCaption: {
-				type: 'string',
-				default: '',
-			},
-		},
-		save: save0_0_4,
-	},
-	{
-		attributes: {
-			...blockAttributes,
-			subCaption: {
-				type: 'string',
-				default: '',
-			},
-		},
-		save: save0_0_3,
-	},
-	{
-		attributes: {
-			...blockAttributes,
-			subCaption: {
-				type: 'string',
-				default: '',
-			},
-		},
-		save: save0_0_2,
-	},
-	{
-		attributes: {
-			...blockAttributes,
-		},
-		save: save0_0_1,
-	},
-	{
-		attributes: {
-			...blockAttributes,
-		},
-		save: save0_0_0,
-	},
-	{
-		attributes: {
-			...blockAttributes,
-			subCaption: {
-				type: 'string',
-				default: '',
-			},
-		},
-		save: save0_60_1,
-	},
 ];

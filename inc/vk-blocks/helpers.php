@@ -24,21 +24,6 @@ function vk_blocks_is_lightning() {
 	return false;
 }
 
-/**
- * カスタマイザー用のチェックボックス
- *
- * @param bool|string $checked checked.
- *
- * @return bool
- */
-function vk_blocks_sanitize_checkbox( $checked ) {
-	if ( isset( $checked ) && $checked ) {
-		return true;
-	} else {
-		return false;
-	}
-}
-
 if ( ! function_exists( 'vk_blocks_allow_wp_kses_allowed_html' ) ) {
 
 	/**

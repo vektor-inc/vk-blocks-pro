@@ -12,6 +12,7 @@ import {
 	ToolbarGroup,
 	ToolbarButton,
 	Dropdown,
+	__experimentalUnitControl as UnitControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
 } from '@wordpress/components';
 import {
 	RichText,
@@ -35,6 +36,7 @@ export default function ButtonEdit(props) {
 		buttonTarget,
 		buttonSize,
 		buttonType,
+		buttonEffect,
 		buttonColor,
 		buttonTextColorCustom,
 		buttonColorCustom,
@@ -45,6 +47,8 @@ export default function ButtonEdit(props) {
 		outerGap,
 		fontAwesomeIconBefore,
 		fontAwesomeIconAfter,
+		iconSizeBefore,
+		iconSizeAfter,
 		blockId,
 		old_1_31_0,
 	} = attributes;
@@ -144,6 +148,9 @@ export default function ButtonEdit(props) {
 	useEffect(() => {
 		if (buttonColorCustom !== undefined) {
 			updateBlockAttributes(clientId, { buttonColor: 'custom' });
+		} else if (buttonColor === 'custom') {
+			// 背景色クリアされたらデフォルトに戻す
+			updateBlockAttributes(clientId, { buttonColor: 'primary' });
 		}
 	}, [buttonColorCustom]);
 
@@ -158,6 +165,8 @@ export default function ButtonEdit(props) {
 	// カスタムカラーの場合 またはアウターにギャップが指定されれいる場合
 	if (
 		(buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) ||
+		(buttonTextColorCustom !== undefined &&
+			isHexColor(buttonTextColorCustom)) ||
 		outerGap
 	) {
 		containerClass = `vk_button vk_button-color-custom vk_button-${blockId}`;
@@ -180,6 +189,18 @@ export default function ButtonEdit(props) {
 		containerClass += ` vk_button-align-${buttonAlign}`;
 		setAttributes({ buttonWidth: 0 });
 	}
+
+	// エフェクト
+	if (buttonEffect !== '') {
+		containerClass += ` is-style-${buttonEffect}`;
+	}
+
+	// アイコン単位
+	const units = [
+		{ value: 'px', label: 'px', default: 16 },
+		{ value: 'em', label: 'em', default: 1 },
+		{ value: 'rem', label: 'rem', default: 1 },
+	];
 
 	const blockProps = useBlockProps({
 		className: containerClass,
@@ -222,44 +243,40 @@ export default function ButtonEdit(props) {
 						}}
 						renderContent={(params) => {
 							return (
-								<div className="block-editor-url-input__button block-editor-link-control">
-									<form
-										className="block-editor-link-control__search-input-wrapper"
-										onSubmit={() => {
-											params.onClose();
-										}}
-									>
-										<div className="block-editor-link-control__search-input">
-											<URLInput
-												value={buttonUrl}
-												onChange={(value) => {
-													setAttributes({
-														buttonUrl: value,
-													});
-												}}
-											/>
-											<CheckboxControl
-												label={__(
-													'Open link new tab.',
-													'vk-blocks'
-												)}
-												checked={buttonTarget}
-												onChange={(checked) =>
-													setAttributes({
-														buttonTarget: checked,
-													})
-												}
-											/>
-											<div className="block-editor-link-control__search-actions">
-												<Button
-													icon={keyboardReturn}
-													label={__('Submit')}
-													type="submit"
-												/>
-											</div>
-										</div>
-									</form>
-								</div>
+								<form
+									onSubmit={() => {
+										params.onClose();
+									}}
+								>
+									<div className="vk-block-editor-url-input-wrapper">
+										<URLInput
+											__nextHasNoMarginBottom
+											value={buttonUrl}
+											onChange={(value) => {
+												setAttributes({
+													buttonUrl: value,
+												});
+											}}
+										/>
+										<Button
+											icon={keyboardReturn}
+											label={__('Submit')}
+											type="submit"
+										/>
+									</div>
+									<CheckboxControl
+										label={__(
+											'Open link new tab.',
+											'vk-blocks'
+										)}
+										checked={buttonTarget}
+										onChange={(checked) =>
+											setAttributes({
+												buttonTarget: checked,
+											})
+										}
+									/>
+								</form>
 							);
 						}}
 					/>
@@ -306,7 +323,6 @@ export default function ButtonEdit(props) {
 							{__('Small', 'vk-blocks')}
 						</Button>
 					</ButtonGroup>
-
 					{!isInnerButton && (
 						<>
 							<h4 className={`mt-0 mb-2`}>
@@ -583,6 +599,7 @@ export default function ButtonEdit(props) {
 								setAttributes({
 									buttonTextColorCustom: undefined,
 								});
+								setAttributes({ buttonEffect: '' });
 							}}
 						>
 							{__('No background', 'vk-blocks')}
@@ -596,6 +613,7 @@ export default function ButtonEdit(props) {
 								setAttributes({
 									buttonTextColorCustom: undefined,
 								});
+								setAttributes({ buttonEffect: '' });
 							}}
 						>
 							{__('Text only', 'vk-blocks')}
@@ -607,6 +625,39 @@ export default function ButtonEdit(props) {
 							'vk-blocks'
 						)}
 					</p>
+
+					{'0' === buttonType && (
+						<>
+							<h4 className={`mt-0 mb-2`}>
+								{__('Button Effect:', 'vk-blocks')}
+							</h4>
+							<ButtonGroup className={`mb-3`}>
+								<Button
+									isSmall
+									isPrimary={buttonEffect === ''}
+									isSecondary={buttonEffect !== ''}
+									onClick={() =>
+										setAttributes({ buttonEffect: '' })
+									}
+								>
+									{__('None', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonEffect === 'shine'}
+									isSecondary={buttonEffect !== 'shine'}
+									onClick={() => {
+										setAttributes({
+											buttonEffect: 'shine',
+										});
+									}}
+								>
+									{__('Shine', 'vk-blocks')}
+								</Button>
+							</ButtonGroup>
+						</>
+					)}
+
 					<h4 className={`mt-0 mb-2`}>{__('Color', 'vk-blocks')}</h4>
 					<SelectControl
 						label={__('Default Color (Bootstrap)', 'vk-blocks')}
@@ -702,7 +753,20 @@ export default function ButtonEdit(props) {
 								attributeName={'fontAwesomeIconBefore'}
 								{...props}
 							/>
+							<UnitControl
+								label={__('Size', 'vk-blocks')}
+								value={iconSizeBefore}
+								units={units}
+								onChange={(value) => {
+									setAttributes({
+										iconSizeBefore: parseFloat(value)
+											? value
+											: null,
+									});
+								}}
+							/>
 						</BaseControl>
+						<hr />
 						<BaseControl
 							id={`vk_block_button_fa_after_text`}
 							label={__('After text', 'vk-blocks')}
@@ -710,6 +774,18 @@ export default function ButtonEdit(props) {
 							<FontAwesome
 								attributeName={'fontAwesomeIconAfter'}
 								{...props}
+							/>
+							<UnitControl
+								label={__('Size', 'vk-blocks')}
+								value={iconSizeAfter}
+								units={units}
+								onChange={(value) => {
+									setAttributes({
+										iconSizeAfter: parseFloat(value)
+											? value
+											: null,
+									});
+								}}
 							/>
 						</BaseControl>
 					</BaseControl>
@@ -725,6 +801,8 @@ export default function ButtonEdit(props) {
 					lbSize={buttonSize}
 					lbFontAwesomeIconBefore={fontAwesomeIconBefore}
 					lbFontAwesomeIconAfter={fontAwesomeIconAfter}
+					lbIconSizeBefore={iconSizeBefore}
+					lbIconSizeAfter={iconSizeAfter}
 					lbsubCaption={subCaption}
 					lbRichtext={
 						<RichText
@@ -749,6 +827,7 @@ export default function ButtonEdit(props) {
 								// 'vk-blocks/highlighter',
 								'vk-blocks/responsive-br',
 								'vk-blocks/nowrap',
+								'vk-blocks/inline-font-size',
 							]}
 							isSelected={true}
 						/>

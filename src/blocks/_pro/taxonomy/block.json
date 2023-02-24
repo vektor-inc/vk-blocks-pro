@@ -14,7 +14,23 @@
 			"type": "string",
 			"default": "category"
 		},
+		"displayAsDropdown": {
+			"type": "boolean",
+			"default": false
+		},
+		"showHierarchy": {
+			"type": "boolean",
+			"default": false
+		},
+		"showPostCounts": {
+			"type": "boolean",
+			"default": false
+		},
 		"hideIfEmpty": {
+			"type": "boolean",
+			"default": false
+		},
+		"showOnlyTopLevel": {
 			"type": "boolean",
 			"default": false
 		},

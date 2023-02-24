@@ -69,7 +69,23 @@ function vk_blocks_register_block_taxonomy() {
 						'type'    => 'string',
 						'default' => 'category',
 					),
+					'displayAsDropdown'  => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+					'showHierarchy'      => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+					'showPostCounts'     => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
 					'hideIfEmpty'        => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+					'showOnlyTopLevel'   => array(
 						'type'    => 'boolean',
 						'default' => false,
 					),
@@ -107,33 +123,65 @@ function vk_blocks_taxonomy_render_callback( $attributes, $content ) {
 		array(
 			'blockLabel'         => '',
 			'isSelectedTaxonomy' => 'category',
+			'displayAsDropdown'  => false,
+			'showHierarchy'      => false,
+			'showPostCounts'     => false,
 			'hideIfEmpty'        => false,
+			'showOnlyTopLevel'   => false,
 			'className'          => '',
 		)
 	);
 
-	$args = array(
-		'echo'            => false,
-		'style'           => 'list',
-		'show_count'      => false,
-		'show_option_all' => false,
-		'hide_empty'      => $attributes['hideIfEmpty'],
-		'hierarchical'    => true,
-		'title_li'        => '',
-		'taxonomy'        => $attributes['isSelectedTaxonomy'],
-	);
-	$args = apply_filters( 'vk_blocks_taxlist_args', $args ); // 9.13.0.0
+	static $block_id = 0;
+	++$block_id;
 
 	$taxonomy_data = get_taxonomy( $attributes['isSelectedTaxonomy'] );
 	$default_label = $taxonomy_data->labels->singular_name;
 
 	$block_label = '' !== $attributes['blockLabel'] ? $attributes['blockLabel'] : $default_label;
 
+	$common_args = array(
+		'echo'         => false,
+		'show_count'   => ! empty( $attributes['showPostCounts'] ) ? $attributes['showPostCounts'] : false,
+		'hide_empty'   => ! empty( $attributes['hideIfEmpty'] ) ? $attributes['hideIfEmpty'] : false,
+		'hierarchical' => ! empty( $attributes['showHierarchy'] ) ? $attributes['showHierarchy'] : false,
+		'taxonomy'     => ! empty( $attributes['isSelectedTaxonomy'] ) ? $attributes['isSelectedTaxonomy'] : 'category',
+	);
+	$common_args = apply_filters( 'vk_blocks_taxlist_args', $common_args ); // 9.13.0.0
+
+	$dropdown_args = array(
+		// translators: 
+		'show_option_all' => sprintf( __( 'All of %s', 'vk-blocks' ), $taxonomy_data->labels->singular_name ),
+		'id'              => 'vk_taxonomy-' . $block_id,
+		'class'           => 'vk_taxonomy__input-wrap vk_taxonomy__input-wrap--select',
+	);
+
+	$list_args = array(
+		'style'           => 'list',
+		'title_li'        => '',
+		'show_option_all' => false,
+	);
+
 	$content  = '<div class="vk_taxonomy vk_taxonomy--' . $attributes['isSelectedTaxonomy'] . ' vk_taxonomy-outer-wrap ' . $attributes['className'] . '">';
 	$content .= '<div class="vk_taxnomy-label">' . $block_label . '</div>';
-	$content .= '<ul class="vk_taxnomy-list vk_taxonomy-input-wrap">';
-	$content .= wp_list_categories( $args );
-	$content .= '</ul>';
+	if ( ! empty( $attributes['displayAsDropdown'] ) ) {
+		$content .= wp_dropdown_categories(
+			array_merge(
+				$common_args,
+				$dropdown_args
+			)
+		);
+	} else {
+		$content .= '<ul class="vkfs__input-wrap vkfs__input-wrap--list">';
+		$content .= wp_list_categories(
+			array_merge(
+				$common_args,
+				$list_args
+			)
+		);
+		$content .= '</ul>';
+	}
+
 	$content .= '</div>';
 
 	return $content;

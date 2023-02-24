@@ -1,9 +1,8 @@
 import { __ } from '@wordpress/i18n';
 import {
 	PanelBody,
-	BaseControl,
 	SelectControl,
-	CheckboxControl,
+	ToggleControl,
 	TextControl,
 } from '@wordpress/components';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
@@ -12,7 +11,15 @@ import ServerSideRender from '@wordpress/server-side-render';
 export default function TaxonomyEdit(props) {
 	const { attributes, setAttributes } = props;
 
-	const { blockLabel, isSelectedTaxonomy, hideIfEmpty } = attributes;
+	const {
+		blockLabel,
+		isSelectedTaxonomy,
+		displayAsDropdown,
+		showHierarchy,
+		showPostCounts,
+		showOnlyTopLevel,
+		hideIfEmpty,
+	} = attributes;
 
 	let editContent;
 	const condition = (taxonomy) => taxonomy.value === isSelectedTaxonomy;
@@ -79,36 +86,63 @@ export default function TaxonomyEdit(props) {
 					title={__('Taxonomy Block Option', 'vk-blocks')}
 					initialOpen={true}
 				>
-					<BaseControl id={'vk_Taxonomy-blockLabel'}>
-						<TextControl
-							label={__('Label of This Block', 'vk-blocks')}
-							value={blockLabel}
+					<TextControl
+						label={__('Label of This Block', 'vk-blocks')}
+						value={blockLabel}
+						onChange={(value) =>
+							setAttributes({ blockLabel: value })
+						}
+					/>
+					<SelectControl
+						label={__('Taxonomy', 'vk-blocks')}
+						value={isSelectedTaxonomy}
+						options={taxonomyOption}
+						onChange={(value) =>
+							setAttributes({
+								isSelectedTaxonomy: value,
+							})
+						}
+					/>
+					<ToggleControl
+						label={__('Display as dropdown', 'vk-blocks')}
+						checked={displayAsDropdown}
+						onChange={(value) =>
+							setAttributes({ displayAsDropdown: value })
+						}
+					/>
+					<ToggleControl
+						label={__('Show post counts', 'vk-blocks')}
+						checked={showPostCounts}
+						onChange={(value) =>
+							setAttributes({ showPostCounts: value })
+						}
+					/>
+					<ToggleControl
+						label={__(
+							'Show only top level categories',
+							'vk-blocks'
+						)}
+						checked={showOnlyTopLevel}
+						onChange={(value) =>
+							setAttributes({ showOnlyTopLevel: value })
+						}
+					/>
+					<ToggleControl
+						label={__('Hide if term has no posts', 'vk-blocks')}
+						checked={hideIfEmpty}
+						onChange={(value) =>
+							setAttributes({ hideIfEmpty: value })
+						}
+					/>
+					{!showOnlyTopLevel && (
+						<ToggleControl
+							label={__('Show hierarchy', 'vk-blocks')}
+							checked={showHierarchy}
 							onChange={(value) =>
-								setAttributes({ blockLabel: value })
+								setAttributes({ showHierarchy: value })
 							}
 						/>
-					</BaseControl>
-					<BaseControl id={'vk_Taxonomy-Taxonomy'}>
-						<SelectControl
-							label={__('Taxonomy', 'vk-blocks')}
-							value={isSelectedTaxonomy}
-							options={taxonomyOption}
-							onChange={(value) =>
-								setAttributes({
-									isSelectedTaxonomy: value,
-								})
-							}
-						/>
-					</BaseControl>
-					<BaseControl id={'vk_Taxonomy-hideIfEmpty'}>
-						<CheckboxControl
-							label={__('Hide if term has no posts', 'vk-blocks')}
-							checked={hideIfEmpty}
-							onChange={(value) =>
-								setAttributes({ hideIfEmpty: value })
-							}
-						/>
-					</BaseControl>
+					)}
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>{editContent}</div>

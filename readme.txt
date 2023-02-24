@@ -65,7 +65,14 @@ e.g.
 == Changelog ==
 
 [ Improvement ] Removed unused display_vk_block_template option value.
+[ Specification Change ] [ Custom Block Style Setting (Pro) ] Changed the specification to save the CSS wrapped in .editor-styles-wrapper and output that CSS in the block editor.
+[ Specification Change ][ Outer( Pro ) ] When the block is made full width, the class name of "alignfull" will be given.
+[ Bug fix ][ Slider ] Allow 0 to be entered in numeric form.
+[ Specification Change ] Add multiple length units.
+
+= 1.51.0 =
 [ Improvement ][ Balloon ] Improvement to allow any number of registrations in admin.
+[ Bug fix ][ Step/timeline ] Fix title align center
 
 = 1.50.１ =
 [ Other ] CSS Optimize ( Tree Shaking ) Library update

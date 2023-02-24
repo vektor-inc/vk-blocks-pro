@@ -3,6 +3,7 @@
  */
 import { __, sprintf } from '@wordpress/i18n';
 import { createInterpolateElement } from '@wordpress/element';
+import { transformStyles } from '@wordpress/block-editor';
 
 /**
  * Internal dependencies
@@ -19,9 +20,20 @@ export const PropertyInlineStyle = ({ index, onChange, blockStyleListObj }) => {
 			<CodeMirrorCss
 				className="vk-codemirror-options"
 				value={blockStyleListObj.property_inline_style ?? ''}
-				onChange={(value) =>
-					onChange('property_inline_style', value, index)
-				}
+				onChange={(value) => {
+					onChange('property_inline_style', value, index);
+
+					// .editor-styles-wrapperをwrapしてproperty_transform_inline_styleに保存する
+					const [transformed] = transformStyles(
+						[{ css: value }],
+						'.editor-styles-wrapper'
+					);
+					onChange(
+						'property_transform_inline_style',
+						transformed,
+						index
+					);
+				}}
 			/>
 			<p>
 				{createInterpolateElement(

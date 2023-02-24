@@ -57,7 +57,7 @@ class VK_Blocks_Options {
 
 		// 使わなくなったdisplay_vk_block_templateを削除する
 		if ( ! empty( $options['display_vk_block_template'] ) ) {
-			unset($options['display_vk_block_template']);
+			unset( $options['display_vk_block_template'] );
 			update_option( 'vk_blocks_options', $options );
 		}
 	}

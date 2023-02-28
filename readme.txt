@@ -1,10 +1,10 @@
 === VK Blocks ===
-Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird
+Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird,chiakikouno
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.9
 Tested up to: 6.1.0
-Stable tag: 1.47.0.1
+Stable tag: 1.50.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -64,8 +64,30 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] [ Custom Block Style Setting (Pro) ] Changed the specification to save the CSS wrapped in .editor-styles-wrapper and output that CSS in the block editor.
+[ Specification Change ][ Outer( Pro ) ] When the block is made full width, the class name of "alignfull" will be given.
+[ Bug fix ][ Slider ] Allow 0 to be entered in numeric form.
+[ Specification Change ] Add multiple length units.
+
+= 1.51.0 =
+[ Improvement ][ Balloon ] Improvement to allow any number of registrations in admin.
+[ Bug fix ][ Step/timeline ] Fix title align center
+
+= 1.50.１ =
+[ Other ] CSS Optimize ( Tree Shaking ) Library update
+
+= 1.50.0 =
+[ Add Function ][ Slider ] Add Slider per view Setting for Mobile, Tablet, PC.
+
+= 1.49.0 =
+[ Add Function ][ Custom Block Style Setting (Pro) ] Add Custom Block Style Setting extension in admin.
+[ Specification Change ][ Post List ( Pro ) ] Lightweight data acquisition process
+[ Bug fix ][ Step(Pro) / Time Line(Pro) ] Fix item content overflow hidden
+
+= 1.48.1 =
 [ Bug fix ][ Slider ] Set default value for unset time and speed.
-[ Specification Change ] Update Plugin Update Checker to 5.0
+[ Bug fix ][ table style ] Fix bug of under the active theme.json environment, If you use the table styles that, table border property become not reflection.
+[ Other ] Update Plugin Update Checker to 5.0
 [ Other ] Update VK Breadcrumb lib 0.2.5
 
 = 1.48.0 =

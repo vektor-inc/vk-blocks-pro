@@ -58,9 +58,21 @@
 			"type": "number",
 			"default": 1
 		},
-		"slidesPerGroup": {
+		"slidesPerViewMobile": {
 			"type": "number",
 			"default": 1
+		},
+		"slidesPerViewTablet": {
+			"type": "number",
+			"default": 1
+		},
+		"slidesPerViewPC": {
+			"type": "number",
+			"default": 1
+		},
+		"slidesPerGroup": {
+			"type": "string",
+			"default": "one-by-one"
 		},
 		"navigationPosition": {
 			"type": "string",

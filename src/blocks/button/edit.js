@@ -243,44 +243,40 @@ export default function ButtonEdit(props) {
 						}}
 						renderContent={(params) => {
 							return (
-								<div className="block-editor-url-input__button block-editor-link-control">
-									<form
-										className="block-editor-link-control__search-input-wrapper"
-										onSubmit={() => {
-											params.onClose();
-										}}
-									>
-										<div className="block-editor-link-control__search-input">
-											<URLInput
-												value={buttonUrl}
-												onChange={(value) => {
-													setAttributes({
-														buttonUrl: value,
-													});
-												}}
-											/>
-											<CheckboxControl
-												label={__(
-													'Open link new tab.',
-													'vk-blocks'
-												)}
-												checked={buttonTarget}
-												onChange={(checked) =>
-													setAttributes({
-														buttonTarget: checked,
-													})
-												}
-											/>
-											<div className="block-editor-link-control__search-actions">
-												<Button
-													icon={keyboardReturn}
-													label={__('Submit')}
-													type="submit"
-												/>
-											</div>
-										</div>
-									</form>
-								</div>
+								<form
+									onSubmit={() => {
+										params.onClose();
+									}}
+								>
+									<div className="vk-block-editor-url-input-wrapper">
+										<URLInput
+											__nextHasNoMarginBottom
+											value={buttonUrl}
+											onChange={(value) => {
+												setAttributes({
+													buttonUrl: value,
+												});
+											}}
+										/>
+										<Button
+											icon={keyboardReturn}
+											label={__('Submit')}
+											type="submit"
+										/>
+									</div>
+									<CheckboxControl
+										label={__(
+											'Open link new tab.',
+											'vk-blocks'
+										)}
+										checked={buttonTarget}
+										onChange={(checked) =>
+											setAttributes({
+												buttonTarget: checked,
+											})
+										}
+									/>
+								</form>
 							);
 						}}
 					/>

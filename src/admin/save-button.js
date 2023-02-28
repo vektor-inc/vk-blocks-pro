@@ -8,7 +8,7 @@ import apiFetch from '@wordpress/api-fetch';
 import classNames from 'classnames';
 
 export const SaveButton = (props) => {
-	const { vkBlocksOption, vkBlocksBalloonMeta, classOption } = props;
+	const { vkBlocksOption, classOption } = props;
 	const [isLoading, setIsLoading] = useState(false);
 	const [isSaveSuccess, setIsSaveSuccess] = useState('');
 
@@ -20,7 +20,6 @@ export const SaveButton = (props) => {
 			method: 'POST',
 			data: {
 				vkBlocksOption,
-				vkBlocksBalloonMeta,
 			},
 		}).then((/*response, status*/) => {
 			setTimeout(() => {

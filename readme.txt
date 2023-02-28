@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Custom CSS (Pro) ] Fix PHP 8.1 warning
 [ Specification Change ] [ Custom CSS (Pro) ] Changed specification to output CSS wrapped by .editor-styles-wrapper in block editor.
 [ Specification Change ] [ Custom Block Style Setting (Pro) ] Changed the specification to save the CSS wrapped in .editor-styles-wrapper and output that CSS in the block editor.
 [ Specification Change ][ Outer( Pro ) ] When the block is made full width, the class name of "alignfull" will be given.

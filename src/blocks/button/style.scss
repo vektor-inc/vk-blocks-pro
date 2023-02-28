@@ -306,21 +306,6 @@ a.vk_button_link {
 			text-decoration-color:currentColor;
 			text-decoration-thickness: 1px;
 		}
-
-		&:hover {
-			/* 白っぽい色に対する対策 */
-			&.has-vk-color-light-background-color .vk_button_link_before,
-			&.has-vk-color-light-background-color .vk_button_link_txt,
-			&.has-vk-color-light-background-color .vk_button_link_after,
-			&.has-vk-color-light-background-color .vk_button_link_subCaption,
-			&.has-white-color .vk_button_link_before,
-			&.has-white-color .vk_button_link_txt,
-			&.has-white-color .vk_button_link_after,
-			&.has-white-color .vk_button_link_subCaption {
-				color:#212529;
-				text-decoration: none;
-			}
-		}
 	}
 
 	//光る

@@ -298,13 +298,16 @@ a.vk_button_link {
 
 	// テキストのみ
 	.has-text-color.vk_button_link-type-text {
-		&:hover .vk_button_link_txt,
-		&:hover .vk_button_link_subCaption {
-			text-decoration: underline;
-			text-decoration-style: dotted;
-			text-underline-offset:2px;
-			text-decoration-color:currentColor;
-			text-decoration-thickness: 1px;
+		&:hover{
+			opacity: unset;
+			.vk_button_link_txt,
+			.vk_button_link_subCaption {				
+				text-decoration: underline;
+				text-decoration-style: dotted;
+				text-underline-offset:2px;
+				text-decoration-color:currentColor;
+				text-decoration-thickness: 1px;
+			}
 		}
 	}
 

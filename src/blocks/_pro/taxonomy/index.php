@@ -150,7 +150,7 @@ function vk_blocks_taxonomy_render_callback( $attributes, $content ) {
 	$common_args = apply_filters( 'vk_blocks_taxlist_args', $common_args ); // 9.13.0.0
 
 	$dropdown_args = array(
-		// translators: 
+		// translators:
 		'show_option_all' => sprintf( __( 'All of %s', 'vk-blocks' ), $taxonomy_data->labels->singular_name ),
 		'id'              => 'vk_taxonomy-' . $block_id,
 		'class'           => 'vk_taxonomy__input-wrap vk_taxonomy__input-wrap--select',
@@ -164,11 +164,11 @@ function vk_blocks_taxonomy_render_callback( $attributes, $content ) {
 
 	$outer_attributes = get_block_wrapper_attributes(
 		array(
-			'class' => "vk_taxonomy vk_taxonomy--{$attributes['isSelectedTaxonomy']} vk_taxonomy-outer-wrap"
+			'class' => "vk_taxonomy vk_taxonomy--{$attributes['isSelectedTaxonomy']} vk_taxonomy-outer-wrap",
 		)
 	);
 
-	$content  = '<div ' .  $outer_attributes . '>';
+	$content  = '<div ' . $outer_attributes . '>';
 	$content .= '<div class="vk_taxnomy-label">' . $block_label . '</div>';
 	if ( ! empty( $attributes['displayAsDropdown'] ) ) {
 		$content .= wp_dropdown_categories(

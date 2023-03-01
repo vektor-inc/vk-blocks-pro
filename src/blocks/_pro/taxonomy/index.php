@@ -162,7 +162,13 @@ function vk_blocks_taxonomy_render_callback( $attributes, $content ) {
 		'show_option_all' => false,
 	);
 
-	$content  = '<div class="vk_taxonomy vk_taxonomy--' . $attributes['isSelectedTaxonomy'] . ' vk_taxonomy-outer-wrap ' . $attributes['className'] . '">';
+	$outer_attributes = get_block_wrapper_attributes(
+		array(
+			'class' => "vk_taxonomy vk_taxonomy--{$attributes['isSelectedTaxonomy']} vk_taxonomy-outer-wrap"
+		)
+	);
+
+	$content  = '<div ' .  $outer_attributes . '>';
 	$content .= '<div class="vk_taxnomy-label">' . $block_label . '</div>';
 	if ( ! empty( $attributes['displayAsDropdown'] ) ) {
 		$content .= wp_dropdown_categories(

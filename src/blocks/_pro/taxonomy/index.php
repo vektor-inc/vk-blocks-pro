@@ -199,19 +199,18 @@ function vk_blocks_taxonomy_render_callback( $attributes ) {
 /**
  * Generates the inline script for a categories dropdown field.
  *
- * @param string $content Block Content
+ * @param string  $content Block Content
  * @param boolean $is_dropdsown Dropdown or not.
- * @param string $dropdown_id ID of the dropdown field.
+ * @param string  $dropdown_id ID of the dropdown field.
  *
  * @return string Returns the dropdown onChange redirection script.
  */
 function vk_blocks_taxonomy_add_scripts( $content, $is_dropdsown, $dropdown_id ) {
-	
-	$current_url = ( empty($_SERVER['HTTPS']) ? 'http://' : 'https://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+	$current_url = ( empty( $_SERVER['HTTPS'] ) ? 'http://' : 'https://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
 	if (
 		! empty( $is_dropdsown ) &&
-		false === strpos( $current_url, 'post-new.php' ) && 
+		false === strpos( $current_url, 'post-new.php' ) &&
 		false === strpos( $current_url, 'post.php' ) &&
 		false === strpos( $current_url, 'widgets.php' ) &&
 		false === strpos( $current_url, 'site-editor.php' )
@@ -236,6 +235,5 @@ function vk_blocks_taxonomy_add_scripts( $content, $is_dropdsown, $dropdown_id )
 	}
 
 	return $content;
-
 }
 add_filter( 'vk_blocks_taxonomy_content', 'vk_blocks_taxonomy_add_scripts', 10, 3 );

@@ -144,9 +144,12 @@ function vk_blocks_taxonomy_render_callback( $attributes ) {
 		'echo'         => false,
 		'show_count'   => ! empty( $attributes['showPostCounts'] ) ? $attributes['showPostCounts'] : false,
 		'hide_empty'   => ! empty( $attributes['hideIfEmpty'] ) ? $attributes['hideIfEmpty'] : false,
-		'hierarchical' => ! empty( $attributes['showHierarchy'] ) ? $attributes['showHierarchy'] : false,
+		'hierarchical' => ( ! empty( $attributes['showHierarchy'] ) && empty( $attributes['showOnlyTopLevel'] ) ) ? $attributes['showHierarchy'] : false,
 		'taxonomy'     => ! empty( $attributes['isSelectedTaxonomy'] ) ? $attributes['isSelectedTaxonomy'] : 'category',
 	);
+	if ( ! empty( $attributes['showOnlyTopLevel'] ) ) {
+		$common_args['parent'] = 0;
+	}
 	$common_args = apply_filters( 'vk_blocks_taxlist_args', $common_args ); // 9.13.0.0
 
 	$dropdown_args = array(

@@ -113,9 +113,8 @@ add_action( 'init', 'vk_blocks_register_block_taxonomy', 99 );
 /**
  * Render callback of Taxonomy block
  *
- * @param array  $attributes Block attributes.
- * @param string $content Block content.
- * @return string
+ * @param array $attributes Block attributes.
+ * @return string block html.
  */
 function vk_blocks_taxonomy_render_callback( $attributes ) {
 	$attributes = wp_parse_args(
@@ -199,41 +198,42 @@ function vk_blocks_taxonomy_render_callback( $attributes ) {
 /**
  * Generates the inline script for a categories dropdown field.
  *
- * @param string  $content Block Content
+ * @param string  $content Block Content.
  * @param boolean $is_dropdsown Dropdown or not.
  * @param string  $dropdown_id ID of the dropdown field.
  *
  * @return string Returns the dropdown onChange redirection script.
  */
 function vk_blocks_taxonomy_add_scripts( $content, $is_dropdsown, $dropdown_id ) {
-	$current_url = ( empty( $_SERVER['HTTPS'] ) ? 'http://' : 'https://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+	$script = '';
+	if ( ! empty( $_SERVER['REQUEST_URI'] ) ) {
+		$current_url = esc_url_raw( wp_unslash( $_SERVER['REQUEST_URI'] ) );
 
-	if (
-		! empty( $is_dropdsown ) &&
-		false === strpos( $current_url, 'post-new.php' ) &&
-		false === strpos( $current_url, 'post.php' ) &&
-		false === strpos( $current_url, 'widgets.php' ) &&
-		false === strpos( $current_url, 'site-editor.php' )
-	) {
-		ob_start();
-		?>
-		<script type='text/javascript'>
-		/* <![CDATA[ */
-		( function() {
-			var dropdown = document.getElementById( '<?php echo esc_js( $dropdown_id ); ?>' );
-			function onCatChange() {
-				if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
-					location.href = "<?php echo esc_url( home_url() ); ?>/?cat=" + dropdown.options[ dropdown.selectedIndex ].value;
+		if (
+			! empty( $is_dropdsown ) &&
+			false === strpos( $current_url, 'post-new.php' ) &&
+			false === strpos( $current_url, 'post.php' ) &&
+			false === strpos( $current_url, 'widgets.php' ) &&
+			false === strpos( $current_url, 'site-editor.php' )
+		) {
+			$script = '
+			<script type="text/javascript">
+			/* <![CDATA[ */
+			( function() {
+				var dropdown = document.getElementById( \'' . esc_js( $dropdown_id ) . '\' );
+				function onCatChange() {
+					if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
+						location.href = \'' . esc_url( home_url() ) . '/?cat=\' + dropdown.options[ dropdown.selectedIndex ].value;
+					}
 				}
-			}
-			dropdown.onchange = onCatChange;
-		})();
-		/* ]]> */
-		</script>
-		<?php
-		$content = $content . ob_get_clean();
+				dropdown.onchange = onCatChange;
+			})();
+			/* ]]> */
+			</script>
+			';
+		}
 	}
 
-	return $content;
+	return $content . $script;
 }
 add_filter( 'vk_blocks_taxonomy_content', 'vk_blocks_taxonomy_add_scripts', 10, 3 );

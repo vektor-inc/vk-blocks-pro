@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-03-01T03:01:26+00:00\n"
+"POT-Creation-Date: 2023-03-02T05:28:21+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: vk-blocks\n"
@@ -3014,8 +3014,8 @@ msgid "Any"
 msgstr ""
 
 #. translators:
-#: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:154
-#: src/blocks/_pro/taxonomy/index.php:154
+#: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:156
+#: src/blocks/_pro/taxonomy/index.php:156
 msgid "All of %s"
 msgstr ""
 

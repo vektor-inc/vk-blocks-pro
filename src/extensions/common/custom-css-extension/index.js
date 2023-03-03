@@ -258,7 +258,12 @@ const withElementsStyles = createHigherOrderComponent(
 		}
 
 		// cssに.editor-styles-wrapperをwrapする
-		cssTag = transformStyles([{ css: cssTag }], '.editor-styles-wrapper');
+		if (cssTag !== '') {
+			cssTag = transformStyles(
+				[{ css: cssTag }],
+				'.editor-styles-wrapper'
+			);
+		}
 
 		return (
 			<>

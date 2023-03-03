@@ -16,7 +16,7 @@ use VektorInc\VK_Helpers\VkHelpers;
 function vk_blocks_dynamic_text_render_callback( $attributes ) {
 	$options = array(
 		'displayElement' => $attributes['displayElement'],
-		'tagName' => $attributes['tagName'],
+		'tagName'        => $attributes['tagName'],
 	);
 
 	// 投稿タイプの名前取得
@@ -43,7 +43,7 @@ function vk_blocks_dynamic_text_render_callback( $attributes ) {
 
 	$block_content = '';
 	if ( 'post-type' === $options['displayElement'] ) {
-		$block_content =  $post_type_name ;
+		$block_content = $post_type_name;
 	} elseif ( 'ancestor-page' === $options['displayElement'] ) {
 		$block_content = $ancestor_post_title;
 	}
@@ -87,7 +87,7 @@ function vk_blocks_register_block_dynamic_text() {
 						'type'    => 'string',
 						'default' => 'please-select',
 					),
-					'tagName' => array(
+					'tagName'        => array(
 						'type'    => 'string',
 						'default' => 'none',
 					),

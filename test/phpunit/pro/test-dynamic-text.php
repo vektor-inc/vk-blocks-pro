@@ -53,11 +53,20 @@ class DynamicText extends WP_UnitTestCase {
 		$data['child_page_id'] = wp_insert_post( $post );
 
 		$test_data = array(
-			// 投稿ページの投稿タイプ名
+			// 投稿ページの投稿タイプ名 + divタグ
 			array(
 				'attributes' => array(
 					'displayElement' => 'post-type',
 					'tagName'    => 'div',
+				),
+				'target_url' => get_permalink( $data['post_id'] ),
+				'correct'    => '<div class="vk_dynamicText wp-block-vk-blocks-dynamic-text">Posts</div>',
+			),
+			// 投稿ページの投稿タイプ名 + タグなし
+			array(
+				'attributes' => array(
+					'displayElement' => 'post-type',
+					'tagName'    => '',
 				),
 				'target_url' => get_permalink( $data['post_id'] ),
 				'correct'    => 'Posts',
@@ -69,7 +78,7 @@ class DynamicText extends WP_UnitTestCase {
 					'tagName'    => 'h1',
 				),
 				'target_url' => get_permalink( $data['child_page_id'] ),
-				'correct'    => 'Pages',
+				'correct'    => '<h1 class="vk_dynamicText wp-block-vk-blocks-dynamic-text">Pages</h1>',
 			),
 			// 親ページが無いときはそのページのタイトル
 			array(
@@ -78,7 +87,7 @@ class DynamicText extends WP_UnitTestCase {
 					'tagName'    => 'h2',
 				),
 				'target_url' => get_permalink( $data['ancestor_page_id'] ),
-				'correct'    => 'ancestor_page',
+				'correct'    => '<h2 class="vk_dynamicText wp-block-vk-blocks-dynamic-text">ancestor_page</h2>',
 			),
 			// 親ページのタイトル
 			array(
@@ -87,7 +96,7 @@ class DynamicText extends WP_UnitTestCase {
 					'tagName'    => 'h3',
 				),
 				'target_url' => get_permalink( $data['parent_page_id'] ),
-				'correct'    => 'ancestor_page',
+				'correct'    => '<h3 class="vk_dynamicText wp-block-vk-blocks-dynamic-text">ancestor_page</h3>',
 			),
 			// 親ページのタイトル（先祖ページ）
 			array(
@@ -96,7 +105,7 @@ class DynamicText extends WP_UnitTestCase {
 					'tagName'    => 'span',
 				),
 				'target_url' => get_permalink( $data['child_page_id'] ),
-				'correct'    => 'ancestor_page',
+				'correct'    => '<span class="vk_dynamicText wp-block-vk-blocks-dynamic-text">ancestor_page</span>',
 			),
 		);
 

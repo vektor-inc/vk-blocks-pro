@@ -71,6 +71,26 @@ export default function DynamicTextEdit(props) {
 	const blockProps = useBlockProps();
 	// const blockProps = useBlockProps({ className: 'vk_dynamicText' });
 
+	let editContent;
+	if (displayElement === 'please-select') {
+		editContent = (
+			<div className="alert alert-warning text-center">
+				{__(
+					'表示要素が選択されていないため、このブロックはレンダリングされません。',
+					'vk-blocks'
+				)}
+			</div>
+			// Because no display Element is selected, The block Will not render
+		);
+	} else {
+		editContent = (
+			<ServerSideRender
+				block="vk-blocks/dynamic-text"
+				attributes={attributes}
+			/>
+		);
+	}
+
 	return (
 		<>
 			<InspectorControls>
@@ -114,24 +134,7 @@ export default function DynamicTextEdit(props) {
 					/>
 				</PanelBody>
 			</InspectorControls>
-			{displayElement === 'please-select' && (
-				<div {...blockProps}>
-					<div className="alert alert-warning text-center">
-						{__(
-							'表示要素が選択されていないため、このブロックはレンダリングされません。',
-							'vk-blocks'
-						)}
-					</div>
-				</div>
-			)}
-			{displayElement !== 'please-select' && (
-				<TagName {...blockProps}>
-					<ServerSideRender
-						block="vk-blocks/dynamic-text"
-						attributes={attributes}
-					/>
-				</TagName>
-			)}
+			<div {...blockProps}>{editContent}</div>
 		</>
 	);
 }

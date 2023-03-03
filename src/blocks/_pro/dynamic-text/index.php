@@ -42,15 +42,21 @@ function vk_blocks_dynamic_text_render_callback( $attributes ) {
 	$wrapper_classes = get_block_wrapper_attributes( array( 'class' => $classes ) );
 
 	$block_content = '';
+	if ( $options['tagName'] ) {
+		$block_content .= '<' . $options['tagName'] . ' ' . $wrapper_classes . '>';
+	};
 	if ( 'post-type' === $options['displayElement'] ) {
-		$block_content = $post_type_name;
+		$block_content .= $post_type_name;
 	} elseif ( 'ancestor-page' === $options['displayElement'] ) {
-		$block_content = $ancestor_post_title;
+		$block_content .= $ancestor_post_title;
 	}
 	// カスタムフィールド選択時を未実装のためコメントアウト
 	// elseif ( 'custom-field' === $options['displayElement'] ) {
 	// $block_content = sprintf( '<p class="vk_dynamicText_content">%1$s</p>', $custom_field );
 	// }
+	if ( $options['tagName'] ) {
+		$block_content .= '</' . $options['tagName'] . '>';
+	}
 
 	return $block_content;
 }

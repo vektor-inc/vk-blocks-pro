@@ -1,10 +1,7 @@
 // import WordPress Scripts
 import { __ } from '@wordpress/i18n';
 import { PanelBody, SelectControl } from '@wordpress/components';
-import {
-	useBlockProps,
-	InspectorControls,
-} from '@wordpress/block-editor';
+import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
 import ServerSideRender from '@wordpress/server-side-render';
 
 function DynamicTextEditControls({ tagName, onSelectTagName }) {
@@ -57,10 +54,7 @@ function DynamicTextEditControls({ tagName, onSelectTagName }) {
 }
 
 export default function DynamicTextEdit(props) {
-	const {
-		attributes,
-		setAttributes,
-	} = props;
+	const { attributes, setAttributes } = props;
 
 	const { displayElement, tagName: TagName = '' } = attributes;
 
@@ -112,7 +106,7 @@ export default function DynamicTextEdit(props) {
 				</PanelBody>
 			</InspectorControls>
 			{displayElement === 'please-select' && (
-				<div {...blockProps} >
+				<div {...blockProps}>
 					<div className="alert alert-warning text-center">
 						{__(
 							'表示要素が選択されていないため、このブロックはレンダリングされません。',
@@ -122,7 +116,7 @@ export default function DynamicTextEdit(props) {
 				</div>
 			)}
 			{displayElement !== 'please-select' && (
-				<TagName {...blockProps} >
+				<TagName {...blockProps}>
 					<ServerSideRender
 						block="vk-blocks/dynamic-text"
 						attributes={attributes}

@@ -7,11 +7,16 @@
 		"displayElement": {
 			"type": "string",
 			"default": "please-select"
+		},
+		"tagName": {
+			"type": "string",
+			"default": "none"
 		}
 	},
 	"description": "Display dynamic Text",
 	"textdomain": "vk-blocks",
 	"supports": {
+		"anchor": true,
 		"className": true
 	}
 }

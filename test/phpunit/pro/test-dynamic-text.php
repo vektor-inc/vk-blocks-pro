@@ -57,41 +57,46 @@ class DynamicText extends WP_UnitTestCase {
 			array(
 				'attributes' => array(
 					'displayElement' => 'post-type',
+					'tagName'    => 'div',
 				),
 				'target_url' => get_permalink( $data['post_id'] ),
-				'correct'    => '<div class="vk_dynamicText wp-block-vk-blocks-dynamic-text"><p class="vk_dynamicText_content">Posts</p></div>',
+				'correct'    => 'Posts',
 			),
 			// 固定ページの投稿タイプ名
 			array(
 				'attributes' => array(
 					'displayElement' => 'post-type',
+					'tagName'    => 'h1',
 				),
 				'target_url' => get_permalink( $data['child_page_id'] ),
-				'correct'    => '<div class="vk_dynamicText wp-block-vk-blocks-dynamic-text"><p class="vk_dynamicText_content">Pages</p></div>',
+				'correct'    => 'Pages',
 			),
 			// 親ページが無いときはそのページのタイトル
 			array(
 				'attributes' => array(
 					'displayElement' => 'ancestor-page',
+					'tagName'    => 'h2',
 				),
 				'target_url' => get_permalink( $data['ancestor_page_id'] ),
-				'correct'    => '<div class="vk_dynamicText wp-block-vk-blocks-dynamic-text"><p class="vk_dynamicText_content">ancestor_page</p></div>',
+				'correct'    => 'ancestor_page',
 			),
 			// 親ページのタイトル
 			array(
 				'attributes' => array(
 					'displayElement' => 'ancestor-page',
+					'tagName'    => 'h3',
 				),
 				'target_url' => get_permalink( $data['parent_page_id'] ),
-				'correct'    => '<div class="vk_dynamicText wp-block-vk-blocks-dynamic-text"><p class="vk_dynamicText_content">ancestor_page</p></div>',
+				'correct'    => 'ancestor_page',
 			),
 			// 親ページのタイトル（先祖ページ）
 			array(
 				'attributes' => array(
 					'displayElement' => 'ancestor-page',
+					'tagName'    => 'span',
 				),
 				'target_url' => get_permalink( $data['child_page_id'] ),
-				'correct'    => '<div class="vk_dynamicText wp-block-vk-blocks-dynamic-text"><p class="vk_dynamicText_content">ancestor_page</p></div>',
+				'correct'    => 'ancestor_page',
 			),
 		);
 

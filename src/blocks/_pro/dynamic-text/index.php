@@ -16,6 +16,7 @@ use VektorInc\VK_Helpers\VkHelpers;
 function vk_blocks_dynamic_text_render_callback( $attributes ) {
 	$options = array(
 		'displayElement' => $attributes['displayElement'],
+		'tagName' => $attributes['tagName'],
 	);
 
 	// 投稿タイプの名前取得
@@ -42,21 +43,16 @@ function vk_blocks_dynamic_text_render_callback( $attributes ) {
 
 	$block_content = '';
 	if ( 'post-type' === $options['displayElement'] ) {
-		$block_content = sprintf( '<p class="vk_dynamicText_content">%1$s</p>', $post_type_name );
+		$block_content =  $post_type_name ;
 	} elseif ( 'ancestor-page' === $options['displayElement'] ) {
-		$block_content = sprintf( '<p class="vk_dynamicText_content">%1$s</p>', $ancestor_post_title );
+		$block_content = $ancestor_post_title;
 	}
 	// カスタムフィールド選択時を未実装のためコメントアウト
 	// elseif ( 'custom-field' === $options['displayElement'] ) {
 	// $block_content = sprintf( '<p class="vk_dynamicText_content">%1$s</p>', $custom_field );
 	// }
 
-	$block = '';
-	if ( 'please-select' !== $options['displayElement'] ) {
-		$block = sprintf( '<div %1$s>%2$s</div>', $wrapper_classes, $block_content );
-	}
-
-	return $block;
+	return $block_content;
 }
 
 /**
@@ -90,6 +86,10 @@ function vk_blocks_register_block_dynamic_text() {
 					'displayElement' => array(
 						'type'    => 'string',
 						'default' => 'please-select',
+					),
+					'tagName' => array(
+						'type'    => 'string',
+						'default' => 'none',
 					),
 				)
 			),

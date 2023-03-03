@@ -1,34 +1,72 @@
 // import WordPress Scripts
 import { __ } from '@wordpress/i18n';
 import { PanelBody, SelectControl } from '@wordpress/components';
-import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
+import {
+	useBlockProps,
+	InspectorControls,
+} from '@wordpress/block-editor';
 import ServerSideRender from '@wordpress/server-side-render';
 
+function DynamicTextEditControls({ tagName, onSelectTagName }) {
+	return (
+		<SelectControl
+			__nextHasNoMarginBottom
+			label={__('HTML要素の選択', 'vk-blocks')}
+			value={tagName}
+			options={[
+				{
+					value: '',
+					label: __('None', 'vk-blocks'),
+				},
+				{
+					value: 'h1',
+					label: __('h1', 'vk-blocks'),
+				},
+				{
+					value: 'h2',
+					label: __('h2', 'vk-blocks'),
+				},
+				{
+					value: 'h3',
+					label: __('h3', 'vk-blocks'),
+				},
+				{
+					value: 'h4',
+					label: __('h4', 'vk-blocks'),
+				},
+				{
+					value: 'h5',
+					label: __('h5', 'vk-blocks'),
+				},
+				{
+					value: 'h6',
+					label: __('h6', 'vk-blocks'),
+				},
+				{
+					value: 'div',
+					label: __('div', 'vk-blocks'),
+				},
+				{
+					value: 'span',
+					label: __('span', 'vk-blocks'),
+				},
+			]}
+			onChange={onSelectTagName}
+		/>
+	);
+}
+
 export default function DynamicTextEdit(props) {
-	const { attributes, setAttributes } = props;
-	const { displayElement } = attributes;
+	const {
+		attributes,
+		setAttributes,
+	} = props;
 
-	let editContent;
-	if (displayElement === 'please-select') {
-		editContent = (
-			<div className="alert alert-warning text-center">
-				{__(
-					'表示要素が選択されていないため、このブロックはレンダリングされません。',
-					'vk-blocks'
-				)}
-			</div>
-			// Because no display Element is selected, The block Will not render
-		);
-	} else {
-		editContent = (
-			<ServerSideRender
-				block="vk-blocks/dynamic-text"
-				attributes={attributes}
-			/>
-		);
-	}
+	const { displayElement, tagName: TagName = '' } = attributes;
 
+	// Hooks.
 	const blockProps = useBlockProps();
+	// const blockProps = useBlockProps({ className: 'vk_dynamicText' });
 
 	return (
 		<>
@@ -65,9 +103,32 @@ export default function DynamicTextEdit(props) {
 							// },
 						]}
 					/>
+					<DynamicTextEditControls
+						tagName={TagName}
+						onSelectTagName={(value) =>
+							setAttributes({ tagName: value })
+						}
+					/>
 				</PanelBody>
 			</InspectorControls>
-			<div {...blockProps}>{editContent}</div>
+			{displayElement === 'please-select' && (
+				<div {...blockProps} >
+					<div className="alert alert-warning text-center">
+						{__(
+							'表示要素が選択されていないため、このブロックはレンダリングされません。',
+							'vk-blocks'
+						)}
+					</div>
+				</div>
+			)}
+			{displayElement !== 'please-select' && (
+				<TagName {...blockProps} >
+					<ServerSideRender
+						block="vk-blocks/dynamic-text"
+						attributes={attributes}
+					/>
+				</TagName>
+			)}
 		</>
 	);
 }

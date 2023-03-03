@@ -4,6 +4,15 @@ import { PanelBody, SelectControl } from '@wordpress/components';
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
 import ServerSideRender from '@wordpress/server-side-render';
 
+/**
+ * Render Select controls for the Dynamic text block.
+ *
+ * @param {Object}   props                 Component props.
+ * @param {string}   props.tagName         The HTML tag name.
+ * @param {Function} props.onSelectTagName onChange function for the SelectControl.
+ *
+ * @return {JSX.Element}                The select control group for HTML tag name.
+ */
 function DynamicTextEditControls({ tagName, onSelectTagName }) {
 	return (
 		<SelectControl

@@ -298,27 +298,15 @@ a.vk_button_link {
 
 	// テキストのみ
 	.has-text-color.vk_button_link-type-text {
-		&:hover .vk_button_link_txt,
-		&:hover .vk_button_link_subCaption {
-			text-decoration: underline;
-			text-decoration-style: dotted;
-			text-underline-offset:2px;
-			text-decoration-color:currentColor;
-			text-decoration-thickness: 1px;
-		}
-
-		&:hover {
-			/* 白っぽい色に対する対策 */
-			&.has-vk-color-light-background-color .vk_button_link_before,
-			&.has-vk-color-light-background-color .vk_button_link_txt,
-			&.has-vk-color-light-background-color .vk_button_link_after,
-			&.has-vk-color-light-background-color .vk_button_link_subCaption,
-			&.has-white-color .vk_button_link_before,
-			&.has-white-color .vk_button_link_txt,
-			&.has-white-color .vk_button_link_after,
-			&.has-white-color .vk_button_link_subCaption {
-				color:#212529;
-				text-decoration: none;
+		&:hover{
+			opacity: unset;
+			.vk_button_link_txt,
+			.vk_button_link_subCaption {				
+				text-decoration: underline;
+				text-decoration-style: dotted;
+				text-underline-offset:2px;
+				text-decoration-color:currentColor;
+				text-decoration-thickness: 1px;
 			}
 		}
 	}

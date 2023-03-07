@@ -31,7 +31,12 @@ class Vk_Blocks_Print_CSS_Variables {
 	public static function print_css() {
 		if ( ! vk_blocks_is_lightning() ) {
 			$dynamic_css = self::get_print_css();
-			wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );
+				// 分割読み込み時には統合 CSS は読まれないのでちょうど良さそうなものに引っ掛ける
+			if ( VK_Blocks_Block_Loader::should_load_separate_assets() ) {
+				wp_add_inline_style( 'vk-blocks-utils-common-css', $dynamic_css );
+			} else {
+				wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );
+			}
 		}
 	}
 

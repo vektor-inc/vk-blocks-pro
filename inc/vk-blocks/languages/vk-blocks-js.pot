@@ -333,7 +333,7 @@ msgid "Load Separate Option on"
 msgstr ""
 
 #: src/admin/margin.js:103
-msgid "ex) var(--wp--custom--spacing--xx--small);"
+msgid "ex) var(--wp--custom--spacing--xx--small)"
 msgstr ""
 
 #: src/admin/margin.js:117

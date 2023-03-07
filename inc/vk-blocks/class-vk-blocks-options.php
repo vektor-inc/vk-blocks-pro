@@ -91,7 +91,7 @@ class VK_Blocks_Options {
 								'type' => 'number',
 							),
 							'custom' => array(
-								'type' => 'stri8ng',
+								'type' => 'string',
 							),
 						),
 					),
@@ -108,7 +108,7 @@ class VK_Blocks_Options {
 								'type' => 'number',
 							),
 							'custom' => array(
-								'type' => 'stri8ng',
+								'type' => 'string',
 							),
 						),
 					),
@@ -125,7 +125,7 @@ class VK_Blocks_Options {
 								'type' => 'number',
 							),
 							'custom' => array(
-								'type' => 'stri8ng',
+								'type' => 'string',
 							),
 						),
 					),
@@ -142,7 +142,7 @@ class VK_Blocks_Options {
 								'type' => 'number',
 							),
 							'custom' => array(
-								'type' => 'stri8ng',
+								'type' => 'string',
 							),
 						),
 					),
@@ -159,7 +159,7 @@ class VK_Blocks_Options {
 								'type' => 'number',
 							),
 							'custom' => array(
-								'type' => 'stri8ng',
+								'type' => 'string',
 							),
 						),
 					),

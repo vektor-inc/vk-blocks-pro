@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-03-07T04:29:04+00:00\n"
+"POT-Creation-Date: 2023-03-07T04:35:26+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: vk-blocks\n"
@@ -342,8 +342,11 @@ msgstr ""
 msgid "ex) var(--wp--custom--spacing--xx--small)"
 msgstr ""
 
-#: src/admin/margin.js:118
-msgid "Margin [ %s ]"
+#: src/admin/margin.js:116
+#: src/blocks/border-box/edit.js:192
+#: src/blocks/icon-outer/edit.js:149
+#: src/blocks/icon/edit.js:139
+msgid "Margin"
 msgstr ""
 
 #: src/admin/margin.js:20
@@ -1585,12 +1588,6 @@ msgstr ""
 #: src/blocks/border-box/deprecated/0.0.1/save.js:25
 #: src/blocks/border-box/edit.js:43
 msgid "Please enter a title."
-msgstr ""
-
-#: src/blocks/border-box/edit.js:192
-#: src/blocks/icon-outer/edit.js:149
-#: src/blocks/icon/edit.js:139
-msgid "Margin"
 msgstr ""
 
 #: src/blocks/border-box/edit.js:197

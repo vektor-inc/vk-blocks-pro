@@ -336,8 +336,11 @@ msgstr ""
 msgid "ex) var(--wp--custom--spacing--xx--small)"
 msgstr ""
 
-#: src/admin/margin.js:118
-msgid "Margin [ %s ]"
+#: src/admin/margin.js:116
+#: src/blocks/border-box/edit.js:192
+#: src/blocks/icon-outer/edit.js:149
+#: src/blocks/icon/edit.js:139
+msgid "Margin"
 msgstr ""
 
 #: src/admin/margin.js:20
@@ -1596,12 +1599,6 @@ msgstr ""
 #: src/blocks/border-box/deprecated/0.0.1/save.js:25
 #: src/blocks/border-box/edit.js:43
 msgid "Please enter a title."
-msgstr ""
-
-#: src/blocks/border-box/edit.js:192
-#: src/blocks/icon-outer/edit.js:149
-#: src/blocks/icon/edit.js:139
-msgid "Margin"
 msgstr ""
 
 #: src/blocks/border-box/edit.js:197

@@ -1,7 +1,7 @@
 /**
  * WordPress dependencies
  */
-import { __, sprintf } from '@wordpress/i18n';
+import { __ } from '@wordpress/i18n';
 import {
 	SelectControl,
 	__experimentalNumberControl as NumberControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
@@ -113,11 +113,8 @@ export default function AdminMargin() {
 							return (
 								<tr key={marginLabel}>
 									<td>
-										{sprintf(
-											// translators:
-											__('Margin [ %s ]', 'vk-blocks'),
-											marginLabel
-										)}
+										{__('Margin', 'vk-blocks') +
+											` [ ${marginLabel} ] `}
 									</td>
 									{DEVICE_ARRAY.map((device) => {
 										const { deviceLabel, deviceValue } =

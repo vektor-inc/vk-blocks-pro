@@ -26,12 +26,7 @@ function vk_blocks_balloon_style() {
 
 	wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );
 	if ( is_admin() && class_exists( 'WP_Screen' ) && WP_Screen::get()->is_block_editor() ) {
-			// 分割読み込み時には統合 CSS は読まれないのでちょうど良さそうなものに引っ掛ける
-		if ( VK_Blocks_Block_Loader::should_load_separate_assets() ) {
-			wp_add_inline_style( 'vk-blocks-utils-common-css', $dynamic_css );
-		} else {
-			wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );
-		}
+		wp_add_inline_style( 'vk-blocks-build-editor-css', $dynamic_css );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'vk_blocks_balloon_style' );

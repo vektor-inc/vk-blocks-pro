@@ -99,7 +99,7 @@ export default function AdminMargin() {
 											'If you enterd custom value, the values you enterd will be appllied.',
 											'vk-blocks'
 										)}
-										<br/>
+										<br />
 										{__(
 											'ex) var(--wp--custom--spacing--xx--small)',
 											'vk-blocks'

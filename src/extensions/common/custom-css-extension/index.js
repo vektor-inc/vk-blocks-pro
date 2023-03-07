@@ -4,7 +4,7 @@
 import { __, getLocaleData } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
 import { PanelBody, Icon, Button, ExternalLink } from '@wordpress/components';
-import { InspectorControls } from '@wordpress/block-editor';
+import { InspectorControls, transformStyles } from '@wordpress/block-editor';
 import { createHigherOrderComponent, useInstanceId } from '@wordpress/compose';
 import { hasBlockSupport } from '@wordpress/blocks';
 import { useEffect } from '@wordpress/element';
@@ -254,6 +254,14 @@ const withElementsStyles = createHigherOrderComponent(
 			cssTag = vkbCustomCss.replace(
 				customCssSelectorRegex,
 				'.' + uniqueClass
+			);
+		}
+
+		// cssに.editor-styles-wrapperをwrapする
+		if (cssTag !== '') {
+			cssTag = transformStyles(
+				[{ css: cssTag }],
+				'.editor-styles-wrapper'
 			);
 		}
 

@@ -16,7 +16,6 @@
 	"description": "Display dynamic Text",
 	"textdomain": "vk-blocks",
 	"supports": {
-		"anchor": true,
 		"className": true
 	}
 }

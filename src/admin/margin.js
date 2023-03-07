@@ -114,6 +114,7 @@ export default function AdminMargin() {
 								<tr key={marginLabel}>
 									<td>
 										{sprintf(
+											// translators:
 											__('Margin [ %s ]', 'vk-blocks'),
 											marginLabel
 										)}

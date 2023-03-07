@@ -96,6 +96,16 @@ class VKBSpacerTest extends WP_UnitTestCase {
 				'device'  => 'mobile',
 				'correct' => 0,
 			),
+			// カスタム
+			array(
+				'options' => array(
+					'margin_size' => array( 'md' => array( 'custom' => 'var(--wp--custom--spacing--xx--small)' ) ),
+				),
+				'size'    => 'md',
+				'device'  => 'custom',
+				'correct' => 'var(--wp--custom--spacing--xx--small)',
+			),
+
 		);
 
 		foreach ( $test_array as $value ) {

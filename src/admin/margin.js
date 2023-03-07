@@ -1,10 +1,11 @@
 /**
  * WordPress dependencies
  */
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import {
 	SelectControl,
 	__experimentalNumberControl as NumberControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
+	TextControl,
 } from '@wordpress/components';
 import { useContext } from '@wordpress/element';
 import { hightUnitOptions } from '@vkblocks/utils/unit-options';
@@ -82,36 +83,97 @@ export default function AdminMargin() {
 						options={hightUnitOptions}
 					/>
 				</div>
-				<ul className="no-style spacer-input">
-					{MARGIN_SIZE_ARRAY.map((size) => {
-						const { marginLabel, marginValue } = size;
-						return (
-							<li key={marginLabel}>
-								<span className="spacer-input__size-name">
-									{__('Margin', 'vk-blocks')} [ {marginLabel}{' '}
-									]
-								</span>
-								{DEVICE_ARRAY.map((device) => {
-									const { deviceLabel, deviceValue } = device;
-									{
-										/* TextControlでは以前の実装が出来なかったので致し方なく__experimentalNumberControlを利用 */
-									}
-									return (
-										<NumberControl
+				<table>
+					<tbody>
+						<tr>
+							<td></td>
+							{DEVICE_ARRAY.map((device) => {
+								const { deviceLabel } = device;
+								return <td key={deviceLabel}>{deviceLabel}</td>;
+							})}
+							<td>
+								<dl>
+									<dt>{__('Custom Value', 'vk-blocks')}</dt>
+									<dd>
+										{__(
+											'If you enterd custom value, the values you enterd will be appllied.',
+											'vk-blocks'
+										)}
+										<br/>
+										{__(
+											'ex) var(--wp--custom--spacing--xx--small)',
+											'vk-blocks'
+										)}
+									</dd>
+								</dl>
+							</td>
+						</tr>
+						{MARGIN_SIZE_ARRAY.map((size) => {
+							const { marginLabel, marginValue } = size;
+							return (
+								<tr key={marginLabel}>
+									<td>
+										{sprintf(
+											__('Margin [ %s ]', 'vk-blocks'),
+											marginLabel
+										)}
+									</td>
+									{DEVICE_ARRAY.map((device) => {
+										const { deviceLabel, deviceValue } =
+											device;
+										{
+											/* TextControlでは以前の実装が出来なかったので致し方なく__experimentalNumberControlを利用 */
+										}
+										return (
+											<td key={deviceLabel}>
+												<NumberControl
+													className="margin_size_input"
+													name={`vk_blocks_options[margin_size][${marginValue}][${deviceValue}]`}
+													step="0.05"
+													value={
+														!vkBlocksOption
+															.margin_size[
+															marginValue
+														][deviceValue]
+															? ''
+															: vkBlocksOption
+																	.margin_size[
+																	marginValue
+															  ][deviceValue]
+													}
+													onChange={(newValue) => {
+														setVkBlocksOption({
+															...vkBlocksOption,
+															margin_size: {
+																...vkBlocksOption.margin_size,
+																[marginValue]: {
+																	...vkBlocksOption
+																		.margin_size[
+																		marginValue
+																	],
+																	[deviceValue]:
+																		newValue,
+																},
+															},
+														});
+													}}
+												/>
+											</td>
+										);
+									})}
+									<td>
+										<TextControl
 											className="margin_size_input"
-											key={deviceLabel}
-											label={deviceLabel}
-											name={`vk_blocks_options[margin_size][${marginValue}][${deviceValue}]`}
-											step="0.05"
+											name={`vk_blocks_options[margin_size][${marginValue}][custom]`}
 											value={
 												!vkBlocksOption.margin_size[
 													marginValue
-												][deviceValue]
+												].custom
 													? ''
 													: vkBlocksOption
 															.margin_size[
 															marginValue
-													  ][deviceValue]
+													  ].custom
 											}
 											onChange={(newValue) => {
 												setVkBlocksOption({
@@ -123,19 +185,18 @@ export default function AdminMargin() {
 																.margin_size[
 																marginValue
 															],
-															[deviceValue]:
-																newValue,
+															custom: newValue,
 														},
 													},
 												});
 											}}
 										/>
-									);
-								})}
-							</li>
-						);
-					})}
-				</ul>
+									</td>
+								</tr>
+							);
+						})}
+					</tbody>
+				</table>
 			</section>
 		</>
 	);

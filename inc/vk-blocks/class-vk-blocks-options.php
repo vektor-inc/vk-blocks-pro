@@ -90,6 +90,9 @@ class VK_Blocks_Options {
 							'pc'     => array(
 								'type' => 'number',
 							),
+							'custom' => array(
+								'type' => 'stri8ng',
+							),
 						),
 					),
 					'lg' => array(
@@ -103,6 +106,9 @@ class VK_Blocks_Options {
 							),
 							'pc'     => array(
 								'type' => 'number',
+							),
+							'custom' => array(
+								'type' => 'stri8ng',
 							),
 						),
 					),
@@ -118,6 +124,9 @@ class VK_Blocks_Options {
 							'pc'     => array(
 								'type' => 'number',
 							),
+							'custom' => array(
+								'type' => 'stri8ng',
+							),
 						),
 					),
 					'sm' => array(
@@ -132,6 +141,9 @@ class VK_Blocks_Options {
 							'pc'     => array(
 								'type' => 'number',
 							),
+							'custom' => array(
+								'type' => 'stri8ng',
+							),
 						),
 					),
 					'xs' => array(
@@ -145,6 +157,9 @@ class VK_Blocks_Options {
 							),
 							'pc'     => array(
 								'type' => 'number',
+							),
+							'custom' => array(
+								'type' => 'stri8ng',
 							),
 						),
 					),
@@ -266,26 +281,31 @@ class VK_Blocks_Options {
 					'mobile' => null,
 					'tablet' => null,
 					'pc'     => null,
+					'custom' => '',
 				),
 				'lg' => array(
 					'mobile' => null,
 					'tablet' => null,
 					'pc'     => null,
+					'custom' => '',
 				),
 				'md' => array(
 					'mobile' => null,
 					'tablet' => null,
 					'pc'     => null,
+					'custom' => '',
 				),
 				'sm' => array(
 					'mobile' => null,
 					'tablet' => null,
 					'pc'     => null,
+					'custom' => '',
 				),
 				'xs' => array(
 					'mobile' => null,
 					'tablet' => null,
 					'pc'     => null,
+					'custom' => '',
 				),
 			),
 			'load_separate_option'        => false,

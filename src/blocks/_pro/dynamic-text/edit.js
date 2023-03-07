@@ -21,8 +21,8 @@ function DynamicTextEditControls({ tagName, onSelectTagName }) {
 			value={tagName}
 			options={[
 				{
-					value: '',
-					label: __('None', 'vk-blocks'),
+					value: 'div',
+					label: __('div (default)', 'vk-blocks'),
 				},
 				{
 					value: 'h1',
@@ -47,10 +47,6 @@ function DynamicTextEditControls({ tagName, onSelectTagName }) {
 				{
 					value: 'h6',
 					label: __('h6', 'vk-blocks'),
-				},
-				{
-					value: 'div',
-					label: __('div', 'vk-blocks'),
 				},
 				{
 					value: 'span',

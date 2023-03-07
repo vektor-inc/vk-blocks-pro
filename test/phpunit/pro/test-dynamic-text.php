@@ -62,15 +62,6 @@ class DynamicText extends WP_UnitTestCase {
 				'target_url' => get_permalink( $data['post_id'] ),
 				'correct'    => '<div class="vk_dynamicText wp-block-vk-blocks-dynamic-text">Posts</div>',
 			),
-			// 投稿ページの投稿タイプ名 + タグなし
-			array(
-				'attributes' => array(
-					'displayElement' => 'post-type',
-					'tagName'    => '',
-				),
-				'target_url' => get_permalink( $data['post_id'] ),
-				'correct'    => 'Posts',
-			),
 			// 固定ページの投稿タイプ名
 			array(
 				'attributes' => array(

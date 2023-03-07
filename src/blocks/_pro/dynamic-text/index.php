@@ -95,7 +95,7 @@ function vk_blocks_register_block_dynamic_text() {
 					),
 					'tagName'        => array(
 						'type'    => 'string',
-						'default' => 'none',
+						'default' => 'div',
 					),
 				)
 			),

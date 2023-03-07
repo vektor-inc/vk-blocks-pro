@@ -10,7 +10,7 @@
 		},
 		"tagName": {
 			"type": "string",
-			"default": "none"
+			"default": "div"
 		}
 	},
 	"description": "Display dynamic Text",

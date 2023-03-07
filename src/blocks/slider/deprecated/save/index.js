@@ -134,6 +134,31 @@ const blockAttributes7 = {
 	}
 }
 
+/**
+ * 1.48.1 で追加された値
+ */
+/*
+const blockAttributes8 = {
+	...blockAttributes7,
+	slidesPerViewMobile: {
+		type: 'number',
+		default: 1
+	},
+	slidesPerViewTablet: {
+		type: 'number',
+		default: 1
+	},
+	slidesPerViewPC: {
+		type: 'number',
+		default: 1
+	},
+	slidesPerGroup: {
+		type: 'string',
+		default: 'one-by-one'
+	},
+}
+*/
+
 const deprecated = [
 	{
 		attributes: blockAttributes7,

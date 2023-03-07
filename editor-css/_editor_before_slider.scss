@@ -18,7 +18,7 @@
 			&.vk_slider_item-paddingLR-zero{
 				.vk_slider_item_container{
 						max-width:100%;
-					.wp-block{
+					.wp-block:where(:not(.is-layout-constrained)){
 						max-width:100%;
 					}
 				}

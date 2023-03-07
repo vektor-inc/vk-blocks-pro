@@ -56,8 +56,7 @@ function vk_blocks_get_spacer_size( $options, $spacer_size, $device ) {
 	// カスタム値がある場合
 	if ( ! empty( $options['margin_size'][ $spacer_size ]['custom'] ) ) {
 		return $options['margin_size'][ $spacer_size ]['custom'];
-	} // 各サイズのデバイス毎のサイズ.
-	elseif ( ! empty( $options['margin_size'][ $spacer_size ][ $device ] ) ) {
+	} elseif ( ! empty( $options['margin_size'][ $spacer_size ][ $device ] ) ) { // 各サイズのデバイス毎のサイズ.
 		return $options['margin_size'][ $spacer_size ][ $device ];
 	} else {
 		// 指定デバイスでのサイズ指定がない場合、他のデバイスで指定しているサイズを自動割り振り
@@ -84,19 +83,19 @@ function vk_blocks_get_spacer_size( $options, $spacer_size, $device ) {
  */
 function vk_blocks_is_size_print( $options, $device ) {
 	$return = false;
-	if ( ! empty( vk_blocks_get_spacer_size( $options, 'xs', $device ) ) && is_numeric( vk_blocks_get_spacer_size( $options, 'xs', $device ) ) ) {
+	if ( is_numeric( vk_blocks_get_spacer_size( $options, 'xs', $device ) ) ) {
 		$return = true;
 	}
-	if ( ! empty( vk_blocks_get_spacer_size( $options, 'sm', $device ) ) && is_numeric( vk_blocks_get_spacer_size( $options, 'sm', $device ) ) ) {
+	if ( is_numeric( vk_blocks_get_spacer_size( $options, 'sm', $device ) ) ) {
 		$return = true;
 	}
-	if ( ! empty( vk_blocks_get_spacer_size( $options, 'md', $device ) ) && is_numeric( vk_blocks_get_spacer_size( $options, 'md', $device ) ) ) {
+	if ( is_numeric( vk_blocks_get_spacer_size( $options, 'md', $device ) ) ) {
 		$return = true;
 	}
-	if ( ! empty( vk_blocks_get_spacer_size( $options, 'lg', $device ) ) && is_numeric( vk_blocks_get_spacer_size( $options, 'lg', $device ) ) ) {
+	if ( is_numeric( vk_blocks_get_spacer_size( $options, 'lg', $device ) ) ) {
 		$return = true;
 	}
-	if ( ! empty( vk_blocks_get_spacer_size( $options, 'xl', $device ) ) && is_numeric( vk_blocks_get_spacer_size( $options, 'xl', $device ) ) ) {
+	if ( is_numeric( vk_blocks_get_spacer_size( $options, 'xl', $device ) ) ) {
 		$return = true;
 	}
 	return $return;

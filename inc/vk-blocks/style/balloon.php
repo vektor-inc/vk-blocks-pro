@@ -29,7 +29,7 @@ function vk_blocks_balloon_style() {
 	} else {
 		wp_add_inline_style( 'vk-blocks-utils-common-css', $dynamic_css );
 	}
-	
+
 	if ( is_admin() && class_exists( 'WP_Screen' ) && WP_Screen::get()->is_block_editor() ) {
 		wp_add_inline_style( 'vk-blocks-build-editor-css', $dynamic_css );
 	}

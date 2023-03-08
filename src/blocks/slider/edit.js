@@ -18,7 +18,7 @@ import {
 	Button,
 	SelectControl,
 	RangeControl,
-	CheckboxControl,
+	ToggleControl,
 } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
@@ -163,6 +163,27 @@ export default function SliderEdit(props) {
 		select('core/block-editor').getBlocks(clientId)
 	);
 
+	let demicalPointAlert = '';
+	if (slidesPerGroup === 'one-by-one') {
+		demicalPointAlert = (
+			<p>
+				{__(
+					'If you use a decimal point, you can display truncated items on the left and right. For example, if you want to display two and a half, enter 2.5.',
+					'vk-blocks'
+				)}
+			</p>
+		);
+	} else if (slidesPerGroup === 'slides-per-view') {
+		demicalPointAlert = (
+			<p>
+				{__(
+					'The decimal point can be set for the display number only when the display is switched one by one.',
+					'vk-blocks'
+				)}
+			</p>
+		);
+	}
+
 	// １スライドあたりの表示枚数がスライダーの総枚数の約数出なかったときに表示するアラート
 	const slidesPerViewAlert = (
 		<div className="text-danger font-size-11px offset-mt-18px">
@@ -251,6 +272,7 @@ export default function SliderEdit(props) {
 							'vk-blocks'
 						)}
 					</p>
+					{demicalPointAlert}
 					<TextControl
 						type={'number'}
 						label={__('PC', 'vk-blocks')}
@@ -365,7 +387,7 @@ export default function SliderEdit(props) {
 					/>
 				</BaseControl>
 				<BaseControl id={`vk_slider-slidesPerGroup`}>
-					<CheckboxControl
+					<ToggleControl
 						label={__('Centering Active Slide', 'vk-blocks')}
 						className={'mb-1'}
 						checked={centeredSlides} //eslint-disable-line camelcase

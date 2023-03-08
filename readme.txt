@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Add Setting ] Add custom value column at spacer setting
+
 = 1.52.0 =
 [ Specification Change ] Add multiple length units.
 [ Specification Change ][ Custom CSS (Pro) ] Changed specification to output CSS wrapped by .editor-styles-wrapper in block editor.

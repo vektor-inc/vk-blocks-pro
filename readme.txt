@@ -1,10 +1,10 @@
 === VK Blocks ===
-Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird,chiakikouno
+Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird,chiakikouno,doshimaf
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.9
 Tested up to: 6.1.0
-Stable tag: 1.50.0.1
+Stable tag: 1.51.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -67,7 +67,16 @@ e.g.
 [ Specification Change ] [ Custom Block Style Setting (Pro) ] Changed the specification to save the CSS wrapped in .editor-styles-wrapper and output that CSS in the block editor.
 [ Specification Change ][ Outer( Pro ) ] When the block is made full width, the class name of "alignfull" will be given.
 [ Bug fix ][ Slider ] Allow 0 to be entered in numeric form.
+
+= 1.52.0 =
 [ Specification Change ] Add multiple length units.
+[ Specification Change ][ Custom CSS (Pro) ] Changed specification to output CSS wrapped by .editor-styles-wrapper in block editor.
+[ Specification Change ][ Custom Block Style Setting (Pro) ] Changed the specification to save the CSS wrapped in .editor-styles-wrapper and output that CSS in the block editor.
+[ Specification Change ][ Outer( Pro ) ] When the block is made full width, the class name of "alignfull" will be given.
+[ Bug Fix ][ Custom CSS (Pro) ] Fix PHP 8.1 warning
+[ Bug fix ][ Slider ] Allow 0 to be entered in numeric form.
+[ Bug fix ][ Slider ] Fix content width under case of use .is-layout-constrained and editor screen
+[ other ] Removed unused display_vk_block_template option value.
 
 = 1.51.0 =
 [ Improvement ][ Balloon ] Improvement to allow any number of registrations in admin.

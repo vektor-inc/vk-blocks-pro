@@ -58,7 +58,7 @@ export default function AdminMargin() {
 
 	return (
 		<>
-			<section>
+			<section className="margin-setting">
 				<h3 id="margin-setting">
 					{__('Common Margin Setting', 'vk-blocks')}
 				</h3>
@@ -101,7 +101,7 @@ export default function AdminMargin() {
 										)}
 										<br />
 										{__(
-											'ex) var(--wp--custom--spacing--xx--small)',
+											'ex) var(--wp--custom--spacing--xx--small);',
 											'vk-blocks'
 										)}
 									</dd>
@@ -112,7 +112,7 @@ export default function AdminMargin() {
 							const { marginLabel, marginValue } = size;
 							return (
 								<tr key={marginLabel}>
-									<td>
+									<td className="nowrap">
 										{__('Margin', 'vk-blocks') +
 											` [ ${marginLabel} ] `}
 									</td>
@@ -161,7 +161,7 @@ export default function AdminMargin() {
 									})}
 									<td>
 										<TextControl
-											className="margin_size_input"
+											className="margin_size_input margin_size_input--custom"
 											name={`vk_blocks_options[margin_size][${marginValue}][custom]`}
 											value={
 												!vkBlocksOption.margin_size[

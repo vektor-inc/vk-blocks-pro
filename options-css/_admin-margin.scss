@@ -16,32 +16,33 @@
 	width: 7em;
 }
 
-.spacer-input {
-
-	li {
-		display: flex;
-	}
-
+.margin-setting {
 	&__size-name {
 		min-width:90px;
 	}
-
+	dl {
+		margin:0;
+	}
+	td {
+		padding:2px 3px;
+	}
 	.margin_size_input {
 		flex-direction: row;
 		align-items: center;
-		input {
-			width: 5em!important;
+		.components-base-control__field {
+			margin: 0;
 		}
-		.components-input-control__container {
-			background-color: unset;
-			.components-input-control__input {
-				margin:0 10px;
-				background-color: #fff;
-			}
-			.components-input-control__backdrop {
-				margin:0 10px;
-				border:1px solid #ccc;
-			}
+		.components-text-control__input[type="text"],
+		.components-input-control__input {
+			margin:0;
+			background-color: #fff;
+		}
+		.components-input-control__container .components-input-control__input {
+			width: 5em;
+		}
+		&--custom .components-text-control__input {
+			// margin:0;
+			width:100%;
 		}
 	}
 }

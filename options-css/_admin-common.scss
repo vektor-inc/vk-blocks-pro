@@ -31,11 +31,12 @@ body{
 	.adminMain.column_3 {
 		overflow: visible;
 	}
-
 	section {
 		padding-bottom: 1.5em
 	}
-
+	.nowrap {
+		white-space: nowrap;
+	}
 	.submit.sticky {
 		position: sticky;
 		bottom: 0;

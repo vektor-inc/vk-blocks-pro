@@ -56,7 +56,7 @@ function vk_blocks_get_spacer_size( $options, $spacer_size, $device ) {
 	// カスタム値がある場合
 	if ( ! empty( $options['margin_size'][ $spacer_size ]['custom'] ) ) {
 		return $options['margin_size'][ $spacer_size ]['custom'];
-	} elseif ( ! empty( $options['margin_size'][ $spacer_size ][ $device ] ) ) { // 各サイズのデバイス毎のサイズ.
+	} elseif ( isset( $options['margin_size'][ $spacer_size ][ $device ] ) ) { // 各サイズのデバイス毎のサイズ.
 		return $options['margin_size'][ $spacer_size ][ $device ];
 	} else {
 		// 指定デバイスでのサイズ指定がない場合、他のデバイスで指定しているサイズを自動割り振り

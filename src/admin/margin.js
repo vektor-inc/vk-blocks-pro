@@ -100,8 +100,9 @@ export default function AdminMargin() {
 											'vk-blocks'
 										)}
 										<br />
+										{/* 最後のコロンは勝手につくので例の最後のコロンは不要かと*/}
 										{__(
-											'ex) var(--wp--custom--spacing--xx--small);',
+											'ex) var(--wp--custom--spacing--xx--small)',
 											'vk-blocks'
 										)}
 									</dd>

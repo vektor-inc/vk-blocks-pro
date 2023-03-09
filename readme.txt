@@ -64,7 +64,8 @@ e.g.
 
 == Changelog ==
 
-[ Add Setting ] Add custom value column at spacer setting
+[ Add Setting ][ margin / spacer ] Add custom value to margin setting
+[ Bug Fix ] fix inline css when css sepalate load mode.
 
 = 1.52.0 =
 [ Specification Change ] Add multiple length units.

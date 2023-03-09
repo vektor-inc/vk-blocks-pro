@@ -155,6 +155,8 @@ function vk_blocks_blocks_assets() {
 		$dynamic_css .= vk_blocks_get_custom_format_lists_inline_css();
 	}
 
+	$dynamic_css = vk_blocks_minify_css( $dynamic_css );
+
 	wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );
 	wp_add_inline_style( 'vk-blocks-utils-common-css', $dynamic_css );
 	// --vk_image-mask-waveはコアの画像ブロックに依存するのでwp-edit-blocksを追加

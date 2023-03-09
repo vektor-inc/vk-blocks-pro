@@ -68,7 +68,7 @@ export default function AdminMargin() {
 						'vk-blocks'
 					)}
 				</p>
-				<div className="vk_admin_marginUnit">
+				<div className="margin-setting__unit">
 					<span>{__('Unit', 'vk-blocks')}</span>
 					<SelectControl
 						name="vk_blocks_options[margin_unit]"
@@ -83,40 +83,47 @@ export default function AdminMargin() {
 						options={hightUnitOptions}
 					/>
 				</div>
-				<table>
-					<tbody>
+				<table className="margin-setting__table">
+					<thead>	
 						<tr>
 							<td></td>
 							{DEVICE_ARRAY.map((device) => {
 								const { deviceLabel } = device;
-								return <td key={deviceLabel}>{deviceLabel}</td>;
+								return <td key={deviceLabel} className="text-center">{deviceLabel}</td>;
 							})}
 							<td>
-								<dl>
-									<dt>{__('Custom Value', 'vk-blocks')}</dt>
-									<dd>
-										{__(
-											'If you enterd custom value, the values you enterd will be appllied.',
-											'vk-blocks'
-										)}
-										<br />
-										{/* 最後のセミコロンは勝手につくので例の最後のセミコロンは不要かと*/}
-										{__(
-											'ex) var(--wp--custom--spacing--xx--small)',
-											'vk-blocks'
-										)}
-									</dd>
-								</dl>
+							{__('Custom Value', 'vk-blocks')} <span className='vk_admin_tooltip'>
+								<span className='vk_admin_tooltip__trigger'>?</span>
+								<span className="vk_admin_tooltip__body">
+									{__(
+										'If you enter a custom value, the values you entered will be used as a priority.',
+										'vk-blocks'
+									)}
+									<br />
+									{/* 最後のセミコロンは勝手につくので例の最後のセミコロンは不要*/}
+									{__(
+										'ex.1) var(--wp--custom--spacing--xx--small)',
+										'vk-blocks'
+									)}
+									<br />
+									{__(
+										'ex.2) clamp(1rem, 2vw, 2rem)',
+										'vk-blocks'
+									)}
+								</span>
+							</span>
 							</td>
 						</tr>
+					</thead>
+					<tbody>
 						{MARGIN_SIZE_ARRAY.map((size) => {
 							const { marginLabel, marginValue } = size;
 							return (
 								<tr key={marginLabel}>
-									<td className="nowrap">
+									<th className="nowrap">
 										{__('Margin', 'vk-blocks') +
 											` [ ${marginLabel} ] `}
-									</td>
+									</th>
 									{DEVICE_ARRAY.map((device) => {
 										const { deviceLabel, deviceValue } =
 											device;
@@ -160,9 +167,9 @@ export default function AdminMargin() {
 											</td>
 										);
 									})}
-									<td>
+									<td className="margin-setting__custom">
 										<TextControl
-											className="margin_size_input margin_size_input--custom"
+											className="margin-setting__custom__input"
 											name={`vk_blocks_options[margin_size][${marginValue}][custom]`}
 											value={
 												!vkBlocksOption.margin_size[

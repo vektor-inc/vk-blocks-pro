@@ -24,11 +24,8 @@ function vk_blocks_balloon_style() {
 	}
 	';
 
-	if ( ! VK_Blocks_Block_Loader::should_load_separate_assets() ) {
-		wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );
-	} else {
-		wp_add_inline_style( 'vk-blocks-utils-common-css', $dynamic_css );
-	}
+	wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );
+	wp_add_inline_style( 'vk-blocks-utils-common-css', $dynamic_css );
 
 	if ( is_admin() && class_exists( 'WP_Screen' ) && WP_Screen::get()->is_block_editor() ) {
 		wp_add_inline_style( 'vk-blocks-build-editor-css', $dynamic_css );

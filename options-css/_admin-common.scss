@@ -49,6 +49,7 @@ body{
 }
 .vk_admin_tooltip {
 	&__trigger {
+		margin-left:5px;
 		display: inline-block;
 		position: relative;
 		border:1px solid var(--wp-admin-theme-color);

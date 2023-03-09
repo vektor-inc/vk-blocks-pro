@@ -332,14 +332,25 @@ msgstr ""
 msgid "Load Separate Option on"
 msgstr ""
 
-#: src/admin/margin.js:104
+#: src/admin/margin.js:102
+msgid "Custom Value"
+msgstr ""
+
+#: src/admin/margin.js:108
+msgid ""
+"If you enter a custom value, the values you entered will be used as a "
+"priority."
+msgstr ""
+
+#: src/admin/margin.js:114
 msgid "ex.1) var(--wp--custom--spacing--xx--small)"
 msgstr ""
 
-#: src/admin/margin.js:109
+#: src/admin/margin.js:119
 msgid "ex.2) clamp(1rem, 2vw, 2rem)"
 msgstr ""
 
+#: src/admin/margin.js:134
 #: src/admin/margin.js:124
 #: src/blocks/border-box/edit.js:192
 #: src/blocks/icon-outer/edit.js:149
@@ -410,16 +421,6 @@ msgstr ""
 #: src/blocks/_pro/grid-column-item/edit.js:172
 #: src/blocks/_pro/grid-column/edit.js:78
 msgid "Unit"
-msgstr ""
-
-#: src/admin/margin.js:95
-msgid "Custom Value"
-msgstr ""
-
-#: src/admin/margin.js:98
-msgid ""
-"If you enter a custom value, the values you entered will be used as a "
-"priority."
 msgstr ""
 
 #: src/admin/new-faq.js:19

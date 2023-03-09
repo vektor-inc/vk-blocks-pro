@@ -84,34 +84,44 @@ export default function AdminMargin() {
 					/>
 				</div>
 				<table className="margin-setting__table">
-					<thead>	
+					<thead>
 						<tr>
 							<td></td>
 							{DEVICE_ARRAY.map((device) => {
 								const { deviceLabel } = device;
-								return <td key={deviceLabel} className="text-center">{deviceLabel}</td>;
+								return (
+									<td
+										key={deviceLabel}
+										className="text-center"
+									>
+										{deviceLabel}
+									</td>
+								);
 							})}
 							<td>
-							{__('Custom Value', 'vk-blocks')} <span className='vk_admin_tooltip'>
-								<span className='vk_admin_tooltip__trigger'>?</span>
-								<span className="vk_admin_tooltip__body">
-									{__(
-										'If you enter a custom value, the values you entered will be used as a priority.',
-										'vk-blocks'
-									)}
-									<br />
-									{/* 最後のセミコロンは勝手につくので例の最後のセミコロンは不要*/}
-									{__(
-										'ex.1) var(--wp--custom--spacing--xx--small)',
-										'vk-blocks'
-									)}
-									<br />
-									{__(
-										'ex.2) clamp(1rem, 2vw, 2rem)',
-										'vk-blocks'
-									)}
+								{__('Custom Value', 'vk-blocks')}
+								<span className="vk_admin_tooltip">
+									<span className="vk_admin_tooltip__trigger">
+										?
+									</span>
+									<span className="vk_admin_tooltip__body">
+										{__(
+											'If you enter a custom value, the values you entered will be used as a priority.',
+											'vk-blocks'
+										)}
+										<br />
+										{/* 最後のセミコロンは勝手につくので例の最後のセミコロンは不要*/}
+										{__(
+											'ex.1) var(--wp--custom--spacing--xx--small)',
+											'vk-blocks'
+										)}
+										<br />
+										{__(
+											'ex.2) clamp(1rem, 2vw, 2rem)',
+											'vk-blocks'
+										)}
+									</span>
 								</span>
-							</span>
 							</td>
 						</tr>
 					</thead>

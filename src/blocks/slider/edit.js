@@ -18,6 +18,7 @@ import {
 	Button,
 	SelectControl,
 	RangeControl,
+	ToggleControl,
 } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
@@ -41,6 +42,7 @@ export default function SliderEdit(props) {
 		slidesPerViewTablet,
 		slidesPerViewPC,
 		slidesPerGroup,
+		centeredSlides,
 		navigationPosition,
 		blockId,
 	} = attributes;
@@ -113,6 +115,11 @@ export default function SliderEdit(props) {
 			});
 		}
 
+		// 1.51 以前では centeredSlides が定義されていないので互換設定を追加
+		if (centeredSlides === undefined) {
+			setAttributes({ centeredSlides: false });
+		}
+
 		// 1.49 以前では pagination はブール型だったが文字列型になっための互換処理
 		if (pagination === false) {
 			setAttributes({ pagination: 'hide' });
@@ -132,6 +139,21 @@ export default function SliderEdit(props) {
 		}
 	}, [clientId]);
 
+	// 複数枚動かすときに sliderPerView が小数だと微妙なので対処
+	useEffect(() => {
+		if (slidesPerGroup === 'slides-per-view') {
+			setAttributes({
+				slidesPerViewPC: parseInt(Number(slidesPerViewPC), 10),
+			});
+			setAttributes({
+				slidesPerViewTablet: parseInt(Number(slidesPerViewTablet), 10),
+			});
+			setAttributes({
+				slidesPerViewMobile: parseInt(Number(slidesPerViewMobile), 10),
+			});
+		}
+	}, [slidesPerGroup]);
+
 	const containerClass = ' vk_grid-column';
 	const ALLOWED_BLOCKS = ['vk-blocks/slider-item'];
 	const TEMPLATE = [['vk-blocks/slider-item']];
@@ -141,11 +163,32 @@ export default function SliderEdit(props) {
 		select('core/block-editor').getBlocks(clientId)
 	);
 
+	let demicalPointAlert = '';
+	if (slidesPerGroup === 'one-by-one') {
+		demicalPointAlert = (
+			<p>
+				{__(
+					'If you specifying a numbers with decimals such as 1.5, Please set "Centering the active slide"',
+					'vk-blocks'
+				)}
+			</p>
+		);
+	} else if (slidesPerGroup === 'slides-per-view') {
+		demicalPointAlert = (
+			<p>
+				{__(
+					'The decimal point can be set for the display number only when the display is switched one by one.',
+					'vk-blocks'
+				)}
+			</p>
+		);
+	}
+
 	// １スライドあたりの表示枚数がスライダーの総枚数の約数出なかったときに表示するアラート
 	const slidesPerViewAlert = (
 		<div className="text-danger font-size-11px offset-mt-18px">
 			{__(
-				'Enter divisors for the number of placed slide items for each display size.',
+				'Enter integer divisors for the number of placed slide items for each display size.',
 				'vk-blocks'
 			)}
 		</div>
@@ -154,7 +197,7 @@ export default function SliderEdit(props) {
 	// 上記アラートを表示するか否かのモバイル時の処理
 	let slidesPerViewMobileAlert = '';
 	if (
-		innerBlocks.length % slidesPerViewMobile !== 0 &&
+		innerBlocks.length % parseInt(slidesPerViewMobile) !== 0 &&
 		slidesPerGroup === 'slides-per-view'
 	) {
 		slidesPerViewMobileAlert = slidesPerViewAlert;
@@ -163,7 +206,7 @@ export default function SliderEdit(props) {
 	// 上記アラートを表示するか否かのタブレット時の処理
 	let slidesPerViewTabletAlert = '';
 	if (
-		innerBlocks.length % slidesPerViewTablet !== 0 &&
+		innerBlocks.length % parseInt(slidesPerViewTablet) !== 0 &&
 		slidesPerGroup === 'slides-per-view'
 	) {
 		slidesPerViewTabletAlert = slidesPerViewAlert;
@@ -172,7 +215,7 @@ export default function SliderEdit(props) {
 	// 上記アラートを表示するか否かの PC 時の処理
 	let slidesPerViewPCAlert = '';
 	if (
-		innerBlocks.length % slidesPerViewPC !== 0 &&
+		innerBlocks.length % parseInt(slidesPerViewPC) !== 0 &&
 		slidesPerGroup === 'slides-per-view'
 	) {
 		slidesPerViewPCAlert = slidesPerViewAlert;
@@ -201,6 +244,7 @@ export default function SliderEdit(props) {
 		slidesPerViewTablet,
 		slidesPerViewPC,
 		slidesPerGroup,
+		centeredSlides,
 	};
 
 	// 複数枚表示設定
@@ -228,6 +272,7 @@ export default function SliderEdit(props) {
 							'vk-blocks'
 						)}
 					</p>
+					{demicalPointAlert}
 					<TextControl
 						type={'number'}
 						label={__('PC', 'vk-blocks')}
@@ -237,16 +282,21 @@ export default function SliderEdit(props) {
 								setAttributes({
 									slidesPerViewPC: 1,
 								});
-							} else {
+							} else if (slidesPerGroup === 'slides-per-view') {
 								setAttributes({
 									slidesPerViewPC: parseInt(
 										Number(value),
 										10
 									),
 								});
+							} else {
+								setAttributes({
+									slidesPerViewPC: parseFloat(Number(value)),
+								});
 							}
 						}}
 						min={1}
+						step={slidesPerGroup === 'slides-per-view' ? 1 : 0.1}
 					/>
 					{slidesPerViewPCAlert}
 					<TextControl
@@ -258,16 +308,23 @@ export default function SliderEdit(props) {
 								setAttributes({
 									slidesPerViewTablet: 1,
 								});
-							} else {
+							} else if (slidesPerGroup === 'slides-per-view') {
 								setAttributes({
 									slidesPerViewTablet: parseInt(
 										Number(value),
 										10
 									),
 								});
+							} else {
+								setAttributes({
+									slidesPerViewTablet: parseFloat(
+										Number(value)
+									),
+								});
 							}
 						}}
 						min={1}
+						step={slidesPerGroup === 'slides-per-view' ? 1 : 0.1}
 					/>
 					{slidesPerViewTabletAlert}
 					<TextControl
@@ -279,16 +336,23 @@ export default function SliderEdit(props) {
 								setAttributes({
 									slidesPerViewMobile: 1,
 								});
-							} else {
+							} else if (slidesPerGroup === 'slides-per-view') {
 								setAttributes({
 									slidesPerViewMobile: parseInt(
 										Number(value),
 										10
 									),
 								});
+							} else {
+								setAttributes({
+									slidesPerViewMobile: parseFloat(
+										Number(value)
+									),
+								});
 							}
 						}}
 						min={1}
+						step={slidesPerGroup === 'slides-per-view' ? 1 : 0.1}
 					/>
 					{slidesPerViewMobileAlert}
 				</BaseControl>
@@ -319,6 +383,22 @@ export default function SliderEdit(props) {
 							setAttributes({
 								slidesPerGroup: value,
 							})
+						}
+					/>
+				</BaseControl>
+				<BaseControl id={`vk_slider-slidesPerGroup`}>
+					<ToggleControl
+						label={__('Centering the active slide', 'vk-blocks')}
+						className={'mb-1'}
+						checked={centeredSlides} //eslint-disable-line camelcase
+						onChange={(checked) =>
+							setAttributes({ centeredSlides: checked })
+						}
+						help={
+							__(
+								'If you specify the center, you can display items that are cut off on the left and right.',
+								'vk-blocks'
+							)
 						}
 					/>
 				</BaseControl>

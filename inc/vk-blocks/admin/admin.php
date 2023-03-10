@@ -145,7 +145,6 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 	$block_json_lists = array();
 	$i                = 0;
 	foreach ( $block_registry->get_all_registered() as $block_name => $block_type ) {
-
 		$block_json_lists[ $i ] = array(
 			'name'  => $block_name,
 			'title' => $block_type->title,

@@ -166,7 +166,7 @@ export default function SliderEdit(props) {
 	let demicalPointAlert = '';
 	if (slidesPerGroup === 'one-by-one') {
 		demicalPointAlert = (
-			<p>
+			<p className="font-size-11px">
 				{__(
 					'If you specifying a numbers with decimals such as 1.5, Please set "Centering the active slide"',
 					'vk-blocks'

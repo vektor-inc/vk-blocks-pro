@@ -92,7 +92,7 @@ export default function AdminMargin() {
 								return (
 									<td
 										key={deviceLabel}
-										className="text-center"
+										className="text-center nowrap"
 									>
 										{deviceLabel}
 									</td>

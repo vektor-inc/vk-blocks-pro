@@ -394,12 +394,10 @@ export default function SliderEdit(props) {
 						onChange={(checked) =>
 							setAttributes({ centeredSlides: checked })
 						}
-						help={
-							__(
-								'If you specify the center, you can display items that are cut off on the left and right.',
-								'vk-blocks'
-							)
-						}
+						help={__(
+							'If you specify the center, you can display items that are cut off on the left and right.',
+							'vk-blocks'
+						)}
 					/>
 				</BaseControl>
 			</PanelBody>

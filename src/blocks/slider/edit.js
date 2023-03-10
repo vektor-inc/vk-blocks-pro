@@ -168,7 +168,7 @@ export default function SliderEdit(props) {
 		demicalPointAlert = (
 			<p>
 				{__(
-					'If you use a decimal point, you can display truncated items on the left and right. For example, if you want to display two and a half, enter 2.5.',
+					'If you specifying a numbers with decimals such as 1.5, Please set "Centering the active slide"',
 					'vk-blocks'
 				)}
 			</p>
@@ -388,7 +388,7 @@ export default function SliderEdit(props) {
 				</BaseControl>
 				<BaseControl id={`vk_slider-slidesPerGroup`}>
 					<ToggleControl
-						label={__('Centering Active Slide', 'vk-blocks')}
+						label={__('Centering the active slide', 'vk-blocks')}
 						className={'mb-1'}
 						checked={centeredSlides} //eslint-disable-line camelcase
 						onChange={(checked) =>
@@ -397,11 +397,6 @@ export default function SliderEdit(props) {
 						help={
 							__(
 								'If you specify the center, you can display items that are cut off on the left and right.',
-								'vk-blocks'
-							) +
-							' ' +
-							__(
-								'After specifying the center, adjust the display by setting the display number to an odd number or specifying a decimal number such as 1.5.',
 								'vk-blocks'
 							)
 						}

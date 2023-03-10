@@ -74,6 +74,10 @@
 			"type": "string",
 			"default": "one-by-one"
 		},
+		"centeredSlides": {
+			"type": "boolean",
+			"default": false
+		},
 		"navigationPosition": {
 			"type": "string",
 			"default": "mobile-bottom"

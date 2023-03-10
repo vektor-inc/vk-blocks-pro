@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ][ Custom Block Style Setting (Pro) ]Don't limit target blocks to VK Blocks.
 [ Bug Fix ] fix inline css when css sepalate load mode.
 
 = 1.52.0 =

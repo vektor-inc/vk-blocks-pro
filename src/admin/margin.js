@@ -110,14 +110,14 @@ export default function AdminMargin() {
 											'vk-blocks'
 										)}
 										<br />
-										{/* 最後のセミコロンは勝手につくので例の最後のセミコロンは不要*/}
 										{__(
-											'ex.1) var(--wp--custom--spacing--xx--small)',
+											'This item is mainly intended for inputting CSS variables for the margins specified by the theme. Thereby you can apply to the same margin size to the VK Blocks.',
 											'vk-blocks'
 										)}
 										<br />
+										{/* 最後のセミコロンは勝手につくので例の最後のセミコロンは不要*/}
 										{__(
-											'ex.2) clamp(1rem, 2vw, 2rem)',
+											'ex) var(--wp--custom--spacing--xx--small)',
 											'vk-blocks'
 										)}
 									</span>

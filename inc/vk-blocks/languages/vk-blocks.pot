@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-03-10T08:21:30+00:00\n"
+"POT-Creation-Date: 2023-03-13T17:05:36+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks\n"
@@ -345,15 +345,23 @@ msgstr ""
 msgid "Load Separate Option on"
 msgstr ""
 
-#: src/admin/margin.js:104
-msgid "ex.1) var(--wp--custom--spacing--xx--small)"
+#: src/admin/margin.js:102
+msgid "Custom Value"
 msgstr ""
 
-#: src/admin/margin.js:109
-msgid "ex.2) clamp(1rem, 2vw, 2rem)"
+#: src/admin/margin.js:108
+msgid "If you enter a custom value, the values you entered will be used as a priority."
 msgstr ""
 
-#: src/admin/margin.js:124
+#: src/admin/margin.js:113
+msgid "This item is mainly intended for inputting CSS variables for the margins specified by the theme. Thereby you can apply to the same margin size to the VK Blocks."
+msgstr ""
+
+#: src/admin/margin.js:119
+msgid "ex) var(--wp--custom--spacing--xx--small)"
+msgstr ""
+
+#: src/admin/margin.js:134
 #: src/blocks/border-box/edit.js:192
 #: src/blocks/icon-outer/edit.js:149
 #: src/blocks/icon/edit.js:139
@@ -409,7 +417,7 @@ msgstr ""
 msgid "Mobile"
 msgstr ""
 
-#: src/admin/margin.js:62
+#: src/admin/margin.js:63
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:78
 #: inc/vk-blocks/admin/admin.php:78
 msgid "Common Margin Setting"
@@ -423,14 +431,6 @@ msgstr ""
 #: src/blocks/_pro/grid-column-item/edit.js:172
 #: src/blocks/_pro/grid-column/edit.js:78
 msgid "Unit"
-msgstr ""
-
-#: src/admin/margin.js:95
-msgid "Custom Value"
-msgstr ""
-
-#: src/admin/margin.js:98
-msgid "If you enter a custom value, the values you entered will be used as a priority."
 msgstr ""
 
 #: src/admin/new-faq.js:19

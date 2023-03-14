@@ -16,9 +16,8 @@ This is a plugin that extends Gutenberg's blocks.
 This is a plugin that extends Gutenberg's blocks.
 
 [ Blocks ]
-
+* Slider
 * Staff
-* Outer
 * Alert
 * FAQ
 * Balloon
@@ -36,7 +35,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Card [ Pro ]
 * Grid Column [ Pro ]
 * Animation [ Pro ]
-* Slider [ Pro ]
+* Outer [ Pro ]
 
 [ Editing and correction ]
 

@@ -16,9 +16,8 @@ This is a plugin that extends Gutenberg's blocks.
 This is a plugin that extends Gutenberg's blocks.
 
 [ Blocks ]
-
+* Slider
 * Staff
-* Outer
 * Alert
 * FAQ
 * Balloon
@@ -36,7 +35,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Card [ Pro ]
 * Grid Column [ Pro ]
 * Animation [ Pro ]
-* Slider [ Pro ]
+* Outer [ Pro ]
 
 [ Editing and correction ]
 
@@ -64,11 +63,11 @@ e.g.
 
 == Changelog ==
 
-[ Add Function ][ Dynamic Text Block (Pro) ] Add Dynamic text block.
-[ Improvement ] Removed unused display_vk_block_template option value.
-[ Specification Change ] [ Custom CSS (Pro) ] Changed specification to output CSS wrapped by .editor-styles-wrapper in block editor.
-[ Specification Change ] [ Custom Block Style Setting (Pro) ] Changed the specification to save the CSS wrapped in .editor-styles-wrapper and output that CSS in the block editor.
- 
+[ Add Block ][ Dynamic Text Block (Pro) ] Add Dynamic text block.
+[ Add setting ][ Slider ] Allow decimalon slider per view Setting & Add Setting of Centering Active Slide
+[ Specification Change ][ Custom Block Style Setting (Pro) ]Don't limit target blocks to VK Blocks.
+[ Bug Fix ] fix inline css when css sepalate load mode.
+
 = 1.52.0 =
 [ Specification Change ] Add multiple length units.
 [ Specification Change ][ Custom CSS (Pro) ] Changed specification to output CSS wrapped by .editor-styles-wrapper in block editor.

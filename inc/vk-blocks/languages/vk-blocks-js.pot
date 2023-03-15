@@ -139,12 +139,12 @@ msgstr ""
 msgid "(e.g.) %s-block-style"
 msgstr ""
 
-#: src/admin/custom-block-style/index.js:85
+#: src/admin/custom-block-style/index.js:77
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:31
 msgid "Custom Block Style Setting"
 msgstr ""
 
-#: src/admin/custom-block-style/index.js:88
+#: src/admin/custom-block-style/index.js:80
 msgid "Block style settings can be registered."
 msgstr ""
 

@@ -51,7 +51,7 @@ class SanitizeOptions extends WP_UnitTestCase {
 		$test_data = array(
 			// プラグインインストール初期状態
 			array(
-				'option'  => array(
+				'options'  => array(
                     'margin_size' => array(
 						'xl' => array(
 							'mobile' => null,
@@ -127,7 +127,7 @@ class SanitizeOptions extends WP_UnitTestCase {
 		print '------------------------------------' . PHP_EOL;
 		foreach ( $test_data as $test_value ) {
 
-			$return  = VK_Blocks_Options::sanitaize_options( $test_value['option'] );
+			$return  = VK_Blocks_Options::sanitaize_options( $test_value['options'] );
 			$correct = $test_value['correct'];
 
             print 'correct ::::' . PHP_EOL;

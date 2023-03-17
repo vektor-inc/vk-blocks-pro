@@ -8,48 +8,7 @@
 class SanitizeOptions extends WP_UnitTestCase {
 
 	public function test_sanitize_options() {
-		/**
-		 * option値を追加した場合
-		 * ・プラグインインストール初期状態
-		 * ・他のoption値が保存されている状態から追加したoption値の初期値がmargeされるか
-		 * ・全てのオプション値を変更した時
-		 * の3つのテストを追加してください
-		 *
-		 * たとえば、次にoption値を追加するは
-		 * 1.ライセンスキーのところのテストをコピー
-		 * array(
-		 * 	'option_check_target' => 'vk_blocks_pro_license_key',
-		 * 	'option'  => array(
-		 * 		'new_faq_accordion' => 'open',
-		 * 		'balloon_border_width' => 2,
-		 * 		'margin_unit' => 'px',
-		 * 		'margin_size' => array(
-		 * 			'lg' => array(
-		 * 				'mobile' => 1,
-		 * 				'tablet' => 2,
-		 * 				'pc' => 3,
-		 * 			),
-		 * 			'md' => array(
-		 * 				'mobile' => 1,
-		 * 				'tablet' => 2,
-		 * 				'pc' => 3,
-		 * 			),
-		 * 			'sm' => array(
-		 * 				'mobile' => 1,
-		 * 				'tablet' => 2,
-		 * 				'pc' => 3,
-		 * 			),
-		 * 		),
-		 * 		'load_separate_option' => true,
-		 * 	),
-		 * 	'correct' => null
-		 * ),
-		 * 2. その下に貼り付ける
-		 * 3. optionにvk_blocks_pro_license_keyと保存される値を追加
-		 * 4. option_check_targetに追加したoptionのキー、correctを新しいoptionの初期値を設定してください
-		 */
 		$test_data = array(
-			// プラグインインストール初期状態
 			array(
 				'options'  => array(
                     'margin_size' => array(

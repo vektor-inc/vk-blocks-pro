@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-03-09T00:25:14+00:00\n"
+"POT-Creation-Date: 2023-03-17T04:09:20+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: vk-blocks\n"
@@ -314,15 +314,15 @@ msgstr ""
 msgid "Preview Text"
 msgstr ""
 
-#: src/admin/license.js:21
+#: src/admin/license.js:22
 msgid "Enter a valid Lightning G3 Pro Pack or Lightning Pro license key."
 msgstr ""
 
-#: src/admin/license.js:27
+#: src/admin/license.js:28
 msgid "Once you enter the license key you will be able to do a one click update from the administration screen."
 msgstr ""
 
-#: src/admin/license.js:34
+#: src/admin/license.js:35
 msgid "License key"
 msgstr ""
 
@@ -338,11 +338,11 @@ msgstr ""
 msgid "Load Separate Option on"
 msgstr ""
 
-#: src/admin/margin.js:104
+#: src/admin/margin.js:105
 msgid "ex) var(--wp--custom--spacing--xx--small)"
 msgstr ""
 
-#: src/admin/margin.js:117
+#: src/admin/margin.js:118
 #: src/blocks/border-box/edit.js:192
 #: src/blocks/icon-outer/edit.js:149
 #: src/blocks/icon/edit.js:139
@@ -398,26 +398,26 @@ msgstr ""
 msgid "Mobile"
 msgstr ""
 
-#: src/admin/margin.js:63
+#: src/admin/margin.js:64
 #: inc/vk-blocks/admin/admin.php:78
 msgid "Common Margin Setting"
 msgstr ""
 
-#: src/admin/margin.js:66
+#: src/admin/margin.js:67
 msgid "Please specify the size of the common margin used for responsive spacers, etc."
 msgstr ""
 
-#: src/admin/margin.js:72
+#: src/admin/margin.js:73
 #: src/blocks/_pro/grid-column-item/edit.js:172
 #: src/blocks/_pro/grid-column/edit.js:78
 msgid "Unit"
 msgstr ""
 
-#: src/admin/margin.js:96
+#: src/admin/margin.js:97
 msgid "Custom Value"
 msgstr ""
 
-#: src/admin/margin.js:98
+#: src/admin/margin.js:99
 msgid "If you enterd custom value, the values you enterd will be appllied."
 msgstr ""
 
@@ -437,11 +437,11 @@ msgstr ""
 msgid "Enable accordion and default close"
 msgstr ""
 
-#: src/admin/save-button.js:52
+#: src/admin/save-button.js:55
 msgid "Save setting"
 msgstr ""
 
-#: src/admin/save-button.js:56
+#: src/admin/save-button.js:59
 msgid "Save Success"
 msgstr ""
 

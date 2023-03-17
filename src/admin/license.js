@@ -11,7 +11,8 @@ import { useContext } from '@wordpress/element';
 import { AdminContext } from '@vkblocks/admin/index';
 
 export default function AdminLicense() {
-	const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
+	const { vkBlocksOption, setVkBlocksOption, setReloadFlag } =
+		useContext(AdminContext);
 
 	return (
 		<>
@@ -45,6 +46,7 @@ export default function AdminLicense() {
 							...vkBlocksOption,
 							vk_blocks_pro_license_key: newValue,
 						});
+						setReloadFlag(true);
 					}}
 				/>
 			</section>

@@ -30,6 +30,49 @@ class VK_Blocks_Options {
 	}
 
 	/**
+	 * オプションの値をサニタイズする関数
+	 *
+	 * @param object $options VK Blocks Options.
+	 */
+	public static function sanitaize_options( $options ) {
+
+		/**
+		 * マージンのサニタイズ
+		 */
+
+		// CSS の変数で許可された文字列
+		$allowed_character = '/[\w\d\s\+\-\*\/%_,\(\)]+/';
+
+		// 許可する CSS の関数の文字列
+		$allowed_function = '/(var|clamp|min|max|calc)\s*\(/';
+
+		// 関数っぽい文字列
+		$check_function = '/(\w+)\s*\(/';
+
+		foreach ( $options['margin_size'] as $key => $value ) {
+
+			// 許可されている文字列のみ使用されている部分のみ抽出
+			preg_match( $allowed_character, $options['margin_size'][ $key ]['custom'], $matches );
+			$options['margin_size'][ $key ]['custom'] = $matches[0];
+
+			// カッコがある場合に許可された関数のみが使用されているか確認
+
+			// 許可されている関数名が使用されているのを抽出
+			preg_match_all( $allowed_function, $options['margin_size'][ $key ]['custom'], $matches01 );
+
+			// 何でもいいから関数っぽい文字列を抽出
+			preg_match_all( $check_function, $options['margin_size'][ $key ]['custom'], $matches02 );
+
+			// 上記２つのマッチングが等しくなければ余計な関数が紛れ込んでるので全削除
+			if ( wp_json_encode( $matches01 ) !== wp_json_encode( $matches02 ) ) {
+				$options['margin_size'][ $key ]['custom'] = '';
+			}
+		}
+
+		return $options;
+	}
+
+	/**
 	 *  Migrate Options
 	 */
 	public static function migrate_options() {
@@ -160,6 +203,7 @@ class VK_Blocks_Options {
 							),
 							'custom' => array(
 								'type' => 'string',
+
 							),
 						),
 					),
@@ -373,14 +417,15 @@ class VK_Blocks_Options {
 			'vk_blocks_setting',
 			'vk_blocks_options',
 			array(
-				'type'         => 'object',
-				'show_in_rest' => array(
+				'type'              => 'object',
+				'show_in_rest'      => array(
 					'schema' => array(
 						'type'       => 'object',
 						'properties' => self::get_vk_blocks_options_properties(),
 					),
 				),
-				'default'      => self::get_vk_blocks_options_defaults(),
+				'default'           => self::get_vk_blocks_options_defaults(),
+				'sanitize_callback' => array( __CLASS__, 'sanitaize_options' ),
 			)
 		);
 	}

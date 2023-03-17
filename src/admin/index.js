@@ -30,6 +30,8 @@ export default function VKBlocksAdmin() {
 		vkBlocksObject.options
 	);
 
+	const [reloadFlag, setReloadFlag] = useState(false);
+
 	return (
 		<>
 			{/* AdminContext.Providerで各コンポーネントにvalueを渡す */}
@@ -37,6 +39,8 @@ export default function VKBlocksAdmin() {
 				value={{
 					vkBlocksOption,
 					setVkBlocksOption,
+					reloadFlag,
+					setReloadFlag,
 				}}
 			>
 				{vkBlocksObject.isLicenseSetting && <AdminLicense />}
@@ -51,6 +55,7 @@ export default function VKBlocksAdmin() {
 				<SaveButton
 					classOption={'sticky'}
 					vkBlocksOption={vkBlocksOption}
+					reloadFlag={reloadFlag}
 				/>
 			</AdminContext.Provider>
 		</>

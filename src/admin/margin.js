@@ -54,7 +54,8 @@ const DEVICE_ARRAY = [
 ];
 
 export default function AdminMargin() {
-	const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
+	const { vkBlocksOption, setVkBlocksOption, setReloadFlag } =
+		useContext(AdminContext);
 
 	return (
 		<>
@@ -188,6 +189,7 @@ export default function AdminMargin() {
 														},
 													},
 												});
+												setReloadFlag(true);
 											}}
 										/>
 									</td>

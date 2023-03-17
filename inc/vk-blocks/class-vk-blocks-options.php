@@ -49,23 +49,32 @@ class VK_Blocks_Options {
 		// 関数っぽい文字列
 		$check_function = '/(\w+)\s*\(/';
 
-		foreach ( $options['margin_size'] as $key => $value ) {
+		// margin_size が空でなかったら
+		if ( ! empty( $options['margin_size'] ) ) {
+			
+			// 各マージンサイズの値を処理
+			foreach ( $options['margin_size'] as $key => $value ) {
 
-			// 許可されている文字列のみ使用されている部分のみ抽出
-			preg_match( $allowed_character, $options['margin_size'][ $key ]['custom'], $matches );
-			$options['margin_size'][ $key ]['custom'] = $matches[0];
+				// $options['margin_size'][ $key ]['custom'] が空でなかったら
+				if ( ! empty( $options['margin_size'][ $key ]['custom'] ) ) {
 
-			// カッコがある場合に許可された関数のみが使用されているか確認
+					// 許可されている文字列のみ使用されている部分のみ抽出
+					preg_match( $allowed_character, $options['margin_size'][ $key ]['custom'], $matches );
+					$options['margin_size'][ $key ]['custom'] = $matches[0];
 
-			// 許可されている関数名が使用されているのを抽出
-			preg_match_all( $allowed_function, $options['margin_size'][ $key ]['custom'], $matches01 );
+					// カッコがある場合に許可された関数のみが使用されているか確認
 
-			// 何でもいいから関数っぽい文字列を抽出
-			preg_match_all( $check_function, $options['margin_size'][ $key ]['custom'], $matches02 );
+					// 許可されている関数名が使用されているのを抽出
+					preg_match_all( $allowed_function, $options['margin_size'][ $key ]['custom'], $matches01 );
 
-			// 上記２つのマッチングが等しくなければ余計な関数が紛れ込んでるので全削除
-			if ( wp_json_encode( $matches01 ) !== wp_json_encode( $matches02 ) ) {
-				$options['margin_size'][ $key ]['custom'] = '';
+					// 何でもいいから関数っぽい文字列を抽出
+					preg_match_all( $check_function, $options['margin_size'][ $key ]['custom'], $matches02 );
+
+					// 上記２つのマッチングが等しくなければ余計な関数が紛れ込んでるので全削除
+					if ( wp_json_encode( $matches01 ) !== wp_json_encode( $matches02 ) ) {
+						$options['margin_size'][ $key ]['custom'] = '';
+					}
+				}
 			}
 		}
 

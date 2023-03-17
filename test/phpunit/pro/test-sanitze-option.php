@@ -137,7 +137,7 @@ class SanitizeOptions extends WP_UnitTestCase {
 
             
 
-            $this->assertEquals( $return, $correct );
+            $this->assertEquals( $correct, $return );
 		}
 	}
 }

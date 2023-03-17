@@ -59,7 +59,8 @@ document.defaultView.addEventListener('load', function () {
 					SwiperSetting += `slidesPerView: ${attributes.slidesPerViewMobile},`;
 					if (
 						attributes.slidesPerGroup &&
-						attributes.slidesPerGroup === 'slides-per-view'
+						attributes.slidesPerGroup === 'slides-per-view' &&
+						Number.isInteger(attributes.slidesPerViewMobile)
 					) {
 						SwiperSetting += `slidesPerGroup: ${attributes.slidesPerViewMobile},`;
 					} else {
@@ -69,7 +70,8 @@ document.defaultView.addEventListener('load', function () {
 					SwiperSetting += `slidesPerView: ${attributes.slidesPerView},`;
 					if (
 						attributes.slidesPerGroup &&
-						attributes.slidesPerGroup === 'slides-per-view'
+						attributes.slidesPerGroup === 'slides-per-view' &&
+						Number.isInteger(attributes.slidesPerView)
 					) {
 						SwiperSetting += `slidesPerGroup: ${attributes.slidesPerView},`;
 					} else {
@@ -90,7 +92,8 @@ document.defaultView.addEventListener('load', function () {
 						SwiperSetting += `slidesPerView: ${attributes.slidesPerViewTablet},`;
 						if (
 							attributes.slidesPerGroup &&
-							attributes.slidesPerGroup === 'slides-per-view'
+							attributes.slidesPerGroup === 'slides-per-view' &&
+							Number.isInteger(attributes.slidesPerViewTablet)
 						) {
 							SwiperSetting += `slidesPerGroup: ${attributes.slidesPerViewTablet},`;
 						}
@@ -101,13 +104,17 @@ document.defaultView.addEventListener('load', function () {
 						SwiperSetting += `slidesPerView: ${attributes.slidesPerViewPC},`;
 						if (
 							attributes.slidesPerGroup &&
-							attributes.slidesPerGroup === 'slides-per-view'
+							attributes.slidesPerGroup === 'slides-per-view' &&
+							Number.isInteger(attributes.slidesPerViewPC)
 						) {
 							SwiperSetting += `slidesPerGroup: ${attributes.slidesPerViewPC},`;
 						}
 						SwiperSetting += `},`;
 					}
 					SwiperSetting += `},`;
+				}
+				if (attributes.centeredSlides) {
+					SwiperSetting += `centeredSlides: ${attributes.centeredSlides},`;
 				}
 			}
 

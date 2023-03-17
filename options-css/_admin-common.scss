@@ -47,3 +47,36 @@ body{
 		}
 	}
 }
+.vk_admin_tooltip {
+	&__trigger {
+		margin-left:5px;
+		display: inline-block;
+		position: relative;
+		border:1px solid var(--wp-admin-theme-color);
+		display: inline-block;
+		padding: 0 5px;
+		line-height: 16px;
+		font-size:11px;
+		cursor: pointer;
+		background-color: var(--wp-admin-theme-color);
+		color:#fff;
+	}
+	&__body {
+		visibility: hidden;
+		display: block;
+		position: absolute;
+		margin-top:-2px;
+		z-index: 9999;
+		background-color: #fff;
+		border: 1px solid var(--wp-admin-theme-color);
+		border-radius: 3px;
+		padding: 10px;
+		box-shadow:1px 1px 3px rgba(0,0,0,0.2);
+	}
+	&:hover,
+	&:focus-within {
+		.vk_admin_tooltip__body {
+			visibility: visible;
+		}
+	}
+}

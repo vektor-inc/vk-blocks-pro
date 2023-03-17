@@ -51,7 +51,7 @@ class VK_Blocks_Options {
 
 		// margin_size が空でなかったら
 		if ( ! empty( $options['margin_size'] ) ) {
-			
+
 			// 各マージンサイズの値を処理
 			foreach ( $options['margin_size'] as $key => $value ) {
 

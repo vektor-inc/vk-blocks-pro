@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.9
 Tested up to: 6.1.0
-Stable tag: 1.51.0.1
+Stable tag: 1.52.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -16,9 +16,8 @@ This is a plugin that extends Gutenberg's blocks.
 This is a plugin that extends Gutenberg's blocks.
 
 [ Blocks ]
-
+* Slider
 * Staff
-* Outer
 * Alert
 * FAQ
 * Balloon
@@ -36,7 +35,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Card [ Pro ]
 * Grid Column [ Pro ]
 * Animation [ Pro ]
-* Slider [ Pro ]
+* Outer [ Pro ]
 
 [ Editing and correction ]
 
@@ -65,8 +64,11 @@ e.g.
 == Changelog ==
 
 [ Add Setting ][ margin / spacer ] Add custom value to margin setting
+
+= 1.53.0 =
 [ Add setting ][ Slider ] Allow decimalon slider per view Setting & Add Setting of Centering Active Slide
-[ Bug Fix ] fix inline css when css sepalate load mode.
+[ Specification Change ][ Custom Block Style Setting (Pro) ] Don't limit target blocks to VK Blocks.
+[ Bug Fix ] Fix inline css when css sepalate load mode.
 
 = 1.52.0 =
 [ Specification Change ] Add multiple length units.

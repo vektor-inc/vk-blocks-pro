@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.52.0.0\n"
+"Project-Id-Version: VK Blocks Pro 1.53.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-03-17T04:17:25+00:00\n"
+"POT-Creation-Date: 2023-03-17T04:19:57+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: vk-blocks\n"
@@ -149,13 +149,13 @@ msgstr ""
 msgid "(e.g.) %s-block-style"
 msgstr ""
 
-#: src/admin/custom-block-style/index.js:85
+#: src/admin/custom-block-style/index.js:77
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:31
 #: inc/vk-blocks/admin/admin.php:76
 msgid "Custom Block Style Setting"
 msgstr ""
 
-#: src/admin/custom-block-style/index.js:88
+#: src/admin/custom-block-style/index.js:80
 msgid "Block style settings can be registered."
 msgstr ""
 

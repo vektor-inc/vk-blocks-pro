@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.52.0.0\n"
+"Project-Id-Version: VK Blocks Pro 1.53.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-03-10T08:21:30+00:00\n"
+"POT-Creation-Date: 2023-03-20T08:04:29+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks\n"
@@ -150,14 +150,14 @@ msgstr ""
 msgid "(e.g.) %s-block-style"
 msgstr ""
 
-#: src/admin/custom-block-style/index.js:85
+#: src/admin/custom-block-style/index.js:77
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:31
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:76
 #: inc/vk-blocks/admin/admin.php:76
 msgid "Custom Block Style Setting"
 msgstr ""
 
-#: src/admin/custom-block-style/index.js:88
+#: src/admin/custom-block-style/index.js:80
 msgid "Block style settings can be registered."
 msgstr ""
 
@@ -321,15 +321,15 @@ msgstr ""
 msgid "Preview Text"
 msgstr ""
 
-#: src/admin/license.js:21
+#: src/admin/license.js:22
 msgid "Enter a valid Lightning G3 Pro Pack or Lightning Pro license key."
 msgstr ""
 
-#: src/admin/license.js:27
+#: src/admin/license.js:28
 msgid "Once you enter the license key you will be able to do a one click update from the administration screen."
 msgstr ""
 
-#: src/admin/license.js:34
+#: src/admin/license.js:35
 msgid "License key"
 msgstr ""
 
@@ -345,32 +345,55 @@ msgstr ""
 msgid "Load Separate Option on"
 msgstr ""
 
-#: src/admin/margin.js:19
+#: src/admin/margin.js:103
+msgid "Custom Value"
+msgstr ""
+
+#: src/admin/margin.js:109
+msgid "If you enter a custom value, the values you entered will be used as a priority."
+msgstr ""
+
+#: src/admin/margin.js:114
+msgid "This item is mainly intended for inputting CSS variables for the margins specified by the theme. Thereby you can apply to the same margin size to the VK Blocks."
+msgstr ""
+
+#: src/admin/margin.js:120
+msgid "ex)"
+msgstr ""
+
+#: src/admin/margin.js:136
+#: src/blocks/border-box/edit.js:192
+#: src/blocks/icon-outer/edit.js:149
+#: src/blocks/icon/edit.js:139
+msgid "Margin"
+msgstr ""
+
+#: src/admin/margin.js:20
 #: src/blocks/spacer/edit.js:83
 msgid "XS"
 msgstr ""
 
-#: src/admin/margin.js:23
+#: src/admin/margin.js:24
 #: src/blocks/spacer/edit.js:93
 msgid "S"
 msgstr ""
 
-#: src/admin/margin.js:27
+#: src/admin/margin.js:28
 #: src/blocks/spacer/edit.js:103
 msgid "M"
 msgstr ""
 
-#: src/admin/margin.js:31
+#: src/admin/margin.js:32
 #: src/blocks/spacer/edit.js:113
 msgid "L"
 msgstr ""
 
-#: src/admin/margin.js:35
+#: src/admin/margin.js:36
 #: src/blocks/spacer/edit.js:121
 msgid "XL"
 msgstr ""
 
-#: src/admin/margin.js:42
+#: src/admin/margin.js:43
 #: src/blocks/_pro/outer/edit.js:639
 #: src/blocks/button/edit.js:522
 #: src/blocks/slider/edit.js:481
@@ -378,7 +401,7 @@ msgstr ""
 msgid "PC"
 msgstr ""
 
-#: src/admin/margin.js:46
+#: src/admin/margin.js:47
 #: src/blocks/_pro/outer/edit.js:624
 #: src/blocks/button/edit.js:457
 #: src/blocks/slider/edit.js:502
@@ -386,7 +409,7 @@ msgstr ""
 msgid "Tablet"
 msgstr ""
 
-#: src/admin/margin.js:50
+#: src/admin/margin.js:51
 #: src/blocks/_pro/outer/edit.js:609
 #: src/blocks/button/edit.js:392
 #: src/blocks/slider/edit.js:523
@@ -394,27 +417,20 @@ msgstr ""
 msgid "Mobile"
 msgstr ""
 
-#: src/admin/margin.js:62
+#: src/admin/margin.js:64
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:78
 #: inc/vk-blocks/admin/admin.php:78
 msgid "Common Margin Setting"
 msgstr ""
 
-#: src/admin/margin.js:65
+#: src/admin/margin.js:67
 msgid "Please specify the size of the common margin used for responsive spacers, etc."
 msgstr ""
 
-#: src/admin/margin.js:71
+#: src/admin/margin.js:73
 #: src/blocks/_pro/grid-column-item/edit.js:172
 #: src/blocks/_pro/grid-column/edit.js:78
 msgid "Unit"
-msgstr ""
-
-#: src/admin/margin.js:91
-#: src/blocks/border-box/edit.js:192
-#: src/blocks/icon-outer/edit.js:149
-#: src/blocks/icon/edit.js:139
-msgid "Margin"
 msgstr ""
 
 #: src/admin/new-faq.js:19
@@ -433,11 +449,11 @@ msgstr ""
 msgid "Enable accordion and default close"
 msgstr ""
 
-#: src/admin/save-button.js:52
+#: src/admin/save-button.js:56
 msgid "Save setting"
 msgstr ""
 
-#: src/admin/save-button.js:56
+#: src/admin/save-button.js:60
 msgid "Save Success"
 msgstr ""
 

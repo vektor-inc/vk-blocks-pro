@@ -118,9 +118,10 @@ export default function AdminMargin() {
 										<br />
 										{/* 最後のセミコロンは勝手につくので例の最後のセミコロンは不要*/}
 										{__(
-											'ex) var(--wp--custom--spacing--xx--small)',
+											'ex)',
 											'vk-blocks'
 										)}
+										{ 'var(--wp--custom--spacing--xx--small)' }
 									</span>
 								</span>
 							</td>

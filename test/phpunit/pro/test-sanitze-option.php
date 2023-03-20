@@ -34,7 +34,7 @@ class SanitizeOptions extends WP_UnitTestCase {
 							'mobile' => null,
 							'tablet' => null,
 							'pc' => null,
-							'custom' => '',
+							'custom' => 'var( --wp--custom--spacing--xx--small )',
 						),
 						'xs' => array(
 							'mobile' => null,
@@ -68,7 +68,7 @@ class SanitizeOptions extends WP_UnitTestCase {
 							'mobile' => null,
 							'tablet' => null,
 							'pc' => null,
-							'custom' => '',
+							'custom' => 'var( --wp--custom--spacing--xx--small )',
 						),
 						'xs' => array(
 							'mobile' => null,

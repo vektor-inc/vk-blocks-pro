@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Add Setting ][ margin / spacer ] Add custom value to margin setting
+
 = 1.53.0 =
 [ Add setting ][ Slider ] Allow decimalon slider per view Setting & Add Setting of Centering Active Slide
 [ Specification Change ][ Custom Block Style Setting (Pro) ] Don't limit target blocks to VK Blocks.

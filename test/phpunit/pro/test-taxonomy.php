@@ -264,7 +264,7 @@ class TaxonomyTest extends WP_UnitTestCase {
                 'attributes' => array(
 					'blockLabel'         => 'Main Event Category',
 					'isSelectedTaxonomy' => 'event_cat',
-					'displayAsDropdown'  => false,s
+					'displayAsDropdown'  => false,
 					'showHierarchy'      => false,
 					'showPostCounts'     => false,
 					'hideIfEmpty'        => false,

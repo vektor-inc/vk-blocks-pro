@@ -1399,44 +1399,40 @@ msgstr ""
 msgid "CLOSE"
 msgstr ""
 
-#: src/blocks/_pro/taxonomy/edit.js:107
-msgid "Display as dropdown"
-msgstr ""
-
-#: src/blocks/_pro/taxonomy/edit.js:114
+#: src/blocks/_pro/taxonomy/edit.js:101
 msgid "Show post counts"
 msgstr ""
 
-#: src/blocks/_pro/taxonomy/edit.js:121
+#: src/blocks/_pro/taxonomy/edit.js:108
 msgid "Show only top level categories"
 msgstr ""
 
-#: src/blocks/_pro/taxonomy/edit.js:131
+#: src/blocks/_pro/taxonomy/edit.js:118
 msgid "Hide if term has no posts"
 msgstr ""
 
-#: src/blocks/_pro/taxonomy/edit.js:139
+#: src/blocks/_pro/taxonomy/edit.js:126
 msgid "Show hierarchy"
 msgstr ""
 
-#: src/blocks/_pro/taxonomy/edit.js:56
+#: src/blocks/_pro/taxonomy/edit.js:50
 msgid "This block will not be displayed because no taxonomy is selected."
 msgstr ""
 
-#: src/blocks/_pro/taxonomy/edit.js:69
+#: src/blocks/_pro/taxonomy/edit.js:63
 msgid "This block will not be displayed because this taxonomy has no term."
 msgstr ""
 
-#: src/blocks/_pro/taxonomy/edit.js:86
+#: src/blocks/_pro/taxonomy/edit.js:80
 msgid "Taxonomy Block Option"
 msgstr ""
 
-#: src/blocks/_pro/taxonomy/edit.js:90
-msgid "Label of This Block"
+#: src/blocks/_pro/taxonomy/edit.js:84
+msgid "Taxonomy"
 msgstr ""
 
-#: src/blocks/_pro/taxonomy/edit.js:97
-msgid "Taxonomy"
+#: src/blocks/_pro/taxonomy/edit.js:94
+msgid "Display as dropdown"
 msgstr ""
 
 #: src/blocks/_pro/timeline-item/edit.js:64

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-03-21T04:21:42+00:00\n"
+"POT-Creation-Date: 2023-03-21T08:57:27+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks\n"
@@ -87,6 +87,7 @@ msgid "image"
 msgstr ""
 
 #: src/admin/block-manager/index.js:51
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:81
 #: inc/vk-blocks/admin/admin.php:81
 msgid "Block Manager Setting"
 msgstr ""
@@ -151,6 +152,7 @@ msgstr ""
 
 #: src/admin/custom-block-style/index.js:77
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:31
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:76
 #: inc/vk-blocks/admin/admin.php:76
 msgid "Custom Block Style Setting"
 msgstr ""
@@ -192,6 +194,7 @@ msgstr ""
 
 #: src/admin/custom-css.js:20
 #: src/extensions/common/custom-css-extension/index.js:218
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-pro.php:15
 #: inc/vk-blocks-pro/admin-pro/admin-pro.php:15
 msgid "Custom CSS Setting"
 msgstr ""
@@ -301,6 +304,7 @@ msgid "Example:"
 msgstr ""
 
 #: src/admin/custom-format/index.js:50
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:75
 #: inc/vk-blocks/admin/admin.php:75
 msgid "Custom Format Setting"
 msgstr ""
@@ -414,7 +418,7 @@ msgid "Mobile"
 msgstr ""
 
 #: src/admin/margin.js:64
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:74
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:78
 #: inc/vk-blocks/admin/admin.php:78
 msgid "Common Margin Setting"
 msgstr ""
@@ -504,6 +508,7 @@ msgstr ""
 #: src/blocks/faq2/index.js:21
 #: src/blocks/slider/edit.js:457
 #: src/extensions/common/inline-font-size/inline.js:28
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:256
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:256
 msgid "Normal"
 msgstr ""
@@ -1387,44 +1392,40 @@ msgstr ""
 msgid "CLOSE"
 msgstr ""
 
-#: src/blocks/_pro/taxonomy/edit.js:107
-msgid "Display as dropdown"
-msgstr ""
-
-#: src/blocks/_pro/taxonomy/edit.js:114
+#: src/blocks/_pro/taxonomy/edit.js:101
 msgid "Show post counts"
 msgstr ""
 
-#: src/blocks/_pro/taxonomy/edit.js:121
+#: src/blocks/_pro/taxonomy/edit.js:108
 msgid "Show only top level categories"
 msgstr ""
 
-#: src/blocks/_pro/taxonomy/edit.js:131
+#: src/blocks/_pro/taxonomy/edit.js:118
 msgid "Hide if term has no posts"
 msgstr ""
 
-#: src/blocks/_pro/taxonomy/edit.js:139
+#: src/blocks/_pro/taxonomy/edit.js:126
 msgid "Show hierarchy"
 msgstr ""
 
-#: src/blocks/_pro/taxonomy/edit.js:56
+#: src/blocks/_pro/taxonomy/edit.js:50
 msgid "This block will not be displayed because no taxonomy is selected."
 msgstr ""
 
-#: src/blocks/_pro/taxonomy/edit.js:69
+#: src/blocks/_pro/taxonomy/edit.js:63
 msgid "This block will not be displayed because this taxonomy has no term."
 msgstr ""
 
-#: src/blocks/_pro/taxonomy/edit.js:86
+#: src/blocks/_pro/taxonomy/edit.js:80
 msgid "Taxonomy Block Option"
 msgstr ""
 
-#: src/blocks/_pro/taxonomy/edit.js:90
-msgid "Label of This Block"
+#: src/blocks/_pro/taxonomy/edit.js:84
+msgid "Taxonomy"
 msgstr ""
 
-#: src/blocks/_pro/taxonomy/edit.js:97
-msgid "Taxonomy"
+#: src/blocks/_pro/taxonomy/edit.js:94
+msgid "Display as dropdown"
 msgstr ""
 
 #: src/blocks/_pro/timeline-item/edit.js:64
@@ -1692,6 +1693,7 @@ msgstr ""
 
 #: src/blocks/button/edit.js:323
 #: src/extensions/common/inline-font-size/inline.js:23
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:251
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:251
 msgid "Small"
 msgstr ""
@@ -2526,11 +2528,13 @@ msgid "Apply"
 msgstr ""
 
 #: src/extensions/common/inline-font-size/inline.js:33
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:261
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:261
 msgid "Big"
 msgstr ""
 
 #: src/extensions/common/inline-font-size/inline.js:38
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:266
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:266
 msgid "Extra big"
 msgstr ""
@@ -3037,14 +3041,29 @@ msgstr ""
 msgid "Balloon Block Setting"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:75
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:79
 #: inc/vk-blocks/admin/admin.php:79
 msgid "Load Separete Setting"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:130
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:96
 #: inc/vk-blocks/admin/admin.php:96
 msgid "Setting"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/blocks.php:27
+#: inc/vk-blocks/blocks.php:27
+msgid "Blocks"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/blocks.php:40
+#: inc/vk-blocks/blocks.php:40
+msgid "Blocks Layout"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/blocks.php:53
+#: inc/vk-blocks/blocks.php:53
+msgid "Deprecated Blocks"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
@@ -3099,16 +3118,6 @@ msgstr ""
 msgid "There are no %ss."
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:167
-#: inc/vk-blocks/blocks.php:27
-msgid "Blocks"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:180
-#: inc/vk-blocks/blocks.php:40
-msgid "Blocks Layout"
-msgstr ""
-
 #: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:55
 #: inc/vk-components/package/class-vk-component-posts.php:55
 msgid "Read more"
@@ -3160,61 +3169,9 @@ msgctxt "post list type"
 msgid "Text 1 Column"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:48
-msgid "CSS Optimize ( Speed up ) Settings"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:65
-msgid "Tree shaking"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:85
-msgid "Tree shaking activation settings"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:89
-msgid "Output only the main CSS of the page inline"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:91
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:155
-msgid "Nothing to do"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:92
-msgid "Active Tree shaking (Recomend)"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:109
-msgid "Exclude class of Tree shaking"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:113
-msgid "If you choose \"Active Tree shaking\" that delete the useless css.If you using active css class that please fill in class name. Ex) btn-active,slide-active,scrolled"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:129
-msgid "Preload CSS"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:149
-msgid "Preload CSS activation settings"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:152
-msgid "Preload css except for critical css"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:156
-msgid "Active Preload CSS (Recomend)"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:173
-msgid "Exclude class of Preload CSS"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:177
-msgid "If you choose \"Active Preload CSS\" that css load timing was changed.If you have any do not want to preload css file that please fill in handle(id) name. Ex) pluginname_a-style,pluginname_b-css"
+#: dist/vk-blocks-pro/inc/vk-css-optimize/config.php:12
+#: inc/vk-css-optimize/config.php:12
+msgid "VK Blocks "
 msgstr ""
 
 #: dist/vk-blocks-pro/vk-blocks.php:105
@@ -3252,23 +3209,15 @@ msgstr ""
 msgid "Re-acquisition of updates"
 msgstr ""
 
-#: inc/vk-blocks/blocks.php:53
-msgid "Deprecated Blocks"
-msgstr ""
-
 #: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:40
 #: src/blocks/_pro/taxonomy/index.php:40
-msgid "Any"
+msgid "Please select taxonomy"
 msgstr ""
 
 #. translators:
-#: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:156
-#: src/blocks/_pro/taxonomy/index.php:156
+#: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:152
+#: src/blocks/_pro/taxonomy/index.php:152
 msgid "All of %s"
-msgstr ""
-
-#: inc/vk-css-optimize/config.php:12
-msgid "VK Blocks "
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/alert/block.json
@@ -3495,6 +3444,34 @@ msgctxt "block description"
 msgid "This is PR content where you can place images, headlines, text, and buttons."
 msgstr ""
 
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/slider-item/block.json
+#: inc/vk-blocks/build/blocks/slider-item/block.json
+#: src/blocks/slider-item/block.json
+msgctxt "block title"
+msgid "Slider Item"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/slider-item/block.json
+#: inc/vk-blocks/build/blocks/slider-item/block.json
+#: src/blocks/slider-item/block.json
+msgctxt "block description"
+msgid "This is one item in the slider."
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/slider/block.json
+#: inc/vk-blocks/build/blocks/slider/block.json
+#: src/blocks/slider/block.json
+msgctxt "block title"
+msgid "Slider"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/slider/block.json
+#: inc/vk-blocks/build/blocks/slider/block.json
+#: src/blocks/slider/block.json
+msgctxt "block description"
+msgid "This slider allows you to place various items.Slider is do not move in edit screen."
+msgstr ""
+
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/spacer/block.json
 #: inc/vk-blocks/build/blocks/spacer/block.json
 #: src/blocks/spacer/block.json
@@ -3647,6 +3624,16 @@ msgstr ""
 #: src/blocks/_pro/child-page/block.json
 msgctxt "block description"
 msgid "When a parent page is specified, a list of its child pages will be displayed."
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/dynamic-text/block.json
+msgctxt "block title"
+msgid "Dynamic Text"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/dynamic-text/block.json
+msgctxt "block description"
+msgid "Display dynamic Text"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/grid-column-item/block.json
@@ -3829,34 +3816,6 @@ msgstr ""
 #: src/blocks/_pro/select-post-list/block.json
 msgctxt "block description"
 msgid "Displays an arbitrarily specified page with the layout of the posting list."
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/slider-item/block.json
-#: inc/vk-blocks/build/blocks/slider-item/block.json
-#: src/blocks/slider-item/block.json
-msgctxt "block title"
-msgid "Slider Item"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/slider-item/block.json
-#: inc/vk-blocks/build/blocks/slider-item/block.json
-#: src/blocks/slider-item/block.json
-msgctxt "block description"
-msgid "This is one item in the slider."
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/slider/block.json
-#: inc/vk-blocks/build/blocks/slider/block.json
-#: src/blocks/slider/block.json
-msgctxt "block title"
-msgid "Slider"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/slider/block.json
-#: inc/vk-blocks/build/blocks/slider/block.json
-#: src/blocks/slider/block.json
-msgctxt "block description"
-msgid "This slider allows you to place various items.Slider is do not move in edit screen."
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/step-item/block.json

@@ -258,7 +258,7 @@ class TaxonomyTest extends WP_UnitTestCase {
 					'showOnlyTopLevel'   => false,
 					'className'          => '',
                 ),
-                'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap wp-block-vk-blocks-taxonomy"><div class="vk_taxnomy-label">Main Category</div><ul class="vk_taxonomy-list"><li class="cat-item cat-item-16"><a href="http://localhost:8889/?cat=16">empty_category_01</a></li><li class="cat-item cat-item-17"><a href="http://localhost:8889/?cat=17">empty_category_01_child</a></li><li class="cat-item cat-item-18"><a href="http://localhost:8889/?cat=18">empty_category_02</a></li><li class="cat-item cat-item-19"><a href="http://localhost:8889/?cat=19">empty_category_02_child</a></li><li class="cat-item cat-item-12"><a href="http://localhost:8889/?cat=12">test_category_01</a></li><li class="cat-item cat-item-13"><a href="http://localhost:8889/?cat=13">test_category_01_child</a></li><li class="cat-item cat-item-14"><a href="http://localhost:8889/?cat=14">test_category_02</a></li><li class="cat-item cat-item-15"><a href="http://localhost:8889/?cat=15">test_category_02_child</a></li><li class="cat-item cat-item-1"><a href="http://localhost:8889/?cat=1">Uncategorized</a></li></ul></div>'
+                'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap wp-block-vk-blocks-taxonomy"><ul class="vk_taxonomy-list"><li class="cat-item cat-item-16"><a href="http://localhost:8889/?cat=16">empty_category_01</a></li><li class="cat-item cat-item-17"><a href="http://localhost:8889/?cat=17">empty_category_01_child</a></li><li class="cat-item cat-item-18"><a href="http://localhost:8889/?cat=18">empty_category_02</a></li><li class="cat-item cat-item-19"><a href="http://localhost:8889/?cat=19">empty_category_02_child</a></li><li class="cat-item cat-item-12"><a href="http://localhost:8889/?cat=12">test_category_01</a></li><li class="cat-item cat-item-13"><a href="http://localhost:8889/?cat=13">test_category_01_child</a></li><li class="cat-item cat-item-14"><a href="http://localhost:8889/?cat=14">test_category_02</a></li><li class="cat-item cat-item-15"><a href="http://localhost:8889/?cat=15">test_category_02_child</a></li><li class="cat-item cat-item-1"><a href="http://localhost:8889/?cat=1">Uncategorized</a></li></ul></div>'
             ),
 			array(
                 'attributes' => array(
@@ -284,7 +284,7 @@ class TaxonomyTest extends WP_UnitTestCase {
 					'showOnlyTopLevel'   => false,
 					'className'          => '',
                 ),
-                'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap wp-block-vk-blocks-taxonomy"><div class="vk_taxnomy-label">Main Category</div><ul class="vk_taxonomy-list"><li class="cat-item cat-item-16"><a href="http://localhost:8889/?cat=16">empty_category_01</a><ul class="children"><li class="cat-item cat-item-17"><a href="http://localhost:8889/?cat=17">empty_category_01_child</a></li></ul></li><li class="cat-item cat-item-18"><a href="http://localhost:8889/?cat=18">empty_category_02</a><ul class="children"><li class="cat-item cat-item-19"><a href="http://localhost:8889/?cat=19">empty_category_02_child</a></li></ul></li><li class="cat-item cat-item-12"><a href="http://localhost:8889/?cat=12">test_category_01</a><ul class="children"><li class="cat-item cat-item-13"><a href="http://localhost:8889/?cat=13">test_category_01_child</a></li></ul></li><li class="cat-item cat-item-14"><a href="http://localhost:8889/?cat=14">test_category_02</a><ul class="children"><li class="cat-item cat-item-15"><a href="http://localhost:8889/?cat=15">test_category_02_child</a></li></ul></li><li class="cat-item cat-item-1"><a href="http://localhost:8889/?cat=1">Uncategorized</a></li></ul></div>'
+                'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap wp-block-vk-blocks-taxonomy"><ul class="vk_taxonomy-list"><li class="cat-item cat-item-16"><a href="http://localhost:8889/?cat=16">empty_category_01</a><ul class="children"><li class="cat-item cat-item-17"><a href="http://localhost:8889/?cat=17">empty_category_01_child</a></li></ul></li><li class="cat-item cat-item-18"><a href="http://localhost:8889/?cat=18">empty_category_02</a><ul class="children"><li class="cat-item cat-item-19"><a href="http://localhost:8889/?cat=19">empty_category_02_child</a></li></ul></li><li class="cat-item cat-item-12"><a href="http://localhost:8889/?cat=12">test_category_01</a><ul class="children"><li class="cat-item cat-item-13"><a href="http://localhost:8889/?cat=13">test_category_01_child</a></li></ul></li><li class="cat-item cat-item-14"><a href="http://localhost:8889/?cat=14">test_category_02</a><ul class="children"><li class="cat-item cat-item-15"><a href="http://localhost:8889/?cat=15">test_category_02_child</a></li></ul></li><li class="cat-item cat-item-1"><a href="http://localhost:8889/?cat=1">Uncategorized</a></li></ul></div>'
             ),
 			array(
                 'attributes' => array(
@@ -297,7 +297,7 @@ class TaxonomyTest extends WP_UnitTestCase {
 					'showOnlyTopLevel'   => false,
 					'className'          => '',
                 ),
-                'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap wp-block-vk-blocks-taxonomy"><div class="vk_taxnomy-label">Main Category</div><ul class="vk_taxonomy-list"><li class="cat-item cat-item-16"><a href="http://localhost:8889/?cat=16">empty_category_01</a> (0)<ul class="children"><li class="cat-item cat-item-17"><a href="http://localhost:8889/?cat=17">empty_category_01_child</a> (0)</li></ul></li><li class="cat-item cat-item-18"><a href="http://localhost:8889/?cat=18">empty_category_02</a> (0)<ul class="children"><li class="cat-item cat-item-19"><a href="http://localhost:8889/?cat=19">empty_category_02_child</a> (0)</li></ul></li><li class="cat-item cat-item-12"><a href="http://localhost:8889/?cat=12">test_category_01</a> (1)<ul class="children"><li class="cat-item cat-item-13"><a href="http://localhost:8889/?cat=13">test_category_01_child</a> (1)</li></ul></li><li class="cat-item cat-item-14"><a href="http://localhost:8889/?cat=14">test_category_02</a> (1)<ul class="children"><li class="cat-item cat-item-15"><a href="http://localhost:8889/?cat=15">test_category_02_child</a> (1)</li></ul></li><li class="cat-item cat-item-1"><a href="http://localhost:8889/?cat=1">Uncategorized</a> (0)</li></ul></div>'
+                'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap wp-block-vk-blocks-taxonomy"><ul class="vk_taxonomy-list"><li class="cat-item cat-item-16"><a href="http://localhost:8889/?cat=16">empty_category_01</a> (0)<ul class="children"><li class="cat-item cat-item-17"><a href="http://localhost:8889/?cat=17">empty_category_01_child</a> (0)</li></ul></li><li class="cat-item cat-item-18"><a href="http://localhost:8889/?cat=18">empty_category_02</a> (0)<ul class="children"><li class="cat-item cat-item-19"><a href="http://localhost:8889/?cat=19">empty_category_02_child</a> (0)</li></ul></li><li class="cat-item cat-item-12"><a href="http://localhost:8889/?cat=12">test_category_01</a> (1)<ul class="children"><li class="cat-item cat-item-13"><a href="http://localhost:8889/?cat=13">test_category_01_child</a> (1)</li></ul></li><li class="cat-item cat-item-14"><a href="http://localhost:8889/?cat=14">test_category_02</a> (1)<ul class="children"><li class="cat-item cat-item-15"><a href="http://localhost:8889/?cat=15">test_category_02_child</a> (1)</li></ul></li><li class="cat-item cat-item-1"><a href="http://localhost:8889/?cat=1">Uncategorized</a> (0)</li></ul></div>'
             ),
 			array(
                 'attributes' => array(
@@ -310,7 +310,7 @@ class TaxonomyTest extends WP_UnitTestCase {
 					'showOnlyTopLevel'   => false,
 					'className'          => '',
                 ),
-                'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap wp-block-vk-blocks-taxonomy"><div class="vk_taxnomy-label">Main Category</div><ul class="vk_taxonomy-list"><li class="cat-item cat-item-12"><a href="http://localhost:8889/?cat=12">test_category_01</a> (1)<ul class="children"><li class="cat-item cat-item-13"><a href="http://localhost:8889/?cat=13">test_category_01_child</a> (1)</li></ul></li><li class="cat-item cat-item-14"><a href="http://localhost:8889/?cat=14">test_category_02</a> (1)<ul class="children"><li class="cat-item cat-item-15"><a href="http://localhost:8889/?cat=15">test_category_02_child</a> (1)</li></ul></li></ul></div>'
+                'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap wp-block-vk-blocks-taxonomy"><ul class="vk_taxonomy-list"><li class="cat-item cat-item-12"><a href="http://localhost:8889/?cat=12">test_category_01</a> (1)<ul class="children"><li class="cat-item cat-item-13"><a href="http://localhost:8889/?cat=13">test_category_01_child</a> (1)</li></ul></li><li class="cat-item cat-item-14"><a href="http://localhost:8889/?cat=14">test_category_02</a> (1)<ul class="children"><li class="cat-item cat-item-15"><a href="http://localhost:8889/?cat=15">test_category_02_child</a> (1)</li></ul></li></ul></div>'
             ),
 			array(
                 'attributes' => array(
@@ -323,7 +323,7 @@ class TaxonomyTest extends WP_UnitTestCase {
 					'showOnlyTopLevel'   => true,
 					'className'          => '',
                 ),
-                'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap wp-block-vk-blocks-taxonomy"><div class="vk_taxnomy-label">Main Category</div><ul class="vk_taxonomy-list"><li class="cat-item cat-item-12"><a href="http://localhost:8889/?cat=12">test_category_01</a> (1)</li><li class="cat-item cat-item-14"><a href="http://localhost:8889/?cat=14">test_category_02</a> (1)</li></ul></div>'
+                'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap wp-block-vk-blocks-taxonomy"><ul class="vk_taxonomy-list"><li class="cat-item cat-item-12"><a href="http://localhost:8889/?cat=12">test_category_01</a> (1)</li><li class="cat-item cat-item-14"><a href="http://localhost:8889/?cat=14">test_category_02</a> (1)</li></ul></div>'
             ),
 			array(
                 'attributes' => array(
@@ -336,7 +336,7 @@ class TaxonomyTest extends WP_UnitTestCase {
 					'showOnlyTopLevel'   => true,
 					'className'          => '',
                 ),
-                'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap wp-block-vk-blocks-taxonomy"><div class="vk_taxnomy-label">Main Category</div><ul class="vk_taxonomy-list"><li class="cat-item cat-item-12"><a href="http://localhost:8889/?cat=12">test_category_01</a> (1)</li><li class="cat-item cat-item-14"><a href="http://localhost:8889/?cat=14">test_category_02</a> (1)</li></ul></div>'
+                'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap wp-block-vk-blocks-taxonomy"><ul class="vk_taxonomy-list"><li class="cat-item cat-item-12"><a href="http://localhost:8889/?cat=12">test_category_01</a> (1)</li><li class="cat-item cat-item-14"><a href="http://localhost:8889/?cat=14">test_category_02</a> (1)</li></ul></div>'
             ),
 			array(
                 'attributes' => array(
@@ -349,7 +349,7 @@ class TaxonomyTest extends WP_UnitTestCase {
 					'showOnlyTopLevel'   => true,
 					'className'          => 'aaaa',
                 ),
-                'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap aaaa wp-block-vk-blocks-taxonomy"><div class="vk_taxnomy-label">Main Category</div><ul class="vk_taxonomy-list"><li class="cat-item cat-item-12"><a href="http://localhost:8889/?cat=12">test_category_01</a> (1)</li><li class="cat-item cat-item-14"><a href="http://localhost:8889/?cat=14">test_category_02</a> (1)</li></ul></div>'
+                'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap aaaa wp-block-vk-blocks-taxonomy"><ul class="vk_taxonomy-list"><li class="cat-item cat-item-12"><a href="http://localhost:8889/?cat=12">test_category_01</a> (1)</li><li class="cat-item cat-item-14"><a href="http://localhost:8889/?cat=14">test_category_02</a> (1)</li></ul></div>'
             ),
 			array(
                 'attributes' => array(
@@ -362,7 +362,7 @@ class TaxonomyTest extends WP_UnitTestCase {
 					'showOnlyTopLevel'   => true,
 					'className'          => 'aaaa',
                 ),
-                'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap aaaa wp-block-vk-blocks-taxonomy"><div class="vk_taxnomy-label">Main Category</div><select name="cat" id="vk_taxonomy-11" class="vk_taxonomy__input-wrap vk_taxonomy__input-wrap--select"><option value="0" selected="selected">All of Category</option><option class="level-0" value="12">test_category_01&nbsp;&nbsp;(1)</option><option class="level-0" value="14">test_category_02&nbsp;&nbsp;(1)</option></select></div><script type="text/javascript">/* <![CDATA[ */( function() {var dropdown = document.getElementById( "vk_taxonomy-11" );function onCatChange() {if ( dropdown.options[ dropdown.selectedIndex ].value> 0 ) {location.href = "http://localhost:8889/?cat=" + dropdown.options[ dropdown.selectedIndex ].value;}}dropdown.onchange = onCatChange;})();/* ]]> */</script>'
+                'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap aaaa wp-block-vk-blocks-taxonomy"><select name="cat" id="vk_taxonomy-11" class="vk_taxonomy__input-wrap vk_taxonomy__input-wrap--select"><option value="0" selected="selected">All of Category</option><option class="level-0" value="12">test_category_01&nbsp;&nbsp;(1)</option><option class="level-0" value="14">test_category_02&nbsp;&nbsp;(1)</option></select></div><script type="text/javascript">/* <![CDATA[ */( function() {var dropdown = document.getElementById( "vk_taxonomy-11" );function onCatChange() {if ( dropdown.options[ dropdown.selectedIndex ].value> 0 ) {location.href = "http://localhost:8889/?cat=" + dropdown.options[ dropdown.selectedIndex ].value;}}dropdown.onchange = onCatChange;})();/* ]]> */</script>'
             ),
         );
 

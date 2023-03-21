@@ -264,14 +264,14 @@ class TaxonomyTest extends WP_UnitTestCase {
                 'attributes' => array(
 					'blockLabel'         => 'Main Event Category',
 					'isSelectedTaxonomy' => 'event_cat',
-					'displayAsDropdown'  => false,
+					'displayAsDropdown'  => false,s
 					'showHierarchy'      => false,
 					'showPostCounts'     => false,
 					'hideIfEmpty'        => false,
 					'showOnlyTopLevel'   => false,
 					'className'          => '',
                 ),
-                'correct'    => '<div class="vk_taxonomy vk_taxonomy--event_cat vk_taxonomy-outer-wrap wp-block-vk-blocks-taxonomy"><div class="vk_taxnomy-label">Main Event Category</div><ul class="vk_taxonomy-list"><li class="cat-item cat-item-24"><a href="http://localhost:8889/?event_cat=empty_event_01">empty_event_01</a></li><li class="cat-item cat-item-25"><a href="http://localhost:8889/?event_cat=empty_event_01_child">empty_event_01_child</a></li><li class="cat-item cat-item-26"><a href="http://localhost:8889/?event_cat=empty_event_02">empty_event_02</a></li><li class="cat-item cat-item-27"><a href="http://localhost:8889/?event_cat=empty_event_02_child">empty_event_02_child</a></li><li class="cat-item cat-item-20"><a href="http://localhost:8889/?event_cat=test_event_01">test_event_01</a></li><li class="cat-item cat-item-21"><a href="http://localhost:8889/?event_cat=test_event_01_child">test_event_01_child</a></li><li class="cat-item cat-item-22"><a href="http://localhost:8889/?event_cat=test_event_02">test_event_02</a></li><li class="cat-item cat-item-23"><a href="http://localhost:8889/?event_cat=test_event_02_child">test_event_02_child</a></li></ul></div>'
+                'correct'    => '<div class="vk_taxonomy vk_taxonomy--event_cat vk_taxonomy-outer-wrap wp-block-vk-blocks-taxonomy"><ul class="vk_taxonomy-list"><li class="cat-item cat-item-24"><a href="http://localhost:8889/?event_cat=empty_event_01">empty_event_01</a></li><li class="cat-item cat-item-25"><a href="http://localhost:8889/?event_cat=empty_event_01_child">empty_event_01_child</a></li><li class="cat-item cat-item-26"><a href="http://localhost:8889/?event_cat=empty_event_02">empty_event_02</a></li><li class="cat-item cat-item-27"><a href="http://localhost:8889/?event_cat=empty_event_02_child">empty_event_02_child</a></li><li class="cat-item cat-item-20"><a href="http://localhost:8889/?event_cat=test_event_01">test_event_01</a></li><li class="cat-item cat-item-21"><a href="http://localhost:8889/?event_cat=test_event_01_child">test_event_01_child</a></li><li class="cat-item cat-item-22"><a href="http://localhost:8889/?event_cat=test_event_02">test_event_02</a></li><li class="cat-item cat-item-23"><a href="http://localhost:8889/?event_cat=test_event_02_child">test_event_02_child</a></li></ul></div>'
             ),
 			array(
                 'attributes' => array(

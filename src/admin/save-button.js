@@ -8,7 +8,7 @@ import apiFetch from '@wordpress/api-fetch';
 import classNames from 'classnames';
 
 export const SaveButton = (props) => {
-	const { vkBlocksOption, classOption } = props;
+	const { vkBlocksOption, classOption, reloadFlag } = props;
 	const [isLoading, setIsLoading] = useState(false);
 	const [isSaveSuccess, setIsSaveSuccess] = useState('');
 
@@ -28,6 +28,10 @@ export const SaveButton = (props) => {
 				setIsLoading(false);
 				setIsSaveSuccess(true);
 			}, 600);
+			if (reloadFlag === true) {
+				// eslint-disable-next-line no-undef
+				location.reload();
+			}
 		});
 	};
 

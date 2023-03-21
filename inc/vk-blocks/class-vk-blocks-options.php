@@ -30,6 +30,58 @@ class VK_Blocks_Options {
 	}
 
 	/**
+	 * オプションの値をサニタイズする関数
+	 *
+	 * @param object $options VK Blocks Options.
+	 */
+	public static function sanitaize_options( $options ) {
+
+		/**
+		 * マージンのサニタイズ
+		 */
+
+		// CSS の変数で許可された文字列
+		$allowed_character = '/[\w\d\s\+\-\*\/%_,\(\)]+/';
+
+		// 許可する CSS の関数の文字列
+		$allowed_function = '/(var|clamp|min|max|calc)\s*\(/';
+
+		// 関数っぽい文字列
+		$check_function = '/(\w+)\s*\(/';
+
+		// margin_size が空でなかったら
+		if ( ! empty( $options['margin_size'] ) ) {
+
+			// 各マージンサイズの値を処理
+			foreach ( $options['margin_size'] as $key => $value ) {
+
+				// $options['margin_size'][ $key ]['custom'] が空でなかったら
+				if ( ! empty( $options['margin_size'][ $key ]['custom'] ) ) {
+
+					// 許可されている文字列のみ使用されている部分のみ抽出
+					preg_match( $allowed_character, $options['margin_size'][ $key ]['custom'], $matches );
+					$options['margin_size'][ $key ]['custom'] = $matches[0];
+
+					// カッコがある場合に許可された関数のみが使用されているか確認
+
+					// 許可されている関数名が使用されているのを抽出
+					preg_match_all( $allowed_function, $options['margin_size'][ $key ]['custom'], $matches01 );
+
+					// 何でもいいから関数っぽい文字列を抽出
+					preg_match_all( $check_function, $options['margin_size'][ $key ]['custom'], $matches02 );
+
+					// 上記２つのマッチングが等しくなければ余計な関数が紛れ込んでるので全削除
+					if ( wp_json_encode( $matches01 ) !== wp_json_encode( $matches02 ) ) {
+						$options['margin_size'][ $key ]['custom'] = '';
+					}
+				}
+			}
+		}
+
+		return $options;
+	}
+
+	/**
 	 *  Migrate Options
 	 */
 	public static function migrate_options() {
@@ -53,6 +105,12 @@ class VK_Blocks_Options {
 		}
 		if ( ! empty( $old_balloon_options ) ) {
 			delete_option( 'vk_blocks_balloon_meta' );
+		}
+
+		// 使わなくなったdisplay_vk_block_templateを削除する
+		if ( ! empty( $options['display_vk_block_template'] ) ) {
+			unset( $options['display_vk_block_template'] );
+			update_option( 'vk_blocks_options', $options );
 		}
 	}
 
@@ -84,6 +142,9 @@ class VK_Blocks_Options {
 							'pc'     => array(
 								'type' => 'number',
 							),
+							'custom' => array(
+								'type' => 'string',
+							),
 						),
 					),
 					'lg' => array(
@@ -97,6 +158,9 @@ class VK_Blocks_Options {
 							),
 							'pc'     => array(
 								'type' => 'number',
+							),
+							'custom' => array(
+								'type' => 'string',
 							),
 						),
 					),
@@ -112,6 +176,9 @@ class VK_Blocks_Options {
 							'pc'     => array(
 								'type' => 'number',
 							),
+							'custom' => array(
+								'type' => 'string',
+							),
 						),
 					),
 					'sm' => array(
@@ -125,6 +192,9 @@ class VK_Blocks_Options {
 							),
 							'pc'     => array(
 								'type' => 'number',
+							),
+							'custom' => array(
+								'type' => 'string',
 							),
 						),
 					),
@@ -140,6 +210,10 @@ class VK_Blocks_Options {
 							'pc'     => array(
 								'type' => 'number',
 							),
+							'custom' => array(
+								'type' => 'string',
+
+							),
 						),
 					),
 				),
@@ -148,9 +222,6 @@ class VK_Blocks_Options {
 				'type' => 'boolean',
 			),
 			'vk_blocks_pro_license_key'   => array(
-				'type' => 'string',
-			),
-			'display_vk_block_template'   => array(
 				'type' => 'string',
 			),
 			'new_faq_accordion'           => array(
@@ -263,31 +334,35 @@ class VK_Blocks_Options {
 					'mobile' => null,
 					'tablet' => null,
 					'pc'     => null,
+					'custom' => '',
 				),
 				'lg' => array(
 					'mobile' => null,
 					'tablet' => null,
 					'pc'     => null,
+					'custom' => '',
 				),
 				'md' => array(
 					'mobile' => null,
 					'tablet' => null,
 					'pc'     => null,
+					'custom' => '',
 				),
 				'sm' => array(
 					'mobile' => null,
 					'tablet' => null,
 					'pc'     => null,
+					'custom' => '',
 				),
 				'xs' => array(
 					'mobile' => null,
 					'tablet' => null,
 					'pc'     => null,
+					'custom' => '',
 				),
 			),
 			'load_separate_option'        => false,
 			'vk_blocks_pro_license_key'   => null,
-			'display_vk_block_template'   => 'display',
 			'new_faq_accordion'           => 'disable',
 			'show_custom_css_editor_flag' => 'show',
 			'custom_format_lists'         => array(
@@ -351,14 +426,15 @@ class VK_Blocks_Options {
 			'vk_blocks_setting',
 			'vk_blocks_options',
 			array(
-				'type'         => 'object',
-				'show_in_rest' => array(
+				'type'              => 'object',
+				'show_in_rest'      => array(
 					'schema' => array(
 						'type'       => 'object',
 						'properties' => self::get_vk_blocks_options_properties(),
 					),
 				),
-				'default'      => self::get_vk_blocks_options_defaults(),
+				'default'           => self::get_vk_blocks_options_defaults(),
+				'sanitize_callback' => array( __CLASS__, 'sanitaize_options' ),
 			)
 		);
 	}

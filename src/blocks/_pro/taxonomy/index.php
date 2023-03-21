@@ -180,7 +180,7 @@ function vk_blocks_taxonomy_render_callback( $attributes ) {
 			)
 		);
 	} else {
-		$content .= '<ul class="vkfs__input-wrap vkfs__input-wrap--list">';
+		$content .= '<ul class="vk_taxonomy-list">';
 		$content .= wp_list_categories(
 			array_merge(
 				$common_args,

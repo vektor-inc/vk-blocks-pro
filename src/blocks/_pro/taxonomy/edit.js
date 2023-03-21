@@ -1,9 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import {
-	PanelBody,
-	SelectControl,
-	ToggleControl,
-} from '@wordpress/components';
+import { PanelBody, SelectControl, ToggleControl } from '@wordpress/components';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import ServerSideRender from '@wordpress/server-side-render';
 

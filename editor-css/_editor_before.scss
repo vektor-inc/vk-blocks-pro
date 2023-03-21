@@ -7,7 +7,6 @@
 }
 .editor-block-list-item-vk-blocks-select-post-list:after,
 .editor-block-list-item-vk-blocks-accordion:after,
-.editor-block-list-item-vk-blocks-slider:after,
 .editor-block-list-item-vk-blocks-animation:after,
 .editor-block-list-item-vk-blocks-archive-list:after,
 .editor-block-list-item-vk-blocks-breadcrumb:after,
@@ -45,7 +44,7 @@
 // パネルの文字サイズがテーマなどの影響を受けるので上書き
 .components-panel {
 	h4 {
-		font-size:16px;
+		font-size:14px;
 	}
 }
 
@@ -70,6 +69,10 @@ button.image-button:not(.button-delete) {
 }
 
 .components-base-control {
+	// サイトエディタ で スライドアイテム などの設定パネルで画像がはみ出る不具合を修正
+	img {
+		max-width: 100%;
+	}
 	// 独自に追加
 	&__title {
 		padding-bottom: 3px;
@@ -128,6 +131,10 @@ button.image-button:not(.button-delete) {
 @import "./editor_before_breadcrumb";
 // slider
 @import "./editor_before_slider";
+// グリッドカラムカード
+@import "./editor_before_gridcolcard";
+// edit custom css extension
+@import "./editor_before_custom-css-extension";
 // archive-list
 @import "./editor_before_archive-list";
 

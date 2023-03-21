@@ -1,10 +1,10 @@
 === VK Blocks ===
-Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird
+Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird,chiakikouno,doshimaf
 Donate link:
 Tags: Gutenberg,FAQ,alert
-Requires at least: 5.8
-Tested up to: 6.0.0
-Stable tag: 1.37.0.0
+Requires at least: 5.9
+Tested up to: 6.1.0
+Stable tag: 1.52.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -16,9 +16,8 @@ This is a plugin that extends Gutenberg's blocks.
 This is a plugin that extends Gutenberg's blocks.
 
 [ Blocks ]
-
+* Slider
 * Staff
-* Outer
 * Alert
 * FAQ
 * Balloon
@@ -36,7 +35,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Card [ Pro ]
 * Grid Column [ Pro ]
 * Animation [ Pro ]
-* Slider [ Pro ]
+* Outer [ Pro ]
 
 [ Editing and correction ]
 
@@ -65,6 +64,115 @@ e.g.
 == Changelog ==
 
 [ Add New Block ][ Archive list block ] Displays a list of archives
+[ Add Setting ][ margin / spacer ] Add custom value to margin setting
+
+= 1.53.0 =
+[ Add setting ][ Slider ] Allow decimalon slider per view Setting & Add Setting of Centering Active Slide
+[ Specification Change ][ Custom Block Style Setting (Pro) ] Don't limit target blocks to VK Blocks.
+[ Bug Fix ] Fix inline css when css sepalate load mode.
+
+= 1.52.0 =
+[ Specification Change ] Add multiple length units.
+[ Specification Change ][ Custom CSS (Pro) ] Changed specification to output CSS wrapped by .editor-styles-wrapper in block editor.
+[ Specification Change ][ Custom Block Style Setting (Pro) ] Changed the specification to save the CSS wrapped in .editor-styles-wrapper and output that CSS in the block editor.
+[ Specification Change ][ Outer( Pro ) ] When the block is made full width, the class name of "alignfull" will be given.
+[ Bug Fix ][ Custom CSS (Pro) ] Fix PHP 8.1 warning
+[ Bug fix ][ Slider ] Allow 0 to be entered in numeric form.
+[ Bug fix ][ Slider ] Fix content width under case of use .is-layout-constrained and editor screen
+[ other ] Removed unused display_vk_block_template option value.
+
+= 1.51.0 =
+[ Improvement ][ Balloon ] Improvement to allow any number of registrations in admin.
+[ Bug fix ][ Step/timeline ] Fix title align center
+
+= 1.50.１ =
+[ Other ] CSS Optimize ( Tree Shaking ) Library update
+
+= 1.50.0 =
+[ Add Function ][ Slider ] Add Slider per view Setting for Mobile, Tablet, PC.
+
+= 1.49.0 =
+[ Add Function ][ Custom Block Style Setting (Pro) ] Add Custom Block Style Setting extension in admin.
+[ Specification Change ][ Post List ( Pro ) ] Lightweight data acquisition process
+[ Bug fix ][ Step(Pro) / Time Line(Pro) ] Fix item content overflow hidden
+
+= 1.48.1 =
+[ Bug fix ][ Slider ] Set default value for unset time and speed.
+[ Bug fix ][ table style ] Fix bug of under the active theme.json environment, If you use the table styles that, table border property become not reflection.
+[ Other ] Update Plugin Update Checker to 5.0
+[ Other ] Update VK Breadcrumb lib 0.2.5
+
+= 1.48.0 =
+[ Add Function ][ Admin screen ] Added block manager function.
+[ Add Function ][ Custom Format Setting (Pro) ] Add Custom Format Setting extension in admin.
+[ Bug fix ][ Custom CSS (Pro) ] Fixed bug in not replacing all selector strings.
+[ Specification Change ][ Animation(Pro) ] add setting option Animation only the first view.
+
+= 1.47.1 =
+[ Bug fix ][ Slider ] Stick out background image on setting panel of site editor
+
+= 1.47.0 =
+[ Other ][ Slider ( Pro ) ] Change Pro to Free.
+[ Bug fix ][ Button ] Fixed a bug where the default color was not hit in all themes except Lightning.
+
+= 1.46.0 =
+[ Add Function ][ Custom CSS (Pro) ] Add custom css extension in inspector controls.
+[ Specification Change ][ Grid Column (Pro) ] Changed margin setting from 1 to 0.1 separator.
+[ Specification Change ] Update the required WordPress version
+[ Bug Fix ][ Highlighter ] Fixed a bug that custom colors cannot be used.
+[ Bug Fix ][ Button ] Fixed a bug that the color palette does not change on the edit screen when there is no background.
+[ Bug Fix ][ List ] Fixed a bug that the color of the list icon was not reflected on the edit screen
+[ Bug fix ][ Step (Pro) / Time line (Pro) ] Fix margin of theme.json
+[ Bug fix ][ Grid Column (Pro) ] Fix bg color overflow bug on edit screen.
+
+= 1.45.0 =
+[ Other ] Cope with WordPress 6.1
+[ Specification Change ] Color palette manager use wp_theme_json_data_default filter.
+[ Bug fix ][ Button ] Delete non intentional underline.
+[ Other ] color palette manager added warning that --vk-color-custom-${number} is deprecated and replaced with --wp--preset--color--vk-color-custom-${number}.
+
+= 1.44.0 =
+[ Add Function ][ Post List ( Pro ) ] Add post filter taxonomy relation
+[ Add Function ][ Button ] Add Button Effect option in Solid color button.
+[ Specification Change ][ Post List ( Pro ) ] Change to don't display unpublic posttype and terms list.
+[ Bug Fix ][ Grid Column Card( Pro ) ] Fixed a bug that css for editor was displayed in front.
+[ Bug Fix ][ Select Post List Item ( Pro ) ] Fixed a bug where additional CSS classes were not attached.
+
+= 1.43.0 =
+[ Add Function ][ Spacer ][ Common mergin ] Add size option xl/xs.
+[ Improvement ][ Admin screen ] Display the SaveButton sticky.
+[ Bug Fix ] Fix PHP 8.X Error
+
+= 1.42.1 =
+[ Other ] Update VK Component Posts 1.3.1
+
+= 1.42.0 =
+[ Specification Change ] Update VK Component Posts ( Can use input tag on filter  )
+[ Improvement ] Delete vk_blocks_get_options() function and change to VK_Blocks_Options::get_options().
+
+= 1.41.2 =
+[ Improvement ][ Page list from ancestor ] Fix behavior site editor.
+[ Other ] Add PHPUnit test on Several PHP and WordPress versions
+[ Bug Fix ] Fatal error in WordPress 5.8
+[ Bug Fix ][ highlighter ] cope with color palette with alpha.
+[ Bug Fix ][ button ] buttonColorCustom clear convert to primary.
+
+= 1.41.1 =
+[ Bug Fix ] Fix don't display Admin screen in case of spacific option value
+
+= 1.41.0 =
+[ Add Function ][ Balloon ] Add width option.
+[ Bug Fix ][ Outer (Pro) ] Fixed the border color of the Outer block within the Outer block was not attached.
+[ Specification Change ][ Breadcrumb(Pro) ] Hidden front page breadcrumb.
+
+= 1.40.1 =
+[ Specification Change ][Step(Pro)/Timeline(Pro)] Change lineStyle ui.
+[ Bug Fix ][ hidden extension ] fix hidden extension class when Screen size xl.
+[ Bug Fix ][ FAQ ] fix faq block js error when load separation mode.
+
+= 1.40.0 =
+[ Improvement ][ hidden extension ] Changed to add common hidden class names to additional CSS classes.
+[ Add Block ][ Page list from ancestors ]
 [ Add Function ][ Button ] Enable inline font size and add icon size option.
 [ Specification Change ] Change the style of the options page to Gutenberg components.
 [ Bug Fix ] fix editor style in Inline font size and Highlighter.

@@ -5,27 +5,36 @@ import { __ } from '@wordpress/i18n';
 import {
 	SelectControl,
 	__experimentalNumberControl as NumberControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
+	TextControl,
 } from '@wordpress/components';
 import { useContext } from '@wordpress/element';
+import { hightUnitOptions } from '@vkblocks/utils/unit-options';
 
 /**
  * Internal dependencies
  */
-import { SaveButton } from '@vkblocks/admin/save-button';
 import { AdminContext } from '@vkblocks/admin/index';
 
 const MARGIN_SIZE_ARRAY = [
 	{
-		marginLabel: __('Small', 'vk-blocks'),
+		marginLabel: __('XS', 'vk-blocks'),
+		marginValue: 'xs',
+	},
+	{
+		marginLabel: __('S', 'vk-blocks'),
 		marginValue: 'sm',
 	},
 	{
-		marginLabel: __('Medium', 'vk-blocks'),
+		marginLabel: __('M', 'vk-blocks'),
 		marginValue: 'md',
 	},
 	{
-		marginLabel: __('Large', 'vk-blocks'),
+		marginLabel: __('L', 'vk-blocks'),
 		marginValue: 'lg',
+	},
+	{
+		marginLabel: __('XL', 'vk-blocks'),
+		marginValue: 'xl',
 	},
 ];
 
@@ -45,12 +54,12 @@ const DEVICE_ARRAY = [
 ];
 
 export default function AdminMargin() {
-	const { vkBlocksOption, setVkBlocksOption, vkBlocksBalloonMeta } =
+	const { vkBlocksOption, setVkBlocksOption, setReloadFlag } =
 		useContext(AdminContext);
 
 	return (
 		<>
-			<section>
+			<section className="margin-setting">
 				<h3 id="margin-setting">
 					{__('Common Margin Setting', 'vk-blocks')}
 				</h3>
@@ -60,7 +69,7 @@ export default function AdminMargin() {
 						'vk-blocks'
 					)}
 				</p>
-				<div className="vk_admin_marginUnit">
+				<div className="margin-setting__unit">
 					<span>{__('Unit', 'vk-blocks')}</span>
 					<SelectControl
 						name="vk_blocks_options[margin_unit]"
@@ -72,52 +81,116 @@ export default function AdminMargin() {
 								margin_unit: newValue,
 							});
 						}}
-						options={[
-							{
-								label: __('px', 'vk-blocks'),
-								value: 'px',
-							},
-							{
-								label: __('em', 'vk-blocks'),
-								value: 'em',
-							},
-							{
-								label: __('rem', 'vk-blocks'),
-								value: 'rem',
-							},
-						]}
+						options={hightUnitOptions}
 					/>
 				</div>
-				<ul className="no-style spacer-input">
-					{MARGIN_SIZE_ARRAY.map((size) => {
-						const { marginLabel, marginValue } = size;
-						return (
-							<li key={marginLabel}>
-								<span>
-									{__('Margin', 'vk-blocks')} [ {marginLabel}{' '}
-									] :
+				<table className="margin-setting__table">
+					<thead>
+						<tr>
+							<td></td>
+							{DEVICE_ARRAY.map((device) => {
+								const { deviceLabel } = device;
+								return (
+									<td
+										key={deviceLabel}
+										className="text-center nowrap"
+									>
+										{deviceLabel}
+									</td>
+								);
+							})}
+							<td>
+								{__('Custom Value', 'vk-blocks')}
+								<span className="vk_admin_tooltip">
+									<span className="vk_admin_tooltip__trigger">
+										?
+									</span>
+									<span className="vk_admin_tooltip__body">
+										{__(
+											'If you enter a custom value, the values you entered will be used as a priority.',
+											'vk-blocks'
+										)}
+										<br />
+										{__(
+											'This item is mainly intended for inputting CSS variables for the margins specified by the theme. Thereby you can apply to the same margin size to the VK Blocks.',
+											'vk-blocks'
+										)}
+										<br />
+										{/* 最後のセミコロンは勝手につくので例の最後のセミコロンは不要*/}
+										{__('ex)', 'vk-blocks')}
+										{
+											'var(--wp--custom--spacing--xx--small)'
+										}
+									</span>
 								</span>
-								{DEVICE_ARRAY.map((device) => {
-									const { deviceLabel, deviceValue } = device;
-									{
-										/* TextControlでは以前の実装が出来なかったので致し方なく__experimentalNumberControlを利用 */
-									}
-									return (
-										<NumberControl
-											className="margin_size_input"
-											key={deviceLabel}
-											label={deviceLabel}
-											name={`vk_blocks_options[margin_size][${marginValue}][${deviceValue}]`}
-											step="0.05"
+							</td>
+						</tr>
+					</thead>
+					<tbody>
+						{MARGIN_SIZE_ARRAY.map((size) => {
+							const { marginLabel, marginValue } = size;
+							return (
+								<tr key={marginLabel}>
+									<th className="nowrap">
+										{__('Margin', 'vk-blocks') +
+											` [ ${marginLabel} ] `}
+									</th>
+									{DEVICE_ARRAY.map((device) => {
+										const { deviceLabel, deviceValue } =
+											device;
+										{
+											/* TextControlでは以前の実装が出来なかったので致し方なく__experimentalNumberControlを利用 */
+										}
+										return (
+											<td key={deviceLabel}>
+												<NumberControl
+													className="margin_size_input"
+													name={`vk_blocks_options[margin_size][${marginValue}][${deviceValue}]`}
+													step="0.05"
+													value={
+														!vkBlocksOption
+															.margin_size[
+															marginValue
+														][deviceValue]
+															? ''
+															: vkBlocksOption
+																	.margin_size[
+																	marginValue
+															  ][deviceValue]
+													}
+													onChange={(newValue) => {
+														setVkBlocksOption({
+															...vkBlocksOption,
+															margin_size: {
+																...vkBlocksOption.margin_size,
+																[marginValue]: {
+																	...vkBlocksOption
+																		.margin_size[
+																		marginValue
+																	],
+																	[deviceValue]:
+																		newValue,
+																},
+															},
+														});
+													}}
+												/>
+											</td>
+										);
+									})}
+									<td className="margin-setting__custom">
+										<TextControl
+											className="margin-setting__custom__input"
+											name={`vk_blocks_options[margin_size][${marginValue}][custom]`}
 											value={
 												!vkBlocksOption.margin_size[
 													marginValue
-												][deviceValue]
+												].custom
 													? ''
 													: vkBlocksOption
 															.margin_size[
 															marginValue
-													  ][deviceValue]
+													  ].custom
 											}
 											onChange={(newValue) => {
 												setVkBlocksOption({
@@ -129,24 +202,20 @@ export default function AdminMargin() {
 																.margin_size[
 																marginValue
 															],
-															[deviceValue]:
-																newValue,
+															custom: newValue,
 														},
 													},
 												});
+												setReloadFlag(true);
 											}}
 										/>
-									);
-								})}
-							</li>
-						);
-					})}
-				</ul>
+									</td>
+								</tr>
+							);
+						})}
+					</tbody>
+				</table>
 			</section>
-			<SaveButton
-				vkBlocksOption={vkBlocksOption}
-				vkBlocksBalloonMeta={vkBlocksBalloonMeta}
-			/>
 		</>
 	);
 }

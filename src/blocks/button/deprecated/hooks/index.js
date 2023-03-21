@@ -7,6 +7,7 @@ import ButtonHook1_39_2 from './1.39.2';
 // saveの数分必要
 export default [
 	ButtonHook1_39_2,
+	ButtonHook1_39_2,
 	ButtonHook1_29_2,
 	ButtonHook1_29_2,
 	ButtonHook1_29_2,

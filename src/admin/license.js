@@ -8,11 +8,10 @@ import { useContext } from '@wordpress/element';
 /**
  * Internal dependencies
  */
-import { SaveButton } from '@vkblocks/admin/save-button';
 import { AdminContext } from '@vkblocks/admin/index';
 
 export default function AdminLicense() {
-	const { vkBlocksOption, setVkBlocksOption, vkBlocksBalloonMeta } =
+	const { vkBlocksOption, setVkBlocksOption, setReloadFlag } =
 		useContext(AdminContext);
 
 	return (
@@ -47,13 +46,10 @@ export default function AdminLicense() {
 							...vkBlocksOption,
 							vk_blocks_pro_license_key: newValue,
 						});
+						setReloadFlag(true);
 					}}
 				/>
 			</section>
-			<SaveButton
-				vkBlocksOption={vkBlocksOption}
-				vkBlocksBalloonMeta={vkBlocksBalloonMeta}
-			/>
 		</>
 	);
 }

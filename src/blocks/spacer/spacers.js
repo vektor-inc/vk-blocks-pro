@@ -13,9 +13,11 @@ export default function Spacers({
 	unit,
 }) {
 	const SPACE_SIZE_CLASSNAMES = {
+		xs: 'vk_block-margin-xs',
 		small: 'vk_block-margin-sm',
 		medium: 'vk_block-margin-md',
 		large: 'vk_block-margin-lg',
+		xl: 'vk_block-margin-xl',
 	};
 
 	if (spaceSize !== undefined && SPACE_SIZE_CLASSNAMES[spaceSize]) {

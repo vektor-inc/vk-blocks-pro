@@ -24,13 +24,17 @@ import * as outer from './_pro/outer';
 import * as postList from './_pro/post-list';
 import * as selectPostList from './_pro/select-post-list';
 import * as selectPostListItem from './_pro/select-post-list-item';
-import * as slider from './_pro/slider';
-import * as sliderItem from './_pro/slider-item';
 import * as step from './_pro/step';
 import * as stepItem from './_pro/step-item';
 import * as tableofContentsNew from './_pro/table-of-contents-new';
 import * as timeline from './_pro/timeline';
 import * as timelineItem from './_pro/timeline-item';
+
+/**
+ * Extensions
+ */
+import '@vkblocks/extensions/common/custom-css-extension';
+import '@vkblocks/extensions/common/custom-format';
 
 const vkblocksPro = [
 	accordion,
@@ -58,8 +62,6 @@ const vkblocksPro = [
 	selectPostListItem,
 	step,
 	stepItem,
-	slider,
-	sliderItem,
 	tableofContentsNew,
 	timeline,
 	timelineItem,

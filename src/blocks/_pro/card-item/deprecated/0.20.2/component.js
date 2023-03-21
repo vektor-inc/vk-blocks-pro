@@ -61,7 +61,7 @@ export class CardItem extends Component {
 		}
 
 		const deleteImgBtn = () => {
-			dispatch('core/editor').updateBlockAttributes(clientId, {
+			dispatch('core/block-editor').updateBlockAttributes(clientId, {
 				image: null,
 			});
 		};

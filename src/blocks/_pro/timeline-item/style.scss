@@ -2,7 +2,11 @@
 /* CSS
 /*-------------------------------------------*/
 .vk_timeline {
-	margin: 2em auto;
+	// theme.json があると body .is-layout-flow > * に対して margin-block-start/end ともに 0 がつくので暫定的な上書き処理
+	&,
+	body .container .is-layout-flow > & {
+		margin: 2em auto; 
+	}
 	.vk_timeline_item {
 		position: relative;
 		padding: 0 0 2.4em 1.8em;
@@ -16,9 +20,15 @@
 			color: #666;
 		}
 		&_content {
-			display:block; overflow:hidden; // これがないと margin-bottom が content を貫通してしまう
+			display:grid; // block & hidden だと中の要素のシャドウが切れるので grid に変更
 			& > *:last-child{
 				margin-bottom:var(--vk-margin-md);
+			}
+			//親のブロックがdisplay:grid;になっており、 
+			//デザイン設定>見出しデザインで設定すると、marginのleftとrightに auto が入り中央に寄ってしまう為、unsetを追加
+			h1,h2,h3,h4,h5,h6{
+				margin-left:unset;
+				margin-right: unset;
 			}
 		}
 

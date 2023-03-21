@@ -5,9 +5,10 @@ import { __ } from '@wordpress/i18n';
 import { useState, useEffect } from '@wordpress/element';
 import { Button, Snackbar } from '@wordpress/components';
 import apiFetch from '@wordpress/api-fetch';
+import classNames from 'classnames';
 
 export const SaveButton = (props) => {
-	const { vkBlocksOption, vkBlocksBalloonMeta } = props;
+	const { vkBlocksOption, classOption, reloadFlag } = props;
 	const [isLoading, setIsLoading] = useState(false);
 	const [isSaveSuccess, setIsSaveSuccess] = useState('');
 
@@ -19,7 +20,6 @@ export const SaveButton = (props) => {
 			method: 'POST',
 			data: {
 				vkBlocksOption,
-				vkBlocksBalloonMeta,
 			},
 		}).then((/*response, status*/) => {
 			setTimeout(() => {
@@ -28,6 +28,10 @@ export const SaveButton = (props) => {
 				setIsLoading(false);
 				setIsSaveSuccess(true);
 			}, 600);
+			if (reloadFlag === true) {
+				// eslint-disable-next-line no-undef
+				location.reload();
+			}
 		});
 	};
 
@@ -42,7 +46,7 @@ export const SaveButton = (props) => {
 
 	return (
 		<>
-			<div className="submit">
+			<div className={classNames('submit', classOption)}>
 				<Button
 					className="update-button"
 					isPrimary

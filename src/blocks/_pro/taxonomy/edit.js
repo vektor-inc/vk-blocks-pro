@@ -3,7 +3,6 @@ import {
 	PanelBody,
 	SelectControl,
 	ToggleControl,
-	TextControl,
 } from '@wordpress/components';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import ServerSideRender from '@wordpress/server-side-render';
@@ -12,7 +11,6 @@ export default function TaxonomyEdit(props) {
 	const { attributes, setAttributes } = props;
 
 	const {
-		blockLabel,
 		isSelectedTaxonomy,
 		displayAsDropdown,
 		showHierarchy,
@@ -86,13 +84,6 @@ export default function TaxonomyEdit(props) {
 					title={__('Taxonomy Block Option', 'vk-blocks')}
 					initialOpen={true}
 				>
-					<TextControl
-						label={__('Label of This Block', 'vk-blocks')}
-						value={blockLabel}
-						onChange={(value) =>
-							setAttributes({ blockLabel: value })
-						}
-					/>
 					<SelectControl
 						label={__('Taxonomy', 'vk-blocks')}
 						value={isSelectedTaxonomy}

@@ -9,10 +9,6 @@
 	"editor_style": "vk-blocks-build-editor-css",
 	"editor_script": "vk-blocks-build-js",
 	"attributes": {
-		"blockLabel": {
-			"type": "string",
-			"default": ""
-		},
 		"isSelectedTaxonomy": {
 			"type": "string",
 			"default": "category"

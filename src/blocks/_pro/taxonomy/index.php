@@ -37,7 +37,7 @@ function vk_blocks_register_block_taxonomy() {
 	// タクソノミーブロックで使うタクソノミーの選択肢.
 	$taxonomy_option = array(
 		array(
-			'label' => __( 'Any', 'vk-blocks' ),
+			'label' => __( 'Please select taxonomy', 'vk-blocks' ),
 			'value' => '',
 		),
 	);
@@ -61,10 +61,6 @@ function vk_blocks_register_block_taxonomy() {
 			'editor_script'   => 'vk-blocks-build-js',
 			'attributes'      => array_merge(
 				array(
-					'blockLabel'         => array(
-						'type'    => 'string',
-						'default' => '',
-					),
 					'isSelectedTaxonomy' => array(
 						'type'    => 'string',
 						'default' => 'category',
@@ -170,8 +166,7 @@ function vk_blocks_taxonomy_render_callback( $attributes ) {
 		)
 	);
 
-	$content  = '<div ' . $outer_attributes . '>';
-	$content .= '<div class="vk_taxnomy-label">' . $block_label . '</div>';
+	$content = '<div ' . $outer_attributes . '>';
 	if ( ! empty( $attributes['displayAsDropdown'] ) ) {
 		$content .= wp_dropdown_categories(
 			array_merge(

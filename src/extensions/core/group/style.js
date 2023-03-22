@@ -85,6 +85,16 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 									});
 								}}
 							/>
+							<p className="font-size-11px">
+								{__(
+									'Color specification here is now deprecated.', // ここでの色指定は非推奨になりました。
+									'vk-blocks'
+								)}
+								{__(
+									'If theme.json is enabled in your theme, you can specify colors in the "Border" panel.', // theme.json が有効なテーマの場合は別途「枠線（英語だと Borderの部分）」パネルから色指定が可能です。
+									'vk-blocks'
+								)}
+							</p>
 						</PanelBody>
 					</InspectorControls>
 				</>

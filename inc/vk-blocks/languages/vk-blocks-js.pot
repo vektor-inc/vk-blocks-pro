@@ -353,7 +353,7 @@ msgstr ""
 msgid "ex)"
 msgstr ""
 
-#: src/admin/margin.js:136
+#: src/admin/margin.js:135
 #: src/blocks/border-box/edit.js:192
 #: src/blocks/icon-outer/edit.js:149
 #: src/blocks/icon/edit.js:139
@@ -1171,22 +1171,22 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:115
 #: src/blocks/_pro/timeline-item/edit.js:88
 #: src/blocks/pr-content/edit.js:144
-#: src/extensions/core/group/style.js:102
+#: src/extensions/core/group/style.js:112
 msgid "Solid"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:538
-#: src/extensions/core/group/style.js:110
+#: src/extensions/core/group/style.js:120
 msgid "Dotted"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:542
-#: src/extensions/core/group/style.js:114
+#: src/extensions/core/group/style.js:124
 msgid "Dashed"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:546
-#: src/extensions/core/group/style.js:118
+#: src/extensions/core/group/style.js:128
 msgid "Double"
 msgstr ""
 
@@ -1411,28 +1411,28 @@ msgstr ""
 #: src/blocks/alert/edit.js:25
 #: src/blocks/button/edit.js:675
 #: src/blocks/pr-content/edit.js:165
-#: src/extensions/core/group/style.js:138
+#: src/extensions/core/group/style.js:148
 msgid "Success"
 msgstr ""
 
 #: src/blocks/alert/edit.js:28
 #: src/blocks/button/edit.js:679
 #: src/blocks/pr-content/edit.js:168
-#: src/extensions/core/group/style.js:134
+#: src/extensions/core/group/style.js:144
 msgid "Info"
 msgstr ""
 
 #: src/blocks/alert/edit.js:30
 #: src/blocks/button/edit.js:683
 #: src/blocks/pr-content/edit.js:170
-#: src/extensions/core/group/style.js:142
+#: src/extensions/core/group/style.js:152
 msgid "Warning"
 msgstr ""
 
 #: src/blocks/alert/edit.js:34
 #: src/blocks/button/edit.js:687
 #: src/blocks/pr-content/edit.js:174
-#: src/extensions/core/group/style.js:146
+#: src/extensions/core/group/style.js:156
 msgid "Danger"
 msgstr ""
 
@@ -2591,22 +2591,32 @@ msgstr ""
 msgid "Responsive BR "
 msgstr ""
 
-#: src/extensions/core/group/style.js:106
+#: src/extensions/core/group/style.js:116
 msgid "Solid Roundcorner"
 msgstr ""
 
-#: src/extensions/core/group/style.js:122
+#: src/extensions/core/group/style.js:132
 msgid "Stitch"
 msgstr ""
 
-#: src/extensions/core/group/style.js:126
+#: src/extensions/core/group/style.js:136
 #: src/extensions/core/table/style.js:7
 msgid "Border Top Bottom"
 msgstr ""
 
-#: src/extensions/core/group/style.js:130
+#: src/extensions/core/group/style.js:140
 #: src/extensions/core/image/style.js:31
 msgid "Shadow"
+msgstr ""
+
+#: src/extensions/core/group/style.js:89
+msgid "Color specification here is now deprecated."
+msgstr ""
+
+#: src/extensions/core/group/style.js:93
+msgid ""
+"If theme.json is enabled in your theme, you can specify colors in the "
+"\"Border\" panel."
 msgstr ""
 
 #: src/extensions/core/heading/style.js:104

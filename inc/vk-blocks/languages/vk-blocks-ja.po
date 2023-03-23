@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2023-03-20T08:00:43+00:00\n"
-"PO-Revision-Date: 2023-03-20 17:02+0900\n"
+"POT-Creation-Date: 2023-03-22T04:35:12+00:00\n"
+"PO-Revision-Date: 2023-03-23 09:21+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -93,9 +93,7 @@ msgstr "よく使う吹き出し用のアイコン画像を登録する事がで
 msgid "image"
 msgstr "画像"
 
-#: src/admin/block-manager/index.js:51
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:81
-#: inc/vk-blocks/admin/admin.php:81
+#: src/admin/block-manager/index.js:51 inc/vk-blocks/admin/admin.php:81
 msgid "Block Manager Setting"
 msgstr "ブロックマネージャー設定"
 
@@ -161,7 +159,6 @@ msgstr "(例) %s-block-style"
 
 #: src/admin/custom-block-style/index.js:77
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:31
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:76
 #: inc/vk-blocks/admin/admin.php:76
 msgid "Custom Block Style Setting"
 msgstr "カスタムブロックスタイル設定"
@@ -210,7 +207,6 @@ msgstr "編集"
 
 #: src/admin/custom-css.js:20
 #: src/extensions/common/custom-css-extension/index.js:218
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-pro.php:15
 #: inc/vk-blocks-pro/admin-pro/admin-pro.php:15
 msgid "Custom CSS Setting"
 msgstr "カスタムCSS設定"
@@ -270,11 +266,7 @@ msgstr "改行しない"
 #: src/admin/custom-format/index.js:197 src/blocks/_pro/step-item/edit.js:102
 #: src/blocks/_pro/timeline-item/edit.js:71 src/blocks/border-box/edit.js:204
 #: src/blocks/button/edit.js:661 src/blocks/icon/edit.js:289
-#: src/blocks/staff/edit.js:199
-#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:41
-#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:56
-#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:130
-#: inc/term-color/package/class.term-color.php:41
+#: src/blocks/staff/edit.js:199 inc/term-color/package/class.term-color.php:41
 #: inc/term-color/package/class.term-color.php:56
 #: inc/term-color/package/class.term-color.php:130
 msgid "Color"
@@ -321,9 +313,7 @@ msgstr ""
 msgid "Example:"
 msgstr "例:"
 
-#: src/admin/custom-format/index.js:50
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:75
-#: inc/vk-blocks/admin/admin.php:75
+#: src/admin/custom-format/index.js:50 inc/vk-blocks/admin/admin.php:75
 msgid "Custom Format Setting"
 msgstr "カスタム書式設定"
 
@@ -392,7 +382,7 @@ msgstr ""
 msgid "ex)"
 msgstr "例）"
 
-#: src/admin/margin.js:136 src/blocks/border-box/edit.js:192
+#: src/admin/margin.js:135 src/blocks/border-box/edit.js:192
 #: src/blocks/icon-outer/edit.js:149 src/blocks/icon/edit.js:139
 msgid "Margin"
 msgstr "余白"
@@ -435,8 +425,7 @@ msgstr "タブレット"
 msgid "Mobile"
 msgstr "モバイル"
 
-#: src/admin/margin.js:64 dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:78
-#: inc/vk-blocks/admin/admin.php:78
+#: src/admin/margin.js:64 inc/vk-blocks/admin/admin.php:78
 msgid "Common Margin Setting"
 msgstr "共通余白設定"
 
@@ -524,7 +513,6 @@ msgstr "短い"
 #: src/blocks/button/edit.js:315 src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:21 src/blocks/slider/edit.js:457
 #: src/extensions/common/inline-font-size/inline.js:28
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:252
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:252
 msgid "Normal"
 msgstr "標準"
@@ -1161,19 +1149,19 @@ msgstr "なし"
 
 #: src/blocks/_pro/outer/edit.js:534 src/blocks/_pro/step-item/edit.js:115
 #: src/blocks/_pro/timeline-item/edit.js:88 src/blocks/pr-content/edit.js:144
-#: src/extensions/core/group/style.js:102
+#: src/extensions/core/group/style.js:112
 msgid "Solid"
 msgstr "直線"
 
-#: src/blocks/_pro/outer/edit.js:538 src/extensions/core/group/style.js:110
+#: src/blocks/_pro/outer/edit.js:538 src/extensions/core/group/style.js:120
 msgid "Dotted"
 msgstr "点線"
 
-#: src/blocks/_pro/outer/edit.js:542 src/extensions/core/group/style.js:114
+#: src/blocks/_pro/outer/edit.js:542 src/extensions/core/group/style.js:124
 msgid "Dashed"
 msgstr "Dashed"
 
-#: src/blocks/_pro/outer/edit.js:546 src/extensions/core/group/style.js:118
+#: src/blocks/_pro/outer/edit.js:546 src/extensions/core/group/style.js:128
 msgid "Double"
 msgstr "二重線"
 
@@ -1394,22 +1382,22 @@ msgid "Style Settings"
 msgstr "スタイル設定"
 
 #: src/blocks/alert/edit.js:25 src/blocks/button/edit.js:675
-#: src/blocks/pr-content/edit.js:165 src/extensions/core/group/style.js:138
+#: src/blocks/pr-content/edit.js:165 src/extensions/core/group/style.js:148
 msgid "Success"
 msgstr "Success"
 
 #: src/blocks/alert/edit.js:28 src/blocks/button/edit.js:679
-#: src/blocks/pr-content/edit.js:168 src/extensions/core/group/style.js:134
+#: src/blocks/pr-content/edit.js:168 src/extensions/core/group/style.js:144
 msgid "Info"
 msgstr "Info"
 
 #: src/blocks/alert/edit.js:30 src/blocks/button/edit.js:683
-#: src/blocks/pr-content/edit.js:170 src/extensions/core/group/style.js:142
+#: src/blocks/pr-content/edit.js:170 src/extensions/core/group/style.js:152
 msgid "Warning"
 msgstr "Warning"
 
 #: src/blocks/alert/edit.js:34 src/blocks/button/edit.js:687
-#: src/blocks/pr-content/edit.js:174 src/extensions/core/group/style.js:146
+#: src/blocks/pr-content/edit.js:174 src/extensions/core/group/style.js:156
 msgid "Danger"
 msgstr "Danger"
 
@@ -1644,7 +1632,6 @@ msgstr "大"
 
 #: src/blocks/button/edit.js:323
 #: src/extensions/common/inline-font-size/inline.js:23
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:247
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:247
 msgid "Small"
 msgstr "小"
@@ -2300,7 +2287,6 @@ msgid "Card (Image Round)"
 msgstr "カード（画像丸抜き）"
 
 #: src/components/column-layout-control/index.js:26
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:768
 #: inc/vk-components/package/class-vk-component-posts.php:768
 msgid "Card"
 msgstr "カード"
@@ -2318,7 +2304,6 @@ msgid "Card (Horizontal)"
 msgstr "カード（水平）"
 
 #: src/components/column-layout-control/index.js:42
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:784
 #: inc/vk-components/package/class-vk-component-posts.php:784
 msgid "Media"
 msgstr "メディア"
@@ -2496,13 +2481,11 @@ msgid "Apply"
 msgstr "適用"
 
 #: src/extensions/common/inline-font-size/inline.js:33
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:257
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:257
 msgid "Big"
 msgstr "大"
 
 #: src/extensions/common/inline-font-size/inline.js:38
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:262
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:262
 msgid "Extra big"
 msgstr "特大"
@@ -2571,21 +2554,32 @@ msgstr "画面サイズ毎の改行 "
 msgid "Responsive BR "
 msgstr "画面サイズ毎の改行 "
 
-#: src/extensions/core/group/style.js:106
+#: src/extensions/core/group/style.js:116
 msgid "Solid Roundcorner"
 msgstr "直線 角丸"
 
-#: src/extensions/core/group/style.js:122
+#: src/extensions/core/group/style.js:132
 msgid "Stitch"
 msgstr "スティッチ"
 
-#: src/extensions/core/group/style.js:126 src/extensions/core/table/style.js:7
+#: src/extensions/core/group/style.js:136 src/extensions/core/table/style.js:7
 msgid "Border Top Bottom"
 msgstr "直線 上下"
 
-#: src/extensions/core/group/style.js:130 src/extensions/core/image/style.js:31
+#: src/extensions/core/group/style.js:140 src/extensions/core/image/style.js:31
 msgid "Shadow"
 msgstr "シャドウ"
+
+#: src/extensions/core/group/style.js:89
+msgid "Color specification here is now deprecated."
+msgstr "ここでの色指定は非推奨になりました。"
+
+#: src/extensions/core/group/style.js:93
+msgid ""
+"If theme.json is enabled in your theme, you can specify colors in the "
+"\"Border\" panel."
+msgstr ""
+"theme.json が有効なテーマの場合は別途「枠線」パネルから色指定が可能です。"
 
 #: src/extensions/core/heading/style.js:104
 msgid "Brackets black"
@@ -2791,12 +2785,12 @@ msgstr "Vektor,Inc."
 msgid "https://vektor-inc.co.jp"
 msgstr "https://vektor-inc.co.jp"
 
-#: dist/vk-blocks-pro/inc/admin-notices.php:28 inc/admin-notices.php:28
+#: inc/admin-notices.php:28
 msgid "We've released VK Blocks Pro!"
 msgstr "VK Blocks Pro を公開しました!"
 
 #. translators: 1: opening a tag, 2: closing a tag
-#: dist/vk-blocks-pro/inc/admin-notices.php:35 inc/admin-notices.php:35
+#: inc/admin-notices.php:35
 msgid ""
 "Thank you for using VK Blocks. We've released VK Blocks Pro. It has more "
 "custom blocks to build web site more easily. If you are interested in VK "
@@ -2807,51 +2801,43 @@ msgstr ""
 "れています。VK Blocks Proに興味がある方は、詳しくは%1$sこの記事%2$sを読んでみ"
 "てください。"
 
-#: dist/vk-blocks-pro/inc/admin-notices.php:39
-#: dist/vk-blocks-pro/inc/admin-notices.php:45 inc/admin-notices.php:39
-#: inc/admin-notices.php:45
+#: inc/admin-notices.php:39 inc/admin-notices.php:45
 msgid "https://www.vektor-inc.co.jp/service/wordpress-plugins/vk-blocks/"
 msgstr "https://www.vektor-inc.co.jp/service/wordpress-plugins/vk-blocks/"
 
-#: dist/vk-blocks-pro/inc/admin-notices.php:46 inc/admin-notices.php:46
+#: inc/admin-notices.php:46
 msgid "See more"
 msgstr "続きを見る"
 
-#: dist/vk-blocks-pro/inc/admin-notices.php:49 inc/admin-notices.php:49
+#: inc/admin-notices.php:49
 msgid "Dismiss this notice"
 msgstr "通知を無視"
 
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:72
 #: inc/tgm-plugin-activation/tgm-config.php:72
 msgid "Install Required Plugins"
 msgstr "必須プラグインのインストール"
 
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:73
 #: inc/tgm-plugin-activation/tgm-config.php:73
 msgid "Install Plugins"
 msgstr "プラグインのインストール"
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:75
 #: inc/tgm-plugin-activation/tgm-config.php:75
 msgid "Installing Plugin: %s"
 msgstr "プラグイン %s をインストール中"
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:76
 #: inc/tgm-plugin-activation/tgm-config.php:76
 msgid "Something went wrong with the plugin API."
 msgstr "プラグイン API で問題が発生しました。"
 
 #. translators:
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:78
 #: inc/tgm-plugin-activation/tgm-config.php:78
 msgid "This plugin requires the following plugin: %1$s."
 msgid_plural "This plugin requires the following plugins: %1$s."
 msgstr[0] "このプラグインは下記プラグインを必要としています：%1$s。"
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:84
 #: inc/tgm-plugin-activation/tgm-config.php:84
 msgid ""
 "This plugin recommends the following plugin: %1$s.<br>Many additional "
@@ -2864,7 +2850,6 @@ msgstr[0] ""
 "れらのプラグインは無償で利用可能です。"
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:90
 #: inc/tgm-plugin-activation/tgm-config.php:90
 msgid ""
 "Sorry, but you do not have the correct permissions to install the %1$s "
@@ -2875,7 +2860,6 @@ msgid_plural ""
 msgstr[0] "%1$sプラグインをインストールするための適切な権限がありません。"
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:96
 #: inc/tgm-plugin-activation/tgm-config.php:96
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -2888,14 +2872,12 @@ msgstr[0] ""
 "に更新する必要があります： %1$s。"
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:102
 #: inc/tgm-plugin-activation/tgm-config.php:102
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] "次のプラグインの更新が利用可能です：%1$s。"
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:108
 #: inc/tgm-plugin-activation/tgm-config.php:108
 msgid ""
 "Sorry, but you do not have the correct permissions to update the %1$s plugin."
@@ -2905,21 +2887,18 @@ msgid_plural ""
 msgstr[0] "%1$sプラグインを更新するための適切な権限がありません。"
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:114
 #: inc/tgm-plugin-activation/tgm-config.php:114
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] "必須プラグインが現在有効化されていません： %1$s。"
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:120
 #: inc/tgm-plugin-activation/tgm-config.php:120
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] "推奨プラグインが現在有効化されていません： %1$s。"
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:126
 #: inc/tgm-plugin-activation/tgm-config.php:126
 msgid ""
 "Sorry, but you do not have the correct permissions to activate the %1$s "
@@ -2930,47 +2909,41 @@ msgid_plural ""
 msgstr[0] "%1$sプラグインを有効化するための適切な権限がありません。"
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:132
 #: inc/tgm-plugin-activation/tgm-config.php:132
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] "プラグインのインストールを開始"
 
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:137
 #: inc/tgm-plugin-activation/tgm-config.php:137
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] "プラグインの更新を開始する"
 
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:142
 #: inc/tgm-plugin-activation/tgm-config.php:142
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] "プラグインの有効化を開始"
 
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:147
 #: inc/tgm-plugin-activation/tgm-config.php:147
 msgid "Return to Required Plugins Installer"
 msgstr "必須プラグインのインストール画面に戻る"
 
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:148
 #: inc/tgm-plugin-activation/tgm-config.php:148
 msgid "Plugin activated successfully."
 msgstr "プラグインを有効化しました。"
 
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:149
 #: inc/tgm-plugin-activation/tgm-config.php:149
+#, fuzzy
+#| msgid "The following plugin was activated successfully:"
 msgid "The following plugin was activated successfully:"
 msgstr "次のプラグインを有効化しました:"
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:151
 #: inc/tgm-plugin-activation/tgm-config.php:151
 msgid "No action taken. Plugin %1$s was already active."
 msgstr "操作を実行しませんでした。プラグイン %1$s はすでに有効化されています。"
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:153
 #: inc/tgm-plugin-activation/tgm-config.php:153
 msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
@@ -2980,81 +2953,68 @@ msgstr ""
 "ジョンをサポートしていません。プラグインを更新してください。"
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:155
 #: inc/tgm-plugin-activation/tgm-config.php:155
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr "すべてのプラグインを正常にインストールし、有効化しました。 %1$s"
 
 #. translators: %s = dashboard link.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:157
 #: inc/tgm-plugin-activation/tgm-config.php:157
 msgid "Please contact the administrator of this site for help."
 msgstr "ヘルプが必要な場合はこのサイトの管理者にお問い合わせください。"
 
-#: dist/vk-blocks-pro/inc/vk-admin/package/class-vk-admin.php:332
 #: inc/vk-admin/package/class-vk-admin.php:332
 msgid "Sorry, there is no post"
 msgstr "申し訳ありませんが投稿がありません。"
 
-#: dist/vk-blocks-pro/inc/vk-admin/package/class-vk-admin.php:386
 #: inc/vk-admin/package/class-vk-admin.php:386
 msgid "Vektor WordPress Information"
 msgstr "Vektor WordPress Information"
 
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-pro.php:14
 #: inc/vk-blocks-pro/admin-pro/admin-pro.php:14
 msgid "FAQ Setting"
 msgstr "FAQ ブロックの設定"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:47
 #: inc/vk-blocks/admin/admin.php:47
 msgid "Blocks setting"
 msgstr "Blocks 設定"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:48
 #: inc/vk-blocks/admin/admin.php:48
 msgctxt "label in admin menu"
 msgid "Blocks"
 msgstr "Blocks"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:64
 #: inc/vk-blocks/admin/admin.php:64
 msgid "Blocks Setting"
 msgstr "Blocks 設定"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:71
 #: inc/vk-blocks/admin/admin.php:71
 msgid "License Key"
 msgstr "ライセンスキー"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:73
 #: inc/vk-blocks/admin/admin.php:73
 msgid "Balloon Block Setting"
 msgstr "吹き出しブロック設定"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:79
 #: inc/vk-blocks/admin/admin.php:79
 msgid "Load Separete Setting"
 msgstr "分割読み込み設定"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:96
 #: inc/vk-blocks/admin/admin.php:96
 msgid "Setting"
 msgstr "設定"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/blocks.php:27 inc/vk-blocks/blocks.php:27
+#: inc/vk-blocks/blocks.php:27
 msgid "Blocks"
 msgstr "Blocks"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/blocks.php:40 inc/vk-blocks/blocks.php:40
+#: inc/vk-blocks/blocks.php:40
 msgid "Blocks Layout"
 msgstr "ブロックレイアウト"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/blocks.php:53 inc/vk-blocks/blocks.php:53
+#: inc/vk-blocks/blocks.php:53
 msgid "Deprecated Blocks"
 msgstr "非推奨ブロック"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
 #: src/blocks/ancestor-page-list/index.php:44
 #: test/phpunit/pro/test-ancestor-page-list.php:89
@@ -3062,14 +3022,12 @@ msgstr "非推奨ブロック"
 msgid "Ancestor Page Title"
 msgstr "先祖ページのタイトル"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
 #: src/blocks/ancestor-page-list/index.php:83
 #: test/phpunit/pro/test-ancestor-page-list.php:173
 msgid "Dummy Text"
 msgstr "ダミーテキスト"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
 #: src/blocks/ancestor-page-list/index.php:83
 #: test/phpunit/pro/test-ancestor-page-list.php:173
@@ -3082,93 +3040,77 @@ msgstr ""
 "ん。 先祖階層からのページリストの代わりにダミーテキストのリストを表示していま"
 "す。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
 #: src/blocks/ancestor-page-list/index.php:83
 #: test/phpunit/pro/test-ancestor-page-list.php:173
 msgid "This message only display on the edit screen."
 msgstr "このメッセージは編集画面でのみ表示されます。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/page-content/index.php:124
 #: inc/vk-blocks/build/blocks/page-content/index.php:124
 #: src/blocks/page-content/index.php:124
 #: test/phpunit/free/test-page-content.php:55
 msgid "Edit this area"
 msgstr "このエリアを編集"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/font-awesome/class-vk-blocks-font-awesome-api.php:73
 #: inc/vk-blocks/font-awesome/class-vk-blocks-font-awesome-api.php:73
 msgid "Setting saved."
 msgstr "設定を保存しました。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:253
 #: inc/vk-blocks/view/class-vk-blocks-postlist.php:253
 msgid "Post"
 msgstr "投稿"
 
 #. translators: %s: 投稿タイプ名
-#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:257
 #: inc/vk-blocks/view/class-vk-blocks-postlist.php:257
 msgid "There are no %ss."
 msgstr "該当の%sはありません。"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:55
 #: inc/vk-components/package/class-vk-component-posts.php:55
 msgid "Read more"
 msgstr "続きを読む"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:57
 #: inc/vk-components/package/class-vk-component-posts.php:57
 msgid "New!!"
 msgstr "New!!"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:268
 #: inc/vk-components/package/class-vk-component-posts.php:268
 msgid "More"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:304
 #: inc/vk-components/package/class-vk-component-posts.php:304
 msgid "Posts navigation"
 msgstr "投稿ナビゲーション"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:305
 #: inc/vk-components/package/class-vk-component-posts.php:305
 msgid "Posts"
 msgstr "投稿リスト"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:307
 #: inc/vk-components/package/class-vk-component-posts.php:307
 msgid "Page"
 msgstr "ページ"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:772
 #: inc/vk-components/package/class-vk-component-posts.php:772
 msgid "Card Noborder"
 msgstr "カード（線なし）"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:776
 #: inc/vk-components/package/class-vk-component-posts.php:776
 msgid "Card Intext"
 msgstr "カード（インテキスト）"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:780
 #: inc/vk-components/package/class-vk-component-posts.php:780
 msgid "Card Horizontal"
 msgstr "カード（水平）"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:788
 #: inc/vk-components/package/class-vk-component-posts.php:788
 msgctxt "post list type"
 msgid "Text 1 Column"
 msgstr "テキスト 1 カラム"
 
-#: dist/vk-blocks-pro/inc/vk-css-optimize/config.php:12
 #: inc/vk-css-optimize/config.php:12
 msgid "VK Blocks "
 msgstr "VK Blocks"
 
-#: dist/vk-blocks-pro/vk-blocks.php:105 vk-blocks.php:105
+#: vk-blocks.php:105
 msgid ""
 "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks "
 "Plugin running."
@@ -3176,25 +3118,25 @@ msgstr ""
 "VK-Blocksと競合するため、VK All in One Expansion Unitの Block機能を停止しまし"
 "た。"
 
-#: dist/vk-blocks-pro/vk-blocks.php:229 vk-blocks.php:229
+#: vk-blocks.php:229
 msgid "License Key has no registered."
 msgstr "ライセンスキーが登録されていません。"
 
-#: dist/vk-blocks-pro/vk-blocks.php:234 vk-blocks.php:234
+#: vk-blocks.php:234
 msgid "The VK Blocks Pro license is invalid."
 msgstr "VK Blocks Pro のライセンスが無効です。"
 
-#: dist/vk-blocks-pro/vk-blocks.php:258 vk-blocks.php:258
+#: vk-blocks.php:258
 msgid ""
 "Enter a valid license key for any of the following products on the settings "
 "screen."
 msgstr "以下の製品のライセンスキーを設定画面から入力してください。"
 
-#: dist/vk-blocks-pro/vk-blocks.php:267 vk-blocks.php:267
+#: vk-blocks.php:267
 msgid "Enter the license key"
 msgstr "ライセンスキーを入力"
 
-#: dist/vk-blocks-pro/vk-blocks.php:270 vk-blocks.php:270
+#: vk-blocks.php:270
 msgid ""
 "If this display does not disappear even after entering a valid license key, "
 "re-acquire the update."
@@ -3202,117 +3144,99 @@ msgstr ""
 "有効なライセンスキーを入力してもこの表示が消えない場合は更新の再取得をしてく"
 "ださい。"
 
-#: dist/vk-blocks-pro/vk-blocks.php:271 vk-blocks.php:271
+#: vk-blocks.php:271
 msgid "Re-acquisition of updates"
 msgstr "更新の再取得"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/alert/block.json
 #: inc/vk-blocks/build/blocks/alert/block.json src/blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
 msgstr "アラート"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/alert/block.json
 #: inc/vk-blocks/build/blocks/alert/block.json src/blocks/alert/block.json
 msgctxt "block description"
 msgid "A colored box with four statuses, including annotations and alerts."
 msgstr "注釈や注意など4つのステータスがある色付きのボックスです。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/block.json
 #: inc/vk-blocks/build/blocks/ancestor-page-list/block.json
 #: src/blocks/ancestor-page-list/block.json
 msgctxt "block title"
 msgid "Page list from ancestor"
 msgstr "先祖階層からのページリスト"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/block.json
 #: inc/vk-blocks/build/blocks/ancestor-page-list/block.json
 #: src/blocks/ancestor-page-list/block.json
 msgctxt "block description"
 msgid "Display Page list from ancestor page"
 msgstr "先祖階層からのページリストを表示します"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/balloon/block.json
 #: inc/vk-blocks/build/blocks/balloon/block.json src/blocks/balloon/block.json
 msgctxt "block title"
 msgid "Ballon"
 msgstr "吹き出し"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/balloon/block.json
 #: inc/vk-blocks/build/blocks/balloon/block.json src/blocks/balloon/block.json
 msgctxt "block description"
 msgid "These speech balloons are perfect for recreating conversations."
 msgstr "会話の再現などに最適な吹き出しです。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/border-box/block.json
 #: inc/vk-blocks/build/blocks/border-box/block.json
 #: src/blocks/border-box/block.json
 msgctxt "block title"
 msgid "Border Box"
 msgstr "枠線ボックス"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/border-box/block.json
 #: inc/vk-blocks/build/blocks/border-box/block.json
 #: src/blocks/border-box/block.json
 msgctxt "block description"
 msgid "This is a border box where you can place headings to attract attention."
 msgstr "見出しを配置でき注目されやすい枠線ボックスです。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/button/block.json
 #: inc/vk-blocks/build/blocks/button/block.json src/blocks/button/block.json
 msgctxt "block title"
 msgid "Button"
 msgstr "ボタン"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/button/block.json
 #: inc/vk-blocks/build/blocks/button/block.json src/blocks/button/block.json
 msgctxt "block description"
 msgid "A button link that can display icons before and after."
 msgstr "前後にアイコンを表示できるボタンリンクです。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/faq/block.json
 #: inc/vk-blocks/build/blocks/faq/block.json src/blocks/faq/block.json
 msgctxt "block title"
 msgid "Classic FAQ"
 msgstr "旧 FAQ"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/faq/block.json
 #: inc/vk-blocks/build/blocks/faq/block.json src/blocks/faq/block.json
 msgctxt "block description"
 msgid "Displays a combination of questions and answers."
 msgstr "質問と回答を組み合わせて表示します。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/faq2-a/block.json
 #: inc/vk-blocks/build/blocks/faq2-a/block.json src/blocks/faq2-a/block.json
 msgctxt "block title"
 msgid "FAQ Answer"
 msgstr "FAQ 回答"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/faq2-a/block.json
 #: inc/vk-blocks/build/blocks/faq2-a/block.json src/blocks/faq2-a/block.json
 msgctxt "block description"
 msgid "Answer area where you can add blocks freely."
 msgstr "自由にブロックを追加できる回答エリアです。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/faq2-q/block.json
 #: inc/vk-blocks/build/blocks/faq2-q/block.json src/blocks/faq2-q/block.json
 msgctxt "block title"
 msgid "FAQ Question"
 msgstr "FAQ 質問"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/faq2-q/block.json
 #: inc/vk-blocks/build/blocks/faq2-q/block.json src/blocks/faq2-q/block.json
 msgctxt "block description"
 msgid "Question area where you can freely add blocks."
 msgstr "自由にブロックを追加できる質問エリアです。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/faq2/block.json
 #: inc/vk-blocks/build/blocks/faq2/block.json src/blocks/faq2/block.json
 msgctxt "block title"
 msgid "New FAQ"
 msgstr "新 FAQ"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/faq2/block.json
 #: inc/vk-blocks/build/blocks/faq2/block.json src/blocks/faq2/block.json
 msgctxt "block description"
 msgid ""
@@ -3322,25 +3246,21 @@ msgstr ""
 "質問と回答を組み合わせて表示します。質問エリアにも自由にブロックを追加できま"
 "す。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/flow/block.json
 #: inc/vk-blocks/build/blocks/flow/block.json src/blocks/flow/block.json
 msgctxt "block title"
 msgid "Flow"
 msgstr "フロー"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/flow/block.json
 #: inc/vk-blocks/build/blocks/flow/block.json src/blocks/flow/block.json
 msgctxt "block description"
 msgid "Displays a sequential description in time series."
 msgstr "時系列で順を追った説明を表示します。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/heading/block.json
 #: inc/vk-blocks/build/blocks/heading/block.json src/blocks/heading/block.json
 msgctxt "block title"
 msgid "Heading"
 msgstr "見出し"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/heading/block.json
 #: inc/vk-blocks/build/blocks/heading/block.json src/blocks/heading/block.json
 msgctxt "block description"
 msgid ""
@@ -3348,54 +3268,46 @@ msgid ""
 "margin."
 msgstr "文字サイズ,サブテキスト,アイコン,余白が設定できる見出しです。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/icon-outer/block.json
 #: inc/vk-blocks/build/blocks/icon-outer/block.json
 #: src/blocks/icon-outer/block.json
 msgctxt "block title"
 msgid "Icon Outer"
 msgstr "横並びアイコン"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/icon-outer/block.json
 #: inc/vk-blocks/build/blocks/icon-outer/block.json
 #: src/blocks/icon-outer/block.json
 msgctxt "block description"
 msgid "Display the Font Awesome icons horizontally."
 msgstr "Font Awesome のアイコンフォントを横並びに表示します"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/icon/block.json
 #: inc/vk-blocks/build/blocks/icon/block.json src/blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
 msgstr "アイコン"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/icon/block.json
 #: inc/vk-blocks/build/blocks/icon/block.json src/blocks/icon/block.json
 msgctxt "block description"
 msgid "Display icons with Font Awesome."
 msgstr "Font Awesome のアイコンフォントを表示します"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/page-content/block.json
 #: inc/vk-blocks/build/blocks/page-content/block.json
 #: src/blocks/page-content/block.json
 msgctxt "block title"
 msgid "Page Content"
 msgstr "固定ページ本文"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/page-content/block.json
 #: inc/vk-blocks/build/blocks/page-content/block.json
 #: src/blocks/page-content/block.json
 msgctxt "block description"
 msgid "Displays the body content of the specified parent page."
 msgstr "指定した基準ページの本文内容を表示します。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/pr-blocks/block.json
 #: inc/vk-blocks/build/blocks/pr-blocks/block.json
 #: src/blocks/pr-blocks/block.json
 msgctxt "block title"
 msgid "PR Blocks (not recommended)"
 msgstr "PR Blocks (非推奨)"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/pr-blocks/block.json
 #: inc/vk-blocks/build/blocks/pr-blocks/block.json
 #: src/blocks/pr-blocks/block.json
 msgctxt "block description"
@@ -3409,14 +3321,12 @@ msgstr ""
 "ブロックを組み合わせて同じレイアウトを作成できるため、このブロックはお勧めし"
 "ません。 ブロックパターンの「カラム（Column）」のカテゴリを確認してください。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/pr-content/block.json
 #: inc/vk-blocks/build/blocks/pr-content/block.json
 #: src/blocks/pr-content/block.json
 msgctxt "block title"
 msgid "PR Content"
 msgstr "PR Content"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/pr-content/block.json
 #: inc/vk-blocks/build/blocks/pr-content/block.json
 #: src/blocks/pr-content/block.json
 msgctxt "block description"
@@ -3424,27 +3334,23 @@ msgid ""
 "This is PR content where you can place images, headlines, text, and buttons."
 msgstr "画像,見出し,テキスト,ボタンが配置できるPRコンテンツです。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/slider-item/block.json
 #: inc/vk-blocks/build/blocks/slider-item/block.json
 #: src/blocks/slider-item/block.json
 msgctxt "block title"
 msgid "Slider Item"
 msgstr "スライダーアイテム"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/slider-item/block.json
 #: inc/vk-blocks/build/blocks/slider-item/block.json
 #: src/blocks/slider-item/block.json
 msgctxt "block description"
 msgid "This is one item in the slider."
 msgstr "スライダー内の１つのアイテムです。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/slider/block.json
 #: inc/vk-blocks/build/blocks/slider/block.json src/blocks/slider/block.json
 msgctxt "block title"
 msgid "Slider"
 msgstr "スライダー"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/slider/block.json
 #: inc/vk-blocks/build/blocks/slider/block.json src/blocks/slider/block.json
 msgctxt "block description"
 msgid ""
@@ -3454,25 +3360,21 @@ msgstr ""
 "様々なアイテムを配置できるスライダーです。編集画面では動かないので公開画面で"
 "プレビューしてください。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/spacer/block.json
 #: inc/vk-blocks/build/blocks/spacer/block.json src/blocks/spacer/block.json
 msgctxt "block title"
 msgid "Responsive Spacer"
 msgstr "レスポンシブスペーサー"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/spacer/block.json
 #: inc/vk-blocks/build/blocks/spacer/block.json src/blocks/spacer/block.json
 msgctxt "block description"
 msgid "Use responsive spacers to get the margins right."
 msgstr "レスポンシブに対応したスペーサーで余白を適切に取ります。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/staff/block.json
 #: inc/vk-blocks/build/blocks/staff/block.json src/blocks/staff/block.json
 msgctxt "block title"
 msgid "Staff"
 msgstr "スタッフ"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/staff/block.json
 #: inc/vk-blocks/build/blocks/staff/block.json src/blocks/staff/block.json
 msgctxt "block description"
 msgid ""
@@ -3480,70 +3382,60 @@ msgid ""
 "menu, etc."
 msgstr "スタッフ紹介,会社紹介,スクール紹介,メニューなどで利用します。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/accordion-target/block.json
 #: inc/vk-blocks/build/blocks/_pro/accordion-target/block.json
 #: src/blocks/_pro/accordion-target/block.json
 msgctxt "block title"
 msgid "Accordion Target"
 msgstr "アコーディオン コンテンツ"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/accordion-target/block.json
 #: inc/vk-blocks/build/blocks/_pro/accordion-target/block.json
 #: src/blocks/_pro/accordion-target/block.json
 msgctxt "block description"
 msgid "This is the content area where you can add blocks freely."
 msgstr "コンテンツが長い時にコンテンツを折りたたんで隠して表示します。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/accordion-trigger/block.json
 #: inc/vk-blocks/build/blocks/_pro/accordion-trigger/block.json
 #: src/blocks/_pro/accordion-trigger/block.json
 msgctxt "block title"
 msgid "Accordion Trigger"
 msgstr "アコーディオン タイトル"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/accordion-trigger/block.json
 #: inc/vk-blocks/build/blocks/_pro/accordion-trigger/block.json
 #: src/blocks/_pro/accordion-trigger/block.json
 msgctxt "block description"
 msgid "This is the title area where you can freely add blocks."
 msgstr "自由にブロックを追加できるタイトルエリアです。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/accordion/block.json
 #: inc/vk-blocks/build/blocks/_pro/accordion/block.json
 #: src/blocks/_pro/accordion/block.json
 msgctxt "block title"
 msgid "Accordion"
 msgstr "アコーディオン"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/accordion/block.json
 #: inc/vk-blocks/build/blocks/_pro/accordion/block.json
 #: src/blocks/_pro/accordion/block.json
 msgctxt "block description"
 msgid "Collapses and hides content when the content is long."
 msgstr "自由にブロックを追加できるコンテンツエリアです。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/animation/block.json
 #: inc/vk-blocks/build/blocks/_pro/animation/block.json
 #: src/blocks/_pro/animation/block.json
 msgctxt "block title"
 msgid "Animation"
 msgstr "アニメーション"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/animation/block.json
 #: inc/vk-blocks/build/blocks/_pro/animation/block.json
 #: src/blocks/_pro/animation/block.json
 msgctxt "block description"
 msgid "Add animation to elements when scrolling the page."
 msgstr "ページをスクロールした時に要素に動きを加えます。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
 #: inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
 #: src/blocks/_pro/breadcrumb/block.json
 msgctxt "block title"
 msgid "Breadcrumb"
 msgstr "パンくずリスト"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
 #: inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
 #: src/blocks/_pro/breadcrumb/block.json
 msgctxt "block description"
@@ -3554,56 +3446,48 @@ msgstr ""
 "ページや投稿カテゴリーなどページ階層のパンくずリストを表示します。このブロッ"
 "クはトップページでは表示されません。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/button-outer/block.json
 #: inc/vk-blocks/build/blocks/_pro/button-outer/block.json
 #: src/blocks/_pro/button-outer/block.json
 msgctxt "block title"
 msgid "Button Outer"
 msgstr "横並びボタン"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/button-outer/block.json
 #: inc/vk-blocks/build/blocks/_pro/button-outer/block.json
 #: src/blocks/_pro/button-outer/block.json
 msgctxt "block description"
 msgid "Display the VK Button block horizontally."
 msgstr "VK ボタンブロックを横並びに表示します"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/card-item/block.json
 #: inc/vk-blocks/build/blocks/_pro/card-item/block.json
 #: src/blocks/_pro/card-item/block.json
 msgctxt "block title"
 msgid "Card Item"
 msgstr "カードアイテム"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/card-item/block.json
 #: inc/vk-blocks/build/blocks/_pro/card-item/block.json
 #: src/blocks/_pro/card-item/block.json
 msgctxt "block description"
 msgid "A single item in a card block."
 msgstr "アイコンカード内の１つのアイテムです。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/card/block.json
 #: inc/vk-blocks/build/blocks/_pro/card/block.json
 #: src/blocks/_pro/card/block.json
 msgctxt "block title"
 msgid "Card"
 msgstr "カード"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/card/block.json
 #: inc/vk-blocks/build/blocks/_pro/card/block.json
 #: src/blocks/_pro/card/block.json
 msgctxt "block description"
 msgid "A card where you can place images, headings, text, and links."
 msgstr "画像,見出し,テキスト,リンクが配置できるカードです。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/child-page/block.json
 #: inc/vk-blocks/build/blocks/_pro/child-page/block.json
 #: src/blocks/_pro/child-page/block.json
 msgctxt "block title"
 msgid "Child page list"
 msgstr "子ページリスト"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/child-page/block.json
 #: inc/vk-blocks/build/blocks/_pro/child-page/block.json
 #: src/blocks/_pro/child-page/block.json
 msgctxt "block description"
@@ -3611,140 +3495,120 @@ msgid ""
 "When a parent page is specified, a list of its child pages will be displayed."
 msgstr "親となる固定ページを指定するとその子ページの一覧を表示します。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/grid-column-item/block.json
 #: inc/vk-blocks/build/blocks/_pro/grid-column-item/block.json
 #: src/blocks/_pro/grid-column-item/block.json
 msgctxt "block title"
 msgid "Grid Column Item"
 msgstr "グリッドカラムアイテム"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/grid-column-item/block.json
 #: inc/vk-blocks/build/blocks/_pro/grid-column-item/block.json
 #: src/blocks/_pro/grid-column-item/block.json
 msgctxt "block description"
 msgid "One item in a grit column block."
 msgstr "グリッドカラムブロック内の1つのアイテムです。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/grid-column/block.json
 #: inc/vk-blocks/build/blocks/_pro/grid-column/block.json
 #: src/blocks/_pro/grid-column/block.json
 msgctxt "block title"
 msgid "Grid Column"
 msgstr "グリッドカラム"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/grid-column/block.json
 #: inc/vk-blocks/build/blocks/_pro/grid-column/block.json
 #: src/blocks/_pro/grid-column/block.json
 msgctxt "block description"
 msgid "Set the number of columns to be displayed for each screen size."
 msgstr "画面サイズ毎にカラム数を設定して表示させます。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard-item-body/block.json
 #: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-body/block.json
 #: src/blocks/_pro/gridcolcard-item-body/block.json
 msgctxt "block title"
 msgid "Grid Column Card Item Body"
 msgstr "グリッドカラムカードアイテムボディ"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard-item-body/block.json
 #: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-body/block.json
 #: src/blocks/_pro/gridcolcard-item-body/block.json
 msgctxt "block description"
 msgid "Body of Grid Column Card Block Item"
 msgstr "グリッドカラムカードのボディ"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard-item-footer/block.json
 #: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-footer/block.json
 #: src/blocks/_pro/gridcolcard-item-footer/block.json
 msgctxt "block title"
 msgid "Grid Column Card Item Footer"
 msgstr "グリッドカラムカードアイテムフッター"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard-item-footer/block.json
 #: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-footer/block.json
 #: src/blocks/_pro/gridcolcard-item-footer/block.json
 msgctxt "block description"
 msgid "Footer button area of Grid Column Card Block Item"
 msgstr "グリッドカラムカードアイテムブロックのフッターボタンエリア"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard-item-header/block.json
 #: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-header/block.json
 #: src/blocks/_pro/gridcolcard-item-header/block.json
 msgctxt "block title"
 msgid "Grid Column Card Item header"
 msgstr "グリッドカラムカードアイテムヘッダー"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard-item-header/block.json
 #: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-header/block.json
 #: src/blocks/_pro/gridcolcard-item-header/block.json
 msgctxt "block description"
 msgid "Header image area of Grid Column Card Block Item"
 msgstr "グリッドカードカラムアイテムブロックのヘッダー画像エリア"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard-item/block.json
 #: inc/vk-blocks/build/blocks/_pro/gridcolcard-item/block.json
 #: src/blocks/_pro/gridcolcard-item/block.json
 msgctxt "block title"
 msgid "Grid Column Card Item"
 msgstr "グリッドカラムカードアイテム"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard-item/block.json
 #: inc/vk-blocks/build/blocks/_pro/gridcolcard-item/block.json
 #: src/blocks/_pro/gridcolcard-item/block.json
 msgctxt "block description"
 msgid "It is a block of single column of Grid Column Card."
 msgstr "グリッドカラムカードブロックのカラムブロック"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard/block.json
 #: inc/vk-blocks/build/blocks/_pro/gridcolcard/block.json
 #: src/blocks/_pro/gridcolcard/block.json
 msgctxt "block title"
 msgid "Grid Column Card"
 msgstr "グリッドカラムカード"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard/block.json
 #: inc/vk-blocks/build/blocks/_pro/gridcolcard/block.json
 #: src/blocks/_pro/gridcolcard/block.json
 msgctxt "block description"
 msgid "This block can flexible column layout"
 msgstr "柔軟なカラムレイアウトが作成できます"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/icon-card-item/block.json
 #: inc/vk-blocks/build/blocks/_pro/icon-card-item/block.json
 #: src/blocks/_pro/icon-card-item/block.json
 msgctxt "block title"
 msgid "Icon Card Item"
 msgstr "アイコンカードアイテム"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/icon-card-item/block.json
 #: inc/vk-blocks/build/blocks/_pro/icon-card-item/block.json
 #: src/blocks/_pro/icon-card-item/block.json
 msgctxt "block description"
 msgid "This is one item in an icon card."
 msgstr "アイコンカード内の１つのアイテムです。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/icon-card/block.json
 #: inc/vk-blocks/build/blocks/_pro/icon-card/block.json
 #: src/blocks/_pro/icon-card/block.json
 msgctxt "block title"
 msgid "Icon Card"
 msgstr "アイコンカード"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/icon-card/block.json
 #: inc/vk-blocks/build/blocks/_pro/icon-card/block.json
 #: src/blocks/_pro/icon-card/block.json
 msgctxt "block description"
 msgid "Display card with icons, headings, text, and links."
 msgstr "アイコン,見出し,テキスト,リンクを設定してカードを表示します。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/outer/block.json
 #: inc/vk-blocks/build/blocks/_pro/outer/block.json
 #: src/blocks/_pro/outer/block.json
 msgctxt "block title"
 msgid "Outer"
 msgstr "Outer"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/outer/block.json
 #: inc/vk-blocks/build/blocks/_pro/outer/block.json
 #: src/blocks/_pro/outer/block.json
 msgctxt "block description"
@@ -3752,14 +3616,12 @@ msgid ""
 "Set the background image, color, and border to show the layout and divisions."
 msgstr "背景の画像や色,枠線の設定しレイアウトや区切りを表示します。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/post-list/block.json
 #: inc/vk-blocks/build/blocks/_pro/post-list/block.json
 #: src/blocks/_pro/post-list/block.json
 msgctxt "block title"
 msgid "Post list"
 msgstr "投稿リスト"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/post-list/block.json
 #: inc/vk-blocks/build/blocks/_pro/post-list/block.json
 #: src/blocks/_pro/post-list/block.json
 msgctxt "block description"
@@ -3768,28 +3630,24 @@ msgid ""
 "number of posts to display."
 msgstr "投稿タイプ,分類,表示件数が設定して投稿リストを表示します。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/select-post-list-item/block.json
 #: inc/vk-blocks/build/blocks/_pro/select-post-list-item/block.json
 #: src/blocks/_pro/select-post-list-item/block.json
 msgctxt "block title"
 msgid "Selected Post List Item"
 msgstr "選択投稿リストアイテム"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/select-post-list-item/block.json
 #: inc/vk-blocks/build/blocks/_pro/select-post-list-item/block.json
 #: src/blocks/_pro/select-post-list-item/block.json
 msgctxt "block description"
 msgid "A single item in the select post list."
 msgstr "選択投稿リスト内の１つのアイテムです。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/select-post-list/block.json
 #: inc/vk-blocks/build/blocks/_pro/select-post-list/block.json
 #: src/blocks/_pro/select-post-list/block.json
 msgctxt "block title"
 msgid "Selected Post List"
 msgstr "選択投稿リスト"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/select-post-list/block.json
 #: inc/vk-blocks/build/blocks/_pro/select-post-list/block.json
 #: src/blocks/_pro/select-post-list/block.json
 msgctxt "block description"
@@ -3797,42 +3655,36 @@ msgid ""
 "Displays an arbitrarily specified page with the layout of the posting list."
 msgstr "任意に指定したページを投稿リストのレイアウトで表示します。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/step-item/block.json
 #: inc/vk-blocks/build/blocks/_pro/step-item/block.json
 #: src/blocks/_pro/step-item/block.json
 msgctxt "block title"
 msgid "Step Item"
 msgstr "ステップ要素"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/step-item/block.json
 #: inc/vk-blocks/build/blocks/_pro/step-item/block.json
 #: src/blocks/_pro/step-item/block.json
 msgctxt "block description"
 msgid "This element sets the icon, color, and style of the step mark."
 msgstr "ステップマークのアイコン、色、スタイルを設定する要素です。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/step/block.json
 #: inc/vk-blocks/build/blocks/_pro/step/block.json
 #: src/blocks/_pro/step/block.json
 msgctxt "block title"
 msgid "Step"
 msgstr "ステップ"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/step/block.json
 #: inc/vk-blocks/build/blocks/_pro/step/block.json
 #: src/blocks/_pro/step/block.json
 msgctxt "block description"
 msgid "Set and display step marks, which are useful when explaining the order."
 msgstr "順番を説明する時に便利でステップマークを設定し表示します。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/table-of-contents-new/block.json
 #: inc/vk-blocks/build/blocks/_pro/table-of-contents-new/block.json
 #: src/blocks/_pro/table-of-contents-new/block.json
 msgctxt "block title"
 msgid "Table of Contents"
 msgstr "目次"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/table-of-contents-new/block.json
 #: inc/vk-blocks/build/blocks/_pro/table-of-contents-new/block.json
 #: src/blocks/_pro/table-of-contents-new/block.json
 msgctxt "block description"
@@ -3841,28 +3693,24 @@ msgid ""
 "headings when added."
 msgstr "追加すると見出しに合わせて自動で生成される目次です。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/timeline-item/block.json
 #: inc/vk-blocks/build/blocks/_pro/timeline-item/block.json
 #: src/blocks/_pro/timeline-item/block.json
 msgctxt "block title"
 msgid "Timeline Item"
 msgstr "タイムライン要素"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/timeline-item/block.json
 #: inc/vk-blocks/build/blocks/_pro/timeline-item/block.json
 #: src/blocks/_pro/timeline-item/block.json
 msgctxt "block description"
 msgid "This element sets the label, color, and style of the timeline."
 msgstr "タイムラインのラベル、色、スタイルを設定する要素です。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/timeline/block.json
 #: inc/vk-blocks/build/blocks/_pro/timeline/block.json
 #: src/blocks/_pro/timeline/block.json
 msgctxt "block title"
 msgid "Timeline"
 msgstr "タイムライン"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/timeline/block.json
 #: inc/vk-blocks/build/blocks/_pro/timeline/block.json
 #: src/blocks/_pro/timeline/block.json
 msgctxt "block description"
@@ -3871,14 +3719,339 @@ msgid ""
 "explaining the order."
 msgstr "順番を説明する時に便利でシンプルなスケジュールなどを表示します。"
 
-#~ msgid "ex.2) clamp(1rem, 2vw, 2rem)"
-#~ msgstr "例2) clamp(1rem, 2vw, 2rem)"
+#, fuzzy, javascript-format
+#~| msgid "Align %s"
+#~ msgid "Align %s"
+#~ msgstr "表示位置"
 
-#~ msgid "If you change image or name that please click Save Changes button."
-#~ msgstr "画像を変更したら「変更を保存」ボタンをクリックしてください。"
+#, fuzzy
+#~| msgid "Responsive BR"
+#~ msgid "Responsive Br"
+#~ msgstr "画面サイズ毎の改行 "
 
-#~ msgid "Same as display item number"
-#~ msgstr "表示アイテム数と同じ"
+#~ msgid "Font Awesome"
+#~ msgstr "Font Awesome:"
+
+#~ msgid "Enter Font Awesome Class."
+#~ msgstr "Font Awesome の class 名を入力してください。"
+
+#~ msgid "Ex) fas fa-arrow-circle-right"
+#~ msgstr "例) fas fa-arrow-circle-right"
+
+#, fuzzy, php-format
+#~| msgid "Installing Plugin: %s"
+#~ msgid "Updating Plugin: %s"
+#~ msgstr "プラグイン %s をインストール中"
+
+#, php-format
+#~ msgid "This theme requires the following plugin: %1$s."
+#~ msgid_plural "This theme requires the following plugins: %1$s."
+#~ msgstr[0] "このプラグインは下記プラグインを推奨しています：%1$s。"
+
+#, php-format
+#~ msgid "This theme recommends the following plugin: %1$s."
+#~ msgid_plural "This theme recommends the following plugins: %1$s."
+#~ msgstr[0] "このテーマは下記プラグインを推奨しています：%1$s。"
+
+#, fuzzy, php-format
+#~| msgid ""
+#~| "The following plugin needs to be updated to its latest version to ensure "
+#~| "maximum compatibility with this plugin: %1$s."
+#~| msgid_plural ""
+#~| "The following plugins need to be updated to their latest version to "
+#~| "ensure maximum compatibility with this plugin: %1$s."
+#~ msgid ""
+#~ "The following plugin needs to be updated to its latest version to ensure "
+#~ "maximum compatibility with this theme: %1$s."
+#~ msgid_plural ""
+#~ "The following plugins need to be updated to their latest version to "
+#~ "ensure maximum compatibility with this theme: %1$s."
+#~ msgstr[0] ""
+#~ "このテーマとの最大の互換性を確保するには、次のプラグインを最新バージョンに"
+#~ "更新する必要があります： %1$s。"
+
+#~ msgid "Return to the Dashboard"
+#~ msgstr "ダッシュボードへ戻る"
+
+#~ msgid "This plugin needs to be updated to be compatible with your theme."
+#~ msgstr ""
+#~ "使用中のテーマとの互換性を保つため、このプラグインを更新する必要がありま"
+#~ "す。"
+
+#~ msgid "Update Required"
+#~ msgstr "プラグインの更新が必要"
+
+#~ msgid "Set the parent_slug config variable instead."
+#~ msgstr "代わりに、parent_slug構成変数を設定してください。"
+
+#~ msgid ""
+#~ "The remote plugin package does not contain a folder with the desired slug "
+#~ "and renaming did not work."
+#~ msgstr ""
+#~ "リモートプラグインパッケージに必要なフォルダーが存在しないため、名前の変更"
+#~ "ができませんでした。"
+
+#~ msgid ""
+#~ "Please contact the plugin provider and ask them to package their plugin "
+#~ "according to the WordPress guidelines."
+#~ msgstr ""
+#~ "プラグインの開発者に連絡し、WordPressガイドラインに従ってプラグインをパッ"
+#~ "ケージ化するよう依頼してください。"
+
+#~ msgid ""
+#~ "The remote plugin package consists of more than one file, but the files "
+#~ "are not packaged in a folder."
+#~ msgstr ""
+#~ "リモートプラグインパッケージは複数のファイルで構成されていますが、ファイル"
+#~ "はフォルダーにパッケージ化されていません。"
+
+#~ msgctxt "plugin A *and* plugin B"
+#~ msgid "and"
+#~ msgstr "と"
+
+#, fuzzy, php-format
+#~| msgctxt "%s = version number"
+#~| msgid "TGMPA v%s"
+#~ msgid "TGMPA v%s"
+#~ msgstr "TGMPA v%s"
+
+#~ msgid "Required"
+#~ msgstr "必須"
+
+#~ msgid "Recommended"
+#~ msgstr "推奨"
+
+#~ msgid "WordPress Repository"
+#~ msgstr "WordPress 公式ディレクトリ"
+
+#~ msgid "External Source"
+#~ msgstr "外部ソース"
+
+#~ msgid "Pre-Packaged"
+#~ msgstr "プリパッケージ"
+
+#~ msgid "Not Installed"
+#~ msgstr "未インストール"
+
+#~ msgid "Installed But Not Activated"
+#~ msgstr "停止中"
+
+#~ msgid "Active"
+#~ msgstr "有効"
+
+#~ msgid "Required Update not Available"
+#~ msgstr "必要な更新が利用不可"
+
+#, fuzzy
+#~| msgid "Required"
+#~ msgid "Requires Update"
+#~ msgstr "必須"
+
+#~ msgid "Update recommended"
+#~ msgstr "更新を推奨"
+
+#, fuzzy, php-format
+#~| msgctxt "%1$s = install status, %2$s = update status"
+#~| msgid "%1$s, %2$s"
+#~ msgctxt "Install/Update Status"
+#~ msgid "%1$s, %2$s"
+#~ msgstr "%1$s、%2$s"
+
+#, php-format
+#~ msgctxt "plugins"
+#~ msgid "All <span class=\"count\">(%s)</span>"
+#~ msgid_plural "All <span class=\"count\">(%s)</span>"
+#~ msgstr[0] "すべて <span class=\"count\">(%s)</span>"
+
+#, php-format
+#~ msgid "To Install <span class=\"count\">(%s)</span>"
+#~ msgid_plural "To Install <span class=\"count\">(%s)</span>"
+#~ msgstr[0] "未インストール <span class=\"count\">(%s)</span>"
+
+#, php-format
+#~ msgid "Update Available <span class=\"count\">(%s)</span>"
+#~ msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+#~ msgstr[0] "更新可能 <span class=\"count\">(%s)</span>"
+
+#, php-format
+#~ msgid "To Activate <span class=\"count\">(%s)</span>"
+#~ msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+#~ msgstr[0] "停止中 <span class=\"count\">(%s)</span>"
+
+#~ msgctxt "as in: \"version nr unknown\""
+#~ msgid "unknown"
+#~ msgstr "不明"
+
+#~ msgid "Installed version:"
+#~ msgstr "インストール済みバージョン:"
+
+#~ msgid "Minimum required version:"
+#~ msgstr "最低要求バージョン:"
+
+#~ msgid "Available version:"
+#~ msgstr "利用可能なバージョン:"
+
+#, fuzzy
+#~| msgid ""
+#~| "No plugins to install, update or activate. <a href=\"%1$s\">Return to "
+#~| "the Dashboard</a>"
+#~ msgid "No plugins to install, update or activate."
+#~ msgstr ""
+#~ "インストール・更新・有効化するべきプラグインはありません。<a "
+#~ "href=\"%1$s\">ダッシュボードに戻る</a>"
+
+#~ msgid "Plugin"
+#~ msgstr "プラグイン"
+
+#~ msgid "Source"
+#~ msgstr "取得元"
+
+#~ msgid "Version"
+#~ msgstr "バージョン"
+
+#~ msgid "Status"
+#~ msgstr "状態"
+
+#, fuzzy, php-format
+#~| msgctxt "%2$s = plugin name in screen reader markup"
+#~| msgid "Install %2$s"
+#~ msgid "Install %2$s"
+#~ msgstr "%2$sをインストール"
+
+#, fuzzy, php-format
+#~| msgctxt "%2$s = plugin name in screen reader markup"
+#~| msgid "Update %2$s"
+#~ msgid "Update %2$s"
+#~ msgstr "%2$sを更新"
+
+#, fuzzy, php-format
+#~| msgctxt "%2$s = plugin name in screen reader markup"
+#~| msgid "Activate %2$s"
+#~ msgid "Activate %2$s"
+#~ msgstr "%2$sを有効化"
+
+#~ msgid "Upgrade message from the plugin author:"
+#~ msgstr "プラグインの作者から更新通知があります。"
+
+#~ msgid "Install"
+#~ msgstr "インストール"
+
+#~ msgid "Update"
+#~ msgstr "更新"
+
+#~ msgid "Activate"
+#~ msgstr "有効化"
+
+#~ msgid "No plugins were selected to be installed. No action taken."
+#~ msgstr ""
+#~ "インストールするプラグインが選択されていません。処理を中断しました。"
+
+#~ msgid "No plugins were selected to be updated. No action taken."
+#~ msgstr "更新するプラグインが選択されていません。処理を中断しました。"
+
+#~ msgid "No plugins are available to be installed at this time."
+#~ msgstr "現在インストール可能なプラグインはありません。"
+
+#~ msgid "No plugins are available to be updated at this time."
+#~ msgstr "現在更新可能なプラグインはありません。"
+
+#~ msgid "No plugins were selected to be activated. No action taken."
+#~ msgstr ""
+#~ "選択されたプラグインは全て有効化されています。何もする必要はありません。"
+
+#~ msgid "No plugins are available to be activated at this time."
+#~ msgstr "現在、有効化できるプラグインはありません。"
+
+#~ msgid "Plugin activation failed."
+#~ msgstr "プラグインの有効化に失敗しました。"
+
+#, php-format
+#~ msgid "Updating Plugin %1$s (%2$d/%3$d)"
+#~ msgstr "プラグインを更新中 %1$s (%2$d/%3$d)"
+
+#, php-format
+#~ msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+#~ msgstr "<strong>%2$s</strong>%1$s のインストール中にエラーが発生しました。"
+
+#, php-format
+#~ msgid "The installation of %1$s failed."
+#~ msgstr "%1$s のインストールに失敗しました。"
+
+#~ msgid ""
+#~ "The installation and activation process is starting. This process may "
+#~ "take a while on some hosts, so please be patient."
+#~ msgstr ""
+#~ "インストールと有効化を開始しました。環境によっては時間がかかる場合がありま"
+#~ "す。しばらくお待ちください。"
+
+#, php-format
+#~ msgid "%1$s installed and activated successfully."
+#~ msgstr "%1$s を正常にインストールし、有効化しました。"
+
+#~ msgid "All installations and activations have been completed."
+#~ msgstr "すべてのインストールと有効化が完了しました。"
+
+#, php-format
+#~ msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+#~ msgstr "プラグインをインストール、有効化中 %1$s (%2$d/%3$d)"
+
+#~ msgid ""
+#~ "The installation process is starting. This process may take a while on "
+#~ "some hosts, so please be patient."
+#~ msgstr ""
+#~ "更新プロセスを開始しました。環境によっては時間がかかる場合があります。しば"
+#~ "らくお待ちください。"
+
+#, php-format
+#~ msgid "%1$s installed successfully."
+#~ msgstr "%1$sのインストールが完了しました。"
+
+#~ msgid "All installations have been completed."
+#~ msgstr "すべてのインストールが完了しました。"
+
+#, php-format
+#~ msgid "Installing Plugin %1$s (%2$d/%3$d)"
+#~ msgstr "プラグインをインストール中 %1$s (%2$d/%3$d)"
+
+#~ msgid "Show Details"
+#~ msgstr "詳細を表示"
+
+#~ msgid "Hide Details"
+#~ msgstr "詳細を非表示"
+
+#, fuzzy
+#~| msgid "Update recommended"
+#~ msgid "Not recommended"
+#~ msgstr "更新を推奨"
+
+#~ msgid "Ex ) "
+#~ msgstr "例) "
+
+#, fuzzy
+#~| msgid "Font Awesome icon list"
+#~ msgid "Font Awesome Icon list"
+#~ msgstr "Font Awesome アイコンリスト"
+
+#~ msgid "Font Awesome Version"
+#~ msgstr "Font Awesome バージョン"
+
+#~ msgid "4.7 will be abolished in the near future."
+#~ msgstr "4.7は将来的に廃止されます。"
+
+#, fuzzy
+#~| msgid "No background"
+#~ msgid "Not found"
+#~ msgstr "背景なし"
+
+#, fuzzy
+#~| msgid "Color Setting"
+#~ msgid "Color Palette Setting"
+#~ msgstr "色設定"
+
+#, fuzzy
+#~| msgid "Custom Color"
+#~ msgid "Custom color"
+#~ msgstr "カスタムカラー"
 
 #~ msgid "CSS Optimize ( Speed up ) Settings"
 #~ msgstr "CSS最適化（高速化）設定"
@@ -3933,6 +4106,47 @@ msgstr "順番を説明する時に便利でシンプルなスケジュールな
 #~ "もし「Preload CSS を有効」に設定した場合、CSSの読み込みタイミングが変更さ"
 #~ "れます。プリロードしたくないファイルがある場合は、ハンドル名（id）を入力し"
 #~ "てください。 例）pluginname_a-style,pluginname_b-css"
+
+#~ msgid "View details"
+#~ msgstr "詳細を見る"
+
+#, php-format
+#~ msgid "More information about %s"
+#~ msgstr "%sについての詳細"
+
+#~ msgid "Check for updates"
+#~ msgstr "アップデートを確認"
+
+#, php-format
+#~ msgctxt "the plugin title"
+#~ msgid "The %s plugin is up to date."
+#~ msgstr "%s プラグインは最新です。"
+
+#, php-format
+#~ msgctxt "the plugin title"
+#~ msgid "A new version of the %s plugin is available."
+#~ msgstr "%sプラグインの新しいバージョンが利用可能です。"
+
+#, php-format
+#~ msgctxt "the plugin title"
+#~ msgid "Could not determine if updates are available for %s."
+#~ msgstr "%1$s.に対して利用可能なアップデートがあるか確認できませんでした"
+
+#, php-format
+#~ msgid "Unknown update checker status \"%s\""
+#~ msgstr "不明なアップデートチェッカーステータス \"%s\""
+
+#~ msgid "There is no changelog available."
+#~ msgstr "利用可能な変更履歴がありません。"
+
+#~ msgid "ex.2) clamp(1rem, 2vw, 2rem)"
+#~ msgstr "例2) clamp(1rem, 2vw, 2rem)"
+
+#~ msgid "If you change image or name that please click Save Changes button."
+#~ msgstr "画像を変更したら「変更を保存」ボタンをクリックしてください。"
+
+#~ msgid "Same as display item number"
+#~ msgstr "表示アイテム数と同じ"
 
 #~ msgid "Number of display items ( PC )"
 #~ msgstr "表示アイテム数（ PC ）"
@@ -4062,18 +4276,6 @@ msgstr "順番を説明する時に便利でシンプルなスケジュールな
 #~ msgid "Flexible Column Block Item"
 #~ msgstr "グリッドカラムアイテム"
 
-#~ msgid "Ex ) "
-#~ msgstr "例) "
-
-#~ msgid "Font Awesome"
-#~ msgstr "Font Awesome:"
-
-#~ msgid "Font Awesome Version"
-#~ msgstr "Font Awesome バージョン"
-
-#~ msgid "4.7 will be abolished in the near future."
-#~ msgstr "4.7は将来的に廃止されます。"
-
 #~ msgid "VK Blocks Bootstrap Setting"
 #~ msgstr "VK Blocks Bootstrapの設定"
 
@@ -4164,10 +4366,6 @@ msgstr "順番を説明する時に便利でシンプルなスケジュールな
 #~ msgid "Page of %s"
 #~ msgstr "%sのページ"
 
-#~ msgid "This theme requires the following plugin: %1$s."
-#~ msgid_plural "This theme requires the following plugins: %1$s."
-#~ msgstr[0] "このプラグインは下記プラグインを推奨しています：%1$s。"
-
 #~ msgid ""
 #~ "This theme recommends the following plugin: %1$s.<br>Many additional "
 #~ "functions are available for free."
@@ -4177,23 +4375,6 @@ msgstr "順番を説明する時に便利でシンプルなスケジュールな
 #~ msgstr[0] ""
 #~ "このテーマは下記プラグインを必要としています：%1$s。<br>これらのプラグイン"
 #~ "は無償で利用可能です。"
-
-#, fuzzy
-#~| msgid ""
-#~| "The following plugin needs to be updated to its latest version to ensure "
-#~| "maximum compatibility with this plugin: %1$s."
-#~| msgid_plural ""
-#~| "The following plugins need to be updated to their latest version to "
-#~| "ensure maximum compatibility with this plugin: %1$s."
-#~ msgid ""
-#~ "The following plugin needs to be updated to its latest version to ensure "
-#~ "maximum compatibility with this theme: %1$s."
-#~ msgid_plural ""
-#~ "The following plugins need to be updated to their latest version to "
-#~ "ensure maximum compatibility with this theme: %1$s."
-#~ msgstr[0] ""
-#~ "このテーマとの最大の互換性を確保するには、次のプラグインを最新バージョンに"
-#~ "更新する必要があります： %1$s。"
 
 #~ msgid "VK Blocks Template"
 #~ msgstr "VK Blocks テンプレート"
@@ -4252,9 +4433,6 @@ msgstr "順番を説明する時に便利でシンプルなスケジュールな
 #~ msgid "Margin bottom size of after hedding (rem)"
 #~ msgstr "見出し下部の余白サイズ ( rem )"
 
-#~ msgid "Align %s"
-#~ msgstr "表示位置"
-
 #~ msgid "Align %1$s"
 #~ msgstr "%1$sの表示位置"
 
@@ -4296,268 +4474,11 @@ msgstr "順番を説明する時に便利でシンプルなスケジュールな
 #~ msgid "Chats"
 #~ msgstr "チャット"
 
-#~ msgid "This theme recommends the following plugin: %1$s."
-#~ msgid_plural "This theme recommends the following plugins: %1$s."
-#~ msgstr[0] "このテーマは下記プラグインを推奨しています：%1$s。"
-
 #~ msgid "Return to the dashboard"
 #~ msgstr "ダッシュボードに戻る"
 
-#~ msgid "This plugin needs to be updated to be compatible with your theme."
-#~ msgstr ""
-#~ "使用中のテーマとの互換性を保つため、このプラグインを更新する必要がありま"
-#~ "す。"
-
-#~ msgid "Update Required"
-#~ msgstr "プラグインの更新が必要"
-
-#~ msgid "Set the parent_slug config variable instead."
-#~ msgstr "代わりに、parent_slug構成変数を設定してください。"
-
-#~ msgid "Return to the Dashboard"
-#~ msgstr "ダッシュボードへ戻る"
-
-#~ msgid ""
-#~ "The remote plugin package does not contain a folder with the desired slug "
-#~ "and renaming did not work."
-#~ msgstr ""
-#~ "リモートプラグインパッケージに必要なフォルダーが存在しないため、名前の変更"
-#~ "ができませんでした。"
-
-#~ msgid ""
-#~ "Please contact the plugin provider and ask them to package their plugin "
-#~ "according to the WordPress guidelines."
-#~ msgstr ""
-#~ "プラグインの開発者に連絡し、WordPressガイドラインに従ってプラグインをパッ"
-#~ "ケージ化するよう依頼してください。"
-
-#~ msgid ""
-#~ "The remote plugin package consists of more than one file, but the files "
-#~ "are not packaged in a folder."
-#~ msgstr ""
-#~ "リモートプラグインパッケージは複数のファイルで構成されていますが、ファイル"
-#~ "はフォルダーにパッケージ化されていません。"
-
-#~ msgctxt "plugin A *and* plugin B"
-#~ msgid "and"
-#~ msgstr "と"
-
-#~ msgctxt "%s = version number"
-#~ msgid "TGMPA v%s"
-#~ msgstr "TGMPA v%s"
-
-#~ msgid "Required"
-#~ msgstr "必須"
-
-#~ msgid "Recommended"
-#~ msgstr "推奨"
-
-#~ msgid "WordPress Repository"
-#~ msgstr "WordPress 公式ディレクトリ"
-
-#~ msgid "External Source"
-#~ msgstr "外部ソース"
-
-#~ msgid "Pre-Packaged"
-#~ msgstr "プリパッケージ"
-
-#~ msgid "Not Installed"
-#~ msgstr "未インストール"
-
-#~ msgid "Installed But Not Activated"
-#~ msgstr "停止中"
-
-#~ msgid "Active"
-#~ msgstr "有効"
-
-#~ msgid "Required Update not Available"
-#~ msgstr "必要な更新が利用不可"
-
-#~ msgid "Update recommended"
-#~ msgstr "更新を推奨"
-
-#~ msgctxt "%1$s = install status, %2$s = update status"
-#~ msgid "%1$s, %2$s"
-#~ msgstr "%1$s、%2$s"
-
-#~ msgctxt "plugins"
-#~ msgid "All <span class=\"count\">(%s)</span>"
-#~ msgid_plural "All <span class=\"count\">(%s)</span>"
-#~ msgstr[0] "すべて <span class=\"count\">(%s)</span>"
-
-#~ msgid "To Install <span class=\"count\">(%s)</span>"
-#~ msgid_plural "To Install <span class=\"count\">(%s)</span>"
-#~ msgstr[0] "未インストール <span class=\"count\">(%s)</span>"
-
-#~ msgid "Update Available <span class=\"count\">(%s)</span>"
-#~ msgid_plural "Update Available <span class=\"count\">(%s)</span>"
-#~ msgstr[0] "更新可能 <span class=\"count\">(%s)</span>"
-
-#~ msgid "To Activate <span class=\"count\">(%s)</span>"
-#~ msgid_plural "To Activate <span class=\"count\">(%s)</span>"
-#~ msgstr[0] "停止中 <span class=\"count\">(%s)</span>"
-
-#~ msgctxt "as in: \"version nr unknown\""
-#~ msgid "unknown"
-#~ msgstr "不明"
-
-#~ msgid "Installed version:"
-#~ msgstr "インストール済みバージョン:"
-
-#~ msgid "Minimum required version:"
-#~ msgstr "最低要求バージョン:"
-
-#~ msgid "Available version:"
-#~ msgstr "利用可能なバージョン:"
-
-#~ msgid ""
-#~ "No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
-#~ "Dashboard</a>"
-#~ msgstr ""
-#~ "インストール・更新・有効化するべきプラグインはありません。<a "
-#~ "href=\"%1$s\">ダッシュボードに戻る</a>"
-
-#~ msgid "Plugin"
-#~ msgstr "プラグイン"
-
-#~ msgid "Source"
-#~ msgstr "取得元"
-
-#~ msgid "Version"
-#~ msgstr "バージョン"
-
-#~ msgid "Status"
-#~ msgstr "状態"
-
-#~ msgctxt "%2$s = plugin name in screen reader markup"
-#~ msgid "Install %2$s"
-#~ msgstr "%2$sをインストール"
-
-#~ msgctxt "%2$s = plugin name in screen reader markup"
-#~ msgid "Update %2$s"
-#~ msgstr "%2$sを更新"
-
-#~ msgctxt "%2$s = plugin name in screen reader markup"
-#~ msgid "Activate %2$s"
-#~ msgstr "%2$sを有効化"
-
-#~ msgid "Upgrade message from the plugin author:"
-#~ msgstr "プラグインの作者から更新通知があります。"
-
-#~ msgid "Install"
-#~ msgstr "インストール"
-
-#~ msgid "Update"
-#~ msgstr "更新"
-
-#~ msgid "Activate"
-#~ msgstr "有効化"
-
-#~ msgid "No plugins were selected to be installed. No action taken."
-#~ msgstr ""
-#~ "インストールするプラグインが選択されていません。処理を中断しました。"
-
-#~ msgid "No plugins were selected to be updated. No action taken."
-#~ msgstr "更新するプラグインが選択されていません。処理を中断しました。"
-
-#~ msgid "No plugins are available to be installed at this time."
-#~ msgstr "現在インストール可能なプラグインはありません。"
-
-#~ msgid "No plugins are available to be updated at this time."
-#~ msgstr "現在更新可能なプラグインはありません。"
-
-#~ msgid "No plugins were selected to be activated. No action taken."
-#~ msgstr ""
-#~ "選択されたプラグインは全て有効化されています。何もする必要はありません。"
-
-#~ msgid "No plugins are available to be activated at this time."
-#~ msgstr "現在、有効化できるプラグインはありません。"
-
-#~ msgid "Plugin activation failed."
-#~ msgstr "プラグインの有効化に失敗しました。"
-
-#~ msgid "Updating Plugin %1$s (%2$d/%3$d)"
-#~ msgstr "プラグインを更新中 %1$s (%2$d/%3$d)"
-
-#~ msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-#~ msgstr "<strong>%2$s</strong>%1$s のインストール中にエラーが発生しました。"
-
-#~ msgid "The installation of %1$s failed."
-#~ msgstr "%1$s のインストールに失敗しました。"
-
-#~ msgid ""
-#~ "The installation and activation process is starting. This process may "
-#~ "take a while on some hosts, so please be patient."
-#~ msgstr ""
-#~ "インストールと有効化を開始しました。環境によっては時間がかかる場合がありま"
-#~ "す。しばらくお待ちください。"
-
-#~ msgid "%1$s installed and activated successfully."
-#~ msgstr "%1$s を正常にインストールし、有効化しました。"
-
-#~ msgid "All installations and activations have been completed."
-#~ msgstr "すべてのインストールと有効化が完了しました。"
-
-#~ msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-#~ msgstr "プラグインをインストール、有効化中 %1$s (%2$d/%3$d)"
-
-#~ msgid ""
-#~ "The installation process is starting. This process may take a while on "
-#~ "some hosts, so please be patient."
-#~ msgstr ""
-#~ "更新プロセスを開始しました。環境によっては時間がかかる場合があります。しば"
-#~ "らくお待ちください。"
-
-#~ msgid "%1$s installed successfully."
-#~ msgstr "%1$sのインストールが完了しました。"
-
-#~ msgid "All installations have been completed."
-#~ msgstr "すべてのインストールが完了しました。"
-
-#~ msgid "Installing Plugin %1$s (%2$d/%3$d)"
-#~ msgstr "プラグインをインストール中 %1$s (%2$d/%3$d)"
-
-#~ msgid "Show Details"
-#~ msgstr "詳細を表示"
-
-#~ msgid "Hide Details"
-#~ msgstr "詳細を非表示"
-
-#~ msgid "View details"
-#~ msgstr "詳細を見る"
-
-#~ msgid "More information about %s"
-#~ msgstr "%sについての詳細"
-
-#~ msgid "Check for updates"
-#~ msgstr "アップデートを確認"
-
-#~ msgctxt "the plugin title"
-#~ msgid "The %s plugin is up to date."
-#~ msgstr "%s プラグインは最新です。"
-
-#~ msgctxt "the plugin title"
-#~ msgid "A new version of the %s plugin is available."
-#~ msgstr "%sプラグインの新しいバージョンが利用可能です。"
-
-#~ msgctxt "the plugin title"
-#~ msgid "Could not determine if updates are available for %s."
-#~ msgstr "%1$s.に対して利用可能なアップデートがあるか確認できませんでした"
-
-#~ msgid "Unknown update checker status \"%s\""
-#~ msgstr "不明なアップデートチェッカーステータス \"%s\""
-
-#~ msgid "There is no changelog available."
-#~ msgstr "利用可能な変更履歴がありません。"
-
 #~ msgid "Balloon: Default Icons"
 #~ msgstr "吹き出しブロック：デフォルトアイコン設定"
-
-#~ msgid "Enter Font Awesome Class."
-#~ msgstr "Font Awesome の class 名を入力してください。"
-
-#~ msgid "Ex) fas fa-arrow-circle-right"
-#~ msgstr "例) fas fa-arrow-circle-right"
 
 #~ msgid "Level"
 #~ msgstr "レベル"

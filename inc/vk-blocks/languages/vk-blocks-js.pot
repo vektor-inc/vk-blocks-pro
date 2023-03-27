@@ -1171,22 +1171,22 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:115
 #: src/blocks/_pro/timeline-item/edit.js:88
 #: src/blocks/pr-content/edit.js:144
-#: src/extensions/core/group/style.js:112
+#: src/extensions/core/group/style.js:108
 msgid "Solid"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:538
-#: src/extensions/core/group/style.js:120
+#: src/extensions/core/group/style.js:116
 msgid "Dotted"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:542
-#: src/extensions/core/group/style.js:124
+#: src/extensions/core/group/style.js:120
 msgid "Dashed"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:546
-#: src/extensions/core/group/style.js:128
+#: src/extensions/core/group/style.js:124
 msgid "Double"
 msgstr ""
 
@@ -1411,28 +1411,28 @@ msgstr ""
 #: src/blocks/alert/edit.js:25
 #: src/blocks/button/edit.js:675
 #: src/blocks/pr-content/edit.js:165
-#: src/extensions/core/group/style.js:148
+#: src/extensions/core/group/style.js:144
 msgid "Success"
 msgstr ""
 
 #: src/blocks/alert/edit.js:28
 #: src/blocks/button/edit.js:679
 #: src/blocks/pr-content/edit.js:168
-#: src/extensions/core/group/style.js:144
+#: src/extensions/core/group/style.js:140
 msgid "Info"
 msgstr ""
 
 #: src/blocks/alert/edit.js:30
 #: src/blocks/button/edit.js:683
 #: src/blocks/pr-content/edit.js:170
-#: src/extensions/core/group/style.js:152
+#: src/extensions/core/group/style.js:148
 msgid "Warning"
 msgstr ""
 
 #: src/blocks/alert/edit.js:34
 #: src/blocks/button/edit.js:687
 #: src/blocks/pr-content/edit.js:174
-#: src/extensions/core/group/style.js:156
+#: src/extensions/core/group/style.js:152
 msgid "Danger"
 msgstr ""
 
@@ -2591,32 +2591,28 @@ msgstr ""
 msgid "Responsive BR "
 msgstr ""
 
-#: src/extensions/core/group/style.js:116
+#: src/extensions/core/group/style.js:112
 msgid "Solid Roundcorner"
 msgstr ""
 
-#: src/extensions/core/group/style.js:132
+#: src/extensions/core/group/style.js:128
 msgid "Stitch"
 msgstr ""
 
-#: src/extensions/core/group/style.js:136
+#: src/extensions/core/group/style.js:132
 #: src/extensions/core/table/style.js:7
 msgid "Border Top Bottom"
 msgstr ""
 
-#: src/extensions/core/group/style.js:140
+#: src/extensions/core/group/style.js:136
 #: src/extensions/core/image/style.js:31
 msgid "Shadow"
 msgstr ""
 
-#: src/extensions/core/group/style.js:89
-msgid "Color specification here is now deprecated."
-msgstr ""
-
-#: src/extensions/core/group/style.js:93
+#: src/extensions/core/group/style.js:52
 msgid ""
-"If theme.json is enabled in your theme, you can specify colors in the "
-"\"Border\" panel."
+"Because of the theme that enabled theme.json become can specify the color "
+"from border panel that, specification from here is deprecated."
 msgstr ""
 
 #: src/extensions/core/heading/style.js:104

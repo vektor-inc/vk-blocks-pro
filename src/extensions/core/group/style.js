@@ -48,6 +48,12 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 							initialOpen={false}
 							className="group-border-color-controle"
 						>
+							<p className="font-size-11px alert alert-danger">
+								{__(
+									'Because of the theme that enabled theme.json become can specify the color from border panel that, specification from here is deprecated.',
+									'vk-blocks'
+								)}
+							</p>
 							<ColorPalette
 								value={activeColor}
 								disableCustomColors={true}
@@ -85,16 +91,6 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 									});
 								}}
 							/>
-							<p className="font-size-11px">
-								{__(
-									'Color specification here is now deprecated.',
-									'vk-blocks'
-								)}
-								{__(
-									'If theme.json is enabled in your theme, you can specify colors in the "Border" panel.',
-									'vk-blocks'
-								)}
-							</p>
 						</PanelBody>
 					</InspectorControls>
 				</>

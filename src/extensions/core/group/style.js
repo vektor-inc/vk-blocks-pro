@@ -48,6 +48,12 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 							initialOpen={false}
 							className="group-border-color-controle"
 						>
+							<p className="font-size-11px alert alert-danger">
+								{__(
+									'Because of the theme that enabled theme.json become can specify the color from border panel that, specification from here is deprecated.',
+									'vk-blocks'
+								)}
+							</p>
 							<ColorPalette
 								value={activeColor}
 								disableCustomColors={true}

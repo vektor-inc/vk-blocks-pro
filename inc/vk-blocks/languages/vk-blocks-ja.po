@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2023-03-20T08:00:43+00:00\n"
-"PO-Revision-Date: 2023-03-20 17:02+0900\n"
+"POT-Creation-Date: 2023-03-27T17:46:40+00:00\n"
+"PO-Revision-Date: 2023-03-28 03:12+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -392,7 +392,7 @@ msgstr ""
 msgid "ex)"
 msgstr "例）"
 
-#: src/admin/margin.js:136 src/blocks/border-box/edit.js:192
+#: src/admin/margin.js:135 src/blocks/border-box/edit.js:192
 #: src/blocks/icon-outer/edit.js:149 src/blocks/icon/edit.js:139
 msgid "Margin"
 msgstr "余白"
@@ -524,7 +524,7 @@ msgstr "短い"
 #: src/blocks/button/edit.js:315 src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:21 src/blocks/slider/edit.js:457
 #: src/extensions/common/inline-font-size/inline.js:28
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:252
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:260
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:252
 msgid "Normal"
 msgstr "標準"
@@ -1161,19 +1161,19 @@ msgstr "なし"
 
 #: src/blocks/_pro/outer/edit.js:534 src/blocks/_pro/step-item/edit.js:115
 #: src/blocks/_pro/timeline-item/edit.js:88 src/blocks/pr-content/edit.js:144
-#: src/extensions/core/group/style.js:102
+#: src/extensions/core/group/style.js:108
 msgid "Solid"
 msgstr "直線"
 
-#: src/blocks/_pro/outer/edit.js:538 src/extensions/core/group/style.js:110
+#: src/blocks/_pro/outer/edit.js:538 src/extensions/core/group/style.js:116
 msgid "Dotted"
 msgstr "点線"
 
-#: src/blocks/_pro/outer/edit.js:542 src/extensions/core/group/style.js:114
+#: src/blocks/_pro/outer/edit.js:542 src/extensions/core/group/style.js:120
 msgid "Dashed"
 msgstr "Dashed"
 
-#: src/blocks/_pro/outer/edit.js:546 src/extensions/core/group/style.js:118
+#: src/blocks/_pro/outer/edit.js:546 src/extensions/core/group/style.js:124
 msgid "Double"
 msgstr "二重線"
 
@@ -1394,22 +1394,22 @@ msgid "Style Settings"
 msgstr "スタイル設定"
 
 #: src/blocks/alert/edit.js:25 src/blocks/button/edit.js:675
-#: src/blocks/pr-content/edit.js:165 src/extensions/core/group/style.js:138
+#: src/blocks/pr-content/edit.js:165 src/extensions/core/group/style.js:144
 msgid "Success"
 msgstr "Success"
 
 #: src/blocks/alert/edit.js:28 src/blocks/button/edit.js:679
-#: src/blocks/pr-content/edit.js:168 src/extensions/core/group/style.js:134
+#: src/blocks/pr-content/edit.js:168 src/extensions/core/group/style.js:140
 msgid "Info"
 msgstr "Info"
 
 #: src/blocks/alert/edit.js:30 src/blocks/button/edit.js:683
-#: src/blocks/pr-content/edit.js:170 src/extensions/core/group/style.js:142
+#: src/blocks/pr-content/edit.js:170 src/extensions/core/group/style.js:148
 msgid "Warning"
 msgstr "Warning"
 
 #: src/blocks/alert/edit.js:34 src/blocks/button/edit.js:687
-#: src/blocks/pr-content/edit.js:174 src/extensions/core/group/style.js:146
+#: src/blocks/pr-content/edit.js:174 src/extensions/core/group/style.js:152
 msgid "Danger"
 msgstr "Danger"
 
@@ -1644,7 +1644,7 @@ msgstr "大"
 
 #: src/blocks/button/edit.js:323
 #: src/extensions/common/inline-font-size/inline.js:23
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:247
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:255
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:247
 msgid "Small"
 msgstr "小"
@@ -2496,13 +2496,13 @@ msgid "Apply"
 msgstr "適用"
 
 #: src/extensions/common/inline-font-size/inline.js:33
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:257
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:265
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:257
 msgid "Big"
 msgstr "大"
 
 #: src/extensions/common/inline-font-size/inline.js:38
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:262
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:270
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:262
 msgid "Extra big"
 msgstr "特大"
@@ -2571,21 +2571,29 @@ msgstr "画面サイズ毎の改行 "
 msgid "Responsive BR "
 msgstr "画面サイズ毎の改行 "
 
-#: src/extensions/core/group/style.js:106
+#: src/extensions/core/group/style.js:112
 msgid "Solid Roundcorner"
 msgstr "直線 角丸"
 
-#: src/extensions/core/group/style.js:122
+#: src/extensions/core/group/style.js:128
 msgid "Stitch"
 msgstr "スティッチ"
 
-#: src/extensions/core/group/style.js:126 src/extensions/core/table/style.js:7
+#: src/extensions/core/group/style.js:132 src/extensions/core/table/style.js:7
 msgid "Border Top Bottom"
 msgstr "直線 上下"
 
-#: src/extensions/core/group/style.js:130 src/extensions/core/image/style.js:31
+#: src/extensions/core/group/style.js:136 src/extensions/core/image/style.js:31
 msgid "Shadow"
 msgstr "シャドウ"
+
+#: src/extensions/core/group/style.js:52
+msgid ""
+"Because of the theme that enabled theme.json become can specify the color "
+"from border panel that, specification from here is deprecated."
+msgstr ""
+"theme.json が有効なテーマの場合は「枠線」パネルから色指定が可能になったため、"
+"ここでの色指定は非推奨になりました。"
 
 #: src/extensions/core/heading/style.js:104
 msgid "Brackets black"
@@ -2960,6 +2968,8 @@ msgstr "プラグインを有効化しました。"
 
 #: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:149
 #: inc/tgm-plugin-activation/tgm-config.php:149
+#, fuzzy
+#| msgid "The following plugin was activated successfully:"
 msgid "The following plugin was activated successfully:"
 msgstr "次のプラグインを有効化しました:"
 
@@ -3095,6 +3105,20 @@ msgstr "このメッセージは編集画面でのみ表示されます。"
 #: test/phpunit/free/test-page-content.php:55
 msgid "Edit this area"
 msgstr "このエリアを編集"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:40
+#, fuzzy
+#| msgid "Please select the type of balloon."
+msgid "Please select taxonomy"
+msgstr "吹き出しのタイプを指定してください。"
+
+#. translators:
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:152
+#, fuzzy
+#| msgctxt "Yearly archive description"
+#| msgid "Article of %s."
+msgid "All of %s"
+msgstr "%s の記事."
 
 #: dist/vk-blocks-pro/inc/vk-blocks/font-awesome/class-vk-blocks-font-awesome-api.php:73
 #: inc/vk-blocks/font-awesome/class-vk-blocks-font-awesome-api.php:73
@@ -3611,6 +3635,20 @@ msgid ""
 "When a parent page is specified, a list of its child pages will be displayed."
 msgstr "親となる固定ページを指定するとその子ページの一覧を表示します。"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/dynamic-text/block.json
+#, fuzzy
+#| msgid "Dummy Text"
+msgctxt "block title"
+msgid "Dynamic Text"
+msgstr "ダミーテキスト"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/dynamic-text/block.json
+#, fuzzy
+#| msgid "Display item"
+msgctxt "block description"
+msgid "Display dynamic Text"
+msgstr "表示要素"
+
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/grid-column-item/block.json
 #: inc/vk-blocks/build/blocks/_pro/grid-column-item/block.json
 #: src/blocks/_pro/grid-column-item/block.json
@@ -3841,6 +3879,16 @@ msgid ""
 "headings when added."
 msgstr "追加すると見出しに合わせて自動で生成される目次です。"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/block.json
+msgctxt "block title"
+msgid "Taxonomy"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/block.json
+msgctxt "block description"
+msgid "Display Taxnomy List Pulldown"
+msgstr ""
+
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/timeline-item/block.json
 #: inc/vk-blocks/build/blocks/_pro/timeline-item/block.json
 #: src/blocks/_pro/timeline-item/block.json
@@ -3871,14 +3919,348 @@ msgid ""
 "explaining the order."
 msgstr "順番を説明する時に便利でシンプルなスケジュールなどを表示します。"
 
-#~ msgid "ex.2) clamp(1rem, 2vw, 2rem)"
-#~ msgstr "例2) clamp(1rem, 2vw, 2rem)"
+#~ msgid "Color specification here is now deprecated."
+#~ msgstr "ここでの色指定は非推奨になりました。"
 
-#~ msgid "If you change image or name that please click Save Changes button."
-#~ msgstr "画像を変更したら「変更を保存」ボタンをクリックしてください。"
+#~ msgid ""
+#~ "If theme.json is enabled in your theme, you can specify colors in the "
+#~ "\"Border\" panel."
+#~ msgstr ""
+#~ "theme.json が有効なテーマの場合は別途「枠線」パネルから色指定が可能です。"
 
-#~ msgid "Same as display item number"
-#~ msgstr "表示アイテム数と同じ"
+#, fuzzy, javascript-format
+#~| msgid "Align %s"
+#~ msgid "Align %s"
+#~ msgstr "表示位置"
+
+#, fuzzy
+#~| msgid "Responsive BR"
+#~ msgid "Responsive Br"
+#~ msgstr "画面サイズ毎の改行 "
+
+#~ msgid "Font Awesome"
+#~ msgstr "Font Awesome:"
+
+#~ msgid "Enter Font Awesome Class."
+#~ msgstr "Font Awesome の class 名を入力してください。"
+
+#~ msgid "Ex) fas fa-arrow-circle-right"
+#~ msgstr "例) fas fa-arrow-circle-right"
+
+#, fuzzy, php-format
+#~| msgid "Installing Plugin: %s"
+#~ msgid "Updating Plugin: %s"
+#~ msgstr "プラグイン %s をインストール中"
+
+#, php-format
+#~ msgid "This theme requires the following plugin: %1$s."
+#~ msgid_plural "This theme requires the following plugins: %1$s."
+#~ msgstr[0] "このプラグインは下記プラグインを推奨しています：%1$s。"
+
+#, php-format
+#~ msgid "This theme recommends the following plugin: %1$s."
+#~ msgid_plural "This theme recommends the following plugins: %1$s."
+#~ msgstr[0] "このテーマは下記プラグインを推奨しています：%1$s。"
+
+#, fuzzy, php-format
+#~| msgid ""
+#~| "The following plugin needs to be updated to its latest version to ensure "
+#~| "maximum compatibility with this plugin: %1$s."
+#~| msgid_plural ""
+#~| "The following plugins need to be updated to their latest version to "
+#~| "ensure maximum compatibility with this plugin: %1$s."
+#~ msgid ""
+#~ "The following plugin needs to be updated to its latest version to ensure "
+#~ "maximum compatibility with this theme: %1$s."
+#~ msgid_plural ""
+#~ "The following plugins need to be updated to their latest version to "
+#~ "ensure maximum compatibility with this theme: %1$s."
+#~ msgstr[0] ""
+#~ "このテーマとの最大の互換性を確保するには、次のプラグインを最新バージョンに"
+#~ "更新する必要があります： %1$s。"
+
+#~ msgid "Return to the Dashboard"
+#~ msgstr "ダッシュボードへ戻る"
+
+#~ msgid "This plugin needs to be updated to be compatible with your theme."
+#~ msgstr ""
+#~ "使用中のテーマとの互換性を保つため、このプラグインを更新する必要がありま"
+#~ "す。"
+
+#~ msgid "Update Required"
+#~ msgstr "プラグインの更新が必要"
+
+#~ msgid "Set the parent_slug config variable instead."
+#~ msgstr "代わりに、parent_slug構成変数を設定してください。"
+
+#~ msgid ""
+#~ "The remote plugin package does not contain a folder with the desired slug "
+#~ "and renaming did not work."
+#~ msgstr ""
+#~ "リモートプラグインパッケージに必要なフォルダーが存在しないため、名前の変更"
+#~ "ができませんでした。"
+
+#~ msgid ""
+#~ "Please contact the plugin provider and ask them to package their plugin "
+#~ "according to the WordPress guidelines."
+#~ msgstr ""
+#~ "プラグインの開発者に連絡し、WordPressガイドラインに従ってプラグインをパッ"
+#~ "ケージ化するよう依頼してください。"
+
+#~ msgid ""
+#~ "The remote plugin package consists of more than one file, but the files "
+#~ "are not packaged in a folder."
+#~ msgstr ""
+#~ "リモートプラグインパッケージは複数のファイルで構成されていますが、ファイル"
+#~ "はフォルダーにパッケージ化されていません。"
+
+#~ msgctxt "plugin A *and* plugin B"
+#~ msgid "and"
+#~ msgstr "と"
+
+#, fuzzy, php-format
+#~| msgctxt "%s = version number"
+#~| msgid "TGMPA v%s"
+#~ msgid "TGMPA v%s"
+#~ msgstr "TGMPA v%s"
+
+#~ msgid "Required"
+#~ msgstr "必須"
+
+#~ msgid "Recommended"
+#~ msgstr "推奨"
+
+#~ msgid "WordPress Repository"
+#~ msgstr "WordPress 公式ディレクトリ"
+
+#~ msgid "External Source"
+#~ msgstr "外部ソース"
+
+#~ msgid "Pre-Packaged"
+#~ msgstr "プリパッケージ"
+
+#~ msgid "Not Installed"
+#~ msgstr "未インストール"
+
+#~ msgid "Installed But Not Activated"
+#~ msgstr "停止中"
+
+#~ msgid "Active"
+#~ msgstr "有効"
+
+#~ msgid "Required Update not Available"
+#~ msgstr "必要な更新が利用不可"
+
+#, fuzzy
+#~| msgid "Required"
+#~ msgid "Requires Update"
+#~ msgstr "必須"
+
+#~ msgid "Update recommended"
+#~ msgstr "更新を推奨"
+
+#, fuzzy, php-format
+#~| msgctxt "%1$s = install status, %2$s = update status"
+#~| msgid "%1$s, %2$s"
+#~ msgctxt "Install/Update Status"
+#~ msgid "%1$s, %2$s"
+#~ msgstr "%1$s、%2$s"
+
+#, php-format
+#~ msgctxt "plugins"
+#~ msgid "All <span class=\"count\">(%s)</span>"
+#~ msgid_plural "All <span class=\"count\">(%s)</span>"
+#~ msgstr[0] "すべて <span class=\"count\">(%s)</span>"
+
+#, php-format
+#~ msgid "To Install <span class=\"count\">(%s)</span>"
+#~ msgid_plural "To Install <span class=\"count\">(%s)</span>"
+#~ msgstr[0] "未インストール <span class=\"count\">(%s)</span>"
+
+#, php-format
+#~ msgid "Update Available <span class=\"count\">(%s)</span>"
+#~ msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+#~ msgstr[0] "更新可能 <span class=\"count\">(%s)</span>"
+
+#, php-format
+#~ msgid "To Activate <span class=\"count\">(%s)</span>"
+#~ msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+#~ msgstr[0] "停止中 <span class=\"count\">(%s)</span>"
+
+#~ msgctxt "as in: \"version nr unknown\""
+#~ msgid "unknown"
+#~ msgstr "不明"
+
+#~ msgid "Installed version:"
+#~ msgstr "インストール済みバージョン:"
+
+#~ msgid "Minimum required version:"
+#~ msgstr "最低要求バージョン:"
+
+#~ msgid "Available version:"
+#~ msgstr "利用可能なバージョン:"
+
+#, fuzzy
+#~| msgid ""
+#~| "No plugins to install, update or activate. <a href=\"%1$s\">Return to "
+#~| "the Dashboard</a>"
+#~ msgid "No plugins to install, update or activate."
+#~ msgstr ""
+#~ "インストール・更新・有効化するべきプラグインはありません。<a "
+#~ "href=\"%1$s\">ダッシュボードに戻る</a>"
+
+#~ msgid "Plugin"
+#~ msgstr "プラグイン"
+
+#~ msgid "Source"
+#~ msgstr "取得元"
+
+#~ msgid "Version"
+#~ msgstr "バージョン"
+
+#~ msgid "Status"
+#~ msgstr "状態"
+
+#, fuzzy, php-format
+#~| msgctxt "%2$s = plugin name in screen reader markup"
+#~| msgid "Install %2$s"
+#~ msgid "Install %2$s"
+#~ msgstr "%2$sをインストール"
+
+#, fuzzy, php-format
+#~| msgctxt "%2$s = plugin name in screen reader markup"
+#~| msgid "Update %2$s"
+#~ msgid "Update %2$s"
+#~ msgstr "%2$sを更新"
+
+#, fuzzy, php-format
+#~| msgctxt "%2$s = plugin name in screen reader markup"
+#~| msgid "Activate %2$s"
+#~ msgid "Activate %2$s"
+#~ msgstr "%2$sを有効化"
+
+#~ msgid "Upgrade message from the plugin author:"
+#~ msgstr "プラグインの作者から更新通知があります。"
+
+#~ msgid "Install"
+#~ msgstr "インストール"
+
+#~ msgid "Update"
+#~ msgstr "更新"
+
+#~ msgid "Activate"
+#~ msgstr "有効化"
+
+#~ msgid "No plugins were selected to be installed. No action taken."
+#~ msgstr ""
+#~ "インストールするプラグインが選択されていません。処理を中断しました。"
+
+#~ msgid "No plugins were selected to be updated. No action taken."
+#~ msgstr "更新するプラグインが選択されていません。処理を中断しました。"
+
+#~ msgid "No plugins are available to be installed at this time."
+#~ msgstr "現在インストール可能なプラグインはありません。"
+
+#~ msgid "No plugins are available to be updated at this time."
+#~ msgstr "現在更新可能なプラグインはありません。"
+
+#~ msgid "No plugins were selected to be activated. No action taken."
+#~ msgstr ""
+#~ "選択されたプラグインは全て有効化されています。何もする必要はありません。"
+
+#~ msgid "No plugins are available to be activated at this time."
+#~ msgstr "現在、有効化できるプラグインはありません。"
+
+#~ msgid "Plugin activation failed."
+#~ msgstr "プラグインの有効化に失敗しました。"
+
+#, php-format
+#~ msgid "Updating Plugin %1$s (%2$d/%3$d)"
+#~ msgstr "プラグインを更新中 %1$s (%2$d/%3$d)"
+
+#, php-format
+#~ msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+#~ msgstr "<strong>%2$s</strong>%1$s のインストール中にエラーが発生しました。"
+
+#, php-format
+#~ msgid "The installation of %1$s failed."
+#~ msgstr "%1$s のインストールに失敗しました。"
+
+#~ msgid ""
+#~ "The installation and activation process is starting. This process may "
+#~ "take a while on some hosts, so please be patient."
+#~ msgstr ""
+#~ "インストールと有効化を開始しました。環境によっては時間がかかる場合がありま"
+#~ "す。しばらくお待ちください。"
+
+#, php-format
+#~ msgid "%1$s installed and activated successfully."
+#~ msgstr "%1$s を正常にインストールし、有効化しました。"
+
+#~ msgid "All installations and activations have been completed."
+#~ msgstr "すべてのインストールと有効化が完了しました。"
+
+#, php-format
+#~ msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+#~ msgstr "プラグインをインストール、有効化中 %1$s (%2$d/%3$d)"
+
+#~ msgid ""
+#~ "The installation process is starting. This process may take a while on "
+#~ "some hosts, so please be patient."
+#~ msgstr ""
+#~ "更新プロセスを開始しました。環境によっては時間がかかる場合があります。しば"
+#~ "らくお待ちください。"
+
+#, php-format
+#~ msgid "%1$s installed successfully."
+#~ msgstr "%1$sのインストールが完了しました。"
+
+#~ msgid "All installations have been completed."
+#~ msgstr "すべてのインストールが完了しました。"
+
+#, php-format
+#~ msgid "Installing Plugin %1$s (%2$d/%3$d)"
+#~ msgstr "プラグインをインストール中 %1$s (%2$d/%3$d)"
+
+#~ msgid "Show Details"
+#~ msgstr "詳細を表示"
+
+#~ msgid "Hide Details"
+#~ msgstr "詳細を非表示"
+
+#, fuzzy
+#~| msgid "Update recommended"
+#~ msgid "Not recommended"
+#~ msgstr "更新を推奨"
+
+#~ msgid "Ex ) "
+#~ msgstr "例) "
+
+#, fuzzy
+#~| msgid "Font Awesome icon list"
+#~ msgid "Font Awesome Icon list"
+#~ msgstr "Font Awesome アイコンリスト"
+
+#~ msgid "Font Awesome Version"
+#~ msgstr "Font Awesome バージョン"
+
+#~ msgid "4.7 will be abolished in the near future."
+#~ msgstr "4.7は将来的に廃止されます。"
+
+#, fuzzy
+#~| msgid "No background"
+#~ msgid "Not found"
+#~ msgstr "背景なし"
+
+#, fuzzy
+#~| msgid "Color Setting"
+#~ msgid "Color Palette Setting"
+#~ msgstr "色設定"
+
+#, fuzzy
+#~| msgid "Custom Color"
+#~ msgid "Custom color"
+#~ msgstr "カスタムカラー"
 
 #~ msgid "CSS Optimize ( Speed up ) Settings"
 #~ msgstr "CSS最適化（高速化）設定"
@@ -3933,6 +4315,47 @@ msgstr "順番を説明する時に便利でシンプルなスケジュールな
 #~ "もし「Preload CSS を有効」に設定した場合、CSSの読み込みタイミングが変更さ"
 #~ "れます。プリロードしたくないファイルがある場合は、ハンドル名（id）を入力し"
 #~ "てください。 例）pluginname_a-style,pluginname_b-css"
+
+#~ msgid "View details"
+#~ msgstr "詳細を見る"
+
+#, php-format
+#~ msgid "More information about %s"
+#~ msgstr "%sについての詳細"
+
+#~ msgid "Check for updates"
+#~ msgstr "アップデートを確認"
+
+#, php-format
+#~ msgctxt "the plugin title"
+#~ msgid "The %s plugin is up to date."
+#~ msgstr "%s プラグインは最新です。"
+
+#, php-format
+#~ msgctxt "the plugin title"
+#~ msgid "A new version of the %s plugin is available."
+#~ msgstr "%sプラグインの新しいバージョンが利用可能です。"
+
+#, php-format
+#~ msgctxt "the plugin title"
+#~ msgid "Could not determine if updates are available for %s."
+#~ msgstr "%1$s.に対して利用可能なアップデートがあるか確認できませんでした"
+
+#, php-format
+#~ msgid "Unknown update checker status \"%s\""
+#~ msgstr "不明なアップデートチェッカーステータス \"%s\""
+
+#~ msgid "There is no changelog available."
+#~ msgstr "利用可能な変更履歴がありません。"
+
+#~ msgid "ex.2) clamp(1rem, 2vw, 2rem)"
+#~ msgstr "例2) clamp(1rem, 2vw, 2rem)"
+
+#~ msgid "If you change image or name that please click Save Changes button."
+#~ msgstr "画像を変更したら「変更を保存」ボタンをクリックしてください。"
+
+#~ msgid "Same as display item number"
+#~ msgstr "表示アイテム数と同じ"
 
 #~ msgid "Number of display items ( PC )"
 #~ msgstr "表示アイテム数（ PC ）"
@@ -4062,18 +4485,6 @@ msgstr "順番を説明する時に便利でシンプルなスケジュールな
 #~ msgid "Flexible Column Block Item"
 #~ msgstr "グリッドカラムアイテム"
 
-#~ msgid "Ex ) "
-#~ msgstr "例) "
-
-#~ msgid "Font Awesome"
-#~ msgstr "Font Awesome:"
-
-#~ msgid "Font Awesome Version"
-#~ msgstr "Font Awesome バージョン"
-
-#~ msgid "4.7 will be abolished in the near future."
-#~ msgstr "4.7は将来的に廃止されます。"
-
 #~ msgid "VK Blocks Bootstrap Setting"
 #~ msgstr "VK Blocks Bootstrapの設定"
 
@@ -4153,20 +4564,12 @@ msgstr "順番を説明する時に便利でシンプルなスケジュールな
 #~ msgid "About %s"
 #~ msgstr "%s　について"
 
-#~ msgctxt "Yearly archive description"
-#~ msgid "Article of %s."
-#~ msgstr "%s の記事."
-
 #~ msgctxt "Archive description"
 #~ msgid "Article of %s."
 #~ msgstr "%s の記事."
 
 #~ msgid "Page of %s"
 #~ msgstr "%sのページ"
-
-#~ msgid "This theme requires the following plugin: %1$s."
-#~ msgid_plural "This theme requires the following plugins: %1$s."
-#~ msgstr[0] "このプラグインは下記プラグインを推奨しています：%1$s。"
 
 #~ msgid ""
 #~ "This theme recommends the following plugin: %1$s.<br>Many additional "
@@ -4177,23 +4580,6 @@ msgstr "順番を説明する時に便利でシンプルなスケジュールな
 #~ msgstr[0] ""
 #~ "このテーマは下記プラグインを必要としています：%1$s。<br>これらのプラグイン"
 #~ "は無償で利用可能です。"
-
-#, fuzzy
-#~| msgid ""
-#~| "The following plugin needs to be updated to its latest version to ensure "
-#~| "maximum compatibility with this plugin: %1$s."
-#~| msgid_plural ""
-#~| "The following plugins need to be updated to their latest version to "
-#~| "ensure maximum compatibility with this plugin: %1$s."
-#~ msgid ""
-#~ "The following plugin needs to be updated to its latest version to ensure "
-#~ "maximum compatibility with this theme: %1$s."
-#~ msgid_plural ""
-#~ "The following plugins need to be updated to their latest version to "
-#~ "ensure maximum compatibility with this theme: %1$s."
-#~ msgstr[0] ""
-#~ "このテーマとの最大の互換性を確保するには、次のプラグインを最新バージョンに"
-#~ "更新する必要があります： %1$s。"
 
 #~ msgid "VK Blocks Template"
 #~ msgstr "VK Blocks テンプレート"
@@ -4252,9 +4638,6 @@ msgstr "順番を説明する時に便利でシンプルなスケジュールな
 #~ msgid "Margin bottom size of after hedding (rem)"
 #~ msgstr "見出し下部の余白サイズ ( rem )"
 
-#~ msgid "Align %s"
-#~ msgstr "表示位置"
-
 #~ msgid "Align %1$s"
 #~ msgstr "%1$sの表示位置"
 
@@ -4296,268 +4679,11 @@ msgstr "順番を説明する時に便利でシンプルなスケジュールな
 #~ msgid "Chats"
 #~ msgstr "チャット"
 
-#~ msgid "This theme recommends the following plugin: %1$s."
-#~ msgid_plural "This theme recommends the following plugins: %1$s."
-#~ msgstr[0] "このテーマは下記プラグインを推奨しています：%1$s。"
-
 #~ msgid "Return to the dashboard"
 #~ msgstr "ダッシュボードに戻る"
 
-#~ msgid "This plugin needs to be updated to be compatible with your theme."
-#~ msgstr ""
-#~ "使用中のテーマとの互換性を保つため、このプラグインを更新する必要がありま"
-#~ "す。"
-
-#~ msgid "Update Required"
-#~ msgstr "プラグインの更新が必要"
-
-#~ msgid "Set the parent_slug config variable instead."
-#~ msgstr "代わりに、parent_slug構成変数を設定してください。"
-
-#~ msgid "Return to the Dashboard"
-#~ msgstr "ダッシュボードへ戻る"
-
-#~ msgid ""
-#~ "The remote plugin package does not contain a folder with the desired slug "
-#~ "and renaming did not work."
-#~ msgstr ""
-#~ "リモートプラグインパッケージに必要なフォルダーが存在しないため、名前の変更"
-#~ "ができませんでした。"
-
-#~ msgid ""
-#~ "Please contact the plugin provider and ask them to package their plugin "
-#~ "according to the WordPress guidelines."
-#~ msgstr ""
-#~ "プラグインの開発者に連絡し、WordPressガイドラインに従ってプラグインをパッ"
-#~ "ケージ化するよう依頼してください。"
-
-#~ msgid ""
-#~ "The remote plugin package consists of more than one file, but the files "
-#~ "are not packaged in a folder."
-#~ msgstr ""
-#~ "リモートプラグインパッケージは複数のファイルで構成されていますが、ファイル"
-#~ "はフォルダーにパッケージ化されていません。"
-
-#~ msgctxt "plugin A *and* plugin B"
-#~ msgid "and"
-#~ msgstr "と"
-
-#~ msgctxt "%s = version number"
-#~ msgid "TGMPA v%s"
-#~ msgstr "TGMPA v%s"
-
-#~ msgid "Required"
-#~ msgstr "必須"
-
-#~ msgid "Recommended"
-#~ msgstr "推奨"
-
-#~ msgid "WordPress Repository"
-#~ msgstr "WordPress 公式ディレクトリ"
-
-#~ msgid "External Source"
-#~ msgstr "外部ソース"
-
-#~ msgid "Pre-Packaged"
-#~ msgstr "プリパッケージ"
-
-#~ msgid "Not Installed"
-#~ msgstr "未インストール"
-
-#~ msgid "Installed But Not Activated"
-#~ msgstr "停止中"
-
-#~ msgid "Active"
-#~ msgstr "有効"
-
-#~ msgid "Required Update not Available"
-#~ msgstr "必要な更新が利用不可"
-
-#~ msgid "Update recommended"
-#~ msgstr "更新を推奨"
-
-#~ msgctxt "%1$s = install status, %2$s = update status"
-#~ msgid "%1$s, %2$s"
-#~ msgstr "%1$s、%2$s"
-
-#~ msgctxt "plugins"
-#~ msgid "All <span class=\"count\">(%s)</span>"
-#~ msgid_plural "All <span class=\"count\">(%s)</span>"
-#~ msgstr[0] "すべて <span class=\"count\">(%s)</span>"
-
-#~ msgid "To Install <span class=\"count\">(%s)</span>"
-#~ msgid_plural "To Install <span class=\"count\">(%s)</span>"
-#~ msgstr[0] "未インストール <span class=\"count\">(%s)</span>"
-
-#~ msgid "Update Available <span class=\"count\">(%s)</span>"
-#~ msgid_plural "Update Available <span class=\"count\">(%s)</span>"
-#~ msgstr[0] "更新可能 <span class=\"count\">(%s)</span>"
-
-#~ msgid "To Activate <span class=\"count\">(%s)</span>"
-#~ msgid_plural "To Activate <span class=\"count\">(%s)</span>"
-#~ msgstr[0] "停止中 <span class=\"count\">(%s)</span>"
-
-#~ msgctxt "as in: \"version nr unknown\""
-#~ msgid "unknown"
-#~ msgstr "不明"
-
-#~ msgid "Installed version:"
-#~ msgstr "インストール済みバージョン:"
-
-#~ msgid "Minimum required version:"
-#~ msgstr "最低要求バージョン:"
-
-#~ msgid "Available version:"
-#~ msgstr "利用可能なバージョン:"
-
-#~ msgid ""
-#~ "No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
-#~ "Dashboard</a>"
-#~ msgstr ""
-#~ "インストール・更新・有効化するべきプラグインはありません。<a "
-#~ "href=\"%1$s\">ダッシュボードに戻る</a>"
-
-#~ msgid "Plugin"
-#~ msgstr "プラグイン"
-
-#~ msgid "Source"
-#~ msgstr "取得元"
-
-#~ msgid "Version"
-#~ msgstr "バージョン"
-
-#~ msgid "Status"
-#~ msgstr "状態"
-
-#~ msgctxt "%2$s = plugin name in screen reader markup"
-#~ msgid "Install %2$s"
-#~ msgstr "%2$sをインストール"
-
-#~ msgctxt "%2$s = plugin name in screen reader markup"
-#~ msgid "Update %2$s"
-#~ msgstr "%2$sを更新"
-
-#~ msgctxt "%2$s = plugin name in screen reader markup"
-#~ msgid "Activate %2$s"
-#~ msgstr "%2$sを有効化"
-
-#~ msgid "Upgrade message from the plugin author:"
-#~ msgstr "プラグインの作者から更新通知があります。"
-
-#~ msgid "Install"
-#~ msgstr "インストール"
-
-#~ msgid "Update"
-#~ msgstr "更新"
-
-#~ msgid "Activate"
-#~ msgstr "有効化"
-
-#~ msgid "No plugins were selected to be installed. No action taken."
-#~ msgstr ""
-#~ "インストールするプラグインが選択されていません。処理を中断しました。"
-
-#~ msgid "No plugins were selected to be updated. No action taken."
-#~ msgstr "更新するプラグインが選択されていません。処理を中断しました。"
-
-#~ msgid "No plugins are available to be installed at this time."
-#~ msgstr "現在インストール可能なプラグインはありません。"
-
-#~ msgid "No plugins are available to be updated at this time."
-#~ msgstr "現在更新可能なプラグインはありません。"
-
-#~ msgid "No plugins were selected to be activated. No action taken."
-#~ msgstr ""
-#~ "選択されたプラグインは全て有効化されています。何もする必要はありません。"
-
-#~ msgid "No plugins are available to be activated at this time."
-#~ msgstr "現在、有効化できるプラグインはありません。"
-
-#~ msgid "Plugin activation failed."
-#~ msgstr "プラグインの有効化に失敗しました。"
-
-#~ msgid "Updating Plugin %1$s (%2$d/%3$d)"
-#~ msgstr "プラグインを更新中 %1$s (%2$d/%3$d)"
-
-#~ msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-#~ msgstr "<strong>%2$s</strong>%1$s のインストール中にエラーが発生しました。"
-
-#~ msgid "The installation of %1$s failed."
-#~ msgstr "%1$s のインストールに失敗しました。"
-
-#~ msgid ""
-#~ "The installation and activation process is starting. This process may "
-#~ "take a while on some hosts, so please be patient."
-#~ msgstr ""
-#~ "インストールと有効化を開始しました。環境によっては時間がかかる場合がありま"
-#~ "す。しばらくお待ちください。"
-
-#~ msgid "%1$s installed and activated successfully."
-#~ msgstr "%1$s を正常にインストールし、有効化しました。"
-
-#~ msgid "All installations and activations have been completed."
-#~ msgstr "すべてのインストールと有効化が完了しました。"
-
-#~ msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-#~ msgstr "プラグインをインストール、有効化中 %1$s (%2$d/%3$d)"
-
-#~ msgid ""
-#~ "The installation process is starting. This process may take a while on "
-#~ "some hosts, so please be patient."
-#~ msgstr ""
-#~ "更新プロセスを開始しました。環境によっては時間がかかる場合があります。しば"
-#~ "らくお待ちください。"
-
-#~ msgid "%1$s installed successfully."
-#~ msgstr "%1$sのインストールが完了しました。"
-
-#~ msgid "All installations have been completed."
-#~ msgstr "すべてのインストールが完了しました。"
-
-#~ msgid "Installing Plugin %1$s (%2$d/%3$d)"
-#~ msgstr "プラグインをインストール中 %1$s (%2$d/%3$d)"
-
-#~ msgid "Show Details"
-#~ msgstr "詳細を表示"
-
-#~ msgid "Hide Details"
-#~ msgstr "詳細を非表示"
-
-#~ msgid "View details"
-#~ msgstr "詳細を見る"
-
-#~ msgid "More information about %s"
-#~ msgstr "%sについての詳細"
-
-#~ msgid "Check for updates"
-#~ msgstr "アップデートを確認"
-
-#~ msgctxt "the plugin title"
-#~ msgid "The %s plugin is up to date."
-#~ msgstr "%s プラグインは最新です。"
-
-#~ msgctxt "the plugin title"
-#~ msgid "A new version of the %s plugin is available."
-#~ msgstr "%sプラグインの新しいバージョンが利用可能です。"
-
-#~ msgctxt "the plugin title"
-#~ msgid "Could not determine if updates are available for %s."
-#~ msgstr "%1$s.に対して利用可能なアップデートがあるか確認できませんでした"
-
-#~ msgid "Unknown update checker status \"%s\""
-#~ msgstr "不明なアップデートチェッカーステータス \"%s\""
-
-#~ msgid "There is no changelog available."
-#~ msgstr "利用可能な変更履歴がありません。"
-
 #~ msgid "Balloon: Default Icons"
 #~ msgstr "吹き出しブロック：デフォルトアイコン設定"
-
-#~ msgid "Enter Font Awesome Class."
-#~ msgstr "Font Awesome の class 名を入力してください。"
-
-#~ msgid "Ex) fas fa-arrow-circle-right"
-#~ msgstr "例) fas fa-arrow-circle-right"
 
 #~ msgid "Level"
 #~ msgstr "レベル"

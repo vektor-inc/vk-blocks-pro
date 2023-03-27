@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-03-20T08:04:29+00:00\n"
+"POT-Creation-Date: 2023-03-27T18:13:59+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks\n"
@@ -361,7 +361,7 @@ msgstr ""
 msgid "ex)"
 msgstr ""
 
-#: src/admin/margin.js:136
+#: src/admin/margin.js:135
 #: src/blocks/border-box/edit.js:192
 #: src/blocks/icon-outer/edit.js:149
 #: src/blocks/icon/edit.js:139
@@ -508,7 +508,7 @@ msgstr ""
 #: src/blocks/faq2/index.js:21
 #: src/blocks/slider/edit.js:457
 #: src/extensions/common/inline-font-size/inline.js:28
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:252
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:260
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:252
 msgid "Normal"
 msgstr ""
@@ -1168,22 +1168,22 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:115
 #: src/blocks/_pro/timeline-item/edit.js:88
 #: src/blocks/pr-content/edit.js:144
-#: src/extensions/core/group/style.js:102
+#: src/extensions/core/group/style.js:108
 msgid "Solid"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:538
-#: src/extensions/core/group/style.js:110
+#: src/extensions/core/group/style.js:116
 msgid "Dotted"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:542
-#: src/extensions/core/group/style.js:114
+#: src/extensions/core/group/style.js:120
 msgid "Dashed"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:546
-#: src/extensions/core/group/style.js:118
+#: src/extensions/core/group/style.js:124
 msgid "Double"
 msgstr ""
 
@@ -1404,28 +1404,28 @@ msgstr ""
 #: src/blocks/alert/edit.js:25
 #: src/blocks/button/edit.js:675
 #: src/blocks/pr-content/edit.js:165
-#: src/extensions/core/group/style.js:138
+#: src/extensions/core/group/style.js:144
 msgid "Success"
 msgstr ""
 
 #: src/blocks/alert/edit.js:28
 #: src/blocks/button/edit.js:679
 #: src/blocks/pr-content/edit.js:168
-#: src/extensions/core/group/style.js:134
+#: src/extensions/core/group/style.js:140
 msgid "Info"
 msgstr ""
 
 #: src/blocks/alert/edit.js:30
 #: src/blocks/button/edit.js:683
 #: src/blocks/pr-content/edit.js:170
-#: src/extensions/core/group/style.js:142
+#: src/extensions/core/group/style.js:148
 msgid "Warning"
 msgstr ""
 
 #: src/blocks/alert/edit.js:34
 #: src/blocks/button/edit.js:687
 #: src/blocks/pr-content/edit.js:174
-#: src/extensions/core/group/style.js:146
+#: src/extensions/core/group/style.js:152
 msgid "Danger"
 msgstr ""
 
@@ -1657,7 +1657,7 @@ msgstr ""
 
 #: src/blocks/button/edit.js:323
 #: src/extensions/common/inline-font-size/inline.js:23
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:247
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:255
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:247
 msgid "Small"
 msgstr ""
@@ -2492,13 +2492,13 @@ msgid "Apply"
 msgstr ""
 
 #: src/extensions/common/inline-font-size/inline.js:33
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:257
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:265
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:257
 msgid "Big"
 msgstr ""
 
 #: src/extensions/common/inline-font-size/inline.js:38
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:262
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:270
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:262
 msgid "Extra big"
 msgstr ""
@@ -2567,22 +2567,26 @@ msgstr ""
 msgid "Responsive BR "
 msgstr ""
 
-#: src/extensions/core/group/style.js:106
+#: src/extensions/core/group/style.js:112
 msgid "Solid Roundcorner"
 msgstr ""
 
-#: src/extensions/core/group/style.js:122
+#: src/extensions/core/group/style.js:128
 msgid "Stitch"
 msgstr ""
 
-#: src/extensions/core/group/style.js:126
+#: src/extensions/core/group/style.js:132
 #: src/extensions/core/table/style.js:7
 msgid "Border Top Bottom"
 msgstr ""
 
-#: src/extensions/core/group/style.js:130
+#: src/extensions/core/group/style.js:136
 #: src/extensions/core/image/style.js:31
 msgid "Shadow"
+msgstr ""
+
+#: src/extensions/core/group/style.js:52
+msgid "Because of the theme that enabled theme.json become can specify the color from border panel that, specification from here is deprecated."
 msgstr ""
 
 #: src/extensions/core/heading/style.js:104
@@ -3064,6 +3068,15 @@ msgstr ""
 #: src/blocks/page-content/index.php:124
 #: test/phpunit/free/test-page-content.php:55
 msgid "Edit this area"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:40
+msgid "Please select taxonomy"
+msgstr ""
+
+#. translators:
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:152
+msgid "All of %s"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/font-awesome/class-vk-blocks-font-awesome-api.php:73
@@ -3579,6 +3592,16 @@ msgctxt "block description"
 msgid "When a parent page is specified, a list of its child pages will be displayed."
 msgstr ""
 
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/dynamic-text/block.json
+msgctxt "block title"
+msgid "Dynamic Text"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/dynamic-text/block.json
+msgctxt "block description"
+msgid "Display dynamic Text"
+msgstr ""
+
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/grid-column-item/block.json
 #: inc/vk-blocks/build/blocks/_pro/grid-column-item/block.json
 #: src/blocks/_pro/grid-column-item/block.json
@@ -3801,6 +3824,16 @@ msgstr ""
 #: src/blocks/_pro/table-of-contents-new/block.json
 msgctxt "block description"
 msgid "This is a table of contents that is automatically generated according to the headings when added."
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/block.json
+msgctxt "block title"
+msgid "Taxonomy"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/block.json
+msgctxt "block description"
+msgid "Display Taxnomy List Pulldown"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/timeline-item/block.json

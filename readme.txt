@@ -2,8 +2,8 @@
 Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird,chiakikouno,doshimaf
 Donate link:
 Tags: Gutenberg,FAQ,alert
-Requires at least: 5.9
-Tested up to: 6.1.0
+Requires at least: 6.0
+Tested up to: 6.2
 Stable tag: 1.52.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
@@ -63,6 +63,7 @@ e.g.
 
 == Changelog ==
 
+[ Other ] Update the required WordPress version
 [ Add Setting ][ margin / spacer ] Add custom value to margin setting
 
 = 1.53.0 =

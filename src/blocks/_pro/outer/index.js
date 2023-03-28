@@ -45,7 +45,7 @@ const generateInlineCss = (attributes) => {
 		innerSideSpaceValuePC = 0;
 	}
 
-	const containerSelector = `.vkb-outer-${blockId} .vk_outer_container`;
+	const containerSelector = `.vk_outer.vkb-outer-${blockId} > .vk_outer_container`;
 	return `
 	${containerSelector}{
 		padding-left:${innerSideSpaceValueMobile}${innerSideSpaceUnit};

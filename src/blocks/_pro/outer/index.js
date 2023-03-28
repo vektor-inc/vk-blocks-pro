@@ -48,19 +48,19 @@ const generateInlineCss = (attributes) => {
 	const containerSelector = `.vk_outer.vkb-outer-${blockId} > .vk_outer_container`;
 	return `
 	${containerSelector}{
-		padding-left:${innerSideSpaceValueMobile}${innerSideSpaceUnit};
-		padding-right:${innerSideSpaceValueMobile}${innerSideSpaceUnit};
+		padding-left:${innerSideSpaceValueMobile}${innerSideSpaceUnit}!important;
+		padding-right:${innerSideSpaceValueMobile}${innerSideSpaceUnit}!important;
 	}
 	@media (min-width: 576px) {
 		${containerSelector}{
-			padding-left:${innerSideSpaceValueTablet}${innerSideSpaceUnit};
-			padding-right:${innerSideSpaceValueTablet}${innerSideSpaceUnit};
+			padding-left:${innerSideSpaceValueTablet}${innerSideSpaceUnit}!important;
+			padding-right:${innerSideSpaceValueTablet}${innerSideSpaceUnit}!important;
 		}
 	}
 	@media (min-width: 992px) {
 		${containerSelector}{
-			padding-left:${innerSideSpaceValuePC}${innerSideSpaceUnit};
-			padding-right:${innerSideSpaceValuePC}${innerSideSpaceUnit};
+			padding-left:${innerSideSpaceValuePC}${innerSideSpaceUnit}!important;
+			padding-right:${innerSideSpaceValuePC}${innerSideSpaceUnit}!important;
 		}
 	}
 	`;

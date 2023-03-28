@@ -62,7 +62,7 @@ e.g.
 
 
 == Changelog ==
-
+[ Bug Fix ][ Outer ( Pro ) ] Fix Outer Container CSS.
 [ Add Setting ][ margin / spacer ] Add custom value to margin setting
 
 = 1.53.0 =

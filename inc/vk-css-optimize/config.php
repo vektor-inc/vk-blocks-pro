@@ -14,7 +14,7 @@ function vk_blocks_css_tree_shaking_handles( $vk_css_tree_shaking_handles ) {
 	$vk_css_tree_shaking_handles[] = 'vk-blocks-build-css';
 	return $vk_css_tree_shaking_handles;
 }
-add_filter( 'vk_css_tree_shaking_handles', 'vk_blocks_css_tree_shaking_handles', 9999 );
+add_filter( 'vk_css_tree_shaking_handles', 'vk_blocks_css_tree_shaking_handles' );
 
 /**
  * CSS Tree Shaking Exclude

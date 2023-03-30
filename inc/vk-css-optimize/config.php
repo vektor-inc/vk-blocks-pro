@@ -86,4 +86,4 @@ function VK_blocks_css_optimize_options_default( $vk_css_optimize_options_defaul
 	);
 	return $vk_css_optimize_options_default;
 }
-add_filter( 'vk_css_optimize_options_default', 'VK_blocks_css_optimize_options_default', 9999 );
+add_filter( 'vk_css_optimize_options_default', 'VK_blocks_css_optimize_options_default' );

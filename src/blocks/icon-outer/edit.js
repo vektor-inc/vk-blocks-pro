@@ -80,7 +80,7 @@ export default function IconOuterEdit(props) {
 					onChange={(value) => setAttributes({ iconsJustify: value })}
 					popoverProps={{
 						position: 'bottom right',
-						isAlternate: true,
+						variant: 'toolbar',
 					}}
 				/>
 			</BlockControls>

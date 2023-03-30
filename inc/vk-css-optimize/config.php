@@ -5,12 +5,6 @@
  * @package VK Blocks
  */
 
- use VektorInc\VK_CSS_Optimize\VkCssOptimize;
- new VkCssOptimize();
-
- global $prefix_customize_panel;
- $prefix_customize_panel = __( 'VK Blocks ', 'vk-blocks' );
-
 /**
  * CSS Tree Shaking Array
  *
@@ -20,7 +14,7 @@ function vk_blocks_css_tree_shaking_handles( $vk_css_tree_shaking_handles ) {
 	$vk_css_tree_shaking_handles[] = 'vk-blocks-build-css';
 	return $vk_css_tree_shaking_handles;
 }
-add_filter( 'vk_css_tree_shaking_handles', 'vk_blocks_css_tree_shaking_handles' );
+add_filter( 'vk_css_tree_shaking_handles', 'vk_blocks_css_tree_shaking_handles', 9999 );
 
 /**
  * CSS Tree Shaking Exclude
@@ -92,4 +86,4 @@ function VK_blocks_css_optimize_options_default( $vk_css_optimize_options_defaul
 	);
 	return $vk_css_optimize_options_default;
 }
-add_filter( 'vk_css_optimize_options_default', 'VK_blocks_css_optimize_options_default' );
+add_filter( 'vk_css_optimize_options_default', 'VK_blocks_css_optimize_options_default', 9999 );

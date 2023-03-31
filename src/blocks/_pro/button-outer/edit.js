@@ -79,7 +79,7 @@ export default function ButtonOuterEdit(props) {
 					}
 					popoverProps={{
 						position: 'bottom right',
-						isAlternate: true,
+						variant: 'toolbar',
 					}}
 				/>
 			</BlockControls>

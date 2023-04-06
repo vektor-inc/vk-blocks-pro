@@ -7,10 +7,14 @@
  * @package vk_blocks
  */
 
-// オプション値などでスタイルを作る処理を読み込み.
+// Load Files
+require_once dirname( __FILE__ ) . '/utils/hex-to-rgba.php';
+require_once dirname( __FILE__ ) . '/utils/color-slug-to-color-code.php';
+require_once dirname( __FILE__ ) . '/utils/array-merge.php';
+require_once dirname( __FILE__ ) . '/utils/minify-css.php';
 require_once dirname( __FILE__ ) . '/style/balloon.php';
 require_once dirname( __FILE__ ) . '/style/hidden-extension.php';
-
+require_once dirname( __FILE__ ) . '/extensions/core/list.php';
 require_once dirname( __FILE__ ) . '/view/responsive-br.php';
 require_once dirname( __FILE__ ) . '/view/class-vk-blocks-postlist.php';
 
@@ -29,11 +33,6 @@ VK_Blocks_Options::init();
 
 // font-awesome
 require_once dirname( __FILE__ ) . '/font-awesome/font-awesome-config.php';
-
-require_once dirname( __FILE__ ) . '/utils/hex-to-rgba.php';
-require_once dirname( __FILE__ ) . '/utils/color-slug-to-color-code.php';
-require_once dirname( __FILE__ ) . '/utils/array-merge.php';
-require_once dirname( __FILE__ ) . '/utils/minify-css.php';
 
 // VK Blocks の管理画面.
 require_once dirname( __FILE__ ) . '/admin/admin.php';

@@ -16,17 +16,17 @@ if ( ! class_exists( 'Vk_term_color' ) ) {
 
 		function term_meta_color() {
 
-			register_meta( 'term', 'term_color', array( $this, 'sanitize_hex' ) );
+			register_meta( 'term', 'term_color', array( 'sanitize_callback', array( $this, 'sanitize_hex' )) );
 		}
 
 		/*
 		  SANITIZE DATA
 		/*-------------------------------------------*/
 
-		public static function sanitize_hex( $color ) {
+		public static function sanitize_hex( $meta_value ) {
 			// sanitize_hex_color() は undefined function くらう
-			$color = ltrim( $color, '#' );
-			return preg_match( '/([A-Fa-f0-9]{3}){1,2}$/', $color ) ? $color : '';
+			$meta_value = ltrim( $meta_value, '#' );
+			return preg_match( '/^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/', $meta_value ) ? $meta_value : '';
 		}
 
 		/*
@@ -56,7 +56,7 @@ if ( ! class_exists( 'Vk_term_color' ) ) {
 			<th scope="row" valign="top"><label for="term_color"><?php _e( 'Color', 'vk-blocks' ); ?></label></th>
 				<td>
 				<?php wp_nonce_field( basename( __FILE__ ), 'term_color_nonce' ); ?>
-					<input type="text" name="term_color" id="term_color" class="term_color" value="<?php echo $term_color; ?>">
+					<input type="text" name="term_color" id="term_color" class="term_color" value="<?php echo esc_html($term_color); ?>">
 				</td>
 			</tr>
 			<?php

@@ -84,12 +84,35 @@
 		"old_1_31_0": {
 			"type": "string",
 			"default": true
+		},
+		"testPadding": {
+			"type": "object"
 		}
 	},
 	"description": "A button link that can display icons before and after.",
 	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true,
+		"spacing": {
+			"__experimentalSkipSerialization": true,
+			"padding": [ "horizontal", "vertical" ],
+			"__experimentalDefaultControls": {
+				"padding": true
+			}
+		},
+		"__experimentalBorder": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true,
+			"__experimentalSkipSerialization": true,
+			"__experimentalDefaultControls": {
+				"color": true,
+				"radius": true,
+				"style": true,
+				"width": true
+			}
+		},
 		"anchor": true
 	}
 }

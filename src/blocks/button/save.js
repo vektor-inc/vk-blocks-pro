@@ -1,5 +1,10 @@
 import { VKBButton } from './component';
-import { RichText, useBlockProps } from '@wordpress/block-editor';
+import {
+	RichText,
+	useBlockProps,
+	__experimentalGetSpacingClassesAndStyles as getSpacingClassesAndStyles,
+	__experimentalGetBorderClassesAndStyles as getBorderClassesAndStyles,
+} from '@wordpress/block-editor';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function save(props) {
@@ -26,6 +31,9 @@ export default function save(props) {
 		iconSizeAfter,
 		blockId,
 	} = attributes;
+
+	const spacingProps = getSpacingClassesAndStyles(attributes);
+	const borderProps = getBorderClassesAndStyles(attributes);
 
 	let containerClass = '';
 	// カスタムカラーの場合 またはアウターにギャップが指定されれいる場合
@@ -64,6 +72,11 @@ export default function save(props) {
 		className: containerClass,
 	});
 
+	const buttonStyle = {
+		...borderProps.style,
+		...spacingProps.style,
+	};
+
 	return (
 		<div {...blockProps}>
 			<VKBButton
@@ -80,6 +93,8 @@ export default function save(props) {
 				lbIconSizeBefore={iconSizeBefore}
 				lbIconSizeAfter={iconSizeAfter}
 				lbsubCaption={subCaption}
+				lbaClassName={borderProps.className}
+				lbaStyle={buttonStyle}
 				lbRichtext={
 					<RichText.Content
 						tagName={'span'}

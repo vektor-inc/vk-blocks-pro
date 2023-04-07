@@ -1,3 +1,5 @@
+import classnames from 'classnames';
+
 import { Component } from '@wordpress/element';
 import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
@@ -19,12 +21,14 @@ export class VKBButton extends Component {
 		const richText = this.props.lbRichtext;
 		const subCaption = this.props.lbsubCaption;
 		let aClass = '';
-		let aStyle = {};
+		// let aStyle = {};
+		const aStyle = this.props.lbaStyle;
 		let iconBefore = '';
 		let iconAfter = '';
 
-		aStyle = null;
-		aClass = `vk_button_link`;
+		// aStyle = null;
+		aClass = classnames(`vk_button_link`, this.props.lbaClassName);
+		// aClass = `vk_button_link`;
 
 		// 塗り
 		if (buttonType === '0' || buttonType === null) {

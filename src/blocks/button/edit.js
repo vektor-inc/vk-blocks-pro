@@ -13,6 +13,7 @@ import {
 	ToolbarButton,
 	Dropdown,
 	__experimentalUnitControl as UnitControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
+	__experimentalToolsPanel as ToolsPanel,
 } from '@wordpress/components';
 import {
 	RichText,
@@ -20,13 +21,22 @@ import {
 	useBlockProps,
 	BlockControls,
 	URLInput,
+	__experimentalUseBorderProps as useBorderProps,
+	__experimentalGetSpacingClassesAndStyles as useSpacingProps,
 } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
 import { dispatch, select } from '@wordpress/data';
+import { link, linkOff, keyboardReturn } from '@wordpress/icons';
+
+/**
+ * Internal dependencies
+ */
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
-import { link, linkOff, keyboardReturn } from '@wordpress/icons';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
+import { getSpacingClassesAndStyles } from '@vkblocks/utils/use-spacing-props';
+import { DimensionsPanel } from '@vkblocks/components/dimensions-panel';
+
 export default function ButtonEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const {
@@ -51,7 +61,33 @@ export default function ButtonEdit(props) {
 		iconSizeAfter,
 		blockId,
 		old_1_31_0,
+		testPadding,
 	} = attributes;
+
+	const borderProps = useBorderProps(attributes);
+	const spacingProps = useSpacingProps(attributes);
+
+	// Padding
+	const styleObj = {
+		style: {
+			spacing: {
+				padding: {
+					...testPadding,
+				},
+			},
+		},
+	};
+	const testSpacingProps = getSpacingClassesAndStyles(styleObj);
+	const setTestPadding = (newPaddingValues) => {
+		if (newPaddingValues === undefined) {
+			setAttributes({ testPadding: undefined });
+		} else {
+			// horizontal,verticalがundefinedで入ってくるのでプロパティーごと削除
+			delete newPaddingValues.horizontal;
+			delete newPaddingValues.vertical;
+			setAttributes({ testPadding: newPaddingValues });
+		}
+	};
 
 	// eslint-disable-next-line no-undef
 	const iconFamily = vkFontAwesome.iconFamily;
@@ -790,6 +826,27 @@ export default function ButtonEdit(props) {
 						</BaseControl>
 					</BaseControl>
 				</PanelBody>
+				<ToolsPanel label={__('Dimensions')}>
+					<DimensionsPanel
+						value={{
+							spacing: {
+								padding: {
+									...testPadding,
+								},
+							},
+						}}
+						onChange={setTestPadding}
+						settings={{
+							spacing: {
+								padding: {
+									sides: ['horizontal', 'vertical'],
+									// sides: ['top', 'left', 'bottom', 'right'],
+								},
+							},
+						}}
+					/>
+				</ToolsPanel>
+				<p>↑ここは独自実装 保存はしてない</p>
 			</InspectorControls>
 			<div {...blockProps}>
 				<VKBButton
@@ -804,6 +861,12 @@ export default function ButtonEdit(props) {
 					lbIconSizeBefore={iconSizeBefore}
 					lbIconSizeAfter={iconSizeAfter}
 					lbsubCaption={subCaption}
+					lbaClassName={borderProps.className}
+					lbaStyle={{
+						...borderProps.style,
+						...spacingProps.style,
+						...testSpacingProps.style,
+					}}
 					lbRichtext={
 						<RichText
 							tagName={'span'}

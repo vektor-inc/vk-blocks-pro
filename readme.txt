@@ -63,9 +63,9 @@ e.g.
 
 == Changelog ==
 
-[ Bug fix ][ Page Content ] Cope with XSS
 [ Other ] Update the required WordPress version
 [ Add Setting ][ margin / spacer ] Add custom value to margin setting
+[ Bug fix ] Cope with XSS
 
 = 1.53.0 =
 [ Add setting ][ Slider ] Allow decimalon slider per view Setting & Add Setting of Centering Active Slide

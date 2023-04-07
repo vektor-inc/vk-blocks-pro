@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2023-03-27T17:46:40+00:00\n"
-"PO-Revision-Date: 2023-03-28 03:12+0900\n"
+"POT-Creation-Date: 2023-04-07T18:28:30+00:00\n"
+"PO-Revision-Date: 2023-04-08 03:31+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -274,9 +274,9 @@ msgstr "改行しない"
 #: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:41
 #: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:56
 #: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:130
-#: inc/term-color/package/class.term-color.php:41
-#: inc/term-color/package/class.term-color.php:56
-#: inc/term-color/package/class.term-color.php:130
+#: inc/term-color/package/class.term-color.php:67
+#: inc/term-color/package/class.term-color.php:85
+#: inc/term-color/package/class.term-color.php:171
 msgid "Color"
 msgstr "色"
 
@@ -1930,6 +1930,14 @@ msgstr "ページ設定"
 msgid "Select Page"
 msgstr "ページを選択"
 
+#: src/blocks/page-content/edit.js:74
+msgid ""
+"This block can display private content. Please note that this content will "
+"be public even if you set the original page to private."
+msgstr ""
+"このブロックは非公開のコンテンツも表示できます。 元のページを非公開に設定して"
+"も、このコンテンツは公開されますのでご注意ください。"
+
 #: src/blocks/pr-blocks/edit.js:102
 msgid "PR Block1 Setting"
 msgstr "PR Block1 設定"
@@ -3100,9 +3108,9 @@ msgid "This message only display on the edit screen."
 msgstr "このメッセージは編集画面でのみ表示されます。"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/page-content/index.php:124
-#: inc/vk-blocks/build/blocks/page-content/index.php:124
-#: src/blocks/page-content/index.php:124
-#: test/phpunit/free/test-page-content.php:55
+#: inc/vk-blocks/build/blocks/page-content/index.php:126
+#: src/blocks/page-content/index.php:126
+#: test/phpunit/free/test-page-content.php:59
 msgid "Edit this area"
 msgstr "このエリアを編集"
 

@@ -71,7 +71,10 @@ export default function PageContentEdit({ attributes, setAttributes }) {
 							}
 						/>
 						<p className="alert alert-danger">
-						{__('This block can display private content. Please note that this content will be public even if you set the original page to private.', 'vk-blocks')}
+							{__(
+								'This block can display private content. Please note that this content will be public even if you set the original page to private.',
+								'vk-blocks'
+							)}
 						</p>
 					</BaseControl>
 				</PanelBody>

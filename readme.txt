@@ -63,8 +63,9 @@ e.g.
 
 == Changelog ==
 
-[ Other ] Update the required WordPress version
 [ Add Setting ][ margin / spacer ] Add custom value to margin setting
+[ Other ] Update the required WordPress version
+[ Bug Fix ][ Outer ( Pro ) ] Fix Outer Container CSS.
 [ Bug fix ] Cope with XSS
 
 = 1.53.0 =

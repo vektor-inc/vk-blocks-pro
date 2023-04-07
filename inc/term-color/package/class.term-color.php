@@ -23,10 +23,10 @@ if ( ! class_exists( 'Vk_term_color' ) ) {
 		  SANITIZE DATA
 		/*-------------------------------------------*/
 
-		public static function sanitize_hex( $meta_value ) {
+		public static function sanitize_hex( $color ) {
 			// sanitize_hex_color() は undefined function くらう
-			$meta_value = ltrim( $meta_value, '#' );
-			return preg_match( '/^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/', $meta_value ) ? $meta_value : '';
+			$color = ltrim( $color, '#' );
+			return preg_match( '/^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/', $color ) ? $color : '';
 		}
 
 		/*

@@ -252,9 +252,12 @@ msgstr ""
 #: src/blocks/button/edit.js:661
 #: src/blocks/icon/edit.js:289
 #: src/blocks/staff/edit.js:199
-#: inc/term-color/package/class.term-color.php:41
-#: inc/term-color/package/class.term-color.php:56
-#: inc/term-color/package/class.term-color.php:130
+#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:41
+#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:56
+#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:130
+#: inc/term-color/package/class.term-color.php:67
+#: inc/term-color/package/class.term-color.php:85
+#: inc/term-color/package/class.term-color.php:171
 msgid "Color"
 msgstr ""
 
@@ -1949,6 +1952,10 @@ msgstr ""
 msgid "Select Page"
 msgstr ""
 
+#: src/blocks/page-content/edit.js:74
+msgid "This block can display private content. Please note that this content will be public even if you set the original page to private."
+msgstr ""
+
 #: src/blocks/pr-blocks/edit.js:102
 msgid "PR Block1 Setting"
 msgstr ""
@@ -3002,9 +3009,10 @@ msgstr ""
 msgid "This message only display on the edit screen."
 msgstr ""
 
-#: inc/vk-blocks/build/blocks/page-content/index.php:124
-#: src/blocks/page-content/index.php:124
-#: test/phpunit/free/test-page-content.php:55
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/page-content/index.php:124
+#: inc/vk-blocks/build/blocks/page-content/index.php:126
+#: src/blocks/page-content/index.php:126
+#: test/phpunit/free/test-page-content.php:59
 msgid "Edit this area"
 msgstr ""
 

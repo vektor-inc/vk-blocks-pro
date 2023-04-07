@@ -1,7 +1,12 @@
 /**
  * WordPress dependencies
  */
-import { render, useState, createContext } from '@wordpress/element';
+import {
+	render,
+	createRoot,
+	useState,
+	createContext,
+} from '@wordpress/element';
 
 /**
  * Internal dependencies
@@ -25,6 +30,8 @@ export default function VKBlocksAdmin() {
 		vkBlocksObject.options
 	);
 
+	const [reloadFlag, setReloadFlag] = useState(false);
+
 	return (
 		<>
 			{/* AdminContext.Providerで各コンポーネントにvalueを渡す */}
@@ -32,6 +39,8 @@ export default function VKBlocksAdmin() {
 				value={{
 					vkBlocksOption,
 					setVkBlocksOption,
+					reloadFlag,
+					setReloadFlag,
 				}}
 			>
 				{vkBlocksObject.isLicenseSetting && <AdminLicense />}
@@ -46,9 +55,19 @@ export default function VKBlocksAdmin() {
 				<SaveButton
 					classOption={'sticky'}
 					vkBlocksOption={vkBlocksOption}
+					reloadFlag={reloadFlag}
 				/>
 			</AdminContext.Provider>
 		</>
 	);
 }
-render(<VKBlocksAdmin />, document.getElementById('vk-blocks-admin'));
+
+// NOTE: ReactDOM.renderが非推奨になったのでフォールバック WP6.1以下をサポートしなくなったら削除すること #1574
+const existsCreateRoot = typeof createRoot === 'function';
+if (existsCreateRoot) {
+	const container = document.getElementById('vk-blocks-admin');
+	const root = createRoot(container);
+	root.render(<VKBlocksAdmin />);
+} else {
+	render(<VKBlocksAdmin />, document.getElementById('vk-blocks-admin'));
+}

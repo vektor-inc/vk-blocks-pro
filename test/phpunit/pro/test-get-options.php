@@ -20,7 +20,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 		 * array(
 		 * 	'option_check_target' => 'vk_blocks_pro_license_key',
 		 * 	'option'  => array(
-		 * 		'display_vk_block_template' => 'hide',
 		 * 		'new_faq_accordion' => 'open',
 		 * 		'balloon_border_width' => 2,
 		 * 		'margin_unit' => 'px',
@@ -61,31 +60,35 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'mobile' => null,
 							'tablet' => null,
 							'pc' => null,
+							'custom' => '',
 						),
 						'lg' => array(
 							'mobile' => null,
 							'tablet' => null,
 							'pc' => null,
+							'custom' => '',
 						),
 						'md' => array(
 							'mobile' => null,
 							'tablet' => null,
 							'pc' => null,
+							'custom' => '',
 						),
 						'sm' => array(
 							'mobile' => null,
 							'tablet' => null,
 							'pc' => null,
+							'custom' => '',
 						),
 						'xs' => array(
 							'mobile' => null,
 							'tablet' => null,
 							'pc' => null,
+							'custom' => '',
 						),
 					),
 					'load_separate_option' => false,
 					'vk_blocks_pro_license_key' => null,
-					'display_vk_block_template' => 'display',
 					'new_faq_accordion' => 'disable',
 					'show_custom_css_editor_flag' => 'show',
 					'custom_format_lists' => array(
@@ -109,25 +112,11 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'balloon_meta_lists' => array(),
 				),
 			),
-			// デフォルトの表示非表示調整 v0.44.13
-			// https://github.com/vektor-inc/vk-blocks-pro/commit/b17c2ae4097a5530eb88a7fdcf03885d89ece643#diff-9b75d117946ae115e35175fb160346351a75f98e850679a65de42680bd4611e1
-			array(
-				'option_check_target' => 'display_vk_block_template',
-				'option'  => array(
-					'hide_wp_block_template' => true,
-					'hide_vk_block_template' => false,
-				),
-				'correct' => 'display',
-			),
-			// hide_wp_block_template,hide_vk_block_templateは廃止されたので以降のテストでは追加していない
-
 			// New FAQ アコーディオン機能 v0.46.0
 			// https://github.com/vektor-inc/vk-blocks-pro/pull/21
 			array(
 				'option_check_target' => 'new_faq_accordion',
-				'option'  => array(
-					'display_vk_block_template' => 'hide',
-				),
+				'option'  => array(),
 				'correct' => 'disable',
 			),
 			// 吹き出し線の太さ v0.55.0
@@ -135,7 +124,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 			array(
 				'option_check_target' => 'balloon_border_width',
 				'option'  => array(
-					'display_vk_block_template' => 'hide',
 					'new_faq_accordion' => 'open',
 				),
 				'correct' => 1,
@@ -145,7 +133,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 			array(
 				'option_check_target' => 'margin_unit',
 				'option'  => array(
-					'display_vk_block_template' => 'hide',
 					'new_faq_accordion' => 'open',
 					'balloon_border_width' => 2,
 				),
@@ -166,7 +153,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 					['margin_size','sm','pc'],
 				),
 				'option'  => array(
-					'display_vk_block_template' => 'hide',
 					'new_faq_accordion' => 'open',
 					'balloon_border_width' => 2,
 				),
@@ -195,7 +181,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 			array(
 				'option_check_target' => 'load_separate_option',
 				'option'  => array(
-					'display_vk_block_template' => 'hide',
 					'new_faq_accordion' => 'open',
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
@@ -224,7 +209,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 			array(
 				'option_check_target' => 'vk_blocks_pro_license_key',
 				'option'  => array(
-					'display_vk_block_template' => 'hide',
 					'new_faq_accordion' => 'open',
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
@@ -260,7 +244,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 					['margin_size','xs','pc'],
 				),
 				'option'  => array(
-					'display_vk_block_template' => 'hide',
 					'new_faq_accordion' => 'open',
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
@@ -302,7 +285,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 			array(
 				'option_check_target' => 'show_custom_css_editor_flag',
 				'option'  => array(
-					'display_vk_block_template' => 'hide',
 					'new_faq_accordion' => 'open',
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
@@ -342,7 +324,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 			array(
 				'option_check_target' => 'custom_format_lists',
 				'option'  => array(
-					'display_vk_block_template' => 'hide',
 					'new_faq_accordion' => 'open',
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
@@ -398,7 +379,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 			array(
 				'option_check_target' => 'disable_block_lists',
 				'option'  => array(
-					'display_vk_block_template' => 'hide',
 					'new_faq_accordion' => 'open',
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
@@ -469,7 +449,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 			array(
 				'option_check_target' => 'custom_block_style_lists',
 				'option'  => array(
-					'display_vk_block_template' => 'hide',
 					'new_faq_accordion' => 'open',
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
@@ -547,7 +526,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 			array(
 				'option_check_target' => 'balloon_meta_lists',
 				'option'  => array(
-					'display_vk_block_template' => 'hide',
 					'new_faq_accordion' => 'open',
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
@@ -639,31 +617,35 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'mobile' => 1,
 							'tablet' => 2,
 							'pc' => 3,
+							'custom' => 'var(--wp--custom--spacing--xx--small)',
 						),
 						'lg' => array(
 							'mobile' => 1,
 							'tablet' => 2,
 							'pc' => 3,
+							'custom' => 'var(--wp--custom--spacing--xx--small)',
 						),
 						'md' => array(
 							'mobile' => 1,
 							'tablet' => 2,
 							'pc' => 3,
+							'custom' => 'var(--wp--custom--spacing--xx--small)',
 						),
 						'sm' => array(
 							'mobile' => 1,
 							'tablet' => 2,
 							'pc' => 3,
+							'custom' => 'var(--wp--custom--spacing--xx--small)',
 						),
 						'xs' => array(
 							'mobile' => 1,
 							'tablet' => 2,
 							'pc' => 3,
+							'custom' => 'var(--wp--custom--spacing--xx--small)',
 						),
 					),
 					'load_separate_option' => true,
 					'vk_blocks_pro_license_key' => 'test_license_key',
-					'display_vk_block_template' => 'display',
 					'new_faq_accordion' => 'open',
 					'show_custom_css_editor_flag' => 'hide',
 					'custom_format_lists' => array(
@@ -709,6 +691,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'property_name'         => 'vk-block-style-paragraph-1',
 							'property_label'        => '段落カスタムブロックスタイル１',
 							'property_inline_style' => '.vk-block-style-paragraph-1 { color:red; }',
+							'property_transform_inline_style' => '.editor-styles-wrapper .vk-block-style-paragraph-1 { color:red; }',
 						),
 					),
 					'balloon_meta_lists' => array(
@@ -726,31 +709,35 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'mobile' => 1,
 							'tablet' => 2,
 							'pc' => 3,
+							'custom' => 'var(--wp--custom--spacing--xx--small)',
 						),
 						'lg' => array(
 							'mobile' => 1,
 							'tablet' => 2,
 							'pc' => 3,
+							'custom' => 'var(--wp--custom--spacing--xx--small)',
 						),
 						'md' => array(
 							'mobile' => 1,
 							'tablet' => 2,
 							'pc' => 3,
+							'custom' => 'var(--wp--custom--spacing--xx--small)',
 						),
 						'sm' => array(
 							'mobile' => 1,
 							'tablet' => 2,
 							'pc' => 3,
+							'custom' => 'var(--wp--custom--spacing--xx--small)',
 						),
 						'xs' => array(
 							'mobile' => 1,
 							'tablet' => 2,
-							'pc' => 3,
+							'pc'     => 3,
+							'custom' => 'var(--wp--custom--spacing--xx--small)',
 						),
 					),
 					'load_separate_option' => true,
 					'vk_blocks_pro_license_key' => 'test_license_key',
-					'display_vk_block_template' => 'display',
 					'new_faq_accordion' => 'open',
 					'show_custom_css_editor_flag' => 'hide',
 					'custom_format_lists' => array(
@@ -796,6 +783,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'property_name'         => 'vk-block-style-paragraph-1',
 							'property_label'        => '段落カスタムブロックスタイル１',
 							'property_inline_style' => '.vk-block-style-paragraph-1 { color:red; }',
+							'property_transform_inline_style' => '.editor-styles-wrapper .vk-block-style-paragraph-1 { color:red; }',
 						),
 					),
 					'balloon_meta_lists' => array(

@@ -12,6 +12,10 @@
  * @return string
  */
 function vk_blocks_has_custom_css_support( $block_name ) {
+	if ( empty( $block_name ) ) {
+		return false;
+	}
+
 	$block_type = WP_Block_Type_Registry::get_instance()->get_registered( $block_name );
 	if ( ! block_has_support( $block_type, array( 'customClassName' ), true ) ) {
 		return false;

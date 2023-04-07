@@ -1,10 +1,10 @@
 === VK Blocks ===
-Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird,chiakikouno
+Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird,chiakikouno,doshimaf
 Donate link:
 Tags: Gutenberg,FAQ,alert
-Requires at least: 5.9
-Tested up to: 6.1.0
-Stable tag: 1.50.0.1
+Requires at least: 6.0
+Tested up to: 6.2
+Stable tag: 1.52.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -16,9 +16,8 @@ This is a plugin that extends Gutenberg's blocks.
 This is a plugin that extends Gutenberg's blocks.
 
 [ Blocks ]
-
+* Slider
 * Staff
-* Outer
 * Alert
 * FAQ
 * Balloon
@@ -36,7 +35,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Card [ Pro ]
 * Grid Column [ Pro ]
 * Animation [ Pro ]
-* Slider [ Pro ]
+* Outer [ Pro ]
 
 [ Editing and correction ]
 
@@ -63,6 +62,24 @@ e.g.
 
 
 == Changelog ==
+
+[ Other ] Update the required WordPress version
+[ Add Setting ][ margin / spacer ] Add custom value to margin setting
+
+= 1.53.0 =
+[ Add setting ][ Slider ] Allow decimalon slider per view Setting & Add Setting of Centering Active Slide
+[ Specification Change ][ Custom Block Style Setting (Pro) ] Don't limit target blocks to VK Blocks.
+[ Bug Fix ] Fix inline css when css sepalate load mode.
+
+= 1.52.0 =
+[ Specification Change ] Add multiple length units.
+[ Specification Change ][ Custom CSS (Pro) ] Changed specification to output CSS wrapped by .editor-styles-wrapper in block editor.
+[ Specification Change ][ Custom Block Style Setting (Pro) ] Changed the specification to save the CSS wrapped in .editor-styles-wrapper and output that CSS in the block editor.
+[ Specification Change ][ Outer( Pro ) ] When the block is made full width, the class name of "alignfull" will be given.
+[ Bug Fix ][ Custom CSS (Pro) ] Fix PHP 8.1 warning
+[ Bug fix ][ Slider ] Allow 0 to be entered in numeric form.
+[ Bug fix ][ Slider ] Fix content width under case of use .is-layout-constrained and editor screen
+[ other ] Removed unused display_vk_block_template option value.
 
 = 1.51.0 =
 [ Improvement ][ Balloon ] Improvement to allow any number of registrations in admin.

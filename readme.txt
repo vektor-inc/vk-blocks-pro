@@ -63,6 +63,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Page Content ] Cope with XSS
 [ Other ] Update the required WordPress version
 [ Add Setting ][ margin / spacer ] Add custom value to margin setting
 

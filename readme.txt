@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.0
 Tested up to: 6.2
-Stable tag: 1.52.0.1
+Stable tag: 1.53.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,8 +63,11 @@ e.g.
 
 == Changelog ==
 
-[ Other ] Update the required WordPress version
+= 1.54.0 =
 [ Add Setting ][ margin / spacer ] Add custom value to margin setting
+[ Other ] Update the required WordPress version
+[ Bug Fix ][ Outer ( Pro ) ] Fix Outer Container CSS.
+[ Bug fix ] Cope with XSS
 
 = 1.53.0 =
 [ Add setting ][ Slider ] Allow decimalon slider per view Setting & Add Setting of Centering Active Slide

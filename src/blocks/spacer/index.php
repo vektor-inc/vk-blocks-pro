@@ -149,7 +149,7 @@ function vk_blocks_get_spacer_size_style_all( $options ) {
 		if ( vk_blocks_is_size_print( $options, 'mobile' ) ) {
 			$dynamic_css         .= '
 			@media (max-width: 575.98px) {
-				:root{';
+				:root,body{';
 					$dynamic_css .= ! empty( $options['margin_size']['xs']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'xs', 'mobile', $unit ) );
 					$dynamic_css .= ! empty( $options['margin_size']['sm']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'sm', 'mobile', $unit ) );
 					$dynamic_css .= ! empty( $options['margin_size']['md']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'md', 'mobile', $unit ) );
@@ -162,7 +162,7 @@ function vk_blocks_get_spacer_size_style_all( $options ) {
 		if ( vk_blocks_is_size_print( $options, 'tablet' ) ) {
 			$dynamic_css         .= '
 			@media (min-width: 576px) and (max-width: 991.98px) {
-				:root{';
+				:root,body{';
 					$dynamic_css .= ! empty( $options['margin_size']['xs']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'xs', 'tablet', $unit ) );
 					$dynamic_css .= ! empty( $options['margin_size']['sm']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'sm', 'tablet', $unit ) );
 					$dynamic_css .= ! empty( $options['margin_size']['md']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'md', 'tablet', $unit ) );
@@ -175,7 +175,7 @@ function vk_blocks_get_spacer_size_style_all( $options ) {
 		if ( vk_blocks_is_size_print( $options, 'pc' ) ) {
 			$dynamic_css         .= '
 			@media (min-width: 992px) {
-				:root{';
+				:root,body{';
 					$dynamic_css .= ! empty( $options['margin_size']['xs']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'xs', 'pc', $unit ) );
 					$dynamic_css .= ! empty( $options['margin_size']['sm']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'sm', 'pc', $unit ) );
 					$dynamic_css .= ! empty( $options['margin_size']['md']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'md', 'pc', $unit ) );
@@ -194,7 +194,7 @@ function vk_blocks_get_spacer_size_style_all( $options ) {
 		! empty( $options['margin_size']['xl']['custom'] )
 	) {
 		$dynamic_css     .= '
-		:root{';
+		:root,body{';
 			$dynamic_css .= ! empty( $options['margin_size']['xs']['custom'] ) ? esc_attr( vk_blocks_get_spacer_size_style( $options, 'xs', 'custom', $unit ) ) : '';
 			$dynamic_css .= ! empty( $options['margin_size']['sm']['custom'] ) ? esc_attr( vk_blocks_get_spacer_size_style( $options, 'sm', 'custom', $unit ) ) : '';
 			$dynamic_css .= ! empty( $options['margin_size']['md']['custom'] ) ? esc_attr( vk_blocks_get_spacer_size_style( $options, 'md', 'custom', $unit ) ) : '';

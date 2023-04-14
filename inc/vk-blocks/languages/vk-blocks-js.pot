@@ -307,7 +307,9 @@ msgid "Preview Text"
 msgstr ""
 
 #: src/admin/license.js:22
-msgid "Enter a valid Lightning G3 Pro Pack or Lightning Pro license key."
+msgid ""
+"Please enter a license key of valid Vektor Passport ( or Lightning G3 Pro "
+"Pack or Lightning Pro )."
 msgstr ""
 
 #: src/admin/license.js:28
@@ -1134,7 +1136,7 @@ msgid "Wave"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:464
-#: src/extensions/core/list/style.js:161
+#: src/extensions/core/list/style.js:258
 msgid "Triangle"
 msgstr ""
 
@@ -1341,7 +1343,7 @@ msgstr ""
 #: src/blocks/slider/edit.js:663
 #: src/blocks/staff/edit.js:173
 #: src/extensions/core/heading/style.js:11
-#: src/extensions/core/list/style.js:152
+#: src/extensions/core/list/style.js:249
 msgid "Default"
 msgstr ""
 
@@ -2685,48 +2687,48 @@ msgstr ""
 msgid "Wave04"
 msgstr ""
 
-#: src/extensions/core/list/style.js:157
+#: src/extensions/core/list/style.js:108
+msgid "List Icon Color"
+msgstr ""
+
+#: src/extensions/core/list/style.js:254
 msgid "Arrow"
 msgstr ""
 
-#: src/extensions/core/list/style.js:165
+#: src/extensions/core/list/style.js:262
 msgid "Check"
 msgstr ""
 
-#: src/extensions/core/list/style.js:169
+#: src/extensions/core/list/style.js:266
 msgid "Check Square"
 msgstr ""
 
-#: src/extensions/core/list/style.js:173
+#: src/extensions/core/list/style.js:270
 msgid "Check Circle"
 msgstr ""
 
-#: src/extensions/core/list/style.js:177
+#: src/extensions/core/list/style.js:274
 msgid "Handpoint"
 msgstr ""
 
-#: src/extensions/core/list/style.js:181
+#: src/extensions/core/list/style.js:278
 msgid "Pencil"
 msgstr ""
 
-#: src/extensions/core/list/style.js:185
+#: src/extensions/core/list/style.js:282
 msgid "Smile"
 msgstr ""
 
-#: src/extensions/core/list/style.js:189
+#: src/extensions/core/list/style.js:286
 msgid "Frown"
 msgstr ""
 
-#: src/extensions/core/list/style.js:193
+#: src/extensions/core/list/style.js:290
 msgid "Numbered Circle"
 msgstr ""
 
-#: src/extensions/core/list/style.js:197
+#: src/extensions/core/list/style.js:294
 msgid "Numbered Square"
-msgstr ""
-
-#: src/extensions/core/list/style.js:85
-msgid "List Icon Color"
 msgstr ""
 
 #: src/extensions/core/table/style.js:17

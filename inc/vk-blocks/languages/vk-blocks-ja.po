@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "POT-Creation-Date: 2023-04-14T03:44:21+00:00\n"
-"PO-Revision-Date: 2023-04-14 12:46+0900\n"
+"PO-Revision-Date: 2023-04-14 14:20+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -2978,8 +2978,6 @@ msgstr "プラグインを有効化しました。"
 
 #: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:149
 #: inc/tgm-plugin-activation/tgm-config.php:149
-#, fuzzy
-#| msgid "The following plugin was activated successfully:"
 msgid "The following plugin was activated successfully:"
 msgstr "次のプラグインを有効化しました:"
 
@@ -3243,7 +3241,7 @@ msgid ""
 "Please enter a valid license key for any of the following products on the "
 "settings screen."
 msgstr ""
-"設定画面で以下のいずれかの製品の有効なライセンス キーを入力してください。"
+"設定画面で以下のいずれかの製品の有効なライセンスキーを入力してください。"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/alert/block.json
 #: inc/vk-blocks/build/blocks/alert/block.json src/blocks/alert/block.json

@@ -93,35 +93,37 @@ export default function OuterEdit(props) {
 				className: classnames(newClassName),
 			});
 		}
+		// 前バージョンとの互換処理
+		if (
+			innerSideSpaceValuePC === undefined ||
+			innerSideSpaceValuePC === null
+		) {
+			setAttributes({
+				innerSideSpaceValuePC: 0,
+			});
+		}
+		if (
+			innerSideSpaceValueTablet === undefined ||
+			innerSideSpaceValueTablet === null
+		) {
+			setAttributes({
+				innerSideSpaceValueTablet: 0,
+			});
+		}
+		if (
+			innerSideSpaceValueMobile === undefined ||
+			innerSideSpaceValueMobile === null
+		) {
+			setAttributes({
+				innerSideSpaceValueTablet: 0,
+			});
+		}
+		if (innerSideSpaceUnit === undefined || innerSideSpaceUnit === null) {
+			setAttributes({
+				innerSideSpaceUnit: 'px',
+			});
+		}
 	}, [clientId]);
-
-	// 前バージョンとの互換処理
-	if (innerSideSpaceValuePC === undefined || innerSideSpaceValuePC === null) {
-		setAttributes({
-			innerSideSpaceValuePC: 0,
-		});
-	}
-	if (
-		innerSideSpaceValueTablet === undefined ||
-		innerSideSpaceValueTablet === null
-	) {
-		setAttributes({
-			innerSideSpaceValueTablet: 0,
-		});
-	}
-	if (
-		innerSideSpaceValueMobile === undefined ||
-		innerSideSpaceValueMobile === null
-	) {
-		setAttributes({
-			innerSideSpaceValueTablet: 0,
-		});
-	}
-	if (innerSideSpaceUnit === undefined || innerSideSpaceUnit === null) {
-		setAttributes({
-			innerSideSpaceUnit: 'px',
-		});
-	}
 
 	const opacityClass = opacity && opacity * 10;
 	const bgColorClasses = classnames({

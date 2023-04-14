@@ -2,9 +2,9 @@
 Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird,chiakikouno,doshimaf
 Donate link:
 Tags: Gutenberg,FAQ,alert
-Requires at least: 5.9
-Tested up to: 6.1.0
-Stable tag: 1.52.0.1
+Requires at least: 6.0
+Tested up to: 6.2
+Stable tag: 1.53.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -64,7 +64,14 @@ e.g.
 == Changelog ==
 
 [ Add Block ][ Dynamic Text Block (Pro) ] Add Dynamic text block.
+[ Specification Change ][ List ] cope with custom color palette (WordPress 6.2 or higher)
+[ Bug fix ][ Spacer ] Fix custom css variable
+
+= 1.54.0 =
 [ Add Setting ][ margin / spacer ] Add custom value to margin setting
+[ Other ] Update the required WordPress version
+[ Bug Fix ][ Outer ( Pro ) ] Fix Outer Container CSS.
+[ Bug fix ] Cope with XSS
 
 = 1.53.0 =
 [ Add setting ][ Slider ] Allow decimalon slider per view Setting & Add Setting of Centering Active Slide

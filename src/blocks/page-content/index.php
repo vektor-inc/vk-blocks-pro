@@ -113,7 +113,9 @@ function vk_blocks_page_content_render_callback( $attributes ) {
 			$classes .= ' ' . $attributes['marginBottom'];
 		}
 
-		$page_html .= '<div class="' . $classes . '">';
+		$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => $classes ) );
+
+		$page_html .= '<div ' . $wrapper_attributes . '>';
 		// Warning : 'vk_page_content' is old hook name that this line is old filter name fall back.
 		$page_content = apply_filters( 'vk_page_content', $page_content ); //phpcs:ignore
 		$page_html   .= apply_filters( 'vk_blocks_page_content', $page_content );

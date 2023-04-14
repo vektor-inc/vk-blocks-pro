@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.53.0.0\n"
+"Project-Id-Version: VK Blocks Pro 1.54.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-03-21T08:57:27+00:00\n"
+"POT-Creation-Date: 2023-04-14T06:20:01+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks\n"
@@ -255,12 +255,12 @@ msgstr ""
 #: src/blocks/button/edit.js:661
 #: src/blocks/icon/edit.js:289
 #: src/blocks/staff/edit.js:199
-#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:41
-#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:56
-#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:130
-#: inc/term-color/package/class.term-color.php:41
-#: inc/term-color/package/class.term-color.php:56
-#: inc/term-color/package/class.term-color.php:130
+#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:67
+#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:85
+#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:171
+#: inc/term-color/package/class.term-color.php:67
+#: inc/term-color/package/class.term-color.php:85
+#: inc/term-color/package/class.term-color.php:171
 msgid "Color"
 msgstr ""
 
@@ -322,7 +322,7 @@ msgid "Preview Text"
 msgstr ""
 
 #: src/admin/license.js:22
-msgid "Enter a valid Lightning G3 Pro Pack or Lightning Pro license key."
+msgid "Please enter a license key of valid Vektor Passport ( or Lightning G3 Pro Pack or Lightning Pro )."
 msgstr ""
 
 #: src/admin/license.js:28
@@ -394,7 +394,7 @@ msgid "XL"
 msgstr ""
 
 #: src/admin/margin.js:43
-#: src/blocks/_pro/outer/edit.js:639
+#: src/blocks/_pro/outer/edit.js:641
 #: src/blocks/button/edit.js:522
 #: src/blocks/slider/edit.js:481
 #: src/components/advanced-viewport-control/index.js:25
@@ -402,7 +402,7 @@ msgid "PC"
 msgstr ""
 
 #: src/admin/margin.js:47
-#: src/blocks/_pro/outer/edit.js:624
+#: src/blocks/_pro/outer/edit.js:626
 #: src/blocks/button/edit.js:457
 #: src/blocks/slider/edit.js:502
 #: src/components/advanced-viewport-control/index.js:31
@@ -410,7 +410,7 @@ msgid "Tablet"
 msgstr ""
 
 #: src/admin/margin.js:51
-#: src/blocks/_pro/outer/edit.js:609
+#: src/blocks/_pro/outer/edit.js:611
 #: src/blocks/button/edit.js:392
 #: src/blocks/slider/edit.js:523
 #: src/components/advanced-viewport-control/index.js:39
@@ -508,7 +508,7 @@ msgstr ""
 #: src/blocks/faq2/index.js:21
 #: src/blocks/slider/edit.js:457
 #: src/extensions/common/inline-font-size/inline.js:28
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:256
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:260
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:256
 msgid "Normal"
 msgstr ""
@@ -737,7 +737,7 @@ msgid "Padding (Top)"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:140
-#: src/blocks/_pro/outer/edit.js:371
+#: src/blocks/_pro/outer/edit.js:373
 #: src/blocks/slider-item/edit.js:120
 msgid "Padding (Left and Right)"
 msgstr ""
@@ -748,7 +748,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:187
 #: src/blocks/_pro/grid-column/edit.js:91
-#: src/blocks/_pro/outer/edit.js:660
+#: src/blocks/_pro/outer/edit.js:662
 #: src/blocks/icon-outer/edit.js:181
 #: src/blocks/icon/edit.js:171
 #: src/utils/unit-options.js:6
@@ -757,7 +757,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:191
 #: src/blocks/_pro/grid-column/edit.js:95
-#: src/blocks/_pro/outer/edit.js:664
+#: src/blocks/_pro/outer/edit.js:666
 #: src/blocks/icon-outer/edit.js:185
 #: src/blocks/icon/edit.js:175
 #: src/utils/unit-options.js:10
@@ -766,7 +766,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:195
 #: src/blocks/_pro/grid-column/edit.js:99
-#: src/blocks/_pro/outer/edit.js:668
+#: src/blocks/_pro/outer/edit.js:670
 #: src/blocks/icon-outer/edit.js:189
 #: src/blocks/icon/edit.js:179
 #: src/utils/unit-options.js:14
@@ -775,7 +775,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:199
 #: src/blocks/_pro/grid-column/edit.js:103
-#: src/blocks/_pro/outer/edit.js:672
+#: src/blocks/_pro/outer/edit.js:674
 #: src/blocks/icon-outer/edit.js:193
 #: src/blocks/icon/edit.js:183
 #: src/utils/unit-options.js:18
@@ -1013,149 +1013,149 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:263
+#: src/blocks/_pro/outer/edit.js:265
 #: src/blocks/slider-item/edit.js:168
 msgid "Background Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:268
+#: src/blocks/_pro/outer/edit.js:270
 #: src/blocks/pr-content/edit.js:67
 #: src/blocks/slider-item/edit.js:172
 msgid "Color Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:269
+#: src/blocks/_pro/outer/edit.js:271
 #: src/blocks/slider-item/edit.js:174
 msgid "Color will overcome background image. If you want to display image, set opacity 0."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:277
+#: src/blocks/_pro/outer/edit.js:279
 #: src/blocks/slider-item/edit.js:182
 msgid "Opacity Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:291
+#: src/blocks/_pro/outer/edit.js:293
 #: src/blocks/slider-item/edit.js:217
 msgid "Background Image PC"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:307
+#: src/blocks/_pro/outer/edit.js:309
 #: src/blocks/slider-item/edit.js:233
 msgid "Background Image Tablet"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:317
+#: src/blocks/_pro/outer/edit.js:319
 #: src/blocks/slider-item/edit.js:243
 msgid "Background Image Mobile"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:327
+#: src/blocks/_pro/outer/edit.js:329
 msgid "Background image Position"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:335
+#: src/blocks/_pro/outer/edit.js:337
 msgid "Repeat"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:339
+#: src/blocks/_pro/outer/edit.js:341
 msgid "Cover"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:343
+#: src/blocks/_pro/outer/edit.js:345
 msgid "Cover fixed (Not fixed on iPhone)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:350
+#: src/blocks/_pro/outer/edit.js:352
 msgid "Parallax (Non-guaranteed)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:365
+#: src/blocks/_pro/outer/edit.js:367
 #: src/blocks/pr-content/edit.js:229
 #: src/blocks/slider-item/edit.js:115
 msgid "Layout Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:368
+#: src/blocks/_pro/outer/edit.js:370
 #: src/blocks/balloon/edit.js:504
 #: src/blocks/slider/edit.js:449
 msgid "Width"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:375
+#: src/blocks/_pro/outer/edit.js:377
 msgid "Fit to the Content area"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:382
+#: src/blocks/_pro/outer/edit.js:384
 msgid "Add padding to the Outer area"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:389
+#: src/blocks/_pro/outer/edit.js:391
 msgid "Remove padding from the Outer area"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:403
+#: src/blocks/_pro/outer/edit.js:405
 msgid "Padding (Top and Bottom)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:408
+#: src/blocks/_pro/outer/edit.js:410
 msgid "Use default padding"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:415
+#: src/blocks/_pro/outer/edit.js:417
 msgid "Do not use default padding"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:429
+#: src/blocks/_pro/outer/edit.js:431
 msgid "* If you select \"Do not use\" that, please set yourself it such as a spacer block."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:437
+#: src/blocks/_pro/outer/edit.js:439
 msgid "Divider Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:442
+#: src/blocks/_pro/outer/edit.js:444
 #: src/blocks/balloon/edit.js:438
 msgid "Type"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:450
+#: src/blocks/_pro/outer/edit.js:452
 msgid "Tilt"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:454
+#: src/blocks/_pro/outer/edit.js:456
 msgid "Curve"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:458
+#: src/blocks/_pro/outer/edit.js:460
 msgid "Wave"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:462
-#: src/extensions/core/list/style.js:161
+#: src/blocks/_pro/outer/edit.js:464
+#: src/extensions/core/list/style.js:258
 msgid "Triangle"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:468
+#: src/blocks/_pro/outer/edit.js:470
 msgid "Upper Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:489
+#: src/blocks/_pro/outer/edit.js:491
 msgid "Lower Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:511
+#: src/blocks/_pro/outer/edit.js:513
 msgid "Border Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:516
+#: src/blocks/_pro/outer/edit.js:518
 msgid "Border will disappear when divider effect is applied."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:522
+#: src/blocks/_pro/outer/edit.js:524
 msgid "Border type"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:530
+#: src/blocks/_pro/outer/edit.js:532
 #: src/blocks/_pro/step-item/edit.js:144
 #: src/blocks/_pro/timeline-item/edit.js:113
 #: src/blocks/balloon/edit.js:551
@@ -1164,60 +1164,60 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:534
+#: src/blocks/_pro/outer/edit.js:536
 #: src/blocks/_pro/step-item/edit.js:115
 #: src/blocks/_pro/timeline-item/edit.js:88
 #: src/blocks/pr-content/edit.js:144
-#: src/extensions/core/group/style.js:102
+#: src/extensions/core/group/style.js:108
 msgid "Solid"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:538
-#: src/extensions/core/group/style.js:110
+#: src/blocks/_pro/outer/edit.js:540
+#: src/extensions/core/group/style.js:116
 msgid "Dotted"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:542
-#: src/extensions/core/group/style.js:114
+#: src/blocks/_pro/outer/edit.js:544
+#: src/extensions/core/group/style.js:120
 msgid "Dashed"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:546
-#: src/extensions/core/group/style.js:118
+#: src/blocks/_pro/outer/edit.js:548
+#: src/extensions/core/group/style.js:124
 msgid "Double"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:550
+#: src/blocks/_pro/outer/edit.js:552
 msgid "Groove"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:554
+#: src/blocks/_pro/outer/edit.js:556
 msgid "Ridge"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:558
+#: src/blocks/_pro/outer/edit.js:560
 msgid "Inset"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:562
+#: src/blocks/_pro/outer/edit.js:564
 msgid "Outset"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:574
+#: src/blocks/_pro/outer/edit.js:576
 msgid "Border width"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:586
+#: src/blocks/_pro/outer/edit.js:588
 #: src/blocks/icon-outer/edit.js:210
 #: src/blocks/icon/edit.js:200
 msgid "Border radius"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:602
+#: src/blocks/_pro/outer/edit.js:604
 msgid "Container Inner Side Space Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:650
+#: src/blocks/_pro/outer/edit.js:652
 #: src/components/advanced-unit-control/index.js:13
 msgid "Unit Type"
 msgstr ""
@@ -1336,7 +1336,7 @@ msgstr ""
 #: src/blocks/slider/edit.js:663
 #: src/blocks/staff/edit.js:173
 #: src/extensions/core/heading/style.js:11
-#: src/extensions/core/list/style.js:152
+#: src/extensions/core/list/style.js:249
 msgid "Default"
 msgstr ""
 
@@ -1440,28 +1440,28 @@ msgstr ""
 #: src/blocks/alert/edit.js:25
 #: src/blocks/button/edit.js:675
 #: src/blocks/pr-content/edit.js:165
-#: src/extensions/core/group/style.js:138
+#: src/extensions/core/group/style.js:144
 msgid "Success"
 msgstr ""
 
 #: src/blocks/alert/edit.js:28
 #: src/blocks/button/edit.js:679
 #: src/blocks/pr-content/edit.js:168
-#: src/extensions/core/group/style.js:134
+#: src/extensions/core/group/style.js:140
 msgid "Info"
 msgstr ""
 
 #: src/blocks/alert/edit.js:30
 #: src/blocks/button/edit.js:683
 #: src/blocks/pr-content/edit.js:170
-#: src/extensions/core/group/style.js:142
+#: src/extensions/core/group/style.js:148
 msgid "Warning"
 msgstr ""
 
 #: src/blocks/alert/edit.js:34
 #: src/blocks/button/edit.js:687
 #: src/blocks/pr-content/edit.js:174
-#: src/extensions/core/group/style.js:146
+#: src/extensions/core/group/style.js:152
 msgid "Danger"
 msgstr ""
 
@@ -1693,7 +1693,7 @@ msgstr ""
 
 #: src/blocks/button/edit.js:323
 #: src/extensions/common/inline-font-size/inline.js:23
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:251
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:255
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:251
 msgid "Small"
 msgstr ""
@@ -1993,6 +1993,10 @@ msgstr ""
 
 #: src/blocks/page-content/edit.js:64
 msgid "Select Page"
+msgstr ""
+
+#: src/blocks/page-content/edit.js:74
+msgid "This block can display private content. Please note that this content will be public even if you set the original page to private."
 msgstr ""
 
 #: src/blocks/pr-blocks/edit.js:102
@@ -2528,13 +2532,13 @@ msgid "Apply"
 msgstr ""
 
 #: src/extensions/common/inline-font-size/inline.js:33
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:261
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:265
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:261
 msgid "Big"
 msgstr ""
 
 #: src/extensions/common/inline-font-size/inline.js:38
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:266
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:270
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:266
 msgid "Extra big"
 msgstr ""
@@ -2603,22 +2607,26 @@ msgstr ""
 msgid "Responsive BR "
 msgstr ""
 
-#: src/extensions/core/group/style.js:106
+#: src/extensions/core/group/style.js:112
 msgid "Solid Roundcorner"
 msgstr ""
 
-#: src/extensions/core/group/style.js:122
+#: src/extensions/core/group/style.js:128
 msgid "Stitch"
 msgstr ""
 
-#: src/extensions/core/group/style.js:126
+#: src/extensions/core/group/style.js:132
 #: src/extensions/core/table/style.js:7
 msgid "Border Top Bottom"
 msgstr ""
 
-#: src/extensions/core/group/style.js:130
+#: src/extensions/core/group/style.js:136
 #: src/extensions/core/image/style.js:31
 msgid "Shadow"
+msgstr ""
+
+#: src/extensions/core/group/style.js:52
+msgid "Because of the theme that enabled theme.json become can specify the color from border panel that, specification from here is deprecated."
 msgstr ""
 
 #: src/extensions/core/heading/style.js:104
@@ -2685,48 +2693,48 @@ msgstr ""
 msgid "Wave04"
 msgstr ""
 
-#: src/extensions/core/list/style.js:157
+#: src/extensions/core/list/style.js:108
+msgid "List Icon Color"
+msgstr ""
+
+#: src/extensions/core/list/style.js:254
 msgid "Arrow"
 msgstr ""
 
-#: src/extensions/core/list/style.js:165
+#: src/extensions/core/list/style.js:262
 msgid "Check"
 msgstr ""
 
-#: src/extensions/core/list/style.js:169
+#: src/extensions/core/list/style.js:266
 msgid "Check Square"
 msgstr ""
 
-#: src/extensions/core/list/style.js:173
+#: src/extensions/core/list/style.js:270
 msgid "Check Circle"
 msgstr ""
 
-#: src/extensions/core/list/style.js:177
+#: src/extensions/core/list/style.js:274
 msgid "Handpoint"
 msgstr ""
 
-#: src/extensions/core/list/style.js:181
+#: src/extensions/core/list/style.js:278
 msgid "Pencil"
 msgstr ""
 
-#: src/extensions/core/list/style.js:185
+#: src/extensions/core/list/style.js:282
 msgid "Smile"
 msgstr ""
 
-#: src/extensions/core/list/style.js:189
+#: src/extensions/core/list/style.js:286
 msgid "Frown"
 msgstr ""
 
-#: src/extensions/core/list/style.js:193
+#: src/extensions/core/list/style.js:290
 msgid "Numbered Circle"
 msgstr ""
 
-#: src/extensions/core/list/style.js:197
+#: src/extensions/core/list/style.js:294
 msgid "Numbered Square"
-msgstr ""
-
-#: src/extensions/core/list/style.js:85
-msgid "List Icon Color"
 msgstr ""
 
 #: src/extensions/core/table/style.js:17
@@ -3095,11 +3103,24 @@ msgstr ""
 msgid "This message only display on the edit screen."
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/page-content/index.php:124
-#: inc/vk-blocks/build/blocks/page-content/index.php:124
-#: src/blocks/page-content/index.php:124
-#: test/phpunit/free/test-page-content.php:55
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/page-content/index.php:126
+#: inc/vk-blocks/build/blocks/page-content/index.php:126
+#: src/blocks/page-content/index.php:126
+#: test/phpunit/free/test-page-content.php:59
 msgid "Edit this area"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:40
+#: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:40
+#: src/blocks/_pro/taxonomy/index.php:40
+msgid "Please select taxonomy"
+msgstr ""
+
+#. translators:
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:152
+#: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:152
+#: src/blocks/_pro/taxonomy/index.php:152
+msgid "All of %s"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/font-awesome/class-vk-blocks-font-awesome-api.php:73
@@ -3190,34 +3211,26 @@ msgid "The VK Blocks Pro license is invalid."
 msgstr ""
 
 #: dist/vk-blocks-pro/vk-blocks.php:258
-#: vk-blocks.php:258
 msgid "Enter a valid license key for any of the following products on the settings screen."
 msgstr ""
 
 #: dist/vk-blocks-pro/vk-blocks.php:267
-#: vk-blocks.php:267
+#: vk-blocks.php:268
 msgid "Enter the license key"
 msgstr ""
 
 #: dist/vk-blocks-pro/vk-blocks.php:270
-#: vk-blocks.php:270
+#: vk-blocks.php:271
 msgid "If this display does not disappear even after entering a valid license key, re-acquire the update."
 msgstr ""
 
 #: dist/vk-blocks-pro/vk-blocks.php:271
-#: vk-blocks.php:271
+#: vk-blocks.php:272
 msgid "Re-acquisition of updates"
 msgstr ""
 
-#: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:40
-#: src/blocks/_pro/taxonomy/index.php:40
-msgid "Please select taxonomy"
-msgstr ""
-
-#. translators:
-#: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:152
-#: src/blocks/_pro/taxonomy/index.php:152
-msgid "All of %s"
+#: vk-blocks.php:258
+msgid "Please enter a valid license key for any of the following products on the settings screen."
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/alert/block.json
@@ -3860,6 +3873,20 @@ msgctxt "block description"
 msgid "This is a table of contents that is automatically generated according to the headings when added."
 msgstr ""
 
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/block.json
+#: inc/vk-blocks/build/blocks/_pro/taxonomy/block.json
+#: src/blocks/_pro/taxonomy/block.json
+msgctxt "block title"
+msgid "Taxonomy"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/block.json
+#: inc/vk-blocks/build/blocks/_pro/taxonomy/block.json
+#: src/blocks/_pro/taxonomy/block.json
+msgctxt "block description"
+msgid "Display Taxnomy List Pulldown"
+msgstr ""
+
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/timeline-item/block.json
 #: inc/vk-blocks/build/blocks/_pro/timeline-item/block.json
 #: src/blocks/_pro/timeline-item/block.json
@@ -3886,16 +3913,4 @@ msgstr ""
 #: src/blocks/_pro/timeline/block.json
 msgctxt "block description"
 msgid "Displays a simple schedule and other information that is useful for explaining the order."
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/_pro/taxonomy/block.json
-#: src/blocks/_pro/taxonomy/block.json
-msgctxt "block title"
-msgid "Taxonomy"
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/_pro/taxonomy/block.json
-#: src/blocks/_pro/taxonomy/block.json
-msgctxt "block description"
-msgid "Display Taxnomy List Pulldown"
 msgstr ""

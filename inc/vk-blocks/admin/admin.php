@@ -79,6 +79,7 @@ function vk_blocks_setting_page() {
 	$get_menu_html .= '<li><a href="#load-separete-setting">' . __( 'Load Separete Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= apply_filters( 'vk_blocks_pro_menu', '' );
 	$get_menu_html .= '<li><a href="#block-manager-setting">' . __( 'Block Manager Setting', 'vk-blocks' ) . '</a></li>';
+	$get_menu_html .= '<li><a href="#block-style-manager-setting">' . __( 'Block Style Manager Setting', 'vk-blocks' ) . '</a></li>';
 
 	Vk_Admin::admin_page_frame( $get_page_title, 'vk_blocks_setting', $get_logo_html, $get_menu_html );
 }
@@ -168,6 +169,7 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 			'colorPalette'     => wp_get_global_settings( array( 'color', 'palette' ) ),
 			'fontSizes'        => VK_Blocks_Global_Settings::font_sizes(),
 			'highlighterColor' => VK_Blocks_Global_Settings::HIGHLIGHTER_COLOR,
+			'blocksStyleLists' => VK_Blocks_Global_Settings::blocks_style_lists(),
 		)
 	);
 

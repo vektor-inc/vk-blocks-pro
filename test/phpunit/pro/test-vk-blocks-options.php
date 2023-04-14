@@ -38,4 +38,45 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 			$this->assertSame( $correct, $return );
 		}
 	}
+
+	public function test_get_deprecated_block_style_lists() {
+		$test_data = array(
+			array(
+				'correct' => array(
+					array(
+						'block_name'=> 'core/table',
+						'property_name'=> array(
+							'vk-table-border-top-bottom',
+						),
+					),
+					array(
+						'block_name'=> 'core/group',
+						'property_name'=> array(
+							'vk-group-solid',
+							'vk-group-solid-roundcorner',
+							'vk-group-dotted',
+						),
+					),
+				),
+			),
+		);
+		print PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+		print 'get_deprecated_block_style_lists()' . PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+		foreach ( $test_data as $test_value ) {
+			$return  = VK_Blocks_Options::get_deprecated_block_style_lists();
+			$correct = $test_value['correct'];
+
+			// print 'return  :';
+			// print PHP_EOL;
+			// var_dump( $return );
+			// print PHP_EOL;
+			// print 'correct  :';
+			// print PHP_EOL;
+			// var_dump( $correct );
+			// print PHP_EOL;
+			$this->assertSame( $correct, $return );
+		}
+	}
 }

@@ -227,6 +227,210 @@ class VK_Blocks_Global_Settings {
 	}
 
 	/**
+	 * Blocks_style_lists
+	 *
+	 * @return array
+	 */
+	public static function blocks_style_lists() {
+		$block_style_lists = array(
+			'core/heading' => array(
+				array(
+					'name'  => 'vk-heading-plain',
+					'label' => __( 'Plain', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-heading-background_fill_lightgray',
+					'label' => __( 'Background fill lightgray', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-heading-double_black',
+					'label' => __( 'Double border top and bottom black', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-heading-double_bottomborder_black',
+					'label' => __( 'Double border bottom black', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-heading-solid_black',
+					'label' => __( 'Solid border top and bottom black', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-heading-solid_bottomborder_black',
+					'label' => __( 'Solid border bottom black', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-heading-dotted_bottomborder_black',
+					'label' => __( 'Dotted border bottom black', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-heading-both_ends',
+					'label' => __( 'Both ends', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-heading-brackets_black',
+					'label' => __( 'Brackets black', 'vk-blocks' ),
+				),
+			),
+			'core/list'    => array(
+				array(
+					'name'  => 'vk-arrow-mark',
+					'label' => __( 'Arrow', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-triangle-mark',
+					'label' => __( 'Triangle', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-check-mark',
+					'label' => __( 'Check', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-check-square-mark',
+					'label' => __( 'Check Square', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-check-circle-mark',
+					'label' => __( 'Check Circle', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-handpoint-mark',
+					'label' => __( 'Handpoint', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-pencil-mark',
+					'label' => __( 'Pencil', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-smile-mark',
+					'label' => __( 'Smile', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-frown-mark',
+					'label' => __( 'Frown', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-numbered-circle-mark',
+					'label' => __( 'Numbered Circle', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-numbered-square-mark',
+					'label' => __( 'Numbered Square', 'vk-blocks' ),
+				),
+			),
+			'core/table'   => array(
+				array(
+					'name'  => 'vk-table-border-top-bottom',
+					'label' => __( 'Border Top Bottom', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-table-border',
+					'label' => __( 'Border', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-table-border-stripes',
+					'label' => __( 'Border / Stripes', 'vk-blocks' ),
+				),
+			),
+			'core/image'   => array(
+				array(
+					'name'  => 'vk-image-rounded',
+					'label' => __( 'Rounded02', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-image-border',
+					'label' => __( 'Border', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-image-photoFrame',
+					'label' => __( 'Photo frame', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-image-photoFrame-tilt-right',
+					'label' => __( 'Photo frame Tilt Right', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-image-photoFrame-tilt-left',
+					'label' => __( 'Photo frame Tilt Left', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-image-shadow',
+					'label' => __( 'Shadow', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-image-wave01',
+					'label' => __( 'Wave01', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-image-wave02',
+					'label' => __( 'Wave02', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-image-wave03',
+					'label' => __( 'Wave03', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-image-wave04',
+					'label' => __( 'Wave04', 'vk-blocks' ),
+				),
+			),
+			'core/group'   => array(
+				array(
+					'name'          => 'vk-group-solid',
+					'label'         => __( 'Solid', 'vk-blocks' ),
+					'is_deprecated' => true,
+				),
+				array(
+					'name'          => 'vk-group-solid-roundcorner',
+					'label'         => __( 'Solid Roundcorner', 'vk-blocks' ),
+					'is_deprecated' => true,
+				),
+				array(
+					'name'          => 'vk-group-dotted',
+					'label'         => __( 'Dotted', 'vk-blocks' ),
+					'is_deprecated' => true,
+				),
+				array(
+					'name'  => 'vk-group-dashed',
+					'label' => __( 'Dashed', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-group-double',
+					'label' => __( 'Double', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-group-stitch',
+					'label' => __( 'Stitch', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-group-top-bottom-border',
+					'label' => __( 'Border Top Bottom', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-group-shadow',
+					'label' => __( 'Shadow', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-group-alert-info',
+					'label' => __( 'Info', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-group-alert-success',
+					'label' => __( 'Success', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-group-alert-warning',
+					'label' => __( 'Warning', 'vk-blocks' ),
+				),
+				array(
+					'name'  => 'vk-group-alert-danger',
+					'label' => __( 'Danger', 'vk-blocks' ),
+				),
+			),
+		);
+		return $block_style_lists;
+	}
+
+	/**
 	 * HIGHLIGHTER_COLOR
 	 * 蛍光マーカー デフォルト色
 	 * TODO:変更箇所を少なくするために蛍光マーカーのデフォルト色をこの定数を使う

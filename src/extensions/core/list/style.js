@@ -3,7 +3,6 @@
  */
 import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
-import { registerBlockStyle } from '@wordpress/blocks';
 import { PanelBody } from '@wordpress/components';
 import {
 	InspectorControls,
@@ -145,55 +144,3 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 }, 'addMyCustomBlockControls');
 
 addFilter('editor.BlockEdit', 'vk-blocks/list-style', addBlockControl);
-
-registerBlockStyle('core/list', [
-	{
-		name: 'vk-default',
-		label: __('Default', 'vk-blocks'),
-		isDefault: true,
-	},
-	{
-		name: 'vk-arrow-mark',
-		label: __('Arrow', 'vk-blocks'),
-	},
-	{
-		name: 'vk-triangle-mark',
-		label: __('Triangle', 'vk-blocks'),
-	},
-	{
-		name: 'vk-check-mark',
-		label: __('Check', 'vk-blocks'),
-	},
-	{
-		name: 'vk-check-square-mark',
-		label: __('Check Square', 'vk-blocks'),
-	},
-	{
-		name: 'vk-check-circle-mark',
-		label: __('Check Circle', 'vk-blocks'),
-	},
-	{
-		name: 'vk-handpoint-mark',
-		label: __('Handpoint', 'vk-blocks'),
-	},
-	{
-		name: 'vk-pencil-mark',
-		label: __('Pencil', 'vk-blocks'),
-	},
-	{
-		name: 'vk-smile-mark',
-		label: __('Smile', 'vk-blocks'),
-	},
-	{
-		name: 'vk-frown-mark',
-		label: __('Frown', 'vk-blocks'),
-	},
-	{
-		name: 'vk-numbered-circle-mark',
-		label: __('Numbered Circle', 'vk-blocks'),
-	},
-	{
-		name: 'vk-numbered-square-mark',
-		label: __('Numbered Square', 'vk-blocks'),
-	},
-]);

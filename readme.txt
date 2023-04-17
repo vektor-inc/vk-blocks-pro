@@ -63,6 +63,7 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Admin screen ] Added block style manager function.
 [ Specification Change ][ List ] cope with custom color palette (WordPress 6.2 or higher)
 [ Bug fix ][ Spacer ] Fix custom css variable
 

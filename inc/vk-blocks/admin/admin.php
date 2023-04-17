@@ -169,7 +169,7 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 			'colorPalette'     => wp_get_global_settings( array( 'color', 'palette' ) ),
 			'fontSizes'        => VK_Blocks_Global_Settings::font_sizes(),
 			'highlighterColor' => VK_Blocks_Global_Settings::HIGHLIGHTER_COLOR,
-			'blockStyleLists' => VK_Blocks_Global_Settings::block_style_lists(),
+			'blockStyleLists'  => VK_Blocks_Global_Settings::block_style_lists(),
 		)
 	);
 

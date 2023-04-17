@@ -38,5 +38,4 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 			$this->assertSame( $correct, $return );
 		}
 	}
-
 }

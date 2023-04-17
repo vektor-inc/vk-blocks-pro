@@ -608,7 +608,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 				),
 				'correct' => array(),
 			),
-			// 非推奨ブロックスタイル
+			// ブロックスタイル
 			array(
 				'option_check_target' => 'disable_block_style_lists',
 				'option'  => array(

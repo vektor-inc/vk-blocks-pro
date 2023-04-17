@@ -38,7 +38,6 @@ export default function BlockStyleManagerCategory({
 		});
 	}, [defaultAllowedBlockStyleTypes, blockStyleTypes]);
 
-	// blockNamesをblockStyleNamesに直す
 	const showBlockStyles = (blockStyles) => {
 		const targetBlockStyles = vkBlocksOption.disable_block_style_lists.find(
 			(item) => item.block_name === blockName

@@ -90,13 +90,13 @@ function vk_blocks_register_block_style() {
 	foreach ( $block_style_lists as $block_name => $style_properties_lists ) {
 		foreach ( $style_properties_lists as $style_properties ) {
 			if ( ! empty( $vk_blocks_options['disable_block_style_lists'] ) ) {
-				$should_disable = array_filter(
+				$is_disable = array_filter(
 					$vk_blocks_options['disable_block_style_lists'],
 					function ( $disable_block_style_list ) use ( $block_name, $style_properties ) {
 						return $block_name === $disable_block_style_list['block_name'] && in_array( $style_properties['name'], $disable_block_style_list['property_name'], true );
 					}
 				);
-				if ( ! empty( $should_disable ) ) {
+				if ( ! empty( $is_disable ) ) {
 					continue;
 				}
 			}

@@ -26,12 +26,6 @@ export default function BlockStyleManager() {
 				<h3 id="block-style-manager-setting">
 					{__('Block Style Manager Setting', 'vk-blocks')}
 				</h3>
-				<p>
-					{__(
-						'VK Blockが追加しているブロックスタイルをオフにします。',
-						'vk-blocks'
-					)}
-				</p>
 				<div
 					tabIndex="0"
 					role="region"

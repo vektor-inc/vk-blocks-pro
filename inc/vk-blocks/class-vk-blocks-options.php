@@ -398,7 +398,7 @@ class VK_Blocks_Options {
 			'disable_block_lists'         => $activation ? self::get_deprecated_lists() : array(),
 			'custom_block_style_lists'    => array(),
 			'balloon_meta_lists'          => array(),
-			'disable_block_style_lists'   => array(), // アクティベーション時のオプションを変える
+			'disable_block_style_lists'   => array(),
 		);
 		return $default;
 	}
@@ -417,31 +417,6 @@ class VK_Blocks_Options {
 			}
 		}
 		return $disable_block_lists;
-	}
-
-	/**
-	 * 非推奨ブロックスタイルリスト
-	 *
-	 * @return array
-	 */
-	public static function get_deprecated_block_style_lists() {
-		$block_style_lists         = VK_Blocks_Global_Settings::block_style_lists();
-		$disable_block_style_lists = array();
-		foreach ( $block_style_lists as $block_name => $block_style_list ) {
-			$property_name = array();
-			foreach ( $block_style_list as $property ) {
-				if ( array_key_exists( 'is_deprecated', $property ) && $property['is_deprecated'] ) {
-					$property_name[] = $property['name'];
-				}
-			}
-			if ( ! empty( $property_name ) ) {
-				$disable_block_style_lists[] = array(
-					'block_name'    => $block_name,
-					'property_name' => $property_name,
-				);
-			}
-		}
-		return $disable_block_style_lists;
 	}
 
 	/**

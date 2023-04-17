@@ -375,19 +375,16 @@ class VK_Blocks_Global_Settings {
 			),
 			'core/group'   => array(
 				array(
-					'name'          => 'vk-group-solid',
-					'label'         => __( 'Solid', 'vk-blocks' ),
-					'is_deprecated' => true,
+					'name'  => 'vk-group-solid',
+					'label' => __( 'Solid', 'vk-blocks' ),
 				),
 				array(
-					'name'          => 'vk-group-solid-roundcorner',
-					'label'         => __( 'Solid Roundcorner', 'vk-blocks' ),
-					'is_deprecated' => true,
+					'name'  => 'vk-group-solid-roundcorner',
+					'label' => __( 'Solid Roundcorner', 'vk-blocks' ),
 				),
 				array(
-					'name'          => 'vk-group-dotted',
-					'label'         => __( 'Dotted', 'vk-blocks' ),
-					'is_deprecated' => true,
+					'name'  => 'vk-group-dotted',
+					'label' => __( 'Dotted', 'vk-blocks' ),
 				),
 				array(
 					'name'  => 'vk-group-dashed',

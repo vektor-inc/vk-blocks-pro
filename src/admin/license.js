@@ -20,7 +20,7 @@ export default function AdminLicense() {
 				<h3 id="license-setting">{__('License key', 'vk-blocks')}</h3>
 				<p>
 					{__(
-						'Enter a valid Lightning G3 Pro Pack or Lightning Pro license key.',
+						'Please enter a license key of valid Vektor Passport ( or Lightning G3 Pro Pack or Lightning Pro ).',
 						'vk-blocks'
 					)}
 				</p>

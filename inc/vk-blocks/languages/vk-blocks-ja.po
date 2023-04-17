@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2023-04-07T18:28:30+00:00\n"
-"PO-Revision-Date: 2023-04-08 03:42+0900\n"
+"POT-Creation-Date: 2023-04-14T03:44:21+00:00\n"
+"PO-Revision-Date: 2023-04-14 14:20+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -271,9 +271,9 @@ msgstr "改行しない"
 #: src/blocks/_pro/timeline-item/edit.js:71 src/blocks/border-box/edit.js:204
 #: src/blocks/button/edit.js:661 src/blocks/icon/edit.js:289
 #: src/blocks/staff/edit.js:199
-#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:41
-#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:56
-#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:130
+#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:67
+#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:85
+#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:171
 #: inc/term-color/package/class.term-color.php:67
 #: inc/term-color/package/class.term-color.php:85
 #: inc/term-color/package/class.term-color.php:171
@@ -340,10 +340,12 @@ msgid "Preview Text"
 msgstr "プレビューテキスト"
 
 #: src/admin/license.js:22
-msgid "Enter a valid Lightning G3 Pro Pack or Lightning Pro license key."
+msgid ""
+"Please enter a license key of valid Vektor Passport ( or Lightning G3 Pro "
+"Pack or Lightning Pro )."
 msgstr ""
-"Lightning G3 Pro Pack あるいは Lightning Pro の有効なライセンスキーを入力して"
-"ください。"
+"有効な Vektor Passport (または Lightning G3 Pro Pack または Lightning Pro ) "
+"のライセンス キーを入力してください。"
 
 #: src/admin/license.js:28
 msgid ""
@@ -417,19 +419,19 @@ msgstr "L"
 msgid "XL"
 msgstr "XL"
 
-#: src/admin/margin.js:43 src/blocks/_pro/outer/edit.js:639
+#: src/admin/margin.js:43 src/blocks/_pro/outer/edit.js:641
 #: src/blocks/button/edit.js:522 src/blocks/slider/edit.js:481
 #: src/components/advanced-viewport-control/index.js:25
 msgid "PC"
 msgstr "PC"
 
-#: src/admin/margin.js:47 src/blocks/_pro/outer/edit.js:624
+#: src/admin/margin.js:47 src/blocks/_pro/outer/edit.js:626
 #: src/blocks/button/edit.js:457 src/blocks/slider/edit.js:502
 #: src/components/advanced-viewport-control/index.js:31
 msgid "Tablet"
 msgstr "タブレット"
 
-#: src/admin/margin.js:51 src/blocks/_pro/outer/edit.js:609
+#: src/admin/margin.js:51 src/blocks/_pro/outer/edit.js:611
 #: src/blocks/button/edit.js:392 src/blocks/slider/edit.js:523
 #: src/components/advanced-viewport-control/index.js:39
 msgid "Mobile"
@@ -750,7 +752,7 @@ msgid "Padding (Top)"
 msgstr "余白 (上)"
 
 #: src/blocks/_pro/grid-column-item/edit.js:140
-#: src/blocks/_pro/outer/edit.js:371 src/blocks/slider-item/edit.js:120
+#: src/blocks/_pro/outer/edit.js:373 src/blocks/slider-item/edit.js:120
 msgid "Padding (Left and Right)"
 msgstr "余白 (左右)"
 
@@ -759,28 +761,28 @@ msgid "Padding (Bottom)"
 msgstr "余白 (下)"
 
 #: src/blocks/_pro/grid-column-item/edit.js:187
-#: src/blocks/_pro/grid-column/edit.js:91 src/blocks/_pro/outer/edit.js:660
+#: src/blocks/_pro/grid-column/edit.js:91 src/blocks/_pro/outer/edit.js:662
 #: src/blocks/icon-outer/edit.js:181 src/blocks/icon/edit.js:171
 #: src/utils/unit-options.js:6
 msgid "px"
 msgstr "px"
 
 #: src/blocks/_pro/grid-column-item/edit.js:191
-#: src/blocks/_pro/grid-column/edit.js:95 src/blocks/_pro/outer/edit.js:664
+#: src/blocks/_pro/grid-column/edit.js:95 src/blocks/_pro/outer/edit.js:666
 #: src/blocks/icon-outer/edit.js:185 src/blocks/icon/edit.js:175
 #: src/utils/unit-options.js:10
 msgid "em"
 msgstr "em"
 
 #: src/blocks/_pro/grid-column-item/edit.js:195
-#: src/blocks/_pro/grid-column/edit.js:99 src/blocks/_pro/outer/edit.js:668
+#: src/blocks/_pro/grid-column/edit.js:99 src/blocks/_pro/outer/edit.js:670
 #: src/blocks/icon-outer/edit.js:189 src/blocks/icon/edit.js:179
 #: src/utils/unit-options.js:14
 msgid "rem"
 msgstr "rem"
 
 #: src/blocks/_pro/grid-column-item/edit.js:199
-#: src/blocks/_pro/grid-column/edit.js:103 src/blocks/_pro/outer/edit.js:672
+#: src/blocks/_pro/grid-column/edit.js:103 src/blocks/_pro/outer/edit.js:674
 #: src/blocks/icon-outer/edit.js:193 src/blocks/icon/edit.js:183
 #: src/utils/unit-options.js:18
 msgid "vw"
@@ -1014,16 +1016,16 @@ msgstr "表示位置"
 msgid "Text"
 msgstr "テキスト"
 
-#: src/blocks/_pro/outer/edit.js:263 src/blocks/slider-item/edit.js:168
+#: src/blocks/_pro/outer/edit.js:265 src/blocks/slider-item/edit.js:168
 msgid "Background Setting"
 msgstr "背景設定"
 
-#: src/blocks/_pro/outer/edit.js:268 src/blocks/pr-content/edit.js:67
+#: src/blocks/_pro/outer/edit.js:270 src/blocks/pr-content/edit.js:67
 #: src/blocks/slider-item/edit.js:172
 msgid "Color Setting"
 msgstr "色設定"
 
-#: src/blocks/_pro/outer/edit.js:269 src/blocks/slider-item/edit.js:174
+#: src/blocks/_pro/outer/edit.js:271 src/blocks/slider-item/edit.js:174
 msgid ""
 "Color will overcome background image. If you want to display image, set "
 "opacity 0."
@@ -1031,77 +1033,77 @@ msgstr ""
 "色を指定すると画像よりも優先されます。画像を表示したい場合は、不透明度を0に設"
 "定します。"
 
-#: src/blocks/_pro/outer/edit.js:277 src/blocks/slider-item/edit.js:182
+#: src/blocks/_pro/outer/edit.js:279 src/blocks/slider-item/edit.js:182
 msgid "Opacity Setting"
 msgstr "透過設定"
 
-#: src/blocks/_pro/outer/edit.js:291 src/blocks/slider-item/edit.js:217
+#: src/blocks/_pro/outer/edit.js:293 src/blocks/slider-item/edit.js:217
 msgid "Background Image PC"
 msgstr "背景画像 ( PC )"
 
-#: src/blocks/_pro/outer/edit.js:307 src/blocks/slider-item/edit.js:233
+#: src/blocks/_pro/outer/edit.js:309 src/blocks/slider-item/edit.js:233
 msgid "Background Image Tablet"
 msgstr "背景画像 ( タブレット )"
 
-#: src/blocks/_pro/outer/edit.js:317 src/blocks/slider-item/edit.js:243
+#: src/blocks/_pro/outer/edit.js:319 src/blocks/slider-item/edit.js:243
 msgid "Background Image Mobile"
 msgstr "背景画像 ( モバイル )"
 
-#: src/blocks/_pro/outer/edit.js:327
+#: src/blocks/_pro/outer/edit.js:329
 msgid "Background image Position"
 msgstr "背景画像の位置"
 
-#: src/blocks/_pro/outer/edit.js:335
+#: src/blocks/_pro/outer/edit.js:337
 msgid "Repeat"
 msgstr "リピート"
 
-#: src/blocks/_pro/outer/edit.js:339
+#: src/blocks/_pro/outer/edit.js:341
 msgid "Cover"
 msgstr "カバー"
 
-#: src/blocks/_pro/outer/edit.js:343
+#: src/blocks/_pro/outer/edit.js:345
 msgid "Cover fixed (Not fixed on iPhone)"
 msgstr "カバー 固定（iPhoneでは固定されません）"
 
-#: src/blocks/_pro/outer/edit.js:350
+#: src/blocks/_pro/outer/edit.js:352
 msgid "Parallax (Non-guaranteed)"
 msgstr "パララックス（非保証）"
 
-#: src/blocks/_pro/outer/edit.js:365 src/blocks/pr-content/edit.js:229
+#: src/blocks/_pro/outer/edit.js:367 src/blocks/pr-content/edit.js:229
 #: src/blocks/slider-item/edit.js:115
 msgid "Layout Setting"
 msgstr "レイアウト設定"
 
-#: src/blocks/_pro/outer/edit.js:368 src/blocks/balloon/edit.js:504
+#: src/blocks/_pro/outer/edit.js:370 src/blocks/balloon/edit.js:504
 #: src/blocks/slider/edit.js:449
 msgid "Width"
 msgstr "幅"
 
-#: src/blocks/_pro/outer/edit.js:375
+#: src/blocks/_pro/outer/edit.js:377
 msgid "Fit to the Content area"
 msgstr "コンテンツエリアに合わせる"
 
-#: src/blocks/_pro/outer/edit.js:382
+#: src/blocks/_pro/outer/edit.js:384
 msgid "Add padding to the Outer area"
 msgstr "アウターエリア内に余白を追加する"
 
-#: src/blocks/_pro/outer/edit.js:389
+#: src/blocks/_pro/outer/edit.js:391
 msgid "Remove padding from the Outer area"
 msgstr "アウターエリア内の余白を無くす"
 
-#: src/blocks/_pro/outer/edit.js:403
+#: src/blocks/_pro/outer/edit.js:405
 msgid "Padding (Top and Bottom)"
 msgstr "余白 (上下)"
 
-#: src/blocks/_pro/outer/edit.js:408
+#: src/blocks/_pro/outer/edit.js:410
 msgid "Use default padding"
 msgstr "標準の余白を使用"
 
-#: src/blocks/_pro/outer/edit.js:415
+#: src/blocks/_pro/outer/edit.js:417
 msgid "Do not use default padding"
 msgstr "標準の余白を使用しない"
 
-#: src/blocks/_pro/outer/edit.js:429
+#: src/blocks/_pro/outer/edit.js:431
 msgid ""
 "* If you select \"Do not use\" that, please set yourself it such as a spacer "
 "block."
@@ -1109,104 +1111,104 @@ msgstr ""
 "*「使用しない」を選択した場合はスペーサーブロックなどで任意に設定してくださ"
 "い。"
 
-#: src/blocks/_pro/outer/edit.js:437
+#: src/blocks/_pro/outer/edit.js:439
 msgid "Divider Setting"
 msgstr "区切りの設定"
 
-#: src/blocks/_pro/outer/edit.js:442 src/blocks/balloon/edit.js:438
+#: src/blocks/_pro/outer/edit.js:444 src/blocks/balloon/edit.js:438
 msgid "Type"
 msgstr "タイプ"
 
-#: src/blocks/_pro/outer/edit.js:450
+#: src/blocks/_pro/outer/edit.js:452
 msgid "Tilt"
 msgstr "傾斜"
 
-#: src/blocks/_pro/outer/edit.js:454
+#: src/blocks/_pro/outer/edit.js:456
 msgid "Curve"
 msgstr "カーブ"
 
-#: src/blocks/_pro/outer/edit.js:458
+#: src/blocks/_pro/outer/edit.js:460
 msgid "Wave"
 msgstr "波状"
 
-#: src/blocks/_pro/outer/edit.js:462 src/extensions/core/list/style.js:161
+#: src/blocks/_pro/outer/edit.js:464 src/extensions/core/list/style.js:258
 msgid "Triangle"
 msgstr "三角"
 
-#: src/blocks/_pro/outer/edit.js:468
+#: src/blocks/_pro/outer/edit.js:470
 msgid "Upper Divider Level"
 msgstr "上部区切りレベル"
 
-#: src/blocks/_pro/outer/edit.js:489
+#: src/blocks/_pro/outer/edit.js:491
 msgid "Lower Divider Level"
 msgstr "下部区切りレベル"
 
-#: src/blocks/_pro/outer/edit.js:511
+#: src/blocks/_pro/outer/edit.js:513
 msgid "Border Setting"
 msgstr "枠線の設定"
 
-#: src/blocks/_pro/outer/edit.js:516
+#: src/blocks/_pro/outer/edit.js:518
 msgid "Border will disappear when divider effect is applied."
 msgstr "枠線は区切りレベルを適用すると表示されなくなります。"
 
-#: src/blocks/_pro/outer/edit.js:522
+#: src/blocks/_pro/outer/edit.js:524
 msgid "Border type"
 msgstr "枠線の種類"
 
-#: src/blocks/_pro/outer/edit.js:530 src/blocks/_pro/step-item/edit.js:144
+#: src/blocks/_pro/outer/edit.js:532 src/blocks/_pro/step-item/edit.js:144
 #: src/blocks/_pro/timeline-item/edit.js:113 src/blocks/balloon/edit.js:551
 #: src/blocks/button/edit.js:643 src/blocks/staff/edit.js:177
 msgid "None"
 msgstr "なし"
 
-#: src/blocks/_pro/outer/edit.js:534 src/blocks/_pro/step-item/edit.js:115
+#: src/blocks/_pro/outer/edit.js:536 src/blocks/_pro/step-item/edit.js:115
 #: src/blocks/_pro/timeline-item/edit.js:88 src/blocks/pr-content/edit.js:144
 #: src/extensions/core/group/style.js:108
 msgid "Solid"
 msgstr "直線"
 
-#: src/blocks/_pro/outer/edit.js:538 src/extensions/core/group/style.js:116
+#: src/blocks/_pro/outer/edit.js:540 src/extensions/core/group/style.js:116
 msgid "Dotted"
 msgstr "点線"
 
-#: src/blocks/_pro/outer/edit.js:542 src/extensions/core/group/style.js:120
+#: src/blocks/_pro/outer/edit.js:544 src/extensions/core/group/style.js:120
 msgid "Dashed"
 msgstr "Dashed"
 
-#: src/blocks/_pro/outer/edit.js:546 src/extensions/core/group/style.js:124
+#: src/blocks/_pro/outer/edit.js:548 src/extensions/core/group/style.js:124
 msgid "Double"
 msgstr "二重線"
 
-#: src/blocks/_pro/outer/edit.js:550
+#: src/blocks/_pro/outer/edit.js:552
 msgid "Groove"
 msgstr "Groove"
 
-#: src/blocks/_pro/outer/edit.js:554
+#: src/blocks/_pro/outer/edit.js:556
 msgid "Ridge"
 msgstr "Ridge"
 
-#: src/blocks/_pro/outer/edit.js:558
+#: src/blocks/_pro/outer/edit.js:560
 msgid "Inset"
 msgstr "Inset"
 
-#: src/blocks/_pro/outer/edit.js:562
+#: src/blocks/_pro/outer/edit.js:564
 msgid "Outset"
 msgstr "Outset"
 
-#: src/blocks/_pro/outer/edit.js:574
+#: src/blocks/_pro/outer/edit.js:576
 msgid "Border width"
 msgstr "枠線の幅"
 
-#: src/blocks/_pro/outer/edit.js:586 src/blocks/icon-outer/edit.js:210
+#: src/blocks/_pro/outer/edit.js:588 src/blocks/icon-outer/edit.js:210
 #: src/blocks/icon/edit.js:200
 msgid "Border radius"
 msgstr "枠線のRの大きさ"
 
-#: src/blocks/_pro/outer/edit.js:602
+#: src/blocks/_pro/outer/edit.js:604
 msgid "Container Inner Side Space Setting"
 msgstr "コンテナ内側のスペース設定"
 
-#: src/blocks/_pro/outer/edit.js:650
+#: src/blocks/_pro/outer/edit.js:652
 #: src/components/advanced-unit-control/index.js:13
 msgid "Unit Type"
 msgstr "単位"
@@ -1326,7 +1328,7 @@ msgstr "アウトライン"
 #: src/blocks/_pro/timeline-item/edit.js:103 src/blocks/heading/edit.js:264
 #: src/blocks/slider/edit.js:663 src/blocks/staff/edit.js:173
 #: src/extensions/core/heading/style.js:11
-#: src/extensions/core/list/style.js:152
+#: src/extensions/core/list/style.js:249
 msgid "Default"
 msgstr "標準"
 
@@ -2667,49 +2669,49 @@ msgstr "流体シェイプ3"
 msgid "Wave04"
 msgstr "流体シェイプ4"
 
-#: src/extensions/core/list/style.js:157
+#: src/extensions/core/list/style.js:108
+msgid "List Icon Color"
+msgstr "リストアイコンの色"
+
+#: src/extensions/core/list/style.js:254
 msgid "Arrow"
 msgstr "矢印"
 
-#: src/extensions/core/list/style.js:165
+#: src/extensions/core/list/style.js:262
 msgid "Check"
 msgstr "チェック"
 
-#: src/extensions/core/list/style.js:169
+#: src/extensions/core/list/style.js:266
 msgid "Check Square"
 msgstr "チェック（四角）"
 
-#: src/extensions/core/list/style.js:173
+#: src/extensions/core/list/style.js:270
 msgid "Check Circle"
 msgstr "チェック-丸"
 
-#: src/extensions/core/list/style.js:177
+#: src/extensions/core/list/style.js:274
 msgid "Handpoint"
 msgstr "指"
 
-#: src/extensions/core/list/style.js:181
+#: src/extensions/core/list/style.js:278
 msgid "Pencil"
 msgstr "鉛筆"
 
-#: src/extensions/core/list/style.js:185
+#: src/extensions/core/list/style.js:282
 msgid "Smile"
 msgstr "笑顔"
 
-#: src/extensions/core/list/style.js:189
+#: src/extensions/core/list/style.js:286
 msgid "Frown"
 msgstr "不満顔"
 
-#: src/extensions/core/list/style.js:193
+#: src/extensions/core/list/style.js:290
 msgid "Numbered Circle"
 msgstr "数字-丸"
 
-#: src/extensions/core/list/style.js:197
+#: src/extensions/core/list/style.js:294
 msgid "Numbered Square"
 msgstr "数字-四角"
-
-#: src/extensions/core/list/style.js:85
-msgid "List Icon Color"
-msgstr "リストアイコンの色"
 
 #: src/extensions/core/table/style.js:17
 msgid "Border / Stripes"
@@ -2976,8 +2978,6 @@ msgstr "プラグインを有効化しました。"
 
 #: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:149
 #: inc/tgm-plugin-activation/tgm-config.php:149
-#, fuzzy
-#| msgid "The following plugin was activated successfully:"
 msgid "The following plugin was activated successfully:"
 msgstr "次のプラグインを有効化しました:"
 
@@ -3107,7 +3107,7 @@ msgstr ""
 msgid "This message only display on the edit screen."
 msgstr "このメッセージは編集画面でのみ表示されます。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/page-content/index.php:124
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/page-content/index.php:126
 #: inc/vk-blocks/build/blocks/page-content/index.php:126
 #: src/blocks/page-content/index.php:126
 #: test/phpunit/free/test-page-content.php:59
@@ -3115,10 +3115,8 @@ msgid "Edit this area"
 msgstr "このエリアを編集"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:40
-#, fuzzy
-#| msgid "Please select the type of balloon."
 msgid "Please select taxonomy"
-msgstr "吹き出しのタイプを指定してください。"
+msgstr "タクソノミーを選択してください。"
 
 #. translators:
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:152
@@ -3216,17 +3214,17 @@ msgstr "ライセンスキーが登録されていません。"
 msgid "The VK Blocks Pro license is invalid."
 msgstr "VK Blocks Pro のライセンスが無効です。"
 
-#: dist/vk-blocks-pro/vk-blocks.php:258 vk-blocks.php:258
+#: dist/vk-blocks-pro/vk-blocks.php:258
 msgid ""
 "Enter a valid license key for any of the following products on the settings "
 "screen."
 msgstr "以下の製品のライセンスキーを設定画面から入力してください。"
 
-#: dist/vk-blocks-pro/vk-blocks.php:267 vk-blocks.php:267
+#: dist/vk-blocks-pro/vk-blocks.php:267 vk-blocks.php:268
 msgid "Enter the license key"
 msgstr "ライセンスキーを入力"
 
-#: dist/vk-blocks-pro/vk-blocks.php:270 vk-blocks.php:270
+#: dist/vk-blocks-pro/vk-blocks.php:270 vk-blocks.php:271
 msgid ""
 "If this display does not disappear even after entering a valid license key, "
 "re-acquire the update."
@@ -3234,9 +3232,16 @@ msgstr ""
 "有効なライセンスキーを入力してもこの表示が消えない場合は更新の再取得をしてく"
 "ださい。"
 
-#: dist/vk-blocks-pro/vk-blocks.php:271 vk-blocks.php:271
+#: dist/vk-blocks-pro/vk-blocks.php:271 vk-blocks.php:272
 msgid "Re-acquisition of updates"
 msgstr "更新の再取得"
+
+#: vk-blocks.php:258
+msgid ""
+"Please enter a valid license key for any of the following products on the "
+"settings screen."
+msgstr ""
+"設定画面で以下のいずれかの製品の有効なライセンスキーを入力してください。"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/alert/block.json
 #: inc/vk-blocks/build/blocks/alert/block.json src/blocks/alert/block.json
@@ -3644,11 +3649,9 @@ msgid ""
 msgstr "親となる固定ページを指定するとその子ページの一覧を表示します。"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/dynamic-text/block.json
-#, fuzzy
-#| msgid "Dummy Text"
 msgctxt "block title"
 msgid "Dynamic Text"
-msgstr "ダミーテキスト"
+msgstr "ダイナミックテキスト"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/dynamic-text/block.json
 #, fuzzy

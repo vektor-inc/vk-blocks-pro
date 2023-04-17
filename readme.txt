@@ -63,6 +63,9 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ][ List ] cope with custom color palette (WordPress 6.2 or higher)
+[ Bug fix ][ Spacer ] Fix custom css variable
+
 = 1.54.0 =
 [ Add Setting ][ margin / spacer ] Add custom value to margin setting
 [ Other ] Update the required WordPress version

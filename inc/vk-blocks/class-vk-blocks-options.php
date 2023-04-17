@@ -425,7 +425,7 @@ class VK_Blocks_Options {
 	 * @return array
 	 */
 	public static function get_deprecated_block_style_lists() {
-		$block_style_lists         = VK_Blocks_Global_Settings::blocks_style_lists();
+		$block_style_lists         = VK_Blocks_Global_Settings::block_style_lists();
 		$disable_block_style_lists = array();
 		foreach ( $block_style_lists as $block_name => $block_style_list ) {
 			$property_name = array();

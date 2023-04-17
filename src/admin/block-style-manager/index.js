@@ -37,7 +37,7 @@ export default function BlockStyleManager() {
 					role="region"
 					className="block-manager__results"
 				>
-					{Object.keys(vkBlocksObject.blocksStyleLists).map(
+					{Object.keys(vkBlocksObject.blockStyleLists).map(
 						(blockName) => {
 							return (
 								<BlockStyleManagerCategory
@@ -45,7 +45,7 @@ export default function BlockStyleManager() {
 									blockName={blockName}
 									blockTitle={getBlockTitle(blockName)}
 									blockStyleTypes={
-										vkBlocksObject.blocksStyleLists[
+										vkBlocksObject.blockStyleLists[
 											blockName
 										]
 									}

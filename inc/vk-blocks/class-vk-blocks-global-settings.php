@@ -227,11 +227,11 @@ class VK_Blocks_Global_Settings {
 	}
 
 	/**
-	 * Blocks_style_lists
+	 * Block_style_lists
 	 *
 	 * @return array
 	 */
-	public static function blocks_style_lists() {
+	public static function block_style_lists() {
 		$block_style_lists = array(
 			'core/heading' => array(
 				array(

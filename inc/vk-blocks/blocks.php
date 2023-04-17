@@ -86,7 +86,7 @@ add_filter( 'block_type_metadata', 'vk_blocks_hide_blocks' );
  */
 function vk_blocks_register_block_style() {
 	$vk_blocks_options = VK_Blocks_Options::get_options();
-	$block_style_lists = VK_Blocks_Global_Settings::blocks_style_lists();
+	$block_style_lists = VK_Blocks_Global_Settings::block_style_lists();
 	foreach ( $block_style_lists as $key => $block_style_list ) {
 		foreach ( $block_style_list as $block_style ) {
 			if ( ! empty( $vk_blocks_options['disable_block_style_lists'] ) ) {

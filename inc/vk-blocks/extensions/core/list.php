@@ -13,12 +13,8 @@
  * @return string
  */
 function vk_blocks_render_core_list( $block_content, $block ) {
-	if ( empty( $block['attrs']['className'] ) ) {
-		return $block_content;
-	}
-
 	// 以前の形式 vk-has-(.*)-colorで保存されている場合
-	$has_deprecated_classname = strpos( $block['attrs']['className'], 'vk-has-(.*)-color' ) !== false;
+	$has_deprecated_classname = ! empty( $block['attrs']['className'] ) && strpos( $block['attrs']['className'], 'vk-has-(.*)-color' ) !== false;
 	if ( $has_deprecated_classname ) {
 		return $block_content;
 	}

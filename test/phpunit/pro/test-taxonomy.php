@@ -103,17 +103,17 @@ class TaxonomyTest extends WP_UnitTestCase {
 			'slug' => 'test_event_01',
 		);
 		$term_info_01        = wp_insert_term( 'test_event_01', 'event_cat', $args );
-		$data['event_01_id'] = $term_info_01['term_id'];
+		$data['term_event_01_id'] = $term_info_01['term_id'];
 
 		/**
 		 * Test Event 01 Child を作成
 		 */
 		$args                      = array(
 			'slug'   => 'test_event_01_child',
-			'parent' => $data['event_01_id'],
+			'parent' => $data['term_event_01_id'],
 		);
 		$term_info_01_child        = wp_insert_term( 'test_event_01_child', 'event_cat', $args );
-		$data['event_01_child_id'] = $term_info_01_child['term_id'];
+		$data['term_event_01_child_id'] = $term_info_01_child['term_id'];
 
 		/**
 		 * Test Event 02 を作成
@@ -210,7 +210,7 @@ class TaxonomyTest extends WP_UnitTestCase {
 			'post_modified' => '2021-11-01 ' . $data['term_cate_01_id'] . ':00:00',
 		);
 		$data['event_post_id_01'] = wp_insert_post( $post );
-		wp_set_object_terms( $data['event_post_id_01'], array( $data['event_01_id'], $data['event_01_child_id'] ), 'event_cat' );
+		wp_set_object_terms( $data['event_post_id_01'], array( $data['term_event_01_id'], $data['term_event_01_child_id'] ), 'event_cat' );
 
 		/**
 		 * Test Event 02 を作成.
@@ -224,7 +224,7 @@ class TaxonomyTest extends WP_UnitTestCase {
 			'post_modified' => '2022-01-01 ' . $data['term_cate_01_id'] . ':00:00',
 		);
 		$data['event_post_id_02'] = wp_insert_post( $post );
-		wp_set_object_terms( $data['event_post_id_02'], array( $data['event_01_id'], $data['event_01_child_id'] ), 'event_cat' );
+		wp_set_object_terms( $data['event_post_id_02'], array( $data['term_event_01_id'], $data['term_event_01_child_id'] ), 'event_cat' );
 
 		$tests = array(
 			// デフォルト （ カテゴリーリスト ）
@@ -269,7 +269,7 @@ class TaxonomyTest extends WP_UnitTestCase {
 					'showOnlyTopLevel'   => false,
 					'className'          => '',
 				),
-				'correct'    => '<div class="vk_taxonomy vk_taxonomy--event_cat vk_taxonomy-outer-wrap wp-block-vk-blocks-taxonomy"><ul class="vk_taxonomy-list"><li class="cat-item cat-item-'.$data['term_empty_event_01_id'].'"><a href="' . home_url() . '/?event_cat=empty_event_01">empty_event_01</a></li><li class="cat-item cat-item-'.$data['term_event_empty_01_child_id'].'"><a href="' . home_url() . '/?event_cat=empty_event_01_child">empty_event_01_child</a></li><li class="cat-item cat-item-26"><a href="' . home_url() . '/?event_cat=empty_event_02">empty_event_02</a></li><li class="cat-item cat-item-' . $data['empty_event_02_child_id'] . '"><a href="' . home_url() . '/?event_cat=empty_event_02_child">empty_event_02_child</a></li><li class="cat-item cat-item-20"><a href="' . home_url() . '/?event_cat=test_event_01">test_event_01</a></li><li class="cat-item cat-item-21"><a href="' . home_url() . '/?event_cat=test_event_01_child">test_event_01_child</a></li><li class="cat-item cat-item-' . $data['event_02_id'] . '"><a href="' . home_url() . '/?event_cat=test_event_02">test_event_02</a></li><li class="cat-item cat-item-' . $data['event_02_child_id'] . '"><a href="' . home_url() . '/?event_cat=test_event_02_child">test_event_02_child</a></li></ul></div>',
+				'correct'    => '<div class="vk_taxonomy vk_taxonomy--event_cat vk_taxonomy-outer-wrap wp-block-vk-blocks-taxonomy"><ul class="vk_taxonomy-list"><li class="cat-item cat-item-'.$data['term_empty_event_01_id'].'"><a href="' . home_url() . '/?event_cat=empty_event_01">empty_event_01</a></li><li class="cat-item cat-item-'.$data['term_event_empty_01_child_id'].'"><a href="' . home_url() . '/?event_cat=empty_event_01_child">empty_event_01_child</a></li><li class="cat-item cat-item-'.$data['term_event_empty_01_id'].'"><a href="' . home_url() . '/?event_cat=empty_event_02">empty_event_02</a></li><li class="cat-item cat-item-' . $data['empty_event_02_child_id'] . '"><a href="' . home_url() . '/?event_cat=empty_event_02_child">empty_event_02_child</a></li><li class="cat-item cat-item-20"><a href="' . home_url() . '/?event_cat=test_event_01">test_event_01</a></li><li class="cat-item cat-item-21"><a href="' . home_url() . '/?event_cat=test_event_01_child">test_event_01_child</a></li><li class="cat-item cat-item-' . $data['event_02_id'] . '"><a href="' . home_url() . '/?event_cat=test_event_02">test_event_02</a></li><li class="cat-item cat-item-' . $data['event_02_child_id'] . '"><a href="' . home_url() . '/?event_cat=test_event_02_child">test_event_02_child</a></li></ul></div>',
 			),
 			array(
 				'attributes' => array(

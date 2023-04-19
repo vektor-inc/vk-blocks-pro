@@ -160,14 +160,14 @@ class TaxonomyTest extends WP_UnitTestCase {
 			'slug' => 'empty_event_02',
 		);
 		$term_info_02        = wp_insert_term( 'empty_event_02', 'event_cat', $args );
-		$data['event_id_04'] = $term_info_02['term_id'];
+		$data['term_event_empty_01_id'] = $term_info_02['term_id'];
 
 				/**
 		 * Test Event 02 Child を作成
 		 */
 		$args                            = array(
 			'slug'   => 'empty_event_02_child',
-			'parent' => $data['event_id_04'],
+			'parent' => $data['term_event_empty_01_id'],
 		);
 		$term_info_04_child              = wp_insert_term( 'empty_event_02_child', 'event_cat', $args );
 		$data['empty_event_02_child_id'] = $term_info_04_child['term_id'];

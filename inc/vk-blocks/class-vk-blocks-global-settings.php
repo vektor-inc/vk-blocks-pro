@@ -215,6 +215,10 @@ class VK_Blocks_Global_Settings {
 				'is_pro' => true,
 			),
 			array(
+				'name'   => 'taxonomy',
+				'is_pro' => true,
+			),
+			array(
 				'name'   => 'timeline',
 				'is_pro' => true,
 			),

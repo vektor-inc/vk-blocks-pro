@@ -64,6 +64,7 @@ e.g.
 == Changelog ==
 
 [ Add New Block ][ Archive list block ] Displays a list of archives
+[ Add Block ] Add taxonomy block.
 [ Specification Change ][ List ] cope with custom color palette (WordPress 6.2 or higher)
 [ Bug fix ][ Spacer ] Fix custom css variable
 

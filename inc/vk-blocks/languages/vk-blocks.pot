@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-04-14T05:21:48+00:00\n"
+"POT-Creation-Date: 2023-04-14T06:20:01+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks\n"
@@ -509,7 +509,7 @@ msgstr ""
 #: src/blocks/slider/edit.js:457
 #: src/extensions/common/inline-font-size/inline.js:28
 #: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:260
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:252
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:256
 msgid "Normal"
 msgstr ""
 
@@ -1392,6 +1392,42 @@ msgstr ""
 msgid "CLOSE"
 msgstr ""
 
+#: src/blocks/_pro/taxonomy/edit.js:101
+msgid "Show post counts"
+msgstr ""
+
+#: src/blocks/_pro/taxonomy/edit.js:108
+msgid "Show only top level categories"
+msgstr ""
+
+#: src/blocks/_pro/taxonomy/edit.js:118
+msgid "Hide if term has no posts"
+msgstr ""
+
+#: src/blocks/_pro/taxonomy/edit.js:126
+msgid "Show hierarchy"
+msgstr ""
+
+#: src/blocks/_pro/taxonomy/edit.js:50
+msgid "This block will not be displayed because no taxonomy is selected."
+msgstr ""
+
+#: src/blocks/_pro/taxonomy/edit.js:63
+msgid "This block will not be displayed because this taxonomy has no term."
+msgstr ""
+
+#: src/blocks/_pro/taxonomy/edit.js:80
+msgid "Taxonomy Block Option"
+msgstr ""
+
+#: src/blocks/_pro/taxonomy/edit.js:84
+msgid "Taxonomy"
+msgstr ""
+
+#: src/blocks/_pro/taxonomy/edit.js:94
+msgid "Display as dropdown"
+msgstr ""
+
 #: src/blocks/_pro/timeline-item/edit.js:64
 msgid "label"
 msgstr ""
@@ -1658,7 +1694,7 @@ msgstr ""
 #: src/blocks/button/edit.js:323
 #: src/extensions/common/inline-font-size/inline.js:23
 #: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:255
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:247
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:251
 msgid "Small"
 msgstr ""
 
@@ -2497,13 +2533,13 @@ msgstr ""
 
 #: src/extensions/common/inline-font-size/inline.js:33
 #: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:265
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:257
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:261
 msgid "Big"
 msgstr ""
 
 #: src/extensions/common/inline-font-size/inline.js:38
 #: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:270
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:262
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:266
 msgid "Extra big"
 msgstr ""
 
@@ -3075,11 +3111,15 @@ msgid "Edit this area"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:40
+#: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:40
+#: src/blocks/_pro/taxonomy/index.php:40
 msgid "Please select taxonomy"
 msgstr ""
 
 #. translators:
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:152
+#: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:152
+#: src/blocks/_pro/taxonomy/index.php:152
 msgid "All of %s"
 msgstr ""
 
@@ -3834,11 +3874,15 @@ msgid "This is a table of contents that is automatically generated according to 
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/block.json
+#: inc/vk-blocks/build/blocks/_pro/taxonomy/block.json
+#: src/blocks/_pro/taxonomy/block.json
 msgctxt "block title"
 msgid "Taxonomy"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/block.json
+#: inc/vk-blocks/build/blocks/_pro/taxonomy/block.json
+#: src/blocks/_pro/taxonomy/block.json
 msgctxt "block description"
 msgid "Display Taxnomy List Pulldown"
 msgstr ""

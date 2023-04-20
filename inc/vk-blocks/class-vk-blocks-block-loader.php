@@ -13,18 +13,6 @@
 class VK_Blocks_Block_Loader {
 
 	/**
-	 * コアのブロックを拡張しているスタイルの一覧
-	 * ※ group と list は cssファイルが共通ファイル内に書かれてる？
-	 *
-	 * @var array
-	 */
-	private $block_style_names = array(
-		array( 'name' => 'heading' ),
-		array( 'name' => 'image' ),
-		array( 'name' => 'table' ),
-	);
-
-	/**
 	 * ビルドされた assets のパス
 	 *
 	 * @var string
@@ -165,13 +153,6 @@ class VK_Blocks_Block_Loader {
 				$this->load_block( $block_name );
 			}
 		}
-
-		// コアのブロックを拡張しているスタイルの設定phpファイル読み込み.
-		if ( function_exists( 'register_block_style' ) ) {
-			foreach ( $this->block_style_names as $block_style_name ) {
-				$this->load_block_style( $block_style_name );
-			}
-		}
 	}
 
 	/**
@@ -286,20 +267,6 @@ class VK_Blocks_Block_Loader {
 			$require_file_path = VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/build/blocks/_pro/' . $block_name . '/index.php';
 		}
 
-		if ( file_exists( $require_file_path ) ) {
-			require_once $require_file_path;
-		}
-	}
-
-	/**
-	 * ブロックスタイルのロード
-	 * コアのブロックのスタイル拡張しているphpファイルの読み込み
-	 *
-	 * @param string $block_style_name 読み込むブロック名.
-	 * @return void
-	 */
-	public function load_block_style( $block_style_name ) {
-		$require_file_path = VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/build/extensions/core/' . $block_style_name['name'] . '/index.php';
 		if ( file_exists( $require_file_path ) ) {
 			require_once $require_file_path;
 		}

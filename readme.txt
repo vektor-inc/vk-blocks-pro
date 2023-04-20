@@ -62,6 +62,8 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Admin screen ] Added block style manager function.
+
 = 1.55.0 =
 [ Add Block ][ Archive list block ( Pro ) ] Displays a list of archives
 [ Add Block ][ Taxonomy block ( Pro ) ] Displays a list of taxonomy terms

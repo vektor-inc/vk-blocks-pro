@@ -14,7 +14,7 @@
  */
 function vk_blocks_render_core_list( $block_content, $block ) {
 	// 以前の形式 vk-has-(.*)-colorで保存されている場合
-	$has_deprecated_classname = strpos( $block['attrs']['className'], 'vk-has-(.*)-color' ) !== false;
+	$has_deprecated_classname = ! empty( $block['attrs']['className'] ) && strpos( $block['attrs']['className'], 'vk-has-(.*)-color' ) !== false;
 	if ( $has_deprecated_classname ) {
 		return $block_content;
 	}
@@ -43,7 +43,7 @@ function vk_blocks_render_core_list( $block_content, $block ) {
 	$block_content->get_updated_html();
 
 	$list_styles = array();
-	if ( strpos( $block['attrs']['className'], 'is-style-vk-numbered-square-mark' ) !== false ) {
+	if ( ! empty( $block['attrs']['className'] ) && strpos( $block['attrs']['className'], 'is-style-vk-numbered-square-mark' ) !== false ) {
 		$list_styles = array(
 			array(
 				'selector'     => ".is-style-vk-numbered-square-mark.{$unique_classname} li::before",
@@ -53,7 +53,7 @@ function vk_blocks_render_core_list( $block_content, $block ) {
 				),
 			),
 		);
-	} elseif ( strpos( $block['attrs']['className'], 'is-style-vk-numbered-circle-mark' ) !== false ) {
+	} elseif ( ! empty( $block['attrs']['className'] ) && strpos( $block['attrs']['className'], 'is-style-vk-numbered-circle-mark' ) !== false ) {
 		$list_styles = array(
 			array(
 				'selector'     => ".is-style-vk-numbered-circle-mark.{$unique_classname} li::before",

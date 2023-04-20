@@ -129,6 +129,10 @@ class VK_Blocks_Global_Settings {
 				'is_pro' => true,
 			),
 			array(
+				'name'   => 'archive-list',
+				'is_pro' => true,
+			),
+			array(
 				'name'   => 'breadcrumb',
 				'is_pro' => true,
 			),
@@ -212,6 +216,10 @@ class VK_Blocks_Global_Settings {
 			),
 			array(
 				'name'   => 'table-of-contents-new',
+				'is_pro' => true,
+			),
+			array(
+				'name'   => 'taxonomy',
 				'is_pro' => true,
 			),
 			array(

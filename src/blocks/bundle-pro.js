@@ -5,6 +5,7 @@ import * as accordion from './_pro/accordion';
 import * as accordionTarget from './_pro/accordion-target';
 import * as accordionTrigger from './_pro/accordion-trigger';
 import * as animation from './_pro/animation';
+import * as archiveList from './_pro/archive-list';
 import * as breadcrumb from './_pro/breadcrumb';
 import * as buttonOuter from './_pro/button-outer';
 import * as card from './_pro/card';
@@ -25,6 +26,7 @@ import * as selectPostList from './_pro/select-post-list';
 import * as selectPostListItem from './_pro/select-post-list-item';
 import * as step from './_pro/step';
 import * as stepItem from './_pro/step-item';
+import * as taxonomy from './_pro/taxonomy';
 import * as tableofContentsNew from './_pro/table-of-contents-new';
 import * as timeline from './_pro/timeline';
 import * as timelineItem from './_pro/timeline-item';
@@ -40,6 +42,7 @@ const vkblocksPro = [
 	accordionTarget,
 	accordionTrigger,
 	animation,
+	archiveList,
 	breadcrumb,
 	buttonOuter,
 	card,
@@ -61,6 +64,7 @@ const vkblocksPro = [
 	step,
 	stepItem,
 	tableofContentsNew,
+	taxonomy,
 	timeline,
 	timelineItem,
 ];

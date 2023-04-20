@@ -572,6 +572,36 @@ msgstr ""
 msgid "Very Slow"
 msgstr ""
 
+#: src/blocks/_pro/archive-list/edit.js:30
+msgid "Archive List Setting"
+msgstr ""
+
+#: src/blocks/_pro/archive-list/edit.js:32
+msgid "Post type"
+msgstr ""
+
+#: src/blocks/_pro/archive-list/edit.js:38
+msgid "Archive type"
+msgstr ""
+
+#: src/blocks/_pro/archive-list/edit.js:46
+msgid "Monthly"
+msgstr ""
+
+#: src/blocks/_pro/archive-list/edit.js:50
+msgid "Yearly"
+msgstr ""
+
+#: src/blocks/_pro/archive-list/edit.js:55
+#: src/blocks/_pro/taxonomy/edit.js:94
+msgid "Display as dropdown"
+msgstr ""
+
+#: src/blocks/_pro/archive-list/edit.js:62
+#: src/blocks/_pro/taxonomy/edit.js:101
+msgid "Show post counts"
+msgstr ""
+
 #: src/blocks/_pro/button-outer/edit.js:56
 msgid "Button Common Setting"
 msgstr ""
@@ -1399,6 +1429,34 @@ msgstr ""
 
 #: src/blocks/_pro/table-of-contents-new/edit.js:168
 msgid "CLOSE"
+msgstr ""
+
+#: src/blocks/_pro/taxonomy/edit.js:108
+msgid "Show only top level categories"
+msgstr ""
+
+#: src/blocks/_pro/taxonomy/edit.js:118
+msgid "Hide if term has no posts"
+msgstr ""
+
+#: src/blocks/_pro/taxonomy/edit.js:126
+msgid "Show hierarchy"
+msgstr ""
+
+#: src/blocks/_pro/taxonomy/edit.js:50
+msgid "This block will not be displayed because no taxonomy is selected."
+msgstr ""
+
+#: src/blocks/_pro/taxonomy/edit.js:63
+msgid "This block will not be displayed because this taxonomy has no term."
+msgstr ""
+
+#: src/blocks/_pro/taxonomy/edit.js:80
+msgid "Taxonomy Block Option"
+msgstr ""
+
+#: src/blocks/_pro/taxonomy/edit.js:84
+msgid "Taxonomy"
 msgstr ""
 
 #: src/blocks/_pro/timeline-item/edit.js:64

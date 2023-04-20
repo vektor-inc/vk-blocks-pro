@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2023-04-14T03:44:21+00:00\n"
-"PO-Revision-Date: 2023-04-14 14:20+0900\n"
+"POT-Creation-Date: 2023-04-20T07:27:18+00:00\n"
+"PO-Revision-Date: 2023-04-20 17:03+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -527,7 +527,7 @@ msgstr "短い"
 #: src/blocks/faq2/index.js:21 src/blocks/slider/edit.js:457
 #: src/extensions/common/inline-font-size/inline.js:28
 #: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:260
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:252
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:260
 msgid "Normal"
 msgstr "標準"
 
@@ -594,6 +594,34 @@ msgstr "アニメーションの速度"
 #: src/blocks/_pro/animation/edit.js:99
 msgid "Very Slow"
 msgstr "非常に遅い"
+
+#: src/blocks/_pro/archive-list/edit.js:30
+msgid "Archive List Setting"
+msgstr "アーカイブリスト設定"
+
+#: src/blocks/_pro/archive-list/edit.js:32
+msgid "Post type"
+msgstr "投稿タイプ"
+
+#: src/blocks/_pro/archive-list/edit.js:38
+msgid "Archive type"
+msgstr "アーカイブタイプ"
+
+#: src/blocks/_pro/archive-list/edit.js:46
+msgid "Monthly"
+msgstr "月別"
+
+#: src/blocks/_pro/archive-list/edit.js:50
+msgid "Yearly"
+msgstr "年別"
+
+#: src/blocks/_pro/archive-list/edit.js:55 src/blocks/_pro/taxonomy/edit.js:94
+msgid "Display as dropdown"
+msgstr "ドロップダウン"
+
+#: src/blocks/_pro/archive-list/edit.js:62 src/blocks/_pro/taxonomy/edit.js:101
+msgid "Show post counts"
+msgstr "投稿件数を表示"
 
 #: src/blocks/_pro/button-outer/edit.js:56
 msgid "Button Common Setting"
@@ -1387,6 +1415,34 @@ msgstr "OPEN"
 msgid "CLOSE"
 msgstr "CLOSE"
 
+#: src/blocks/_pro/taxonomy/edit.js:108
+msgid "Show only top level categories"
+msgstr "トップレベルのみ表示"
+
+#: src/blocks/_pro/taxonomy/edit.js:118
+msgid "Hide if term has no posts"
+msgstr "投稿のないタームを表示しない"
+
+#: src/blocks/_pro/taxonomy/edit.js:126
+msgid "Show hierarchy"
+msgstr "階層を表示"
+
+#: src/blocks/_pro/taxonomy/edit.js:50
+msgid "This block will not be displayed because no taxonomy is selected."
+msgstr "分類が選択されていないため、このブロックは表示されません。"
+
+#: src/blocks/_pro/taxonomy/edit.js:63
+msgid "This block will not be displayed because this taxonomy has no term."
+msgstr "この分類にはタームがないため、このブロックは表示されません。"
+
+#: src/blocks/_pro/taxonomy/edit.js:80
+msgid "Taxonomy Block Option"
+msgstr "タクソノミーブロックオプション"
+
+#: src/blocks/_pro/taxonomy/edit.js:84
+msgid "Taxonomy"
+msgstr "タクソノミー"
+
 #: src/blocks/_pro/timeline-item/edit.js:64
 msgid "label"
 msgstr "ラベル"
@@ -1647,7 +1703,7 @@ msgstr "大"
 #: src/blocks/button/edit.js:323
 #: src/extensions/common/inline-font-size/inline.js:23
 #: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:255
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:247
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:255
 msgid "Small"
 msgstr "小"
 
@@ -2507,13 +2563,13 @@ msgstr "適用"
 
 #: src/extensions/common/inline-font-size/inline.js:33
 #: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:265
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:257
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:265
 msgid "Big"
 msgstr "大"
 
 #: src/extensions/common/inline-font-size/inline.js:38
 #: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:270
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:262
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:270
 msgid "Extra big"
 msgstr "特大"
 
@@ -3115,11 +3171,15 @@ msgid "Edit this area"
 msgstr "このエリアを編集"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:40
+#: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:42
+#: src/blocks/_pro/taxonomy/index.php:42
 msgid "Please select taxonomy"
 msgstr "タクソノミーを選択してください。"
 
 #. translators:
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:152
+#: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:154
+#: src/blocks/_pro/taxonomy/index.php:154
 #, fuzzy
 #| msgctxt "Yearly archive description"
 #| msgid "Article of %s."
@@ -3214,17 +3274,18 @@ msgstr "ライセンスキーが登録されていません。"
 msgid "The VK Blocks Pro license is invalid."
 msgstr "VK Blocks Pro のライセンスが無効です。"
 
-#: dist/vk-blocks-pro/vk-blocks.php:258
+#: dist/vk-blocks-pro/vk-blocks.php:258 vk-blocks.php:258
 msgid ""
-"Enter a valid license key for any of the following products on the settings "
-"screen."
-msgstr "以下の製品のライセンスキーを設定画面から入力してください。"
+"Please enter a valid license key for any of the following products on the "
+"settings screen."
+msgstr ""
+"設定画面で以下のいずれかの製品の有効なライセンスキーを入力してください。"
 
-#: dist/vk-blocks-pro/vk-blocks.php:267 vk-blocks.php:268
+#: dist/vk-blocks-pro/vk-blocks.php:268 vk-blocks.php:268
 msgid "Enter the license key"
 msgstr "ライセンスキーを入力"
 
-#: dist/vk-blocks-pro/vk-blocks.php:270 vk-blocks.php:271
+#: dist/vk-blocks-pro/vk-blocks.php:271 vk-blocks.php:271
 msgid ""
 "If this display does not disappear even after entering a valid license key, "
 "re-acquire the update."
@@ -3232,16 +3293,19 @@ msgstr ""
 "有効なライセンスキーを入力してもこの表示が消えない場合は更新の再取得をしてく"
 "ださい。"
 
-#: dist/vk-blocks-pro/vk-blocks.php:271 vk-blocks.php:272
+#: dist/vk-blocks-pro/vk-blocks.php:272 vk-blocks.php:272
 msgid "Re-acquisition of updates"
 msgstr "更新の再取得"
 
-#: vk-blocks.php:258
-msgid ""
-"Please enter a valid license key for any of the following products on the "
-"settings screen."
-msgstr ""
-"設定画面で以下のいずれかの製品の有効なライセンスキーを入力してください。"
+#: inc/vk-blocks/build/blocks/_pro/archive-list/index.php:87
+#: src/blocks/_pro/archive-list/index.php:87
+msgid "Please select year"
+msgstr "選択してください"
+
+#: inc/vk-blocks/build/blocks/_pro/archive-list/index.php:89
+#: src/blocks/_pro/archive-list/index.php:89
+msgid "Please select month"
+msgstr "選択してください"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/alert/block.json
 #: inc/vk-blocks/build/blocks/alert/block.json src/blocks/alert/block.json
@@ -3891,11 +3955,15 @@ msgid ""
 msgstr "追加すると見出しに合わせて自動で生成される目次です。"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/block.json
+#: inc/vk-blocks/build/blocks/_pro/taxonomy/block.json
+#: src/blocks/_pro/taxonomy/block.json
 msgctxt "block title"
 msgid "Taxonomy"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/block.json
+#: inc/vk-blocks/build/blocks/_pro/taxonomy/block.json
+#: src/blocks/_pro/taxonomy/block.json
 msgctxt "block description"
 msgid "Display Taxnomy List Pulldown"
 msgstr ""
@@ -3929,6 +3997,23 @@ msgid ""
 "Displays a simple schedule and other information that is useful for "
 "explaining the order."
 msgstr "順番を説明する時に便利でシンプルなスケジュールなどを表示します。"
+
+#: inc/vk-blocks/build/blocks/_pro/archive-list/block.json
+#: src/blocks/_pro/archive-list/block.json
+msgctxt "block title"
+msgid "Archive list"
+msgstr "アーカイブリスト"
+
+#: inc/vk-blocks/build/blocks/_pro/archive-list/block.json
+#: src/blocks/_pro/archive-list/block.json
+msgctxt "block description"
+msgid "Displays a list of archives"
+msgstr "アーカイブリストを表示します"
+
+#~ msgid ""
+#~ "Enter a valid license key for any of the following products on the "
+#~ "settings screen."
+#~ msgstr "以下の製品のライセンスキーを設定画面から入力してください。"
 
 #~ msgid "Color specification here is now deprecated."
 #~ msgstr "ここでの色指定は非推奨になりました。"

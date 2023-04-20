@@ -32,7 +32,27 @@ class ArchiveList extends WP_UnitTestCase {
 					'showCount'                  => false,
 					'className'                  => '',
 				),
-				'expected' => '<div class="vk_archiveList wp-block-vk-blocks-archive-list"><ul class="vk_archive-list"><li><a href=\'http://localhost:8889/?m=202304\'>April 2023</a></li></ul></div>',
+				'expected' => '<div class="vk_archiveList wp-block-vk-blocks-archive-list"><ul class="vk_archive-list"><li><a href=\''.home_url().'/?m='.gmdate('Ym').'\'>April 2023</a></li></ul></div>',
+			),
+			array(
+				'attributes' => array(
+					'postType'                   => 'post',
+					'displayType'                => 'yearly',
+					'displayDropdown'            => false,
+					'showCount'                  => false,
+					'className'                  => '',
+				),
+				'expected' => '<div class="vk_archiveList wp-block-vk-blocks-archive-list"><ul class="vk_archive-list"><li><a href=\''.home_url().'/?m='.gmdate('Y').'\'>'.gmdate('Y').'</a></li></ul></div>',
+			),
+			array(
+				'attributes' => array(
+					'postType'                   => 'post',
+					'displayType'                => 'yearly',
+					'displayDropdown'            => true,
+					'showCount'                  => false,
+					'className'                  => '',
+				),
+				'expected' => '<div class="vk_archiveList wp-block-vk-blocks-archive-list"><select name="archive-list-dropdown" onChange="document.location.href=this.options[this.selectedIndex].value;"><option value="">Please select year</option><option value=\''.home_url().'/?m='.gmdate('Y').'\'> '.gmdate('Y').' </option></select></div>',
 			),
 		);
 

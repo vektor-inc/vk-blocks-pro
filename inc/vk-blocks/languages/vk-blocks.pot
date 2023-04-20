@@ -9,7 +9,11 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2023-04-20T06:20:34+00:00\n"
+=======
+"POT-Creation-Date: 2023-04-20T06:40:57+00:00\n"
+>>>>>>> d7218e686b4e51ffb215d19d37f75d864b3ea0a4
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: vk-blocks\n"
@@ -500,7 +504,12 @@ msgstr ""
 #: src/blocks/faq2/index.js:21
 #: src/blocks/slider/edit.js:457
 #: src/extensions/common/inline-font-size/inline.js:28
+<<<<<<< HEAD
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:256
+=======
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:260
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:260
+>>>>>>> d7218e686b4e51ffb215d19d37f75d864b3ea0a4
 msgid "Normal"
 msgstr ""
 
@@ -569,6 +578,36 @@ msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:99
 msgid "Very Slow"
+msgstr ""
+
+#: src/blocks/_pro/archive-list/edit.js:30
+msgid "Archive List Setting"
+msgstr ""
+
+#: src/blocks/_pro/archive-list/edit.js:32
+msgid "Post type"
+msgstr ""
+
+#: src/blocks/_pro/archive-list/edit.js:38
+msgid "Archive type"
+msgstr ""
+
+#: src/blocks/_pro/archive-list/edit.js:46
+msgid "Monthly"
+msgstr ""
+
+#: src/blocks/_pro/archive-list/edit.js:50
+msgid "Yearly"
+msgstr ""
+
+#: src/blocks/_pro/archive-list/edit.js:55
+#: src/blocks/_pro/taxonomy/edit.js:94
+msgid "Display as dropdown"
+msgstr ""
+
+#: src/blocks/_pro/archive-list/edit.js:62
+#: src/blocks/_pro/taxonomy/edit.js:101
+msgid "Show post counts"
 msgstr ""
 
 #: src/blocks/_pro/button-outer/edit.js:56
@@ -1383,10 +1422,6 @@ msgstr ""
 msgid "CLOSE"
 msgstr ""
 
-#: src/blocks/_pro/taxonomy/edit.js:101
-msgid "Show post counts"
-msgstr ""
-
 #: src/blocks/_pro/taxonomy/edit.js:108
 msgid "Show only top level categories"
 msgstr ""
@@ -1413,10 +1448,6 @@ msgstr ""
 
 #: src/blocks/_pro/taxonomy/edit.js:84
 msgid "Taxonomy"
-msgstr ""
-
-#: src/blocks/_pro/taxonomy/edit.js:94
-msgid "Display as dropdown"
 msgstr ""
 
 #: src/blocks/_pro/timeline-item/edit.js:64
@@ -1684,7 +1715,12 @@ msgstr ""
 
 #: src/blocks/button/edit.js:323
 #: src/extensions/common/inline-font-size/inline.js:23
+<<<<<<< HEAD
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:251
+=======
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:255
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:255
+>>>>>>> d7218e686b4e51ffb215d19d37f75d864b3ea0a4
 msgid "Small"
 msgstr ""
 
@@ -2520,12 +2556,22 @@ msgid "Apply"
 msgstr ""
 
 #: src/extensions/common/inline-font-size/inline.js:33
+<<<<<<< HEAD
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:261
+=======
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:265
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:265
+>>>>>>> d7218e686b4e51ffb215d19d37f75d864b3ea0a4
 msgid "Big"
 msgstr ""
 
 #: src/extensions/common/inline-font-size/inline.js:38
+<<<<<<< HEAD
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:266
+=======
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:270
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:270
+>>>>>>> d7218e686b4e51ffb215d19d37f75d864b3ea0a4
 msgid "Extra big"
 msgstr ""
 
@@ -3048,14 +3094,26 @@ msgstr ""
 msgid "Edit this area"
 msgstr ""
 
+<<<<<<< HEAD
 #: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:40
 #: src/blocks/_pro/taxonomy/index.php:40
+=======
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:40
+#: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:42
+#: src/blocks/_pro/taxonomy/index.php:42
+>>>>>>> d7218e686b4e51ffb215d19d37f75d864b3ea0a4
 msgid "Please select taxonomy"
 msgstr ""
 
 #. translators:
+<<<<<<< HEAD
 #: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:152
 #: src/blocks/_pro/taxonomy/index.php:152
+=======
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:152
+#: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:154
+#: src/blocks/_pro/taxonomy/index.php:154
+>>>>>>> d7218e686b4e51ffb215d19d37f75d864b3ea0a4
 msgid "All of %s"
 msgstr ""
 
@@ -3129,8 +3187,39 @@ msgstr ""
 msgid "The VK Blocks Pro license is invalid."
 msgstr ""
 
+<<<<<<< HEAD
 #: vk-blocks.php:258
 msgid "Please enter a valid license key for any of the following products on the settings screen."
+=======
+#: dist/vk-blocks-pro/vk-blocks.php:258
+#: vk-blocks.php:258
+msgid "Please enter a valid license key for any of the following products on the settings screen."
+msgstr ""
+
+#: dist/vk-blocks-pro/vk-blocks.php:268
+#: vk-blocks.php:268
+msgid "Enter the license key"
+msgstr ""
+
+#: dist/vk-blocks-pro/vk-blocks.php:271
+#: vk-blocks.php:271
+msgid "If this display does not disappear even after entering a valid license key, re-acquire the update."
+msgstr ""
+
+#: dist/vk-blocks-pro/vk-blocks.php:272
+#: vk-blocks.php:272
+msgid "Re-acquisition of updates"
+msgstr ""
+
+#: inc/vk-blocks/build/blocks/_pro/archive-list/index.php:87
+#: src/blocks/_pro/archive-list/index.php:87
+msgid "Please select year"
+msgstr ""
+
+#: inc/vk-blocks/build/blocks/_pro/archive-list/index.php:89
+#: src/blocks/_pro/archive-list/index.php:89
+msgid "Please select month"
+>>>>>>> d7218e686b4e51ffb215d19d37f75d864b3ea0a4
 msgstr ""
 
 #: vk-blocks.php:268
@@ -3719,4 +3808,16 @@ msgstr ""
 #: src/blocks/_pro/timeline/block.json
 msgctxt "block description"
 msgid "Displays a simple schedule and other information that is useful for explaining the order."
+msgstr ""
+
+#: inc/vk-blocks/build/blocks/_pro/archive-list/block.json
+#: src/blocks/_pro/archive-list/block.json
+msgctxt "block title"
+msgid "Archive list"
+msgstr ""
+
+#: inc/vk-blocks/build/blocks/_pro/archive-list/block.json
+#: src/blocks/_pro/archive-list/block.json
+msgctxt "block description"
+msgid "Displays a list of archives"
 msgstr ""

@@ -1,6 +1,8 @@
 <?php
 /**
  * Registers the `vk-blocks/taxonomy` block.
+ * vk-blocks/taxonomy-list にするべきか迷ったが、taxonomy-list だと term のリストではなく taxonomy のリストとも解釈できるため taxonomy とした
+ * I was wondering if I should name it vk-blocks/taxonomy-list, but since taxonomy-list can also be interpreted as a list of taxonomies, I named it taxonomy.
  *
  * @package vk-blocks
  */

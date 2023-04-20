@@ -1,0 +1,13 @@
+// disable at editor
+.vk_archiveList {
+	a,
+	select {
+		pointer-events: none;
+	}
+
+	select {
+		color: #a7aaad;
+		border-color: #dcdcde;
+		background-color: #f6f7f7;
+	}
+}

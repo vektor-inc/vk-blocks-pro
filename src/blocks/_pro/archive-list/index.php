@@ -101,12 +101,18 @@ function vk_blocks_archive_list_render_callback( $attributes ) {
 			$archives
 		);
 	}
-
-	return sprintf(
+	$formatted_output = sprintf(
 		'<div %1$s>%2$s</div>',
 		$wrapper_classes,
 		$block_content
 	);
+
+	// タブ、改行コード、連続した半角スペースを削除するための正規表現
+	$pattern = "/\t|\r\n|\n|\r|\s{2,}/";
+
+	// preg_replace を使用して、タブ、改行コード、および連続した半角スペースを削除
+	$clean_output = preg_replace( $pattern, '', $formatted_output );
+	return $clean_output;
 }
 
 /**

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-04-19T13:02:06+00:00\n"
+"POT-Creation-Date: 2023-04-20T06:28:17+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks\n"
@@ -509,7 +509,7 @@ msgstr ""
 #: src/blocks/slider/edit.js:457
 #: src/extensions/common/inline-font-size/inline.js:28
 #: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:260
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:256
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:260
 msgid "Normal"
 msgstr ""
 
@@ -1716,7 +1716,7 @@ msgstr ""
 #: src/blocks/button/edit.js:323
 #: src/extensions/common/inline-font-size/inline.js:23
 #: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:255
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:251
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:255
 msgid "Small"
 msgstr ""
 
@@ -2555,13 +2555,13 @@ msgstr ""
 
 #: src/extensions/common/inline-font-size/inline.js:33
 #: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:265
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:261
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:265
 msgid "Big"
 msgstr ""
 
 #: src/extensions/common/inline-font-size/inline.js:38
 #: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:270
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:266
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:270
 msgid "Extra big"
 msgstr ""
 
@@ -3099,29 +3099,29 @@ msgstr ""
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
 #: src/blocks/ancestor-page-list/index.php:44
-#: test/phpunit/pro/test-ancestor-page-list.php:89
-#: test/phpunit/pro/test-ancestor-page-list.php:173
+#: test/phpunit/pro/__test-ancestor-page-list.php:89
+#: test/phpunit/pro/__test-ancestor-page-list.php:173
 msgid "Ancestor Page Title"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
 #: src/blocks/ancestor-page-list/index.php:83
-#: test/phpunit/pro/test-ancestor-page-list.php:173
+#: test/phpunit/pro/__test-ancestor-page-list.php:173
 msgid "Dummy Text"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
 #: src/blocks/ancestor-page-list/index.php:83
-#: test/phpunit/pro/test-ancestor-page-list.php:173
+#: test/phpunit/pro/__test-ancestor-page-list.php:173
 msgid "Because of the site editor have not child page that, the page list from ancestor is not displayed. Now displaying the dummy text list instead of the page list from ancestor."
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
 #: src/blocks/ancestor-page-list/index.php:83
-#: test/phpunit/pro/test-ancestor-page-list.php:173
+#: test/phpunit/pro/__test-ancestor-page-list.php:173
 msgid "This message only display on the edit screen."
 msgstr ""
 
@@ -3133,15 +3133,15 @@ msgid "Edit this area"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:40
-#: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:40
-#: src/blocks/_pro/taxonomy/index.php:40
+#: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:42
+#: src/blocks/_pro/taxonomy/index.php:42
 msgid "Please select taxonomy"
 msgstr ""
 
 #. translators:
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:152
-#: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:152
-#: src/blocks/_pro/taxonomy/index.php:152
+#: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:154
+#: src/blocks/_pro/taxonomy/index.php:154
 msgid "All of %s"
 msgstr ""
 
@@ -3252,13 +3252,13 @@ msgstr ""
 msgid "Re-acquisition of updates"
 msgstr ""
 
-#: inc/vk-blocks/build/blocks/_pro/archive-list/index.php:86
-#: src/blocks/_pro/archive-list/index.php:86
+#: inc/vk-blocks/build/blocks/_pro/archive-list/index.php:87
+#: src/blocks/_pro/archive-list/index.php:87
 msgid "Please select year"
 msgstr ""
 
-#: inc/vk-blocks/build/blocks/_pro/archive-list/index.php:88
-#: src/blocks/_pro/archive-list/index.php:88
+#: inc/vk-blocks/build/blocks/_pro/archive-list/index.php:89
+#: src/blocks/_pro/archive-list/index.php:89
 msgid "Please select month"
 msgstr ""
 

@@ -5,115 +5,49 @@
  * @package Vk_Blocks_Pro
  */
 
+ use VK_WP_Unit_Test_Tools\VkWpUnitTestHelpers;
+
 /**
  * ArchiveList block test case.
  */
 class ArchiveList extends WP_UnitTestCase {
 
-	/**
-	 * ArchiveList
-	 *
-	 * @var int|\WP_Error $page_id
-	 */
-	public $post_id;
-
-	/**
-	 * ArchiveListブロックで表示する固定ページ
-	 *
-	 * @var int|\WP_Error $page_id
-	 */
-	public $page_id;
-
-	/**
-	 * 各テストケースの実行直前に呼ばれる
-	 */
-	public function setUp() {
-		parent::setUp();
-
-		$catarr                           = array(
-			'cat_name' => 'parent_category',
-		);
-		$test_posts['parent_category_id'] = wp_insert_category( $catarr );
-
-		$page          = array(
-			'post_title'   => 'Page Title',
-			'post_content' => '<!-- wp:paragraph --><p>This is my page.</p><!-- /wp:paragraph -->',
-			'post_type'    => 'page',
-			'post_status'  => 'publish',
-			'post_category' => array( $test_posts['parent_category_id'] ),
-		);
-		$this->page_id = wp_insert_post( $page );
-
-		$post          = array(
-			'post_title'   => 'Post Title',
-			'post_content' => '<!-- wp:paragraph --><p>This is my post</p><!-- /wp:paragraph -->',
-			'post_status'  => 'publish',
-			'post_category' => array( $test_posts['parent_category_id'] ),
-		);
-		$this->post_id = wp_insert_post( $post );
-	}
-
-	/**
-	 * Tear down each test method.
-	 */
-	public function tearDown() {
-		wp_delete_post( $this->page_id, true );
-		$this->page_id = 0;
-
-		wp_delete_post( $this->post_id, true );
-		$this->post_id = 0;
-	}
-
-	/**
-	 * A single example test.
-	 */
-	public function test_archivelist() {
-		$attributes = array(
-			'name'                       => 'vk-blocks/archive-list',
-			'postType'                   => 'post',
-			'displayType'                => 'monthly',
-			'displayDropdown'            => false,
-			'showCount'                  => false,
-			'className'                  => '',
-		);
-
-		$this->set_current_user( 'administrator' );
-
-		$actual = vk_blocks_archive_list_render_callback( $attributes );
-
-		$arg = array(
-			'echo' => false,
-		);
-	
-		$expected = vk_blocks_unescape_html( '<div class=\"vk_archiveList\"><ul class=\"vk_archive-list\">' .wp_get_archives( $arg ) .'</ul></div>' );
+	public function test_vk_blocks_archive_list_render_callback(){
 
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
-		print 'test_archivelist' . PHP_EOL;
+		print 'vk_blocks_archive_list_render_callback' . PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
-		print 'expected  :' . $expected . PHP_EOL;
-		print 'actual :' . $actual . PHP_EOL;
+		print PHP_EOL;
 
-		$this->assertEquals( $expected, $actual );
-	}
+		// Create test posts.
+		$test_posts = VkWpUnitTestHelpers::create_test_posts();
 
-	/**
-	 * Add user and set the user as current user.
-	 *
-	 * @param  string $role administrator, editor, author, contributor ...
-	 * @return void
-	 */
-	public function set_current_user( $role ) {
-		$user = $this->factory()->user->create_and_get(
+		$tests = array(
 			array(
-				'role' => $role,
-			)
+				'attributes' => array(
+					'postType'                   => 'post',
+					'displayType'                => 'monthly',
+					'displayDropdown'            => false,
+					'showCount'                  => false,
+					'className'                  => '',
+				),
+				'expected' => '<div class="vk_archiveList wp-block-vk-blocks-archive-list"><ul class="vk_archive-list"><li><a href=\'http://localhost:8889/?m=202304\'>April 2023</a></li></ul></div>',
+			),
 		);
 
-		/*
-			* Set $user as current user
-			*/
-		wp_set_current_user( $user->ID, $user->user_login );
-	}
+		foreach ( $tests as $test ) {
 
+			WP_Block_Supports::init();
+			WP_Block_Supports::$block_to_render = array(
+				'blockName' => 'vk-blocks/archive-list',
+				'attrs'     => $test['attributes'],
+			);
+
+			$actual = vk_blocks_archive_list_render_callback( $test['attributes'] );
+			$this->assertEquals( $test['expected'], $actual );
+
+			// print $actual;
+		}
+	}
 };

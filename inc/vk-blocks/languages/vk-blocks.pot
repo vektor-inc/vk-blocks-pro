@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-04-20T06:40:57+00:00\n"
+"POT-Creation-Date: 2023-04-20T08:04:53+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks\n"
@@ -3132,14 +3132,26 @@ msgstr ""
 msgid "Edit this area"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:40
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/archive-list/index.php:87
+#: inc/vk-blocks/build/blocks/_pro/archive-list/index.php:87
+#: src/blocks/_pro/archive-list/index.php:87
+msgid "Please select year"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/archive-list/index.php:89
+#: inc/vk-blocks/build/blocks/_pro/archive-list/index.php:89
+#: src/blocks/_pro/archive-list/index.php:89
+msgid "Please select month"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:42
 #: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:42
 #: src/blocks/_pro/taxonomy/index.php:42
 msgid "Please select taxonomy"
 msgstr ""
 
 #. translators:
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:152
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:154
 #: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:154
 #: src/blocks/_pro/taxonomy/index.php:154
 msgid "All of %s"
@@ -3250,16 +3262,6 @@ msgstr ""
 #: dist/vk-blocks-pro/vk-blocks.php:272
 #: vk-blocks.php:272
 msgid "Re-acquisition of updates"
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/_pro/archive-list/index.php:87
-#: src/blocks/_pro/archive-list/index.php:87
-msgid "Please select year"
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/_pro/archive-list/index.php:89
-#: src/blocks/_pro/archive-list/index.php:89
-msgid "Please select month"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/alert/block.json
@@ -3596,6 +3598,20 @@ msgstr ""
 #: src/blocks/_pro/animation/block.json
 msgctxt "block description"
 msgid "Add animation to elements when scrolling the page."
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/archive-list/block.json
+#: inc/vk-blocks/build/blocks/_pro/archive-list/block.json
+#: src/blocks/_pro/archive-list/block.json
+msgctxt "block title"
+msgid "Archive list"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/archive-list/block.json
+#: inc/vk-blocks/build/blocks/_pro/archive-list/block.json
+#: src/blocks/_pro/archive-list/block.json
+msgctxt "block description"
+msgid "Displays a list of archives"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
@@ -3942,16 +3958,4 @@ msgstr ""
 #: src/blocks/_pro/timeline/block.json
 msgctxt "block description"
 msgid "Displays a simple schedule and other information that is useful for explaining the order."
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/_pro/archive-list/block.json
-#: src/blocks/_pro/archive-list/block.json
-msgctxt "block title"
-msgid "Archive list"
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/_pro/archive-list/block.json
-#: src/blocks/_pro/archive-list/block.json
-msgctxt "block description"
-msgid "Displays a list of archives"
 msgstr ""

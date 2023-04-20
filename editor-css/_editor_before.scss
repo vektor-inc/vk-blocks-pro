@@ -10,6 +10,7 @@
 .editor-block-list-item-vk-blocks-select-post-list:after,
 .editor-block-list-item-vk-blocks-accordion:after,
 .editor-block-list-item-vk-blocks-animation:after,
+.editor-block-list-item-vk-blocks-archive-list:after,
 .editor-block-list-item-vk-blocks-breadcrumb:after,
 .editor-block-list-item-vk-blocks-button-outer:after,
 .editor-block-list-item-vk-blocks-card:after,
@@ -136,6 +137,8 @@ button.image-button:not(.button-delete) {
 @import "./editor_before_gridcolcard";
 // edit custom css extension
 @import "./editor_before_custom-css-extension";
+// archive-list
+@import "./editor_before_archive-list";
 
 // VK Outer 編集パネル
 $color-danger: #dd3333;

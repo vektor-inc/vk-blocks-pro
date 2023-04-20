@@ -60,11 +60,10 @@ e.g.
 1. VK Blocks can be selected from the VK Blocks Panel.
 1. VK Blocks examples.
 
-
 == Changelog ==
 
-[ Add New Block ][ Archive list block ] Displays a list of archives
-[ Add Block ] Add taxonomy block.
+[ Add Block ][ Archive list block ] Displays a list of archives
+[ Add Block ][ Taxonomy block ] Displays a list of taxonomy terms
 [ Specification Change ][ List ] cope with custom color palette (WordPress 6.2 or higher)
 [ Bug fix ][ Spacer ] Fix custom css variable
 

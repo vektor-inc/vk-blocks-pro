@@ -51,8 +51,9 @@ function vk_blocks_archive_list_render_callback( $attributes ) {
 		return null;
 	}
 
-	// 非表示クラス
 	$classes = 'vk_archiveList';
+
+	// 非表示クラス
 	if ( isset( $attributes['vkb_hidden'] ) && $attributes['vkb_hidden'] ) {
 		$classes .= ' vk_hidden';
 	}
@@ -101,6 +102,8 @@ function vk_blocks_archive_list_render_callback( $attributes ) {
 		);
 	}
 
+	print '<pre style="text-align:left">';print_r($wrapper_classes);print '</pre>';
+echo '━━━━━━━━━━ここやで━━━━━━━━━━'."<br>\n";
 	return sprintf(
 		'<div %1$s>%2$s</div>',
 		$wrapper_classes,

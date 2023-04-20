@@ -62,8 +62,9 @@ e.g.
 
 == Changelog ==
 
-[ Add Block ][ Archive list block ] Displays a list of archives
-[ Add Block ][ Taxonomy block ] Displays a list of taxonomy terms
+= 1.55.0 =
+[ Add Block ][ Archive list block ( Pro ) ] Displays a list of archives
+[ Add Block ][ Taxonomy block ( Pro ) ] Displays a list of taxonomy terms
 [ Specification Change ][ List ] cope with custom color palette (WordPress 6.2 or higher)
 [ Bug fix ][ Spacer ] Fix custom css variable
 

@@ -49,6 +49,10 @@ function DynamicTextEditControls({ tagName, onSelectTagName }) {
 					label: __('h6', 'vk-blocks'),
 				},
 				{
+					value: 'p',
+					label: __('p', 'vk-blocks'),
+				},
+				{
 					value: 'span',
 					label: __('span', 'vk-blocks'),
 				},

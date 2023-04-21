@@ -60,10 +60,14 @@ e.g.
 1. VK Blocks can be selected from the VK Blocks Panel.
 1. VK Blocks examples.
 
-
 == Changelog ==
 
 [ Add Block ][ Dynamic Text Block (Pro) ] Add Dynamic text block.
+[ Add Function ][ Admin screen ] Added block style manager function.
+
+= 1.55.0 =
+[ Add Block ][ Archive list block ( Pro ) ] Displays a list of archives
+[ Add Block ][ Taxonomy block ( Pro ) ] Displays a list of taxonomy terms
 [ Specification Change ][ List ] cope with custom color palette (WordPress 6.2 or higher)
 [ Bug fix ][ Spacer ] Fix custom css variable
 

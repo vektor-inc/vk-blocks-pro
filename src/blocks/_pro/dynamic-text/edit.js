@@ -116,7 +116,7 @@ export default function DynamicTextEdit(props) {
 							{
 								value: 'ancestor-page',
 								label: __(
-									'表示中のページの先祖階層の固定ページ名',
+									'表示中の固定ページの先祖階層の固定ページ名',
 									'vk-blocks'
 								),
 							},
@@ -125,6 +125,8 @@ export default function DynamicTextEdit(props) {
 							// 	label: __('カスタムフィールド', 'vk-blocks'),
 							// },
 						]}
+
+
 					/>
 					<DynamicTextEditControls
 						tagName={TagName}
@@ -132,6 +134,10 @@ export default function DynamicTextEdit(props) {
 							setAttributes({ tagName: value })
 						}
 					/>
+					<div className="alert alert-info">						{__(
+						'文字のスタイル指定をする場合は横並びブロックの中にこのブロックを入れて、横並びブロックでスタイルを指定してください。',
+						'vk-blocks'
+					)}</div>
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>{editContent}</div>

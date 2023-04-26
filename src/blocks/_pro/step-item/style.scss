@@ -28,6 +28,7 @@
 			 回避対応 A : display:block; overflow:hidden;
 			 中の要素にシャドウをつけた場合、シャドウが hidden で切れてしまう。
 
+			 @since 1.49.0
 			 回避対応 B : display:grid;
 			 grid では直下に div など配置しないと幅の制限が適切に制御できず、
 			 コードブロックなどがはみ出してしまう
@@ -39,7 +40,7 @@
 			 回避対応 D : display:table;
 			 はみだす
 
-			 @since1.53.1
+			 @since 1.53.1
 			 回避対応 E : clearfix & border:1px solid rgba(0,0,0,0);
 			 border:1px solid rgba(0,0,0,0); がないと高さが検出されないので注意
 			 */

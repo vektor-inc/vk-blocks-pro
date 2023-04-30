@@ -111,7 +111,7 @@ export const AddButton = ({
 						<TextControl
 							className="custom_block_style_item_title"
 							label={__(
-								'Toolbar title (Changeable)',
+								'Block Style name (Changeable)',
 								'vk-blocks'
 							)}
 							onChange={(value) => {

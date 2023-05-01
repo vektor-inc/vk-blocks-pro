@@ -32,7 +32,7 @@ class ArchiveList extends WP_UnitTestCase {
 					'showCount'                  => false,
 					'className'                  => '',
 				),
-				'expected' => '<div class="vk_archiveList wp-block-vk-blocks-archive-list"><ul class="vk_archive-list"><li><a href=\''.home_url().'/?m='.gmdate('Ym').'\'>April 2023</a></li></ul></div>',
+				'expected' => '<div class="vk_archiveList wp-block-vk-blocks-archive-list"><ul class="vk_archive-list"><li><a href=\''.home_url().'/?m='.gmdate('Ym').'\'>'.gmdate('M').' 2023</a></li></ul></div>',
 			),
 			array(
 				'attributes' => array(

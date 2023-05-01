@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "POT-Creation-Date: 2023-05-01T04:50:04+00:00\n"
-"PO-Revision-Date: 2023-05-01 13:50+0900\n"
+"PO-Revision-Date: 2023-05-01 13:54+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -103,7 +103,7 @@ msgstr "ブロックスタイルマネージャー設定"
 
 #: src/admin/custom-block-style/add-button/index.js:113
 msgid "Block Style Label (Changeable)"
-msgstr "ブロックスタイルラベル（変更可能）"
+msgstr "ブロックスタイル ラベル（変更可能）"
 
 #: src/admin/custom-block-style/add-button/index.js:141
 #: src/admin/custom-format/add-item.js:161

@@ -84,7 +84,7 @@ msgid "Block Style Manager Setting"
 msgstr ""
 
 #: src/admin/custom-block-style/add-button/index.js:113
-msgid "Block Style name (Changeable)"
+msgid "Block Style Label (Changeable)"
 msgstr ""
 
 #: src/admin/custom-block-style/add-button/index.js:141

@@ -61,7 +61,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-
+[ Bug Fix ][ Taxonomy block ( Pro ) ] Fix Dropdown Script.
 [ Add Function ][ Admin screen ] Added block style manager function.
 [ Bug fix ][ Step(Pro) / Time Line(Pro) ] Fix item content overflow
 

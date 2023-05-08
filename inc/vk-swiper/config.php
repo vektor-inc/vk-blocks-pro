@@ -2,9 +2,8 @@
 /**
  * VK Swiper Config
  *
- * @package Lightning G3
+ * @package vektor-inc/vk-blocks
  */
 use VektorInc\VK_Swiper\VkSwiper;
 new VkSwiper();
 VkSwiper::enqueue_swiper();
-

@@ -205,6 +205,7 @@ function vk_blocks_taxonomy_render_callback( $attributes ) {
  * Generates the inline script for a categories dropdown field.
  *
  * @param string  $content Block Content.
+ * @param string  $taxonomy Selected Taxoinomy.
  * @param boolean $is_dropdown Dropdown or not.
  * @param string  $dropdown_id ID of the dropdown field.
  *

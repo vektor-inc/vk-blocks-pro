@@ -62,6 +62,7 @@ e.g.
 
 == Changelog ==
 [ Bug Fix ][ Taxonomy block ( Pro ) ] Fix Dropdown Script.
+[ Bug fix ][ Custom Format Setting (Pro) ] Custom Format Setting WordPress 6.2 UI adjustment.
 [ Add Function ][ Admin screen ] Added block style manager function.
 [ Bug fix ][ Step(Pro) / Time Line(Pro) ] Fix item content overflow
 

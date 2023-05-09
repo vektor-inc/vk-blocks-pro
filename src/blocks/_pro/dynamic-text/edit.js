@@ -126,14 +126,14 @@ export default function DynamicTextEdit(props) {
 							// },
 						]}
 					/>
-					{displayElement === 'ancestor-page' &&
+					{displayElement === 'ancestor-page' && (
 						<div className="alert alert-warning">
 							{__(
 								'このブロックは親階層を持つ固定ページ以外のページでは表示されません。',
 								'vk-blocks'
 							)}
 						</div>
-					}
+					)}
 					<DynamicTextEditControls
 						tagName={TagName}
 						onSelectTagName={(value) =>

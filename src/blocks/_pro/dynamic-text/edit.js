@@ -125,8 +125,6 @@ export default function DynamicTextEdit(props) {
 							// 	label: __('カスタムフィールド', 'vk-blocks'),
 							// },
 						]}
-
-
 					/>
 					<DynamicTextEditControls
 						tagName={TagName}
@@ -134,10 +132,12 @@ export default function DynamicTextEdit(props) {
 							setAttributes({ tagName: value })
 						}
 					/>
-					<div className="alert alert-info">{__(
-						'If you want to specify the style of characters, put this block inside the Row block and specify the style in the Row block.',
-						'vk-blocks'
-					)}</div>
+					<div className="alert alert-info">
+						{__(
+							'If you want to specify the style of characters, put this block inside the Row block and specify the style in the Row block.',
+							'vk-blocks'
+						)}
+					</div>
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>{editContent}</div>

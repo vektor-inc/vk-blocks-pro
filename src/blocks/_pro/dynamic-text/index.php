@@ -38,7 +38,7 @@ function vk_blocks_dynamic_text_render_callback( $attributes ) {
 	// $custom_field = __( 'カスタムフィールドを入れる', 'vk-blocks' );
 
 	$classes = 'vk_dynamicText';
-	// block.jsonのSupportsで設定したクラス名やスタイルを取得する
+	// block.json の Supports で設定したクラス名やスタイルを取得する
 	$wrapper_classes = get_block_wrapper_attributes( array( 'class' => $classes ) );
 
 	$block_content = '';

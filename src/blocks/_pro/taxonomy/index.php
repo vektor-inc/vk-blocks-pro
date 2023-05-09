@@ -157,12 +157,21 @@ function vk_blocks_taxonomy_render_callback( $attributes ) {
 	}
 	$common_args = apply_filters( 'vk_blocks_taxlist_args', $common_args ); // 9.13.0.0
 
+	// ドロップダウンの名前を設定
+	$name = $taxonomy;
+	if ( 'category' === $taxonomy ) {
+		$name = 'category_name';
+	} elseif ( 'post_tag' === $taxonomy ) {
+		$name = 'tag';
+	}
+
 	$dropdown_args = array(
 		// translators:
 		'show_option_all' => sprintf( __( 'All of %s', 'vk-blocks' ), $taxonomy_data->labels->singular_name ),
 		'id'              => $dropdown_id,
 		'class'           => 'vk_taxonomy__input-wrap vk_taxonomy__input-wrap--select',
-		'selected'        => get_query_var( $taxonomy ),
+		'selected'        => get_query_var( $name ),
+		'name'            => $name,
 	);
 
 	$list_args = array(
@@ -198,20 +207,20 @@ function vk_blocks_taxonomy_render_callback( $attributes ) {
 
 	$content .= '</div>';
 
-	return apply_filters( 'vk_blocks_taxonomy_content', $content, $taxonomy, $is_dropdown, $dropdown_id );
+	return apply_filters( 'vk_blocks_taxonomy_content', $content, $name, $is_dropdown, $dropdown_id );
 }
 
 /**
  * Generates the inline script for a categories dropdown field.
  *
  * @param string  $content Block Content.
- * @param string  $taxonomy Selected Taxoinomy.
+ * @param string  $name Selected Taxoinomy.
  * @param boolean $is_dropdown Dropdown or not.
  * @param string  $dropdown_id ID of the dropdown field.
  *
  * @return string Returns the dropdown onChange redirection script.
  */
-function vk_blocks_taxonomy_add_scripts( $content, $taxonomy, $is_dropdown, $dropdown_id ) {
+function vk_blocks_taxonomy_add_scripts( $content, $name, $is_dropdown, $dropdown_id ) {
 	$script = '';
 	if ( ! empty( $_SERVER['REQUEST_URI'] ) ) {
 		$current_url = esc_url_raw( wp_unslash( $_SERVER['REQUEST_URI'] ) );
@@ -230,7 +239,7 @@ function vk_blocks_taxonomy_add_scripts( $content, $taxonomy, $is_dropdown, $dro
 				var dropdown = document.getElementById( \'' . esc_js( $dropdown_id ) . '\' );
 				function onCatChange() {
 					if ( !!dropdown.options[ dropdown.selectedIndex ].value ) {
-						location.href = \'' . esc_url( home_url() ) . '/?' . $taxonomy . '=\' + dropdown.options[ dropdown.selectedIndex ].value;
+						location.href = \'' . esc_url( home_url() ) . '/?' . $name . '=\' + dropdown.options[ dropdown.selectedIndex ].value;
 					}
 				}
 				dropdown.onchange = onCatChange;

@@ -13,7 +13,7 @@
 			"default": "div"
 		}
 	},
-	"description": "Display dynamic Text",
+	"description": "Display dynamic text",
 	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true

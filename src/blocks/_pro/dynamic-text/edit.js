@@ -17,7 +17,7 @@ function DynamicTextEditControls({ tagName, onSelectTagName }) {
 	return (
 		<SelectControl
 			__nextHasNoMarginBottom
-			label={__('HTML要素の選択', 'vk-blocks')}
+			label={__('HTML element', 'vk-blocks')}
 			value={tagName}
 			options={[
 				{
@@ -76,7 +76,7 @@ export default function DynamicTextEdit(props) {
 		editContent = (
 			<div className="alert alert-warning text-center">
 				{__(
-					'表示要素が選択されていないため、このブロックはレンダリングされません。',
+					'This block will not render because no visible element is selected.',
 					'vk-blocks'
 				)}
 			</div>
@@ -94,9 +94,9 @@ export default function DynamicTextEdit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('表示要素の設定', 'vk-blocks')}>
+				<PanelBody title={__('Display element settings', 'vk-blocks')}>
 					<SelectControl
-						label={__('表示要素を選択', 'vk-blocks')}
+						label={__('Display element', 'vk-blocks')}
 						value={displayElement}
 						onChange={(value) =>
 							setAttributes({ displayElement: value })
@@ -104,19 +104,19 @@ export default function DynamicTextEdit(props) {
 						options={[
 							{
 								value: 'please-select',
-								label: __('選択してください', 'vk-blocks'),
+								label: __('Please Select', 'vk-blocks'),
 							},
 							{
 								value: 'post-type',
 								label: __(
-									'表示中のページの投稿タイプ名',
+									'Post type name of the page being viewed',
 									'vk-blocks'
 								),
 							},
 							{
 								value: 'ancestor-page',
 								label: __(
-									'表示中の固定ページの先祖階層の固定ページ名',
+									'Page name in the ancestor hierarchy of the displayed page',
 									'vk-blocks'
 								),
 							},
@@ -134,8 +134,8 @@ export default function DynamicTextEdit(props) {
 							setAttributes({ tagName: value })
 						}
 					/>
-					<div className="alert alert-info">						{__(
-						'文字のスタイル指定をする場合は横並びブロックの中にこのブロックを入れて、横並びブロックでスタイルを指定してください。',
+					<div className="alert alert-info">{__(
+						'If you want to specify the style of characters, put this block inside the Row block and specify the style in the Row block.',
 						'vk-blocks'
 					)}</div>
 				</PanelBody>

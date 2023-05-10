@@ -19,12 +19,16 @@ function vk_blocks_dynamic_text_render_callback( $attributes ) {
 		'tagName'        => $attributes['tagName'],
 	);
 
+	$post = get_post();
+	if ( 'ancestor-page' === $options['displayElement'] && ! ( $post->post_parent ) && 'page' !== $post->post_type ) {
+		return;
+	}
+
 	// 投稿タイプの名前取得
 	$post_type_info = VkHelpers::get_post_type_info();
 	$post_type_name = $post_type_info['name'];
 
 	// 先祖階層のページタイトルを取得
-	$post                = get_post();
 	$ancestor_post_title = '';
 	if ( ! empty( $post ) && ! empty( $post->ancestors ) ) {
 		foreach ( $post->ancestors as $post_id ) {

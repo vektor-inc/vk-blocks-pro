@@ -62,7 +62,9 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Custom Format Setting (Pro) ] Custom Format Setting WordPress 6.2 UI adjustment.
 [ Add Function ][ Admin screen ] Added block style manager function.
+[ Bug fix ][ Step(Pro) / Time Line(Pro) ] Fix item content overflow
 
 = 1.55.0 =
 [ Add Block ][ Archive list block ( Pro ) ] Displays a list of archives

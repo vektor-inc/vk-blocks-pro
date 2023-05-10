@@ -61,10 +61,13 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+[ Specification Change ][ Slider ] Update Swiper to 9.2.3.
+[ Add Function ][ Admin screen ] Added block style manager function.
+[ Bug fix ][ Custom Format Setting (Pro) ] Custom Format Setting WordPress 6.2 UI adjustment.
+[ Bug fix ][ Step(Pro) / Time Line(Pro) ] Fix item content overflow
 [ Bug Fix ][ Taxonomy block ( Pro ) ] Fix Dropdown Script.
 [ Bug fix ][ Custom Format Setting (Pro) ] Custom Format Setting WordPress 6.2 UI adjustment.
-[ Add Function ][ Admin screen ] Added block style manager function.
-[ Bug fix ][ Step(Pro) / Time Line(Pro) ] Fix item content overflow
 
 = 1.55.0 =
 [ Add Block ][ Archive list block ( Pro ) ] Displays a list of archives

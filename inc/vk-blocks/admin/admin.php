@@ -5,7 +5,8 @@
  * @package VK Blocks
  */
 
- use VektorInc\VK_Admin\VK_Admin;
+use VektorInc\VK_Admin\VkAdmin;
+new VkAdmin();
 
 if ( ! function_exists( 'vk_blocks_setting' ) ) {
 
@@ -33,7 +34,7 @@ if ( ! function_exists( 'vk_blocks_setting' ) ) {
 }
 
 $vk_blocks_admin_pages = array( 'settings_page_vk_blocks_options' );
-VK_Admin::admin_scripts( $vk_blocks_admin_pages );
+VkAdmin::admin_scripts( $vk_blocks_admin_pages );
 
 global $vk_blocks_prefix;
 $vk_blocks_prefix = 'VK';
@@ -83,7 +84,7 @@ function vk_blocks_setting_page() {
 	$get_menu_html .= '<li><a href="#block-manager-setting">' . __( 'Block Manager Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= '<li><a href="#block-style-manager-setting">' . __( 'Block Style Manager Setting', 'vk-blocks' ) . '</a></li>';
 
-	VK_Admin::admin_page_frame( $get_page_title, 'vk_blocks_setting', $get_logo_html, $get_menu_html );
+	VkAdmin::admin_page_frame( $get_page_title, 'vk_blocks_setting', $get_logo_html, $get_menu_html );
 }
 
 /**

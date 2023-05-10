@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a34fb055e8a2e993ef92d866d4c235c7",
+    "content-hash": "3268f8aac88f77fb445980df4264e721",
     "packages": [
         {
             "name": "tgmpa/tgm-plugin-activation",
@@ -117,16 +117,16 @@
         },
         {
             "name": "vektor-inc/vk-admin",
-            "version": "0.1.0",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vektor-inc/vk-admin.git",
-                "reference": "15755713265ae3f22f413b8f14c1045d03bf1926"
+                "reference": "4daf1ca48f8597a985dbf163c266751a408773dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vektor-inc/vk-admin/zipball/15755713265ae3f22f413b8f14c1045d03bf1926",
-                "reference": "15755713265ae3f22f413b8f14c1045d03bf1926",
+                "url": "https://api.github.com/repos/vektor-inc/vk-admin/zipball/4daf1ca48f8597a985dbf163c266751a408773dd",
+                "reference": "4daf1ca48f8597a985dbf163c266751a408773dd",
                 "shasum": ""
             },
             "require-dev": {
@@ -159,9 +159,9 @@
             "description": "Vektor Admin Component",
             "support": {
                 "issues": "https://github.com/vektor-inc/vk-admin/issues",
-                "source": "https://github.com/vektor-inc/vk-admin/tree/0.1.0"
+                "source": "https://github.com/vektor-inc/vk-admin/tree/0.2.0"
             },
-            "time": "2023-04-24T02:43:52+00:00"
+            "time": "2023-05-10T00:01:17+00:00"
         },
         {
             "name": "vektor-inc/vk-breadcrumb",
@@ -1680,16 +1680,16 @@
         },
         {
             "name": "sebastian/diff",
-            "version": "4.0.4",
+            "version": "4.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/diff.git",
-                "reference": "3461e3fccc7cfdfc2720be910d3bd73c69be590d"
+                "reference": "74be17022044ebaaecfdf0c5cd504fc9cd5a7131"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/3461e3fccc7cfdfc2720be910d3bd73c69be590d",
-                "reference": "3461e3fccc7cfdfc2720be910d3bd73c69be590d",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/74be17022044ebaaecfdf0c5cd504fc9cd5a7131",
+                "reference": "74be17022044ebaaecfdf0c5cd504fc9cd5a7131",
                 "shasum": ""
             },
             "require": {
@@ -1734,7 +1734,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/diff/issues",
-                "source": "https://github.com/sebastianbergmann/diff/tree/4.0.4"
+                "source": "https://github.com/sebastianbergmann/diff/tree/4.0.5"
             },
             "funding": [
                 {
@@ -1742,7 +1742,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-26T13:10:38+00:00"
+            "time": "2023-05-07T05:35:17+00:00"
         },
         {
             "name": "sebastian/environment",

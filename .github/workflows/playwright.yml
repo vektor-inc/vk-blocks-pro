@@ -44,18 +44,16 @@ jobs:
         chmod +x wp-cli.phar
         mv wp-cli.phar /usr/local/bin/wp
 
-    - name: Create Upgrade Directory
-      run: |
-        npx wp eval 'wp_mkdir_p(ABSPATH . "wp-content/upgrade");'
-        npx wp eval 'WP_Filesystem();'
-        npx wp eval 'wp_mkdir_p(WP_CONTENT_DIR . "/upgrade");'
-      env:
-        WP_CLI_CONFIG_PATH: ${{ github.workspace }}/wp-cli.yml
-
     - name: Set Permissions for WordPress
       run: |
-        sudo chown -R www-data:www-data /var/www/html/
-        sudo chmod -R 755 /var/www/html/
+        mkdir -p /var/www/html/wp-content/upgrade
+        sudo chown -R ${{ runner.os }}:${{ runner.os }} /var/www/html/wp-content/upgrade
+        sudo chmod -R 755 /var/www/html/wp-content/upgrade
+      shell: /usr/bin/bash -e {0}
+      env:
+        COMPOSER_PROCESS_TIMEOUT: 0
+        COMPOSER_NO_INTERACTION: 1
+        COMPOSER_NO_AUDIT: 1
 
     - name: Build
       run: npm run build

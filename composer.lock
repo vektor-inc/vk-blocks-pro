@@ -323,6 +323,47 @@
             "time": "2022-12-23T08:22:18+00:00"
         },
         {
+            "name": "vektor-inc/vk-swiper",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vektor-inc/vk-swiper.git",
+                "reference": "ea0fbc8e6829e1879f17c6c0bf584de2e183a9ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vektor-inc/vk-swiper/zipball/ea0fbc8e6829e1879f17c6c0bf584de2e183a9ef",
+                "reference": "ea0fbc8e6829e1879f17c6c0bf584de2e183a9ef",
+                "shasum": ""
+            },
+            "require-dev": {
+                "wp-phpunit/wp-phpunit": "^5.4",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "VektorInc\\VK_Swiper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Vektor,Inc.",
+                    "email": "kurudrive@gmail.com"
+                }
+            ],
+            "description": "swiper for vektor",
+            "support": {
+                "issues": "https://github.com/vektor-inc/vk-swiper/issues",
+                "source": "https://github.com/vektor-inc/vk-swiper/tree/0.2.0"
+            },
+            "time": "2023-05-10T00:24:38+00:00"
+        },
+        {
             "name": "vektor-inc/vk-term-color",
             "version": "0.4.0",
             "source": {

@@ -43,6 +43,8 @@ jobs:
         curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
         chmod +x wp-cli.phar
         mv wp-cli.phar /usr/local/bin/wp
+    - name: Install ExUnit
+      run: wp plugin install vk-all-in-one-expansion-unit
     - name: Build
       run: npm run build
     - name: Run Environment

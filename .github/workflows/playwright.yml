@@ -43,11 +43,14 @@ jobs:
         curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
         chmod +x wp-cli.phar
         mv wp-cli.phar /usr/local/bin/wp
+
     - name: Create Upgrade Directory
       run: |
-        mkdir -p /var/www/html/wp-content/upgrade
-        sudo chown -R www-data:www-data /var/www/html/wp-content/upgrade
-        sudo chmod -R 755 /var/www/html/wp-content/upgrade
+        npx wp eval 'wp_mkdir_p(ABSPATH . "wp-content/upgrade");'
+        npx wp eval 'WP_Filesystem();'
+        npx wp eval 'wp_mkdir_p(WP_CONTENT_DIR . "/upgrade");'
+      env:
+        WP_CLI_CONFIG_PATH: ${{ github.workspace }}/wp-cli.yml
 
     - name: Set Permissions for WordPress
       run: |

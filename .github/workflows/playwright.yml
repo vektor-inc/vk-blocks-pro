@@ -30,8 +30,8 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: ${{ matrix.php }}
-    - name: Setup Node 14.x
-      uses: actions/setup-node@v1
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
       with:
         node-version: 14.x
     - name: install npm scripts
@@ -43,18 +43,11 @@ jobs:
         curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
         chmod +x wp-cli.phar
         mv wp-cli.phar /usr/local/bin/wp
-
     - name: Set Permissions for WordPress
       run: |
         mkdir -p /var/www/html/wp-content/upgrade
-        sudo chown -R ${{ runner.os }}:${{ runner.os }} /var/www/html/wp-content/upgrade
+        sudo chown -R ${{ runner.user }}:${{ runner.user }} /var/www/html/wp-content/upgrade
         sudo chmod -R 755 /var/www/html/wp-content/upgrade
-      shell: /usr/bin/bash -e {0}
-      env:
-        COMPOSER_PROCESS_TIMEOUT: 0
-        COMPOSER_NO_INTERACTION: 1
-        COMPOSER_NO_AUDIT: 1
-
     - name: Build
       run: npm run build
     - name: Run Environment

@@ -107,6 +107,8 @@ test('Taxonomy Block Test', async ({ page }) => {
 	// expect関数を使用して、h1タグのテキストが「event-category」を含むことを確認する
 	expect(h1Text).toContain('event-category');
 
+	// Check post category /////////////////////////////////////////////////
+
 	//////////////////////////////////////////////////////////////////////////////////////////////
 
 	// Delete all event

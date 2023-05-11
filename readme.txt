@@ -63,8 +63,10 @@ e.g.
 == Changelog ==
 
 [ Add Block ][ Dynamic Text Block (Pro) ] Add Dynamic text block.
-[ Bug fix ][ Custom Format Setting (Pro) ] Custom Format Setting WordPress 6.2 UI adjustment.
 [ Add Function ][ Admin screen ] Added block style manager function.
+[ Specification Change ][ Slider ] Update Swiper to 9.2.3.
+[ Bug fix ][ Custom Format Setting (Pro) ] Custom Format Setting WordPress 6.2 UI adjustment.
+[ Bug fix ][ Custom Format Setting (Pro) ] Custom Format Setting WordPress 6.2 UI adjustment.
 [ Bug fix ][ Step(Pro) / Time Line(Pro) ] Fix item content overflow
 
 = 1.55.0 =

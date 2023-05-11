@@ -84,8 +84,7 @@ msgid "Block Style Manager Setting"
 msgstr ""
 
 #: src/admin/custom-block-style/add-button/index.js:113
-#: src/admin/custom-format/add-item.js:133
-msgid "Toolbar title (Changeable)"
+msgid "Block Style Label (Changeable)"
 msgstr ""
 
 #: src/admin/custom-block-style/add-button/index.js:141
@@ -205,6 +204,10 @@ msgstr ""
 
 #: src/admin/custom-format/add-item.js:118
 msgid "(e.g.) vk-format-1"
+msgstr ""
+
+#: src/admin/custom-format/add-item.js:133
+msgid "Toolbar title (Changeable)"
 msgstr ""
 
 #: src/admin/custom-format/add-item.js:74
@@ -765,7 +768,11 @@ msgstr ""
 msgid "Page name in the ancestor hierarchy of the displayed page"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:137
+#: src/blocks/_pro/dynamic-text/edit.js:131
+msgid "このブロックは親階層を持つ固定ページ以外のページでは表示されません。"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:144
 msgid ""
 "If you want to specify the style of characters, put this block inside the "
 "Row block and specify the style in the Row block."

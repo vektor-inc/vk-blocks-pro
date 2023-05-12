@@ -20,16 +20,16 @@ test('Taxonomy Block Test', async ({ page }) => {
 
 	// Wait for display ExUnit Button 
 	// ( At this point it is unknown whether it is the install button or the activate button )
-	await page.waitForSelector('.plugin-card-vk-all-in-one-expansion-unit .plugin-action-buttons a.button');
+	await page.waitForSelector('.plugin-card-vk-all-in-one-expansion-unit .plugin-action-buttons .button');
 
 	// Get button text
-	const buttonText = await page.$eval('.plugin-card-vk-all-in-one-expansion-unit .plugin-action-buttons a.button', el => el.innerText);
+	const buttonText = await page.$eval('.plugin-card-vk-all-in-one-expansion-unit .plugin-action-buttons .button', el => el.innerText);
 
 	if (buttonText === 'Install Now') {
 		// インストールボタンが存在する場合
 		const installButton = await page.$('a[class="install-now button"][data-slug="vk-all-in-one-expansion-unit"]');
 		if (installButton !== null) {
-			console.log(buttonText);
+
 			// インストールボタンが表示されるまで待機
 			await page.waitForSelector('a[class="install-now button"][data-slug="vk-all-in-one-expansion-unit"]');
 
@@ -41,11 +41,20 @@ test('Taxonomy Block Test', async ({ page }) => {
 		}
 	}
 
-	// Activateボタンをクリックして有効化処理を実行
-	await page.getByRole('link', { name: 'Activate VK All in One Expansion Unit' }).click();
+	// Check if the button is disabled
+	const isDisabled = await page.$eval('.plugin-card-vk-all-in-one-expansion-unit .plugin-action-buttons .button', (button) => button.disabled);
 
-	// Activateボタンが消えるまで待機
-	await page.waitForSelector('a[class="button activate-now button-primary"][data-slug="vk-all-in-one-expansion-unit"]', { state: 'hidden' });
+	// If the button is not disabled, click it
+	// すでに ExUnit が有効化されていない場合のみ有効化処理を実行
+	if (!isDisabled) {
+		// Activateボタンをクリックして有効化処理を実行
+		await page.getByRole('link', { name: 'Activate VK All in One Expansion Unit' }).click();
+
+		// Activateボタンが消えるまで待機
+		await page.waitForSelector('a[class="button activate-now button-primary"][data-slug="vk-all-in-one-expansion-unit"]', { state: 'hidden' });
+	}
+
+
 
 	// Add Event Post Type /////////////////////////////////////////////////
 

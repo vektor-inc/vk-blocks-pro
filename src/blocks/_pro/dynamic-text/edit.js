@@ -71,17 +71,28 @@ export default function DynamicTextEdit(props) {
 	const blockProps = useBlockProps();
 	// const blockProps = useBlockProps({ className: 'vk_dynamicText' });
 
+	const postType = wp.data.select('core/editor').getCurrentPostType();
+	const parentPageId = wp.data
+		.select('core/editor')
+		.getEditedPostAttribute('parent');
+
 	let editContent;
-	if (displayElement === 'please-select') {
+	const editAlertContent = (
+		<div className="alert alert-warning text-center">
+			{__(
+				'This block will not render because no visible element is selected.',
+				'vk-blocks'
+			)}
+		</div>
+	);
+	if (displayElement === 'post-type' && !postType) {
+		editContent = <TagName>{__('Post Type Name', 'vk-blocks')}</TagName>;
+	} else if (displayElement === 'ancestor-page' && !parentPageId) {
 		editContent = (
-			<div className="alert alert-warning text-center">
-				{__(
-					'This block will not render because no visible element is selected.',
-					'vk-blocks'
-				)}
-			</div>
-			// Because no display Element is selected, The block Will not render
+			<TagName>{__('Ancestor Page Title', 'vk-blocks')}</TagName>
 		);
+	} else if (displayElement === 'please-select') {
+		editContent = editAlertContent;
 	} else {
 		editContent = (
 			<ServerSideRender

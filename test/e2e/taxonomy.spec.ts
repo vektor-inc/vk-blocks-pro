@@ -229,8 +229,9 @@ test('Taxonomy Block Test', async ({ page }) => {
 
 	// Delete Test post
 	await page.goto('http://localhost:8889/wp-admin/edit.php?post_type=post');
-	await page.getByRole('link', { name: '“Test Post” (Edit)' }).click();
-	await page.getByRole('button', { name: 'Move to trash' }).click();
+	await page.locator('#cb-select-all-1').check();
+	await page.locator('#bulk-action-selector-top').selectOption('trash');
+	await page.locator('#doaction').click();
 	await page.goto('http://localhost:8889/wp-admin/edit.php?post_status=trash&post_type=post');
 	await page.locator('#post-query-submit + #delete_all').filter({ hasText: 'Empty Trash' }).click();
 

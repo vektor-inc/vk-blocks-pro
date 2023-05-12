@@ -62,13 +62,13 @@ function vk_blocks_register_block_taxonomy() {
 
 	// ループでカテゴリーが重複してしまう事があるので重複を削除 //////////////
 	// 多次元配列を一次元配列に変換
-	$map1 = array_map("serialize", $taxonomy_option_raw);
+	$map1 = array_map( 'serialize', $taxonomy_option_raw );
 	// 重複項目を削除
-	$unique1 = array_unique($map1);
+	$unique1 = array_unique( $map1 );
 	// 多次元に戻す
-	$uniqueOptions = array_map("unserialize", $unique1);
+	$uniqueOptions = array_map( 'unserialize', $unique1 );
 	// インデックスをリセット
-	$taxonomy_option = array_values($uniqueOptions);
+	$taxonomy_option = array_values( $uniqueOptions );
 
 	global $vk_blocks_common_attributes;
 

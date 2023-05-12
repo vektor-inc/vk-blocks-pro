@@ -49,9 +49,6 @@ jobs:
       run: npx wp-env start
     - name: Install dependencies ////////////////////////
       run: npm ci
-    - name: Install VK All in One Expansion Unit
-      run: |
-        npx wp plugin install vk-all-in-one-expansion-unit
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright

@@ -109,6 +109,47 @@ test('Taxonomy Block Test', async ({ page }) => {
 
 	// Check post category /////////////////////////////////////////////////
 
+	// await page.goto('http://localhost:8889/wp-admin/post-new.php');
+	// await page.getByRole('textbox', { name: 'Add title' }).fill('Test Post');
+	// await page.getByRole('button', { name: 'Add default block' }).click();
+	// await page.getByRole('document', { name: 'Empty block; start writing or type forward slash to choose a block' }).fill('/taxonomy');
+	// await page.getByRole('option', { name: 'Taxonomy' }).click();
+	// await page.getByLabel('Display as dropdown').check();
+
+	// await page.getByRole('region', { name: 'Editor settings' }).getByRole('button', { name: 'Post' }).click();
+	// // await page.getByLabel('Add New Tag').click();
+
+	// // Set tag to post
+	// await page.getByLabel('Add New Tag').fill('test-tag');
+	// await page.getByLabel('Add New Tag').press('Enter');
+
+	// // await page.goto('http://localhost:8889/wp-admin/post.php?post=10&action=edit');
+
+	// await page.getByRole('button', { name: 'Publish', exact: true }).click();
+	// await page.getByRole('region', { name: 'Editor publish' }).getByRole('button', { name: 'Publish', exact: true }).click();
+	// // Display Post ----------------------------------------------
+	// await page.getByRole('button', { name: 'Dismiss this notice' }).getByRole('link', { name: 'View Post' }).click();
+	// // Select category in taxonomy block
+	// await page.selectOption('.vk_taxonomy__input-wrap--select', { value: 'uncategorized' });
+	// // expect関数を使用して、h1タグのテキストが「event-category」を含むことを確認する
+	// expect(h1Text).toContain('Uncategorized');
+
+	// // Chack Post tag /////////////////////////////////////////////////
+
+	// await page.getByRole('link', { name: 'Test Post' }).click();
+	// await page.getByRole('link', { name: ' Edit Post' }).click();
+
+	// // Display Post ----------------------------------------------
+	// await page.getByRole('document', { name: 'Block: Taxonomy' }).locator('div').nth(1).click();
+	// // 対象を「post_tag」に変更
+	// await page.getByRole('combobox', { name: 'Taxonomy' }).selectOption('post_tag');
+	// await page.getByRole('button', { name: 'Update' }).click();
+	// await page.getByRole('link', { name: 'View Post', exact: true }).click();
+	// // Select category in taxonomy block
+	// await page.selectOption('.vk_taxonomy__input-wrap--select', { value: 'test-tag' });
+	// // expect関数を使用して、h1タグのテキストが「event-category」を含むことを確認する
+	// expect(h1Text).toContain('test-tag');
+
 	//////////////////////////////////////////////////////////////////////////////////////////////
 
 	// Delete all event

@@ -218,14 +218,16 @@ export default function ImportForm() {
 					)}
 				/>
 			</div>
-			<Button
-				onClick={openModal}
-				variant="primary"
-				icon={upload}
-				disabled={!file ? true : false}
-			>
-				{__('Import')}
-			</Button>
+			<div className="submit">
+				<Button
+					onClick={openModal}
+					variant="primary"
+					icon={upload}
+					disabled={!file ? true : false}
+				>
+					{__('Import')}
+				</Button>
+			</div>
 			{isModalOpen && (
 				<Modal
 					title={__(
@@ -270,7 +272,10 @@ export default function ImportForm() {
 							return (
 								isShow &&
 								isFind && (
-									<div key={index}>
+									<div
+										key={index}
+										className="import_export_section"
+									>
 										<CheckboxControl
 											key={index}
 											label={sprintf(
@@ -296,7 +301,10 @@ export default function ImportForm() {
 											) =>
 												checked &&
 												importMethod && (
-													<div key={id}>
+													<div
+														key={id}
+														className="import_export_detail_area"
+													>
 														<RadioControl
 															label={__(
 																'インポート方法',
@@ -308,8 +316,7 @@ export default function ImportForm() {
 															) => {
 																onChangeIsOverride(
 																	value,
-																	id,
-																	name
+																	id
 																);
 															}}
 															options={[
@@ -360,14 +367,12 @@ export default function ImportForm() {
 																		]
 																)
 															) && (
-																<>
-																	<p>
-																		{__(
-																			'以下のデータは識別子が被っているためインポートしません。',
-																			'vk-blocks'
-																		)}
-																	</p>
-																</>
+																<p>
+																	{__(
+																		'以下のデータは識別子が被っているためインポートしません。',
+																		'vk-blocks'
+																	)}
+																</p>
 															)}
 														{importSettings[index]
 															.options[id]
@@ -377,54 +382,37 @@ export default function ImportForm() {
 																options[id] &&
 															vkBlocksOption[
 																name
-															].map(
-																(
-																	preKey,
-																	preId
-																) => {
-																	return (
-																		<div
-																			key={
-																				preId
-																			}
-																		>
-																			{uploadedOptions[
-																				name
-																			].map(
-																				(
-																					uploadKey,
-																					uploadId
-																				) => {
-																					return (
-																						<div
-																							key={
-																								uploadId
-																							}
-																						>
-																							{uploadKey[
-																								uniqKey
-																							] ===
-																								preKey[
-																									uniqKey
-																								] && (
-																								<>
-																									<p>
-																										{
-																											uploadKey[
-																												uniqKey
-																											]
-																										}
-																									</p>
-																								</>
-																							)}
-																						</div>
-																					);
-																				}
-																			)}
-																		</div>
-																	);
-																}
-															)}
+															].map((preKey) => {
+																return uploadedOptions[
+																	name
+																].map(
+																	(
+																		uploadKey,
+																		uploadId
+																	) => {
+																		return (
+																			uploadKey[
+																				uniqKey
+																			] ===
+																				preKey[
+																					uniqKey
+																				] && (
+																				<div
+																					key={
+																						uploadId
+																					}
+																				>
+																					{
+																						uploadKey[
+																							uniqKey
+																						]
+																					}
+																				</div>
+																			)
+																		);
+																	}
+																);
+															})}
 													</div>
 												)
 										)}

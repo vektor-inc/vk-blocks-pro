@@ -62,7 +62,6 @@ export default function ExportForm() {
 				)}
 			</h4>
 			<CheckboxControl
-				__nextHasNoMarginBottom
 				label={__('全ての項目をエクスポート', 'vk-blocks')}
 				checked={isExportLists.length === exportOptionLists.length}
 				onChange={handleToggleAll}
@@ -84,7 +83,6 @@ export default function ExportForm() {
 				return (
 					isShow && (
 						<CheckboxControl
-							__nextHasNoMarginBottom
 							key={index}
 							label={sprintf(
 								// translators: %sをエクスポートする
@@ -101,18 +99,22 @@ export default function ExportForm() {
 					)
 				);
 			})}
-			<Button
-				variant="primary"
-				icon={downloadIcon}
-				onClick={handleExport}
-				disabled={!exportOptionLists.some((list) => !!list.isExport)}
-			>
-				{__(
-					'エクスポート',
-					// 'Export',
-					'vk-blocks'
-				)}
-			</Button>
+			<div className="submit">
+				<Button
+					variant="primary"
+					icon={downloadIcon}
+					onClick={handleExport}
+					disabled={
+						!exportOptionLists.some((list) => !!list.isExport)
+					}
+				>
+					{__(
+						'エクスポート',
+						// 'Export',
+						'vk-blocks'
+					)}
+				</Button>
+			</div>
 		</div>
 	);
 }

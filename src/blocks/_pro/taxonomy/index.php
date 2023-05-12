@@ -37,7 +37,7 @@ function vk_blocks_register_block_taxonomy() {
 	);
 
 	// タクソノミーブロックで使うタクソノミーの選択肢.
-	$taxonomy_option = array(
+	$taxonomy_option_raw = array(
 		array(
 			'label' => __( 'Please select taxonomy', 'vk-blocks' ),
 			'value' => '',
@@ -46,12 +46,29 @@ function vk_blocks_register_block_taxonomy() {
 	foreach ( $the_taxonomies as $the_taxonomy ) {
 		$terms = get_terms( $the_taxonomy->name );
 		if ( ! empty( $terms ) ) {
-			$taxonomy_option[] = array(
+			$taxonomy_option_raw[] = array(
 				'label' => $the_taxonomy->labels->singular_name,
 				'value' => $the_taxonomy->name,
 			);
+		} else {
+			// カテゴリーの割り当ててある投稿が一つもないと get_terms で取得できなく、
+			// 項目がないとエラーになるため、とりあえずカテゴリーをオプションに追加しておく
+			$taxonomy_option_raw[] = array(
+				'label' => __( 'Categories', 'vk-blocks' ),
+				'value' => 'category',
+			);
 		}
 	}
+
+	// ループでカテゴリーが重複してしまう事があるので重複を削除 //////////////
+	// 多次元配列を一次元配列に変換
+	$map1 = array_map("serialize", $taxonomy_option_raw);
+	// 重複項目を削除
+	$unique1 = array_unique($map1);
+	// 多次元に戻す
+	$uniqueOptions = array_map("unserialize", $unique1);
+	// インデックスをリセット
+	$taxonomy_option = array_values($uniqueOptions);
 
 	global $vk_blocks_common_attributes;
 

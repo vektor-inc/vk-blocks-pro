@@ -77,18 +77,51 @@ test('Taxonomy Block Test', async ({ page }) => {
 
 	// Add event category /////////////////////////////////////////////////
 	await page.goto('http://localhost:8889/wp-admin/edit-tags.php?taxonomy=event-cat&post_type=event');
-	await page.getByRole('textbox', { name: 'Name' }).fill('event-category');
+	await page.getByRole('textbox', { name: 'Name' }).fill('event-term');
 	await page.getByRole('button', { name: 'Add New Category' }).click();
 
 	// Add Event Post /////////////////////////////////////////////////
 	await page.goto('http://localhost:8889/wp-admin/post-new.php?post_type=event');
+
+	await page.waitForTimeout(2000);
+	// Check if the modal is visible
+	const isModalVisible = await page.isVisible('.components-modal__frame');
+
+	// If the modal is visible, click the close button
+	if (isModalVisible) {
+		await page.click('button[aria-label="Close"]');
+	}
+
 	await page.getByRole('textbox', { name: 'Add title' }).fill('Event Post');
 	await page.getByRole('button', { name: 'Add default block' }).click();
 	await page.getByRole('document', { name: 'Empty block; start writing or type forward slash to choose a block' }).fill('/taxono');
 	await page.getByRole('document', { name: 'Paragraph block' }).fill('/taxonomy');
 	await page.getByRole('document', { name: 'Paragraph block' }).press('Enter');
+
+	// サイドパネル（投稿タイプ）を開く
 	await page.getByRole('region', { name: 'Editor settings' }).getByRole('button', { name: 'Event' }).click();
-	await page.getByLabel('event-category').check();
+
+	// サイドパネルが閉じている場合があるので、すべてのパネルを取得して、対象のパネルが閉じていたら開く
+	// Get all buttons with the specified classes
+	const EventMetaPanels = await page.$$('.components-button.components-panel__body-toggle');
+
+	for (const button of EventMetaPanels) {
+		// Get the button text
+		const buttonText = await button.textContent();
+
+		// Check if the button text is "Event Category"
+		if (buttonText === 'Event Category') {
+			// Get the value of the 'aria-expanded' attribute
+			const isExpanded = await button.getAttribute('aria-expanded');
+
+			// If the panel is not expanded, click the button
+			if (isExpanded === 'false') {
+				await button.click();
+			}
+		}
+	}
+
+	await page.getByLabel('event-term').check();
 	await page.getByRole('button', { name: 'Publish', exact: true }).click();
 	await page.getByRole('region', { name: 'Editor publish' }).getByRole('button', { name: 'Publish', exact: true }).click();
 
@@ -106,60 +139,100 @@ test('Taxonomy Block Test', async ({ page }) => {
 	await page.getByRole('link', { name: 'View Post', exact: true }).click();
 
 	// Select event-cat in taxonomy block
-	await page.selectOption('.vk_taxonomy__input-wrap--select', { value: 'event-category' });
+	await page.selectOption('.vk_taxonomy__input-wrap--select', { value: 'event-term' });
 
 	// チェック
 	// Event Category ページが表示されてるはず
 	// h1タグのテキストを取得する
-	const h1Text = await page.$eval('h1', el => el.textContent);
-
+	let h1Text = await page.$eval('h1', el => el.textContent);
 	// expect関数を使用して、h1タグのテキストが「event-category」を含むことを確認する
-	expect(h1Text).toContain('event-category');
+	expect(h1Text).toContain('event-term');
 
 	// Check post category /////////////////////////////////////////////////
 
-	// await page.goto('http://localhost:8889/wp-admin/post-new.php');
-	// await page.getByRole('textbox', { name: 'Add title' }).fill('Test Post');
-	// await page.getByRole('button', { name: 'Add default block' }).click();
-	// await page.getByRole('document', { name: 'Empty block; start writing or type forward slash to choose a block' }).fill('/taxonomy');
-	// await page.getByRole('option', { name: 'Taxonomy' }).click();
-	// await page.getByLabel('Display as dropdown').check();
+	await page.goto('http://localhost:8889/wp-admin/post-new.php');
+	await page.getByRole('textbox', { name: 'Add title' }).fill('Test Post');
+	await page.getByRole('button', { name: 'Add default block' }).click();
+	await page.getByRole('document', { name: 'Empty block; start writing or type forward slash to choose a block' }).fill('/taxonomy');
+	await page.getByRole('option', { name: 'Taxonomy' }).click();
+	await page.getByLabel('Display as dropdown').check();
 
-	// await page.getByRole('region', { name: 'Editor settings' }).getByRole('button', { name: 'Post' }).click();
-	// // await page.getByLabel('Add New Tag').click();
+	// サイドパネル（投稿タイプ）を開く
+	await page.getByRole('region', { name: 'Editor settings' }).getByRole('button', { name: 'Post' }).click();
+	// await page.getByLabel('Add New Tag').click();
 
-	// // Set tag to post
-	// await page.getByLabel('Add New Tag').fill('test-tag');
-	// await page.getByLabel('Add New Tag').press('Enter');
 
-	// // await page.goto('http://localhost:8889/wp-admin/post.php?post=10&action=edit');
+	// サイドパネルが閉じている場合があるので、操作したいパネルが閉じていたら開く処理が必要
 
-	// await page.getByRole('button', { name: 'Publish', exact: true }).click();
-	// await page.getByRole('region', { name: 'Editor publish' }).getByRole('button', { name: 'Publish', exact: true }).click();
-	// // Display Post ----------------------------------------------
-	// await page.getByRole('button', { name: 'Dismiss this notice' }).getByRole('link', { name: 'View Post' }).click();
-	// // Select category in taxonomy block
-	// await page.selectOption('.vk_taxonomy__input-wrap--select', { value: 'uncategorized' });
-	// // expect関数を使用して、h1タグのテキストが「event-category」を含むことを確認する
-	// expect(h1Text).toContain('Uncategorized');
+	// まずはサイドパネルは後からバタバタでてきたりするので、パネルがでてくるまで待つ
+	// とりあえず２秒待つ（本当は適当に待つだけじゃなくてちゃんと対象のサイドパネルを指定するべき...）
+	await page.waitForTimeout(1500);
 
-	// // Chack Post tag /////////////////////////////////////////////////
+	// Get all metabox
+	const PostMetaPanels = await page.$$('.components-button.components-panel__body-toggle');
 
-	// await page.getByRole('link', { name: 'Test Post' }).click();
-	// await page.getByRole('link', { name: ' Edit Post' }).click();
+	// await page.waitForSelector('text=*Tags*');
 
-	// // Display Post ----------------------------------------------
-	// await page.getByRole('document', { name: 'Block: Taxonomy' }).locator('div').nth(1).click();
-	// // 対象を「post_tag」に変更
-	// await page.getByRole('combobox', { name: 'Taxonomy' }).selectOption('post_tag');
-	// await page.getByRole('button', { name: 'Update' }).click();
-	// await page.getByRole('link', { name: 'View Post', exact: true }).click();
-	// // Select category in taxonomy block
-	// await page.selectOption('.vk_taxonomy__input-wrap--select', { value: 'test-tag' });
-	// // expect関数を使用して、h1タグのテキストが「event-category」を含むことを確認する
-	// expect(h1Text).toContain('test-tag');
+	for (const button of PostMetaPanels) {
+		// Get the button text
+		const buttonText = await button.textContent();
+		if (buttonText.includes('Tags')) {
+			// Get the value of the 'aria-expanded' attribute
+			const isExpanded = await button.getAttribute('aria-expanded');
+
+			// If the panel is not expanded, click the button
+			if (isExpanded === 'false') {
+				console.log('閉じてたぜ');
+				await button.click();
+			}
+			// Set tag to post
+			await page.getByLabel('Add New Tag').fill('test-tag');
+			await page.getByLabel('Add New Tag').press('Enter');
+			await page.waitForTimeout(1000);
+		}
+	}
+
+	// await page.goto('http://localhost:8889/wp-admin/post.php?post=10&action=edit');
+
+	await page.getByRole('button', { name: 'Publish', exact: true }).click();
+	await page.getByRole('region', { name: 'Editor publish' }).getByRole('button', { name: 'Publish', exact: true }).click();
+	// Display Post ----------------------------------------------
+	await page.getByRole('button', { name: 'Dismiss this notice' }).getByRole('link', { name: 'View Post' }).click();
+	// Select category in taxonomy block
+	await page.selectOption('.vk_taxonomy__input-wrap--select', { value: 'uncategorized' });
+	// チェック
+	// h1タグのテキストを取得する
+	h1Text = await page.$eval('h1', el => el.textContent);
+	// expect関数を使用して、h1タグのテキストが「Uncategorized」を含むことを確認する
+	expect(h1Text).toContain('Uncategorized');
+
+	// Chack Post tag /////////////////////////////////////////////////
+
+	await page.getByRole('link', { name: 'Test Post' }).first().click();
+	await page.getByRole('link', { name: ' Edit Post' }).click();
+
+	// Display Post ----------------------------------------------
+	await page.getByRole('document', { name: 'Block: Taxonomy' }).locator('div').nth(1).click();
+	// 対象を「post_tag」に変更
+	await page.getByRole('combobox', { name: 'Taxonomy' }).selectOption('post_tag');
+	await page.getByRole('button', { name: 'Update' }).click();
+	await page.getByRole('link', { name: 'View Post', exact: true }).click();
+	// Select category in taxonomy block
+	await page.selectOption('.vk_taxonomy__input-wrap--select', { value: 'test-tag' });
+	// チェック
+	// h1タグのテキストを取得する
+	h1Text = await page.$eval('h1', el => el.textContent);
+	// expect関数を使用して、h1タグのテキストが「test-tag」を含むことを確認する
+	expect(h1Text).toContain('test-tag');
 
 	//////////////////////////////////////////////////////////////////////////////////////////////
+
+	// Delete Test post
+	await page.goto('http://localhost:8889/wp-admin/edit.php?post_type=post');
+	await page.getByRole('link', { name: '“Test Post” (Edit)' }).click();
+	await page.getByRole('button', { name: 'Move to trash' }).click();
+	await page.goto('http://localhost:8889/wp-admin/edit.php?post_status=trash&post_type=post');
+	await page.locator('#post-query-submit + #delete_all').filter({ hasText: 'Empty Trash' }).click();
 
 	// Delete all event
 	await page.goto('http://localhost:8889/wp-admin/edit.php?post_type=event');
@@ -171,7 +244,7 @@ test('Taxonomy Block Test', async ({ page }) => {
 
 	// Delete Event Category
 	await page.goto('http://localhost:8889/wp-admin/edit-tags.php?taxonomy=event-cat&post_type=event');
-	await page.getByRole('link', { name: '“event-category” (Edit)' }).click();
+	await page.getByRole('link', { name: '“event-term” (Edit)' }).click();
 	page.once('dialog', dialog => {
 		console.log(`Dialog message: ${dialog.message()}`);
 		dialog.dismiss().catch(() => { });

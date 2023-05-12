@@ -148,7 +148,10 @@ export default function ImportForm() {
 				closeModal();
 				setIsImportSuccess(true);
 				setFile(null);
-				setVkBlocksOption(importResponse.updateOption);
+				setVkBlocksOption({
+					...vkBlocksOption,
+					...importResponse.updateOption,
+				});
 			})
 			.catch((errors) => {
 				let uiMessage;

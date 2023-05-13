@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-05-13T17:42:15+00:00\n"
+"POT-Creation-Date: 2023-05-13T18:05:49+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks\n"
@@ -762,11 +762,7 @@ msgstr ""
 msgid "Ignore this post"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:102
-msgid "Post Type Name"
-msgstr ""
-
-#: src/blocks/_pro/dynamic-text/edit.js:105
+#: src/blocks/_pro/dynamic-text/edit.js:101
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
 #: src/blocks/ancestor-page-list/index.php:44
@@ -775,27 +771,27 @@ msgstr ""
 msgid "Ancestor Page Title"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:129
+#: src/blocks/_pro/dynamic-text/edit.js:125
 msgid "Display element settings"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:131
+#: src/blocks/_pro/dynamic-text/edit.js:127
 msgid "Display element"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:140
+#: src/blocks/_pro/dynamic-text/edit.js:136
 msgid "Please Select"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:144
+#: src/blocks/_pro/dynamic-text/edit.js:140
 msgid "Post type name of the page being viewed"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:151
+#: src/blocks/_pro/dynamic-text/edit.js:147
 msgid "Page name in the ancestor hierarchy of the displayed page"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:164
+#: src/blocks/_pro/dynamic-text/edit.js:160
 msgid "This block will not display on pages other than pages that have a parent hierarchy."
 msgstr ""
 
@@ -844,8 +840,12 @@ msgstr ""
 msgid "span"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:95
+#: src/blocks/_pro/dynamic-text/edit.js:91
 msgid "This block will not render because no visible element is selected."
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:98
+msgid "Post Type Name"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:102

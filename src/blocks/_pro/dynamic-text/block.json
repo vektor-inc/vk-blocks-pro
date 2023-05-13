@@ -5,7 +5,8 @@
 	"title": "Dynamic Text",
 	"attributes": {
 		"textAlign": {
-			"type": "string"
+			"type": "string",
+			"default": null
 		},
 		"displayElement": {
 			"type": "string",

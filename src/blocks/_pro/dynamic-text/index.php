@@ -15,7 +15,7 @@ use VektorInc\VK_Helpers\VkHelpers;
  */
 function vk_blocks_dynamic_text_render_callback( $attributes ) {
 	$options = array(
-		'textAlign'      => $attributes['textAlign'],
+		'textAlign'      => ( isset( $attributes['textAlign'] ) ) ? esc_attr( $attributes['textAlign'] ) : null,
 		'displayElement' => $attributes['displayElement'],
 		'tagName'        => $attributes['tagName'],
 	);

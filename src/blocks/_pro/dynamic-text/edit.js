@@ -1,7 +1,12 @@
 // import WordPress Scripts
 import { __ } from '@wordpress/i18n';
 import { PanelBody, SelectControl } from '@wordpress/components';
-import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
+import {
+	useBlockProps,
+	AlignmentControl,
+	BlockControls,
+	InspectorControls,
+} from '@wordpress/block-editor';
 import ServerSideRender from '@wordpress/server-side-render';
 
 /**
@@ -65,7 +70,7 @@ function DynamicTextEditControls({ tagName, onSelectTagName }) {
 export default function DynamicTextEdit(props) {
 	const { attributes, setAttributes } = props;
 
-	const { displayElement, tagName: TagName = '' } = attributes;
+	const { displayElement, tagName: TagName = '', textAlign } = attributes;
 
 	// Hooks.
 	const blockProps = useBlockProps();
@@ -104,6 +109,14 @@ export default function DynamicTextEdit(props) {
 
 	return (
 		<>
+			<BlockControls group="block">
+				<AlignmentControl
+					value={textAlign}
+					onChange={(nextAlign) => {
+						setAttributes({ textAlign: nextAlign });
+					}}
+				/>
+			</BlockControls>
 			<InspectorControls>
 				<PanelBody title={__('Display element settings', 'vk-blocks')}>
 					<SelectControl

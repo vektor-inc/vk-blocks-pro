@@ -15,6 +15,7 @@ use VektorInc\VK_Helpers\VkHelpers;
  */
 function vk_blocks_dynamic_text_render_callback( $attributes ) {
 	$options = array(
+		'textAlign'      => $attributes['textAlign'],
 		'displayElement' => $attributes['displayElement'],
 		'tagName'        => $attributes['tagName'],
 	);
@@ -42,6 +43,9 @@ function vk_blocks_dynamic_text_render_callback( $attributes ) {
 	// $custom_field = __( 'カスタムフィールドを入れる', 'vk-blocks' );
 
 	$classes = 'vk_dynamicText';
+	if ( isset( $attributes['textAlign'] ) ) {
+		$classes = ' has-text-align-' . $attributes['textAlign'];
+	}
 	// block.json の Supports で設定したクラス名やスタイルを取得する
 	$wrapper_classes = get_block_wrapper_attributes( array( 'class' => $classes ) );
 
@@ -92,6 +96,9 @@ function vk_blocks_register_block_dynamic_text() {
 					'className'      => array(
 						'type'    => 'string',
 						'default' => '',
+					),
+					'textAlign' => array(
+						'type'    => 'string',
 					),
 					'displayElement' => array(
 						'type'    => 'string',

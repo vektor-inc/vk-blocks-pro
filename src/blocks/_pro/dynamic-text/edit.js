@@ -1,3 +1,5 @@
+import classnames from 'classnames';
+
 // import WordPress Scripts
 import { __ } from '@wordpress/i18n';
 import { PanelBody, SelectControl } from '@wordpress/components';
@@ -69,12 +71,14 @@ function DynamicTextEditControls({ tagName, onSelectTagName }) {
 
 export default function DynamicTextEdit(props) {
 	const { attributes, setAttributes } = props;
-
-	const { displayElement, tagName: TagName = '', textAlign } = attributes;
+	const { textAlign, displayElement, tagName: TagName = '' } = attributes;
 
 	// Hooks.
-	const blockProps = useBlockProps();
-	// const blockProps = useBlockProps({ className: 'vk_dynamicText' });
+	const blockProps = useBlockProps({
+		className: classnames({
+			[`has-text-align-${textAlign}`]: textAlign,
+		}),
+	});
 
 	const postType = wp.data.select('core/editor').getCurrentPostType();
 	const parentPageId = wp.data
@@ -125,6 +129,7 @@ export default function DynamicTextEdit(props) {
 						onChange={(value) =>
 							setAttributes({ displayElement: value })
 						}
+						className="mb-0"
 						options={[
 							{
 								value: 'please-select',
@@ -151,7 +156,7 @@ export default function DynamicTextEdit(props) {
 						]}
 					/>
 					{displayElement === 'ancestor-page' && (
-						<div className="alert alert-warning">
+						<div className="alert alert-warning mt-0 mb-4">
 							{__(
 								'This block will not display on pages other than pages that have a parent hierarchy.',
 								'vk-blocks'
@@ -164,12 +169,6 @@ export default function DynamicTextEdit(props) {
 							setAttributes({ tagName: value })
 						}
 					/>
-					<div className="alert alert-info">
-						{__(
-							'If you want to specify the style of characters, put this block inside the Row block and specify the style in the Row block.',
-							'vk-blocks'
-						)}
-					</div>
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>{editContent}</div>

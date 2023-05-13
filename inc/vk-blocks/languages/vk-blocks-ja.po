@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2023-05-13T08:26:00+00:00\n"
-"PO-Revision-Date: 2023-05-13 17:28+0900\n"
+"POT-Creation-Date: 2023-05-13T11:32:11+00:00\n"
+"PO-Revision-Date: 2023-05-14 02:37+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -775,94 +775,11 @@ msgstr "親ページ"
 msgid "Ignore this post"
 msgstr "この投稿を除く"
 
-#: src/blocks/_pro/dynamic-text/edit.js:108
-msgid "Display element settings"
-msgstr "表示要素の設定"
-
-#: src/blocks/_pro/dynamic-text/edit.js:110
-msgid "Display element"
-msgstr "表示要素"
-
-#: src/blocks/_pro/dynamic-text/edit.js:118
-msgid "Please Select"
-msgstr "選択してください"
-
-#: src/blocks/_pro/dynamic-text/edit.js:122
-msgid "Post type name of the page being viewed"
-msgstr "表示中のページの投稿タイプ名"
-
-#: src/blocks/_pro/dynamic-text/edit.js:129
-msgid "Page name in the ancestor hierarchy of the displayed page"
-msgstr "表示中の固定ページの先祖階層の固定ページ名"
-
-#: src/blocks/_pro/dynamic-text/edit.js:142
-msgid ""
-"This block will not display on pages other than pages that have a parent "
-"hierarchy."
-msgstr "このブロックは、親階層を持つページ以外の固定ページには表示されません。"
-
-#: src/blocks/_pro/dynamic-text/edit.js:155
-msgid ""
-"If you want to specify the style of characters, put this block inside the "
-"Row block and specify the style in the Row block."
-msgstr ""
-"文字のスタイル指定をする場合は横並びブロックの中にこのブロックを入れて、横並"
-"びブロックでスタイルを指定してください。"
-
-#: src/blocks/_pro/dynamic-text/edit.js:20
-msgid "HTML element"
-msgstr "HTML 要素"
-
-#: src/blocks/_pro/dynamic-text/edit.js:25
-msgid "div (default)"
-msgstr "div (標準)"
-
-#: src/blocks/_pro/dynamic-text/edit.js:29
-msgid "h1"
-msgstr ""
-
-#: src/blocks/_pro/dynamic-text/edit.js:33
-#: src/blocks/ancestor-page-list/edit.js:48
-msgid "h2"
-msgstr "h2"
-
-#: src/blocks/_pro/dynamic-text/edit.js:37
-#: src/blocks/ancestor-page-list/edit.js:52
-msgid "h3"
-msgstr "h3"
-
-#: src/blocks/_pro/dynamic-text/edit.js:41
-#: src/blocks/ancestor-page-list/edit.js:56
-msgid "h4"
-msgstr "h4"
-
-#: src/blocks/_pro/dynamic-text/edit.js:45
-#: src/blocks/ancestor-page-list/edit.js:60
-msgid "h5"
-msgstr "h5"
-
-#: src/blocks/_pro/dynamic-text/edit.js:49
-#: src/blocks/ancestor-page-list/edit.js:64
-msgid "h6"
-msgstr "h6"
-
-#: src/blocks/_pro/dynamic-text/edit.js:53
-msgid "p"
-msgstr "p"
-
-#: src/blocks/_pro/dynamic-text/edit.js:57
-msgid "span"
-msgstr "span"
-
-#: src/blocks/_pro/dynamic-text/edit.js:82
-msgid "This block will not render because no visible element is selected."
-msgstr "表示要素が選択されていないため、このブロックはレンダリングされません。"
-
-#: src/blocks/_pro/dynamic-text/edit.js:89
+#: src/blocks/_pro/dynamic-text/edit.js:100
 msgid "Post Type Name"
 msgstr "投稿タイプ名"
 
-#: src/blocks/_pro/dynamic-text/edit.js:92
+#: src/blocks/_pro/dynamic-text/edit.js:103
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
 #: src/blocks/ancestor-page-list/index.php:44
@@ -870,6 +787,89 @@ msgstr "投稿タイプ名"
 #: test/phpunit/pro/test-ancestor-page-list.php:173
 msgid "Ancestor Page Title"
 msgstr "先祖ページのタイトル"
+
+#: src/blocks/_pro/dynamic-text/edit.js:127
+msgid "Display element settings"
+msgstr "表示要素の設定"
+
+#: src/blocks/_pro/dynamic-text/edit.js:129
+msgid "Display element"
+msgstr "表示要素"
+
+#: src/blocks/_pro/dynamic-text/edit.js:137
+msgid "Please Select"
+msgstr "選択してください"
+
+#: src/blocks/_pro/dynamic-text/edit.js:141
+msgid "Post type name of the page being viewed"
+msgstr "表示中のページの投稿タイプ名"
+
+#: src/blocks/_pro/dynamic-text/edit.js:148
+msgid "Page name in the ancestor hierarchy of the displayed page"
+msgstr "表示中の固定ページの先祖階層の固定ページ名"
+
+#: src/blocks/_pro/dynamic-text/edit.js:161
+msgid ""
+"This block will not display on pages other than pages that have a parent "
+"hierarchy."
+msgstr "このブロックは親階層を持つページ以外の固定ページには表示されません。"
+
+#: src/blocks/_pro/dynamic-text/edit.js:174
+msgid ""
+"If you want to specify the style of characters, put this block inside the "
+"Row block and specify the style in the Row block."
+msgstr ""
+"文字のスタイル指定をする場合は横並びブロックの中にこのブロックを入れて、横並"
+"びブロックでスタイルを指定してください。"
+
+#: src/blocks/_pro/dynamic-text/edit.js:28
+msgid "HTML element"
+msgstr "HTML 要素"
+
+#: src/blocks/_pro/dynamic-text/edit.js:33
+msgid "div (default)"
+msgstr "div (標準)"
+
+#: src/blocks/_pro/dynamic-text/edit.js:37
+msgid "h1"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:41
+#: src/blocks/ancestor-page-list/edit.js:48
+msgid "h2"
+msgstr "h2"
+
+#: src/blocks/_pro/dynamic-text/edit.js:45
+#: src/blocks/ancestor-page-list/edit.js:52
+msgid "h3"
+msgstr "h3"
+
+#: src/blocks/_pro/dynamic-text/edit.js:49
+#: src/blocks/ancestor-page-list/edit.js:56
+msgid "h4"
+msgstr "h4"
+
+#: src/blocks/_pro/dynamic-text/edit.js:53
+#: src/blocks/ancestor-page-list/edit.js:60
+msgid "h5"
+msgstr "h5"
+
+#: src/blocks/_pro/dynamic-text/edit.js:57
+#: src/blocks/ancestor-page-list/edit.js:64
+msgid "h6"
+msgstr "h6"
+
+#: src/blocks/_pro/dynamic-text/edit.js:61
+msgid "p"
+msgstr "p"
+
+#: src/blocks/_pro/dynamic-text/edit.js:65
+msgid "span"
+msgstr "span"
+
+#: src/blocks/_pro/dynamic-text/edit.js:93
+msgid "This block will not render because no visible element is selected."
+msgstr "表示要素が選択されていないため、このブロックはレンダリングされません。"
 
 #: src/blocks/_pro/grid-column-item/edit.js:102
 #: src/blocks/_pro/gridcolcard/edit-common.js:159

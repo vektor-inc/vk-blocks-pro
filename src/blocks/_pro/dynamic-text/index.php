@@ -97,8 +97,8 @@ function vk_blocks_register_block_dynamic_text() {
 						'type'    => 'string',
 						'default' => '',
 					),
-					'textAlign' => array(
-						'type'    => 'string',
+					'textAlign'      => array(
+						'type' => 'string',
 					),
 					'displayElement' => array(
 						'type'    => 'string',

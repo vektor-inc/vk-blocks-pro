@@ -140,7 +140,7 @@ export default function DynamicTextEdit(props) {
 					{displayElement === 'ancestor-page' && (
 						<div className="alert alert-warning">
 							{__(
-								'このブロックは親階層を持つ固定ページ以外のページでは表示されません。',
+								'This block will not display on pages other than pages that have a parent hierarchy.',
 								'vk-blocks'
 							)}
 						</div>

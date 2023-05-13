@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-05-11T11:46:22+00:00\n"
+"POT-Creation-Date: 2023-05-13T08:26:00+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks\n"
@@ -762,23 +762,31 @@ msgstr ""
 msgid "Ignore this post"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:107
-msgid "Please Select"
+#: src/blocks/_pro/dynamic-text/edit.js:108
+msgid "Display element settings"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:111
-msgid "Post type name of the page being viewed"
+#: src/blocks/_pro/dynamic-text/edit.js:110
+msgid "Display element"
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:118
+msgid "Please Select"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:122
+msgid "Post type name of the page being viewed"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:129
 msgid "Page name in the ancestor hierarchy of the displayed page"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:131
-msgid "このブロックは親階層を持つ固定ページ以外のページでは表示されません。"
+#: src/blocks/_pro/dynamic-text/edit.js:142
+msgid "This block will not display on pages other than pages that have a parent hierarchy."
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:144
+#: src/blocks/_pro/dynamic-text/edit.js:155
 msgid "If you want to specify the style of characters, put this block inside the Row block and specify the style in the Row block."
 msgstr ""
 
@@ -827,16 +835,21 @@ msgstr ""
 msgid "span"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:78
+#: src/blocks/_pro/dynamic-text/edit.js:82
 msgid "This block will not render because no visible element is selected."
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:97
-msgid "Display element settings"
+#: src/blocks/_pro/dynamic-text/edit.js:89
+msgid "Post Type Name"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:99
-msgid "Display element"
+#: src/blocks/_pro/dynamic-text/edit.js:92
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
+#: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
+#: src/blocks/ancestor-page-list/index.php:44
+#: test/phpunit/pro/test-ancestor-page-list.php:89
+#: test/phpunit/pro/test-ancestor-page-list.php:173
+msgid "Ancestor Page Title"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:102
@@ -3034,14 +3047,6 @@ msgstr ""
 #: dist/vk-blocks-pro/inc/vk-blocks/blocks.php:53
 #: inc/vk-blocks/blocks.php:53
 msgid "Deprecated Blocks"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
-#: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
-#: src/blocks/ancestor-page-list/index.php:44
-#: test/phpunit/pro/test-ancestor-page-list.php:89
-#: test/phpunit/pro/test-ancestor-page-list.php:173
-msgid "Ancestor Page Title"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83

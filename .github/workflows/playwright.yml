@@ -6,20 +6,20 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        php: [8.1]
-    services:
-      mysql:
-        image: mysql:5.7
-        ports:
-          - 3306
-        env:
-          MYSQL_ROOT_PASSWORD: wordpress
-          MYSQL_DATABASE: wordpress
-          MYSQL_USER: wordpress
-          MYSQL_PASSWORD: wordpress
-    steps:
+  strategy:
+    matrix:
+      php: [8.1]
+  services:
+    mysql:
+      image: mysql:5.7
+      ports:
+        - 3306
+      env:
+        MYSQL_ROOT_PASSWORD: wordpress
+        MYSQL_DATABASE: wordpress
+        MYSQL_USER: wordpress
+        MYSQL_PASSWORD: wordpress
+  steps:
     - uses: actions/checkout@v2
     - name: Cache multiple paths
       uses: actions/cache@v2
@@ -43,15 +43,18 @@ jobs:
         curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
         chmod +x wp-cli.phar
         mv wp-cli.phar /usr/local/bin/wp
-    - name: Build
-      run: npm run build
-    - name: Run Environment
+    - name: Setup WordPress Environment
       run: npx wp-env start
+    - name: Run Environment
+      run: npx wp-env run "wp core is-installed"
+    - name: Install WordPress
+      run: npx wp-env run "wp core download --force"
+    - name: Configure WordPress
+      run: npx wp-env run "wp core config --dbname=wordpress --dbuser=wordpress --dbpass=wordpress --dbhost=127.0.0.1:3306"
+    - name: Install WordPress
+      run: npx wp-env run "wp core install --url=http://localhost:8888 --title=Playwright --admin_user=admin --admin_password=password --admin_email=admin@example.com"
     - name: Install Plugin using WP-CLI
-      run: |
-        sudo chown -R www-data:www-data /var/www/html/
-        sudo chmod -R 755 /var/www/html/
-        wp plugin install vk-all-in-one-expansion-unit --activate
+      run: npx wp-env run "wp plugin install vk-all-in-one-expansion-unit --activate"
     - name: Install dependencies ////////////////////////
       run: npm ci
     - name: Install Playwright Browsers

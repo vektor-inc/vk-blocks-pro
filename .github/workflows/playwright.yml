@@ -48,7 +48,8 @@ jobs:
       - name: Run Environment
         run: npx wp-env start
       - name: Install Plugin using WP-CLI
-        run: npx wp-env run "wp plugin install vk-all-in-one-expansion-unit --activate"
+        run: |
+          npx wp-env run "/usr/local/bin/wp plugin install vk-all-in-one-expansion-unit --activate"
       - name: Create Upgrade Directory
         run: |
           sudo mkdir -p /var/www/html/wp-content/upgrade

@@ -56,11 +56,6 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
-    - name: Create Upgrade Directory
-      run: |
-        sudo mkdir -p /var/www/html/wp-content/upgrade
-        sudo chown -R www-data:www-data /var/www/html/wp-content/upgrade
-        sudo chmod -R 755 /var/www/html/wp-content/upgrade
     - name: Check Permission ---------------------------
       run: ls -ld /var/www/html/wp-content/upgrade
     - name: Run Playwright

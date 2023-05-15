@@ -1,7 +1,7 @@
 name: Playwright Tests
 on:
   pull_request:
-    branches: [develop]
+    branches: [ develop ]
 jobs:
   test:
     timeout-minutes: 60
@@ -20,47 +20,54 @@ jobs:
           MYSQL_USER: wordpress
           MYSQL_PASSWORD: wordpress
     steps:
-      - uses: actions/checkout@v2
-      - name: Cache multiple paths
-        uses: actions/cache@v2
-        with:
-          path: vendor
-          key: ${{ runner.os }}-php${{ matrix.php }}-${{ hashFiles('**/composer.lock') }}
-      - name: Setup PHP ${{ matrix.php }}
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: ${{ matrix.php }}
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14.x
-      - name: install npm scripts
-        run: npm install
-      - name: install Composer Package
-        run: composer install
-      - name: Install WP-CLI
-        run: |
-          curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-          chmod +x wp-cli.phar
-          sudo mv wp-cli.phar /usr/local/bin/wp
-      - name: Build
-        run: npm run build
-      - name: Run Environment
-        run: npx wp-env start
-      - name: Create Upgrade Directory
-        run: |
-          sudo mkdir -p /var/www/html/wp-content/upgrade
-          sudo chown -R www-data:www-data /var/www/html/wp-content/upgrade
-          sudo chmod -R 755 /var/www/html/wp-content/upgrade
-      - name: Check Permission
-        run: ls -ld /var/www/html/wp-content/upgrade
-      - name: Display User Information
-        run: whoami
-      - name: Run Playwright
-        run: npx playwright test --trace on --project=chromium
-      - uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 30
+    - uses: actions/checkout@v2
+    - name: Cache multiple paths
+      uses: actions/cache@v2
+      with:
+        path: vendor
+        key: ${{ runner.os }}-php${{ matrix.php }}-${{ hashFiles('**/composer.lock') }}
+    - name: Setup PHP ${{ matrix.php }}
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php }}
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14.x
+    - name: install npm scripts
+      run: npm install
+    - name: install Composer Package
+      run: composer install
+    - name: Install WP-CLI
+      run: |
+        curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+        chmod +x wp-cli.phar
+        mv wp-cli.phar /usr/local/bin/wp
+    - name: Build
+      run: npm run build
+    - name: Run Environment
+      run: npx wp-env start
+    - name: Create Upgrade Directory
+      run: |
+        sudo mkdir -p /var/www/html/wp-content/upgrade
+        sudo chown -R www-data:www-data /var/www/html/wp-content/upgrade
+        sudo chmod -R 755 /var/www/html/wp-content/upgrade
+    - name: Check Permission
+      run: ls -ld /var/www/html/wp-content/upgrade
+    - name: Display User Information
+      run: whoami
+    - name: Install dependencies ////////////////////////
+      run: npm ci
+    - name: Install VK All in One Expansion Unit
+      run: |
+        npx wp plugin install vk-all-in-one-expansion-unit
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+    - name: Run Playwright
+      run: npx playwright test --trace on --project=chromium
+    - uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: playwright-report
+        path: playwright-report/
+        retention-days: 30

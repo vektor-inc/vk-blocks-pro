@@ -9,6 +9,8 @@ curl -s https://downloads.wordpress.org/plugins/vk-all-in-one-expansion-unit.zip
 
 ls 
 
+ls /var/www/html/wp-content/plugins
+
 # -d 指定したディレクトリに展開
 unzip exunit.zip -d /var/www/html/wp-content/plugins
 

@@ -47,15 +47,10 @@ jobs:
       run: npm run build
     - name: Run Environment
       run: npx wp-env start
-    - name: Create Upgrade Directory
-      run: |
-        sudo mkdir -p /var/www/html/wp-content/upgrade
-        sudo chown -R www-data:www-data /var/www/html/wp-content/upgrade
-        sudo chmod -R 755 /var/www/html/wp-content/upgrade
-    - name: Check Permission
-      run: ls -ld /var/www/html/wp-content/upgrade
-    - name: Ls ==============
-      run: ls
+    # - name: Check Permission
+    #   run: ls -ld /var/www/html/wp-content/upgrade
+    # - name: Ls ==============
+    #   run: ls
     # - name: install Plugins
     #   run: bin/install-plugins-for-playwrite.sh
     - name: Display User Information

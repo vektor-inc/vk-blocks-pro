@@ -56,7 +56,7 @@ jobs:
           sudo chmod -R 755 /var/www/html/wp-content/upgrade
       - name: Install Plugin using WP-CLI
         run: |
-          npx wp-env run --config ./wp-env.json "wp plugin install vk-all-in-one-expansion-unit --activate"
+          npx wp-env run --config /wp-content/plugins/vk-blocks-pro/wp-env.json "wp plugin install vk-all-in-one-expansion-unit --activate"
       - name: Run Playwright
         run: npx playwright test --trace on --project=chromium
       - uses: actions/upload-artifact@v3

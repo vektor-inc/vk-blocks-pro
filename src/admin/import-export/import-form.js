@@ -11,7 +11,6 @@ import {
 	FlexItem,
 	RadioControl,
 	CheckboxControl,
-	FormFileUpload,
 } from '@wordpress/components';
 import { upload } from '@wordpress/icons';
 import { useContext, useState, useEffect } from '@wordpress/element';
@@ -205,14 +204,10 @@ export default function ImportForm() {
 				</Notice>
 			)}
 			<div>
-				<FormFileUpload
+				<input
+					type="file"
 					accept="application/json"
 					onChange={onChangeFile}
-					render={({ openFileDialog }) => (
-						<Button variant="secondary" onClick={openFileDialog}>
-							{__('Upload file', 'vk-blocks')}
-						</Button>
-					)}
 				/>
 			</div>
 			<div className="submit">

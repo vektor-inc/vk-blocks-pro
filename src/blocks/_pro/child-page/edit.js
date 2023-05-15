@@ -6,7 +6,7 @@ import {
 	CheckboxControl,
 } from '@wordpress/components';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
-import { withSelect } from '@wordpress/data';
+import { withSelect, select as wpSelect } from '@wordpress/data';
 import ServerSideRender from '@wordpress/server-side-render';
 import { DisplayItemsControl } from '@vkblocks/components/display-items-control';
 import { ColumnLayoutControl } from '@vkblocks/components/column-layout-control';
@@ -56,6 +56,29 @@ export default withSelect((select) => {
 
 	const blockProps = useBlockProps();
 
+	let editContent;
+	const currentPostId = wpSelect('core/editor').getCurrentPostId();
+	let hasChildPage;
+
+	if (currentPostId && pages) {
+		hasChildPage = pages.some((page) => page.parent === currentPostId);
+	}
+
+	if (hasChildPage) {
+		editContent = (
+			<ServerSideRender
+				block="vk-blocks/child-page"
+				attributes={attributes}
+			/>
+		);
+	} else {
+		editContent = (
+			<div className="alert alert-warning text-center">
+				{__('There are no Page.', 'vk-blocks')}
+			</div>
+		);
+	}
+
 	return (
 		<>
 			<InspectorControls>
@@ -88,12 +111,7 @@ export default withSelect((select) => {
 				<ColumnLayoutControl {...props} />
 				<DisplayItemsControl {...props} />
 			</InspectorControls>
-			<div {...blockProps}>
-				<ServerSideRender
-					block="vk-blocks/child-page"
-					attributes={attributes}
-				/>
-			</div>
+			<div {...blockProps}>{editContent}</div>
 		</>
 	);
 });

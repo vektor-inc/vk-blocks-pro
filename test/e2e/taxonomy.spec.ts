@@ -10,9 +10,15 @@ test('Taxonomy Block Test', async ({ page }) => {
 	await page.getByLabel('Password', { exact: true }).press('Enter');
 
 	// Install ExUnit /////////////////////////////////////////////////
+	await page.goto('http://localhost:8889/wp-admin/');
+	// Check if the modal is visible
+	const isPTM = await page.isVisible('#menu-posts-post_type_manage');
 
-	const ExUnit = await page.$('text=Custom Post Type Setting');
-	if (!ExUnit) {
+	// If the modal is visible, click the close button
+	if (!isPTM) {
+		console.log('あったよ');
+	} else{
+		console.log('なかったよ');
 		await page.getByRole('link', { name: 'Plugins', exact: true }).click();
 		await page.locator('#wpbody-content').getByRole('link', { name: 'Add New' }).click();
 		await page.getByPlaceholder('Search plugins...').fill('vk all in one expansion unit');
@@ -183,7 +189,6 @@ test('Taxonomy Block Test', async ({ page }) => {
 
 			// If the panel is not expanded, click the button
 			if (isExpanded === 'false') {
-				console.log('閉じてたぜ');
 				await button.click();
 			}
 			// Set tag to post

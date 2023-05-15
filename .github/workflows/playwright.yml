@@ -26,6 +26,11 @@ jobs:
               uses: actions/setup-node@v2
               with:
                 node-version: 14.x
+            - name: Install WP-CLI
+              run: |
+                curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+                chmod +x wp-cli.phar
+                mv wp-cli.phar /usr/local/bin/wp
             - name: install npm scripts
               run: npm install
             - name: install Composer Package

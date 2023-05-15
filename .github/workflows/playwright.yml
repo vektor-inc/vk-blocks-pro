@@ -47,6 +47,8 @@ jobs:
         run: npm run build
       - name: Run Environment
         run: npx wp-env start
+      - name: Change Directory
+        run: cd /var/www/html
       - name: Wait for WordPress to be ready
         run: |
           until npx wp-env run "wp core is-installed"; do sleep 5; done
@@ -57,7 +59,7 @@ jobs:
           sudo chmod -R 755 /var/www/html/wp-content/upgrade
       - name: Install Plugin using WP-CLI
         run: |
-          npx wp-env run "wp plugin install vk-all-in-one-expansion-unit --activate --path=/var/www/html"
+          npx wp-env run --config ./wp-env.json "wp plugin install vk-all-in-one-expansion-unit --activate"
       - name: Run Playwright
         run: npx playwright test --trace on --project=chromium
       - uses: actions/upload-artifact@v3

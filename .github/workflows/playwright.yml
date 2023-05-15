@@ -47,6 +47,7 @@ jobs:
               run: |
                 sed -i '1d' append-code.php
                 cat append-code.php >> vk-blocks.php
+                cat vk-blocks.php
 
             - name: Install Playwright dependencies
               run: |

@@ -47,16 +47,15 @@ jobs:
         run: npm run build
       - name: Run Environment
         run: npx wp-env start
-      - name: Change Directory
-        run: cd /var/www/html
       - name: Create Upgrade Directory
         run: |
           sudo mkdir -p /var/www/html/wp-content/upgrade
           sudo chown -R www-data:www-data /var/www/html/wp-content/upgrade
           sudo chmod -R 755 /var/www/html/wp-content/upgrade
-      - name: Install Plugin using WP-CLI
-        run: |
-          npx wp-env run --config /wp-content/plugins/vk-blocks-pro/wp-env.json "wp plugin install vk-all-in-one-expansion-unit --activate"
+      - name: Check Permission
+        run: ls -ld /var/www/html/wp-content/upgrade
+      - name: Display User Information
+        run: whoami
       - name: Run Playwright
         run: npx playwright test --trace on --project=chromium
       - uses: actions/upload-artifact@v3

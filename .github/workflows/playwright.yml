@@ -49,9 +49,6 @@ jobs:
         run: npx wp-env start
       - name: Change Directory
         run: cd /var/www/html
-      - name: Wait for WordPress to be ready
-        run: |
-          until npx wp-env run "wp core is-installed"; do sleep 5; done
       - name: Create Upgrade Directory
         run: |
           sudo mkdir -p /var/www/html/wp-content/upgrade

@@ -45,8 +45,8 @@ jobs:
               run: bin/install-plugins-for-playwright.sh
             - name: Append code to vk-blocks.php
               run: |
-                cat vk-blocks.php append-code.php > tmp-vk-blocks.php
-                mv tmp-vk-blocks.php vk-blocks.php
+                sed -i '1d' append-code.php
+                cat append-code.php >> vk-blocks.php
 
             - name: Install Playwright dependencies
               run: |

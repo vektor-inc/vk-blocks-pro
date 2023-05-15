@@ -181,7 +181,8 @@ export default function ImportForm() {
 			Object.keys(OPTION_DEFAULT_SETTINGS).forEach((key, index) => {
 				const { options } = importSettings[key];
 				const isFind = options.find(
-					(option) => option.name in uploadedOptions
+					(option) =>
+						uploadedOptions && option.name in uploadedOptions
 				);
 				if (!isFind) {
 					copyObj[index].isImport = false;
@@ -209,11 +210,7 @@ export default function ImportForm() {
 					onChange={onChangeFile}
 					render={({ openFileDialog }) => (
 						<Button variant="secondary" onClick={openFileDialog}>
-							{__(
-								'ファイルをアップロード',
-								// 'Upload file',
-								'vk-blocks'
-							)}
+							{__('Upload file', 'vk-blocks')}
 						</Button>
 					)}
 				/>
@@ -252,7 +249,9 @@ export default function ImportForm() {
 					{OPTION_DEFAULT_SETTINGS.map(
 						({ groupTitle, options, isShow = true }, index) => {
 							const isFind = options.find(
-								(option) => option.name in uploadedOptions
+								(option) =>
+									uploadedOptions &&
+									option.name in uploadedOptions
 							);
 							const checked = importSettings[index].isImport;
 							const handleToggle = (value) => {
@@ -454,8 +453,8 @@ export default function ImportForm() {
 				<div>
 					<Snackbar>
 						{__(
-							'インポートしました',
-							// 'Import Success',
+							// 'インポートしました',
+							'Import Success',
 							'vk-blocks'
 						)}{' '}
 					</Snackbar>

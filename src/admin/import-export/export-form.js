@@ -62,7 +62,11 @@ export default function ExportForm() {
 				)}
 			</h4>
 			<CheckboxControl
-				label={__('全ての項目をエクスポート', 'vk-blocks')}
+				label={__(
+					'すべて切り替え',
+					// 'Toggle all',
+					'vk-blocks'
+				)}
 				checked={isExportLists.length === exportOptionLists.length}
 				onChange={handleToggleAll}
 				aria-checked={ariaChecked}

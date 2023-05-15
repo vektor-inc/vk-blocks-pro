@@ -41,7 +41,7 @@ jobs:
               run: |
                   npm run wp-env start
             - name: install Plugins
-              run: bin/install-plugins-for-playwrite.sh
+              run: bin/install-plugins-for-playwright.sh
             - name: Install Playwright dependencies
               run: |
                   npx playwright install chromium --with-deps

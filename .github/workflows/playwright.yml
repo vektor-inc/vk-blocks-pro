@@ -37,14 +37,14 @@ jobs:
               run: composer install
             - name: Npm build
               run: npm run build
-
-            - name: Install Playwright dependencies
-              run: |
-                  npx playwright install chromium --with-deps
-
             - name: Install WordPress and start the server
               run: |
                   npm run wp-env start
+            - name: install Plugins
+              run: bin/install-plugins-for-playwrite.sh
+            - name: Install Playwright dependencies
+              run: |
+                  npx playwright install chromium --with-deps
             - name: Run Playwright
               run: npx playwright test --trace on --project=chromium
             - uses: actions/upload-artifact@v3

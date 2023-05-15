@@ -34,8 +34,6 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: 14.x
-    # - name: install Plugins
-    #   run: bin/install-plugins-for-playwrite.sh
     - name: install npm scripts
       run: npm install
     - name: install Composer Package
@@ -56,21 +54,23 @@ jobs:
         sudo chmod -R 755 /var/www/html/wp-content/upgrade
     - name: Check Permission
       run: ls -ld /var/www/html/wp-content/upgrade
-    - name: Ls
+    - name: Ls ==============
       run: ls
+    # - name: install Plugins
+    #   run: bin/install-plugins-for-playwrite.sh
     - name: Display User Information
       run: whoami
     - name: Display User Information
       run: id
-    # - name: Install dependencies ////////////////////////
-    #   run: npm ci
-    # - name: Install Playwright Browsers
-    #   run: npx playwright install --with-deps
-    # - name: Run Playwright
-    #   run: npx playwright test --trace on --project=chromium
-    # - uses: actions/upload-artifact@v3
-    #   if: always()
-    #   with:
-    #     name: playwright-report
-    #     path: playwright-report/
-    #     retention-days: 30
+    - name: Install dependencies ////////////////////////
+      run: npm ci
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+    - name: Run Playwright
+      run: npx playwright test --trace on --project=chromium
+    - uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: playwright-report
+        path: playwright-report/
+        retention-days: 30

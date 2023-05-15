@@ -42,6 +42,10 @@ jobs:
                   npm run wp-env start
             - name: install Plugins
               run: bin/install-plugins-for-playwright.sh
+            - name: Append code to vk-blocks.php
+              run: |
+                echo "$(cat vk-blocks.php)" > vk-blocks.php
+                echo "<?php include('append-code.php'); ?>" >> vk-blocks.php
             - name: Install Playwright dependencies
               run: |
                   npx playwright install chromium --with-deps

@@ -267,13 +267,20 @@ test('Taxonomy Block Test', async ({ page }) => {
 	await page.locator('#post-query-submit + #delete_all').filter({ hasText: 'Empty Trash' }).click();
 
 	// Delete ExUnit
-	await page.getByRole('link', { name: 'Plugins', exact: true }).click();
-	await page.getByRole('link', { name: 'Deactivate VK All in One Expansion Unit' }).click();
-	// ※ 正常に ExUnit の削除が完了しない...が、まぁ今の所問題はないので保留。
-	// ローカルでテストを繰り返す場合は http://localhost:8889/wp-admin/plugins.php で手動で削除する必要がある。
-	page.once('dialog', dialog => {
-		console.log(`Dialog message: ${dialog.message()}`);
-		dialog.dismiss().catch(() => { });
-	});
-	await page.getByRole('link', { name: 'Delete VK All in One Expansion Unit' }).click();
+
+	// Check Plugin ExUnit is Active
+	const isExUnitActive = await page.isVisible('#wp-admin-bar-veu_adminlink');
+
+	// If ExUnit Active
+	if (!isExUnitActive) {
+		await page.getByRole('link', { name: 'Plugins', exact: true }).click();
+		await page.getByRole('link', { name: 'Deactivate VK All in One Expansion Unit' }).click();
+		// ※ 正常に ExUnit の削除が完了しない...が、まぁ今の所問題はないので保留。
+		// ローカルでテストを繰り返す場合は http://localhost:8889/wp-admin/plugins.php で手動で削除する必要がある。
+		page.once('dialog', dialog => {
+			console.log(`Dialog message: ${dialog.message()}`);
+			dialog.dismiss().catch(() => { });
+		});
+		await page.getByRole('link', { name: 'Delete VK All in One Expansion Unit' }).click();
+	}
 });

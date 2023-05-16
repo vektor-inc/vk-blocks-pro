@@ -41,8 +41,8 @@ jobs:
               run: |
                   npm run wp-env start
 
-            # - name: install Plugins
-            #   run: bin/install-plugins-for-playwright.sh
+            - name: install Plugins
+              run: bin/install-plugins-for-playwright.sh
             # - name: Append code to vk-blocks.php
             #   run: |
             #     sed -i '1d' append-code.php

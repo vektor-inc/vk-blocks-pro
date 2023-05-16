@@ -164,7 +164,6 @@ if ( ! class_exists( 'VK_Post_Type_Manager' ) ) {
 			$taxonomy = get_post_meta( $post->ID, 'veu_taxonomy', true );
 
 			for ( $i = 1; $i <= 5; $i++ ) {
-
 				$slug     = ( isset( $taxonomy[ $i ]['slug'] ) ) ? $taxonomy[ $i ]['slug'] : '';
 				$label    = ( isset( $taxonomy[ $i ]['label'] ) ) ? $taxonomy[ $i ]['label'] : '';
 				$tag      = ( isset( $taxonomy[ $i ]['tag'] ) ) ? $taxonomy[ $i ]['tag'] : '';
@@ -217,10 +216,8 @@ if ( ! class_exists( 'VK_Post_Type_Manager' ) ) {
 				echo '<label><input type="radio" id="veu_taxonomy[' . esc_attr( $i ) . '][rest_api]" name="veu_taxonomy[' . esc_attr( $i ) . '][rest_api]" value="false"' . checked( $checked, 'false', false ) . '> ' . esc_html__( 'Does not correspond to the block editor', 'vk-all-in-one-expansion-unit' ) . '</label>';
 				echo '</td>';
 				echo '</tr>';
-
 			}
 			echo '</table>';
-
 		}
 
 		/***
@@ -268,7 +265,6 @@ if ( ! class_exists( 'VK_Post_Type_Manager' ) ) {
 					delete_post_meta( $post_id, $field, get_post_meta( $post_id, $field, true ) );
 				}
 			}
-
 		}
 
 		/**
@@ -329,7 +325,6 @@ if ( ! class_exists( 'VK_Post_Type_Manager' ) ) {
 					$post_type_id = mb_strimwidth( mb_convert_kana( mb_strtolower( esc_html( get_post_meta( $post->ID, 'veu_post_type_id', true ) ) ), 'a' ), 0, 20, '', 'UTF-8' );
 
 					if ( $post_type_id ) {
-
 						$menu_position = intval( mb_convert_kana( get_post_meta( $post->ID, 'veu_menu_position', true ), 'n' ) );
 						if ( ! $menu_position ) {
 							$menu_position = 5;
@@ -364,7 +359,6 @@ if ( ! class_exists( 'VK_Post_Type_Manager' ) ) {
 						$veu_taxonomies = get_post_meta( $post->ID, 'veu_taxonomy', true );
 
 						foreach ( $veu_taxonomies as $key => $taxonomy ) {
-
 							if ( $taxonomy['slug'] && $taxonomy['label'] ) {
 
 								// カスタム分類を階層化するかどうか.
@@ -404,15 +398,10 @@ if ( ! class_exists( 'VK_Post_Type_Manager' ) ) {
 									$args
 								);
 							} // if ( $taxonomy['slug'] && $taxonomy['label']){
-
 						} // foreach ($veu_taxonomies as $key => $taxonomy) {
-
 					} // if ( $post_type_id ) {
-
 				} // foreach ($custom_post_types as $key => $post) {
-
 			} // if ( $custom_post_types ) {
-
 		}
 
 		/**
@@ -432,5 +421,4 @@ if ( ! class_exists( 'VK_Post_Type_Manager' ) ) {
 	} // class VK_Post_Type_Manager
 
 	$VK_Post_Type_Manager = new VK_Post_Type_Manager(); // phpcs:ignore
-
 }

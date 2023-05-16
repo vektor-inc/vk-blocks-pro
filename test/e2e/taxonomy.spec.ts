@@ -16,9 +16,7 @@ test('Taxonomy Block Test', async ({ page }) => {
 
 	// If the modal is visible, click the close button
 	if (!isPTM) {
-		console.log('あったよ');
-	} else{
-		console.log('なかったよ');
+		console.log('ExUnit is not active');
 		await page.getByRole('link', { name: 'Plugins', exact: true }).click();
 		await page.locator('#wpbody-content').getByRole('link', { name: 'Add New' }).click();
 		await page.getByPlaceholder('Search plugins...').fill('vk all in one expansion unit');
@@ -61,6 +59,8 @@ test('Taxonomy Block Test', async ({ page }) => {
 			// Activateボタンが消えるまで待機
 			await page.waitForSelector('a[class="button activate-now button-primary"][data-slug="vk-all-in-one-expansion-unit"]', { state: 'hidden' });
 		}
+	} else{
+		console.log('ExUnit is active');
 	}
 
 	// Add Event Post Type /////////////////////////////////////////////////

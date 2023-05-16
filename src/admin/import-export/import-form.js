@@ -33,7 +33,6 @@ export default function ImportForm() {
 		OPTION_DEFAULT_SETTINGS
 	);
 
-	// openModalした時点でインポートする設定のstate uploadedOptionsを保持した方がわかりやすいかも
 	const openModal = () => {
 		readFile(file)
 			.then((uploadedOption) => {

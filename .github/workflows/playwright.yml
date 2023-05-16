@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php: [8.1]
+        php: [7.4,8.0,8.1]
     services:
       mysql:
         image: mysql:5.7
@@ -47,15 +47,6 @@ jobs:
       run: npm run build
     - name: Run Environment
       run: npx wp-env start
-    - name: Create Upgrade Directory
-      run: |
-        sudo mkdir -p /var/www/html/wp-content/upgrade
-        sudo chown -R www-data:www-data /var/www/html/wp-content/upgrade
-        sudo chmod -R 755 /var/www/html/wp-content/upgrade
-    - name: Check Permission
-      run: ls -ld /var/www/html/wp-content/upgrade
-    - name: Display User Information
-      run: whoami
     - name: Install dependencies ////////////////////////
       run: npm ci
     - name: Install Playwright Browsers

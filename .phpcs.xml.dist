@@ -23,6 +23,7 @@
 	<exclude-pattern type="relative">^.git/*</exclude-pattern>
 	<exclude-pattern type="relative">^build/*</exclude-pattern>
 	<exclude-pattern type="relative">^tests/*</exclude-pattern>
+	<exclude-pattern type="relative">append-code.php</exclude-pattern>
 	<exclude-pattern type="relative">class-post-type-manager.php</exclude-pattern>
 
 	<!-- How to scan -->

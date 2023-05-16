@@ -10,51 +10,58 @@ test('Taxonomy Block Test', async ({ page }) => {
 	await page.getByLabel('Password', { exact: true }).press('Enter');
 
 	// Install ExUnit /////////////////////////////////////////////////
+	await page.goto('http://localhost:8889/wp-admin/');
+	// Check if the modal is visible
+	const isPTM = await page.isVisible('#menu-posts-post_type_manage');
 
-	await page.getByRole('link', { name: 'Plugins', exact: true }).click();
-	await page.locator('#wpbody-content').getByRole('link', { name: 'Add New' }).click();
-	await page.getByPlaceholder('Search plugins...').fill('vk all in one expansion unit');
-	await page.getByPlaceholder('Search plugins...').press('Enter');
-	// ExUnit が表示されるまでちょい待機
-	await page.waitForTimeout(1000);
+	// If the modal is visible, click the close button
+	if (!isPTM) {
+		console.log('ExUnit is not active');
+		await page.getByRole('link', { name: 'Plugins', exact: true }).click();
+		await page.locator('#wpbody-content').getByRole('link', { name: 'Add New' }).click();
+		await page.getByPlaceholder('Search plugins...').fill('vk all in one expansion unit');
+		await page.getByPlaceholder('Search plugins...').press('Enter');
+		// ExUnit が表示されるまでちょい待機
+		await page.waitForTimeout(1000);
 
-	// Wait for display ExUnit Button 
-	// ( At this point it is unknown whether it is the install button or the activate button )
-	await page.waitForSelector('.plugin-card-vk-all-in-one-expansion-unit .plugin-action-buttons .button');
+		// Wait for display ExUnit Button 
+		// ( At this point it is unknown whether it is the install button or the activate button )
+		await page.waitForSelector('.plugin-card-vk-all-in-one-expansion-unit .plugin-action-buttons .button');
 
-	// Get button text
-	const buttonText = await page.$eval('.plugin-card-vk-all-in-one-expansion-unit .plugin-action-buttons .button', el => el.innerText);
+		// Get button text
+		const buttonText = await page.$eval('.plugin-card-vk-all-in-one-expansion-unit .plugin-action-buttons .button', el => el.innerText);
 
-	if (buttonText === 'Install Now') {
-		// インストールボタンが存在する場合
-		const installButton = await page.$('a[class="install-now button"][data-slug="vk-all-in-one-expansion-unit"]');
-		if (installButton !== null) {
+		if (buttonText === 'Install Now') {
+			// インストールボタンが存在する場合
+			const installButton = await page.$('a[class="install-now button"][data-slug="vk-all-in-one-expansion-unit"]');
+			if (installButton !== null) {
 
-			// インストールボタンが表示されるまで待機
-			await page.waitForSelector('a[class="install-now button"][data-slug="vk-all-in-one-expansion-unit"]');
+				// インストールボタンが表示されるまで待機
+				await page.waitForSelector('a[class="install-now button"][data-slug="vk-all-in-one-expansion-unit"]');
 
-			// クリックしてインストール
-			await installButton.click();
+				// クリックしてインストール
+				await installButton.click();
 
-			// Activateボタンが表示されるまで待機
-			await page.waitForSelector('a[class="button activate-now button-primary"][data-slug="vk-all-in-one-expansion-unit"]');
+				// Activateボタンが表示されるまで待機
+				await page.waitForSelector('a[class="button activate-now button-primary"][data-slug="vk-all-in-one-expansion-unit"]');
+			}
 		}
+
+		// Check if the button is disabled
+		const isDisabled = await page.$eval('.plugin-card-vk-all-in-one-expansion-unit .plugin-action-buttons .button', (button) => button.disabled);
+
+		// If the button is not disabled, click it
+		// すでに ExUnit が有効化されていない場合のみ有効化処理を実行
+		if (!isDisabled) {
+			// Activateボタンをクリックして有効化処理を実行
+			await page.getByRole('link', { name: 'Activate VK All in One Expansion Unit' }).click();
+
+			// Activateボタンが消えるまで待機
+			await page.waitForSelector('a[class="button activate-now button-primary"][data-slug="vk-all-in-one-expansion-unit"]', { state: 'hidden' });
+		}
+	} else{
+		console.log('ExUnit is active');
 	}
-
-	// Check if the button is disabled
-	const isDisabled = await page.$eval('.plugin-card-vk-all-in-one-expansion-unit .plugin-action-buttons .button', (button) => button.disabled);
-
-	// If the button is not disabled, click it
-	// すでに ExUnit が有効化されていない場合のみ有効化処理を実行
-	if (!isDisabled) {
-		// Activateボタンをクリックして有効化処理を実行
-		await page.getByRole('link', { name: 'Activate VK All in One Expansion Unit' }).click();
-
-		// Activateボタンが消えるまで待機
-		await page.waitForSelector('a[class="button activate-now button-primary"][data-slug="vk-all-in-one-expansion-unit"]', { state: 'hidden' });
-	}
-
-
 
 	// Add Event Post Type /////////////////////////////////////////////////
 
@@ -182,7 +189,6 @@ test('Taxonomy Block Test', async ({ page }) => {
 
 			// If the panel is not expanded, click the button
 			if (isExpanded === 'false') {
-				console.log('閉じてたぜ');
 				await button.click();
 			}
 			// Set tag to post
@@ -261,13 +267,20 @@ test('Taxonomy Block Test', async ({ page }) => {
 	await page.locator('#post-query-submit + #delete_all').filter({ hasText: 'Empty Trash' }).click();
 
 	// Delete ExUnit
-	await page.getByRole('link', { name: 'Plugins', exact: true }).click();
-	await page.getByRole('link', { name: 'Deactivate VK All in One Expansion Unit' }).click();
-	// ※ 正常に ExUnit の削除が完了しない...が、まぁ今の所問題はないので保留。
-	// ローカルでテストを繰り返す場合は http://localhost:8889/wp-admin/plugins.php で手動で削除する必要がある。
-	page.once('dialog', dialog => {
-		console.log(`Dialog message: ${dialog.message()}`);
-		dialog.dismiss().catch(() => { });
-	});
-	await page.getByRole('link', { name: 'Delete VK All in One Expansion Unit' }).click();
+
+	// Check Plugin ExUnit is Active
+	const isExUnitActive = await page.isVisible('#wp-admin-bar-veu_adminlink');
+
+	// If ExUnit Active
+	if (isExUnitActive) {
+		await page.getByRole('link', { name: 'Plugins', exact: true }).click();
+		await page.getByRole('link', { name: 'Deactivate VK All in One Expansion Unit' }).click();
+		// ※ 正常に ExUnit の削除が完了しない...が、まぁ今の所問題はないので保留。
+		// ローカルでテストを繰り返す場合は http://localhost:8889/wp-admin/plugins.php で手動で削除する必要がある。
+		page.once('dialog', dialog => {
+			console.log(`Dialog message: ${dialog.message()}`);
+			dialog.dismiss().catch(() => { });
+		});
+		await page.getByRole('link', { name: 'Delete VK All in One Expansion Unit' }).click();
+	}
 });

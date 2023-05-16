@@ -6,7 +6,7 @@
  */
 
 use VektorInc\VK_Admin\VkAdmin;
-new VkAdmin();
+VkAdmin::init();
 
 if ( ! function_exists( 'vk_blocks_setting' ) ) {
 

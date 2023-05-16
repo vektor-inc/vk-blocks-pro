@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3268f8aac88f77fb445980df4264e721",
+    "content-hash": "8602802491a5d35a3bc345135c72dc47",
     "packages": [
         {
             "name": "tgmpa/tgm-plugin-activation",
@@ -117,16 +117,16 @@
         },
         {
             "name": "vektor-inc/vk-admin",
-            "version": "0.2.0",
+            "version": "0.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vektor-inc/vk-admin.git",
-                "reference": "4daf1ca48f8597a985dbf163c266751a408773dd"
+                "reference": "f500af90056a79318df9bf82568770fe4f12d545"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vektor-inc/vk-admin/zipball/4daf1ca48f8597a985dbf163c266751a408773dd",
-                "reference": "4daf1ca48f8597a985dbf163c266751a408773dd",
+                "url": "https://api.github.com/repos/vektor-inc/vk-admin/zipball/f500af90056a79318df9bf82568770fe4f12d545",
+                "reference": "f500af90056a79318df9bf82568770fe4f12d545",
                 "shasum": ""
             },
             "require-dev": {
@@ -159,9 +159,9 @@
             "description": "Vektor Admin Component",
             "support": {
                 "issues": "https://github.com/vektor-inc/vk-admin/issues",
-                "source": "https://github.com/vektor-inc/vk-admin/tree/0.2.0"
+                "source": "https://github.com/vektor-inc/vk-admin/tree/0.3.3"
             },
-            "time": "2023-05-10T00:01:17+00:00"
+            "time": "2023-05-16T04:04:02+00:00"
         },
         {
             "name": "vektor-inc/vk-breadcrumb",
@@ -1320,16 +1320,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.6.7",
+            "version": "9.6.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "c993f0d3b0489ffc42ee2fe0bd645af1538a63b2"
+                "reference": "17d621b3aff84d0c8b62539e269e87d8d5baa76e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c993f0d3b0489ffc42ee2fe0bd645af1538a63b2",
-                "reference": "c993f0d3b0489ffc42ee2fe0bd645af1538a63b2",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/17d621b3aff84d0c8b62539e269e87d8d5baa76e",
+                "reference": "17d621b3aff84d0c8b62539e269e87d8d5baa76e",
                 "shasum": ""
             },
             "require": {
@@ -1403,7 +1403,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.7"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.8"
             },
             "funding": [
                 {
@@ -1419,7 +1419,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-04-14T08:58:40+00:00"
+            "time": "2023-05-11T05:14:45+00:00"
         },
         {
             "name": "sebastian/cli-parser",

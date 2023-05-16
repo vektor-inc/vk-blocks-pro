@@ -272,7 +272,7 @@ test('Taxonomy Block Test', async ({ page }) => {
 	const isExUnitActive = await page.isVisible('#wp-admin-bar-veu_adminlink');
 
 	// If ExUnit Active
-	if (!isExUnitActive) {
+	if (isExUnitActive) {
 		await page.getByRole('link', { name: 'Plugins', exact: true }).click();
 		await page.getByRole('link', { name: 'Deactivate VK All in One Expansion Unit' }).click();
 		// ※ 正常に ExUnit の削除が完了しない...が、まぁ今の所問題はないので保留。

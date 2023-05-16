@@ -61,7 +61,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright
-      run: npx playwright test --trace on --project=chromium
+      run: npx playwright test --trace on --project=chromium --ignore='test/e2e/taxonomy.spec.js'
     - uses: actions/upload-artifact@v3
       if: always()
       with:

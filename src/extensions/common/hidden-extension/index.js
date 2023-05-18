@@ -14,6 +14,11 @@ import { hasBlockSupport } from '@wordpress/blocks';
  */
 import classnames from 'classnames';
 
+/**
+ * Internal dependencies
+ */
+import { emptyStringToUndefined } from '@vkblocks/utils/empty-string-to-undefined';
+
 // Check the keyword including str or not
 // eslint-disable-next-line camelcase
 export const in_string = (str, keyword) => {
@@ -177,7 +182,7 @@ addFilter(
 						nowClassArray.splice(clickIndex, 1);
 					}
 					setAttributes({
-						className: nowClassArray.join(' '),
+						className: emptyStringToUndefined( nowClassArray.join(' ') ),
 					});
 				};
 

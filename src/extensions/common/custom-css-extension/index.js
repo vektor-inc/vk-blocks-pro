@@ -19,6 +19,7 @@ import classnames from 'classnames';
  * Internal dependencies
  */
 import { CodeMirrorCss } from '@vkblocks/components/code-mirror-css';
+import { emptyStringToUndefined } from '@vkblocks/utils/empty-string-to-undefined';
 import { ReactComponent as IconSVG } from './icon.svg';
 /*globals vk_blocks_params */
 
@@ -114,7 +115,9 @@ export const withInspectorControls = createHigherOrderComponent(
 			) {
 				// カスタムCSS用クラスを追加
 				setAttributes({
-					className: classnames(nowClassArray, `vk_custom_css`),
+					className: emptyStringToUndefined(
+						classnames(nowClassArray, `vk_custom_css`)
+					),
 				});
 			}
 
@@ -125,7 +128,11 @@ export const withInspectorControls = createHigherOrderComponent(
 				// カスタムCSS用クラスを削除
 				const deleteClass = nowClassArray.indexOf('vk_custom_css');
 				nowClassArray.splice(deleteClass, 1);
-				setAttributes({ className: classnames(nowClassArray) });
+				setAttributes({
+					className: emptyStringToUndefined(
+						classnames(nowClassArray)
+					),
+				});
 			}
 		}, [vkbCustomCss]);
 
@@ -137,7 +144,9 @@ export const withInspectorControls = createHigherOrderComponent(
 			) {
 				// カスタムCSS用クラスを追加
 				setAttributes({
-					className: classnames(`vk_custom_css`, nowClassArray),
+					className: emptyStringToUndefined(
+						classnames(`vk_custom_css`, nowClassArray)
+					),
 				});
 			}
 		}, [className]);
@@ -162,18 +171,16 @@ export const withInspectorControls = createHigherOrderComponent(
 					<PanelBody
 						className={'vk_custom_css_panel'}
 						icon={<Icon icon={IconSVG} style={iconStyle} />}
-						title={__(
-							// 'カスタムCSS',
-							'Custom CSS',
-							'vk-blocks'
-						)}
+						title={__('Custom CSS', 'vk-blocks')}
 						initialOpen={false}
 					>
 						<CodeMirrorCss
 							className="vk-codemirror-block-editor"
 							value={vkbCustomCss ? vkbCustomCss : ''}
 							onChange={(value) => {
-								setAttributes({ vkbCustomCss: value });
+								setAttributes({
+									vkbCustomCss: emptyStringToUndefined(value),
+								});
 							}}
 						/>
 						<p>

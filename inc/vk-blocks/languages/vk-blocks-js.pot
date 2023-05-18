@@ -186,7 +186,7 @@ msgid "Edit"
 msgstr ""
 
 #: src/admin/custom-css.js:20
-#: src/extensions/common/custom-css-extension/index.js:218
+#: src/extensions/common/custom-css-extension/index.js:225
 msgid "Custom CSS Setting"
 msgstr ""
 
@@ -280,7 +280,7 @@ msgid "Activate Highlighter"
 msgstr ""
 
 #: src/admin/custom-format/index.js:312
-#: src/extensions/common/custom-css-extension/index.js:165
+#: src/extensions/common/custom-css-extension/index.js:174
 msgid "Custom CSS"
 msgstr ""
 
@@ -293,7 +293,7 @@ msgid ""
 msgstr ""
 
 #: src/admin/custom-format/index.js:355
-#: src/extensions/common/custom-css-extension/index.js:199
+#: src/extensions/common/custom-css-extension/index.js:206
 msgid "Example:"
 msgstr ""
 
@@ -2499,14 +2499,14 @@ msgstr ""
 msgid "Link rel"
 msgstr ""
 
-#: src/extensions/common/custom-css-extension/index.js:180
+#: src/extensions/common/custom-css-extension/index.js:187
 msgid ""
 "If selector is specified, it is replaced by a block-specific CSS class. If "
 "selector is set to \"selector\", it will be replaced with a block-specific "
 "CSS class. CSS selectors other than \"selector\" may affect the entire page."
 msgstr ""
 
-#: src/extensions/common/custom-css-extension/index.js:204
+#: src/extensions/common/custom-css-extension/index.js:211
 msgid ""
 "If you want the edit screen to be as close to the public screen as "
 "possible, or if your own CSS interferes with the CSS for the identification "

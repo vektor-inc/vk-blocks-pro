@@ -62,6 +62,7 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Animation(Pro) ] Added transforms settings to wrap and unwrap.
 [ Specification Change ][ Slider ] Update Swiper to 9.2.3.
 [ Add Function ][ Admin screen ] Added block style manager function.
 [ Bug fix ][ Custom Format Setting (Pro) ] Custom Format Setting WordPress 6.2 UI adjustment.

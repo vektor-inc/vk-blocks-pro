@@ -182,7 +182,9 @@ addFilter(
 						nowClassArray.splice(clickIndex, 1);
 					}
 					setAttributes({
-						className: emptyStringToUndefined( nowClassArray.join(' ') ),
+						className: emptyStringToUndefined(
+							nowClassArray.join(' ')
+						),
 					});
 				};
 

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-05-12T18:07:46+00:00\n"
+"POT-Creation-Date: 2023-05-18T15:17:30+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks\n"
@@ -88,13 +88,13 @@ msgstr ""
 
 #: src/admin/block-manager/index.js:51
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:84
-#: inc/vk-blocks/admin/admin.php:81
+#: inc/vk-blocks/admin/admin.php:84
 msgid "Block Manager Setting"
 msgstr ""
 
 #: src/admin/block-style-manager/index.js:27
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:85
-#: inc/vk-blocks/admin/admin.php:82
+#: inc/vk-blocks/admin/admin.php:85
 msgid "Block Style Manager Setting"
 msgstr ""
 
@@ -158,7 +158,7 @@ msgstr ""
 #: src/admin/custom-block-style/index.js:77
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:31
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:79
-#: inc/vk-blocks/admin/admin.php:76
+#: inc/vk-blocks/admin/admin.php:79
 msgid "Custom Block Style Setting"
 msgstr ""
 
@@ -198,7 +198,7 @@ msgid "Edit"
 msgstr ""
 
 #: src/admin/custom-css.js:20
-#: src/extensions/common/custom-css-extension/index.js:218
+#: src/extensions/common/custom-css-extension/index.js:225
 #: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-pro.php:15
 #: inc/vk-blocks-pro/admin-pro/admin-pro.php:15
 msgid "Custom CSS Setting"
@@ -298,7 +298,7 @@ msgid "Activate Highlighter"
 msgstr ""
 
 #: src/admin/custom-format/index.js:312
-#: src/extensions/common/custom-css-extension/index.js:165
+#: src/extensions/common/custom-css-extension/index.js:174
 msgid "Custom CSS"
 msgstr ""
 
@@ -308,13 +308,13 @@ msgid "If selector is specified, it will be replaced by a unique CSS class (<cod
 msgstr ""
 
 #: src/admin/custom-format/index.js:355
-#: src/extensions/common/custom-css-extension/index.js:199
+#: src/extensions/common/custom-css-extension/index.js:206
 msgid "Example:"
 msgstr ""
 
 #: src/admin/custom-format/index.js:50
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:78
-#: inc/vk-blocks/admin/admin.php:75
+#: inc/vk-blocks/admin/admin.php:78
 msgid "Custom Format Setting"
 msgstr ""
 
@@ -428,7 +428,7 @@ msgstr ""
 
 #: src/admin/margin.js:64
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:81
-#: inc/vk-blocks/admin/admin.php:78
+#: inc/vk-blocks/admin/admin.php:81
 msgid "Common Margin Setting"
 msgstr ""
 
@@ -517,7 +517,7 @@ msgstr ""
 #: src/blocks/faq2/index.js:21
 #: src/blocks/slider/edit.js:457
 #: src/extensions/common/inline-font-size/inline.js:28
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:461
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:465
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:461
 msgid "Normal"
 msgstr ""
@@ -926,8 +926,8 @@ msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:180
 #: src/blocks/balloon/edit.js:309
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:335
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:349
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:339
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:353
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:335
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:349
 msgid "Border"
@@ -1172,7 +1172,7 @@ msgid "Wave"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:464
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:289
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:293
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:289
 msgid "Triangle"
 msgstr ""
@@ -1210,25 +1210,25 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:115
 #: src/blocks/_pro/timeline-item/edit.js:88
 #: src/blocks/pr-content/edit.js:144
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:387
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:391
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:387
 msgid "Solid"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:540
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:395
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:399
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:395
 msgid "Dotted"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:544
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:399
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:403
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:399
 msgid "Dashed"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:548
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:403
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:407
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:403
 msgid "Double"
 msgstr ""
@@ -1476,7 +1476,7 @@ msgstr ""
 #: src/blocks/alert/edit.js:25
 #: src/blocks/button/edit.js:675
 #: src/blocks/pr-content/edit.js:165
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:423
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:427
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:423
 msgid "Success"
 msgstr ""
@@ -1484,7 +1484,7 @@ msgstr ""
 #: src/blocks/alert/edit.js:28
 #: src/blocks/button/edit.js:679
 #: src/blocks/pr-content/edit.js:168
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:419
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:423
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:419
 msgid "Info"
 msgstr ""
@@ -1492,7 +1492,7 @@ msgstr ""
 #: src/blocks/alert/edit.js:30
 #: src/blocks/button/edit.js:683
 #: src/blocks/pr-content/edit.js:170
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:427
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:431
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:427
 msgid "Warning"
 msgstr ""
@@ -1500,7 +1500,7 @@ msgstr ""
 #: src/blocks/alert/edit.js:34
 #: src/blocks/button/edit.js:687
 #: src/blocks/pr-content/edit.js:174
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:431
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:435
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:431
 msgid "Danger"
 msgstr ""
@@ -1733,7 +1733,7 @@ msgstr ""
 
 #: src/blocks/button/edit.js:323
 #: src/extensions/common/inline-font-size/inline.js:23
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:456
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:460
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:456
 msgid "Small"
 msgstr ""
@@ -1953,7 +1953,7 @@ msgid "Heading style"
 msgstr ""
 
 #: src/blocks/heading/edit.js:268
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:247
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:251
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:247
 msgid "Plain"
 msgstr ""
@@ -2504,11 +2504,11 @@ msgstr ""
 msgid "Link rel"
 msgstr ""
 
-#: src/extensions/common/custom-css-extension/index.js:180
+#: src/extensions/common/custom-css-extension/index.js:187
 msgid "If selector is specified, it is replaced by a block-specific CSS class. If selector is set to \"selector\", it will be replaced with a block-specific CSS class. CSS selectors other than \"selector\" may affect the entire page."
 msgstr ""
 
-#: src/extensions/common/custom-css-extension/index.js:204
+#: src/extensions/common/custom-css-extension/index.js:211
 msgid "If you want the edit screen to be as close to the public screen as possible, or if your own CSS interferes with the CSS for the identification display and does not display as intended on the edit screen, please hide it."
 msgstr ""
 
@@ -2573,13 +2573,13 @@ msgid "Apply"
 msgstr ""
 
 #: src/extensions/common/inline-font-size/inline.js:33
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:466
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:470
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:466
 msgid "Big"
 msgstr ""
 
 #: src/extensions/common/inline-font-size/inline.js:38
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:471
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:475
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:471
 msgid "Extra big"
 msgstr ""
@@ -2923,44 +2923,52 @@ msgstr ""
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
+#: dist/vk-blocks-pro/inc/vk-admin/package/class-vk-admin.php:332
+msgid "Sorry, there is no post"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-admin/package/class-vk-admin.php:386
+msgid "Vektor WordPress Information"
+msgstr ""
+
 #: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-pro.php:14
 #: inc/vk-blocks-pro/admin-pro/admin-pro.php:14
 msgid "FAQ Setting"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:50
-#: inc/vk-blocks/admin/admin.php:47
+#: inc/vk-blocks/admin/admin.php:50
 msgid "Blocks setting"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:51
-#: inc/vk-blocks/admin/admin.php:48
+#: inc/vk-blocks/admin/admin.php:51
 msgctxt "label in admin menu"
 msgid "Blocks"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:67
-#: inc/vk-blocks/admin/admin.php:64
+#: inc/vk-blocks/admin/admin.php:67
 msgid "Blocks Setting"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:74
-#: inc/vk-blocks/admin/admin.php:71
+#: inc/vk-blocks/admin/admin.php:74
 msgid "License Key"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:76
-#: inc/vk-blocks/admin/admin.php:73
+#: inc/vk-blocks/admin/admin.php:76
 msgid "Balloon Block Setting"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:82
-#: inc/vk-blocks/admin/admin.php:79
+#: inc/vk-blocks/admin/admin.php:82
 msgid "Load Separete Setting"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:100
-#: inc/vk-blocks/admin/admin.php:97
+#: inc/vk-blocks/admin/admin.php:100
 msgid "Setting"
 msgstr ""
 
@@ -3033,168 +3041,174 @@ msgstr ""
 msgid "Please select taxonomy"
 msgstr ""
 
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:57
+#: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:57
+#: src/blocks/_pro/taxonomy/index.php:57
+msgid "Categories"
+msgstr ""
+
 #. translators:
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:154
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:187
 #: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:187
 #: src/blocks/_pro/taxonomy/index.php:187
 msgid "All of %s"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:251
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:255
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:251
 msgid "Background fill lightgray"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:255
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:259
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:255
 msgid "Double border top and bottom black"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:259
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:263
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:259
 msgid "Double border bottom black"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:263
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:267
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:263
 msgid "Solid border top and bottom black"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:267
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:271
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:267
 msgid "Solid border bottom black"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:271
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:275
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:271
 msgid "Dotted border bottom black"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:275
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:279
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:275
 msgid "Both ends"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:279
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:283
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:279
 msgid "Brackets black"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:285
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:289
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:285
 msgid "Arrow"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:293
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:297
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:293
 msgid "Check"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:297
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:301
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:297
 msgid "Check Square"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:301
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:305
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:301
 msgid "Check Circle"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:305
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:309
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:305
 msgid "Handpoint"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:309
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:313
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:309
 msgid "Pencil"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:313
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:317
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:313
 msgid "Smile"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:317
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:321
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:317
 msgid "Frown"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:321
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:325
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:321
 msgid "Numbered Circle"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:325
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:329
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:325
 msgid "Numbered Square"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:331
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:411
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:335
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:415
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:331
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:411
 msgid "Border Top Bottom"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:339
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:343
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:339
 msgid "Border / Stripes"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:345
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:349
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:345
 msgid "Rounded02"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:353
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:357
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:353
 msgid "Photo frame"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:357
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:361
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:357
 msgid "Photo frame Tilt Right"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:361
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:365
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:361
 msgid "Photo frame Tilt Left"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:365
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:415
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:369
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:419
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:365
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:415
 msgid "Shadow"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:369
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:373
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:369
 msgid "Wave01"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:373
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:377
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:373
 msgid "Wave02"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:377
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:381
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:377
 msgid "Wave03"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:381
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:385
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:381
 msgid "Wave04"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:391
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:395
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:391
 msgid "Solid Roundcorner"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:407
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:411
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:407
 msgid "Stitch"
 msgstr ""
@@ -3304,19 +3318,6 @@ msgstr ""
 #: dist/vk-blocks-pro/vk-blocks.php:272
 #: vk-blocks.php:272
 msgid "Re-acquisition of updates"
-msgstr ""
-
-#: inc/vk-admin/package/class-vk-admin.php:332
-msgid "Sorry, there is no post"
-msgstr ""
-
-#: inc/vk-admin/package/class-vk-admin.php:386
-msgid "Vektor WordPress Information"
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:57
-#: src/blocks/_pro/taxonomy/index.php:57
-msgid "Categories"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/alert/block.json
@@ -3737,6 +3738,16 @@ msgstr ""
 #: src/blocks/_pro/child-page/block.json
 msgctxt "block description"
 msgid "When a parent page is specified, a list of its child pages will be displayed."
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/dynamic-text/block.json
+msgctxt "block title"
+msgid "Dynamic Text"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/dynamic-text/block.json
+msgctxt "block description"
+msgid "Display dynamic text"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/grid-column-item/block.json

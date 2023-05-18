@@ -80,7 +80,9 @@ export default withSelect((select) => {
 		// selfignoreにチェックが入っている場合
 		if (selfIgnore) {
 			// childPagesの中で現在のページを除いたページの配列（その他の子ページ）を作成
-			const otherChildPages = childPages.filter((page) => page.id !== currentPostId);
+			const otherChildPages = childPages.filter(
+				(page) => page.id !== currentPostId
+			);
 			// その他の子ページが存在しないかどうか
 			showAlert = otherChildPages.length === 0;
 		}
@@ -100,7 +102,6 @@ export default withSelect((select) => {
 			</div>
 		);
 	}
-
 
 	return (
 		<>

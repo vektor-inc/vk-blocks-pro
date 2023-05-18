@@ -68,6 +68,8 @@ e.g.
 [ Bug fix ][ Custom Format Setting (Pro) ] Custom Format Setting WordPress 6.2 UI adjustment.
 [ Bug fix ][ Custom Format Setting (Pro) ] Custom Format Setting WordPress 6.2 UI adjustment.
 [ Bug fix ][ Step(Pro) / Time Line(Pro) ] Fix item content overflow
+[ Bug Fix ][ Taxonomy block ( Pro ) ] Fix Dropdown Script.
+[ Bug fix ][ Custom Format Setting (Pro) ] Custom Format Setting WordPress 6.2 UI adjustment.
 
 = 1.55.0 =
 [ Add Block ][ Archive list block ( Pro ) ] Displays a list of archives

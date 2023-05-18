@@ -6,7 +6,7 @@ import {
 	CheckboxControl,
 } from '@wordpress/components';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
-import { withSelect } from '@wordpress/data';
+import { withSelect, useSelect } from '@wordpress/data';
 import ServerSideRender from '@wordpress/server-side-render';
 import { DisplayItemsControl } from '@vkblocks/components/display-items-control';
 import { ColumnLayoutControl } from '@vkblocks/components/column-layout-control';
@@ -56,14 +56,37 @@ export default withSelect((select) => {
 
 	const blockProps = useBlockProps();
 
+	const currentPostId = useSelect((select) => {
+		return select('core/editor').getCurrentPostId();
+	}, []);
+
 	let editContent;
-	let hasChildPage;
+	let childPages;
+	let hasChildPage = false;
+	let showAlert = false;
 
 	if (selectId && pages) {
-		hasChildPage = pages.some((page) => page.parent === selectId);
+		// 親に指定したのが現在のページ（selectId === -1）かどうか
+		if (selectId === -1) {
+			// 現在のページが親に指定されている場合は、現在のページのID（currentPostId）を親に持つページの配列を作成
+			childPages = pages.filter((page) => page.parent === currentPostId);
+		} else {
+			// それ以外のページが親に指定されている場合は、指定されたページのIDを親に持つページの配列を作成
+			childPages = pages.filter((page) => page.parent === selectId);
+		}
+		// childPagesが存在するかどうか
+		hasChildPage = childPages.length > 0;
+
+		// selfignoreにチェックが入っている場合
+		if (selfIgnore) {
+			// childPagesの中で現在のページを除いたページの配列（その他の子ページ）を作成
+			const otherChildPages = childPages.filter((page) => page.id !== currentPostId);
+			// その他の子ページが存在しないかどうか
+			showAlert = otherChildPages.length === 0;
+		}
 	}
 
-	if (hasChildPage) {
+	if (hasChildPage && !showAlert) {
 		editContent = (
 			<ServerSideRender
 				block="vk-blocks/child-page"
@@ -77,6 +100,7 @@ export default withSelect((select) => {
 			</div>
 		);
 	}
+
 
 	return (
 		<>

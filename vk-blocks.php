@@ -3,8 +3,8 @@
  * Plugin Name: VK Blocks Pro
  * Plugin URI: https://github.com/vektor-inc/vk-blocks
  * Description: This is a plugin that extends Block Editor.
- * Version: 1.56.0
- * Stable tag: 1.53.0.1
+ * Version: 1.56.0.0
+ * Stable tag: 1.55.0.1
  * Requires at least: 6.0
  * Author: Vektor,Inc.
  * Author URI: https://vektor-inc.co.jp

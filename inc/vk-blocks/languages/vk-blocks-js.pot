@@ -756,6 +756,89 @@ msgstr ""
 msgid "Ignore this post"
 msgstr ""
 
+#: src/blocks/_pro/dynamic-text/edit.js:101
+msgid "Ancestor Page Title"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:125
+msgid "Display element settings"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:127
+msgid "Display element"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:136
+msgid "Please Select"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:140
+msgid "Post type name of the page being viewed"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:147
+msgid "Page name in the ancestor hierarchy of the displayed page"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:160
+msgid ""
+"This block will not display on pages other than pages that have a parent "
+"hierarchy."
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:27
+msgid "HTML element"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:32
+msgid "div (default)"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:36
+msgid "h1"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:40
+#: src/blocks/ancestor-page-list/edit.js:48
+msgid "h2"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:44
+#: src/blocks/ancestor-page-list/edit.js:52
+msgid "h3"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:48
+#: src/blocks/ancestor-page-list/edit.js:56
+msgid "h4"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:52
+#: src/blocks/ancestor-page-list/edit.js:60
+msgid "h5"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:56
+#: src/blocks/ancestor-page-list/edit.js:64
+msgid "h6"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:60
+msgid "p"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:64
+msgid "span"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:91
+msgid "This block will not render because no visible element is selected."
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:98
+msgid "Post Type Name"
+msgstr ""
+
 #: src/blocks/_pro/grid-column-item/edit.js:102
 #: src/blocks/_pro/gridcolcard/edit-common.js:159
 msgid "Color Settings"
@@ -1504,26 +1587,6 @@ msgstr ""
 
 #: src/blocks/ancestor-page-list/edit.js:40
 msgid "Archive title tag"
-msgstr ""
-
-#: src/blocks/ancestor-page-list/edit.js:48
-msgid "h2"
-msgstr ""
-
-#: src/blocks/ancestor-page-list/edit.js:52
-msgid "h3"
-msgstr ""
-
-#: src/blocks/ancestor-page-list/edit.js:56
-msgid "h4"
-msgstr ""
-
-#: src/blocks/ancestor-page-list/edit.js:60
-msgid "h5"
-msgstr ""
-
-#: src/blocks/ancestor-page-list/edit.js:64
-msgid "h6"
 msgstr ""
 
 #: src/blocks/ancestor-page-list/edit.js:69

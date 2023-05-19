@@ -154,6 +154,10 @@ class VK_Blocks_Global_Settings {
 				'is_pro' => true,
 			),
 			array(
+				'name'   => 'dynamic-text',
+				'is_pro' => true,
+			),
+			array(
 				'name'   => 'grid-column',
 				'is_pro' => true,
 			),

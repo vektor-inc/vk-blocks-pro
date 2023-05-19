@@ -79,9 +79,12 @@ msgstr ""
 msgid "Block Manager Setting"
 msgstr ""
 
+#: src/admin/block-style-manager/index.js:27
+msgid "Block Style Manager Setting"
+msgstr ""
+
 #: src/admin/custom-block-style/add-button/index.js:113
-#: src/admin/custom-format/add-item.js:133
-msgid "Toolbar title (Changeable)"
+msgid "Block Style Label (Changeable)"
 msgstr ""
 
 #: src/admin/custom-block-style/add-button/index.js:141
@@ -183,7 +186,7 @@ msgid "Edit"
 msgstr ""
 
 #: src/admin/custom-css.js:20
-#: src/extensions/common/custom-css-extension/index.js:218
+#: src/extensions/common/custom-css-extension/index.js:225
 msgid "Custom CSS Setting"
 msgstr ""
 
@@ -201,6 +204,10 @@ msgstr ""
 
 #: src/admin/custom-format/add-item.js:118
 msgid "(e.g.) vk-format-1"
+msgstr ""
+
+#: src/admin/custom-format/add-item.js:133
+msgid "Toolbar title (Changeable)"
 msgstr ""
 
 #: src/admin/custom-format/add-item.js:74
@@ -273,7 +280,7 @@ msgid "Activate Highlighter"
 msgstr ""
 
 #: src/admin/custom-format/index.js:312
-#: src/extensions/common/custom-css-extension/index.js:165
+#: src/extensions/common/custom-css-extension/index.js:174
 msgid "Custom CSS"
 msgstr ""
 
@@ -286,7 +293,7 @@ msgid ""
 msgstr ""
 
 #: src/admin/custom-format/index.js:355
-#: src/extensions/common/custom-css-extension/index.js:199
+#: src/extensions/common/custom-css-extension/index.js:206
 msgid "Example:"
 msgstr ""
 
@@ -749,6 +756,89 @@ msgstr ""
 msgid "Ignore this post"
 msgstr ""
 
+#: src/blocks/_pro/dynamic-text/edit.js:101
+msgid "Ancestor Page Title"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:125
+msgid "Display element settings"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:127
+msgid "Display element"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:136
+msgid "Please Select"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:140
+msgid "Post type name of the page being viewed"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:147
+msgid "Page name in the ancestor hierarchy of the displayed page"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:160
+msgid ""
+"This block will not display on pages other than pages that have a parent "
+"hierarchy."
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:27
+msgid "HTML element"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:32
+msgid "div (default)"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:36
+msgid "h1"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:40
+#: src/blocks/ancestor-page-list/edit.js:48
+msgid "h2"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:44
+#: src/blocks/ancestor-page-list/edit.js:52
+msgid "h3"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:48
+#: src/blocks/ancestor-page-list/edit.js:56
+msgid "h4"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:52
+#: src/blocks/ancestor-page-list/edit.js:60
+msgid "h5"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:56
+#: src/blocks/ancestor-page-list/edit.js:64
+msgid "h6"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:60
+msgid "p"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:64
+msgid "span"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:91
+msgid "This block will not render because no visible element is selected."
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:98
+msgid "Post Type Name"
+msgstr ""
+
 #: src/blocks/_pro/grid-column-item/edit.js:102
 #: src/blocks/_pro/gridcolcard/edit-common.js:159
 msgid "Color Settings"
@@ -915,14 +1005,12 @@ msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:180
 #: src/blocks/balloon/edit.js:309
-#: src/extensions/core/image/style.js:15
-#: src/extensions/core/table/style.js:12
 msgid "Border"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:189
 #: src/blocks/border-box/edit.js:207
-#: src/extensions/core/group/style.js:47
+#: src/extensions/core/group/style.js:46
 msgid "Border Color"
 msgstr ""
 
@@ -1166,7 +1254,6 @@ msgid "Wave"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:464
-#: src/extensions/core/list/style.js:258
 msgid "Triangle"
 msgstr ""
 
@@ -1203,22 +1290,18 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:115
 #: src/blocks/_pro/timeline-item/edit.js:88
 #: src/blocks/pr-content/edit.js:144
-#: src/extensions/core/group/style.js:108
 msgid "Solid"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:540
-#: src/extensions/core/group/style.js:116
 msgid "Dotted"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:544
-#: src/extensions/core/group/style.js:120
 msgid "Dashed"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:548
-#: src/extensions/core/group/style.js:124
 msgid "Double"
 msgstr ""
 
@@ -1372,8 +1455,6 @@ msgstr ""
 #: src/blocks/heading/edit.js:264
 #: src/blocks/slider/edit.js:663
 #: src/blocks/staff/edit.js:173
-#: src/extensions/core/heading/style.js:11
-#: src/extensions/core/list/style.js:249
 msgid "Default"
 msgstr ""
 
@@ -1471,28 +1552,24 @@ msgstr ""
 #: src/blocks/alert/edit.js:25
 #: src/blocks/button/edit.js:675
 #: src/blocks/pr-content/edit.js:165
-#: src/extensions/core/group/style.js:144
 msgid "Success"
 msgstr ""
 
 #: src/blocks/alert/edit.js:28
 #: src/blocks/button/edit.js:679
 #: src/blocks/pr-content/edit.js:168
-#: src/extensions/core/group/style.js:140
 msgid "Info"
 msgstr ""
 
 #: src/blocks/alert/edit.js:30
 #: src/blocks/button/edit.js:683
 #: src/blocks/pr-content/edit.js:170
-#: src/extensions/core/group/style.js:148
 msgid "Warning"
 msgstr ""
 
 #: src/blocks/alert/edit.js:34
 #: src/blocks/button/edit.js:687
 #: src/blocks/pr-content/edit.js:174
-#: src/extensions/core/group/style.js:152
 msgid "Danger"
 msgstr ""
 
@@ -1510,26 +1587,6 @@ msgstr ""
 
 #: src/blocks/ancestor-page-list/edit.js:40
 msgid "Archive title tag"
-msgstr ""
-
-#: src/blocks/ancestor-page-list/edit.js:48
-msgid "h2"
-msgstr ""
-
-#: src/blocks/ancestor-page-list/edit.js:52
-msgid "h3"
-msgstr ""
-
-#: src/blocks/ancestor-page-list/edit.js:56
-msgid "h4"
-msgstr ""
-
-#: src/blocks/ancestor-page-list/edit.js:60
-msgid "h5"
-msgstr ""
-
-#: src/blocks/ancestor-page-list/edit.js:64
-msgid "h6"
 msgstr ""
 
 #: src/blocks/ancestor-page-list/edit.js:69
@@ -1950,7 +2007,6 @@ msgid "Heading style"
 msgstr ""
 
 #: src/blocks/heading/edit.js:268
-#: src/extensions/core/heading/style.js:16
 msgid "Plain"
 msgstr ""
 
@@ -2506,64 +2562,64 @@ msgstr ""
 msgid "Link rel"
 msgstr ""
 
-#: src/extensions/common/custom-css-extension/index.js:180
+#: src/extensions/common/custom-css-extension/index.js:187
 msgid ""
 "If selector is specified, it is replaced by a block-specific CSS class. If "
 "selector is set to \"selector\", it will be replaced with a block-specific "
 "CSS class. CSS selectors other than \"selector\" may affect the entire page."
 msgstr ""
 
-#: src/extensions/common/custom-css-extension/index.js:204
+#: src/extensions/common/custom-css-extension/index.js:211
 msgid ""
 "If you want the edit screen to be as close to the public screen as "
 "possible, or if your own CSS interferes with the CSS for the identification "
 "display and does not display as intended on the edit screen, please hide it."
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:189
+#: src/extensions/common/hidden-extension/index.js:196
 msgid "Hidden Settings"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:193
+#: src/extensions/common/hidden-extension/index.js:200
 msgid "Hidden at screen size"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:200
+#: src/extensions/common/hidden-extension/index.js:207
 msgid ""
 "Note : This function is display hidden only. Actually Block is output to "
 "HTML. Please don't use you must not visible item. Don't use it for blocks "
 "you really don't want to display."
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:206
+#: src/extensions/common/hidden-extension/index.js:213
 msgid "Hidden ( Screen size : all )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:216
+#: src/extensions/common/hidden-extension/index.js:223
 msgid "Hidden ( Screen size : xs )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:229
+#: src/extensions/common/hidden-extension/index.js:236
 msgid "Hidden ( Screen size : sm )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:242
+#: src/extensions/common/hidden-extension/index.js:249
 msgid "Hidden ( Screen size : md )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:255
+#: src/extensions/common/hidden-extension/index.js:262
 msgid "Hidden ( Screen size : lg )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:268
+#: src/extensions/common/hidden-extension/index.js:275
 msgid "Hidden ( Screen size : xl )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:283
+#: src/extensions/common/hidden-extension/index.js:290
 msgid "Hidden ( Screen size : xxl )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:296
+#: src/extensions/common/hidden-extension/index.js:303
 msgid ""
 "If you want to hide multiple blocks, that first you set to group block and "
 "the next, hide for the that group block."
@@ -2649,148 +2705,22 @@ msgstr ""
 msgid "No wrap"
 msgstr ""
 
-#: src/extensions/common/responsive-br/index.js:44
+#: src/extensions/common/responsive-br/index.js:29
 msgid "Responsive BR"
 msgstr ""
 
-#: src/extensions/common/responsive-br/index.js:48
+#: src/extensions/common/responsive-br/index.js:33
 msgid "Responsive BR "
 msgstr ""
 
-#: src/extensions/core/group/style.js:112
-msgid "Solid Roundcorner"
-msgstr ""
-
-#: src/extensions/core/group/style.js:128
-msgid "Stitch"
-msgstr ""
-
-#: src/extensions/core/group/style.js:132
-#: src/extensions/core/table/style.js:7
-msgid "Border Top Bottom"
-msgstr ""
-
-#: src/extensions/core/group/style.js:136
-#: src/extensions/core/image/style.js:31
-msgid "Shadow"
-msgstr ""
-
-#: src/extensions/core/group/style.js:52
+#: src/extensions/core/group/style.js:51
 msgid ""
 "Because of the theme that enabled theme.json become can specify the color "
 "from border panel that, specification from here is deprecated."
 msgstr ""
 
-#: src/extensions/core/heading/style.js:104
-msgid "Brackets black"
-msgstr ""
-
-#: src/extensions/core/heading/style.js:32
-msgid "Background fill lightgray"
-msgstr ""
-
-#: src/extensions/core/heading/style.js:48
-msgid "Double border top and bottom black"
-msgstr ""
-
-#: src/extensions/core/heading/style.js:56
-msgid "Double border bottom black"
-msgstr ""
-
-#: src/extensions/core/heading/style.js:64
-msgid "Solid border top and bottom black"
-msgstr ""
-
-#: src/extensions/core/heading/style.js:72
-msgid "Solid border bottom black"
-msgstr ""
-
-#: src/extensions/core/heading/style.js:80
-msgid "Dotted border bottom black"
-msgstr ""
-
-#: src/extensions/core/heading/style.js:84
-msgid "Both ends"
-msgstr ""
-
-#: src/extensions/core/image/style.js:11
-msgid "Rounded02"
-msgstr ""
-
-#: src/extensions/core/image/style.js:19
-msgid "Photo frame"
-msgstr ""
-
-#: src/extensions/core/image/style.js:23
-msgid "Photo frame Tilt Right"
-msgstr ""
-
-#: src/extensions/core/image/style.js:27
-msgid "Photo frame Tilt Left"
-msgstr ""
-
-#: src/extensions/core/image/style.js:35
-msgid "Wave01"
-msgstr ""
-
-#: src/extensions/core/image/style.js:39
-msgid "Wave02"
-msgstr ""
-
-#: src/extensions/core/image/style.js:43
-msgid "Wave03"
-msgstr ""
-
-#: src/extensions/core/image/style.js:47
-msgid "Wave04"
-msgstr ""
-
-#: src/extensions/core/list/style.js:108
+#: src/extensions/core/list/style.js:107
 msgid "List Icon Color"
-msgstr ""
-
-#: src/extensions/core/list/style.js:254
-msgid "Arrow"
-msgstr ""
-
-#: src/extensions/core/list/style.js:262
-msgid "Check"
-msgstr ""
-
-#: src/extensions/core/list/style.js:266
-msgid "Check Square"
-msgstr ""
-
-#: src/extensions/core/list/style.js:270
-msgid "Check Circle"
-msgstr ""
-
-#: src/extensions/core/list/style.js:274
-msgid "Handpoint"
-msgstr ""
-
-#: src/extensions/core/list/style.js:278
-msgid "Pencil"
-msgstr ""
-
-#: src/extensions/core/list/style.js:282
-msgid "Smile"
-msgstr ""
-
-#: src/extensions/core/list/style.js:286
-msgid "Frown"
-msgstr ""
-
-#: src/extensions/core/list/style.js:290
-msgid "Numbered Circle"
-msgstr ""
-
-#: src/extensions/core/list/style.js:294
-msgid "Numbered Square"
-msgstr ""
-
-#: src/extensions/core/table/style.js:17
-msgid "Border / Stripes"
 msgstr ""
 
 #: src/utils/example-data.js:14

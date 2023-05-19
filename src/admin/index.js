@@ -20,6 +20,7 @@ import BlockManager from '@vkblocks/admin/block-manager';
 import AdminCustomFormat from '@vkblocks/admin/custom-format';
 import AdminCustomBlockStyle from '@vkblocks/admin/custom-block-style';
 import AdminCustomCss from '@vkblocks/admin/custom-css';
+import BlockStyleManager from '@vkblocks/admin/block-style-manager';
 import { SaveButton } from '@vkblocks/admin/save-button';
 /*globals vkBlocksObject */
 
@@ -52,6 +53,7 @@ export default function VKBlocksAdmin() {
 				{vkBlocksObject.isPro && <AdminNewFaq />}
 				{vkBlocksObject.isPro && <AdminCustomCss />}
 				<BlockManager />
+				<BlockStyleManager />
 				<SaveButton
 					classOption={'sticky'}
 					vkBlocksOption={vkBlocksOption}

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2023-04-20T07:27:18+00:00\n"
-"PO-Revision-Date: 2023-04-20 17:03+0900\n"
+"POT-Creation-Date: 2023-05-13T11:32:11+00:00\n"
+"PO-Revision-Date: 2023-05-14 02:37+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -94,15 +94,20 @@ msgid "image"
 msgstr "画像"
 
 #: src/admin/block-manager/index.js:51
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:81
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:84
 #: inc/vk-blocks/admin/admin.php:81
 msgid "Block Manager Setting"
 msgstr "ブロックマネージャー設定"
 
+#: src/admin/block-style-manager/index.js:27
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:85
+#: inc/vk-blocks/admin/admin.php:82
+msgid "Block Style Manager Setting"
+msgstr "ブロックスタイルマネージャー設定"
+
 #: src/admin/custom-block-style/add-button/index.js:113
-#: src/admin/custom-format/add-item.js:133
-msgid "Toolbar title (Changeable)"
-msgstr "ツールバー タイトル（変更可能）"
+msgid "Block Style Label (Changeable)"
+msgstr "ブロックスタイル ラベル（変更可能）"
 
 #: src/admin/custom-block-style/add-button/index.js:141
 #: src/admin/custom-format/add-item.js:161
@@ -161,7 +166,7 @@ msgstr "(例) %s-block-style"
 
 #: src/admin/custom-block-style/index.js:77
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:31
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:76
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:79
 #: inc/vk-blocks/admin/admin.php:76
 msgid "Custom Block Style Setting"
 msgstr "カスタムブロックスタイル設定"
@@ -230,6 +235,10 @@ msgstr "CSSクラス/固有ID (必須/変更不可)"
 #: src/admin/custom-format/add-item.js:118
 msgid "(e.g.) vk-format-1"
 msgstr "(例) vk-format-1"
+
+#: src/admin/custom-format/add-item.js:133
+msgid "Toolbar title (Changeable)"
+msgstr "ツールバー タイトル（変更可能）"
 
 #: src/admin/custom-format/add-item.js:74
 msgid ""
@@ -322,7 +331,7 @@ msgid "Example:"
 msgstr "例:"
 
 #: src/admin/custom-format/index.js:50
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:75
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:78
 #: inc/vk-blocks/admin/admin.php:75
 msgid "Custom Format Setting"
 msgstr "カスタム書式設定"
@@ -437,7 +446,7 @@ msgstr "タブレット"
 msgid "Mobile"
 msgstr "モバイル"
 
-#: src/admin/margin.js:64 dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:78
+#: src/admin/margin.js:64 dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:81
 #: inc/vk-blocks/admin/admin.php:78
 msgid "Common Margin Setting"
 msgstr "共通余白設定"
@@ -526,8 +535,8 @@ msgstr "短い"
 #: src/blocks/button/edit.js:315 src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:21 src/blocks/slider/edit.js:457
 #: src/extensions/common/inline-font-size/inline.js:28
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:260
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:260
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:461
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:465
 msgid "Normal"
 msgstr "標準"
 
@@ -766,6 +775,102 @@ msgstr "親ページ"
 msgid "Ignore this post"
 msgstr "この投稿を除く"
 
+#: src/blocks/_pro/dynamic-text/edit.js:100
+msgid "Post Type Name"
+msgstr "投稿タイプ名"
+
+#: src/blocks/_pro/dynamic-text/edit.js:103
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
+#: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
+#: src/blocks/ancestor-page-list/index.php:44
+#: test/phpunit/pro/test-ancestor-page-list.php:89
+#: test/phpunit/pro/test-ancestor-page-list.php:173
+msgid "Ancestor Page Title"
+msgstr "先祖ページのタイトル"
+
+#: src/blocks/_pro/dynamic-text/edit.js:127
+msgid "Display element settings"
+msgstr "表示要素の設定"
+
+#: src/blocks/_pro/dynamic-text/edit.js:129
+msgid "Display element"
+msgstr "表示要素"
+
+#: src/blocks/_pro/dynamic-text/edit.js:137
+msgid "Please Select"
+msgstr "選択してください"
+
+#: src/blocks/_pro/dynamic-text/edit.js:141
+msgid "Post type name of the page being viewed"
+msgstr "表示中のページの投稿タイプ名"
+
+#: src/blocks/_pro/dynamic-text/edit.js:148
+msgid "Page name in the ancestor hierarchy of the displayed page"
+msgstr "表示中の固定ページの先祖階層の固定ページ名"
+
+#: src/blocks/_pro/dynamic-text/edit.js:161
+msgid ""
+"This block will not display on pages other than pages that have a parent "
+"hierarchy."
+msgstr "このブロックは親階層を持つページ以外の固定ページには表示されません。"
+
+#: src/blocks/_pro/dynamic-text/edit.js:174
+msgid ""
+"If you want to specify the style of characters, put this block inside the "
+"Row block and specify the style in the Row block."
+msgstr ""
+"文字のスタイル指定をする場合は横並びブロックの中にこのブロックを入れて、横並"
+"びブロックでスタイルを指定してください。"
+
+#: src/blocks/_pro/dynamic-text/edit.js:28
+msgid "HTML element"
+msgstr "HTML 要素"
+
+#: src/blocks/_pro/dynamic-text/edit.js:33
+msgid "div (default)"
+msgstr "div (標準)"
+
+#: src/blocks/_pro/dynamic-text/edit.js:37
+msgid "h1"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:41
+#: src/blocks/ancestor-page-list/edit.js:48
+msgid "h2"
+msgstr "h2"
+
+#: src/blocks/_pro/dynamic-text/edit.js:45
+#: src/blocks/ancestor-page-list/edit.js:52
+msgid "h3"
+msgstr "h3"
+
+#: src/blocks/_pro/dynamic-text/edit.js:49
+#: src/blocks/ancestor-page-list/edit.js:56
+msgid "h4"
+msgstr "h4"
+
+#: src/blocks/_pro/dynamic-text/edit.js:53
+#: src/blocks/ancestor-page-list/edit.js:60
+msgid "h5"
+msgstr "h5"
+
+#: src/blocks/_pro/dynamic-text/edit.js:57
+#: src/blocks/ancestor-page-list/edit.js:64
+msgid "h6"
+msgstr "h6"
+
+#: src/blocks/_pro/dynamic-text/edit.js:61
+msgid "p"
+msgstr "p"
+
+#: src/blocks/_pro/dynamic-text/edit.js:65
+msgid "span"
+msgstr "span"
+
+#: src/blocks/_pro/dynamic-text/edit.js:93
+msgid "This block will not render because no visible element is selected."
+msgstr "表示要素が選択されていないため、このブロックはレンダリングされません。"
+
 #: src/blocks/_pro/grid-column-item/edit.js:102
 #: src/blocks/_pro/gridcolcard/edit-common.js:159
 msgid "Color Settings"
@@ -921,13 +1026,16 @@ msgid "Column Radius"
 msgstr "カラムの角丸の大きさ"
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:180
-#: src/blocks/balloon/edit.js:309 src/extensions/core/image/style.js:15
-#: src/extensions/core/table/style.js:12
+#: src/blocks/balloon/edit.js:309
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:335
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:349
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:339
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:353
 msgid "Border"
 msgstr "枠線"
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:189
-#: src/blocks/border-box/edit.js:207 src/extensions/core/group/style.js:47
+#: src/blocks/border-box/edit.js:207 src/extensions/core/group/style.js:46
 msgid "Border Color"
 msgstr "線の色"
 
@@ -1159,7 +1267,9 @@ msgstr "カーブ"
 msgid "Wave"
 msgstr "波状"
 
-#: src/blocks/_pro/outer/edit.js:464 src/extensions/core/list/style.js:258
+#: src/blocks/_pro/outer/edit.js:464
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:289
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:293
 msgid "Triangle"
 msgstr "三角"
 
@@ -1191,19 +1301,26 @@ msgstr "なし"
 
 #: src/blocks/_pro/outer/edit.js:536 src/blocks/_pro/step-item/edit.js:115
 #: src/blocks/_pro/timeline-item/edit.js:88 src/blocks/pr-content/edit.js:144
-#: src/extensions/core/group/style.js:108
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:387
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:391
 msgid "Solid"
 msgstr "直線"
 
-#: src/blocks/_pro/outer/edit.js:540 src/extensions/core/group/style.js:116
+#: src/blocks/_pro/outer/edit.js:540
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:395
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:399
 msgid "Dotted"
 msgstr "点線"
 
-#: src/blocks/_pro/outer/edit.js:544 src/extensions/core/group/style.js:120
+#: src/blocks/_pro/outer/edit.js:544
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:399
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:403
 msgid "Dashed"
 msgstr "Dashed"
 
-#: src/blocks/_pro/outer/edit.js:548 src/extensions/core/group/style.js:124
+#: src/blocks/_pro/outer/edit.js:548
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:403
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:407
 msgid "Double"
 msgstr "二重線"
 
@@ -1355,8 +1472,6 @@ msgstr "アウトライン"
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
 #: src/blocks/_pro/timeline-item/edit.js:103 src/blocks/heading/edit.js:264
 #: src/blocks/slider/edit.js:663 src/blocks/staff/edit.js:173
-#: src/extensions/core/heading/style.js:11
-#: src/extensions/core/list/style.js:249
 msgid "Default"
 msgstr "標準"
 
@@ -1452,22 +1567,30 @@ msgid "Style Settings"
 msgstr "スタイル設定"
 
 #: src/blocks/alert/edit.js:25 src/blocks/button/edit.js:675
-#: src/blocks/pr-content/edit.js:165 src/extensions/core/group/style.js:144
+#: src/blocks/pr-content/edit.js:165
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:423
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:427
 msgid "Success"
 msgstr "Success"
 
 #: src/blocks/alert/edit.js:28 src/blocks/button/edit.js:679
-#: src/blocks/pr-content/edit.js:168 src/extensions/core/group/style.js:140
+#: src/blocks/pr-content/edit.js:168
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:419
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:423
 msgid "Info"
 msgstr "Info"
 
 #: src/blocks/alert/edit.js:30 src/blocks/button/edit.js:683
-#: src/blocks/pr-content/edit.js:170 src/extensions/core/group/style.js:148
+#: src/blocks/pr-content/edit.js:170
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:427
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:431
 msgid "Warning"
 msgstr "Warning"
 
 #: src/blocks/alert/edit.js:34 src/blocks/button/edit.js:687
-#: src/blocks/pr-content/edit.js:174 src/extensions/core/group/style.js:152
+#: src/blocks/pr-content/edit.js:174
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:431
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:435
 msgid "Danger"
 msgstr "Danger"
 
@@ -1486,26 +1609,6 @@ msgstr "先祖階層のページタイトルを表示"
 #: src/blocks/ancestor-page-list/edit.js:40
 msgid "Archive title tag"
 msgstr "アーカイブタイトルタグ"
-
-#: src/blocks/ancestor-page-list/edit.js:48
-msgid "h2"
-msgstr "h2"
-
-#: src/blocks/ancestor-page-list/edit.js:52
-msgid "h3"
-msgstr "h3"
-
-#: src/blocks/ancestor-page-list/edit.js:56
-msgid "h4"
-msgstr "h4"
-
-#: src/blocks/ancestor-page-list/edit.js:60
-msgid "h5"
-msgstr "h5"
-
-#: src/blocks/ancestor-page-list/edit.js:64
-msgid "h6"
-msgstr "h6"
 
 #: src/blocks/ancestor-page-list/edit.js:69
 msgid "Ancestor page title class name"
@@ -1702,8 +1805,8 @@ msgstr "大"
 
 #: src/blocks/button/edit.js:323
 #: src/extensions/common/inline-font-size/inline.js:23
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:255
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:255
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:456
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:460
 msgid "Small"
 msgstr "小"
 
@@ -1910,7 +2013,9 @@ msgstr "タイトルを入力"
 msgid "Heading style"
 msgstr "見出しスタイル"
 
-#: src/blocks/heading/edit.js:268 src/extensions/core/heading/style.js:16
+#: src/blocks/heading/edit.js:268
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:247
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:251
 msgid "Plain"
 msgstr "装飾無し"
 
@@ -2562,14 +2667,14 @@ msgid "Apply"
 msgstr "適用"
 
 #: src/extensions/common/inline-font-size/inline.js:33
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:265
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:265
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:466
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:470
 msgid "Big"
 msgstr "大"
 
 #: src/extensions/common/inline-font-size/inline.js:38
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:270
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:270
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:471
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:475
 msgid "Extra big"
 msgstr "特大"
 
@@ -2629,31 +2734,15 @@ msgstr "下 XL"
 msgid "No wrap"
 msgstr "No wrap"
 
-#: src/extensions/common/responsive-br/index.js:44
+#: src/extensions/common/responsive-br/index.js:29
 msgid "Responsive BR"
 msgstr "画面サイズ毎の改行 "
 
-#: src/extensions/common/responsive-br/index.js:48
+#: src/extensions/common/responsive-br/index.js:33
 msgid "Responsive BR "
 msgstr "画面サイズ毎の改行 "
 
-#: src/extensions/core/group/style.js:112
-msgid "Solid Roundcorner"
-msgstr "直線 角丸"
-
-#: src/extensions/core/group/style.js:128
-msgid "Stitch"
-msgstr "スティッチ"
-
-#: src/extensions/core/group/style.js:132 src/extensions/core/table/style.js:7
-msgid "Border Top Bottom"
-msgstr "直線 上下"
-
-#: src/extensions/core/group/style.js:136 src/extensions/core/image/style.js:31
-msgid "Shadow"
-msgstr "シャドウ"
-
-#: src/extensions/core/group/style.js:52
+#: src/extensions/core/group/style.js:51
 msgid ""
 "Because of the theme that enabled theme.json become can specify the color "
 "from border panel that, specification from here is deprecated."
@@ -2661,117 +2750,9 @@ msgstr ""
 "theme.json が有効なテーマの場合は「枠線」パネルから色指定が可能になったため、"
 "ここでの色指定は非推奨になりました。"
 
-#: src/extensions/core/heading/style.js:104
-msgid "Brackets black"
-msgstr "括弧 黒"
-
-#: src/extensions/core/heading/style.js:32
-msgid "Background fill lightgray"
-msgstr "背景塗り 灰色"
-
-#: src/extensions/core/heading/style.js:48
-msgid "Double border top and bottom black"
-msgstr "二重線 上下線 黒"
-
-#: src/extensions/core/heading/style.js:56
-msgid "Double border bottom black"
-msgstr "二重線 下線 黒"
-
-#: src/extensions/core/heading/style.js:64
-msgid "Solid border top and bottom black"
-msgstr "直線 上下 黒"
-
-#: src/extensions/core/heading/style.js:72
-msgid "Solid border bottom black"
-msgstr "直線 下線 黒"
-
-#: src/extensions/core/heading/style.js:80
-msgid "Dotted border bottom black"
-msgstr "点線 下線 黒"
-
-#: src/extensions/core/heading/style.js:84
-msgid "Both ends"
-msgstr "左右線"
-
-#: src/extensions/core/image/style.js:11
-msgid "Rounded02"
-msgstr "角丸2"
-
-#: src/extensions/core/image/style.js:19
-msgid "Photo frame"
-msgstr "フォトフレーム"
-
-#: src/extensions/core/image/style.js:23
-msgid "Photo frame Tilt Right"
-msgstr "フォトフレーム傾き右"
-
-#: src/extensions/core/image/style.js:27
-msgid "Photo frame Tilt Left"
-msgstr "フォトフレーム傾き左"
-
-#: src/extensions/core/image/style.js:35
-msgid "Wave01"
-msgstr "流体シェイプ1"
-
-#: src/extensions/core/image/style.js:39
-msgid "Wave02"
-msgstr "流体シェイプ2"
-
-#: src/extensions/core/image/style.js:43
-msgid "Wave03"
-msgstr "流体シェイプ3"
-
-#: src/extensions/core/image/style.js:47
-msgid "Wave04"
-msgstr "流体シェイプ4"
-
-#: src/extensions/core/list/style.js:108
+#: src/extensions/core/list/style.js:107
 msgid "List Icon Color"
 msgstr "リストアイコンの色"
-
-#: src/extensions/core/list/style.js:254
-msgid "Arrow"
-msgstr "矢印"
-
-#: src/extensions/core/list/style.js:262
-msgid "Check"
-msgstr "チェック"
-
-#: src/extensions/core/list/style.js:266
-msgid "Check Square"
-msgstr "チェック（四角）"
-
-#: src/extensions/core/list/style.js:270
-msgid "Check Circle"
-msgstr "チェック-丸"
-
-#: src/extensions/core/list/style.js:274
-msgid "Handpoint"
-msgstr "指"
-
-#: src/extensions/core/list/style.js:278
-msgid "Pencil"
-msgstr "鉛筆"
-
-#: src/extensions/core/list/style.js:282
-msgid "Smile"
-msgstr "笑顔"
-
-#: src/extensions/core/list/style.js:286
-msgid "Frown"
-msgstr "不満顔"
-
-#: src/extensions/core/list/style.js:290
-msgid "Numbered Circle"
-msgstr "数字-丸"
-
-#: src/extensions/core/list/style.js:294
-msgid "Numbered Square"
-msgstr "数字-四角"
-
-#: src/extensions/core/table/style.js:17
-msgid "Border / Stripes"
-msgstr "枠線 / ストライプ"
 
 #: src/utils/example-data.js:14
 msgid "Theoretical Physicist"
@@ -2854,8 +2835,8 @@ msgid "https://github.com/vektor-inc/vk-blocks"
 msgstr "https://github.com/vektor-inc/vk-blocks"
 
 #. Description of the plugin
-msgid "This is a plugin that extends Gutenberg's blocks."
-msgstr "Gutenbergのブロックを拡張するプラグインです。"
+msgid "This is a plugin that extends Block Editor."
+msgstr "ブロックエディタを拡張するプラグインです。"
 
 #. Author of the plugin
 msgid "Vektor,Inc."
@@ -3065,54 +3046,44 @@ msgstr "すべてのプラグインを正常にインストールし、有効化
 msgid "Please contact the administrator of this site for help."
 msgstr "ヘルプが必要な場合はこのサイトの管理者にお問い合わせください。"
 
-#: dist/vk-blocks-pro/inc/vk-admin/package/class-vk-admin.php:332
-#: inc/vk-admin/package/class-vk-admin.php:332
-msgid "Sorry, there is no post"
-msgstr "申し訳ありませんが投稿がありません。"
-
-#: dist/vk-blocks-pro/inc/vk-admin/package/class-vk-admin.php:386
-#: inc/vk-admin/package/class-vk-admin.php:386
-msgid "Vektor WordPress Information"
-msgstr "Vektor WordPress Information"
-
 #: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-pro.php:14
 #: inc/vk-blocks-pro/admin-pro/admin-pro.php:14
 msgid "FAQ Setting"
 msgstr "FAQ ブロックの設定"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:47
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:50
 #: inc/vk-blocks/admin/admin.php:47
 msgid "Blocks setting"
 msgstr "Blocks 設定"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:48
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:51
 #: inc/vk-blocks/admin/admin.php:48
 msgctxt "label in admin menu"
 msgid "Blocks"
 msgstr "Blocks"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:64
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:67
 #: inc/vk-blocks/admin/admin.php:64
 msgid "Blocks Setting"
 msgstr "Blocks 設定"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:71
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:74
 #: inc/vk-blocks/admin/admin.php:71
 msgid "License Key"
 msgstr "ライセンスキー"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:73
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:76
 #: inc/vk-blocks/admin/admin.php:73
 msgid "Balloon Block Setting"
 msgstr "吹き出しブロック設定"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:79
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:82
 #: inc/vk-blocks/admin/admin.php:79
 msgid "Load Separete Setting"
 msgstr "分割読み込み設定"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:96
-#: inc/vk-blocks/admin/admin.php:96
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:100
+#: inc/vk-blocks/admin/admin.php:97
 msgid "Setting"
 msgstr "設定"
 
@@ -3127,14 +3098,6 @@ msgstr "ブロックレイアウト"
 #: dist/vk-blocks-pro/inc/vk-blocks/blocks.php:53 inc/vk-blocks/blocks.php:53
 msgid "Deprecated Blocks"
 msgstr "非推奨ブロック"
-
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
-#: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
-#: src/blocks/ancestor-page-list/index.php:44
-#: test/phpunit/pro/test-ancestor-page-list.php:89
-#: test/phpunit/pro/test-ancestor-page-list.php:173
-msgid "Ancestor Page Title"
-msgstr "先祖ページのタイトル"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
@@ -3170,14 +3133,26 @@ msgstr "このメッセージは編集画面でのみ表示されます。"
 msgid "Edit this area"
 msgstr "このエリアを編集"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:40
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/archive-list/index.php:87
+#: inc/vk-blocks/build/blocks/_pro/archive-list/index.php:87
+#: src/blocks/_pro/archive-list/index.php:87
+msgid "Please select year"
+msgstr "選択してください"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/archive-list/index.php:89
+#: inc/vk-blocks/build/blocks/_pro/archive-list/index.php:89
+#: src/blocks/_pro/archive-list/index.php:89
+msgid "Please select month"
+msgstr "選択してください"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:42
 #: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:42
 #: src/blocks/_pro/taxonomy/index.php:42
 msgid "Please select taxonomy"
 msgstr "タクソノミーを選択してください。"
 
 #. translators:
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:152
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:154
 #: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:154
 #: src/blocks/_pro/taxonomy/index.php:154
 #, fuzzy
@@ -3185,6 +3160,165 @@ msgstr "タクソノミーを選択してください。"
 #| msgid "Article of %s."
 msgid "All of %s"
 msgstr "%s の記事."
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:251
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:255
+msgid "Background fill lightgray"
+msgstr "背景塗り 灰色"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:255
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:259
+msgid "Double border top and bottom black"
+msgstr "二重線 上下線 黒"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:259
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:263
+msgid "Double border bottom black"
+msgstr "二重線 下線 黒"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:263
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:267
+msgid "Solid border top and bottom black"
+msgstr "直線 上下 黒"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:267
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:271
+msgid "Solid border bottom black"
+msgstr "直線 下線 黒"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:271
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:275
+msgid "Dotted border bottom black"
+msgstr "点線 下線 黒"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:275
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:279
+msgid "Both ends"
+msgstr "左右線"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:279
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:283
+msgid "Brackets black"
+msgstr "括弧 黒"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:285
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:289
+msgid "Arrow"
+msgstr "矢印"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:293
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:297
+msgid "Check"
+msgstr "チェック"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:297
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:301
+msgid "Check Square"
+msgstr "チェック（四角）"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:301
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:305
+msgid "Check Circle"
+msgstr "チェック-丸"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:305
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:309
+msgid "Handpoint"
+msgstr "指"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:309
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:313
+msgid "Pencil"
+msgstr "鉛筆"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:313
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:317
+msgid "Smile"
+msgstr "笑顔"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:317
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:321
+msgid "Frown"
+msgstr "不満顔"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:321
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:325
+msgid "Numbered Circle"
+msgstr "数字-丸"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:325
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:329
+msgid "Numbered Square"
+msgstr "数字-四角"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:331
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:411
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:335
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:415
+msgid "Border Top Bottom"
+msgstr "直線 上下"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:339
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:343
+msgid "Border / Stripes"
+msgstr "枠線 / ストライプ"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:345
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:349
+msgid "Rounded02"
+msgstr "角丸2"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:353
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:357
+msgid "Photo frame"
+msgstr "フォトフレーム"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:357
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:361
+msgid "Photo frame Tilt Right"
+msgstr "フォトフレーム傾き右"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:361
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:365
+msgid "Photo frame Tilt Left"
+msgstr "フォトフレーム傾き左"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:365
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:415
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:369
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:419
+msgid "Shadow"
+msgstr "シャドウ"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:369
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:373
+msgid "Wave01"
+msgstr "流体シェイプ1"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:373
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:377
+msgid "Wave02"
+msgstr "流体シェイプ2"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:377
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:381
+msgid "Wave03"
+msgstr "流体シェイプ3"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:381
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:385
+msgid "Wave04"
+msgstr "流体シェイプ4"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:391
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:395
+msgid "Solid Roundcorner"
+msgstr "直線 角丸"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:407
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:411
+msgid "Stitch"
+msgstr "スティッチ"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/font-awesome/class-vk-blocks-font-awesome-api.php:73
 #: inc/vk-blocks/font-awesome/class-vk-blocks-font-awesome-api.php:73
@@ -3297,15 +3431,13 @@ msgstr ""
 msgid "Re-acquisition of updates"
 msgstr "更新の再取得"
 
-#: inc/vk-blocks/build/blocks/_pro/archive-list/index.php:87
-#: src/blocks/_pro/archive-list/index.php:87
-msgid "Please select year"
-msgstr "選択してください"
+#: inc/vk-admin/package/class-vk-admin.php:332
+msgid "Sorry, there is no post"
+msgstr "申し訳ありませんが投稿がありません。"
 
-#: inc/vk-blocks/build/blocks/_pro/archive-list/index.php:89
-#: src/blocks/_pro/archive-list/index.php:89
-msgid "Please select month"
-msgstr "選択してください"
+#: inc/vk-admin/package/class-vk-admin.php:386
+msgid "Vektor WordPress Information"
+msgstr "Vektor WordPress Information"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/alert/block.json
 #: inc/vk-blocks/build/blocks/alert/block.json src/blocks/alert/block.json
@@ -3637,6 +3769,20 @@ msgctxt "block description"
 msgid "Add animation to elements when scrolling the page."
 msgstr "ページをスクロールした時に要素に動きを加えます。"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/archive-list/block.json
+#: inc/vk-blocks/build/blocks/_pro/archive-list/block.json
+#: src/blocks/_pro/archive-list/block.json
+msgctxt "block title"
+msgid "Archive list"
+msgstr "アーカイブリスト"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/archive-list/block.json
+#: inc/vk-blocks/build/blocks/_pro/archive-list/block.json
+#: src/blocks/_pro/archive-list/block.json
+msgctxt "block description"
+msgid "Displays a list of archives"
+msgstr "アーカイブリストを表示します"
+
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
 #: inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
 #: src/blocks/_pro/breadcrumb/block.json
@@ -3711,18 +3857,6 @@ msgctxt "block description"
 msgid ""
 "When a parent page is specified, a list of its child pages will be displayed."
 msgstr "親となる固定ページを指定するとその子ページの一覧を表示します。"
-
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/dynamic-text/block.json
-msgctxt "block title"
-msgid "Dynamic Text"
-msgstr "ダイナミックテキスト"
-
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/dynamic-text/block.json
-#, fuzzy
-#| msgid "Display item"
-msgctxt "block description"
-msgid "Display dynamic Text"
-msgstr "表示要素"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/grid-column-item/block.json
 #: inc/vk-blocks/build/blocks/_pro/grid-column-item/block.json
@@ -3966,7 +4100,7 @@ msgstr ""
 #: src/blocks/_pro/taxonomy/block.json
 msgctxt "block description"
 msgid "Display Taxnomy List Pulldown"
-msgstr ""
+msgstr "タクソノミーの一覧やプルダウンを表示します"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/timeline-item/block.json
 #: inc/vk-blocks/build/blocks/_pro/timeline-item/block.json
@@ -3998,17 +4132,20 @@ msgid ""
 "explaining the order."
 msgstr "順番を説明する時に便利でシンプルなスケジュールなどを表示します。"
 
-#: inc/vk-blocks/build/blocks/_pro/archive-list/block.json
-#: src/blocks/_pro/archive-list/block.json
+#: inc/vk-blocks/build/blocks/_pro/dynamic-text/block.json
+#: src/blocks/_pro/dynamic-text/block.json
 msgctxt "block title"
-msgid "Archive list"
-msgstr "アーカイブリスト"
+msgid "Dynamic Text"
+msgstr "ダイナミックテキスト"
 
-#: inc/vk-blocks/build/blocks/_pro/archive-list/block.json
-#: src/blocks/_pro/archive-list/block.json
+#: inc/vk-blocks/build/blocks/_pro/dynamic-text/block.json
+#: src/blocks/_pro/dynamic-text/block.json
 msgctxt "block description"
-msgid "Displays a list of archives"
-msgstr "アーカイブリストを表示します"
+msgid "Display dynamic text"
+msgstr "動的テキストを表示します"
+
+#~ msgid "Select display element"
+#~ msgstr "表示要素の選択"
 
 #~ msgid ""
 #~ "Enter a valid license key for any of the following products on the "
@@ -4702,9 +4839,6 @@ msgstr "アーカイブリストを表示します"
 
 #~ msgid "Slider Template"
 #~ msgstr "スライダーテンプレート"
-
-#~ msgid "Display Block Template Setting"
-#~ msgstr "ブロックテンプレート表示設定"
 
 #~ msgid "WordPress Block Template"
 #~ msgstr "WordPress ブロックテンプレート"

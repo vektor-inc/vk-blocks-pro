@@ -23,7 +23,7 @@ export default function ExportForm() {
 	async function handleExport(event) {
 		event.preventDefault();
 		// 対象のオプション値のみをエクスポート対象にする
-		const exportTargetOption = { ...vkBlocksOption };
+		const exportTargetOption = { ...vkBlocksObject.options };
 		exportOptionLists.forEach((setting) => {
 			if (!setting.isExport) {
 				setting.options.forEach(

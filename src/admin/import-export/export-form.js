@@ -12,6 +12,7 @@ import { useContext, useState } from '@wordpress/element';
 import { AdminContext } from '@vkblocks/admin/index';
 import { download } from './file';
 import { OPTION_DEFAULT_SETTINGS } from './index';
+/*globals vkBlocksObject */
 
 export default function ExportForm() {
 	const { vkBlocksOption } = useContext(AdminContext);
@@ -103,6 +104,15 @@ export default function ExportForm() {
 					)
 				);
 			})}
+			{vkBlocksObject.options !== vkBlocksOption && (
+				<p>
+					{__(
+						'変更した設定が保存されていないようです。変更前の設定内容をエクスポートします。',
+						// 'It seems that the changed settings are not saved. Export settings before change.',
+						'vk-blocks'
+					)}
+				</p>
+			)}
 			<div className="submit">
 				<Button
 					variant="primary"

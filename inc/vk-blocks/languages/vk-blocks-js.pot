@@ -79,6 +79,10 @@ msgstr ""
 msgid "Block Manager Setting"
 msgstr ""
 
+#: src/admin/block-style-manager/index.js:27
+msgid "Block Style Manager Setting"
+msgstr ""
+
 #: src/admin/custom-block-style/add-button/index.js:113
 #: src/admin/custom-format/add-item.js:133
 msgid "Toolbar title (Changeable)"
@@ -915,14 +919,12 @@ msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:180
 #: src/blocks/balloon/edit.js:309
-#: src/extensions/core/image/style.js:15
-#: src/extensions/core/table/style.js:12
 msgid "Border"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:189
 #: src/blocks/border-box/edit.js:207
-#: src/extensions/core/group/style.js:47
+#: src/extensions/core/group/style.js:46
 msgid "Border Color"
 msgstr ""
 
@@ -1166,7 +1168,6 @@ msgid "Wave"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:464
-#: src/extensions/core/list/style.js:258
 msgid "Triangle"
 msgstr ""
 
@@ -1203,22 +1204,18 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:115
 #: src/blocks/_pro/timeline-item/edit.js:88
 #: src/blocks/pr-content/edit.js:144
-#: src/extensions/core/group/style.js:108
 msgid "Solid"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:540
-#: src/extensions/core/group/style.js:116
 msgid "Dotted"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:544
-#: src/extensions/core/group/style.js:120
 msgid "Dashed"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:548
-#: src/extensions/core/group/style.js:124
 msgid "Double"
 msgstr ""
 
@@ -1372,8 +1369,6 @@ msgstr ""
 #: src/blocks/heading/edit.js:264
 #: src/blocks/slider/edit.js:663
 #: src/blocks/staff/edit.js:173
-#: src/extensions/core/heading/style.js:11
-#: src/extensions/core/list/style.js:249
 msgid "Default"
 msgstr ""
 
@@ -1471,28 +1466,24 @@ msgstr ""
 #: src/blocks/alert/edit.js:25
 #: src/blocks/button/edit.js:675
 #: src/blocks/pr-content/edit.js:165
-#: src/extensions/core/group/style.js:144
 msgid "Success"
 msgstr ""
 
 #: src/blocks/alert/edit.js:28
 #: src/blocks/button/edit.js:679
 #: src/blocks/pr-content/edit.js:168
-#: src/extensions/core/group/style.js:140
 msgid "Info"
 msgstr ""
 
 #: src/blocks/alert/edit.js:30
 #: src/blocks/button/edit.js:683
 #: src/blocks/pr-content/edit.js:170
-#: src/extensions/core/group/style.js:148
 msgid "Warning"
 msgstr ""
 
 #: src/blocks/alert/edit.js:34
 #: src/blocks/button/edit.js:687
 #: src/blocks/pr-content/edit.js:174
-#: src/extensions/core/group/style.js:152
 msgid "Danger"
 msgstr ""
 
@@ -1950,7 +1941,6 @@ msgid "Heading style"
 msgstr ""
 
 #: src/blocks/heading/edit.js:268
-#: src/extensions/core/heading/style.js:16
 msgid "Plain"
 msgstr ""
 
@@ -2649,148 +2639,22 @@ msgstr ""
 msgid "No wrap"
 msgstr ""
 
-#: src/extensions/common/responsive-br/index.js:44
+#: src/extensions/common/responsive-br/index.js:29
 msgid "Responsive BR"
 msgstr ""
 
-#: src/extensions/common/responsive-br/index.js:48
+#: src/extensions/common/responsive-br/index.js:33
 msgid "Responsive BR "
 msgstr ""
 
-#: src/extensions/core/group/style.js:112
-msgid "Solid Roundcorner"
-msgstr ""
-
-#: src/extensions/core/group/style.js:128
-msgid "Stitch"
-msgstr ""
-
-#: src/extensions/core/group/style.js:132
-#: src/extensions/core/table/style.js:7
-msgid "Border Top Bottom"
-msgstr ""
-
-#: src/extensions/core/group/style.js:136
-#: src/extensions/core/image/style.js:31
-msgid "Shadow"
-msgstr ""
-
-#: src/extensions/core/group/style.js:52
+#: src/extensions/core/group/style.js:51
 msgid ""
 "Because of the theme that enabled theme.json become can specify the color "
 "from border panel that, specification from here is deprecated."
 msgstr ""
 
-#: src/extensions/core/heading/style.js:104
-msgid "Brackets black"
-msgstr ""
-
-#: src/extensions/core/heading/style.js:32
-msgid "Background fill lightgray"
-msgstr ""
-
-#: src/extensions/core/heading/style.js:48
-msgid "Double border top and bottom black"
-msgstr ""
-
-#: src/extensions/core/heading/style.js:56
-msgid "Double border bottom black"
-msgstr ""
-
-#: src/extensions/core/heading/style.js:64
-msgid "Solid border top and bottom black"
-msgstr ""
-
-#: src/extensions/core/heading/style.js:72
-msgid "Solid border bottom black"
-msgstr ""
-
-#: src/extensions/core/heading/style.js:80
-msgid "Dotted border bottom black"
-msgstr ""
-
-#: src/extensions/core/heading/style.js:84
-msgid "Both ends"
-msgstr ""
-
-#: src/extensions/core/image/style.js:11
-msgid "Rounded02"
-msgstr ""
-
-#: src/extensions/core/image/style.js:19
-msgid "Photo frame"
-msgstr ""
-
-#: src/extensions/core/image/style.js:23
-msgid "Photo frame Tilt Right"
-msgstr ""
-
-#: src/extensions/core/image/style.js:27
-msgid "Photo frame Tilt Left"
-msgstr ""
-
-#: src/extensions/core/image/style.js:35
-msgid "Wave01"
-msgstr ""
-
-#: src/extensions/core/image/style.js:39
-msgid "Wave02"
-msgstr ""
-
-#: src/extensions/core/image/style.js:43
-msgid "Wave03"
-msgstr ""
-
-#: src/extensions/core/image/style.js:47
-msgid "Wave04"
-msgstr ""
-
-#: src/extensions/core/list/style.js:108
+#: src/extensions/core/list/style.js:107
 msgid "List Icon Color"
-msgstr ""
-
-#: src/extensions/core/list/style.js:254
-msgid "Arrow"
-msgstr ""
-
-#: src/extensions/core/list/style.js:262
-msgid "Check"
-msgstr ""
-
-#: src/extensions/core/list/style.js:266
-msgid "Check Square"
-msgstr ""
-
-#: src/extensions/core/list/style.js:270
-msgid "Check Circle"
-msgstr ""
-
-#: src/extensions/core/list/style.js:274
-msgid "Handpoint"
-msgstr ""
-
-#: src/extensions/core/list/style.js:278
-msgid "Pencil"
-msgstr ""
-
-#: src/extensions/core/list/style.js:282
-msgid "Smile"
-msgstr ""
-
-#: src/extensions/core/list/style.js:286
-msgid "Frown"
-msgstr ""
-
-#: src/extensions/core/list/style.js:290
-msgid "Numbered Circle"
-msgstr ""
-
-#: src/extensions/core/list/style.js:294
-msgid "Numbered Square"
-msgstr ""
-
-#: src/extensions/core/table/style.js:17
-msgid "Border / Stripes"
 msgstr ""
 
 #: src/utils/example-data.js:14

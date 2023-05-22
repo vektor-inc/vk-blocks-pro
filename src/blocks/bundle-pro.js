@@ -11,6 +11,7 @@ import * as buttonOuter from './_pro/button-outer';
 import * as card from './_pro/card';
 import * as cardItem from './_pro/card-item';
 import * as childPage from './_pro/child-page';
+import * as dynamicText from './_pro/dynamic-text';
 import * as gridColumn from './_pro/grid-column';
 import * as gridColumnItem from './_pro/grid-column-item';
 import * as gridColCard from './_pro/gridcolcard';
@@ -48,6 +49,7 @@ const vkblocksPro = [
 	card,
 	cardItem,
 	childPage,
+	dynamicText,
 	gridColumn,
 	gridColumnItem,
 	gridColCard,

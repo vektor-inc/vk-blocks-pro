@@ -37,7 +37,7 @@ function vk_blocks_register_block_taxonomy() {
 	);
 
 	// タクソノミーブロックで使うタクソノミーの選択肢.
-	$taxonomy_option = array(
+	$taxonomy_option_raw = array(
 		array(
 			'label' => __( 'Please select taxonomy', 'vk-blocks' ),
 			'value' => '',
@@ -46,12 +46,29 @@ function vk_blocks_register_block_taxonomy() {
 	foreach ( $the_taxonomies as $the_taxonomy ) {
 		$terms = get_terms( $the_taxonomy->name );
 		if ( ! empty( $terms ) ) {
-			$taxonomy_option[] = array(
+			$taxonomy_option_raw[] = array(
 				'label' => $the_taxonomy->labels->singular_name,
 				'value' => $the_taxonomy->name,
 			);
+		} else {
+			// カテゴリーの割り当ててある投稿が一つもないと get_terms で取得できなく、
+			// 項目がないとエラーになるため、とりあえずカテゴリーをオプションに追加しておく
+			$taxonomy_option_raw[] = array(
+				'label' => __( 'Categories', 'vk-blocks' ),
+				'value' => 'category',
+			);
 		}
 	}
+
+	// ループでカテゴリーが重複してしまう事があるので重複を削除 //////////////
+	// 多次元配列を一次元配列に変換
+	$taxonomy_option_raw = array_map( 'serialize', $taxonomy_option_raw );
+	// 重複項目を削除
+	$taxonomy_option = array_unique( $taxonomy_option_raw );
+	// 多次元に戻す
+	$taxonomy_option = array_map( 'unserialize', $taxonomy_option );
+	// インデックスをリセット
+	$taxonomy_option = array_values( $taxonomy_option );
 
 	global $vk_blocks_common_attributes;
 
@@ -132,7 +149,11 @@ function vk_blocks_taxonomy_render_callback( $attributes ) {
 	static $block_id = 0;
 	++$block_id;
 
-	$taxonomy_data = get_taxonomy( $attributes['isSelectedTaxonomy'] );
+	$taxonomy    = ! empty( $attributes['isSelectedTaxonomy'] ) ? $attributes['isSelectedTaxonomy'] : 'category';
+	$is_dropdown = ! empty( $attributes['displayAsDropdown'] );
+	$dropdown_id = 'vk_taxonomy-' . $block_id;
+
+	$taxonomy_data = get_taxonomy( $taxonomy );
 	$default_label = $taxonomy_data->labels->singular_name;
 
 	$block_label = '' !== $attributes['blockLabel'] ? $attributes['blockLabel'] : $default_label;
@@ -142,18 +163,32 @@ function vk_blocks_taxonomy_render_callback( $attributes ) {
 		'show_count'   => ! empty( $attributes['showPostCounts'] ) ? $attributes['showPostCounts'] : false,
 		'hide_empty'   => ! empty( $attributes['hideIfEmpty'] ) ? $attributes['hideIfEmpty'] : false,
 		'hierarchical' => ( ! empty( $attributes['showHierarchy'] ) && empty( $attributes['showOnlyTopLevel'] ) ) ? $attributes['showHierarchy'] : false,
-		'taxonomy'     => ! empty( $attributes['isSelectedTaxonomy'] ) ? $attributes['isSelectedTaxonomy'] : 'category',
+		'taxonomy'     => $taxonomy,
+		'value_field'  => 'slug',
+		'orderby'      => 'NAME',
+		'order'        => 'ASC',
+		'hierarchical' => true,
 	);
 	if ( ! empty( $attributes['showOnlyTopLevel'] ) ) {
 		$common_args['parent'] = 0;
 	}
 	$common_args = apply_filters( 'vk_blocks_taxlist_args', $common_args ); // 9.13.0.0
 
+	// ドロップダウンの名前を設定
+	$name = $taxonomy;
+	if ( 'category' === $taxonomy ) {
+		$name = 'category_name';
+	} elseif ( 'post_tag' === $taxonomy ) {
+		$name = 'tag';
+	}
+
 	$dropdown_args = array(
 		// translators:
 		'show_option_all' => sprintf( __( 'All of %s', 'vk-blocks' ), $taxonomy_data->labels->singular_name ),
-		'id'              => 'vk_taxonomy-' . $block_id,
+		'id'              => $dropdown_id,
 		'class'           => 'vk_taxonomy__input-wrap vk_taxonomy__input-wrap--select',
+		'selected'        => get_query_var( $name ),
+		'name'            => $name,
 	);
 
 	$list_args = array(
@@ -164,12 +199,12 @@ function vk_blocks_taxonomy_render_callback( $attributes ) {
 
 	$outer_attributes = get_block_wrapper_attributes(
 		array(
-			'class' => "vk_taxonomy vk_taxonomy--{$attributes['isSelectedTaxonomy']} vk_taxonomy-outer-wrap",
+			'class' => "vk_taxonomy vk_taxonomy--{$taxonomy} vk_taxonomy-outer-wrap",
 		)
 	);
 
 	$content = '<div ' . $outer_attributes . '>';
-	if ( ! empty( $attributes['displayAsDropdown'] ) ) {
+	if ( ! empty( $is_dropdown ) ) {
 		$content .= wp_dropdown_categories(
 			array_merge(
 				$common_args,
@@ -189,25 +224,26 @@ function vk_blocks_taxonomy_render_callback( $attributes ) {
 
 	$content .= '</div>';
 
-	return apply_filters( 'vk_blocks_taxonomy_content', $content, $attributes['displayAsDropdown'], 'vk_taxonomy-' . $block_id );
+	return apply_filters( 'vk_blocks_taxonomy_content', $content, $name, $is_dropdown, $dropdown_id );
 }
 
 /**
  * Generates the inline script for a categories dropdown field.
  *
  * @param string  $content Block Content.
- * @param boolean $is_dropdsown Dropdown or not.
+ * @param string  $name Selected Taxoinomy.
+ * @param boolean $is_dropdown Dropdown or not.
  * @param string  $dropdown_id ID of the dropdown field.
  *
  * @return string Returns the dropdown onChange redirection script.
  */
-function vk_blocks_taxonomy_add_scripts( $content, $is_dropdsown, $dropdown_id ) {
+function vk_blocks_taxonomy_add_scripts( $content, $name, $is_dropdown, $dropdown_id ) {
 	$script = '';
 	if ( ! empty( $_SERVER['REQUEST_URI'] ) ) {
 		$current_url = esc_url_raw( wp_unslash( $_SERVER['REQUEST_URI'] ) );
 
 		if (
-			! empty( $is_dropdsown ) &&
+			! empty( $is_dropdown ) &&
 			false === strpos( $current_url, 'post-new.php' ) &&
 			false === strpos( $current_url, 'post.php' ) &&
 			false === strpos( $current_url, 'widgets.php' ) &&
@@ -219,8 +255,8 @@ function vk_blocks_taxonomy_add_scripts( $content, $is_dropdsown, $dropdown_id )
 			( function() {
 				var dropdown = document.getElementById( \'' . esc_js( $dropdown_id ) . '\' );
 				function onCatChange() {
-					if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
-						location.href = \'' . esc_url( home_url() ) . '/?cat=\' + dropdown.options[ dropdown.selectedIndex ].value;
+					if ( !!dropdown.options[ dropdown.selectedIndex ].value ) {
+						location.href = \'' . esc_url( home_url() ) . '/?' . $name . '=\' + dropdown.options[ dropdown.selectedIndex ].value;
 					}
 				}
 				dropdown.onchange = onCatChange;
@@ -233,4 +269,4 @@ function vk_blocks_taxonomy_add_scripts( $content, $is_dropdsown, $dropdown_id )
 
 	return $content . $script;
 }
-add_filter( 'vk_blocks_taxonomy_content', 'vk_blocks_taxonomy_add_scripts', 10, 3 );
+add_filter( 'vk_blocks_taxonomy_content', 'vk_blocks_taxonomy_add_scripts', 10, 4 );

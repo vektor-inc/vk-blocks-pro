@@ -37,6 +37,5 @@ add_filter( 'term_color_taxonomies_custom', 'vk_blocks_term_color_taxonomies_cus
  */
 function vk_blocks_load_term_color() {
 	\VektorInc\VK_Term_Color\VkTermColor::init();
-	
 }
 add_action( 'init', 'vk_blocks_load_term_color' );

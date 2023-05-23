@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.0
 Tested up to: 6.2
-Stable tag: 1.53.0.1
+Stable tag: 1.55.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,7 +63,12 @@ e.g.
 == Changelog ==
 
 [ Bug fix ][ Child page list ]"There are no page." is not displayed on the front page.
+
+= 1.56.0 =
 [ Add Block ][ Dynamic Text Block (Pro) ] Add Dynamic text block.
+[ Add Function ][ Admin screen ] Added block style manager function.
+[ Specification Change ][ Slider ] Update Swiper to 9.2.3.
+[ Bug Fix ][ Taxonomy block ( Pro ) ] Fix Dropdown Script.
 [ Bug fix ][ Custom Format Setting (Pro) ] Custom Format Setting WordPress 6.2 UI adjustment.
 [ Add Function ][ Admin screen ] Added block style manager function.
 [ Bug fix ][ Step(Pro) / Time Line(Pro) ] Fix item content overflow

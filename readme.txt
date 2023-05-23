@@ -62,6 +62,8 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ]Allow alpha value in some blocks.
+
 = 1.56.0 =
 [ Add Block ][ Dynamic Text Block (Pro) ] Add Dynamic text block.
 [ Add Function ][ Admin screen ] Added block style manager function.

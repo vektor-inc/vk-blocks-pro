@@ -18,6 +18,16 @@ class VkTermColorTest extends WP_UnitTestCase {
 	public $post_id;
 
 	/**
+	 * カテゴリーID
+	 */
+	public $category_id;
+
+	/**
+	 * タームID
+	 */
+	public $term_id;
+
+	/**
 	 * 設定する色
 	 */
 	public $term_color = "#123456";
@@ -32,16 +42,16 @@ class VkTermColorTest extends WP_UnitTestCase {
 		$catarr                           = array(
 			'cat_name' => 'parent_category',
 		);
-		$test_posts['parent_category_id'] = wp_insert_category( $catarr );
+		$this->category_id = wp_insert_category( $catarr );
 
 		$post          = array(
 			'post_title'   => 'Post Title',
 			'post_content' => '<!-- wp:paragraph --><p>This is my post</p><!-- /wp:paragraph -->',
 			'post_status'  => 'publish',
-			'post_category' => array( $test_posts['parent_category_id'] ),
+			'post_category' => array( $this->category_id ),
 		);
 		$this->post_id = wp_insert_post( $post );
-		add_term_meta( $test_posts['parent_category_id'], 'term_color', $this->term_color );
+		$this->term_id = add_term_meta( $this->category_id, 'term_color', $this->term_color );
 
 	}
 
@@ -50,8 +60,9 @@ class VkTermColorTest extends WP_UnitTestCase {
 	 */
 	public function tearDown(): void {
 		parent::tearDown();
-	
 
+		delete_term_meta( $this->term_id, 'term_color' );
+		wp_delete_category( $this->category_id );
 		wp_delete_post( $this->post_id, true );
 		$this->post_id = 0;
 	}

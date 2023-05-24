@@ -229,32 +229,21 @@ export default function SliderEdit(props) {
 
 	// モバイル
 	let slidesPerViewMobileLoopAlert = '';
-	if (
-		loop &&
-		( innerBlocks.length / slidesPerViewMobile < 2 )
-	) {
+	if (loop && innerBlocks.length / slidesPerViewMobile < 2) {
 		slidesPerViewMobileLoopAlert = sloderPerViewLoop;
 	}
 
 	// タブレット
 	let slidesPerViewTabletLoopAlert = '';
-	if (
-		loop &&
-		( innerBlocks.length / slidesPerViewTablet < 2 )
-	) {
+	if (loop && innerBlocks.length / slidesPerViewTablet < 2) {
 		slidesPerViewTabletLoopAlert = sloderPerViewLoop;
 	}
 
-
 	// PC
 	let slidesPerViewPCLoopAlert = '';
-	if (
-		loop &&
-		( innerBlocks.length / slidesPerViewPC < 2 )
-	) {
+	if (loop && innerBlocks.length / slidesPerViewPC < 2) {
 		slidesPerViewPCLoopAlert = slidesPerViewAlert;
 	}
-
 
 	// 幅のクラス名変更
 	let alignClass = '';

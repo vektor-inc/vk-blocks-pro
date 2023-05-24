@@ -397,7 +397,7 @@ msgstr ""
 #: src/admin/margin.js:43
 #: src/blocks/_pro/outer/edit.js:641
 #: src/blocks/button/edit.js:522
-#: src/blocks/slider/edit.js:508
+#: src/blocks/slider/edit.js:512
 #: src/components/advanced-viewport-control/index.js:25
 msgid "PC"
 msgstr ""
@@ -405,7 +405,7 @@ msgstr ""
 #: src/admin/margin.js:47
 #: src/blocks/_pro/outer/edit.js:626
 #: src/blocks/button/edit.js:457
-#: src/blocks/slider/edit.js:529
+#: src/blocks/slider/edit.js:533
 #: src/components/advanced-viewport-control/index.js:31
 msgid "Tablet"
 msgstr ""
@@ -413,7 +413,7 @@ msgstr ""
 #: src/admin/margin.js:51
 #: src/blocks/_pro/outer/edit.js:611
 #: src/blocks/button/edit.js:392
-#: src/blocks/slider/edit.js:550
+#: src/blocks/slider/edit.js:554
 #: src/components/advanced-viewport-control/index.js:39
 msgid "Mobile"
 msgstr ""
@@ -507,7 +507,7 @@ msgstr ""
 #: src/blocks/button/edit.js:315
 #: src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:21
-#: src/blocks/slider/edit.js:484
+#: src/blocks/slider/edit.js:488
 #: src/extensions/common/inline-font-size/inline.js:28
 msgid "Normal"
 msgstr ""
@@ -734,7 +734,7 @@ msgid "Image Height"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:88
-#: src/blocks/slider/edit.js:504
+#: src/blocks/slider/edit.js:508
 msgid "Slide Height for each device."
 msgstr ""
 
@@ -995,7 +995,7 @@ msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:147
 #: src/blocks/heading/edit.js:374
-#: src/blocks/slider/edit.js:711
+#: src/blocks/slider/edit.js:715
 msgid "Hide"
 msgstr ""
 
@@ -1198,7 +1198,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:370
 #: src/blocks/balloon/edit.js:504
-#: src/blocks/slider/edit.js:476
+#: src/blocks/slider/edit.js:480
 msgid "Width"
 msgstr ""
 
@@ -1453,7 +1453,7 @@ msgstr ""
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
 #: src/blocks/_pro/timeline-item/edit.js:103
 #: src/blocks/heading/edit.js:264
-#: src/blocks/slider/edit.js:690
+#: src/blocks/slider/edit.js:694
 #: src/blocks/staff/edit.js:173
 msgid "Default"
 msgstr ""
@@ -1793,7 +1793,7 @@ msgid "Button Position:"
 msgstr ""
 
 #: src/blocks/button/edit.js:350
-#: src/blocks/slider/edit.js:715
+#: src/blocks/slider/edit.js:719
 #: src/components/display-items-control/index.js:127
 msgid "Center"
 msgstr ""
@@ -2251,107 +2251,107 @@ msgid ""
 "display size."
 msgstr ""
 
-#: src/blocks/slider/edit.js:225
+#: src/blocks/slider/edit.js:227
 msgid ""
 "If you want to loop slides, the number of placed slide items must be at "
 "least twice as large as the number of items to display per view."
 msgstr ""
 
-#: src/blocks/slider/edit.js:279
+#: src/blocks/slider/edit.js:283
 msgid "Multi-item Display Setting"
 msgstr ""
 
-#: src/blocks/slider/edit.js:283
+#: src/blocks/slider/edit.js:287
 msgid "Number of Items to display per view"
 msgstr ""
 
-#: src/blocks/slider/edit.js:290
+#: src/blocks/slider/edit.js:294
 msgid "Enter divisors for the number of placed slide items for each display size."
 msgstr ""
 
-#: src/blocks/slider/edit.js:294
+#: src/blocks/slider/edit.js:298
 msgid "If the number is not divisible, the sliding behaviour will be unnatural"
 msgstr ""
 
-#: src/blocks/slider/edit.js:387
+#: src/blocks/slider/edit.js:391
 msgid "Number of items to change in a transition"
 msgstr ""
 
-#: src/blocks/slider/edit.js:398
+#: src/blocks/slider/edit.js:402
 msgid "One by One"
 msgstr ""
 
-#: src/blocks/slider/edit.js:402
+#: src/blocks/slider/edit.js:406
 msgid "Same as the number of items to display"
 msgstr ""
 
-#: src/blocks/slider/edit.js:418
+#: src/blocks/slider/edit.js:422
 msgid "Centering the active slide"
 msgstr ""
 
-#: src/blocks/slider/edit.js:424
+#: src/blocks/slider/edit.js:428
 msgid ""
 "If you specify the center, you can display items that are cut off on the "
 "left and right."
 msgstr ""
 
-#: src/blocks/slider/edit.js:493
+#: src/blocks/slider/edit.js:497
 msgid "Full Wide"
 msgstr ""
 
-#: src/blocks/slider/edit.js:499
+#: src/blocks/slider/edit.js:503
 msgid "Height"
 msgstr ""
 
-#: src/blocks/slider/edit.js:573
+#: src/blocks/slider/edit.js:577
 msgid "Slider Settings"
 msgstr ""
 
-#: src/blocks/slider/edit.js:577
+#: src/blocks/slider/edit.js:581
 msgid "Effect "
 msgstr ""
 
-#: src/blocks/slider/edit.js:587
+#: src/blocks/slider/edit.js:591
 msgid "Slide"
 msgstr ""
 
-#: src/blocks/slider/edit.js:591
+#: src/blocks/slider/edit.js:595
 msgid "Fade"
 msgstr ""
 
-#: src/blocks/slider/edit.js:598
+#: src/blocks/slider/edit.js:602
 msgid "Loop "
 msgstr ""
 
-#: src/blocks/slider/edit.js:608
+#: src/blocks/slider/edit.js:612
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/slider/edit.js:618
+#: src/blocks/slider/edit.js:622
 msgid "Stop AutoPlay when swipe"
 msgstr ""
 
-#: src/blocks/slider/edit.js:628
+#: src/blocks/slider/edit.js:632
 msgid "Display Time"
 msgstr ""
 
-#: src/blocks/slider/edit.js:655
+#: src/blocks/slider/edit.js:659
 msgid "Change Speed"
 msgstr ""
 
-#: src/blocks/slider/edit.js:679
+#: src/blocks/slider/edit.js:683
 msgid "Pagination Type"
 msgstr ""
 
-#: src/blocks/slider/edit.js:694
+#: src/blocks/slider/edit.js:698
 msgid "Number of slides"
 msgstr ""
 
-#: src/blocks/slider/edit.js:704
+#: src/blocks/slider/edit.js:708
 msgid "Navigation Position"
 msgstr ""
 
-#: src/blocks/slider/edit.js:719
+#: src/blocks/slider/edit.js:723
 msgid "Bottom on Mobile device"
 msgstr ""
 

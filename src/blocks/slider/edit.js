@@ -222,27 +222,31 @@ export default function SliderEdit(props) {
 	}
 
 	// ループに関するアラート
-	const sloderPerViewLoop = __(
-		'If you want to loop slides, the number of placed slide items must be at least twice as large as the number of items to display per view.',
-		'vk-blocks'
+	const sloderPerViewLoopAlert = (
+		<div className="text-danger font-size-11px offset-mt-18px">
+			{__(
+				'If you want to loop slides, the number of placed slide items must be at least twice as large as the number of items to display per view.',
+				'vk-blocks'
+			)}
+		</div>
 	);
 
 	// モバイル
 	let slidesPerViewMobileLoopAlert = '';
-	if (loop && innerBlocks.length / slidesPerViewMobile < 2) {
-		slidesPerViewMobileLoopAlert = sloderPerViewLoop;
+	if (!!loop && innerBlocks.length / slidesPerViewMobile < 2) {
+		slidesPerViewMobileLoopAlert = sloderPerViewLoopAlert;
 	}
 
 	// タブレット
 	let slidesPerViewTabletLoopAlert = '';
-	if (loop && innerBlocks.length / slidesPerViewTablet < 2) {
-		slidesPerViewTabletLoopAlert = sloderPerViewLoop;
+	if (!!loop && innerBlocks.length / slidesPerViewTablet < 2) {
+		slidesPerViewTabletLoopAlert = sloderPerViewLoopAlert;
 	}
 
 	// PC
 	let slidesPerViewPCLoopAlert = '';
-	if (loop && innerBlocks.length / slidesPerViewPC < 2) {
-		slidesPerViewPCLoopAlert = slidesPerViewAlert;
+	if (!!loop && innerBlocks.length / slidesPerViewPC < 2) {
+		slidesPerViewPCLoopAlert = sloderPerViewLoopAlert;
 	}
 
 	// 幅のクラス名変更

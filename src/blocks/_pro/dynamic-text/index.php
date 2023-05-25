@@ -18,11 +18,11 @@ function vk_blocks_dynamic_text_render_callback( $attributes ) {
 		'textAlign'      => ( isset( $attributes['textAlign'] ) ) ? esc_attr( $attributes['textAlign'] ) : null,
 		'displayElement' => $attributes['displayElement'],
 		'tagName'        => $attributes['tagName'],
-		'displayOption'        => $attributes['displayOption'],
+		'displayOption'  => $attributes['displayOption'],
 	);
 
 	$post = get_post();
-	if ( 'ancestor-page' === $options['displayElement'] && ! ( $post->post_parent ) && 'page' === $post->post_type && $options['displayOption']) {
+	if ( 'ancestor-page' === $options['displayElement'] && ! ( $post->post_parent ) && 'page' === $post->post_type && $options['displayOption'] ) {
 		return;
 	}
 
@@ -109,9 +109,9 @@ function vk_blocks_register_block_dynamic_text() {
 						'type'    => 'string',
 						'default' => 'div',
 					),
-					'displayOption' => array(
-						'type'=> 'boolean',
-						'default'=> true,
+					'displayOption'  => array(
+						'type'    => 'boolean',
+						'default' => true,
 					),
 				)
 			),

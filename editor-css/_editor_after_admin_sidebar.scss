@@ -12,8 +12,11 @@ Admin Setting Sidebar utility
 
 // 下部余白のついたコンポーネントの下に文字を表示したりするためのクラス
 .offset-mt-18px {
-	margin-top:-18px;
-	margin-bottom:18px;
+	&,
+	&.alert {
+		margin-top:-18px;
+		margin-bottom:18px;
+	}
 }
 
 /* テーマ側で定義されている場合もあるが、ない場合もあるのでここにも記載 */

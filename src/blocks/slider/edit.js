@@ -223,7 +223,7 @@ export default function SliderEdit(props) {
 
 	// ループに関するアラート
 	const sloderPerViewLoopAlert = (
-		<div className="text-danger font-size-11px offset-mt-18px">
+		<div className="alert alert-danger font-size-11px offset-mt-18px">
 			{__(
 				'If you want to loop slides, the number of placed slide items must be at least twice as large as the number of items to display per view.',
 				'vk-blocks'

@@ -2,7 +2,12 @@ import classnames from 'classnames';
 
 // import WordPress Scripts
 import { __ } from '@wordpress/i18n';
-import { PanelBody, SelectControl } from '@wordpress/components';
+import {
+	PanelBody,
+	SelectControl,
+	BaseControl,
+	CheckboxControl
+} from '@wordpress/components';
 import {
 	useBlockProps,
 	AlignmentControl,
@@ -71,7 +76,8 @@ function DynamicTextEditControls({ tagName, onSelectTagName }) {
 
 export default function DynamicTextEdit(props) {
 	const { attributes, setAttributes } = props;
-	const { textAlign, displayElement, tagName: TagName = '' } = attributes;
+	const { textAlign, displayElement, tagName: TagName = '', displayOption } = attributes;
+	attributes.displayOption = displayOption;
 
 	// Hooks.
 	const blockProps = useBlockProps({
@@ -98,7 +104,7 @@ export default function DynamicTextEdit(props) {
 		editContent = <TagName>{__('Post Type Name', 'vk-blocks')}</TagName>;
 	} else if (displayElement === 'ancestor-page' && !parentPageId) {
 		editContent = (
-			<TagName>{__('Ancestor Page Title', 'vk-blocks')}</TagName>
+			<TagName>{__('Ancestor Page Title ', 'vk-blocks')}</TagName>
 		);
 	} else if (displayElement === 'please-select') {
 		editContent = editAlertContent;
@@ -122,47 +128,59 @@ export default function DynamicTextEdit(props) {
 				/>
 			</BlockControls>
 			<InspectorControls>
-				<PanelBody title={__('Display element settings', 'vk-blocks')}>
-					<SelectControl
-						label={__('Display element', 'vk-blocks')}
-						value={displayElement}
-						onChange={(value) =>
-							setAttributes({ displayElement: value })
-						}
-						className="mb-0"
-						options={[
-							{
-								value: 'please-select',
-								label: __('Please Select', 'vk-blocks'),
-							},
-							{
-								value: 'post-type',
-								label: __(
-									'Post type name of the page being viewed',
+				<PanelBody
+					title={__('Display element settings', 'vk-blocks')}
+					initialOpen={false}
+				>
+					<BaseControl>
+						<SelectControl
+							label={__('Display element', 'vk-blocks')}
+							value={displayElement}
+							onChange={(value) =>
+								setAttributes({ displayElement: value })
+							}
+							className="mb-0"
+							options={[
+								{
+									value: 'please-select',
+									label: __('Please Select', 'vk-blocks'),
+								},
+								{
+									value: 'post-type',
+									label: __(
+										'Post type name of the page being viewed',
+										'vk-blocks'
+									),
+								},
+								{
+									value: 'ancestor-page',
+									label: __(
+										'Page name in the ancestor hierarchy of the displayed page',
+										'vk-blocks'
+									),
+								},
+								// {
+								// 	value: 'custom-field',
+								// 	label: __('カスタムフィールド', 'vk-blocks'),
+								// },
+							]}
+						/>
+					</BaseControl>
+					<BaseControl>
+						<CheckboxControl
+							label={__('Hide page on Ancector Page', 'vk-blocks')}
+							checked={displayOption}
+							onChange={(v) => setAttributes({ displayOption: v })}
+						/>
+						{displayOption && (
+							<div className="alert alert-warning mt-0 mb-4">
+								{__(
+									'This block will not display on pages other than pages that have a parent hierarchy.',
 									'vk-blocks'
-								),
-							},
-							{
-								value: 'ancestor-page',
-								label: __(
-									'Page name in the ancestor hierarchy of the displayed page',
-									'vk-blocks'
-								),
-							},
-							// {
-							// 	value: 'custom-field',
-							// 	label: __('カスタムフィールド', 'vk-blocks'),
-							// },
-						]}
-					/>
-					{displayElement === 'ancestor-page' && (
-						<div className="alert alert-warning mt-0 mb-4">
-							{__(
-								'This block will not display on pages other than pages that have a parent hierarchy.',
-								'vk-blocks'
-							)}
-						</div>
-					)}
+								)}
+							</div>
+						)}
+					</BaseControl>
 					<DynamicTextEditControls
 						tagName={TagName}
 						onSelectTagName={(value) =>

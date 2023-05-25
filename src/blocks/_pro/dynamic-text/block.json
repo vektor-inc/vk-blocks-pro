@@ -15,6 +15,10 @@
 		"tagName": {
 			"type": "string",
 			"default": "div"
+		},
+		"displayOption": {
+			"type": "boolean",
+			"default": true
 		}
 	},
 	"description": "Display dynamic text",

@@ -362,7 +362,7 @@ msgstr ""
 msgid "ex)"
 msgstr ""
 
-#: src/admin/margin.js:135
+#: src/admin/margin.js:133
 #: src/blocks/border-box/edit.js:192
 #: src/blocks/icon-outer/edit.js:149
 #: src/blocks/icon/edit.js:139

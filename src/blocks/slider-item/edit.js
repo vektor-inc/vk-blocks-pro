@@ -176,7 +176,11 @@ export default function SliderItemEdit(props) {
 							'vk-blocks'
 						)}
 					>
-						<AdvancedColorPalette schema={'bgColor'} {...props} />
+						<AdvancedColorPalette
+							enableAlpha={false}
+							schema={'bgColor'}
+							{...props}
+						/>
 					</BaseControl>
 					<BaseControl
 						label={__('Opacity Setting', 'vk-blocks')}

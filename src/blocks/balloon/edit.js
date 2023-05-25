@@ -152,6 +152,7 @@ export default function BalloonEdit(props) {
 					{__('Border color of speech balloon', 'vk-blocks')}
 				</p>
 				<AdvancedColorPalette
+					enableAlpha={false}
 					schema={'balloonBorderColor'}
 					{...props}
 				/>
@@ -518,6 +519,7 @@ export default function BalloonEdit(props) {
 						{__('Background color of speech balloon', 'vk-blocks')}
 					</p>
 					<AdvancedColorPalette
+						enableAlpha={false}
 						schema={'balloonBgColor'}
 						{...props}
 					/>

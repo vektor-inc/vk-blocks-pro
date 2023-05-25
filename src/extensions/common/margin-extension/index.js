@@ -7,7 +7,6 @@ import { BlockControls } from '@wordpress/block-editor';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { ToolbarDropdownMenu } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
-// import { getBlockTypes } from '@wordpress/blocks';
 
 /**
  * External dependencies
@@ -19,6 +18,7 @@ import classnames from 'classnames';
  */
 import { marginIcon, marginTopIcon, marginBottomIcon } from './icons';
 import { isExcludesBlocks } from '@vkblocks/utils/is-excludes-blocks';
+import { emptyStringToUndefined } from '@vkblocks/utils/empty-string-to-undefined';
 
 const DEFAULT_MARGIN_TOP_CONTROLS = [
 	{
@@ -121,31 +121,6 @@ addFilter(
 	'blocks.registerBlockType',
 	'vk-blocks/margin-extension',
 	(settings) => {
-		/**
-		 * e2eテストコード用 test/e2e-tests/specs/margin-extension.test.js
-		 *
-		 * ブラウザーコンソールで除外しないブロック一覧が表示されるので右クリックしてobjectのコピーして確認する
-		 */
-		// const blockArr = getBlockTypes();
-		// console.log(blockArr);
-		// const testBlockList = [];
-		// const testHasParentBlockList = [];
-		// for (let i = 0; i < blockArr.length; i++) {
-		// 	if (isAddMargin(blockArr[i].name)) {
-		// 		if (blockArr[i].parent) {
-		// 			testHasParentBlockList.push([
-		// 				blockArr[i].parent[0],
-		// 				blockArr[i].title,
-		// 				blockArr[i].name,
-		// 			]);
-		// 		} else {
-		// 			testBlockList.push([blockArr[i].title, blockArr[i].title, blockArr[i].name,]);
-		// 		}
-		// 	}
-		// }
-		// console.log(testBlockList);
-		// console.log(testHasParentBlockList);
-
 		// deprecated用 dynamic blockは自動的に追加CSSクラスに追加されないのでattributeを残す
 		const mayUsedDynamicBlock = MAY_USED_DYNAMIC_BLOCK;
 		if (mayUsedDynamicBlock.includes(settings.name)) {
@@ -318,7 +293,9 @@ addFilter(
 												: activeMarginBottomClass
 										);
 										setAttributes({
-											className: newClasses.join(' '),
+											className: emptyStringToUndefined(
+												newClasses.join(' ')
+											),
 										});
 									},
 								};

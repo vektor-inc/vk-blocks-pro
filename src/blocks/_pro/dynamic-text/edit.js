@@ -6,7 +6,7 @@ import {
 	PanelBody,
 	SelectControl,
 	BaseControl,
-	CheckboxControl
+	CheckboxControl,
 } from '@wordpress/components';
 import {
 	useBlockProps,
@@ -76,7 +76,12 @@ function DynamicTextEditControls({ tagName, onSelectTagName }) {
 
 export default function DynamicTextEdit(props) {
 	const { attributes, setAttributes } = props;
-	const { textAlign, displayElement, tagName: TagName = '', displayOption } = attributes;
+	const {
+		textAlign,
+		displayElement,
+		tagName: TagName = '',
+		displayOption,
+	} = attributes;
 	attributes.displayOption = displayOption;
 
 	// Hooks.
@@ -168,9 +173,14 @@ export default function DynamicTextEdit(props) {
 					</BaseControl>
 					<BaseControl>
 						<CheckboxControl
-							label={__('Hide page on Ancector Page', 'vk-blocks')}
+							label={__(
+								'Hide page on Ancector Page',
+								'vk-blocks'
+							)}
 							checked={displayOption}
-							onChange={(v) => setAttributes({ displayOption: v })}
+							onChange={(v) =>
+								setAttributes({ displayOption: v })
+							}
 						/>
 						{displayOption && (
 							<div className="alert alert-warning mt-0 mb-4">

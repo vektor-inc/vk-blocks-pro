@@ -167,7 +167,6 @@ function vk_blocks_taxonomy_render_callback( $attributes ) {
 		'value_field'  => 'slug',
 		'orderby'      => 'NAME',
 		'order'        => 'ASC',
-		'hierarchical' => true,
 	);
 	if ( ! empty( $attributes['showOnlyTopLevel'] ) ) {
 		$common_args['parent'] = 0;

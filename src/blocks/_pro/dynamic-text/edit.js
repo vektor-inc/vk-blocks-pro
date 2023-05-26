@@ -80,9 +80,9 @@ export default function DynamicTextEdit(props) {
 		textAlign,
 		displayElement,
 		tagName: TagName = '',
-		displayOption,
+		ancestorPageDisplayOption,
 	} = attributes;
-	attributes.displayOption = displayOption;
+	attributes.ancestorPageDisplayOption = ancestorPageDisplayOption;
 
 	// Hooks.
 	const blockProps = useBlockProps({
@@ -177,12 +177,12 @@ export default function DynamicTextEdit(props) {
 								'Hide page on Ancector Page',
 								'vk-blocks'
 							)}
-							checked={displayOption}
+							checked={ancestorPageDisplayOption}
 							onChange={(v) =>
-								setAttributes({ displayOption: v })
+								setAttributes({ ancestorPageDisplayOption: v })
 							}
 						/>
-						{displayOption && (
+						{ancestorPageDisplayOption && (
 							<div className="alert alert-warning mt-0 mb-4">
 								{__(
 									'This block will not display on pages other than pages that have a parent hierarchy.',

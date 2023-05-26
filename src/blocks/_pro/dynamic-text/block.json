@@ -16,7 +16,7 @@
 			"type": "string",
 			"default": "div"
 		},
-		"displayOption": {
+		"ancestorPageDisplayOption": {
 			"type": "boolean",
 			"default": true
 		}

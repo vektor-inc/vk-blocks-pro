@@ -64,6 +64,9 @@ e.g.
 
 
 [ Bug Fix ][ Taxonomy block ( Pro ) ] Fix the "Show hierarchy" option bug.
+[ Add Function ]Allow alpha value in some blocks.
+[ Add Function ][ Animation(Pro) ] Added transforms settings to wrap and unwrap.
+[ Add Alert ][ Slider ] Add loop alert
 
 = 1.56.0 =
 [ Add Block ][ Dynamic Text Block (Pro) ] Add Dynamic text block.

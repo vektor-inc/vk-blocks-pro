@@ -61,6 +61,8 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+
 [ Bug Fix ][ Taxonomy block ( Pro ) ] Fix the "Show hierarchy" option bug.
 
 = 1.56.0 =

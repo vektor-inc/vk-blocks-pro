@@ -171,7 +171,7 @@ export default function DynamicTextEdit(props) {
 							]}
 						/>
 					</BaseControl>
-					{displayElement === "ancestor-page" && (
+					{displayElement === 'ancestor-page' && (
 						<BaseControl>
 							<CheckboxControl
 								label={__(
@@ -180,7 +180,9 @@ export default function DynamicTextEdit(props) {
 								)}
 								checked={ancestorPageDisplayOption}
 								onChange={(v) =>
-									setAttributes({ ancestorPageDisplayOption: v })
+									setAttributes({
+										ancestorPageDisplayOption: v,
+									})
 								}
 							/>
 							{ancestorPageDisplayOption && (

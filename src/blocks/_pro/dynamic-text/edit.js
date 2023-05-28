@@ -171,26 +171,28 @@ export default function DynamicTextEdit(props) {
 							]}
 						/>
 					</BaseControl>
-					<BaseControl>
-						<CheckboxControl
-							label={__(
-								'Hide page on Ancector Page',
-								'vk-blocks'
-							)}
-							checked={ancestorPageDisplayOption}
-							onChange={(v) =>
-								setAttributes({ ancestorPageDisplayOption: v })
-							}
-						/>
-						{ancestorPageDisplayOption && (
-							<div className="alert alert-warning mt-0 mb-4">
-								{__(
-									'This block will not display on pages other than pages that have a parent hierarchy.',
+					{displayElement === "ancestor-page" && (
+						<BaseControl>
+							<CheckboxControl
+								label={__(
+									'Hide page on Ancector Page',
 									'vk-blocks'
 								)}
-							</div>
-						)}
-					</BaseControl>
+								checked={ancestorPageDisplayOption}
+								onChange={(v) =>
+									setAttributes({ ancestorPageDisplayOption: v })
+								}
+							/>
+							{ancestorPageDisplayOption && (
+								<div className="alert alert-warning mt-0 mb-4">
+									{__(
+										'This block will not display on pages other than pages that have a parent hierarchy.',
+										'vk-blocks'
+									)}
+								</div>
+							)}
+						</BaseControl>
+					)}
 					<DynamicTextEditControls
 						tagName={TagName}
 						onSelectTagName={(value) =>

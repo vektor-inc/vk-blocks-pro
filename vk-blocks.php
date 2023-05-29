@@ -8,7 +8,7 @@
  * Requires at least: 6.0
  * Author: Vektor,Inc.
  * Author URI: https://vektor-inc.co.jp
- * Text Domain: vk-blocks
+ * Text Domain: vk-blocks-pro
  *
  * @package vk-blocks
  */

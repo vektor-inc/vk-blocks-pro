@@ -78,7 +78,7 @@ export class CardItem extends Component {
             <>
               {!imageParsed ? (
                 <Button onClick={open} className={"button button-large"}>
-                  {__("Select image", "vk-blocks")}
+                  {__("Select image", 'vk-blocks-pro')}
                 </Button>
               ) : (
                 <>
@@ -91,7 +91,7 @@ export class CardItem extends Component {
                     onClick={deleteImgBtn}
                     className={"image-button button button-delete"}
                   >
-                    {__("Delete Image", "vk-blocks")}
+                    {__("Delete Image", 'vk-blocks-pro')}
                   </Button>
                 </>
               )}

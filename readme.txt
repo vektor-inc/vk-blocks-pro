@@ -65,7 +65,7 @@ e.g.
 
 == Changelog ==
 
-[ Add Function ]Allow alpha value in some blocks.
+[ Add Function ] Allow alpha value in some blocks.
 [ Add Function ][ Animation(Pro) ] Added transforms settings to wrap and unwrap.
 [ Add Alert ][ Slider ] Add loop alert
 [ Bug fix ][ Child page list ]"There are no page." is not displayed on the front page.

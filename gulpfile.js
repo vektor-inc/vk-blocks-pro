@@ -12,22 +12,22 @@ const notify = require('gulp-notify');
 gulp.task('text-domain-pro', (done) => {
 	// vk-admin.
 	gulp.src(['./inc/vk-admin/package/*.php'])
-		.pipe(replace("'vk_admin_textdomain'", "'vk-blocks-pro'"))
+		.pipe(replace("'vk_admin_textdomain'", "'vk-blocks'"))
 		.pipe(gulp.dest('./inc/vk-admin/package/'));
 	// font-awesome.
 	gulp.src(['./inc/font-awesome/package/*.php'])
-		.pipe(replace("'vk_font_awesome_version_textdomain'", "'vk-blocks-pro'"))
+		.pipe(replace("'vk_font_awesome_version_textdomain'", "'vk-blocks'"))
 		.pipe(gulp.dest('./inc/font-awesome/package/'));
 	// term-color.
 	gulp.src(['./inc/term-color/package/*.php'])
-		.pipe(replace("'vk_term_color_textdomain'", "'vk-blocks-pro'"))
+		.pipe(replace("'vk_term_color_textdomain'", "'vk-blocks'"))
 		.pipe(gulp.dest('./inc/term-color/package/'));
 	// vk-components.
 	gulp.src(['./inc/vk-components/package/*.php'])
-		.pipe(replace("'vk_components_textdomain'", "'vk-blocks-pro'"))
+		.pipe(replace("'vk_components_textdomain'", "'vk-blocks'"))
 		.pipe(gulp.dest('./inc/vk-components/package/'));
 	gulp.src(['./inc/vk-css-optimize/package/*.php'])
-		.pipe(replace("'css_optimize_textdomain'", "'vk-blocks-pro'"))
+		.pipe(replace("'css_optimize_textdomain'", "'vk-blocks'"))
 		.pipe(gulp.dest('./inc/vk-css-optimize/package/'));
 	done();
 });
@@ -53,11 +53,26 @@ gulp.task('text-domain-free', (done) => {
 	gulp.src(['./inc/vk-css-optimize/package/*.php'])
 		.pipe(replace("'css_optimize_textdomain'", "'vk-blocks'"))
 		.pipe(gulp.dest('./inc/vk-css-optimize/package/'));
-	gulp.src(['./**'])
-		.pipe(replace("'vk-blocks-pro'", "'vk-blocks'"))
+	gulp.src(['./vk-blocks.php', './inc/**', './tests/**', './src/**'])
+		.pipe(replace("'vk-blocks'", "'vk-blocks'"))
 		.pipe(replace("\"vk-blocks-pro\"", "\"vk-blocks\""))
-		.pipe(replace("Text Domain: vk-blocks-pro", "Text Domain: vk-blocks"))
+		.pipe(replace("Text Domain: vk-blocks", "Text Domain: vk-blocks"))
 		.pipe(gulp.dest('./'));
+	gulp.src(['./inc/**', './tests/**', './src/**'])
+		.pipe(replace("'vk-blocks'", "'vk-blocks'"))
+		.pipe(replace("\"vk-blocks-pro\"", "\"vk-blocks\""))
+		.pipe(replace("Text Domain: vk-blocks", "Text Domain: vk-blocks"))
+		.pipe(gulp.dest('./inc/'));
+	gulp.src(['./src/**'])
+		.pipe(replace("'vk-blocks'", "'vk-blocks'"))
+		.pipe(replace("\"vk-blocks-pro\"", "\"vk-blocks\""))
+		.pipe(replace("Text Domain: vk-blocks", "Text Domain: vk-blocks"))
+		.pipe(gulp.dest('./src/'));
+	gulp.src(['./tests/**'])
+		.pipe(replace("'vk-blocks'", "'vk-blocks'"))
+		.pipe(replace("\"vk-blocks-pro\"", "\"vk-blocks\""))
+		.pipe(replace("Text Domain: vk-blocks", "Text Domain: vk-blocks"))
+		.pipe(gulp.dest('./tests/'));
 	done();
 });
 

@@ -276,6 +276,7 @@ gulp.task('dist', (done) => {
 		[
 			'./build/**',
 			'./inc/**',
+			'./languages/**',
 			'./vendor/**',
 			'./*.txt',
 			'./*.png',
@@ -296,7 +297,7 @@ gulp.task('dist:free', (done) => {
 		[
 			'./build/**',
 			'./inc/**',
-			'./vendor/**',
+			'./vendor/**',			
 			'./*.txt',
 			'./*.png',
 			'./*.php',

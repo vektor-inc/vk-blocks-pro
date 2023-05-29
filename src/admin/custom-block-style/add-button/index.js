@@ -80,11 +80,11 @@ export const AddButton = ({
 				variant="secondary"
 				onClick={openModal}
 			>
-				{__('Add Custom Block Style', 'vk-blocks')}
+				{__('Add Custom Block Style', 'vk-blocks-pro')}
 			</Button>
 			{isModalOpen && (
 				<Modal
-					title={__('Add Custom Block Style', 'vk-blocks')}
+					title={__('Add Custom Block Style', 'vk-blocks-pro')}
 					onRequestClose={closeModal}
 					isDismissible={false}
 					className="custom_block_style_add_modal"
@@ -112,7 +112,7 @@ export const AddButton = ({
 							className="custom_block_style_item_title"
 							label={__(
 								'Block Style Label (Changeable)',
-								'vk-blocks'
+								'vk-blocks-pro'
 							)}
 							onChange={(value) => {
 								setPropertyLabel(value);
@@ -138,7 +138,7 @@ export const AddButton = ({
 										variant="primary"
 										disabled={!isDisableAdd}
 									>
-										{__('Add', 'vk-blocks')}
+										{__('Add', 'vk-blocks-pro')}
 									</Button>
 								</FlexItem>
 							</Flex>

@@ -62,7 +62,7 @@ const CommonItemControl = (props) => {
 	return (
 		<>
 			<BoxControl
-				label={__('Column padding', 'vk-blocks')}
+				label={__('Column padding', 'vk-blocks-pro')}
 				values={containerSpace}
 				onChange={(nextValues) =>
 					setAttributes({ containerSpace: nextValues })
@@ -70,7 +70,7 @@ const CommonItemControl = (props) => {
 			/>
 			<hr />
 			<label htmlFor="vk_hiddenControl-hiddenColumnHeaderMediaArea">
-				{__('Column header media area', 'vk-blocks')}
+				{__('Column header media area', 'vk-blocks-pro')}
 			</label>
 			<br />
 			<ButtonGroup className={`mb-3`}>
@@ -80,7 +80,7 @@ const CommonItemControl = (props) => {
 					isSecondary={headerDisplay !== 'display'}
 					onClick={() => setAttributes({ headerDisplay: 'display' })}
 				>
-					{__('Display', 'vk-blocks')}
+					{__('Display', 'vk-blocks-pro')}
 				</Button>
 				<Button
 					isSmall
@@ -88,7 +88,7 @@ const CommonItemControl = (props) => {
 					isSecondary={headerDisplay !== 'hide'}
 					onClick={() => setAttributes({ headerDisplay: 'hide' })}
 				>
-					{__('Hide', 'vk-blocks')}
+					{__('Hide', 'vk-blocks-pro')}
 				</Button>
 				<Button
 					isSmall
@@ -96,7 +96,7 @@ const CommonItemControl = (props) => {
 					isSecondary={headerDisplay !== 'delete'}
 					onClick={() => setAttributes({ headerDisplay: 'delete' })}
 				>
-					{__('Delete', 'vk-blocks')}
+					{__('Delete', 'vk-blocks-pro')}
 				</Button>
 			</ButtonGroup>
 			{(() => {
@@ -114,7 +114,7 @@ const CommonItemControl = (props) => {
 								options={options}
 							/>
 							<ToggleControl
-								label={__('Image fit to column', 'vk-blocks')}
+								label={__('Image fit to column', 'vk-blocks-pro')}
 								checked={headerImageFit}
 								onChange={(checked) =>
 									setAttributes({ headerImageFit: checked })
@@ -126,7 +126,7 @@ const CommonItemControl = (props) => {
 			})()}
 			<hr />
 			<label htmlFor="vk_hiddenControl-hiddenColumnFooterButtonArea">
-				{__('Column footer button area', 'vk-blocks')}
+				{__('Column footer button area', 'vk-blocks-pro')}
 			</label>
 			<br />
 			<ButtonGroup className={`mb-3`}>
@@ -136,7 +136,7 @@ const CommonItemControl = (props) => {
 					isSecondary={footerDisplay !== 'display'}
 					onClick={() => setAttributes({ footerDisplay: 'display' })}
 				>
-					{__('Display', 'vk-blocks')}
+					{__('Display', 'vk-blocks-pro')}
 				</Button>
 				<Button
 					isSmall
@@ -144,7 +144,7 @@ const CommonItemControl = (props) => {
 					isSecondary={footerDisplay !== 'hide'}
 					onClick={() => setAttributes({ footerDisplay: 'hide' })}
 				>
-					{__('Hide', 'vk-blocks')}
+					{__('Hide', 'vk-blocks-pro')}
 				</Button>
 				<Button
 					isSmall
@@ -152,32 +152,32 @@ const CommonItemControl = (props) => {
 					isSecondary={footerDisplay !== 'delete'}
 					onClick={() => setAttributes({ footerDisplay: 'delete' })}
 				>
-					{__('Delete', 'vk-blocks')}
+					{__('Delete', 'vk-blocks-pro')}
 				</Button>
 			</ButtonGroup>
 
-			<h4>{__('Color Settings', 'vk-blocks')}</h4>
+			<h4>{__('Color Settings', 'vk-blocks-pro')}</h4>
 			<BaseControl
-				label={__('Text Color', 'vk-blocks')}
+				label={__('Text Color', 'vk-blocks-pro')}
 				id={`vk_gridcolcard_text_color`}
 			>
 				<AdvancedColorPalette schema={'textColor'} {...props} />
 			</BaseControl>
 			<BaseControl
-				label={__('Background Color', 'vk-blocks')}
+				label={__('Background Color', 'vk-blocks-pro')}
 				id={`vk_gridcolcard_background_color`}
 			>
 				<AdvancedColorPalette schema={'backgroundColor'} {...props} />
 			</BaseControl>
 			<hr />
 			<UnitControl
-				label={__('Column Radius', 'vk-blocks')}
+				label={__('Column Radius', 'vk-blocks-pro')}
 				value={borderRadius}
 				onChange={(value) => setAttributes({ borderRadius: value })}
 			/>
 			<br />
 			<ToggleControl
-				label={__('Border', 'vk-blocks')}
+				label={__('Border', 'vk-blocks-pro')}
 				checked={border}
 				onChange={(checked) => setAttributes({ border: checked })}
 			/>
@@ -186,7 +186,7 @@ const CommonItemControl = (props) => {
 					return (
 						<>
 							<BaseControl
-								label={__('Border Color', 'vk-blocks')}
+								label={__('Border Color', 'vk-blocks-pro')}
 								id={`vk_gridcolcard_border_color`}
 							>
 								<AdvancedColorPalette

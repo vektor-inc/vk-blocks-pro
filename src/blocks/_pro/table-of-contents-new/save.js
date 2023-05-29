@@ -13,7 +13,7 @@ export default function save(props) {
 		<div {...blockProps}>
 			<div className="tab">
 				<div className={'vk_tableOfContents_title'}>
-					{__('Table of Contents', 'vk-blocks')}
+					{__('Table of Contents', 'vk-blocks-pro')}
 				</div>
 				<input type="checkbox" id="chck1" />
 				<label

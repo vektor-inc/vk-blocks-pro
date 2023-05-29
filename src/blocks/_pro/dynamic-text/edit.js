@@ -24,44 +24,44 @@ function DynamicTextEditControls({ tagName, onSelectTagName }) {
 	return (
 		<SelectControl
 			__nextHasNoMarginBottom
-			label={__('HTML element', 'vk-blocks')}
+			label={__('HTML element', 'vk-blocks-pro')}
 			value={tagName}
 			options={[
 				{
 					value: 'div',
-					label: __('div (default)', 'vk-blocks'),
+					label: __('div (default)', 'vk-blocks-pro'),
 				},
 				{
 					value: 'h1',
-					label: __('h1', 'vk-blocks'),
+					label: __('h1', 'vk-blocks-pro'),
 				},
 				{
 					value: 'h2',
-					label: __('h2', 'vk-blocks'),
+					label: __('h2', 'vk-blocks-pro'),
 				},
 				{
 					value: 'h3',
-					label: __('h3', 'vk-blocks'),
+					label: __('h3', 'vk-blocks-pro'),
 				},
 				{
 					value: 'h4',
-					label: __('h4', 'vk-blocks'),
+					label: __('h4', 'vk-blocks-pro'),
 				},
 				{
 					value: 'h5',
-					label: __('h5', 'vk-blocks'),
+					label: __('h5', 'vk-blocks-pro'),
 				},
 				{
 					value: 'h6',
-					label: __('h6', 'vk-blocks'),
+					label: __('h6', 'vk-blocks-pro'),
 				},
 				{
 					value: 'p',
-					label: __('p', 'vk-blocks'),
+					label: __('p', 'vk-blocks-pro'),
 				},
 				{
 					value: 'span',
-					label: __('span', 'vk-blocks'),
+					label: __('span', 'vk-blocks-pro'),
 				},
 			]}
 			onChange={onSelectTagName}
@@ -90,15 +90,15 @@ export default function DynamicTextEdit(props) {
 		<div className="alert alert-warning text-center">
 			{__(
 				'This block will not render because no visible element is selected.',
-				'vk-blocks'
+				'vk-blocks-pro'
 			)}
 		</div>
 	);
 	if (displayElement === 'post-type' && !postType) {
-		editContent = <TagName>{__('Post Type Name', 'vk-blocks')}</TagName>;
+		editContent = <TagName>{__('Post Type Name', 'vk-blocks-pro')}</TagName>;
 	} else if (displayElement === 'ancestor-page' && !parentPageId) {
 		editContent = (
-			<TagName>{__('Ancestor Page Title', 'vk-blocks')}</TagName>
+			<TagName>{__('Ancestor Page Title', 'vk-blocks-pro')}</TagName>
 		);
 	} else if (displayElement === 'please-select') {
 		editContent = editAlertContent;
@@ -122,9 +122,9 @@ export default function DynamicTextEdit(props) {
 				/>
 			</BlockControls>
 			<InspectorControls>
-				<PanelBody title={__('Display element settings', 'vk-blocks')}>
+				<PanelBody title={__('Display element settings', 'vk-blocks-pro')}>
 					<SelectControl
-						label={__('Display element', 'vk-blocks')}
+						label={__('Display element', 'vk-blocks-pro')}
 						value={displayElement}
 						onChange={(value) =>
 							setAttributes({ displayElement: value })
@@ -133,25 +133,25 @@ export default function DynamicTextEdit(props) {
 						options={[
 							{
 								value: 'please-select',
-								label: __('Please Select', 'vk-blocks'),
+								label: __('Please Select', 'vk-blocks-pro'),
 							},
 							{
 								value: 'post-type',
 								label: __(
 									'Post type name of the page being viewed',
-									'vk-blocks'
+									'vk-blocks-pro'
 								),
 							},
 							{
 								value: 'ancestor-page',
 								label: __(
 									'Page name in the ancestor hierarchy of the displayed page',
-									'vk-blocks'
+									'vk-blocks-pro'
 								),
 							},
 							// {
 							// 	value: 'custom-field',
-							// 	label: __('カスタムフィールド', 'vk-blocks'),
+							// 	label: __('カスタムフィールド', 'vk-blocks-pro'),
 							// },
 						]}
 					/>
@@ -159,7 +159,7 @@ export default function DynamicTextEdit(props) {
 						<div className="alert alert-warning mt-0 mb-4">
 							{__(
 								'This block will not display on pages other than pages that have a parent hierarchy.',
-								'vk-blocks'
+								'vk-blocks-pro'
 							)}
 						</div>
 					)}

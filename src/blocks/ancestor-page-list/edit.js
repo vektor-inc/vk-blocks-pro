@@ -27,17 +27,17 @@ export default function PostListEdit(props) {
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={__('Ancestor Page List Setting', 'vk-blocks')}
+					title={__('Ancestor Page List Setting', 'vk-blocks-pro')}
 				>
 					<ToggleControl
-						label={__('Display Ancestor Page Title', 'vk-blocks')}
+						label={__('Display Ancestor Page Title', 'vk-blocks-pro')}
 						checked={ancestorTitleDisplay}
 						onChange={(checked) =>
 							setAttributes({ ancestorTitleDisplay: checked })
 						}
 					/>
 					<SelectControl
-						label={__('Archive title tag', 'vk-blocks')}
+						label={__('Archive title tag', 'vk-blocks-pro')}
 						value={ancestorTitleTagName}
 						onChange={(value) =>
 							setAttributes({ ancestorTitleTagName: value })
@@ -45,30 +45,30 @@ export default function PostListEdit(props) {
 						options={[
 							{
 								value: 'h2',
-								label: __('h2', 'vk-blocks'),
+								label: __('h2', 'vk-blocks-pro'),
 							},
 							{
 								value: 'h3',
-								label: __('h3', 'vk-blocks'),
+								label: __('h3', 'vk-blocks-pro'),
 							},
 							{
 								value: 'h4',
-								label: __('h4', 'vk-blocks'),
+								label: __('h4', 'vk-blocks-pro'),
 							},
 							{
 								value: 'h5',
-								label: __('h5', 'vk-blocks'),
+								label: __('h5', 'vk-blocks-pro'),
 							},
 							{
 								value: 'h6',
-								label: __('h6', 'vk-blocks'),
+								label: __('h6', 'vk-blocks-pro'),
 							},
 						]}
 					/>
 					<TextControl
 						label={__(
 							'Ancestor page title class name',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 						value={ancestorTitleClassName}
 						className={`mt-0 mb-3`}
@@ -79,7 +79,7 @@ export default function PostListEdit(props) {
 					<ToggleControl
 						label={__(
 							'Add link to ancestor page title',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 						checked={ancestorTitleLink}
 						onChange={(checked) =>
@@ -90,7 +90,7 @@ export default function PostListEdit(props) {
 					<ToggleControl
 						label={__(
 							'If there is no child page, the block itself is not displayed',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 						checked={displayHasChildOnly}
 						onChange={(checked) =>
@@ -100,7 +100,7 @@ export default function PostListEdit(props) {
 					<ToggleControl
 						label={__(
 							"Don't display inactive grand child pages",
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 						checked={hiddenGrandChild}
 						onChange={(checked) =>

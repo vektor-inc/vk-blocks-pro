@@ -22,32 +22,32 @@ import { emptyStringToUndefined } from '@vkblocks/utils/empty-string-to-undefine
 
 const DEFAULT_MARGIN_TOP_CONTROLS = [
 	{
-		title: __('Top XL', 'vk-blocks'),
+		title: __('Top XL', 'vk-blocks-pro'),
 		marginClass: 'vk_block-margin-xl--margin-top',
 		flag: 'top',
 	},
 	{
-		title: __('Top L', 'vk-blocks'),
+		title: __('Top L', 'vk-blocks-pro'),
 		marginClass: 'vk_block-margin-lg--margin-top',
 		flag: 'top',
 	},
 	{
-		title: __('Top M', 'vk-blocks'),
+		title: __('Top M', 'vk-blocks-pro'),
 		marginClass: 'vk_block-margin-md--margin-top',
 		flag: 'top',
 	},
 	{
-		title: __('Top S', 'vk-blocks'),
+		title: __('Top S', 'vk-blocks-pro'),
 		marginClass: 'vk_block-margin-sm--margin-top',
 		flag: 'top',
 	},
 	{
-		title: __('Top XS', 'vk-blocks'),
+		title: __('Top XS', 'vk-blocks-pro'),
 		marginClass: 'vk_block-margin-xs--margin-top',
 		flag: 'top',
 	},
 	{
-		title: __('Top 0', 'vk-blocks'),
+		title: __('Top 0', 'vk-blocks-pro'),
 		marginClass: 'vk_block-margin-0--margin-top',
 		flag: 'top',
 	},
@@ -55,32 +55,32 @@ const DEFAULT_MARGIN_TOP_CONTROLS = [
 
 const DEFAULT_MARGIN_BOTTOM_CONTROLS = [
 	{
-		title: __('Bottom 0', 'vk-blocks'),
+		title: __('Bottom 0', 'vk-blocks-pro'),
 		marginClass: 'vk_block-margin-0--margin-bottom',
 		flag: 'bottom',
 	},
 	{
-		title: __('Bottom XS', 'vk-blocks'),
+		title: __('Bottom XS', 'vk-blocks-pro'),
 		marginClass: 'vk_block-margin-xs--margin-bottom',
 		flag: 'bottom',
 	},
 	{
-		title: __('Bottom S', 'vk-blocks'),
+		title: __('Bottom S', 'vk-blocks-pro'),
 		marginClass: 'vk_block-margin-sm--margin-bottom',
 		flag: 'bottom',
 	},
 	{
-		title: __('Bottom M', 'vk-blocks'),
+		title: __('Bottom M', 'vk-blocks-pro'),
 		marginClass: 'vk_block-margin-md--margin-bottom',
 		flag: 'bottom',
 	},
 	{
-		title: __('Bottom L', 'vk-blocks'),
+		title: __('Bottom L', 'vk-blocks-pro'),
 		marginClass: 'vk_block-margin-lg--margin-bottom',
 		flag: 'bottom',
 	},
 	{
-		title: __('Bottom XL', 'vk-blocks'),
+		title: __('Bottom XL', 'vk-blocks-pro'),
 		marginClass: 'vk_block-margin-xl--margin-bottom',
 		flag: 'bottom',
 	},
@@ -270,7 +270,7 @@ addFilter(
 									) : null}
 								</>
 							}
-							label={__('Margin the block', 'vk-blocks')}
+							label={__('Margin the block', 'vk-blocks-pro')}
 							controls={marginControls.map((control) => {
 								const { marginClass, flag } = control;
 								const isActive =

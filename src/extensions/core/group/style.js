@@ -43,14 +43,14 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 					<BlockEdit {...props} />
 					<InspectorControls>
 						<PanelBody
-							title={__('Border Color', 'vk-blocks')}
+							title={__('Border Color', 'vk-blocks-pro')}
 							initialOpen={false}
 							className="group-border-color-controle"
 						>
 							<p className="font-size-11px alert alert-danger">
 								{__(
 									'Because of the theme that enabled theme.json become can specify the color from border panel that, specification from here is deprecated.',
-									'vk-blocks'
+									'vk-blocks-pro'
 								)}
 							</p>
 							<ColorPalette

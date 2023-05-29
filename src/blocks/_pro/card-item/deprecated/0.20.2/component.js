@@ -148,7 +148,7 @@ export class CardItem extends Component {
 						}
 						placeholder={__(
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 					/>
 				);
@@ -187,7 +187,7 @@ export class CardItem extends Component {
 						className={titleClass}
 						value={title}
 						onChange={(value) => setAttributes({ title: value })}
-						placeholder={__('Title', 'vk-blocks')}
+						placeholder={__('Title', 'vk-blocks-pro')}
 					/>
 				);
 			}

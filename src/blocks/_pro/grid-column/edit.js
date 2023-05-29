@@ -50,17 +50,17 @@ export default function GridColumnEdit(props) {
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={__('Layout Columns', 'vk-blocks')}
+					title={__('Layout Columns', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<ColumnLayout {...props} />
 				</PanelBody>
 				<PanelBody
-					title={__('Column Margin Bottom Setting', 'vk-blocks')}
+					title={__('Column Margin Bottom Setting', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<RangeControl
-						label={__('Margin Bottom', 'vk-blocks')}
+						label={__('Margin Bottom', 'vk-blocks-pro')}
 						value={marginBottom}
 						onChange={(value) => {
 							props.setAttributes({ marginBottom: value });
@@ -75,7 +75,7 @@ export default function GridColumnEdit(props) {
 						resetFallbackValue={null}
 					/>
 					<SelectControl
-						label={__('Unit', 'vk-blocks')}
+						label={__('Unit', 'vk-blocks-pro')}
 						value={unit}
 						onChange={(value) => {
 							props.setAttributes({ unit: value });
@@ -88,19 +88,19 @@ export default function GridColumnEdit(props) {
 						options={[
 							{
 								value: 'px',
-								label: __('px', 'vk-blocks'),
+								label: __('px', 'vk-blocks-pro'),
 							},
 							{
 								value: 'em',
-								label: __('em', 'vk-blocks'),
+								label: __('em', 'vk-blocks-pro'),
 							},
 							{
 								value: 'rem',
-								label: __('rem', 'vk-blocks'),
+								label: __('rem', 'vk-blocks-pro'),
 							},
 							{
 								value: 'vw',
-								label: __('vw', 'vk-blocks'),
+								label: __('vw', 'vk-blocks-pro'),
 							},
 						]}
 					/>

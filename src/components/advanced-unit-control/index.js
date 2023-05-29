@@ -10,7 +10,7 @@ const AdvancedUnitControl = (props) => {
 	const { unit } = attributes;
 	return (
 		<SelectControl
-			label={__('Unit Type', 'vk-blocks')}
+			label={__('Unit Type', 'vk-blocks-pro')}
 			value={unit}
 			onChange={(value) => setAttributes({ unit: value })}
 			options={hightUnitOptions}

@@ -34,10 +34,10 @@ export default function AdminBalloon() {
 		<>
 			<section>
 				<h3 id="balloon-setting">
-					{__('Balloon Setting', 'vk-blocks')}
+					{__('Balloon Setting', 'vk-blocks-pro')}
 				</h3>
 				<h4 id="balloon-border-width-setting">
-					{__('Balloon Border Width Setting', 'vk-blocks')}
+					{__('Balloon Border Width Setting', 'vk-blocks-pro')}
 				</h4>
 				<SelectControl
 					id="balloon-border-width-selector"
@@ -55,30 +55,30 @@ export default function AdminBalloon() {
 					}}
 					options={[
 						{
-							label: __('1px', 'vk-blocks'),
+							label: __('1px', 'vk-blocks-pro'),
 							value: 1,
 						},
 						{
-							label: __('2px', 'vk-blocks'),
+							label: __('2px', 'vk-blocks-pro'),
 							value: 2,
 						},
 						{
-							label: __('3px', 'vk-blocks'),
+							label: __('3px', 'vk-blocks-pro'),
 							value: 3,
 						},
 						{
-							label: __('4px', 'vk-blocks'),
+							label: __('4px', 'vk-blocks-pro'),
 							value: 4,
 						},
 					]}
 				/>
 				<h4 id="balloon-image-setting">
-					{__('Balloon Image Setting', 'vk-blocks')}
+					{__('Balloon Image Setting', 'vk-blocks-pro')}
 				</h4>
 				<p>
 					{__(
 						'You can register frequently used icon images for speech bubble blocks.',
-						'vk-blocks'
+						'vk-blocks-pro'
 					)}
 				</p>
 				<ul className="balloonIconList">
@@ -89,7 +89,7 @@ export default function AdminBalloon() {
 							return (
 								<li key={index}>
 									<MediaUpload
-										label={__('image', 'vk-blocks')}
+										label={__('image', 'vk-blocks-pro')}
 										onSelect={(newValue) => {
 											onChange(
 												'src',
@@ -119,7 +119,7 @@ export default function AdminBalloon() {
 															>
 																{__(
 																	'Select',
-																	'vk-blocks'
+																	'vk-blocks-pro'
 																)}
 															</Button>
 														</div>
@@ -147,7 +147,7 @@ export default function AdminBalloon() {
 															>
 																{__(
 																	'Delete',
-																	'vk-blocks'
+																	'vk-blocks-pro'
 																)}
 															</Button>
 														</div>
@@ -160,7 +160,7 @@ export default function AdminBalloon() {
 										htmlFor="icon_title"
 										className="balloonIconList_nameLabel"
 									>
-										{__('Balloon Image Name', 'vk-blocks')}
+										{__('Balloon Image Name', 'vk-blocks-pro')}
 									</label>
 									<TextControl
 										id={`icon_title_${index}`}

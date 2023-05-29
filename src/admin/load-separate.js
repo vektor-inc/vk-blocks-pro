@@ -30,17 +30,17 @@ export default function AdminLoadSeparate() {
 		<>
 			<section>
 				<h3 id="load-separete-setting">
-					{__('Load Separate Setting', 'vk-blocks')}
+					{__('Load Separate Setting', 'vk-blocks-pro')}
 				</h3>
 				<p>
 					{__(
 						'Note that the order in which CSS/JS are loaded will change.',
-						'vk-blocks'
+						'vk-blocks-pro'
 					)}
 				</p>
 				<CheckboxControl
 					name="vk_blocks_options[load_separate_option]"
-					label={__('Load Separate Option on', 'vk-blocks')}
+					label={__('Load Separate Option on', 'vk-blocks-pro')}
 					checked={migrateLoadSeparateOption}
 					onChange={(newValue) => {
 						setVkBlocksOption({

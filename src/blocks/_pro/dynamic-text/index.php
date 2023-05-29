@@ -40,7 +40,7 @@ function vk_blocks_dynamic_text_render_callback( $attributes ) {
 	}
 
 	// カスタムフィールド
-	// $custom_field = __( 'カスタムフィールドを入れる', 'vk-blocks' );
+	// $custom_field = __( 'カスタムフィールドを入れる', 'vk-blocks-pro' );
 
 	$classes = 'vk_dynamicText';
 	if ( isset( $attributes['textAlign'] ) ) {

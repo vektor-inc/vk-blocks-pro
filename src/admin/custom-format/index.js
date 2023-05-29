@@ -47,12 +47,12 @@ export default function AdminCustomFormat() {
 		<>
 			<section>
 				<h3 id="custom-format-setting">
-					{__('Custom Format Setting', 'vk-blocks')}
+					{__('Custom Format Setting', 'vk-blocks-pro')}
 				</h3>
 				<p>
 					{__(
 						'You can apply commonly used formatting on the block toolbar.',
-						'vk-blocks'
+						'vk-blocks-pro'
 					)}
 				</p>
 				{Object.keys(vkBlocksOption.custom_format_lists).map(
@@ -66,7 +66,7 @@ export default function AdminCustomFormat() {
 								/>
 								<div className="custom_format_item_control">
 									<PanelBody
-										title={__('Custom Format', 'vk-blocks')}
+										title={__('Custom Format', 'vk-blocks-pro')}
 									>
 										<BaseControl id="custom-format">
 											<TextControl
@@ -75,7 +75,7 @@ export default function AdminCustomFormat() {
 												id={`vk_blocks_custom_format_${index}_title`}
 												label={__(
 													'Toolbar title',
-													'vk-blocks'
+													'vk-blocks-pro'
 												)}
 												onChange={(value) =>
 													onChange(
@@ -92,7 +92,7 @@ export default function AdminCustomFormat() {
 												<p className="custom_format_item_name_warning">
 													{__(
 														'※ Required If no title is entered, it will not appear on the toolbar.',
-														'vk-blocks'
+														'vk-blocks-pro'
 													)}
 												</p>
 											)}
@@ -107,14 +107,14 @@ export default function AdminCustomFormat() {
 									<PanelBody
 										title={__(
 											'Format Setting',
-											'vk-blocks'
+											'vk-blocks-pro'
 										)}
 										initialOpen={false}
 									>
 										<BaseControl id="format-setting">
 											<CheckboxControl
 												name={`vk_blocks_options[custom_format_lists][${index}][font_weight_bold]`}
-												label={__('Bold', 'vk-blocks')}
+												label={__('Bold', 'vk-blocks-pro')}
 												checked={
 													textStyleListObj.font_weight_bold
 												}
@@ -130,7 +130,7 @@ export default function AdminCustomFormat() {
 												name={`vk_blocks_options[custom_format_lists][${index}][font_italic]`}
 												label={__(
 													'Italic',
-													'vk-blocks'
+													'vk-blocks-pro'
 												)}
 												checked={
 													textStyleListObj.font_italic
@@ -147,7 +147,7 @@ export default function AdminCustomFormat() {
 												name={`vk_blocks_options[custom_format_lists][${index}][font_strikethrough]`}
 												label={__(
 													'Strikethrough',
-													'vk-blocks'
+													'vk-blocks-pro'
 												)}
 												checked={
 													textStyleListObj.font_strikethrough
@@ -164,7 +164,7 @@ export default function AdminCustomFormat() {
 												name={`vk_blocks_options[custom_format_lists][${index}][nowrap]`}
 												label={__(
 													'Nowrap',
-													'vk-blocks'
+													'vk-blocks-pro'
 												)}
 												checked={
 													textStyleListObj.nowrap
@@ -194,14 +194,14 @@ export default function AdminCustomFormat() {
 										</BaseControl>
 									</PanelBody>
 									<PanelBody
-										title={__('Color', 'vk-blocks')}
+										title={__('Color', 'vk-blocks-pro')}
 										initialOpen={false}
 									>
 										<BaseControl
 											id="text-color"
 											label={__(
 												'Text Color',
-												'vk-blocks'
+												'vk-blocks-pro'
 											)}
 										>
 											<ColorPalette
@@ -232,7 +232,7 @@ export default function AdminCustomFormat() {
 											id="background-color"
 											label={__(
 												'Background Color',
-												'vk-blocks'
+												'vk-blocks-pro'
 											)}
 										>
 											<ColorPalette
@@ -263,7 +263,7 @@ export default function AdminCustomFormat() {
 											id="highlighter"
 											label={__(
 												'Highlighter Color',
-												'vk-blocks'
+												'vk-blocks-pro'
 											)}
 										>
 											<ToggleControl
@@ -271,7 +271,7 @@ export default function AdminCustomFormat() {
 												id={`vk_blocks_custom_format_lists_${index}_is_active_highlighter`}
 												label={__(
 													'Activate Highlighter',
-													'vk-blocks'
+													'vk-blocks-pro'
 												)}
 												checked={
 													textStyleListObj.is_active_highlighter
@@ -309,12 +309,12 @@ export default function AdminCustomFormat() {
 										</BaseControl>
 									</PanelBody>
 									<PanelBody
-										title={__('Custom CSS', 'vk-blocks')}
+										title={__('Custom CSS', 'vk-blocks-pro')}
 										initialOpen={false}
 									>
 										<BaseControl id="class-name-setting">
 											<span>
-												{__('CSS class', 'vk-blocks')}:
+												{__('CSS class', 'vk-blocks-pro')}:
 												<code>
 													.
 													{
@@ -343,7 +343,7 @@ export default function AdminCustomFormat() {
 														/* translators: If selector is specified, it will be replaced by a unique CSS class (<code>.%s</code>); CSS selectors other than selector may affect the entire page. */
 														__(
 															'If selector is specified, it will be replaced by a unique CSS class (<code>.%s</code>); CSS selectors other than selector may affect the entire page.',
-															'vk-blocks'
+															'vk-blocks-pro'
 														),
 														textStyleListObj.class_name
 													),
@@ -352,7 +352,7 @@ export default function AdminCustomFormat() {
 													}
 												)}
 											</p>
-											<p>{__('Example:', 'vk-blocks')}</p>
+											<p>{__('Example:', 'vk-blocks-pro')}</p>
 											<pre
 												className="vk-custom-css-sample-code"
 												style={{

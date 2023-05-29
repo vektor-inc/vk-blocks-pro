@@ -28,7 +28,7 @@
 		}
 	},
 	"description": "Add animation to elements when scrolling the page.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
 		"className": true
 	}

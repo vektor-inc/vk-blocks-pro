@@ -53,7 +53,7 @@ export const FontAwesome = (props) => {
 			<BaseControl
 				className={'components-base-control__label'}
 				id={`vk_fa_icon_list`}
-				label={__('Icon', 'vk-blocks') + ' ( ' + iconFamily + ' ) '}
+				label={__('Icon', 'vk-blocks-pro') + ' ( ' + iconFamily + ' ) '}
 			>
 				<RadioControl
 					className={'vk_icon_list'}
@@ -230,17 +230,17 @@ export const FontAwesome = (props) => {
 				href={iconsUrl}
 				className="components-button is-primary mt-1"
 			>
-				{__('Font Awesome icon list', 'vk-blocks')}
+				{__('Font Awesome icon list', 'vk-blocks-pro')}
 			</ExternalLink>
 			<p className="mt-1">
 				{__(
 					"If you want to use an icon other than the ones listed above, you can use any of the icons from Font Awesome's icon list Please select a tag and enter it.",
-					'vk-blocks'
+					'vk-blocks-pro'
 				)}
 				<br />
 				{__(
 					'Ex) <i class="fas fa-arrow-circle-right"></i>',
-					'vk-blocks'
+					'vk-blocks-pro'
 				)}
 			</p>
 			<hr />
@@ -254,7 +254,7 @@ export const FontAwesome = (props) => {
 			<p className="mt-1">
 				{__(
 					'When you click save button, the window will be reloaded and this setting will be applied.',
-					'vk-blocks'
+					'vk-blocks-pro'
 				)}
 			</p>
 			<Button
@@ -262,7 +262,7 @@ export const FontAwesome = (props) => {
 				disabled={isWaiting}
 				onClick={handleUpdateOptions}
 			>
-				{__('Save', 'vk-blocks')}
+				{__('Save', 'vk-blocks-pro')}
 			</Button>
 		</>
 	);
@@ -276,7 +276,7 @@ export const FontAwesome = (props) => {
 				className="mb-0"
 			/>
 			<AdvancedPopOverControl
-				label={__('Select Icon', 'vk-blocks')}
+				label={__('Select Icon', 'vk-blocks-pro')}
 				renderComp={render}
 				setAttributes={setAttributes}
 			/>

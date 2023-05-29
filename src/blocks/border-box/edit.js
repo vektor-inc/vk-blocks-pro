@@ -40,7 +40,7 @@ export default function BorderBoxEdit(props) {
 			className={'vk_borderBox_title'}
 			onChange={(value) => setAttributes({ heading: value })}
 			value={heading}
-			placeholder={__('Please enter a title.', 'vk-blocks')}
+			placeholder={__('Please enter a title.', 'vk-blocks-pro')}
 		/>
 	);
 
@@ -189,22 +189,22 @@ export default function BorderBoxEdit(props) {
 			</BlockControls>
 			<InspectorControls>
 				<PanelBody
-					title={__('Margin', 'vk-blocks')}
+					title={__('Margin', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<BaseControl>
 						<p>
 							{__(
 								'The margin-top of the first element and the margin-bottom of the last element in the border block will be automatically set to 0.If you want to add margins at the beginning and end, use a spacer block to specify height instead of margin.',
-								'vk-blocks'
+								'vk-blocks-pro'
 							)}
 						</p>
 					</BaseControl>
 				</PanelBody>
-				<PanelBody title={__('Color', 'vk-blocks')}>
+				<PanelBody title={__('Color', 'vk-blocks-pro')}>
 					<BaseControl
 						id="border-color"
-						label={__('Border Color', 'vk-blocks')}
+						label={__('Border Color', 'vk-blocks-pro')}
 					>
 						<AdvancedColorPalette
 							schema={'borderColor'}
@@ -213,7 +213,7 @@ export default function BorderBoxEdit(props) {
 					</BaseControl>
 					<BaseControl
 						id="background-color"
-						label={__('Background Color', 'vk-blocks')}
+						label={__('Background Color', 'vk-blocks-pro')}
 					>
 						<SelectControl
 							value={bgColor}
@@ -223,21 +223,21 @@ export default function BorderBoxEdit(props) {
 							options={[
 								{
 									value: 'transparent',
-									label: __('Transparent', 'vk-blocks'),
+									label: __('Transparent', 'vk-blocks-pro'),
 								},
 								{
 									value: 'white',
-									label: __('White', 'vk-blocks'),
+									label: __('White', 'vk-blocks-pro'),
 								},
 							]}
 						/>
 					</BaseControl>
 				</PanelBody>
-				<PanelBody title={__('Icon', 'vk-blocks')}>
+				<PanelBody title={__('Icon', 'vk-blocks-pro')}>
 					<BaseControl
 						id="dot-fa"
 						label={
-							__('Icon', 'vk-blocks') + ' ( ' + iconFamily + ' )'
+							__('Icon', 'vk-blocks-pro') + ' ( ' + iconFamily + ' )'
 						}
 					>
 						<FontAwesome

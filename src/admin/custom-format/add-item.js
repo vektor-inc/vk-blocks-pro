@@ -67,24 +67,24 @@ export const AddItemButton = () => {
 		let message;
 		if (typeof value !== 'string') {
 			bool = false;
-			message = __('Please enter a string', 'vk-blocks');
+			message = __('Please enter a string', 'vk-blocks-pro');
 		}
 		if (!/^[a-z][a-z0-9-]*$/.test(value)) {
 			bool = false;
 			message = __(
 				'Must begin with an alphabetic character and only alphanumeric characters and hyphens may be used.',
-				'vk-blocks'
+				'vk-blocks-pro'
 			);
 		}
 		if (value === '') {
 			bool = false;
-			message = __('Class name is required', 'vk-blocks');
+			message = __('Class name is required', 'vk-blocks-pro');
 		}
 		// クラス名が既に登録されているか
 		vkBlocksOption.custom_format_lists.forEach((option) => {
 			if (option.class_name === value) {
 				bool = false;
-				message = __('Already registered', 'vk-blocks');
+				message = __('Already registered', 'vk-blocks-pro');
 			}
 		});
 		setIsDisableAdd(bool);
@@ -100,11 +100,11 @@ export const AddItemButton = () => {
 				variant="secondary"
 				onClick={openModal}
 			>
-				{__('Add Custom Format', 'vk-blocks')}
+				{__('Add Custom Format', 'vk-blocks-pro')}
 			</Button>
 			{isModalOpen && (
 				<Modal
-					title={__('Add Custom Format', 'vk-blocks')}
+					title={__('Add Custom Format', 'vk-blocks-pro')}
 					onRequestClose={closeModal}
 					isDismissible={false}
 				>
@@ -113,9 +113,9 @@ export const AddItemButton = () => {
 							className="custom_format_item_class_name"
 							label={__(
 								'CSS class/unique ID (Required/Unchangeable)',
-								'vk-blocks'
+								'vk-blocks-pro'
 							)}
-							placeholder={__('(e.g.) vk-format-1', 'vk-blocks')}
+							placeholder={__('(e.g.) vk-format-1', 'vk-blocks-pro')}
 							onChange={(value) => {
 								value = value.trim();
 								setClassName(value);
@@ -132,7 +132,7 @@ export const AddItemButton = () => {
 							className="custom_format_item_title"
 							label={__(
 								'Toolbar title (Changeable)',
-								'vk-blocks'
+								'vk-blocks-pro'
 							)}
 							onChange={(value) => {
 								setTitle(value);
@@ -158,7 +158,7 @@ export const AddItemButton = () => {
 										variant="primary"
 										disabled={!isDisableAdd}
 									>
-										{__('Add', 'vk-blocks')}
+										{__('Add', 'vk-blocks-pro')}
 									</Button>
 								</FlexItem>
 							</Flex>

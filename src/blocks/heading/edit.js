@@ -211,7 +211,7 @@ export default function HeaddingEdit(props) {
 				onChange={(value) => {
 					setAttributes({ title: value });
 				}}
-				placeholder={__('Input title…', 'vk-blocks')}
+				placeholder={__('Input title…', 'vk-blocks-pro')}
 			/>
 			{parse(iconAfter)}
 		</>
@@ -226,7 +226,7 @@ export default function HeaddingEdit(props) {
 				onChange={(value) => setAttributes({ subText: value })}
 				style={subTextStyle}
 				className={subTextClass}
-				placeholder={__('Input sub text…', 'vk-blocks')}
+				placeholder={__('Input sub text…', 'vk-blocks-pro')}
 			/>
 		);
 	}
@@ -252,30 +252,30 @@ export default function HeaddingEdit(props) {
 				/>
 			</BlockControls>
 			<InspectorControls>
-				<PanelBody title={__('Style Settings', 'vk-blocks')}>
+				<PanelBody title={__('Style Settings', 'vk-blocks-pro')}>
 					<SelectControl
-						label={__('Heading style', 'vk-blocks')}
+						label={__('Heading style', 'vk-blocks-pro')}
 						value={titleStyle}
 						onChange={(value) =>
 							setAttributes({ titleStyle: value })
 						}
 						options={[
 							{
-								label: __('Default', 'vk-blocks'),
+								label: __('Default', 'vk-blocks-pro'),
 								value: 'default',
 							},
 							{
-								label: __('Plain', 'vk-blocks'),
+								label: __('Plain', 'vk-blocks-pro'),
 								value: 'plain',
 							},
 						]}
 					/>
 				</PanelBody>
-				<PanelBody title={__('Margin Setting', 'vk-blocks')}>
+				<PanelBody title={__('Margin Setting', 'vk-blocks-pro')}>
 					<p>
 						{__(
 							'Margin between Heading and sub text (rem)',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 					</p>
 					<RangeControl
@@ -292,7 +292,7 @@ export default function HeaddingEdit(props) {
 					<p>
 						{__(
 							'Margin bottom size of after this block (rem)',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 					</p>
 					<RangeControl
@@ -307,9 +307,9 @@ export default function HeaddingEdit(props) {
 						resetFallbackValue={null}
 					/>
 				</PanelBody>
-				<PanelBody title={__('Heading Settings', 'vk-blocks')}>
+				<PanelBody title={__('Heading Settings', 'vk-blocks-pro')}>
 					<RangeControl
-						label={__('Text size (rem)', 'vk-blocks')}
+						label={__('Text size (rem)', 'vk-blocks-pro')}
 						value={titleSize}
 						onChange={(value) => {
 							setAttributes({ titleSize: value });
@@ -321,7 +321,7 @@ export default function HeaddingEdit(props) {
 						resetFallbackValue={null}
 					/>
 					<BaseControl
-						label={__('Text Color', 'vk-blocks')}
+						label={__('Text Color', 'vk-blocks-pro')}
 						id={`vk_heading_textColor`}
 					>
 						<AdvancedColorPalette
@@ -331,10 +331,10 @@ export default function HeaddingEdit(props) {
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
-					title={__('Icon', 'vk-blocks') + ' ( ' + iconFamily + ' )'}
+					title={__('Icon', 'vk-blocks-pro') + ' ( ' + iconFamily + ' )'}
 				>
 					<BaseControl
-						label={__('Before text', 'vk-blocks')}
+						label={__('Before text', 'vk-blocks-pro')}
 						id={`vk_heading_beforeText`}
 					>
 						<FontAwesome
@@ -343,7 +343,7 @@ export default function HeaddingEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('After text', 'vk-blocks')}
+						label={__('After text', 'vk-blocks-pro')}
 						id={`vk_heading_afterText`}
 					>
 						<FontAwesome
@@ -352,7 +352,7 @@ export default function HeaddingEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Icon Color', 'vk-blocks')}
+						label={__('Icon Color', 'vk-blocks-pro')}
 						id={`vk_heading_iconColor`}
 					>
 						<AdvancedColorPalette
@@ -361,17 +361,17 @@ export default function HeaddingEdit(props) {
 						/>
 					</BaseControl>
 				</PanelBody>
-				<PanelBody title={__('Sub Text Settings', 'vk-blocks')}>
+				<PanelBody title={__('Sub Text Settings', 'vk-blocks-pro')}>
 					<RadioControl
-						label={__('Position', 'vk-blocks')}
+						label={__('Position', 'vk-blocks-pro')}
 						selected={subTextFlag}
 						options={[
 							{
-								label: __('Display', 'vk-blocks'),
+								label: __('Display', 'vk-blocks-pro'),
 								value: 'on',
 							},
 							{
-								label: __('Hide', 'vk-blocks'),
+								label: __('Hide', 'vk-blocks-pro'),
 								value: 'off',
 							},
 						]}
@@ -379,7 +379,7 @@ export default function HeaddingEdit(props) {
 							setAttributes({ subTextFlag: value })
 						}
 					/>
-					<p>{__('Text size (rem)', 'vk-blocks')}</p>
+					<p>{__('Text size (rem)', 'vk-blocks-pro')}</p>
 					<RangeControl
 						value={subTextSize}
 						onChange={(value) => {

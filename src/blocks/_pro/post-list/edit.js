@@ -124,7 +124,7 @@ export default function PostListEdit(props) {
 					key={taxonomy.slug}
 					label={sprintf(
 						// translators: Filter by %s
-						__('Filter by %s', 'vk-blocks'),
+						__('Filter by %s', 'vk-blocks-pro'),
 						taxonomy.labels.name
 					)}
 					value={isCheckedTermsData
@@ -179,7 +179,7 @@ export default function PostListEdit(props) {
 				<BaseControl
 					label={sprintf(
 						// translators: Filter by %s
-						__('Filter by %s', 'vk-blocks'),
+						__('Filter by %s', 'vk-blocks-pro'),
 						taxonomy.labels.name
 					)}
 					id={`vk_postList-terms`}
@@ -202,11 +202,11 @@ export default function PostListEdit(props) {
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={__('Display conditions', 'vk-blocks')}
+					title={__('Display conditions', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<BaseControl
-						label={__('Filter by PostTypes', 'vk-blocks')}
+						label={__('Filter by PostTypes', 'vk-blocks-pro')}
 						id={`vk_postList-postTypes`}
 					>
 						<AdvancedCheckboxControl
@@ -219,7 +219,7 @@ export default function PostListEdit(props) {
 					</BaseControl>
 					<hr />
 					<h4 className={`mt-0 mb-2`}>
-						{__('Taxonomy filter condition', 'vk-blocks')}
+						{__('Taxonomy filter condition', 'vk-blocks-pro')}
 					</h4>
 					<ButtonGroup className={`mb-3`}>
 						<Button
@@ -230,7 +230,7 @@ export default function PostListEdit(props) {
 								setAttributes({ taxQueryRelation: 'OR' })
 							}
 						>
-							{__('OR ( Whichever apply )', 'vk-blocks')}
+							{__('OR ( Whichever apply )', 'vk-blocks-pro')}
 						</Button>
 						<Button
 							isSmall
@@ -240,13 +240,13 @@ export default function PostListEdit(props) {
 								setAttributes({ taxQueryRelation: 'AND' })
 							}
 						>
-							{__('AND ( All apply )', 'vk-blocks')}
+							{__('AND ( All apply )', 'vk-blocks-pro')}
 						</Button>
 					</ButtonGroup>
 					{taxonomiesCheckBox}
 					{termFormTokenFields}
 					<BaseControl
-						label={__('Number of Posts', 'vk-blocks')}
+						label={__('Number of Posts', 'vk-blocks-pro')}
 						id={`vk_postList-numberPosts`}
 					>
 						<RangeControl
@@ -259,11 +259,11 @@ export default function PostListEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Filter by Date', 'vk-blocks')}
+						label={__('Filter by Date', 'vk-blocks-pro')}
 						id={`vk_postList-dateFilter`}
 					>
 						<SelectControl
-							label={__('Period of Time', 'vk-blocks')}
+							label={__('Period of Time', 'vk-blocks-pro')}
 							value={targetPeriod}
 							onChange={(value) =>
 								setAttributes({ targetPeriod: value })
@@ -271,31 +271,31 @@ export default function PostListEdit(props) {
 							options={[
 								{
 									value: 'all',
-									label: __('Whole Period', 'vk-blocks'),
+									label: __('Whole Period', 'vk-blocks-pro'),
 								},
 								{
 									value: 'from-today',
-									label: __('From Today', 'vk-blocks'),
+									label: __('From Today', 'vk-blocks-pro'),
 								},
 								{
 									value: 'from-now',
-									label: __('From Now', 'vk-blocks'),
+									label: __('From Now', 'vk-blocks-pro'),
 								},
 								{
 									value: 'from-tomorrow',
-									label: __('From Tomorrow', 'vk-blocks'),
+									label: __('From Tomorrow', 'vk-blocks-pro'),
 								},
 							]}
 						/>
 						<p>
 							{__(
 								'* If you choose a future period, you will need to customize it so that future posts will be published immediately.',
-								'vk-blocks'
+								'vk-blocks-pro'
 							)}
 						</p>
 					</BaseControl>
 					<BaseControl
-						label={__('Order', 'vk-blocks')}
+						label={__('Order', 'vk-blocks-pro')}
 						id={`vk_postList-order`}
 					>
 						<SelectControl
@@ -304,17 +304,17 @@ export default function PostListEdit(props) {
 							options={[
 								{
 									value: 'ASC',
-									label: __('ASC', 'vk-blocks'),
+									label: __('ASC', 'vk-blocks-pro'),
 								},
 								{
 									value: 'DESC',
-									label: __('DESC', 'vk-blocks'),
+									label: __('DESC', 'vk-blocks-pro'),
 								},
 							]}
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Order by', 'vk-blocks')}
+						label={__('Order by', 'vk-blocks-pro')}
 						id={`vk_postList-orderBy`}
 					>
 						<SelectControl
@@ -323,25 +323,25 @@ export default function PostListEdit(props) {
 							options={[
 								{
 									value: 'date',
-									label: __('Published Date', 'vk-blocks'),
+									label: __('Published Date', 'vk-blocks-pro'),
 								},
 								{
 									value: 'modified',
-									label: __('Modefied Date', 'vk-blocks'),
+									label: __('Modefied Date', 'vk-blocks-pro'),
 								},
 								{
 									value: 'title',
-									label: __('Title', 'vk-blocks'),
+									label: __('Title', 'vk-blocks-pro'),
 								},
 								{
 									value: 'rand',
-									label: __('Random', 'vk-blocks'),
+									label: __('Random', 'vk-blocks-pro'),
 								},
 							]}
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('offset', 'vk-blocks')}
+						label={__('offset', 'vk-blocks-pro')}
 						id={`vk_postList-offset`}
 					>
 						<TextControl
@@ -355,7 +355,7 @@ export default function PostListEdit(props) {
 					</BaseControl>
 					<BaseControl>
 						<CheckboxControl
-							label={__('Ignore this post', 'vk-blocks')}
+							label={__('Ignore this post', 'vk-blocks-pro')}
 							checked={selfIgnore}
 							onChange={(v) => setAttributes({ selfIgnore: v })}
 						/>

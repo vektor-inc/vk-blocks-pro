@@ -30,7 +30,7 @@
 		}
 	},
 	"description": "Display Page list from ancestor page",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
 		"className": true
 	}

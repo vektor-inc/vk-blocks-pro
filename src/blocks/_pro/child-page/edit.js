@@ -24,7 +24,7 @@ export default withSelect((select) => {
 	attributes.name = name;
 
 	// Choice of This Page.
-	const options = [{ label: __('Current page', 'vk-blocks'), value: -1 }];
+	const options = [{ label: __('Current page', 'vk-blocks-pro'), value: -1 }];
 
 	// Make choice list of pages
 	if (pages !== undefined && pages !== null) {
@@ -60,11 +60,11 @@ export default withSelect((select) => {
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={__('Display conditions', 'vk-blocks')}
+					title={__('Display conditions', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<BaseControl
-						label={__('Parent', 'vk-blocks')}
+						label={__('Parent', 'vk-blocks-pro')}
 						id={`vk_childPage-parent`}
 					>
 						<SelectControl
@@ -79,7 +79,7 @@ export default withSelect((select) => {
 					</BaseControl>
 					<BaseControl id={`vk_childPage-ignoreThisPost`}>
 						<CheckboxControl
-							label={__('Ignore this post', 'vk-blocks')}
+							label={__('Ignore this post', 'vk-blocks-pro')}
 							checked={selfIgnore}
 							onChange={(v) => setAttributes({ selfIgnore: v })}
 						/>

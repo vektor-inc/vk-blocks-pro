@@ -4,7 +4,7 @@
 	"category": "vk-blocks-cat",
 	"title": "New FAQ",
 	"description": "It displays a combination of questions and answers. You can freely add blocks to the question area as well.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
 		"anchor": true,
 		"className": true

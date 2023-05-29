@@ -25,7 +25,10 @@ export const DisplayItemsControl = (props) => {
 	} = attributes;
 
 	return (
-		<PanelBody title={__('Display item', 'vk-blocks-pro')} initialOpen={false}>
+		<PanelBody
+			title={__('Display item', 'vk-blocks-pro')}
+			initialOpen={false}
+		>
 			<CheckboxControl
 				label={__('Image', 'vk-blocks-pro')}
 				checked={display_image} //eslint-disable-line camelcase

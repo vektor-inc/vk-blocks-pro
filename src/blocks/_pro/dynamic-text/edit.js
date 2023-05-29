@@ -95,7 +95,9 @@ export default function DynamicTextEdit(props) {
 		</div>
 	);
 	if (displayElement === 'post-type' && !postType) {
-		editContent = <TagName>{__('Post Type Name', 'vk-blocks-pro')}</TagName>;
+		editContent = (
+			<TagName>{__('Post Type Name', 'vk-blocks-pro')}</TagName>
+		);
 	} else if (displayElement === 'ancestor-page' && !parentPageId) {
 		editContent = (
 			<TagName>{__('Ancestor Page Title', 'vk-blocks-pro')}</TagName>
@@ -122,7 +124,9 @@ export default function DynamicTextEdit(props) {
 				/>
 			</BlockControls>
 			<InspectorControls>
-				<PanelBody title={__('Display element settings', 'vk-blocks-pro')}>
+				<PanelBody
+					title={__('Display element settings', 'vk-blocks-pro')}
+				>
 					<SelectControl
 						label={__('Display element', 'vk-blocks-pro')}
 						value={displayElement}

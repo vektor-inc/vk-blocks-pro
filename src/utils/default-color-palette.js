@@ -19,7 +19,10 @@ export class DefaultColorPalette extends React.Component {
 				selected={dcpColor}
 				options={[
 					{ label: __('Primary', 'vk-blocks-pro'), value: 'primary' },
-					{ label: __('Secondary', 'vk-blocks-pro'), value: 'secondary' },
+					{
+						label: __('Secondary', 'vk-blocks-pro'),
+						value: 'secondary',
+					},
 					{ label: __('Success', 'vk-blocks-pro'), value: 'success' },
 					{ label: __('Info', 'vk-blocks-pro'), value: 'info' },
 					{ label: __('Warning', 'vk-blocks-pro'), value: 'warning' },

@@ -439,7 +439,10 @@ export default function BalloonEdit(props) {
 						{__('Type', 'vk-blocks-pro')}
 					</p>
 					<p className={'mb-1'}>
-						{__('Please select the type of balloon.', 'vk-blocks-pro')}{' '}
+						{__(
+							'Please select the type of balloon.',
+							'vk-blocks-pro'
+						)}{' '}
 					</p>
 					<ButtonGroup className="mb-3">
 						<Button
@@ -516,7 +519,10 @@ export default function BalloonEdit(props) {
 					{BorderSetting}
 
 					<p className={'mb-1 block-prop-title'}>
-						{__('Background color of speech balloon', 'vk-blocks-pro')}
+						{__(
+							'Background color of speech balloon',
+							'vk-blocks-pro'
+						)}
 					</p>
 					<AdvancedColorPalette
 						enableAlpha={false}
@@ -597,7 +603,10 @@ export default function BalloonEdit(props) {
 										className={`vk_balloon_icon_image vk_balloon_icon_image-type-${balloonImageType} ${iconImageBorderClass}`}
 										style={iconImageColorStyle}
 										src={IconImage}
-										alt={__('Upload image', 'vk-blocks-pro')}
+										alt={__(
+											'Upload image',
+											'vk-blocks-pro'
+										)}
 									/>
 								)}
 							</Button>

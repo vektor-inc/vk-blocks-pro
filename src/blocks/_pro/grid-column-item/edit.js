@@ -117,7 +117,10 @@ export default function GridColumnItemEdit(props) {
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
-					title={__('Margin setting inside the item', 'vk-blocks-pro')}
+					title={__(
+						'Margin setting inside the item',
+						'vk-blocks-pro'
+					)}
 					initialOpen={false}
 				>
 					<RangeControl

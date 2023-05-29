@@ -160,7 +160,10 @@ export default function AdminBalloon() {
 										htmlFor="icon_title"
 										className="balloonIconList_nameLabel"
 									>
-										{__('Balloon Image Name', 'vk-blocks-pro')}
+										{__(
+											'Balloon Image Name',
+											'vk-blocks-pro'
+										)}
 									</label>
 									<TextControl
 										id={`icon_title_${index}`}

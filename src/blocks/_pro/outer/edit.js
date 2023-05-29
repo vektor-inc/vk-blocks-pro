@@ -374,7 +374,10 @@ export default function OuterEdit(props) {
 					<p>{__('Width', 'vk-blocks-pro')} </p>
 					<BaseControl>
 						<RadioControl
-							label={__('Padding (Left and Right)', 'vk-blocks-pro')}
+							label={__(
+								'Padding (Left and Right)',
+								'vk-blocks-pro'
+							)}
 							selected={padding_left_and_right} //eslint-disable-line camelcase
 							options={[
 								{
@@ -406,7 +409,10 @@ export default function OuterEdit(props) {
 							}
 						/>
 						<RadioControl
-							label={__('Padding (Top and Bottom)', 'vk-blocks-pro')}
+							label={__(
+								'Padding (Top and Bottom)',
+								'vk-blocks-pro'
+							)}
 							className={'mb-1'}
 							selected={padding_top_and_bottom} //eslint-disable-line camelcase
 							options={[

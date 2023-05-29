@@ -57,7 +57,9 @@ export const SaveButton = (props) => {
 				</Button>
 				{isSaveSuccess && (
 					<div>
-						<Snackbar>{__('Save Success', 'vk-blocks-pro')} </Snackbar>
+						<Snackbar>
+							{__('Save Success', 'vk-blocks-pro')}{' '}
+						</Snackbar>
 					</div>
 				)}
 			</div>

@@ -141,8 +141,14 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 						<RadioControl
 							selected={buttonType}
 							options={[
-								{ label: __('Solid', 'vk-blocks-pro'), value: '0' },
-								{ label: __('Ghost', 'vk-blocks-pro'), value: '1' },
+								{
+									label: __('Solid', 'vk-blocks-pro'),
+									value: '0',
+								},
+								{
+									label: __('Ghost', 'vk-blocks-pro'),
+									value: '1',
+								},
 							]}
 							onChange={(value) =>
 								setAttributes({ buttonType: value })
@@ -165,7 +171,10 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 								label: __('Success', 'vk-blocks-pro'),
 								value: 'success',
 							},
-							{ label: __('Info', 'vk-blocks-pro'), value: 'info' },
+							{
+								label: __('Info', 'vk-blocks-pro'),
+								value: 'info',
+							},
 							{
 								label: __('Warning', 'vk-blocks-pro'),
 								value: 'warning',
@@ -174,8 +183,14 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 								label: __('Danger', 'vk-blocks-pro'),
 								value: 'danger',
 							},
-							{ label: __('Light', 'vk-blocks-pro'), value: 'light' },
-							{ label: __('Dark', 'vk-blocks-pro'), value: 'dark' },
+							{
+								label: __('Light', 'vk-blocks-pro'),
+								value: 'light',
+							},
+							{
+								label: __('Dark', 'vk-blocks-pro'),
+								value: 'dark',
+							},
 						]}
 						onChange={(value) =>
 							setAttributes({ buttonColor: value })
@@ -233,8 +248,14 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 						label={__('Layout Type', 'vk-blocks-pro')}
 						selected={layout}
 						options={[
-							{ label: __('Right', 'vk-blocks-pro'), value: 'right' },
-							{ label: __('Left', 'vk-blocks-pro'), value: 'left' },
+							{
+								label: __('Right', 'vk-blocks-pro'),
+								value: 'right',
+							},
+							{
+								label: __('Left', 'vk-blocks-pro'),
+								value: 'left',
+							},
 						]}
 						onChange={(value) => setAttributes({ layout: value })}
 					/>

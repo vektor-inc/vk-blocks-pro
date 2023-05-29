@@ -16,7 +16,9 @@ export default function AdminNewFaq() {
 	return (
 		<>
 			<section>
-				<h3 id="faq-setting">{__('FAQ Block Setting', 'vk-blocks-pro')}</h3>
+				<h3 id="faq-setting">
+					{__('FAQ Block Setting', 'vk-blocks-pro')}
+				</h3>
 				<SelectControl
 					name="vk_blocks_options[new_faq_accordion]"
 					className="vk_admin_selectControl"

@@ -237,7 +237,10 @@ export default function BorderBoxEdit(props) {
 					<BaseControl
 						id="dot-fa"
 						label={
-							__('Icon', 'vk-blocks-pro') + ' ( ' + iconFamily + ' )'
+							__('Icon', 'vk-blocks-pro') +
+							' ( ' +
+							iconFamily +
+							' )'
 						}
 					>
 						<FontAwesome

@@ -419,7 +419,10 @@ export default function SliderEdit(props) {
 				</BaseControl>
 				<BaseControl id={`vk_slider-slidesPerGroup`}>
 					<ToggleControl
-						label={__('Centering the active slide', 'vk-blocks-pro')}
+						label={__(
+							'Centering the active slide',
+							'vk-blocks-pro'
+						)}
 						className={'mb-1'}
 						checked={centeredSlides} //eslint-disable-line camelcase
 						onChange={(checked) =>
@@ -477,7 +480,10 @@ export default function SliderEdit(props) {
 				/>
 			</BlockControls>
 			<InspectorControls>
-				<PanelBody title={__('Width', 'vk-blocks-pro')} initialOpen={true}>
+				<PanelBody
+					title={__('Width', 'vk-blocks-pro')}
+					initialOpen={true}
+				>
 					<BaseControl id={`vk_slider-width`}>
 						<ButtonGroup>
 							<Button
@@ -505,7 +511,10 @@ export default function SliderEdit(props) {
 				>
 					<AdvancedUnitControl {...props} />
 					<BaseControl
-						label={__('Slide Height for each device.', 'vk-blocks-pro')}
+						label={__(
+							'Slide Height for each device.',
+							'vk-blocks-pro'
+						)}
 						id={`vk_slider-SlideHeight`}
 					>
 						<RangeControl
@@ -695,7 +704,10 @@ export default function SliderEdit(props) {
 									value: 'bullets',
 								},
 								{
-									label: __('Number of slides', 'vk-blocks-pro'),
+									label: __(
+										'Number of slides',
+										'vk-blocks-pro'
+									),
 									value: 'fraction',
 								},
 							]}

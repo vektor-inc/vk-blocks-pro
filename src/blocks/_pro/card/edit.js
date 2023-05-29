@@ -85,7 +85,10 @@ export default function CardEdit(props) {
 				>
 					<AdvancedUnitControl {...props} />
 					<BaseControl
-						label={__('Slide Height for each device.', 'vk-blocks-pro')}
+						label={__(
+							'Slide Height for each device.',
+							'vk-blocks-pro'
+						)}
 						id={`vk_card-SlideHeight`}
 					>
 						<AdvancedViewportControl
@@ -123,7 +126,10 @@ export const DisplayItemsControlForCards = (props) => {
 		btn_text, //eslint-disable-line camelcase
 	} = attributes;
 	return (
-		<PanelBody title={__('Display item', 'vk-blocks-pro')} initialOpen={false}>
+		<PanelBody
+			title={__('Display item', 'vk-blocks-pro')}
+			initialOpen={false}
+		>
 			<CheckboxControl
 				label={__('Title', 'vk-blocks-pro')}
 				className={'mb-1'}

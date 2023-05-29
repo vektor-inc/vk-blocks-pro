@@ -323,7 +323,10 @@ export default function PostListEdit(props) {
 							options={[
 								{
 									value: 'date',
-									label: __('Published Date', 'vk-blocks-pro'),
+									label: __(
+										'Published Date',
+										'vk-blocks-pro'
+									),
 								},
 								{
 									value: 'modified',

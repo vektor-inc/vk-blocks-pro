@@ -134,7 +134,10 @@ export default function IconCardItemedit(props) {
 					</BaseControl>
 					<BaseControl
 						label={
-							__('Icon', 'vk-blocks-pro') + ' ( ' + iconFamily + ' )'
+							__('Icon', 'vk-blocks-pro') +
+							' ( ' +
+							iconFamily +
+							' )'
 						}
 						id={`vk_iconCardItem-icon`}
 					>

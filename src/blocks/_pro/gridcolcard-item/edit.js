@@ -216,7 +216,10 @@ export default function Edit(props) {
 									label={
 										url !== '' && isOpen
 											? __('Unlink')
-											: __('Input Link URL', 'vk-blocks-pro')
+											: __(
+													'Input Link URL',
+													'vk-blocks-pro'
+											  )
 									}
 									onClick={setLink}
 								/>
@@ -307,7 +310,10 @@ export default function Edit(props) {
 					title={__('Column Setting', 'vk-blocks-pro')}
 					initialOpen={true}
 				>
-					<BaseControl label={__('Link URL:', 'vk-blocks-pro')} id={`	`}>
+					<BaseControl
+						label={__('Link URL:', 'vk-blocks-pro')}
+						id={`	`}
+					>
 						<TextControl
 							value={url}
 							onChange={(value) => setAttributes({ url: value })}

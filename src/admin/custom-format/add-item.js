@@ -115,7 +115,10 @@ export const AddItemButton = () => {
 								'CSS class/unique ID (Required/Unchangeable)',
 								'vk-blocks-pro'
 							)}
-							placeholder={__('(e.g.) vk-format-1', 'vk-blocks-pro')}
+							placeholder={__(
+								'(e.g.) vk-format-1',
+								'vk-blocks-pro'
+							)}
 							onChange={(value) => {
 								value = value.trim();
 								setClassName(value);

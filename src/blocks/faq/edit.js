@@ -41,7 +41,10 @@ export default function FAQEdit({ attributes, setAttributes }) {
 					className={'vk_faq_title'}
 					onChange={(value) => setAttributes({ heading: value })}
 					value={heading}
-					placeholder={__('Please enter a question.', 'vk-blocks-pro')}
+					placeholder={__(
+						'Please enter a question.',
+						'vk-blocks-pro'
+					)}
 				/>
 				<dd className={`vk_faq_content`}>
 					<InnerBlocks template={TEMPLATE} />

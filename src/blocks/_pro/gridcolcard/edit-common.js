@@ -114,7 +114,10 @@ const CommonItemControl = (props) => {
 								options={options}
 							/>
 							<ToggleControl
-								label={__('Image fit to column', 'vk-blocks-pro')}
+								label={__(
+									'Image fit to column',
+									'vk-blocks-pro'
+								)}
 								checked={headerImageFit}
 								onChange={(checked) =>
 									setAttributes({ headerImageFit: checked })

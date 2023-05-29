@@ -146,7 +146,9 @@ export default function IconOuterEdit(props) {
 							{__('Reset')}
 						</Button>
 					</div>
-					<p className={`mt-0 mb-2`}>{__('Margin', 'vk-blocks-pro')}</p>
+					<p className={`mt-0 mb-2`}>
+						{__('Margin', 'vk-blocks-pro')}
+					</p>
 					<div className="vk_icon_custombox">
 						<TextControl
 							className={`vk_icon_custombox_number`}
@@ -223,7 +225,9 @@ export default function IconOuterEdit(props) {
 							allowReset={true}
 						/>
 					</BaseControl>
-					<p className={`mt-0 mb-2`}>{__('Style', 'vk-blocks-pro')}</p>
+					<p className={`mt-0 mb-2`}>
+						{__('Style', 'vk-blocks-pro')}
+					</p>
 					<ButtonGroup className={`mb-3`}>
 						<Button
 							isSmall

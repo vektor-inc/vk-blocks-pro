@@ -67,7 +67,10 @@ export default function IconCardEdit(props) {
 				>
 					<ColumnLayout {...props} />
 				</PanelBody>
-				<PanelBody title={__('Align', 'vk-blocks-pro')} initialOpen={false}>
+				<PanelBody
+					title={__('Align', 'vk-blocks-pro')}
+					initialOpen={false}
+				>
 					<BaseControl
 						label={__('Title', 'vk-blocks-pro')}
 						id={`vk_iconCard-title`}

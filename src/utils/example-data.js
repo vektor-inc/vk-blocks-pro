@@ -14,4 +14,7 @@ export const pictureJson = `{"alt":"Example Image","sizes":{"full":{"url":"${ico
 export const position = __('Theoretical Physicist', 'vk-blocks-pro');
 export const profileTitle = __('Profile', 'vk-blocks-pro');
 export const profileName = __('Albert Einstein', 'vk-blocks-pro');
-export const profileLifeTime = __('14 March 1879 – 18 April 1955', 'vk-blocks-pro');
+export const profileLifeTime = __(
+	'14 March 1879 – 18 April 1955',
+	'vk-blocks-pro'
+);

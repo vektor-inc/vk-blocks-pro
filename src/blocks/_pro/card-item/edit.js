@@ -219,7 +219,10 @@ ${btnClass}`,
 						<TextControl
 							value={url}
 							onChange={(value) => setAttributes({ url: value })}
-							placeholder={__('https://example.com', 'vk-blocks-pro')}
+							placeholder={__(
+								'https://example.com',
+								'vk-blocks-pro'
+							)}
 						/>
 					</BaseControl>
 					<LinkControl blockName={'card'} {...props} />

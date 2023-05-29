@@ -2765,20 +2765,20 @@ msgid ""
 msgstr ""
 
 #: src/utils/font-awesome-new.js:241
-msgid "Ex) <i class=\"fas fa-arrow-circle-right\"></i>"
+msgid "Ex) "
 msgstr ""
 
-#: src/utils/font-awesome-new.js:255
+#: src/utils/font-awesome-new.js:253
 msgid ""
 "When you click save button, the window will be reloaded and this setting "
 "will be applied."
 msgstr ""
 
-#: src/utils/font-awesome-new.js:265
+#: src/utils/font-awesome-new.js:263
 msgid "Save"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:279
+#: src/utils/font-awesome-new.js:277
 msgid "Select Icon"
 msgstr ""
 

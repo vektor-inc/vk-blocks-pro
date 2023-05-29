@@ -80,9 +80,9 @@ export default function DynamicTextEdit(props) {
 		textAlign,
 		displayElement,
 		tagName: TagName = '',
-		ancestorPageDisplayOption,
+		ancestorPageHiddenOption,
 	} = attributes;
-	attributes.ancestorPageDisplayOption = ancestorPageDisplayOption;
+	attributes.ancestorPageHiddenOption = ancestorPageHiddenOption;
 
 	// Hooks.
 	const blockProps = useBlockProps({
@@ -175,17 +175,17 @@ export default function DynamicTextEdit(props) {
 						<BaseControl>
 							<CheckboxControl
 								label={__(
-									'Hide page on Ancector Page',
+									'Hide on Ancestor Hierarchy Pages',
 									'vk-blocks'
 								)}
-								checked={ancestorPageDisplayOption}
+								checked={ancestorPageHiddenOption}
 								onChange={(v) =>
 									setAttributes({
-										ancestorPageDisplayOption: v,
+										ancestorPageHiddenOption: v,
 									})
 								}
 							/>
-							{ancestorPageDisplayOption && (
+							{ancestorPageHiddenOption && (
 								<div className="alert alert-warning mt-0 mb-4">
 									{__(
 										'This block will not display on pages other than pages that have a parent hierarchy.',

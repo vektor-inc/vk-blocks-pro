@@ -738,22 +738,26 @@ msgstr ""
 msgid "Slide Height for each device."
 msgstr ""
 
-#: src/blocks/_pro/child-page/edit.js:27
-msgid "Current page"
+#: src/blocks/_pro/child-page/edit.js:101
+msgid "There are no Page."
 msgstr ""
 
-#: src/blocks/_pro/child-page/edit.js:63
+#: src/blocks/_pro/child-page/edit.js:110
 #: src/blocks/_pro/post-list/edit.js:205
 msgid "Display conditions"
 msgstr ""
 
-#: src/blocks/_pro/child-page/edit.js:67
+#: src/blocks/_pro/child-page/edit.js:114
 msgid "Parent"
 msgstr ""
 
-#: src/blocks/_pro/child-page/edit.js:82
+#: src/blocks/_pro/child-page/edit.js:129
 #: src/blocks/_pro/post-list/edit.js:361
 msgid "Ignore this post"
+msgstr ""
+
+#: src/blocks/_pro/child-page/edit.js:27
+msgid "Current page"
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:103
@@ -2765,20 +2769,20 @@ msgid ""
 msgstr ""
 
 #: src/utils/font-awesome-new.js:241
-msgid "Ex) <i class=\"fas fa-arrow-circle-right\"></i>"
+msgid "Ex) "
 msgstr ""
 
-#: src/utils/font-awesome-new.js:255
+#: src/utils/font-awesome-new.js:253
 msgid ""
 "When you click save button, the window will be reloaded and this setting "
 "will be applied."
 msgstr ""
 
-#: src/utils/font-awesome-new.js:265
+#: src/utils/font-awesome-new.js:263
 msgid "Save"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:279
+#: src/utils/font-awesome-new.js:277
 msgid "Select Icon"
 msgstr ""
 

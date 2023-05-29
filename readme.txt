@@ -68,7 +68,8 @@ e.g.
 [ Add Function ] Allow alpha value in some blocks.
 [ Add Function ][ Animation(Pro) ] Added transforms settings to wrap and unwrap.
 [ Add Alert ][ Slider ] Add loop alert
-[ Bug Fix ] Fix Textdomain for VK Blocks Pro
+[ Bug fix ][ Child page list ] "There are no page." is not displayed on the front page.
+[ Bug Fix ] Fix Textdomain( Translate ) for VK Blocks Pro
 
 = 1.56.0 =
 [ Add Block ][ Dynamic Text Block (Pro) ] Add Dynamic text block.

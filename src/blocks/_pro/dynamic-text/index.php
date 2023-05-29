@@ -15,9 +15,9 @@ use VektorInc\VK_Helpers\VkHelpers;
  */
 function vk_blocks_dynamic_text_render_callback( $attributes ) {
 	$options = array(
-		'textAlign'                 => ( isset( $attributes['textAlign'] ) ) ? esc_attr( $attributes['textAlign'] ) : null,
-		'displayElement'            => $attributes['displayElement'],
-		'tagName'                   => $attributes['tagName'],
+		'textAlign'                => ( isset( $attributes['textAlign'] ) ) ? esc_attr( $attributes['textAlign'] ) : null,
+		'displayElement'           => $attributes['displayElement'],
+		'tagName'                  => $attributes['tagName'],
 		'ancestorPageHiddenOption' => $attributes['ancestorPageHiddenOption'],
 	);
 
@@ -94,18 +94,18 @@ function vk_blocks_register_block_dynamic_text() {
 			'editor_script'   => 'vk-blocks-build-js',
 			'attributes'      => array_merge(
 				array(
-					'className'                 => array(
+					'className'                => array(
 						'type'    => 'string',
 						'default' => '',
 					),
-					'textAlign'                 => array(
+					'textAlign'                => array(
 						'type' => 'string',
 					),
-					'displayElement'            => array(
+					'displayElement'           => array(
 						'type'    => 'string',
 						'default' => 'please-select',
 					),
-					'tagName'                   => array(
+					'tagName'                  => array(
 						'type'    => 'string',
 						'default' => 'div',
 					),

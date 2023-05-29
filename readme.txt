@@ -22,13 +22,16 @@ This is a plugin that extends Gutenberg's blocks.
 * FAQ
 * Balloon
 * Flow
+* Page Content
 * Button
 * PR Blocks
 * PR Content
 * Border box
 * Title（with sub text）
 * Responsive Spacer
-* Page Content
+* Breadcrumb [ Pro ]
+* Dynamic Text ( Post Type name / Ancestor Page name ) [ Pro ]
+* Grid Column Card [ Pro ]
 * Post List [ Pro ]
 * Step [ Pro ]
 * Timeline [ Pro ]

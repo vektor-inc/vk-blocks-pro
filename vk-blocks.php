@@ -154,6 +154,8 @@ require_once plugin_dir_path( __FILE__ ) . 'inc/vk-blocks-config.php';
  */
 
 if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
+
+	// 翻訳を実行
 	add_action(
 		'plugins_loaded',
 		function () {

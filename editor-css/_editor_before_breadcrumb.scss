@@ -2,10 +2,23 @@
 /* vk_breadcrumb
 /*-------------------------------------------*/
 .editor-styles-wrapper {
+	.is-layout-constrained > .wp-block-vk-blocks-breadcrumb {
+		margin-block-start: 0;
+	}
 	.wp-block-vk-blocks-breadcrumb {
 		font-size: 12px;
+		margin-block-start: 0;
 		.vk_breadcrumb {
 			font-size: inherit;
+		}
+	}
+	.vk_breadcrumb {
+		.vk_breadcrumb_list {
+			margin-block-start: 0;
+			padding:0;
+		}
+		.vk_breadcrumb_list_item {
+			margin:0;
 		}
 	}
 }

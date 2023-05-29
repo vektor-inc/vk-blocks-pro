@@ -22,13 +22,16 @@ This is a plugin that extends Gutenberg's blocks.
 * FAQ
 * Balloon
 * Flow
+* Page Content
 * Button
 * PR Blocks
 * PR Content
 * Border box
 * Title（with sub text）
 * Responsive Spacer
-* Page Content
+* Breadcrumb [ Pro ]
+* Dynamic Text ( Post Type name / Ancestor Page name ) [ Pro ]
+* Grid Column Card [ Pro ]
 * Post List [ Pro ]
 * Step [ Pro ]
 * Timeline [ Pro ]
@@ -62,7 +65,7 @@ e.g.
 
 == Changelog ==
 
-[ Add Function ]Allow alpha value in some blocks.
+[ Add Function ] Allow alpha value in some blocks.
 [ Add Function ][ Animation(Pro) ] Added transforms settings to wrap and unwrap.
 [ Add Alert ][ Slider ] Add loop alert
 [ Bug Fix ] Fix Textdomain for VK Blocks Pro

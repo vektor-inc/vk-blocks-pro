@@ -9,7 +9,7 @@ const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 
 // replace_text_domain
-gulp.task('text-domain', (done) => {
+gulp.task('text-domain-pro', (done) => {
 	// vk-admin.
 	gulp.src(['./inc/vk-admin/package/*.php'])
 		.pipe(replace("'vk_admin_textdomain'", "'vk-blocks-pro'"))
@@ -29,6 +29,16 @@ gulp.task('text-domain', (done) => {
 	gulp.src(['./inc/vk-css-optimize/package/*.php'])
 		.pipe(replace("'css_optimize_textdomain'", "'vk-blocks-pro'"))
 		.pipe(gulp.dest('./inc/vk-css-optimize/package/'));
+	done();
+});
+
+// replace_text_domain
+gulp.task('text-domain-free', (done) => {
+	gulp.src(['./**'])
+		.pipe(replace("'vk-blocks-pro'", "'vk-blocks'"))
+		.pipe(replace("\"vk-blocks-pro\"", "\"vk-blocks\""))
+		.pipe(replace("Text Domain: vk-blocks-pro", "Text Domain: vk-blocks"))
+		.pipe(gulp.dest('./'));
 	done();
 });
 
@@ -215,7 +225,7 @@ gulp.task('watch', () => {
 gulp.task(
 	'build:dev:free',
 	gulp.series(
-		'text-domain',
+		'text-domain-free',
 		'sass',
 		'helper-js',
 		'sass_editor',
@@ -226,7 +236,7 @@ gulp.task(
 gulp.task(
 	'build:dev:pro',
 	gulp.series(
-		'text-domain',
+		'text-domain-pro',
 		'sass',
 		'helper-js',
 		'helper-js-pro',
@@ -240,7 +250,7 @@ gulp.task(
 gulp.task(
 	'build:free',
 	gulp.series(
-		'text-domain',
+		'text-domain-free',
 		'sass',
 		'helper-js',
 		'sass_editor',
@@ -253,7 +263,7 @@ gulp.task(
 gulp.task(
 	'build:pro',
 	gulp.series(
-		'text-domain',
+		'text-domain-pro',
 		'sass',
 		'helper-js',
 		'helper-js-pro',

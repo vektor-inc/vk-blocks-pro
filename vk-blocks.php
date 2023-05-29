@@ -154,7 +154,6 @@ require_once plugin_dir_path( __FILE__ ) . 'inc/vk-blocks-config.php';
  */
 
 if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
-
 	add_action(
 		'plugins_loaded',
 		function () {
@@ -213,7 +212,7 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 
 	add_action( 'after_setup_theme', 'vk_blocks_update_checker' );
 
-	
+
 
 	if ( ! function_exists( 'vk_blocks_the_update_messsage' ) ) {
 		/**

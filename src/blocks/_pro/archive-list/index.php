@@ -84,9 +84,9 @@ function vk_blocks_archive_list_render_callback( $attributes ) {
 		// dropdown
 		$label = '';
 		if ( 'yearly' === $attributes['displayType'] ) {
-			$label .= __( 'Please select year', 'vk-blocks' );
+			$label .= __( 'Please select year', 'vk-blocks-pro' );
 		} else {
-			$label .= __( 'Please select month', 'vk-blocks' );
+			$label .= __( 'Please select month', 'vk-blocks-pro' );
 		}
 
 		$block_content = sprintf(

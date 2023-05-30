@@ -24,7 +24,7 @@ export default function BlockStyleManager() {
 		<>
 			<section>
 				<h3 id="block-style-manager-setting">
-					{__('Block Style Manager Setting', 'vk-blocks')}
+					{__('Block Style Manager Setting', 'vk-blocks-pro')}
 				</h3>
 				<div
 					tabIndex="0"

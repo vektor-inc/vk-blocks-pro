@@ -4,7 +4,7 @@
 	"category": "vk-blocks-cat",
 	"title": "Alert",
 	"description": "A colored box with four statuses, including annotations and alerts.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"attributes": {
 		"style": {
 			"type": "string",

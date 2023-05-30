@@ -28,7 +28,7 @@ export const DeleteButton = (props) => {
 
 	const textStyleTitle = !!blockStyleListObj.property_label
 		? blockStyleListObj.property_label
-		: __('Custom Block Style Setting', 'vk-blocks');
+		: __('Custom Block Style Setting', 'vk-blocks-pro');
 
 	return (
 		<div className="custom_block_style_item_delete_button">
@@ -37,13 +37,13 @@ export const DeleteButton = (props) => {
 				isDestructive
 				onClick={openModal}
 			>
-				{__('Delete', 'vk-blocks')}
+				{__('Delete', 'vk-blocks-pro')}
 			</Button>
 			{isModalOpen && (
 				<Modal
 					title={sprintf(
 						// translators: Would you like to delete %s
-						__('Would you like to delete %s?', 'vk-blocks'),
+						__('Would you like to delete %s?', 'vk-blocks-pro'),
 						textStyleTitle
 					)}
 					onRequestClose={closeModal}
@@ -53,7 +53,7 @@ export const DeleteButton = (props) => {
 						<p>
 							{__(
 								'If this Block Style is used for saved content, the style may change.',
-								'vk-blocks'
+								'vk-blocks-pro'
 							)}
 						</p>
 						<div className="custom_block_style_delete_modal_button_area">
@@ -72,7 +72,7 @@ export const DeleteButton = (props) => {
 											closeModal();
 										}}
 									>
-										{__('Delete', 'vk-blocks')}
+										{__('Delete', 'vk-blocks-pro')}
 									</Button>
 								</FlexItem>
 							</Flex>

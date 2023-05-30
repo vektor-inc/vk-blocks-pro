@@ -112,33 +112,36 @@ export default function SliderItemEdit(props) {
 			</BlockControls>
 			<InspectorControls>
 				<PanelBody
-					title={__('Layout Setting', 'vk-blocks')}
+					title={__('Layout Setting', 'vk-blocks-pro')}
 					initialOpen={true}
 				>
 					<BaseControl>
 						<RadioControl
-							label={__('Padding (Left and Right)', 'vk-blocks')}
+							label={__(
+								'Padding (Left and Right)',
+								'vk-blocks-pro'
+							)}
 							selected={padding_left_and_right}
 							className={'vk-radioControl'}
 							options={[
 								{
 									label: __(
 										'Fit to the Container area',
-										'vk-blocks'
+										'vk-blocks-pro'
 									),
 									value: '0',
 								},
 								{
 									label: __(
 										'Add padding to the Slider area',
-										'vk-blocks'
+										'vk-blocks-pro'
 									),
 									value: '1',
 								},
 								{
 									label: __(
 										'Remove padding from the Slider area',
-										'vk-blocks'
+										'vk-blocks-pro'
 									),
 									value: '2',
 								},
@@ -151,7 +154,7 @@ export default function SliderItemEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Vertical align', 'vk-blocks')}
+						label={__('Vertical align', 'vk-blocks-pro')}
 						id={`vk_sliderItem-verticalAlign`}
 					>
 						<BlockVerticalAlignmentToolbar
@@ -165,15 +168,15 @@ export default function SliderItemEdit(props) {
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
-					title={__('Background Setting', 'vk-blocks')}
+					title={__('Background Setting', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<BaseControl
-						label={__('Color Setting', 'vk-blocks')}
+						label={__('Color Setting', 'vk-blocks-pro')}
 						id={`vk_sliderItem-colorSetting`}
 						help={__(
 							'Color will overcome background image. If you want to display image, set opacity 0.',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 					>
 						<AdvancedColorPalette
@@ -183,7 +186,7 @@ export default function SliderItemEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Opacity Setting', 'vk-blocks')}
+						label={__('Opacity Setting', 'vk-blocks-pro')}
 						id={`vk_sliderItem-opacitySetting`}
 					>
 						<RangeControl
@@ -197,18 +200,18 @@ export default function SliderItemEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Background Image Size', 'vk-blocks')}
+						label={__('Background Image Size', 'vk-blocks-pro')}
 						id={`vk_sliderItem-backgroundImageSize`}
 					>
 						<RadioControl
 							selected={bgSize}
 							options={[
 								{
-									label: __('cover', 'vk-blocks'),
+									label: __('cover', 'vk-blocks-pro'),
 									value: 'cover',
 								},
 								{
-									label: __('repeat', 'vk-blocks'),
+									label: __('repeat', 'vk-blocks-pro'),
 									value: 'repeat',
 								},
 							]}
@@ -218,7 +221,7 @@ export default function SliderItemEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Background Image PC', 'vk-blocks')}
+						label={__('Background Image PC', 'vk-blocks-pro')}
 						id={`vk_sliderItem-backgroundImagePC`}
 						className={'vk_slider_item_sidebar_bgImage'}
 					>
@@ -234,7 +237,7 @@ export default function SliderItemEdit(props) {
 						</div>
 					</BaseControl>
 					<BaseControl
-						label={__('Background Image Tablet', 'vk-blocks')}
+						label={__('Background Image Tablet', 'vk-blocks-pro')}
 						className={'vk_slider_item_sidebar_bgImage'}
 						id={`vk_sliderItem-backgroundImageTablet`}
 					>
@@ -244,7 +247,7 @@ export default function SliderItemEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Background Image Mobile', 'vk-blocks')}
+						label={__('Background Image Mobile', 'vk-blocks-pro')}
 						className={'vk_slider_item_sidebar_bgImage'}
 						id={`vk_sliderItem-backgroundImageMobile`}
 					>

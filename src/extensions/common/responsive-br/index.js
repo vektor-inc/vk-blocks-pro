@@ -12,7 +12,7 @@ const insertBR = (value, onChange, breakPoint) => {
 };
 
 registerFormatType(`vk-blocks/responsive-br`, {
-	title: __(`Responsive Br`, 'vk-blocks'),
+	title: __(`Responsive Br`, 'vk-blocks-pro'),
 	tagName: 'br',
 	className: null,
 	edit: (props) => {
@@ -26,12 +26,14 @@ registerFormatType(`vk-blocks/responsive-br`, {
 							<DropdownMenu
 								icon={<Icon />}
 								toggleProps={toggleProps}
-								label={__(`Responsive BR`, 'vk-blocks')}
+								label={__(`Responsive BR`, 'vk-blocks-pro')}
 								controls={breakPoints.map((breakPoint) => {
 									return {
 										title:
-											__(`Responsive BR `, 'vk-blocks') +
-											`( ${breakPoint} )`,
+											__(
+												`Responsive BR `,
+												'vk-blocks-pro'
+											) + `( ${breakPoint} )`,
 										icon: <Icon />,
 										onClick: () => {
 											insertBR(

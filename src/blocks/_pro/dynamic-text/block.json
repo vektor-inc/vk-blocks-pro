@@ -22,7 +22,7 @@
 		}
 	},
 	"description": "Display dynamic text",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
 		"className": true,
 		"align": [

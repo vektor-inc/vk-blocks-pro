@@ -39,7 +39,7 @@ function vk_blocks_register_block_taxonomy() {
 	// タクソノミーブロックで使うタクソノミーの選択肢.
 	$taxonomy_option_raw = array(
 		array(
-			'label' => __( 'Please select taxonomy', 'vk-blocks' ),
+			'label' => __( 'Please select taxonomy', 'vk-blocks-pro' ),
 			'value' => '',
 		),
 	);
@@ -54,7 +54,7 @@ function vk_blocks_register_block_taxonomy() {
 			// カテゴリーの割り当ててある投稿が一つもないと get_terms で取得できなく、
 			// 項目がないとエラーになるため、とりあえずカテゴリーをオプションに追加しておく
 			$taxonomy_option_raw[] = array(
-				'label' => __( 'Categories', 'vk-blocks' ),
+				'label' => __( 'Categories', 'vk-blocks-pro' ),
 				'value' => 'category',
 			);
 		}
@@ -184,7 +184,7 @@ function vk_blocks_taxonomy_render_callback( $attributes ) {
 
 	$dropdown_args = array(
 		// translators:
-		'show_option_all' => sprintf( __( 'All of %s', 'vk-blocks' ), $taxonomy_data->labels->singular_name ),
+		'show_option_all' => sprintf( __( 'All of %s', 'vk-blocks-pro' ), $taxonomy_data->labels->singular_name ),
 		'id'              => $dropdown_id,
 		'class'           => 'vk_taxonomy__input-wrap vk_taxonomy__input-wrap--select',
 		'selected'        => get_query_var( $name ),

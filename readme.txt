@@ -69,7 +69,8 @@ e.g.
 [ Add Function ][ Dynamic Text Block (Pro) ] Added an option to show/hide the title when an ancestor page is selected and the ancestor page is display.
 [ Add Function ][ Animation(Pro) ] Added transforms settings to wrap and unwrap.
 [ Add Alert ][ Slider ] Add loop alert
-[ Bug fix ][ Child page list ]"There are no page." is not displayed on the front page.
+[ Bug Fix ] Fix Textdomain( Translate ) for VK Blocks Pro
+[ Bug fix ][ Child page list ] "There are no page." is not displayed on the front page.
 [ Bug fix ][ Breadcrumb ] Delete non intentional margin on editor screen
 
 = 1.56.0 =
@@ -78,7 +79,6 @@ e.g.
 [ Specification Change ][ Slider ] Update Swiper to 9.2.3.
 [ Bug Fix ][ Taxonomy block ( Pro ) ] Fix Dropdown Script.
 [ Bug fix ][ Custom Format Setting (Pro) ] Custom Format Setting WordPress 6.2 UI adjustment.
-[ Add Function ][ Admin screen ] Added block style manager function.
 [ Bug fix ][ Step(Pro) / Time Line(Pro) ] Fix item content overflow
 
 = 1.55.0 =

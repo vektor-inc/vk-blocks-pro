@@ -47,7 +47,7 @@ export class NewComponent extends Component {
 			style={ { color: vk_staff_nameColor } }
 			onChange={ (value) => setAttributes({ vk_staff_text_name: value }) }
 			value={ vk_staff_text_name }
-			placeholder={ __('Your Name', 'vk-blocks') }
+			placeholder={ __('Your Name', 'vk-blocks-pro') }
                     />
 		<RichText
 			tagName="p"
@@ -55,7 +55,7 @@ export class NewComponent extends Component {
 			style={ { color: vk_staff_captionColor } }
 			onChange={ (value) => setAttributes({ vk_staff_text_caption: value }) }
 			value={ vk_staff_text_caption }
-			placeholder={ __('Caption', 'vk-blocks') }
+			placeholder={ __('Caption', 'vk-blocks-pro') }
                     />
 		<RichText
 			tagName="p"
@@ -63,7 +63,7 @@ export class NewComponent extends Component {
 			style={ { color: vk_staff_positionColor } }
 			onChange={ (value) => setAttributes({ vk_staff_text_role: value }) }
 			value={ vk_staff_text_role }
-			placeholder={ __('Role position', 'vk-blocks') }
+			placeholder={ __('Role position', 'vk-blocks-pro') }
                     />
 		<RichText
 			tagName="h4"
@@ -71,7 +71,7 @@ export class NewComponent extends Component {
 			style={ { color: vk_staff_profileTitleColor } }
 			onChange={ (value) => setAttributes({ vk_staff_text_profileTitle: value }) }
 			value={ vk_staff_text_profileTitle }
-			placeholder={ __('Profile title', 'vk-blocks') }
+			placeholder={ __('Profile title', 'vk-blocks-pro') }
                     />
 		<RichText
 			tagName="p"
@@ -79,7 +79,7 @@ export class NewComponent extends Component {
 			style={ { color: vk_staff_profileTextColor } }
 			onChange={ (value) => setAttributes({ vk_staff_text_profileText: value }) }
 			value={ vk_staff_text_profileText }
-			placeholder={ __('Profile text', 'vk-blocks') }
+			placeholder={ __('Profile text', 'vk-blocks-pro') }
                     />
 	</div>
 	<div className={ `vk_staff_photo vk_staff_photo-border-${vk_staff_photoBorder}` }>
@@ -93,9 +93,9 @@ export class NewComponent extends Component {
 					onClick={ open }
 					className={ vk_staff_photo_image ? 'image-button' : 'button button-large' }
                             >
-					{ !vk_staff_photo_image ? __('Select image', 'vk-blocks') :
+					{ !vk_staff_photo_image ? __('Select image', 'vk-blocks-pro') :
 					<img className={ `vk_staff_photo_image` } src={ vk_staff_photo_image }
-						alt={ __(vk_staff_photo_image_alt, 'vk-blocks') } /> }
+						alt={ __(vk_staff_photo_image_alt, 'vk-blocks-pro') } /> }
 				</Button>
                         ) }
                     />
@@ -139,7 +139,7 @@ export class NewComponent extends Component {
 	{ vk_staff_photo_image ?
 		<div className={ `vk_staff_photo vk_staff_photo-border-${vk_staff_photoBorder}` }>
 			<img className={ `vk_staff_photo_image` } src={ vk_staff_photo_image } alt={
-                            vk_staff_photo_image_alt ? __(vk_staff_photo_image_alt, 'vk-blocks')
+                            vk_staff_photo_image_alt ? __(vk_staff_photo_image_alt, 'vk-blocks-pro')
                                 :
                                 ""
                         } />

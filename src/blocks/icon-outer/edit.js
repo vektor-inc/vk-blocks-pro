@@ -85,8 +85,8 @@ export default function IconOuterEdit(props) {
 				/>
 			</BlockControls>
 			<InspectorControls>
-				<PanelBody title={__('Icon Common Setting', 'vk-blocks')}>
-					<p className={`mt-0 mb-2`}>{__('Size', 'vk-blocks')}</p>
+				<PanelBody title={__('Icon Common Setting', 'vk-blocks-pro')}>
+					<p className={`mt-0 mb-2`}>{__('Size', 'vk-blocks-pro')}</p>
 					<div className="vk_icon_custombox">
 						<TextControl
 							className={`vk_icon_custombox_number`}
@@ -118,19 +118,19 @@ export default function IconOuterEdit(props) {
 							options={[
 								{
 									value: 'px',
-									label: __('px', 'vk-blocks'),
+									label: __('px', 'vk-blocks-pro'),
 								},
 								{
 									value: 'em',
-									label: __('em', 'vk-blocks'),
+									label: __('em', 'vk-blocks-pro'),
 								},
 								{
 									value: 'rem',
-									label: __('rem', 'vk-blocks'),
+									label: __('rem', 'vk-blocks-pro'),
 								},
 								{
 									value: 'vw',
-									label: __('vw', 'vk-blocks'),
+									label: __('vw', 'vk-blocks-pro'),
 								},
 							]}
 						/>
@@ -146,7 +146,9 @@ export default function IconOuterEdit(props) {
 							{__('Reset')}
 						</Button>
 					</div>
-					<p className={`mt-0 mb-2`}>{__('Margin', 'vk-blocks')}</p>
+					<p className={`mt-0 mb-2`}>
+						{__('Margin', 'vk-blocks-pro')}
+					</p>
 					<div className="vk_icon_custombox">
 						<TextControl
 							className={`vk_icon_custombox_number`}
@@ -178,19 +180,19 @@ export default function IconOuterEdit(props) {
 							options={[
 								{
 									value: 'px',
-									label: __('px', 'vk-blocks'),
+									label: __('px', 'vk-blocks-pro'),
 								},
 								{
 									value: 'em',
-									label: __('em', 'vk-blocks'),
+									label: __('em', 'vk-blocks-pro'),
 								},
 								{
 									value: 'rem',
-									label: __('rem', 'vk-blocks'),
+									label: __('rem', 'vk-blocks-pro'),
 								},
 								{
 									value: 'vw',
-									label: __('vw', 'vk-blocks'),
+									label: __('vw', 'vk-blocks-pro'),
 								},
 							]}
 						/>
@@ -207,7 +209,7 @@ export default function IconOuterEdit(props) {
 						</Button>
 					</div>
 					<BaseControl
-						label={__('Border radius', 'vk-blocks')}
+						label={__('Border radius', 'vk-blocks-pro')}
 						id={`vk_icon-radius`}
 					>
 						<RangeControl
@@ -223,7 +225,9 @@ export default function IconOuterEdit(props) {
 							allowReset={true}
 						/>
 					</BaseControl>
-					<p className={`mt-0 mb-2`}>{__('Style', 'vk-blocks')}</p>
+					<p className={`mt-0 mb-2`}>
+						{__('Style', 'vk-blocks-pro')}
+					</p>
 					<ButtonGroup className={`mb-3`}>
 						<Button
 							isSmall
@@ -231,7 +235,7 @@ export default function IconOuterEdit(props) {
 							isSecondary={iconType !== '0'}
 							onClick={() => setAttributes({ iconType: '0' })}
 						>
-							{__('Solid color', 'vk-blocks')}
+							{__('Solid color', 'vk-blocks-pro')}
 						</Button>
 						<Button
 							isSmall
@@ -239,7 +243,7 @@ export default function IconOuterEdit(props) {
 							isSecondary={iconType !== '1'}
 							onClick={() => setAttributes({ iconType: '1' })}
 						>
-							{__('Icon & Frame', 'vk-blocks')}
+							{__('Icon & Frame', 'vk-blocks-pro')}
 						</Button>
 						<Button
 							isSmall
@@ -247,7 +251,7 @@ export default function IconOuterEdit(props) {
 							isSecondary={iconType !== '2'}
 							onClick={() => setAttributes({ iconType: '2' })}
 						>
-							{__('Icon only', 'vk-blocks')}
+							{__('Icon only', 'vk-blocks-pro')}
 						</Button>
 					</ButtonGroup>
 				</PanelBody>

@@ -2,7 +2,7 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/gridcolcard-item-body",
 	"title": "Grid Column Card Item Body",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"category": "vk-blocks-cat-layout",
 	"description": "Body of Grid Column Card Block Item",
 	"parent": [

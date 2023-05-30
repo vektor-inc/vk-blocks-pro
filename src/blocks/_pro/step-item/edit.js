@@ -75,15 +75,18 @@ export default function StepItemEdit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Step Mark', 'vk-blocks')}>
+				<PanelBody title={__('Step Mark', 'vk-blocks-pro')}>
 					<BaseControl
 						id="dot-fa"
 						label={
-							__('Icon', 'vk-blocks') + ' ( ' + iconFamily + ' )'
+							__('Icon', 'vk-blocks-pro') +
+							' ( ' +
+							iconFamily +
+							' )'
 						}
 						help={__(
 							'If Font Awesome tags entered, it will overrides the number.',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 					>
 						<FontAwesome attributeName={'faIcon'} {...props} />
@@ -95,14 +98,14 @@ export default function StepItemEdit(props) {
 							onChange={(value) =>
 								setAttributes({ dotCaption: value })
 							}
-							placeholder={__('Ex,6:00AM', 'vk-blocks')}
+							placeholder={__('Ex,6:00AM', 'vk-blocks-pro')}
 						/>
 					</BaseControl>
 				</PanelBody>
-				<PanelBody title={__('Color', 'vk-blocks')}>
+				<PanelBody title={__('Color', 'vk-blocks-pro')}>
 					<AdvancedColorPalette schema={'color'} {...props} />
 				</PanelBody>
-				<PanelBody title={__('Style', 'vk-blocks')}>
+				<PanelBody title={__('Style', 'vk-blocks-pro')}>
 					<BaseControl id="style-dot" label="Dot Style">
 						<SelectControl
 							value={style}
@@ -112,11 +115,11 @@ export default function StepItemEdit(props) {
 							options={[
 								{
 									value: 'solid',
-									label: __('Solid', 'vk-blocks'),
+									label: __('Solid', 'vk-blocks-pro'),
 								},
 								{
 									value: 'outlined',
-									label: __('Outlined', 'vk-blocks'),
+									label: __('Outlined', 'vk-blocks-pro'),
 								},
 							]}
 						/>
@@ -131,7 +134,7 @@ export default function StepItemEdit(props) {
 									setAttributes({ styleLine: 'default' })
 								}
 							>
-								{__('Default', 'vk-blocks')}
+								{__('Default', 'vk-blocks-pro')}
 							</Button>
 							<Button
 								isSmall
@@ -141,7 +144,7 @@ export default function StepItemEdit(props) {
 									setAttributes({ styleLine: 'none' })
 								}
 							>
-								{__('None', 'vk-blocks')}
+								{__('None', 'vk-blocks-pro')}
 							</Button>
 						</ButtonGroup>
 					</BaseControl>

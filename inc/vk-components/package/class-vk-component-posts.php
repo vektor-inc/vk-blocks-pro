@@ -52,9 +52,9 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				'display_btn'                => false,
 				'image_default_url'          => false,
 				'overlay'                    => false,
-				'btn_text'                   => __( 'Read more', 'vk-blocks' ),
+				'btn_text'                   => __( 'Read more', 'vk-blocks-pro' ),
 				'btn_align'                  => 'text-right',
-				'new_text'                   => __( 'New!!', 'vk-blocks' ),
+				'new_text'                   => __( 'New!!', 'vk-blocks-pro' ),
 				'new_date'                   => 7,
 				'textlink'                   => true,
 				'class_outer'                => '',
@@ -265,7 +265,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 		public static function get_archive_link_btn( $wp_query, $args = array() ) {
 
 			$default = array(
-				'btn_text'        => __( 'More', 'vk-blocks' ),
+				'btn_text'        => __( 'More', 'vk-blocks-pro' ),
 				'btn_position'    => 'right',
 				'btn_style'       => 'normal', // text / normal
 				'btn_icon_before' => '<i class="far fa-arrow-alt-circle-right"></i>',
@@ -301,10 +301,10 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 					'mid_size'           => 1, // get_loop では loop_options のデフォルト値で上書きされる.
 					'prev_text'          => '&laquo;',
 					'next_text'          => '&raquo;',
-					'screen_reader_text' => __( 'Posts navigation', 'vk-blocks' ),
-					'aria_label'         => __( 'Posts', 'vk-blocks' ),
+					'screen_reader_text' => __( 'Posts navigation', 'vk-blocks-pro' ),
+					'aria_label'         => __( 'Posts', 'vk-blocks-pro' ),
 					'class'              => 'pagination',
-					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'vk-blocks' ) . ' </span>',
+					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'vk-blocks-pro' ) . ' </span>',
 					'type'               => 'list',
 				)
 			);
@@ -765,27 +765,27 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 		public static function get_patterns() {
 			$patterns = array(
 				'card'            => array(
-					'label'             => __( 'Card', 'vk-blocks' ),
+					'label'             => __( 'Card', 'vk-blocks-pro' ),
 					'class_posts_outer' => '',
 				),
 				'card-noborder'   => array(
-					'label'             => __( 'Card Noborder', 'vk-blocks' ),
+					'label'             => __( 'Card Noborder', 'vk-blocks-pro' ),
 					'class_posts_outer' => '',
 				),
 				'card-intext'     => array(
-					'label'             => __( 'Card Intext', 'vk-blocks' ),
+					'label'             => __( 'Card Intext', 'vk-blocks-pro' ),
 					'class_posts_outer' => '',
 				),
 				'card-horizontal' => array(
-					'label'             => __( 'Card Horizontal', 'vk-blocks' ),
+					'label'             => __( 'Card Horizontal', 'vk-blocks-pro' ),
 					'class_posts_outer' => '',
 				),
 				'media'           => array(
-					'label'             => __( 'Media', 'vk-blocks' ),
+					'label'             => __( 'Media', 'vk-blocks-pro' ),
 					'class_posts_outer' => 'media-outer',
 				),
 				'postListText'    => array(
-					'label'             => _x( 'Text 1 Column', 'post list type', 'vk-blocks' ),
+					'label'             => _x( 'Text 1 Column', 'post list type', 'vk-blocks-pro' ),
 					'class_posts_outer' => 'postListText-outer',
 				),
 			);

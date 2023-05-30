@@ -34,7 +34,7 @@
 		}
 	},
 	"description": "Display card with icons, headings, text, and links.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
 		"className": true
 	}

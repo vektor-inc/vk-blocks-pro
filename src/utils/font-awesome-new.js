@@ -238,10 +238,8 @@ export const FontAwesome = (props) => {
 					'vk-blocks'
 				)}
 				<br />
-				{__(
-					'Ex) <i class="fas fa-arrow-circle-right"></i>',
-					'vk-blocks'
-				)}
+				{__('Ex) ', 'vk-blocks')}
+				{'<i class="fas fa-arrow-circle-right"></i>'}
 			</p>
 			<hr />
 			<SelectControl

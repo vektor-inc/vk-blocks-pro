@@ -760,87 +760,91 @@ msgstr ""
 msgid "Current page"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:103
+#: src/blocks/_pro/dynamic-text/edit.js:102
+msgid "This block will not render because no visible element is selected."
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:110
+msgid "Post Type Name"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:114
 msgid "Ancestor Page Title"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:128
+#: src/blocks/_pro/dynamic-text/edit.js:139
 msgid "Display element settings"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:131
+#: src/blocks/_pro/dynamic-text/edit.js:144
 msgid "Display element"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:140
+#: src/blocks/_pro/dynamic-text/edit.js:153
 msgid "Please Select"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:144
+#: src/blocks/_pro/dynamic-text/edit.js:157
 msgid "Post type name of the page being viewed"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:151
+#: src/blocks/_pro/dynamic-text/edit.js:164
 msgid "Page name in the ancestor hierarchy of the displayed page"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:164
+#: src/blocks/_pro/dynamic-text/edit.js:179
+msgid "Hide on Ancestor Hierarchy Pages"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:192
 msgid ""
 "This block will not display on pages other than pages that have a parent "
 "hierarchy."
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:27
+#: src/blocks/_pro/dynamic-text/edit.js:32
 msgid "HTML element"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:32
+#: src/blocks/_pro/dynamic-text/edit.js:37
 msgid "div (default)"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:36
+#: src/blocks/_pro/dynamic-text/edit.js:41
 msgid "h1"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:40
+#: src/blocks/_pro/dynamic-text/edit.js:45
 #: src/blocks/ancestor-page-list/edit.js:51
 msgid "h2"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:44
+#: src/blocks/_pro/dynamic-text/edit.js:49
 #: src/blocks/ancestor-page-list/edit.js:55
 msgid "h3"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:48
+#: src/blocks/_pro/dynamic-text/edit.js:53
 #: src/blocks/ancestor-page-list/edit.js:59
 msgid "h4"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:52
+#: src/blocks/_pro/dynamic-text/edit.js:57
 #: src/blocks/ancestor-page-list/edit.js:63
 msgid "h5"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:56
+#: src/blocks/_pro/dynamic-text/edit.js:61
 #: src/blocks/ancestor-page-list/edit.js:67
 msgid "h6"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:60
+#: src/blocks/_pro/dynamic-text/edit.js:65
 msgid "p"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:64
+#: src/blocks/_pro/dynamic-text/edit.js:69
 msgid "span"
-msgstr ""
-
-#: src/blocks/_pro/dynamic-text/edit.js:91
-msgid "This block will not render because no visible element is selected."
-msgstr ""
-
-#: src/blocks/_pro/dynamic-text/edit.js:99
-msgid "Post Type Name"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:102

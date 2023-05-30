@@ -2,7 +2,12 @@ import classnames from 'classnames';
 
 // import WordPress Scripts
 import { __ } from '@wordpress/i18n';
-import { PanelBody, SelectControl } from '@wordpress/components';
+import {
+	PanelBody,
+	SelectControl,
+	BaseControl,
+	CheckboxControl,
+} from '@wordpress/components';
 import {
 	useBlockProps,
 	AlignmentControl,
@@ -71,7 +76,13 @@ function DynamicTextEditControls({ tagName, onSelectTagName }) {
 
 export default function DynamicTextEdit(props) {
 	const { attributes, setAttributes } = props;
-	const { textAlign, displayElement, tagName: TagName = '' } = attributes;
+	const {
+		textAlign,
+		displayElement,
+		tagName: TagName = '',
+		ancestorPageHiddenOption,
+	} = attributes;
+	attributes.ancestorPageHiddenOption = ancestorPageHiddenOption;
 
 	// Hooks.
 	const blockProps = useBlockProps({
@@ -126,46 +137,65 @@ export default function DynamicTextEdit(props) {
 			<InspectorControls>
 				<PanelBody
 					title={__('Display element settings', 'vk-blocks-pro')}
+					initialOpen={false}
 				>
-					<SelectControl
-						label={__('Display element', 'vk-blocks-pro')}
-						value={displayElement}
-						onChange={(value) =>
-							setAttributes({ displayElement: value })
-						}
-						className="mb-0"
-						options={[
-							{
-								value: 'please-select',
-								label: __('Please Select', 'vk-blocks-pro'),
-							},
-							{
-								value: 'post-type',
-								label: __(
-									'Post type name of the page being viewed',
-									'vk-blocks-pro'
-								),
-							},
-							{
-								value: 'ancestor-page',
-								label: __(
-									'Page name in the ancestor hierarchy of the displayed page',
-									'vk-blocks-pro'
-								),
-							},
-							// {
-							// 	value: 'custom-field',
-							// 	label: __('カスタムフィールド', 'vk-blocks-pro'),
-							// },
-						]}
-					/>
+					<BaseControl>
+						<SelectControl
+							label={__('Display element', 'vk-blocks-pro')}
+							value={displayElement}
+							onChange={(value) =>
+								setAttributes({ displayElement: value })
+							}
+							className="mb-0"
+							options={[
+								{
+									value: 'please-select',
+									label: __('Please Select', 'vk-blocks-pro'),
+								},
+								{
+									value: 'post-type',
+									label: __(
+										'Post type name of the page being viewed',
+										'vk-blocks'
+									),
+								},
+								{
+									value: 'ancestor-page',
+									label: __(
+										'Page name in the ancestor hierarchy of the displayed page',
+										'vk-blocks'
+									),
+								},
+								// {
+								// 	value: 'custom-field',
+								// 	label: __('カスタムフィールド', 'vk-blocks-pro'),
+								// },
+							]}
+						/>
+					</BaseControl>
 					{displayElement === 'ancestor-page' && (
-						<div className="alert alert-warning mt-0 mb-4">
-							{__(
-								'This block will not display on pages other than pages that have a parent hierarchy.',
-								'vk-blocks-pro'
+						<BaseControl>
+							<CheckboxControl
+								label={__(
+									'Hide on Ancestor Hierarchy Pages',
+									'vk-blocks'
+								)}
+								checked={ancestorPageHiddenOption}
+								onChange={(v) =>
+									setAttributes({
+										ancestorPageHiddenOption: v,
+									})
+								}
+							/>
+							{ancestorPageHiddenOption && (
+								<div className="alert alert-warning mt-0 mb-4">
+									{__(
+										'This block will not display on pages other than pages that have a parent hierarchy.',
+										'vk-blocks'
+									)}
+								</div>
 							)}
-						</div>
+						</BaseControl>
 					)}
 					<DynamicTextEditControls
 						tagName={TagName}

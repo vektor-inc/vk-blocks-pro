@@ -16,4 +16,4 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 }
 
 global $vk_blocks_components_textdomain;
-$vk_blocks_components_textdomain = 'vk-blocks';
+$vk_blocks_components_textdomain = 'vk-blocks-pro';

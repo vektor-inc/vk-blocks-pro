@@ -44,12 +44,12 @@ export default function TaxonomyEdit(props) {
 			<div>
 				<div className="vk_taxonomy-warning">
 					<div className="vk_taxonomy-label-name">
-						{__('Taxonomy', 'vk-blocks')}
+						{__('Taxonomy', 'vk-blocks-pro')}
 					</div>
 					<div className="vk_taxonomy-warning_text">
 						{__(
 							'This block will not be displayed because no taxonomy is selected.',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 					</div>
 				</div>
@@ -62,7 +62,7 @@ export default function TaxonomyEdit(props) {
 				<div className="vk_taxonomy-warning-text">
 					{__(
 						'This block will not be displayed because this taxonomy has no term.',
-						'vk-blocks'
+						'vk-blocks-pro'
 					)}
 				</div>
 			</div>
@@ -77,11 +77,11 @@ export default function TaxonomyEdit(props) {
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={__('Taxonomy Block Option', 'vk-blocks')}
+					title={__('Taxonomy Block Option', 'vk-blocks-pro')}
 					initialOpen={true}
 				>
 					<SelectControl
-						label={__('Taxonomy', 'vk-blocks')}
+						label={__('Taxonomy', 'vk-blocks-pro')}
 						value={isSelectedTaxonomy}
 						options={taxonomyOption}
 						onChange={(value) =>
@@ -91,14 +91,14 @@ export default function TaxonomyEdit(props) {
 						}
 					/>
 					<ToggleControl
-						label={__('Display as dropdown', 'vk-blocks')}
+						label={__('Display as dropdown', 'vk-blocks-pro')}
 						checked={displayAsDropdown}
 						onChange={(value) =>
 							setAttributes({ displayAsDropdown: value })
 						}
 					/>
 					<ToggleControl
-						label={__('Show post counts', 'vk-blocks')}
+						label={__('Show post counts', 'vk-blocks-pro')}
 						checked={showPostCounts}
 						onChange={(value) =>
 							setAttributes({ showPostCounts: value })
@@ -107,7 +107,7 @@ export default function TaxonomyEdit(props) {
 					<ToggleControl
 						label={__(
 							'Show only top level categories',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 						checked={showOnlyTopLevel}
 						onChange={(value) =>
@@ -115,7 +115,7 @@ export default function TaxonomyEdit(props) {
 						}
 					/>
 					<ToggleControl
-						label={__('Hide if term has no posts', 'vk-blocks')}
+						label={__('Hide if term has no posts', 'vk-blocks-pro')}
 						checked={hideIfEmpty}
 						onChange={(value) =>
 							setAttributes({ hideIfEmpty: value })
@@ -123,7 +123,7 @@ export default function TaxonomyEdit(props) {
 					/>
 					{!showOnlyTopLevel && (
 						<ToggleControl
-							label={__('Show hierarchy', 'vk-blocks')}
+							label={__('Show hierarchy', 'vk-blocks-pro')}
 							checked={showHierarchy}
 							onChange={(value) =>
 								setAttributes({ showHierarchy: value })

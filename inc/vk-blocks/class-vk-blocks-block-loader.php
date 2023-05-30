@@ -144,7 +144,7 @@ class VK_Blocks_Block_Loader {
 
 		// 翻訳を追加.
 		if ( function_exists( 'wp_set_script_translations' ) ) {
-			wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks', plugin_dir_path( __FILE__ ) . 'languages' );
+			wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks-pro', VK_BLOCKS_DIR_PATH . 'languages' );
 		}
 
 		// 各ブロックを読み込む（一括/分割共通）.

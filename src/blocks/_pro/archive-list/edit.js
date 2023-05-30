@@ -27,15 +27,15 @@ export default function PostListEdit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Archive List Setting', 'vk-blocks')}>
+				<PanelBody title={__('Archive List Setting', 'vk-blocks-pro')}>
 					<SelectControl
-						label={__('Post type', 'vk-blocks')}
+						label={__('Post type', 'vk-blocks-pro')}
 						value={postType}
 						options={getPostTypesSelect()}
 						onChange={(value) => setAttributes({ postType: value })}
 					/>
 					<SelectControl
-						label={__('Archive type', 'vk-blocks')}
+						label={__('Archive type', 'vk-blocks-pro')}
 						value={displayType}
 						onChange={(value) =>
 							setAttributes({ displayType: value })
@@ -43,23 +43,23 @@ export default function PostListEdit(props) {
 						options={[
 							{
 								value: 'monthly',
-								label: __('Monthly', 'vk-blocks'),
+								label: __('Monthly', 'vk-blocks-pro'),
 							},
 							{
 								value: 'yearly',
-								label: __('Yearly', 'vk-blocks'),
+								label: __('Yearly', 'vk-blocks-pro'),
 							},
 						]}
 					/>
 					<ToggleControl
-						label={__('Display as dropdown', 'vk-blocks')}
+						label={__('Display as dropdown', 'vk-blocks-pro')}
 						checked={displayDropdown}
 						onChange={(checked) =>
 							setAttributes({ displayDropdown: checked })
 						}
 					/>
 					<ToggleControl
-						label={__('Show post counts', 'vk-blocks')}
+						label={__('Show post counts', 'vk-blocks-pro')}
 						checked={showCount}
 						onChange={(checked) =>
 							setAttributes({ showCount: checked })

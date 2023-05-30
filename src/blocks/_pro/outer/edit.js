@@ -262,15 +262,15 @@ export default function OuterEdit(props) {
 			</BlockControls>
 			<InspectorControls>
 				<PanelBody
-					title={__('Background Setting', 'vk-blocks')}
+					title={__('Background Setting', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<BaseControl
 						id={`vk_outer-colorSetting`}
-						label={__('Color Setting', 'vk-blocks')}
+						label={__('Color Setting', 'vk-blocks-pro')}
 						help={__(
 							'Color will overcome background image. If you want to display image, set opacity 0.',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 					>
 						<AdvancedColorPalette
@@ -280,7 +280,7 @@ export default function OuterEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Opacity Setting', 'vk-blocks')}
+						label={__('Opacity Setting', 'vk-blocks-pro')}
 						id={`vk_outer-opacitySetting`}
 					>
 						<RangeControl
@@ -294,7 +294,7 @@ export default function OuterEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Background Image PC', 'vk-blocks')}
+						label={__('Background Image PC', 'vk-blocks-pro')}
 						className={'vk_outer_sidebar_bgImage'}
 						id={`vk_outer-bgImagePC`}
 					>
@@ -310,7 +310,7 @@ export default function OuterEdit(props) {
 						</div>
 					</BaseControl>
 					<BaseControl
-						label={__('Background Image Tablet', 'vk-blocks')}
+						label={__('Background Image Tablet', 'vk-blocks-pro')}
 						className={'vk_outer_sidebar_bgImage'}
 						id={`vk_outer-bgImageTablet`}
 					>
@@ -320,7 +320,7 @@ export default function OuterEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Background Image Mobile', 'vk-blocks')}
+						label={__('Background Image Mobile', 'vk-blocks-pro')}
 						className={'vk_outer_sidebar_bgImage'}
 						id={`vk_outer-bgImageMobile`}
 					>
@@ -330,7 +330,7 @@ export default function OuterEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Background image Position', 'vk-blocks')}
+						label={__('Background image Position', 'vk-blocks-pro')}
 						help=""
 						id={`vk_outer-bgPosition`}
 					>
@@ -338,24 +338,24 @@ export default function OuterEdit(props) {
 							selected={bgPosition}
 							options={[
 								{
-									label: __('Repeat', 'vk-blocks'),
+									label: __('Repeat', 'vk-blocks-pro'),
 									value: 'repeat',
 								},
 								{
-									label: __('Cover', 'vk-blocks'),
+									label: __('Cover', 'vk-blocks-pro'),
 									value: 'normal',
 								},
 								{
 									label: __(
 										'Cover fixed (Not fixed on iPhone)',
-										'vk-blocks'
+										'vk-blocks-pro'
 									),
 									value: 'fixed',
 								},
 								{
 									label: __(
 										'Parallax (Non-guaranteed)',
-										'vk-blocks'
+										'vk-blocks-pro'
 									),
 									value: 'parallax',
 								},
@@ -368,33 +368,36 @@ export default function OuterEdit(props) {
 				</PanelBody>
 
 				<PanelBody
-					title={__('Layout Setting', 'vk-blocks')}
+					title={__('Layout Setting', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
-					<p>{__('Width', 'vk-blocks')} </p>
+					<p>{__('Width', 'vk-blocks-pro')} </p>
 					<BaseControl>
 						<RadioControl
-							label={__('Padding (Left and Right)', 'vk-blocks')}
+							label={__(
+								'Padding (Left and Right)',
+								'vk-blocks-pro'
+							)}
 							selected={padding_left_and_right} //eslint-disable-line camelcase
 							options={[
 								{
 									label: __(
 										'Fit to the Content area',
-										'vk-blocks'
+										'vk-blocks-pro'
 									),
 									value: '0',
 								},
 								{
 									label: __(
 										'Add padding to the Outer area',
-										'vk-blocks'
+										'vk-blocks-pro'
 									),
 									value: '1',
 								},
 								{
 									label: __(
 										'Remove padding from the Outer area',
-										'vk-blocks'
+										'vk-blocks-pro'
 									),
 									value: '2',
 								},
@@ -406,21 +409,24 @@ export default function OuterEdit(props) {
 							}
 						/>
 						<RadioControl
-							label={__('Padding (Top and Bottom)', 'vk-blocks')}
+							label={__(
+								'Padding (Top and Bottom)',
+								'vk-blocks-pro'
+							)}
 							className={'mb-1'}
 							selected={padding_top_and_bottom} //eslint-disable-line camelcase
 							options={[
 								{
 									label: __(
 										'Use default padding',
-										'vk-blocks'
+										'vk-blocks-pro'
 									),
 									value: '1',
 								},
 								{
 									label: __(
 										'Do not use default padding',
-										'vk-blocks'
+										'vk-blocks-pro'
 									),
 									value: '0',
 								},
@@ -434,18 +440,18 @@ export default function OuterEdit(props) {
 						<p>
 							{__(
 								'* If you select "Do not use" that, please set yourself it such as a spacer block.',
-								'vk-blocks'
+								'vk-blocks-pro'
 							)}
 						</p>
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
-					title={__('Divider Setting', 'vk-blocks')}
+					title={__('Divider Setting', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<BaseControl>
 						<SelectControl
-							label={__('Type', 'vk-blocks')}
+							label={__('Type', 'vk-blocks-pro')}
 							value={dividerType}
 							onChange={(value) =>
 								setAttributes({ dividerType: value })
@@ -453,25 +459,25 @@ export default function OuterEdit(props) {
 							options={[
 								{
 									value: 'tilt',
-									label: __('Tilt', 'vk-blocks'),
+									label: __('Tilt', 'vk-blocks-pro'),
 								},
 								{
 									value: 'curve',
-									label: __('Curve', 'vk-blocks'),
+									label: __('Curve', 'vk-blocks-pro'),
 								},
 								{
 									value: 'wave',
-									label: __('Wave', 'vk-blocks'),
+									label: __('Wave', 'vk-blocks-pro'),
 								},
 								{
 									value: 'triangle',
-									label: __('Triangle', 'vk-blocks'),
+									label: __('Triangle', 'vk-blocks-pro'),
 								},
 							]}
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Upper Divider Level', 'vk-blocks')}
+						label={__('Upper Divider Level', 'vk-blocks-pro')}
 						id={`vk_outer-upperDividerLevel`}
 					>
 						<RangeControl
@@ -492,7 +498,7 @@ export default function OuterEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Lower Divider Level', 'vk-blocks')}
+						label={__('Lower Divider Level', 'vk-blocks-pro')}
 						id={`vk_outer-lowerDividerLevel`}
 					>
 						<RangeControl
@@ -514,18 +520,18 @@ export default function OuterEdit(props) {
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
-					title={__('Border Setting', 'vk-blocks')}
+					title={__('Border Setting', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<BaseControl>
 						<p>
 							{__(
 								'Border will disappear when divider effect is applied.',
-								'vk-blocks'
+								'vk-blocks-pro'
 							)}
 						</p>
 						<SelectControl
-							label={__('Border type', 'vk-blocks')}
+							label={__('Border type', 'vk-blocks-pro')}
 							value={borderStyle}
 							onChange={(value) =>
 								setAttributes({ borderStyle: value })
@@ -533,39 +539,39 @@ export default function OuterEdit(props) {
 							options={[
 								{
 									value: 'none',
-									label: __('None', 'vk-blocks'),
+									label: __('None', 'vk-blocks-pro'),
 								},
 								{
 									value: 'solid',
-									label: __('Solid', 'vk-blocks'),
+									label: __('Solid', 'vk-blocks-pro'),
 								},
 								{
 									value: 'dotted',
-									label: __('Dotted', 'vk-blocks'),
+									label: __('Dotted', 'vk-blocks-pro'),
 								},
 								{
 									value: 'dashed',
-									label: __('Dashed', 'vk-blocks'),
+									label: __('Dashed', 'vk-blocks-pro'),
 								},
 								{
 									value: 'double',
-									label: __('Double', 'vk-blocks'),
+									label: __('Double', 'vk-blocks-pro'),
 								},
 								{
 									value: 'groove',
-									label: __('Groove', 'vk-blocks'),
+									label: __('Groove', 'vk-blocks-pro'),
 								},
 								{
 									value: 'ridge',
-									label: __('Ridge', 'vk-blocks'),
+									label: __('Ridge', 'vk-blocks-pro'),
 								},
 								{
 									value: 'inset',
-									label: __('Inset', 'vk-blocks'),
+									label: __('Inset', 'vk-blocks-pro'),
 								},
 								{
 									value: 'outset',
-									label: __('Outset', 'vk-blocks'),
+									label: __('Outset', 'vk-blocks-pro'),
 								},
 							]}
 						/>
@@ -577,7 +583,7 @@ export default function OuterEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Border width', 'vk-blocks')}
+						label={__('Border width', 'vk-blocks-pro')}
 						id={`vk_outer-borderWidth`}
 					>
 						<RangeControl
@@ -589,7 +595,7 @@ export default function OuterEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Border radius', 'vk-blocks')}
+						label={__('Border radius', 'vk-blocks-pro')}
 						id={`vk_outer-borderRadius`}
 					>
 						<RangeControl
@@ -607,12 +613,12 @@ export default function OuterEdit(props) {
 				<PanelBody
 					title={__(
 						'Container Inner Side Space Setting',
-						'vk-blocks'
+						'vk-blocks-pro'
 					)}
 					initialOpen={false}
 				>
 					<RangeControl
-						label={__('Mobile', 'vk-blocks')}
+						label={__('Mobile', 'vk-blocks-pro')}
 						value={innerSideSpaceValueMobile}
 						onChange={(value) =>
 							setAttributes({
@@ -627,7 +633,7 @@ export default function OuterEdit(props) {
 						max="100"
 					/>
 					<RangeControl
-						label={__('Tablet', 'vk-blocks')}
+						label={__('Tablet', 'vk-blocks-pro')}
 						value={innerSideSpaceValueTablet}
 						onChange={(value) =>
 							setAttributes({
@@ -642,7 +648,7 @@ export default function OuterEdit(props) {
 						max="200"
 					/>
 					<RangeControl
-						label={__('PC', 'vk-blocks')}
+						label={__('PC', 'vk-blocks-pro')}
 						value={innerSideSpaceValuePC}
 						onChange={(value) =>
 							setAttributes({
@@ -653,7 +659,7 @@ export default function OuterEdit(props) {
 						max="300"
 					/>
 					<SelectControl
-						label={__('Unit Type', 'vk-blocks')}
+						label={__('Unit Type', 'vk-blocks-pro')}
 						value={innerSideSpaceUnit}
 						onChange={(value) =>
 							setAttributes({
@@ -663,19 +669,19 @@ export default function OuterEdit(props) {
 						options={[
 							{
 								value: 'px',
-								label: __('px', 'vk-blocks'),
+								label: __('px', 'vk-blocks-pro'),
 							},
 							{
 								value: 'em',
-								label: __('em', 'vk-blocks'),
+								label: __('em', 'vk-blocks-pro'),
 							},
 							{
 								value: 'rem',
-								label: __('rem', 'vk-blocks'),
+								label: __('rem', 'vk-blocks-pro'),
 							},
 							{
 								value: 'vw',
-								label: __('vw', 'vk-blocks'),
+								label: __('vw', 'vk-blocks-pro'),
 							},
 						]}
 					/>

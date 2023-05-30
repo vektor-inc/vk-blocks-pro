@@ -34,7 +34,7 @@
             "default": "medium"
         }
 	},
-    "textdomain": "vk-blocks",
+    "textdomain": "vk-blocks-pro",
 	"supports": {
 		"anchor": true
 	}

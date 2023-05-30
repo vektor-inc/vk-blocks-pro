@@ -4,7 +4,7 @@
 	"title": "Classic FAQ",
 	"category": "vk-blocks-cat",
 	"description": "Displays a combination of questions and answers.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"attributes": {
 		"heading": {
 			"type": "string",

@@ -2,7 +2,7 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/gridcolcard-item-header",
 	"title": "Grid Column Card Item header",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"category": "vk-blocks-cat-layout",
 	"description": "Header image area of Grid Column Card Block Item",
 	"parent": [

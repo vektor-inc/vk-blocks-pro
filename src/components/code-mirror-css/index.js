@@ -47,7 +47,7 @@ export const CodeMirrorCss = (props) => {
 				transformed === null
 					? __(
 							'There is an error with your CSS structure.',
-							'vk-blocks'
+							'vk-blocks-pro'
 					  )
 					: null
 			);
@@ -102,7 +102,7 @@ export const CodeMirrorCss = (props) => {
 						<p>
 							{__(
 								'Note : Contains double-byte spaces; CSS may not work.',
-								'vk-blocks'
+								'vk-blocks-pro'
 							)}
 						</p>
 					);

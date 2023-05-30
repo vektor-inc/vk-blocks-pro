@@ -66,6 +66,7 @@ e.g.
 == Changelog ==
 
 [ Add Function ] Allow alpha value in some blocks.
+[ Add Function ][ Dynamic Text Block (Pro) ] Added an option to show/hide the title when an ancestor page is selected and the ancestor page is display.
 [ Add Function ][ Animation(Pro) ] Added transforms settings to wrap and unwrap.
 [ Add Alert ][ Slider ] Add loop alert
 [ Bug fix ][ Child page list ]"There are no page." is not displayed on the front page.

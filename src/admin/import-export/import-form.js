@@ -28,7 +28,8 @@ export default function ImportForm() {
 	const [isImportSuccess, setIsImportSuccess] = useState(false);
 	const [error, setError] = useState(null);
 	const [file, setFile] = useState(null);
-	const [uploadedOptions, setUploadedOptions] = useState(null);
+	const [uploadedVkBlocksOptions, setUploadedVkBlocksOptions] =
+		useState(null);
 	const [importSettings, setImportSettings] = useState(
 		OPTION_DEFAULT_SETTINGS
 	);
@@ -36,7 +37,7 @@ export default function ImportForm() {
 	const openModal = () => {
 		readFile(file)
 			.then((uploadedOption) => {
-				setUploadedOptions(uploadedOption);
+				setUploadedVkBlocksOptions(uploadedOption.vkBlocksOptions);
 				setIsModalOpen(true);
 			})
 			.catch((errors) => {
@@ -53,7 +54,7 @@ export default function ImportForm() {
 	};
 
 	const closeModal = () => {
-		setUploadedOptions(null);
+		setUploadedVkBlocksOptions(null);
 		setImportSettings(OPTION_DEFAULT_SETTINGS);
 		setIsModalOpen(false);
 	};
@@ -63,8 +64,8 @@ export default function ImportForm() {
 		setError(null);
 	};
 
-	const getUpdateOptions = (
-		_uploadedOptions,
+	const getUpdateVkBlocksOptions = (
+		_uploadedVkBlocksOptions,
 		_vkBlocksOption,
 		_importSettings
 	) => {
@@ -72,12 +73,12 @@ export default function ImportForm() {
 		_importSettings.forEach((setting) => {
 			if (!setting.isImport || ('isShow' in setting && !setting.isShow)) {
 				setting.options.forEach(
-					(option) => delete _uploadedOptions[option.name]
+					(option) => delete _uploadedVkBlocksOptions[option.name]
 				);
 			}
 		});
 
-		const updateOptions = _vkBlocksOption;
+		const updateVkBlocksOptions = _vkBlocksOption;
 		// importMethodがaddだったら追加する
 		_importSettings.forEach(({ options, isImport }) => {
 			options.forEach(({ name, uniqKey, importMethod }, id) => {
@@ -87,11 +88,11 @@ export default function ImportForm() {
 							// 識別子が被っていないもののみ追加する
 							const addOption = [];
 							if (
-								_uploadedOptions[name] &&
-								_uploadedOptions[name].length > 0 &&
+								_uploadedVkBlocksOptions[name] &&
+								_uploadedVkBlocksOptions[name].length > 0 &&
 								_vkBlocksOption[name]
 							) {
-								_uploadedOptions[name].forEach(
+								_uploadedVkBlocksOptions[name].forEach(
 									(uploadedOptionElement) => {
 										let isDuplicate = false;
 										_vkBlocksOption[name].forEach(
@@ -116,32 +117,35 @@ export default function ImportForm() {
 									}
 								);
 							}
-							updateOptions[name].push(...addOption);
+							updateVkBlocksOptions[name].push(...addOption);
 						} else {
-							updateOptions[name].push(..._uploadedOptions[name]);
+							updateVkBlocksOptions[name].push(
+								..._uploadedVkBlocksOptions[name]
+							);
 						}
 					} else {
 						// 上書きする
-						updateOptions[name] = _uploadedOptions[name];
+						updateVkBlocksOptions[name] =
+							_uploadedVkBlocksOptions[name];
 					}
 				}
 			});
 		});
-		return updateOptions;
+		return updateVkBlocksOptions;
 	};
 
 	const onSubmit = (event) => {
 		event.preventDefault();
-		if (!uploadedOptions) {
+		if (!uploadedVkBlocksOptions) {
 			return;
 		}
 		// アップデートするオプション値updateOptionを作る
-		const updateOptions = getUpdateOptions(
-			uploadedOptions,
+		const updateVkBlocksOptions = getUpdateVkBlocksOptions(
+			uploadedVkBlocksOptions,
 			vkBlocksOption,
 			importSettings
 		);
-		importOptions(updateOptions)
+		importOptions(updateVkBlocksOptions)
 			.then((importResponse) => {
 				closeModal();
 				setIsImportSuccess(true);
@@ -172,15 +176,16 @@ export default function ImportForm() {
 		}
 	}, [isImportSuccess]);
 
-	// uploadedOptionからインポートするオプションが存在するか確認している
+	// uploadedOptionからインポートするオプションが存在するか確認
 	useEffect(() => {
-		if (uploadedOptions) {
+		if (uploadedVkBlocksOptions) {
 			const copyObj = JSON.parse(JSON.stringify(importSettings));
 			Object.keys(OPTION_DEFAULT_SETTINGS).forEach((key, index) => {
 				const { options } = importSettings[key];
 				const isFind = options.find(
 					(option) =>
-						uploadedOptions && option.name in uploadedOptions
+						uploadedVkBlocksOptions &&
+						option.name in uploadedVkBlocksOptions
 				);
 				if (!isFind) {
 					copyObj[index].isImport = false;
@@ -188,7 +193,7 @@ export default function ImportForm() {
 				}
 			});
 		}
-	}, [uploadedOptions]);
+	}, [uploadedVkBlocksOptions]);
 
 	const onDismissError = () => {
 		setError(null);
@@ -244,8 +249,8 @@ export default function ImportForm() {
 						({ groupTitle, options, isShow = true }, index) => {
 							const isFind = options.find(
 								(option) =>
-									uploadedOptions &&
-									option.name in uploadedOptions
+									uploadedVkBlocksOptions &&
+									option.name in uploadedVkBlocksOptions
 							);
 							const checked = importSettings[index].isImport;
 							const handleToggle = (value) => {
@@ -346,7 +351,7 @@ export default function ImportForm() {
 															vkBlocksOption[
 																name
 															].some((preKey) =>
-																uploadedOptions[
+																uploadedVkBlocksOptions[
 																	name
 																].some(
 																	(
@@ -376,7 +381,7 @@ export default function ImportForm() {
 															vkBlocksOption[
 																name
 															].map((preKey) => {
-																return uploadedOptions[
+																return uploadedVkBlocksOptions[
 																	name
 																].map(
 																	(

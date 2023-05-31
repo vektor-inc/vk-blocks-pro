@@ -22,16 +22,40 @@ export default function ExportForm() {
 
 	async function handleExport(event) {
 		event.preventDefault();
-		// 対象のオプション値のみをエクスポート対象にする
-		const exportTargetOption = { ...vkBlocksObject.options };
+
+		// exportOptionListsからすべてのオプションプロパティー名を取得
+		const allOptionNames = new Set();
+		exportOptionLists.forEach((setting) => {
+			setting.options.forEach((option) => {
+				allOptionNames.add(option.name);
+			});
+		});
+
+		// 一旦DBから全ての値をエクスポート対象の変数に入れる
+		const exportVkBlocksOptions = { ...vkBlocksObject.options };
+
+		// exportVkBlocksOptionsから、exportOptionListsに存在しないプロパティを削除します
+		for (const key in exportVkBlocksOptions) {
+			if (!allOptionNames.has(key)) {
+				delete exportVkBlocksOptions[key];
+			}
+		}
+
+		// ユーザーがエクスポート対象外にしたものを削除する
 		exportOptionLists.forEach((setting) => {
 			if (!setting.isExport) {
 				setting.options.forEach(
-					(option) => delete exportTargetOption[option.name]
+					(option) => delete exportVkBlocksOptions[option.name]
 				);
 			}
 		});
-		const fileContent = JSON.stringify(exportTargetOption);
+
+		const exportContents = {
+			vkBlocksOptions: {
+				...exportVkBlocksOptions,
+			},
+		};
+		const fileContent = JSON.stringify(exportContents);
 		const publishDate = new Date().toISOString().split('T')[0];
 		const fileName = `vk-blocks-${publishDate}-export.json`;
 		download(fileName, fileContent, 'application/json');

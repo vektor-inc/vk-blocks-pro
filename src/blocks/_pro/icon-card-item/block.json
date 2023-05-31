@@ -67,7 +67,7 @@
 		}
 	},
 	"description": "This is one item in an icon card.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"parent": ["vk-blocks/icon-card"],
 	"supports": {
 		"className": true

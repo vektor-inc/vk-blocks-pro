@@ -160,14 +160,14 @@ class TaxonomyTest extends WP_UnitTestCase {
 			'slug' => 'empty_event_02',
 		);
 		$term_info_02        = wp_insert_term( 'empty_event_02', 'event_cat', $args );
-		$data['term_event_empty_01_id'] = $term_info_02['term_id'];
+		$data['term_event_empty_02_id'] = $term_info_02['term_id'];
 
 				/**
 		 * Test Event 02 Child を作成
 		 */
 		$args                            = array(
 			'slug'   => 'empty_event_02_child',
-			'parent' => $data['term_event_empty_01_id'],
+			'parent' => $data['term_event_empty_02_id'],
 		);
 		$term_info_04_child              = wp_insert_term( 'empty_event_02_child', 'event_cat', $args );
 		$data['empty_event_02_child_id'] = $term_info_04_child['term_id'];
@@ -269,7 +269,7 @@ class TaxonomyTest extends WP_UnitTestCase {
 					'showOnlyTopLevel'   => false,
 					'className'          => '',
 				),
-				'correct'    => '<div class="vk_taxonomy vk_taxonomy--event_cat vk_taxonomy-outer-wrap wp-block-vk-blocks-taxonomy"><ul class="vk_taxonomy-list"><li class="cat-item cat-item-'.$data['term_empty_event_01_id'].'"><a href="' . home_url() . '/?event_cat=empty_event_01">empty_event_01</a></li><li class="cat-item cat-item-'.$data['term_event_empty_01_child_id'].'"><a href="' . home_url() . '/?event_cat=empty_event_01_child">empty_event_01_child</a></li><li class="cat-item cat-item-'.$data['term_event_empty_01_id'].'"><a href="' . home_url() . '/?event_cat=empty_event_02">empty_event_02</a></li><li class="cat-item cat-item-' . $data['empty_event_02_child_id'] . '"><a href="' . home_url() . '/?event_cat=empty_event_02_child">empty_event_02_child</a></li><li class="cat-item cat-item-'.$data['term_event_01_id'].'"><a href="' . home_url() . '/?event_cat=test_event_01">test_event_01</a></li><li class="cat-item cat-item-'.$data['term_event_01_child_id'].'"><a href="' . home_url() . '/?event_cat=test_event_01_child">test_event_01_child</a></li><li class="cat-item cat-item-' . $data['event_02_id'] . '"><a href="' . home_url() . '/?event_cat=test_event_02">test_event_02</a></li><li class="cat-item cat-item-' . $data['event_02_child_id'] . '"><a href="' . home_url() . '/?event_cat=test_event_02_child">test_event_02_child</a></li></ul></div>',
+				'correct'    => '<div class="vk_taxonomy vk_taxonomy--event_cat vk_taxonomy-outer-wrap wp-block-vk-blocks-taxonomy"><ul class="vk_taxonomy-list"><li class="cat-item cat-item-' . $data['term_empty_event_01_id'] . '"><a href="' . home_url() . '/?event_cat=empty_event_01">empty_event_01</a></li><li class="cat-item cat-item-' . $data['term_event_empty_01_child_id'] . '"><a href="' . home_url() . '/?event_cat=empty_event_01_child">empty_event_01_child</a></li><li class="cat-item cat-item-' . $data['term_event_empty_02_id'] . '"><a href="' . home_url() . '/?event_cat=empty_event_02">empty_event_02</a></li><li class="cat-item cat-item-' . $data['empty_event_02_child_id'] . '"><a href="' . home_url() . '/?event_cat=empty_event_02_child">empty_event_02_child</a></li><li class="cat-item cat-item-' . $data['term_event_01_id'] . '"><a href="' . home_url() . '/?event_cat=test_event_01">test_event_01</a></li><li class="cat-item cat-item-' . $data['term_event_01_child_id'] . '"><a href="' . home_url() . '/?event_cat=test_event_01_child">test_event_01_child</a></li><li class="cat-item cat-item-' . $data['event_02_id'] . '"><a href="' . home_url() . '/?event_cat=test_event_02">test_event_02</a></li><li class="cat-item cat-item-' . $data['event_02_child_id'] . '"><a href="' . home_url() . '/?event_cat=test_event_02_child">test_event_02_child</a></li></ul></div>',
 			),
 			array(
 				'attributes' => array(
@@ -360,7 +360,7 @@ class TaxonomyTest extends WP_UnitTestCase {
 					'showOnlyTopLevel'   => true,
 					'className'          => 'aaaa',
 				),
-				'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap aaaa wp-block-vk-blocks-taxonomy"><select name="cat" id="vk_taxonomy-11" class="vk_taxonomy__input-wrap vk_taxonomy__input-wrap--select"><option value="0" selected="selected">All of Category</option><option class="level-0" value="' . $data['term_cate_01_id'] . '">test_category_01&nbsp;&nbsp;(1)</option><option class="level-0" value="' . $data['term_cate_02_id'] . '">test_category_02&nbsp;&nbsp;(1)</option></select></div><script type="text/javascript">/* <![CDATA[ */( function() {var dropdown = document.getElementById( "vk_taxonomy-11" );function onCatChange() {if ( dropdown.options[ dropdown.selectedIndex ].value> 0 ) {location.href = "' . home_url() . '/?cat=" + dropdown.options[ dropdown.selectedIndex ].value;}}dropdown.onchange = onCatChange;})();/* ]]> */</script>',
+				'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap aaaa wp-block-vk-blocks-taxonomy"><select name="category_name" id="vk_taxonomy-11" class="vk_taxonomy__input-wrap vk_taxonomy__input-wrap--select"><option value="0">All of Category</option><option class="level-0" value="test_category_01">test_category_01&nbsp;&nbsp;(1)</option><option class="level-0" value="test_category_02">test_category_02&nbsp;&nbsp;(1)</option></select></div><script type="text/javascript">/* <![CDATA[ */( function() {var dropdown = document.getElementById( "vk_taxonomy-11" );function onCatChange() {if ( !!dropdown.options[ dropdown.selectedIndex ].value ) {location.href = "' . home_url() . '/?category_name=" + dropdown.options[ dropdown.selectedIndex ].value;}}dropdown.onchange = onCatChange;})();/* ]]> */</script>',
 			),
 		);
 

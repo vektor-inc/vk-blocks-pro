@@ -114,25 +114,25 @@ export default function TOCEdit(props) {
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={__('Note on duplicating headings', 'vk-blocks')}
+					title={__('Note on duplicating headings', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<BaseControl>
 						<p>
 							{__(
 								'If you duplicate a heading, the table of contents block will not work properly, please reassign the ID.',
-								'vk-blocks'
+								'vk-blocks-pro'
 							)}
 						</p>
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
-					title={__('Display type', 'vk-blocks')}
+					title={__('Display type', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<BaseControl
 						id={`vk-toc-style`}
-						label={__('Style', 'vk-blocks')}
+						label={__('Style', 'vk-blocks-pro')}
 					>
 						<SelectControl
 							value={style}
@@ -142,18 +142,18 @@ export default function TOCEdit(props) {
 							options={[
 								{
 									value: 'default',
-									label: __('Default', 'vk-blocks'),
+									label: __('Default', 'vk-blocks-pro'),
 								},
 								{
 									value: '',
-									label: __('No frame', 'vk-blocks'),
+									label: __('No frame', 'vk-blocks-pro'),
 								},
 							]}
 						/>
 					</BaseControl>
 					<BaseControl
 						id={`vk_toc-displayStaus`}
-						label={__('Default Display Status', 'vk-blocks')}
+						label={__('Default Display Status', 'vk-blocks-pro')}
 					>
 						<SelectControl
 							value={open}
@@ -161,11 +161,11 @@ export default function TOCEdit(props) {
 							options={[
 								{
 									value: 'open',
-									label: __('OPEN', 'vk-blocks'),
+									label: __('OPEN', 'vk-blocks-pro'),
 								},
 								{
 									value: 'close',
-									label: __('CLOSE', 'vk-blocks'),
+									label: __('CLOSE', 'vk-blocks-pro'),
 								},
 							]}
 						/>
@@ -175,7 +175,7 @@ export default function TOCEdit(props) {
 			<div {...blockProps}>
 				<div className="tab">
 					<div className={'vk_tableOfContents_title'}>
-						{__('Table of Contents', 'vk-blocks')}
+						{__('Table of Contents', 'vk-blocks-pro')}
 					</div>
 					<input type="checkbox" id="chck1" />
 					<label

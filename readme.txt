@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.0
 Tested up to: 6.2
-Stable tag: 1.53.0.1
+Stable tag: 1.55.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -22,13 +22,16 @@ This is a plugin that extends Gutenberg's blocks.
 * FAQ
 * Balloon
 * Flow
+* Page Content
 * Button
 * PR Blocks
 * PR Content
 * Border box
 * Title（with sub text）
 * Responsive Spacer
-* Page Content
+* Breadcrumb [ Pro ]
+* Dynamic Text ( Post Type name / Ancestor Page name ) [ Pro ]
+* Grid Column Card [ Pro ]
 * Post List [ Pro ]
 * Step [ Pro ]
 * Timeline [ Pro ]
@@ -62,8 +65,20 @@ e.g.
 
 == Changelog ==
 
-[ Specification Change ][ Slider ] Update Swiper to 9.2.3.
+[ Add Function ] Allow alpha value in some blocks.
+[ Add Function ][ Dynamic Text Block (Pro) ] Added an option to show/hide the title when an ancestor page is selected and the ancestor page is display.
+[ Add Function ][ Animation(Pro) ] Added transforms settings to wrap and unwrap.
+[ Add Alert ][ Slider ] Add loop alert
+[ Bug Fix ] Fix Textdomain( Translate ) for VK Blocks Pro
+[ Bug fix ][ Child page list ] "There are no page." is not displayed on the front page.
+[ Bug fix ][ Breadcrumb ] Delete non intentional margin on editor screen
+[ Bug Fix ][ Taxonomy block ( Pro ) ] Fix the "Show hierarchy" option bug.
+
+= 1.56.0 =
+[ Add Block ][ Dynamic Text Block (Pro) ] Add Dynamic text block.
 [ Add Function ][ Admin screen ] Added block style manager function.
+[ Specification Change ][ Slider ] Update Swiper to 9.2.3.
+[ Bug Fix ][ Taxonomy block ( Pro ) ] Fix Dropdown Script.
 [ Bug fix ][ Custom Format Setting (Pro) ] Custom Format Setting WordPress 6.2 UI adjustment.
 [ Bug fix ][ Step(Pro) / Time Line(Pro) ] Fix item content overflow
 
@@ -194,7 +209,7 @@ e.g.
 
 = 1.39.2 =
 [ Bug Fix ][ Breadcrumb ] Fix in case of filter search result category & keyword
-[ Bug Fix ][ Table style ] Delete border left and right specified vk-table-border-top-bottom 
+[ Bug Fix ][ Table style ] Delete border left and right specified vk-table-border-top-bottom
 [ Specification Change ][ icon ] enable float value at icon size and margin
 
 = 1.39.1 =
@@ -205,7 +220,7 @@ e.g.
 [ Improvement ] License key remove space.
 [ Bug Fix ][ Common mergin ] cope with table margin bottom 0,margin top 0
 [ Bug fix ][ GridColCard ( Pro ) ] cope with custom color palette
-[ Other ] VK Compo ( mini-content ) Update ( Fix slider align ) 
+[ Other ] VK Compo ( mini-content ) Update ( Fix slider align )
 
 = 1.38.0 =
 [ Bug fix ][ Post List (Pro) ] cope with pagenation hook
@@ -219,7 +234,7 @@ e.g.
 [ Bug fix ][ Heading design ] Fix text-align
 
 = 1.36.2 =
-[ Specification Change ] allow iframe on post list filter 
+[ Specification Change ] allow iframe on post list filter
 [ Bug Fix ][ Slider ( Pro ) ] Add compatibility process.
 [ Bug fix ][ Heading design ] Fix plain design text-align
 
@@ -251,7 +266,7 @@ e.g.
 [ Bug Fix ][ Grid Col Card(Pro) ] Fix bocome narrow width in case of innner block on edit screen
 
 = 1.33.2 =
-[ Bug Fix ][ Button ] Fix horizontal padding for X-T9 
+[ Bug Fix ][ Button ] Fix horizontal padding for X-T9
 [ Bug Fix ][ Common mergin ] cope with table bottom
 [ Bug Fix ][ Breadcrumb(Pro) ] Fix front page breadcrumb
 [ Bug Fix ][ Grid Column(Pro) ] fix row block layout in Grid Column Block
@@ -355,7 +370,7 @@ Change stable version
 [ fix ][ Card(Pro) ] fix unify breakpoints.
 
 = 1.24.4 =
-[ Specification Change ][ Heading Design ] Strengthen selector on editor screen 
+[ Specification Change ][ Heading Design ] Strengthen selector on editor screen
 
 = 1.24.3 =
 [ Bug fix ][ FAQ ] Fix list block last item can't edit.
@@ -396,7 +411,7 @@ Change stable version
 
 = 1.22.1 =
 Cope with WordPress 5.9
-[ Add function ] load separate block setting from setting > vk blocks 
+[ Add function ] load separate block setting from setting > vk blocks
 [ fix ][ Heading ] Make text size not auto-include when changing heading level
 [ fix ][ Grid Column ] fix translate
 [ fix ][ Heading ] vertical heading levels for wp-5.9
@@ -449,7 +464,7 @@ Cope with WordPress 5.9
 
 = 1.19.0 =
 [ Add Function ][ Button ] Set the text color with palette
-[ Bug fix ][ Button ] Add primary color css variable in case of other theme 
+[ Bug fix ][ Button ] Add primary color css variable in case of other theme
 
 = 1.18.6 =
 [ Bug fix ][ Button ] Custom color value don't refrect reopen
@@ -541,7 +556,7 @@ Cope with WordPress 5.9
 [ Improvement ][ Slider(Pro) ] add navigation position
 [ Specification Change ] VK Components Update ( can be customize title by hook )
 [ Specification Change ][ Slider(Pro) ] If set slide type fade that disable slide step number
-[ Bug fix ][ Slider(Pro) ] Fix bug that to be same id under case of copy slide item 
+[ Bug fix ][ Slider(Pro) ] Fix bug that to be same id under case of copy slide item
 [ Bug fix ][ Social icon ] Fix css in grid block
 
 = 1.11.4 =
@@ -621,7 +636,7 @@ Cope with WordPress 5.9
 [ Specification Change ] Stop exclude CSS Var by Tree shaking
 
 = 1.4.0 =
-[ Improvement ][ title ] Convert to VK Blocks Title from core title block 
+[ Improvement ][ title ] Convert to VK Blocks Title from core title block
 [ Improvement ][ Select Post List Item ]setting from toolbar and enable search URL
 [ Bug fix ][ translate ] in Select Post List Item
 [ Bug fix ][ New FAQ ] Fix multiple select
@@ -881,10 +896,10 @@ Version change only
 [ Add function ] Responsive BR
 
 = 0.44.13 =
-[ digigin bug fix ] vk_heading plain css adjustment 
+[ digigin bug fix ] vk_heading plain css adjustment
 
 = 0.44.12 =
-[ digigin bug fix ] Block heading css adjustment 
+[ digigin bug fix ] Block heading css adjustment
 
 = 0.44.11 =
 version only
@@ -903,21 +918,21 @@ version only
 
 = 0.44.6 =
 [ bug fix ][ block pattern(Pro) ] Fix block pattern
-[ bug fix ] Stop ExUnit VK Blocks 
+[ bug fix ] Stop ExUnit VK Blocks
 [ bug fix ][ border box ] Cope with lightning pro headding design ( balloon )
 
 = 0.44.5 =
-[ digigin bug fix ] Block heading Digigin text align tuning 
+[ digigin bug fix ] Block heading Digigin text align tuning
 
 = 0.44.4 =
 version only
 
 = 0.44.3 =
  [ Specification change ] abolish Preload
- [ digigin bug fix ] Block heading Digigin font color tuning 
+ [ digigin bug fix ] Block heading Digigin font color tuning
 
 = 0.44.2 =
-[ digigin bug fix ] Block heading Digigin tuning 
+[ digigin bug fix ] Block heading Digigin tuning
 
 = 0.44.1 =
 [ Desigin tuning ] Tag change
@@ -925,7 +940,7 @@ version only
 = 0.44.0
 [ Specification Change ] Re Cope with xxl size
 [ bug fix ][ Card(Pro) ] fix critical error on card and recover to 0.43.0
-[ bug fix ][ Child Page(Pro) ] fix use in vk page widget 
+[ bug fix ][ Child Page(Pro) ] fix use in vk page widget
 [ bug fix ][ Grid Column(Pro) ] New column drug bug fix
 
 = 0.43.4(0.42.1) =
@@ -1025,7 +1040,7 @@ Add translate
 [ Bug Fix] PHP error
 
 = 0.37.1 =
-[ Bug Fix][ Title ] Setted text elesed 
+[ Bug Fix][ Title ] Setted text elesed
 
 = 0.37.0 =
 [ Add function ][ Balloon ] Fixed the problem that the entered text disappears
@@ -1061,7 +1076,7 @@ build only
 [ Specification Change ][ Border Box ] Padding tuning ( Wide screen )
 
 = 0.34.0 =
-[ Add block ][ Animation(Pro) ] 
+[ Add block ][ Animation(Pro) ]
 [ Add function ] Add fontawesome icon selector to Border box block
 
 = 0.33.3 =

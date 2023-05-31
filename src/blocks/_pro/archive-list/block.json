@@ -22,7 +22,7 @@
 		}
 	},
 	"description": "Displays a list of archives",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
 		"className": true
 	}

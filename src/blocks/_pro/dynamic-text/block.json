@@ -1,0 +1,63 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/dynamic-text",
+	"category": "vk-blocks-cat",
+	"title": "Dynamic Text",
+	"attributes": {
+		"textAlign": {
+			"type": "string",
+			"default": null
+		},
+		"displayElement": {
+			"type": "string",
+			"default": "please-select"
+		},
+		"tagName": {
+			"type": "string",
+			"default": "div"
+		},
+		"ancestorPageHiddenOption": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"description": "Display dynamic text",
+	"textdomain": "vk-blocks-pro",
+	"supports": {
+		"className": true,
+		"align": [
+			"wide",
+			"full"
+		],
+		"anchor": true,
+		"html": false,
+		"color": {
+			"gradients": true,
+			"link": true,
+			"__experimentalDefaultControls": {
+				"background": true,
+				"text": true,
+				"link": true
+			}
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"__experimentalFontFamily": true,
+			"__experimentalFontWeight": true,
+			"__experimentalFontStyle": true,
+			"__experimentalTextTransform": true,
+			"__experimentalTextDecoration": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalDefaultControls": {
+				"fontSize": true,
+				"fontAppearance": true,
+				"textTransform": true
+			}
+		}
+	}
+}

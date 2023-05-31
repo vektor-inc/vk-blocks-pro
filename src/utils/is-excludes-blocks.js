@@ -12,7 +12,7 @@ export const inString = (str, keyword) => {
 // The checking block is hidden function target or not
 export const isExcludesBlocks = ({ blockName, addExclude }) => {
 	// Target of hidden function active
-	const allowed = ['core', 'vk-blocks'];
+	const allowed = ['core', 'vk-blocks-pro'];
 	// name には allowed の項目が一つずつ入る
 	// 判断中のブロック名の中にname( core or vk-blocks )がある（ undefinedじゃない ）場合
 	// true を返す

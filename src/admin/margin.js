@@ -17,38 +17,38 @@ import { AdminContext } from '@vkblocks/admin/index';
 
 const MARGIN_SIZE_ARRAY = [
 	{
-		marginLabel: __('XS', 'vk-blocks'),
+		marginLabel: __('XS', 'vk-blocks-pro'),
 		marginValue: 'xs',
 	},
 	{
-		marginLabel: __('S', 'vk-blocks'),
+		marginLabel: __('S', 'vk-blocks-pro'),
 		marginValue: 'sm',
 	},
 	{
-		marginLabel: __('M', 'vk-blocks'),
+		marginLabel: __('M', 'vk-blocks-pro'),
 		marginValue: 'md',
 	},
 	{
-		marginLabel: __('L', 'vk-blocks'),
+		marginLabel: __('L', 'vk-blocks-pro'),
 		marginValue: 'lg',
 	},
 	{
-		marginLabel: __('XL', 'vk-blocks'),
+		marginLabel: __('XL', 'vk-blocks-pro'),
 		marginValue: 'xl',
 	},
 ];
 
 const DEVICE_ARRAY = [
 	{
-		deviceLabel: __('PC', 'vk-blocks'),
+		deviceLabel: __('PC', 'vk-blocks-pro'),
 		deviceValue: 'pc',
 	},
 	{
-		deviceLabel: __('Tablet', 'vk-blocks'),
+		deviceLabel: __('Tablet', 'vk-blocks-pro'),
 		deviceValue: 'tablet',
 	},
 	{
-		deviceLabel: __('Mobile', 'vk-blocks'),
+		deviceLabel: __('Mobile', 'vk-blocks-pro'),
 		deviceValue: 'mobile',
 	},
 ];
@@ -61,16 +61,16 @@ export default function AdminMargin() {
 		<>
 			<section className="margin-setting">
 				<h3 id="margin-setting">
-					{__('Common Margin Setting', 'vk-blocks')}
+					{__('Common Margin Setting', 'vk-blocks-pro')}
 				</h3>
 				<p>
 					{__(
 						'Please specify the size of the common margin used for responsive spacers, etc.',
-						'vk-blocks'
+						'vk-blocks-pro'
 					)}
 				</p>
 				<div className="margin-setting__unit">
-					<span>{__('Unit', 'vk-blocks')}</span>
+					<span>{__('Unit', 'vk-blocks-pro')}</span>
 					<SelectControl
 						name="vk_blocks_options[margin_unit]"
 						className="vk_admin_selectControl unit-select"
@@ -100,7 +100,7 @@ export default function AdminMargin() {
 								);
 							})}
 							<td>
-								{__('Custom Value', 'vk-blocks')}
+								{__('Custom Value', 'vk-blocks-pro')}
 								<span className="vk_admin_tooltip">
 									<span className="vk_admin_tooltip__trigger">
 										?
@@ -108,19 +108,17 @@ export default function AdminMargin() {
 									<span className="vk_admin_tooltip__body">
 										{__(
 											'If you enter a custom value, the values you entered will be used as a priority.',
-											'vk-blocks'
+											'vk-blocks-pro'
 										)}
 										<br />
 										{__(
 											'This item is mainly intended for inputting CSS variables for the margins specified by the theme. Thereby you can apply to the same margin size to the VK Blocks.',
-											'vk-blocks'
+											'vk-blocks-pro'
 										)}
 										<br />
 										{/* 最後のセミコロンは勝手につくので例の最後のセミコロンは不要*/}
-										{__('ex)', 'vk-blocks')}
-										{
-											'var(--wp--custom--spacing--xx--small)'
-										}
+										{__('ex)', 'vk-blocks-pro')}
+										{'var(--wp--custom--spacing--xx-small)'}
 									</span>
 								</span>
 							</td>
@@ -132,7 +130,7 @@ export default function AdminMargin() {
 							return (
 								<tr key={marginLabel}>
 									<th className="nowrap">
-										{__('Margin', 'vk-blocks') +
+										{__('Margin', 'vk-blocks-pro') +
 											` [ ${marginLabel} ] `}
 									</th>
 									{DEVICE_ARRAY.map((device) => {

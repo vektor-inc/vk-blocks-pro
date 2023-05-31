@@ -94,7 +94,7 @@ function HighlighterEdit({
 				onUse={() => setIsAddingColor(true)}
 			/>
 			<RichTextToolbarButton
-				title={__('Highlighter', 'vk-blocks')}
+				title={__('Highlighter', 'vk-blocks-pro')}
 				onClick={() => {
 					if (heightlightColor === undefined) {
 						// set default color on initial
@@ -133,7 +133,7 @@ function HighlighterEdit({
 }
 
 export const highlighColor = {
-	title: __('Highlighter', 'vk-blocks'),
+	title: __('Highlighter', 'vk-blocks-pro'),
 	tagName: 'span',
 	className: 'vk_highlighter',
 	attributes: {

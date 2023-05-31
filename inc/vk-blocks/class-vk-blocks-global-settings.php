@@ -154,6 +154,10 @@ class VK_Blocks_Global_Settings {
 				'is_pro' => true,
 			),
 			array(
+				'name'   => 'dynamic-text',
+				'is_pro' => true,
+			),
+			array(
 				'name'   => 'grid-column',
 				'is_pro' => true,
 			),
@@ -244,191 +248,191 @@ class VK_Blocks_Global_Settings {
 			'core/heading' => array(
 				array(
 					'name'  => 'vk-heading-plain',
-					'label' => __( 'Plain', 'vk-blocks' ),
+					'label' => __( 'Plain', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-heading-background_fill_lightgray',
-					'label' => __( 'Background fill lightgray', 'vk-blocks' ),
+					'label' => __( 'Background fill lightgray', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-heading-double_black',
-					'label' => __( 'Double border top and bottom black', 'vk-blocks' ),
+					'label' => __( 'Double border top and bottom black', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-heading-double_bottomborder_black',
-					'label' => __( 'Double border bottom black', 'vk-blocks' ),
+					'label' => __( 'Double border bottom black', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-heading-solid_black',
-					'label' => __( 'Solid border top and bottom black', 'vk-blocks' ),
+					'label' => __( 'Solid border top and bottom black', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-heading-solid_bottomborder_black',
-					'label' => __( 'Solid border bottom black', 'vk-blocks' ),
+					'label' => __( 'Solid border bottom black', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-heading-dotted_bottomborder_black',
-					'label' => __( 'Dotted border bottom black', 'vk-blocks' ),
+					'label' => __( 'Dotted border bottom black', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-heading-both_ends',
-					'label' => __( 'Both ends', 'vk-blocks' ),
+					'label' => __( 'Both ends', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-heading-brackets_black',
-					'label' => __( 'Brackets black', 'vk-blocks' ),
+					'label' => __( 'Brackets black', 'vk-blocks-pro' ),
 				),
 			),
 			'core/list'    => array(
 				array(
 					'name'  => 'vk-arrow-mark',
-					'label' => __( 'Arrow', 'vk-blocks' ),
+					'label' => __( 'Arrow', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-triangle-mark',
-					'label' => __( 'Triangle', 'vk-blocks' ),
+					'label' => __( 'Triangle', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-check-mark',
-					'label' => __( 'Check', 'vk-blocks' ),
+					'label' => __( 'Check', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-check-square-mark',
-					'label' => __( 'Check Square', 'vk-blocks' ),
+					'label' => __( 'Check Square', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-check-circle-mark',
-					'label' => __( 'Check Circle', 'vk-blocks' ),
+					'label' => __( 'Check Circle', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-handpoint-mark',
-					'label' => __( 'Handpoint', 'vk-blocks' ),
+					'label' => __( 'Handpoint', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-pencil-mark',
-					'label' => __( 'Pencil', 'vk-blocks' ),
+					'label' => __( 'Pencil', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-smile-mark',
-					'label' => __( 'Smile', 'vk-blocks' ),
+					'label' => __( 'Smile', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-frown-mark',
-					'label' => __( 'Frown', 'vk-blocks' ),
+					'label' => __( 'Frown', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-numbered-circle-mark',
-					'label' => __( 'Numbered Circle', 'vk-blocks' ),
+					'label' => __( 'Numbered Circle', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-numbered-square-mark',
-					'label' => __( 'Numbered Square', 'vk-blocks' ),
+					'label' => __( 'Numbered Square', 'vk-blocks-pro' ),
 				),
 			),
 			'core/table'   => array(
 				array(
 					'name'  => 'vk-table-border-top-bottom',
-					'label' => __( 'Border Top Bottom', 'vk-blocks' ),
+					'label' => __( 'Border Top Bottom', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-table-border',
-					'label' => __( 'Border', 'vk-blocks' ),
+					'label' => __( 'Border', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-table-border-stripes',
-					'label' => __( 'Border / Stripes', 'vk-blocks' ),
+					'label' => __( 'Border / Stripes', 'vk-blocks-pro' ),
 				),
 			),
 			'core/image'   => array(
 				array(
 					'name'  => 'vk-image-rounded',
-					'label' => __( 'Rounded02', 'vk-blocks' ),
+					'label' => __( 'Rounded02', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-image-border',
-					'label' => __( 'Border', 'vk-blocks' ),
+					'label' => __( 'Border', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-image-photoFrame',
-					'label' => __( 'Photo frame', 'vk-blocks' ),
+					'label' => __( 'Photo frame', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-image-photoFrame-tilt-right',
-					'label' => __( 'Photo frame Tilt Right', 'vk-blocks' ),
+					'label' => __( 'Photo frame Tilt Right', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-image-photoFrame-tilt-left',
-					'label' => __( 'Photo frame Tilt Left', 'vk-blocks' ),
+					'label' => __( 'Photo frame Tilt Left', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-image-shadow',
-					'label' => __( 'Shadow', 'vk-blocks' ),
+					'label' => __( 'Shadow', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-image-wave01',
-					'label' => __( 'Wave01', 'vk-blocks' ),
+					'label' => __( 'Wave01', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-image-wave02',
-					'label' => __( 'Wave02', 'vk-blocks' ),
+					'label' => __( 'Wave02', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-image-wave03',
-					'label' => __( 'Wave03', 'vk-blocks' ),
+					'label' => __( 'Wave03', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-image-wave04',
-					'label' => __( 'Wave04', 'vk-blocks' ),
+					'label' => __( 'Wave04', 'vk-blocks-pro' ),
 				),
 			),
 			'core/group'   => array(
 				array(
 					'name'  => 'vk-group-solid',
-					'label' => __( 'Solid', 'vk-blocks' ),
+					'label' => __( 'Solid', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-group-solid-roundcorner',
-					'label' => __( 'Solid Roundcorner', 'vk-blocks' ),
+					'label' => __( 'Solid Roundcorner', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-group-dotted',
-					'label' => __( 'Dotted', 'vk-blocks' ),
+					'label' => __( 'Dotted', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-group-dashed',
-					'label' => __( 'Dashed', 'vk-blocks' ),
+					'label' => __( 'Dashed', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-group-double',
-					'label' => __( 'Double', 'vk-blocks' ),
+					'label' => __( 'Double', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-group-stitch',
-					'label' => __( 'Stitch', 'vk-blocks' ),
+					'label' => __( 'Stitch', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-group-top-bottom-border',
-					'label' => __( 'Border Top Bottom', 'vk-blocks' ),
+					'label' => __( 'Border Top Bottom', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-group-shadow',
-					'label' => __( 'Shadow', 'vk-blocks' ),
+					'label' => __( 'Shadow', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-group-alert-info',
-					'label' => __( 'Info', 'vk-blocks' ),
+					'label' => __( 'Info', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-group-alert-success',
-					'label' => __( 'Success', 'vk-blocks' ),
+					'label' => __( 'Success', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-group-alert-warning',
-					'label' => __( 'Warning', 'vk-blocks' ),
+					'label' => __( 'Warning', 'vk-blocks-pro' ),
 				),
 				array(
 					'name'  => 'vk-group-alert-danger',
-					'label' => __( 'Danger', 'vk-blocks' ),
+					'label' => __( 'Danger', 'vk-blocks-pro' ),
 				),
 			),
 		);
@@ -453,22 +457,22 @@ class VK_Blocks_Global_Settings {
 	public static function font_sizes() {
 		$font_sizes = array(
 			array(
-				'name' => __( 'Small', 'vk-blocks' ),
+				'name' => __( 'Small', 'vk-blocks-pro' ),
 				'slug' => 'small',
 				'size' => '12px',
 			),
 			array(
-				'name' => __( 'Normal', 'vk-blocks' ),
+				'name' => __( 'Normal', 'vk-blocks-pro' ),
 				'slug' => 'normal',
 				'size' => '16px',
 			),
 			array(
-				'name' => __( 'Big', 'vk-blocks' ),
+				'name' => __( 'Big', 'vk-blocks-pro' ),
 				'slug' => 'big',
 				'size' => '18px',
 			),
 			array(
-				'name' => __( 'Extra big', 'vk-blocks' ),
+				'name' => __( 'Extra big', 'vk-blocks-pro' ),
 				'slug' => 'extra-big',
 				'size' => '21px',
 			),

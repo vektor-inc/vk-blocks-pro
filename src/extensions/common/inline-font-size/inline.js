@@ -20,22 +20,22 @@ import { inlineFontSize as settings } from './index';
 
 const fontSizes = [
 	{
-		name: __('Small', 'vk-blocks'),
+		name: __('Small', 'vk-blocks-pro'),
 		slug: 'small',
 		size: '12px',
 	},
 	{
-		name: __('Normal', 'vk-blocks'),
+		name: __('Normal', 'vk-blocks-pro'),
 		slug: 'normal',
 		size: '16px',
 	},
 	{
-		name: __('Big', 'vk-blocks'),
+		name: __('Big', 'vk-blocks-pro'),
 		slug: 'big',
 		size: '18px',
 	},
 	{
-		name: __('Extra big', 'vk-blocks'),
+		name: __('Extra big', 'vk-blocks-pro'),
 		slug: 'extra-big',
 		size: '21px',
 	},
@@ -105,7 +105,7 @@ function InlineFontSizePicker({ name, value, onChange, setIsSettingFontSize }) {
 				variant="secondary"
 				style={buttonStyle}
 			>
-				{__('Apply', 'vk-blocks')}
+				{__('Apply', 'vk-blocks-pro')}
 			</Button>
 		</div>
 	);

@@ -21,7 +21,7 @@ export const DepBody = (props) => {
 				className={'vk_borderBox_title'}
 				onChange={(value) => setAttributes({ heading: value })}
 				value={heading}
-				placeholder={__('Please enter a title.', 'vk-blocks')}
+				placeholder={__('Please enter a title.', 'vk-blocks-pro')}
 			/>
 		);
 	} else if ('save') {

@@ -20,7 +20,7 @@ export default function Edit(props) {
 			{
 				placeholder: __(
 					'You can create a variety of layouts with grid column card blocks.',
-					'vk-blocks'
+					'vk-blocks-pro'
 				),
 			},
 		],

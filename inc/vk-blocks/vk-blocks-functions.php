@@ -53,7 +53,7 @@ add_action(
 	function () {
 		// Load language files.
 		$path = dirname( plugin_basename( __FILE__ ) ) . '/languages';
-		load_plugin_textdomain( 'vk-blocks', false, $path );
+		load_plugin_textdomain( 'vk-blocks-pro', false, $path );
 	}
 );
 

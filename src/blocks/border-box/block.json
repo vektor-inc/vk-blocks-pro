@@ -28,7 +28,7 @@
 		}
 	},
 	"description": "This is a border box where you can place headings to attract attention.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
 		"className": true
 	}

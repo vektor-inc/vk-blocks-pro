@@ -17,7 +17,7 @@ test('Taxonomy Block Test', async ({ page }) => {
 	// If the modal is visible, click the close button
 	if (!isPTM) {
 		console.log('ExUnit is not active');
-		await page.getByRole('link', { name: 'Plugins', exact: true }).click();
+		await page.goto('http://localhost:8889/wp-admin/plugins.php');
 		await page.locator('#wpbody-content').getByRole('link', { name: 'Add New' }).click();
 		await page.getByPlaceholder('Search plugins...').fill('vk all in one expansion unit');
 		await page.getByPlaceholder('Search plugins...').press('Enter');
@@ -32,6 +32,7 @@ test('Taxonomy Block Test', async ({ page }) => {
 		const buttonText = await page.$eval('.plugin-card-vk-all-in-one-expansion-unit .plugin-action-buttons .button', el => el.innerText);
 
 		if (buttonText === 'Install Now') {
+			console.log(buttonText);
 			// インストールボタンが存在する場合
 			const installButton = await page.$('a[class="install-now button"][data-slug="vk-all-in-one-expansion-unit"]');
 			if (installButton !== null) {
@@ -45,6 +46,14 @@ test('Taxonomy Block Test', async ({ page }) => {
 				// Activateボタンが表示されるまで待機
 				await page.waitForSelector('a[class="button activate-now button-primary"][data-slug="vk-all-in-one-expansion-unit"]');
 			}
+		} else if (buttonText === 'Update Now') {
+			console.log(buttonText);
+			const updateButton = await page.$('a[class*="update-now button"][data-slug="vk-all-in-one-expansion-unit"]');
+			if (updateButton !== null) {
+				await updateButton.click();
+				// アップデート完了まで待機
+				await page.waitForSelector('a[class*="button activate-now"][data-slug="vk-all-in-one-expansion-unit"]');
+			}
 		}
 
 		// Check if the button is disabled
@@ -57,13 +66,13 @@ test('Taxonomy Block Test', async ({ page }) => {
 			await page.getByRole('link', { name: 'Activate VK All in One Expansion Unit' }).click();
 
 			// Activateボタンが消えるまで待機
-			await page.waitForSelector('a[class="button activate-now button-primary"][data-slug="vk-all-in-one-expansion-unit"]', { state: 'hidden' });
+			await page.waitForSelector('a[class*="button activate-now"][data-slug="vk-all-in-one-expansion-unit"]', { state: 'hidden' });
 		}
-	} else{
+	} else {
 		console.log('ExUnit is active');
 	}
 
-	// Add Event Post Type /////////////////////////////////////////////////
+	// // Add Event Post Type /////////////////////////////////////////////////
 
 	await page.goto('http://localhost:8889/wp-admin/edit.php?post_type=post_type_manage');
 	await page.locator('#wpbody-content').getByRole('link', { name: 'Add New' }).click();

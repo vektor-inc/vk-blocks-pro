@@ -30,7 +30,7 @@ export const in_string = (str, keyword) => {
 // eslint-disable-next-line camelcase
 export const is_hidden = (blockName) => {
 	// Target of hidden function active
-	const allowed = ['core', 'vk-blocks-pro'];
+	const allowed = ['core', 'vk-blocks'];
 	// name には allowed の項目が一つずつ入る
 	// 判断中のブロック名の中にname( core or vk-blocks )がある（ undefinedじゃない ）場合
 	// true を返す

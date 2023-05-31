@@ -224,7 +224,7 @@ export default function ImportForm() {
 					title={__(
 						'インポートデータ確認',
 						// 'Import data confirmation',
-						'vk-blocks'
+						'vk-blocks-pro'
 					)}
 					onRequestClose={closeModal}
 					isDismissible={false}
@@ -236,7 +236,7 @@ export default function ImportForm() {
 							{__(
 								'インポートデータがありません',
 								// 'No import data',
-								'vk-blocks'
+								'vk-blocks-pro'
 							)}
 						</p>
 					)}
@@ -276,7 +276,7 @@ export default function ImportForm() {
 												__(
 													'%s をインポートする',
 													// 'Import %s',
-													'vk-blocks'
+													'vk-blocks-pro'
 												),
 												groupTitle
 											)}
@@ -302,7 +302,7 @@ export default function ImportForm() {
 															label={__(
 																'インポート方法',
 																// 'Import method',
-																'vk-blocks'
+																'vk-blocks-pro'
 															)}
 															onChange={(
 																value
@@ -317,7 +317,7 @@ export default function ImportForm() {
 																	label: __(
 																		'追加',
 																		// 'Add',
-																		'vk-blocks'
+																		'vk-blocks-pro'
 																	),
 																	value: 'add',
 																},
@@ -325,7 +325,7 @@ export default function ImportForm() {
 																	label: __(
 																		'上書き',
 																		// 'Override',
-																		'vk-blocks'
+																		'vk-blocks-pro'
 																	),
 																	value: 'override',
 																},
@@ -363,7 +363,7 @@ export default function ImportForm() {
 																<p>
 																	{__(
 																		'以下のデータは識別子が被っているためインポートしません。',
-																		'vk-blocks'
+																		'vk-blocks-pro'
 																	)}
 																</p>
 															)}
@@ -449,7 +449,7 @@ export default function ImportForm() {
 						{__(
 							// 'インポートしました',
 							'Import Success',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}{' '}
 					</Snackbar>
 				</div>

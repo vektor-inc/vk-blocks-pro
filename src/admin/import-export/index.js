@@ -12,7 +12,7 @@ import ImportForm from './import-form';
 
 export const OPTION_DEFAULT_SETTINGS = [
 	{
-		groupTitle: __('License Key', 'vk-blocks'),
+		groupTitle: __('License Key', 'vk-blocks-pro'),
 		options: [
 			{
 				name: 'vk_blocks_pro_license_key',
@@ -22,7 +22,7 @@ export const OPTION_DEFAULT_SETTINGS = [
 		isShow: !!vkBlocksObject.isLicenseSetting,
 	},
 	{
-		groupTitle: __('Balloon Setting', 'vk-blocks'),
+		groupTitle: __('Balloon Setting', 'vk-blocks-pro'),
 		options: [
 			{
 				name: 'balloon_border_width',
@@ -36,7 +36,7 @@ export const OPTION_DEFAULT_SETTINGS = [
 		isImport: true,
 	},
 	{
-		groupTitle: __('Custom Format Setting', 'vk-blocks'),
+		groupTitle: __('Custom Format Setting', 'vk-blocks-pro'),
 		options: [
 			{
 				name: 'custom_format_lists',
@@ -49,7 +49,7 @@ export const OPTION_DEFAULT_SETTINGS = [
 		isShow: !!vkBlocksObject.isPro,
 	},
 	{
-		groupTitle: __('Custom Block Style Setting', 'vk-blocks'),
+		groupTitle: __('Custom Block Style Setting', 'vk-blocks-pro'),
 		options: [
 			{
 				name: 'custom_block_style_lists',
@@ -62,7 +62,7 @@ export const OPTION_DEFAULT_SETTINGS = [
 		isShow: !!vkBlocksObject.isPro,
 	},
 	{
-		groupTitle: __('Margin Setting', 'vk-blocks'),
+		groupTitle: __('Margin Setting', 'vk-blocks-pro'),
 		options: [
 			{
 				name: 'margin_unit',
@@ -74,7 +74,7 @@ export const OPTION_DEFAULT_SETTINGS = [
 		isImport: true,
 	},
 	{
-		groupTitle: __('Load Separate Setting', 'vk-blocks'),
+		groupTitle: __('Load Separate Setting', 'vk-blocks-pro'),
 		options: [
 			{
 				name: 'load_separate_option',
@@ -83,7 +83,7 @@ export const OPTION_DEFAULT_SETTINGS = [
 		isImport: true,
 	},
 	{
-		groupTitle: __('FAQ Block Setting', 'vk-blocks'),
+		groupTitle: __('FAQ Block Setting', 'vk-blocks-pro'),
 		options: [
 			{
 				name: 'new_faq_accordion',
@@ -93,7 +93,7 @@ export const OPTION_DEFAULT_SETTINGS = [
 		isShow: !!vkBlocksObject.isPro,
 	},
 	{
-		groupTitle: __('Custom CSS Setting', 'vk-blocks'),
+		groupTitle: __('Custom CSS Setting', 'vk-blocks-pro'),
 		options: [
 			{
 				name: 'show_custom_css_editor_flag',
@@ -103,7 +103,7 @@ export const OPTION_DEFAULT_SETTINGS = [
 		isShow: !!vkBlocksObject.isPro,
 	},
 	{
-		groupTitle: __('Block Manager Setting', 'vk-blocks'),
+		groupTitle: __('Block Manager Setting', 'vk-blocks-pro'),
 		options: [
 			{
 				name: 'disable_block_lists',
@@ -112,7 +112,7 @@ export const OPTION_DEFAULT_SETTINGS = [
 		isImport: true,
 	},
 	{
-		groupTitle: __('Block Style Manager Setting', 'vk-blocks'),
+		groupTitle: __('Block Style Manager Setting', 'vk-blocks-pro'),
 		options: [
 			{
 				name: 'disable_block_style_lists',
@@ -129,7 +129,7 @@ export default function AdminImportExport() {
 				{__(
 					'インポート エクスポート ツール',
 					// 'Import Export Tool',
-					'vk-blocks'
+					'vk-blocks-pro'
 				)}
 			</h3>
 			<ExportForm />

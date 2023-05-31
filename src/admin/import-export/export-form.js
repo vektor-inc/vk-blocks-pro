@@ -59,14 +59,14 @@ export default function ExportForm() {
 				{__(
 					'エクスポート',
 					// 'Export',
-					'vk-blocks'
+					'vk-blocks-pro'
 				)}
 			</h4>
 			<CheckboxControl
 				label={__(
 					'すべて切り替え',
 					// 'Toggle all',
-					'vk-blocks'
+					'vk-blocks-pro'
 				)}
 				checked={isExportLists.length === exportOptionLists.length}
 				onChange={handleToggleAll}
@@ -94,7 +94,7 @@ export default function ExportForm() {
 								__(
 									'%sをエクスポートする',
 									// 'Export %s',
-									'vk-blocks'
+									'vk-blocks-pro'
 								),
 								groupTitle
 							)}
@@ -109,7 +109,7 @@ export default function ExportForm() {
 					{__(
 						'変更した設定が保存されていないようです。変更前の設定内容をエクスポートします。',
 						// 'It seems that the changed settings are not saved. Export settings before change.',
-						'vk-blocks'
+						'vk-blocks-pro'
 					)}
 				</p>
 			)}
@@ -125,7 +125,7 @@ export default function ExportForm() {
 					{__(
 						'エクスポート',
 						// 'Export',
-						'vk-blocks'
+						'vk-blocks-pro'
 					)}
 				</Button>
 			</div>

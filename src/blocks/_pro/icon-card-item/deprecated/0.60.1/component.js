@@ -82,7 +82,7 @@ export const PRcarditem = (props) => {
 						'vk-blocks/highlighter', // 蛍光マーカー
 						'vk-blocks/responsive-br', // Select a direction (レスポンシブ改行)
 					]}
-					placeholder={__('Input Title', 'vk-blocks')}
+					placeholder={__('Input Title', 'vk-blocks-pro')}
 				/>
 				<RichText
 					className={`vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-${align.text}`}
@@ -103,7 +103,7 @@ export const PRcarditem = (props) => {
 						'vk-blocks/highlighter', // 蛍光マーカー
 						'vk-blocks/responsive-br', // Select a direction (レスポンシブ改行)
 					]}
-					placeholder={__('Input Content', 'vk-blocks')}
+					placeholder={__('Input Content', 'vk-blocks-pro')}
 				/>
 			</>
 		);

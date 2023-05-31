@@ -28,7 +28,7 @@ export const DeleteButton = (props) => {
 
 	const balloonTitle = !!balloonMetaListObj.name
 		? balloonMetaListObj.name
-		: __('Balloon Image Setting', 'vk-blocks');
+		: __('Balloon Image Setting', 'vk-blocks-pro');
 
 	return (
 		<>
@@ -37,13 +37,13 @@ export const DeleteButton = (props) => {
 				isDestructive
 				onClick={openModal}
 			>
-				{__('Delete', 'vk-blocks')}
+				{__('Delete', 'vk-blocks-pro')}
 			</Button>
 			{isModalOpen && (
 				<Modal
 					title={sprintf(
 						// translators: Would you like to delete %s
-						__('Would you like to delete %s?', 'vk-blocks'),
+						__('Would you like to delete %s?', 'vk-blocks-pro'),
 						balloonTitle
 					)}
 					className="balloon_image_delete_modal"
@@ -66,7 +66,7 @@ export const DeleteButton = (props) => {
 											closeModal();
 										}}
 									>
-										{__('Delete', 'vk-blocks')}
+										{__('Delete', 'vk-blocks-pro')}
 									</Button>
 								</FlexItem>
 							</Flex>

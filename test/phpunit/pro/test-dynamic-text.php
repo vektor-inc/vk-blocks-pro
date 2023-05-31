@@ -58,6 +58,7 @@ class DynamicText extends WP_UnitTestCase {
 				'attributes' => array(
 					'displayElement' => 'post-type',
 					'tagName'    => 'div',
+					'ancestorPageHiddenOption'    => true,
 				),
 				'target_url' => get_permalink( $data['post_id'] ),
 				'correct'    => '<div class="vk_dynamicText wp-block-vk-blocks-dynamic-text">Posts</div>',
@@ -67,6 +68,7 @@ class DynamicText extends WP_UnitTestCase {
 				'attributes' => array(
 					'displayElement' => 'post-type',
 					'tagName'    => 'h1',
+					'ancestorPageHiddenOption'    => true,
 				),
 				'target_url' => get_permalink( $data['child_page_id'] ),
 				'correct'    => '<h1 class="vk_dynamicText wp-block-vk-blocks-dynamic-text">Pages</h1>',
@@ -76,6 +78,7 @@ class DynamicText extends WP_UnitTestCase {
 				'attributes' => array(
 					'displayElement' => 'ancestor-page',
 					'tagName'    => 'h2',
+					'ancestorPageHiddenOption'    => true,
 				),
 				'target_url' => get_permalink( $data['ancestor_page_id'] ),
 				'correct'    => null,
@@ -85,6 +88,7 @@ class DynamicText extends WP_UnitTestCase {
 				'attributes' => array(
 					'displayElement' => 'ancestor-page',
 					'tagName'    => 'h3',
+					'ancestorPageHiddenOption'    => false,
 				),
 				'target_url' => get_permalink( $data['parent_page_id'] ),
 				'correct'    => '<h3 class="vk_dynamicText wp-block-vk-blocks-dynamic-text">ancestor_page</h3>',
@@ -94,6 +98,7 @@ class DynamicText extends WP_UnitTestCase {
 				'attributes' => array(
 					'displayElement' => 'ancestor-page',
 					'tagName'    => 'span',
+					'ancestorPageHiddenOption'    => true,
 				),
 				'target_url' => get_permalink( $data['child_page_id'] ),
 				'correct'    => '<span class="vk_dynamicText wp-block-vk-blocks-dynamic-text">ancestor_page</span>',

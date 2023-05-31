@@ -91,7 +91,7 @@
 		}
 	},
 	"description": "A single item in the select post list.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
 		"className": true
 	}

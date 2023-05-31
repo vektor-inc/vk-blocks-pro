@@ -78,7 +78,7 @@ export default function IconEdit(props) {
 	if (!parent.length) {
 		commonInspectorControls = (
 			<>
-				<p className={`mt-0 mb-2`}>{__('Size', 'vk-blocks')}</p>
+				<p className={`mt-0 mb-2`}>{__('Size', 'vk-blocks-pro')}</p>
 				<div className="vk_icon_custombox">
 					<TextControl
 						className={`vk_icon_custombox_number`}
@@ -108,19 +108,19 @@ export default function IconEdit(props) {
 						options={[
 							{
 								value: 'px',
-								label: __('px', 'vk-blocks'),
+								label: __('px', 'vk-blocks-pro'),
 							},
 							{
 								value: 'em',
-								label: __('em', 'vk-blocks'),
+								label: __('em', 'vk-blocks-pro'),
 							},
 							{
 								value: 'rem',
-								label: __('rem', 'vk-blocks'),
+								label: __('rem', 'vk-blocks-pro'),
 							},
 							{
 								value: 'vw',
-								label: __('vw', 'vk-blocks'),
+								label: __('vw', 'vk-blocks-pro'),
 							},
 						]}
 					/>
@@ -136,7 +136,7 @@ export default function IconEdit(props) {
 						{__('Reset')}
 					</Button>
 				</div>
-				<p className={`mt-0 mb-2`}>{__('Margin', 'vk-blocks')}</p>
+				<p className={`mt-0 mb-2`}>{__('Margin', 'vk-blocks-pro')}</p>
 				<div className="vk_icon_custombox">
 					<TextControl
 						className={`vk_icon_custombox_number`}
@@ -168,19 +168,19 @@ export default function IconEdit(props) {
 						options={[
 							{
 								value: 'px',
-								label: __('px', 'vk-blocks'),
+								label: __('px', 'vk-blocks-pro'),
 							},
 							{
 								value: 'em',
-								label: __('em', 'vk-blocks'),
+								label: __('em', 'vk-blocks-pro'),
 							},
 							{
 								value: 'rem',
-								label: __('rem', 'vk-blocks'),
+								label: __('rem', 'vk-blocks-pro'),
 							},
 							{
 								value: 'vw',
-								label: __('vw', 'vk-blocks'),
+								label: __('vw', 'vk-blocks-pro'),
 							},
 						]}
 					/>
@@ -197,7 +197,7 @@ export default function IconEdit(props) {
 					</Button>
 				</div>
 				<BaseControl
-					label={__('Border radius', 'vk-blocks')}
+					label={__('Border radius', 'vk-blocks-pro')}
 					id={`vk_icon-radius`}
 				>
 					<RangeControl
@@ -212,7 +212,7 @@ export default function IconEdit(props) {
 						allowReset={true}
 					/>
 				</BaseControl>
-				<p className={`mt-0 mb-2`}>{__('Style', 'vk-blocks')}</p>
+				<p className={`mt-0 mb-2`}>{__('Style', 'vk-blocks-pro')}</p>
 				<ButtonGroup className={`mb-3`}>
 					<Button
 						isSmall
@@ -220,7 +220,7 @@ export default function IconEdit(props) {
 						isSecondary={iconType !== '0'}
 						onClick={() => setAttributes({ iconType: '0' })}
 					>
-						{__('Solid color', 'vk-blocks')}
+						{__('Solid color', 'vk-blocks-pro')}
 					</Button>
 					<Button
 						isSmall
@@ -228,7 +228,7 @@ export default function IconEdit(props) {
 						isSecondary={iconType !== '1'}
 						onClick={() => setAttributes({ iconType: '1' })}
 					>
-						{__('Icon & Frame', 'vk-blocks')}
+						{__('Icon & Frame', 'vk-blocks-pro')}
 					</Button>
 					<Button
 						isSmall
@@ -236,7 +236,7 @@ export default function IconEdit(props) {
 						isSecondary={iconType !== '2'}
 						onClick={() => setAttributes({ iconType: '2' })}
 					>
-						{__('Icon only', 'vk-blocks')}
+						{__('Icon only', 'vk-blocks-pro')}
 					</Button>
 				</ButtonGroup>
 			</>
@@ -263,10 +263,13 @@ export default function IconEdit(props) {
 		<>
 			{commonBlockControl}
 			<InspectorControls>
-				<PanelBody title={__('Icon Setting', 'vk-blocks')}>
+				<PanelBody title={__('Icon Setting', 'vk-blocks-pro')}>
 					<BaseControl
 						label={
-							__('Icon', 'vk-blocks') + ' ( ' + iconFamily + ' )'
+							__('Icon', 'vk-blocks-pro') +
+							' ( ' +
+							iconFamily +
+							' )'
 						}
 						id={`vk_icon-font`}
 					>
@@ -274,19 +277,19 @@ export default function IconEdit(props) {
 					</BaseControl>
 					{commonInspectorControls}
 					<TextControl
-						label={__('Link URL', 'vk-blocks')}
+						label={__('Link URL', 'vk-blocks-pro')}
 						value={iconUrl}
 						onChange={(value) => setAttributes({ iconUrl: value })}
 					/>
 					<CheckboxControl
-						label={__('Open link new tab.', 'vk-blocks')}
+						label={__('Open link new tab.', 'vk-blocks-pro')}
 						checked={iconTarget}
 						onChange={(checked) => {
 							setAttributes({ iconTarget: checked });
 						}}
 					/>
 				</PanelBody>
-				<PanelBody title={__('Color', 'vk-blocks')}>
+				<PanelBody title={__('Color', 'vk-blocks-pro')}>
 					<BaseControl>
 						<AdvancedColorPalette schema={'iconColor'} {...props} />
 					</BaseControl>

@@ -74,10 +74,13 @@ function AdminCustomBlockStyle({
 		<>
 			<section>
 				<h3 id="custom-block-style-setting">
-					{__('Custom Block Style Setting', 'vk-blocks')}
+					{__('Custom Block Style Setting', 'vk-blocks-pro')}
 				</h3>
 				<p>
-					{__('Block style settings can be registered.', 'vk-blocks')}
+					{__(
+						'Block style settings can be registered.',
+						'vk-blocks-pro'
+					)}
 				</p>
 				{Object.keys(vkBlocksOption.custom_block_style_lists).map(
 					(key, index, array) => {

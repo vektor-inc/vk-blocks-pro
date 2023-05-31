@@ -87,7 +87,7 @@
 		}
 	},
 	"description": "A button link that can display icons before and after.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
 		"className": true,
 		"anchor": true

@@ -53,7 +53,7 @@ export default function SpacerEdit({
 					className={className}
 				/>
 				<BaseControl
-					label={__('Height for each device.', 'vk-blocks')}
+					label={__('Height for each device.', 'vk-blocks-pro')}
 					id={`vk_spacer-viewPort-${clientId}`}
 				>
 					<AdvancedViewportControl
@@ -72,7 +72,7 @@ export default function SpacerEdit({
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Spacer Settings', 'vk-blocks')}>
+				<PanelBody title={__('Spacer Settings', 'vk-blocks-pro')}>
 					<ButtonGroup className="mb-3">
 						<Button
 							isSmall
@@ -80,7 +80,7 @@ export default function SpacerEdit({
 							isSecondary={spaceSize !== 'xs'}
 							onClick={() => setAttributes({ spaceSize: 'xs' })}
 						>
-							{__('XS', 'vk-blocks')}
+							{__('XS', 'vk-blocks-pro')}
 						</Button>
 						<Button
 							isSmall
@@ -90,7 +90,7 @@ export default function SpacerEdit({
 								setAttributes({ spaceSize: 'small' })
 							}
 						>
-							{__('S', 'vk-blocks')}
+							{__('S', 'vk-blocks-pro')}
 						</Button>
 						<Button
 							isSmall
@@ -100,7 +100,7 @@ export default function SpacerEdit({
 								setAttributes({ spaceSize: 'medium' })
 							}
 						>
-							{__('M', 'vk-blocks')}
+							{__('M', 'vk-blocks-pro')}
 						</Button>
 						<Button
 							isSmall
@@ -110,7 +110,7 @@ export default function SpacerEdit({
 								setAttributes({ spaceSize: 'large' })
 							}
 						>
-							{__('L', 'vk-blocks')}
+							{__('L', 'vk-blocks-pro')}
 						</Button>
 						<Button
 							isSmall
@@ -118,7 +118,7 @@ export default function SpacerEdit({
 							isSecondary={spaceSize !== 'xl'}
 							onClick={() => setAttributes({ spaceSize: 'xl' })}
 						>
-							{__('XL', 'vk-blocks')}
+							{__('XL', 'vk-blocks-pro')}
 						</Button>
 						<Button
 							isSmall
@@ -128,13 +128,13 @@ export default function SpacerEdit({
 								setAttributes({ spaceSize: 'custom' })
 							}
 						>
-							{__('Custom', 'vk-blocks')}
+							{__('Custom', 'vk-blocks-pro')}
 						</Button>
 					</ButtonGroup>
 					<p>
 						{__(
 							'You can change each common margin size from Setting > VK Blocks',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 					</p>
 					<AdvancedSpacerControl

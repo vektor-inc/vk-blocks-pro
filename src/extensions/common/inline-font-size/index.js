@@ -50,7 +50,7 @@ function FontSizeEdit({
 	return (
 		<>
 			<RichTextToolbarButton
-				title={__('Inline Font Size', 'vk-blocks')}
+				title={__('Inline Font Size', 'vk-blocks-pro')}
 				onClick={
 					hasFontSizeToChoose
 						? enableIsAddingFontSize
@@ -82,7 +82,7 @@ function FontSizeEdit({
 }
 
 export const inlineFontSize = {
-	title: __('Inline font size', 'vk-blocks'),
+	title: __('Inline font size', 'vk-blocks-pro'),
 	tagName: 'span',
 	className: 'vk_inline-font-size',
 	attributes: {

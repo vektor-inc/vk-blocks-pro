@@ -8,7 +8,7 @@
  * Requires at least: 6.0
  * Author: Vektor,Inc.
  * Author URI: https://vektor-inc.co.jp
- * Text Domain: vk-blocks
+ * Text Domain: vk-blocks-pro
  *
  * @package vk-blocks
  */
@@ -102,7 +102,7 @@ if ( is_admin() && ! is_network_admin() ) {
 			'admin_notices',
 			function() {
 				echo '<div class="updated notice"><p>';
-				echo esc_html( __( 'Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks Plugin running.', 'vk-blocks' ) );
+				echo esc_html( __( 'Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks Plugin running.', 'vk-blocks-pro' ) );
 				echo '</p></div>';
 			}
 		);
@@ -155,6 +155,16 @@ require_once plugin_dir_path( __FILE__ ) . 'inc/vk-blocks-config.php';
 
 if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 
+	// 翻訳を実行
+	add_action(
+		'plugins_loaded',
+		function () {
+			// Load language files.
+			$path = dirname( plugin_basename( __FILE__ ) ) . '/languages';
+			load_plugin_textdomain( 'vk-blocks-pro', false, $path );
+		}
+	);
+
 	// 本来 Pro 版でしか読み込まないが、1.36.0.0 は間違って読み込んでしまっており
 	// 無料版 1.36.0 を有効化していると previously declared になるため ! function_exists() を通した上で宣言している.
 	if ( ! function_exists( 'vk_blocks_update_checker' ) ) {
@@ -204,6 +214,8 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 
 	add_action( 'after_setup_theme', 'vk_blocks_update_checker' );
 
+
+
 	if ( ! function_exists( 'vk_blocks_the_update_messsage' ) ) {
 		/**
 		 * Update alert message
@@ -226,14 +238,14 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 
 			// ライセンスキーが未入力の場合.
 			if ( empty( $license ) && wp_get_theme()->Template !== 'katawara' ) {
-				$notice_title = __( 'License Key has no registered.', 'vk-blocks' );
+				$notice_title = __( 'License Key has no registered.', 'vk-blocks-pro' );
 			} elseif ( ! empty( $update ) && empty( $update->download_url ) ) {
 
 				// ライセンスが切れている あるいは 無効な場合.
 				// アップデートは存在するがURLが帰ってこなかった場合.
 				$notice_title = __(
 					'The VK Blocks Pro license is invalid.',
-					'vk-blocks'
+					'vk-blocks-pro'
 				);
 			}
 
@@ -257,7 +269,7 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 			$alert_html .= '<h4>VK Blocks Pro : ' . $notice_title . '</h4>';
 			$alert_html .= '<p>' . __(
 				'Please enter a valid license key for any of the following products on the settings screen.',
-				'vk-blocks'
+				'vk-blocks-pro'
 			) . '</p>';
 			$alert_html .= '<ul>';
 			$alert_html .= '<li><a href="https://vws.vektor-inc.co.jp/product/vektor-passport-1y/?rel=vk-blocks-pro-alert" target="_blank">Vektor Passport</a></li>';
@@ -265,11 +277,11 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 			$alert_html .= '<li><a href="https://vws.vektor-inc.co.jp/product/lightning-pro-update-license?rel=vk-blocks-pro-alert" target="_blank">Lightning Pro</a></li>';
 			$alert_html .= '</ul>';
 
-			$alert_html .= '<p><a href="' . admin_url( '/options-general.php?page=vk_blocks_options' ) . '" class="button button-primary">' . __( 'Enter the license key', 'vk-blocks' ) . '</a></p>';
+			$alert_html .= '<p><a href="' . admin_url( '/options-general.php?page=vk_blocks_options' ) . '" class="button button-primary">' . __( 'Enter the license key', 'vk-blocks-pro' ) . '</a></p>';
 
 			$alert_html .= '<p style="margin-bottom:15px">';
-			$alert_html .= __( 'If this display does not disappear even after entering a valid license key, re-acquire the update.', 'vk-blocks' );
-			$alert_html .= ' <span class="nowrap">[ <a href="' . $link_url . '">' . __( 'Re-acquisition of updates', 'vk-blocks' ) . '</a> ]</span>';
+			$alert_html .= __( 'If this display does not disappear even after entering a valid license key, re-acquire the update.', 'vk-blocks-pro' );
+			$alert_html .= ' <span class="nowrap">[ <a href="' . $link_url . '">' . __( 'Re-acquisition of updates', 'vk-blocks-pro' ) . '</a> ]</span>';
 			$alert_html .= '</p>';
 
 			$alert_html .= '</div>';

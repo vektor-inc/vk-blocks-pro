@@ -3,7 +3,7 @@
 	"name": "vk-blocks/slider-item",
 	"title": "Slider Item",
 	"description": "This is one item in the slider.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"category": "vk-blocks-cat-layout",
 	"parent": [ "vk-blocks/slider"] ,
 	"attributes": {

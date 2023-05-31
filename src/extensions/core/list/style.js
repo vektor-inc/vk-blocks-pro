@@ -104,7 +104,7 @@ export const addBlockControl = createHigherOrderComponent(
 				<BlockEdit {...props} />
 				<InspectorControls>
 					<PanelBody
-						title={__('List Icon Color', 'vk-blocks')}
+						title={__('List Icon Color', 'vk-blocks-pro')}
 						initialOpen={false}
 					>
 						<ColorPalette

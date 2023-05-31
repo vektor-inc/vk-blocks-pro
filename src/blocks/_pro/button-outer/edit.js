@@ -53,11 +53,11 @@ export default function ButtonOuterEdit(props) {
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={__('Button Common Setting', 'vk-blocks')}
+					title={__('Button Common Setting', 'vk-blocks-pro')}
 					initialOpen={true}
 				>
 					<UnitControl
-						label={__('Button gap size', 'vk-blocks')}
+						label={__('Button gap size', 'vk-blocks-pro')}
 						value={gap}
 						onChange={(value) =>
 							setAttributes({ gap: value ? value : null })

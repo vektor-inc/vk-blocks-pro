@@ -8,6 +8,15 @@ test('Common margin', async ({ page }) => {
 	await page.getByLabel('Password', { exact: true }).fill('password');
 	await page.getByRole('button', { name: 'Log In' }).click();
 	await page.goto('http://localhost:8889/wp-admin/post-new.php');
+
+	// Check if the modal is visible
+	const isModalVisible = await page.isVisible('.components-modal__frame');
+
+	// If the modal is visible, click the close button
+	if (isModalVisible) {
+		await page.click('button[aria-label="Close"]');
+	}
+
 	await page.getByRole('button', { name: 'Toggle block inserter' }).click();
 	await page.getByPlaceholder('Search').fill('breadcrumb');
 	await page.getByRole('option', { name: 'Breadcrumb', exact: true }).click();

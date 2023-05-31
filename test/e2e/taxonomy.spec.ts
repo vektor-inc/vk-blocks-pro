@@ -72,7 +72,7 @@ test('Taxonomy Block Test', async ({ page }) => {
 		console.log('ExUnit is active');
 	}
 
-	// // Add Event Post Type /////////////////////////////////////////////////
+	// Add Event Post Type /////////////////////////////////////////////////
 
 	await page.goto('http://localhost:8889/wp-admin/edit.php?post_type=post_type_manage');
 	await page.locator('#wpbody-content').getByRole('link', { name: 'Add New' }).click();
@@ -152,7 +152,18 @@ test('Taxonomy Block Test', async ({ page }) => {
 	await page.getByLabel('Display as dropdown').check();
 	await page.getByRole('button', { name: 'Update' }).click();
 	// タクソノミーブロックが配置された投稿を表示
-	await page.getByRole('link', { name: 'View Post', exact: true }).click();
+	// await page.getByRole('link', { name: 'View Post', exact: true }).click(); // <- 複数 Vew Post があるとエラーになる
+	// View Post 表記のリンクが複数あるとエラーになるため 管理バーの View Post をクリックする
+	// 一旦 .ab-item のリンクをすべて取得して...
+	const links = await page.$$('.ab-item');
+	// テキストが View Post のリンクを探してクリックする
+	for (let link of links) {
+		const value = await link.evaluate(node => node.textContent);
+		if (value === 'View Post') {
+			await link.click();
+			break;
+		}
+	}
 
 	// Select event-cat in taxonomy block
 	await page.selectOption('.vk_taxonomy__input-wrap--select', { value: 'event-term' });

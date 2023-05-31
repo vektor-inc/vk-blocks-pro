@@ -153,9 +153,9 @@ test('Taxonomy Block Test', async ({ page }) => {
 	await page.getByRole('button', { name: 'Update' }).click();
 	// タクソノミーブロックが配置された投稿を表示
 	// await page.getByRole('link', { name: 'View Post', exact: true }).click(); // <- 複数 Vew Post があるとエラーになる
-	// View Post 表記のリンクが複数あるとエラーになるため 管理バーの View Post をクリックする
-	// 一旦 .ab-item のリンクをすべて取得して...
-	const links = await page.$$('.ab-item');
+	// View Post 表記のリンクが複数ある（管理バーがアクティブの場合）とエラーになるため .components-snackbar__action の View Post をクリックする
+	// 一旦 .components-snackbar__action のリンクをすべて取得して...
+	const links = await page.$$('.components-snackbar__action');
 	// テキストが View Post のリンクを探してクリックする
 	for (let link of links) {
 		const value = await link.evaluate(node => node.textContent);

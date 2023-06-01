@@ -17,8 +17,8 @@ use VektorInc\VK_Helpers\VkHelpers;
  */
 function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $block ) {
 	$options = array(
-		'displayElement'           => $attributes['displayElement'],
-		'customFieldName'          => ( isset( $attributes['customFieldName'] ) ) ? esc_attr( $attributes['customFieldName'] ) : null,
+		'displayElement'  => $attributes['displayElement'],
+		'customFieldName' => ( isset( $attributes['customFieldName'] ) ) ? esc_attr( $attributes['customFieldName'] ) : null,
 	);
 
 	if ( 'custom-field' === $options['displayElement'] && ! $options['customFieldName'] ) {
@@ -70,10 +70,10 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 
 	// カスタムフィールド
 	// if ( 'custom-field' === $options['displayElement'] && ! $options['customFieldName'] ) {
-	// 	return;
+	// return;
 	// }
 	// if ( 'custom-field' === $options['displayElement'] && ! isset( $block->context['postId'] ) ) {
-	// 	return;
+	// return;
 	// }
 	// $custom_field_name = get_post_meta( $block->context['postId'], $options['customFieldName'], true );
 

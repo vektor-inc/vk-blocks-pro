@@ -65,6 +65,7 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Admin screen ] Added import export tool.
 [ Add Function ] Allow alpha value in some blocks.
 [ Add Function ][ Dynamic Text Block (Pro) ] Added an option to show/hide the title when an ancestor page is selected and the ancestor page is display.
 [ Add Function ][ Animation(Pro) ] Added transforms settings to wrap and unwrap.

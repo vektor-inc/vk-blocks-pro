@@ -18,7 +18,7 @@ use VektorInc\VK_Helpers\VkHelpers;
 function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $block ) {
 	$options = array(
 		'displayElement'  => $attributes['displayElement'],
-		'customFieldName' => ( isset( $attributes['customFieldName'] ) ) ? esc_attr( $attributes['customFieldName'] ) : null,
+		'customFieldName' => ( isset( $attributes['customFieldName'] ) ) ? wp_kses_post( $attributes['customFieldName'] ) : null,
 	);
 
 	if ( 'custom-field' === $options['displayElement'] && ! $options['customFieldName'] ) {
@@ -46,7 +46,6 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 		'displayElement'           => $attributes['displayElement'],
 		'tagName'                  => $attributes['tagName'],
 		'ancestorPageHiddenOption' => $attributes['ancestorPageHiddenOption'],
-		'customFieldName'          => ( isset( $attributes['customFieldName'] ) ) ? esc_attr( $attributes['customFieldName'] ) : null,
 	);
 
 	$post = get_post();
@@ -68,15 +67,6 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 		$ancestor_post_title = get_post( $post->ID )->post_title;
 	}
 
-	// カスタムフィールド
-	// if ( 'custom-field' === $options['displayElement'] && ! $options['customFieldName'] ) {
-	// return;
-	// }
-	// if ( 'custom-field' === $options['displayElement'] && ! isset( $block->context['postId'] ) ) {
-	// return;
-	// }
-	// $custom_field_name = get_post_meta( $block->context['postId'], $options['customFieldName'], true );
-
 	$classes = 'vk_dynamicText';
 	if ( isset( $attributes['textAlign'] ) ) {
 		$classes = ' has-text-align-' . $attributes['textAlign'];
@@ -93,7 +83,6 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 	} elseif ( 'ancestor-page' === $options['displayElement'] ) {
 		$block_content .= $ancestor_post_title;
 	} elseif ( 'custom-field' === $options['displayElement'] ) {
-		// $block_content .= $custom_field_name;
 		$block_content .= vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $block );
 	}
 	if ( $options['tagName'] ) {

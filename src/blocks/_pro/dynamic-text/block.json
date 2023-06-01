@@ -3,6 +3,9 @@
 	"name": "vk-blocks/dynamic-text",
 	"category": "vk-blocks-cat",
 	"title": "Dynamic Text",
+	"usesContext": [
+		"postId"
+	],
 	"attributes": {
 		"textAlign": {
 			"type": "string",
@@ -19,6 +22,10 @@
 		"ancestorPageHiddenOption": {
 			"type": "boolean",
 			"default": true
+		},
+		"customFieldName": {
+			"type": "string",
+			"default": ""
 		}
 	},
 	"description": "Display dynamic text",

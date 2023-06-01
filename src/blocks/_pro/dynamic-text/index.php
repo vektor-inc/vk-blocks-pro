@@ -8,17 +8,45 @@
 use VektorInc\VK_Helpers\VkHelpers;
 
 /**
- * Dynamic text render callback
+ * Dynamic text custom field render
  *
- * @param array $attributes Block attributes.
+ * @param array  $attributes Block attributes.
+ * @param string $content Inner content.
+ * @param object $block block.
  * @return string
  */
-function vk_blocks_dynamic_text_render_callback( $attributes ) {
+function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $block ) {
+	$options = array(
+		'displayElement'           => $attributes['displayElement'],
+		'customFieldName'          => ( isset( $attributes['customFieldName'] ) ) ? esc_attr( $attributes['customFieldName'] ) : null,
+	);
+
+	if ( 'custom-field' === $options['displayElement'] && ! $options['customFieldName'] ) {
+		return;
+	}
+	if ( 'custom-field' === $options['displayElement'] && ! isset( $block->context['postId'] ) ) {
+		return;
+	}
+	$custom_field_name = get_post_meta( $block->context['postId'], $options['customFieldName'], true );
+
+	return $custom_field_name;
+}
+
+/**
+ * Dynamic text render callback
+ *
+ * @param array  $attributes Block attributes.
+ * @param string $content Inner content.
+ * @param object $block block.
+ * @return string
+ */
+function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block ) {
 	$options = array(
 		'textAlign'                => ( isset( $attributes['textAlign'] ) ) ? esc_attr( $attributes['textAlign'] ) : null,
 		'displayElement'           => $attributes['displayElement'],
 		'tagName'                  => $attributes['tagName'],
 		'ancestorPageHiddenOption' => $attributes['ancestorPageHiddenOption'],
+		'customFieldName'          => ( isset( $attributes['customFieldName'] ) ) ? esc_attr( $attributes['customFieldName'] ) : null,
 	);
 
 	$post = get_post();
@@ -41,7 +69,13 @@ function vk_blocks_dynamic_text_render_callback( $attributes ) {
 	}
 
 	// カスタムフィールド
-	// $custom_field = __( 'カスタムフィールドを入れる', 'vk-blocks-pro' );
+	// if ( 'custom-field' === $options['displayElement'] && ! $options['customFieldName'] ) {
+	// 	return;
+	// }
+	// if ( 'custom-field' === $options['displayElement'] && ! isset( $block->context['postId'] ) ) {
+	// 	return;
+	// }
+	// $custom_field_name = get_post_meta( $block->context['postId'], $options['customFieldName'], true );
 
 	$classes = 'vk_dynamicText';
 	if ( isset( $attributes['textAlign'] ) ) {
@@ -58,11 +92,10 @@ function vk_blocks_dynamic_text_render_callback( $attributes ) {
 		$block_content .= $post_type_name;
 	} elseif ( 'ancestor-page' === $options['displayElement'] ) {
 		$block_content .= $ancestor_post_title;
+	} elseif ( 'custom-field' === $options['displayElement'] ) {
+		// $block_content .= $custom_field_name;
+		$block_content .= vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $block );
 	}
-	// カスタムフィールド選択時を未実装のためコメントアウト
-	// elseif ( 'custom-field' === $options['displayElement'] ) {
-	// $block_content = sprintf( '<p class="vk_dynamicText_content">%1$s</p>', $custom_field );
-	// }
 	if ( $options['tagName'] ) {
 		$block_content .= '</' . $options['tagName'] . '>';
 	}
@@ -112,6 +145,10 @@ function vk_blocks_register_block_dynamic_text() {
 					'ancestorPageHiddenOption' => array(
 						'type'    => 'boolean',
 						'default' => true,
+					),
+					'customFieldName'          => array(
+						'type'    => 'string',
+						'default' => '',
 					),
 				)
 			),

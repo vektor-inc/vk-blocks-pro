@@ -7,6 +7,7 @@ import {
 	SelectControl,
 	BaseControl,
 	CheckboxControl,
+	TextControl,
 } from '@wordpress/components';
 import {
 	useBlockProps,
@@ -81,6 +82,7 @@ export default function DynamicTextEdit(props) {
 		displayElement,
 		tagName: TagName = '',
 		ancestorPageHiddenOption,
+		customFieldName,
 	} = attributes;
 	attributes.ancestorPageHiddenOption = ancestorPageHiddenOption;
 
@@ -113,6 +115,17 @@ export default function DynamicTextEdit(props) {
 		editContent = (
 			<TagName>{__('Ancestor Page Title', 'vk-blocks-pro')}</TagName>
 		);
+	} else if (displayElement === 'custom-field' && !customFieldName) {
+		editContent = (
+			<div className="alert alert-warning text-center">
+				{__(
+					'This block is not rendered because no custom field name is specified.',
+					'vk-blocks-pro'
+				)}
+			</div>
+		);
+	} else if (displayElement === 'custom-field' && !postType) {
+		editContent = <TagName>{__(`Custom Field`, 'vk-blocks-pro')}</TagName>;
 	} else if (displayElement === 'please-select') {
 		editContent = editAlertContent;
 	} else {
@@ -166,10 +179,10 @@ export default function DynamicTextEdit(props) {
 										'vk-blocks'
 									),
 								},
-								// {
-								// 	value: 'custom-field',
-								// 	label: __('カスタムフィールド', 'vk-blocks-pro'),
-								// },
+								{
+									value: 'custom-field',
+									label: __('Custom Field', 'vk-blocks-pro'),
+								},
 							]}
 						/>
 					</BaseControl>
@@ -195,6 +208,18 @@ export default function DynamicTextEdit(props) {
 									)}
 								</div>
 							)}
+						</BaseControl>
+					)}
+
+					{displayElement === 'custom-field' && (
+						<BaseControl>
+							<TextControl
+								label={__('Custom Field Name', 'vk-blocks')}
+								value={customFieldName}
+								onChange={(value) =>
+									setAttributes({ customFieldName: value })
+								}
+							/>
 						</BaseControl>
 					)}
 					<DynamicTextEditControls

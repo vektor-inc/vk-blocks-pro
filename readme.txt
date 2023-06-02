@@ -65,6 +65,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ GridColCard ] Delete non intentional link underline
+
 = 1.57.0.5 =
 [ Bug Fix ][ Free Version ] Fix display non intentional Licencekey alert message and update become don't work. ( Please delete once VK Blocks 1.57.0.1 and reinstall 1.57.0.4 or higher )
 

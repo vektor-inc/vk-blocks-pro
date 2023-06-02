@@ -20,19 +20,19 @@ export default function FAQ2Edit() {
 	if (vk_blocks_check.is_pro) {
 		massage = __(
 			'If you want to be collapsing this block, you can set it at Setting > VK Blocks',
-			'vk-blocks'
+			'vk-blocks-pro'
 		);
 	} else {
 		massage = __(
 			'You can be collapsing this block at VK Blocks Pro',
-			'vk-blocks'
+			'vk-blocks-pro'
 		);
 	}
 
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Accordion Setting', 'vk-blocks')}>
+				<PanelBody title={__('Accordion Setting', 'vk-blocks-pro')}>
 					<PanelRow>{massage}</PanelRow>
 				</PanelBody>
 			</InspectorControls>

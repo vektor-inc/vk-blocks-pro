@@ -70,7 +70,7 @@ class VK_Blocks_Font_Awesome_API {
 		return rest_ensure_response(
 			array(
 				'status'  => 'success',
-				'message' => __( 'Setting saved.', 'vk-blocks' ),
+				'message' => __( 'Setting saved.', 'vk-blocks-pro' ),
 			)
 		);
 	}

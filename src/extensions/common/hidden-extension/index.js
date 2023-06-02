@@ -193,26 +193,26 @@ addFilter(
 						<BlockEdit {...props} />
 						<InspectorControls>
 							<PanelBody
-								title={__('Hidden Settings', 'vk-blocks')}
+								title={__('Hidden Settings', 'vk-blocks-pro')}
 								initialOpen={false}
 							>
 								<BaseControl
 									label={__(
 										'Hidden at screen size',
-										'vk-blocks'
+										'vk-blocks-pro'
 									)}
 									id={`vk_hiddenControl-hiddenScreenSize`}
 								>
 									<p>
 										{__(
 											"Note : This function is display hidden only. Actually Block is output to HTML. Please don't use you must not visible item. Don't use it for blocks you really don't want to display.",
-											'vk-blocks'
+											'vk-blocks-pro'
 										)}
 									</p>
 									<ToggleControl
 										label={__(
 											'Hidden ( Screen size : all )',
-											'vk-blocks'
+											'vk-blocks-pro'
 										)}
 										checked={isActiveClass('vk_hidden')}
 										onChange={(checked) => {
@@ -222,7 +222,7 @@ addFilter(
 									<ToggleControl
 										label={__(
 											'Hidden ( Screen size : xs )',
-											'vk-blocks'
+											'vk-blocks-pro'
 										)}
 										checked={isActiveClass('vk_hidden-xs')}
 										onChange={(checked) => {
@@ -235,7 +235,7 @@ addFilter(
 									<ToggleControl
 										label={__(
 											'Hidden ( Screen size : sm )',
-											'vk-blocks'
+											'vk-blocks-pro'
 										)}
 										checked={isActiveClass('vk_hidden-sm')}
 										onChange={(checked) => {
@@ -248,7 +248,7 @@ addFilter(
 									<ToggleControl
 										label={__(
 											'Hidden ( Screen size : md )',
-											'vk-blocks'
+											'vk-blocks-pro'
 										)}
 										checked={isActiveClass('vk_hidden-md')}
 										onChange={(checked) => {
@@ -261,7 +261,7 @@ addFilter(
 									<ToggleControl
 										label={__(
 											'Hidden ( Screen size : lg )',
-											'vk-blocks'
+											'vk-blocks-pro'
 										)}
 										checked={isActiveClass('vk_hidden-lg')}
 										onChange={(checked) => {
@@ -274,7 +274,7 @@ addFilter(
 									<ToggleControl
 										label={__(
 											'Hidden ( Screen size : xl )',
-											'vk-blocks'
+											'vk-blocks-pro'
 										)}
 										checked={isActiveClass(
 											'vk_hidden-xl-v2'
@@ -289,7 +289,7 @@ addFilter(
 									<ToggleControl
 										label={__(
 											'Hidden ( Screen size : xxl )',
-											'vk-blocks'
+											'vk-blocks-pro'
 										)}
 										checked={isActiveClass('vk_hidden-xxl')}
 										onChange={(checked) => {
@@ -302,7 +302,7 @@ addFilter(
 									<p>
 										{__(
 											'If you want to hide multiple blocks, that first you set to group block and the next, hide for the that group block.',
-											'vk-blocks'
+											'vk-blocks-pro'
 										)}
 									</p>
 								</BaseControl>

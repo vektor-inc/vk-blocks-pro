@@ -134,7 +134,7 @@ export default (props) => {
 					onChange={(value) => {
 						setAttributes({ title: value });
 					}}
-					placeholder={__('Input title…', 'vk-blocks')}
+					placeholder={__('Input title…', 'vk-blocks-pro')}
 				/>
 				{parse(iconAfter)}
 			</>
@@ -149,7 +149,7 @@ export default (props) => {
 					onChange={(value) => setAttributes({ subText: value })}
 					style={subTextStyle}
 					className={subTextClass}
-					placeholder={__('Input sub text…', 'vk-blocks')}
+					placeholder={__('Input sub text…', 'vk-blocks-pro')}
 				/>
 			);
 		}

@@ -22,13 +22,16 @@ This is a plugin that extends Gutenberg's blocks.
 * FAQ
 * Balloon
 * Flow
+* Page Content
 * Button
 * PR Blocks
 * PR Content
 * Border box
 * Title（with sub text）
 * Responsive Spacer
-* Page Content
+* Breadcrumb [ Pro ]
+* Dynamic Text ( Post Type name / Ancestor Page name ) [ Pro ]
+* Grid Column Card [ Pro ]
 * Post List [ Pro ]
 * Step [ Pro ]
 * Timeline [ Pro ]
@@ -61,6 +64,17 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+[ Bug Fix ][ Dynamic Text Block (Pro) ] Fixed a bug that caused an error when setting the style.
+[ Add Function ] Allow alpha value in some blocks.
+[ Add Function ][ Dynamic Text Block (Pro) ] Added an option to show/hide the title when an ancestor page is selected and the ancestor page is display.
+[ Add Function ][ Animation(Pro) ] Added transforms settings to wrap and unwrap.
+[ Add Alert ][ Slider ] Add loop alert
+[ Bug Fix ] Fix Textdomain( Translate ) for VK Blocks Pro
+[ Bug fix ][ Child page list ] "There are no page." is not displayed on the front page.
+[ Bug fix ][ Breadcrumb ] Delete non intentional margin on editor screen
+[ Bug Fix ][ Taxonomy block ( Pro ) ] Fix the "Show hierarchy" option bug.
+[ Bug fix ][ Slider ] Fixed file reference bug of slider under specific environment such as Windows ( Update Swiper 9.3.2 )
 
 = 1.56.0 =
 [ Add Block ][ Dynamic Text Block (Pro) ] Add Dynamic text block.

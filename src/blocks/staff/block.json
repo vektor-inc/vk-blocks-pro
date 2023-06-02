@@ -4,7 +4,7 @@
 	"category": "vk-blocks-cat",
     "title": "Staff",
     "description": "Used for staff introduction, company introduction, school introduction, menu, etc.",
-    "textdomain": "vk-blocks",
+    "textdomain": "vk-blocks-pro",
 	"attributes": {
 		"vk_staff_text_name": {
             "type": "string",

@@ -104,7 +104,7 @@
 		}
 	},
 	"description": "Set the background image, color, and border to show the layout and divisions.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
 		"className": true,
 		"anchor": true

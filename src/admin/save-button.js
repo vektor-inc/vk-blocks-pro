@@ -53,11 +53,13 @@ export const SaveButton = (props) => {
 					onClick={onClickUpdate}
 					isBusy={isLoading}
 				>
-					{__('Save setting', 'vk-blocks')}
+					{__('Save setting', 'vk-blocks-pro')}
 				</Button>
 				{isSaveSuccess && (
 					<div>
-						<Snackbar>{__('Save Success', 'vk-blocks')} </Snackbar>
+						<Snackbar>
+							{__('Save Success', 'vk-blocks-pro')}{' '}
+						</Snackbar>
 					</div>
 				)}
 			</div>

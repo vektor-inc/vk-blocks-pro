@@ -19,10 +19,10 @@ export const SetBlockName = ({
 
 	return (
 		<>
-			<p>{__('Target Block (Required/Unchangeable)', 'vk-blocks')}</p>
+			<p>{__('Target Block (Required/Unchangeable)', 'vk-blocks-pro')}</p>
 			{!blockName && (
 				<p className="custom_block_style_item_name_error">
-					{__('Set the target block.', 'vk-blocks')}
+					{__('Set the target block.', 'vk-blocks-pro')}
 				</p>
 			)}
 			{activeBlockType && (
@@ -37,8 +37,8 @@ export const SetBlockName = ({
 				</div>
 			)}
 			<SearchControl
-				label={__('Search for a block', 'vk-blocks')}
-				placeholder={__('Search for a block', 'vk-blocks')}
+				label={__('Search for a block', 'vk-blocks-pro')}
+				placeholder={__('Search for a block', 'vk-blocks-pro')}
 				value={search}
 				onChange={(nextSearch) => setSearch(nextSearch)}
 				className="block-manager__search"

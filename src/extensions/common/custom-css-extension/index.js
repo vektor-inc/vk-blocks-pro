@@ -171,7 +171,7 @@ export const withInspectorControls = createHigherOrderComponent(
 					<PanelBody
 						className={'vk_custom_css_panel'}
 						icon={<Icon icon={IconSVG} style={iconStyle} />}
-						title={__('Custom CSS', 'vk-blocks')}
+						title={__('Custom CSS', 'vk-blocks-pro')}
 						initialOpen={false}
 					>
 						<CodeMirrorCss
@@ -186,7 +186,7 @@ export const withInspectorControls = createHigherOrderComponent(
 						<p>
 							{__(
 								'If selector is specified, it is replaced by a block-specific CSS class. If selector is set to "selector", it will be replaced with a block-specific CSS class. CSS selectors other than "selector" may affect the entire page.',
-								'vk-blocks'
+								'vk-blocks-pro'
 							)}
 							{(() => {
 								const lang = getLocaleData()[''].lang;
@@ -203,14 +203,14 @@ export const withInspectorControls = createHigherOrderComponent(
 								}
 							})()}
 						</p>
-						<p>{__('Example:', 'vk-blocks')}</p>
+						<p>{__('Example:', 'vk-blocks-pro')}</p>
 						<pre className="vk-custom-css-sample-code">
 							{'selector {\n    background: #f5f5f5;\n}'}
 						</pre>
 						<p>
 							{__(
 								'If you want the edit screen to be as close to the public screen as possible, or if your own CSS interferes with the CSS for the identification display and does not display as intended on the edit screen, please hide it.',
-								'vk-blocks'
+								'vk-blocks-pro'
 							)}
 						</p>
 						<Button
@@ -222,7 +222,7 @@ export const withInspectorControls = createHigherOrderComponent(
 							variant="secondary"
 							isSmall
 						>
-							{__('Custom CSS Setting', 'vk-blocks')}
+							{__('Custom CSS Setting', 'vk-blocks-pro')}
 						</Button>
 					</PanelBody>
 				</InspectorControls>

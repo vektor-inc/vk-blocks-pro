@@ -56,7 +56,7 @@ export class VKBHeading2 extends Component {
 						onChange={(value) => setAttributes({ title: value })}
 						style={tStyle}
 						className={`vk_heading_title vk_heading_title-style-${titleStyle}`}
-						placeholder={__('Input title…', 'vk-blocks')}
+						placeholder={__('Input title…', 'vk-blocks-pro')}
 					/>
 					{
 						// サブテキスト
@@ -77,7 +77,7 @@ export class VKBHeading2 extends Component {
 										className={`vk_heading_subtext vk_heading_subtext-style-${titleStyle}`}
 										placeholder={__(
 											'Input sub text…',
-											'vk-blocks'
+											'vk-blocks-pro'
 										)}
 									/>
 								);
@@ -95,7 +95,7 @@ export class VKBHeading2 extends Component {
 						onChange={(value) => setAttributes({ title: value })}
 						style={tStyle}
 						className={`vk_heading_title vk_heading_title-style-${titleStyle}`}
-						placeholder={__('Input title…', 'vk-blocks')}
+						placeholder={__('Input title…', 'vk-blocks-pro')}
 					/>
 					{
 						// サブテキスト
@@ -116,7 +116,7 @@ export class VKBHeading2 extends Component {
 										className={`vk_heading_subtext vk_heading_subtext-style-${titleStyle}`}
 										placeholder={__(
 											'Input sub text…',
-											'vk-blocks'
+											'vk-blocks-pro'
 										)}
 									/>
 								);

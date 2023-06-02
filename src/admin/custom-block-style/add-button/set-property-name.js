@@ -30,19 +30,19 @@ export const SetPropertyName = ({
 
 		if (typeof value !== 'string') {
 			bool = false;
-			message = __('Please enter a string', 'vk-blocks');
+			message = __('Please enter a string', 'vk-blocks-pro');
 		}
 		if (!/^[a-z][a-z0-9-_]*$/.test(value)) {
 			bool = false;
 			message = __(
 				'Only alphanumeric characters, hyphens, and underscores are allowed.',
-				'vk-blocks'
+				'vk-blocks-pro'
 			);
 		}
 
 		if (value === '') {
 			bool = false;
-			message = __('Class name is required', 'vk-blocks');
+			message = __('Class name is required', 'vk-blocks-pro');
 		}
 
 		if (blockName === '') {
@@ -53,7 +53,7 @@ export const SetPropertyName = ({
 		vkBlocksOption.custom_block_style_lists?.forEach((option) => {
 			if (option.property_name === value) {
 				bool = false;
-				message = __('Already registered', 'vk-blocks');
+				message = __('Already registered', 'vk-blocks-pro');
 			}
 		});
 
@@ -61,7 +61,7 @@ export const SetPropertyName = ({
 		getBlockStyles(blockName)?.forEach((blockStyle) => {
 			if (blockStyle.name === value) {
 				bool = false;
-				message = __('Already registered', 'vk-blocks');
+				message = __('Already registered', 'vk-blocks-pro');
 			}
 		});
 
@@ -83,15 +83,15 @@ export const SetPropertyName = ({
 				className="custom_block_style_item_class_name"
 				label={__(
 					'The identifier of the style used to compute a CSS class. (Required/Unchangeable)',
-					'vk-blocks'
+					'vk-blocks-pro'
 				)}
 				help={__(
 					'This will be the CSS class name following is-style-.',
-					'vk-blocks'
+					'vk-blocks-pro'
 				)}
 				placeholder={sprintf(
 					/* translators: (e.g.) %s-block-style */
-					__('(e.g.) %s-block-style', 'vk-blocks'),
+					__('(e.g.) %s-block-style', 'vk-blocks-pro'),
 					placeHolder ? placeHolder : 'block-name'
 				)}
 				onChange={(value) => {

@@ -69,92 +69,92 @@ function vkb_register_required_plugins() {
 		'message'      => '',                      // Message to output right before the plugins table.
 
 		'strings'      => array(
-			'page_title'                      => __( 'Install Required Plugins', 'vk-blocks' ),
-			'menu_title'                      => __( 'Install Plugins', 'vk-blocks' ),
+			'page_title'                      => __( 'Install Required Plugins', 'vk-blocks-pro' ),
+			'menu_title'                      => __( 'Install Plugins', 'vk-blocks-pro' ),
 			// translators: %s = plugin name.
-			'installing'                      => __( 'Installing Plugin: %s', 'vk-blocks' ),
-			'oops'                            => __( 'Something went wrong with the plugin API.', 'vk-blocks' ),
+			'installing'                      => __( 'Installing Plugin: %s', 'vk-blocks-pro' ),
+			'oops'                            => __( 'Something went wrong with the plugin API.', 'vk-blocks-pro' ),
 			// translators:
 			'notice_can_install_required'     => _n_noop(
 				'This plugin requires the following plugin: %1$s.',
 				'This plugin requires the following plugins: %1$s.',
-				'vk-blocks'
+				'vk-blocks-pro'
 			),
 			// translators: %s = plugin name.
 			'notice_can_install_recommended'  => _n_noop(
 				'This plugin recommends the following plugin: %1$s.<br>Many additional functions are available for free.',
 				'This plugin recommends the following plugins: %1$s.<br>Many additional functions are available for free.',
-				'vk-blocks'
+				'vk-blocks-pro'
 			),
 			// translators: %s = plugin name.
 			'notice_cannot_install'           => _n_noop(
 				'Sorry, but you do not have the correct permissions to install the %1$s plugin.',
 				'Sorry, but you do not have the correct permissions to install the %1$s plugins.',
-				'vk-blocks'
+				'vk-blocks-pro'
 			),
 			// translators: %s = plugin name.
 			'notice_ask_to_update'            => _n_noop(
 				'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this plugin: %1$s.',
 				'The following plugins need to be updated to their latest version to ensure maximum compatibility with this plugin: %1$s.',
-				'vk-blocks'
+				'vk-blocks-pro'
 			),
 			// translators: %s = plugin name.
 			'notice_ask_to_update_maybe'      => _n_noop(
 				'There is an update available for: %1$s.',
 				'There are updates available for the following plugins: %1$s.',
-				'vk-blocks'
+				'vk-blocks-pro'
 			),
 			// translators: %s = plugin name.
 			'notice_cannot_update'            => _n_noop(
 				'Sorry, but you do not have the correct permissions to update the %1$s plugin.',
 				'Sorry, but you do not have the correct permissions to update the %1$s plugins.',
-				'vk-blocks'
+				'vk-blocks-pro'
 			),
 			// translators: %s = plugin name.
 			'notice_can_activate_required'    => _n_noop(
 				'The following required plugin is currently inactive: %1$s.',
 				'The following required plugins are currently inactive: %1$s.',
-				'vk-blocks'
+				'vk-blocks-pro'
 			),
 			// translators: %s = plugin name.
 			'notice_can_activate_recommended' => _n_noop(
 				'The following recommended plugin is currently inactive: %1$s.',
 				'The following recommended plugins are currently inactive: %1$s.',
-				'vk-blocks'
+				'vk-blocks-pro'
 			),
 			// translators: %s = plugin name.
 			'notice_cannot_activate'          => _n_noop(
 				'Sorry, but you do not have the correct permissions to activate the %1$s plugin.',
 				'Sorry, but you do not have the correct permissions to activate the %1$s plugins.',
-				'vk-blocks'
+				'vk-blocks-pro'
 			),
 			// translators: %s = plugin name.
 			'install_link'                    => _n_noop(
 				'Begin installing plugin',
 				'Begin installing plugins',
-				'vk-blocks'
+				'vk-blocks-pro'
 			),
 			'update_link'                     => _n_noop(
 				'Begin updating plugin',
 				'Begin updating plugins',
-				'vk-blocks'
+				'vk-blocks-pro'
 			),
 			'activate_link'                   => _n_noop(
 				'Begin activating plugin',
 				'Begin activating plugins',
-				'vk-blocks'
+				'vk-blocks-pro'
 			),
-			'return'                          => __( 'Return to Required Plugins Installer', 'vk-blocks' ),
-			'plugin_activated'                => __( 'Plugin activated successfully.', 'vk-blocks' ),
-			'activated_successfully'          => __( 'The following plugin was activated successfully:', 'vk-blocks' ),
+			'return'                          => __( 'Return to Required Plugins Installer', 'vk-blocks-pro' ),
+			'plugin_activated'                => __( 'Plugin activated successfully.', 'vk-blocks-pro' ),
+			'activated_successfully'          => __( 'The following plugin was activated successfully:', 'vk-blocks-pro' ),
 			// translators: %s = plugin name.
-			'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', 'vk-blocks' ),
+			'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', 'vk-blocks-pro' ),
 			// translators: %s = plugin name.
-			'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'vk-blocks' ),
+			'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'vk-blocks-pro' ),
 			// translators: %s = plugin name.
-			'complete'                        => __( 'All plugins installed and activated successfully. %1$s', 'vk-blocks' ),
+			'complete'                        => __( 'All plugins installed and activated successfully. %1$s', 'vk-blocks-pro' ),
 			// translators: %s = dashboard link.
-			'contact_admin'                   => __( 'Please contact the administrator of this site for help.', 'vk-blocks' ),
+			'contact_admin'                   => __( 'Please contact the administrator of this site for help.', 'vk-blocks-pro' ),
 			'nag_type'                        => 'updated', // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
 		),
 	);

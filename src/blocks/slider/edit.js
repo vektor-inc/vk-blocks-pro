@@ -169,7 +169,7 @@ export default function SliderEdit(props) {
 			<p className="font-size-11px">
 				{__(
 					'If you specifying a numbers with decimals such as 1.5, Please set "Centering the active slide"',
-					'vk-blocks'
+					'vk-blocks-pro'
 				)}
 			</p>
 		);
@@ -178,7 +178,7 @@ export default function SliderEdit(props) {
 			<p>
 				{__(
 					'The decimal point can be set for the display number only when the display is switched one by one.',
-					'vk-blocks'
+					'vk-blocks-pro'
 				)}
 			</p>
 		);
@@ -189,7 +189,7 @@ export default function SliderEdit(props) {
 		<div className="text-danger font-size-11px offset-mt-18px">
 			{__(
 				'Enter integer divisors for the number of placed slide items for each display size.',
-				'vk-blocks'
+				'vk-blocks-pro'
 			)}
 		</div>
 	);
@@ -219,6 +219,34 @@ export default function SliderEdit(props) {
 		slidesPerGroup === 'slides-per-view'
 	) {
 		slidesPerViewPCAlert = slidesPerViewAlert;
+	}
+
+	// ループに関するアラート
+	const sloderPerViewLoopAlert = (
+		<div className="alert alert-danger font-size-11px offset-mt-18px">
+			{__(
+				'If you want to loop slides, the number of placed slide items must be at least twice as large as the number of items to display per view.',
+				'vk-blocks-pro'
+			)}
+		</div>
+	);
+
+	// モバイル
+	let slidesPerViewMobileLoopAlert = '';
+	if (!!loop && innerBlocks.length / slidesPerViewMobile < 2) {
+		slidesPerViewMobileLoopAlert = sloderPerViewLoopAlert;
+	}
+
+	// タブレット
+	let slidesPerViewTabletLoopAlert = '';
+	if (!!loop && innerBlocks.length / slidesPerViewTablet < 2) {
+		slidesPerViewTabletLoopAlert = sloderPerViewLoopAlert;
+	}
+
+	// PC
+	let slidesPerViewPCLoopAlert = '';
+	if (!!loop && innerBlocks.length / slidesPerViewPC < 2) {
+		slidesPerViewPCLoopAlert = sloderPerViewLoopAlert;
 	}
 
 	// 幅のクラス名変更
@@ -252,30 +280,30 @@ export default function SliderEdit(props) {
 	if (effect !== 'fade') {
 		multiItemSetting = (
 			<PanelBody
-				title={__('Multi-item Display Setting', 'vk-blocks')}
+				title={__('Multi-item Display Setting', 'vk-blocks-pro')}
 				initialOpen={false}
 			>
 				<BaseControl
 					label={__(
 						'Number of Items to display per view',
-						'vk-blocks'
+						'vk-blocks-pro'
 					)}
 					id={`vk_slider-MultiItem`}
 				>
 					<p className="font-size-11px">
 						{__(
 							'Enter divisors for the number of placed slide items for each display size.',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 						{__(
 							'If the number is not divisible, the sliding behaviour will be unnatural',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 					</p>
 					{demicalPointAlert}
 					<TextControl
 						type={'number'}
-						label={__('PC', 'vk-blocks')}
+						label={__('PC', 'vk-blocks-pro')}
 						value={slidesPerViewPC}
 						onChange={(value) => {
 							if (Number(value) === NaN || Number(value) < 1) {
@@ -299,9 +327,10 @@ export default function SliderEdit(props) {
 						step={slidesPerGroup === 'slides-per-view' ? 1 : 0.1}
 					/>
 					{slidesPerViewPCAlert}
+					{slidesPerViewPCLoopAlert}
 					<TextControl
 						type={'number'}
-						label={__('Tablet', 'vk-blocks')}
+						label={__('Tablet', 'vk-blocks-pro')}
 						value={slidesPerViewTablet}
 						onChange={(value) => {
 							if (Number(value) === NaN || Number(value) < 1) {
@@ -327,9 +356,10 @@ export default function SliderEdit(props) {
 						step={slidesPerGroup === 'slides-per-view' ? 1 : 0.1}
 					/>
 					{slidesPerViewTabletAlert}
+					{slidesPerViewTabletLoopAlert}
 					<TextControl
 						type={'number'}
-						label={__('Mobile', 'vk-blocks')}
+						label={__('Mobile', 'vk-blocks-pro')}
 						value={slidesPerViewMobile}
 						onChange={(value) => {
 							if (Number(value) === NaN || Number(value) < 1) {
@@ -355,11 +385,12 @@ export default function SliderEdit(props) {
 						step={slidesPerGroup === 'slides-per-view' ? 1 : 0.1}
 					/>
 					{slidesPerViewMobileAlert}
+					{slidesPerViewMobileLoopAlert}
 				</BaseControl>
 				<BaseControl
 					label={__(
 						'Number of items to change in a transition',
-						'vk-blocks'
+						'vk-blocks-pro'
 					)}
 					id={`vk_slider-slidesPerGroup`}
 				>
@@ -368,13 +399,13 @@ export default function SliderEdit(props) {
 						className={'vk-radioControl'}
 						options={[
 							{
-								label: __('One by One', 'vk-blocks'),
+								label: __('One by One', 'vk-blocks-pro'),
 								value: 'one-by-one',
 							},
 							{
 								label: __(
 									'Same as the number of items to display',
-									'vk-blocks'
+									'vk-blocks-pro'
 								),
 								value: 'slides-per-view',
 							},
@@ -388,7 +419,10 @@ export default function SliderEdit(props) {
 				</BaseControl>
 				<BaseControl id={`vk_slider-slidesPerGroup`}>
 					<ToggleControl
-						label={__('Centering the active slide', 'vk-blocks')}
+						label={__(
+							'Centering the active slide',
+							'vk-blocks-pro'
+						)}
 						className={'mb-1'}
 						checked={centeredSlides} //eslint-disable-line camelcase
 						onChange={(checked) =>
@@ -396,7 +430,7 @@ export default function SliderEdit(props) {
 						}
 						help={__(
 							'If you specify the center, you can display items that are cut off on the left and right.',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 					/>
 				</BaseControl>
@@ -446,7 +480,10 @@ export default function SliderEdit(props) {
 				/>
 			</BlockControls>
 			<InspectorControls>
-				<PanelBody title={__('Width', 'vk-blocks')} initialOpen={true}>
+				<PanelBody
+					title={__('Width', 'vk-blocks-pro')}
+					initialOpen={true}
+				>
 					<BaseControl id={`vk_slider-width`}>
 						<ButtonGroup>
 							<Button
@@ -454,7 +491,7 @@ export default function SliderEdit(props) {
 								variant={width === '' ? 'primary' : 'secondary'}
 								onClick={() => setAttributes({ width: '' })}
 							>
-								{__('Normal', 'vk-blocks')}
+								{__('Normal', 'vk-blocks-pro')}
 							</Button>
 							<Button
 								isSmall={true}
@@ -463,22 +500,25 @@ export default function SliderEdit(props) {
 								}
 								onClick={() => setAttributes({ width: 'full' })}
 							>
-								{__('Full Wide', 'vk-blocks')}
+								{__('Full Wide', 'vk-blocks-pro')}
 							</Button>
 						</ButtonGroup>
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
-					title={__('Height', 'vk-blocks')}
+					title={__('Height', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<AdvancedUnitControl {...props} />
 					<BaseControl
-						label={__('Slide Height for each device.', 'vk-blocks')}
+						label={__(
+							'Slide Height for each device.',
+							'vk-blocks-pro'
+						)}
 						id={`vk_slider-SlideHeight`}
 					>
 						<RangeControl
-							label={__('PC', 'vk-blocks')}
+							label={__('PC', 'vk-blocks-pro')}
 							value={pc}
 							onChange={(value) => {
 								if (
@@ -499,7 +539,7 @@ export default function SliderEdit(props) {
 							resetFallbackValue={null}
 						/>
 						<RangeControl
-							label={__('Tablet', 'vk-blocks')}
+							label={__('Tablet', 'vk-blocks-pro')}
 							value={tablet}
 							onChange={(value) => {
 								if (
@@ -520,7 +560,7 @@ export default function SliderEdit(props) {
 							resetFallbackValue={null}
 						/>
 						<RangeControl
-							label={__('Mobile', 'vk-blocks')}
+							label={__('Mobile', 'vk-blocks-pro')}
 							value={mobile}
 							onChange={(value) => {
 								if (
@@ -543,11 +583,11 @@ export default function SliderEdit(props) {
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
-					title={__('Slider Settings', 'vk-blocks')}
+					title={__('Slider Settings', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<BaseControl
-						label={__('Effect ', 'vk-blocks')}
+						label={__('Effect ', 'vk-blocks-pro')}
 						id={`vk_slider-effect`}
 					>
 						<SelectControl
@@ -557,18 +597,18 @@ export default function SliderEdit(props) {
 							}
 							options={[
 								{
-									label: __('Slide', 'vk-blocks'),
+									label: __('Slide', 'vk-blocks-pro'),
 									value: 'slide',
 								},
 								{
-									label: __('Fade', 'vk-blocks'),
+									label: __('Fade', 'vk-blocks-pro'),
 									value: 'fade',
 								},
 							]}
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Loop ', 'vk-blocks')}
+						label={__('Loop ', 'vk-blocks-pro')}
 						id={`vk_slider-loop`}
 					>
 						<AdvancedToggleControl
@@ -578,7 +618,7 @@ export default function SliderEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('AutoPlay', 'vk-blocks')}
+						label={__('AutoPlay', 'vk-blocks-pro')}
 						id={`vk_slider-autoPlay`}
 					>
 						<AdvancedToggleControl
@@ -588,7 +628,7 @@ export default function SliderEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Stop AutoPlay when swipe', 'vk-blocks')}
+						label={__('Stop AutoPlay when swipe', 'vk-blocks-pro')}
 						id={`vk_slider-autoPlay`}
 					>
 						<AdvancedToggleControl
@@ -598,7 +638,7 @@ export default function SliderEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Display Time', 'vk-blocks')}
+						label={__('Display Time', 'vk-blocks-pro')}
 						id={`vk_slider-autoPlay`}
 					>
 						<TextControl
@@ -625,7 +665,7 @@ export default function SliderEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Change Speed', 'vk-blocks')}
+						label={__('Change Speed', 'vk-blocks-pro')}
 						id={`vk_slider-changeSpeed`}
 					>
 						<TextControl
@@ -649,22 +689,25 @@ export default function SliderEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Pagination Type', 'vk-blocks')}
+						label={__('Pagination Type', 'vk-blocks-pro')}
 						id={`vk_slider-displayPagination`}
 					>
 						<SelectControl
 							value={pagination}
 							options={[
 								{
-									label: __('Hide', 'vk-blocks'),
+									label: __('Hide', 'vk-blocks-pro'),
 									value: 'hide',
 								},
 								{
-									label: __('Default', 'vk-blocks'),
+									label: __('Default', 'vk-blocks-pro'),
 									value: 'bullets',
 								},
 								{
-									label: __('Number of slides', 'vk-blocks'),
+									label: __(
+										'Number of slides',
+										'vk-blocks-pro'
+									),
 									value: 'fraction',
 								},
 							]}
@@ -674,24 +717,24 @@ export default function SliderEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Navigation Position', 'vk-blocks')}
+						label={__('Navigation Position', 'vk-blocks-pro')}
 						id={`vk_slider-navigationPosition`}
 					>
 						<SelectControl
 							value={navigationPosition}
 							options={[
 								{
-									label: __('Hide', 'vk-blocks'),
+									label: __('Hide', 'vk-blocks-pro'),
 									value: 'hide',
 								},
 								{
-									label: __('Center', 'vk-blocks'),
+									label: __('Center', 'vk-blocks-pro'),
 									value: 'center',
 								},
 								{
 									label: __(
 										'Bottom on Mobile device',
-										'vk-blocks'
+										'vk-blocks-pro'
 									),
 									value: 'mobile-bottom',
 								},

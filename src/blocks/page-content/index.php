@@ -123,7 +123,7 @@ function vk_blocks_page_content_render_callback( $attributes ) {
 
 		$url = get_edit_post_link( $page_content_id );
 		if ( $url ) {
-			$page_html .= '<a href="' . esc_url( $url ) . '" class="vk_pageContent_editBtn btn btn-outline-primary btn-sm veu_adminEdit" target="_blank">' . __( 'Edit this area', 'vk-blocks' ) . '</a>';
+			$page_html .= '<a href="' . esc_url( $url ) . '" class="vk_pageContent_editBtn btn btn-outline-primary btn-sm veu_adminEdit" target="_blank">' . __( 'Edit this area', 'vk-blocks-pro' ) . '</a>';
 		}
 	}
 

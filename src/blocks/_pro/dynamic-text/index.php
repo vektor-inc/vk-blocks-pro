@@ -27,9 +27,9 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 	if ( 'custom-field' === $options['displayElement'] && ! isset( $block->context['postId'] ) ) {
 		return;
 	}
-	$custom_field_name = get_post_meta( $block->context['postId'], $options['customFieldName'], true );
+	$custom_field_content = get_post_meta( $block->context['postId'], $options['customFieldName'], true );
 
-	return $custom_field_name;
+	return $custom_field_content;
 }
 
 /**
@@ -46,6 +46,7 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 		'displayElement'           => $attributes['displayElement'],
 		'tagName'                  => $attributes['tagName'],
 		'ancestorPageHiddenOption' => $attributes['ancestorPageHiddenOption'],
+		'customFieldName' => ( isset( $attributes['customFieldName'] ) ) ? wp_kses_post( $attributes['customFieldName'] ) : null,
 	);
 
 	$post = get_post();

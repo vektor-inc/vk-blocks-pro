@@ -5,8 +5,6 @@
  * @package vk-blocks
  */
 
-use function PHPSTORM_META\map;
-
 /**
  * VK_Blocks_Options
  */

@@ -304,7 +304,7 @@ export const FontAwesome = (props) => {
 					disabled={!canAddIconPreset}
 					onClick={() => updateSettings(attributes[attributeName])}
 				>
-					{__('設定アイコンをアイコンリストに追加', 'vk-blocks')}
+					{__('設定アイコンをアイコンリストに追加', 'vk-blocks-pro')}
 				</Button>
 			)}
 			{canUserEdit && existsIconPreset && (
@@ -313,7 +313,7 @@ export const FontAwesome = (props) => {
 					label={__(
 						'アイコンリスト 編集モード',
 						// 'Icons Lists Edit mode',
-						'vk-blocks'
+						'vk-blocks-pro'
 					)}
 					checked={isEditMode}
 					onChange={() => setIsEditMode(!isEditMode)}

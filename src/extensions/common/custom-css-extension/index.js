@@ -8,7 +8,7 @@ import { InspectorControls, transformStyles } from '@wordpress/block-editor';
 import { createHigherOrderComponent, useInstanceId } from '@wordpress/compose';
 import { hasBlockSupport } from '@wordpress/blocks';
 import { useEffect } from '@wordpress/element';
-import { useSelect, useDispatch } from '@wordpress/data';
+import { addQueryArgs } from '@wordpress/url';
 
 /**
  * External dependencies
@@ -21,8 +21,7 @@ import classnames from 'classnames';
 import { CodeMirrorCss } from '@vkblocks/components/code-mirror-css';
 import { emptyStringToUndefined } from '@vkblocks/utils/empty-string-to-undefined';
 import { ReactComponent as IconSVG } from './icon.svg';
-import { STORE_NAME } from '@vkblocks/extensions/store/constants';
-import { updateOptions } from '@vkblocks/utils/api';
+/*globals vk_blocks_params */
 
 export const inString = (str, keyword) => {
 	return str.indexOf(keyword) !== -1;
@@ -165,26 +164,6 @@ export const withInspectorControls = createHigherOrderComponent(
 			};
 		}
 
-		const { optionObj } = useSelect((select) => {
-			const { getOptions } = select(STORE_NAME);
-			return {
-				optionObj: getOptions(),
-			};
-		}, []);
-		const { setOptions } = useDispatch(STORE_NAME);
-
-		const updateSettings = (value) => {
-			const newObj = {
-				...optionObj,
-				vkBlocksOptions: {
-					...optionObj.vkBlocksOptions,
-					show_custom_css_editor_flag: value ? 'show' : 'hide',
-				},
-			};
-			setOptions(newObj);
-			updateOptions(newObj);
-		};
-
 		return (
 			<>
 				<BlockEdit {...props} />
@@ -268,17 +247,11 @@ const withElementsStyles = createHigherOrderComponent(
 		const uniqueClass = `vk_custom_css_${id}`;
 
 		const { vkbCustomCss } = attributes;
-		const { vkBlocksOptions } = useSelect((select) => {
-			const { getOptions } = select(STORE_NAME);
-			return {
-				vkBlocksOptions: getOptions().vkBlocksOptions,
-			};
-		}, []);
 		// editor用のクラス名を追加
 		const customCssClass = classnames(props.className, {
 			[uniqueClass]: existsCss(vkbCustomCss),
 			[`vk_edit_custom_css`]:
-				vkBlocksOptions?.show_custom_css_editor_flag === 'show' &&
+				vk_blocks_params.show_custom_css_editor_flag === 'show' &&
 				existsCss(vkbCustomCss),
 		});
 

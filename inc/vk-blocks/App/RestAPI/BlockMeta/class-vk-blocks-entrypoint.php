@@ -80,7 +80,6 @@ class Vk_Blocks_EntryPoint {
 	 * @var array
 	 */
 	public static $allow_block_editor_option_lists = array(
-		'show_custom_css_editor_flag',
 		'icon_preset_lists',
 	);
 

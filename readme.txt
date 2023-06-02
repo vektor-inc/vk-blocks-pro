@@ -68,12 +68,12 @@ e.g.
 = 1.57.0 =
 [ Add Function ] Allow alpha value in some blocks.
 [ Add Function ][ Dynamic Text Block (Pro) ] Added an option to show/hide the title when an ancestor page is selected and the ancestor page is display.
-[ Add Function ][ Animation(Pro) ] Added transforms settings to wrap and unwrap.
-[ Add Alert ][ Slider ] Add loop alert
+[ Add Function ][ Animation (Pro) ] Added transforms settings to wrap and unwrap.
+[ Other ][ Slider ] Add loop alert
 [ Bug Fix ] Fix Textdomain( Translate ) for VK Blocks Pro
 [ Bug fix ][ Child page list ] "There are no page." is not displayed on the front page.
 [ Bug fix ][ Breadcrumb ] Delete non intentional margin on editor screen
-[ Bug Fix ][ Taxonomy block ( Pro ) ] Fix the "Show hierarchy" option bug.
+[ Bug Fix ][ Taxonomy block (Pro) ] Fix the "Show hierarchy" option bug.
 [ Bug fix ][ Slider ] Fixed file reference bug of slider under specific environment such as Windows ( Update Swiper 9.3.2 )
 [ Bug Fix ][ Dynamic Text Block (Pro) ] Fixed a bug that caused an error when setting the style.
 

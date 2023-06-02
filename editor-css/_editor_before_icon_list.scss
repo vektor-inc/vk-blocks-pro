@@ -3,40 +3,46 @@
 /*-------------------------------------------*/
 .vk-blocks-advanced-popover-control {
 	.components-popover__content {
-		min-width: 260px;
+		min-width: 280px;
 		margin-left: -46px !important;
 		padding: 20px 15px;
 		.vk_icon_list {
+			display: flex;
+			flex-wrap: wrap;
+			max-height: 300px;
+			overflow-y: scroll;
 			margin-top: 5px;
-			.components-base-control__field,
-			.components-flex {
-				display: flex;
-				flex-wrap: wrap;
-				flex-direction: row;
-				gap: 0;
-				justify-content: left;
-				.components-radio-control__option {
+			.vk_icon_area {
+				margin-right: 7px;
+				.vk_icon_button {
 					border: 1px solid #666;
+					color: inherit;
 					width: 36px;
 					height: 36px;
 					border-radius: 3px;
-					margin-right: 7px;
 					position: relative;
-					input {
-						display: none;
-					}
-					.svg-inline--fa,
+					box-shadow: none;
 					i {
 						font-size: 1.5em;
 						position: absolute;
 						top: 50%;
 						left: 50%;
+						-webkit-transform: translateY(-50%) translateX(-50%);
 						transform: translateY(-50%) translateX(-50%);
 					}
 				}
-				.components-radio-control__option:not(:last-child) {
-					margin-bottom: 4px;
-				}					
+				.vk_icon_button_area {
+					display: flex;
+					margin-bottom: 3px;
+					.vk_icon_button_chevronLeft,
+					.vk_icon_button_closeSmall,
+					.vk_icon_button_chevronRight {
+						padding: 0;
+						min-width: auto;
+						width: 12px;
+						height: 12px;
+					}
+				}
 			}
 		}
 	}

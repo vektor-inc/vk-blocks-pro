@@ -5,6 +5,8 @@
  * @package vk-blocks
  */
 
+use function PHPSTORM_META\map;
+
 /**
  * VK_Blocks_Options
  */
@@ -178,6 +180,60 @@ class VK_Blocks_Options {
 			'disable_block_lists'         => array(
 				'type' => 'array',
 			),
+			'custom_block_style_lists'    => array(
+				'type'  => 'array',
+				'items' => array(
+					'type'       => 'object',
+					'properties' => array(
+						'block_name'                      => array(
+							'type' => 'string',
+						),
+						'property_name'                   => array(
+							'type' => 'string',
+						),
+						'property_label'                  => array(
+							'type' => 'string',
+						),
+						'property_inline_style'           => array(
+							'type' => 'string',
+						),
+						'property_transform_inline_style' => array(
+							'type' => 'string',
+						),
+					),
+				),
+			),
+			'balloon_meta_lists'          => array(
+				'type'  => 'array',
+				'items' => array(
+					'type'       => 'object',
+					'properties' => array(
+						'name' => array(
+							'type' => 'string',
+						),
+						'src'  => array(
+							'type' => 'string',
+						),
+					),
+				),
+			),
+			'disable_block_style_lists'   => array(
+				'type'  => 'array',
+				'items' => array(
+					'type'       => 'object',
+					'properties' => array(
+						'block_name'    => array(
+							'type' => 'string',
+						),
+						'property_name' => array(
+							'type' => 'array',
+						),
+					),
+				),
+			),
+			'icon_preset_lists'         => array(
+				'type'  => 'array',
+			),
 		);
 		return $properties;
 	}
@@ -242,6 +298,13 @@ class VK_Blocks_Options {
 				),
 			),
 			'disable_block_lists'         => $activation ? self::get_deprecated_lists() : array(),
+			'custom_block_style_lists'    => array(),
+			'balloon_meta_lists'          => array(),
+			'disable_block_style_lists'   => array(),
+			'icon_preset_lists'         => array(
+				'<i class="fa-brands fa-tiktok"></i>',
+				'<i class="fas fa-info-circle"></i>',
+			),
 		);
 		return $default;
 	}

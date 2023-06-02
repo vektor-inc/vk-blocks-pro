@@ -92,7 +92,6 @@ class Vk_Blocks_EntryPoint {
 		$json_params = $request->get_json_params();
 
 		update_option( 'vk_blocks_options', $json_params['vkBlocksOption'] );
-		update_option( 'vk_blocks_balloon_meta', $json_params['vkBlocksBalloonMeta'] );
 
 		return rest_ensure_response(
 			array(
@@ -108,6 +107,7 @@ class Vk_Blocks_EntryPoint {
 	 */
 	public static $allow_block_editor_option_lists = array(
 		'show_custom_css_editor_flag',
+		'icon_preset_lists',
 	);
 
 	/**
@@ -117,10 +117,10 @@ class Vk_Blocks_EntryPoint {
 	 */
 	public static function block_editor_get_options() {
 		$options                    = array();
-		$options['vkBlocksOptions'] = VK_Blocks_Options::get_options();
-		foreach ( $options['vkBlocksOptions'] as $option_name => $value ) {
+		$options['vkBlocksOption'] = VK_Blocks_Options::get_options();
+		foreach ( $options['vkBlocksOption'] as $option_name => $value ) {
 			if ( ! in_array( $option_name, self::$allow_block_editor_option_lists ) ) {
-				unset( $options['vkBlocksOptions'][ $option_name ] );
+				unset( $options['vkBlocksOption'][ $option_name ] );
 			}
 		}
 
@@ -143,7 +143,7 @@ class Vk_Blocks_EntryPoint {
 				$waiting_lists[ $option_name ] = $options[ $option_name ];
 			}
 		}
-		$completed_options = array_merge( $json_params['vkBlocksOptions'], $waiting_lists );
+		$completed_options = array_merge( $json_params['vkBlocksOption'], $waiting_lists );
 		update_option( 'vk_blocks_options', $completed_options );
 		return rest_ensure_response(
 			array(

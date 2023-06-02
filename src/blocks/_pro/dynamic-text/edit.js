@@ -100,7 +100,7 @@ export default function DynamicTextEdit(props) {
 	const editAlertContent = (
 		<div className="alert alert-warning text-center">
 			{__(
-				'This block will not render because no visible element is selected.',
+				'Please select display element from the Setting sidebar.',
 				'vk-blocks-pro'
 			)}
 		</div>
@@ -156,14 +156,14 @@ export default function DynamicTextEdit(props) {
 									value: 'post-type',
 									label: __(
 										'Post type name of the page being viewed',
-										'vk-blocks'
+										'vk-blocks-pro'
 									),
 								},
 								{
 									value: 'ancestor-page',
 									label: __(
 										'Page name in the ancestor hierarchy of the displayed page',
-										'vk-blocks'
+										'vk-blocks-pro'
 									),
 								},
 								// {
@@ -178,7 +178,7 @@ export default function DynamicTextEdit(props) {
 							<CheckboxControl
 								label={__(
 									'Hide on Ancestor Hierarchy Pages',
-									'vk-blocks'
+									'vk-blocks-pro'
 								)}
 								checked={ancestorPageHiddenOption}
 								onChange={(v) =>
@@ -191,7 +191,7 @@ export default function DynamicTextEdit(props) {
 								<div className="alert alert-warning mt-0 mb-4">
 									{__(
 										'This block will not display on pages other than pages that have a parent hierarchy.',
-										'vk-blocks'
+										'vk-blocks-pro'
 									)}
 								</div>
 							)}

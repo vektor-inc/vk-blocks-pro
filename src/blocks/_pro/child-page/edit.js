@@ -98,7 +98,8 @@ export default withSelect((select) => {
 	} else {
 		editContent = (
 			<div className="alert alert-warning text-center">
-				{__('There are no Page.', 'vk-blocks')}
+				{__('There are no applicable child pages.', 'vk-blocks-pro')}<br />
+				{__('Check your settings from the settings sidebar.', 'vk-blocks-pro')}
 			</div>
 		);
 	}

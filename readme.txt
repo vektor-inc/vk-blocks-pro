@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.0
 Tested up to: 6.2
-Stable tag: 1.55.0.1
+Stable tag: 1.56.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -65,7 +65,7 @@ e.g.
 
 == Changelog ==
 
-[ Bug Fix ][ Dynamic Text Block (Pro) ] Fixed a bug that caused an error when setting the style.
+= 1.57.0 =
 [ Add Function ] Allow alpha value in some blocks.
 [ Add Function ][ Dynamic Text Block (Pro) ] Added an option to show/hide the title when an ancestor page is selected and the ancestor page is display.
 [ Add Function ][ Animation(Pro) ] Added transforms settings to wrap and unwrap.
@@ -75,6 +75,7 @@ e.g.
 [ Bug fix ][ Breadcrumb ] Delete non intentional margin on editor screen
 [ Bug Fix ][ Taxonomy block ( Pro ) ] Fix the "Show hierarchy" option bug.
 [ Bug fix ][ Slider ] Fixed file reference bug of slider under specific environment such as Windows ( Update Swiper 9.3.2 )
+[ Bug Fix ][ Dynamic Text Block (Pro) ] Fixed a bug that caused an error when setting the style.
 
 = 1.56.0 =
 [ Add Block ][ Dynamic Text Block (Pro) ] Add Dynamic text block.

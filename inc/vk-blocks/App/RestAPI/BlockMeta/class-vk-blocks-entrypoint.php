@@ -90,7 +90,7 @@ class Vk_Blocks_EntryPoint {
 	 * @return \WP_REST_Response|\WP_Error
 	 */
 	public static function block_editor_get_options() {
-		$options                    = array();
+		$options                   = array();
 		$options['vkBlocksOption'] = VK_Blocks_Options::get_options();
 		foreach ( $options['vkBlocksOption'] as $option_name => $value ) {
 			if ( ! in_array( $option_name, self::$allow_block_editor_option_lists ) ) {

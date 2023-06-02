@@ -330,8 +330,8 @@ class VK_Blocks_Options {
 					),
 				),
 			),
-			'icon_preset_lists'         => array(
-				'type'  => 'array',
+			'icon_preset_lists'           => array(
+				'type' => 'array',
 			),
 		);
 		return $properties;
@@ -404,7 +404,7 @@ class VK_Blocks_Options {
 			'custom_block_style_lists'    => array(),
 			'balloon_meta_lists'          => array(),
 			'disable_block_style_lists'   => array(),
-			'icon_preset_lists'         => array(
+			'icon_preset_lists'           => array(
 				'<i class="fa-brands fa-tiktok"></i>',
 				'<i class="fas fa-info-circle"></i>',
 			),

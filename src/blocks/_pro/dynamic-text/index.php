@@ -46,7 +46,7 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 		'displayElement'           => $attributes['displayElement'],
 		'tagName'                  => $attributes['tagName'],
 		'ancestorPageHiddenOption' => $attributes['ancestorPageHiddenOption'],
-		'customFieldName' => ( isset( $attributes['customFieldName'] ) ) ? wp_kses_post( $attributes['customFieldName'] ) : null,
+		'customFieldName'          => ( isset( $attributes['customFieldName'] ) ) ? wp_kses_post( $attributes['customFieldName'] ) : null,
 	);
 
 	$post = get_post();

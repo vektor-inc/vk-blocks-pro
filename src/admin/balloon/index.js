@@ -11,25 +11,33 @@ import { MediaUpload } from '@wordpress/media-utils';
  */
 import noImage from '@vkblocks/admin/balloon/images/no-image.png';
 import { AdminContext } from '@vkblocks/admin/index';
-/*globals vkBlocksObject */
+import { AddButton } from '@vkblocks/admin/balloon/add-button';
+import { DeleteButton } from '@vkblocks/admin/balloon/delete-button';
+import { stripHTML } from '@vkblocks/utils/strip-html';
 
 export default function AdminBalloon() {
-	const {
-		vkBlocksOption,
-		setVkBlocksOption,
-		vkBlocksBalloonMeta,
-		setVkBlocksBalloonMeta,
-	} = useContext(AdminContext);
-	const vkBlocksImageNumber = vkBlocksObject.imageNumber;
+	const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
+
+	const onChange = (key, value, index) => {
+		const newItems = vkBlocksOption.balloon_meta_lists;
+		newItems[index] = {
+			...vkBlocksOption.balloon_meta_lists[index],
+			[key]: value,
+		};
+		setVkBlocksOption({
+			...vkBlocksOption,
+			balloon_meta_lists: [...newItems],
+		});
+	};
 
 	return (
 		<>
 			<section>
 				<h3 id="balloon-setting">
-					{__('Balloon Setting', 'vk-blocks')}
+					{__('Balloon Setting', 'vk-blocks-pro')}
 				</h3>
 				<h4 id="balloon-border-width-setting">
-					{__('Balloon Border Width Setting', 'vk-blocks')}
+					{__('Balloon Border Width Setting', 'vk-blocks-pro')}
 				</h4>
 				<SelectControl
 					id="balloon-border-width-selector"
@@ -47,240 +55,140 @@ export default function AdminBalloon() {
 					}}
 					options={[
 						{
-							label: __('1px', 'vk-blocks'),
+							label: __('1px', 'vk-blocks-pro'),
 							value: 1,
 						},
 						{
-							label: __('2px', 'vk-blocks'),
+							label: __('2px', 'vk-blocks-pro'),
 							value: 2,
 						},
 						{
-							label: __('3px', 'vk-blocks'),
+							label: __('3px', 'vk-blocks-pro'),
 							value: 3,
 						},
 						{
-							label: __('4px', 'vk-blocks'),
+							label: __('4px', 'vk-blocks-pro'),
 							value: 4,
 						},
 					]}
 				/>
-			</section>
-			<h4 id="balloon-image-setting">
-				{__('Balloon Image Setting', 'vk-blocks')}
-			</h4>
-			<p>
-				{__(
-					'You can register frequently used icon images for speech bubble blocks.',
-					'vk-blocks'
-				)}
-				{__(
-					'If you change image or name that please click Save Changes button.',
-					'vk-blocks'
-				)}
-			</p>
-			<ul className="balloonIconList">
-				{(() => {
-					const items = [];
-					for (let i = 1; i <= vkBlocksImageNumber; i++) {
-						items.push(
-							<li key={i}>
-								<MediaUpload
-									label={__('image', 'vk-blocks')}
-									onSelect={(newValue) => {
-										setVkBlocksBalloonMeta({
-											...vkBlocksBalloonMeta,
-											default_icons: {
-												...vkBlocksBalloonMeta.default_icons,
-												[i]: {
-													...vkBlocksBalloonMeta
-														.default_icons[i],
-													src: newValue.url,
-												},
-											},
-										});
-									}}
-									type="image"
-									allowedTypes={['image']}
-									value={
-										!vkBlocksBalloonMeta.default_icons[i]
-											.src &&
-										vkBlocksBalloonMeta.default_icons[i].src
-									}
-									render={({ open }) => (
-										<>
-											{!vkBlocksBalloonMeta.default_icons[
-												i
-											].src ? (
-												<>
-													<div className="balloonIconList_iconFrame">
-														<div
-															style={{
-																width: '100px',
-																height: '100px',
-																objectFit:
-																	'cover',
-															}}
-														>
+				<h4 id="balloon-image-setting">
+					{__('Balloon Image Setting', 'vk-blocks-pro')}
+				</h4>
+				<p>
+					{__(
+						'You can register frequently used icon images for speech bubble blocks.',
+						'vk-blocks-pro'
+					)}
+				</p>
+				<ul className="balloonIconList">
+					{Object.keys(vkBlocksOption.balloon_meta_lists).map(
+						(key, index) => {
+							const balloonMetaListObj =
+								vkBlocksOption.balloon_meta_lists[key];
+							return (
+								<li key={index}>
+									<MediaUpload
+										label={__('image', 'vk-blocks-pro')}
+										onSelect={(newValue) => {
+											onChange(
+												'src',
+												newValue.url,
+												index
+											);
+										}}
+										type="image"
+										allowedTypes={['image']}
+										value={
+											!balloonMetaListObj.src &&
+											balloonMetaListObj.src
+										}
+										render={({ open }) => (
+											<>
+												{!balloonMetaListObj.src ? (
+													<>
+														<div className="balloonIconList_iconFrame">
 															<img
 																className="balloonIconList_iconFrame_src"
 																src={noImage}
 																alt=""
 															/>
+															<Button
+																onClick={open}
+																className="button button-block button-select"
+															>
+																{__(
+																	'Select',
+																	'vk-blocks-pro'
+																)}
+															</Button>
 														</div>
-													</div>
-													<Button
-														onClick={open}
-														className="button button-block button-set"
-													>
-														{__(
-															'Select',
-															'vk-blocks'
-														)}
-													</Button>
-													<Button
-														className="button button-block button-delete"
-														onClick={() => {
-															setVkBlocksBalloonMeta(
-																{
-																	...vkBlocksBalloonMeta,
-																	default_icons:
-																		{
-																			...vkBlocksBalloonMeta.default_icons,
-																			[i]: {
-																				...vkBlocksBalloonMeta
-																					.default_icons[
-																					i
-																				],
-																				src: '',
-																			},
-																		},
-																}
-															);
-														}}
-													>
-														{__(
-															'Delete',
-															'vk-blocks'
-														)}
-													</Button>
-												</>
-											) : (
-												<>
-													<div className="balloonIconList_iconFrame">
-														<div
-															style={{
-																width: '100px',
-																height: '100px',
-																objectFit:
-																	'cover',
-															}}
-														>
+													</>
+												) : (
+													<>
+														<div className="balloonIconList_iconFrame">
 															<img
-																id={`balloonIconList_iconFrame_src_${i}`}
+																id={`balloonIconList_iconFrame_src_${index}`}
 																className="balloonIconList_iconFrame_src"
 																src={
-																	vkBlocksBalloonMeta
-																		.default_icons[
-																		i
-																	].src ===
-																		'' ||
-																	vkBlocksBalloonMeta
-																		.default_icons[
-																		i
-																	].src ===
-																		undefined
-																		? noImage
-																		: vkBlocksBalloonMeta
-																				.default_icons[
-																				i
-																		  ].src
+																	balloonMetaListObj.src
 																}
 																alt=""
 															/>
+															<Button
+																className="button button-block button-delete"
+																onClick={() => {
+																	onChange(
+																		'src',
+																		'',
+																		index
+																	);
+																}}
+															>
+																{__(
+																	'Delete',
+																	'vk-blocks-pro'
+																)}
+															</Button>
 														</div>
-													</div>
-													<Button
-														onClick={open}
-														className="button button-block button-set"
-													>
-														{__(
-															'Select',
-															'vk-blocks'
-														)}
-													</Button>
-													<Button
-														className="button button-block button-delete"
-														onClick={() => {
-															setVkBlocksBalloonMeta(
-																{
-																	...vkBlocksBalloonMeta,
-																	default_icons:
-																		{
-																			...vkBlocksBalloonMeta.default_icons,
-																			[i]: {
-																				...vkBlocksBalloonMeta
-																					.default_icons[
-																					i
-																				],
-																				src: '',
-																			},
-																		},
-																}
-															);
-														}}
-													>
-														{__(
-															'Delete',
-															'vk-blocks'
-														)}
-													</Button>
-												</>
-											)}
-										</>
-									)}
-								/>
-								<label
-									htmlFor="icon_title"
-									className="balloonIconList_nameLabel"
-								>
-									{__('Balloon Image Name', 'vk-blocks')}
-								</label>
-								<TextControl
-									id={`icon_title_${i}`}
-									className="balloonIconList_name_input"
-									name={`vk_blocks_balloon_meta[default_icons][${i}][name]`}
-									onChange={(newValue) => {
-										setVkBlocksBalloonMeta({
-											...vkBlocksBalloonMeta,
-											default_icons: {
-												...vkBlocksBalloonMeta.default_icons,
-												[i]: {
-													...vkBlocksBalloonMeta
-														.default_icons[i],
-													name: newValue,
-												},
-											},
-										});
-									}}
-									value={
-										vkBlocksBalloonMeta.default_icons[i]
-											.name === '' ||
-										vkBlocksBalloonMeta.default_icons[i]
-											.name === undefined ||
-										vkBlocksBalloonMeta.default_icons[i]
-											.name === null
-											? ''
-											: vkBlocksBalloonMeta.default_icons[
-													i
-											  ].name
-									}
-								/>
-							</li>
-						);
-					}
-					return items;
-				})()}
-			</ul>
+													</>
+												)}
+											</>
+										)}
+									/>
+									<label
+										htmlFor="icon_title"
+										className="balloonIconList_nameLabel"
+									>
+										{__(
+											'Balloon Image Name',
+											'vk-blocks-pro'
+										)}
+									</label>
+									<TextControl
+										id={`icon_title_${index}`}
+										className="balloonIconList_name_input"
+										name={`vk_blocks_balloon_meta[default_icons][${index}][name]`}
+										onChange={(value) =>
+											onChange(
+												'name',
+												stripHTML(value),
+												index
+											)
+										}
+										value={balloonMetaListObj.name ?? ''}
+									/>
+									<DeleteButton
+										index={index}
+										balloonMetaListObj={balloonMetaListObj}
+									/>
+								</li>
+							);
+						}
+					)}
+				</ul>
+				<AddButton />
+			</section>
 		</>
 	);
 }

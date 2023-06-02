@@ -24,18 +24,6 @@ class Vk_Blocks_EntryPoint {
 	public function vk_blocks_rest_api_init() {
 		register_rest_route(
 			'vk-blocks/v1',
-			'/block-meta/(?P<name>.+)',
-			array(
-				'methods'             => 'GET',
-				'callback'            => array( $this, 'vk_blocks_callback' ),
-				'permission_callback' => function () {
-					return current_user_can( 'edit_posts' );
-				},
-			)
-		);
-
-		register_rest_route(
-			'vk-blocks/v1',
 			'/update_vk_blocks_options',
 			array(
 				array(
@@ -71,18 +59,6 @@ class Vk_Blocks_EntryPoint {
 	}
 
 	/**
-	 * Vk Blocks Rest Route Callback
-	 *
-	 * @param string $request — .
-	 * @return \WP_REST_Response|\WP_Error
-	 */
-	public function vk_blocks_callback( $request ) {
-		$block_name = esc_html( $request['name'] );
-		$block_meta = get_option( 'vk_blocks_' . $block_name . '_meta' );
-		return rest_ensure_response( $block_meta );
-	}
-
-	/**
 	 * VK Blocks Rest Update Callback
 	 *
 	 * @param object $request — .
@@ -90,9 +66,7 @@ class Vk_Blocks_EntryPoint {
 	 */
 	public function update_vk_blocks_options( $request ) {
 		$json_params = $request->get_json_params();
-
 		update_option( 'vk_blocks_options', $json_params['vkBlocksOption'] );
-
 		return rest_ensure_response(
 			array(
 				'success' => true,

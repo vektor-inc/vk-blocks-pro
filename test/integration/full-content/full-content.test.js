@@ -1,7 +1,6 @@
 /**
  * External dependencies
  */
-import { omit, startsWith, get } from 'lodash';
 import { format } from 'util';
 
 /**
@@ -37,24 +36,19 @@ const blockBasenames = getAvailableBlockFixturesBasenames();
 
 import { registerVKBlocks } from '@vkblocks/blocks/bundle'
 
-function normalizeParsedBlocks(blocks) {
-	return blocks.map((block, index) => {
-		// Clone and remove React-instance-specific stuff; also, attribute
-		// values that equal `undefined` will be removed. Validation issues
-		// add too much noise so they get removed as well.
-		block = JSON.parse(
-			JSON.stringify(omit(block, 'validationIssues'))
-		);
-
-		// Change client IDs to a predictable value
-		block.clientId = '_clientId_' + index;
-
-		// Recurse to normalize inner blocks
-		block.innerBlocks = normalizeParsedBlocks(block.innerBlocks);
-
-		return block;
-	});
-}
+/**
+ * Returns only the properties of the block that
+ * we care about comparing with the fixture data.
+ *
+ * @param {WPBlock[]} blocks loaded blocks to normalize.
+ */
+const normalizeParsedBlocks = ( blocks ) =>
+	blocks.map( ( block ) => ( {
+		name: block.name,
+		isValid: block.isValid,
+		attributes: JSON.parse( JSON.stringify( block.attributes ) ),
+		innerBlocks: normalizeParsedBlocks( block.innerBlocks ),
+	} ) );
 
 describe('full post content fixture', () => {
 
@@ -247,7 +241,7 @@ describe('full post content fixture', () => {
 			// `save` functions and attributes.
 			// The `core/template` is not worth testing here because it's never saved, it's covered better in e2e tests.
 			.filter(
-				(name) => !['core/embed', 'core/template', 'vk-blocks/breadcrumb', 'vk-blocks/ancestor-page-list', 'vk-blocks/page-content', 'vk-blocks/post-list', 'vk-blocks/select-post-list-item', 'vk-blocks/child-page', 'vk-blocks/card-item', 'vk-blocks/grid-column-item', 'vk-blocks/gridcolcard-item', 'vk-blocks/gridcolcard-item-body', 'vk-blocks/gridcolcard-item-footer', 'vk-blocks/gridcolcard-item-header', 'vk-blocks/step-item', 'vk-blocks/timeline-item', 'vk-blocks/grid-column-item', 'vk-blocks/icon-card-item', 'vk-blocks/faq2-a', 'vk-blocks/faq2-q', 'vk-blocks/slider-item', 'vk-blocks/accordion-trigger', 'vk-blocks/accordion-target',].includes(name)
+				(name) => !['core/embed', 'core/template', 'vk-blocks/breadcrumb', 'vk-blocks/ancestor-page-list', 'vk-blocks/page-content', 'vk-blocks/post-list', 'vk-blocks/select-post-list-item', 'vk-blocks/child-page', 'vk-blocks/dynamic-text', 'vk-blocks/taxonomy', 'vk-blocks/archive-list', 'vk-blocks/card-item', 'vk-blocks/grid-column-item', 'vk-blocks/gridcolcard-item', 'vk-blocks/gridcolcard-item-body', 'vk-blocks/gridcolcard-item-footer', 'vk-blocks/gridcolcard-item-header', 'vk-blocks/step-item', 'vk-blocks/timeline-item', 'vk-blocks/grid-column-item', 'vk-blocks/icon-card-item', 'vk-blocks/faq2-a', 'vk-blocks/faq2-q', 'vk-blocks/slider-item', 'vk-blocks/accordion-trigger', 'vk-blocks/accordion-target',].includes(name)
 			)
 			.forEach((name) => {
 				const nameToFilename = blockNameToFixtureBasename(name);
@@ -255,7 +249,7 @@ describe('full post content fixture', () => {
 					.filter(
 						(basename) =>
 							basename === nameToFilename ||
-							startsWith(basename, nameToFilename + '__')
+							basename.startsWith( nameToFilename + '__' )
 					)
 					.map((basename) => {
 						const {
@@ -269,11 +263,8 @@ describe('full post content fixture', () => {
 						const parserOutput = JSON.parse(jsonFixtureContent);
 						// The name of the first block that this fixture file
 						// contains (if any).
-						const firstBlock = get(
-							parserOutput,
-							['0', 'name'],
-							null
-						);
+						const firstBlock =
+								parserOutput?.[ '0' ]?.name ?? null;
 						return {
 							filename: htmlFixtureFileName,
 							parserOutput,

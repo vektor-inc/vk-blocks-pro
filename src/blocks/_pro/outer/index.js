@@ -45,22 +45,22 @@ const generateInlineCss = (attributes) => {
 		innerSideSpaceValuePC = 0;
 	}
 
-	const containerSelector = `.vkb-outer-${blockId} .vk_outer_container`;
+	const containerSelector = `.vk_outer.vkb-outer-${blockId} > div > .vk_outer_container`;
 	return `
 	${containerSelector}{
-		padding-left:${innerSideSpaceValueMobile}${innerSideSpaceUnit};
-		padding-right:${innerSideSpaceValueMobile}${innerSideSpaceUnit};
+		padding-left:${innerSideSpaceValueMobile}${innerSideSpaceUnit}!important;
+		padding-right:${innerSideSpaceValueMobile}${innerSideSpaceUnit}!important;
 	}
 	@media (min-width: 576px) {
 		${containerSelector}{
-			padding-left:${innerSideSpaceValueTablet}${innerSideSpaceUnit};
-			padding-right:${innerSideSpaceValueTablet}${innerSideSpaceUnit};
+			padding-left:${innerSideSpaceValueTablet}${innerSideSpaceUnit}!important;
+			padding-right:${innerSideSpaceValueTablet}${innerSideSpaceUnit}!important;
 		}
 	}
 	@media (min-width: 992px) {
 		${containerSelector}{
-			padding-left:${innerSideSpaceValuePC}${innerSideSpaceUnit};
-			padding-right:${innerSideSpaceValuePC}${innerSideSpaceUnit};
+			padding-left:${innerSideSpaceValuePC}${innerSideSpaceUnit}!important;
+			padding-right:${innerSideSpaceValuePC}${innerSideSpaceUnit}!important;
 		}
 	}
 	`;
@@ -97,12 +97,11 @@ addFilter(
 				(item) => item.save === type.save
 			);
 
-			const cssTag = generateInlineCss(attributes);
-
 			// 最新版
 			if (-1 === deprecatedFuncIndex) {
 				// NOTE: useBlockProps + style要素を挿入する場合、useBlockPropsを使った要素が最初（上）にこないと、
 				// カスタムクラスを追加する処理が失敗する
+				const cssTag = generateInlineCss(attributes);
 				return (
 					<>
 						{el}

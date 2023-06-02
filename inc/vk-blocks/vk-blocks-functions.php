@@ -7,10 +7,14 @@
  * @package vk_blocks
  */
 
-// オプション値などでスタイルを作る処理を読み込み.
+// Load Files
+require_once dirname( __FILE__ ) . '/utils/hex-to-rgba.php';
+require_once dirname( __FILE__ ) . '/utils/color-slug-to-color-code.php';
+require_once dirname( __FILE__ ) . '/utils/array-merge.php';
+require_once dirname( __FILE__ ) . '/utils/minify-css.php';
 require_once dirname( __FILE__ ) . '/style/balloon.php';
 require_once dirname( __FILE__ ) . '/style/hidden-extension.php';
-
+require_once dirname( __FILE__ ) . '/extensions/core/list.php';
 require_once dirname( __FILE__ ) . '/view/responsive-br.php';
 require_once dirname( __FILE__ ) . '/view/class-vk-blocks-postlist.php';
 
@@ -29,11 +33,6 @@ VK_Blocks_Options::init();
 
 // font-awesome
 require_once dirname( __FILE__ ) . '/font-awesome/font-awesome-config.php';
-
-require_once dirname( __FILE__ ) . '/utils/hex-to-rgba.php';
-require_once dirname( __FILE__ ) . '/utils/color-slug-to-color-code.php';
-require_once dirname( __FILE__ ) . '/utils/array-merge.php';
-require_once dirname( __FILE__ ) . '/utils/minify-css.php';
 
 // VK Blocks の管理画面.
 require_once dirname( __FILE__ ) . '/admin/admin.php';
@@ -54,7 +53,7 @@ add_action(
 	function () {
 		// Load language files.
 		$path = dirname( plugin_basename( __FILE__ ) ) . '/languages';
-		load_plugin_textdomain( 'vk-blocks', false, $path );
+		load_plugin_textdomain( 'vk-blocks-pro', false, $path );
 	}
 );
 
@@ -87,8 +86,10 @@ function vk_blocks_blocks_assets() {
 		'vk-blocks-build-js',
 		'vk_blocks_params',
 		array(
-			'home_url'            => home_url( '/' ),
-			'custom_format_lists' => $vk_blocks_options['custom_format_lists'],
+			'home_url'                    => home_url( '/' ),
+			'show_custom_css_editor_flag' => $vk_blocks_options['show_custom_css_editor_flag'],
+			'balloon_meta_lists'          => $vk_blocks_options['balloon_meta_lists'],
+			'custom_format_lists'         => $vk_blocks_options['custom_format_lists'],
 		)
 	);
 
@@ -154,7 +155,9 @@ function vk_blocks_blocks_assets() {
 	}
 
 	$dynamic_css = vk_blocks_minify_css( $dynamic_css );
+
 	wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );
+	wp_add_inline_style( 'vk-blocks-utils-common-css', $dynamic_css );
 	// --vk_image-mask-waveはコアの画像ブロックに依存するのでwp-edit-blocksを追加
 	wp_add_inline_style( 'wp-edit-blocks', $dynamic_css );
 }
@@ -185,10 +188,6 @@ if ( ! function_exists( 'vk_blocks_set_wp_version' ) ) {
  * スクリプトの読み込み
  */
 function vk_blocks_load_scripts() {
-	// Slider Block
-	global $vk_swiper_url;
-	wp_enqueue_style( 'vk-swiper-style', $vk_swiper_url . 'assets/css/swiper.min.css', array(), SWIPER_VERSION );
-
 	wp_enqueue_script( 'vk-blocks-slider', VK_BLOCKS_DIR_URL . 'build/vk-slider.min.js', array( 'vk-swiper-script' ), VK_BLOCKS_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'vk_blocks_load_scripts' );

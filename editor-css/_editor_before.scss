@@ -5,34 +5,40 @@
 .vk_block_icon_pro {
 	fill: #c00;
 }
-.editor-block-list-item-vk-blocks-select-post-list:after,
-.editor-block-list-item-vk-blocks-accordion:after,
-.editor-block-list-item-vk-blocks-animation:after,
-.editor-block-list-item-vk-blocks-breadcrumb:after,
-.editor-block-list-item-vk-blocks-button-outer:after,
-.editor-block-list-item-vk-blocks-card:after,
-.editor-block-list-item-vk-blocks-child-page:after,
-.editor-block-list-item-vk-blocks-timeline:after,
-.editor-block-list-item-vk-blocks-step:after,
-.editor-block-list-item-vk-blocks-outer:after,
-.editor-block-list-item-vk-blocks-post-list:after,
-.editor-block-list-item-vk-blocks-table-of-contents:after,
-.editor-block-list-item-vk-blocks-table-of-contents-new:after,
-.editor-block-list-item-vk-blocks-simple-table:after,
-.editor-block-list-item-vk-blocks-grid-column:after,
-.editor-block-list-item-vk-blocks-gridcolcard:after,
-.editor-block-list-item-vk-blocks-icon-card:after {
-	position: absolute;
-	top: 0;
-	right: 0;
-	content: "Pro";
-	display: inline-block;
-	font-size: 10px;
-	line-height: 1;
-	color: #fff;
-	background-color: #cd3034;
-	border-radius: 2px;
-	padding: 3px 4px;
+
+.block-editor-inserter__block-list {
+	.editor-block-list-item-vk-blocks-taxonomy:after,
+	.editor-block-list-item-vk-blocks-select-post-list:after,
+	.editor-block-list-item-vk-blocks-accordion:after,
+	.editor-block-list-item-vk-blocks-animation:after,
+	.editor-block-list-item-vk-blocks-archive-list:after,
+	.editor-block-list-item-vk-blocks-breadcrumb:after,
+	.editor-block-list-item-vk-blocks-button-outer:after,
+	.editor-block-list-item-vk-blocks-card:after,
+	.editor-block-list-item-vk-blocks-child-page:after,
+  .editor-block-list-item-vk-blocks-dynamic-text:after,
+	.editor-block-list-item-vk-blocks-timeline:after,
+	.editor-block-list-item-vk-blocks-step:after,
+	.editor-block-list-item-vk-blocks-outer:after,
+	.editor-block-list-item-vk-blocks-post-list:after,
+	.editor-block-list-item-vk-blocks-table-of-contents:after,
+	.editor-block-list-item-vk-blocks-table-of-contents-new:after,
+	.editor-block-list-item-vk-blocks-simple-table:after,
+	.editor-block-list-item-vk-blocks-grid-column:after,
+	.editor-block-list-item-vk-blocks-gridcolcard:after,
+	.editor-block-list-item-vk-blocks-icon-card:after {
+		position: absolute;
+		top: 0;
+		right: 0;
+		content: "Pro";
+		display: inline-block;
+		font-size: 10px;
+		line-height: 1;
+		color: #fff;
+		background-color: #cd3034;
+		border-radius: 2px;
+		padding: 3px 4px;
+	}
 }
 
 // ラベル名と説明の文字の太さも大きさも同じでわからないので太字に
@@ -134,6 +140,8 @@ button.image-button:not(.button-delete) {
 @import "./editor_before_gridcolcard";
 // edit custom css extension
 @import "./editor_before_custom-css-extension";
+// archive-list
+@import "./editor_before_archive-list";
 
 // VK Outer 編集パネル
 $color-danger: #dd3333;

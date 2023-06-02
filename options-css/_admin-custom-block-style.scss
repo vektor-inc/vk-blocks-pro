@@ -1,0 +1,127 @@
+.custom_block_style_item {
+	box-sizing: border-box;
+	margin: 20px 0;
+	border-radius: 5px;
+	background-color: rgba(255,255,255,0.9);
+	box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,1);
+	border: 1px solid #ccc;
+	.custom_block_style_title-area{
+		padding: 20px;
+		.custom_block_style_title-area-label{
+			font-weight: bold;
+			font-size: 14px;
+		}
+	}
+	.custom_block_style_title-area-label {
+		flex-shrink: 50;
+	}
+
+	.custom_block_style_title-area-button {
+		flex-shrink: 0;
+	}
+	.custom_block_style_body-area{
+		padding: 20px;
+		border-top: 1px solid #ccc;
+	}
+	.custom_block_style_item_block_name {
+		display: flex;
+		align-items: center;
+		margin-bottom: 1em;
+		gap: 3px;
+	}
+	.move-button-container {
+		display: flex;
+		flex-direction: column;
+		.components-button.has-icon {
+			height: 24px;
+			padding: 6px;
+		}
+	}
+	.vk-codemirror-options {
+		width: 100%;
+	}
+	.custom_block_style_item_property_label {
+		margin-bottom: 1em;
+		.components-base-control__field {
+			margin-bottom: 0;
+		}
+		.components-base-control__label {
+			margin-bottom: 0;
+			padding-right: 8px;
+			font-size: 12px;
+		}
+	}
+	.custom_block_style_item_name_warning {
+		margin-top: 0;
+	}
+}
+
+.custom_block_style_add_modal {
+	.custom_block_style_block-manager__results {
+		height: 30vh;
+		overflow-y: scroll;
+		border: 1px solid #ccc;
+		padding: 30px;
+		margin-bottom: 1em;
+		.custom_block_style_block-manager__category {
+			margin-bottom: 2em;
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+		.block-manager__checklist {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 0 40px;
+			@media screen and (max-width: 991.98px) {
+				grid-template-columns: repeat(1, 1fr);
+			}
+		}
+	}
+	.custom_block_style_item_active_block_type_area {
+		display: flex;
+		align-items: center;
+		margin-bottom: 1em;
+	}
+	.custom_block_style_item_name_error {
+		margin-top: 0;
+		color: #c00;
+	}
+
+	.block-manager__search {
+		.components-base-control__field {
+			margin-bottom: 1em;
+		}
+	}
+
+	.block_name_radio_control {
+		border-bottom:1px solid #ddd;
+		.components-radio-control__input {
+			flex-shrink: 0;
+		}
+
+		label {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			flex-grow: 1;
+		}
+		.components-radio-control__option {
+			display: flex;
+			align-items: center;
+		}
+	}
+	.block_name_radio_label {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-grow: 1;
+		padding: 8px 0;
+	}
+	.components-base-control__help {
+		margin-bottom: 0.2em;
+	}
+	.components-base-control__label {
+		font-size: 13px;
+	}
+}

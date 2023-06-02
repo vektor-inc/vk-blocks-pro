@@ -15,7 +15,11 @@ function vk_blocks_child_page_render_callback( $attributes ) {
 	$wp_query     = Vk_Blocks_PostList::get_loop_query_child( $attributes );
 	$options_loop = array( 'class_loop_outer' => 'vk_childPage' );
 
-	return Vk_Blocks_PostList::render_post_list( $attributes, $wp_query, $options_loop );
+	if ( $wp_query->have_posts() ) {
+		return Vk_Blocks_PostList::render_post_list( $attributes, $wp_query, $options_loop );
+	} else {
+		return;
+	}
 }
 
 /**

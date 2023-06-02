@@ -1,4 +1,6 @@
 /* eslint camelcase: 0 */
+import save1_51_0 from './1.51.0/save';
+import save1_48_1 from './1.48.1/save';
 import save1_34_1 from './1.34.1/save';
 import save1_13_1 from './1.13.1/save';
 import save1_10_0 from './1.10.0/save';
@@ -123,7 +125,59 @@ const blockAttributes6 = {
 	}
 }
 
+/**
+ * 1.34.1 で blockID を追加
+ */
+const blockAttributes7 = {
+	...blockAttributes6,
+	blockId: {
+		type: 'string'
+	}
+}
+
+/**
+ * 1.48.1 で追加された値
+ */
+const blockAttributes8 = {
+	...blockAttributes7,
+	slidesPerViewMobile: {
+		type: 'number',
+		default: 1
+	},
+	slidesPerViewTablet: {
+		type: 'number',
+		default: 1
+	},
+	slidesPerViewPC: {
+		type: 'number',
+		default: 1
+	},
+	slidesPerGroup: {
+		type: 'string',
+		default: 'one-by-one'
+	},
+}
+
+// 1.51.0 時点から追加された値
+/*
+ const blockAttributes9 = {
+	...blockAttributes8,
+	centeredSlides: {
+		type: 'boolean',
+		default: false
+	},
+}
+*/
+
 const deprecated = [
+	{
+		attributes: blockAttributes8,
+		save: save1_51_0,
+	},
+	{
+		attributes: blockAttributes7,
+		save: save1_48_1,
+	},
 	{
 		attributes: blockAttributes6,
 		save: save1_34_1,

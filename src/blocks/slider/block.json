@@ -3,7 +3,7 @@
 	"name": "vk-blocks/slider",
 	"title": "Slider",
 	"description": "This slider allows you to place various items.Slider is do not move in edit screen.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"category": "vk-blocks-cat-layout",
 	"attributes": {
 		"unit": {
@@ -58,9 +58,25 @@
 			"type": "number",
 			"default": 1
 		},
-		"slidesPerGroup": {
+		"slidesPerViewMobile": {
 			"type": "number",
 			"default": 1
+		},
+		"slidesPerViewTablet": {
+			"type": "number",
+			"default": 1
+		},
+		"slidesPerViewPC": {
+			"type": "number",
+			"default": 1
+		},
+		"slidesPerGroup": {
+			"type": "string",
+			"default": "one-by-one"
+		},
+		"centeredSlides": {
+			"type": "boolean",
+			"default": false
 		},
 		"navigationPosition": {
 			"type": "string",

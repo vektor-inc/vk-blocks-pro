@@ -8,7 +8,7 @@ import apiFetch from '@wordpress/api-fetch';
 import classNames from 'classnames';
 
 export const SaveButton = (props) => {
-	const { vkBlocksOption, vkBlocksBalloonMeta, classOption } = props;
+	const { vkBlocksOption, classOption, reloadFlag } = props;
 	const [isLoading, setIsLoading] = useState(false);
 	const [isSaveSuccess, setIsSaveSuccess] = useState('');
 
@@ -20,7 +20,6 @@ export const SaveButton = (props) => {
 			method: 'POST',
 			data: {
 				vkBlocksOption,
-				vkBlocksBalloonMeta,
 			},
 		}).then((/*response, status*/) => {
 			setTimeout(() => {
@@ -29,6 +28,10 @@ export const SaveButton = (props) => {
 				setIsLoading(false);
 				setIsSaveSuccess(true);
 			}, 600);
+			if (reloadFlag === true) {
+				// eslint-disable-next-line no-undef
+				location.reload();
+			}
 		});
 	};
 
@@ -50,11 +53,13 @@ export const SaveButton = (props) => {
 					onClick={onClickUpdate}
 					isBusy={isLoading}
 				>
-					{__('Save setting', 'vk-blocks')}
+					{__('Save setting', 'vk-blocks-pro')}
 				</Button>
 				{isSaveSuccess && (
 					<div>
-						<Snackbar>{__('Save Success', 'vk-blocks')} </Snackbar>
+						<Snackbar>
+							{__('Save Success', 'vk-blocks-pro')}{' '}
+						</Snackbar>
 					</div>
 				)}
 			</div>

@@ -45,7 +45,7 @@ module.exports = {
 							[
 								"@wordpress/babel-plugin-makepot",
 								{
-									"output": "inc/vk-blocks/languages/vk-blocks-js.pot"
+									"output": "languages/vk-blocks-pro-js.pot"
 								}
 							]
 						],

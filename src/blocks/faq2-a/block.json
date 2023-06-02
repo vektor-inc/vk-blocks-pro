@@ -7,7 +7,7 @@
 		"vk-blocks/faq2"
 	],
 	"description": "Answer area where you can add blocks freely.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
 		"anchor": true,
 		"reusable": false

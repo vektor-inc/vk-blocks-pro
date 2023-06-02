@@ -21,7 +21,7 @@
 		}
 	},
 	"description": "This element sets the label, color, and style of the timeline.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
 		"className": true
 	}

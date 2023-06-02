@@ -11,7 +11,7 @@
 	<exclude-pattern type="relative">^inc/tgm-plugin-activation/*</exclude-pattern>
 	<exclude-pattern type="relative">^inc/vk-blocks-pro/plugin-update-checker/*</exclude-pattern>
 	<exclude-pattern type="relative">^inc/font-awesome/package/*</exclude-pattern>
-	<exclude-pattern type="relative">^inc/vk-css-optimize/package/*</exclude-pattern>
+	<exclude-pattern type="relative">^inc/vk-css-optimize/*</exclude-pattern>
 	<exclude-pattern type="relative">^inc/vk-swiper/*</exclude-pattern>
 	<exclude-pattern type="relative">^inc/vk-components/package/*</exclude-pattern>
 	<exclude-pattern type="relative">^inc/vk-customize-helpers/package/*</exclude-pattern>
@@ -80,7 +80,7 @@
 	<rule ref="WordPress.WP.I18n">
 		<properties>
 			<!-- Value: replace the text domain used. -->
-			<property name="text_domain" type="array" value="vk-blocks"/>
+			<property name="text_domain" type="array" value="vk-blocks-pro"/>
 		</properties>
 	</rule>
 	<rule ref="WordPress.WhiteSpace.ControlStructureSpacing">

@@ -107,7 +107,7 @@ export class ComponentBlock extends Component {
 						tagName={'h1'}
 						onChange={(value) => setAttributes({ heading1: value })}
 						value={heading1}
-						placeholder={__('Input Title', 'vk-blocks')}
+						placeholder={__('Input Title', 'vk-blocks-pro')}
 					/>
 				);
 				richTextPSave = (
@@ -116,7 +116,7 @@ export class ComponentBlock extends Component {
 						tagName={'p'}
 						onChange={(value) => setAttributes({ content1: value })}
 						value={content1}
-						placeholder={__('Input Content', 'vk-blocks')}
+						placeholder={__('Input Content', 'vk-blocks-pro')}
 					/>
 				);
 			} else if (blockNum === 2) {
@@ -126,7 +126,7 @@ export class ComponentBlock extends Component {
 						tagName={'h1'}
 						onChange={(value) => setAttributes({ heading2: value })}
 						value={heading2}
-						placeholder={__('Input Title', 'vk-blocks')}
+						placeholder={__('Input Title', 'vk-blocks-pro')}
 					/>
 				);
 				richTextPSave = (
@@ -135,7 +135,7 @@ export class ComponentBlock extends Component {
 						tagName={'p'}
 						onChange={(value) => setAttributes({ content2: value })}
 						value={content2}
-						placeholder={__('Input Content', 'vk-blocks')}
+						placeholder={__('Input Content', 'vk-blocks-pro')}
 					/>
 				);
 			} else if (blockNum === 3) {
@@ -145,7 +145,7 @@ export class ComponentBlock extends Component {
 						tagName={'h1'}
 						onChange={(value) => setAttributes({ heading3: value })}
 						value={heading3}
-						placeholder={__('Input Title', 'vk-blocks')}
+						placeholder={__('Input Title', 'vk-blocks-pro')}
 					/>
 				);
 				richTextPSave = (
@@ -154,7 +154,7 @@ export class ComponentBlock extends Component {
 						tagName={'p'}
 						onChange={(value) => setAttributes({ content3: value })}
 						value={content3}
-						placeholder={__('Input Content', 'vk-blocks')}
+						placeholder={__('Input Content', 'vk-blocks-pro')}
 					/>
 				);
 			}

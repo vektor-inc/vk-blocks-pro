@@ -8,7 +8,6 @@ import { addFilter } from '@wordpress/hooks';
 import { PanelBody } from '@wordpress/components';
 import { InspectorControls, ColorPalette } from '@wordpress/block-editor';
 import { createHigherOrderComponent } from '@wordpress/compose';
-import { registerBlockStyle } from '@wordpress/blocks';
 
 const isValidBlockType = (name) => {
 	const validBlockTypes = ['core/group'];
@@ -44,10 +43,16 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 					<BlockEdit {...props} />
 					<InspectorControls>
 						<PanelBody
-							title={__('Border Color', 'vk-blocks')}
+							title={__('Border Color', 'vk-blocks-pro')}
 							initialOpen={false}
 							className="group-border-color-controle"
 						>
+							<p className="font-size-11px alert alert-danger">
+								{__(
+									'Because of the theme that enabled theme.json become can specify the color from border panel that, specification from here is deprecated.',
+									'vk-blocks-pro'
+								)}
+							</p>
 							<ColorPalette
 								value={activeColor}
 								disableCustomColors={true}
@@ -95,54 +100,3 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 }, 'addMyCustomBlockControls');
 
 addFilter('editor.BlockEdit', 'vk-blocks/group-style', addBlockControl);
-
-registerBlockStyle('core/group', [
-	{
-		name: 'vk-group-solid',
-		label: __('Solid', 'vk-blocks'),
-	},
-	{
-		name: 'vk-group-solid-roundcorner',
-		label: __('Solid Roundcorner', 'vk-blocks'),
-	},
-	{
-		name: 'vk-group-dotted',
-		label: __('Dotted', 'vk-blocks'),
-	},
-	{
-		name: 'vk-group-dashed',
-		label: __('Dashed', 'vk-blocks'),
-	},
-	{
-		name: 'vk-group-double',
-		label: __('Double', 'vk-blocks'),
-	},
-	{
-		name: 'vk-group-stitch',
-		label: __('Stitch', 'vk-blocks'),
-	},
-	{
-		name: 'vk-group-top-bottom-border',
-		label: __('Border Top Bottom', 'vk-blocks'),
-	},
-	{
-		name: 'vk-group-shadow',
-		label: __('Shadow', 'vk-blocks'),
-	},
-	{
-		name: 'vk-group-alert-info',
-		label: __('Info', 'vk-blocks'),
-	},
-	{
-		name: 'vk-group-alert-success',
-		label: __('Success', 'vk-blocks'),
-	},
-	{
-		name: 'vk-group-alert-warning',
-		label: __('Warning', 'vk-blocks'),
-	},
-	{
-		name: 'vk-group-alert-danger',
-		label: __('Danger', 'vk-blocks'),
-	},
-]);

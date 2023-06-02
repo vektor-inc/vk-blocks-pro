@@ -61,17 +61,17 @@ export default function TimelineItemEdit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('label', 'vk-blocks')}>
+				<PanelBody title={__('label', 'vk-blocks-pro')}>
 					<TextControl
 						value={label}
 						onChange={(value) => setAttributes({ label: value })}
-						placeholder={__('Ex,6:00AM', 'vk-blocks')}
+						placeholder={__('Ex,6:00AM', 'vk-blocks-pro')}
 					/>
 				</PanelBody>
-				<PanelBody title={__('Color', 'vk-blocks')}>
+				<PanelBody title={__('Color', 'vk-blocks-pro')}>
 					<AdvancedColorPalette schema={'color'} {...props} />
 				</PanelBody>
-				<PanelBody title={__('Style', 'vk-blocks')}>
+				<PanelBody title={__('Style', 'vk-blocks-pro')}>
 					<BaseControl id="style-dot" label="Dot Style">
 						<SelectControl
 							value={style}
@@ -81,11 +81,11 @@ export default function TimelineItemEdit(props) {
 							options={[
 								{
 									value: 'outlined',
-									label: __('Outlined', 'vk-blocks'),
+									label: __('Outlined', 'vk-blocks-pro'),
 								},
 								{
 									value: 'solid',
-									label: __('Solid', 'vk-blocks'),
+									label: __('Solid', 'vk-blocks-pro'),
 								},
 							]}
 						/>
@@ -100,7 +100,7 @@ export default function TimelineItemEdit(props) {
 									setAttributes({ styleLine: 'default' })
 								}
 							>
-								{__('Default', 'vk-blocks')}
+								{__('Default', 'vk-blocks-pro')}
 							</Button>
 							<Button
 								isSmall
@@ -110,7 +110,7 @@ export default function TimelineItemEdit(props) {
 									setAttributes({ styleLine: 'none' })
 								}
 							>
-								{__('None', 'vk-blocks')}
+								{__('None', 'vk-blocks-pro')}
 							</Button>
 						</ButtonGroup>
 					</BaseControl>

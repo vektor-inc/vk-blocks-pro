@@ -32,12 +32,11 @@ if ( ! function_exists( 'vk_blocks_active' ) ) {
 	}
 
 	require_once plugin_dir_path( __FILE__ ) . 'vk-helpers/config.php';
-	require_once plugin_dir_path( __FILE__ ) . 'vk-admin/vk-admin-config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/helpers.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-components/vk-components-config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/load-vk-components.php';
 	require_once plugin_dir_path( __FILE__ ) . 'term-color/term-color-config.php';
-	require_once plugin_dir_path( __FILE__ ) . 'vk-css-optimize/vk-css-optimize-config.php';
+	require_once plugin_dir_path( __FILE__ ) . 'vk-css-optimize/config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-swiper/config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-customize-helpers/vk-customize-helpers-config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'tgm-plugin-activation/tgm-config.php';

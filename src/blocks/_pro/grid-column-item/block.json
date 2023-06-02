@@ -3,7 +3,7 @@
 	"name": "vk-blocks/grid-column-item",
 	"title": "Grid Column Item",
 	"description": "One item in a grit column block.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"category": "vk-blocks-cat-layout",
 	"parent": [
 		"vk-blocks/grid-column"

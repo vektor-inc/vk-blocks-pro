@@ -3,13 +3,8 @@
  */
 import { __, getLocaleData } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
-import {
-	PanelBody,
-	Icon,
-	ExternalLink,
-	ToggleControl,
-} from '@wordpress/components';
-import { InspectorControls } from '@wordpress/block-editor';
+import { PanelBody, Icon, Button, ExternalLink } from '@wordpress/components';
+import { InspectorControls, transformStyles } from '@wordpress/block-editor';
 import { createHigherOrderComponent, useInstanceId } from '@wordpress/compose';
 import { hasBlockSupport } from '@wordpress/blocks';
 import { useEffect } from '@wordpress/element';
@@ -24,6 +19,7 @@ import classnames from 'classnames';
  * Internal dependencies
  */
 import { CodeMirrorCss } from '@vkblocks/components/code-mirror-css';
+import { emptyStringToUndefined } from '@vkblocks/utils/empty-string-to-undefined';
 import { ReactComponent as IconSVG } from './icon.svg';
 import { STORE_NAME } from '@vkblocks/extensions/store/constants';
 import { updateOptions } from '@vkblocks/utils/api';
@@ -120,7 +116,9 @@ export const withInspectorControls = createHigherOrderComponent(
 			) {
 				// カスタムCSS用クラスを追加
 				setAttributes({
-					className: classnames(nowClassArray, `vk_custom_css`),
+					className: emptyStringToUndefined(
+						classnames(nowClassArray, `vk_custom_css`)
+					),
 				});
 			}
 
@@ -131,7 +129,11 @@ export const withInspectorControls = createHigherOrderComponent(
 				// カスタムCSS用クラスを削除
 				const deleteClass = nowClassArray.indexOf('vk_custom_css');
 				nowClassArray.splice(deleteClass, 1);
-				setAttributes({ className: classnames(nowClassArray) });
+				setAttributes({
+					className: emptyStringToUndefined(
+						classnames(nowClassArray)
+					),
+				});
 			}
 		}, [vkbCustomCss]);
 
@@ -143,7 +145,9 @@ export const withInspectorControls = createHigherOrderComponent(
 			) {
 				// カスタムCSS用クラスを追加
 				setAttributes({
-					className: classnames(`vk_custom_css`, nowClassArray),
+					className: emptyStringToUndefined(
+						classnames(`vk_custom_css`, nowClassArray)
+					),
 				});
 			}
 		}, [className]);
@@ -188,20 +192,22 @@ export const withInspectorControls = createHigherOrderComponent(
 					<PanelBody
 						className={'vk_custom_css_panel'}
 						icon={<Icon icon={IconSVG} style={iconStyle} />}
-						title={__('Custom CSS', 'vk-blocks')}
+						title={__('Custom CSS', 'vk-blocks-pro')}
 						initialOpen={false}
 					>
 						<CodeMirrorCss
 							className="vk-codemirror-block-editor"
 							value={vkbCustomCss ? vkbCustomCss : ''}
 							onChange={(value) => {
-								setAttributes({ vkbCustomCss: value });
+								setAttributes({
+									vkbCustomCss: emptyStringToUndefined(value),
+								});
 							}}
 						/>
 						<p>
 							{__(
 								'If selector is specified, it is replaced by a block-specific CSS class. If selector is set to "selector", it will be replaced with a block-specific CSS class. CSS selectors other than "selector" may affect the entire page.',
-								'vk-blocks'
+								'vk-blocks-pro'
 							)}
 							{(() => {
 								const lang = getLocaleData()[''].lang;
@@ -218,24 +224,27 @@ export const withInspectorControls = createHigherOrderComponent(
 								}
 							})()}
 						</p>
-						<p>{__('Example:', 'vk-blocks')}</p>
+						<p>{__('Example:', 'vk-blocks-pro')}</p>
 						<pre className="vk-custom-css-sample-code">
 							{'selector {\n    background: #f5f5f5;\n}'}
 						</pre>
-						<ToggleControl
-							label={__(
-								'全てのCSS識別表示を表示する。',
-								// 'Show all CSS identifiers.',
-								'vk-blocks'
+						<p>
+							{__(
+								'If you want the edit screen to be as close to the public screen as possible, or if your own CSS interferes with the CSS for the identification display and does not display as intended on the edit screen, please hide it.',
+								'vk-blocks-pro'
 							)}
-							checked={
-								optionObj?.vkBlocksOptions
-									?.show_custom_css_editor_flag === 'show'
-									? true
-									: false
-							}
-							onChange={updateSettings}
-						/>
+						</p>
+						<Button
+							href={addQueryArgs(
+								'options-general.php?page=vk_blocks_options#custom-css-setting'
+							)}
+							target="_blank"
+							rel="noreferrer"
+							variant="secondary"
+							isSmall
+						>
+							{__('Custom CSS Setting', 'vk-blocks-pro')}
+						</Button>
 					</PanelBody>
 				</InspectorControls>
 			</>
@@ -279,6 +288,14 @@ const withElementsStyles = createHigherOrderComponent(
 			cssTag = vkbCustomCss.replace(
 				customCssSelectorRegex,
 				'.' + uniqueClass
+			);
+		}
+
+		// cssに.editor-styles-wrapperをwrapする
+		if (cssTag !== '') {
+			cssTag = transformStyles(
+				[{ css: cssTag }],
+				'.editor-styles-wrapper'
 			);
 		}
 

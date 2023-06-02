@@ -216,7 +216,10 @@ export default function Edit(props) {
 									label={
 										url !== '' && isOpen
 											? __('Unlink')
-											: __('Input Link URL', 'vk-blocks')
+											: __(
+													'Input Link URL',
+													'vk-blocks-pro'
+											  )
 									}
 									onClick={setLink}
 								/>
@@ -224,15 +227,15 @@ export default function Edit(props) {
 						}}
 						renderContent={(params) => {
 							return (
-								<div className="block-editor-url-input__button block-editor-link-control">
-									<form
-										className="block-editor-link-control__search-input-wrapper"
-										onSubmit={() => {
-											params.onClose();
-										}}
-									>
-										<div className="block-editor-link-control__search-input">
+								<form
+									onSubmit={() => {
+										params.onClose();
+									}}
+								>
+									<div className="vk-block-editor-url-input-wrapper">
+										<div className="block-editor-url-input">
 											<URLInput
+												__nextHasNoMarginBottom
 												value={url}
 												onChange={(value) => {
 													setAttributes({
@@ -240,28 +243,26 @@ export default function Edit(props) {
 													});
 												}}
 											/>
-											<CheckboxControl
-												label={__(
-													'Open link new tab.',
-													'vk-blocks'
-												)}
-												checked={urlOpenType}
-												onChange={(checked) =>
-													setAttributes({
-														urlOpenType: checked,
-													})
-												}
-											/>
-											<div className="block-editor-link-control__search-actions">
-												<Button
-													icon={keyboardReturn}
-													label={__('Submit')}
-													type="submit"
-												/>
-											</div>
 										</div>
-									</form>
-								</div>
+										<Button
+											icon={keyboardReturn}
+											label={__('Submit')}
+											type="submit"
+										/>
+									</div>
+									<CheckboxControl
+										label={__(
+											'Open link new tab.',
+											'vk-blocks-pro'
+										)}
+										checked={urlOpenType}
+										onChange={(checked) =>
+											setAttributes({
+												urlOpenType: checked,
+											})
+										}
+									/>
+								</form>
 							);
 						}}
 					/>
@@ -269,7 +270,7 @@ export default function Edit(props) {
 			</BlockControls>
 			<InspectorControls>
 				<PanelBody
-					title={__('Edit mode', 'vk-blocks')}
+					title={__('Edit mode', 'vk-blocks-pro')}
 					initialOpen={true}
 				>
 					<ButtonGroup className={`mb-3`}>
@@ -279,7 +280,7 @@ export default function Edit(props) {
 							isSecondary={editMode !== 'all'}
 							onClick={() => setEditMode('all')}
 						>
-							{__('All columns', 'vk-blocks')}
+							{__('All columns', 'vk-blocks-pro')}
 						</Button>
 						<Button
 							isSmall
@@ -287,17 +288,17 @@ export default function Edit(props) {
 							isSecondary={editMode !== 'self'}
 							onClick={() => setEditMode('self')}
 						>
-							{__('This column only', 'vk-blocks')}
+							{__('This column only', 'vk-blocks-pro')}
 						</Button>
 					</ButtonGroup>
 					<hr />
 					<label htmlFor="vk_hiddenControl-hiddenEditLock">
-						{__('Edit Lock', 'vk-blocks')}
+						{__('Edit Lock', 'vk-blocks-pro')}
 					</label>
 					<ToggleControl
 						label={__(
 							'Lock edits this block from the parent and other Grid Column Item block',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 						checked={editLock}
 						onChange={(checked) =>
@@ -306,16 +307,19 @@ export default function Edit(props) {
 					/>
 				</PanelBody>
 				<PanelBody
-					title={__('Column Setting', 'vk-blocks')}
+					title={__('Column Setting', 'vk-blocks-pro')}
 					initialOpen={true}
 				>
-					<BaseControl label={__('Link URL:', 'vk-blocks')} id={`	`}>
+					<BaseControl
+						label={__('Link URL:', 'vk-blocks-pro')}
+						id={`	`}
+					>
 						<TextControl
 							value={url}
 							onChange={(value) => setAttributes({ url: value })}
 						/>
 						<CheckboxControl
-							label={__('Open link new tab.', 'vk-blocks')}
+							label={__('Open link new tab.', 'vk-blocks-pro')}
 							checked={urlOpenType}
 							onChange={(checked) =>
 								setAttributes({ urlOpenType: checked })
@@ -324,11 +328,11 @@ export default function Edit(props) {
 						<p className={alertClass}>
 							{__(
 								'If you set a link URL, do not place the link element (text or button) in the Grid Column Card Item. It may not be displayed correctly.',
-								'vk-blocks'
+								'vk-blocks-pro'
 							)}
 							{__(
 								'Make sure that no link is specified for the image block, etc.',
-								'vk-blocks'
+								'vk-blocks-pro'
 							)}
 						</p>
 					</BaseControl>

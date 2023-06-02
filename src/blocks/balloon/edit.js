@@ -5,7 +5,6 @@ import {
 	InnerBlocks,
 	useBlockProps,
 } from '@wordpress/block-editor';
-import apiFetch from '@wordpress/api-fetch';
 import {
 	ButtonGroup,
 	PanelBody,
@@ -14,10 +13,14 @@ import {
 	BaseControl,
 	ToggleControl,
 } from '@wordpress/components';
-import { useState, useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
+
+/**
+ * Internal dependencies
+ */
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
+/*globals vk_blocks_params */
 
 export default function BalloonEdit(props) {
 	const { attributes, setAttributes } = props;
@@ -35,54 +38,40 @@ export default function BalloonEdit(props) {
 		balloonImageType,
 		balloonAnimation,
 	} = attributes;
-	const [blockMeta, setBlockMeta] = useState(null);
 
-	useEffect(() => {
-		apiFetch({
-			path: '/vk-blocks/v1/block-meta/balloon/',
-			method: 'GET',
-			parse: true,
-		}).then((result) => {
-			setBlockMeta(result);
-		});
-	}, []);
-
+	const blockMeta = vk_blocks_params.balloon_meta_lists;
 	let defautIconButtons;
-	if (blockMeta && blockMeta.default_icons) {
-		defautIconButtons = Object.keys(blockMeta.default_icons).map(
-			(index) => {
-				const defaultIcon = blockMeta.default_icons[index];
+	if (blockMeta) {
+		defautIconButtons = Object.keys(blockMeta).map((index) => {
+			const defaultIcon = blockMeta[index];
 
-				let contentIcon = '';
+			let contentIcon = '';
 
-				if (defaultIcon.src) {
-					contentIcon = (
-						<div key={index}>
-							<Button
-								onClick={() => {
-									setAttributes({
-										IconImage: defaultIcon.src,
-									});
-									setAttributes({
-										balloonName: defaultIcon.name,
-									});
-								}}
-								className={
-									'button button-large components-button'
-								}
-							>
-								<img
-									className={'icon-image'}
-									src={defaultIcon.src}
-									alt={defaultIcon.name}
-								/>
-							</Button>
-						</div>
-					);
-				}
-				return contentIcon;
+			if (defaultIcon.src) {
+				contentIcon = (
+					<div key={index}>
+						<Button
+							onClick={() => {
+								setAttributes({
+									IconImage: defaultIcon.src,
+								});
+								setAttributes({
+									balloonName: defaultIcon.name,
+								});
+							}}
+							className={'button button-large components-button'}
+						>
+							<img
+								className={'icon-image'}
+								src={defaultIcon.src}
+								alt={defaultIcon.name}
+							/>
+						</Button>
+					</div>
+				);
 			}
-		);
+			return contentIcon;
+		});
 	}
 
 	if ('type-serif' === balloonType) {
@@ -131,10 +120,10 @@ export default function BalloonEdit(props) {
 		BorderSetting = (
 			<BaseControl>
 				<p className={'mb-1 block-prop-title'}>
-					{__('Border', 'vk-blocks')}{' '}
+					{__('Border', 'vk-blocks-pro')}{' '}
 				</p>
 				<ToggleControl
-					label={__('Add border to balloon', 'vk-blocks')}
+					label={__('Add border to balloon', 'vk-blocks-pro')}
 					checked={balloonBorder}
 					onChange={(checked) =>
 						setAttributes({ balloonBorder: checked })
@@ -142,10 +131,10 @@ export default function BalloonEdit(props) {
 				/>
 
 				<p className={'mb-1 block-prop-title'}>
-					{__(' Image Border', 'vk-blocks')}
+					{__(' Image Border', 'vk-blocks-pro')}
 				</p>
 				<ToggleControl
-					label={__('Add border to image', 'vk-blocks')}
+					label={__('Add border to image', 'vk-blocks-pro')}
 					className={'mb-1'}
 					checked={balloonImageBorder}
 					onChange={(checked) =>
@@ -155,14 +144,15 @@ export default function BalloonEdit(props) {
 				<p>
 					{__(
 						'* You can change border width on Setting > VK Blocks',
-						'vk-blocks'
+						'vk-blocks-pro'
 					)}{' '}
 				</p>
 
 				<p className={'mb-1 block-prop-title'}>
-					{__('Border color of speech balloon', 'vk-blocks')}
+					{__('Border color of speech balloon', 'vk-blocks-pro')}
 				</p>
 				<AdvancedColorPalette
+					enableAlpha={false}
 					schema={'balloonBorderColor'}
 					{...props}
 				/>
@@ -317,10 +307,10 @@ export default function BalloonEdit(props) {
 		BorderSetting = (
 			<BaseControl>
 				<p className={'mb-1 block-prop-title'}>
-					{__('Border', 'vk-blocks')}
+					{__('Border', 'vk-blocks-pro')}
 				</p>
 				<ToggleControl
-					label={__('Add border to balloon', 'vk-blocks')}
+					label={__('Add border to balloon', 'vk-blocks-pro')}
 					checked={balloonBorder}
 					onChange={(checked) =>
 						setAttributes({ balloonBorder: checked })
@@ -410,14 +400,14 @@ export default function BalloonEdit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Balloon setting', 'vk-blocks')}>
+				<PanelBody title={__('Balloon setting', 'vk-blocks-pro')}>
 					<p className={'mb-1 block-prop-title'}>
-						{__('Position', 'vk-blocks')}
+						{__('Position', 'vk-blocks-pro')}
 					</p>
 					<p className={'mb-1'}>
 						{__(
 							'Please specify the layout of the balloon.',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}{' '}
 					</p>
 					<ButtonGroup className="mb-3">
@@ -429,7 +419,7 @@ export default function BalloonEdit(props) {
 								setAttributes({ balloonAlign: 'position-left' })
 							}
 						>
-							{__('Left', 'vk-blocks')}
+							{__('Left', 'vk-blocks-pro')}
 						</Button>
 						<Button
 							isSmall
@@ -441,15 +431,18 @@ export default function BalloonEdit(props) {
 								})
 							}
 						>
-							{__('Right', 'vk-blocks')}
+							{__('Right', 'vk-blocks-pro')}
 						</Button>
 					</ButtonGroup>
 
 					<p className={'mb-1 block-prop-title'}>
-						{__('Type', 'vk-blocks')}
+						{__('Type', 'vk-blocks-pro')}
 					</p>
 					<p className={'mb-1'}>
-						{__('Please select the type of balloon.', 'vk-blocks')}{' '}
+						{__(
+							'Please select the type of balloon.',
+							'vk-blocks-pro'
+						)}{' '}
 					</p>
 					<ButtonGroup className="mb-3">
 						<Button
@@ -460,7 +453,7 @@ export default function BalloonEdit(props) {
 								setAttributes({ balloonType: 'type-speech' })
 							}
 						>
-							{__('Speech', 'vk-blocks')}
+							{__('Speech', 'vk-blocks-pro')}
 						</Button>
 						<Button
 							isSmall
@@ -470,12 +463,12 @@ export default function BalloonEdit(props) {
 								setAttributes({ balloonType: 'type-think' })
 							}
 						>
-							{__('Thinking', 'vk-blocks')}
+							{__('Thinking', 'vk-blocks-pro')}
 						</Button>
 					</ButtonGroup>
 
 					<p className={'mb-1 block-prop-title'}>
-						{__('Image Style', 'vk-blocks')}
+						{__('Image Style', 'vk-blocks-pro')}
 					</p>
 					<ButtonGroup className="mb-3">
 						<Button
@@ -486,7 +479,7 @@ export default function BalloonEdit(props) {
 								setAttributes({ balloonImageType: 'normal' })
 							}
 						>
-							{__('Normal', 'vk-blocks')}
+							{__('Normal', 'vk-blocks-pro')}
 						</Button>
 						<Button
 							isSmall
@@ -496,7 +489,7 @@ export default function BalloonEdit(props) {
 								setAttributes({ balloonImageType: 'rounded' })
 							}
 						>
-							{__('Rounded', 'vk-blocks')}
+							{__('Rounded', 'vk-blocks-pro')}
 						</Button>
 						<Button
 							isSmall
@@ -506,16 +499,16 @@ export default function BalloonEdit(props) {
 								setAttributes({ balloonImageType: 'circle' })
 							}
 						>
-							{__('Circle', 'vk-blocks')}
+							{__('Circle', 'vk-blocks-pro')}
 						</Button>
 					</ButtonGroup>
 
 					<BaseControl>
 						<p className={'mb-1 block-prop-title'}>
-							{__('Width', 'vk-blocks')}
+							{__('Width', 'vk-blocks-pro')}
 						</p>
 						<ToggleControl
-							label={__('100%', 'vk-blocks')}
+							label={__('100%', 'vk-blocks-pro')}
 							checked={balloonFullWidth}
 							onChange={(checked) =>
 								setAttributes({ balloonFullWidth: checked })
@@ -526,29 +519,33 @@ export default function BalloonEdit(props) {
 					{BorderSetting}
 
 					<p className={'mb-1 block-prop-title'}>
-						{__('Background color of speech balloon', 'vk-blocks')}
+						{__(
+							'Background color of speech balloon',
+							'vk-blocks-pro'
+						)}
 					</p>
 					<AdvancedColorPalette
+						enableAlpha={false}
 						schema={'balloonBgColor'}
 						{...props}
 					/>
 				</PanelBody>
-				<PanelBody title={__('Default Icon Setting', 'vk-blocks')}>
+				<PanelBody title={__('Default Icon Setting', 'vk-blocks-pro')}>
 					<div className="icon-image-list mb-2">
 						{defautIconButtons}
 					</div>
 					<div>
 						{__(
 							'You can register default icons from Settings > VK Blocks in Admin.',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 					</div>
 				</PanelBody>
-				<PanelBody title={__('Animation setting', 'vk-blocks')}>
+				<PanelBody title={__('Animation setting', 'vk-blocks-pro')}>
 					<p className={'mb-1'}>
 						{__(
 							'Please select the type of animation.',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}{' '}
 					</p>
 					<SelectControl
@@ -559,23 +556,23 @@ export default function BalloonEdit(props) {
 						options={[
 							{
 								value: 'none',
-								label: __('None', 'vk-blocks'),
+								label: __('None', 'vk-blocks-pro'),
 							},
 							{
 								value: 'trembling',
-								label: __('Trembling', 'vk-blocks'),
+								label: __('Trembling', 'vk-blocks-pro'),
 							},
 							{
 								value: 'trembling-x',
-								label: __('Trembling X', 'vk-blocks'),
+								label: __('Trembling X', 'vk-blocks-pro'),
 							},
 							{
 								value: 'pounding',
-								label: __('Pounding', 'vk-blocks'),
+								label: __('Pounding', 'vk-blocks-pro'),
 							},
 							{
 								value: 'shaking',
-								label: __('Shaking', 'vk-blocks'),
+								label: __('Shaking', 'vk-blocks-pro'),
 							},
 						]}
 					/>
@@ -600,13 +597,16 @@ export default function BalloonEdit(props) {
 								}
 							>
 								{!IconImage ? (
-									__('Select image', 'vk-blocks')
+									__('Select image', 'vk-blocks-pro')
 								) : (
 									<img
 										className={`vk_balloon_icon_image vk_balloon_icon_image-type-${balloonImageType} ${iconImageBorderClass}`}
 										style={iconImageColorStyle}
 										src={IconImage}
-										alt={__('Upload image', 'vk-blocks')}
+										alt={__(
+											'Upload image',
+											'vk-blocks-pro'
+										)}
 									/>
 								)}
 							</Button>
@@ -619,7 +619,7 @@ export default function BalloonEdit(props) {
 							setAttributes({ balloonName: value })
 						}
 						value={balloonName}
-						placeholder={__('Icon Name', 'vk-blocks')}
+						placeholder={__('Icon Name', 'vk-blocks-pro')}
 					/>
 				</div>
 				<div className={`vk_balloon_content_outer`}>

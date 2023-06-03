@@ -56,7 +56,9 @@ jobs:
     # ローカルで以下のコマンドで test/e2e/ 内のテストをすべて実行する
     # npx playwright test --trace on --project=chromium
     - name: Run Playwright
-      run: npx playwright test --trace on --project=chromium test/e2e/login.spec.ts
+      run: |
+        npx playwright test --trace on --project=chromium test/e2e/login.spec.ts
+        npx playwright test --trace on --project=chromium test/e2e/common-margin.spec.ts
     - uses: actions/upload-artifact@v3
       if: always()
       with:

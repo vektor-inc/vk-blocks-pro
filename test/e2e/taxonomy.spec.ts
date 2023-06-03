@@ -17,7 +17,7 @@ test('Taxonomy Block Test', async ({ page }) => {
 	// If the modal is visible, click the close button
 	if (!isPTM) {
 		console.log('ExUnit is not active');
-		await page.getByRole('link', { name: 'Plugins', exact: true }).click();
+		await page.goto('http://localhost:8889/wp-admin/plugins.php');
 		await page.locator('#wpbody-content').getByRole('link', { name: 'Add New' }).click();
 		await page.getByPlaceholder('Search plugins...').fill('vk all in one expansion unit');
 		await page.getByPlaceholder('Search plugins...').press('Enter');
@@ -32,6 +32,7 @@ test('Taxonomy Block Test', async ({ page }) => {
 		const buttonText = await page.$eval('.plugin-card-vk-all-in-one-expansion-unit .plugin-action-buttons .button', el => el.innerText);
 
 		if (buttonText === 'Install Now') {
+			console.log(buttonText);
 			// インストールボタンが存在する場合
 			const installButton = await page.$('a[class="install-now button"][data-slug="vk-all-in-one-expansion-unit"]');
 			if (installButton !== null) {
@@ -45,6 +46,14 @@ test('Taxonomy Block Test', async ({ page }) => {
 				// Activateボタンが表示されるまで待機
 				await page.waitForSelector('a[class="button activate-now button-primary"][data-slug="vk-all-in-one-expansion-unit"]');
 			}
+		} else if (buttonText === 'Update Now') {
+			console.log(buttonText);
+			const updateButton = await page.$('a[class*="update-now button"][data-slug="vk-all-in-one-expansion-unit"]');
+			if (updateButton !== null) {
+				await updateButton.click();
+				// アップデート完了まで待機
+				await page.waitForSelector('a[class*="button activate-now"][data-slug="vk-all-in-one-expansion-unit"]');
+			}
 		}
 
 		// Check if the button is disabled
@@ -57,9 +66,9 @@ test('Taxonomy Block Test', async ({ page }) => {
 			await page.getByRole('link', { name: 'Activate VK All in One Expansion Unit' }).click();
 
 			// Activateボタンが消えるまで待機
-			await page.waitForSelector('a[class="button activate-now button-primary"][data-slug="vk-all-in-one-expansion-unit"]', { state: 'hidden' });
+			await page.waitForSelector('a[class*="button activate-now"][data-slug="vk-all-in-one-expansion-unit"]', { state: 'hidden' });
 		}
-	} else{
+	} else {
 		console.log('ExUnit is active');
 	}
 
@@ -143,7 +152,18 @@ test('Taxonomy Block Test', async ({ page }) => {
 	await page.getByLabel('Display as dropdown').check();
 	await page.getByRole('button', { name: 'Update' }).click();
 	// タクソノミーブロックが配置された投稿を表示
-	await page.getByRole('link', { name: 'View Post', exact: true }).click();
+	// await page.getByRole('link', { name: 'View Post', exact: true }).click(); // <- 複数 Vew Post があるとエラーになる
+	// View Post 表記のリンクが複数ある（管理バーがアクティブの場合）とエラーになるため .components-snackbar__action の View Post をクリックする
+	// 一旦 .components-snackbar__action のリンクをすべて取得して...
+	const links = await page.$$('.components-snackbar__action');
+	// テキストが View Post のリンクを探してクリックする
+	for (let link of links) {
+		const value = await link.evaluate(node => node.textContent);
+		if (value === 'View Post') {
+			await link.click();
+			break;
+		}
+	}
 
 	// Select event-cat in taxonomy block
 	await page.selectOption('.vk_taxonomy__input-wrap--select', { value: 'event-term' });

@@ -147,7 +147,7 @@ $color_key: #337ab7;
 			@include title_unset;
 
 			border: none;
-			background-color: #efefef;
+			background-color: var(--wp--preset--color--bg-secondary,#efefef );
 			padding: 0.6em 0.7em 0.5em;
 			margin-bottom: 1.2em;
 			border-radius: 4px;

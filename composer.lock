@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2b81be6fb97ee67ff95d4d03d9a0b995",
+    "content-hash": "190e2118dc216388e6289b0bdedd0914",
     "packages": [
         {
             "name": "tgmpa/tgm-plugin-activation",

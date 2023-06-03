@@ -739,19 +739,23 @@ msgid "Slide Height for each device."
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:101
-msgid "There are no Page."
+msgid "There are no applicable child pages."
 msgstr ""
 
-#: src/blocks/_pro/child-page/edit.js:110
+#: src/blocks/_pro/child-page/edit.js:102
+msgid "Check your settings from the settings sidebar."
+msgstr ""
+
+#: src/blocks/_pro/child-page/edit.js:111
 #: src/blocks/_pro/post-list/edit.js:205
 msgid "Display conditions"
 msgstr ""
 
-#: src/blocks/_pro/child-page/edit.js:114
+#: src/blocks/_pro/child-page/edit.js:115
 msgid "Parent"
 msgstr ""
 
-#: src/blocks/_pro/child-page/edit.js:129
+#: src/blocks/_pro/child-page/edit.js:130
 #: src/blocks/_pro/post-list/edit.js:361
 msgid "Ignore this post"
 msgstr ""
@@ -761,7 +765,7 @@ msgid "Current page"
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:102
-msgid "This block will not render because no visible element is selected."
+msgid "Please select display element from the Setting sidebar."
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:110

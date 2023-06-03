@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.0
 Tested up to: 6.2
-Stable tag: 1.55.0.1
+Stable tag: 1.56.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -66,33 +66,40 @@ e.g.
 == Changelog ==
 
 [ Add Function ][ Admin screen ] Added import export tool.
+
+= 1.57.0.5 =
+[ Bug Fix ][ Free Version ] Fix display non intentional Licencekey alert message and update become don't work. ( Please delete once VK Blocks 1.57.0.1 and reinstall 1.57.0.4 or higher )
+
+= 1.57.0 =
 [ Add Function ] Allow alpha value in some blocks.
-[ Add Function ][ Dynamic Text Block (Pro) ] Added an option to show/hide the title when an ancestor page is selected and the ancestor page is display.
-[ Add Function ][ Animation(Pro) ] Added transforms settings to wrap and unwrap.
-[ Add Alert ][ Slider ] Add loop alert
+[ Add Function ][ Dynamic Text (Pro) ] Added an option to show/hide the title when an ancestor page is selected and the ancestor page is display.
+[ Add Function ][ Animation (Pro) ] Added transforms settings to wrap and unwrap.
 [ Bug Fix ] Fix Textdomain( Translate ) for VK Blocks Pro
-[ Bug fix ][ Child page list ] "There are no page." is not displayed on the front page.
-[ Bug fix ][ Breadcrumb ] Delete non intentional margin on editor screen
-[ Bug Fix ][ Taxonomy block ( Pro ) ] Fix the "Show hierarchy" option bug.
+[ Bug fix ][ Child page list (Pro) ] "There are no page." is not displayed on the front page.
+[ Bug fix ][ Breadcrumb (Pro) ] Delete non intentional margin on editor screen
+[ Bug Fix ][ Taxonomy (Pro) ] Fix the "Show hierarchy" option bug.
+[ Bug fix ][ Slider ] Fixed file reference bug of slider under specific environment such as Windows ( Update Swiper 9.3.2 )
+[ Bug Fix ][ Dynamic Text Block (Pro) ] Fixed a bug that caused an error when setting the style.
+[ Other ][ Slider ] Add loop alert
 
 = 1.56.0 =
-[ Add Block ][ Dynamic Text Block (Pro) ] Add Dynamic text block.
+[ Add Block ][ Dynamic Text (Pro) ] Add Dynamic text block.
 [ Add Function ][ Admin screen ] Added block style manager function.
 [ Specification Change ][ Slider ] Update Swiper to 9.2.3.
-[ Bug Fix ][ Taxonomy block ( Pro ) ] Fix Dropdown Script.
+[ Bug Fix ][ Taxonomy block (Pro) ] Fix Dropdown Script.
 [ Bug fix ][ Custom Format Setting (Pro) ] Custom Format Setting WordPress 6.2 UI adjustment.
-[ Bug fix ][ Step(Pro) / Time Line(Pro) ] Fix item content overflow
+[ Bug fix ][ Step (Pro) / Time Line(Pro) ] Fix item content overflow
 
 = 1.55.0 =
-[ Add Block ][ Archive list block ( Pro ) ] Displays a list of archives
-[ Add Block ][ Taxonomy block ( Pro ) ] Displays a list of taxonomy terms
+[ Add Block ][ Archive list block (Pro) ] Displays a list of archives
+[ Add Block ][ Taxonomy block (Pro) ] Displays a list of taxonomy terms
 [ Specification Change ][ List ] cope with custom color palette (WordPress 6.2 or higher)
 [ Bug fix ][ Spacer ] Fix custom css variable
 
 = 1.54.0 =
 [ Add Setting ][ margin / spacer ] Add custom value to margin setting
 [ Other ] Update the required WordPress version
-[ Bug Fix ][ Outer ( Pro ) ] Fix Outer Container CSS.
+[ Bug Fix ][ Outer (Pro) ] Fix Outer Container CSS.
 [ Bug fix ] Cope with XSS
 
 = 1.53.0 =
@@ -104,7 +111,7 @@ e.g.
 [ Specification Change ] Add multiple length units.
 [ Specification Change ][ Custom CSS (Pro) ] Changed specification to output CSS wrapped by .editor-styles-wrapper in block editor.
 [ Specification Change ][ Custom Block Style Setting (Pro) ] Changed the specification to save the CSS wrapped in .editor-styles-wrapper and output that CSS in the block editor.
-[ Specification Change ][ Outer( Pro ) ] When the block is made full width, the class name of "alignfull" will be given.
+[ Specification Change ][ Outer (Pro) ] When the block is made full width, the class name of "alignfull" will be given.
 [ Bug Fix ][ Custom CSS (Pro) ] Fix PHP 8.1 warning
 [ Bug fix ][ Slider ] Allow 0 to be entered in numeric form.
 [ Bug fix ][ Slider ] Fix content width under case of use .is-layout-constrained and editor screen
@@ -122,7 +129,7 @@ e.g.
 
 = 1.49.0 =
 [ Add Function ][ Custom Block Style Setting (Pro) ] Add Custom Block Style Setting extension in admin.
-[ Specification Change ][ Post List ( Pro ) ] Lightweight data acquisition process
+[ Specification Change ][ Post List (Pro) ] Lightweight data acquisition process
 [ Bug fix ][ Step(Pro) / Time Line(Pro) ] Fix item content overflow hidden
 
 = 1.48.1 =
@@ -141,7 +148,7 @@ e.g.
 [ Bug fix ][ Slider ] Stick out background image on setting panel of site editor
 
 = 1.47.0 =
-[ Other ][ Slider ( Pro ) ] Change Pro to Free.
+[ Other ][ Slider (Pro) ] Change Pro to Free.
 [ Bug fix ][ Button ] Fixed a bug where the default color was not hit in all themes except Lightning.
 
 = 1.46.0 =
@@ -161,11 +168,11 @@ e.g.
 [ Other ] color palette manager added warning that --vk-color-custom-${number} is deprecated and replaced with --wp--preset--color--vk-color-custom-${number}.
 
 = 1.44.0 =
-[ Add Function ][ Post List ( Pro ) ] Add post filter taxonomy relation
+[ Add Function ][ Post List (Pro) ] Add post filter taxonomy relation
 [ Add Function ][ Button ] Add Button Effect option in Solid color button.
-[ Specification Change ][ Post List ( Pro ) ] Change to don't display unpublic posttype and terms list.
-[ Bug Fix ][ Grid Column Card( Pro ) ] Fixed a bug that css for editor was displayed in front.
-[ Bug Fix ][ Select Post List Item ( Pro ) ] Fixed a bug where additional CSS classes were not attached.
+[ Specification Change ][ Post List (Pro) ] Change to don't display unpublic posttype and terms list.
+[ Bug Fix ][ Grid Column Card(Pro) ] Fixed a bug that css for editor was displayed in front.
+[ Bug Fix ][ Select Post List Item (Pro) ] Fixed a bug where additional CSS classes were not attached.
 
 = 1.43.0 =
 [ Add Function ][ Spacer ][ Common mergin ] Add size option xl/xs.
@@ -220,7 +227,7 @@ e.g.
 = 1.39.0 =
 [ Improvement ] License key remove space.
 [ Bug Fix ][ Common mergin ] cope with table margin bottom 0,margin top 0
-[ Bug fix ][ GridColCard ( Pro ) ] cope with custom color palette
+[ Bug fix ][ GridColCard (Pro) ] cope with custom color palette
 [ Other ] VK Compo ( mini-content ) Update ( Fix slider align )
 
 = 1.38.0 =
@@ -236,7 +243,7 @@ e.g.
 
 = 1.36.2 =
 [ Specification Change ] allow iframe on post list filter
-[ Bug Fix ][ Slider ( Pro ) ] Add compatibility process.
+[ Bug Fix ][ Slider (Pro) ] Add compatibility process.
 [ Bug fix ][ Heading design ] Fix plain design text-align
 
 = 1.36.1 =
@@ -283,7 +290,7 @@ e.g.
 [ Bug Fix ][ Heading ] Heading-Adjusted padding when there is a background.
 
 = 1.32.0 =
-[ Add Function ][ GridColCard ( Pro ) ] add column min-width setting for tablet and pc.
+[ Add Function ][ GridColCard (Pro) ] add column min-width setting for tablet and pc.
 [ Add Function ][ Button outer(Pro) ] Add button width option for mobile or tablet.
 [ Improvement ][ margin extension ] Enable margin settings in Grid column(Pro).
 [ Bug Fix ] Fix FAQ option array error for free.
@@ -550,7 +557,7 @@ Cope with WordPress 5.9
 [ Other ] version only
 
 = 1.13.0 =
-[ Specification Change ][ Post list ( Pro ) ] Cope with ruby tag
+[ Specification Change ][ Post list (Pro) ] Cope with ruby tag
 
 = 1.12.0 =
 [ Add New Block ] Icon Block
@@ -805,10 +812,10 @@ Cope with WordPress 5.9
 [ Bug fix ][ Animation ] fix deprecated
 
 = 0.53.2 =
- [ Bug Fix ][ ToC ( Pro )] Fix id Adding System
+ [ Bug Fix ][ ToC (Pro)] Fix id Adding System
 
 = 0.53.1 =
- [ Bug Fix ][ Step ( Pro )] Fix Step Number Reset System
+ [ Bug Fix ][ Step (Pro)] Fix Step Number Reset System
 
 = 0.53.0 =
  [ Design Change ] VK Blocks Icon design change
@@ -1094,7 +1101,7 @@ build only
 [ Bug fix ][ Table of content (pro) ] open close bug fix
 
 = 0.32.5 =
-[ Other ] Update Block Template Pattern ( Pro )
+[ Other ] Update Block Template Pattern (Pro)
 
 = 0.32.4 =
 [ bug fix ][ Outer ] Background fix bug.
@@ -1232,7 +1239,7 @@ build only
 
 = 0.24.1 =
 [ bug Fix ] Cope with WordPress5.4
-[ bug Fix ][ Block Template ( Pro ) ] indert bug fix
+[ bug Fix ][ Block Template (Pro) ] indert bug fix
 
 = 0.24.0 =
 [ Add function ][ Template block(Pro) ] Add

@@ -33,7 +33,7 @@ export const hasCustomCssSupport = (blockName) => {
 		return false;
 	}
 
-	const allowed = ['core', 'vk-blocks-pro'];
+	const allowed = ['core', 'vk-blocks'];
 	let returnBool =
 		allowed.find((item) => inString(blockName, item)) !== undefined;
 

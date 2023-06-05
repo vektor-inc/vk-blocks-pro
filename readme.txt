@@ -65,6 +65,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ] Update option value Modify API authority
 [ Bug fix ][ GridColCard ] Delete non intentional link underline
 
 = 1.57.0.5 =

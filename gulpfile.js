@@ -53,11 +53,6 @@ gulp.task('text-domain-free', (done) => {
 	gulp.src(['./inc/vk-css-optimize/package/*.php'])
 		.pipe(replace("'css_optimize_textdomain'", "'vk-blocks'"))
 		.pipe(gulp.dest('./inc/vk-css-optimize/package/'));
-	gulp.src(['./vk-blocks.php'])
-		.pipe(replace("'vk-blocks-pro'", "'vk-blocks'"))
-		.pipe(replace("\"vk-blocks-pro\"", "\"vk-blocks\""))
-		.pipe(replace("Text Domain: vk-blocks-pro", "Text Domain: vk-blocks"))
-		.pipe(gulp.dest('./'));
 	gulp.src(['./inc/**'])
 		.pipe(replace("'vk-blocks-pro'", "'vk-blocks'"))
 		.pipe(replace("\"vk-blocks-pro\"", "\"vk-blocks\""))

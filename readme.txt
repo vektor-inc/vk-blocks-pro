@@ -65,6 +65,7 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Spacer ] Allow 0 height.
 [ Other ][ Heading style ] Cope with dark background color 
 　
 = 1.57.1 =

@@ -65,6 +65,10 @@ e.g.
 
 == Changelog ==
 
+
+[ Add Function ][ Spacer ] Allow 0 height.
+[ Other ][ Heading style ] Cope with dark background color 
+
 [ Other ][ Heading style ] Cope with dark background color
 [ Add Function ][ Admin screen ] Added import export tool.
 

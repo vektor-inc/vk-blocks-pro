@@ -742,20 +742,20 @@ msgstr ""
 msgid "There are no applicable child pages."
 msgstr ""
 
-#: src/blocks/_pro/child-page/edit.js:102
+#: src/blocks/_pro/child-page/edit.js:103
 msgid "Check your settings from the settings sidebar."
 msgstr ""
 
-#: src/blocks/_pro/child-page/edit.js:111
+#: src/blocks/_pro/child-page/edit.js:115
 #: src/blocks/_pro/post-list/edit.js:205
 msgid "Display conditions"
 msgstr ""
 
-#: src/blocks/_pro/child-page/edit.js:115
+#: src/blocks/_pro/child-page/edit.js:119
 msgid "Parent"
 msgstr ""
 
-#: src/blocks/_pro/child-page/edit.js:130
+#: src/blocks/_pro/child-page/edit.js:134
 #: src/blocks/_pro/post-list/edit.js:361
 msgid "Ignore this post"
 msgstr ""
@@ -776,31 +776,31 @@ msgstr ""
 msgid "Ancestor Page Title"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:139
+#: src/blocks/_pro/dynamic-text/edit.js:140
 msgid "Display element settings"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:144
+#: src/blocks/_pro/dynamic-text/edit.js:145
 msgid "Display element"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:153
+#: src/blocks/_pro/dynamic-text/edit.js:154
 msgid "Please Select"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:157
+#: src/blocks/_pro/dynamic-text/edit.js:158
 msgid "Post type name of the page being viewed"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:164
+#: src/blocks/_pro/dynamic-text/edit.js:165
 msgid "Page name in the ancestor hierarchy of the displayed page"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:179
+#: src/blocks/_pro/dynamic-text/edit.js:180
 msgid "Hide on Ancestor Hierarchy Pages"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:192
+#: src/blocks/_pro/dynamic-text/edit.js:193
 msgid ""
 "This block will not display on pages other than pages that have a parent "
 "hierarchy."

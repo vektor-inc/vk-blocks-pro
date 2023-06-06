@@ -44,14 +44,14 @@ class Vk_Blocks_EntryPoint {
 					'methods'             => 'GET',
 					'callback'            => array( $this, 'block_editor_get_options' ),
 					'permission_callback' => function () {
-						return current_user_can( 'edit_posts' );
+						return current_user_can( 'edit_theme_options' );
 					},
 				),
 				array(
 					'methods'             => 'POST',
 					'callback'            => array( $this, 'block_editor_update_options' ),
 					'permission_callback' => function () {
-						return current_user_can( 'edit_posts' );
+						return current_user_can( 'edit_theme_options' );
 					},
 				),
 			)

@@ -30,7 +30,7 @@ class Vk_Blocks_EntryPoint {
 					'methods'             => 'POST',
 					'callback'            => array( $this, 'update_vk_blocks_options' ),
 					'permission_callback' => function () {
-						return current_user_can( 'edit_posts' );
+						return current_user_can( 'edit_theme_options' );
 					},
 				),
 			)

@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.0
 Tested up to: 6.2
-Stable tag: 1.56.0.1
+Stable tag: 1.57.0.5
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -65,7 +65,12 @@ e.g.
 
 == Changelog ==
 
+[ Other ][ Heading style ] Cope with dark background color
 [ Add Function ][ Admin screen ] Added import export tool.
+
+= 1.57.1 =
+[ Bug fix ] Update option value Modify API authority
+[ Bug fix ][ GridColCard ] Delete non intentional link underline
 
 = 1.57.0.5 =
 [ Bug Fix ][ Free Version ] Fix display non intentional Licencekey alert message and update become don't work. ( Please delete once VK Blocks 1.57.0.1 and reinstall 1.57.0.4 or higher )

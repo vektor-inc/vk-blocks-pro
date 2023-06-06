@@ -79,19 +79,9 @@ export default function ExportForm() {
 
 	return (
 		<div>
-			<h4>
-				{__(
-					'エクスポート',
-					// 'Export',
-					'vk-blocks-pro'
-				)}
-			</h4>
+			<h4>{__('Export', 'vk-blocks-pro')}</h4>
 			<CheckboxControl
-				label={__(
-					'すべて切り替え',
-					// 'Toggle all',
-					'vk-blocks-pro'
-				)}
+				label={__('Toggle all', 'vk-blocks-pro')}
 				checked={isExportLists.length === exportOptionLists.length}
 				onChange={handleToggleAll}
 				aria-checked={ariaChecked}
@@ -114,12 +104,8 @@ export default function ExportForm() {
 						<CheckboxControl
 							key={index}
 							label={sprintf(
-								// translators: %sをエクスポートする
-								__(
-									'%sをエクスポートする',
-									// 'Export %s',
-									'vk-blocks-pro'
-								),
+								// translators: Export %s
+								__('Export %s', 'vk-blocks-pro'),
 								groupTitle
 							)}
 							checked={checked}
@@ -131,8 +117,7 @@ export default function ExportForm() {
 			{vkBlocksObject.options !== vkBlocksOption && (
 				<p>
 					{__(
-						'変更した設定が保存されていないようです。変更前の設定内容をエクスポートします。',
-						// 'It seems that the changed settings are not saved. Export settings before change.',
+						'It seems that the changed settings are not saved. Export settings before change.',
 						'vk-blocks-pro'
 					)}
 				</p>
@@ -146,11 +131,7 @@ export default function ExportForm() {
 						!exportOptionLists.some((list) => !!list.isExport)
 					}
 				>
-					{__(
-						'エクスポート',
-						// 'Export',
-						'vk-blocks-pro'
-					)}
+					{__('Export', 'vk-blocks-pro')}
 				</Button>
 			</div>
 		</div>

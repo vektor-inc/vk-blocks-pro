@@ -80,6 +80,7 @@ gulp.task('text-domain-free', (done) => {
 		.pipe(replace(/_e\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_e( $1, 'vk-blocks' )"))
 		.pipe(replace(/_n_noop\(\s*?(['"`].*?['"`]),\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_n_noop( $1, $2, 'vk-blocks' )"))
 		.pipe(replace(/_x\(\s*?(['"`].*?['"`]),\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_x( $1, $2, 'vk-blocks' )"))
+		.pipe(replace("Text Domain: vk-blocks-pro", "Text Domain: vk-blocks"))
 		.pipe(gulp.dest('./'));
 	gulp.src(['./.phpcs.xml.dist'])
 		.pipe(replace('<property name="text_domain" type="array" value="vk-blocks-pro"/>', '<property name="text_domain" type="array" value="vk-blocks"/>'))

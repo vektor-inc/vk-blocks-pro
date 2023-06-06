@@ -65,9 +65,13 @@ e.g.
 
 == Changelog ==
 
+
 [ Add Function ][ Spacer ] Allow 0 height.
 [ Other ][ Heading style ] Cope with dark background color 
-　
+
+[ Other ][ Heading style ] Cope with dark background color
+[ Add Function ][ Admin screen ] Added import export tool.
+
 = 1.57.1 =
 [ Bug fix ] Update option value Modify API authority
 [ Bug fix ][ GridColCard ] Delete non intentional link underline

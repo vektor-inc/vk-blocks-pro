@@ -83,6 +83,7 @@ function vk_blocks_setting_page() {
 	$get_menu_html .= apply_filters( 'vk_blocks_pro_menu', '' );
 	$get_menu_html .= '<li><a href="#block-manager-setting">' . __( 'Block Manager Setting', 'vk-blocks-pro' ) . '</a></li>';
 	$get_menu_html .= '<li><a href="#block-style-manager-setting">' . __( 'Block Style Manager Setting', 'vk-blocks-pro' ) . '</a></li>';
+	$get_menu_html .= '<li><a href="#import-export-tool">' . __( 'Import Export Tool', 'vk-blocks-pro' ) . '</a></li>';
 
 	VkAdmin::admin_page_frame( $get_page_title, 'vk_blocks_setting', $get_logo_html, $get_menu_html );
 }

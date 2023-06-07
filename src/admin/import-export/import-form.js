@@ -44,10 +44,10 @@ export default function ImportForm() {
 				let uiMessage;
 				switch (errors.message) {
 					case 'Invalid JSON file':
-						uiMessage = __('Invalid JSON file');
+						uiMessage = __('Invalid JSON file', 'vk-blocks-pro');
 						break;
 					default:
-						uiMessage = __('Unknown error');
+						uiMessage = __('Unknown error', 'vk-blocks-pro');
 				}
 				setError(uiMessage);
 			});
@@ -159,10 +159,10 @@ export default function ImportForm() {
 				let uiMessage;
 				switch (errors.message) {
 					case 'Invalid JSON file':
-						uiMessage = __('Invalid JSON file');
+						uiMessage = __('Invalid JSON file', 'vk-blocks-pro');
 						break;
 					default:
-						uiMessage = __('Unknown error');
+						uiMessage = __('Unknown error', 'vk-blocks-pro');
 				}
 				setError(uiMessage);
 			});
@@ -201,7 +201,7 @@ export default function ImportForm() {
 
 	return (
 		<div>
-			<h4>{__('Import')}</h4>
+			<h4>{__('Import', 'vk-blocks-pro')}</h4>
 			{error && (
 				<Notice status="error" onRemove={() => onDismissError()}>
 					{error}
@@ -221,29 +221,19 @@ export default function ImportForm() {
 					icon={upload}
 					disabled={!file ? true : false}
 				>
-					{__('Import')}
+					{__('Import', 'vk-blocks-pro')}
 				</Button>
 			</div>
 			{isModalOpen && (
 				<Modal
-					title={__(
-						'インポートデータ確認',
-						// 'Import data confirmation',
-						'vk-blocks-pro'
-					)}
+					title={__('Import data confirmation', 'vk-blocks-pro')}
 					onRequestClose={closeModal}
 					isDismissible={false}
 					className="import_export_add_modal"
 					isFullScreen={true}
 				>
 					{!importSettings.some((list) => list.isImport === true) && (
-						<p>
-							{__(
-								'インポートデータがありません',
-								// 'No import data',
-								'vk-blocks-pro'
-							)}
-						</p>
+						<p>{__('No import data', 'vk-blocks-pro')}</p>
 					)}
 					{OPTION_DEFAULT_SETTINGS.map(
 						({ groupTitle, options, isShow = true }, index) => {
@@ -277,10 +267,9 @@ export default function ImportForm() {
 										<CheckboxControl
 											key={index}
 											label={sprintf(
-												// translators: %s をインポートする
+												// translators: Import %s
 												__(
-													'%s をインポートする',
-													// 'Import %s',
+													'Import %s',
 													'vk-blocks-pro'
 												),
 												groupTitle
@@ -305,8 +294,7 @@ export default function ImportForm() {
 													>
 														<RadioControl
 															label={__(
-																'インポート方法',
-																// 'Import method',
+																'Import method',
 																'vk-blocks-pro'
 															)}
 															onChange={(
@@ -320,16 +308,14 @@ export default function ImportForm() {
 															options={[
 																{
 																	label: __(
-																		'追加',
-																		// 'Add',
+																		'Add',
 																		'vk-blocks-pro'
 																	),
 																	value: 'add',
 																},
 																{
 																	label: __(
-																		'上書き',
-																		// 'Override',
+																		'Override',
 																		'vk-blocks-pro'
 																	),
 																	value: 'override',
@@ -367,7 +353,7 @@ export default function ImportForm() {
 															) && (
 																<p>
 																	{__(
-																		'以下のデータは識別子が被っているためインポートしません。',
+																		'The following data will not be imported because the identifiers are covered.',
 																		'vk-blocks-pro'
 																	)}
 																</p>
@@ -426,7 +412,7 @@ export default function ImportForm() {
 									variant="secondary"
 									onClick={closeModal}
 								>
-									{__('Cancel')}
+									{__('Cancel', 'vk-blocks-pro')}
 								</Button>
 							</FlexItem>
 							<FlexItem>
@@ -441,7 +427,7 @@ export default function ImportForm() {
 										)
 									}
 								>
-									{__('Import')}
+									{__('Import', 'vk-blocks-pro')}
 								</Button>
 							</FlexItem>
 						</Flex>
@@ -451,11 +437,7 @@ export default function ImportForm() {
 			{isImportSuccess && (
 				<div>
 					<Snackbar>
-						{__(
-							// 'インポートしました',
-							'Import Success',
-							'vk-blocks-pro'
-						)}{' '}
+						{__('Import Success', 'vk-blocks-pro')}{' '}
 					</Snackbar>
 				</div>
 			)}

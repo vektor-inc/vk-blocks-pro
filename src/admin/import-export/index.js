@@ -126,11 +126,7 @@ export default function AdminImportExport() {
 	return (
 		<section>
 			<h3 id="import-export-tool">
-				{__(
-					'インポート エクスポート ツール',
-					// 'Import Export Tool',
-					'vk-blocks-pro'
-				)}
+				{__('Import Export Tool', 'vk-blocks-pro')}
 			</h3>
 			<ExportForm />
 			<ImportForm />

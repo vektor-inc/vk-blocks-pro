@@ -58,8 +58,7 @@ jobs:
       run: npm run wp-env run cli wp core version 
     # dist の中で build は実行している
     - name: Build and Dist
-      run: npm run dist
-
+      run: npm run build
     # PHPUnit
     - name: PHP Unit Test
       run: npm run phpunit

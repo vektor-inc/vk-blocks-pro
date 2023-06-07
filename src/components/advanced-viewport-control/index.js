@@ -9,13 +9,13 @@ const AdvancedViewportControl = (props) => {
 	let { pc, tablet, mobile } = attributes;
 	const { iPc, iTablet, iMobile } = initial;
 
-	if (!pc) {
+	if (isNaN(pc)) {
 		pc = iPc;
 	}
-	if (!tablet) {
+	if (isNaN(tablet)) {
 		tablet = iTablet;
 	}
-	if (!mobile) {
+	if (isNaN(mobile)) {
 		mobile = iMobile;
 	}
 
@@ -26,6 +26,7 @@ const AdvancedViewportControl = (props) => {
 				value={pc}
 				onChange={(value) => setAttributes({ pc: parseFloat(value) })}
 				type={'number'}
+				min={0}
 			/>
 			<TextControl
 				label={__('Tablet', 'vk-blocks-pro')}
@@ -34,6 +35,7 @@ const AdvancedViewportControl = (props) => {
 					setAttributes({ tablet: parseFloat(value) })
 				}
 				type={'number'}
+				min={0}
 			/>
 			<TextControl
 				label={__('Mobile', 'vk-blocks-pro')}
@@ -42,6 +44,7 @@ const AdvancedViewportControl = (props) => {
 					setAttributes({ mobile: parseFloat(value) })
 				}
 				type={'number'}
+				min={0}
 			/>
 		</>
 	);

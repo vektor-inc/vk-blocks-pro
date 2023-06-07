@@ -131,6 +131,7 @@ export default function DynamicTextEdit(props) {
 	} else {
 		editContent = (
 			<ServerSideRender
+				skipBlockSupportAttributes
 				block="vk-blocks/dynamic-text"
 				attributes={attributes}
 			/>

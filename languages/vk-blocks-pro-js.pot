@@ -24,6 +24,7 @@ msgstr ""
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:63
 #: src/admin/custom-format/add-item.js:152
 #: src/admin/custom-format/delete-item-button.js:63
+#: src/admin/import-export/import-form.js:415
 msgid "Cancel"
 msgstr ""
 
@@ -44,6 +45,7 @@ msgid "Balloon Image Name"
 msgstr ""
 
 #: src/admin/balloon/index.js:37
+#: src/admin/import-export/index.js:25
 msgid "Balloon Setting"
 msgstr ""
 
@@ -76,10 +78,12 @@ msgid "image"
 msgstr ""
 
 #: src/admin/block-manager/index.js:51
+#: src/admin/import-export/index.js:106
 msgid "Block Manager Setting"
 msgstr ""
 
 #: src/admin/block-style-manager/index.js:27
+#: src/admin/import-export/index.js:115
 msgid "Block Style Manager Setting"
 msgstr ""
 
@@ -89,6 +93,7 @@ msgstr ""
 
 #: src/admin/custom-block-style/add-button/index.js:141
 #: src/admin/custom-format/add-item.js:164
+#: src/admin/import-export/import-form.js:310
 msgid "Add"
 msgstr ""
 
@@ -144,6 +149,7 @@ msgstr ""
 
 #: src/admin/custom-block-style/index.js:77
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:31
+#: src/admin/import-export/index.js:52
 msgid "Custom Block Style Setting"
 msgstr ""
 
@@ -186,6 +192,7 @@ msgid "Edit"
 msgstr ""
 
 #: src/admin/custom-css.js:20
+#: src/admin/import-export/index.js:96
 #: src/extensions/common/custom-css-extension/index.js:225
 msgid "Custom CSS Setting"
 msgstr ""
@@ -298,6 +305,7 @@ msgid "Example:"
 msgstr ""
 
 #: src/admin/custom-format/index.js:50
+#: src/admin/import-export/index.js:39
 msgid "Custom Format Setting"
 msgstr ""
 
@@ -311,6 +319,89 @@ msgstr ""
 
 #: src/admin/custom-format/preview.js:99
 msgid "Preview Text"
+msgstr ""
+
+#: src/admin/import-export/export-form.js:108
+#. Export %s
+msgid "Export %s"
+msgstr ""
+
+#: src/admin/import-export/export-form.js:119
+msgid ""
+"It seems that the changed settings are not saved. Export settings before "
+"change."
+msgstr ""
+
+#: src/admin/import-export/export-form.js:134
+msgid "Export"
+msgstr ""
+
+#: src/admin/import-export/export-form.js:84
+msgid "Toggle all"
+msgstr ""
+
+#: src/admin/import-export/import-form.js:162
+msgid "Invalid JSON file"
+msgstr ""
+
+#: src/admin/import-export/import-form.js:165
+msgid "Unknown error"
+msgstr ""
+
+#: src/admin/import-export/import-form.js:229
+msgid "Import data confirmation"
+msgstr ""
+
+#: src/admin/import-export/import-form.js:236
+msgid "No import data"
+msgstr ""
+
+#: src/admin/import-export/import-form.js:271
+#. Import %s
+msgid "Import %s"
+msgstr ""
+
+#: src/admin/import-export/import-form.js:296
+msgid "Import method"
+msgstr ""
+
+#: src/admin/import-export/import-form.js:317
+msgid "Override"
+msgstr ""
+
+#: src/admin/import-export/import-form.js:355
+msgid "The following data will not be imported because the identifiers are covered."
+msgstr ""
+
+#: src/admin/import-export/import-form.js:430
+msgid "Import"
+msgstr ""
+
+#: src/admin/import-export/import-form.js:440
+msgid "Import Success"
+msgstr ""
+
+#: src/admin/import-export/index.js:129
+msgid "Import Export Tool"
+msgstr ""
+
+#: src/admin/import-export/index.js:15
+msgid "License Key"
+msgstr ""
+
+#: src/admin/import-export/index.js:65
+#: src/blocks/heading/edit.js:274
+msgid "Margin Setting"
+msgstr ""
+
+#: src/admin/import-export/index.js:77
+#: src/admin/load-separate.js:33
+msgid "Load Separate Setting"
+msgstr ""
+
+#: src/admin/import-export/index.js:86
+#: src/admin/new-faq.js:20
+msgid "FAQ Block Setting"
 msgstr ""
 
 #: src/admin/license.js:24
@@ -327,10 +418,6 @@ msgstr ""
 
 #: src/admin/license.js:37
 msgid "License key"
-msgstr ""
-
-#: src/admin/load-separate.js:33
-msgid "Load Separate Setting"
 msgstr ""
 
 #: src/admin/load-separate.js:36
@@ -432,10 +519,6 @@ msgstr ""
 #: src/blocks/_pro/grid-column-item/edit.js:175
 #: src/blocks/_pro/grid-column/edit.js:78
 msgid "Unit"
-msgstr ""
-
-#: src/admin/new-faq.js:20
-msgid "FAQ Block Setting"
 msgstr ""
 
 #: src/admin/new-faq.js:34
@@ -2020,10 +2103,6 @@ msgstr ""
 
 #: src/blocks/heading/edit.js:268
 msgid "Plain"
-msgstr ""
-
-#: src/blocks/heading/edit.js:274
-msgid "Margin Setting"
 msgstr ""
 
 #: src/blocks/heading/edit.js:276

@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.57.0.0\n"
+"Project-Id-Version: VK Blocks Pro 1.57.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-06-06T01:18:25+00:00\n"
+"POT-Creation-Date: 2023-06-08T07:47:01+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: vk-blocks-pro\n"
@@ -35,6 +35,7 @@ msgstr ""
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:63
 #: src/admin/custom-format/add-item.js:152
 #: src/admin/custom-format/delete-item-button.js:63
+#: src/admin/import-export/import-form.js:415
 msgid "Cancel"
 msgstr ""
 
@@ -55,6 +56,7 @@ msgid "Balloon Image Name"
 msgstr ""
 
 #: src/admin/balloon/index.js:37
+#: src/admin/import-export/index.js:25
 msgid "Balloon Setting"
 msgstr ""
 
@@ -87,12 +89,14 @@ msgid "image"
 msgstr ""
 
 #: src/admin/block-manager/index.js:51
+#: src/admin/import-export/index.js:106
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:84
 #: inc/vk-blocks/admin/admin.php:84
 msgid "Block Manager Setting"
 msgstr ""
 
 #: src/admin/block-style-manager/index.js:27
+#: src/admin/import-export/index.js:115
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:85
 #: inc/vk-blocks/admin/admin.php:85
 msgid "Block Style Manager Setting"
@@ -104,6 +108,7 @@ msgstr ""
 
 #: src/admin/custom-block-style/add-button/index.js:141
 #: src/admin/custom-format/add-item.js:164
+#: src/admin/import-export/import-form.js:310
 msgid "Add"
 msgstr ""
 
@@ -157,6 +162,7 @@ msgstr ""
 
 #: src/admin/custom-block-style/index.js:77
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:31
+#: src/admin/import-export/index.js:52
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:79
 #: inc/vk-blocks/admin/admin.php:79
 msgid "Custom Block Style Setting"
@@ -198,6 +204,7 @@ msgid "Edit"
 msgstr ""
 
 #: src/admin/custom-css.js:20
+#: src/admin/import-export/index.js:96
 #: src/extensions/common/custom-css-extension/index.js:225
 #: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-pro.php:15
 #: inc/vk-blocks-pro/admin-pro/admin-pro.php:15
@@ -313,6 +320,7 @@ msgid "Example:"
 msgstr ""
 
 #: src/admin/custom-format/index.js:50
+#: src/admin/import-export/index.js:39
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:78
 #: inc/vk-blocks/admin/admin.php:78
 msgid "Custom Format Setting"
@@ -330,6 +338,90 @@ msgstr ""
 msgid "Preview Text"
 msgstr ""
 
+#. Export %s
+#: src/admin/import-export/export-form.js:108
+msgid "Export %s"
+msgstr ""
+
+#: src/admin/import-export/export-form.js:119
+msgid "It seems that the changed settings are not saved. Export settings before change."
+msgstr ""
+
+#: src/admin/import-export/export-form.js:134
+msgid "Export"
+msgstr ""
+
+#: src/admin/import-export/export-form.js:84
+msgid "Toggle all"
+msgstr ""
+
+#: src/admin/import-export/import-form.js:162
+msgid "Invalid JSON file"
+msgstr ""
+
+#: src/admin/import-export/import-form.js:165
+msgid "Unknown error"
+msgstr ""
+
+#: src/admin/import-export/import-form.js:229
+msgid "Import data confirmation"
+msgstr ""
+
+#: src/admin/import-export/import-form.js:236
+msgid "No import data"
+msgstr ""
+
+#. Import %s
+#: src/admin/import-export/import-form.js:271
+msgid "Import %s"
+msgstr ""
+
+#: src/admin/import-export/import-form.js:296
+msgid "Import method"
+msgstr ""
+
+#: src/admin/import-export/import-form.js:317
+msgid "Override"
+msgstr ""
+
+#: src/admin/import-export/import-form.js:355
+msgid "The following data will not be imported because the identifiers are covered."
+msgstr ""
+
+#: src/admin/import-export/import-form.js:430
+msgid "Import"
+msgstr ""
+
+#: src/admin/import-export/import-form.js:440
+msgid "Import Success"
+msgstr ""
+
+#: src/admin/import-export/index.js:129
+#: inc/vk-blocks/admin/admin.php:86
+msgid "Import Export Tool"
+msgstr ""
+
+#: src/admin/import-export/index.js:15
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:74
+#: inc/vk-blocks/admin/admin.php:74
+msgid "License Key"
+msgstr ""
+
+#: src/admin/import-export/index.js:65
+#: src/blocks/heading/edit.js:274
+msgid "Margin Setting"
+msgstr ""
+
+#: src/admin/import-export/index.js:77
+#: src/admin/load-separate.js:33
+msgid "Load Separate Setting"
+msgstr ""
+
+#: src/admin/import-export/index.js:86
+#: src/admin/new-faq.js:20
+msgid "FAQ Block Setting"
+msgstr ""
+
 #: src/admin/license.js:24
 msgid "Please enter a license key of valid Vektor Passport ( or Lightning G3 Pro Pack or Lightning Pro )."
 msgstr ""
@@ -340,10 +432,6 @@ msgstr ""
 
 #: src/admin/license.js:37
 msgid "License key"
-msgstr ""
-
-#: src/admin/load-separate.js:33
-msgid "Load Separate Setting"
 msgstr ""
 
 #: src/admin/load-separate.js:36
@@ -414,7 +502,7 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:636
 #: src/blocks/button/edit.js:460
 #: src/blocks/slider/edit.js:542
-#: src/components/advanced-viewport-control/index.js:31
+#: src/components/advanced-viewport-control/index.js:32
 msgid "Tablet"
 msgstr ""
 
@@ -422,7 +510,7 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:621
 #: src/blocks/button/edit.js:395
 #: src/blocks/slider/edit.js:563
-#: src/components/advanced-viewport-control/index.js:39
+#: src/components/advanced-viewport-control/index.js:41
 msgid "Mobile"
 msgstr ""
 
@@ -440,10 +528,6 @@ msgstr ""
 #: src/blocks/_pro/grid-column-item/edit.js:175
 #: src/blocks/_pro/grid-column/edit.js:78
 msgid "Unit"
-msgstr ""
-
-#: src/admin/new-faq.js:20
-msgid "FAQ Block Setting"
 msgstr ""
 
 #: src/admin/new-faq.js:34
@@ -2035,10 +2119,6 @@ msgstr ""
 msgid "Plain"
 msgstr ""
 
-#: src/blocks/heading/edit.js:274
-msgid "Margin Setting"
-msgstr ""
-
 #: src/blocks/heading/edit.js:276
 msgid "Margin between Heading and sub text (rem)"
 msgstr ""
@@ -3024,11 +3104,6 @@ msgstr ""
 msgid "Blocks Setting"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:74
-#: inc/vk-blocks/admin/admin.php:74
-msgid "License Key"
-msgstr ""
-
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:76
 #: inc/vk-blocks/admin/admin.php:76
 msgid "Balloon Block Setting"
@@ -3040,7 +3115,7 @@ msgid "Load Separete Setting"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:100
-#: inc/vk-blocks/admin/admin.php:100
+#: inc/vk-blocks/admin/admin.php:101
 msgid "Setting"
 msgstr ""
 

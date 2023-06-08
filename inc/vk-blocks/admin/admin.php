@@ -16,8 +16,11 @@ if ( ! function_exists( 'vk_blocks_setting' ) ) {
 	 * @return bool
 	 */
 	function vk_blocks_is_license_setting() {
-		if ( vk_blocks_is_pro() && wp_get_theme()->Template !== 'katawara' ) {
+		$display_license_setting = apply_filters( 'vk_blocks_dipsplay_license_setting', true );
+		if ( vk_blocks_is_pro() && wp_get_theme()->Template !== 'katawara' && true === $display_license_setting ) {
 			return true;
+		} else {
+			return false;
 		}
 	}
 

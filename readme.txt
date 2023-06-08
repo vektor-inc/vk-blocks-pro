@@ -65,6 +65,7 @@ e.g.
 
 == Changelog ==
 
+[ Add Filter Hook ] Add filter hook display license key setting or not. 
 
 [ Add Function ][ Spacer ] Allow 0 height.
 [ Other ][ Heading style ] Cope with dark background color 

@@ -1,6 +1,11 @@
 name: PHP Unit Test & Deploy develop
-
-on: workflow_dispatch
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
 
 jobs:
   php_unit:

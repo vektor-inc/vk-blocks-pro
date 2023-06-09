@@ -177,6 +177,8 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 
 			// Cope with : WP HTTP Error: cURL error 60: SSL certificate problem: certificate has expired.
 			add_filter( 'https_ssl_verify', '__return_false' );
+			
+			global $update_checker;
 
 			$update_checker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
 				'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=vk-blocks-pro',
@@ -203,18 +205,50 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 				if ( ! $network_runnning_pro && ! in_array( 'lightning-original-brand-unit/lightning-original-brand-unit.php', $active_plugins, true ) ) {
 					add_action(
 						'admin_notices',
-						function () use ( $update_checker ) {
-							vk_blocks_the_update_messsage( $update_checker );
+						function () {
+							vk_blocks_the_update_messsage();
 						}
 					);
 				}
 			}
 		}
+		
 	}
 
 	add_action( 'after_setup_theme', 'vk_blocks_update_checker' );
 
+	if ( ! function_exists( 'vk_blocks_license_check' ) ) {
+		/**
+		 * Lisence Chcker
+		 */
+		function vk_blocks_license_check() {
 
+			// アップデート周りの変数を取得.
+			global $update_checker;
+			$state  = $update_checker->getUpdateState();
+			$update = $state->getUpdate();
+
+			// ライセンスキーの値を取得.
+			$options = get_option( 'vk_blocks_options' );
+			if ( ! empty( $options['vk_blocks_pro_license_key'] ) ) {
+				$license = esc_html( $options['vk_blocks_pro_license_key'] );
+			} else {
+				$license = '';
+			}
+
+			// 条件に応じて認証結果を返す.
+			if ( wp_get_theme()->Template === 'katawara' ) {
+				return 'exemption';
+			} elseif ( empty( $license ) ) {
+				return 'empty';
+			} elseif ( ! empty( $update ) && empty( $update->download_url ) ) {
+				return 'invalid';
+			} else {
+				return 'valid';
+			}
+		}
+
+	}
 
 	if ( ! function_exists( 'vk_blocks_the_update_messsage' ) ) {
 		/**
@@ -223,23 +257,15 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 		 * @param object $update_checker .
 		 * @return void
 		 */
-		function vk_blocks_the_update_messsage( $update_checker ) {
-			$state  = $update_checker->getUpdateState();
-			$update = $state->getUpdate();
-
-			$options = get_option( 'vk_blocks_options' );
-			if ( ! empty( $options['vk_blocks_pro_license_key'] ) ) {
-				$license = esc_html( $options['vk_blocks_pro_license_key'] );
-			} else {
-				$license = '';
-			}
-
+		function vk_blocks_the_update_messsage() {
+			global $update_checker;
+			$license_check = vk_blocks_license_check();
 			$notice_title = '';
 
 			// ライセンスキーが未入力の場合.
-			if ( empty( $license ) && wp_get_theme()->Template !== 'katawara' ) {
+			if ( 'empty' === $license_check ) {
 				$notice_title = __( 'License Key has no registered.', 'vk-blocks-pro' );
-			} elseif ( ! empty( $update ) && empty( $update->download_url ) ) {
+			} elseif ( 'invalid' === $license_check ) {
 
 				// ライセンスが切れている あるいは 無効な場合.
 				// アップデートは存在するがURLが帰ってこなかった場合.

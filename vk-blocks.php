@@ -237,7 +237,7 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 			}
 
 			// 条件に応じて認証結果を返す.
-			if ( wp_get_theme()->Template === 'katawara' ) {
+			if ( wp_get_theme()->Template === 'katawara' || false === vk_blocks_is_pro() ) {
 				return 'exemption';
 			} elseif ( empty( $license ) ) {
 				return 'empty';

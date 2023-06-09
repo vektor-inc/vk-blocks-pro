@@ -23,7 +23,7 @@ if ( ! function_exists( 'vk_blocks_setting' ) ) {
 		}
 
 		$license_check           = vk_blocks_license_check();
-		$display_license_setting = apply_filters( 'vk_blocks_dipsplay_license_setting', false );
+		$display_license_setting = apply_filters( 'vk_blocks_dipsplay_license_setting', true );
 
 		if ( 'exemption' === $license_check ) {
 			return false;

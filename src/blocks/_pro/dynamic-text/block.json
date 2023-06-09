@@ -26,6 +26,10 @@
 		"customFieldName": {
 			"type": "string",
 			"default": ""
+		},
+		"fieldType": {
+			"type": "string",
+			"default": "text"
 		}
 	},
 	"description": "Display dynamic text",

@@ -83,6 +83,7 @@ export default function DynamicTextEdit(props) {
 		tagName: TagName = '',
 		ancestorPageHiddenOption,
 		customFieldName,
+		fieldType,
 	} = attributes;
 	attributes.ancestorPageHiddenOption = ancestorPageHiddenOption;
 
@@ -220,6 +221,28 @@ export default function DynamicTextEdit(props) {
 								onChange={(value) =>
 									setAttributes({ customFieldName: value })
 								}
+							/>
+							<SelectControl
+								label={__('Field Type', 'vk-blocks-pro')}
+								value={fieldType}
+								onChange={(value) =>
+									setAttributes({ fieldType: value })
+								}
+								className="mb-0"
+								options={[
+									{
+										value: 'text',
+										label: __('text', 'vk-blocks-pro'),
+									},
+									{
+										value: 'textarea',
+										label: __('textarea', 'vk-blocks-pro'),
+									},
+									{
+										value: 'wysiwyg',
+										label: __('wysiwyg', 'vk-blocks-pro'),
+									},
+								]}
 							/>
 						</BaseControl>
 					)}

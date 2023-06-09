@@ -19,7 +19,7 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 	$options = array(
 		'displayElement'  => $attributes['displayElement'],
 		'customFieldName' => ( isset( $attributes['customFieldName'] ) ) ? wp_kses_post( $attributes['customFieldName'] ) : null,
-		'fieldType'       => 'wysiwyg',
+		'fieldType'       => $attributes['fieldType'],
 		// fieldType を attributes で取得するようにする?
 		// そもそも displayElement で custom-field-text とか custom-field-textarea とかで分ける方がいいか悩む
 	);
@@ -30,13 +30,15 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 	if ( 'custom-field' === $options['displayElement'] && ! isset( $block->context['postId'] ) ) {
 		return;
 	}
-	if ( 'test' === $options['fieldType'] ) {
+
+	if ( 'text' === $options['fieldType'] ) {
 		$custom_field_content = esc_html( get_post_meta( $block->context['postId'], $options['customFieldName'], true ) );
 	} elseif ( 'textarea' === $options['fieldType'] ) {
 		$custom_field_content = nl2br( esc_textarea( get_post_meta( $block->context['postId'], $options['customFieldName'], true ) ) );
 	} elseif ( 'wysiwyg' === $options['fieldType'] ) {
 		$custom_field_content = wpautop( wp_kses_post( get_post_meta( $block->context['postId'], $options['customFieldName'], true ) ) );
 	}
+
 	return $custom_field_content;
 }
 
@@ -147,6 +149,10 @@ function vk_blocks_register_block_dynamic_text() {
 					'customFieldName'          => array(
 						'type'    => 'string',
 						'default' => '',
+					),
+					'fieldType'                => array(
+						'type'    => 'string',
+						'default' => 'text',
 					),
 				)
 			),

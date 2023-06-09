@@ -177,16 +177,16 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 
 			// Cope with : WP HTTP Error: cURL error 60: SSL certificate problem: certificate has expired.
 			add_filter( 'https_ssl_verify', '__return_false' );
-			
-			global $update_checker;
 
-			$update_checker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
+			global $vk_blocks_update_checker;
+
+			$vk_blocks_update_checker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
 				'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=vk-blocks-pro',
 				__FILE__, // この処理を他の場所に移動するとここを変更しないといけなくなるので注意.
 				'vk-blocks-pro'
 			);
 
-			$update_checker->addQueryArgFilter( 'vk_blocks_get_license_check_query_arg' );
+			$vk_blocks_update_checker->addQueryArgFilter( 'vk_blocks_get_license_check_query_arg' );
 
 			// 管理画面 かつ テーマオプションの編集権限がある場合.
 			if ( is_admin() && current_user_can( 'edit_theme_options' ) ) {
@@ -212,7 +212,6 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 				}
 			}
 		}
-		
 	}
 
 	add_action( 'after_setup_theme', 'vk_blocks_update_checker' );
@@ -224,8 +223,8 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 		function vk_blocks_license_check() {
 
 			// アップデート周りの変数を取得.
-			global $update_checker;
-			$state  = $update_checker->getUpdateState();
+			global $vk_blocks_update_checker;
+			$state  = $vk_blocks_update_checker->getUpdateState();
 			$update = $state->getUpdate();
 
 			// ライセンスキーの値を取得.
@@ -247,20 +246,18 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 				return 'valid';
 			}
 		}
-
 	}
 
 	if ( ! function_exists( 'vk_blocks_the_update_messsage' ) ) {
 		/**
 		 * Update alert message
 		 *
-		 * @param object $update_checker .
 		 * @return void
 		 */
 		function vk_blocks_the_update_messsage() {
-			global $update_checker;
+			global $vk_blocks_update_checker;
 			$license_check = vk_blocks_license_check();
-			$notice_title = '';
+			$notice_title  = '';
 
 			// ライセンスキーが未入力の場合.
 			if ( 'empty' === $license_check ) {
@@ -283,7 +280,7 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 				add_query_arg(
 					array(
 						'puc_check_for_updates' => 1,
-						'puc_slug'              => $update_checker->slug,
+						'puc_slug'              => $vk_blocks_update_checker->slug,
 					),
 					self_admin_url( 'plugins.php' )
 				),

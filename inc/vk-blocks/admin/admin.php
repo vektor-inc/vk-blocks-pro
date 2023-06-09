@@ -16,7 +16,7 @@ if ( ! function_exists( 'vk_blocks_setting' ) ) {
 	 * @return bool
 	 */
 	function vk_blocks_is_license_setting() {
-		
+
 		// Pro 版でしかライセンスチェックが走らない
 		if ( ! function_exists( 'vk_blocks_license_check' ) ) {
 			return false;
@@ -25,9 +25,9 @@ if ( ! function_exists( 'vk_blocks_setting' ) ) {
 		$license_check           = vk_blocks_license_check();
 		$display_license_setting = apply_filters( 'vk_blocks_dipsplay_license_setting', false );
 
-		if ( 'exemption' === $license_check  ) {
+		if ( 'exemption' === $license_check ) {
 			return false;
-		} elseif( 'valid' === $license_check  ) {
+		} elseif ( 'valid' === $license_check ) {
 			if ( true === $display_license_setting ) {
 				return true;
 			} else {
@@ -35,7 +35,7 @@ if ( ! function_exists( 'vk_blocks_setting' ) ) {
 			}
 		} else {
 			return true;
-		}			
+		}
 	}
 
 	/**

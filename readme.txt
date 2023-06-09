@@ -65,9 +65,9 @@ e.g.
 
 == Changelog ==
 
-
+[ Bug fix ][ Dynamic Text (Pro) ] show/hide option when displaying ancestor page is applied to post types other than "page".
 [ Add Function ][ Spacer ] Allow 0 height.
-[ Other ][ Heading style ] Cope with dark background color 
+[ Other ][ Heading style ] Cope with dark background color
 
 [ Other ][ Heading style ] Cope with dark background color
 [ Add Function ][ Admin screen ] Added import export tool.

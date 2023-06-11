@@ -65,11 +65,9 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ][ Spacer ] Allow 0 height.
 [ Add Filter Hook ] Add filter hook display license key setting or not. 
-
-[ Add Function ][ Spacer ] Allow 0 height.
-[ Other ][ Heading style ] Cope with dark background color 
-
+[ Bug fix ][ Dynamic Text (Pro) ] show/hide option when displaying ancestor page is applied to post types other than "page".
 [ Other ][ Heading style ] Cope with dark background color
 [ Add Function ][ Admin screen ] Added import export tool.
 

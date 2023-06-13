@@ -251,7 +251,7 @@ export const FontAwesome = (props) => {
 				{__('Ex) ', 'vk-blocks-pro')}
 				{'<i class="fas fa-arrow-circle-right"></i>'}
 			</p>
-			{canUserEdit &&  (
+			{canUserEdit && (
 				<>
 					<hr />
 					<SelectControl

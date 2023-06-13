@@ -65,7 +65,7 @@ e.g.
 
 == Changelog ==
 
-
+[ Specification Change ] Change option value update via Redux Store.
 [ Add Function ][ Spacer ] Allow 0 height.
 [ Other ][ Heading style ] Cope with dark background color 
 

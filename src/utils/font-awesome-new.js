@@ -10,6 +10,8 @@ import {
 import { useState, useEffect } from '@wordpress/element';
 import AdvancedPopOverControl from '@vkblocks/components/advanced-popover-control';
 import apiFetch from '@wordpress/api-fetch';
+import { useSelect } from '@wordpress/data';
+import { store as coreStore } from '@wordpress/core-data';
 
 export const FontAwesome = (props) => {
 	const { attributeName, attributes, setAttributes } = props;
@@ -24,6 +26,14 @@ export const FontAwesome = (props) => {
 	const REST_API_ROUTE = '/vk-blocks/v1/options/vk_font_awesome_version/';
 	const [isWaiting, setIsWaiting] = useState(false);
 	const [version, setVersion] = useState();
+
+	const { canUserEdit } = useSelect((select) => {
+		const { canUser } = select(coreStore);
+		const canEdit = canUser('update', 'settings');
+		return {
+			canUserEdit: canEdit,
+		};
+	}, []);
 
 	// Set options to state.
 	useEffect(() => {
@@ -241,27 +251,31 @@ export const FontAwesome = (props) => {
 				{__('Ex) ', 'vk-blocks-pro')}
 				{'<i class="fas fa-arrow-circle-right"></i>'}
 			</p>
-			<hr />
-			<SelectControl
-				label="Font Awesome Version"
-				value={version}
-				options={versions}
-				onChange={(value) => setVersion(value)}
-				className="mt-1"
-			/>
-			<p className="mt-1">
-				{__(
-					'When you click save button, the window will be reloaded and this setting will be applied.',
-					'vk-blocks-pro'
-				)}
-			</p>
-			<Button
-				isPrimary
-				disabled={isWaiting}
-				onClick={handleUpdateOptions}
-			>
-				{__('Save', 'vk-blocks-pro')}
-			</Button>
+			{canUserEdit &&  (
+				<>
+					<hr />
+					<SelectControl
+						label="Font Awesome Version"
+						value={version}
+						options={versions}
+						onChange={(value) => setVersion(value)}
+						className="mt-1"
+					/>
+					<p className="mt-1">
+						{__(
+							'When you click save button, the window will be reloaded and this setting will be applied.',
+							'vk-blocks-pro'
+						)}
+					</p>
+					<Button
+						isPrimary
+						disabled={isWaiting}
+						onClick={handleUpdateOptions}
+					>
+						{__('Save', 'vk-blocks-pro')}
+					</Button>
+				</>
+			)}
 		</>
 	);
 

@@ -60,7 +60,7 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 	);
 
 	$post = get_post();
-	if ( 'ancestor-page' === $options['displayElement'] && ! ( $post->post_parent ) && 'page' === $post->post_type && $options['ancestorPageHiddenOption'] ) {
+	if ( 'ancestor-page' === $options['displayElement'] && ! ( $post->post_parent ) && $options['ancestorPageHiddenOption'] ) {
 		return;
 	}
 

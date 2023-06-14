@@ -152,7 +152,7 @@ export default function DynamicTextEdit(props) {
 			<InspectorControls>
 				<PanelBody
 					title={__('Display element settings', 'vk-blocks-pro')}
-					initialOpen={false}
+					initialOpen={true}
 				>
 					<BaseControl>
 						<SelectControl

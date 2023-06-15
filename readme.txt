@@ -65,6 +65,7 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ][ Dynamic Text Block (Pro) ] Changed site editor to display custom field names
 [ Add Function ][ Dynamic Text Block (Pro) ] Add custom fields to displayElement.
 [ Bug fix ] Update option value Modify API authority
 [ Bug fix ][ Dynamic Text (Pro) ] show/hide option when displaying ancestor page is applied to post types other than "page".

@@ -117,7 +117,11 @@ export default function DynamicTextEdit(props) {
 			<TagName>{__('Ancestor Page Title', 'vk-blocks-pro')}</TagName>
 		);
 	} else if (displayElement === 'custom-field' && !postType) {
-		editContent = <TagName>{__(`Custom Field`, 'vk-blocks-pro')}</TagName>;
+		editContent = (
+			<TagName>
+				{__('Custom Field for', 'vk-blocks-pro')} {customFieldName}
+			</TagName>
+		);
 	} else if (displayElement === 'custom-field' && !customFieldName) {
 		editContent = (
 			<div className="alert alert-warning text-center">

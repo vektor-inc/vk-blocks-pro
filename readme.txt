@@ -73,6 +73,7 @@ e.g.
 [ Other ] Update VK Admin 0.4.0 ( Cope with English information )
 [ Add Function ][ Admin screen ] Added import export tool.
 [ Specification Change ] Update VK Component 1.5.0 ( Remove dependency on VK_Helpers )
+[ Other ] Delete inc/vk-helpers
 
 = 1.57.1 =
 [ Bug fix ] Update option value Modify API authority

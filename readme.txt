@@ -72,6 +72,7 @@ e.g.
 [ Other ][ Heading style ] Cope with dark background color
 [ Other ] Update VK Admin 0.4.0 ( Cope with English information )
 [ Add Function ][ Admin screen ] Added import export tool.
+[ Specification Change ] Update VK Component 1.5.0 ( Remove dependency on VK_Helpers )
 
 = 1.57.1 =
 [ Bug fix ] Update option value Modify API authority

@@ -25,9 +25,7 @@ export const SaveButton = (props) => {
 	const [isSaveSuccess, setIsSaveSuccess] = useState('');
 	const storeOptions = useSelect((select) => {
 		const { getOptions } = select(STORE_NAME);
-		return {
-			storeOptions: getOptions(),
-		};
+		return getOptions();
 	}, []);
 	const { setOptions } = useDispatch(STORE_NAME);
 

@@ -119,7 +119,7 @@ export default function DynamicTextEdit(props) {
 	} else if (displayElement === 'custom-field' && !postType) {
 		editContent = (
 			<TagName>
-				{__('Custom Field for', 'vk-blocks-pro')} {customFieldName}
+				{__('Custom field', 'vk-blocks-pro')} ({customFieldName})
 			</TagName>
 		);
 	} else if (displayElement === 'custom-field' && !customFieldName) {

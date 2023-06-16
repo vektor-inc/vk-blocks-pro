@@ -117,7 +117,7 @@ class DynamicText extends WP_UnitTestCase {
 			// Move to test page.
 			$this->go_to( $value['target_url'] );
 			WP_Block_Supports::$block_to_render =  array('blockName'=> 'vk-blocks/dynamic-text', 'attrs' => $value['attributes'] );
-			$return  = vk_blocks_dynamic_text_render_callback( $value['attributes'] );
+			$return  = vk_blocks_dynamic_text_render_callback( $value['attributes'], $content = '' , $block = '' );
 			$correct = $value['correct'];
 
 			print 'return  :' . $return;

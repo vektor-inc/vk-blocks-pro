@@ -9,7 +9,7 @@ if ( ! class_exists( 'VK_Components_Button' ) ) {
 
 	class VK_Component_Button {
 
-		static public function get_options( $options ) {
+		public static function get_options( $options ) {
 			$default = array(
 				'outer_id'       => '',
 				'outer_class'    => '',
@@ -101,6 +101,7 @@ if ( ! class_exists( 'VK_Components_Button' ) ) {
 
 		/**
 		 * ボタンの文字色のスタイルを出力する
+		 *
 		 * @param  [type] $options [description]
 		 * @return [type]          [description]
 		 */
@@ -109,7 +110,8 @@ if ( ! class_exists( 'VK_Components_Button' ) ) {
 			$style_text = '';
 
 			if ( ! $options['btn_ghost'] ) {
-				/* 塗りボタンの時 -------------------------------*/
+				/*
+				 塗りボタンの時 -------------------------------*/
 				// ボタンの初期状態の文字色が白なので指定する必要がない
 				$style_text = 'color:#fff;';
 
@@ -133,6 +135,7 @@ if ( ! class_exists( 'VK_Components_Button' ) ) {
 
 		/**
 		 * ボタンのホバー時の文字色を出力する
+		 *
 		 * @param  [type] $options [description]
 		 * @return [type]          [description]
 		 */
@@ -154,6 +157,7 @@ if ( ! class_exists( 'VK_Components_Button' ) ) {
 
 		/**
 		 * ボタンの背景のスタイルを出力する
+		 *
 		 * @param  [type] $options [description]
 		 * @return [type]          [description]
 		 */
@@ -175,6 +179,7 @@ if ( ! class_exists( 'VK_Components_Button' ) ) {
 
 		/**
 		 * ボタンのホバー時の背景のスタイルを出力する
+		 *
 		 * @param  [type] $options [description]
 		 * @return [type]          [description]
 		 */
@@ -195,7 +200,8 @@ if ( ! class_exists( 'VK_Components_Button' ) ) {
 
 		/**
 		 * ボタンの枠線のスタイルを出力する
-		 * @param  [type] $options [description]
+		 *
+		 * @param  [type] $options [description].
 		 * @return [type]          [description]
 		 */
 		public static function get_style_border( $options ) {
@@ -211,6 +217,7 @@ if ( ! class_exists( 'VK_Components_Button' ) ) {
 
 		/**
 		 * ボタンのホバー時の枠線のスタイルを出力する
+		 *
 		 * @param  [type] $options [description]
 		 * @return [type]          [description]
 		 */
@@ -228,6 +235,7 @@ if ( ! class_exists( 'VK_Components_Button' ) ) {
 
 		/**
 		 * ボタンのシャドウスタイルを出力する
+		 *
 		 * @param  [type] $options [description]
 		 * @return [type]          [description]
 		 */

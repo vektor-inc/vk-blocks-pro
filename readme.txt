@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.0
 Tested up to: 6.2
-Stable tag: 1.56.0.1
+Stable tag: 1.57.0.5
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -64,6 +64,18 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+[ Add Function ][ Dynamic Text Block (Pro) ] Add custom fields to displayElement.
+[ Bug fix ] Update option value Modify API authority
+[ Bug fix ][ Dynamic Text (Pro) ] show/hide option when displaying ancestor page is applied to post types other than "page".
+[ Add Function ][ Spacer ] Allow 0 height.
+[ Other ][ Heading style ] Cope with dark background color
+[ Other ] Update VK Admin 0.4.0 ( Cope with English information )
+[ Add Function ][ Admin screen ] Added import export tool.
+
+= 1.57.1 =
+[ Bug fix ] Update option value Modify API authority
+[ Bug fix ][ GridColCard ] Delete non intentional link underline
 
 = 1.57.0.5 =
 [ Bug Fix ][ Free Version ] Fix display non intentional Licencekey alert message and update become don't work. ( Please delete once VK Blocks 1.57.0.1 and reinstall 1.57.0.4 or higher )

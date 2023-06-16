@@ -23,7 +23,7 @@ version=$1
 pro_block_array=($(ls src/blocks/_pro/))
 
 # Cloneした無料版のディレクトリに移動
-cd temp/plugins/vk-blocks
+cd ./temp/plugins/vk-blocks
 # コピー先の トップディレクトリ を一旦削除
 rm -rf editor-css/* inc/* lib/* options-css/* src/* test/*
 
@@ -34,7 +34,7 @@ cd ../../../
 # -r : 指定ディレクトリ配下をすべて対象
 # -v : コピーファイルの転送情報を出力
 # -c : チェックサムで差分を確認
-rsync -arvc --exclude-from='.freeignore' . temp/plugins/vk-blocks
+rsync -arvc --exclude-from='.freeignore' . ./temp/plugins/vk-blocks
 
 # 無料版のディレクトリに移動
 cd ./temp/plugins/vk-blocks

@@ -65,11 +65,12 @@ e.g.
 
 == Changelog ==
 
-
+[ Add Function ][ Dynamic Text Block (Pro) ] Add custom fields to displayElement.
+[ Bug fix ] Update option value Modify API authority
+[ Bug fix ][ Dynamic Text (Pro) ] show/hide option when displaying ancestor page is applied to post types other than "page".
 [ Add Function ][ Spacer ] Allow 0 height.
-[ Other ][ Heading style ] Cope with dark background color 
-
 [ Other ][ Heading style ] Cope with dark background color
+[ Other ] Update VK Admin 0.4.0 ( Cope with English information )
 [ Add Function ][ Admin screen ] Added import export tool.
 
 = 1.57.1 =

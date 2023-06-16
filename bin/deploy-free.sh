@@ -59,6 +59,7 @@ npx gulp text-domain-free
 npm run lint
 composer format
 composer lint
+npm run build:free
 npx wp-env start
 npm run phpunit:free
 

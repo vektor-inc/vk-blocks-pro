@@ -297,49 +297,56 @@ export const FontAwesome = (props) => {
 				{__('Ex) ', 'vk-blocks-pro')}
 				{'<i class="fas fa-arrow-circle-right"></i>'}
 			</p>
-			{canUserEdit && (canAddIconPreset || existsIconPreset) && <hr />}
 			{canUserEdit && (
-				<Button
-					variant="primary"
-					disabled={!canAddIconPreset}
-					onClick={() => updateSettings(attributes[attributeName])}
-				>
-					{__('設定アイコンをアイコンリストに追加', 'vk-blocks-pro')}
-				</Button>
-			)}
-			{canUserEdit && existsIconPreset && (
-				<ToggleControl
-					className="mt-1"
-					label={__(
-						'アイコンリスト 編集モード',
-						// 'Icons Lists Edit mode',
-						'vk-blocks-pro'
+				<>
+					{(canAddIconPreset || existsIconPreset) && <hr />}
+					<Button
+						variant="primary"
+						disabled={!canAddIconPreset}
+						onClick={() =>
+							updateSettings(attributes[attributeName])
+						}
+					>
+						{__(
+							'設定アイコンをアイコンリストに追加',
+							'vk-blocks-pro'
+						)}
+					</Button>
+					{existsIconPreset && (
+						<ToggleControl
+							className="mt-1"
+							label={__(
+								'アイコンリスト 編集モード',
+								// 'Icons Lists Edit mode',
+								'vk-blocks-pro'
+							)}
+							checked={isEditMode}
+							onChange={() => setIsEditMode(!isEditMode)}
+						/>
 					)}
-					checked={isEditMode}
-					onChange={() => setIsEditMode(!isEditMode)}
-				/>
+					<hr />
+					<SelectControl
+						label="Font Awesome Version"
+						value={version}
+						options={versions}
+						onChange={(value) => setVersion(value)}
+						className="mt-1"
+					/>
+					<p className="mt-1">
+						{__(
+							'When you click save button, the window will be reloaded and this setting will be applied.',
+							'vk-blocks-pro'
+						)}
+					</p>
+					<Button
+						isPrimary
+						disabled={isWaiting}
+						onClick={handleUpdateOptions}
+					>
+						{__('Save', 'vk-blocks-pro')}
+					</Button>
+				</>
 			)}
-			<hr />
-			<SelectControl
-				label="Font Awesome Version"
-				value={version}
-				options={versions}
-				onChange={(value) => setVersion(value)}
-				className="mt-1"
-			/>
-			<p className="mt-1">
-				{__(
-					'When you click save button, the window will be reloaded and this setting will be applied.',
-					'vk-blocks-pro'
-				)}
-			</p>
-			<Button
-				isPrimary
-				disabled={isWaiting}
-				onClick={handleUpdateOptions}
-			>
-				{__('Save', 'vk-blocks-pro')}
-			</Button>
 		</>
 	);
 

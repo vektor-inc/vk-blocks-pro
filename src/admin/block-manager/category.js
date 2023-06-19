@@ -58,7 +58,7 @@ function BlockManagerCategory({ title, blockTypes }) {
 		} else {
 			hideBlockTypes(blockName);
 		}
-	}, []);
+	}, [showBlockTypes, hideBlockTypes]);
 	const toggleAllVisible = useCallback(
 		(nextIsChecked) => {
 			const blockNames = blockTypes.map((blockType) => blockType.name);
@@ -68,7 +68,7 @@ function BlockManagerCategory({ title, blockTypes }) {
 				hideBlockTypes(blockNames);
 			}
 		},
-		[blockTypes]
+		[blockTypes, showBlockTypes, hideBlockTypes]
 	);
 
 	if (!filteredBlockTypes.length) {

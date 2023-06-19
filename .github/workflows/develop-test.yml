@@ -65,7 +65,9 @@ jobs:
     # dist の中で build は実行している
     - name: Build and Dist
       run: npm run dist
-
+    # Lightning をダウンロード
+    - name: Install Theme
+      run: bash bin/install-theme.sh
     # PHPUnit
     - name: PHP Unit Test
       run: npm run phpunit

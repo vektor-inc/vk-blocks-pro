@@ -65,6 +65,16 @@ e.g.
 
 == Changelog ==
 
+= 1.58.0 =
+[ Add Function ][ Dynamic Text Block (Pro) ] Add custom fields to displayElement.
+[ Add Function ][ Admin screen ] Added import export tool.
+[ Other ][ Heading style ] Cope with dark background color
+[ Other ] Update VK Admin 0.4.0 ( Cope with English information )
+[ Other ] Update VK Component 1.5.0 ( Remove dependency on VK_Helpers )
+[ Bug fix ][ Spacer ] Allow 0 height.
+[ Bug fix ] Update option value Modify API authority
+[ Bug fix ][ Dynamic Text (Pro) ] show/hide option when displaying ancestor page is applied to post types other than "page".
+
 = 1.57.1 =
 [ Bug fix ] Update option value Modify API authority
 [ Bug fix ][ GridColCard ] Delete non intentional link underline

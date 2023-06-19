@@ -348,6 +348,69 @@ msgstr "ツールバー タイトル"
 msgid "Preview Text"
 msgstr "プレビューテキスト"
 
+#. Export %s
+#: src/admin/import-export/export-form.js:108
+msgid "Export %s"
+msgstr "%sをエクスポート"
+
+#: src/admin/import-export/export-form.js:119
+msgid "It seems that the changed settings are not saved. Export settings before change."
+msgstr "変更した設定が保存されていないようです。変更前の設定内容をエクスポートします。"
+
+#: src/admin/import-export/export-form.js:134
+msgid "Export"
+msgstr "エクスポート"
+
+#: src/admin/import-export/export-form.js:84
+msgid "Toggle all"
+msgstr "すべて切り替え"
+
+#: src/admin/import-export/import-form.js:162
+msgid "Invalid JSON file"
+msgstr "無効なJSONファイル"
+
+#: src/admin/import-export/import-form.js:165
+msgid "Unknown error"
+msgstr "不明なエラー"
+
+#: src/admin/import-export/import-form.js:229
+msgid "Import data confirmation"
+msgstr "インポートデータ確認"
+
+#: src/admin/import-export/import-form.js:236
+msgid "No import data"
+msgstr "インポートデータがありません"
+
+#. Import %s
+#: src/admin/import-export/import-form.js:271
+msgid "Import %s"
+msgstr "%sをインポート"
+
+#: src/admin/import-export/import-form.js:296
+msgid "Import method"
+msgstr "インポート方法"
+
+#: src/admin/import-export/import-form.js:317
+msgid "Override"
+msgstr "上書き"
+
+#: src/admin/import-export/import-form.js:355
+msgid "The following data will not be imported because the identifiers are covered."
+msgstr "以下のデータは識別子が被っているためインポートしません。"
+
+#: src/admin/import-export/import-form.js:430
+msgid "Import"
+msgstr "インポート"
+
+#: src/admin/import-export/import-form.js:440
+msgid "Import Success"
+msgstr "インポート成功"
+
+#: src/admin/import-export/index.js:129
+#: inc/vk-blocks/admin/admin.php:86
+msgid "Import Export Tool"
+msgstr "インポート エクスポート ツール"
+
 #: src/admin/license.js:24
 msgid ""
 "Please enter a license key of valid Vektor Passport ( or Lightning G3 Pro "

@@ -29,7 +29,7 @@ export const OPTION_DEFAULT_SETTINGS = [
 			},
 			{
 				name: 'balloon_meta_lists',
-				isArray: true,
+				multidimensionalArray: true,
 				importMethod: 'add',
 			},
 		],
@@ -40,7 +40,7 @@ export const OPTION_DEFAULT_SETTINGS = [
 		options: [
 			{
 				name: 'custom_format_lists',
-				isArray: true,
+				associativeArray: true,
 				uniqKey: 'class_name',
 				importMethod: 'add',
 			},
@@ -53,7 +53,7 @@ export const OPTION_DEFAULT_SETTINGS = [
 		options: [
 			{
 				name: 'custom_block_style_lists',
-				isArray: true,
+				associativeArray: true,
 				uniqKey: 'property_name',
 				importMethod: 'add',
 			},
@@ -116,6 +116,17 @@ export const OPTION_DEFAULT_SETTINGS = [
 		options: [
 			{
 				name: 'disable_block_style_lists',
+			},
+		],
+		isImport: true,
+	},
+	{
+		groupTitle: __('icon preset lists Setting', 'vk-blocks-pro'),
+		options: [
+			{
+				name: 'icon_preset_lists',
+				indexedArray: true,
+				importMethod: 'add',
 			},
 		],
 		isImport: true,

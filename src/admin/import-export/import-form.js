@@ -81,10 +81,10 @@ export default function ImportForm() {
 		const updateVkBlocksOptions = _vkBlocksOption;
 		// importMethodがaddだったら追加する
 		_importSettings.forEach(({ options, isImport }) => {
-			options.forEach(({ name, uniqKey, importMethod }, id) => {
+			options.forEach(({ name, associativeArray, importMethod }, id) => {
 				if (!!isImport) {
 					if (importMethod === 'add') {
-						if ('uniqKey' in options[id]) {
+						if ('associativeArray' in options[id]) {
 							// 識別子が被っていないもののみ追加する
 							const addOption = [];
 							if (
@@ -99,10 +99,10 @@ export default function ImportForm() {
 											(vkBlocksOptionElement) => {
 												if (
 													uploadedOptionElement[
-														uniqKey
+														associativeArray
 													] ===
 													vkBlocksOptionElement[
-														uniqKey
+														associativeArray
 													]
 												) {
 													isDuplicate = true;
@@ -118,10 +118,40 @@ export default function ImportForm() {
 								);
 							}
 							updateVkBlocksOptions[name].push(...addOption);
-						} else {
+						} else if ('multidimensionalArray' in options[id]) {
 							updateVkBlocksOptions[name].push(
 								..._uploadedVkBlocksOptions[name]
 							);
+						} else if ('indexedArray' in options[id]) {
+							// 識別子が被っていないもののみ追加する
+							const addOption = [];
+							if (
+								_uploadedVkBlocksOptions[name] &&
+								_uploadedVkBlocksOptions[name].length > 0 &&
+								_vkBlocksOption[name]
+							) {
+								_uploadedVkBlocksOptions[name].forEach(
+									(uploadedOptionElement) => {
+										let isDuplicate = false;
+										_vkBlocksOption[name].forEach(
+											(vkBlocksOptionElement) => {
+												if (
+													uploadedOptionElement ===
+													vkBlocksOptionElement
+												) {
+													isDuplicate = true;
+												}
+											}
+										);
+										if (!isDuplicate) {
+											addOption.push(
+												uploadedOptionElement
+											);
+										}
+									}
+								);
+							}
+							updateVkBlocksOptions[name].push(...addOption);
 						}
 					} else {
 						// 上書きする
@@ -281,7 +311,7 @@ export default function ImportForm() {
 											(
 												{
 													name,
-													uniqKey = false,
+													associativeArray = false,
 													importMethod,
 												},
 												id
@@ -332,7 +362,7 @@ export default function ImportForm() {
 															.options[id]
 															.importMethod ===
 															'add' &&
-															'uniqKey' in
+															'associativeArray' in
 																options[id] &&
 															vkBlocksOption[
 																name
@@ -344,10 +374,10 @@ export default function ImportForm() {
 																		uploadKey
 																	) =>
 																		uploadKey[
-																			uniqKey
+																			associativeArray
 																		] ===
 																		preKey[
-																			uniqKey
+																			associativeArray
 																		]
 																)
 															) && (
@@ -362,7 +392,7 @@ export default function ImportForm() {
 															.options[id]
 															.importMethod ===
 															'add' &&
-															'uniqKey' in
+															'associativeArray' in
 																options[id] &&
 															vkBlocksOption[
 																name
@@ -376,10 +406,10 @@ export default function ImportForm() {
 																	) => {
 																		return (
 																			uploadKey[
-																				uniqKey
+																				associativeArray
 																			] ===
 																				preKey[
-																					uniqKey
+																					associativeArray
 																				] && (
 																				<div
 																					key={
@@ -388,8 +418,67 @@ export default function ImportForm() {
 																				>
 																					{
 																						uploadKey[
-																							uniqKey
+																							associativeArray
 																						]
+																					}
+																				</div>
+																			)
+																		);
+																	}
+																);
+															})}
+														{importSettings[index]
+															.options[id]
+															.importMethod ===
+															'add' &&
+															'indexedArray' in
+																options[id] &&
+															vkBlocksOption[
+																name
+															].some((preKey) =>
+																uploadedVkBlocksOptions[
+																	name
+																].some(
+																	(
+																		uploadKey
+																	) =>
+																		uploadKey ===
+																		preKey
+																)
+															) && (
+																<p>
+																	{__(
+																		'The following data will not be imported because the identifiers are covered.',
+																		'vk-blocks-pro'
+																	)}
+																</p>
+															)}
+														{importSettings[index]
+															.options[id]
+															.importMethod ===
+															'add' &&
+															'indexedArray' in
+																options[id] &&
+															vkBlocksOption[
+																name
+															].map((preKey) => {
+																return uploadedVkBlocksOptions[
+																	name
+																].map(
+																	(
+																		uploadKey,
+																		uploadId
+																	) => {
+																		return (
+																			uploadKey ===
+																				preKey && (
+																				<div
+																					key={
+																						uploadId
+																					}
+																				>
+																					{
+																						uploadKey
 																					}
 																				</div>
 																			)

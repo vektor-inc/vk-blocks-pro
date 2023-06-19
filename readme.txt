@@ -65,6 +65,9 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Admin screen ] Fix block style manager changes other option values.
+[ Bug fix ][ Admin screen ] Fix block manager changes other option values.
+
 = 1.58.0 =
 [ Add Function ][ Dynamic Text Block (Pro) ] Add custom fields to displayElement.
 [ Add Function ][ Admin screen ] Added import export tool.

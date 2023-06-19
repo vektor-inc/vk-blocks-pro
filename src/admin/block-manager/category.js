@@ -52,13 +52,16 @@ function BlockManagerCategory({ title, blockTypes }) {
 		setVkBlocksOption({ ...vkBlocksOption });
 	};
 
-	const toggleVisible = useCallback((blockName, nextIsChecked) => {
-		if (nextIsChecked) {
-			showBlockTypes(blockName);
-		} else {
-			hideBlockTypes(blockName);
-		}
-	}, [showBlockTypes, hideBlockTypes]);
+	const toggleVisible = useCallback(
+		(blockName, nextIsChecked) => {
+			if (nextIsChecked) {
+				showBlockTypes(blockName);
+			} else {
+				hideBlockTypes(blockName);
+			}
+		},
+		[showBlockTypes, hideBlockTypes]
+	);
 	const toggleAllVisible = useCallback(
 		(nextIsChecked) => {
 			const blockNames = blockTypes.map((blockType) => blockType.name);

@@ -219,32 +219,78 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 	if ( ! function_exists( 'vk_blocks_license_check' ) ) {
 		/**
 		 * Lisence Chcker
+		 * 
+		 * @param string $check_result ライセンス認証の結果
 		 */
-		function vk_blocks_license_check() {
+		function vk_blocks_license_check( $test_data = array() ) {
 
 			// アップデート周りの変数を取得.
 			global $vk_blocks_update_checker;
-			$state  = $vk_blocks_update_checker->getUpdateState();
-			$update = $state->getUpdate();
 
-			// ライセンスキーの値を取得.
+			// オプション値を取得.
 			$options = get_option( 'vk_blocks_options' );
-			if ( ! empty( $options['vk_blocks_pro_license_key'] ) ) {
-				$license = esc_html( $options['vk_blocks_pro_license_key'] );
+
+			// 返す値
+			$check_result = null;
+
+			// テストデータがある場合はそれを処理し、ない場合はそれぞれ取得
+			if ( ! empty( $test_data ) ) {
+
+				// 現在のテーマ
+				$template = $test_data['template'];
+
+				// Pro 版か否か
+				$is_pro = $test_data['is_pro'];
+
+				// ライセンスキー
+				$license_key = ! empty( $test_data['license_key'] ) ? $test_data['license_key'] : '';
+
+				// アップデート API
+				$update = ! empty( $test_data['update'] ) ? $test_data['update'] : array();
+
 			} else {
-				$license = '';
+
+				// 現在のテーマ
+				$template    = wp_get_theme()->Template;
+
+				// Pro 版か否か
+				$is_pro      = vk_blocks_is_pro();
+
+				// ライセンスキー
+				$license_key = ! empty( $options['vk_blocks_pro_license_key'] ) ? $options['vk_blocks_pro_license_key'] : '';
+
+				// アップデート API の情報（オブジェクトは扱いにくいので配列化）
+				$update      = ! empty( $vk_blocks_update_checker->getUpdateState()->getUpdate() ) ? (array) $vk_blocks_update_checker->getUpdateState()->getUpdate() : array();
 			}
 
 			// 条件に応じて認証結果を返す.
-			if ( wp_get_theme()->Template === 'katawara' || false === vk_blocks_is_pro() ) {
-				return 'exemption';
-			} elseif ( empty( $license ) ) {
-				return 'empty';
-			} elseif ( ! empty( $update ) && empty( $update->download_url ) ) {
-				return 'invalid';
+			if ( 'katawara' === $template || false === $is_pro ) {
+				
+				// Katawara と無料版はライセンス認証免除対象なので 'exemption' を返す
+				$check_result = 'exemption';
+
+			} elseif ( empty( $license_key ) ) {
+
+				// それ以外でライセンスキーが空の場合は 'empty' を返す
+				$check_result = 'empty';
+
+			} elseif ( ! empty( $update ) && empty( $update['download_url'] ) ) {
+
+				// それ以外でライセンスキーが違う場合は 'invalid' を返す
+				$check_result = 'invalid';
+
 			} else {
-				return 'valid';
+
+				// それ以外の場合はライセンスキーが正しいと言えるので 'valid' を返す
+				$check_result = 'valid';
+
 			}
+
+			// 実際の API がどう動いているかのチェック用
+			// var_dump( $check_result );
+
+			return $check_result;
+
 		}
 	}
 

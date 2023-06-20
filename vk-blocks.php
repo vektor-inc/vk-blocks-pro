@@ -219,8 +219,9 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 	if ( ! function_exists( 'vk_blocks_license_check' ) ) {
 		/**
 		 * Lisence Chcker
-		 * 
-		 * @param string $check_result ライセンス認証の結果
+		 *
+		 * @param array $test_data    テストデータ.
+		 * @return string $check_result ライセンス認証の結果.
 		 */
 		function vk_blocks_license_check( $test_data = array() ) {
 
@@ -247,50 +248,44 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 
 				// アップデート API
 				$update = ! empty( $test_data['update'] ) ? $test_data['update'] : array();
-
 			} else {
 
 				// 現在のテーマ
-				$template    = wp_get_theme()->Template;
+				$template = wp_get_theme()->Template;
 
 				// Pro 版か否か
-				$is_pro      = vk_blocks_is_pro();
+				$is_pro = vk_blocks_is_pro();
 
 				// ライセンスキー
 				$license_key = ! empty( $options['vk_blocks_pro_license_key'] ) ? $options['vk_blocks_pro_license_key'] : '';
 
 				// アップデート API の情報（オブジェクトは扱いにくいので配列化）
-				$update      = ! empty( $vk_blocks_update_checker->getUpdateState()->getUpdate() ) ? (array) $vk_blocks_update_checker->getUpdateState()->getUpdate() : array();
+				$update = (array) $vk_blocks_update_checker->getUpdateState()->getUpdate();
 			}
 
 			// 条件に応じて認証結果を返す.
 			if ( 'katawara' === $template || false === $is_pro ) {
-				
+
 				// Katawara と無料版はライセンス認証免除対象なので 'exemption' を返す
 				$check_result = 'exemption';
-
 			} elseif ( empty( $license_key ) ) {
 
 				// それ以外でライセンスキーが空の場合は 'empty' を返す
 				$check_result = 'empty';
-
 			} elseif ( ! empty( $update ) && empty( $update['download_url'] ) ) {
 
 				// それ以外でライセンスキーが違う場合は 'invalid' を返す
 				$check_result = 'invalid';
-
 			} else {
 
 				// それ以外の場合はライセンスキーが正しいと言えるので 'valid' を返す
 				$check_result = 'valid';
-
 			}
 
 			// 実際の API がどう動いているかのチェック用
 			// var_dump( $check_result );
 
 			return $check_result;
-
 		}
 	}
 

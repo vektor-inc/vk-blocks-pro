@@ -7,6 +7,7 @@ import {
 	SelectControl,
 	BaseControl,
 	CheckboxControl,
+	TextControl,
 } from '@wordpress/components';
 import {
 	useBlockProps,
@@ -81,6 +82,8 @@ export default function DynamicTextEdit(props) {
 		displayElement,
 		tagName: TagName = '',
 		ancestorPageHiddenOption,
+		customFieldName,
+		fieldType,
 	} = attributes;
 	attributes.ancestorPageHiddenOption = ancestorPageHiddenOption;
 
@@ -113,6 +116,21 @@ export default function DynamicTextEdit(props) {
 		editContent = (
 			<TagName>{__('Ancestor Page Title', 'vk-blocks-pro')}</TagName>
 		);
+	} else if (displayElement === 'custom-field' && !postType) {
+		editContent = (
+			<TagName>
+				{__('Custom field', 'vk-blocks-pro')} ({customFieldName})
+			</TagName>
+		);
+	} else if (displayElement === 'custom-field' && !customFieldName) {
+		editContent = (
+			<div className="alert alert-warning text-center">
+				{__(
+					'This block is not rendered because no custom field name is specified.',
+					'vk-blocks-pro'
+				)}
+			</div>
+		);
 	} else if (displayElement === 'please-select') {
 		editContent = editAlertContent;
 	} else {
@@ -138,7 +156,7 @@ export default function DynamicTextEdit(props) {
 			<InspectorControls>
 				<PanelBody
 					title={__('Display element settings', 'vk-blocks-pro')}
-					initialOpen={false}
+					initialOpen={true}
 				>
 					<BaseControl>
 						<SelectControl
@@ -167,10 +185,10 @@ export default function DynamicTextEdit(props) {
 										'vk-blocks-pro'
 									),
 								},
-								// {
-								// 	value: 'custom-field',
-								// 	label: __('カスタムフィールド', 'vk-blocks-pro'),
-								// },
+								{
+									value: 'custom-field',
+									label: __('Custom Field', 'vk-blocks-pro'),
+								},
 							]}
 						/>
 					</BaseControl>
@@ -196,6 +214,40 @@ export default function DynamicTextEdit(props) {
 									)}
 								</div>
 							)}
+						</BaseControl>
+					)}
+
+					{displayElement === 'custom-field' && (
+						<BaseControl>
+							<TextControl
+								label={__('Custom Field Name', 'vk-blocks')}
+								value={customFieldName}
+								onChange={(value) =>
+									setAttributes({ customFieldName: value })
+								}
+							/>
+							<SelectControl
+								label={__('Field Type', 'vk-blocks-pro')}
+								value={fieldType}
+								onChange={(value) =>
+									setAttributes({ fieldType: value })
+								}
+								className="mb-0"
+								options={[
+									{
+										value: 'text',
+										label: __('text', 'vk-blocks-pro'),
+									},
+									{
+										value: 'textarea',
+										label: __('textarea', 'vk-blocks-pro'),
+									},
+									{
+										value: 'wysiwyg',
+										label: __('wysiwyg', 'vk-blocks-pro'),
+									},
+								]}
+							/>
 						</BaseControl>
 					)}
 					<DynamicTextEditControls

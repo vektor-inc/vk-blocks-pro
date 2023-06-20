@@ -100,13 +100,16 @@ export default function BlockStyleManagerCategory({
 		setVkBlocksOption({ ...vkBlocksOption });
 	};
 
-	const toggleVisible = useCallback((blockStyleName, nextIsChecked) => {
-		if (nextIsChecked) {
-			showBlockStyles(blockStyleName);
-		} else {
-			hideBlockStyles(blockStyleName);
-		}
-	}, []);
+	const toggleVisible = useCallback(
+		(blockStyleName, nextIsChecked) => {
+			if (nextIsChecked) {
+				showBlockStyles(blockStyleName);
+			} else {
+				hideBlockStyles(blockStyleName);
+			}
+		},
+		[showBlockStyles, hideBlockStyles]
+	);
 	const toggleAllVisible = useCallback(
 		(nextIsChecked) => {
 			const blockStyles = blockStyleTypes.map(
@@ -118,7 +121,7 @@ export default function BlockStyleManagerCategory({
 				hideBlockStyles(blockStyles);
 			}
 		},
-		[blockStyleTypes]
+		[blockStyleTypes, showBlockStyles, hideBlockStyles]
 	);
 
 	if (!filteredBlockStyleTypes.length) {

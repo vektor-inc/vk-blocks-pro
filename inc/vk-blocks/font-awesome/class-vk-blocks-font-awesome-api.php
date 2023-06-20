@@ -46,7 +46,7 @@ class VK_Blocks_Font_Awesome_API {
 	 * Permission Callback
 	 */
 	public function permission_callback() {
-		return current_user_can( 'edit_posts' );
+		return current_user_can( 'edit_theme_options' );
 	}
 
 	/**

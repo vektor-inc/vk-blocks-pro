@@ -9,9 +9,10 @@
 	>
 	<testsuites>
 		<testsuite name="default">
-			<directory prefix="test-" suffix=".php">./test/phpunit/free</directory>
-			<exclude>./test/phpunit/pro/</exclude>
 			<directory prefix="test-" suffix=".php">./vendor/vektor-inc/vk-wp-unit-test-tools/src/tests/</directory>
+			<directory prefix="test-" suffix=".php">./test/phpunit/</directory>
+			<exclude>./test/phpunit/test-sample.php</exclude>
+			<exclude>temp/</exclude>
 		</testsuite>
 	</testsuites>
 </phpunit>

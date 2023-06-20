@@ -61,14 +61,18 @@ jobs:
       run: WP_ENV_PHP_VERSION=${{ matrix.php-versions }} WP_ENV_CORE=WordPress/WordPress#${{ matrix.wp-versions }} npm run wp-env start --update
     - name: Check WordPress Version
       run: npm run wp-env run cli wp core version 
-    # dist の中で build は実行している
-    - name: Build and Dist
+    # Build
+    - name: Build
       run: npm run build
+    # Lightning をダウンロード
+    - name: Install Theme
+      run: bash bin/install-theme.sh
     # PHPUnit
     - name: PHP Unit Test
       run: npm run phpunit
   deployment:
     runs-on: ubuntu-latest
+    needs: [php_unit]
     steps:
       - name: checkout    
         uses: actions/checkout@v2

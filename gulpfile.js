@@ -53,26 +53,35 @@ gulp.task('text-domain-free', (done) => {
 	gulp.src(['./inc/vk-css-optimize/package/*.php'])
 		.pipe(replace("'css_optimize_textdomain'", "'vk-blocks'"))
 		.pipe(gulp.dest('./inc/vk-css-optimize/package/'));
-	gulp.src(['./vk-blocks.php'])
-		.pipe(replace("'vk-blocks-pro'", "'vk-blocks'"))
-		.pipe(replace("\"vk-blocks-pro\"", "\"vk-blocks\""))
-		.pipe(replace("Text Domain: vk-blocks-pro", "Text Domain: vk-blocks"))
-		.pipe(gulp.dest('./'));
-	gulp.src(['./inc/**'])
-		.pipe(replace("'vk-blocks-pro'", "'vk-blocks'"))
-		.pipe(replace("\"vk-blocks-pro\"", "\"vk-blocks\""))
-		.pipe(replace("Text Domain: vk-blocks-pro", "Text Domain: vk-blocks"))
+	gulp.src(['./inc/**',])
+		.pipe(replace(/__\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "__( $1, 'vk-blocks' )"))
+		.pipe(replace(/_e\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_e( $1, 'vk-blocks' )"))
+		.pipe(replace(/_n_noop\(\s*?(['"`].*?['"`]),\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_n_noop( $1, $2, 'vk-blocks' )"))
+		.pipe(replace(/_x\(\s*?(['"`].*?['"`]),\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_x( $1, $2, 'vk-blocks' )"))
+		.pipe(replace("$vk_blocks_components_textdomain = 'vk-blocks-pro';", "$vk_blocks_components_textdomain = 'vk-blocks';"))
+		.pipe(replace("wp_set_script_translations( 'vk-blocks-admin-js', 'vk-blocks-pro', VK_BLOCKS_DIR_PATH . 'languages' );", "wp_set_script_translations( 'vk-blocks-admin-js', 'vk-blocks' );"))
+		.pipe(replace("wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks-pro', VK_BLOCKS_DIR_PATH . 'languages' );", "wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks' );"))
 		.pipe(gulp.dest('./inc/'));
 	gulp.src(['./src/**'])
-		.pipe(replace("'vk-blocks-pro'", "'vk-blocks'"))
-		.pipe(replace("\"vk-blocks-pro\"", "\"vk-blocks\""))
-		.pipe(replace("Text Domain: vk-blocks-pro", "Text Domain: vk-blocks"))
+		.pipe(replace(/__\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "__( $1, 'vk-blocks' )"))
+		.pipe(replace(/_e\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_e( $1, 'vk-blocks' )"))
+		.pipe(replace(/_n_noop\(\s*?(['"`].*?['"`]),\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_n_noop( $1, $2, 'vk-blocks' )"))
+		.pipe(replace(/_x\(\s*?(['"`].*?['"`]),\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_x( $1, $2, 'vk-blocks' )"))
+		.pipe(replace('"textdomain": "vk-blocks-pro"', '"textdomain": "vk-blocks"'))
 		.pipe(gulp.dest('./src/'));
 	gulp.src(['./test/**'])
-		.pipe(replace("'vk-blocks-pro'", "'vk-blocks'"))
-		.pipe(replace("\"vk-blocks-pro\"", "\"vk-blocks\""))
-		.pipe(replace("Text Domain: vk-blocks-pro", "Text Domain: vk-blocks"))
+		.pipe(replace(/__\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "__( $1, 'vk-blocks' )"))
+		.pipe(replace(/_e\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_e( $1, 'vk-blocks' )"))
+		.pipe(replace(/_n_noop\(\s*?(['"`].*?['"`]),\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_n_noop( $1, $2, 'vk-blocks' )"))
+		.pipe(replace(/_x\(\s*?(['"`].*?['"`]),\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_x( $1, $2, 'vk-blocks' )"))
 		.pipe(gulp.dest('./test/'));
+	gulp.src(['./vk-blocks.php'])
+		.pipe(replace(/__\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "__( $1, 'vk-blocks' )"))
+		.pipe(replace(/_e\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_e( $1, 'vk-blocks' )"))
+		.pipe(replace(/_n_noop\(\s*?(['"`].*?['"`]),\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_n_noop( $1, $2, 'vk-blocks' )"))
+		.pipe(replace(/_x\(\s*?(['"`].*?['"`]),\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_x( $1, $2, 'vk-blocks' )"))
+		.pipe(replace("Text Domain: vk-blocks-pro", "Text Domain: vk-blocks"))
+		.pipe(gulp.dest('./'));
 	done();
 });
 

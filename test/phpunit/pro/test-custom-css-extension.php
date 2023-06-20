@@ -81,7 +81,7 @@ class CustomCssExtensionTest extends WP_UnitTestCase {
                 'vkbCustomCss' => 'selector { color: red; }'
             )
         );
-        $count = 1;
+        $count = 39;
 		foreach ( $test_data as $test_value ) {
             $correct = sprintf($test_value['correct'], $count);
 			$return  = vk_blocks_render_custom_css($test_value['block_content'], $block);

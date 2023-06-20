@@ -35,9 +35,9 @@
 		"vektor-inc/vk-wp-unit-test-tools": "^0.10.0"
 	},
 	"scripts": {
-		"format": "phpcbf --standard=./.phpcs.xml.dist --report-summary --report-source",
-		"lint": "phpcs --standard=./.phpcs.xml.dist",
-		"phpcs": "phpcs --standard=./.phpcs.xml.dist"
+		"format": "phpcbf --standard=./.phpcs.xml --report-summary --report-source",
+		"lint": "phpcs --standard=./.phpcs.xml",
+		"phpcs": "phpcs --standard=./.phpcs.xml"
 	},
 	"config": {
 		"allow-plugins": {

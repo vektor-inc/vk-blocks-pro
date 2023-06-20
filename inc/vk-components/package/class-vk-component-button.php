@@ -100,6 +100,54 @@ if ( ! class_exists( 'VK_Components_Button' ) ) {
 		}
 
 		/**
+		 * Color_mode_check
+		 * VK_Helpers::color_mode_check( $input ); と同じだが、
+		 * Composer版以外の VK_Helpers を削除していきたいので内包
+		 *
+		 * @param string $input input color code.
+		 */
+		public static function color_mode_check( $input = '#ffffff' ) {
+			$color['input'] = $input;
+			// delete #.
+			$color['input'] = preg_replace( '/#/', '', $color['input'] );
+
+			$color_len = strlen( $color['input'] );
+
+			// Only 3 character.
+			if ( 3 === $color_len ) {
+				$color_red   = substr( $color['input'], 0, 1 ) . substr( $color['input'], 0, 1 );
+				$color_green = substr( $color['input'], 1, 1 ) . substr( $color['input'], 1, 1 );
+				$color_blue  = substr( $color['input'], 2, 1 ) . substr( $color['input'], 2, 1 );
+			} elseif ( 6 === $color_len ) {
+				$color_red   = substr( $color['input'], 0, 2 );
+				$color_green = substr( $color['input'], 2, 2 );
+				$color_blue  = substr( $color['input'], 4, 2 );
+			} else {
+				$color_red   = 'ff';
+				$color_green = 'ff';
+				$color_blue  = 'ff';
+			}
+
+			// change 16 to 10 number.
+			$color['color_red']   = hexdec( $color_red );
+			$color['color_green'] = hexdec( $color_green );
+			$color['color_blue']  = hexdec( $color_blue );
+
+			$color['number_sum'] = $color['color_red'] + $color['color_green'] + $color['color_blue'];
+
+			$color['brightness'] = 0.00130718954 * $color['number_sum'];
+
+			if ( $color['brightness'] < 0.5 ) {
+				$color['mode'] = 'dark';
+			} else {
+				$color['mode'] = 'bright';
+			}
+
+			return $color;
+
+		}
+
+		/**
 		 * ボタンの文字色のスタイルを出力する
 		 *
 		 * @param  [type] $options [description]
@@ -115,7 +163,7 @@ if ( ! class_exists( 'VK_Components_Button' ) ) {
 				// ボタンの初期状態の文字色が白なので指定する必要がない
 				$style_text = 'color:#fff;';
 
-				$color = VK_Helpers::color_mode_check( $options['btn_color_bg'] );
+				$color = self::color_mode_check( $options['btn_color_bg'] );
 				if ( $color['brightness'] > 0.8 ) {
 					$style_text = 'color:#000;';
 				}
@@ -145,7 +193,7 @@ if ( ! class_exists( 'VK_Components_Button' ) ) {
 
 			// ゴーストだろうが塗りだろうが、ホバー時は背景塗りにするのでゴーストかどうかの条件分岐は関係ない
 
-			$color = VK_Helpers::color_mode_check( $options['btn_color_bg'] );
+			$color = self::color_mode_check( $options['btn_color_bg'] );
 			if ( $color['brightness'] > 0.8 ) {
 				$style_text_hover = 'color:#000;';
 			} else {
@@ -193,7 +241,7 @@ if ( ! class_exists( 'VK_Components_Button' ) ) {
 
 			} elseif ( ! $options['btn_ghost'] ) {
 
-				$style_bg_hover = 'background-color:' . VK_Helpers::color_auto_modifi( $options['btn_color_bg'], 1.2 ) . ';';
+				$style_bg_hover = 'filter: brightness(1.2) saturate(2);';
 			}
 			return $style_bg_hover;
 		}
@@ -222,14 +270,10 @@ if ( ! class_exists( 'VK_Components_Button' ) ) {
 		 * @return [type]          [description]
 		 */
 		public static function get_style_border_hover( $options ) {
-			$options            = self::get_options( $options );
-			$style_border_hover = '';
-
-			if ( $options['btn_ghost'] ) {
-				$style_border_hover = 'border-color:' . $options['btn_color_bg'] . ';';
-			} else {
-				$style_border_hover = 'border-color:' . VK_Helpers::color_auto_modifi( $options['btn_color_bg'], 1.2 ) . ';';
-			}
+			$options = self::get_options( $options );
+			// 通常の塗りボタンもゴーストボタンも共通
+			// （ hover 時は css filter で色を明るくするようになったので、ホバー時の枠線の色も通常のボタン背景色と同じ指定でよい ）
+			$style_border_hover = 'border-color:' . $options['btn_color_bg'] . ';';
 			return $style_border_hover;
 		}
 

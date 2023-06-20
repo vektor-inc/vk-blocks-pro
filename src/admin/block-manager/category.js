@@ -52,13 +52,16 @@ function BlockManagerCategory({ title, blockTypes }) {
 		setVkBlocksOption({ ...vkBlocksOption });
 	};
 
-	const toggleVisible = useCallback((blockName, nextIsChecked) => {
-		if (nextIsChecked) {
-			showBlockTypes(blockName);
-		} else {
-			hideBlockTypes(blockName);
-		}
-	}, []);
+	const toggleVisible = useCallback(
+		(blockName, nextIsChecked) => {
+			if (nextIsChecked) {
+				showBlockTypes(blockName);
+			} else {
+				hideBlockTypes(blockName);
+			}
+		},
+		[showBlockTypes, hideBlockTypes]
+	);
 	const toggleAllVisible = useCallback(
 		(nextIsChecked) => {
 			const blockNames = blockTypes.map((blockType) => blockType.name);
@@ -68,7 +71,7 @@ function BlockManagerCategory({ title, blockTypes }) {
 				hideBlockTypes(blockNames);
 			}
 		},
-		[blockTypes]
+		[blockTypes, showBlockTypes, hideBlockTypes]
 	);
 
 	if (!filteredBlockTypes.length) {

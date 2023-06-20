@@ -22,6 +22,7 @@
 	<exclude-pattern type="relative">^test/phpunit/*</exclude-pattern>
 	<exclude-pattern type="relative">^.git/*</exclude-pattern>
 	<exclude-pattern type="relative">^build/*</exclude-pattern>
+	<exclude-pattern type="relative">^temp/*</exclude-pattern>
 
 	<!-- How to scan -->
 	<!-- Usage instructions: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Usage -->

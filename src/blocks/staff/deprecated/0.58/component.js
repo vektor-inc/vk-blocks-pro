@@ -95,7 +95,7 @@ export class NewComponent extends Component {
                             >
 					{ !vk_staff_photo_image ? __('Select image', 'vk-blocks-pro') :
 					<img className={ `vk_staff_photo_image` } src={ vk_staff_photo_image }
-						alt={ __(vk_staff_photo_image_alt, 'vk-blocks-pro') } /> }
+						alt={ __(`${vk_staff_photo_image_alt}`, 'vk-blocks-pro') } /> }
 				</Button>
                         ) }
                     />
@@ -139,7 +139,7 @@ export class NewComponent extends Component {
 	{ vk_staff_photo_image ?
 		<div className={ `vk_staff_photo vk_staff_photo-border-${vk_staff_photoBorder}` }>
 			<img className={ `vk_staff_photo_image` } src={ vk_staff_photo_image } alt={
-                            vk_staff_photo_image_alt ? __(vk_staff_photo_image_alt, 'vk-blocks-pro')
+                            vk_staff_photo_image_alt ? __(`${vk_staff_photo_image_alt}`, 'vk-blocks-pro')
                                 :
                                 ""
                         } />

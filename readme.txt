@@ -65,6 +65,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Page Content ] Fix duplicate Additional CSS classes.
 [ Bug fix ][ Admin screen ] Fix block style manager changes other option values.
 [ Bug fix ][ Admin screen ] Fix block manager changes other option values.
 

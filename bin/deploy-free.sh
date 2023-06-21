@@ -70,5 +70,5 @@ git push -f origin master
 # 無料版のレポジトリでタグを切ってpush
 # 無料版の方でも下のGitHubActionが動いて、WordPress公式レポジトリにアップロードされる。
 # https://github.com/vektor-inc/vk-blocks/blob/master/.github/workflows/wp-plugin-deploy.yml
-#git tag ${version}
-#git push origin ${version}
+git tag ${version}
+git push origin ${version}

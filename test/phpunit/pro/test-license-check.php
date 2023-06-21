@@ -97,7 +97,6 @@ class LicenseCheckerTest extends WP_UnitTestCase {
        
 		foreach ( $test_data as $test_value ) {
 
-			$query_args = array();
 			$return  = vk_blocks_license_check(  $test_value['test_data'] );
 			$correct = $test_value['correct'];
 
@@ -111,8 +110,6 @@ class LicenseCheckerTest extends WP_UnitTestCase {
 			print PHP_EOL;
 			$this->assertSame( $correct, $return );
 
-		}
-
-		
+		}		
 	}
 }

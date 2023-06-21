@@ -220,7 +220,7 @@ export default function DynamicTextEdit(props) {
 					{displayElement === 'custom-field' && (
 						<BaseControl>
 							<TextControl
-								label={__('Custom Field Name', 'vk-blocks')}
+								label={__('Custom Field Name', 'vk-blocks-pro')}
 								value={customFieldName}
 								onChange={(value) =>
 									setAttributes({ customFieldName: value })

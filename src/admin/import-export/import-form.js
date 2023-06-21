@@ -85,43 +85,45 @@ export default function ImportForm() {
 				if (!!isImport) {
 					if (importMethod === 'add') {
 						if ('associativeArray' in options[id]) {
-							// 識別子が被っていないもののみ追加する
-							const addOption = [];
-							if (
-								_uploadedVkBlocksOptions[name] &&
-								_uploadedVkBlocksOptions[name].length > 0 &&
-								_vkBlocksOption[name]
-							) {
-								_uploadedVkBlocksOptions[name].forEach(
-									(uploadedOptionElement) => {
-										let isDuplicate = false;
-										_vkBlocksOption[name].forEach(
-											(vkBlocksOptionElement) => {
-												if (
-													uploadedOptionElement[
-														associativeArray
-													] ===
-													vkBlocksOptionElement[
-														associativeArray
-													]
-												) {
-													isDuplicate = true;
+							if ( 'uniqKey' in options[id] ) {
+								// 識別子が被っていないもののみ追加する
+								const addOption = [];
+								if (
+									_uploadedVkBlocksOptions[name] &&
+									_uploadedVkBlocksOptions[name].length > 0 &&
+									_vkBlocksOption[name]
+								) {
+									_uploadedVkBlocksOptions[name].forEach(
+										(uploadedOptionElement) => {
+											let isDuplicate = false;
+											_vkBlocksOption[name].forEach(
+												(vkBlocksOptionElement) => {
+													if (
+														uploadedOptionElement[
+															associativeArray
+														] ===
+														vkBlocksOptionElement[
+															associativeArray
+														]
+													) {
+														isDuplicate = true;
+													}
 												}
-											}
-										);
-										if (!isDuplicate) {
-											addOption.push(
-												uploadedOptionElement
 											);
+											if (!isDuplicate) {
+												addOption.push(
+													uploadedOptionElement
+												);
+											}
 										}
-									}
+									);
+								}
+								updateVkBlocksOptions[name].push(...addOption);
+							} else {
+								updateVkBlocksOptions[name].push(
+									..._uploadedVkBlocksOptions[name]
 								);
 							}
-							updateVkBlocksOptions[name].push(...addOption);
-						} else if ('multidimensionalArray' in options[id]) {
-							updateVkBlocksOptions[name].push(
-								..._uploadedVkBlocksOptions[name]
-							);
 						} else if ('indexedArray' in options[id]) {
 							// 識別子が被っていないもののみ追加する
 							const addOption = [];
@@ -312,11 +314,13 @@ export default function ImportForm() {
 												{
 													name,
 													associativeArray = false,
+													uniqKey = false,
 													importMethod,
 												},
 												id
 											) =>
 												checked &&
+												uniqKey &&
 												importMethod && (
 													<div
 														key={id}

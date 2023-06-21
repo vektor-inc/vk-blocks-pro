@@ -29,7 +29,7 @@ export const OPTION_DEFAULT_SETTINGS = [
 			},
 			{
 				name: 'balloon_meta_lists',
-				multidimensionalArray: true,
+				associativeArray: true,
 				importMethod: 'add',
 			},
 		],

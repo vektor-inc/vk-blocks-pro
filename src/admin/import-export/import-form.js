@@ -85,7 +85,7 @@ export default function ImportForm() {
 				if (!!isImport) {
 					if (importMethod === 'add') {
 						if ('associativeArray' in options[id]) {
-							if ( 'uniqKey' in options[id] ) {
+							if ('uniqKey' in options[id]) {
 								// 識別子が被っていないもののみ追加する
 								const addOption = [];
 								if (

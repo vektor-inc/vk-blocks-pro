@@ -9,9 +9,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-06-06T06:44:37+00:00\n"
+"POT-Creation-Date: 2023-06-15T03:43:32+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.5.0\n"
+"X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: vk-blocks-pro\n"
 
 #: src/admin/balloon/add-button.js:38
@@ -493,7 +493,7 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:636
 #: src/blocks/button/edit.js:460
 #: src/blocks/slider/edit.js:542
-#: src/components/advanced-viewport-control/index.js:31
+#: src/components/advanced-viewport-control/index.js:32
 msgid "Tablet"
 msgstr ""
 
@@ -501,7 +501,7 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:621
 #: src/blocks/button/edit.js:395
 #: src/blocks/slider/edit.js:563
-#: src/components/advanced-viewport-control/index.js:39
+#: src/components/advanced-viewport-control/index.js:41
 msgid "Mobile"
 msgstr ""
 
@@ -854,8 +854,6 @@ msgstr ""
 #: src/blocks/_pro/dynamic-text/edit.js:114
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
 #: src/blocks/ancestor-page-list/index.php:44
-#: test/phpunit/pro/test-ancestor-page-list.php:89
-#: test/phpunit/pro/test-ancestor-page-list.php:173
 msgid "Ancestor Page Title"
 msgstr ""
 
@@ -3069,25 +3067,21 @@ msgstr ""
 
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
 #: src/blocks/ancestor-page-list/index.php:83
-#: test/phpunit/pro/test-ancestor-page-list.php:173
 msgid "Dummy Text"
 msgstr ""
 
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
 #: src/blocks/ancestor-page-list/index.php:83
-#: test/phpunit/pro/test-ancestor-page-list.php:173
 msgid "Because of the site editor have not child page that, the page list from ancestor is not displayed. Now displaying the dummy text list instead of the page list from ancestor."
 msgstr ""
 
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
 #: src/blocks/ancestor-page-list/index.php:83
-#: test/phpunit/pro/test-ancestor-page-list.php:173
 msgid "This message only display on the edit screen."
 msgstr ""
 
 #: inc/vk-blocks/build/blocks/page-content/index.php:126
 #: src/blocks/page-content/index.php:126
-#: test/phpunit/free/test-page-content.php:59
 msgid "Edit this area"
 msgstr ""
 
@@ -3111,7 +3105,6 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#. translators:
 #. translators:
 #: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:186
 #: src/blocks/_pro/taxonomy/index.php:186

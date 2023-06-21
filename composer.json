@@ -20,7 +20,7 @@
 		"vektor-inc/vk-admin": "^0.4.0",
 		"vektor-inc/vk-color-palette-manager": "^0.4.0",
 		"vektor-inc/vk-breadcrumb": "^0.2.5",
-		"vektor-inc/vk-term-color": "^0.4.0",
+		"vektor-inc/vk-term-color": "^0.6.4",
 		"vektor-inc/vk-css-optimize": "^0.2.0"
 	},
 	"require-dev": {
@@ -35,9 +35,9 @@
 		"vektor-inc/vk-wp-unit-test-tools": "^0.10.0"
 	},
 	"scripts": {
-		"format": "phpcbf --standard=./.phpcs.xml.dist --report-summary --report-source",
-		"lint": "phpcs --standard=./.phpcs.xml.dist",
-		"phpcs": "phpcs --standard=./.phpcs.xml.dist"
+		"format": "phpcbf --standard=./.phpcs.xml --report-summary --report-source",
+		"lint": "phpcs --standard=./.phpcs.xml",
+		"phpcs": "phpcs --standard=./.phpcs.xml"
 	},
 	"config": {
 		"allow-plugins": {

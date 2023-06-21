@@ -65,15 +65,19 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Admin screen ] Fix block style manager changes other option values.
+[ Bug fix ][ Admin screen ] Fix block manager changes other option values.
+[ Other ] Delete inc/vk-helpers
+
+= 1.58.0 =
 [ Add Function ][ Dynamic Text Block (Pro) ] Add custom fields to displayElement.
-[ Bug fix ] Update option value Modify API authority
-[ Bug fix ][ Dynamic Text (Pro) ] show/hide option when displaying ancestor page is applied to post types other than "page".
-[ Add Function ][ Spacer ] Allow 0 height.
+[ Add Function ][ Admin screen ] Added import export tool.
 [ Other ][ Heading style ] Cope with dark background color
 [ Other ] Update VK Admin 0.4.0 ( Cope with English information )
-[ Add Function ][ Admin screen ] Added import export tool.
-[ Specification Change ] Update VK Component 1.5.0 ( Remove dependency on VK_Helpers )
-[ Other ] Delete inc/vk-helpers
+[ Other ] Update VK Component 1.5.0 ( Remove dependency on VK_Helpers )
+[ Bug fix ][ Spacer ] Allow 0 height.
+[ Bug fix ] Update option value Modify API authority
+[ Bug fix ][ Dynamic Text (Pro) ] show/hide option when displaying ancestor page is applied to post types other than "page".
 
 = 1.57.1 =
 [ Bug fix ] Update option value Modify API authority

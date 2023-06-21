@@ -13,8 +13,8 @@ if ( ! function_exists( 'vk_blocks_setting' ) ) {
 	/**
 	 * Check need license environment
 	 *
-	 * @param string $license_check_test テスト用の変数
-	 * @return bool ライセンスキー用のフォームを表示するか否か
+	 * @param string $license_check_test テスト用の変数.
+	 * @return bool ライセンスキー用のフォームを表示するか否か.
 	 */
 	function vk_blocks_is_license_setting( $license_check_test = '' ) {
 
@@ -38,17 +38,17 @@ if ( ! function_exists( 'vk_blocks_setting' ) ) {
 		// ライセンスチェックの状態に応じて処理
 		if ( 'exemption' === $license_check ) {
 			// ライセンス認証が免除されている場合はそもそも必要がないので false を返す
-			$license_setting =  false;
+			$license_setting = false;
 		} elseif ( 'valid' === $license_check ) {
 			// ライセンスキーが正しい場合はフィルターフックの値で表示・非表示を制御
 			if ( true === $display_license_setting ) {
-				$license_setting =  true;
+				$license_setting = true;
 			} else {
-				$license_setting =  false;
+				$license_setting = false;
 			}
 		} else {
 			// それ以外の場合は必ず表示する
-			$license_setting =  true;
+			$license_setting = true;
 		}
 
 		return $license_setting;

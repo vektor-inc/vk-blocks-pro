@@ -65,6 +65,7 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] Change option value update via Redux Store.
 = 1.58.1 =
 [ Bug fix ][ Admin screen ] Fix block style manager changes other option values.
 [ Bug fix ][ Admin screen ] Fix block manager changes other option values.

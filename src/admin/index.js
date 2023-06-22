@@ -6,11 +6,15 @@ import {
 	createRoot,
 	useState,
 	createContext,
+	useEffect,
 } from '@wordpress/element';
+import { useSelect } from '@wordpress/data';
 
 /**
  * Internal dependencies
  */
+import '@vkblocks/utils/store';
+import { STORE_NAME } from '@vkblocks/utils/store/constants';
 import AdminLicense from '@vkblocks/admin/license';
 import AdminBalloon from '@vkblocks/admin/balloon';
 import AdminMargin from '@vkblocks/admin/margin';
@@ -28,40 +32,57 @@ import { SaveButton } from '@vkblocks/admin/save-button';
 export const AdminContext = createContext();
 
 export default function VKBlocksAdmin() {
-	const [vkBlocksOption, setVkBlocksOption] = useState(
-		vkBlocksObject.options
-	);
-
+	const [vkBlocksOption, setVkBlocksOption] = useState();
 	const [reloadFlag, setReloadFlag] = useState(false);
+	const [isChanged, setIsChanged] = useState(false);
+
+	const storeOptions = useSelect((select) => {
+		const { getOptions } = select(STORE_NAME);
+		return getOptions().vkBlocksOption;
+	}, []);
+
+	useEffect(() => {
+		setVkBlocksOption(storeOptions);
+	}, [storeOptions]);
+
+	const optionChanged = (value) => {
+		setVkBlocksOption(value);
+		setIsChanged(true);
+	};
 
 	return (
 		<>
 			{/* AdminContext.Providerで各コンポーネントにvalueを渡す */}
-			<AdminContext.Provider
-				value={{
-					vkBlocksOption,
-					setVkBlocksOption,
-					reloadFlag,
-					setReloadFlag,
-				}}
-			>
-				{vkBlocksObject.isLicenseSetting && <AdminLicense />}
-				<AdminBalloon />
-				{vkBlocksObject.isPro && <AdminCustomFormat />}
-				{vkBlocksObject.isPro && <AdminCustomBlockStyle />}
-				<AdminMargin />
-				<AdminLoadSeparate />
-				{vkBlocksObject.isPro && <AdminNewFaq />}
-				{vkBlocksObject.isPro && <AdminCustomCss />}
-				<BlockManager />
-				<BlockStyleManager />
-				<SaveButton
-					classOption={'sticky'}
-					vkBlocksOption={vkBlocksOption}
-					reloadFlag={reloadFlag}
-				/>
-				<AdminImportExport />
-			</AdminContext.Provider>
+			{!!vkBlocksOption && (
+				<AdminContext.Provider
+					value={{
+						vkBlocksOption,
+						setVkBlocksOption: optionChanged,
+						reloadFlag,
+						setReloadFlag,
+					}}
+				>
+					{vkBlocksObject.isLicenseSetting && <AdminLicense />}
+					<AdminBalloon />
+					{vkBlocksObject.isPro && <AdminCustomFormat />}
+					{vkBlocksObject.isPro && <AdminCustomBlockStyle />}
+					<AdminMargin />
+					<AdminLoadSeparate />
+					{vkBlocksObject.isPro && <AdminNewFaq />}
+					{vkBlocksObject.isPro && <AdminCustomCss />}
+					<BlockManager />
+					<BlockStyleManager />
+					<SaveButton
+						classOption={'sticky'}
+						isChanged={isChanged}
+						setIsChanged={setIsChanged}
+					/>
+					<AdminImportExport
+						isChanged={isChanged}
+						setIsChanged={setIsChanged}
+					/>
+				</AdminContext.Provider>
+			)}
 		</>
 	);
 }

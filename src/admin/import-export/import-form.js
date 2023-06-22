@@ -22,7 +22,8 @@ import { AdminContext } from '@vkblocks/admin/index';
 import { importOptions, readFile } from './import';
 import { OPTION_DEFAULT_SETTINGS } from './index';
 
-export default function ImportForm() {
+export default function ImportForm(props) {
+	const { setIsChanged } = props;
 	const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [isImportSuccess, setIsImportSuccess] = useState(false);
@@ -186,6 +187,7 @@ export default function ImportForm() {
 					...vkBlocksOption,
 					...importResponse.updateOption,
 				});
+				setIsChanged(false);
 			})
 			.catch((errors) => {
 				let uiMessage;

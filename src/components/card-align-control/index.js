@@ -20,7 +20,7 @@ export const CardAlignControls = (props) => {
 		return (
 			<BaseControl
 				key={index}
-				label={__(capitalize(label), 'vk-blocks-pro')} // eslint-disable-line @wordpress/i18n-no-variables
+				label={__(`${capitalize(label)}`, 'vk-blocks-pro')} // eslint-disable-line @wordpress/i18n-no-variables
 				id={'vk_card-align'}
 			>
 				<AlignControl schema={schema} {...props} />

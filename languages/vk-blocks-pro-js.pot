@@ -493,7 +493,7 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:636
 #: src/blocks/button/edit.js:460
 #: src/blocks/slider/edit.js:542
-#: src/components/advanced-viewport-control/index.js:31
+#: src/components/advanced-viewport-control/index.js:32
 msgid "Tablet"
 msgstr ""
 
@@ -501,7 +501,7 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:621
 #: src/blocks/button/edit.js:395
 #: src/blocks/slider/edit.js:563
-#: src/components/advanced-viewport-control/index.js:39
+#: src/components/advanced-viewport-control/index.js:41
 msgid "Mobile"
 msgstr ""
 
@@ -847,90 +847,122 @@ msgstr ""
 msgid "Current page"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:102
+#: src/blocks/_pro/dynamic-text/edit.js:105
 msgid "Please select display element from the Setting sidebar."
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:110
+#: src/blocks/_pro/dynamic-text/edit.js:113
 msgid "Post Type Name"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:114
+#: src/blocks/_pro/dynamic-text/edit.js:117
 msgid "Ancestor Page Title"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:140
-msgid "Display element settings"
+#: src/blocks/_pro/dynamic-text/edit.js:122
+msgid "Custom field"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:145
-msgid "Display element"
-msgstr ""
-
-#: src/blocks/_pro/dynamic-text/edit.js:154
-msgid "Please Select"
+#: src/blocks/_pro/dynamic-text/edit.js:128
+msgid "This block is not rendered because no custom field name is specified."
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:158
+msgid "Display element settings"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:163
+msgid "Display element"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:172
+msgid "Please Select"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:176
 msgid "Post type name of the page being viewed"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:165
+#: src/blocks/_pro/dynamic-text/edit.js:183
 msgid "Page name in the ancestor hierarchy of the displayed page"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:180
+#: src/blocks/_pro/dynamic-text/edit.js:190
+msgid "Custom Field"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:198
 msgid "Hide on Ancestor Hierarchy Pages"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:193
+#: src/blocks/_pro/dynamic-text/edit.js:211
 msgid ""
 "This block will not display on pages other than pages that have a parent "
 "hierarchy."
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:32
+#: src/blocks/_pro/dynamic-text/edit.js:223
+msgid "Custom Field Name"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:230
+msgid "Field Type"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:239
+msgid "text"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:243
+msgid "textarea"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:247
+msgid "wysiwyg"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:33
 msgid "HTML element"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:37
+#: src/blocks/_pro/dynamic-text/edit.js:38
 msgid "div (default)"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:41
+#: src/blocks/_pro/dynamic-text/edit.js:42
 msgid "h1"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:45
+#: src/blocks/_pro/dynamic-text/edit.js:46
 #: src/blocks/ancestor-page-list/edit.js:51
 msgid "h2"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:49
+#: src/blocks/_pro/dynamic-text/edit.js:50
 #: src/blocks/ancestor-page-list/edit.js:55
 msgid "h3"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:53
+#: src/blocks/_pro/dynamic-text/edit.js:54
 #: src/blocks/ancestor-page-list/edit.js:59
 msgid "h4"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:57
+#: src/blocks/_pro/dynamic-text/edit.js:58
 #: src/blocks/ancestor-page-list/edit.js:63
 msgid "h5"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:61
+#: src/blocks/_pro/dynamic-text/edit.js:62
 #: src/blocks/ancestor-page-list/edit.js:67
 msgid "h6"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:65
+#: src/blocks/_pro/dynamic-text/edit.js:66
 msgid "p"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:69
+#: src/blocks/_pro/dynamic-text/edit.js:70
 msgid "span"
 msgstr ""
 
@@ -1191,7 +1223,7 @@ msgstr ""
 #: src/blocks/heading/edit.js:335
 #: src/blocks/icon/edit.js:269
 #: src/blocks/pr-content/edit.js:212
-#: src/utils/font-awesome-new.js:56
+#: src/utils/font-awesome-new.js:66
 msgid "Icon"
 msgstr ""
 
@@ -2844,32 +2876,32 @@ msgstr ""
 msgid "Lorem ipsum"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:233
+#: src/utils/font-awesome-new.js:243
 msgid "Font Awesome icon list"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:236
+#: src/utils/font-awesome-new.js:246
 msgid ""
 "If you want to use an icon other than the ones listed above, you can use "
 "any of the icons from Font Awesome's icon list Please select a tag and "
 "enter it."
 msgstr ""
 
-#: src/utils/font-awesome-new.js:241
+#: src/utils/font-awesome-new.js:251
 msgid "Ex) "
 msgstr ""
 
-#: src/utils/font-awesome-new.js:253
+#: src/utils/font-awesome-new.js:265
 msgid ""
 "When you click save button, the window will be reloaded and this setting "
 "will be applied."
 msgstr ""
 
-#: src/utils/font-awesome-new.js:263
+#: src/utils/font-awesome-new.js:275
 msgid "Save"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:277
+#: src/utils/font-awesome-new.js:291
 msgid "Select Icon"
 msgstr ""
 

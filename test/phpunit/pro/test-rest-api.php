@@ -27,18 +27,18 @@ class RestAPITest extends WP_UnitTestCase {
     }
 
     /**
-    * Permission check for block-editor-options
+    * Permission check for update_vk_blocks_options
     *
     * @return void.
     */
-    public function test_get_vk_options_permition():void  {
+    public function test_get_vk_options_permission():void  {
 
-        $request = new WP_REST_Request( 'GET', '/vk-blocks/v1/block-editor-options' );
+        $request = new WP_REST_Request( 'GET', '/vk-blocks/v1/update_vk_blocks_options' );
         $response = self::$server->dispatch( $request );
         $actual = $response->get_data();
 
         print '------------------------------------' . PHP_EOL;
-        print 'RestAPITest::test_get_vk_options_permition()' . PHP_EOL;
+        print 'RestAPITest::test_get_vk_options_permission()' . PHP_EOL;
         print '------------------------------------' . PHP_EOL;
 
         // 権限がなければ拒否しなければならない
@@ -46,18 +46,18 @@ class RestAPITest extends WP_UnitTestCase {
     }
 
     /**
-    * Test the endpoint for block-editor-options
+    * Test the endpoint for update_vk_blocks_options
     *
     * @return void.
     */
     public function test_get_vk_options_value() {
 
         $this->set_current_user( 'administrator' );
-        $request = new WP_REST_Request( 'GET', '/vk-blocks/v1/block-editor-options' );
+        $request = new WP_REST_Request( 'GET', '/vk-blocks/v1/update_vk_blocks_options' );
         $response = self::$server->dispatch( $request );
         $actual = $response->get_data();
 
-        $vk_options_expect  = Vk_Blocks_EntryPoint::block_editor_get_options();
+        $vk_options_expect  = Vk_Blocks_EntryPoint::get_vk_blocks_options();
 
         print '------------------------------------' . PHP_EOL;
         print 'RestAPITest::test_get_vk_options_value()' . PHP_EOL;

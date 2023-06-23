@@ -7,6 +7,7 @@ import apiFetch from '@wordpress/api-fetch';
  * Internal dependencies
  */
 import { readTextFile } from './file';
+import { API_PATH } from '@vkblocks/utils/store/constants';
 
 /**
  * readFile from JSON file.
@@ -31,7 +32,7 @@ export async function readFile(file) {
  */
 export async function importOptions(updateOption) {
 	const response = await apiFetch({
-		path: '/vk-blocks/v1/update_vk_blocks_options',
+		path: API_PATH,
 		method: 'POST',
 		data: {
 			vkBlocksOption: updateOption,

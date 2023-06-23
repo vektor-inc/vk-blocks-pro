@@ -31,7 +31,6 @@ if ( ! function_exists( 'vk_blocks_active' ) ) {
 		$vk_blocks_prefix .= ' ';
 	}
 
-	require_once plugin_dir_path( __FILE__ ) . 'vk-helpers/config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/helpers.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-components/vk-components-config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/load-vk-components.php';

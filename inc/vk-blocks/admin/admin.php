@@ -198,7 +198,6 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 		'vk-blocks-admin-js',
 		'vkBlocksObject',
 		array(
-			'options'          => VK_Blocks_Options::get_options(),
 			'isLicenseSetting' => vk_blocks_is_license_setting(),
 			'isPro'            => vk_blocks_is_pro(),
 			'deprecatedLists'  => VK_Blocks_Options::get_deprecated_lists(),

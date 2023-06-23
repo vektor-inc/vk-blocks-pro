@@ -1,22 +1,47 @@
 /**
+ * External dependencies
+ */
+import classNames from 'classnames';
+
+/**
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { useState, useEffect } from '@wordpress/element';
+import { useState, useEffect, useContext } from '@wordpress/element';
 import { Button, Snackbar } from '@wordpress/components';
 import apiFetch from '@wordpress/api-fetch';
-import classNames from 'classnames';
+import { useSelect, useDispatch } from '@wordpress/data';
+
+/**
+ * Internal dependencies
+ */
+import { API_PATH, STORE_NAME } from '@vkblocks/utils/store/constants';
+import { AdminContext } from '@vkblocks/admin/index';
 
 export const SaveButton = (props) => {
-	const { vkBlocksOption, classOption, reloadFlag } = props;
+	const { vkBlocksOption, reloadFlag } = useContext(AdminContext);
+	const { classOption, isChanged, setIsChanged } = props;
 	const [isLoading, setIsLoading] = useState(false);
 	const [isSaveSuccess, setIsSaveSuccess] = useState('');
+	const storeOptions = useSelect((select) => {
+		const { getOptions } = select(STORE_NAME);
+		return getOptions();
+	}, []);
+	const { setOptions } = useDispatch(STORE_NAME);
 
 	const onClickUpdate = () => {
 		setIsLoading(true);
 
+		const newObj = {
+			...storeOptions,
+			vkBlocksOption: {
+				...vkBlocksOption,
+			},
+		};
+		setOptions(newObj);
+
 		apiFetch({
-			path: '/vk-blocks/v1/update_vk_blocks_options',
+			path: API_PATH,
 			method: 'POST',
 			data: {
 				vkBlocksOption,
@@ -27,6 +52,7 @@ export const SaveButton = (props) => {
 				// console.log(status);
 				setIsLoading(false);
 				setIsSaveSuccess(true);
+				setIsChanged(false);
 			}, 600);
 			if (reloadFlag === true) {
 				// eslint-disable-next-line no-undef
@@ -52,6 +78,7 @@ export const SaveButton = (props) => {
 					isPrimary
 					onClick={onClickUpdate}
 					isBusy={isLoading}
+					disabled={!isChanged}
 				>
 					{__('Save setting', 'vk-blocks-pro')}
 				</Button>

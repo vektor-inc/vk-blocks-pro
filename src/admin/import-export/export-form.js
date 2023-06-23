@@ -4,21 +4,26 @@
 import { __, sprintf } from '@wordpress/i18n';
 import { Button, CheckboxControl } from '@wordpress/components';
 import { download as downloadIcon } from '@wordpress/icons';
-import { useContext, useState } from '@wordpress/element';
+import { useState } from '@wordpress/element';
+import { useSelect } from '@wordpress/data';
 
 /**
  * Internal dependencies
  */
-import { AdminContext } from '@vkblocks/admin/index';
 import { download } from './file';
 import { OPTION_DEFAULT_SETTINGS } from './index';
-/*globals vkBlocksObject */
+import { STORE_NAME } from '@vkblocks/utils/store/constants';
 
-export default function ExportForm() {
-	const { vkBlocksOption } = useContext(AdminContext);
+export default function ExportForm(props) {
+	const { isChanged } = props;
 	const [exportOptionLists, setExportOptionLists] = useState(
 		OPTION_DEFAULT_SETTINGS
 	);
+
+	const storeVkBlocksOption = useSelect((select) => {
+		const { getOptions } = select(STORE_NAME);
+		return getOptions().vkBlocksOption;
+	}, []);
 
 	async function handleExport(event) {
 		event.preventDefault();
@@ -32,7 +37,7 @@ export default function ExportForm() {
 		});
 
 		// 一旦DBから全ての値をエクスポート対象の変数に入れる
-		const exportVkBlocksOptions = { ...vkBlocksObject.options };
+		const exportVkBlocksOptions = { ...storeVkBlocksOption };
 
 		// exportVkBlocksOptionsから、exportOptionListsに存在しないプロパティを削除します
 		for (const key in exportVkBlocksOptions) {
@@ -77,6 +82,11 @@ export default function ExportForm() {
 		setExportOptionLists(copyObj);
 	};
 
+	const canExport =
+		!isChanged && exportOptionLists.some((list) => !!list.isExport)
+			? true
+			: false;
+
 	return (
 		<div>
 			<h4>{__('Export', 'vk-blocks-pro')}</h4>
@@ -114,10 +124,10 @@ export default function ExportForm() {
 					)
 				);
 			})}
-			{vkBlocksObject.options !== vkBlocksOption && (
+			{isChanged && (
 				<p>
 					{__(
-						'It seems that the changed settings are not saved. Export settings before change.',
+						'It seems that the changed settings are not saved. Please save your changes.',
 						'vk-blocks-pro'
 					)}
 				</p>
@@ -127,9 +137,7 @@ export default function ExportForm() {
 					variant="primary"
 					icon={downloadIcon}
 					onClick={handleExport}
-					disabled={
-						!exportOptionLists.some((list) => !!list.isExport)
-					}
+					disabled={!canExport}
 				>
 					{__('Export', 'vk-blocks-pro')}
 				</Button>

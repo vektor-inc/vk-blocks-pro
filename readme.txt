@@ -85,8 +85,6 @@ e.g.
 [ Bug fix ][ Spacer ] Allow 0 height.
 [ Bug fix ] Update option value Modify API authority
 [ Bug fix ][ Dynamic Text (Pro) ] show/hide option when displaying ancestor page is applied to post types other than "page".
-[ Add Function ][ Spacer ] Allow 0 height.
-[ Other ][ Heading style ] Cope with dark background color
 
 = 1.57.1 =
 [ Bug fix ] Update option value Modify API authority

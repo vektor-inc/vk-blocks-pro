@@ -65,8 +65,9 @@ e.g.
 
 == Changelog ==
 
-[ Bug Fix ][ Page Content ] Fix duplicate Additional CSS classes.
+[ Add Filter Hook ( Pro ) ] Add filter fook of display license key form or not
 [ Specification Change ] Change option value update via Redux Store.
+[ Bug Fix ][ Page Content ] Fix duplicate Additional CSS classes.
 [ Bug fix ] Fix swiper file path ( // -> / )
 
 = 1.58.1 =

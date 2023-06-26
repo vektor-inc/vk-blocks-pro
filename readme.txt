@@ -65,9 +65,16 @@ e.g.
 
 == Changelog ==
 
+= 1.59.0 =
+[ Add Filter Hook ( Pro ) ] Add filter fook of display license key form or not
+[ Specification Change ] Change option value update via Redux Store.
+[ Bug Fix ][ Page Content ] Fix duplicate Additional CSS classes.
+[ Bug fix ] Fix swiper file path ( // -> / )
+
 = 1.58.1 =
 [ Bug fix ][ Admin screen ] Fix block style manager changes other option values.
 [ Bug fix ][ Admin screen ] Fix block manager changes other option values.
+[ Other ] Delete inc/vk-helpers
 [ Other ][ Dynamic Text (Pro) ] Translation update
 
 = 1.58.0 =

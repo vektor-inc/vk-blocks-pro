@@ -56,7 +56,7 @@ class PageContentBlockTest extends WP_UnitTestCase {
 		WP_Block_Supports::$block_to_render =  array('blockName'=> $attributes['name'], 'attrs' => $attributes );
 
 		$actual   = vk_blocks_page_content_render_callback( $attributes );
-		$expected = vk_blocks_unescape_html( '<div class=\"vk_pageContent vk_pageContent-id-' . intval( $this->page_id ) . '  wp-block-vk-blocks-page-content\"><p>This is my page.<\/p><\/div><a href=\"' . admin_url() . 'post.php?post=' . intval( $this->page_id ) . '&#038;action=edit\" class=\"vk_pageContent_editBtn btn btn-outline-primary btn-sm veu_adminEdit\" target=\"_blank\">' . __( 'Edit this area', 'vk-blocks-pro' ) . '<\/a>' );
+		$expected = vk_blocks_unescape_html( '<div class=\"vk_pageContent vk_pageContent-id-' . intval( $this->page_id ) . ' wp-block-vk-blocks-page-content\"><p>This is my page.<\/p><\/div><a href=\"' . admin_url() . 'post.php?post=' . intval( $this->page_id ) . '&#038;action=edit\" class=\"vk_pageContent_editBtn btn btn-outline-primary btn-sm veu_adminEdit\" target=\"_blank\">' . __( 'Edit this area', 'vk-blocks-pro' ) . '<\/a>' );
 
 		$this->assertEquals( $expected, $actual );
 	}

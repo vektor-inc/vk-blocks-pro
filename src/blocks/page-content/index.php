@@ -82,9 +82,6 @@ function vk_blocks_page_content_render_callback( $attributes ) {
 		if ( isset( $attributes['TargetPost'] ) ) {
 			$classes .= ' vk_pageContent-id-' . $page_content_id;
 		}
-		if ( isset( $attributes['className'] ) ) {
-			$classes .= ' ' . $attributes['className'];
-		}
 		if ( isset( $attributes['vkb_hidden'] ) && $attributes['vkb_hidden'] ) {
 			$classes .= ' vk_hidden';
 		}

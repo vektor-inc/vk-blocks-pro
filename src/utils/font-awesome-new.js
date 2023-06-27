@@ -25,7 +25,7 @@ import parse from 'html-react-parser';
  * Internal dependencies
  */
 import AdvancedPopOverControl from '@vkblocks/components/advanced-popover-control';
-import { STORE_NAME } from '@vkblocks/extensions/store/constants';
+import { STORE_NAME } from '@vkblocks/utils/store/constants';
 import { updateOptions } from '@vkblocks/utils/api';
 
 const FontAwesomeIconList = [

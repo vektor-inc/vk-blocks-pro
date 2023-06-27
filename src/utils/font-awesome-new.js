@@ -96,7 +96,7 @@ export const FontAwesome = (props) => {
 	const { setOptions } = useDispatch(STORE_NAME);
 
 	const updateSettings = (value) => {
-		optionObj?.vkBlocksOption.icon_preset_lists?.push(value);
+		optionObj?.vkBlocksOption.icon_preset_lists?.unshift(value);
 		const newObj = {
 			...optionObj,
 			vkBlocksOption: {

@@ -26,7 +26,7 @@ import parse from 'html-react-parser';
  */
 import AdvancedPopOverControl from '@vkblocks/components/advanced-popover-control';
 import { STORE_NAME } from '@vkblocks/utils/store/constants';
-import { updateOptions } from '@vkblocks/utils/api';
+import { updateOptions } from '@vkblocks/utils/store';
 
 const FontAwesomeIconList = [
 	'<i class="fas fa-arrow-right"></i>',

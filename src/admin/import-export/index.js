@@ -121,7 +121,7 @@ export const OPTION_DEFAULT_SETTINGS = [
 		isImport: true,
 	},
 	{
-		groupTitle: __('icon preset lists Setting', 'vk-blocks-pro'),
+		groupTitle: __('Icon Preset Lists Setting', 'vk-blocks-pro'),
 		options: [
 			{
 				name: 'icon_preset_lists',

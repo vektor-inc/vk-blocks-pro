@@ -118,6 +118,9 @@ export const FontAwesome = (props) => {
 		};
 		setOptions(newObj);
 		updateOptions(newObj);
+		if (newObj.vkBlocksOption.icon_preset_lists.length === 0) {
+			setIsEditMode(false);
+		}
 	};
 
 	// Set options to state.

@@ -66,7 +66,12 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 
 	// 投稿タイプの名前取得
 	$post_type_info = VkHelpers::get_post_type_info();
-	$post_type_name = $post_type_info['name'];
+	$post_type_name = '';
+	// * 検索結果ページなどで投稿タイプ情報が取得できない場合があるので空の場合は空文字を返す
+	// Cope with php warning that brought by can't get post type name on such as the search result page.
+	if ( ! empty( $post_type_info['name'] ) ){
+		$post_type_name = $post_type_info['name'];
+	}
 
 	// 先祖階層のページタイトルを取得
 	$ancestor_post_title = '';

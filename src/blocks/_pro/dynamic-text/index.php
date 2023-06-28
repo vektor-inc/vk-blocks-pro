@@ -59,11 +59,6 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 		'customFieldName'          => ( isset( $attributes['customFieldName'] ) ) ? wp_kses_post( $attributes['customFieldName'] ) : null,
 	);
 
-	$post = get_post();
-	if ( 'ancestor-page' === $options['displayElement'] && ! ( $post->post_parent ) && $options['ancestorPageHiddenOption'] ) {
-		return;
-	}
-
 	$classes = 'vk_dynamicText';
 	if ( isset( $attributes['textAlign'] ) ) {
 		$classes = ' has-text-align-' . $attributes['textAlign'];
@@ -86,6 +81,11 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 		}
 		$block_content .= $post_type_name;
 	} elseif ( 'ancestor-page' === $options['displayElement'] ) {
+		$post = get_post();
+		// 親ページがない（＝先祖階層） && 先祖階層のページを非表示にするオプションが有効の場合は処理を終了
+		if ( empty ( $post->post_parent ) && $options['ancestorPageHiddenOption'] ) {
+			return;
+		}
 		// 先祖階層のページタイトルを取得
 		$ancestor_post_title = '';
 		if ( ! empty( $post ) && ! empty( $post->ancestors ) ) {

@@ -155,6 +155,9 @@ export const FontAwesome = (props) => {
 	const existsIconPreset =
 		optionObj?.vkBlocksOption?.icon_preset_lists.length !== 0;
 
+	const showIconPresetArrow =
+		isEditMode && optionObj?.vkBlocksOption?.icon_preset_lists.length !== 1;
+
 	const render = (
 		<>
 			<BaseControl
@@ -162,126 +165,202 @@ export const FontAwesome = (props) => {
 				id={`vk_fa_icon_list`}
 				label={__('Icon', 'vk-blocks-pro') + ' ( ' + iconFamily + ' ) '}
 			>
-				<div className="vk_icon_list">
-					{optionObj?.vkBlocksOption?.icon_preset_lists &&
-						Object.keys(
-							optionObj?.vkBlocksOption?.icon_preset_lists
-						).map((key, index) => {
-							const iconPreset =
-								optionObj.vkBlocksOption.icon_preset_lists[key];
-							return (
-								<div className="vk_icon_area" key={index}>
-									<Button
-										className="vk_icon_button"
-										variant="secondary"
-										onClick={() =>
-											setAttributes({
-												[attributeName]: `${iconPreset}`,
-											})
-										}
-									>
-										{iconPreset && parse(`${iconPreset}`)}
-									</Button>
-									{isEditMode && (
-										<div className="vk_icon_button_area">
-											<Button
-												className="vk_icon_button_chevronLeft"
-												icon={chevronLeft}
-												disabled={index === 0}
-												onClick={() => {
-													const newItems = [
-														...optionObj
-															.vkBlocksOption
-															.icon_preset_lists,
-													];
-													newItems[index - 1] =
-														optionObj.vkBlocksOption.icon_preset_lists[
-															index
-														];
-													newItems[index] =
-														optionObj.vkBlocksOption.icon_preset_lists[
-															index - 1
-														];
-													const newObj = {
-														...optionObj,
-														vkBlocksOption: {
-															...optionObj.vkBlocksOption,
-															icon_preset_lists: [
-																...newItems,
-															],
-														},
-													};
-													setOptions(newObj);
-													updateOptions(newObj);
-												}}
-											/>
-											<Button
-												className="vk_icon_button_closeSmall"
-												icon={closeSmall}
-												onClick={() =>
-													deleteSettings(iconPreset)
-												}
-											/>
-											<Button
-												className="vk_icon_button_chevronRight"
-												icon={chevronRight}
-												disabled={
-													index ===
-													optionObj.vkBlocksOption
-														.icon_preset_lists
-														.length -
-														1
-												}
-												onClick={() => {
-													const newItems = [
-														...optionObj
-															.vkBlocksOption
-															.icon_preset_lists,
-													];
-													newItems[index + 1] =
-														optionObj.vkBlocksOption.icon_preset_lists[
-															index
-														];
-													newItems[index] =
-														optionObj.vkBlocksOption.icon_preset_lists[
-															index + 1
-														];
-													const newObj = {
-														...optionObj,
-														vkBlocksOption: {
-															...optionObj.vkBlocksOption,
-															icon_preset_lists: [
-																...newItems,
-															],
-														},
-													};
-													setOptions(newObj);
-													updateOptions(newObj);
-												}}
-											/>
-										</div>
-									)}
-								</div>
-							);
-						})}
-					{Object.keys(FontAwesomeIconList).map((key, index) => {
-						const iconPreset = FontAwesomeIconList[key];
-						return (
-							<div className="vk_icon_area" key={index}>
-								<Button
-									className="vk_icon_button"
-									variant="secondary"
-									onClick={() =>
-										setAttributes({
-											[attributeName]: `${iconPreset}`,
-										})
-									}
-								>
-									{iconPreset && parse(`${iconPreset}`)}
-								</Button>
+				<div className="vk_icon_list_wrap">
+					{existsIconPreset && (
+						<div className="vk_icon_list_my_list">
+							<p className="vk_icon_list_title">
+								{__(
+									// 'My lists',
+									'マイリスト',
+									'vk-blocks-pro'
+								)}
+							</p>
+							<div className="vk_icon_list">
+								{optionObj?.vkBlocksOption?.icon_preset_lists &&
+									Object.keys(
+										optionObj?.vkBlocksOption
+											?.icon_preset_lists
+									).map((key, index) => {
+										const iconPreset =
+											optionObj.vkBlocksOption
+												.icon_preset_lists[key];
+										return (
+											<div
+												className="vk_icon_area"
+												key={index}
+											>
+												<div className="vk_icon_button_icon_area">
+													<Button
+														className="vk_icon_button"
+														variant="secondary"
+														onClick={() =>
+															setAttributes({
+																[attributeName]: `${iconPreset}`,
+															})
+														}
+													>
+														{iconPreset &&
+															parse(
+																`${iconPreset}`
+															)}
+													</Button>
+													{isEditMode && (
+														<Button
+															className="vk_icon_button_closeSmall"
+															icon={closeSmall}
+															onClick={() =>
+																deleteSettings(
+																	iconPreset
+																)
+															}
+															isDestructive
+														/>
+													)}
+												</div>
+												{showIconPresetArrow && (
+													<div className="vk_icon_button_button_area">
+														<Button
+															className="vk_icon_button_chevronLeft"
+															icon={chevronLeft}
+															disabled={
+																index === 0
+															}
+															onClick={() => {
+																const newItems =
+																	[
+																		...optionObj
+																			.vkBlocksOption
+																			.icon_preset_lists,
+																	];
+																newItems[
+																	index - 1
+																] =
+																	optionObj.vkBlocksOption.icon_preset_lists[
+																		index
+																	];
+																newItems[
+																	index
+																] =
+																	optionObj.vkBlocksOption.icon_preset_lists[
+																		index -
+																			1
+																	];
+																const newObj = {
+																	...optionObj,
+																	vkBlocksOption:
+																		{
+																			...optionObj.vkBlocksOption,
+																			icon_preset_lists:
+																				[
+																					...newItems,
+																				],
+																		},
+																};
+																setOptions(
+																	newObj
+																);
+																updateOptions(
+																	newObj
+																);
+															}}
+														/>
+														<Button
+															className="vk_icon_button_chevronRight"
+															icon={chevronRight}
+															disabled={
+																index ===
+																optionObj
+																	.vkBlocksOption
+																	.icon_preset_lists
+																	.length -
+																	1
+															}
+															onClick={() => {
+																const newItems =
+																	[
+																		...optionObj
+																			.vkBlocksOption
+																			.icon_preset_lists,
+																	];
+																newItems[
+																	index + 1
+																] =
+																	optionObj.vkBlocksOption.icon_preset_lists[
+																		index
+																	];
+																newItems[
+																	index
+																] =
+																	optionObj.vkBlocksOption.icon_preset_lists[
+																		index +
+																			1
+																	];
+																const newObj = {
+																	...optionObj,
+																	vkBlocksOption:
+																		{
+																			...optionObj.vkBlocksOption,
+																			icon_preset_lists:
+																				[
+																					...newItems,
+																				],
+																		},
+																};
+																setOptions(
+																	newObj
+																);
+																updateOptions(
+																	newObj
+																);
+															}}
+														/>
+													</div>
+												)}
+											</div>
+										);
+									})}
 							</div>
-						);
-					})}
+						</div>
+					)}
+					<div className="vk_icon_list_preset">
+						{existsIconPreset && (
+							<p className="vk_icon_list_title">
+								{__(
+									// 'Preset',
+									'プリセット',
+									'vk-blocks-pro'
+								)}
+							</p>
+						)}
+						<div className="vk_icon_list">
+							{Object.keys(FontAwesomeIconList).map(
+								(key, index) => {
+									const iconPreset = FontAwesomeIconList[key];
+									return (
+										<div
+											className="vk_icon_area"
+											key={index}
+										>
+											<div className="vk_icon_button_icon_area">
+												<Button
+													className="vk_icon_button"
+													variant="secondary"
+													onClick={() =>
+														setAttributes({
+															[attributeName]: `${iconPreset}`,
+														})
+													}
+												>
+													{iconPreset &&
+														parse(`${iconPreset}`)}
+												</Button>
+											</div>
+										</div>
+									);
+								}
+							)}
+						</div>
+					</div>
 				</div>
 			</BaseControl>
 			<hr />
@@ -304,6 +383,7 @@ export const FontAwesome = (props) => {
 				<>
 					{(canAddIconPreset || existsIconPreset) && <hr />}
 					<Button
+						className="vk_icon_add_my_list_button"
 						variant="primary"
 						disabled={!canAddIconPreset}
 						onClick={() =>
@@ -311,16 +391,26 @@ export const FontAwesome = (props) => {
 						}
 					>
 						{__(
-							'設定アイコンをアイコンリストに追加',
+							'マイリストに追加',
+							// 'Add my list',
 							'vk-blocks-pro'
 						)}
 					</Button>
+					{!existsIconPreset && (
+						<p className="mt-1">
+							{__(
+								'選択表示中のアイコンを「マイリスト」として登録・編集が可能です。',
+								// 'You can register and edit the selected icon as "My list".',
+								'vk-blocks-pro'
+							)}
+						</p>
+					)}
 					{existsIconPreset && (
 						<ToggleControl
 							className="mt-1"
 							label={__(
-								'アイコンリスト 編集モード',
-								// 'Icons Lists Edit mode',
+								'削除・並び替えモード',
+								// 'Delete/Sort mode',
 								'vk-blocks-pro'
 							)}
 							checked={isEditMode}

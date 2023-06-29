@@ -65,6 +65,7 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ FAQ2 ] Add an accordion default option on a per-block.
 [ Bug fix ][ Dynamic Text (Pro) ] Fix php warning that brought by can't get post type name on search result page.
 [ Bug fix ][ Dynamic Text (Pro) ] Fix php warning that brought by can't get ancestor page on search result page.
 

@@ -8,5 +8,11 @@
 	"supports": {
 		"anchor": true,
 		"className": true
+	},
+	"attributes": {
+		"accordionBlockSetting": {
+			"type": "string",
+			"default": "default"
+		}
 	}
 }

@@ -3,10 +3,12 @@ import {
 	InspectorControls,
 	useBlockProps,
 } from '@wordpress/block-editor';
-import { PanelBody, PanelRow } from '@wordpress/components';
+import { PanelBody, PanelRow, SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function FAQ2Edit() {
+export default function FAQ2Edit(props) {
+	const { attributes, setAttributes } = props;
+	const { accordionBlockSetting } = attributes;
 	const blockProps = useBlockProps({
 		className: 'vk_faq',
 	});
@@ -15,15 +17,46 @@ export default function FAQ2Edit() {
 
 	const TEMPLATE = [['vk-blocks/faq2-q'], ['vk-blocks/faq2-a']];
 
-	let massage;
+	let settingContent;
 	// eslint-disable-next-line no-undef
 	if (vk_blocks_check.is_pro) {
-		massage = __(
-			'If you want to be collapsing this block, you can set it at Setting > VK Blocks',
-			'vk-blocks-pro'
+		settingContent = (
+			<SelectControl
+				name="vk_blocks_options[new_faq_accordion]"
+				value={accordionBlockSetting}
+				onChange={(value) => {
+					setAttributes({
+						accordionBlockSetting: value,
+					});
+				}}
+				options={[
+					{
+						label: __('Use common settings', 'vk-blocks-pro'),
+						value: 'default',
+					},
+					{
+						label: __('Disable accordion', 'vk-blocks-pro'),
+						value: 'disable',
+					},
+					{
+						label: __(
+							'Enable accordion and default open',
+							'vk-blocks-pro'
+						),
+						value: 'open',
+					},
+					{
+						label: __(
+							'Enable accordion and default close',
+							'vk-blocks-pro'
+						),
+						value: 'close',
+					},
+				]}
+			/>
 		);
 	} else {
-		massage = __(
+		settingContent = __(
 			'You can be collapsing this block at VK Blocks Pro',
 			'vk-blocks-pro'
 		);
@@ -33,7 +66,7 @@ export default function FAQ2Edit() {
 		<>
 			<InspectorControls>
 				<PanelBody title={__('Accordion Setting', 'vk-blocks-pro')}>
-					<PanelRow>{massage}</PanelRow>
+					<PanelRow>{settingContent}</PanelRow>
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>

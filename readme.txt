@@ -66,6 +66,7 @@ e.g.
 == Changelog ==
 
 [ Bug fix ][ Dynamic Text (Pro) ] Fix php warning that brought by can't get post type name on search result page.
+[ Bug fix ][ Dynamic Text (Pro) ] Fix php warning that brought by can't get ancestor page on search result page.
 
 = 1.59.0 =
 [ Add Filter Hook ( Pro ) ] Add filter fook of display license key form or not

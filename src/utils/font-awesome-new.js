@@ -170,8 +170,8 @@ export const FontAwesome = (props) => {
 						<div className="vk_icon_list_my_list">
 							<p className="vk_icon_list_title">
 								{__(
-									// 'My lists',
-									'マイリスト',
+									// 'Custom list',
+									'カスタムリスト',
 									'vk-blocks-pro'
 								)}
 							</p>
@@ -391,20 +391,11 @@ export const FontAwesome = (props) => {
 						}
 					>
 						{__(
-							'マイリストに追加',
-							// 'Add my list',
+							'選択中アイコンをカスタムリストに追加',
+							// 'Add selected icon to custom list',
 							'vk-blocks-pro'
 						)}
 					</Button>
-					{!existsIconPreset && (
-						<p className="mt-1">
-							{__(
-								'選択表示中のアイコンを「マイリスト」として登録・編集が可能です。',
-								// 'You can register and edit the selected icon as "My list".',
-								'vk-blocks-pro'
-							)}
-						</p>
-					)}
 					{existsIconPreset && (
 						<ToggleControl
 							className="mt-1"

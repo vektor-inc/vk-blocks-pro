@@ -122,14 +122,15 @@ export const OPTION_DEFAULT_SETTINGS = [
 	},
 ];
 
-export default function AdminImportExport() {
+export default function AdminImportExport(props) {
+	const { isChanged, setIsChanged } = props;
 	return (
 		<section>
 			<h3 id="import-export-tool">
 				{__('Import Export Tool', 'vk-blocks-pro')}
 			</h3>
-			<ExportForm />
-			<ImportForm />
+			<ExportForm isChanged={isChanged} />
+			<ImportForm isChanged={isChanged} setIsChanged={setIsChanged} />
 		</section>
 	);
 }

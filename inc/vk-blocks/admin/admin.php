@@ -13,12 +13,45 @@ if ( ! function_exists( 'vk_blocks_setting' ) ) {
 	/**
 	 * Check need license environment
 	 *
-	 * @return bool
+	 * @param string $license_check_test テスト用の変数.
+	 * @return bool ライセンスキー用のフォームを表示するか否か.
 	 */
-	function vk_blocks_is_license_setting() {
-		if ( vk_blocks_is_pro() && wp_get_theme()->Template !== 'katawara' ) {
-			return true;
+	function vk_blocks_is_license_setting( $license_check_test = '' ) {
+
+		// Pro 版でしかライセンスチェックが走らないので関数がない場合は false を返す
+		if ( ! function_exists( 'vk_blocks_license_check' ) ) {
+			return false;
 		}
+
+		// テストデータが有る場合はそれを採用しそうでなければ関数を走らせる
+		if ( ! empty( $license_check_test ) ) {
+			$license_check = $license_check_test;
+		} else {
+			$license_check = vk_blocks_license_check();
+		}
+
+		// フィルターフックでライセンスキーの表示・非表示の切り替えが可能になる
+		$display_license_setting = apply_filters( 'vk_blocks_license_key_display_setting', true );
+
+		$license_setting = null;
+
+		// ライセンスチェックの状態に応じて処理
+		if ( 'exemption' === $license_check ) {
+			// ライセンス認証が免除されている場合はそもそも必要がないので false を返す
+			$license_setting = false;
+		} elseif ( 'valid' === $license_check ) {
+			// ライセンスキーが正しい場合はフィルターフックの値で表示・非表示を制御
+			if ( true === $display_license_setting ) {
+				$license_setting = true;
+			} else {
+				$license_setting = false;
+			}
+		} else {
+			// それ以外の場合は必ず表示する
+			$license_setting = true;
+		}
+
+		return $license_setting;
 	}
 
 	/**
@@ -165,7 +198,6 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 		'vk-blocks-admin-js',
 		'vkBlocksObject',
 		array(
-			'options'          => VK_Blocks_Options::get_options(),
 			'isLicenseSetting' => vk_blocks_is_license_setting(),
 			'isPro'            => vk_blocks_is_pro(),
 			'deprecatedLists'  => VK_Blocks_Options::get_deprecated_lists(),

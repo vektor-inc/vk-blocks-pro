@@ -39,6 +39,13 @@ define( 'GUTENBERG_LOAD_VENDOR_SCRIPTS', false );
  * テストするプラグインを読み込み
  */
 function _manually_load_plugin() {
+	// ./temp/themes/ から読み込む
+	register_theme_directory( dirname( dirname( __DIR__ ) ) . '/temp/themes/' );
+	search_theme_directories();
+	// Lightning 有効化（インストールは wp-env.json で行っている）
+	switch_theme( 'lightning' );
+	// Lightningを g3 モード指定
+	update_option( 'lightning_theme_generation', 'g3' );
 	require_once dirname( dirname( dirname( __FILE__ ) ) ) . '/vk-blocks.php';
 }
 tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );

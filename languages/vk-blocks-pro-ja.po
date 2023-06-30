@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2023-06-02T07:22:42+00:00\n"
-"PO-Revision-Date: 2023-06-02 16:23+0900\n"
+"POT-Creation-Date: 2023-06-21T06:04:08+00:00\n"
+"PO-Revision-Date: 2023-06-21 15:05+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -43,6 +43,7 @@ msgstr "%sを削除しますか？"
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:63
 #: src/admin/custom-format/add-item.js:152
 #: src/admin/custom-format/delete-item-button.js:63
+#: src/admin/import-export/import-form.js:415
 msgid "Cancel"
 msgstr "キャンセル"
 
@@ -61,7 +62,7 @@ msgstr "選択"
 msgid "Balloon Image Name"
 msgstr "吹き出し画像の名前"
 
-#: src/admin/balloon/index.js:37
+#: src/admin/balloon/index.js:37 src/admin/import-export/index.js:25
 msgid "Balloon Setting"
 msgstr "吹き出しブロック設定"
 
@@ -93,13 +94,14 @@ msgstr "よく使う吹き出し用のアイコン画像を登録する事がで
 msgid "image"
 msgstr "画像"
 
-#: src/admin/block-manager/index.js:51
+#: src/admin/block-manager/index.js:51 src/admin/import-export/index.js:106
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:84
 #: inc/vk-blocks/admin/admin.php:84
 msgid "Block Manager Setting"
 msgstr "ブロックマネージャー設定"
 
 #: src/admin/block-style-manager/index.js:27
+#: src/admin/import-export/index.js:115
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:85
 #: inc/vk-blocks/admin/admin.php:85
 msgid "Block Style Manager Setting"
@@ -111,6 +113,7 @@ msgstr "ブロックスタイル ラベル（変更可能）"
 
 #: src/admin/custom-block-style/add-button/index.js:141
 #: src/admin/custom-format/add-item.js:164
+#: src/admin/import-export/import-form.js:310
 msgid "Add"
 msgstr "追加"
 
@@ -166,6 +169,7 @@ msgstr "(例) %s-block-style"
 
 #: src/admin/custom-block-style/index.js:77
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:31
+#: src/admin/import-export/index.js:52
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:79
 #: inc/vk-blocks/admin/admin.php:79
 msgid "Custom Block Style Setting"
@@ -213,7 +217,7 @@ msgstr ""
 msgid "Edit"
 msgstr "編集"
 
-#: src/admin/custom-css.js:20
+#: src/admin/custom-css.js:20 src/admin/import-export/index.js:96
 #: src/extensions/common/custom-css-extension/index.js:225
 #: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-pro.php:15
 #: inc/vk-blocks-pro/admin-pro/admin-pro.php:15
@@ -283,9 +287,6 @@ msgstr "改行しない"
 #: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:67
 #: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:85
 #: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:171
-#: inc/term-color/package/class.term-color.php:67
-#: inc/term-color/package/class.term-color.php:85
-#: inc/term-color/package/class.term-color.php:171
 msgid "Color"
 msgstr "色"
 
@@ -330,7 +331,7 @@ msgstr ""
 msgid "Example:"
 msgstr "例:"
 
-#: src/admin/custom-format/index.js:50
+#: src/admin/custom-format/index.js:50 src/admin/import-export/index.js:39
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:78
 #: inc/vk-blocks/admin/admin.php:78
 msgid "Custom Format Setting"
@@ -353,9 +354,9 @@ msgstr "プレビューテキスト"
 msgid "Export %s"
 msgstr "%sをエクスポート"
 
-#: src/admin/import-export/export-form.js:119
-msgid "It seems that the changed settings are not saved. Export settings before change."
-msgstr "変更した設定が保存されていないようです。変更前の設定内容をエクスポートします。"
+#: src/admin/import-export/export-form.js:129
+msgid "It seems that the changed settings are not saved. Please save your changes."
+msgstr "変更した設定が保存されていないようです。変更を保存してください。"
 
 #: src/admin/import-export/export-form.js:134
 msgid "Export"
@@ -395,7 +396,8 @@ msgid "Override"
 msgstr "上書き"
 
 #: src/admin/import-export/import-form.js:355
-msgid "The following data will not be imported because the identifiers are covered."
+msgid ""
+"The following data will not be imported because the identifiers are covered."
 msgstr "以下のデータは識別子が被っているためインポートしません。"
 
 #: src/admin/import-export/import-form.js:430
@@ -407,9 +409,28 @@ msgid "Import Success"
 msgstr "インポート成功"
 
 #: src/admin/import-export/index.js:129
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:86
 #: inc/vk-blocks/admin/admin.php:86
 msgid "Import Export Tool"
 msgstr "インポート エクスポート ツール"
+
+#: src/admin/import-export/index.js:15
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:74
+#: inc/vk-blocks/admin/admin.php:74
+msgid "License Key"
+msgstr "ライセンスキー"
+
+#: src/admin/import-export/index.js:65 src/blocks/heading/edit.js:274
+msgid "Margin Setting"
+msgstr "余白設定"
+
+#: src/admin/import-export/index.js:77 src/admin/load-separate.js:33
+msgid "Load Separate Setting"
+msgstr "分割読み込み設定"
+
+#: src/admin/import-export/index.js:86 src/admin/new-faq.js:20
+msgid "FAQ Block Setting"
+msgstr "FAQ Blocks 設定"
 
 #: src/admin/license.js:24
 msgid ""
@@ -430,10 +451,6 @@ msgstr ""
 #: src/admin/license.js:37
 msgid "License key"
 msgstr "ライセンスキー"
-
-#: src/admin/load-separate.js:33
-msgid "Load Separate Setting"
-msgstr "分割読み込み設定"
 
 #: src/admin/load-separate.js:36
 msgid "Note that the order in which CSS/JS are loaded will change."
@@ -499,13 +516,13 @@ msgstr "PC"
 
 #: src/admin/margin.js:47 src/blocks/_pro/outer/edit.js:636
 #: src/blocks/button/edit.js:460 src/blocks/slider/edit.js:542
-#: src/components/advanced-viewport-control/index.js:31
+#: src/components/advanced-viewport-control/index.js:32
 msgid "Tablet"
 msgstr "タブレット"
 
 #: src/admin/margin.js:51 src/blocks/_pro/outer/edit.js:621
 #: src/blocks/button/edit.js:395 src/blocks/slider/edit.js:563
-#: src/components/advanced-viewport-control/index.js:39
+#: src/components/advanced-viewport-control/index.js:41
 msgid "Mobile"
 msgstr "モバイル"
 
@@ -525,10 +542,6 @@ msgstr ""
 #: src/blocks/_pro/grid-column/edit.js:78
 msgid "Unit"
 msgstr "単位"
-
-#: src/admin/new-faq.js:20
-msgid "FAQ Block Setting"
-msgstr "FAQ Blocks 設定"
 
 #: src/admin/new-faq.js:34
 msgid "Disable accordion"
@@ -826,19 +839,19 @@ msgstr "デバイス毎の高さ"
 msgid "There are no applicable child pages."
 msgstr "該当する子ページがありません。"
 
-#: src/blocks/_pro/child-page/edit.js:102
+#: src/blocks/_pro/child-page/edit.js:103
 msgid "Check your settings from the settings sidebar."
 msgstr "設定サイドバーから設定を確認ください。"
 
-#: src/blocks/_pro/child-page/edit.js:111 src/blocks/_pro/post-list/edit.js:205
+#: src/blocks/_pro/child-page/edit.js:115 src/blocks/_pro/post-list/edit.js:205
 msgid "Display conditions"
 msgstr "表示条件"
 
-#: src/blocks/_pro/child-page/edit.js:115
+#: src/blocks/_pro/child-page/edit.js:119
 msgid "Parent"
 msgstr "親ページ"
 
-#: src/blocks/_pro/child-page/edit.js:130 src/blocks/_pro/post-list/edit.js:361
+#: src/blocks/_pro/child-page/edit.js:134 src/blocks/_pro/post-list/edit.js:361
 msgid "Ignore this post"
 msgstr "この投稿を除く"
 
@@ -846,15 +859,15 @@ msgstr "この投稿を除く"
 msgid "Current page"
 msgstr "現在のページ"
 
-#: src/blocks/_pro/dynamic-text/edit.js:102
+#: src/blocks/_pro/dynamic-text/edit.js:105
 msgid "Please select display element from the Setting sidebar."
 msgstr "設定サイドバーから表示要素を選択してください。"
 
-#: src/blocks/_pro/dynamic-text/edit.js:110
+#: src/blocks/_pro/dynamic-text/edit.js:113
 msgid "Post Type Name"
 msgstr "投稿タイプ名"
 
-#: src/blocks/_pro/dynamic-text/edit.js:114
+#: src/blocks/_pro/dynamic-text/edit.js:117
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
 #: src/blocks/ancestor-page-list/index.php:44
@@ -863,78 +876,111 @@ msgstr "投稿タイプ名"
 msgid "Ancestor Page Title"
 msgstr "先祖ページのタイトル"
 
-#: src/blocks/_pro/dynamic-text/edit.js:139
+#: src/blocks/_pro/dynamic-text/edit.js:122
+msgid "Custom field"
+msgstr "カスタムフィールド"
+
+#: src/blocks/_pro/dynamic-text/edit.js:128
+msgid "This block is not rendered because no custom field name is specified."
+msgstr ""
+"カスタム フィールド名が指定されていないためこのブロックは表示されません。"
+
+#: src/blocks/_pro/dynamic-text/edit.js:158
 msgid "Display element settings"
 msgstr "表示要素の設定"
 
-#: src/blocks/_pro/dynamic-text/edit.js:144
+#: src/blocks/_pro/dynamic-text/edit.js:163
 msgid "Display element"
 msgstr "表示要素"
 
-#: src/blocks/_pro/dynamic-text/edit.js:153
+#: src/blocks/_pro/dynamic-text/edit.js:172
 msgid "Please Select"
 msgstr "選択してください"
 
-#: src/blocks/_pro/dynamic-text/edit.js:157
+#: src/blocks/_pro/dynamic-text/edit.js:176
 msgid "Post type name of the page being viewed"
 msgstr "表示中のページの投稿タイプ名"
 
-#: src/blocks/_pro/dynamic-text/edit.js:164
+#: src/blocks/_pro/dynamic-text/edit.js:183
 msgid "Page name in the ancestor hierarchy of the displayed page"
 msgstr "表示中の固定ページの先祖階層のページ名"
 
-#: src/blocks/_pro/dynamic-text/edit.js:179
+#: src/blocks/_pro/dynamic-text/edit.js:190
+msgid "Custom Field"
+msgstr "カスタムフィールド"
+
+#: src/blocks/_pro/dynamic-text/edit.js:198
 msgid "Hide on Ancestor Hierarchy Pages"
 msgstr "先祖階層のページでは非表示にする"
 
-#: src/blocks/_pro/dynamic-text/edit.js:192
+#: src/blocks/_pro/dynamic-text/edit.js:211
 msgid ""
 "This block will not display on pages other than pages that have a parent "
 "hierarchy."
 msgstr "このブロックは親階層を持つページ以外の固定ページには表示されません。"
 
-#: src/blocks/_pro/dynamic-text/edit.js:32
+#: src/blocks/_pro/dynamic-text/edit.js:223
+msgid "Custom Field Name"
+msgstr "カスタムフィールド名"
+
+#: src/blocks/_pro/dynamic-text/edit.js:230
+msgid "Field Type"
+msgstr "フィールドタイプ"
+
+#: src/blocks/_pro/dynamic-text/edit.js:239
+msgid "text"
+msgstr "テキスト"
+
+#: src/blocks/_pro/dynamic-text/edit.js:243
+msgid "textarea"
+msgstr "テキストエリア"
+
+#: src/blocks/_pro/dynamic-text/edit.js:247
+msgid "wysiwyg"
+msgstr "WYSIWYG"
+
+#: src/blocks/_pro/dynamic-text/edit.js:33
 msgid "HTML element"
 msgstr "HTML 要素"
 
-#: src/blocks/_pro/dynamic-text/edit.js:37
+#: src/blocks/_pro/dynamic-text/edit.js:38
 msgid "div (default)"
 msgstr "div (標準)"
 
-#: src/blocks/_pro/dynamic-text/edit.js:41
+#: src/blocks/_pro/dynamic-text/edit.js:42
 msgid "h1"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:45
+#: src/blocks/_pro/dynamic-text/edit.js:46
 #: src/blocks/ancestor-page-list/edit.js:51
 msgid "h2"
 msgstr "h2"
 
-#: src/blocks/_pro/dynamic-text/edit.js:49
+#: src/blocks/_pro/dynamic-text/edit.js:50
 #: src/blocks/ancestor-page-list/edit.js:55
 msgid "h3"
 msgstr "h3"
 
-#: src/blocks/_pro/dynamic-text/edit.js:53
+#: src/blocks/_pro/dynamic-text/edit.js:54
 #: src/blocks/ancestor-page-list/edit.js:59
 msgid "h4"
 msgstr "h4"
 
-#: src/blocks/_pro/dynamic-text/edit.js:57
+#: src/blocks/_pro/dynamic-text/edit.js:58
 #: src/blocks/ancestor-page-list/edit.js:63
 msgid "h5"
 msgstr "h5"
 
-#: src/blocks/_pro/dynamic-text/edit.js:61
+#: src/blocks/_pro/dynamic-text/edit.js:62
 #: src/blocks/ancestor-page-list/edit.js:67
 msgid "h6"
 msgstr "h6"
 
-#: src/blocks/_pro/dynamic-text/edit.js:65
+#: src/blocks/_pro/dynamic-text/edit.js:66
 msgid "p"
 msgstr "p"
 
-#: src/blocks/_pro/dynamic-text/edit.js:69
+#: src/blocks/_pro/dynamic-text/edit.js:70
 msgid "span"
 msgstr "span"
 
@@ -1187,7 +1233,7 @@ msgstr "アイコンカード設定"
 #: src/blocks/_pro/step-item/edit.js:82 src/blocks/border-box/edit.js:240
 #: src/blocks/button/edit.js:748 src/blocks/heading/edit.js:335
 #: src/blocks/icon/edit.js:269 src/blocks/pr-content/edit.js:212
-#: src/utils/font-awesome-new.js:56
+#: src/utils/font-awesome-new.js:66
 msgid "Icon"
 msgstr "アイコン"
 
@@ -2086,10 +2132,6 @@ msgstr "見出しスタイル"
 msgid "Plain"
 msgstr "装飾無し"
 
-#: src/blocks/heading/edit.js:274
-msgid "Margin Setting"
-msgstr "余白設定"
-
 #: src/blocks/heading/edit.js:276
 msgid "Margin between Heading and sub text (rem)"
 msgstr "見出しとサブテキストの余白サイズ（rem）"
@@ -2539,15 +2581,13 @@ msgstr "注意 : 全角スペースが含まれています。CSSが効かない
 
 #: src/components/code-mirror-css/index.js:48
 msgid "There is an error with your CSS structure."
-msgstr ""
+msgstr "CSS 構造にエラーがあります。"
 
 #: src/components/column-layout-control/index.js:20
 msgid "Card (Image Round)"
 msgstr "カード（画像丸抜き）"
 
 #: src/components/column-layout-control/index.js:26
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:768
-#: inc/vk-components/package/class-vk-component-posts.php:768
 msgid "Card"
 msgstr "カード"
 
@@ -2564,8 +2604,6 @@ msgid "Card (Horizontal)"
 msgstr "カード（水平）"
 
 #: src/components/column-layout-control/index.js:42
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:784
-#: inc/vk-components/package/class-vk-component-posts.php:784
 msgid "Media"
 msgstr "メディア"
 
@@ -2853,11 +2891,11 @@ msgstr "闇の中で"
 msgid "Lorem ipsum"
 msgstr "ロレム・アプサム"
 
-#: src/utils/font-awesome-new.js:233
+#: src/utils/font-awesome-new.js:243
 msgid "Font Awesome icon list"
 msgstr "Font Awesome アイコンリスト"
 
-#: src/utils/font-awesome-new.js:236
+#: src/utils/font-awesome-new.js:246
 msgid ""
 "If you want to use an icon other than the ones listed above, you can use any "
 "of the icons from Font Awesome's icon list Please select a tag and enter it."
@@ -2865,11 +2903,11 @@ msgstr ""
 "他のアイコンを使いたい場合は Font Awesome のアイコンリストから選んでタグを入"
 "力してください。"
 
-#: src/utils/font-awesome-new.js:241
+#: src/utils/font-awesome-new.js:251
 msgid "Ex) "
 msgstr "例) "
 
-#: src/utils/font-awesome-new.js:253
+#: src/utils/font-awesome-new.js:265
 msgid ""
 "When you click save button, the window will be reloaded and this setting "
 "will be applied."
@@ -2877,11 +2915,11 @@ msgstr ""
 "保存ボタンをクリックすると、ウィンドウが再読み込みされて、変更が適用されま"
 "す。"
 
-#: src/utils/font-awesome-new.js:263
+#: src/utils/font-awesome-new.js:275
 msgid "Save"
 msgstr "保存"
 
-#: src/utils/font-awesome-new.js:277
+#: src/utils/font-awesome-new.js:291
 msgid "Select Icon"
 msgstr "アイコンを選択"
 
@@ -3142,11 +3180,6 @@ msgstr "Blocks"
 msgid "Blocks Setting"
 msgstr "Blocks 設定"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:74
-#: inc/vk-blocks/admin/admin.php:74
-msgid "License Key"
-msgstr "ライセンスキー"
-
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:76
 #: inc/vk-blocks/admin/admin.php:76
 msgid "Balloon Block Setting"
@@ -3157,8 +3190,8 @@ msgstr "吹き出しブロック設定"
 msgid "Load Separete Setting"
 msgstr "分割読み込み設定"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:100
-#: inc/vk-blocks/admin/admin.php:100
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:101
+#: inc/vk-blocks/admin/admin.php:101
 msgid "Setting"
 msgstr "設定"
 
@@ -3416,57 +3449,6 @@ msgstr "投稿"
 #: inc/vk-blocks/view/class-vk-blocks-postlist.php:257
 msgid "There are no %ss."
 msgstr "該当の%sはありません。"
-
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:55
-#: inc/vk-components/package/class-vk-component-posts.php:55
-msgid "Read more"
-msgstr "続きを読む"
-
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:57
-#: inc/vk-components/package/class-vk-component-posts.php:57
-msgid "New!!"
-msgstr "New!!"
-
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:268
-#: inc/vk-components/package/class-vk-component-posts.php:268
-msgid "More"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:304
-#: inc/vk-components/package/class-vk-component-posts.php:304
-msgid "Posts navigation"
-msgstr "投稿ナビゲーション"
-
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:305
-#: inc/vk-components/package/class-vk-component-posts.php:305
-msgid "Posts"
-msgstr "投稿リスト"
-
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:307
-#: inc/vk-components/package/class-vk-component-posts.php:307
-msgid "Page"
-msgstr "ページ"
-
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:772
-#: inc/vk-components/package/class-vk-component-posts.php:772
-msgid "Card Noborder"
-msgstr "カード（線なし）"
-
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:776
-#: inc/vk-components/package/class-vk-component-posts.php:776
-msgid "Card Intext"
-msgstr "カード（インテキスト）"
-
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:780
-#: inc/vk-components/package/class-vk-component-posts.php:780
-msgid "Card Horizontal"
-msgstr "カード（水平）"
-
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:788
-#: inc/vk-components/package/class-vk-component-posts.php:788
-msgctxt "post list type"
-msgid "Text 1 Column"
-msgstr "テキスト 1 カラム"
 
 #: dist/vk-blocks-pro/inc/vk-css-optimize/config.php:12
 #: inc/vk-css-optimize/config.php:12
@@ -4180,7 +4162,7 @@ msgstr "追加すると見出しに合わせて自動で生成される目次で
 #: src/blocks/_pro/taxonomy/block.json
 msgctxt "block title"
 msgid "Taxonomy"
-msgstr ""
+msgstr "タクソノミー"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/taxonomy/block.json
 #: inc/vk-blocks/build/blocks/_pro/taxonomy/block.json
@@ -4219,9 +4201,33 @@ msgid ""
 "explaining the order."
 msgstr "順番を説明する時に便利でシンプルなスケジュールなどを表示します。"
 
-#~ msgid "This block will not render because no visible element is selected."
-#~ msgstr ""
-#~ "表示要素が選択されていないため、このブロックはレンダリングされません。"
+#~ msgid "Read more"
+#~ msgstr "続きを読む"
+
+#~ msgid "New!!"
+#~ msgstr "New!!"
+
+#~ msgid "Posts navigation"
+#~ msgstr "投稿ナビゲーション"
+
+#~ msgid "Posts"
+#~ msgstr "投稿リスト"
+
+#~ msgid "Page"
+#~ msgstr "ページ"
+
+#~ msgid "Card Noborder"
+#~ msgstr "カード（線なし）"
+
+#~ msgid "Card Intext"
+#~ msgstr "カード（インテキスト）"
+
+#~ msgid "Card Horizontal"
+#~ msgstr "カード（水平）"
+
+#~ msgctxt "post list type"
+#~ msgid "Text 1 Column"
+#~ msgstr "テキスト 1 カラム"
 
 #~ msgid "Ancestor Page Title "
 #~ msgstr "先祖ページのタイトル"

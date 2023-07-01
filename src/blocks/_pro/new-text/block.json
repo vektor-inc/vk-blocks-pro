@@ -23,7 +23,7 @@
 			"wide",
 			"full"
 		],
-		"anchor": true,
+		"anchor": false,
 		"html": false,
 		"color": {
 			"gradients": true,

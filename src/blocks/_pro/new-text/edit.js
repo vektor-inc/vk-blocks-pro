@@ -48,9 +48,10 @@ export default function NewTextEdit(props) {
 	const spacingProps = useSpacingProps(attributes);
 
 	const blockProps = useBlockProps({
-		className: classnames('vk-blocks-new-text', {
+		className: classnames({
 			[`vk-blocks-new-text-disabled`]: !isNew,
 		}),
+        style: !isNew && { opacity: 0.15 } 
 	});
 
 	return (
@@ -67,7 +68,8 @@ export default function NewTextEdit(props) {
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<div {...blockProps}>
+			<div {...blockProps}
+                >
 				<RichText
 					allowedFormats={ALLOWED_FORMATS}
 					withoutInteractiveFormatting

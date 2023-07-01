@@ -15,8 +15,8 @@ use VektorInc\VK_Helpers\VkHelpers;
  */
 function vk_blocks_new_text_render_callback( $attributes ) {
 	$days_as_new_post = $attributes['daysAsNewPost'];
-	$limit         = gmdate( 'Ymd', strtotime( "-$days_as_new_post days" ) );
-	$post_date     = get_the_date( 'Ymd' );
+	$limit            = gmdate( 'Ymd', strtotime( "-$days_as_new_post days" ) );
+	$post_date        = get_the_date( 'Ymd' );
 
 	$wrapper_attributes = get_block_wrapper_attributes();
 	$result             = "<div $wrapper_attributes>";

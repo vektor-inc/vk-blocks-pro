@@ -197,7 +197,7 @@ class VK_Blocks_Global_Settings {
 			array(
 				'name'   => 'new-text',
 				'is_pro' => true,
-			),			
+			),
 			array(
 				'name'   => 'outer',
 				'is_pro' => true,

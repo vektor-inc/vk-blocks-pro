@@ -51,7 +51,7 @@ export default function NewTextEdit(props) {
 		className: classnames({
 			[`vk-blocks-new-text-disabled`]: !isNew,
 		}),
-        style: !isNew && { opacity: 0.15 } 
+		style: !isNew && { opacity: 0.15 },
 	});
 
 	return (
@@ -68,8 +68,7 @@ export default function NewTextEdit(props) {
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<div {...blockProps}
-                >
+			<div {...blockProps}>
 				<RichText
 					allowedFormats={ALLOWED_FORMATS}
 					withoutInteractiveFormatting

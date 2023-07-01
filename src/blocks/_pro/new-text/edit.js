@@ -48,9 +48,6 @@ export default function NewTextEdit(props) {
 	const spacingProps = useSpacingProps(attributes);
 
 	const blockProps = useBlockProps({
-		className: classnames({
-			[`vk-blocks-new-text-disabled`]: !isNew,
-		}),
 		style: !isNew && { opacity: 0.15 },
 	});
 

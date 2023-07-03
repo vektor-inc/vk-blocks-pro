@@ -10,7 +10,7 @@
 		"className": true
 	},
 	"attributes": {
-		"accordionBlockSetting": {
+		"showContent": {
 			"type": "string",
 			"default": "default"
 		}

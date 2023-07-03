@@ -8,7 +8,7 @@ import { __ } from '@wordpress/i18n';
 
 export default function FAQ2Edit(props) {
 	const { attributes, setAttributes } = props;
-	const { accordionBlockSetting } = attributes;
+	const { showContent } = attributes;
 	const blockProps = useBlockProps({
 		className: 'vk_faq',
 	});
@@ -23,10 +23,10 @@ export default function FAQ2Edit(props) {
 		settingContent = (
 			<SelectControl
 				name="vk_blocks_options[new_faq_accordion]"
-				value={accordionBlockSetting}
+				value={showContent}
 				onChange={(value) => {
 					setAttributes({
-						accordionBlockSetting: value,
+						showContent: value,
 					});
 				}}
 				options={[

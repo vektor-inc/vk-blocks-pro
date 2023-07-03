@@ -110,6 +110,7 @@
 		}
 	},
 	"supports": {
+		"html": false,
 		"className": true
 	},
 	"parent": ["vk-blocks/card"]

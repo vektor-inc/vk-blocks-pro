@@ -71,7 +71,6 @@ export default function NewTextEdit(props) {
 					withoutInteractiveFormatting
 					className={classnames(
 						className,
-						'vk-blocks-new-text_new-text',
 						colorProps.className
 					)}
 					style={{

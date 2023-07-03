@@ -69,10 +69,7 @@ export default function NewTextEdit(props) {
 				<RichText
 					allowedFormats={ALLOWED_FORMATS}
 					withoutInteractiveFormatting
-					className={classnames(
-						className,
-						colorProps.className
-					)}
+					className={classnames(className, colorProps.className)}
 					style={{
 						...borderProps.style,
 						...colorProps.style,

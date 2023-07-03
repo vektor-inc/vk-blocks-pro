@@ -54,7 +54,6 @@ add_action( 'init', 'vk_blocks_register_block_faq2', 99 );
 function vk_blocks_faq2_render_callback( $block_content, $block ) {
 	$vk_blocks_options = VK_Blocks_Options::get_options();
 	if ( 'vk-blocks/faq2' === $block['blockName'] ) {
-
 		if ( ! empty( $block['attrs']['showContent'] ) && 'default' !== $block['attrs']['showContent'] ) {
 			$vk_blocks_options['new_faq_accordion'] = $block['attrs']['showContent'];
 		}

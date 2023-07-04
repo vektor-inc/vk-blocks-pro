@@ -25,6 +25,7 @@ export default function FAQ2Edit(props) {
 					{vk_blocks_check.is_pro ? (
 						<BaseControl>
 							<SelectControl
+								__nextHasNoMarginBottom
 								name="vk_blocks_options[new_faq_accordion]"
 								value={showContent}
 								onChange={(value) => {
@@ -65,7 +66,7 @@ export default function FAQ2Edit(props) {
 							/>
 							<p>
 								{__(
-									'* If you want to change the accordion settings common to FAQ blocks, you can set it at Setting > VK Blocks',
+									'* You can change each common accordion settings from Setting > VK Blocks.',
 									'vk-blocks-pro'
 								)}
 							</p>

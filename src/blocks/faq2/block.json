@@ -6,6 +6,7 @@
 	"description": "It displays a combination of questions and answers. You can freely add blocks to the question area as well.",
 	"textdomain": "vk-blocks-pro",
 	"supports": {
+		"html": false,
 		"anchor": true,
 		"className": true
 	},

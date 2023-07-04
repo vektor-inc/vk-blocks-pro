@@ -106,6 +106,7 @@
 	"description": "Set the background image, color, and border to show the layout and divisions.",
 	"textdomain": "vk-blocks-pro",
 	"supports": {
+		"html": false,
 		"className": true,
 		"anchor": true
 	}

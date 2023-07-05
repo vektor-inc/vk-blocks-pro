@@ -8,6 +8,7 @@ import {
 	BaseControl,
 	CheckboxControl,
 	TextControl,
+	ToggleControl,
 } from '@wordpress/components';
 import {
 	useBlockProps,
@@ -257,7 +258,7 @@ export default function DynamicTextEdit(props) {
 								]}
 							/>
 							{fieldType === 'url' && (
-								<CheckboxControl
+								<ToggleControl
 									label={__(
 										'Setting a link',
 										'vk-blocks-pro'
@@ -269,7 +270,7 @@ export default function DynamicTextEdit(props) {
 								/>
 							)}
 							{setLink && (
-								<CheckboxControl
+								<ToggleControl
 									label={__(
 										'Open link new tab.',
 										'vk-blocks-pro'

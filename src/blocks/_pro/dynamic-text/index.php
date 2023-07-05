@@ -20,6 +20,8 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 		'displayElement'  => $attributes['displayElement'],
 		'customFieldName' => ( isset( $attributes['customFieldName'] ) ) ? wp_kses_post( $attributes['customFieldName'] ) : null,
 		'fieldType'       => $attributes['fieldType'],
+		'setLink'         => $attributes['setLink'],
+		'linkTarget'      => $attributes['linkTarget'],
 		// fieldType を attributes で取得するようにする?
 		// そもそも displayElement で custom-field-text とか custom-field-textarea とかで分ける方がいいか悩む
 	);
@@ -37,6 +39,17 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 		$custom_field_content = nl2br( esc_textarea( get_post_meta( $block->context['postId'], $options['customFieldName'], true ) ) );
 	} elseif ( 'wysiwyg' === $options['fieldType'] ) {
 		$custom_field_content = wpautop( wp_kses_post( get_post_meta( $block->context['postId'], $options['customFieldName'], true ) ) );
+	} elseif ( 'url' === $options['fieldType'] ) {
+		$custom_field_url = esc_url( get_post_meta( $block->context['postId'], $options['customFieldName'], true ) );
+		if ( $options['setLink'] ) {
+			if ( $options['linkTarget'] ) {
+				$custom_field_content = '<a href="' . $custom_field_url . '" target="_blank" rel="noreferrer noopener">' . $custom_field_url . '</a>';
+			} else {
+				$custom_field_content = '<a href="' . $custom_field_url . '">' . $custom_field_url . '</a>';
+			}
+		} else {
+			$custom_field_content = $custom_field_url;
+		}
 	}
 
 	return $custom_field_content;
@@ -156,6 +169,14 @@ function vk_blocks_register_block_dynamic_text() {
 					'fieldType'                => array(
 						'type'    => 'string',
 						'default' => 'text',
+					),
+					'setLink'                  => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+					'linkTarget'               => array(
+						'type'    => 'boolean',
+						'default' => false,
 					),
 				)
 			),

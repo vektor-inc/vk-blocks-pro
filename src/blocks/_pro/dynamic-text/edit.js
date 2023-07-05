@@ -84,8 +84,12 @@ export default function DynamicTextEdit(props) {
 		ancestorPageHiddenOption,
 		customFieldName,
 		fieldType,
+		setLink,
+		linkTarget,
 	} = attributes;
 	attributes.ancestorPageHiddenOption = ancestorPageHiddenOption;
+	attributes.setLink = setLink;
+	attributes.linkTarget = linkTarget;
 
 	// Hooks.
 	const blockProps = useBlockProps({
@@ -246,8 +250,36 @@ export default function DynamicTextEdit(props) {
 										value: 'wysiwyg',
 										label: __('wysiwyg', 'vk-blocks-pro'),
 									},
+									{
+										value: 'url',
+										label: __('URL', 'vk-blocks-pro'),
+									},
 								]}
 							/>
+							{fieldType === 'url' && (
+								<CheckboxControl
+									label={__(
+										'Setting a link',
+										'vk-blocks-pro'
+									)}
+									checked={setLink}
+									onChange={(checked) =>
+										setAttributes({ setLink: checked })
+									}
+								/>
+							)}
+							{setLink && (
+								<CheckboxControl
+									label={__(
+										'Open link new tab.',
+										'vk-blocks-pro'
+									)}
+									checked={linkTarget}
+									onChange={(checked) =>
+										setAttributes({ linkTarget: checked })
+									}
+								/>
+							)}
 						</BaseControl>
 					)}
 					<DynamicTextEditControls

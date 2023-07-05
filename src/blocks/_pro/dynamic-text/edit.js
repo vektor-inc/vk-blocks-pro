@@ -85,12 +85,12 @@ export default function DynamicTextEdit(props) {
 		ancestorPageHiddenOption,
 		customFieldName,
 		fieldType,
-		setLink,
-		linkTarget,
+		isLinkSet,
+		isLinkTarget,
 	} = attributes;
 	attributes.ancestorPageHiddenOption = ancestorPageHiddenOption;
-	attributes.setLink = setLink;
-	attributes.linkTarget = linkTarget;
+	attributes.isLinkSet = isLinkSet;
+	attributes.isLinkTarget = isLinkTarget;
 
 	// Hooks.
 	const blockProps = useBlockProps({
@@ -260,24 +260,24 @@ export default function DynamicTextEdit(props) {
 							{fieldType === 'url' && (
 								<ToggleControl
 									label={__(
-										'Setting a link',
+										'Setting up a link',
 										'vk-blocks-pro'
 									)}
-									checked={setLink}
+									checked={isLinkSet}
 									onChange={(checked) =>
-										setAttributes({ setLink: checked })
+										setAttributes({ isLinkSet: checked })
 									}
 								/>
 							)}
-							{setLink && (
+							{isLinkSet && (
 								<ToggleControl
 									label={__(
 										'Open link new tab.',
 										'vk-blocks-pro'
 									)}
-									checked={linkTarget}
+									checked={isLinkTarget}
 									onChange={(checked) =>
-										setAttributes({ linkTarget: checked })
+										setAttributes({ isLinkTarget: checked })
 									}
 								/>
 							)}

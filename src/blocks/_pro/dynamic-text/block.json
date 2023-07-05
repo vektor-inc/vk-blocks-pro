@@ -31,11 +31,11 @@
 			"type": "string",
 			"default": "text"
 		},
-		"setLink": {
+		"isLinkSet": {
 			"type": "boolean",
 			"default": false
 		},
-		"linkTarget": {
+		"isLinkTarget": {
 			"type": "boolean",
 			"default": false
 		}

@@ -20,8 +20,8 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 		'displayElement'  => $attributes['displayElement'],
 		'customFieldName' => ( isset( $attributes['customFieldName'] ) ) ? wp_kses_post( $attributes['customFieldName'] ) : null,
 		'fieldType'       => $attributes['fieldType'],
-		'setLink'         => $attributes['setLink'],
-		'linkTarget'      => $attributes['linkTarget'],
+		'isLinkSet'         => $attributes['isLinkSet'],
+		'isLinkTarget'      => $attributes['isLinkTarget'],
 		// fieldType を attributes で取得するようにする?
 		// そもそも displayElement で custom-field-text とか custom-field-textarea とかで分ける方がいいか悩む
 	);
@@ -41,8 +41,8 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 		$custom_field_content = wpautop( wp_kses_post( get_post_meta( $block->context['postId'], $options['customFieldName'], true ) ) );
 	} elseif ( 'url' === $options['fieldType'] ) {
 		$custom_field_url = esc_url( get_post_meta( $block->context['postId'], $options['customFieldName'], true ) );
-		if ( $options['setLink'] ) {
-			if ( $options['linkTarget'] ) {
+		if ( $options['isLinkSet'] ) {
+			if ( $options['isLinkTarget'] ) {
 				$custom_field_content = '<a href="' . $custom_field_url . '" target="_blank" rel="noreferrer noopener">' . $custom_field_url . '</a>';
 			} else {
 				$custom_field_content = '<a href="' . $custom_field_url . '">' . $custom_field_url . '</a>';
@@ -170,11 +170,11 @@ function vk_blocks_register_block_dynamic_text() {
 						'type'    => 'string',
 						'default' => 'text',
 					),
-					'setLink'                  => array(
+					'isLinkSet'                  => array(
 						'type'    => 'boolean',
 						'default' => false,
 					),
-					'linkTarget'               => array(
+					'isLinkTarget'               => array(
 						'type'    => 'boolean',
 						'default' => false,
 					),

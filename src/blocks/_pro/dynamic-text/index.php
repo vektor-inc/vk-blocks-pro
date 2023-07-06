@@ -20,8 +20,8 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 		'displayElement'  => $attributes['displayElement'],
 		'customFieldName' => ( isset( $attributes['customFieldName'] ) ) ? wp_kses_post( $attributes['customFieldName'] ) : null,
 		'fieldType'       => $attributes['fieldType'],
-		'isLinkSet'         => $attributes['isLinkSet'],
-		'isLinkTarget'      => $attributes['isLinkTarget'],
+		'isLinkSet'       => $attributes['isLinkSet'],
+		'isLinkTarget'    => $attributes['isLinkTarget'],
 		// fieldType を attributes で取得するようにする?
 		// そもそも displayElement で custom-field-text とか custom-field-textarea とかで分ける方がいいか悩む
 	);
@@ -170,11 +170,11 @@ function vk_blocks_register_block_dynamic_text() {
 						'type'    => 'string',
 						'default' => 'text',
 					),
-					'isLinkSet'                  => array(
+					'isLinkSet'                => array(
 						'type'    => 'boolean',
 						'default' => false,
 					),
-					'isLinkTarget'               => array(
+					'isLinkTarget'             => array(
 						'type'    => 'boolean',
 						'default' => false,
 					),

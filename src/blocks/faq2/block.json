@@ -9,5 +9,11 @@
 		"html": false,
 		"anchor": true,
 		"className": true
+	},
+	"attributes": {
+		"showContent": {
+			"type": "string",
+			"default": "default"
+		}
 	}
 }

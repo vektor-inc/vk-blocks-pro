@@ -99,20 +99,20 @@ class TaxonomyTest extends WP_UnitTestCase {
 		/**
 		 * Test Event 01 を作成
 		 */
-		$args                = array(
+		$args                     = array(
 			'slug' => 'test_event_01',
 		);
-		$term_info_01        = wp_insert_term( 'test_event_01', 'event_cat', $args );
+		$term_info_01             = wp_insert_term( 'test_event_01', 'event_cat', $args );
 		$data['term_event_01_id'] = $term_info_01['term_id'];
 
 		/**
 		 * Test Event 01 Child を作成
 		 */
-		$args                      = array(
+		$args                           = array(
 			'slug'   => 'test_event_01_child',
 			'parent' => $data['term_event_01_id'],
 		);
-		$term_info_01_child        = wp_insert_term( 'test_event_01_child', 'event_cat', $args );
+		$term_info_01_child             = wp_insert_term( 'test_event_01_child', 'event_cat', $args );
 		$data['term_event_01_child_id'] = $term_info_01_child['term_id'];
 
 		/**
@@ -137,29 +137,29 @@ class TaxonomyTest extends WP_UnitTestCase {
 		/**
 		 * Empty Event 01 を作成
 		 */
-		$args                      = array(
+		$args                           = array(
 			'slug' => 'empty_event_01',
 		);
-		$term_info_01              = wp_insert_term( 'empty_event_01', 'event_cat', $args );
+		$term_info_01                   = wp_insert_term( 'empty_event_01', 'event_cat', $args );
 		$data['term_empty_event_01_id'] = $term_info_01['term_id'];
 
 		/**
 		 * Test Event 02 Child を作成
 		 */
-		$args                         = array(
+		$args                                 = array(
 			'slug'   => 'empty_event_01_child',
 			'parent' => $data['term_empty_event_01_id'],
 		);
-		$term_info_03_child           = wp_insert_term( 'empty_event_01_child', 'event_cat', $args );
+		$term_info_03_child                   = wp_insert_term( 'empty_event_01_child', 'event_cat', $args );
 		$data['term_event_empty_01_child_id'] = $term_info_03_child['term_id'];
 
 		/**
 		 * Empty Event 02 を作成
 		 */
-		$args                = array(
+		$args                           = array(
 			'slug' => 'empty_event_02',
 		);
-		$term_info_02        = wp_insert_term( 'empty_event_02', 'event_cat', $args );
+		$term_info_02                   = wp_insert_term( 'empty_event_02', 'event_cat', $args );
 		$data['term_event_empty_02_id'] = $term_info_02['term_id'];
 
 				/**
@@ -370,8 +370,6 @@ class TaxonomyTest extends WP_UnitTestCase {
 		print '------------------------------------' . PHP_EOL;
 
 		$current_theme = wp_get_theme();
-
-print 'テーマ名: ' . $current_theme->get( 'Name' ) . PHP_EOL;
 
 		foreach ( $tests as $key => $test_value ) {
 

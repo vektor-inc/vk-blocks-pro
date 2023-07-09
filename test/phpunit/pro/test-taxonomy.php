@@ -295,7 +295,7 @@ class TaxonomyTest extends WP_UnitTestCase {
 					'showOnlyTopLevel'   => false,
 					'className'          => '',
 				),
-				'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap wp-block-vk-blocks-taxonomy"><ul class="vk_taxonomy-list"><li class="cat-item cat-item-' . $data['term_cate_empty_01_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_empty_01_id'] . '">empty_category_01 (0)</a><ul class="children"><li class="cat-item cat-item-' . $data['term_cate_empty_01_child_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_empty_01_child_id'] . '">empty_category_01_child (0)</a></li></ul></li><li class="cat-item cat-item-' . $data['term_cate_empty_02_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_empty_02_id'] . '">empty_category_02 (0)</a><ul class="children"><li class="cat-item cat-item-' . $data['term_cate_empty_02_child_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_empty_02_child_id'] . '">empty_category_02_child (0)</a></li></ul></li><li class="cat-item cat-item-' . $data['term_cate_01_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_01_id'] . '">test_category_01 (1)</a><ul class="children"><li class="cat-item cat-item-' . $data['term_cate_01_child_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_01_child_id'] . '">test_category_01_child (1)</a></li></ul></li><li class="cat-item cat-item-' . $data['term_cate_02_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_02_id'] . '">test_category_02 (1)</a><ul class="children"><li class="cat-item cat-item-' . $data['term_cate_02_child_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_02_child_id'] . '">test_category_02_child (1)</a></li></ul></li><li class="cat-item cat-item-1"><a href="' . home_url() . '/?cat=1">Uncategorized (0)</a></li></ul></div>',
+				'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap wp-block-vk-blocks-taxonomy"><ul class="vk_taxonomy-list"><li class="cat-item cat-item-' . $data['term_cate_empty_01_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_empty_01_id'] . '">empty_category_01</a> (0)<ul class="children"><li class="cat-item cat-item-' . $data['term_cate_empty_01_child_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_empty_01_child_id'] . '">empty_category_01_child</a> (0)</li></ul></li><li class="cat-item cat-item-' . $data['term_cate_empty_02_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_empty_02_id'] . '">empty_category_02</a> (0)<ul class="children"><li class="cat-item cat-item-' . $data['term_cate_empty_02_child_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_empty_02_child_id'] . '">empty_category_02_child</a> (0)</li></ul></li><li class="cat-item cat-item-' . $data['term_cate_01_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_01_id'] . '">test_category_01</a> (1)<ul class="children"><li class="cat-item cat-item-' . $data['term_cate_01_child_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_01_child_id'] . '">test_category_01_child</a> (1)</li></ul></li><li class="cat-item cat-item-' . $data['term_cate_02_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_02_id'] . '">test_category_02</a> (1)<ul class="children"><li class="cat-item cat-item-' . $data['term_cate_02_child_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_02_child_id'] . '">test_category_02_child</a> (1)</li></ul></li><li class="cat-item cat-item-1"><a href="' . home_url() . '/?cat=1">Uncategorized</a> (0)</li></ul></div>',
 			),
 			array(
 				'attributes' => array(
@@ -308,7 +308,7 @@ class TaxonomyTest extends WP_UnitTestCase {
 					'showOnlyTopLevel'   => false,
 					'className'          => '',
 				),
-				'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap wp-block-vk-blocks-taxonomy"><ul class="vk_taxonomy-list"><li class="cat-item cat-item-' . $data['term_cate_01_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_01_id'] . '">test_category_01 (1)</a><ul class="children"><li class="cat-item cat-item-' . $data['term_cate_01_child_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_01_child_id'] . '">test_category_01_child (1)</a></li></ul></li><li class="cat-item cat-item-' . $data['term_cate_02_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_02_id'] . '">test_category_02 (1)</a><ul class="children"><li class="cat-item cat-item-' . $data['term_cate_02_child_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_02_child_id'] . '">test_category_02_child (1)</a></li></ul></li></ul></div>',
+				'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap wp-block-vk-blocks-taxonomy"><ul class="vk_taxonomy-list"><li class="cat-item cat-item-' . $data['term_cate_01_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_01_id'] . '">test_category_01</a> (1)<ul class="children"><li class="cat-item cat-item-' . $data['term_cate_01_child_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_01_child_id'] . '">test_category_01_child</a> (1)</li></ul></li><li class="cat-item cat-item-' . $data['term_cate_02_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_02_id'] . '">test_category_02</a> (1)<ul class="children"><li class="cat-item cat-item-' . $data['term_cate_02_child_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_02_child_id'] . '">test_category_02_child</a> (1)</li></ul></li></ul></div>',
 			),
 			array(
 				'attributes' => array(
@@ -321,7 +321,7 @@ class TaxonomyTest extends WP_UnitTestCase {
 					'showOnlyTopLevel'   => true,
 					'className'          => '',
 				),
-				'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap wp-block-vk-blocks-taxonomy"><ul class="vk_taxonomy-list"><li class="cat-item cat-item-' . $data['term_cate_01_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_01_id'] . '">test_category_01 (1)</a></li><li class="cat-item cat-item-' . $data['term_cate_02_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_02_id'] . '">test_category_02 (1)</a></li></ul></div>',
+				'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap wp-block-vk-blocks-taxonomy"><ul class="vk_taxonomy-list"><li class="cat-item cat-item-' . $data['term_cate_01_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_01_id'] . '">test_category_01</a> (1)</li><li class="cat-item cat-item-' . $data['term_cate_02_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_02_id'] . '">test_category_02</a> (1)</li></ul></div>',
 			),
 			array(
 				'attributes' => array(
@@ -334,7 +334,7 @@ class TaxonomyTest extends WP_UnitTestCase {
 					'showOnlyTopLevel'   => true,
 					'className'          => '',
 				),
-				'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap wp-block-vk-blocks-taxonomy"><ul class="vk_taxonomy-list"><li class="cat-item cat-item-' . $data['term_cate_01_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_01_id'] . '">test_category_01 (1)</a></li><li class="cat-item cat-item-' . $data['term_cate_02_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_02_id'] . '">test_category_02 (1)</a></li></ul></div>',
+				'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap wp-block-vk-blocks-taxonomy"><ul class="vk_taxonomy-list"><li class="cat-item cat-item-' . $data['term_cate_01_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_01_id'] . '">test_category_01</a> (1)</li><li class="cat-item cat-item-' . $data['term_cate_02_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_02_id'] . '">test_category_02</a> (1)</li></ul></div>',
 			),
 			array(
 				'attributes' => array(
@@ -347,7 +347,7 @@ class TaxonomyTest extends WP_UnitTestCase {
 					'showOnlyTopLevel'   => true,
 					'className'          => 'aaaa',
 				),
-				'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap aaaa wp-block-vk-blocks-taxonomy"><ul class="vk_taxonomy-list"><li class="cat-item cat-item-' . $data['term_cate_01_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_01_id'] . '">test_category_01 (1)</a></li><li class="cat-item cat-item-' . $data['term_cate_02_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_02_id'] . '">test_category_02 (1)</a></li></ul></div>',
+				'correct'    => '<div class="vk_taxonomy vk_taxonomy--category vk_taxonomy-outer-wrap aaaa wp-block-vk-blocks-taxonomy"><ul class="vk_taxonomy-list"><li class="cat-item cat-item-' . $data['term_cate_01_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_01_id'] . '">test_category_01</a> (1)</li><li class="cat-item cat-item-' . $data['term_cate_02_id'] . '"><a href="' . home_url() . '/?cat=' . $data['term_cate_02_id'] . '">test_category_02</a> (1)</li></ul></div>',
 			),
 			array(
 				'attributes' => array(
@@ -368,6 +368,11 @@ class TaxonomyTest extends WP_UnitTestCase {
 		print '------------------------------------' . PHP_EOL;
 		print 'test_get_taxonomy_form_html' . PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
+
+		$current_theme = wp_get_theme();
+
+print 'テーマ名: ' . $current_theme->get( 'Name' ) . PHP_EOL;
+
 		foreach ( $tests as $key => $test_value ) {
 
 			WP_Block_Supports::init();

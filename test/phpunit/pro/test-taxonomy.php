@@ -369,8 +369,6 @@ class TaxonomyTest extends WP_UnitTestCase {
 		print 'test_get_taxonomy_form_html' . PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
 
-		$current_theme = wp_get_theme();
-
 		foreach ( $tests as $key => $test_value ) {
 
 			WP_Block_Supports::init();

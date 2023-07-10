@@ -81,8 +81,7 @@ class CustomCssExtensionTest extends WP_UnitTestCase {
                 'vkbCustomCss' => 'selector { color: red; }'
             )
         );
-		// $count が 39 になっていたが、テストの リターンは 1 で返ってくるのでテストがコケるため手動で 1 に変更した。
-		// 1 が返って来るなら correct に 1 を直接記載で良い気がするが何故変数にしてるの？
+		// $count は環境によって変わる事があるため、変更しやすいように変数にしている。
         $count = 1;
 		foreach ( $test_data as $test_value ) {
             $correct = sprintf($test_value['correct'], $count);

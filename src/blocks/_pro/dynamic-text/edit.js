@@ -8,6 +8,7 @@ import {
 	BaseControl,
 	CheckboxControl,
 	TextControl,
+	ToggleControl,
 } from '@wordpress/components';
 import {
 	useBlockProps,
@@ -84,8 +85,12 @@ export default function DynamicTextEdit(props) {
 		ancestorPageHiddenOption,
 		customFieldName,
 		fieldType,
+		isLinkSet,
+		isLinkTarget,
 	} = attributes;
 	attributes.ancestorPageHiddenOption = ancestorPageHiddenOption;
+	attributes.isLinkSet = isLinkSet;
+	attributes.isLinkTarget = isLinkTarget;
 
 	// Hooks.
 	const blockProps = useBlockProps({
@@ -246,8 +251,36 @@ export default function DynamicTextEdit(props) {
 										value: 'wysiwyg',
 										label: __('wysiwyg', 'vk-blocks-pro'),
 									},
+									{
+										value: 'url',
+										label: __('URL', 'vk-blocks-pro'),
+									},
 								]}
 							/>
+							{fieldType === 'url' && (
+								<ToggleControl
+									label={__(
+										'Setting up a link',
+										'vk-blocks-pro'
+									)}
+									checked={isLinkSet}
+									onChange={(checked) =>
+										setAttributes({ isLinkSet: checked })
+									}
+								/>
+							)}
+							{isLinkSet && (
+								<ToggleControl
+									label={__(
+										'Open link new tab.',
+										'vk-blocks-pro'
+									)}
+									checked={isLinkTarget}
+									onChange={(checked) =>
+										setAttributes({ isLinkTarget: checked })
+									}
+								/>
+							)}
 						</BaseControl>
 					)}
 					<DynamicTextEditControls

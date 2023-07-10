@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.0
 Tested up to: 6.2
-Stable tag: 1.58.0.1
+Stable tag: 1.59.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -65,6 +65,7 @@ e.g.
 
 == Changelog ==
 
+= 1.60.0 =
 [ Add Function ][ Dynamic Text Block (Pro) ] URL support for custom fields.
 [ Add Function ][ FAQ2 ] Add an accordion default option on a per-block.
 [ Specification Change ] Disable HTML editing for blocks with inner blocks, as the blocks are broken.

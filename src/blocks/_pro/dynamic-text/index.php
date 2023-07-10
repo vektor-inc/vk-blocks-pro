@@ -8,6 +8,25 @@
 use VektorInc\VK_Helpers\VkHelpers;
 
 /**
+ * Get default attribute
+ *
+ * @return array $attributes_default
+ */
+function vk_blocks_dynamic_text_get_attributes_default() {
+	$attributes_default = array(
+		'textAlign'                => null,
+		'displayElement'           => 'please-select',
+		'tagName'                  => 'div',
+		'ancestorPageHiddenOption' => null,
+		'customFieldName'          => null,
+		'fieldType'                => 'text',
+		'isLinkSet'                => false,
+		'isLinkTarget'             => false,
+	);
+	return $attributes_default;
+}
+
+/**
  * Dynamic text custom field render
  *
  * @param array  $attributes Block attributes.
@@ -16,33 +35,26 @@ use VektorInc\VK_Helpers\VkHelpers;
  * @return string
  */
 function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $block ) {
-	$options = array(
-		'displayElement'  => $attributes['displayElement'],
-		'customFieldName' => ( isset( $attributes['customFieldName'] ) ) ? wp_kses_post( $attributes['customFieldName'] ) : null,
-		'fieldType'       => $attributes['fieldType'],
-		'isLinkSet'       => $attributes['isLinkSet'],
-		'isLinkTarget'    => $attributes['isLinkTarget'],
-		// fieldType を attributes で取得するようにする?
-		// そもそも displayElement で custom-field-text とか custom-field-textarea とかで分ける方がいいか悩む
-	);
+	$attributes_default = vk_blocks_dynamic_text_get_attributes_default();
+	$attributes         = array_merge( $attributes_default, $attributes );
 
-	if ( 'custom-field' === $options['displayElement'] && ! $options['customFieldName'] ) {
+	if ( 'custom-field' === $attributes['displayElement'] && ! $attributes['customFieldName'] ) {
 		return;
 	}
-	if ( 'custom-field' === $options['displayElement'] && ! isset( $block->context['postId'] ) ) {
+	if ( 'custom-field' === $attributes['displayElement'] && ! isset( $block->context['postId'] ) ) {
 		return;
 	}
 
-	if ( 'text' === $options['fieldType'] ) {
-		$custom_field_content = esc_html( get_post_meta( $block->context['postId'], $options['customFieldName'], true ) );
-	} elseif ( 'textarea' === $options['fieldType'] ) {
-		$custom_field_content = nl2br( esc_textarea( get_post_meta( $block->context['postId'], $options['customFieldName'], true ) ) );
-	} elseif ( 'wysiwyg' === $options['fieldType'] ) {
-		$custom_field_content = wpautop( wp_kses_post( get_post_meta( $block->context['postId'], $options['customFieldName'], true ) ) );
-	} elseif ( 'url' === $options['fieldType'] ) {
-		$custom_field_url = esc_url( get_post_meta( $block->context['postId'], $options['customFieldName'], true ) );
-		if ( $options['isLinkSet'] ) {
-			if ( $options['isLinkTarget'] ) {
+	if ( 'text' === $attributes['fieldType'] ) {
+		$custom_field_content = esc_html( get_post_meta( $block->context['postId'], $attributes['customFieldName'], true ) );
+	} elseif ( 'textarea' === $attributes['fieldType'] ) {
+		$custom_field_content = nl2br( esc_textarea( get_post_meta( $block->context['postId'], $attributes['customFieldName'], true ) ) );
+	} elseif ( 'wysiwyg' === $attributes['fieldType'] ) {
+		$custom_field_content = wpautop( wp_kses_post( get_post_meta( $block->context['postId'], $attributes['customFieldName'], true ) ) );
+	} elseif ( 'url' === $attributes['fieldType'] ) {
+		$custom_field_url = esc_url( get_post_meta( $block->context['postId'], $attributes['customFieldName'], true ) );
+		if ( $attributes['isLinkSet'] ) {
+			if ( $attributes['isLinkTarget'] ) {
 				$custom_field_content = '<a href="' . $custom_field_url . '" target="_blank" rel="noreferrer noopener">' . $custom_field_url . '</a>';
 			} else {
 				$custom_field_content = '<a href="' . $custom_field_url . '">' . $custom_field_url . '</a>';
@@ -64,13 +76,8 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
  * @return string
  */
 function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block ) {
-	$options = array(
-		'textAlign'                => ( isset( $attributes['textAlign'] ) ) ? esc_attr( $attributes['textAlign'] ) : null,
-		'displayElement'           => $attributes['displayElement'],
-		'tagName'                  => $attributes['tagName'],
-		'ancestorPageHiddenOption' => $attributes['ancestorPageHiddenOption'],
-		'customFieldName'          => ( isset( $attributes['customFieldName'] ) ) ? wp_kses_post( $attributes['customFieldName'] ) : null,
-	);
+	$attributes_default = vk_blocks_dynamic_text_get_attributes_default();
+	$attributes         = array_merge( $attributes_default, $attributes );
 
 	$classes = 'vk_dynamicText';
 	if ( isset( $attributes['textAlign'] ) ) {
@@ -80,10 +87,10 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 	$wrapper_classes = get_block_wrapper_attributes( array( 'class' => $classes ) );
 
 	$block_content = '';
-	if ( $options['tagName'] ) {
-		$block_content .= '<' . $options['tagName'] . ' ' . $wrapper_classes . '>';
+	if ( $attributes['tagName'] ) {
+		$block_content .= '<' . $attributes['tagName'] . ' ' . $wrapper_classes . '>';
 	};
-	if ( 'post-type' === $options['displayElement'] ) {
+	if ( 'post-type' === $attributes['displayElement'] ) {
 		// 投稿タイプの名前取得.
 		$post_type_info = VkHelpers::get_post_type_info();
 		$post_type_name = '';
@@ -93,10 +100,10 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 			$post_type_name = $post_type_info['name'];
 		}
 		$block_content .= $post_type_name;
-	} elseif ( 'ancestor-page' === $options['displayElement'] ) {
+	} elseif ( 'ancestor-page' === $attributes['displayElement'] ) {
 		$post = get_post();
 		// 親ページがない（＝先祖階層） && 先祖階層のページを非表示にするオプションが有効の場合は処理を終了.
-		if ( empty( $post->post_parent ) && $options['ancestorPageHiddenOption'] ) {
+		if ( empty( $post->post_parent ) && $attributes['ancestorPageHiddenOption'] ) {
 			return;
 		}
 		// 先祖階層のページタイトルを取得.
@@ -109,11 +116,11 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 			$ancestor_post_title = get_post( $post->ID )->post_title;
 		}
 		$block_content .= $ancestor_post_title;
-	} elseif ( 'custom-field' === $options['displayElement'] ) {
+	} elseif ( 'custom-field' === $attributes['displayElement'] ) {
 		$block_content .= vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $block );
 	}
-	if ( $options['tagName'] ) {
-		$block_content .= '</' . $options['tagName'] . '>';
+	if ( $attributes['tagName'] ) {
+		$block_content .= '</' . $attributes['tagName'] . '>';
 	}
 
 	return $block_content;

@@ -25,7 +25,7 @@
 		},
 		"customFieldName": {
 			"type": "string",
-			"default": ""
+			"default": null
 		},
 		"fieldType": {
 			"type": "string",

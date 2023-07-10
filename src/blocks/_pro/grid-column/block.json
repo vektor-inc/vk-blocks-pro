@@ -48,6 +48,7 @@
 		}
 	},
 	"supports": {
+		"html": false,
 		"className": true
 	}
 }

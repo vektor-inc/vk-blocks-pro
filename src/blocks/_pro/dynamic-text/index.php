@@ -59,25 +59,6 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 		'customFieldName'          => ( isset( $attributes['customFieldName'] ) ) ? wp_kses_post( $attributes['customFieldName'] ) : null,
 	);
 
-	$post = get_post();
-	if ( 'ancestor-page' === $options['displayElement'] && ! ( $post->post_parent ) && $options['ancestorPageHiddenOption'] ) {
-		return;
-	}
-
-	// 投稿タイプの名前取得
-	$post_type_info = VkHelpers::get_post_type_info();
-	$post_type_name = $post_type_info['name'];
-
-	// 先祖階層のページタイトルを取得
-	$ancestor_post_title = '';
-	if ( ! empty( $post ) && ! empty( $post->ancestors ) ) {
-		foreach ( $post->ancestors as $post_id ) {
-			$ancestor_post_title = get_post( $post_id )->post_title;
-		}
-	} elseif ( ! empty( $post ) ) {
-		$ancestor_post_title = get_post( $post->ID )->post_title;
-	}
-
 	$classes = 'vk_dynamicText';
 	if ( isset( $attributes['textAlign'] ) ) {
 		$classes = ' has-text-align-' . $attributes['textAlign'];
@@ -90,8 +71,30 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 		$block_content .= '<' . $options['tagName'] . ' ' . $wrapper_classes . '>';
 	};
 	if ( 'post-type' === $options['displayElement'] ) {
+		// 投稿タイプの名前取得.
+		$post_type_info = VkHelpers::get_post_type_info();
+		$post_type_name = '';
+		// * 検索結果ページなどで投稿タイプ情報が取得できない場合があるので空の場合は空文字を返す.
+		// Cope with php warning that brought by can't get post type name on such as the search result page.
+		if ( ! empty( $post_type_info['name'] ) ) {
+			$post_type_name = $post_type_info['name'];
+		}
 		$block_content .= $post_type_name;
 	} elseif ( 'ancestor-page' === $options['displayElement'] ) {
+		$post = get_post();
+		// 親ページがない（＝先祖階層） && 先祖階層のページを非表示にするオプションが有効の場合は処理を終了.
+		if ( empty( $post->post_parent ) && $options['ancestorPageHiddenOption'] ) {
+			return;
+		}
+		// 先祖階層のページタイトルを取得.
+		$ancestor_post_title = '';
+		if ( ! empty( $post ) && ! empty( $post->ancestors ) ) {
+			foreach ( $post->ancestors as $post_id ) {
+				$ancestor_post_title = get_post( $post_id )->post_title;
+			}
+		} elseif ( ! empty( $post ) ) {
+			$ancestor_post_title = get_post( $post->ID )->post_title;
+		}
 		$block_content .= $ancestor_post_title;
 	} elseif ( 'custom-field' === $options['displayElement'] ) {
 		$block_content .= vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $block );

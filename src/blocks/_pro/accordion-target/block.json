@@ -8,6 +8,7 @@
 	"parent": ["vk-blocks/accordion"],
 	"attributes": {},
 	"supports": {
+		"html": false,
 		"anchor": true,
 		"className": true
 	}

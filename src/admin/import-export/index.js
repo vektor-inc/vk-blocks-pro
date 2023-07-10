@@ -121,10 +121,10 @@ export const OPTION_DEFAULT_SETTINGS = [
 		isImport: true,
 	},
 	{
-		groupTitle: __('Icon Preset Lists Setting', 'vk-blocks-pro'),
+		groupTitle: __('Font Awesome Custom Lists Setting', 'vk-blocks-pro'),
 		options: [
 			{
-				name: 'icon_preset_lists',
+				name: 'icon_custom_lists',
 				indexedArray: true,
 				importMethod: 'add',
 			},

@@ -96,7 +96,7 @@ export const FontAwesome = (props) => {
 	const { setOptions } = useDispatch(STORE_NAME);
 
 	const updateSettings = (value) => {
-		optionObj?.vkBlocksOption.icon_preset_lists?.unshift(value);
+		optionObj?.vkBlocksOption.icon_custom_lists?.unshift(value);
 		const newObj = {
 			...optionObj,
 			vkBlocksOption: {
@@ -108,8 +108,8 @@ export const FontAwesome = (props) => {
 	};
 
 	const deleteSettings = (value) => {
-		const index = optionObj.vkBlocksOption.icon_preset_lists.indexOf(value);
-		optionObj.vkBlocksOption.icon_preset_lists.splice(index, 1);
+		const index = optionObj.vkBlocksOption.icon_custom_lists.indexOf(value);
+		optionObj.vkBlocksOption.icon_custom_lists.splice(index, 1);
 		const newObj = {
 			...optionObj,
 			vkBlocksOption: {
@@ -118,7 +118,7 @@ export const FontAwesome = (props) => {
 		};
 		setOptions(newObj);
 		updateOptions(newObj);
-		if (newObj.vkBlocksOption.icon_preset_lists.length === 0) {
+		if (newObj.vkBlocksOption.icon_custom_lists.length === 0) {
 			setIsEditMode(false);
 		}
 	};
@@ -148,15 +148,15 @@ export const FontAwesome = (props) => {
 
 	const canAddIconPreset =
 		attributes[attributeName] &&
-		!optionObj?.vkBlocksOption?.icon_preset_lists.some(
+		!optionObj?.vkBlocksOption?.icon_custom_lists.some(
 			(list) => list === attributes[attributeName]
 		);
 
 	const existsIconPreset =
-		optionObj?.vkBlocksOption?.icon_preset_lists.length !== 0;
+		optionObj?.vkBlocksOption?.icon_custom_lists.length !== 0;
 
 	const showIconPresetArrow =
-		isEditMode && optionObj?.vkBlocksOption?.icon_preset_lists.length !== 1;
+		isEditMode && optionObj?.vkBlocksOption?.icon_custom_lists.length !== 1;
 
 	const render = (
 		<>
@@ -176,14 +176,14 @@ export const FontAwesome = (props) => {
 								)}
 							</p>
 							<div className="vk_icon_list">
-								{optionObj?.vkBlocksOption?.icon_preset_lists &&
+								{optionObj?.vkBlocksOption?.icon_custom_lists &&
 									Object.keys(
 										optionObj?.vkBlocksOption
-											?.icon_preset_lists
+											?.icon_custom_lists
 									).map((key, index) => {
 										const iconPreset =
 											optionObj.vkBlocksOption
-												.icon_preset_lists[key];
+												.icon_custom_lists[key];
 										return (
 											<div
 												className="vk_icon_area"
@@ -230,18 +230,18 @@ export const FontAwesome = (props) => {
 																	[
 																		...optionObj
 																			.vkBlocksOption
-																			.icon_preset_lists,
+																			.icon_custom_lists,
 																	];
 																newItems[
 																	index - 1
 																] =
-																	optionObj.vkBlocksOption.icon_preset_lists[
+																	optionObj.vkBlocksOption.icon_custom_lists[
 																		index
 																	];
 																newItems[
 																	index
 																] =
-																	optionObj.vkBlocksOption.icon_preset_lists[
+																	optionObj.vkBlocksOption.icon_custom_lists[
 																		index -
 																			1
 																	];
@@ -250,7 +250,7 @@ export const FontAwesome = (props) => {
 																	vkBlocksOption:
 																		{
 																			...optionObj.vkBlocksOption,
-																			icon_preset_lists:
+																			icon_custom_lists:
 																				[
 																					...newItems,
 																				],
@@ -271,7 +271,7 @@ export const FontAwesome = (props) => {
 																index ===
 																optionObj
 																	.vkBlocksOption
-																	.icon_preset_lists
+																	.icon_custom_lists
 																	.length -
 																	1
 															}
@@ -280,18 +280,18 @@ export const FontAwesome = (props) => {
 																	[
 																		...optionObj
 																			.vkBlocksOption
-																			.icon_preset_lists,
+																			.icon_custom_lists,
 																	];
 																newItems[
 																	index + 1
 																] =
-																	optionObj.vkBlocksOption.icon_preset_lists[
+																	optionObj.vkBlocksOption.icon_custom_lists[
 																		index
 																	];
 																newItems[
 																	index
 																] =
-																	optionObj.vkBlocksOption.icon_preset_lists[
+																	optionObj.vkBlocksOption.icon_custom_lists[
 																		index +
 																			1
 																	];
@@ -300,7 +300,7 @@ export const FontAwesome = (props) => {
 																	vkBlocksOption:
 																		{
 																			...optionObj.vkBlocksOption,
-																			icon_preset_lists:
+																			icon_custom_lists:
 																				[
 																					...newItems,
 																				],

@@ -328,7 +328,7 @@ class VK_Blocks_Options {
 					),
 				),
 			),
-			'icon_preset_lists'           => array(
+			'icon_custom_lists'           => array(
 				'type' => 'array',
 			),
 		);
@@ -402,7 +402,7 @@ class VK_Blocks_Options {
 			'custom_block_style_lists'    => array(),
 			'balloon_meta_lists'          => array(),
 			'disable_block_style_lists'   => array(),
-			'icon_preset_lists'           => array(),
+			'icon_custom_lists'           => array(),
 		);
 		return $default;
 	}

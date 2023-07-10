@@ -111,7 +111,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'custom_block_style_lists' => array(),
 					'balloon_meta_lists' => array(),
 					'disable_block_style_lists' => array(),
-					'icon_preset_lists' => array(),
+					'icon_custom_lists' => array(),
 				),
 			),
 			// New FAQ アコーディオン機能 v0.46.0
@@ -700,9 +700,9 @@ class GetOptionsTest extends WP_UnitTestCase {
 				),
 				'correct' => array(),
 			),
-			// アイコンプリセット
+			// アイコンカスタムリスト
 			array(
-				'option_check_target' => 'icon_preset_lists',
+				'option_check_target' => 'icon_custom_lists',
 				'option'  => array(
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
@@ -918,7 +918,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 							),
 						),
 					),
-					'icon_preset_lists' => array(
+					'icon_custom_lists' => array(
 						'<i class="fa-brands fa-wordpress"></i>',
 						'<i class="fa-brands fa-discord"></i>',
 						'<i class="fa-brands fa-github"></i>',
@@ -1029,7 +1029,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 							),
 						),
 					),
-					'icon_preset_lists' => array(
+					'icon_custom_lists' => array(
 						'<i class="fa-brands fa-wordpress"></i>',
 						'<i class="fa-brands fa-discord"></i>',
 						'<i class="fa-brands fa-github"></i>',

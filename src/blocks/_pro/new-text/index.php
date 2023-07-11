@@ -19,12 +19,14 @@ function vk_blocks_new_text_render_callback( $attributes ) {
 	$post_date        = get_the_date( 'Ymd' );
 
 	$wrapper_attributes = get_block_wrapper_attributes();
-	$result             = "<div $wrapper_attributes>";
-
+	
+	$result = "";
 	if ( $post_date >= $limit ) {
+		$result = "<div $wrapper_attributes>";
 		$result .= $attributes['content'];
+		$result .= '</div>';
 	}
-	$result .= '</div>';
+
 
 	return $result;
 }

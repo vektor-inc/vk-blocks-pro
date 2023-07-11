@@ -36,6 +36,11 @@ import * as spacer from './spacer';
 import * as staff from './staff';
 
 /**
+ * Store
+ */
+import '@vkblocks/utils/store';
+
+/**
  * Extensions
  */
 import '@vkblocks/extensions/core/group/style';

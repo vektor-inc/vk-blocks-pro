@@ -9,6 +9,7 @@
 	"description": "Answer area where you can add blocks freely.",
 	"textdomain": "vk-blocks-pro",
 	"supports": {
+		"html": false,
 		"anchor": true,
 		"reusable": false
 	}

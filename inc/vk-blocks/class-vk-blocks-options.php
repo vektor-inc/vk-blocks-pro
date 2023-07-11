@@ -328,6 +328,9 @@ class VK_Blocks_Options {
 					),
 				),
 			),
+			'icon_custom_lists'           => array(
+				'type' => 'array',
+			),
 		);
 		return $properties;
 	}
@@ -399,6 +402,7 @@ class VK_Blocks_Options {
 			'custom_block_style_lists'    => array(),
 			'balloon_meta_lists'          => array(),
 			'disable_block_style_lists'   => array(),
+			'icon_custom_lists'           => array(),
 		);
 		return $default;
 	}

@@ -9,9 +9,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-07-11T01:39:35+00:00\n"
+"POT-Creation-Date: 2023-07-11T01:48:07+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.5.0\n"
+"X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks-pro\n"
 
 #: src/admin/balloon/add-button.js:38
@@ -2865,42 +2865,42 @@ msgid "Lorem ipsum"
 msgstr ""
 
 #: src/utils/font-awesome-new.js:172
-msgid "Custom list"
+msgid "カスタムリスト"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:327
-msgid "Preset"
+#: src/utils/font-awesome-new.js:328
+msgid "プリセット"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:369
+#: src/utils/font-awesome-new.js:371
 msgid "Font Awesome icon list"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:372
+#: src/utils/font-awesome-new.js:374
 msgid "If you want to use an icon other than the ones listed above, you can use any of the icons from Font Awesome's icon list Please select a tag and enter it."
 msgstr ""
 
-#: src/utils/font-awesome-new.js:377
+#: src/utils/font-awesome-new.js:379
 msgid "Ex) "
 msgstr ""
 
-#: src/utils/font-awesome-new.js:391
-msgid "Add selected icon to custom list"
+#: src/utils/font-awesome-new.js:393
+msgid "選択中アイコンをカスタムリストに追加"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:399
-msgid "Delete/Sort mode"
+#: src/utils/font-awesome-new.js:402
+msgid "削除・並び替えモード"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:416
+#: src/utils/font-awesome-new.js:420
 msgid "When you click save button, the window will be reloaded and this setting will be applied."
 msgstr ""
 
-#: src/utils/font-awesome-new.js:426
+#: src/utils/font-awesome-new.js:430
 msgid "Save"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:442
+#: src/utils/font-awesome-new.js:446
 msgid "Select Icon"
 msgstr ""
 

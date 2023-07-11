@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2023-07-10T09:40:41+00:00\n"
-"PO-Revision-Date: 2023-07-10 18:55+0900\n"
+"POT-Creation-Date: 2023-07-10T23:21:48+00:00\n"
+"PO-Revision-Date: 2023-07-11 09:05+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.3.2\n"
 "X-Poedit-Basepath: ../../..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: vk-blocks.php\n"
@@ -877,8 +877,6 @@ msgstr "投稿タイプ名"
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
 #: src/blocks/ancestor-page-list/index.php:44
-#: test/phpunit/pro/test-ancestor-page-list.php:89
-#: test/phpunit/pro/test-ancestor-page-list.php:173
 msgid "Ancestor Page Title"
 msgstr "先祖ページのタイトル"
 
@@ -947,7 +945,7 @@ msgstr "WYSIWYG"
 
 #: src/blocks/_pro/dynamic-text/edit.js:262
 msgid "Setting up a link"
-msgstr ""
+msgstr "リンクを設定する"
 
 #: src/blocks/_pro/dynamic-text/edit.js:274
 #: src/blocks/_pro/gridcolcard-item/edit.js:322
@@ -3232,14 +3230,12 @@ msgstr "非推奨ブロック"
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
 #: src/blocks/ancestor-page-list/index.php:83
-#: test/phpunit/pro/test-ancestor-page-list.php:173
 msgid "Dummy Text"
 msgstr "ダミーテキスト"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
 #: src/blocks/ancestor-page-list/index.php:83
-#: test/phpunit/pro/test-ancestor-page-list.php:173
 msgid ""
 "Because of the site editor have not child page that, the page list from "
 "ancestor is not displayed. Now displaying the dummy text list instead of the "
@@ -3252,14 +3248,12 @@ msgstr ""
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
 #: src/blocks/ancestor-page-list/index.php:83
-#: test/phpunit/pro/test-ancestor-page-list.php:173
 msgid "This message only display on the edit screen."
 msgstr "このメッセージは編集画面でのみ表示されます。"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/page-content/index.php:126
 #: inc/vk-blocks/build/blocks/page-content/index.php:123
 #: src/blocks/page-content/index.php:123
-#: test/phpunit/free/test-page-content.php:59
 msgid "Edit this area"
 msgstr "このエリアを編集"
 

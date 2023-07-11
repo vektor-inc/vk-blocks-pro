@@ -409,6 +409,18 @@ msgstr "インポート"
 msgid "Import Success"
 msgstr "インポート成功"
 
+#: src/utils/font-awesome-new.js:172
+msgid "Custom list"
+msgstr "カスタムリスト"
+
+#: src/utils/font-awesome-new.js:327
+msgid "Preset"
+msgstr "プリセット"
+
+#: src/admin/import-export/index.js:124
+msgid "Font Awesome Custom Lists Setting"
+msgstr "Font Awesomeカスタムリスト設定"
+
 #: src/admin/import-export/index.js:130
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:86
 #: inc/vk-blocks/admin/admin.php:119
@@ -483,6 +495,14 @@ msgstr ""
 #: src/admin/margin.js:120
 msgid "ex)"
 msgstr "例）"
+
+#: src/utils/font-awesome-new.js:391
+msgid "Add selected icon to custom list"
+msgstr "選択中アイコンをカスタムリストに追加"
+
+#: src/utils/font-awesome-new.js:399
+msgid "Delete/Sort mode"
+msgstr "削除・並び替えモード"
 
 #: src/admin/margin.js:133 src/blocks/border-box/edit.js:192
 #: src/blocks/icon-outer/edit.js:150 src/blocks/icon/edit.js:139

@@ -169,11 +169,7 @@ export const FontAwesome = (props) => {
 					{existsIconPreset && (
 						<div className="vk_icon_list_my_list">
 							<p className="vk_icon_list_title">
-								{__(
-									// 'Custom list',
-									'カスタムリスト',
-									'vk-blocks-pro'
-								)}
+								{__('Custom list', 'vk-blocks-pro')}
 							</p>
 							<div className="vk_icon_list">
 								{optionObj?.vkBlocksOption?.icon_custom_lists &&
@@ -325,11 +321,7 @@ export const FontAwesome = (props) => {
 					<div className="vk_icon_list_preset">
 						{existsIconPreset && (
 							<p className="vk_icon_list_title">
-								{__(
-									// 'Preset',
-									'プリセット',
-									'vk-blocks-pro'
-								)}
+								{__('Preset', 'vk-blocks-pro')}
 							</p>
 						)}
 						<div className="vk_icon_list">
@@ -391,19 +383,14 @@ export const FontAwesome = (props) => {
 						}
 					>
 						{__(
-							'選択中アイコンをカスタムリストに追加',
-							// 'Add selected icon to custom list',
+							'Add selected icon to custom list',
 							'vk-blocks-pro'
 						)}
 					</Button>
 					{existsIconPreset && (
 						<ToggleControl
 							className="mt-1"
-							label={__(
-								'削除・並び替えモード',
-								// 'Delete/Sort mode',
-								'vk-blocks-pro'
-							)}
+							label={__('Delete/Sort mode', 'vk-blocks-pro')}
 							checked={isEditMode}
 							onChange={() => setIsEditMode(!isEditMode)}
 						/>

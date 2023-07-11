@@ -65,6 +65,7 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ] Add Font Awesome icon custom list function.
 = 1.60.0 =
 [ Add Function ][ Dynamic Text Block (Pro) ] URL support for custom fields.
 [ Add Function ][ FAQ2 ] Add an accordion default option on a per-block.

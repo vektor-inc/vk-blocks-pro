@@ -9,6 +9,14 @@ import apiFetch from '@wordpress/api-fetch';
  */
 import { STORE_NAME, API_PATH } from './constants';
 
+export const updateOptions = (options) => {
+	apiFetch({
+		path: API_PATH,
+		method: 'POST',
+		data: options,
+	});
+};
+
 const DEFAULT_STATE = {
 	options: {},
 };

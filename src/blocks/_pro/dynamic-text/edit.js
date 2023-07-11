@@ -258,28 +258,34 @@ export default function DynamicTextEdit(props) {
 								]}
 							/>
 							{fieldType === 'url' && (
-								<ToggleControl
-									label={__(
-										'Setting up a link',
-										'vk-blocks-pro'
+								<>
+									<ToggleControl
+										label={__(
+											'Setting up a link',
+											'vk-blocks-pro'
+										)}
+										checked={isLinkSet}
+										onChange={(checked) =>
+											setAttributes({
+												isLinkSet: checked,
+											})
+										}
+									/>
+									{isLinkSet && (
+										<ToggleControl
+											label={__(
+												'Open link new tab.',
+												'vk-blocks-pro'
+											)}
+											checked={isLinkTarget}
+											onChange={(checked) =>
+												setAttributes({
+													isLinkTarget: checked,
+												})
+											}
+										/>
 									)}
-									checked={isLinkSet}
-									onChange={(checked) =>
-										setAttributes({ isLinkSet: checked })
-									}
-								/>
-							)}
-							{isLinkSet && (
-								<ToggleControl
-									label={__(
-										'Open link new tab.',
-										'vk-blocks-pro'
-									)}
-									checked={isLinkTarget}
-									onChange={(checked) =>
-										setAttributes({ isLinkTarget: checked })
-									}
-								/>
+								</>
 							)}
 						</BaseControl>
 					)}

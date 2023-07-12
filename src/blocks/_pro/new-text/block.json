@@ -6,8 +6,7 @@
 	"attributes": {
 		"content": {
 			"type": "string",
-			"default": "New!",
-            "selector": "span"
+			"default": "New!"
 		},
 		"daysAsNewPost": {
 			"type": "number",
@@ -38,6 +37,19 @@
 			"margin": true,
 			"padding": true
 		},
+		"__experimentalBorder": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true,
+			"__experimentalSkipSerialization": true,
+			"__experimentalDefaultControls": {
+				"color": true,
+				"radius": true,
+				"style": true,
+				"width": true
+			}
+		},		
 		"typography": {
 			"fontSize": true,
 			"lineHeight": true,

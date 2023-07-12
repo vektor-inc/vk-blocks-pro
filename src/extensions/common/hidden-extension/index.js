@@ -40,7 +40,6 @@ export const is_hidden = (blockName) => {
 	const excludes = [
 		'vk-blocks/card-item',
 		'vk-blocks/icon-card-item',
-		'vk-blocks/icon',
 		'vk-blocks/select-post-list-item',
 	];
 	const excludeBlock =

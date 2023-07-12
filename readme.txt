@@ -66,11 +66,13 @@ e.g.
 == Changelog ==
 
 = 1.60.0 =
+[ Add Function ] Add Font Awesome icon custom list function.
 [ Add Function ][ Dynamic Text Block (Pro) ] URL support for custom fields.
 [ Add Function ][ FAQ2 ] Add an accordion default option on a per-block.
 [ Specification Change ] Disable HTML editing for blocks with inner blocks, as the blocks are broken.
 [ Bug fix ][ Dynamic Text (Pro) ] Fix php warning that brought by can't get post type name on search result page.
 [ Bug fix ][ Dynamic Text (Pro) ] Fix php warning that brought by can't get ancestor page on search result page.
+[ Bug fix ][ Icon Block ] Fix enable hidden extension.
 
 = 1.59.0 =
 [ Add Filter Hook ( Pro ) ] Add filter fook of display license key form or not

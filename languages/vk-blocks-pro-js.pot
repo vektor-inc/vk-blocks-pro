@@ -24,7 +24,7 @@ msgstr ""
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:63
 #: src/admin/custom-format/add-item.js:152
 #: src/admin/custom-format/delete-item-button.js:63
-#: src/admin/import-export/import-form.js:417
+#: src/admin/import-export/import-form.js:510
 msgid "Cancel"
 msgstr ""
 
@@ -93,7 +93,7 @@ msgstr ""
 
 #: src/admin/custom-block-style/add-button/index.js:141
 #: src/admin/custom-format/add-item.js:164
-#: src/admin/import-export/import-form.js:312
+#: src/admin/import-export/import-form.js:346
 msgid "Add"
 msgstr ""
 
@@ -338,48 +338,52 @@ msgstr ""
 msgid "Toggle all"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:164
+#: src/admin/import-export/import-form.js:196
 msgid "Invalid JSON file"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:167
+#: src/admin/import-export/import-form.js:199
 msgid "Unknown error"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:231
+#: src/admin/import-export/import-form.js:263
 msgid "Import data confirmation"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:238
+#: src/admin/import-export/import-form.js:270
 msgid "No import data"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:273
+#: src/admin/import-export/import-form.js:305
 #. Import %s
 msgid "Import %s"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:298
+#: src/admin/import-export/import-form.js:332
 msgid "Import method"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:319
+#: src/admin/import-export/import-form.js:353
 msgid "Override"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:357
+#: src/admin/import-export/import-form.js:456
 msgid "The following data will not be imported because the identifiers are covered."
 msgstr ""
 
-#: src/admin/import-export/import-form.js:432
+#: src/admin/import-export/import-form.js:525
 msgid "Import"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:442
+#: src/admin/import-export/import-form.js:535
 msgid "Import Success"
 msgstr ""
 
-#: src/admin/import-export/index.js:130
+#: src/admin/import-export/index.js:124
+msgid "Font Awesome Custom Lists Setting"
+msgstr ""
+
+#: src/admin/import-export/index.js:141
 msgid "Import Export Tool"
 msgstr ""
 
@@ -927,11 +931,11 @@ msgstr ""
 msgid "wysiwyg"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:262
+#: src/blocks/_pro/dynamic-text/edit.js:263
 msgid "Setting up a link"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:274
+#: src/blocks/_pro/dynamic-text/edit.js:276
 #: src/blocks/_pro/gridcolcard-item/edit.js:322
 #: src/blocks/_pro/icon-card-item/edit.js:128
 #: src/blocks/button/edit.js:271
@@ -1234,7 +1238,7 @@ msgstr ""
 #: src/blocks/heading/edit.js:335
 #: src/blocks/icon/edit.js:269
 #: src/blocks/pr-content/edit.js:212
-#: src/utils/font-awesome-new.js:66
+#: src/utils/font-awesome-new.js:166
 msgid "Icon"
 msgstr ""
 
@@ -2894,32 +2898,48 @@ msgstr ""
 msgid "Lorem ipsum"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:243
+#: src/utils/font-awesome-new.js:172
+msgid "Custom list"
+msgstr ""
+
+#: src/utils/font-awesome-new.js:324
+msgid "Preset"
+msgstr ""
+
+#: src/utils/font-awesome-new.js:363
 msgid "Font Awesome icon list"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:246
+#: src/utils/font-awesome-new.js:366
 msgid ""
 "If you want to use an icon other than the ones listed above, you can use "
 "any of the icons from Font Awesome's icon list Please select a tag and "
 "enter it."
 msgstr ""
 
-#: src/utils/font-awesome-new.js:251
+#: src/utils/font-awesome-new.js:371
 msgid "Ex) "
 msgstr ""
 
-#: src/utils/font-awesome-new.js:265
+#: src/utils/font-awesome-new.js:385
+msgid "Add selected icon to custom list"
+msgstr ""
+
+#: src/utils/font-awesome-new.js:393
+msgid "Delete/Sort mode"
+msgstr ""
+
+#: src/utils/font-awesome-new.js:407
 msgid ""
 "When you click save button, the window will be reloaded and this setting "
 "will be applied."
 msgstr ""
 
-#: src/utils/font-awesome-new.js:275
+#: src/utils/font-awesome-new.js:417
 msgid "Save"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:291
+#: src/utils/font-awesome-new.js:433
 msgid "Select Icon"
 msgstr ""
 

@@ -18,8 +18,19 @@ function vk_blocks_new_text_render_callback( $attributes ) {
 	$limit            = gmdate( 'Ymd', strtotime( "-$days_as_new_post days" ) );
 	$post_date        = get_the_date( 'Ymd' );
 
-	$wrapper_attributes = get_block_wrapper_attributes();
+	$block_attributes = WP_Block_Supports::get_instance()->apply_block_supports();
+
+	// 枠線のみ get_block_wrapper_attributesに入ってこない対応
+	if (isset($attributes['style']['border'])) {
+		$border_styles = array();
+		foreach ( $attributes['style']['border'] as $key => $value ) {
+			$border_styles[] = 'border-' . $key . ':' . esc_attr( $value ) . ';';
+		}
+		$block_attributes['style'] .= ' ' . implode( ' ', $border_styles );		
+	}
 	
+	$wrapper_attributes = get_block_wrapper_attributes($block_attributes);
+
 	$result = "";
 	if ( $post_date >= $limit ) {
 		$result = "<div $wrapper_attributes>";

@@ -21,23 +21,22 @@ function vk_blocks_new_text_render_callback( $attributes ) {
 	$block_attributes = WP_Block_Supports::get_instance()->apply_block_supports();
 
 	// 枠線のみ get_block_wrapper_attributesに入ってこない対応
-	if (isset($attributes['style']['border'])) {
+	if ( isset( $attributes['style']['border'] ) ) {
 		$border_styles = array();
 		foreach ( $attributes['style']['border'] as $key => $value ) {
 			$border_styles[] = 'border-' . $key . ':' . esc_attr( $value ) . ';';
 		}
-		$block_attributes['style'] .= ' ' . implode( ' ', $border_styles );		
+		$block_attributes['style'] .= ' ' . implode( ' ', $border_styles );
 	}
-	
-	$wrapper_attributes = get_block_wrapper_attributes($block_attributes);
 
-	$result = "";
+	$wrapper_attributes = get_block_wrapper_attributes( $block_attributes );
+
+	$result = '';
 	if ( $post_date >= $limit ) {
-		$result = "<div $wrapper_attributes>";
+		$result  = "<div $wrapper_attributes>";
 		$result .= $attributes['content'];
 		$result .= '</div>';
 	}
-
 
 	return $result;
 }

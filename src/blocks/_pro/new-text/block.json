@@ -13,10 +13,35 @@
 			"default": 5
 		},
 		"align": {
-			"type": "string"
+			"type": "string",
+			"default": "center"
 		},
 		"width": {
-			"type": "string"
+			"type": "string",
+			"default": "50px"
+		},
+		"fontSize": {
+			"default": "tiny"
+		},
+		"style": {
+			"type": "object",
+            "default": {
+                "border": {
+                    "radius": "5px"
+                },
+				"color": {
+					"background": "#ff0000",
+					"text": "#ffffff"
+				},
+				"spacing": {
+					"padding": {
+						"top": "0px",
+						"right": "10px",
+						"bottom": "0px",
+						"left": "10px"		
+					}
+				}
+            }
 		}
 	},
 	"description": "Easily highlight your latest content or products with the 'New Badge' feature.",

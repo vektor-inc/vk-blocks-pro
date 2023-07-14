@@ -1,7 +1,10 @@
+
 import { __ } from '@wordpress/i18n';
 import {
 	useBlockProps,
 	InspectorControls,
+	AlignmentControl,
+	BlockControls,
 	RichText,
 	__experimentalUseBorderProps as useBorderProps,
 } from '@wordpress/block-editor';
@@ -13,19 +16,9 @@ import {
 import { useEntityProp } from '@wordpress/core-data';
 import { useState, useEffect } from '@wordpress/element';
 
-const ALLOWED_FORMATS = [
-	'core/bold',
-	'core/image',
-	'core/italic',
-	'core/link',
-	'core/strikethrough',
-	'core/text-color',
-	'vk-blocks/highlighter',
-];
-
 export default function NewTextEdit(props) {
 	const { attributes, setAttributes, context } = props;
-	const { content, daysAsNewPost } = attributes;
+	const { content, daysAsNewPost, align } = attributes;
 	const [isNew, setIsNew] = useState(false);
 
 	const { postId } = context;
@@ -46,11 +39,22 @@ export default function NewTextEdit(props) {
 		style: {
 			opacity: !isNew ? 0.15 : 1,
 			...borderProps.style,
+			textAlign: align,
 		},
 	});
 
 	return (
 		<>
+			<BlockControls group="block">
+				<AlignmentControl
+					value={align}
+					onChange={(newAlign) =>
+						setAttributes({
+							align: newAlign,
+						})
+					}
+				/>
+			</BlockControls>
 			<InspectorControls>
 				<PanelBody title={__('New Text setting', 'vk-blocks-pro')}>
 					<NumberControl
@@ -65,8 +69,6 @@ export default function NewTextEdit(props) {
 			</InspectorControls>
 			<div {...blockProps}>
 				<RichText
-					allowedFormats={ALLOWED_FORMATS}
-					withoutInteractiveFormatting
 					multiline={false}
 					aria-label={__('New text…')}
 					placeholder={__('New text…') + ' '}

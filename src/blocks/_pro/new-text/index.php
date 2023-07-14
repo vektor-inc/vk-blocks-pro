@@ -18,7 +18,10 @@ function vk_blocks_new_text_render_callback( $attributes ) {
 	$limit            = gmdate( 'Ymd', strtotime( "-$days_as_new_post days" ) );
 	$post_date        = get_the_date( 'Ymd' );
 
-	$block_attributes = WP_Block_Supports::get_instance()->apply_block_supports();
+	//$block_attributes = WP_Block_Supports::get_instance()->apply_block_supports();
+	$extra_attributes = array();
+	$extra_attributes['class'] = 'has-text-align-' . $attributes['align'];
+
 
 	// 枠線のみ get_block_wrapper_attributesに入ってこない対応
 	if ( isset( $attributes['style']['border'] ) ) {
@@ -26,10 +29,12 @@ function vk_blocks_new_text_render_callback( $attributes ) {
 		foreach ( $attributes['style']['border'] as $key => $value ) {
 			$border_styles[] = 'border-' . $key . ':' . esc_attr( $value ) . ';';
 		}
-		$block_attributes['style'] .= ' ' . implode( ' ', $border_styles );
+		$extra_attributes['style'] = implode( ' ', $border_styles );
 	}
 
-	$wrapper_attributes = get_block_wrapper_attributes( $block_attributes );
+
+	$wrapper_attributes = get_block_wrapper_attributes( $extra_attributes );
+	$wrapper_attributes = preg_replace( '/align(left|center|right)\s*/', '', $wrapper_attributes);
 
 	$result = '';
 	if ( $post_date >= $limit ) {

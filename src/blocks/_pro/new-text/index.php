@@ -30,6 +30,9 @@ function vk_blocks_new_text_render_callback( $attributes ) {
 		}
 		$extra_attributes['style'] = implode( ' ', $border_styles );
 	}
+	if ( isset( $attributes['width'] ) ) {
+		$extra_attributes['style'] .= ' width:' . $attributes['width'] . ';';
+	}
 
 	$wrapper_attributes = get_block_wrapper_attributes( $extra_attributes );
 	$wrapper_attributes = preg_replace( '/align(left|center|right)\s*/', '', $wrapper_attributes );

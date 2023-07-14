@@ -14,6 +14,9 @@
 		},
 		"align": {
 			"type": "string"
+		},
+		"width": {
+			"type": "string"
 		}
 	},
 	"description": "Easily highlight your latest content or products with the 'New Badge' feature.",

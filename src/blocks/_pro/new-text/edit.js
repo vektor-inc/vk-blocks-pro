@@ -48,7 +48,7 @@ export default function NewTextEdit(props) {
 	const borderProps = useBorderProps(attributes);
 
 	const blockProps = useBlockProps({
-		className: "vk_newText",
+		className: 'vk_newText',
 		style: {
 			opacity: !isNew ? 0.15 : 1,
 			...borderProps.style,
@@ -96,16 +96,16 @@ export default function NewTextEdit(props) {
 				</PanelBody>
 			</InspectorControls>
 			<div>
-			<div {...blockProps}>
-				<RichText
-					multiline={false}
-					aria-label={__('New text…')}
-					placeholder={__('New text…') + ' '}
-					value={content}
-					onChange={(value) => setAttributes({ content: value })}
-					tagName="span"
-				/>
-			</div>
+				<div {...blockProps}>
+					<RichText
+						multiline={false}
+						aria-label={__('New text…')}
+						placeholder={__('New text…') + ' '}
+						value={content}
+						onChange={(value) => setAttributes({ content: value })}
+						tagName="span"
+					/>
+				</div>
 			</div>
 		</>
 	);

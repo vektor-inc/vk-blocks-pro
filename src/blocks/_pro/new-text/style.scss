@@ -1,0 +1,14 @@
+.vk_newText {
+    background-color: red;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 10px;
+    text-align: center;
+
+    &.is-style-plain {
+        color: unset;
+        background-color: unset;
+        font-size: unset;
+        text-align: unset;
+    }
+}

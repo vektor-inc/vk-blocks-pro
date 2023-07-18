@@ -48,6 +48,7 @@ export default function NewTextEdit(props) {
 	const borderProps = useBorderProps(attributes);
 
 	const blockProps = useBlockProps({
+		className: "vk_newText",
 		style: {
 			opacity: !isNew ? 0.15 : 1,
 			...borderProps.style,
@@ -94,6 +95,7 @@ export default function NewTextEdit(props) {
 					/>
 				</PanelBody>
 			</InspectorControls>
+			<div>
 			<div {...blockProps}>
 				<RichText
 					multiline={false}
@@ -103,6 +105,7 @@ export default function NewTextEdit(props) {
 					onChange={(value) => setAttributes({ content: value })}
 					tagName="span"
 				/>
+			</div>
 			</div>
 		</>
 	);

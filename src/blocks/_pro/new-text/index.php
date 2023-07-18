@@ -20,7 +20,11 @@ function vk_blocks_new_text_render_callback( $attributes ) {
 
 	// $block_attributes = WP_Block_Supports::get_instance()->apply_block_supports();
 	$extra_attributes          = array();
-	$extra_attributes['class'] = 'has-text-align-' . $attributes['align'];
+	$extra_attributes['class'] = 'vk_newText';
+
+	if ( isset( $attributes['align'] ) ) {
+		$extra_attributes['class'] .= ' has-text-align-' . $attributes['align'];
+	}
 
 	// 枠線のみ get_block_wrapper_attributesに入ってこない対応
 	if ( isset( $attributes['style']['border'] ) ) {

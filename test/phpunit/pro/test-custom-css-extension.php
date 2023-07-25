@@ -82,9 +82,11 @@ class CustomCssExtensionTest extends WP_UnitTestCase {
             )
         );
 		// $count は環境によって変わる事があるため、変更しやすいように変数にしている。
-        $count = 1;
+		
+        $count = (int)wp_unique_id();
+		var_dump($count);
 		foreach ( $test_data as $test_value ) {
-            $correct = sprintf($test_value['correct'], $count);
+            $correct = sprintf($test_value['correct'], $count + 1);
 			$return  = vk_blocks_render_custom_css($test_value['block_content'], $block);
 			$this->assertSame( $correct, $return );
             $count++;

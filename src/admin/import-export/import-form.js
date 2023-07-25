@@ -82,10 +82,50 @@ export default function ImportForm(props) {
 		const updateVkBlocksOptions = _vkBlocksOption;
 		// importMethodがaddだったら追加する
 		_importSettings.forEach(({ options, isImport }) => {
-			options.forEach(({ name, uniqKey, importMethod }, id) => {
+			options.forEach(({ name, associativeArray, importMethod }, id) => {
 				if (!!isImport) {
 					if (importMethod === 'add') {
-						if ('uniqKey' in options[id]) {
+						if ('associativeArray' in options[id]) {
+							if ('uniqKey' in options[id]) {
+								// 識別子が被っていないもののみ追加する
+								const addOption = [];
+								if (
+									_uploadedVkBlocksOptions[name] &&
+									_uploadedVkBlocksOptions[name].length > 0 &&
+									_vkBlocksOption[name]
+								) {
+									_uploadedVkBlocksOptions[name].forEach(
+										(uploadedOptionElement) => {
+											let isDuplicate = false;
+											_vkBlocksOption[name].forEach(
+												(vkBlocksOptionElement) => {
+													if (
+														uploadedOptionElement[
+															associativeArray
+														] ===
+														vkBlocksOptionElement[
+															associativeArray
+														]
+													) {
+														isDuplicate = true;
+													}
+												}
+											);
+											if (!isDuplicate) {
+												addOption.push(
+													uploadedOptionElement
+												);
+											}
+										}
+									);
+								}
+								updateVkBlocksOptions[name].push(...addOption);
+							} else {
+								updateVkBlocksOptions[name].push(
+									..._uploadedVkBlocksOptions[name]
+								);
+							}
+						} else if ('indexedArray' in options[id]) {
 							// 識別子が被っていないもののみ追加する
 							const addOption = [];
 							if (
@@ -99,12 +139,8 @@ export default function ImportForm(props) {
 										_vkBlocksOption[name].forEach(
 											(vkBlocksOptionElement) => {
 												if (
-													uploadedOptionElement[
-														uniqKey
-													] ===
-													vkBlocksOptionElement[
-														uniqKey
-													]
+													uploadedOptionElement ===
+													vkBlocksOptionElement
 												) {
 													isDuplicate = true;
 												}
@@ -119,10 +155,6 @@ export default function ImportForm(props) {
 								);
 							}
 							updateVkBlocksOptions[name].push(...addOption);
-						} else {
-							updateVkBlocksOptions[name].push(
-								..._uploadedVkBlocksOptions[name]
-							);
 						}
 					} else {
 						// 上書きする
@@ -283,12 +315,14 @@ export default function ImportForm(props) {
 											(
 												{
 													name,
+													associativeArray = false,
 													uniqKey = false,
 													importMethod,
 												},
 												id
 											) =>
 												checked &&
+												uniqKey &&
 												importMethod && (
 													<div
 														key={id}
@@ -334,7 +368,7 @@ export default function ImportForm(props) {
 															.options[id]
 															.importMethod ===
 															'add' &&
-															'uniqKey' in
+															'associativeArray' in
 																options[id] &&
 															vkBlocksOption[
 																name
@@ -346,10 +380,10 @@ export default function ImportForm(props) {
 																		uploadKey
 																	) =>
 																		uploadKey[
-																			uniqKey
+																			associativeArray
 																		] ===
 																		preKey[
-																			uniqKey
+																			associativeArray
 																		]
 																)
 															) && (
@@ -364,7 +398,7 @@ export default function ImportForm(props) {
 															.options[id]
 															.importMethod ===
 															'add' &&
-															'uniqKey' in
+															'associativeArray' in
 																options[id] &&
 															vkBlocksOption[
 																name
@@ -378,10 +412,10 @@ export default function ImportForm(props) {
 																	) => {
 																		return (
 																			uploadKey[
-																				uniqKey
+																				associativeArray
 																			] ===
 																				preKey[
-																					uniqKey
+																					associativeArray
 																				] && (
 																				<div
 																					key={
@@ -390,8 +424,67 @@ export default function ImportForm(props) {
 																				>
 																					{
 																						uploadKey[
-																							uniqKey
+																							associativeArray
 																						]
+																					}
+																				</div>
+																			)
+																		);
+																	}
+																);
+															})}
+														{importSettings[index]
+															.options[id]
+															.importMethod ===
+															'add' &&
+															'indexedArray' in
+																options[id] &&
+															vkBlocksOption[
+																name
+															].some((preKey) =>
+																uploadedVkBlocksOptions[
+																	name
+																].some(
+																	(
+																		uploadKey
+																	) =>
+																		uploadKey ===
+																		preKey
+																)
+															) && (
+																<p>
+																	{__(
+																		'The following data will not be imported because the identifiers are covered.',
+																		'vk-blocks-pro'
+																	)}
+																</p>
+															)}
+														{importSettings[index]
+															.options[id]
+															.importMethod ===
+															'add' &&
+															'indexedArray' in
+																options[id] &&
+															vkBlocksOption[
+																name
+															].map((preKey) => {
+																return uploadedVkBlocksOptions[
+																	name
+																].map(
+																	(
+																		uploadKey,
+																		uploadId
+																	) => {
+																		return (
+																			uploadKey ===
+																				preKey && (
+																				<div
+																					key={
+																						uploadId
+																					}
+																				>
+																					{
+																						uploadKey
 																					}
 																				</div>
 																			)

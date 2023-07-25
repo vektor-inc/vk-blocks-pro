@@ -64,6 +64,9 @@ jobs:
     # Build
     - name: Build
       run: npm run build
+    # Lightning をダウンロード
+    - name: Install Theme
+      run: bash bin/install-theme.sh
     # PHPUnit
     - name: PHP Unit Test
       run: npm run phpunit

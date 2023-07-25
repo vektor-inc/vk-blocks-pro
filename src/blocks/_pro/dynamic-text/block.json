@@ -25,11 +25,19 @@
 		},
 		"customFieldName": {
 			"type": "string",
-			"default": ""
+			"default": null
 		},
 		"fieldType": {
 			"type": "string",
 			"default": "text"
+		},
+		"isLinkSet": {
+			"type": "boolean",
+			"default": false
+		},
+		"isLinkTarget": {
+			"type": "boolean",
+			"default": false
 		}
 	},
 	"description": "Display dynamic text",

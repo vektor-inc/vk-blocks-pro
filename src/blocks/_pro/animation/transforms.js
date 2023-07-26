@@ -9,7 +9,16 @@ import { createBlock } from '@wordpress/blocks';
 import compareVersions from 'compare-versions';
 
 // WP6.3以上か NOTE: WP6.2以下をサポートしなくなったら削除すること
-const isLargerThanWp63 = compareVersions(window.wpVersion, '6.3') >= 0;
+const isLargerThanWp63 = () => {
+	if (
+		window.wpVersion !== undefined &&
+		window.wpVersion !== null &&
+		compareVersions(window.wpVersion, '6.3') < 0
+	) {
+		return false;
+	}
+	return true;
+};
 
 const transforms = {
 	from: [
@@ -35,10 +44,10 @@ const transforms = {
 			},
 		},
 	],
-	ungroup: isLargerThanWp63
+	ungroup: isLargerThanWp63()
 		? (attributes, innerBlocks) => innerBlocks
 		: undefined,
-	to: !isLargerThanWp63
+	to: !isLargerThanWp63()
 		? [
 				{
 					type: 'block',

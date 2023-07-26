@@ -15,10 +15,11 @@ class VkCustomAssert extends Assert {
      * @throws PHPUnit\Framework\AssertionFailedError
      */  
     public static function assertStringMatchesNumericFormat( $expected, $actual, $message = '' ) {
-        // %d を特殊なタグに置き換えてから preg_quote を適用
+        // %d を一時的な文字列（NUMERIC_PLACEHOLDER）に置き換え
         $pattern = str_replace( '%d', 'NUMERIC_PLACEHOLDER', $expected );
+		// preg_quote で / をエスケープ
         $pattern = preg_quote( $pattern, '/' );
-        // エスケープ後に特殊なタグを任意の数値にマッチする正規表現に変換
+        // 一時的な文字列（NUMERIC_PLACEHOLDER）を任意の数値が一つ以上連続にマッチする正規表現 \d+ に変換
         $pattern = str_replace( 'NUMERIC_PLACEHOLDER', '\d+', $pattern );
 
         // 完全一致をチェックするため、正規表現のパターンに開始と終了のアンカーを追加

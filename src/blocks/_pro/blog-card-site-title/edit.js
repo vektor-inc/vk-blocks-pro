@@ -45,7 +45,7 @@ export default function BlogCardSiteTitleEdit(props) {
 	return (
 		<>
 			<BlockControls>
-				{isLargerThanWp63 && (
+				{isLargerThanWp63() && (
 					<ToolbarGroup>
 						<HeadingLevelDropdown
 							options={HEADING_LEVELS}

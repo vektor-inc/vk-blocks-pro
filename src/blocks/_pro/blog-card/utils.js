@@ -16,7 +16,16 @@ import { name as blogCardName } from './block.json';
 import compareVersions from 'compare-versions';
 
 // WP6.3以上か NOTE: WP6.2以下をサポートしなくなったら削除すること
-export const isLargerThanWp63 = compareVersions(window.wpVersion, '6.3') >= 0;
+export const isLargerThanWp63 = () => {
+	if (
+		window.wpVersion !== undefined &&
+		window.wpVersion !== null &&
+		compareVersions(window.wpVersion, '6.3') < 0
+	) {
+		return false;
+	}
+	return true;
+};
 
 /**
  * Helper hook that determines if there is an active variation of the block

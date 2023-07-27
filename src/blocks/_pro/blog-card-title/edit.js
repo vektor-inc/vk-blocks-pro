@@ -43,7 +43,7 @@ export default function BlogCardTitleEdit(props) {
 	return (
 		<>
 			<BlockControls group="block">
-				{isLargerThanWp63 && (
+				{isLargerThanWp63() && (
 					<ToolbarGroup>
 						<HeadingLevelDropdown
 							value={level}

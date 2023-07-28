@@ -18,7 +18,7 @@ import {
 import { useEntityProp } from '@wordpress/core-data';
 import { useState, useEffect } from '@wordpress/element';
 
-export default function NewTextEdit(props) {
+export default function NewBadgeEdit(props) {
 	const { attributes, setAttributes, context } = props;
 	const { content, daysAsNewPost, align, width } = attributes;
 	const [isNew, setIsNew] = useState(false);
@@ -48,7 +48,7 @@ export default function NewTextEdit(props) {
 	const borderProps = useBorderProps(attributes);
 
 	const blockProps = useBlockProps({
-		className: 'vk_newText',
+		className: 'vk_newBadge',
 		style: {
 			opacity: !isNew ? 0.15 : 1,
 			...borderProps.style,
@@ -70,7 +70,7 @@ export default function NewTextEdit(props) {
 				/>
 			</BlockControls>
 			<InspectorControls>
-				<PanelBody title={__('New Text setting', 'vk-blocks-pro')}>
+				<PanelBody title={__('New Badge setting', 'vk-blocks-pro')}>
 					<NumberControl
 						label={__('Days Counted as New Post', 'vk-blocks-pro')}
 						value={daysAsNewPost}
@@ -99,8 +99,8 @@ export default function NewTextEdit(props) {
 				<div {...blockProps}>
 					<RichText
 						multiline={false}
-						aria-label={__('New text…')}
-						placeholder={__('New text…') + ' '}
+						aria-label={__('Edit text…')}
+						placeholder={__('Edit text…') + ' '}
 						value={content}
 						onChange={(value) => setAttributes({ content: value })}
 						tagName="span"

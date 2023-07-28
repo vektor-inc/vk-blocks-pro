@@ -13,14 +13,14 @@ use VektorInc\VK_Helpers\VkHelpers;
  * @param array $attributes Block attributes.
  * @return string
  */
-function vk_blocks_new_text_render_callback( $attributes ) {
+function vk_blocks_new_badge_render_callback( $attributes ) {
 	$days_as_new_post = $attributes['daysAsNewPost'];
 	$limit            = gmdate( 'Ymd', strtotime( "-$days_as_new_post days" ) );
 	$post_date        = get_the_date( 'Ymd' );
 
 	// $block_attributes = WP_Block_Supports::get_instance()->apply_block_supports();
 	$extra_attributes          = array();
-	$extra_attributes['class'] = 'vk_newText';
+	$extra_attributes['class'] = 'vk_newBadge';
 
 	if ( isset( $attributes['align'] ) ) {
 		$extra_attributes['class'] .= ' has-text-align-' . $attributes['align'];
@@ -44,7 +44,7 @@ function vk_blocks_new_text_render_callback( $attributes ) {
 	$result = '';
 	if ( $post_date >= $limit ) {
 		$result  = "<div $wrapper_attributes>";
-		$result .= $attributes['content'];
+		$result .= '<span>' . $attributes['content'] . '</span>';
 		$result .= '</div>';
 	}
 
@@ -57,12 +57,12 @@ function vk_blocks_new_text_render_callback( $attributes ) {
  *
  * @return void
  */
-function vk_blocks_register_block_new_text() {
+function vk_blocks_register_block_new_badge() {
 	// Register Style.
 	if ( ! is_admin() ) {
 		wp_register_style(
-			'vk-blocks/new-text',
-			VK_BLOCKS_DIR_URL . 'build/_pro/new-text/style.css',
+			'vk-blocks/new-badge',
+			VK_BLOCKS_DIR_URL . 'build/_pro/new-badge/style.css',
 			array(),
 			VK_BLOCKS_VERSION
 		);
@@ -71,12 +71,12 @@ function vk_blocks_register_block_new_text() {
 	register_block_type(
 		__DIR__,
 		array(
-			'style'           => 'vk-blocks/new-text',
+			'style'           => 'vk-blocks/new-badge',
 			'editor_style'    => 'vk-blocks-build-editor-css',
 			'editor_script'   => 'vk-blocks-build-js',
-			'render_callback' => 'vk_blocks_new_text_render_callback',
+			'render_callback' => 'vk_blocks_new_badge_render_callback',
 		)
 	);
 }
-add_action( 'init', 'vk_blocks_register_block_new_text', 99 );
+add_action( 'init', 'vk_blocks_register_block_new_badge', 99 );
 

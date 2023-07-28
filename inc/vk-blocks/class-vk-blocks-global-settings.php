@@ -195,7 +195,7 @@ class VK_Blocks_Global_Settings {
 				'is_pro' => true,
 			),
 			array(
-				'name'   => 'new-text',
+				'name'   => 'new-badge',
 				'is_pro' => true,
 			),
 			array(

@@ -1,10 +1,11 @@
-.vk_newText {
+.vk_newBadge {
     background-color: red;
     color: #fff;
     border-radius: 5px;
     font-size: 10px;
     text-align: center;
     padding: 0 4px;
+    word-break: break-word;
 
     &.is-style-plain {
         color: unset;

@@ -21,8 +21,8 @@ function vk_blocks_new_badge_render_callback( $attributes ) {
 	$extra_attributes = array();
 	$classes          = array();
 	$styles           = array();
-	
-	array_push( $classes, 'vk_newBadge');
+
+	array_push( $classes, 'vk_newBadge' );
 
 	if ( isset( $attributes['align'] ) ) {
 		array_push( $classes, 'has-text-align-' . $attributes['align'] );
@@ -43,7 +43,7 @@ function vk_blocks_new_badge_render_callback( $attributes ) {
 		$extra_attributes['style'] .= ' width:' . $attributes['width'] . ';';
 	}
 
-	if ( 0 < count($classes) ) {
+	if ( 0 < count( $classes ) ) {
 		$extra_attributes['class'] = implode( ' ', $classes );
 	}
 

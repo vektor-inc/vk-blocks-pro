@@ -125,7 +125,7 @@ export default function OuterEdit(props) {
 		}
 	}, [clientId]);
 
-	const opacityClass = opacity && parseInt( opacity * 100, 10 );
+	const opacityClass = opacity && parseInt(opacity * 100, 10);
 	const bgColorClasses = classnames({
 		[`has-background`]: bgColor !== undefined,
 		[`has-${bgColor}-background-color`]:

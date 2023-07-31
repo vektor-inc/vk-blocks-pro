@@ -61,14 +61,14 @@ export default function BlogCardWrapperEdit(props) {
 	const preview = richData === null ? false : !richData?.data.cannot_embed;
 
 	const innerBlocksProps = useInnerBlocksProps(blockProps, {
-		prioritizedInserterBlocks:[
+		prioritizedInserterBlocks: [
 			'vk-blocks/blog-card-excerpt',
 			'vk-blocks/blog-card-featured-image',
 			'vk-blocks/blog-card-site-logo',
 			'vk-blocks/blog-card-site-title',
 			'vk-blocks/blog-card-title',
 		],
-	} );
+	});
 
 	return (
 		<>
@@ -129,7 +129,7 @@ export default function BlogCardWrapperEdit(props) {
 					!isEditingURL &&
 					!richData?.data.cannot_embed
 				) {
-					return <div { ...innerBlocksProps } />;
+					return <div {...innerBlocksProps} />;
 				}
 				return (
 					<BlogCardPlaceholder

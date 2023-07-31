@@ -28,6 +28,23 @@ function vk_blocks_blog_card_featured_image_render_callback( $attributes, $conte
 	$is_link = isset( $attributes['isLink'] ) && $attributes['isLink'];
 	$attr    = get_block_core_post_featured_image_border_attributes( $attributes );
 
+	$extra_styles = '';
+
+	// Aspect ratio with a height set needs to override the default width/height.
+	if ( ! empty( $attributes['aspectRatio'] ) ) {
+		$extra_styles .= 'width:100%;height:100%;';
+	} elseif ( ! empty( $attributes['height'] ) ) {
+		$extra_styles .= "height:{$attributes['height']};";
+	}
+
+	if ( ! empty( $attributes['scale'] ) ) {
+		$extra_styles .= "object-fit:{$attributes['scale']};";
+	}
+
+	if ( ! empty( $extra_styles ) ) {
+		$attr['style'] = empty( $attr['style'] ) ? $extra_styles : $attr['style'] . $extra_styles;
+	}
+
 	$attr          = array_map( 'esc_attr', $attr );
 	$favicon_image = rtrim( "<img src='$thumbnail_url'" );
 
@@ -40,18 +57,33 @@ function vk_blocks_blog_card_featured_image_render_callback( $attributes, $conte
 	if ( $is_link ) {
 		$link_target   = $attributes['linkTarget'];
 		$rel           = ! empty( $attributes['rel'] ) ? 'rel="' . esc_attr( $attributes['rel'] ) . '"' : '';
+		$height         = ! empty( $attributes['height'] ) ? 'style="' . esc_attr( safecss_filter_attr( 'height:' . $attributes['height'] ) ) . '"' : '';
 		$favicon_image = sprintf(
-			'<a href="%1$s" target="%2$s" %3$s>%4$s</a>',
+			'<a href="%1$s" target="%2$s" %3$s %4$s>%5$s</a>',
 			$block->context['vk-blocks/blog-card-url'],
 			esc_attr( $link_target ),
 			$rel,
+			$height,
 			$favicon_image
 		);
 	} else {
 		$favicon_image = $favicon_image;
 	}
 
-	$wrapper_attributes = get_block_wrapper_attributes();
+	$aspect_ratio = ! empty( $attributes['aspectRatio'] )
+		? esc_attr( safecss_filter_attr( 'aspect-ratio:' . $attributes['aspectRatio'] ) ) . ';'
+		: '';
+	$width        = ! empty( $attributes['width'] )
+		? esc_attr( safecss_filter_attr( 'width:' . $attributes['width'] ) ) . ';'
+		: '';
+	$height       = ! empty( $attributes['height'] )
+		? esc_attr( safecss_filter_attr( 'height:' . $attributes['height'] ) ) . ';'
+		: '';
+	if ( ! $height && ! $width && ! $aspect_ratio ) {
+		$wrapper_attributes = get_block_wrapper_attributes();
+	} else {
+		$wrapper_attributes = get_block_wrapper_attributes( array( 'style' => $aspect_ratio . $width . $height ) );
+	}
 	return "<figure {$wrapper_attributes}>{$favicon_image}</figure>";
 }
 

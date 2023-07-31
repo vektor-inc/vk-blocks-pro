@@ -13,22 +13,34 @@ import {
  * Internal dependencies
  */
 import useRemoteUrlData from '../blog-card/api/use-rich-url-data';
+import DimensionControls from './dimension-controls';
 
 export default function BlogCardFeaturedImageEdit(props) {
-	const { attributes, setAttributes, context } = props;
-	const { isLink, rel, linkTarget } = attributes;
+	const { attributes, setAttributes, context, clientId } = props;
+	const { isLink, aspectRatio, height, width, scale, rel, linkTarget } =
+		attributes;
 	const { richData } = useRemoteUrlData(context['vk-blocks/blog-card-url']);
 	const featuredImage = richData?.data.featured_image;
 
-	const blockProps = useBlockProps();
+	const blockProps = useBlockProps({
+		style: { width, height, aspectRatio },
+	});
 	const borderProps = useBorderProps(attributes);
 
 	const imageStyles = {
 		...borderProps.style,
+		height: aspectRatio ? '100%' : height,
+		width: !!aspectRatio && '100%',
+		objectFit: !!(height || aspectRatio) && scale,
 	};
 
 	return (
 		<>
+			<DimensionControls
+				clientId={clientId}
+				attributes={attributes}
+				setAttributes={setAttributes}
+			/>
 			<InspectorControls>
 				<PanelBody title={__('Settings')}>
 					<ToggleControl

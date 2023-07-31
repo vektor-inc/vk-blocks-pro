@@ -1,13 +1,8 @@
 /**
  * WordPress dependencies
  */
-import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import { useInnerBlocksProps, useBlockProps } from '@wordpress/block-editor';
 
 export default function BlogCardSave() {
-	const blockProps = useBlockProps.save();
-	return (
-		<div {...blockProps}>
-			<InnerBlocks.Content />
-		</div>
-	);
+	return <div {...useInnerBlocksProps.save(useBlockProps.save())} />;
 }

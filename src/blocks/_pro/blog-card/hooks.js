@@ -3,14 +3,14 @@
  */
 import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
-import { PanelBody, ToggleControl, Button } from '@wordpress/components';
+import { PanelBody, ToggleControl } from '@wordpress/components';
 import {
 	InspectorControls,
 	store as blockEditorStore,
 } from '@wordpress/block-editor';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { useEffect } from '@wordpress/element';
-import { useSelect, useDispatch } from '@wordpress/data';
+import { useSelect } from '@wordpress/data';
 
 /**
  * Internal dependencies
@@ -111,78 +111,4 @@ addFilter(
 	'editor.BlockEdit',
 	'vk-blocks/editor/core-columns/with-inspector-controls',
 	withInspectorControls
-);
-
-/**
- * Override the default edit UI to include layout controls
- */
-export const withInspectorControls2 = createHigherOrderComponent(
-	(BlockEdit) => (props) => {
-		const { clientId } = props;
-		const { isParentsBlogCard } = useSelect(
-			(select) => {
-				const { getBlockParents, getBlockName } =
-					select(blockEditorStore);
-				const parentsIdArray = getBlockParents(clientId);
-				const _isParentsBlogCard = parentsIdArray.some(
-					(_clientId) =>
-						getBlockName(_clientId) === 'vk-blocks/blog-card'
-				);
-
-				return {
-					isParentsBlogCard: _isParentsBlogCard,
-				};
-			},
-			[clientId]
-		);
-		if (!isParentsBlogCard) {
-			return <BlockEdit {...props} />;
-		}
-
-		const { selectBlock } = useDispatch(blockEditorStore);
-		const { firstParentClientId } = useSelect((select) => {
-			const { getBlockParents, getSelectedBlockClientId, getBlockName } =
-				select(blockEditorStore);
-			const selectedBlockClientId = getSelectedBlockClientId();
-			const parents = getBlockParents(selectedBlockClientId);
-			// parents のid配列から最後のvk-blocks/blog-cardを抽出
-			let parentBlogCardClientId;
-			for (let i = parents.length - 1; i >= 0; i--) {
-				const element = parents[i];
-				if (getBlockName(element) === 'vk-blocks/blog-card') {
-					parentBlogCardClientId = element;
-					break;
-				}
-			}
-			return {
-				firstParentClientId: parentBlogCardClientId,
-			};
-		}, []);
-
-		return (
-			<>
-				<BlockEdit {...props} />
-				<InspectorControls>
-					<PanelBody>
-						<Button
-							onClick={() => selectBlock(firstParentClientId)}
-							variant="secondary"
-						>
-							{__(
-								'親のブログカードブロックを選択',
-								'vk-blocks-pro'
-							)}
-						</Button>
-					</PanelBody>
-				</InspectorControls>
-			</>
-		);
-	},
-	'withInspectorControls2'
-);
-
-addFilter(
-	'editor.BlockEdit',
-	'vk-blocks/editor/blog-card/with-inspector-controls',
-	withInspectorControls2
 );

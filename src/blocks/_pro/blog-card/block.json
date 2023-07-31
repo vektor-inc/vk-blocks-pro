@@ -53,6 +53,11 @@
 				"padding": true
 			}
 		},
+		"layout": {
+			"allowSwitching": false,
+			"allowInheriting": false,
+			"allowEditing": false
+		},
 		"html": false
 	}
 }

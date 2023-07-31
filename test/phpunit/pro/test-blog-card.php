@@ -99,8 +99,8 @@ class BlogCard extends WP_UnitTestCase {
 				<h5 class="wp-block-vk-blocks-blog-card-title"><a href="https://vektor-inc.co.jp/" target="_self" >株式会社ベクトル | WordPressテーマ・プラグイン開発のクリエイティブカンパニー</a></h5>
 				<figure class="wp-block-vk-blocks-blog-card-featured-image"><a href="https://vektor-inc.co.jp/" target="_self" ><img src=\'https://www.vektor-inc.co.jp/wp-content/uploads/2020/04/vecktor-inc_ogp2020.png\' /></a></figure>
 				<div class="wp-block-vk-blocks-blog-card-excerpt"><p class="wp-block-vk-blocks-blog-card-excerpt__excerpt">WordPressテーマ・プラグイン開発のクリエイティブカンパニー</p></div>
-				<figure class="wp-block-vk-blocks-blog-card-site-logo"><a href="http://vektor-inc.co.jp" target="_self" ><img src=\'https://www.vektor-inc.co.jp/wp-content/uploads/2020/03/cropped-icon2020-32x32.png\' /></a></figure>
-				<p class="wp-block-vk-blocks-blog-card-site-title"><a href="http://vektor-inc.co.jp" target="_self" >株式会社ベクトル</a></p>
+				<figure class="wp-block-vk-blocks-blog-card-site-logo"><a href="https://vektor-inc.co.jp" target="_self" ><img src=\'https://www.vektor-inc.co.jp/wp-content/uploads/2020/03/cropped-icon2020-32x32.png\' /></a></figure>
+				<p class="wp-block-vk-blocks-blog-card-site-title"><a href="https://vektor-inc.co.jp" target="_self" >株式会社ベクトル</a></p>
 				</div>
 				',
 			),

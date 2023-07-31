@@ -11,11 +11,11 @@ import {
 	Spinner,
 } from '@wordpress/components';
 import {
-	InnerBlocks,
 	InspectorControls,
 	useBlockProps,
 	store as blockEditorStore,
 	BlockControls,
+	useInnerBlocksProps,
 } from '@wordpress/block-editor';
 import { edit } from '@wordpress/icons';
 import { useState } from '@wordpress/element';
@@ -42,6 +42,8 @@ export default function BlogCardWrapperEdit(props) {
 	);
 	const blockProps = useBlockProps();
 
+	// アスペクト比？
+
 	const { richData, isFetching } = useRemoteUrlData(
 		attributesUrl,
 		isLoadingClearCache
@@ -57,6 +59,16 @@ export default function BlogCardWrapperEdit(props) {
 	const { replaceInnerBlocks } = useDispatch(blockEditorStore);
 	const cannotEmbed = richData === null ? false : richData?.data.cannot_embed;
 	const preview = richData === null ? false : !richData?.data.cannot_embed;
+
+	const innerBlocksProps = useInnerBlocksProps(blockProps, {
+		prioritizedInserterBlocks:[
+			'vk-blocks/blog-card-excerpt',
+			'vk-blocks/blog-card-featured-image',
+			'vk-blocks/blog-card-site-logo',
+			'vk-blocks/blog-card-site-title',
+			'vk-blocks/blog-card-title',
+		],
+	} );
 
 	return (
 		<>
@@ -117,19 +129,7 @@ export default function BlogCardWrapperEdit(props) {
 					!isEditingURL &&
 					!richData?.data.cannot_embed
 				) {
-					return (
-						<div {...blockProps}>
-							<InnerBlocks
-								prioritizedInserterBlocks={[
-									'vk-blocks/blog-card-excerpt',
-									'vk-blocks/blog-card-featured-image',
-									'vk-blocks/blog-card-site-logo',
-									'vk-blocks/blog-card-site-title',
-									'vk-blocks/blog-card-title',
-								]}
-							/>
-						</div>
-					);
+					return <div { ...innerBlocksProps } />;
 				}
 				return (
 					<BlogCardPlaceholder

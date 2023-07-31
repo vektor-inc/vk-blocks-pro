@@ -11,6 +11,19 @@
 			"type": "boolean",
 			"default": true
 		},
+		"aspectRatio": {
+			"type": "string"
+		},
+		"width": {
+			"type": "string"
+		},
+		"height": {
+			"type": "string"
+		},
+		"scale": {
+			"type": "string",
+			"default": "cover"
+		},
 		"rel": {
 			"type": "string",
 			"attribute": "rel",
@@ -25,7 +38,7 @@
 		"vk-blocks/blog-card-url"
 	],
 	"supports": {
-		"align": [ "left", "right", "center"],
+		"align": [ "left", "right", "center" ],
 		"color": {
 			"__experimentalDuotone": "img",
 			"text": false,

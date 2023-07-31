@@ -292,8 +292,8 @@ class VK_Blocks_Blog_Card {
 	 * @return string
 	 */
 	public static function get_domain( $url ) {
-		$domain = wp_parse_url( $url, PHP_URL_HOST );
-		return $domain;
+		$domain = wp_parse_url( $url );
+		return $domain['scheme'] . '://' . $domain['host'];
 	}
 
 	/**

@@ -110,6 +110,12 @@ export default function BlogCardWrapperEdit(props) {
 						>
 							{__('キャッシュクリア', 'vk-blocks-pro')}
 						</Button>
+						<p style={{ marginTop: '8px' }}>
+							{__(
+								'データが古い場合はキャッシュクリアしてください。通常１時間で更新されます。',
+								'vk-blocks-pro'
+							)}
+						</p>
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>

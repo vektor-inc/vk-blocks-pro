@@ -57,7 +57,7 @@ function vk_blocks_blog_card_featured_image_render_callback( $attributes, $conte
 	if ( $is_link ) {
 		$link_target   = $attributes['linkTarget'];
 		$rel           = ! empty( $attributes['rel'] ) ? 'rel="' . esc_attr( $attributes['rel'] ) . '"' : '';
-		$height         = ! empty( $attributes['height'] ) ? 'style="' . esc_attr( safecss_filter_attr( 'height:' . $attributes['height'] ) ) . '"' : '';
+		$height        = ! empty( $attributes['height'] ) ? 'style="' . esc_attr( safecss_filter_attr( 'height:' . $attributes['height'] ) ) . '"' : '';
 		$favicon_image = sprintf(
 			'<a href="%1$s" target="%2$s" %3$s %4$s>%5$s</a>',
 			$block->context['vk-blocks/blog-card-url'],

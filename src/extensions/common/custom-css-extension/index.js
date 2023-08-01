@@ -86,8 +86,8 @@ export function addAttribute(settings) {
  */
 export const withInspectorControls = createHigherOrderComponent(
 	(BlockEdit) => (props) => {
-		const { name, attributes, setAttributes, isSelected } = props;
-		if (!hasCustomCssSupport(name) || !isSelected) {
+		const { name, attributes, setAttributes } = props;
+		if (!hasCustomCssSupport(name)) {
 			return <BlockEdit {...props} />;
 		}
 

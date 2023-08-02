@@ -195,10 +195,6 @@ class VK_Blocks_Global_Settings {
 				'is_pro' => true,
 			),
 			array(
-				'name'   => 'new-badge',
-				'is_pro' => true,
-			),
-			array(
 				'name'   => 'outer',
 				'is_pro' => true,
 			),
@@ -206,6 +202,10 @@ class VK_Blocks_Global_Settings {
 				'name'   => 'post-list',
 				'is_pro' => true,
 			),
+			array(
+				'name'   => 'post-new-badge',
+				'is_pro' => true,
+			),			
 			array(
 				'name'   => 'select-post-list',
 				'is_pro' => true,

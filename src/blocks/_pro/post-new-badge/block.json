@@ -1,6 +1,6 @@
 {
 	"apiVersion": 2,
-	"name": "vk-blocks/new-badge",
+	"name": "vk-blocks/post-new-badge",
 	"category": "vk-blocks-cat",
 	"title": "New Badge",
 	"attributes": {
@@ -15,7 +15,23 @@
 		"width": {
 			"type": "string",
 			"default": null
-		}	
+		},
+		"align": {
+			"type": "string",
+			"default": "center"
+		},		
+		"style": {
+			"type": "object",
+			"default": {
+				"color": {
+					"background": "#ff0000",
+					"text": "#ffffff"
+				},
+				"typography": {
+					"fontSize": "12px"
+				}
+			}
+		}		
 	},
 	"description": "Easily highlight your latest content or products with the 'New Badge' feature.",
 	"textdomain": "vk-blocks-pro",
@@ -69,9 +85,5 @@
 				"textTransform": true
 			}
 		}
-	},
-	"styles": [
-		{ "name": "default", "label": "Default", "isDefault": true },
-		{ "name": "plain", "label": "Plain" }
-	]
+	}
 }

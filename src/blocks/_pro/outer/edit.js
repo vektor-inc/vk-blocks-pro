@@ -134,7 +134,7 @@ export default function OuterEdit(props) {
 
 	const bgColorStyles = {
 		backgroundColor: isHexColor(bgColor) ? bgColor : undefined,
-		opacity: opacity !== undefined ? opacity : undefined
+		opacity: opacity !== undefined ? opacity : undefined,
 	};
 
 	const GetBgImage = (

@@ -55,7 +55,7 @@ export default function save(props) {
 
 	const bgColorStyles = {
 		backgroundColor: isHexColor(bgColor) ? bgColor : undefined,
-		opacity: opacity !== undefined ? opacity : undefined
+		opacity: opacity !== undefined ? opacity : undefined,
 	};
 
 	const GetBgImage = (

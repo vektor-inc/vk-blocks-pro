@@ -125,17 +125,16 @@ export default function OuterEdit(props) {
 		}
 	}, [clientId]);
 
-	const opacityClass = opacity && parseInt(opacity * 100, 10);
 	const bgColorClasses = classnames({
 		[`has-background`]: bgColor !== undefined,
 		[`has-${bgColor}-background-color`]:
 			bgColor !== undefined && !isHexColor(bgColor),
 		[`has-background-dim`]: opacity !== undefined,
-		[`has-background-dim-${opacityClass}`]: opacityClass !== undefined,
 	});
 
 	const bgColorStyles = {
 		backgroundColor: isHexColor(bgColor) ? bgColor : undefined,
+		opacity: opacity !== undefined ? opacity : undefined
 	};
 
 	const GetBgImage = (

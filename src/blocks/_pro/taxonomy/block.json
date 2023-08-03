@@ -5,9 +5,6 @@
 	"title": "Taxonomy",
 	"description": "Display Taxnomy List Pulldown",
 	"textdomain": "vk-blocks-pro",
-	"style": "vk-blocks/taxonomy",
-	"editor_style": "vk-blocks-build-editor-css",
-	"editor_script": "vk-blocks-build-js",
 	"attributes": {
 		"isSelectedTaxonomy": {
 			"type": "string",

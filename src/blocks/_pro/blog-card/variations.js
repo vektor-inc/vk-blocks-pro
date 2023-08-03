@@ -39,7 +39,9 @@ const variations = [
 				'core/columns',
 				{
 					style: {
-						spacing: { blockGap: { top: '1.5rem', left: '1.5rem' } },
+						spacing: {
+							blockGap: { top: '1.5rem', left: '1.5rem' },
+						},
 					},
 					className: 'vk_flex-wrap-reverse-on-mobile',
 				},
@@ -147,7 +149,9 @@ const variations = [
 						remove: true,
 					},
 					style: {
-						spacing: { blockGap: { top: '1.5rem', left: '1.5rem' } },
+						spacing: {
+							blockGap: { top: '1.5rem', left: '1.5rem' },
+						},
 					},
 				},
 				[

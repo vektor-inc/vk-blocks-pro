@@ -403,19 +403,23 @@ export const FontAwesome = (props) => {
 						onChange={(value) => setVersion(value)}
 						className="mt-1"
 					/>
-					<p className="mt-1">
-						{__(
-							'When you click save button, the window will be reloaded and this setting will be applied.',
-							'vk-blocks-pro'
-						)}
-					</p>
-					<Button
-						isPrimary
-						disabled={isWaiting}
-						onClick={handleUpdateOptions}
-					>
-						{__('Save', 'vk-blocks-pro')}
-					</Button>
+					{version !== currentVersion && (
+						<>
+							<p className="mt-1">
+								{__(
+									'When you click save button, the window will be reloaded and this setting will be applied.',
+									'vk-blocks-pro'
+								)}
+							</p>
+							<Button
+								isPrimary
+								disabled={isWaiting}
+								onClick={handleUpdateOptions}
+							>
+								{__('Save', 'vk-blocks-pro')}
+							</Button>
+						</>
+					)}
 				</>
 			)}
 		</>

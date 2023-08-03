@@ -17,18 +17,29 @@ const variations = [
 		name: 'left-image-right-text',
 		title: __('右 画像', 'vk-blocks-pro'),
 		icon: leftImageRightText,
-		attributes: {},
+		attributes: {
+			style: {
+				spacing: {
+					padding: {
+						top: '1.5rem',
+						right: '1.5rem',
+						bottom: '1.5rem',
+						left: '1.5rem',
+					},
+				},
+				border: {
+					color: '#0000001f',
+					width: '1px',
+					radius: '5px',
+				},
+			},
+		},
 		innerBlocks: [
 			[
 				'core/columns',
 				{
 					style: {
-						spacing: { blockGap: { top: '0', left: '0' } },
-						border: {
-							color: '#0000001f',
-							width: '1px',
-							radius: '5px',
-						},
+						spacing: { blockGap: { top: '1.5rem', left: '1.5rem' } },
 					},
 					className: 'vk_flex-wrap-reverse-on-mobile',
 				},
@@ -41,16 +52,6 @@ const variations = [
 								remove: true,
 							},
 							width: '66.6%',
-							style: {
-								spacing: {
-									padding: {
-										top: '1.5rem',
-										right: '1.5rem',
-										bottom: '1.5rem',
-										left: '1.5rem',
-									},
-								},
-							},
 						},
 						[
 							['vk-blocks/blog-card-title', {}, []],
@@ -94,16 +95,6 @@ const variations = [
 							},
 							verticalAlignment: 'top',
 							width: '33.3%',
-							style: {
-								spacing: {
-									padding: {
-										top: '1.5rem',
-										right: '1.5rem',
-										bottom: '1.5rem',
-										left: '1.5rem',
-									},
-								},
-							},
 						},
 						[
 							[
@@ -130,7 +121,23 @@ const variations = [
 		name: 'left-text-right-image',
 		title: __('左 画像', 'vk-blocks-pro'),
 		icon: leftTextRightImage,
-		attributes: {},
+		attributes: {
+			style: {
+				spacing: {
+					padding: {
+						top: '1.5rem',
+						right: '1.5rem',
+						bottom: '1.5rem',
+						left: '1.5rem',
+					},
+				},
+				border: {
+					color: '#0000001f',
+					width: '1px',
+					radius: '5px',
+				},
+			},
+		},
 		innerBlocks: [
 			[
 				'core/columns',
@@ -140,12 +147,7 @@ const variations = [
 						remove: true,
 					},
 					style: {
-						spacing: { blockGap: { top: '0', left: '0' } },
-						border: {
-							color: '#0000001f',
-							width: '1px',
-							radius: '5px',
-						},
+						spacing: { blockGap: { top: '1.5rem', left: '1.5rem' } },
 					},
 				},
 				[
@@ -154,16 +156,6 @@ const variations = [
 						{
 							verticalAlignment: 'top',
 							width: '33.3%',
-							style: {
-								spacing: {
-									padding: {
-										top: '1.5rem',
-										right: '1.5rem',
-										bottom: '1.5rem',
-										left: '1.5rem',
-									},
-								},
-							},
 						},
 						[
 							[
@@ -189,16 +181,6 @@ const variations = [
 								remove: true,
 							},
 							width: '66.6%',
-							style: {
-								spacing: {
-									padding: {
-										top: '1.5rem',
-										right: '1.5rem',
-										bottom: '1.5rem',
-										left: '1.5rem',
-									},
-								},
-							},
 						},
 						[
 							['vk-blocks/blog-card-title', {}, []],

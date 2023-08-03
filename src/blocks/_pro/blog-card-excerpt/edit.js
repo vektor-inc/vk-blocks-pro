@@ -84,6 +84,7 @@ export default function BlogCardExcerptEdit(props) {
 						}}
 						min="1"
 						max={excerpt.length}
+						allowReset={true}
 					/>
 				</PanelBody>
 			</InspectorControls>

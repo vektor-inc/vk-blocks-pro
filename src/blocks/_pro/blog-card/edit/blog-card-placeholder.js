@@ -31,7 +31,6 @@ export default function BlogCardPlaceholder({
 	cannotEmbed,
 	url,
 	setURL,
-	preview,
 	onClickClearCache,
 	onReplace,
 }) {
@@ -61,35 +60,32 @@ export default function BlogCardPlaceholder({
 		);
 	}
 
-	const showEmbedPlaceholder = !preview || cannotEmbed || isEditingURL;
-	if (showEmbedPlaceholder) {
-		return (
-			<div {...blockProps}>
-				<URLPlaceholder
-					icon={icon}
-					label={label}
-					onFocus={onFocus}
-					onSubmit={(event) => {
-						if (event) {
-							event.preventDefault();
-						}
-						if (!!url) {
-							setIsEditingURL(false);
-							setAttributes({ url });
-							setIsStartingBlank(true);
-						}
-					}}
-					value={url}
-					cannotEmbed={cannotEmbed}
-					onChange={(event) => {
-						setURL(event.target.value);
-					}}
-					fallback={() => fallback(url, onReplace)}
-					tryAgain={onClickClearCache}
-				/>
-			</div>
-		);
-	}
+	return (
+		<div {...blockProps}>
+			<URLPlaceholder
+				icon={icon}
+				label={label}
+				onFocus={onFocus}
+				onSubmit={(event) => {
+					if (event) {
+						event.preventDefault();
+					}
+					if (!!url) {
+						setIsEditingURL(false);
+						setAttributes({ url });
+						setIsStartingBlank(true);
+					}
+				}}
+				value={url}
+				cannotEmbed={cannotEmbed}
+				onChange={(event) => {
+					setURL(event.target.value);
+				}}
+				fallback={() => fallback(url, onReplace)}
+				tryAgain={onClickClearCache}
+			/>
+		</div>
+	);
 }
 
 function BlogCardVariationPicker({

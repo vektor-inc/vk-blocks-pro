@@ -42,8 +42,6 @@ export default function BlogCardWrapperEdit(props) {
 	);
 	const blockProps = useBlockProps();
 
-	// アスペクト比？
-
 	const { richData, isFetching } = useRemoteUrlData(
 		attributesUrl,
 		isLoadingClearCache
@@ -146,7 +144,6 @@ export default function BlogCardWrapperEdit(props) {
 						cannotEmbed={cannotEmbed}
 						url={url}
 						setURL={setURL}
-						preview={preview}
 						onClickClearCache={onClickClearCache}
 						{...props}
 					/>

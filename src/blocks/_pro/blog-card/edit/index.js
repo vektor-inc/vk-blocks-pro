@@ -87,7 +87,7 @@ export default function BlogCardWrapperEdit(props) {
 							onClick={() => {
 								setAttributes({ style: undefined });
 								// innerBlocksを削除する
-								replaceInnerBlocks(clientId, {}, false);
+								replaceInnerBlocks(clientId, []);
 								setIsStartingBlank(true);
 								setIsEditingURL(false);
 							}}

@@ -57,6 +57,7 @@
 			}
 		},
 		"html": false,
+		"reusable": false,
 		"spacing": {
 			"margin": true
 		}

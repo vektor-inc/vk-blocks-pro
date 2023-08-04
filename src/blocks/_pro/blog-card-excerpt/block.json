@@ -19,6 +19,7 @@
 	],
 	"supports": {
 		"html": false,
+		"reusable": false,
 		"color": {
 			"gradients": true,
 			"__experimentalDefaultControls": {

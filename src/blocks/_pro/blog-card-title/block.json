@@ -57,6 +57,8 @@
 			"__experimentalDefaultControls": {
 				"fontSize": true
 			}
-		}
+		},
+		"html": false,
+		"reusable": false
 	}
 }

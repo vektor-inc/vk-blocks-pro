@@ -65,6 +65,9 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] Changed to display Font Awesome version change button only when select is changed.
+[ Specification Change ][ Animation(Pro) ] Fix WordPress 6.3 transforms settings.
+
 = 1.60.0 =
 [ Add Function ] Add Font Awesome icon custom list function.
 [ Add Function ][ Dynamic Text Block (Pro) ] URL support for custom fields.

@@ -91,7 +91,9 @@ export default function BlogCardExcerptEdit(props) {
 			</InspectorControls>
 			<div {...blockProps}>
 				<p className="wp-block-vk-blocks-blog-card-excerpt__excerpt">
-					{!isTrimmed ? decodeEntities(trimmedExcerpt) : decodeEntities(trimmedExcerpt) + ELLIPSIS}
+					{!isTrimmed
+						? decodeEntities(trimmedExcerpt)
+						: decodeEntities(trimmedExcerpt) + ELLIPSIS}
 				</p>
 			</div>
 		</>

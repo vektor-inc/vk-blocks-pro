@@ -54,8 +54,8 @@ class VK_Blocks_Blog_Card {
 				 * $post_idが取得できない場合
 				 */
 				$data = static::vk_get_blog_card_data_from_url( $url );
+				static::set_cache( $cache_key, $data );
 			}
-			static::set_cache( $cache_key, $data );
 		}
 
 		return $data;
@@ -119,6 +119,7 @@ class VK_Blocks_Blog_Card {
 		/**
 		 * ブログカードに必要な情報を取得
 		 */
+		$blog_card_data['post_id']        = $post_id;
 		$blog_card_data['cannot_embed']   = false;
 		$blog_card_data['url']            = get_permalink( $post_id );
 		$blog_card_data['title']          = get_the_title( $post_id );

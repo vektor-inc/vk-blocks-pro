@@ -100,20 +100,24 @@ export default function BlogCardWrapperEdit(props) {
 			<InspectorControls>
 				<PanelBody title={__('Settings')}>
 					<BaseControl id={`vk_blogCard`}>
-						<Button
-							onClick={onClickClearCache}
-							variant="primary"
-							isBusy={isLoadingClearCache}
-							disabled={!!!attributesUrl ? true : false}
-						>
-							{__('キャッシュクリア', 'vk-blocks-pro')}
-						</Button>
-						<p style={{ marginTop: '8px' }}>
-							{__(
-								'データが古い場合はキャッシュクリアしてください。通常１時間で更新されます。',
-								'vk-blocks-pro'
-							)}
-						</p>
+						{richData?.data.post_id === undefined &&
+							<>
+								<Button
+									onClick={onClickClearCache}
+									variant="primary"
+									isBusy={isLoadingClearCache}
+									disabled={!!!attributesUrl ? true : false}
+								>
+									{__('キャッシュクリア', 'vk-blocks-pro')}
+								</Button>
+								<p style={{ marginTop: '8px' }}>
+									{__(
+										'データが古い場合はキャッシュクリアしてください。通常１時間で更新されます。',
+										'vk-blocks-pro'
+									)}
+								</p>
+							</>
+						}
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>

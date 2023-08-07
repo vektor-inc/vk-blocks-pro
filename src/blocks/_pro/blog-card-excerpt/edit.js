@@ -14,6 +14,7 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 import { PanelBody, RangeControl } from '@wordpress/components';
+import { decodeEntities } from '@wordpress/html-entities';
 
 /**
  * Internal dependencies
@@ -90,7 +91,7 @@ export default function BlogCardExcerptEdit(props) {
 			</InspectorControls>
 			<div {...blockProps}>
 				<p className="wp-block-vk-blocks-blog-card-excerpt__excerpt">
-					{!isTrimmed ? trimmedExcerpt : trimmedExcerpt + ELLIPSIS}
+					{!isTrimmed ? decodeEntities(trimmedExcerpt) : decodeEntities(trimmedExcerpt) + ELLIPSIS}
 				</p>
 			</div>
 		</>

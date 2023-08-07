@@ -20,6 +20,7 @@ import {
 	useBlockProps,
 	HeadingLevelDropdown,
 } from '@wordpress/block-editor';
+import { decodeEntities } from '@wordpress/html-entities';
 
 /**
  * Internal dependencies
@@ -98,10 +99,10 @@ export default function BlogCardTitleEdit(props) {
 						href="#blog-card-title-pseudo-link"
 						onClick={(event) => event.preventDefault()}
 					>
-						{title && title}
+						{title && decodeEntities(title)}
 					</a>
 				) : (
-					title && title
+					title && decodeEntities(title)
 				)}
 			</TagName>
 		</>

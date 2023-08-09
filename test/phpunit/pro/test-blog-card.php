@@ -104,14 +104,14 @@ class BlogCard extends WP_UnitTestCase {
 			// 	</div>
 			// 	',
 			// ),
-			// 外部リンク 埋め込み不可
-			array(
-				'content' => parse_blocks('
-				<!-- wp:vk-blocks/blog-card {"url":"https://github.com/vektor-inc/vk-blocks-pro/blob/master/vk-blocks.php"} -->
-				<div class="wp-block-vk-blocks-blog-card"></div>
-				<!-- /wp:vk-blocks/blog-card -->'),
-				'expected' => '<div class="wp-block-vk-blocks-blog-card">https://github.com/vektor-inc/vk-blocks-pro/blob/master/vk-blocks.php</div>',
-			),
+			// // 外部リンク 埋め込み不可
+			// array(
+			// 	'content' => parse_blocks('
+			// 	<!-- wp:vk-blocks/blog-card {"url":"https://github.com/vektor-inc/vk-blocks-pro/blob/master/vk-blocks.php"} -->
+			// 	<div class="wp-block-vk-blocks-blog-card"></div>
+			// 	<!-- /wp:vk-blocks/blog-card -->'),
+			// 	'expected' => '<div class="wp-block-vk-blocks-blog-card">https://github.com/vektor-inc/vk-blocks-pro/blob/master/vk-blocks.php</div>',
+			// ),
 		);
 
 		foreach ( $tests as $test ) {

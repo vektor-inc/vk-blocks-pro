@@ -100,7 +100,7 @@ export default function BlogCardWrapperEdit(props) {
 			<InspectorControls>
 				<PanelBody title={__('Settings')}>
 					<BaseControl id={`vk_blogCard`}>
-						{richData?.data.post_id === undefined &&
+						{richData?.data.post_id === undefined && (
 							<>
 								<Button
 									onClick={onClickClearCache}
@@ -117,7 +117,7 @@ export default function BlogCardWrapperEdit(props) {
 									)}
 								</p>
 							</>
-						}
+						)}
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>

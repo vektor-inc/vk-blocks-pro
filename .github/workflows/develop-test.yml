@@ -46,8 +46,6 @@ jobs:
         key: ${{ runner.os }}-php${{ matrix.php-versions }}-${{ hashFiles('**/composer.lock') }}
     - name: Setup PHP ${{ matrix.php-versions }}
       uses: shivammathur/setup-php@v2
-      env:
-        runner: self-hosted
       with:
         php-version: ${{ matrix.php-versions }}
     - name: install npm scripts

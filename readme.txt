@@ -65,6 +65,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ] Fix error WordPress 6.3 live previewing block themes.
 [ Bug fix ][ Taxonomy (Pro) ] Fixed individual CSS was loaded on all pages with classic theme.
 [ Specification Change ] Changed to display Font Awesome version change button only when select is changed.
 [ Specification Change ][ Animation(Pro) ] Fix WordPress 6.3 transforms settings.

@@ -53,36 +53,34 @@ export default function VKBlocksAdmin() {
 	return (
 		<>
 			{/* AdminContext.Providerで各コンポーネントにvalueを渡す */}
-			{!!vkBlocksOption && (
-				<AdminContext.Provider
-					value={{
-						vkBlocksOption,
-						setVkBlocksOption: optionChanged,
-						reloadFlag,
-						setReloadFlag,
-					}}
-				>
-					{vkBlocksObject.isLicenseSetting && <AdminLicense />}
-					<AdminBalloon />
-					{vkBlocksObject.isPro && <AdminCustomFormat />}
-					{vkBlocksObject.isPro && <AdminCustomBlockStyle />}
-					<AdminMargin />
-					<AdminLoadSeparate />
-					{vkBlocksObject.isPro && <AdminNewFaq />}
-					{vkBlocksObject.isPro && <AdminCustomCss />}
-					<BlockManager />
-					<BlockStyleManager />
-					<SaveButton
-						classOption={'sticky'}
-						isChanged={isChanged}
-						setIsChanged={setIsChanged}
-					/>
-					<AdminImportExport
-						isChanged={isChanged}
-						setIsChanged={setIsChanged}
-					/>
-				</AdminContext.Provider>
-			)}
+			<AdminContext.Provider
+				value={{
+					vkBlocksOption: vkBlocksOption ?? vkBlocksObject.options,
+					setVkBlocksOption: optionChanged,
+					reloadFlag,
+					setReloadFlag,
+				}}
+			>
+				{vkBlocksObject.isLicenseSetting && <AdminLicense />}
+				<AdminBalloon />
+				{vkBlocksObject.isPro && <AdminCustomFormat />}
+				{vkBlocksObject.isPro && <AdminCustomBlockStyle />}
+				<AdminMargin />
+				<AdminLoadSeparate />
+				{vkBlocksObject.isPro && <AdminNewFaq />}
+				{vkBlocksObject.isPro && <AdminCustomCss />}
+				<BlockManager />
+				<BlockStyleManager />
+				<SaveButton
+					classOption={'sticky'}
+					isChanged={isChanged}
+					setIsChanged={setIsChanged}
+				/>
+				<AdminImportExport
+					isChanged={isChanged}
+					setIsChanged={setIsChanged}
+				/>
+			</AdminContext.Provider>
 		</>
 	);
 }

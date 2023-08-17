@@ -14,13 +14,12 @@ use VektorInc\VK_Helpers\VkHelpers;
  * @return string
  */
 function vk_blocks_new_badge_render_callback( $attributes ) {
-
 	$days_as_new_post = $attributes['daysAsNewPost'];
 	$limit            = gmdate( 'Ymd', strtotime( "-$days_as_new_post days" ) );
 	$post_date        = get_the_date( 'Ymd' );
 
 	if ( $post_date < $limit ) {
-		return "";
+		return '';
 	}
 
 	// ブロックに付与すべきWrapper要素を取得
@@ -52,23 +51,23 @@ function vk_blocks_new_badge_render_callback( $attributes ) {
 	}
 
 	// スタイルのデフォルト値が get_block_wrapper_attributesに入ってこない対応（背景色)
-	if ( ( ! isset( $orig_attributes['style'] ) || ( isset( $orig_attributes['style'] ) && ! preg_match( "/\sbackground\-color:/", $orig_attributes['style'] ) ) ) && isset($attributes['style']['color']['background'] ) ) {
+	if ( ( ! isset( $orig_attributes['style'] ) || ( isset( $orig_attributes['style'] ) && ! preg_match( '/\sbackground\-color:/', $orig_attributes['style'] ) ) ) && isset( $attributes['style']['color']['background'] ) ) {
 		array_push( $styles, 'background-color:' . esc_attr( $attributes['style']['color']['background'] ) . ';' );
 	}
 
 	// スタイルのデフォルト値が get_block_wrapper_attributesに入ってこない対応（テキスト色)
-	if ( ( ! isset( $orig_attributes['style'] ) || ( isset( $orig_attributes['style'] ) && ! preg_match( "/\scolor:/", $orig_attributes['style'] ) ) ) && isset( $attributes['style']['color']['text'] ) ) {
+	if ( ( ! isset( $orig_attributes['style'] ) || ( isset( $orig_attributes['style'] ) && ! preg_match( '/\scolor:/', $orig_attributes['style'] ) ) ) && isset( $attributes['style']['color']['text'] ) ) {
 		array_push( $styles, 'color:' . esc_attr( $attributes['style']['color']['text'] ) . ';' );
 	}
-	
+
 	// スタイルのデフォルト値が get_block_wrapper_attributesに入ってこない対応（フォントサイズ)
-	if ( ( ! isset( $orig_attributes['style'] ) || ( isset( $orig_attributes['style'] ) && ! preg_match( "/\sfont\-size:/", $orig_attributes['style'] ) ) ) && isset( $attributes['style']['typography']['fontSize'] ) ) {
+	if ( ( ! isset( $orig_attributes['style'] ) || ( isset( $orig_attributes['style'] ) && ! preg_match( '/\sfont\-size:/', $orig_attributes['style'] ) ) ) && isset( $attributes['style']['typography']['fontSize'] ) ) {
 		array_push( $styles, 'font-size:' . esc_attr( $attributes['style']['typography']['fontSize'] ) . ';' );
-	}	
+	}
 
 	// 横幅
 	if ( isset( $attributes['width'] ) ) {
-		array_push( $styles, 'width:' . $attributes['width'] . ';');
+		array_push( $styles, 'width:' . $attributes['width'] . ';' );
 	}
 
 	// classを組み立て
@@ -86,7 +85,7 @@ function vk_blocks_new_badge_render_callback( $attributes ) {
 
 	// alignのclassを削除（floatによる回り込みを防ぐ）
 	$wrapper_attributes = preg_replace( '/align(left|center|right)\s*/', '', $wrapper_attributes );
-	
+
 	$result  = "<div $wrapper_attributes>";
 	$result .= '<span>' . $attributes['content'] . '</span>';
 	$result .= '</div>';

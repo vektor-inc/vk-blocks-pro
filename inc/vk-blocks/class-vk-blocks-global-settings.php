@@ -205,7 +205,7 @@ class VK_Blocks_Global_Settings {
 			array(
 				'name'   => 'post-new-badge',
 				'is_pro' => true,
-			),			
+			),
 			array(
 				'name'   => 'select-post-list',
 				'is_pro' => true,

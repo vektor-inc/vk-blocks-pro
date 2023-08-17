@@ -125,17 +125,16 @@ export default function OuterEdit(props) {
 		}
 	}, [clientId]);
 
-	const opacityClass = opacity && opacity * 10;
 	const bgColorClasses = classnames({
 		[`has-background`]: bgColor !== undefined,
 		[`has-${bgColor}-background-color`]:
 			bgColor !== undefined && !isHexColor(bgColor),
 		[`has-background-dim`]: opacity !== undefined,
-		[`has-background-dim-${opacityClass}`]: opacityClass !== undefined,
 	});
 
 	const bgColorStyles = {
 		backgroundColor: isHexColor(bgColor) ? bgColor : undefined,
+		opacity: opacity !== undefined ? opacity : undefined,
 	};
 
 	const GetBgImage = (
@@ -290,7 +289,7 @@ export default function OuterEdit(props) {
 							}}
 							min={0}
 							max={1}
-							step={0.1}
+							step={0.01}
 						/>
 					</BaseControl>
 					<BaseControl

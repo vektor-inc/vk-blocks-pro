@@ -14,7 +14,7 @@
 		},
 		"width": {
 			"type": "string",
-			"default": null
+			"default": "40px"
 		},
 		"align": {
 			"type": "string",

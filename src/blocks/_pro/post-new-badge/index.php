@@ -31,12 +31,6 @@ function vk_blocks_new_badge_render_callback( $attributes ) {
 
 	array_push( $classes, 'vk_newBadge' );
 
-	// alignは text-alignを指定したいので、has-text-alignを指定
-	if ( isset( $attributes['align'] ) ) {
-		array_push( $classes, 'has-text-align-' . $attributes['align'] );
-		array_push( $styles, 'text-align:' . $attributes['align'] . ';' );
-	}
-
 	// 枠線のみ get_block_wrapper_attributesに入ってこない対応（パレット指定）
 	if ( isset( $attributes['borderColor'] ) ) {
 		array_push( $classes, 'has-border-color' );
@@ -82,9 +76,6 @@ function vk_blocks_new_badge_render_callback( $attributes ) {
 
 	// ここまで組み立てたclass/styleをマージ＆wrapper要素を取得
 	$wrapper_attributes = get_block_wrapper_attributes( $extra_attributes );
-
-	// alignのclassを削除（floatによる回り込みを防ぐ）
-	$wrapper_attributes = preg_replace( '/align(left|center|right)\s*/', '', $wrapper_attributes );
 
 	$result  = "<div $wrapper_attributes>";
 	$result .= '<span>' . $attributes['content'] . '</span>';

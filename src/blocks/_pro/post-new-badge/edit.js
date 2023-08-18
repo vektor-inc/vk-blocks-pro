@@ -2,8 +2,6 @@ import { __ } from '@wordpress/i18n';
 import {
 	useBlockProps,
 	InspectorControls,
-	AlignmentControl,
-	BlockControls,
 	RichText,
 	useSetting,
 	__experimentalUseBorderProps as useBorderProps, // eslint-disable-line @wordpress/no-unsafe-wp-apis
@@ -20,7 +18,7 @@ import { useState, useEffect } from '@wordpress/element';
 
 export default function NewBadgeEdit(props) {
 	const { attributes, setAttributes, context } = props;
-	const { content, daysAsNewPost, align, width } = attributes;
+	const { content, daysAsNewPost, width } = attributes;
 	const [isNew, setIsNew] = useState(false);
 
 	const { postId } = context;
@@ -52,23 +50,12 @@ export default function NewBadgeEdit(props) {
 		style: {
 			opacity: !isNew ? 0.15 : 1,
 			...borderProps.style,
-			textAlign: align,
 			...(width && { width }),
 		},
 	});
 
 	return (
 		<>
-			<BlockControls group="block">
-				<AlignmentControl
-					value={align}
-					onChange={(newAlign) =>
-						setAttributes({
-							align: newAlign,
-						})
-					}
-				/>
-			</BlockControls>
 			<InspectorControls>
 				<PanelBody title={__('New Badge setting', 'vk-blocks-pro')}>
 					<NumberControl

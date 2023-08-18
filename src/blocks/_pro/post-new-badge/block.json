@@ -6,7 +6,7 @@
 	"attributes": {
 		"content": {
 			"type": "string",
-			"default": "New!"
+			"default": "<strong>New!</strong>"
 		},
 		"daysAsNewPost": {
 			"type": "number",
@@ -14,7 +14,7 @@
 		},
 		"width": {
 			"type": "string",
-			"default": "40px"
+			"default": null
 		},
 		"align": {
 			"type": "string",
@@ -24,11 +24,7 @@
 			"type": "object",
 			"default": {
 				"color": {
-					"background": "#ff0000",
-					"text": "#ffffff"
-				},
-				"typography": {
-					"fontSize": "12px"
+					"text": "#ff0000"
 				}
 			}
 		}		
@@ -38,10 +34,6 @@
 	"usesContext": [ "postId", "postType" ],
 	"supports": {
 		"className": true,
-		"align": [
-			"wide",
-			"full"
-		],
 		"anchor": false,
 		"html": false,
 		"color": {

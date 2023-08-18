@@ -59,11 +59,6 @@ function vk_blocks_new_badge_render_callback( $attributes ) {
 		array_push( $styles, 'font-size:' . esc_attr( $attributes['style']['typography']['fontSize'] ) . ';' );
 	}
 
-	// 横幅
-	if ( isset( $attributes['width'] ) ) {
-		array_push( $styles, 'width:' . $attributes['width'] . ';' );
-	}
-
 	// classを組み立て
 	if ( 0 < count( $classes ) ) {
 		$extra_attributes['class'] = implode( ' ', $classes );

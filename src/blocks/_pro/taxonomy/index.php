@@ -159,12 +159,12 @@ function vk_blocks_taxonomy_render_callback( $attributes ) {
 	$dropdown_id = 'vk_taxonomy-' . $block_id;
 
 	$taxonomy_data = get_taxonomy( $taxonomy );
-	
+
 	if ( $taxonomy_data ) {
 		$default_label = $taxonomy_data->labels->singular_name;
 
 		$block_label = '' !== $attributes['blockLabel'] ? $attributes['blockLabel'] : $default_label;
-	
+
 		$common_args = array(
 			'echo'         => false,
 			'show_count'   => ! empty( $attributes['showPostCounts'] ) ? $attributes['showPostCounts'] : false,
@@ -179,7 +179,7 @@ function vk_blocks_taxonomy_render_callback( $attributes ) {
 			$common_args['parent'] = 0;
 		}
 		$common_args = apply_filters( 'vk_blocks_taxlist_args', $common_args ); // 9.13.0.0
-	
+
 		// ドロップダウンの名前を設定
 		$name = $taxonomy;
 		if ( 'category' === $taxonomy ) {
@@ -187,7 +187,7 @@ function vk_blocks_taxonomy_render_callback( $attributes ) {
 		} elseif ( 'post_tag' === $taxonomy ) {
 			$name = 'tag';
 		}
-	
+
 		$dropdown_args = array(
 			// translators:
 			'show_option_all' => sprintf( __( 'All of %s', 'vk-blocks-pro' ), $taxonomy_data->labels->singular_name ),
@@ -196,19 +196,19 @@ function vk_blocks_taxonomy_render_callback( $attributes ) {
 			'selected'        => get_query_var( $name ),
 			'name'            => $name,
 		);
-	
+
 		$list_args = array(
 			'style'           => 'list',
 			'title_li'        => '',
 			'show_option_all' => false,
 		);
-	
+
 		$outer_attributes = get_block_wrapper_attributes(
 			array(
 				'class' => "vk_taxonomy vk_taxonomy--{$taxonomy} vk_taxonomy-outer-wrap",
 			)
 		);
-	
+
 		$content .= '<div ' . $outer_attributes . '>';
 		if ( ! empty( $is_dropdown ) ) {
 			$content .= wp_dropdown_categories(
@@ -227,14 +227,12 @@ function vk_blocks_taxonomy_render_callback( $attributes ) {
 			);
 			$content .= '</ul>';
 		}
-	
+
 		$content .= '</div>';
 
-		$content  = apply_filters( 'vk_blocks_taxonomy_content', $content, $name, $is_dropdown, $dropdown_id );
-		
+		$content = apply_filters( 'vk_blocks_taxonomy_content', $content, $name, $is_dropdown, $dropdown_id );
 	}
 	return $content;
-
 }
 
 /**

@@ -36,7 +36,7 @@ export default function TaxonomyEdit(props) {
 			/>
 		);
 	} else if (
-		! taxonomyOption.some(condition) &&
+		!taxonomyOption.some(condition) &&
 		isSelectedTaxonomy !== '' &&
 		isSelectedTaxonomy !== null &&
 		isSelectedTaxonomy !== undefined

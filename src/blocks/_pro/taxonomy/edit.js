@@ -36,6 +36,27 @@ export default function TaxonomyEdit(props) {
 			/>
 		);
 	} else if (
+		! taxonomyOption.some(condition) &&
+		isSelectedTaxonomy !== '' &&
+		isSelectedTaxonomy !== null &&
+		isSelectedTaxonomy !== undefined
+	) {
+		editContent = (
+			<div>
+				<div className="vk_taxonomy-warning">
+					<div className="vk_taxonomy-label-name">
+						{__('Taxonomy', 'vk-blocks-pro')}
+					</div>
+					<div className="vk_taxonomy-warning_text">
+						{__(
+							'The selected taxonomy dose not exist. Please select another taxonomy.',
+							'vk-blocks-pro'
+						)}
+					</div>
+				</div>
+			</div>
+		);
+	} else if (
 		isSelectedTaxonomy === '' ||
 		isSelectedTaxonomy === null ||
 		isSelectedTaxonomy === undefined

@@ -70,6 +70,11 @@ function vk_blocks_register_block_taxonomy() {
 }
 add_action( 'init', 'vk_blocks_register_block_taxonomy', 99 );
 
+/**
+ * タクソノミーブロックに与える情報
+ *
+ * @return void
+ */
 function vk_blocks_taxonomy_enqueue_block_assets() {
 	/**
 	 * 選択させるタクソノミーのリストを生成し渡す

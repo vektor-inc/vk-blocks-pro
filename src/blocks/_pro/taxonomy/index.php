@@ -128,6 +128,7 @@ function vk_blocks_taxonomy_enqueue_block_assets() {
 		'vkTaxonomy',
 		array(
 			'taxonomyOption' => $taxonomy_option,
+			'editThemes'     => current_user_can( 'edit_themes' ),
 		)
 	);
 }
@@ -165,7 +166,7 @@ function vk_blocks_taxonomy_render_callback( $attributes ) {
 
 	$taxonomy_data = get_taxonomy( $taxonomy );
 
-	if ( $taxonomy_data ) {
+	if ( ! empty( $taxonomy_data ) ) {
 		$default_label = $taxonomy_data->labels->singular_name;
 
 		$block_label = '' !== $attributes['blockLabel'] ? $attributes['blockLabel'] : $default_label;
@@ -236,6 +237,15 @@ function vk_blocks_taxonomy_render_callback( $attributes ) {
 		$content .= '</div>';
 
 		$content = apply_filters( 'vk_blocks_taxonomy_content', $content, $name, $is_dropdown, $dropdown_id );
+	} elseif ( current_user_can( 'edit_themes' ) ) {
+		$content  = '<div class="vk_taxonomy-warning alert alert-warning text-center">';
+		$content .= '<div class="vk_taxonomy-label-name">';
+		$content .= __( 'VK Taxonomy Block', 'vk-blocks-pro' );
+		$content .= '</div>';
+		$content .= '<div class="vk_taxonomy-warning_text">';
+		$content .= __( 'Specified taxonomy does not exist. Please check your taxonomy settings to display or remove this block.', 'vk-blocks-pro' );
+		$content .= '</div>';
+		$content .= '</div>';
 	}
 	return $content;
 }

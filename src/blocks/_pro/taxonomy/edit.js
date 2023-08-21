@@ -20,69 +20,75 @@ export default function TaxonomyEdit(props) {
 
 	// eslint-disable-next-line camelcase,no-undef
 	const taxonomyOption = vkTaxonomy.taxonomyOption;
+	// eslint-disable-next-line camelcase,no-undef
+	const editThemes = vkTaxonomy.editThemes;
 
 	const selected = taxonomyOption.find(condition);
 
 	if (
-		taxonomyOption.some(condition) &&
 		isSelectedTaxonomy !== '' &&
 		isSelectedTaxonomy !== null &&
 		isSelectedTaxonomy !== undefined
 	) {
-		editContent = (
-			<ServerSideRender
-				block="vk-blocks/taxonomy"
-				attributes={attributes}
-			/>
-		);
-	} else if (
-		!taxonomyOption.some(condition) &&
-		isSelectedTaxonomy !== '' &&
-		isSelectedTaxonomy !== null &&
-		isSelectedTaxonomy !== undefined
-	) {
-		editContent = (
-			<div>
-				<div className="vk_taxonomy-warning">
-					<div className="vk_taxonomy-label-name">
-						{__('Taxonomy', 'vk-blocks-pro')}
+		// 何かしらのタクソノミーを指定している場合
+		if (
+			taxonomyOption.some(condition) ||
+			(!taxonomyOption.some(condition) && editThemes)
+		) {
+			// ブロックの内容とテーマがいじれる場合の警告文は PHP から出力する
+			editContent = (
+				<ServerSideRender
+					block="vk-blocks/taxonomy"
+					attributes={attributes}
+				/>
+			);
+		} else if (!taxonomyOption.some(condition) && !editThemes) {
+			// テーマがいじれない場合の警告文
+			editContent = (
+				<div>
+					<div className="vk_taxonomy-warning">
+						<div className="vk_taxonomy-label-name">
+							{__('Taxonomy', 'vk-blocks-pro')}
+						</div>
+						<div className="vk_taxonomy-warning_text">
+							{__(
+								'The selected taxonomy dose not exist. Please select another taxonomy.',
+								'vk-blocks-pro'
+							)}
+						</div>
 					</div>
-					<div className="vk_taxonomy-warning_text">
+				</div>
+			);
+		} else {
+			// 指定したタクソノミーが空の場合の警告文
+			editContent = (
+				<div className="vk_taxonomy-warning alert alert-warning text-center">
+					<div className="vk_taxonomy-label-name">
+						{selected.label}
+					</div>
+					<div className="vk_taxonomy-warning-text">
 						{__(
-							'The selected taxonomy dose not exist. Please select another taxonomy.',
+							'This block will not be displayed because this taxonomy has no term.',
 							'vk-blocks-pro'
 						)}
 					</div>
 				</div>
-			</div>
-		);
+			);
+		}
 	} else if (
 		isSelectedTaxonomy === '' ||
 		isSelectedTaxonomy === null ||
 		isSelectedTaxonomy === undefined
 	) {
+		// タクソノミーをしていない場合
 		editContent = (
-			<div>
-				<div className="vk_taxonomy-warning">
-					<div className="vk_taxonomy-label-name">
-						{__('Taxonomy', 'vk-blocks-pro')}
-					</div>
-					<div className="vk_taxonomy-warning_text">
-						{__(
-							'This block will not be displayed because no taxonomy is selected.',
-							'vk-blocks-pro'
-						)}
-					</div>
+			<div className="vk_taxonomy-warning alert alert-warning text-center">
+				<div className="vk_taxonomy-label-name">
+					{__('Taxonomy', 'vk-blocks-pro')}
 				</div>
-			</div>
-		);
-	} else {
-		editContent = (
-			<div className="vk_taxonomy-warning">
-				<div className="vk_taxonomy-label-name">{selected.label}</div>
-				<div className="vk_taxonomy-warning-text">
+				<div className="vk_taxonomy-warning_text">
 					{__(
-						'This block will not be displayed because this taxonomy has no term.',
+						'This block will not be displayed because no taxonomy is selected.',
 						'vk-blocks-pro'
 					)}
 				</div>

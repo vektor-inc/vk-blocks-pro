@@ -52,7 +52,7 @@ export default function TaxonomyEdit(props) {
 						</div>
 						<div className="vk_taxonomy-warning_text">
 							{__(
-								'The selected taxonomy dose not exist. Please select another taxonomy.',
+								'Specified taxonomy does not exist. Please check your taxonomy settings to display or remove this block.',
 								'vk-blocks-pro'
 							)}
 						</div>

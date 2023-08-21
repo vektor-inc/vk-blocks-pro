@@ -238,8 +238,8 @@ function vk_blocks_taxonomy_render_callback( $attributes ) {
 
 		$content = apply_filters( 'vk_blocks_taxonomy_content', $content, $name, $is_dropdown, $dropdown_id );
 	} elseif ( current_user_can( 'edit_themes' ) ) {
-		$content  = '<div class="vk_taxonomy-warning alert alert-warning text-center">';
-		$content .= '<div class="vk_taxonomy-label-name">';
+		$content  = '<div class="vk_taxonomy-warning alert alert-warning">';
+		$content .= '<div class="vk_taxonomy-label-name text-center">';
 		$content .= __( 'VK Taxonomy Block', 'vk-blocks-pro' );
 		$content .= '</div>';
 		$content .= '<div class="vk_taxonomy-warning_text">';

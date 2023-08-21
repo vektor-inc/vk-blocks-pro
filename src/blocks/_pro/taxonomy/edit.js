@@ -62,7 +62,7 @@ export default function TaxonomyEdit(props) {
 		} else {
 			// 指定したタクソノミーが空の場合の警告文
 			editContent = (
-				<div className="vk_taxonomy-warning alert alert-warning text-center">
+				<div className="vk_taxonomy-warning alert alert-warning">
 					<div className="vk_taxonomy-label-name">
 						{selected.label}
 					</div>
@@ -82,7 +82,7 @@ export default function TaxonomyEdit(props) {
 	) {
 		// タクソノミーをしていない場合
 		editContent = (
-			<div className="vk_taxonomy-warning alert alert-warning text-center">
+			<div className="vk_taxonomy-warning alert alert-warning">
 				<div className="vk_taxonomy-label-name">
 					{__('Taxonomy', 'vk-blocks-pro')}
 				</div>

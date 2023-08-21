@@ -5,7 +5,7 @@
  * Description: This is a plugin that extends Block Editor.
  * Version: 1.60.0.0
  * Stable tag: 1.59.0.1
- * Requires at least: 6.0
+ * Requires at least: 6.1
  * Author: Vektor,Inc.
  * Author URI: https://vektor-inc.co.jp
  * Text Domain: vk-blocks-pro

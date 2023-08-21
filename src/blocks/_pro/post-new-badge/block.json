@@ -11,14 +11,6 @@
 		"daysAsNewPost": {
 			"type": "number",
 			"default": 5
-		},
-		"width": {
-			"type": "string",
-			"default": null
-		},
-		"align": {
-			"type": "string",
-			"default": "center"
 		},		
 		"style": {
 			"type": "object",
@@ -27,7 +19,7 @@
 					"text": "#ff0000"
 				}
 			}
-		}		
+		}
 	},
 	"description": "Easily highlight your latest content or products with the 'New Badge' feature.",
 	"textdomain": "vk-blocks-pro",

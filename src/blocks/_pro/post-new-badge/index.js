@@ -1,5 +1,5 @@
 /**
- * Dynamic Text
+ * New Badge
  *
  */
 // import React

@@ -1,6 +1,6 @@
 <?php
 /**
- * Registers the `vk-blocks/dynamic-text` block.
+ * Registers the `vk-blocks/post-new-badge` block.
  *
  * @package vk-blocks
  */
@@ -8,12 +8,12 @@
 use VektorInc\VK_Helpers\VkHelpers;
 
 /**
- * Dynamic text render callback
+ * New Badge render callback
  *
  * @param array $attributes Block attributes.
  * @return string
  */
-function vk_blocks_new_badge_render_callback( $attributes ) {
+function vk_blocks_post_new_badge_render_callback( $attributes ) {
 	$days_as_new_post = $attributes['daysAsNewPost'];
 	$limit            = gmdate( 'Ymd', strtotime( "-$days_as_new_post days" ) );
 	$post_date        = get_the_date( 'Ymd' );
@@ -31,16 +31,18 @@ function vk_blocks_new_badge_render_callback( $attributes ) {
 
 	array_push( $classes, 'vk_newBadge' );
 
-	// 枠線のみ get_block_wrapper_attributesに入ってこない対応（パレット指定）
-	if ( isset( $attributes['borderColor'] ) ) {
-		array_push( $classes, 'has-border-color' );
-		array_push( $classes, 'has-' . $attributes['borderColor'] . '-border-color' );
-	}
+	// 枠線のみget_block_wrapper_attributesに入ってこない対応
+	if ( isset( $attributes['style']['border']['width'] ) ) {
 
-	// 枠線のみ get_block_wrapper_attributesに入ってこない対応（カスタム指定）
-	if ( isset( $attributes['style']['border'] ) ) {
+		// パレット指定の場合
+		if ( isset( $attributes['borderColor'] ) ) {
+			array_push( $classes, 'has-border-color' );
+			array_push( $classes, 'has-' . $attributes['borderColor'] . '-border-color' );
+		}
+
+		// カスタム指定の場合
 		foreach ( $attributes['style']['border'] as $key => $value ) {
-			array_push( $styles, 'border-' . $key . ':' . esc_attr( $value ) . ';' );
+				array_push( $styles, 'border-' . $key . ':' . esc_attr( $value ) . ';' );
 		}
 	}
 
@@ -50,7 +52,7 @@ function vk_blocks_new_badge_render_callback( $attributes ) {
 	}
 
 	// スタイルのデフォルト値が get_block_wrapper_attributesに入ってこない対応（テキスト色)
-	if ( ( ! isset( $orig_attributes['style'] ) || ( isset( $orig_attributes['style'] ) && ! preg_match( '/\scolor:/', $orig_attributes['style'] ) ) ) && isset( $attributes['style']['color']['text'] ) ) {
+	if ( ( ! isset( $orig_attributes['style'] ) || ( isset( $orig_attributes['style'] ) && ! preg_match( '/[^\-]*color:/', $orig_attributes['style'] ) ) ) && isset( $attributes['style']['color']['text'] ) ) {
 		array_push( $styles, 'color:' . esc_attr( $attributes['style']['color']['text'] ) . ';' );
 	}
 
@@ -81,11 +83,11 @@ function vk_blocks_new_badge_render_callback( $attributes ) {
 
 
 /**
- * Register Dynamic Text block.
+ * Register New Badge block.
  *
  * @return void
  */
-function vk_blocks_register_block_new_badge() {
+function vk_blocks_register_block_post_new_badge() {
 	// Register Style.
 	if ( ! is_admin() ) {
 		wp_register_style(
@@ -102,9 +104,9 @@ function vk_blocks_register_block_new_badge() {
 			'style'           => 'vk-blocks/post-new-badge',
 			'editor_style'    => 'vk-blocks-build-editor-css',
 			'editor_script'   => 'vk-blocks-build-js',
-			'render_callback' => 'vk_blocks_new_badge_render_callback',
+			'render_callback' => 'vk_blocks_post_new_badge_render_callback',
 		)
 	);
 }
-add_action( 'init', 'vk_blocks_register_block_new_badge', 99 );
+add_action( 'init', 'vk_blocks_register_block_post_new_badge', 99 );
 

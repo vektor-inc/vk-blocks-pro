@@ -35,7 +35,7 @@ export default function TaxonomyEdit(props) {
 			taxonomyOption.some(condition) ||
 			(!taxonomyOption.some(condition) && editThemes)
 		) {
-			// ブロックの内容とテーマがいじれる場合の警告文は PHP から出力する
+			// ブロックが正常な場合の内容とテーマがいじれる場合の警告文は PHP から出力する
 			editContent = (
 				<ServerSideRender
 					block="vk-blocks/taxonomy"

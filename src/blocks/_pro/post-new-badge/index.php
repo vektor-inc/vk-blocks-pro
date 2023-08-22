@@ -44,7 +44,7 @@ function vk_blocks_post_new_badge_render_callback( $attributes ) {
 		foreach ( $attributes['style']['border'] as $key => $value ) {
 			if ( is_array( $value ) ) {
 				foreach ( $value as $key2 => $value2 ) {
-					array_push( $styles, 'border-' . $key . '-' . $key2 . ':' . esc_attr( convertAttributeValueToCSS( $value2 ) ) . ';' );
+					array_push( $styles, 'border-' . $key . '-' . $key2 . ':' . esc_attr( vk_blocks_convert_attribute_value_to_css( $value2 ) ) . ';' );
 				}
 			} else {
 				array_push( $styles, 'border-' . $key . ':' . esc_attr( $value ) . ';' );
@@ -87,7 +87,14 @@ function vk_blocks_post_new_badge_render_callback( $attributes ) {
 	return $result;
 }
 
-function convertAttributeValueToCSS( $input ) {
+/**
+ * Attributesの値をCSSの値に変換
+ * ex) "var:preset|color|vivid-red" を var(--wp--preset--color--vivid-red) に変換
+ *
+ * @param string $input 値.
+ * @return string
+ */
+function vk_blocks_convert_attribute_value_to_css( $input ) {
 	// 文字列に"|"がなければ入力された値をそのまま返す
 	if ( strpos( $input, '|' ) === false ) {
 		return $input;

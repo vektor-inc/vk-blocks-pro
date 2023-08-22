@@ -65,6 +65,7 @@ e.g.
 
 == Changelog ==
 
+[ Add Block ][ New Badge Block (Pro) ] Add a block to display recent posts.
 [ Bug fix ][ Taxonomy (Pro) ] Fixed individual CSS was loaded on all pages with classic theme.
 [ Specification Change ] Changed to display Font Awesome version change button only when select is changed.
 [ Specification Change ][ Animation(Pro) ] Fix WordPress 6.3 transforms settings.

@@ -5,8 +5,6 @@
  * @package vk-blocks
  */
 
-use VektorInc\VK_Helpers\VkHelpers;
-
 /**
  * New Badge render callback
  *
@@ -15,10 +13,21 @@ use VektorInc\VK_Helpers\VkHelpers;
  */
 function vk_blocks_post_new_badge_render_callback( $attributes ) {
 	$days_as_new_post = $attributes['daysAsNewPost'];
-	$limit            = gmdate( 'Ymd', strtotime( "-$days_as_new_post days" ) );
-	$post_date        = get_the_date( 'Ymd' );
 
-	if ( $post_date < $limit ) {
+	// 投稿の日時をY-m-d形式で取得
+	$post_date     = get_the_date( 'Y-m-d' );
+	$post_datetime = new DateTime( $post_date );
+
+	// 現在の日時をY-m-d形式で取得
+	$current_date     = current_time( 'Y-m-d' );
+	$current_datetime = new DateTime( $current_date );
+
+	// 投稿日時と現在の日時の差を日単位で計算
+	$interval        = $post_datetime->diff( $current_datetime );
+	$days_since_post = $interval->days;
+
+	// 新着の判定
+	if ( $days_since_post >= $days_as_new_post ) {
 		return '';
 	}
 

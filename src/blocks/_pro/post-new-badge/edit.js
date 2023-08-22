@@ -30,9 +30,8 @@ export default function NewBadgeEdit(props) {
 		today.setHours(0, 0, 0, 0);
 		publishedDate.setHours(0, 0, 0, 0);
 
-		const differenceInDays = Math.floor(
-			(today - publishedDate) / (1000 * 60 * 60 * 24)
-		);
+		const differenceInDays =
+			Math.floor((today - publishedDate) / (1000 * 60 * 60 * 24)) + 1;
 		setIsNew(differenceInDays <= daysAsNewPost);
 	}, [daysAsNewPost, postDate]);
 

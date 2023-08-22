@@ -33,10 +33,10 @@ function vk_blocks_post_new_badge_render_callback( $attributes ) {
 
 	// 枠線のみget_block_wrapper_attributesに入ってこない対応
 	if ( isset( $attributes['style']['border'] ) ) {
+		array_push( $classes, 'has-border-color' );
 
 		// パレット指定の場合
 		if ( isset( $attributes['borderColor'] ) ) {
-			array_push( $classes, 'has-border-color' );
 			array_push( $classes, 'has-' . $attributes['borderColor'] . '-border-color' );
 		}
 

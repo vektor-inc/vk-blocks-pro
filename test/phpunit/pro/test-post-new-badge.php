@@ -39,7 +39,7 @@ class PostNewBadgeTest extends WP_UnitTestCase {
 				'post_type'    => 'post',
 				'post_title'   => 'Today Post',
 				'post_content' => 'Today Post content',
-                'post_date'    => date('Y-n-j H:i:s')
+                'post_date'    => date('Y-n-j 08:00:00')
 			)
 		);
 		self::$posts[]         = self::$post_today;
@@ -49,7 +49,7 @@ class PostNewBadgeTest extends WP_UnitTestCase {
 				'post_type'    => 'post',
 				'post_title'   => '5 days ago Post',
 				'post_content' => '5 days ago Post content',
-                'post_date'    => date('Y-n-j H:i:s', strtotime('-5 days'))
+                'post_date'    => date('Y-n-j 23:00:00', strtotime('-5 days'))
 			)
 		);
 		self::$posts[]         = self::$post_fivedays_ago;
@@ -127,14 +127,14 @@ class PostNewBadgeTest extends WP_UnitTestCase {
         $tests = array(
             array (
                 'attributes' => array(
-                    'daysAsNewPost' => 4,
+                    'daysAsNewPost' => 5,
                     'content' => 'New'
                 ),
                 'correct' => ''
             ),
             array (
                 'attributes' => array(
-                    'daysAsNewPost' => 5,
+                    'daysAsNewPost' => 6,
                     'content' => 'New'
                 ),
                 'correct' => '<div class="vk_newBadge wp-block-vk-blocks-post-new-badge"><span>New</span></div>'

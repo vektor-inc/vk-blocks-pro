@@ -37,7 +37,7 @@ $media-xxl-down: 1399.98px;
 	}
 
 	// 背景色が選択されていない時
-	.vk_outer-background-area:not([class*=-background-color]) {
+	.vk_outer-background-area:not([class*="-background-color"]) {
 		background-color: #f3f4f5;
 	}
 
@@ -59,15 +59,16 @@ $media-xxl-down: 1399.98px;
 		h2:first-child,
 		h3:first-child,
 		h4:first-child,
-		h5:first-child {//他テーマ用
+		h5:first-child {
+			//他テーマ用
 			margin-top: 0;
 		}
 	}
 }
 // これがないとレスポンシブスペーサーの共通高さが検出しない。
-.vk_outer{
-	display:block;
-	overflow:hidden;
+.vk_outer {
+	display: block;
+	overflow: hidden;
 }
 //iOS Safari での1pxズレの予防のため　Only Safari 10.1+
 @supports (-webkit-touch-callout: none) {
@@ -211,7 +212,6 @@ $padding-xxl: 4em;
 
 $color-danger: #b52727;
 
-
 /*-------------------------------------------*/
 /* 管理画面
 /*-------------------------------------------*/
@@ -243,4 +243,35 @@ $color-danger: #b52727;
 		--padding-left: 4em;
 		--padding-right: 4em;
 	}
+}
+
+@mixin switchVisibility($pc, $tablet, $mobile) {
+	.vk_outer {
+		.vk_outer-display-pc {
+			display: $pc;
+		}
+
+		.vk_outer-display-tablet {
+			display: $tablet;
+		}
+
+		.vk_outer-display-mobile {
+			display: $mobile;
+		}
+	}
+}
+
+// Small devices (landscape phones, 575.98px以下)
+@media (max-width: 575.98px) {
+	@include switchVisibility(none, none, block);
+}
+
+// Medium devices (tablets, 577pxから 991.98px)
+@media (min-width: 576px) and (max-width: 991.98px) {
+	@include switchVisibility(none, block, none);
+}
+
+// Large devices (desktops, 992px以上)
+@media (min-width: 992px) {
+	@include switchVisibility(block, none, none);
 }

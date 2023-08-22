@@ -53,7 +53,7 @@ export default function NewBadgeEdit(props) {
 					<NumberControl
 						label={__('Days Counted as New Post', 'vk-blocks-pro')}
 						value={daysAsNewPost}
-						min={1}
+						min={0}
 						onChange={(value) =>
 							setAttributes({ daysAsNewPost: Number(value) })
 						}

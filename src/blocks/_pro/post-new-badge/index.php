@@ -42,9 +42,9 @@ function vk_blocks_post_new_badge_render_callback( $attributes ) {
 
 		// カスタム指定の場合
 		foreach ( $attributes['style']['border'] as $key => $value ) {
-			if ( is_array($value) ) {
+			if ( is_array( $value ) ) {
 				foreach ( $value as $key2 => $value2 ) {
-					array_push( $styles, 'border-' . $key . '-' . $key2 . ':' . esc_attr( convertAttributeValueToCSS($value2) ) . ';' );
+					array_push( $styles, 'border-' . $key . '-' . $key2 . ':' . esc_attr( convertAttributeValueToCSS( $value2 ) ) . ';' );
 				}
 			} else {
 				array_push( $styles, 'border-' . $key . ':' . esc_attr( $value ) . ';' );
@@ -87,26 +87,26 @@ function vk_blocks_post_new_badge_render_callback( $attributes ) {
 	return $result;
 }
 
-function convertAttributeValueToCSS($input) {
-    // 文字列に"|"がなければ入力された値をそのまま返す
-    if (strpos($input, '|') === false) {
-        return $input;
-    }
+function convertAttributeValueToCSS( $input ) {
+	// 文字列に"|"がなければ入力された値をそのまま返す
+	if ( strpos( $input, '|' ) === false ) {
+		return $input;
+	}
 
-    // "var:"で始まる場合の変換処理
-    if (strpos($input, 'var:') === 0) {
-        // "var:"を取り除く
-        $input = str_replace('var:', '', $input);
+	// "var:"で始まる場合の変換処理
+	if ( strpos( $input, 'var:' ) === 0 ) {
+		// "var:"を取り除く
+		$input = str_replace( 'var:', '', $input );
 
-        // "|"を"--"に置き換え
-        $converted = str_replace('|', '--', $input);
+		// "|"を"--"に置き換え
+		$converted = str_replace( '|', '--', $input );
 
-        // 変換された文字列を"var(--wp--"で囲んで返す
-        return 'var(--wp--' . $converted . ')';
-    }
+		// 変換された文字列を"var(--wp--"で囲んで返す
+		return 'var(--wp--' . $converted . ')';
+	}
 
-    // 上記の条件に当てはまらない場合は入力された値をそのまま返す
-    return $input;
+	// 上記の条件に当てはまらない場合は入力された値をそのまま返す
+	return $input;
 }
 
 

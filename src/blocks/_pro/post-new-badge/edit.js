@@ -25,6 +25,11 @@ export default function NewBadgeEdit(props) {
 	useEffect(() => {
 		const today = new Date();
 		const publishedDate = new Date(postDate);
+
+		// 時刻部分を0にリセット
+		today.setHours(0, 0, 0, 0);
+		publishedDate.setHours(0, 0, 0, 0);
+
 		const differenceInDays = Math.floor(
 			(today - publishedDate) / (1000 * 60 * 60 * 24)
 		);

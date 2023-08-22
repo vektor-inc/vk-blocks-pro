@@ -2,8 +2,8 @@
 Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird,chiakikouno,doshimaf
 Donate link:
 Tags: Gutenberg,FAQ,alert
-Requires at least: 6.0
-Tested up to: 6.2
+Requires at least: 6.1
+Tested up to: 6.3
 Stable tag: 1.59.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
@@ -29,16 +29,17 @@ This is a plugin that extends Gutenberg's blocks.
 * Border box
 * Title（with sub text）
 * Responsive Spacer
+* Animation [ Pro ]
 * Breadcrumb [ Pro ]
+* Card [ Pro ]
 * Dynamic Text ( Post Type name / Ancestor Page name ) [ Pro ]
+* Grid Column [ Pro ]
 * Grid Column Card [ Pro ]
+* New Badge [ Pro ]
+* Outer [ Pro ]
 * Post List [ Pro ]
 * Step [ Pro ]
 * Timeline [ Pro ]
-* Card [ Pro ]
-* Grid Column [ Pro ]
-* Animation [ Pro ]
-* Outer [ Pro ]
 
 [ Editing and correction ]
 
@@ -66,9 +67,11 @@ e.g.
 == Changelog ==
 
 [ Add Block ][ New Badge Block (Pro) ] Add a block to display recent posts.
-[ Bug fix ][ Taxonomy (Pro) ] Fixed individual CSS was loaded on all pages with classic theme.
+[ Other ] Update the required WordPress version
 [ Specification Change ] Changed to display Font Awesome version change button only when select is changed.
-[ Specification Change ][ Animation(Pro) ] Fix WordPress 6.3 transforms settings.
+[ Specification Change ][ Animation (Pro) ] Fix WordPress 6.3 transforms settings.
+[ Specification Change ][ Outer ( Pro ) ]  Change opacity setting can be set in increments of 0.01.
+[ Bug fix ][ Taxonomy (Pro) ] Fixed individual CSS was loaded on all pages with classic theme.
 
 = 1.60.0 =
 [ Add Function ] Add Font Awesome icon custom list function.

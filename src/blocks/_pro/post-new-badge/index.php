@@ -43,8 +43,27 @@ function vk_blocks_post_new_badge_render_callback( $attributes ) {
 		// カスタム指定の場合
 		foreach ( $attributes['style']['border'] as $key => $value ) {
 			if ( is_array( $value ) ) {
-				foreach ( $value as $key2 => $value2 ) {
-					array_push( $styles, 'border-' . $key . '-' . $key2 . ':' . esc_attr( vk_blocks_convert_attribute_value_to_css( $value2 ) ) . ';' );
+				if ( "radius" === $key ) {
+					$radius = $attributes['style']['border']['radius'];
+					$radius_css = '';
+					if (isset($radius['topLeft'])) {
+						$radius_css .= "border-top-left-radius: " . $radius['topLeft'] . "; ";
+					}
+					if (isset($radius['topRight'])) {
+						$radius_css .= "border-top-right-radius: " . $radius['topRight'] . "; ";
+					}
+					if (isset($radius['bottomRight'])) {
+						$radius_css .= "border-bottom-right-radius: " . $radius['bottomRight'] . "; ";
+					}
+					if (isset($radius['bottomLeft'])) {
+						$radius_css .= "border-bottom-left-radius: " . $radius['bottomLeft'] . "; ";
+					}
+					array_push( $styles, $radius_css );
+					
+				} else {
+					foreach ( $value as $key2 => $value2 ) {
+						array_push( $styles, 'border-' . $key . '-' . $key2 . ':' . esc_attr( vk_blocks_convert_attribute_value_to_css( $value2 ) ) . ';' );
+					}
 				}
 			} else {
 				array_push( $styles, 'border-' . $key . ':' . esc_attr( $value ) . ';' );

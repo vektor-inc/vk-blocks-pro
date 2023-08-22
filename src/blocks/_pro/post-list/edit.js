@@ -11,7 +11,6 @@ import {
 	Button,
 	TextControl,
 	FormTokenField,
-
 } from '@wordpress/components';
 import { useState, useEffect } from '@wordpress/element';
 import ServerSideRender from '@wordpress/server-side-render';

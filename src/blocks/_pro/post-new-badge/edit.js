@@ -1,4 +1,5 @@
 import { __ } from '@wordpress/i18n';
+import classnames from 'classnames';
 import {
 	useBlockProps,
 	InspectorControls,
@@ -33,7 +34,7 @@ export default function NewBadgeEdit(props) {
 	const borderProps = useBorderProps(attributes);
 
 	const blockProps = useBlockProps({
-		className: 'vk_newBadge',
+		className: classnames('vk_newBadge', borderProps.className),
 		style: {
 			opacity: !isNew ? 0.15 : 1,
 			...borderProps.style,

@@ -32,7 +32,7 @@ function vk_blocks_post_new_badge_render_callback( $attributes ) {
 	array_push( $classes, 'vk_newBadge' );
 
 	// 枠線のみget_block_wrapper_attributesに入ってこない対応
-	if ( isset( $attributes['style']['border']['width'] ) ) {
+	if ( isset( $attributes['style']['border'] ) ) {
 
 		// パレット指定の場合
 		if ( isset( $attributes['borderColor'] ) ) {

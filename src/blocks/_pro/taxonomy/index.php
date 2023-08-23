@@ -23,6 +23,59 @@ function vk_blocks_register_block_taxonomy() {
 		);
 	}
 
+	global $vk_blocks_common_attributes;
+
+	register_block_type(
+		__DIR__,
+		array(
+			'style'           => 'vk-blocks/taxonomy',
+			'editor_style'    => 'vk-blocks-build-editor-css',
+			'editor_script'   => 'vk-blocks-build-js',
+			'attributes'      => array_merge(
+				array(
+					'isSelectedTaxonomy' => array(
+						'type'    => 'string',
+						'default' => 'category',
+					),
+					'displayAsDropdown'  => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+					'showHierarchy'      => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+					'showPostCounts'     => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+					'hideIfEmpty'        => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+					'showOnlyTopLevel'   => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+					'className'          => array(
+						'type'    => 'string',
+						'default' => '',
+					),
+				),
+				$vk_blocks_common_attributes
+			),
+			'render_callback' => 'vk_blocks_taxonomy_render_callback',
+		)
+	);
+}
+add_action( 'init', 'vk_blocks_register_block_taxonomy', 99 );
+
+/**
+ * タクソノミーブロックに与える情報
+ *
+ * @return void
+ */
+function vk_blocks_taxonomy_enqueue_block_assets() {
 	/**
 	 * 選択させるタクソノミーのリストを生成し渡す
 	 */
@@ -70,60 +123,16 @@ function vk_blocks_register_block_taxonomy() {
 	// インデックスをリセット
 	$taxonomy_option = array_values( $taxonomy_option );
 
-	global $vk_blocks_common_attributes;
-
-	register_block_type(
-		__DIR__,
-		array(
-			'style'           => 'vk-blocks/taxonomy',
-			'editor_style'    => 'vk-blocks-build-editor-css',
-			'editor_script'   => 'vk-blocks-build-js',
-			'attributes'      => array_merge(
-				array(
-					'isSelectedTaxonomy' => array(
-						'type'    => 'string',
-						'default' => 'category',
-					),
-					'displayAsDropdown'  => array(
-						'type'    => 'boolean',
-						'default' => false,
-					),
-					'showHierarchy'      => array(
-						'type'    => 'boolean',
-						'default' => false,
-					),
-					'showPostCounts'     => array(
-						'type'    => 'boolean',
-						'default' => false,
-					),
-					'hideIfEmpty'        => array(
-						'type'    => 'boolean',
-						'default' => false,
-					),
-					'showOnlyTopLevel'   => array(
-						'type'    => 'boolean',
-						'default' => false,
-					),
-					'className'          => array(
-						'type'    => 'string',
-						'default' => '',
-					),
-				),
-				$vk_blocks_common_attributes
-			),
-			'render_callback' => 'vk_blocks_taxonomy_render_callback',
-		)
-	);
-
 	wp_localize_script(
 		'vk-blocks-build-js',
 		'vkTaxonomy',
 		array(
 			'taxonomyOption' => $taxonomy_option,
+			'editThemes'     => current_user_can( 'edit_themes' ),
 		)
 	);
 }
-add_action( 'init', 'vk_blocks_register_block_taxonomy', 99 );
+add_action( 'enqueue_block_editor_assets', 'vk_blocks_taxonomy_enqueue_block_assets' );
 
 /**
  * Render callback of Taxonomy block
@@ -149,81 +158,96 @@ function vk_blocks_taxonomy_render_callback( $attributes ) {
 	static $block_id = 0;
 	++$block_id;
 
+	$content = '';
+
 	$taxonomy    = ! empty( $attributes['isSelectedTaxonomy'] ) ? $attributes['isSelectedTaxonomy'] : 'category';
 	$is_dropdown = ! empty( $attributes['displayAsDropdown'] );
 	$dropdown_id = 'vk_taxonomy-' . $block_id;
 
 	$taxonomy_data = get_taxonomy( $taxonomy );
-	$default_label = $taxonomy_data->labels->singular_name;
 
-	$block_label = '' !== $attributes['blockLabel'] ? $attributes['blockLabel'] : $default_label;
+	if ( ! empty( $taxonomy_data ) ) {
+		$default_label = $taxonomy_data->labels->singular_name;
 
-	$common_args = array(
-		'echo'         => false,
-		'show_count'   => ! empty( $attributes['showPostCounts'] ) ? $attributes['showPostCounts'] : false,
-		'hide_empty'   => ! empty( $attributes['hideIfEmpty'] ) ? $attributes['hideIfEmpty'] : false,
-		'hierarchical' => ( ! empty( $attributes['showHierarchy'] ) && empty( $attributes['showOnlyTopLevel'] ) ) ? $attributes['showHierarchy'] : false,
-		'taxonomy'     => $taxonomy,
-		'value_field'  => 'slug',
-		'orderby'      => 'NAME',
-		'order'        => 'ASC',
-	);
-	if ( ! empty( $attributes['showOnlyTopLevel'] ) ) {
-		$common_args['parent'] = 0;
-	}
-	$common_args = apply_filters( 'vk_blocks_taxlist_args', $common_args ); // 9.13.0.0
+		$block_label = '' !== $attributes['blockLabel'] ? $attributes['blockLabel'] : $default_label;
 
-	// ドロップダウンの名前を設定
-	$name = $taxonomy;
-	if ( 'category' === $taxonomy ) {
-		$name = 'category_name';
-	} elseif ( 'post_tag' === $taxonomy ) {
-		$name = 'tag';
-	}
+		$common_args = array(
+			'echo'         => false,
+			'show_count'   => ! empty( $attributes['showPostCounts'] ) ? $attributes['showPostCounts'] : false,
+			'hide_empty'   => ! empty( $attributes['hideIfEmpty'] ) ? $attributes['hideIfEmpty'] : false,
+			'hierarchical' => ( ! empty( $attributes['showHierarchy'] ) && empty( $attributes['showOnlyTopLevel'] ) ) ? $attributes['showHierarchy'] : false,
+			'taxonomy'     => $taxonomy,
+			'value_field'  => 'slug',
+			'orderby'      => 'NAME',
+			'order'        => 'ASC',
+		);
+		if ( ! empty( $attributes['showOnlyTopLevel'] ) ) {
+			$common_args['parent'] = 0;
+		}
+		$common_args = apply_filters( 'vk_blocks_taxlist_args', $common_args ); // 9.13.0.0
 
-	$dropdown_args = array(
-		// translators:
-		'show_option_all' => sprintf( __( 'All of %s', 'vk-blocks-pro' ), $taxonomy_data->labels->singular_name ),
-		'id'              => $dropdown_id,
-		'class'           => 'vk_taxonomy__input-wrap vk_taxonomy__input-wrap--select',
-		'selected'        => get_query_var( $name ),
-		'name'            => $name,
-	);
+		// ドロップダウンの名前を設定
+		$name = $taxonomy;
+		if ( 'category' === $taxonomy ) {
+			$name = 'category_name';
+		} elseif ( 'post_tag' === $taxonomy ) {
+			$name = 'tag';
+		}
 
-	$list_args = array(
-		'style'           => 'list',
-		'title_li'        => '',
-		'show_option_all' => false,
-	);
+		$dropdown_args = array(
+			// translators:
+			'show_option_all' => sprintf( __( 'All of %s', 'vk-blocks-pro' ), $taxonomy_data->labels->singular_name ),
+			'id'              => $dropdown_id,
+			'class'           => 'vk_taxonomy__input-wrap vk_taxonomy__input-wrap--select',
+			'selected'        => get_query_var( $name ),
+			'name'            => $name,
+		);
 
-	$outer_attributes = get_block_wrapper_attributes(
-		array(
-			'class' => "vk_taxonomy vk_taxonomy--{$taxonomy} vk_taxonomy-outer-wrap",
-		)
-	);
+		$list_args = array(
+			'style'           => 'list',
+			'title_li'        => '',
+			'show_option_all' => false,
+		);
 
-	$content = '<div ' . $outer_attributes . '>';
-	if ( ! empty( $is_dropdown ) ) {
-		$content .= wp_dropdown_categories(
-			array_merge(
-				$common_args,
-				$dropdown_args
+		$outer_attributes = get_block_wrapper_attributes(
+			array(
+				'class' => "vk_taxonomy vk_taxonomy--{$taxonomy} vk_taxonomy-outer-wrap",
 			)
 		);
-	} else {
-		$content .= '<ul class="vk_taxonomy-list">';
-		$content .= wp_list_categories(
-			array_merge(
-				$common_args,
-				$list_args
-			)
-		);
-		$content .= '</ul>';
+
+		$content .= '<div ' . $outer_attributes . '>';
+		if ( ! empty( $is_dropdown ) ) {
+			$content .= wp_dropdown_categories(
+				array_merge(
+					$common_args,
+					$dropdown_args
+				)
+			);
+		} else {
+			$content .= '<ul class="vk_taxonomy-list">';
+			$content .= wp_list_categories(
+				array_merge(
+					$common_args,
+					$list_args
+				)
+			);
+			$content .= '</ul>';
+		}
+
+		$content .= '</div>';
+
+		$content = apply_filters( 'vk_blocks_taxonomy_content', $content, $name, $is_dropdown, $dropdown_id );
+	} elseif ( current_user_can( 'edit_themes' ) ) {
+		$content  = '<div class="vk_taxonomy-warning alert alert-warning">';
+		$content .= '<div class="vk_taxonomy-label-name text-center">';
+		$content .= __( 'VK Taxonomy Block', 'vk-blocks-pro' );
+		$content .= '</div>';
+		$content .= '<div class="vk_taxonomy-warning_text">';
+		$content .= __( 'Specified taxonomy does not exist. Please check your taxonomy settings to display or remove this block.', 'vk-blocks-pro' );
+		$content .= '</div>';
+		$content .= '</div>';
 	}
-
-	$content .= '</div>';
-
-	return apply_filters( 'vk_blocks_taxonomy_content', $content, $name, $is_dropdown, $dropdown_id );
+	return $content;
 }
 
 /**

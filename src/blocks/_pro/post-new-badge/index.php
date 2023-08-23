@@ -56,16 +56,16 @@ function vk_blocks_post_new_badge_render_callback( $attributes ) {
 					$radius     = $attributes['style']['border']['radius'];
 					$radius_css = '';
 					if ( isset( $radius['topLeft'] ) ) {
-						$radius_css .= 'border-top-left-radius: ' . $radius['topLeft'] . ';';
+						$radius_css .= 'border-top-left-radius:' . $radius['topLeft'] . ';';
 					}
 					if ( isset( $radius['topRight'] ) ) {
-						$radius_css .= 'border-top-right-radius: ' . $radius['topRight'] . ';';
+						$radius_css .= 'border-top-right-radius:' . $radius['topRight'] . ';';
 					}
 					if ( isset( $radius['bottomRight'] ) ) {
-						$radius_css .= 'border-bottom-right-radius: ' . $radius['bottomRight'] . ';';
+						$radius_css .= 'border-bottom-right-radius:' . $radius['bottomRight'] . ';';
 					}
 					if ( isset( $radius['bottomLeft'] ) ) {
-						$radius_css .= 'border-bottom-left-radius: ' . $radius['bottomLeft'] . ';';
+						$radius_css .= 'border-bottom-left-radius:' . $radius['bottomLeft'] . ';';
 					}
 					array_push( $styles, $radius_css );
 				} else {

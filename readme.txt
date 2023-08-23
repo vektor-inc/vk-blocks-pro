@@ -65,6 +65,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Outer(Pro) ] Add options to Divider for each PC, Tablet, and Mobile
 [ Other ] Update the required WordPress version
 [ Specification Change ][ Outer ( Pro ) ]  Change opacity setting can be set in increments of 0.01.
 [ Bug fix ][ Taxonomy (Pro) ] Fixed individual CSS was loaded on all pages with classic theme.

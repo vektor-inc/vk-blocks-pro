@@ -11,14 +11,6 @@
 		"daysAsNewPost": {
 			"type": "number",
 			"default": 5
-		},		
-		"style": {
-			"type": "object",
-			"default": {
-				"color": {
-					"text": "#ff0000"
-				}
-			}
 		}
 	},
 	"description": "Easily highlight your latest content or products with the 'New Badge' feature.",
@@ -46,14 +38,13 @@
 			"radius": true,
 			"style": true,
 			"width": true,
-			"__experimentalSkipSerialization": true,
 			"__experimentalDefaultControls": {
 				"color": true,
 				"radius": true,
 				"style": true,
 				"width": true
 			}
-		},		
+		},
 		"typography": {
 			"fontSize": true,
 			"lineHeight": true,

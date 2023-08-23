@@ -1,0 +1,29 @@
+
+/**
+ * WordPress dependencies
+ */
+import { __ } from '@wordpress/i18n';
+
+/**
+ * Internal dependencies
+ */
+import { ReactComponent as Icon } from './icon.svg';
+
+const variations = [
+	{
+		name: 'new-badge',
+		title: __('New Badge', 'vk-blocks-pro'),
+		icon: <Icon />,
+		isDefault: true,
+		attributes: {
+			style: {
+				color: {
+					text: "#ff0000",
+				},
+			},
+		},
+		scope: ['inserter'],
+	},
+];
+
+export default variations;

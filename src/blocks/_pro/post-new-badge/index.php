@@ -31,18 +31,7 @@ function vk_blocks_post_new_badge_render_callback( $attributes ) {
 		return '';
 	}
 
-	$extra_attributes = array();
-	$classes          = array();
-
-	array_push( $classes, 'vk_newBadge' );
-
-	// classを組み立て
-	if ( 0 < count( $classes ) ) {
-		$extra_attributes['class'] = implode( ' ', $classes );
-	}
-
-	// ここまで組み立てたclass/styleをマージ＆wrapper要素を取得
-	$wrapper_attributes = get_block_wrapper_attributes( $extra_attributes );
+	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => 'vk_newBadge' ) );
 
 	$result  = "<div $wrapper_attributes>";
 	$result .= '<span>' . $attributes['content'] . '</span>';

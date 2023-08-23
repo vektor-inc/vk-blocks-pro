@@ -101,7 +101,7 @@ function vk_blocks_post_new_badge_render_callback( $attributes ) {
 
 	// styleを組み立て
 	if ( 0 < count( $styles ) ) {
-		$extra_attributes['style'] = implode( ' ', $styles );
+		$extra_attributes['style'] = implode( '', $styles );
 	}
 
 	// ここまで組み立てたclass/styleをマージ＆wrapper要素を取得

@@ -67,9 +67,6 @@ e.g.
 == Changelog ==
 
 [ Add Block ][ New Badge Block (Pro) ] Add a block to display recent posts.
-[ Specification Change ] Changed to display Font Awesome version change button only when select is changed.
-[ Specification Change ][ Animation (Pro) ] Fix WordPress 6.3 transforms settings.
-[ Specification Change ][ Outer ( Pro ) ]  Change opacity setting can be set in increments of 0.01.
 [ Specification Change ][ Outer ( Pro ) ]  Change opacity setting can be set in increments of 0.01.
 [ Specification Change ] Changed to display Font Awesome version change button only when select is changed.
 [ Specification Change ][ Animation(Pro) ] Fix WordPress 6.3 transforms settings.

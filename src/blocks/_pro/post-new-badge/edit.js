@@ -53,9 +53,10 @@ export default function NewBadgeEdit(props) {
 						label={__('Days Counted as New Post', 'vk-blocks-pro')}
 						value={daysAsNewPost}
 						min={1}
-						onChange={(value) =>
-							setAttributes({ daysAsNewPost: Number(value) })
-						}
+						onChange={(value) => {
+							const inputValue = value ? parseInt(value) : 1;
+							setAttributes({ daysAsNewPost: inputValue });
+						}}
 					/>
 				</PanelBody>
 			</InspectorControls>

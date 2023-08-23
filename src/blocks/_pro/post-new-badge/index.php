@@ -80,7 +80,7 @@ function vk_blocks_post_new_badge_render_callback( $attributes ) {
 	}
 
 	// スタイルのデフォルト値が get_block_wrapper_attributesに入ってこない対応（背景色)
-	if ( ( ! isset( $orig_attributes['style'] ) || ( isset( $orig_attributes['style'] ) && ! preg_match( '/\s*background\-color:/', $orig_attributes['style'] ) ) ) && isset( $attributes['style']['color']['background'] ) ) {
+	if ( ( ! isset( $orig_attributes['style'] ) || ( isset( $orig_attributes['style'] ) && ! preg_match( '/[^\-]*background\-color:/', $orig_attributes['style'] ) ) ) && isset( $attributes['style']['color']['background'] ) ) {
 		array_push( $styles, 'background-color:' . esc_attr( $attributes['style']['color']['background'] ) . ';' );
 	}
 

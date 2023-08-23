@@ -1,4 +1,3 @@
-
 /**
  * WordPress dependencies
  */
@@ -18,7 +17,7 @@ const variations = [
 		attributes: {
 			style: {
 				color: {
-					text: "#ff0000",
+					text: '#ff0000',
 				},
 			},
 		},

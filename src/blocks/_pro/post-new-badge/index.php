@@ -30,9 +30,12 @@ function vk_blocks_post_new_badge_render_callback( $attributes ) {
 	if ( $days_since_post >= $days_as_new_post ) {
 		return '';
 	}
+	$classes = array( 'vk_newBadge' );
+	if ( isset( $attributes['textAlign'] ) ) {
+		$classes[] = 'has-text-align-' . $attributes['textAlign'];
+	}
 
-	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => 'vk_newBadge' ) );
-
+	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => implode( ' ', $classes ) ) );
 	$result  = "<div $wrapper_attributes>";
 	$result .= '<span>' . $attributes['content'] . '</span>';
 	$result .= '</div>';

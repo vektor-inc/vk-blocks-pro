@@ -15,6 +15,7 @@ const variations = [
 		icon: <Icon />,
 		isDefault: true,
 		attributes: {
+			textAlign: 'center',
 			style: {
 				color: {
 					text: '#ff0000',

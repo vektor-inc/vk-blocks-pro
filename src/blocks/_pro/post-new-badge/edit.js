@@ -1,10 +1,11 @@
 import { __ } from '@wordpress/i18n';
 import classnames from 'classnames';
 import {
+	AlignmentToolbar,
+	BlockControls,
 	useBlockProps,
 	InspectorControls,
 	RichText,
-	__experimentalUseBorderProps as useBorderProps, // eslint-disable-line @wordpress/no-unsafe-wp-apis
 } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -16,7 +17,7 @@ import { useState, useEffect } from '@wordpress/element';
 
 export default function NewBadgeEdit(props) {
 	const { attributes, setAttributes, context } = props;
-	const { content, daysAsNewPost } = attributes;
+	const { content, daysAsNewPost, textAlign } = attributes;
 	const [isNew, setIsNew] = useState(false);
 
 	const { postId } = context;
@@ -35,18 +36,25 @@ export default function NewBadgeEdit(props) {
 		setIsNew(differenceInDays <= daysAsNewPost);
 	}, [daysAsNewPost, postDate]);
 
-	const borderProps = useBorderProps(attributes);
-
 	const blockProps = useBlockProps({
-		className: classnames('vk_newBadge', borderProps.className),
+		className: classnames('vk_newBadge', {
+			[`has-text-align-${textAlign}`]: !!textAlign,
+		}),
 		style: {
 			opacity: !isNew ? 0.15 : 1,
-			...borderProps.style,
 		},
 	});
 
 	return (
 		<>
+			<BlockControls>
+				<AlignmentToolbar
+					value={textAlign}
+					onChange={(nextAlign) => {
+						setAttributes({ textAlign: nextAlign });
+					}}
+				/>
+			</BlockControls>
 			<InspectorControls>
 				<PanelBody title={__('New Badge setting', 'vk-blocks-pro')}>
 					<NumberControl
@@ -60,17 +68,15 @@ export default function NewBadgeEdit(props) {
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<div>
-				<div {...blockProps}>
-					<RichText
-						multiline={false}
-						aria-label={__('Edit text…')}
-						placeholder={__('Edit text…') + ' '}
-						value={content}
-						onChange={(value) => setAttributes({ content: value })}
-						tagName="span"
-					/>
-				</div>
+			<div {...blockProps}>
+				<RichText
+					multiline={false}
+					aria-label={__('Edit text…')}
+					placeholder={__('Edit text…') + ' '}
+					value={content}
+					onChange={(value) => setAttributes({ content: value })}
+					tagName="span"
+				/>
 			</div>
 		</>
 	);

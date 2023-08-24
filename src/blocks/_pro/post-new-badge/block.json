@@ -11,6 +11,9 @@
 		"daysAsNewPost": {
 			"type": "number",
 			"default": 5
+		},
+		"textAlign": {
+			"type": "string"
 		}
 	},
 	"description": "Easily highlight your latest content or products with the 'New Badge' feature.",

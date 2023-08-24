@@ -36,9 +36,9 @@ function vk_blocks_post_new_badge_render_callback( $attributes ) {
 	}
 
 	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => implode( ' ', $classes ) ) );
-	$result  = "<div $wrapper_attributes>";
-	$result .= '<span>' . $attributes['content'] . '</span>';
-	$result .= '</div>';
+	$result             = "<div $wrapper_attributes>";
+	$result            .= '<span>' . $attributes['content'] . '</span>';
+	$result            .= '</div>';
 
 	return $result;
 }

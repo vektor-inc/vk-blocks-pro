@@ -2,9 +2,9 @@
 Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird,chiakikouno,doshimaf
 Donate link:
 Tags: Gutenberg,FAQ,alert
-Requires at least: 6.0
-Tested up to: 6.2
-Stable tag: 1.59.0.1
+Requires at least: 6.1
+Tested up to: 6.3
+Stable tag: 1.60.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -67,9 +67,14 @@ e.g.
 
 [ Bug fix ] Fix error WordPress 6.3 live previewing block themes.
 [ Specification Change ][ Outer ( Pro ) ]  Change opacity setting can be set in increments of 0.01.
-[ Bug fix ][ Taxonomy (Pro) ] Fixed individual CSS was loaded on all pages with classic theme.
+
+= 1.61.0 =
+[ Specification Change ] Update the required WordPress version.
 [ Specification Change ] Changed to display Font Awesome version change button only when select is changed.
+[ Specification Change ][ Outer ( Pro ) ]  Change opacity setting can be set in increments of 0.01.
 [ Specification Change ][ Animation(Pro) ] Fix WordPress 6.3 transforms settings.
+[ Bug fix ][ Taxonomy (Pro) ] Fixed error when selected taxonomy dose not exists.
+[ Bug fix ][ Taxonomy (Pro) ] Fixed individual CSS was loaded on all pages with classic theme.
 
 = 1.60.0 =
 [ Add Function ] Add Font Awesome icon custom list function.

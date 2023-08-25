@@ -65,8 +65,6 @@ e.g.
 
 == Changelog ==
 
-失敗するはずのテスト
-
 = 1.61.0 =
 [ Specification Change ] Update the required WordPress version.
 [ Specification Change ] Changed to display Font Awesome version change button only when select is changed.

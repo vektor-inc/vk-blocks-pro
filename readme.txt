@@ -65,6 +65,9 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ] Fix error WordPress 6.3 live previewing block themes.
+[ Specification Change ][ Outer ( Pro ) ]  Change opacity setting can be set in increments of 0.01.
+
 = 1.61.0 =
 [ Specification Change ] Update the required WordPress version.
 [ Specification Change ] Changed to display Font Awesome version change button only when select is changed.

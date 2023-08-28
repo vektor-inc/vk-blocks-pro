@@ -365,16 +365,16 @@
         },
         {
             "name": "vektor-inc/vk-term-color",
-            "version": "0.6.4",
+            "version": "0.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vektor-inc/vk-term-color.git",
-                "reference": "ad1d4d643e77dfafccb35a78c1394cecaf6cec81"
+                "reference": "ef6d83573ee3e5235eb8012a35d4c8fa6c641e8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vektor-inc/vk-term-color/zipball/ad1d4d643e77dfafccb35a78c1394cecaf6cec81",
-                "reference": "ad1d4d643e77dfafccb35a78c1394cecaf6cec81",
+                "url": "https://api.github.com/repos/vektor-inc/vk-term-color/zipball/ef6d83573ee3e5235eb8012a35d4c8fa6c641e8f",
+                "reference": "ef6d83573ee3e5235eb8012a35d4c8fa6c641e8f",
                 "shasum": ""
             },
             "type": "library",

@@ -66,7 +66,7 @@ e.g.
 == Changelog ==
 
 [ Bug fix ] Fix error WordPress 6.3 live previewing block themes.
-[ Specification Change ][ Outer ( Pro ) ]  Change opacity setting can be set in increments of 0.01.
+[ Bug fix ] VK Term color update 0.6.5
 
 = 1.61.0 =
 [ Specification Change ] Update the required WordPress version.

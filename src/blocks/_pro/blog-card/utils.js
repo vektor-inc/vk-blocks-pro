@@ -54,7 +54,10 @@ export function useScopedBlockVariations(attributes) {
 					'vk-blocks/blog-card',
 					attributes
 				)?.name,
-				blockVariations: getBlockVariations('vk-blocks/blog-card', 'block'),
+				blockVariations: getBlockVariations(
+					'vk-blocks/blog-card',
+					'block'
+				),
 			};
 		},
 		[attributes]

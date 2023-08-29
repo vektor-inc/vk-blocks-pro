@@ -51,6 +51,13 @@ $media-xxl-down: 1399.98px;
 		opacity: 0.5;
 	}
 
+	// 互換性対応 1.60.0 以前のスタイル
+	@for $i from 0 through 10 {
+		.vk_outer-background-area.has-background-dim-#{ $i } {
+			opacity: $i * 0.1;
+		}
+	}
+
 	.vk_outer_container {
 		position: relative;
 		min-height: 24px;

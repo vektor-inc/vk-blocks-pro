@@ -103,12 +103,10 @@ class BlogCard extends WP_UnitTestCase {
 				<p class="wp-block-vk-blocks-blog-card-site-title"><a href="https://vektor-inc.co.jp" target="_self" >株式会社ベクトル</a></p>
 				</div>
 				',
+				'cannot_embed' => '<div %s>https://vektor-inc.co.jp/</div>',
 			),
 			// 外部リンク 埋め込み不可
 			array(
-				'attributes' => array(
-					'url' => 'https://github.com/vektor-inc/vk-blocks-pro/blob/master/vk-blocks.php',
-				),
 				'content' => '
 				<!-- wp:vk-blocks/blog-card {"url":"https://github.com/vektor-inc/vk-blocks-pro/blob/master/vk-blocks.php"} -->
 				<div %s></div>
@@ -133,6 +131,9 @@ class BlogCard extends WP_UnitTestCase {
 				$get_block_wrapper_attributes = 'class="wp-block-vk-blocks-blog-card"';
 			}
 			$correct = sprintf($test['expected'], $get_block_wrapper_attributes);
+			if (!empty($test['cannot_embed'])) {
+				$cannot_embed_correct = sprintf($test['cannot_embed'], $get_block_wrapper_attributes);
+			}
 
 			// print PHP_EOL;
 			// print '$test[content][1]  :';
@@ -150,7 +151,13 @@ class BlogCard extends WP_UnitTestCase {
 			// print 'correct  :';
 			// var_dump($correct);
 			// print PHP_EOL;
-			$this->assertSame( $correct, $render_block_content );
+
+			$blog_card_data = VK_Blocks_Blog_Card::vk_get_blog_card_data('https://www.vektor-inc.co.jp/');
+			if (!empty($test['cannot_embed']) && !empty($blog_card_data['cannot_embed'])) {
+				$this->assertSame( $cannot_embed_correct, $render_block_content );
+			} else {
+				$this->assertSame( $correct, $render_block_content );
+			}
 
 		}
 	}

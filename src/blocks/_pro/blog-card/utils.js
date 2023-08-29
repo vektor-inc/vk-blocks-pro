@@ -6,11 +6,6 @@ import { useMemo, renderToString } from '@wordpress/element';
 import { createBlock, store as blocksStore } from '@wordpress/blocks';
 
 /**
- * Internal dependencies
- */
-import { name as blogCardName } from './block.json';
-
-/**
  * External dependencies
  */
 import compareVersions from 'compare-versions';
@@ -56,10 +51,10 @@ export function useScopedBlockVariations(attributes) {
 				select(blocksStore);
 			return {
 				activeVariationName: getActiveBlockVariation(
-					blogCardName,
+					'vk-blocks/blog-card',
 					attributes
 				)?.name,
-				blockVariations: getBlockVariations(blogCardName, 'block'),
+				blockVariations: getBlockVariations('vk-blocks/blog-card', 'block'),
 			};
 		},
 		[attributes]

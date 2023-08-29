@@ -65,6 +65,9 @@ e.g.
 
 == Changelog ==
 
+= 1.61.2 =
+[ Bug fix ][ Outer ( Pro ) ] Fixed opacity with previous Outer version.
+
 = 1.61.1 =
 [ Bug fix ] Fix error WordPress 6.3 live previewing block themes.
 [ Bug fix ] VK Term color update 0.6.6

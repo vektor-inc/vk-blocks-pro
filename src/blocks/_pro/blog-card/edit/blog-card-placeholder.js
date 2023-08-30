@@ -105,7 +105,10 @@ function BlogCardVariationPicker({
 				icon={icon}
 				label={label}
 				variations={scopeVariations}
-				instructions={__('パターンを選択します。元のブロック設定はクリアされます。', 'vk-blocks-pro')}
+				instructions={__(
+					'パターンを選択します。元のブロック設定はクリアされます。',
+					'vk-blocks-pro'
+				)}
 				onSelect={(variation) => {
 					if (variation.attributes) {
 						setAttributes({

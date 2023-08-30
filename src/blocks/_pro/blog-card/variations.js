@@ -14,9 +14,9 @@ import {
 
 const variations = [
 	{
-		name: 'left-image-right-text',
+		name: 'left-text-right-image',
 		title: __('右 画像', 'vk-blocks-pro'),
-		icon: leftImageRightText,
+		icon: leftTextRightImage,
 		attributes: {
 			style: {
 				spacing: {
@@ -120,9 +120,9 @@ const variations = [
 		scope: ['block'],
 	},
 	{
-		name: 'left-text-right-image',
+		name: 'left-image-right-text',
 		title: __('左 画像', 'vk-blocks-pro'),
-		icon: leftTextRightImage,
+		icon: leftImageRightText,
 		attributes: {
 			style: {
 				spacing: {

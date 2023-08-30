@@ -7,7 +7,6 @@ import * as accordionTrigger from './_pro/accordion-trigger';
 import * as animation from './_pro/animation';
 import * as archiveList from './_pro/archive-list';
 import * as blogCard from './_pro/blog-card';
-import * as blogCard2 from './_pro/blog-card-2';
 import * as blogCardTitle from './_pro/blog-card-title';
 import * as blogCardImage from './_pro/blog-card-featured-image';
 import * as blogCardExcerpt from './_pro/blog-card-excerpt';
@@ -52,7 +51,6 @@ const vkblocksPro = [
 	animation,
 	archiveList,
 	blogCard,
-	blogCard2,
 	blogCardTitle,
 	blogCardImage,
 	blogCardExcerpt,

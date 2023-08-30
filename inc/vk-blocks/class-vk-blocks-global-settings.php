@@ -141,10 +141,6 @@ class VK_Blocks_Global_Settings {
 				'is_pro' => true,
 			),
 			array(
-				'name'   => 'blog-card-2',
-				'is_pro' => true,
-			),
-			array(
 				'name'   => 'blog-card-title',
 				'is_pro' => true,
 			),

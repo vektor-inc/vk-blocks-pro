@@ -1,6 +1,7 @@
 /**
  * WordPress dependencies
  */
+import { __ } from '@wordpress/i18n';
 import { useSelect, useDispatch } from '@wordpress/data';
 import {
 	createBlocksFromInnerBlocksTemplate,
@@ -104,6 +105,7 @@ function BlogCardVariationPicker({
 				icon={icon}
 				label={label}
 				variations={scopeVariations}
+				instructions={__('パターンを選択します。元のブロック設定はクリアされます。', 'vk-blocks-pro')}
 				onSelect={(variation) => {
 					if (variation.attributes) {
 						setAttributes({

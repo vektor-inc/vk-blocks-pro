@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function vk_blocks_is_lightning() {
 	// テーマがLightning系の場合読み込まない
-	$current_template = get_template();
+	$current_template = ! empty( $_GET['wp_theme_preview'] ) ? sanitize_text_field( wp_unslash( $_GET['wp_theme_preview'] ) ) : get_template();
 	if ( 'lightning' === $current_template || 'lightning-pro' === $current_template || 'katawara' === $current_template ) {
 		return true;
 	}

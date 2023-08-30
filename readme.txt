@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.1
 Tested up to: 6.3
-Stable tag: 1.59.0.1
+Stable tag: 1.60.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -65,10 +65,18 @@ e.g.
 
 == Changelog ==
 
-[ Specification Change ][ Outer ( Pro ) ]  Change opacity setting can be set in increments of 0.01.
+= 1.61.2 =
+[ Bug fix ][ Outer ( Pro ) ] Fixed opacity with previous Outer version.
+
+= 1.61.1 =
+[ Bug fix ] Fix error WordPress 6.3 live previewing block themes.
+[ Bug fix ] VK Term color update 0.6.6
+
+= 1.61.0 =
+[ Specification Change ] Update the required WordPress version.
 [ Specification Change ] Changed to display Font Awesome version change button only when select is changed.
+[ Specification Change ][ Outer ( Pro ) ]  Change opacity setting can be set in increments of 0.01.
 [ Specification Change ][ Animation(Pro) ] Fix WordPress 6.3 transforms settings.
-[ Other ] Update the required WordPress version
 [ Bug fix ][ Taxonomy (Pro) ] Fixed error when selected taxonomy dose not exists.
 [ Bug fix ][ Taxonomy (Pro) ] Fixed individual CSS was loaded on all pages with classic theme.
 

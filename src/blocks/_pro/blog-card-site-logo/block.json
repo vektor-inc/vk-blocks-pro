@@ -25,7 +25,7 @@
 		"vk-blocks/blog-card-url"
 	],
 	"supports": {
-		"align": [ "left", "right", "center", "wide", "full" ],
+		"align": [ "left", "right", "center" ],
 		"color": {
 			"__experimentalDuotone": "img",
 			"text": false,

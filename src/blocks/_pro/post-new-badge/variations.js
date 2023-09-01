@@ -20,6 +20,10 @@ const variations = [
 				color: {
 					text: '#ff0000',
 				},
+				typography: {
+					fontStyle: 'normal',
+					fontWeight: '700',
+				},
 			},
 		},
 		scope: ['inserter'],

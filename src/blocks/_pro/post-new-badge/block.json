@@ -6,7 +6,7 @@
 	"attributes": {
 		"content": {
 			"type": "string",
-			"default": "<strong>New!</strong>"
+			"default": "New!"
 		},
 		"daysAsNewPost": {
 			"type": "number",

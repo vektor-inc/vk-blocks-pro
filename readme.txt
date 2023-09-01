@@ -67,6 +67,13 @@ e.g.
 
 [ Add function ][ Outer(Pro) ] Add options to Divider for each PC, Tablet, and Mobile
 
+= 1.61.2 =
+[ Bug fix ][ Outer ( Pro ) ] Fixed opacity with previous Outer version.
+
+= 1.61.1 =
+[ Bug fix ] Fix error WordPress 6.3 live previewing block themes.
+[ Bug fix ] VK Term color update 0.6.6
+
 = 1.61.0 =
 [ Specification Change ] Update the required WordPress version.
 [ Specification Change ] Changed to display Font Awesome version change button only when select is changed.

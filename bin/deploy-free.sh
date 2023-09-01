@@ -54,7 +54,6 @@ sed -i "s/import vkblocksPro from '\.\/bundle-pro'/const vkblocksPro = \[\]/g" s
 # ブロックをビルド
 npm install
 composer install
-bash bin/install-theme.sh
 npx gulp text-domain-free
 npm run lint
 composer format

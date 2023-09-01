@@ -39,9 +39,10 @@ class PostNewBadgeTest extends WP_UnitTestCase {
 				'post_type'    => 'post',
 				'post_title'   => 'Today Post',
 				'post_content' => 'Today Post content',
-                'post_date'    => date('Y-n-j 08:00:00')
+                'post_date'    => date('Y-m-d H:i:s', strtotime('08:00:00'))
 			)
 		);
+		
 		self::$posts[]         = self::$post_today;
 
 		self::$post_fivedays_ago = self::factory()->post->create_and_get(
@@ -49,7 +50,7 @@ class PostNewBadgeTest extends WP_UnitTestCase {
 				'post_type'    => 'post',
 				'post_title'   => '5 days ago Post',
 				'post_content' => '5 days ago Post content',
-                'post_date'    => date('Y-n-j 23:00:00', strtotime('-5 days'))
+                'post_date'    => date('Y-m-d H:i:s', strtotime('-5 days 23:00:00'))
 			)
 		);
 		self::$posts[]         = self::$post_fivedays_ago;

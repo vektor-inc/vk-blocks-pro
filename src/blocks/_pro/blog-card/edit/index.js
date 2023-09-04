@@ -108,11 +108,11 @@ export default function BlogCardWrapperEdit(props) {
 									isBusy={isLoadingClearCache}
 									disabled={!!!attributesUrl ? true : false}
 								>
-									{__('キャッシュクリア', 'vk-blocks-pro')}
+									{__('Clear cache', 'vk-blocks-pro')}
 								</Button>
 								<p style={{ marginTop: '8px' }}>
 									{__(
-										'データが古い場合はキャッシュクリアしてください。通常１時間で更新されます。',
+										'If the data is old, please clear the cache. It is usually updated every hour.',
 										'vk-blocks-pro'
 									)}
 								</p>

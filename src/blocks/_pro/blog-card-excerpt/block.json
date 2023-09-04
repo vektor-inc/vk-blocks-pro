@@ -3,7 +3,7 @@
 	"name": "vk-blocks/blog-card-excerpt",
 	"category": "vk-blocks-cat",
 	"title": "Blog Card Excerpt",
-	"description": "URLから取得した抜粋を表示します。",
+	"description": "Shows an excerpt retrieved from a URL.",
 	"textdomain": "vk-blocks-pro",
 	"ancestor": [ "vk-blocks/blog-card" ],
 	"attributes": {

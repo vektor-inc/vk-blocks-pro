@@ -3,7 +3,7 @@
 	"name": "vk-blocks/blog-card-title",
 	"category": "vk-blocks-cat",
 	"title": "Blog Card Title",
-	"description": "URLから取得したタイトルを表示します。",
+	"description": "Displays the title obtained from the URL.",
 	"textdomain": "vk-blocks-pro",
 	"ancestor": [ "vk-blocks/blog-card" ],
 	"attributes": {

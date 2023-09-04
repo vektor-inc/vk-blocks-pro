@@ -3,7 +3,7 @@
 	"name": "vk-blocks/blog-card",
 	"category": "vk-blocks-cat",
 	"title": "Blog Card",
-	"description": "URLからコンテンツを取り込んで表示するブロックを追加します。",
+	"description": "Add a block that fetches and displays content from a URL.",
 	"attributes": {
 		"url": {
 			"type": "string",

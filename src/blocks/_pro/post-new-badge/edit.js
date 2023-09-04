@@ -23,6 +23,21 @@ export default function NewBadgeEdit(props) {
 	const { postId } = context;
 	const [postDate] = useEntityProp('postType', 'post', 'date', postId);
 
+	const ALLOW_FORMAT = [
+		'core/bold',
+		'core/italic',
+		'core/image',
+		'core/strikethrough',
+		'core/subscript',
+		'core/superscript',
+		'core/text-color',
+		'core/keyboard',
+		'vk-blocks/highlighter',
+		'vk-blocks/inline-font-size',
+		'vk-blocks/nowrap',
+		'vk-blocks/responsive-br',
+	];
+
 	useEffect(() => {
 		const today = new Date();
 		const publishedDate = new Date(postDate);
@@ -70,6 +85,7 @@ export default function NewBadgeEdit(props) {
 			</InspectorControls>
 			<div {...blockProps}>
 				<RichText
+					allowedFormats={ALLOW_FORMAT}
 					multiline={false}
 					aria-label={__('Edit text…')}
 					placeholder={__('Edit text…') + ' '}

@@ -848,48 +848,26 @@ export default function OuterEdit(props) {
 			<div {...blockProps}>
 				{GetBgImage}
 				<div>
-					{levelSettingIsCommon ? (
-						<>
-							{componentDivider(
-								upper_level,
-								upperDividerBgColor,
-								whichSideUpper,
-								dividerType
-							)}
-							<div className={containerClass}>
-								<InnerBlocks />
-							</div>
-							{componentDivider(
-								lower_level,
-								lowerDividerBgColor,
-								whichSideLower,
-								dividerType
-							)}
-						</>
-					) : (
-						<>
-							{componentDivider(
-								upper_level,
-								upperDividerBgColor,
-								whichSideUpper,
-								dividerType,
-								upper_level_mobile,
-								upper_level_tablet,
-								upper_level_pc
-							)}
-							<div className={containerClass}>
-								<InnerBlocks />
-							</div>
-							{componentDivider(
-								lower_level,
-								lowerDividerBgColor,
-								whichSideLower,
-								dividerType,
-								lower_level_mobile,
-								lower_level_tablet,
-								lower_level_pc
-							)}
-						</>
+					{componentDivider(
+						upper_level,
+						upperDividerBgColor,
+						whichSideUpper,
+						dividerType,
+						upper_level_mobile,
+						upper_level_tablet,
+						upper_level_pc
+					)}
+					<div className={containerClass}>
+						<InnerBlocks />
+					</div>
+					{componentDivider(
+						lower_level,
+						lowerDividerBgColor,
+						whichSideLower,
+						dividerType,
+						lower_level_mobile,
+						lower_level_tablet,
+						lower_level_pc
 					)}
 				</div>
 			</div>

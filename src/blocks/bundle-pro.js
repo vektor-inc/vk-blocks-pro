@@ -6,6 +6,12 @@ import * as accordionTarget from './_pro/accordion-target';
 import * as accordionTrigger from './_pro/accordion-trigger';
 import * as animation from './_pro/animation';
 import * as archiveList from './_pro/archive-list';
+import * as blogCard from './_pro/blog-card';
+import * as blogCardTitle from './_pro/blog-card-title';
+import * as blogCardImage from './_pro/blog-card-featured-image';
+import * as blogCardExcerpt from './_pro/blog-card-excerpt';
+import * as blogCardFavicon from './_pro/blog-card-site-logo';
+import * as blogCardSiteName from './_pro/blog-card-site-title';
 import * as breadcrumb from './_pro/breadcrumb';
 import * as buttonOuter from './_pro/button-outer';
 import * as card from './_pro/card';
@@ -44,6 +50,12 @@ const vkblocksPro = [
 	accordionTrigger,
 	animation,
 	archiveList,
+	blogCard,
+	blogCardTitle,
+	blogCardImage,
+	blogCardExcerpt,
+	blogCardFavicon,
+	blogCardSiteName,
 	breadcrumb,
 	buttonOuter,
 	card,

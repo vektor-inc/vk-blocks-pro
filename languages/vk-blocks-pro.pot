@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-09-04T07:44:15+00:00\n"
+"POT-Creation-Date: 2023-09-05T04:34:17+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -774,6 +774,7 @@ msgid "16:9"
 msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/edit.js:48
+#: src/blocks/_pro/blog-card-title/edit.js:68
 msgid "Link to URL"
 msgstr ""
 
@@ -796,10 +797,6 @@ msgstr ""
 #: src/blocks/_pro/blog-card-site-logo/edit.js:36
 #: src/blocks/_pro/blog-card-site-title/edit.js:70
 msgid "Link to home page"
-msgstr ""
-
-#: src/blocks/_pro/blog-card-title/edit.js:68
-msgid "URLへのリンクにする"
 msgstr ""
 
 #: src/blocks/_pro/blog-card/edit/blog-card-placeholder.js:108

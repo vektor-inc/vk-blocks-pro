@@ -777,6 +777,7 @@ msgid "16:9"
 msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/edit.js:48
+#: src/blocks/_pro/blog-card-title/edit.js:68
 msgid "Link to URL"
 msgstr ""
 
@@ -799,10 +800,6 @@ msgstr ""
 #: src/blocks/_pro/blog-card-site-logo/edit.js:36
 #: src/blocks/_pro/blog-card-site-title/edit.js:70
 msgid "Link to home page"
-msgstr ""
-
-#: src/blocks/_pro/blog-card-title/edit.js:68
-msgid "URLへのリンクにする"
 msgstr ""
 
 #: src/blocks/_pro/blog-card/edit/blog-card-placeholder.js:108

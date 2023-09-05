@@ -132,50 +132,32 @@ export default function OuterEdit(props) {
 			});
 		}
 		// 互換処理：divider per device
-		if (
-			upper_level_mobile === undefined ||
-			upper_level_mobile === null
-		) {
+		if (upper_level_mobile === undefined || upper_level_mobile === null) {
 			setAttributes({
 				upper_level_mobile: 0,
 			});
 		}
-		if (
-			upper_level_tablet === undefined ||
-			upper_level_tablet === null
-		) {
+		if (upper_level_tablet === undefined || upper_level_tablet === null) {
 			setAttributes({
 				upper_level_tablet: 0,
 			});
 		}
-		if (
-			upper_level_pc === undefined ||
-			upper_level_pc === null
-		) {
+		if (upper_level_pc === undefined || upper_level_pc === null) {
 			setAttributes({
 				upper_level_pc: 0,
 			});
 		}
-		if (
-			lower_level_mobile === undefined ||
-			lower_level_mobile === null
-		) {
+		if (lower_level_mobile === undefined || lower_level_mobile === null) {
 			setAttributes({
 				lower_level_mobile: 0,
 			});
 		}
-		if (
-			lower_level_tablet === undefined ||
-			lower_level_tablet === null
-		) {
+		if (lower_level_tablet === undefined || lower_level_tablet === null) {
 			setAttributes({
 				lower_level_tablet: 0,
 			});
 		}
-		if (
-			lower_level_pc === undefined ||
-			lower_level_pc === null
-		) {
+		if (lower_level_pc === undefined || lower_level_pc === null) {
 			setAttributes({
 				lower_level_pc: 0,
 			});

@@ -67,7 +67,7 @@ export default function BlogCardSiteTitleEdit(props) {
 				<PanelBody title={__('Settings')}>
 					<ToggleControl
 						__nextHasNoMarginBottom
-						label={__('ホームへのリンクにする', 'vk-blocks-pro')}
+						label={__('Link to home page', 'vk-blocks-pro')}
 						onChange={() => setAttributes({ isLink: !isLink })}
 						checked={isLink}
 					/>

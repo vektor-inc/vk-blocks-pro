@@ -90,7 +90,7 @@ export const withInspectorControls = createHigherOrderComponent(
 					<PanelBody>
 						<ToggleControl
 							label={__(
-								'モバイルでは逆方向に折り返す',
+								'Fold backwards on mobile',
 								'vk-blocks-pro'
 							)}
 							disabled={!isStackedOnMobile}

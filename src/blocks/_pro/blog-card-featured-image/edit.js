@@ -45,7 +45,7 @@ export default function BlogCardFeaturedImageEdit(props) {
 				<PanelBody title={__('Settings')}>
 					<ToggleControl
 						__nextHasNoMarginBottom
-						label={__('URLへのリンクにする', 'vk-blocks-pro')}
+						label={__('Link to URL', 'vk-blocks-pro')}
 						onChange={() => setAttributes({ isLink: !isLink })}
 						checked={isLink}
 					/>

@@ -3,7 +3,7 @@
 	"name": "vk-blocks/blog-card-featured-image",
 	"category": "vk-blocks-cat",
 	"title": "Blog Card Featured Image",
-	"description": "URLから取得したアイキャッチ画像を表示します。",
+	"description": "Displays the featured image obtained from the URL.",
 	"textdomain": "vk-blocks-pro",
 	"ancestor": [ "vk-blocks/blog-card" ],
 	"attributes": {

@@ -15,7 +15,7 @@ import {
 const variations = [
 	{
 		name: 'left-image-right-text',
-		title: __('左 画像', 'vk-blocks-pro'),
+		title: __('Left image', 'vk-blocks-pro'),
 		icon: leftImageRightText,
 		attributes: {
 			style: {
@@ -120,7 +120,7 @@ const variations = [
 	},
 	{
 		name: 'left-text-right-image',
-		title: __('右 画像', 'vk-blocks-pro'),
+		title: __('Right image', 'vk-blocks-pro'),
 		icon: leftTextRightImage,
 		attributes: {
 			style: {
@@ -226,7 +226,7 @@ const variations = [
 	},
 	{
 		name: 'large-image-and-image-lower-character',
-		title: __('大画像 & 画像下文字', 'vk-blocks-pro'),
+		title: __('Large image & image lower character', 'vk-blocks-pro'),
 		icon: largeImageAndImageLowerCharacter,
 		attributes: {
 			style: {

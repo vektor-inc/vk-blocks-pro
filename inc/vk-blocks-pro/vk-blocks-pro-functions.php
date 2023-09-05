@@ -10,6 +10,10 @@ require_once dirname( __FILE__ ) . '/admin-pro/admin-pro.php';
 require_once dirname( __FILE__ ) . '/extensions/common/custom-css-extension.php';
 require_once dirname( __FILE__ ) . '/extensions/common/custom-format.php';
 require_once dirname( __FILE__ ) . '/extensions/common/custom-block-style.php';
+require_once dirname( __FILE__ ) . '/blocks/class-vk-blocks-blog-card.php';
+VK_Blocks_Blog_Card::init();
+require_once dirname( __FILE__ ) . '/App/RestAPI/BlockMeta/class-vk-blocks-pro-entrypoint.php';
+new Vk_Blocks_Pro_EntryPoint();
 
 /**
  * Pro 専用のスクリプトの読み込み

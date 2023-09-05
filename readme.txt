@@ -29,6 +29,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Border box
 * Title（with sub text）
 * Responsive Spacer
+* Blog Card [ Pro ]
 * Breadcrumb [ Pro ]
 * Dynamic Text ( Post Type name / Ancestor Page name ) [ Pro ]
 * Grid Column Card [ Pro ]
@@ -66,6 +67,8 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Outer(Pro) ] Add options to Divider for each PC, Tablet, and Mobile
+
+[ Add Block ][ Blog Card (Pro) ] Add blog card block.
 
 = 1.61.2 =
 [ Bug fix ][ Outer ( Pro ) ] Fixed opacity with previous Outer version.

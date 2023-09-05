@@ -87,8 +87,8 @@ export default function NewBadgeEdit(props) {
 				<RichText
 					allowedFormats={ALLOW_FORMAT}
 					multiline={false}
-					aria-label={__('Edit text…')}
-					placeholder={__('Edit text…') + ' '}
+					aria-label={__('Edit text…', 'vk-blocks-pro')}
+					placeholder={__('Edit text…', 'vk-blocks-pro')}
 					value={content}
 					onChange={(value) => setAttributes({ content: value })}
 					tagName="span"

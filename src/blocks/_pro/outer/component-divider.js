@@ -80,9 +80,8 @@ const componentDivider = (
 		if (level > 0) {
 			return (
 				<path
-					d={`m0,${
-						100 - level / 2
-					} q20,${level},40,0 t40,0 t40,0 V100 L0,100 z`}
+					d={`m0,${100 - level / 2
+						} q20,${level},40,0 t40,0 t40,0 V100 L0,100 z`}
 					strokeWidth="0"
 					fill={isHexColor(color) ? color : 'currentColor'}
 					className={pathClassNames}
@@ -91,9 +90,8 @@ const componentDivider = (
 		} else if (level < 0) {
 			return (
 				<path
-					d={`m0,${
-						level / 2 + 100
-					} q20,${level},40,0 t40,0 t40,0 V100 L0,100 z`}
+					d={`m0,${level / 2 + 100
+						} q20,${level},40,0 t40,0 t40,0 V100 L0,100 z`}
 					strokeWidth="0"
 					fill={isHexColor(color) ? color : 'currentColor'}
 					className={pathClassNames}
@@ -110,9 +108,8 @@ const componentDivider = (
 		if (level > 0) {
 			return (
 				<path
-					d={`m0,100 h${
-						50 - DivideAbs4
-					} l${DivideAbs4},-${absLevel} l${DivideAbs4},${absLevel} h${DivideAbs4} v100 h-100 z`}
+					d={`m0,100 h${50 - DivideAbs4
+						} l${DivideAbs4},-${absLevel} l${DivideAbs4},${absLevel} h${DivideAbs4} v100 h-100 z`}
 					strokeWidth="0"
 					fill={isHexColor(color) ? color : 'currentColor'}
 					className={pathClassNames}
@@ -121,11 +118,9 @@ const componentDivider = (
 		} else if (level < 0) {
 			return (
 				<path
-					d={`m0,${100 - absLevel} h${
-						50 - DivideAbs4
-					} l${DivideAbs4},${absLevel} l${DivideAbs4},-${absLevel} h${
-						50 - DivideAbs4
-					} v${absLevel + 1} h-100 z`}
+					d={`m0,${100 - absLevel} h${50 - DivideAbs4
+						} l${DivideAbs4},${absLevel} l${DivideAbs4},-${absLevel} h${50 - DivideAbs4
+						} v${absLevel + 1} h-100 z`}
 					strokeWidth="0"
 					fill={isHexColor(color) ? color : 'currentColor'}
 					className={pathClassNames}
@@ -170,9 +165,17 @@ const componentDivider = (
 				? { paddingBottom: sectionPadding + `px` }
 				: { paddingTop: sectionPadding + `px` };
 		lenderDivider = getSectionStyle(lvl);
+
+		let displayDeviceTypeClass;
+		if (deviceType === undefined) {
+			displayDeviceTypeClass = ''
+		} else {
+			displayDeviceTypeClass = ` vk_outer-display-${deviceType}`
+		}
+
 		return (
 			<div
-				className={`vk_outer_separator vk_outer_separator-position-${side} vk_outer_separator-type-${sectionClass} vk_outer-display-${deviceType}`}
+				className={`vk_outer_separator vk_outer_separator-position-${side} vk_outer_separator-type-${sectionClass}${displayDeviceTypeClass}`}
 				style={style}
 			>
 				<svg

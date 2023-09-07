@@ -733,6 +733,44 @@ msgstr "ドロップダウン"
 msgid "Show post counts"
 msgstr "投稿件数を表示"
 
+#: src/blocks/_pro/blog-card-featured-image/edit.js:48
+#: src/blocks/_pro/blog-card-title/edit.js:68
+msgid "Link to URL"
+msgstr "URLへのリンクにする"
+
+#: src/blocks/_pro/blog-card-site-logo/edit.js:36
+#: src/blocks/_pro/blog-card-site-title/edit.js:70
+msgid "Link to home page"
+msgstr "ホームへのリンクにする"
+
+#: src/blocks/_pro/blog-card/edit/blog-card-placeholder.js:108
+msgid "Choose a pattern. The original block settings will be cleared."
+msgstr "パターンを選択します。元のブロック設定はクリアされます。"
+
+#: src/blocks/_pro/blog-card/edit/index.js:111
+msgid "Clear cache"
+msgstr "キャッシュクリア"
+
+#: src/blocks/_pro/blog-card/edit/index.js:114
+msgid "If the data is old, please clear the cache. It is usually updated every hour."
+msgstr "データが古い場合はキャッシュクリアしてください。通常１時間で更新されます。"
+
+#: src/blocks/_pro/blog-card/hooks.js:92
+msgid "Fold backwards on mobile"
+msgstr "モバイルでは逆方向に折り返す"
+
+#: src/blocks/_pro/blog-card/variations.js:123
+msgid "Right image"
+msgstr "右 画像"
+
+#: src/blocks/_pro/blog-card/variations.js:18
+msgid "Left image"
+msgstr "左 画像"
+
+#: src/blocks/_pro/blog-card/variations.js:229
+msgid "Large image & image lower character"
+msgstr "大画像 & 画像下文字"
+
 #: src/blocks/_pro/button-outer/edit.js:56
 msgid "Button Common Setting"
 msgstr "ボタン共通設定"
@@ -3873,6 +3911,78 @@ msgstr "アーカイブリスト"
 msgctxt "block description"
 msgid "Displays a list of archives"
 msgstr "アーカイブリストを表示します"
+
+#: inc/vk-blocks/build/blocks/_pro/blog-card-excerpt/block.json
+#: src/blocks/_pro/blog-card-excerpt/block.json
+msgctxt "block title"
+msgid "Blog Card Excerpt"
+msgstr "ブログカードの抜粋"
+
+#: inc/vk-blocks/build/blocks/_pro/blog-card-excerpt/block.json
+#: src/blocks/_pro/blog-card-excerpt/block.json
+msgctxt "block description"
+msgid "Shows an excerpt retrieved from a URL."
+msgstr "URLから取得した抜粋を表示します。"
+
+#: inc/vk-blocks/build/blocks/_pro/blog-card-featured-image/block.json
+#: src/blocks/_pro/blog-card-featured-image/block.json
+msgctxt "block title"
+msgid "Blog Card Featured Image"
+msgstr "ブログカードのアイキャッチ画像"
+
+#: inc/vk-blocks/build/blocks/_pro/blog-card-featured-image/block.json
+#: src/blocks/_pro/blog-card-featured-image/block.json
+msgctxt "block description"
+msgid "Displays the featured image obtained from the URL."
+msgstr "URLから取得したアイキャッチ画像を表示します。"
+
+#: inc/vk-blocks/build/blocks/_pro/blog-card-site-logo/block.json
+#: src/blocks/_pro/blog-card-site-logo/block.json
+msgctxt "block title"
+msgid "Blog Card Site Logo"
+msgstr "ブログカードのサイトロゴ"
+
+#: inc/vk-blocks/build/blocks/_pro/blog-card-site-logo/block.json
+#: src/blocks/_pro/blog-card-site-logo/block.json
+msgctxt "block description"
+msgid "Displays the site logo image obtained from the URL."
+msgstr "URLから取得したサイトロゴ画像を表示します。"
+
+#: inc/vk-blocks/build/blocks/_pro/blog-card-site-title/block.json
+#: src/blocks/_pro/blog-card-site-title/block.json
+msgctxt "block title"
+msgid "Blog Card Site Title"
+msgstr "ブログカードのサイトタイトル"
+
+#: inc/vk-blocks/build/blocks/_pro/blog-card-site-title/block.json
+#: src/blocks/_pro/blog-card-site-title/block.json
+msgctxt "block description"
+msgid "Displays the site title obtained from the URL."
+msgstr "URLから取得したサイトタイトルを表示します。"
+
+#: inc/vk-blocks/build/blocks/_pro/blog-card-title/block.json
+#: src/blocks/_pro/blog-card-title/block.json
+msgctxt "block title"
+msgid "Blog Card Title"
+msgstr "ブログカードのタイトル"
+
+#: inc/vk-blocks/build/blocks/_pro/blog-card-title/block.json
+#: src/blocks/_pro/blog-card-title/block.json
+msgctxt "block description"
+msgid "Displays the title obtained from the URL."
+msgstr "URLから取得したタイトルを表示します。"
+
+#: inc/vk-blocks/build/blocks/_pro/blog-card/block.json
+#: src/blocks/_pro/blog-card/block.json
+msgctxt "block title"
+msgid "Blog Card"
+msgstr "ブログカード"
+
+#: inc/vk-blocks/build/blocks/_pro/blog-card/block.json
+#: src/blocks/_pro/blog-card/block.json
+msgctxt "block description"
+msgid "Add a block that fetches and displays content from a URL."
+msgstr "URLからコンテンツを取り込んで表示するブロックを追加します。"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
 #: inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json

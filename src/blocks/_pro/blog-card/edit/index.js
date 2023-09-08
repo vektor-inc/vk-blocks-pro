@@ -68,6 +68,20 @@ export default function BlogCardWrapperEdit(props) {
 		],
 	});
 
+	// url以外のattributesをundefinedにする
+	function setUndefinedExceptSpecifiedProps(obj, propsToKeep) {
+		const newObj = {};
+		for (const key of Object.keys(obj)) {
+			newObj[key] = propsToKeep.includes(key) ? obj[key] : undefined;
+		}
+		return newObj;
+	}
+	const propertiesToKeep = ['url'];
+	const replaceAttributes = setUndefinedExceptSpecifiedProps(
+		attributes,
+		propertiesToKeep
+	);
+
 	return (
 		<>
 			<BlockControls>
@@ -85,7 +99,7 @@ export default function BlogCardWrapperEdit(props) {
 					<ToolbarGroup className="wp-block-template-part__block-control-group">
 						<ToolbarButton
 							onClick={() => {
-								setAttributes({ style: undefined });
+								setAttributes({ ...replaceAttributes });
 								// innerBlocksを削除する
 								replaceInnerBlocks(clientId, []);
 								setIsStartingBlank(true);

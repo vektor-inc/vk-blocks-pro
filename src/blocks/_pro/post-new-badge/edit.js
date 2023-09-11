@@ -1,5 +1,12 @@
-import { __ } from '@wordpress/i18n';
+/**
+ * External dependencies
+ */
 import classnames from 'classnames';
+
+/**
+ * WordPress dependencies
+ */
+import { __ } from '@wordpress/i18n';
 import {
 	AlignmentToolbar,
 	BlockControls,
@@ -11,9 +18,10 @@ import {
 	PanelBody,
 	__experimentalNumberControl as NumberControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
 } from '@wordpress/components';
-
 import { useEntityProp } from '@wordpress/core-data';
 import { useState, useEffect } from '@wordpress/element';
+import { store as richTextStore } from '@wordpress/rich-text';
+import { useSelect } from '@wordpress/data';
 
 export default function NewBadgeEdit(props) {
 	const { attributes, setAttributes, context } = props;
@@ -22,21 +30,6 @@ export default function NewBadgeEdit(props) {
 
 	const { postId } = context;
 	const [postDate] = useEntityProp('postType', 'post', 'date', postId);
-
-	const ALLOW_FORMAT = [
-		'core/bold',
-		'core/italic',
-		'core/image',
-		'core/strikethrough',
-		'core/subscript',
-		'core/superscript',
-		'core/text-color',
-		'core/keyboard',
-		'vk-blocks/highlighter',
-		'vk-blocks/inline-font-size',
-		'vk-blocks/nowrap',
-		'vk-blocks/responsive-br',
-	];
 
 	useEffect(() => {
 		const today = new Date();
@@ -59,6 +52,13 @@ export default function NewBadgeEdit(props) {
 			opacity: !isNew ? 0.15 : 1,
 		},
 	});
+
+	// 理由はわからないが脚注ブロックは上長の命令により使用禁止 https://github.com/vektor-inc/vk-blocks-pro/pull/1792#issuecomment-1713196917
+	const { getFormatTypes } = useSelect((select) => select(richTextStore), []);
+	const allowFormatTypes = getFormatTypes().filter(
+		(obj) => obj.name !== 'core/footnote'
+	);
+	const allowedFormats = allowFormatTypes.map((obj) => obj.name);
 
 	return (
 		<>
@@ -85,7 +85,7 @@ export default function NewBadgeEdit(props) {
 			</InspectorControls>
 			<div {...blockProps}>
 				<RichText
-					allowedFormats={ALLOW_FORMAT}
+					allowedFormats={allowedFormats}
 					multiline={false}
 					aria-label={__('Edit text…', 'vk-blocks-pro')}
 					placeholder={__('Edit text…', 'vk-blocks-pro')}

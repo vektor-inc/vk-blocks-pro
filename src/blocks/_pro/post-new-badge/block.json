@@ -3,10 +3,13 @@
 	"name": "vk-blocks/post-new-badge",
 	"category": "vk-blocks-cat",
 	"title": "New Badge",
+	"ancestor": [ "core/query" ],
 	"attributes": {
 		"content": {
 			"type": "string",
-			"default": "New!"
+			"source": "html",
+			"default": "New!",
+			"selector": "span"
 		},
 		"daysAsNewPost": {
 			"type": "number",

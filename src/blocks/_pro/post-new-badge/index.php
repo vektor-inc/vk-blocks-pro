@@ -8,7 +8,8 @@
 /**
  * New Badge render callback
  *
- * @param array $attributes Block attributes.
+ * @param array  $attributes Block attributes.
+ * @param string $content content.
  * @return string
  */
 function vk_blocks_post_new_badge_render_callback( $attributes, $content ) {

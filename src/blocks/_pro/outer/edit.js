@@ -132,6 +132,11 @@ export default function OuterEdit(props) {
 			});
 		}
 		// 互換処理：divider per device
+		if (levelSettingIsCommon === undefined || levelSettingIsCommon === null) {
+			setAttributes({
+				levelSettingIsCommon: true,
+			});
+		}
 		if (upper_level_mobile === undefined || upper_level_mobile === null) {
 			setAttributes({
 				upper_level_mobile: 0,

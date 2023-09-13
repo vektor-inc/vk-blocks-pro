@@ -132,7 +132,10 @@ export default function OuterEdit(props) {
 			});
 		}
 		// 互換処理：divider per device
-		if (levelSettingIsCommon === undefined || levelSettingIsCommon === null) {
+		if (
+			levelSettingIsCommon === undefined ||
+			levelSettingIsCommon === null
+		) {
 			setAttributes({
 				levelSettingIsCommon: true,
 			});

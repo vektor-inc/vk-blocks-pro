@@ -66,6 +66,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Admin screen ] Fixed a bug where settings saved in an array were not imported.
 [ Add Block ][ Blog Card (Pro) ] Add blog card block.
 
 = 1.61.2 =

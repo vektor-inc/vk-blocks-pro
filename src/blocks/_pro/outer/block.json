@@ -44,9 +44,9 @@
 			"type": "number",
 			"default": 0.5
 		},
-		"levelSettingIsCommon": {
+		"levelSettingPerDevice": {
 			"type": "boolean",
-			"default": true
+			"default": false
 		},
 		"upper_level": {
 			"type": "number",

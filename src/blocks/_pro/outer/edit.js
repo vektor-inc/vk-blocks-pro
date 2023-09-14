@@ -48,7 +48,7 @@ export default function OuterEdit(props) {
 		padding_left_and_right, //eslint-disable-line camelcase
 		padding_top_and_bottom, //eslint-disable-line camelcase
 		opacity,
-		levelSettingIsCommon,
+		levelSettingPerDevice,
 		upper_level, //eslint-disable-line camelcase
 		upper_level_mobile, //eslint-disable-line camelcase
 		upper_level_tablet, //eslint-disable-line camelcase
@@ -133,11 +133,11 @@ export default function OuterEdit(props) {
 		}
 		// 互換処理：divider per device
 		if (
-			levelSettingIsCommon === undefined ||
-			levelSettingIsCommon === null
+			levelSettingPerDevice === undefined ||
+			levelSettingPerDevice === null
 		) {
 			setAttributes({
-				levelSettingIsCommon: true,
+				levelSettingPerDevice: false,
 			});
 		}
 		if (upper_level_mobile === undefined || upper_level_mobile === null) {
@@ -238,7 +238,7 @@ export default function OuterEdit(props) {
 
 	//上側セクションの傾き切り替
 	//eslint-disable-next-line camelcase
-	if (levelSettingIsCommon) {
+	if (!levelSettingPerDevice) {
 		if (upper_level) {
 			whichSideUpper = 'upper';
 		}
@@ -248,7 +248,7 @@ export default function OuterEdit(props) {
 
 	//下側セクションの傾き切り替
 	//eslint-disable-next-line camelcase
-	if (levelSettingIsCommon) {
+	if (!levelSettingPerDevice) {
 		if (lower_level) {
 			whichSideLower = 'lower';
 		}
@@ -263,7 +263,7 @@ export default function OuterEdit(props) {
 	//Dividerエフェクトがない時のみ枠線を追
 	let borderStyleProperty = {};
 
-	if (levelSettingIsCommon) {
+	if (!levelSettingPerDevice) {
 		if (
 			upper_level === 0 && //eslint-disable-line camelcase
 			lower_level === 0 && //eslint-disable-line camelcase
@@ -566,10 +566,10 @@ export default function OuterEdit(props) {
 					</BaseControl>
 					<BaseControl>
 						<ToggleControl
-							label={__('端末毎に共通で設定', 'vk-blocks-pro')}
-							checked={levelSettingIsCommon}
+							label={__('端末毎に設定', 'vk-blocks-pro')}
+							checked={levelSettingPerDevice}
 							onChange={(checked) =>
-								setAttributes({ levelSettingIsCommon: checked })
+								setAttributes({ levelSettingPerDevice: checked })
 							}
 						/>
 					</BaseControl>
@@ -577,7 +577,7 @@ export default function OuterEdit(props) {
 						label={__('Upper Divider Level', 'vk-blocks-pro')}
 						id={`vk_outer-upperDividerLevel`}
 					>
-						{levelSettingIsCommon ? (
+						{!levelSettingPerDevice ? (
 							<RangeControl
 								value={upper_level} //eslint-disable-line camelcase
 								onChange={(value) =>
@@ -648,7 +648,7 @@ export default function OuterEdit(props) {
 						label={__('Lower Divider Level', 'vk-blocks-pro')}
 						id={`vk_outer-lowerDividerLevel`}
 					>
-						{levelSettingIsCommon ? (
+						{!levelSettingPerDevice ? (
 							<RangeControl
 								value={lower_level} //eslint-disable-line camelcase
 								onChange={(value) =>

@@ -28,7 +28,7 @@ export default function save(props) {
 		padding_left_and_right, //eslint-disable-line camelcase
 		padding_top_and_bottom, //eslint-disable-line camelcase
 		opacity,
-		levelSettingIsCommon,
+		levelSettingPerDevice,
 		upper_level, //eslint-disable-line camelcase
 		upper_level_mobile, //eslint-disable-line camelcase
 		upper_level_tablet, //eslint-disable-line camelcase
@@ -118,7 +118,7 @@ export default function save(props) {
 
 	//上側セクションの傾き切り替
 	//eslint-disable-next-line camelcase
-	if (levelSettingIsCommon) {
+	if (!levelSettingPerDevice) {
 		if (upper_level) {
 			whichSideUpper = 'upper';
 		}
@@ -128,7 +128,7 @@ export default function save(props) {
 
 	//下側セクションの傾き切り替
 	//eslint-disable-next-line camelcase
-	if (levelSettingIsCommon) {
+	if (!levelSettingPerDevice) {
 		if (lower_level) {
 			whichSideLower = 'lower';
 		}
@@ -142,7 +142,7 @@ export default function save(props) {
 	//Dividerエフェクトがない時のみ枠線を追
 	let borderStyleProperty = {};
 	//eslint-disable-next-line camelcase
-	if (levelSettingIsCommon) {
+	if (!levelSettingPerDevice) {
 		if (
 			upper_level === 0 && //eslint-disable-line camelcase
 			lower_level === 0 && //eslint-disable-line camelcase

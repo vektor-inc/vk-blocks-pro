@@ -79,10 +79,6 @@ export default function OuterEdit(props) {
 
 	const containerClass = 'vk_outer_container';
 
-	console.log(upper_level, upper_level_pc);
-	console.log(upper_level, upper_level_tablet);
-	console.log(upper_level, upper_level_mobile);
-
 	useEffect(() => {
 		if (attributes.clientId !== undefined) {
 			setAttributes({ clientId: undefined });

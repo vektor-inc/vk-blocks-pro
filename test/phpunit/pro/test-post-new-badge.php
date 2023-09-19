@@ -32,6 +32,12 @@ class PostNewBadgeTest extends WP_UnitTestCase {
 	 */
 	private $original_block_supports;
 
+	/**
+	 * @var string
+	 */
+	private $content = '<div class="wp-block-vk-blocks-post-new-badge vk_newBadge has-text-align-center has-text-color" style="color:#ff0000;font-style:normal;font-weight:700"><span>New!</span></div>';
+
+
     public static function wpSetUpBeforeClass() {
 	
 		self::$post_today = self::factory()->post->create_and_get(
@@ -90,14 +96,14 @@ class PostNewBadgeTest extends WP_UnitTestCase {
                     'daysAsNewPost' => 4,
                     'content' => 'New'
                 ),
-                'correct' => '<div class="vk_newBadge wp-block-vk-blocks-post-new-badge"><span>New</span></div>'
+                'correct' => $this->content
             ),
             array (
                 'attributes' => array(
                     'daysAsNewPost' => 5,
                     'content' => 'New'
                 ),
-                'correct' => '<div class="vk_newBadge wp-block-vk-blocks-post-new-badge"><span>New</span></div>'
+                'correct' => $this->content
             )                     
         );
 
@@ -107,7 +113,7 @@ class PostNewBadgeTest extends WP_UnitTestCase {
 		print '------------------------------------' . PHP_EOL;
 
         foreach( $tests as $test ) {
-            $return = vk_blocks_post_new_badge_render_callback($test['attributes']);
+            $return = vk_blocks_post_new_badge_render_callback($test['attributes'], $this->content);
             print 'return  :' . $return;
             print PHP_EOL;
             print 'correct :' . $test['correct'];
@@ -124,7 +130,7 @@ class PostNewBadgeTest extends WP_UnitTestCase {
 		$GLOBALS['post'] = self::$post_fivedays_ago;
 
 		$page_id       = self::$post_fivedays_ago->ID;
-	
+
         $tests = array(
             array (
                 'attributes' => array(
@@ -138,7 +144,7 @@ class PostNewBadgeTest extends WP_UnitTestCase {
                     'daysAsNewPost' => 6,
                     'content' => 'New'
                 ),
-                'correct' => '<div class="vk_newBadge wp-block-vk-blocks-post-new-badge"><span>New</span></div>'
+                'correct' => $this->content
             )                      
         );
 
@@ -148,7 +154,7 @@ class PostNewBadgeTest extends WP_UnitTestCase {
 		print '------------------------------------' . PHP_EOL;
        // WP_Block_Supports::init();
         foreach( $tests as $test ) {
-            $return = vk_blocks_post_new_badge_render_callback($test['attributes']);
+            $return = vk_blocks_post_new_badge_render_callback($test['attributes'], $this->content);
             print 'return  :' . $return;
             print PHP_EOL;
             print 'correct :' . $test['correct'];

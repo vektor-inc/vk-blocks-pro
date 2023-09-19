@@ -13,6 +13,7 @@ const componentDivider = (
 	color,
 	whichSide,
 	dividerType,
+	levelSettingPerDevice,
 	level_mobile,
 	level_tablet,
 	level_pc
@@ -195,7 +196,7 @@ const componentDivider = (
 	};
 
 	if (whichSide === 'upper') {
-		if (level_mobile || level_tablet || level_pc) {
+		if (levelSettingPerDevice) {
 			return (
 				<>
 					{level_pc && renderSVG(level_pc, 'upper', 'pc')}
@@ -206,7 +207,7 @@ const componentDivider = (
 		}
 		return renderSVG(level, 'upper');
 	} else if (whichSide === 'lower') {
-		if (level_mobile || level_tablet || level_pc) {
+		if (levelSettingPerDevice) {
 			return (
 				<>
 					{level_pc && renderSVG(level_pc, 'lower', 'pc')}

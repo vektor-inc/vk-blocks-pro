@@ -224,6 +224,7 @@ export default function save(props) {
 					upperDividerBgColor,
 					whichSideUpper,
 					dividerType,
+					levelSettingPerDevice,
 					upper_level_mobile,
 					upper_level_tablet,
 					upper_level_pc
@@ -236,6 +237,7 @@ export default function save(props) {
 					lowerDividerBgColor,
 					whichSideLower,
 					dividerType,
+					levelSettingPerDevice,
 					lower_level_mobile,
 					lower_level_tablet,
 					lower_level_pc

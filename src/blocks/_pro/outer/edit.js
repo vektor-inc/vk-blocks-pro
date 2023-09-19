@@ -170,23 +170,6 @@ export default function OuterEdit(props) {
 				lower_level_pc: lower_level,
 			});
 		}
-		if (
-			upper_level_pc === 0 &&
-			upper_level_tablet === 0 &&
-			upper_level_mobile === 0 &&
-			lower_level_pc === 0 &&
-			lower_level_tablet === 0 &&
-			lower_level_mobile === 0
-		) {
-			setAttributes({
-				upper_level_pc: upper_level,
-				upper_level_tablet: upper_level,
-				upper_level_mobile: upper_level,
-				lower_level_pc: lower_level,
-				lower_level_tablet: lower_level,
-				lower_level_mobile: lower_level,
-			});
-		}
 	}, [clientId]);
 
 	const bgColorClasses = classnames({
@@ -599,11 +582,18 @@ export default function OuterEdit(props) {
 						{!levelSettingPerDevice ? (
 							<RangeControl
 								value={upper_level} //eslint-disable-line camelcase
-								onChange={(value) =>
+								onChange={(value) => {
 									setAttributes({
 										upper_level: toNumber(value, -100, 100),
-									})
-								}
+									});
+									if (upper_level_pc === 0 && upper_level_tablet === 0 && upper_level_mobile === 0) {
+										setAttributes({
+											upper_level_pc: value,
+											upper_level_tablet: value,
+											upper_level_mobile: value,
+										});
+									}
+								}}
 								min="-100"
 								max="100"
 							/>
@@ -670,11 +660,22 @@ export default function OuterEdit(props) {
 						{!levelSettingPerDevice ? (
 							<RangeControl
 								value={lower_level} //eslint-disable-line camelcase
-								onChange={(value) =>
+								onChange={(value) => {
 									setAttributes({
 										lower_level: toNumber(value, -100, 100),
-									})
-								}
+									});
+									if (
+										lower_level_pc === 0 &&
+										lower_level_tablet === 0 &&
+										lower_level_mobile === 0
+									) {
+										setAttributes({
+											lower_level_pc: value,
+											lower_level_tablet: value,
+											lower_level_mobile: value,
+										});
+									}
+								}}
 								min="-100"
 								max="100"
 							/>
@@ -911,6 +912,7 @@ export default function OuterEdit(props) {
 						upperDividerBgColor,
 						whichSideUpper,
 						dividerType,
+						levelSettingPerDevice,
 						upper_level_mobile,
 						upper_level_tablet,
 						upper_level_pc
@@ -923,6 +925,7 @@ export default function OuterEdit(props) {
 						lowerDividerBgColor,
 						whichSideLower,
 						dividerType,
+						levelSettingPerDevice,
 						lower_level_mobile,
 						lower_level_tablet,
 						lower_level_pc

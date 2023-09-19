@@ -11,7 +11,8 @@ import {
 	PanelBody,
 	__experimentalNumberControl as NumberControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
 } from '@wordpress/components';
-
+import { store as richTextStore } from '@wordpress/rich-text';
+import { useSelect } from '@wordpress/data';
 import { useEntityProp } from '@wordpress/core-data';
 import { useState, useEffect } from '@wordpress/element';
 
@@ -22,21 +23,6 @@ export default function NewBadgeEdit(props) {
 
 	const { postId } = context;
 	const [postDate] = useEntityProp('postType', 'post', 'date', postId);
-
-	const ALLOW_FORMAT = [
-		'core/bold',
-		'core/italic',
-		'core/image',
-		'core/strikethrough',
-		'core/subscript',
-		'core/superscript',
-		'core/text-color',
-		'core/keyboard',
-		'vk-blocks/highlighter',
-		'vk-blocks/inline-font-size',
-		'vk-blocks/nowrap',
-		'vk-blocks/responsive-br',
-	];
 
 	useEffect(() => {
 		const today = new Date();
@@ -85,7 +71,6 @@ export default function NewBadgeEdit(props) {
 			</InspectorControls>
 			<div {...blockProps}>
 				<RichText
-					allowedFormats={ALLOW_FORMAT}
 					multiline={false}
 					aria-label={__('Edit text…', 'vk-blocks-pro')}
 					placeholder={__('Edit text…', 'vk-blocks-pro')}

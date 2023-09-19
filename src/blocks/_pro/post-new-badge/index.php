@@ -11,7 +11,7 @@
  * @param array $attributes Block attributes.
  * @return string
  */
-function vk_blocks_post_new_badge_render_callback( $attributes ) {
+function vk_blocks_post_new_badge_render_callback( $attributes, $content ) {
 	$days_as_new_post = $attributes['daysAsNewPost'];
 
 	// 投稿の日時をY-m-d形式で取得
@@ -30,17 +30,8 @@ function vk_blocks_post_new_badge_render_callback( $attributes ) {
 	if ( $days_since_post >= $days_as_new_post ) {
 		return '';
 	}
-	$classes = array( 'vk_newBadge' );
-	if ( isset( $attributes['textAlign'] ) ) {
-		$classes[] = 'has-text-align-' . $attributes['textAlign'];
-	}
 
-	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => implode( ' ', $classes ) ) );
-	$result             = "<div $wrapper_attributes>";
-	$result            .= '<span>' . $attributes['content'] . '</span>';
-	$result            .= '</div>';
-
-	return $result;
+	return $content;
 }
 
 /**

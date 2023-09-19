@@ -6,7 +6,9 @@
 	"attributes": {
 		"content": {
 			"type": "string",
-			"default": "New!"
+			"source": "html",
+			"default": "New!",
+			"selector": "span"
 		},
 		"daysAsNewPost": {
 			"type": "number",

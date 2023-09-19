@@ -79,6 +79,10 @@ export default function OuterEdit(props) {
 
 	const containerClass = 'vk_outer_container';
 
+	console.log(upper_level, upper_level_pc);
+	console.log(upper_level, upper_level_tablet);
+	console.log(upper_level, upper_level_mobile);
+
 	useEffect(() => {
 		if (attributes.clientId !== undefined) {
 			setAttributes({ clientId: undefined });
@@ -168,6 +172,23 @@ export default function OuterEdit(props) {
 		if (lower_level_pc === undefined || lower_level_pc === null) {
 			setAttributes({
 				lower_level_pc: lower_level,
+			});
+		}
+		if (
+			upper_level_pc === 0 &&
+			upper_level_tablet === 0 &&
+			upper_level_mobile === 0 &&
+			lower_level_pc === 0 &&
+			lower_level_tablet === 0 &&
+			lower_level_mobile === 0
+		) {
+			setAttributes({
+				upper_level_pc: upper_level,
+				upper_level_tablet: upper_level,
+				upper_level_mobile: upper_level,
+				lower_level_pc: lower_level,
+				lower_level_tablet: lower_level,
+				lower_level_mobile: lower_level,
 			});
 		}
 	}, [clientId]);
@@ -569,7 +590,9 @@ export default function OuterEdit(props) {
 							label={__('端末毎に設定', 'vk-blocks-pro')}
 							checked={levelSettingPerDevice}
 							onChange={(checked) =>
-								setAttributes({ levelSettingPerDevice: checked })
+								setAttributes({
+									levelSettingPerDevice: checked,
+								})
 							}
 						/>
 					</BaseControl>

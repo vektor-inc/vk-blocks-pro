@@ -142,32 +142,32 @@ export default function OuterEdit(props) {
 		}
 		if (upper_level_mobile === undefined || upper_level_mobile === null) {
 			setAttributes({
-				upper_level_mobile: 0,
+				upper_level_mobile: upper_level,
 			});
 		}
 		if (upper_level_tablet === undefined || upper_level_tablet === null) {
 			setAttributes({
-				upper_level_tablet: 0,
+				upper_level_tablet: upper_level,
 			});
 		}
 		if (upper_level_pc === undefined || upper_level_pc === null) {
 			setAttributes({
-				upper_level_pc: 0,
+				upper_level_pc: upper_level,
 			});
 		}
 		if (lower_level_mobile === undefined || lower_level_mobile === null) {
 			setAttributes({
-				lower_level_mobile: 0,
+				lower_level_mobile: lower_level,
 			});
 		}
 		if (lower_level_tablet === undefined || lower_level_tablet === null) {
 			setAttributes({
-				lower_level_tablet: 0,
+				lower_level_tablet: lower_level,
 			});
 		}
 		if (lower_level_pc === undefined || lower_level_pc === null) {
 			setAttributes({
-				lower_level_pc: 0,
+				lower_level_pc: lower_level,
 			});
 		}
 	}, [clientId]);

@@ -103,7 +103,6 @@ export default function ImportForm(props) {
 
 					if (
 						importMethod === 'add' &&
-						uploadedOptions.length > 0 &&
 						currentOptions
 					) {
 						const comparisonKey =

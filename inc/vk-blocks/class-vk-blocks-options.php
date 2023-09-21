@@ -331,6 +331,44 @@ class VK_Blocks_Options {
 			'icon_custom_lists'           => array(
 				'type' => 'array',
 			),
+			'block_variation_lists'       => array(
+				'type'  => 'array',
+				'items' => array(
+					'type'       => 'object',
+					'properties' => array(
+						'block_name'  => array(
+							'type' => 'string',
+						),
+						'name'        => array(
+							'type' => 'string',
+						),
+						'title'       => array(
+							'type' => 'string',
+						),
+						'description' => array(
+							'type' => 'string',
+						),
+						'category'    => array(
+							'type' => 'string',
+						),
+						'icon'        => array(
+							'type' => 'string',
+						),
+						'attributes'  => array(
+							'type' => 'string',
+						),
+						'innerBlocks' => array(
+							'type' => 'string',
+						),
+						'scope'       => array(
+							'type' => 'array',
+						),
+						'keywords'    => array(
+							'type' => 'string',
+						),
+					),
+				),
+			),
 		);
 		return $properties;
 	}
@@ -403,6 +441,7 @@ class VK_Blocks_Options {
 			'balloon_meta_lists'          => array(),
 			'disable_block_style_lists'   => array(),
 			'icon_custom_lists'           => array(),
+			'block_variation_lists'       => array(),
 		);
 		return $default;
 	}

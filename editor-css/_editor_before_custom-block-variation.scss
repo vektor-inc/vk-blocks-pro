@@ -1,0 +1,28 @@
+.custom_block_variation_modal {
+	.components-modal__content {
+		padding-bottom: 0;
+	}
+	.move-button-container {
+		display: flex;
+		flex-direction: column;
+		.components-button.has-icon {
+			height: 24px;
+			padding: 6px;
+		}
+	}
+	.block-mover-button.is-up-button svg {
+		top: 5px;
+		flex-shrink: 0;
+		position: relative;
+	}
+
+	.block-mover-button.is-down-button svg {
+		bottom: 5px;
+		flex-shrink: 0;
+		position: relative;
+	}
+}
+
+.custom-block-variation__confirmation-modal {
+	z-index: 1000002;
+}

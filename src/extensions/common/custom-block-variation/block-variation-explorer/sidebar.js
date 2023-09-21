@@ -78,8 +78,6 @@ export default function PatternExplorerSidebar(props) {
 									onClick={() => {
 										if (confirmModal.name) {
 											onClickCategory(confirmModal.name);
-										} else {
-											// onClickCategory(name);
 										}
 										setConfirmModal({ open: false });
 										setHasUpdates(false);

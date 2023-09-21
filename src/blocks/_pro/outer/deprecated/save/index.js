@@ -16,6 +16,7 @@ import save1_34_1 from './1.34.1/save';
 import save1_36_2 from './1.36.2/save';
 import save1_50_1 from './1.50.1/save';
 import save1_60_0 from './1.60.0/save';
+import save1_61_2 from './1.61.2/save';
 
 const blockAttributes = {
 	bgColor: {
@@ -140,7 +141,11 @@ const blockAttributes5 = {
 	},
 };
 
-const deprecated = [	
+const deprecated = [
+	{
+		attributes: blockAttributes5,
+		save: save1_61_2,
+	},
 	{
 		attributes: blockAttributes5,
 		save: save1_60_0,

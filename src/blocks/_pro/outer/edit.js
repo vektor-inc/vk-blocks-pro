@@ -588,7 +588,8 @@ export default function OuterEdit(props) {
 									});
 									if (
 										upper_level_pc === upper_level_tablet &&
-										upper_level_tablet === upper_level_mobile
+										upper_level_tablet ===
+											upper_level_mobile
 									) {
 										setAttributes({
 											upper_level_pc: value,
@@ -669,7 +670,8 @@ export default function OuterEdit(props) {
 									});
 									if (
 										lower_level_pc === lower_level_tablet &&
-										lower_level_tablet === lower_level_mobile
+										lower_level_tablet ===
+											lower_level_mobile
 									) {
 										setAttributes({
 											lower_level_pc: value,

@@ -586,7 +586,10 @@ export default function OuterEdit(props) {
 									setAttributes({
 										upper_level: toNumber(value, -100, 100),
 									});
-									if (upper_level_pc === 0 && upper_level_tablet === 0 && upper_level_mobile === 0) {
+									if (
+										upper_level_pc === upper_level_tablet &&
+										upper_level_tablet === upper_level_mobile
+									) {
 										setAttributes({
 											upper_level_pc: value,
 											upper_level_tablet: value,
@@ -665,9 +668,8 @@ export default function OuterEdit(props) {
 										lower_level: toNumber(value, -100, 100),
 									});
 									if (
-										lower_level_pc === 0 &&
-										lower_level_tablet === 0 &&
-										lower_level_mobile === 0
+										lower_level_pc === lower_level_tablet &&
+										lower_level_tablet === lower_level_mobile
 									) {
 										setAttributes({
 											lower_level_pc: value,

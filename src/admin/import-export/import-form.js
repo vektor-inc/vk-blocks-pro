@@ -412,10 +412,10 @@ export default function ImportForm(props) {
 																	) => {
 																		return (
 																			uploadKey[
-																				uniqKey
+																				associativeArray
 																			] ===
 																				preKey[
-																					uniqKey
+																					associativeArray
 																				] && (
 																				<div
 																					key={
@@ -424,7 +424,7 @@ export default function ImportForm(props) {
 																				>
 																					{
 																						uploadKey[
-																							uniqKey
+																							associativeArray
 																						]
 																					}
 																				</div>

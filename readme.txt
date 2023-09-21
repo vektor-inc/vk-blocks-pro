@@ -66,8 +66,7 @@ e.g.
 
 == Changelog ==
 
-[ Add function ][ Outer(Pro) ] Add options to Divider for each PC, Tablet, and Mobile
-
+[ Add function ][ Outer (Pro) ] Add options to Divider for each PC, Tablet, and Mobile
 [ Add Block ][ Blog Card (Pro) ] Add blog card block.
 
 = 1.61.2 =

@@ -67,8 +67,9 @@ e.g.
 
 == Changelog ==
 
-[ Add Block ][ New Badge Block (Pro) ] Add a block to display recent posts.
 [ Add Block ][ Blog Card (Pro) ] Add blog card block.
+[ Add Block ][ New Badge Block (Pro) ] Add a block to display recent posts.
+[ Add function ][ Outer (Pro) ] Add options to Divider for each PC, Tablet, and Mobile
 
 = 1.61.2 =
 [ Bug fix ][ Outer ( Pro ) ] Fixed opacity with previous Outer version.

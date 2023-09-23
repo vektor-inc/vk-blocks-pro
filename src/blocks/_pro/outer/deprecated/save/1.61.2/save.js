@@ -28,15 +28,8 @@ export default function save(props) {
 		padding_left_and_right, //eslint-disable-line camelcase
 		padding_top_and_bottom, //eslint-disable-line camelcase
 		opacity,
-		levelSettingPerDevice,
 		upper_level, //eslint-disable-line camelcase
-		upper_level_mobile, //eslint-disable-line camelcase
-		upper_level_tablet, //eslint-disable-line camelcase
-		upper_level_pc, //eslint-disable-line camelcase
 		lower_level, //eslint-disable-line camelcase
-		lower_level_mobile, //eslint-disable-line camelcase
-		lower_level_tablet, //eslint-disable-line camelcase
-		lower_level_pc, //eslint-disable-line camelcase
 		upperDividerBgColor,
 		lowerDividerBgColor,
 		dividerType,
@@ -118,21 +111,13 @@ export default function save(props) {
 
 	//上側セクションの傾き切り替
 	//eslint-disable-next-line camelcase
-	if (!levelSettingPerDevice) {
-		if (upper_level) {
-			whichSideUpper = 'upper';
-		}
-	} else if (upper_level_mobile || upper_level_tablet || upper_level_pc) {
+	if (upper_level) {
 		whichSideUpper = 'upper';
 	}
 
 	//下側セクションの傾き切り替
 	//eslint-disable-next-line camelcase
-	if (!levelSettingPerDevice) {
-		if (lower_level) {
-			whichSideLower = 'lower';
-		}
-	} else if (lower_level_mobile || lower_level_tablet || lower_level_pc) {
+	if (lower_level) {
 		whichSideLower = 'lower';
 	}
 
@@ -142,37 +127,9 @@ export default function save(props) {
 	//Dividerエフェクトがない時のみ枠線を追
 	let borderStyleProperty = {};
 	//eslint-disable-next-line camelcase
-	if (!levelSettingPerDevice) {
-		if (
-			upper_level === 0 && //eslint-disable-line camelcase
-			lower_level === 0 && //eslint-disable-line camelcase
-			borderWidth > 0 &&
-			borderStyle !== 'none'
-		) {
-			borderStyleProperty = {
-				borderWidth: `${borderWidth}px`,
-				borderStyle: `${borderStyle}`,
-				borderColor:
-					isHexColor(borderColor) && borderColor
-						? borderColor
-						: undefined,
-				borderRadius: `${borderRadius}px`,
-			};
-			//eslint-disable-next-line camelcase
-		} else if (upper_level !== 0 || lower_level !== 0) {
-			//eslint-disable-line camelcase
-			borderStyleProperty = {
-				border: `none`,
-				borderRadius: `0px`,
-			};
-		}
-	} else if (
-		upper_level_mobile === 0 && //eslint-disable-line camelcase
-		upper_level_tablet === 0 && //eslint-disable-line camelcase
-		upper_level_pc === 0 && //eslint-disable-line camelcase
-		lower_level_mobile === 0 && //eslint-disable-line camelcase
-		lower_level_tablet === 0 && //eslint-disable-line camelcase
-		lower_level_pc === 0 && //eslint-disable-line camelcase
+	if (
+		upper_level === 0 && //eslint-disable-line camelcase
+		lower_level === 0 && //eslint-disable-line camelcase
 		borderWidth > 0 &&
 		borderStyle !== 'none'
 	) {
@@ -186,14 +143,7 @@ export default function save(props) {
 			borderRadius: `${borderRadius}px`,
 		};
 		//eslint-disable-next-line camelcase
-	} else if (
-		upper_level_mobile !== 0 ||
-		upper_level_tablet !== 0 ||
-		upper_level_pc !== 0 ||
-		lower_level_mobile !== 0 ||
-		lower_level_tablet !== 0 ||
-		lower_level_pc !== 0
-	) {
+	} else if (upper_level !== 0 || lower_level !== 0) {
 		//eslint-disable-line camelcase
 		borderStyleProperty = {
 			border: `none`,
@@ -223,11 +173,7 @@ export default function save(props) {
 					upper_level,
 					upperDividerBgColor,
 					whichSideUpper,
-					dividerType,
-					levelSettingPerDevice,
-					upper_level_mobile,
-					upper_level_tablet,
-					upper_level_pc
+					dividerType
 				)}
 				<div className={containerClass}>
 					<InnerBlocks.Content />
@@ -236,11 +182,7 @@ export default function save(props) {
 					lower_level,
 					lowerDividerBgColor,
 					whichSideLower,
-					dividerType,
-					levelSettingPerDevice,
-					lower_level_mobile,
-					lower_level_tablet,
-					lower_level_pc
+					dividerType
 				)}
 			</div>
 		</div>

@@ -8,16 +8,7 @@ import classnames from 'classnames';
  */
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
-const componentDivider = (
-	level,
-	color,
-	whichSide,
-	dividerType,
-	levelSettingPerDevice,
-	level_mobile,
-	level_tablet,
-	level_pc
-) => {
+const componentDivider = (level, color, whichSide, dividerType) => {
 	let sectionPadding;
 	let sectionClass;
 	let lenderDivider;
@@ -81,9 +72,8 @@ const componentDivider = (
 		if (level > 0) {
 			return (
 				<path
-					d={`m0,${
-						100 - level / 2
-					} q20,${level},40,0 t40,0 t40,0 V100 L0,100 z`}
+					d={`m0,${100 - level / 2
+						} q20,${level},40,0 t40,0 t40,0 V100 L0,100 z`}
 					strokeWidth="0"
 					fill={isHexColor(color) ? color : 'currentColor'}
 					className={pathClassNames}
@@ -92,9 +82,8 @@ const componentDivider = (
 		} else if (level < 0) {
 			return (
 				<path
-					d={`m0,${
-						level / 2 + 100
-					} q20,${level},40,0 t40,0 t40,0 V100 L0,100 z`}
+					d={`m0,${level / 2 + 100
+						} q20,${level},40,0 t40,0 t40,0 V100 L0,100 z`}
 					strokeWidth="0"
 					fill={isHexColor(color) ? color : 'currentColor'}
 					className={pathClassNames}
@@ -111,9 +100,8 @@ const componentDivider = (
 		if (level > 0) {
 			return (
 				<path
-					d={`m0,100 h${
-						50 - DivideAbs4
-					} l${DivideAbs4},-${absLevel} l${DivideAbs4},${absLevel} h${DivideAbs4} v100 h-100 z`}
+					d={`m0,100 h${50 - DivideAbs4
+						} l${DivideAbs4},-${absLevel} l${DivideAbs4},${absLevel} h${DivideAbs4} v100 h-100 z`}
 					strokeWidth="0"
 					fill={isHexColor(color) ? color : 'currentColor'}
 					className={pathClassNames}
@@ -122,11 +110,9 @@ const componentDivider = (
 		} else if (level < 0) {
 			return (
 				<path
-					d={`m0,${100 - absLevel} h${
-						50 - DivideAbs4
-					} l${DivideAbs4},${absLevel} l${DivideAbs4},-${absLevel} h${
-						50 - DivideAbs4
-					} v${absLevel + 1} h-100 z`}
+					d={`m0,${100 - absLevel} h${50 - DivideAbs4
+						} l${DivideAbs4},${absLevel} l${DivideAbs4},-${absLevel} h${50 - DivideAbs4
+						} v${absLevel + 1} h-100 z`}
 					strokeWidth="0"
 					fill={isHexColor(color) ? color : 'currentColor'}
 					className={pathClassNames}
@@ -141,48 +127,34 @@ const componentDivider = (
 	}
 
 	//Paddingの条件分岐を追加
-	const getSectionStyle = (lvl) => {
-		if (dividerType === 'tilt') {
-			sectionPadding = Math.abs(lvl);
-			return tiltSectionStyle(lvl, color);
-		} else if (dividerType === 'curve') {
-			sectionPadding = lvl > 0 ? Math.abs(lvl) : Math.abs(lvl) * 2;
-			return curveSectionStyle(lvl, color);
-		} else if (dividerType === 'wave') {
-			sectionPadding = Math.abs(lvl);
-			return waveSectionStyle(lvl, color);
-		} else if (dividerType === 'triangle') {
-			sectionPadding = Math.abs(lvl);
-			return triangleSectionStyle(lvl, color);
+	if (dividerType === 'tilt') {
+		sectionPadding = Math.abs(level);
+		lenderDivider = tiltSectionStyle(level, color);
+	} else if (dividerType === 'curve') {
+		if (level > 0) {
+			sectionPadding = Math.abs(level);
+		} else if (level < 0) {
+			sectionPadding = Math.abs(level) * 2;
 		}
-	};
-
-	lenderDivider = getSectionStyle(level);
+		lenderDivider = curveSectionStyle(level, color);
+	} else if (dividerType === 'wave') {
+		sectionPadding = Math.abs(level);
+		lenderDivider = waveSectionStyle(level, color);
+	} else if (dividerType === 'triangle') {
+		sectionPadding = Math.abs(level);
+		lenderDivider = triangleSectionStyle(level, color);
+	}
 
 	//classにdividerTypeを追加
 	// eslint-disable-next-line prefer-const
 	sectionClass = dividerType;
 
-	// vk_outerのクラス名をデバイスタイプに基づいて追加する
-
-	const renderSVG = (lvl, side, deviceType) => {
-		const style =
-			side === 'upper'
-				? { paddingBottom: sectionPadding + `px` }
-				: { paddingTop: sectionPadding + `px` };
-		lenderDivider = getSectionStyle(lvl);
-
-		let displayDeviceTypeClass;
-		if (deviceType === undefined) {
-			displayDeviceTypeClass = '';
-		} else {
-			displayDeviceTypeClass = ` vk_outer-display-${deviceType}`;
-		}
-
+	//upper-paddingを追加
+	if (whichSide === 'upper') {
 		return (
 			<div
-				className={`vk_outer_separator vk_outer_separator-position-${side} vk_outer_separator-type-${sectionClass}${displayDeviceTypeClass}`}
-				style={style}
+				className={`vk_outer_separator vk_outer_separator-position-upper vk_outer_separator-type-${sectionClass}`}
+				style={{ paddingBottom: sectionPadding + `px` }}
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -193,30 +165,22 @@ const componentDivider = (
 				</svg>
 			</div>
 		);
-	};
-
-	if (whichSide === 'upper') {
-		if (levelSettingPerDevice) {
-			return (
-				<>
-					{level_pc && renderSVG(level_pc, 'upper', 'pc')}
-					{level_tablet && renderSVG(level_tablet, 'upper', 'tablet')}
-					{level_mobile && renderSVG(level_mobile, 'upper', 'mobile')}
-				</>
-			);
-		}
-		return renderSVG(level, 'upper');
+		//lower-paddingを追加
 	} else if (whichSide === 'lower') {
-		if (levelSettingPerDevice) {
-			return (
-				<>
-					{level_pc && renderSVG(level_pc, 'lower', 'pc')}
-					{level_tablet && renderSVG(level_tablet, 'lower', 'tablet')}
-					{level_mobile && renderSVG(level_mobile, 'lower', 'mobile')}
-				</>
-			);
-		}
-		return renderSVG(level, 'lower');
+		return (
+			<div
+				className={`vk_outer_separator vk_outer_separator-position-lower vk_outer_separator-type-${sectionClass}`}
+				style={{ paddingTop: sectionPadding + `px` }}
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 100 100"
+					preserveAspectRatio="none"
+				>
+					{lenderDivider}
+				</svg>
+			</div>
+		);
 	}
 };
 

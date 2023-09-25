@@ -67,6 +67,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Button ] Fix console warning
 [ Add Block ][ Blog Card (Pro) ] Add blog card block.
 [ Add Block ][ New Badge Block (Pro) ] Add a block to display recent posts.
 [ Add function ][ Outer (Pro) ] Add options to Divider for each PC, Tablet, and Mobile

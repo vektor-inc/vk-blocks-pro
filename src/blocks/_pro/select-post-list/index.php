@@ -20,4 +20,3 @@ function vk_blocks_register_block_select_post_list() {
 	);
 }
 add_action( 'init', 'vk_blocks_register_block_select_post_list', 99 );
-

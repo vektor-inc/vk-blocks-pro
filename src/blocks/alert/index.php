@@ -31,4 +31,3 @@ function vk_blocks_register_block_alert() {
 	);
 }
 add_action( 'init', 'vk_blocks_register_block_alert', 99 );
-

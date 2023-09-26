@@ -70,5 +70,4 @@ class Vk_Blocks_EntryPoint {
 			)
 		);
 	}
-
 }

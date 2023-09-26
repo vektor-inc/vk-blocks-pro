@@ -38,7 +38,7 @@ function vk_blocks_has_custom_css_support( $block_name ) {
 		}
 	}
 	return $return_bool;
-};
+}
 
 /**
  * 各ブロックにvkbCustomCssのattributesを追加する

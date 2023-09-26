@@ -67,11 +67,12 @@ e.g.
 
 == Changelog ==
 
-[ Bug fix ][ Admin screen ] Fixed a bug where settings saved in an array were not imported.
-[ Bug fix ][ Button ] Fix console warning
 [ Add Block ][ Blog Card (Pro) ] Add blog card block.
 [ Add Block ][ New Badge Block (Pro) ] Add a block to display recent posts.
 [ Add function ][ Outer (Pro) ] Add options to Divider for each PC, Tablet, and Mobile
+[ Specification Change ] Updated  Font Awesome to 6.4.2.
+[ Bug fix ][ Admin screen ] Fixed a bug where settings saved in an array were not imported.
+[ Bug fix ][ Button ] Fix console warning
 
 = 1.61.2 =
 [ Bug fix ][ Outer ( Pro ) ] Fixed opacity with previous Outer version.

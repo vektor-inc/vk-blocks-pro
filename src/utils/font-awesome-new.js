@@ -29,42 +29,42 @@ import { STORE_NAME } from '@vkblocks/utils/store/constants';
 import { updateOptions } from '@vkblocks/utils/store';
 
 const FontAwesomeIconList = [
-	'<i class="fas fa-arrow-right"></i>',
-	'<i class="fas fa-arrow-down"></i>',
-	'<i class="fas fa-arrow-left"></i>',
-	'<i class="fas fa-arrow-circle-right"></i>',
-	'<i class="fas fa-arrow-circle-down"></i>',
-	'<i class="fas fa-arrow-circle-left"></i>',
-	'<i class="far fa-arrow-alt-circle-right"></i>',
-	'<i class="far fa-arrow-alt-circle-down"></i>',
-	'<i class="far fa-arrow-alt-circle-left"></i>',
-	'<i class="fas fa-external-link-square-alt"></i>',
-	'<i class="fas fa-external-link-alt"></i>',
-	'<i class="fas fa-download"></i>',
-	'<i class="fas fa-exclamation-triangle"></i>',
-	'<i class="fas fa-exclamation-circle"></i>',
-	'<i class="fas fa-exclamation"></i>',
-	'<i class="fas fa-question"></i>',
-	'<i class="fas fa-question-circle"></i>',
-	'<i class="fas fa-info-circle"></i>',
-	'<i class="fas fa-info"></i>',
-	'<i class="fas fa-check"></i>',
-	'<i class="fas fa-check-square"></i>',
-	'<i class="fas fa-check-circle"></i>',
-	'<i class="fas fa-phone"></i>',
-	'<i class="fas fa-phone-square"></i>',
-	'<i class="fas fa-mobile-alt"></i>',
-	'<i class="far fa-envelope"></i>',
-	'<i class="fas fa-user"></i>',
-	'<i class="fas fa-users"></i>',
-	'<i class="far fa-file-alt"></i>',
-	'<i class="fas fa-file-alt"></i>',
-	'<i class="fas fa-file"></i>',
-	'<i class="fas fa-file-pdf"></i>',
-	'<i class="fas fa-building"></i>',
-	'<i class="fab fa-twitter"></i>',
-	'<i class="fab fa-facebook-square"></i>',
-	'<i class="fab fa-line"></i>',
+	'<i class="fa-solid fa-arrow-right"></i>',
+	'<i class="fa-solid fa-arrow-down"></i>',
+	'<i class="fa-solid fa-arrow-left"></i>',
+	'<i class="fa-solid fa-circle-right"></i>',
+	'<i class="fa-solid fa-circle-down"></i>',
+	'<i class="fa-solid fa-circle-left"></i>',
+	'<i class="fa-regular fa-circle-right"></i>',
+	'<i class="fa-regular fa-circle-down"></i>',
+	'<i class="fa-regular fa-circle-left"></i>',
+	'<i class="fa-solid fa-square-up-right"></i>',
+	'<i class="fa-solid fa-up-right-from-square"></i>',
+	'<i class="fa-solid fa-download"></i>',
+	'<i class="fa-solid fa-triangle-exclamation"></i>',
+	'<i class="fa-solid fa-circle-exclamation"></i>',
+	'<i class="fa-solid fa-exclamation"></i>',
+	'<i class="fa-solid fa-question"></i>',
+	'<i class="fa-solid fa-circle-question"></i>',
+	'<i class="fa-solid fa-circle-info"></i>',
+	'<i class="fa-solid fa-info"></i>',
+	'<i class="fa-solid fa-check"></i>',
+	'<i class="fa-solid fa-square-check"></i>',
+	'<i class="fa-solid fa-circle-check"></i>',
+	'<i class="fa-solid fa-phone"></i>',
+	'<i class="fa-solid fa-square-phone"></i>',
+	'<i class="fa-solid fa-mobile-screen-button"></i>',
+	'<i class="fa-regular fa-envelope"></i>',
+	'<i class="fa-solid fa-user"></i>',
+	'<i class="fa-solid fa-users"></i>',
+	'<i class="fa-regular fa-file-lines"></i>',
+	'<i class="fa-solid fa-file-lines"></i>',
+	'<i class="fa-solid fa-file"></i>',
+	'<i class="fa-solid fa-file-pdf"></i>',
+	'<i class="fa-solid fa-building"></i>',
+	'<i class="fa-brands fa-square-x-twitter"></i>',
+	'<i class="fa-brands fa-square-facebook"></i>',
+	'<i class="fa-brands fa-line"></i>',
 ];
 
 export const FontAwesome = (props) => {
@@ -369,7 +369,7 @@ export const FontAwesome = (props) => {
 				)}
 				<br />
 				{__('Ex) ', 'vk-blocks-pro')}
-				{'<i class="fas fa-arrow-circle-right"></i>'}
+				{'<i class="fa-solid fa-circle-right"></i>'}
 			</p>
 			{canUserEdit && (
 				<>
@@ -430,7 +430,7 @@ export const FontAwesome = (props) => {
 			<TextControl
 				value={attributes[attributeName]}
 				onChange={(value) => setAttributes({ [attributeName]: value })}
-				placeholder={'<i class="fas fa-arrow-circle-right"></i>'}
+				placeholder={'<i class="fa-solid fa-circle-right"></i>'}
 				className="mb-0"
 			/>
 			<AdvancedPopOverControl

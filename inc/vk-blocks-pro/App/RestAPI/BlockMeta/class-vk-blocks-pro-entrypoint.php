@@ -53,5 +53,4 @@ class Vk_Blocks_Pro_EntryPoint {
 			)
 		);
 	}
-
 }

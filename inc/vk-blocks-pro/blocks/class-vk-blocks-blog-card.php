@@ -43,19 +43,17 @@ class VK_Blocks_Blog_Card {
 
 		if ( ! empty( $cached_response ) && ! $clear_cache ) {
 			$data = $cached_response;
-		} else {
-			if ( $post_id ) {
+		} elseif ( $post_id ) {
 				/**
 				 * $post_idが取得できる時
 				 */
 				$data = static::vk_get_blog_card_data_from_post_id( $post_id );
-			} else {
-				/**
-				 * $post_idが取得できない場合
-				 */
-				$data = static::vk_get_blog_card_data_from_url( $url );
-				static::set_cache( $cache_key, $data );
-			}
+		} else {
+			/**
+			 * $post_idが取得できない場合
+			 */
+			$data = static::vk_get_blog_card_data_from_url( $url );
+			static::set_cache( $cache_key, $data );
 		}
 
 		return $data;
@@ -284,5 +282,4 @@ class VK_Blocks_Blog_Card {
 
 		return set_site_transient( $key, $data, $ttl );
 	}
-
 }

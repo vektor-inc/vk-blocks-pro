@@ -187,7 +187,7 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 			'name'  => $block_name,
 			'title' => $block_type->title,
 		);
-		$i++;
+		++$i;
 
 		if ( ! empty( $block_type->editor_script ) ) {
 			wp_enqueue_script( $block_type->editor_script );

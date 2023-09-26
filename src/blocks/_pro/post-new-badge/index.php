@@ -62,4 +62,3 @@ function vk_blocks_register_block_post_new_badge() {
 	);
 }
 add_action( 'init', 'vk_blocks_register_block_post_new_badge', 99 );
-

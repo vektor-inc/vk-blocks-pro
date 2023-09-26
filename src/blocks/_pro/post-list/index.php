@@ -44,7 +44,7 @@ function vk_blocks_post_list_get_block_data() {
 	foreach ( $the_taxonomies as $the_taxonomy ) {
 		$terms                                        = array_values( get_terms( $the_taxonomy->name, array( 'hide_empty' => false ) ) );
 		$term_by_taxonomy_name[ $the_taxonomy->name ] = array_map(
-			function( $term ) {
+			function ( $term ) {
 				return array(
 					'term_id' => $term->term_id,
 					'name'    => $term->name,

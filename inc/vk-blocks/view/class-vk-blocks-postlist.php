@@ -257,5 +257,4 @@ class Vk_Blocks_PostList {
 		$html = '<div class="alert alert-warning text-center">' . sprintf( __( 'There are no %ss.', 'vk-blocks-pro' ), $name ) . '</div>';
 		return apply_filters( 'vk_blocks_post_list_render_no_post', $html, $wp_query );
 	}
-
 }

@@ -100,7 +100,7 @@ if ( is_admin() && ! is_network_admin() ) {
 
 		add_action(
 			'admin_notices',
-			function() {
+			function () {
 				echo '<div class="updated notice"><p>';
 				echo esc_html( __( 'Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks Plugin running.', 'vk-blocks-pro' ) );
 				echo '</p></div>';

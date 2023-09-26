@@ -29,17 +29,18 @@ This is a plugin that extends Gutenberg's blocks.
 * Border box
 * Title（with sub text）
 * Responsive Spacer
+* Animation [ Pro ]
 * Blog Card [ Pro ]
 * Breadcrumb [ Pro ]
+* Card [ Pro ]
 * Dynamic Text ( Post Type name / Ancestor Page name ) [ Pro ]
+* Grid Column [ Pro ]
 * Grid Column Card [ Pro ]
+* New Badge [ Pro ]
+* Outer [ Pro ]
 * Post List [ Pro ]
 * Step [ Pro ]
 * Timeline [ Pro ]
-* Card [ Pro ]
-* Grid Column [ Pro ]
-* Animation [ Pro ]
-* Outer [ Pro ]
 
 [ Editing and correction ]
 
@@ -67,7 +68,10 @@ e.g.
 == Changelog ==
 
 [ Bug fix ][ Admin screen ] Fixed a bug where settings saved in an array were not imported.
+[ Bug fix ][ Button ] Fix console warning
 [ Add Block ][ Blog Card (Pro) ] Add blog card block.
+[ Add Block ][ New Badge Block (Pro) ] Add a block to display recent posts.
+[ Add function ][ Outer (Pro) ] Add options to Divider for each PC, Tablet, and Mobile
 
 = 1.61.2 =
 [ Bug fix ][ Outer ( Pro ) ] Fixed opacity with previous Outer version.

@@ -67,6 +67,7 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] Updated  Font Awesome to 6.4.2.
 [ Bug fix ][ Button ] Fix console warning
 [ Add Block ][ Blog Card (Pro) ] Add blog card block.
 [ Add Block ][ New Badge Block (Pro) ] Add a block to display recent posts.

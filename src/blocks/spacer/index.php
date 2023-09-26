@@ -53,24 +53,22 @@ function vk_blocks_get_spacer_size( $options, $spacer_size, $device ) {
 		return $options['margin_size'][ $spacer_size ];
 	}
 
-	// カスタム値がある場合
+	// カスタム値がある場合⇒カスタム値を返す.
+	// 指定デバイスでのサイズ指定がない場合、他のデバイスで指定しているサイズを自動割り振り
+	// tablet -> pc -> mobile の順で自動適用する.
+	// でないと PC と タブが指定済 / モバイル未指定のときに モバイルに tablet より広い PC のサイズが適用されてしまうため.
 	if ( ! empty( $options['margin_size'][ $spacer_size ]['custom'] ) ) {
 		return $options['margin_size'][ $spacer_size ]['custom'];
 	} elseif ( isset( $options['margin_size'][ $spacer_size ][ $device ] ) ) { // 各サイズのデバイス毎のサイズ.
 		return $options['margin_size'][ $spacer_size ][ $device ];
+	} elseif ( isset( $options['margin_size'][ $spacer_size ]['tablet'] ) ) {
+		return $options['margin_size'][ $spacer_size ]['tablet'];
+	} elseif ( isset( $options['margin_size'][ $spacer_size ]['pc'] ) ) {
+		return $options['margin_size'][ $spacer_size ]['pc'];
+	} elseif ( isset( $options['margin_size'][ $spacer_size ]['mobile'] ) ) {
+		return $options['margin_size'][ $spacer_size ]['mobile'];
 	} else {
-		// 指定デバイスでのサイズ指定がない場合、他のデバイスで指定しているサイズを自動割り振り
-		// tablet -> pc -> mobile の順で自動適用する.
-		// でないと PC と タブが指定済 / モバイル未指定のときに モバイルに tablet より広い PC のサイズが適用されてしまうため.
-		if ( isset( $options['margin_size'][ $spacer_size ]['tablet'] ) ) {
-			return $options['margin_size'][ $spacer_size ]['tablet'];
-		} elseif ( isset( $options['margin_size'][ $spacer_size ]['pc'] ) ) {
-			return $options['margin_size'][ $spacer_size ]['pc'];
-		} elseif ( isset( $options['margin_size'][ $spacer_size ]['mobile'] ) ) {
-			return $options['margin_size'][ $spacer_size ]['mobile'];
-		} else {
-			return null;
-		}
+		return null;
 	}
 }
 

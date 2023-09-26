@@ -33,4 +33,3 @@ function vk_blocks_balloon_style() {
 }
 add_action( 'wp_enqueue_scripts', 'vk_blocks_balloon_style' );
 add_action( 'enqueue_block_editor_assets', 'vk_blocks_balloon_style' );
-

@@ -507,5 +507,4 @@ class VK_Blocks_Global_Settings {
 		);
 		return $font_sizes;
 	}
-
 }

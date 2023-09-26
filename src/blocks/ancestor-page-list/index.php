@@ -140,10 +140,9 @@ function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
 	$block .= vk_blocks_get_ancestor_page_list_title( $attributes );
 	if ( $page_list ) {
 		$block .= '<ul class="vk_ancestorPageList_list">' . $page_list . '</ul></aside>';
-	} else {
-		if ( ! is_singular() && ! is_archive() ) { // フルサイト編集では is_admin が効かないので is_singular で判定.
+	} elseif ( ! is_singular() && ! is_archive() ) {
+		// フルサイト編集では is_admin が効かないので is_singular で判定.
 			$block .= $massage_no_child;
-		}
 	}
 	$block .= '</aside>';
 

@@ -55,6 +55,12 @@ export default function ButtonEdit(props) {
 
 	// eslint-disable-next-line no-undef
 	const iconFamily = vkFontAwesome.iconFamily;
+	// 親ブロックが vk-blocks/button-outer かどうか判定
+	const parents = select('core/block-editor').getBlockParentsByBlockName(
+		clientId,
+		['vk-blocks/button-outer']
+	);
+	const isInnerButton = parents.length ? true : false;
 
 	// 以前の値を切り替え
 	useEffect(() => {
@@ -119,6 +125,9 @@ export default function ButtonEdit(props) {
 			}
 			setAttributes({ old_1_31_0: true });
 		}
+		if (!isInnerButton) {
+			setAttributes({ buttonWidth: 0 });
+		}
 	}, [clientId]);
 
 	const { updateBlockAttributes } = dispatch('core/block-editor');
@@ -154,13 +163,6 @@ export default function ButtonEdit(props) {
 		}
 	}, [buttonColorCustom]);
 
-	// 親ブロックが vk-blocks/button-outer かどうか判定
-	const parents = select('core/block-editor').getBlockParentsByBlockName(
-		clientId,
-		['vk-blocks/button-outer']
-	);
-	const isInnerButton = parents.length ? true : false;
-
 	let containerClass;
 	// カスタムカラーの場合 またはアウターにギャップが指定されれいる場合
 	if (
@@ -187,7 +189,6 @@ export default function ButtonEdit(props) {
 		}
 	} else {
 		containerClass += ` vk_button-align-${buttonAlign}`;
-		setAttributes({ buttonWidth: 0 });
 	}
 
 	// エフェクト

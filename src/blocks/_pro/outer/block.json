@@ -44,11 +44,39 @@
 			"type": "number",
 			"default": 0.5
 		},
+		"levelSettingPerDevice": {
+			"type": "boolean",
+			"default": false
+		},
 		"upper_level": {
 			"type": "number",
 			"default": 0
 		},
+		"upper_level_mobile": {
+			"type": "number",
+			"default": 0
+		},
+		"upper_level_tablet": {
+			"type": "number",
+			"default": 0
+		},
+		"upper_level_pc": {
+			"type": "number",
+			"default": 0
+		},
 		"lower_level": {
+			"type": "number",
+			"default": 0
+		},
+		"lower_level_mobile": {
+			"type": "number",
+			"default": 0
+		},
+		"lower_level_tablet": {
+			"type": "number",
+			"default": 0
+		},
+		"lower_level_pc": {
 			"type": "number",
 			"default": 0
 		},

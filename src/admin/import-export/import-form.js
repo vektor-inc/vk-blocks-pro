@@ -98,8 +98,7 @@ export default function ImportForm(props) {
 					}
 
 					const currentOptions = updateVkBlocksOptions[name];
-					const uploadedOptions =
-						_uploadedVkBlocksOptions[name];
+					const uploadedOptions = _uploadedVkBlocksOptions[name];
 
 					if (importMethod === 'add' && currentOptions) {
 						const comparisonKey =

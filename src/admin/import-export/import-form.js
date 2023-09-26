@@ -97,9 +97,9 @@ export default function ImportForm(props) {
 						return;
 					}
 
-					const currentOptions = updateVkBlocksOptions[name] || [];
+					const currentOptions = updateVkBlocksOptions[name];
 					const uploadedOptions =
-						_uploadedVkBlocksOptions[name] || [];
+						_uploadedVkBlocksOptions[name];
 
 					if (importMethod === 'add' && currentOptions) {
 						const comparisonKey =

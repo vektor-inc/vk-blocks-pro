@@ -279,6 +279,6 @@ class VK_Blocks_Block_Loader {
 	 * @throws \Exception Exception.
 	 */
 	final public function __clone() {
-		throw new \Exception( sprintf( 'Clone is not allowed: %s', get_class( $this ) ) );
+		throw new \Exception( sprintf( 'Clone is not allowed: %s', esc_html( get_class( $this ) ) ) );
 	}
 }

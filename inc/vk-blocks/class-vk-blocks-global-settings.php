@@ -137,6 +137,30 @@ class VK_Blocks_Global_Settings {
 				'is_pro' => true,
 			),
 			array(
+				'name'   => 'blog-card',
+				'is_pro' => true,
+			),
+			array(
+				'name'   => 'blog-card-title',
+				'is_pro' => true,
+			),
+			array(
+				'name'   => 'blog-card-featured-image',
+				'is_pro' => true,
+			),
+			array(
+				'name'   => 'blog-card-excerpt',
+				'is_pro' => true,
+			),
+			array(
+				'name'   => 'blog-card-site-logo',
+				'is_pro' => true,
+			),
+			array(
+				'name'   => 'blog-card-site-title',
+				'is_pro' => true,
+			),
+			array(
 				'name'   => 'button-outer',
 				'is_pro' => true,
 			),
@@ -200,6 +224,10 @@ class VK_Blocks_Global_Settings {
 			),
 			array(
 				'name'   => 'post-list',
+				'is_pro' => true,
+			),
+			array(
+				'name'   => 'post-new-badge',
 				'is_pro' => true,
 			),
 			array(
@@ -479,5 +507,4 @@ class VK_Blocks_Global_Settings {
 		);
 		return $font_sizes;
 	}
-
 }

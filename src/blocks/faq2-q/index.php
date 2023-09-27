@@ -20,4 +20,3 @@ function vk_blocks_register_block_faq2_q() {
 	);
 }
 add_action( 'init', 'vk_blocks_register_block_faq2_q', 99 );
-

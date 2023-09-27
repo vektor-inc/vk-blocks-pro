@@ -67,7 +67,6 @@ class Vk_Blocks_Print_CSS_Variables {
 		$dynamic_css = vk_blocks_minify_css( $dynamic_css );
 		return $dynamic_css;
 	}
-
 }
 
 new Vk_Blocks_Print_CSS_Variables();

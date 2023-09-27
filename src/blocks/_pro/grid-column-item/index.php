@@ -31,4 +31,3 @@ function vk_blocks_register_block_grid_column_item() {
 	);
 }
 add_action( 'init', 'vk_blocks_register_block_grid_column_item', 99 );
-

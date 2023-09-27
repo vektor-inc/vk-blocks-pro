@@ -8,37 +8,37 @@
  */
 
 // Load Files
-require_once dirname( __FILE__ ) . '/utils/hex-to-rgba.php';
-require_once dirname( __FILE__ ) . '/utils/color-slug-to-color-code.php';
-require_once dirname( __FILE__ ) . '/utils/array-merge.php';
-require_once dirname( __FILE__ ) . '/utils/minify-css.php';
-require_once dirname( __FILE__ ) . '/style/balloon.php';
-require_once dirname( __FILE__ ) . '/style/hidden-extension.php';
-require_once dirname( __FILE__ ) . '/extensions/core/list.php';
-require_once dirname( __FILE__ ) . '/view/responsive-br.php';
-require_once dirname( __FILE__ ) . '/view/class-vk-blocks-postlist.php';
+require_once __DIR__ . '/utils/hex-to-rgba.php';
+require_once __DIR__ . '/utils/color-slug-to-color-code.php';
+require_once __DIR__ . '/utils/array-merge.php';
+require_once __DIR__ . '/utils/minify-css.php';
+require_once __DIR__ . '/style/balloon.php';
+require_once __DIR__ . '/style/hidden-extension.php';
+require_once __DIR__ . '/extensions/core/list.php';
+require_once __DIR__ . '/view/responsive-br.php';
+require_once __DIR__ . '/view/class-vk-blocks-postlist.php';
 
-require_once dirname( __FILE__ ) . '/class-vk-blocks-print-css-variables.php';
+require_once __DIR__ . '/class-vk-blocks-print-css-variables.php';
 
 // グローバル設定を定義
-require_once dirname( __FILE__ ) . '/class-vk-blocks-global-settings.php';
+require_once __DIR__ . '/class-vk-blocks-global-settings.php';
 VK_Blocks_Global_Settings::init();
 
-require_once dirname( __FILE__ ) . '/class-vk-blocks-block-loader.php';
+require_once __DIR__ . '/class-vk-blocks-block-loader.php';
 VK_Blocks_Block_Loader::init();
 
 // オプション値を定義
-require_once dirname( __FILE__ ) . '/class-vk-blocks-options.php';
+require_once __DIR__ . '/class-vk-blocks-options.php';
 VK_Blocks_Options::init();
 
 // font-awesome
-require_once dirname( __FILE__ ) . '/font-awesome/font-awesome-config.php';
+require_once __DIR__ . '/font-awesome/font-awesome-config.php';
 
 // VK Blocks の管理画面.
-require_once dirname( __FILE__ ) . '/admin/admin.php';
-require_once dirname( __FILE__ ) . '/init.php';
-require_once dirname( __FILE__ ) . '/blocks.php';
-require_once dirname( __FILE__ ) . '/App/RestAPI/BlockMeta/class-vk-blocks-entrypoint.php';
+require_once __DIR__ . '/admin/admin.php';
+require_once __DIR__ . '/init.php';
+require_once __DIR__ . '/blocks.php';
+require_once __DIR__ . '/App/RestAPI/BlockMeta/class-vk-blocks-entrypoint.php';
 new Vk_Blocks_EntryPoint();
 
 /**
@@ -62,7 +62,7 @@ add_action(
  */
 add_filter(
 	'body_class',
-	function( $class ) {
+	function ( $class ) {
 		$class[] = 'vk-blocks';
 		return $class;
 	}

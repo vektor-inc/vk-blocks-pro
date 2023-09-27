@@ -21,4 +21,3 @@ function vk_blocks_register_block_timeline() {
 	);
 }
 add_action( 'init', 'vk_blocks_register_block_timeline', 99 );
-

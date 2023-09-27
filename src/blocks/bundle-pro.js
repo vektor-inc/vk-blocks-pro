@@ -6,6 +6,12 @@ import * as accordionTarget from './_pro/accordion-target';
 import * as accordionTrigger from './_pro/accordion-trigger';
 import * as animation from './_pro/animation';
 import * as archiveList from './_pro/archive-list';
+import * as blogCard from './_pro/blog-card';
+import * as blogCardTitle from './_pro/blog-card-title';
+import * as blogCardImage from './_pro/blog-card-featured-image';
+import * as blogCardExcerpt from './_pro/blog-card-excerpt';
+import * as blogCardFavicon from './_pro/blog-card-site-logo';
+import * as blogCardSiteName from './_pro/blog-card-site-title';
 import * as breadcrumb from './_pro/breadcrumb';
 import * as buttonOuter from './_pro/button-outer';
 import * as card from './_pro/card';
@@ -23,6 +29,7 @@ import * as iconCard from './_pro/icon-card';
 import * as iconCardItem from './_pro/icon-card-item';
 import * as outer from './_pro/outer';
 import * as postList from './_pro/post-list';
+import * as postNewBadge from './_pro/post-new-badge';
 import * as selectPostList from './_pro/select-post-list';
 import * as selectPostListItem from './_pro/select-post-list-item';
 import * as step from './_pro/step';
@@ -44,6 +51,12 @@ const vkblocksPro = [
 	accordionTrigger,
 	animation,
 	archiveList,
+	blogCard,
+	blogCardTitle,
+	blogCardImage,
+	blogCardExcerpt,
+	blogCardFavicon,
+	blogCardSiteName,
 	breadcrumb,
 	buttonOuter,
 	card,
@@ -61,6 +74,7 @@ const vkblocksPro = [
 	iconCardItem,
 	outer,
 	postList,
+	postNewBadge,
 	selectPostList,
 	selectPostListItem,
 	step,

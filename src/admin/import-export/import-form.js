@@ -70,99 +70,57 @@ export default function ImportForm(props) {
 		_vkBlocksOption,
 		_importSettings
 	) => {
-		// isImportがfalseだったらuploadedOptionの該当のオプションを削除する(インポートしない)
-		_importSettings.forEach((setting) => {
-			if (!setting.isImport || ('isShow' in setting && !setting.isShow)) {
-				setting.options.forEach(
-					(option) => delete _uploadedVkBlocksOptions[option.name]
-				);
-			}
-		});
+		const updateVkBlocksOptions = { ..._vkBlocksOption };
 
-		const updateVkBlocksOptions = _vkBlocksOption;
-		// importMethodがaddだったら追加する
-		_importSettings.forEach(({ options, isImport }) => {
-			options.forEach(({ name, associativeArray, importMethod }, id) => {
-				if (!!isImport) {
-					if (importMethod === 'add') {
-						if ('associativeArray' in options[id]) {
-							if ('uniqKey' in options[id]) {
-								// 識別子が被っていないもののみ追加する
-								const addOption = [];
-								if (
-									_uploadedVkBlocksOptions[name] &&
-									_uploadedVkBlocksOptions[name].length > 0 &&
-									_vkBlocksOption[name]
-								) {
-									_uploadedVkBlocksOptions[name].forEach(
-										(uploadedOptionElement) => {
-											let isDuplicate = false;
-											_vkBlocksOption[name].forEach(
-												(vkBlocksOptionElement) => {
-													if (
-														uploadedOptionElement[
-															associativeArray
-														] ===
-														vkBlocksOptionElement[
-															associativeArray
-														]
-													) {
-														isDuplicate = true;
-													}
-												}
-											);
-											if (!isDuplicate) {
-												addOption.push(
-													uploadedOptionElement
-												);
-											}
-										}
-									);
-								}
-								updateVkBlocksOptions[name].push(...addOption);
-							} else {
-								updateVkBlocksOptions[name].push(
-									..._uploadedVkBlocksOptions[name]
-								);
-							}
-						} else if ('indexedArray' in options[id]) {
-							// 識別子が被っていないもののみ追加する
-							const addOption = [];
-							if (
-								_uploadedVkBlocksOptions[name] &&
-								_uploadedVkBlocksOptions[name].length > 0 &&
-								_vkBlocksOption[name]
-							) {
-								_uploadedVkBlocksOptions[name].forEach(
-									(uploadedOptionElement) => {
-										let isDuplicate = false;
-										_vkBlocksOption[name].forEach(
-											(vkBlocksOptionElement) => {
-												if (
-													uploadedOptionElement ===
-													vkBlocksOptionElement
-												) {
-													isDuplicate = true;
-												}
-											}
-										);
-										if (!isDuplicate) {
-											addOption.push(
-												uploadedOptionElement
-											);
-										}
-									}
-								);
-							}
-							updateVkBlocksOptions[name].push(...addOption);
+		const addUniqueOptions = (
+			currentOptions,
+			uploadedOptions,
+			comparisonKey
+		) => {
+			const uniqueOptions = uploadedOptions.filter(
+				(newOption) =>
+					!currentOptions.some((existingOption) =>
+						comparisonKey
+							? newOption[comparisonKey] ===
+							  existingOption[comparisonKey]
+							: newOption === existingOption
+					)
+			);
+			currentOptions.push(...uniqueOptions);
+		};
+
+		_importSettings.forEach(({ options, isImport, isShow = true }) => {
+			options.forEach(
+				({ name, associativeArray, importMethod, uniqKey }, id) => {
+					if (!isImport || !isShow) {
+						delete _uploadedVkBlocksOptions[name];
+						return;
+					}
+
+					const currentOptions = updateVkBlocksOptions[name];
+					const uploadedOptions = _uploadedVkBlocksOptions[name];
+
+					if (importMethod === 'add' && currentOptions) {
+						const comparisonKey =
+							uniqKey && associativeArray ? uniqKey : null;
+						if (
+							'associativeArray' in options[id] ||
+							'indexedArray' in options[id]
+						) {
+							addUniqueOptions(
+								currentOptions,
+								uploadedOptions,
+								comparisonKey
+							);
+						} else {
+							currentOptions.push(...uploadedOptions);
 						}
+						updateVkBlocksOptions[name] = currentOptions;
 					} else {
-						// 上書きする
-						updateVkBlocksOptions[name] =
-							_uploadedVkBlocksOptions[name];
+						updateVkBlocksOptions[name] = uploadedOptions;
 					}
 				}
-			});
+			);
 		});
 		return updateVkBlocksOptions;
 	};
@@ -412,10 +370,10 @@ export default function ImportForm(props) {
 																	) => {
 																		return (
 																			uploadKey[
-																				associativeArray
+																				uniqKey
 																			] ===
 																				preKey[
-																					associativeArray
+																					uniqKey
 																				] && (
 																				<div
 																					key={
@@ -424,7 +382,7 @@ export default function ImportForm(props) {
 																				>
 																					{
 																						uploadKey[
-																							associativeArray
+																							uniqKey
 																						]
 																					}
 																				</div>

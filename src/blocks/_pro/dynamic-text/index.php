@@ -89,7 +89,7 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 	$block_content = '';
 	if ( $attributes['tagName'] ) {
 		$block_content .= '<' . $attributes['tagName'] . ' ' . $wrapper_classes . '>';
-	};
+	}
 	if ( 'post-type' === $attributes['displayElement'] ) {
 		// 投稿タイプの名前取得.
 		$post_type_info = VkHelpers::get_post_type_info();

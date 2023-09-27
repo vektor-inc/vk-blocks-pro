@@ -23,7 +23,7 @@ if ( ! class_exists( 'Vk_Font_Awesome_Versions' ) ) {
  * Font Awesome API Load modules
  */
 if ( ! class_exists( 'VK_Blocks_Font_Awesome_API' ) ) {
-	require_once dirname( __FILE__ ) . '/class-vk-blocks-font-awesome-api.php';
+	require_once __DIR__ . '/class-vk-blocks-font-awesome-api.php';
 	new VK_Blocks_Font_Awesome_API();
 }
 

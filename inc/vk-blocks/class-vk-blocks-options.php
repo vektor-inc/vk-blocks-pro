@@ -364,7 +364,7 @@ class VK_Blocks_Options {
 							'type' => 'array',
 						),
 						'keywords'    => array(
-							'type' => 'string',
+							'type' => 'array',
 						),
 					),
 				),

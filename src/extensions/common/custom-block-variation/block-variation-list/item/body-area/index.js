@@ -8,6 +8,7 @@ import {
 	CheckboxControl,
 	RadioControl,
 	ExternalLink,
+	FormTokenField,
 } from '@wordpress/components';
 import { getBlockSupport, store as blocksStore } from '@wordpress/blocks';
 import { useSelect } from '@wordpress/data';
@@ -134,12 +135,10 @@ export const BodyArea = ({
 					{__('Dashicons リスト', 'vk-blocks-pro')}
 				</ExternalLink>
 			</div>
-			<TextControl
-				__nextHasNoMarginBottom
+			<FormTokenField
 				label={__('キーワード', 'vk-blocks-pro')}
-				value={variationState[index].keywords}
+				value={variationState[index].keywords || []}
 				onChange={(value) => onChange('keywords', value)}
-				placeholder={__('キーワード', 'vk-blocks-pro')}
 			/>
 		</VStack>
 	);

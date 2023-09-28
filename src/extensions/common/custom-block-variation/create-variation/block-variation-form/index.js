@@ -8,6 +8,7 @@ import {
 	CheckboxControl,
 	RadioControl,
 	ExternalLink,
+	FormTokenField,
 } from '@wordpress/components';
 import { store as blocksStore, getBlockSupport } from '@wordpress/blocks';
 import { useSelect } from '@wordpress/data';
@@ -162,14 +163,12 @@ export default function VariationForm(props) {
 						{__('Dashicons リスト', 'vk-blocks-pro')}
 					</ExternalLink>
 				</div>
-				<TextControl
-					__nextHasNoMarginBottom
+				<FormTokenField
 					label={__('キーワード', 'vk-blocks-pro')}
-					value={variation.keywords}
+					value={variation.keywords || []}
 					onChange={(value) => {
 						setVariation({ ...variation, keywords: value });
 					}}
-					placeholder={__('キーワード', 'vk-blocks-pro')}
 				/>
 			</VStack>
 		</>

@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.61.2.0\n"
+"Project-Id-Version: VK Blocks Pro 1.62.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-09-26T04:45:49+00:00\n"
+"POT-Creation-Date: 2023-09-28T04:47:01+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: vk-blocks-pro\n"
@@ -35,7 +35,7 @@ msgstr ""
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:63
 #: src/admin/custom-format/add-item.js:152
 #: src/admin/custom-format/delete-item-button.js:63
-#: src/admin/import-export/import-form.js:510
+#: src/admin/import-export/import-form.js:468
 msgid "Cancel"
 msgstr ""
 
@@ -106,7 +106,7 @@ msgstr ""
 
 #: src/admin/custom-block-style/add-button/index.js:141
 #: src/admin/custom-format/add-item.js:164
-#: src/admin/import-export/import-form.js:346
+#: src/admin/import-export/import-form.js:304
 msgid "Add"
 msgstr ""
 
@@ -344,44 +344,44 @@ msgstr ""
 msgid "Toggle all"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:196
+#: src/admin/import-export/import-form.js:154
 msgid "Invalid JSON file"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:199
+#: src/admin/import-export/import-form.js:157
 msgid "Unknown error"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:263
+#: src/admin/import-export/import-form.js:221
 msgid "Import data confirmation"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:270
+#: src/admin/import-export/import-form.js:228
 msgid "No import data"
 msgstr ""
 
 #. Import %s
-#: src/admin/import-export/import-form.js:305
+#: src/admin/import-export/import-form.js:263
 msgid "Import %s"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:332
+#: src/admin/import-export/import-form.js:290
 msgid "Import method"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:353
+#: src/admin/import-export/import-form.js:311
 msgid "Override"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:456
+#: src/admin/import-export/import-form.js:414
 msgid "The following data will not be imported because the identifiers are covered."
 msgstr ""
 
-#: src/admin/import-export/import-form.js:525
+#: src/admin/import-export/import-form.js:483
 msgid "Import"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:535
+#: src/admin/import-export/import-form.js:493
 msgid "Import Success"
 msgstr ""
 

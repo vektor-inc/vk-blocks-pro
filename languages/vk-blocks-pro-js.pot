@@ -24,7 +24,7 @@ msgstr ""
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:63
 #: src/admin/custom-format/add-item.js:152
 #: src/admin/custom-format/delete-item-button.js:63
-#: src/admin/import-export/import-form.js:510
+#: src/admin/import-export/import-form.js:468
 msgid "Cancel"
 msgstr ""
 
@@ -93,7 +93,7 @@ msgstr ""
 
 #: src/admin/custom-block-style/add-button/index.js:141
 #: src/admin/custom-format/add-item.js:164
-#: src/admin/import-export/import-form.js:346
+#: src/admin/import-export/import-form.js:304
 msgid "Add"
 msgstr ""
 
@@ -338,44 +338,44 @@ msgstr ""
 msgid "Toggle all"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:196
+#: src/admin/import-export/import-form.js:154
 msgid "Invalid JSON file"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:199
+#: src/admin/import-export/import-form.js:157
 msgid "Unknown error"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:263
+#: src/admin/import-export/import-form.js:221
 msgid "Import data confirmation"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:270
+#: src/admin/import-export/import-form.js:228
 msgid "No import data"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:305
+#: src/admin/import-export/import-form.js:263
 #. Import %s
 msgid "Import %s"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:332
+#: src/admin/import-export/import-form.js:290
 msgid "Import method"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:353
+#: src/admin/import-export/import-form.js:311
 msgid "Override"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:456
+#: src/admin/import-export/import-form.js:414
 msgid "The following data will not be imported because the identifiers are covered."
 msgstr ""
 
-#: src/admin/import-export/import-form.js:525
+#: src/admin/import-export/import-form.js:483
 msgid "Import"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:535
+#: src/admin/import-export/import-form.js:493
 msgid "Import Success"
 msgstr ""
 

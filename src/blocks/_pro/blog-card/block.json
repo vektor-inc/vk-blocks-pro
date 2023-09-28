@@ -15,7 +15,7 @@
 	},
 	"textdomain": "vk-blocks-pro",
 	"supports": {
-		"align": [ "wide", "full" ],
+		"align": ["wide", "full"],
 		"__experimentalBorder": {
 			"color": true,
 			"radius": true,

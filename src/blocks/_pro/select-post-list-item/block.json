@@ -5,7 +5,7 @@
 	"category": "vk-blocks-cat",
 	"parent": ["vk-blocks/select-post-list"],
 	"attributes": {
-		"className":{
+		"className": {
 			"type": "string",
 			"default": ""
 		},

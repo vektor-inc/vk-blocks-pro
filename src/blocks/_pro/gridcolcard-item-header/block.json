@@ -5,9 +5,7 @@
 	"textdomain": "vk-blocks-pro",
 	"category": "vk-blocks-cat-layout",
 	"description": "Header image area of Grid Column Card Block Item",
-	"parent": [
-		"vk-blocks/gridcolcard-item"
-	],
+	"parent": ["vk-blocks/gridcolcard-item"],
 	"supports": {
 		"html": false
 	},
@@ -34,5 +32,4 @@
 			"default": "delete"
 		}
 	}
-
 }

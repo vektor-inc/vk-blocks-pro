@@ -5,7 +5,7 @@
 	"title": "Blog Card Featured Image",
 	"description": "Displays the featured image obtained from the URL.",
 	"textdomain": "vk-blocks-pro",
-	"ancestor": [ "vk-blocks/blog-card" ],
+	"ancestor": ["vk-blocks/blog-card"],
 	"attributes": {
 		"isLink": {
 			"type": "boolean",
@@ -34,11 +34,9 @@
 			"default": "_self"
 		}
 	},
-	"usesContext": [
-		"vk-blocks/blog-card-url"
-	],
+	"usesContext": ["vk-blocks/blog-card-url"],
 	"supports": {
-		"align": [ "left", "right", "center" ],
+		"align": ["left", "right", "center"],
 		"color": {
 			"__experimentalDuotone": "img",
 			"text": false,

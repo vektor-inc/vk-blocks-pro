@@ -8,7 +8,7 @@
     "stop": "wp-env stop",
     "destroy": "wp-env destroy",
     "watch": "npm run build && concurrently \"wp-scripts start\" \"npx gulp watch\"",
-    "update": "npx ncu -u -x '@wordpress/env sass react react-dom' && rimraf node_modules/ package-lock.json && npm install && npm run build",
+    "update": "ncu -u -x '@wordpress/env sass react react-dom' && rimraf node_modules/ package-lock.json && npm install && npm run build",
     "dist": "npm run build && composer install --no-dev && gulp dist && composer install",
     "prebuild": "rimraf ./inc/vk-blocks/build/*",
     "build:dev": "composer install && gulp text-domain-pro && wp-scripts build --webpack-copy-php --config webpack.config.js --progress --mode=development && gulp build:dev:pro",

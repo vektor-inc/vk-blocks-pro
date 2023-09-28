@@ -3,7 +3,10 @@
  */
 import { __ } from '@wordpress/i18n';
 import { useState } from '@wordpress/element';
-import { Button, Modal, Flex, FlexItem } from '@wordpress/components';
+import {
+	Button,
+	__experimentalConfirmDialog as ConfirmDialog,
+} from '@wordpress/components';
 
 export default function PatternExplorerSidebar(props) {
 	const { selectedCategory, onClickCategory, hasUpdates, setHasUpdates } =
@@ -47,49 +50,25 @@ export default function PatternExplorerSidebar(props) {
 					);
 				})}
 			</div>
-			{confirmModal.open && (
-				<Modal
-					overlayClassName="custom-block-variation__confirmation-modal"
-					title={__('未保存の変更', 'vk-blocks-pro')}
-					onRequestClose={() => setConfirmModal({ open: false })}
-					shouldCloseOnClickOutside={false}
-				>
-					<p>
-						{__(
-							'保存されていない変更があります。続行しますか ? ',
-							'vk-blocks-pro'
-						)}
-					</p>
-					<div className="custom-block-variation-confirmation_modal_button_area">
-						<Flex justify="flex-end">
-							<FlexItem>
-								<Button
-									variant="secondary"
-									onClick={() =>
-										setConfirmModal({ open: false })
-									}
-								>
-									{__('Cancel', 'vk-blocks-pro')}
-								</Button>
-							</FlexItem>
-							<FlexItem>
-								<Button
-									variant="primary"
-									onClick={() => {
-										if (confirmModal.name) {
-											onClickCategory(confirmModal.name);
-										}
-										setConfirmModal({ open: false });
-										setHasUpdates(false);
-									}}
-								>
-									{__('続行', 'vk-blocks-pro')}
-								</Button>
-							</FlexItem>
-						</Flex>
-					</div>
-				</Modal>
-			)}
+			<ConfirmDialog
+				isOpen={confirmModal.open}
+				cancelButtonText={__('Cancel')}
+				confirmButtonText={__('続行', 'vk-blocks-pro')}
+				onConfirm={() => {
+					if (confirmModal.name) {
+						onClickCategory(confirmModal.name);
+					}
+					setConfirmModal({ open: false });
+					setHasUpdates(false);
+				}}
+				onCancel={() => setConfirmModal({ open: false })}
+			>
+				{__(
+					'保存されていない変更があります。続行しますか ？',
+					// 'There are unsaved changes. Do you want to continue ?',
+					'vk-blocks-pro'
+				)}
+			</ConfirmDialog>
 		</div>
 	);
 }

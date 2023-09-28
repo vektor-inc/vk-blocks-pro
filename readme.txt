@@ -67,6 +67,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Table of Contents ] Fixed the issue with inner blocks not working correctly.
+
 = 1.62.0 =
 [ Add Block ][ Blog Card (Pro) ] Add blog card block.
 [ Add Block ][ New Badge Block (Pro) ] Add a block to display recent posts.

@@ -47,10 +47,10 @@ export default function VariationName({
 	}, [blockName]);
 
 	return (
-		<>
+		<div>
+			<h4>{__('名前/固有ID (必須)', 'vk-blocks-pro')}</h4>
 			<TextControl
 				__nextHasNoMarginBottom
-				label={__('名前/固有ID (必須)', 'vk-blocks-pro')}
 				value={variation.name}
 				onChange={(value) => {
 					value = value.trim();
@@ -60,8 +60,8 @@ export default function VariationName({
 				placeholder={__('my-variation', 'vk-blocks-pro')}
 			/>
 			{!canSave && (
-				<p style={{ marginTop: '0', color: '#c00' }}>{errorMessage}</p>
+				<p className="block-variation-error-text">{errorMessage}</p>
 			)}
-		</>
+		</div>
 	);
 }

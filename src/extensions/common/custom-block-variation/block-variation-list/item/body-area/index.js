@@ -53,93 +53,121 @@ export const BodyArea = ({
 				borderTop: '1px solid #ccc',
 			}}
 		>
-			<TextControl
-				__nextHasNoMarginBottom
-				label={__('タイトル (必須)', 'vk-blocks-pro')}
-				value={variationState[index].title}
-				onChange={(value) => onChange('title', value)}
-				placeholder={__('マイバリエーション', 'vk-blocks-pro')}
-			/>
-			{!variationState[index].title && (
-				<p style={{ marginTop: '0', color: '#c00' }}>
-					{__('title is required', 'vk-blocks-pro')}
-				</p>
-			)}
-			<TextControl
-				__nextHasNoMarginBottom
-				label={__('説明', 'vk-blocks-pro')}
-				value={variationState[index].description}
-				onChange={(value) => onChange('description', value)}
-			/>
-			<h4>{__('スコープ (必須)', 'vk-blocks-pro')}</h4>
-			{SCOPE_OPTIONS.filter((scopeOption) =>
-				support.scope.includes(scopeOption.name)
-			).map((scopeOption) => (
-				<CheckboxControl
-					key={scopeOption.name}
-					__nextHasNoMarginBottom
-					checked={variationState[index].scope?.includes(
-						scopeOption.name
-					)}
-					help={scopeOption.help}
-					label={scopeOption.label}
-					onChange={(isChecked) => {
-						const newScope = isChecked
-							? [
-									...(variationState[index].scope || []),
-									scopeOption.name,
-							  ]
-							: variationState[index].scope.filter(
-									(item) => item !== scopeOption.name
-							  );
-						onChange('scope', newScope);
-					}}
-				/>
-			))}
-			{variationState[index].scope.length === 0 && (
-				<p style={{ marginTop: '0', color: '#c00' }}>
-					{__('scope is required', 'vk-blocks-pro')}
-				</p>
-			)}
-			{variationState[index].scope.includes('inserter') && (
-				<>
-					<h4>{__('Category')}</h4>
-					{_getCategories.map((blockCategory) => (
-						<RadioControl
-							key={blockCategory.slug}
-							selected={variationState[index].category}
-							options={[
-								{
-									label: blockCategory.title,
-									value: blockCategory.slug,
-								},
-							]}
-							onChange={(value) => onChange('category', value)}
-						/>
-					))}
-				</>
-			)}
-			<TextControl
-				__nextHasNoMarginBottom
-				label={__('アイコン', 'vk-blocks-pro')}
-				value={variationState[index].icon}
-				onChange={(value) => onChange('icon', value)}
-				placeholder="embed-generic"
-			/>
 			<div>
-				<ExternalLink
-					href="https://developer.wordpress.org/resource/dashicons/#embed-generic"
-					target="_blank"
-					rel="noreferrer"
-				>
-					{__('Dashicons リスト', 'vk-blocks-pro')}
-				</ExternalLink>
+				<h4>{__('タイトル (必須)', 'vk-blocks-pro')}</h4>
+				<TextControl
+					__nextHasNoMarginBottom
+					value={variationState[index].title}
+					onChange={(value) => onChange('title', value)}
+					placeholder={__('マイバリエーション', 'vk-blocks-pro')}
+				/>
+				{!variationState[index].title && (
+					<p
+						className="block-variation-error-text"
+						style={{ marginTop: '0', color: '#c00' }}
+					>
+						{__('title is required', 'vk-blocks-pro')}
+					</p>
+				)}
 			</div>
-			<FormTokenField
-				label={__('キーワード', 'vk-blocks-pro')}
-				value={variationState[index].keywords || []}
-				onChange={(value) => onChange('keywords', value)}
-			/>
+			<div>
+				<h4>{__('説明', 'vk-blocks-pro')}</h4>
+				<TextControl
+					__nextHasNoMarginBottom
+					value={variationState[index].description}
+					onChange={(value) => onChange('description', value)}
+				/>
+			</div>
+			<div>
+				<h4>{__('スコープ (必須)', 'vk-blocks-pro')}</h4>
+				<p style={{ marginTop: '0' }}>
+					{__(
+						'登録したバリエーションをどこに表示するかを設定できます。表示した場所から呼び出せます。',
+						'vk-blocks-pro'
+					)}
+				</p>
+				{SCOPE_OPTIONS.filter((scopeOption) =>
+					support.scope.includes(scopeOption.name)
+				).map((scopeOption) => (
+					<CheckboxControl
+						key={scopeOption.name}
+						__nextHasNoMarginBottom
+						checked={variationState[index].scope?.includes(
+							scopeOption.name
+						)}
+						help={scopeOption.help}
+						label={scopeOption.label}
+						onChange={(isChecked) => {
+							const newScope = isChecked
+								? [
+										...(variationState[index].scope || []),
+										scopeOption.name,
+								  ]
+								: variationState[index].scope.filter(
+										(item) => item !== scopeOption.name
+								  );
+							onChange('scope', newScope);
+						}}
+					/>
+				))}
+				{variationState[index].scope.length === 0 && (
+					<p className="block-variation-error-text">
+						{__('scope is required', 'vk-blocks-pro')}
+					</p>
+				)}
+			</div>
+			{variationState[index].scope.includes('inserter') && (
+				<div>
+					<h4>{__('Category')}</h4>
+					<div className="block-variation-category-list">
+						{_getCategories.map((blockCategory) => (
+							<RadioControl
+								key={blockCategory.slug}
+								selected={variationState[index].category}
+								options={[
+									{
+										label: blockCategory.title,
+										value: blockCategory.slug,
+									},
+								]}
+								onChange={(value) =>
+									onChange('category', value)
+								}
+							/>
+						))}
+					</div>
+				</div>
+			)}
+			<div>
+				<h4>{__('アイコン', 'vk-blocks-pro')}</h4>
+				<TextControl
+					__nextHasNoMarginBottom
+					value={variationState[index].icon}
+					onChange={(value) => onChange('icon', value)}
+					placeholder="embed-generic"
+					help={__(
+						'アイコンの名前は「dashicons-」を省いた英数字を入力してください。 例: embed-generic',
+						'vk-blocks-pro'
+					)}
+				/>
+				<div>
+					<ExternalLink
+						href="https://developer.wordpress.org/resource/dashicons/#embed-generic"
+						target="_blank"
+						rel="noreferrer"
+					>
+						{__('Dashicons リスト', 'vk-blocks-pro')}
+					</ExternalLink>
+				</div>
+			</div>
+			<div>
+				<h4>{__('キーワード', 'vk-blocks-pro')}</h4>
+				<FormTokenField
+					label={__('キーワードを追加', 'vk-blocks-pro')}
+					value={variationState[index].keywords || []}
+					onChange={(value) => onChange('keywords', value)}
+				/>
+			</div>
 		</VStack>
 	);
 };

@@ -9,6 +9,7 @@ import {
 	ToolbarGroup,
 	ToolbarButton,
 	Spinner,
+	ExternalLink,
 } from '@wordpress/components';
 import {
 	InspectorControls,
@@ -157,6 +158,27 @@ export default function BlogCardWrapperEdit(props) {
 								>
 									{__('バリエーション設定', 'vk-blocks-pro')}
 								</Button>
+								<p style={{ marginTop: '8px' }}>
+									{__(
+										'現在のブロック設定をブロックバリエーションとして登録できます。',
+										'vk-blocks-pro'
+									)}
+									<br />
+									<ExternalLink
+										href={__(
+											'https://ja.wordpress.org/team/handbook/block-editor/reference-guides/block-api/block-variations/',
+											// 'https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/',
+											'vk-blocks-pro'
+										)}
+										target="_blank"
+										rel="noreferrer"
+									>
+										{__(
+											'ブロックバリエーションについてさらに詳しく',
+											'vk-blocks-pro'
+										)}
+									</ExternalLink>
+								</p>
 								{showPatternsExplorer && (
 									<VariationExplorerModal
 										onModalClose={() =>

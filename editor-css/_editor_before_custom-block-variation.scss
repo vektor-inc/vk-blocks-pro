@@ -21,4 +21,18 @@
 		flex-shrink: 0;
 		position: relative;
 	}
+	h4 {
+		margin-top: 0;
+		margin-bottom: 12px;
+	}
+	.block-variation-error-text {
+		margin-top: 0;
+		margin-bottom: 0;
+		color: #c00;
+	}
+	.block-variation-category-list {
+		.components-base-control {
+			margin-bottom: 12px;
+		}
+	}
 }

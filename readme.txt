@@ -67,6 +67,7 @@ e.g.
 
 == Changelog ==
 
+
 [ Bug fix ][ Table of Contents ] Fixed the issue with inner blocks not working correctly.
 
 = 1.62.0 =

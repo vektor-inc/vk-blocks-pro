@@ -67,6 +67,8 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Blog Card (Pro) ] Add block variation function.
+
 = 1.62.0 =
 [ Add Block ][ Blog Card (Pro) ] Add blog card block.
 [ Add Block ][ New Badge Block (Pro) ] Add a block to display recent posts.

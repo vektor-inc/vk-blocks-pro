@@ -30,11 +30,11 @@ export const SCOPE_OPTIONS = [
 	{
 		name: 'block',
 		label: __('ブロック', 'vk-blocks-pro'),
-		help: __('バリエーションピッカーに表示されます', 'vk-blocks-pro'),
+		help: __('バリエーションピッカーに表示されます。', 'vk-blocks-pro'),
 	},
 	{
 		name: 'transform',
 		label: __('変換', 'vk-blocks-pro'),
-		help: __('ブロックバリエーション変換で表示されます', 'vk-blocks-pro'),
+		help: __('ブロックバリエーション変換で表示されます。', 'vk-blocks-pro'),
 	},
 ];

@@ -26,7 +26,7 @@
 		margin-bottom: 12px;
 	}
 	.block-variation-error-text {
-		margin-top: 0;
+		margin-top: 8px;
 		margin-bottom: 0;
 		color: #c00;
 	}
@@ -34,5 +34,11 @@
 		.components-base-control {
 			margin-bottom: 12px;
 		}
+	}
+	.components-base-control + .components-base-control{
+		margin-top: 8px;
+	}
+	.components-form-token-field__label{
+		font-size: 12px;	
 	}
 }

@@ -65,7 +65,7 @@ export const returnHtml = (sources, attributes, className) => {
 
 			let preNumber = '';
 
-			if (level === 1 || level === 2) {
+			if (level === 2) {
 				h2Count++;
 				preNumber = h2Count;
 

@@ -1,7 +1,13 @@
 /**
  * WordPress dependencies
  */
-import { Button, Flex, FlexItem, Dashicon } from '@wordpress/components';
+import {
+	Button,
+	Flex,
+	FlexItem,
+	Dashicon,
+	__experimentalTruncate as Truncate,
+} from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
 /**
@@ -41,7 +47,7 @@ export const TitleArea = ({
 			}}
 		>
 			<Flex>
-				<FlexItem>
+				<FlexItem style={{ flex: '1' }}>
 					<Flex>
 						<FlexItem>
 							<Dashicon
@@ -61,8 +67,13 @@ export const TitleArea = ({
 								/>
 							</FlexItem>
 						)}
-						<FlexItem className="custom_block_variation_title-area-label">
-							{element.title}
+						<FlexItem
+							style={{ flex: '1' }}
+							className="custom_block_variation_title-area-label"
+						>
+							<Truncate numberOfLines={1}>
+								{element.title}
+							</Truncate>
 						</FlexItem>
 					</Flex>
 				</FlexItem>

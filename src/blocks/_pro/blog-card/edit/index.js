@@ -148,7 +148,7 @@ export default function BlogCardWrapperEdit(props) {
 								</p>
 							</>
 						)}
-						{!hasMultiSelection && canUserEdit && (
+						{hasInnerBlocks && !hasMultiSelection && canUserEdit && (
 							<>
 								<Button
 									onClick={() =>

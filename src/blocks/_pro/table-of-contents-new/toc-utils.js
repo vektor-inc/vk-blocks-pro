@@ -136,9 +136,10 @@ export const returnHtml = (sources, attributes, className) => {
 				: data.attributes.title;
 
 			// この条件分岐がないと見出し配置して文字列が undefinedの時にreplace対象がなくてエディタがクラッシュする
-			if (content) {
-				content = content.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '');
-			}
+			content =
+				typeof content === 'string'
+					? content.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '')
+					: '';
 
 			return (
 				<li

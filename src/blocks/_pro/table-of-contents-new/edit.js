@@ -13,7 +13,7 @@ import {
 import { useCurrentBlocks, useBlocksByName } from '@vkblocks/utils/hooks';
 
 export default function TOCEdit(props) {
-	const { attributes, setAttributes, className } = props;
+	const { attributes, setAttributes, className, clientId } = props;
 	const { style, open, renderHtml } = attributes;
 	const blockProps = useBlockProps({
 		className: `vk_tableOfContents vk_tableOfContents-style-${style} tabs`,
@@ -27,19 +27,13 @@ export default function TOCEdit(props) {
 		if (!findBlocks) {
 			return;
 		}
+		const { updateBlockAttributes } = dispatch('core/block-editor');
+		const { getBlockOrder, getBlockRootClientId } =
+			select('core/block-editor');
 
+		const headingBlocks = ['core/heading', 'vk-blocks/heading'];
+		const hasInnerBlocks = ['vk-blocks/outer', 'core/cover', 'core/group'];
 		blocks.forEach(function (block) {
-			const { updateBlockAttributes } = dispatch('core/block-editor');
-			const { getBlockOrder, getBlockRootClientId } =
-				select('core/block-editor');
-
-			const headingBlocks = ['core/heading', 'vk-blocks/heading'];
-			const hasInnerBlocks = [
-				'vk-blocks/outer',
-				'core/cover',
-				'core/group',
-			];
-
 			// 見出しにカスタムIDを追加
 			if (
 				block.attributes.anchor === undefined &&
@@ -63,49 +57,39 @@ export default function TOCEdit(props) {
 					}
 				});
 			}
+		});
+		// 目次ブロックをアップデート
+		const blocksOrder = getBlockOrder();
+		const headings = getHeadings(headingBlocks);
+		const innerHeadings = getInnerHeadings(headingBlocks, hasInnerBlocks);
+		const allHeadings = headings.concat(innerHeadings);
 
-			// 目次ブロックをアップデート
-			if (
-				isAllowedBlock(block.name, ['vk-blocks/table-of-contents-new'])
-			) {
-				const blocksOrder = getBlockOrder();
-				const headings = getHeadings(headingBlocks);
-				const innerHeadings = getInnerHeadings(
-					headingBlocks,
-					hasInnerBlocks
-				);
-				const allHeadings = headings.concat(innerHeadings);
+		const allHeadingsSorted = allHeadings.map((heading) => {
+			const index = blocksOrder.indexOf(heading.clientId);
+			const rootIndex = blocksOrder.indexOf(
+				getBlockRootClientId(heading.clientId)
+			);
+			let finalIndex;
 
-				const allHeadingsSorted = allHeadings.map((heading) => {
-					const index = blocksOrder.indexOf(heading.clientId);
-					const rootIndex = blocksOrder.indexOf(
-						getBlockRootClientId(heading.clientId)
-					);
-					let finalIndex;
-
-					if (index >= 0) {
-						finalIndex = index;
-					} else if (rootIndex >= 0) {
-						finalIndex = rootIndex;
-					}
-
-					return { index: finalIndex, block: heading };
-				});
-				allHeadingsSorted.sort(
-					(first, second) => first.index - second.index
-				);
-
-				const render = returnHtml(
-					allHeadingsSorted,
-					block.attributes,
-					className,
-					block.attributes.open
-				);
-
-				updateBlockAttributes(block.clientId, {
-					renderHtml: render,
-				});
+			if (index >= 0) {
+				finalIndex = index;
+			} else if (rootIndex >= 0) {
+				finalIndex = rootIndex;
 			}
+
+			return { index: finalIndex, block: heading };
+		});
+		allHeadingsSorted.sort((first, second) => first.index - second.index);
+
+		const render = returnHtml(
+			allHeadingsSorted,
+			attributes,
+			className,
+			attributes.open
+		);
+
+		updateBlockAttributes(clientId, {
+			renderHtml: render,
 		});
 	}, [blocks]);
 

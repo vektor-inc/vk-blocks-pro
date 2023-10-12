@@ -66,7 +66,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-
+[ Bug fix ][ Table of Contents ] Fixed the issue with inner blocks not working correctly.
 [ Add Function ][ Blog Card (Pro) ] Add block variation function.
 
 = 1.62.0 =

@@ -14,11 +14,11 @@ export default function PatternExplorerSidebar(props) {
 	const patternCategories = [
 		{
 			name: 'create',
-			label: __('作成', 'vk-blocks-pro'),
+			label: __('Create', 'vk-blocks-pro'),
 		},
 		{
 			name: 'registered',
-			label: __('登録済み', 'vk-blocks-pro'),
+			label: __('Registered', 'vk-blocks-pro'),
 		},
 	];
 	const baseClassName = 'block-editor-block-patterns-explorer__sidebar';
@@ -53,7 +53,7 @@ export default function PatternExplorerSidebar(props) {
 			<ConfirmDialog
 				isOpen={confirmModal.open}
 				cancelButtonText={__('Cancel')}
-				confirmButtonText={__('続行', 'vk-blocks-pro')}
+				confirmButtonText={__('Continue', 'vk-blocks-pro')}
 				onConfirm={() => {
 					if (confirmModal.name) {
 						onClickCategory(confirmModal.name);
@@ -64,8 +64,7 @@ export default function PatternExplorerSidebar(props) {
 				onCancel={() => setConfirmModal({ open: false })}
 			>
 				{__(
-					'保存されていない変更があります。続行しますか ？',
-					// 'There are unsaved changes. Do you want to continue ?',
+					'There are unsaved changes. Do you want to continue ?',
 					'vk-blocks-pro'
 				)}
 			</ConfirmDialog>

@@ -156,25 +156,24 @@ export default function BlogCardWrapperEdit(props) {
 									}
 									variant="primary"
 								>
-									{__('バリエーション設定', 'vk-blocks-pro')}
+									{__('Variation settings', 'vk-blocks-pro')}
 								</Button>
 								<p style={{ marginTop: '8px' }}>
 									{__(
-										'現在のブロック設定をブロックバリエーションとして登録できます。',
+										'You can register the current block settings as block variations.',
 										'vk-blocks-pro'
 									)}
 									<br />
 									<ExternalLink
 										href={__(
-											'https://ja.wordpress.org/team/handbook/block-editor/reference-guides/block-api/block-variations/',
-											// 'https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/',
+											'https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/',
 											'vk-blocks-pro'
 										)}
 										target="_blank"
 										rel="noreferrer"
 									>
 										{__(
-											'ブロックバリエーションについてさらに詳しく',
+											'Learn more about block variations',
 											'vk-blocks-pro'
 										)}
 									</ExternalLink>

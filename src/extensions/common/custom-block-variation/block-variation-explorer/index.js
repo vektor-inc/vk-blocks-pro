@@ -17,7 +17,7 @@ function VariationExplorerModal(props) {
 	const [hasUpdates, setHasUpdates] = useState(false);
 	return (
 		<Modal
-			title={__('バリエーション設定', 'vk-blocks-pro')}
+			title={__('Variation settings', 'vk-blocks-pro')}
 			onRequestClose={onModalClose}
 			className="custom_block_variation_modal"
 			isFullScreen

@@ -48,7 +48,7 @@ export default function VariationName({
 
 	return (
 		<div>
-			<h4>{__('名前/固有ID (必須)', 'vk-blocks-pro')}</h4>
+			<h4>{__('Name/Unique ID (required)', 'vk-blocks-pro')}</h4>
 			<TextControl
 				__nextHasNoMarginBottom
 				value={variation.name}

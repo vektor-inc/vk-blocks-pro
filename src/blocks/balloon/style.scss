@@ -9,7 +9,7 @@
 
 	p {
 		color: initial; // カラーパレットのcolorがあたってしまうので初期化する
-		word-break: break-all;
+		word-break: keep-all;
 		&:first-of-type{
 			margin-top: 0;
 		}

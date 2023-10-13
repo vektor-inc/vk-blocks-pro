@@ -66,6 +66,8 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+[ Bug fix ][ Balloon ] Fixed word break position.
 [ Bug fix ][ Table of Contents ] Fixed the issue with inner blocks not working correctly.
 [ Add Function ][ Blog Card (Pro) ] Add block variation function.
 

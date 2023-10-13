@@ -40,8 +40,7 @@ export const DeleteButton = ({ index, variationState, setVariationState }) => {
 				}}
 			>
 				{__(
-					'このバリエーションを削除してもよろしいですか?',
-					// 'Are you sure you want to delete this variation?',
+					'Are you sure you want to delete this variation?',
 					'vk-blocks-pro'
 				)}
 			</ConfirmDialog>

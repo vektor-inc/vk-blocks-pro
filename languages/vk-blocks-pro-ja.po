@@ -824,6 +824,26 @@ msgid ""
 msgstr ""
 "データが古い場合はキャッシュクリアしてください。通常１時間で更新されます。"
 
+#: src/blocks/_pro/blog-card/edit/index.js:159
+#: src/extensions/common/custom-block-variation/block-variation-explorer/index.js:20
+msgid "Variation settings"
+msgstr "バリエーション設定"
+
+#: src/blocks/_pro/blog-card/edit/index.js:162
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:49
+msgid "You can register the current block settings as block variations."
+msgstr "現在のブロック設定をブロックバリエーションとして登録できます。"
+
+#: src/blocks/_pro/blog-card/edit/index.js:168
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:54
+msgid "https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/"
+msgstr "https://ja.wordpress.org/team/handbook/block-editor/reference-guides/block-api/block-variations/"
+
+#: src/blocks/_pro/blog-card/edit/index.js:175
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:61
+msgid "Learn more about block variations"
+msgstr "ブロックバリエーションについてさらに詳しく"
+
 #: src/blocks/_pro/blog-card/edit/index.js:92
 #, fuzzy
 #| msgid "Edit Lock"
@@ -2103,8 +2123,9 @@ msgid "Wide"
 msgstr "幅広"
 
 #: src/blocks/button/edit.js:384
+#: src/extensions/common/custom-block-variation/utils.js:31
 msgid "Block"
-msgstr "Block"
+msgstr "ブロック"
 
 #: src/blocks/button/edit.js:393
 msgid "Button Width:"
@@ -2854,6 +2875,122 @@ msgstr "新着表示"
 #: src/components/link-control/index.js:37
 msgid "Link target"
 msgstr "リンクターゲット"
+
+#: src/extensions/common/custom-block-variation/block-variation-explorer/sidebar.js:17
+msgid "Create"
+msgstr "作成"
+
+#: src/extensions/common/custom-block-variation/block-variation-explorer/sidebar.js:21
+msgid "Registered"
+msgstr "登録済み"
+
+#: src/extensions/common/custom-block-variation/block-variation-explorer/sidebar.js:56
+msgid "Continue"
+msgstr "続行"
+
+#: src/extensions/common/custom-block-variation/block-variation-explorer/sidebar.js:66
+msgid "There are unsaved changes. Do you want to continue ?"
+msgstr "保存されていない変更があります。続行しますか？"
+
+#: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:115
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:137
+msgid "scope is required"
+msgstr "スコープは必須です"
+
+#: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:121
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:143
+msgid "Category"
+msgstr "カテゴリー"
+
+#: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:148
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:175
+msgid "For the icon name, please enter alphanumeric characters without \"dashicons-\". Example: embed-generic"
+msgstr "アイコンの名前は「dashicons-」を省いた英数字を入力してください。 例: embed-generic"
+
+#: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:159
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:186
+msgid "Dashicons list"
+msgstr "ダッシュアイコンリスト"
+
+#: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:164
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:191
+msgid "Keyword"
+msgstr "キーワード"
+
+#: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:166
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:193
+msgid "Add keyword"
+msgstr "キーワードを追加"
+
+#: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:57
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:78
+msgid "Title (required)"
+msgstr "タイトル (必須)"
+
+#: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:62
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:85
+msgid "My variations"
+msgstr "マイバリエーション"
+
+#: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:69
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:89
+msgid "title is required"
+msgstr "タイトルは必須です"
+
+#: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:74
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:94
+msgid "Description"
+msgstr "説明"
+
+#: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:82
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:104
+msgid "Scope (required)"
+msgstr "スコープ (必須)"
+
+#: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:84
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:106
+msgid "You can set where registered variations are displayed. You can call it from the displayed location."
+msgstr "登録したバリエーションをどこに表示するかを設定できます。表示した場所から呼び出せます。"
+
+#: src/extensions/common/custom-block-variation/block-variation-list/item/title-area/delete-button/index.js:42
+msgid "Are you sure you want to delete this variation?"
+msgstr "このバリエーションを削除してもよろしいですか?"
+
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/variation-name/index.js:33
+msgid "name is required"
+msgstr "名前は必須です"
+
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/variation-name/index.js:51
+msgid "Name/Unique ID (required)"
+msgstr "名前/固有ID (必須)"
+
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/variation-name/index.js:60
+msgid "my-variation"
+msgstr "my-variation"
+
+#: src/extensions/common/custom-block-variation/utils.js:11
+msgid "Inserter"
+msgstr "インサーター"
+
+#: src/extensions/common/custom-block-variation/utils.js:13
+msgid "Displayed on the inserter. <Link>Learn more about inserters</Link>."
+msgstr "インサーターに表示されます。 <Link>インサーターについてさらに詳しく</Link>."
+
+#: src/extensions/common/custom-block-variation/utils.js:20
+msgid "https://wordpress.org/documentation/article/adding-a-new-block/#what-is-the-inserter"
+msgstr "https://ja.wordpress.org/support/article/adding-a-new-block/#%e3%82%a4%e3%83%b3%e3%82%b5%e3%83%bc%e3%82%bf%e3%83%bc%e3%81%a8%e3%81%af"
+
+#: src/extensions/common/custom-block-variation/utils.js:32
+msgid "It will appear in the variation picker."
+msgstr "バリエーションピッカーに表示されます。"
+
+#: src/extensions/common/custom-block-variation/utils.js:36
+msgid "Transform"
+msgstr "変換"
+
+#: src/extensions/common/custom-block-variation/utils.js:37
+msgid "Displayed in block variation transformation."
+msgstr "ブロックバリエーション変換で表示されます。"
 
 #: src/extensions/common/custom-css-extension/index.js:187
 msgid ""

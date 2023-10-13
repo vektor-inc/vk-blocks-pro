@@ -54,12 +54,12 @@ export const BodyArea = ({
 			}}
 		>
 			<div>
-				<h4>{__('タイトル (必須)', 'vk-blocks-pro')}</h4>
+				<h4>{__('Title (required)', 'vk-blocks-pro')}</h4>
 				<TextControl
 					__nextHasNoMarginBottom
 					value={variationState[index].title}
 					onChange={(value) => onChange('title', value)}
-					placeholder={__('マイバリエーション', 'vk-blocks-pro')}
+					placeholder={__('My variations', 'vk-blocks-pro')}
 				/>
 				{!variationState[index].title && (
 					<p
@@ -71,7 +71,7 @@ export const BodyArea = ({
 				)}
 			</div>
 			<div>
-				<h4>{__('説明', 'vk-blocks-pro')}</h4>
+				<h4>{__('Description', 'vk-blocks-pro')}</h4>
 				<TextControl
 					__nextHasNoMarginBottom
 					value={variationState[index].description}
@@ -79,10 +79,10 @@ export const BodyArea = ({
 				/>
 			</div>
 			<div>
-				<h4>{__('スコープ (必須)', 'vk-blocks-pro')}</h4>
+				<h4>{__('Scope (required)', 'vk-blocks-pro')}</h4>
 				<p style={{ marginTop: '0' }}>
 					{__(
-						'登録したバリエーションをどこに表示するかを設定できます。表示した場所から呼び出せます。',
+						'You can set where registered variations are displayed. You can call it from the displayed location.',
 						'vk-blocks-pro'
 					)}
 				</p>
@@ -139,14 +139,14 @@ export const BodyArea = ({
 				</div>
 			)}
 			<div>
-				<h4>{__('アイコン', 'vk-blocks-pro')}</h4>
+				<h4>{__('Icon', 'vk-blocks-pro')}</h4>
 				<TextControl
 					__nextHasNoMarginBottom
 					value={variationState[index].icon}
 					onChange={(value) => onChange('icon', value)}
 					placeholder="embed-generic"
 					help={__(
-						'アイコンの名前は「dashicons-」を省いた英数字を入力してください。 例: embed-generic',
+						'For the icon name, please enter alphanumeric characters without "dashicons-". Example: embed-generic',
 						'vk-blocks-pro'
 					)}
 				/>
@@ -156,14 +156,14 @@ export const BodyArea = ({
 						target="_blank"
 						rel="noreferrer"
 					>
-						{__('Dashicons リスト', 'vk-blocks-pro')}
+						{__('Dashicons list', 'vk-blocks-pro')}
 					</ExternalLink>
 				</div>
 			</div>
 			<div>
-				<h4>{__('キーワード', 'vk-blocks-pro')}</h4>
+				<h4>{__('Keyword', 'vk-blocks-pro')}</h4>
 				<FormTokenField
-					label={__('キーワードを追加', 'vk-blocks-pro')}
+					label={__('Add keyword', 'vk-blocks-pro')}
 					value={variationState[index].keywords || []}
 					onChange={(value) => onChange('keywords', value)}
 				/>

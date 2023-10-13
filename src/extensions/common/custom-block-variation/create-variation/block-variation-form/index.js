@@ -47,20 +47,19 @@ export default function VariationForm(props) {
 			<VStack spacing="3">
 				<p>
 					{__(
-						'現在のブロック設定をブロックバリエーションとして登録できます。',
+						'You can register the current block settings as block variations.',
 						'vk-blocks-pro'
 					)}
 					<ExternalLink
 						href={__(
-							'https://ja.wordpress.org/team/handbook/block-editor/reference-guides/block-api/block-variations/',
-							// 'https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/',
+							'https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/',
 							'vk-blocks-pro'
 						)}
 						target="_blank"
 						rel="noreferrer"
 					>
 						{__(
-							'ブロックバリエーションについてさらに詳しく',
+							'Learn more about block variations',
 							'vk-blocks-pro'
 						)}
 					</ExternalLink>
@@ -76,14 +75,14 @@ export default function VariationForm(props) {
 					/>
 				)}
 				<div>
-					<h4>{__('タイトル (必須)', 'vk-blocks-pro')}</h4>
+					<h4>{__('Title (required)', 'vk-blocks-pro')}</h4>
 					<TextControl
 						__nextHasNoMarginBottom
 						value={variation.title}
 						onChange={(value) => {
 							setVariation({ ...variation, title: value });
 						}}
-						placeholder={__('マイバリエーション', 'vk-blocks-pro')}
+						placeholder={__('My variations', 'vk-blocks-pro')}
 					/>
 					{!variation.title && (
 						<p className="block-variation-error-text">
@@ -92,7 +91,7 @@ export default function VariationForm(props) {
 					)}
 				</div>
 				<div>
-					<h4>{__('説明', 'vk-blocks-pro')}</h4>
+					<h4>{__('Description', 'vk-blocks-pro')}</h4>
 					<TextControl
 						__nextHasNoMarginBottom
 						value={variation.description}
@@ -102,10 +101,10 @@ export default function VariationForm(props) {
 					/>
 				</div>
 				<div>
-					<h4>{__('スコープ (必須)', 'vk-blocks-pro')}</h4>
+					<h4>{__('Scope (required)', 'vk-blocks-pro')}</h4>
 					<p style={{ marginTop: '0' }}>
 						{__(
-							'登録したバリエーションをどこに表示するかを設定できます。表示した場所から呼び出せます。',
+							'You can set where registered variations are displayed. You can call it from the displayed location.',
 							'vk-blocks-pro'
 						)}
 					</p>
@@ -165,7 +164,7 @@ export default function VariationForm(props) {
 					</div>
 				)}
 				<div>
-					<h4>{__('アイコン', 'vk-blocks-pro')}</h4>
+					<h4>{__('Icon', 'vk-blocks-pro')}</h4>
 					<TextControl
 						__nextHasNoMarginBottom
 						value={variation.icon}
@@ -174,7 +173,7 @@ export default function VariationForm(props) {
 						}}
 						placeholder="embed-generic"
 						help={__(
-							'アイコンの名前は「dashicons-」を省いた英数字を入力してください。 例: embed-generic',
+							'For the icon name, please enter alphanumeric characters without "dashicons-". Example: embed-generic',
 							'vk-blocks-pro'
 						)}
 					/>
@@ -184,14 +183,14 @@ export default function VariationForm(props) {
 							target="_blank"
 							rel="noreferrer"
 						>
-							{__('Dashicons リスト', 'vk-blocks-pro')}
+							{__('Dashicons list', 'vk-blocks-pro')}
 						</ExternalLink>
 					</div>
 				</div>
 				<div>
-					<h4>{__('キーワード', 'vk-blocks-pro')}</h4>
+					<h4>{__('Keyword', 'vk-blocks-pro')}</h4>
 					<FormTokenField
-						label={__('キーワードを追加', 'vk-blocks-pro')}
+						label={__('Add keyword', 'vk-blocks-pro')}
 						value={variation.keywords || []}
 						onChange={(value) => {
 							setVariation({ ...variation, keywords: value });

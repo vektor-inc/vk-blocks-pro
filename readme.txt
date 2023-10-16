@@ -16,31 +16,66 @@ This is a plugin that extends Gutenberg's blocks.
 This is a plugin that extends Gutenberg's blocks.
 
 [ Blocks ]
-* Slider
-* Staff
 * Alert
-* FAQ
-* Balloon
-* Flow
-* Page Content
+* Ballon
+* Border Box
 * Button
-* PR Blocks
-* PR Content
-* Border box
-* Title（with sub text）
+* Classic FAQ
+* New FAQ
+* Flow
+* Heading（with sub text）
+* Icon
+* Icon Outer
+* Page Content
+* PR Blocks (not recommended)
+* PR Content (not recommended)
 * Responsive Spacer
+* Staff (not recommended)
+* Page list from ancestor
+* Slider
+* Accordion [ Pro ]
 * Animation [ Pro ]
+* Archive list [ Pro ]
 * Blog Card [ Pro ]
 * Breadcrumb [ Pro ]
-* Card [ Pro ]
+* Button Outer [ Pro ]
+* Card [ Pro ] (not recommended)
+* Child page list [ Pro ]
 * Dynamic Text ( Post Type name / Ancestor Page name ) [ Pro ]
+* Icon Card [ Pro ] (not recommended)
+* Post list [ Pro ]
+* New Badge [ Pro ]
+* Selected Post List [ Pro ]
+* Step [ Pro ]
+* Table of Contents [ Pro ]
+* Taxonomy [ Pro ]
+* Timeline [ Pro ]
 * Grid Column [ Pro ]
 * Grid Column Card [ Pro ]
-* New Badge [ Pro ]
 * Outer [ Pro ]
-* Post List [ Pro ]
-* Step [ Pro ]
-* Timeline [ Pro ]
+
+[ Extensions ]
+* Hidden extension
+* Highlighter
+* Inline Font Size
+* Margin extension
+* Nowrap
+* Responsive BR
+* Custom CSS [ Pro ]
+
+[ Settings ]
+* Balloon
+* Custom Format [ Pro ]
+* Custom Block Style [ Pro ]
+* Common Margin
+* Load Separate
+* FAQ Block [ Pro ]
+* Custom CSS [ Pro ]
+* Block Manager
+* Block Style Manager
+
+[ Tools ]
+* Import Export
 
 [ Editing and correction ]
 

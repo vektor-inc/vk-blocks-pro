@@ -112,6 +112,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'balloon_meta_lists' => array(),
 					'disable_block_style_lists' => array(),
 					'icon_custom_lists' => array(),
+					'block_variation_lists' => array(),
 				),
 			),
 			// New FAQ アコーディオン機能 v0.46.0
@@ -811,6 +812,122 @@ class GetOptionsTest extends WP_UnitTestCase {
 				),
 				'correct' => array(),
 			),
+			// カスタムバリエーション
+			array(
+				'option_check_target' => 'block_variation_lists',
+				'option'  => array(
+					'balloon_border_width' => 2,
+					'margin_unit' => 'px',
+					'margin_size' => array(
+						'xl' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+							'custom' => 'var(--wp--custom--spacing--xx-small)',
+						),
+						'lg' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+							'custom' => 'var(--wp--custom--spacing--xx-small)',
+						),
+						'md' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+							'custom' => 'var(--wp--custom--spacing--xx-small)',
+						),
+						'sm' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+							'custom' => 'var(--wp--custom--spacing--xx-small)',
+						),
+						'xs' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+							'custom' => 'var(--wp--custom--spacing--xx-small)',
+						),
+					),
+					'load_separate_option' => true,
+					'vk_blocks_pro_license_key' => 'test_license_key',
+					'new_faq_accordion' => 'open',
+					'show_custom_css_editor_flag' => 'hide',
+					'custom_format_lists' => array(
+						array(
+							'title' => '書式設定1',
+							'font_weight_bold' => true,
+							'font_italic' => true,
+							'font_strikethrough' => true,
+							'color' => '#fff',
+							'background_color' => '#fff',
+							'is_active_highlighter' => true,
+							'highlighter' => '#fffd6b',
+							'font_size' => '#fff',
+							'nowrap' => true,
+							'class_name' => 'vk-format--1',
+							'custom_css' => '.vk-format--1 { border:1px red solid; }',
+						),
+						array(
+							'title' => '書式設定2',
+							'font_weight_bold' => true,
+							'font_italic' => true,
+							'font_strikethrough' => true,
+							'color' => '#fff',
+							'background_color' => '#fff',
+							'is_active_highlighter' => true,
+							'highlighter' => '#fffd6b',
+							'font_size' => '#fff',
+							'nowrap' => true,
+							'class_name' => 'vk-format--2',
+							'custom_css' => null,
+						),
+					),
+					'disable_block_lists' => array(
+						'vk-blocks/pr-blocks',
+						'vk-blocks/pr-content',
+						'vk-blocks/staff',
+						'vk-blocks/card',
+						'vk-blocks/icon-card',
+					),
+					'custom_block_style_lists' => array(
+						array(
+							'block_name'            => 'core/paragraph',
+							'property_name'         => 'vk-block-style-paragraph-1',
+							'property_label'        => '段落カスタムブロックスタイル１',
+							'property_inline_style' => '.vk-block-style-paragraph-1 { color:red; }',
+							'property_transform_inline_style' => '.editor-styles-wrapper .vk-block-style-paragraph-1 { color:red; }',
+						),
+					),
+					'balloon_meta_lists' => array(
+						array(
+							'name' => 'test-name-1',
+							'src'  => 'https://www.vektor-inc.co.jp/wp-content/uploads/2020/04/vws_logo_2020_og.png',
+						),
+					),
+					'disable_block_style_lists' => array(
+						array(
+							'block_name'=> 'core/table',
+							'property_name'=> array(
+								'vk-table-border-top-bottom',
+							),
+						),
+						array(
+							'block_name'=> 'core/image',
+							'property_name'=> array(
+								'vk-image-rounded',
+							),
+						),
+					),
+					'icon_custom_lists' => array(
+						'<i class="fa-brands fa-wordpress"></i>',
+						'<i class="fa-brands fa-discord"></i>',
+						'<i class="fa-brands fa-github"></i>',
+					),
+				),
+				'correct' => array(),
+			),
 			// 全てのオプション値を変更した時
 			array(
 				'option'  => array(
@@ -923,6 +1040,20 @@ class GetOptionsTest extends WP_UnitTestCase {
 						'<i class="fa-brands fa-discord"></i>',
 						'<i class="fa-brands fa-github"></i>',
 					),
+					'block_variation_lists' => array(
+						array(
+							'block_name'=> 'vk-blocks/blog-card',
+							'name'        => 'variation-name-1',
+							'title'       => 'variation-title-1',
+							'description' => 'variation-description-1',
+							'category'    => 'variation-category-1',
+							'icon'        => 'embed-generic',
+							'attributes'  => '{"style":{"spacing":{"padding":{"top":"1.5rem","right":"1.5rem","bottom":"1.5rem","left":"1.5rem"}},"border":{"color":"#0000001f","width":"1px","radius":"5px"}}}',
+							'innerBlocks' => '[["vk-blocks/blog-card-title",{"level":5,"isLink":true,"rel":"","linkTarget":"_self"},[]]]',
+							'scope'       => array('inserter','block'),
+							'keywords'    => array('variation-keywords-1', 'variation-keywords-2'),
+						),
+					),
 				),
 				'correct'  => array(
 					'balloon_border_width' => 2,
@@ -1033,6 +1164,20 @@ class GetOptionsTest extends WP_UnitTestCase {
 						'<i class="fa-brands fa-wordpress"></i>',
 						'<i class="fa-brands fa-discord"></i>',
 						'<i class="fa-brands fa-github"></i>',
+					),
+					'block_variation_lists' => array(
+						array(
+							'block_name'=> 'vk-blocks/blog-card',
+							'name'        => 'variation-name-1',
+							'title'       => 'variation-title-1',
+							'description' => 'variation-description-1',
+							'category'    => 'variation-category-1',
+							'icon'        => 'embed-generic',
+							'attributes'  => '{"style":{"spacing":{"padding":{"top":"1.5rem","right":"1.5rem","bottom":"1.5rem","left":"1.5rem"}},"border":{"color":"#0000001f","width":"1px","radius":"5px"}}}',
+							'innerBlocks' => '[["vk-blocks/blog-card-title",{"level":5,"isLink":true,"rel":"","linkTarget":"_self"},[]]]',
+							'scope'       => array('inserter','block'),
+							'keywords'    => array('variation-keywords-1', 'variation-keywords-2'),
+						),
 					),
 				),
 			),

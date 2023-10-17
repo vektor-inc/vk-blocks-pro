@@ -9,6 +9,7 @@ import {
 	ToolbarGroup,
 	ToolbarButton,
 	Spinner,
+	ExternalLink,
 } from '@wordpress/components';
 import {
 	InspectorControls,
@@ -21,6 +22,7 @@ import { edit } from '@wordpress/icons';
 import { useState } from '@wordpress/element';
 import { View } from '@wordpress/primitives';
 import { useSelect, useDispatch } from '@wordpress/data';
+import { store as coreStore } from '@wordpress/core-data';
 
 /**
  * Internal dependencies
@@ -28,9 +30,10 @@ import { useSelect, useDispatch } from '@wordpress/data';
 import BlogCardPlaceholder from './blog-card-placeholder';
 import useRemoteUrlData from '../api/use-rich-url-data';
 import fetchUrlData from '../api/fetch-url-data';
+import VariationExplorerModal from '@vkblocks/extensions/common/custom-block-variation/block-variation-explorer';
 
 export default function BlogCardWrapperEdit(props) {
-	const { attributes, setAttributes, clientId } = props;
+	const { name, attributes, setAttributes, clientId } = props;
 	const { url: attributesUrl } = attributes;
 	const [isEditingURL, setIsEditingURL] = useState(false);
 	const [url, setURL] = useState(attributesUrl);
@@ -41,6 +44,19 @@ export default function BlogCardWrapperEdit(props) {
 		[clientId]
 	);
 	const blockProps = useBlockProps();
+
+	const [showPatternsExplorer, setShowPatternsExplorer] = useState(false);
+	const hasMultiSelection = useSelect(
+		(select) => select(blockEditorStore).hasMultiSelection(),
+		[]
+	);
+	const { canUserEdit } = useSelect((select) => {
+		const { canUser } = select(coreStore);
+		const canEdit = canUser('update', 'settings');
+		return {
+			canUserEdit: canEdit,
+		};
+	}, []);
 
 	const { richData, isFetching } = useRemoteUrlData(
 		attributesUrl,
@@ -130,6 +146,48 @@ export default function BlogCardWrapperEdit(props) {
 										'vk-blocks-pro'
 									)}
 								</p>
+							</>
+						)}
+						{hasInnerBlocks && !hasMultiSelection && canUserEdit && (
+							<>
+								<Button
+									onClick={() =>
+										setShowPatternsExplorer(true)
+									}
+									variant="primary"
+								>
+									{__('Variation settings', 'vk-blocks-pro')}
+								</Button>
+								<p style={{ marginTop: '8px' }}>
+									{__(
+										'You can register the current block settings as block variations.',
+										'vk-blocks-pro'
+									)}
+									<br />
+									<ExternalLink
+										href={__(
+											'https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/',
+											'vk-blocks-pro'
+										)}
+										target="_blank"
+										rel="noreferrer"
+									>
+										{__(
+											'Learn more about block variations',
+											'vk-blocks-pro'
+										)}
+									</ExternalLink>
+								</p>
+								{showPatternsExplorer && (
+									<VariationExplorerModal
+										onModalClose={() =>
+											setShowPatternsExplorer(false)
+										}
+										setIsModalOpen={setShowPatternsExplorer}
+										blockName={name}
+										clientId={clientId}
+									/>
+								)}
 							</>
 						)}
 					</BaseControl>

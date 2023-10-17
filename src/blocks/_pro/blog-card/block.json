@@ -47,8 +47,8 @@
 		},
 		"html": false,
 		"vkBlocksBlockVariation": {
-			"excludeAttributes": [ "url" ],
-			"scope": [ "inserter", "block" ]
+			"excludeAttributes": ["url"],
+			"scope": ["inserter", "block"]
 		}
 	}
 }

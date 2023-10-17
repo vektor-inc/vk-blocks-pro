@@ -148,48 +148,55 @@ export default function BlogCardWrapperEdit(props) {
 								</p>
 							</>
 						)}
-						{hasInnerBlocks && !hasMultiSelection && canUserEdit && (
-							<>
-								<Button
-									onClick={() =>
-										setShowPatternsExplorer(true)
-									}
-									variant="primary"
-								>
-									{__('Variation settings', 'vk-blocks-pro')}
-								</Button>
-								<p style={{ marginTop: '8px' }}>
-									{__(
-										'You can register the current block settings as block variations.',
-										'vk-blocks-pro'
-									)}
-									<br />
-									<ExternalLink
-										href={__(
-											'https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/',
-											'vk-blocks-pro'
-										)}
-										target="_blank"
-										rel="noreferrer"
+						{hasInnerBlocks &&
+							!hasMultiSelection &&
+							canUserEdit && (
+								<>
+									<Button
+										onClick={() =>
+											setShowPatternsExplorer(true)
+										}
+										variant="primary"
 									>
 										{__(
-											'Learn more about block variations',
+											'Variation settings',
 											'vk-blocks-pro'
 										)}
-									</ExternalLink>
-								</p>
-								{showPatternsExplorer && (
-									<VariationExplorerModal
-										onModalClose={() =>
-											setShowPatternsExplorer(false)
-										}
-										setIsModalOpen={setShowPatternsExplorer}
-										blockName={name}
-										clientId={clientId}
-									/>
-								)}
-							</>
-						)}
+									</Button>
+									<p style={{ marginTop: '8px' }}>
+										{__(
+											'You can register the current block settings as block variations.',
+											'vk-blocks-pro'
+										)}
+										<br />
+										<ExternalLink
+											href={__(
+												'https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/',
+												'vk-blocks-pro'
+											)}
+											target="_blank"
+											rel="noreferrer"
+										>
+											{__(
+												'Learn more about block variations',
+												'vk-blocks-pro'
+											)}
+										</ExternalLink>
+									</p>
+									{showPatternsExplorer && (
+										<VariationExplorerModal
+											onModalClose={() =>
+												setShowPatternsExplorer(false)
+											}
+											setIsModalOpen={
+												setShowPatternsExplorer
+											}
+											blockName={name}
+											clientId={clientId}
+										/>
+									)}
+								</>
+							)}
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>

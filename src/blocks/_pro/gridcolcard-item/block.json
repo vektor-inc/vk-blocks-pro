@@ -5,9 +5,7 @@
 	"textdomain": "vk-blocks-pro",
 	"category": "vk-blocks-cat-layout",
 	"description": "It is a block of single column of Grid Column Card.",
-	"parent": [
-		"vk-blocks/gridcolcard"
-	],
+	"parent": ["vk-blocks/gridcolcard"],
 	"supports": {
 		"anchor": true,
 		"html": false,
@@ -72,5 +70,4 @@
 			"default": false
 		}
 	}
-
 }

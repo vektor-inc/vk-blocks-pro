@@ -5,7 +5,7 @@
 	"title": "Blog Card Site Title",
 	"description": "Displays the site title obtained from the URL.",
 	"textdomain": "vk-blocks-pro",
-	"ancestor": [ "vk-blocks/blog-card" ],
+	"ancestor": ["vk-blocks/blog-card"],
 	"attributes": {
 		"level": {
 			"type": "number",
@@ -28,9 +28,7 @@
 			"default": "_self"
 		}
 	},
-	"usesContext": [
-		"vk-blocks/blog-card-url"
-	],
+	"usesContext": ["vk-blocks/blog-card-url"],
 	"supports": {
 		"color": {
 			"gradients": true,

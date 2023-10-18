@@ -102,11 +102,11 @@ e.g.
 
 == Changelog ==
 
-[ Bug fix ][ Balloon ] Fixed word break position.
-[ Bug fix ][ Table of Contents ] Fixed the issue with inner blocks not working correctly.
+= 1.63.0 =
 [ Add Function ][ Blog Card (Pro) ] Add block variation function.
 [ Add filter ][ Post List (Pro) ] Add vk_blocks_post_list_query_args filter hook.
-
+[ Bug fix ][ Balloon ] Fixed word break position.
+[ Bug fix ][ Table of Contents ] Fixed the issue with inner blocks not working correctly.
 [ Bug fix ][ Outer (Pro) ] Fixed a bug in the initial setting of divider for each device.
 
 = 1.62.0 =

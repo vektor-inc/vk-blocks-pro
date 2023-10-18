@@ -9,9 +9,8 @@
  * Add Block Category
  *
  * @param array  $categories categories.
- * @param string $post post.
  */
-function vk_blocks_blocks_categories( $categories, $post ) {
+function vk_blocks_blocks_categories( $categories ) {
 	global $vk_blocks_prefix;
 
 	foreach ( $categories as $key => $value ) {

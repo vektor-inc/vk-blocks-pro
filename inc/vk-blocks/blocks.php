@@ -8,7 +8,7 @@
 /**
  * Add Block Category
  *
- * @param array  $categories categories.
+ * @param array $categories categories.
  */
 function vk_blocks_blocks_categories( $categories ) {
 	global $vk_blocks_prefix;

@@ -54,7 +54,6 @@ class VK_Blocks_Options {
 
 			// 各マージンサイズの値を処理
 			foreach ( $options['margin_size'] as $key => $value ) {
-
 				if ( ! empty( $options['margin_size'][ $key ]['custom'] ) ) {
 
 					// 許可されている文字列のみ使用されている部分のみ抽出

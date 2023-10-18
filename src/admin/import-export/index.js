@@ -131,6 +131,19 @@ export const OPTION_DEFAULT_SETTINGS = [
 		],
 		isImport: true,
 	},
+	{
+		groupTitle: __('Custom Block Variation Setting', 'vk-blocks-pro'),
+		options: [
+			{
+				name: 'block_variation_lists',
+				associativeArray: true,
+				uniqKey: 'name',
+				importMethod: 'add',
+			},
+		],
+		isImport: !!vkBlocksObject.isPro,
+		isShow: !!vkBlocksObject.isPro,
+	},
 ];
 
 export default function AdminImportExport(props) {

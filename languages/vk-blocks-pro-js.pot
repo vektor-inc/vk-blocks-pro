@@ -24,7 +24,9 @@ msgstr ""
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:63
 #: src/admin/custom-format/add-item.js:152
 #: src/admin/custom-format/delete-item-button.js:63
-#: src/admin/import-export/import-form.js:510
+#: src/admin/import-export/import-form.js:468
+#: src/extensions/common/custom-block-variation/block-variation-explorer/sidebar.js:55
+#: src/extensions/common/custom-block-variation/block-variation-list/item/title-area/delete-button/index.js:32
 msgid "Cancel"
 msgstr ""
 
@@ -33,6 +35,7 @@ msgstr ""
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:75
 #: src/admin/custom-format/delete-item-button.js:74
 #: src/blocks/_pro/gridcolcard/edit-common.js:158
+#: src/extensions/common/custom-block-variation/block-variation-list/item/title-area/delete-button/index.js:33
 msgid "Delete"
 msgstr ""
 
@@ -93,7 +96,8 @@ msgstr ""
 
 #: src/admin/custom-block-style/add-button/index.js:141
 #: src/admin/custom-format/add-item.js:164
-#: src/admin/import-export/import-form.js:346
+#: src/admin/import-export/import-form.js:304
+#: src/extensions/common/custom-block-variation/create-variation/index.js:107
 msgid "Add"
 msgstr ""
 
@@ -115,6 +119,7 @@ msgstr ""
 
 #: src/admin/custom-block-style/add-button/set-property-name.js:33
 #: src/admin/custom-format/add-item.js:70
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/variation-name/index.js:22
 msgid "Please enter a string"
 msgstr ""
 
@@ -129,6 +134,7 @@ msgstr ""
 
 #: src/admin/custom-block-style/add-button/set-property-name.js:64
 #: src/admin/custom-format/add-item.js:87
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/variation-name/index.js:39
 msgid "Already registered"
 msgstr ""
 
@@ -188,6 +194,7 @@ msgid "If this Block Style is used for saved content, the style may change."
 msgstr ""
 
 #: src/admin/custom-block-style/item/title-area/index.js:66
+#: src/extensions/common/custom-block-variation/block-variation-list/item/title-area/index.js:88
 msgid "Edit"
 msgstr ""
 
@@ -218,6 +225,7 @@ msgid "Toolbar title (Changeable)"
 msgstr ""
 
 #: src/admin/custom-format/add-item.js:74
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/variation-name/index.js:26
 msgid ""
 "Must begin with an alphabetic character and only alphanumeric characters "
 "and hyphens may be used."
@@ -338,44 +346,44 @@ msgstr ""
 msgid "Toggle all"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:196
+#: src/admin/import-export/import-form.js:154
 msgid "Invalid JSON file"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:199
+#: src/admin/import-export/import-form.js:157
 msgid "Unknown error"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:263
+#: src/admin/import-export/import-form.js:221
 msgid "Import data confirmation"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:270
+#: src/admin/import-export/import-form.js:228
 msgid "No import data"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:305
+#: src/admin/import-export/import-form.js:263
 #. Import %s
 msgid "Import %s"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:332
+#: src/admin/import-export/import-form.js:290
 msgid "Import method"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:353
+#: src/admin/import-export/import-form.js:311
 msgid "Override"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:456
+#: src/admin/import-export/import-form.js:414
 msgid "The following data will not be imported because the identifiers are covered."
 msgstr ""
 
-#: src/admin/import-export/import-form.js:525
+#: src/admin/import-export/import-form.js:483
 msgid "Import"
 msgstr ""
 
-#: src/admin/import-export/import-form.js:535
+#: src/admin/import-export/import-form.js:493
 msgid "Import Success"
 msgstr ""
 
@@ -383,12 +391,16 @@ msgstr ""
 msgid "Font Awesome Custom Lists Setting"
 msgstr ""
 
-#: src/admin/import-export/index.js:141
-msgid "Import Export Tool"
+#: src/admin/import-export/index.js:135
+msgid "Custom Block Variation Setting"
 msgstr ""
 
 #: src/admin/import-export/index.js:15
 msgid "License Key"
+msgstr ""
+
+#: src/admin/import-export/index.js:154
+msgid "Import Export Tool"
 msgstr ""
 
 #: src/admin/import-export/index.js:65
@@ -543,10 +555,12 @@ msgid "Enable accordion and default close"
 msgstr ""
 
 #: src/admin/save-button.js:83
+#: src/extensions/common/custom-block-variation/block-variation-list/index.js:59
 msgid "Save setting"
 msgstr ""
 
 #: src/admin/save-button.js:88
+#: src/extensions/common/custom-block-variation/save-button/index.js:75
 msgid "Save Success"
 msgstr ""
 
@@ -706,7 +720,7 @@ msgstr ""
 #: src/blocks/_pro/blog-card-site-logo/edit.js:33
 #: src/blocks/_pro/blog-card-site-title/edit.js:67
 #: src/blocks/_pro/blog-card-title/edit.js:65
-#: src/blocks/_pro/blog-card/edit/index.js:115
+#: src/blocks/_pro/blog-card/edit/index.js:131
 msgid "Settings"
 msgstr ""
 
@@ -806,22 +820,44 @@ msgstr ""
 msgid "Choose a pattern. The original block settings will be cleared."
 msgstr ""
 
-#: src/blocks/_pro/blog-card/edit/index.js:109
-msgid "Replace"
+#: src/blocks/_pro/blog-card/edit/index.js:108
+msgid "Edit URL"
 msgstr ""
 
 #: src/blocks/_pro/blog-card/edit/index.js:125
+msgid "Replace"
+msgstr ""
+
+#: src/blocks/_pro/blog-card/edit/index.js:141
 msgid "Clear cache"
 msgstr ""
 
-#: src/blocks/_pro/blog-card/edit/index.js:128
+#: src/blocks/_pro/blog-card/edit/index.js:144
 msgid ""
 "If the data is old, please clear the cache. It is usually updated every "
 "hour."
 msgstr ""
 
-#: src/blocks/_pro/blog-card/edit/index.js:92
-msgid "Edit URL"
+#: src/blocks/_pro/blog-card/edit/index.js:159
+#: src/extensions/common/custom-block-variation/block-variation-explorer/index.js:20
+msgid "Variation settings"
+msgstr ""
+
+#: src/blocks/_pro/blog-card/edit/index.js:162
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:49
+msgid "You can register the current block settings as block variations."
+msgstr ""
+
+#: src/blocks/_pro/blog-card/edit/index.js:168
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:54
+msgid ""
+"https://developer.wordpress.org/block-editor/reference-guides/block-api/"
+"block-variations/"
+msgstr ""
+
+#: src/blocks/_pro/blog-card/edit/index.js:175
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:61
+msgid "Learn more about block variations"
 msgstr ""
 
 #: src/blocks/_pro/blog-card/edit/url-placeholder.js:23
@@ -1389,6 +1425,8 @@ msgstr ""
 #: src/blocks/heading/edit.js:335
 #: src/blocks/icon/edit.js:269
 #: src/blocks/pr-content/edit.js:212
+#: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:142
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:167
 #: src/utils/font-awesome-new.js:166
 msgid "Icon"
 msgstr ""
@@ -1749,7 +1787,7 @@ msgid "Ex,6:00AM"
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:108
-#: src/blocks/_pro/table-of-contents-new/edit.js:135
+#: src/blocks/_pro/table-of-contents-new/edit.js:119
 #: src/blocks/_pro/timeline-item/edit.js:74
 #: src/blocks/icon-outer/edit.js:229
 #: src/blocks/icon/edit.js:215
@@ -1762,7 +1800,7 @@ msgid "Outlined"
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:137
-#: src/blocks/_pro/table-of-contents-new/edit.js:145
+#: src/blocks/_pro/table-of-contents-new/edit.js:129
 #: src/blocks/_pro/timeline-item/edit.js:103
 #: src/blocks/heading/edit.js:264
 #: src/blocks/slider/edit.js:703
@@ -1783,39 +1821,39 @@ msgid "First Dot Number"
 msgstr ""
 
 #: src/blocks/_pro/table-of-contents-new/deprecated/0.59.1/save.js:19
-#: src/blocks/_pro/table-of-contents-new/edit.js:178
+#: src/blocks/_pro/table-of-contents-new/edit.js:162
 #: src/blocks/_pro/table-of-contents-new/save.js:16
 msgid "Table of Contents"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:117
+#: src/blocks/_pro/table-of-contents-new/edit.js:101
 msgid "Note on duplicating headings"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:122
+#: src/blocks/_pro/table-of-contents-new/edit.js:106
 msgid ""
 "If you duplicate a heading, the table of contents block will not work "
 "properly, please reassign the ID."
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:130
+#: src/blocks/_pro/table-of-contents-new/edit.js:114
 #: src/components/column-layout-control/index.js:69
 msgid "Display type"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:149
+#: src/blocks/_pro/table-of-contents-new/edit.js:133
 msgid "No frame"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:156
+#: src/blocks/_pro/table-of-contents-new/edit.js:140
 msgid "Default Display Status"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:164
+#: src/blocks/_pro/table-of-contents-new/edit.js:148
 msgid "OPEN"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:168
+#: src/blocks/_pro/table-of-contents-new/edit.js:152
 msgid "CLOSE"
 msgstr ""
 
@@ -2116,6 +2154,7 @@ msgid "Wide"
 msgstr ""
 
 #: src/blocks/button/edit.js:384
+#: src/extensions/common/custom-block-variation/utils.js:31
 msgid "Block"
 msgstr ""
 
@@ -2870,6 +2909,128 @@ msgstr ""
 
 #: src/components/link-control/index.js:37
 msgid "Link target"
+msgstr ""
+
+#: src/extensions/common/custom-block-variation/block-variation-explorer/sidebar.js:17
+msgid "Create"
+msgstr ""
+
+#: src/extensions/common/custom-block-variation/block-variation-explorer/sidebar.js:21
+msgid "Registered"
+msgstr ""
+
+#: src/extensions/common/custom-block-variation/block-variation-explorer/sidebar.js:56
+msgid "Continue"
+msgstr ""
+
+#: src/extensions/common/custom-block-variation/block-variation-explorer/sidebar.js:66
+msgid "There are unsaved changes. Do you want to continue ?"
+msgstr ""
+
+#: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:115
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:137
+msgid "scope is required"
+msgstr ""
+
+#: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:121
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:143
+msgid "Category"
+msgstr ""
+
+#: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:148
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:175
+msgid ""
+"For the icon name, please enter alphanumeric characters without "
+"\"dashicons-\". Example: embed-generic"
+msgstr ""
+
+#: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:159
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:186
+msgid "Dashicons list"
+msgstr ""
+
+#: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:164
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:191
+msgid "Keyword"
+msgstr ""
+
+#: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:166
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:193
+msgid "Add keyword"
+msgstr ""
+
+#: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:57
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:78
+msgid "Title (required)"
+msgstr ""
+
+#: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:62
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:85
+msgid "My variations"
+msgstr ""
+
+#: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:69
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:89
+msgid "title is required"
+msgstr ""
+
+#: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:74
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:94
+msgid "Description"
+msgstr ""
+
+#: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:82
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:104
+msgid "Scope (required)"
+msgstr ""
+
+#: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:84
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:106
+msgid ""
+"You can set where registered variations are displayed. You can call it from "
+"the displayed location."
+msgstr ""
+
+#: src/extensions/common/custom-block-variation/block-variation-list/item/title-area/delete-button/index.js:42
+msgid "Are you sure you want to delete this variation?"
+msgstr ""
+
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/variation-name/index.js:33
+msgid "name is required"
+msgstr ""
+
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/variation-name/index.js:51
+msgid "Name/Unique ID (required)"
+msgstr ""
+
+#: src/extensions/common/custom-block-variation/create-variation/block-variation-form/variation-name/index.js:60
+msgid "my-variation"
+msgstr ""
+
+#: src/extensions/common/custom-block-variation/utils.js:11
+msgid "Inserter"
+msgstr ""
+
+#: src/extensions/common/custom-block-variation/utils.js:13
+msgid "Displayed on the inserter. <Link>Learn more about inserters</Link>."
+msgstr ""
+
+#: src/extensions/common/custom-block-variation/utils.js:20
+msgid ""
+"https://wordpress.org/documentation/article/adding-a-new-block/#what-is-the-"
+"inserter"
+msgstr ""
+
+#: src/extensions/common/custom-block-variation/utils.js:32
+msgid "It will appear in the variation picker."
+msgstr ""
+
+#: src/extensions/common/custom-block-variation/utils.js:36
+msgid "Transform"
+msgstr ""
+
+#: src/extensions/common/custom-block-variation/utils.js:37
+msgid "Displayed in block variation transformation."
 msgstr ""
 
 #: src/extensions/common/custom-css-extension/index.js:187

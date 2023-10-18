@@ -44,6 +44,7 @@ import * as timelineItem from './_pro/timeline-item';
  */
 import '@vkblocks/extensions/common/custom-css-extension';
 import '@vkblocks/extensions/common/custom-format';
+import '@vkblocks/extensions/common/custom-block-variation';
 
 const vkblocksPro = [
 	accordion,

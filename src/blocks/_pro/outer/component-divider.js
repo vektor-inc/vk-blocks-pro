@@ -199,9 +199,15 @@ const componentDivider = (
 		if (levelSettingPerDevice) {
 			return (
 				<>
-					{level_pc && renderSVG(level_pc, 'upper', 'pc')}
-					{level_tablet && renderSVG(level_tablet, 'upper', 'tablet')}
-					{level_mobile && renderSVG(level_mobile, 'upper', 'mobile')}
+					{level_pc !== 0 &&
+						level_pc &&
+						renderSVG(level_pc, 'upper', 'pc')}
+					{level_tablet !== 0 &&
+						level_tablet &&
+						renderSVG(level_tablet, 'upper', 'tablet')}
+					{level_mobile !== 0 &&
+						level_mobile &&
+						renderSVG(level_mobile, 'upper', 'mobile')}
 				</>
 			);
 		}
@@ -210,9 +216,15 @@ const componentDivider = (
 		if (levelSettingPerDevice) {
 			return (
 				<>
-					{level_pc && renderSVG(level_pc, 'lower', 'pc')}
-					{level_tablet && renderSVG(level_tablet, 'lower', 'tablet')}
-					{level_mobile && renderSVG(level_mobile, 'lower', 'mobile')}
+					{level_pc !== 0 &&
+						level_pc &&
+						renderSVG(level_pc, 'lower', 'pc')}
+					{level_tablet !== 0 &&
+						level_tablet &&
+						renderSVG(level_tablet, 'lower', 'tablet')}
+					{level_mobile !== 0 &&
+						level_mobile &&
+						renderSVG(level_mobile, 'lower', 'mobile')}
 				</>
 			);
 		}

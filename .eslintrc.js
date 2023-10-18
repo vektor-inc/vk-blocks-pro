@@ -7,5 +7,6 @@ module.exports = {
 		camelcase: 'off',
 		'@wordpress/no-unsafe-wp-apis': 'off',
 		'@wordpress/i18n-translator-comments': 'off',
+		'react-hooks/exhaustive-deps': 'off',
 	},
 };

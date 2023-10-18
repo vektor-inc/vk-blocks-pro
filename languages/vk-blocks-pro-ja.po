@@ -403,6 +403,10 @@ msgstr "インポート成功"
 msgid "Font Awesome Custom Lists Setting"
 msgstr "Font Awesomeカスタムリスト設定"
 
+#: src/admin/import-export/index.js:135
+msgid "Custom Block Variation Setting"
+msgstr "カスタムブロックバリエーション設定"
+
 #: src/admin/import-export/index.js:141 inc/vk-blocks/admin/admin.php:119
 msgid "Import Export Tool"
 msgstr "インポート エクスポート ツール"
@@ -535,7 +539,7 @@ msgstr "単位"
 
 #: src/admin/new-faq.js:23
 msgid "Please specify a common accordion setting to be used in the FAQ block."
-msgstr ""
+msgstr "FAQ ブロックで使用する共通のアコーディオン設定を指定してください。"
 
 #: src/admin/new-faq.js:40 src/blocks/faq2/edit.js:45
 msgid "Disable accordion"

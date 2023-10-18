@@ -21,7 +21,7 @@ import { colorSlugToColorCode } from '@vkblocks/utils/color-slug-to-color-code';
 /**
  * External dependencies
  */
-import compareVersions from 'compare-versions';
+import { compareVersions } from 'compare-versions';
 
 const isValidBlockType = (name) => {
 	const validBlockTypes = ['core/list'];

@@ -5,7 +5,7 @@
 	"title": "Blog Card Excerpt",
 	"description": "Shows an excerpt retrieved from a URL.",
 	"textdomain": "vk-blocks-pro",
-	"ancestor": [ "vk-blocks/blog-card" ],
+	"ancestor": ["vk-blocks/blog-card"],
 	"attributes": {
 		"textAlign": {
 			"type": "string"
@@ -14,9 +14,7 @@
 			"type": "number"
 		}
 	},
-	"usesContext": [
-		"vk-blocks/blog-card-url"
-	],
+	"usesContext": ["vk-blocks/blog-card-url"],
 	"supports": {
 		"html": false,
 		"reusable": false,

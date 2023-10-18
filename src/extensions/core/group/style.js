@@ -68,14 +68,14 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 											inputClassName.split(' ');
 
 										const filterClassName =
-											inputClassName.filter(function (
-												name
-											) {
-												return (
-													-1 ===
-													name.indexOf('vk-has-')
-												);
-											});
+											inputClassName.filter(
+												function (name) {
+													return (
+														-1 ===
+														name.indexOf('vk-has-')
+													);
+												}
+											);
 
 										filterClassName.push(newClassName);
 

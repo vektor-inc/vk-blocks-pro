@@ -3,9 +3,7 @@
 	"name": "vk-blocks/dynamic-text",
 	"category": "vk-blocks-cat",
 	"title": "Dynamic Text",
-	"usesContext": [
-		"postId"
-	],
+	"usesContext": ["postId"],
 	"attributes": {
 		"textAlign": {
 			"type": "string",
@@ -44,10 +42,7 @@
 	"textdomain": "vk-blocks-pro",
 	"supports": {
 		"className": true,
-		"align": [
-			"wide",
-			"full"
-		],
+		"align": ["wide", "full"],
 		"anchor": true,
 		"html": false,
 		"color": {

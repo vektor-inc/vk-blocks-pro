@@ -8,7 +8,7 @@ import { createBlock, store as blocksStore } from '@wordpress/blocks';
 /**
  * External dependencies
  */
-import compareVersions from 'compare-versions';
+import { compareVersions } from 'compare-versions';
 
 // WP6.3以上か NOTE: WP6.2以下をサポートしなくなったら削除すること
 export const isLargerThanWp63 = () => {

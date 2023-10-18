@@ -188,6 +188,7 @@ class Vk_Blocks_PostList {
 		if ( ! empty( $date_query ) ) {
 			$args['date_query'] = $date_query;
 		}
+		$args = apply_filters( 'vk_post_list_query_args', $args, $attributes );
 		return new WP_Query( $args );
 	}
 

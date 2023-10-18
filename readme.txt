@@ -105,6 +105,7 @@ e.g.
 [ Bug fix ][ Balloon ] Fixed word break position.
 [ Bug fix ][ Table of Contents ] Fixed the issue with inner blocks not working correctly.
 [ Add Function ][ Blog Card (Pro) ] Add block variation function.
+[ Add filter ][ Post List (Pro) ] Add vk_blocks_post_list_query_args filter hook.
 
 [ Bug fix ][ Outer (Pro) ] Fixed a bug in the initial setting of divider for each device.
 

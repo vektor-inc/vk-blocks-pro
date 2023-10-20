@@ -116,6 +116,36 @@ class DynamicText extends WP_UnitTestCase {
 				'target_url' => get_permalink( $data['child_page_id'] ),
 				'correct'    => '<span class="vk_dynamicText wp-block-vk-blocks-dynamic-text">ancestor_page</span>',
 			),
+			// 親ページが無いときは何も返さない
+			array(
+				'attributes' => array(
+					'displayElement'           => 'parent-page',
+					'tagName'                  => 'h2',
+					'parentPageHiddenOption' => true,
+				),
+				'target_url' => get_permalink( $data['ancestor_page_id'] ),
+				'correct'    => null,
+			),
+			// 親ページのタイトル
+			array(
+				'attributes' => array(
+					'displayElement'           => 'parent-page',
+					'tagName'                  => 'h3',
+					'parentPageHiddenOption' => false,
+				),
+				'target_url' => get_permalink( $data['parent_page_id'] ),
+				'correct'    => '<h3 class="vk_dynamicText wp-block-vk-blocks-dynamic-text">ancestor_page</h3>',
+			),
+			// 親ページのタイトル（先祖ページ）
+			array(
+				'attributes' => array(
+					'displayElement'           => 'parent-page',
+					'tagName'                  => 'span',
+					'parentPageHiddenOption' => true,
+				),
+				'target_url' => get_permalink( $data['child_page_id'] ),
+				'correct'    => '<span class="vk_dynamicText wp-block-vk-blocks-dynamic-text">parent_page</span>',
+			),
 
 			// カスタムフィールド - テキスト
 			array(

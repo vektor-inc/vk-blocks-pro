@@ -136,7 +136,7 @@ class DynamicText extends WP_UnitTestCase {
 				'target_url' => get_permalink( $data['parent_page_id'] ),
 				'correct'    => '<h3 class="vk_dynamicText wp-block-vk-blocks-dynamic-text">ancestor_page</h3>',
 			),
-			// 親ページのタイトル（先祖ページ）
+			// 親ページのタイトル（先祖ページ有り）
 			array(
 				'attributes' => array(
 					'displayElement'           => 'parent-page',

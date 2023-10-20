@@ -127,7 +127,7 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 		$parent_post_title = '';
 		if ( ! empty( $post ) && ! empty( $post->post_parent ) ) {
 			$parent_post_title = get_post( $post->post_parent )->post_title;
-		} elseif ( ! empty( $post ) ){
+		} elseif ( ! empty( $post ) ) {
 			$parent_post_title = get_post( $post )->post_title;
 		}
 		$block_content .= $parent_post_title;
@@ -184,7 +184,7 @@ function vk_blocks_register_block_dynamic_text() {
 						'type'    => 'boolean',
 						'default' => true,
 					),
-					'parentPageHiddenOption' => array(
+					'parentPageHiddenOption'   => array(
 						'type'    => 'boolean',
 						'default' => true,
 					),

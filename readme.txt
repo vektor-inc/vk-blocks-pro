@@ -102,6 +102,8 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Dynamic Text Block (Pro) ] Added option to display parent page title.
+
 = 1.63.0 =
 [ Add Function ][ Blog Card (Pro) ] Add block variation function.
 [ Add filter ][ Post List (Pro) ] Add vk_blocks_post_list_query_args filter hook.

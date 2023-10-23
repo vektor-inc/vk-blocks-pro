@@ -50,7 +50,7 @@ function vk_blocks_get_ancestor_page_list_title( $attributes ) {
 		$tag_name = $attributes['ancestorTitleTagName'];
 
 		// h1 から h7 のいずれかから始まる文字列をマッチング
-		if (preg_match('/^(h[2-6])/', $tag_name, $matches)) {
+		if ( preg_match( '/^(h[2-6])/', $tag_name, $matches ) ) {
 			$tag_name = $matches[1];
 		} else {
 			$tag_name = '';
@@ -59,7 +59,7 @@ function vk_blocks_get_ancestor_page_list_title( $attributes ) {
 		// Ancestor Title Class.
 		$class = 'vk_ancestorPageList_title';
 		if ( ! empty( $attributes['ancestorTitleClassName'] ) ) {
-			$class .= ' ' . preg_replace("/[^A-Za-z0-9_\-\/ ]/", "", $attributes['ancestorTitleClassName']);
+			$class .= ' ' . preg_replace( '/[^A-Za-z0-9_\-\/ ]/', '', $attributes['ancestorTitleClassName'] );
 		}
 
 		$title .= '<' . $tag_name . ' class="' . $class . '">';

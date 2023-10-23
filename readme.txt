@@ -102,6 +102,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Page list from ancestor ] Fixed XSS issue.
+
 = 1.63.0 =
 [ Add Function ][ Blog Card (Pro) ] Add block variation function.
 [ Add filter ][ Post List (Pro) ] Add vk_blocks_post_list_query_args filter hook.

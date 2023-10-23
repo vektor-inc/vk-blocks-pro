@@ -52,7 +52,9 @@ export default function PostListEdit(props) {
 						value={ancestorTitleTagName}
 						onChange={(value) => {
 							const _matches = value.match(/^(h[2-6]).*/);
-							setAttributes({ ancestorTitleTagName: _matches[0] });
+							setAttributes({
+								ancestorTitleTagName: _matches[0],
+							});
 						}}
 						options={[
 							{

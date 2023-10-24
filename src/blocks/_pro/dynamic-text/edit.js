@@ -83,12 +83,14 @@ export default function DynamicTextEdit(props) {
 		displayElement,
 		tagName: TagName = '',
 		ancestorPageHiddenOption,
+		parentPageHiddenOption,
 		customFieldName,
 		fieldType,
 		isLinkSet,
 		isLinkTarget,
 	} = attributes;
 	attributes.ancestorPageHiddenOption = ancestorPageHiddenOption;
+	attributes.parentPageHiddenOption = parentPageHiddenOption;
 	attributes.isLinkSet = isLinkSet;
 	attributes.isLinkTarget = isLinkTarget;
 
@@ -120,6 +122,10 @@ export default function DynamicTextEdit(props) {
 	} else if (displayElement === 'ancestor-page' && !parentPageId) {
 		editContent = (
 			<TagName>{__('Ancestor Page Title', 'vk-blocks-pro')}</TagName>
+		);
+	} else if (displayElement === 'parent-page' && !parentPageId) {
+		editContent = (
+			<TagName>{__('Parent Page Title', 'vk-blocks-pro')}</TagName>
 		);
 	} else if (displayElement === 'custom-field' && !postType) {
 		editContent = (
@@ -191,6 +197,13 @@ export default function DynamicTextEdit(props) {
 									),
 								},
 								{
+									value: 'parent-page',
+									label: __(
+										'Page name in the parent hierarchy of the displayed page',
+										'vk-blocks-pro'
+									),
+								},
+								{
 									value: 'custom-field',
 									label: __('Custom Field', 'vk-blocks-pro'),
 								},
@@ -214,6 +227,30 @@ export default function DynamicTextEdit(props) {
 							{ancestorPageHiddenOption && (
 								<div className="alert alert-warning mt-0 mb-4">
 									{__(
+										'This block is not displayed on pages without a parent page.',
+										'vk-blocks-pro'
+									)}
+								</div>
+							)}
+						</BaseControl>
+					)}
+					{displayElement === 'parent-page' && (
+						<BaseControl>
+							<CheckboxControl
+								label={__(
+									'Hide on Parent Hierarchy Pages',
+									'vk-blocks-pro'
+								)}
+								checked={parentPageHiddenOption}
+								onChange={(v) =>
+									setAttributes({
+										parentPageHiddenOption: v,
+									})
+								}
+							/>
+							{parentPageHiddenOption && (
+								<div className="alert alert-warning mt-0 mb-4">
+									{__(
 										'This block will not display on pages other than pages that have a parent hierarchy.',
 										'vk-blocks-pro'
 									)}
@@ -221,7 +258,6 @@ export default function DynamicTextEdit(props) {
 							)}
 						</BaseControl>
 					)}
-
 					{displayElement === 'custom-field' && (
 						<BaseControl>
 							<TextControl

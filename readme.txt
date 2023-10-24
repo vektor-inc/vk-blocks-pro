@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.1
 Tested up to: 6.3
-Stable tag: 1.60.0.1
+Stable tag: 1.63.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -102,6 +102,7 @@ e.g.
 
 == Changelog ==
 
+= 1.64.0 =
 [ Add Function ][ Dynamic Text Block (Pro) ] Added option to display parent page title.
 [ Bug fix ][ Page list from ancestor ] Fixed XSS issue.
 

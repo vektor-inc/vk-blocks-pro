@@ -18,6 +18,7 @@ function vk_blocks_dynamic_text_get_attributes_default() {
 		'displayElement'           => 'please-select',
 		'tagName'                  => 'div',
 		'ancestorPageHiddenOption' => null,
+		'parentPageHiddenOption'   => null,
 		'customFieldName'          => null,
 		'fieldType'                => 'text',
 		'isLinkSet'                => false,
@@ -116,6 +117,20 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 			$ancestor_post_title = get_post( $post->ID )->post_title;
 		}
 		$block_content .= $ancestor_post_title;
+	} elseif ( 'parent-page' === $attributes['displayElement'] ) {
+		$post = get_post();
+		// 親ページがない（＝先祖階層） && 親ページを非表示にするオプションが有効の場合は処理を終了.
+		if ( empty( $post->post_parent ) && $attributes['parentPageHiddenOption'] ) {
+			return;
+		}
+
+		$parent_post_title = '';
+		if ( ! empty( $post ) && ! empty( $post->post_parent ) ) {
+			$parent_post_title = get_post( $post->post_parent )->post_title;
+		} elseif ( ! empty( $post ) ) {
+			$parent_post_title = get_post( $post )->post_title;
+		}
+		$block_content .= $parent_post_title;
 	} elseif ( 'custom-field' === $attributes['displayElement'] ) {
 		$block_content .= vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $block );
 	}
@@ -166,6 +181,10 @@ function vk_blocks_register_block_dynamic_text() {
 						'default' => 'div',
 					),
 					'ancestorPageHiddenOption' => array(
+						'type'    => 'boolean',
+						'default' => true,
+					),
+					'parentPageHiddenOption'   => array(
 						'type'    => 'boolean',
 						'default' => true,
 					),

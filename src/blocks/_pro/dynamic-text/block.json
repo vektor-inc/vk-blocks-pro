@@ -21,6 +21,10 @@
 			"type": "boolean",
 			"default": true
 		},
+		"parentPageHiddenOption": {
+			"type": "boolean",
+			"default": true
+		},
 		"customFieldName": {
 			"type": "string",
 			"default": null

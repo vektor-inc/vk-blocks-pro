@@ -102,7 +102,7 @@ e.g.
 
 == Changelog ==
 
-
+[ Add Function ][ Dynamic Text Block (Pro) ] Added option to display parent page title.
 [ Bug fix ][ Page list from ancestor ] Fixed XSS issue.
 
 = 1.63.0 =

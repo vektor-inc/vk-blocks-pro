@@ -838,24 +838,24 @@ msgid ""
 "hour."
 msgstr ""
 
-#: src/blocks/_pro/blog-card/edit/index.js:159
+#: src/blocks/_pro/blog-card/edit/index.js:161
 #: src/extensions/common/custom-block-variation/block-variation-explorer/index.js:20
 msgid "Variation settings"
 msgstr ""
 
-#: src/blocks/_pro/blog-card/edit/index.js:162
+#: src/blocks/_pro/blog-card/edit/index.js:167
 #: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:49
 msgid "You can register the current block settings as block variations."
 msgstr ""
 
-#: src/blocks/_pro/blog-card/edit/index.js:168
+#: src/blocks/_pro/blog-card/edit/index.js:173
 #: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:54
 msgid ""
 "https://developer.wordpress.org/block-editor/reference-guides/block-api/"
 "block-variations/"
 msgstr ""
 
-#: src/blocks/_pro/blog-card/edit/index.js:175
+#: src/blocks/_pro/blog-card/edit/index.js:180
 #: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:61
 msgid "Learn more about block variations"
 msgstr ""
@@ -961,7 +961,7 @@ msgid "Delete Image"
 msgstr ""
 
 #: src/blocks/_pro/card-item/edit.js:217
-#: src/blocks/_pro/dynamic-text/edit.js:256
+#: src/blocks/_pro/dynamic-text/edit.js:292
 msgid "URL"
 msgstr ""
 
@@ -1044,85 +1044,101 @@ msgstr ""
 msgid "Current page"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:110
+#: src/blocks/_pro/dynamic-text/edit.js:112
 msgid "Please select display element from the Setting sidebar."
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:118
+#: src/blocks/_pro/dynamic-text/edit.js:120
 msgid "Post Type Name"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:122
+#: src/blocks/_pro/dynamic-text/edit.js:124
 msgid "Ancestor Page Title"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:127
-msgid "Custom field"
+#: src/blocks/_pro/dynamic-text/edit.js:128
+msgid "Parent Page Title"
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:133
+msgid "Custom field"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:139
 msgid "This block is not rendered because no custom field name is specified."
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:163
+#: src/blocks/_pro/dynamic-text/edit.js:169
 msgid "Display element settings"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:168
+#: src/blocks/_pro/dynamic-text/edit.js:174
 msgid "Display element"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:177
+#: src/blocks/_pro/dynamic-text/edit.js:183
 msgid "Please Select"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:181
+#: src/blocks/_pro/dynamic-text/edit.js:187
 msgid "Post type name of the page being viewed"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:188
+#: src/blocks/_pro/dynamic-text/edit.js:194
 msgid "Page name in the ancestor hierarchy of the displayed page"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:195
+#: src/blocks/_pro/dynamic-text/edit.js:201
+msgid "Page name in the parent hierarchy of the displayed page"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:208
 msgid "Custom Field"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:203
+#: src/blocks/_pro/dynamic-text/edit.js:216
 msgid "Hide on Ancestor Hierarchy Pages"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:216
+#: src/blocks/_pro/dynamic-text/edit.js:229
+msgid "This block is not displayed on pages without a parent page."
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:240
+msgid "Hide on Parent Hierarchy Pages"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:253
 msgid ""
 "This block will not display on pages other than pages that have a parent "
 "hierarchy."
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:228
+#: src/blocks/_pro/dynamic-text/edit.js:264
 msgid "Custom Field Name"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:235
+#: src/blocks/_pro/dynamic-text/edit.js:271
 msgid "Field Type"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:244
+#: src/blocks/_pro/dynamic-text/edit.js:280
 msgid "text"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:248
+#: src/blocks/_pro/dynamic-text/edit.js:284
 msgid "textarea"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:252
+#: src/blocks/_pro/dynamic-text/edit.js:288
 msgid "wysiwyg"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:263
+#: src/blocks/_pro/dynamic-text/edit.js:299
 msgid "Setting up a link"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:276
+#: src/blocks/_pro/dynamic-text/edit.js:312
 #: src/blocks/_pro/gridcolcard-item/edit.js:322
 #: src/blocks/_pro/icon-card-item/edit.js:128
 #: src/blocks/button/edit.js:272
@@ -1145,27 +1161,27 @@ msgid "h1"
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:47
-#: src/blocks/ancestor-page-list/edit.js:51
+#: src/blocks/ancestor-page-list/edit.js:62
 msgid "h2"
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:51
-#: src/blocks/ancestor-page-list/edit.js:55
+#: src/blocks/ancestor-page-list/edit.js:66
 msgid "h3"
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:55
-#: src/blocks/ancestor-page-list/edit.js:59
+#: src/blocks/ancestor-page-list/edit.js:70
 msgid "h4"
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:59
-#: src/blocks/ancestor-page-list/edit.js:63
+#: src/blocks/ancestor-page-list/edit.js:74
 msgid "h5"
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:63
-#: src/blocks/ancestor-page-list/edit.js:67
+#: src/blocks/ancestor-page-list/edit.js:78
 msgid "h6"
 msgstr ""
 
@@ -1924,32 +1940,32 @@ msgstr ""
 msgid "Danger"
 msgstr ""
 
-#: src/blocks/ancestor-page-list/edit.js:104
-msgid "Don't display inactive grand child pages"
-msgstr ""
-
-#: src/blocks/ancestor-page-list/edit.js:30
-msgid "Ancestor Page List Setting"
-msgstr ""
-
-#: src/blocks/ancestor-page-list/edit.js:33
-msgid "Display Ancestor Page Title"
-msgstr ""
-
-#: src/blocks/ancestor-page-list/edit.js:43
-msgid "Archive title tag"
-msgstr ""
-
-#: src/blocks/ancestor-page-list/edit.js:72
-msgid "Ancestor page title class name"
-msgstr ""
-
-#: src/blocks/ancestor-page-list/edit.js:83
+#: src/blocks/ancestor-page-list/edit.js:100
 msgid "Add link to ancestor page title"
 msgstr ""
 
-#: src/blocks/ancestor-page-list/edit.js:94
+#: src/blocks/ancestor-page-list/edit.js:111
 msgid "If there is no child page, the block itself is not displayed"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:121
+msgid "Don't display inactive grand child pages"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:38
+msgid "Ancestor Page List Setting"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:41
+msgid "Display Ancestor Page Title"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:51
+msgid "Archive title tag"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:83
+msgid "Ancestor page title class name"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:134

@@ -227,7 +227,7 @@ export default function DynamicTextEdit(props) {
 							{ancestorPageHiddenOption && (
 								<div className="alert alert-warning mt-0 mb-4">
 									{__(
-										'This block will not display on pages other than pages that have a parent hierarchy.',
+										'This block is not displayed on pages without a parent page.',
 										'vk-blocks-pro'
 									)}
 								</div>

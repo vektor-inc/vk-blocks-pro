@@ -28,7 +28,7 @@ export const DeleteItemButton = (props) => {
 
 	const textStyleTitle = !!textStyleListObj.title
 		? textStyleListObj.title
-		: __('Custom Format', 'vk-blocks');
+		: __('Custom Format', 'vk-blocks-pro');
 
 	return (
 		<>
@@ -37,13 +37,13 @@ export const DeleteItemButton = (props) => {
 				isDestructive
 				onClick={openModal}
 			>
-				{__('Delete', 'vk-blocks')}
+				{__('Delete', 'vk-blocks-pro')}
 			</Button>
 			{isModalOpen && (
 				<Modal
 					title={sprintf(
 						// translators: Would you like to delete %s
-						__('Would you like to delete %s?', 'vk-blocks'),
+						__('Would you like to delete %s?', 'vk-blocks-pro'),
 						textStyleTitle
 					)}
 					onRequestClose={closeModal}
@@ -53,7 +53,7 @@ export const DeleteItemButton = (props) => {
 						<p>
 							{__(
 								'If the saved content has this format, the style will be unstyled.',
-								'vk-blocks'
+								'vk-blocks-pro'
 							)}
 						</p>
 						<div className="custom_format_delete_modal_button_area">
@@ -71,7 +71,7 @@ export const DeleteItemButton = (props) => {
 											closeModal();
 										}}
 									>
-										{__('Delete', 'vk-blocks')}
+										{__('Delete', 'vk-blocks-pro')}
 									</Button>
 								</FlexItem>
 							</Flex>

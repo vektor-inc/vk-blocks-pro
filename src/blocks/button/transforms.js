@@ -3,11 +3,6 @@
  */
 import { createBlock } from '@wordpress/blocks';
 
-/**
- * Internal dependencies
- */
-import { name } from './block.json';
-
 const transforms = {
 	from: [
 		{
@@ -21,7 +16,7 @@ const transforms = {
 				const link = div.querySelector('a');
 				const url = link?.getAttribute('href');
 				const target = link?.getAttribute('target') ? true : false;
-				return createBlock(name, {
+				return createBlock('vk-blocks/button', {
 					content: text,
 					buttonUrl: url,
 					buttonTarget: target,

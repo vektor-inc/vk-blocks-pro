@@ -41,17 +41,25 @@ function vk_blocks_get_ancestor_page_list_title( $attributes ) {
 			$title_text = get_the_title( $post_anc_id );
 		} else {
 			// On site editor screen.
-			$title_text = esc_html__( 'Ancestor Page Title', 'vk-blocks' );
+			$title_text = esc_html__( 'Ancestor Page Title', 'vk-blocks-pro' );
 		}
 
 		$title_link = ! empty( $post_anc_id ) ? get_permalink( $post_anc_id ) : '';
 
 		// Ancestor Title Tag.
 		$tag_name = $attributes['ancestorTitleTagName'];
+
+		// h1 から h7 のいずれかから始まる文字列をマッチング
+		if ( preg_match( '/^(h[2-6])/', $tag_name, $matches ) ) {
+			$tag_name = $matches[1];
+		} else {
+			$tag_name = '';
+		}
+
 		// Ancestor Title Class.
 		$class = 'vk_ancestorPageList_title';
 		if ( ! empty( $attributes['ancestorTitleClassName'] ) ) {
-			$class .= ' ' . $attributes['ancestorTitleClassName'];
+			$class .= ' ' . preg_replace( '/[^A-Za-z0-9_\-\/ ]/', '', $attributes['ancestorTitleClassName'] );
 		}
 
 		$title .= '<' . $tag_name . ' class="' . $class . '">';
@@ -80,7 +88,7 @@ function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
 	$page_list = '';
 
 	// Site editor screen message.
-	$massage_no_child = '<ul class="vk_ancestorPageList_list"><li class="page_item page-item-**"><a href="#">' . esc_html__( 'Dummy Text', 'vk-blocks' ) . '</a></li><li class="page_item page-item-**"><a href="#">' . esc_html__( 'Dummy Text', 'vk-blocks' ) . '</a></li></ul><div class="alert alert-warning">' . esc_html__( 'Because of the site editor have not child page that, the page list from ancestor is not displayed. Now displaying the dummy text list instead of the page list from ancestor.', 'vk-blocks' ) . '<br />* ' . esc_html__( 'This message only display on the edit screen.', 'vk-blocks' ) . '</div>';
+	$massage_no_child = '<ul class="vk_ancestorPageList_list"><li class="page_item page-item-**"><a href="#">' . esc_html__( 'Dummy Text', 'vk-blocks-pro' ) . '</a></li><li class="page_item page-item-**"><a href="#">' . esc_html__( 'Dummy Text', 'vk-blocks-pro' ) . '</a></li></ul><div class="alert alert-warning">' . esc_html__( 'Because of the site editor have not child page that, the page list from ancestor is not displayed. Now displaying the dummy text list instead of the page list from ancestor.', 'vk-blocks-pro' ) . '<br />* ' . esc_html__( 'This message only display on the edit screen.', 'vk-blocks-pro' ) . '</div>';
 
 	if ( $post_anc_id ) {
 		$page_list = wp_list_pages(
@@ -140,10 +148,9 @@ function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
 	$block .= vk_blocks_get_ancestor_page_list_title( $attributes );
 	if ( $page_list ) {
 		$block .= '<ul class="vk_ancestorPageList_list">' . $page_list . '</ul></aside>';
-	} else {
-		if ( ! is_singular() && ! is_archive() ) { // フルサイト編集では is_admin が効かないので is_singular で判定.
+	} elseif ( ! is_singular() && ! is_archive() ) {
+		// フルサイト編集では is_admin が効かないので is_singular で判定.
 			$block .= $massage_no_child;
-		}
 	}
 	$block .= '</aside>';
 

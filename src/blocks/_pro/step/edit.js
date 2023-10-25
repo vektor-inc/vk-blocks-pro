@@ -32,7 +32,7 @@ export default function StepEdit({ attributes, setAttributes, clientId }) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('First Dot Number', 'vk-blocks')}>
+				<PanelBody title={__('First Dot Number', 'vk-blocks-pro')}>
 					<input
 						type="number"
 						id={'dot-number'}

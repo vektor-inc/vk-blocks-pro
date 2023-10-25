@@ -9,7 +9,7 @@ const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 
 // replace_text_domain
-gulp.task('text-domain', (done) => {
+gulp.task('text-domain-pro', (done) => {
 	// vk-admin.
 	gulp.src(['./inc/vk-admin/package/*.php'])
 		.pipe(replace("'vk_admin_textdomain'", "'vk-blocks'"))
@@ -29,6 +29,59 @@ gulp.task('text-domain', (done) => {
 	gulp.src(['./inc/vk-css-optimize/package/*.php'])
 		.pipe(replace("'css_optimize_textdomain'", "'vk-blocks'"))
 		.pipe(gulp.dest('./inc/vk-css-optimize/package/'));
+	done();
+});
+
+// replace_text_domain
+gulp.task('text-domain-free', (done) => {
+	// vk-admin.
+	gulp.src(['./inc/vk-admin/package/*.php'])
+		.pipe(replace("'vk_admin_textdomain'", "'vk-blocks'"))
+		.pipe(gulp.dest('./inc/vk-admin/package/'));
+	// font-awesome.
+	gulp.src(['./inc/font-awesome/package/*.php'])
+		.pipe(replace("'vk_font_awesome_version_textdomain'", "'vk-blocks'"))
+		.pipe(gulp.dest('./inc/font-awesome/package/'));
+	// term-color.
+	gulp.src(['./inc/term-color/package/*.php'])
+		.pipe(replace("'vk_term_color_textdomain'", "'vk-blocks'"))
+		.pipe(gulp.dest('./inc/term-color/package/'));
+	// vk-components.
+	gulp.src(['./inc/vk-components/package/*.php'])
+		.pipe(replace("'vk_components_textdomain'", "'vk-blocks'"))
+		.pipe(gulp.dest('./inc/vk-components/package/'));
+	gulp.src(['./inc/vk-css-optimize/package/*.php'])
+		.pipe(replace("'css_optimize_textdomain'", "'vk-blocks'"))
+		.pipe(gulp.dest('./inc/vk-css-optimize/package/'));
+	gulp.src(['./inc/**',])
+		.pipe(replace(/__\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "__( $1, 'vk-blocks' )"))
+		.pipe(replace(/_e\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_e( $1, 'vk-blocks' )"))
+		.pipe(replace(/_n_noop\(\s*?(['"`].*?['"`]),\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_n_noop( $1, $2, 'vk-blocks' )"))
+		.pipe(replace(/_x\(\s*?(['"`].*?['"`]),\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_x( $1, $2, 'vk-blocks' )"))
+		.pipe(replace("$vk_blocks_components_textdomain = 'vk-blocks-pro';", "$vk_blocks_components_textdomain = 'vk-blocks';"))
+		.pipe(replace("wp_set_script_translations( 'vk-blocks-admin-js', 'vk-blocks-pro', VK_BLOCKS_DIR_PATH . 'languages' );", "wp_set_script_translations( 'vk-blocks-admin-js', 'vk-blocks' );"))
+		.pipe(replace("wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks-pro', VK_BLOCKS_DIR_PATH . 'languages' );", "wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks' );"))
+		.pipe(gulp.dest('./inc/'));
+	gulp.src(['./src/**'])
+		.pipe(replace(/__\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "__( $1, 'vk-blocks' )"))
+		.pipe(replace(/_e\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_e( $1, 'vk-blocks' )"))
+		.pipe(replace(/_n_noop\(\s*?(['"`].*?['"`]),\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_n_noop( $1, $2, 'vk-blocks' )"))
+		.pipe(replace(/_x\(\s*?(['"`].*?['"`]),\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_x( $1, $2, 'vk-blocks' )"))
+		.pipe(replace('"textdomain": "vk-blocks-pro"', '"textdomain": "vk-blocks"'))
+		.pipe(gulp.dest('./src/'));
+	gulp.src(['./test/**'])
+		.pipe(replace(/__\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "__( $1, 'vk-blocks' )"))
+		.pipe(replace(/_e\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_e( $1, 'vk-blocks' )"))
+		.pipe(replace(/_n_noop\(\s*?(['"`].*?['"`]),\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_n_noop( $1, $2, 'vk-blocks' )"))
+		.pipe(replace(/_x\(\s*?(['"`].*?['"`]),\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_x( $1, $2, 'vk-blocks' )"))
+		.pipe(gulp.dest('./test/'));
+	gulp.src(['./vk-blocks.php'])
+		.pipe(replace(/__\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "__( $1, 'vk-blocks' )"))
+		.pipe(replace(/_e\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_e( $1, 'vk-blocks' )"))
+		.pipe(replace(/_n_noop\(\s*?(['"`].*?['"`]),\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_n_noop( $1, $2, 'vk-blocks' )"))
+		.pipe(replace(/_x\(\s*?(['"`].*?['"`]),\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_x( $1, $2, 'vk-blocks' )"))
+		.pipe(replace("Text Domain: vk-blocks-pro", "Text Domain: vk-blocks"))
+		.pipe(gulp.dest('./'));
 	done();
 });
 
@@ -215,7 +268,7 @@ gulp.task('watch', () => {
 gulp.task(
 	'build:dev:free',
 	gulp.series(
-		'text-domain',
+		'text-domain-free',
 		'sass',
 		'helper-js',
 		'sass_editor',
@@ -226,7 +279,7 @@ gulp.task(
 gulp.task(
 	'build:dev:pro',
 	gulp.series(
-		'text-domain',
+		'text-domain-pro',
 		'sass',
 		'helper-js',
 		'helper-js-pro',
@@ -240,7 +293,7 @@ gulp.task(
 gulp.task(
 	'build:free',
 	gulp.series(
-		'text-domain',
+		'text-domain-free',
 		'sass',
 		'helper-js',
 		'sass_editor',
@@ -253,7 +306,7 @@ gulp.task(
 gulp.task(
 	'build:pro',
 	gulp.series(
-		'text-domain',
+		'text-domain-pro',
 		'sass',
 		'helper-js',
 		'helper-js-pro',
@@ -276,6 +329,7 @@ gulp.task('dist', (done) => {
 		[
 			'./build/**',
 			'./inc/**',
+			'./languages/**',
 			'./vendor/**',
 			'./*.txt',
 			'./*.png',
@@ -296,7 +350,7 @@ gulp.task('dist:free', (done) => {
 		[
 			'./build/**',
 			'./inc/**',
-			'./vendor/**',
+			'./vendor/**',			
 			'./*.txt',
 			'./*.png',
 			'./*.php',

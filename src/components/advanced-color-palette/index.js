@@ -9,12 +9,13 @@ import { colorSlugToColorCode } from '@vkblocks/utils/color-slug-to-color-code';
 import { select } from '@wordpress/data';
 
 export const AdvancedColorPalette = (props) => {
-	const { schema, setAttributes, attributes } = props;
+	const { schema, setAttributes, attributes, enableAlpha = true } = props;
 	const hexColor = colorSlugToColorCode(attributes[schema]);
 
 	return (
 		<ColorPalette
 			value={hexColor}
+			enableAlpha={enableAlpha}
 			onChange={(value) => {
 				// カラーパレットの色名・スラッグ・カラーコードを取得
 				const colorSet =

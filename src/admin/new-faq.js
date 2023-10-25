@@ -16,7 +16,15 @@ export default function AdminNewFaq() {
 	return (
 		<>
 			<section>
-				<h3 id="faq-setting">{__('FAQ Block Setting', 'vk-blocks')}</h3>
+				<h3 id="faq-setting">
+					{__('FAQ Block Setting', 'vk-blocks-pro')}
+				</h3>
+				<p>
+					{__(
+						'Please specify a common accordion setting to be used in the FAQ block.',
+						'vk-blocks-pro'
+					)}
+				</p>
 				<SelectControl
 					name="vk_blocks_options[new_faq_accordion]"
 					className="vk_admin_selectControl"
@@ -29,20 +37,20 @@ export default function AdminNewFaq() {
 					}}
 					options={[
 						{
-							label: __('Disable accordion', 'vk-blocks'),
+							label: __('Disable accordion', 'vk-blocks-pro'),
 							value: 'disable',
 						},
 						{
 							label: __(
 								'Enable accordion and default open',
-								'vk-blocks'
+								'vk-blocks-pro'
 							),
 							value: 'open',
 						},
 						{
 							label: __(
 								'Enable accordion and default close',
-								'vk-blocks'
+								'vk-blocks-pro'
 							),
 							value: 'close',
 						},

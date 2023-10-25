@@ -39,15 +39,18 @@ define( 'GUTENBERG_LOAD_VENDOR_SCRIPTS', false );
  * テストするプラグインを読み込み
  */
 function _manually_load_plugin() {
+	// ./temp/themes/ から読み込む
+	register_theme_directory( dirname( dirname( __DIR__ ) ) . '/temp/themes/' );
+	search_theme_directories();
 	require_once dirname( dirname( dirname( __FILE__ ) ) ) . '/vk-blocks.php';
 }
 tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );
 
 /**
- *  utilsを読み込み
+ *  utils、custom_assertを読み込み
  */
 require_once dirname( __FILE__ ) . '/utils.php';
-
+require_once dirname( __FILE__ ) . '/custom-assert.php';
 /**
  * Adds a wp_die handler for use during tests.
  *

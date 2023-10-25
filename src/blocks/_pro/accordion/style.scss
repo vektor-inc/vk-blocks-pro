@@ -173,6 +173,8 @@
 			height: 0;
 			opacity: 0;
 			transition: .25s;
+			//target内に左・右寄せ（float left right）画像を入れると、高さ0の影響を受けないので追加
+			overflow: hidden;
 			//クローズ時に余計なmarginが入るので全ての要素のmarginを0に
 			* {
 				margin-top:0;

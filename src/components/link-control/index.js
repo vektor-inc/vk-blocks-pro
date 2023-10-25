@@ -34,16 +34,16 @@ export const LinkControl = (props) => {
 
 	return (
 		<BaseControl
-			label={__('Link target', 'vk-blocks')}
+			label={__('Link target', 'vk-blocks-pro')}
 			id={`sidebar-${blockName}-block-url-settings`}
 		>
 			<ToggleControl
-				label={__('Open in new tab', 'vk-blocks')}
+				label={__('Open in new tab', 'vk-blocks-pro')}
 				onChange={onToggleOpenInNewTab}
 				checked={linkTarget === '_blank'}
 			/>
 			<TextControl
-				label={__('Link rel', 'vk-blocks')}
+				label={__('Link rel', 'vk-blocks-pro')}
 				value={rel || ''}
 				onChange={onSetLinkRel}
 			/>

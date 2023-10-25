@@ -130,7 +130,7 @@
 		}
 	},
 	"description": "Displays the list of posts by setting the post type, classification, and number of posts to display.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
 		"className": true
 	}

@@ -1,0 +1,50 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/blog-card-site-logo",
+	"category": "vk-blocks-cat",
+	"title": "Blog Card Site Logo",
+	"description": "Displays the site logo image obtained from the URL.",
+	"textdomain": "vk-blocks-pro",
+	"ancestor": ["vk-blocks/blog-card"],
+	"attributes": {
+		"isLink": {
+			"type": "boolean",
+			"default": true
+		},
+		"rel": {
+			"type": "string",
+			"attribute": "rel",
+			"default": ""
+		},
+		"linkTarget": {
+			"type": "string",
+			"default": "_self"
+		}
+	},
+	"usesContext": ["vk-blocks/blog-card-url"],
+	"supports": {
+		"align": ["left", "right", "center"],
+		"color": {
+			"__experimentalDuotone": "img",
+			"text": false,
+			"background": false
+		},
+		"__experimentalBorder": {
+			"color": true,
+			"radius": true,
+			"width": true,
+			"selectors": "img",
+			"__experimentalSkipSerialization": true,
+			"__experimentalDefaultControls": {
+				"color": true,
+				"radius": true,
+				"width": true
+			}
+		},
+		"html": false,
+		"reusable": false,
+		"spacing": {
+			"margin": true
+		}
+	}
+}

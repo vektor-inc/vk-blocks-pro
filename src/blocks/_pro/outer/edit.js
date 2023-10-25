@@ -24,6 +24,7 @@ import {
 	PanelBody,
 	BaseControl,
 	SelectControl,
+	ToggleControl,
 } from '@wordpress/components';
 import {
 	InspectorControls,
@@ -47,8 +48,15 @@ export default function OuterEdit(props) {
 		padding_left_and_right, //eslint-disable-line camelcase
 		padding_top_and_bottom, //eslint-disable-line camelcase
 		opacity,
+		levelSettingPerDevice,
 		upper_level, //eslint-disable-line camelcase
+		upper_level_mobile, //eslint-disable-line camelcase
+		upper_level_tablet, //eslint-disable-line camelcase
+		upper_level_pc, //eslint-disable-line camelcase
 		lower_level, //eslint-disable-line camelcase
+		lower_level_mobile, //eslint-disable-line camelcase
+		lower_level_tablet, //eslint-disable-line camelcase
+		lower_level_pc, //eslint-disable-line camelcase
 		upperDividerBgColor,
 		lowerDividerBgColor,
 		dividerType,
@@ -93,47 +101,87 @@ export default function OuterEdit(props) {
 				className: classnames(newClassName),
 			});
 		}
+		// 前バージョンとの互換処理
+		if (
+			innerSideSpaceValuePC === undefined ||
+			innerSideSpaceValuePC === null
+		) {
+			setAttributes({
+				innerSideSpaceValuePC: 0,
+			});
+		}
+		if (
+			innerSideSpaceValueTablet === undefined ||
+			innerSideSpaceValueTablet === null
+		) {
+			setAttributes({
+				innerSideSpaceValueTablet: 0,
+			});
+		}
+		if (
+			innerSideSpaceValueMobile === undefined ||
+			innerSideSpaceValueMobile === null
+		) {
+			setAttributes({
+				innerSideSpaceValueTablet: 0,
+			});
+		}
+		if (innerSideSpaceUnit === undefined || innerSideSpaceUnit === null) {
+			setAttributes({
+				innerSideSpaceUnit: 'px',
+			});
+		}
+		// 互換処理：divider per device
+		if (
+			levelSettingPerDevice === undefined ||
+			levelSettingPerDevice === null
+		) {
+			setAttributes({
+				levelSettingPerDevice: false,
+			});
+		}
+		if (upper_level_mobile === undefined || upper_level_mobile === null) {
+			setAttributes({
+				upper_level_mobile: upper_level,
+			});
+		}
+		if (upper_level_tablet === undefined || upper_level_tablet === null) {
+			setAttributes({
+				upper_level_tablet: upper_level,
+			});
+		}
+		if (upper_level_pc === undefined || upper_level_pc === null) {
+			setAttributes({
+				upper_level_pc: upper_level,
+			});
+		}
+		if (lower_level_mobile === undefined || lower_level_mobile === null) {
+			setAttributes({
+				lower_level_mobile: lower_level,
+			});
+		}
+		if (lower_level_tablet === undefined || lower_level_tablet === null) {
+			setAttributes({
+				lower_level_tablet: lower_level,
+			});
+		}
+		if (lower_level_pc === undefined || lower_level_pc === null) {
+			setAttributes({
+				lower_level_pc: lower_level,
+			});
+		}
 	}, [clientId]);
 
-	// 前バージョンとの互換処理
-	if (innerSideSpaceValuePC === undefined || innerSideSpaceValuePC === null) {
-		setAttributes({
-			innerSideSpaceValuePC: 0,
-		});
-	}
-	if (
-		innerSideSpaceValueTablet === undefined ||
-		innerSideSpaceValueTablet === null
-	) {
-		setAttributes({
-			innerSideSpaceValueTablet: 0,
-		});
-	}
-	if (
-		innerSideSpaceValueMobile === undefined ||
-		innerSideSpaceValueMobile === null
-	) {
-		setAttributes({
-			innerSideSpaceValueTablet: 0,
-		});
-	}
-	if (innerSideSpaceUnit === undefined || innerSideSpaceUnit === null) {
-		setAttributes({
-			innerSideSpaceUnit: 'px',
-		});
-	}
-
-	const opacityClass = opacity && opacity * 10;
 	const bgColorClasses = classnames({
 		[`has-background`]: bgColor !== undefined,
 		[`has-${bgColor}-background-color`]:
 			bgColor !== undefined && !isHexColor(bgColor),
 		[`has-background-dim`]: opacity !== undefined,
-		[`has-background-dim-${opacityClass}`]: opacityClass !== undefined,
 	});
 
 	const bgColorStyles = {
 		backgroundColor: isHexColor(bgColor) ? bgColor : undefined,
+		opacity: opacity !== undefined ? opacity : undefined,
 	};
 
 	const GetBgImage = (
@@ -190,16 +238,23 @@ export default function OuterEdit(props) {
 
 	//上側セクションの傾き切り替
 	//eslint-disable-next-line camelcase
-	if (upper_level) {
+	if (!levelSettingPerDevice) {
+		if (upper_level) {
+			whichSideUpper = 'upper';
+		}
+	} else if (upper_level_mobile || upper_level_tablet || upper_level_pc) {
 		whichSideUpper = 'upper';
 	}
 
 	//下側セクションの傾き切り替
 	//eslint-disable-next-line camelcase
-	if (lower_level) {
+	if (!levelSettingPerDevice) {
+		if (lower_level) {
+			whichSideLower = 'lower';
+		}
+	} else if (lower_level_mobile || lower_level_tablet || lower_level_pc) {
 		whichSideLower = 'lower';
 	}
-
 	//borderColorクリア時に白をセットする
 	if (borderColor === null || borderColor === undefined) {
 		setAttributes({ borderColor: '#fff' });
@@ -208,9 +263,37 @@ export default function OuterEdit(props) {
 	//Dividerエフェクトがない時のみ枠線を追
 	let borderStyleProperty = {};
 
-	if (
-		upper_level === 0 && //eslint-disable-line camelcase
-		lower_level === 0 && //eslint-disable-line camelcase
+	if (!levelSettingPerDevice) {
+		if (
+			upper_level === 0 && //eslint-disable-line camelcase
+			lower_level === 0 && //eslint-disable-line camelcase
+			borderWidth > 0 &&
+			borderStyle !== 'none'
+		) {
+			borderStyleProperty = {
+				borderWidth: `${borderWidth}px`,
+				borderStyle: `${borderStyle}`,
+				borderColor:
+					isHexColor(borderColor) && borderColor
+						? borderColor
+						: undefined,
+				borderRadius: `${borderRadius}px`,
+			};
+			//eslint-disable-next-line camelcase
+		} else if (upper_level !== 0 || lower_level !== 0) {
+			//eslint-disable-line camelcase
+			borderStyleProperty = {
+				border: `none`,
+				borderRadius: `0px`,
+			};
+		}
+	} else if (
+		upper_level_mobile === 0 && //eslint-disable-line camelcase
+		upper_level_tablet === 0 && //eslint-disable-line camelcase
+		upper_level_pc === 0 && //eslint-disable-line camelcase
+		lower_level_mobile === 0 && //eslint-disable-line camelcase
+		lower_level_tablet === 0 && //eslint-disable-line camelcase
+		lower_level_pc === 0 && //eslint-disable-line camelcase
 		borderWidth > 0 &&
 		borderStyle !== 'none'
 	) {
@@ -224,7 +307,14 @@ export default function OuterEdit(props) {
 			borderRadius: `${borderRadius}px`,
 		};
 		//eslint-disable-next-line camelcase
-	} else if (upper_level !== 0 || lower_level !== 0) {
+	} else if (
+		upper_level_mobile !== 0 ||
+		upper_level_tablet !== 0 ||
+		upper_level_pc !== 0 ||
+		lower_level_mobile !== 0 ||
+		lower_level_tablet !== 0 ||
+		lower_level_pc !== 0
+	) {
 		//eslint-disable-line camelcase
 		borderStyleProperty = {
 			border: `none`,
@@ -260,21 +350,25 @@ export default function OuterEdit(props) {
 			</BlockControls>
 			<InspectorControls>
 				<PanelBody
-					title={__('Background Setting', 'vk-blocks')}
+					title={__('Background Setting', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<BaseControl
 						id={`vk_outer-colorSetting`}
-						label={__('Color Setting', 'vk-blocks')}
+						label={__('Color Setting', 'vk-blocks-pro')}
 						help={__(
 							'Color will overcome background image. If you want to display image, set opacity 0.',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 					>
-						<AdvancedColorPalette schema={'bgColor'} {...props} />
+						<AdvancedColorPalette
+							enableAlpha={false}
+							schema={'bgColor'}
+							{...props}
+						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Opacity Setting', 'vk-blocks')}
+						label={__('Opacity Setting', 'vk-blocks-pro')}
 						id={`vk_outer-opacitySetting`}
 					>
 						<RangeControl
@@ -284,11 +378,11 @@ export default function OuterEdit(props) {
 							}}
 							min={0}
 							max={1}
-							step={0.1}
+							step={0.01}
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Background Image PC', 'vk-blocks')}
+						label={__('Background Image PC', 'vk-blocks-pro')}
 						className={'vk_outer_sidebar_bgImage'}
 						id={`vk_outer-bgImagePC`}
 					>
@@ -304,7 +398,7 @@ export default function OuterEdit(props) {
 						</div>
 					</BaseControl>
 					<BaseControl
-						label={__('Background Image Tablet', 'vk-blocks')}
+						label={__('Background Image Tablet', 'vk-blocks-pro')}
 						className={'vk_outer_sidebar_bgImage'}
 						id={`vk_outer-bgImageTablet`}
 					>
@@ -314,7 +408,7 @@ export default function OuterEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Background Image Mobile', 'vk-blocks')}
+						label={__('Background Image Mobile', 'vk-blocks-pro')}
 						className={'vk_outer_sidebar_bgImage'}
 						id={`vk_outer-bgImageMobile`}
 					>
@@ -324,7 +418,7 @@ export default function OuterEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Background image Position', 'vk-blocks')}
+						label={__('Background image Position', 'vk-blocks-pro')}
 						help=""
 						id={`vk_outer-bgPosition`}
 					>
@@ -332,24 +426,24 @@ export default function OuterEdit(props) {
 							selected={bgPosition}
 							options={[
 								{
-									label: __('Repeat', 'vk-blocks'),
+									label: __('Repeat', 'vk-blocks-pro'),
 									value: 'repeat',
 								},
 								{
-									label: __('Cover', 'vk-blocks'),
+									label: __('Cover', 'vk-blocks-pro'),
 									value: 'normal',
 								},
 								{
 									label: __(
 										'Cover fixed (Not fixed on iPhone)',
-										'vk-blocks'
+										'vk-blocks-pro'
 									),
 									value: 'fixed',
 								},
 								{
 									label: __(
 										'Parallax (Non-guaranteed)',
-										'vk-blocks'
+										'vk-blocks-pro'
 									),
 									value: 'parallax',
 								},
@@ -362,33 +456,36 @@ export default function OuterEdit(props) {
 				</PanelBody>
 
 				<PanelBody
-					title={__('Layout Setting', 'vk-blocks')}
+					title={__('Layout Setting', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
-					<p>{__('Width', 'vk-blocks')} </p>
+					<p>{__('Width', 'vk-blocks-pro')} </p>
 					<BaseControl>
 						<RadioControl
-							label={__('Padding (Left and Right)', 'vk-blocks')}
+							label={__(
+								'Padding (Left and Right)',
+								'vk-blocks-pro'
+							)}
 							selected={padding_left_and_right} //eslint-disable-line camelcase
 							options={[
 								{
 									label: __(
 										'Fit to the Content area',
-										'vk-blocks'
+										'vk-blocks-pro'
 									),
 									value: '0',
 								},
 								{
 									label: __(
 										'Add padding to the Outer area',
-										'vk-blocks'
+										'vk-blocks-pro'
 									),
 									value: '1',
 								},
 								{
 									label: __(
 										'Remove padding from the Outer area',
-										'vk-blocks'
+										'vk-blocks-pro'
 									),
 									value: '2',
 								},
@@ -400,21 +497,24 @@ export default function OuterEdit(props) {
 							}
 						/>
 						<RadioControl
-							label={__('Padding (Top and Bottom)', 'vk-blocks')}
+							label={__(
+								'Padding (Top and Bottom)',
+								'vk-blocks-pro'
+							)}
 							className={'mb-1'}
 							selected={padding_top_and_bottom} //eslint-disable-line camelcase
 							options={[
 								{
 									label: __(
 										'Use default padding',
-										'vk-blocks'
+										'vk-blocks-pro'
 									),
 									value: '1',
 								},
 								{
 									label: __(
 										'Do not use default padding',
-										'vk-blocks'
+										'vk-blocks-pro'
 									),
 									value: '0',
 								},
@@ -428,18 +528,18 @@ export default function OuterEdit(props) {
 						<p>
 							{__(
 								'* If you select "Do not use" that, please set yourself it such as a spacer block.',
-								'vk-blocks'
+								'vk-blocks-pro'
 							)}
 						</p>
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
-					title={__('Divider Setting', 'vk-blocks')}
+					title={__('Divider Setting', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<BaseControl>
 						<SelectControl
-							label={__('Type', 'vk-blocks')}
+							label={__('Type', 'vk-blocks-pro')}
 							value={dividerType}
 							onChange={(value) =>
 								setAttributes({ dividerType: value })
@@ -447,37 +547,109 @@ export default function OuterEdit(props) {
 							options={[
 								{
 									value: 'tilt',
-									label: __('Tilt', 'vk-blocks'),
+									label: __('Tilt', 'vk-blocks-pro'),
 								},
 								{
 									value: 'curve',
-									label: __('Curve', 'vk-blocks'),
+									label: __('Curve', 'vk-blocks-pro'),
 								},
 								{
 									value: 'wave',
-									label: __('Wave', 'vk-blocks'),
+									label: __('Wave', 'vk-blocks-pro'),
 								},
 								{
 									value: 'triangle',
-									label: __('Triangle', 'vk-blocks'),
+									label: __('Triangle', 'vk-blocks-pro'),
 								},
 							]}
 						/>
 					</BaseControl>
-					<BaseControl
-						label={__('Upper Divider Level', 'vk-blocks')}
-						id={`vk_outer-upperDividerLevel`}
-					>
-						<RangeControl
-							value={upper_level} //eslint-disable-line camelcase
-							onChange={(value) =>
+					<BaseControl>
+						<ToggleControl
+							label={__('端末毎に設定', 'vk-blocks-pro')}
+							checked={levelSettingPerDevice}
+							onChange={(checked) =>
 								setAttributes({
-									upper_level: toNumber(value, -100, 100),
+									levelSettingPerDevice: checked,
 								})
 							}
-							min="-100"
-							max="100"
 						/>
+					</BaseControl>
+					<BaseControl
+						label={__('Upper Divider Level', 'vk-blocks-pro')}
+						id={`vk_outer-upperDividerLevel`}
+					>
+						{!levelSettingPerDevice ? (
+							<RangeControl
+								value={upper_level} //eslint-disable-line camelcase
+								onChange={(value) => {
+									setAttributes({
+										upper_level: toNumber(value, -100, 100),
+									});
+									if (
+										upper_level_pc === upper_level_tablet &&
+										upper_level_tablet ===
+											upper_level_mobile
+									) {
+										setAttributes({
+											upper_level_pc: value,
+											upper_level_tablet: value,
+											upper_level_mobile: value,
+										});
+									}
+								}}
+								min="-100"
+								max="100"
+							/>
+						) : (
+							<>
+								<RangeControl
+									label={__('Mobile', 'vk-blocks-pro')}
+									value={upper_level_mobile} //eslint-disable-line camelcase
+									onChange={(value) =>
+										setAttributes({
+											upper_level_mobile: toNumber(
+												value,
+												-100,
+												100
+											),
+										})
+									}
+									min="-100"
+									max="100"
+								/>
+								<RangeControl
+									label={__('Tablet', 'vk-blocks-pro')}
+									value={upper_level_tablet} //eslint-disable-line camelcase
+									onChange={(value) =>
+										setAttributes({
+											upper_level_tablet: toNumber(
+												value,
+												-100,
+												100
+											),
+										})
+									}
+									min="-100"
+									max="100"
+								/>
+								<RangeControl
+									label={__('PC', 'vk-blocks-pro')}
+									value={upper_level_pc} //eslint-disable-line camelcase
+									onChange={(value) =>
+										setAttributes({
+											upper_level_pc: toNumber(
+												value,
+												-100,
+												100
+											),
+										})
+									}
+									min="-100"
+									max="100"
+								/>
+							</>
+						)}
 					</BaseControl>
 					<BaseControl>
 						<AdvancedColorPalette
@@ -486,19 +658,80 @@ export default function OuterEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Lower Divider Level', 'vk-blocks')}
+						label={__('Lower Divider Level', 'vk-blocks-pro')}
 						id={`vk_outer-lowerDividerLevel`}
 					>
-						<RangeControl
-							value={lower_level} //eslint-disable-line camelcase
-							onChange={(value) =>
-								setAttributes({
-									lower_level: toNumber(value, -100, 100),
-								})
-							}
-							min="-100"
-							max="100"
-						/>
+						{!levelSettingPerDevice ? (
+							<RangeControl
+								value={lower_level} //eslint-disable-line camelcase
+								onChange={(value) => {
+									setAttributes({
+										lower_level: toNumber(value, -100, 100),
+									});
+									if (
+										lower_level_pc === lower_level_tablet &&
+										lower_level_tablet ===
+											lower_level_mobile
+									) {
+										setAttributes({
+											lower_level_pc: value,
+											lower_level_tablet: value,
+											lower_level_mobile: value,
+										});
+									}
+								}}
+								min="-100"
+								max="100"
+							/>
+						) : (
+							<>
+								<RangeControl
+									label={__('Mobile', 'vk-blocks-pro')}
+									value={lower_level_mobile} //eslint-disable-line camelcase
+									onChange={(value) =>
+										setAttributes({
+											lower_level_mobile: toNumber(
+												value,
+												-100,
+												100
+											),
+										})
+									}
+									min="-100"
+									max="100"
+								/>
+								<RangeControl
+									label={__('Tablet', 'vk-blocks-pro')}
+									value={lower_level_tablet} //eslint-disable-line camelcase
+									onChange={(value) =>
+										setAttributes({
+											lower_level_tablet: toNumber(
+												value,
+												-100,
+												100
+											),
+										})
+									}
+									min="-100"
+									max="100"
+								/>
+								<RangeControl
+									label={__('PC', 'vk-blocks-pro')}
+									value={lower_level_pc} //eslint-disable-line camelcase
+									onChange={(value) =>
+										setAttributes({
+											lower_level_pc: toNumber(
+												value,
+												-100,
+												100
+											),
+										})
+									}
+									min="-100"
+									max="100"
+								/>
+							</>
+						)}
 					</BaseControl>
 					<BaseControl>
 						<AdvancedColorPalette
@@ -508,18 +741,18 @@ export default function OuterEdit(props) {
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
-					title={__('Border Setting', 'vk-blocks')}
+					title={__('Border Setting', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<BaseControl>
 						<p>
 							{__(
 								'Border will disappear when divider effect is applied.',
-								'vk-blocks'
+								'vk-blocks-pro'
 							)}
 						</p>
 						<SelectControl
-							label={__('Border type', 'vk-blocks')}
+							label={__('Border type', 'vk-blocks-pro')}
 							value={borderStyle}
 							onChange={(value) =>
 								setAttributes({ borderStyle: value })
@@ -527,39 +760,39 @@ export default function OuterEdit(props) {
 							options={[
 								{
 									value: 'none',
-									label: __('None', 'vk-blocks'),
+									label: __('None', 'vk-blocks-pro'),
 								},
 								{
 									value: 'solid',
-									label: __('Solid', 'vk-blocks'),
+									label: __('Solid', 'vk-blocks-pro'),
 								},
 								{
 									value: 'dotted',
-									label: __('Dotted', 'vk-blocks'),
+									label: __('Dotted', 'vk-blocks-pro'),
 								},
 								{
 									value: 'dashed',
-									label: __('Dashed', 'vk-blocks'),
+									label: __('Dashed', 'vk-blocks-pro'),
 								},
 								{
 									value: 'double',
-									label: __('Double', 'vk-blocks'),
+									label: __('Double', 'vk-blocks-pro'),
 								},
 								{
 									value: 'groove',
-									label: __('Groove', 'vk-blocks'),
+									label: __('Groove', 'vk-blocks-pro'),
 								},
 								{
 									value: 'ridge',
-									label: __('Ridge', 'vk-blocks'),
+									label: __('Ridge', 'vk-blocks-pro'),
 								},
 								{
 									value: 'inset',
-									label: __('Inset', 'vk-blocks'),
+									label: __('Inset', 'vk-blocks-pro'),
 								},
 								{
 									value: 'outset',
-									label: __('Outset', 'vk-blocks'),
+									label: __('Outset', 'vk-blocks-pro'),
 								},
 							]}
 						/>
@@ -571,7 +804,7 @@ export default function OuterEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Border width', 'vk-blocks')}
+						label={__('Border width', 'vk-blocks-pro')}
 						id={`vk_outer-borderWidth`}
 					>
 						<RangeControl
@@ -583,7 +816,7 @@ export default function OuterEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Border radius', 'vk-blocks')}
+						label={__('Border radius', 'vk-blocks-pro')}
 						id={`vk_outer-borderRadius`}
 					>
 						<RangeControl
@@ -601,12 +834,12 @@ export default function OuterEdit(props) {
 				<PanelBody
 					title={__(
 						'Container Inner Side Space Setting',
-						'vk-blocks'
+						'vk-blocks-pro'
 					)}
 					initialOpen={false}
 				>
 					<RangeControl
-						label={__('Mobile', 'vk-blocks')}
+						label={__('Mobile', 'vk-blocks-pro')}
 						value={innerSideSpaceValueMobile}
 						onChange={(value) =>
 							setAttributes({
@@ -621,7 +854,7 @@ export default function OuterEdit(props) {
 						max="100"
 					/>
 					<RangeControl
-						label={__('Tablet', 'vk-blocks')}
+						label={__('Tablet', 'vk-blocks-pro')}
 						value={innerSideSpaceValueTablet}
 						onChange={(value) =>
 							setAttributes({
@@ -636,7 +869,7 @@ export default function OuterEdit(props) {
 						max="200"
 					/>
 					<RangeControl
-						label={__('PC', 'vk-blocks')}
+						label={__('PC', 'vk-blocks-pro')}
 						value={innerSideSpaceValuePC}
 						onChange={(value) =>
 							setAttributes({
@@ -647,7 +880,7 @@ export default function OuterEdit(props) {
 						max="300"
 					/>
 					<SelectControl
-						label={__('Unit Type', 'vk-blocks')}
+						label={__('Unit Type', 'vk-blocks-pro')}
 						value={innerSideSpaceUnit}
 						onChange={(value) =>
 							setAttributes({
@@ -657,19 +890,19 @@ export default function OuterEdit(props) {
 						options={[
 							{
 								value: 'px',
-								label: __('px', 'vk-blocks'),
+								label: __('px', 'vk-blocks-pro'),
 							},
 							{
 								value: 'em',
-								label: __('em', 'vk-blocks'),
+								label: __('em', 'vk-blocks-pro'),
 							},
 							{
 								value: 'rem',
-								label: __('rem', 'vk-blocks'),
+								label: __('rem', 'vk-blocks-pro'),
 							},
 							{
 								value: 'vw',
-								label: __('vw', 'vk-blocks'),
+								label: __('vw', 'vk-blocks-pro'),
 							},
 						]}
 					/>
@@ -682,7 +915,11 @@ export default function OuterEdit(props) {
 						upper_level,
 						upperDividerBgColor,
 						whichSideUpper,
-						dividerType
+						dividerType,
+						levelSettingPerDevice,
+						upper_level_mobile,
+						upper_level_tablet,
+						upper_level_pc
 					)}
 					<div className={containerClass}>
 						<InnerBlocks />
@@ -691,7 +928,11 @@ export default function OuterEdit(props) {
 						lower_level,
 						lowerDividerBgColor,
 						whichSideLower,
-						dividerType
+						dividerType,
+						levelSettingPerDevice,
+						lower_level_mobile,
+						lower_level_tablet,
+						lower_level_pc
 					)}
 				</div>
 			</div>

@@ -109,12 +109,12 @@ export class PRcontent extends Component {
 				  className={ Image ? "image-button" : "button button-large" }
 				  >
 				  { !Image ? (
-					  __("Select image", "vk-blocks")
+					  __("Select image", 'vk-blocks-pro')
 					) : (
 	  <img
 		  className={ "vk_prContent_colImg_image" }
 		  src={ Image }
-		  alt={ __("Upload image", "vk-blocks") }
+		  alt={ __("Upload image", 'vk-blocks-pro') }
 		  style={ { border: imageBorderProperty } }
 						/>
 					  ) }
@@ -137,7 +137,7 @@ export class PRcontent extends Component {
 					}
 				  >
 				  { Image === null || typeof ImageParse.sizes === "undefined" ? (
-					  __("Select image", "vk-blocks")
+					  __("Select image", 'vk-blocks-pro')
 					) : (
 	  <img
 		  className={ "vk_prContent_colImg_image" }
@@ -153,14 +153,14 @@ export class PRcontent extends Component {
 
 		} else if (for_ === "save") {
 		  if (!Image) {
-			return __("Select image", "vk-blocks");
+			return __("Select image", 'vk-blocks-pro');
 		  }
 			if (Image && Image.indexOf("{") === -1) {
 			  return (
 				<img
 					className={ "vk_prContent_colImg_image" }
 					src={ Image }
-					alt={ __("Upload image", "vk-blocks") }
+					alt={ __("Upload image", 'vk-blocks-pro') }
 					style={ { border: imageBorderProperty } }
 				/>
 			  );
@@ -194,7 +194,7 @@ export class PRcontent extends Component {
 				className={ "vk_prContent_colTxt_title" }
 				onChange={ value => setAttributes({ title: value }) }
 				value={ title }
-				placeholder={ __("Input title.", "vk-blocks") }
+				placeholder={ __("Input title.", 'vk-blocks-pro') }
 				style={ { color: titleColor } }
 						/>
 			<RichText
@@ -202,7 +202,7 @@ export class PRcontent extends Component {
 				className={ "vk_prContent_colTxt_text" }
 				onChange={ value => setAttributes({ content: value }) }
 				value={ content }
-				placeholder={ __("Input content.", "vk-blocks") }
+				placeholder={ __("Input content.", 'vk-blocks-pro') }
 				style={ { color: contentColor } }
 						/>
 		</Fragment>

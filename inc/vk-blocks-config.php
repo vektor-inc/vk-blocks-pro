@@ -8,7 +8,7 @@
  */
 
 // Load composer autoload.
-require_once dirname( dirname( __FILE__ ) ) . '/vendor/autoload.php';
+require_once dirname( __DIR__ ) . '/vendor/autoload.php';
 
 use VektorInc\VK_Color_Palette_Manager\VkColorPaletteManager;
 
@@ -31,8 +31,6 @@ if ( ! function_exists( 'vk_blocks_active' ) ) {
 		$vk_blocks_prefix .= ' ';
 	}
 
-	require_once plugin_dir_path( __FILE__ ) . 'vk-helpers/config.php';
-	require_once plugin_dir_path( __FILE__ ) . 'vk-admin/vk-admin-config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/helpers.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-components/vk-components-config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/load-vk-components.php';

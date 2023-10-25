@@ -7,39 +7,38 @@
  * @package vk_blocks
  */
 
-// オプション値などでスタイルを作る処理を読み込み.
-require_once dirname( __FILE__ ) . '/style/balloon.php';
-require_once dirname( __FILE__ ) . '/style/hidden-extension.php';
+// Load Files
+require_once __DIR__ . '/utils/hex-to-rgba.php';
+require_once __DIR__ . '/utils/color-slug-to-color-code.php';
+require_once __DIR__ . '/utils/array-merge.php';
+require_once __DIR__ . '/utils/minify-css.php';
+require_once __DIR__ . '/style/balloon.php';
+require_once __DIR__ . '/style/hidden-extension.php';
+require_once __DIR__ . '/extensions/core/list.php';
+require_once __DIR__ . '/view/responsive-br.php';
+require_once __DIR__ . '/view/class-vk-blocks-postlist.php';
 
-require_once dirname( __FILE__ ) . '/view/responsive-br.php';
-require_once dirname( __FILE__ ) . '/view/class-vk-blocks-postlist.php';
-
-require_once dirname( __FILE__ ) . '/class-vk-blocks-print-css-variables.php';
+require_once __DIR__ . '/class-vk-blocks-print-css-variables.php';
 
 // グローバル設定を定義
-require_once dirname( __FILE__ ) . '/class-vk-blocks-global-settings.php';
+require_once __DIR__ . '/class-vk-blocks-global-settings.php';
 VK_Blocks_Global_Settings::init();
 
-require_once dirname( __FILE__ ) . '/class-vk-blocks-block-loader.php';
+require_once __DIR__ . '/class-vk-blocks-block-loader.php';
 VK_Blocks_Block_Loader::init();
 
 // オプション値を定義
-require_once dirname( __FILE__ ) . '/class-vk-blocks-options.php';
+require_once __DIR__ . '/class-vk-blocks-options.php';
 VK_Blocks_Options::init();
 
 // font-awesome
-require_once dirname( __FILE__ ) . '/font-awesome/font-awesome-config.php';
-
-require_once dirname( __FILE__ ) . '/utils/hex-to-rgba.php';
-require_once dirname( __FILE__ ) . '/utils/color-slug-to-color-code.php';
-require_once dirname( __FILE__ ) . '/utils/array-merge.php';
-require_once dirname( __FILE__ ) . '/utils/minify-css.php';
+require_once __DIR__ . '/font-awesome/font-awesome-config.php';
 
 // VK Blocks の管理画面.
-require_once dirname( __FILE__ ) . '/admin/admin.php';
-require_once dirname( __FILE__ ) . '/init.php';
-require_once dirname( __FILE__ ) . '/blocks.php';
-require_once dirname( __FILE__ ) . '/App/RestAPI/BlockMeta/class-vk-blocks-entrypoint.php';
+require_once __DIR__ . '/admin/admin.php';
+require_once __DIR__ . '/init.php';
+require_once __DIR__ . '/blocks.php';
+require_once __DIR__ . '/App/RestAPI/BlockMeta/class-vk-blocks-entrypoint.php';
 new Vk_Blocks_EntryPoint();
 
 /**
@@ -54,7 +53,7 @@ add_action(
 	function () {
 		// Load language files.
 		$path = dirname( plugin_basename( __FILE__ ) ) . '/languages';
-		load_plugin_textdomain( 'vk-blocks', false, $path );
+		load_plugin_textdomain( 'vk-blocks-pro', false, $path );
 	}
 );
 
@@ -63,7 +62,7 @@ add_action(
  */
 add_filter(
 	'body_class',
-	function( $class ) {
+	function ( $class ) {
 		$class[] = 'vk-blocks';
 		return $class;
 	}
@@ -91,6 +90,7 @@ function vk_blocks_blocks_assets() {
 			'show_custom_css_editor_flag' => $vk_blocks_options['show_custom_css_editor_flag'],
 			'balloon_meta_lists'          => $vk_blocks_options['balloon_meta_lists'],
 			'custom_format_lists'         => $vk_blocks_options['custom_format_lists'],
+			'block_variation_lists'       => $vk_blocks_options['block_variation_lists'],
 		)
 	);
 
@@ -189,10 +189,6 @@ if ( ! function_exists( 'vk_blocks_set_wp_version' ) ) {
  * スクリプトの読み込み
  */
 function vk_blocks_load_scripts() {
-	// Slider Block
-	global $vk_swiper_url;
-	wp_enqueue_style( 'vk-swiper-style', $vk_swiper_url . 'assets/css/swiper.min.css', array(), SWIPER_VERSION );
-
 	wp_enqueue_script( 'vk-blocks-slider', VK_BLOCKS_DIR_URL . 'build/vk-slider.min.js', array( 'vk-swiper-script' ), VK_BLOCKS_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'vk_blocks_load_scripts' );

@@ -33,7 +33,7 @@ export default function SelectPostListItemEdit(props) {
 			<div className="alert alert-warning text-center">
 				{__(
 					'Because no post is selected, The block Will not render',
-					'vk-blocks'
+					'vk-blocks-pro'
 				)}
 			</div>
 		);
@@ -66,7 +66,7 @@ export default function SelectPostListItemEdit(props) {
 											? __('Unlink')
 											: __(
 													'Input Internal Post URL',
-													'vk-blocks'
+													'vk-blocks-pro'
 											  )
 									}
 									onClick={setLink}

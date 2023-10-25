@@ -3,7 +3,7 @@
 	"name": "vk-blocks/card-item",
 	"title": "Card Item",
 	"description": "A single item in a card block.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"category": "vk-blocks-cat",
 	"attributes": {
 		"layout": {
@@ -110,6 +110,7 @@
 		}
 	},
 	"supports": {
+		"html": false,
 		"className": true
 	},
 	"parent": ["vk-blocks/card"]

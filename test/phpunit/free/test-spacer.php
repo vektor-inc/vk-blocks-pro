@@ -99,11 +99,11 @@ class VKBSpacerTest extends WP_UnitTestCase {
 			// カスタム
 			array(
 				'options' => array(
-					'margin_size' => array( 'md' => array( 'custom' => 'var(--wp--custom--spacing--xx--small)' ) ),
+					'margin_size' => array( 'md' => array( 'custom' => 'var(--wp--custom--spacing--xx-small)' ) ),
 				),
 				'size'    => 'md',
 				'device'  => 'custom',
-				'correct' => 'var(--wp--custom--spacing--xx--small)',
+				'correct' => 'var(--wp--custom--spacing--xx-small)',
 			),
 
 		);
@@ -269,7 +269,7 @@ class VKBSpacerTest extends WP_UnitTestCase {
 					),
 					'margin_unit' => 'rem'
 				),
-				'correct'     => '@media (max-width: 575.98px) {:root{--vk-margin-sm:1rem;--vk-margin-md:1rem;--vk-margin-lg:1rem;--vk-margin-xl:2rem;}}@media (min-width: 576px) and (max-width: 991.98px) {:root{--vk-margin-sm:2rem;--vk-margin-md:2rem;--vk-margin-lg:3rem;--vk-margin-xl:2rem;}}@media (min-width: 992px) {:root{--vk-margin-sm:3rem;--vk-margin-md:2rem;--vk-margin-lg:3rem;--vk-margin-xl:3rem;}}',
+				'correct'     => '@media (max-width: 575.98px) {:root,body{--vk-margin-sm:1rem;--vk-margin-md:1rem;--vk-margin-lg:1rem;--vk-margin-xl:2rem;}}@media (min-width: 576px) and (max-width: 991.98px) {:root,body{--vk-margin-sm:2rem;--vk-margin-md:2rem;--vk-margin-lg:3rem;--vk-margin-xl:2rem;}}@media (min-width: 992px) {:root,body{--vk-margin-sm:3rem;--vk-margin-md:2rem;--vk-margin-lg:3rem;--vk-margin-xl:3rem;}}',
 			),
 			array(
 				'options'     => array(
@@ -307,7 +307,7 @@ class VKBSpacerTest extends WP_UnitTestCase {
 					),
 					'margin_unit' => 'rem'
 				),
-				'correct'     => ':root{--vk-margin-xs:var( --aaa-xs );--vk-margin-sm:var( --aaa-sm );--vk-margin-md:var( --aaa-md );--vk-margin-lg:var( --aaa-lg );--vk-margin-xl:var( --aaa-xl );}',
+				'correct'     => ':root,body{--vk-margin-xs:var( --aaa-xs );--vk-margin-sm:var( --aaa-sm );--vk-margin-md:var( --aaa-md );--vk-margin-lg:var( --aaa-lg );--vk-margin-xl:var( --aaa-xl );}',
 			),
 		);
 

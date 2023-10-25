@@ -3,11 +3,12 @@
 	"name": "vk-blocks/accordion-target",
 	"title": "Accordion Target",
 	"description": "This is the content area where you can add blocks freely.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"category": "vk-blocks-cat",
 	"parent": ["vk-blocks/accordion"],
 	"attributes": {},
 	"supports": {
+		"html": false,
 		"anchor": true,
 		"className": true
 	}

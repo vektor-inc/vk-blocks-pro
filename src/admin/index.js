@@ -6,11 +6,15 @@ import {
 	createRoot,
 	useState,
 	createContext,
+	useEffect,
 } from '@wordpress/element';
+import { useSelect } from '@wordpress/data';
 
 /**
  * Internal dependencies
  */
+import '@vkblocks/utils/store';
+import { STORE_NAME } from '@vkblocks/utils/store/constants';
 import AdminLicense from '@vkblocks/admin/license';
 import AdminBalloon from '@vkblocks/admin/balloon';
 import AdminMargin from '@vkblocks/admin/margin';
@@ -20,25 +24,39 @@ import BlockManager from '@vkblocks/admin/block-manager';
 import AdminCustomFormat from '@vkblocks/admin/custom-format';
 import AdminCustomBlockStyle from '@vkblocks/admin/custom-block-style';
 import AdminCustomCss from '@vkblocks/admin/custom-css';
+import BlockStyleManager from '@vkblocks/admin/block-style-manager';
+import AdminImportExport from '@vkblocks/admin/import-export';
 import { SaveButton } from '@vkblocks/admin/save-button';
 /*globals vkBlocksObject */
 
 export const AdminContext = createContext();
 
 export default function VKBlocksAdmin() {
-	const [vkBlocksOption, setVkBlocksOption] = useState(
-		vkBlocksObject.options
-	);
-
+	const [vkBlocksOption, setVkBlocksOption] = useState();
 	const [reloadFlag, setReloadFlag] = useState(false);
+	const [isChanged, setIsChanged] = useState(false);
+
+	const storeOptions = useSelect((select) => {
+		const { getOptions } = select(STORE_NAME);
+		return getOptions().vkBlocksOption;
+	}, []);
+
+	useEffect(() => {
+		setVkBlocksOption(storeOptions);
+	}, [storeOptions]);
+
+	const optionChanged = (value) => {
+		setVkBlocksOption(value);
+		setIsChanged(true);
+	};
 
 	return (
 		<>
 			{/* AdminContext.Providerで各コンポーネントにvalueを渡す */}
 			<AdminContext.Provider
 				value={{
-					vkBlocksOption,
-					setVkBlocksOption,
+					vkBlocksOption: vkBlocksOption ?? vkBlocksObject.options,
+					setVkBlocksOption: optionChanged,
 					reloadFlag,
 					setReloadFlag,
 				}}
@@ -52,10 +70,15 @@ export default function VKBlocksAdmin() {
 				{vkBlocksObject.isPro && <AdminNewFaq />}
 				{vkBlocksObject.isPro && <AdminCustomCss />}
 				<BlockManager />
+				<BlockStyleManager />
 				<SaveButton
 					classOption={'sticky'}
-					vkBlocksOption={vkBlocksOption}
-					reloadFlag={reloadFlag}
+					isChanged={isChanged}
+					setIsChanged={setIsChanged}
+				/>
+				<AdminImportExport
+					isChanged={isChanged}
+					setIsChanged={setIsChanged}
 				/>
 			</AdminContext.Provider>
 		</>

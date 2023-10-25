@@ -69,7 +69,7 @@
 		}
 	},
 	"description": "This is a heading that allows you to set text size, subtext, icon, and margin.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
 		"className": true,
 		"customClassName": true,

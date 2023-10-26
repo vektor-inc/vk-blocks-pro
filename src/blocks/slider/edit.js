@@ -227,7 +227,7 @@ export default function SliderEdit(props) {
 		sloderPerViewLoopAlert = (
 			<div className="alert alert-danger font-size-11px offset-mt-18px">
 				{__(
-					'If you want to loop slides, the number of placed slide items must be greater than or equal to 3 times the number of items you want to display per view.',
+					'If you want to loop slides, the number of placed slide items must be greater than or equal to tweice the number of items you want to display per view.',
 					'vk-blocks-pro'
 				)}
 			</div>
@@ -245,21 +245,34 @@ export default function SliderEdit(props) {
 
 	// モバイル
 	let slidesPerViewMobileLoopAlert = '';
-	if (!!loop && innerBlocks.length / slidesPerViewMobile < 2) {
-		slidesPerViewMobileLoopAlert = sloderPerViewLoopAlert;
-	}
-
 	// タブレット
 	let slidesPerViewTabletLoopAlert = '';
-	if (!!loop && innerBlocks.length / slidesPerViewTablet < 2) {
-		slidesPerViewTabletLoopAlert = sloderPerViewLoopAlert;
-	}
-
 	// PC
 	let slidesPerViewPCLoopAlert = '';
-	if (!!loop && innerBlocks.length / slidesPerViewPC < 2) {
-		slidesPerViewPCLoopAlert = sloderPerViewLoopAlert;
+	if (!!loop ) {
+		if(
+			( slidesPerGroup === 'slides-per-view' && innerBlocks.length / slidesPerViewMobile < 2 ) ||
+			( slidesPerGroup === 'one-by-one' && innerBlocks.length - slidesPerViewMobile < 0 )
+		) {
+			slidesPerViewMobileLoopAlert = sloderPerViewLoopAlert;
+		}
+		if (
+			( innerBlocks.length / slidesPerViewTablet <= 2 ) ||
+			( slidesPerGroup === 'one-by-one' && innerBlocks.length - slidesPerViewTablet < 0 )
+		) {
+			slidesPerViewTabletLoopAlert = sloderPerViewLoopAlert;
+		}	
+	
+		if (
+			( slidesPerGroup === 'slides-per-view' && innerBlocks.length / slidesPerViewPC <= 2 ) ||
+			( slidesPerGroup === 'one-by-one' && innerBlocks.length - slidesPerViewPC < 0 )
+		) {
+			slidesPerViewPCLoopAlert = sloderPerViewLoopAlert;
+		}
 	}
+
+
+
 
 	// 幅のクラス名変更
 	let alignClass = '';

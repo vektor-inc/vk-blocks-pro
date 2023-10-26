@@ -249,30 +249,32 @@ export default function SliderEdit(props) {
 	let slidesPerViewTabletLoopAlert = '';
 	// PC
 	let slidesPerViewPCLoopAlert = '';
-	if (!!loop ) {
-		if(
-			( slidesPerGroup === 'slides-per-view' && innerBlocks.length / slidesPerViewMobile < 2 ) ||
-			( slidesPerGroup === 'one-by-one' && innerBlocks.length - slidesPerViewMobile < 0 )
+	if (!!loop) {
+		if (
+			(slidesPerGroup === 'slides-per-view' &&
+				innerBlocks.length / slidesPerViewMobile < 2) ||
+			(slidesPerGroup === 'one-by-one' &&
+				innerBlocks.length - slidesPerViewMobile < 0)
 		) {
 			slidesPerViewMobileLoopAlert = sloderPerViewLoopAlert;
 		}
 		if (
-			( innerBlocks.length / slidesPerViewTablet <= 2 ) ||
-			( slidesPerGroup === 'one-by-one' && innerBlocks.length - slidesPerViewTablet < 0 )
+			innerBlocks.length / slidesPerViewTablet <= 2 ||
+			(slidesPerGroup === 'one-by-one' &&
+				innerBlocks.length - slidesPerViewTablet < 0)
 		) {
 			slidesPerViewTabletLoopAlert = sloderPerViewLoopAlert;
-		}	
-	
+		}
+
 		if (
-			( slidesPerGroup === 'slides-per-view' && innerBlocks.length / slidesPerViewPC <= 2 ) ||
-			( slidesPerGroup === 'one-by-one' && innerBlocks.length - slidesPerViewPC < 0 )
+			(slidesPerGroup === 'slides-per-view' &&
+				innerBlocks.length / slidesPerViewPC <= 2) ||
+			(slidesPerGroup === 'one-by-one' &&
+				innerBlocks.length - slidesPerViewPC < 0)
 		) {
 			slidesPerViewPCLoopAlert = sloderPerViewLoopAlert;
 		}
 	}
-
-
-
 
 	// 幅のクラス名変更
 	let alignClass = '';

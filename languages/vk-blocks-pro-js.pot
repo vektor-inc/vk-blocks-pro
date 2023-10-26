@@ -2625,7 +2625,8 @@ msgstr ""
 #: src/blocks/slider/edit.js:229
 msgid ""
 "If you want to loop slides, the number of placed slide items must be "
-"greater than twice the number of items you want to display per view."
+"greater than or equal to 3 times the number of items you want to display "
+"per view."
 msgstr ""
 
 #: src/blocks/slider/edit.js:238

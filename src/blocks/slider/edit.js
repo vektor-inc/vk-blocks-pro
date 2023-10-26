@@ -259,7 +259,8 @@ export default function SliderEdit(props) {
 			slidesPerViewMobileLoopAlert = sloderPerViewLoopAlert;
 		}
 		if (
-			innerBlocks.length / slidesPerViewTablet <= 2 ||
+			(slidesPerGroup === 'slides-per-view' &&
+				innerBlocks.length / slidesPerViewTablet <= 2) ||
 			(slidesPerGroup === 'one-by-one' &&
 				innerBlocks.length - slidesPerViewTablet < 0)
 		) {

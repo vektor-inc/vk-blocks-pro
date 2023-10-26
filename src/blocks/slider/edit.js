@@ -255,7 +255,7 @@ export default function SliderEdit(props) {
 			(slidesPerGroup === 'slides-per-view' &&
 				innerBlocks.length / slidesPerViewMobile < 2) ||
 			(slidesPerGroup === 'one-by-one' &&
-				innerBlocks.length - ( slidesPerViewMobile + 1 ) < 0)
+				innerBlocks.length - (slidesPerViewMobile + 1) < 0)
 		) {
 			slidesPerViewMobileLoopAlert = sloderPerViewLoopAlert;
 		}
@@ -263,7 +263,7 @@ export default function SliderEdit(props) {
 			(slidesPerGroup === 'slides-per-view' &&
 				innerBlocks.length / slidesPerViewTablet < 2) ||
 			(slidesPerGroup === 'one-by-one' &&
-				innerBlocks.length - ( slidesPerViewMobile + 1 ) < 0)
+				innerBlocks.length - (slidesPerViewTablet + 1) < 0)
 		) {
 			slidesPerViewTabletLoopAlert = sloderPerViewLoopAlert;
 		}
@@ -272,7 +272,7 @@ export default function SliderEdit(props) {
 			(slidesPerGroup === 'slides-per-view' &&
 				innerBlocks.length / slidesPerViewPC < 2) ||
 			(slidesPerGroup === 'one-by-one' &&
-				innerBlocks.length - slidesPerViewPC <= 0)
+				innerBlocks.length - (slidesPerViewPC + 1) < 0)
 		) {
 			slidesPerViewPCLoopAlert = sloderPerViewLoopAlert;
 		}

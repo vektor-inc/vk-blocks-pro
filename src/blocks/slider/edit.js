@@ -222,14 +222,27 @@ export default function SliderEdit(props) {
 	}
 
 	// ループに関するアラート
-	const sloderPerViewLoopAlert = (
-		<div className="alert alert-danger font-size-11px offset-mt-18px">
-			{__(
-				'If you want to loop slides, the number of placed slide items must be at least twice as large as the number of items to display per view.',
-				'vk-blocks-pro'
-			)}
-		</div>
-	);
+	let sloderPerViewLoopAlert = '';
+	if ( slidesPerGroup === 'slides-per-view' ) {
+		sloderPerViewLoopAlert = (
+			<div className="alert alert-danger font-size-11px offset-mt-18px">
+				{__(
+					'If you want to loop slides, the number of placed slide items must be greater than twice the number of items you want to display per view.',
+					'vk-blocks-pro'
+				)}
+			</div>
+		);
+	} else {
+		sloderPerViewLoopAlert = (
+			<div className="alert alert-danger font-size-11px offset-mt-18px">
+				{__(
+					'If you want to loop slides, the number of placed slide items must be greater than or equal to the number of items you want to display per view.',
+					'vk-blocks-pro'
+				)}
+			</div>
+		);
+	}
+
 
 	// モバイル
 	let slidesPerViewMobileLoopAlert = '';

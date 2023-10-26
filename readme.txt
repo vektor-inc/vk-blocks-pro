@@ -102,6 +102,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] Update Swiper 11.0.1
+
 = 1.64.0 =
 [ Add Function ][ Dynamic Text Block (Pro) ] Added option to display parent page title.
 [ Bug fix ][ Page list from ancestor ] Fixed XSS issue.

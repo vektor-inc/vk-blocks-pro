@@ -243,6 +243,7 @@ export default function SliderEdit(props) {
 		);
 	}
 
+	/* ループ時のアラート */
 	// モバイル
 	let slidesPerViewMobileLoopAlert = '';
 	// タブレット

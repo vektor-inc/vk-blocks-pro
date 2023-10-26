@@ -253,7 +253,7 @@ export default function SliderEdit(props) {
 	if (!!loop) {
 		if (
 			(slidesPerGroup === 'slides-per-view' &&
-				innerBlocks.length / slidesPerViewMobile < 2) ||
+				innerBlocks.length / slidesPerViewMobile <= 2) ||
 			(slidesPerGroup === 'one-by-one' &&
 				innerBlocks.length - slidesPerViewMobile < 0)
 		) {

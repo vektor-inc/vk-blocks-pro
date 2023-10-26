@@ -236,7 +236,7 @@ export default function SliderEdit(props) {
 		sloderPerViewLoopAlert = (
 			<div className="alert alert-danger font-size-11px offset-mt-18px">
 				{__(
-					'If you want to loop slides, the number of placed slide items must be greater than the number of items you want to display per view.',
+					'If you want to loop slides, the number of placed slide items must be greater than or equal to the number of items you want to display per view + 1.',
 					'vk-blocks-pro'
 				)}
 			</div>
@@ -255,7 +255,7 @@ export default function SliderEdit(props) {
 			(slidesPerGroup === 'slides-per-view' &&
 				innerBlocks.length / slidesPerViewMobile < 2) ||
 			(slidesPerGroup === 'one-by-one' &&
-				innerBlocks.length - slidesPerViewMobile <= 0)
+				innerBlocks.length - ( slidesPerViewMobile + 1 ) < 0)
 		) {
 			slidesPerViewMobileLoopAlert = sloderPerViewLoopAlert;
 		}
@@ -263,7 +263,7 @@ export default function SliderEdit(props) {
 			(slidesPerGroup === 'slides-per-view' &&
 				innerBlocks.length / slidesPerViewTablet < 2) ||
 			(slidesPerGroup === 'one-by-one' &&
-				innerBlocks.length - slidesPerViewTablet <= 0)
+				innerBlocks.length - ( slidesPerViewMobile + 1 ) < 0)
 		) {
 			slidesPerViewTabletLoopAlert = sloderPerViewLoopAlert;
 		}

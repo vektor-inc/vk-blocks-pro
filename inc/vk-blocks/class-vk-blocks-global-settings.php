@@ -231,6 +231,10 @@ class VK_Blocks_Global_Settings {
 				'is_pro' => true,
 			),
 			array(
+				'name'   => 'post-single-term',
+				'is_pro' => true,
+			),			
+			array(
 				'name'   => 'select-post-list',
 				'is_pro' => true,
 			),

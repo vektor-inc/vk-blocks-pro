@@ -186,7 +186,7 @@ export default function SliderEdit(props) {
 
 	// １スライドあたりの表示枚数がスライダーの総枚数の約数出なかったときに表示するアラート
 	const slidesPerViewAlert = (
-		<div className="text-danger font-size-11px offset-mt-18px">
+		<div className="text-danger font-size-11px">
 			{__(
 				'Enter integer divisors for the number of placed slide items for each display size.',
 				'vk-blocks-pro'
@@ -225,16 +225,16 @@ export default function SliderEdit(props) {
 	let sloderPerViewLoopAlert = '';
 	if (slidesPerGroup === 'slides-per-view') {
 		sloderPerViewLoopAlert = (
-			<div className="alert alert-danger font-size-11px offset-mt-18px">
+			<div className="alert alert-danger font-size-11px">
 				{__(
-					'If you want to loop slides, the number of placed slide items must be greater than or equal to tweice the number of items you want to display per view.',
+					'If you want to loop slides, the number of placed slide items must be greater than or equal to twice the number of items you want to display per view.',
 					'vk-blocks-pro'
 				)}
 			</div>
 		);
 	} else {
 		sloderPerViewLoopAlert = (
-			<div className="alert alert-danger font-size-11px offset-mt-18px">
+			<div className="alert alert-danger font-size-11px">
 				{__(
 					'If you want to loop slides, the number of placed slide items must be greater than or equal to the number of items you want to display per view + 1.',
 					'vk-blocks-pro'
@@ -276,19 +276,6 @@ export default function SliderEdit(props) {
 		) {
 			slidesPerViewPCLoopAlert = sloderPerViewLoopAlert;
 		}
-	}
-
-	/* 中央寄せのアラート */
-	let centeredSlidesAlert = '';
-	if (!!centeredSlides) {
-		centeredSlidesAlert = (
-			<div className="alert alert-danger font-size-11px offset-mt-18px">
-				{__(
-					'Be careful if the number of items you display per view is not a divisor of the total number of slides.',
-					'vk-blocks-pro'
-				)}
-			</div>
-		);
 	}
 
 	// 幅のクラス名変更
@@ -475,7 +462,6 @@ export default function SliderEdit(props) {
 							'vk-blocks-pro'
 						)}
 					/>
-					{centeredSlidesAlert}
 				</BaseControl>
 			</PanelBody>
 		);

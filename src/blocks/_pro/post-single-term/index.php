@@ -1,15 +1,16 @@
 <?php
 /**
- * Registers the `vk-blocks/post-new-badge` block.
+ * Registers the `vk-blocks/post-single-term` block.
  *
  * @package vk-blocks
  */
 
 /**
- * New Badge render callback
+ * Single Term render callback
  *
- * @param array  $attributes Block attributes.
- * @param string $content Block content.
+ * @param array    $attributes Block attributes.
+ * @param string   $content Block content.
+ * @param WP_Block $block Block context.
  * @return string
  */
 function vk_blocks_post_single_term_render_callback( $attributes, $content, $block ) {
@@ -30,10 +31,15 @@ function vk_blocks_post_single_term_render_callback( $attributes, $content, $blo
 		$body = vk_blocks_merge_styles( \VektorInc\VK_Term_Color\VkTermColor::get_single_term_with_color( $post ), vk_blocks_array_to_css( $styles ) );
 	}
 
-	return "<div $wrapper_attributes>" .
-	$body . '</div>';
+	return "<div $wrapper_attributes>" . $body . '</div>';
 }
 
+/**
+ * Vk blocks array to css.
+ *
+ * @param array $style Styles array.
+ * @return string result CSS.
+ */
 function vk_blocks_array_to_css( $style ) {
 	$css = '';
 	foreach ( $style as $property => $value ) {
@@ -44,6 +50,12 @@ function vk_blocks_array_to_css( $style ) {
 	return $css;
 }
 
+/**
+ * Vk_blocks_sanitize_multi_dimensional_array
+ *
+ * @param array $array Array to sanitize.
+ * @return array Sanitized array.
+ */
 function vk_blocks_sanitize_multi_dimensional_array( $array ) {
 	foreach ( $array as $key => $value ) {
 		if ( is_array( $value ) ) {
@@ -55,6 +67,13 @@ function vk_blocks_sanitize_multi_dimensional_array( $array ) {
 	return $array;
 }
 
+/**
+ * Merging style
+ *
+ * @param string $html destination string for merging.
+ * @param string $add_style source string for merging.
+ * @return string result string.
+ */
 function vk_blocks_merge_styles( $html, $add_style ) {
 	// スタイル属性の中身を取得
 	preg_match( '/style="([^"]+)"/', $html, $matches );

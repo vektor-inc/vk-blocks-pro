@@ -233,7 +233,7 @@ class VK_Blocks_Global_Settings {
 			array(
 				'name'   => 'post-single-term',
 				'is_pro' => true,
-			),			
+			),
 			array(
 				'name'   => 'select-post-list',
 				'is_pro' => true,

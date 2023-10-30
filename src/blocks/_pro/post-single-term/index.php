@@ -13,31 +13,30 @@
  * @return string
  */
 function vk_blocks_post_single_term_render_callback( $attributes, $content, $block ) {
-	$post = get_post($block->context['postId']);
+	$post               = get_post( $block->context['postId'] );
 	$wrapper_attributes = get_block_wrapper_attributes();
-	$attributes = vk_blocks_sanitize_multi_dimensional_array( $attributes );
+	$attributes         = vk_blocks_sanitize_multi_dimensional_array( $attributes );
 	$styles             = array();
 	if ( array_key_exists( 'paddingValues', $attributes ) ) {
 		$styles['padding-top']    = $attributes['paddingValues']['top'];
 		$styles['padding-left']   = $attributes['paddingValues']['left'];
 		$styles['padding-bottom'] = $attributes['paddingValues']['bottom'];
 		$styles['padding-right']  = $attributes['paddingValues']['right'];
-	}	
-
-	if ( is_null ($post) ) {
-		$body = vk_blocks_merge_styles( '<span style="background-color:#999">（ターム名）</span>', vk_blocks_array_to_css( $styles ) );
-	} else {
-		$body = vk_blocks_merge_styles( \VektorInc\VK_Term_Color\VkTermColor::get_single_term_with_color( $post ),  vk_blocks_array_to_css( $styles ) );
 	}
 
-	return "<div $wrapper_attributes>" . 
-	$body . "</div>";
+	if ( is_null( $post ) ) {
+		$body = vk_blocks_merge_styles( '<span style="background-color:#999">（ターム名）</span>', vk_blocks_array_to_css( $styles ) );
+	} else {
+		$body = vk_blocks_merge_styles( \VektorInc\VK_Term_Color\VkTermColor::get_single_term_with_color( $post ), vk_blocks_array_to_css( $styles ) );
+	}
+
+	return "<div $wrapper_attributes>" .
+	$body . '</div>';
 }
 
 function vk_blocks_array_to_css( $style ) {
 	$css = '';
 	foreach ( $style as $property => $value ) {
-
 		$property = preg_replace( '/([a-z])([A-Z])/', '$1-$2', $property );
 		$property = strtolower( $property );
 		$css     .= $property . ': ' . $value . '; ';
@@ -57,22 +56,22 @@ function vk_blocks_sanitize_multi_dimensional_array( $array ) {
 }
 
 function vk_blocks_merge_styles( $html, $add_style ) {
-    // スタイル属性の中身を取得
-    preg_match( '/style="([^"]+)"/', $html, $matches );
-    
-    // 既存のスタイルが存在する場合
-    if (isset($matches[1])) {
-        $original_style = $matches[1];
-        // 既存のスタイルと追加のスタイルをマージ
-        $merged_style = $original_style . ';' . $add_style;
-        // マージしたスタイルを元のHTMLに適用
-        $result = str_replace( $original_style, $merged_style, $html );
-    } else {
-        // スタイルが存在しない場合、新たにスタイル属性を追加
-        $result = str_replace( '<span', '<span style="' . $add_style . '"', $html );
-    }
-    
-    return $result;
+	// スタイル属性の中身を取得
+	preg_match( '/style="([^"]+)"/', $html, $matches );
+
+	// 既存のスタイルが存在する場合
+	if ( isset( $matches[1] ) ) {
+		$original_style = $matches[1];
+		// 既存のスタイルと追加のスタイルをマージ
+		$merged_style = $original_style . ';' . $add_style;
+		// マージしたスタイルを元のHTMLに適用
+		$result = str_replace( $original_style, $merged_style, $html );
+	} else {
+		// スタイルが存在しない場合、新たにスタイル属性を追加
+		$result = str_replace( '<span', '<span style="' . $add_style . '"', $html );
+	}
+
+	return $result;
 }
 
 /**

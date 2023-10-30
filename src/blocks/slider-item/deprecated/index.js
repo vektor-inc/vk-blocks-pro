@@ -5,6 +5,7 @@ import save1_9_2 from './1.9.2/save';
 import save1_22_1 from './1.22.1/save';
 import save1_27_7 from './1.27.7/save';
 import save1_34_1 from './1.34.1/save';
+import save1_64_0 from './1.64.0/save';
 
 const blockAttributes = {
 	verticalAlignment: {
@@ -86,7 +87,7 @@ const blockAttributes4 = {
 	},
 }
 
-/*
+
 // 1.34.1 で blockId を追加
 const blockAttributes5 = {
 	...blockAttributes4,
@@ -94,9 +95,13 @@ const blockAttributes5 = {
 		type: 'string',
 	},
 }
-*/
+
 
 export default [
+	{
+		attributes: blockAttributes5,
+		save: save1_64_0,
+	},
 	{
 		attributes: blockAttributes4,
 		save: save1_34_1,

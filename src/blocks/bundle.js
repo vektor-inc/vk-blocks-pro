@@ -32,6 +32,7 @@ import * as prBlocks from './pr-blocks';
 import * as prContent from './pr-content';
 import * as slider from './slider';
 import * as sliderItem from './slider-item';
+import * as sliderItemContainer from './slider-item-container';
 import * as spacer from './spacer';
 import * as staff from './staff';
 
@@ -70,6 +71,7 @@ const vkBlocks = [
 	prContent,
 	slider,
 	sliderItem,
+	sliderItemContainer,
 	spacer,
 	staff,
 	ancestorPageList,

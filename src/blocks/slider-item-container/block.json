@@ -1,0 +1,16 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/slider-item-container",
+	"title": "Slider Item Container",
+	"description": "This is inner content of slider.",
+	"textdomain": "vk-blocks-pro",
+	"category": "vk-blocks-cat-layout",
+	"parent": ["vk-blocks/slider-item"],
+	"supports": {
+		"html": false,
+		"className": true,
+		"spacing": {
+			"padding": true
+		}
+	}
+}

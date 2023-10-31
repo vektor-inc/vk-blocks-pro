@@ -104,6 +104,10 @@ class VK_Blocks_Global_Settings {
 				'is_pro' => false,
 			),
 			array(
+				'name'   => 'slider-item-container',
+				'is_pro' => false,
+			),
+			array(
 				'name'   => 'spacer',
 				'is_pro' => false,
 			),

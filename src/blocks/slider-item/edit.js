@@ -24,7 +24,7 @@ import GenerateBgImage from './GenerateBgImage';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
-
+import { select, dispatch } from '@wordpress/data';
 const prefix = 'vk_slider_item';
 
 export default function SliderItemEdit(props) {
@@ -53,26 +53,24 @@ export default function SliderItemEdit(props) {
 		}
 	}, [clientId]);
 
-	//classPaddingLRのクラス切り替え
-	let classPaddingLR = '';
-	if (padding_left_and_right === '0') {
-		classPaddingLR = ` ${prefix}-paddingLR-none`;
-	} else if (padding_left_and_right === '1') {
-		classPaddingLR = ` ${prefix}-paddingLR-use`;
-	} else if (padding_left_and_right === '2') {
-		// Fit to content area width
-		classPaddingLR = ` ${prefix}-paddingLR-zero`;
-	}
-
-	let containerClass = '';
-	if (
-		classPaddingLR === ` ${prefix}-paddingLR-none` ||
-		classPaddingLR === ''
-	) {
-		containerClass = `${prefix}_container container`;
-	} else {
-		containerClass = `${prefix}_container`;
-	}
+	const { updateBlockAttributes } = dispatch('core/block-editor');
+	useEffect(() => {
+		const thisBlock = select('core/block-editor').getBlock(clientId);
+		if (!!thisBlock && !!thisBlock.innerBlocks) {
+			const innerBlocks = thisBlock.innerBlocks;
+			innerBlocks.forEach((innerBlock) => {
+				if (
+					select('core/block-editor').getBlockName(
+						innerBlock.clientId
+					) === 'vk-blocks/slider-item-container'
+				) {
+					updateBlockAttributes(innerBlock.clientId, {
+						containerWidth: padding_left_and_right,
+					});
+				}
+			});
+		}
+	}, [padding_left_and_right]);
 
 	const opacityClass = opacity && opacity * 10;
 	const bgAreaClasses = classnames('vk_slider_item-background-area', {
@@ -96,9 +94,24 @@ export default function SliderItemEdit(props) {
 		</>
 	);
 
+	//classPaddingLRのクラス切り替え
+	let classPaddingLR = '';
+	if (padding_left_and_right === '0') {
+		classPaddingLR = ` ${prefix}-paddingLR-none`;
+	} else if (padding_left_and_right === '1') {
+		classPaddingLR = ` ${prefix}-paddingLR-use`;
+	} else if (padding_left_and_right === '2') {
+		// Fit to content area width
+		classPaddingLR = ` ${prefix}-paddingLR-zero`;
+	}
+
 	const blockProps = useBlockProps({
 		className: `vk_slider_item swiper-slide vk_valign-${verticalAlignment} ${prefix}-${blockId} ${classPaddingLR} ${prefix}-paddingVertical-none`,
 	});
+
+	const ALLOWED_BLOCKS = ['vk-blocks/slider-item-container'];
+
+	const TEMPLATE = [['vk-blocks/slider-item-container']];
 
 	return (
 		<>
@@ -260,9 +273,11 @@ export default function SliderItemEdit(props) {
 			</InspectorControls>
 			<div {...blockProps}>
 				{GetBgImage}
-				<div className={containerClass}>
-					<InnerBlocks />
-				</div>
+				<InnerBlocks
+					allowedBlocks={ALLOWED_BLOCKS}
+					template={TEMPLATE}
+					templateLock="all"
+				/>
 			</div>
 		</>
 	);

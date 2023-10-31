@@ -21,28 +21,6 @@ export default function save(props) {
 		bgImage,
 		blockId,
 	} = attributes;
-	let classPaddingLR;
-	let containerClass;
-
-	//classPaddingLRのクラス切り替え
-	classPaddingLR = '';
-	if (padding_left_and_right === '0') {
-		classPaddingLR = ` ${prefix}-paddingLR-none`;
-	} else if (padding_left_and_right === '1') {
-		classPaddingLR = ` ${prefix}-paddingLR-use`;
-	} else if (padding_left_and_right === '2') {
-		// Fit to content area width
-		classPaddingLR = ` ${prefix}-paddingLR-zero`;
-	}
-
-	if (
-		classPaddingLR === ` ${prefix}-paddingLR-none` ||
-		classPaddingLR === ''
-	) {
-		containerClass = `${prefix}_container container`;
-	} else {
-		containerClass = `${prefix}_container`;
-	}
 
 	const opacityClass = opacity && opacity * 10;
 	const bgAreaClasses = classnames('vk_slider_item-background-area', {
@@ -56,6 +34,17 @@ export default function save(props) {
 	const bgAreaStyles = {
 		backgroundColor: isHexColor(bgColor) ? bgColor : undefined,
 	};
+
+	//classPaddingLRのクラス切り替え
+	let classPaddingLR = '';
+	if (padding_left_and_right === '0') {
+		classPaddingLR = ` ${prefix}-paddingLR-none`;
+	} else if (padding_left_and_right === '1') {
+		classPaddingLR = ` ${prefix}-paddingLR-use`;
+	} else if (padding_left_and_right === '2') {
+		// Fit to content area width
+		classPaddingLR = ` ${prefix}-paddingLR-zero`;
+	}
 
 	const GetBgImage = (
 		<>
@@ -72,9 +61,7 @@ export default function save(props) {
 	return (
 		<div {...blockProps}>
 			{GetBgImage}
-			<div className={containerClass}>
-				<InnerBlocks.Content />
-			</div>
+			<InnerBlocks.Content />
 		</div>
 	);
 }

@@ -103,6 +103,7 @@ e.g.
 == Changelog ==
 
 [ Specification Change ] Update Swiper 11.0.1
+[ Bug fix ][ Outer (Pro) ] Fix padding in divider style
 
 = 1.64.0 =
 [ Add Function ][ Dynamic Text Block (Pro) ] Added option to display parent page title.

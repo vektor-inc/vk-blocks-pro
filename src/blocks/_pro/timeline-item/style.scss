@@ -70,7 +70,7 @@
 			width: 14px;
 			height: 14px;
 			border-radius: 50%;
-
+			box-sizing: border-box;
 			&.vk_timeline_item_style-default {
 				&:not(.has-background) {
 					background-color: #337ab7;
@@ -79,7 +79,6 @@
 
 			&.vk_timeline_item_style-outlined {
 				border: 3px solid currentColor;
-				box-sizing: border-box;
 				&:not(.has-text-color) {
 					color: #337ab7;
 				}

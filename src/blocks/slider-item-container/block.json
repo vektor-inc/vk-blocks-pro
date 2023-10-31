@@ -6,6 +6,12 @@
 	"textdomain": "vk-blocks-pro",
 	"category": "vk-blocks-cat-layout",
 	"parent": ["vk-blocks/slider-item"],
+	"attributes": {
+		"containerWidth": {
+			"type": "string",
+			"default": "0"
+		}
+	},
 	"supports": {
 		"html": false,
 		"className": true,

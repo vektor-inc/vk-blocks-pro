@@ -166,15 +166,12 @@ const blockAttributes6 = {
 	lower_level_pc: {
 		type: 'number',
 	},
-	lower_level_pc: {
-		type: 'number',
-	},
 };
 
 const deprecated = [
 	{
 		attributes: blockAttributes6,
-		save: save1_61_2,
+		save: save1_64_0,
 	},
 	{
 		attributes: blockAttributes5,

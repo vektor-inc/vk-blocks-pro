@@ -103,6 +103,7 @@ e.g.
 == Changelog ==
 
 [ Specification Change ] Update Swiper 11.0.1
+[ Bug fix ][ Grid Column Card ] Alignment issue of images placed within the body.
 
 = 1.64.0 =
 [ Add Function ][ Dynamic Text Block (Pro) ] Added option to display parent page title.

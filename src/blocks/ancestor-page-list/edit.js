@@ -23,6 +23,14 @@ export default function PostListEdit(props) {
 
 	const blockProps = useBlockProps();
 
+	const matches = ancestorTitleTagName.match(/^(h[2-6]).*/);
+	setAttributes({ ancestorTitleTagName: matches[1] });
+
+	const sanitizedValue = ancestorTitleClassName?.replace(
+		/[^a-zA-Z0-9-_ ]/g,
+		''
+	);
+	setAttributes({ ancestorTitleClassName: sanitizedValue });
 	return (
 		<>
 			<InspectorControls>
@@ -42,9 +50,12 @@ export default function PostListEdit(props) {
 					<SelectControl
 						label={__('Archive title tag', 'vk-blocks-pro')}
 						value={ancestorTitleTagName}
-						onChange={(value) =>
-							setAttributes({ ancestorTitleTagName: value })
-						}
+						onChange={(value) => {
+							const _matches = value.match(/^(h[2-6]).*/);
+							setAttributes({
+								ancestorTitleTagName: _matches[0],
+							});
+						}}
 						options={[
 							{
 								value: 'h2',
@@ -75,9 +86,15 @@ export default function PostListEdit(props) {
 						)}
 						value={ancestorTitleClassName}
 						className={`mt-0 mb-3`}
-						onChange={(value) =>
-							setAttributes({ ancestorTitleClassName: value })
-						}
+						onChange={(value) => {
+							const _sanitizedValue = value.replace(
+								/[^a-zA-Z0-9-_ ]/g,
+								''
+							);
+							setAttributes({
+								ancestorTitleClassName: _sanitizedValue,
+							});
+						}}
 					/>
 					<ToggleControl
 						label={__(

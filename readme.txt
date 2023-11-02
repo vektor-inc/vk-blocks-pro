@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.1
 Tested up to: 6.3
-Stable tag: 1.60.0.1
+Stable tag: 1.63.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -102,10 +102,17 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] Update Swiper 11.0.1
+
+= 1.64.0 =
+[ Add Function ][ Dynamic Text Block (Pro) ] Added option to display parent page title.
+[ Bug fix ][ Page list from ancestor ] Fixed XSS issue.
+
+= 1.63.0 =
+[ Add Function ][ Blog Card (Pro) ] Add block variation function.
+[ Add filter ][ Post List (Pro) ] Add vk_blocks_post_list_query_args filter hook.
 [ Bug fix ][ Balloon ] Fixed word break position.
 [ Bug fix ][ Table of Contents ] Fixed the issue with inner blocks not working correctly.
-[ Add Function ][ Blog Card (Pro) ] Add block variation function.
-
 [ Bug fix ][ Outer (Pro) ] Fixed a bug in the initial setting of divider for each device.
 
 = 1.62.0 =

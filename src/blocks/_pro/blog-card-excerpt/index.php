@@ -49,7 +49,7 @@ function vk_blocks_register_block_blog_card_excerpt() {
 	// Register Style.
 	if ( ! is_admin() ) {
 		wp_register_style(
-			'vk-blocks/blog_card_excerpt',
+			'vk-blocks/blog-card-excerpt',
 			VK_BLOCKS_DIR_URL . 'build/_pro/blog-card-excerpt/style.css',
 			array(),
 			VK_BLOCKS_VERSION
@@ -59,7 +59,7 @@ function vk_blocks_register_block_blog_card_excerpt() {
 	register_block_type(
 		__DIR__,
 		array(
-			'style'           => 'vk-blocks/blog_card_excerpt',
+			'style'           => 'vk-blocks/blog-card-excerpt',
 			'editor_style'    => 'vk-blocks-build-editor-css',
 			'editor_script'   => 'vk-blocks-build-js',
 			'render_callback' => 'vk_blocks_blog_card_excerpt_render_callback',

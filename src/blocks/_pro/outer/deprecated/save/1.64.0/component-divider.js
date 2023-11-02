@@ -166,11 +166,11 @@ const componentDivider = (
 	// vk_outerのクラス名をデバイスタイプに基づいて追加する
 
 	const renderSVG = (lvl, side, deviceType) => {
-		lenderDivider = getSectionStyle(lvl);
 		const style =
 			side === 'upper'
 				? { paddingBottom: sectionPadding + `px` }
 				: { paddingTop: sectionPadding + `px` };
+		lenderDivider = getSectionStyle(lvl);
 
 		let displayDeviceTypeClass;
 		if (deviceType === undefined) {

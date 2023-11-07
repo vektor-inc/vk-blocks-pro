@@ -7,7 +7,8 @@
 	"description": "Body of Grid Column Card Block Item",
 	"parent": ["vk-blocks/gridcolcard-item"],
 	"supports": {
-		"html": false
+		"html": false,
+		"layout": true
 	},
 	"attributes": {
 		"verticalAlignment": {

@@ -35,12 +35,11 @@ if ( ! function_exists( 'vk_blocks_allow_wp_kses_allowed_html' ) ) {
 	 *
 	 * @see The list of tags & attributes currently allowed: https://core.trac.wordpress.org/browser/tags/5.2/src/wp-includes/kses.php#L61
 	 *
-	 * @param array  $tags Allowed HTML tags & attributes.
-	 * @param string $context The context wherein the HTML is being filtered.
+	 * @param array $tags Allowed HTML tags & attributes.
 	 *
 	 * @return array Modified HTML tags & attributes.
 	 */
-	function vk_blocks_allow_wp_kses_allowed_html( $tags, $context ) {
+	function vk_blocks_allow_wp_kses_allowed_html( $tags ) {
 		// Used by Card, Outer Blocks.
 		$tags['style'] = array(
 			'type' => true,

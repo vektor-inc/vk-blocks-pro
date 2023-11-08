@@ -102,6 +102,7 @@ e.g.
 
 == Changelog ==
 
+= 1.64.2 =
 [ Bug fix ][ Custom Format (Pro) ] Fixed Toolbar Icon Size Issue in WordPress 6.4
 
 = 1.64.1 =

@@ -102,6 +102,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Toolbar ] Fixed Toolbar Icon Size Issue in WordPress 6.4
+
 = 1.64.1 =
 [ Specification Change ] Update Swiper 11.0.1
 [ Bug fix ][ Toolbar ] Fixed Toolbar Icon Size Issue in WordPress 6.4

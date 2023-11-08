@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.64.0.0\n"
+"Project-Id-Version: VK Blocks Pro 1.64.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-10-27T02:49:38+00:00\n"
+"POT-Creation-Date: 2023-11-08T08:30:13+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -3556,17 +3556,17 @@ msgid "Setting"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/blocks.php:27
-#: inc/vk-blocks/blocks.php:27
+#: inc/vk-blocks/blocks.php:26
 msgid "Blocks"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/blocks.php:40
-#: inc/vk-blocks/blocks.php:40
+#: inc/vk-blocks/blocks.php:39
 msgid "Blocks Layout"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/blocks.php:53
-#: inc/vk-blocks/blocks.php:53
+#: inc/vk-blocks/blocks.php:52
 msgid "Deprecated Blocks"
 msgstr ""
 

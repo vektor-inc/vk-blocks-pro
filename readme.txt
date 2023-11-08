@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.1
 Tested up to: 6.4
-Stable tag: 1.63.0.1
+Stable tag: 1.64.1.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -101,6 +101,9 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 1.64.2 =
+[ Bug fix ][ Custom Format (Pro) ] Fixed Toolbar Icon Size Issue in WordPress 6.4
 
 = 1.64.1 =
 [ Specification Change ] Update Swiper 11.0.1

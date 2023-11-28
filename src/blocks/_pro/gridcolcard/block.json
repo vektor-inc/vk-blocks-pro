@@ -40,6 +40,9 @@
 		"backgroundColor": {
 			"type": "string"
 		},
+		"backgroundGradient": {
+			"type": "string"
+		},		
 		"containerSpace": {
 			"type": "object",
 			"default": {

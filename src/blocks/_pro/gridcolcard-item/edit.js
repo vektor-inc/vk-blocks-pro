@@ -122,6 +122,7 @@ export default function Edit(props) {
 							borderColor: attributes.borderColor,
 							textColor: attributes.textColor,
 							backgroundColor: attributes.backgroundColor,
+							backgroundGradient: attributes.backgroundGradient,	
 						});
 					}
 				});
@@ -138,6 +139,7 @@ export default function Edit(props) {
 					borderColor: attributes.borderColor,
 					textColor: attributes.textColor,
 					backgroundColor: attributes.backgroundColor,
+					backgroundGradient: attributes.backgroundGradient,
 				});
 			}
 		}
@@ -178,7 +180,6 @@ export default function Edit(props) {
 
 	// 背景グラデーション
 	if (backgroundGradient && isGradientStyle(backgroundGradient)) {
-		// custom color
 		style.background = `${backgroundGradient}`;
 	}
 

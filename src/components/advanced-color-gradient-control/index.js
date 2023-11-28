@@ -41,7 +41,6 @@ export const AdvancedColorGradientControl = (props) => {
 				}
 			}}
 			onGradientChange={(value) => {
-				
 				const gradientSet =
 					select('core/block-editor').getSettings().gradients;
 

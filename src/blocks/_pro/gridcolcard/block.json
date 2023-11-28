@@ -42,7 +42,7 @@
 		},
 		"backgroundGradient": {
 			"type": "string"
-		},		
+		},
 		"containerSpace": {
 			"type": "object",
 			"default": {

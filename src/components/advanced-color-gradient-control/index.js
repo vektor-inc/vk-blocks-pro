@@ -1,11 +1,14 @@
+import { __ } from '@wordpress/i18n';
 import {
 	__experimentalColorGradientControl as ColorGradientControl,
 	getGradientSlugByValue,
 	getColorObjectByColorValue,
+	useSetting
 } from '@wordpress/block-editor';
 import { colorSlugToColorCode } from '@vkblocks/utils/color-slug-to-color-code';
 import { gradientSlugToGradientCode } from '@vkblocks/utils/gradient-slug-to-gradient-code';
 import { select } from '@wordpress/data';
+
 
 export const AdvancedColorGradientControl = (props) => {
 	const {
@@ -20,8 +23,21 @@ export const AdvancedColorGradientControl = (props) => {
 		attributes[gradientSchema]
 	);
 
+	const defaultGradients = useSetting('color.gradients.default');
+	const themeGradients = useSetting('color.gradients.theme');
+	
 	return (
 		<ColorGradientControl
+			gradients={[
+				{
+					name:__('Theme', 'vk-blocks-pro'),
+					gradients:themeGradients
+				},
+				{
+					name:__('Default', 'vk-blocks-pro'),
+					gradients:defaultGradients
+				}
+			]}
 			colorValue={hexColorValue}
 			gradientValue={gradientValue ?? undefined}
 			onColorChange={(value) => {

@@ -3,8 +3,8 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,m
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.1
-Tested up to: 6.3
-Stable tag: 1.63.0.1
+Tested up to: 6.4
+Stable tag: 1.64.1.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -102,7 +102,12 @@ e.g.
 
 == Changelog ==
 
+= 1.64.2 =
+[ Bug fix ][ Custom Format (Pro) ] Fixed Toolbar Icon Size Issue in WordPress 6.4
+
+= 1.64.1 =
 [ Specification Change ] Update Swiper 11.0.1
+[ Bug fix ][ Toolbar ] Fixed Toolbar Icon Size Issue in WordPress 6.4
 [ Bug fix ][ Grid Column (Pro) ] Fixed inner list block style.
 [ Bug fix ][ Outer (Pro) ] Fix padding in divider style
 [ Bug fix ][ Grid Column Card ] Alignment issue of images placed within the body.

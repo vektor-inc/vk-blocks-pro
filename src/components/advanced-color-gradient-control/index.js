@@ -24,19 +24,16 @@ export const AdvancedColorGradientControl = (props) => {
 
 	const defaultGradients = useSetting('color.gradients.default');
 	const themeGradients = useSetting('color.gradients.theme');
-
+	const gradientsArray = [];
+	if (themeGradients?.length > 0) {
+		gradientsArray.push({ name: __('Theme', 'vk-blocks-pro'), gradients: themeGradients });
+	}
+	if (defaultGradients?.length > 0) {
+		gradientsArray.push({ name: __('Default', 'vk-blocks-pro'), gradients: defaultGradients });
+	}
 	return (
 		<ColorGradientControl
-			gradients={[
-				{
-					name: __('Theme', 'vk-blocks-pro'),
-					gradients: themeGradients,
-				},
-				{
-					name: __('Default', 'vk-blocks-pro'),
-					gradients: defaultGradients,
-				},
-			]}
+			gradients={gradientsArray}
 			colorValue={hexColorValue}
 			gradientValue={gradientValue ?? undefined}
 			onColorChange={(value) => {

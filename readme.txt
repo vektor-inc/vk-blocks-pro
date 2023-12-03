@@ -102,6 +102,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] Change VK Component Posts Horizontal col class ( Update VK Component 1.6.0 )
+
 = 1.64.2 =
 [ Bug fix ][ Custom Format (Pro) ] Fixed Toolbar Icon Size Issue in WordPress 6.4
 

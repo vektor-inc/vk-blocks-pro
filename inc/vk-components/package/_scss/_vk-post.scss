@@ -49,6 +49,12 @@ $xxl-min: 1400px;
 /*-------------------------------------------*/
 /* If exclude the .vk_posts that, when you select the .media don't work */
 .vk_posts .vk_post-col {
+	&-5 {
+		width: 41.67%;
+	}
+	&-7 {
+		width: 58.33%;
+	}
 	&-xs-2 {
 		width: calc(16.66% - 30px);
 	}
@@ -339,6 +345,9 @@ $xxl-min: 1400px;
 				border-left:$border_image;
 			}
 		}
+	}
+	.card-horizontal-inner-row {
+		display: flex;
 	}
 }
 

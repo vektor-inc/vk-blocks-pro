@@ -1,4 +1,4 @@
-import { useInnerBlocksProps, useBlockProps } from '@wordpress/block-editor';
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 export default function save(props) {
 	const { attributes } = props;
@@ -17,8 +17,11 @@ export default function save(props) {
 	const blockProps = useBlockProps.save({
 		className: `${containerClass}`,
 	});
-
-	const innerBlockProps = useInnerBlocksProps.save(blockProps);
-
-	return <div {...innerBlockProps} />;
+	return (
+		<div {...blockProps}>
+			<div className={`vk_gridcolcard_item_body_inner`}>
+				<InnerBlocks.Content />
+			</div>
+		</div>
+	);
 }

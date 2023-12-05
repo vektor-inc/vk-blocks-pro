@@ -186,7 +186,7 @@ export default function SliderEdit(props) {
 
 	// １スライドあたりの表示枚数がスライダーの総枚数の約数出なかったときに表示するアラート
 	const slidesPerViewAlert = (
-		<div className="text-danger font-size-11px offset-mt-18px">
+		<div className="text-danger font-size-11px">
 			{__(
 				'Enter integer divisors for the number of placed slide items for each display size.',
 				'vk-blocks-pro'
@@ -222,31 +222,60 @@ export default function SliderEdit(props) {
 	}
 
 	// ループに関するアラート
-	const sloderPerViewLoopAlert = (
-		<div className="alert alert-danger font-size-11px offset-mt-18px">
-			{__(
-				'If you want to loop slides, the number of placed slide items must be at least twice as large as the number of items to display per view.',
-				'vk-blocks-pro'
-			)}
-		</div>
-	);
+	let sloderPerViewLoopAlert = '';
+	if (slidesPerGroup === 'slides-per-view') {
+		sloderPerViewLoopAlert = (
+			<div className="alert alert-danger font-size-11px">
+				{__(
+					'If you want to loop slides, the number of placed slide items must be greater than or equal to twice the number of items you want to display per view.',
+					'vk-blocks-pro'
+				)}
+			</div>
+		);
+	} else {
+		sloderPerViewLoopAlert = (
+			<div className="alert alert-danger font-size-11px">
+				{__(
+					'If you want to loop slides, the number of placed slide items must be greater than or equal to the number of items you want to display per view + 1.',
+					'vk-blocks-pro'
+				)}
+			</div>
+		);
+	}
 
+	/* ループ時のアラート */
 	// モバイル
 	let slidesPerViewMobileLoopAlert = '';
-	if (!!loop && innerBlocks.length / slidesPerViewMobile < 2) {
-		slidesPerViewMobileLoopAlert = sloderPerViewLoopAlert;
-	}
-
 	// タブレット
 	let slidesPerViewTabletLoopAlert = '';
-	if (!!loop && innerBlocks.length / slidesPerViewTablet < 2) {
-		slidesPerViewTabletLoopAlert = sloderPerViewLoopAlert;
-	}
-
 	// PC
 	let slidesPerViewPCLoopAlert = '';
-	if (!!loop && innerBlocks.length / slidesPerViewPC < 2) {
-		slidesPerViewPCLoopAlert = sloderPerViewLoopAlert;
+	if (!!loop) {
+		if (
+			(slidesPerGroup === 'slides-per-view' &&
+				innerBlocks.length / slidesPerViewMobile < 2) ||
+			(slidesPerGroup === 'one-by-one' &&
+				innerBlocks.length - (slidesPerViewMobile + 1) < 0)
+		) {
+			slidesPerViewMobileLoopAlert = sloderPerViewLoopAlert;
+		}
+		if (
+			(slidesPerGroup === 'slides-per-view' &&
+				innerBlocks.length / slidesPerViewTablet < 2) ||
+			(slidesPerGroup === 'one-by-one' &&
+				innerBlocks.length - (slidesPerViewTablet + 1) < 0)
+		) {
+			slidesPerViewTabletLoopAlert = sloderPerViewLoopAlert;
+		}
+
+		if (
+			(slidesPerGroup === 'slides-per-view' &&
+				innerBlocks.length / slidesPerViewPC < 2) ||
+			(slidesPerGroup === 'one-by-one' &&
+				innerBlocks.length - (slidesPerViewPC + 1) < 0)
+		) {
+			slidesPerViewPCLoopAlert = sloderPerViewLoopAlert;
+		}
 	}
 
 	// 幅のクラス名変更

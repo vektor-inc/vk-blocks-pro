@@ -101,7 +101,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-
+[ Bug fix ][ Grid Column Card ] Fixed that Grid Column Card Item Body block could not be selected.
 [ Add Function ][ Grid Column Card ] Enabled gradient specification for background colors.
 
 = 1.64.2 =

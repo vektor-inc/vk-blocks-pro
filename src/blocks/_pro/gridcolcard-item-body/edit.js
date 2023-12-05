@@ -59,7 +59,9 @@ export default function Edit(props) {
 					value={verticalAlignment}
 				/>
 			</BlockControls>
-			<div {...innerBlocksProps} />
+			<div {...blockProps}>
+				<div {...innerBlocksProps} />
+			</div>
 		</>
 	);
 }

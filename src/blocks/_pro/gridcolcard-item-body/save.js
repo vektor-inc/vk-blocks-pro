@@ -25,5 +25,4 @@ export default function save(props) {
 			<div {...innerBlockProps} />
 		</div>
 	);
-	
 }

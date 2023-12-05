@@ -20,7 +20,7 @@ export default function SingleTermEdit(props) {
 
 	const label = termColorInfo && (
 		<>
-			{ hasLink ? (
+			{hasLink ? (
 				<a
 					href={termColorInfo.term_url}
 					className="vk_singleTerm-inner"

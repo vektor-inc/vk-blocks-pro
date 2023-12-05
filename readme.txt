@@ -102,6 +102,8 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Grid Column Card ] Enabled gradient specification for background colors.
+
 = 1.64.2 =
 [ Bug fix ][ Custom Format (Pro) ] Fixed Toolbar Icon Size Issue in WordPress 6.4
 

@@ -20,11 +20,5 @@ export default function save(props) {
 
 	const innerBlockProps = useInnerBlocksProps.save(blockProps);
 
-	return (
-			<div {...blockProps}>
-				<div className={`vk_gridcolcard_item_body_inner`}>
-					<div {...innerBlockProps} />
-				</div>
-			</div>
-	);
+	return <div {...innerBlockProps} />;
 }

@@ -43,8 +43,8 @@ export default function Edit(props) {
 		className: `${containerClass}`,
 	});
 
-	const innerBlocksProps = useInnerBlocksProps(
-		{ ...blockProps, className: `vk_gridcolcard_item_body_inner` },
+	const innerBlockProps = useInnerBlocksProps(
+		blockProps,
 		{
 			template: MY_TEMPLATE,
 			templateLock: false,
@@ -60,7 +60,9 @@ export default function Edit(props) {
 				/>
 			</BlockControls>
 			<div {...blockProps}>
-				<div {...innerBlocksProps} />
+				<div className={`vk_gridcolcard_item_body_inner`}>
+					<div {...innerBlockProps} />
+				</div>
 			</div>
 		</>
 	);

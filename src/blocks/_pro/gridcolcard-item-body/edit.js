@@ -43,13 +43,10 @@ export default function Edit(props) {
 		className: `${containerClass}`,
 	});
 
-	const innerBlockProps = useInnerBlocksProps(
-		blockProps,
-		{
-			template: MY_TEMPLATE,
-			templateLock: false,
-		}
-	);
+	const innerBlockProps = useInnerBlocksProps(blockProps, {
+		template: MY_TEMPLATE,
+		templateLock: false,
+	});
 
 	return (
 		<>

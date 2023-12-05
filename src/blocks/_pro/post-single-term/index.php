@@ -15,23 +15,22 @@
  */
 function vk_blocks_post_single_term_render_callback( $attributes, $content, $block ) {
 	$post               = get_post( $block->context['postId'] );
-	$wrapper_attributes = get_block_wrapper_attributes();
-	$attributes         = vk_blocks_sanitize_multi_dimensional_array( $attributes );
-	$styles             = array();
-	if ( array_key_exists( 'paddingValues', $attributes ) ) {
-		$styles['padding-top']    = $attributes['paddingValues']['top'];
-		$styles['padding-left']   = $attributes['paddingValues']['left'];
-		$styles['padding-bottom'] = $attributes['paddingValues']['bottom'];
-		$styles['padding-right']  = $attributes['paddingValues']['right'];
-	}
 
-	if ( is_null( $post ) ) {
-		$body = vk_blocks_merge_styles( '<span style="background-color:#999">（ターム名）</span>', vk_blocks_array_to_css( $styles ) );
+	$term_color_info =  \VektorInc\VK_Term_Color\VkTermColor::get_post_single_term_info( $post );
+	
+	$wrapper_attributes = get_block_wrapper_attributes(array(
+		'class' => 'vk_singleTerm',
+		'style' => 'background-color: ' . $term_color_info['color'] . ';'
+	));
+
+	$label = '';
+	if ( $attributes['hasLink'] ) {
+		$label = '<a class="vk_singleTerm-inner" href="' . $term_color_info['term_url'] . '">' . $term_color_info['term_name'] . '</a>';
 	} else {
-		$body = vk_blocks_merge_styles( \VektorInc\VK_Term_Color\VkTermColor::get_single_term_with_color( $post ), vk_blocks_array_to_css( $styles ) );
+		$label = '<span class="vk_singleTerm-inner">' . $term_color_info['term_name'] . '</span>';
 	}
 
-	return "<div $wrapper_attributes>" . $body . '</div>';
+	return "<div $wrapper_attributes>" . $label . '</div>';
 }
 
 /**

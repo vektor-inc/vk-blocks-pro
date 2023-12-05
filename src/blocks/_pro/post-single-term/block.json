@@ -4,19 +4,53 @@
 	"category": "vk-blocks-cat",
 	"title": "Single Term",
 	"attributes": {
-		"content": {
-			"type": "string",
-			"source": "html",
-			"default": "",
-			"selector": "span"
+		"hasLink": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"supports": {
+		"className": true,
+		"anchor": false,
+		"html": false,
+		"color": {
+			"gradients": true,
+			"link": true,
+			"__experimentalDefaultControls": {
+				"background": false,
+				"text": true,
+				"link": true
+			}
 		},
-		"paddingValues": {
-			"type": "object",
-			"default": {
-				"top": "10px",
-				"left": "10px",
-				"bottom": "10px",
-				"right": "10px"
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"__experimentalBorder": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true,
+			"__experimentalDefaultControls": {
+				"color": true,
+				"radius": true,
+				"style": true,
+				"width": true
+			}
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"__experimentalFontFamily": true,
+			"__experimentalFontWeight": true,
+			"__experimentalFontStyle": true,
+			"__experimentalTextTransform": true,
+			"__experimentalTextDecoration": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalDefaultControls": {
+				"fontSize": true,
+				"fontAppearance": true,
+				"textTransform": true
 			}
 		}
 	},

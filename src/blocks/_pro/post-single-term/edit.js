@@ -1,68 +1,54 @@
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
 //import { useEntityProp } from '@wordpress/core-data';
-import ServerSideRender from '@wordpress/server-side-render';
+import { useSelect } from '@wordpress/data';
 
-import {
-	PanelBody,
-	__experimentalBoxControl as BoxControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
-} from '@wordpress/components';
+import { PanelBody, ToggleControl } from '@wordpress/components';
 export default function SingleTermEdit(props) {
-	const { attributes, setAttributes } = props;
-	const { paddingValues } = attributes;
-	const blockProps = useBlockProps();
+	const { attributes, setAttributes, context } = props;
+	const { hasLink } = attributes;
 
-	const units = [
-		{
-			value: 'px',
-			label: 'px',
-			default: 0,
-		},
-		{
-			value: '%',
-			label: '%',
-			default: 0,
-		},
-		{
-			value: 'vw',
-			label: 'vw',
-			default: 0,
-		},
-		{
-			value: 'vh',
-			label: 'vh',
-			default: 0,
-		},
-	];
-	const resetPaddingValues = {
-		top: '0px',
-		left: '0px',
-		right: '0px',
-		bottom: '0px',
-	};
+	const { postId } = context;
+	const termColorInfo = useSelect((select) => {
+		return select('vk-blocks/term-color').getTermColorInfoByPost(postId);
+	}, []);
+
+	const blockProps = useBlockProps({
+		className: 'vk_singleTerm',
+		style: { backgroundColor: termColorInfo?.color ?? '#999999' },
+	});
+
+	const label = termColorInfo && (
+		<>
+			{ hasLink ? (
+				<a
+					href={termColorInfo.term_url}
+					className="vk_singleTerm-inner"
+				>
+					{termColorInfo.term_name}
+				</a>
+			) : (
+				<span className="vk_singleTerm-inner">
+					{termColorInfo.term_name}
+				</span>
+			)}
+		</>
+	);
 
 	return (
 		<>
-			<InspectorControls key="setting">
-				<PanelBody title={__('Padding Setting', 'bf-click-counter')}>
-					<BoxControl
-						label={__('Padding', 'bf-click-counter')}
-						values={paddingValues}
-						onChange={(value) =>
-							setAttributes({ paddingValues: value })
-						} // 保存処理
-						units={units}
-						allowReset={true}
-						resetValues={resetPaddingValues}
+			<InspectorControls>
+				<PanelBody title={__('New Badge setting', 'vk-blocks-pro')}>
+					<ToggleControl
+						label={__('Add Link to Taxonomy Page', 'vk-blocks-pro')}
+						checked={hasLink}
+						onChange={(checked) =>
+							setAttributes({ hasLink: checked })
+						}
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<div {...blockProps}>
-				<ServerSideRender
-					block="vk-blocks/post-single-term"
-					attributes={attributes}
-				/>
-			</div>
+			<div {...blockProps}>{label}</div>
 		</>
 	);
 }

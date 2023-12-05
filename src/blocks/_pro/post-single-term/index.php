@@ -14,14 +14,16 @@
  * @return string
  */
 function vk_blocks_post_single_term_render_callback( $attributes, $content, $block ) {
-	$post               = get_post( $block->context['postId'] );
+	$post = get_post( $block->context['postId'] );
 
-	$term_color_info =  \VektorInc\VK_Term_Color\VkTermColor::get_post_single_term_info( $post );
-	
-	$wrapper_attributes = get_block_wrapper_attributes(array(
-		'class' => 'vk_singleTerm',
-		'style' => 'background-color: ' . $term_color_info['color'] . ';'
-	));
+	$term_color_info = \VektorInc\VK_Term_Color\VkTermColor::get_post_single_term_info( $post );
+
+	$wrapper_attributes = get_block_wrapper_attributes(
+		array(
+			'class' => 'vk_singleTerm',
+			'style' => 'background-color: ' . $term_color_info['color'] . ';',
+		)
+	);
 
 	$label = '';
 	if ( $attributes['hasLink'] ) {

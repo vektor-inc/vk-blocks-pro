@@ -38,7 +38,7 @@ export default function SingleTermEdit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('New Badge setting', 'vk-blocks-pro')}>
+				<PanelBody title={__('Setting', 'vk-blocks-pro')}>
 					<ToggleControl
 						label={__('Add Link to Taxonomy Page', 'vk-blocks-pro')}
 						checked={hasLink}

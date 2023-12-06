@@ -12,16 +12,7 @@ const actions = {
 			type: 'SET_TERM_COLOR',
 			...payload,
 		};
-	},
-
-	fetchFromAPI(path, method = 'GET', param = {}) {
-		return {
-			type: 'FETCH_FROM_API',
-			path,
-			method,
-			data: param,
-		};
-	},
+	}
 };
 
 const store = createReduxStore('vk-blocks/term-color', {
@@ -44,38 +35,22 @@ const store = createReduxStore('vk-blocks/term-color', {
 		},
 	},
 
-	controls: {
-		FETCH_FROM_API(action) {
-			const requestOptions = {
-				path: action.path,
-			};
-
-			if (action.method) {
-				requestOptions.method = action.method;
-			}
-
-			if (action.data) {
-				requestOptions.data = action.data;
-			}
-
-			return apiFetch(requestOptions);
-		},
-	},
-
 	resolvers: {
-		*getTermColorInfoByPost(postId) {
-			const termColorInfo = yield actions.fetchFromAPI(
-				'vk-blocks/v1/get_post_single_term_info',
-				'POST',
-				{ post_id: postId }
-			);
-
-			const payload = {
-				postId,
-				value: termColorInfo,
-			};
-			return actions.setTermColor(payload);
-		},
+		getTermColorInfoByPost(postId) {		
+			return async ( { dispatch } ) => {
+				const termColorInfo = await apiFetch({
+					path: 'vk-blocks/v1/get_post_single_term_info',
+					method: 'POST',
+					data: { post_id: postId }
+				});
+	
+				const payload = {
+					postId,
+					value: termColorInfo,
+				};
+				dispatch.setTermColor(payload);	
+			};		
+		}
 	},
 });
 

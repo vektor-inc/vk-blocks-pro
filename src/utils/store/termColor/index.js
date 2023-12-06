@@ -12,7 +12,7 @@ const actions = {
 			type: 'SET_TERM_COLOR',
 			...payload,
 		};
-	}
+	},
 };
 
 const store = createReduxStore('vk-blocks/term-color', {
@@ -36,21 +36,21 @@ const store = createReduxStore('vk-blocks/term-color', {
 	},
 
 	resolvers: {
-		getTermColorInfoByPost(postId) {		
-			return async ( { dispatch } ) => {
+		getTermColorInfoByPost(postId) {
+			return async ({ dispatch }) => {
 				const termColorInfo = await apiFetch({
 					path: 'vk-blocks/v1/get_post_single_term_info',
 					method: 'POST',
-					data: { post_id: postId }
+					data: { post_id: postId },
 				});
-	
+
 				const payload = {
 					postId,
 					value: termColorInfo,
 				};
-				dispatch.setTermColor(payload);	
-			};		
-		}
+				dispatch.setTermColor(payload);
+			};
+		},
 	},
 });
 

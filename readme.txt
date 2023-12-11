@@ -101,8 +101,9 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-[ Bug fix ][ Grid Column Card ] Fixed that Grid Column Card Item Body block could not be selected.
-[ Add Function ][ Grid Column Card ] Enabled gradient specification for background colors.
+
+[ Add Function ][ Grid Column Card (Pro) ] Enabled gradient specification for background colors.
+[ Bug fix ][ Grid Column Card (Pro) ] Fixed that Grid Column Card Item Body block vertical align not work
 
 = 1.64.2 =
 [ Bug fix ][ Custom Format (Pro) ] Fixed Toolbar Icon Size Issue in WordPress 6.4

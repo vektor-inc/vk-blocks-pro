@@ -30,7 +30,10 @@ export default function Edit(props) {
 		setAttributes({ verticalAlignment: value });
 	};
 	let containerClass;
-	if (verticalAlignment === 'center') {
+	if (verticalAlignment === 'top') {
+		containerClass =
+			'vk_gridcolcard_item_body vk_gridcolcard_item_body-valign-top';
+	} else if (verticalAlignment === 'center') {
 		containerClass =
 			'vk_gridcolcard_item_body vk_gridcolcard_item_body-valign-center';
 	} else if (verticalAlignment === 'bottom') {

@@ -30,7 +30,10 @@ export default function Edit(props) {
 		setAttributes({ verticalAlignment: value });
 	};
 	let containerClass;
-	if (verticalAlignment === 'center') {
+	if (verticalAlignment === 'top') {
+		containerClass =
+			'vk_gridcolcard_item_body vk_gridcolcard_item_body-valign-top';
+	} else if (verticalAlignment === 'center') {
 		containerClass =
 			'vk_gridcolcard_item_body vk_gridcolcard_item_body-valign-center';
 	} else if (verticalAlignment === 'bottom') {
@@ -43,13 +46,10 @@ export default function Edit(props) {
 		className: `${containerClass}`,
 	});
 
-	const innerBlocksProps = useInnerBlocksProps(
-		{ ...blockProps, className: `vk_gridcolcard_item_body_inner` },
-		{
-			template: MY_TEMPLATE,
-			templateLock: false,
-		}
-	);
+	const innerBlockProps = useInnerBlocksProps(blockProps, {
+		template: MY_TEMPLATE,
+		templateLock: false,
+	});
 
 	return (
 		<>
@@ -59,7 +59,7 @@ export default function Edit(props) {
 					value={verticalAlignment}
 				/>
 			</BlockControls>
-			<div {...innerBlocksProps} />
+			<div {...innerBlockProps} />
 		</>
 	);
 }

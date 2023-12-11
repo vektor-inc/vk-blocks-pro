@@ -1,3 +1,4 @@
+import save1_64_2 from './1.64.2/save';
 import save1_64_0 from './1.64.0/save';
 
 const blockAttributes = {
@@ -7,6 +8,10 @@ const blockAttributes = {
 };
 
 const deprecated = [
+	{
+		attributes: blockAttributes,
+		save: save1_64_2,
+	},
 	{
 		attributes: blockAttributes,
 		save: save1_64_0,

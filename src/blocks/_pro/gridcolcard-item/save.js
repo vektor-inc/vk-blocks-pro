@@ -1,5 +1,7 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { isGradientStyle } from '@vkblocks/utils/is-gradient-style';
+
 import classnames from 'classnames';
 
 export default function save(props) {
@@ -13,6 +15,7 @@ export default function save(props) {
 		borderRadius,
 		border,
 		borderColor,
+		backgroundGradient,
 		url,
 		urlOpenType,
 	} = attributes;
@@ -25,6 +28,8 @@ export default function save(props) {
 		[`has-border-color`]: !!border,
 		[`has-${backgroundColor}-background-color`]:
 			!!backgroundColor && !isHexColor(backgroundColor),
+		[`has-${backgroundGradient}-gradient-background`]:
+			!!backgroundGradient && !isGradientStyle(backgroundGradient),
 		[`has-${borderColor}-border-color`]:
 			!!border && !!borderColor && !isHexColor(borderColor),
 	});
@@ -46,6 +51,12 @@ export default function save(props) {
 	if (backgroundColor && isHexColor(backgroundColor)) {
 		// custom color
 		style.backgroundColor = `${backgroundColor}`;
+	}
+
+	// 背景グラデーション
+	if (backgroundGradient && isGradientStyle(backgroundGradient)) {
+		// custom color
+		style.background = `${backgroundGradient}`;
 	}
 
 	// 線の色

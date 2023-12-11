@@ -45,9 +45,7 @@
 		}
 		&_body{
 			display: grid;
-			&-valign-top{
-				align-content: start;
-			}
+			align-content: start;
 			&-valign-center{
 				align-content: center;
 			}

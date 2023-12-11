@@ -102,6 +102,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] Change VK Component Posts Horizontal col class ( Update VK Component 1.6.0 )
+
 = 1.65.0 =
 [ Add Function ][ Grid Column Card (Pro) ] Enabled gradient specification for background colors.
 [ Bug fix ][ Grid Column Card (Pro) ] Fixed that Grid Column Card Item Body block vertical align not work

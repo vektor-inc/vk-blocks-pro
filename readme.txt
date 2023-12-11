@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.1
 Tested up to: 6.4
-Stable tag: 1.64.1.1
+Stable tag: 1.64.1.2
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -102,6 +102,7 @@ e.g.
 
 == Changelog ==
 
+= 1.65.0 =
 [ Add Function ][ Grid Column Card (Pro) ] Enabled gradient specification for background colors.
 [ Bug fix ][ Grid Column Card (Pro) ] Fixed that Grid Column Card Item Body block vertical align not work
 

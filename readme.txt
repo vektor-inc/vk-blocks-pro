@@ -102,7 +102,9 @@ e.g.
 
 == Changelog ==
 
-[ Specification Change ] Change VK Component Posts Horizontal col class ( Update VK Component 1.6.0 )
+= 1.66.0 =
+[ Specification Change ] Change VK Component Posts Horizontal col class ( Update VK Component 1.6.0 / Discontinued the use of Bootstrap's Grid system )
+[ Bug fix ] Fix 1.65.0 translate
 
 = 1.65.0 =
 [ Add Function ][ Grid Column Card (Pro) ] Enabled gradient specification for background colors.

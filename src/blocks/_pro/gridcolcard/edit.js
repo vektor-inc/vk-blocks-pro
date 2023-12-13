@@ -82,6 +82,7 @@ export default function Edit(props) {
 						borderColor: attributes.borderColor,
 						textColor: attributes.textColor,
 						backgroundColor: attributes.backgroundColor,
+						backgroundGradient: attributes.backgroundGradient,
 					});
 				}
 			});

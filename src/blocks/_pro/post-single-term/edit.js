@@ -1,6 +1,5 @@
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
-//import { useEntityProp } from '@wordpress/core-data';
 import { useSelect } from '@wordpress/data';
 import {
 	PanelBody,

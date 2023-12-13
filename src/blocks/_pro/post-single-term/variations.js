@@ -15,8 +15,16 @@ const variations = [
 		attributes: {
 			style: {
 				typography: {
-					fontStyle: 'normal',
+					fontSize: '0.8rem',
 					fontWeight: '700',
+				},
+				spacing: {
+					padding: {
+						top: '0',
+						bottom: '0',
+						left: 'var:preset|spacing|30',
+						right: 'var:preset|spacing|30',
+					},
 				},
 			},
 		},

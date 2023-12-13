@@ -15,8 +15,9 @@
  */
 function vk_blocks_post_single_term_render_callback( $attributes, $content, $block ) {
 	$post = get_post( $block->context['postId'] );
+	$taxonomy = isset( $attributes['taxonomy'] ) ? $attributes['taxonomy'] : '';
 
-	$term_color_info = \VektorInc\VK_Term_Color\VkTermColor::get_post_single_term_info( $post, array( 'taxonomy' => $attributes['taxonomy'] ) );
+	$term_color_info = \VektorInc\VK_Term_Color\VkTermColor::get_post_single_term_info( $post, array( 'taxonomy' => $taxonomy ) );
 
 	if ( ! $term_color_info ) {
 		return '';
@@ -26,7 +27,7 @@ function vk_blocks_post_single_term_render_callback( $attributes, $content, $blo
 		array(
 			'class' => 'vk_singleTerm',
 			'style' => 'background-color: ' . $term_color_info['color'] . ';' .
-					   'color:' . $term_color_info['text_color'] . ';',
+						'color:' . $term_color_info['text_color'] . ';',
 		)
 	);
 

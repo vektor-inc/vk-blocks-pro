@@ -25,6 +25,7 @@ import CommonItemControl from '../gridcolcard/edit-common.js';
 import { link, linkOff, keyboardReturn } from '@wordpress/icons';
 import classnames from 'classnames';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { isGradientStyle } from '@vkblocks/utils/is-gradient-style';
 
 export default function Edit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -51,6 +52,7 @@ export default function Edit(props) {
 		borderColor,
 		textColor,
 		backgroundColor,
+		backgroundGradient,
 		url,
 		urlOpenType,
 	} = attributes;
@@ -120,6 +122,7 @@ export default function Edit(props) {
 							borderColor: attributes.borderColor,
 							textColor: attributes.textColor,
 							backgroundColor: attributes.backgroundColor,
+							backgroundGradient: attributes.backgroundGradient,
 						});
 					}
 				});
@@ -136,6 +139,7 @@ export default function Edit(props) {
 					borderColor: attributes.borderColor,
 					textColor: attributes.textColor,
 					backgroundColor: attributes.backgroundColor,
+					backgroundGradient: attributes.backgroundGradient,
 				});
 			}
 		}
@@ -149,6 +153,8 @@ export default function Edit(props) {
 		[`has-border-color`]: !!border,
 		[`has-${backgroundColor}-background-color`]:
 			!!backgroundColor && !isHexColor(backgroundColor),
+		[`has-${backgroundGradient}-gradient-background`]:
+			!!backgroundGradient && !isGradientStyle(backgroundGradient),
 		[`has-${borderColor}-border-color`]:
 			!!border && !!borderColor && !isHexColor(borderColor),
 	});
@@ -170,6 +176,11 @@ export default function Edit(props) {
 	if (backgroundColor && isHexColor(backgroundColor)) {
 		// custom color
 		style.backgroundColor = `${backgroundColor}`;
+	}
+
+	// 背景グラデーション
+	if (backgroundGradient && isGradientStyle(backgroundGradient)) {
+		style.background = `${backgroundGradient}`;
 	}
 
 	// 線の色

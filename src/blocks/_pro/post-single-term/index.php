@@ -14,24 +14,28 @@
  * @return string
  */
 function vk_blocks_post_single_term_render_callback( $attributes, $content, $block ) {
-	$post               = get_post( $block->context['postId'] );
-	$wrapper_attributes = get_block_wrapper_attributes();
-	$attributes         = vk_blocks_sanitize_multi_dimensional_array( $attributes );
-	$styles             = array();
-	if ( array_key_exists( 'paddingValues', $attributes ) ) {
-		$styles['padding-top']    = $attributes['paddingValues']['top'];
-		$styles['padding-left']   = $attributes['paddingValues']['left'];
-		$styles['padding-bottom'] = $attributes['paddingValues']['bottom'];
-		$styles['padding-right']  = $attributes['paddingValues']['right'];
+	$post     = get_post( $block->context['postId'] );
+	$taxonomy = isset( $attributes['taxonomy'] ) ? $attributes['taxonomy'] : '';
+
+	$term_color_info = \VektorInc\VK_Term_Color\VkTermColor::get_post_single_term_info( $post, array( 'taxonomy' => $taxonomy ) );
+
+	if ( ! $term_color_info ) {
+		return '';
 	}
 
-	if ( is_null( $post ) ) {
-		$body = vk_blocks_merge_styles( '<span style="background-color:#999">（ターム名）</span>', vk_blocks_array_to_css( $styles ) );
+	$wrapper_attributes = get_block_wrapper_attributes(
+		array(
+			'class' => 'vk_singleTerm',
+			'style' => 'background-color: ' . $term_color_info['color'] . ';' .
+						'color:' . $term_color_info['text_color'] . ';',
+		)
+	);
+
+	if ( $attributes['hasLink'] ) {
+		return '<a ' . $wrapper_attributes . ' href="' . $term_color_info['term_url'] . '">' . $term_color_info['term_name'] . '</a>';
 	} else {
-		$body = vk_blocks_merge_styles( \VektorInc\VK_Term_Color\VkTermColor::get_single_term_with_color( $post ), vk_blocks_array_to_css( $styles ) );
+		return '<span ' . $wrapper_attributes . '>' . $term_color_info['term_name'] . '</span>';
 	}
-
-	return "<div $wrapper_attributes>" . $body . '</div>';
 }
 
 /**

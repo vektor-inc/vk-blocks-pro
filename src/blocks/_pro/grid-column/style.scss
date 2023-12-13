@@ -1,3 +1,124 @@
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+$xs-max: 575.98px;
+$sm-max: 767.98px;
+$md-max: 991.98px;
+$lg-max: 1199.98px;
+$xl-max: 1399.98px;
+
+$sm-min: 576px;
+$md-min: 768px;
+$lg-min: 992px;
+$xl-min: 1200px;
+$xxl-min: 1400px;
+.vk_gridColumn .row {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -15px;
+}
+.vk_gridColumn [class*="col-"] {
+	padding: 0 15px;
+}
+.vk_gridColumn .col {
+	&-xs-2 {
+		width: calc(16.66% - 30px);
+	}
+	&-xs-3 {
+		width: calc(25% - 30px);
+	}
+	&-xs-4 {
+		width: calc(33.3% - 30px);
+	}
+	&-xs-6 {
+		width: calc(50% - 30px);
+	}
+	&-xs-12 {
+		width: calc(100% - 30px);
+	}
+	@media (min-width: $sm-min) {
+		&-sm-2 {
+			width: calc(16.66% - 30px);
+		}
+		&-sm-3 {
+			width: calc(25% - 30px);
+		}
+		&-sm-4 {
+			width: calc(33.3% - 30px);
+		}
+		&-sm-6 {
+			width: calc(50% - 30px);
+		}
+		&-sm-12 {
+			width: calc(100% - 30px);
+		}
+	}
+	@media (min-width: $md-min) {
+		&-md-2 {
+			width: calc(16.66% - 30px);
+		}
+		&-md-3 {
+			width: calc(25% - 30px);
+		}
+		&-md-4 {
+			width: calc(33.3% - 30px);
+		}
+		&-md-6 {
+			width: calc(50% - 30px);
+		}
+		&-md-12 {
+			width: calc(100% - 30px);
+		}
+	}
+	@media (min-width: $lg-min) {
+		&-lg-2 {
+			width: calc(16.66% - 30px);
+		}
+		&-lg-3 {
+			width: calc(25% - 30px);
+		}
+		&-lg-4 {
+			width: calc(33.3% - 30px);
+		}
+		&-lg-6 {
+			width: calc(50% - 30px);
+		}
+		&-lg-12 {
+			width: calc(100% - 30px);
+		}
+	}
+	@media (min-width: $xl-min) {
+		&-xl-2 {
+			width: calc(16.66% - 30px);
+		}
+		&-xl-3 {
+			width: calc(25% - 30px);
+		}
+		&-xl-4 {
+			width: calc(33.3% - 30px);
+		}
+		&-xl-6 {
+			width: calc(50% - 30px);
+		}
+		&-xl-12 {
+			width: calc(100% - 30px);
+		}
+    }
+    @media (min-width: $xxl-min) {
+		&-xxl-2 {
+			width: calc(16.66% - 30px);
+		}
+		&-xxl-3 {
+			width: calc(25% - 30px);
+		}
+		&-xxl-4 {
+			width: calc(33.3% - 30px);
+		}
+		&-xxl-6 {
+			width: calc(50% - 30px);
+		}
+		&-xxl-12 {
+			width: calc(100% - 30px);
+		}
+	}
+}

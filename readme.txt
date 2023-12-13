@@ -3,8 +3,8 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,m
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.1
-Tested up to: 6.3
-Stable tag: 1.63.0.1
+Tested up to: 6.4
+Stable tag: 1.64.1.2
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -101,6 +101,24 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 1.66.0 =
+[ Specification Change ] Change VK Component Posts Horizontal col class ( Update VK Component 1.6.0 / Discontinued the use of Bootstrap's Grid system )
+[ Bug fix ] Fix 1.65.0 translate
+
+= 1.65.0 =
+[ Add Function ][ Grid Column Card (Pro) ] Enabled gradient specification for background colors.
+[ Bug fix ][ Grid Column Card (Pro) ] Fixed that Grid Column Card Item Body block vertical align not work
+
+= 1.64.2 =
+[ Bug fix ][ Custom Format (Pro) ] Fixed Toolbar Icon Size Issue in WordPress 6.4
+
+= 1.64.1 =
+[ Specification Change ] Update Swiper 11.0.1
+[ Bug fix ][ Toolbar ] Fixed Toolbar Icon Size Issue in WordPress 6.4
+[ Bug fix ][ Grid Column (Pro) ] Fixed inner list block style.
+[ Bug fix ][ Outer (Pro) ] Fix padding in divider style
+[ Bug fix ][ Grid Column Card ] Alignment issue of images placed within the body.
 
 = 1.64.0 =
 [ Add Function ][ Dynamic Text Block (Pro) ] Added option to display parent page title.

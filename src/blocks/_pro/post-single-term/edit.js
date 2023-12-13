@@ -1,68 +1,108 @@
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
 //import { useEntityProp } from '@wordpress/core-data';
-import ServerSideRender from '@wordpress/server-side-render';
-
+import { useSelect } from '@wordpress/data';
 import {
 	PanelBody,
-	__experimentalBoxControl as BoxControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
+	ToggleControl,
+	SelectControl,
+	Spinner,
 } from '@wordpress/components';
-export default function SingleTermEdit(props) {
-	const { attributes, setAttributes } = props;
-	const { paddingValues } = attributes;
-	const blockProps = useBlockProps();
 
-	const units = [
-		{
-			value: 'px',
-			label: 'px',
-			default: 0,
+export default function SingleTermEdit(props) {
+	const { attributes, setAttributes, context } = props;
+	const { hasLink, taxonomy } = attributes;
+	const { postId, postType } = context;
+
+	const { value: termColorInfo, isLoading } = useSelect(
+		(select) => {
+			return select('vk-blocks/term-color').getTermColorInfoByPost(
+				postId,
+				taxonomy
+			);
 		},
-		{
-			value: '%',
-			label: '%',
-			default: 0,
+		[taxonomy]
+	);
+
+	const taxonomies =
+		useSelect(
+			(select) => {
+				// postTypeが定義されている場合のみ実行
+				if (!postType) {
+					return null;
+				}
+				// 現在の投稿タイプに関連するタクソノミーを取得
+				const relatedTaxonomies = select('core').getTaxonomies({
+					type: postType,
+				});
+
+				// post_tagとタグタイプのタクソノミーを除外して他のタクソノミーのみを返す
+				return relatedTaxonomies
+					? relatedTaxonomies.filter(
+							(_taxonomy) =>
+								_taxonomy.slug !== 'post_tag' &&
+								_taxonomy.hierarchical
+					  )
+					: [];
+			},
+			[postType]
+		) || [];
+
+	const blockProps = useBlockProps({
+		className: 'vk_singleTerm',
+		style: {
+			backgroundColor: termColorInfo?.color ?? '#999999',
+			color: termColorInfo?.text_color ?? '#FFFFFF',
 		},
-		{
-			value: 'vw',
-			label: 'vw',
-			default: 0,
-		},
-		{
-			value: 'vh',
-			label: 'vh',
-			default: 0,
-		},
-	];
-	const resetPaddingValues = {
-		top: '0px',
-		left: '0px',
-		right: '0px',
-		bottom: '0px',
-	};
+	});
+
+	const url = termColorInfo?.term_url ?? '';
+	const termName = isLoading ? (
+		<Spinner />
+	) : (
+		termColorInfo?.term_name ?? 'Unposted'
+	);
 
 	return (
 		<>
-			<InspectorControls key="setting">
-				<PanelBody title={__('Padding Setting', 'bf-click-counter')}>
-					<BoxControl
-						label={__('Padding', 'bf-click-counter')}
-						values={paddingValues}
-						onChange={(value) =>
-							setAttributes({ paddingValues: value })
-						} // 保存処理
-						units={units}
-						allowReset={true}
-						resetValues={resetPaddingValues}
+			<InspectorControls>
+				<PanelBody title={__('Setting', 'vk-blocks-pro')}>
+					<ToggleControl
+						label={__('Add Link to Taxonomy Page', 'vk-blocks-pro')}
+						checked={hasLink}
+						onChange={(checked) =>
+							setAttributes({ hasLink: checked })
+						}
 					/>
+					{taxonomies && (
+						<SelectControl
+							label={__('Select Taxonomy', 'vk-blocks-pro')}
+							value={taxonomy}
+							options={[
+								{ label: '自動', value: '' },
+								...taxonomies.map((tax) => ({
+									label: tax.name,
+									value: tax.slug,
+								})),
+							]}
+							onChange={(selectedSlug) => {
+								setAttributes({ taxonomy: selectedSlug });
+							}}
+						/>
+					)}
 				</PanelBody>
 			</InspectorControls>
-			<div {...blockProps}>
-				<ServerSideRender
-					block="vk-blocks/post-single-term"
-					attributes={attributes}
-				/>
-			</div>
+			{hasLink && url ? (
+				<a
+					{...blockProps}
+					href={termColorInfo.term_url}
+					onClick={(event) => event.preventDefault()}
+				>
+					{termName}
+				</a>
+			) : (
+				<div {...blockProps}>{termName}</div>
+			)}
 		</>
 	);
 }

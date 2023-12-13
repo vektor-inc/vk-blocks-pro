@@ -10,6 +10,7 @@ import {
 	BaseControl,
 } from '@wordpress/components';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
+import { AdvancedColorGradientControl } from '@vkblocks/components/advanced-color-gradient-control';
 
 const CommonItemControl = (props) => {
 	const { attributes, setAttributes } = props;
@@ -170,7 +171,11 @@ const CommonItemControl = (props) => {
 				label={__('Background Color', 'vk-blocks-pro')}
 				id={`vk_gridcolcard_background_color`}
 			>
-				<AdvancedColorPalette schema={'backgroundColor'} {...props} />
+				<AdvancedColorGradientControl
+					colorSchema="backgroundColor"
+					gradientSchema="backgroundGradient"
+					{...props}
+				/>
 			</BaseControl>
 			<hr />
 			<UnitControl

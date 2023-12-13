@@ -1,7 +1,7 @@
 import { __ } from '@wordpress/i18n';
 import {
-	InnerBlocks,
 	useBlockProps,
+	useInnerBlocksProps,
 	BlockControls,
 	BlockVerticalAlignmentToolbar,
 } from '@wordpress/block-editor';
@@ -30,7 +30,10 @@ export default function Edit(props) {
 		setAttributes({ verticalAlignment: value });
 	};
 	let containerClass;
-	if (verticalAlignment === 'center') {
+	if (verticalAlignment === 'top') {
+		containerClass =
+			'vk_gridcolcard_item_body vk_gridcolcard_item_body-valign-top';
+	} else if (verticalAlignment === 'center') {
 		containerClass =
 			'vk_gridcolcard_item_body vk_gridcolcard_item_body-valign-center';
 	} else if (verticalAlignment === 'bottom') {
@@ -43,6 +46,11 @@ export default function Edit(props) {
 		className: `${containerClass}`,
 	});
 
+	const innerBlockProps = useInnerBlocksProps(blockProps, {
+		template: MY_TEMPLATE,
+		templateLock: false,
+	});
+
 	return (
 		<>
 			<BlockControls>
@@ -51,11 +59,7 @@ export default function Edit(props) {
 					value={verticalAlignment}
 				/>
 			</BlockControls>
-			<div {...blockProps}>
-				<div className={`vk_gridcolcard_item_body_inner`}>
-					<InnerBlocks template={MY_TEMPLATE} templateLock={false} />
-				</div>
-			</div>
+			<div {...innerBlockProps} />
 		</>
 	);
 }

@@ -39,7 +39,7 @@ function vk_blocks_archive_list_render_callback( $attributes ) {
 
 	if ( 'yearly' === $options['displayType'] ) {
 		$arg['type'] = 'yearly';
-		if ( ! $options['showCount'] && strtoupper( get_locale() ) == 'JA' ) {
+		if ( ! $options['showCount'] && strtoupper( get_locale() ) === 'JA' ) {
 			$arg['after'] = '年';
 		}
 	}

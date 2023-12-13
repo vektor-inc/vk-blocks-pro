@@ -16,23 +16,25 @@
 function vk_blocks_post_single_term_render_callback( $attributes, $content, $block ) {
 	$post = get_post( $block->context['postId'] );
 
-	$term_color_info = \VektorInc\VK_Term_Color\VkTermColor::get_post_single_term_info( $post );
+	$term_color_info = \VektorInc\VK_Term_Color\VkTermColor::get_post_single_term_info( $post, array( 'taxonomy' => $attributes['taxonomy'] ) );
+
+	if ( ! $term_color_info ) {
+		return '';
+	}
 
 	$wrapper_attributes = get_block_wrapper_attributes(
 		array(
 			'class' => 'vk_singleTerm',
-			'style' => 'background-color: ' . $term_color_info['color'] . ';',
+			'style' => 'background-color: ' . $term_color_info['color'] . ';' .
+					   'color:' . $term_color_info['text_color'] . ';',
 		)
 	);
 
-	$label = '';
 	if ( $attributes['hasLink'] ) {
-		$label = '<a class="vk_singleTerm-inner" href="' . $term_color_info['term_url'] . '">' . $term_color_info['term_name'] . '</a>';
+		return '<a ' . $wrapper_attributes . ' href="' . $term_color_info['term_url'] . '">' . $term_color_info['term_name'] . '</a>';
 	} else {
-		$label = '<span class="vk_singleTerm-inner">' . $term_color_info['term_name'] . '</span>';
+		return '<span ' . $wrapper_attributes . '>' . $term_color_info['term_name'] . '</span>';
 	}
-
-	return "<div $wrapper_attributes>" . $label . '</div>';
 }
 
 /**

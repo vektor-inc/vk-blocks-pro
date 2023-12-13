@@ -7,21 +7,15 @@
 		"hasLink": {
 			"type": "boolean",
 			"default": true
+		},
+		"taxonomy": {
+			"type": "string"
 		}
 	},
 	"supports": {
 		"className": true,
 		"anchor": false,
 		"html": false,
-		"color": {
-			"gradients": true,
-			"link": true,
-			"__experimentalDefaultControls": {
-				"background": false,
-				"text": true,
-				"link": true
-			}
-		},
 		"spacing": {
 			"margin": true,
 			"padding": true
@@ -52,7 +46,8 @@
 				"fontAppearance": true,
 				"textTransform": true
 			}
-		}
+		},
+		"style": "vk_singleTerm"
 	},
 	"description": "Single term block.",
 	"textdomain": "vk-blocks-pro",

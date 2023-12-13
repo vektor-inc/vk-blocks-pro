@@ -45,8 +45,7 @@
 		}
 		&_body{
 			display: grid;
-			&_inner{
-			}
+			align-content: start;
 			&-valign-center{
 				align-content: center;
 			}

@@ -28,7 +28,7 @@ class SelectPostListBlockTest extends WP_UnitTestCase {
 			'post_content' => '<!-- wp:paragraph --><p>Page for Select Post List page.</p><!-- /wp:paragraph -->',
 			'post_type'    => 'page',
 			'post_status'  => 'publish',
-			'post_excerpt' => 'Select Post List Excerpt.'
+			'post_excerpt' => 'Select Post List Excerpt.',
 		);
 		$this->page_id = self::factory()->post->create( $page );
 	}
@@ -47,7 +47,7 @@ class SelectPostListBlockTest extends WP_UnitTestCase {
 	 */
 	public function test_select_post_list() {
 		$attributes = array(
-			'url'                        => get_permalink($this->page_id),
+			'url'                        => get_permalink( $this->page_id ),
 			'layout'                     => 'card-horizontal',
 			'col_xs'                     => 1.0,
 			'col_sm'                     => 2.0,
@@ -78,7 +78,7 @@ class SelectPostListBlockTest extends WP_UnitTestCase {
 		// このブロックを配置しているページ
 		global $post;
 
-		$expected = vk_blocks_unescape_html( '<div id=\"post-' . intval( $this->page_id ) . '\" class="vk_post vk_post-postType-page card card-post card-horizontal add-class vk_post-col-xs-12 vk_post-col-sm-6 vk_post-col-md-6 vk_post-col-lg-6 vk_post-col-xl-6 vk_post-col-xxl-6 vk_post-btn-display post-' . intval( $post->ID ) . ' page type-page status-publish hentry"><div class="row no-gutters card-horizontal-inner-row"><div class="col-5 card-img-outer"><div class="vk_post_imgOuter" style="background-image:url(' . home_url() . '\/wp-content\/plugins\/vk-blocks-pro\/inc\/vk-blocks\/images\/no-image.png\)"><a href="' . home_url() . '\/?page_id=' . intval( $this->page_id ) . '"><div class="card-img-overlay"></div><img src="' . home_url() . '\/wp-content\/plugins\/vk-blocks-pro\/inc\/vk-blocks\/images\/no-image.png\" alt="" class="vk_post_imgOuter_img card-img card-img-use-bg" loading="lazy" /></a></div><!-- [ /.vk_post_imgOuter ] --></div><!-- /.col --><div class="col-7"><div class="vk_post_body card-body"><h5 class="vk_post_title card-title"><a href="' . home_url() . '\/?page_id=' . intval( $this->page_id ) . '">Select Post List Title</a></h5><p class="vk_post_excerpt card-text">Select Post List Excerpt.</p><div class="vk_post_btnOuter text-right"><a class="btn btn-sm btn-primary vk_post_btn" href="' . home_url() . '\/?page_id=' . intval( $this->page_id ) . '">Read more</a></div></div><!-- [ /.card-body ] --></div><!-- /.col --></div><!-- [ /.row ] --></div><!-- [ /.card ] -->' );
+		$expected = vk_blocks_unescape_html( '<div id=\"post-' . intval( $this->page_id ) . '\" class="vk_post vk_post-postType-page card card-post card-horizontal add-class vk_post-col-xs-12 vk_post-col-sm-6 vk_post-col-md-6 vk_post-col-lg-6 vk_post-col-xl-6 vk_post-col-xxl-6 vk_post-btn-display post-' . intval( $post->ID ) . ' page type-page status-publish hentry"><div class="card-horizontal-inner-row"><div class="vk_post-col-5 col-5 card-img-outer"><div class="vk_post_imgOuter" style="background-image:url(' . home_url() . '\/wp-content\/plugins\/vk-blocks-pro\/inc\/vk-blocks\/images\/no-image.png\)"><a href="' . home_url() . '\/?page_id=' . intval( $this->page_id ) . '"><div class="card-img-overlay"></div><img src="' . home_url() . '\/wp-content\/plugins\/vk-blocks-pro\/inc\/vk-blocks\/images\/no-image.png\" alt="" class="vk_post_imgOuter_img card-img card-img-use-bg" loading="lazy" /></a></div><!-- [ /.vk_post_imgOuter ] --></div><!-- /.col --><div class="vk_post-col-7 col-7"><div class="vk_post_body card-body"><h5 class="vk_post_title card-title"><a href="' . home_url() . '\/?page_id=' . intval( $this->page_id ) . '">Select Post List Title</a></h5><p class="vk_post_excerpt card-text">Select Post List Excerpt.</p><div class="vk_post_btnOuter text-right"><a class="btn btn-sm btn-primary vk_post_btn" href="' . home_url() . '\/?page_id=' . intval( $this->page_id ) . '">Read more</a></div></div><!-- [ /.card-body ] --></div><!-- /.col --></div><!-- [ /.row ] --></div><!-- [ /.card ] -->' );
 
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
@@ -114,5 +114,4 @@ class SelectPostListBlockTest extends WP_UnitTestCase {
 			*/
 		wp_set_current_user( $user->ID, $user->user_login );
 	}
-
-};
+}

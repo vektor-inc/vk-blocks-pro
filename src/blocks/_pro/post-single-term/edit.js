@@ -47,7 +47,7 @@ export default function SingleTermEdit(props) {
 			},
 			[postType]
 		) || [];
-	
+
 	const blockProps = useBlockProps({
 		className: 'vk_singleTerm',
 		style: {

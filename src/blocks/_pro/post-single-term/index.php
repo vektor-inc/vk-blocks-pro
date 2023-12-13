@@ -55,49 +55,6 @@ function vk_blocks_array_to_css( $style ) {
 }
 
 /**
- * Vk_blocks_sanitize_multi_dimensional_array
- *
- * @param array $array Array to sanitize.
- * @return array Sanitized array.
- */
-function vk_blocks_sanitize_multi_dimensional_array( $array ) {
-	foreach ( $array as $key => $value ) {
-		if ( is_array( $value ) ) {
-			$array[ $key ] = vk_blocks_sanitize_multi_dimensional_array( $value );
-		} else {
-			$array[ $key ] = sanitize_text_field( $value );
-		}
-	}
-	return $array;
-}
-
-/**
- * Merging style
- *
- * @param string $html destination string for merging.
- * @param string $add_style source string for merging.
- * @return string result string.
- */
-function vk_blocks_merge_styles( $html, $add_style ) {
-	// スタイル属性の中身を取得
-	preg_match( '/style="([^"]+)"/', $html, $matches );
-
-	// 既存のスタイルが存在する場合
-	if ( isset( $matches[1] ) ) {
-		$original_style = $matches[1];
-		// 既存のスタイルと追加のスタイルをマージ
-		$merged_style = $original_style . ';' . $add_style;
-		// マージしたスタイルを元のHTMLに適用
-		$result = str_replace( $original_style, $merged_style, $html );
-	} else {
-		// スタイルが存在しない場合、新たにスタイル属性を追加
-		$result = str_replace( '<span', '<span style="' . $add_style . '"', $html );
-	}
-
-	return $result;
-}
-
-/**
  * Register New Badge block.
  *
  * @return void

@@ -1788,14 +1788,6 @@ msgstr ""
 msgid "New Badge"
 msgstr ""
 
-#: src/blocks/_pro/post-single-term/edit.js:47
-msgid "Padding Setting"
-msgstr ""
-
-#: src/blocks/_pro/post-single-term/edit.js:49
-msgid "Padding"
-msgstr ""
-
 #: src/blocks/_pro/select-post-list-item/edit.js:34
 #: src/blocks/page-content/edit.js:38
 msgid "Because no post is selected, The block Will not render"

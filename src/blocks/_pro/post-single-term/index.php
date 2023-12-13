@@ -39,22 +39,6 @@ function vk_blocks_post_single_term_render_callback( $attributes, $content, $blo
 }
 
 /**
- * Vk blocks array to css.
- *
- * @param array $style Styles array.
- * @return string result CSS.
- */
-function vk_blocks_array_to_css( $style ) {
-	$css = '';
-	foreach ( $style as $property => $value ) {
-		$property = preg_replace( '/([a-z])([A-Z])/', '$1-$2', $property );
-		$property = strtolower( $property );
-		$css     .= $property . ': ' . $value . '; ';
-	}
-	return $css;
-}
-
-/**
  * Register New Badge block.
  *
  * @return void

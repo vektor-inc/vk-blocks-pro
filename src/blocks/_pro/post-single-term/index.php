@@ -14,7 +14,7 @@
  * @return string
  */
 function vk_blocks_post_single_term_render_callback( $attributes, $content, $block ) {
-	$post = get_post( $block->context['postId'] );
+	$post     = get_post( $block->context['postId'] );
 	$taxonomy = isset( $attributes['taxonomy'] ) ? $attributes['taxonomy'] : '';
 
 	$term_color_info = \VektorInc\VK_Term_Color\VkTermColor::get_post_single_term_info( $post, array( 'taxonomy' => $taxonomy ) );

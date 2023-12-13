@@ -102,6 +102,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ]Fixed a bug in version 1.66.0 where the slider width did not match the content width in certain themes.
+
 = 1.66.0 =
 [ Specification Change ] Change VK Component Posts Horizontal col class ( Update VK Component 1.6.0 / Discontinued the use of Bootstrap's Grid system )
 [ Bug fix ] Fix 1.65.0 translate

@@ -3,7 +3,7 @@
  *
  */
 // import React
-//import { ReactComponent as Icon } from './icon.svg';
+import { ReactComponent as Icon } from './icon.svg';
 
 // import block files
 import metadata from './block.json';
@@ -13,5 +13,6 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
+	icon: <Icon />,
 	edit,
 };

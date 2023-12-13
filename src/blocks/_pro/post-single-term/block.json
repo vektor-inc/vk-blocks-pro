@@ -3,6 +3,7 @@
 	"name": "vk-blocks/post-single-term",
 	"category": "vk-blocks-cat",
 	"title": "Single Term",
+	"description": "Display the term name associated with a post, with a specified background color.",
 	"attributes": {
 		"hasLink": {
 			"type": "boolean",
@@ -49,7 +50,6 @@
 		},
 		"style": "vk_singleTerm"
 	},
-	"description": "Single term block.",
 	"textdomain": "vk-blocks-pro",
 	"usesContext": ["postId", "postType"]
 }

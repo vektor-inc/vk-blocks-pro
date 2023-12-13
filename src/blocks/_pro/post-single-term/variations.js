@@ -22,8 +22,8 @@ const variations = [
 					padding: {
 						top: '0',
 						bottom: '0',
-						left: 'var:preset|spacing|30',
-						right: 'var:preset|spacing|30',
+						left: '5px',
+						right: '5px',
 					},
 				},
 			},

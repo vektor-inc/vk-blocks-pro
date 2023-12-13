@@ -47,12 +47,13 @@ export default function SingleTermEdit(props) {
 			},
 			[postType]
 		) || [];
-
+	
 	const blockProps = useBlockProps({
 		className: 'vk_singleTerm',
 		style: {
-			backgroundColor: termColorInfo?.color ?? '#999999',
+			backgroundColor: !isLoading && (termColorInfo?.color ?? '#999999'),
 			color: termColorInfo?.text_color ?? '#FFFFFF',
+			opacity: !isLoading && !termColorInfo?.term_name ? 0.3 : 1,
 		},
 	});
 
@@ -60,7 +61,7 @@ export default function SingleTermEdit(props) {
 	const termName = isLoading ? (
 		<Spinner />
 	) : (
-		termColorInfo?.term_name ?? 'Unposted'
+		termColorInfo?.term_name ?? __('Not Set', 'vk-blocks-pro')
 	);
 
 	return (
@@ -74,7 +75,7 @@ export default function SingleTermEdit(props) {
 							setAttributes({ hasLink: checked })
 						}
 					/>
-					{taxonomies && (
+					{taxonomies.length > 1 && (
 						<SelectControl
 							label={__('Select Taxonomy', 'vk-blocks-pro')}
 							value={taxonomy}

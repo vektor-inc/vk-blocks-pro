@@ -10,7 +10,7 @@ import { __ } from '@wordpress/i18n';
 const variations = [
 	{
 		name: 'single-term',
-		title: __('Single Terms', 'vk-blocks-pro'),
+		title: __('Single Term', 'vk-blocks-pro'),
 		isDefault: true,
 		attributes: {
 			style: {

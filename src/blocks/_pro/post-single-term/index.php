@@ -22,10 +22,16 @@ function vk_blocks_post_single_term_render_callback( $attributes, $content, $blo
 	if ( ! $term_color_info ) {
 		return '';
 	}
+	$classes          = array('vk_singleTerm');
+	$align_class_name = empty( $attributes['textAlign'] ) ? '' : "has-text-align-{$attributes['textAlign']}";
+
+	if( ! empty( $align_class_name ) ) {
+		array_push( $classes, $align_class_name );
+	}
 
 	$wrapper_attributes = get_block_wrapper_attributes(
 		array(
-			'class' => 'vk_singleTerm',
+			'class' => implode( ' ', $classes ),
 			'style' => 'background-color: ' . $term_color_info['color'] . ';' .
 						'color:' . $term_color_info['text_color'] . ';',
 		)

@@ -11,6 +11,9 @@
 		},
 		"taxonomy": {
 			"type": "string"
+		},
+		"textAlign": {
+			"type": "string"
 		}
 	},
 	"supports": {

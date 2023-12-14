@@ -1,5 +1,11 @@
 import { __ } from '@wordpress/i18n';
-import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
+import classnames from 'classnames';
+import {
+	useBlockProps,
+	InspectorControls,
+	AlignmentToolbar,
+	BlockControls,
+} from '@wordpress/block-editor';
 import { useSelect } from '@wordpress/data';
 import {
 	PanelBody,
@@ -10,7 +16,7 @@ import {
 
 export default function SingleTermEdit(props) {
 	const { attributes, setAttributes, context } = props;
-	const { hasLink, taxonomy } = attributes;
+	const { hasLink, taxonomy, textAlign } = attributes;
 	const { postId, postType } = context;
 
 	const { value: termColorInfo, isLoading } = useSelect(
@@ -48,7 +54,9 @@ export default function SingleTermEdit(props) {
 		) || [];
 
 	const blockProps = useBlockProps({
-		className: 'vk_singleTerm',
+		className: classnames('vk_singleTerm', {
+			[`has-text-align-${textAlign}`]: !!textAlign,
+		}),
 		style: {
 			backgroundColor: !isLoading && (termColorInfo?.color ?? '#999999'),
 			color: termColorInfo?.text_color ?? '#FFFFFF',
@@ -65,6 +73,14 @@ export default function SingleTermEdit(props) {
 
 	return (
 		<>
+			<BlockControls>
+				<AlignmentToolbar
+					value={textAlign}
+					onChange={(nextAlign) => {
+						setAttributes({ textAlign: nextAlign });
+					}}
+				/>
+			</BlockControls>
 			<InspectorControls>
 				<PanelBody title={__('Setting', 'vk-blocks-pro')}>
 					<ToggleControl

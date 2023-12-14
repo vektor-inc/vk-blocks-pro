@@ -13,6 +13,7 @@ const variations = [
 		title: __('Single Term', 'vk-blocks-pro'),
 		isDefault: true,
 		attributes: {
+			textAlign: 'center',
 			style: {
 				typography: {
 					fontSize: '0.8rem',

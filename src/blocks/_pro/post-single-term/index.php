@@ -22,10 +22,10 @@ function vk_blocks_post_single_term_render_callback( $attributes, $content, $blo
 	if ( ! $term_color_info ) {
 		return '';
 	}
-	$classes          = array('vk_singleTerm');
+	$classes          = array( 'vk_singleTerm' );
 	$align_class_name = empty( $attributes['textAlign'] ) ? '' : "has-text-align-{$attributes['textAlign']}";
 
-	if( ! empty( $align_class_name ) ) {
+	if ( ! empty( $align_class_name ) ) {
 		array_push( $classes, $align_class_name );
 	}
 

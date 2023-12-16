@@ -102,6 +102,9 @@ e.g.
 
 == Changelog ==
 
+= 1.66.2 =
+[ Bug Fix ][ Slider ] Fixed a bug in version 1.66.1 where the slider width did not match the content width in certain themes.
+
 = 1.66.1 =
 [ Bug Fix ][ Slider ] Fixed a bug in version 1.66.0 where the slider width did not match the content width in certain themes.
 

@@ -12,13 +12,6 @@
  */
 class PostCategoryBadgeTest extends WP_UnitTestCase {
 
-
-    /**
-	 * @var array|null
-	 */
-	private $original_block_supports;
-
-
     // テスト用タクソノミー（各テスト共通）
     private $test_taxonomies = array(
         array(
@@ -139,7 +132,7 @@ class PostCategoryBadgeTest extends WP_UnitTestCase {
 
         // テストパターン
         $tests = array(
-            
+
             array( 
                 'post' => array(
                     'post_title'   => 'Page Title',

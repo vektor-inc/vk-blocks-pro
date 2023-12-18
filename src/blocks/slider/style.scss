@@ -24,7 +24,8 @@
 			justify-content: flex-end;
 		}
 		&_container {
-			overflow: hidden;
+			// hidden を指定すると全幅などが切れるようになるので使用しない
+			// overflow: hidden;
 		}
 	}
 	.swiper-wrapper {

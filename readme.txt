@@ -105,6 +105,12 @@ e.g.
 
 [ Add Block ][ Category Badge (Pro) ] Creates badges displaying linked categories or terms for posts, with flexible design customization.
 
+= 1.66.2 =
+[ Bug Fix ][ Slider ] Fixed a bug in version 1.66.1 where the slider width did not match the content width in certain themes.
+
+= 1.66.1 =
+[ Bug Fix ][ Slider ] Fixed a bug in version 1.66.0 where the slider width did not match the content width in certain themes.
+
 = 1.66.0 =
 [ Specification Change ] Change VK Component Posts Horizontal col class ( Update VK Component 1.6.0 / Discontinued the use of Bootstrap's Grid system )
 [ Bug fix ] Fix 1.65.0 translate

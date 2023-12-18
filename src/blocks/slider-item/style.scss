@@ -97,12 +97,17 @@ $media-xxl-down: 1399.98px;
 	background-size: cover;
 	background-repeat: no-repeat;
 	position: relative;
-
-	.vk_slider_item_container {
-		min-height: 40px;
-		width: 100%;
-		z-index: 1;
-	}
+}
+.vk_slider_item_container {
+	min-height: 40px;
+	width: 100%;
+	z-index: 1;
+	margin-left:auto;
+	margin-right:auto;
+}
+// :where を無しにすると、テーマが指定する .container の指定より強くなって上書きしてしまうため、:where を指定
+:where(.vk_slider_item_container):where(.container) {
+	max-width:var(--wp--style--global--content-size);
 }
 
 .vk_slider_item-width-full {

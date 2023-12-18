@@ -43,6 +43,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Child page list [ Pro ]
 * Dynamic Text ( Post Type name / Ancestor Page name ) [ Pro ]
 * Icon Card [ Pro ] (not recommended)
+* Category Badge [ Pro ]
 * Post list [ Pro ]
 * New Badge [ Pro ]
 * Selected Post List [ Pro ]
@@ -101,6 +102,8 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+[ Add Block ][ Category Badge (Pro) ] Creates badges displaying linked categories or terms for posts, with flexible design customization.
 
 = 1.66.0 =
 [ Specification Change ] Change VK Component Posts Horizontal col class ( Update VK Component 1.6.0 / Discontinued the use of Bootstrap's Grid system )

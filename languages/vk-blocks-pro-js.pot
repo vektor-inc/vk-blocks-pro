@@ -1685,6 +1685,30 @@ msgstr ""
 msgid "Unit Type"
 msgstr ""
 
+#: src/blocks/_pro/post-category-badge/edit.js:72
+msgid "Not Set"
+msgstr ""
+
+#: src/blocks/_pro/post-category-badge/edit.js:86
+msgid "Setting"
+msgstr ""
+
+#: src/blocks/_pro/post-category-badge/edit.js:88
+msgid "Add Link to Taxonomy Page"
+msgstr ""
+
+#: src/blocks/_pro/post-category-badge/edit.js:96
+msgid "Select Taxonomy"
+msgstr ""
+
+#: src/blocks/_pro/post-category-badge/edit.js:99
+msgid "Auto"
+msgstr ""
+
+#: src/blocks/_pro/post-category-badge/variations.js:13
+msgid "Category Badge"
+msgstr ""
+
 #: src/blocks/_pro/post-list/edit.js:182
 #. Filter by %s
 msgid "Filter by %s"

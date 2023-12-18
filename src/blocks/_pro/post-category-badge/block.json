@@ -1,9 +1,9 @@
 {
 	"apiVersion": 2,
-	"name": "vk-blocks/post-single-term",
+	"name": "vk-blocks/post-category-badge",
 	"category": "vk-blocks-cat",
-	"title": "Single Term",
-	"description": "Display the term name associated with a post, with a specified background color.",
+	"title": "Category Badge",
+	"description": "Creates badges displaying linked categories or terms for posts, with flexible design customization.",
 	"attributes": {
 		"hasLink": {
 			"type": "boolean",

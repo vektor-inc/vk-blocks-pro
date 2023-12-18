@@ -1,6 +1,6 @@
 <?php
 /**
- * Registers the `vk-blocks/post-single-term` block.
+ * Registers the `vk-blocks/post-category-badge` block.
  *
  * @package vk-blocks
  */
@@ -13,7 +13,7 @@
  * @param WP_Block $block Block context.
  * @return string
  */
-function vk_blocks_post_single_term_render_callback( $attributes, $content, $block ) {
+function vk_blocks_post_category_badge_render_callback( $attributes, $content, $block ) {
 	$post     = get_post( $block->context['postId'] );
 	$taxonomy = isset( $attributes['taxonomy'] ) ? $attributes['taxonomy'] : '';
 
@@ -22,7 +22,7 @@ function vk_blocks_post_single_term_render_callback( $attributes, $content, $blo
 	if ( ! $term_color_info ) {
 		return '';
 	}
-	$classes          = array( 'vk_singleTerm' );
+	$classes          = array( 'vk_categoryBadge' );
 	$align_class_name = empty( $attributes['textAlign'] ) ? '' : "has-text-align-{$attributes['textAlign']}";
 
 	if ( ! empty( $align_class_name ) ) {
@@ -45,16 +45,16 @@ function vk_blocks_post_single_term_render_callback( $attributes, $content, $blo
 }
 
 /**
- * Register New Badge block.
+ * Register Category Badge block.
  *
  * @return void
  */
-function vk_blocks_register_block_post_single_term() {
+function vk_blocks_register_block_post_category_badge() {
 	// Register Style.
 	if ( ! is_admin() ) {
 		wp_register_style(
-			'vk-blocks/post-single-term',
-			VK_BLOCKS_DIR_URL . 'build/_pro/post-single-term/style.css',
+			'vk-blocks/post-category-badge',
+			VK_BLOCKS_DIR_URL . 'build/_pro/post-category-badge/style.css',
 			array(),
 			VK_BLOCKS_VERSION
 		);
@@ -63,11 +63,11 @@ function vk_blocks_register_block_post_single_term() {
 	register_block_type(
 		__DIR__,
 		array(
-			'style'           => 'vk-blocks/post-single-term',
+			'style'           => 'vk-blocks/post-category-badge',
 			'editor_style'    => 'vk-blocks-build-editor-css',
 			'editor_script'   => 'vk-blocks-build-js',
-			'render_callback' => 'vk_blocks_post_single_term_render_callback',
+			'render_callback' => 'vk_blocks_post_category_badge_render_callback',
 		)
 	);
 }
-add_action( 'init', 'vk_blocks_register_block_post_single_term', 99 );
+add_action( 'init', 'vk_blocks_register_block_post_category_badge', 99 );

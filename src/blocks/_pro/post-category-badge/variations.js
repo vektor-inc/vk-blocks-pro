@@ -9,8 +9,8 @@ import { __ } from '@wordpress/i18n';
 
 const variations = [
 	{
-		name: 'single-term',
-		title: __('Single Term', 'vk-blocks-pro'),
+		name: 'category-badge',
+		title: __('Category Badge', 'vk-blocks-pro'),
 		isDefault: true,
 		attributes: {
 			textAlign: 'center',

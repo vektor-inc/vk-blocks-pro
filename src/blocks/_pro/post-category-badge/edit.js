@@ -14,14 +14,15 @@ import {
 	Spinner,
 } from '@wordpress/components';
 
-export default function SingleTermEdit(props) {
+export default function CategoryBadgeEdit(props) {
 	const { attributes, setAttributes, context } = props;
 	const { hasLink, taxonomy, textAlign } = attributes;
 	const { postId, postType } = context;
 
+	// termColorを取得（VKTermColor::get_post_single_term_info() の返り値）
 	const { value: termColorInfo, isLoading } = useSelect(
 		(select) => {
-			return select('vk-blocks/term-color').getTermColorInfoByPost(
+			return select('vk-blocks/term-color').getTermColorInfo(
 				postId,
 				taxonomy
 			);
@@ -29,19 +30,19 @@ export default function SingleTermEdit(props) {
 		[taxonomy]
 	);
 
+	// 投稿に関連付けられたタクソノミーを取得
 	const taxonomies =
 		useSelect(
 			(select) => {
-				// postTypeが定義されている場合のみ実行
 				if (!postType) {
 					return null;
 				}
-				// 現在の投稿タイプに関連するタクソノミーを取得
+
 				const relatedTaxonomies = select('core').getTaxonomies({
 					type: postType,
 				});
 
-				// post_tagとタグタイプのタクソノミーを除外して他のタクソノミーのみを返す
+				// post_tagとタグタイプのタクソノミーを除外して返す
 				return relatedTaxonomies
 					? relatedTaxonomies.filter(
 							(_taxonomy) =>
@@ -54,7 +55,7 @@ export default function SingleTermEdit(props) {
 		) || [];
 
 	const blockProps = useBlockProps({
-		className: classnames('vk_singleTerm', {
+		className: classnames('vk_categoryBadge', {
 			[`has-text-align-${textAlign}`]: !!textAlign,
 		}),
 		style: {
@@ -95,7 +96,7 @@ export default function SingleTermEdit(props) {
 							label={__('Select Taxonomy', 'vk-blocks-pro')}
 							value={taxonomy}
 							options={[
-								{ label: '自動', value: '' },
+								{ label: __('Auto', 'vk-blocks-pro'), value: '' },
 								...taxonomies.map((tax) => ({
 									label: tax.name,
 									value: tax.slug,

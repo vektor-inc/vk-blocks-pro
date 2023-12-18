@@ -96,7 +96,10 @@ export default function CategoryBadgeEdit(props) {
 							label={__('Select Taxonomy', 'vk-blocks-pro')}
 							value={taxonomy}
 							options={[
-								{ label: __('Auto', 'vk-blocks-pro'), value: '' },
+								{
+									label: __('Auto', 'vk-blocks-pro'),
+									value: '',
+								},
 								...taxonomies.map((tax) => ({
 									label: tax.name,
 									value: tax.slug,

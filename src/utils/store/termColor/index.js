@@ -46,10 +46,10 @@ const store = createReduxStore('vk-blocks/term-color', {
 		/**
 		 * Action that sets the color for a specific term within a post's taxonomy.
 		 *
-		 * @param {Object} payload The action payload containing the term color information.
-		 * @param {number} payload.postId The ID of the post.
+		 * @param {Object} payload          The action payload containing the term color information.
+		 * @param {number} payload.postId   The ID of the post.
 		 * @param {string} payload.taxonomy The taxonomy to which the term belongs.
-		 * @param {string} payload.value The color value to set for the term.
+		 * @param {string} payload.value    The color value to set for the term.
 		 * @return {Object} Action object.
 		 */
 		setTermColor(payload) {
@@ -62,9 +62,9 @@ const store = createReduxStore('vk-blocks/term-color', {
 		/**
 		 * Action that sets the loading state for a specific taxonomy term within a post.
 		 *
-		 * @param {Object} payload The action payload containing the loading state information.
-		 * @param {number} payload.postId The ID of the post.
-		 * @param {string} payload.taxonomy The taxonomy to which the term belongs.
+		 * @param {Object}  payload           The action payload containing the loading state information.
+		 * @param {number}  payload.postId    The ID of the post.
+		 * @param {string}  payload.taxonomy  The taxonomy to which the term belongs.
 		 * @param {boolean} payload.isLoading The loading state to set for the term (true or false).
 		 * @return {Object} Action object.
 		 */
@@ -73,26 +73,20 @@ const store = createReduxStore('vk-blocks/term-color', {
 				type: 'SET_IS_LOADING',
 				...payload,
 			};
-		},		
+		},
 	},
 
 	selectors: {
-
 		/**
 		 * Retrieves term color information for a given post and taxonomy.
 		 * Automatically selects a taxonomy if not specified.
 		 *
-		 * @param {Object} state Current state of the store.
-		 * @param {number} postId Post ID to retrieve color information for.
+		 * @param {Object} state                             Current state of the store.
+		 * @param {number} postId                            Post ID to retrieve color information for.
 		 * @param {string} [taxonomy='__VK_TAXONOMY_AUTO__'] Optional taxonomy name.
 		 * @return {Object} Term color value and loading state. Returns null and true if data is unavailable.
 		 */
-		getTermColorInfo(
-			state,
-			postId,
-			taxonomy = '__VK_TAXONOMY_AUTO__'
-		) {
-
+		getTermColorInfo(state, postId, taxonomy = '__VK_TAXONOMY_AUTO__') {
 			const postInfo = state[postId];
 			if (!postInfo || !postInfo[taxonomy]?.value) {
 				return {
@@ -106,12 +100,11 @@ const store = createReduxStore('vk-blocks/term-color', {
 	},
 
 	resolvers: {
-
 		/**
 		 * Fetches and sets term color information for a post, with an optional specified taxonomy.
 		 * If no taxonomy is provided, one is automatically selected.
 		 *
-		 * @param {number} postId Post ID for retrieving term color information.
+		 * @param {number} postId                            Post ID for retrieving term color information.
 		 * @param {string} [taxonomy='__VK_TAXONOMY_AUTO__'] Optional taxonomy name.
 		 * @return {Function} Thunk action for updating store with term color information and loading state.
 		 */

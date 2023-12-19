@@ -23,8 +23,8 @@ const variations = [
 					padding: {
 						top: '0',
 						bottom: '0',
-						left: '5px',
-						right: '5px',
+						left: '1em',
+						right: '1em',
 					},
 				},
 			},

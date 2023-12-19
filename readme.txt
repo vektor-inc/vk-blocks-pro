@@ -40,10 +40,10 @@ This is a plugin that extends Gutenberg's blocks.
 * Breadcrumb [ Pro ]
 * Button Outer [ Pro ]
 * Card [ Pro ] (not recommended)
+* Category Badge [ Pro ]
 * Child page list [ Pro ]
 * Dynamic Text ( Post Type name / Ancestor Page name ) [ Pro ]
 * Icon Card [ Pro ] (not recommended)
-* Category Badge [ Pro ]
 * Post list [ Pro ]
 * New Badge [ Pro ]
 * Selected Post List [ Pro ]

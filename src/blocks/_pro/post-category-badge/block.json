@@ -51,7 +51,7 @@
 				"textTransform": true
 			}
 		},
-		"style": "vk_singleTerm"
+		"style": "vk_categoryBadge"
 	},
 	"textdomain": "vk-blocks-pro",
 	"usesContext": ["postId", "postType"]

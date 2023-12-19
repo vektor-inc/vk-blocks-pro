@@ -17,7 +17,11 @@ function vk_blocks_post_category_badge_render_callback( $attributes, $content, $
 	$post     = get_post( $block->context['postId'] );
 	$taxonomy = isset( $attributes['taxonomy'] ) ? $attributes['taxonomy'] : '';
 
-	$term_color_info = \VektorInc\VK_Term_Color\VkTermColor::get_post_single_term_info( $post, array( 'taxonomy' => $taxonomy ) );
+	if ( class_exists( '\VektorInc\VK_Term_Color\VkTermColor' ) && method_exists( '\VektorInc\VK_Term_Color\VkTermColor', 'get_post_single_term_info' ) ) {
+		$term_color_info = \VektorInc\VK_Term_Color\VkTermColor::get_post_single_term_info( $post, array( 'taxonomy' => $taxonomy ) );
+	} else {
+		return '';
+	}
 
 	if ( ! $term_color_info ) {
 		return '';
@@ -40,7 +44,7 @@ function vk_blocks_post_category_badge_render_callback( $attributes, $content, $
 	if ( $attributes['hasLink'] ) {
 		return '<a ' . $wrapper_attributes . ' href="' . $term_color_info['term_url'] . '">' . $term_color_info['term_name'] . '</a>';
 	} else {
-		return '<span ' . $wrapper_attributes . '>' . $term_color_info['term_name'] . '</span>';
+		return '<div ' . $wrapper_attributes . '>' . $term_color_info['term_name'] . '</div>';
 	}
 }
 

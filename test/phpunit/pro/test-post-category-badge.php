@@ -142,6 +142,21 @@ class PostCategoryBadgeTest extends WP_UnitTestCase {
                     'post_category' => array(  $test_category_0['id'] )
                 ),
                 'attributes' => array(
+                    'hasLink' => false,
+                    'textAlign' => 'right'
+                ),
+                'correct' => '<div style="background-color: ' . $test_category_0['color'] . ';color:'. $test_category_0['correct_text_color'] . ';" class="vk_categoryBadge has-text-align-right wp-block-vk-blocks-post-category-badge">' . $test_category_0['name'] . '</div>'
+            ),
+
+            array( 
+                'post' => array(
+                    'post_title'   => 'Page Title',
+                    'post_content' => '<!-- wp:paragraph --><p>This is my page.</p><!-- /wp:paragraph -->',
+                    'post_type'    => 'post',
+                    'post_status'  => 'publish',
+                    'post_category' => array(  $test_category_0['id'] )
+                ),
+                'attributes' => array(
                     'hasLink' => true,
                     'textAlign' => 'right'
                 ),

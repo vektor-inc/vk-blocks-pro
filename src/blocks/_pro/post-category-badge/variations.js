@@ -17,7 +17,7 @@ const variations = [
 			style: {
 				typography: {
 					fontSize: '0.8rem',
-					fontWeight: '700',
+					fontWeight: '500',
 				},
 				spacing: {
 					padding: {

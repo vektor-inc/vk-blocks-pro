@@ -14,6 +14,8 @@ import { useSelect } from '@wordpress/data';
  * Internal dependencies
  */
 import '@vkblocks/utils/store';
+import '@vkblocks/utils/store/termColor';
+
 import { STORE_NAME } from '@vkblocks/utils/store/constants';
 import AdminLicense from '@vkblocks/admin/license';
 import AdminBalloon from '@vkblocks/admin/balloon';

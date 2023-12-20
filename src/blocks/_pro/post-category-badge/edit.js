@@ -85,7 +85,7 @@ export default function CategoryBadgeEdit(props) {
 			<InspectorControls>
 				<PanelBody title={__('Setting', 'vk-blocks-pro')}>
 					<ToggleControl
-						label={__('Add Link to Taxonomy Page', 'vk-blocks-pro')}
+						label={__('Enable Term Link', 'vk-blocks-pro')}
 						checked={hasLink}
 						onChange={(checked) =>
 							setAttributes({ hasLink: checked })

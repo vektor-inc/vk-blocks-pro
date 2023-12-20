@@ -3,7 +3,7 @@
 	"name": "vk-blocks/post-category-badge",
 	"category": "vk-blocks-cat",
 	"title": "Category Badge",
-	"description": "Creates badges displaying linked categories or terms for posts, with flexible design customization.",
+	"description": "Displays a single category or custom taxonomy associated with the post. It allows for the specification of taxonomy and design.",
 	"attributes": {
 		"hasLink": {
 			"type": "boolean",

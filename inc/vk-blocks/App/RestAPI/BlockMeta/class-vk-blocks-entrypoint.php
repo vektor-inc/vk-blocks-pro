@@ -5,6 +5,8 @@
  * @package vk_blocks
  */
 
+use VektorInc\VK_Term_Color\VkTermColor;
+
 /**
  * Vk_Blocks_EntryPoint
  */
@@ -42,6 +44,19 @@ class Vk_Blocks_EntryPoint {
 				),
 			)
 		);
+		register_rest_route(
+			'vk-blocks/v1',
+			'/get_post_single_term_info',
+			array(
+				array(
+					'methods'             => 'POST',
+					'callback'            => array( $this, 'get_post_single_term_info' ),
+					'permission_callback' => function () {
+						return current_user_can( 'edit_theme_options' );
+					},
+				),
+			)
+		);
 	}
 
 	/**
@@ -69,5 +84,25 @@ class Vk_Blocks_EntryPoint {
 				'success' => true,
 			)
 		);
+	}
+
+	/**
+	 * VK Term Color Callback
+	 *
+	 * @param object $request — .
+	 * @return \WP_REST_Response|\WP_Error
+	 */
+	public function get_post_single_term_info( $request ) {
+
+		$args = array();
+		if ( $request->get_param( 'taxonomy' ) ) {
+			$args['taxonomy'] = $request->get_param( 'taxonomy' );
+		}
+
+		$result = VkTermColor::get_post_single_term_info( $request->get_param( 'post_id' ), $args );
+		if ( is_null( $result ) ) {
+			return rest_ensure_response( array( 'error' => 'not found' ) );
+		}
+		return rest_ensure_response( $result );
 	}
 }

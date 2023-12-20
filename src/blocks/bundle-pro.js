@@ -29,6 +29,7 @@ import * as iconCard from './_pro/icon-card';
 import * as iconCardItem from './_pro/icon-card-item';
 import * as outer from './_pro/outer';
 import * as postList from './_pro/post-list';
+import * as postCategoryBadge from './_pro/post-category-badge';
 import * as postNewBadge from './_pro/post-new-badge';
 import * as selectPostList from './_pro/select-post-list';
 import * as selectPostListItem from './_pro/select-post-list-item';
@@ -75,6 +76,7 @@ const vkblocksPro = [
 	iconCardItem,
 	outer,
 	postList,
+	postCategoryBadge,
 	postNewBadge,
 	selectPostList,
 	selectPostListItem,

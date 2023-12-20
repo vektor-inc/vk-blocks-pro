@@ -40,6 +40,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Breadcrumb [ Pro ]
 * Button Outer [ Pro ]
 * Card [ Pro ] (not recommended)
+* Category Badge [ Pro ]
 * Child page list [ Pro ]
 * Dynamic Text ( Post Type name / Ancestor Page name ) [ Pro ]
 * Icon Card [ Pro ] (not recommended)
@@ -101,6 +102,9 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 1.67.0 =
+[ Add Block ][ Category Badge (Pro) ] Creates badges displaying linked categories or terms for posts, with flexible design customization.
 
 = 1.66.2 =
 [ Bug Fix ][ Slider ] Fixed a bug in version 1.66.1 where the slider width did not match the content width in certain themes.

@@ -39,6 +39,7 @@ import * as staff from './staff';
  * Store
  */
 import '@vkblocks/utils/store';
+import '@vkblocks/utils/store/termColor';
 
 /**
  * Extensions

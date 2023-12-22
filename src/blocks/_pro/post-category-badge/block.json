@@ -1,0 +1,58 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/post-category-badge",
+	"category": "vk-blocks-cat",
+	"title": "Category Badge",
+	"description": "Displays a single category or custom taxonomy associated with the post. It allows for the specification of taxonomy and design.",
+	"attributes": {
+		"hasLink": {
+			"type": "boolean",
+			"default": true
+		},
+		"taxonomy": {
+			"type": "string"
+		},
+		"textAlign": {
+			"type": "string"
+		}
+	},
+	"supports": {
+		"className": true,
+		"anchor": false,
+		"html": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"__experimentalBorder": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true,
+			"__experimentalDefaultControls": {
+				"color": true,
+				"radius": true,
+				"style": true,
+				"width": true
+			}
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"__experimentalFontFamily": true,
+			"__experimentalFontWeight": true,
+			"__experimentalFontStyle": true,
+			"__experimentalTextTransform": true,
+			"__experimentalTextDecoration": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalDefaultControls": {
+				"fontSize": true,
+				"fontAppearance": true,
+				"textTransform": true
+			}
+		},
+		"style": "vk_categoryBadge"
+	},
+	"textdomain": "vk-blocks-pro",
+	"usesContext": ["postId", "postType"]
+}

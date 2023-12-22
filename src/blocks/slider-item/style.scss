@@ -106,7 +106,7 @@ $media-xxl-down: 1399.98px;
 	margin-right:auto;
 }
 // :where を無しにすると、テーマが指定する .container の指定より強くなって上書きしてしまうため、:where を指定
-:where(.vk_slider_item_container) {
+:where(.vk_slider_item_container):where(.container) {
 	max-width:var(--wp--style--global--content-size);
 }
 

@@ -4,6 +4,7 @@
  *
  * @package vk-blocks
  */
+
 use VektorInc\VK_Swiper\VkSwiper;
 
 /**

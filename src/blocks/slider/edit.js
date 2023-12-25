@@ -494,7 +494,7 @@ export default function SliderEdit(props) {
 	}
 
 	const blockProps = useBlockProps({
-		className: `swiper swiper-container vk_slider vk_slider_${clientId}${alignClass}`,
+		className: `vk_slider vk_slider_${clientId}${alignClass}`,
 	});
 
 	return (
@@ -777,7 +777,7 @@ export default function SliderEdit(props) {
 				{multiItemSetting}
 			</InspectorControls>
 			<div {...blockProps} data-vkb-slider={JSON.stringify(sliderData)}>
-				<div className={`swiper-wrapper`}>
+				<div>
 					<div>
 						<InnerBlocks
 							//編集画面の追加タグ用に2回目のClassを挿入

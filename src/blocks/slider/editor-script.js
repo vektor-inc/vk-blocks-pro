@@ -149,30 +149,49 @@ document.defaultView.addEventListener('load', function () {
 		);
 	};
 
-	// vkSliderArray に格納された要素をループ
-	vkSliderArray.forEach((vkSlider, index) => {
-		LaunchSwiper(vkSlider, index);
-	});
-
-	// MutationObserverを設定してdata-vkb-slider属性の変更を監視
-	// https://developer.mozilla.org/ja/docs/Web/API/MutationObserver
-	// eslint-disable-next-line no-undef
-	const observer = new MutationObserver((mutations) => {
-		mutations.forEach((mutation) => {
-			if (
-				mutation.type === 'attributes' &&
-				mutation.attributeName === 'data-vkb-slider'
-			) {
-				// data-vkb-sliderが変更された場合、LaunchSwiper関数を呼び出す
-				const vkSlider = mutation.target;
-				LaunchSwiper(vkSlider, swiper.indexOf(vkSlider));
+	const observeChildChanges = (vkSlider, index) => {
+		// MutationObserverを設定してvkSliderの子要素の変更、追加、削除を監視
+		// https://developer.mozilla.org/ja/docs/Web/API/MutationObserver
+		const childObserver = new MutationObserver((mutations) => {
+		  mutations.forEach((mutation) => {
+			if (mutation.type === 'childList') {
+			  // 子要素が変更、追加、削除された場合、LaunchSwiper関数を呼び出す
+			  LaunchSwiper(vkSlider, index);
 			}
+		  });
 		});
-	});
-
-	// vkSliderArray に格納された要素をループ
-	vkSliderArray.forEach((vkSlider) => {
-		// 監視する属性としてdata-vkb-sliderを指定
+	
+		// 監視対象をvkSliderの子要素に設定
+		const vkSliderInner = vkSlider.querySelector('.block-editor-block-list__layout');
+		if (vkSliderInner) {
+		  childObserver.observe(vkSliderInner, { childList: true });
+		}
+	  };
+	
+	  // vkSliderArray に格納された要素をループ
+	  vkSliderArray.forEach((vkSlider, index) => {
+		LaunchSwiper(vkSlider, index);
+		observeChildChanges(vkSlider, index); // 子要素の変更を監視
+	  });
+	
+	  const observer = new MutationObserver((mutations) => {
+		mutations.forEach((mutation) => {
+		  if (
+			mutation.type === 'attributes' &&
+			mutation.attributeName === 'data-vkb-slider'
+		  ) {
+			const vkSlider = mutation.target;
+			const index = swiper.findIndex((s) => s.el === vkSlider);
+			if (index !== -1) {
+			  LaunchSwiper(vkSlider, index);
+			  observeChildChanges(vkSlider, index); // 子要素の変更を監視
+			}
+		  }
+		});
+	  });
+	
+	  // vkSliderArray に格納された要素をループ
+	  vkSliderArray.forEach((vkSlider) => {
 		observer.observe(vkSlider, { attributes: true });
-	});
+	  });
 });

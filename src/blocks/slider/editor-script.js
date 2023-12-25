@@ -1,156 +1,178 @@
-const loadSwiper = (sliderNodeList) => {
-	if (sliderNodeList) {
-		for (const index in sliderNodeList) {
-			const sliderNode = sliderNodeList[index];
+document.defaultView.addEventListener('load', function () {
+	const vkSliderArray = document.querySelectorAll('.vk_slider');
+	const swiper = [];
 
-			// swiper クラスを一応削除
-			sliderNode.classList.remove('swiper');
+	const LaunchSwiper = (vkSlider) => {
+		// swiper クラスを一応削除
+		vkSlider.classList.remove('swiper');
 
-			// swiper クラスを追加
-			const newSwiperDiv = sliderNode.querySelector(
-				'.block-editor-inner-blocks'
-			);
-			newSwiperDiv.classList.add('swiper');
+		// swiper クラスを追加
+		const newSwiperDiv = vkSlider.querySelector(
+			'.block-editor-inner-blocks'
+		);
+		newSwiperDiv.classList.add('swiper');
 
-			// swiper-wrapper クラスを一応削除
-			const oldSwiperWrapper =
-				sliderNode.querySelector('.swiper-wrapper');
-			oldSwiperWrapper.classList.remove('swiper-wrapper');
+		// swiper-wrapper クラスを一応削除
+		const oldSwiperWrapper = vkSlider.querySelector('.swiper-wrapper');
+		oldSwiperWrapper.classList.remove('swiper-wrapper');
 
-			// swiper-wrapper クラスを追加
-			const newSwiperWrapper = sliderNode.querySelector(
-				'.block-editor-block-list__layout'
-			);
-			newSwiperWrapper.classList.add('swiper-wrapper');
+		// swiper-wrapper クラスを追加
+		const newSwiperWrapper = vkSlider.querySelector(
+			'.block-editor-block-list__layout'
+		);
+		newSwiperWrapper.classList.add('swiper-wrapper');
 
-			// 値を取得して配列に格納
-			const attributes = JSON.parse(
-				sliderNode.getAttribute('data-vkb-slider')
-			);
+		// 値を取得して配列に格納
+		const attributes = JSON.parse(vkSlider.getAttribute('data-vkb-slider'));
 
-			let sliderId = '';
-			if (attributes.blockId !== undefined) {
-				sliderId = attributes.blockId;
-			} else if (attributes.clientId !== undefined) {
-				// 1.36.0 より古い状態で保存されてる場合の互換処理
-				sliderId = attributes.clientId;
-			}
+		// Sloder の設定を作成
+		const SwiperSetting = {};
 
-			let SwiperSetting = `
-			var swiper${index} = new Swiper ('.vk_slider_${sliderId} > div > div > div.block-editor-inner-blocks', {
-			`;
+		// 対象の ID を取得
+		let sliderId = '';
+		if (attributes.blockId !== undefined) {
+			sliderId = attributes.blockId;
+		} else if (attributes.clientId !== undefined) {
+			// 1.36.0 より古い状態で保存されてる場合の互換処理
+			sliderId = attributes.clientId;
+		}
 
-			if (attributes.pagination !== 'hide') {
-				SwiperSetting += `
-				pagination: {
-					el: '.swiper-pagination',
-					clickable : true,
-					type: '${attributes.pagination}',
-					renderFraction: function (currentClass, totalClass) {
-						return '<span class="' + currentClass + '"></span>' + ' / ' + '<span class="' + totalClass + '"></span>';
-					},
+		// ループの設定
+		if (attributes.loop) {
+			SwiperSetting.loop = attributes.loop;
+		}
+
+		// エフェクトの設定
+		if (attributes.effect) {
+			SwiperSetting.effect = attributes.effect;
+		}
+
+		// ナビゲーションの設定
+		SwiperSetting.navigation = {
+			nextEl: `.vk_slider_${sliderId} .swiper-button-next`,
+			prevEl: `.vk_slider_${sliderId} .swiper-button-prev`,
+		};
+
+		// ページネーションの設定
+		if (attributes.pagination !== 'hide') {
+			SwiperSetting.pagination = {
+				el: `.vk_slider_${sliderId} .swiper-pagination`,
+				clickable: true,
+				type: `${attributes.pagination}`,
+				renderFraction(currentClass, totalClass) {
+					return (
+						'<span class="' +
+						currentClass +
+						'"></span>' +
+						' / ' +
+						'<span class="' +
+						totalClass +
+						'"></span>'
+					);
 				},
-				`;
-			}
+			};
+		}
 
-			if (attributes.effect !== 'fade') {
-				if (attributes.slidesPerViewMobile) {
-					SwiperSetting += `slidesPerView: ${attributes.slidesPerViewMobile},`;
-					if (
-						attributes.slidesPerGroup &&
-						attributes.slidesPerGroup === 'slides-per-view' &&
-						Number.isInteger(attributes.slidesPerViewMobile)
-					) {
-						SwiperSetting += `slidesPerGroup: ${attributes.slidesPerViewMobile},`;
-					} else {
-						SwiperSetting += `slidesPerGroup: 1,`;
-					}
-				} else if (attributes.slidesPerView) {
-					SwiperSetting += `slidesPerView: ${attributes.slidesPerView},`;
-					if (
-						attributes.slidesPerGroup &&
-						attributes.slidesPerGroup === 'slides-per-view' &&
-						Number.isInteger(attributes.slidesPerView)
-					) {
-						SwiperSetting += `slidesPerGroup: ${attributes.slidesPerView},`;
-					} else {
-						SwiperSetting += `slidesPerGroup: 1,`;
-					}
-				} else {
-					SwiperSetting += `slidesPerView: 1,`;
-					SwiperSetting += `slidesPerGroup: 1,`;
-				}
+		// 複数枚表示の設定
+		if (attributes.effect !== 'fade') {
+			if (attributes.slidesPerViewMobile) {
+				SwiperSetting.slidesPerView = attributes.slidesPerViewMobile;
 				if (
-					attributes.slidesPerViewTablet ||
-					attributes.slidesPerViewPC
+					attributes.slidesPerGroup &&
+					attributes.slidesPerGroup === 'slides-per-view' &&
+					Number.isInteger(attributes.slidesPerViewMobile)
 				) {
-					// Responsive breakpoints
-					SwiperSetting += `breakpoints: {`;
-					if (attributes.slidesPerViewTablet) {
-						SwiperSetting += `576: {`;
-						SwiperSetting += `slidesPerView: ${attributes.slidesPerViewTablet},`;
-						if (
-							attributes.slidesPerGroup &&
-							attributes.slidesPerGroup === 'slides-per-view' &&
-							Number.isInteger(attributes.slidesPerViewTablet)
-						) {
-							SwiperSetting += `slidesPerGroup: ${attributes.slidesPerViewTablet},`;
-						}
-						SwiperSetting += `},`;
-					}
-					if (attributes.slidesPerViewPC) {
-						SwiperSetting += `992: {`;
-						SwiperSetting += `slidesPerView: ${attributes.slidesPerViewPC},`;
-						if (
-							attributes.slidesPerGroup &&
-							attributes.slidesPerGroup === 'slides-per-view' &&
-							Number.isInteger(attributes.slidesPerViewPC)
-						) {
-							SwiperSetting += `slidesPerGroup: ${attributes.slidesPerViewPC},`;
-						}
-						SwiperSetting += `},`;
-					}
-					SwiperSetting += `},`;
+					SwiperSetting.slidesPerGroup =
+						attributes.slidesPerViewMobile;
+				} else {
+					SwiperSetting.slidesPerGroup = 1;
 				}
-				if (attributes.centeredSlides) {
-					SwiperSetting += `centeredSlides: ${attributes.centeredSlides},`;
+			} else if (attributes.slidesPerView) {
+				SwiperSetting.slidesPerView = attributes.slidesPerView;
+				if (
+					attributes.slidesPerGroup &&
+					attributes.slidesPerGroup === 'slides-per-view' &&
+					Number.isInteger(attributes.slidesPerView)
+				) {
+					SwiperSetting.slidesPerGroup = attributes.slidesPerView;
+				} else {
+					SwiperSetting.slidesPerGroup = 1;
+				}
+			} else {
+				SwiperSetting.slidesPerView = 1;
+				SwiperSetting.slidesPerGroup = 1;
+			}
+			if (attributes.slidesPerViewTablet || attributes.slidesPerViewPC) {
+				// Responsive breakpoints
+				SwiperSetting.breakpoints = {};
+				if (attributes.slidesPerViewTablet) {
+					SwiperSetting.breakpoints[576] = {
+						slidesPerView: attributes.slidesPerViewTablet,
+					};
+					if (
+						attributes.slidesPerGroup &&
+						attributes.slidesPerGroup === 'slides-per-view' &&
+						Number.isInteger(attributes.slidesPerViewTablet)
+					) {
+						SwiperSetting.breakpoints[576].slidesPerGroup =
+							attributes.slidesPerViewTablet;
+					} else {
+						SwiperSetting.breakpoints[576].slidesPerGroup = 1;
+					}
+				}
+				if (attributes.slidesPerViewPC) {
+					SwiperSetting.breakpoints[992] = {
+						slidesPerView: attributes.slidesPerViewPC,
+					};
+					if (
+						attributes.slidesPerGroup &&
+						attributes.slidesPerGroup === 'slides-per-view' &&
+						Number.isInteger(attributes.slidesPerViewPC)
+					) {
+						SwiperSetting.breakpoints[992].slidesPerGroup =
+							attributes.slidesPerViewPC;
+					} else {
+						SwiperSetting.breakpoints[992].slidesPerGroup = 1;
+					}
 				}
 			}
 
-			if (attributes.loop) {
-				SwiperSetting += `
-				loop: ${attributes.loop},
-				`;
-			}
-
-			if (attributes.effect) {
-				SwiperSetting += `
-				effect: '${attributes.effect}',
-				`;
-			}
-
-			SwiperSetting += `
-				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
-				},
-			});`;
-			// eslint-disable-next-line no-eval
-			eval(SwiperSetting);
-			// ページネーションがOFFの時非表示
-			if (attributes.pagination === 'hide') {
-				// eslint-disable-next-line no-eval
-				eval(`swiper${index}.pagination.destroy();`);
+			if (attributes.centeredSlides) {
+				SwiperSetting.centeredSlides = attributes.centeredSlides;
 			}
 		}
-	}
-};
 
-// 初回の loadSwiper 呼び出し（data-vkb-slider 属性を持つ要素に対して）
-document.defaultView.addEventListener('load', function () {
-	// //data-vkb-slider属性のNodeを取得
-	const sliderNodes = document.querySelectorAll('[data-vkb-slider]');
-	// 配列に変換。
-	const sliderNodeArray = Array.from(sliderNodes);
-	loadSwiper(sliderNodeArray);
+		// eslint-disable-next-line no-undef
+		swiper[sliderId] = new Swiper(
+			`.vk_slider_${sliderId} > div > div > div.block-editor-inner-blocks`,
+			SwiperSetting
+		);
+	};
+
+	// vkSliderArray に格納された要素をループ
+	vkSliderArray.forEach((vkSlider, index) => {
+		LaunchSwiper(vkSlider, index);
+	});
+
+	// MutationObserverを設定してdata-vkb-slider属性の変更を監視
+	// https://developer.mozilla.org/ja/docs/Web/API/MutationObserver
+	// eslint-disable-next-line no-undef
+	const observer = new MutationObserver((mutations) => {
+		mutations.forEach((mutation) => {
+			if (
+				mutation.type === 'attributes' &&
+				mutation.attributeName === 'data-vkb-slider'
+			) {
+				// data-vkb-sliderが変更された場合、LaunchSwiper関数を呼び出す
+				const vkSlider = mutation.target;
+				LaunchSwiper(vkSlider, swiper.indexOf(vkSlider));
+			}
+		});
+	});
+
+	// vkSliderArray に格納された要素をループ
+	vkSliderArray.forEach((vkSlider) => {
+		// 監視する属性としてdata-vkb-sliderを指定
+		observer.observe(vkSlider, { attributes: true });
+	});
 });

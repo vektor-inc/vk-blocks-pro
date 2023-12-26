@@ -156,8 +156,6 @@ document.defaultView.addEventListener('load', function () {
 					const classNames = targetElement.className.split(' ');
 					for (let i = 0; i < classNames.length; i++) {
 						if (classNames[i].match(/swiper(\w|-)*/)) {
-							console.log(classNames);
-							console.log(classNames[i]);
 							// クラスを削除
 							targetElement.classList.remove(classNames[i]);
 						}

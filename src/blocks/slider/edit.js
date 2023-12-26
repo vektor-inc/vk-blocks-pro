@@ -26,6 +26,7 @@ import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block'
 export default function SliderEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const {
+		editorMode,
 		pc,
 		tablet,
 		mobile,
@@ -136,6 +137,11 @@ export default function SliderEdit(props) {
 		// 1.49 以前では navigationPosition が定義されていないので互換設定を追加
 		if (navigationPosition === undefined) {
 			setAttributes({ navigationPosition: 'mobile-bottom' });
+		}
+
+		// 1.67 以前では editorMode が定義されていないので互換設定を追加
+		if (editorMode === undefined) {
+			setAttributes({ editorMode: 'default' });
 		}
 	}, [clientId]);
 
@@ -288,6 +294,7 @@ export default function SliderEdit(props) {
 
 	// JS に渡す値の構造体
 	const sliderData = {
+		editorMode,
 		autoPlay,
 		autoPlayStop,
 		autoPlayDelay,
@@ -494,7 +501,7 @@ export default function SliderEdit(props) {
 	}
 
 	const blockProps = useBlockProps({
-		className: `vk_slider vk_slider_${clientId}${alignClass}`,
+		className: `vk_slider vk_swiper vk_slider_editorMode--${editorMode} vk_slider_${clientId}${alignClass}`,
 	});
 
 	return (
@@ -509,6 +516,44 @@ export default function SliderEdit(props) {
 				/>
 			</BlockControls>
 			<InspectorControls>
+				<PanelBody
+					title={__('Editor Setting', 'vk-blocks-pro')}
+					initialOpen={true}
+				>
+					<BaseControl
+						label={__('Editor Mode', 'vk-blocks-pro')}
+						id={`vk_slider-effect`}
+					>
+						<ButtonGroup>
+							<Button
+								isSmall={true}
+								variant={
+									editorMode === 'default'
+										? 'primary'
+										: 'secondary'
+								}
+								onClick={() =>
+									setAttributes({ editorMode: 'default' })
+								}
+							>
+								{__('Default', 'vk-blocks-pro')}
+							</Button>
+							<Button
+								isSmall={true}
+								variant={
+									editorMode === 'slide'
+										? 'primary'
+										: 'secondary'
+								}
+								onClick={() =>
+									setAttributes({ editorMode: 'slide' })
+								}
+							>
+								{__('Slide', 'vk-blocks-pro')}
+							</Button>
+						</ButtonGroup>
+					</BaseControl>
+				</PanelBody>
 				<PanelBody
 					title={__('Width', 'vk-blocks-pro')}
 					initialOpen={true}
@@ -777,7 +822,7 @@ export default function SliderEdit(props) {
 				{multiItemSetting}
 			</InspectorControls>
 			<div {...blockProps} data-vkb-slider={JSON.stringify(sliderData)}>
-				<div>
+				<div className={`vk_slider_wrapper`}>
 					<div>
 						<InnerBlocks
 							//編集画面の追加タグ用に2回目のClassを挿入

@@ -166,6 +166,10 @@ const blockAttributes8 = {
 		type: 'boolean',
 		default: false
 	},
+	editorMode: {
+		type: 'string',
+		default: 'default'
+	},
 }
 */
 

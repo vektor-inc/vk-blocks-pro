@@ -19,6 +19,8 @@ function vk_blocks_dynamic_text_get_attributes_default() {
 		'tagName'                  => 'div',
 		'ancestorPageHiddenOption' => null,
 		'parentPageHiddenOption'   => null,
+		'userNameBeforeText'	   => null,
+		'userNameAfterText'	  	   => null,
 		'customFieldName'          => null,
 		'fieldType'                => 'text',
 		'isLinkSet'                => false,
@@ -131,6 +133,21 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 			$parent_post_title = get_post( $post )->post_title;
 		}
 		$block_content .= $parent_post_title;
+	} elseif ( 'user-name' === $attributes['displayElement'] ) {
+		if ( is_user_logged_in() ) {
+			$current_user = wp_get_current_user();
+			if ( $current_user->display_name ) {
+				$block_content .= esc_html($attributes['userNamePrefixText']) . $current_user->display_name . esc_html($attributes['userNameSuffixText']);
+			}
+		} else {
+			if ( $attributes['isLoginLink'] ) {
+				$current_url = ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+				$block_content .= '<a href="' . wp_login_url($current_url) . '">' . esc_html($attributes['userNameLoggedOutText']) . '</a>';
+			} else {
+				$block_content .= esc_html($attributes['userNameLoggedOutText']);
+			}
+		}
 	} elseif ( 'custom-field' === $attributes['displayElement'] ) {
 		$block_content .= vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $block );
 	}
@@ -141,6 +158,11 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 	return $block_content;
 }
 
+/**
+ * Register Dynamic Text block.
+ *
+ * @return void
+ */
 /**
  * Register Dynamic Text block.
  *
@@ -188,6 +210,22 @@ function vk_blocks_register_block_dynamic_text() {
 						'type'    => 'boolean',
 						'default' => true,
 					),
+					'userNamePrefixText'                  => array(
+						'type'    => 'string',
+						'default' => '',
+					),	
+					'userNameSuffixText'                  => array(
+						'type'    => 'string',
+						'default' => '',
+					),	
+					'userNameLoggedOutText'   => array(
+						'type'    => 'string',
+						'default' =>  ''
+					),
+					'isLoginLink'             => array(
+						'type'    => 'boolean',
+						'default' => true
+					),													
 					'customFieldName'          => array(
 						'type'    => 'string',
 						'default' => '',

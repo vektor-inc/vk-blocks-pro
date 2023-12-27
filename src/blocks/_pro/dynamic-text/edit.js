@@ -16,6 +16,7 @@ import {
 	BlockControls,
 	InspectorControls,
 } from '@wordpress/block-editor';
+import { useSelect } from '@wordpress/data';
 import ServerSideRender from '@wordpress/server-side-render';
 
 /**
@@ -85,6 +86,10 @@ export default function DynamicTextEdit(props) {
 		ancestorPageHiddenOption,
 		parentPageHiddenOption,
 		customFieldName,
+		userNamePrefixText,
+		userNameSuffixText,
+		userNameLoggedOutText,
+		isLoginLink,
 		fieldType,
 		isLinkSet,
 		isLinkTarget,
@@ -101,10 +106,17 @@ export default function DynamicTextEdit(props) {
 		}),
 	});
 
-	const postType = wp.data.select('core/editor').getCurrentPostType();
-	const parentPageId = wp.data
-		.select('core/editor')
-		.getEditedPostAttribute('parent');
+	const { postType, parentPageId, currentUser } = useSelect((select) => {
+		const { getCurrentPostType, getEditedPostAttribute } =
+			select('core/editor');
+		const { getCurrentUser } = select('core');
+
+		return {
+			postType: getCurrentPostType(),
+			parentPageId: getEditedPostAttribute('parent'),
+			currentUser: getCurrentUser(),
+		};
+	}, []);
 
 	let editContent;
 	const editAlertContent = (
@@ -127,10 +139,26 @@ export default function DynamicTextEdit(props) {
 		editContent = (
 			<TagName>{__('Parent Page Title', 'vk-blocks-pro')}</TagName>
 		);
+	} else if (displayElement === 'user-name' && !currentUser) {
+		editContent = (
+			<TagName>
+				{(userNamePrefixText ?? '') +
+					currentUser.name +
+					(userNameSuffixText ?? '')}
+			</TagName>
+		);
 	} else if (displayElement === 'custom-field' && !postType) {
 		editContent = (
 			<TagName>
 				{__('Custom field', 'vk-blocks-pro')} ({customFieldName})
+			</TagName>
+		);
+	} else if (displayElement === 'user-name') {
+		editContent = (
+			<TagName>
+				{(userNamePrefixText ?? '') +
+					currentUser.name +
+					(userNameSuffixText ?? '')}
 			</TagName>
 		);
 	} else if (displayElement === 'custom-field' && !customFieldName) {
@@ -204,6 +232,13 @@ export default function DynamicTextEdit(props) {
 									),
 								},
 								{
+									value: 'user-name',
+									label: __(
+										'Current login user name',
+										'vk-blocks-pro'
+									),
+								},
+								{
 									value: 'custom-field',
 									label: __('Custom Field', 'vk-blocks-pro'),
 								},
@@ -256,6 +291,43 @@ export default function DynamicTextEdit(props) {
 									)}
 								</div>
 							)}
+						</BaseControl>
+					)}
+					{displayElement === 'user-name' && (
+						<BaseControl>
+							<TextControl
+								label={__('Prefix Label', 'vk-blocks-pro')}
+								value={userNamePrefixText}
+								onChange={(value) =>
+									setAttributes({ userNamePrefixText: value })
+								}
+							/>
+							<TextControl
+								label={__('Suffix Label', 'vk-blocks-pro')}
+								value={userNameSuffixText}
+								onChange={(value) =>
+									setAttributes({ userNameSuffixText: value })
+								}
+							/>
+							<TextControl
+								label={__('Text for Logged Out Users', 'vk-blocks-pro')}
+								value={userNameLoggedOutText}
+								onChange={(value) =>
+									setAttributes({ userNameLoggedOutText: value })
+								}
+							/>	
+							<ToggleControl
+								label={__(
+									'Link to Login on Logout',
+									'vk-blocks-pro'
+								)}
+								checked={isLoginLink}
+								onChange={(checked) =>
+									setAttributes({
+										isLoginLink: checked,
+									})
+								}
+							/>						
 						</BaseControl>
 					)}
 					{displayElement === 'custom-field' && (

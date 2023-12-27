@@ -29,6 +29,22 @@
 			"type": "string",
 			"default": null
 		},
+		"userNamePrefixText": {
+			"type": "string",
+			"default": null
+		},
+		"userNameSuffixText": {
+			"type": "string",
+			"default": null
+		},
+		"userNameLoggedOutText": {
+			"type": "string",
+			"default": null
+		},
+		"isLoginLink": {
+			"type": "boolean",
+			"default": true
+		},				
 		"fieldType": {
 			"type": "string",
 			"default": "text"

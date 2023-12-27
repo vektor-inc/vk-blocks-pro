@@ -44,7 +44,7 @@
 		"isLoginLink": {
 			"type": "boolean",
 			"default": true
-		},				
+		},
 		"fieldType": {
 			"type": "string",
 			"default": "text"

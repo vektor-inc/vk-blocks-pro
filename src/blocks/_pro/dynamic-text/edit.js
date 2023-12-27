@@ -310,12 +310,17 @@ export default function DynamicTextEdit(props) {
 								}
 							/>
 							<TextControl
-								label={__('Text for Logged Out Users', 'vk-blocks-pro')}
+								label={__(
+									'Text for Logged Out Users',
+									'vk-blocks-pro'
+								)}
 								value={userNameLoggedOutText}
 								onChange={(value) =>
-									setAttributes({ userNameLoggedOutText: value })
+									setAttributes({
+										userNameLoggedOutText: value,
+									})
 								}
-							/>	
+							/>
 							<ToggleControl
 								label={__(
 									'Link to Login on Logout',
@@ -327,7 +332,7 @@ export default function DynamicTextEdit(props) {
 										isLoginLink: checked,
 									})
 								}
-							/>						
+							/>
 						</BaseControl>
 					)}
 					{displayElement === 'custom-field' && (

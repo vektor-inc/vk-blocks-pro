@@ -140,12 +140,13 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 				$block_content .= esc_html($attributes['userNamePrefixText']) . $current_user->display_name . esc_html($attributes['userNameSuffixText']);
 			}
 		} else {
-			if ( $attributes['isLoginLink'] ) {
+			$userNameLoggedOutText = isset($attributes['userNameLoggedOutText']) ? esc_html($attributes['userNameLoggedOutText']) : '';
+			if ( isset($attributes['isLoginLink']) && $attributes['isLoginLink'] ) {
 				$current_url = ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
-				$block_content .= '<a href="' . wp_login_url($current_url) . '">' . esc_html($attributes['userNameLoggedOutText']) . '</a>';
+				$block_content .= '<a href="' . wp_login_url($current_url) . '">' . esc_html($userNameLoggedOutText) . '</a>';
 			} else {
-				$block_content .= esc_html($attributes['userNameLoggedOutText']);
+				$block_content .= esc_html($userNameLoggedOutText);
 			}
 		}
 	} elseif ( 'custom-field' === $attributes['displayElement'] ) {

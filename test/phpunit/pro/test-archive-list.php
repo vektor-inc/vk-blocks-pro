@@ -10,7 +10,7 @@
 /**
  * ArchiveList block test case.
  */
-class ArchiveList extends WP_UnitTestCase {
+class ArchiveList extends VK_UnitTestCase {
 
 	public function test_vk_blocks_archive_list_render_callback(){
 

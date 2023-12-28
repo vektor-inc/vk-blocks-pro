@@ -5,7 +5,7 @@
  * @package vk-blocks
  */
 
-class BlockStyleTest extends WP_UnitTestCase {
+class BlockStyleTest extends VK_UnitTestCase {
 
 	/**
 	 * register_block_styleでスタイルが登録されているかテスト

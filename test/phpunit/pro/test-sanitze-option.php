@@ -5,7 +5,7 @@
  * @package vk-blocks
  */
 
-class SanitizeOptions extends WP_UnitTestCase {
+class SanitizeOptions extends VK_UnitTestCase {
 
 	public function test_sanitize_options() {
 		$test_data = array(

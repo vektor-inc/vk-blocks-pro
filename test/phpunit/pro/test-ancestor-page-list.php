@@ -5,7 +5,7 @@
  * @package vektor-inc/vk-blocks-pro
  */
 
-class AncestorPageListTest extends WP_UnitTestCase {
+class AncestorPageListTest extends VK_UnitTestCase {
 
 	/**
 	 * Test Title

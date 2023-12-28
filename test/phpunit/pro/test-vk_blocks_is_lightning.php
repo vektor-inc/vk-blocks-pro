@@ -5,7 +5,7 @@
  * @package vk-blocks
  */
 
-class IsLightningTest extends WP_UnitTestCase {
+class IsLightningTest extends VK_UnitTestCase {
 
 	public function test_vk_blocks_is_lightning() {
 		$test_data = array(

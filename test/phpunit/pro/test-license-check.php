@@ -6,7 +6,7 @@
  */
 
 
-class LicenseCheckerTest extends WP_UnitTestCase {
+class LicenseCheckerTest extends VK_UnitTestCase {
 
 	public function test_vk_blocks_license_check() {
 

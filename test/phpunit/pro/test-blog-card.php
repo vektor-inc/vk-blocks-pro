@@ -8,7 +8,7 @@
 /**
  * BlogCard block test case.
  */
-class BlogCard extends WP_UnitTestCase {
+class BlogCard extends VK_UnitTestCase {
 	/**
 	 * Post object.
 	 *

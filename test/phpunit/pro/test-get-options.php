@@ -5,7 +5,7 @@
  * @package vk-blocks
  */
 
-class GetOptionsTest extends WP_UnitTestCase {
+class GetOptionsTest extends VK_UnitTestCase {
 
 	public function test_vk_blocks_get_options() {
 		/**

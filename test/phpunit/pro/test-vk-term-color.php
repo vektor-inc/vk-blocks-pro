@@ -8,7 +8,7 @@ use VektorInc\VK_Term_Color\VkTermColor;
 /**
  * Post List block test case.
  */
-class VkTermColorTest extends WP_UnitTestCase {
+class VkTermColorTest extends VK_UnitTestCase {
 
 	/**
 	 * PostListブロックを挿入する投稿

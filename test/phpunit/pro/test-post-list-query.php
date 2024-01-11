@@ -5,7 +5,7 @@
  * @package vektor-inc/vk-blocks-pro
  */
 
-class PostListBlockQueryTest extends WP_UnitTestCase {
+class PostListBlockQueryTest extends VK_UnitTestCase {
 
 	public static function create_test_posts() {
 

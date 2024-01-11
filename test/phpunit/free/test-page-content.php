@@ -8,7 +8,7 @@
 /**
  * Page Content block test case.
  */
-class PageContentBlockTest extends WP_UnitTestCase {
+class PageContentBlockTest extends VK_UnitTestCase {
 
 	/**
 	 * PageContentブロックで表示する固定ページ
@@ -60,24 +60,4 @@ class PageContentBlockTest extends WP_UnitTestCase {
 
 		$this->assertEquals( $expected, $actual );
 	}
-
-	/**
-	 * Add user and set the user as current user.
-	 *
-	 * @param  string $role administrator, editor, author, contributor ...
-	 * @return void
-	 */
-	public function set_current_user( $role ) {
-		$user = $this->factory()->user->create_and_get(
-			array(
-				'role' => $role,
-			)
-		);
-
-		/*
-			* Set $user as current user
-			*/
-		wp_set_current_user( $user->ID, $user->user_login );
-	}
-
 };

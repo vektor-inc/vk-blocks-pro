@@ -5,7 +5,7 @@
  * @package vk-blocks
  */
 
-class VKBlocksOptionsTest extends WP_UnitTestCase {
+class VKBlocksOptionsTest extends VK_UnitTestCase {
 
 	public function test_get_deprecated_lists() {
 		$test_data = array(

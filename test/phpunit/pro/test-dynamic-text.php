@@ -20,7 +20,7 @@ class BlockObject {
 /**
  * DynamicText block test case.
  */
-class DynamicText extends WP_UnitTestCase {
+class DynamicText extends VK_UnitTestCase {
 
 	/**
 	 * Test Block

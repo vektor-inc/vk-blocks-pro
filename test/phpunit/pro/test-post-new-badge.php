@@ -10,7 +10,7 @@ use VektorInc\VK_Helpers\VkHelpers;
 /**
  * DynamicText block test case.
  */
-class PostNewBadgeTest extends WP_UnitTestCase {
+class PostNewBadgeTest extends VK_UnitTestCase {
 
     /**
 	 * @var array

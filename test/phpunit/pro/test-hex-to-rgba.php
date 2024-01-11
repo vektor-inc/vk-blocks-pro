@@ -5,7 +5,7 @@
  * @package vk-blocks
  */
 
-class GetHexToRgbaTest extends WP_UnitTestCase {
+class GetHexToRgbaTest extends VK_UnitTestCase {
 
 	public function test_vk_blocks_get_hex_to_rgba() {
 		$test_data = array(

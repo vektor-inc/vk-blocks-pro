@@ -8,7 +8,7 @@
 /**
  * Select Post List Block Test case.
  */
-class SelectPostListBlockTest extends WP_UnitTestCase {
+class SelectPostListBlockTest extends VK_UnitTestCase {
 
 	/**
 	 * 選択投稿リストで設定するpage id
@@ -96,22 +96,4 @@ class SelectPostListBlockTest extends WP_UnitTestCase {
 		$this->assertEquals( $expected, $actual );
 	}
 
-	/**
-	 * Add user and set the user as current user.
-	 *
-	 * @param  string $role administrator, editor, author, contributor ...
-	 * @return void
-	 */
-	public function set_current_user( $role ) {
-		$user = $this->factory()->user->create_and_get(
-			array(
-				'role' => $role,
-			)
-		);
-
-		/*
-			* Set $user as current user
-			*/
-		wp_set_current_user( $user->ID, $user->user_login );
-	}
 }

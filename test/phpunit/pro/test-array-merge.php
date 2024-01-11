@@ -5,7 +5,7 @@
  * @package vk-blocks
  */
 
-class ArrayMergeTest extends WP_UnitTestCase {
+class ArrayMergeTest extends VK_UnitTestCase {
 
 	public function test_vk_blocks_array_merge() {
 		/**

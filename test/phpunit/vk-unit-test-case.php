@@ -17,5 +17,8 @@ class VK_UnitTestCase extends WP_UnitTestCase {
         * Set $user as the current user
         */
         wp_set_current_user( $user->ID, $user->user_login );
+
+        return $user;
+        
     } 
 }

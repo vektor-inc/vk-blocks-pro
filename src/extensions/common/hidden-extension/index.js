@@ -3,7 +3,12 @@
  */
 import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
-import { PanelBody, BaseControl, ToggleControl } from '@wordpress/components';
+import {
+	PanelBody,
+	Icon,
+	BaseControl,
+	ToggleControl,
+} from '@wordpress/components';
 import { InspectorControls } from '@wordpress/block-editor';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { useEffect } from '@wordpress/element';
@@ -18,6 +23,7 @@ import classnames from 'classnames';
  * Internal dependencies
  */
 import { emptyStringToUndefined } from '@vkblocks/utils/empty-string-to-undefined';
+import { ReactComponent as IconSVG } from './icon.svg';
 
 // Check the keyword including str or not
 // eslint-disable-next-line camelcase
@@ -186,6 +192,28 @@ addFilter(
 						),
 					});
 				};
+				// アイコンのスタイル
+				let iconStyle = {
+					width: '24px',
+					height: '24px',
+				};
+
+				if (
+					isActiveClass('vk_hidden') ||
+					isActiveClass('vk_hidden-xxl') ||
+					isActiveClass('vk_hidden-xl_v2') ||
+					isActiveClass('vk_hidden-xl') ||
+					isActiveClass('vk_hidden-lg') ||
+					isActiveClass('vk_hidden-md') ||
+					isActiveClass('vk_hidden-sm') ||
+					isActiveClass('vk_hidden-xs')
+				) {
+					iconStyle = {
+						...iconStyle,
+						color: '#fff',
+						background: '#1e1e1e',
+					};
+				}
 
 				return (
 					<>
@@ -193,6 +221,7 @@ addFilter(
 						<InspectorControls>
 							<PanelBody
 								title={__('Hidden Settings', 'vk-blocks-pro')}
+								icon={<Icon icon={IconSVG} style={iconStyle} />}
 								initialOpen={false}
 							>
 								<BaseControl

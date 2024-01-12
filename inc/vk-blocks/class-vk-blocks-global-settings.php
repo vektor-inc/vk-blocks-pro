@@ -72,6 +72,7 @@ class VK_Blocks_Global_Settings {
 			array(
 				'name'   => 'heading',
 				'is_pro' => false,
+				'is_deprecated' => true,
 			),
 			array(
 				'name'   => 'icon',

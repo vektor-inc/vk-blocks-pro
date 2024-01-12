@@ -19,8 +19,8 @@ function vk_blocks_dynamic_text_get_attributes_default() {
 		'tagName'                  => 'div',
 		'ancestorPageHiddenOption' => null,
 		'parentPageHiddenOption'   => null,
-		'userNameBeforeText'	   => null,
-		'userNameAfterText'	  	   => null,
+		'userNameBeforeText'       => null,
+		'userNameAfterText'        => null,
 		'customFieldName'          => null,
 		'fieldType'                => 'text',
 		'isLinkSet'                => false,
@@ -137,23 +137,23 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 		if ( is_user_logged_in() ) {
 			$current_user = wp_get_current_user();
 			if ( $current_user->display_name ) {
-				$prefix = isset($attributes['userNamePrefixText']) ? esc_html($attributes['userNamePrefixText']) : '';
-				$suffix = isset($attributes['userNameSuffixText']) ? esc_html($attributes['userNameSuffixText']) : '';
-			
+				$prefix = isset( $attributes['userNamePrefixText'] ) ? esc_html( $attributes['userNamePrefixText'] ) : '';
+				$suffix = isset( $attributes['userNameSuffixText'] ) ? esc_html( $attributes['userNameSuffixText'] ) : '';
+
 				$block_content .= $prefix . $current_user->display_name . $suffix;
 			}
 		} else {
-			$userNameLoggedOutText = isset($attributes['userNameLoggedOutText']) ? esc_html($attributes['userNameLoggedOutText']) : '';
-			if ( isset($attributes['isLoginLink']) && $attributes['isLoginLink'] ) {
+			$userNameLoggedOutText = isset( $attributes['userNameLoggedOutText'] ) ? esc_html( $attributes['userNameLoggedOutText'] ) : '';
+			if ( isset( $attributes['isLoginLink'] ) && $attributes['isLoginLink'] ) {
 				$post = get_post();
 				if ( is_singular() ) {
 					$current_url = get_permalink( $post->id );
 				} else {
 					$current_url = ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 				}
-				$block_content .= '<a href="' . wp_login_url($current_url) . '">' . esc_html($userNameLoggedOutText) . '</a>';
+				$block_content .= '<a href="' . wp_login_url( $current_url ) . '">' . esc_html( $userNameLoggedOutText ) . '</a>';
 			} else {
-				$block_content .= esc_html($userNameLoggedOutText);
+				$block_content .= esc_html( $userNameLoggedOutText );
 			}
 		}
 	} elseif ( 'custom-field' === $attributes['displayElement'] ) {
@@ -218,22 +218,22 @@ function vk_blocks_register_block_dynamic_text() {
 						'type'    => 'boolean',
 						'default' => true,
 					),
-					'userNamePrefixText'                  => array(
+					'userNamePrefixText'       => array(
 						'type'    => 'string',
 						'default' => '',
-					),	
-					'userNameSuffixText'                  => array(
-						'type'    => 'string',
-						'default' => '',
-					),	
-					'userNameLoggedOutText'   => array(
-						'type'    => 'string',
-						'default' =>  ''
 					),
-					'isLoginLink'             => array(
+					'userNameSuffixText'       => array(
+						'type'    => 'string',
+						'default' => '',
+					),
+					'userNameLoggedOutText'    => array(
+						'type'    => 'string',
+						'default' => '',
+					),
+					'isLoginLink'              => array(
 						'type'    => 'boolean',
-						'default' => true
-					),													
+						'default' => true,
+					),
 					'customFieldName'          => array(
 						'type'    => 'string',
 						'default' => '',

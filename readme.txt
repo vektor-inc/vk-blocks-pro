@@ -103,6 +103,8 @@ e.g.
 
 == Changelog ==
 
+[Specification Change][ hidden extension ] Add VK Icon
+
 = 1.67.0 =
 [ Add Block ][ Category Badge (Pro) ] Creates badges displaying linked categories or terms for posts, with flexible design customization.
 

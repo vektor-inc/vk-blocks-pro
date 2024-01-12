@@ -137,13 +137,20 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 		if ( is_user_logged_in() ) {
 			$current_user = wp_get_current_user();
 			if ( $current_user->display_name ) {
-				$block_content .= esc_html($attributes['userNamePrefixText']) . $current_user->display_name . esc_html($attributes['userNameSuffixText']);
+				$prefix = isset($attributes['userNamePrefixText']) ? esc_html($attributes['userNamePrefixText']) : '';
+				$suffix = isset($attributes['userNameSuffixText']) ? esc_html($attributes['userNameSuffixText']) : '';
+			
+				$block_content .= $prefix . $current_user->display_name . $suffix;
 			}
 		} else {
 			$userNameLoggedOutText = isset($attributes['userNameLoggedOutText']) ? esc_html($attributes['userNameLoggedOutText']) : '';
 			if ( isset($attributes['isLoginLink']) && $attributes['isLoginLink'] ) {
-				$current_url = ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-
+				$post = get_post();
+				if ( is_singular() ) {
+					$current_url = get_permalink( $post->id );
+				} else {
+					$current_url = ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+				}
 				$block_content .= '<a href="' . wp_login_url($current_url) . '">' . esc_html($userNameLoggedOutText) . '</a>';
 			} else {
 				$block_content .= esc_html($userNameLoggedOutText);

@@ -143,17 +143,19 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 				$block_content .= $prefix . $current_user->display_name . $suffix;
 			}
 		} else {
-			$userNameLoggedOutText = isset( $attributes['userNameLoggedOutText'] ) ? esc_html( $attributes['userNameLoggedOutText'] ) : '';
+			$loggedout_text = isset( $attributes['userNameLoggedOutText'] ) ? esc_html( $attributes['userNameLoggedOutText'] ) : '';
 			if ( isset( $attributes['isLoginLink'] ) && $attributes['isLoginLink'] ) {
 				$post = get_post();
 				if ( is_singular() ) {
 					$current_url = get_permalink( $post->id );
 				} else {
-					$current_url = ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+					$http_host   = isset( $_SERVER['HTTP_HOST'] ) ? sanitize_text_field( wp_unslash( $_SERVER['HTTP_HOST'] ) ) : '';
+					$request_uri = isset( $_SERVER['REQUEST_URI'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] ) ) : '';
+					$current_url = ( is_ssl() ? 'https://' : 'http://' ) . $http_host . $request_uri;
 				}
-				$block_content .= '<a href="' . wp_login_url( $current_url ) . '">' . esc_html( $userNameLoggedOutText ) . '</a>';
+				$block_content .= '<a href="' . wp_login_url( $current_url ) . '">' . esc_html( $loggedout_text ) . '</a>';
 			} else {
-				$block_content .= esc_html( $userNameLoggedOutText );
+				$block_content .= esc_html( $loggedout_text );
 			}
 		}
 	} elseif ( 'custom-field' === $attributes['displayElement'] ) {

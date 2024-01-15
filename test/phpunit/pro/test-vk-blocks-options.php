@@ -11,6 +11,7 @@ class VKBlocksOptionsTest extends VK_UnitTestCase {
 		$test_data = array(
 			array(
 				'correct' => array(
+					'vk-blocks/heading',
 					'vk-blocks/pr-blocks',
 					'vk-blocks/pr-content',
 					'vk-blocks/staff',

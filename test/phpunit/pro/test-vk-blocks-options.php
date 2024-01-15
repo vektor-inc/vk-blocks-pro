@@ -20,6 +20,7 @@ class VKBlocksOptionsTest extends VK_UnitTestCase {
 				),
 			),
 		);
+		
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
 		print 'get_deprecated_lists()' . PHP_EOL;

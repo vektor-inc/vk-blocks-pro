@@ -136,15 +136,66 @@ class DynamicText extends VK_UnitTestCase {
 				'target_url' => get_permalink( $data['parent_page_id'] ),
 				'correct'    => '<h3 class="vk_dynamicText wp-block-vk-blocks-dynamic-text">ancestor_page</h3>',
 			),
-			// 親ページのタイトル（先祖ページ有り）
+			// ユーザー名（Prefix/Suffixあり）%%USER_DISPLAY_NAME%% は該当するユーザー名に置き換えられます
 			array(
 				'attributes' => array(
-					'displayElement'           => 'parent-page',
-					'tagName'                  => 'span',
-					'parentPageHiddenOption' => true,
+					'displayElement'           => 'user-name',
+					'tagName'                  => 'div',
+					'userNamePrefixText' => 'PrefixText',
+					'userNameSuffixText' => 'SuffixText',
+				),
+				'user' => 'administrator',
+				'target_url' => get_permalink( $data['child_page_id'] ),
+				'correct'    => '<div class="vk_dynamicText wp-block-vk-blocks-dynamic-text">PrefixText%%USER_DISPLAY_NAME%%SuffixText</div>',
+			),
+
+			// ユーザー名（Prefixのみ）
+			array(
+				'attributes' => array(
+					'displayElement'           => 'user-name',
+					'tagName'                  => 'h2',
+					'userNamePrefixText' => 'PrefixText'
+				),
+				'user' => 'administrator',
+				'target_url' => get_permalink( $data['child_page_id'] ),
+				'correct'    => '<h2 class="vk_dynamicText wp-block-vk-blocks-dynamic-text">PrefixText%%USER_DISPLAY_NAME%%</h2>',
+			),
+
+			// ユーザー名（Suffixのみ）
+			array(
+				'attributes' => array(
+					'displayElement'           => 'user-name',
+					'tagName'                  => 'h3',
+					'userNameSuffixText' => 'SuffixText'
+				),
+				'user' => 'administrator',
+				'target_url' => get_permalink( $data['child_page_id'] ),
+				'correct'    => '<h3 class="vk_dynamicText wp-block-vk-blocks-dynamic-text">%%USER_DISPLAY_NAME%%SuffixText</h3>',
+			),	
+
+			// ユーザー名（ログアウト）
+			array(
+				'attributes' => array(
+					'displayElement'           => 'user-name',
+					'tagName'                  => 'h3',
+					'userNameSuffixText' => 'SuffixText',
+					'userNameLoggedOutText' => 'Please login!'
 				),
 				'target_url' => get_permalink( $data['child_page_id'] ),
-				'correct'    => '<span class="vk_dynamicText wp-block-vk-blocks-dynamic-text">parent_page</span>',
+				'correct'    => '<h3 class="vk_dynamicText wp-block-vk-blocks-dynamic-text">Please login!</h3>',
+			),	
+		
+			// ユーザー名（ログアウト・リンクあり）
+			array(
+				'attributes' => array(
+					'displayElement'           => 'user-name',
+					'tagName'                  => 'h3',
+					'userNameSuffixText' => 'SuffixText',
+					'userNameLoggedOutText' => 'Please login!',
+					'isLoginLink' => true
+				),
+				'target_url' => get_permalink( $data['child_page_id'] ),
+				'correct'    => '<h3 class="vk_dynamicText wp-block-vk-blocks-dynamic-text"><a href="' . wp_login_url(get_permalink( $data['child_page_id'] )) . '">Please login!</a></h3>',
 			),
 
 			// カスタムフィールド - テキスト
@@ -196,10 +247,19 @@ class DynamicText extends VK_UnitTestCase {
 		// vk_blocks_dynamic_text_render_callback() の引数として渡津 $block オブジェクトを作成する。
 		$block = new BlockObject( $data['post_id'] );
 
+		var_dump( get_permalink( $data['child_page_id'] ));
 		foreach ( $test_data as $value ) {
-
 			// Move to test page.
 			$this->go_to( $value['target_url'] );
+
+			if ( isset( $value['user'] ) ) {
+				// ユーザーを作成し、カレントユーザーにセット
+				$user = $this->set_current_user( $value['user'] );
+				$value['correct'] = str_replace('%%USER_DISPLAY_NAME%%', $user->display_name, $value['correct']);
+			} else {
+				wp_logout();
+			}
+
 			WP_Block_Supports::$block_to_render = array(
 				'blockName' => 'vk-blocks/dynamic-text',
 				'attrs'     => $value['attributes'],

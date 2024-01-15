@@ -103,7 +103,8 @@ e.g.
 
 == Changelog ==
 
-[ Other ][ Headding ] Marked as Not Recommended
+[ Add Function ][ Dynamic Text (Pro) ] Add feature to display logged-in username.
+[ Specification Change ][ Headding ] Marked as Not Recommended
 
 = 1.67.0 =
 [ Add Block ][ Category Badge (Pro) ] Creates badges displaying linked categories or terms for posts, with flexible design customization.

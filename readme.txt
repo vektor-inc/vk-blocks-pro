@@ -103,6 +103,8 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Dynamic Text (Pro) ] Add feature to display logged-in username.
+
 = 1.67.0 =
 [ Add Block ][ Category Badge (Pro) ] Creates badges displaying linked categories or terms for posts, with flexible design customization.
 

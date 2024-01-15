@@ -201,7 +201,7 @@ addFilter(
 				if (
 					isActiveClass('vk_hidden') ||
 					isActiveClass('vk_hidden-xxl') ||
-					isActiveClass('vk_hidden-xl_v2') ||
+					isActiveClass('vk_hidden-xl-v2') ||
 					isActiveClass('vk_hidden-xl') ||
 					isActiveClass('vk_hidden-lg') ||
 					isActiveClass('vk_hidden-md') ||

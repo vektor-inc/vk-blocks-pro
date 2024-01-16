@@ -852,6 +852,7 @@ export default function OuterEdit(props) {
 						}
 						min="0"
 						max="100"
+						step={0.1}
 					/>
 					<RangeControl
 						label={__('Tablet', 'vk-blocks-pro')}
@@ -867,6 +868,7 @@ export default function OuterEdit(props) {
 						}
 						min="0"
 						max="200"
+						step={0.1}
 					/>
 					<RangeControl
 						label={__('PC', 'vk-blocks-pro')}
@@ -878,6 +880,7 @@ export default function OuterEdit(props) {
 						}
 						min="0"
 						max="300"
+						step={0.1}
 					/>
 					<SelectControl
 						label={__('Unit Type', 'vk-blocks-pro')}

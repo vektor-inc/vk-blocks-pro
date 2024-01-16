@@ -103,6 +103,7 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ][ hidden extension ] Add VK Icon
 [ Add Function ][ Dynamic Text (Pro) ] Add feature to display logged-in username.
 [ Specification Change ][ Headding ] Marked as Not Recommended
 

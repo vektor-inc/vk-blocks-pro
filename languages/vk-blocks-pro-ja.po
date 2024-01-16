@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2024-01-15T09:14:17+00:00\n"
-"PO-Revision-Date: 2024-01-15 18:18+0900\n"
+"POT-Creation-Date: 2024-01-16T07:04:08+00:00\n"
+"PO-Revision-Date: 2024-01-16 16:15+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -1113,7 +1113,7 @@ msgstr "表示されているページの親階層のページ名"
 
 #: src/blocks/_pro/dynamic-text/edit.js:236
 msgid "Current login user name"
-msgstr ""
+msgstr "ログイン中のユーザー名"
 
 #: src/blocks/_pro/dynamic-text/edit.js:243
 msgid "Custom Field"
@@ -1139,19 +1139,19 @@ msgstr "このブロックは親階層を持つ固定ページ以外のページ
 
 #: src/blocks/_pro/dynamic-text/edit.js:299
 msgid "Prefix Label"
-msgstr ""
+msgstr "前に表示するテキスト"
 
 #: src/blocks/_pro/dynamic-text/edit.js:306
 msgid "Suffix Label"
-msgstr ""
+msgstr "後に表示するテキスト"
 
 #: src/blocks/_pro/dynamic-text/edit.js:313
 msgid "Text for Logged Out Users"
-msgstr ""
+msgstr "非ログイン時に表示するテキスト"
 
 #: src/blocks/_pro/dynamic-text/edit.js:325
 msgid "Link to Login on Logout"
-msgstr ""
+msgstr "ログイン画面へのリンクを有効にする(非ログイン時)"
 
 #: src/blocks/_pro/dynamic-text/edit.js:341
 msgid "Custom Field Name"

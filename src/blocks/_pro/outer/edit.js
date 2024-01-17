@@ -322,6 +322,15 @@ export default function OuterEdit(props) {
 		};
 	}
 
+	const setAttributesByUnit = ( key, value, unit, min, max ) => {
+		if('px' === unit) {
+			value = parseInt(value);
+		}
+		setAttributes({
+			[key]: toNumber(value, min, max),
+		})		
+	}
+
 	const blockProps = useBlockProps({
 		className: classnames(
 			`vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
@@ -841,55 +850,38 @@ export default function OuterEdit(props) {
 					<RangeControl
 						label={__('Mobile', 'vk-blocks-pro')}
 						value={innerSideSpaceValueMobile}
-						onChange={(value) =>
-							setAttributes({
-								innerSideSpaceValueMobile: toNumber(
-									value,
-									0,
-									100
-								),
-							})
-						}
+						onChange={(value) => setAttributesByUnit('innerSideSpaceValueMobile', value, innerSideSpaceUnit, 0, 100)}
 						min="0"
 						max="100"
-						step={0.1}
+						step={'px' === innerSideSpaceUnit ? 1 : 0.1}
 					/>
 					<RangeControl
 						label={__('Tablet', 'vk-blocks-pro')}
 						value={innerSideSpaceValueTablet}
-						onChange={(value) =>
-							setAttributes({
-								innerSideSpaceValueTablet: toNumber(
-									value,
-									0,
-									200
-								),
-							})
-						}
+						onChange={(value) => setAttributesByUnit('innerSideSpaceValueTablet', value, innerSideSpaceUnit, 0, 200)}
 						min="0"
 						max="200"
-						step={0.1}
+						step={'px' === innerSideSpaceUnit ? 1 : 0.1}
 					/>
 					<RangeControl
 						label={__('PC', 'vk-blocks-pro')}
 						value={innerSideSpaceValuePC}
-						onChange={(value) =>
-							setAttributes({
-								innerSideSpaceValuePC: toNumber(value, 0, 300),
-							})
-						}
+						onChange={(value) => setAttributesByUnit('innerSideSpaceValuePC', value, innerSideSpaceUnit, 0, 300)}
 						min="0"
 						max="300"
-						step={0.1}
+						step={'px' === innerSideSpaceUnit ? 1 : 0.1}
 					/>
 					<SelectControl
 						label={__('Unit Type', 'vk-blocks-pro')}
 						value={innerSideSpaceUnit}
-						onChange={(value) =>
+						onChange={(value) => {
+							setAttributes({innerSideSpaceValueMobile: parseInt(innerSideSpaceValueMobile)});
+							setAttributes({innerSideSpaceValueTablet: parseInt(innerSideSpaceValueTablet)});
+							setAttributes({innerSideSpaceValuePC:     parseInt(innerSideSpaceValuePC)});
 							setAttributes({
 								innerSideSpaceUnit: value,
 							})
-						}
+						}}
 						options={[
 							{
 								value: 'px',

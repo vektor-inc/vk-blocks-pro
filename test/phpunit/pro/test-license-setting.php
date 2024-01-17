@@ -6,7 +6,7 @@
  */
 
 
-class LicenseSettingTest extends WP_UnitTestCase {
+class LicenseSettingTest extends VK_UnitTestCase {
 
 	public function test_vk_blocks_is_license_setting() {
 

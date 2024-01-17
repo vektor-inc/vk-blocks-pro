@@ -1,6 +1,6 @@
 <?php
 
-class TaxonomyTest extends WP_UnitTestCase {
+class TaxonomyTest extends VK_UnitTestCase {
 
 	function test_taxonomy_render_callback() {
 

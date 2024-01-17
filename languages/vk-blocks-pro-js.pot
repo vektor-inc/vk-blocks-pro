@@ -961,7 +961,7 @@ msgid "Delete Image"
 msgstr ""
 
 #: src/blocks/_pro/card-item/edit.js:217
-#: src/blocks/_pro/dynamic-text/edit.js:292
+#: src/blocks/_pro/dynamic-text/edit.js:369
 msgid "URL"
 msgstr ""
 
@@ -1044,101 +1044,125 @@ msgstr ""
 msgid "Current page"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:112
+#: src/blocks/_pro/dynamic-text/edit.js:124
 msgid "Please select display element from the Setting sidebar."
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:120
+#: src/blocks/_pro/dynamic-text/edit.js:132
 msgid "Post Type Name"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:124
+#: src/blocks/_pro/dynamic-text/edit.js:136
 msgid "Ancestor Page Title"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:128
+#: src/blocks/_pro/dynamic-text/edit.js:140
 msgid "Parent Page Title"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:133
+#: src/blocks/_pro/dynamic-text/edit.js:153
 msgid "Custom field"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:139
+#: src/blocks/_pro/dynamic-text/edit.js:167
 msgid "This block is not rendered because no custom field name is specified."
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:169
+#: src/blocks/_pro/dynamic-text/edit.js:197
 msgid "Display element settings"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:174
+#: src/blocks/_pro/dynamic-text/edit.js:202
 msgid "Display element"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:183
+#: src/blocks/_pro/dynamic-text/edit.js:211
 msgid "Please Select"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:187
+#: src/blocks/_pro/dynamic-text/edit.js:215
 msgid "Post type name of the page being viewed"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:194
+#: src/blocks/_pro/dynamic-text/edit.js:222
 msgid "Page name in the ancestor hierarchy of the displayed page"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:201
+#: src/blocks/_pro/dynamic-text/edit.js:229
 msgid "Page name in the parent hierarchy of the displayed page"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:208
+#: src/blocks/_pro/dynamic-text/edit.js:236
+msgid "Current login user name"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:243
 msgid "Custom Field"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:216
+#: src/blocks/_pro/dynamic-text/edit.js:251
 msgid "Hide on Ancestor Hierarchy Pages"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:229
+#: src/blocks/_pro/dynamic-text/edit.js:264
 msgid "This block is not displayed on pages without a parent page."
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:240
+#: src/blocks/_pro/dynamic-text/edit.js:275
 msgid "Hide on Parent Hierarchy Pages"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:253
+#: src/blocks/_pro/dynamic-text/edit.js:288
 msgid ""
 "This block will not display on pages other than pages that have a parent "
 "hierarchy."
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:264
+#: src/blocks/_pro/dynamic-text/edit.js:299
+msgid "Prefix Label"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:306
+msgid "Suffix Label"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:313
+msgid "Text for Logged Out Users"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:325
+msgid "Link to Login on Logout"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:341
 msgid "Custom Field Name"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:271
+#: src/blocks/_pro/dynamic-text/edit.js:348
 msgid "Field Type"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:280
+#: src/blocks/_pro/dynamic-text/edit.js:35
+msgid "HTML element"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:357
 msgid "text"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:284
+#: src/blocks/_pro/dynamic-text/edit.js:361
 msgid "textarea"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:288
+#: src/blocks/_pro/dynamic-text/edit.js:365
 msgid "wysiwyg"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:299
+#: src/blocks/_pro/dynamic-text/edit.js:376
 msgid "Setting up a link"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:312
+#: src/blocks/_pro/dynamic-text/edit.js:389
 #: src/blocks/_pro/gridcolcard-item/edit.js:333
 #: src/blocks/_pro/icon-card-item/edit.js:128
 #: src/blocks/button/edit.js:272
@@ -1148,48 +1172,44 @@ msgstr ""
 msgid "Open link new tab."
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:34
-msgid "HTML element"
-msgstr ""
-
-#: src/blocks/_pro/dynamic-text/edit.js:39
+#: src/blocks/_pro/dynamic-text/edit.js:40
 msgid "div (default)"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:43
+#: src/blocks/_pro/dynamic-text/edit.js:44
 msgid "h1"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:47
+#: src/blocks/_pro/dynamic-text/edit.js:48
 #: src/blocks/ancestor-page-list/edit.js:62
 msgid "h2"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:51
+#: src/blocks/_pro/dynamic-text/edit.js:52
 #: src/blocks/ancestor-page-list/edit.js:66
 msgid "h3"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:55
+#: src/blocks/_pro/dynamic-text/edit.js:56
 #: src/blocks/ancestor-page-list/edit.js:70
 msgid "h4"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:59
+#: src/blocks/_pro/dynamic-text/edit.js:60
 #: src/blocks/ancestor-page-list/edit.js:74
 msgid "h5"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:63
+#: src/blocks/_pro/dynamic-text/edit.js:64
 #: src/blocks/ancestor-page-list/edit.js:78
 msgid "h6"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:67
+#: src/blocks/_pro/dynamic-text/edit.js:68
 msgid "p"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:71
+#: src/blocks/_pro/dynamic-text/edit.js:72
 msgid "span"
 msgstr ""
 

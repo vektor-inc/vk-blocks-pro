@@ -5,7 +5,7 @@
  * @package vk-blocks
  */
 
-class minifyCssTest extends WP_UnitTestCase {
+class minifyCssTest extends VK_UnitTestCase {
 
 	public function test_vk_blocks_minify_css() {
 		$test_data = array(

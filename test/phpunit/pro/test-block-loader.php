@@ -5,7 +5,7 @@
  * @package vk-blocks
  */
 
-class BlockLoaderTest extends WP_UnitTestCase {
+class BlockLoaderTest extends VK_UnitTestCase {
 
 	public function test_should_load_separate_assets() {
 		$test_data = array(

@@ -8,7 +8,7 @@
 /**
  * Post List block test case.
  */
-class VKBSpacerTest extends WP_UnitTestCase {
+class VKBSpacerTest extends VK_UnitTestCase {
 
 	/**
 	 * Undocumented function

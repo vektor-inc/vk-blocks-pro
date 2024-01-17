@@ -5,7 +5,7 @@
  * @package vk-blocks
  */
 
-class CustomCssExtensionTest extends WP_UnitTestCase {
+class CustomCssExtensionTest extends VK_UnitTestCase {
 
 	public function test_block_content_preg_replace() {
 

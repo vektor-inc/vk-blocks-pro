@@ -23,7 +23,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Classic FAQ
 * New FAQ
 * Flow
-* Heading（with sub text）
+* Heading (not recommended)
 * Icon
 * Icon Outer
 * Page Content
@@ -104,6 +104,9 @@ e.g.
 == Changelog ==
 
 [ Specification Change ][ Slider ] Add Slider Mode on Editor.
+[ Specification Change ][ hidden extension ] Add VK Icon
+[ Add Function ][ Dynamic Text (Pro) ] Add feature to display logged-in username.
+[ Specification Change ][ Headding ] Marked as Not Recommended
 
 = 1.67.0 =
 [ Add Block ][ Category Badge (Pro) ] Creates badges displaying linked categories or terms for posts, with flexible design customization.

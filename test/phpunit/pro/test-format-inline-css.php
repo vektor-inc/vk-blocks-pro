@@ -5,7 +5,7 @@
  * @package vk-blocks
  */
 
-class FormatCssTest extends WP_UnitTestCase {
+class FormatCssTest extends VK_UnitTestCase {
 
 	/**
 	 * よく使う書式設定のインラインCSSテスト

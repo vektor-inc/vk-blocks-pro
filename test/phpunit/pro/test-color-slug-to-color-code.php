@@ -5,7 +5,7 @@
  * @package vk-blocks
  */
 
-class colorSlugToClorCodeTest extends WP_UnitTestCase {
+class colorSlugToClorCodeTest extends VK_UnitTestCase {
 
 	public function test_vk_blocks_get_color_code() {
 		$test_data = array(

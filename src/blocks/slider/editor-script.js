@@ -2,7 +2,7 @@ document.defaultView.addEventListener('load', function () {
 	const vkSliderArray = document.querySelectorAll('.vk_slider');
 	const swiper = [];
 
-	const LaunchSwiper = (vkSlider) => {
+	const LaunchSwiper = (vkSlider, index) => {
 		// 値を取得して配列に格納
 		const attributes = JSON.parse(vkSlider.getAttribute('data-vkb-slider'));
 		if (attributes.editorMode && attributes.editorMode === 'slide') {
@@ -146,7 +146,7 @@ document.defaultView.addEventListener('load', function () {
 			}
 
 			// eslint-disable-next-line no-undef
-			swiper[sliderId] = new Swiper(
+			swiper[index] = new Swiper(
 				`.vk_slider_${sliderId} > div > div > div.block-editor-inner-blocks`,
 				SwiperSetting
 			);

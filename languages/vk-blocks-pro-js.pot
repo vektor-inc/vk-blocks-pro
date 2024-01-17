@@ -3128,50 +3128,50 @@ msgid ""
 "display and does not display as intended on the edit screen, please hide it."
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:195
+#: src/extensions/common/hidden-extension/index.js:223
 msgid "Hidden Settings"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:199
+#: src/extensions/common/hidden-extension/index.js:228
 msgid "Hidden at screen size"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:206
+#: src/extensions/common/hidden-extension/index.js:235
 msgid ""
 "Note : This function is display hidden only. Actually Block is output to "
 "HTML. Please don't use you must not visible item. Don't use it for blocks "
 "you really don't want to display."
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:212
+#: src/extensions/common/hidden-extension/index.js:241
 msgid "Hidden ( Screen size : all )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:222
+#: src/extensions/common/hidden-extension/index.js:251
 msgid "Hidden ( Screen size : xs )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:235
+#: src/extensions/common/hidden-extension/index.js:264
 msgid "Hidden ( Screen size : sm )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:248
+#: src/extensions/common/hidden-extension/index.js:277
 msgid "Hidden ( Screen size : md )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:261
+#: src/extensions/common/hidden-extension/index.js:290
 msgid "Hidden ( Screen size : lg )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:274
+#: src/extensions/common/hidden-extension/index.js:303
 msgid "Hidden ( Screen size : xl )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:289
+#: src/extensions/common/hidden-extension/index.js:318
 msgid "Hidden ( Screen size : xxl )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:302
+#: src/extensions/common/hidden-extension/index.js:331
 msgid ""
 "If you want to hide multiple blocks, that first you set to group block and "
 "the next, hide for the that group block."

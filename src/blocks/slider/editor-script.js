@@ -205,11 +205,14 @@ document.defaultView.addEventListener('load', function () {
 			'.block-editor-block-list__layout'
 		);
 		if (vkSliderInner) {
-			wrapperObserver.observe(vkSliderInner, { childList: true, attributes: true });
+			wrapperObserver.observe(vkSliderInner, {
+				childList: true,
+				attributes: true,
+			});
 		}
 	};
 
-	const observeAttributeChanges = (vkSlider, index) => {
+	const observeSliderAttributeChanges = (vkSlider, index) => {
 		// MutationObserverを設定して data-vkb-slider の変更を監視
 		// https://developer.mozilla.org/ja/docs/Web/API/MutationObserver
 		// eslint-disable-next-line no-undef
@@ -231,8 +234,8 @@ document.defaultView.addEventListener('load', function () {
 
 	// vkSliderArray に格納された要素をループ
 	vkSliderArray.forEach((vkSlider, index) => {
-		LaunchSwiper(vkSlider, index);		
-		observeAttributeChanges(vkSlider, index); // data-vkb-slider の変更を監視
+		LaunchSwiper(vkSlider, index);
+		observeSliderAttributeChanges(vkSlider, index); // data-vkb-slider の変更を監視
 		observeWrapperChanges(vkSlider, index); // 子要素の変更を監視
 	});
 });

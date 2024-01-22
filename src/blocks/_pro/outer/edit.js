@@ -322,14 +322,14 @@ export default function OuterEdit(props) {
 		};
 	}
 
-	const setAttributesByUnit = ( key, value, unit, min, max ) => {
-		if('px' === unit) {
+	const setAttributesByUnit = (key, value, unit, min, max) => {
+		if ('px' === unit) {
 			value = parseInt(value);
 		}
 		setAttributes({
 			[key]: toNumber(value, min, max),
-		})		
-	}
+		});
+	};
 
 	const blockProps = useBlockProps({
 		className: classnames(
@@ -850,7 +850,15 @@ export default function OuterEdit(props) {
 					<RangeControl
 						label={__('Mobile', 'vk-blocks-pro')}
 						value={innerSideSpaceValueMobile}
-						onChange={(value) => setAttributesByUnit('innerSideSpaceValueMobile', value, innerSideSpaceUnit, 0, 100)}
+						onChange={(value) =>
+							setAttributesByUnit(
+								'innerSideSpaceValueMobile',
+								value,
+								innerSideSpaceUnit,
+								0,
+								100
+							)
+						}
 						min="0"
 						max="100"
 						step={'px' === innerSideSpaceUnit ? 1 : 0.1}
@@ -858,7 +866,15 @@ export default function OuterEdit(props) {
 					<RangeControl
 						label={__('Tablet', 'vk-blocks-pro')}
 						value={innerSideSpaceValueTablet}
-						onChange={(value) => setAttributesByUnit('innerSideSpaceValueTablet', value, innerSideSpaceUnit, 0, 200)}
+						onChange={(value) =>
+							setAttributesByUnit(
+								'innerSideSpaceValueTablet',
+								value,
+								innerSideSpaceUnit,
+								0,
+								200
+							)
+						}
 						min="0"
 						max="200"
 						step={'px' === innerSideSpaceUnit ? 1 : 0.1}
@@ -866,7 +882,15 @@ export default function OuterEdit(props) {
 					<RangeControl
 						label={__('PC', 'vk-blocks-pro')}
 						value={innerSideSpaceValuePC}
-						onChange={(value) => setAttributesByUnit('innerSideSpaceValuePC', value, innerSideSpaceUnit, 0, 300)}
+						onChange={(value) =>
+							setAttributesByUnit(
+								'innerSideSpaceValuePC',
+								value,
+								innerSideSpaceUnit,
+								0,
+								300
+							)
+						}
 						min="0"
 						max="300"
 						step={'px' === innerSideSpaceUnit ? 1 : 0.1}
@@ -875,12 +899,24 @@ export default function OuterEdit(props) {
 						label={__('Unit Type', 'vk-blocks-pro')}
 						value={innerSideSpaceUnit}
 						onChange={(value) => {
-							setAttributes({innerSideSpaceValueMobile: parseInt(innerSideSpaceValueMobile)});
-							setAttributes({innerSideSpaceValueTablet: parseInt(innerSideSpaceValueTablet)});
-							setAttributes({innerSideSpaceValuePC:     parseInt(innerSideSpaceValuePC)});
+							setAttributes({
+								innerSideSpaceValueMobile: parseInt(
+									innerSideSpaceValueMobile
+								),
+							});
+							setAttributes({
+								innerSideSpaceValueTablet: parseInt(
+									innerSideSpaceValueTablet
+								),
+							});
+							setAttributes({
+								innerSideSpaceValuePC: parseInt(
+									innerSideSpaceValuePC
+								),
+							});
 							setAttributes({
 								innerSideSpaceUnit: value,
-							})
+							});
 						}}
 						options={[
 							{

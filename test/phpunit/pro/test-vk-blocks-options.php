@@ -5,12 +5,13 @@
  * @package vk-blocks
  */
 
-class VKBlocksOptionsTest extends WP_UnitTestCase {
+class VKBlocksOptionsTest extends VK_UnitTestCase {
 
 	public function test_get_deprecated_lists() {
 		$test_data = array(
 			array(
 				'correct' => array(
+					'vk-blocks/heading',
 					'vk-blocks/pr-blocks',
 					'vk-blocks/pr-content',
 					'vk-blocks/staff',
@@ -19,6 +20,7 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 				),
 			),
 		);
+		
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
 		print 'get_deprecated_lists()' . PHP_EOL;

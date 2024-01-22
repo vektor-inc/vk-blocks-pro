@@ -5,7 +5,7 @@
  * @package vk-blocks
  */
 
-class TestVKBlocksIsPro extends WP_UnitTestCase {
+class TestVKBlocksIsPro extends VK_UnitTestCase {
 
 	public function test_vk_blocks_minify_css() {
         $path = dirname( dirname( dirname( dirname( __FILE__ ) ) ) );

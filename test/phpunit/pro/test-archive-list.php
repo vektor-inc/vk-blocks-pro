@@ -5,15 +5,26 @@
  * @package Vk_Blocks_Pro
  */
 
- use VK_WP_Unit_Test_Tools\VkWpUnitTestHelpers;
+use VK_WP_Unit_Test_Tools\VkWpUnitTestHelpers;
 
 /**
  * ArchiveList block test case.
  */
-class ArchiveList extends WP_UnitTestCase {
+class ArchiveList extends VK_UnitTestCase {
+
+	public function set_up(): void {
+		parent::set_up();
+		add_filter('locale', function($locale) {
+			return 'en_US';
+		}); 
+	}
+
+	public function tear_down(): void {
+		parent::tear_down();
+		remove_filter('locale', 10); 
+	}	
 
 	public function test_vk_blocks_archive_list_render_callback(){
-
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
 		print 'vk_blocks_archive_list_render_callback' . PHP_EOL;

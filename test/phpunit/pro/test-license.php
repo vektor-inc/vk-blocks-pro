@@ -5,7 +5,7 @@
  * @package vk-blocks
  */
 
-class LicenseTest extends WP_UnitTestCase {
+class LicenseTest extends VK_UnitTestCase {
 
 	public function test_vk_blocks_get_license_check_query_arg() {
 		$test_data = array(

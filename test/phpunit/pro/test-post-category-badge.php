@@ -10,7 +10,7 @@
 /**
  * PostCategoryBadgeTest block test case.
  */
-class PostCategoryBadgeTest extends WP_UnitTestCase {
+class PostCategoryBadgeTest extends VK_UnitTestCase {
 
     // テスト用タクソノミー（各テスト共通）
     private $test_taxonomies = array(
@@ -278,16 +278,5 @@ class PostCategoryBadgeTest extends WP_UnitTestCase {
             $this->assertEquals($test['correct'], $return);
         }
 	}
-
-    private function set_current_user( $role ) {
-        $user = $this->factory()->user->create_and_get( array(
-            'role' => $role,
-        ) );
-
-        /*
-         * Set $user as the current user
-         */
-        wp_set_current_user( $user->ID, $user->user_login );
-    }    
-    
+  
 };

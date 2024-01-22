@@ -5,7 +5,7 @@
 * @package Vk_Blocks_Pro
 */
 
-class RestAPITest extends WP_UnitTestCase {
+class RestAPITest extends VK_UnitTestCase {
 
     /**
     * Holds the WP REST Server object
@@ -70,19 +70,5 @@ class RestAPITest extends WP_UnitTestCase {
 
     }
 
-    /**
-    * Add user and set the user as current user.
-    *
-    * @param  string $role administrator, editor, author, contributor ...
-    * @return void
-    */
-    public function set_current_user( $role ) {
-        $user = self::factory()->user->create_and_get(
-            array(
-                'role' => $role,
-            )
-        );
-        wp_set_current_user( $user->ID, $user->user_login );
-    }
 }
 ;

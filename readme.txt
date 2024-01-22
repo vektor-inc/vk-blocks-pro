@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.1
 Tested up to: 6.4
-Stable tag: 1.64.1.2
+Stable tag: 1.67.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -103,9 +103,10 @@ e.g.
 
 == Changelog ==
 
-[ Specification Change ][ Outer ( Pro ) ] Allowed decimal points in 'Container Inner Side Space Setting'.
-[ Specification Change ][ hidden extension ] Add VK Icon
+= 1.68.0 =
 [ Add Function ][ Dynamic Text (Pro) ] Add feature to display logged-in username.
+[ Specification Change ][ Hidden extension ] Add VK Icon
+[ Specification Change ][ Outer ( Pro ) ] Allowed decimal points in 'Container Inner Side Space Setting'.
 [ Specification Change ][ Headding ] Marked as Not Recommended
 
 = 1.67.0 =

@@ -496,7 +496,7 @@ msgid "XL"
 msgstr ""
 
 #: src/admin/margin.js:43
-#: src/blocks/_pro/outer/edit.js:872
+#: src/blocks/_pro/outer/edit.js:867
 #: src/blocks/button/edit.js:526
 #: src/blocks/slider/edit.js:550
 #: src/components/advanced-viewport-control/index.js:25
@@ -504,7 +504,7 @@ msgid "PC"
 msgstr ""
 
 #: src/admin/margin.js:47
-#: src/blocks/_pro/outer/edit.js:857
+#: src/blocks/_pro/outer/edit.js:859
 #: src/blocks/button/edit.js:461
 #: src/blocks/slider/edit.js:571
 #: src/components/advanced-viewport-control/index.js:32
@@ -512,7 +512,7 @@ msgid "Tablet"
 msgstr ""
 
 #: src/admin/margin.js:51
-#: src/blocks/_pro/outer/edit.js:842
+#: src/blocks/_pro/outer/edit.js:851
 #: src/blocks/button/edit.js:396
 #: src/blocks/slider/edit.js:592
 #: src/components/advanced-viewport-control/index.js:41
@@ -754,7 +754,7 @@ msgid "Height"
 msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:161
-#: src/blocks/_pro/outer/edit.js:462
+#: src/blocks/_pro/outer/edit.js:471
 #: src/blocks/balloon/edit.js:508
 #: src/blocks/slider/edit.js:513
 msgid "Width"
@@ -1227,7 +1227,7 @@ msgid "Padding (Top)"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:143
-#: src/blocks/_pro/outer/edit.js:465
+#: src/blocks/_pro/outer/edit.js:474
 #: src/blocks/slider-item/edit.js:120
 msgid "Padding (Left and Right)"
 msgstr ""
@@ -1238,7 +1238,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:190
 #: src/blocks/_pro/grid-column/edit.js:91
-#: src/blocks/_pro/outer/edit.js:893
+#: src/blocks/_pro/outer/edit.js:888
 #: src/blocks/icon-outer/edit.js:183
 #: src/blocks/icon/edit.js:171
 #: src/utils/unit-options.js:6
@@ -1247,7 +1247,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:194
 #: src/blocks/_pro/grid-column/edit.js:95
-#: src/blocks/_pro/outer/edit.js:897
+#: src/blocks/_pro/outer/edit.js:892
 #: src/blocks/icon-outer/edit.js:187
 #: src/blocks/icon/edit.js:175
 #: src/utils/unit-options.js:10
@@ -1256,7 +1256,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:198
 #: src/blocks/_pro/grid-column/edit.js:99
-#: src/blocks/_pro/outer/edit.js:901
+#: src/blocks/_pro/outer/edit.js:896
 #: src/blocks/icon-outer/edit.js:191
 #: src/blocks/icon/edit.js:179
 #: src/utils/unit-options.js:14
@@ -1265,7 +1265,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:202
 #: src/blocks/_pro/grid-column/edit.js:103
-#: src/blocks/_pro/outer/edit.js:905
+#: src/blocks/_pro/outer/edit.js:900
 #: src/blocks/icon-outer/edit.js:195
 #: src/blocks/icon/edit.js:183
 #: src/utils/unit-options.js:18
@@ -1499,150 +1499,150 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:353
+#: src/blocks/_pro/outer/edit.js:362
 #: src/blocks/slider-item/edit.js:171
 msgid "Background Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:358
+#: src/blocks/_pro/outer/edit.js:367
 #: src/blocks/pr-content/edit.js:67
 #: src/blocks/slider-item/edit.js:175
 msgid "Color Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:359
+#: src/blocks/_pro/outer/edit.js:368
 #: src/blocks/slider-item/edit.js:177
 msgid ""
 "Color will overcome background image. If you want to display image, set "
 "opacity 0."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:371
+#: src/blocks/_pro/outer/edit.js:380
 #: src/blocks/slider-item/edit.js:189
 msgid "Opacity Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:385
+#: src/blocks/_pro/outer/edit.js:394
 #: src/blocks/slider-item/edit.js:224
 msgid "Background Image PC"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:401
+#: src/blocks/_pro/outer/edit.js:410
 #: src/blocks/slider-item/edit.js:240
 msgid "Background Image Tablet"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:411
+#: src/blocks/_pro/outer/edit.js:420
 #: src/blocks/slider-item/edit.js:250
 msgid "Background Image Mobile"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:421
+#: src/blocks/_pro/outer/edit.js:430
 msgid "Background image Position"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:429
+#: src/blocks/_pro/outer/edit.js:438
 msgid "Repeat"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:433
+#: src/blocks/_pro/outer/edit.js:442
 msgid "Cover"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:437
+#: src/blocks/_pro/outer/edit.js:446
 msgid "Cover fixed (Not fixed on iPhone)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:444
+#: src/blocks/_pro/outer/edit.js:453
 msgid "Parallax (Non-guaranteed)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:459
+#: src/blocks/_pro/outer/edit.js:468
 #: src/blocks/pr-content/edit.js:244
 #: src/blocks/slider-item/edit.js:115
 msgid "Layout Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:472
+#: src/blocks/_pro/outer/edit.js:481
 msgid "Fit to the Content area"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:479
+#: src/blocks/_pro/outer/edit.js:488
 msgid "Add padding to the Outer area"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:486
+#: src/blocks/_pro/outer/edit.js:495
 msgid "Remove padding from the Outer area"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:500
+#: src/blocks/_pro/outer/edit.js:509
 msgid "Padding (Top and Bottom)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:508
+#: src/blocks/_pro/outer/edit.js:517
 msgid "Use default padding"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:515
+#: src/blocks/_pro/outer/edit.js:524
 msgid "Do not use default padding"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:529
+#: src/blocks/_pro/outer/edit.js:538
 msgid ""
 "* If you select \"Do not use\" that, please set yourself it such as a "
 "spacer block."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:537
+#: src/blocks/_pro/outer/edit.js:546
 msgid "Divider Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:542
+#: src/blocks/_pro/outer/edit.js:551
 #: src/blocks/balloon/edit.js:439
 msgid "Type"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:550
+#: src/blocks/_pro/outer/edit.js:559
 msgid "Tilt"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:554
+#: src/blocks/_pro/outer/edit.js:563
 msgid "Curve"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:558
+#: src/blocks/_pro/outer/edit.js:567
 msgid "Wave"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:562
+#: src/blocks/_pro/outer/edit.js:571
 msgid "Triangle"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:569
+#: src/blocks/_pro/outer/edit.js:578
 msgid "端末毎に設定"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:579
+#: src/blocks/_pro/outer/edit.js:588
 msgid "Upper Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:661
+#: src/blocks/_pro/outer/edit.js:670
 msgid "Lower Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:744
+#: src/blocks/_pro/outer/edit.js:753
 msgid "Border Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:749
+#: src/blocks/_pro/outer/edit.js:758
 msgid "Border will disappear when divider effect is applied."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:755
+#: src/blocks/_pro/outer/edit.js:764
 msgid "Border type"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:763
+#: src/blocks/_pro/outer/edit.js:772
 #: src/blocks/_pro/step-item/edit.js:147
 #: src/blocks/_pro/timeline-item/edit.js:113
 #: src/blocks/balloon/edit.js:559
@@ -1651,56 +1651,56 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:767
+#: src/blocks/_pro/outer/edit.js:776
 #: src/blocks/_pro/step-item/edit.js:118
 #: src/blocks/_pro/timeline-item/edit.js:88
 #: src/blocks/pr-content/edit.js:145
 msgid "Solid"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:771
+#: src/blocks/_pro/outer/edit.js:780
 msgid "Dotted"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:775
+#: src/blocks/_pro/outer/edit.js:784
 msgid "Dashed"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:779
+#: src/blocks/_pro/outer/edit.js:788
 msgid "Double"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:783
+#: src/blocks/_pro/outer/edit.js:792
 msgid "Groove"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:787
+#: src/blocks/_pro/outer/edit.js:796
 msgid "Ridge"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:791
+#: src/blocks/_pro/outer/edit.js:800
 msgid "Inset"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:795
+#: src/blocks/_pro/outer/edit.js:804
 msgid "Outset"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:807
+#: src/blocks/_pro/outer/edit.js:816
 msgid "Border width"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:819
+#: src/blocks/_pro/outer/edit.js:828
 #: src/blocks/icon-outer/edit.js:212
 #: src/blocks/icon/edit.js:200
 msgid "Border radius"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:835
+#: src/blocks/_pro/outer/edit.js:844
 msgid "Container Inner Side Space Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:883
+#: src/blocks/_pro/outer/edit.js:875
 #: src/components/advanced-unit-control/index.js:13
 msgid "Unit Type"
 msgstr ""
@@ -3120,50 +3120,50 @@ msgid ""
 "display and does not display as intended on the edit screen, please hide it."
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:195
+#: src/extensions/common/hidden-extension/index.js:223
 msgid "Hidden Settings"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:199
+#: src/extensions/common/hidden-extension/index.js:228
 msgid "Hidden at screen size"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:206
+#: src/extensions/common/hidden-extension/index.js:235
 msgid ""
 "Note : This function is display hidden only. Actually Block is output to "
 "HTML. Please don't use you must not visible item. Don't use it for blocks "
 "you really don't want to display."
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:212
+#: src/extensions/common/hidden-extension/index.js:241
 msgid "Hidden ( Screen size : all )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:222
+#: src/extensions/common/hidden-extension/index.js:251
 msgid "Hidden ( Screen size : xs )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:235
+#: src/extensions/common/hidden-extension/index.js:264
 msgid "Hidden ( Screen size : sm )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:248
+#: src/extensions/common/hidden-extension/index.js:277
 msgid "Hidden ( Screen size : md )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:261
+#: src/extensions/common/hidden-extension/index.js:290
 msgid "Hidden ( Screen size : lg )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:274
+#: src/extensions/common/hidden-extension/index.js:303
 msgid "Hidden ( Screen size : xl )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:289
+#: src/extensions/common/hidden-extension/index.js:318
 msgid "Hidden ( Screen size : xxl )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:302
+#: src/extensions/common/hidden-extension/index.js:331
 msgid ""
 "If you want to hide multiple blocks, that first you set to group block and "
 "the next, hide for the that group block."

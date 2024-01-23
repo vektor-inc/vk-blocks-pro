@@ -204,3 +204,34 @@ figure.wp-block-image{
         }
     }
 }
+
+//「フォトフレーム傾き左」「フォトフレーム傾き右」で「クリックで拡大」をONにした時、拡大された画像の一部が欠けるので、拡大された時にフォトフレームの傾きをリセット
+.wp-lightbox-overlay.zoom.active {
+    figure.wp-block-image{
+        &.is-style-vk-image {
+            &-photoFrame-tilt-right{
+                transform: none;
+            }
+    
+            &-photoFrame-tilt-left{
+                transform: none;
+            }
+        }
+    }
+    .wp-block-image{
+        &.is-style-vk-image {
+            &-photoFrame-tilt-right, &-photoFrame-tilt-right figure{
+                &.alignleft, &.alignright, &.aligncenter{
+                    transform: none;
+                }
+            }
+    
+            &-photoFrame-tilt-left, &-photoFrame-tilt-left figure{
+                &.alignleft, &.alignright, &.aligncenter{
+                    transform: none;
+                }
+            }
+        }
+    }
+
+}

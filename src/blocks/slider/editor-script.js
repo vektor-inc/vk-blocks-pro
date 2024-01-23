@@ -187,6 +187,26 @@ document.defaultView.addEventListener('load', function () {
 		}
 	};
 
+	const observeSliderAttributeChanges = (vkSlider, index) => {
+		// MutationObserverを設定して data-vkb-slider の変更を監視
+		// https://developer.mozilla.org/ja/docs/Web/API/MutationObserver
+		// eslint-disable-next-line no-undef
+		const sliderAttributesObserver = new MutationObserver((mutations) => {
+			mutations.forEach((mutation) => {
+				if (
+					mutation.type === 'attributes' &&
+					mutation.attributeName === 'data-vkb-slider'
+				) {
+					LaunchSwiper(vkSlider, index);
+					observeWrapperChanges(vkSlider, index); // 子要素の変更を監視
+				}
+			});
+		});
+
+		// 監視対象をvkSliderに設定
+		sliderAttributesObserver.observe(vkSlider, { attributes: true });
+	};
+
 	const observeWrapperChanges = (vkSlider, index) => {
 		// MutationObserverを設定してvkSliderの子要素の変更、追加、削除を監視
 		// https://developer.mozilla.org/ja/docs/Web/API/MutationObserver
@@ -201,35 +221,15 @@ document.defaultView.addEventListener('load', function () {
 		});
 
 		// 監視対象をvkSliderの子要素に設定
-		const vkSliderInner = vkSlider.querySelector(
+		const vkSliderWrapper = vkSlider.querySelector(
 			'.block-editor-block-list__layout'
 		);
-		if (vkSliderInner) {
-			wrapperObserver.observe(vkSliderInner, {
+		if (vkSliderWrapper) {
+			wrapperObserver.observe(vkSliderWrapper, {
 				childList: true,
 				attributes: true,
 			});
 		}
-	};
-
-	const observeSliderAttributeChanges = (vkSlider, index) => {
-		// MutationObserverを設定して data-vkb-slider の変更を監視
-		// https://developer.mozilla.org/ja/docs/Web/API/MutationObserver
-		// eslint-disable-next-line no-undef
-		const attributesObserver = new MutationObserver((mutations) => {
-			mutations.forEach((mutation) => {
-				if (
-					mutation.type === 'attributes' &&
-					mutation.attributeName === 'data-vkb-slider'
-				) {
-					LaunchSwiper(vkSlider, index);
-					observeWrapperChanges(vkSlider, index); // 子要素の変更を監視
-				}
-			});
-		});
-
-		// 監視対象をvkSliderに設定
-		attributesObserver.observe(vkSlider, { attributes: true });
 	};
 
 	// vkSliderArray に格納された要素をループ

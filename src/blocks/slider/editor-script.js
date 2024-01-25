@@ -245,7 +245,6 @@ document.defaultView.addEventListener('load', function () {
 	};
 	const rootObserver = new MutationObserver(rootCallback); // eslint-disable-line no-undef
 
-	
 	if (editorRoot) {
 		rootObserver.observe(editorRoot, rootConfig);
 		const vkSliderArray = editorRoot.querySelectorAll('.vk_slider');

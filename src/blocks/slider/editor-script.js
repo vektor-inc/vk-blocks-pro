@@ -7,7 +7,7 @@ document.defaultView.addEventListener('load', function () {
 	const LaunchSwiper = (vkSlider, index) => {
 		// 値を取得して配列に格納
 		const attributes = JSON.parse(vkSlider.getAttribute('data-vkb-slider'));
-		if (attributes.editorMode && attributes.editorMode === 'slide') {
+		if (attributes && attributes.editorMode && attributes.editorMode === 'slide') {
 			// swiper クラスを追加
 			const newSwiperDiv = vkSlider.querySelector(
 				'.block-editor-inner-blocks'
@@ -197,6 +197,30 @@ document.defaultView.addEventListener('load', function () {
 		});
 	};
 
+	// スライダーのラッパー部分の子供を監視
+	const sliderWrapperConfig = { childList: true };
+	const sliderWrapperCallback = (mutationsList) => {
+		// Use traditional 'for loops' for IE 11
+		for (const mutation of mutationsList) {
+			if (mutation.type === 'childList') {
+				if (mutation.addedNodes.length > 0) {
+					mutation.addedNodes.forEach((node) => {
+						if (node.classList) {
+							if (node.classList.contains('vk_slider_item')) {
+								const slider = node.parentNode.parentNode.parentNode.parentNode;
+								const index = slider.getAttribute(
+									'data-vkb-slider-index'
+								);
+								LaunchSwiper(slider, index);
+							}
+						}
+					});
+				}
+			}
+		}
+	};
+	const sliderWrapperObserver = new MutationObserver(sliderWrapperCallback); // eslint-disable-line no-undef
+
 	// スライダーの属性を監視
 	const sliderConfig = { attributes: true };
 	const sliderCallback = (mutationsList) => {
@@ -210,6 +234,12 @@ document.defaultView.addEventListener('load', function () {
 					'data-vkb-slider-index'
 				);
 				LaunchSwiper(mutation.target, index);
+				const vkSliderWrapper = mutation.target.querySelector(
+					'.block-editor-block-list__layout'
+				);
+				if (vkSliderWrapper) {
+					sliderWrapperObserver.observe( vkSliderWrapper, sliderWrapperConfig );
+				}
 			}
 		}
 	};
@@ -235,6 +265,12 @@ document.defaultView.addEventListener('load', function () {
 										vkSlider,
 										sliderConfig
 									);
+									const vkSliderWrapper = vkSlider.querySelector(
+										'.block-editor-block-list__layout'
+									);
+									if (vkSliderWrapper) {
+										sliderWrapperObserver.observe( vkSliderWrapper, sliderWrapperConfig );
+									}
 								});
 							}
 						}
@@ -250,6 +286,12 @@ document.defaultView.addEventListener('load', function () {
 		const vkSliderArray = editorRoot.querySelectorAll('.vk_slider');
 		vkSliderArray.forEach((vkSlider) => {
 			sliderObserver.observe(vkSlider, sliderConfig);
+			const vkSliderWrapper = vkSlider.querySelector(
+				'.block-editor-block-list__layout'
+			);
+			if (vkSliderWrapper) {
+				sliderWrapperObserver.observe( vkSliderWrapper, sliderWrapperConfig );
+			}
 		});
 	}
 });

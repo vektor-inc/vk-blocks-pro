@@ -7,7 +7,11 @@ document.defaultView.addEventListener('load', function () {
 	const LaunchSwiper = (vkSlider, index) => {
 		// 値を取得して配列に格納
 		const attributes = JSON.parse(vkSlider.getAttribute('data-vkb-slider'));
-		if (attributes && attributes.editorMode && attributes.editorMode === 'slide') {
+		if (
+			attributes &&
+			attributes.editorMode &&
+			attributes.editorMode === 'slide'
+		) {
 			// swiper クラスを追加
 			const newSwiperDiv = vkSlider.querySelector(
 				'.block-editor-inner-blocks'
@@ -207,7 +211,9 @@ document.defaultView.addEventListener('load', function () {
 					mutation.addedNodes.forEach((node) => {
 						if (node.classList) {
 							if (node.classList.contains('vk_slider_item')) {
-								const slider = node.parentNode.parentNode.parentNode.parentNode;
+								const slider =
+									node.parentNode.parentNode.parentNode
+										.parentNode;
 								const index = slider.getAttribute(
 									'data-vkb-slider-index'
 								);
@@ -238,7 +244,10 @@ document.defaultView.addEventListener('load', function () {
 					'.block-editor-block-list__layout'
 				);
 				if (vkSliderWrapper) {
-					sliderWrapperObserver.observe( vkSliderWrapper, sliderWrapperConfig );
+					sliderWrapperObserver.observe(
+						vkSliderWrapper,
+						sliderWrapperConfig
+					);
 				}
 			}
 		}
@@ -265,11 +274,15 @@ document.defaultView.addEventListener('load', function () {
 										vkSlider,
 										sliderConfig
 									);
-									const vkSliderWrapper = vkSlider.querySelector(
-										'.block-editor-block-list__layout'
-									);
+									const vkSliderWrapper =
+										vkSlider.querySelector(
+											'.block-editor-block-list__layout'
+										);
 									if (vkSliderWrapper) {
-										sliderWrapperObserver.observe( vkSliderWrapper, sliderWrapperConfig );
+										sliderWrapperObserver.observe(
+											vkSliderWrapper,
+											sliderWrapperConfig
+										);
 									}
 								});
 							}
@@ -290,7 +303,10 @@ document.defaultView.addEventListener('load', function () {
 				'.block-editor-block-list__layout'
 			);
 			if (vkSliderWrapper) {
-				sliderWrapperObserver.observe( vkSliderWrapper, sliderWrapperConfig );
+				sliderWrapperObserver.observe(
+					vkSliderWrapper,
+					sliderWrapperConfig
+				);
 			}
 		});
 	}

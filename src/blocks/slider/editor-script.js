@@ -197,6 +197,23 @@ document.defaultView.addEventListener('load', function () {
 		});
 	};
 
+	// スライダーの属性を監視
+	const sliderConfig = { attributes: true };
+	const sliderCallback = (mutationsList) => {
+		// Use traditional 'for loops' for IE 11
+		for (const mutation of mutationsList) {
+			if (
+				mutation.type === 'attributes' &&
+				mutation.attributeName === 'data-vkb-slider'
+			) {
+				const index = mutation.target.getAttribute(
+					'data-vkb-slider-index'
+				);
+				LaunchSwiper(mutation.target, index);
+			}
+		}
+	};
+
 	// エディターのルート部分を監視
 	const rootConfig = { childList: true };
 	const rootCallback = (mutationsList) => {
@@ -207,7 +224,17 @@ document.defaultView.addEventListener('load', function () {
 					mutation.addedNodes.forEach((node) => {
 						if (node.classList) {
 							if (node.classList.contains('vk_slider')) {
-								LaunchSwiperALL(editorRoot);
+								LaunchSwiperALL(mutation.target);
+								const vkSliderArray =
+									mutation.target.querySelectorAll(
+										'.vk_slider'
+									);
+								vkSliderArray.forEach((vkSlider) => {
+									sliderObserver.observe(
+										vkSlider,
+										sliderConfig
+									);
+								});
 							}
 						}
 					});
@@ -216,7 +243,13 @@ document.defaultView.addEventListener('load', function () {
 		}
 	};
 	const rootObserver = new MutationObserver(rootCallback); // eslint-disable-line no-undef
+
+	const sliderObserver = new MutationObserver(sliderCallback); // eslint-disable-line no-undef
 	if (editorRoot) {
 		rootObserver.observe(editorRoot, rootConfig);
+		const vkSliderArray = editorRoot.querySelectorAll('.vk_slider');
+		vkSliderArray.forEach((vkSlider) => {
+			sliderObserver.observe(vkSlider, sliderConfig);
+		});
 	}
 });

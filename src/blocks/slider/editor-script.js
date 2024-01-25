@@ -213,6 +213,7 @@ document.defaultView.addEventListener('load', function () {
 			}
 		}
 	};
+	const sliderObserver = new MutationObserver(sliderCallback); // eslint-disable-line no-undef
 
 	// エディターのルート部分を監視
 	const rootConfig = { childList: true };
@@ -244,7 +245,7 @@ document.defaultView.addEventListener('load', function () {
 	};
 	const rootObserver = new MutationObserver(rootCallback); // eslint-disable-line no-undef
 
-	const sliderObserver = new MutationObserver(sliderCallback); // eslint-disable-line no-undef
+	
 	if (editorRoot) {
 		rootObserver.observe(editorRoot, rootConfig);
 		const vkSliderArray = editorRoot.querySelectorAll('.vk_slider');

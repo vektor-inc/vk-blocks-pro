@@ -1,7 +1,9 @@
 document.defaultView.addEventListener('load', function () {
-	const vkSliderArray = document.querySelectorAll('.vk_slider');
 	const swiper = [];
 
+	const editorRoot = document.querySelector('.wp-block-post-content');
+
+	// スライダーブロック単体の処理
 	const LaunchSwiper = (vkSlider, index) => {
 		// 値を取得して配列に格納
 		const attributes = JSON.parse(vkSlider.getAttribute('data-vkb-slider'));
@@ -187,55 +189,34 @@ document.defaultView.addEventListener('load', function () {
 		}
 	};
 
-	const observeSliderAttributeChanges = (vkSlider, index) => {
-		// MutationObserverを設定して data-vkb-slider の変更を監視
-		// https://developer.mozilla.org/ja/docs/Web/API/MutationObserver
-		// eslint-disable-next-line no-undef
-		const sliderAttributesObserver = new MutationObserver((mutations) => {
-			mutations.forEach((mutation) => {
-				if (
-					mutation.type === 'attributes' &&
-					mutation.attributeName === 'data-vkb-slider'
-				) {
-					LaunchSwiper(vkSlider, index);
-					observeWrapperChanges(vkSlider, index); // 子要素の変更を監視
-				}
-			});
+	// スライダーブロック全体の処理
+	const LaunchSwiperALL = (root) => {
+		const vkSliderArray = root.querySelectorAll('.vk_slider');
+		vkSliderArray.forEach((vkSlider, index) => {
+			LaunchSwiper(vkSlider, index);
 		});
-
-		// 監視対象をvkSliderに設定
-		sliderAttributesObserver.observe(vkSlider, { attributes: true });
 	};
 
-	const observeWrapperChanges = (vkSlider, index) => {
-		// MutationObserverを設定してvkSliderの子要素の変更、追加、削除を監視
-		// https://developer.mozilla.org/ja/docs/Web/API/MutationObserver
-		// eslint-disable-next-line no-undef
-		const wrapperObserver = new MutationObserver((mutations) => {
-			mutations.forEach((mutation) => {
-				if (mutation.type === 'childList') {
-					// 子要素が変更、追加、削除された場合、LaunchSwiper関数を呼び出す
-					LaunchSwiper(vkSlider, index);
+	// エディターのルート部分を監視
+	const rootConfig = { childList: true };
+	const rootCallback = (mutationsList) => {
+		// Use traditional 'for loops' for IE 11
+		for (const mutation of mutationsList) {
+			if (mutation.type === 'childList') {
+				if (mutation.addedNodes.length > 0) {
+					mutation.addedNodes.forEach((node) => {
+						if (node.classList) {
+							if (node.classList.contains('vk_slider')) {
+								LaunchSwiperALL(editorRoot);
+							}
+						}
+					});
 				}
-			});
-		});
-
-		// 監視対象をvkSliderの子要素に設定
-		const vkSliderWrapper = vkSlider.querySelector(
-			'.block-editor-block-list__layout'
-		);
-		if (vkSliderWrapper) {
-			wrapperObserver.observe(vkSliderWrapper, {
-				childList: true,
-				attributes: true,
-			});
+			}
 		}
 	};
-
-	// vkSliderArray に格納された要素をループ
-	vkSliderArray.forEach((vkSlider, index) => {
-		LaunchSwiper(vkSlider, index);
-		observeSliderAttributeChanges(vkSlider, index); // data-vkb-slider の変更を監視
-		observeWrapperChanges(vkSlider, index); // 子要素の変更を監視
-	});
+	const rootObserver = new MutationObserver(rootCallback); // eslint-disable-line no-undef
+	if (editorRoot) {
+		rootObserver.observe(editorRoot, rootConfig);
+	}
 });

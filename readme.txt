@@ -102,7 +102,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-[ Bug Fix ]Reset the tilt of the photo frame when it is enlarged
+[ Bug Fix ][ Image ]Fixed a bug in the photo frame with activated zoom in the image block styled 'photoFrame-tilt'
 
 = 1.68.0 =
 [ Add Function ][ Dynamic Text (Pro) ] Add feature to display logged-in username.

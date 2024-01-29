@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-01-29T16:49:25+00:00\n"
+"POT-Creation-Date: 2024-01-29T17:11:35+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -1037,7 +1037,7 @@ msgid "Parent"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:134
-#: src/blocks/_pro/post-list/edit.js:371
+#: src/blocks/_pro/post-list/edit.js:374
 msgid "Ignore this post"
 msgstr ""
 
@@ -1829,7 +1829,7 @@ msgstr ""
 msgid "Display from the first post always"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:365
+#: src/blocks/_pro/post-list/edit.js:368
 msgid "Display from the first post even on pages beyond the second page."
 msgstr ""
 

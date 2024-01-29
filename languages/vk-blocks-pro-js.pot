@@ -1036,7 +1036,7 @@ msgid "Parent"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:134
-#: src/blocks/_pro/post-list/edit.js:371
+#: src/blocks/_pro/post-list/edit.js:374
 msgid "Ignore this post"
 msgstr ""
 
@@ -1820,7 +1820,7 @@ msgstr ""
 msgid "Display from the first post always"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:365
+#: src/blocks/_pro/post-list/edit.js:368
 msgid "Display from the first post even on pages beyond the second page."
 msgstr ""
 

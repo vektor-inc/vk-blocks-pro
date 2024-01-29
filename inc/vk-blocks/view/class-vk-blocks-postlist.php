@@ -169,7 +169,7 @@ class Vk_Blocks_PostList {
 		global $wp_query;
 		// とりあえず１を入れつつ2ページ目の情報があったら上書き
 		$paged = 1;
-		if ( ! empty( $attributes['pagedlock'] ) ){
+		if ( ! empty( $attributes['pagedlock'] ) ) {
 			$paged = 1;
 		} elseif ( is_singular() && isset( $wp_query->query_vars['page'] ) ) {
 			$paged = $wp_query->query_vars['page'];

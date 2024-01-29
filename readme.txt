@@ -103,6 +103,8 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Post List (Pro) ] Add paged lock setting
+
 = 1.68.0 =
 [ Add Function ][ Dynamic Text (Pro) ] Add feature to display logged-in username.
 [ Specification Change ][ Hidden extension ] Add VK Icon

@@ -359,14 +359,17 @@ export default function PostListEdit(props) {
 					</BaseControl>
 					<BaseControl>
 						<CheckboxControl
-								label={__('Display from the first post always', 'vk-blocks-pro')}
-								checked={pagedlock}
-								onChange={(v) => setAttributes({ pagedlock: v })}
-								help={__(
-									'Display from the first post even on pages beyond the second page.',
-									'vk-blocks-pro'
-								)}
-							/>
+							label={__(
+								'Display from the first post always',
+								'vk-blocks-pro'
+							)}
+							checked={pagedlock}
+							onChange={(v) => setAttributes({ pagedlock: v })}
+							help={__(
+								'Display from the first post even on pages beyond the second page.',
+								'vk-blocks-pro'
+							)}
+						/>
 						<CheckboxControl
 							label={__('Ignore this post', 'vk-blocks-pro')}
 							checked={selfIgnore}

@@ -5,7 +5,6 @@
  * @package vk_blocks
  */
 
-
 /**
  * VK Blocks PostList
  */

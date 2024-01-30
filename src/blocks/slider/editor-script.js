@@ -1,10 +1,26 @@
 document.defaultView.addEventListener('load', function () {
 	const swiper = [];
+	let swiperIndex = 0;
 
 	const editorRoot = document.querySelector('.wp-block-post-content');
 
-	// スライダーブロック単体の処理
-	const LaunchSwiper = (slider, index) => {
+	// swiper クラスを削除
+	const removeSwiperClassName = (targetElement) => {
+		if (targetElement) {
+			const classNames = targetElement.className.split(' ');
+			for (let i = 0; i < classNames.length; i++) {
+				if (classNames[i].match(/swiper(\w|-)*/)) {
+					// クラスを削除
+					targetElement.classList.remove(classNames[i]);
+				}
+			}
+			targetElement.id = targetElement.id.replace(/swiper(\w|-)*/g, '');
+			targetElement.style.width = '';
+		}
+	};
+
+	// スライダーブロック全体の処理
+	const LaunchSwiper = (slider) => {
 		// 値を取得して配列に格納
 		const attributes = JSON.parse(slider.getAttribute('data-vkb-slider'));
 		if (
@@ -28,6 +44,25 @@ document.defaultView.addEventListener('load', function () {
 			const newSwiperSlide = slider.querySelectorAll('.vk_slider_item');
 			newSwiperSlide.forEach((slide) => {
 				slide.classList.add('swiper-slide');
+				if (slide.classList.contains('is-selected')) {
+					slide.classList.add('swiper-slide-active');
+					if (slide.previousElementSibling) {
+						slide.previousElementSibling.classList.add(
+							'swiper-slide-prev'
+						);
+					} else {
+						newSwiperSlide[newSwiperSlide.length - 1].classList.add(
+							'swiper-slide-prev'
+						);
+					}
+					if (slide.nextElementSibling) {
+						slide.nextElementSibling.classList.add(
+							'swiper-slide-next'
+						);
+					} else {
+						newSwiperSlide[0].classList.add('swiper-slide-next');
+					}
+				}
 			});
 
 			// Sloder の設定を作成
@@ -152,27 +187,12 @@ document.defaultView.addEventListener('load', function () {
 			}
 
 			// eslint-disable-next-line no-undef
-			swiper[index] = new Swiper(
+			swiper[swiperIndex] = new Swiper(
 				`.vk_slider_${sliderId} > div > div > div.block-editor-inner-blocks`,
 				SwiperSetting
 			);
+			swiperIndex++;
 		} else {
-			const removeSwiperClassName = (targetElement) => {
-				if (targetElement) {
-					const classNames = targetElement.className.split(' ');
-					for (let i = 0; i < classNames.length; i++) {
-						if (classNames[i].match(/swiper(\w|-)*/)) {
-							// クラスを削除
-							targetElement.classList.remove(classNames[i]);
-						}
-					}
-					targetElement.id = targetElement.id.replace(
-						/swiper(\w|-)*/g,
-						''
-					);
-					targetElement.style.width = '';
-				}
-			};
 			// swiper クラスを追加
 			const newSwiperDiv = slider.querySelector(
 				'.block-editor-inner-blocks'
@@ -193,177 +213,35 @@ document.defaultView.addEventListener('load', function () {
 		}
 	};
 
-	// スライダーブロック全体の処理
-	const LaunchSwiperALL = (root) => {
-		const vkSliderArray = root.querySelectorAll('.vk_slider');
-		vkSliderArray.forEach((vkSlider, index) => {
-			LaunchSwiper(vkSlider, index);
-		});
-	};
-
-	const changeActiveSlode = (sliderWrapper) => {
-		if (sliderWrapper) {
-			const sliderItemArray =
-				sliderWrapper.querySelectorAll('.vk_slider_item');
-			let changedFlag = false;
-			sliderItemArray.forEach((sliderItem) => {
-				sliderItem.classList.remove('swiper-slide-active');
-				sliderItem.classList.remove('swiper-slide-prev');
-				sliderItem.classList.remove('swiper-slide-next');
-				if (
-					sliderItem.classList.contains('is-selected') &&
-					!changedFlag
-				) {
-					sliderItem.classList.add('swiper-slide-active');
-					if (sliderItem.previousElementSibling) {
-						sliderItem.previousElementSibling.classList.add(
-							'swiper-slide-prev'
-						);
-					} else {
-						sliderItemArray[
-							sliderItemArray.length - 1
-						].classList.add('swiper-slide-prev');
-					}
-					if (sliderItem.nextElementSibling) {
-						sliderItem.nextElementSibling.classList.add(
-							'swiper-slide-next'
-						);
-					} else {
-						sliderItemArray[0].classList.add('swiper-slide-next');
-					}
-					changedFlag = true;
-				}
-			});
-		}
-	};
-
-	// スライダーアイテムの class 属性を監視
-	const sliderItemConfig = { attributes: true };
-	const sliderItemCallback = (mutationsList) => {
-		// Use traditional 'for loops' for IE 11
-		for (const mutation of mutationsList) {
-			if (
-				mutation.type === 'attributes' &&
-				mutation.attributeName === 'class'
-			) {
-				const sliderWrapper = mutation.target.parentNode;
-				changeActiveSlode(sliderWrapper);
-			}
-		}
-	};
-	const sliderItemObserver = new MutationObserver(sliderItemCallback); // eslint-disable-line no-undef
-
-	// スライダーのラッパー部分の子供を監視
-	const sliderWrapperConfig = { childList: true };
-	const sliderWrapperCallback = (mutationsList) => {
-		// Use traditional 'for loops' for IE 11
-		for (const mutation of mutationsList) {
-			if (mutation.type === 'childList') {
-				if (mutation.addedNodes.length > 0) {
-					mutation.addedNodes.forEach((node) => {
-						if (node.classList) {
-							if (node.classList.contains('vk_slider_item')) {
-								const slider =
-									node.parentNode.parentNode.parentNode
-										.parentNode;
-								const index = slider.getAttribute(
-									'data-vkb-slider-index'
-								);
-								LaunchSwiper(slider, index);
-								sliderItemObserver.observe(
-									node,
-									sliderItemConfig
-								);
-							}
-						}
-					});
-				}
-			}
-		}
-	};
-	const sliderWrapperObserver = new MutationObserver(sliderWrapperCallback); // eslint-disable-line no-undef
-
-	// スライダーの属性を監視
-	const sliderConfig = { attributes: true };
-	const sliderCallback = (mutationsList) => {
-		// Use traditional 'for loops' for IE 11
-		for (const mutation of mutationsList) {
-			if (
-				mutation.type === 'attributes' &&
-				mutation.attributeName === 'data-vkb-slider'
-			) {
-				const index = mutation.target.getAttribute(
-					'data-vkb-slider-index'
-				);
-				LaunchSwiper(mutation.target, index);
-				const vkSliderWrapper = mutation.target.querySelector(
-					'.block-editor-block-list__layout'
-				);
-				if (vkSliderWrapper) {
-					sliderWrapperObserver.observe(
-						vkSliderWrapper,
-						sliderWrapperConfig
-					);
-					const vkSliderItemArray =
-						vkSliderWrapper.querySelectorAll('.vk_slider_item');
-					vkSliderItemArray.forEach((vkSliderItem) => {
-						sliderItemObserver.observe(
-							vkSliderItem,
-							sliderItemConfig
-						);
-					});
-				}
-			}
-		}
-	};
-	const sliderObserver = new MutationObserver(sliderCallback); // eslint-disable-line no-undef
-
 	// エディターのルート部分を監視
-	const rootConfig = { childList: true };
+	const rootConfig = { childList: true, subtree: true, attributes: true };
 	const rootCallback = (mutationsList) => {
 		// Use traditional 'for loops' for IE 11
 		for (const mutation of mutationsList) {
 			if (mutation.type === 'childList') {
 				if (mutation.addedNodes.length > 0) {
-					mutation.addedNodes.forEach((node) => {
-						if (node.classList) {
-							if (node.classList.contains('vk_slider')) {
-								LaunchSwiperALL(mutation.target);
-								const vkSliderArray =
-									mutation.target.querySelectorAll(
-										'.vk_slider'
-									);
-								vkSliderArray.forEach((vkSlider) => {
-									sliderObserver.observe(
-										vkSlider,
-										sliderConfig
-									);
-									const vkSliderWrapper =
-										vkSlider.querySelector(
-											'.block-editor-block-list__layout'
-										);
-									if (vkSliderWrapper) {
-										sliderWrapperObserver.observe(
-											vkSliderWrapper,
-											sliderWrapperConfig
-										);
-										const vkSliderItemArray =
-											vkSliderWrapper.querySelectorAll(
-												'.vk_slider_item'
-											);
-										vkSliderItemArray.forEach(
-											(vkSliderItem) => {
-												sliderItemObserver.observe(
-													vkSliderItem,
-													sliderItemConfig
-												);
-											}
-										);
-									}
-								});
-							}
+					mutation.addedNodes.forEach((addedNode) => {
+						if (
+							addedNode.classList &&
+							addedNode.classList.contains('vk_slider')
+						) {
+							LaunchSwiper(addedNode);
+						} else if (
+							addedNode.classList &&
+							addedNode.classList.contains('vk_slider_item')
+						) {
+							const parentSlider =
+								addedNode.closest('.vk_slider');
+							LaunchSwiper(parentSlider);
 						}
 					});
+				}
+			} else if (mutation.type === 'attributes') {
+				if (
+					mutation.target.classList.contains('vk_slider') &&
+					mutation.attributeName === 'data-vkb-slider'
+				) {
+					LaunchSwiper(mutation.target);
 				}
 			}
 		}
@@ -371,25 +249,10 @@ document.defaultView.addEventListener('load', function () {
 	const rootObserver = new MutationObserver(rootCallback); // eslint-disable-line no-undef
 
 	if (editorRoot) {
-		rootObserver.observe(editorRoot, rootConfig);
-		const vkSliderArray = editorRoot.querySelectorAll('.vk_slider');
-		vkSliderArray.forEach((vkSlider) => {
-			LaunchSwiper(vkSlider);
-			sliderObserver.observe(vkSlider, sliderConfig);
-			const vkSliderWrapper = vkSlider.querySelector(
-				'.block-editor-block-list__layout'
-			);
-			if (vkSliderWrapper) {
-				sliderWrapperObserver.observe(
-					vkSliderWrapper,
-					sliderWrapperConfig
-				);
-				const vkSliderItemArray =
-					vkSliderWrapper.querySelectorAll('.vk_slider_item');
-				vkSliderItemArray.forEach((vkSliderItem) => {
-					sliderItemObserver.observe(vkSliderItem, sliderItemConfig);
-				});
-			}
+		const sliderBlocks = editorRoot.querySelectorAll('.vk_slider');
+		sliderBlocks.forEach((slider) => {
+			LaunchSwiper(slider);
 		});
+		rootObserver.observe(editorRoot, rootConfig);
 	}
 });

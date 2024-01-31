@@ -97,7 +97,7 @@ export default function SliderItemEdit(props) {
 	);
 
 	const blockProps = useBlockProps({
-		className: `vk_slider_item vk_valign-${verticalAlignment} ${prefix}-${blockId} ${classPaddingLR} ${prefix}-paddingVertical-none`,
+		className: `vk_slider_item vk_valign-${verticalAlignment} ${prefix}-${blockId} ${classPaddingLR} ${prefix}-paddingVertical-none swiper-slide`,
 	});
 
 	return (

@@ -192,8 +192,11 @@ document.defaultView.addEventListener('load', function () {
 				const newSwiperSlide =
 					slider.querySelectorAll('.vk_slider_item');
 				newSwiperSlide.forEach((slide) => {
+					slide.classList.remove('is-selected');
+					slide.classList.remove('is-highlighted');
 					removeSwiperClassName(slide);
 				});
+				newSwiperSlide[0].classList.add('is-selected');
 				if (swiper[sliderId]) {
 					swiper[sliderId].destroy();
 				}

@@ -188,7 +188,7 @@ document.defaultView.addEventListener('load', function () {
 				);
 				removeSwiperClassName(newSwiperWrapper);
 
-				// swiper-slide クラスを追加
+				// 不要なクラスを削除
 				const newSwiperSlide =
 					slider.querySelectorAll('.vk_slider_item');
 				newSwiperSlide.forEach((slide) => {

@@ -104,6 +104,7 @@ e.g.
 == Changelog ==
 
 [ Specification Change ][ Slider ] Add Slider Mode on Editor.
+[ Add Function ][ Post List (Pro) ] Add paged lock setting
 
 = 1.68.0 =
 [ Add Function ][ Dynamic Text (Pro) ] Add feature to display logged-in username.

@@ -120,6 +120,10 @@
 			"type": "number",
 			"default": 0
 		},
+		"pagedlock": {
+			"type": "boolean",
+			"default": false
+		},
 		"selfIgnore": {
 			"type": "boolean",
 			"default": false

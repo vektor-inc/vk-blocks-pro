@@ -102,6 +102,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+[ Bug Fix ][ Image ]Fixed a bug in the photo frame with activated zoom in the image block styled 'photoFrame-tilt'
 
 [ Add Function ][ Post List (Pro) ] Add paged lock setting
 

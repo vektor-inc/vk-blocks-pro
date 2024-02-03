@@ -536,7 +536,7 @@ export default function SliderEdit(props) {
 									setAttributes({ editorMode: 'default' })
 								}
 							>
-								{__('Default', 'vk-blocks-pro')}
+								{__('Edit (Stacked Layout)', 'vk-blocks-pro')}
 							</Button>
 							<Button
 								isSmall={true}
@@ -549,7 +549,7 @@ export default function SliderEdit(props) {
 									setAttributes({ editorMode: 'slide' })
 								}
 							>
-								{__('Slide', 'vk-blocks-pro')}
+								{__('Preview(Slide)', 'vk-blocks-pro')}
 							</Button>
 						</ButtonGroup>
 					</BaseControl>

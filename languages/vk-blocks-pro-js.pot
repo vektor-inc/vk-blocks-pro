@@ -2735,6 +2735,14 @@ msgstr ""
 msgid "Editor Mode"
 msgstr ""
 
+#: src/blocks/slider/edit.js:539
+msgid "Edit (Stacked Layout)"
+msgstr ""
+
+#: src/blocks/slider/edit.js:552
+msgid "Preview(Slide)"
+msgstr ""
+
 #: src/blocks/slider/edit.js:577
 msgid "Full Wide"
 msgstr ""

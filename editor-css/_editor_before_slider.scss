@@ -2,11 +2,6 @@
 /* 管理画面
 /*-------------------------------------------*/
 .edit-post-visual-editor {
-	.swiper-button-prev,
-	.swiper-button-next {
-		//button非表示
-		display: none;
-	}
 	/* vk_width-full は廃止になったが互換処理のために 2022年7月末までは残す */
 	.vk_slider.vk_swiper.vk_slider.vk_swiper.vk_width-full,
 	.vk_slider.vk_swiper.vk_slider.vk_swiper.alignfull {

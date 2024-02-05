@@ -213,14 +213,14 @@ document.defaultView.addEventListener('load', function () {
 					removeSwiperClassName(slide);
 				});
 				newSwiperSlide[0].classList.add('is-selected');
-				slider.querySelector('.swiper-button-prev').style.display = 'none';
-				slider.querySelector('.swiper-button-next').style.display = 'none';
+				slider.querySelector('.swiper-button-prev').style.display =
+					'none';
+				slider.querySelector('.swiper-button-next').style.display =
+					'none';
 				if (swiper[sliderId]) {
 					swiper[sliderId].destroy();
 					swiper[sliderId] = null;
 				}
-
-				
 			}
 		}
 	};

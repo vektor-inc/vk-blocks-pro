@@ -104,6 +104,7 @@ e.g.
 == Changelog ==
 [ Bug Fix ][ Image ]Fixed a bug in the photo frame with activated zoom in the image block styled 'photoFrame-tilt'
 
+[ Specification Change ][ Slider ] Add Slider Mode on Editor.
 [ Add Function ][ Post List (Pro) ] Add paged lock setting
 
 = 1.68.0 =

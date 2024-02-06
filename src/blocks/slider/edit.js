@@ -518,19 +518,26 @@ export default function SliderEdit(props) {
 					controls={['full']}
 				/>
 				<ToolbarGroup>
-					{' '}
 					<ToolbarButton
 						icon={
 							editorMode === 'default' ? (
-								<Dashicon icon="visibility" />
+								<>
+									<Dashicon icon="edit" />
+									<Dashicon icon="arrow-right-alt" />
+									<Dashicon icon="visibility" />
+								</>
 							) : (
-								<Dashicon icon="edit" />
+								<>
+									<Dashicon icon="visibility" />
+									<Dashicon icon="arrow-right-alt" />
+									<Dashicon icon="edit" />
+								</>
 							)
 						}
 						label={
 							editorMode === 'default'
-								? __('Preview', 'vk-blocks-pro')
-								: __('Edit', 'vk-blocks-pro')
+								? __('Edit to Preview', 'vk-blocks-pro')
+								: __('Preview to Edit', 'vk-blocks-pro')
 						}
 						onClick={() => {
 							if (editorMode === 'default') {

@@ -102,8 +102,10 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-[ Bug Fix ][ Image ]Fixed a bug in the photo frame with activated zoom in the image block styled 'photoFrame-tilt'
 
+[ Add Block ] Add Tab Block
+
+[ Bug Fix ][ Image ]Fixed a bug in the photo frame with activated zoom in the image block styled 'photoFrame-tilt'
 [ Add Function ][ Post List (Pro) ] Add paged lock setting
 
 = 1.68.0 =
@@ -393,8 +395,6 @@ e.g.
 = 1.36.0 =
 [ Add Function ][ Button outer(Pro) ] Add gap option.
 [ Bug fix ][ Accordion(Pro) ] Fix margin bottom on Accordion close.
-
-[ Add Block ] Add Tab Block
 
 = 1.35.0 =
 [ Specification Change ][ Animation(Pro) ] Corresponds reuse block & duplicate

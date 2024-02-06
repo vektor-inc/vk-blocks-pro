@@ -19,6 +19,7 @@ import {
 	SelectControl,
 	RangeControl,
 	ToggleControl,
+	ToolbarGroup,
 	ToolbarButton,
 	Dashicon,
 } from '@wordpress/components';
@@ -516,27 +517,30 @@ export default function SliderEdit(props) {
 					}
 					controls={['full']}
 				/>
-				<ToolbarButton
-					icon={
-						editorMode === 'default' ? (
-							<Dashicon icon="visibility" />
-						) : (
-							<Dashicon icon="edit" />
-						)
-					}
-					label={
-						editorMode === 'default'
-							? __('Preview', 'vk-blocks-pro')
-							: __('Edit', 'vk-blocks-pro')
-					}
-					onClick={() => {
-						if (editorMode === 'default') {
-							setAttributes({ editorMode: 'slide' });
-						} else {
-							setAttributes({ editorMode: 'default' });
+				<ToolbarGroup>
+					{' '}
+					<ToolbarButton
+						icon={
+							editorMode === 'default' ? (
+								<Dashicon icon="visibility" />
+							) : (
+								<Dashicon icon="edit" />
+							)
 						}
-					}}
-				/>
+						label={
+							editorMode === 'default'
+								? __('Preview', 'vk-blocks-pro')
+								: __('Edit', 'vk-blocks-pro')
+						}
+						onClick={() => {
+							if (editorMode === 'default') {
+								setAttributes({ editorMode: 'slide' });
+							} else {
+								setAttributes({ editorMode: 'default' });
+							}
+						}}
+					/>
+				</ToolbarGroup>
 			</BlockControls>
 			<InspectorControls>
 				<PanelBody

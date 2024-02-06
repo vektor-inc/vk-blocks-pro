@@ -62,7 +62,7 @@ export default function TabItemEdit(props) {
 
 			if (tabOptionJSON && childBlocks && tabColor) {
 				const tabOption = JSON.parse(tabOptionJSON);
-				if (tabOption !== {} && tabOption.listArray !== []) {
+				if (Object.keys(tabOption).length !== 0 && Array.isArray(tabOption.listArray) && tabOption.listArray.length !== 0) {
 					let childIndex = -1;
 					childBlocks.forEach((chiildBlock, index) => {
 						if (chiildBlock.clientId === clientId) {

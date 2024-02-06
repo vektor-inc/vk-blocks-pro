@@ -248,7 +248,6 @@ export default function TabEdit(props) {
 	let tablabelsEditList = '';
 	let tablabelsEdit = '';
 
-	// console.log('childBlocks',childBlocks);
 	if (childBlocks.length !== 0) {
 		tablabelsEditList = childBlocks.map((childBlock, index) => {
 			let activeLabelClass = '';

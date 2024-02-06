@@ -1,0 +1,25 @@
+/* * * * * * * * * * * * * * * * * * * * * 
+Admin Setting Sidebar utility
+*/
+.vk-radioControl {
+	.components-radio-control__option{
+		display: flex;
+	}
+}
+.font-size-11px {
+	font-size: 11px;
+}
+
+// 下部余白のついたコンポーネントの下に文字を表示したりするためのクラス
+.offset-mt-18px {
+	&,
+	&.alert {
+		margin-top:-18px;
+		margin-bottom:18px;
+	}
+}
+
+/* テーマ側で定義されている場合もあるが、ない場合もあるのでここにも記載 */
+.text-danger {
+	color: #dc3545!important;
+}

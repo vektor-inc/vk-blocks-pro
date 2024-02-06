@@ -5,27 +5,32 @@
     }
     &.is-style-vk-table {
         &-border-top-bottom {
-            th,td{
-                border-top: none;
+			table,
+			th,
+			td {
                 border-left: none;
                 border-right: none;
-                border-bottom:1px solid var(--vk-color-border-hr);
-            }
+			}
         }
         &-border {
-            th,td{
-                border:1px solid var(--vk-color-border-hr);
-            }
+			// theme.json のあるファイルでテーブルの線の色指定がない場合のみ適用
+			table:where(:not(.has-border-color)){
+				th,td{
+					border:1px solid var(--vk-color-border-hr);
+				}
+			}
         }
         &-border-stripes{
             tbody tr:nth-child(2n+1) {
                 background-color: #f0f0f0;
             }
-            th,td{
-                border:1px solid var(--vk-color-border-hr);
-            }
+			// theme.json のあるファイルでテーブルの線の色指定がない場合のみ適用
+			table:where(:not(.has-border-color)){
+				th,td{
+					border:1px solid var(--vk-color-border-hr);
+				}
+			}
         }
-
     }
 }
 

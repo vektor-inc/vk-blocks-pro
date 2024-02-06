@@ -1,6 +1,5 @@
 module.exports = {
 	rootDir: '../',
-	// @vkblocks エイリアスを jestで使う
 	moduleNameMapper: {
 		"^@vkblocks/(.+)": "<rootDir>/src/$1"
 	},
@@ -8,5 +7,9 @@ module.exports = {
 	transform : {
 		"^.+\\.js$": "babel-jest",
 		".+\\.(svg|css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub"
-	}
+	},
+	transformIgnorePatterns: [
+		"/node_modules/(?!uuid|lib0)/.+\\.js$"
+	],
+	setupFilesAfterEnv: ["<rootDir>/jest.setup.js"]
 };

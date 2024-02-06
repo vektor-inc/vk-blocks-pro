@@ -12,7 +12,6 @@
 
 	//inner-blocksの中のinner-blocksのcss打ち消し
 	.block-editor-inner-blocks .block-editor-block-list__layout{
-		display: unset;
 		flex-direction:unset;
 		flex-wrap: unset;
 		&.wp-block-social-links, //inner-blocksの中のinner-blocksがソーシャルアイコンブロックだった場合
@@ -39,7 +38,7 @@
 			width: 100%;
 		}
 	}
-	
+
 	& > .col-xs-2,
 	& > .col-xs-2 + .block-list-appender.wp-block {
 		width: calc(16.66% - 30px);
@@ -203,9 +202,15 @@
 		}
 	}
 
-}//.wp-block-vk-blocks-grid-column 
+}//.wp-block-vk-blocks-grid-column
 
 .wp-block-vk-blocks-grid-column  {
+	&-item {
+		.vk_gridColumn_item_inner {
+			// 編集画面で背景色がはみ出すのを防ぐ
+			box-sizing: border-box;
+		}
+	}
 	div[data-type="vk-blocks/grid-column-item"]{
 		// これがないとカラムのセルが潰れて中に何もいれられない
 		min-height:30px;

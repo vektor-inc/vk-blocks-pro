@@ -142,7 +142,7 @@ export default function StaffEdit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Layout', 'vk-blocks')}>
+				<PanelBody title={__('Layout', 'vk-blocks-pro')}>
 					<SelectControl
 						value={vk_staff_layout} // eslint-disable-line camelcase
 						onChange={
@@ -151,16 +151,16 @@ export default function StaffEdit(props) {
 						options={[
 							{
 								value: 'default',
-								label: __('Default', 'vk-blocks'),
+								label: __('Default', 'vk-blocks-pro'),
 							},
 							{
 								value: 'imageLeft',
-								label: __('Image left', 'vk-blocks'),
+								label: __('Image left', 'vk-blocks-pro'),
 							},
 						]}
 					/>
 				</PanelBody>
-				<PanelBody title={__('Image border', 'vk-blocks')}>
+				<PanelBody title={__('Image border', 'vk-blocks-pro')}>
 					<SelectControl
 						value={vk_staff_photoBorder} // eslint-disable-line camelcase
 						onChange={
@@ -170,20 +170,20 @@ export default function StaffEdit(props) {
 						options={[
 							{
 								value: 'default',
-								label: __('Default', 'vk-blocks'),
+								label: __('Default', 'vk-blocks-pro'),
 							},
 							{
 								value: 'none',
-								label: __('None', 'vk-blocks'),
+								label: __('None', 'vk-blocks-pro'),
 							},
 						]}
 					/>
 				</PanelBody>
-				<PanelBody title={__('Alt text', 'vk-blocks')}>
+				<PanelBody title={__('Alt text', 'vk-blocks-pro')}>
 					<BaseControl
 						help={__(
 							'Set the alt text for profile image',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 					>
 						<TextControl
@@ -196,10 +196,10 @@ export default function StaffEdit(props) {
 						/>
 					</BaseControl>
 				</PanelBody>
-				<PanelBody title={__('Color', 'vk-blocks')}>
+				<PanelBody title={__('Color', 'vk-blocks-pro')}>
 					<BaseControl
 						id={vkStaffNameColorId}
-						label={__('Staff name', 'vk-blocks')}
+						label={__('Staff name', 'vk-blocks-pro')}
 					>
 						<AdvancedColorPalette
 							id={vkStaffNameColorId}
@@ -209,7 +209,7 @@ export default function StaffEdit(props) {
 					</BaseControl>
 					<BaseControl
 						id={vkStaffCaptionColorId}
-						label={__('Name caption', 'vk-blocks')}
+						label={__('Name caption', 'vk-blocks-pro')}
 					>
 						<AdvancedColorPalette
 							id={vkStaffCaptionColorId}
@@ -219,7 +219,7 @@ export default function StaffEdit(props) {
 					</BaseControl>
 					<BaseControl
 						id={vkStaffPositionColorId}
-						label={__('Role position', 'vk-blocks')}
+						label={__('Role position', 'vk-blocks-pro')}
 					>
 						<AdvancedColorPalette
 							id={vkStaffPositionColorId}
@@ -229,7 +229,7 @@ export default function StaffEdit(props) {
 					</BaseControl>
 					<BaseControl
 						id={vkStaffProfileTitleColorId}
-						label={__('Profile title', 'vk-blocks')}
+						label={__('Profile title', 'vk-blocks-pro')}
 					>
 						<AdvancedColorPalette
 							id={vkStaffProfileTitleColorId}
@@ -239,7 +239,7 @@ export default function StaffEdit(props) {
 					</BaseControl>
 					<BaseControl
 						id={vkStaffProfileTextColorId}
-						label={__('Profile text', 'vk-blocks')}
+						label={__('Profile text', 'vk-blocks-pro')}
 					>
 						<AdvancedColorPalette
 							id={vkStaffProfileTextColorId}
@@ -248,17 +248,17 @@ export default function StaffEdit(props) {
 						/>
 					</BaseControl>
 				</PanelBody>
-				<PanelBody title={__('Heading Font', 'vk-blocks')}>
+				<PanelBody title={__('Heading Font', 'vk-blocks-pro')}>
 					<RadioControl
-						label={__('Font', 'vk-blocks')}
+						label={__('Font', 'vk-blocks-pro')}
 						selected={vk_staff_fontFamily}
 						options={[
 							{
-								label: __('Unspecified', 'vk-blocks'),
+								label: __('Unspecified', 'vk-blocks-pro'),
 								value: '0',
 							},
 							{
-								label: __('minchoBody', 'vk-blocks'),
+								label: __('minchoBody', 'vk-blocks-pro'),
 								value: '1',
 							},
 						]}
@@ -281,7 +281,7 @@ export default function StaffEdit(props) {
 							setAttributes({ vk_staff_text_name: value })
 						}
 						value={vk_staff_text_name} // eslint-disable-line camelcase
-						placeholder={__('Your Name', 'vk-blocks')}
+						placeholder={__('Your Name', 'vk-blocks-pro')}
 					/>
 					<RichText
 						tagName="p"
@@ -293,7 +293,7 @@ export default function StaffEdit(props) {
 							setAttributes({ vk_staff_text_caption: value })
 						}
 						value={vk_staff_text_caption} // eslint-disable-line camelcase
-						placeholder={__('Caption', 'vk-blocks')}
+						placeholder={__('Caption', 'vk-blocks-pro')}
 					/>
 					<RichText
 						tagName="p"
@@ -305,7 +305,7 @@ export default function StaffEdit(props) {
 							setAttributes({ vk_staff_text_role: value })
 						}
 						value={vk_staff_text_role} // eslint-disable-line camelcase
-						placeholder={__('Role position', 'vk-blocks')}
+						placeholder={__('Role position', 'vk-blocks-pro')}
 					/>
 					<RichText
 						tagName="h4"
@@ -318,7 +318,7 @@ export default function StaffEdit(props) {
 							setAttributes({ vk_staff_text_profileTitle: value })
 						}
 						value={vk_staff_text_profileTitle} // eslint-disable-line camelcase
-						placeholder={__('Profile title', 'vk-blocks')}
+						placeholder={__('Profile title', 'vk-blocks-pro')}
 					/>
 					<RichText
 						tagName="p"
@@ -334,7 +334,7 @@ export default function StaffEdit(props) {
 								}) // eslint-disable-line camelcase
 						}
 						value={vk_staff_text_profileText} // eslint-disable-line camelcase
-						placeholder={__('Profile text', 'vk-blocks')}
+						placeholder={__('Profile text', 'vk-blocks-pro')}
 					/>
 				</div>
 				<div className={imgBorderClassName}>
@@ -356,7 +356,7 @@ export default function StaffEdit(props) {
 								}
 							>
 								{!vk_staff_photo_image ? ( // eslint-disable-line camelcase
-									__('Select image', 'vk-blocks')
+									__('Select image', 'vk-blocks-pro')
 								) : (
 									<img
 										className={`vk_staff_photo_image`}

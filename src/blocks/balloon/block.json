@@ -17,6 +17,10 @@
 			"type": "string",
 			"default": "type-speech"
 		},
+		"balloonFullWidth": {
+			"type": "boolean",
+			"default": false
+		},
 		"balloonBorder": {
 			"type": "boolean",
 			"default": false
@@ -52,8 +56,9 @@
 			"default": "none"
 		}
 	},
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
+		"html": false,
 		"className": true
 	}
 }

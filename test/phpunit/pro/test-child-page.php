@@ -8,7 +8,7 @@
 /**
  * Child Page block test case.
  */
-class ChildPageBlockTest extends WP_UnitTestCase {
+class ChildPageBlockTest extends VK_UnitTestCase {
 
 	/**
 	 * 親ページID
@@ -27,7 +27,7 @@ class ChildPageBlockTest extends WP_UnitTestCase {
 	/**
 	 * 各テストケースの実行直前に呼ばれる
 	 */
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 
 		$page          = array(
@@ -51,7 +51,7 @@ class ChildPageBlockTest extends WP_UnitTestCase {
 	/**
 	 * Tear down each test method.
 	 */
-	public function tearDown() {
+	public function tearDown(): void {
 		wp_delete_post( $this->page_id, true );
 		$this->page_id = 0;
 
@@ -107,28 +107,9 @@ class ChildPageBlockTest extends WP_UnitTestCase {
 
 		$actual = vk_blocks_child_page_render_callback( $attributes );
 
-		$expected = vk_blocks_unescape_html( '<div class=\"vk_posts vk_posts-postType-page vk_posts-layout-card-horizontal vk_childPage \"><div id=\"post-' . intval( $this->child_page_id ) . '\" class=\"vk_post vk_post-postType-page card card-post card-horizontal vk_post-col-xs-12 vk_post-col-sm-6 vk_post-col-md-6 vk_post-col-lg-6 vk_post-col-xl-6 vk_post-col-xxl-6 vk_post-btn-display post-' . intval( $this->child_page_id ) . ' page type-page status-publish hentry\"><div class=\"row no-gutters card-horizontal-inner-row\"><div class=\"col-5 card-img-outer\"><div class=\"vk_post_imgOuter\" style=\"background-image:url(' . home_url() . '\/wp-content\/plugins\/vk-blocks-pro\/inc\/vk-blocks\/images\/no-image.png)\"><a href=\"' . home_url() . '\/?page_id=' . intval( $this->child_page_id ) . '\"><div class=\"card-img-overlay\"><\/div><img src=\"' . home_url() . '\/wp-content\/plugins\/vk-blocks-pro\/inc\/vk-blocks\/images\/no-image.png\" alt=\"\" class=\"vk_post_imgOuter_img card-img card-img-use-bg\" loading=\"lazy\" \/><\/a><\/div><!-- [ \/.vk_post_imgOuter ] --><\/div><!-- \/.col --><div class=\"col-7\"><div class=\"vk_post_body card-body\"><h5 class=\"vk_post_title card-title\"><a href=\"' . home_url() . '\/?page_id=' . intval( $this->child_page_id ) . '\">Child Title<\/a><\/h5><p class=\"vk_post_excerpt card-text\">This is my child page<\/p><div class=\"vk_post_btnOuter text-right\"><a class=\"btn btn-sm btn-primary vk_post_btn\" href=\"' . home_url() . '\/?page_id=' . intval( $this->child_page_id ) . '\">Read more<\/a><\/div><\/div><!-- [ \/.card-body ] --><\/div><!-- \/.col --><\/div><!-- [ \/.row ] --><\/div><!-- [ \/.card ] --><\/div>' );
+		$expected = vk_blocks_unescape_html( '<div class=\"vk_posts vk_posts-postType-page vk_posts-layout-card-horizontal vk_childPage \"><div id=\"post-' . intval( $this->child_page_id ) . '\" class=\"vk_post vk_post-postType-page card card-post card-horizontal vk_post-col-xs-12 vk_post-col-sm-6 vk_post-col-md-6 vk_post-col-lg-6 vk_post-col-xl-6 vk_post-col-xxl-6 vk_post-btn-display post-' . intval( $this->child_page_id ) . ' page type-page status-publish hentry\"><div class=\"card-horizontal-inner-row\"><div class=\"vk_post-col-5 col-5 card-img-outer\"><div class=\"vk_post_imgOuter\" style=\"background-image:url(' . home_url() . '\/wp-content\/plugins\/vk-blocks-pro\/inc\/vk-blocks\/images\/no-image.png)\"><a href=\"' . home_url() . '\/?page_id=' . intval( $this->child_page_id ) . '\"><div class=\"card-img-overlay\"><\/div><img src=\"' . home_url() . '\/wp-content\/plugins\/vk-blocks-pro\/inc\/vk-blocks\/images\/no-image.png\" alt=\"\" class=\"vk_post_imgOuter_img card-img card-img-use-bg\" loading=\"lazy\" \/><\/a><\/div><!-- [ \/.vk_post_imgOuter ] --><\/div><!-- \/.col --><div class=\"vk_post-col-7 col-7\"><div class=\"vk_post_body card-body\"><h5 class=\"vk_post_title card-title\"><a href=\"' . home_url() . '\/?page_id=' . intval( $this->child_page_id ) . '\">Child Title<\/a><\/h5><p class=\"vk_post_excerpt card-text\">This is my child page<\/p><div class=\"vk_post_btnOuter text-right\"><a class=\"btn btn-sm btn-primary vk_post_btn\" href=\"' . home_url() . '\/?page_id=' . intval( $this->child_page_id ) . '\">Read more<\/a><\/div><\/div><!-- [ \/.card-body ] --><\/div><!-- \/.col --><\/div><!-- [ \/.row ] --><\/div><!-- [ \/.card ] --><\/div>' );
 
 		$this->assertEquals( $expected, $actual );
-	}
-
-	/**
-	 * Add user and set the user as current user.
-	 *
-	 * @param  string $role administrator, editor, author, contributor ...
-	 * @return void
-	 */
-	public function set_current_user( $role ) {
-		$user = $this->factory()->user->create_and_get(
-			array(
-				'role' => $role,
-			)
-		);
-
-		/*
-			* Set $user as current user
-			*/
-		wp_set_current_user( $user->ID, $user->user_login );
 	}
 
 };

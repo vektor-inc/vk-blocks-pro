@@ -32,11 +32,17 @@ class Vk_Blocks_Print_CSS_Variables {
 		if ( ! vk_blocks_is_lightning() ) {
 			$dynamic_css = self::get_print_css();
 			wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );
+			wp_add_inline_style( 'vk-blocks-utils-common-css', $dynamic_css );
 		}
 	}
 
 	/**
 	 * 出力するCSSを生成
+	 *
+	 * --vk-color-primaryは非推奨css変数
+	 * cssカスタマイズしているユーザーのために残している
+	 *
+	 * @see https://github.com/vektor-inc/vk-color-palette-manager/pull/19
 	 *
 	 * @return string $dynamic_css 最小化したCSS
 	 */
@@ -44,7 +50,8 @@ class Vk_Blocks_Print_CSS_Variables {
 		$dynamic_css = '
             :root {
                 --vk-size-text: 16px;
-				--vk-color-primary:#337ab7;
+                /* --vk-color-primary is deprecated. */
+                --vk-color-primary:#337ab7;
             }';
 
 		/*
@@ -57,15 +64,9 @@ class Vk_Blocks_Print_CSS_Variables {
 			--vk-line-height-low: 1.5em;
 			*/
 
-		// delete before after space.
-		$dynamic_css = trim( $dynamic_css );
-		// convert tab and br to space.
-		$dynamic_css = preg_replace( '/[\n\r\t]/', '', $dynamic_css );
-		// Change multiple spaces to single space.
-		$dynamic_css = preg_replace( '/\s(?=\s)/', '', $dynamic_css );
+		$dynamic_css = vk_blocks_minify_css( $dynamic_css );
 		return $dynamic_css;
 	}
-
 }
 
 new Vk_Blocks_Print_CSS_Variables();

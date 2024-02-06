@@ -2,7 +2,7 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/heading",
 	"category": "vk-blocks-cat",
-	"title": "Heading",
+	"title": "Heading(not recommended)",
 	"attributes": {
 		"anchor": {
 			"type": "string",
@@ -69,7 +69,7 @@
 		}
 	},
 	"description": "This is a heading that allows you to set text size, subtext, icon, and margin.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
 		"className": true,
 		"customClassName": true,

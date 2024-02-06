@@ -16,22 +16,25 @@ export default function AlertEdit({ attributes, setAttributes }) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Style Settings', 'vk-blocks')}>
+				<PanelBody title={__('Style Settings', 'vk-blocks-pro')}>
 					<SelectControl
 						value={style}
 						onChange={(value) => setAttributes({ style: value })}
 						options={[
 							{
-								label: __('Success', 'vk-blocks'),
+								label: __('Success', 'vk-blocks-pro'),
 								value: 'success',
 							},
-							{ label: __('Info', 'vk-blocks'), value: 'info' },
 							{
-								label: __('Warning', 'vk-blocks'),
+								label: __('Info', 'vk-blocks-pro'),
+								value: 'info',
+							},
+							{
+								label: __('Warning', 'vk-blocks-pro'),
 								value: 'warning',
 							},
 							{
-								label: __('Danger', 'vk-blocks'),
+								label: __('Danger', 'vk-blocks-pro'),
 								value: 'danger',
 							},
 						]}

@@ -57,7 +57,7 @@ function vk_blocks_page_content_render_callback( $attributes ) {
 	$page_content    = -1 !== $page_content_id ? get_post( $page_content_id )->post_content : '';
 	vk_blocks_content_enqueue_scripts( $page_content );
 
-	$vk_blocks_options = vk_blocks_get_options();
+	$vk_blocks_options = VK_Blocks_Options::get_options();
 	if ( has_block( 'vk-blocks/faq2', $page_content ) || has_block( 'vk-blocks/faq', $page_content ) ) {
 		if ( 'open' === $vk_blocks_options['new_faq_accordion'] ) {
 			$page_content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-accordion-open', $page_content );
@@ -81,9 +81,6 @@ function vk_blocks_page_content_render_callback( $attributes ) {
 		$classes .= 'vk_pageContent';
 		if ( isset( $attributes['TargetPost'] ) ) {
 			$classes .= ' vk_pageContent-id-' . $page_content_id;
-		}
-		if ( isset( $attributes['className'] ) ) {
-			$classes .= ' ' . $attributes['className'];
 		}
 		if ( isset( $attributes['vkb_hidden'] ) && $attributes['vkb_hidden'] ) {
 			$classes .= ' vk_hidden';
@@ -113,7 +110,9 @@ function vk_blocks_page_content_render_callback( $attributes ) {
 			$classes .= ' ' . $attributes['marginBottom'];
 		}
 
-		$page_html .= '<div class="' . $classes . '">';
+		$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => $classes ) );
+
+		$page_html .= '<div ' . $wrapper_attributes . '>';
 		// Warning : 'vk_page_content' is old hook name that this line is old filter name fall back.
 		$page_content = apply_filters( 'vk_page_content', $page_content ); //phpcs:ignore
 		$page_html   .= apply_filters( 'vk_blocks_page_content', $page_content );
@@ -121,7 +120,7 @@ function vk_blocks_page_content_render_callback( $attributes ) {
 
 		$url = get_edit_post_link( $page_content_id );
 		if ( $url ) {
-			$page_html .= '<a href="' . esc_url( $url ) . '" class="vk_pageContent_editBtn btn btn-outline-primary btn-sm veu_adminEdit" target="_blank">' . __( 'Edit this area', 'vk-blocks' ) . '</a>';
+			$page_html .= '<a href="' . esc_url( $url ) . '" class="vk_pageContent_editBtn btn btn-outline-primary btn-sm veu_adminEdit" target="_blank">' . __( 'Edit this area', 'vk-blocks-pro' ) . '</a>';
 		}
 	}
 

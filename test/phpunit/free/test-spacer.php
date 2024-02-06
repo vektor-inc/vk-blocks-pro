@@ -8,7 +8,7 @@
 /**
  * Post List block test case.
  */
-class VKBSpacerTest extends WP_UnitTestCase {
+class VKBSpacerTest extends VK_UnitTestCase {
 
 	/**
 	 * Undocumented function
@@ -96,6 +96,16 @@ class VKBSpacerTest extends WP_UnitTestCase {
 				'device'  => 'mobile',
 				'correct' => 0,
 			),
+			// カスタム
+			array(
+				'options' => array(
+					'margin_size' => array( 'md' => array( 'custom' => 'var(--wp--custom--spacing--xx-small)' ) ),
+				),
+				'size'    => 'md',
+				'device'  => 'custom',
+				'correct' => 'var(--wp--custom--spacing--xx-small)',
+			),
+
 		);
 
 		foreach ( $test_array as $value ) {
@@ -209,6 +219,114 @@ class VKBSpacerTest extends WP_UnitTestCase {
 			print 'return  :' . esc_attr( $return ) . PHP_EOL;
 			print 'correct :' . esc_attr( $value['correct'] ) . PHP_EOL;
 			$this->assertEquals( $value['correct'], $return );
+		}
+	}
+
+	/**
+	 * スペーサーサイズのCSS変数のスタイルを取得するテスト
+	 *
+	 * @return void
+	 */
+	public function test_vk_blocks_get_spacer_size_style_all() {
+		print PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+		print 'test_vk_blocks_get_spacer_size_style' . PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+		$test_array = array(
+			array(
+				'options'     => array(
+					'margin_size' => array(
+						'xs' => array(
+							'pc'     => null,
+							'tablet' => null,
+							'mobile' => null,
+							'custom' => ''
+						),
+						'sm' => array(
+							'pc'     => 3,
+							'tablet' => 2,
+							'mobile' => 1,
+							'custom' => ''
+						),
+						'md' => array(
+							'pc'     => null,
+							'tablet' => 2,
+							'mobile' => 1,
+							'custom' => ''
+						),
+						'lg' => array(
+							'pc'     => 3,
+							'tablet' => null,
+							'mobile' => 1,
+							'custom' => ''
+						),
+						'xl' => array(
+							'pc'     => 3,
+							'tablet' => 2,
+							'mobile' => null,
+							'custom' => ''
+						),
+					),
+					'margin_unit' => 'rem'
+				),
+				'correct'     => '@media (max-width: 575.98px) {:root,body{--vk-margin-sm:1rem;--vk-margin-md:1rem;--vk-margin-lg:1rem;--vk-margin-xl:2rem;}}@media (min-width: 576px) and (max-width: 991.98px) {:root,body{--vk-margin-sm:2rem;--vk-margin-md:2rem;--vk-margin-lg:3rem;--vk-margin-xl:2rem;}}@media (min-width: 992px) {:root,body{--vk-margin-sm:3rem;--vk-margin-md:2rem;--vk-margin-lg:3rem;--vk-margin-xl:3rem;}}',
+			),
+			array(
+				'options'     => array(
+					'margin_size' => array(
+						'xs' => array(
+							'pc'     => null,
+							'tablet' => null,
+							'mobile' => null,
+							'custom' => 'var( --aaa-xs )'
+						),
+						'sm' => array(
+							'pc'     => 3,
+							'tablet' => 2,
+							'mobile' => 1,
+							'custom' => 'var( --aaa-sm )'
+						),
+						'md' => array(
+							'pc'     => 3,
+							'tablet' => 2,
+							'mobile' => null,
+							'custom' => 'var( --aaa-md )'
+						),
+						'lg' => array(
+							'pc'     => 3,
+							'tablet' => null,
+							'mobile' => 2,
+							'custom' => 'var( --aaa-lg )'
+						),
+						'xl' => array(
+							'pc'     => 3,
+							'tablet' => 2,
+							'mobile' => null,
+							'custom' => 'var( --aaa-xl )'
+						),
+					),
+					'margin_unit' => 'rem'
+				),
+				'correct'     => ':root,body{--vk-margin-xs:var( --aaa-xs );--vk-margin-sm:var( --aaa-sm );--vk-margin-md:var( --aaa-md );--vk-margin-lg:var( --aaa-lg );--vk-margin-xl:var( --aaa-xl );}',
+			),
+		);
+
+		foreach ( $test_array as $value ) {
+			$return  = vk_blocks_get_spacer_size_style_all( $value['options'] );
+			// 書式を統一化
+			$return = str_replace( "'", '"', $return );
+			$return = str_replace( "  ", " ", $return );
+			$return = str_replace( " >", ">", $return );
+			// delete before after space.
+			$return = trim($return );
+			// convert tab and br to space.
+			$return = preg_replace( '/[\n\r\t]/', '', $return );
+			// Change multiple spaces to single space.
+			$return = preg_replace( '/\s(?=\s)/', '', $return );
+			$correct = $value['correct'];
+			print 'return  :' . esc_attr( $return ) . PHP_EOL;
+			print 'correct :' . esc_attr( $correct ) . PHP_EOL;
+			$this->assertEquals( $correct, $return );
 		}
 	}
 

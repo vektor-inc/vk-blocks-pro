@@ -88,11 +88,14 @@ class Vk_Blocks_PostList {
 	/**
 	 * Format Terms
 	 *
-	 * @param array $is_checked_terms checked terms.
+	 * @param array $tax_query_relation : AND or OR.
+	 * @param array $is_checked_terms : checked terms. チェックされたタームidの配列.
+	 *
+	 * @return array $return : tax_query
 	 */
-	private static function format_terms( $is_checked_terms ) {
+	private static function format_terms( $tax_query_relation, $is_checked_terms ) {
 		$return             = array();
-		$return['relation'] = 'OR';
+		$return['relation'] = $tax_query_relation;
 
 		foreach ( $is_checked_terms as $key => $value ) {
 			$term      = get_term( $value );
@@ -114,7 +117,11 @@ class Vk_Blocks_PostList {
 	public static function get_loop_query( $attributes ) {
 		$is_checked_post_type = json_decode( $attributes['isCheckedPostType'], true );
 
-		$is_checked_terms = json_decode( $attributes['isCheckedTerms'], true );
+		$is_checked_terms   = json_decode( $attributes['isCheckedTerms'], true );
+		$tax_query_relation = 'OR';
+		if ( ! empty( $attributes['taxQueryRelation'] ) ) {
+			$tax_query_relation = $attributes['taxQueryRelation'];
+		}
 
 		if ( empty( $is_checked_post_type ) ) {
 			return false;
@@ -158,10 +165,20 @@ class Vk_Blocks_PostList {
 			}
 		}
 
+		global $wp_query;
+		// とりあえず１を入れつつ2ページ目の情報があったら上書き
+		$paged = 1;
+		if ( ! empty( $attributes['pagedlock'] ) ) {
+			$paged = 1;
+		} elseif ( is_singular() && isset( $wp_query->query_vars['page'] ) ) {
+			$paged = $wp_query->query_vars['page'];
+		} elseif ( isset( $wp_query->query_vars['paged'] ) ) {
+			$paged = $wp_query->query_vars['paged'];
+		}
 		$args = array(
 			'post_type'      => $is_checked_post_type,
-			'tax_query'      => self::format_terms( $is_checked_terms ),
-			'paged'          => 1,
+			'tax_query'      => self::format_terms( $tax_query_relation, $is_checked_terms ),
+			'paged'          => $paged,
 			// 0で全件取得
 			'posts_per_page' => intval( $attributes['numberPosts'] ),
 			'order'          => $attributes['order'],
@@ -172,6 +189,7 @@ class Vk_Blocks_PostList {
 		if ( ! empty( $date_query ) ) {
 			$args['date_query'] = $date_query;
 		}
+		$args = apply_filters( 'vk_blocks_post_list_query_args', $args, $attributes );
 		return new WP_Query( $args );
 	}
 
@@ -234,12 +252,11 @@ class Vk_Blocks_PostList {
 		}
 
 		if ( ! $name ) {
-			$name = __( 'Post', 'vk-blocks' );
+			$name = __( 'Post', 'vk-blocks-pro' );
 		}
 
 		/* translators: %s: 投稿タイプ名 */
-		$html = '<div class="alert alert-warning text-center">' . sprintf( __( 'There are no %ss.', 'vk-blocks' ), $name ) . '</div>';
+		$html = '<div class="alert alert-warning text-center">' . sprintf( __( 'There are no %ss.', 'vk-blocks-pro' ), $name ) . '</div>';
 		return apply_filters( 'vk_blocks_post_list_render_no_post', $html, $wp_query );
 	}
-
 }

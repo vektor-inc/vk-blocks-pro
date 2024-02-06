@@ -8,7 +8,16 @@ import classnames from 'classnames';
  */
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
-const componentDivider = (level, color, whichSide, dividerType) => {
+const componentDivider = (
+	level,
+	color,
+	whichSide,
+	dividerType,
+	levelSettingPerDevice,
+	level_mobile,
+	level_tablet,
+	level_pc
+) => {
 	let sectionPadding;
 	let sectionClass;
 	let lenderDivider;
@@ -132,60 +141,94 @@ const componentDivider = (level, color, whichSide, dividerType) => {
 	}
 
 	//Paddingの条件分岐を追加
-	if (dividerType === 'tilt') {
-		sectionPadding = Math.abs(level);
-		lenderDivider = tiltSectionStyle(level, color);
-	} else if (dividerType === 'curve') {
-		if (level > 0) {
-			sectionPadding = Math.abs(level);
-		} else if (level < 0) {
-			sectionPadding = Math.abs(level) * 2;
+	const getSectionStyle = (lvl) => {
+		if (dividerType === 'tilt') {
+			sectionPadding = Math.abs(lvl);
+			return tiltSectionStyle(lvl, color);
+		} else if (dividerType === 'curve') {
+			sectionPadding = lvl > 0 ? Math.abs(lvl) : Math.abs(lvl) * 2;
+			return curveSectionStyle(lvl, color);
+		} else if (dividerType === 'wave') {
+			sectionPadding = Math.abs(lvl);
+			return waveSectionStyle(lvl, color);
+		} else if (dividerType === 'triangle') {
+			sectionPadding = Math.abs(lvl);
+			return triangleSectionStyle(lvl, color);
 		}
-		lenderDivider = curveSectionStyle(level, color);
-	} else if (dividerType === 'wave') {
-		sectionPadding = Math.abs(level);
-		lenderDivider = waveSectionStyle(level, color);
-	} else if (dividerType === 'triangle') {
-		sectionPadding = Math.abs(level);
-		lenderDivider = triangleSectionStyle(level, color);
-	}
+	};
+
+	lenderDivider = getSectionStyle(level);
 
 	//classにdividerTypeを追加
 	// eslint-disable-next-line prefer-const
 	sectionClass = dividerType;
 
-	//upper-paddingを追加
+	// vk_outerのクラス名をデバイスタイプに基づいて追加する
+
+	const renderSVG = (lvl, side, deviceType) => {
+		lenderDivider = getSectionStyle(lvl);
+		const style =
+			side === 'upper'
+				? { paddingBottom: sectionPadding + `px` }
+				: { paddingTop: sectionPadding + `px` };
+
+		let displayDeviceTypeClass;
+		if (deviceType === undefined) {
+			displayDeviceTypeClass = '';
+		} else {
+			displayDeviceTypeClass = ` vk_outer-display-${deviceType}`;
+		}
+
+		return (
+			<div
+				className={`vk_outer_separator vk_outer_separator-position-${side} vk_outer_separator-type-${sectionClass}${displayDeviceTypeClass}`}
+				style={style}
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 100 100"
+					preserveAspectRatio="none"
+				>
+					{lenderDivider}
+				</svg>
+			</div>
+		);
+	};
+
 	if (whichSide === 'upper') {
-		return (
-			<div
-				className={`vk_outer_separator vk_outer_separator-position-upper vk_outer_separator-type-${sectionClass}`}
-				style={{ paddingBottom: sectionPadding + `px` }}
-			>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 100 100"
-					preserveAspectRatio="none"
-				>
-					{lenderDivider}
-				</svg>
-			</div>
-		);
-		//lower-paddingを追加
+		if (levelSettingPerDevice) {
+			return (
+				<>
+					{level_pc !== 0 &&
+						level_pc &&
+						renderSVG(level_pc, 'upper', 'pc')}
+					{level_tablet !== 0 &&
+						level_tablet &&
+						renderSVG(level_tablet, 'upper', 'tablet')}
+					{level_mobile !== 0 &&
+						level_mobile &&
+						renderSVG(level_mobile, 'upper', 'mobile')}
+				</>
+			);
+		}
+		return renderSVG(level, 'upper');
 	} else if (whichSide === 'lower') {
-		return (
-			<div
-				className={`vk_outer_separator vk_outer_separator-position-lower vk_outer_separator-type-${sectionClass}`}
-				style={{ paddingTop: sectionPadding + `px` }}
-			>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 100 100"
-					preserveAspectRatio="none"
-				>
-					{lenderDivider}
-				</svg>
-			</div>
-		);
+		if (levelSettingPerDevice) {
+			return (
+				<>
+					{level_pc !== 0 &&
+						level_pc &&
+						renderSVG(level_pc, 'lower', 'pc')}
+					{level_tablet !== 0 &&
+						level_tablet &&
+						renderSVG(level_tablet, 'lower', 'tablet')}
+					{level_mobile !== 0 &&
+						level_mobile &&
+						renderSVG(level_mobile, 'lower', 'mobile')}
+				</>
+			);
+		}
+		return renderSVG(level, 'lower');
 	}
 };
 

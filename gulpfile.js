@@ -9,7 +9,7 @@ const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 
 // replace_text_domain
-gulp.task('text-domain', (done) => {
+gulp.task('text-domain-pro', (done) => {
 	// vk-admin.
 	gulp.src(['./inc/vk-admin/package/*.php'])
 		.pipe(replace("'vk_admin_textdomain'", "'vk-blocks'"))
@@ -32,10 +32,67 @@ gulp.task('text-domain', (done) => {
 	done();
 });
 
+// replace_text_domain
+gulp.task('text-domain-free', (done) => {
+	// vk-admin.
+	gulp.src(['./inc/vk-admin/package/*.php'])
+		.pipe(replace("'vk_admin_textdomain'", "'vk-blocks'"))
+		.pipe(gulp.dest('./inc/vk-admin/package/'));
+	// font-awesome.
+	gulp.src(['./inc/font-awesome/package/*.php'])
+		.pipe(replace("'vk_font_awesome_version_textdomain'", "'vk-blocks'"))
+		.pipe(gulp.dest('./inc/font-awesome/package/'));
+	// term-color.
+	gulp.src(['./inc/term-color/package/*.php'])
+		.pipe(replace("'vk_term_color_textdomain'", "'vk-blocks'"))
+		.pipe(gulp.dest('./inc/term-color/package/'));
+	// vk-components.
+	gulp.src(['./inc/vk-components/package/*.php'])
+		.pipe(replace("'vk_components_textdomain'", "'vk-blocks'"))
+		.pipe(gulp.dest('./inc/vk-components/package/'));
+	gulp.src(['./inc/vk-css-optimize/package/*.php'])
+		.pipe(replace("'css_optimize_textdomain'", "'vk-blocks'"))
+		.pipe(gulp.dest('./inc/vk-css-optimize/package/'));
+	gulp.src(['./inc/**',])
+		.pipe(replace(/__\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "__( $1, 'vk-blocks' )"))
+		.pipe(replace(/_e\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_e( $1, 'vk-blocks' )"))
+		.pipe(replace(/_n_noop\(\s*?(['"`].*?['"`]),\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_n_noop( $1, $2, 'vk-blocks' )"))
+		.pipe(replace(/_x\(\s*?(['"`].*?['"`]),\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_x( $1, $2, 'vk-blocks' )"))
+		.pipe(replace("$vk_blocks_components_textdomain = 'vk-blocks-pro';", "$vk_blocks_components_textdomain = 'vk-blocks';"))
+		.pipe(replace("wp_set_script_translations( 'vk-blocks-admin-js', 'vk-blocks-pro', VK_BLOCKS_DIR_PATH . 'languages' );", "wp_set_script_translations( 'vk-blocks-admin-js', 'vk-blocks' );"))
+		.pipe(replace("wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks-pro', VK_BLOCKS_DIR_PATH . 'languages' );", "wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks' );"))
+		.pipe(gulp.dest('./inc/'));
+	gulp.src(['./src/**'])
+		.pipe(replace(/__\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "__( $1, 'vk-blocks' )"))
+		.pipe(replace(/_e\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_e( $1, 'vk-blocks' )"))
+		.pipe(replace(/_n_noop\(\s*?(['"`].*?['"`]),\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_n_noop( $1, $2, 'vk-blocks' )"))
+		.pipe(replace(/_x\(\s*?(['"`].*?['"`]),\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_x( $1, $2, 'vk-blocks' )"))
+		.pipe(replace('"textdomain": "vk-blocks-pro"', '"textdomain": "vk-blocks"'))
+		.pipe(gulp.dest('./src/'));
+	gulp.src(['./test/**'])
+		.pipe(replace(/__\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "__( $1, 'vk-blocks' )"))
+		.pipe(replace(/_e\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_e( $1, 'vk-blocks' )"))
+		.pipe(replace(/_n_noop\(\s*?(['"`].*?['"`]),\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_n_noop( $1, $2, 'vk-blocks' )"))
+		.pipe(replace(/_x\(\s*?(['"`].*?['"`]),\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_x( $1, $2, 'vk-blocks' )"))
+		.pipe(gulp.dest('./test/'));
+	gulp.src(['./vk-blocks.php'])
+		.pipe(replace(/__\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "__( $1, 'vk-blocks' )"))
+		.pipe(replace(/_e\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_e( $1, 'vk-blocks' )"))
+		.pipe(replace(/_n_noop\(\s*?(['"`].*?['"`]),\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_n_noop( $1, $2, 'vk-blocks' )"))
+		.pipe(replace(/_x\(\s*?(['"`].*?['"`]),\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_x( $1, $2, 'vk-blocks' )"))
+		.pipe(replace("Text Domain: vk-blocks-pro", "Text Domain: vk-blocks"))
+		.pipe(gulp.dest('./'));
+	done();
+});
+
 gulp.task('helper-js', (done) => {
 	gulp.src('src/blocks/faq2/view.js')
 		.pipe(uglify())
 		.pipe(rename('vk-faq2.min.js'))
+		.pipe(gulp.dest('./build/'));
+	gulp.src('src/blocks/slider/view.js')
+		.pipe(uglify())
+		.pipe(rename('vk-slider.min.js'))
 		.pipe(gulp.dest('./build/'));
 	done();
 });
@@ -48,10 +105,6 @@ gulp.task('helper-js-pro', (done) => {
 	gulp.src('src/blocks/_pro/animation/view.js')
 		.pipe(uglify())
 		.pipe(rename('vk-animation.min.js'))
-		.pipe(gulp.dest('./build/'));
-	gulp.src('src/blocks/_pro/slider/view.js')
-		.pipe(uglify())
-		.pipe(rename('vk-slider.min.js'))
 		.pipe(gulp.dest('./build/'));
 	gulp.src('src/blocks/_pro/tab/view.js')
 		.pipe(uglify())
@@ -95,6 +148,21 @@ gulp.task('sass_editor', (done) => {
 		)
 		.pipe(autoprefixer())
 		.pipe(concat('block-build-editor.css'))
+		.pipe(gulp.dest('./build/'));
+	done();
+});
+
+// vk_blocks_options管理画面 css
+gulp.task('sass_vk_blocks_options', (done) => {
+	gulp.src(['./options-css/*.scss'])
+		.pipe(
+			sass({
+				errLogToConsole: true,
+				outputStyle: 'compressed',
+			})
+		)
+		.pipe(autoprefixer())
+		.pipe(concat('vk_blocks_options.css'))
 		.pipe(gulp.dest('./build/'));
 	done();
 });
@@ -194,13 +262,17 @@ gulp.task('watch', () => {
 		'inc/vk-components/**/*.scss',
 		gulp.parallel('sass_vk_components', 'sass_editor')
 	);
+	gulp.watch(
+		'options-css/*.scss',
+		gulp.parallel('sass_vk_blocks_options')
+	);
 });
 
 //Build : Development
 gulp.task(
 	'build:dev:free',
 	gulp.series(
-		'text-domain',
+		'text-domain-free',
 		'sass',
 		'helper-js',
 		'sass_editor',
@@ -211,7 +283,7 @@ gulp.task(
 gulp.task(
 	'build:dev:pro',
 	gulp.series(
-		'text-domain',
+		'text-domain-pro',
 		'sass',
 		'helper-js',
 		'helper-js-pro',
@@ -225,10 +297,11 @@ gulp.task(
 gulp.task(
 	'build:free',
 	gulp.series(
-		'text-domain',
+		'text-domain-free',
 		'sass',
 		'helper-js',
 		'sass_editor',
+		'sass_vk_blocks_options',
 		'sass_bootstrap',
 		'sass_vk_components',
 		'sass-separate-free'
@@ -237,11 +310,12 @@ gulp.task(
 gulp.task(
 	'build:pro',
 	gulp.series(
-		'text-domain',
+		'text-domain-pro',
 		'sass',
 		'helper-js',
 		'helper-js-pro',
 		'sass_editor',
+		'sass_vk_blocks_options',
 		'sass_bootstrap',
 		'sass_vk_components',
 		'sass-separate-free',
@@ -259,6 +333,7 @@ gulp.task('dist', (done) => {
 		[
 			'./build/**',
 			'./inc/**',
+			'./languages/**',
 			'./vendor/**',
 			'./*.txt',
 			'./*.png',
@@ -279,7 +354,7 @@ gulp.task('dist:free', (done) => {
 		[
 			'./build/**',
 			'./inc/**',
-			'./vendor/**',
+			'./vendor/**',			
 			'./*.txt',
 			'./*.png',
 			'./*.php',

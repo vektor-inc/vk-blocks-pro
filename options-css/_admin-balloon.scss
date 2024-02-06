@@ -1,0 +1,88 @@
+.vk_admin_page .adminMain_main .balloonIconList {
+	margin-left:0;
+}
+.vk_admin_page .adminMain_main .balloonIconList li {
+	list-style:none;
+}
+.balloonIconList {
+	width:100%;
+	display:flex;
+	flex-wrap: wrap;
+}
+.balloonIconList li {
+	box-sizing:border-box;
+	width:29.5%;
+	padding:20px 15px 15px;
+	margin:10px;
+	border:1px solid #ccc;
+	border-radius:5px;
+	background-color:rgba(255,255,255,0.9);
+	box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);
+}
+
+.balloonIconList_iconFrame {
+	width:100px;
+	margin:0 auto 0.5rem;
+	position: relative;
+
+	.balloonIconList_iconFrame_src {
+		width:100px;
+		height:100px;
+		object-fit:cover;
+		border-radius:50%;
+		border:1px solid #e5e5e5;
+	}
+
+	.button {
+		width:49%;
+		box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,0.7);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateY(-50%) translateX(-50%);
+	}
+
+	.button-delete {
+		$color-danger: #b52727;
+		opacity: 0;
+		border: 1px solid $color-danger;
+		color: $color-danger;
+		transition: all 1s;
+		&:hover {
+			background-color: $color-danger;
+			border: 1px solid #b72a2a;
+			color: #fff;
+		}
+	}
+	&:hover .button-delete {
+		transition: all 1s;
+		opacity: 1;
+	}
+
+	.button-select {
+		transition: all 1s;
+		color:#464646;
+		border-color:#999;
+		margin-top: 0;
+	}
+}
+
+.balloonIconList_name_input {
+	input[type=text] {
+		display:block;
+		width:100%;
+		text-align:center;
+		border-color:#ccc;
+		box-shadow:inset 1px 1px 2px 0 rgba(0,0,0,0.1);
+	}
+}
+.balloonIconList_nameLabel {
+	clear:both;
+	display:block; overflow:hidden;
+	padding-top:0.5rem;
+	padding-bottom:0.3rem;
+}
+
+.balloon_image_delete_modal {
+	min-width: 380px;
+}

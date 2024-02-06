@@ -13,6 +13,11 @@ import save0_60_0 from './0.60.0/save';
 import save1_0_13 from './1.0.13/save';
 import save1_26_0 from './1.26.0/save';
 import save1_34_1 from './1.34.1/save';
+import save1_36_2 from './1.36.2/save';
+import save1_50_1 from './1.50.1/save';
+import save1_60_0 from './1.60.0/save';
+import save1_61_2 from './1.61.2/save';
+import save1_64_0 from './1.64.0/save';
 
 const blockAttributes = {
 	bgColor: {
@@ -125,7 +130,7 @@ const blockAttributes4 = {
 	},
 };
 
-/*
+
 // 1.34.1 から attributes を変更
 const blockAttributes5 = {
 	...blockAttributes4,
@@ -136,9 +141,55 @@ const blockAttributes5 = {
 		type: 'string',
 	},
 };
-*/
+
+// 1.61.2 から attributes を変更
+const blockAttributes6 = {
+	...blockAttributes5,
+	levelSettingPerDevice: {
+		type: 'boolean',
+	},
+	upper_level_mobile: {
+		type: 'number',
+	},
+	upper_level_tablet: {
+		type: 'number',
+	},
+	upper_level_pc: {
+		type: 'number',
+	},
+	lower_level_mobile: {
+		type: 'number',
+	},
+	lower_level_tablet: {
+		type: 'number',
+	},
+	lower_level_pc: {
+		type: 'number',
+	},
+};
+
 const deprecated = [
+	{
+		attributes: blockAttributes6,
+		save: save1_64_0,
+	},
+	{
+		attributes: blockAttributes5,
+		save: save1_61_2,
+	},
+	{
+		attributes: blockAttributes5,
+		save: save1_60_0,
+	},
+	{
+		attributes: blockAttributes5,
+		save: save1_50_1,
+	},
 	//ブロックテンプレート用のdeprecated
+	{
+		attributes: blockAttributes5,
+		save: save1_36_2,
+	},
 	{
 		attributes: blockAttributes4,
 		save: save1_34_1,

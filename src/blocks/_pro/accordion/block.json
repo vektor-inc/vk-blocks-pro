@@ -3,7 +3,7 @@
 	"name": "vk-blocks/accordion",
 	"title": "Accordion",
 	"description": "Collapses and hides content when the content is long.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"category": "vk-blocks-cat",
 	"attributes": {
 		"containerClass": {
@@ -12,6 +12,7 @@
 		}
 	},
 	"supports": {
+		"html": false,
 		"anchor": true,
 		"className": true
 	}

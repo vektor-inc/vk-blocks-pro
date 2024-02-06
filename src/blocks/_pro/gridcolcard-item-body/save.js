@@ -1,10 +1,13 @@
-import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import { useInnerBlocksProps, useBlockProps } from '@wordpress/block-editor';
 
 export default function save(props) {
 	const { attributes } = props;
 	const { verticalAlignment } = attributes;
 	let containerClass;
-	if (verticalAlignment === 'center') {
+	if (verticalAlignment === 'top') {
+		containerClass =
+			'vk_gridcolcard_item_body vk_gridcolcard_item_body-valign-top';
+	} else if (verticalAlignment === 'center') {
 		containerClass =
 			'vk_gridcolcard_item_body vk_gridcolcard_item_body-valign-center';
 	} else if (verticalAlignment === 'bottom') {
@@ -17,11 +20,8 @@ export default function save(props) {
 	const blockProps = useBlockProps.save({
 		className: `${containerClass}`,
 	});
-	return (
-		<div {...blockProps}>
-			<div className={`vk_gridcolcard_item_body_inner`}>
-				<InnerBlocks.Content />
-			</div>
-		</div>
-	);
+
+	const innerBlockProps = useInnerBlocksProps.save(blockProps);
+
+	return <div {...innerBlockProps} />;
 }

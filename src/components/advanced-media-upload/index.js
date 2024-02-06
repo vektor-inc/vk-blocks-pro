@@ -8,7 +8,7 @@ export const AdvancedMediaUpload = (props) => {
 	const { schema, clientId, setAttributes, attributes } = props;
 
 	const deleteImgBtn = () => {
-		dispatch('core/editor').updateBlockAttributes(clientId, {
+		dispatch('core/block-editor').updateBlockAttributes(clientId, {
 			[schema]: null,
 		});
 	};
@@ -31,7 +31,7 @@ export const AdvancedMediaUpload = (props) => {
 								onClick={deleteImgBtn}
 								className={'image-button button button-delete'}
 							>
-								{__('Delete Image', 'vk-blocks')}
+								{__('Delete Image', 'vk-blocks-pro')}
 							</Button>
 						</>
 					) : (
@@ -44,7 +44,7 @@ export const AdvancedMediaUpload = (props) => {
 									'button button-large components-button'
 								}
 							>
-								{__('Select image', 'vk-blocks')}
+								{__('Select image', 'vk-blocks-pro')}
 							</Button>
 						</>
 					)}

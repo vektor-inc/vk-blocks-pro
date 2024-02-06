@@ -99,15 +99,15 @@ export default function GridColumnItemEdit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Color Settings', 'vk-blocks')}>
+				<PanelBody title={__('Color Settings', 'vk-blocks-pro')}>
 					<BaseControl
-						label={__('Text Color', 'vk-blocks')}
+						label={__('Text Color', 'vk-blocks-pro')}
 						id={`vk_grid_column_text_color`}
 					>
 						<AdvancedColorPalette schema={'textColor'} {...props} />
 					</BaseControl>
 					<BaseControl
-						label={__('Background Color', 'vk-blocks')}
+						label={__('Background Color', 'vk-blocks-pro')}
 						id={`vk_grid_column_bg_color`}
 					>
 						<AdvancedColorPalette
@@ -117,11 +117,14 @@ export default function GridColumnItemEdit(props) {
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
-					title={__('Margin setting inside the item', 'vk-blocks')}
+					title={__(
+						'Margin setting inside the item',
+						'vk-blocks-pro'
+					)}
 					initialOpen={false}
 				>
 					<RangeControl
-						label={__('Padding (Top)', 'vk-blocks')}
+						label={__('Padding (Top)', 'vk-blocks-pro')}
 						value={paddingTop}
 						initialPosition={0}
 						onChange={(value) => {
@@ -132,11 +135,12 @@ export default function GridColumnItemEdit(props) {
 						}}
 						min={0}
 						max={300}
+						step={'px' === paddingUnit ? 1 : 0.1}
 						allowReset={true}
 						resetFallbackValue={null}
 					/>
 					<RangeControl
-						label={__('Padding (Left and Right)', 'vk-blocks')}
+						label={__('Padding (Left and Right)', 'vk-blocks-pro')}
 						value={paddingX}
 						initialPosition={0}
 						onChange={(value) => {
@@ -147,11 +151,12 @@ export default function GridColumnItemEdit(props) {
 						}}
 						min={0}
 						max={300}
+						step={'px' === paddingUnit ? 1 : 0.1}
 						allowReset={true}
 						resetFallbackValue={null}
 					/>
 					<RangeControl
-						label={__('Padding (Bottom)', 'vk-blocks')}
+						label={__('Padding (Bottom)', 'vk-blocks-pro')}
 						value={paddingBottom}
 						initialPosition={0}
 						onChange={(value) => {
@@ -162,31 +167,39 @@ export default function GridColumnItemEdit(props) {
 						}}
 						min={0}
 						max={300}
+						step={'px' === paddingUnit ? 1 : 0.1}
 						allowReset={true}
 						resetFallbackValue={null}
 					/>
 					<SelectControl
-						label={__('Unit', 'vk-blocks')}
+						label={__('Unit', 'vk-blocks-pro')}
 						value={paddingUnit}
-						onChange={(value) =>
-							setAttributes({ paddingUnit: value })
-						}
+						onChange={(value) => {
+							setAttributes({ paddingUnit: value });
+							if ('px' === value) {
+								setAttributes({
+									paddingTop: parseInt(paddingTop),
+									paddingX: parseInt(paddingX),
+									paddingBottom: parseInt(paddingBottom),
+								});
+							}
+						}}
 						options={[
 							{
 								value: 'px',
-								label: __('px', 'vk-blocks'),
+								label: __('px', 'vk-blocks-pro'),
 							},
 							{
 								value: 'em',
-								label: __('em', 'vk-blocks'),
+								label: __('em', 'vk-blocks-pro'),
 							},
 							{
 								value: 'rem',
-								label: __('rem', 'vk-blocks'),
+								label: __('rem', 'vk-blocks-pro'),
 							},
 							{
 								value: 'vw',
-								label: __('vw', 'vk-blocks'),
+								label: __('vw', 'vk-blocks-pro'),
 							},
 						]}
 					/>

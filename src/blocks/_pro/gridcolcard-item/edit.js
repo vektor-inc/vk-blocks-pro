@@ -23,6 +23,9 @@ import { useSelect, useDispatch } from '@wordpress/data';
 import { useEffect, useState } from '@wordpress/element';
 import CommonItemControl from '../gridcolcard/edit-common.js';
 import { link, linkOff, keyboardReturn } from '@wordpress/icons';
+import classnames from 'classnames';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { isGradientStyle } from '@vkblocks/utils/is-gradient-style';
 
 export default function Edit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -49,6 +52,7 @@ export default function Edit(props) {
 		borderColor,
 		textColor,
 		backgroundColor,
+		backgroundGradient,
 		url,
 		urlOpenType,
 	} = attributes;
@@ -118,6 +122,7 @@ export default function Edit(props) {
 							borderColor: attributes.borderColor,
 							textColor: attributes.textColor,
 							backgroundColor: attributes.backgroundColor,
+							backgroundGradient: attributes.backgroundGradient,
 						});
 					}
 				});
@@ -134,45 +139,68 @@ export default function Edit(props) {
 					borderColor: attributes.borderColor,
 					textColor: attributes.textColor,
 					backgroundColor: attributes.backgroundColor,
+					backgroundGradient: attributes.backgroundGradient,
 				});
 			}
 		}
 	}, [thisBlock, attributes]);
 
+	// カラーパレットに対応
+	const containerClasses = classnames('vk_gridcolcard_item', {
+		[`vk_gridcolcard_item-noHeader`]: headerDisplay === 'delete',
+		[`vk_gridcolcard_item-noFooter`]: footerDisplay === 'delete',
+		[`has-background`]: !!backgroundColor,
+		[`has-border-color`]: !!border,
+		[`has-${backgroundColor}-background-color`]:
+			!!backgroundColor && !isHexColor(backgroundColor),
+		[`has-${backgroundGradient}-gradient-background`]:
+			!!backgroundGradient && !isGradientStyle(backgroundGradient),
+		[`has-${borderColor}-border-color`]:
+			!!border && !!borderColor && !isHexColor(borderColor),
+	});
+
+	const innerClasses = classnames('vk_gridcolcard_item_container', {
+		[`has-text-color`]: !!textColor,
+		[`has-${textColor}-color`]: !!textColor && !isHexColor(textColor),
+	});
+
 	const style = {
 		backgroundColor: null,
 		border: null,
 	};
-	if (textColor) {
-		style.color = `${textColor}`;
-	}
-	if (backgroundColor) {
-		style.backgroundColor = `${backgroundColor}`;
-	}
-	if (border) {
-		style.border = `1px solid ${borderColor}`;
-	}
 	if (borderRadius) {
 		style.borderRadius = `${borderRadius}`;
 	}
 
-	const containerClasses = ['vk_gridcolcard_item'];
+	// 背景色
+	if (backgroundColor && isHexColor(backgroundColor)) {
+		// custom color
+		style.backgroundColor = `${backgroundColor}`;
+	}
 
-	// ヘッダーやフッターを削除する場合に、
-	// 内容量によってボタンの位置が揃わなくなったりしないように高さ制御するためのクラスを付与
-	if (headerDisplay === 'delete') {
-		containerClasses.push('vk_gridcolcard_item-noHeader');
+	// 背景グラデーション
+	if (backgroundGradient && isGradientStyle(backgroundGradient)) {
+		style.background = `${backgroundGradient}`;
 	}
-	if (footerDisplay === 'delete') {
-		containerClasses.push('vk_gridcolcard_item-noFooter');
+
+	// 線の色
+	if (border) {
+		style.borderWidth = `1px`;
+		if (isHexColor(borderColor)) {
+			// custom color
+			style.borderColor = `${borderColor}`;
+		}
 	}
-	const containerClass = containerClasses.join(' ');
+
+	// 文字色
+	const textColorCustom =
+		textColor && isHexColor(textColor) ? textColor : null;
 
 	// mb-3 alert alert-danger
 	const alertClass = url ? 'mb-3 alert alert-danger' : 'mb-3';
 
 	const blockProps = useBlockProps({
-		className: `${containerClass}`,
+		className: containerClasses,
 		style,
 	});
 
@@ -199,7 +227,10 @@ export default function Edit(props) {
 									label={
 										url !== '' && isOpen
 											? __('Unlink')
-											: __('Input Link URL', 'vk-blocks')
+											: __(
+													'Input Link URL',
+													'vk-blocks-pro'
+											  )
 									}
 									onClick={setLink}
 								/>
@@ -207,15 +238,15 @@ export default function Edit(props) {
 						}}
 						renderContent={(params) => {
 							return (
-								<div className="block-editor-url-input__button block-editor-link-control">
-									<form
-										className="block-editor-link-control__search-input-wrapper"
-										onSubmit={() => {
-											params.onClose();
-										}}
-									>
-										<div className="block-editor-link-control__search-input">
+								<form
+									onSubmit={() => {
+										params.onClose();
+									}}
+								>
+									<div className="vk-block-editor-url-input-wrapper">
+										<div className="block-editor-url-input">
 											<URLInput
+												__nextHasNoMarginBottom
 												value={url}
 												onChange={(value) => {
 													setAttributes({
@@ -223,28 +254,26 @@ export default function Edit(props) {
 													});
 												}}
 											/>
-											<CheckboxControl
-												label={__(
-													'Open link new tab.',
-													'vk-blocks'
-												)}
-												checked={urlOpenType}
-												onChange={(checked) =>
-													setAttributes({
-														urlOpenType: checked,
-													})
-												}
-											/>
-											<div className="block-editor-link-control__search-actions">
-												<Button
-													icon={keyboardReturn}
-													label={__('Submit')}
-													type="submit"
-												/>
-											</div>
 										</div>
-									</form>
-								</div>
+										<Button
+											icon={keyboardReturn}
+											label={__('Submit')}
+											type="submit"
+										/>
+									</div>
+									<CheckboxControl
+										label={__(
+											'Open link new tab.',
+											'vk-blocks-pro'
+										)}
+										checked={urlOpenType}
+										onChange={(checked) =>
+											setAttributes({
+												urlOpenType: checked,
+											})
+										}
+									/>
+								</form>
 							);
 						}}
 					/>
@@ -252,7 +281,7 @@ export default function Edit(props) {
 			</BlockControls>
 			<InspectorControls>
 				<PanelBody
-					title={__('Edit mode', 'vk-blocks')}
+					title={__('Edit mode', 'vk-blocks-pro')}
 					initialOpen={true}
 				>
 					<ButtonGroup className={`mb-3`}>
@@ -262,7 +291,7 @@ export default function Edit(props) {
 							isSecondary={editMode !== 'all'}
 							onClick={() => setEditMode('all')}
 						>
-							{__('All columns', 'vk-blocks')}
+							{__('All columns', 'vk-blocks-pro')}
 						</Button>
 						<Button
 							isSmall
@@ -270,17 +299,17 @@ export default function Edit(props) {
 							isSecondary={editMode !== 'self'}
 							onClick={() => setEditMode('self')}
 						>
-							{__('This column only', 'vk-blocks')}
+							{__('This column only', 'vk-blocks-pro')}
 						</Button>
 					</ButtonGroup>
 					<hr />
 					<label htmlFor="vk_hiddenControl-hiddenEditLock">
-						{__('Edit Lock', 'vk-blocks')}
+						{__('Edit Lock', 'vk-blocks-pro')}
 					</label>
 					<ToggleControl
 						label={__(
 							'Lock edits this block from the parent and other Grid Column Item block',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 						checked={editLock}
 						onChange={(checked) =>
@@ -289,16 +318,19 @@ export default function Edit(props) {
 					/>
 				</PanelBody>
 				<PanelBody
-					title={__('Column Setting', 'vk-blocks')}
+					title={__('Column Setting', 'vk-blocks-pro')}
 					initialOpen={true}
 				>
-					<BaseControl label={__('Link URL:', 'vk-blocks')} id={`	`}>
+					<BaseControl
+						label={__('Link URL:', 'vk-blocks-pro')}
+						id={`	`}
+					>
 						<TextControl
 							value={url}
 							onChange={(value) => setAttributes({ url: value })}
 						/>
 						<CheckboxControl
-							label={__('Open link new tab.', 'vk-blocks')}
+							label={__('Open link new tab.', 'vk-blocks-pro')}
 							checked={urlOpenType}
 							onChange={(checked) =>
 								setAttributes({ urlOpenType: checked })
@@ -307,11 +339,11 @@ export default function Edit(props) {
 						<p className={alertClass}>
 							{__(
 								'If you set a link URL, do not place the link element (text or button) in the Grid Column Card Item. It may not be displayed correctly.',
-								'vk-blocks'
+								'vk-blocks-pro'
 							)}
 							{__(
 								'Make sure that no link is specified for the image block, etc.',
-								'vk-blocks'
+								'vk-blocks-pro'
 							)}
 						</p>
 					</BaseControl>
@@ -323,12 +355,13 @@ export default function Edit(props) {
 			</InspectorControls>
 			<div {...blockProps}>
 				<div
-					className={`vk_gridcolcard_item_container`}
+					className={innerClasses}
 					style={{
 						paddingTop: containerSpace.top,
 						paddingBottom: containerSpace.bottom,
 						paddingLeft: containerSpace.left,
 						paddingRight: containerSpace.right,
+						color: textColorCustom,
 					}}
 				>
 					<InnerBlocks

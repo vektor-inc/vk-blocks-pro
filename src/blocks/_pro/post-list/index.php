@@ -6,6 +6,70 @@
  */
 
 /**
+ * Post List Get Block Data
+ *
+ * @return array
+ */
+function vk_blocks_post_list_get_block_data() {
+
+	// Create $post_type_option ///////////////////////////
+	$the_post_types = get_post_types(
+		// Only public post types.
+		array(
+			'public' => true,
+		),
+		'objects',
+		'and'
+	);
+
+	$post_type_option = array();
+	foreach ( $the_post_types as $post_type ) {
+		$post_type_option[] = array(
+			'label' => $post_type->label,
+			'slug'  => $post_type->name,
+		);
+	}
+
+	// Set up taxonomies ///////////////////////////
+	$the_taxonomies = get_taxonomies(
+		// Only public taxonomies.
+		array(
+			'public' => true,
+		),
+		'objects',
+		'and'
+	);
+
+	$term_by_taxonomy_name = array();
+	foreach ( $the_taxonomies as $the_taxonomy ) {
+		$terms                                        = array_values(
+			get_terms(
+				array(
+					'taxonomy'   => $the_taxonomy->name,
+					'hide_empty' => false,
+				)
+			)
+		);
+		$term_by_taxonomy_name[ $the_taxonomy->name ] = array_map(
+			function ( $term ) {
+				return array(
+					'term_id' => $term->term_id,
+					'name'    => $term->name,
+				);
+			},
+			$terms
+		);
+	}
+
+	$data = array(
+		'post_type_option'      => $post_type_option,
+		'term_by_taxonomy_name' => $term_by_taxonomy_name,
+	);
+
+	return $data;
+}
+
+/**
  * Post list render callback
  *
  * @param array $attributes Block attributes.
@@ -125,6 +189,10 @@ function vk_blocks_register_block_post_list() {
 						'type'    => 'string',
 						'default' => '[]',
 					),
+					'taxQueryRelation'           => array(
+						'type'    => 'string',
+						'default' => 'OR',
+					),
 					'isCheckedTerms'             => array(
 						'type'    => 'string',
 						'default' => '[]',
@@ -145,6 +213,10 @@ function vk_blocks_register_block_post_list() {
 						'type'    => 'number',
 						'default' => 0,
 					),
+					'pagedlock'                  => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
 					'selfIgnore'                 => array(
 						'type'    => 'boolean',
 						'default' => false,
@@ -159,42 +231,26 @@ function vk_blocks_register_block_post_list() {
 			'render_callback' => 'vk_blocks_post_list_render_callback',
 		)
 	);
+}
+add_action( 'init', 'vk_blocks_register_block_post_list', 99 );
 
-	$the_taxonomies = get_taxonomies(
-		array(),
-		'objects',
-		'and'
-	);
+/**
+ * 投稿タイプとタクソノミーを JS に渡す
+ */
+function vk_blocks_post_list_set_data() {
 
-	$term_by_taxonomy_name = array();
-	foreach ( $the_taxonomies as $the_taxonomy ) {
-		$terms                                        = get_terms( $the_taxonomy->name, array( 'hide_empty' => false ) );
-		$term_by_taxonomy_name[ $the_taxonomy->name ] = array_map(
-			function( $term ) {
-				return array(
-					'term_id' => $term->term_id,
-					'name'    => $term->name,
-				);
-			},
-			$terms
-		);
-	}
+	// データを取得
+	$block_data = vk_blocks_post_list_get_block_data();
 
+	// PHPで作った投稿タイプとタクソノミー情報をjsに渡す ///////////////////////////
+	// Pass post type and taxonomy information created in PHP to js /////////
 	wp_localize_script(
 		'vk-blocks-build-js',
 		'vk_block_post_type_params',
 		array(
-			'term_by_taxonomy_name' => $term_by_taxonomy_name,
-		)
-	);
-
-	wp_localize_script(
-		'vk-blocks/post-list',
-		'vk_block_post_type_params',
-		array(
-			'term_by_taxonomy_name' => $term_by_taxonomy_name,
+			'post_type_option'      => $block_data['post_type_option'],
+			'term_by_taxonomy_name' => $block_data['term_by_taxonomy_name'],
 		)
 	);
 }
-add_action( 'init', 'vk_blocks_register_block_post_list', 99 );
-
+add_action( 'enqueue_block_editor_assets', 'vk_blocks_post_list_set_data' );

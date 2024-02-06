@@ -4,6 +4,8 @@ import {
 	BaseControl,
 	SelectControl,
 	TextControl,
+	ButtonGroup,
+	Button,
 } from '@wordpress/components';
 import {
 	InnerBlocks,
@@ -59,17 +61,17 @@ export default function TimelineItemEdit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('label', 'vk-blocks')}>
+				<PanelBody title={__('label', 'vk-blocks-pro')}>
 					<TextControl
 						value={label}
 						onChange={(value) => setAttributes({ label: value })}
-						placeholder={__('Ex,6:00AM', 'vk-blocks')}
+						placeholder={__('Ex,6:00AM', 'vk-blocks-pro')}
 					/>
 				</PanelBody>
-				<PanelBody title={__('Color', 'vk-blocks')}>
+				<PanelBody title={__('Color', 'vk-blocks-pro')}>
 					<AdvancedColorPalette schema={'color'} {...props} />
 				</PanelBody>
-				<PanelBody title={__('Style', 'vk-blocks')}>
+				<PanelBody title={__('Style', 'vk-blocks-pro')}>
 					<BaseControl id="style-dot" label="Dot Style">
 						<SelectControl
 							value={style}
@@ -79,38 +81,46 @@ export default function TimelineItemEdit(props) {
 							options={[
 								{
 									value: 'outlined',
-									label: __('Outlined', 'vk-blocks'),
+									label: __('Outlined', 'vk-blocks-pro'),
 								},
 								{
 									value: 'solid',
-									label: __('Solid', 'vk-blocks'),
+									label: __('Solid', 'vk-blocks-pro'),
 								},
 							]}
 						/>
 					</BaseControl>
 					<BaseControl id="style-line" label="Line Style">
-						<SelectControl
-							value={styleLine}
-							onChange={(value) =>
-								setAttributes({ styleLine: value })
-							}
-							options={[
-								{
-									value: 'default',
-									label: __('Default', 'vk-blocks'),
-								},
-								{
-									value: 'none',
-									label: __('None', 'vk-blocks'),
-								},
-							]}
-						/>
+						<ButtonGroup className={`mb-3`}>
+							<Button
+								isSmall
+								isPrimary={styleLine === 'default'}
+								isSecondary={styleLine !== 'default'}
+								onClick={() =>
+									setAttributes({ styleLine: 'default' })
+								}
+							>
+								{__('Default', 'vk-blocks-pro')}
+							</Button>
+							<Button
+								isSmall
+								isPrimary={styleLine === 'none'}
+								isSecondary={styleLine !== 'none'}
+								onClick={() =>
+									setAttributes({ styleLine: 'none' })
+								}
+							>
+								{__('None', 'vk-blocks-pro')}
+							</Button>
+						</ButtonGroup>
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
-				<div className={'vk_timeline_item_caption'}>{label}</div>
-				<div className={'vk_timeline_item_contentnpm'}>
+				{label !== undefined && label !== '' && (
+					<div className={'vk_timeline_item_caption'}>{label}</div>
+				)}
+				<div className={'vk_timeline_item_content'}>
 					<InnerBlocks template={TEMPLATE} />
 				</div>
 				<div

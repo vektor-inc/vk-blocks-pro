@@ -82,6 +82,7 @@ export default function Edit(props) {
 						borderColor: attributes.borderColor,
 						textColor: attributes.textColor,
 						backgroundColor: attributes.backgroundColor,
+						backgroundGradient: attributes.backgroundGradient,
 					});
 				}
 			});
@@ -113,17 +114,17 @@ export default function Edit(props) {
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={__('Column Width Setting', 'vk-blocks')}
+					title={__('Column Width Setting', 'vk-blocks-pro')}
 					initialOpen={true}
 				>
 					<p>
 						{__(
 							'If you specify the minimum column size on a tablet or PC with %, it will be easier to align the number of columns in the upper and lower rows according to the screen size.',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 					</p>
 					<UnitControl
-						label={__('Column min width (Mobile)', 'vk-blocks')}
+						label={__('Column min width (Mobile)', 'vk-blocks-pro')}
 						value={colWidthMin}
 						onChange={(value) =>
 							setAttributes({ colWidthMin: value })
@@ -133,7 +134,7 @@ export default function Edit(props) {
 					<UnitControl
 						label={__(
 							'Column min width (Tablet / Optional)',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 						value={colWidthMinTablet}
 						onChange={(value) =>
@@ -144,7 +145,7 @@ export default function Edit(props) {
 					<UnitControl
 						label={__(
 							'Column min width (PC / Optional)',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 						value={colWidthMinPC}
 						onChange={(value) =>
@@ -153,11 +154,11 @@ export default function Edit(props) {
 					/>
 				</PanelBody>
 				<PanelBody
-					title={__('Column Gap Setting', 'vk-blocks')}
+					title={__('Column Gap Setting', 'vk-blocks-pro')}
 					initialOpen={true}
 				>
 					<UnitControl
-						label={__('Column gap size', 'vk-blocks')}
+						label={__('Column gap size', 'vk-blocks-pro')}
 						value={gap}
 						onChange={(value) => setAttributes({ gap: value })}
 					/>
@@ -165,14 +166,14 @@ export default function Edit(props) {
 					<UnitControl
 						label={__(
 							'Column row-gap size (optional)',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 						value={gapRow}
 						onChange={(value) => setAttributes({ gapRow: value })}
 					/>
 				</PanelBody>
 				<PanelBody
-					title={__('Specify all columns at once', 'vk-blocks')}
+					title={__('Specify all columns at once', 'vk-blocks-pro')}
 					initialOpen={true}
 				>
 					<CommonItemControl {...props} />

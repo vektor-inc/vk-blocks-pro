@@ -7,38 +7,47 @@ import { BlockControls } from '@wordpress/block-editor';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { ToolbarDropdownMenu } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
-// import { getBlockTypes } from '@wordpress/blocks';
 
 /**
  * External dependencies
  */
 import classnames from 'classnames';
-import { find } from 'lodash';
 
 /**
  * Internal dependencies
  */
 import { marginIcon, marginTopIcon, marginBottomIcon } from './icons';
 import { isExcludesBlocks } from '@vkblocks/utils/is-excludes-blocks';
+import { emptyStringToUndefined } from '@vkblocks/utils/empty-string-to-undefined';
 
 const DEFAULT_MARGIN_TOP_CONTROLS = [
 	{
-		title: __('Top lg', 'vk-blocks'),
+		title: __('Top XL', 'vk-blocks-pro'),
+		marginClass: 'vk_block-margin-xl--margin-top',
+		flag: 'top',
+	},
+	{
+		title: __('Top L', 'vk-blocks-pro'),
 		marginClass: 'vk_block-margin-lg--margin-top',
 		flag: 'top',
 	},
 	{
-		title: __('Top md', 'vk-blocks'),
+		title: __('Top M', 'vk-blocks-pro'),
 		marginClass: 'vk_block-margin-md--margin-top',
 		flag: 'top',
 	},
 	{
-		title: __('Top sm', 'vk-blocks'),
+		title: __('Top S', 'vk-blocks-pro'),
 		marginClass: 'vk_block-margin-sm--margin-top',
 		flag: 'top',
 	},
 	{
-		title: __('Top 0', 'vk-blocks'),
+		title: __('Top XS', 'vk-blocks-pro'),
+		marginClass: 'vk_block-margin-xs--margin-top',
+		flag: 'top',
+	},
+	{
+		title: __('Top 0', 'vk-blocks-pro'),
 		marginClass: 'vk_block-margin-0--margin-top',
 		flag: 'top',
 	},
@@ -46,23 +55,33 @@ const DEFAULT_MARGIN_TOP_CONTROLS = [
 
 const DEFAULT_MARGIN_BOTTOM_CONTROLS = [
 	{
-		title: __('Bottom 0', 'vk-blocks'),
+		title: __('Bottom 0', 'vk-blocks-pro'),
 		marginClass: 'vk_block-margin-0--margin-bottom',
 		flag: 'bottom',
 	},
 	{
-		title: __('Bottom sm', 'vk-blocks'),
+		title: __('Bottom XS', 'vk-blocks-pro'),
+		marginClass: 'vk_block-margin-xs--margin-bottom',
+		flag: 'bottom',
+	},
+	{
+		title: __('Bottom S', 'vk-blocks-pro'),
 		marginClass: 'vk_block-margin-sm--margin-bottom',
 		flag: 'bottom',
 	},
 	{
-		title: __('Bottom md', 'vk-blocks'),
+		title: __('Bottom M', 'vk-blocks-pro'),
 		marginClass: 'vk_block-margin-md--margin-bottom',
 		flag: 'bottom',
 	},
 	{
-		title: __('Bottom lg', 'vk-blocks'),
+		title: __('Bottom L', 'vk-blocks-pro'),
 		marginClass: 'vk_block-margin-lg--margin-bottom',
+		flag: 'bottom',
+	},
+	{
+		title: __('Bottom XL', 'vk-blocks-pro'),
+		marginClass: 'vk_block-margin-xl--margin-bottom',
 		flag: 'bottom',
 	},
 ];
@@ -102,31 +121,6 @@ addFilter(
 	'blocks.registerBlockType',
 	'vk-blocks/margin-extension',
 	(settings) => {
-		/**
-		 * e2eテストコード用 test/e2e-tests/specs/margin-extension.test.js
-		 *
-		 * ブラウザーコンソールで除外しないブロック一覧が表示されるので右クリックしてobjectのコピーして確認する
-		 */
-		// const blockArr = getBlockTypes();
-		// console.log(blockArr);
-		// const testBlockList = [];
-		// const testHasParentBlockList = [];
-		// for (let i = 0; i < blockArr.length; i++) {
-		// 	if (isAddMargin(blockArr[i].name)) {
-		// 		if (blockArr[i].parent) {
-		// 			testHasParentBlockList.push([
-		// 				blockArr[i].parent[0],
-		// 				blockArr[i].title,
-		// 				blockArr[i].name,
-		// 			]);
-		// 		} else {
-		// 			testBlockList.push([blockArr[i].title, blockArr[i].title, blockArr[i].name,]);
-		// 		}
-		// 	}
-		// }
-		// console.log(testBlockList);
-		// console.log(testHasParentBlockList);
-
 		// deprecated用 dynamic blockは自動的に追加CSSクラスに追加されないのでattributeを残す
 		const mayUsedDynamicBlock = MAY_USED_DYNAMIC_BLOCK;
 		if (mayUsedDynamicBlock.includes(settings.name)) {
@@ -162,9 +156,10 @@ addFilter(
 			const marginControls = DEFAULT_MARGIN_CONTROLS;
 			// attributeの変数名がわかりにくいので別の変数にする
 			const nowClass = className || '';
-			const marginTopRegex = /vk_block-margin-(0|sm|md|lg)--margin-top/;
+			const marginTopRegex =
+				/vk_block-margin-(0|xs|sm|md|lg|xl)--margin-top/;
 			const marginBottomRegex =
-				/vk_block-margin-(0|sm|md|lg)--margin-bottom/;
+				/vk_block-margin-(0|xs|sm|md|lg|xl)--margin-bottom/;
 
 			// deprecated
 			/**
@@ -209,12 +204,10 @@ addFilter(
 				activeMarginBottomClassArray.slice(-1)[0];
 
 			// アクティブマージンのObjectを作る
-			const activeMarginTop = find(
-				marginTopControls,
+			const activeMarginTop = marginTopControls.find(
 				(control) => control.marginClass === activeMarginTopClass
 			);
-			const activeMarginBottom = find(
-				marginBottomControls,
+			const activeMarginBottom = marginBottomControls.find(
 				(control) => control.marginClass === activeMarginBottomClass
 			);
 
@@ -277,7 +270,7 @@ addFilter(
 									) : null}
 								</>
 							}
-							label={__('Margin the block', 'vk-blocks')}
+							label={__('Margin the block', 'vk-blocks-pro')}
 							controls={marginControls.map((control) => {
 								const { marginClass, flag } = control;
 								const isActive =
@@ -300,7 +293,9 @@ addFilter(
 												: activeMarginBottomClass
 										);
 										setAttributes({
-											className: newClasses.join(' '),
+											className: emptyStringToUndefined(
+												newClasses.join(' ')
+											),
 										});
 									},
 								};

@@ -1,5 +1,4 @@
 import { ColumnLayout } from '@vkblocks/components/column-layout';
-import AdvancedUnitControl from '@vkblocks/components/advanced-unit-control';
 import { __ } from '@wordpress/i18n';
 import {
 	InspectorControls,
@@ -7,7 +6,7 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 import { select, dispatch } from '@wordpress/data';
-import { PanelBody, RangeControl } from '@wordpress/components';
+import { PanelBody, RangeControl, SelectControl } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 
 export default function GridColumnEdit(props) {
@@ -45,22 +44,23 @@ export default function GridColumnEdit(props) {
 		className: `vk_gridColumn`,
 	});
 	const marginBottom = attributes.marginBottom;
+	const unit = attributes.unit;
 
 	return (
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={__('Layout Columns', 'vk-blocks')}
+					title={__('Layout Columns', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<ColumnLayout {...props} />
 				</PanelBody>
 				<PanelBody
-					title={__('Column Margin Bottom Setting', 'vk-blocks')}
+					title={__('Column Margin Bottom Setting', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<RangeControl
-						label={__('Margin Bottom', 'vk-blocks')}
+						label={__('Margin Bottom', 'vk-blocks-pro')}
 						value={marginBottom}
 						onChange={(value) => {
 							props.setAttributes({ marginBottom: value });
@@ -70,10 +70,40 @@ export default function GridColumnEdit(props) {
 						}}
 						min={0}
 						max={100}
+						step={'px' === unit ? 1 : 0.1}
 						allowReset={true}
 						resetFallbackValue={null}
 					/>
-					<AdvancedUnitControl {...props} />
+					<SelectControl
+						label={__('Unit', 'vk-blocks-pro')}
+						value={unit}
+						onChange={(value) => {
+							props.setAttributes({ unit: value });
+							if ('px' === value) {
+								props.setAttributes({
+									marginBottom: parseInt(marginBottom),
+								});
+							}
+						}}
+						options={[
+							{
+								value: 'px',
+								label: __('px', 'vk-blocks-pro'),
+							},
+							{
+								value: 'em',
+								label: __('em', 'vk-blocks-pro'),
+							},
+							{
+								value: 'rem',
+								label: __('rem', 'vk-blocks-pro'),
+							},
+							{
+								value: 'vw',
+								label: __('vw', 'vk-blocks-pro'),
+							},
+						]}
+					/>
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>

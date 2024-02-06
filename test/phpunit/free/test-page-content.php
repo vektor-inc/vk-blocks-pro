@@ -8,7 +8,7 @@
 /**
  * Page Content block test case.
  */
-class PageContentBlockTest extends WP_UnitTestCase {
+class PageContentBlockTest extends VK_UnitTestCase {
 
 	/**
 	 * PageContentブロックで表示する固定ページ
@@ -20,7 +20,7 @@ class PageContentBlockTest extends WP_UnitTestCase {
 	/**
 	 * 各テストケースの実行直前に呼ばれる
 	 */
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 
 		$page          = array(
@@ -35,7 +35,7 @@ class PageContentBlockTest extends WP_UnitTestCase {
 	/**
 	 * Tear down each test method.
 	 */
-	public function tearDown() {
+	public function tearDown(): void {
 		wp_delete_post( $this->page_id, true );
 		$this->page_id = 0;
 	}
@@ -45,35 +45,19 @@ class PageContentBlockTest extends WP_UnitTestCase {
 	 */
 	public function test_page_content() {
 		$attributes = array(
+			'name'       => 'vk-blocks/page-content',
 			'className'  => '',
 			'TargetPost' => $this->page_id,
 		);
 
 		$this->set_current_user( 'administrator' );
 
+		WP_Block_Supports::init();
+		WP_Block_Supports::$block_to_render =  array('blockName'=> $attributes['name'], 'attrs' => $attributes );
+
 		$actual   = vk_blocks_page_content_render_callback( $attributes );
-		$expected = vk_blocks_unescape_html( '<div class=\"vk_pageContent vk_pageContent-id-' . intval( $this->page_id ) . ' \"><p>This is my page.<\/p><\/div><a href=\"' . admin_url() . 'post.php?post=' . intval( $this->page_id ) . '&#038;action=edit\" class=\"vk_pageContent_editBtn btn btn-outline-primary btn-sm veu_adminEdit\" target=\"_blank\">' . __( 'Edit this area', 'vk-blocks' ) . '<\/a>' );
+		$expected = vk_blocks_unescape_html( '<div class=\"vk_pageContent vk_pageContent-id-' . intval( $this->page_id ) . ' wp-block-vk-blocks-page-content\"><p>This is my page.<\/p><\/div><a href=\"' . admin_url() . 'post.php?post=' . intval( $this->page_id ) . '&#038;action=edit\" class=\"vk_pageContent_editBtn btn btn-outline-primary btn-sm veu_adminEdit\" target=\"_blank\">' . __( 'Edit this area', 'vk-blocks-pro' ) . '<\/a>' );
 
 		$this->assertEquals( $expected, $actual );
 	}
-
-	/**
-	 * Add user and set the user as current user.
-	 *
-	 * @param  string $role administrator, editor, author, contributor ...
-	 * @return void
-	 */
-	public function set_current_user( $role ) {
-		$user = $this->factory()->user->create_and_get(
-			array(
-				'role' => $role,
-			)
-		);
-
-		/*
-			* Set $user as current user
-			*/
-		wp_set_current_user( $user->ID, $user->user_login );
-	}
-
 };

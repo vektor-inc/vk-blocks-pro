@@ -8,13 +8,14 @@ import {
 	registerBlockType,
 	unstable__bootstrapServerSideBlockDefinitions, // eslint-disable-line camelcase
 } from '@wordpress/blocks';
-import compareVersions from 'compare-versions';
+import { compareVersions } from 'compare-versions';
 import vkblocksPro from './bundle-pro';
 
 /**
  * Blocks
  */
 import * as alert from './alert';
+import * as ancestorPageList from './ancestor-page-list';
 import * as balloon from './balloon';
 import * as borderBox from './border-box';
 import * as button from './button';
@@ -29,17 +30,22 @@ import * as iconOuter from './icon-outer';
 import * as pageContent from './page-content';
 import * as prBlocks from './pr-blocks';
 import * as prContent from './pr-content';
+import * as slider from './slider';
+import * as sliderItem from './slider-item';
 import * as spacer from './spacer';
 import * as staff from './staff';
 
 /**
+ * Store
+ */
+import '@vkblocks/utils/store';
+import '@vkblocks/utils/store/termColor';
+
+/**
  * Extensions
  */
-import '@vkblocks/extensions/core/heading/style';
 import '@vkblocks/extensions/core/group/style';
 import '@vkblocks/extensions/core/list/style';
-import '@vkblocks/extensions/core/image/style';
-import '@vkblocks/extensions/core/table/style';
 import '@vkblocks/extensions/common/hidden-extension';
 import '@vkblocks/extensions/common/highlighter';
 import '@vkblocks/extensions/common/inline-font-size';
@@ -63,8 +69,11 @@ const vkBlocks = [
 	pageContent,
 	prBlocks,
 	prContent,
+	slider,
+	sliderItem,
 	spacer,
 	staff,
+	ancestorPageList,
 ];
 
 /**

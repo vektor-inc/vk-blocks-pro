@@ -49,13 +49,13 @@ export const PrContentMediaUploadEdit = ({
 	};
 	const getImagePlaceHolderDeprecated = (image, borderSettings) => {
 		if (!image) {
-			return __('Select image', 'vk-blocks');
+			return __('Select image', 'vk-blocks-pro');
 		}
 		return (
 			<img
 				className={'vk_prContent_colImg_image'}
 				src={image}
-				alt={__('Upload image', 'vk-blocks')}
+				alt={__('Upload image', 'vk-blocks-pro')}
 				style={{ border: borderSettings }}
 			/>
 		);
@@ -65,7 +65,7 @@ export const PrContentMediaUploadEdit = ({
 		image = JSON.parse(fixBrokenUnicode(image));
 
 		if (image === null || typeof image.sizes === 'undefined') {
-			return __('Select image', 'vk-blocks');
+			return __('Select image', 'vk-blocks-pro');
 		}
 		return (
 			<img
@@ -81,7 +81,7 @@ export const PrContentMediaUploadEdit = ({
 	if (isDeprecatedImage(Image)) {
 		prContentDatas.setImage = setImageURL;
 		prContentDatas.value = Image;
-		prContentDatas.alt = __('Upload image', 'vk-blocks');
+		prContentDatas.alt = __('Upload image', 'vk-blocks-pro');
 		prContentDatas.getImagePlaceHolder = getImagePlaceHolderDeprecated;
 	} else {
 		prContentDatas.setImage = setImageJSON;
@@ -117,7 +117,7 @@ export const PrContentMediaUploadEdit = ({
 
 export const PrContentMediaUpload = ({ Image, ImageBorderColor }) => {
 	if (!Image) {
-		return __('Select Image', 'vk-blocks');
+		return __('Select Image', 'vk-blocks-pro');
 	}
 
 	const imageBorderSettings = getImageBorder(ImageBorderColor);
@@ -127,7 +127,7 @@ export const PrContentMediaUpload = ({ Image, ImageBorderColor }) => {
 			<img
 				className={'vk_prContent_colImg_image'}
 				src={Image}
-				alt={__('Upload image', 'vk-blocks')}
+				alt={__('Upload image', 'vk-blocks-pro')}
 				style={{ border: imageBorderSettings }}
 			/>
 		);

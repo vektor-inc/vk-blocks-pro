@@ -18,11 +18,16 @@
 			&.vk_slider_item-paddingLR-zero{
 				.vk_slider_item_container{
 						max-width:100%;
-					.wp-block{
+					.wp-block:where(:not(.is-layout-constrained)){
 						max-width:100%;
 					}
 				}
 			}
 		}
 	}
+}
+// インサーターが左右左右中央にならないので補正
+.swiper-container>.swiper-wrapper>div>.block-editor-inner-blocks>.block-editor-block-list__layout>.block-list-appender {
+	margin-left:auto;
+	margin-right:auto;
 }

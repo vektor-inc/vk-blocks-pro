@@ -6,6 +6,7 @@ export default function save({ attributes }) {
 		balloonName,
 		balloonType,
 		balloonBorder,
+		balloonFullWidth,
 		balloonImageBorder,
 		balloonBorderColor,
 		balloonBgColor,
@@ -248,6 +249,11 @@ export default function save({ attributes }) {
 		if (!isHexColor(balloonBgColor)) {
 			contentBackgroundClass += ` has-${balloonBgColor}-background-color`;
 		}
+	}
+
+	// 吹き出しの幅 Class
+	if (!!balloonFullWidth) {
+		contentBorderClass += ` vk_balloon_content_fullwidth`;
 	}
 
 	const blockProps = useBlockProps.save({

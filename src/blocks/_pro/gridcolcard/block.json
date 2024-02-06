@@ -2,7 +2,7 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/gridcolcard",
 	"title": "Grid Column Card",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"category": "vk-blocks-cat-layout",
 	"description": "This block can flexible column layout",
 	"supports": {
@@ -38,6 +38,9 @@
 			"type": "string"
 		},
 		"backgroundColor": {
+			"type": "string"
+		},
+		"backgroundGradient": {
 			"type": "string"
 		},
 		"containerSpace": {
@@ -81,7 +84,7 @@
 			"type": "string"
 		},
 		"old_1_31_0": {
-			"type": "string",
+			"type": "boolean",
 			"default": true
 		}
 	}

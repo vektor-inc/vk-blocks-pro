@@ -20,7 +20,7 @@ import {
 	RangeControl,
 	ToggleControl,
 	ToolbarGroup,
-	ToolbarButton,
+	ToolbarDropdownMenu,
 	Dashicon,
 } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
@@ -518,34 +518,37 @@ export default function SliderEdit(props) {
 					controls={['full']}
 				/>
 				<ToolbarGroup>
-					<ToolbarButton
+					<ToolbarDropdownMenu
 						icon={
 							editorMode === 'default' ? (
-								<>
-									<Dashicon icon="edit" />
-									<Dashicon icon="arrow-right-alt" />
-									<Dashicon icon="visibility" />
-								</>
+								<Dashicon icon="edit" />
 							) : (
-								<>
-									<Dashicon icon="visibility" />
-									<Dashicon icon="arrow-right-alt" />
-									<Dashicon icon="edit" />
-								</>
+								<Dashicon icon="visibility" />
 							)
 						}
-						label={
-							editorMode === 'default'
-								? __('Edit to Preview', 'vk-blocks-pro')
-								: __('Preview to Edit', 'vk-blocks-pro')
-						}
-						onClick={() => {
-							if (editorMode === 'default') {
-								setAttributes({ editorMode: 'slide' });
-							} else {
-								setAttributes({ editorMode: 'default' });
-							}
-						}}
+						label={__('Change Slide Editor Mode', 'vk-blocks-pro')}
+						controls={[
+							{
+								title: __(
+									'Edit ( Stacked Layout ) Mode',
+									'vk-blocks-pro'
+								),
+								icon: <Dashicon icon="edit" />,
+								isActive: editorMode === 'default',
+								onClick: () =>
+									setAttributes({ editorMode: 'default' }),
+							},
+							{
+								title: __(
+									'Preview ( Slide ) Mode',
+									'vk-blocks-pro'
+								),
+								icon: <Dashicon icon="visibility" />,
+								isActive: editorMode === 'slide',
+								onClick: () =>
+									setAttributes({ editorMode: 'slide' }),
+							},
+						]}
 					/>
 				</ToolbarGroup>
 			</BlockControls>
@@ -570,7 +573,7 @@ export default function SliderEdit(props) {
 									setAttributes({ editorMode: 'default' })
 								}
 							>
-								{__('Edit (Stacked Layout)', 'vk-blocks-pro')}
+								{__('Edit ( Stacked Layout )', 'vk-blocks-pro')}
 							</Button>
 							<Button
 								isSmall={true}
@@ -583,7 +586,7 @@ export default function SliderEdit(props) {
 									setAttributes({ editorMode: 'slide' })
 								}
 							>
-								{__('Preview(Slide)', 'vk-blocks-pro')}
+								{__('Preview ( Slide )', 'vk-blocks-pro')}
 							</Button>
 						</ButtonGroup>
 					</BaseControl>

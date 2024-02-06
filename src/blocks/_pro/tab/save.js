@@ -40,7 +40,10 @@ export default function save(props) {
 
 	let tabList = '';
 	let tabListInner = '';
-	if (Object.keys(tabOption).length !== 0 && tabOption.listArray.length !== 0) {
+	if (
+		Object.keys(tabOption).length !== 0 &&
+		tabOption.listArray.length !== 0
+	) {
 		tabListInner = tabOption.listArray.map((option, index) => {
 			let activeLabelClass = '';
 			if (firstActive === index) {

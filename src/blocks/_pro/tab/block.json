@@ -25,7 +25,12 @@
 		},
 		"tabBodyPaddingAll": {
 			"type": "object",
-			"default": {"top":null,"right":null,"bottom":null,"left":null}
+			"default": {
+				"top": null,
+				"right": null,
+				"bottom": null,
+				"left": null
+			}
 		},
 		"firstActive": {
 			"type": "number",

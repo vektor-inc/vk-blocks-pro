@@ -14,7 +14,12 @@
 		},
 		"tabBodyPadding": {
 			"type": "object",
-			"default": {"top":null,"right":null,"bottom":null,"left":null}
+			"default": {
+				"top": null,
+				"right": null,
+				"bottom": null,
+				"left": null
+			}
 		},
 		"tabColor": {
 			"type": "string",

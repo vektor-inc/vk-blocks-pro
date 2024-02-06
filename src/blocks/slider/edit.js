@@ -19,6 +19,8 @@ import {
 	SelectControl,
 	RangeControl,
 	ToggleControl,
+	ToolbarButton,
+	Dashicon,
 } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
@@ -513,6 +515,27 @@ export default function SliderEdit(props) {
 						setAttributes({ width: nextWidth })
 					}
 					controls={['full']}
+				/>
+				<ToolbarButton
+					icon={
+						editorMode === 'default' ? (
+							<Dashicon icon="visibility" />
+						) : (
+							<Dashicon icon="edit" />
+						)
+					}
+					label={
+						editorMode === 'default'
+							? __('Preview', 'vk-blocks-pro')
+							: __('Edit', 'vk-blocks-pro')
+					}
+					onClick={() => {
+						if (editorMode === 'default') {
+							setAttributes({ editorMode: 'slide' });
+						} else {
+							setAttributes({ editorMode: 'default' });
+						}
+					}}
 				/>
 			</BlockControls>
 			<InspectorControls>

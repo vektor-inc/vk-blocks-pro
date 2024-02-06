@@ -102,9 +102,7 @@ export default function save(props) {
 	return (
 		<div {...blockProps}>
 			{tabList}
-			<div className="vk_tab_bodys">
-				<InnerBlocks.Content />
-			</div>
+			<div className="vk_tab_bodys"><InnerBlocks.Content /></div>
 		</div>
 	);
 }

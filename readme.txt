@@ -103,11 +103,10 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Slider ] Add Slider Mode on Editor.
+[ Add Function ][ Post List (Pro) ] Add paged lock setting.
 [ Specification Change ] Change the required PHP version to 7.4 or higher.
 [ Bug Fix ][ Image ]Fixed a bug in the photo frame with activated zoom in the image block styled 'photoFrame-tilt'
-
-[ Specification Change ][ Slider ] Add Slider Mode on Editor.
-[ Add Function ][ Post List (Pro) ] Add paged lock setting
 [ Bug Fix ] Update CSS Optimizer 0.2.2
 
 = 1.68.0 =

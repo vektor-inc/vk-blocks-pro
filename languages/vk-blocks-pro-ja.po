@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2024-02-03T15:20:03+00:00\n"
-"PO-Revision-Date: 2024-02-04 00:22+0900\n"
+"POT-Creation-Date: 2024-02-07T10:48:15+00:00\n"
+"PO-Revision-Date: 2024-02-07 19:50+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -526,19 +526,19 @@ msgid "XL"
 msgstr "XL"
 
 #: src/admin/margin.js:43 src/blocks/_pro/outer/edit.js:883
-#: src/blocks/button/edit.js:526 src/blocks/slider/edit.js:595
+#: src/blocks/button/edit.js:526 src/blocks/slider/edit.js:632
 #: src/components/advanced-viewport-control/index.js:25
 msgid "PC"
 msgstr "PC"
 
 #: src/admin/margin.js:47 src/blocks/_pro/outer/edit.js:867
-#: src/blocks/button/edit.js:461 src/blocks/slider/edit.js:616
+#: src/blocks/button/edit.js:461 src/blocks/slider/edit.js:653
 #: src/components/advanced-viewport-control/index.js:32
 msgid "Tablet"
 msgstr "タブレット"
 
 #: src/admin/margin.js:51 src/blocks/_pro/outer/edit.js:851
-#: src/blocks/button/edit.js:396 src/blocks/slider/edit.js:637
+#: src/blocks/button/edit.js:396 src/blocks/slider/edit.js:674
 #: src/components/advanced-viewport-control/index.js:41
 msgid "Mobile"
 msgstr "モバイル"
@@ -632,7 +632,7 @@ msgstr "短い"
 
 #: src/blocks/_pro/animation/edit.js:130 src/blocks/balloon/edit.js:482
 #: src/blocks/button/edit.js:319 src/blocks/faq/index.js:26
-#: src/blocks/faq2/index.js:21 src/blocks/slider/edit.js:568
+#: src/blocks/faq2/index.js:21 src/blocks/slider/edit.js:605
 #: src/extensions/common/inline-font-size/inline.js:28
 #: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:498
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:498
@@ -767,13 +767,13 @@ msgid "2:3"
 msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:139
-#: src/blocks/slider/edit.js:583
+#: src/blocks/slider/edit.js:620
 msgid "Height"
 msgstr "高さ"
 
 #: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:161
 #: src/blocks/_pro/outer/edit.js:471 src/blocks/balloon/edit.js:508
-#: src/blocks/slider/edit.js:558
+#: src/blocks/slider/edit.js:595
 msgid "Width"
 msgstr "幅"
 
@@ -1032,7 +1032,7 @@ msgstr "ボタンの文字"
 msgid "Image Height"
 msgstr "画像高さ"
 
-#: src/blocks/_pro/card/edit.js:88 src/blocks/slider/edit.js:588
+#: src/blocks/_pro/card/edit.js:88 src/blocks/slider/edit.js:625
 msgid "Slide Height for each device."
 msgstr "デバイス毎の高さ"
 
@@ -1372,7 +1372,7 @@ msgid "Display"
 msgstr "表示"
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:151
-#: src/blocks/heading/edit.js:376 src/blocks/slider/edit.js:801
+#: src/blocks/heading/edit.js:376 src/blocks/slider/edit.js:838
 msgid "Hide"
 msgstr "非表示"
 
@@ -1884,7 +1884,7 @@ msgstr "アウトライン"
 #: src/blocks/_pro/step-item/edit.js:137
 #: src/blocks/_pro/table-of-contents-new/edit.js:129
 #: src/blocks/_pro/timeline-item/edit.js:103 src/blocks/heading/edit.js:264
-#: src/blocks/slider/edit.js:777 src/blocks/staff/edit.js:173
+#: src/blocks/slider/edit.js:814 src/blocks/staff/edit.js:173
 #: src/components/advanced-color-gradient-control/index.js:36
 msgid "Default"
 msgstr "標準"
@@ -2234,7 +2234,7 @@ msgstr "小"
 msgid "Button Position:"
 msgstr "ボタンの位置:"
 
-#: src/blocks/button/edit.js:354 src/blocks/slider/edit.js:805
+#: src/blocks/button/edit.js:354 src/blocks/slider/edit.js:842
 #: src/components/display-items-control/index.js:130
 msgid "Center"
 msgstr "中央"
@@ -2668,7 +2668,7 @@ msgstr "カバー"
 msgid "repeat"
 msgstr "リピート"
 
-#: src/blocks/slider/edit.js:176
+#: src/blocks/slider/edit.js:179
 msgid ""
 "If you specifying a numbers with decimals such as 1.5, Please set "
 "\"Centering the active slide\""
@@ -2676,20 +2676,20 @@ msgstr ""
 "1.5などの小数点以下の数値を指定する場合は「アクティブスライドを中央にする」に"
 "設定してください"
 
-#: src/blocks/slider/edit.js:185
+#: src/blocks/slider/edit.js:188
 msgid ""
 "The decimal point can be set for the display number only when the display is "
 "switched one by one."
 msgstr ""
 "表示番号に小数点を設定できるのは、表示を 1 つずつ切り替える場合のみです。"
 
-#: src/blocks/slider/edit.js:196
+#: src/blocks/slider/edit.js:199
 msgid ""
 "Enter integer divisors for the number of placed slide items for each display "
 "size."
 msgstr "各表示サイズのスライド アイテムの配置数の整数の約数を入力します。"
 
-#: src/blocks/slider/edit.js:235
+#: src/blocks/slider/edit.js:238
 msgid ""
 "If you want to loop slides, the number of placed slide items must be greater "
 "than or equal to twice the number of items you want to display per view."
@@ -2697,7 +2697,7 @@ msgstr ""
 "スライドをループする場合、配置されるスライド アイテムの数は、ビューごとに表示"
 "するアイテムの数の 2 倍以上である必要があります。"
 
-#: src/blocks/slider/edit.js:244
+#: src/blocks/slider/edit.js:247
 msgid ""
 "If you want to loop slides, the number of placed slide items must be greater "
 "than or equal to the number of items you want to display per view + 1."
@@ -2705,114 +2705,126 @@ msgstr ""
 "スライドをループする場合、配置されるスライド アイテムの数は、ビューごとに表示"
 "するアイテムの数 + 1 以上である必要があります。"
 
-#: src/blocks/slider/edit.js:319
+#: src/blocks/slider/edit.js:322
 msgid "Multi-item Display Setting"
 msgstr "アイテムの複数表示設定"
 
-#: src/blocks/slider/edit.js:323
+#: src/blocks/slider/edit.js:326
 msgid "Number of Items to display per view"
 msgstr "一度に表示するスライドアイテムの数"
 
-#: src/blocks/slider/edit.js:330
+#: src/blocks/slider/edit.js:333
 msgid ""
 "Enter divisors for the number of placed slide items for each display size."
 msgstr "配置済みのスライドアイテムを割り切れる数を入力してください。"
 
-#: src/blocks/slider/edit.js:334
+#: src/blocks/slider/edit.js:337
 msgid "If the number is not divisible, the sliding behaviour will be unnatural"
 msgstr "割り切れない数の場合、スライド動作が不自然になります。"
 
-#: src/blocks/slider/edit.js:427
+#: src/blocks/slider/edit.js:430
 msgid "Number of items to change in a transition"
 msgstr "一度に遷移するスライドアイテムの数"
 
-#: src/blocks/slider/edit.js:438
+#: src/blocks/slider/edit.js:441
 msgid "One by One"
 msgstr "１つずつ"
 
-#: src/blocks/slider/edit.js:442
+#: src/blocks/slider/edit.js:445
 msgid "Same as the number of items to display"
 msgstr "表示アイテム数と同じ"
 
-#: src/blocks/slider/edit.js:458
+#: src/blocks/slider/edit.js:461
 msgid "Centering the active slide"
 msgstr "アクティブスライドを中央にする"
 
-#: src/blocks/slider/edit.js:467
+#: src/blocks/slider/edit.js:470
 msgid ""
 "If you specify the center, you can display items that are cut off on the "
 "left and right."
 msgstr "中央を指定すると左右が切れたアイテムを表示できます。"
 
-#: src/blocks/slider/edit.js:520
+#: src/blocks/slider/edit.js:529
+msgid "Change Slide Editor Mode"
+msgstr "スライド編集モードの切り替え"
+
+#: src/blocks/slider/edit.js:532
+msgid "Edit ( Stacked Layout ) Mode"
+msgstr "編集（縦積み）モード"
+
+#: src/blocks/slider/edit.js:542
+msgid "Preview ( Slide ) Mode"
+msgstr "プレビュー（スライド）モード"
+
+#: src/blocks/slider/edit.js:557
 msgid "Editor Setting"
 msgstr "編集設定"
 
-#: src/blocks/slider/edit.js:524
+#: src/blocks/slider/edit.js:561
 msgid "Editor Mode"
 msgstr "編集モード"
 
-#: src/blocks/slider/edit.js:539
-msgid "Edit (Stacked Layout)"
+#: src/blocks/slider/edit.js:576
+msgid "Edit ( Stacked Layout )"
 msgstr "編集（縦積み）"
 
-#: src/blocks/slider/edit.js:552
-msgid "Preview(Slide)"
+#: src/blocks/slider/edit.js:589
+msgid "Preview ( Slide )"
 msgstr "プレビュー（スライド）"
 
-#: src/blocks/slider/edit.js:577
+#: src/blocks/slider/edit.js:614
 msgid "Full Wide"
 msgstr "全幅"
 
-#: src/blocks/slider/edit.js:660
+#: src/blocks/slider/edit.js:697
 msgid "Slider Settings"
 msgstr "スライド設定"
 
-#: src/blocks/slider/edit.js:664
+#: src/blocks/slider/edit.js:701
 msgid "Effect "
 msgstr "エフェクト"
 
-#: src/blocks/slider/edit.js:674
+#: src/blocks/slider/edit.js:711
 msgid "Slide"
 msgstr "スライド"
 
-#: src/blocks/slider/edit.js:678
+#: src/blocks/slider/edit.js:715
 msgid "Fade"
 msgstr "フェード"
 
-#: src/blocks/slider/edit.js:685
+#: src/blocks/slider/edit.js:722
 msgid "Loop "
 msgstr "繰り返し"
 
-#: src/blocks/slider/edit.js:695
+#: src/blocks/slider/edit.js:732
 msgid "AutoPlay"
 msgstr "自動再生"
 
-#: src/blocks/slider/edit.js:705
+#: src/blocks/slider/edit.js:742
 msgid "Stop AutoPlay when swipe"
 msgstr "スワイプ時に自動再生を停止"
 
-#: src/blocks/slider/edit.js:715
+#: src/blocks/slider/edit.js:752
 msgid "Display Time"
 msgstr "表示時間"
 
-#: src/blocks/slider/edit.js:742
+#: src/blocks/slider/edit.js:779
 msgid "Change Speed"
 msgstr "切り替え時間"
 
-#: src/blocks/slider/edit.js:766
+#: src/blocks/slider/edit.js:803
 msgid "Pagination Type"
 msgstr "ページネーションの種類"
 
-#: src/blocks/slider/edit.js:781
+#: src/blocks/slider/edit.js:818
 msgid "Number of slides"
 msgstr "スライドの枚数"
 
-#: src/blocks/slider/edit.js:794
+#: src/blocks/slider/edit.js:831
 msgid "Navigation Position"
 msgstr "ナビゲーションの位置"
 
-#: src/blocks/slider/edit.js:809
+#: src/blocks/slider/edit.js:846
 msgid "Bottom on Mobile device"
 msgstr "モバイルでは下部に表示"
 
@@ -3425,8 +3437,6 @@ msgid "words"
 msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:19
-#, fuzzy
-#| msgid "Cover"
 msgctxt "Scale option for Image dimension control"
 msgid "Cover"
 msgstr "カバー"

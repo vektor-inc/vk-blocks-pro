@@ -5,7 +5,7 @@ Tags: Gutenberg,FAQ,alert
 Requires at least: 6.1
 Tested up to: 6.4
 Stable tag: 1.67.0.1
-Requires PHP: 7.2
+Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -102,6 +102,8 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+[ Specification Change ] Change the required PHP version to 7.4 or higher.
 [ Bug Fix ][ Image ]Fixed a bug in the photo frame with activated zoom in the image block styled 'photoFrame-tilt'
 
 [ Specification Change ][ Slider ] Add Slider Mode on Editor.

@@ -53,10 +53,18 @@ document.defaultView.addEventListener('load', function () {
 						slide.classList.remove('is-highlighted'); // 誤動作防止の為 is-highlighted クラスを削除
 					});
 
-					slider.querySelector('.swiper-button-prev').style.display =
-						'';
-					slider.querySelector('.swiper-button-next').style.display =
-						'';
+					const swiperButtonPrev = slider.querySelector(
+						'.swiper-button-prev'
+					);
+					if (swiperButtonPrev) {
+						swiperButtonPrev.style.display = '';
+					}
+					const swiperButtonNext = slider.querySelector(
+						'.swiper-button-prev'
+					);
+					if (swiperButtonNext) {
+						swiperButtonNext.style.display = '';
+					}
 
 					// Sloder の設定を作成
 					const SwiperSetting = {};

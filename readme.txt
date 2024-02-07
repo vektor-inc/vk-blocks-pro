@@ -106,6 +106,7 @@ e.g.
 
 [ Specification Change ][ Slider ] Add Slider Mode on Editor.
 [ Add Function ][ Post List (Pro) ] Add paged lock setting
+[ Bug Fix ] Update CSS Optimizer 0.2.2
 
 = 1.68.0 =
 [ Add Function ][ Dynamic Text (Pro) ] Add feature to display logged-in username.

@@ -94,6 +94,10 @@ gulp.task('helper-js', (done) => {
 		.pipe(uglify())
 		.pipe(rename('vk-slider.min.js'))
 		.pipe(gulp.dest('./build/'));
+	gulp.src('src/blocks/slider/editor-script.js')
+		.pipe(uglify())
+		.pipe(rename('editor-script.js'))
+		.pipe(gulp.dest('./build/slider'));
 	done();
 });
 

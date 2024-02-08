@@ -213,6 +213,10 @@ function vk_blocks_register_block_post_list() {
 						'type'    => 'number',
 						'default' => 0,
 					),
+					'pagedlock'                  => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
 					'selfIgnore'                 => array(
 						'type'    => 'boolean',
 						'default' => false,

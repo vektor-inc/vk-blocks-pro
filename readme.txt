@@ -103,6 +103,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ GridColCard (Pro) ] Fixed a bug where vertical alignment settings for card blocks did not apply in the editing screen.
+
 = 1.69.0 =
 [ Add function ][ Slider ] Add Slider Mode on Editor.
 [ Add Function ][ Post List (Pro) ] Add paged lock setting.

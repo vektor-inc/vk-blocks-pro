@@ -1,6 +1,6 @@
 document.defaultView.addEventListener('load', function () {
 	const swiper = [];
-	const editorRoot = document.querySelector('.wp-block-post-content');
+	const editorRoot = document.querySelector('.is-root-container');
 
 	// swiper クラスを削除
 	const removeSwiperClassName = (targetElement) => {

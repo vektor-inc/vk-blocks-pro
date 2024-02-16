@@ -59,166 +59,161 @@ const LaunchSwiper = (slider) => {
 			sliderId = attributes.clientId;
 		}
 		if (attributes.editorMode && attributes.editorMode === 'slide') {
-			if (!swiper[sliderId]) {
-				// swiper クラスを追加
-				const newSwiperDiv = slider.querySelector(
-					'.block-editor-inner-blocks'
-				);
-				newSwiperDiv.classList.add('swiper');
+			// swiper クラスを追加
+			const newSwiperDiv = slider.querySelector(
+				'.block-editor-inner-blocks'
+			);
+			newSwiperDiv.classList.add('swiper');
 
-				// swiper-wrapper クラスを追加
-				const newSwiperWrapper = slider.querySelector(
-					'.block-editor-block-list__layout'
-				);
-				newSwiperWrapper.classList.add('swiper-wrapper');
+			// swiper-wrapper クラスを追加
+			const newSwiperWrapper = slider.querySelector(
+				'.block-editor-block-list__layout'
+			);
+			newSwiperWrapper.classList.add('swiper-wrapper');
 
-				// スライダーアイテムのクラス処理
-				const newSwiperSlide =
-					slider.querySelectorAll('.vk_slider_item');
-				newSwiperSlide.forEach((slide) => {
-					slide.classList.add('swiper-slide'); // swiper-slide クラスを追加
-					slide.classList.remove('is-selected'); // 誤動作防止の為 is-selected クラスを削除
-					slide.classList.remove('is-highlighted'); // 誤動作防止の為 is-highlighted クラスを削除
-				});
-				newSwiperSlide[0].classList.add('is-selected');
+			// スライダーアイテムのクラス処理
+			const newSwiperSlide = slider.querySelectorAll('.vk_slider_item');
+			newSwiperSlide.forEach((slide) => {
+				slide.classList.add('swiper-slide'); // swiper-slide クラスを追加
+				slide.classList.remove('is-selected'); // 誤動作防止の為 is-selected クラスを削除
+				slide.classList.remove('is-highlighted'); // 誤動作防止の為 is-highlighted クラスを削除
+			});
+			newSwiperSlide[0].classList.add('is-selected');
 
-				const swiperButtonPrev = slider.querySelector(
-					'.swiper-button-prev'
-				);
-				if (swiperButtonPrev) {
-					swiperButtonPrev.style.display = '';
-				}
-				const swiperButtonNext = slider.querySelector(
-					'.swiper-button-next'
-				);
-				if (swiperButtonNext) {
-					swiperButtonNext.style.display = '';
-				}
+			const swiperButtonPrev = slider.querySelector(
+				'.swiper-button-prev'
+			);
+			if (swiperButtonPrev) {
+				swiperButtonPrev.style.display = '';
+			}
+			const swiperButtonNext = slider.querySelector(
+				'.swiper-button-next'
+			);
+			if (swiperButtonNext) {
+				swiperButtonNext.style.display = '';
+			}
 
-				// Sloder の設定を作成
-				const SwiperSetting = {};
+			// Sloder の設定を作成
+			const SwiperSetting = {};
 
-				// ループの設定
-				if (attributes.loop) {
-					SwiperSetting.loop = attributes.loop;
-				}
+			// ループの設定
+			if (attributes.loop) {
+				SwiperSetting.loop = attributes.loop;
+			}
 
-				// エフェクトの設定
-				if (attributes.effect) {
-					SwiperSetting.effect = attributes.effect;
-				}
+			// エフェクトの設定
+			if (attributes.effect) {
+				SwiperSetting.effect = attributes.effect;
+			}
 
-				// ナビゲーションの設定
-				SwiperSetting.navigation = {
-					nextEl: `.vk_slider_${sliderId} .swiper-button-next`,
-					prevEl: `.vk_slider_${sliderId} .swiper-button-prev`,
+			// ナビゲーションの設定
+			SwiperSetting.navigation = {
+				nextEl: slider.querySelector('.swiper-button-next'),
+				prevEl: slider.querySelector('.swiper-button-prev'),
+			};
+
+			// ページネーションの設定
+			if (attributes.pagination && attributes.pagination !== 'hide') {
+				SwiperSetting.pagination = {
+					el: slider.querySelector('.swiper-pagination'),
+					clickable: true,
+					type: `${attributes.pagination}`,
+					renderFraction(currentClass, totalClass) {
+						return (
+							'<span class="' +
+							currentClass +
+							'"></span>' +
+							' / ' +
+							'<span class="' +
+							totalClass +
+							'"></span>'
+						);
+					},
 				};
+			}
 
-				// ページネーションの設定
-				if (attributes.pagination && attributes.pagination !== 'hide') {
-					SwiperSetting.pagination = {
-						el: `.vk_slider_${sliderId} .swiper-pagination`,
-						clickable: true,
-						type: `${attributes.pagination}`,
-						renderFraction(currentClass, totalClass) {
-							return (
-								'<span class="' +
-								currentClass +
-								'"></span>' +
-								' / ' +
-								'<span class="' +
-								totalClass +
-								'"></span>'
-							);
-						},
-					};
-				}
-
-				// 複数枚表示の設定
-				if (attributes.effect && attributes.effect !== 'fade') {
-					if (attributes.slidesPerViewMobile) {
-						SwiperSetting.slidesPerView =
+			// 複数枚表示の設定
+			if (attributes.effect && attributes.effect !== 'fade') {
+				if (attributes.slidesPerViewMobile) {
+					SwiperSetting.slidesPerView =
+						attributes.slidesPerViewMobile;
+					if (
+						attributes.slidesPerGroup &&
+						attributes.slidesPerGroup === 'slides-per-view' &&
+						Number.isInteger(attributes.slidesPerViewMobile)
+					) {
+						SwiperSetting.slidesPerGroup =
 							attributes.slidesPerViewMobile;
-						if (
-							attributes.slidesPerGroup &&
-							attributes.slidesPerGroup === 'slides-per-view' &&
-							Number.isInteger(attributes.slidesPerViewMobile)
-						) {
-							SwiperSetting.slidesPerGroup =
-								attributes.slidesPerViewMobile;
-						} else {
-							SwiperSetting.slidesPerGroup = 1;
-						}
-					} else if (attributes.slidesPerView) {
-						SwiperSetting.slidesPerView = attributes.slidesPerView;
-						if (
-							attributes.slidesPerGroup &&
-							attributes.slidesPerGroup === 'slides-per-view' &&
-							Number.isInteger(attributes.slidesPerView)
-						) {
-							SwiperSetting.slidesPerGroup =
-								attributes.slidesPerView;
-						} else {
-							SwiperSetting.slidesPerGroup = 1;
-						}
 					} else {
-						SwiperSetting.slidesPerView = 1;
 						SwiperSetting.slidesPerGroup = 1;
 					}
+				} else if (attributes.slidesPerView) {
+					SwiperSetting.slidesPerView = attributes.slidesPerView;
 					if (
-						attributes.slidesPerViewTablet ||
-						attributes.slidesPerViewPC
+						attributes.slidesPerGroup &&
+						attributes.slidesPerGroup === 'slides-per-view' &&
+						Number.isInteger(attributes.slidesPerView)
 					) {
-						// Responsive breakpoints
-						SwiperSetting.breakpoints = {};
-						if (attributes.slidesPerViewTablet) {
-							SwiperSetting.breakpoints[576] = {
-								slidesPerView: attributes.slidesPerViewTablet,
-							};
-							if (
-								attributes.slidesPerGroup &&
-								attributes.slidesPerGroup ===
-									'slides-per-view' &&
-								Number.isInteger(attributes.slidesPerViewTablet)
-							) {
-								SwiperSetting.breakpoints[576].slidesPerGroup =
-									attributes.slidesPerViewTablet;
-							} else {
-								SwiperSetting.breakpoints[576].slidesPerGroup = 1;
-							}
-						}
-						if (attributes.slidesPerViewPC) {
-							SwiperSetting.breakpoints[992] = {
-								slidesPerView: attributes.slidesPerViewPC,
-							};
-							if (
-								attributes.slidesPerGroup &&
-								attributes.slidesPerGroup ===
-									'slides-per-view' &&
-								Number.isInteger(attributes.slidesPerViewPC)
-							) {
-								SwiperSetting.breakpoints[992].slidesPerGroup =
-									attributes.slidesPerViewPC;
-							} else {
-								SwiperSetting.breakpoints[992].slidesPerGroup = 1;
-							}
+						SwiperSetting.slidesPerGroup = attributes.slidesPerView;
+					} else {
+						SwiperSetting.slidesPerGroup = 1;
+					}
+				} else {
+					SwiperSetting.slidesPerView = 1;
+					SwiperSetting.slidesPerGroup = 1;
+				}
+				if (
+					attributes.slidesPerViewTablet ||
+					attributes.slidesPerViewPC
+				) {
+					// Responsive breakpoints
+					SwiperSetting.breakpoints = {};
+					if (attributes.slidesPerViewTablet) {
+						SwiperSetting.breakpoints[576] = {
+							slidesPerView: attributes.slidesPerViewTablet,
+						};
+						if (
+							attributes.slidesPerGroup &&
+							attributes.slidesPerGroup === 'slides-per-view' &&
+							Number.isInteger(attributes.slidesPerViewTablet)
+						) {
+							SwiperSetting.breakpoints[576].slidesPerGroup =
+								attributes.slidesPerViewTablet;
+						} else {
+							SwiperSetting.breakpoints[576].slidesPerGroup = 1;
 						}
 					}
-
-					if (attributes.centeredSlides) {
-						SwiperSetting.centeredSlides =
-							attributes.centeredSlides;
+					if (attributes.slidesPerViewPC) {
+						SwiperSetting.breakpoints[992] = {
+							slidesPerView: attributes.slidesPerViewPC,
+						};
+						if (
+							attributes.slidesPerGroup &&
+							attributes.slidesPerGroup === 'slides-per-view' &&
+							Number.isInteger(attributes.slidesPerViewPC)
+						) {
+							SwiperSetting.breakpoints[992].slidesPerGroup =
+								attributes.slidesPerViewPC;
+						} else {
+							SwiperSetting.breakpoints[992].slidesPerGroup = 1;
+						}
 					}
-
-					SwiperSetting.slideActiveClass = 'is-selected';
 				}
 
-				// eslint-disable-next-line no-undef
-				swiper[sliderId] = new Swiper(
-					`.vk_slider_${sliderId} > div > div > div.block-editor-inner-blocks`,
-					SwiperSetting
-				);
+				if (attributes.centeredSlides) {
+					SwiperSetting.centeredSlides = attributes.centeredSlides;
+				}
+
+				SwiperSetting.slideActiveClass = 'is-selected';
 			}
+
+			// eslint-disable-next-line no-undef
+			swiper[sliderId] = new Swiper(
+				slider.querySelector(
+					'div > div > div.block-editor-inner-blocks'
+				),
+				SwiperSetting
+			);
 		} else {
 			if (swiper[sliderId]) {
 				swiper[sliderId].destroy();
@@ -255,6 +250,16 @@ document.defaultView.addEventListener('load', () => {
 	const sliders = document.querySelectorAll('.vk_slider');
 	sliders.forEach((slider) => {
 		LaunchSwiper(slider);
+	});
+	const iframe = document.querySelectorAll('iframe');
+	iframe.forEach((iframe) => {
+		iframe.contentWindow.addEventListener('load', () => {
+			const sliders =
+				iframe.contentWindow.document.querySelectorAll('.vk_slider');
+			sliders.forEach((slider) => {
+				LaunchSwiper(slider);
+			});
+		});
 	});
 });
 
@@ -400,7 +405,7 @@ export default function SliderEdit(props) {
 	const ref = useRef(null);
 	useEffect(() => {
 		LaunchSwiper(ref.current);
-	}, [editorMode]);
+	}, [attributes]);
 
 	const containerClass = ' vk_grid-column';
 	const ALLOWED_BLOCKS = ['vk-blocks/slider-item'];

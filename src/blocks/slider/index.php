@@ -50,7 +50,7 @@ function vk_blocks_register_block_slider() {
 			'style_handles'         => array( 'vk-blocks/slider' ),
 			'script_handles'        => array(),
 			'editor_style_handles'  => array( 'vk-blocks-build-editor-css', 'vk-swiper-style' ),
-			'editor_script_handles' => array( 'vk-blocks-build-js', 'vk-swiper-script', 'vk-blocks-slider-editor' ),
+			'editor_script_handles' => array( 'vk-blocks-build-js' ),
 		)
 	);
 }

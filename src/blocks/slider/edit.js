@@ -250,7 +250,7 @@ const LaunchSwiper = (slider) => {
 	}
 };
 
-document.defaultView.addEventListener('load',  () => {
+document.defaultView.addEventListener('load', () => {
 	// スライダーの初期化
 	const sliders = document.querySelectorAll('.vk_slider');
 	sliders.forEach((slider) => {

@@ -248,14 +248,17 @@ const LaunchSwiper = (slider) => {
 document.defaultView.addEventListener('load', () => {
 	// スライダーの初期化
 	const sliders = document.querySelectorAll('.vk_slider');
+	if (sliders.length === 0) return;
 	sliders.forEach((slider) => {
 		LaunchSwiper(slider);
 	});
 	const iframe = document.querySelectorAll('iframe');
+	if (iframe.length === 0) return;
 	iframe.forEach((iframe) => {
 		iframe.contentWindow.addEventListener('load', () => {
 			const sliders =
 				iframe.contentWindow.document.querySelectorAll('.vk_slider');
+			if (sliders.length === 0) return;
 			sliders.forEach((slider) => {
 				LaunchSwiper(slider);
 			});

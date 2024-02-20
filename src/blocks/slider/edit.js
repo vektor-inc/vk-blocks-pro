@@ -82,8 +82,8 @@ const LaunchSwiper = (slider) => {
 				if (newSwiperSlide.length > 0) {
 					newSwiperSlide.forEach((slide) => {
 						slide.classList.add('swiper-slide'); // swiper-slide クラスを追加
-						slide.classList.remove('is-selected');// 誤動作防止の為 is-selected クラスを削除
-						slide.classList.remove('is-highlighted');// 誤動作防止の為 is-highlighted クラスを削除
+						slide.classList.remove('is-selected'); // 誤動作防止の為 is-selected クラスを削除
+						slide.classList.remove('is-highlighted'); // 誤動作防止の為 is-highlighted クラスを削除
 					});
 					newSwiperSlide[0].classList.add('is-selected');
 				}

@@ -322,30 +322,6 @@ const SliderObserver = (editorRoot) => {
 	observer.observe(editorRoot, config);
 };
 
-document.defaultView.addEventListener('load', () => {
-	// スライダーの初期化
-	const blockEditorRoot = document.querySelector('.is-root-container');
-	if (blockEditorRoot) {
-		LaunchSwiperAll(blockEditorRoot);
-		SliderObserver(blockEditorRoot);
-	}
-	const iframe = document.querySelectorAll('iframe');
-	if (iframe.length > 0) {
-		iframe.forEach((iframe) => {
-			iframe.contentWindow.addEventListener('load', () => {
-				const siteEditorRoot =
-					iframe.contentWindow.document.querySelector(
-						'.is-root-container'
-					);
-				if (siteEditorRoot) {
-					LaunchSwiperAll(siteEditorRoot);
-					SliderObserver(siteEditorRoot);
-				}
-			});
-		});
-	}
-});
-
 // eslint-disable no-shadow
 export default function SliderEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -371,6 +347,23 @@ export default function SliderEdit(props) {
 		navigationPosition,
 		blockId,
 	} = attributes;
+
+	const blockEditorRoot = document.querySelector(
+		'.block-editor .is-root-container'
+	);
+	if (blockEditorRoot) {
+		LaunchSwiperAll(blockEditorRoot);
+		SliderObserver(blockEditorRoot);
+	}
+	const iframe = document.querySelector('#site-editor iframe');
+	if (iframe) {
+		const siteEditorRoot =
+			iframe.contentWindow.document.querySelector('.is-root-container');
+		if (siteEditorRoot) {
+			LaunchSwiperAll(siteEditorRoot);
+			SliderObserver(siteEditorRoot);
+		}
+	}
 
 	useEffect(() => {
 		// attributes の clientId は使わなくなったので削除

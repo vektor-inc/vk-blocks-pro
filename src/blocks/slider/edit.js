@@ -30,7 +30,7 @@ import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block'
 // スライダーの格納
 const swiper = {};
 
-// swiper のクラスの制御
+// swiper クラスを削除
 const removeSwiperClassName = (targetElement) => {
 	if (targetElement) {
 		const classNames = targetElement.className.split(' ');
@@ -45,10 +45,12 @@ const removeSwiperClassName = (targetElement) => {
 	}
 };
 
-// swiper の処理
+// スライダーブロック単体の処理
 const LaunchSwiper = (slider) => {
 	// 値を取得して配列に格納
 	const attributes = JSON.parse(slider.getAttribute('data-vkb-slider'));
+
+	// スライダーの ID を取得
 	if (attributes && (attributes.blockId || attributes.clientId)) {
 		// 対象の ID を取得
 		let sliderId = '';
@@ -58,6 +60,8 @@ const LaunchSwiper = (slider) => {
 			// 1.36.0 より古い状態で保存されてる場合の互換処理
 			sliderId = attributes.clientId;
 		}
+
+		// 編集モードに応じた処理を実行
 		if (attributes.editorMode && attributes.editorMode === 'slide') {
 			if (!swiper[sliderId]) {
 				// swiper クラスを追加
@@ -82,10 +86,8 @@ const LaunchSwiper = (slider) => {
 				if (newSwiperSlide.length > 0) {
 					newSwiperSlide.forEach((slide) => {
 						slide.classList.add('swiper-slide'); // swiper-slide クラスを追加
-						slide.classList.remove('is-selected'); // 誤動作防止の為 is-selected クラスを削除
 						slide.classList.remove('is-highlighted'); // 誤動作防止の為 is-highlighted クラスを削除
 					});
-					newSwiperSlide[0].classList.add('is-selected');
 				}
 
 				const swiperButtonPrev = slider.querySelector(
@@ -228,7 +230,7 @@ const LaunchSwiper = (slider) => {
 				);
 			}
 		} else {
-			// swiper クラスを追加
+			// 不要な swiper クラスを削除
 			const newSwiperDiv = slider.querySelector(
 				'.block-editor-inner-blocks'
 			);
@@ -236,7 +238,7 @@ const LaunchSwiper = (slider) => {
 				removeSwiperClassName(newSwiperDiv);
 			}
 
-			// swiper-wrapper クラスを追加
+			// 不要な wiper-wrapper クラスを削除
 			const newSwiperWrapper = slider.querySelector(
 				'.block-editor-block-list__layout'
 			);
@@ -244,7 +246,7 @@ const LaunchSwiper = (slider) => {
 				removeSwiperClassName(newSwiperWrapper);
 			}
 
-			// 不要なクラスを削除
+			// 不要な swiper-slide クラスを削除
 			const newSwiperSlide = slider.querySelectorAll('.vk_slider_item');
 			if (newSwiperSlide.length > 0) {
 				newSwiperSlide.forEach((slide) => {
@@ -254,6 +256,8 @@ const LaunchSwiper = (slider) => {
 				});
 				newSwiperSlide[0].classList.add('is-selected');
 			}
+
+			// ナビゲーションの非表示
 			const swiperButtonPrev = slider.querySelector(
 				'.swiper-button-prev'
 			);
@@ -274,6 +278,7 @@ const LaunchSwiper = (slider) => {
 	}
 };
 
+// スライダーブロック全体の処理
 const LaunchSwiperAll = (editorRoot) => {
 	const sliders = editorRoot.querySelectorAll('.vk_slider');
 	if (sliders.length > 0) {
@@ -284,7 +289,6 @@ const LaunchSwiperAll = (editorRoot) => {
 };
 
 // スライダーの監視
-
 const SliderObserver = (editorRoot) => {
 	const config = { childList: true, subtree: true, attributes: true };
 

@@ -103,6 +103,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Slider ] Corresponding Slider Mode to Site Editor / Widget Editor.
+
 = 1.69.0 =
 [ Add function ][ Slider ] Add Slider Mode on Editor.
 [ Add Function ][ Post List (Pro) ] Add paged lock setting.

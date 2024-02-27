@@ -8,5 +8,6 @@ module.exports = {
 		'@wordpress/no-unsafe-wp-apis': 'off',
 		'@wordpress/i18n-translator-comments': 'off',
 		'react-hooks/exhaustive-deps': 'off',
+		'no-shadow': 'off',
 	},
 };

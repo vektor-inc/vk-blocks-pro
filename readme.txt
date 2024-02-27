@@ -102,6 +102,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+[ Bug Fix ][ Inline Font Size ] Applies only Font Size has a numeric value.
 
 = 1.69.0 =
 [ Add function ][ Slider ] Add Slider Mode on Editor.

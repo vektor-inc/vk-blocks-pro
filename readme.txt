@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.1
 Tested up to: 6.4
-Stable tag: 1.68.0.1
+Stable tag: 1.69.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -102,8 +102,8 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-[ Bug Fix ][ Inline Font Size ] Applies only Font Size has a numeric value.
 
+[ Bug Fix ][ Inline Font Size ] Applies only Font Size has a numeric value.
 [ Bug Fix ][ GridColCard (Pro) ] Fixed a bug where vertical alignment settings for card blocks did not apply in the editing screen.
 [ Bug Fix ][ Slider ] Corresponding Slider Mode to Site Editor / Widget Editor.
 [ Bug Fix ][ Slider ] Fixed a bug where placing heading blocks and similar elements directly in slides made them uneditable.

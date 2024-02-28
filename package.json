@@ -80,6 +80,7 @@
     "compare-versions": "^6.1.0",
     "concurrently": "^8.2.1",
     "cross-env": "^7.0.3",
+    "css-loader": "^6.10.0",
     "eslint-plugin-prettier": "^5.0.0",
     "gettext-parser": "7.0.1",
     "gettext-to-messageformat": "0.4.0",
@@ -101,7 +102,9 @@
     "postcss-cli": "^10.1.0",
     "prettier": "^3.0.3",
     "rimraf": "^5.0.5",
-    "sass": "1.32.12"
+    "sass": "1.32.12",
+    "style-loader": "^3.3.4",
+    "swiper": "^11.0.6"
   },
   "volta": {
     "node": "18.18.0"

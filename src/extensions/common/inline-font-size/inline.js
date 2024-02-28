@@ -73,7 +73,7 @@ function InlineFontSizePicker({ name, value, onChange, setIsSettingFontSize }) {
 		if (!newFontSize) {
 			// reset font size
 			onChange(removeFormat(value, name));
-		} else if(newFontSize.match(/\d/)) {
+		} else if (newFontSize.match(/\d/)) {
 			// Applies only Font Size has a numeric value.
 			onChange(
 				applyFormat(value, {

@@ -103,6 +103,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ GridColCard (Pro) ] Fixed a bug where vertical alignment settings for card blocks did not apply in the editing screen.
 [ Bug Fix ][ Slider ] Corresponding Slider Mode to Site Editor / Widget Editor.
 [ Bug Fix ][ Slider ] Fixed a bug where placing heading blocks and similar elements directly in slides made them uneditable.
 

@@ -104,6 +104,7 @@ e.g.
 == Changelog ==
 
 [ Bug Fix ][ Slider ] Corresponding Slider Mode to Site Editor / Widget Editor.
+[ Bug Fix ][ Slider ] Fixed a bug where placing heading blocks and similar elements directly in slides made them uneditable.
 
 = 1.69.0 =
 [ Add function ][ Slider ] Add Slider Mode on Editor.

@@ -103,6 +103,7 @@ e.g.
 
 == Changelog ==
 
+= 1.69.1 =
 [ Bug Fix ][ Inline Font Size ] Applies only Font Size has a numeric value.
 [ Bug Fix ][ GridColCard (Pro) ] Fixed a bug where vertical alignment settings for card blocks did not apply in the editing screen.
 [ Bug Fix ][ Slider ] Corresponding Slider Mode to Site Editor / Widget Editor.

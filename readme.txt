@@ -103,6 +103,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] core/social-link, core/site-logo, core/site-title and core/site-tagline correspond to custom-css-extension, hidden-extension and margin-extension
+
 = 1.69.1 =
 [ Bug Fix ][ Inline Font Size ] Applies only Font Size has a numeric value.
 [ Bug Fix ][ GridColCard (Pro) ] Fixed a bug where vertical alignment settings for card blocks did not apply in the editing screen.

@@ -19,7 +19,7 @@ const transforms = {
 	to: [
 		{
 			type: 'block',
-			blocks: ['core/heading', 'core/paragraph'],
+			blocks: ['core/heading'],
 			transform: (attributes) => {
 				const {
 					title,

@@ -37,24 +37,24 @@ const transforms = {
 				} = attributes;
 
 				let headingMarginBottom;
-				if (subTextFlag === 'on' && !! titleMarginBottom ) {
+				if (subTextFlag === 'on' && !!titleMarginBottom) {
 					headingMarginBottom = titleMarginBottom + 'rem';
-				} else if (subTextFlag === 'off' && !! outerMarginBottom ) {
+				} else if (subTextFlag === 'off' && !!outerMarginBottom) {
 					headingMarginBottom = outerMarginBottom + 'rem';
 				}
 
 				let headingFontSize;
-				if ( !! titleSize ) {
+				if (!!titleSize) {
 					headingFontSize = titleSize + 'rem';
 				}
 
 				let paragraphMarginBottom;
-				if (subTextFlag === 'on' && !! outerMarginBottom ) {
+				if (subTextFlag === 'on' && !!outerMarginBottom) {
 					paragraphMarginBottom = outerMarginBottom + 'rem';
 				}
 
 				let paragraphFontSize;
-				if ( !! subTextSize ) {
+				if (!!subTextSize) {
 					paragraphFontSize = subTextSize + 'rem';
 				}
 
@@ -67,7 +67,7 @@ const transforms = {
 					style: {
 						spacing: {
 							margin: {
-								bottom: headingMarginBottom
+								bottom: headingMarginBottom,
 							},
 						},
 						typography: {
@@ -78,7 +78,7 @@ const transforms = {
 
 				const transformParagraphAttributes = {
 					content: subText,
-					align: align,
+					align,
 					textColor: subTextColor,
 					style: {
 						spacing: {
@@ -99,7 +99,10 @@ const transforms = {
 				);
 				if (subTextFlag === 'on') {
 					blockContent.push(
-						createBlock('core/paragraph', transformParagraphAttributes)
+						createBlock(
+							'core/paragraph',
+							transformParagraphAttributes
+						)
 					);
 				}
 				return blockContent;

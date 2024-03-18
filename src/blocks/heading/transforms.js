@@ -59,6 +59,7 @@ const transforms = {
 				}
 
 				const transformHeadingAttributes = {
+					...attributes,
 					content: title,
 					level,
 					anchor,
@@ -77,6 +78,7 @@ const transforms = {
 				};
 
 				const transformParagraphAttributes = {
+					...attributes,
 					content: subText,
 					align,
 					textColor: subTextColor,

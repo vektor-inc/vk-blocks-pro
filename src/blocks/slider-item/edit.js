@@ -97,7 +97,7 @@ export default function SliderItemEdit(props) {
 	);
 
 	const blockProps = useBlockProps({
-		className: `vk_slider_item swiper-slide vk_valign-${verticalAlignment} ${prefix}-${blockId} ${classPaddingLR} ${prefix}-paddingVertical-none`,
+		className: `vk_slider_item vk_valign-${verticalAlignment} ${prefix}-${blockId} ${classPaddingLR} ${prefix}-paddingVertical-none swiper-slide`,
 	});
 
 	return (
@@ -261,7 +261,10 @@ export default function SliderItemEdit(props) {
 			<div {...blockProps}>
 				{GetBgImage}
 				<div className={containerClass}>
-					<InnerBlocks />
+					<InnerBlocks
+						templateLock={false}
+						template={[['core/paragraph']]}
+					/>
 				</div>
 			</div>
 		</>

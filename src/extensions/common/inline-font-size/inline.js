@@ -70,7 +70,11 @@ function InlineFontSizePicker({ name, value, onChange, setIsSettingFontSize }) {
 	};
 
 	const onInlineFontSizeChange = (newFontSize) => {
-		if (newFontSize) {
+		if (!newFontSize) {
+			// reset font size
+			onChange(removeFormat(value, name));
+		} else if (newFontSize.match(/\d/)) {
+			// Applies only Font Size has a numeric value.
 			onChange(
 				applyFormat(value, {
 					type: name,
@@ -80,11 +84,7 @@ function InlineFontSizePicker({ name, value, onChange, setIsSettingFontSize }) {
 					},
 				})
 			);
-		} else {
-			// reset font size
-			onChange(removeFormat(value, name));
 		}
-		//setIsSettingFontSize(false);
 	};
 
 	const activeFontSize = getActiveInlineFontSize(value, name);

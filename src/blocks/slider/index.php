@@ -5,6 +5,8 @@
  * @package vk-blocks
  */
 
+use VektorInc\VK_Swiper\VkSwiper;
+
 /**
  * Register slider block.
  *
@@ -32,13 +34,23 @@ function vk_blocks_register_block_slider() {
 		);
 	}
 
+	VkSwiper::register_swiper();
+
+	wp_register_script(
+		'vk-blocks-slider-editor',
+		VK_BLOCKS_DIR_URL . 'build/slider/editor-script.js',
+		array( 'vk-swiper-script' ),
+		VK_BLOCKS_VERSION,
+		true
+	);
+
 	register_block_type(
 		__DIR__,
 		array(
-			'style'         => 'vk-blocks/slider',
-			'script'        => 'vk-blocks/slider-script',
-			'editor_style'  => 'vk-blocks-build-editor-css',
-			'editor_script' => 'vk-blocks-build-js',
+			'style_handles'         => array( 'vk-blocks/slider' ),
+			'script_handles'        => array(),
+			'editor_style_handles'  => array( 'vk-swiper-style', 'vk-blocks-build-editor-css' ),
+			'editor_script_handles' => array( 'vk-blocks-build-js' ),
 		)
 	);
 }

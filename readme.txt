@@ -4,8 +4,8 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.1
 Tested up to: 6.4
-Stable tag: 1.67.0.1
-Requires PHP: 7.2
+Stable tag: 1.69.1.2
+Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -104,9 +104,20 @@ e.g.
 == Changelog ==
 
 [ Add Block ] Add Tab Block
+[ Specification Change ] core/social-link, core/site-logo, core/site-title and core/site-tagline correspond to margin-extension
 
+= 1.69.1 =
+[ Bug Fix ][ Inline Font Size ] Applies only Font Size has a numeric value.
+[ Bug Fix ][ GridColCard (Pro) ] Fixed a bug where vertical alignment settings for card blocks did not apply in the editing screen.
+[ Bug Fix ][ Slider ] Corresponding Slider Mode to Site Editor / Widget Editor.
+[ Bug Fix ][ Slider ] Fixed a bug where placing heading blocks and similar elements directly in slides made them uneditable.
+
+= 1.69.0 =
+[ Add function ][ Slider ] Add Slider Mode on Editor.
+[ Add Function ][ Post List (Pro) ] Add paged lock setting.
+[ Specification Change ] Change the required PHP version to 7.4 or higher.
 [ Bug Fix ][ Image ]Fixed a bug in the photo frame with activated zoom in the image block styled 'photoFrame-tilt'
-[ Add Function ][ Post List (Pro) ] Add paged lock setting
+[ Bug Fix ] Update CSS Optimizer 0.2.2
 
 = 1.68.0 =
 [ Add Function ][ Dynamic Text (Pro) ] Add feature to display logged-in username.

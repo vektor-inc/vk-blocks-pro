@@ -6,6 +6,10 @@
 	"textdomain": "vk-blocks-pro",
 	"category": "vk-blocks-cat-layout",
 	"attributes": {
+		"editorMode": {
+			"type": "string",
+			"default": "default"
+		},
 		"unit": {
 			"type": "string",
 			"default": "px"

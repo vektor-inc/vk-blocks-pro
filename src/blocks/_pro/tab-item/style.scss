@@ -1,0 +1,295 @@
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+:root {
+	--vk-color-border: rgba(0,0,0,.12);
+	--vk-size-text: 16px;
+	--vk-color-bg-accent-wh: rgba(255,255,255,0.65);
+	--default-color:#337ab7;
+}
+
+$xs-max: 575.98px;
+$sm-max: 767.98px;
+$md-max: 991.98px;
+$lg-max: 1199.98px;
+
+$sm-min: 576px;
+$md-min: 768px;
+$lg-min: 992px;
+$xl-min: 1200px;
+
+@mixin speech-balloon-li-after {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(136, 183, 213, 0);
+	border-top-color: var(--default-color);
+	border-width: 10px;
+	margin-left: -10px;
+}
+
+@mixin no-frame {
+	.vk_tab_bodys{
+		border: none;
+		box-shadow: none;
+		padding-right: 0;
+		padding-left:0;
+		background-color: transparent;
+	}
+}
+
+
+@mixin line {
+	.vk_tab_labels .vk_tab_labels_label{
+		color: inherit;
+		background: none;
+		background-color: var(--vk-color-bg-accent-wh);
+		margin-left: 0;
+		margin-right: 0;
+		border-top: 1px solid var(--vk-color-border);
+		border-left: 1px solid var(--vk-color-border);
+		border-radius: 0;
+		&:last-child{
+			border-right: 1px solid var(--vk-color-border);
+		}
+		&::before,&::after{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			display: block;
+			width: 100%;
+			content: "";
+		}
+		&::before{
+			bottom:0;
+			z-index: 0;
+			height: 1px;
+			background-color: var(--vk-color-border);
+		}
+		&::after{
+			top:0;
+			bottom: unset;
+			transition: all .5s ease-out;
+		}
+		&:hover{
+			color:var(--default-color);
+			background-color: var(--vk-color-bg-accent-wh);
+			&::before{
+				bottom:0;
+				z-index: 0;
+				height: 1px;
+				background-color: var(--vk-color-bg-accent-wh);
+			}
+			&::after{
+				z-index: 1;
+				height: 2px;
+				background-color: var(--default-color);
+				transition: all .5s ease-out;
+			}
+		}
+
+		&.vk_tab_labels_label-state-active{
+			color:var(--default-color);
+			background-color: var(--vk-color-bg-accent-wh);
+			&::before{
+				// content: none;
+				background-color: #fff;
+			}
+			&::after{
+				z-index: 1;
+				height: 2px;
+				background-color: var(--default-color);
+			}
+
+		}
+	}
+}
+
+
+
+/* style
+--------------------------------------------*/
+.is-style-vk_tab_labels{
+	&-normal-no-frame{
+		@include no-frame();
+	}
+	&-speech-balloon{
+		.vk_tab_labels_label.vk_tab_labels_label-state-active::after{
+			@include speech-balloon-li-after();
+		}
+	}
+	&-speech-balloon-no-frame{
+		.vk_tab_labels_label.vk_tab_labels_label-state-active::after{
+			@include speech-balloon-li-after();
+		}
+		@include no-frame();
+	}
+	&-line{
+		@include line();
+		.vk_tab_labels{
+			margin-bottom:-1px;
+		}
+		.vk_tab_bodys{
+			border-top:1px solid var(--vk-color-border);
+			background-color: var(--vk-color-bg-accent-wh);
+		}
+	}
+	&-line-no-frame{
+		@include line();
+		.vk_tab_labels {
+			margin-bottom: -1px;
+		}
+		@include no-frame();
+	}
+	&-line-simple{
+		.vk_tab_labels .vk_tab_labels_label{
+			color: inherit;
+			background: none;
+			background-color: transparent;
+			margin-left: 0;
+			margin-right: 0;
+			&::before,&::after{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				display: block;
+				width: 100%;
+				content: "";
+			}
+			&::before{
+				z-index: 0;
+				height: 1px;
+				background-color: var(--vk-color-border);
+			}
+			&:hover{
+				color:var(--default-color);
+				background-color: transparent;
+				&::after{
+					z-index: 1;
+					height: 2px;
+					background-color: var(--default-color);
+					transition: all .5s ease-out;
+				}
+			}
+
+			&.vk_tab_labels_label-state-active{
+				color:var(--default-color);
+				background-color: transparent;
+				&::after{
+					z-index: 1;
+					height: 2px;
+					background-color: var(--default-color);
+				}
+
+			}
+
+		}
+		@include no-frame();
+	}
+
+}
+
+/* default style
+--------------------------------------------*/
+.vk_tab{
+	margin-bottom: calc( var(--vk-size-text) * 2);
+	&_labels{
+		--vk-tab-gap:calc( var(--vk-size-text) * 0.2 );
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		.vk_tab_labels_label,
+		.vk_tab_labels_label.has-background{ // has-background がないと 編集画面で x-t9 の .has-background の padding 0 指定に負ける
+			background-color: var(--default-color);
+			position: relative;
+			list-style: none;
+			text-align: center;
+			transition: all .3s ease-out;
+			padding: calc( var(--vk-size-text) * 0.5 ) calc( var(--vk-size-text) * 1 );
+			cursor: pointer;
+			background-color: rgba(0,0,0,.08);
+			border-radius:calc( var(--vk-size-text) * 0.3 ) calc( var(--vk-size-text) * 0.3 ) 0 0;
+			margin:0;
+			line-height: 1.5;
+			&.vk_tab_labels_label-state-active,
+			&.has-background{
+				background-color: var(--default-color);
+				// font-weight: bold;
+				color: #fff;
+			}
+			&:hover{
+				background-color: var(--default-color);
+				color: #fff;
+				opacity: 0.8;
+			}
+		}
+	}
+
+}
+.vk_tab_bodys{
+	// border で枠をつけると、内側の要素である vk_tab_bodys_body に対してアクティブ識別用の border-top がつき、
+	// そうなると border の内側に上部線がつくので、左右線の分だけ上線が伸ばせなくて凹んだように見える
+	// これを回避するために border ではなく shadow で枠をつけている
+	box-shadow: inset 0px 0px 0px 1px var(--vk-color-border);
+	background-color: var(--vk-color-bg-accent-wh);
+	.vk_tab_bodys_body {
+		display: none;
+		padding: 1rem;
+		&.vk_tab_bodys_body-state-active{
+			display: block;
+		}
+	}
+}
+
+.has-border-top{
+	border-top: 2px solid var(--default-color);
+}
+
+.vk_tab_labels-tabSize{
+	@media(max-width:$xs-max){
+		&--sp-fitText {
+			justify-content: flex-start;
+		}
+		&--sp-fitText,
+		&--sp-monospaced{
+			flex-wrap: nowrap;
+			gap:var(--vk-tab-gap);
+		}
+		&--sp-monospaced li {
+			width:100%;
+		}
+	}
+	@media ( min-width:$sm-min ){
+		&--tab-fitText {
+			justify-content: flex-start;
+		}
+		&--tab-fitText,
+		&--tab-monospaced{
+			flex-wrap: nowrap;
+			gap:var(--vk-tab-gap);
+		}
+		&--tab-monospaced li {
+			width:100%;
+		}
+	}
+	@media ( min-width:$lg-min ){
+		&--pc-fitText {
+			justify-content: flex-start;
+		}
+		&--pc-fitText,
+		&--pc-monospaced{
+			flex-wrap: nowrap;
+			gap:var(--vk-tab-gap);
+		}
+		&--pc-monospaced li {
+			width:100%;
+		}
+	}
+}

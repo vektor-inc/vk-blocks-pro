@@ -1,0 +1,40 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/tab-item",
+	"category": "vk-blocks-cat",
+	"parent": ["vk-blocks/tab"],
+	"attributes": {
+		"tabLabel": {
+			"type": "string",
+			"default": ""
+		},
+		"tabBodyActive": {
+			"type": "boolean",
+			"default": false
+		},
+		"tabBodyPadding": {
+			"type": "object",
+			"default": {
+				"top": null,
+				"right": null,
+				"bottom": null,
+				"left": null
+			}
+		},
+		"tabColor": {
+			"type": "string",
+			"default": ""
+		},
+		"tabBodyBorderTop": {
+			"type": "boolean",
+			"default": true
+		},
+		"blockId": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"className": true
+	}
+}

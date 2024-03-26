@@ -103,6 +103,7 @@ e.g.
 
 == Changelog ==
 
+[ Add Block ] Add Tab Block
 [ Specification Change ] core/social-link, core/site-logo, core/site-title and core/site-tagline correspond to margin-extension
 
 = 1.69.1 =

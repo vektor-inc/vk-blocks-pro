@@ -53,6 +53,19 @@ function vk_blocks_breadcrumb_render_callback( $attributes ) {
 		'class_list'         => 'vk_breadcrumb_list',
 		'class_list_item'    => 'vk_breadcrumb_list_item',
 	);
+
+	// ブロックの属性からセパレーターデザインの値を取得
+	$vk_blocks_options = VK_Blocks_Options::get_options();
+
+	$separator_design = $vk_blocks_options['vk_blocks_pro_breadcrumb_separator'];
+	if ( $separator_design === '' ) {
+		return $vk_breadcrumb->get_breadcrumb( $breadcrumb_options );
+	}
+
+	// パンくずリストにスタイルを追加
+	$style = 'li.vk_breadcrumb_list_item:after { content: "' . $separator_design . '"; }';
+	wp_add_inline_style( 'vk-blocks/breadcrumb', $style );
+
 	return $vk_breadcrumb->get_breadcrumb( $breadcrumb_options );
 }
 

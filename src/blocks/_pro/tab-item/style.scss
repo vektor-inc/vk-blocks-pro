@@ -204,7 +204,8 @@ $xl-min: 1200px;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		.vk_tab_labels_label{
+		.vk_tab_labels_label,
+		.vk_tab_labels_label.has-background{ // has-background がないと 編集画面で x-t9 の .has-background の padding 0 指定に負ける
 			background-color: var(--default-color);
 			position: relative;
 			list-style: none;

@@ -249,16 +249,6 @@ $xl-min: 1200px;
 	border-top: 2px solid var(--default-color);
 }
 
-$xs-max: 575.98px;
-$sm-max: 767.98px;
-$md-max: 991.98px;
-$lg-max: 1199.98px;
-
-$sm-min: 576px;
-$md-min: 768px;
-$lg-min: 992px;
-$xl-min: 1200px;
-
 .vk_tab_labels-tabSize{
 	@media(max-width:$xs-max){
 		&--sp-fitText {

@@ -1,33 +1,33 @@
-// AdminBreadcrumbSeparator.js
+// AdminBreadcrumb.js
 import { useContext } from '@wordpress/element';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { AdminContext } from '@vkblocks/admin/index';
 
-export default function AdminBreadcrumbSeparator() {
+export default function AdminBreadcrumb() {
 	const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
 
 	return (
 		<>
 			<section>
-				<h3 id="breadcrumb-separator-setting">
-					{__('Breadcrumb Separator Setting', 'vk-blocks-pro')}
+				<h3 id="breadcrumb-setting">
+					{__('Breadcrumb Setting', 'vk-blocks-pro')}
 				</h3>
 				<p>
 					{__(
-						'Choose the design for the breadcrumb separator.',
+						'Please input the text you want to use as the separator. For example: / , > , ≫',
 						'vk-blocks-pro'
 					)}
 				</p>
 				<SelectControl
-					id="breadcrumb-separator-selector"
+					id="breadcrumb-selector"
 					className="vk_admin_selectControl"
-					name="vk_blocks_options[breadcrumb_separator_design]"
-					value={vkBlocksOption.vk_blocks_pro_breadcrumb_separator}
+					name="vk_blocks_options[breadcrumb_design]"
+					value={vkBlocksOption.vk_blocks_pro_breadcrumb}
 					onChange={(newValue) => {
 						setVkBlocksOption({
 							...vkBlocksOption,
-							vk_blocks_pro_breadcrumb_separator: newValue,
+							vk_blocks_pro_breadcrumb: newValue,
 						});
 					}}
 					options={[

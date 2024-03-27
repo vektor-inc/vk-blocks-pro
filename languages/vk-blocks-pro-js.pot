@@ -90,6 +90,34 @@ msgstr ""
 msgid "Block Style Manager Setting"
 msgstr ""
 
+#: src/admin/breadcrumb.js:24
+msgid "Breadcrumb Setting"
+msgstr ""
+
+#: src/admin/breadcrumb.js:26
+msgid "Separator Setting"
+msgstr ""
+
+#: src/admin/breadcrumb.js:28
+msgid "Please input the text you want to use as the separator."
+msgstr ""
+
+#: src/admin/breadcrumb.js:33
+msgid "Ex: / , > , ≫"
+msgstr ""
+
+#: src/admin/breadcrumb.js:55
+msgid "HOME"
+msgstr ""
+
+#: src/admin/breadcrumb.js:56
+msgid "Parent page"
+msgstr ""
+
+#: src/admin/breadcrumb.js:57
+msgid "Child page"
+msgstr ""
+
 #: src/admin/custom-block-style/add-button/index.js:113
 msgid "Block Style Label (Changeable)"
 msgstr ""
@@ -395,11 +423,15 @@ msgstr ""
 msgid "Custom Block Variation Setting"
 msgstr ""
 
+#: src/admin/import-export/index.js:148
+msgid "Breadcrumb Separator Setting"
+msgstr ""
+
 #: src/admin/import-export/index.js:15
 msgid "License Key"
 msgstr ""
 
-#: src/admin/import-export/index.js:154
+#: src/admin/import-export/index.js:167
 msgid "Import Export Tool"
 msgstr ""
 

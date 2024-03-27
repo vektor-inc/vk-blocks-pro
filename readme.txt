@@ -103,7 +103,7 @@ e.g.
 
 == Changelog ==
 
-[ Add function ][ Breadcrumb ] Add Breadcrumb Design Selection Functionality.
+[ Add function ][ Breadcrumb ] Add the ability to input breadcrumb separators.
 
 = 1.69.1 =
 [ Bug Fix ][ Inline Font Size ] Applies only Font Size has a numeric value.

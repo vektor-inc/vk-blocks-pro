@@ -1,6 +1,5 @@
-// AdminBreadcrumb.js
 import { useContext } from '@wordpress/element';
-import { SelectControl } from '@wordpress/components';
+import { TextControl } from '@wordpress/components'; // TextControl を追加
 import { __ } from '@wordpress/i18n';
 import { AdminContext } from '@vkblocks/admin/index';
 
@@ -19,47 +18,22 @@ export default function AdminBreadcrumb() {
 						'vk-blocks-pro'
 					)}
 				</p>
-				<SelectControl
+				<TextControl
 					id="breadcrumb-selector"
 					className="vk_admin_selectControl"
 					name="vk_blocks_options[breadcrumb_separator_design]"
-					value={vkBlocksOption.vk_blocks_pro_breadcrumb}
+					value={
+						!vkBlocksOption.vk_blocks_pro_breadcrumb_separator
+							? ''
+							: vkBlocksOption.vk_blocks_pro_breadcrumb_separator
+					}
 					onChange={(newValue) => {
+						newValue = newValue.trim();
 						setVkBlocksOption({
 							...vkBlocksOption,
-							vk_blocks_pro_breadcrumb: newValue,
+							vk_blocks_pro_breadcrumb_separator: newValue,
 						});
 					}}
-					options={[
-						{
-							label: __('Nothing(/)', 'vk-blocks-pro'),
-							value: '',
-						},
-						{
-							label: __('Chevron (>)', 'vk-blocks-pro'),
-							value: '>',
-						},
-						{
-							label: __('Arrow (→)', 'vk-blocks-pro'),
-							value: '→',
-						},
-						{
-							label: __('Triangle (▶︎)', 'vk-blocks-pro'),
-							value: '▶︎',
-						},
-						{
-							label: __('Triangle Outline (▷)', 'vk-blocks-pro'),
-							value: '▷',
-						},
-						{
-							label: __('Double Chevron (»)', 'vk-blocks-pro'),
-							value: '»',
-						},
-						{
-							label: __('Dotted Line (···)', 'vk-blocks-pro'),
-							value: '···',
-						},
-					]}
 				/>
 			</section>
 		</>

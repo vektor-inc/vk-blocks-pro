@@ -63,7 +63,7 @@ function vk_blocks_breadcrumb_render_callback( $attributes ) {
 		$separator_design = '';
 	}
 
-	if ( $separator_design === '' ) {
+	if ( '' === $separator_design ) {
 		return $vk_breadcrumb->get_breadcrumb( $breadcrumb_options );
 	}
 

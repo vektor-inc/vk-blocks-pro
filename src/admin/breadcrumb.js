@@ -22,7 +22,7 @@ export default function AdminBreadcrumb() {
 				<SelectControl
 					id="breadcrumb-selector"
 					className="vk_admin_selectControl"
-					name="vk_blocks_options[breadcrumb_design]"
+					name="vk_blocks_options[breadcrumb_separator_design]"
 					value={vkBlocksOption.vk_blocks_pro_breadcrumb}
 					onChange={(newValue) => {
 						setVkBlocksOption({

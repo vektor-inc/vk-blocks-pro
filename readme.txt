@@ -103,6 +103,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Accordion ] Add plain style to accordion block.
 [ Add function ][ Breadcrumb ] Add the ability to input breadcrumb separators.
 
 = 1.69.1 =

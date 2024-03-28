@@ -83,12 +83,13 @@ class BlogCard extends VK_UnitTestCase {
 				',
 			),
 			// 外部リンク 埋め込み不可
+			// 2024.3.28 以前は GitHub のURLでテストしていたが、GitHub は埋め込みができるようになったため、URLを変更
 			array(
 				'content'  => '
-				<!-- wp:vk-blocks/blog-card {"url":"https://github.com/vektor-inc/vk-blocks-pro/blob/master/vk-blocks.php"} -->
-				<div %s></div>
-				<!-- /wp:vk-blocks/blog-card -->',
-				'expected' => '<div %s>https://github.com/vektor-inc/vk-blocks-pro/blob/master/vk-blocks.php</div>',
+				<!-- wp:vk-blocks/blog-card {"url":"https://vektor-inc.co.jp/data/photo_ishikawa.jpg"} -->
+<div class="wp-block-vk-blocks-blog-card"></div>
+<!-- /wp:vk-blocks/blog-card -->',
+				'expected' => '<div %s>https://vektor-inc.co.jp/data/photo_ishikawa.jpg</div>',
 			),
 		);
 

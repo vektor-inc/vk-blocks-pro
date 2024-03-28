@@ -103,6 +103,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Accordion ] Add plain style to accordion block.
 [ Design Bug Fix ]Fixed margin-block-start being attached to flow block
 
 = 1.70.0 =

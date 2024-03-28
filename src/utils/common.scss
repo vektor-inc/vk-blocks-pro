@@ -419,17 +419,11 @@ ol {
 		@include inner-item-pad-mag;
 	}
 	&-stitch {
+		position: relative;
 		margin: 1em auto;
-		padding: 0.5em;
+		padding: 1.5em;
 		border-radius: 8px;
-		//@include inner-item-pad-mag;
-		// thema.jsonでは .wp-block-group__inner-container がつかないためコメントアウト
-		// .wp-block-group__inner-container {
-		//	border: dashed 2px;
-		//	border-radius: 8px;
-		//	padding: 1.8em;
-		//}
-		&:before {
+		&::before {
 			content: "";
 			position: absolute;
 			top: .5em;
@@ -439,6 +433,13 @@ ol {
 			border: dashed 2px;
 			border-radius: 8px;
 		}
+		//@include inner-item-pad-mag;
+		// thema.jsonでは .wp-block-group__inner-container がつかないためコメントアウト
+		//.wp-block-group__inner-container {
+		//	border: dashed 2px;
+		//	border-radius: 8px;
+		//	padding: 1.8em;
+		// }
 	}
 	&-top-bottom-border {
 		border-top: solid 1px;

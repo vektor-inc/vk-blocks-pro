@@ -100,17 +100,27 @@ class BlogCard extends VK_UnitTestCase {
 
 		foreach ( $tests as $test ) {
 
+			// Get block wrapper attributes ( HTML attributes like as : class="wp-block-vk-blocks-blog-card" ).
 			$get_block_wrapper_attributes = get_block_wrapper_attributes();
-			$parse_blocks                 = parse_blocks( sprintf( $test['content'], $get_block_wrapper_attributes ) );
-			$render_block_content         = render_block( $parse_blocks[1] );
+			// ラッパーア属性を結合したコンテンツ要素
+			$block_content = sprintf( $test['content'], $get_block_wrapper_attributes );
+			// ブロック情報を配列に変換
+			$parse_blocks = parse_blocks( $block_content );
+			// Render Blog card block.
+			$render_block_content = render_block( $parse_blocks[1] );
+
 			if ( is_wp_version_compatible( '6.3' ) ) {
 				$get_block_wrapper_attributes = 'class="wp-block-vk-blocks-blog-card is-layout-flow wp-block-blog-card-is-layout-flow"';
 			} else {
 				$get_block_wrapper_attributes = 'class="wp-block-vk-blocks-blog-card"';
 			}
+
 			if ( is_array( $test['expected'] ) ) {
-				$correct    = array();
+				// Expected が配列の場合
+				$correct = array();
+				// 埋め込み成功
 				$correct[1] = sprintf( $test['expected']['can_embed'], $get_block_wrapper_attributes );
+				// 埋め込み失敗
 				$correct[2] = sprintf( $test['expected']['cannot_embed'], $get_block_wrapper_attributes );
 			} else {
 				$correct = sprintf( $test['expected'], $get_block_wrapper_attributes );
@@ -126,6 +136,7 @@ class BlogCard extends VK_UnitTestCase {
 			// print PHP_EOL;
 
 			if ( is_array( $correct ) ) {
+				// 成功 / 失敗 がある場合
 				$this->assertContains( $render_block_content, $correct );
 			} else {
 				$this->assertSame( $correct, $render_block_content );

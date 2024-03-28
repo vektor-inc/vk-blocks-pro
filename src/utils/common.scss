@@ -423,6 +423,12 @@ ol {
 		padding: 0.5em;
 		border-radius: 8px;
 		@include inner-item-pad-mag;
+		// thema.jsonでは .wp-block-group__inner-container がつかないためコメントアウト
+		// .wp-block-group__inner-container {
+		//	border: dashed 2px;
+		//	border-radius: 8px;
+		//	padding: 1.8em;
+		//}
 		&:before {
 			content: "";
 			position: absolute;
@@ -433,12 +439,6 @@ ol {
 			border: dashed 2px;
 			border-radius: 8px;
 		}
-		// thema.jsonでは .wp-block-group__inner-container がつかないためコメントアウト
-		// .wp-block-group__inner-container {
-		//	border: dashed 2px;
-		//	border-radius: 8px;
-		//	padding: 1.8em;
-		//}
 	}
 	&-top-bottom-border {
 		border-top: solid 1px;

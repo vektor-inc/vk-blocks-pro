@@ -18,6 +18,7 @@ export class VKBButton extends Component {
 		const iconSizeAfter = this.props.lbIconSizeAfter;
 		const richText = this.props.lbRichtext;
 		const subCaption = this.props.lbsubCaption;
+		const isSelected = this.props.isSelected;
 		let aClass = '';
 		let aStyle = {};
 		let iconBefore = '';
@@ -74,6 +75,18 @@ export class VKBButton extends Component {
 					aClass += ` has-${buttonColorCustom}-color`;
 				}
 			}
+		}
+
+		// 文字色がカスタムカラーの場合
+		if (
+			buttonTextColorCustom !== undefined &&
+			isHexColor(buttonTextColorCustom) &&
+			isSelected
+		) {
+			aStyle = {
+				// 編集画面対策
+				color: `${buttonTextColorCustom}`,
+			};
 		}
 
 		aClass = `${aClass} btn-${buttonSize}`;

@@ -810,6 +810,7 @@ export default function ButtonEdit(props) {
 					lbIconSizeBefore={iconSizeBefore}
 					lbIconSizeAfter={iconSizeAfter}
 					lbsubCaption={subCaption}
+					isSelected={true}
 					lbRichtext={
 						<RichText
 							tagName={'span'}

@@ -423,11 +423,22 @@ ol {
 		padding: 0.5em;
 		border-radius: 8px;
 		@include inner-item-pad-mag;
-		.wp-block-group__inner-container {
+		&:before {
+			content: "";
+			position: absolute;
+			top: .5em;
+			left: .5em;
+			width: calc(100% - 1em);
+			height: calc(100% - 1em);
 			border: dashed 2px;
 			border-radius: 8px;
-			padding: 1.8em;
 		}
+		// thema.jsonでは .wp-block-group__inner-container がつかないためコメントアウト
+		// .wp-block-group__inner-container {
+		//	border: dashed 2px;
+		//	border-radius: 8px;
+		//	padding: 1.8em;
+		//}
 	}
 	&-top-bottom-border {
 		border-top: solid 1px;

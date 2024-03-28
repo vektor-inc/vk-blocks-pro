@@ -103,6 +103,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Core Group ] Fix stitching styles for theme.json in Group blocks.
+
 = 1.70.0 =
 [ Specification Change ] core/social-link, core/site-logo, core/site-title and core/site-tagline correspond to margin-extension
 [ Add function ][ Breadcrumb ] Add the ability to input breadcrumb separators.

@@ -20,6 +20,14 @@
 		ol li{
 			margin:calc( var(--vk-size-text) * 0.8 ) 0;
 		}
+	
+	//グループブロック
+	.wp-block-group {
+		&.is-style-vk-group-stitch:before {
+			width: calc(100% - 1.25em);
+			height: calc(100% - 1.25em);
+		}
+	}
 }
 
 .vk-blocks-format-popover {

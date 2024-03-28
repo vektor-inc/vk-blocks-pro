@@ -51,7 +51,7 @@ class BlogCard extends VK_UnitTestCase {
 		wp_delete_post( self::$attachment_id, true );
 	}
 
-	public function test_vk_blocks_blog_card_render_callback(){
+	public function test_vk_blocks_blog_card_render_callback() {
 
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
@@ -62,8 +62,8 @@ class BlogCard extends VK_UnitTestCase {
 		$tests = array(
 			// 内部リンク
 			array(
-				'content' => '
-				<!-- wp:vk-blocks/blog-card {"url":"'.get_permalink(self::$post->ID).'"} -->
+				'content'  => '
+				<!-- wp:vk-blocks/blog-card {"url":"' . get_permalink( self::$post->ID ) . '"} -->
 				<div %s>
 				<!-- wp:vk-blocks/blog-card-title /-->
 				<!-- wp:vk-blocks/blog-card-featured-image /-->
@@ -74,17 +74,17 @@ class BlogCard extends VK_UnitTestCase {
 				<!-- /wp:vk-blocks/blog-card -->',
 				'expected' => '
 				<div %s>
-				<h5 class="wp-block-vk-blocks-blog-card-title"><a href="'.get_permalink(self::$post->ID).'" target="_self" >'.get_the_title( self::$post->ID ).'</a></h5>
-				<figure class="wp-block-vk-blocks-blog-card-featured-image"><a href="'. get_permalink(self::$post->ID) .'" target="_self"  ><img src=\''. get_the_post_thumbnail_url( self::$post->ID, 'large' ) .'\' style="object-fit:cover;" /></a></figure>
-				<div class="wp-block-vk-blocks-blog-card-excerpt"><p class="wp-block-vk-blocks-blog-card-excerpt__excerpt">'.get_the_excerpt( self::$post->ID ).'</p></div>
-				<figure class="wp-block-vk-blocks-blog-card-site-logo"><a href="'.home_url().'" target="_self" ><img src=\''. get_site_icon_url( 32 ) .'\' /></a></figure>
-				<p class="wp-block-vk-blocks-blog-card-site-title"><a href="'. home_url() .'" target="_self" >'. get_bloginfo( 'name' ) .'</a></p>
+				<h5 class="wp-block-vk-blocks-blog-card-title"><a href="' . get_permalink( self::$post->ID ) . '" target="_self" >' . get_the_title( self::$post->ID ) . '</a></h5>
+				<figure class="wp-block-vk-blocks-blog-card-featured-image"><a href="' . get_permalink( self::$post->ID ) . '" target="_self"  ><img src=\'' . get_the_post_thumbnail_url( self::$post->ID, 'large' ) . '\' style="object-fit:cover;" /></a></figure>
+				<div class="wp-block-vk-blocks-blog-card-excerpt"><p class="wp-block-vk-blocks-blog-card-excerpt__excerpt">' . get_the_excerpt( self::$post->ID ) . '</p></div>
+				<figure class="wp-block-vk-blocks-blog-card-site-logo"><a href="' . home_url() . '" target="_self" ><img src=\'' . get_site_icon_url( 32 ) . '\' /></a></figure>
+				<p class="wp-block-vk-blocks-blog-card-site-title"><a href="' . home_url() . '" target="_self" >' . get_bloginfo( 'name' ) . '</a></p>
 				</div>
 				',
 			),
 			// 外部リンク 埋め込み不可
 			array(
-				'content' => '
+				'content'  => '
 				<!-- wp:vk-blocks/blog-card {"url":"https://github.com/vektor-inc/vk-blocks-pro/blob/master/vk-blocks.php"} -->
 				<div %s></div>
 				<!-- /wp:vk-blocks/blog-card -->',
@@ -100,35 +100,35 @@ class BlogCard extends VK_UnitTestCase {
 		foreach ( $tests as $test ) {
 
 			$get_block_wrapper_attributes = get_block_wrapper_attributes();
-			$parse_blocks = parse_blocks(sprintf($test['content'], $get_block_wrapper_attributes));
-			$render_block_content = render_block( $parse_blocks[1] );
+			$parse_blocks                 = parse_blocks( sprintf( $test['content'], $get_block_wrapper_attributes ) );
+			$render_block_content         = render_block( $parse_blocks[1] );
 			if ( is_wp_version_compatible( '6.3' ) ) {
 				$get_block_wrapper_attributes = 'class="wp-block-vk-blocks-blog-card is-layout-flow wp-block-blog-card-is-layout-flow"';
 			} else {
 				$get_block_wrapper_attributes = 'class="wp-block-vk-blocks-blog-card"';
 			}
-			if ( is_array($test['expected']) ) {
-				$correct = array();
-				$correct[1] = sprintf($test['expected']['can_embed'], $get_block_wrapper_attributes);
-				$correct[2] = sprintf($test['expected']['cannot_embed'], $get_block_wrapper_attributes);
+			if ( is_array( $test['expected'] ) ) {
+				$correct    = array();
+				$correct[1] = sprintf( $test['expected']['can_embed'], $get_block_wrapper_attributes );
+				$correct[2] = sprintf( $test['expected']['cannot_embed'], $get_block_wrapper_attributes );
 			} else {
-				$correct = sprintf($test['expected'], $get_block_wrapper_attributes);
+				$correct = sprintf( $test['expected'], $get_block_wrapper_attributes );
 			}
 
 			// print PHP_EOL;
-			 print '$render_block_content  :'; var_dump($render_block_content);
+			print '$render_block_content  :';
+			var_dump( $render_block_content );
 			// print PHP_EOL;
 			// print PHP_EOL;
-			 print 'correct  :';
-			 var_dump($correct);
+			print 'correct  :';
+			var_dump( $correct );
 			// print PHP_EOL;
 
-			if ( is_array($correct) ) {
-				$this->assertContains($render_block_content, $correct);
+			if ( is_array( $correct ) ) {
+				$this->assertContains( $render_block_content, $correct );
 			} else {
 				$this->assertSame( $correct, $render_block_content );
 			}
-
 		}
 	}
-};
+}

@@ -104,6 +104,7 @@ e.g.
 == Changelog ==
 
 [ Bug fix ][ Button ] Fixed buttonColorCustom in the editor to display the correct color.
+[ Design Bug Fix ]Fixed margin-block-start being attached to flow block
 
 = 1.70.0 =
 [ Specification Change ] core/social-link, core/site-logo, core/site-title and core/site-tagline correspond to margin-extension

@@ -103,6 +103,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Grid Column ] Content does not span full width when using grid columns outside of Lightning in col-12.
 [ Add function ][ Breadcrumb ] Add the ability to input breadcrumb separators.
 
 = 1.69.1 =

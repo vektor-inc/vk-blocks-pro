@@ -103,6 +103,7 @@ e.g.
 
 == Changelog ==
 
+[ Design Bug Fix ]Fixed margin-block-start being attached to flow block
 [ Add function ][ Breadcrumb ] Add the ability to input breadcrumb separators.
 
 = 1.69.1 =

@@ -12,6 +12,7 @@ export default function save({ attributes }) {
 		iconAlign,
 		iconType,
 		iconColor,
+		iconFontColor,
 		iconUrl,
 		iconTarget,
 	} = attributes;
@@ -36,6 +37,7 @@ export default function save({ attributes }) {
 				lbAlign={iconAlign}
 				lbType={iconType}
 				lbColor={iconColor}
+				lbFontColor={iconFontColor}
 				lbUrl={iconUrl}
 				lbTarget={iconTarget}
 			/>

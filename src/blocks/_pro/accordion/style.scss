@@ -199,15 +199,15 @@
 /*-------------------------------------------*/
 
 .editor-styles-wrapper {
-	.wp-block-vk-blocks-accordion:not(.is-style-vk_accordion-background-color):not(.is-style-vk_accordion-background-color-rounded):not(.is-style-vk_accordion-plain) {
+	.wp-block-vk-blocks-accordion:not(.is-style-vk_accordion-background-color):not(.is-style-vk_accordion-background-color-rounded) {
 		.vk_accordion-trigger {
 			//フロント画面では.vk_accordion-toggle-openが付くクラスに対してborder-bottomが付いているので、編集画面では追加で記述
 			border-bottom: 1px dotted var(--vk-color-border);
 		}
 	}
 	//ブロックを配置した時にisDefaultに設置したclassが付かない（スタイルをクリックしたときにclassが付く）ので、共通のclass名にcssを追加して、
-	//「背景なし」以外のスタイルに付かないようにnot指定をする必要がある
-	.wp-block-vk-blocks-accordion:not(.is-style-vk_accordion-no-background-color-border):not(.is-style-vk_accordion-background-color):not(.is-style-vk_accordion-background-color-border):not(.is-style-vk_accordion-background-color-rounded):not(.is-style-vk_accordion-background-color-rounded-border):not(.is-style-vk_accordion-plain) {
+	//「背景なし」「装飾無し」以外のスタイルに付かないようにnot指定をする必要がある
+	.wp-block-vk-blocks-accordion:not(.is-style-vk_accordion-no-background-color-border):not(.is-style-vk_accordion-background-color):not(.is-style-vk_accordion-background-color-border):not(.is-style-vk_accordion-background-color-rounded):not(.is-style-vk_accordion-background-color-rounded-border) {
 		border: 1px dashed #ccc;
 	}
 	.vk_accordion-trigger {

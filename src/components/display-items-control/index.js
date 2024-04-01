@@ -84,7 +84,7 @@ export const DisplayItemsControl = (props) => {
 			)}
 			<CheckboxControl
 				label={__('Button', 'vk-blocks-pro')}
-				checked={display_btn}
+				checked={display_btn} //eslint-disable-line camelcase
 				onChange={(checked) => setAttributes({ display_btn: checked })}
 			/>
 			<h4>{__('New mark option', 'vk-blocks-pro')}</h4>
@@ -100,7 +100,7 @@ export const DisplayItemsControl = (props) => {
 				type={'number'}
 			/>
 			<TextControl
-				label={__('New post mark', 'vk-blocks-pro')}
+				label={__('New post mark', 'vk-blocks-pro')} //eslint-disable-line camelcase
 				value={new_text}
 				onChange={(value) => setAttributes({ new_text: value })}
 			/>

@@ -126,7 +126,7 @@ export class VKBIcon extends Component {
 					fontClass += ` has-text-color has-${iconFontColor}-color `;
 				}
 			}
-			
+
 			// add class and inline css
 			const faIconFragment = fontAwesomeIcon.split(' ');
 			faIconFragment[0] = faIconFragment[0] + ` style="${fontStyle};"`;

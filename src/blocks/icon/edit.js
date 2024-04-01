@@ -299,9 +299,11 @@ export default function IconEdit(props) {
 				<PanelBody title={__('Color', 'vk-blocks-pro')}>
 					<BaseControl
 						id={`vk_block_icon_color`}
-						label={iconType === '0' || iconType === null
-						? __('Background Color', 'vk-blocks-pro')
-						: __('Icon Color', 'vk-blocks-pro')}
+						label={
+							iconType === '0' || iconType === null
+								? __('Background Color', 'vk-blocks-pro')
+								: __('Icon Color', 'vk-blocks-pro')
+						}
 					>
 						<AdvancedColorPalette schema={'iconColor'} {...props} />
 					</BaseControl>
@@ -310,7 +312,10 @@ export default function IconEdit(props) {
 							id={`vk_block_icon_font_color`}
 							label={__('Icon Color', 'vk-blocks-pro')}
 						>
-							<AdvancedColorPalette schema={'iconFontColor'} {...props} />
+							<AdvancedColorPalette
+								schema={'iconFontColor'}
+								{...props}
+							/>
 						</BaseControl>
 					)}
 				</PanelBody>

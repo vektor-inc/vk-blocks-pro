@@ -103,6 +103,7 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ icon ] Add Font color option in solid type icon
 [ Design Bug Fix ]Fixed margin-block-start being attached to flow block
 
 = 1.70.0 =

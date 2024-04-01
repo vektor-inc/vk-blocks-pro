@@ -7,11 +7,16 @@
 	figure,
 	p.wp-block{
 		width: 100%;
-	 }
-	 &_icon{
-	 button.image-button{
-		 height: auto;
-	 }
+	}
+	&_icon{
+		button.image-button {
+			height: auto;
+		}
+		&_image{
+			width: 64px !important;
+			height: 64px !important;
+			max-width: initial;
+		}
 	}
 }
 .block-editor-block-list__block .block-list-appender{

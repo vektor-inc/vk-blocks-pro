@@ -10,18 +10,18 @@ import {
 export const DisplayItemsControl = (props) => {
 	const { setAttributes, attributes } = props;
 	const {
-		display_image,
-		display_image_overlay_term,
-		display_excerpt,
-		display_author,
-		display_date,
-		display_new,
-		display_taxonomies,
-		display_btn,
-		new_date,
-		new_text,
-		btn_text,
-		btn_align,
+		display_image, //eslint-disable-line camelcase
+		display_image_overlay_term, //eslint-disable-line camelcase
+		display_excerpt, //eslint-disable-line camelcase
+		display_author, //eslint-disable-line camelcase
+		display_date, //eslint-disable-line camelcase
+		display_new, //eslint-disable-line camelcase
+		display_taxonomies, //eslint-disable-line camelcase
+		display_btn, //eslint-disable-line camelcase
+		new_date, //eslint-disable-line camelcase
+		new_text, //eslint-disable-line camelcase
+		btn_text, //eslint-disable-line camelcase
+		btn_align, //eslint-disable-line camelcase
 	} = attributes;
 
 	// 「子ページリスト」ブロックかどうかをチェック

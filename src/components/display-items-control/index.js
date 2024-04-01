@@ -51,7 +51,7 @@ export const DisplayItemsControl = (props) => {
 			{!isChildPageList && (
 				<CheckboxControl
 					label={__("Term's name on Image", 'vk-blocks-pro')}
-					checked={display_image_overlay_term}
+					checked={display_image_overlay_term} //eslint-disable-line camelcase
 					onChange={(checked) =>
 						setAttributes({ display_image_overlay_term: checked })
 					}
@@ -59,26 +59,26 @@ export const DisplayItemsControl = (props) => {
 			)}
 			<CheckboxControl
 				label={__('Excerpt', 'vk-blocks-pro')}
-				checked={display_excerpt}
+				checked={display_excerpt} //eslint-disable-line camelcase
 				onChange={(checked) =>
 					setAttributes({ display_excerpt: checked })
 				}
 			/>
 			<CheckboxControl
 				label={__('Author', 'vk-blocks-pro')}
-				checked={display_author}
+				checked={display_author} //eslint-disable-line camelcase
 				onChange={(checked) =>
 					setAttributes({ display_author: checked })
 				}
 			/>
 			<CheckboxControl
 				label={__('Date', 'vk-blocks-pro')}
-				checked={display_date}
+				checked={display_date} //eslint-disable-line camelcase
 				onChange={(checked) => setAttributes({ display_date: checked })}
 			/>
 			<CheckboxControl
 				label={__('New mark', 'vk-blocks-pro')}
-				checked={display_new}
+				checked={display_new} //eslint-disable-line camelcase
 				onChange={(checked) => setAttributes({ display_new: checked })}
 			/>
 			{/*  「子ページリスト」ブロックの場合、分類（全項目）を表示しない */}

@@ -21,6 +21,21 @@ $xxl-min: 1400px;
 	padding: 0 15px;
 }
 .vk_gridColumn .col {
+	&-2 {
+		width: calc(16.66% - 30px);
+	}
+	&-3 {
+		width: calc(25% - 30px);
+	}
+	&-4 {
+		width: calc(33.3% - 30px);
+	}
+	&-6 {
+		width: calc(50% - 30px);
+	}
+	&-12 {
+		width: calc(100% - 30px);
+	}
 	&-xs-2 {
 		width: calc(16.66% - 30px);
 	}

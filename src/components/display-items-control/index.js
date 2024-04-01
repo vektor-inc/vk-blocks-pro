@@ -100,8 +100,8 @@ export const DisplayItemsControl = (props) => {
 				type={'number'}
 			/>
 			<TextControl
-				label={__('New post mark', 'vk-blocks-pro')} //eslint-disable-line camelcase
-				value={new_text}
+				label={__('New post mark', 'vk-blocks-pro')}
+				value={new_text} //eslint-disable-line camelcase
 				onChange={(value) => setAttributes({ new_text: value })}
 			/>
 			<h4 className={'postList_itemCard_button-option'}>
@@ -115,7 +115,7 @@ export const DisplayItemsControl = (props) => {
 			</p>
 			<TextControl
 				label={__('Button text', 'vk-blocks-pro')}
-				value={btn_text}
+				value={btn_text} //eslint-disable-line camelcase
 				onChange={(value) => setAttributes({ btn_text: value })}
 			/>
 			<BaseControl

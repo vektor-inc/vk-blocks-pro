@@ -103,8 +103,9 @@ e.g.
 
 == Changelog ==
 
+[ Design Bug Fix ][ Balloon ] Harmonized icon image display in balloon blocks with frontend editing.
 [ Bug Fix ][ Core Group ] Fix stitching styles for theme.json in Group blocks.
-[ Design Bug Fix ]Fixed margin-block-start being attached to flow block
+[ Design Bug Fix ]Fixed margin-block-start being attached to flow block.
 
 = 1.70.0 =
 [ Specification Change ] core/social-link, core/site-logo, core/site-title and core/site-tagline correspond to margin-extension

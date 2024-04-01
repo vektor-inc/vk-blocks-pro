@@ -103,6 +103,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Core Group ] Fix stitching styles for theme.json in Group blocks.
 [ Design Bug Fix ]Fixed margin-block-start being attached to flow block
 
 = 1.70.0 =

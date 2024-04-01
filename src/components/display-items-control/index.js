@@ -40,6 +40,13 @@ export const DisplayItemsControl = (props) => {
 					setAttributes({ display_image: checked })
 				}
 			/>
+			<CheckboxControl
+				label={__("Term's name on Image", 'vk-blocks-pro')}
+				checked={display_image_overlay_term} //eslint-disable-line camelcase
+				onChange={(checked) =>
+					setAttributes({ display_image_overlay_term: checked })
+				}
+			/>
 			{/*  「子ページリスト」ブロックの場合、画像右上分類名を表示しない */}
 			{!isChildPageList && (
 				<CheckboxControl

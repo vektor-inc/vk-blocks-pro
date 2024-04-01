@@ -93,7 +93,7 @@ export const DisplayItemsControl = (props) => {
 					'Number of days to display the new post mark',
 					'vk-blocks-pro'
 				)}
-				value={new_date}
+				value={new_date} //eslint-disable-line camelcase
 				onChange={(value) =>
 					setAttributes({ new_date: parseInt(value) })
 				}
@@ -123,7 +123,7 @@ export const DisplayItemsControl = (props) => {
 				id={'vk_displayItem-buttonAlign'}
 			>
 				<SelectControl
-					value={btn_align}
+					value={btn_align} //eslint-disable-line camelcase
 					onChange={(value) => setAttributes({ btn_align: value })}
 					options={[
 						{

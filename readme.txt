@@ -103,6 +103,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ][ Child Page List ] Hide "Term's name on Image" and "Taxonomies (all)" display options.
+
 = 1.70.0 =
 [ Specification Change ] core/social-link, core/site-logo, core/site-title and core/site-tagline correspond to margin-extension
 [ Add function ][ Breadcrumb ] Add the ability to input breadcrumb separators.

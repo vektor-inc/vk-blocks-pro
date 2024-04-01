@@ -10,19 +10,23 @@ import {
 export const DisplayItemsControl = (props) => {
 	const { setAttributes, attributes } = props;
 	const {
-		display_image, //eslint-disable-line camelcase
-		display_image_overlay_term, //eslint-disable-line camelcase
-		display_excerpt, //eslint-disable-line camelcase
-		display_author, //eslint-disable-line camelcase
-		display_date, //eslint-disable-line camelcase
-		display_new, //eslint-disable-line camelcase
-		display_taxonomies, //eslint-disable-line camelcase
-		display_btn, //eslint-disable-line camelcase
-		new_date, //eslint-disable-line camelcase
-		new_text, //eslint-disable-line camelcase
-		btn_text, //eslint-disable-line camelcase
-		btn_align, //eslint-disable-line camelcase
+		display_image,
+		display_image_overlay_term,
+		display_excerpt,
+		display_author,
+		display_date,
+		display_new,
+		display_taxonomies,
+		display_btn,
+		new_date,
+		new_text,
+		btn_text,
+		btn_align,
 	} = attributes;
+
+	// 「子ページリスト」ブロックかどうかをチェック
+	const isChildPageList = props.name === 'vk-blocks/child-page';
+
 
 	return (
 		<PanelBody
@@ -31,55 +35,58 @@ export const DisplayItemsControl = (props) => {
 		>
 			<CheckboxControl
 				label={__('Image', 'vk-blocks-pro')}
-				checked={display_image} //eslint-disable-line camelcase
+				checked={display_image}
 				onChange={(checked) =>
 					setAttributes({ display_image: checked })
 				}
 			/>
-			<CheckboxControl
-				label={__("Term's name on Image", 'vk-blocks-pro')}
-				checked={display_image_overlay_term} //eslint-disable-line camelcase
-				onChange={(checked) =>
-					setAttributes({ display_image_overlay_term: checked })
-				}
-			/>
+			{/*  「子ページリスト」ブロックの場合、画像右上分類名を表示しない */}
+			{!isChildPageList && (
+				<CheckboxControl
+					label={__("Term's name on Image", 'vk-blocks-pro')}
+					checked={display_image_overlay_term}
+					onChange={(checked) =>
+						setAttributes({ display_image_overlay_term: checked })
+					}
+				/>
+			)}
 			<CheckboxControl
 				label={__('Excerpt', 'vk-blocks-pro')}
-				checked={display_excerpt} //eslint-disable-line camelcase
+				checked={display_excerpt}
 				onChange={(checked) =>
 					setAttributes({ display_excerpt: checked })
 				}
 			/>
 			<CheckboxControl
 				label={__('Author', 'vk-blocks-pro')}
-				checked={display_author} //eslint-disable-line camelcase
+				checked={display_author}
 				onChange={(checked) =>
 					setAttributes({ display_author: checked })
 				}
 			/>
 			<CheckboxControl
 				label={__('Date', 'vk-blocks-pro')}
-				checked={display_date} //eslint-disable-line camelcase
+				checked={display_date}
 				onChange={(checked) => setAttributes({ display_date: checked })}
 			/>
-
 			<CheckboxControl
 				label={__('New mark', 'vk-blocks-pro')}
-				checked={display_new} //eslint-disable-line camelcase
+				checked={display_new}
 				onChange={(checked) => setAttributes({ display_new: checked })}
 			/>
-
-			<CheckboxControl
-				label={__('Taxonomies (all)', 'vk-blocks-pro')}
-				checked={display_taxonomies} //eslint-disable-line camelcase
-				onChange={(checked) =>
-					setAttributes({ display_taxonomies: checked })
-				}
-			/>
-
+			{/*  「子ページリスト」ブロックの場合、分類（全項目）を表示しない */}
+			{!isChildPageList && (
+				<CheckboxControl
+					label={__('Taxonomies (all)', 'vk-blocks-pro')}
+					checked={display_taxonomies}
+					onChange={(checked) =>
+						setAttributes({ display_taxonomies: checked })
+					}
+				/>
+			)}
 			<CheckboxControl
 				label={__('Button', 'vk-blocks-pro')}
-				checked={display_btn} //eslint-disable-line camelcase
+				checked={display_btn}
 				onChange={(checked) => setAttributes({ display_btn: checked })}
 			/>
 			<h4>{__('New mark option', 'vk-blocks-pro')}</h4>
@@ -88,7 +95,7 @@ export const DisplayItemsControl = (props) => {
 					'Number of days to display the new post mark',
 					'vk-blocks-pro'
 				)}
-				value={new_date} //eslint-disable-line camelcase
+				value={new_date}
 				onChange={(value) =>
 					setAttributes({ new_date: parseInt(value) })
 				}
@@ -96,7 +103,7 @@ export const DisplayItemsControl = (props) => {
 			/>
 			<TextControl
 				label={__('New post mark', 'vk-blocks-pro')}
-				value={new_text} //eslint-disable-line camelcase
+				value={new_text}
 				onChange={(value) => setAttributes({ new_text: value })}
 			/>
 			<h4 className={'postList_itemCard_button-option'}>
@@ -110,7 +117,7 @@ export const DisplayItemsControl = (props) => {
 			</p>
 			<TextControl
 				label={__('Button text', 'vk-blocks-pro')}
-				value={btn_text} //eslint-disable-line camelcase
+				value={btn_text}
 				onChange={(value) => setAttributes({ btn_text: value })}
 			/>
 			<BaseControl
@@ -118,7 +125,7 @@ export const DisplayItemsControl = (props) => {
 				id={'vk_displayItem-buttonAlign'}
 			>
 				<SelectControl
-					value={btn_align} //eslint-disable-line camelcase
+					value={btn_align}
 					onChange={(value) => setAttributes({ btn_align: value })}
 					options={[
 						{

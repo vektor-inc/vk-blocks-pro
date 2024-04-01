@@ -35,7 +35,7 @@ export const DisplayItemsControl = (props) => {
 		>
 			<CheckboxControl
 				label={__('Image', 'vk-blocks-pro')}
-				checked={display_image}
+				checked={display_image} //eslint-disable-line camelcase
 				onChange={(checked) =>
 					setAttributes({ display_image: checked })
 				}

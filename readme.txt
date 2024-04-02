@@ -103,6 +103,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Accordion ] Add plain style to accordion block.
 [ Design Bug Fix ][ Grid Column ] Fixed right margin when using grid columns outside of Lightning。
 [ Bug Fix ][ Grid Column ] Content does not span full width when using grid columns outside of Lightning in col-12.
 [ Bug Fix ][ Core Group ] Fix stitching styles for theme.json in Group blocks.

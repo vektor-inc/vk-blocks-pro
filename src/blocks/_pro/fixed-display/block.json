@@ -1,0 +1,32 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/fixed-display",
+	"category": "vk-blocks-cat",
+	"title": "Fixed display",
+	"attributes": {
+		"mode": {
+			"type": "string",
+			"default": "always-visible"
+		},
+		"position": {
+			"type": "string",
+			"default": "right"
+		},
+		"once": {
+			"type": "boolean",
+			"default": false
+		},
+		"clientId": {
+			"type": "string"
+		},
+		"blockId": {
+			"type": "string"
+		}
+	},
+	"description": "Remains fixed on the screen at all times.",
+	"textdomain": "vk-blocks-pro",
+	"supports": {
+		"html": false,
+		"className": true
+	}
+}

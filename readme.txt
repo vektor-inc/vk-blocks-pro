@@ -108,6 +108,7 @@ e.g.
 [ Bug Fix ][ Grid Column ] Content does not span full width when using grid columns outside of Lightning in col-12.
 [ Bug Fix ][ Core Group ] Fix stitching styles for theme.json in Group blocks.
 [ Design Bug Fix ]Fixed margin-block-start being attached to flow block
+[ Bug Fix ][ New FAQ ] Fix a typo in the font-family specification.
 
 = 1.70.0 =
 [ Specification Change ] core/social-link, core/site-logo, core/site-title and core/site-tagline correspond to margin-extension

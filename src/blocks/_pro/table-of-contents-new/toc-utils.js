@@ -131,16 +131,21 @@ export const returnHtml = (sources, attributes, className) => {
 
 			preNumber = preNumber + '. ';
 
-			let content = data.attributes.content
+			const content = data.attributes.content
 				? data.attributes.content
 				: data.attributes.title;
 
 			// この条件分岐がないと見出し配置して文字列が undefinedの時にreplace対象がなくてエディタがクラッシュする
-			content =
-				typeof content === 'string'
-					? content.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '')
-					: '';
-
+			const removeHtmlTags = (text) => {
+				return text.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '');
+			}
+			
+			let displayContent;
+			if (typeof content === 'string') {
+				displayContent = removeHtmlTags(content);
+			} else if (typeof content === 'object' && typeof content.text === 'string') {
+				displayContent = removeHtmlTags(content.text);
+			}
 			return (
 				<li
 					key={data.clientId}
@@ -153,11 +158,12 @@ export const returnHtml = (sources, attributes, className) => {
 						<span className={`${baseClass}_link_preNumber`}>
 							{preNumber}
 						</span>
-						{content}
+						{displayContent}
 					</a>
 				</li>
 			);
 		});
 	}
+	//console.log(returnHtmlContent);
 	return ReactDOMServer.renderToString(returnHtmlContent);
 };

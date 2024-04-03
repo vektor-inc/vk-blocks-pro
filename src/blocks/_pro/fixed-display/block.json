@@ -12,10 +12,6 @@
 			"type": "string",
 			"default": "right"
 		},
-		"once": {
-			"type": "boolean",
-			"default": false
-		},
 		"clientId": {
 			"type": "string"
 		},

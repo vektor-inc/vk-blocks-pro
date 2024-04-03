@@ -103,6 +103,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] The Button Block has been made compatible for use within the Core Navigation Block.
+
 = 1.70.0 =
 [ Specification Change ] core/social-link, core/site-logo, core/site-title and core/site-tagline correspond to margin-extension
 [ Add function ][ Breadcrumb ] Add the ability to input breadcrumb separators.

@@ -8,7 +8,7 @@ import { PanelBody, SelectControl } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 
-export default function AnimationEdit(props) {
+export default function FixedDisplayEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const { mode, position, blockId } = attributes;
 
@@ -32,7 +32,7 @@ export default function AnimationEdit(props) {
 	}, [clientId]);
 
 	const blockProps = useBlockProps({
-		className: `vk_fixed-display vk_fixed-display-${mode} vk_fixed-display-${position} vk_fixed-display-${blockId}`,
+		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} vk_fixed-display-${blockId}`,
 	});
 
 	return (

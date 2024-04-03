@@ -104,6 +104,7 @@ e.g.
 == Changelog ==
 
 [ Specification Change ] core/social-link, core/site-logo, core/site-title and core/site-tagline correspond to margin-extension
+[ Bug fix ][ Table of Contents ] Fixed visibility issue in 6.5.
 
 = 1.69.1 =
 [ Bug Fix ][ Inline Font Size ] Applies only Font Size has a numeric value.

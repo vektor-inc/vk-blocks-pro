@@ -1,12 +1,11 @@
 /**
- * Animation block
+ * Fixed Display block
  *
  */
 import { ReactComponent as Icon } from './icon.svg';
 import metadata from './block.json';
 import edit from './edit';
 import save from './save';
-import transforms from './transforms';
 
 const { name } = metadata;
 
@@ -17,5 +16,4 @@ export const settings = {
 	category: 'vk-blocks-cat',
 	edit,
 	save,
-	transforms,
 };

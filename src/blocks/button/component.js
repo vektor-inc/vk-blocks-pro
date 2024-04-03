@@ -18,7 +18,7 @@ export class VKBButton extends Component {
 		const iconSizeAfter = this.props.lbIconSizeAfter;
 		const richText = this.props.lbRichtext;
 		const subCaption = this.props.lbsubCaption;
-		const isSelected = this.props.isSelected;
+		const inlineStyle = this.props.inlineStyle;
 		let aClass = '';
 		let aStyle = {};
 		let iconBefore = '';
@@ -78,6 +78,7 @@ export class VKBButton extends Component {
 		}
 
 		// 文字色がカスタムカラーの場合
+		/*
 		if (
 			buttonTextColorCustom !== undefined &&
 			isHexColor(buttonTextColorCustom) &&
@@ -88,6 +89,7 @@ export class VKBButton extends Component {
 				color: `${buttonTextColorCustom}`,
 			};
 		}
+		*/
 
 		aClass = `${aClass} btn-${buttonSize}`;
 
@@ -126,7 +128,7 @@ export class VKBButton extends Component {
 			/* eslint react/jsx-no-target-blank: 0 */
 			<a
 				href={buttonUrl}
-				style={aStyle}
+				style={inlineStyle}
 				className={aClass}
 				role={'button'}
 				aria-pressed={true}

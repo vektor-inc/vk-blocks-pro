@@ -4,11 +4,11 @@ import classNames from 'classnames';
 export default function save(props) {
 	let { mode, position, blockId } = props.attributes;
 	//For recovering block.
-	mode = mode ? mode : 'always-visible';
+	mode = mode ? mode : 'slide-up';
 	position = position ? position : 'right';
 
 	const sliderClasses = classNames(
-		`vk_animation vk_animation-${mode} vk_animation-position-${position} vk_animation-${blockId}`
+		`vk_fixed-display vk_fixed-display-${mode} vk_fixed-display-position-${position} vk_fixed-display-${blockId}`
 	);
 
 	return (

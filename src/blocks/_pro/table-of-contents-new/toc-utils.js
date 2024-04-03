@@ -138,12 +138,15 @@ export const returnHtml = (sources, attributes, className) => {
 			// この条件分岐がないと見出し配置して文字列が undefinedの時にreplace対象がなくてエディタがクラッシュする
 			const removeHtmlTags = (text) => {
 				return text.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '');
-			}
-			
+			};
+
 			let displayContent;
 			if (typeof content === 'string') {
 				displayContent = removeHtmlTags(content);
-			} else if (typeof content === 'object' && typeof content.text === 'string') {
+			} else if (
+				typeof content === 'object' &&
+				typeof content.text === 'string'
+			) {
 				displayContent = removeHtmlTags(content.text);
 			}
 			return (

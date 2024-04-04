@@ -1,481 +1,67 @@
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-$vk_animation_short_size: 3em;
-$vk_animation_normal_size: 6em;
-$vk_animation_long_size: 9em;
-
 :root {
-	--vk-animation-size: 3em;
+	--admin-bar-offset: 32px;
 }
 
 // Css for deprecated block.
-.vk_animation {
-	opacity: 0;
-	transition: all 0.5s ease-out 0.5s;
-	position: relative;
-
-	&-active {
-		opacity: 1;
-	}
+.vk_fixed-display {
+	position: fixed;
+	margin-block-start: 0;
+	z-index: 9999;
 }
 
-.vk_animation-slide-up {
-	top: 3em;
+.vk_fixed-display-mode {
+	
+	&-always-visible {
+	}
+	
+	&-show-on-scroll {
+		opacity: 0;
+		transition: opacity 0.3s ease;
+		
+		&.is-visible {
+			opacity: 1;
+		}
+	}
 
-	&.vk_animation-active {
+}
+
+.vk_fixed-display-position {
+
+	&-top {
 		top: 0;
-	}
-}
-
-.vk_animation-slide-right {
-	left: -3em;
-
-	&.vk_animation-active {
 		left: 0;
-	}
-}
-
-.vk_animation-slide-left {
-	right: -3em;
-
-	&.vk_animation-active {
 		right: 0;
+		width: 100%;
 	}
-}
-
-
-.vk_animation {
-
-	opacity: 0;
-	position: relative;
-
-	&-active {
-		opacity: 1;
+	&-right {
+		top: 50%;
+		right: 0;
+		transform: translateY(-50%);
 	}
-}
-
-.vk_animation-speed-very-slow {
-	transition: all 2s ease-out 2s;
-}
-
-.vk_animation-speed-slow {
-	transition: all 1.5s ease-out 1.5s;
-}
-
-.vk_animation-speed-normal {
-	transition: all 1s ease-out 1s;
-}
-
-.vk_animation-speed-fast {
-	transition: all 0.5s ease-out 0.5s;
-}
-
-.vk_animation-speed-very-fast {
-	transition: all 0.25s ease-out 0.25s;
-}
-
-.vk_animation-slide-up {
-
-	&.vk_animation-range-short {
-		top: $vk_animation_short_size;
-	}
-
-	&.vk_animation-range-normal {
-		top: $vk_animation_normal_size;
-	}
-
-	&.vk_animation-range-long {
-		top: $vk_animation_long_size;
-	}
-
-	&.vk_animation-active {
-		top: 0;
-	}
-
-}
-
-.vk_animation-slide-right {
-
-	&.vk_animation-range-short {
-		left: - #{$vk_animation_short_size};
-	}
-
-	&.vk_animation-range-normal {
-		left: -  #{$vk_animation_normal_size};
-	}
-
-	&.vk_animation-range-long {
-		left: -  #{$vk_animation_long_size};
-	}
-
-	&.vk_animation-active {
+	&-bottom {
 		left: 0;
-	}
-
-}
-
-.vk_animation-slide-left {
-
-	&.vk_animation-range-short {
-		right: -  #{$vk_animation_short_size};
-	}
-
-	&.vk_animation-range-normal {
-		right: -  #{$vk_animation_normal_size};
-	}
-
-	&.vk_animation-range-long {
-		right: -  #{$vk_animation_long_size};
-	}
-
-	&.vk_animation-active {
 		right: 0;
+		bottom: 0;
+		width: 100%;
 	}
-
+	&-left {
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+	}
 }
 
-.vk_animation {
-	&-trembling-x,
-	&-trembling-y,
-	&-left-right,
-	&-up-down,
-	&-pounding,
-	&-shaking {
-		opacity: 1;
-		&.vk_animation-speed{
-			&-very-slow {
-				animation-duration: 3s;
-			}
-			&-slow {
-				animation-duration: 1s;	
-			}
-			&-normal {
-				animation-duration: 0.5s;
-			}
-			&-fast {
-				animation-duration: 0.1s;
-			}
-			&-very-fast {
-				animation-duration: 0.05s;
-			}
-		}
+/*-------------------------------------------*/
+/* 管理画面
+/*-------------------------------------------*/
+.logged-in.admin-bar .vk_fixed-display-position {
+	&-top {
+		top: var(--admin-bar-offset);
 	}
-
-
-	// ぷるぷる X
-
-	&-trembling-x {
-		animation: trembling-x 0.1s infinite;
-		&.vk_animation-range{
-			&-short {
-				animation-name: trembling-x-short;	
-			}
-			&-normal {
-				animation-name: trembling-x-normal;	
-			}
-			&-long {
-				animation-name: trembling-x-long;	
-			}
-		}
+	&-right, &-left {
+		top: calc(50% + var(--admin-bar-offset));
 	}
-
-	@keyframes trembling-x-short {
-		0% {
-			transform: scale(1, 1);
-		}
-		50% {
-			transform: scale(0.99, 0.99);
-		}
-	}
-	@keyframes trembling-x-normal {
-		0% {
-			transform: scale(1, 1);
-		}
-		50% {
-			transform: scale(0.97, 0.97);
-		}
-	}
-	@keyframes trembling-x-long {
-		0% {
-			transform: scale(1, 1);
-		}
-		50% {
-			transform: scale(0.95, 0.95);
-		}
-	}
-
-	// 左右
-
-	&-left-right {
-		animation: left-right 0.1s infinite;
-		&.vk_animation-range{
-			&-short {
-				animation-name: left-right-short;	
-			}
-			&-normal {
-				animation-name: left-right-normal;	
-			}
-			&-long {
-				animation-name: left-right-long;	
-			}
-		}
-	}
-
-	@keyframes left-right-short {
-		0% {
-			transform: translate(1px,0);
-		}
-		50% {
-			transform: translate(-1px,0);
-		}
-		100% {
-			transform: translate(1px,0);
-		}
-	}
-	@keyframes left-right-normal {
-		0% {
-			transform: translate(5px,0);
-		}
-		50% {
-			transform: translate(-5px,0);
-		}
-		100% {
-			transform: translate(5px,0);
-		}
-	}
-	@keyframes left-right-long {
-		0% {
-			transform: translate(15px,0);
-		}
-		50% {
-			transform: translate(-15px,0);
-		}
-		100% {
-			transform: translate(15px,0);
-		}
-	}
-
-	// 上下
-
-	&-up-down {
-		animation: up-down 0.1s infinite;
-		&.vk_animation-range{
-			&-short {
-				animation-name: up-down-short;	
-			}
-			&-normal {
-				animation-name: up-down-normal;	
-			}
-			&-long {
-				animation-name: up-down-long;	
-			}
-		}
-	}
-
-	@keyframes up-down-short {
-		0% {
-			transform: translate(0,1px);
-		}
-		50% {
-			transform: translate(0,-1px);
-		}
-		100% {
-			transform: translate(0,1px);
-		}
-	}
-	@keyframes up-down-normal {
-		0% {
-			transform: translate(0,5px);
-		}
-		50% {
-			transform: translate(0,-5px);
-		}
-		100% {
-			transform: translate(0,5px);
-		}
-	}
-	@keyframes up-down-long {
-		0% {
-			transform: translate(0,15px);
-		}
-		50% {
-			transform: translate(0,-15px);
-		}
-		100% {
-			transform: translate(0,15px);
-		}
-	}
-
-	// ぷるぷる Y
-
-	&-trembling-y {
-		animation: trembling-y 0.1s infinite;
-		&.vk_animation-range{
-			&-short {
-				animation-name: trembling-y-short;	
-			}
-			&-normal {
-				animation-name: trembling-y-normal;	
-			}
-			&-long {
-				animation-name: trembling-y-long;	
-			}
-		}
-	}
-
-	@keyframes trembling-y-short {
-		0% {
-			transform: rotate(-0.1deg);
-		}
-		50% {
-			transform: rotate(0.1deg);
-		}
-	}
-	@keyframes trembling-y-normal {
-		0% {
-			transform: rotate(-0.25deg);
-		}
-		50% {
-			transform: rotate(0.25deg);
-		}
-	}
-	@keyframes trembling-y-long {
-		0% {
-			transform: rotate(-0.5deg);
-		}
-		50% {
-			transform: rotate(0.5deg);
-		}
-	}
-
-	// どきどき
-
-	&-pounding {
-		animation: pounding 1.5s infinite;
-		&.vk_animation-range{
-			&-short {
-				animation-name: pounding-short;	
-			}
-			&-normal {
-				animation-name: pounding-normal;	
-			}
-			&-long {
-				animation-name: pounding-long;	
-			}
-		}
-	}
-
-	@keyframes pounding-short {
-		0% {
-			transform: scale(1.03);
-		}
-		5% {
-			transform: scale(1);
-		}
-		95% {
-			transform: scale(1);
-		}
-		100% {
-			transform: scale(1.03);
-		}
-	}
-	@keyframes pounding-normal {
-		0% {
-			transform: scale(1.05);
-		}
-		5% {
-			transform: scale(1);
-		}
-		95% {
-			transform: scale(1);
-		}
-		100% {
-			transform: scale(1.05);
-		}
-	}
-	@keyframes pounding-long {
-		0% {
-			transform: scale(1.1);
-		}
-		5% {
-			transform: scale(1);
-		}
-		95% {
-			transform: scale(1);
-		}
-		100% {
-			transform: scale(1.1);
-		}
-	}
-
-	&-shaking {
-		animation: shaking 0.4s infinite;
-		&.vk_animation-range{
-			&-short {
-				animation-name: shaking-short;	
-			}
-			&-normal {
-				animation-name: shaking-normal;	
-			}
-			&-long {
-				animation-name: shaking-long;	
-			}
-		}
-	}
-
-	@keyframes shaking-short {
-		0% {
-			transform: translate(1px,-1px);
-		}
-		25% {
-			transform: translate(-1px, 1px);
-		}
-		50% {
-			transform: translate(-1px,-1px);
-		}
-		75% {
-			transform: translate(1px,1px);
-		}
-		100% {
-			transform: translate(1px,-1px);
-		}
-	}
-	@keyframes shaking-normal {
-		0% {
-			transform: translate(5px,-5px);
-		}
-		25% {
-			transform: translate(-5px, 5px);
-		}
-		50% {
-			transform: translate(-5px,-5px);
-		}
-		75% {
-			transform: translate(5px,5px);
-		}
-		100% {
-			transform: translate(5px,-5px);
-		}
-	}
-	@keyframes shaking-long {
-		0% {
-			transform: translate(10px,-10px);
-		}
-		25% {
-			transform: translate(-10px, 10px);
-		}
-		50% {
-			transform: translate(-10px,-10px);
-		}
-		75% {
-			transform: translate(10px,10px);
-		}
-		100% {
-			transform: translate(10px,-10px);
-		}
-	}
-
 }
-
-

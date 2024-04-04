@@ -12,7 +12,7 @@ window.addEventListener('scroll', function() {
 		// itemのページ上での位置（offsetTop）を取得し、スクロール位置を考慮して判定
 		const itemTop = item.offsetTop;
 
-		// スクロール位置 + timingInPixelsがitemの位置を超えた場合、showクラスを追加
+		// スクロール位置 + timingInPixelsがitemの位置を超えた場合、is-visibleクラスを追加
 		if (window.scrollY + timingInPixels > itemTop) {
 			item.classList.add('is-visible');
 		} else {
@@ -39,3 +39,4 @@ window.addEventListener('scroll', function() {
 			return value;// 未知の単位の場合は値をそのまま返す
 	}
 }
+ 

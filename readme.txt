@@ -92,7 +92,6 @@ e.g.
 1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 
-
 == Frequently Asked Questions ==
 
 
@@ -104,10 +103,11 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Accordion ] Add plain style to accordion block.
-[ Design Bug Fix ][ Grid Column ] Fixed right margin when using grid columns outside of Lightning。
+[ Bug fix ][ Table of Contents ] Fixed visibility issue in 6.5.
 [ Bug Fix ][ Grid Column ] Content does not span full width when using grid columns outside of Lightning in col-12.
 [ Bug Fix ][ Core Group ] Fix stitching styles for theme.json in Group blocks.
-[ Design Bug Fix ]Fixed margin-block-start being attached to flow block
+[ Bug Fix ]Fixed margin-block-start being attached to flow block
+[ Bug Fix ][ Grid Column ] Fixed right margin when using grid columns outside of Lightning。
 [ Bug Fix ][ New FAQ ] Fix a typo in the font-family specification.
 
 = 1.70.0 =

@@ -293,7 +293,7 @@ msgstr ""
 #: src/blocks/_pro/timeline-item/edit.js:71
 #: src/blocks/border-box/edit.js:204
 #: src/blocks/button/edit.js:666
-#: src/blocks/icon/edit.js:292
+#: src/blocks/icon/edit.js:299
 #: src/blocks/staff/edit.js:199
 msgid "Color"
 msgstr ""
@@ -311,6 +311,7 @@ msgstr ""
 #: src/blocks/_pro/gridcolcard/edit-common.js:171
 #: src/blocks/border-box/edit.js:216
 #: src/blocks/button/edit.js:721
+#: src/blocks/icon/edit.js:304
 msgid "Background Color"
 msgstr ""
 
@@ -498,7 +499,7 @@ msgstr ""
 #: src/admin/margin.js:133
 #: src/blocks/border-box/edit.js:192
 #: src/blocks/icon-outer/edit.js:150
-#: src/blocks/icon/edit.js:139
+#: src/blocks/icon/edit.js:140
 msgid "Margin"
 msgstr ""
 
@@ -1203,7 +1204,7 @@ msgstr ""
 #: src/blocks/_pro/gridcolcard-item/edit.js:333
 #: src/blocks/_pro/icon-card-item/edit.js:128
 #: src/blocks/button/edit.js:272
-#: src/blocks/icon/edit.js:285
+#: src/blocks/icon/edit.js:292
 #: src/blocks/pr-blocks/edit.js:262
 #: src/blocks/pr-content/edit.js:131
 msgid "Open link new tab."
@@ -1277,7 +1278,7 @@ msgstr ""
 #: src/blocks/_pro/grid-column/edit.js:91
 #: src/blocks/_pro/outer/edit.js:924
 #: src/blocks/icon-outer/edit.js:183
-#: src/blocks/icon/edit.js:171
+#: src/blocks/icon/edit.js:172
 #: src/utils/unit-options.js:6
 msgid "px"
 msgstr ""
@@ -1286,7 +1287,7 @@ msgstr ""
 #: src/blocks/_pro/grid-column/edit.js:95
 #: src/blocks/_pro/outer/edit.js:928
 #: src/blocks/icon-outer/edit.js:187
-#: src/blocks/icon/edit.js:175
+#: src/blocks/icon/edit.js:176
 #: src/utils/unit-options.js:10
 msgid "em"
 msgstr ""
@@ -1295,7 +1296,7 @@ msgstr ""
 #: src/blocks/_pro/grid-column/edit.js:99
 #: src/blocks/_pro/outer/edit.js:932
 #: src/blocks/icon-outer/edit.js:191
-#: src/blocks/icon/edit.js:179
+#: src/blocks/icon/edit.js:180
 #: src/utils/unit-options.js:14
 msgid "rem"
 msgstr ""
@@ -1304,7 +1305,7 @@ msgstr ""
 #: src/blocks/_pro/grid-column/edit.js:103
 #: src/blocks/_pro/outer/edit.js:936
 #: src/blocks/icon-outer/edit.js:195
-#: src/blocks/icon/edit.js:183
+#: src/blocks/icon/edit.js:184
 #: src/utils/unit-options.js:18
 msgid "vw"
 msgstr ""
@@ -1496,7 +1497,7 @@ msgstr ""
 #: src/blocks/border-box/edit.js:240
 #: src/blocks/button/edit.js:749
 #: src/blocks/heading/edit.js:335
-#: src/blocks/icon/edit.js:269
+#: src/blocks/icon/edit.js:276
 #: src/blocks/pr-content/edit.js:212
 #: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:142
 #: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:167
@@ -1512,7 +1513,7 @@ msgstr ""
 #: src/blocks/_pro/icon-card-item/edit.js:153
 #: src/blocks/button/edit.js:595
 #: src/blocks/icon-outer/edit.js:238
-#: src/blocks/icon/edit.js:223
+#: src/blocks/icon/edit.js:224
 #: src/blocks/pr-blocks/edit.js:285
 msgid "Solid color"
 msgstr ""
@@ -1729,7 +1730,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:828
 #: src/blocks/icon-outer/edit.js:212
-#: src/blocks/icon/edit.js:200
+#: src/blocks/icon/edit.js:201
 msgid "Border radius"
 msgstr ""
 
@@ -1895,7 +1896,7 @@ msgstr ""
 #: src/blocks/_pro/table-of-contents-new/edit.js:119
 #: src/blocks/_pro/timeline-item/edit.js:74
 #: src/blocks/icon-outer/edit.js:229
-#: src/blocks/icon/edit.js:215
+#: src/blocks/icon/edit.js:216
 msgid "Style"
 msgstr ""
 
@@ -2353,7 +2354,7 @@ msgstr ""
 
 #: src/blocks/button/edit.js:785
 #: src/blocks/icon-outer/edit.js:89
-#: src/blocks/icon/edit.js:81
+#: src/blocks/icon/edit.js:82
 msgid "Size"
 msgstr ""
 
@@ -2484,6 +2485,7 @@ msgid "Heading Settings"
 msgstr ""
 
 #: src/blocks/heading/edit.js:357
+#: src/blocks/icon/edit.js:313
 msgid "Icon Color"
 msgstr ""
 
@@ -2505,17 +2507,17 @@ msgid "Heading %d"
 msgstr ""
 
 #: src/blocks/icon-outer/edit.js:208
-#: src/blocks/icon/edit.js:196
+#: src/blocks/icon/edit.js:197
 msgid "Reset"
 msgstr ""
 
 #: src/blocks/icon-outer/edit.js:246
-#: src/blocks/icon/edit.js:231
+#: src/blocks/icon/edit.js:235
 msgid "Icon & Frame"
 msgstr ""
 
 #: src/blocks/icon-outer/edit.js:254
-#: src/blocks/icon/edit.js:239
+#: src/blocks/icon/edit.js:246
 msgid "Icon only"
 msgstr ""
 
@@ -2523,11 +2525,11 @@ msgstr ""
 msgid "Icon Common Setting"
 msgstr ""
 
-#: src/blocks/icon/edit.js:266
+#: src/blocks/icon/edit.js:273
 msgid "Icon Setting"
 msgstr ""
 
-#: src/blocks/icon/edit.js:280
+#: src/blocks/icon/edit.js:287
 #: src/blocks/pr-content/edit.js:122
 msgid "Link URL"
 msgstr ""

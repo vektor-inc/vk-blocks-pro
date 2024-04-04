@@ -1,4 +1,6 @@
 .vk_fixed-display {
+	transform: unset;
+	z-index: unset;
 	border: 1px dashed #ccc;
 	min-height:3em;
 	// そのままだと編集画面でも消えてしまうので上書き（.wp-block-vk-blocks-fixed-display）がないと負けてしまう

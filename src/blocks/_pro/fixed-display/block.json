@@ -12,6 +12,14 @@
 			"type": "string",
 			"default": "right"
 		},
+		"scrollTiming": {
+			"type": "number",
+			"default": 0
+		},
+		"scrollTimingUnit": {
+			"type": "string",
+			"default": "px"
+		},			
 		"clientId": {
 			"type": "string"
 		},
@@ -23,6 +31,7 @@
 	"textdomain": "vk-blocks-pro",
 	"supports": {
 		"html": false,
-		"className": true
+		"className": true,
+		"align": ["wide", "full", "left", "right", "center"]
 	}
 }

@@ -620,6 +620,11 @@ msgstr ""
 msgid "Background color / Rounded / Border"
 msgstr ""
 
+#: src/blocks/_pro/accordion/index.js:47
+#: src/blocks/heading/edit.js:268
+msgid "Plain"
+msgstr ""
+
 #: src/blocks/_pro/animation/edit.js:103
 msgid "Slow"
 msgstr ""
@@ -2464,10 +2469,6 @@ msgstr ""
 
 #: src/blocks/heading/edit.js:257
 msgid "Heading style"
-msgstr ""
-
-#: src/blocks/heading/edit.js:268
-msgid "Plain"
 msgstr ""
 
 #: src/blocks/heading/edit.js:276

@@ -13,6 +13,7 @@ $xl-min: 1200px;
 $xxl-min: 1200px;
 
 .vk_flow{ // 編集画面でcssの指定が軽くて負けるので、優先させるため記述
+	margin-block-start:0; //global-styles-inline-cssのmargin-block-startがつくので打ち消し
 	margin-bottom: 0;
 	.vk_flow_frame {
 		display: flex;

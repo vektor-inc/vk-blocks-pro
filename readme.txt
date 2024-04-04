@@ -105,10 +105,10 @@ e.g.
 = 1.71.0 =
 [ Add function ][ Accordion ] Add plain style to accordion block.
 [ Bug fix ][ Table of Contents (Pro) ] Fixed visibility issue in 6.5.
-[ Bug fix ][ Grid Column (Pro) ] Content does not span full width when using grid columns outside of Lightning in col-12.
 [ Bug fix ][ Core Group ] Fix stitching styles for theme.json in Group blocks.
 [ Bug fix ][ Flow ] Fixed margin-block-start being attached to flow block
-[ Bug fix ][ Grid Column (Pro) ] Fixed right margin when using grid columns outside of Lightning。
+[ Bug fix ][ Grid Column (Pro) ] Fixed right margin when using grid columns outside of Lightning.
+[ Bug fix ][ Grid Column (Pro) ] Content does not span full width when using grid columns outside of Lightning in col-12.
 [ Bug fix ][ New FAQ ] Fix a typo in the font-family specification.
 
 = 1.70.0 =

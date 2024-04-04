@@ -20,11 +20,9 @@ export class VKBButton extends Component {
 		const subCaption = this.props.lbsubCaption;
 		const inlineStyle = this.props.inlineStyle;
 		let aClass = '';
-		let aStyle = {};
 		let iconBefore = '';
 		let iconAfter = '';
 
-		aStyle = null;
 		aClass = `vk_button_link`;
 
 		// 塗り

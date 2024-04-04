@@ -26,6 +26,7 @@ export const settings = {
 			iconType: '0',
 			iconAlign: 'left',
 			iconColor: 'undefined',
+			iconFontColor: 'undefined',
 			iconUrl: url,
 			iconTarget: false,
 		},

@@ -102,7 +102,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-
+.
 [ Bug Fix ][ Grid Column ] Content does not span full width when using grid columns outside of Lightning in col-12.
 [ Bug Fix ][ Core Group ] Fix stitching styles for theme.json in Group blocks.
 [ Design Bug Fix ]Fixed margin-block-start being attached to flow block

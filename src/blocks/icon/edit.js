@@ -34,6 +34,7 @@ export default function IconEdit(props) {
 		iconAlign,
 		iconType,
 		iconColor,
+		iconFontColor,
 		iconUrl,
 		iconTarget,
 	} = attributes;
@@ -226,7 +227,10 @@ export default function IconEdit(props) {
 						isSmall
 						isPrimary={iconType === '1'}
 						isSecondary={iconType !== '1'}
-						onClick={() => setAttributes({ iconType: '1' })}
+						onClick={() => {
+							setAttributes({ iconType: '1' });
+							setAttributes({ iconFontColor: undefined });
+						}}
 					>
 						{__('Icon & Frame', 'vk-blocks-pro')}
 					</Button>
@@ -234,7 +238,10 @@ export default function IconEdit(props) {
 						isSmall
 						isPrimary={iconType === '2'}
 						isSecondary={iconType !== '2'}
-						onClick={() => setAttributes({ iconType: '2' })}
+						onClick={() => {
+							setAttributes({ iconType: '2' });
+							setAttributes({ iconFontColor: undefined });
+						}}
 					>
 						{__('Icon only', 'vk-blocks-pro')}
 					</Button>
@@ -290,9 +297,27 @@ export default function IconEdit(props) {
 					/>
 				</PanelBody>
 				<PanelBody title={__('Color', 'vk-blocks-pro')}>
-					<BaseControl>
+					<BaseControl
+						id={`vk_block_icon_color`}
+						label={
+							iconType === '0' || iconType === null
+								? __('Background Color', 'vk-blocks-pro')
+								: __('Icon Color', 'vk-blocks-pro')
+						}
+					>
 						<AdvancedColorPalette schema={'iconColor'} {...props} />
 					</BaseControl>
+					{(iconType === '0' || iconType === null) && (
+						<BaseControl
+							id={`vk_block_icon_font_color`}
+							label={__('Icon Color', 'vk-blocks-pro')}
+						>
+							<AdvancedColorPalette
+								schema={'iconFontColor'}
+								{...props}
+							/>
+						</BaseControl>
+					)}
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
@@ -306,6 +331,7 @@ export default function IconEdit(props) {
 					lbAlign={iconAlign}
 					lbType={iconType}
 					lbColor={iconColor}
+					lbFontColor={iconFontColor}
 				/>
 			</div>
 		</>

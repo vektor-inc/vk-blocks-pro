@@ -106,6 +106,10 @@ gulp.task('helper-js-pro', (done) => {
 		.pipe(uglify())
 		.pipe(rename('vk-animation.min.js'))
 		.pipe(gulp.dest('./build/'));
+	gulp.src('src/blocks/_pro/vk-fixed-display/view.js')
+		.pipe(uglify())
+		.pipe(rename('fixed-display.min.js'))
+		.pipe(gulp.dest('./build/'));
 	done();
 });
 

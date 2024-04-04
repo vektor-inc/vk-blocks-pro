@@ -102,10 +102,9 @@ e.g.
 
 == Changelog ==
 
-[ Add Function ][ icon ] Add Font color option in solid type icon
-
 = 1.71.0 =
 [ Add function ][ Accordion ] Add plain style to accordion block.
+[ Add Function ][ icon ] Add Font color option in solid type icon.
 [ Bug fix ][ Table of Contents (Pro) ] Fixed visibility issue in 6.5.
 [ Bug fix ][ Core Group ] Fix stitching styles for theme.json in Group blocks.
 [ Bug fix ][ Flow ] Fixed margin-block-start being attached to flow block

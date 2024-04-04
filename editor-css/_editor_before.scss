@@ -253,9 +253,6 @@ div[data-type="vk-blocks/page-content"].is-selected{
 // アニメーションブロックの識別用枠線
 @import "./editor_before_animation";
 
-// 固定表示ブロックの識別用枠線
-@import "./editor_before_fixed-display";
-
 // アイコンカードの見出しがテーマの見出し指定機能に負けるので上書き
 @import "./editor_before_icon-card";
 

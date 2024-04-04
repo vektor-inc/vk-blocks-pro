@@ -7,6 +7,7 @@ import save1_31_0 from './1.31.0/save';
 import save1_35_0 from './1.35.0/save';
 import save1_39_2 from './1.39.2/save';
 import save1_43_0 from './1.43.0/save';
+import save1_70_1 from './1.70.1/save';
 
 const blockAttributes = {
 	content: {
@@ -148,7 +149,6 @@ const blockAttributes10 = {
 	},
 };
 
-/* 次回対応おねがいします
 const blockAttributes11 = {
 	...blockAttributes10,
 	buttonEffect: {
@@ -156,9 +156,13 @@ const blockAttributes11 = {
 		default: ''
 	},
 }
-*/
+
 
 export const deprecated = [
+	{
+		attributes: blockAttributes11,
+		save: save1_70_1,
+	},
 	{
 		attributes: blockAttributes10,
 		save: save1_43_0,

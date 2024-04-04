@@ -1,21 +1,21 @@
 <?php
 /**
- * Registers the `vk-blocks/animation` block.
+ * Registers the `vk-blocks/fixed-display` block.
  *
  * @package vk-blocks
  */
 
 /**
- * Register animation block.
+ * Register Fixed display block.
  *
  * @return void
  */
-function vk_blocks_register_block_animation() {
+function vk_blocks_register_block_fixed_display() {
 	// Register Style.
 	if ( ! is_admin() ) {
 		wp_register_style(
-			'vk-blocks/animation',
-			VK_BLOCKS_DIR_URL . 'build/_pro/animation/style.css',
+			'vk-blocks/fixed-display',
+			VK_BLOCKS_DIR_URL . 'build/_pro/fixed-display/style.css',
 			array(),
 			VK_BLOCKS_VERSION
 		);
@@ -24,8 +24,8 @@ function vk_blocks_register_block_animation() {
 	// Register Style.
 	if ( ! is_admin() ) {
 		wp_register_script(
-			'vk-blocks/animation-script',
-			VK_BLOCKS_DIR_URL . 'build/vk-animation.min.js',
+			'vk-blocks/fixed-display-script',
+			VK_BLOCKS_DIR_URL . 'build/vk-fixed-display.min.js',
 			array(),
 			VK_BLOCKS_VERSION,
 			true
@@ -35,11 +35,11 @@ function vk_blocks_register_block_animation() {
 	register_block_type(
 		__DIR__,
 		array(
-			'style'         => 'vk-blocks/animation',
-			'script'        => 'vk-blocks/animation-script',
+			'style'         => 'vk-blocks/fixed-display',
+			'script'        => 'vk-blocks/fixed-display-script',
 			'editor_style'  => 'vk-blocks-build-editor-css',
 			'editor_script' => 'vk-blocks-build-js',
 		)
 	);
 }
-add_action( 'init', 'vk_blocks_register_block_animation', 99 );
+add_action( 'init', 'vk_blocks_register_block_fixed_display', 99 );

@@ -44,8 +44,8 @@ export default function save(props) {
 		borderStyle,
 		borderColor,
 		borderRadius,
-        minHeightValue,
-        minHeightUnit,
+		minHeightValue,
+		minHeightUnit,
 		blockId,
 	} = attributes;
 
@@ -204,8 +204,8 @@ export default function save(props) {
 	}
 
 	const minHeightStyle = {
-        minHeight: `${minHeightValue}${minHeightUnit}`,
-    };
+		minHeight: `${minHeightValue}${minHeightUnit}`,
+	};
 
 	const blockProps = useBlockProps.save({
 		className: classnames(

@@ -347,7 +347,7 @@ export default function OuterEdit(props) {
 		),
 		style: {
 			...borderStyleProperty,
-			minHeight: `${minHeightValue}${minHeightUnit}`
+			minHeight: `${minHeightValue}${minHeightUnit}`,
 		},
 	});
 
@@ -944,24 +944,25 @@ export default function OuterEdit(props) {
 					/>
 				</PanelBody>
 				<PanelBody
-					title={__(
-						'Min Height Setting',
-						'vk-blocks-pro'
-					)}
+					title={__('Min Height Setting', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<RangeControl
-							label={__('Min Height Value', 'vk-blocks-pro')}
-							value={minHeightValue}
-							onChange={(value) => setAttributes({ minHeightValue: value })}
-							min={0}
-							max={1000}
-							step={1}
+						label={__('Min Height Value', 'vk-blocks-pro')}
+						value={minHeightValue}
+						onChange={(value) =>
+							setAttributes({ minHeightValue: value })
+						}
+						min={0}
+						max={1000}
+						step={1}
 					/>
 					<SelectControl
 						label={__('Unit', 'vk-blocks-pro')}
 						value={minHeightUnit}
-						onChange={(value) => setAttributes({ minHeightUnit: value })}
+						onChange={(value) =>
+							setAttributes({ minHeightUnit: value })
+						}
 						options={[
 							{
 								value: 'px',

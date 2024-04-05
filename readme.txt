@@ -102,6 +102,7 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Outer (Pro) ] Added option to min height setting.
 [ Specification Change ][ Child Page List ] Hide "Term's name on Image" and "Taxonomies (all)" display options.
 
 = 1.71.0 =

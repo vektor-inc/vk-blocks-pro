@@ -19,7 +19,7 @@
 		"scrollTimingUnit": {
 			"type": "string",
 			"default": "px"
-		},			
+		},
 		"clientId": {
 			"type": "string"
 		},

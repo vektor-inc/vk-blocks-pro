@@ -68,6 +68,8 @@ export default function OuterEdit(props) {
 		innerSideSpaceValueTablet,
 		innerSideSpaceValueMobile,
 		innerSideSpaceUnit,
+		minHeightValue,
+		minHeightUnit,
 		blockId,
 	} = attributes;
 
@@ -343,7 +345,10 @@ export default function OuterEdit(props) {
 					!isHexColor(borderColor),
 			}
 		),
-		style: borderStyleProperty,
+		style: {
+			...borderStyleProperty,
+			minHeight: `${minHeightValue}${minHeightUnit}`
+		},
 	});
 
 	return (
@@ -934,6 +939,49 @@ export default function OuterEdit(props) {
 							{
 								value: 'vw',
 								label: __('vw', 'vk-blocks-pro'),
+							},
+						]}
+					/>
+				</PanelBody>
+				<PanelBody
+					title={__(
+						'Min Height Setting',
+						'vk-blocks-pro'
+					)}
+					initialOpen={false}
+				>
+					<RangeControl
+							label={__('Min Height Value', 'vk-blocks-pro')}
+							value={minHeightValue}
+							onChange={(value) => setAttributes({ minHeightValue: value })}
+							min={0}
+							max={1000}
+							step={1}
+					/>
+					<SelectControl
+						label={__('Unit', 'vk-blocks-pro')}
+						value={minHeightUnit}
+						onChange={(value) => setAttributes({ minHeightUnit: value })}
+						options={[
+							{
+								value: 'px',
+								label: __('px', 'vk-blocks-pro'),
+							},
+							{
+								value: '%',
+								label: __('%', 'vk-blocks-pro'),
+							},
+							{
+								value: 'em',
+								label: __('em', 'vk-blocks-pro'),
+							},
+							{
+								value: 'rem',
+								label: __('rem', 'vk-blocks-pro'),
+							},
+							{
+								value: 'vh',
+								label: __('vh', 'vk-blocks-pro'),
 							},
 						]}
 					/>

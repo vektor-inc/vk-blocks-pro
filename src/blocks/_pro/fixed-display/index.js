@@ -27,16 +27,16 @@ export const settings = {
  * @param {*} type
  */
 const addFixedDisplayVisible = (el, type) => {
-    // `Fixed Display`ブロックの場合に特定の処理を行う
-    if ('vk-blocks/fixed-display' === type.name) {
-        // ここに特定のクラスを追加する処理などを記述
-    }
-    return el;
+	// `Fixed Display`ブロックの場合に特定の処理を行う
+	if ('vk-blocks/fixed-display' === type.name) {
+		// ここに特定のクラスを追加する処理などを記述
+	}
+	return el;
 };
 
 addFilter(
-    'blocks.getSaveElement',
-    'vk-blocks/fixed-display',
-    addFixedDisplayVisible,
-    11
+	'blocks.getSaveElement',
+	'vk-blocks/fixed-display',
+	addFixedDisplayVisible,
+	11
 );

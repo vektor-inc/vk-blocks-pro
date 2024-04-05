@@ -124,6 +124,14 @@
 			"type": "string",
 			"default": "px"
 		},
+		"minHeightValue": {
+			"type": "number",
+			"default": 0
+		},
+		"minHeightUnit": {
+			"type": "string",
+			"default": "px"
+		},
 		"clientId": {
 			"type": "string"
 		},

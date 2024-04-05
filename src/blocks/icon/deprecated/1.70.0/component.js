@@ -13,7 +13,6 @@ export class VKBIcon extends Component {
 		const iconAlign = this.props.lbAlign;
 		const iconType = this.props.lbType;
 		const iconColor = this.props.lbColor;
-		const iconFontColor = this.props.lbFontColor;
 		const iconUrl = this.props.lbUrl;
 		const iconTarget = this.props.lbTarget;
 
@@ -106,31 +105,15 @@ export class VKBIcon extends Component {
 			fontAwesomeIcon = fontAwesomeIcon.replace(/ fas/g, 'fas');
 
 			// font size
-			let fontStyle = ``;
-			let fontClass = ` vk_icon_font `;
+			let size = null;
 			if (!(iconSize === 36 && iconSizeUnit === 'px')) {
-				fontStyle = ` font-size:${iconSize}${iconSizeUnit};`;
-			}
-
-			// icon color
-			if (
-				iconFontColor !== 'undefined' &&
-				iconFontColor !== null &&
-				iconFontColor !== undefined
-			) {
-				if (isHexColor(iconFontColor)) {
-					// custom color
-					fontStyle += ` color:${iconFontColor};`;
-				} else {
-					// palette color
-					fontClass += ` has-text-color has-${iconFontColor}-color `;
-				}
+				size = ` font-size:${iconSize}${iconSizeUnit}`;
 			}
 
 			// add class and inline css
 			const faIconFragment = fontAwesomeIcon.split(' ');
-			faIconFragment[0] = faIconFragment[0] + ` style="${fontStyle};"`;
-			faIconFragment[1] = ' ' + faIconFragment[1] + fontClass;
+			faIconFragment[0] = faIconFragment[0] + ` style="${size};"`;
+			faIconFragment[1] = ' ' + faIconFragment[1] + ` vk_icon_font `;
 			faIconTag = faIconFragment.join('');
 		}
 

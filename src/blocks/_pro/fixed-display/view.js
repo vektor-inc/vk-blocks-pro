@@ -1,6 +1,6 @@
 // スクロールイベントリスナーを追加
 window.addEventListener('scroll', function() {
-	const items = document.querySelectorAll('.vk_fixed-display.vk_fixed-display-mode-show-on-scroll');
+	const items = document.querySelectorAll('.vk_fixed-display-mode-show-on-scroll');
 
 	items.forEach(item => {
 		// data属性からスクロールタイミングと単位を取得

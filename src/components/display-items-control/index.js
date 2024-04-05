@@ -27,7 +27,6 @@ export const DisplayItemsControl = (props) => {
 	// 「子ページリスト」ブロックかどうかをチェック
 	const isChildPageList = props.name === 'vk-blocks/child-page';
 
-
 	return (
 		<PanelBody
 			title={__('Display item', 'vk-blocks-pro')}
@@ -79,7 +78,9 @@ export const DisplayItemsControl = (props) => {
 				<CheckboxControl
 					label={__('Taxonomies (all)', 'vk-blocks-pro')}
 					checked={display_taxonomies} //eslint-disable-line camelcase
-					onChange={(checked) =>setAttributes({ display_taxonomies: checked })}
+					onChange={(checked) =>
+						setAttributes({ display_taxonomies: checked })
+					}
 				/>
 			)}
 			<CheckboxControl

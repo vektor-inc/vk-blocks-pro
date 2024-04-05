@@ -44,6 +44,8 @@ export default function save(props) {
 		borderStyle,
 		borderColor,
 		borderRadius,
+        minHeightValue,
+        minHeightUnit,
 		blockId,
 	} = attributes;
 
@@ -201,6 +203,10 @@ export default function save(props) {
 		};
 	}
 
+	const minHeightStyle = {
+        minHeight: `${minHeightValue}${minHeightUnit}`,
+    };
+
 	const blockProps = useBlockProps.save({
 		className: classnames(
 			`vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
@@ -213,7 +219,7 @@ export default function save(props) {
 					!isHexColor(borderColor),
 			}
 		),
-		style: borderStyleProperty,
+		style: { ...borderStyleProperty, ...minHeightStyle },
 	});
 	return (
 		<div {...blockProps}>

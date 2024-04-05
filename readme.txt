@@ -103,17 +103,17 @@ e.g.
 == Changelog ==
 
 [ Specification Change ][ Child Page List ] Hide "Term's name on Image" and "Taxonomies (all)" display options.
-[ Add Function ][ icon ] Add Font color option in solid type icon
 
 = 1.71.0 =
 [ Add function ][ Accordion ] Add plain style to accordion block.
+[ Add Function ][ icon ] Add Font color option in solid type icon.
+[ Bug fix ][ Button ] Fixed buttonColorCustom in the editor to display the correct color.
 [ Bug fix ][ Table of Contents (Pro) ] Fixed visibility issue in 6.5.
 [ Bug fix ][ Core Group ] Fix stitching styles for theme.json in Group blocks.
 [ Bug fix ][ Flow ] Fixed margin-block-start being attached to flow block
 [ Bug fix ][ Grid Column (Pro) ] Fixed right margin when using grid columns outside of Lightning.
 [ Bug fix ][ Grid Column (Pro) ] Content does not span full width when using grid columns outside of Lightning in col-12.
 [ Bug fix ][ New FAQ ] Fix a typo in the font-family specification.
-
 
 = 1.70.0 =
 [ Specification Change ] core/social-link, core/site-logo, core/site-title and core/site-tagline correspond to margin-extension

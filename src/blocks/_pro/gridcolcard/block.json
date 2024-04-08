@@ -80,6 +80,10 @@
 			"type": "string",
 			"default": "#e5e5e5"
 		},
+		"borderWidth": {
+			"type": "number",
+			"default": 1
+		},
 		"blockId": {
 			"type": "string"
 		},

@@ -102,6 +102,7 @@ e.g.
 
 == Changelog ==
 
+[ Design Bug fix ][ group ]Fixed an issue where internal links were not working in group block style stitches.
 [ Specification Change ][ Child Page List ] Hide "Term's name on Image" and "Taxonomies (all)" display options.
 
 = 1.71.0 =

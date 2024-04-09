@@ -102,6 +102,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Grid Column Card ] Add border width setting to grid column card block.
 [ Specification Change ][ Child Page List ] Hide "Term's name on Image" and "Taxonomies (all)" display options.
 
 = 1.71.0 =

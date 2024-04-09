@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.71.0.0\n"
+"Project-Id-Version: VK Blocks Pro 1.70.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-04-04T02:09:59+00:00\n"
+"POT-Creation-Date: 2024-03-27T11:46:22+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -628,13 +628,6 @@ msgstr ""
 
 #: src/blocks/_pro/accordion/index.js:43
 msgid "Background color / Rounded / Border"
-msgstr ""
-
-#: src/blocks/_pro/accordion/index.js:47
-#: src/blocks/heading/edit.js:268
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:284
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:284
-msgid "Plain"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:103
@@ -2482,6 +2475,12 @@ msgstr ""
 
 #: src/blocks/heading/edit.js:257
 msgid "Heading style"
+msgstr ""
+
+#: src/blocks/heading/edit.js:268
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:284
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:284
+msgid "Plain"
 msgstr ""
 
 #: src/blocks/heading/edit.js:276

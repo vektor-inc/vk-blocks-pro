@@ -83,7 +83,7 @@
 		"borderWidth": {
 			"type": "string",
 			"default": "1px"
-		},		
+		},
 		"blockId": {
 			"type": "string"
 		},

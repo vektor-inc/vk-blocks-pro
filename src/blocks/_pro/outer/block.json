@@ -124,7 +124,15 @@
 			"type": "string",
 			"default": "px"
 		},
-		"minHeightValue": {
+		"minHeightValuePC": {
+			"type": "number",
+			"default": 0
+		},
+		"minHeightValueTablet": {
+			"type": "number",
+			"default": 0
+		},
+		"minHeightValueMobile": {
 			"type": "number",
 			"default": 0
 		},

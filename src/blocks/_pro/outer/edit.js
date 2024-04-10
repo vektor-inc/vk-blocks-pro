@@ -68,7 +68,9 @@ export default function OuterEdit(props) {
 		innerSideSpaceValueTablet,
 		innerSideSpaceValueMobile,
 		innerSideSpaceUnit,
-		minHeightValue,
+		minHeightValuePC,
+		minHeightValueTablet,
+		minHeightValueMobile,
 		minHeightUnit,
 		blockId,
 	} = attributes;
@@ -347,7 +349,15 @@ export default function OuterEdit(props) {
 		),
 		style: {
 			...borderStyleProperty,
-			'--min-height-value': minHeightValue ? `${minHeightValue}${minHeightUnit}` : 'auto',
+			'--min-height-mobile': minHeightValueMobile
+				? `${minHeightValueMobile}${minHeightUnit}`
+				: undefined,
+			'--min-height-tablet': minHeightValueTablet
+				? `${minHeightValueTablet}${minHeightUnit}`
+				: undefined,
+			'--min-height-pc': minHeightValuePC
+				? `${minHeightValuePC}${minHeightUnit}`
+				: undefined,
 		},
 	});
 
@@ -947,28 +957,103 @@ export default function OuterEdit(props) {
 					title={__('Min Height Setting', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
-					
 					<RangeControl
-						label={__('Min Height Value', 'vk-blocks-pro')}
-						value={minHeightValue}
-						onChange={(newValue) => setAttributes({ minHeightValue: newValue })}
-						min={0}
-						max={200}
-						step={1}
+						label={__('Mobile', 'vk-blocks-pro')}
+						value={minHeightValueMobile}
+						onChange={(value) =>
+							setAttributesByUnit(
+								'minHeightValueMobile',
+								value,
+								minHeightUnit,
+								0,
+								100
+							)
+						}
+						min="0"
+						max="100"
+						step={'px' === minHeightUnit ? 1 : 0.1}
+					/>
+					<RangeControl
+						label={__('Tablet', 'vk-blocks-pro')}
+						value={minHeightValueTablet}
+						onChange={(value) =>
+							setAttributesByUnit(
+								'minHeightValueTablet',
+								value,
+								minHeightUnit,
+								0,
+								200
+							)
+						}
+						min="0"
+						max="200"
+						step={'px' === minHeightUnit ? 1 : 0.1}
+					/>
+					<RangeControl
+						label={__('PC', 'vk-blocks-pro')}
+						value={minHeightValuePC}
+						onChange={(value) =>
+							setAttributesByUnit(
+								'minHeightValuePC',
+								value,
+								minHeightUnit,
+								0,
+								300
+							)
+						}
+						min="0"
+						max="300"
+						step={'px' === minHeightUnit ? 1 : 0.1}
 					/>
 					<SelectControl
-						label={__('Unit', 'vk-blocks-pro')}
+						label={__('Unit Type', 'vk-blocks-pro')}
 						value={minHeightUnit}
+						onChange={(value) => {
+							setAttributes({
+								minHeightValueMobile:
+									parseInt(minHeightValueMobile),
+							});
+							setAttributes({
+								minHeightValueTablet:
+									parseInt(minHeightValueTablet),
+							});
+							setAttributes({
+								minHeightValuePC: parseInt(minHeightValuePC),
+							});
+							setAttributes({
+								minHeightUnit: value,
+							});
+						}}
 						options={[
-							{ value: 'px', label: 'px' },
-							{ value: 'em', label: 'em' },
-							{ value: 'rem', label: 'rem' },
-							{ value: 'vh', label: 'vh' },
-							{ value: 'lvh', label: 'lvh' },
-							{ value: 'svh', label: 'svh' },
-							{ value: 'dvh', label: 'dvh' },
+							{
+								value: 'px',
+								label: __('px', 'vk-blocks-pro'),
+							},
+							{
+								value: 'em',
+								label: __('em', 'vk-blocks-pro'),
+							},
+							{
+								value: 'rem',
+								label: __('rem', 'vk-blocks-pro'),
+							},
+							{
+								value: 'vh',
+								label: __('vh', 'vk-blocks-pro'),
+							},
+							{
+								value: 'svh',
+								label: __('svh', 'vk-blocks-pro'),
+							},
+							{
+								value: 'lvh',
+								label: __('lvh', 'vk-blocks-pro'),
+							},
+							{
+								value: 'dvh',
+								label: __('dvh', 'vk-blocks-pro'),
+							},
 						]}
-						onChange={(newUnit) => setAttributes({ minHeightUnit: newUnit })}
 					/>
 				</PanelBody>
 			</InspectorControls>

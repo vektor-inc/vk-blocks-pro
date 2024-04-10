@@ -76,6 +76,7 @@ $media-xxl-down: 1399.98px;
 .vk_outer {
 	display: block;
 	overflow: hidden;
+	min-height: var(--min-height-value);
 }
 //iOS Safari での1pxズレの予防のため　Only Safari 10.1+
 @supports (-webkit-touch-callout: none) {

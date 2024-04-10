@@ -44,7 +44,9 @@ export default function save(props) {
 		borderStyle,
 		borderColor,
 		borderRadius,
-		minHeightValue,
+		minHeightValuePC,
+		minHeightValueTablet,
+		minHeightValueMobile,
 		minHeightUnit,
 		blockId,
 	} = attributes;
@@ -203,10 +205,6 @@ export default function save(props) {
 		};
 	}
 
-	const minHeightStyle = {
-		minHeight: `${minHeightValue}${minHeightUnit}`,
-	};
-
 	const blockProps = useBlockProps.save({
 		className: classnames(
 			`vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
@@ -219,7 +217,18 @@ export default function save(props) {
 					!isHexColor(borderColor),
 			}
 		),
-		style: { ...borderStyleProperty, ...minHeightStyle },
+		style: {
+			...borderStyleProperty,
+			'--min-height-mobile': minHeightValueMobile
+				? `${minHeightValueMobile}${minHeightUnit}`
+				: undefined,
+			'--min-height-tablet': minHeightValueTablet
+				? `${minHeightValueTablet}${minHeightUnit}`
+				: undefined,
+			'--min-height-pc': minHeightValuePC
+				? `${minHeightValuePC}${minHeightUnit}`
+				: undefined,
+		},
 	});
 	return (
 		<div {...blockProps}>

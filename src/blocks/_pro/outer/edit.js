@@ -347,7 +347,7 @@ export default function OuterEdit(props) {
 		),
 		style: {
 			...borderStyleProperty,
-			minHeight: `${minHeightValue}${minHeightUnit}`,
+			'--min-height-value': minHeightValue ? `${minHeightValue}${minHeightUnit}` : 'auto',
 		},
 	});
 
@@ -947,44 +947,28 @@ export default function OuterEdit(props) {
 					title={__('Min Height Setting', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
+					
 					<RangeControl
 						label={__('Min Height Value', 'vk-blocks-pro')}
 						value={minHeightValue}
-						onChange={(value) =>
-							setAttributes({ minHeightValue: value })
-						}
+						onChange={(newValue) => setAttributes({ minHeightValue: newValue })}
 						min={0}
-						max={1000}
+						max={200}
 						step={1}
 					/>
 					<SelectControl
 						label={__('Unit', 'vk-blocks-pro')}
 						value={minHeightUnit}
-						onChange={(value) =>
-							setAttributes({ minHeightUnit: value })
-						}
 						options={[
-							{
-								value: 'px',
-								label: __('px', 'vk-blocks-pro'),
-							},
-							{
-								value: '%',
-								label: __('%', 'vk-blocks-pro'),
-							},
-							{
-								value: 'em',
-								label: __('em', 'vk-blocks-pro'),
-							},
-							{
-								value: 'rem',
-								label: __('rem', 'vk-blocks-pro'),
-							},
-							{
-								value: 'vh',
-								label: __('vh', 'vk-blocks-pro'),
-							},
+							{ value: 'px', label: 'px' },
+							{ value: 'em', label: 'em' },
+							{ value: 'rem', label: 'rem' },
+							{ value: 'vh', label: 'vh' },
+							{ value: 'lvh', label: 'lvh' },
+							{ value: 'svh', label: 'svh' },
+							{ value: 'dvh', label: 'dvh' },
 						]}
+						onChange={(newUnit) => setAttributes({ minHeightUnit: newUnit })}
 					/>
 				</PanelBody>
 			</InspectorControls>

@@ -76,7 +76,16 @@ $media-xxl-down: 1399.98px;
 .vk_outer {
 	display: block;
 	overflow: hidden;
-	min-height: var(--min-height-value);
+	//Min Height設定
+	min-height: var(--min-height-mobile);
+
+	@media (min-width: 576px) {
+		  min-height: var(--min-height-tablet);
+		}
+	  
+		@media (min-width: 992px) {
+		  min-height: var(--min-height-pc);
+		}
 }
 //iOS Safari での1pxズレの予防のため　Only Safari 10.1+
 @supports (-webkit-touch-callout: none) {

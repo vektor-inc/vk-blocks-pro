@@ -2,16 +2,16 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.70.0.0\n"
+"Project-Id-Version: VK Blocks Pro 1.71.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-03-27T11:46:22+00:00\n"
+"POT-Creation-Date: 2024-04-10T14:58:46+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.6.0\n"
+"X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vk-blocks-pro\n"
 
 #: src/admin/balloon/add-button.js:38
@@ -106,6 +106,7 @@ msgid "Block Style Manager Setting"
 msgstr ""
 
 #: src/admin/breadcrumb.js:24
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-pro.php:15
 #: inc/vk-blocks-pro/admin-pro/admin-pro.php:15
 msgid "Breadcrumb Setting"
 msgstr ""
@@ -242,7 +243,7 @@ msgstr ""
 #: src/admin/custom-css.js:20
 #: src/admin/import-export/index.js:96
 #: src/extensions/common/custom-css-extension/index.js:225
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-pro.php:15
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-pro.php:16
 #: inc/vk-blocks-pro/admin-pro/admin-pro.php:16
 msgid "Custom CSS Setting"
 msgstr ""
@@ -305,8 +306,8 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:105
 #: src/blocks/_pro/timeline-item/edit.js:71
 #: src/blocks/border-box/edit.js:204
-#: src/blocks/button/edit.js:666
-#: src/blocks/icon/edit.js:292
+#: src/blocks/button/edit.js:677
+#: src/blocks/icon/edit.js:299
 #: src/blocks/staff/edit.js:199
 #: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:67
 #: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:85
@@ -317,7 +318,7 @@ msgstr ""
 #: src/admin/custom-format/index.js:208
 #: src/blocks/_pro/grid-column-item/edit.js:104
 #: src/blocks/_pro/gridcolcard/edit-common.js:165
-#: src/blocks/button/edit.js:738
+#: src/blocks/button/edit.js:749
 #: src/blocks/heading/edit.js:324
 msgid "Text Color"
 msgstr ""
@@ -326,7 +327,8 @@ msgstr ""
 #: src/blocks/_pro/grid-column-item/edit.js:110
 #: src/blocks/_pro/gridcolcard/edit-common.js:171
 #: src/blocks/border-box/edit.js:216
-#: src/blocks/button/edit.js:721
+#: src/blocks/button/edit.js:732
+#: src/blocks/icon/edit.js:304
 msgid "Background Color"
 msgstr ""
 
@@ -508,7 +510,7 @@ msgstr ""
 #: src/admin/margin.js:133
 #: src/blocks/border-box/edit.js:192
 #: src/blocks/icon-outer/edit.js:150
-#: src/blocks/icon/edit.js:139
+#: src/blocks/icon/edit.js:140
 msgid "Margin"
 msgstr ""
 
@@ -539,7 +541,7 @@ msgstr ""
 
 #: src/admin/margin.js:43
 #: src/blocks/_pro/outer/edit.js:883
-#: src/blocks/button/edit.js:526
+#: src/blocks/button/edit.js:537
 #: src/blocks/slider/edit.js:952
 #: src/components/advanced-viewport-control/index.js:25
 msgid "PC"
@@ -547,7 +549,7 @@ msgstr ""
 
 #: src/admin/margin.js:47
 #: src/blocks/_pro/outer/edit.js:867
-#: src/blocks/button/edit.js:461
+#: src/blocks/button/edit.js:472
 #: src/blocks/slider/edit.js:973
 #: src/components/advanced-viewport-control/index.js:32
 msgid "Tablet"
@@ -555,7 +557,7 @@ msgstr ""
 
 #: src/admin/margin.js:51
 #: src/blocks/_pro/outer/edit.js:851
-#: src/blocks/button/edit.js:396
+#: src/blocks/button/edit.js:407
 #: src/blocks/slider/edit.js:994
 #: src/components/advanced-viewport-control/index.js:41
 msgid "Mobile"
@@ -630,6 +632,13 @@ msgstr ""
 msgid "Background color / Rounded / Border"
 msgstr ""
 
+#: src/blocks/_pro/accordion/index.js:47
+#: src/blocks/heading/edit.js:268
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:284
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:284
+msgid "Plain"
+msgstr ""
+
 #: src/blocks/_pro/animation/edit.js:103
 msgid "Slow"
 msgstr ""
@@ -652,7 +661,7 @@ msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:130
 #: src/blocks/balloon/edit.js:482
-#: src/blocks/button/edit.js:319
+#: src/blocks/button/edit.js:330
 #: src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:21
 #: src/blocks/slider/edit.js:925
@@ -1006,7 +1015,7 @@ msgid "https://example.com"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:130
-#: src/components/display-items-control/index.js:29
+#: src/components/display-items-control/index.js:32
 msgid "Display item"
 msgstr ""
 
@@ -1019,27 +1028,27 @@ msgid "Warning! When you hidden this item, you will lose the content."
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:162
-#: src/components/display-items-control/index.js:33
+#: src/components/display-items-control/index.js:36
 msgid "Image"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:169
-#: src/components/display-items-control/index.js:81
+#: src/components/display-items-control/index.js:87
 msgid "Button"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:174
-#: src/components/display-items-control/index.js:103
+#: src/components/display-items-control/index.js:109
 msgid "Button option"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:177
-#: src/components/display-items-control/index.js:106
+#: src/components/display-items-control/index.js:112
 msgid "Click each card block to set the target url. You can find the url form at it's sidebar."
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:183
-#: src/components/display-items-control/index.js:112
+#: src/components/display-items-control/index.js:118
 msgid "Button text"
 msgstr ""
 
@@ -1090,8 +1099,6 @@ msgstr ""
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
 #: src/blocks/ancestor-page-list/index.php:44
-#: test/phpunit/pro/test-ancestor-page-list.php:89
-#: test/phpunit/pro/test-ancestor-page-list.php:173
 msgid "Ancestor Page Title"
 msgstr ""
 
@@ -1202,8 +1209,8 @@ msgstr ""
 #: src/blocks/_pro/dynamic-text/edit.js:389
 #: src/blocks/_pro/gridcolcard-item/edit.js:333
 #: src/blocks/_pro/icon-card-item/edit.js:128
-#: src/blocks/button/edit.js:272
-#: src/blocks/icon/edit.js:285
+#: src/blocks/button/edit.js:283
+#: src/blocks/icon/edit.js:292
 #: src/blocks/pr-blocks/edit.js:262
 #: src/blocks/pr-content/edit.js:131
 msgid "Open link new tab."
@@ -1277,7 +1284,7 @@ msgstr ""
 #: src/blocks/_pro/grid-column/edit.js:91
 #: src/blocks/_pro/outer/edit.js:924
 #: src/blocks/icon-outer/edit.js:183
-#: src/blocks/icon/edit.js:171
+#: src/blocks/icon/edit.js:172
 #: src/utils/unit-options.js:6
 msgid "px"
 msgstr ""
@@ -1286,7 +1293,7 @@ msgstr ""
 #: src/blocks/_pro/grid-column/edit.js:95
 #: src/blocks/_pro/outer/edit.js:928
 #: src/blocks/icon-outer/edit.js:187
-#: src/blocks/icon/edit.js:175
+#: src/blocks/icon/edit.js:176
 #: src/utils/unit-options.js:10
 msgid "em"
 msgstr ""
@@ -1295,7 +1302,7 @@ msgstr ""
 #: src/blocks/_pro/grid-column/edit.js:99
 #: src/blocks/_pro/outer/edit.js:932
 #: src/blocks/icon-outer/edit.js:191
-#: src/blocks/icon/edit.js:179
+#: src/blocks/icon/edit.js:180
 #: src/utils/unit-options.js:14
 msgid "rem"
 msgstr ""
@@ -1304,7 +1311,7 @@ msgstr ""
 #: src/blocks/_pro/grid-column/edit.js:103
 #: src/blocks/_pro/outer/edit.js:936
 #: src/blocks/icon-outer/edit.js:195
-#: src/blocks/icon/edit.js:183
+#: src/blocks/icon/edit.js:184
 #: src/utils/unit-options.js:18
 msgid "vw"
 msgstr ""
@@ -1327,18 +1334,18 @@ msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:229
 #: src/blocks/_pro/select-post-list-item/edit.js:66
-#: src/blocks/button/edit.js:238
+#: src/blocks/button/edit.js:249
 msgid "Unlink"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:230
-#: src/blocks/button/edit.js:239
+#: src/blocks/button/edit.js:250
 msgid "Input Link URL"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:260
 #: src/blocks/_pro/select-post-list-item/edit.js:102
-#: src/blocks/button/edit.js:267
+#: src/blocks/button/edit.js:278
 msgid "Submit"
 msgstr ""
 
@@ -1493,9 +1500,9 @@ msgstr ""
 #: src/blocks/_pro/icon-card-item/edit.js:137
 #: src/blocks/_pro/step-item/edit.js:82
 #: src/blocks/border-box/edit.js:240
-#: src/blocks/button/edit.js:749
+#: src/blocks/button/edit.js:760
 #: src/blocks/heading/edit.js:335
-#: src/blocks/icon/edit.js:269
+#: src/blocks/icon/edit.js:276
 #: src/blocks/pr-content/edit.js:212
 #: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:142
 #: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:167
@@ -1509,15 +1516,15 @@ msgid "Icon Background:"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:153
-#: src/blocks/button/edit.js:595
+#: src/blocks/button/edit.js:606
 #: src/blocks/icon-outer/edit.js:238
-#: src/blocks/icon/edit.js:223
+#: src/blocks/icon/edit.js:224
 #: src/blocks/pr-blocks/edit.js:285
 msgid "Solid color"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:157
-#: src/blocks/button/edit.js:609
+#: src/blocks/button/edit.js:620
 #: src/blocks/pr-blocks/edit.js:289
 msgid "No background"
 msgstr ""
@@ -1680,7 +1687,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:147
 #: src/blocks/_pro/timeline-item/edit.js:113
 #: src/blocks/balloon/edit.js:559
-#: src/blocks/button/edit.js:647
+#: src/blocks/button/edit.js:658
 #: src/blocks/staff/edit.js:177
 msgid "None"
 msgstr ""
@@ -1734,7 +1741,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:828
 #: src/blocks/icon-outer/edit.js:212
-#: src/blocks/icon/edit.js:200
+#: src/blocks/icon/edit.js:201
 msgid "Border radius"
 msgstr ""
 
@@ -1900,7 +1907,7 @@ msgstr ""
 #: src/blocks/_pro/table-of-contents-new/edit.js:119
 #: src/blocks/_pro/timeline-item/edit.js:74
 #: src/blocks/icon-outer/edit.js:229
-#: src/blocks/icon/edit.js:215
+#: src/blocks/icon/edit.js:216
 msgid "Style"
 msgstr ""
 
@@ -2011,7 +2018,7 @@ msgid "Style Settings"
 msgstr ""
 
 #: src/blocks/alert/edit.js:25
-#: src/blocks/button/edit.js:681
+#: src/blocks/button/edit.js:692
 #: src/blocks/pr-content/edit.js:171
 #: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:460
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:460
@@ -2019,7 +2026,7 @@ msgid "Success"
 msgstr ""
 
 #: src/blocks/alert/edit.js:29
-#: src/blocks/button/edit.js:685
+#: src/blocks/button/edit.js:696
 #: src/blocks/pr-content/edit.js:175
 #: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:456
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:456
@@ -2027,7 +2034,7 @@ msgid "Info"
 msgstr ""
 
 #: src/blocks/alert/edit.js:33
-#: src/blocks/button/edit.js:689
+#: src/blocks/button/edit.js:700
 #: src/blocks/pr-content/edit.js:179
 #: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:464
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:464
@@ -2035,7 +2042,7 @@ msgid "Warning"
 msgstr ""
 
 #: src/blocks/alert/edit.js:37
-#: src/blocks/button/edit.js:693
+#: src/blocks/button/edit.js:704
 #: src/blocks/pr-content/edit.js:183
 #: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:468
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:468
@@ -2104,16 +2111,16 @@ msgid "Please specify the layout of the balloon."
 msgstr ""
 
 #: src/blocks/balloon/edit.js:422
-#: src/blocks/button/edit.js:344
+#: src/blocks/button/edit.js:355
 #: src/blocks/pr-content/edit.js:256
-#: src/components/display-items-control/index.js:126
+#: src/components/display-items-control/index.js:132
 msgid "Left"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:434
-#: src/blocks/button/edit.js:364
+#: src/blocks/button/edit.js:375
 #: src/blocks/pr-content/edit.js:252
-#: src/components/display-items-control/index.js:134
+#: src/components/display-items-control/index.js:140
 msgid "Right"
 msgstr ""
 
@@ -2142,7 +2149,7 @@ msgid "Circle"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:511
-#: src/blocks/button/edit.js:579
+#: src/blocks/button/edit.js:590
 msgid "100%"
 msgstr ""
 
@@ -2232,140 +2239,140 @@ msgstr ""
 msgid "Solid Angle iconFeature"
 msgstr ""
 
-#: src/blocks/button/edit.js:290
+#: src/blocks/button/edit.js:301
 msgid "Button setting"
 msgstr ""
 
-#: src/blocks/button/edit.js:292
+#: src/blocks/button/edit.js:303
 msgid "Sub Caption"
 msgstr ""
 
-#: src/blocks/button/edit.js:302
+#: src/blocks/button/edit.js:313
 msgid "Button Size:"
 msgstr ""
 
-#: src/blocks/button/edit.js:311
+#: src/blocks/button/edit.js:322
 msgid "Large"
 msgstr ""
 
-#: src/blocks/button/edit.js:327
+#: src/blocks/button/edit.js:338
 #: src/extensions/common/inline-font-size/inline.js:23
 #: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:493
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:493
 msgid "Small"
 msgstr ""
 
-#: src/blocks/button/edit.js:333
+#: src/blocks/button/edit.js:344
 msgid "Button Position:"
 msgstr ""
 
-#: src/blocks/button/edit.js:354
+#: src/blocks/button/edit.js:365
 #: src/blocks/slider/edit.js:1162
-#: src/components/display-items-control/index.js:130
+#: src/components/display-items-control/index.js:136
 msgid "Center"
 msgstr ""
 
-#: src/blocks/button/edit.js:374
+#: src/blocks/button/edit.js:385
 msgid "Wide"
 msgstr ""
 
-#: src/blocks/button/edit.js:384
+#: src/blocks/button/edit.js:395
 #: src/extensions/common/custom-block-variation/utils.js:31
 msgid "Block"
 msgstr ""
 
-#: src/blocks/button/edit.js:393
+#: src/blocks/button/edit.js:404
 msgid "Button Width:"
 msgstr ""
 
-#: src/blocks/button/edit.js:540
+#: src/blocks/button/edit.js:551
 msgid "25%"
 msgstr ""
 
-#: src/blocks/button/edit.js:553
+#: src/blocks/button/edit.js:564
 msgid "50%"
 msgstr ""
 
-#: src/blocks/button/edit.js:566
+#: src/blocks/button/edit.js:577
 msgid "75%"
 msgstr ""
 
-#: src/blocks/button/edit.js:586
+#: src/blocks/button/edit.js:597
 msgid "Button Style:"
 msgstr ""
 
-#: src/blocks/button/edit.js:623
+#: src/blocks/button/edit.js:634
 msgid "Text only"
 msgstr ""
 
-#: src/blocks/button/edit.js:627
+#: src/blocks/button/edit.js:638
 msgid "If you select \"No background\", that you need to select a Custom Color."
 msgstr ""
 
-#: src/blocks/button/edit.js:636
+#: src/blocks/button/edit.js:647
 msgid "Button Effect:"
 msgstr ""
 
-#: src/blocks/button/edit.js:659
+#: src/blocks/button/edit.js:670
 msgid "Shine"
 msgstr ""
 
-#: src/blocks/button/edit.js:669
+#: src/blocks/button/edit.js:680
 msgid "Default Color (Bootstrap)"
 msgstr ""
 
-#: src/blocks/button/edit.js:673
+#: src/blocks/button/edit.js:684
 #: src/blocks/pr-content/edit.js:163
 msgid "Primary"
 msgstr ""
 
-#: src/blocks/button/edit.js:677
+#: src/blocks/button/edit.js:688
 #: src/blocks/pr-content/edit.js:167
 msgid "Secondary"
 msgstr ""
 
-#: src/blocks/button/edit.js:697
+#: src/blocks/button/edit.js:708
 #: src/blocks/pr-content/edit.js:187
 msgid "Light"
 msgstr ""
 
-#: src/blocks/button/edit.js:701
+#: src/blocks/button/edit.js:712
 #: src/blocks/pr-content/edit.js:191
 msgid "Dark"
 msgstr ""
 
-#: src/blocks/button/edit.js:714
+#: src/blocks/button/edit.js:725
 msgid "Custom Color"
 msgstr ""
 
-#: src/blocks/button/edit.js:722
+#: src/blocks/button/edit.js:733
 #: src/blocks/pr-content/edit.js:201
 msgid "Button Color"
 msgstr ""
 
-#: src/blocks/button/edit.js:724
+#: src/blocks/button/edit.js:735
 msgid "This color palette overrides the default color. If you want to use the default color, click the clear button."
 msgstr ""
 
-#: src/blocks/button/edit.js:756
+#: src/blocks/button/edit.js:767
 #: src/blocks/heading/edit.js:339
 #: src/blocks/pr-content/edit.js:219
 msgid "Before text"
 msgstr ""
 
-#: src/blocks/button/edit.js:778
+#: src/blocks/button/edit.js:789
 #: src/blocks/heading/edit.js:348
 #: src/blocks/pr-content/edit.js:231
 msgid "After text"
 msgstr ""
 
-#: src/blocks/button/edit.js:785
+#: src/blocks/button/edit.js:796
 #: src/blocks/icon-outer/edit.js:89
-#: src/blocks/icon/edit.js:81
+#: src/blocks/icon/edit.js:82
 msgid "Size"
 msgstr ""
 
-#: src/blocks/button/edit.js:821
+#: src/blocks/button/edit.js:833
 msgid "Input text"
 msgstr ""
 
@@ -2477,12 +2484,6 @@ msgstr ""
 msgid "Heading style"
 msgstr ""
 
-#: src/blocks/heading/edit.js:268
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:284
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:284
-msgid "Plain"
-msgstr ""
-
 #: src/blocks/heading/edit.js:276
 msgid "Margin between Heading and sub text (rem)"
 msgstr ""
@@ -2496,6 +2497,7 @@ msgid "Heading Settings"
 msgstr ""
 
 #: src/blocks/heading/edit.js:357
+#: src/blocks/icon/edit.js:313
 msgid "Icon Color"
 msgstr ""
 
@@ -2517,17 +2519,17 @@ msgid "Heading %d"
 msgstr ""
 
 #: src/blocks/icon-outer/edit.js:208
-#: src/blocks/icon/edit.js:196
+#: src/blocks/icon/edit.js:197
 msgid "Reset"
 msgstr ""
 
 #: src/blocks/icon-outer/edit.js:246
-#: src/blocks/icon/edit.js:231
+#: src/blocks/icon/edit.js:235
 msgid "Icon & Frame"
 msgstr ""
 
 #: src/blocks/icon-outer/edit.js:254
-#: src/blocks/icon/edit.js:239
+#: src/blocks/icon/edit.js:246
 msgid "Icon only"
 msgstr ""
 
@@ -2535,11 +2537,11 @@ msgstr ""
 msgid "Icon Common Setting"
 msgstr ""
 
-#: src/blocks/icon/edit.js:266
+#: src/blocks/icon/edit.js:273
 msgid "Icon Setting"
 msgstr ""
 
-#: src/blocks/icon/edit.js:280
+#: src/blocks/icon/edit.js:287
 #: src/blocks/pr-content/edit.js:122
 msgid "Link URL"
 msgstr ""
@@ -3005,44 +3007,44 @@ msgstr ""
 msgid "Column ( Screen size : Large )"
 msgstr ""
 
-#: src/components/display-items-control/index.js:117
+#: src/components/display-items-control/index.js:104
+msgid "New post mark"
+msgstr ""
+
+#: src/components/display-items-control/index.js:123
 msgid "Button align"
 msgstr ""
 
-#: src/components/display-items-control/index.js:40
+#: src/components/display-items-control/index.js:45
 msgid "Term's name on Image"
 msgstr ""
 
-#: src/components/display-items-control/index.js:47
+#: src/components/display-items-control/index.js:53
 msgid "Excerpt"
 msgstr ""
 
-#: src/components/display-items-control/index.js:54
+#: src/components/display-items-control/index.js:60
 msgid "Author"
 msgstr ""
 
-#: src/components/display-items-control/index.js:61
+#: src/components/display-items-control/index.js:67
 msgid "Date"
 msgstr ""
 
-#: src/components/display-items-control/index.js:67
+#: src/components/display-items-control/index.js:72
 msgid "New mark"
 msgstr ""
 
-#: src/components/display-items-control/index.js:73
+#: src/components/display-items-control/index.js:79
 msgid "Taxonomies (all)"
 msgstr ""
 
-#: src/components/display-items-control/index.js:85
+#: src/components/display-items-control/index.js:91
 msgid "New mark option"
 msgstr ""
 
-#: src/components/display-items-control/index.js:87
+#: src/components/display-items-control/index.js:93
 msgid "Number of days to display the new post mark"
-msgstr ""
-
-#: src/components/display-items-control/index.js:98
-msgid "New post mark"
 msgstr ""
 
 #: src/components/link-control/index.js:37
@@ -3438,22 +3440,27 @@ msgid "Convert to link"
 msgstr ""
 
 #. Plugin Name of the plugin
+#: vk-blocks.php
 msgid "VK Blocks Pro"
 msgstr ""
 
 #. Plugin URI of the plugin
+#: vk-blocks.php
 msgid "https://github.com/vektor-inc/vk-blocks"
 msgstr ""
 
 #. Description of the plugin
+#: vk-blocks.php
 msgid "This is a plugin that extends Block Editor."
 msgstr ""
 
 #. Author of the plugin
+#: vk-blocks.php
 msgid "Vektor,Inc."
 msgstr ""
 
 #. Author URI of the plugin
+#: vk-blocks.php
 msgid "https://vektor-inc.co.jp"
 msgstr ""
 
@@ -3689,28 +3696,24 @@ msgstr ""
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:91
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:91
 #: src/blocks/ancestor-page-list/index.php:91
-#: test/phpunit/pro/test-ancestor-page-list.php:173
 msgid "Dummy Text"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:91
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:91
 #: src/blocks/ancestor-page-list/index.php:91
-#: test/phpunit/pro/test-ancestor-page-list.php:173
 msgid "Because of the site editor have not child page that, the page list from ancestor is not displayed. Now displaying the dummy text list instead of the page list from ancestor."
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:91
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:91
 #: src/blocks/ancestor-page-list/index.php:91
-#: test/phpunit/pro/test-ancestor-page-list.php:173
 msgid "This message only display on the edit screen."
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/page-content/index.php:123
 #: inc/vk-blocks/build/blocks/page-content/index.php:123
 #: src/blocks/page-content/index.php:123
-#: test/phpunit/free/test-page-content.php:59
 msgid "Edit this area"
 msgstr ""
 
@@ -3915,13 +3918,13 @@ msgstr ""
 msgid "Setting saved."
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:254
+#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:255
 #: inc/vk-blocks/view/class-vk-blocks-postlist.php:255
 msgid "Post"
 msgstr ""
 
 #. translators: %s: 投稿タイプ名
-#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:258
+#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:259
 #: inc/vk-blocks/view/class-vk-blocks-postlist.php:259
 msgid "There are no %ss."
 msgstr ""

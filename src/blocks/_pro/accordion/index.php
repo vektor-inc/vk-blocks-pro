@@ -32,14 +32,20 @@ function vk_blocks_register_block_accordion() {
 		);
 	}
 
-	register_block_type(
-		__DIR__,
-		array(
+	$assets = array();
+
+	if ( method_exists( 'VK_Blocks_Block_Loader', 'should_load_separate_assets' ) && VK_Blocks_Block_Loader::should_load_separate_assets() ) {
+		$assets = array(
 			'style'         => 'vk-blocks/accordion',
 			'script'        => 'vk-blocks/accordion-script',
 			'editor_style'  => 'vk-blocks-build-editor-css',
 			'editor_script' => 'vk-blocks-build-js',
-		)
+		);
+	}
+
+	register_block_type(
+		__DIR__,
+		$assets
 	);
 }
 add_action( 'init', 'vk_blocks_register_block_accordion', 99 );

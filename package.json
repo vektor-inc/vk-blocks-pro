@@ -17,7 +17,7 @@
     "build:cache": "composer install && gulp text-domain-pro && wp-scripts build --webpack-copy-php --config webpack.config.js --progress --env enableCache=true  && gulp build:pro && npm run translate",
     "build:free": "gulp text-domain-free && wp-scripts build --webpack-copy-php --config webpack.config.js && gulp build:free",
     "build:pot": "wp i18n make-pot --merge=languages/vk-blocks-pro-js.pot --skip-js . languages/vk-blocks-pro.pot",
-    "translate": "npm run build:pot && npm run translate:block && npm run translate:admin",
+    "translate": "npm run build:pot && npm run translate:block && npm run translate:admin && cd languages && wp i18n make-php . && cd ../",
     "translate:block": "po2json ./languages/vk-blocks-pro-ja.po ./languages/vk-blocks-pro-ja-vk-blocks-build-js.json -f jed",
     "translate:admin": "po2json ./languages/vk-blocks-pro-ja.po ./languages/vk-blocks-pro-ja-vk-blocks-admin-js.json -f jed",
     "gulp": "npx gulp",

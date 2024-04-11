@@ -3,17 +3,25 @@
 	display: block;
 	clear: both;
 }
-.vk_balloon{
-	figure,
-	p.wp-block{
-		width: 100%;
-	 }
-	 &_icon{
-	 button.image-button{
-		 height: auto;
-	 }
+.editor-styles-wrapper {
+	.vk_balloon{
+		figure,
+		p.wp-block{
+			width: 100%;
+		}
+		&_icon{
+			button.image-button {
+				height: auto;
+			}
+			&_image{
+				width: 64px;
+				height: 64px;
+				max-width: initial;
+			}
+		}
 	}
 }
+
 .block-editor-block-list__block .block-list-appender{
 	// margin: inherit;
 }

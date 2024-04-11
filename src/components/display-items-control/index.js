@@ -24,6 +24,9 @@ export const DisplayItemsControl = (props) => {
 		btn_align, //eslint-disable-line camelcase
 	} = attributes;
 
+	// 「子ページリスト」ブロックかどうかをチェック
+	const isChildPageList = props.name === 'vk-blocks/child-page';
+
 	return (
 		<PanelBody
 			title={__('Display item', 'vk-blocks-pro')}
@@ -36,13 +39,16 @@ export const DisplayItemsControl = (props) => {
 					setAttributes({ display_image: checked })
 				}
 			/>
-			<CheckboxControl
-				label={__("Term's name on Image", 'vk-blocks-pro')}
-				checked={display_image_overlay_term} //eslint-disable-line camelcase
-				onChange={(checked) =>
-					setAttributes({ display_image_overlay_term: checked })
-				}
-			/>
+			{/*  「子ページリスト」ブロックの場合、画像右上分類名を表示しない */}
+			{!isChildPageList && (
+				<CheckboxControl
+					label={__("Term's name on Image", 'vk-blocks-pro')}
+					checked={display_image_overlay_term} //eslint-disable-line camelcase
+					onChange={(checked) =>
+						setAttributes({ display_image_overlay_term: checked })
+					}
+				/>
+			)}
 			<CheckboxControl
 				label={__('Excerpt', 'vk-blocks-pro')}
 				checked={display_excerpt} //eslint-disable-line camelcase
@@ -62,21 +68,21 @@ export const DisplayItemsControl = (props) => {
 				checked={display_date} //eslint-disable-line camelcase
 				onChange={(checked) => setAttributes({ display_date: checked })}
 			/>
-
 			<CheckboxControl
 				label={__('New mark', 'vk-blocks-pro')}
 				checked={display_new} //eslint-disable-line camelcase
 				onChange={(checked) => setAttributes({ display_new: checked })}
 			/>
-
-			<CheckboxControl
-				label={__('Taxonomies (all)', 'vk-blocks-pro')}
-				checked={display_taxonomies} //eslint-disable-line camelcase
-				onChange={(checked) =>
-					setAttributes({ display_taxonomies: checked })
-				}
-			/>
-
+			{/*  「子ページリスト」ブロックの場合、分類（全項目）を表示しない */}
+			{!isChildPageList && (
+				<CheckboxControl
+					label={__('Taxonomies (all)', 'vk-blocks-pro')}
+					checked={display_taxonomies} //eslint-disable-line camelcase
+					onChange={(checked) =>
+						setAttributes({ display_taxonomies: checked })
+					}
+				/>
+			)}
 			<CheckboxControl
 				label={__('Button', 'vk-blocks-pro')}
 				checked={display_btn} //eslint-disable-line camelcase

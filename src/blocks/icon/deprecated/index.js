@@ -48,6 +48,15 @@ const blockAttributes = {
 	},
 };
 
+/* 次回対応おねがいします
+const blockAttributes3 = {
+	...blockAttributes2,
+	iconFontColor: {
+		type: 'string',
+	},
+}
+*/
+
 const blockAttributes2 = {
 	...blockAttributes,
 	iconColor: {

@@ -18,11 +18,12 @@ export class VKBButton extends Component {
 		const iconSizeAfter = this.props.lbIconSizeAfter;
 		const richText = this.props.lbRichtext;
 		const subCaption = this.props.lbsubCaption;
-		const inlineStyle = this.props.inlineStyle;
 		let aClass = '';
+		let aStyle = {};
 		let iconBefore = '';
 		let iconAfter = '';
 
+		aStyle = null;
 		aClass = `vk_button_link`;
 
 		// 塗り
@@ -75,20 +76,6 @@ export class VKBButton extends Component {
 			}
 		}
 
-		// 文字色がカスタムカラーの場合
-		/*
-		if (
-			buttonTextColorCustom !== undefined &&
-			isHexColor(buttonTextColorCustom) &&
-			isSelected
-		) {
-			aStyle = {
-				// 編集画面対策
-				color: `${buttonTextColorCustom}`,
-			};
-		}
-		*/
-
 		aClass = `${aClass} btn-${buttonSize}`;
 
 		if (buttonAlign === 'block') {
@@ -126,7 +113,7 @@ export class VKBButton extends Component {
 			/* eslint react/jsx-no-target-blank: 0 */
 			<a
 				href={buttonUrl}
-				style={inlineStyle}
+				style={aStyle}
 				className={aClass}
 				role={'button'}
 				aria-pressed={true}

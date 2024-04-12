@@ -102,6 +102,7 @@ e.g.
 
 == Changelog ==
 
+[ Editor Design Bug fix ][ Slider ]Fixed an issue where slider item height disappears when editorMode is slide and alignfull.
 [ Design Bug fix ][ group ]Fixed an issue where internal links were not working in group block style stitches.
 [ Specification Change ][ Child Page List ] Hide "Term's name on Image" and "Taxonomies (all)" display options.
 [ Design Bug Fix ][ Balloon ] Harmonized icon image display in balloon blocks with frontend editing.

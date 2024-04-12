@@ -345,6 +345,10 @@ export default function OuterEdit(props) {
 					borderStyle !== 'none' &&
 					borderColor !== undefined &&
 					!isHexColor(borderColor),
+				[`vk_outer-minHeight`]:
+					minHeightValuePC > 0 ||
+					minHeightValueTablet > 0 ||
+					minHeightValueMobile > 0,
 			}
 		),
 		style: {
@@ -360,6 +364,24 @@ export default function OuterEdit(props) {
 				: undefined,
 		},
 	});
+
+	// minHeightUnit に基づいて動的に最大値を設定
+	const getMaxHeight = (unit) => {
+		switch (unit) {
+			case 'px':
+				return 1000;
+			case 'em':
+			case 'rem':
+				return 500;
+			case 'vh':
+			case 'svh':
+			case 'lvh':
+			case 'dvh':
+				return 100;
+			default:
+				return 500;
+		}
+	};
 
 	return (
 		<>
@@ -966,11 +988,11 @@ export default function OuterEdit(props) {
 								value,
 								minHeightUnit,
 								0,
-								100
+								getMaxHeight(minHeightUnit)
 							)
 						}
 						min="0"
-						max="100"
+						max={getMaxHeight(minHeightUnit)}
 						step={'px' === minHeightUnit ? 1 : 0.1}
 					/>
 					<RangeControl
@@ -982,11 +1004,11 @@ export default function OuterEdit(props) {
 								value,
 								minHeightUnit,
 								0,
-								200
+								getMaxHeight(minHeightUnit)
 							)
 						}
 						min="0"
-						max="200"
+						max={getMaxHeight(minHeightUnit)}
 						step={'px' === minHeightUnit ? 1 : 0.1}
 					/>
 					<RangeControl
@@ -998,11 +1020,11 @@ export default function OuterEdit(props) {
 								value,
 								minHeightUnit,
 								0,
-								300
+								getMaxHeight(minHeightUnit)
 							)
 						}
 						min="0"
-						max="300"
+						max={getMaxHeight(minHeightUnit)}
 						step={'px' === minHeightUnit ? 1 : 0.1}
 					/>
 					<SelectControl

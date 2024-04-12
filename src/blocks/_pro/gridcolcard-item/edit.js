@@ -188,7 +188,8 @@ export default function Edit(props) {
 
 	// 線の色と太さ
 	if (border) {
-		style.borderWidth = `${borderWidth}`;
+		style.borderWidth =
+			typeof borderWidth === 'number' ? `${borderWidth}px` : borderWidth;
 		if (isHexColor(borderColor)) {
 			// custom color
 			style.borderColor = `${borderColor}`;

@@ -215,6 +215,10 @@ export default function save(props) {
 					borderStyle !== 'none' &&
 					borderColor !== undefined &&
 					!isHexColor(borderColor),
+				[`vk_outer-minHeight`]:
+					minHeightValuePC > 0 ||
+					minHeightValueTablet > 0 ||
+					minHeightValueMobile > 0,
 			}
 		),
 		style: {

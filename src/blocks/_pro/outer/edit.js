@@ -383,6 +383,16 @@ export default function OuterEdit(props) {
 		}
 	};
 
+	const handleUnitChange = (newUnit) => {
+		const newMax = getMaxHeight(newUnit);
+		setAttributes({
+			minHeightUnit: newUnit,
+			minHeightValuePC: Math.min(minHeightValuePC, newMax),
+			minHeightValueTablet: Math.min(minHeightValueTablet, newMax),
+			minHeightValueMobile: Math.min(minHeightValueMobile, newMax),
+		});
+	};
+
 	return (
 		<>
 			<BlockControls>
@@ -1030,22 +1040,7 @@ export default function OuterEdit(props) {
 					<SelectControl
 						label={__('Unit Type', 'vk-blocks-pro')}
 						value={minHeightUnit}
-						onChange={(value) => {
-							setAttributes({
-								minHeightValueMobile:
-									parseInt(minHeightValueMobile),
-							});
-							setAttributes({
-								minHeightValueTablet:
-									parseInt(minHeightValueTablet),
-							});
-							setAttributes({
-								minHeightValuePC: parseInt(minHeightValuePC),
-							});
-							setAttributes({
-								minHeightUnit: value,
-							});
-						}}
+						onChange={handleUnitChange}
 						options={[
 							{
 								value: 'px',

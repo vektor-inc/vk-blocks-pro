@@ -196,20 +196,12 @@ const CommonItemControl = (props) => {
 						<>
 							<UnitControl
 								label={__('Border Width', 'vk-blocks-pro')}
-								id={`vk_gridcolcard_border_width`}
 								value={borderWidth}
 								onChange={(newBorderWidth) =>
 									setAttributes({
 										borderWidth: newBorderWidth,
 									})
 								}
-								units={[
-									{
-										value: 'px',
-										label: 'px',
-										default: '1px',
-									},
-								]}
 								min={1}
 								max={10}
 							/>

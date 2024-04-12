@@ -10,10 +10,7 @@ import {
 	__experimentalUseCustomUnits as useCustomUnits,
 	__experimentalToolsPanelItem as ToolsPanelItem,
 } from '@wordpress/components';
-import {
-	InspectorControls,
-	useSettings
-} from '@wordpress/block-editor';
+import { InspectorControls, useSettings } from '@wordpress/block-editor';
 
 const SCALE_OPTIONS = (
 	<>

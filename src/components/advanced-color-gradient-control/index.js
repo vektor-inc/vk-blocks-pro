@@ -3,7 +3,7 @@ import {
 	__experimentalColorGradientControl as ColorGradientControl,
 	getGradientSlugByValue,
 	getColorObjectByColorValue,
-	useSettings
+	useSettings,
 } from '@wordpress/block-editor';
 import { colorSlugToColorCode } from '@vkblocks/utils/color-slug-to-color-code';
 import { gradientSlugToGradientCode } from '@vkblocks/utils/gradient-slug-to-gradient-code';

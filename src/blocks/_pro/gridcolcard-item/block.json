@@ -63,8 +63,8 @@
 			"default": "#e5e5e5"
 		},
 		"borderWidth": {
-			"type": "number",
-			"default": 1
+			"type": "string",
+			"default": "1px"
 		},
 		"backgroundGradient": {
 			"type": "string"

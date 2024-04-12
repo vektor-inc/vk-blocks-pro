@@ -62,8 +62,7 @@ export default function save(props) {
 
 	// 線の色と太さ
 	if (border) {
-		style.borderWidth =
-			typeof borderWidth === 'number' ? `${borderWidth}px` : borderWidth;
+		style.borderWidth = borderWidth;
 		if (isHexColor(borderColor)) {
 			// custom color
 			style.borderColor = `${borderColor}`;

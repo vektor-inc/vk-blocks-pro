@@ -81,8 +81,8 @@
 			"default": "#e5e5e5"
 		},
 		"borderWidth": {
-			"type": "string",
-			"default": "1px"
+			"type": "number",
+			"default": 1
 		},
 		"blockId": {
 			"type": "string"

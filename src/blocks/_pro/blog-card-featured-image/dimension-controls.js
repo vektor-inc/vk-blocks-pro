@@ -10,7 +10,10 @@ import {
 	__experimentalUseCustomUnits as useCustomUnits,
 	__experimentalToolsPanelItem as ToolsPanelItem,
 } from '@wordpress/components';
-import { InspectorControls, useSetting } from '@wordpress/block-editor';
+import {
+	InspectorControls,
+	useSettings
+} from '@wordpress/block-editor';
 
 const SCALE_OPTIONS = (
 	<>
@@ -49,9 +52,13 @@ const DimensionControls = ({
 	setAttributes,
 }) => {
 	const defaultUnits = ['px', '%', 'vw', 'em', 'rem'];
+
+	const spacingUnits = [...useSettings('spacing.units')[0]];
+
 	const units = useCustomUnits({
-		availableUnits: useSetting('spacing.units') || defaultUnits,
+		availableUnits: spacingUnits || defaultUnits,
 	});
+
 	const onDimensionChange = (dimension, nextValue) => {
 		const parsedValue = parseFloat(nextValue);
 		/**

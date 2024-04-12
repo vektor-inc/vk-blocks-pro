@@ -1201,7 +1201,7 @@ msgid "Setting up a link"
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:389
-#: src/blocks/_pro/gridcolcard-item/edit.js:336
+#: src/blocks/_pro/gridcolcard-item/edit.js:337
 #: src/blocks/_pro/icon-card-item/edit.js:128
 #: src/blocks/button/edit.js:283
 #: src/blocks/icon/edit.js:292
@@ -1326,60 +1326,60 @@ msgstr ""
 msgid "You can create a variety of layouts with grid column card blocks."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:232
+#: src/blocks/_pro/gridcolcard-item/edit.js:233
 #: src/blocks/_pro/select-post-list-item/edit.js:66
 #: src/blocks/button/edit.js:249
 msgid "Unlink"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:233
+#: src/blocks/_pro/gridcolcard-item/edit.js:234
 #: src/blocks/button/edit.js:250
 msgid "Input Link URL"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:263
+#: src/blocks/_pro/gridcolcard-item/edit.js:264
 #: src/blocks/_pro/select-post-list-item/edit.js:102
 #: src/blocks/button/edit.js:278
 msgid "Submit"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:287
+#: src/blocks/_pro/gridcolcard-item/edit.js:288
 msgid "Edit mode"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:297
+#: src/blocks/_pro/gridcolcard-item/edit.js:298
 msgid "All columns"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:305
+#: src/blocks/_pro/gridcolcard-item/edit.js:306
 msgid "This column only"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:310
+#: src/blocks/_pro/gridcolcard-item/edit.js:311
 msgid "Edit Lock"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:313
+#: src/blocks/_pro/gridcolcard-item/edit.js:314
 msgid "Lock edits this block from the parent and other Grid Column Item block"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:324
+#: src/blocks/_pro/gridcolcard-item/edit.js:325
 msgid "Column Setting"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:328
+#: src/blocks/_pro/gridcolcard-item/edit.js:329
 #: src/blocks/_pro/icon-card-item/edit.js:120
 #: src/blocks/pr-blocks/edit.js:254
 msgid "Link URL:"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:343
+#: src/blocks/_pro/gridcolcard-item/edit.js:344
 msgid ""
 "If you set a link URL, do not place the link element (text or button) in "
 "the Grid Column Card Item. It may not be displayed correctly."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:347
+#: src/blocks/_pro/gridcolcard-item/edit.js:348
 msgid "Make sure that no link is specified for the image block, etc."
 msgstr ""
 
@@ -1415,7 +1415,7 @@ msgstr ""
 msgid "Border Width"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:207
+#: src/blocks/_pro/gridcolcard/edit-common.js:209
 #: src/blocks/border-box/edit.js:207
 #: src/extensions/core/group/style.js:46
 msgid "Border Color"

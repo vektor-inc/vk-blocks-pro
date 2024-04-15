@@ -28,6 +28,16 @@ function convertUnitToPixels(value, unit) {
 	switch (unit) {
 		case 'px':
 			return value;
+		case 'em':
+			return (
+				value *
+				parseFloat(getComputedStyle(document.documentElement).fontSize)
+			);
+		case 'rem':
+			return (
+				value *
+				parseFloat(getComputedStyle(document.documentElement).fontSize)
+			);
 		case 'vh':
 			return (value * window.innerHeight) / 100;
 		case 'vw':

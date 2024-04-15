@@ -11,15 +11,24 @@ import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block'
 
 export default function FixedDisplayEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
-	const { mode, position, blockId, scrollTiming = 100, scrollTimingUnit = 'px' } = attributes;
+	const {
+		mode,
+		position,
+		blockId,
+		scrollTiming = 100,
+		scrollTimingUnit = 'px',
+	} = attributes;
 
 	useEffect(() => {
-		if (blockId === undefined || isParentReusableBlock(clientId) === false) {
+		if (
+			blockId === undefined ||
+			isParentReusableBlock(clientId) === false
+		) {
 			setAttributes({ blockId: clientId });
 		}
 		setAttributes({
 			mode: mode || 'always-visible',
-			position: position || 'right'
+			position: position || 'right',
 		});
 	}, [clientId, mode, position, blockId]);
 
@@ -32,12 +41,18 @@ export default function FixedDisplayEdit(props) {
 			<InspectorControls>
 				<PanelBody title={__('Fixed Display Setting', 'vk-blocks-pro')}>
 					<SelectControl
-						label={__('Fixed display mode', 'vk-blocks-pro')}
+						label={__('Display type', 'vk-blocks-pro')}
 						value={mode}
 						onChange={(value) => setAttributes({ mode: value })}
 						options={[
-							{ label: __('Always Visible', 'vk-blocks-pro'), value: 'always-visible' },
-							{ label: __('Show on Scroll', 'vk-blocks-pro'), value: 'show-on-scroll' },
+							{
+								label: __('Always Visible', 'vk-blocks-pro'),
+								value: 'always-visible',
+							},
+							{
+								label: __('Show on Scroll', 'vk-blocks-pro'),
+								value: 'show-on-scroll',
+							},
 						]}
 					/>
 					<SelectControl
@@ -46,9 +61,18 @@ export default function FixedDisplayEdit(props) {
 						onChange={(value) => setAttributes({ position: value })}
 						options={[
 							{ label: __('Top', 'vk-blocks-pro'), value: 'top' },
-							{ label: __('Right', 'vk-blocks-pro'), value: 'right' },
-							{ label: __('Bottom', 'vk-blocks-pro'), value: 'bottom' },
-							{ label: __('Left', 'vk-blocks-pro'), value: 'left' },
+							{
+								label: __('Right', 'vk-blocks-pro'),
+								value: 'right',
+							},
+							{
+								label: __('Bottom', 'vk-blocks-pro'),
+								value: 'bottom',
+							},
+							{
+								label: __('Left', 'vk-blocks-pro'),
+								value: 'left',
+							},
 						]}
 					/>
 					{mode === 'show-on-scroll' && (
@@ -57,9 +81,15 @@ export default function FixedDisplayEdit(props) {
 							value={`${scrollTiming}${scrollTimingUnit}`}
 							onChange={(nextValue) => {
 								const units = ['px', 'em', 'rem', 'vw', 'vh'];
-								const unit = units.find(unit => nextValue.endsWith(unit)) || 'px';
+								const unit =
+									units.find((unit) =>
+										nextValue.endsWith(unit)
+									) || 'px';
 								const value = parseFloat(nextValue) || 0;
-								setAttributes({ scrollTiming: value, scrollTimingUnit: unit });
+								setAttributes({
+									scrollTiming: value,
+									scrollTimingUnit: unit,
+								});
 							}}
 							units={[
 								{ value: 'px', label: 'px' },

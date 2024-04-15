@@ -562,6 +562,7 @@ msgid ""
 msgstr ""
 
 #: src/admin/margin.js:73
+#: src/blocks/_pro/fixed-display/edit.js:94
 #: src/blocks/_pro/grid-column-item/edit.js:175
 #: src/blocks/_pro/grid-column/edit.js:78
 msgid "Unit"
@@ -1243,6 +1244,54 @@ msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:72
 msgid "span"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:46
+msgid "Fixed Display Setting"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:47
+msgid "Fixed display setting"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:53
+msgid "Always Visible"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:57
+msgid "Show on Scroll"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:62
+msgid "Fixed display position"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:68
+msgid "Top"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:72
+#: src/blocks/balloon/edit.js:434
+#: src/blocks/button/edit.js:364
+#: src/blocks/pr-content/edit.js:252
+#: src/components/display-items-control/index.js:134
+msgid "Right"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:76
+msgid "Bottom"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:80
+#: src/blocks/balloon/edit.js:422
+#: src/blocks/button/edit.js:344
+#: src/blocks/pr-content/edit.js:256
+#: src/components/display-items-control/index.js:126
+msgid "Left"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:86
+msgid "Scroll Position"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:102
@@ -2084,20 +2133,6 @@ msgstr ""
 
 #: src/blocks/balloon/edit.js:408
 msgid "Please specify the layout of the balloon."
-msgstr ""
-
-#: src/blocks/balloon/edit.js:422
-#: src/blocks/button/edit.js:344
-#: src/blocks/pr-content/edit.js:256
-#: src/components/display-items-control/index.js:126
-msgid "Left"
-msgstr ""
-
-#: src/blocks/balloon/edit.js:434
-#: src/blocks/button/edit.js:364
-#: src/blocks/pr-content/edit.js:252
-#: src/components/display-items-control/index.js:134
-msgid "Right"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:442

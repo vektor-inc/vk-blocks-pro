@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-04-15T01:14:44+00:00\n"
+"POT-Creation-Date: 2024-04-15T04:36:58+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -561,7 +561,6 @@ msgid "Please specify the size of the common margin used for responsive spacers,
 msgstr ""
 
 #: src/admin/margin.js:73
-#: src/blocks/_pro/fixed-display/edit.js:94
 #: src/blocks/_pro/grid-column-item/edit.js:175
 #: src/blocks/_pro/grid-column/edit.js:78
 msgid "Unit"
@@ -1236,31 +1235,33 @@ msgstr ""
 msgid "span"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:46
+#: src/blocks/_pro/fixed-display/edit.js:42
 msgid "Fixed Display Setting"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:47
-msgid "Fixed display setting"
+#: src/blocks/_pro/fixed-display/edit.js:44
+#: src/blocks/_pro/table-of-contents-new/edit.js:114
+#: src/components/column-layout-control/index.js:69
+msgid "Display type"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:53
+#: src/blocks/_pro/fixed-display/edit.js:49
 msgid "Always Visible"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:57
+#: src/blocks/_pro/fixed-display/edit.js:53
 msgid "Show on Scroll"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:62
+#: src/blocks/_pro/fixed-display/edit.js:59
 msgid "Fixed display position"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:68
+#: src/blocks/_pro/fixed-display/edit.js:63
 msgid "Top"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:72
+#: src/blocks/_pro/fixed-display/edit.js:65
 #: src/blocks/balloon/edit.js:434
 #: src/blocks/button/edit.js:364
 #: src/blocks/pr-content/edit.js:252
@@ -1268,11 +1269,11 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:76
+#: src/blocks/_pro/fixed-display/edit.js:69
 msgid "Bottom"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:80
+#: src/blocks/_pro/fixed-display/edit.js:73
 #: src/blocks/balloon/edit.js:422
 #: src/blocks/button/edit.js:344
 #: src/blocks/pr-content/edit.js:256
@@ -1280,8 +1281,8 @@ msgstr ""
 msgid "Left"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:86
-msgid "Scroll Position"
+#: src/blocks/_pro/fixed-display/edit.js:80
+msgid "Display Position"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:102
@@ -1969,11 +1970,6 @@ msgstr ""
 
 #: src/blocks/_pro/table-of-contents-new/edit.js:106
 msgid "If you duplicate a heading, the table of contents block will not work properly, please reassign the ID."
-msgstr ""
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:114
-#: src/components/column-layout-control/index.js:69
-msgid "Display type"
 msgstr ""
 
 #: src/blocks/_pro/table-of-contents-new/edit.js:133

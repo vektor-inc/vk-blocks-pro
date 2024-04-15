@@ -77,7 +77,7 @@ export default function FixedDisplayEdit(props) {
 					/>
 					{mode === 'show-on-scroll' && (
 						<UnitControl
-							label={__('Scroll Position', 'text-domain')}
+							label={__('Display Position', 'vk-blocks-pro')}
 							value={`${scrollTiming}${scrollTimingUnit}`}
 							onChange={(nextValue) => {
 								const units = ['px', 'em', 'rem', 'vw', 'vh'];

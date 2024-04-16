@@ -1,10 +1,10 @@
 === VK Blocks ===
-Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird,chiakikouno,doshimaf
+Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird,chiakikouno,doshimaf,mtdkei
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.2
 Tested up to: 6.5
-Stable tag: 1.70.0.1
+Stable tag: 1.71.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -102,10 +102,14 @@ e.g.
 
 == Changelog ==
 
-[ Design Bug fix ][ group ]Fixed an issue where internal links were not working in group block style stitches.
-[ Specification Change ][ Child Page List ] Hide "Term's name on Image" and "Taxonomies (all)" display options.
-[ Design Bug Fix ][ Balloon ] Harmonized icon image display in balloon blocks with frontend editing.
 [ Bug fix ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment. 
+
+= 1.72.0 =
+[ Specification Change ][ Child Page List ] Hide "Term's name on Image" and "Taxonomies (all)" display options.
+[ Design Bug fix ][ grid-column ] Fixed vk_gridColumn_item to be aligned to the beginning and to be the basic width size of the parent element.
+[ Design Bug fix ][ group ] Fixed an issue where internal links were not working in group block style stitches.
+[ Design Bug fix ][ Balloon ] Harmonized icon image display in balloon blocks with frontend editing.
+[ Editor Design Bug fix ][ Slider ] Fixed an issue where slider item height disappears when editorMode is slide and alignfull.
 
 = 1.71.0 =
 [ Add function ][ Accordion ] Add plain style to accordion block.

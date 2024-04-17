@@ -3,18 +3,11 @@ import {
 	useBlockProps,
 	RichText,
 	InspectorControls,
+	store as blockEditorStore,
 } from '@wordpress/block-editor';
-import {
-	PanelBody,
-	BaseControl,
-	RadioControl,
-	ButtonGroup,
-	Button,
-	// eslint-disable-next-line @wordpress/no-unsafe-wp-apis
-	__experimentalBoxControl as BoxControl,
-} from '@wordpress/components';
+import { PanelBody, RadioControl } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
-import { select, dispatch } from '@wordpress/data';
+import { dispatch, useSelect } from '@wordpress/data';
 import { __, sprintf } from '@wordpress/i18n';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
@@ -59,12 +52,9 @@ export default function TabEdit(props) {
 		}
 	}, [clientId]);
 
-	const parentBlock =
-		select('core/block-editor').getBlocksByClientId(clientId);
-	const childBlocks =
-		parentBlock && parentBlock[0] && parentBlock[0].innerBlocks
-			? parentBlock[0].innerBlocks
-			: [];
+	const childBlocks = useSelect(
+		(select) => select(blockEditorStore).getBlock(clientId).innerBlocks
+	);
 
 	useEffect(() => {
 		const tabOptionTemp = {
@@ -73,7 +63,7 @@ export default function TabEdit(props) {
 			tabLabelBorderTop: false,
 			tabBodyBorderTop: true,
 		};
-		if (childBlocks !== []) {
+		if (childBlocks) {
 			childBlocks.forEach((childBlock) => {
 				tabOptionTemp.listArray.push({
 					tabLabel: childBlock.attributes.tabLabel,
@@ -144,7 +134,7 @@ export default function TabEdit(props) {
 	}, [className]);
 
 	useEffect(() => {
-		if (childBlocks !== []) {
+		if (childBlocks) {
 			childBlocks.forEach((childBlock) => {
 				if (tabOption.tabBodyBorderTop === true) {
 					updateBlockAttributes(childBlock.clientId, {
@@ -160,7 +150,7 @@ export default function TabEdit(props) {
 	}, [tabOption.tabBodyBorderTop]);
 
 	useEffect(() => {
-		if (childBlocks !== []) {
+		if (childBlocks) {
 			childBlocks.forEach((childBlock, index) => {
 				if (firstActive === index) {
 					updateBlockAttributes(childBlock.clientId, {
@@ -176,7 +166,7 @@ export default function TabEdit(props) {
 	}, [firstActive]);
 
 	useEffect(() => {
-		if (childBlocks !== []) {
+		if (childBlocks) {
 			if (tabBodyPaddingMode === 'bundle') {
 				childBlocks.forEach((childBlock) => {
 					updateBlockAttributes(childBlock.clientId, {
@@ -188,7 +178,7 @@ export default function TabEdit(props) {
 	}, [tabBodyPaddingAll]);
 
 	const liOnClick = (e) => {
-		if (childBlocks !== []) {
+		if (childBlocks) {
 			const vkTab = e.target.closest('.vk_tab');
 			const vkTabLabels = vkTab.querySelector('.vk_tab_labels');
 
@@ -374,51 +364,6 @@ export default function TabEdit(props) {
 							setAttributes({ tabSizePc: value });
 						}}
 					/>
-				</PanelBody>
-				<PanelBody
-					title={__('Body Layout Setting', 'vk-blocks')}
-					initialOpen={true}
-				>
-					<BaseControl
-						id={`vk_block_button_custom_background_color`}
-						label={__('Padding Setting Mode', 'vk-blocks')}
-					>
-						<ButtonGroup className={`mb-2`}>
-							<Button
-								isSmall
-								isPrimary={tabBodyPaddingMode === 'separate'}
-								isSecondary={tabBodyPaddingMode !== 'separate'}
-								onClick={() => {
-									setAttributes({
-										tabBodyPaddingMode: 'separate',
-									});
-								}}
-							>
-								{__('Separate', 'vk-blocks')}
-							</Button>
-							<Button
-								isSmall
-								isPrimary={tabBodyPaddingMode === 'bundle'}
-								isSecondary={tabBodyPaddingMode !== 'bundle'}
-								onClick={() => {
-									setAttributes({
-										tabBodyPaddingMode: 'bundle',
-									});
-								}}
-							>
-								{__('Bundle', 'vk-blocks')}
-							</Button>
-						</ButtonGroup>
-					</BaseControl>
-					{tabBodyPaddingMode === 'bundle' && (
-						<BoxControl
-							values={tabBodyPaddingAll}
-							onChange={(value) => {
-								setAttributes({ tabBodyPaddingAll: value });
-							}}
-							label={__('Padding of Tab Body', 'vk-blocks')}
-						/>
-					)}
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>

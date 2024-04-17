@@ -5,12 +5,7 @@ import {
 } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
-import {
-	PanelBody,
-	BaseControl,
-	// eslint-disable-next-line @wordpress/no-unsafe-wp-apis
-	__experimentalBoxControl as BoxControl,
-} from '@wordpress/components';
+import { PanelBody, BaseControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { select, dispatch } from '@wordpress/data';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
@@ -36,8 +31,6 @@ export default function TabItemEdit(props) {
 			setAttributes({ blockId: clientId });
 		}
 	}, [clientId]);
-
-	let tabBodyPaddingControl = '';
 
 	const parentTabBlockIdList = select(
 		'core/block-editor'
@@ -84,27 +77,6 @@ export default function TabItemEdit(props) {
 		}
 	}, [tabColor]);
 
-	if (
-		parentTabBlock &&
-		parentTabBlock.attributes &&
-		parentTabBlock.attributes.tabBodyPaddingMode &&
-		parentTabBlock.attributes.tabBodyPaddingMode === 'separate'
-	) {
-		tabBodyPaddingControl = (
-			<PanelBody
-				title={__('Body Layout Setting', 'vk-blocks')}
-				initialOpen={true}
-			>
-				<BoxControl
-					values={tabBodyPadding}
-					onChange={(value) => {
-						setAttributes({ tabBodyPadding: value });
-					}}
-					label={__('Padding of Tab Body', 'vk-blocks')}
-				/>
-			</PanelBody>
-		);
-	}
 	let activeBodyClass = '';
 	if (tabBodyActive === true) {
 		activeBodyClass = ' vk_tab_bodys_body-state-active';
@@ -142,7 +114,6 @@ export default function TabItemEdit(props) {
 						<AdvancedColorPalette schema={'tabColor'} {...props} />
 					</BaseControl>
 				</PanelBody>
-				{tabBodyPaddingControl}
 			</InspectorControls>
 			<div {...blockProps}>
 				<InnerBlocks

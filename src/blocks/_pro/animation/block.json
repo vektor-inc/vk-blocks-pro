@@ -3,6 +3,9 @@
 	"name": "vk-blocks/animation",
 	"category": "vk-blocks-cat",
 	"title": "Animation",
+	"editorScript": "vk-blocks-build-js",
+	"editorStyle": "vk-blocks-build-editor-css",
+	"style": "vk-blocks/animation",
 	"attributes": {
 		"effect": {
 			"type": "string",

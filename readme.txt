@@ -102,6 +102,8 @@ e.g.
 
 == Changelog ==
 
+[ Other ] Fixed useSetting deprecated 
+
 = 1.72.0 =
 [ Specification Change ][ Child Page List ] Hide "Term's name on Image" and "Taxonomies (all)" display options.
 [ Specification Change ][ Pro ] Attend to I18N Improvements in 6.5.

@@ -3,7 +3,7 @@ import {
 	__experimentalColorGradientControl as ColorGradientControl,
 	getGradientSlugByValue,
 	getColorObjectByColorValue,
-	useSetting,
+	useSettings,
 } from '@wordpress/block-editor';
 import { colorSlugToColorCode } from '@vkblocks/utils/color-slug-to-color-code';
 import { gradientSlugToGradientCode } from '@vkblocks/utils/gradient-slug-to-gradient-code';
@@ -22,8 +22,9 @@ export const AdvancedColorGradientControl = (props) => {
 		attributes[gradientSchema]
 	);
 
-	const defaultGradients = useSetting('color.gradients.default');
-	const themeGradients = useSetting('color.gradients.theme');
+	const defaultGradients = [...useSettings('color.gradients.default')[0]];
+	const themeGradients = [...useSettings('color.gradients.theme')[0]];
+
 	const gradientsArray = [];
 	if (themeGradients?.length > 0) {
 		gradientsArray.push({

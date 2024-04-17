@@ -102,6 +102,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] [ Slider ] Change padding style to core system.
+
 = 1.72.0 =
 [ Specification Change ][ Child Page List ] Hide "Term's name on Image" and "Taxonomies (all)" display options.
 [ Design Bug fix ][ grid-column ] Fixed vk_gridColumn_item to be aligned to the beginning and to be the basic width size of the parent element.

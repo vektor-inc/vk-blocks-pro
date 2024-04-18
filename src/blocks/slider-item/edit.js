@@ -34,6 +34,7 @@ export default function SliderItemEdit(props) {
 		bgColor,
 		opacity,
 		padding_left_and_right,
+		style,
 		bgSize,
 		bgImageMobile,
 		bgImageTablet,
@@ -42,6 +43,39 @@ export default function SliderItemEdit(props) {
 	} = attributes;
 
 	useEffect(() => {
+		// 既に設定されているスタイルを優先し、未設定の場合のみ新しい値を計算して適用
+		const existingPadding = style?.spacing?.padding;
+		let newPadding;
+	
+		if (!existingPadding) {  // spacing.paddingが未設定の場合のみ新しい値を設定
+			switch (padding_left_and_right) {
+				case '0px':
+					newPadding = '0px';
+					break;
+				case '1':
+					newPadding = '4em';
+					break;
+				case '2':
+					newPadding = '0px';
+					break;
+				default:
+					newPadding = '0px';
+					break;
+			}
+	
+			if (newPadding !== existingPadding) {
+				setAttributes({
+					style: {
+						...style,
+						spacing: {
+							...style.spacing,
+							padding: newPadding
+						}
+					}
+				});
+			}
+		}
+
 		if (attributes.clientId !== undefined) {
 			setAttributes({ clientId: undefined });
 		}
@@ -51,7 +85,7 @@ export default function SliderItemEdit(props) {
 		) {
 			setAttributes({ blockId: clientId });
 		}
-	}, [clientId]);
+	}, [padding_left_and_right, setAttributes, style, clientId]);
 
 	//classPaddingLRのクラス切り替え
 	let classPaddingLR = '';

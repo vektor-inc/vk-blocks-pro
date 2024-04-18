@@ -18,31 +18,6 @@ $md-min: 768px;
 $lg-min: 992px;
 $xl-min: 1200px;
 
-@mixin speech-balloon-li-after {
-	top: 100%;
-	left: 50%;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
-	border-color: rgba(136, 183, 213, 0);
-	border-top-color: var(--default-color);
-	border-width: 10px;
-	margin-left: -10px;
-}
-
-@mixin no-frame {
-	.vk_tab_bodys{
-		border: none;
-		box-shadow: none;
-		padding-right: 0;
-		padding-left:0;
-		background-color: transparent;
-	}
-}
-
 
 @mixin line {
 	.vk_tab_labels .vk_tab_labels_label{
@@ -173,7 +148,6 @@ $xl-min: 1200px;
 	background-color: var(--vk-color-bg-accent-wh);
 	.vk_tab_bodys_body {
 		display: none;
-		padding: 1rem;
 		&.vk_tab_bodys_body-state-active{
 			display: block;
 		}

@@ -17,6 +17,21 @@ export default function TabItemEdit(props) {
 
 	const { updateBlockAttributes } = dispatch('core/block-editor');
 
+	const innerBlocksTemplate = [
+		[
+			'core/group',
+			{
+				style: {
+					border: {
+						width: '1px',
+						color: '#F5F5F5',
+					},
+				},
+			},
+			[['core/paragraph']],
+		],
+	];
+
 	useEffect(() => {
 		if (
 			blockId === undefined ||
@@ -111,12 +126,9 @@ export default function TabItemEdit(props) {
 			<div {...blockProps}>
 				<InnerBlocks
 					templateLock={false}
-					template={[['core/paragraph']]}
+					template={innerBlocksTemplate}
 				/>
 			</div>
-			<style>{`
-
-			`}</style>
 		</>
 	);
 }

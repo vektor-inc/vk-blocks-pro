@@ -103,8 +103,6 @@ e.g.
 == Changelog ==
 
 [ Add Block ] Add Tab Block
-[ Bug fix ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment. 
-[ Other ] Fixed useSetting deprecated
 
 = 1.72.1 =
 [ Specification Change ][ Pro ] Attend to I18N Improvements in 6.5.

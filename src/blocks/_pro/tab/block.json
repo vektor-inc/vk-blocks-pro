@@ -2,6 +2,9 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/tab",
 	"category": "vk-blocks-cat",
+	"editorScript": "vk-blocks-build-js",
+	"editorStyle": "vk-blocks-build-editor-css",
+	"style": "vk-blocks/tab",
 	"attributes": {
 		"tabOptionJSON": {
 			"type": "string",
@@ -18,19 +21,6 @@
 		"tabSizePc": {
 			"type": "string",
 			"default": "fitText"
-		},
-		"tabBodyPaddingMode": {
-			"type": "string",
-			"default": "bundle"
-		},
-		"tabBodyPaddingAll": {
-			"type": "object",
-			"default": {
-				"top": null,
-				"right": null,
-				"bottom": null,
-				"left": null
-			}
 		},
 		"firstActive": {
 			"type": "number",

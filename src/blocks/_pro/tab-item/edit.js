@@ -13,13 +13,7 @@ import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function TabItemEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
-	const {
-		tabBodyActive,
-		tabBodyPadding,
-		tabColor,
-		tabBodyBorderTop,
-		blockId,
-	} = attributes;
+	const { tabBodyActive, tabColor, tabBodyBorderTop, blockId } = attributes;
 
 	const { updateBlockAttributes } = dispatch('core/block-editor');
 
@@ -99,7 +93,6 @@ export default function TabItemEdit(props) {
 		id: `vk_tab_bodys_body-${blockId}`,
 		style: {
 			...tabBodyStyle,
-			padding: `${tabBodyPadding.top} ${tabBodyPadding.right} ${tabBodyPadding.bottom} ${tabBodyPadding.left}`,
 		},
 	});
 

@@ -3,6 +3,9 @@
 	"name": "vk-blocks/tab-item",
 	"category": "vk-blocks-cat",
 	"parent": ["vk-blocks/tab"],
+	"editorScript": "vk-blocks-build-js",
+	"editorStyle": "vk-blocks-build-editor-css",
+	"style": "vk-blocks/tab",
 	"attributes": {
 		"tabLabel": {
 			"type": "string",
@@ -11,15 +14,6 @@
 		"tabBodyActive": {
 			"type": "boolean",
 			"default": false
-		},
-		"tabBodyPadding": {
-			"type": "object",
-			"default": {
-				"top": null,
-				"right": null,
-				"bottom": null,
-				"left": null
-			}
 		},
 		"tabColor": {
 			"type": "string",

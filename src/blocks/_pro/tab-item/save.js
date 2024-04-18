@@ -2,13 +2,7 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 export default function save(props) {
 	const { attributes } = props;
-	const {
-		tabBodyActive,
-		tabBodyPadding,
-		tabColor,
-		tabBodyBorderTop,
-		blockId,
-	} = attributes;
+	const { tabBodyActive, tabColor, tabBodyBorderTop, blockId } = attributes;
 
 	let activeBodyClass = '';
 	if (tabBodyActive === true) {
@@ -33,7 +27,6 @@ export default function save(props) {
 		id: `vk_tab_bodys_body-${blockId}`,
 		style: {
 			...tabBodyStyle,
-			padding: `${tabBodyPadding.top} ${tabBodyPadding.right} ${tabBodyPadding.bottom} ${tabBodyPadding.left}`,
 		},
 	});
 

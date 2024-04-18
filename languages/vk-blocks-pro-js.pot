@@ -1928,11 +1928,11 @@ msgstr ""
 msgid "First Dot Number"
 msgstr ""
 
-#: src/blocks/_pro/tab-item/edit.js:109
+#: src/blocks/_pro/tab-item/edit.js:102
 msgid "Tab Color Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab-item/edit.js:112
+#: src/blocks/_pro/tab-item/edit.js:105
 msgid "Tab Color"
 msgstr ""
 
@@ -1982,15 +1982,7 @@ msgid "Tab"
 msgstr ""
 
 #: src/blocks/_pro/tab/index.js:27
-msgid "Normal No Frame"
-msgstr ""
-
-#: src/blocks/_pro/tab/index.js:41
 msgid "Line"
-msgstr ""
-
-#: src/blocks/_pro/tab/index.js:45
-msgid "Line No Frame"
 msgstr ""
 
 #: src/blocks/_pro/table-of-contents-new/deprecated/0.59.1/save.js:19

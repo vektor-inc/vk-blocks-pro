@@ -12,7 +12,6 @@
  */
 function vk_blocks_register_block_tab_item() {
 
-
 	// クラシックテーマ & 6.5 環境で $assets = array() のように空にしないと重複登録になるため
 	// ここで初期化しておく
 	$assets = array();

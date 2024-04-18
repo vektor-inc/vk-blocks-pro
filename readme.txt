@@ -105,7 +105,11 @@ e.g.
 [ Add Block ] Add Tab Block
 [ Bug fix ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment. 
 [ Other ] Fixed useSetting deprecated
+
+= 1.72.1 =
 [ Specification Change ][ Pro ] Attend to I18N Improvements in 6.5.
+[ Other ] Fixed useSetting deprecated
+[ Bug fix ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment. 
 
 = 1.72.0 =
 [ Specification Change ][ Child Page List ] Hide "Term's name on Image" and "Taxonomies (all)" display options.

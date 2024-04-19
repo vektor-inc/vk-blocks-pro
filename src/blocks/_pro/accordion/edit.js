@@ -1,9 +1,14 @@
-import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import {
+	InnerBlocks,
+	useBlockProps,
+	InspectorControls,
+} from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
+import { PanelBody, SelectControl } from '@wordpress/components';
 
 export default function AccordionEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
-	const { containerClass } = attributes;
+	const { containerClass, initialState } = attributes;
 
 	// コンソールエラー回避のため useEffect を使用（実行タイミングの問題）
 	useEffect(() => {
@@ -30,6 +35,21 @@ export default function AccordionEdit(props) {
 
 	return (
 		<div {...blockProps}>
+			<InspectorControls>
+				<PanelBody title="Accordion Setting">
+					<SelectControl
+						label="Initial State"
+						value={initialState}
+						options={[
+							{ label: 'Open', value: 'open' },
+							{ label: 'Closed', value: 'closed' },
+						]}
+						onChange={(value) =>
+							setAttributes({ initialState: value })
+						}
+					/>
+				</PanelBody>
+			</InspectorControls>
 			<InnerBlocks
 				allowedBlocks={ALLOWED_BLOCKS}
 				template={TEMPLATE}

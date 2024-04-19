@@ -5,6 +5,7 @@ import {
 } from '@wordpress/block-editor';
 import { useEffect, useState } from '@wordpress/element';
 import { PanelBody, SelectControl, ToggleControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function AccordionEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -45,16 +46,16 @@ export default function AccordionEdit(props) {
 	return (
 		<div {...blockProps}>
 		<InspectorControls>
-			<PanelBody title="Accordion Settings">
+			<PanelBody title={__('Accordion Setting', 'vk-blocks-pro')}>
 				<ToggleControl
-					label="Set initial state per device"
+					label={__('Set initial state per device', 'vk-blocks-pro')}
                     checked={isDeviceSpecific}
                     onChange={toggleDeviceSpecific}
 				/>
 				{isDeviceSpecific ? (
 					<>
 						<SelectControl
-							label="Mobile Initial State"
+					label={__('Mobile', 'vk-blocks-pro')}
 							value={initialStateMobile || initialState}
 							options={[
 								{ label: 'Open', value: 'open' },
@@ -63,7 +64,7 @@ export default function AccordionEdit(props) {
 							onChange={(value) => setAttributes({ initialStateMobile: value })}
 						/>
 						<SelectControl
-							label="Tablet Initial State"
+					label={__('Tablet', 'vk-blocks-pro')}
 							value={initialStateTablet || initialState}
 							options={[
 								{ label: 'Open', value: 'open' },
@@ -72,7 +73,7 @@ export default function AccordionEdit(props) {
 							onChange={(value) => setAttributes({ initialStateTablet: value })}
 						/>
 						<SelectControl
-							label="Desktop Initial State"
+					label={__('PC', 'vk-blocks-pro')}
 							value={initialStateDesktop || initialState}
 							options={[
 								{ label: 'Open', value: 'open' },
@@ -83,7 +84,7 @@ export default function AccordionEdit(props) {
 					</>
 				) : (
 					<SelectControl
-						label="Default Initial State"
+					label={__('Default Initial State', 'vk-blocks-pro')}
 						value={initialState}
 						options={[
 							{ label: 'Open', value: 'open' },

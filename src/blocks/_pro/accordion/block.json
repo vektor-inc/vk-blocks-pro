@@ -12,6 +12,10 @@
 		"containerClass": {
 			"type": "string",
 			"default": "vk_accordion"
+		},
+		"initialState": {
+			"type": "string",
+			"default": "closed"
 		}
 	},
 	"supports": {

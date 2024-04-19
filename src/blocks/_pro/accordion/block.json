@@ -16,7 +16,23 @@
 		"initialState": {
 			"type": "string",
 			"default": "closed"
-		}
+		},
+		"initialStateMobile": {
+			"type": "string",
+			"default": "closed"
+		},
+		"initialStateTablet": {
+			"type": "string",
+			"default": "closed"
+		},
+		"initialStateDesktop": {
+			"type": "string",
+			"default": "closed"
+		},
+        "isDeviceSpecific": {
+            "type": "boolean",
+            "default": false
+        }
 	},
 	"supports": {
 		"html": false,

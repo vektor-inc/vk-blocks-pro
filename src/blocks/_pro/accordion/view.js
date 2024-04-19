@@ -1,113 +1,72 @@
 document.addEventListener('DOMContentLoaded', () => {
-	const accordion = document.querySelectorAll(
+    const accordions = document.querySelectorAll(
 		//  vk_accordion-containerはvk_accordionになったが互換性のために残しておく
 		'.vk_accordion, .vk_accordion-container'
 	);
 
-	accordion.forEach((el) => {
-		const initialState = el.getAttribute('data-initial-state');
-		const toggle = el.querySelector('.vk_accordion-toggle');
-		const target = el.querySelector('.vk_accordion-target');
+    accordions.forEach(accordion => {
+        applyInitialState(accordion);  // 初期状態の適用
+        accordion.querySelector('.vk_accordion-toggle').addEventListener('click', () => toggleAccordion(accordion));
+    });
 
-		// 初期状態を適用
-		if (initialState === 'open') {
-			toggle.classList.add('vk_accordion-toggle-open');
-			toggle.classList.remove('vk_accordion-toggle-close');
-			target.classList.add('vk_accordion-target-open');
-			target.classList.remove('vk_accordion-target-close');
-		} else {
-			toggle.classList.remove('vk_accordion-toggle-open');
-			toggle.classList.add('vk_accordion-toggle-close');
-			target.classList.remove('vk_accordion-target-open');
-			target.classList.add('vk_accordion-target-close');
-		}
-
-		// イベントリスナーを追加
-		toggle.addEventListener('click', () => {
-			if (toggle.classList.contains('vk_accordion-toggle-close')) {
-				toggle.classList.remove('vk_accordion-toggle-close');
-				toggle.classList.add('vk_accordion-toggle-open');
-				target.classList.remove('vk_accordion-target-close');
-				target.classList.add('vk_accordion-target-open');
-			} else {
-				toggle.classList.remove('vk_accordion-toggle-open');
-				toggle.classList.add('vk_accordion-toggle-close');
-				target.classList.remove('vk_accordion-target-open');
-				target.classList.add('vk_accordion-target-close');
-			}
-		});
-
-		let accordionTarget;
-		let accordionToggle;
-
-		const accordionToggleLoop = (i) => {
-			if (
-				accordion[i]
-					.querySelector('.vk_accordion-toggle')
-					.classList.contains('vk_accordion-toggle-open')
-			) {
-				accordion[i]
-					.querySelector('.vk_accordion-target')
-					.classList.add('vk_accordion-target-open');
-			}
-
-			if (
-				accordion[i]
-					.querySelector('.vk_accordion-toggle')
-					.classList.contains('vk_accordion-toggle-close')
-			) {
-				accordion[i]
-					.querySelector('.vk_accordion-target')
-					.classList.add('vk_accordion-target-close');
-			}
-
-			accordion[i].querySelector('.vk_accordion-toggle').addEventListener(
-				'click',
-				() => {
-					accordionToggle = accordion[i].querySelector(
-						'.vk_accordion-toggle'
-					);
-					accordionTarget = accordion[i].querySelector(
-						'.vk_accordion-target'
-					);
-					if (
-						accordionToggle.classList.contains(
-							'vk_accordion-toggle-close'
-						)
-					) {
-						accordionToggle.classList.remove(
-							'vk_accordion-toggle-close'
-						);
-						accordionToggle.classList.add(
-							'vk_accordion-toggle-open'
-						);
-						accordionTarget.classList.remove(
-							'vk_accordion-target-close'
-						);
-						accordionTarget.classList.add(
-							'vk_accordion-target-open'
-						);
-					} else {
-						accordionToggle.classList.remove(
-							'vk_accordion-toggle-open'
-						);
-						accordionToggle.classList.add(
-							'vk_accordion-toggle-close'
-						);
-						accordionTarget.classList.remove(
-							'vk_accordion-target-open'
-						);
-						accordionTarget.classList.add(
-							'vk_accordion-target-close'
-						);
-					}
-				},
-				false
-			);
-		};
-
-		for (let i = 0; i < accordion.length; i++) {
-			accordionToggleLoop(i);
-		}
-	});
+    window.addEventListener('resize', () => {
+        accordions.forEach(accordion => {
+            applyInitialState(accordion);
+        });
+    });
 });
+
+function toggleAccordion(accordion) {
+    const toggle = accordion.querySelector('.vk_accordion-toggle');
+    const target = accordion.querySelector('.vk_accordion-target');
+    const isOpen = toggle.classList.contains('vk_accordion-toggle-open');
+
+    if (isOpen) {
+        toggle.classList.remove('vk_accordion-toggle-open');
+        toggle.classList.add('vk_accordion-toggle-close');
+        target.classList.remove('vk_accordion-target-open');
+        target.classList.add('vk_accordion-target-close');
+    } else {
+        toggle.classList.add('vk_accordion-toggle-open');
+        toggle.classList.remove('vk_accordion-toggle-close');
+        target.classList.add('vk_accordion-target-open');
+        target.classList.remove('vk_accordion-target-close');
+    }
+}
+
+function applyInitialState(accordion) {
+    const initialState = accordion.getAttribute('data-initial-state');
+    const initialStateMobile = accordion.getAttribute('data-initial-state-mobile');
+    const initialStateTablet = accordion.getAttribute('data-initial-state-tablet');
+    const initialStateDesktop = accordion.getAttribute('data-initial-state-desktop');
+
+    const screenWidth = window.innerWidth;
+    let stateToApply = initialState;
+
+    const mobileBreakpoint = 576;
+    const tabletBreakpoint = 992;
+
+    if (screenWidth < mobileBreakpoint && initialStateMobile) {
+        stateToApply = initialStateMobile;
+    } else if (screenWidth >= mobileBreakpoint && screenWidth < tabletBreakpoint && initialStateTablet) {
+        stateToApply = initialStateTablet;
+    } else if (screenWidth >= tabletBreakpoint && initialStateDesktop) {
+        stateToApply = initialStateDesktop;
+    }
+
+    const toggle = accordion.querySelector('.vk_accordion-toggle');
+    const target = accordion.querySelector('.vk_accordion-target');
+
+    // クラスを追加・削除して開閉状態を反映
+    if (stateToApply === 'open') {
+        toggle.classList.add('vk_accordion-toggle-open');
+        toggle.classList.remove('vk_accordion-toggle-close');
+        target.classList.add('vk_accordion-target-open');
+        target.classList.remove('vk_accordion-target-close');
+    } else {
+        toggle.classList.remove('vk_accordion-toggle-open');
+        toggle.classList.add('vk_accordion-toggle-close');
+        target.classList.remove('vk_accordion-target-open');
+        target.classList.add('vk_accordion-target-close');
+    }
+}

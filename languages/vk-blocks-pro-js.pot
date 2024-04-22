@@ -529,7 +529,7 @@ msgid "XL"
 msgstr ""
 
 #: src/admin/margin.js:43
-#: src/blocks/_pro/accordion/edit.js:76
+#: src/blocks/_pro/accordion/edit.js:88
 #: src/blocks/_pro/outer/edit.js:883
 #: src/blocks/button/edit.js:537
 #: src/blocks/slider/edit.js:952
@@ -538,7 +538,7 @@ msgid "PC"
 msgstr ""
 
 #: src/admin/margin.js:47
-#: src/blocks/_pro/accordion/edit.js:67
+#: src/blocks/_pro/accordion/edit.js:73
 #: src/blocks/_pro/outer/edit.js:867
 #: src/blocks/button/edit.js:472
 #: src/blocks/slider/edit.js:973
@@ -600,6 +600,18 @@ msgstr ""
 msgid "Save Success"
 msgstr ""
 
+#: src/blocks/_pro/accordion/edit.js:105
+msgid "Default Initial State"
+msgstr ""
+
+#: src/blocks/_pro/accordion/edit.js:109
+msgid "Open"
+msgstr ""
+
+#: src/blocks/_pro/accordion/edit.js:113
+msgid "Close"
+msgstr ""
+
 #: src/blocks/_pro/accordion/edit.js:49
 #: src/blocks/faq/edit.js:34
 #: src/blocks/faq2/edit.js:23
@@ -608,10 +620,6 @@ msgstr ""
 
 #: src/blocks/_pro/accordion/edit.js:51
 msgid "Set initial state per device"
-msgstr ""
-
-#: src/blocks/_pro/accordion/edit.js:87
-msgid "Default Initial State"
 msgstr ""
 
 #: src/blocks/_pro/accordion/index.js:22

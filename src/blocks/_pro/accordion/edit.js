@@ -1,7 +1,7 @@
 import {
-    InnerBlocks,
-    useBlockProps,
-    InspectorControls,
+	InnerBlocks,
+	useBlockProps,
+	InspectorControls,
 } from '@wordpress/block-editor';
 import { useEffect, useState } from '@wordpress/element';
 import { PanelBody, SelectControl, ToggleControl } from '@wordpress/components';
@@ -12,13 +12,13 @@ export default function AccordionEdit(props) {
 	const { containerClass, initialState, initialStateMobile, initialStateTablet, initialStateDesktop, isDeviceSpecific } = attributes;
 	
 	// 状態管理オプションの表示を切り替えるためのトグル
-    const [userIsDeviceSpecific, setUserIsDeviceSpecific] = useState(isDeviceSpecific);
+	const [userIsDeviceSpecific, setUserIsDeviceSpecific] = useState(isDeviceSpecific);
 
 	// トグルの状態を更新する関数
-    const toggleDeviceSpecific = () => {
-        setUserIsDeviceSpecific(!userIsDeviceSpecific);
-        setAttributes({ isDeviceSpecific: !userIsDeviceSpecific });
-    };
+	const toggleDeviceSpecific = () => {
+		setUserIsDeviceSpecific(!userIsDeviceSpecific);
+		setAttributes({ isDeviceSpecific: !userIsDeviceSpecific });
+	};
 
 	// コンソールエラー回避のため useEffect を使用（実行タイミングの問題）
 	useEffect(() => {
@@ -49,8 +49,8 @@ export default function AccordionEdit(props) {
 			<PanelBody title={__('Accordion Setting', 'vk-blocks-pro')}>
 				<ToggleControl
 					label={__('Set initial state per device', 'vk-blocks-pro')}
-                    checked={isDeviceSpecific}
-                    onChange={toggleDeviceSpecific}
+					checked={isDeviceSpecific}
+					onChange={toggleDeviceSpecific}
 				/>
 				{isDeviceSpecific ? (
 					<>

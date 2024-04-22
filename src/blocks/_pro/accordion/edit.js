@@ -58,8 +58,14 @@ export default function AccordionEdit(props) {
 					label={__('Mobile', 'vk-blocks-pro')}
 							value={initialStateMobile || initialState}
 							options={[
-								{ label: 'Open', value: 'open' },
-								{ label: 'Close', value: 'close' }
+								{
+									label: __('Open', 'vk-blocks-pro'),
+									value: 'open'
+								},
+								{
+									label: __('Close', 'vk-blocks-pro'),
+									value: 'close'
+								}
 							]}
 							onChange={(value) => setAttributes({ initialStateMobile: value })}
 						/>
@@ -67,8 +73,14 @@ export default function AccordionEdit(props) {
 					label={__('Tablet', 'vk-blocks-pro')}
 							value={initialStateTablet || initialState}
 							options={[
-								{ label: 'Open', value: 'open' },
-								{ label: 'Close', value: 'close' }
+								{
+									label: __('Open', 'vk-blocks-pro'),
+									value: 'open'
+								},
+								{
+									label: __('Close', 'vk-blocks-pro'),
+									value: 'close'
+								}
 							]}
 							onChange={(value) => setAttributes({ initialStateTablet: value })}
 						/>
@@ -76,8 +88,14 @@ export default function AccordionEdit(props) {
 					label={__('PC', 'vk-blocks-pro')}
 							value={initialStateDesktop || initialState}
 							options={[
-								{ label: 'Open', value: 'open' },
-								{ label: 'Close', value: 'close' }
+								{
+									label: __('Open', 'vk-blocks-pro'),
+									value: 'open'
+								},
+								{
+									label: __('Close', 'vk-blocks-pro'),
+									value: 'close'
+								}
 							]}
 							onChange={(value) => setAttributes({ initialStateDesktop: value })}
 						/>
@@ -87,8 +105,14 @@ export default function AccordionEdit(props) {
 					label={__('Default Initial State', 'vk-blocks-pro')}
 						value={initialState}
 						options={[
-							{ label: 'Open', value: 'open' },
-							{ label: 'Close', value: 'close' }
+							{
+								label: __('Open', 'vk-blocks-pro'),
+								value: 'open'
+							},
+							{
+								label: __('Close', 'vk-blocks-pro'),
+								value: 'close'
+							}
 						]}
 						onChange={(value) => setAttributes({ initialState: value })}
 					/>

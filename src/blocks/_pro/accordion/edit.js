@@ -59,7 +59,7 @@ export default function AccordionEdit(props) {
 							value={initialStateMobile || initialState}
 							options={[
 								{ label: 'Open', value: 'open' },
-								{ label: 'Closed', value: 'closed' }
+								{ label: 'Close', value: 'close' }
 							]}
 							onChange={(value) => setAttributes({ initialStateMobile: value })}
 						/>
@@ -68,7 +68,7 @@ export default function AccordionEdit(props) {
 							value={initialStateTablet || initialState}
 							options={[
 								{ label: 'Open', value: 'open' },
-								{ label: 'Closed', value: 'closed' }
+								{ label: 'Close', value: 'close' }
 							]}
 							onChange={(value) => setAttributes({ initialStateTablet: value })}
 						/>
@@ -77,7 +77,7 @@ export default function AccordionEdit(props) {
 							value={initialStateDesktop || initialState}
 							options={[
 								{ label: 'Open', value: 'open' },
-								{ label: 'Closed', value: 'closed' }
+								{ label: 'Close', value: 'close' }
 							]}
 							onChange={(value) => setAttributes({ initialStateDesktop: value })}
 						/>
@@ -88,7 +88,7 @@ export default function AccordionEdit(props) {
 						value={initialState}
 						options={[
 							{ label: 'Open', value: 'open' },
-							{ label: 'Closed', value: 'closed' }
+							{ label: 'Close', value: 'close' }
 						]}
 						onChange={(value) => setAttributes({ initialState: value })}
 					/>

@@ -49,7 +49,7 @@ export default function SliderItemEdit(props) {
 	
 		if (!existingPadding) {  // spacing.paddingが未設定の場合のみ新しい値を設定
 			switch (padding_left_and_right) {
-				case '0px':
+				case '0':
 					newPadding = '0px';
 					break;
 				case '1':

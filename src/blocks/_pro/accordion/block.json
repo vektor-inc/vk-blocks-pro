@@ -29,10 +29,10 @@
 			"type": "string",
 			"default": "closed"
 		},
-        "isDeviceSpecific": {
-            "type": "boolean",
-            "default": false
-        }
+		"isDeviceSpecific": {
+			"type": "boolean",
+            		"default": false
+		}
 	},
 	"supports": {
 		"html": false,

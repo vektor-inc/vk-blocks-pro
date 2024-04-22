@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2024-04-22 09:32+0900\n"
+"PO-Revision-Date: 2024-04-22 11:12+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -541,14 +541,14 @@ msgstr "L"
 msgid "XL"
 msgstr "XL"
 
-#: src/admin/margin.js:43 src/blocks/_pro/accordion/edit.js:76
+#: src/admin/margin.js:43 src/blocks/_pro/accordion/edit.js:88
 #: src/blocks/_pro/outer/edit.js:883 src/blocks/button/edit.js:537
 #: src/blocks/slider/edit.js:952
 #: src/components/advanced-viewport-control/index.js:25
 msgid "PC"
 msgstr "PC"
 
-#: src/admin/margin.js:47 src/blocks/_pro/accordion/edit.js:67
+#: src/admin/margin.js:47 src/blocks/_pro/accordion/edit.js:73
 #: src/blocks/_pro/outer/edit.js:867 src/blocks/button/edit.js:472
 #: src/blocks/slider/edit.js:973
 #: src/components/advanced-viewport-control/index.js:32
@@ -604,6 +604,18 @@ msgstr "変更を保存"
 msgid "Save Success"
 msgstr "保存しました"
 
+#: src/blocks/_pro/accordion/edit.js:105
+msgid "Default Initial State"
+msgstr "初期表示状態"
+
+#: src/blocks/_pro/accordion/edit.js:109
+msgid "Open"
+msgstr "開く"
+
+#: src/blocks/_pro/accordion/edit.js:113
+msgid "Close"
+msgstr "閉じる"
+
 #: src/blocks/_pro/accordion/edit.js:49 src/blocks/faq/edit.js:34
 #: src/blocks/faq2/edit.js:23
 msgid "Accordion Setting"
@@ -612,10 +624,6 @@ msgstr "アコーディオン設定"
 #: src/blocks/_pro/accordion/edit.js:51
 msgid "Set initial state per device"
 msgstr "デバイス毎に初期状態を設定"
-
-#: src/blocks/_pro/accordion/edit.js:87
-msgid "Default Initial State"
-msgstr "初期表示状態"
 
 #: src/blocks/_pro/accordion/index.js:22
 msgid "No background color"

@@ -21,28 +21,23 @@ export default function save(props) {
 		bgImage,
 		blockId,
 	} = attributes;
-	let classPaddingLR;
-	let containerClass;
 
 	//classPaddingLRのクラス切り替え
-	classPaddingLR = '';
-	if (padding_left_and_right === '0') {
-		classPaddingLR = ` ${prefix}-paddingLR-none`;
-	} else if (padding_left_and_right === '1') {
-		classPaddingLR = ` ${prefix}-paddingLR-use`;
-	} else if (padding_left_and_right === '2') {
-		// Fit to content area width
-		classPaddingLR = ` ${prefix}-paddingLR-zero`;
-	}
-
-	if (
-		classPaddingLR === ` ${prefix}-paddingLR-none` ||
-		classPaddingLR === ''
-	) {
-		containerClass = `${prefix}_container container`;
-	} else {
-		containerClass = `${prefix}_container`;
-	}
+	let containerClass = `${prefix}_container`;
+	let containerStyles = {};
+    let classPaddingLR = '';
+    switch (padding_left_and_right) {
+        case '0':
+            containerClass += ' container';
+            classPaddingLR = `${prefix}-paddingLR-none`;
+            break;
+		case '1':
+			containerStyles = { paddingLeft: '4em', paddingRight: '4em' };
+            break;
+		case '2':
+			containerStyles = { paddingLeft: '0', paddingRight: '0' }; 
+			break;
+		}
 
 	const opacityClass = opacity && opacity * 10;
 	const bgAreaClasses = classnames('vk_slider_item-background-area', {
@@ -66,9 +61,11 @@ export default function save(props) {
 		</>
 	);
 
-	const blockProps = useBlockProps.save({
-		className: `vk_slider_item swiper-slide vk_valign-${verticalAlignment} ${prefix}-${blockId} ${classPaddingLR} ${prefix}-paddingVertical-none`,
+    const blockProps = useBlockProps.save({
+        className: `vk_slider_item swiper-slide vk_valign-${verticalAlignment} ${prefix}-${blockId} ${classPaddingLR} ${prefix}-paddingVertical-none`,
+		style: containerStyles,
 	});
+
 	return (
 		<div {...blockProps}>
 			{GetBgImage}

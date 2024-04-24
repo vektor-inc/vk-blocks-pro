@@ -59,6 +59,7 @@ export default function SliderItemEdit(props) {
 	const classPaddingLR = '';
 	switch (padding_left_and_right) {
 		case '0':
+			classPaddingLR = `${prefix}-paddingLR-none`;
 			containerClass += ' container';
 			break;
 		case '1':

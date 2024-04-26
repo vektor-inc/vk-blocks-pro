@@ -55,12 +55,12 @@ add_action( 'init', 'vk_blocks_register_block_accordion', 99 );
 
 function render_accordion_block( $attributes, $content ) {
 	$containerClass = isset( $attributes['containerClass'] ) ? $attributes['containerClass'] : 'vk_accordion';
-	$initialState   = isset( $attributes['initialState'] ) ? $attributes['initialState'] : 'closed';
+	$initialState   = isset( $attributes['initialState'] ) ? $attributes['initialState'] : 'close';
 
 	ob_start();
 	?>
 	<div class="<?php echo esc_attr( $containerClass ); ?>" data-initial-state="<?php echo esc_attr( $initialState ); ?>">
-		<?php echo $content; // これにより InnerBlocks の内容が出力されます ?>
+		<?php echo $content; ?>
 	</div>
 	<?php
 	return ob_get_clean();

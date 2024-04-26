@@ -9,10 +9,18 @@ import { __ } from '@wordpress/i18n';
 
 export default function AccordionEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
-	const { containerClass, initialState, initialStateMobile, initialStateTablet, initialStateDesktop, isDeviceSpecific } = attributes;
-	
+	const {
+		containerClass,
+		initialState,
+		initialStateMobile,
+		initialStateTablet,
+		initialStateDesktop,
+		isDeviceSpecific,
+	} = attributes;
+
 	// 状態管理オプションの表示を切り替えるためのトグル
-	const [userIsDeviceSpecific, setUserIsDeviceSpecific] = useState(isDeviceSpecific);
+	const [userIsDeviceSpecific, setUserIsDeviceSpecific] =
+		useState(isDeviceSpecific);
 
 	// トグルの状態を更新する関数
 	const toggleDeviceSpecific = () => {
@@ -45,80 +53,93 @@ export default function AccordionEdit(props) {
 
 	return (
 		<div {...blockProps}>
-		<InspectorControls>
-			<PanelBody title={__('Accordion Setting', 'vk-blocks-pro')}>
-				<ToggleControl
-					label={__('Set initial state per device', 'vk-blocks-pro')}
-					checked={isDeviceSpecific}
-					onChange={toggleDeviceSpecific}
-				/>
-				{isDeviceSpecific ? (
-					<>
-						<SelectControl
-					label={__('Mobile', 'vk-blocks-pro')}
-							value={initialStateMobile || initialState}
-							options={[
-								{
-									label: __('Open', 'vk-blocks-pro'),
-									value: 'open'
-								},
-								{
-									label: __('Close', 'vk-blocks-pro'),
-									value: 'close'
-								}
-							]}
-							onChange={(value) => setAttributes({ initialStateMobile: value })}
-						/>
-						<SelectControl
-					label={__('Tablet', 'vk-blocks-pro')}
-							value={initialStateTablet || initialState}
-							options={[
-								{
-									label: __('Open', 'vk-blocks-pro'),
-									value: 'open'
-								},
-								{
-									label: __('Close', 'vk-blocks-pro'),
-									value: 'close'
-								}
-							]}
-							onChange={(value) => setAttributes({ initialStateTablet: value })}
-						/>
-						<SelectControl
-					label={__('PC', 'vk-blocks-pro')}
-							value={initialStateDesktop || initialState}
-							options={[
-								{
-									label: __('Open', 'vk-blocks-pro'),
-									value: 'open'
-								},
-								{
-									label: __('Close', 'vk-blocks-pro'),
-									value: 'close'
-								}
-							]}
-							onChange={(value) => setAttributes({ initialStateDesktop: value })}
-						/>
-					</>
-				) : (
-					<SelectControl
-					label={__('Default Initial State', 'vk-blocks-pro')}
-						value={initialState}
-						options={[
-							{
-								label: __('Open', 'vk-blocks-pro'),
-								value: 'open'
-							},
-							{
-								label: __('Close', 'vk-blocks-pro'),
-								value: 'close'
-							}
-						]}
-						onChange={(value) => setAttributes({ initialState: value })}
+			<InspectorControls>
+				<PanelBody title={__('Accordion Setting', 'vk-blocks-pro')}>
+					<ToggleControl
+						label={__(
+							'Set initial state per device',
+							'vk-blocks-pro'
+						)}
+						checked={isDeviceSpecific}
+						onChange={toggleDeviceSpecific}
 					/>
-				)}
-			</PanelBody>
-		</InspectorControls>
+					{isDeviceSpecific ? (
+						<>
+							<SelectControl
+								label={__('Mobile', 'vk-blocks-pro')}
+								value={initialStateMobile || initialState}
+								options={[
+									{
+										label: __('Open', 'vk-blocks-pro'),
+										value: 'open',
+									},
+									{
+										label: __('Close', 'vk-blocks-pro'),
+										value: 'close',
+									},
+								]}
+								onChange={(value) =>
+									setAttributes({ initialStateMobile: value })
+								}
+							/>
+							<SelectControl
+								label={__('Tablet', 'vk-blocks-pro')}
+								value={initialStateTablet || initialState}
+								options={[
+									{
+										label: __('Open', 'vk-blocks-pro'),
+										value: 'open',
+									},
+									{
+										label: __('Close', 'vk-blocks-pro'),
+										value: 'close',
+									},
+								]}
+								onChange={(value) =>
+									setAttributes({ initialStateTablet: value })
+								}
+							/>
+							<SelectControl
+								label={__('PC', 'vk-blocks-pro')}
+								value={initialStateDesktop || initialState}
+								options={[
+									{
+										label: __('Open', 'vk-blocks-pro'),
+										value: 'open',
+									},
+									{
+										label: __('Close', 'vk-blocks-pro'),
+										value: 'close',
+									},
+								]}
+								onChange={(value) =>
+									setAttributes({
+										initialStateDesktop: value,
+									})
+								}
+							/>
+						</>
+					) : (
+						<SelectControl
+							label={__('Default Initial State', 'vk-blocks-pro')}
+							value={initialState}
+							options={[
+								{
+									label: __('Open', 'vk-blocks-pro'),
+									value: 'open',
+								},
+								{
+									label: __('Close', 'vk-blocks-pro'),
+									value: 'close',
+								},
+							]}
+							onChange={(value) =>
+								setAttributes({ initialState: value })
+							}
+						/>
+					)}
+				</PanelBody>
+			</InspectorControls>
 			<InnerBlocks
 				allowedBlocks={ALLOWED_BLOCKS}
 				template={TEMPLATE}

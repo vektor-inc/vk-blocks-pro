@@ -15,23 +15,23 @@
 		},
 		"initialState": {
 			"type": "string",
-			"default": "closed"
+			"default": "close"
 		},
 		"initialStateMobile": {
 			"type": "string",
-			"default": "closed"
+			"default": "close"
 		},
 		"initialStateTablet": {
 			"type": "string",
-			"default": "closed"
+			"default": "close"
 		},
 		"initialStateDesktop": {
 			"type": "string",
-			"default": "closed"
+			"default": "close"
 		},
 		"isDeviceSpecific": {
 			"type": "boolean",
-            		"default": false
+			"default": false
 		}
 	},
 	"supports": {

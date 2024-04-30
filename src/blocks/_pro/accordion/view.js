@@ -5,6 +5,43 @@ const accordion = document.querySelectorAll(
 let accordionTarget;
 let accordionToggle;
 
+document.addEventListener('DOMContentLoaded', () => {
+	const accordions = document.querySelectorAll('.vk_accordion, .vk_accordion-container');
+	accordions.forEach(accordion => {
+		const toggleElement = accordion.querySelector('.vk_accordion-toggle');
+		const targetElement = accordion.querySelector('.vk_accordion-target');
+
+		function updateAccordion() {
+			const width = window.innerWidth;
+			let initialState = accordion.getAttribute('data-initial-state');
+
+			if (width < 576) {
+				initialState = accordion.getAttribute('data-initial-state-mobile') || initialState;
+			} else if (width >= 992) {
+				initialState = accordion.getAttribute('data-initial-state-desktop') || initialState;
+			} else {
+				initialState = accordion.getAttribute('data-initial-state-tablet') || initialState;
+			}
+
+			if (initialState === 'open') {
+				toggleElement.classList.add('vk_accordion-toggle-open');
+				toggleElement.classList.remove('vk_accordion-toggle-close');
+				targetElement.classList.add('vk_accordion-target-open');
+				targetElement.classList.remove('vk_accordion-target-close');
+			} else {
+				toggleElement.classList.add('vk_accordion-toggle-close');
+				toggleElement.classList.remove('vk_accordion-toggle-open');
+				targetElement.classList.add('vk_accordion-target-close');
+				targetElement.classList.remove('vk_accordion-target-open');
+			}
+		}
+
+		// 初期ロード時とウィンドウサイズが変わった時に実行
+		updateAccordion();
+		window.addEventListener('resize', updateAccordion);
+	});
+});
+
 const accordionToggleLoop = (i) => {
 	if (
 		accordion[i]
@@ -56,53 +93,3 @@ const accordionToggleLoop = (i) => {
 for (let i = 0; i < accordion.length; i++) {
 	accordionToggleLoop(i);
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-	const accordions = document.querySelectorAll('.vk_accordion, .vk_accordion-container');
-
-	accordions.forEach(accordion => {
-		const isDeviceSpecific = accordion.dataset.isDeviceSpecific === 'true';
-		let initialState = accordion.dataset.initialState;  // デフォルトの初期状態
-
-		if (isDeviceSpecific) {
-			const width = window.innerWidth;
-			if (width < 768) {  // モバイルデバイス
-				initialState = accordion.dataset.initialStateMobile;
-			} else if (width >= 768 && width < 1024) {  // タブレット
-				initialState = accordion.dataset.initialStateTablet;
-			} else {  // デスクトップ
-				initialState = accordion.dataset.initialStateDesktop;
-			}
-		}
-
-		accordion.querySelectorAll('.vk_accordion-toggle').forEach(toggle => {
-			const target = accordion.querySelector('.vk_accordion-target');
-
-			if (initialState === 'open') {
-				toggle.classList.add('vk_accordion-toggle-open');
-				toggle.classList.remove('vk_accordion-toggle-close');
-				target.classList.add('vk_accordion-target-open');
-				target.classList.remove('vk_accordion-target-close');
-			} else {
-				toggle.classList.add('vk_accordion-toggle-close');
-				toggle.classList.remove('vk_accordion-toggle-open');
-				target.classList.add('vk_accordion-target-close');
-				target.classList.remove('vk_accordion-target-open');
-			}
-
-			toggle.addEventListener('click', () => {
-				if (toggle.classList.contains('vk_accordion-toggle-close')) {
-					toggle.classList.remove('vk_accordion-toggle-close');
-					toggle.classList.add('vk_accordion-toggle-open');
-					target.classList.remove('vk_accordion-target-close');
-					target.classList.add('vk_accordion-target-open');
-				} else {
-					toggle.classList.remove('vk_accordion-toggle-open');
-					toggle.classList.add('vk_accordion-toggle-close');
-					target.classList.remove('vk_accordion-target-open');
-					target.classList.add('vk_accordion-target-close');
-				}
-			});
-		});
-	});
-});

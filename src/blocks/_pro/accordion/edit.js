@@ -10,9 +10,6 @@ import { __ } from '@wordpress/i18n';
 export default function AccordionEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const { containerClass, initialState, initialStateMobile, initialStateTablet, initialStateDesktop, isDeviceSpecific } = attributes;
-	
-	// 状態管理オプションの表示を切り替えるためのトグル
-	const [userIsDeviceSpecific, setUserIsDeviceSpecific] = useState(isDeviceSpecific);
 
 	// トグルの状態を更新
 	const toggleDeviceSpecific = () => {

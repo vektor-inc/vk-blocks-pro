@@ -104,7 +104,21 @@ e.g.
 
 [ Add Function ][ Common margin ] Add size option xxl/xxs.
 [ Add Function ][ Outer (Pro) ] Added option to min height setting.
+
+= 1.72.1 =
+[ Specification Change ][ Pro ] Attend to I18N Improvements in 6.5.
+[ Other ] Fixed useSetting deprecated
+[ Bug fix ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment. 
+
+= 1.72.0 =
+[ Add Function ][ Common margin ] Add size option xxl/xxs.
+[ Add Function ][ Outer (Pro) ] Added option to min height setting.
 [ Specification Change ][ Child Page List ] Hide "Term's name on Image" and "Taxonomies (all)" display options.
+[ Design Bug Fix ][ Balloon ] Harmonized icon image display in balloon blocks with frontend editing.
+[ Design Bug fix ][ grid-column ] Fixed vk_gridColumn_item to be aligned to the beginning and to be the basic width size of the parent element.
+[ Design Bug fix ][ group ] Fixed an issue where internal links were not working in group block style stitches.
+[ Design Bug fix ][ Balloon ] Harmonized icon image display in balloon blocks with frontend editing.
+[ Editor Design Bug fix ][ Slider ] Fixed an issue where slider item height disappears when editorMode is slide and alignfull.
 
 = 1.71.0 =
 [ Add function ][ Accordion ] Add plain style to accordion block.

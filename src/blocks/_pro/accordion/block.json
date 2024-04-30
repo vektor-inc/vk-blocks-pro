@@ -19,15 +19,15 @@
 		},
 		"initialStateMobile": {
 			"type": "string",
-			"default": "close"
+			"default": ""
 		},
 		"initialStateTablet": {
 			"type": "string",
-			"default": "close"
+			"default": ""
 		},
 		"initialStateDesktop": {
 			"type": "string",
-			"default": "close"
+			"default": ""
 		},
 		"isDeviceSpecific": {
 			"type": "boolean",

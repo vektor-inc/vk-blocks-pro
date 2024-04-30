@@ -111,8 +111,6 @@ e.g.
 [ Bug fix ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment. 
 
 = 1.72.0 =
-[ Add Function ][ Common margin ] Add size option xxl/xxs.
-[ Add Function ][ Outer (Pro) ] Added option to min height setting.
 [ Specification Change ][ Child Page List ] Hide "Term's name on Image" and "Taxonomies (all)" display options.
 [ Design Bug Fix ][ Balloon ] Harmonized icon image display in balloon blocks with frontend editing.
 [ Design Bug fix ][ grid-column ] Fixed vk_gridColumn_item to be aligned to the beginning and to be the basic width size of the parent element.

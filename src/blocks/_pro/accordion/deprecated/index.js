@@ -11,7 +11,19 @@ const blockAttributes3 = {
 	containerClass2: {
 		initialState: {
 			type: "string",
-			default: "closed"
+			default: "close"
+		},
+		initialStateMobile: {
+			type: "string",
+			default: ""
+		},
+		initialStateTablet: {
+			type: "string",
+			default: ""
+		},
+		initialStateDesktop: {
+			type: "string",
+			default: ""
 		}
 	},
 };

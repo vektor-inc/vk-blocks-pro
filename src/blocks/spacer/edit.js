@@ -76,6 +76,14 @@ export default function SpacerEdit({
 					<ButtonGroup className="mb-3">
 						<Button
 							isSmall
+							isPrimary={spaceSize === 'xxs'}
+							isSecondary={spaceSize !== 'xxs'}
+							onClick={() => setAttributes({ spaceSize: 'xxs' })}
+						>
+							{__('XXS', 'vk-blocks-pro')}
+						</Button>
+						<Button
+							isSmall
 							isPrimary={spaceSize === 'xs'}
 							isSecondary={spaceSize !== 'xs'}
 							onClick={() => setAttributes({ spaceSize: 'xs' })}
@@ -119,6 +127,14 @@ export default function SpacerEdit({
 							onClick={() => setAttributes({ spaceSize: 'xl' })}
 						>
 							{__('XL', 'vk-blocks-pro')}
+						</Button>
+						<Button
+							isSmall
+							isPrimary={spaceSize === 'xxl'}
+							isSecondary={spaceSize !== 'xxl'}
+							onClick={() => setAttributes({ spaceSize: 'xxl' })}
+						>
+							{__('XXL', 'vk-blocks-pro')}
 						</Button>
 						<Button
 							isSmall

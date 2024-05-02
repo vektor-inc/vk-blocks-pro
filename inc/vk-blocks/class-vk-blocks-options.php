@@ -128,6 +128,23 @@ class VK_Blocks_Options {
 			'margin_size'                 => array(
 				'type'       => 'object',
 				'properties' => array(
+					'xxl' => array(
+						'type'       => 'object',
+						'properties' => array(
+							'mobile' => array(
+								'type' => 'number',
+							),
+							'tablet' => array(
+								'type' => 'number',
+							),
+							'pc'     => array(
+								'type' => 'number',
+							),
+							'custom' => array(
+								'type' => 'string',
+							),
+						),
+					),
 					'xl' => array(
 						'type'       => 'object',
 						'properties' => array(
@@ -197,6 +214,24 @@ class VK_Blocks_Options {
 						),
 					),
 					'xs' => array(
+						'type'       => 'object',
+						'properties' => array(
+							'mobile' => array(
+								'type' => 'number',
+							),
+							'tablet' => array(
+								'type' => 'number',
+							),
+							'pc'     => array(
+								'type' => 'number',
+							),
+							'custom' => array(
+								'type' => 'string',
+
+							),
+						),
+					),
+					'xxs' => array(
 						'type'       => 'object',
 						'properties' => array(
 							'mobile' => array(
@@ -383,6 +418,12 @@ class VK_Blocks_Options {
 			'balloon_border_width'        => 1,
 			'margin_unit'                 => 'rem',
 			'margin_size'                 => array(
+				'xxl' => array(
+					'mobile' => null,
+					'tablet' => null,
+					'pc'     => null,
+					'custom' => '',
+				),
 				'xl' => array(
 					'mobile' => null,
 					'tablet' => null,
@@ -408,6 +449,12 @@ class VK_Blocks_Options {
 					'custom' => '',
 				),
 				'xs' => array(
+					'mobile' => null,
+					'tablet' => null,
+					'pc'     => null,
+					'custom' => '',
+				),
+				'xxs' => array(
 					'mobile' => null,
 					'tablet' => null,
 					'pc'     => null,

@@ -102,7 +102,6 @@ e.g.
 
 == Changelog ==
 
-[ Add Function ][ Spacer ][ Common margin ] Add size option xxl/xxs.
 [ Add Function ][ Outer (Pro) ] Added option to min height setting.
 
 = 1.72.1 =

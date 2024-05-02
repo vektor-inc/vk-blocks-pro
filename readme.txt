@@ -102,6 +102,8 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Spacer ][ Common margin ][ Admin screen ][ Toolbar ] Add size option xl/xs.
+
 = 1.72.1 =
 [ Specification Change ][ Pro ] Attend to I18N Improvements in 6.5.
 [ Other ] Fixed useSetting deprecated

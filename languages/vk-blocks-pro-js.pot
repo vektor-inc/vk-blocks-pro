@@ -767,31 +767,35 @@ msgid "Max number of words"
 msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:102
-msgid "4:3"
+msgid "16:9"
 msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:106
-msgid "3:2"
+msgid "4:3"
 msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:110
-msgid "9:16"
+msgid "3:2"
 msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:114
-msgid "3:4"
+msgid "9:16"
 msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:118
+msgid "3:4"
+msgstr ""
+
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:122
 msgid "2:3"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:139
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:143
 #: src/blocks/slider/edit.js:940
 msgid "Height"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:161
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:165
 #: src/blocks/_pro/outer/edit.js:471
 #: src/blocks/balloon/edit.js:508
 #: src/blocks/slider/edit.js:915
@@ -812,20 +816,16 @@ msgstr ""
 msgid "Image will be stretched and distorted to completely fill the space."
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:85
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:89
 msgid "Aspect ratio"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:90
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:94
 msgid "Original"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:94
-msgid "Square"
-msgstr ""
-
 #: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:98
-msgid "16:9"
+msgid "Square"
 msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/edit.js:48
@@ -1911,7 +1911,7 @@ msgstr ""
 #: src/blocks/heading/edit.js:264
 #: src/blocks/slider/edit.js:1134
 #: src/blocks/staff/edit.js:173
-#: src/components/advanced-color-gradient-control/index.js:36
+#: src/components/advanced-color-gradient-control/index.js:37
 msgid "Default"
 msgstr ""
 
@@ -2943,7 +2943,7 @@ msgstr ""
 msgid "minchoBody"
 msgstr ""
 
-#: src/components/advanced-color-gradient-control/index.js:30
+#: src/components/advanced-color-gradient-control/index.js:31
 msgid "Theme"
 msgstr ""
 
@@ -3264,55 +3264,71 @@ msgstr ""
 msgid "Extra big"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:25
-msgid "Top XL"
+#: src/extensions/common/margin-extension/index.js:103
+msgid "Bottom XXL"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:273
+#: src/extensions/common/margin-extension/index.js:25
+msgid "Top XXL"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:293
 msgid "Margin the block"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:30
-msgid "Top L"
+msgid "Top XL"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:35
-msgid "Top M"
+msgid "Top L"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:40
-msgid "Top S"
+msgid "Top M"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:45
-msgid "Top XS"
+msgid "Top S"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:50
+msgid "Top XS"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:55
+msgid "Top XXS"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:60
 msgid "Top 0"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:58
+#: src/extensions/common/margin-extension/index.js:68
 msgid "Bottom 0"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:63
-msgid "Bottom XS"
-msgstr ""
-
-#: src/extensions/common/margin-extension/index.js:68
-msgid "Bottom S"
-msgstr ""
-
 #: src/extensions/common/margin-extension/index.js:73
-msgid "Bottom M"
+msgid "Bottom XXS"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:78
-msgid "Bottom L"
+msgid "Bottom XS"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:83
+msgid "Bottom S"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:88
+msgid "Bottom M"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:93
+msgid "Bottom L"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:98
 msgid "Bottom XL"
 msgstr ""
 
@@ -3443,7 +3459,7 @@ msgctxt "Scale option for Image dimension control"
 msgid "Fill"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:67
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:71
 msgctxt "Image scaling options"
 msgid "Scale"
 msgstr ""

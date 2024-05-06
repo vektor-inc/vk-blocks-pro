@@ -81,6 +81,9 @@ function vk_blocks_get_spacer_size( $options, $spacer_size, $device ) {
  */
 function vk_blocks_is_size_print( $options, $device ) {
 	$return = false;
+	if ( is_numeric( vk_blocks_get_spacer_size( $options, 'xxs', $device ) ) ) {
+		$return = true;
+	}
 	if ( is_numeric( vk_blocks_get_spacer_size( $options, 'xs', $device ) ) ) {
 		$return = true;
 	}
@@ -94,6 +97,9 @@ function vk_blocks_is_size_print( $options, $device ) {
 		$return = true;
 	}
 	if ( is_numeric( vk_blocks_get_spacer_size( $options, 'xl', $device ) ) ) {
+		$return = true;
+	}
+	if ( is_numeric( vk_blocks_get_spacer_size( $options, 'xxl', $device ) ) ) {
 		$return = true;
 	}
 	return $return;
@@ -132,11 +138,13 @@ function vk_blocks_get_spacer_size_style( $options, $spacer_size, $device, $unit
 function vk_blocks_get_spacer_size_style_all( $options ) {
 	$dynamic_css = '';
 	if (
+		! empty( $options['margin_size']['xxs'] ) ||
 		! empty( $options['margin_size']['xs'] ) ||
 		! empty( $options['margin_size']['sm'] ) ||
 		! empty( $options['margin_size']['md'] ) ||
 		! empty( $options['margin_size']['lg'] ) ||
-		! empty( $options['margin_size']['xl'] )
+		! empty( $options['margin_size']['xl'] ) ||
+		! empty( $options['margin_size']['xxl'] )
 	) {
 		if ( ! empty( $options['margin_unit'] ) ) {
 			$unit = $options['margin_unit'];
@@ -148,11 +156,13 @@ function vk_blocks_get_spacer_size_style_all( $options ) {
 			$dynamic_css         .= '
 			@media (max-width: 575.98px) {
 				:root,body{';
+					$dynamic_css .= ! empty( $options['margin_size']['xxs']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'xxs', 'mobile', $unit ) );
 					$dynamic_css .= ! empty( $options['margin_size']['xs']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'xs', 'mobile', $unit ) );
 					$dynamic_css .= ! empty( $options['margin_size']['sm']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'sm', 'mobile', $unit ) );
 					$dynamic_css .= ! empty( $options['margin_size']['md']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'md', 'mobile', $unit ) );
 					$dynamic_css .= ! empty( $options['margin_size']['lg']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'lg', 'mobile', $unit ) );
 					$dynamic_css .= ! empty( $options['margin_size']['xl']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'xl', 'mobile', $unit ) );
+					$dynamic_css .= ! empty( $options['margin_size']['xxl']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'xxl', 'mobile', $unit ) );
 					$dynamic_css .= '
 				}
 			}';
@@ -161,11 +171,13 @@ function vk_blocks_get_spacer_size_style_all( $options ) {
 			$dynamic_css         .= '
 			@media (min-width: 576px) and (max-width: 991.98px) {
 				:root,body{';
+					$dynamic_css .= ! empty( $options['margin_size']['xxs']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'xxs', 'tablet', $unit ) );
 					$dynamic_css .= ! empty( $options['margin_size']['xs']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'xs', 'tablet', $unit ) );
 					$dynamic_css .= ! empty( $options['margin_size']['sm']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'sm', 'tablet', $unit ) );
 					$dynamic_css .= ! empty( $options['margin_size']['md']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'md', 'tablet', $unit ) );
 					$dynamic_css .= ! empty( $options['margin_size']['lg']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'lg', 'tablet', $unit ) );
 					$dynamic_css .= ! empty( $options['margin_size']['xl']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'xl', 'tablet', $unit ) );
+					$dynamic_css .= ! empty( $options['margin_size']['xxl']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'xxl', 'tablet', $unit ) );
 					$dynamic_css .= '
 				}
 			}';
@@ -174,30 +186,36 @@ function vk_blocks_get_spacer_size_style_all( $options ) {
 			$dynamic_css         .= '
 			@media (min-width: 992px) {
 				:root,body{';
+					$dynamic_css .= ! empty( $options['margin_size']['xxs']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'xxs', 'pc', $unit ) );
 					$dynamic_css .= ! empty( $options['margin_size']['xs']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'xs', 'pc', $unit ) );
 					$dynamic_css .= ! empty( $options['margin_size']['sm']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'sm', 'pc', $unit ) );
 					$dynamic_css .= ! empty( $options['margin_size']['md']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'md', 'pc', $unit ) );
 					$dynamic_css .= ! empty( $options['margin_size']['lg']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'lg', 'pc', $unit ) );
 					$dynamic_css .= ! empty( $options['margin_size']['xl']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'xl', 'pc', $unit ) );
+					$dynamic_css .= ! empty( $options['margin_size']['xxl']['custom'] ) ? '' : esc_attr( vk_blocks_get_spacer_size_style( $options, 'xxl', 'pc', $unit ) );
 					$dynamic_css .= '
 				}
 			}';
 		}
 	}
 	if (
+		! empty( $options['margin_size']['xxs']['custom'] ) ||
 		! empty( $options['margin_size']['xs']['custom'] ) ||
 		! empty( $options['margin_size']['sm']['custom'] ) ||
 		! empty( $options['margin_size']['md']['custom'] ) ||
 		! empty( $options['margin_size']['lg']['custom'] ) ||
-		! empty( $options['margin_size']['xl']['custom'] )
+		! empty( $options['margin_size']['xl']['custom'] ) ||
+		! empty( $options['margin_size']['xxl']['custom'] )
 	) {
 		$dynamic_css     .= '
 		:root,body{';
+			$dynamic_css .= ! empty( $options['margin_size']['xxs']['custom'] ) ? esc_attr( vk_blocks_get_spacer_size_style( $options, 'xxs', 'custom', $unit ) ) : '';
 			$dynamic_css .= ! empty( $options['margin_size']['xs']['custom'] ) ? esc_attr( vk_blocks_get_spacer_size_style( $options, 'xs', 'custom', $unit ) ) : '';
 			$dynamic_css .= ! empty( $options['margin_size']['sm']['custom'] ) ? esc_attr( vk_blocks_get_spacer_size_style( $options, 'sm', 'custom', $unit ) ) : '';
 			$dynamic_css .= ! empty( $options['margin_size']['md']['custom'] ) ? esc_attr( vk_blocks_get_spacer_size_style( $options, 'md', 'custom', $unit ) ) : '';
 			$dynamic_css .= ! empty( $options['margin_size']['lg']['custom'] ) ? esc_attr( vk_blocks_get_spacer_size_style( $options, 'lg', 'custom', $unit ) ) : '';
 			$dynamic_css .= ! empty( $options['margin_size']['xl']['custom'] ) ? esc_attr( vk_blocks_get_spacer_size_style( $options, 'xl', 'custom', $unit ) ) : '';
+			$dynamic_css .= ! empty( $options['margin_size']['xxl']['custom'] ) ? esc_attr( vk_blocks_get_spacer_size_style( $options, 'xxl', 'custom', $unit ) ) : '';
 			$dynamic_css .= '
 		}';
 	}

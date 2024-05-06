@@ -622,7 +622,7 @@ export default function OuterEdit(props) {
 					</BaseControl>
 					<BaseControl>
 						<ToggleControl
-							label={__('端末毎に設定', 'vk-blocks-pro')}
+							label={__('Settings for each device', 'vk-blocks-pro')}
 							checked={levelSettingPerDevice}
 							onChange={(checked) =>
 								setAttributes({

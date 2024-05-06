@@ -1245,37 +1245,37 @@ msgstr ""
 msgid "span"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:103
+#: src/blocks/_pro/fixed-display/edit.js:115
 msgid "Persist visibility once visible"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:41
+#: src/blocks/_pro/fixed-display/edit.js:47
 msgid "Fixed Display Setting"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:43
+#: src/blocks/_pro/fixed-display/edit.js:49
 #: src/blocks/_pro/table-of-contents-new/edit.js:114
 #: src/components/column-layout-control/index.js:69
 msgid "Display type"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:48
+#: src/blocks/_pro/fixed-display/edit.js:54
 msgid "Always Visible"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:52
+#: src/blocks/_pro/fixed-display/edit.js:58
 msgid "Show on Scroll"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:58
-msgid "Fixed display position"
+#: src/blocks/_pro/fixed-display/edit.js:64
+msgid "Fixed position"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:62
+#: src/blocks/_pro/fixed-display/edit.js:68
 msgid "Top"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:64
+#: src/blocks/_pro/fixed-display/edit.js:70
 #: src/blocks/balloon/edit.js:434
 #: src/blocks/button/edit.js:364
 #: src/blocks/pr-content/edit.js:252
@@ -1283,11 +1283,11 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:68
+#: src/blocks/_pro/fixed-display/edit.js:74
 msgid "Bottom"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:72
+#: src/blocks/_pro/fixed-display/edit.js:78
 #: src/blocks/balloon/edit.js:422
 #: src/blocks/button/edit.js:344
 #: src/blocks/pr-content/edit.js:256
@@ -1295,8 +1295,8 @@ msgstr ""
 msgid "Left"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:80
-msgid "Display Position"
+#: src/blocks/_pro/fixed-display/edit.js:86
+msgid "Display position from the top of the page"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:102

@@ -95,9 +95,6 @@ $xl-min: 1200px;
 		.vk_tab_labels{
 			margin-bottom:-1px;
 		}
-		.vk_tab_bodys{
-			background-color: var(--vk-color-bg-accent-wh);
-		}
 	}
 }
 
@@ -141,11 +138,6 @@ $xl-min: 1200px;
 
 }
 .vk_tab_bodys{
-	// border で枠をつけると、内側の要素である vk_tab_bodys_body に対してアクティブ識別用の border-top がつき、
-	// そうなると border の内側に上部線がつくので、左右線の分だけ上線が伸ばせなくて凹んだように見える
-	// これを回避するために border ではなく shadow で枠をつけている
-	// box-shadow: inset 0px 0px 0px 1px var(--vk-color-border);
-	background-color: var(--vk-color-bg-accent-wh);
 	.vk_tab_bodys_body {
 		display: none;
 		&.vk_tab_bodys_body-state-active{

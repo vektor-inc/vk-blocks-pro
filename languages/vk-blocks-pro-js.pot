@@ -504,27 +504,27 @@ msgid "Margin"
 msgstr ""
 
 #: src/admin/margin.js:20
-#: src/blocks/spacer/edit.js:83
+#: src/blocks/spacer/edit.js:91
 msgid "XS"
 msgstr ""
 
 #: src/admin/margin.js:24
-#: src/blocks/spacer/edit.js:93
+#: src/blocks/spacer/edit.js:101
 msgid "S"
 msgstr ""
 
 #: src/admin/margin.js:28
-#: src/blocks/spacer/edit.js:103
+#: src/blocks/spacer/edit.js:111
 msgid "M"
 msgstr ""
 
 #: src/admin/margin.js:32
-#: src/blocks/spacer/edit.js:113
+#: src/blocks/spacer/edit.js:121
 msgid "L"
 msgstr ""
 
 #: src/admin/margin.js:36
-#: src/blocks/spacer/edit.js:121
+#: src/blocks/spacer/edit.js:129
 msgid "XL"
 msgstr ""
 
@@ -2886,11 +2886,15 @@ msgstr ""
 msgid "Space Type"
 msgstr ""
 
-#: src/blocks/spacer/edit.js:131
+#: src/blocks/spacer/edit.js:137
+msgid "XXL"
+msgstr ""
+
+#: src/blocks/spacer/edit.js:147
 msgid "Custom"
 msgstr ""
 
-#: src/blocks/spacer/edit.js:135
+#: src/blocks/spacer/edit.js:151
 msgid "You can change each common margin size from Setting > VK Blocks"
 msgstr ""
 
@@ -2900,6 +2904,10 @@ msgstr ""
 
 #: src/blocks/spacer/edit.js:75
 msgid "Spacer Settings"
+msgstr ""
+
+#: src/blocks/spacer/edit.js:83
+msgid "XXS"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:50
@@ -3288,55 +3296,71 @@ msgstr ""
 msgid "Extra big"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:25
-msgid "Top XL"
+#: src/extensions/common/margin-extension/index.js:103
+msgid "Bottom XXL"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:273
+#: src/extensions/common/margin-extension/index.js:25
+msgid "Top XXL"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:293
 msgid "Margin the block"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:30
-msgid "Top L"
+msgid "Top XL"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:35
-msgid "Top M"
+msgid "Top L"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:40
-msgid "Top S"
+msgid "Top M"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:45
-msgid "Top XS"
+msgid "Top S"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:50
+msgid "Top XS"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:55
+msgid "Top XXS"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:60
 msgid "Top 0"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:58
+#: src/extensions/common/margin-extension/index.js:68
 msgid "Bottom 0"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:63
-msgid "Bottom XS"
-msgstr ""
-
-#: src/extensions/common/margin-extension/index.js:68
-msgid "Bottom S"
-msgstr ""
-
 #: src/extensions/common/margin-extension/index.js:73
-msgid "Bottom M"
+msgid "Bottom XXS"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:78
-msgid "Bottom L"
+msgid "Bottom XS"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:83
+msgid "Bottom S"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:88
+msgid "Bottom M"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:93
+msgid "Bottom L"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:98
 msgid "Bottom XL"
 msgstr ""
 

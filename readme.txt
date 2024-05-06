@@ -103,6 +103,10 @@ e.g.
 == Changelog ==
 
 [ Add Block ] Add Tab Block
+[ Add Function ][ Outer (Pro) ] Added option to min height setting.
+[ Bug fix ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment. 
+[ Other ] Fixed useSetting deprecated
+[ Add Function ][ Spacer ][ Common margin ][ Admin screen ][ Toolbar ] Add size option xl/xs.
 
 = 1.72.1 =
 [ Specification Change ][ Pro ] Attend to I18N Improvements in 6.5.

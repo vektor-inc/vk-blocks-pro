@@ -22,6 +22,11 @@ import { emptyStringToUndefined } from '@vkblocks/utils/empty-string-to-undefine
 
 const DEFAULT_MARGIN_TOP_CONTROLS = [
 	{
+		title: __('Top XXL', 'vk-blocks-pro'),
+		marginClass: 'vk_block-margin-xxl--margin-top',
+		flag: 'top',
+	},
+	{
 		title: __('Top XL', 'vk-blocks-pro'),
 		marginClass: 'vk_block-margin-xl--margin-top',
 		flag: 'top',
@@ -47,6 +52,11 @@ const DEFAULT_MARGIN_TOP_CONTROLS = [
 		flag: 'top',
 	},
 	{
+		title: __('Top XXS', 'vk-blocks-pro'),
+		marginClass: 'vk_block-margin-xxs--margin-top',
+		flag: 'top',
+	},
+	{
 		title: __('Top 0', 'vk-blocks-pro'),
 		marginClass: 'vk_block-margin-0--margin-top',
 		flag: 'top',
@@ -57,6 +67,11 @@ const DEFAULT_MARGIN_BOTTOM_CONTROLS = [
 	{
 		title: __('Bottom 0', 'vk-blocks-pro'),
 		marginClass: 'vk_block-margin-0--margin-bottom',
+		flag: 'bottom',
+	},
+	{
+		title: __('Bottom XXS', 'vk-blocks-pro'),
+		marginClass: 'vk_block-margin-xxs--margin-bottom',
 		flag: 'bottom',
 	},
 	{
@@ -82,6 +97,11 @@ const DEFAULT_MARGIN_BOTTOM_CONTROLS = [
 	{
 		title: __('Bottom XL', 'vk-blocks-pro'),
 		marginClass: 'vk_block-margin-xl--margin-bottom',
+		flag: 'bottom',
+	},
+	{
+		title: __('Bottom XXL', 'vk-blocks-pro'),
+		marginClass: 'vk_block-margin-xxl--margin-bottom',
 		flag: 'bottom',
 	},
 ];
@@ -157,9 +177,9 @@ addFilter(
 			// attributeの変数名がわかりにくいので別の変数にする
 			const nowClass = className || '';
 			const marginTopRegex =
-				/vk_block-margin-(0|xs|sm|md|lg|xl)--margin-top/;
+				/vk_block-margin-(0|xxs|xs|sm|md|lg|xl|xxl)--margin-top/;
 			const marginBottomRegex =
-				/vk_block-margin-(0|xs|sm|md|lg|xl)--margin-bottom/;
+				/vk_block-margin-(0|xxs|xs|sm|md|lg|xl|xxl)--margin-bottom/;
 
 			// deprecated
 			/**

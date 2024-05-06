@@ -33,31 +33,31 @@
 	},
 	"innerBlocksTemplate": [
 		[
-		  "core/group",
-		  {
-			"style": {
-			  "spacing": {
-				"padding": {
-				  "top": "20px",
-				  "right": "20px",
-				  "bottom": "20px",
-				  "left": "20px"
+			"core/group",
+			{
+				"style": {
+					"spacing": {
+						"padding": {
+							"top": "20px",
+							"right": "20px",
+							"bottom": "20px",
+							"left": "20px"
+						}
+					},
+					"border": {
+						"style": "solid",
+						"color": "#f5f5f5",
+						"width": "1px",
+						"top": {
+							"width": "0px"
+						}
+					},
+					"color": {
+						"background": "#ffffff"
+					}
 				}
-			  },
-			  "border": {
-				"style": "solid",
-				"color": "#f5f5f5",
-				"width": "1px",
-				"top": {
-				  "width": "0px"
-				}
-			  },
-			  "color": {
-				"background": "#ffffff"
-			  }
-			}
-		  },
-		  [["core/paragraph"]]
+			},
+			[["core/paragraph"]]
 		]
 	]
 }

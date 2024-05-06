@@ -1952,11 +1952,11 @@ msgstr ""
 msgid "First Dot Number"
 msgstr ""
 
-#: src/blocks/_pro/tab-item/edit.js:117
+#: src/blocks/_pro/tab-item/edit.js:102
 msgid "Tab Color Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab-item/edit.js:120
+#: src/blocks/_pro/tab-item/edit.js:105
 msgid "Tab Color"
 msgstr ""
 

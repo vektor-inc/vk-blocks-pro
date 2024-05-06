@@ -23,11 +23,11 @@ export default function TabItemEdit(props) {
 			{
 				style: {
 					border: {
-						style: "solid",
-						color: "#cccccc",
-						width: "1px",
+						style: 'solid',
+						color: '#cccccc',
+						width: '1px',
 						top: {
-						  width: "0px"
+							width: '0px',
 						},
 					},
 					spacing: {
@@ -39,9 +39,9 @@ export default function TabItemEdit(props) {
 						},
 					},
 					color: {
-						background: "#ffffff"
+						background: '#ffffff',
 					},
-				}
+				},
 			},
 			[['core/paragraph']],
 		],

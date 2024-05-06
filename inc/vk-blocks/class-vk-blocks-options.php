@@ -145,7 +145,7 @@ class VK_Blocks_Options {
 							),
 						),
 					),
-					'xl' => array(
+					'xl'  => array(
 						'type'       => 'object',
 						'properties' => array(
 							'mobile' => array(
@@ -162,7 +162,7 @@ class VK_Blocks_Options {
 							),
 						),
 					),
-					'lg' => array(
+					'lg'  => array(
 						'type'       => 'object',
 						'properties' => array(
 							'mobile' => array(
@@ -179,7 +179,7 @@ class VK_Blocks_Options {
 							),
 						),
 					),
-					'md' => array(
+					'md'  => array(
 						'type'       => 'object',
 						'properties' => array(
 							'mobile' => array(
@@ -196,7 +196,7 @@ class VK_Blocks_Options {
 							),
 						),
 					),
-					'sm' => array(
+					'sm'  => array(
 						'type'       => 'object',
 						'properties' => array(
 							'mobile' => array(
@@ -213,7 +213,7 @@ class VK_Blocks_Options {
 							),
 						),
 					),
-					'xs' => array(
+					'xs'  => array(
 						'type'       => 'object',
 						'properties' => array(
 							'mobile' => array(
@@ -424,31 +424,31 @@ class VK_Blocks_Options {
 					'pc'     => null,
 					'custom' => '',
 				),
-				'xl' => array(
+				'xl'  => array(
 					'mobile' => null,
 					'tablet' => null,
 					'pc'     => null,
 					'custom' => '',
 				),
-				'lg' => array(
+				'lg'  => array(
 					'mobile' => null,
 					'tablet' => null,
 					'pc'     => null,
 					'custom' => '',
 				),
-				'md' => array(
+				'md'  => array(
 					'mobile' => null,
 					'tablet' => null,
 					'pc'     => null,
 					'custom' => '',
 				),
-				'sm' => array(
+				'sm'  => array(
 					'mobile' => null,
 					'tablet' => null,
 					'pc'     => null,
 					'custom' => '',
 				),
-				'xs' => array(
+				'xs'  => array(
 					'mobile' => null,
 					'tablet' => null,
 					'pc'     => null,

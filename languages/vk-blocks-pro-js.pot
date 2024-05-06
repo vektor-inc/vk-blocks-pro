@@ -475,28 +475,28 @@ msgstr ""
 msgid "Load Separate Option on"
 msgstr ""
 
-#: src/admin/margin.js:103
+#: src/admin/margin.js:111
 msgid "Custom Value"
 msgstr ""
 
-#: src/admin/margin.js:109
+#: src/admin/margin.js:117
 msgid ""
 "If you enter a custom value, the values you entered will be used as a "
 "priority."
 msgstr ""
 
-#: src/admin/margin.js:114
+#: src/admin/margin.js:122
 msgid ""
 "This item is mainly intended for inputting CSS variables for the margins "
 "specified by the theme. Thereby you can apply to the same margin size to "
 "the VK Blocks."
 msgstr ""
 
-#: src/admin/margin.js:120
+#: src/admin/margin.js:128
 msgid "ex)"
 msgstr ""
 
-#: src/admin/margin.js:133
+#: src/admin/margin.js:141
 #: src/blocks/border-box/edit.js:192
 #: src/blocks/icon-outer/edit.js:150
 #: src/blocks/icon/edit.js:140
@@ -504,65 +504,75 @@ msgid "Margin"
 msgstr ""
 
 #: src/admin/margin.js:20
+#: src/blocks/spacer/edit.js:83
+msgid "XXS"
+msgstr ""
+
+#: src/admin/margin.js:24
 #: src/blocks/spacer/edit.js:91
 msgid "XS"
 msgstr ""
 
-#: src/admin/margin.js:24
+#: src/admin/margin.js:28
 #: src/blocks/spacer/edit.js:101
 msgid "S"
 msgstr ""
 
-#: src/admin/margin.js:28
+#: src/admin/margin.js:32
 #: src/blocks/spacer/edit.js:111
 msgid "M"
 msgstr ""
 
-#: src/admin/margin.js:32
+#: src/admin/margin.js:36
 #: src/blocks/spacer/edit.js:121
 msgid "L"
 msgstr ""
 
-#: src/admin/margin.js:36
+#: src/admin/margin.js:40
 #: src/blocks/spacer/edit.js:129
 msgid "XL"
 msgstr ""
 
-#: src/admin/margin.js:43
-#: src/blocks/_pro/outer/edit.js:1025
+#: src/admin/margin.js:44
+#: src/blocks/spacer/edit.js:137
+msgid "XXL"
+msgstr ""
+
+#: src/admin/margin.js:51
+#: src/blocks/_pro/outer/edit.js:1028
 #: src/blocks/button/edit.js:537
 #: src/blocks/slider/edit.js:952
 #: src/components/advanced-viewport-control/index.js:25
 msgid "PC"
 msgstr ""
 
-#: src/admin/margin.js:47
-#: src/blocks/_pro/outer/edit.js:1009
+#: src/admin/margin.js:55
+#: src/blocks/_pro/outer/edit.js:1012
 #: src/blocks/button/edit.js:472
 #: src/blocks/slider/edit.js:973
 #: src/components/advanced-viewport-control/index.js:32
 msgid "Tablet"
 msgstr ""
 
-#: src/admin/margin.js:51
-#: src/blocks/_pro/outer/edit.js:993
+#: src/admin/margin.js:59
+#: src/blocks/_pro/outer/edit.js:996
 #: src/blocks/button/edit.js:407
 #: src/blocks/slider/edit.js:994
 #: src/components/advanced-viewport-control/index.js:41
 msgid "Mobile"
 msgstr ""
 
-#: src/admin/margin.js:64
+#: src/admin/margin.js:72
 msgid "Common Margin Setting"
 msgstr ""
 
-#: src/admin/margin.js:67
+#: src/admin/margin.js:75
 msgid ""
 "Please specify the size of the common margin used for responsive spacers, "
 "etc."
 msgstr ""
 
-#: src/admin/margin.js:73
+#: src/admin/margin.js:81
 #: src/blocks/_pro/grid-column-item/edit.js:175
 #: src/blocks/_pro/grid-column/edit.js:78
 msgid "Unit"
@@ -1276,7 +1286,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:190
 #: src/blocks/_pro/grid-column/edit.js:91
-#: src/blocks/_pro/outer/edit.js:1047
+#: src/blocks/_pro/outer/edit.js:1050
 #: src/blocks/icon-outer/edit.js:183
 #: src/blocks/icon/edit.js:172
 #: src/utils/unit-options.js:6
@@ -1285,7 +1295,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:194
 #: src/blocks/_pro/grid-column/edit.js:95
-#: src/blocks/_pro/outer/edit.js:1051
+#: src/blocks/_pro/outer/edit.js:1054
 #: src/blocks/icon-outer/edit.js:187
 #: src/blocks/icon/edit.js:176
 #: src/utils/unit-options.js:10
@@ -1294,7 +1304,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:198
 #: src/blocks/_pro/grid-column/edit.js:99
-#: src/blocks/_pro/outer/edit.js:1055
+#: src/blocks/_pro/outer/edit.js:1058
 #: src/blocks/icon-outer/edit.js:191
 #: src/blocks/icon/edit.js:180
 #: src/utils/unit-options.js:14
@@ -1303,7 +1313,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:202
 #: src/blocks/_pro/grid-column/edit.js:103
-#: src/blocks/_pro/outer/edit.js:983
+#: src/blocks/_pro/outer/edit.js:986
 #: src/blocks/icon-outer/edit.js:195
 #: src/blocks/icon/edit.js:184
 #: src/utils/unit-options.js:18
@@ -1537,27 +1547,27 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1041
+#: src/blocks/_pro/outer/edit.js:1044
 #: src/components/advanced-unit-control/index.js:13
 msgid "Unit Type"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1059
+#: src/blocks/_pro/outer/edit.js:1062
 #: src/utils/unit-options.js:22
 msgid "vh"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1063
+#: src/blocks/_pro/outer/edit.js:1066
 #: src/utils/unit-options.js:26
 msgid "svh"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1067
+#: src/blocks/_pro/outer/edit.js:1070
 #: src/utils/unit-options.js:30
 msgid "lvh"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1071
+#: src/blocks/_pro/outer/edit.js:1074
 #: src/utils/unit-options.js:34
 msgid "dvh"
 msgstr ""
@@ -1685,27 +1695,27 @@ msgstr ""
 msgid "Settings for each device"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:635
+#: src/blocks/_pro/outer/edit.js:638
 msgid "Upper Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:717
+#: src/blocks/_pro/outer/edit.js:720
 msgid "Lower Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:800
+#: src/blocks/_pro/outer/edit.js:803
 msgid "Border Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:805
+#: src/blocks/_pro/outer/edit.js:808
 msgid "Border will disappear when divider effect is applied."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:811
+#: src/blocks/_pro/outer/edit.js:814
 msgid "Border type"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:819
+#: src/blocks/_pro/outer/edit.js:822
 #: src/blocks/_pro/step-item/edit.js:147
 #: src/blocks/_pro/timeline-item/edit.js:113
 #: src/blocks/balloon/edit.js:559
@@ -1714,56 +1724,56 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:823
+#: src/blocks/_pro/outer/edit.js:826
 #: src/blocks/_pro/step-item/edit.js:118
 #: src/blocks/_pro/timeline-item/edit.js:88
 #: src/blocks/pr-content/edit.js:145
 msgid "Solid"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:827
+#: src/blocks/_pro/outer/edit.js:830
 msgid "Dotted"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:831
+#: src/blocks/_pro/outer/edit.js:834
 msgid "Dashed"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:835
+#: src/blocks/_pro/outer/edit.js:838
 msgid "Double"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:839
+#: src/blocks/_pro/outer/edit.js:842
 msgid "Groove"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:843
+#: src/blocks/_pro/outer/edit.js:846
 msgid "Ridge"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:847
+#: src/blocks/_pro/outer/edit.js:850
 msgid "Inset"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:851
+#: src/blocks/_pro/outer/edit.js:854
 msgid "Outset"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:863
+#: src/blocks/_pro/outer/edit.js:866
 msgid "Border width"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:875
+#: src/blocks/_pro/outer/edit.js:878
 #: src/blocks/icon-outer/edit.js:212
 #: src/blocks/icon/edit.js:201
 msgid "Border radius"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:891
+#: src/blocks/_pro/outer/edit.js:894
 msgid "Container Inner Side Space Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:989
+#: src/blocks/_pro/outer/edit.js:992
 msgid "Min Height Setting"
 msgstr ""
 
@@ -2886,10 +2896,6 @@ msgstr ""
 msgid "Space Type"
 msgstr ""
 
-#: src/blocks/spacer/edit.js:137
-msgid "XXL"
-msgstr ""
-
 #: src/blocks/spacer/edit.js:147
 msgid "Custom"
 msgstr ""
@@ -2904,10 +2910,6 @@ msgstr ""
 
 #: src/blocks/spacer/edit.js:75
 msgid "Spacer Settings"
-msgstr ""
-
-#: src/blocks/spacer/edit.js:83
-msgid "XXS"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:50

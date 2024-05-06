@@ -7,7 +7,7 @@ import {
 	__experimentalNumberControl as NumberControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
 	TextControl,
 } from '@wordpress/components';
-import { useContext,useEffect } from '@wordpress/element';
+import { useContext } from '@wordpress/element';
 import { hightUnitOptions } from '@vkblocks/utils/unit-options';
 
 /**

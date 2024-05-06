@@ -4,8 +4,6 @@ on:
     branches:
       - develop
   pull_request:
-    types:
-      - ready_for_review
     branches:
       - develop
 

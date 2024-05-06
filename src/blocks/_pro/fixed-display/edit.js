@@ -33,7 +33,7 @@ export default function FixedDisplayEdit(props) {
 			scrollPersistVisible:
 				scrollPersistVisible !== undefined
 					? scrollPersistVisible
-					: false, // 修正: 明示的なデフォルト値の設定
+					: false,
 		});
 	}, [clientId, mode, position, blockId, scrollPersistVisible]);
 
@@ -61,7 +61,7 @@ export default function FixedDisplayEdit(props) {
 						]}
 					/>
 					<SelectControl
-						label={__('Fixed display position', 'vk-blocks-pro')}
+						label={__('Fixed position', 'vk-blocks-pro')}
 						value={position}
 						onChange={(value) => setAttributes({ position: value })}
 						options={[
@@ -83,7 +83,7 @@ export default function FixedDisplayEdit(props) {
 					{mode === 'show-on-scroll' && (
 						<>
 							<UnitControl
-								label={__('Display Position', 'vk-blocks-pro')}
+								label={__('Display position from the top of the page', 'vk-blocks-pro')}
 								value={`${scrollTiming}${scrollTimingUnit}`}
 								onChange={(nextValue) => {
 									const units = [

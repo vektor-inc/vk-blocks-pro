@@ -83,7 +83,10 @@ export default function FixedDisplayEdit(props) {
 					{mode === 'show-on-scroll' && (
 						<>
 							<UnitControl
-								label={__('Display position from the top of the page', 'vk-blocks-pro')}
+								label={__(
+									'Display position from the top of the page',
+									'vk-blocks-pro'
+								)}
 								value={`${scrollTiming}${scrollTimingUnit}`}
 								onChange={(nextValue) => {
 									const units = [

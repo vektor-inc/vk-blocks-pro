@@ -24,6 +24,7 @@ $xl-min: 1200px;
 		color: inherit;
 		background: none;
 		background-color: var(--vk-color-bg-accent-wh);
+		padding: 0;
 		margin-left: 0;
 		margin-right: 0;
 		border-top: 1px solid var(--vk-color-border);
@@ -68,6 +69,10 @@ $xl-min: 1200px;
 			}
 		}
 
+		&> div{
+			padding: calc( var(--vk-size-text) * 0.5 ) calc( var(--vk-size-text) * 1 );
+		}
+
 		&.vk_tab_labels_label-state-active{
 			color:var(--default-color);
 			background-color: var(--vk-color-bg-accent-wh);
@@ -80,7 +85,6 @@ $xl-min: 1200px;
 				height: 2px;
 				background-color: var(--default-color);
 			}
-
 		}
 	}
 }

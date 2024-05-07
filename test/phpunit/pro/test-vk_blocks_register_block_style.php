@@ -36,6 +36,7 @@ class BlockStyleTest extends VK_UnitTestCase {
 					'vk-blocks/core/table'   => false,
 					'vk-blocks/core/image'   => false,
 					'vk-blocks/core/group'   => false,
+					'vk-blocks/core/columns' => false,
 					'vk-blocks-build-css'    => true,
 				),
 			),

@@ -103,9 +103,15 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Grid Column Card ] Add border width setting to grid column card block.
+[ Add Function ][ Spacer ][ Common margin ] Add size option XXL/XXS.
+[ Add Function ][ Outer (Pro) ] Added option to min height setting.
 [ Bug fix ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment. 
 [ Other ] Fixed useSetting deprecated
+
+= 1.72.1 =
 [ Specification Change ][ Pro ] Attend to I18N Improvements in 6.5.
+[ Other ] Fixed useSetting deprecated
+[ Bug fix ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment. 
 
 = 1.72.0 =
 [ Specification Change ][ Child Page List ] Hide "Term's name on Image" and "Taxonomies (all)" display options.

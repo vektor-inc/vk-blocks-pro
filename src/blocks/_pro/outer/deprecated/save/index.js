@@ -18,6 +18,7 @@ import save1_50_1 from './1.50.1/save';
 import save1_60_0 from './1.60.0/save';
 import save1_61_2 from './1.61.2/save';
 import save1_64_0 from './1.64.0/save';
+import save1_71_0 from './1.71.0/save';
 
 const blockAttributes = {
 	bgColor: {
@@ -168,7 +169,19 @@ const blockAttributes6 = {
 	},
 };
 
+// 1.64.0 から attributes を変更
+const blockAttributes7 = {
+	...blockAttributes6,
+	minHeight: {
+		type: 'object',
+	},
+};
+
 const deprecated = [
+	{
+		attributes: blockAttributes7,
+		save: save1_71_0,
+	},
 	{
 		attributes: blockAttributes6,
 		save: save1_64_0,

@@ -1,41 +1,14 @@
-import save000 from './0.0.0/save';
-import save001 from './0.0.1/save';
 import save1_21_0 from './1.21.0/save';
 import save1_29_2 from './1.29.2/save';
 
 const blockAttributes = {
-	heading: {
-		type: 'string',
-		source: 'html',
-		selector: 'h4',
-	},
-	color: {
-		type: 'string',
-		default: 'red',
-	},
-	faIcon: {
-		type: 'string',
-		default: '',
-	},
-};
-
-const blockAttributes2 = {
-	...blockAttributes,
-	bgColor: {
-		type: 'string',
-		default: 'transparent',
-	},
-};
-
-const blockAttributes3 = {
-	...blockAttributes2,
 	borderColor: {
 		type: 'string'
 	},
 };
 
-const blockAttributes4 = {
-	...blockAttributes3,
+const blockAttributes2 = {
+	...blockAttributes,
 	color: {
 		type: 'string'
 	},
@@ -43,20 +16,12 @@ const blockAttributes4 = {
 
 const deprecated = [
 	{
-		attributes: blockAttributes4,
+		attributes: blockAttributes2,
 		save: save1_29_2,
 	},
 	{
-		attributes: blockAttributes3,
+		attributes: blockAttributes,
 		save: save1_21_0,
 	},
-	{
-		attributes: blockAttributes2,
-		save: save001,
-	},
-	{
-		attributes: blockAttributes,
-		save: save000,
-	}
 ];
 export default deprecated;

@@ -34,7 +34,7 @@ msgstr ""
 #: src/admin/balloon/index.js:148
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:75
 #: src/admin/custom-format/delete-item-button.js:74
-#: src/blocks/_pro/gridcolcard/edit-common.js:159
+#: src/blocks/_pro/gridcolcard/edit-common.js:160
 #: src/extensions/common/custom-block-variation/block-variation-list/item/title-area/delete-button/index.js:33
 msgid "Delete"
 msgstr ""
@@ -300,7 +300,7 @@ msgstr ""
 
 #: src/admin/custom-format/index.js:208
 #: src/blocks/_pro/grid-column-item/edit.js:104
-#: src/blocks/_pro/gridcolcard/edit-common.js:165
+#: src/blocks/_pro/gridcolcard/edit-common.js:166
 #: src/blocks/button/edit.js:749
 #: src/blocks/heading/edit.js:324
 msgid "Text Color"
@@ -308,7 +308,7 @@ msgstr ""
 
 #: src/admin/custom-format/index.js:239
 #: src/blocks/_pro/grid-column-item/edit.js:110
-#: src/blocks/_pro/gridcolcard/edit-common.js:171
+#: src/blocks/_pro/gridcolcard/edit-common.js:172
 #: src/blocks/border-box/edit.js:216
 #: src/blocks/button/edit.js:732
 #: src/blocks/icon/edit.js:304
@@ -1211,7 +1211,7 @@ msgid "Setting up a link"
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:389
-#: src/blocks/_pro/gridcolcard-item/edit.js:333
+#: src/blocks/_pro/gridcolcard-item/edit.js:336
 #: src/blocks/_pro/icon-card-item/edit.js:128
 #: src/blocks/button/edit.js:283
 #: src/blocks/icon/edit.js:292
@@ -1262,7 +1262,7 @@ msgid "span"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:102
-#: src/blocks/_pro/gridcolcard/edit-common.js:163
+#: src/blocks/_pro/gridcolcard/edit-common.js:164
 msgid "Color Settings"
 msgstr ""
 
@@ -1336,141 +1336,145 @@ msgstr ""
 msgid "You can create a variety of layouts with grid column card blocks."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:229
+#: src/blocks/_pro/gridcolcard-item/edit.js:232
 #: src/blocks/_pro/select-post-list-item/edit.js:66
 #: src/blocks/button/edit.js:249
 msgid "Unlink"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:230
+#: src/blocks/_pro/gridcolcard-item/edit.js:233
 #: src/blocks/button/edit.js:250
 msgid "Input Link URL"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:260
+#: src/blocks/_pro/gridcolcard-item/edit.js:263
 #: src/blocks/_pro/select-post-list-item/edit.js:102
 #: src/blocks/button/edit.js:278
 msgid "Submit"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:284
+#: src/blocks/_pro/gridcolcard-item/edit.js:287
 msgid "Edit mode"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:294
+#: src/blocks/_pro/gridcolcard-item/edit.js:297
 msgid "All columns"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:302
+#: src/blocks/_pro/gridcolcard-item/edit.js:305
 msgid "This column only"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:307
+#: src/blocks/_pro/gridcolcard-item/edit.js:310
 msgid "Edit Lock"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:310
+#: src/blocks/_pro/gridcolcard-item/edit.js:313
 msgid "Lock edits this block from the parent and other Grid Column Item block"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:321
+#: src/blocks/_pro/gridcolcard-item/edit.js:324
 msgid "Column Setting"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:325
+#: src/blocks/_pro/gridcolcard-item/edit.js:328
 #: src/blocks/_pro/icon-card-item/edit.js:120
 #: src/blocks/pr-blocks/edit.js:254
 msgid "Link URL:"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:340
+#: src/blocks/_pro/gridcolcard-item/edit.js:343
 msgid ""
 "If you set a link URL, do not place the link element (text or button) in "
 "the Grid Column Card Item. It may not be displayed correctly."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:344
+#: src/blocks/_pro/gridcolcard-item/edit.js:347
 msgid "Make sure that no link is specified for the image block, etc."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:118
+#: src/blocks/_pro/gridcolcard/edit-common.js:119
 msgid "Image fit to column"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:133
+#: src/blocks/_pro/gridcolcard/edit-common.js:134
 msgid "Column footer button area"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:143
+#: src/blocks/_pro/gridcolcard/edit-common.js:144
 #: src/blocks/heading/edit.js:372
 msgid "Display"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:151
+#: src/blocks/_pro/gridcolcard/edit-common.js:152
 #: src/blocks/heading/edit.js:376
 #: src/blocks/slider/edit.js:1158
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:182
+#: src/blocks/_pro/gridcolcard/edit-common.js:183
 msgid "Column Radius"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:188
+#: src/blocks/_pro/gridcolcard/edit-common.js:189
 #: src/blocks/balloon/edit.js:310
 msgid "Border"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:197
+#: src/blocks/_pro/gridcolcard/edit-common.js:198
+msgid "Border Width"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:209
 #: src/blocks/border-box/edit.js:207
 #: src/extensions/core/group/style.js:46
 msgid "Border Color"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:66
+#: src/blocks/_pro/gridcolcard/edit-common.js:67
 msgid "Column padding"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:74
+#: src/blocks/_pro/gridcolcard/edit-common.js:75
 msgid "Column header media area"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:117
+#: src/blocks/_pro/gridcolcard/edit.js:118
 msgid "Column Width Setting"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:121
+#: src/blocks/_pro/gridcolcard/edit.js:122
 msgid ""
 "If you specify the minimum column size on a tablet or PC with %, it will be "
 "easier to align the number of columns in the upper and lower rows according "
 "to the screen size."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:127
+#: src/blocks/_pro/gridcolcard/edit.js:128
 msgid "Column min width (Mobile)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:135
+#: src/blocks/_pro/gridcolcard/edit.js:136
 msgid "Column min width (Tablet / Optional)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:146
+#: src/blocks/_pro/gridcolcard/edit.js:147
 msgid "Column min width (PC / Optional)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:157
+#: src/blocks/_pro/gridcolcard/edit.js:158
 msgid "Column Gap Setting"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:161
+#: src/blocks/_pro/gridcolcard/edit.js:162
 msgid "Column gap size"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:167
+#: src/blocks/_pro/gridcolcard/edit.js:168
 msgid "Column row-gap size (optional)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:176
+#: src/blocks/_pro/gridcolcard/edit.js:177
 msgid "Specify all columns at once"
 msgstr ""
 

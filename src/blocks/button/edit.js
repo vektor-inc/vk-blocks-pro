@@ -810,7 +810,6 @@ export default function ButtonEdit(props) {
 						{__('Border Radius', 'vk-blocks-pro')}
 					</h4>
 					<UnitControl
-						label={__('Border Radius', 'text-domain')}
 						value={attributes.borderRadius}
 						onChange={(value) =>
 							setAttributes({ borderRadius: value })

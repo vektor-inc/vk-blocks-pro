@@ -24,6 +24,7 @@ export default function save(props) {
 		fontAwesomeIconAfter,
 		iconSizeBefore,
 		iconSizeAfter,
+		inlineStyle,
 		blockId,
 	} = attributes;
 
@@ -80,6 +81,10 @@ export default function save(props) {
 				lbIconSizeBefore={iconSizeBefore}
 				lbIconSizeAfter={iconSizeAfter}
 				lbsubCaption={subCaption}
+				inlineStyle={{
+					...inlineStyle,
+					borderRadius: attributes.borderRadius,
+				}}
 				lbRichtext={
 					<RichText.Content
 						tagName={'span'}

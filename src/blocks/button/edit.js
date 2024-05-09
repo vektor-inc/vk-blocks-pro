@@ -806,6 +806,22 @@ export default function ButtonEdit(props) {
 							/>
 						</BaseControl>
 					</BaseControl>
+					<h4 className={`mt-0 mb-2`}>
+						{__('Border Radius', 'vk-blocks-pro')}
+					</h4>
+					<UnitControl
+						label={__('Border Radius', 'text-domain')}
+						value={attributes.borderRadius}
+						onChange={(value) =>
+							setAttributes({ borderRadius: value })
+						}
+						units={[
+							{ value: 'px', label: 'px', default: 10 },
+							{ value: '%', label: '%', default: 10 },
+							{ value: 'em', label: 'em', default: 1 },
+							{ value: 'em', label: 'rem', default: 1 },
+						]}
+					/>
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
@@ -821,7 +837,12 @@ export default function ButtonEdit(props) {
 					lbIconSizeBefore={iconSizeBefore}
 					lbIconSizeAfter={iconSizeAfter}
 					lbsubCaption={subCaption}
-					inlineStyle={inlineStyle}
+					lbUrl={buttonUrl}
+					lbTarget={buttonTarget}
+					inlineStyle={{
+						...inlineStyle,
+						borderRadius: attributes.borderRadius,
+					}}
 					lbRichtext={
 						<RichText
 							tagName={'span'}
@@ -847,7 +868,6 @@ export default function ButtonEdit(props) {
 								'vk-blocks/nowrap',
 								'vk-blocks/inline-font-size',
 							]}
-							inlineStyle={inlineStyle}
 						/>
 					}
 				/>

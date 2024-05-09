@@ -106,6 +106,7 @@ e.g.
 [ Add Function ][ Spacer ][ Common margin ] Add size option XXL/XXS.
 [ Add Function ][ Outer (Pro) ] Added option to min height setting.
 [ Bug fix ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment. 
+[ Specification Change ][ Outer ] Remove the negative margin for .vk_outer-width-full.
 [ Other ] Fixed useSetting deprecated
 
 = 1.72.1 =

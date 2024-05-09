@@ -102,6 +102,7 @@ e.g.
 
 == Changelog ==
 
+[ Add Block ] Add Tab Block
 [ Add function ][ Grid Column Card ] Add border width setting to grid column card block.
 [ Add Function ][ Spacer ][ Common margin ] Add size option XXL/XXS.
 [ Add Function ][ Outer (Pro) ] Added option to min height setting.

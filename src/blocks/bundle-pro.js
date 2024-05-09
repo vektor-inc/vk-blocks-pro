@@ -39,6 +39,8 @@ import * as taxonomy from './_pro/taxonomy';
 import * as tableofContentsNew from './_pro/table-of-contents-new';
 import * as timeline from './_pro/timeline';
 import * as timelineItem from './_pro/timeline-item';
+import * as tab from './_pro/tab';
+import * as tabItem from './_pro/tab-item';
 
 /**
  * Extensions
@@ -86,6 +88,8 @@ const vkblocksPro = [
 	taxonomy,
 	timeline,
 	timelineItem,
+	tab,
+	tabItem,
 ];
 
 export default vkblocksPro;

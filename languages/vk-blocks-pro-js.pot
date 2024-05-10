@@ -188,7 +188,7 @@ msgid "Custom Block Style Setting"
 msgstr ""
 
 #: src/admin/custom-block-style/index.js:80
-msgid "Block style settings can be registered."
+msgid "You can register block styles."
 msgstr ""
 
 #: src/admin/custom-block-style/item/body-area/block-name.js:11

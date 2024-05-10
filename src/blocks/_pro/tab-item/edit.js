@@ -99,10 +99,10 @@ export default function TabItemEdit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Tab Color Setting', 'vk-blocks')}>
+				<PanelBody title={__('Tab Color Setting', 'vk-blocks-pro')}>
 					<BaseControl
 						id={`vk_block_button_custom_background_color`}
-						label={__('Tab Color', 'vk-blocks')}
+						label={__('Tab Color', 'vk-blocks-pro')}
 					>
 						<AdvancedColorPalette schema={'tabColor'} {...props} />
 					</BaseControl>

@@ -30,11 +30,11 @@ export default function TabEdit(props) {
 	const TEMPLATE = [
 		[
 			'vk-blocks/tab-item',
-			{ tabLabel: __('Tab 01', 'vk-blocks'), tabBodyActive: true },
+			{ tabLabel: __('Tab 01', 'vk-blocks-pro'), tabBodyActive: true },
 		],
 		[
 			'vk-blocks/tab-item',
-			{ tabLabel: __('Tab 02', 'vk-blocks'), tabBodyActive: false },
+			{ tabLabel: __('Tab 02', 'vk-blocks-pro'), tabBodyActive: false },
 		],
 	];
 
@@ -289,7 +289,7 @@ export default function TabEdit(props) {
 						}}
 						placeholder={sprintf(
 							// translators: Tab label [i]
-							__('Tab Label [ %s ]', 'vk-Blocks'),
+							__('Tab Label [ %s ]', 'vk-Blocks-pro'),
 							index + 1
 						)}
 						onClick={(e) => {
@@ -312,17 +312,17 @@ export default function TabEdit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Tab size Setting', 'vk-blocks')}>
+				<PanelBody title={__('Tab size Setting', 'vk-blocks-pro')}>
 					<RadioControl
-						label={__('Tab Size ( Smart Phone )', 'vk-blocks')}
+						label={__('Tab Size ( Smart Phone )', 'vk-blocks-pro')}
 						selected={tabSizeSp}
 						options={[
 							{
-								label: __('Fit to the text', 'vk-blocks'),
+								label: __('Fit to the text', 'vk-blocks-pro'),
 								value: 'fitText',
 							},
 							{
-								label: __('Monospaced', 'vk-blocks'),
+								label: __('Monospaced', 'vk-blocks-pro'),
 								value: 'monospaced',
 							},
 						]}
@@ -331,15 +331,15 @@ export default function TabEdit(props) {
 						}}
 					/>
 					<RadioControl
-						label={__('Tab Size ( Tablet )', 'vk-blocks')}
+						label={__('Tab Size ( Tablet )', 'vk-blocks-pro')}
 						selected={tabSizeTab}
 						options={[
 							{
-								label: __('Fit to the text', 'vk-blocks'),
+								label: __('Fit to the text', 'vk-blocks-pro'),
 								value: 'fitText',
 							},
 							{
-								label: __('Monospaced', 'vk-blocks'),
+								label: __('Monospaced', 'vk-blocks-pro'),
 								value: 'monospaced',
 							},
 						]}
@@ -348,15 +348,15 @@ export default function TabEdit(props) {
 						}}
 					/>
 					<RadioControl
-						label={__('Tab Size ( PC )', 'vk-blocks')}
+						label={__('Tab Size ( PC )', 'vk-blocks-pro')}
 						selected={tabSizePc}
 						options={[
 							{
-								label: __('Fit to the text', 'vk-blocks'),
+								label: __('Fit to the text', 'vk-blocks-pro'),
 								value: 'fitText',
 							},
 							{
-								label: __('Monospaced', 'vk-blocks'),
+								label: __('Monospaced', 'vk-blocks-pro'),
 								value: 'monospaced',
 							},
 						]}

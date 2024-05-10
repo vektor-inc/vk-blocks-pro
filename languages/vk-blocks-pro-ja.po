@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2024-05-10T05:24:57+00:00\n"
-"PO-Revision-Date: 2024-05-10 15:41+0900\n"
+"POT-Creation-Date: 2024-05-10T07:02:48+00:00\n"
+"PO-Revision-Date: 2024-05-10 16:03+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -153,7 +153,7 @@ msgstr "追加"
 
 #: src/admin/custom-block-style/add-button/index.js:87
 msgid "Add Custom Block Style"
-msgstr "ブロックスタイル設定を追加"
+msgstr "ブロックスタイルを追加"
 
 #: src/admin/custom-block-style/add-button/set-block-name.js:22
 msgid "Target Block (Required/Unchangeable)"
@@ -212,8 +212,8 @@ msgid "Custom Block Style Setting"
 msgstr "カスタムブロックスタイル設定"
 
 #: src/admin/custom-block-style/index.js:80
-msgid "Block style settings can be registered."
-msgstr "ブロックスタイル設定を登録することができます。"
+msgid "You can register block styles."
+msgstr "ブロックスタイルを登録できます。"
 
 #: src/admin/custom-block-style/item/body-area/block-name.js:11
 msgid "Target block"
@@ -4970,6 +4970,9 @@ msgstr "順番を説明する時に便利でシンプルなスケジュールな
 msgctxt "block description"
 msgid "Easily highlight your latest post."
 msgstr "最新の投稿を簡単に目立たせることができます。"
+
+#~ msgid "Block style settings can be registered."
+#~ msgstr "ブロックスタイルを登録することができます。"
 
 #, fuzzy
 #~| msgid "Layout Setting"

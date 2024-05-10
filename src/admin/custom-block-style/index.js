@@ -78,7 +78,7 @@ function AdminCustomBlockStyle({
 				</h3>
 				<p>
 					{__(
-						'Block style settings can be registered.',
+						'You can register block styles.',
 						'vk-blocks-pro'
 					)}
 				</p>

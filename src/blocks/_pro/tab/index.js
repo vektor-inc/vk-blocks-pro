@@ -14,17 +14,17 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-	title: __('Tab', 'vk-blocks'), // Block title.
+	title: __('Tab', 'vk-blocks-pro'), // Block title.
 	icon: <Icon />, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	styles: [
 		{
 			name: 'vk_tab_labels-normal',
-			label: __('Normal', 'vk-blocks'),
+			label: __('Normal', 'vk-blocks-pro'),
 			isDefault: true,
 		},
 		{
 			name: 'vk_tab_labels-line',
-			label: __('Line', 'vk-blocks'),
+			label: __('Line', 'vk-blocks-pro'),
 		},
 	],
 	edit,

@@ -17,6 +17,36 @@ export default function TabItemEdit(props) {
 
 	const { updateBlockAttributes } = dispatch('core/block-editor');
 
+	const innerBlocksTemplate = [
+		[
+			'core/group',
+			{
+				style: {
+					border: {
+						style: 'solid',
+						color: '#cccccc',
+						width: '1px',
+						top: {
+							width: '0px',
+						},
+					},
+					spacing: {
+						padding: {
+							top: '20px',
+							bottom: '20px',
+							left: '20px',
+							right: '20px',
+						},
+					},
+					color: {
+						background: '#ffffff',
+					},
+				},
+			},
+			[['core/paragraph']],
+		],
+	];
+
 	useEffect(() => {
 		if (
 			blockId === undefined ||
@@ -109,7 +139,10 @@ export default function TabItemEdit(props) {
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
-				<InnerBlocks />
+				<InnerBlocks
+					templateLock={false}
+					template={innerBlocksTemplate}
+				/>
 			</div>
 		</>
 	);

@@ -4,7 +4,7 @@
  */
 import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
-import { PanelBody } from '@wordpress/components';
+import { PanelBody, ToggleControl } from '@wordpress/components';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { InspectorControls } from '@wordpress/block-editor';
 
@@ -27,17 +27,31 @@ export const addAttribute = (settings) => {
 addFilter('blocks.registerBlockType', 'vk-blocks/columns-style', addAttribute);
 
 export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
+	let isReverse = false;
+
 	return (props) => {
 		if (isValidBlockType(props.name) && props.isSelected) {
+			if (props.attributes.color) {
+				isReverse = props.attributes.reverse;
+			}
+
 			return (
 				<>
 					<BlockEdit {...props} />
 					<InspectorControls>
 						<PanelBody
 							title={__('カラムの向き', 'vk-blocks-pro')}
-							initialOpen={false}
+							initialOpen={true}
 							className="columns-row-reverse"
-						></PanelBody>
+						>
+							<ToggleControl
+								label="Reverse"
+								checked={ isReverse }
+								onChange={(checked) =>
+									props.setAttributes({ reverse: checked })
+								}
+            				/>
+						</PanelBody>
 					</InspectorControls>
 				</>
 			);

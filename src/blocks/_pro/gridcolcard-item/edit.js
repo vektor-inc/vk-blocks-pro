@@ -58,8 +58,8 @@ export default function Edit(props) {
 		urlOpenType,
 	} = attributes;
 
-	// editModeは値として保持させずに常に個別モードでスタートさせる
-	const [editMode, setEditMode] = useState('self');
+	// editModeは値として保持させずに常にすべてのカラムモードでスタートさせる
+	const [editMode, setEditMode] = useState('all');
 
 	const { rootClientId } = useSelect(
 		(select) => {

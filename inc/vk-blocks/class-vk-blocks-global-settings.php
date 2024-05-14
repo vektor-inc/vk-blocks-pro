@@ -252,6 +252,14 @@ class VK_Blocks_Global_Settings {
 				'is_pro' => true,
 			),
 			array(
+				'name'   => 'tab',
+				'is_pro' => true,
+			),
+			array(
+				'name'   => 'tab-item',
+				'is_pro' => true,
+			),
+			array(
 				'name'   => 'table-of-contents-new',
 				'is_pro' => true,
 			),
@@ -468,12 +476,7 @@ class VK_Blocks_Global_Settings {
 					'label' => __( 'Danger', 'vk-blocks-pro' ),
 				),
 			),
-			'core/columns'   => array(
-				array(
-					'name'  => 'vk-column-row-reverse',
-					'label' => __( 'Reverse', 'vk-blocks-pro' ),
-				),
-			),		);
+		);
 		return $block_style_lists;
 	}
 

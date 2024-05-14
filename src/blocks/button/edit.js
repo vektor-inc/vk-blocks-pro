@@ -807,19 +807,14 @@ export default function ButtonEdit(props) {
 						</BaseControl>
 					</BaseControl>
 					<h4 className={`mt-0 mb-2`}>
-						{__('Border Radius', 'vk-blocks-pro')}
+						{__('Button border radius', 'vk-blocks-pro')}
 					</h4>
 					<UnitControl
 						value={attributes.borderRadius}
-						onChange={(value) =>
-							setAttributes({ borderRadius: value })
-						}
-						units={[
-							{ value: 'px', label: 'px', default: 10 },
-							{ value: '%', label: '%', default: 10 },
-							{ value: 'em', label: 'em', default: 1 },
-							{ value: 'em', label: 'rem', default: 1 },
-						]}
+						onChange={(value) => {
+							setAttributes({ borderRadius: value || null });
+						}}
+						units={units}
 					/>
 				</PanelBody>
 			</InspectorControls>

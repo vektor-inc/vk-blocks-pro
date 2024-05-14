@@ -25,6 +25,7 @@ export default function save(props) {
 		iconSizeBefore,
 		iconSizeAfter,
 		inlineStyle,
+		borderRadius,
 		blockId,
 	} = attributes;
 
@@ -65,6 +66,12 @@ export default function save(props) {
 		className: containerClass,
 	});
 
+	// inlineStyleからborderRadiusを含む新しいスタイルオブジェクトを構築
+	const btnInlineStyle = { ...inlineStyle };
+	if (borderRadius) {
+		btnInlineStyle.borderRadius = borderRadius;
+	}
+
 	return (
 		<div {...blockProps}>
 			<VKBButton
@@ -81,10 +88,7 @@ export default function save(props) {
 				lbIconSizeBefore={iconSizeBefore}
 				lbIconSizeAfter={iconSizeAfter}
 				lbsubCaption={subCaption}
-				inlineStyle={{
-					...inlineStyle,
-					borderRadius: attributes.borderRadius,
-				}}
+				inlineStyle={btnInlineStyle}
 				lbRichtext={
 					<RichText.Content
 						tagName={'span'}

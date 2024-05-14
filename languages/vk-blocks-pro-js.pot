@@ -188,7 +188,7 @@ msgid "Custom Block Style Setting"
 msgstr ""
 
 #: src/admin/custom-block-style/index.js:80
-msgid "Block style settings can be registered."
+msgid "You can register block styles."
 msgstr ""
 
 #: src/admin/custom-block-style/item/body-area/block-name.js:11
@@ -657,6 +657,7 @@ msgid "Short"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:130
+#: src/blocks/_pro/tab/index.js:22
 #: src/blocks/balloon/edit.js:482
 #: src/blocks/button/edit.js:330
 #: src/blocks/faq/index.js:26
@@ -1963,6 +1964,63 @@ msgstr ""
 
 #: src/blocks/_pro/step/edit.js:35
 msgid "First Dot Number"
+msgstr ""
+
+#: src/blocks/_pro/tab-item/edit.js:102
+msgid "Tab Color Setting"
+msgstr ""
+
+#: src/blocks/_pro/tab-item/edit.js:105
+msgid "Tab Color"
+msgstr ""
+
+#: src/blocks/_pro/tab-item/index.js:17
+msgid "Tab Item"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:292
+#. Tab label [i]
+msgid "Tab Label [ %s ]"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:315
+msgid "Tab size Setting"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:317
+msgid "Tab Size ( Smart Phone )"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:33
+msgid "Tab 01"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:334
+msgid "Tab Size ( Tablet )"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:351
+msgid "Tab Size ( PC )"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:355
+msgid "Fit to the text"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:359
+msgid "Monospaced"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:37
+msgid "Tab 02"
+msgstr ""
+
+#: src/blocks/_pro/tab/index.js:17
+msgid "Tab"
+msgstr ""
+
+#: src/blocks/_pro/tab/index.js:27
+msgid "Line"
 msgstr ""
 
 #: src/blocks/_pro/table-of-contents-new/deprecated/0.59.1/save.js:19

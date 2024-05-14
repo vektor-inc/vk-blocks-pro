@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2024-05-09T04:28:01+00:00\n"
-"PO-Revision-Date: 2024-05-09 13:36+0900\n"
+"POT-Creation-Date: 2024-05-14T06:53:23+00:00\n"
+"PO-Revision-Date: 2024-05-14 15:55+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Poedit-Basepath: ../../..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: vk-blocks.php\n"
@@ -2381,11 +2381,11 @@ msgstr "文字の後"
 msgid "Size"
 msgstr "サイズ"
 
-#: src/blocks/button/edit.js:813
-msgid "Border Radius"
-msgstr "角丸"
+#: src/blocks/button/edit.js:810
+msgid "Button border radius"
+msgstr "ボタンの角丸の大きさ"
 
-#: src/blocks/button/edit.js:854
+#: src/blocks/button/edit.js:848
 msgid "Input text"
 msgstr "文字を入力"
 
@@ -4706,6 +4706,9 @@ msgid ""
 "Displays a simple schedule and other information that is useful for "
 "explaining the order."
 msgstr "順番を説明する時に便利でシンプルなスケジュールなどを表示します。"
+
+#~ msgid "Border Radius"
+#~ msgstr "角丸"
 
 #~ msgctxt "block title"
 #~ msgid "Heading"

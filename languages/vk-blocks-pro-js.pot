@@ -2397,10 +2397,10 @@ msgid "Size"
 msgstr ""
 
 #: src/blocks/button/edit.js:810
-msgid "Border Radius"
+msgid "Button border radius"
 msgstr ""
 
-#: src/blocks/button/edit.js:853
+#: src/blocks/button/edit.js:848
 msgid "Input text"
 msgstr ""
 

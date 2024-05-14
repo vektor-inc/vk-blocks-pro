@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-05-09T04:38:55+00:00\n"
+"POT-Creation-Date: 2024-05-14T06:56:03+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -2382,10 +2382,10 @@ msgid "Size"
 msgstr ""
 
 #: src/blocks/button/edit.js:810
-msgid "Border Radius"
+msgid "Button border radius"
 msgstr ""
 
-#: src/blocks/button/edit.js:853
+#: src/blocks/button/edit.js:848
 msgid "Input text"
 msgstr ""
 

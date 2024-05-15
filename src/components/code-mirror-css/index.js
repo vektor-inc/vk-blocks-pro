@@ -64,7 +64,11 @@ export const CodeMirrorCss = (props) => {
 		if (wrapperRef.current) {
 			const observer = new ResizeObserver(() => {
 				if (isInitialLoad) {
-					wrapperRef.current.style.setProperty('height', 'auto', 'important');
+					wrapperRef.current.style.setProperty(
+						'height',
+						'auto',
+						'important'
+					);
 					setIsInitialLoad(false);
 				}
 			});
@@ -81,7 +85,11 @@ export const CodeMirrorCss = (props) => {
 				const observer = new ResizeObserver(() => {
 					const guttersHeight = gutters.offsetHeight;
 					if (guttersHeight < 200) {
-						gutters.style.setProperty('minHeight', '200px', 'important');
+						gutters.style.setProperty(
+							'minHeight',
+							'200px',
+							'important'
+						);
 					} else {
 						gutters.style.minHeight = '';
 					}
@@ -102,9 +110,6 @@ export const CodeMirrorCss = (props) => {
 		'.cm-scroller': {
 			minHeight: '200px',
 			overflow: 'auto',
-		},
-		'.cm-content': {
-			paddingBottom: '0',
 		},
 	});
 

@@ -102,10 +102,15 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Button ] Add border radius setting.
+[ Add Block ] Add Tab Block
+[ Add function ][ Grid Column Card ] Add border width setting to grid column card block.
+[ Add Function ][ Spacer ][ Common margin ] Add size option XXL/XXS.
 [ Add Function ][ Outer (Pro) ] Added option to min height setting.
 [ Bug fix ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment. 
+[ Bug fix ] Remove min-height from "Custom CSS" on edit screen.
+[ Specification Change ][ Outer ] Remove the negative margin for .vk_outer-width-full.
 [ Other ] Fixed useSetting deprecated
-[ Add Function ][ Spacer ][ Common margin ][ Admin screen ][ Toolbar ] Add size option xl/xs.
 
 = 1.72.1 =
 [ Specification Change ][ Pro ] Attend to I18N Improvements in 6.5.

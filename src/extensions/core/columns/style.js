@@ -27,26 +27,20 @@ export const addAttribute = (settings) => {
 addFilter('blocks.registerBlockType', 'vk-blocks/columns-style', addAttribute);
 
 export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
-	let isReverse = false;
-
 	return (props) => {
 		if (isValidBlockType(props.name) && props.isSelected) {
-			if (props.attributes.color) {
-				isReverse = props.attributes.reverse;
-			}
-
 			return (
 				<>
 					<BlockEdit {...props} />
 					<InspectorControls>
 						<PanelBody
-							title={__('カラムの向き', 'vk-blocks-pro')}
+							title={__('カラムの方向', 'vk-blocks-pro')}
 							initialOpen={true}
 							className="columns-row-reverse"
 						>
 							<ToggleControl
 								label="Reverse"
-								checked={ isReverse }
+								checked={ props.attributes.reverse }
 								onChange={(checked) =>
 									props.setAttributes({ reverse: checked })
 								}

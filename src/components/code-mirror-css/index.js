@@ -30,6 +30,7 @@ export const CodeMirrorCss = (props) => {
 			...style,
 			marginTop: '0.5em',
 			border: '1px solid #ccc',
+			height: '200px',
 			resize: 'vertical',
 			overflow: 'hidden',
 		},
@@ -56,8 +57,23 @@ export const CodeMirrorCss = (props) => {
 	} = props;
 	const [cssError, setCSSError] = useState(null);
 	const wrapperRef = useRef(null);
+	const [isInitialLoad, setIsInitialLoad] = useState(true);
 
-	// gutterの高さ検知
+	// リサイズ検知して高さを動的に調整
+	useEffect(() => {
+		if (wrapperRef.current) {
+			const observer = new ResizeObserver(() => {
+				if (isInitialLoad) {
+					wrapperRef.current.style.setProperty('height', 'auto', 'important');
+					setIsInitialLoad(false);
+				}
+			});
+			observer.observe(wrapperRef.current);
+			return () => observer.disconnect();
+		}
+	}, [isInitialLoad]);
+
+	// gutterの高さ検知して動的に調整
 	useEffect(() => {
 		if (wrapperRef.current) {
 			const gutters = wrapperRef.current.querySelector('.cm-gutters');
@@ -65,7 +81,7 @@ export const CodeMirrorCss = (props) => {
 				const observer = new ResizeObserver(() => {
 					const guttersHeight = gutters.offsetHeight;
 					if (guttersHeight < 200) {
-						gutters.style.minHeight = '200px';
+						gutters.style.setProperty('minHeight', '200px', 'important');
 					} else {
 						gutters.style.minHeight = '';
 					}
@@ -86,10 +102,6 @@ export const CodeMirrorCss = (props) => {
 		'.cm-scroller': {
 			minHeight: '200px',
 			overflow: 'auto',
-		},
-		'.cm-gutters': {
-			height: '100%',
-			minHeight: '200px !important',
 		},
 		'.cm-content': {
 			paddingBottom: '0',
@@ -125,8 +137,8 @@ export const CodeMirrorCss = (props) => {
 				}}
 				style={{
 					...style,
-					height: 'auto', // 高さを自動に設定
-					minHeight: '200px', // 内部のエディタの最小高さを設定
+					height: '200px',
+					minHeight: '200px',
 					resize: 'vertical',
 				}}
 				onBlur={(event) => {

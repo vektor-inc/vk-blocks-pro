@@ -4,7 +4,7 @@
 import { __ } from '@wordpress/i18n';
 import { transformStyles } from '@wordpress/block-editor';
 import { useState, useRef, useEffect } from '@wordpress/element';
-import { Tooltip, Icon } from '@wordpress/components';
+import { Tooltip, Icon, ResizeObserver } from '@wordpress/components';
 import { info } from '@wordpress/icons';
 
 /**
@@ -24,7 +24,6 @@ export const CodeMirrorCss = (props) => {
 	const {
 		id = 'vk-custom-css-code-mirror',
 		className,
-		minHeight = '200px',
 		value,
 		onChange,
 		style = {
@@ -56,7 +55,6 @@ export const CodeMirrorCss = (props) => {
 		},
 	} = props;
 	const [cssError, setCSSError] = useState(null);
-	const [editorMinHeight, setEditorMinHeight] = useState(minHeight);
 	const wrapperRef = useRef(null);
 
 	// gutterの高さ検知
@@ -108,7 +106,11 @@ export const CodeMirrorCss = (props) => {
 				className={classnames(`vk_custom-css-editor`, className)}
 				height="100%" // 内部のエディタをラッパーの高さに合わせる
 				// https://uiwjs.github.io/react-codemirror/#/extensions/color
-				extensions={[css(), EditorView.lineWrapping, customStyleExtension]}
+				extensions={[
+					css(),
+					EditorView.lineWrapping,
+					customStyleExtension,
+				]}
 				value={value}
 				onChange={(newValue) => {
 					onChange(stripHTML(newValue));

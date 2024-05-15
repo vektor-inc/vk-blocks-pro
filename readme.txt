@@ -102,6 +102,7 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ][ Custom CSS (Pro) ] Changed the custom CSS text area to be wider
 [ Add Block ] Add Tab Block
 [ Add function ][ Grid Column Card ] Add border width setting to grid column card block.
 [ Add Function ][ Spacer ][ Common margin ] Add size option XXL/XXS.

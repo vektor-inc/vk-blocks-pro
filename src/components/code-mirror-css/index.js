@@ -3,7 +3,7 @@
  */
 import { __ } from '@wordpress/i18n';
 import { transformStyles } from '@wordpress/block-editor';
-import { useState } from '@wordpress/element';
+import { useState, useRef, useEffect } from '@wordpress/element';
 import { Tooltip, Icon } from '@wordpress/components';
 import { info } from '@wordpress/icons';
 
@@ -24,13 +24,15 @@ export const CodeMirrorCss = (props) => {
 	const {
 		id = 'vk-custom-css-code-mirror',
 		className,
-		height = '200px',
+		minHeight = '200px',
 		value,
 		onChange,
 		style = {
 			...style,
 			marginTop: '0.5em',
 			border: '1px solid #ccc',
+			resize: 'vertical',
+			overflow: 'hidden',
 		},
 		onBlur = (event) => {
 			if (!event?.target?.textContent) {
@@ -54,6 +56,47 @@ export const CodeMirrorCss = (props) => {
 		},
 	} = props;
 	const [cssError, setCSSError] = useState(null);
+	const [editorMinHeight, setEditorMinHeight] = useState(minHeight);
+	const wrapperRef = useRef(null);
+
+	// gutterの高さ検知
+	useEffect(() => {
+		if (wrapperRef.current) {
+			const gutters = wrapperRef.current.querySelector('.cm-gutters');
+			if (gutters) {
+				const observer = new ResizeObserver(() => {
+					const guttersHeight = gutters.offsetHeight;
+					if (guttersHeight < 200) {
+						gutters.style.minHeight = '200px';
+					} else {
+						gutters.style.minHeight = '';
+					}
+				});
+				observer.observe(gutters);
+				return () => observer.disconnect();
+			}
+		}
+	}, [value]);
+
+	const customStyleExtension = EditorView.theme({
+		'.cm-editor': {
+			minHeight: '200px',
+			height: '100%',
+			overflowY: 'auto',
+			resize: 'vertical',
+		},
+		'.cm-scroller': {
+			minHeight: '200px',
+			overflow: 'auto',
+		},
+		'.cm-gutters': {
+			height: '100%',
+			minHeight: '200px !important',
+		},
+		'.cm-content': {
+			paddingBottom: '0',
+		},
+	});
 
 	return (
 		<div
@@ -63,9 +106,9 @@ export const CodeMirrorCss = (props) => {
 			<CodeMirror
 				id={id}
 				className={classnames(`vk_custom-css-editor`, className)}
-				height={height}
+				height="100%" // 内部のエディタをラッパーの高さに合わせる
 				// https://uiwjs.github.io/react-codemirror/#/extensions/color
-				extensions={[css(), EditorView.lineWrapping]}
+				extensions={[css(), EditorView.lineWrapping, customStyleExtension]}
 				value={value}
 				onChange={(newValue) => {
 					onChange(stripHTML(newValue));
@@ -78,7 +121,12 @@ export const CodeMirrorCss = (props) => {
 						setCSSError(null);
 					}
 				}}
-				style={style}
+				style={{
+					...style,
+					height: 'auto', // 高さを自動に設定
+					minHeight: '200px', // 内部のエディタの最小高さを設定
+					resize: 'vertical',
+				}}
 				onBlur={(event) => {
 					onBlur(event);
 				}}

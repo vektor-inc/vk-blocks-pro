@@ -59,6 +59,31 @@
 			opacity: $i * 0.1;
 		}
 	}
+	
+	// リンク設定
+	& > .vk_slider_item-link {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		text-decoration: none;
+		color: inherit;
+		cursor: pointer;
+		z-index: 10;
+		
+		&:hover,
+		&:focus {
+			text-decoration: none;
+			color: inherit;
+		}
+		
+		& > .vk_slider_item-background-area {
+			pointer-events: none;
+		}
+		
+		& > .vk_slider_item_container {
+			pointer-events: none;
+		}
+	}	
 }
 
 .vk_slider_item-align-vertical- {
@@ -164,4 +189,5 @@ $padding-xxl: 4em;
 // .editor-block-list__block-edit{
 //   margin: 0!important;
 // }
+
 $color-danger: #b52727;

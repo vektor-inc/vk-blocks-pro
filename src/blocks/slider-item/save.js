@@ -19,6 +19,8 @@ export default function save(props) {
 		bgImageMobile,
 		bgImageTablet,
 		bgImage,
+		linkUrl,
+		linkTarget,
 		blockId,
 	} = attributes;
 	let classPaddingLR;
@@ -65,16 +67,29 @@ export default function save(props) {
 			<div className={bgAreaClasses} style={bgAreaStyles}></div>
 		</>
 	);
+		
+	const GetLinkUrl = (
+		<>
+			<a
+				href={linkUrl} 
+				target={linkTarget ? '_blank' : null}
+				className={`${prefix}-link`}
+				rel={'noopener'}>
+			</a>
+		</>
+	);
 
 	const blockProps = useBlockProps.save({
 		className: `vk_slider_item swiper-slide vk_valign-${verticalAlignment} ${prefix}-${blockId} ${classPaddingLR} ${prefix}-paddingVertical-none`,
 	});
 	return (
 		<div {...blockProps}>
+			{GetLinkUrl}
 			{GetBgImage}
 			<div className={containerClass}>
 				<InnerBlocks.Content />
 			</div>
 		</div>
 	);
+
 }

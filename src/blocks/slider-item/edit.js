@@ -12,16 +12,23 @@ import {
 	BlockVerticalAlignmentToolbar,
 	InnerBlocks,
 	useBlockProps,
+	URLInput,
 } from '@wordpress/block-editor';
 import {
 	RangeControl,
 	RadioControl,
 	PanelBody,
 	BaseControl,
+	CheckboxControl,
+	Button,
+	ToolbarGroup,
+	ToolbarButton,
+	Dropdown,
 } from '@wordpress/components';
 import { AdvancedMediaUpload } from '@vkblocks/components/advanced-media-upload';
 import GenerateBgImage from './GenerateBgImage';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { link, linkOff, keyboardReturn } from '@wordpress/icons';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 
@@ -38,6 +45,8 @@ export default function SliderItemEdit(props) {
 		bgImageMobile,
 		bgImageTablet,
 		bgImage,
+		linkUrl,
+		linkTarget,
 		blockId,
 	} = attributes;
 
@@ -109,6 +118,81 @@ export default function SliderItemEdit(props) {
 					}
 					value={verticalAlignment}
 				/>
+				<ToolbarGroup>
+					<Dropdown
+						renderToggle={({ isOpen, onToggle }) => {
+							const setLink = () => {
+								if (isOpen && linkUrl !== '') {
+									// linkOff
+									setAttributes({ linkUrl: '' });
+								}
+								onToggle();
+							};
+							return (
+								<ToolbarButton
+									aria-expanded={isOpen}
+									icon={
+										linkUrl !== '' && isOpen
+											? linkOff
+											: link
+									}
+									isActive={
+										linkUrl !== '' && isOpen
+											? true
+											: false
+									}
+									label={
+										linkUrl !== '' && isOpen
+											? __('Unlink')
+											: __(
+													'Input Link URL',
+													'vk-blocks-pro'
+											  )
+									}
+									onClick={setLink}
+								/>
+							);
+						}}
+						renderContent={(params) => {
+							return (
+								<form
+									onSubmit={() => {
+										params.onClose();
+									}}
+								>
+									<div className="vk-block-editor-url-input-wrapper">
+										<URLInput
+											__nextHasNoMarginBottom
+											value={linkUrl}
+											onChange={(value) => {
+												setAttributes({
+													linkUrl: value,
+												});
+											}}
+										/>
+										<Button
+											icon={keyboardReturn}
+											label={__('Submit')}
+											type="submit"
+										/>
+									</div>
+									<CheckboxControl
+										label={__(
+											'Open link new tab.',
+											'vk-blocks-pro'
+										)}
+										checked={linkTarget}
+										onChange={(checked) =>
+											setAttributes({
+												linkTarget: checked,
+											})
+										}
+									/>
+								</form>
+							);
+						}}
+					/>
+				</ToolbarGroup>
 			</BlockControls>
 			<InspectorControls>
 				<PanelBody

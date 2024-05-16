@@ -4,6 +4,7 @@
 import classnames from 'classnames';
 
 /* eslint camelcase: 0 */
+import { __ } from '@wordpress/i18n';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import GenerateBgImage from './GenerateBgImage';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
@@ -67,14 +68,20 @@ export default function save(props) {
 			<div className={bgAreaClasses} style={bgAreaStyles}></div>
 		</>
 	);
-		
+
+	const relAttribute = linkTarget === '_blank' ? 'noreferrer' : undefined;
 	const GetLinkUrl = (
 		<>
 			<a
-				href={linkUrl} 
-				target={linkTarget ? '_blank' : null}
+				href={linkUrl}
+				target={linkTarget}
 				className={`${prefix}-link`}
-				rel={'noopener'}>
+				rel={relAttribute}
+				aria-label={__('Slider item link', 'vk-blocks-pro')}
+			>
+				<span className="screen-reader-text">
+					{__('Slider item link', 'vk-blocks-pro')}
+				</span>
 			</a>
 		</>
 	);
@@ -84,12 +91,11 @@ export default function save(props) {
 	});
 	return (
 		<div {...blockProps}>
-			{GetLinkUrl}
+			{linkUrl && GetLinkUrl}
 			{GetBgImage}
 			<div className={containerClass}>
 				<InnerBlocks.Content />
 			</div>
 		</div>
 	);
-
 }

@@ -137,9 +137,7 @@ export default function SliderItemEdit(props) {
 											: link
 									}
 									isActive={
-										linkUrl !== '' && isOpen
-											? true
-											: false
+										linkUrl !== '' && isOpen ? true : false
 									}
 									label={
 										linkUrl !== '' && isOpen
@@ -184,8 +182,11 @@ export default function SliderItemEdit(props) {
 										checked={linkTarget === '_blank'}
 										onChange={(checked) =>
 											setAttributes({
-												linkTarget: checked ? '_blank' : ''
-											})}
+												linkTarget: checked
+													? '_blank'
+													: '',
+											})
+										}
 									/>
 								</form>
 							);

@@ -69,21 +69,19 @@ export default function save(props) {
 		</>
 	);
 
-	const relAttribute = linkTarget === '_blank' ? 'noreferrer' : undefined;
+	const relAttribute = linkTarget === '_blank' ? 'noreferrer noopener' : undefined;
 	const GetLinkUrl = (
-		<>
-			<a
-				href={linkUrl}
-				target={linkTarget}
-				className={`${prefix}-link`}
-				rel={relAttribute}
-				aria-label={__('Slider item link', 'vk-blocks-pro')}
-				>
-					<span className="screen-reader-text">
-						{__('Slider item link', 'vk-blocks-pro')}
-					</span>
-			</a>
-		</>
+		<a
+			href={linkUrl}
+			target={linkTarget}
+			className={`${prefix}-link`}
+			rel={relAttribute}
+			aria-label={__('Slider item link', 'vk-blocks-pro')}
+		>
+			<span className="screen-reader-text">
+				{__('Slider item link', 'vk-blocks-pro')}
+			</span>
+		</a>
 	);
 
 	const blockProps = useBlockProps.save({

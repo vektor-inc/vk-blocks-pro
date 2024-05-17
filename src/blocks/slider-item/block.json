@@ -46,8 +46,8 @@
 			"type": "string"
 		},
 		"linkTarget": {
-		  "type": "string",
-		  "default": ""
+			"type": "string",
+			"default": ""
 		},
 		"clientId": {
 			"type": "string"

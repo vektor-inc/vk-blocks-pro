@@ -47,16 +47,10 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 								checked={ reverse }
 								onChange={(checked) => {
 									// 既存のクラス名
-									const nowClassArray = className ? className.split(' ') : [];
-									
-									// 新しいクラス名の配列
-									let newClassNameArray = nowClassArray
-									? nowClassArray
-									: [];
-
-									// クラス名 is-style-vk-column-row-reverse をいったん削除
-									if (nowClassArray) {
-										newClassNameArray = nowClassArray.filter(
+									const existClass = className ? className.split(' ') : [];
+									let newClassNameArray = [];
+									if (existClass) {
+										newClassNameArray = existClass.filter(
 											(item) => {
 												return !item.match(
 													/is-style-vk-column-row-reverse/
@@ -64,7 +58,6 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 											}
 										);
 									}
-									
 
 									// reverse クラスを付与
 									const rereverseClass = [ {
@@ -87,36 +80,4 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 		return <BlockEdit {...props} />;
 	};
 }, 'addMyCustomBlockControls');
-
 addFilter('editor.BlockEdit', 'vk-blocks/columns-style', addBlockControl);
-
-/**
- * Override the default block element to include elements styles.
- */
-const withElementsStyles = createHigherOrderComponent(
-	(BlockListBlock) => (props) => {
-		const { name, attributes } = props;
-		const { reverse, className } = attributes;
-
-		if (!isValidBlockType(name)) {
-			return <BlockListBlock {...props} />;
-		}
-
-		const rereverseClass = [ {
-			'is-style-vk-column-row-reverse': reverse,
-		} ]
-
-		return (
-			<>
-				<BlockListBlock { ...props }
-    				className={ classnames( className, rereverseClass ) }
-				/>
-			</>
-		);
-	}
-);
-addFilter(
-	'editor.BlockListBlock',
-	'vk-blocks/columns-style',
-	withElementsStyles
-);

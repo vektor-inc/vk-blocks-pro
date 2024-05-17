@@ -2463,6 +2463,10 @@ msgstr "文字の後"
 msgid "Size"
 msgstr "サイズ"
 
+#: src/blocks/button/edit.js:810
+msgid "Button border radius"
+msgstr "ボタンの角丸の大きさ"
+
 #: src/blocks/button/edit.js:833
 msgid "Input text"
 msgstr "文字を入力"

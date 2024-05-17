@@ -69,8 +69,7 @@ export default function save(props) {
 		</>
 	);
 
-	const relAttribute =
-		linkTarget === '_blank' ? 'noreferrer noopener' : undefined;
+	const relAttribute =　linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
 	const GetLinkUrl = (
 		<a
 			href={linkUrl}

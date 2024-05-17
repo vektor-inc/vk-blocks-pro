@@ -187,7 +187,7 @@ msgstr ""
 msgid "Custom Block Style Setting"
 msgstr ""
 
-#: src/admin/custom-block-style/index.js:80
+#: src/admin/custom-block-style/index.js:79
 msgid "You can register block styles."
 msgstr ""
 
@@ -1218,6 +1218,7 @@ msgstr ""
 #: src/blocks/icon/edit.js:292
 #: src/blocks/pr-blocks/edit.js:262
 #: src/blocks/pr-content/edit.js:131
+#: src/blocks/slider-item/edit.js:178
 msgid "Open link new tab."
 msgstr ""
 
@@ -1277,7 +1278,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:143
 #: src/blocks/_pro/outer/edit.js:521
-#: src/blocks/slider-item/edit.js:120
+#: src/blocks/slider-item/edit.js:204
 msgid "Padding (Left and Right)"
 msgstr ""
 
@@ -1340,17 +1341,20 @@ msgstr ""
 #: src/blocks/_pro/gridcolcard-item/edit.js:232
 #: src/blocks/_pro/select-post-list-item/edit.js:66
 #: src/blocks/button/edit.js:249
+#: src/blocks/slider-item/edit.js:144
 msgid "Unlink"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:233
 #: src/blocks/button/edit.js:250
+#: src/blocks/slider-item/edit.js:145
 msgid "Input Link URL"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:263
 #: src/blocks/_pro/select-post-list-item/edit.js:102
 #: src/blocks/button/edit.js:278
+#: src/blocks/slider-item/edit.js:173
 msgid "Submit"
 msgstr ""
 
@@ -1578,40 +1582,40 @@ msgid "dvh"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:409
-#: src/blocks/slider-item/edit.js:171
+#: src/blocks/slider-item/edit.js:255
 msgid "Background Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:414
 #: src/blocks/pr-content/edit.js:67
-#: src/blocks/slider-item/edit.js:175
+#: src/blocks/slider-item/edit.js:259
 msgid "Color Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:415
-#: src/blocks/slider-item/edit.js:177
+#: src/blocks/slider-item/edit.js:261
 msgid ""
 "Color will overcome background image. If you want to display image, set "
 "opacity 0."
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:427
-#: src/blocks/slider-item/edit.js:189
+#: src/blocks/slider-item/edit.js:273
 msgid "Opacity Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:441
-#: src/blocks/slider-item/edit.js:224
+#: src/blocks/slider-item/edit.js:308
 msgid "Background Image PC"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:457
-#: src/blocks/slider-item/edit.js:240
+#: src/blocks/slider-item/edit.js:324
 msgid "Background Image Tablet"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:467
-#: src/blocks/slider-item/edit.js:250
+#: src/blocks/slider-item/edit.js:334
 msgid "Background Image Mobile"
 msgstr ""
 
@@ -1637,7 +1641,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:515
 #: src/blocks/pr-content/edit.js:244
-#: src/blocks/slider-item/edit.js:115
+#: src/blocks/slider-item/edit.js:199
 msgid "Layout Setting"
 msgstr ""
 
@@ -1966,11 +1970,11 @@ msgstr ""
 msgid "First Dot Number"
 msgstr ""
 
-#: src/blocks/_pro/tab-item/edit.js:102
+#: src/blocks/_pro/tab-item/edit.js:132
 msgid "Tab Color Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab-item/edit.js:105
+#: src/blocks/_pro/tab-item/edit.js:135
 msgid "Tab Color"
 msgstr ""
 
@@ -1978,16 +1982,16 @@ msgstr ""
 msgid "Tab Item"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:292
+#: src/blocks/_pro/tab/edit.js:296
 #. Tab label [i]
 msgid "Tab Label [ %s ]"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:315
+#: src/blocks/_pro/tab/edit.js:319
 msgid "Tab size Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:317
+#: src/blocks/_pro/tab/edit.js:321
 msgid "Tab Size ( Smart Phone )"
 msgstr ""
 
@@ -1995,19 +1999,19 @@ msgstr ""
 msgid "Tab 01"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:334
+#: src/blocks/_pro/tab/edit.js:338
 msgid "Tab Size ( Tablet )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:351
+#: src/blocks/_pro/tab/edit.js:355
 msgid "Tab Size ( PC )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:355
+#: src/blocks/_pro/tab/edit.js:359
 msgid "Fit to the text"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:359
+#: src/blocks/_pro/tab/edit.js:363
 msgid "Monospaced"
 msgstr ""
 
@@ -2764,32 +2768,36 @@ msgstr ""
 msgid "Image Border Color"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:128
+#: src/blocks/slider-item/edit.js:212
 msgid "Fit to the Container area"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:135
+#: src/blocks/slider-item/edit.js:219
 msgid "Add padding to the Slider area"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:142
+#: src/blocks/slider-item/edit.js:226
 msgid "Remove padding from the Slider area"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:157
+#: src/blocks/slider-item/edit.js:241
 msgid "Vertical align"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:203
+#: src/blocks/slider-item/edit.js:287
 msgid "Background Image Size"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:210
+#: src/blocks/slider-item/edit.js:294
 msgid "cover"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:214
+#: src/blocks/slider-item/edit.js:298
 msgid "repeat"
+msgstr ""
+
+#: src/blocks/slider-item/save.js:82
+msgid "Slider item link"
 msgstr ""
 
 #: src/blocks/slider/edit.js:1017

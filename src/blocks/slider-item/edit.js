@@ -181,12 +181,11 @@ export default function SliderItemEdit(props) {
 											'Open link new tab.',
 											'vk-blocks-pro'
 										)}
-										checked={linkTarget}
+										checked={linkTarget === '_blank'}
 										onChange={(checked) =>
 											setAttributes({
-												linkTarget: checked,
-											})
-										}
+												linkTarget: checked ? '_blank' : ''
+											})}
 									/>
 								</form>
 							);

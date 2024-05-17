@@ -102,6 +102,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Slider ] Add url interface to block toolbar for slider item.
 [ Add function ][ Button ] Add border radius setting.
 [ Add Block ] Add Tab Block
 [ Add function ][ Grid Column Card ] Add border width setting to grid column card block.

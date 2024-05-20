@@ -62,7 +62,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 							initialOpen={false}
 						>
 							<ToggleControl
-								label="Reverse"
+								label={__('Reverse', 'vk-blocks-pro')}
 								checked={reverse}
 								onChange={(checked) => {
 									// 既存のクラス名

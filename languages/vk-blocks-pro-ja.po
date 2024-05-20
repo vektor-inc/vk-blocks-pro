@@ -3468,6 +3468,14 @@ msgstr "画面サイズ毎の改行 "
 msgid "Responsive BR "
 msgstr "画面サイズ毎の改行 "
 
+#: src/extensions/core/columns/style.js:60
+msgid "Column Direction"
+msgstr "カラムの方向"
+
+#: src/extensions/core/columns/style.js:65
+msgid "Reverse"
+msgstr "逆"
+
 #: src/extensions/core/group/style.js:51
 msgid ""
 "Because of the theme that enabled theme.json become can specify the color "

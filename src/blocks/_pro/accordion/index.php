@@ -53,6 +53,13 @@ function vk_blocks_register_block_accordion() {
 }
 add_action( 'init', 'vk_blocks_register_block_accordion', 99 );
 
+/**
+ * Renders the accordion block.
+ *
+ * @param array  $attributes The block attributes.
+ * @param string $content    The block content.
+ * @return string The rendered HTML of the accordion block.
+ */
 function vk_blocks_render_accordion_block($attributes, $content) {
     // Ensure required attributes are set
     $container_class = isset($attributes['containerClass']) ? $attributes['containerClass'] : '';

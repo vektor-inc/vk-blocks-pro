@@ -13,7 +13,7 @@ export default function save(props) {
 		'data-initial-state': initialState,
 		'data-initial-state-mobile': initialStateMobile,
 		'data-initial-state-tablet': initialStateTablet,
-		'data-initial-state-desktop': initialStateDesktop
+		'data-initial-state-desktop': initialStateDesktop,
 	});
 
 	return (

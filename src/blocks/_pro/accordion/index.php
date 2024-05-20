@@ -53,21 +53,23 @@ function vk_blocks_register_block_accordion() {
 }
 add_action( 'init', 'vk_blocks_register_block_accordion', 99 );
 
-/**
- * Renders the accordion block.
- *
- * @param string $container_class The container class.
- * @param string $initial_state The initial state.
- */
-function render_accordion_block( $attributes, $content ) {
-	$containerClass = isset( $attributes['containerClass'] ) ? $attributes['containerClass'] : 'vk_accordion';
-	$initialState   = isset( $attributes['initialState'] ) ? $attributes['initialState'] : 'close';
+function vk_blocks_render_accordion_block($attributes, $content) {
+    $container_class = $attributes['containerClass'];
+    $initial_state = $attributes['initialState'];
 
-	ob_start();
-	?>
-	<div class="<?php echo esc_attr( $containerClass ); ?>" data-initial-state="<?php echo esc_attr( $initialState ); ?>">
-		<?php echo $content; ?>
-	</div>
-	<?php
-	return ob_get_clean();
+    // Sanitize and escape attributes
+    $container_class = esc_attr($container_class);
+    $initial_state = esc_attr($initial_state);
+
+    // Build the output
+    $output = '<div class="' . $container_class . '" data-state="' . $initial_state . '">';
+    $output .= wp_kses_post($content);
+    $output .= '</div>';
+
+    return $output;
 }
+
+// Register the block render callback
+register_block_type('vk-blocks/accordion', array(
+    'render_callback' => 'vk_blocks_render_accordion_block',
+));

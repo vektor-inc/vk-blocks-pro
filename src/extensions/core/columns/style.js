@@ -38,7 +38,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 					<BlockEdit {...props} />
 					<InspectorControls>
 						<PanelBody
-							title={__('カラムの方向', 'vk-blocks-pro')}
+							title={__('Column Direction', 'vk-blocks-pro')}
 							initialOpen={true}
 							className="columns-row-reverse"
 						>

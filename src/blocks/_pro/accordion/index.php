@@ -54,8 +54,9 @@ function vk_blocks_register_block_accordion() {
 add_action( 'init', 'vk_blocks_register_block_accordion', 99 );
 
 function vk_blocks_render_accordion_block($attributes, $content) {
-    $container_class = $attributes['containerClass'];
-    $initial_state = $attributes['initialState'];
+    // Ensure required attributes are set
+    $container_class = isset($attributes['containerClass']) ? $attributes['containerClass'] : '';
+    $initial_state = isset($attributes['initialState']) ? $attributes['initialState'] : '';
 
     // Sanitize and escape attributes
     $container_class = esc_attr($container_class);

@@ -51,7 +51,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 					background: '#1e1e1e',
 				};
 			}
-			
+
 			return (
 				<>
 					<BlockEdit {...props} />

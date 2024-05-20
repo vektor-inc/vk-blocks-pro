@@ -36,7 +36,6 @@ class BlockStyleTest extends VK_UnitTestCase {
 					'vk-blocks/core/table'   => false,
 					'vk-blocks/core/image'   => false,
 					'vk-blocks/core/group'   => false,
-					'vk-blocks/core/columns' => false,
 					'vk-blocks-build-css'    => true,
 				),
 			),
@@ -79,7 +78,6 @@ class BlockStyleTest extends VK_UnitTestCase {
 					'vk-blocks/core/table'   => true,
 					'vk-blocks/core/image'   => true,
 					'vk-blocks/core/group'   => false,
-					'vk-blocks/core/columns' => true,
 				),
 			),
 			// 見出しのオプション値を全てオフにした時
@@ -121,7 +119,6 @@ class BlockStyleTest extends VK_UnitTestCase {
 					'vk-blocks/core/table'   => true,
 					'vk-blocks/core/image'   => true,
 					'vk-blocks/core/group'   => false,
-					'vk-blocks/core/columns' => true,
 				),
 			),
 		);

@@ -53,6 +53,12 @@ function vk_blocks_register_block_accordion() {
 }
 add_action( 'init', 'vk_blocks_register_block_accordion', 99 );
 
+/**
+ * Renders the accordion block.
+ *
+ * @param string $container_class The container class.
+ * @param string $initial_state The initial state.
+ */
 function render_accordion_block( $attributes, $content ) {
 	$containerClass = isset( $attributes['containerClass'] ) ? $attributes['containerClass'] : 'vk_accordion';
 	$initialState   = isset( $attributes['initialState'] ) ? $attributes['initialState'] : 'close';

@@ -2,7 +2,7 @@
  * Accordion Outer Block
  */
 import { content, title } from '@vkblocks/utils/example-data';
-import { ReactComponent as Icon } from './icon.svg';
+import { ReactComponent as SvgIcon } from './icon.svg';
 import { __ } from '@wordpress/i18n';
 
 import metadata from './block.json';
@@ -15,7 +15,7 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-	icon: <Icon />,
+	icon: <SvgIcon />,
 	styles: [
 		{
 			name: 'vk_accordion-no-background-color',

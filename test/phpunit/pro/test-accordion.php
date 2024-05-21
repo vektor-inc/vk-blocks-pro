@@ -8,7 +8,7 @@
 /**
  * Accordion block test case.
  */
-class AccordionTest extends WP_UnitTestCase {
+class AccordionTest extends VK_UnitTestCase {
 	/**
 	 * Post object.
 	 *
@@ -16,6 +16,9 @@ class AccordionTest extends WP_UnitTestCase {
 	 */
 	protected static $post;
 
+	/**
+	 * Test initial state of Accordion block.
+	 */
 	public function test_initial_state() {
 		// 新しいポストを作成し、アコーディオンブロックを追加
 		$post_id = $this->factory->post->create();
@@ -30,6 +33,9 @@ class AccordionTest extends WP_UnitTestCase {
 
 		// 初期状態が正しくセットされているかを確認
 		$this->assertEquals('close', $block['attrs']['initialState']);
+
+		// テスト後のクリーンアップ
+		wp_delete_post($post_id, true);
 	}
 
 	/**
@@ -49,6 +55,8 @@ class AccordionTest extends WP_UnitTestCase {
 
 		// 古い属性が正しくセットされているかを確認
 		$this->assertEquals('vk_accordion', $block['attrs']['containerClass']);
+
+		// テスト後のクリーンアップ
+		wp_delete_post($post_id, true);
 	}
 }
-?>

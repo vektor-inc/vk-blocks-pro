@@ -187,7 +187,7 @@ msgstr ""
 msgid "Custom Block Style Setting"
 msgstr ""
 
-#: src/admin/custom-block-style/index.js:80
+#: src/admin/custom-block-style/index.js:79
 msgid "You can register block styles."
 msgstr ""
 
@@ -1966,11 +1966,11 @@ msgstr ""
 msgid "First Dot Number"
 msgstr ""
 
-#: src/blocks/_pro/tab-item/edit.js:102
+#: src/blocks/_pro/tab-item/edit.js:132
 msgid "Tab Color Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab-item/edit.js:105
+#: src/blocks/_pro/tab-item/edit.js:135
 msgid "Tab Color"
 msgstr ""
 
@@ -1978,16 +1978,16 @@ msgstr ""
 msgid "Tab Item"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:292
+#: src/blocks/_pro/tab/edit.js:296
 #. Tab label [i]
 msgid "Tab Label [ %s ]"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:315
+#: src/blocks/_pro/tab/edit.js:319
 msgid "Tab size Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:317
+#: src/blocks/_pro/tab/edit.js:321
 msgid "Tab Size ( Smart Phone )"
 msgstr ""
 
@@ -1995,19 +1995,19 @@ msgstr ""
 msgid "Tab 01"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:334
+#: src/blocks/_pro/tab/edit.js:338
 msgid "Tab Size ( Tablet )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:351
+#: src/blocks/_pro/tab/edit.js:355
 msgid "Tab Size ( PC )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:355
+#: src/blocks/_pro/tab/edit.js:359
 msgid "Fit to the text"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:359
+#: src/blocks/_pro/tab/edit.js:363
 msgid "Monospaced"
 msgstr ""
 
@@ -3442,6 +3442,14 @@ msgstr ""
 
 #: src/extensions/common/responsive-br/index.js:33
 msgid "Responsive BR "
+msgstr ""
+
+#: src/extensions/core/columns/style.js:60
+msgid "Column Direction"
+msgstr ""
+
+#: src/extensions/core/columns/style.js:65
+msgid "Reverse"
 msgstr ""
 
 #: src/extensions/core/group/style.js:51

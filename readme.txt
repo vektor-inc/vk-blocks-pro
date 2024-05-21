@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.2
 Tested up to: 6.5
-Stable tag: 1.71.0.1
+Stable tag: 1.72.1.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -48,6 +48,7 @@ This is a plugin that extends Gutenberg's blocks.
 * New Badge [ Pro ]
 * Selected Post List [ Pro ]
 * Step [ Pro ]
+* Tab [ Pro ]
 * Table of Contents [ Pro ]
 * Taxonomy [ Pro ]
 * Timeline [ Pro ]
@@ -101,6 +102,19 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 1.73.0 =
+[ Add Block ] Add Tab Block
+[ Add function ][ Columns ] Add direction reverse option.
+[ Add function ][ Button ] Add border radius setting.
+[ Add Function ][ Spacer ][ Common margin ] Add size option XXL/XXS.
+[ Add function ][ Grid Column Card (Pro) ] Add border width setting to grid column card block.
+[ Add Function ][ Outer (Pro) ] Added option to min height setting.
+[ Specification Change ][ Custom CSS (Pro) ] Changed the custom CSS text area to be wider
+[ Specification Change ][ Outer ] Remove the negative margin for .vk_outer-width-full.
+[ Bug fix ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment. 
+[ Bug fix ] Remove min-height from "Custom CSS" on edit screen.
+[ Other ] Fixed useSetting deprecated
 
 = 1.72.1 =
 [ Specification Change ][ Pro ] Attend to I18N Improvements in 6.5.

@@ -44,6 +44,10 @@ export default function save(props) {
 		borderStyle,
 		borderColor,
 		borderRadius,
+		minHeightValuePC,
+		minHeightValueTablet,
+		minHeightValueMobile,
+		minHeightUnit,
 		blockId,
 	} = attributes;
 
@@ -211,9 +215,24 @@ export default function save(props) {
 					borderStyle !== 'none' &&
 					borderColor !== undefined &&
 					!isHexColor(borderColor),
+				[`vk_outer-minHeight`]:
+					minHeightValuePC > 0 ||
+					minHeightValueTablet > 0 ||
+					minHeightValueMobile > 0,
 			}
 		),
-		style: borderStyleProperty,
+		style: {
+			...borderStyleProperty,
+			'--min-height-mobile': minHeightValueMobile
+				? `${minHeightValueMobile}${minHeightUnit}`
+				: undefined,
+			'--min-height-tablet': minHeightValueTablet
+				? `${minHeightValueTablet}${minHeightUnit}`
+				: undefined,
+			'--min-height-pc': minHeightValuePC
+				? `${minHeightValuePC}${minHeightUnit}`
+				: undefined,
+		},
 	});
 	return (
 		<div {...blockProps}>

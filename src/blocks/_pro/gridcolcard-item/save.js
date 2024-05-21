@@ -15,6 +15,7 @@ export default function save(props) {
 		borderRadius,
 		border,
 		borderColor,
+		borderWidth,
 		backgroundGradient,
 		url,
 		urlOpenType,
@@ -59,9 +60,9 @@ export default function save(props) {
 		style.background = `${backgroundGradient}`;
 	}
 
-	// 線の色
+	// 線の色と太さ
 	if (border) {
-		style.borderWidth = `1px`;
+		style.borderWidth = borderWidth;
 		if (isHexColor(borderColor)) {
 			// custom color
 			style.borderColor = `${borderColor}`;

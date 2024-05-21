@@ -3,8 +3,8 @@
  */
 import { __ } from '@wordpress/i18n';
 import { transformStyles } from '@wordpress/block-editor';
-import { useState } from '@wordpress/element';
-import { Tooltip, Icon } from '@wordpress/components';
+import { useState, useRef, useEffect } from '@wordpress/element';
+import { Tooltip, Icon, ResizeObserver } from '@wordpress/components';
 import { info } from '@wordpress/icons';
 
 /**
@@ -24,13 +24,15 @@ export const CodeMirrorCss = (props) => {
 	const {
 		id = 'vk-custom-css-code-mirror',
 		className,
-		height = '200px',
 		value,
 		onChange,
 		style = {
 			...style,
 			marginTop: '0.5em',
 			border: '1px solid #ccc',
+			height: '200px',
+			resize: 'vertical',
+			overflow: 'hidden',
 		},
 		onBlur = (event) => {
 			if (!event?.target?.textContent) {
@@ -54,6 +56,62 @@ export const CodeMirrorCss = (props) => {
 		},
 	} = props;
 	const [cssError, setCSSError] = useState(null);
+	const wrapperRef = useRef(null);
+	const [isInitialLoad, setIsInitialLoad] = useState(true);
+
+	// リサイズ検知して高さを動的に調整
+	useEffect(() => {
+		if (wrapperRef.current) {
+			const observer = new ResizeObserver(() => {
+				if (isInitialLoad) {
+					wrapperRef.current.style.setProperty(
+						'height',
+						'auto',
+						'important'
+					);
+					setIsInitialLoad(false);
+				}
+			});
+			observer.observe(wrapperRef.current);
+			return () => observer.disconnect();
+		}
+	}, [isInitialLoad]);
+
+	// gutterの高さ検知して動的に調整
+	useEffect(() => {
+		if (wrapperRef.current) {
+			const gutters = wrapperRef.current.querySelector('.cm-gutters');
+			if (gutters) {
+				const observer = new ResizeObserver(() => {
+					const guttersHeight = gutters.offsetHeight;
+					if (guttersHeight < 200) {
+						gutters.style.setProperty(
+							'minHeight',
+							'200px',
+							'important'
+						);
+					} else {
+						gutters.style.minHeight = '';
+					}
+				});
+				observer.observe(gutters);
+				return () => observer.disconnect();
+			}
+		}
+	}, [value]);
+
+	const customStyleExtension = EditorView.theme({
+		'.cm-editor': {
+			minHeight: '200px',
+			height: '100%',
+			overflowY: 'auto',
+			resize: 'vertical',
+		},
+		'.cm-scroller': {
+			minHeight: '200px',
+			overflow: 'auto',
+		},
+	});
 
 	return (
 		<div
@@ -63,9 +121,13 @@ export const CodeMirrorCss = (props) => {
 			<CodeMirror
 				id={id}
 				className={classnames(`vk_custom-css-editor`, className)}
-				height={height}
+				height="100%" // 内部のエディタをラッパーの高さに合わせる
 				// https://uiwjs.github.io/react-codemirror/#/extensions/color
-				extensions={[css(), EditorView.lineWrapping]}
+				extensions={[
+					css(),
+					EditorView.lineWrapping,
+					customStyleExtension,
+				]}
 				value={value}
 				onChange={(newValue) => {
 					onChange(stripHTML(newValue));
@@ -78,7 +140,12 @@ export const CodeMirrorCss = (props) => {
 						setCSSError(null);
 					}
 				}}
-				style={style}
+				style={{
+					...style,
+					height: '200px',
+					minHeight: '200px',
+					resize: 'vertical',
+				}}
 				onBlur={(event) => {
 					onBlur(event);
 				}}

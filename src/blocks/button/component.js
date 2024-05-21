@@ -19,6 +19,7 @@ export class VKBButton extends Component {
 		const richText = this.props.lbRichtext;
 		const subCaption = this.props.lbsubCaption;
 		const inlineStyle = this.props.inlineStyle;
+		const borderRadius = this.props.borderRadius;
 		let aClass = '';
 		let iconBefore = '';
 		let iconAfter = '';
@@ -122,11 +123,17 @@ export class VKBButton extends Component {
 			iconAfter = `<i class="${fontAwesomeIconAfterClassName}"${styleAfter}></i>`;
 		}
 
+		// inlineStyleからborderRadiusを含む新しいスタイルオブジェクトを構築
+		const btnInlineStyle = { ...inlineStyle };
+		if (borderRadius) {
+			btnInlineStyle.borderRadius = borderRadius;
+		}
+
 		return (
 			/* eslint react/jsx-no-target-blank: 0 */
 			<a
 				href={buttonUrl}
-				style={inlineStyle}
+				style={btnInlineStyle}
 				className={aClass}
 				role={'button'}
 				aria-pressed={true}

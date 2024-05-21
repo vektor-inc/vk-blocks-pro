@@ -76,9 +76,19 @@ export default function SpacerEdit({
 					<ButtonGroup className="mb-3">
 						<Button
 							isSmall
+							isPrimary={spaceSize === 'xxs'}
+							isSecondary={spaceSize !== 'xxs'}
+							onClick={() => setAttributes({ spaceSize: 'xxs' })}
+							style={{ padding: '0px 7px' }}
+						>
+							{__('XXS', 'vk-blocks-pro')}
+						</Button>
+						<Button
+							isSmall
 							isPrimary={spaceSize === 'xs'}
 							isSecondary={spaceSize !== 'xs'}
 							onClick={() => setAttributes({ spaceSize: 'xs' })}
+							style={{ padding: '0px 7px' }}
 						>
 							{__('XS', 'vk-blocks-pro')}
 						</Button>
@@ -89,6 +99,7 @@ export default function SpacerEdit({
 							onClick={() =>
 								setAttributes({ spaceSize: 'small' })
 							}
+							style={{ padding: '0px 7px' }}
 						>
 							{__('S', 'vk-blocks-pro')}
 						</Button>
@@ -99,6 +110,7 @@ export default function SpacerEdit({
 							onClick={() =>
 								setAttributes({ spaceSize: 'medium' })
 							}
+							style={{ padding: '0px 7px' }}
 						>
 							{__('M', 'vk-blocks-pro')}
 						</Button>
@@ -109,6 +121,7 @@ export default function SpacerEdit({
 							onClick={() =>
 								setAttributes({ spaceSize: 'large' })
 							}
+							style={{ padding: '0px 7px' }}
 						>
 							{__('L', 'vk-blocks-pro')}
 						</Button>
@@ -117,8 +130,18 @@ export default function SpacerEdit({
 							isPrimary={spaceSize === 'xl'}
 							isSecondary={spaceSize !== 'xl'}
 							onClick={() => setAttributes({ spaceSize: 'xl' })}
+							style={{ padding: '0px 7px' }}
 						>
 							{__('XL', 'vk-blocks-pro')}
+						</Button>
+						<Button
+							isSmall
+							isPrimary={spaceSize === 'xxl'}
+							isSecondary={spaceSize !== 'xxl'}
+							onClick={() => setAttributes({ spaceSize: 'xxl' })}
+							style={{ padding: '0px 7px' }}
+						>
+							{__('XXL', 'vk-blocks-pro')}
 						</Button>
 						<Button
 							isSmall
@@ -127,6 +150,7 @@ export default function SpacerEdit({
 							onClick={() =>
 								setAttributes({ spaceSize: 'custom' })
 							}
+							style={{ padding: '0px 7px' }}
 						>
 							{__('Custom', 'vk-blocks-pro')}
 						</Button>

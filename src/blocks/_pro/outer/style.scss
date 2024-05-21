@@ -84,15 +84,10 @@ $media-xxl-down: 1399.98px;
 	}
 }
 
-.vk_outer-width-full {
-	margin-left: calc(50% - 50vw);
-	margin-right: calc(50% - 50vw);
-}
-
 // Fit to content area width
 .vk_outer-width-full.vk_outer-paddingLR-none {
-	padding-left: calc(50vw - 50%);
-	padding-right: calc(50vw - 50%);
+	padding-left: calc(50dvw - 50%);
+	padding-right: calc(50dvw - 50%);
 }
 $padding-none: 1.5em;
 $padding-sm: 2em;
@@ -218,6 +213,22 @@ $padding-xxl: 4em;
 }
 
 $color-danger: #b52727;
+
+// Min Height Setting
+.vk_outer-minHeight {
+	display: grid;
+	align-items: center;
+	height: 100%;
+	min-height: var(--min-height-mobile);
+
+	@media (min-width: 576px) {
+		  min-height: var(--min-height-tablet);
+		}
+	  
+		@media (min-width: 992px) {
+		  min-height: var(--min-height-pc);
+		}
+}
 
 /*-------------------------------------------*/
 /* 管理画面

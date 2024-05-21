@@ -2,7 +2,7 @@
 /**
  * Class AccordionTest
  *
- * @package Vk_Blocks_Pro
+ * @package vektor-inc/vk-blocks-pro
  */
 
 /**

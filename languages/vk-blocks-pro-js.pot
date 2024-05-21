@@ -3047,11 +3047,11 @@ msgstr ""
 msgid "Theme"
 msgstr ""
 
-#: src/components/code-mirror-css/index.js:103
+#: src/components/code-mirror-css/index.js:170
 msgid "Note : Contains double-byte spaces; CSS may not work."
 msgstr ""
 
-#: src/components/code-mirror-css/index.js:48
+#: src/components/code-mirror-css/index.js:50
 msgid "There is an error with your CSS structure."
 msgstr ""
 

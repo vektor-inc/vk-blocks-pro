@@ -110,6 +110,7 @@ e.g.
 [ Bug fix ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment. 
 [ Bug fix ] Remove min-height from "Custom CSS" on edit screen.
 [ Specification Change ][ Outer ] Remove the negative margin for .vk_outer-width-full.
+[ Specification Change ][ Custom CSS (Pro) ] Changed the custom CSS text area to be wider
 [ Other ] Fixed useSetting deprecated
 
 = 1.72.1 =

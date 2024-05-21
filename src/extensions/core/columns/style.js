@@ -75,7 +75,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 										newClassNameArray = existClass.filter(
 											(item) => {
 												return !item.match(
-													/is-style-vk-column-row-reverse/
+													/is-vk-row-reverse/
 												);
 											}
 										);
@@ -84,7 +84,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 									// reverse クラスを付与
 									const rereverseClass = [
 										{
-											'is-style-vk-column-row-reverse':
+											'is-vk-row-reverse':
 												checked,
 										},
 									];

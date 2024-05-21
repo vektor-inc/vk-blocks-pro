@@ -52,7 +52,7 @@
 /* カラムの方向が逆のラベル
 /*-------------------------------------------*/
 .wp-block-columns {
-	&.is-style-vk-column-row-reverse {
+	&.is-vk-row-reverse {
 		border: 1px dashed #ccc !important;
 		left:0;
 		&:before {

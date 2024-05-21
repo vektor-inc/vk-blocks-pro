@@ -12,6 +12,26 @@
 		"containerClass": {
 			"type": "string",
 			"default": "vk_accordion"
+		},
+		"initialState": {
+			"type": "string",
+			"default": "close"
+		},
+		"initialStateMobile": {
+			"type": "string",
+			"default": ""
+		},
+		"initialStateTablet": {
+			"type": "string",
+			"default": ""
+		},
+		"initialStateDesktop": {
+			"type": "string",
+			"default": ""
+		},
+		"isDeviceSpecific": {
+			"type": "boolean",
+			"default": false
 		}
 	},
 	"supports": {

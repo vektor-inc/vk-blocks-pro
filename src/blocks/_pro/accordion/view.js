@@ -1,36 +1,28 @@
 const accordion = document.querySelectorAll(
-	//  vk_accordion-containerはvk_accordionになったが互換性のために残しておく
+	//    vk_accordion-containerはvk_accordionになったが互換性のために残しておく
 	'.vk_accordion, .vk_accordion-container'
 );
 let accordionTarget;
 let accordionToggle;
 
 document.addEventListener('DOMContentLoaded', () => {
-	const accordions = document.querySelectorAll(
-		'.vk_accordion, .vk_accordion-container'
-	);
+	const accordions = document.querySelectorAll('.vk_accordion, .vk_accordion-container');
 	accordions.forEach((accordion) => {
 		const toggleElement = accordion.querySelector('.vk_accordion-toggle');
-		const targetElement = accordion.querySelector('.vk_accordion-target');
+		const targetElement = accordion.querySelector('.vk_accordion-target');    
 
 		function updateAccordion() {
 			const width = window.innerWidth;
 			let initialState = accordion.getAttribute('data-initial-state');
-
+		
 			if (width < 576) {
-				initialState =
-					accordion.getAttribute('data-initial-state-mobile') ||
-					initialState;
+				initialState = accordion.getAttribute('data-initial-state-mobile') || initialState;
 			} else if (width >= 992) {
-				initialState =
-					accordion.getAttribute('data-initial-state-desktop') ||
-					initialState;
+				initialState = accordion.getAttribute('data-initial-state-desktop') || initialState;
 			} else {
-				initialState =
-					accordion.getAttribute('data-initial-state-tablet') ||
-					initialState;
+				initialState = accordion.getAttribute('data-initial-state-tablet') || initialState;
 			}
-
+			
 			if (initialState === 'open') {
 				toggleElement.classList.add('vk_accordion-toggle-open');
 				toggleElement.classList.remove('vk_accordion-toggle-close');
@@ -42,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				targetElement.classList.add('vk_accordion-target-close');
 				targetElement.classList.remove('vk_accordion-target-open');
 			}
-		}
+		}		    
 
 		// 初期ロード時とウィンドウサイズが変わった時に実行
 		updateAccordion();

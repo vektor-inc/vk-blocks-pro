@@ -84,8 +84,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 									// reverse クラスを付与
 									const rereverseClass = [
 										{
-											'is-vk-row-reverse':
-												checked,
+											'is-vk-row-reverse': checked,
 										},
 									];
 									newClassNameArray = classnames(

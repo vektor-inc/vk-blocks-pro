@@ -814,7 +814,12 @@ export default function ButtonEdit(props) {
 						onChange={(value) => {
 							setAttributes({ borderRadius: value || null });
 						}}
-						units={units}
+						units={[
+							{ value: 'px', label: 'px', default: 5 },
+							{ value: '%', label: '%', default: 5 },
+							{ value: 'em', label: 'em', default: 1 },
+							{ value: 'rem', label: 'rem', default: 1 },
+						]}	
 					/>
 				</PanelBody>
 			</InspectorControls>

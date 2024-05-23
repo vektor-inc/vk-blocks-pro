@@ -103,6 +103,8 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ VK Button ] Add unit "percent" for border radius.
+
 = 1.73.0 =
 [ Add Block ] Add Tab Block
 [ Add function ][ Columns ] Add direction reverse option.

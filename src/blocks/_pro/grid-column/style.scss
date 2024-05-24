@@ -16,6 +16,7 @@ $xxl-min: 1400px;
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0 -15px;
+	justify-content: flex-start;
 }
 .vk_gridColumn [class*="col-"] {
 	padding: 0 15px;
@@ -23,117 +24,187 @@ $xxl-min: 1400px;
 .vk_gridColumn .col {
 	&-2 {
 		width: calc(16.66% - 30px);
+		flex: 0 0 16.666667%;
+		max-width: 16.666667%;
 	}
 	&-3 {
 		width: calc(25% - 30px);
+		flex: 0 0 25%;
+		max-width: 25%;
 	}
 	&-4 {
 		width: calc(33.3% - 30px);
+		flex: 0 0 33.33333333%;
+		max-width: 33.33333333%;
 	}
 	&-6 {
 		width: calc(50% - 30px);
+		flex: 0 0 50%;
+		max-width: 50%;
 	}
 	&-12 {
 		width: calc(100% - 30px);
+		flex: 0 0 100%;
+		max-width: 100%;
 	}
 	&-xs-2 {
 		width: calc(16.66% - 30px);
+		flex: 0 0 16.666667%;
+		max-width: 16.666667%;
 	}
 	&-xs-3 {
 		width: calc(25% - 30px);
+		flex: 0 0 25%;
+		max-width: 25%;
 	}
 	&-xs-4 {
 		width: calc(33.3% - 30px);
+		flex: 0 0 33.33333333%;
+		max-width: 33.33333333%;
 	}
 	&-xs-6 {
 		width: calc(50% - 30px);
+		flex: 0 0 50%;
+		max-width: 50%;
 	}
 	&-xs-12 {
 		width: calc(100% - 30px);
+		flex: 0 0 100%;
+		max-width: 100%;
 	}
 	@media (min-width: $sm-min) {
 		&-sm-2 {
 			width: calc(16.66% - 30px);
+			flex: 0 0 16.666667%;
+			max-width: 16.666667%;
 		}
 		&-sm-3 {
 			width: calc(25% - 30px);
+			flex: 0 0 25%;
+			max-width: 25%;
 		}
 		&-sm-4 {
 			width: calc(33.3% - 30px);
+			flex: 0 0 33.33333333%;
+			max-width: 33.33333333%;
 		}
 		&-sm-6 {
 			width: calc(50% - 30px);
+			flex: 0 0 50%;
+			max-width: 50%;
 		}
 		&-sm-12 {
 			width: calc(100% - 30px);
+			flex: 0 0 100%;
+			max-width: 100%;
 		}
 	}
 	@media (min-width: $md-min) {
 		&-md-2 {
 			width: calc(16.66% - 30px);
+			flex: 0 0 16.666667%;
+			max-width: 16.666667%;
 		}
 		&-md-3 {
 			width: calc(25% - 30px);
+			flex: 0 0 25%;
+			max-width: 25%;
 		}
 		&-md-4 {
 			width: calc(33.3% - 30px);
+			flex: 0 0 33.33333333%;
+			max-width: 33.33333333%;
 		}
 		&-md-6 {
 			width: calc(50% - 30px);
+			flex: 0 0 50%;
+			max-width: 50%;
 		}
 		&-md-12 {
 			width: calc(100% - 30px);
+			flex: 0 0 100%;
+			max-width: 100%;
 		}
 	}
 	@media (min-width: $lg-min) {
 		&-lg-2 {
 			width: calc(16.66% - 30px);
+			flex: 0 0 16.666667%;
+			max-width: 16.666667%;
 		}
 		&-lg-3 {
 			width: calc(25% - 30px);
+			flex: 0 0 25%;
+			max-width: 25%;
 		}
 		&-lg-4 {
 			width: calc(33.3% - 30px);
+			flex: 0 0 33.33333333%;
+			max-width: 33.33333333%;
 		}
 		&-lg-6 {
 			width: calc(50% - 30px);
+			flex: 0 0 50%;
+			max-width: 50%;
 		}
 		&-lg-12 {
 			width: calc(100% - 30px);
+			flex: 0 0 100%;
+			max-width: 100%;
 		}
 	}
 	@media (min-width: $xl-min) {
 		&-xl-2 {
 			width: calc(16.66% - 30px);
+			flex: 0 0 16.666667%;
+			max-width: 16.666667%;
 		}
 		&-xl-3 {
 			width: calc(25% - 30px);
+			flex: 0 0 25%;
+			max-width: 25%;
 		}
 		&-xl-4 {
 			width: calc(33.3% - 30px);
+			flex: 0 0 33.33333333%;
+			max-width: 33.33333333%;
 		}
 		&-xl-6 {
 			width: calc(50% - 30px);
+			flex: 0 0 50%;
+			max-width: 50%;
 		}
 		&-xl-12 {
 			width: calc(100% - 30px);
+			flex: 0 0 100%;
+			max-width: 100%;
 		}
     }
     @media (min-width: $xxl-min) {
 		&-xxl-2 {
 			width: calc(16.66% - 30px);
+			flex: 0 0 16.666667%;
+			max-width: 16.666667%;
 		}
 		&-xxl-3 {
 			width: calc(25% - 30px);
+			flex: 0 0 25%;
+			max-width: 25%;
 		}
 		&-xxl-4 {
 			width: calc(33.3% - 30px);
+			flex: 0 0 33.33333333%;
+			max-width: 33.33333333%;
 		}
 		&-xxl-6 {
 			width: calc(50% - 30px);
+			flex: 0 0 50%;
+			max-width: 50%;
 		}
 		&-xxl-12 {
 			width: calc(100% - 30px);
+			flex: 0 0 100%;
+			max-width: 100%;
 		}
 	}
 }

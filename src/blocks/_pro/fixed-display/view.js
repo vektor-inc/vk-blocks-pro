@@ -1,3 +1,5 @@
+/* eslint-env browser */
+
 // スクロールイベントリスナーを追加
 window.addEventListener('scroll', function () {
 	const items = document.querySelectorAll(

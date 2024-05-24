@@ -207,6 +207,17 @@ export default function ButtonEdit(props) {
 		className: containerClass,
 	});
 
+	let inlineStyle = {};
+	if (
+		buttonTextColorCustom !== undefined &&
+		isHexColor(buttonTextColorCustom)
+	) {
+		inlineStyle = {
+			// 編集画面対策
+			color: `${buttonTextColorCustom}`,
+		};
+	}
+
 	return (
 		<>
 			<BlockControls>
@@ -795,6 +806,21 @@ export default function ButtonEdit(props) {
 							/>
 						</BaseControl>
 					</BaseControl>
+					<h4 className={`mt-0 mb-2`}>
+						{__('Button border radius', 'vk-blocks-pro')}
+					</h4>
+					<UnitControl
+						value={attributes.borderRadius}
+						onChange={(value) => {
+							setAttributes({ borderRadius: value || null });
+						}}
+						units={[
+							{ value: 'px', label: 'px', default: 5 },
+							{ value: '%', label: '%', default: 5 },
+							{ value: 'em', label: 'em', default: 1 },
+							{ value: 'rem', label: 'rem', default: 1 },
+						]}
+					/>
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
@@ -810,6 +836,12 @@ export default function ButtonEdit(props) {
 					lbIconSizeBefore={iconSizeBefore}
 					lbIconSizeAfter={iconSizeAfter}
 					lbsubCaption={subCaption}
+					lbUrl={buttonUrl}
+					lbTarget={buttonTarget}
+					inlineStyle={{
+						...inlineStyle,
+						borderRadius: attributes.borderRadius,
+					}}
 					lbRichtext={
 						<RichText
 							tagName={'span'}
@@ -835,7 +867,6 @@ export default function ButtonEdit(props) {
 								'vk-blocks/nowrap',
 								'vk-blocks/inline-font-size',
 							]}
-							isSelected={true}
 						/>
 					}
 				/>

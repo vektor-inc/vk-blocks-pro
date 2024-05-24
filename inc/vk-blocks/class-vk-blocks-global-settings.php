@@ -256,6 +256,14 @@ class VK_Blocks_Global_Settings {
 				'is_pro' => true,
 			),
 			array(
+				'name'   => 'tab',
+				'is_pro' => true,
+			),
+			array(
+				'name'   => 'tab-item',
+				'is_pro' => true,
+			),
+			array(
 				'name'   => 'table-of-contents-new',
 				'is_pro' => true,
 			),

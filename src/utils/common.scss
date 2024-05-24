@@ -10,11 +10,13 @@
 /* 余白（レスポンシブスペーサー,共通余白で使用）
 /*-------------------------------------------*/
 :root {
+	--vk-margin-xxs : 0.375rem;
 	--vk-margin-xs : 0.75rem;
 	--vk-margin-sm : 1.5rem;
 	--vk-margin-md : 2.4rem;
 	--vk-margin-lg : 4rem;
 	--vk-margin-xl : 6rem;
+	--vk-margin-xxl : 9rem;
 }
 .vk_block{
 	&-margin-0 {
@@ -29,6 +31,18 @@
 			& > table { //テーマ側でtableにmargin-bottom や margin-top の余白がついている場合、完全に0にならないので必要
 				margin-bottom:0;
 			}
+		}
+	}
+	&-margin-xxs {
+		margin-top: var(--vk-margin-xxs); /* 旧バージョンでdeprecatedが走ってない状態のfallback */
+		&--margin-top {
+			margin-top: var(--vk-margin-xxs) !important;
+		}
+		&--margin-bottom {
+			margin-bottom: var(--vk-margin-xxs) !important;
+		}
+		&--height {
+			height: var(--vk-margin-xxs);
 		}
 	}
 	&-margin-xs {
@@ -89,6 +103,18 @@
 		}
 		&--height {
 			height: var(--vk-margin-xl);
+		}
+	}
+	&-margin-xxl {
+		margin-top: var(--vk-margin-xxl); /* 旧バージョンでdeprecatedが走ってない状態のfallback */
+		&--margin-top {
+			margin-top: var(--vk-margin-xxl) !important;
+		}
+		&--margin-bottom {
+			margin-bottom: var(--vk-margin-xxl) !important;
+		}
+		&--height {
+			height: var(--vk-margin-xxl);
 		}
 	}
 }
@@ -432,6 +458,7 @@ ol {
 			height: calc(100% - 1em);
 			border: dashed 2px;
 			border-radius: 8px;
+			pointer-events: none;
 		}
 		//@include inner-item-pad-mag;
 		// thema.jsonでは .wp-block-group__inner-container がつかないためコメントアウト
@@ -555,5 +582,14 @@ $xxl-min: 1400px;
 			flex: 0 0 100%;
 			max-width: 100%;
 		}
+	}
+}
+
+/*-------------------------------------------*/
+/* カラムの方向
+/*-------------------------------------------*/
+.wp-block-columns {
+	&.wp-block-columns.is-vk-row-reverse {
+    	flex-direction: row-reverse;
 	}
 }

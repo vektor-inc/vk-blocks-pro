@@ -39,6 +39,9 @@
 		"iconColor": {
 			"type": "string"
 		},
+		"iconFontColor": {
+			"type": "string"
+		},
 		"iconUrl": {
 			"type": "string"
 		},

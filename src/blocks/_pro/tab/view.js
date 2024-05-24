@@ -8,28 +8,40 @@ Array.prototype.forEach.call(vkTabs, (vkTab) => {
 
 	Array.prototype.forEach.call(vkTabLabel, (TabLabel) => {
 		TabLabel.addEventListener('click', (e) => {
+			// ブロック ID を抽出
 			const TabLabelId = e.target.closest('.vk_tab_labels_label').id;
 			const TabId = TabLabelId.replace('vk_tab_labels_label-', '');
 
 			// 現在のアクティブなラベルとボディを取得
-			const activeLabels = vkTabLabels.querySelectorAll('.vk_tab_labels_label-state-active');
+			const activeLabels = vkTabLabels.querySelectorAll(
+				'.vk_tab_labels_label-state-active'
+			);
 			Array.prototype.forEach.call(activeLabels, (activeLabel) => {
-				activeLabel.classList.remove('vk_tab_labels_label-state-active');
+				activeLabel.classList.remove(
+					'vk_tab_labels_label-state-active'
+				);
 				activeLabel.classList.add('vk_tab_labels_label-state-inactive');
 			});
-
-			const activeBodies = vkTabBodies.querySelectorAll('.vk_tab_bodys_body-state-active');
+			const activeBodies = vkTabBodies.querySelectorAll(
+				'.vk_tab_bodys_body-state-active'
+			);
 			Array.prototype.forEach.call(activeBodies, (activeBody) => {
 				activeBody.classList.remove('vk_tab_bodys_body-state-active');
 			});
 
 			// 新しいアクティブなラベルとボディを設定
-			const newActiveLabel = vkTabLabels.querySelector(`#vk_tab_labels_label-${TabId}`);
+			const newActiveLabel = vkTabLabels.querySelector(
+				`#vk_tab_labels_label-${TabId}`
+			);
 			newActiveLabel.classList.add('vk_tab_labels_label-state-active');
-			newActiveLabel.classList.remove('vk_tab_labels_label-state-inactive');
+			newActiveLabel.classList.remove(
+				'vk_tab_labels_label-state-inactive'
+			);
 			clickedActiveLabel = newActiveLabel; // クリックでアクティブになったタブを追跡
 
-			const newActiveBody = vkTabBodies.querySelector(`#vk_tab_bodys_body-${TabId}`);
+			const newActiveBody = vkTabBodies.querySelector(
+				`#vk_tab_bodys_body-${TabId}`
+			);
 			newActiveBody.classList.add('vk_tab_bodys_body-state-active');
 
 			e.target.setAttribute('tabindex', '0');
@@ -60,7 +72,7 @@ Array.prototype.forEach.call(vkTabs, (vkTab) => {
 		});
 
 		// ホバー時のクラスを変更
-		TabLabel.addEventListener('mouseover', function() {
+		TabLabel.addEventListener('mouseover', function () {
 			if (this !== clickedActiveLabel) {
 				this.classList.remove('vk_tab_labels_label-state-inactive');
 				this.classList.add('vk_tab_labels_label-state-active');
@@ -68,8 +80,11 @@ Array.prototype.forEach.call(vkTabs, (vkTab) => {
 		});
 
 		// ホバーが外れた時のクラスを戻す
-		TabLabel.addEventListener('mouseout', function() {
-			if (this !== clickedActiveLabel && !this.classList.contains('hovered-temp-active')) {
+		TabLabel.addEventListener('mouseout', function () {
+			if (
+				this !== clickedActiveLabel &&
+				!this.classList.contains('hovered-temp-active')
+			) {
 				this.classList.remove('vk_tab_labels_label-state-active');
 				this.classList.add('vk_tab_labels_label-state-inactive');
 			}

@@ -93,8 +93,7 @@ export default function FixedDisplayEdit(props) {
 										'px',
 										'em',
 										'rem',
-										'vw',
-										'vh',
+										'svh',
 									];
 									const unit =
 										units.find((unit) =>
@@ -110,8 +109,7 @@ export default function FixedDisplayEdit(props) {
 									{ value: 'px', label: 'px' },
 									{ value: 'em', label: 'em' },
 									{ value: 'rem', label: 'rem' },
-									{ value: 'vw', label: 'vw' },
-									{ value: 'vh', label: 'vh' },
+									{ value: 'svh', label: 'svh' },
 								]}
 							/>
 							<ToggleControl

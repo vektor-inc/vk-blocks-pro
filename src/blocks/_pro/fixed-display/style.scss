@@ -5,11 +5,10 @@
 	--admin-bar-offset: 32px;
 }
 
-// Css for deprecated block.
 .vk_fixed-display {
 	position: fixed;
 	margin-block-start: 0;
-	z-index: 9999;
+	z-index: 99999;
 }
 
 .vk_fixed-display-mode {
@@ -39,7 +38,6 @@
 	&-right {
 		top: 50%;
 		right: 0;
-		transform: translateY(-50%);
 	}
 	&-bottom {
 		left: 0;
@@ -50,7 +48,6 @@
 	&-left {
 		top: 50%;
 		left: 0;
-		transform: translateY(-50%);
 	}
 }
 
@@ -62,6 +59,6 @@
 		top: var(--admin-bar-offset);
 	}
 	&-right, &-left {
-		top: calc(50% + var(--admin-bar-offset));
+		top: calc(50svh + var(--admin-bar-offset));
 	}
 }

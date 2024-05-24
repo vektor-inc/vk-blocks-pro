@@ -24,6 +24,14 @@
 			"type": "boolean",
 			"default": false
 		},
+		"fixedTopPosition": {
+			"type": "number",
+			"default": 50
+		},
+		"fixedTopPositionUnit": {
+			"type": "string",
+			"default": "svh"
+		},
 		"clientId": {
 			"type": "string"
 		},

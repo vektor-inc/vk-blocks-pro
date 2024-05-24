@@ -9,6 +9,13 @@ import { PanelBody, SelectControl, ToggleControl } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 
+const units = [
+	{ value: 'px', label: 'px' },
+	{ value: 'em', label: 'em' },
+	{ value: 'rem', label: 'rem' },
+	{ value: 'svh', label: 'svh' },
+];
+
 export default function FixedDisplayEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const {
@@ -18,6 +25,8 @@ export default function FixedDisplayEdit(props) {
 		scrollTiming = 100,
 		scrollTimingUnit = 'px',
 		scrollPersistVisible = false,
+		fixedTopPosition = 50,
+		fixedTopPositionUnit = 'svh'
 	} = attributes;
 
 	useEffect(() => {
@@ -39,6 +48,9 @@ export default function FixedDisplayEdit(props) {
 
 	const blockProps = useBlockProps({
 		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} vk_fixed-display-${blockId}`,
+		style: {
+			top: ['right', 'left'].includes(position) ? `${fixedTopPosition}${fixedTopPositionUnit}` : undefined,
+		}
 	});
 
 	return (
@@ -80,43 +92,44 @@ export default function FixedDisplayEdit(props) {
 							},
 						]}
 					/>
+					{['right', 'left'].includes(position) && (
+						<UnitControl
+							label={__('Fixed position from the top', 'vk-blocks-pro')}
+							value={`${fixedTopPosition}${fixedTopPositionUnit}`}
+							onChange={(nextValue) => {
+								const unit =
+									units.find((unit) =>
+										nextValue.endsWith(unit.value)
+									) || units[0];
+								const value = parseFloat(nextValue) || 0;
+								setAttributes({
+									fixedTopPosition: value,
+									fixedTopPositionUnit: unit.value,
+								});
+							}}
+							units={units}
+						/>
+					)}
 					{mode === 'show-on-scroll' && (
 						<>
 							<UnitControl
-								label={__(
-									'Display position from the top of the page',
-									'vk-blocks-pro'
-								)}
+								label={__('Timing to display', 'vk-blocks-pro')}
 								value={`${scrollTiming}${scrollTimingUnit}`}
 								onChange={(nextValue) => {
-									const units = [
-										'px',
-										'em',
-										'rem',
-										'svh',
-									];
 									const unit =
 										units.find((unit) =>
-											nextValue.endsWith(unit)
-										) || 'px';
+											nextValue.endsWith(unit.value)
+										) || units[0];
 									const value = parseFloat(nextValue) || 0;
 									setAttributes({
 										scrollTiming: value,
-										scrollTimingUnit: unit,
+										scrollTimingUnit: unit.value,
 									});
 								}}
-								units={[
-									{ value: 'px', label: 'px' },
-									{ value: 'em', label: 'em' },
-									{ value: 'rem', label: 'rem' },
-									{ value: 'svh', label: 'svh' },
-								]}
+								units={units}
 							/>
 							<ToggleControl
-								label={__(
-									'Persist visibility once visible',
-									'vk-blocks-pro'
-								)}
+								label={__('Persist visibility once visible', 'vk-blocks-pro')}
 								checked={scrollPersistVisible}
 								onChange={(value) =>
 									setAttributes({

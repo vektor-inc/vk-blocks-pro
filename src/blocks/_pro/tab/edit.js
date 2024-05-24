@@ -203,7 +203,9 @@ export default function TabEdit(props) {
 				`#vk_tab_labels_label-${TabId}`
 			);
 			newActiveLabel.classList.add('vk_tab_labels_label-state-active');
-			newActiveLabel.classList.remove('vk_tab_labels_label-state-inactive');
+			newActiveLabel.classList.remove(
+				'vk_tab_labels_label-state-inactive'
+			);
 
 			/* 本体の処理 */
 			childBlocks.forEach((childBlock, index) => {
@@ -320,7 +322,7 @@ export default function TabEdit(props) {
 		const tabLabels = document.querySelectorAll('.vk_tab_labels_label');
 		let clickedActiveLabel = null;
 
-		tabLabels.forEach(label => {
+		tabLabels.forEach((label) => {
 			if (!label.classList.contains('vk_tab_labels_label-state-active')) {
 				label.classList.add('inactive');
 			}
@@ -330,16 +332,28 @@ export default function TabEdit(props) {
 				const TabId = TabLabelId.replace('vk_tab_labels_label-', '');
 
 				// 現在のアクティブなラベルとボディを取得
-				const activeLabels = document.querySelectorAll('.vk_tab_labels_label-state-active');
-				activeLabels.forEach(activeLabel => {
-					activeLabel.classList.remove('vk_tab_labels_label-state-active');
-					activeLabel.classList.add('vk_tab_labels_label-state-inactive');
+				const activeLabels = document.querySelectorAll(
+					'.vk_tab_labels_label-state-active'
+				);
+				activeLabels.forEach((activeLabel) => {
+					activeLabel.classList.remove(
+						'vk_tab_labels_label-state-active'
+					);
+					activeLabel.classList.add(
+						'vk_tab_labels_label-state-inactive'
+					);
 				});
 
 				// 新しいアクティブなラベルを設定
-				const newActiveLabel = document.querySelector(`#vk_tab_labels_label-${TabId}`);
-				newActiveLabel.classList.add('vk_tab_labels_label-state-active');
-				newActiveLabel.classList.remove('vk_tab_labels_label-state-inactive');
+				const newActiveLabel = document.querySelector(
+					`#vk_tab_labels_label-${TabId}`
+				);
+				newActiveLabel.classList.add(
+					'vk_tab_labels_label-state-active'
+				);
+				newActiveLabel.classList.remove(
+					'vk_tab_labels_label-state-inactive'
+				);
 				clickedActiveLabel = newActiveLabel; // クリックでアクティブになったタブを追跡
 
 				e.target.setAttribute('tabindex', '0');
@@ -349,7 +363,7 @@ export default function TabEdit(props) {
 			});
 
 			// ホバー時のクラスを変更
-			label.addEventListener('mouseover', function() {
+			label.addEventListener('mouseover', function () {
 				if (this !== clickedActiveLabel) {
 					this.classList.remove('vk_tab_labels_label-state-inactive');
 					this.classList.add('vk_tab_labels_label-state-active');
@@ -357,8 +371,11 @@ export default function TabEdit(props) {
 			});
 
 			// ホバーが外れた時のクラスを戻す
-			label.addEventListener('mouseout', function() {
-				if (this !== clickedActiveLabel && !this.classList.contains('hovered-temp-active')) {
+			label.addEventListener('mouseout', function () {
+				if (
+					this !== clickedActiveLabel &&
+					!this.classList.contains('hovered-temp-active')
+				) {
 					this.classList.remove('vk_tab_labels_label-state-active');
 					this.classList.add('vk_tab_labels_label-state-inactive');
 				}
@@ -367,7 +384,7 @@ export default function TabEdit(props) {
 
 		// クリーンアップ関数を追加してイベントリスナーを削除
 		return () => {
-			tabLabels.forEach(label => {
+			tabLabels.forEach((label) => {
 				label.removeEventListener('click', () => {});
 				label.removeEventListener('mouseover', () => {});
 				label.removeEventListener('mouseout', () => {});

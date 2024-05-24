@@ -99,11 +99,7 @@ export default function save(props) {
 				</li>
 			);
 		});
-		tabList = (
-			<ul className={tabListClassName}>
-				{tabListInner}
-			</ul>
-		);
+		tabList = <ul className={tabListClassName}>{tabListInner}</ul>;
 	}
 
 	const blockProps = useBlockProps.save({

@@ -78,9 +78,13 @@ export default function save(props) {
 			return (
 				<li
 					id={`vk_tab_labels_label-${option.blockId}`}
-					className={`vk_tab_labels_label${activeLabelClass}${tabColorClass}`}
+					className={`vk_tab_labels_label${activeLabelClass}${tabColorClass}${!activeLabelClass ? ' vk_tab_labels_label-state-inactive' : ''}`}
 					style={tabColorStyle}
 					key={index}
+					role="tab"
+					aria-selected={firstActive === index ? "true" : "false"}
+					aria-controls={`vk_tab_bodys_body-${option.blockId}`}
+					tabIndex={firstActive === index ? 0 : -1}
 				>
 					<div
 						className={tabSpanColorClass}
@@ -91,7 +95,7 @@ export default function save(props) {
 				</li>
 			);
 		});
-		tabList = <ul className={tabListClassName}>{tabListInner}</ul>;
+		tabList = <ul className={tabListClassName} role="tablist">{tabListInner}</ul>;
 	}
 
 	const blockProps = useBlockProps.save({

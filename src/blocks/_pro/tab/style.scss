@@ -86,6 +86,10 @@ $xl-min: 1200px;
 				background-color: var(--default-color);
 			}
 		}
+		&.vk_tab_labels_label-state-inactive{
+			background-color: #ffffff !important;
+			color: initial;
+		}
 	}
 }
 
@@ -132,6 +136,10 @@ $xl-min: 1200px;
 				// font-weight: bold;
 				color: #fff;
 			}
+            &.vk_tab_labels_label-state-inactive {
+				background-color: rgba(0,0,0,.08) !important;
+				color: initial;
+            }
 			&:hover{
 				background-color: var(--default-color);
 				color: #fff;

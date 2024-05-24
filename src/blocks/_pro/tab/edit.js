@@ -213,7 +213,7 @@ export default function TabEdit(props) {
 					setAttributes({ firstActive: parseInt(index, 10) });
 					// 子ブロックを選択状態にする -> タブ文字が隠れて編集できなくなるので一旦コメントアウト
 					// dispatch('core/block-editor').selectBlock(
-					// 	childBlock.clientId
+					//     childBlock.clientId
 					// );
 				}
 			});
@@ -320,11 +320,14 @@ export default function TabEdit(props) {
 
 	useEffect(() => {
 		const tabLabels = document.querySelectorAll('.vk_tab_labels_label');
+		const richTextLabels = document.querySelectorAll(
+			'.block-editor-rich-text__editable'
+		);
 		let clickedActiveLabel = null;
 
 		tabLabels.forEach((label) => {
 			if (!label.classList.contains('vk_tab_labels_label-state-active')) {
-				label.classList.add('inactive');
+				label.classList.add('vk_tab_labels_label-state-inactive');
 			}
 
 			label.addEventListener('click', (e) => {
@@ -382,6 +385,44 @@ export default function TabEdit(props) {
 			});
 		});
 
+		// RichTextラベルにも同じクリックイベントを適用
+		richTextLabels.forEach((richText) => {
+			richText.addEventListener('click', (e) => {
+				const TabLabelId = e.target.closest('.vk_tab_labels_label').id;
+				const TabId = TabLabelId.replace('vk_tab_labels_label-', '');
+
+				// 現在のアクティブなラベルとボディを取得
+				const activeLabels = document.querySelectorAll(
+					'.vk_tab_labels_label-state-active'
+				);
+				activeLabels.forEach((activeLabel) => {
+					activeLabel.classList.remove(
+						'vk_tab_labels_label-state-active'
+					);
+					activeLabel.classList.add(
+						'vk_tab_labels_label-state-inactive'
+					);
+				});
+
+				// 新しいアクティブなラベルを設定
+				const newActiveLabel = document.querySelector(
+					`#vk_tab_labels_label-${TabId}`
+				);
+				newActiveLabel.classList.add(
+					'vk_tab_labels_label-state-active'
+				);
+				newActiveLabel.classList.remove(
+					'vk_tab_labels_label-state-inactive'
+				);
+				clickedActiveLabel = newActiveLabel; // クリックでアクティブになったタブを追跡
+
+				e.target.setAttribute('tabindex', '0');
+				e.target.setAttribute('aria-selected', 'true');
+
+				e.target.focus();
+			});
+		});
+
 		// クリーンアップ関数を追加してイベントリスナーを削除
 		return () => {
 			tabLabels.forEach((label) => {
@@ -389,8 +430,11 @@ export default function TabEdit(props) {
 				label.removeEventListener('mouseover', () => {});
 				label.removeEventListener('mouseout', () => {});
 			});
+			richTextLabels.forEach((richText) => {
+				richText.removeEventListener('click', () => {});
+			});
 		};
-	}, [childBlocks]);
+	}, [childBlocks]); // 修正：依存関係を適切に設定
 
 	return (
 		<>

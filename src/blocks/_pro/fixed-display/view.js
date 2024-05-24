@@ -40,10 +40,8 @@ function convertUnitToPixels(value, unit) {
 				value *
 				parseFloat(getComputedStyle(document.documentElement).fontSize)
 			);
-		case 'vh':
+		case 'svh':
 			return (value * window.innerHeight) / 100;
-		case 'vw':
-			return (value * window.innerWidth) / 100;
 		default:
 			return value; // 単位が不明な場合はピクセル値として扱う
 	}

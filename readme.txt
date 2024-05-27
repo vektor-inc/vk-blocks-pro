@@ -104,6 +104,7 @@ e.g.
 == Changelog ==
 
 [ Bug fix ][ Tab ] Fix innactive tab color setting.
+[ Add function ][ VK Button ] Add unit "percent" for border radius.
 
 = 1.73.0 =
 [ Add Block ] Add Tab Block

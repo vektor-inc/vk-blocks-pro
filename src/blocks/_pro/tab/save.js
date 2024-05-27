@@ -93,7 +93,11 @@ export default function save(props) {
 				</li>
 			);
 		});
-		tabList = <ul className={tabListClassName} role="tablist">{tabListInner}</ul>;
+		tabList = (
+			<ul className={tabListClassName} role="tablist">
+				{tabListInner}
+			</ul>
+		);
 	}
 
 	const blockProps = useBlockProps.save({

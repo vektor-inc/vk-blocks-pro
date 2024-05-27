@@ -3,7 +3,7 @@ import save1_73_0 from './1.73.0/save';
 const blockAttributes = {
 	tabOptionJSON: {
 		type: 'string',
-		default: '{}',
+		default: '[]',
 	},
 	tabSizeSp: {
 		type: 'string',

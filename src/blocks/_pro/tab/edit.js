@@ -200,8 +200,8 @@ export default function TabEdit(props) {
 
 			// クリックされた要素にアクティブを追加
 			vkTabLabels
-			.querySelector(`#vk_tab_labels_label-${TabId}`)
-			.classList.add('vk_tab_labels_label-state-active');
+				.querySelector(`#vk_tab_labels_label-${TabId}`)
+				.classList.add('vk_tab_labels_label-state-active');
 
 			/* 本体の処理 */
 			childBlocks.forEach((childBlock, index) => {
@@ -209,7 +209,7 @@ export default function TabEdit(props) {
 					setAttributes({ firstActive: parseInt(index, 10) });
 					// 子ブロックを選択状態にする -> タブ文字が隠れて編集できなくなるので一旦コメントアウト
 					// dispatch('core/block-editor').selectBlock(
-					//     childBlock.clientId
+					//	childBlock.clientId
 					// );
 				}
 			});

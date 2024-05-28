@@ -819,7 +819,7 @@ export default function ButtonEdit(props) {
 							{ value: '%', label: '%', default: 5 },
 							{ value: 'em', label: 'em', default: 1 },
 							{ value: 'rem', label: 'rem', default: 1 },
-						]}	
+						]}
 					/>
 				</PanelBody>
 			</InspectorControls>

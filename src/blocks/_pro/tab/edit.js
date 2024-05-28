@@ -177,6 +177,34 @@ export default function TabEdit(props) {
 		}
 	}, [tabBodyPaddingAll]);
 
+	useEffect(() => {
+		// 初期読み込み時にアクティブタブを設定
+		const activeLabel = document.querySelector(
+			'.vk_tab_labels_label-state-active'
+		);
+		if (activeLabel) {
+			activeLabel.classList.add('vk_tab_labels_label-state-active');
+			activeLabel.classList.remove('vk_tab_labels_label-state-inactive');
+		}
+		const inactiveLabels = document.querySelectorAll(
+			'.vk_tab_labels_label:not(.vk_tab_labels_label-state-active)'
+		);
+		inactiveLabels.forEach((label) => {
+			label.classList.add('vk_tab_labels_label-state-inactive');
+			if (
+				!label
+					.closest('.vk_tab')
+					.classList.contains('is-style-vk_tab_labels-line')
+			) {
+				label.style.setProperty(
+					'background-color',
+					'var(--vk-color-bg-inactive)',
+					'important'
+				);
+			}
+		});
+	}, []);
+
 	const liOnClick = (e) => {
 		if (childBlocks) {
 			const vkTab = e.target.closest('.vk_tab');
@@ -195,12 +223,38 @@ export default function TabEdit(props) {
 				activeLabel.classList.remove(
 					'vk_tab_labels_label-state-active'
 				);
+				activeLabel.classList.add('vk_tab_labels_label-state-inactive');
+				if (
+					!activeLabel
+						.closest('.vk_tab')
+						.classList.contains('is-style-vk_tab_labels-line')
+				) {
+					activeLabel.style.setProperty(
+						'background-color',
+						'var(--vk-color-bg-inactive)',
+						'important'
+					);
+				}
 			});
 
 			// クリックされた要素にアクティブを追加
-			vkTabLabels
-				.querySelector(`#vk_tab_labels_label-${TabId}`)
-				.classList.add('vk_tab_labels_label-state-active');
+			const newActiveLabel = vkTabLabels.querySelector(
+				`#vk_tab_labels_label-${TabId}`
+			);
+			newActiveLabel.classList.add('vk_tab_labels_label-state-active');
+			newActiveLabel.classList.remove(
+				'vk_tab_labels_label-state-inactive'
+			);
+			const activeTabBody = document.querySelector(`#block-${TabId}`);
+			const activeTabBodyStyle = window.getComputedStyle(activeTabBody);
+			if (
+				!newActiveLabel
+					.closest('.vk_tab')
+					.classList.contains('is-style-vk_tab_labels-line')
+			) {
+				newActiveLabel.style.backgroundColor =
+					activeTabBodyStyle.borderTopColor || '';
+			}
 
 			/* 本体の処理 */
 			childBlocks.forEach((childBlock, index) => {
@@ -208,7 +262,7 @@ export default function TabEdit(props) {
 					setAttributes({ firstActive: parseInt(index, 10) });
 					// 子ブロックを選択状態にする -> タブ文字が隠れて編集できなくなるので一旦コメントアウト
 					// dispatch('core/block-editor').selectBlock(
-					// 	childBlock.clientId
+					//  childBlock.clientId
 					// );
 				}
 			});
@@ -247,6 +301,8 @@ export default function TabEdit(props) {
 			let activeLabelClass = '';
 			if (firstActive === index) {
 				activeLabelClass = ' vk_tab_labels_label-state-active';
+			} else {
+				activeLabelClass = ' vk_tab_labels_label-state-inactive';
 			}
 			let tabColorClass = '';
 			let tabColorStyle = {};
@@ -280,6 +336,119 @@ export default function TabEdit(props) {
 					id={`vk_tab_labels_label-${childBlock.attributes.blockId}`}
 					className={`vk_tab_labels_label${activeLabelClass}${tabColorClass}`}
 					style={tabColorStyle}
+					onClick={liOnClick}
+					onMouseOver={(e) => {
+						if (
+							!e.currentTarget.classList.contains(
+								'vk_tab_labels_label-state-active'
+							)
+						) {
+							const activeTabBody = document.querySelector(
+								`#block-${childBlock.attributes.blockId}`
+							);
+							const activeTabBodyStyle =
+								window.getComputedStyle(activeTabBody);
+							if (
+								!e.currentTarget
+									.closest('.vk_tab')
+									.classList.contains(
+										'is-style-vk_tab_labels-line'
+									)
+							) {
+								e.currentTarget.style.backgroundColor =
+									activeTabBodyStyle.borderTopColor || '';
+							}
+							e.currentTarget.classList.add(
+								'hovered-temp-active'
+							);
+						}
+					}}
+					onMouseOut={(e) => {
+						if (
+							!e.currentTarget.classList.contains(
+								'vk_tab_labels_label-state-active'
+							)
+						) {
+							if (
+								!e.currentTarget
+									.closest('.vk_tab')
+									.classList.contains(
+										'is-style-vk_tab_labels-line'
+									)
+							) {
+								e.currentTarget.style.setProperty(
+									'background-color',
+									'var(--vk-color-bg-inactive)',
+									'important'
+								);
+							} else {
+								e.currentTarget.style.backgroundColor = '';
+							}
+							e.currentTarget.classList.remove(
+								'hovered-temp-active'
+							);
+						}
+					}}
+					onFocus={(e) => {
+						if (
+							!e.currentTarget.classList.contains(
+								'vk_tab_labels_label-state-active'
+							)
+						) {
+							const activeTabBody = document.querySelector(
+								`#block-${childBlock.attributes.blockId}`
+							);
+							const activeTabBodyStyle =
+								window.getComputedStyle(activeTabBody);
+							if (
+								!e.currentTarget
+									.closest('.vk_tab')
+									.classList.contains(
+										'is-style-vk_tab_labels-line'
+									)
+							) {
+								e.currentTarget.style.backgroundColor =
+									activeTabBodyStyle.borderTopColor || '';
+							}
+							e.currentTarget.classList.add(
+								'hovered-temp-active'
+							);
+						}
+					}}
+					onBlur={(e) => {
+						if (
+							!e.currentTarget.classList.contains(
+								'vk_tab_labels_label-state-active'
+							)
+						) {
+							if (
+								!e.currentTarget
+									.closest('.vk_tab')
+									.classList.contains(
+										'is-style-vk_tab_labels-line'
+									)
+							) {
+								e.currentTarget.style.setProperty(
+									'background-color',
+									'var(--vk-color-bg-inactive)',
+									'important'
+								);
+							} else {
+								e.currentTarget.style.backgroundColor = '';
+							}
+							e.currentTarget.classList.remove(
+								'hovered-temp-active'
+							);
+						}
+					}}
+					onKeyPress={(e) => {
+						if (e.key === 'Enter') {
+							liOnClick(e);
+						}
+					}}
+					tabIndex="0"
+					aria-selected={firstActive === index}
+					role="tab"
 				>
 					<RichText
 						tagName="div"
@@ -292,11 +461,11 @@ export default function TabEdit(props) {
 							});
 						}}
 						placeholder={sprintf(
-							// translators: Tab label [i]
 							__('Tab Label [ %s ]', 'vk-Blocks-pro'),
 							index + 1
 						)}
 						onClick={(e) => {
+							e.stopPropagation();
 							liOnClick(e);
 						}}
 					/>

@@ -1,4 +1,4 @@
-import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import { InnerBlocks, useBlockProps, RichText } from '@wordpress/block-editor';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function save(props) {
@@ -10,6 +10,7 @@ export default function save(props) {
 		tabSizePc,
 		firstActive,
 		blockId,
+		className,
 	} = attributes;
 
 	const tabSizePrefix = 'vk_tab_labels-tabSize';
@@ -61,18 +62,14 @@ export default function save(props) {
 					if (!isHexColor(option.tabColor)) {
 						tabColorClass += ` has-${option.tabColor}-background-color`;
 					} else {
-						tabColorStyle = {
-							backgroundColor: option.tabColor,
-						};
+						tabColorStyle = { backgroundColor: option.tabColor };
 					}
 				} else if (tabOption.tabLabelBorderTop) {
 					tabSpanColorClass = ' has-border-top';
 					if (!isHexColor(option.tabColor)) {
 						tabSpanColorClass += ` has-${option.tabColor}-border-color`;
 					} else {
-						tabSpanColorStyle = {
-							borderTopColor: option.tabColor,
-						};
+						tabSpanColorStyle = { borderTopColor: option.tabColor };
 					}
 				}
 			}
@@ -81,15 +78,19 @@ export default function save(props) {
 				<li
 					id={`vk_tab_labels_label-${option.blockId}`}
 					className={`vk_tab_labels_label${activeLabelClass}${tabColorClass}`}
-					style={tabColorStyle}
 					key={index}
+					{...(Object.keys(tabColorStyle).length > 0 && {
+						style: tabColorStyle,
+					})}
 				>
-					<div
+					<RichText.Content
+						tagName="div"
 						className={tabSpanColorClass}
-						style={tabSpanColorStyle}
-					>
-						{option.tabLabel}
-					</div>
+						{...(Object.keys(tabSpanColorStyle).length > 0 && {
+							style: tabSpanColorStyle,
+						})}
+						value={option.tabLabel}
+					/>
 				</li>
 			);
 		});
@@ -101,7 +102,7 @@ export default function save(props) {
 	}
 
 	const blockProps = useBlockProps.save({
-		className: `vk_tab`,
+		className: `vk_tab ${className || ''}`,
 		id: `vk-tab-id-${blockId}`,
 	});
 

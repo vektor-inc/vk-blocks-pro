@@ -103,6 +103,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Tab ] Fixed the default line style to show the top of the border.
 [ Bug fix ][ Tab ] Fix innactive tab color setting.
 [ Add function ][ VK Button ] Add unit "percent" for border radius.
 

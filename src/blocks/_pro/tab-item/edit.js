@@ -62,7 +62,7 @@ export default function TabItemEdit(props) {
 				parentTabBlockIdList[0]
 		  )
 		: [];
-	
+
 	const parentTabBlock = parentTabBlockList[0] ? parentTabBlockList[0] : {};
 
 	useEffect(() => {

@@ -17,7 +17,7 @@ export default function TabItemEdit(props) {
 
 	const { updateBlockAttributes } = dispatch('core/block-editor');
 
-	const innerBlocksTemplate = [
+	let innerBlocksTemplate = [
 		[
 			'core/group',
 			{
@@ -26,9 +26,6 @@ export default function TabItemEdit(props) {
 						style: 'solid',
 						color: '#cccccc',
 						width: '1px',
-						top: {
-							width: '0px',
-						},
 					},
 					spacing: {
 						padding: {
@@ -48,45 +45,26 @@ export default function TabItemEdit(props) {
 	];
 
 	useEffect(() => {
-		if (
-			blockId === undefined ||
-			isParentReusableBlock(clientId) === false
-		) {
+		if (blockId === undefined || isParentReusableBlock(clientId) === false) {
 			setAttributes({ blockId: clientId });
 		}
 	}, [clientId]);
 
-	const parentTabBlockIdList = select(
-		'core/block-editor'
-	).getBlockParentsByBlockName(clientId, ['vk-blocks/tab']);
-
-	const parentTabBlockList = parentTabBlockIdList[0]
-		? select('core/block-editor').getBlocksByClientId(
-				parentTabBlockIdList[0]
-		  )
-		: [];
-
+	const parentTabBlockIdList = select('core/block-editor').getBlockParentsByBlockName(clientId, ['vk-blocks/tab']);
+	const parentTabBlockList = parentTabBlockIdList[0] ? select('core/block-editor').getBlocksByClientId(parentTabBlockIdList[0]) : [];
 	const parentTabBlock = parentTabBlockList[0] ? parentTabBlockList[0] : {};
 
 	useEffect(() => {
-		if (
-			parentTabBlock &&
-			parentTabBlock.attributes &&
-			parentTabBlock.innerBlocks
-		) {
+		if (parentTabBlock && parentTabBlock.attributes && parentTabBlock.innerBlocks) {
 			const tabOptionJSON = parentTabBlock.attributes.tabOptionJSON;
 			const childBlocks = parentTabBlock.innerBlocks;
 
 			if (tabOptionJSON && childBlocks && tabColor) {
 				const tabOption = JSON.parse(tabOptionJSON);
-				if (
-					Object.keys(tabOption).length !== 0 &&
-					Array.isArray(tabOption.listArray) &&
-					tabOption.listArray.length !== 0
-				) {
+				if (Object.keys(tabOption).length !== 0 && Array.isArray(tabOption.listArray) && tabOption.listArray.length !== 0) {
 					let childIndex = -1;
-					childBlocks.forEach((chiildBlock, index) => {
-						if (chiildBlock.clientId === clientId) {
+					childBlocks.forEach((childBlock, index) => {
+						if (childBlock.clientId === clientId) {
 							childIndex = index;
 						}
 					});
@@ -126,23 +104,28 @@ export default function TabItemEdit(props) {
 		},
 	});
 
+	const parentClassName = parentTabBlock.attributes.className || '';
+
+	// Check if the parent tab block has the specific styles
+	const parentHasNormalStyles = parentClassName.includes('is-style-vk_tab_labels-normal') || parentClassName.includes('is-style-vk_tab_labels-normal-no-frame');
+
+	if (parentHasNormalStyles) {
+		innerBlocksTemplate[0][1].style.border.top = {
+			width: '0px',
+		};
+	}
+
 	return (
 		<>
 			<InspectorControls>
 				<PanelBody title={__('Tab Color Setting', 'vk-blocks-pro')}>
-					<BaseControl
-						id={`vk_block_button_custom_background_color`}
-						label={__('Tab Color', 'vk-blocks-pro')}
-					>
+					<BaseControl id={`vk_block_button_custom_background_color`} label={__('Tab Color', 'vk-blocks-pro')}>
 						<AdvancedColorPalette schema={'tabColor'} {...props} />
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
-				<InnerBlocks
-					templateLock={false}
-					template={innerBlocksTemplate}
-				/>
+				<InnerBlocks templateLock={false} template={innerBlocksTemplate} />
 			</div>
 		</>
 	);

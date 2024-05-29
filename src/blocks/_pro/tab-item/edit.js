@@ -150,8 +150,8 @@ export default function TabItemEdit(props) {
 			</InspectorControls>
 			<div {...blockProps}>
 				<InnerBlocks
-						templateLock={false}
-						template={innerBlocksTemplate}
+					templateLock={false}
+					template={innerBlocksTemplate}
 				/>
 			</div>
 		</>

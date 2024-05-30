@@ -104,6 +104,7 @@ e.g.
 == Changelog ==
 
 [ Bug fix ][ Tab ] Fix the default line style to show the top of the border.
+[ Bug fix ][ Button ] Fixed button URL being output in editor.
 [ Bug fix ][ Tab ] Fix innactive tab color setting.
 [ Add function ][ VK Button ] Add unit "percent" for border radius.
 

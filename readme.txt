@@ -103,6 +103,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ] Add toolbar link to components.
 [ Bug fix ][ Button ] Fixed button URL being output in editor.
 [ Bug fix ][ Tab ] Fix innactive tab color setting.
 [ Add function ][ VK Button ] Add unit "percent" for border radius.

@@ -1,10 +1,5 @@
 import { useState } from 'react';
-import {
-    ToolbarButton,
-    Dropdown,
-    CheckboxControl,
-    Button,
-} from '@wordpress/components';
+import { ToolbarButton, Dropdown, CheckboxControl, Button } from '@wordpress/components';
 import { URLInput } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 import { link, linkOff, keyboardReturn } from '@wordpress/icons';
@@ -12,28 +7,30 @@ import { link, linkOff, keyboardReturn } from '@wordpress/icons';
 const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const toggleDropdown = () => {
-        setIsOpen(!isOpen);
+    const handleToggle = () => {
+        if (!isOpen) {
+            setIsOpen(true);
+        } else {
+            if (linkUrl === '') {
+                setIsOpen(false);
+            }
+        }
     };
 
     return (
         <Dropdown
-            isOpen={isOpen}
-            onToggle={toggleDropdown}
             popoverProps={{ placement: 'bottom-start' }}
             renderToggle={({ isOpen, onToggle }) => {
                 const setLink = () => {
-                    if (isOpen && linkUrl !== '') {
-                        setLinkUrl('');
-                    }
+                    handleToggle();
                     onToggle();
                 };
                 return (
                     <ToolbarButton
                         aria-expanded={isOpen}
-                        icon={linkUrl !== '' ? linkOff : link}
-                        isActive={linkUrl !== ''}
-                        label={linkUrl !== '' ? __('Unlink') : __('Input Link URL', 'vk-blocks-pro')}
+                        icon={isOpen ? linkOff : link}
+                        isActive={isOpen}
+                        label={isOpen ? __('Unlink') : __('Input Link URL', 'vk-blocks-pro')}
                         onClick={setLink}
                     />
                 );

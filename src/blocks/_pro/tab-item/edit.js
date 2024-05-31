@@ -24,8 +24,11 @@ export default function TabItemEdit(props) {
 				style: {
 					border: {
 						style: 'solid',
-						color: '#cccccc',
+						color: '#0000001f',
 						width: '1px',
+						top: {
+							width: '0px',
+						},
 					},
 					spacing: {
 						padding: {
@@ -122,19 +125,6 @@ export default function TabItemEdit(props) {
 			...tabBodyStyle,
 		},
 	});
-
-	const parentClassName = parentTabBlock.attributes.className || '';
-
-	// Check if the parent tab block has the specific styles
-	const parentHasNormalStyles =
-		parentClassName.includes('is-style-vk_tab_labels-normal') ||
-		parentClassName.includes('is-style-vk_tab_labels-normal-no-frame');
-
-	if (parentHasNormalStyles) {
-		innerBlocksTemplate[0][1].style.border.top = {
-			width: '0px',
-		};
-	}
 
 	return (
 		<>

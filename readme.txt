@@ -103,6 +103,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] Fix block categories order
+
 = 1.73.0 =
 [ Add Block ] Add Tab Block
 [ Add function ][ Columns ] Add direction reverse option.

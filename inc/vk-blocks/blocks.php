@@ -58,7 +58,7 @@ function vk_blocks_blocks_categories( $categories ) {
 
 	return $categories;
 }
-add_filter( 'block_categories_all', 'vk_blocks_blocks_categories', 10, 2 );
+add_filter( 'block_categories_all', 'vk_blocks_blocks_categories', 8, 2 );
 
 /**
  * VK Blocks Hide Blocks

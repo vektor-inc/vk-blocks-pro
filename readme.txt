@@ -103,13 +103,18 @@ e.g.
 
 == Changelog ==
 
+
 [ Specification Change ] Fix block categories order
+[ Bug fix ][ Button ] Fixed button URL being output in editor.
+[ Bug fix ][ Tab ] Fix innactive tab color setting.
+[ Add function ][ VK Button ] Add unit "percent" for border radius.
+
 
 = 1.73.0 =
 [ Add Block ] Add Tab Block
 [ Add function ][ Columns ] Add direction reverse option.
-[ Add function ][ Button ] Add border radius setting.
-[ Add Function ][ Spacer ][ Common margin ] Add size option XXL/XXS.
+[ Add function ][ VK Button ] Add border radius setting.
+[ Add Function ][ Spacer / Common margin ] Add size option XXL/XXS.
 [ Add function ][ Grid Column Card (Pro) ] Add border width setting to grid column card block.
 [ Add Function ][ Outer (Pro) ] Added option to min height setting.
 [ Specification Change ][ Custom CSS (Pro) ] Changed the custom CSS text area to be wider

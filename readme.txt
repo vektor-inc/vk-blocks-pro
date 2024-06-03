@@ -103,6 +103,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Slider ] Add url interface to block toolbar for slider item.
 [ Add function ] Add toolbar link to components.
 [ Bug fix ][ Button ] Fixed button URL being output in editor.
 [ Bug fix ][ Tab ] Fix innactive tab color setting.

@@ -16,7 +16,7 @@ function vk_blocks_blocks_categories( $categories ) {
 	foreach ( $categories as $key => $value ) {
 		$keys[] = $value['slug'];
 	}
-	
+
 	if ( ! in_array( 'vk-blocks-cat-layout', $keys, true ) ) {
 		$categories = array_merge(
 			array(

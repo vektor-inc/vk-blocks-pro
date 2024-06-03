@@ -58,7 +58,7 @@ function vk_blocks_blocks_categories( $categories ) {
 
 	return $categories;
 }
-add_filter( 'block_categories_all', 'vk_blocks_blocks_categories', 10, 2 );
+add_filter( 'block_categories_all', 'vk_blocks_blocks_categories', 11, 2 ); // ExUnit を 先に処理するために priority 11 に設定
 
 /**
  * VK Blocks Hide Blocks

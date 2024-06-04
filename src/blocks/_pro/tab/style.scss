@@ -71,7 +71,7 @@ $xl-min: 1200px;
 		}
 		&.vk_tab_labels_label-state-active {
 			color: var(--default-color);
-			background-color: var(--vk-color-bg-accent-wh);
+			background-color: #fff !important;
 			&::before {
 				// content: none;
 				background-color: #fff;

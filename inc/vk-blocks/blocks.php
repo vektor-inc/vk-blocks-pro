@@ -58,8 +58,9 @@ function vk_blocks_blocks_categories( $categories ) {
 
 	return $categories;
 }
+
 /*
-priority
+Priority
 10 - Exunit
 11 - Video Block
 12 - VK Filter Search

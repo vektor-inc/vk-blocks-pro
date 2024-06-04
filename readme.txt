@@ -103,7 +103,7 @@ e.g.
 
 == Changelog ==
 
-[ Specification Change ] Delete unnecessary css value.
+[ Specification Change ] Delete unnecessary css value  ( We abolished the --vk-size-text and changed it to 1rem. ).
 
 = 1.73.0 =
 [ Add Block ] Add Tab Block

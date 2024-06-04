@@ -28,7 +28,7 @@
 		}
 	}
 	&-background-color-rounded{
-		border-radius: calc(1rem * 0.5 );
+		border-radius: calc( 1rem * 0.5 );
 		.vk_accordion-trigger{
 			border-bottom:none;
 			background-color: rgba(0,0,0,.05);
@@ -39,7 +39,7 @@
 	}
 	&-background-color-rounded-border{
 		border: 1px solid var(--vk-color-border);
-		border-radius: calc(1rem * 0.5 );
+		border-radius: calc( 1rem * 0.5 );
 		.vk_accordion-trigger{
 			background-color: rgba(0,0,0,.05);
 		}

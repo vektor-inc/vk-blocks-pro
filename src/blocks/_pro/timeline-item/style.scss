@@ -10,10 +10,10 @@
 	.vk_timeline_item {
 		position: relative;
 		padding: 0 0 2.4em 1.8em;
-		padding:0 0 0 calc(var(--vk-size-text) * 1.8 );
+		padding:0 0 0 calc(1rem * 1.8 );
 		h3:first-of-type,
 		h4:first-of-type {
-			margin-top: calc(var(--vk-size-text) * 0.5 );
+			margin-top: calc(1rem * 0.5 );
 		}
 		&_caption {
 			margin-bottom: 1.5em;

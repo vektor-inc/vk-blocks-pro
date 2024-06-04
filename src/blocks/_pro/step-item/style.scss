@@ -2,7 +2,7 @@
 /* CSS
 /*-------------------------------------------*/
 :root {
-	--vk-step-item-dot-num-line-height:calc(var(--vk-size-text) * 1.2 );
+	--vk-step-item-dot-num-line-height:calc(1rem * 1.2 );
 }
 
 .vk_step {
@@ -13,11 +13,11 @@
 	}
 	.vk_step_item {
 		position: relative;
-		padding:0 0 0 calc(var(--vk-size-text) * 4.5 );
+		padding:0 0 0 calc(1rem * 4.5 );
 		margin: 0 auto;
 		h3:first-of-type,
 		h4:first-of-type {
-			padding-top: calc(var(--vk-size-text) * 0.5 );
+			padding-top: calc(1rem * 0.5 );
 			margin-top: 0;
 		}
 		&_content {
@@ -107,8 +107,8 @@
 			}
 		}
 		.vk_step_item_dot_caption {
-			font-size: calc(var(--vk-size-text) * 0.5 );
-			line-height: calc(var(--vk-size-text) * 0.875 );
+			font-size: calc(1rem * 0.5 );
+			line-height: calc(1rem * 0.875 );
 		}
 	}
 }

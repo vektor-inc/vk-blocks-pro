@@ -20,7 +20,7 @@
 .vk_card {
   &_item {
     .vk_post_title.card-title {
-	  font-size: calc(var(--vk-size-text) * 1 );
+	  font-size: calc(1rem * 1 );
 	  @include title_design_unset;
     }
     .vk_post_excerpt.card-text {

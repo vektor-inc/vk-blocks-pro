@@ -86,7 +86,7 @@
 .vk_balloon_content {
 	background: #f5f5f5;
 	// padding: 1rem 1.2rem;
-	padding: calc(var(--vk-size-text) * 1 ) calc(var(--vk-size-text) * 1.2);
+	padding: calc(1rem * 1 ) calc(1rem * 1.2);
 }
 
 .vk_balloon_content_before,
@@ -144,7 +144,7 @@
 .vk_balloon-position-left{
 	&.vk_balloon-type-speech{
 		.vk_balloon_icon{
-			margin-right: calc( var(--vk-size-text) * 1.2 );
+			margin-right: calc( 1rem * 1.2 );
 		}
 		.vk_balloon_content{
 			.vk_balloon_content_before,
@@ -157,7 +157,7 @@
 
 	&.vk_balloon-type-think{
 		.vk_balloon_icon{
-			margin-right: calc( var(--vk-size-text) * 1.2 );
+			margin-right: calc( 1rem * 1.2 );
 		}
 		.vk_balloon_content{
 
@@ -177,7 +177,7 @@
 	flex-direction: row-reverse;
 	&.vk_balloon-type-speech{
 		.vk_balloon_icon{
-			margin-left: calc( var(--vk-size-text) * 1.2 );
+			margin-left: calc( 1rem * 1.2 );
 		}
 		.vk_balloon_content{
 			.vk_balloon_content_before,
@@ -191,7 +191,7 @@
 
 	&.vk_balloon-type-think{
 		.vk_balloon_icon{
-			margin-left: calc( var(--vk-size-text) * 1.2 );
+			margin-left: calc( 1rem * 1.2 );
 		}
 		.vk_balloon_content{
 			.vk_balloon_content_before{

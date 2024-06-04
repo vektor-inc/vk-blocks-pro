@@ -103,9 +103,12 @@ e.g.
 
 == Changelog ==
 
+
+[ Specification Change ] Fix block categories order
 [ Bug fix ][ Button ] Fixed button URL being output in editor.
 [ Bug fix ][ Tab ] Fix innactive tab color setting.
 [ Add function ][ VK Button ] Add unit "percent" for border radius.
+
 
 = 1.73.0 =
 [ Add Block ] Add Tab Block

@@ -305,34 +305,36 @@ export default function TabEdit(props) {
 				activeLabelClass = ' vk_tab_labels_label-state-inactive';
 			}
 			let tabColorClass = '';
-			const tabColorStyle = {};
+			let tabColorStyle = {};
 			let tabSpanColorClass = '';
-			const tabSpanColorStyle = {};
-
+			let tabSpanColorStyle = {};
+			
 			if (childBlock.attributes.tabColor !== '') {
 				if (tabOption.tabLabelBackground) {
 					tabColorClass = ' has-background';
 					if (!isHexColor(childBlock.attributes.tabColor)) {
 						tabColorClass += ` has-${childBlock.attributes.tabColor}-background-color`;
 					} else {
-						tabColorStyle.backgroundColor =
-							childBlock.attributes.tabColor;
+						tabColorStyle.backgroundColor = childBlock.attributes.tabColor;
 					}
 				} else if (tabOption.tabLabelBorderTop) {
 					tabSpanColorClass = ' has-border-top';
 					if (!isHexColor(childBlock.attributes.tabColor)) {
 						tabSpanColorClass += ` has-${childBlock.attributes.tabColor}-border-color`;
 					} else {
-						tabSpanColorStyle.borderTopColor =
-							childBlock.attributes.tabColor;
+						tabSpanColorStyle.borderTopColor = childBlock.attributes.tabColor;
 					}
 					// Only set color if the label is active
 					if (firstActive === index) {
 						tabColorStyle.color = childBlock.attributes.tabColor;
+						const borderColorClassMatch = tabSpanColorClass.match(/has-(.*)-border-color/);
+						if (borderColorClassMatch) {
+							tabSpanColorClass += ` has-${borderColorClassMatch[1]}-color`;
+						}
 					}
 				}
-			}
-
+			}           
+	
 			return (
 				<li
 					key={index}

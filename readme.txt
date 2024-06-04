@@ -104,6 +104,8 @@ e.g.
 == Changelog ==
 
 [ Add Block ][ Fixed Display block (Pro) ] Add Fixed display block.
+[ Bug fix ][ Button ] Fixed button URL being output in editor.
+[ Bug fix ][ Tab ] Fix innactive tab color setting.
 [ Add function ][ VK Button ] Add unit "percent" for border radius.
 
 = 1.73.0 =

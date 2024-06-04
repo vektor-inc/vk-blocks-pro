@@ -303,32 +303,35 @@ export default function TabEdit(props) {
 				activeLabelClass = ' vk_tab_labels_label-state-active';
 			} else {
 				activeLabelClass = ' vk_tab_labels_label-state-inactive';
-			}let tabColorClass = '';
-			let tabColorStyle = {};
+			}
+			let tabColorClass = '';
+			const tabColorStyle = {};
 			let tabSpanColorClass = '';
-			let tabSpanColorStyle = {};
-			
+			const tabSpanColorStyle = {};
+
 			if (childBlock.attributes.tabColor !== '') {
 				if (tabOption.tabLabelBackground) {
 					tabColorClass = ' has-background';
 					if (!isHexColor(childBlock.attributes.tabColor)) {
 						tabColorClass += ` has-${childBlock.attributes.tabColor}-background-color`;
 					} else {
-						tabColorStyle.backgroundColor = childBlock.attributes.tabColor;
+						tabColorStyle.backgroundColor =
+							childBlock.attributes.tabColor;
 					}
 				} else if (tabOption.tabLabelBorderTop) {
 					tabSpanColorClass = ' has-border-top';
 					if (!isHexColor(childBlock.attributes.tabColor)) {
 						tabSpanColorClass += ` has-${childBlock.attributes.tabColor}-border-color`;
 					} else {
-						tabSpanColorStyle.borderTopColor = childBlock.attributes.tabColor;
+						tabSpanColorStyle.borderTopColor =
+							childBlock.attributes.tabColor;
 					}
 					// Only set color if the label is active
 					if (firstActive === index) {
 						tabColorStyle.color = childBlock.attributes.tabColor;
 					}
 				}
-			}			
+			}
 
 			return (
 				<li

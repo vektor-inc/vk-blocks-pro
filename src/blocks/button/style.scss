@@ -402,15 +402,15 @@ a.vk_button_link {
 			padding: 0.6em 1.5rem;
 			user-select: text;
 			text-decoration: none;
-			font-size: calc( var(--vk-size-text) * 1 );
+			font-size: calc( 1rem * 1 );
 
 			
 		}
 		&.btn-lg{
-			font-size:calc( var(--vk-size-text) * 1.25 );
+			font-size:calc( 1rem * 1.25 );
 		}
 		&.btn-sm {
-			font-size: calc( var(--vk-size-text) * .875 );
+			font-size: calc( 1rem * .875 );
 		}
 		&_before {
 			margin-right: 0.7rem;

@@ -103,11 +103,13 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] Delete unnecessary css value  ( We abolished the --vk-size-text and changed it to 1rem. ).
+
 = 1.74.0 =
 [ Specification Change ] Fix block categories order
 [ Specification Change ][ VK Button ] Add unit "percent" for border radius.
-[ Bug fix ][ Button ] Fixed button URL being output in editor.
-[ Bug fix ][ Tab ] Fix innactive tab color setting.
+[ Bug fix ][ VK Button ] Fixed button URL being output in editor.
+[ Bug fix ][ Tab (Pro) ] Fix innactive tab color setting.
 
 = 1.73.0 =
 [ Add Block ] Add Tab Block

@@ -52,7 +52,7 @@ $xl-min: 1200px;
 		}
 		&:hover {
 			color: var(--default-color);
-			background-color: var(--vk-color-bg-accent-wh);
+			background-color: #fff !important;
 			&::before {
 				bottom: 0;
 				z-index: 0;
@@ -62,7 +62,7 @@ $xl-min: 1200px;
 			&::after {
 				z-index: 1;
 				height: 2px;
-				background-color: var(--default-color);
+				// background-color: var(--default-color); // ここで色を指定すると hover での色変更が効かない
 				transition: all .5s ease-out;
 			}
 		}
@@ -79,24 +79,22 @@ $xl-min: 1200px;
 			&::after {
 				z-index: 1;
 				height: 2px;
-				background-color: var(--default-color);
+				// background-color: var(--default-color); // ここで色を指定すると hover での色変更が効かない
 			}
 		}
 		&.vk_tab_labels_label-state-inactive {
-			background-color: #fff;
 			color: initial;
 			&:hover {
-				background-color: var(--vk-color-bg-accent-wh);
-				color: var(--default-color);
+				// background-color: #fff; // ここで色を指定すると hover での色変更が効かない
 				opacity: 0.8;
 			}
 		}
 	}
 	.vk_tab_bodys {
 		border-top: 1px solid var(--vk-color-border);
-	}
-	.has-border-top {
-		border-top: none;
+		.has-border-top {
+			border-top: none;
+		}
 	}
 }
 

@@ -2,9 +2,9 @@
 Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird,chiakikouno,doshimaf,mtdkei
 Donate link:
 Tags: Gutenberg,FAQ,alert
-Requires at least: 6.2
+Requires at least: 6.3
 Tested up to: 6.5
-Stable tag: 1.72.1.1
+Stable tag: 1.73.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -103,11 +103,17 @@ e.g.
 
 == Changelog ==
 
+= 1.74.0 =
+[ Specification Change ] Fix block categories order
+[ Specification Change ][ VK Button ] Add unit "percent" for border radius.
+[ Bug fix ][ Button ] Fixed button URL being output in editor.
+[ Bug fix ][ Tab ] Fix innactive tab color setting.
+
 = 1.73.0 =
 [ Add Block ] Add Tab Block
 [ Add function ][ Columns ] Add direction reverse option.
-[ Add function ][ Button ] Add border radius setting.
-[ Add Function ][ Spacer ][ Common margin ] Add size option XXL/XXS.
+[ Add function ][ VK Button ] Add border radius setting.
+[ Add Function ][ Spacer / Common margin ] Add size option XXL/XXS.
 [ Add function ][ Grid Column Card (Pro) ] Add border width setting to grid column card block.
 [ Add Function ][ Outer (Pro) ] Added option to min height setting.
 [ Specification Change ][ Custom CSS (Pro) ] Changed the custom CSS text area to be wider

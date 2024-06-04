@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.2
 Tested up to: 6.5
-Stable tag: 1.72.1.1
+Stable tag: 1.73.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -103,12 +103,11 @@ e.g.
 
 == Changelog ==
 
-
+= 1.74.0 =
 [ Specification Change ] Fix block categories order
+[ Specification Change ][ VK Button ] Add unit "percent" for border radius.
 [ Bug fix ][ Button ] Fixed button URL being output in editor.
 [ Bug fix ][ Tab ] Fix innactive tab color setting.
-[ Add function ][ VK Button ] Add unit "percent" for border radius.
-
 
 = 1.73.0 =
 [ Add Block ] Add Tab Block

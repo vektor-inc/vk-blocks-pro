@@ -26,7 +26,7 @@ export default function FixedDisplayEdit(props) {
 		scrollTimingUnit = 'px',
 		scrollPersistVisible = false,
 		fixedTopPosition = 50,
-		fixedTopPositionUnit = 'svh'
+		fixedTopPositionUnit = 'svh',
 	} = attributes;
 
 	useEffect(() => {
@@ -49,8 +49,10 @@ export default function FixedDisplayEdit(props) {
 	const blockProps = useBlockProps({
 		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} vk_fixed-display-${blockId}`,
 		style: {
-			top: ['right', 'left'].includes(position) ? `${fixedTopPosition}${fixedTopPositionUnit}` : undefined,
-		}
+			top: ['right', 'left'].includes(position)
+				? `${fixedTopPosition}${fixedTopPositionUnit}`
+				: undefined,
+		},
 	});
 
 	return (
@@ -94,7 +96,10 @@ export default function FixedDisplayEdit(props) {
 					/>
 					{['right', 'left'].includes(position) && (
 						<UnitControl
-							label={__('Fixed position from the top', 'vk-blocks-pro')}
+							label={__(
+								'Fixed position from the top',
+								'vk-blocks-pro'
+							)}
 							value={`${fixedTopPosition}${fixedTopPositionUnit}`}
 							onChange={(nextValue) => {
 								const unit =
@@ -129,7 +134,10 @@ export default function FixedDisplayEdit(props) {
 								units={units}
 							/>
 							<ToggleControl
-								label={__('Persist visibility once visible', 'vk-blocks-pro')}
+								label={__(
+									'Persist visibility once visible',
+									'vk-blocks-pro'
+								)}
 								checked={scrollPersistVisible}
 								onChange={(value) =>
 									setAttributes({
@@ -142,7 +150,10 @@ export default function FixedDisplayEdit(props) {
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
-				<InnerBlocks />
+				<InnerBlocks
+					templateLock={false}
+					template={[['core/paragraph']]}
+				/>
 			</div>
 		</>
 	);

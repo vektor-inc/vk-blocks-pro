@@ -10,7 +10,7 @@ export default function save(props) {
 		tabSizePc,
 		firstActive,
 		blockId,
-		className,
+		className = '',
 	} = attributes;
 
 	const tabSizePrefix = 'vk_tab_labels-tabSize';
@@ -41,10 +41,7 @@ export default function save(props) {
 
 	let tabList = '';
 	let tabListInner = '';
-	if (
-		Object.keys(tabOption).length !== 0 &&
-		tabOption.listArray.length !== 0
-	) {
+	if (Object.keys(tabOption).length !== 0 && tabOption.listArray.length !== 0) {
 		tabListInner = tabOption.listArray.map((option, index) => {
 			let activeLabelClass = '';
 			if (firstActive === index) {
@@ -53,25 +50,47 @@ export default function save(props) {
 				activeLabelClass = ' vk_tab_labels_label-state-inactive';
 			}
 			let tabColorClass = '';
-			let tabColorStyle = {};
+			const tabColorStyle = {};
 			let tabSpanColorClass = '';
-			let tabSpanColorStyle = {};
+			const tabSpanColorStyle = {};
+
 			if (option.tabColor !== '') {
 				if (tabOption.tabLabelBackground) {
 					tabColorClass = ' has-background';
 					if (!isHexColor(option.tabColor)) {
 						tabColorClass += ` has-${option.tabColor}-background-color`;
 					} else {
-						tabColorStyle = { backgroundColor: option.tabColor };
+						tabColorStyle.backgroundColor = option.tabColor;
 					}
 				} else if (tabOption.tabLabelBorderTop) {
 					tabSpanColorClass = ' has-border-top';
 					if (!isHexColor(option.tabColor)) {
 						tabSpanColorClass += ` has-${option.tabColor}-border-color`;
 					} else {
-						tabSpanColorStyle = { borderTopColor: option.tabColor };
+						tabSpanColorStyle.borderTopColor = option.tabColor;
+					}
+					// Only set color if the label is active
+					if (firstActive === index) {
+						tabColorStyle.color = option.tabColor;
+						const borderColorClassMatch = tabSpanColorClass.match(/has-(.*)-border-color/);
+						if (borderColorClassMatch) {
+							tabSpanColorClass += ` has-${borderColorClassMatch[1]}-color`;
+						}
 					}
 				}
+			}
+
+			if (activeLabelClass.includes('vk_tab_labels_label-state-inactive')) {
+				delete tabColorStyle.color;
+			}
+
+			if (
+				className.includes('is-style-vk_tab_labels-line') &&
+				activeLabelClass.includes('vk_tab_labels_label-state-active') &&
+				tabSpanColorClass.includes('has-border-top') &&
+				tabSpanColorStyle.borderTopColor
+			) {
+				tabColorStyle.color = tabSpanColorStyle.borderTopColor;
 			}
 
 			return (
@@ -79,16 +98,12 @@ export default function save(props) {
 					id={`vk_tab_labels_label-${option.blockId}`}
 					className={`vk_tab_labels_label${activeLabelClass}${tabColorClass}`}
 					key={index}
-					{...(Object.keys(tabColorStyle).length > 0 && {
-						style: tabColorStyle,
-					})}
+					style={Object.keys(tabColorStyle).length > 0 ? tabColorStyle : undefined}
 				>
 					<RichText.Content
 						tagName="div"
 						className={tabSpanColorClass}
-						{...(Object.keys(tabSpanColorStyle).length > 0 && {
-							style: tabSpanColorStyle,
-						})}
+						style={tabSpanColorStyle}
 						value={option.tabLabel}
 					/>
 				</li>

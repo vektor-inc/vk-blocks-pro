@@ -63,7 +63,7 @@ export default function TabItemEdit(props) {
 	const parentTabBlockList = parentTabBlockIdList[0]
 		? select('core/block-editor').getBlocksByClientId(
 				parentTabBlockIdList[0]
-		  )
+			)
 		: [];
 
 	const parentTabBlock = parentTabBlockList[0] ? parentTabBlockList[0] : {};

@@ -71,7 +71,7 @@
     "@wordpress/jest-puppeteer-axe": "^6.13.0",
     "@wordpress/list-reusable-blocks": "^4.19.0",
     "@wordpress/plugins": "^6.10.0",
-    "@wordpress/scripts": "^26.13.0",
+    "@wordpress/scripts": "^26.18.0",
     "@wordpress/viewport": "^5.19.0",
     "autoprefixer": "^10.4.16",
     "babel-loader": "^9.1.3",

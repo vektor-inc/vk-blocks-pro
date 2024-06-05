@@ -657,7 +657,7 @@ msgid "Short"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:130
-#: src/blocks/_pro/tab/index.js:22
+#: src/blocks/_pro/tab/index.js:23
 #: src/blocks/balloon/edit.js:482
 #: src/blocks/button/edit.js:330
 #: src/blocks/faq/index.js:26
@@ -1978,48 +1978,47 @@ msgstr ""
 msgid "Tab Item"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:296
-#. Tab label [i]
-msgid "Tab Label [ %s ]"
-msgstr ""
-
-#: src/blocks/_pro/tab/edit.js:319
-msgid "Tab size Setting"
-msgstr ""
-
-#: src/blocks/_pro/tab/edit.js:321
-msgid "Tab Size ( Smart Phone )"
-msgstr ""
-
 #: src/blocks/_pro/tab/edit.js:33
 msgid "Tab 01"
-msgstr ""
-
-#: src/blocks/_pro/tab/edit.js:338
-msgid "Tab Size ( Tablet )"
-msgstr ""
-
-#: src/blocks/_pro/tab/edit.js:355
-msgid "Tab Size ( PC )"
-msgstr ""
-
-#: src/blocks/_pro/tab/edit.js:359
-msgid "Fit to the text"
-msgstr ""
-
-#: src/blocks/_pro/tab/edit.js:363
-msgid "Monospaced"
 msgstr ""
 
 #: src/blocks/_pro/tab/edit.js:37
 msgid "Tab 02"
 msgstr ""
 
-#: src/blocks/_pro/tab/index.js:17
+#: src/blocks/_pro/tab/edit.js:464
+msgid "Tab Label [ %s ]"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:488
+msgid "Tab size Setting"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:490
+msgid "Tab Size ( Smart Phone )"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:507
+msgid "Tab Size ( Tablet )"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:524
+msgid "Tab Size ( PC )"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:528
+msgid "Fit to the text"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:532
+msgid "Monospaced"
+msgstr ""
+
+#: src/blocks/_pro/tab/index.js:18
 msgid "Tab"
 msgstr ""
 
-#: src/blocks/_pro/tab/index.js:27
+#: src/blocks/_pro/tab/index.js:28
 msgid "Line"
 msgstr ""
 
@@ -2458,7 +2457,7 @@ msgstr ""
 msgid "Button border radius"
 msgstr ""
 
-#: src/blocks/button/edit.js:848
+#: src/blocks/button/edit.js:851
 msgid "Input text"
 msgstr ""
 

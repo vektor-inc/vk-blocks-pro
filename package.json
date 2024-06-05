@@ -51,7 +51,6 @@
     "@codemirror/lang-css": "^6.2.1",
     "@codemirror/view": "^6.20.2",
     "@emotion/babel-plugin": "^11.11.0",
-    "@playwright/test": "^1.38.1",
     "@rjaros/po2json": "^1.0.0-beta-4",
     "@uiw/react-codemirror": "^4.21.18",
     "@wordpress/babel-plugin-makepot": "^5.26.0",

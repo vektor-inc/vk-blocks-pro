@@ -22,6 +22,7 @@ import AdminBalloon from '@vkblocks/admin/balloon';
 import AdminMargin from '@vkblocks/admin/margin';
 import AdminLoadSeparate from '@vkblocks/admin/load-separate';
 import AdminNewFaq from '@vkblocks/admin/new-faq';
+import AdminBreadcrumb from '@vkblocks/admin/breadcrumb';
 import BlockManager from '@vkblocks/admin/block-manager';
 import AdminCustomFormat from '@vkblocks/admin/custom-format';
 import AdminCustomBlockStyle from '@vkblocks/admin/custom-block-style';
@@ -70,6 +71,7 @@ export default function VKBlocksAdmin() {
 				<AdminMargin />
 				<AdminLoadSeparate />
 				{vkBlocksObject.isPro && <AdminNewFaq />}
+				{vkBlocksObject.isPro && <AdminBreadcrumb />}
 				{vkBlocksObject.isPro && <AdminCustomCss />}
 				<BlockManager />
 				<BlockStyleManager />

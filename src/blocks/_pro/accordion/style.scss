@@ -44,6 +44,14 @@
 			background-color: rgba(0,0,0,.05);
 		}
 	}
+	&-plain{
+		.vk_accordion-trigger{
+			border-bottom:none;
+			.vk_accordion-toggle-open{
+				border-bottom: none;
+			}
+		}
+	}
 
 }
 
@@ -69,11 +77,11 @@
 	}
 	//ブロックを配置した時にisDefaultに設置したclassが付かない（スタイルをクリックしたときにclassが付く）ので、共通のclass名にcssを追加して、
 	//「背景なし」以外ののスタイルに付かないようにnot指定をする必要がある
-	&:not(.is-style-vk_accordion-no-background-color-border):not(.is-style-vk_accordion-background-color):not(.is-style-vk_accordion-background-color-border):not(.is-style-vk_accordion-background-color-rounded):not(.is-style-vk_accordion-background-color-rounded-border),
-	&-container:not(.is-style-vk_accordion-no-background-color-border):not(.is-style-vk_accordion-background-color):not(.is-style-vk_accordion-background-color-border):not(.is-style-vk_accordion-background-color-rounded):not(.is-style-vk_accordion-background-color-rounded-border) {
+	&:not(.is-style-vk_accordion-no-background-color-border):not(.is-style-vk_accordion-background-color):not(.is-style-vk_accordion-background-color-border):not(.is-style-vk_accordion-background-color-rounded):not(.is-style-vk_accordion-background-color-rounded-border):not(.is-style-vk_accordion-plain),
+	&-container:not(.is-style-vk_accordion-no-background-color-border):not(.is-style-vk_accordion-background-color):not(.is-style-vk_accordion-background-color-border):not(.is-style-vk_accordion-background-color-rounded):not(.is-style-vk_accordion-background-color-rounded-border):not(.is-style-vk_accordion-plain) {
 		border-bottom: 1px solid var(--vk-color-border);
 	}
-	&-trigger{
+	&-trigger {
 		border: none;
 		padding-top:calc( var(--vk-size-text) * 1 );
     	padding-right: calc( var(--vk-size-text) * 2 );
@@ -95,6 +103,10 @@
 		& > *:last-of-type{ 
 			margin-top: 0;
 			margin-bottom: 0;
+		}
+		// 「装飾無し」は余白が入らないようにする
+		.is-style-vk_accordion-plain & {
+			padding: 0;
 		}
 
 		.vk_accordion-toggle{
@@ -159,6 +171,10 @@
 			//ブラウザ側のスタイルが勝手につくので0に(lightning以外のテーマ用)
 			margin-block-start: 0;
 		}
+		// 「装飾無し」は余白が入らないようにする
+		.vk_accordion.is-style-vk_accordion-plain & {
+			padding: 0;
+		}
 		//オープン時
 		&-open{
 			height: auto;
@@ -198,7 +214,7 @@
 		}
 	}
 	//ブロックを配置した時にisDefaultに設置したclassが付かない（スタイルをクリックしたときにclassが付く）ので、共通のclass名にcssを追加して、
-	//「背景なし」以外ののスタイルに付かないようにnot指定をする必要がある
+	//「背景なし」「装飾無し」以外のスタイルに付かないようにnot指定をする必要がある
 	.wp-block-vk-blocks-accordion:not(.is-style-vk_accordion-no-background-color-border):not(.is-style-vk_accordion-background-color):not(.is-style-vk_accordion-background-color-border):not(.is-style-vk_accordion-background-color-rounded):not(.is-style-vk_accordion-background-color-rounded-border) {
 		border: 1px dashed #ccc;
 	}

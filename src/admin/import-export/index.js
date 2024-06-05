@@ -144,6 +144,19 @@ export const OPTION_DEFAULT_SETTINGS = [
 		isImport: !!vkBlocksObject.isPro,
 		isShow: !!vkBlocksObject.isPro,
 	},
+	{
+		groupTitle: __('Breadcrumb Separator Setting', 'vk-blocks-pro'),
+		options: [
+			{
+				name: 'breadcrumb_separator_design',
+				associativeArray: true,
+				uniqKey: 'name',
+				importMethod: 'add',
+			},
+		],
+		isImport: !!vkBlocksObject.isPro,
+		isShow: !!vkBlocksObject.isPro,
+	},
 ];
 
 export default function AdminImportExport(props) {

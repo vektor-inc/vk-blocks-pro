@@ -1,10 +1,10 @@
 === VK Blocks ===
-Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird,chiakikouno,doshimaf
+Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird,chiakikouno,doshimaf,mtdkei
 Donate link:
 Tags: Gutenberg,FAQ,alert
-Requires at least: 6.1
-Tested up to: 6.4
-Stable tag: 1.69.1.2
+Requires at least: 6.3
+Tested up to: 6.5
+Stable tag: 1.73.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -48,6 +48,7 @@ This is a plugin that extends Gutenberg's blocks.
 * New Badge [ Pro ]
 * Selected Post List [ Pro ]
 * Step [ Pro ]
+* Tab [ Pro ]
 * Table of Contents [ Pro ]
 * Taxonomy [ Pro ]
 * Timeline [ Pro ]
@@ -92,7 +93,6 @@ e.g.
 1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 
-
 == Frequently Asked Questions ==
 
 
@@ -104,20 +104,65 @@ e.g.
 == Changelog ==
 
 [ Specification Change ] Add Transform vk-blocks/heading ( Not Recommended ) to core/heading.
+= 1.74.0 =
+[ Specification Change ] Fix block categories order
+[ Specification Change ][ VK Button ] Add unit "percent" for border radius.
+[ Bug fix ][ Button ] Fixed button URL being output in editor.
+[ Bug fix ][ Tab ] Fix innactive tab color setting.
+
+= 1.73.0 =
+[ Add Block ] Add Tab Block
+[ Add function ][ Columns ] Add direction reverse option.
+[ Add function ][ VK Button ] Add border radius setting.
+[ Add Function ][ Spacer / Common margin ] Add size option XXL/XXS.
+[ Add function ][ Grid Column Card (Pro) ] Add border width setting to grid column card block.
+[ Add Function ][ Outer (Pro) ] Added option to min height setting.
+[ Specification Change ][ Custom CSS (Pro) ] Changed the custom CSS text area to be wider
+[ Specification Change ][ Outer ] Remove the negative margin for .vk_outer-width-full.
+[ Bug fix ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment. 
+[ Bug fix ] Remove min-height from "Custom CSS" on edit screen.
+[ Other ] Fixed useSetting deprecated
+
+= 1.72.1 =
+[ Specification Change ][ Pro ] Attend to I18N Improvements in 6.5.
+[ Other ] Fixed useSetting deprecated
+[ Bug fix ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment. 
+
+= 1.72.0 =
+[ Specification Change ][ Child Page List ] Hide "Term's name on Image" and "Taxonomies (all)" display options.
+[ Design Bug Fix ][ Balloon ] Harmonized icon image display in balloon blocks with frontend editing.
+[ Design Bug fix ][ grid-column ] Fixed vk_gridColumn_item to be aligned to the beginning and to be the basic width size of the parent element.
+[ Design Bug fix ][ group ] Fixed an issue where internal links were not working in group block style stitches.
+[ Design Bug fix ][ Balloon ] Harmonized icon image display in balloon blocks with frontend editing.
+[ Editor Design Bug fix ][ Slider ] Fixed an issue where slider item height disappears when editorMode is slide and alignfull.
+
+= 1.71.0 =
+[ Add function ][ Accordion ] Add plain style to accordion block.
+[ Add Function ][ icon ] Add Font color option in solid type icon.
+[ Bug fix ][ Button ] Fixed buttonColorCustom in the editor to display the correct color.
+[ Bug fix ][ Table of Contents (Pro) ] Fixed visibility issue in 6.5.
+[ Bug fix ][ Core Group ] Fix stitching styles for theme.json in Group blocks.
+[ Bug fix ][ Flow ] Fixed margin-block-start being attached to flow block
+[ Bug fix ][ Grid Column (Pro) ] Fixed right margin when using grid columns outside of Lightning.
+[ Bug fix ][ Grid Column (Pro) ] Content does not span full width when using grid columns outside of Lightning in col-12.
+[ Bug fix ][ New FAQ ] Fix a typo in the font-family specification.
+
+= 1.70.0 =
 [ Specification Change ] core/social-link, core/site-logo, core/site-title and core/site-tagline correspond to margin-extension
+[ Add function ][ Breadcrumb ] Add the ability to input breadcrumb separators.
 
 = 1.69.1 =
-[ Bug Fix ][ Inline Font Size ] Applies only Font Size has a numeric value.
-[ Bug Fix ][ GridColCard (Pro) ] Fixed a bug where vertical alignment settings for card blocks did not apply in the editing screen.
-[ Bug Fix ][ Slider ] Corresponding Slider Mode to Site Editor / Widget Editor.
-[ Bug Fix ][ Slider ] Fixed a bug where placing heading blocks and similar elements directly in slides made them uneditable.
+[ Bug fix ][ Inline Font Size ] Applies only Font Size has a numeric value.
+[ Bug fix ][ GridColCard (Pro) ] Fixed a bug where vertical alignment settings for card blocks did not apply in the editing screen.
+[ Bug fix ][ Slider ] Corresponding Slider Mode to Site Editor / Widget Editor.
+[ Bug fix ][ Slider ] Fixed a bug where placing heading blocks and similar elements directly in slides made them uneditable.
 
 = 1.69.0 =
 [ Add function ][ Slider ] Add Slider Mode on Editor.
 [ Add Function ][ Post List (Pro) ] Add paged lock setting.
 [ Specification Change ] Change the required PHP version to 7.4 or higher.
-[ Bug Fix ][ Image ]Fixed a bug in the photo frame with activated zoom in the image block styled 'photoFrame-tilt'
-[ Bug Fix ] Update CSS Optimizer 0.2.2
+[ Bug fix ][ Image ]Fixed a bug in the photo frame with activated zoom in the image block styled 'photoFrame-tilt'
+[ Bug fix ] Update CSS Optimizer 0.2.2
 
 = 1.68.0 =
 [ Add Function ][ Dynamic Text (Pro) ] Add feature to display logged-in username.
@@ -129,10 +174,10 @@ e.g.
 [ Add Block ][ Category Badge (Pro) ] Creates badges displaying linked categories or terms for posts, with flexible design customization.
 
 = 1.66.2 =
-[ Bug Fix ][ Slider ] Fixed a bug in version 1.66.1 where the slider width did not match the content width in certain themes.
+[ Bug fix ][ Slider ] Fixed a bug in version 1.66.1 where the slider width did not match the content width in certain themes.
 
 = 1.66.1 =
-[ Bug Fix ][ Slider ] Fixed a bug in version 1.66.0 where the slider width did not match the content width in certain themes.
+[ Bug fix ][ Slider ] Fixed a bug in version 1.66.0 where the slider width did not match the content width in certain themes.
 
 = 1.66.0 =
 [ Specification Change ] Change VK Component Posts Horizontal col class ( Update VK Component 1.6.0 / Discontinued the use of Bootstrap's Grid system )

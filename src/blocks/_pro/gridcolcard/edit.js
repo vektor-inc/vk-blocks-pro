@@ -80,6 +80,7 @@ export default function Edit(props) {
 						borderRadius: attributes.borderRadius,
 						border: attributes.border,
 						borderColor: attributes.borderColor,
+						borderWidth: attributes.borderWidth,
 						textColor: attributes.textColor,
 						backgroundColor: attributes.backgroundColor,
 						backgroundGradient: attributes.backgroundGradient,

@@ -5,6 +5,9 @@
 	"description": "Collapses and hides content when the content is long.",
 	"textdomain": "vk-blocks-pro",
 	"category": "vk-blocks-cat",
+	"editorScript": "vk-blocks-build-js",
+	"editorStyle": "vk-blocks-build-editor-css",
+	"style": "vk-blocks/accordion",
 	"attributes": {
 		"containerClass": {
 			"type": "string",

@@ -1,0 +1,16 @@
+.breadcrumb {
+	.flex-col {
+		display: flex;
+		flex-direction: row;
+		gap: 1em;
+		.separator_input input[type="text"] {
+			width: 40px;
+			width: 3em;
+			text-align: center;
+			padding: 0.5em 2px;
+		}
+		.preview_area {
+			padding:0.5em 0;
+		}
+	}
+}

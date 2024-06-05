@@ -56,12 +56,7 @@ jobs:
     # ローカルで以下のコマンドで test/e2e/ 内のテストをすべて実行する
     # npx wp-scripts test-playwright --trace on --project=chromium
     - name: Run Playwright
-      run: |
-        npx wp-scripts test-playwright --trace on --project=chromium login.spec.ts
-        npx wp-scripts test-playwright --trace on --project=chromium common-margin.spec.ts
-        npx wp-scripts test-playwright --trace on --project=chromium heading-transform.spec.ts
-        npx wp-scripts test-playwright --trace on --project=chromium import-export.spec.ts
-
+      run: npm run test:playwright
     - uses: actions/upload-artifact@v3
       if: always()
       with:

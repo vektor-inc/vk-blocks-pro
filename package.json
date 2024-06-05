@@ -31,6 +31,7 @@
     "test-unit:clean": "wp-scripts test-unit-js --clearCache",
     "test:e2e": "node ./test/e2e-tests/run-tests.js",
     "test:e2e-no-gui": "wp-scripts test-e2e --config ./test/e2e-tests/jest-e2e.config.js",
+    "test:playwright": "wp-env clean && wp-scripts test-playwright --trace on --project=chromium",
     "composer:install": "wp-env run composer \"composer install\"",
     "phpunit": "composer install && wp-env run phpunit \"phpunit -c /var/www/html/wp-content/plugins/vk-blocks-pro/.phpunit.xml --verbose\"",
     "phpunit:free": "composer install && wp-env run phpunit \"phpunit -c /var/www/html/wp-content/plugins/vk-blocks/.phpunit.xml --verbose\"",

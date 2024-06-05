@@ -48,7 +48,7 @@ jobs:
     - name: Run Environment
       run: npx wp-env start
     - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+      run: npx playwright install
 
     # タクソノミーのテストはワークフロー上だと環境の都合でうまく動作させられないので除外
     # ローカルで以下のコマンドで test/e2e/ 内のテストをすべて実行する

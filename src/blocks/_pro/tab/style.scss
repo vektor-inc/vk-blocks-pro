@@ -1,6 +1,5 @@
 :root {
 	--vk-color-border: rgba(0,0,0,.12);
-	--vk-size-text: 16px;
 	--vk-color-bg-accent-wh: rgba(255,255,255,0.65);
 	--vk-color-bg-inactive: rgba(0, 0, 0, .08);
 	--default-color:#337ab7;
@@ -25,11 +24,12 @@ $xl-min: 1200px;
 		margin-left: 0;
 		margin-right: 0;
 		border-top: 1px solid var(--vk-color-border);
+		border-right: 1px solid var(--vk-color-border);
 		border-left: 1px solid var(--vk-color-border);
 		border-radius: 0;
-		&:last-child {
-			border-right: 1px solid var(--vk-color-border);
-		}
+		// &:last-child {
+		//	border-right: 1px solid var(--vk-color-border);
+		// }
 		&::before, &::after {
 			position: absolute;
 			bottom: 0;
@@ -42,7 +42,7 @@ $xl-min: 1200px;
 			bottom: 0;
 			z-index: 0;
 			height: 1px;
-			background-color: var(--vk-color-border);
+			// background-color: var(--vk-color-border); //重なる部分が濃くなるため
 		}
 		&::after {
 			top: 0;
@@ -51,7 +51,7 @@ $xl-min: 1200px;
 		}
 		&:hover {
 			color: var(--default-color);
-			background-color: var(--vk-color-bg-accent-wh);
+			background-color: #fff !important;
 			&::before {
 				bottom: 0;
 				z-index: 0;
@@ -61,16 +61,17 @@ $xl-min: 1200px;
 			&::after {
 				z-index: 1;
 				height: 2px;
-				background-color: var(--default-color);
+				// background-color: var(--default-color); // ここで色を指定すると hover での色変更が効かない
 				transition: all .5s ease-out;
 			}
 		}
 		& > div {
-			padding: calc(var(--vk-size-text) * 0.5) calc(var(--vk-size-text) * 1);
+			padding: calc( 1rem * 0.5 ) calc( 1rem * 1 );
+			border-top: 2px solid transparent;
 		}
 		&.vk_tab_labels_label-state-active {
 			color: var(--default-color);
-			background-color: var(--vk-color-bg-accent-wh);
+			background-color: #fff !important;
 			&::before {
 				// content: none;
 				background-color: #fff;
@@ -78,17 +79,24 @@ $xl-min: 1200px;
 			&::after {
 				z-index: 1;
 				height: 2px;
-				background-color: var(--default-color);
+				// background-color: var(--default-color); // ここで色を指定すると hover での色変更が効かない
 			}
 		}
 		&.vk_tab_labels_label-state-inactive {
-			background-color: #fff;
 			color: initial;
+			& > div {
+				background-color: var(--vk-color-bg-inactive);
+			}
 			&:hover {
-				background-color: var(--vk-color-bg-accent-wh);
-				color: var(--default-color);
+				// background-color: #fff; // ここで色を指定すると hover での色変更が効かない
 				opacity: 0.8;
 			}
+		}
+	}
+	.vk_tab_bodys {
+		border-top: 1px solid var(--vk-color-border);
+		.has-border-top {
+			border-top: none;
 		}
 	}
 }
@@ -106,10 +114,10 @@ $xl-min: 1200px;
 
 /* default style
 --------------------------------------------*/
-.vk_tab {
-	margin-bottom: calc(var(--vk-size-text) * 2);
-	&_labels {
-		--vk-tab-gap: calc(var(--vk-size-text) * 0.2);
+.vk_tab{
+	margin-bottom: calc( 1rem * 2);
+	&_labels{
+		--vk-tab-gap:calc( 1rem * 0.2 );
 		padding: 0;
 		margin: 0;
 		display: flex;
@@ -122,11 +130,11 @@ $xl-min: 1200px;
 			list-style: none;
 			text-align: center;
 			transition: all .3s ease-out;
-			padding: calc(var(--vk-size-text) * 0.5) calc(var(--vk-size-text) * 1);
+			padding: calc( 1rem * 0.5 ) calc( 1rem * 1 );
 			cursor: pointer;
 			background-color: var(--vk-color-bg-inactive);
-			border-radius: calc(var(--vk-size-text) * 0.3) calc(var(--vk-size-text) * 0.3) 0 0;
-			margin: 0;
+			border-radius:calc( 1rem * 0.3 ) calc( 1rem * 0.3 ) 0 0;
+			margin:0;
 			line-height: 1.5;
 			&.vk_tab_labels_label-state-active,
 			&.has-background {
@@ -135,7 +143,6 @@ $xl-min: 1200px;
 				color: #fff;
 			}
 			&.vk_tab_labels_label-state-inactive {
-				background-color: var(--vk-color-bg-inactive);
 				color: initial;
 			}
 			&:hover {

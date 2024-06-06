@@ -31,30 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		if (activeLabel) {
 			activeLabel.classList.add('vk_tab_labels_label-state-active');
 			activeLabel.classList.remove('vk_tab_labels_label-state-inactive');
-
-			if (
-				activeLabel
-					.closest('.vk_tab')
-					.classList.contains('is-style-vk_tab_labels-line')
-			) {
-				const div = activeLabel.querySelector('div');
-				const borderTopColor = div.style.borderTopColor;
-				const borderColorClass = Array.from(div.classList).find(
-					(cls) =>
-						cls.startsWith('has-') && cls.endsWith('-border-color')
-				);
-				if (borderColorClass) {
-					const colorClass = borderColorClass.replace(
-						'-border-color',
-						'-color'
-					);
-					div.classList.add(colorClass);
-				} else {
-					activeLabel.style.color = borderTopColor;
-				}
-			}
 		}
-
 		const inactiveLabels = vkTab.querySelectorAll(
 			'.vk_tab_labels_label:not(.vk_tab_labels_label-state-active)'
 		);
@@ -70,8 +47,6 @@ document.addEventListener('DOMContentLoaded', function () {
 					'var(--vk-color-bg-inactive)',
 					'important'
 				);
-			} else {
-				label.style.removeProperty('color');
 			}
 		});
 
@@ -102,21 +77,6 @@ document.addEventListener('DOMContentLoaded', function () {
 							'var(--vk-color-bg-inactive)',
 							'important'
 						);
-					} else {
-						const div = activeLabel.querySelector('div');
-						const borderColorClass = Array.from(div.classList).find(
-							(cls) =>
-								cls.startsWith('has-') &&
-								cls.endsWith('-border-color')
-						);
-						if (borderColorClass) {
-							const colorClass = borderColorClass.replace(
-								'-border-color',
-								'-color'
-							);
-							div.classList.remove(colorClass);
-						}
-						activeLabel.style.removeProperty('color');
 					}
 				});
 
@@ -139,27 +99,18 @@ document.addEventListener('DOMContentLoaded', function () {
 				newActiveLabel.classList.remove(
 					'vk_tab_labels_label-state-inactive'
 				);
+				const activeTabBody = document.querySelector(
+					`#vk_tab_bodys_body-${TabId}`
+				);
+				const activeTabBodyStyle =
+					window.getComputedStyle(activeTabBody);
 				if (
-					newActiveLabel
+					!newActiveLabel
 						.closest('.vk_tab')
 						.classList.contains('is-style-vk_tab_labels-line')
 				) {
-					const div = newActiveLabel.querySelector('div');
-					const borderTopColor = div.style.borderTopColor;
-					const borderColorClass = Array.from(div.classList).find(
-						(cls) =>
-							cls.startsWith('has-') &&
-							cls.endsWith('-border-color')
-					);
-					if (borderColorClass) {
-						const colorClass = borderColorClass.replace(
-							'-border-color',
-							'-color'
-						);
-						div.classList.add(colorClass);
-					} else {
-						newActiveLabel.style.color = borderTopColor;
-					}
+					newActiveLabel.style.backgroundColor =
+						activeTabBodyStyle.borderTopColor || '';
 				}
 
 				const newActiveBody = vkTabBodies.querySelector(

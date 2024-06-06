@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2024-05-10T07:02:48+00:00\n"
-"PO-Revision-Date: 2024-05-10 16:03+0900\n"
+"POT-Creation-Date: 2024-06-06T10:29:19+00:00\n"
+"PO-Revision-Date: 2024-06-06 19:44+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Poedit-Basepath: ../../..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: vk-blocks.php\n"
@@ -211,7 +211,7 @@ msgstr "(例) %s-block-style"
 msgid "Custom Block Style Setting"
 msgstr "カスタムブロックスタイル設定"
 
-#: src/admin/custom-block-style/index.js:80
+#: src/admin/custom-block-style/index.js:79
 msgid "You can register block styles."
 msgstr "ブロックスタイルを登録できます。"
 
@@ -322,9 +322,6 @@ msgstr "改行しない"
 #: src/blocks/_pro/timeline-item/edit.js:71 src/blocks/border-box/edit.js:204
 #: src/blocks/button/edit.js:677 src/blocks/icon/edit.js:299
 #: src/blocks/staff/edit.js:199
-#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:67
-#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:85
-#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:171
 msgid "Color"
 msgstr "色"
 
@@ -605,7 +602,7 @@ msgstr "単位"
 
 #: src/admin/new-faq.js:23
 msgid "Please specify a common accordion setting to be used in the FAQ block."
-msgstr ""
+msgstr "FAQブロックで使用する共通のアコーディオン設定を指定してください。"
 
 #: src/admin/new-faq.js:40 src/blocks/faq2/edit.js:45
 msgid "Disable accordion"
@@ -654,8 +651,8 @@ msgid "Background color / Rounded / Border"
 msgstr " 背景あり / 角丸 / 枠線 "
 
 #: src/blocks/_pro/accordion/index.js:47 src/blocks/heading/edit.js:268
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:284
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:292
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:292
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:296
 msgid "Plain"
 msgstr "装飾無し"
 
@@ -679,13 +676,13 @@ msgstr "アニメーションの距離"
 msgid "Short"
 msgstr "短い"
 
-#: src/blocks/_pro/animation/edit.js:130 src/blocks/_pro/tab/index.js:22
+#: src/blocks/_pro/animation/edit.js:130 src/blocks/_pro/tab/index.js:23
 #: src/blocks/balloon/edit.js:482 src/blocks/button/edit.js:330
 #: src/blocks/faq/index.js:26 src/blocks/faq2/index.js:21
 #: src/blocks/slider/edit.js:925
 #: src/extensions/common/inline-font-size/inline.js:28
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:498
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:506
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:506
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:510
 msgid "Normal"
 msgstr "標準"
 
@@ -1281,6 +1278,60 @@ msgstr "p"
 msgid "span"
 msgstr "span"
 
+#: src/blocks/_pro/fixed-display/edit.js:101
+msgid "Fixed position from the top"
+msgstr "上部からの固定位置"
+
+#: src/blocks/_pro/fixed-display/edit.js:123
+msgid "Timing to display"
+msgstr "表示するタイミング"
+
+#: src/blocks/_pro/fixed-display/edit.js:139
+msgid "Persist visibility once visible"
+msgstr "一度表示したら表示を維持する"
+
+#: src/blocks/_pro/fixed-display/edit.js:63
+msgid "Fixed Display Setting"
+msgstr "固定表示設定"
+
+#: src/blocks/_pro/fixed-display/edit.js:65
+#: src/blocks/_pro/table-of-contents-new/edit.js:114
+#: src/components/column-layout-control/index.js:69
+msgid "Display type"
+msgstr "表示タイプ"
+
+#: src/blocks/_pro/fixed-display/edit.js:70
+msgid "Always Visible"
+msgstr "常に表示"
+
+#: src/blocks/_pro/fixed-display/edit.js:74
+msgid "Show on Scroll"
+msgstr "スクロールしたら表示"
+
+#: src/blocks/_pro/fixed-display/edit.js:80
+msgid "Fixed position"
+msgstr "固定位置"
+
+#: src/blocks/_pro/fixed-display/edit.js:84
+msgid "Top"
+msgstr "上 "
+
+#: src/blocks/_pro/fixed-display/edit.js:86 src/blocks/balloon/edit.js:434
+#: src/blocks/button/edit.js:375 src/blocks/pr-content/edit.js:252
+#: src/components/display-items-control/index.js:140
+msgid "Right"
+msgstr "右"
+
+#: src/blocks/_pro/fixed-display/edit.js:90
+msgid "Bottom"
+msgstr "下 "
+
+#: src/blocks/_pro/fixed-display/edit.js:94 src/blocks/balloon/edit.js:422
+#: src/blocks/button/edit.js:355 src/blocks/pr-content/edit.js:256
+#: src/components/display-items-control/index.js:132
+msgid "Left"
+msgstr "左"
+
 #: src/blocks/_pro/grid-column-item/edit.js:102
 #: src/blocks/_pro/gridcolcard/edit-common.js:164
 msgid "Color Settings"
@@ -1430,10 +1481,10 @@ msgstr "カラムの角丸の大きさ"
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:189
 #: src/blocks/balloon/edit.js:310
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:372
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:386
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:380
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:394
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:380
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:394
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:384
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:398
 msgid "Border"
 msgstr "枠線"
 
@@ -1693,8 +1744,8 @@ msgid "Wave"
 msgstr "波状"
 
 #: src/blocks/_pro/outer/edit.js:618
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:326
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:334
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:334
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:338
 msgid "Triangle"
 msgstr "三角"
 
@@ -1730,26 +1781,26 @@ msgstr "なし"
 
 #: src/blocks/_pro/outer/edit.js:826 src/blocks/_pro/step-item/edit.js:118
 #: src/blocks/_pro/timeline-item/edit.js:88 src/blocks/pr-content/edit.js:145
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:424
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:432
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:432
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:436
 msgid "Solid"
 msgstr "直線"
 
 #: src/blocks/_pro/outer/edit.js:830
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:432
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:440
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:440
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:444
 msgid "Dotted"
 msgstr "点線"
 
 #: src/blocks/_pro/outer/edit.js:834
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:436
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:444
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:444
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:448
 msgid "Dashed"
 msgstr "Dashed"
 
 #: src/blocks/_pro/outer/edit.js:838
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:440
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:448
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:448
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:452
 msgid "Double"
 msgstr "二重線"
 
@@ -1971,11 +2022,11 @@ msgstr "Font Awesome の class 名が入力されている場合は数字は上�
 msgid "First Dot Number"
 msgstr "ステップの開始番号"
 
-#: src/blocks/_pro/tab-item/edit.js:102
+#: src/blocks/_pro/tab-item/edit.js:132
 msgid "Tab Color Setting"
 msgstr "タブカラー設定"
 
-#: src/blocks/_pro/tab-item/edit.js:105
+#: src/blocks/_pro/tab-item/edit.js:135
 msgid "Tab Color"
 msgstr "タブカラー"
 
@@ -1983,48 +2034,47 @@ msgstr "タブカラー"
 msgid "Tab Item"
 msgstr "タブアイテム"
 
-#. Tab label [i]
-#: src/blocks/_pro/tab/edit.js:292
-msgid "Tab Label [ %s ]"
-msgstr "タブラベル [ %s ]"
-
-#: src/blocks/_pro/tab/edit.js:315
-msgid "Tab size Setting"
-msgstr "タブサイズ設定"
-
-#: src/blocks/_pro/tab/edit.js:317
-msgid "Tab Size ( Smart Phone )"
-msgstr "タブサイズ ( スマートフォン )"
-
 #: src/blocks/_pro/tab/edit.js:33
 msgid "Tab 01"
 msgstr "タブ 01"
-
-#: src/blocks/_pro/tab/edit.js:334
-msgid "Tab Size ( Tablet )"
-msgstr "タブサイズ ( タブレット )"
-
-#: src/blocks/_pro/tab/edit.js:351
-msgid "Tab Size ( PC )"
-msgstr "タブサイズ ( PC )"
-
-#: src/blocks/_pro/tab/edit.js:355
-msgid "Fit to the text"
-msgstr "テキストに合わせる"
-
-#: src/blocks/_pro/tab/edit.js:359
-msgid "Monospaced"
-msgstr "等幅"
 
 #: src/blocks/_pro/tab/edit.js:37
 msgid "Tab 02"
 msgstr "タブ 02"
 
-#: src/blocks/_pro/tab/index.js:17
+#: src/blocks/_pro/tab/edit.js:473
+msgid "Tab Label [ %s ]"
+msgstr "タブラベル [ %s ]"
+
+#: src/blocks/_pro/tab/edit.js:497
+msgid "Tab size Setting"
+msgstr "タブサイズ設定"
+
+#: src/blocks/_pro/tab/edit.js:499
+msgid "Tab Size ( Smart Phone )"
+msgstr "タブサイズ ( スマートフォン )"
+
+#: src/blocks/_pro/tab/edit.js:516
+msgid "Tab Size ( Tablet )"
+msgstr "タブサイズ ( タブレット )"
+
+#: src/blocks/_pro/tab/edit.js:533
+msgid "Tab Size ( PC )"
+msgstr "タブサイズ ( PC )"
+
+#: src/blocks/_pro/tab/edit.js:537
+msgid "Fit to the text"
+msgstr "テキストに合わせる"
+
+#: src/blocks/_pro/tab/edit.js:541
+msgid "Monospaced"
+msgstr "等幅"
+
+#: src/blocks/_pro/tab/index.js:18
 msgid "Tab"
 msgstr "タブ"
 
-#: src/blocks/_pro/tab/index.js:27
+#: src/blocks/_pro/tab/index.js:28
 msgid "Line"
 msgstr "ライン"
 
@@ -2044,11 +2094,6 @@ msgid ""
 "properly, please reassign the ID."
 msgstr ""
 "見出しを複製すると目次ブロックが適切に動作しません。IDを振り直してください。"
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:114
-#: src/components/column-layout-control/index.js:69
-msgid "Display type"
-msgstr "表示タイプ"
 
 #: src/blocks/_pro/table-of-contents-new/edit.js:133
 msgid "No frame"
@@ -2115,29 +2160,29 @@ msgstr "スタイル設定"
 
 #: src/blocks/alert/edit.js:25 src/blocks/button/edit.js:692
 #: src/blocks/pr-content/edit.js:171
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:460
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:468
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:468
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:472
 msgid "Success"
 msgstr "Success"
 
 #: src/blocks/alert/edit.js:29 src/blocks/button/edit.js:696
 #: src/blocks/pr-content/edit.js:175
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:456
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:464
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:464
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:468
 msgid "Info"
 msgstr "Info"
 
 #: src/blocks/alert/edit.js:33 src/blocks/button/edit.js:700
 #: src/blocks/pr-content/edit.js:179
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:464
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:472
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:472
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:476
 msgid "Warning"
 msgstr "Warning"
 
 #: src/blocks/alert/edit.js:37 src/blocks/button/edit.js:704
 #: src/blocks/pr-content/edit.js:183
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:468
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:476
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:476
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:480
 msgid "Danger"
 msgstr "Danger"
 
@@ -2200,18 +2245,6 @@ msgstr "位置"
 #: src/blocks/balloon/edit.js:408
 msgid "Please specify the layout of the balloon."
 msgstr "吹き出しの配置を指定してください。"
-
-#: src/blocks/balloon/edit.js:422 src/blocks/button/edit.js:355
-#: src/blocks/pr-content/edit.js:256
-#: src/components/display-items-control/index.js:132
-msgid "Left"
-msgstr "左"
-
-#: src/blocks/balloon/edit.js:434 src/blocks/button/edit.js:375
-#: src/blocks/pr-content/edit.js:252
-#: src/components/display-items-control/index.js:140
-msgid "Right"
-msgstr "右"
 
 #: src/blocks/balloon/edit.js:442
 msgid "Please select the type of balloon."
@@ -2352,8 +2385,8 @@ msgstr "大"
 
 #: src/blocks/button/edit.js:338
 #: src/extensions/common/inline-font-size/inline.js:23
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:493
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:501
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:501
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:505
 msgid "Small"
 msgstr "小"
 
@@ -2467,7 +2500,7 @@ msgstr "サイズ"
 msgid "Button border radius"
 msgstr "ボタンの角丸の大きさ"
 
-#: src/blocks/button/edit.js:833
+#: src/blocks/button/edit.js:851
 msgid "Input text"
 msgstr "文字を入力"
 
@@ -3052,13 +3085,13 @@ msgstr "明朝体にする"
 
 #: src/components/advanced-color-gradient-control/index.js:31
 msgid "Theme"
-msgstr ""
+msgstr "テーマ"
 
-#: src/components/code-mirror-css/index.js:103
+#: src/components/code-mirror-css/index.js:170
 msgid "Note : Contains double-byte spaces; CSS may not work."
 msgstr "注意 : 全角スペースが含まれています。CSSが効かない可能性があります。"
 
-#: src/components/code-mirror-css/index.js:48
+#: src/components/code-mirror-css/index.js:50
 msgid "There is an error with your CSS structure."
 msgstr "CSS 構造にエラーがあります。"
 
@@ -3196,6 +3229,7 @@ msgid ""
 "For the icon name, please enter alphanumeric characters without \"dashicons-"
 "\". Example: embed-generic"
 msgstr ""
+"アイコン名は「dashicons-」を除いた英数字を入力してください。例:embed-generic"
 
 #: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:159
 #: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:186
@@ -3377,14 +3411,14 @@ msgid "Apply"
 msgstr "適用"
 
 #: src/extensions/common/inline-font-size/inline.js:33
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:503
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:511
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:511
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:515
 msgid "Big"
 msgstr "大"
 
 #: src/extensions/common/inline-font-size/inline.js:38
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:508
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:516
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:516
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:520
 msgid "Extra big"
 msgstr "特大"
 
@@ -3856,11 +3890,11 @@ msgstr "吹き出しブロック設定"
 msgid "Load Separete Setting"
 msgstr "分割読み込み設定"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/blocks.php:26 inc/vk-blocks/blocks.php:26
+#: dist/vk-blocks-pro/inc/vk-blocks/blocks.php:26 inc/vk-blocks/blocks.php:38
 msgid "Blocks"
 msgstr "Blocks"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/blocks.php:39 inc/vk-blocks/blocks.php:39
+#: dist/vk-blocks-pro/inc/vk-blocks/blocks.php:39 inc/vk-blocks/blocks.php:25
 msgid "Blocks Layout"
 msgstr "ブロックレイアウト"
 
@@ -3935,162 +3969,162 @@ msgstr ""
 msgid "VK Taxonomy Block"
 msgstr "VK タクソノミーブロック"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:288
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:296
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:296
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:300
 msgid "Background fill lightgray"
 msgstr "背景塗り 灰色"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:292
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:300
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:300
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:304
 msgid "Double border top and bottom black"
 msgstr "二重線 上下線 黒"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:296
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:304
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:304
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:308
 msgid "Double border bottom black"
 msgstr "二重線 下線 黒"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:300
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:308
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:308
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:312
 msgid "Solid border top and bottom black"
 msgstr "直線 上下 黒"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:304
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:312
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:312
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:316
 msgid "Solid border bottom black"
 msgstr "直線 下線 黒"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:308
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:316
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:316
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:320
 msgid "Dotted border bottom black"
 msgstr "点線 下線 黒"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:312
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:320
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:320
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:324
 msgid "Both ends"
 msgstr "左右線"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:316
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:324
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:324
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:328
 msgid "Brackets black"
 msgstr "括弧 黒"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:322
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:330
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:330
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:334
 msgid "Arrow"
 msgstr "矢印"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:330
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:338
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:338
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:342
 msgid "Check"
 msgstr "チェック"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:334
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:342
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:342
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:346
 msgid "Check Square"
 msgstr "チェック（四角）"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:338
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:346
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:346
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:350
 msgid "Check Circle"
 msgstr "チェック-丸"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:342
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:350
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:350
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:354
 msgid "Handpoint"
 msgstr "指"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:346
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:354
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:354
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:358
 msgid "Pencil"
 msgstr "鉛筆"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:350
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:358
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:358
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:362
 msgid "Smile"
 msgstr "笑顔"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:354
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:362
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:362
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:366
 msgid "Frown"
 msgstr "不満顔"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:358
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:366
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:366
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:370
 msgid "Numbered Circle"
 msgstr "数字-丸"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:362
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:370
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:370
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:374
 msgid "Numbered Square"
 msgstr "数字-四角"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:368
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:448
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:376
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:456
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:376
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:456
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:380
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:460
 msgid "Border Top Bottom"
 msgstr "直線 上下"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:376
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:384
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:384
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:388
 msgid "Border / Stripes"
 msgstr "枠線 / ストライプ"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:382
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:390
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:390
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:394
 msgid "Rounded02"
 msgstr "角丸2"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:390
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:398
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:398
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:402
 msgid "Photo frame"
 msgstr "フォトフレーム"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:394
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:402
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:402
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:406
 msgid "Photo frame Tilt Right"
 msgstr "フォトフレーム傾き右"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:398
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:406
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:406
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:410
 msgid "Photo frame Tilt Left"
 msgstr "フォトフレーム傾き左"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:402
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:452
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:410
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:460
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:410
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:460
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:414
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:464
 msgid "Shadow"
 msgstr "シャドウ"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:406
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:414
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:414
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:418
 msgid "Wave01"
 msgstr "流体シェイプ1"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:410
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:418
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:418
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:422
 msgid "Wave02"
 msgstr "流体シェイプ2"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:414
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:422
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:422
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:426
 msgid "Wave03"
 msgstr "流体シェイプ3"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:418
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:426
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:426
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:430
 msgid "Wave04"
 msgstr "流体シェイプ4"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:428
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:436
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:436
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:440
 msgid "Solid Roundcorner"
 msgstr "直線 角丸"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:444
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:452
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:452
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:456
 msgid "Stitch"
 msgstr "スティッチ"
 
@@ -4854,10 +4888,10 @@ msgid "New Badge"
 msgstr "新着バッジ"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/post-new-badge/block.json
+#: inc/vk-blocks/build/blocks/_pro/post-new-badge/block.json
+#: src/blocks/_pro/post-new-badge/block.json
 msgctxt "block description"
-msgid ""
-"Easily highlight your latest content or products with the 'New Badge' "
-"feature."
+msgid "Easily highlight your latest post."
 msgstr "最新の投稿を簡単に目立たせることができます。"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/select-post-list-item/block.json
@@ -4977,11 +5011,26 @@ msgid ""
 "explaining the order."
 msgstr "順番を説明する時に便利でシンプルなスケジュールなどを表示します。"
 
-#: inc/vk-blocks/build/blocks/_pro/post-new-badge/block.json
-#: src/blocks/_pro/post-new-badge/block.json
+#: inc/vk-blocks/build/blocks/_pro/fixed-display/block.json
+#: src/blocks/_pro/fixed-display/block.json
+msgctxt "block title"
+msgid "Fixed display"
+msgstr "固定表示"
+
+#: inc/vk-blocks/build/blocks/_pro/fixed-display/block.json
+#: src/blocks/_pro/fixed-display/block.json
 msgctxt "block description"
-msgid "Easily highlight your latest post."
-msgstr "最新の投稿を簡単に目立たせることができます。"
+msgid "Remains fixed on the screen at all times."
+msgstr "常に画面上に固定されたままになります。"
+
+#~ msgid "Display position from the top of the page"
+#~ msgstr "ページ上部からの表示位置"
+
+#~ msgctxt "block description"
+#~ msgid ""
+#~ "Easily highlight your latest content or products with the 'New Badge' "
+#~ "feature."
+#~ msgstr "最新の投稿を簡単に目立たせることができます。"
 
 #~ msgid "Block style settings can be registered."
 #~ msgstr "ブロックスタイルを登録することができます。"

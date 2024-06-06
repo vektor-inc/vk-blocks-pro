@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.3
 Tested up to: 6.5
-Stable tag: 1.73.0.1
+Stable tag: 1.74.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -43,6 +43,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Category Badge [ Pro ]
 * Child page list [ Pro ]
 * Dynamic Text ( Post Type name / Ancestor Page name ) [ Pro ]
+* Fixed [ Pro ]
 * Icon Card [ Pro ] (not recommended)
 * Post list [ Pro ]
 * New Badge [ Pro ]
@@ -103,11 +104,16 @@ e.g.
 
 == Changelog ==
 
+= 1.75.0 =
+[ Add Block ][ Fixed Display block (Pro) ] Add Fixed display block.
+[ Bug fix ][ Tab ] Fix the default line style to show the top of the border.
+[ Specification Change ] Delete unnecessary css value  ( We abolished the --vk-size-text and changed it to 1rem. ).
+
 = 1.74.0 =
 [ Specification Change ] Fix block categories order
 [ Specification Change ][ VK Button ] Add unit "percent" for border radius.
-[ Bug fix ][ Button ] Fixed button URL being output in editor.
-[ Bug fix ][ Tab ] Fix innactive tab color setting.
+[ Bug fix ][ VK Button ] Fixed button URL being output in editor.
+[ Bug fix ][ Tab (Pro) ] Fix innactive tab color setting.
 
 = 1.73.0 =
 [ Add Block ] Add Tab Block

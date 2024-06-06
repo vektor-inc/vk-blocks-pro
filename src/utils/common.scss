@@ -184,8 +184,8 @@ ol {
 				position: relative;
 				margin-top:0;
 				margin-left: 0;
-				margin:calc( var(--vk-size-text) * 0.8 ) 0;
-				line-height: calc( var(--vk-size-text) * 1.65 );
+				margin:calc( 1rem * 0.8 ) 0;
+				line-height: calc( 1rem * 1.65 );
 			}
 		}
 	}
@@ -210,8 +210,8 @@ ol {
 				display: inline-block;
 				font-weight: bold;
 				border-radius: 50%;
-				font-size: calc( var(--vk-size-text) * 1 );
-				line-height: calc( var(--vk-size-text) * 1.8 );
+				font-size: calc( 1rem * 1 );
+				line-height: calc( 1rem * 1.8 );
 				width: 26px;
 				height: 26px;
 				text-align: center;
@@ -251,8 +251,8 @@ ol {
 				text-indent: 0;
 				display: inline-block;
 				font-weight: bold;
-				font-size: calc( var(--vk-size-text) * 1 );
-				line-height: calc( var(--vk-size-text) * 1.8 );
+				font-size: calc( 1rem * 1 );
+				line-height: calc( 1rem * 1.8 );
 				width: 26px;
 				height: 26px;
 				text-align: center;

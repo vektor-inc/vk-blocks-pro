@@ -24,7 +24,7 @@ export default function TabItemEdit(props) {
 				style: {
 					border: {
 						style: 'solid',
-						color: '#cccccc',
+						color: '#0000001f',
 						width: '1px',
 						top: {
 							width: '0px',
@@ -85,8 +85,8 @@ export default function TabItemEdit(props) {
 					tabOption.listArray.length !== 0
 				) {
 					let childIndex = -1;
-					childBlocks.forEach((chiildBlock, index) => {
-						if (chiildBlock.clientId === clientId) {
+					childBlocks.forEach((childBlock, index) => {
+						if (childBlock.clientId === clientId) {
 							childIndex = index;
 						}
 					});

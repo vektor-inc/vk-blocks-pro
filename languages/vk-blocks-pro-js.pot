@@ -1262,41 +1262,45 @@ msgstr ""
 msgid "span"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:121
+#: src/blocks/_pro/fixed-display/edit.js:101
+msgid "Fixed position from the top"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:123
 msgid "Timing to display"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:137
+#: src/blocks/_pro/fixed-display/edit.js:139
 msgid "Persist visibility once visible"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:61
+#: src/blocks/_pro/fixed-display/edit.js:63
 msgid "Fixed Display Setting"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:63
+#: src/blocks/_pro/fixed-display/edit.js:65
 #: src/blocks/_pro/table-of-contents-new/edit.js:114
 #: src/components/column-layout-control/index.js:69
 msgid "Display type"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:68
+#: src/blocks/_pro/fixed-display/edit.js:70
 msgid "Always Visible"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:72
+#: src/blocks/_pro/fixed-display/edit.js:74
 msgid "Show on Scroll"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:78
+#: src/blocks/_pro/fixed-display/edit.js:80
 msgid "Fixed position"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:82
+#: src/blocks/_pro/fixed-display/edit.js:84
 msgid "Top"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:84
+#: src/blocks/_pro/fixed-display/edit.js:86
 #: src/blocks/balloon/edit.js:434
 #: src/blocks/button/edit.js:375
 #: src/blocks/pr-content/edit.js:252
@@ -1304,20 +1308,16 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:88
+#: src/blocks/_pro/fixed-display/edit.js:90
 msgid "Bottom"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:92
+#: src/blocks/_pro/fixed-display/edit.js:94
 #: src/blocks/balloon/edit.js:422
 #: src/blocks/button/edit.js:355
 #: src/blocks/pr-content/edit.js:256
 #: src/components/display-items-control/index.js:132
 msgid "Left"
-msgstr ""
-
-#: src/blocks/_pro/fixed-display/edit.js:99
-msgid "Fixed position from the top"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:102
@@ -2044,31 +2044,31 @@ msgstr ""
 msgid "Tab 02"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:464
+#: src/blocks/_pro/tab/edit.js:473
 msgid "Tab Label [ %s ]"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:488
+#: src/blocks/_pro/tab/edit.js:497
 msgid "Tab size Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:490
+#: src/blocks/_pro/tab/edit.js:499
 msgid "Tab Size ( Smart Phone )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:507
+#: src/blocks/_pro/tab/edit.js:516
 msgid "Tab Size ( Tablet )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:524
+#: src/blocks/_pro/tab/edit.js:533
 msgid "Tab Size ( PC )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:528
+#: src/blocks/_pro/tab/edit.js:537
 msgid "Fit to the text"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:532
+#: src/blocks/_pro/tab/edit.js:541
 msgid "Monospaced"
 msgstr ""
 

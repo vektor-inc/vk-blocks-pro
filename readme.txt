@@ -104,6 +104,7 @@ e.g.
 == Changelog ==
 
 [ Add Block ][ Fixed Display block (Pro) ] Add Fixed display block.
+[ Bug fix ][ Tab ] Fix the default line style to show the top of the border.
 [ Specification Change ] Delete unnecessary css value  ( We abolished the --vk-size-text and changed it to 1rem. ).
 
 = 1.74.0 =

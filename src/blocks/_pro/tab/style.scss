@@ -1,6 +1,5 @@
 :root {
 	--vk-color-border: rgba(0,0,0,.12);
-	--vk-size-text: 16px;
 	--vk-color-bg-accent-wh: rgba(255,255,255,0.65);
 	--vk-color-bg-inactive: rgba(0, 0, 0, .08);
 	--default-color:#337ab7;
@@ -67,7 +66,7 @@ $xl-min: 1200px;
 			}
 		}
 		& > div {
-			padding: calc(var(--vk-size-text) * 0.5) calc(var(--vk-size-text) * 1);
+			padding: calc( 1rem * 0.5 ) calc( 1rem * 1 );
 			border-top: 2px solid transparent;
 		}
 		&.vk_tab_labels_label-state-active {
@@ -115,10 +114,10 @@ $xl-min: 1200px;
 
 /* default style
 --------------------------------------------*/
-.vk_tab {
-	margin-bottom: calc(var(--vk-size-text) * 2);
-	&_labels {
-		--vk-tab-gap: calc(var(--vk-size-text) * 0.2);
+.vk_tab{
+	margin-bottom: calc( 1rem * 2);
+	&_labels{
+		--vk-tab-gap:calc( 1rem * 0.2 );
 		padding: 0;
 		margin: 0;
 		display: flex;
@@ -131,11 +130,11 @@ $xl-min: 1200px;
 			list-style: none;
 			text-align: center;
 			transition: all .3s ease-out;
-			padding: calc(var(--vk-size-text) * 0.5) calc(var(--vk-size-text) * 1);
+			padding: calc( 1rem * 0.5 ) calc( 1rem * 1 );
 			cursor: pointer;
 			background-color: var(--vk-color-bg-inactive);
-			border-radius: calc(var(--vk-size-text) * 0.3) calc(var(--vk-size-text) * 0.3) 0 0;
-			margin: 0;
+			border-radius:calc( 1rem * 0.3 ) calc( 1rem * 0.3 ) 0 0;
+			margin:0;
 			line-height: 1.5;
 			&.vk_tab_labels_label-state-active,
 			&.has-background {

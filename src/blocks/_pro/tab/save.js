@@ -41,7 +41,10 @@ export default function save(props) {
 
 	let tabList = '';
 	let tabListInner = '';
-	if (Object.keys(tabOption).length !== 0 && tabOption.listArray.length !== 0) {
+	if (
+		Object.keys(tabOption).length !== 0 &&
+		tabOption.listArray.length !== 0
+	) {
 		tabListInner = tabOption.listArray.map((option, index) => {
 			let activeLabelClass = '';
 			if (firstActive === index) {
@@ -72,7 +75,9 @@ export default function save(props) {
 					// Only set color if the label is active
 					if (firstActive === index) {
 						tabColorStyle.color = option.tabColor;
-						const borderColorClassMatch = tabSpanColorClass.match(/has-(.*)-border-color/);
+						const borderColorClassMatch = tabSpanColorClass.match(
+							/has-(.*)-border-color/
+						);
 						if (borderColorClassMatch) {
 							tabSpanColorClass += ` has-${borderColorClassMatch[1]}-color`;
 						}
@@ -80,7 +85,9 @@ export default function save(props) {
 				}
 			}
 
-			if (activeLabelClass.includes('vk_tab_labels_label-state-inactive')) {
+			if (
+				activeLabelClass.includes('vk_tab_labels_label-state-inactive')
+			) {
 				delete tabColorStyle.color;
 			}
 
@@ -98,7 +105,11 @@ export default function save(props) {
 					id={`vk_tab_labels_label-${option.blockId}`}
 					className={`vk_tab_labels_label${activeLabelClass}${tabColorClass}`}
 					key={index}
-					style={Object.keys(tabColorStyle).length > 0 ? tabColorStyle : undefined}
+					style={
+						Object.keys(tabColorStyle).length > 0
+							? tabColorStyle
+							: undefined
+					}
 				>
 					<RichText.Content
 						tagName="div"

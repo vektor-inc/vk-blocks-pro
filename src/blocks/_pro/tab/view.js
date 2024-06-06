@@ -32,12 +32,22 @@ document.addEventListener('DOMContentLoaded', function () {
 			activeLabel.classList.add('vk_tab_labels_label-state-active');
 			activeLabel.classList.remove('vk_tab_labels_label-state-inactive');
 
-			if (activeLabel.closest('.vk_tab').classList.contains('is-style-vk_tab_labels-line')) {
+			if (
+				activeLabel
+					.closest('.vk_tab')
+					.classList.contains('is-style-vk_tab_labels-line')
+			) {
 				const div = activeLabel.querySelector('div');
 				const borderTopColor = div.style.borderTopColor;
-				const borderColorClass = Array.from(div.classList).find(cls => cls.startsWith('has-') && cls.endsWith('-border-color'));
+				const borderColorClass = Array.from(div.classList).find(
+					(cls) =>
+						cls.startsWith('has-') && cls.endsWith('-border-color')
+				);
 				if (borderColorClass) {
-					const colorClass = borderColorClass.replace('-border-color', '-color');
+					const colorClass = borderColorClass.replace(
+						'-border-color',
+						'-color'
+					);
 					div.classList.add(colorClass);
 				} else {
 					activeLabel.style.color = borderTopColor;
@@ -94,9 +104,16 @@ document.addEventListener('DOMContentLoaded', function () {
 						);
 					} else {
 						const div = activeLabel.querySelector('div');
-						const borderColorClass = Array.from(div.classList).find(cls => cls.startsWith('has-') && cls.endsWith('-border-color'));
+						const borderColorClass = Array.from(div.classList).find(
+							(cls) =>
+								cls.startsWith('has-') &&
+								cls.endsWith('-border-color')
+						);
 						if (borderColorClass) {
-							const colorClass = borderColorClass.replace('-border-color', '-color');
+							const colorClass = borderColorClass.replace(
+								'-border-color',
+								'-color'
+							);
 							div.classList.remove(colorClass);
 						}
 						activeLabel.style.removeProperty('color');
@@ -123,14 +140,22 @@ document.addEventListener('DOMContentLoaded', function () {
 					'vk_tab_labels_label-state-inactive'
 				);
 				if (
-					newActiveLabel.closest('.vk_tab')
+					newActiveLabel
+						.closest('.vk_tab')
 						.classList.contains('is-style-vk_tab_labels-line')
 				) {
 					const div = newActiveLabel.querySelector('div');
 					const borderTopColor = div.style.borderTopColor;
-					const borderColorClass = Array.from(div.classList).find(cls => cls.startsWith('has-') && cls.endsWith('-border-color'));
+					const borderColorClass = Array.from(div.classList).find(
+						(cls) =>
+							cls.startsWith('has-') &&
+							cls.endsWith('-border-color')
+					);
 					if (borderColorClass) {
-						const colorClass = borderColorClass.replace('-border-color', '-color');
+						const colorClass = borderColorClass.replace(
+							'-border-color',
+							'-color'
+						);
 						div.classList.add(colorClass);
 					} else {
 						newActiveLabel.style.color = borderTopColor;

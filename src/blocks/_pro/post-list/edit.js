@@ -56,12 +56,12 @@ export default function PostListEdit(props) {
 
 	const saveStateTerms = (termId) => {
 		isCheckedTermsData.push(termId);
-		setIsCheckedTermsData(isCheckedTermsData);
+		setIsCheckedTermsData([...isCheckedTermsData]);
 	};
 
 	const saveStatePostTypes = (slug) => {
 		isCheckedPostTypeData.push(slug);
-		setIsCheckedPostTypeData(isCheckedPostTypeData);
+		setIsCheckedPostTypeData([...isCheckedPostTypeData]);
 	};
 
 	let postTypesProps = vk_block_post_type_params.post_type_option;
@@ -88,9 +88,15 @@ export default function PostListEdit(props) {
 		return removedTermIds.concat(newIds);
 	};
 
+	const filteredTaxonomies = taxonomies.filter((taxonomy) => {
+		return isCheckedPostTypeData.some((postTypeSlug) => {
+			return taxonomy.types.includes(postTypeSlug);
+		});
+	});
+
 	// termFormTokenFields ////////////////////////////////////////////////////////
 	// Tag Filter
-	const termFormTokenFields = taxonomies
+	const termFormTokenFields = filteredTaxonomies
 		.filter((taxonomy) => {
 			return !taxonomy.hierarchical && termsByTaxonomyName[taxonomy.slug];
 		})
@@ -155,11 +161,11 @@ export default function PostListEdit(props) {
 					}}
 				></FormTokenField>
 			) : null;
-		}, taxonomies);
+		}, filteredTaxonomies);
 
 	// taxonomiesCheckBox ////////////////////////////////////////////////////////
 	// key を BaseControlのlabelに代入。valueの配列をmapでAdvancedCheckboxControlに渡す
-	const taxonomiesCheckBox = taxonomies
+	const taxonomiesCheckBox = filteredTaxonomies
 		.filter((taxonomy) => {
 			return (
 				taxonomy.hierarchical === true &&
@@ -195,7 +201,7 @@ export default function PostListEdit(props) {
 					/>
 				</BaseControl>
 			);
-		}, termsByTaxonomyName);
+		}, filteredTaxonomies);
 
 	const blockProps = useBlockProps();
 

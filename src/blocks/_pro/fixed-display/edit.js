@@ -13,6 +13,7 @@ const units = [
 	{ value: 'px', label: 'px' },
 	{ value: 'em', label: 'em' },
 	{ value: 'rem', label: 'rem' },
+	{ value: 'vh', label: 'vh' },
 	{ value: 'svh', label: 'svh' },
 ];
 

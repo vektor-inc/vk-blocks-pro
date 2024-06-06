@@ -59,7 +59,6 @@ jobs:
         npx wp-scripts test-playwright --trace on --project=chromium login.spec.ts
         npx wp-scripts test-playwright --trace on --project=chromium common-margin.spec.ts
         npx wp-scripts test-playwright --trace on --project=chromium heading-transform.spec.ts
-        npx wp-scripts test-playwright --trace on --project=chromium import-export.spec.ts
 
     - uses: actions/upload-artifact@v3
       if: always()

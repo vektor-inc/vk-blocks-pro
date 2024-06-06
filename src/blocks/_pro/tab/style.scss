@@ -28,9 +28,9 @@ $xl-min: 1200px;
 		border-right: 1px solid var(--vk-color-border);
 		border-left: 1px solid var(--vk-color-border);
 		border-radius: 0;
-		&:last-child {
-			border-right: 1px solid var(--vk-color-border);
-		}
+		// &:last-child {
+		//	border-right: 1px solid var(--vk-color-border);
+		// }
 		&::before, &::after {
 			position: absolute;
 			bottom: 0;
@@ -43,7 +43,7 @@ $xl-min: 1200px;
 			bottom: 0;
 			z-index: 0;
 			height: 1px;
-			background-color: var(--vk-color-border);
+			// background-color: var(--vk-color-border); //重なる部分が濃くなるため
 		}
 		&::after {
 			top: 0;
@@ -68,6 +68,7 @@ $xl-min: 1200px;
 		}
 		& > div {
 			padding: calc(var(--vk-size-text) * 0.5) calc(var(--vk-size-text) * 1);
+			border-top: 2px solid transparent;
 		}
 		&.vk_tab_labels_label-state-active {
 			color: var(--default-color);
@@ -84,6 +85,9 @@ $xl-min: 1200px;
 		}
 		&.vk_tab_labels_label-state-inactive {
 			color: initial;
+			& > div {
+				background-color: var(--vk-color-bg-inactive);
+			}
 			&:hover {
 				// background-color: #fff; // ここで色を指定すると hover での色変更が効かない
 				opacity: 0.8;
@@ -140,7 +144,6 @@ $xl-min: 1200px;
 				color: #fff;
 			}
 			&.vk_tab_labels_label-state-inactive {
-				background-color: var(--vk-color-bg-inactive);
 				color: initial;
 			}
 			&:hover {

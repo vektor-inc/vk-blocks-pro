@@ -103,6 +103,7 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ][ Post List (Pro) ] Displayed taxonomies now only show for selected post types.
 [ Specification Change ] Delete unnecessary css value  ( We abolished the --vk-size-text and changed it to 1rem. ).
 
 = 1.74.0 =

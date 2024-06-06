@@ -2,9 +2,9 @@
 Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird,chiakikouno,doshimaf,mtdkei
 Donate link:
 Tags: Gutenberg,FAQ,alert
-Requires at least: 6.2
+Requires at least: 6.3
 Tested up to: 6.5
-Stable tag: 1.72.1.1
+Stable tag: 1.73.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -104,9 +104,13 @@ e.g.
 == Changelog ==
 
 [ Add Block ][ Fixed Display block (Pro) ] Add Fixed display block.
-[ Bug fix ][ Button ] Fixed button URL being output in editor.
-[ Bug fix ][ Tab ] Fix innactive tab color setting.
-[ Add function ][ VK Button ] Add unit "percent" for border radius.
+[ Specification Change ] Delete unnecessary css value  ( We abolished the --vk-size-text and changed it to 1rem. ).
+
+= 1.74.0 =
+[ Specification Change ] Fix block categories order
+[ Specification Change ][ VK Button ] Add unit "percent" for border radius.
+[ Bug fix ][ VK Button ] Fixed button URL being output in editor.
+[ Bug fix ][ Tab (Pro) ] Fix innactive tab color setting.
 
 = 1.73.0 =
 [ Add Block ] Add Tab Block

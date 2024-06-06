@@ -103,6 +103,7 @@ e.g.
 
 == Changelog ==
 
+[ Add Block ][ Fixed Display block (Pro) ] Add Fixed display block.
 [ Specification Change ] Delete unnecessary css value  ( We abolished the --vk-size-text and changed it to 1rem. ).
 
 = 1.74.0 =

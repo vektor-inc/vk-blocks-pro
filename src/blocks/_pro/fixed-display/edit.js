@@ -71,7 +71,7 @@ export default function FixedDisplayEdit(props) {
 					<PanelRow>
 						<p>
 							{__(
-								'編集画面では固定位置ブロックの固定位置は変わりません。フロント画面でご確認ください。',
+								'The fixed position of the fixed position block will not change on the edit screen. Please check on the front screen.',
 								'vk-blocks-pro'
 							)}
 						</p>

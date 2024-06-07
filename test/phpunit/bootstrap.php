@@ -49,8 +49,7 @@ function _manually_load_plugin() {
 	$test = activate_plugins( 'vk-blocks-pro/vk-blocks.php' );
 	if ( true === $test ) {
 		echo 'vk-blocks-pro activated.' . PHP_EOL;
-	}
-	else {
+	} else {
 		echo 'error: vk-blocks-pro not activated.' . PHP_EOL;
 		exit;
 	}

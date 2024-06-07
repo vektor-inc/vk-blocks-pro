@@ -233,7 +233,7 @@ export default function Edit(props) {
 											: __(
 													'Input Link URL',
 													'vk-blocks-pro'
-												)
+											  )
 									}
 									onClick={setLink}
 								/>

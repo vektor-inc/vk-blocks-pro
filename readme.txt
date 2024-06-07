@@ -104,7 +104,7 @@ e.g.
 
 == Changelog ==
 
-[ Specification Change ] Fixed activation of vk blocks pro.
+[ Bug fix ] Fixed an issue where the Pro version could not be activated in an environment where the Free version is active.
 
 = 1.75.0 =
 [ Add Block ][ Fixed Display block (Pro) ] Add Fixed display block.

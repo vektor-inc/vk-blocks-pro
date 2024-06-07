@@ -42,6 +42,11 @@ function _manually_load_plugin() {
 	// ./temp/themes/ から読み込む
 	register_theme_directory( dirname( dirname( __DIR__ ) ) . '/temp/themes/' );
 	search_theme_directories();
+	require_once ABSPATH . 'wp-admin/includes/plugin.php';
+	deactivate_plugins( 'vk-blocks/vk-blocks.php' );
+	deactivate_plugins( 'vk-blocks-pro/vk-blocks.php' );
+	activate_plugins( 'vk-blocks/vk-blocks.php' );
+	activate_plugins( 'vk-blocks-pro/vk-blocks.php' );
 	require_once dirname( dirname( dirname( __FILE__ ) ) ) . '/vk-blocks.php';
 }
 tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );

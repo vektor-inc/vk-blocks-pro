@@ -1263,44 +1263,6 @@ msgid "span"
 msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:101
-msgid "Fixed position from the top"
-msgstr ""
-
-#: src/blocks/_pro/fixed-display/edit.js:123
-msgid "Timing to display"
-msgstr ""
-
-#: src/blocks/_pro/fixed-display/edit.js:139
-msgid "Persist visibility once visible"
-msgstr ""
-
-#: src/blocks/_pro/fixed-display/edit.js:63
-msgid "Fixed Display Setting"
-msgstr ""
-
-#: src/blocks/_pro/fixed-display/edit.js:65
-#: src/blocks/_pro/table-of-contents-new/edit.js:114
-#: src/components/column-layout-control/index.js:69
-msgid "Display type"
-msgstr ""
-
-#: src/blocks/_pro/fixed-display/edit.js:70
-msgid "Always Visible"
-msgstr ""
-
-#: src/blocks/_pro/fixed-display/edit.js:74
-msgid "Show on Scroll"
-msgstr ""
-
-#: src/blocks/_pro/fixed-display/edit.js:80
-msgid "Fixed position"
-msgstr ""
-
-#: src/blocks/_pro/fixed-display/edit.js:84
-msgid "Top"
-msgstr ""
-
-#: src/blocks/_pro/fixed-display/edit.js:86
 #: src/blocks/balloon/edit.js:434
 #: src/blocks/button/edit.js:375
 #: src/blocks/pr-content/edit.js:252
@@ -1308,16 +1270,60 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:90
+#: src/blocks/_pro/fixed-display/edit.js:105
 msgid "Bottom"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:94
+#: src/blocks/_pro/fixed-display/edit.js:109
 #: src/blocks/balloon/edit.js:422
 #: src/blocks/button/edit.js:355
 #: src/blocks/pr-content/edit.js:256
 #: src/components/display-items-control/index.js:132
 msgid "Left"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:116
+msgid "Fixed position from the top"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:138
+msgid "Timing to display"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:154
+msgid "Persist visibility once visible"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:70
+msgid "Fixed Display Setting"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:73
+msgid ""
+"The fixed position of the fixed position block will not change on the edit "
+"screen. Please check on the front screen."
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:80
+#: src/blocks/_pro/table-of-contents-new/edit.js:114
+#: src/components/column-layout-control/index.js:69
+msgid "Display type"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:85
+msgid "Always Visible"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:89
+msgid "Show on Scroll"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:95
+msgid "Fixed position"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:99
+msgid "Top"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:102

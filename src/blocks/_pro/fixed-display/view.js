@@ -40,6 +40,8 @@ function convertUnitToPixels(value, unit) {
 				value *
 				parseFloat(getComputedStyle(document.documentElement).fontSize)
 			);
+		case '%':
+			return (value * window.innerHeight) / 100;
 		case 'vh':
 			return (value * window.innerHeight) / 100;
 		case 'svh':

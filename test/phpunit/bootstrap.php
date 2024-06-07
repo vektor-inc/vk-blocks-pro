@@ -46,8 +46,16 @@ function _manually_load_plugin() {
 	deactivate_plugins( 'vk-blocks/vk-blocks.php' );
 	deactivate_plugins( 'vk-blocks-pro/vk-blocks.php' );
 	activate_plugins( 'vk-blocks/vk-blocks.php' );
-	activate_plugins( 'vk-blocks-pro/vk-blocks.php' );
+	$test = activate_plugins( 'vk-blocks-pro/vk-blocks.php' );
+	if ( true === $test ) {
+		echo 'vk-blocks-pro activated.' . PHP_EOL;
+	}
+	else {
+		echo 'error: vk-blocks-pro not activated.' . PHP_EOL;
+		exit;
+	}
 	require_once dirname( dirname( dirname( __FILE__ ) ) ) . '/vk-blocks.php';
+	
 }
 tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );
 

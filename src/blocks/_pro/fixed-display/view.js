@@ -16,17 +16,11 @@ window.addEventListener('scroll', function () {
 		// 単位に応じたピクセル値への変換
 		const timingInPixels = convertUnitToPixels(timing, unit);
 
-		console.log(
-			`ScrollY: ${window.scrollY}, Timing in Pixels: ${timingInPixels}`
-		);
-
 		// スクロール位置が指定したタイミングを超えた場合に.is-visibleクラスを付与
 		if (window.scrollY > timingInPixels) {
 			item.classList.add('is-visible');
-			console.log('is-visible class added');
 		} else if (!scrollPersistVisible) {
 			item.classList.remove('is-visible');
-			console.log('is-visible class removed');
 		}
 	});
 });

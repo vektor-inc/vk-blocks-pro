@@ -53,8 +53,7 @@ function _manually_load_plugin() {
 		echo 'error: vk-blocks-pro not activated.' . PHP_EOL;
 		exit;
 	}
-	require_once dirname( dirname( dirname( __FILE__ ) ) ) . '/vk-blocks.php';
-	
+	require_once dirname( dirname( dirname( __FILE__ ) ) ) . '/vk-blocks.php';	
 }
 tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );
 

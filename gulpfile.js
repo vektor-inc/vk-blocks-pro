@@ -109,6 +109,7 @@ gulp.task('helper-js-pro', (done) => {
 	gulp.src('src/blocks/_pro/fixed-display/view.js')
 		.pipe(uglify())
 		.pipe(rename('vk-fixed-display.min.js'))
+		.pipe(gulp.dest('./build/'));
 	gulp.src('src/blocks/_pro/tab/view.js')
 		.pipe(uglify())
 		.pipe(rename('vk-tab.min.js'))

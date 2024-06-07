@@ -104,6 +104,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Fixed Display block (Pro) ] Ensured the top style is not applied in the editor.
+
 = 1.75.0 =
 [ Add Block ][ Fixed Display block (Pro) ] Add Fixed display block.
 [ Bug fix ][ Tab ] Fix the default line style to show the top of the border.

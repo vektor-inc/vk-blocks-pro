@@ -5,7 +5,12 @@ import {
 	useBlockProps,
 	__experimentalUnitControl as UnitControl,
 } from '@wordpress/block-editor';
-import { PanelBody, SelectControl, ToggleControl } from '@wordpress/components';
+import {
+	PanelBody,
+	SelectControl,
+	ToggleControl,
+	PanelRow,
+} from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 
@@ -51,9 +56,11 @@ export default function FixedDisplayEdit(props) {
 	const blockProps = useBlockProps({
 		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} vk_fixed-display-${blockId}`,
 		style: {
-			top: ['right', 'left'].includes(position)
-				? `${fixedTopPosition}${fixedTopPositionUnit}`
-				: undefined,
+			// Apply top position only on the front end
+			top:
+				typeof window === 'undefined' || !window.wp?.blockEditor
+					? `${fixedTopPosition}${fixedTopPositionUnit}`
+					: undefined,
 		},
 	});
 
@@ -61,6 +68,14 @@ export default function FixedDisplayEdit(props) {
 		<>
 			<InspectorControls>
 				<PanelBody title={__('Fixed Display Setting', 'vk-blocks-pro')}>
+					<PanelRow>
+						<p>
+							{__(
+								'The fixed position of the fixed position block will not change on the edit screen. Please check on the front screen.',
+								'vk-blocks-pro'
+							)}
+						</p>
+					</PanelRow>
 					<SelectControl
 						label={__('Display type', 'vk-blocks-pro')}
 						value={mode}

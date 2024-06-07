@@ -14,7 +14,7 @@ jobs:
       matrix:
         php-versions: ['7.4', '8.0', '8.1']
         wp-versions: ['6.4','6.3','6.2']
-    name: PHP Unit test ${{ matrix.php-versions }} / WP ${{ matrix.wp-versions }} Test on ${{ matrix.operating-system }}
+    name: PHP Unit test ${{ matrix.php-versions }} / WP ${{ matrix.wp-versions }} Test
     services:
       mysql:
         image: mysql:5.7
@@ -64,6 +64,8 @@ jobs:
     # Build
     - name: Build
       run: npm run build
+    - name: Install VK Blocks
+      run: npm run wp-env run cli 'wp plugin install vk-blocks'
     # PHPUnit
     - name: PHP Unit Test
       run: npm run phpunit

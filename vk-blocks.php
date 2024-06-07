@@ -53,7 +53,7 @@ require_once ABSPATH . 'wp-admin/includes/plugin.php';
 if ( strpos( plugin_dir_path( __FILE__ ), 'vk-blocks-pro' ) !== false ) {
 	if ( is_plugin_active( 'vk-blocks/vk-blocks.php' ) ) {
 		deactivate_plugins( 'vk-blocks/vk-blocks.php' );
-		
+
 		// Deactive ExUnit included VK Blocks.
 		$vk_blocks_exunit_common_options = get_option( 'vkExUnit_common_options' );
 		if ( ! empty( $vk_blocks_exunit_common_options['active_vk-blocks'] ) ) {
@@ -72,7 +72,7 @@ if ( strpos( plugin_dir_path( __FILE__ ), 'vk-blocks-pro' ) !== false ) {
 			update_option( 'vkExUnit_common_options', $vk_blocks_exunit_common_options );
 		}
 		return;
-	}	
+	}
 } elseif ( strpos( plugin_dir_path( __FILE__ ), 'vk-blocks' ) !== false ) {
 	if ( is_plugin_active( 'vk-blocks-pro/vk-blocks.php' ) ) {
 		require_once ABSPATH . 'wp-admin/includes/plugin.php';

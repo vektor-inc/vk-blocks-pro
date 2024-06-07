@@ -102,10 +102,10 @@ export const BodyArea = ({
 								? [
 										...(variationState[index].scope || []),
 										scopeOption.name,
-									]
+								  ]
 								: variationState[index].scope.filter(
 										(item) => item !== scopeOption.name
-									);
+								  );
 							onChange('scope', newScope);
 						}}
 					/>

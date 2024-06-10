@@ -56,15 +56,15 @@ jobs:
       run: |
         curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
         chmod +x wp-cli.phar
-        mv wp-cli.phar /usr/local/bin/wp
+        sudo mv wp-cli.phar /usr/local/bin/wp
     - name: Install several WordPress version by wp-env.override.json
       run: WP_ENV_PHP_VERSION=${{ matrix.php-versions }} WP_ENV_CORE=WordPress/WordPress#${{ matrix.wp-versions }} npm run wp-env start --update
     - name: Check WordPress Version
       run: npm run wp-env run cli wp core version
     - name: Create necessary directories
       run: |
-        mkdir -p /var/www/html/wp-content/upgrade
-        mkdir -p /etc/X11/fs/.wp-cli/cache/
+        sudo mkdir -p /var/www/html/wp-content/upgrade
+        sudo mkdir -p /etc/X11/fs/.wp-cli/cache/
     - name: Set permissions for directories
       run: |
         sudo chmod -R 777 /var/www/html/wp-content/upgrade

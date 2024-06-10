@@ -27,8 +27,15 @@ import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function BorderBoxEdit(props) {
 	const { attributes, setAttributes } = props;
-	const { heading, headingTag, faIcon, color, bgColor, borderColor, bodyAlign } =
-		attributes;
+	const {
+		heading,
+		headingTag,
+		faIcon,
+		color,
+		bgColor,
+		borderColor,
+		bodyAlign,
+	} = attributes;
 	// eslint-disable-next-line no-undef
 	const iconFamily = vkFontAwesome.iconFamily;
 	const inner = (
@@ -209,15 +216,17 @@ export default function BorderBoxEdit(props) {
 					<BaseControl>
 						<SelectControl
 							label="Title Tag"
-							value={ headingTag }
-							options={ [
+							value={headingTag}
+							options={[
 								{ label: 'H3', value: 'h3' },
 								{ label: 'H4', value: 'h4' },
 								{ label: 'H5', value: 'h5' },
 								{ label: 'H6', value: 'h6' },
-								{ label: 'p', value: 'p'}
-							] }
-							onChange={ (value) => setAttributes({ headingTag: value }) }
+								{ label: 'p', value: 'p' },
+							]}
+							onChange={(value) =>
+								setAttributes({ headingTag: value })
+							}
 						/>
 					</BaseControl>
 				</PanelBody>

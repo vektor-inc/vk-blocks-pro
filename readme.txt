@@ -104,6 +104,7 @@ e.g.
 
 == Changelog ==
 
+[ Add Setting ][ Border Box ] add title tag setting.
 [ Bug fix ] Fixed an issue where the Pro version could not be activated in an environment where the Free version is active.
 
 = 1.75.0 =

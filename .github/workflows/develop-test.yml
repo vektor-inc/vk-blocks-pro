@@ -73,7 +73,8 @@ jobs:
     - name: Build
       run: npm run build
     - name: Install VK Blocks
-      run: npm run wp-env run cli 'wp plugin install vk-blocks'
+      run: |
+       npm run wp-env run cli 'wp plugin install vk-blocks'
     # PHPUnit
     - name: PHP Unit Test
       run: npm run phpunit

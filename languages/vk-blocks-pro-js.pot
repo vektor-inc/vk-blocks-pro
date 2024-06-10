@@ -291,7 +291,7 @@ msgstr ""
 #: src/admin/custom-format/index.js:203
 #: src/blocks/_pro/step-item/edit.js:105
 #: src/blocks/_pro/timeline-item/edit.js:71
-#: src/blocks/border-box/edit.js:204
+#: src/blocks/border-box/edit.js:224
 #: src/blocks/button/edit.js:677
 #: src/blocks/icon/edit.js:299
 #: src/blocks/staff/edit.js:199
@@ -309,7 +309,7 @@ msgstr ""
 #: src/admin/custom-format/index.js:239
 #: src/blocks/_pro/grid-column-item/edit.js:110
 #: src/blocks/_pro/gridcolcard/edit-common.js:172
-#: src/blocks/border-box/edit.js:216
+#: src/blocks/border-box/edit.js:236
 #: src/blocks/button/edit.js:732
 #: src/blocks/icon/edit.js:304
 msgid "Background Color"
@@ -497,7 +497,7 @@ msgid "ex)"
 msgstr ""
 
 #: src/admin/margin.js:141
-#: src/blocks/border-box/edit.js:192
+#: src/blocks/border-box/edit.js:193
 #: src/blocks/icon-outer/edit.js:150
 #: src/blocks/icon/edit.js:140
 msgid "Margin"
@@ -968,6 +968,7 @@ msgstr ""
 #: src/blocks/_pro/card/edit.js:134
 #: src/blocks/_pro/icon-card/edit.js:75
 #: src/blocks/_pro/post-list/edit.js:338
+#: src/blocks/border-box/edit.js:206
 msgid "Title"
 msgstr ""
 
@@ -1485,7 +1486,7 @@ msgid "Border Width"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:209
-#: src/blocks/border-box/edit.js:207
+#: src/blocks/border-box/edit.js:227
 #: src/extensions/core/group/style.js:46
 msgid "Border Color"
 msgstr ""
@@ -1567,7 +1568,7 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:137
 #: src/blocks/_pro/step-item/edit.js:82
-#: src/blocks/border-box/edit.js:240
+#: src/blocks/border-box/edit.js:260
 #: src/blocks/button/edit.js:760
 #: src/blocks/heading/edit.js:335
 #: src/blocks/icon/edit.js:276
@@ -2315,11 +2316,11 @@ msgstr ""
 
 #: src/blocks/border-box/deprecated/0.0.0/save.js:24
 #: src/blocks/border-box/deprecated/0.0.1/save.js:25
-#: src/blocks/border-box/edit.js:43
+#: src/blocks/border-box/edit.js:44
 msgid "Please enter a title."
 msgstr ""
 
-#: src/blocks/border-box/edit.js:197
+#: src/blocks/border-box/edit.js:198
 msgid ""
 "The margin-top of the first element and the margin-bottom of the last "
 "element in the border block will be automatically set to 0.If you want to "
@@ -2327,11 +2328,11 @@ msgid ""
 "instead of margin."
 msgstr ""
 
-#: src/blocks/border-box/edit.js:226
+#: src/blocks/border-box/edit.js:246
 msgid "Transparent"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:230
+#: src/blocks/border-box/edit.js:250
 msgid "White"
 msgstr ""
 

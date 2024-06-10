@@ -64,6 +64,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Margin extension
 * Nowrap
 * Responsive BR
+* Columns direction
 * Custom CSS [ Pro ]
 
 [ Settings ]

@@ -65,7 +65,7 @@ jobs:
     - name: Build
       run: npm run build
     - name: Install VK Blocks
-      run: npm run wp-env run cli 'wp plugin install vk-blocks'
+      run: sudo chmod -R 777 ~/wp-env && npm run wp-env run cli 'wp plugin install vk-blocks'
     # PHPUnit
     - name: PHP Unit Test
       run: npm run phpunit

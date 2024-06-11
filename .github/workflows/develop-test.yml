@@ -61,14 +61,9 @@ jobs:
       run: WP_ENV_PHP_VERSION=${{ matrix.php-versions }} WP_ENV_CORE=WordPress/WordPress#${{ matrix.wp-versions }} npm run wp-env start --update
     - name: Check WordPress Version
       run: npm run wp-env run cli wp core version
-    - name: Create necessary directories
-      run: |
-        sudo mkdir -p /var/www/html/wp-content/upgrade
-        sudo mkdir -p /etc/X11/fs/.wp-cli/cache/
-    - name: Set permissions for directories
-      run: |
-        sudo chmod -R 777 /var/www/html/wp-content/upgrade
-        sudo chmod -R 777 /etc/X11/fs/.wp-cli/cache/
+    # Change Permissions
+    - name: Change Permissions
+      run: sudo chmod -R 777 ~/wp-env
     # Build
     - name: Build
       run: npm run build

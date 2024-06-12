@@ -44,10 +44,7 @@ export default function TabEdit(props) {
 	const classNames = className !== undefined ? className.split(' ') : [];
 
 	useEffect(() => {
-		if (
-			blockId === undefined ||
-			isParentReusableBlock(clientId) === false
-		) {
+		if (blockId === undefined || isParentReusableBlock(clientId) === false) {
 			setAttributes({ blockId: clientId });
 		}
 	}, [clientId]);
@@ -209,11 +206,11 @@ export default function TabEdit(props) {
 		if (childBlocks) {
 			const vkTab = e.target.closest('.vk_tab');
 			const vkTabLabels = vkTab.querySelector('.vk_tab_labels');
-
+	
 			// ブロック ID を抽出
 			const TabLabelId = e.target.closest('.vk_tab_labels_label').id;
 			const TabId = TabLabelId.replace('vk_tab_labels_label-', '');
-
+	
 			/* ラベルの処理 */
 			// カレントを探して全て外す
 			const activeLabels = vkTabLabels.querySelectorAll(
@@ -236,7 +233,7 @@ export default function TabEdit(props) {
 					);
 				}
 			});
-
+	
 			// クリックされた要素にアクティブを追加
 			const newActiveLabel = vkTabLabels.querySelector(
 				`#vk_tab_labels_label-${TabId}`
@@ -245,6 +242,8 @@ export default function TabEdit(props) {
 			newActiveLabel.classList.remove(
 				'vk_tab_labels_label-state-inactive'
 			);
+			newActiveLabel.style.removeProperty('background-color'); // ここを追加
+	
 			const activeTabBody = document.querySelector(`#block-${TabId}`);
 			const activeTabBodyStyle = window.getComputedStyle(activeTabBody);
 			if (
@@ -255,19 +254,16 @@ export default function TabEdit(props) {
 				newActiveLabel.style.backgroundColor =
 					activeTabBodyStyle.borderTopColor || '';
 			}
-
+	
 			/* 本体の処理 */
 			childBlocks.forEach((childBlock, index) => {
 				if (TabId === childBlock.clientId) {
 					setAttributes({ firstActive: parseInt(index, 10) });
-					// 子ブロックを選択状態にする -> タブ文字が隠れて編集できなくなるので一旦コメントアウト
-					// dispatch('core/block-editor').selectBlock(
-					//  childBlock.clientId
-					// );
 				}
 			});
 		}
 	};
+	
 
 	const tabSizePrefix = 'vk_tab_labels-tabSize';
 
@@ -450,8 +446,8 @@ export default function TabEdit(props) {
 							);
 						}
 					}}
-					onKeyPress={(e) => {
-						if (e.key === 'Enter') {
+					onKeyDown={(e) => {
+						if (e.key === 'Enter' || e.key === ' ') {
 							liOnClick(e);
 						}
 					}}
@@ -482,7 +478,7 @@ export default function TabEdit(props) {
 			);
 		});
 		tablabelsEdit = (
-			<ul className={tabListClassName}>{tablabelsEditList}</ul>
+			<ul className={tabListClassName} role="tablist">{tablabelsEditList}</ul>
 		);
 	}
 

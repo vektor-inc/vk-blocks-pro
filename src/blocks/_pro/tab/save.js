@@ -107,16 +107,26 @@ export default function save(props) {
 					key={index}
 					style={
 						Object.keys(tabColorStyle).length > 0
-							? tabColorStyle
-							: undefined
+						? tabColorStyle
+						: undefined
 					}
-				>
-					<RichText.Content
-						tagName="div"
-						className={tabSpanColorClass}
-						style={tabSpanColorStyle}
-						value={option.tabLabel}
-					/>
+					tabIndex={firstActive === index ? 0 : -1}
+					role="tab"
+					aria-selected={firstActive === index}
+					aria-controls={`vk_tab_bodys_body-${option.blockId}`}
+					onKeyDown={(e) => {
+						if (e.key === 'Enter' || e.key === ' ') {
+							e.preventDefault();
+							e.target.click();
+						}
+					}}
+					>
+						<RichText.Content
+							tagName="div"
+							className={tabSpanColorClass}
+							style={tabSpanColorStyle}
+							value={option.tabLabel}
+							/>
 				</li>
 			);
 		});

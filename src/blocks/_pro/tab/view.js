@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				// ブロック ID を抽出
 				const TabLabelId = e.target.closest('.vk_tab_labels_label').id;
 				const TabId = TabLabelId.replace('vk_tab_labels_label-', '');
-
+			
 				// 現在のアクティブなラベルとボディを取得
 				const activeLabels = vkTabLabels.querySelectorAll(
 					'.vk_tab_labels_label-state-active'
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
 						activeLabel.style.removeProperty('color');
 					}
 				});
-
+			
 				const activeBodies = vkTabBodies.querySelectorAll(
 					'.vk_tab_bodys_body-state-active'
 				);
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
 						'vk_tab_bodys_body-state-active'
 					);
 				});
-
+			
 				// 新しいアクティブなラベルとボディを設定
 				const newActiveLabel = vkTabLabels.querySelector(
 					`#vk_tab_labels_label-${TabId}`
@@ -139,6 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				newActiveLabel.classList.remove(
 					'vk_tab_labels_label-state-inactive'
 				);
+				newActiveLabel.style.removeProperty('background-color'); // ここを追加
 				if (
 					newActiveLabel
 						.closest('.vk_tab')
@@ -161,17 +162,18 @@ document.addEventListener('DOMContentLoaded', function () {
 						newActiveLabel.style.color = borderTopColor;
 					}
 				}
-
+			
 				const newActiveBody = vkTabBodies.querySelector(
 					`#vk_tab_bodys_body-${TabId}`
 				);
 				newActiveBody.classList.add('vk_tab_bodys_body-state-active');
-
+			
 				e.target.setAttribute('tabindex', '0');
 				e.target.setAttribute('aria-selected', 'true');
-
+			
 				e.target.focus();
 			});
+			
 
 			TabLabel.addEventListener('keydown', (e) => {
 				const currentTab = e.target;
@@ -181,6 +183,9 @@ document.addEventListener('DOMContentLoaded', function () {
 					newTab = currentTab.previousElementSibling;
 				} else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
 					newTab = currentTab.nextElementSibling;
+				} else if (e.key === 'Enter' || e.key === ' ') {
+					e.preventDefault();
+					currentTab.click();
 				}
 
 				if (newTab) {
@@ -197,21 +202,13 @@ document.addEventListener('DOMContentLoaded', function () {
 			// ホバー時のクラスを変更
 			TabLabel.addEventListener('mouseover', function () {
 				if (
-					!this.classList.contains(
-						'vk_tab_labels_label-state-active'
-					) &&
-					!this.closest('.vk_tab').classList.contains(
-						'is-style-vk_tab_labels-line'
-					)
+					!this.classList.contains('vk_tab_labels_label-state-active') &&
+					!this.closest('.vk_tab').classList.contains('is-style-vk_tab_labels-line')
 				) {
 					const activeTabBody = vkTabBodies.querySelector(
-						`#vk_tab_bodys_body-${this.id.replace(
-							'vk_tab_labels_label-',
-							''
-						)}`
+						`#vk_tab_bodys_body-${this.id.replace('vk_tab_labels_label-', '')}`
 					);
-					const activeTabBodyStyle =
-						window.getComputedStyle(activeTabBody);
+					const activeTabBodyStyle = window.getComputedStyle(activeTabBody);
 					this.style.setProperty(
 						'background-color',
 						activeTabBodyStyle.borderTopColor || '',
@@ -224,12 +221,8 @@ document.addEventListener('DOMContentLoaded', function () {
 			// ホバーが外れた時のクラスを戻す
 			TabLabel.addEventListener('mouseout', function () {
 				if (
-					!this.classList.contains(
-						'vk_tab_labels_label-state-active'
-					) &&
-					!this.closest('.vk_tab').classList.contains(
-						'is-style-vk_tab_labels-line'
-					)
+					!this.classList.contains('vk_tab_labels_label-state-active') &&
+					!this.closest('.vk_tab').classList.contains('is-style-vk_tab_labels-line')
 				) {
 					this.style.setProperty(
 						'background-color',

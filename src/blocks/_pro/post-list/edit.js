@@ -137,6 +137,8 @@ export default function PostListEdit(props) {
 		return removedTermIds.concat(newIds);
 	};
 
+	// termFormTokenFields ////////////////////////////////////////////////////////
+	// Tag Filter
 	const selectedPostTypes = isCheckedPostTypeData;
 	const filteredTaxonomies = selectedPostTypes.flatMap((postType) =>
 		getTaxonomiesByPostType(postType)
@@ -207,8 +209,10 @@ export default function PostListEdit(props) {
 					}}
 				></FormTokenField>
 			) : null;
-		});
+		}, taxonomies);
 
+	// taxonomiesCheckBox ////////////////////////////////////////////////////////
+	// key を BaseControlのlabelに代入。valueの配列をmapでAdvancedCheckboxControlに渡す
 	const taxonomiesCheckBox = filteredTaxonomies
 		.filter((taxonomy) => {
 			return (
@@ -246,7 +250,7 @@ export default function PostListEdit(props) {
 					/>
 				</BaseControl>
 			);
-		});
+		}, termsByTaxonomyName);
 
 	const blockProps = useBlockProps();
 

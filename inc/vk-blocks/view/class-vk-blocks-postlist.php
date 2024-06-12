@@ -74,25 +74,27 @@ class Vk_Blocks_PostList {
 	}
 
 	/**
-	 * Is Array Exist
+	 * Check if array exists.
 	 *
-	 * @param array $arr array.  // 修正：$arrayを$arrに変更
+	 * @param array $arr array. 
+	 *
+	 * @return bool
 	 */
-	private function is_array_exist( $arr ) {  // 修正：$arrayを$arrに変更
-		if ( ! $arr ) {  // 修正：$arrayを$arrに変更
+	private function is_array_exist( $arr ) {
+		if ( ! $arr ) {
 			return false;
 		}
 		return true;
 	}
 
 	/**
-	 * Format Terms
+	 * Format terms for tax query.
 	 *
-	 * @param string $tax_query_relation : AND or OR.
-	 * @param array  $is_checked_terms : checked terms. チェックされたタームidの配列.
-	 * @param string $post_type : post type.  // 修正：Doc commentを追加
+	 * @param string $tax_query_relation AND or OR.
+	 * @param array  $is_checked_terms Checked terms.
+	 * @param string $post_type Post type.
 	 *
-	 * @return array $return : tax_query
+	 * @return array Formatted tax_query array.
 	 */
 	private static function format_terms( $tax_query_relation, $is_checked_terms, $post_type ) {
 		$return = array(
@@ -103,7 +105,7 @@ class Vk_Blocks_PostList {
 			$term                 = get_term( $term_id );
 			$post_type_taxonomies = get_object_taxonomies( $post_type );
 
-			if ( in_array( $term->taxonomy, $post_type_taxonomies, true ) ) {  // 修正：strict comparisonを追加
+			if ( in_array( $term->taxonomy, $post_type_taxonomies, true ) ) {
 				$new_array = array(
 					'taxonomy' => $term->taxonomy,
 					'field'    => 'term_id',
@@ -117,14 +119,16 @@ class Vk_Blocks_PostList {
 	}
 
 	/**
-	 * Get Loop Query
+	 * Get loop query.
 	 *
 	 * @param array $attributes attributes.
+	 *
+	 * @return WP_Query|bool WP_Query object or false.
 	 */
 	public static function get_loop_query( $attributes ) {
 		$is_checked_post_type = json_decode( $attributes['isCheckedPostType'], true );
-		$is_checked_terms = json_decode( $attributes['isCheckedTerms'], true );
-		$tax_query_relation = isset( $attributes['taxQueryRelation'] ) ? $attributes['taxQueryRelation'] : 'OR';
+		$is_checked_terms     = json_decode( $attributes['isCheckedTerms'], true );
+		$tax_query_relation   = isset( $attributes['taxQueryRelation'] ) ? $attributes['taxQueryRelation'] : 'OR';
 
 		if ( empty( $is_checked_post_type ) ) {
 			return false;
@@ -180,7 +184,7 @@ class Vk_Blocks_PostList {
 			$paged = $wp_query->query_vars['paged'];
 		}
 
-		$all_posts = array();
+		$all_posts    = array();
 		$offset_count = 0;
 
 		foreach ( $is_checked_post_type as $post_type ) {
@@ -198,37 +202,42 @@ class Vk_Blocks_PostList {
 				$args['tax_query'] = self::format_terms( $tax_query_relation, $is_checked_terms, $post_type );
 			}
 
-			$wp_query = new WP_Query( $args );
+			$wp_query  = new WP_Query( $args );
 			$all_posts = array_merge( $all_posts, $wp_query->posts );
 		}
 
-		usort( $all_posts, function( $a, $b ) use ( $attributes ) {
-			if ( $attributes['orderby'] === 'date' ) {
-				if ( $attributes['order'] === 'ASC' ) {
-					return strtotime( $a->post_date ) - strtotime( $b->post_date );
+		usort(
+			$all_posts,
+			function ( $a, $b ) use ( $attributes ) {
+				if ( 'date' === $attributes['orderby'] ) {
+					if ( 'ASC' === $attributes['order'] ) {
+						return strtotime( $a->post_date ) - strtotime( $b->post_date );
+					} else {
+						return strtotime( $b->post_date ) - strtotime( $a->post_date );
+					}
+				} elseif ( 'title' === $attributes['orderby'] ) {
+					return strcmp( $a->post_title, $b->post_title ) * ( 'ASC' === $attributes['order'] ? 1 : -1 );
 				} else {
-					return strtotime( $b->post_date ) - strtotime( $a->post_date );
+					return 0;
 				}
-			} elseif ( $attributes['orderby'] === 'title' ) {
-				return strcmp( $a->post_title, $b->post_title ) * ( $attributes['order'] === 'ASC' ? 1 : -1 );
-			} else {
-				return 0;
 			}
-		});
+		);
 
 		$all_posts = array_slice( $all_posts, $offset, intval( $attributes['numberPosts'] ) );
 
-		$wp_query_combined = new WP_Query();
-		$wp_query_combined->posts = $all_posts;
+		$wp_query_combined             = new WP_Query();
+		$wp_query_combined->posts      = $all_posts;
 		$wp_query_combined->post_count = count( $all_posts );
 
 		return $wp_query_combined;
 	}
 
 	/**
-	 * Get Loop Query Child
+	 * Get loop query for child posts.
 	 *
 	 * @param array $attributes attributes.
+	 *
+	 * @return WP_Query|bool WP_Query object or false.
 	 */
 	public static function get_loop_query_child( $attributes ) {
 		if ( isset( $attributes['selectId'] ) && 'false' !== $attributes['selectId'] ) {
@@ -255,7 +264,7 @@ class Vk_Blocks_PostList {
 				'post__not_in'   => $post__not_in,
 			);
 
-			// tax_queryの追加
+			// Add tax_query.
 			$tax_query     = array();
 			$checked_terms = json_decode( $attributes['isCheckedTerms'], true );
 
@@ -286,9 +295,9 @@ class Vk_Blocks_PostList {
 	}
 
 	/**
-	 * Render No Posts
+	 * Render message for no posts.
 	 *
-	 * @param object $wp_query @since 1.27.0.
+	 * @param object $wp_query wp_query object.
 	 * @return string
 	 */
 	public static function get_render_no_post( $wp_query = null ) {

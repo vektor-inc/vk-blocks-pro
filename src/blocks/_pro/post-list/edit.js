@@ -54,11 +54,32 @@ export default function PostListEdit(props) {
 		JSON.parse(fixBrokenUnicode(isCheckedPostType))
 	);
 
+	const postTypeToTaxonomyMap = {};
+	const taxonomies = useTaxonomies();
+	const termsByTaxonomyName = vk_block_post_type_params.term_by_taxonomy_name;
+
+	taxonomies.forEach((taxonomy) => {
+		taxonomy.types.forEach((postType) => {
+			if (!postTypeToTaxonomyMap[postType]) {
+				postTypeToTaxonomyMap[postType] = [];
+			}
+			postTypeToTaxonomyMap[postType].push(taxonomy.slug);
+		});
+	});
+
 	const saveStateTerms = (termId) => {
 		if (!isCheckedTermsData.includes(termId)) {
 			isCheckedTermsData.push(termId);
 			setIsCheckedTermsData([...isCheckedTermsData]);
 		}
+	};
+
+	const removeStateTerms = (termId) => {
+		const newTermsData = isCheckedTermsData.filter((id) => id !== termId);
+		setIsCheckedTermsData(newTermsData);
+		setAttributes({
+			isCheckedTerms: JSON.stringify(newTermsData),
+		});
 	};
 
 	const saveStatePostTypes = (slug) => {
@@ -94,8 +115,14 @@ export default function PostListEdit(props) {
 			'attachment' !== postType.slug && 'wp_block' !== postType.slug
 	);
 
-	const taxonomies = useTaxonomies();
-	const termsByTaxonomyName = vk_block_post_type_params.term_by_taxonomy_name;
+	const getTaxonomiesByPostType = (postType) => {
+		return taxonomies.filter((taxonomy) => {
+			return (
+				taxonomy.types.includes(postType) &&
+				termsByTaxonomyName[taxonomy.slug]?.length
+			);
+		});
+	};
 
 	const replaceIsCheckedTermData = (taxonomyRestbase, termIds, newIds) => {
 		const removedTermIds = termIds.filter((termId) => {
@@ -108,26 +135,6 @@ export default function PostListEdit(props) {
 			return !find;
 		});
 		return removedTermIds.concat(newIds);
-	};
-
-	// 投稿に関連したタクソノミーだけを表示するための追加機能
-	const postTypeToTaxonomyMap = {};
-	taxonomies.forEach((taxonomy) => {
-		taxonomy.types.forEach((postType) => {
-			if (!postTypeToTaxonomyMap[postType]) {
-				postTypeToTaxonomyMap[postType] = [];
-			}
-			postTypeToTaxonomyMap[postType].push(taxonomy.slug);
-		});
-	});
-
-	const getTaxonomiesByPostType = (postType) => {
-		return taxonomies.filter((taxonomy) => {
-			return (
-				taxonomy.types.includes(postType) &&
-				termsByTaxonomyName[taxonomy.slug]?.length
-			);
-		});
 	};
 
 	const selectedPostTypes = isCheckedPostTypeData;
@@ -234,6 +241,7 @@ export default function PostListEdit(props) {
 						rawData={taxonomiesProps}
 						checkedData={isCheckedTermsData}
 						saveState={saveStateTerms}
+						removeState={removeStateTerms} // チェック解除時の処理を追加
 						{...props}
 					/>
 				</BaseControl>
@@ -248,6 +256,13 @@ export default function PostListEdit(props) {
 			setAttributes({ offset: 0 });
 		}
 	}, [offset]);
+
+	useEffect(() => {
+		setAttributes({
+			isCheckedPostType: JSON.stringify(isCheckedPostTypeData),
+			isCheckedTerms: JSON.stringify(isCheckedTermsData),
+		});
+	}, [isCheckedPostTypeData, isCheckedTermsData]);
 
 	return (
 		<>
@@ -401,7 +416,9 @@ export default function PostListEdit(props) {
 						<TextControl
 							value={offset}
 							onChange={(v) =>
-								setAttributes({ offset: v === '' ? 0 : parseInt(v, 10) })
+								setAttributes({
+									offset: v === '' ? 0 : parseInt(v, 10),
+								})
 							}
 							type="number"
 							min="0"

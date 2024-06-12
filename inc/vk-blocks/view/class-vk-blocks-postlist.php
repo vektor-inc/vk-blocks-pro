@@ -76,10 +76,10 @@ class Vk_Blocks_PostList {
 	/**
 	 * Is Array Exist
 	 *
-	 * @param array $array array.
+	 * @param array $arr array.  // 修正：$arrayを$arrに変更
 	 */
-	private function is_array_exist( $array ) {
-		if ( ! $array ) {
+	private function is_array_exist( $arr ) {  // 修正：$arrayを$arrに変更
+		if ( ! $arr ) {  // 修正：$arrayを$arrに変更
 			return false;
 		}
 		return true;
@@ -90,6 +90,7 @@ class Vk_Blocks_PostList {
 	 *
 	 * @param string $tax_query_relation : AND or OR.
 	 * @param array  $is_checked_terms : checked terms. チェックされたタームidの配列.
+	 * @param string $post_type : post type.  // 修正：Doc commentを追加
 	 *
 	 * @return array $return : tax_query
 	 */
@@ -99,16 +100,16 @@ class Vk_Blocks_PostList {
 		);
 
 		foreach ( $is_checked_terms as $term_id ) {
-			$term = get_term( $term_id );
+			$term                 = get_term( $term_id );
 			$post_type_taxonomies = get_object_taxonomies( $post_type );
 
-			if ( in_array( $term->taxonomy, $post_type_taxonomies ) ) {
+			if ( in_array( $term->taxonomy, $post_type_taxonomies, true ) ) {  // 修正：strict comparisonを追加
 				$new_array = array(
 					'taxonomy' => $term->taxonomy,
 					'field'    => 'term_id',
 					'terms'    => $term_id,
 				);
-				$return[] = $new_array;
+				$return[]  = $new_array;
 			}
 		}
 
@@ -255,7 +256,7 @@ class Vk_Blocks_PostList {
 			);
 
 			// tax_queryの追加
-			$tax_query = array();
+			$tax_query     = array();
 			$checked_terms = json_decode( $attributes['isCheckedTerms'], true );
 
 			if ( ! empty( $checked_terms ) ) {
@@ -313,4 +314,3 @@ class Vk_Blocks_PostList {
 		return apply_filters( 'vk_blocks_post_list_render_no_post', $html, $wp_query );
 	}
 }
-?>

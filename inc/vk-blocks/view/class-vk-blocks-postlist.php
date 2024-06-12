@@ -90,8 +90,8 @@ class Vk_Blocks_PostList {
 	/**
 	 * Format Terms
 	 *
-	 * @param array $tax_query_relation : AND or OR.
-	 * @param array $is_checked_terms : checked terms. チェックされたタームidの配列.
+	 * @param array  $tax_query_relation : AND or OR.
+	 * @param array  $is_checked_terms : checked terms. チェックされたタームidの配列.
 	 * @param string $post_type Post type.
 	 *
 	 * @return array $return : tax_query

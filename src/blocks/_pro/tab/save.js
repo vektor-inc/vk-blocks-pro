@@ -120,13 +120,13 @@ export default function save(props) {
 							e.target.click();
 						}
 					}}
-					>
-						<RichText.Content
-							tagName="div"
-							className={tabSpanColorClass}
-							style={tabSpanColorStyle}
-							value={option.tabLabel}
-							/>
+				>
+					<RichText.Content
+						tagName="div"
+						className={tabSpanColorClass}
+						style={tabSpanColorStyle}
+						value={option.tabLabel}
+					/>
 				</li>
 			);
 		});

@@ -88,13 +88,12 @@ class Vk_Blocks_PostList {
 	}
 
 	/**
-	 * Format terms for tax query.
+	 * Format Terms
 	 *
-	 * @param string $tax_query_relation AND or OR.
-	 * @param array  $is_checked_terms Checked terms.
-	 * @param string $post_type Post type.
+	 * @param array $tax_query_relation : AND or OR.
+	 * @param array $is_checked_terms : checked terms. チェックされたタームidの配列.
 	 *
-	 * @return array Formatted tax_query array.
+	 * @return array $return : tax_query
 	 */
 	private static function format_terms( $tax_query_relation, $is_checked_terms, $post_type ) {
 		$return = array(

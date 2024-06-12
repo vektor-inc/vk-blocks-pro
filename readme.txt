@@ -104,13 +104,15 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ][ Tab (Pro) ] Accessibility support
+
 = 1.75.1 =
-[ BSpecification Change ][ Fixed Display (Pro) ] Do not fix the edit screen as it makes editing difficult.
+[ Specification Change ][ Fixed Display (Pro) ] Do not fix the edit screen as it makes editing difficult.
 [ Bug fix ] Fixed an issue where the Pro version could not be activated in an environment where the Free version is active.
 
 = 1.75.0 =
 [ Add Block ][ Fixed Display block (Pro) ] Add Fixed display block.
-[ Bug fix ][ Tab ] Fix the default line style to show the top of the border.
+[ Bug fix ][ Tab (Pro) ] Fix the default line style to show the top of the border.
 [ Specification Change ] Delete unnecessary css value  ( We abolished the --vk-size-text and changed it to 1rem. ).
 
 = 1.74.0 =

@@ -202,8 +202,8 @@ class Vk_Blocks_PostList {
 				$args['tax_query'] = self::format_terms( $tax_query_relation, $is_checked_terms, $post_type );
 			}
 
-			$wp_query  = new WP_Query( $args );
-			$all_posts = array_merge( $all_posts, $wp_query->posts );
+			$temp_query  = new WP_Query( $args );
+			$all_posts = array_merge( $all_posts, $temp_query->posts );
 		}
 
 		usort(

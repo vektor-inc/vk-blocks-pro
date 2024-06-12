@@ -55,13 +55,35 @@ export default function PostListEdit(props) {
 	);
 
 	const saveStateTerms = (termId) => {
-		isCheckedTermsData.push(termId);
-		setIsCheckedTermsData([...isCheckedTermsData]);
+		if (!isCheckedTermsData.includes(termId)) {
+			isCheckedTermsData.push(termId);
+			setIsCheckedTermsData([...isCheckedTermsData]);
+		}
 	};
 
 	const saveStatePostTypes = (slug) => {
-		isCheckedPostTypeData.push(slug);
-		setIsCheckedPostTypeData([...isCheckedPostTypeData]);
+		let newPostTypeData = [...isCheckedPostTypeData];
+		let newTermsData = [...isCheckedTermsData];
+		if (!newPostTypeData.includes(slug)) {
+			newPostTypeData.push(slug);
+		} else {
+			newPostTypeData = newPostTypeData.filter((type) => type !== slug);
+			const postTypeTaxonomies = postTypeToTaxonomyMap[slug] || [];
+			postTypeTaxonomies.forEach((taxonomy) => {
+				const terms = termsByTaxonomyName[taxonomy] || [];
+				terms.forEach((term) => {
+					newTermsData = newTermsData.filter(
+						(id) => id !== term.term_id
+					);
+				});
+			});
+		}
+		setIsCheckedPostTypeData(newPostTypeData);
+		setIsCheckedTermsData(newTermsData);
+		setAttributes({
+			isCheckedPostType: JSON.stringify(newPostTypeData),
+			isCheckedTerms: JSON.stringify(newTermsData),
+		});
 	};
 
 	let postTypesProps = vk_block_post_type_params.post_type_option;
@@ -88,14 +110,31 @@ export default function PostListEdit(props) {
 		return removedTermIds.concat(newIds);
 	};
 
-	const filteredTaxonomies = taxonomies.filter((taxonomy) => {
-		return isCheckedPostTypeData.some((postTypeSlug) => {
-			return taxonomy.types.includes(postTypeSlug);
+	// 投稿に関連したタクソノミーだけを表示するための追加機能
+	const postTypeToTaxonomyMap = {};
+	taxonomies.forEach((taxonomy) => {
+		taxonomy.types.forEach((postType) => {
+			if (!postTypeToTaxonomyMap[postType]) {
+				postTypeToTaxonomyMap[postType] = [];
+			}
+			postTypeToTaxonomyMap[postType].push(taxonomy.slug);
 		});
 	});
 
-	// termFormTokenFields ////////////////////////////////////////////////////////
-	// Tag Filter
+	const getTaxonomiesByPostType = (postType) => {
+		return taxonomies.filter((taxonomy) => {
+			return (
+				taxonomy.types.includes(postType) &&
+				termsByTaxonomyName[taxonomy.slug]?.length
+			);
+		});
+	};
+
+	const selectedPostTypes = isCheckedPostTypeData;
+	const filteredTaxonomies = selectedPostTypes.flatMap((postType) =>
+		getTaxonomiesByPostType(postType)
+	);
+
 	const termFormTokenFields = filteredTaxonomies
 		.filter((taxonomy) => {
 			return !taxonomy.hierarchical && termsByTaxonomyName[taxonomy.slug];
@@ -161,10 +200,8 @@ export default function PostListEdit(props) {
 					}}
 				></FormTokenField>
 			) : null;
-		}, filteredTaxonomies);
+		});
 
-	// taxonomiesCheckBox ////////////////////////////////////////////////////////
-	// key を BaseControlのlabelに代入。valueの配列をmapでAdvancedCheckboxControlに渡す
 	const taxonomiesCheckBox = filteredTaxonomies
 		.filter((taxonomy) => {
 			return (
@@ -201,9 +238,16 @@ export default function PostListEdit(props) {
 					/>
 				</BaseControl>
 			);
-		}, filteredTaxonomies);
+		});
 
 	const blockProps = useBlockProps();
+
+	// `offset`が空の場合に0に設定する
+	useEffect(() => {
+		if (offset === undefined || offset === null || offset === '') {
+			setAttributes({ offset: 0 });
+		}
+	}, [offset]);
 
 	return (
 		<>
@@ -357,7 +401,7 @@ export default function PostListEdit(props) {
 						<TextControl
 							value={offset}
 							onChange={(v) =>
-								setAttributes({ offset: parseInt(v, 10) })
+								setAttributes({ offset: v === '' ? 0 : parseInt(v, 10) })
 							}
 							type="number"
 							min="0"

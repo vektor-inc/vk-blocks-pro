@@ -1,4 +1,3 @@
-<?php
 /**
  * Class VK Blocks PostList
  *
@@ -100,14 +99,14 @@ class Vk_Blocks_PostList {
 		$return = array(
 			'relation' => $tax_query_relation,
 		);
-	
+
 		foreach ( $is_checked_terms as $term_id ) {
 			$term = get_term( $term_id );
-			if ( !$term || is_wp_error($term) ) {
+			if ( ! $term || is_wp_error( $term ) ) {
 				continue; // Skip invalid or non-existent terms
 			}
 			$post_type_taxonomies = get_object_taxonomies( $post_type );
-	
+
 			if ( in_array( $term->taxonomy, $post_type_taxonomies, true ) ) {
 				$new_array = array(
 					'taxonomy' => $term->taxonomy,
@@ -117,9 +116,9 @@ class Vk_Blocks_PostList {
 				$return[]  = $new_array;
 			}
 		}
-	
+
 		return $return;
-	}	
+	}
 
 	/**
 	 * Get Loop Query

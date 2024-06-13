@@ -120,4 +120,5 @@ class PostListBlockTest extends VK_UnitTestCase {
 
 		$this->assertEquals( $expected, $actual );
 	}
+
 }

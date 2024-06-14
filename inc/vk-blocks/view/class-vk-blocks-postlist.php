@@ -74,7 +74,7 @@ class Vk_Blocks_PostList {
 	}
 
 	/**
-	 * Check if array exists.
+	 * Is Array Exist
 	 *
 	 * @param array $arr array.
 	 *
@@ -117,7 +117,6 @@ class Vk_Blocks_PostList {
 				$return[]  = $new_array;
 			}
 		}
-
 		return $return;
 	}
 

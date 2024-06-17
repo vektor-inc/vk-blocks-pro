@@ -777,36 +777,40 @@ msgstr ""
 msgid "Max number of words"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:102
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:100
+msgid "Square"
+msgstr ""
+
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:104
 msgid "16:9"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:106
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:108
 msgid "4:3"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:110
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:112
 msgid "3:2"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:114
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:116
 msgid "9:16"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:118
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:120
 msgid "3:4"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:122
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:124
 msgid "2:3"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:143
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:145
 #: src/blocks/slider/edit.js:940
 msgid "Height"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:165
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:167
 #: src/blocks/_pro/outer/edit.js:518
 #: src/blocks/balloon/edit.js:508
 #: src/blocks/slider/edit.js:915
@@ -827,16 +831,12 @@ msgstr ""
 msgid "Image will be stretched and distorted to completely fill the space."
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:89
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:91
 msgid "Aspect ratio"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:94
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:96
 msgid "Original"
-msgstr ""
-
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:98
-msgid "Square"
 msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/edit.js:48
@@ -3595,7 +3595,7 @@ msgctxt "Scale option for Image dimension control"
 msgid "Fill"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:71
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:73
 msgctxt "Image scaling options"
 msgid "Scale"
 msgstr ""

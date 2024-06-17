@@ -105,7 +105,7 @@ e.g.
 == Changelog ==
 
 = 1.75.1 =
-[ Bug fix ][ Fixed Display block (Pro) ] Ensured the top style is not applied in the editor.
+[ BSpecification Change ][ Fixed Display (Pro) ] Do not fix the edit screen as it makes editing difficult.
 [ Bug fix ] Fixed an issue where the Pro version could not be activated in an environment where the Free version is active.
 
 = 1.75.0 =

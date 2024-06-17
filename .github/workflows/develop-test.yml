@@ -79,13 +79,10 @@ jobs:
     steps:
       - name: checkout    
         uses: actions/checkout@v2
-      - name: Read .node-version
-        run: echo "##[set-output name=NODEVERSION;]$(cat .node-version)"
-        id: nodenv
       - name: Setup Node.js (.node-version)
         uses: actions/setup-node@v1
         with:
-          node-version: "${{ steps.nodenv.outputs.NODEVERSION }}"
+          node-version: "20.x"
       - name: install npm scripts
         run: npm install    
       - name: Install WP-CLI

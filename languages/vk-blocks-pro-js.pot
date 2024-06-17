@@ -1262,6 +1262,70 @@ msgstr ""
 msgid "span"
 msgstr ""
 
+#: src/blocks/_pro/fixed-display/edit.js:101
+#: src/blocks/balloon/edit.js:434
+#: src/blocks/button/edit.js:375
+#: src/blocks/pr-content/edit.js:252
+#: src/components/display-items-control/index.js:140
+msgid "Right"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:105
+msgid "Bottom"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:109
+#: src/blocks/balloon/edit.js:422
+#: src/blocks/button/edit.js:355
+#: src/blocks/pr-content/edit.js:256
+#: src/components/display-items-control/index.js:132
+msgid "Left"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:116
+msgid "Fixed position from the top"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:138
+msgid "Timing to display"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:154
+msgid "Persist visibility once visible"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:70
+msgid "Fixed Display Setting"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:73
+msgid ""
+"The fixed position of the fixed position block will not change on the edit "
+"screen. Please check on the front screen."
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:80
+#: src/blocks/_pro/table-of-contents-new/edit.js:114
+#: src/components/column-layout-control/index.js:69
+msgid "Display type"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:85
+msgid "Always Visible"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:89
+msgid "Show on Scroll"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:95
+msgid "Fixed position"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:99
+msgid "Top"
+msgstr ""
+
 #: src/blocks/_pro/grid-column-item/edit.js:102
 #: src/blocks/_pro/gridcolcard/edit-common.js:164
 msgid "Color Settings"
@@ -1986,31 +2050,31 @@ msgstr ""
 msgid "Tab 02"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:464
+#: src/blocks/_pro/tab/edit.js:473
 msgid "Tab Label [ %s ]"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:488
+#: src/blocks/_pro/tab/edit.js:497
 msgid "Tab size Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:490
+#: src/blocks/_pro/tab/edit.js:499
 msgid "Tab Size ( Smart Phone )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:507
+#: src/blocks/_pro/tab/edit.js:516
 msgid "Tab Size ( Tablet )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:524
+#: src/blocks/_pro/tab/edit.js:533
 msgid "Tab Size ( PC )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:528
+#: src/blocks/_pro/tab/edit.js:537
 msgid "Fit to the text"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:532
+#: src/blocks/_pro/tab/edit.js:541
 msgid "Monospaced"
 msgstr ""
 
@@ -2036,11 +2100,6 @@ msgstr ""
 msgid ""
 "If you duplicate a heading, the table of contents block will not work "
 "properly, please reassign the ID."
-msgstr ""
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:114
-#: src/components/column-layout-control/index.js:69
-msgid "Display type"
 msgstr ""
 
 #: src/blocks/_pro/table-of-contents-new/edit.js:133
@@ -2185,20 +2244,6 @@ msgstr ""
 
 #: src/blocks/balloon/edit.js:408
 msgid "Please specify the layout of the balloon."
-msgstr ""
-
-#: src/blocks/balloon/edit.js:422
-#: src/blocks/button/edit.js:355
-#: src/blocks/pr-content/edit.js:256
-#: src/components/display-items-control/index.js:132
-msgid "Left"
-msgstr ""
-
-#: src/blocks/balloon/edit.js:434
-#: src/blocks/button/edit.js:375
-#: src/blocks/pr-content/edit.js:252
-#: src/components/display-items-control/index.js:140
-msgid "Right"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:442

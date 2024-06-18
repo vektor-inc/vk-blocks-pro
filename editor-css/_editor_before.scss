@@ -33,7 +33,9 @@
 	.editor-block-list-item-vk-blocks-simple-table:after,
 	.editor-block-list-item-vk-blocks-grid-column:after,
 	.editor-block-list-item-vk-blocks-gridcolcard:after,
-	.editor-block-list-item-vk-blocks-icon-card:after {
+	.editor-block-list-item-vk-blocks-icon-card:after,
+	.editor-block-list-item-vk-blocks-fixed-display:after,
+	.editor-block-list-item-vk-blocks-tab:after {
 		position: absolute;
 		top: 0;
 		right: 0;
@@ -217,7 +219,8 @@ $color-danger: #dd3333;
 .vk_spacer,
 .vk_slider,
 .vk_slider_item,
-.vk_animation {
+.vk_animation,
+.vk_fixed-display {
 	border:1px dotted #ccc;
 }
 
@@ -250,6 +253,11 @@ div[data-type="vk-blocks/page-content"].is-selected{
 
 // アニメーションブロックの識別用枠線
 @import "./editor_before_animation";
+
+// 固定表示ブロックの識別用枠線
+@import "./editor_before_fixed-display";
+
+@import "./editor_before_tab";
 
 // アイコンカードの見出しがテーマの見出し指定機能に負けるので上書き
 @import "./editor_before_icon-card";

@@ -18,6 +18,7 @@ import * as card from './_pro/card';
 import * as cardItem from './_pro/card-item';
 import * as childPage from './_pro/child-page';
 import * as dynamicText from './_pro/dynamic-text';
+import * as fixedDisplay from './_pro/fixed-display';
 import * as gridColumn from './_pro/grid-column';
 import * as gridColumnItem from './_pro/grid-column-item';
 import * as gridColCard from './_pro/gridcolcard';
@@ -39,6 +40,8 @@ import * as taxonomy from './_pro/taxonomy';
 import * as tableofContentsNew from './_pro/table-of-contents-new';
 import * as timeline from './_pro/timeline';
 import * as timelineItem from './_pro/timeline-item';
+import * as tab from './_pro/tab';
+import * as tabItem from './_pro/tab-item';
 
 /**
  * Extensions
@@ -65,6 +68,7 @@ const vkblocksPro = [
 	cardItem,
 	childPage,
 	dynamicText,
+	fixedDisplay,
 	gridColumn,
 	gridColumnItem,
 	gridColCard,
@@ -86,6 +90,8 @@ const vkblocksPro = [
 	taxonomy,
 	timeline,
 	timelineItem,
+	tab,
+	tabItem,
 ];
 
 export default vkblocksPro;

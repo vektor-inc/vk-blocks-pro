@@ -1,4 +1,5 @@
 import save1_38_0 from './1.38.0/save';
+import save1_71_0 from './1.71.0/save';
 
 const blockAttributes = {
 	editLock: {
@@ -57,8 +58,20 @@ const blockAttributes = {
 	}
 };
 
+// 1.38.0 からの変更で追加したもの
+const blockAttributes2 = {
+	...blockAttributes,
+	borderWidth: {
+		type: 'number',
+		default: 1
+	},
+};
 
 const deprecated = [
+	{
+		attributes: blockAttributes2,
+		save: save1_71_0,
+	},
 	{
 		attributes: blockAttributes,
 		save: save1_38_0,

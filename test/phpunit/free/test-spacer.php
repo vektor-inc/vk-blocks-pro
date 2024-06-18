@@ -5,6 +5,8 @@
  * @package Vk_Blocks_Pro
  */
 
+use SebastianBergmann\Type\NullType;
+
 /**
  * Post List block test case.
  */
@@ -236,6 +238,12 @@ class VKBSpacerTest extends VK_UnitTestCase {
 			array(
 				'options'     => array(
 					'margin_size' => array(
+						'xxs' => array(
+							'pc'     => 3,
+							'tablet' => 2,
+							'mobile' => 1,
+							'custom' => ''
+						),
 						'xs' => array(
 							'pc'     => null,
 							'tablet' => null,
@@ -266,14 +274,26 @@ class VKBSpacerTest extends VK_UnitTestCase {
 							'mobile' => null,
 							'custom' => ''
 						),
+						'xxl' => array(
+							'pc'     => 3,
+							'tablet' => null,
+							'mobile' => null,
+							'custom' => ''
+						),
 					),
 					'margin_unit' => 'rem'
 				),
-				'correct'     => '@media (max-width: 575.98px) {:root,body{--vk-margin-sm:1rem;--vk-margin-md:1rem;--vk-margin-lg:1rem;--vk-margin-xl:2rem;}}@media (min-width: 576px) and (max-width: 991.98px) {:root,body{--vk-margin-sm:2rem;--vk-margin-md:2rem;--vk-margin-lg:3rem;--vk-margin-xl:2rem;}}@media (min-width: 992px) {:root,body{--vk-margin-sm:3rem;--vk-margin-md:2rem;--vk-margin-lg:3rem;--vk-margin-xl:3rem;}}',
+				'correct'     => '@media (max-width: 575.98px) {:root,body{--vk-margin-xxs:1rem;--vk-margin-sm:1rem;--vk-margin-md:1rem;--vk-margin-lg:1rem;--vk-margin-xl:2rem;--vk-margin-xxl:3rem;}}@media (min-width: 576px) and (max-width: 991.98px) {:root,body{--vk-margin-xxs:2rem;--vk-margin-sm:2rem;--vk-margin-md:2rem;--vk-margin-lg:3rem;--vk-margin-xl:2rem;--vk-margin-xxl:3rem;}}@media (min-width: 992px) {:root,body{--vk-margin-xxs:3rem;--vk-margin-sm:3rem;--vk-margin-md:2rem;--vk-margin-lg:3rem;--vk-margin-xl:3rem;--vk-margin-xxl:3rem;}}',
 			),
 			array(
 				'options'     => array(
 					'margin_size' => array(
+						'xxs' => array(
+							'pc'     => null,
+							'tablet' => null,
+							'mobile' => 1,
+							'custom' => 'var( --aaa-xxs )'
+						),
 						'xs' => array(
 							'pc'     => null,
 							'tablet' => null,
@@ -304,10 +324,16 @@ class VKBSpacerTest extends VK_UnitTestCase {
 							'mobile' => null,
 							'custom' => 'var( --aaa-xl )'
 						),
+						'xxl' => array(
+							'pc'     => 3,
+							'tablet' => 2,
+							'mobile' => 1,
+							'custom' => 'var( --aaa-xxl )'
+						),
 					),
 					'margin_unit' => 'rem'
 				),
-				'correct'     => ':root,body{--vk-margin-xs:var( --aaa-xs );--vk-margin-sm:var( --aaa-sm );--vk-margin-md:var( --aaa-md );--vk-margin-lg:var( --aaa-lg );--vk-margin-xl:var( --aaa-xl );}',
+				'correct'     => ':root,body{--vk-margin-xxs:var( --aaa-xxs );--vk-margin-xs:var( --aaa-xs );--vk-margin-sm:var( --aaa-sm );--vk-margin-md:var( --aaa-md );--vk-margin-lg:var( --aaa-lg );--vk-margin-xl:var( --aaa-xl );--vk-margin-xxl:var( --aaa-xxl );}',
 			),
 		);
 

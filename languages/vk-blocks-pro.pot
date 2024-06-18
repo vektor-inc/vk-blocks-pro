@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-06-18T01:28:19+00:00\n"
+"POT-Creation-Date: 2024-06-18T01:42:20+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -3773,15 +3773,17 @@ msgstr ""
 msgid "Load Separete Setting"
 msgstr ""
 
-#: inc/vk-blocks/blocks.php:26
+#: inc/vk-blocks/blocks.php:27
+#: inc/vk-blocks/blocks.php:67
 msgid "Blocks Layout"
 msgstr ""
 
-#: inc/vk-blocks/blocks.php:39
+#: inc/vk-blocks/blocks.php:40
+#: inc/vk-blocks/blocks.php:54
 msgid "Blocks"
 msgstr ""
 
-#: inc/vk-blocks/blocks.php:53
+#: inc/vk-blocks/blocks.php:81
 msgid "Deprecated Blocks"
 msgstr ""
 

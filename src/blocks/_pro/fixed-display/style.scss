@@ -9,6 +9,14 @@
 	position: fixed;
 	margin-block-start: 0;
 	z-index: 99999;
+	&.alignfull {
+		width: 100vw;
+		place-self: center;
+	}
+	&.alignwide {
+		margin-left: auto !important;
+		margin-right: auto !important;
+	}
 }
 
 .vk_fixed-display-mode {
@@ -38,6 +46,9 @@
 	&-right {
 		top: 50%;
 		right: 0;
+		> * {
+			margin-left: auto;
+		}
 	}
 	&-bottom {
 		left: 0;
@@ -48,6 +59,9 @@
 	&-left {
 		top: 50%;
 		left: 0;
+		> * {
+			margin-right: auto;
+		}
 	}
 }
 

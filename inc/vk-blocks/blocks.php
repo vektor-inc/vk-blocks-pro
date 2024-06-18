@@ -12,6 +12,7 @@
  */
 function vk_blocks_blocks_categories( $categories ) {
 	global $vk_blocks_prefix;
+	$options = VK_Blocks_Options::get_options();
 
 	foreach ( $categories as $key => $value ) {
 		$keys[] = $value['slug'];

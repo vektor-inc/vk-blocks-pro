@@ -154,7 +154,7 @@ export default function AdminMargin() {
 															: vkBlocksOption
 																	.margin_size[
 																	marginValue
-															  ][deviceValue]
+																][deviceValue]
 													}
 													onChange={(newValue) => {
 														setVkBlocksOption({
@@ -188,7 +188,7 @@ export default function AdminMargin() {
 													: vkBlocksOption
 															.margin_size[
 															marginValue
-													  ].custom
+														].custom
 											}
 											onChange={(newValue) => {
 												setVkBlocksOption({

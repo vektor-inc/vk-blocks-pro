@@ -80,6 +80,18 @@ msgstr ""
 msgid "image"
 msgstr ""
 
+#: src/admin/block-category-position.js:20
+msgid "Block Category Position Setting"
+msgstr ""
+
+#: src/admin/block-category-position.js:38
+msgid "Above the WordPress default block"
+msgstr ""
+
+#: src/admin/block-category-position.js:42
+msgid "Under WordPress blocks"
+msgstr ""
+
 #: src/admin/block-manager/index.js:51
 #: src/admin/import-export/index.js:106
 msgid "Block Manager Setting"
@@ -618,6 +630,11 @@ msgstr ""
 
 #: src/blocks/_pro/accordion/index.js:43
 msgid "Background color / Rounded / Border"
+msgstr ""
+
+#: src/blocks/_pro/accordion/index.js:47
+#: src/blocks/heading/edit.js:268
+msgid "Plain"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:103
@@ -2464,10 +2481,6 @@ msgstr ""
 
 #: src/blocks/heading/edit.js:257
 msgid "Heading style"
-msgstr ""
-
-#: src/blocks/heading/edit.js:268
-msgid "Plain"
 msgstr ""
 
 #: src/blocks/heading/edit.js:276

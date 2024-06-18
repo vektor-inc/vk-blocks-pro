@@ -119,6 +119,9 @@ class VK_Blocks_Options {
 	 */
 	public static function get_vk_blocks_options_properties() {
 		$properties = array(
+			'block_category_position'        => array(
+				'type' => 'string',
+			),
 			'balloon_border_width'        => array(
 				'type' => 'number',
 			),

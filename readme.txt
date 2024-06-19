@@ -104,8 +104,10 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Tab ] Fix background color of tab disappearing when clicking active tab.
+
 = 1.75.1 =
-[ BSpecification Change ][ Fixed Display (Pro) ] Do not fix the edit screen as it makes editing difficult.
+[ Specification Change ][ Fixed Display (Pro) ] Do not fix the edit screen as it makes editing difficult.
 [ Bug fix ] Fixed an issue where the Pro version could not be activated in an environment where the Free version is active.
 
 = 1.75.0 =

@@ -3,8 +3,8 @@
  * Plugin Name: VK Blocks Pro
  * Plugin URI: https://github.com/vektor-inc/vk-blocks
  * Description: This is a plugin that extends Block Editor.
- * Version: 1.73.0.0
- * Stable tag: 1.72.1.1
+ * Version: 1.75.1.0
+ * Stable tag: 1.74.0.1
  * Requires at least: 6.2
  * Author: Vektor,Inc.
  * Author URI: https://vektor-inc.co.jp
@@ -17,6 +17,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
 
 /*
 無料版の VK Blocks の無効化が正常に動作しなかった場合に無料版の関数が先に定義され
@@ -34,26 +35,6 @@ if ( ! function_exists( 'vk_blocks_get_version' ) ) {
 	}
 }
 
-if ( ! function_exists( 'vk_blocks_deactivate_plugin' ) ) {
-	/**
-	 * Plugin deactive function
-	 *
-	 * @param  string $plugin_path Plugin path to disable.
-	 * @return void
-	 */
-	function vk_blocks_deactivate_plugin( $plugin_path ) {
-		include_once ABSPATH . 'wp-admin/includes/plugin.php';
-		if ( is_plugin_active( $plugin_path ) ) {
-			$active_plugins = get_option( 'active_plugins' );
-			// delete active plugin.
-			$active_plugins = array_diff( $active_plugins, array( $plugin_path ) );
-			// re index active plugin.
-			$active_plugins = array_values( $active_plugins );
-			update_option( 'active_plugins', $active_plugins );
-		}
-	}
-}
-
 /**
  * Deactive VK Blocks ( Free )
  *
@@ -67,28 +48,41 @@ if ( ! function_exists( 'vk_blocks_deactivate_plugin' ) ) {
  * プロ版での読み込みかどうかの判定は strpos を使っているが、
  * strpos は"合致している"にも関わらず返り値は"0"を返してしまうため !== false で処理している.
  */
+require_once ABSPATH . 'wp-admin/includes/plugin.php';
+
 if ( strpos( plugin_dir_path( __FILE__ ), 'vk-blocks-pro' ) !== false ) {
-	include_once ABSPATH . 'wp-admin/includes/plugin.php';
+	if ( is_plugin_active( 'vk-blocks/vk-blocks.php' ) ) {
+		deactivate_plugins( 'vk-blocks/vk-blocks.php' );
 
-	if ( is_plugin_active( 'vk-blocks-pro/vk-blocks.php' ) ) {
-		// Deactive Plugin VK Blocks ( free ).
-		if ( function_exists( 'vk_blocks_deactivate_plugin' ) ) {
-			vk_blocks_deactivate_plugin( 'vk-blocks/vk-blocks.php' );
+		// Deactive ExUnit included VK Blocks.
+		$vk_blocks_exunit_common_options = get_option( 'vkExUnit_common_options' );
+		if ( ! empty( $vk_blocks_exunit_common_options['active_vk-blocks'] ) ) {
+			$vk_blocks_exunit_common_options['active_vk-blocks'] = false;
+			update_option( 'vkExUnit_common_options', $vk_blocks_exunit_common_options );
 		}
+		return;
 	}
-
-	// Deactive ExUnit included VK Blocks.
-	$vk_blocks_exunit_common_options = get_option( 'vkExUnit_common_options' );
-	if ( ! empty( $vk_blocks_exunit_common_options['active_vk-blocks'] ) ) {
-		$vk_blocks_exunit_common_options['active_vk-blocks'] = false;
-		update_option( 'vkExUnit_common_options', $vk_blocks_exunit_common_options );
-	}
-
-	// Deactive VK Grid Colomun Card Plugin.
 	if ( is_plugin_active( 'vk-gridcolcard/vk-gridcolcard.php' ) ) {
-		if ( function_exists( 'vk_blocks_deactivate_plugin' ) ) {
-			vk_blocks_deactivate_plugin( 'vk-gridcolcard/vk-gridcolcard.php' );
+		deactivate_plugins( 'vk-gridcolcard/vk-gridcolcard.php' );
+		require_once ABSPATH . 'wp-admin/includes/plugin.php';
+		// Deactive ExUnit included VK Blocks.
+		$vk_blocks_exunit_common_options = get_option( 'vkExUnit_common_options' );
+		if ( ! empty( $vk_blocks_exunit_common_options['active_vk-blocks'] ) ) {
+			$vk_blocks_exunit_common_options['active_vk-blocks'] = false;
+			update_option( 'vkExUnit_common_options', $vk_blocks_exunit_common_options );
 		}
+		return;
+	}
+} elseif ( strpos( plugin_dir_path( __FILE__ ), 'vk-blocks' ) !== false ) {
+	if ( is_plugin_active( 'vk-blocks-pro/vk-blocks.php' ) ) {
+		require_once ABSPATH . 'wp-admin/includes/plugin.php';
+		// Deactive ExUnit included VK Blocks.
+		$vk_blocks_exunit_common_options = get_option( 'vkExUnit_common_options' );
+		if ( ! empty( $vk_blocks_exunit_common_options['active_vk-blocks'] ) ) {
+			$vk_blocks_exunit_common_options['active_vk-blocks'] = false;
+			update_option( 'vkExUnit_common_options', $vk_blocks_exunit_common_options );
+		}
+		return;
 	}
 }
 

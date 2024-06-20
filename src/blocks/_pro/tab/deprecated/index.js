@@ -1,4 +1,5 @@
 import save1_73_0 from './1.73.0/save';
+import save1_74_0 from './1.74.0/save';
 
 const blockAttributes = {
 	tabOptionJSON: {
@@ -28,6 +29,10 @@ const blockAttributes = {
 };
 
 const deprecated = [
+	{
+		attributes: blockAttributes,
+		save: save1_74_0,
+	},
 	{
 		attributes: blockAttributes,
 		save: save1_73_0,

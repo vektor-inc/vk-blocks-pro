@@ -2,9 +2,9 @@
 Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird,chiakikouno,doshimaf,mtdkei
 Donate link:
 Tags: Gutenberg,FAQ,alert
-Requires at least: 6.2
+Requires at least: 6.3
 Tested up to: 6.5
-Stable tag: 1.72.1.1
+Stable tag: 1.74.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -43,6 +43,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Category Badge [ Pro ]
 * Child page list [ Pro ]
 * Dynamic Text ( Post Type name / Ancestor Page name ) [ Pro ]
+* Fixed Display [ Pro ]
 * Icon Card [ Pro ] (not recommended)
 * Post list [ Pro ]
 * New Badge [ Pro ]
@@ -63,6 +64,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Margin extension
 * Nowrap
 * Responsive BR
+* Columns direction
 * Custom CSS [ Pro ]
 
 [ Settings ]
@@ -108,6 +110,24 @@ e.g.
 [ Bug fix ][ Button ] Fixed button URL being output in editor.
 [ Bug fix ][ Tab ] Fix innactive tab color setting.
 [ Add function ][ VK Button ] Add unit "percent" for border radius.
+[ Bug fix ][ Tab ] Fix background color of tab disappearing when clicking active tab.
+[ Add Setting ] Add Setting for the position of VK Blocks on all block inserter. 
+[ Bug fix ][ Responsive Spacer ] Added CSS to remove margins from the default theme.
+
+= 1.75.1 =
+[ Specification Change ][ Fixed Display (Pro) ] Do not fix the edit screen as it makes editing difficult.
+[ Bug fix ] Fixed an issue where the Pro version could not be activated in an environment where the Free version is active.
+
+= 1.75.0 =
+[ Add Block ][ Fixed Display block (Pro) ] Add Fixed display block.
+[ Bug fix ][ Tab ] Fix the default line style to show the top of the border.
+[ Specification Change ] Delete unnecessary css value  ( We abolished the --vk-size-text and changed it to 1rem. ).
+
+= 1.74.0 =
+[ Specification Change ] Fix block categories order
+[ Specification Change ][ VK Button ] Add unit "percent" for border radius.
+[ Bug fix ][ VK Button ] Fixed button URL being output in editor.
+[ Bug fix ][ Tab (Pro) ] Fix innactive tab color setting.
 
 = 1.73.0 =
 [ Add Block ] Add Tab Block

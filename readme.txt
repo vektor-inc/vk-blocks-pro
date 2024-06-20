@@ -105,6 +105,7 @@ e.g.
 
 == Changelog ==
 
+[ Add Setting ][ Border Box ] add title tag setting.
 [ Specification Change ][ Post List (Pro) ] Displayed taxonomies now only show for selected post types.
 [ Add function ][ Slider ] Add url interface to block toolbar for slider item.
 [ Add function ] Add toolbar link to components.

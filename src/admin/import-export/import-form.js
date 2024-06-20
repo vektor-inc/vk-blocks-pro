@@ -82,7 +82,7 @@ export default function ImportForm(props) {
 					!currentOptions.some((existingOption) =>
 						comparisonKey
 							? newOption[comparisonKey] ===
-								existingOption[comparisonKey]
+							  existingOption[comparisonKey]
 							: newOption === existingOption
 					)
 			);

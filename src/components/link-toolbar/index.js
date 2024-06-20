@@ -271,7 +271,10 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 								/>
 							</div>
 							<CheckboxControl
-								label={__('Open link new tab.', 'vk-blocks-pro')}
+								label={__(
+									'Open link new tab.',
+									'vk-blocks-pro'
+								)}
 								checked={linkTarget === '_blank'}
 								onChange={(checked) =>
 									setLinkTarget(checked ? '_blank' : '')

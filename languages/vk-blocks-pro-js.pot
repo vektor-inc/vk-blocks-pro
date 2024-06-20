@@ -3223,7 +3223,7 @@ msgstr ""
 msgid "Currently selected"
 msgstr ""
 
-#: src/components/link-toolbar/index.js:300
+#: src/components/link-toolbar/index.js:303
 msgid "Link copied to clipboard."
 msgstr ""
 

@@ -43,7 +43,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Category Badge [ Pro ]
 * Child page list [ Pro ]
 * Dynamic Text ( Post Type name / Ancestor Page name ) [ Pro ]
-* Fixed [ Pro ]
+* Fixed Display [ Pro ]
 * Icon Card [ Pro ] (not recommended)
 * Post list [ Pro ]
 * New Badge [ Pro ]

@@ -75,6 +75,10 @@
 			"type": "string",
 			"default": null
 		},
+		"borderRadius": {
+			"type": "string",
+			"default": null
+		},
 		"clientId": {
 			"type": "string"
 		},

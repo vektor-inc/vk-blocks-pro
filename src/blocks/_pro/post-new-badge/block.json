@@ -18,7 +18,7 @@
 			"type": "string"
 		}
 	},
-	"description": "Easily highlight your latest content or products with the 'New Badge' feature.",
+	"description": "Easily highlight your latest post.",
 	"textdomain": "vk-blocks-pro",
 	"usesContext": ["postId", "postType"],
 	"supports": {

@@ -17,6 +17,10 @@ import { AdminContext } from '@vkblocks/admin/index';
 
 const MARGIN_SIZE_ARRAY = [
 	{
+		marginLabel: __('XXS', 'vk-blocks-pro'),
+		marginValue: 'xxs',
+	},
+	{
 		marginLabel: __('XS', 'vk-blocks-pro'),
 		marginValue: 'xs',
 	},
@@ -35,6 +39,10 @@ const MARGIN_SIZE_ARRAY = [
 	{
 		marginLabel: __('XL', 'vk-blocks-pro'),
 		marginValue: 'xl',
+	},
+	{
+		marginLabel: __('XXL', 'vk-blocks-pro'),
+		marginValue: 'xxl',
 	},
 ];
 
@@ -154,7 +162,7 @@ export default function AdminMargin() {
 															: vkBlocksOption
 																	.margin_size[
 																	marginValue
-															  ][deviceValue]
+																][deviceValue]
 													}
 													onChange={(newValue) => {
 														setVkBlocksOption({
@@ -188,7 +196,7 @@ export default function AdminMargin() {
 													: vkBlocksOption
 															.margin_size[
 															marginValue
-													  ].custom
+														].custom
 											}
 											onChange={(newValue) => {
 												setVkBlocksOption({

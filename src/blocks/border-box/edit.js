@@ -27,8 +27,15 @@ import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function BorderBoxEdit(props) {
 	const { attributes, setAttributes } = props;
-	const { heading, faIcon, color, bgColor, borderColor, bodyAlign } =
-		attributes;
+	const {
+		heading,
+		headingTag,
+		faIcon,
+		color,
+		bgColor,
+		borderColor,
+		bodyAlign,
+	} = attributes;
 	// eslint-disable-next-line no-undef
 	const iconFamily = vkFontAwesome.iconFamily;
 	const inner = (
@@ -36,7 +43,8 @@ export default function BorderBoxEdit(props) {
 	);
 	const title = (
 		<RichText
-			tagName="h4"
+			tagName={headingTag}
+			identifier="heading"
 			className={'vk_borderBox_title'}
 			onChange={(value) => setAttributes({ heading: value })}
 			value={heading}
@@ -199,6 +207,27 @@ export default function BorderBoxEdit(props) {
 								'vk-blocks-pro'
 							)}
 						</p>
+					</BaseControl>
+				</PanelBody>
+				<PanelBody
+					title={__('Title', 'vk-blocks-pro')}
+					initialOpen={false}
+				>
+					<BaseControl>
+						<SelectControl
+							label="Title Tag"
+							value={headingTag}
+							options={[
+								{ label: 'H3', value: 'h3' },
+								{ label: 'H4', value: 'h4' },
+								{ label: 'H5', value: 'h5' },
+								{ label: 'H6', value: 'h6' },
+								{ label: 'p', value: 'p' },
+							]}
+							onChange={(value) =>
+								setAttributes({ headingTag: value })
+							}
+						/>
 					</BaseControl>
 				</PanelBody>
 				<PanelBody title={__('Color', 'vk-blocks-pro')}>

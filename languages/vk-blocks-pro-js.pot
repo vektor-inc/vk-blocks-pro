@@ -80,6 +80,18 @@ msgstr ""
 msgid "image"
 msgstr ""
 
+#: src/admin/block-category-position.js:20
+msgid "Block Category Position Setting"
+msgstr ""
+
+#: src/admin/block-category-position.js:38
+msgid "Above the WordPress default block"
+msgstr ""
+
+#: src/admin/block-category-position.js:45
+msgid "Under WordPress blocks"
+msgstr ""
+
 #: src/admin/block-manager/index.js:51
 #: src/admin/import-export/index.js:106
 msgid "Block Manager Setting"
@@ -187,8 +199,8 @@ msgstr ""
 msgid "Custom Block Style Setting"
 msgstr ""
 
-#: src/admin/custom-block-style/index.js:80
-msgid "Block style settings can be registered."
+#: src/admin/custom-block-style/index.js:79
+msgid "You can register block styles."
 msgstr ""
 
 #: src/admin/custom-block-style/item/body-area/block-name.js:11
@@ -291,7 +303,7 @@ msgstr ""
 #: src/admin/custom-format/index.js:203
 #: src/blocks/_pro/step-item/edit.js:105
 #: src/blocks/_pro/timeline-item/edit.js:71
-#: src/blocks/border-box/edit.js:204
+#: src/blocks/border-box/edit.js:233
 #: src/blocks/button/edit.js:677
 #: src/blocks/icon/edit.js:299
 #: src/blocks/staff/edit.js:199
@@ -309,7 +321,7 @@ msgstr ""
 #: src/admin/custom-format/index.js:239
 #: src/blocks/_pro/grid-column-item/edit.js:110
 #: src/blocks/_pro/gridcolcard/edit-common.js:172
-#: src/blocks/border-box/edit.js:216
+#: src/blocks/border-box/edit.js:245
 #: src/blocks/button/edit.js:732
 #: src/blocks/icon/edit.js:304
 msgid "Background Color"
@@ -497,7 +509,7 @@ msgid "ex)"
 msgstr ""
 
 #: src/admin/margin.js:141
-#: src/blocks/border-box/edit.js:192
+#: src/blocks/border-box/edit.js:200
 #: src/blocks/icon-outer/edit.js:150
 #: src/blocks/icon/edit.js:140
 msgid "Margin"
@@ -657,6 +669,7 @@ msgid "Short"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:130
+#: src/blocks/_pro/tab/index.js:23
 #: src/blocks/balloon/edit.js:482
 #: src/blocks/button/edit.js:330
 #: src/blocks/faq/index.js:26
@@ -776,36 +789,40 @@ msgstr ""
 msgid "Max number of words"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:102
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:100
+msgid "Square"
+msgstr ""
+
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:104
 msgid "16:9"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:106
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:108
 msgid "4:3"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:110
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:112
 msgid "3:2"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:114
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:116
 msgid "9:16"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:118
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:120
 msgid "3:4"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:122
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:124
 msgid "2:3"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:143
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:145
 #: src/blocks/slider/edit.js:940
 msgid "Height"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:165
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:167
 #: src/blocks/_pro/outer/edit.js:518
 #: src/blocks/balloon/edit.js:508
 #: src/blocks/slider/edit.js:915
@@ -826,16 +843,12 @@ msgstr ""
 msgid "Image will be stretched and distorted to completely fill the space."
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:89
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:91
 msgid "Aspect ratio"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:94
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:96
 msgid "Original"
-msgstr ""
-
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:98
-msgid "Square"
 msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/edit.js:48
@@ -967,6 +980,7 @@ msgstr ""
 #: src/blocks/_pro/card/edit.js:134
 #: src/blocks/_pro/icon-card/edit.js:75
 #: src/blocks/_pro/post-list/edit.js:338
+#: src/blocks/border-box/edit.js:213
 msgid "Title"
 msgstr ""
 
@@ -1217,6 +1231,7 @@ msgstr ""
 #: src/blocks/icon/edit.js:292
 #: src/blocks/pr-blocks/edit.js:262
 #: src/blocks/pr-content/edit.js:131
+#: src/components/link-toolbar/index.js:274
 msgid "Open link new tab."
 msgstr ""
 
@@ -1261,6 +1276,70 @@ msgstr ""
 msgid "span"
 msgstr ""
 
+#: src/blocks/_pro/fixed-display/edit.js:101
+#: src/blocks/balloon/edit.js:434
+#: src/blocks/button/edit.js:375
+#: src/blocks/pr-content/edit.js:252
+#: src/components/display-items-control/index.js:140
+msgid "Right"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:105
+msgid "Bottom"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:109
+#: src/blocks/balloon/edit.js:422
+#: src/blocks/button/edit.js:355
+#: src/blocks/pr-content/edit.js:256
+#: src/components/display-items-control/index.js:132
+msgid "Left"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:116
+msgid "Fixed position from the top"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:138
+msgid "Timing to display"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:154
+msgid "Persist visibility once visible"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:70
+msgid "Fixed Display Setting"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:73
+msgid ""
+"The fixed position of the fixed position block will not change on the edit "
+"screen. Please check on the front screen."
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:80
+#: src/blocks/_pro/table-of-contents-new/edit.js:114
+#: src/components/column-layout-control/index.js:69
+msgid "Display type"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:85
+msgid "Always Visible"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:89
+msgid "Show on Scroll"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:95
+msgid "Fixed position"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:99
+msgid "Top"
+msgstr ""
+
 #: src/blocks/_pro/grid-column-item/edit.js:102
 #: src/blocks/_pro/gridcolcard/edit-common.js:164
 msgid "Color Settings"
@@ -1276,7 +1355,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:143
 #: src/blocks/_pro/outer/edit.js:521
-#: src/blocks/slider-item/edit.js:120
+#: src/blocks/slider-item/edit.js:134
 msgid "Padding (Left and Right)"
 msgstr ""
 
@@ -1339,17 +1418,20 @@ msgstr ""
 #: src/blocks/_pro/gridcolcard-item/edit.js:232
 #: src/blocks/_pro/select-post-list-item/edit.js:66
 #: src/blocks/button/edit.js:249
+#: src/components/link-toolbar/index.js:233
 msgid "Unlink"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:233
 #: src/blocks/button/edit.js:250
+#: src/components/link-toolbar/index.js:234
 msgid "Input Link URL"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:263
 #: src/blocks/_pro/select-post-list-item/edit.js:102
 #: src/blocks/button/edit.js:278
+#: src/components/link-toolbar/index.js:268
 msgid "Submit"
 msgstr ""
 
@@ -1426,7 +1508,7 @@ msgid "Border Width"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:209
-#: src/blocks/border-box/edit.js:207
+#: src/blocks/border-box/edit.js:236
 #: src/extensions/core/group/style.js:46
 msgid "Border Color"
 msgstr ""
@@ -1508,7 +1590,7 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:137
 #: src/blocks/_pro/step-item/edit.js:82
-#: src/blocks/border-box/edit.js:240
+#: src/blocks/border-box/edit.js:269
 #: src/blocks/button/edit.js:760
 #: src/blocks/heading/edit.js:335
 #: src/blocks/icon/edit.js:276
@@ -1577,40 +1659,40 @@ msgid "dvh"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:409
-#: src/blocks/slider-item/edit.js:171
+#: src/blocks/slider-item/edit.js:185
 msgid "Background Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:414
 #: src/blocks/pr-content/edit.js:67
-#: src/blocks/slider-item/edit.js:175
+#: src/blocks/slider-item/edit.js:189
 msgid "Color Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:415
-#: src/blocks/slider-item/edit.js:177
+#: src/blocks/slider-item/edit.js:191
 msgid ""
 "Color will overcome background image. If you want to display image, set "
 "opacity 0."
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:427
-#: src/blocks/slider-item/edit.js:189
+#: src/blocks/slider-item/edit.js:203
 msgid "Opacity Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:441
-#: src/blocks/slider-item/edit.js:224
+#: src/blocks/slider-item/edit.js:238
 msgid "Background Image PC"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:457
-#: src/blocks/slider-item/edit.js:240
+#: src/blocks/slider-item/edit.js:254
 msgid "Background Image Tablet"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:467
-#: src/blocks/slider-item/edit.js:250
+#: src/blocks/slider-item/edit.js:264
 msgid "Background Image Mobile"
 msgstr ""
 
@@ -1636,7 +1718,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:515
 #: src/blocks/pr-content/edit.js:244
-#: src/blocks/slider-item/edit.js:115
+#: src/blocks/slider-item/edit.js:129
 msgid "Layout Setting"
 msgstr ""
 
@@ -1965,6 +2047,62 @@ msgstr ""
 msgid "First Dot Number"
 msgstr ""
 
+#: src/blocks/_pro/tab-item/edit.js:132
+msgid "Tab Color Setting"
+msgstr ""
+
+#: src/blocks/_pro/tab-item/edit.js:135
+msgid "Tab Color"
+msgstr ""
+
+#: src/blocks/_pro/tab-item/index.js:17
+msgid "Tab Item"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:33
+msgid "Tab 01"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:37
+msgid "Tab 02"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:473
+msgid "Tab Label [ %s ]"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:497
+msgid "Tab size Setting"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:499
+msgid "Tab Size ( Smart Phone )"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:516
+msgid "Tab Size ( Tablet )"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:533
+msgid "Tab Size ( PC )"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:537
+msgid "Fit to the text"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:541
+msgid "Monospaced"
+msgstr ""
+
+#: src/blocks/_pro/tab/index.js:18
+msgid "Tab"
+msgstr ""
+
+#: src/blocks/_pro/tab/index.js:28
+msgid "Line"
+msgstr ""
+
 #: src/blocks/_pro/table-of-contents-new/deprecated/0.59.1/save.js:19
 #: src/blocks/_pro/table-of-contents-new/edit.js:162
 #: src/blocks/_pro/table-of-contents-new/save.js:16
@@ -1979,11 +2117,6 @@ msgstr ""
 msgid ""
 "If you duplicate a heading, the table of contents block will not work "
 "properly, please reassign the ID."
-msgstr ""
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:114
-#: src/components/column-layout-control/index.js:69
-msgid "Display type"
 msgstr ""
 
 #: src/blocks/_pro/table-of-contents-new/edit.js:133
@@ -2130,20 +2263,6 @@ msgstr ""
 msgid "Please specify the layout of the balloon."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:422
-#: src/blocks/button/edit.js:355
-#: src/blocks/pr-content/edit.js:256
-#: src/components/display-items-control/index.js:132
-msgid "Left"
-msgstr ""
-
-#: src/blocks/balloon/edit.js:434
-#: src/blocks/button/edit.js:375
-#: src/blocks/pr-content/edit.js:252
-#: src/components/display-items-control/index.js:140
-msgid "Right"
-msgstr ""
-
 #: src/blocks/balloon/edit.js:442
 msgid "Please select the type of balloon."
 msgstr ""
@@ -2219,11 +2338,11 @@ msgstr ""
 
 #: src/blocks/border-box/deprecated/0.0.0/save.js:24
 #: src/blocks/border-box/deprecated/0.0.1/save.js:25
-#: src/blocks/border-box/edit.js:43
+#: src/blocks/border-box/edit.js:51
 msgid "Please enter a title."
 msgstr ""
 
-#: src/blocks/border-box/edit.js:197
+#: src/blocks/border-box/edit.js:205
 msgid ""
 "The margin-top of the first element and the margin-bottom of the last "
 "element in the border block will be automatically set to 0.If you want to "
@@ -2231,11 +2350,11 @@ msgid ""
 "instead of margin."
 msgstr ""
 
-#: src/blocks/border-box/edit.js:226
+#: src/blocks/border-box/edit.js:255
 msgid "Transparent"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:230
+#: src/blocks/border-box/edit.js:259
 msgid "White"
 msgstr ""
 
@@ -2396,7 +2515,11 @@ msgstr ""
 msgid "Size"
 msgstr ""
 
-#: src/blocks/button/edit.js:833
+#: src/blocks/button/edit.js:810
+msgid "Button border radius"
+msgstr ""
+
+#: src/blocks/button/edit.js:851
 msgid "Input text"
 msgstr ""
 
@@ -2702,32 +2825,36 @@ msgstr ""
 msgid "Image Border Color"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:128
+#: src/blocks/slider-item/edit.js:142
 msgid "Fit to the Container area"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:135
+#: src/blocks/slider-item/edit.js:149
 msgid "Add padding to the Slider area"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:142
+#: src/blocks/slider-item/edit.js:156
 msgid "Remove padding from the Slider area"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:157
+#: src/blocks/slider-item/edit.js:171
 msgid "Vertical align"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:203
+#: src/blocks/slider-item/edit.js:217
 msgid "Background Image Size"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:210
+#: src/blocks/slider-item/edit.js:224
 msgid "cover"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:214
+#: src/blocks/slider-item/edit.js:228
 msgid "repeat"
+msgstr ""
+
+#: src/blocks/slider-item/save.js:83
+msgid "Slider item link"
 msgstr ""
 
 #: src/blocks/slider/edit.js:1017
@@ -2985,11 +3112,11 @@ msgstr ""
 msgid "Theme"
 msgstr ""
 
-#: src/components/code-mirror-css/index.js:103
+#: src/components/code-mirror-css/index.js:170
 msgid "Note : Contains double-byte spaces; CSS may not work."
 msgstr ""
 
-#: src/components/code-mirror-css/index.js:48
+#: src/components/code-mirror-css/index.js:50
 msgid "There is an error with your CSS structure."
 msgstr ""
 
@@ -3091,6 +3218,26 @@ msgstr ""
 
 #: src/components/link-control/index.js:37
 msgid "Link target"
+msgstr ""
+
+#: src/components/link-toolbar/index.js:28
+msgid "Currently selected"
+msgstr ""
+
+#: src/components/link-toolbar/index.js:303
+msgid "Link copied to clipboard."
+msgstr ""
+
+#: src/components/link-toolbar/index.js:66
+msgid "Deleting Link"
+msgstr ""
+
+#: src/components/link-toolbar/index.js:76
+msgid "Copy link: %s"
+msgstr ""
+
+#: src/components/link-toolbar/index.js:83
+msgid "Copy link"
 msgstr ""
 
 #: src/extensions/common/custom-block-variation/block-variation-explorer/sidebar.js:17
@@ -3382,6 +3529,14 @@ msgstr ""
 msgid "Responsive BR "
 msgstr ""
 
+#: src/extensions/core/columns/style.js:60
+msgid "Column Direction"
+msgstr ""
+
+#: src/extensions/core/columns/style.js:65
+msgid "Reverse"
+msgstr ""
+
 #: src/extensions/core/group/style.js:51
 msgid ""
 "Because of the theme that enabled theme.json become can specify the color "
@@ -3481,7 +3636,7 @@ msgctxt "Scale option for Image dimension control"
 msgid "Fill"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:71
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:73
 msgctxt "Image scaling options"
 msgid "Scale"
 msgstr ""

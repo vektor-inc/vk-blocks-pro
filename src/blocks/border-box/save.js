@@ -12,16 +12,22 @@ import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function save(props) {
 	const { attributes } = props;
-	const { heading, faIcon, color, bgColor, borderColor, bodyAlign } =
-		attributes;
+	const {
+		heading,
+		headingTag,
+		faIcon,
+		color,
+		bgColor,
+		borderColor,
+		bodyAlign,
+	} = attributes;
 
 	const inner = <InnerBlocks.Content />;
 	const title = (
 		<RichText.Content
-			tagName="h4"
+			tagName={headingTag}
 			className={'vk_borderBox_title'}
 			value={heading}
-			ß
 		/>
 	);
 

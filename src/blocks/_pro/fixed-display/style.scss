@@ -1,0 +1,64 @@
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+:root {
+	--admin-bar-offset: 32px;
+}
+
+.vk_fixed-display {
+	position: fixed;
+	margin-block-start: 0;
+	z-index: 99999;
+}
+
+.vk_fixed-display-mode {
+	
+	&-always-visible {
+	}
+	
+	&-show-on-scroll {
+		opacity: 0;
+		transition: opacity 0.3s ease;
+		
+		&.is-visible {
+			opacity: 1;
+		}
+	}
+
+}
+
+.vk_fixed-display-position {
+
+	&-top {
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+	}
+	&-right {
+		top: 50%;
+		right: 0;
+	}
+	&-bottom {
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+	}
+	&-left {
+		top: 50%;
+		left: 0;
+	}
+}
+
+/*-------------------------------------------*/
+/* 管理画面
+/*-------------------------------------------*/
+.logged-in.admin-bar .vk_fixed-display-position {
+	&-top {
+		top: var(--admin-bar-offset);
+	}
+	&-right, &-left {
+		top: calc(50svh + var(--admin-bar-offset));
+	}
+}

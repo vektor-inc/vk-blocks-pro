@@ -105,7 +105,7 @@ e.g.
 == Changelog ==
 
 
-[ Design bug fix ][ Fixed Display (Pro) ] Added css for position and alignment.
+[ Design bug fix ][ Fixed Display (Pro) ] Add css for position and alignment.
 
 = 1.75.1 =
 [ Specification Change ][ Fixed Display (Pro) ] Do not fix the edit screen as it makes editing difficult.

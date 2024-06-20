@@ -107,8 +107,8 @@ export default function save(props) {
 					key={index}
 					style={
 						Object.keys(tabColorStyle).length > 0
-						? tabColorStyle
-						: undefined
+							? tabColorStyle
+							: undefined
 					}
 					tabIndex={firstActive === index ? 0 : -1}
 					role="tab"

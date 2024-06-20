@@ -18,12 +18,14 @@ import {
 	RadioControl,
 	PanelBody,
 	BaseControl,
+	ToolbarGroup,
 } from '@wordpress/components';
 import { AdvancedMediaUpload } from '@vkblocks/components/advanced-media-upload';
 import GenerateBgImage from './GenerateBgImage';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
+import LinkToolbar from '@vkblocks/components/link-toolbar';
 
 const prefix = 'vk_slider_item';
 
@@ -38,6 +40,8 @@ export default function SliderItemEdit(props) {
 		bgImageMobile,
 		bgImageTablet,
 		bgImage,
+		linkUrl,
+		linkTarget,
 		blockId,
 	} = attributes;
 
@@ -109,6 +113,16 @@ export default function SliderItemEdit(props) {
 					}
 					value={verticalAlignment}
 				/>
+				<ToolbarGroup>
+					<LinkToolbar
+						linkUrl={linkUrl}
+						setLinkUrl={(url) => setAttributes({ linkUrl: url })}
+						linkTarget={linkTarget}
+						setLinkTarget={(target) =>
+							setAttributes({ linkTarget: target })
+						}
+					/>
+				</ToolbarGroup>
 			</BlockControls>
 			<InspectorControls>
 				<PanelBody

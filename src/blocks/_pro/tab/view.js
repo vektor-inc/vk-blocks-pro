@@ -161,6 +161,14 @@ document.addEventListener('DOMContentLoaded', function () {
 					} else {
 						newActiveLabel.style.color = borderTopColor;
 					}
+				} else {
+					const activeTabBody = vkTabBodies.querySelector(
+						`#vk_tab_bodys_body-${TabId}`
+					);
+					const activeTabBodyStyle =
+						window.getComputedStyle(activeTabBody);
+					newActiveLabel.style.backgroundColor =
+						activeTabBodyStyle.borderTopColor || '';
 				}
 
 				const newActiveBody = vkTabBodies.querySelector(

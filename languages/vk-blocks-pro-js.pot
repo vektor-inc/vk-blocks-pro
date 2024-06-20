@@ -1230,6 +1230,7 @@ msgstr ""
 #: src/blocks/icon/edit.js:292
 #: src/blocks/pr-blocks/edit.js:262
 #: src/blocks/pr-content/edit.js:131
+#: src/components/link-toolbar/index.js:274
 msgid "Open link new tab."
 msgstr ""
 
@@ -1353,7 +1354,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:143
 #: src/blocks/_pro/outer/edit.js:521
-#: src/blocks/slider-item/edit.js:120
+#: src/blocks/slider-item/edit.js:134
 msgid "Padding (Left and Right)"
 msgstr ""
 
@@ -1416,17 +1417,20 @@ msgstr ""
 #: src/blocks/_pro/gridcolcard-item/edit.js:232
 #: src/blocks/_pro/select-post-list-item/edit.js:66
 #: src/blocks/button/edit.js:249
+#: src/components/link-toolbar/index.js:233
 msgid "Unlink"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:233
 #: src/blocks/button/edit.js:250
+#: src/components/link-toolbar/index.js:234
 msgid "Input Link URL"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:263
 #: src/blocks/_pro/select-post-list-item/edit.js:102
 #: src/blocks/button/edit.js:278
+#: src/components/link-toolbar/index.js:268
 msgid "Submit"
 msgstr ""
 
@@ -1654,40 +1658,40 @@ msgid "dvh"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:409
-#: src/blocks/slider-item/edit.js:171
+#: src/blocks/slider-item/edit.js:185
 msgid "Background Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:414
 #: src/blocks/pr-content/edit.js:67
-#: src/blocks/slider-item/edit.js:175
+#: src/blocks/slider-item/edit.js:189
 msgid "Color Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:415
-#: src/blocks/slider-item/edit.js:177
+#: src/blocks/slider-item/edit.js:191
 msgid ""
 "Color will overcome background image. If you want to display image, set "
 "opacity 0."
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:427
-#: src/blocks/slider-item/edit.js:189
+#: src/blocks/slider-item/edit.js:203
 msgid "Opacity Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:441
-#: src/blocks/slider-item/edit.js:224
+#: src/blocks/slider-item/edit.js:238
 msgid "Background Image PC"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:457
-#: src/blocks/slider-item/edit.js:240
+#: src/blocks/slider-item/edit.js:254
 msgid "Background Image Tablet"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:467
-#: src/blocks/slider-item/edit.js:250
+#: src/blocks/slider-item/edit.js:264
 msgid "Background Image Mobile"
 msgstr ""
 
@@ -1713,7 +1717,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:515
 #: src/blocks/pr-content/edit.js:244
-#: src/blocks/slider-item/edit.js:115
+#: src/blocks/slider-item/edit.js:129
 msgid "Layout Setting"
 msgstr ""
 
@@ -2820,32 +2824,36 @@ msgstr ""
 msgid "Image Border Color"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:128
+#: src/blocks/slider-item/edit.js:142
 msgid "Fit to the Container area"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:135
+#: src/blocks/slider-item/edit.js:149
 msgid "Add padding to the Slider area"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:142
+#: src/blocks/slider-item/edit.js:156
 msgid "Remove padding from the Slider area"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:157
+#: src/blocks/slider-item/edit.js:171
 msgid "Vertical align"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:203
+#: src/blocks/slider-item/edit.js:217
 msgid "Background Image Size"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:210
+#: src/blocks/slider-item/edit.js:224
 msgid "cover"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:214
+#: src/blocks/slider-item/edit.js:228
 msgid "repeat"
+msgstr ""
+
+#: src/blocks/slider-item/save.js:83
+msgid "Slider item link"
 msgstr ""
 
 #: src/blocks/slider/edit.js:1017
@@ -3209,6 +3217,26 @@ msgstr ""
 
 #: src/components/link-control/index.js:37
 msgid "Link target"
+msgstr ""
+
+#: src/components/link-toolbar/index.js:28
+msgid "Currently selected"
+msgstr ""
+
+#: src/components/link-toolbar/index.js:303
+msgid "Link copied to clipboard."
+msgstr ""
+
+#: src/components/link-toolbar/index.js:66
+msgid "Deleting Link"
+msgstr ""
+
+#: src/components/link-toolbar/index.js:76
+msgid "Copy link: %s"
+msgstr ""
+
+#: src/components/link-toolbar/index.js:83
+msgid "Copy link"
 msgstr ""
 
 #: src/extensions/common/custom-block-variation/block-variation-explorer/sidebar.js:17

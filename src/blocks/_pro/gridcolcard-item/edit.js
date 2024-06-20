@@ -50,6 +50,7 @@ export default function Edit(props) {
 		borderRadius,
 		border,
 		borderColor,
+		borderWidth,
 		textColor,
 		backgroundColor,
 		backgroundGradient,
@@ -57,8 +58,8 @@ export default function Edit(props) {
 		urlOpenType,
 	} = attributes;
 
-	// editModeは値として保持させずに常に個別モードでスタートさせる
-	const [editMode, setEditMode] = useState('self');
+	// editModeは値として保持させずに常にすべてのカラムモードでスタートさせる
+	const [editMode, setEditMode] = useState('all');
 
 	const { rootClientId } = useSelect(
 		(select) => {
@@ -120,6 +121,7 @@ export default function Edit(props) {
 							borderRadius: attributes.borderRadius,
 							border: attributes.border,
 							borderColor: attributes.borderColor,
+							borderWidth: attributes.borderWidth,
 							textColor: attributes.textColor,
 							backgroundColor: attributes.backgroundColor,
 							backgroundGradient: attributes.backgroundGradient,
@@ -137,6 +139,7 @@ export default function Edit(props) {
 					borderRadius: attributes.borderRadius,
 					border: attributes.border,
 					borderColor: attributes.borderColor,
+					borderWidth: attributes.borderWidth,
 					textColor: attributes.textColor,
 					backgroundColor: attributes.backgroundColor,
 					backgroundGradient: attributes.backgroundGradient,
@@ -183,9 +186,9 @@ export default function Edit(props) {
 		style.background = `${backgroundGradient}`;
 	}
 
-	// 線の色
+	// 線の色と太さ
 	if (border) {
-		style.borderWidth = `1px`;
+		style.borderWidth = borderWidth;
 		if (isHexColor(borderColor)) {
 			// custom color
 			style.borderColor = `${borderColor}`;
@@ -230,7 +233,7 @@ export default function Edit(props) {
 											: __(
 													'Input Link URL',
 													'vk-blocks-pro'
-											  )
+												)
 									}
 									onClick={setLink}
 								/>

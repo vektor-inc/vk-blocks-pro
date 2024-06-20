@@ -1,9 +1,8 @@
 .vk_edit_custom_css {
 	border: 1px dashed #ccc !important;
-	min-height:3em;
 	left:0;
 	&:before {
-		position:absolute;
+		position:absolute !important;
 		right:0;
 		top:0;
 		font-size:10px;

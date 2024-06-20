@@ -43,7 +43,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Category Badge [ Pro ]
 * Child page list [ Pro ]
 * Dynamic Text ( Post Type name / Ancestor Page name ) [ Pro ]
-* Fixed [ Pro ]
+* Fixed Display [ Pro ]
 * Icon Card [ Pro ] (not recommended)
 * Post list [ Pro ]
 * New Badge [ Pro ]
@@ -105,6 +105,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Tab ] Fix background color of tab disappearing when clicking active tab.
 [ Add Setting ] Add Setting for the position of VK Blocks on all block inserter. 
 [ Bug fix ][ Responsive Spacer ] Added CSS to remove margins from the default theme.
 

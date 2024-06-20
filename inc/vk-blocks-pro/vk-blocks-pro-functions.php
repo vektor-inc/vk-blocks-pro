@@ -34,5 +34,11 @@ function vk_blocks_pro_load_scripts() {
 
 	// Animation Block
 	wp_enqueue_script( 'vk-blocks-animation', VK_BLOCKS_DIR_URL . 'build/vk-animation.min.js', array(), VK_BLOCKS_VERSION, true );
+
+	// Fixed Display Block
+	wp_enqueue_script( 'vk-blocks-fixed-display', VK_BLOCKS_DIR_URL . 'build/vk-fixed-display.min.js', array(), VK_BLOCKS_VERSION, true );
+
+	// Tab Block
+	wp_enqueue_script( 'vk-blocks-tab', VK_BLOCKS_DIR_URL . 'build/vk-tab.min.js', array(), VK_BLOCKS_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'vk_blocks_pro_load_scripts' );

@@ -54,16 +54,16 @@ class Vk_Blocks_PostList {
 			'class_title'                => '',
 			'body_prepend'               => '',
 			'body_append'                => '',
-			'vkb_hidden'                 => $attributes['vkb_hidden'],
-			'vkb_hidden_xxl'             => $attributes['vkb_hidden_xxl'],
-			'vkb_hidden_xl'              => $attributes['vkb_hidden_xl'],
-			'vkb_hidden_xl_v2'           => $attributes['vkb_hidden_xl_v2'],
-			'vkb_hidden_lg'              => $attributes['vkb_hidden_lg'],
-			'vkb_hidden_md'              => $attributes['vkb_hidden_md'],
-			'vkb_hidden_sm'              => $attributes['vkb_hidden_sm'],
-			'vkb_hidden_xs'              => $attributes['vkb_hidden_xs'],
-			'marginTop'                  => $attributes['marginTop'],
-			'marginBottom'               => $attributes['marginBottom'],
+			'vkb_hidden'                 => isset( $attributes['vkb_hidden'] ) ? $attributes['vkb_hidden'] : '',
+			'vkb_hidden_xxl'             => isset( $attributes['vkb_hidden_xxl'] ) ? $attributes['vkb_hidden_xxl'] : '',
+			'vkb_hidden_xl'              => isset( $attributes['vkb_hidden_xl'] ) ? $attributes['vkb_hidden_xl'] : '',
+			'vkb_hidden_xl_v2'           => isset( $attributes['vkb_hidden_xl_v2'] ) ? $attributes['vkb_hidden_xl_v2'] : '',
+			'vkb_hidden_lg'              => isset( $attributes['vkb_hidden_lg'] ) ? $attributes['vkb_hidden_lg'] : '',
+			'vkb_hidden_md'              => isset( $attributes['vkb_hidden_md'] ) ? $attributes['vkb_hidden_md'] : '',
+			'vkb_hidden_sm'              => isset( $attributes['vkb_hidden_sm'] ) ? $attributes['vkb_hidden_sm'] : '',
+			'vkb_hidden_xs'              => isset( $attributes['vkb_hidden_xs'] ) ? $attributes['vkb_hidden_xs'] : '',
+			'marginTop'                  => isset( $attributes['marginTop'] ) ? $attributes['marginTop'] : '',
+			'marginBottom'               => isset( $attributes['marginBottom'] ) ? $attributes['marginBottom'] : '',
 		);
 
 		$elm = VK_Component_Posts::get_loop( $wp_query, $options, $options_loop );
@@ -76,10 +76,12 @@ class Vk_Blocks_PostList {
 	/**
 	 * Is Array Exist
 	 *
-	 * @param array $array array.
+	 * @param array $arr array.
+	 *
+	 * @return bool
 	 */
-	private function is_array_exist( $array ) {
-		if ( ! $array ) {
+	private function is_array_exist( $arr ) {
+		if ( ! $arr ) {
 			return false;
 		}
 		return true;
@@ -88,23 +90,32 @@ class Vk_Blocks_PostList {
 	/**
 	 * Format Terms
 	 *
-	 * @param array $tax_query_relation : AND or OR.
-	 * @param array $is_checked_terms : checked terms. チェックされたタームidの配列.
+	 * @param array  $tax_query_relation : AND or OR.
+	 * @param array  $is_checked_terms : checked terms. チェックされたタームidの配列.
+	 * @param string $post_type Post type.
 	 *
 	 * @return array $return : tax_query
 	 */
-	private static function format_terms( $tax_query_relation, $is_checked_terms ) {
-		$return             = array();
-		$return['relation'] = $tax_query_relation;
+	private static function format_terms( $tax_query_relation, $is_checked_terms, $post_type ) {
+		$return = array(
+			'relation' => $tax_query_relation,
+		);
 
-		foreach ( $is_checked_terms as $key => $value ) {
-			$term      = get_term( $value );
-			$new_array = array(
-				'taxonomy' => isset( $term->taxonomy ) ? $term->taxonomy : $key,
-				'field'    => 'term_id',
-				'terms'    => $value,
-			);
-			array_push( $return, $new_array );
+		foreach ( $is_checked_terms as $term_id ) {
+			$term = get_term( $term_id );
+			if ( ! $term || is_wp_error( $term ) ) {
+				continue; // Skip invalid or non-existent terms
+			}
+			$post_type_taxonomies = get_object_taxonomies( $post_type );
+
+			if ( in_array( $term->taxonomy, $post_type_taxonomies, true ) ) {
+				$new_array = array(
+					'taxonomy' => $term->taxonomy,
+					'field'    => 'term_id',
+					'terms'    => $term_id,
+				);
+				$return[]  = $new_array;
+			}
 		}
 		return $return;
 	}
@@ -113,15 +124,14 @@ class Vk_Blocks_PostList {
 	 * Get Loop Query
 	 *
 	 * @param array $attributes attributes.
+	 *
+	 * @return WP_Query|bool WP_Query object or false.
 	 */
 	public static function get_loop_query( $attributes ) {
 		$is_checked_post_type = json_decode( $attributes['isCheckedPostType'], true );
 
 		$is_checked_terms   = json_decode( $attributes['isCheckedTerms'], true );
-		$tax_query_relation = 'OR';
-		if ( ! empty( $attributes['taxQueryRelation'] ) ) {
-			$tax_query_relation = $attributes['taxQueryRelation'];
-		}
+		$tax_query_relation = isset( $attributes['taxQueryRelation'] ) ? $attributes['taxQueryRelation'] : 'OR';
 
 		if ( empty( $is_checked_post_type ) ) {
 			return false;
@@ -131,37 +141,39 @@ class Vk_Blocks_PostList {
 		if ( ! empty( $attributes['selfIgnore'] ) ) {
 			$post__not_in = array( get_the_ID() );
 		}
-		$offset = '';
-		if ( ! empty( $attributes['offset'] ) ) {
-			$offset = intval( $attributes['offset'] );
-		}
+
+		$offset = isset( $attributes['offset'] ) ? intval( $attributes['offset'] ) : 0;
 
 		$date_query = array();
 		if ( ! empty( $attributes['targetPeriod'] ) ) {
-			if ( 'from-today' === $attributes['targetPeriod'] ) {
-				$date_query = array(
-					array(
-						'column'    => 'post_date_gmt',
-						'after'     => gmdate( 'Y-m-d' ),
-						'inclusive' => true,
-					),
-				);
-			} elseif ( 'from-now' === $attributes['targetPeriod'] ) {
-				$date_query = array(
-					array(
-						'column'    => 'post_date_gmt',
-						'after'     => gmdate( 'Y-m-d H:i:s' ),
-						'inclusive' => true,
-					),
-				);
-			} elseif ( 'from-tomorrow' === $attributes['targetPeriod'] ) {
-				$date_query = array(
-					array(
-						'column'    => 'post_date_gmt',
-						'after'     => gmdate( 'Y-m-d', strtotime( '+1 day' ) ),
-						'inclusive' => true,
-					),
-				);
+			switch ( $attributes['targetPeriod'] ) {
+				case 'from-today':
+					$date_query = array(
+						array(
+							'column'    => 'post_date_gmt',
+							'after'     => gmdate( 'Y-m-d' ),
+							'inclusive' => true,
+						),
+					);
+					break;
+				case 'from-now':
+					$date_query = array(
+						array(
+							'column'    => 'post_date_gmt',
+							'after'     => gmdate( 'Y-m-d H:i:s' ),
+							'inclusive' => true,
+						),
+					);
+					break;
+				case 'from-tomorrow':
+					$date_query = array(
+						array(
+							'column'    => 'post_date_gmt',
+							'after'     => gmdate( 'Y-m-d', strtotime( '+1 day' ) ),
+							'inclusive' => true,
+						),
+					);
+					break;
 			}
 		}
 
@@ -175,28 +187,63 @@ class Vk_Blocks_PostList {
 		} elseif ( isset( $wp_query->query_vars['paged'] ) ) {
 			$paged = $wp_query->query_vars['paged'];
 		}
-		$args = array(
-			'post_type'      => $is_checked_post_type,
-			'tax_query'      => self::format_terms( $tax_query_relation, $is_checked_terms ),
-			'paged'          => $paged,
-			// 0で全件取得
-			'posts_per_page' => intval( $attributes['numberPosts'] ),
-			'order'          => $attributes['order'],
-			'orderby'        => $attributes['orderby'],
-			'offset'         => $offset,
-			'post__not_in'   => $post__not_in,
-		);
-		if ( ! empty( $date_query ) ) {
-			$args['date_query'] = $date_query;
+
+		$all_posts    = array();
+		$offset_count = 0;
+
+		foreach ( $is_checked_post_type as $post_type ) {
+			$args = array(
+				'post_type'      => $post_type,
+				'paged'          => 1,
+				'posts_per_page' => -1,
+				'order'          => $attributes['order'],
+				'orderby'        => $attributes['orderby'],
+				'post__not_in'   => $post__not_in,
+				'date_query'     => $date_query,
+			    // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
+				'tax_query'      => ! empty( $is_checked_terms ) ? self::format_terms( $tax_query_relation, $is_checked_terms, $post_type ) : array(),
+			);
+
+			if ( ! empty( $is_checked_terms ) ) {
+				$args['tax_query'] = self::format_terms( $tax_query_relation, $is_checked_terms, $post_type );
+			}
+
+			$temp_query = new WP_Query( $args );
+			$all_posts  = array_merge( $all_posts, $temp_query->posts );
 		}
-		$args = apply_filters( 'vk_blocks_post_list_query_args', $args, $attributes );
-		return new WP_Query( $args );
+
+		usort(
+			$all_posts,
+			function ( $a, $b ) use ( $attributes ) {
+				if ( 'date' === $attributes['orderby'] ) {
+					if ( 'ASC' === $attributes['order'] ) {
+						return strtotime( $a->post_date ) - strtotime( $b->post_date );
+					} else {
+						return strtotime( $b->post_date ) - strtotime( $a->post_date );
+					}
+				} elseif ( 'title' === $attributes['orderby'] ) {
+					return strcmp( $a->post_title, $b->post_title ) * ( 'ASC' === $attributes['order'] ? 1 : -1 );
+				} else {
+					return 0;
+				}
+			}
+		);
+
+		$all_posts = array_slice( $all_posts, $offset, intval( $attributes['numberPosts'] ) );
+
+		$wp_query_combined             = new WP_Query();
+		$wp_query_combined->posts      = $all_posts;
+		$wp_query_combined->post_count = count( $all_posts );
+
+		return $wp_query_combined;
 	}
 
 	/**
 	 * Get Loop Query Child
 	 *
 	 * @param array $attributes attributes.
+	 *
+	 * @return WP_Query|bool WP_Query object or false.
 	 */
 	public static function get_loop_query_child( $attributes ) {
 
@@ -225,6 +272,31 @@ class Vk_Blocks_PostList {
 				'offset'         => $offset,
 				'post__not_in'   => $post__not_in,
 			);
+
+			// Add tax_query.
+			$tax_query     = array();
+			$checked_terms = json_decode( $attributes['isCheckedTerms'], true );
+
+			if ( ! empty( $checked_terms ) ) {
+				foreach ( $checked_terms as $term_id ) {
+					$term = get_term( $term_id );
+					if ( $term ) {
+						$tax_query[] = array(
+							'taxonomy' => $term->taxonomy,
+							'field'    => 'term_id',
+							'terms'    => $term_id,
+						);
+					}
+				}
+			}
+
+			if ( ! empty( $tax_query ) ) {
+				$args['tax_query'] = array(
+					'relation' => $attributes['taxQueryRelation'],
+					$tax_query,
+				);
+			}
+
 			return new WP_Query( $args );
 		} else {
 			return false;

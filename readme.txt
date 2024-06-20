@@ -43,7 +43,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Category Badge [ Pro ]
 * Child page list [ Pro ]
 * Dynamic Text ( Post Type name / Ancestor Page name ) [ Pro ]
-* Fixed [ Pro ]
+* Fixed Display [ Pro ]
 * Icon Card [ Pro ] (not recommended)
 * Post list [ Pro ]
 * New Badge [ Pro ]
@@ -64,6 +64,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Margin extension
 * Nowrap
 * Responsive BR
+* Columns direction
 * Custom CSS [ Pro ]
 
 [ Settings ]
@@ -105,6 +106,18 @@ e.g.
 == Changelog ==
 
 [ Add Setting ][ Border Box ] add title tag setting.
+[ Specification Change ][ Post List (Pro) ] Displayed taxonomies now only show for selected post types.
+[ Add function ][ Slider ] Add url interface to block toolbar for slider item.
+[ Add function ] Add toolbar link to components.
+[ Bug fix ][ Button ] Fixed button URL being output in editor.
+[ Bug fix ][ Tab ] Fix innactive tab color setting.
+[ Add function ][ VK Button ] Add unit "percent" for border radius.
+[ Bug fix ][ Tab ] Fix background color of tab disappearing when clicking active tab.
+[ Add Setting ] Add Setting for the position of VK Blocks on all block inserter. 
+[ Bug fix ][ Responsive Spacer ] Added CSS to remove margins from the default theme.
+
+= 1.75.1 =
+[ Specification Change ][ Fixed Display (Pro) ] Do not fix the edit screen as it makes editing difficult.
 [ Bug fix ] Fixed an issue where the Pro version could not be activated in an environment where the Free version is active.
 
 = 1.75.0 =

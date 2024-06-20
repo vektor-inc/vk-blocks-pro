@@ -215,7 +215,10 @@ export default function BorderBoxEdit(props) {
 				>
 					<BaseControl>
 						<SelectControl
-							label={__('HTML element of the title', 'vk-blocks-pro')}
+							label={__(
+								'HTML element of the title',
+								'vk-blocks-pro'
+							)}
 							value={headingTag}
 							options={[
 								{ label: 'H3', value: 'h3' },

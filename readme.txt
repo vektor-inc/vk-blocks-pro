@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.3
 Tested up to: 6.5
-Stable tag: 1.74.0.1
+Stable tag: 1.75.1.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -105,6 +105,7 @@ e.g.
 
 == Changelog ==
 
+= 1.76.0 =
 [ Add function ] Add Setting for the position of VK Blocks on all block inserter. 
 [ Add function ][ Border Box ] Add title tag setting.
 [ Add function ][ Slider ] Add url interface to block toolbar for slider item.

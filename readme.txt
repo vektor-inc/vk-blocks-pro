@@ -105,6 +105,7 @@ e.g.
 
 == Changelog ==
 
+[ Add Setting ] Add Setting for the position of VK Blocks on all block inserter. 
 [ Bug fix ][ Responsive Spacer ] Added CSS to remove margins from the default theme.
 
 = 1.75.1 =

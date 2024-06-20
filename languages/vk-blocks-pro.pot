@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-06-17T21:17:05+00:00\n"
+"POT-Creation-Date: 2024-06-20T01:44:39+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -89,6 +89,18 @@ msgstr ""
 
 #: src/admin/balloon/index.js:92
 msgid "image"
+msgstr ""
+
+#: src/admin/block-category-position.js:20
+msgid "Block Category Position Setting"
+msgstr ""
+
+#: src/admin/block-category-position.js:38
+msgid "Above the WordPress default block"
+msgstr ""
+
+#: src/admin/block-category-position.js:45
+msgid "Under WordPress blocks"
 msgstr ""
 
 #: src/admin/block-manager/index.js:51
@@ -3761,15 +3773,17 @@ msgstr ""
 msgid "Load Separete Setting"
 msgstr ""
 
-#: inc/vk-blocks/blocks.php:25
+#: inc/vk-blocks/blocks.php:27
+#: inc/vk-blocks/blocks.php:67
 msgid "Blocks Layout"
 msgstr ""
 
-#: inc/vk-blocks/blocks.php:38
+#: inc/vk-blocks/blocks.php:40
+#: inc/vk-blocks/blocks.php:54
 msgid "Blocks"
 msgstr ""
 
-#: inc/vk-blocks/blocks.php:52
+#: inc/vk-blocks/blocks.php:81
 msgid "Deprecated Blocks"
 msgstr ""
 

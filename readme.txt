@@ -64,6 +64,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Margin extension
 * Nowrap
 * Responsive BR
+* Columns direction
 * Custom CSS [ Pro ]
 
 [ Settings ]
@@ -105,6 +106,7 @@ e.g.
 == Changelog ==
 
 [ Add Setting ] Add Setting for the position of VK Blocks on all block inserter. 
+[ Bug fix ][ Responsive Spacer ] Added CSS to remove margins from the default theme.
 
 = 1.75.1 =
 [ Specification Change ][ Fixed Display (Pro) ] Do not fix the edit screen as it makes editing difficult.

@@ -64,6 +64,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Margin extension
 * Nowrap
 * Responsive BR
+* Columns direction
 * Custom CSS [ Pro ]
 
 [ Settings ]
@@ -106,6 +107,14 @@ e.g.
 
 
 [ Design bug fix ][ Fixed Display (Pro) ] Add css for position and alignment.
+[ Add function ][ Slider ] Add url interface to block toolbar for slider item.
+[ Add function ] Add toolbar link to components.
+[ Bug fix ][ Button ] Fixed button URL being output in editor.
+[ Bug fix ][ Tab ] Fix innactive tab color setting.
+[ Add function ][ VK Button ] Add unit "percent" for border radius.
+[ Bug fix ][ Tab ] Fix background color of tab disappearing when clicking active tab.
+[ Add Setting ] Add Setting for the position of VK Blocks on all block inserter. 
+[ Bug fix ][ Responsive Spacer ] Added CSS to remove margins from the default theme.
 
 = 1.75.1 =
 [ Specification Change ][ Fixed Display (Pro) ] Do not fix the edit screen as it makes editing difficult.

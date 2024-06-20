@@ -29,16 +29,11 @@ jobs:
     - name: Get tag version
       run: echo "RELEASE_VERSION=$(echo ${GITHUB_REF:10})" >> $GITHUB_ENV
 
-    # get the node version from the .node-version file
-    - name: Read .node-version
-      run: echo "##[set-output name=NODEVERSION;]$(cat .node-version)"
-      id: nodenv
-
     # setup node based on the version from the .node-version file, fetched in the previous step
     - name: Setup Node.js (.node-version)
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
-        node-version: "${{ steps.nodenv.outputs.NODEVERSION }}"
+        node-version: 20.x
 
     - run: npm install -g npm
     # 無料版を（Pro版の中に）クローン

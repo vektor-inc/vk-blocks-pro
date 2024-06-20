@@ -4,7 +4,6 @@
 import classnames from 'classnames';
 
 /* eslint camelcase: 0 */
-import { __ } from '@wordpress/i18n';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import GenerateBgImage from './GenerateBgImage';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
@@ -20,8 +19,6 @@ export default function save(props) {
 		bgImageMobile,
 		bgImageTablet,
 		bgImage,
-		linkUrl,
-		linkTarget,
 		blockId,
 	} = attributes;
 	let classPaddingLR;
@@ -69,28 +66,11 @@ export default function save(props) {
 		</>
 	);
 
-	const relAttribute =
-		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
-	const GetLinkUrl = (
-		<a
-			href={linkUrl}
-			target={linkTarget}
-			className={`${prefix}-link`}
-			rel={relAttribute}
-			aria-label={__('Slider item link', 'vk-blocks-pro')}
-		>
-			<span className="screen-reader-text">
-				{__('Slider item link', 'vk-blocks-pro')}
-			</span>
-		</a>
-	);
-
 	const blockProps = useBlockProps.save({
 		className: `vk_slider_item swiper-slide vk_valign-${verticalAlignment} ${prefix}-${blockId} ${classPaddingLR} ${prefix}-paddingVertical-none`,
 	});
 	return (
 		<div {...blockProps}>
-			{linkUrl && GetLinkUrl}
 			{GetBgImage}
 			<div className={containerClass}>
 				<InnerBlocks.Content />

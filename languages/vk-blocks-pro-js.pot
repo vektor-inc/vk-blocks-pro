@@ -979,7 +979,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/edit.js:182
 #: src/blocks/_pro/card/edit.js:134
 #: src/blocks/_pro/icon-card/edit.js:75
-#: src/blocks/_pro/post-list/edit.js:338
+#: src/blocks/_pro/post-list/edit.js:407
 #: src/blocks/border-box/edit.js:213
 msgid "Title"
 msgstr ""
@@ -1089,7 +1089,7 @@ msgid "Check your settings from the settings sidebar."
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:115
-#: src/blocks/_pro/post-list/edit.js:206
+#: src/blocks/_pro/post-list/edit.js:275
 msgid "Display conditions"
 msgstr ""
 
@@ -1098,7 +1098,7 @@ msgid "Parent"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:134
-#: src/blocks/_pro/post-list/edit.js:374
+#: src/blocks/_pro/post-list/edit.js:445
 msgid "Ignore this post"
 msgstr ""
 
@@ -1887,98 +1887,98 @@ msgstr ""
 msgid "Category Badge"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:183
+#: src/blocks/_pro/post-list/edit.js:237
 #. Filter by %s
 msgid "Filter by %s"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:210
+#: src/blocks/_pro/post-list/edit.js:279
 msgid "Filter by PostTypes"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:223
+#: src/blocks/_pro/post-list/edit.js:292
 msgid "Taxonomy filter condition"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:234
+#: src/blocks/_pro/post-list/edit.js:303
 msgid "OR ( Whichever apply )"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:244
+#: src/blocks/_pro/post-list/edit.js:313
 msgid "AND ( All apply )"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:250
+#: src/blocks/_pro/post-list/edit.js:319
 msgid "Number of Posts"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:263
+#: src/blocks/_pro/post-list/edit.js:332
 msgid "Filter by Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:267
+#: src/blocks/_pro/post-list/edit.js:336
 msgid "Period of Time"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:275
+#: src/blocks/_pro/post-list/edit.js:344
 msgid "Whole Period"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:279
+#: src/blocks/_pro/post-list/edit.js:348
 msgid "From Today"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:283
+#: src/blocks/_pro/post-list/edit.js:352
 msgid "From Now"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:287
+#: src/blocks/_pro/post-list/edit.js:356
 msgid "From Tomorrow"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:292
+#: src/blocks/_pro/post-list/edit.js:361
 msgid ""
 "* If you choose a future period, you will need to customize it so that "
 "future posts will be published immediately."
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:299
+#: src/blocks/_pro/post-list/edit.js:368
 msgid "Order"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:308
+#: src/blocks/_pro/post-list/edit.js:377
 msgid "ASC"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:312
+#: src/blocks/_pro/post-list/edit.js:381
 msgid "DESC"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:318
+#: src/blocks/_pro/post-list/edit.js:387
 msgid "Order by"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:327
+#: src/blocks/_pro/post-list/edit.js:396
 msgid "Published Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:334
+#: src/blocks/_pro/post-list/edit.js:403
 msgid "Modefied Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:342
+#: src/blocks/_pro/post-list/edit.js:411
 msgid "Random"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:348
+#: src/blocks/_pro/post-list/edit.js:417
 msgid "offset"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:362
+#: src/blocks/_pro/post-list/edit.js:433
 msgid "Display from the first post always"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:368
+#: src/blocks/_pro/post-list/edit.js:439
 msgid "Display from the first post even on pages beyond the second page."
 msgstr ""
 
@@ -2601,32 +2601,12 @@ msgstr ""
 msgid "Input content"
 msgstr ""
 
-#: src/blocks/heading/deprecated/0.24.1/component.js:117
-#: src/blocks/heading/deprecated/0.24.4/component.js:80
-#: src/blocks/heading/deprecated/0.24.5/component.js:117
-#: src/blocks/heading/deprecated/0.24.6/component.js:117
-#: src/blocks/heading/deprecated/0.24.7/component.js:117
-#: src/blocks/heading/deprecated/0.37.1/component.js:122
-#: src/blocks/heading/deprecated/0.39.5/component.js:152
-#: src/blocks/heading/deprecated/0.40.0/component.js:152
-#: src/blocks/heading/deprecated/0.40.1/component.js:152
-#: src/blocks/heading/deprecated/0.60.1/component.js:152
-#: src/blocks/heading/edit.js:229
-msgid "Input sub text…"
-msgstr ""
-
-#: src/blocks/heading/deprecated/0.24.1/component.js:98
-#: src/blocks/heading/deprecated/0.24.4/component.js:61
-#: src/blocks/heading/deprecated/0.24.5/component.js:98
-#: src/blocks/heading/deprecated/0.24.6/component.js:98
-#: src/blocks/heading/deprecated/0.24.7/component.js:98
-#: src/blocks/heading/deprecated/0.37.1/component.js:109
-#: src/blocks/heading/deprecated/0.39.5/component.js:137
-#: src/blocks/heading/deprecated/0.40.0/component.js:137
-#: src/blocks/heading/deprecated/0.40.1/component.js:137
-#: src/blocks/heading/deprecated/0.60.1/component.js:137
 #: src/blocks/heading/edit.js:214
 msgid "Input title…"
+msgstr ""
+
+#: src/blocks/heading/edit.js:229
+msgid "Input sub text…"
 msgstr ""
 
 #: src/blocks/heading/edit.js:257

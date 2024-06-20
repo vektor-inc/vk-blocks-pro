@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.75.0.0\n"
+"Project-Id-Version: VK Blocks Pro 1.75.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-06-10T07:07:06+00:00\n"
+"POT-Creation-Date: 2024-06-20T06:52:35+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -89,6 +89,18 @@ msgstr ""
 
 #: src/admin/balloon/index.js:92
 msgid "image"
+msgstr ""
+
+#: src/admin/block-category-position.js:20
+msgid "Block Category Position Setting"
+msgstr ""
+
+#: src/admin/block-category-position.js:38
+msgid "Above the WordPress default block"
+msgstr ""
+
+#: src/admin/block-category-position.js:45
+msgid "Under WordPress blocks"
 msgstr ""
 
 #: src/admin/block-manager/index.js:51
@@ -778,36 +790,40 @@ msgstr ""
 msgid "Max number of words"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:102
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:100
+msgid "Square"
+msgstr ""
+
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:104
 msgid "16:9"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:106
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:108
 msgid "4:3"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:110
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:112
 msgid "3:2"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:114
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:116
 msgid "9:16"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:118
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:120
 msgid "3:4"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:122
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:124
 msgid "2:3"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:143
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:145
 #: src/blocks/slider/edit.js:940
 msgid "Height"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:165
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:167
 #: src/blocks/_pro/outer/edit.js:518
 #: src/blocks/balloon/edit.js:508
 #: src/blocks/slider/edit.js:915
@@ -826,16 +842,12 @@ msgstr ""
 msgid "Image will be stretched and distorted to completely fill the space."
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:89
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:91
 msgid "Aspect ratio"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:94
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:96
 msgid "Original"
-msgstr ""
-
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:98
-msgid "Square"
 msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/edit.js:48
@@ -960,7 +972,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/edit.js:182
 #: src/blocks/_pro/card/edit.js:134
 #: src/blocks/_pro/icon-card/edit.js:75
-#: src/blocks/_pro/post-list/edit.js:338
+#: src/blocks/_pro/post-list/edit.js:407
 #: src/blocks/border-box/edit.js:213
 msgid "Title"
 msgstr ""
@@ -1068,7 +1080,7 @@ msgid "Check your settings from the settings sidebar."
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:115
-#: src/blocks/_pro/post-list/edit.js:206
+#: src/blocks/_pro/post-list/edit.js:275
 msgid "Display conditions"
 msgstr ""
 
@@ -1077,7 +1089,7 @@ msgid "Parent"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:134
-#: src/blocks/_pro/post-list/edit.js:374
+#: src/blocks/_pro/post-list/edit.js:445
 msgid "Ignore this post"
 msgstr ""
 
@@ -1210,6 +1222,7 @@ msgstr ""
 #: src/blocks/icon/edit.js:292
 #: src/blocks/pr-blocks/edit.js:262
 #: src/blocks/pr-content/edit.js:131
+#: src/components/link-toolbar/index.js:274
 msgid "Open link new tab."
 msgstr ""
 
@@ -1255,44 +1268,6 @@ msgid "span"
 msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:101
-msgid "Fixed position from the top"
-msgstr ""
-
-#: src/blocks/_pro/fixed-display/edit.js:123
-msgid "Timing to display"
-msgstr ""
-
-#: src/blocks/_pro/fixed-display/edit.js:139
-msgid "Persist visibility once visible"
-msgstr ""
-
-#: src/blocks/_pro/fixed-display/edit.js:63
-msgid "Fixed Display Setting"
-msgstr ""
-
-#: src/blocks/_pro/fixed-display/edit.js:65
-#: src/blocks/_pro/table-of-contents-new/edit.js:114
-#: src/components/column-layout-control/index.js:69
-msgid "Display type"
-msgstr ""
-
-#: src/blocks/_pro/fixed-display/edit.js:70
-msgid "Always Visible"
-msgstr ""
-
-#: src/blocks/_pro/fixed-display/edit.js:74
-msgid "Show on Scroll"
-msgstr ""
-
-#: src/blocks/_pro/fixed-display/edit.js:80
-msgid "Fixed position"
-msgstr ""
-
-#: src/blocks/_pro/fixed-display/edit.js:84
-msgid "Top"
-msgstr ""
-
-#: src/blocks/_pro/fixed-display/edit.js:86
 #: src/blocks/balloon/edit.js:434
 #: src/blocks/button/edit.js:375
 #: src/blocks/pr-content/edit.js:252
@@ -1300,16 +1275,58 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:90
+#: src/blocks/_pro/fixed-display/edit.js:105
 msgid "Bottom"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:94
+#: src/blocks/_pro/fixed-display/edit.js:109
 #: src/blocks/balloon/edit.js:422
 #: src/blocks/button/edit.js:355
 #: src/blocks/pr-content/edit.js:256
 #: src/components/display-items-control/index.js:132
 msgid "Left"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:116
+msgid "Fixed position from the top"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:138
+msgid "Timing to display"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:154
+msgid "Persist visibility once visible"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:70
+msgid "Fixed Display Setting"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:73
+msgid "The fixed position of the fixed position block will not change on the edit screen. Please check on the front screen."
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:80
+#: src/blocks/_pro/table-of-contents-new/edit.js:114
+#: src/components/column-layout-control/index.js:69
+msgid "Display type"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:85
+msgid "Always Visible"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:89
+msgid "Show on Scroll"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:95
+msgid "Fixed position"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:99
+msgid "Top"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:102
@@ -1327,7 +1344,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:143
 #: src/blocks/_pro/outer/edit.js:521
-#: src/blocks/slider-item/edit.js:120
+#: src/blocks/slider-item/edit.js:134
 msgid "Padding (Left and Right)"
 msgstr ""
 
@@ -1390,17 +1407,20 @@ msgstr ""
 #: src/blocks/_pro/gridcolcard-item/edit.js:232
 #: src/blocks/_pro/select-post-list-item/edit.js:66
 #: src/blocks/button/edit.js:249
+#: src/components/link-toolbar/index.js:233
 msgid "Unlink"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:233
 #: src/blocks/button/edit.js:250
+#: src/components/link-toolbar/index.js:234
 msgid "Input Link URL"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:263
 #: src/blocks/_pro/select-post-list-item/edit.js:102
 #: src/blocks/button/edit.js:278
+#: src/components/link-toolbar/index.js:268
 msgid "Submit"
 msgstr ""
 
@@ -1625,38 +1645,38 @@ msgid "dvh"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:409
-#: src/blocks/slider-item/edit.js:171
+#: src/blocks/slider-item/edit.js:185
 msgid "Background Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:414
 #: src/blocks/pr-content/edit.js:67
-#: src/blocks/slider-item/edit.js:175
+#: src/blocks/slider-item/edit.js:189
 msgid "Color Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:415
-#: src/blocks/slider-item/edit.js:177
+#: src/blocks/slider-item/edit.js:191
 msgid "Color will overcome background image. If you want to display image, set opacity 0."
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:427
-#: src/blocks/slider-item/edit.js:189
+#: src/blocks/slider-item/edit.js:203
 msgid "Opacity Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:441
-#: src/blocks/slider-item/edit.js:224
+#: src/blocks/slider-item/edit.js:238
 msgid "Background Image PC"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:457
-#: src/blocks/slider-item/edit.js:240
+#: src/blocks/slider-item/edit.js:254
 msgid "Background Image Tablet"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:467
-#: src/blocks/slider-item/edit.js:250
+#: src/blocks/slider-item/edit.js:264
 msgid "Background Image Mobile"
 msgstr ""
 
@@ -1682,7 +1702,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:515
 #: src/blocks/pr-content/edit.js:244
-#: src/blocks/slider-item/edit.js:115
+#: src/blocks/slider-item/edit.js:129
 msgid "Layout Setting"
 msgstr ""
 
@@ -1856,95 +1876,95 @@ msgid "Category Badge"
 msgstr ""
 
 #. Filter by %s
-#: src/blocks/_pro/post-list/edit.js:183
+#: src/blocks/_pro/post-list/edit.js:237
 msgid "Filter by %s"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:210
+#: src/blocks/_pro/post-list/edit.js:279
 msgid "Filter by PostTypes"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:223
+#: src/blocks/_pro/post-list/edit.js:292
 msgid "Taxonomy filter condition"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:234
+#: src/blocks/_pro/post-list/edit.js:303
 msgid "OR ( Whichever apply )"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:244
+#: src/blocks/_pro/post-list/edit.js:313
 msgid "AND ( All apply )"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:250
+#: src/blocks/_pro/post-list/edit.js:319
 msgid "Number of Posts"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:263
+#: src/blocks/_pro/post-list/edit.js:332
 msgid "Filter by Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:267
+#: src/blocks/_pro/post-list/edit.js:336
 msgid "Period of Time"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:275
+#: src/blocks/_pro/post-list/edit.js:344
 msgid "Whole Period"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:279
+#: src/blocks/_pro/post-list/edit.js:348
 msgid "From Today"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:283
+#: src/blocks/_pro/post-list/edit.js:352
 msgid "From Now"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:287
+#: src/blocks/_pro/post-list/edit.js:356
 msgid "From Tomorrow"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:292
+#: src/blocks/_pro/post-list/edit.js:361
 msgid "* If you choose a future period, you will need to customize it so that future posts will be published immediately."
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:299
+#: src/blocks/_pro/post-list/edit.js:368
 msgid "Order"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:308
+#: src/blocks/_pro/post-list/edit.js:377
 msgid "ASC"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:312
+#: src/blocks/_pro/post-list/edit.js:381
 msgid "DESC"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:318
+#: src/blocks/_pro/post-list/edit.js:387
 msgid "Order by"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:327
+#: src/blocks/_pro/post-list/edit.js:396
 msgid "Published Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:334
+#: src/blocks/_pro/post-list/edit.js:403
 msgid "Modefied Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:342
+#: src/blocks/_pro/post-list/edit.js:411
 msgid "Random"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:348
+#: src/blocks/_pro/post-list/edit.js:417
 msgid "offset"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:362
+#: src/blocks/_pro/post-list/edit.js:433
 msgid "Display from the first post always"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:368
+#: src/blocks/_pro/post-list/edit.js:439
 msgid "Display from the first post even on pages beyond the second page."
 msgstr ""
 
@@ -2562,32 +2582,12 @@ msgstr ""
 msgid "Input content"
 msgstr ""
 
-#: src/blocks/heading/deprecated/0.24.1/component.js:117
-#: src/blocks/heading/deprecated/0.24.4/component.js:80
-#: src/blocks/heading/deprecated/0.24.5/component.js:117
-#: src/blocks/heading/deprecated/0.24.6/component.js:117
-#: src/blocks/heading/deprecated/0.24.7/component.js:117
-#: src/blocks/heading/deprecated/0.37.1/component.js:122
-#: src/blocks/heading/deprecated/0.39.5/component.js:152
-#: src/blocks/heading/deprecated/0.40.0/component.js:152
-#: src/blocks/heading/deprecated/0.40.1/component.js:152
-#: src/blocks/heading/deprecated/0.60.1/component.js:152
-#: src/blocks/heading/edit.js:229
-msgid "Input sub text…"
-msgstr ""
-
-#: src/blocks/heading/deprecated/0.24.1/component.js:98
-#: src/blocks/heading/deprecated/0.24.4/component.js:61
-#: src/blocks/heading/deprecated/0.24.5/component.js:98
-#: src/blocks/heading/deprecated/0.24.6/component.js:98
-#: src/blocks/heading/deprecated/0.24.7/component.js:98
-#: src/blocks/heading/deprecated/0.37.1/component.js:109
-#: src/blocks/heading/deprecated/0.39.5/component.js:137
-#: src/blocks/heading/deprecated/0.40.0/component.js:137
-#: src/blocks/heading/deprecated/0.40.1/component.js:137
-#: src/blocks/heading/deprecated/0.60.1/component.js:137
 #: src/blocks/heading/edit.js:214
 msgid "Input title…"
+msgstr ""
+
+#: src/blocks/heading/edit.js:229
+msgid "Input sub text…"
 msgstr ""
 
 #: src/blocks/heading/edit.js:257
@@ -2784,32 +2784,36 @@ msgstr ""
 msgid "Image Border Color"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:128
+#: src/blocks/slider-item/edit.js:142
 msgid "Fit to the Container area"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:135
+#: src/blocks/slider-item/edit.js:149
 msgid "Add padding to the Slider area"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:142
+#: src/blocks/slider-item/edit.js:156
 msgid "Remove padding from the Slider area"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:157
+#: src/blocks/slider-item/edit.js:171
 msgid "Vertical align"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:203
+#: src/blocks/slider-item/edit.js:217
 msgid "Background Image Size"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:210
+#: src/blocks/slider-item/edit.js:224
 msgid "cover"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:214
+#: src/blocks/slider-item/edit.js:228
 msgid "repeat"
+msgstr ""
+
+#: src/blocks/slider-item/save.js:83
+msgid "Slider item link"
 msgstr ""
 
 #: src/blocks/slider/edit.js:1017
@@ -3159,6 +3163,26 @@ msgstr ""
 
 #: src/components/link-control/index.js:37
 msgid "Link target"
+msgstr ""
+
+#: src/components/link-toolbar/index.js:28
+msgid "Currently selected"
+msgstr ""
+
+#: src/components/link-toolbar/index.js:303
+msgid "Link copied to clipboard."
+msgstr ""
+
+#: src/components/link-toolbar/index.js:66
+msgid "Deleting Link"
+msgstr ""
+
+#: src/components/link-toolbar/index.js:76
+msgid "Copy link: %s"
+msgstr ""
+
+#: src/components/link-toolbar/index.js:83
+msgid "Copy link"
 msgstr ""
 
 #: src/extensions/common/custom-block-variation/block-variation-explorer/sidebar.js:17
@@ -3535,7 +3559,7 @@ msgctxt "Scale option for Image dimension control"
 msgid "Fill"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:71
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:73
 msgctxt "Image scaling options"
 msgid "Scale"
 msgstr ""
@@ -3758,15 +3782,17 @@ msgstr ""
 msgid "Load Separete Setting"
 msgstr ""
 
-#: inc/vk-blocks/blocks.php:25
+#: inc/vk-blocks/blocks.php:27
+#: inc/vk-blocks/blocks.php:67
 msgid "Blocks Layout"
 msgstr ""
 
-#: inc/vk-blocks/blocks.php:38
+#: inc/vk-blocks/blocks.php:40
+#: inc/vk-blocks/blocks.php:54
 msgid "Blocks"
 msgstr ""
 
-#: inc/vk-blocks/blocks.php:52
+#: inc/vk-blocks/blocks.php:81
 msgid "Deprecated Blocks"
 msgstr ""
 
@@ -3951,12 +3977,12 @@ msgstr ""
 msgid "Setting saved."
 msgstr ""
 
-#: inc/vk-blocks/view/class-vk-blocks-postlist.php:255
+#: inc/vk-blocks/view/class-vk-blocks-postlist.php:327
 msgid "Post"
 msgstr ""
 
 #. translators: %s: 投稿タイプ名
-#: inc/vk-blocks/view/class-vk-blocks-postlist.php:259
+#: inc/vk-blocks/view/class-vk-blocks-postlist.php:331
 msgid "There are no %ss."
 msgstr ""
 

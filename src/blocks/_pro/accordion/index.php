@@ -48,7 +48,7 @@ function vk_blocks_register_block_accordion() {
 
 	register_block_type(
 		__DIR__,
-		// $assets
+		/$assets
 	);
 }
 add_action( 'init', 'vk_blocks_register_block_accordion', 99 );

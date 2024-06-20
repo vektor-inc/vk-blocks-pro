@@ -4,29 +4,6 @@ import save1_72_1 from './1.72.1/save';
 
 const blockAttributes = {};
 
-/**
- * 1.72.1 で値を追加
- */
-const blockAttributes3 = {
-	containerClass2: {
-		initialState: {
-			type: "string",
-			default: "close"
-		},
-		initialStateMobile: {
-			type: "string",
-			default: ""
-		},
-		initialStateTablet: {
-			type: "string",
-			default: ""
-		},
-		initialStateDesktop: {
-			type: "string",
-			default: ""
-		}
-	},
-};
 
 /**
  * 1.12.x で値を追加
@@ -38,9 +15,34 @@ const blockAttributes2 = {
 	},
 };
 
+/**
+ * 1.72.1 で値を追加
+ */
+/*
+const blockAttributes3 = {
+	...blockAttributes2,
+	initialState: {
+		type: "string",
+		default: "close"
+	},
+	initialStateMobile: {
+		type: "string",
+		default: ""
+	},
+	initialStateTablet: {
+		type: "string",
+		default: ""
+	},
+	initialStateDesktop: {
+		type: "string",
+		default: ""
+	}
+};
+*/
+
 const deprecated = [
 	{
-		attributes: blockAttributes3,
+		attributes: blockAttributes2,
 		save: save1_72_1
 	},
 	{

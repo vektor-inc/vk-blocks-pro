@@ -48,7 +48,7 @@ function vk_blocks_register_block_accordion() {
 
 	register_block_type(
 		__DIR__,
-		$assets
+		//$assets
 	);
 }
 add_action( 'init', 'vk_blocks_register_block_accordion', 99 );
@@ -76,11 +76,3 @@ function vk_blocks_render_accordion_block( $attributes, $content ) {
 
 	return $output;
 }
-
-// Register the block render callback
-register_block_type(
-	'vk-blocks/accordion',
-	array(
-		'render_callback' => 'vk_blocks_render_accordion_block',
-	)
-);

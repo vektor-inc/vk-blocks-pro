@@ -50,6 +50,26 @@ export default function AccordionEdit(props) {
 		if (containerClass === undefined) {
 			setAttributes({ containerClass: `vk_accordion-container` });
 		}
+		// isDeviceSpecific 互換設定
+		if (isDeviceSpecific === undefined) {
+			setAttributes({ isDeviceSpecific: false });
+		}
+		// initialState 互換設定
+		if (initialState === undefined) {
+			setAttributes({ initialState: 'close' });
+		}
+		// initialStateMobile 互換設定
+		if (initialStateMobile === undefined) {
+			setAttributes({ initialStateMobile: '' });
+		}
+		// initialStateTablet 互換設定
+		if (initialStateTablet === undefined) {
+			setAttributes({ initialStateTablet: '' });
+		}
+		// initialStateDesktop 互換設定
+		if (initialStateDesktop === undefined) {
+			setAttributes({ initialStateDesktop: '' });
+		}
 	}, [clientId]);
 
 	// blocksProps を予め定義

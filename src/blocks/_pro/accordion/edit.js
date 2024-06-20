@@ -15,14 +15,14 @@ export default function AccordionEdit(props) {
 		initialStateMobile,
 		initialStateTablet,
 		initialStateDesktop,
-		isDeviceSpecific
+		isDeviceSpecific,
 	} = attributes;
 
 	// トグルの状態を更新
 	const toggleDeviceSpecific = () => {
 		const newIsDeviceSpecific = !isDeviceSpecific;
 		setAttributes({
-			isDeviceSpecific: newIsDeviceSpecific
+			isDeviceSpecific: newIsDeviceSpecific,
 		});
 
 		if (newIsDeviceSpecific) {

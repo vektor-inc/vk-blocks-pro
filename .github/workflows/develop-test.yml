@@ -28,16 +28,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    # get the node version from the .node-version file
-    - name: Read .node-version
-      run: echo "##[set-output name=NODEVERSION;]$(cat .node-version)"
-      id: nodenv
-
     # setup node based on the version from the .node-version file, fetched in the previous step
     - name: Setup Node.js (.node-version)
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
-        node-version: "${{ steps.nodenv.outputs.NODEVERSION }}"
+        node-version: 20.x
 
     - name: Cache multiple paths
       uses: actions/cache@v2
@@ -69,7 +64,7 @@ jobs:
       run: npm run build
     - name: Install VK Blocks
       run: |
-       npm run wp-env run cli 'wp plugin install vk-blocks'
+       npm run wp-env run cli --env-cwd='wp-content/plugins/vk-blocks-pro' wp plugin install vk-blocks
     # PHPUnit
     - name: PHP Unit Test
       run: npm run phpunit
@@ -79,13 +74,10 @@ jobs:
     steps:
       - name: checkout    
         uses: actions/checkout@v2
-      - name: Read .node-version
-        run: echo "##[set-output name=NODEVERSION;]$(cat .node-version)"
-        id: nodenv
       - name: Setup Node.js (.node-version)
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
-          node-version: "${{ steps.nodenv.outputs.NODEVERSION }}"
+          node-version: 20.x
       - name: install npm scripts
         run: npm install    
       - name: Install WP-CLI

@@ -80,6 +80,18 @@ msgstr ""
 msgid "image"
 msgstr ""
 
+#: src/admin/block-category-position.js:20
+msgid "Block Category Position Setting"
+msgstr ""
+
+#: src/admin/block-category-position.js:38
+msgid "Above the WordPress default block"
+msgstr ""
+
+#: src/admin/block-category-position.js:45
+msgid "Under WordPress blocks"
+msgstr ""
+
 #: src/admin/block-manager/index.js:51
 #: src/admin/import-export/index.js:106
 msgid "Block Manager Setting"

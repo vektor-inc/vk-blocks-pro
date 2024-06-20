@@ -105,7 +105,8 @@ e.g.
 
 == Changelog ==
 
-[ Specification Change ] Add Transform vk-blocks/heading ( Not Recommended ) to core/heading.
+[ Add Setting ] Add Setting for the position of VK Blocks on all block inserter. 
+[ Other ] Add Transform vk-blocks/heading ( Not Recommended ) to core/heading.
 [ Bug fix ][ Responsive Spacer ] Added CSS to remove margins from the default theme.
 
 = 1.75.1 =

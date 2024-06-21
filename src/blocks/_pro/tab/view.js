@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				newActiveLabel.classList.remove(
 					'vk_tab_labels_label-state-inactive'
 				);
-				newActiveLabel.style.removeProperty('background-color'); // ここを追加
+				newActiveLabel.style.removeProperty('background-color');
 				if (
 					newActiveLabel
 						.closest('.vk_tab')
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function () {
 					const activeTabBody = vkTabBodies.querySelector(
 						`#vk_tab_bodys_body-${TabId}`
 					);
-						const activeTabBodyStyle =
+					const activeTabBodyStyle =
 						window.getComputedStyle(activeTabBody);
 					newActiveLabel.style.backgroundColor =
 						activeTabBodyStyle.borderTopColor || '';
@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				);
 				newActiveBody.classList.add('vk_tab_bodys_body-state-active');
 				newActiveBody.removeAttribute('hidden');
-				
+
 				e.target.setAttribute('tabindex', '0');
 				e.target.setAttribute('aria-selected', 'true');
 

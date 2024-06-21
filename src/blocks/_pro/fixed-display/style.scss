@@ -42,6 +42,14 @@
 		> * {
 			margin-left: auto;
 		}
+		> .alignfull {
+			margin-left: calc(100% - 100vw);
+			margin-right: 0;
+		}
+		> .alignwide {
+			margin-left: calc((100% - 100vw) / 2);
+			margin-right: 0;
+		}
 	}
 	&-bottom {
 		left: 0;
@@ -56,17 +64,62 @@
 		> * {
 			margin-right: auto;
 		}
+		> .alignfull {
+			margin-right: calc(100% - 100vw);
+			margin-left: 0;
+		}
+		> .alignwide {
+			margin-right: calc((100% - 100vw) / 2);
+			margin-left: 0;
+		}
 	}
 }
 
 /*-------------------------------------------*/
-/* 管理画面
+/* 編集画面用
 /*-------------------------------------------*/
-.logged-in.admin-bar .vk_fixed-display-position {
-	&-top {
-		top: var(--admin-bar-offset);
+.block-editor-block-list__block {
+
+	&.vk_fixed-display-position {
+		width: auto;
+		&-right {
+			.block-editor-block-list__layout {
+				> * {
+					margin-left: auto;
+					place-content: end !important;
+				}
+				> .alignfull {
+					margin-left: calc(100% - 100vw);
+					margin-right: 0;
+				}
+			}
+		}
+		&-left {
+			.block-editor-block-list__layout {
+				> * {
+					margin-right: auto;
+					place-content: start !important;
+				}
+				> .alignfull {
+					margin-right: calc(100% - 100vw);
+					margin-left: 0;
+				}
+			}
+		}
 	}
-	&-right, &-left {
-		top: calc(50svh + var(--admin-bar-offset));
-	}
+}
+
+/*-------------------------------------------*/
+/* 管理画面用
+/*-------------------------------------------*/
+.logged-in.admin-bar:not(.scrolled) {
+	
+	.vk_fixed-display-position {
+		&-top {
+			top: var(--admin-bar-offset);
+		}
+		&-right, &-left {
+			top: calc(50svh + var(--admin-bar-offset));
+		}
+	}	
 }

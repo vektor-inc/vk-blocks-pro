@@ -118,8 +118,6 @@ $xl-min: 1200px;
 	margin-bottom: calc( 1rem * 2);
 	&_labels{
 		--vk-tab-gap:calc( 1rem * 0.2 );
-		padding: 0;
-		margin: 0;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
@@ -151,6 +149,10 @@ $xl-min: 1200px;
 				opacity: 0.8;
 			}
 		}
+	}
+	.vk_tab_labels{ // この指定がないとULの指定に負けてしまうことがあるため
+		padding: 0;
+		margin: 0;
 	}
 }
 

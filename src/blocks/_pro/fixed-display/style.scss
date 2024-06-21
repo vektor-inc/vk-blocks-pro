@@ -43,12 +43,12 @@
 			margin-left: auto;
 		}
 		> .alignfull {
-			margin-left: calc(100% - 100vw);
-			margin-right: 0;
+			margin-left: calc(100% - 100vw) !important;
+			margin-right: 0 !important;
 		}
 		> .alignwide {
-			margin-left: calc((100% - 100vw) / 2);
-			margin-right: 0;
+			margin-left: calc((100% - 100vw) / 2) !important;
+			margin-right: 0 !important;
 		}
 	}
 	&-bottom {
@@ -65,12 +65,12 @@
 			margin-right: auto;
 		}
 		> .alignfull {
-			margin-right: calc(100% - 100vw);
-			margin-left: 0;
+			margin-right: calc(100% - 100vw) !important;
+			margin-left: 0 !important;
 		}
 		> .alignwide {
-			margin-right: calc((100% - 100vw) / 2);
-			margin-left: 0;
+			margin-right: calc((100% - 100vw) / 2) !important;
+			margin-left: 0 !important;
 		}
 	}
 }

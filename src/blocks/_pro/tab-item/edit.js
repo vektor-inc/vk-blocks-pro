@@ -42,7 +42,8 @@ export default function TabItemEdit(props) {
 						background: '#ffffff',
 					},
 				},
-				className: 'vk_block-margin-0--margin-top vk_block-margin-0--margin-bottom',
+				className:
+					'vk_block-margin-0--margin-top vk_block-margin-0--margin-bottom',
 			},
 			[['core/paragraph']],
 		],
@@ -114,7 +115,9 @@ export default function TabItemEdit(props) {
 			if (!/vk_block-margin-.*--margin-bottom/.test(newClassName)) {
 				newClassName += ' vk_block-margin-0--margin-bottom';
 			}
-			updateBlockAttributes(block.clientId, { className: newClassName.trim() });
+			updateBlockAttributes(block.clientId, {
+				className: newClassName.trim(),
+			});
 		});
 	}, [clientId]);
 

@@ -145,7 +145,10 @@ export default function save(props) {
 	return (
 		<div {...blockProps}>
 			{tabList}
-			<div className="vk_tab_bodys">
+			<div
+				className="vk_tab_bodys"
+				aria-labelledby={`vk_tab_labels_label-${blockId}`}
+			>
 				<InnerBlocks.Content />
 			</div>
 		</div>

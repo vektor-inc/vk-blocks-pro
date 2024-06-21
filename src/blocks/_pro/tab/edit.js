@@ -550,7 +550,10 @@ export default function TabEdit(props) {
 			</InspectorControls>
 			<div {...blockProps}>
 				{tablabelsEdit}
-				<div className="vk_tab_bodys">
+				<div
+					className="vk_tab_bodys"
+					aria-labelledby={`vk_tab_labels_label-${blockId}`}
+				>
 					<InnerBlocks
 						allowedBlocks={ALLOWED_BLOCKS}
 						template={TEMPLATE}

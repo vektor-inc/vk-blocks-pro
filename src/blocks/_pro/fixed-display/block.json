@@ -1,0 +1,77 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/fixed-display",
+	"category": "vk-blocks-cat",
+	"title": "Fixed display",
+	"attributes": {
+		"mode": {
+			"type": "string",
+			"default": "always-visible"
+		},
+		"position": {
+			"type": "string",
+			"default": "right"
+		},
+		"scrollTiming": {
+			"type": "number",
+			"default": 0
+		},
+		"scrollTimingUnit": {
+			"type": "string",
+			"default": "px"
+		},
+		"scrollPersistVisible": {
+			"type": "boolean",
+			"default": false
+		},
+		"fixedTopPosition": {
+			"type": "number",
+			"default": 50
+		},
+		"fixedTopPositionUnit": {
+			"type": "string",
+			"default": "svh"
+		},
+		"clientId": {
+			"type": "string"
+		},
+		"blockId": {
+			"type": "string"
+		}
+	},
+	"description": "Remains fixed on the screen at all times.",
+	"textdomain": "vk-blocks-pro",
+	"supports": {
+		"html": false,
+		"className": true,
+		"anchor": true,
+		"color": {
+			"gradients": true,
+			"link": true,
+			"__experimentalDefaultControls": {
+				"background": true,
+				"text": true,
+				"link": true
+			}
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"__experimentalFontFamily": true,
+			"__experimentalFontWeight": true,
+			"__experimentalFontStyle": true,
+			"__experimentalTextTransform": true,
+			"__experimentalTextDecoration": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalDefaultControls": {
+				"fontSize": true,
+				"fontAppearance": true,
+				"textTransform": true
+			}
+		}
+	}
+}

@@ -183,6 +183,10 @@ class VK_Blocks_Global_Settings {
 				'is_pro' => true,
 			),
 			array(
+				'name'   => 'fixed-display',
+				'is_pro' => true,
+			),
+			array(
 				'name'   => 'grid-column',
 				'is_pro' => true,
 			),
@@ -249,6 +253,14 @@ class VK_Blocks_Global_Settings {
 			),
 			array(
 				'name'   => 'step-item',
+				'is_pro' => true,
+			),
+			array(
+				'name'   => 'tab',
+				'is_pro' => true,
+			),
+			array(
+				'name'   => 'tab-item',
 				'is_pro' => true,
 			),
 			array(

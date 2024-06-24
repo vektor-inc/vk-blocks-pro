@@ -1,0 +1,125 @@
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+:root {
+	--admin-bar-offset: 32px;
+}
+
+.vk_fixed-display {
+	position: fixed;
+	margin-block-start: 0;
+	z-index: 99999;
+}
+
+.vk_fixed-display-mode {
+	
+	&-always-visible {
+	}
+	
+	&-show-on-scroll {
+		opacity: 0;
+		transition: opacity 0.3s ease;
+		
+		&.is-visible {
+			opacity: 1;
+		}
+	}
+
+}
+
+.vk_fixed-display-position {
+
+	&-top {
+		top: 0;
+		left: 0;
+		right: 0;
+		place-self: center;
+		width: 100%;
+	}
+	&-right {
+		top: 50%;
+		right: 0;
+		> * {
+			margin-left: auto;
+		}
+		> .alignfull {
+			margin-left: calc(100% - 100vw) !important;
+			margin-right: 0 !important;
+		}
+		> .alignwide {
+			margin-left: calc((100% - 100vw) / 2) !important;
+			margin-right: 0 !important;
+		}
+	}
+	&-bottom {
+		left: 0;
+		right: 0;
+		bottom: 0;
+		place-self: center;
+		width: 100%;
+	}
+	&-left {
+		top: 50%;
+		left: 0;
+		> * {
+			margin-right: auto;
+		}
+		> .alignfull {
+			margin-right: calc(100% - 100vw) !important;
+			margin-left: 0 !important;
+		}
+		> .alignwide {
+			margin-right: calc((100% - 100vw) / 2) !important;
+			margin-left: 0 !important;
+		}
+	}
+}
+
+/*-------------------------------------------*/
+/* 編集画面用
+/*-------------------------------------------*/
+.block-editor-block-list__block {
+
+	&.vk_fixed-display-position {
+		width: auto;
+		&-right {
+			.block-editor-block-list__layout {
+				> * {
+					margin-left: auto;
+					place-content: end !important;
+				}
+				> .alignfull {
+					margin-left: calc(100% - 100vw);
+					margin-right: 0;
+				}
+			}
+		}
+		&-left {
+			.block-editor-block-list__layout {
+				> * {
+					margin-right: auto;
+					place-content: start !important;
+				}
+				> .alignfull {
+					margin-right: calc(100% - 100vw);
+					margin-left: 0;
+				}
+			}
+		}
+	}
+}
+
+/*-------------------------------------------*/
+/* 管理画面用
+/*-------------------------------------------*/
+.logged-in.admin-bar:not(.scrolled) {
+	
+	.vk_fixed-display-position {
+		&-top {
+			top: var(--admin-bar-offset);
+		}
+		&-right, &-left {
+			top: calc(50svh + var(--admin-bar-offset));
+		}
+	}	
+}

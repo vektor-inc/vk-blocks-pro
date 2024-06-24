@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from '@wordpress/e2e-test-utils-playwright';
 
 test('login', async ({ page }) => {
   await page.goto('http://localhost:8889/wp-login.php');

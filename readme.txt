@@ -65,6 +65,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Nowrap
 * Responsive BR
 * Columns direction
+* Return to list
 * Custom CSS [ Pro ]
 
 [ Settings ]
@@ -104,6 +105,8 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+[ Add function ][ List item ] Add return to list button.
 
 = 1.76.0 =
 [ Add function ] Add Setting for the position of VK Blocks on all block inserter. 

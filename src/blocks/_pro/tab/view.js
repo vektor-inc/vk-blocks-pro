@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
 					activeBody.classList.remove(
 						'vk_tab_bodys_body-state-active'
 					);
-					activeBody.setAttribute('hidden', ''); // ここを追加
+					activeBody.setAttribute('hidden', '');
 				});
 
 				// 新しいアクティブなラベルとボディを設定
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				newActiveLabel.classList.remove(
 					'vk_tab_labels_label-state-inactive'
 				);
-				newActiveLabel.style.removeProperty('background-color'); // ここを追加
+				newActiveLabel.style.removeProperty('background-color');
 				if (
 					newActiveLabel
 						.closest('.vk_tab')
@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function () {
 					`#vk_tab_bodys_body-${TabId}`
 				);
 				newActiveBody.classList.add('vk_tab_bodys_body-state-active');
-				newActiveBody.removeAttribute('hidden'); // ここを追加
+				newActiveBody.removeAttribute('hidden');
 				newActiveBody.setAttribute(
 					'aria-labelledby',
 					`vk_tab_labels_label-${TabId}`

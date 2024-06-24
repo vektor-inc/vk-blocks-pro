@@ -1,5 +1,6 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+
 export default function save(props) {
 	const { attributes } = props;
 	const { tabBodyActive, tabColor, tabBodyBorderTop, blockId } = attributes;
@@ -28,6 +29,9 @@ export default function save(props) {
 		style: {
 			...tabBodyStyle,
 		},
+		role: 'tabpanel',
+		'aria-labelledby': `vk_tab_labels_label-${blockId}`,
+		hidden: !tabBodyActive,
 	});
 
 	return (

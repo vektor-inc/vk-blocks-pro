@@ -63,7 +63,7 @@ export default function TabItemEdit(props) {
 	const parentTabBlockList = parentTabBlockIdList[0]
 		? select('core/block-editor').getBlocksByClientId(
 				parentTabBlockIdList[0]
-			)
+		  )
 		: [];
 
 	const parentTabBlock = parentTabBlockList[0] ? parentTabBlockList[0] : {};
@@ -124,6 +124,9 @@ export default function TabItemEdit(props) {
 		style: {
 			...tabBodyStyle,
 		},
+		role: 'tabpanel',
+		'aria-labelledby': `vk_tab_labels_label-${blockId}`,
+		hidden: !tabBodyActive,
 	});
 
 	return (

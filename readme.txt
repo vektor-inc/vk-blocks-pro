@@ -105,6 +105,7 @@ e.g.
 
 == Changelog ==
 
+[ Design bug fix ][ Fixed Display (Pro) ] Add css for position and alignment.
 [ Bug fix ][ Post List (Pro) ] Fixed sorting by display order other than publication date to work for multiple post types.
 
 = 1.76.0 =

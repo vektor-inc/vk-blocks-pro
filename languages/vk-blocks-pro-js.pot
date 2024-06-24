@@ -303,7 +303,7 @@ msgstr ""
 #: src/admin/custom-format/index.js:203
 #: src/blocks/_pro/step-item/edit.js:105
 #: src/blocks/_pro/timeline-item/edit.js:71
-#: src/blocks/border-box/edit.js:233
+#: src/blocks/border-box/edit.js:236
 #: src/blocks/button/edit.js:677
 #: src/blocks/icon/edit.js:299
 #: src/blocks/staff/edit.js:199
@@ -321,7 +321,7 @@ msgstr ""
 #: src/admin/custom-format/index.js:239
 #: src/blocks/_pro/grid-column-item/edit.js:110
 #: src/blocks/_pro/gridcolcard/edit-common.js:172
-#: src/blocks/border-box/edit.js:245
+#: src/blocks/border-box/edit.js:248
 #: src/blocks/button/edit.js:732
 #: src/blocks/icon/edit.js:304
 msgid "Background Color"
@@ -1507,7 +1507,7 @@ msgid "Border Width"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:209
-#: src/blocks/border-box/edit.js:236
+#: src/blocks/border-box/edit.js:239
 #: src/extensions/core/group/style.js:46
 msgid "Border Color"
 msgstr ""
@@ -1589,7 +1589,7 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:137
 #: src/blocks/_pro/step-item/edit.js:82
-#: src/blocks/border-box/edit.js:269
+#: src/blocks/border-box/edit.js:272
 #: src/blocks/button/edit.js:760
 #: src/blocks/heading/edit.js:335
 #: src/blocks/icon/edit.js:276
@@ -2347,11 +2347,11 @@ msgstr ""
 msgid "HTML element of the title"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:255
+#: src/blocks/border-box/edit.js:258
 msgid "Transparent"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:259
+#: src/blocks/border-box/edit.js:262
 msgid "White"
 msgstr ""
 
@@ -3542,6 +3542,14 @@ msgstr ""
 msgid ""
 "Because of the theme that enabled theme.json become can specify the color "
 "from border panel that, specification from here is deprecated."
+msgstr ""
+
+#: src/extensions/core/list-item/style.js:49
+msgid "List Item Settings"
+msgstr ""
+
+#: src/extensions/core/list-item/style.js:70
+msgid "Return to List"
 msgstr ""
 
 #: src/extensions/core/list/style.js:107

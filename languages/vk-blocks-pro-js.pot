@@ -85,11 +85,11 @@ msgid "Block Category Position Setting"
 msgstr ""
 
 #: src/admin/block-category-position.js:38
-msgid "Above the WordPress default block"
+msgid "Above the WordPress default blocks"
 msgstr ""
 
 #: src/admin/block-category-position.js:45
-msgid "Under WordPress blocks"
+msgid "Under the WordPress default blocks"
 msgstr ""
 
 #: src/admin/block-manager/index.js:51
@@ -2336,12 +2336,6 @@ msgstr ""
 msgid "Icon Name"
 msgstr ""
 
-#: src/blocks/border-box/deprecated/0.0.0/save.js:24
-#: src/blocks/border-box/deprecated/0.0.1/save.js:25
-#: src/blocks/border-box/edit.js:51
-msgid "Please enter a title."
-msgstr ""
-
 #: src/blocks/border-box/edit.js:205
 msgid ""
 "The margin-top of the first element and the margin-bottom of the last "
@@ -2350,12 +2344,20 @@ msgid ""
 "instead of margin."
 msgstr ""
 
+#: src/blocks/border-box/edit.js:218
+msgid "HTML element of the title"
+msgstr ""
+
 #: src/blocks/border-box/edit.js:255
 msgid "Transparent"
 msgstr ""
 
 #: src/blocks/border-box/edit.js:259
 msgid "White"
+msgstr ""
+
+#: src/blocks/border-box/edit.js:51
+msgid "Please enter a title."
 msgstr ""
 
 #: src/blocks/border-box/index.js:38

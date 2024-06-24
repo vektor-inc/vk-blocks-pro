@@ -36,14 +36,14 @@ export default function AdminBalloon() {
 					options={[
 						{
 							label: __(
-								'Above the WordPress default block',
+								'Above the WordPress default blocks',
 								'vk-blocks-pro'
 							),
 							value: 'above-core-blocks',
 						},
 						{
 							label: __(
-								'Under WordPress blocks',
+								'Under the WordPress default blocks',
 								'vk-blocks-pro'
 							),
 							value: 'under-core-blocks',

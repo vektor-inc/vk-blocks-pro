@@ -210,12 +210,15 @@ export default function BorderBoxEdit(props) {
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
-					title={__('Title', 'vk-blocks-pro')}
+					title={__('HTML element of the title', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<BaseControl>
 						<SelectControl
-							label="Title Tag"
+							label={__(
+								'HTML element of the title',
+								'vk-blocks-pro'
+							)}
 							value={headingTag}
 							options={[
 								{ label: 'H3', value: 'h3' },

@@ -245,7 +245,7 @@ export default function TabEdit(props) {
 			newActiveLabel.classList.remove(
 				'vk_tab_labels_label-state-inactive'
 			);
-			newActiveLabel.style.removeProperty('background-color'); // ここを追加
+			newActiveLabel.style.removeProperty('background-color');
 
 			const activeTabBody = document.querySelector(`#block-${TabId}`);
 			const activeTabBodyStyle = window.getComputedStyle(activeTabBody);

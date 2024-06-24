@@ -50,7 +50,7 @@ export const CodeMirrorCss = (props) => {
 					? __(
 							'There is an error with your CSS structure.',
 							'vk-blocks-pro'
-						)
+					  )
 					: null
 			);
 		},

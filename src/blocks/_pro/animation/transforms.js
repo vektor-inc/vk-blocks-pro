@@ -54,7 +54,7 @@ const transforms = {
 					blocks: ['*'],
 					transform: (attributes, innerBlocks) => innerBlocks,
 				},
-			]
+		  ]
 		: undefined,
 };
 

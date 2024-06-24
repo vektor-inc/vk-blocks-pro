@@ -105,7 +105,7 @@ e.g.
 
 == Changelog ==
 
-[ Bug fix ][ Post List (Pro) ] Fixed sorting by date other than publication date to support multiple posts.
+[ Bug fix ][ Post List (Pro) ] Fixed sorting by display order other than publication date to work for multiple post types.
 
 = 1.76.0 =
 [ Add function ] Add Setting for the position of VK Blocks on all block inserter. 

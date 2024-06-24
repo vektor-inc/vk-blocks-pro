@@ -96,11 +96,8 @@ msgid "Block Category Position Setting"
 msgstr ""
 
 #: src/admin/block-category-position.js:38
-msgid "Above the WordPress default blocks"
-msgstr ""
-
 #: src/admin/block-category-position.js:45
-msgid "Under the WordPress default blocks"
+msgid "Under WordPress blocks"
 msgstr ""
 
 #: src/admin/block-manager/index.js:51
@@ -984,6 +981,7 @@ msgstr ""
 #: src/blocks/_pro/card/edit.js:134
 #: src/blocks/_pro/icon-card/edit.js:75
 #: src/blocks/_pro/post-list/edit.js:407
+#: src/blocks/border-box/edit.js:213
 msgid "Title"
 msgstr ""
 
@@ -2609,32 +2607,12 @@ msgstr ""
 msgid "Input content"
 msgstr ""
 
-#: src/blocks/heading/deprecated/0.24.1/component.js:117
-#: src/blocks/heading/deprecated/0.24.4/component.js:80
-#: src/blocks/heading/deprecated/0.24.5/component.js:117
-#: src/blocks/heading/deprecated/0.24.6/component.js:117
-#: src/blocks/heading/deprecated/0.24.7/component.js:117
-#: src/blocks/heading/deprecated/0.37.1/component.js:122
-#: src/blocks/heading/deprecated/0.39.5/component.js:152
-#: src/blocks/heading/deprecated/0.40.0/component.js:152
-#: src/blocks/heading/deprecated/0.40.1/component.js:152
-#: src/blocks/heading/deprecated/0.60.1/component.js:152
-#: src/blocks/heading/edit.js:229
-msgid "Input sub text…"
-msgstr ""
-
-#: src/blocks/heading/deprecated/0.24.1/component.js:98
-#: src/blocks/heading/deprecated/0.24.4/component.js:61
-#: src/blocks/heading/deprecated/0.24.5/component.js:98
-#: src/blocks/heading/deprecated/0.24.6/component.js:98
-#: src/blocks/heading/deprecated/0.24.7/component.js:98
-#: src/blocks/heading/deprecated/0.37.1/component.js:109
-#: src/blocks/heading/deprecated/0.39.5/component.js:137
-#: src/blocks/heading/deprecated/0.40.0/component.js:137
-#: src/blocks/heading/deprecated/0.40.1/component.js:137
-#: src/blocks/heading/deprecated/0.60.1/component.js:137
 #: src/blocks/heading/edit.js:214
 msgid "Input title…"
+msgstr ""
+
+#: src/blocks/heading/edit.js:229
+msgid "Input sub text…"
 msgstr ""
 
 #: src/blocks/heading/edit.js:257
@@ -4108,6 +4086,7 @@ msgstr ""
 #: inc/vk-blocks/font-awesome/class-vk-blocks-font-awesome-api.php:73
 msgid "Setting saved."
 msgstr ""
+
 
 #: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:255
 #: inc/vk-blocks/view/class-vk-blocks-postlist.php:327

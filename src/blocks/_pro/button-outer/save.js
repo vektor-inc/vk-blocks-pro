@@ -11,7 +11,7 @@ export default function save(props) {
 	const style = gap
 		? {
 				gap: `${gap};`,
-		  }
+			}
 		: null;
 
 	return (

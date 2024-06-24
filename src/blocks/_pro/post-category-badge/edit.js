@@ -48,7 +48,7 @@ export default function CategoryBadgeEdit(props) {
 							(_taxonomy) =>
 								_taxonomy.slug !== 'post_tag' &&
 								_taxonomy.hierarchical
-						)
+					  )
 					: [];
 			},
 			[postType]

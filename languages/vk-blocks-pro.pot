@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-06-24T14:15:23+00:00\n"
+"POT-Creation-Date: 2024-06-24T14:23:38+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -92,6 +92,7 @@ msgid "image"
 msgstr ""
 
 #: src/admin/block-category-position.js:20
+#: inc/vk-blocks/admin/admin.php:109
 msgid "Block Category Position Setting"
 msgstr ""
 
@@ -106,14 +107,14 @@ msgstr ""
 #: src/admin/block-manager/index.js:51
 #: src/admin/import-export/index.js:106
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:117
-#: inc/vk-blocks/admin/admin.php:117
+#: inc/vk-blocks/admin/admin.php:118
 msgid "Block Manager Setting"
 msgstr ""
 
 #: src/admin/block-style-manager/index.js:27
 #: src/admin/import-export/index.js:115
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:118
-#: inc/vk-blocks/admin/admin.php:118
+#: inc/vk-blocks/admin/admin.php:119
 msgid "Block Style Manager Setting"
 msgstr ""
 
@@ -212,7 +213,7 @@ msgstr ""
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:31
 #: src/admin/import-export/index.js:52
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:112
-#: inc/vk-blocks/admin/admin.php:112
+#: inc/vk-blocks/admin/admin.php:113
 msgid "Custom Block Style Setting"
 msgstr ""
 
@@ -367,7 +368,7 @@ msgstr ""
 #: src/admin/custom-format/index.js:50
 #: src/admin/import-export/index.js:39
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:111
-#: inc/vk-blocks/admin/admin.php:111
+#: inc/vk-blocks/admin/admin.php:112
 msgid "Custom Format Setting"
 msgstr ""
 
@@ -461,7 +462,7 @@ msgstr ""
 
 #: src/admin/import-export/index.js:167
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:119
-#: inc/vk-blocks/admin/admin.php:119
+#: inc/vk-blocks/admin/admin.php:120
 msgid "Import Export Tool"
 msgstr ""
 
@@ -584,7 +585,7 @@ msgstr ""
 
 #: src/admin/margin.js:72
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:114
-#: inc/vk-blocks/admin/admin.php:114
+#: inc/vk-blocks/admin/admin.php:115
 msgid "Common Margin Setting"
 msgstr ""
 
@@ -1872,7 +1873,7 @@ msgstr ""
 
 #: src/blocks/_pro/post-category-badge/edit.js:86
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:134
-#: inc/vk-blocks/admin/admin.php:134
+#: inc/vk-blocks/admin/admin.php:135
 msgid "Setting"
 msgstr ""
 
@@ -3832,12 +3833,12 @@ msgid "Blocks Setting"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:109
-#: inc/vk-blocks/admin/admin.php:109
+#: inc/vk-blocks/admin/admin.php:110
 msgid "Balloon Block Setting"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:115
-#: inc/vk-blocks/admin/admin.php:115
+#: inc/vk-blocks/admin/admin.php:116
 msgid "Load Separete Setting"
 msgstr ""
 

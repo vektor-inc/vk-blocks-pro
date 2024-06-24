@@ -141,16 +141,14 @@ export default function save(props) {
 		className: `vk_tab ${className || ''}`,
 		id: `vk-tab-id-${blockId}`,
 	});
-
+	
 	return (
 		<div {...blockProps}>
 			{tabList}
-			<div
-				className="vk_tab_bodys"
-				aria-labelledby={`vk_tab_labels_label-${blockId}`}
-			>
+			<div className="vk_tab_bodys">
 				<InnerBlocks.Content />
 			</div>
 		</div>
 	);
+	
 }

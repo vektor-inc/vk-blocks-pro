@@ -15,7 +15,6 @@ import { Path, SVG } from '@wordpress/components';
  * Heading level icon.
  *
  * @param {WPHeadingLevelIconProps} props Component props.
- * @return {?WPComponent} The icon.
  */
 export default function HeadingLevelIcon({ level, isPressed = false }) {
 	const levelToPath = {

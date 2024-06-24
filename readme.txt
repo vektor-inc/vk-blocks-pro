@@ -105,6 +105,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Post List (Pro) ] Fixed sorting by display order other than publication date to work for multiple post types.
+
 = 1.76.0 =
 [ Add function ] Add Setting for the position of VK Blocks on all block inserter. 
 [ Add function ][ Border Box ] Add title tag setting.

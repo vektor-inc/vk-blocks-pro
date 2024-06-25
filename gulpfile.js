@@ -317,7 +317,7 @@ gulp.task('dist', (done) => {
 			'!./dist/**',
 			'!./node_modules/**',
 		],
-		{ base: './' }
+		{ base: './', buffer: false } // buffer: false オプションを追加
 	).pipe(gulp.dest('dist/vk-blocks-pro')); // distディレクトリに出力
 	done();
 });
@@ -337,7 +337,7 @@ gulp.task('dist:free', (done) => {
 			'!./dist/**',
 			'!./node_modules/**',
 		],
-		{ base: './' }
+		{ base: './', buffer: false } // buffer: false オプションを追加
 	).pipe(gulp.dest('dist/vk-blocks')); // distディレクトリに出力
 	done();
 });

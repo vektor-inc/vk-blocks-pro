@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6f4e9ab7b5d35a175a1ff4e1f252eee4",
+    "content-hash": "dab2d5ba493793dd93df5d6c5e4978e1",
     "packages": [
         {
             "name": "tgmpa/tgm-plugin-activation",
@@ -73,16 +73,16 @@
         },
         {
             "name": "vektor-inc/font-awesome-versions",
-            "version": "0.6.0",
+            "version": "0.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vektor-inc/font-awesome-versions.git",
-                "reference": "00e4ca66424254084ea05e783007304606b2cc6e"
+                "reference": "b5f198c4d4f4127e8565f83c54b8e16fb6e731cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vektor-inc/font-awesome-versions/zipball/00e4ca66424254084ea05e783007304606b2cc6e",
-                "reference": "00e4ca66424254084ea05e783007304606b2cc6e",
+                "url": "https://api.github.com/repos/vektor-inc/font-awesome-versions/zipball/b5f198c4d4f4127e8565f83c54b8e16fb6e731cc",
+                "reference": "b5f198c4d4f4127e8565f83c54b8e16fb6e731cc",
                 "shasum": ""
             },
             "require": {
@@ -112,9 +112,9 @@
             "description": "Font Awesome",
             "support": {
                 "issues": "https://github.com/vektor-inc/font-awesome-versions/issues",
-                "source": "https://github.com/vektor-inc/font-awesome-versions/tree/0.6.0"
+                "source": "https://github.com/vektor-inc/font-awesome-versions/tree/0.6.2"
             },
-            "time": "2024-06-25T05:31:09+00:00"
+            "time": "2024-06-25T07:26:08+00:00"
         },
         {
             "name": "vektor-inc/vk-admin",

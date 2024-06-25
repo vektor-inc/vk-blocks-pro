@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.3
 Tested up to: 6.5
-Stable tag: 1.75.1.1
+Stable tag: 1.76.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -105,6 +105,12 @@ e.g.
 
 == Changelog ==
 
+= 1.76.1 =
+[ Bug fix ][ Fixed Display (Pro) ] Add css for position and alignment.
+[ Bug fix ][ Post List (Pro) ] Fixed sorting by display order other than publication date to work for multiple post types.
+[ Other ] Add Transform vk-blocks/heading ( Not Recommended ) to core/heading.
+[ Other ] Delete old deprecated code
+
 = 1.76.0 =
 [ Add function ] Add Setting for the position of VK Blocks on all block inserter. 
 [ Add function ][ Border Box ] Add title tag setting.
@@ -122,6 +128,7 @@ e.g.
 [ Add Block ][ Fixed Display block (Pro) ] Add Fixed display block.
 [ Bug fix ][ Tab ] Fix the default line style to show the top of the border.
 [ Specification Change ] Delete unnecessary css value  ( We abolished the --vk-size-text and changed it to 1rem. ).
+
 
 = 1.74.0 =
 [ Specification Change ] Fix block categories order

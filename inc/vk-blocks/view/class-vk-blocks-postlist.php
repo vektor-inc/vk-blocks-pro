@@ -212,22 +212,32 @@ class Vk_Blocks_PostList {
 			$all_posts  = array_merge( $all_posts, $temp_query->posts );
 		}
 
-		usort(
-			$all_posts,
-			function ( $a, $b ) use ( $attributes ) {
-				if ( 'date' === $attributes['orderby'] ) {
-					if ( 'ASC' === $attributes['order'] ) {
-						return strtotime( $a->post_date ) - strtotime( $b->post_date );
+		if ( 'rand' === $attributes['orderby'] ) {
+			shuffle( $all_posts );
+		} else {
+			usort(
+				$all_posts,
+				function ( $a, $b ) use ( $attributes ) {
+					if ( 'date' === $attributes['orderby'] ) {
+						if ( 'ASC' === $attributes['order'] ) {
+							return strtotime( $a->post_date ) - strtotime( $b->post_date );
+						} else {
+							return strtotime( $b->post_date ) - strtotime( $a->post_date );
+						}
+					} elseif ( 'modified' === $attributes['orderby'] ) {
+						if ( 'ASC' === $attributes['order'] ) {
+							return strtotime( $a->post_modified ) - strtotime( $b->post_modified );
+						} else {
+							return strtotime( $b->post_modified ) - strtotime( $a->post_modified );
+						}
+					} elseif ( 'title' === $attributes['orderby'] ) {
+						return strcmp( $a->post_title, $b->post_title ) * ( 'ASC' === $attributes['order'] ? 1 : -1 );
 					} else {
-						return strtotime( $b->post_date ) - strtotime( $a->post_date );
+						return 0;
 					}
-				} elseif ( 'title' === $attributes['orderby'] ) {
-					return strcmp( $a->post_title, $b->post_title ) * ( 'ASC' === $attributes['order'] ? 1 : -1 );
-				} else {
-					return 0;
 				}
-			}
-		);
+			);
+		}
 
 		$all_posts = array_slice( $all_posts, $offset, intval( $attributes['numberPosts'] ) );
 
@@ -272,31 +282,6 @@ class Vk_Blocks_PostList {
 				'offset'         => $offset,
 				'post__not_in'   => $post__not_in,
 			);
-
-			// Add tax_query.
-			$tax_query     = array();
-			$checked_terms = json_decode( $attributes['isCheckedTerms'], true );
-
-			if ( ! empty( $checked_terms ) ) {
-				foreach ( $checked_terms as $term_id ) {
-					$term = get_term( $term_id );
-					if ( $term ) {
-						$tax_query[] = array(
-							'taxonomy' => $term->taxonomy,
-							'field'    => 'term_id',
-							'terms'    => $term_id,
-						);
-					}
-				}
-			}
-
-			if ( ! empty( $tax_query ) ) {
-				$args['tax_query'] = array(
-					'relation' => $attributes['taxQueryRelation'],
-					$tax_query,
-				);
-			}
-
 			return new WP_Query( $args );
 		} else {
 			return false;

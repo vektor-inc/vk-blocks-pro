@@ -68,4 +68,8 @@ export const addBlockControl = createHigherOrderComponent(
 	},
 	'addMyCustomBlockControls'
 );
-addFilter('editor.BlockEdit', 'vk-blocks/list-item-style', addBlockControl);
+addFilter(
+	'editor.BlockEdit',
+	'vk-blocks/list-item-style',
+	addBlockControl
+);

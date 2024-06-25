@@ -85,11 +85,11 @@ msgid "Block Category Position Setting"
 msgstr ""
 
 #: src/admin/block-category-position.js:38
-msgid "Above the WordPress default block"
+msgid "Above the WordPress default blocks"
 msgstr ""
 
 #: src/admin/block-category-position.js:45
-msgid "Under WordPress blocks"
+msgid "Under the WordPress default blocks"
 msgstr ""
 
 #: src/admin/block-manager/index.js:51
@@ -303,7 +303,7 @@ msgstr ""
 #: src/admin/custom-format/index.js:203
 #: src/blocks/_pro/step-item/edit.js:105
 #: src/blocks/_pro/timeline-item/edit.js:71
-#: src/blocks/border-box/edit.js:233
+#: src/blocks/border-box/edit.js:236
 #: src/blocks/button/edit.js:677
 #: src/blocks/icon/edit.js:299
 #: src/blocks/staff/edit.js:199
@@ -321,7 +321,7 @@ msgstr ""
 #: src/admin/custom-format/index.js:239
 #: src/blocks/_pro/grid-column-item/edit.js:110
 #: src/blocks/_pro/gridcolcard/edit-common.js:172
-#: src/blocks/border-box/edit.js:245
+#: src/blocks/border-box/edit.js:248
 #: src/blocks/button/edit.js:732
 #: src/blocks/icon/edit.js:304
 msgid "Background Color"
@@ -979,8 +979,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/edit.js:182
 #: src/blocks/_pro/card/edit.js:134
 #: src/blocks/_pro/icon-card/edit.js:75
-#: src/blocks/_pro/post-list/edit.js:338
-#: src/blocks/border-box/edit.js:213
+#: src/blocks/_pro/post-list/edit.js:407
 msgid "Title"
 msgstr ""
 
@@ -1089,7 +1088,7 @@ msgid "Check your settings from the settings sidebar."
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:115
-#: src/blocks/_pro/post-list/edit.js:206
+#: src/blocks/_pro/post-list/edit.js:275
 msgid "Display conditions"
 msgstr ""
 
@@ -1098,7 +1097,7 @@ msgid "Parent"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:134
-#: src/blocks/_pro/post-list/edit.js:374
+#: src/blocks/_pro/post-list/edit.js:445
 msgid "Ignore this post"
 msgstr ""
 
@@ -1508,7 +1507,7 @@ msgid "Border Width"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:209
-#: src/blocks/border-box/edit.js:236
+#: src/blocks/border-box/edit.js:239
 #: src/extensions/core/group/style.js:46
 msgid "Border Color"
 msgstr ""
@@ -1565,9 +1564,6 @@ msgstr ""
 #: src/blocks/_pro/icon-card-item/deprecated/0.49.8/component.js:71
 #: src/blocks/_pro/icon-card-item/deprecated/0.60.1/component.js:85
 #: src/blocks/_pro/icon-card-item/edit.js:197
-#: src/blocks/pr-blocks/deprecated/0.0.1/component.js:148
-#: src/blocks/pr-blocks/deprecated/0.0.2/component.js:176
-#: src/blocks/pr-blocks/deprecated/0.59.0/component.js:191
 #: src/blocks/pr-blocks/edit.js:534
 msgid "Input Title"
 msgstr ""
@@ -1577,9 +1573,6 @@ msgstr ""
 #: src/blocks/_pro/icon-card-item/deprecated/0.49.8/component.js:78
 #: src/blocks/_pro/icon-card-item/deprecated/0.60.1/component.js:106
 #: src/blocks/_pro/icon-card-item/edit.js:219
-#: src/blocks/pr-blocks/deprecated/0.0.1/component.js:157
-#: src/blocks/pr-blocks/deprecated/0.0.2/component.js:185
-#: src/blocks/pr-blocks/deprecated/0.59.0/component.js:200
 #: src/blocks/pr-blocks/edit.js:543
 msgid "Input Content"
 msgstr ""
@@ -1590,7 +1583,7 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:137
 #: src/blocks/_pro/step-item/edit.js:82
-#: src/blocks/border-box/edit.js:269
+#: src/blocks/border-box/edit.js:272
 #: src/blocks/button/edit.js:760
 #: src/blocks/heading/edit.js:335
 #: src/blocks/icon/edit.js:276
@@ -1887,98 +1880,98 @@ msgstr ""
 msgid "Category Badge"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:183
+#: src/blocks/_pro/post-list/edit.js:237
 #. Filter by %s
 msgid "Filter by %s"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:210
+#: src/blocks/_pro/post-list/edit.js:279
 msgid "Filter by PostTypes"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:223
+#: src/blocks/_pro/post-list/edit.js:292
 msgid "Taxonomy filter condition"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:234
+#: src/blocks/_pro/post-list/edit.js:303
 msgid "OR ( Whichever apply )"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:244
+#: src/blocks/_pro/post-list/edit.js:313
 msgid "AND ( All apply )"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:250
+#: src/blocks/_pro/post-list/edit.js:319
 msgid "Number of Posts"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:263
+#: src/blocks/_pro/post-list/edit.js:332
 msgid "Filter by Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:267
+#: src/blocks/_pro/post-list/edit.js:336
 msgid "Period of Time"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:275
+#: src/blocks/_pro/post-list/edit.js:344
 msgid "Whole Period"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:279
+#: src/blocks/_pro/post-list/edit.js:348
 msgid "From Today"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:283
+#: src/blocks/_pro/post-list/edit.js:352
 msgid "From Now"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:287
+#: src/blocks/_pro/post-list/edit.js:356
 msgid "From Tomorrow"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:292
+#: src/blocks/_pro/post-list/edit.js:361
 msgid ""
 "* If you choose a future period, you will need to customize it so that "
 "future posts will be published immediately."
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:299
+#: src/blocks/_pro/post-list/edit.js:368
 msgid "Order"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:308
+#: src/blocks/_pro/post-list/edit.js:377
 msgid "ASC"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:312
+#: src/blocks/_pro/post-list/edit.js:381
 msgid "DESC"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:318
+#: src/blocks/_pro/post-list/edit.js:387
 msgid "Order by"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:327
+#: src/blocks/_pro/post-list/edit.js:396
 msgid "Published Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:334
+#: src/blocks/_pro/post-list/edit.js:403
 msgid "Modefied Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:342
+#: src/blocks/_pro/post-list/edit.js:411
 msgid "Random"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:348
+#: src/blocks/_pro/post-list/edit.js:417
 msgid "offset"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:362
+#: src/blocks/_pro/post-list/edit.js:433
 msgid "Display from the first post always"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:368
+#: src/blocks/_pro/post-list/edit.js:439
 msgid "Display from the first post even on pages beyond the second page."
 msgstr ""
 
@@ -2336,12 +2329,6 @@ msgstr ""
 msgid "Icon Name"
 msgstr ""
 
-#: src/blocks/border-box/deprecated/0.0.0/save.js:24
-#: src/blocks/border-box/deprecated/0.0.1/save.js:25
-#: src/blocks/border-box/edit.js:51
-msgid "Please enter a title."
-msgstr ""
-
 #: src/blocks/border-box/edit.js:205
 msgid ""
 "The margin-top of the first element and the margin-bottom of the last "
@@ -2350,12 +2337,20 @@ msgid ""
 "instead of margin."
 msgstr ""
 
-#: src/blocks/border-box/edit.js:255
+#: src/blocks/border-box/edit.js:218
+msgid "HTML element of the title"
+msgstr ""
+
+#: src/blocks/border-box/edit.js:258
 msgid "Transparent"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:259
+#: src/blocks/border-box/edit.js:262
 msgid "White"
+msgstr ""
+
+#: src/blocks/border-box/edit.js:51
+msgid "Please enter a title."
 msgstr ""
 
 #: src/blocks/border-box/index.js:38
@@ -2601,32 +2596,12 @@ msgstr ""
 msgid "Input content"
 msgstr ""
 
-#: src/blocks/heading/deprecated/0.24.1/component.js:117
-#: src/blocks/heading/deprecated/0.24.4/component.js:80
-#: src/blocks/heading/deprecated/0.24.5/component.js:117
-#: src/blocks/heading/deprecated/0.24.6/component.js:117
-#: src/blocks/heading/deprecated/0.24.7/component.js:117
-#: src/blocks/heading/deprecated/0.37.1/component.js:122
-#: src/blocks/heading/deprecated/0.39.5/component.js:152
-#: src/blocks/heading/deprecated/0.40.0/component.js:152
-#: src/blocks/heading/deprecated/0.40.1/component.js:152
-#: src/blocks/heading/deprecated/0.60.1/component.js:152
-#: src/blocks/heading/edit.js:229
-msgid "Input sub text…"
-msgstr ""
-
-#: src/blocks/heading/deprecated/0.24.1/component.js:98
-#: src/blocks/heading/deprecated/0.24.4/component.js:61
-#: src/blocks/heading/deprecated/0.24.5/component.js:98
-#: src/blocks/heading/deprecated/0.24.6/component.js:98
-#: src/blocks/heading/deprecated/0.24.7/component.js:98
-#: src/blocks/heading/deprecated/0.37.1/component.js:109
-#: src/blocks/heading/deprecated/0.39.5/component.js:137
-#: src/blocks/heading/deprecated/0.40.0/component.js:137
-#: src/blocks/heading/deprecated/0.40.1/component.js:137
-#: src/blocks/heading/deprecated/0.60.1/component.js:137
 #: src/blocks/heading/edit.js:214
 msgid "Input title…"
+msgstr ""
+
+#: src/blocks/heading/edit.js:229
+msgid "Input sub text…"
 msgstr ""
 
 #: src/blocks/heading/edit.js:257

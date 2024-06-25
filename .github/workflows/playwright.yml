@@ -47,18 +47,19 @@ jobs:
       run: npm run build
     - name: Run Environment
       run: npx wp-env start
-    - name: Install dependencies ////////////////////////
-      run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
 
-    # タクソノミーのテストはワークフロー上だと環境の都合でうまく動作させられないので login.spec.ts だけテスト
+    # タクソノミーのテストはワークフロー上だと環境の都合でうまく動作させられないので除外
     # ローカルで以下のコマンドで test/e2e/ 内のテストをすべて実行する
-    # npx playwright test --trace on --project=chromium
+    # npx wp-scripts test-playwright --trace on --project=chromium
     - name: Run Playwright
       run: |
-        npx playwright test --trace on --project=chromium test/e2e/login.spec.ts
-        npx playwright test --trace on --project=chromium test/e2e/common-margin.spec.ts
+        npx wp-env clean
+        npx wp-scripts test-playwright --trace on --project=chromium login.spec.ts
+        npx wp-scripts test-playwright --trace on --project=chromium common-margin.spec.ts
+        npx wp-scripts test-playwright --trace on --project=chromium heading-transform.spec.ts
+
     - uses: actions/upload-artifact@v3
       if: always()
       with:

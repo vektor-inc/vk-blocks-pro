@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-06-25T03:58:09+00:00\n"
+"POT-Creation-Date: 2024-06-25T05:47:54+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -3467,16 +3467,16 @@ msgstr ""
 msgid "Because of the theme that enabled theme.json become can specify the color from border panel that, specification from here is deprecated."
 msgstr ""
 
-#: src/extensions/core/list-item/style.js:52
-msgid "Parent Block"
-msgstr ""
-
-#: src/extensions/core/list-item/style.js:60
+#: src/extensions/core/list-item/style.js:58
 msgid "List Item Settings"
 msgstr ""
 
-#: src/extensions/core/list-item/style.js:81
-msgid "Select parent block (%s)"
+#: src/extensions/core/list-item/style.js:63
+msgid "Select parent block: %s"
+msgstr ""
+
+#: src/extensions/core/list-item/style.js:64
+msgid "List"
 msgstr ""
 
 #: src/extensions/core/list/style.js:107

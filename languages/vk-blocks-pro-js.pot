@@ -3518,16 +3518,16 @@ msgid ""
 "from border panel that, specification from here is deprecated."
 msgstr ""
 
-#: src/extensions/core/list-item/style.js:52
-msgid "Parent Block"
-msgstr ""
-
-#: src/extensions/core/list-item/style.js:60
+#: src/extensions/core/list-item/style.js:58
 msgid "List Item Settings"
 msgstr ""
 
-#: src/extensions/core/list-item/style.js:81
-msgid "Select parent block (%s)"
+#: src/extensions/core/list-item/style.js:63
+msgid "Select parent block: %s"
+msgstr ""
+
+#: src/extensions/core/list-item/style.js:64
+msgid "List"
 msgstr ""
 
 #: src/extensions/core/list/style.js:107

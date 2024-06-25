@@ -105,6 +105,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] Change Font Awesome Version to 6.5.2
+
 = 1.76.1 =
 [ Bug fix ][ Fixed Display (Pro) ] Add css for position and alignment.
 [ Bug fix ][ Post List (Pro) ] Fixed sorting by display order other than publication date to work for multiple post types.

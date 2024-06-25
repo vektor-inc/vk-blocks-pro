@@ -31,7 +31,7 @@ addFilter(
 	addAttribute
 );
 
-export const addBlockControl = createHigherOrderComponent(
+export const addListItemBlockControls = createHigherOrderComponent(
 	(BlockEdit) => (props) => {
 		const { name, attributes, setAttributes } = props;
 		const { returnToList } = attributes;
@@ -50,9 +50,6 @@ export const addBlockControl = createHigherOrderComponent(
 			dispatch('core/block-editor').selectBlock(parentBlockId);
 		};
 
-		const clientId = select('core/block-editor').getSelectedBlockClientId();
-		const parentBlockId = select('core/block-editor').getBlockRootClientId(clientId);
-
 		return (
 			<>
 				<BlockEdit {...props} />
@@ -62,7 +59,10 @@ export const addBlockControl = createHigherOrderComponent(
 						initialOpen={true}
 					>
 						<Button isSecondary onClick={handleReturnToList}>
-							{sprintf(__('Select parent block: %s', 'vk-blocks-pro'), __('List', 'vk-blocks-pro'))}
+							{sprintf(
+								__('Select parent block: %s', 'vk-blocks-pro'),
+								__('List', 'vk-blocks-pro')
+							)}
 						</Button>
 					</PanelBody>
 				</InspectorControls>
@@ -74,5 +74,5 @@ export const addBlockControl = createHigherOrderComponent(
 addFilter(
 	'editor.BlockEdit',
 	'vk-blocks/list-item-style',
-	addBlockControl
+	addListItemBlockControls
 );

@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		function updateAccordion() {
 			const width = window.innerWidth;
 			let initialState = accordion.getAttribute('data-initial-state');
-			const isDeviceSpecific = accordion.getAttribute('data-device-specific') === 'true';
+			const isDeviceSpecific =
+				accordion.getAttribute('data-device-specific') === 'true';
 
 			if (isDeviceSpecific) {
 				if (width < 576) {

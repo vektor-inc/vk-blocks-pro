@@ -102,12 +102,12 @@ export default function TabItemEdit(props) {
 	}, [tabColor]);
 
 	let activeBodyClass = '';
-	if (tabBodyActive === true) {
+	if (tabBodyActive) {
 		activeBodyClass = ' vk_tab_bodys_body-state-active';
 	}
 	let tabBodyClass = '';
 	let tabBodyStyle = {};
-	if (tabBodyBorderTop === true) {
+	if (tabBodyBorderTop) {
 		tabBodyClass = ' has-border-top';
 		if (!isHexColor(tabColor)) {
 			tabBodyClass += ` has-${tabColor}-border-color`;
@@ -126,7 +126,7 @@ export default function TabItemEdit(props) {
 		},
 		role: 'tabpanel',
 		'aria-labelledby': `vk_tab_labels_label-${blockId}`,
-		hidden: !tabBodyActive,
+		hidden: !tabBodyActive ? 'until-found' : undefined,
 	});
 
 	return (

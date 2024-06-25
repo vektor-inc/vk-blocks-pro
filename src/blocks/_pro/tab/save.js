@@ -141,7 +141,7 @@ export default function save(props) {
 		className: `vk_tab ${className || ''}`,
 		id: `vk-tab-id-${blockId}`,
 	});
-	
+
 	return (
 		<div {...blockProps}>
 			{tabList}
@@ -150,5 +150,4 @@ export default function save(props) {
 			</div>
 		</div>
 	);
-	
 }

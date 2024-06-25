@@ -1,7 +1,7 @@
 /**
  * WordPress dependencies
  */
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
 import { PanelBody, Button } from '@wordpress/components';
 import { InspectorControls } from '@wordpress/block-editor';
@@ -40,14 +40,16 @@ export const addBlockControl = createHigherOrderComponent(
 			return <BlockEdit {...props} />;
 		}
 
-		const handleReturnToList = () => {
-			setAttributes({ returnToList: !returnToList }); // トグルとして使用
-			// 親ブロック (list) に戻る処理
-			const clientId =
-				select('core/block-editor').getSelectedBlockClientId();
-			const parentBlockId =
-				select('core/block-editor').getBlockRootClientId(clientId);
-			dispatch('core/block-editor').selectBlock(parentBlockId);
+		// 親ブロックのユーザーフレンドリーな名前を取得する関数
+		const getParentBlockTitle = () => {
+			const clientId = select('core/block-editor').getSelectedBlockClientId();
+			const parentClientId = select('core/block-editor').getBlockHierarchyRootClientId(clientId);
+			const parentBlock = select('core/block-editor').getBlock(parentClientId);
+			if (parentBlock) {
+				const parentBlockType = select('core/blocks').getBlockType(parentBlock.name);
+				return parentBlockType ? parentBlockType.title : __('Parent Block', 'vk-blocks-pro');
+			}
+			return __('Parent Block', 'vk-blocks-pro');
 		};
 
 		return (
@@ -58,8 +60,25 @@ export const addBlockControl = createHigherOrderComponent(
 						title={__('List Item Settings', 'vk-blocks-pro')}
 						initialOpen={true}
 					>
-						<Button isSecondary onClick={handleReturnToList}>
-							{__('Return to List', 'vk-blocks-pro')}
+						<Button
+							isSecondary
+							onClick={() => {
+								setAttributes({ returnToList: !returnToList }); // トグルとして使用
+								// 親ブロック (list) に戻る処理
+								const clientId =
+									select(
+										'core/block-editor'
+									).getSelectedBlockClientId();
+								const parentClientId =
+									select(
+										'core/block-editor'
+									).getBlockHierarchyRootClientId(clientId);
+								dispatch('core/block-editor').selectBlock(
+									parentClientId
+								);
+							}}
+						>
+							{sprintf(__('Select parent block: %s', 'vk-blocks-pro'), getParentBlockTitle())}
 						</Button>
 					</PanelBody>
 				</InspectorControls>

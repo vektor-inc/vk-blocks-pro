@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2024-06-24T23:58:47+00:00\n"
-"PO-Revision-Date: 2024-06-25 08:59+0900\n"
+"POT-Creation-Date: 2024-06-25T03:58:09+00:00\n"
+"PO-Revision-Date: 2024-06-25 13:01+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -3506,13 +3506,17 @@ msgstr ""
 "theme.json が有効なテーマの場合は「枠線」パネルから色指定が可能になったため、"
 "ここでの色指定は非推奨になりました。"
 
-#: src/extensions/core/list-item/style.js:49
+#: src/extensions/core/list-item/style.js:52
+msgid "Parent Block"
+msgstr "親ブロック"
+
+#: src/extensions/core/list-item/style.js:60
 msgid "List Item Settings"
 msgstr "リスト項目設定"
 
-#: src/extensions/core/list-item/style.js:70
-msgid "Return to List"
-msgstr "親のリストに戻る"
+#: src/extensions/core/list-item/style.js:81
+msgid "Select parent block (%s)"
+msgstr "親ブロックを選択: %s"
 
 #: src/extensions/core/list/style.js:107
 msgid "List Icon Color"
@@ -4823,6 +4827,9 @@ msgid ""
 "Displays a simple schedule and other information that is useful for "
 "explaining the order."
 msgstr "順番を説明する時に便利でシンプルなスケジュールなどを表示します。"
+
+#~ msgid "Return to List"
+#~ msgstr "親のリストに戻る"
 
 #~ msgid "Display position from the top of the page"
 #~ msgstr "ページ上部からの表示位置"

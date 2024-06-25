@@ -1,6 +1,6 @@
 import save1_3_9 from './1.3.9/save';
 import save1_12_0 from './1.12.0/save';
-import save1_72_1 from './1.72.1/save';
+import save1_76_0 from './1.76.0/save';
 
 const blockAttributes = {};
 
@@ -18,7 +18,6 @@ const blockAttributes2 = {
 /**
  * 1.72.1 で値を追加
  */
-/*
 const blockAttributes3 = {
 	...blockAttributes2,
 	initialState: {
@@ -36,14 +35,17 @@ const blockAttributes3 = {
 	initialStateDesktop: {
 		type: "string",
 		default: ""
+	},
+	isDeviceSpecific: {
+		type: "boolean",
+		default: false
 	}
 };
-*/
 
 const deprecated = [
 	{
-		attributes: blockAttributes2,
-		save: save1_72_1
+		attributes: blockAttributes3,
+		save: save1_76_0
 	},
 	{
 		attributes: blockAttributes2,

@@ -126,7 +126,6 @@ export default function TabItemEdit(props) {
 		},
 		role: 'tabpanel',
 		'aria-labelledby': `vk_tab_labels_label-${blockId}`,
-		hidden: !tabBodyActive ? 'until-found' : undefined,
 	});
 
 	return (

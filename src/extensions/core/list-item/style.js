@@ -43,8 +43,10 @@ export const addBlockControl = createHigherOrderComponent(
 		const handleReturnToList = () => {
 			setAttributes({ returnToList: !returnToList }); // トグルとして使用
 			// 親ブロック (list) に戻る処理
-			const clientId = select('core/block-editor').getSelectedBlockClientId();
-			const parentBlockId = select('core/block-editor').getBlockRootClientId(clientId);
+			const clientId =
+				select('core/block-editor').getSelectedBlockClientId();
+			const parentBlockId =
+				select('core/block-editor').getBlockRootClientId(clientId);
 			dispatch('core/block-editor').selectBlock(parentBlockId);
 		};
 
@@ -56,10 +58,7 @@ export const addBlockControl = createHigherOrderComponent(
 						title={__('List Item Settings', 'vk-blocks-pro')}
 						initialOpen={true}
 					>
-						<Button
-							isSecondary
-							onClick={handleReturnToList}
-						>
+						<Button isSecondary onClick={handleReturnToList}>
 							{__('Return to List', 'vk-blocks-pro')}
 						</Button>
 					</PanelBody>

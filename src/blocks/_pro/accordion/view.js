@@ -16,19 +16,22 @@ document.addEventListener('DOMContentLoaded', () => {
 		function updateAccordion() {
 			const width = window.innerWidth;
 			let initialState = accordion.getAttribute('data-initial-state');
+			const isDeviceSpecific = accordion.getAttribute('data-device-specific') === 'true';
 
-			if (width < 576) {
-				initialState =
-					accordion.getAttribute('data-initial-state-mobile') ||
-					initialState;
-			} else if (width >= 992) {
-				initialState =
-					accordion.getAttribute('data-initial-state-desktop') ||
-					initialState;
-			} else {
-				initialState =
-					accordion.getAttribute('data-initial-state-tablet') ||
-					initialState;
+			if (isDeviceSpecific) {
+				if (width < 576) {
+					initialState =
+						accordion.getAttribute('data-initial-state-mobile') ||
+						initialState;
+				} else if (width >= 992) {
+					initialState =
+						accordion.getAttribute('data-initial-state-desktop') ||
+						initialState;
+				} else {
+					initialState =
+						accordion.getAttribute('data-initial-state-tablet') ||
+						initialState;
+				}
 			}
 
 			if (initialState === 'open') {

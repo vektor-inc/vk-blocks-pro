@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2024-06-24T22:58:01+00:00\n"
-"PO-Revision-Date: 2024-06-25 08:28+0900\n"
+"POT-Creation-Date: 2024-06-24T23:58:47+00:00\n"
+"PO-Revision-Date: 2024-06-25 08:59+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -97,7 +97,7 @@ msgstr "よく使う吹き出し用のアイコン画像を登録する事がで
 msgid "image"
 msgstr "画像"
 
-#: src/admin/block-category-position.js:20
+#: src/admin/block-category-position.js:20 inc/vk-blocks/admin/admin.php:109
 msgid "Block Category Position Setting"
 msgstr "ブロックカテゴリー位置設定"
 
@@ -110,12 +110,12 @@ msgid "Under the WordPress default blocks"
 msgstr "WordPress標準ブロックの下"
 
 #: src/admin/block-manager/index.js:51 src/admin/import-export/index.js:106
-#: inc/vk-blocks/admin/admin.php:117
+#: inc/vk-blocks/admin/admin.php:118
 msgid "Block Manager Setting"
 msgstr "ブロックマネージャー設定"
 
 #: src/admin/block-style-manager/index.js:27
-#: src/admin/import-export/index.js:115 inc/vk-blocks/admin/admin.php:118
+#: src/admin/import-export/index.js:115 inc/vk-blocks/admin/admin.php:119
 msgid "Block Style Manager Setting"
 msgstr "ブロックスタイルマネージャー設定"
 
@@ -212,7 +212,7 @@ msgstr "(例) %s-block-style"
 
 #: src/admin/custom-block-style/index.js:77
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:31
-#: src/admin/import-export/index.js:52 inc/vk-blocks/admin/admin.php:112
+#: src/admin/import-export/index.js:52 inc/vk-blocks/admin/admin.php:113
 msgid "Custom Block Style Setting"
 msgstr "カスタムブロックスタイル設定"
 
@@ -372,7 +372,7 @@ msgid "Example:"
 msgstr "例:"
 
 #: src/admin/custom-format/index.js:50 src/admin/import-export/index.js:39
-#: inc/vk-blocks/admin/admin.php:111
+#: inc/vk-blocks/admin/admin.php:112
 msgid "Custom Format Setting"
 msgstr "カスタム書式設定"
 
@@ -464,7 +464,7 @@ msgstr "パンくずリストセパレーター設定"
 msgid "License Key"
 msgstr "ライセンスキー"
 
-#: src/admin/import-export/index.js:167 inc/vk-blocks/admin/admin.php:119
+#: src/admin/import-export/index.js:167 inc/vk-blocks/admin/admin.php:120
 msgid "Import Export Tool"
 msgstr "インポート・エクスポートツール"
 
@@ -582,7 +582,7 @@ msgstr "タブレット"
 msgid "Mobile"
 msgstr "モバイル"
 
-#: src/admin/margin.js:72 inc/vk-blocks/admin/admin.php:114
+#: src/admin/margin.js:72 inc/vk-blocks/admin/admin.php:115
 msgid "Common Margin Setting"
 msgstr "共通余白設定"
 
@@ -1552,11 +1552,7 @@ msgstr "全カラム一括指定"
 #: src/blocks/_pro/icon-card-item/deprecated/0.0.1/component.js:70
 #: src/blocks/_pro/icon-card-item/deprecated/0.49.8/component.js:71
 #: src/blocks/_pro/icon-card-item/deprecated/0.60.1/component.js:85
-#: src/blocks/_pro/icon-card-item/edit.js:197
-#: src/blocks/pr-blocks/deprecated/0.0.1/component.js:148
-#: src/blocks/pr-blocks/deprecated/0.0.2/component.js:176
-#: src/blocks/pr-blocks/deprecated/0.59.0/component.js:191
-#: src/blocks/pr-blocks/edit.js:534
+#: src/blocks/_pro/icon-card-item/edit.js:197 src/blocks/pr-blocks/edit.js:534
 msgid "Input Title"
 msgstr "タイトルを入力"
 
@@ -1564,11 +1560,7 @@ msgstr "タイトルを入力"
 #: src/blocks/_pro/icon-card-item/deprecated/0.0.1/component.js:77
 #: src/blocks/_pro/icon-card-item/deprecated/0.49.8/component.js:78
 #: src/blocks/_pro/icon-card-item/deprecated/0.60.1/component.js:106
-#: src/blocks/_pro/icon-card-item/edit.js:219
-#: src/blocks/pr-blocks/deprecated/0.0.1/component.js:157
-#: src/blocks/pr-blocks/deprecated/0.0.2/component.js:185
-#: src/blocks/pr-blocks/deprecated/0.59.0/component.js:200
-#: src/blocks/pr-blocks/edit.js:543
+#: src/blocks/_pro/icon-card-item/edit.js:219 src/blocks/pr-blocks/edit.js:543
 msgid "Input Content"
 msgstr "文章を入力してください"
 
@@ -1843,7 +1835,7 @@ msgid "Not Set"
 msgstr "未設定"
 
 #: src/blocks/_pro/post-category-badge/edit.js:86
-#: inc/vk-blocks/admin/admin.php:134
+#: inc/vk-blocks/admin/admin.php:135
 msgid "Setting"
 msgstr "設定"
 
@@ -2568,33 +2560,13 @@ msgstr "タイトルを入力"
 msgid "Input content"
 msgstr "説明を入力"
 
-#: src/blocks/heading/deprecated/0.24.1/component.js:117
-#: src/blocks/heading/deprecated/0.24.4/component.js:80
-#: src/blocks/heading/deprecated/0.24.5/component.js:117
-#: src/blocks/heading/deprecated/0.24.6/component.js:117
-#: src/blocks/heading/deprecated/0.24.7/component.js:117
-#: src/blocks/heading/deprecated/0.37.1/component.js:122
-#: src/blocks/heading/deprecated/0.39.5/component.js:152
-#: src/blocks/heading/deprecated/0.40.0/component.js:152
-#: src/blocks/heading/deprecated/0.40.1/component.js:152
-#: src/blocks/heading/deprecated/0.60.1/component.js:152
-#: src/blocks/heading/edit.js:229
-msgid "Input sub text…"
-msgstr "サブテキストを入力"
-
-#: src/blocks/heading/deprecated/0.24.1/component.js:98
-#: src/blocks/heading/deprecated/0.24.4/component.js:61
-#: src/blocks/heading/deprecated/0.24.5/component.js:98
-#: src/blocks/heading/deprecated/0.24.6/component.js:98
-#: src/blocks/heading/deprecated/0.24.7/component.js:98
-#: src/blocks/heading/deprecated/0.37.1/component.js:109
-#: src/blocks/heading/deprecated/0.39.5/component.js:137
-#: src/blocks/heading/deprecated/0.40.0/component.js:137
-#: src/blocks/heading/deprecated/0.40.1/component.js:137
-#: src/blocks/heading/deprecated/0.60.1/component.js:137
 #: src/blocks/heading/edit.js:214
 msgid "Input title…"
 msgstr "タイトルを入力"
+
+#: src/blocks/heading/edit.js:229
+msgid "Input sub text…"
+msgstr "サブテキストを入力"
 
 #: src/blocks/heading/edit.js:257
 msgid "Heading style"
@@ -3874,11 +3846,11 @@ msgstr "Blocks"
 msgid "Blocks Setting"
 msgstr "Blocks 設定"
 
-#: inc/vk-blocks/admin/admin.php:109
+#: inc/vk-blocks/admin/admin.php:110
 msgid "Balloon Block Setting"
 msgstr "吹き出しブロック設定"
 
-#: inc/vk-blocks/admin/admin.php:115
+#: inc/vk-blocks/admin/admin.php:116
 msgid "Load Separete Setting"
 msgstr "分割読み込み設定"
 
@@ -4081,12 +4053,12 @@ msgstr "スティッチ"
 msgid "Setting saved."
 msgstr "設定を保存しました。"
 
-#: inc/vk-blocks/view/class-vk-blocks-postlist.php:327
+#: inc/vk-blocks/view/class-vk-blocks-postlist.php:312
 msgid "Post"
 msgstr "投稿"
 
 #. translators: %s: 投稿タイプ名
-#: inc/vk-blocks/view/class-vk-blocks-postlist.php:331
+#: inc/vk-blocks/view/class-vk-blocks-postlist.php:316
 msgid "There are no %ss."
 msgstr "該当の%sはありません。"
 

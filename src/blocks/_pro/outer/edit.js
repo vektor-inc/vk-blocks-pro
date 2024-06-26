@@ -12,6 +12,7 @@ import { componentDivider } from './component-divider';
 import GenerateBgImage from './GenerateBgImage';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
+import LinkToolbar from '@vkblocks/components/link-toolbar';
 const prefix = 'vkb-outer';
 
 /**
@@ -25,6 +26,7 @@ import {
 	BaseControl,
 	SelectControl,
 	ToggleControl,
+	ToolbarGroup,
 } from '@wordpress/components';
 import {
 	InspectorControls,
@@ -72,6 +74,8 @@ export default function OuterEdit(props) {
 		minHeightValueTablet,
 		minHeightValueMobile,
 		minHeightUnit,
+		linkUrl,
+		linkTarget,
 		blockId,
 	} = attributes;
 
@@ -403,6 +407,16 @@ export default function OuterEdit(props) {
 					}
 					controls={['full']}
 				/>
+				<ToolbarGroup>
+					<LinkToolbar
+						linkUrl={linkUrl}
+						setLinkUrl={(url) => setAttributes({ linkUrl: url })}
+						linkTarget={linkTarget}
+						setLinkTarget={(target) =>
+							setAttributes({ linkTarget: target })
+						}
+					/>
+				</ToolbarGroup>
 			</BlockControls>
 			<InspectorControls>
 				<PanelBody

@@ -106,6 +106,7 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Outer (Pro) ] Add toolbar link for components.
+[ Bug fix ] Delete unnecessary development files included in 1.76.2.
 
 = 1.76.2 =
 [ Specification Change ] Change Font Awesome Version to 6.5.2

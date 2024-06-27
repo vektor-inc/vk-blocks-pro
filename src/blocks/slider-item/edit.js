@@ -87,10 +87,7 @@ export default function SliderItemEdit(props) {
 	}, [paddingValue]);
 
 	let containerClass = '';
-	if (
-		classPaddingLR === ` is-layout-constrained` ||
-		classPaddingLR === ''
-	) {
+	if (classPaddingLR === ` is-layout-constrained` || classPaddingLR === '') {
 		containerClass = `${prefix}_container container`;
 	} else {
 		containerClass = `${prefix}_container`;
@@ -168,7 +165,10 @@ export default function SliderItemEdit(props) {
 					<BaseControl
 						label={__('Color Setting', 'vk-blocks-pro')}
 						id={`vk_sliderItem-colorSetting`}
-						help={__('Color will overcome background image. If you want to display image, set opacity 0.', 'vk-blocks-pro')}
+						help={__(
+							'Color will overcome background image. If you want to display image, set opacity 0.',
+							'vk-blocks-pro'
+						)}
 					>
 						<AdvancedColorPalette
 							enableAlpha={false}

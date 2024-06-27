@@ -32,7 +32,10 @@ export default function save(props) {
 	classPaddingLR = '';
 	let paddingValue = '';
 
-	if (padding_left_and_right === '0' || padding_left_and_right === 'vk_slider_item-paddingLR-none') {
+	if (
+		padding_left_and_right === '0' ||
+		padding_left_and_right === 'vk_slider_item-paddingLR-none'
+	) {
 		classPaddingLR = ` is-layout-constrained`;
 		paddingValue = '0';
 	} else if (padding_left_and_right === '1') {
@@ -43,10 +46,7 @@ export default function save(props) {
 		paddingValue = '0';
 	}
 
-	if (
-		classPaddingLR === ` is-layout-constrained` ||
-		classPaddingLR === ''
-	) {
+	if (classPaddingLR === ` is-layout-constrained` || classPaddingLR === '') {
 		containerClass = `${prefix}_container container`;
 	} else {
 		containerClass = `${prefix}_container`;

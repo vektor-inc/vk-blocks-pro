@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2024-06-27T01:22:15+00:00\n"
-"PO-Revision-Date: 2024-06-27 10:24+0900\n"
+"POT-Creation-Date: 2024-06-27T02:10:41+00:00\n"
+"PO-Revision-Date: 2024-06-27 11:11+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -564,19 +564,19 @@ msgstr "XL"
 msgid "XXL"
 msgstr "XXL"
 
-#: src/admin/margin.js:51 src/blocks/_pro/outer/edit.js:1042
+#: src/admin/margin.js:51 src/blocks/_pro/outer/edit.js:1043
 #: src/blocks/button/edit.js:537 src/blocks/slider/edit.js:952
 #: src/components/advanced-viewport-control/index.js:25
 msgid "PC"
 msgstr "PC"
 
-#: src/admin/margin.js:55 src/blocks/_pro/outer/edit.js:1026
+#: src/admin/margin.js:55 src/blocks/_pro/outer/edit.js:1027
 #: src/blocks/button/edit.js:472 src/blocks/slider/edit.js:973
 #: src/components/advanced-viewport-control/index.js:32
 msgid "Tablet"
 msgstr "タブレット"
 
-#: src/admin/margin.js:59 src/blocks/_pro/outer/edit.js:1010
+#: src/admin/margin.js:59 src/blocks/_pro/outer/edit.js:1011
 #: src/blocks/button/edit.js:407 src/blocks/slider/edit.js:994
 #: src/components/advanced-viewport-control/index.js:41
 msgid "Mobile"
@@ -823,7 +823,7 @@ msgid "Height"
 msgstr "高さ"
 
 #: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:167
-#: src/blocks/_pro/outer/edit.js:532 src/blocks/balloon/edit.js:508
+#: src/blocks/_pro/outer/edit.js:533 src/blocks/balloon/edit.js:508
 #: src/blocks/slider/edit.js:915
 msgid "Width"
 msgstr "幅"
@@ -1349,7 +1349,7 @@ msgid "Padding (Top)"
 msgstr "余白 (上)"
 
 #: src/blocks/_pro/grid-column-item/edit.js:143
-#: src/blocks/_pro/outer/edit.js:535 src/blocks/slider-item/edit.js:134
+#: src/blocks/_pro/outer/edit.js:536 src/blocks/slider-item/edit.js:134
 msgid "Padding (Left and Right)"
 msgstr "余白 (左右)"
 
@@ -1358,28 +1358,28 @@ msgid "Padding (Bottom)"
 msgstr "余白 (下)"
 
 #: src/blocks/_pro/grid-column-item/edit.js:190
-#: src/blocks/_pro/grid-column/edit.js:91 src/blocks/_pro/outer/edit.js:1064
+#: src/blocks/_pro/grid-column/edit.js:91 src/blocks/_pro/outer/edit.js:1065
 #: src/blocks/icon-outer/edit.js:183 src/blocks/icon/edit.js:172
 #: src/utils/unit-options.js:6
 msgid "px"
 msgstr "px"
 
 #: src/blocks/_pro/grid-column-item/edit.js:194
-#: src/blocks/_pro/grid-column/edit.js:95 src/blocks/_pro/outer/edit.js:1068
+#: src/blocks/_pro/grid-column/edit.js:95 src/blocks/_pro/outer/edit.js:1069
 #: src/blocks/icon-outer/edit.js:187 src/blocks/icon/edit.js:176
 #: src/utils/unit-options.js:10
 msgid "em"
 msgstr "em"
 
 #: src/blocks/_pro/grid-column-item/edit.js:198
-#: src/blocks/_pro/grid-column/edit.js:99 src/blocks/_pro/outer/edit.js:1072
+#: src/blocks/_pro/grid-column/edit.js:99 src/blocks/_pro/outer/edit.js:1073
 #: src/blocks/icon-outer/edit.js:191 src/blocks/icon/edit.js:180
 #: src/utils/unit-options.js:14
 msgid "rem"
 msgstr "rem"
 
 #: src/blocks/_pro/grid-column-item/edit.js:202
-#: src/blocks/_pro/grid-column/edit.js:103 src/blocks/_pro/outer/edit.js:1000
+#: src/blocks/_pro/grid-column/edit.js:103 src/blocks/_pro/outer/edit.js:1001
 #: src/blocks/icon-outer/edit.js:195 src/blocks/icon/edit.js:184
 #: src/utils/unit-options.js:18
 msgid "vw"
@@ -1606,41 +1606,45 @@ msgstr "表示位置"
 msgid "Text"
 msgstr "テキスト"
 
-#: src/blocks/_pro/outer/edit.js:1006
+#: src/blocks/_pro/outer/edit.js:1007
 msgid "Min Height Setting"
 msgstr "最小高さ設定"
 
-#: src/blocks/_pro/outer/edit.js:1058
+#: src/blocks/_pro/outer/edit.js:1059
 #: src/components/advanced-unit-control/index.js:13
 msgid "Unit Type"
 msgstr "単位"
 
-#: src/blocks/_pro/outer/edit.js:1076 src/utils/unit-options.js:22
+#: src/blocks/_pro/outer/edit.js:1077 src/utils/unit-options.js:22
 msgid "vh"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1080 src/utils/unit-options.js:26
+#: src/blocks/_pro/outer/edit.js:1081 src/utils/unit-options.js:26
 msgid "svh"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1084 src/utils/unit-options.js:30
+#: src/blocks/_pro/outer/edit.js:1085 src/utils/unit-options.js:30
 msgid "lvh"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1088 src/utils/unit-options.js:34
+#: src/blocks/_pro/outer/edit.js:1089 src/utils/unit-options.js:34
 msgid "dvh"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:423 src/blocks/slider-item/edit.js:185
+#: src/blocks/_pro/outer/edit.js:418 src/blocks/_pro/outer/save.js:252
+msgid "Outer link"
+msgstr "Outerリンク"
+
+#: src/blocks/_pro/outer/edit.js:424 src/blocks/slider-item/edit.js:185
 msgid "Background Setting"
 msgstr "背景設定"
 
-#: src/blocks/_pro/outer/edit.js:428 src/blocks/pr-content/edit.js:67
+#: src/blocks/_pro/outer/edit.js:429 src/blocks/pr-content/edit.js:67
 #: src/blocks/slider-item/edit.js:189
 msgid "Color Setting"
 msgstr "色設定"
 
-#: src/blocks/_pro/outer/edit.js:429 src/blocks/slider-item/edit.js:191
+#: src/blocks/_pro/outer/edit.js:430 src/blocks/slider-item/edit.js:191
 msgid ""
 "Color will overcome background image. If you want to display image, set "
 "opacity 0."
@@ -1648,72 +1652,72 @@ msgstr ""
 "色を指定すると画像よりも優先されます。画像を表示したい場合は、不透明度を0に設"
 "定します。"
 
-#: src/blocks/_pro/outer/edit.js:441 src/blocks/slider-item/edit.js:203
+#: src/blocks/_pro/outer/edit.js:442 src/blocks/slider-item/edit.js:203
 msgid "Opacity Setting"
 msgstr "透過設定"
 
-#: src/blocks/_pro/outer/edit.js:455 src/blocks/slider-item/edit.js:238
+#: src/blocks/_pro/outer/edit.js:456 src/blocks/slider-item/edit.js:238
 msgid "Background Image PC"
 msgstr "背景画像 ( PC )"
 
-#: src/blocks/_pro/outer/edit.js:471 src/blocks/slider-item/edit.js:254
+#: src/blocks/_pro/outer/edit.js:472 src/blocks/slider-item/edit.js:254
 msgid "Background Image Tablet"
 msgstr "背景画像 ( タブレット )"
 
-#: src/blocks/_pro/outer/edit.js:481 src/blocks/slider-item/edit.js:264
+#: src/blocks/_pro/outer/edit.js:482 src/blocks/slider-item/edit.js:264
 msgid "Background Image Mobile"
 msgstr "背景画像 ( モバイル )"
 
-#: src/blocks/_pro/outer/edit.js:491
+#: src/blocks/_pro/outer/edit.js:492
 msgid "Background image Position"
 msgstr "背景画像の位置"
 
-#: src/blocks/_pro/outer/edit.js:499
+#: src/blocks/_pro/outer/edit.js:500
 msgid "Repeat"
 msgstr "リピート"
 
-#: src/blocks/_pro/outer/edit.js:503
+#: src/blocks/_pro/outer/edit.js:504
 msgid "Cover"
 msgstr "カバー"
 
-#: src/blocks/_pro/outer/edit.js:507
+#: src/blocks/_pro/outer/edit.js:508
 msgid "Cover fixed (Not fixed on iPhone)"
 msgstr "カバー 固定（iPhoneでは固定されません）"
 
-#: src/blocks/_pro/outer/edit.js:514
+#: src/blocks/_pro/outer/edit.js:515
 msgid "Parallax (Non-guaranteed)"
 msgstr "パララックス（非保証）"
 
-#: src/blocks/_pro/outer/edit.js:529 src/blocks/pr-content/edit.js:244
+#: src/blocks/_pro/outer/edit.js:530 src/blocks/pr-content/edit.js:244
 #: src/blocks/slider-item/edit.js:129
 msgid "Layout Setting"
 msgstr "レイアウト設定"
 
-#: src/blocks/_pro/outer/edit.js:542
+#: src/blocks/_pro/outer/edit.js:543
 msgid "Fit to the Content area"
 msgstr "コンテンツエリアに合わせる"
 
-#: src/blocks/_pro/outer/edit.js:549
+#: src/blocks/_pro/outer/edit.js:550
 msgid "Add padding to the Outer area"
 msgstr "アウターエリア内に余白を追加する"
 
-#: src/blocks/_pro/outer/edit.js:556
+#: src/blocks/_pro/outer/edit.js:557
 msgid "Remove padding from the Outer area"
 msgstr "アウターエリア内の余白を無くす"
 
-#: src/blocks/_pro/outer/edit.js:570
+#: src/blocks/_pro/outer/edit.js:571
 msgid "Padding (Top and Bottom)"
 msgstr "余白 (上下)"
 
-#: src/blocks/_pro/outer/edit.js:578
+#: src/blocks/_pro/outer/edit.js:579
 msgid "Use default padding"
 msgstr "標準の余白を使用"
 
-#: src/blocks/_pro/outer/edit.js:585
+#: src/blocks/_pro/outer/edit.js:586
 msgid "Do not use default padding"
 msgstr "標準の余白を使用しない"
 
-#: src/blocks/_pro/outer/edit.js:599
+#: src/blocks/_pro/outer/edit.js:600
 msgid ""
 "* If you select \"Do not use\" that, please set yourself it such as a spacer "
 "block."
@@ -1721,114 +1725,110 @@ msgstr ""
 "*「使用しない」を選択した場合はスペーサーブロックなどで任意に設定してくださ"
 "い。"
 
-#: src/blocks/_pro/outer/edit.js:607
+#: src/blocks/_pro/outer/edit.js:608
 msgid "Divider Setting"
 msgstr "区切りの設定"
 
-#: src/blocks/_pro/outer/edit.js:612 src/blocks/balloon/edit.js:439
+#: src/blocks/_pro/outer/edit.js:613 src/blocks/balloon/edit.js:439
 msgid "Type"
 msgstr "タイプ"
 
-#: src/blocks/_pro/outer/edit.js:620
+#: src/blocks/_pro/outer/edit.js:621
 msgid "Tilt"
 msgstr "傾斜"
 
-#: src/blocks/_pro/outer/edit.js:624
+#: src/blocks/_pro/outer/edit.js:625
 msgid "Curve"
 msgstr "カーブ"
 
-#: src/blocks/_pro/outer/edit.js:628
+#: src/blocks/_pro/outer/edit.js:629
 msgid "Wave"
 msgstr "波状"
 
-#: src/blocks/_pro/outer/edit.js:632
+#: src/blocks/_pro/outer/edit.js:633
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:338
 msgid "Triangle"
 msgstr "三角"
 
-#: src/blocks/_pro/outer/edit.js:639
+#: src/blocks/_pro/outer/edit.js:640
 msgid "Settings for each device"
 msgstr "デバイス毎の設定"
 
-#: src/blocks/_pro/outer/edit.js:652
+#: src/blocks/_pro/outer/edit.js:653
 msgid "Upper Divider Level"
 msgstr "上部区切りレベル"
 
-#: src/blocks/_pro/outer/edit.js:734
+#: src/blocks/_pro/outer/edit.js:735
 msgid "Lower Divider Level"
 msgstr "下部区切りレベル"
 
-#: src/blocks/_pro/outer/edit.js:817
+#: src/blocks/_pro/outer/edit.js:818
 msgid "Border Setting"
 msgstr "枠線の設定"
 
-#: src/blocks/_pro/outer/edit.js:822
+#: src/blocks/_pro/outer/edit.js:823
 msgid "Border will disappear when divider effect is applied."
 msgstr "枠線は区切りレベルを適用すると表示されなくなります。"
 
-#: src/blocks/_pro/outer/edit.js:828
+#: src/blocks/_pro/outer/edit.js:829
 msgid "Border type"
 msgstr "枠線の種類"
 
-#: src/blocks/_pro/outer/edit.js:836 src/blocks/_pro/step-item/edit.js:147
+#: src/blocks/_pro/outer/edit.js:837 src/blocks/_pro/step-item/edit.js:147
 #: src/blocks/_pro/timeline-item/edit.js:113 src/blocks/balloon/edit.js:559
 #: src/blocks/button/edit.js:658 src/blocks/staff/edit.js:177
 msgid "None"
 msgstr "なし"
 
-#: src/blocks/_pro/outer/edit.js:840 src/blocks/_pro/step-item/edit.js:118
+#: src/blocks/_pro/outer/edit.js:841 src/blocks/_pro/step-item/edit.js:118
 #: src/blocks/_pro/timeline-item/edit.js:88 src/blocks/pr-content/edit.js:145
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:436
 msgid "Solid"
 msgstr "直線"
 
-#: src/blocks/_pro/outer/edit.js:844
+#: src/blocks/_pro/outer/edit.js:845
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:444
 msgid "Dotted"
 msgstr "点線"
 
-#: src/blocks/_pro/outer/edit.js:848
+#: src/blocks/_pro/outer/edit.js:849
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:448
 msgid "Dashed"
 msgstr "Dashed"
 
-#: src/blocks/_pro/outer/edit.js:852
+#: src/blocks/_pro/outer/edit.js:853
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:452
 msgid "Double"
 msgstr "二重線"
 
-#: src/blocks/_pro/outer/edit.js:856
+#: src/blocks/_pro/outer/edit.js:857
 msgid "Groove"
 msgstr "Groove"
 
-#: src/blocks/_pro/outer/edit.js:860
+#: src/blocks/_pro/outer/edit.js:861
 msgid "Ridge"
 msgstr "Ridge"
 
-#: src/blocks/_pro/outer/edit.js:864
+#: src/blocks/_pro/outer/edit.js:865
 msgid "Inset"
 msgstr "Inset"
 
-#: src/blocks/_pro/outer/edit.js:868
+#: src/blocks/_pro/outer/edit.js:869
 msgid "Outset"
 msgstr "Outset"
 
-#: src/blocks/_pro/outer/edit.js:880
+#: src/blocks/_pro/outer/edit.js:881
 msgid "Border width"
 msgstr "枠線の幅"
 
-#: src/blocks/_pro/outer/edit.js:892 src/blocks/icon-outer/edit.js:212
+#: src/blocks/_pro/outer/edit.js:893 src/blocks/icon-outer/edit.js:212
 #: src/blocks/icon/edit.js:201
 msgid "Border radius"
 msgstr "枠線のRの大きさ"
 
-#: src/blocks/_pro/outer/edit.js:908
+#: src/blocks/_pro/outer/edit.js:909
 msgid "Container Inner Side Space Setting"
 msgstr "コンテナ内側のスペース設定"
-
-#: src/blocks/_pro/outer/save.js:252
-msgid "Outer link"
-msgstr "Outerリンク"
 
 #: src/blocks/_pro/post-category-badge/edit.js:100
 msgid "Auto"

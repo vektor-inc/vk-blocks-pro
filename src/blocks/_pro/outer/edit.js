@@ -415,6 +415,7 @@ export default function OuterEdit(props) {
 						setLinkTarget={(target) =>
 							setAttributes({ linkTarget: target })
 						}
+						aria-label={__('Outer link', 'vk-blocks-pro')}
 					/>
 				</ToolbarGroup>
 			</BlockControls>

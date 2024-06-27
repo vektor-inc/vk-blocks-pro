@@ -9,7 +9,7 @@ import {
 	useEffect,
 } from '@wordpress/element';
 import { useSelect } from '@wordpress/data';
-
+import 'regenerator-runtime/runtime';
 /**
  * Internal dependencies
  */

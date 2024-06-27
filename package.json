@@ -51,6 +51,11 @@
     "> 5%"
   ],
   "devDependencies": {
+    "@babel/cli": "^7.24.7",
+    "@babel/core": "^7.24.7",
+    "@babel/plugin-transform-async-to-generator": "^7.24.7",
+    "@babel/plugin-transform-regenerator": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
     "@codemirror/lang-css": "^6.2.1",
     "@codemirror/view": "^6.28.2",
     "@emotion/babel-plugin": "^11.11.0",
@@ -112,5 +117,8 @@
   },
   "volta": {
     "node": "20.14.0"
+  },
+  "dependencies": {
+    "regenerator-runtime": "^0.14.1"
   }
 }

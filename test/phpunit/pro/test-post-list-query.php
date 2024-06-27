@@ -286,10 +286,42 @@ class PostListBlockQueryTest extends VK_UnitTestCase {
 				$actual[] = $post->ID;
 			}
 			if ( ! empty( $test['target_url'] ) ) {
-				$this->go_to( $value['target_url'] );
+				$this->go_to( $test['target_url'] );
 			}
 print '<pre style="text-align:left">';print_r($actual);print '</pre>';
 			$this->assertSame( $test['expected'], $actual );
 		}
 	}
+
+	/**
+	 * 関連のないタームやカテゴリーが無視されるかのテスト
+	 */
+	public function test_ignore_unrelated_terms() {
+		$test_data = self::create_test_posts();
+
+		$attributes = array(
+			'numberPosts'      => 6,
+			'order'            => 'ASC',
+			'orderby'          => 'ID',
+			'isCheckedPostType'=> '["event"]',
+			'taxQueryRelation' => 'AND',
+			'isCheckedTerms'   => json_encode(
+				array(
+					$test_data['term_id_event_cat_a'],
+					$test_data['term_id_event_area_aichi'],
+				)
+			),
+		);
+
+		// タームが空の場合のテスト
+		$attributes['isCheckedTerms'] = json_encode(array());
+		$posts = Vk_Blocks_PostList::get_loop_query($attributes);
+		$this->assertSame(4, $posts->post_count);
+
+		// 関連のないタームが含まれている場合のテスト
+		$attributes['isCheckedTerms'] = json_encode(array(999999, $test_data['term_id_event_cat_a']));
+		$posts = Vk_Blocks_PostList::get_loop_query($attributes);
+		$this->assertSame(2, $posts->post_count);
+	}
+
 }

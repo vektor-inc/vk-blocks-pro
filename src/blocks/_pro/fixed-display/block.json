@@ -44,7 +44,6 @@
 	"supports": {
 		"html": false,
 		"className": true,
-		"align": ["left", "center", "right", "wide", "full"],
 		"anchor": true,
 		"color": {
 			"gradients": true,

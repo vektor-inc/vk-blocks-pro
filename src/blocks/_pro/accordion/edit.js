@@ -8,7 +8,7 @@ import {
 	PanelBody,
 	SelectControl,
 	ToggleControl,
-} from '@wordpress/compsonents';
+} from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
 export default function AccordionEdit(props) {

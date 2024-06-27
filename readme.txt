@@ -106,6 +106,7 @@ e.g.
 == Changelog ==
 
 [ Specification Change ][ Slider ] Change padding style to core system.
+[ Bug fix ] Delete unnecessary development files included in 1.76.2.
 
 = 1.76.2 =
 [ Specification Change ] Change Font Awesome Version to 6.5.2

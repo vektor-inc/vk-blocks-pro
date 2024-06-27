@@ -84,6 +84,10 @@ gulp.task('helper-js-pro', (done) => {
 		.pipe(uglify())
 		.pipe(rename('vk-tab.min.js'))
 		.pipe(gulp.dest('./build/'));
+	gulp.src('src/blocks/_pro/table-of-contents-new/view.js')
+		.pipe(uglify())
+		.pipe(rename('vk-table-of-contents-new.min.js'))
+		.pipe(gulp.dest('./build/'));
 	done();
 });
 

@@ -4,7 +4,11 @@ import {
 	InspectorControls,
 } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
-import { PanelBody, SelectControl, ToggleControl } from '@wordpress/compsonents';
+import {
+	PanelBody,
+	SelectControl,
+	ToggleControl,
+} from '@wordpress/compsonents';
 import { __ } from '@wordpress/i18n';
 
 export default function AccordionEdit(props) {

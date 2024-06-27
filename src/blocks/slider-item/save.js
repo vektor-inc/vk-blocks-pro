@@ -24,22 +24,27 @@ export default function save(props) {
 		linkTarget,
 		blockId,
 	} = attributes;
+
 	let classPaddingLR;
 	let containerClass;
 
-	//classPaddingLRのクラス切り替え
+	// classPaddingLRのクラス切り替え
 	classPaddingLR = '';
-	if (padding_left_and_right === '0') {
-		classPaddingLR = ` ${prefix}-paddingLR-none`;
+	let paddingValue = '';
+
+	if (padding_left_and_right === '0' || padding_left_and_right === 'vk_slider_item-paddingLR-none') {
+		classPaddingLR = ` is-layout-constrained`;
+		paddingValue = '0';
 	} else if (padding_left_and_right === '1') {
 		classPaddingLR = ` ${prefix}-paddingLR-use`;
+		paddingValue = '4em';
 	} else if (padding_left_and_right === '2') {
-		// Fit to content area width
 		classPaddingLR = ` ${prefix}-paddingLR-zero`;
+		paddingValue = '0';
 	}
 
 	if (
-		classPaddingLR === ` ${prefix}-paddingLR-none` ||
+		classPaddingLR === ` is-layout-constrained` ||
 		classPaddingLR === ''
 	) {
 		containerClass = `${prefix}_container container`;
@@ -58,6 +63,8 @@ export default function save(props) {
 
 	const bgAreaStyles = {
 		backgroundColor: isHexColor(bgColor) ? bgColor : undefined,
+		paddingLeft: paddingValue,
+		paddingRight: paddingValue,
 	};
 
 	const GetBgImage = (

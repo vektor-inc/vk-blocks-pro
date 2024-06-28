@@ -15,8 +15,10 @@ export default function save({ attributes }) {
 				className={'vk_faq_title'}
 				value={heading}
 			/>
-			<dd className={`vk_faq_content`}
-				aria-label={__('Answer', 'vk-blocks-pro')}>
+			<dd
+				className={`vk_faq_content`}
+				aria-label={__('Answer', 'vk-blocks-pro')}
+			>
 				<InnerBlocks.Content />
 			</dd>
 		</dl>

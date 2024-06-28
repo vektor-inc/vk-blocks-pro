@@ -1,15 +1,13 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
-import { __ } from '@wordpress/i18n';
 
 export default function save() {
 	return (
-		<dd
+		<dt
 			{...useBlockProps.save({
-				className: `vk_faq_content`,
-				'aria-label': __('Answer', 'vk-blocks-pro'),
+				className: `vk_faq_title`,
 			})}
 		>
 			<InnerBlocks.Content />
-		</dd>
+		</dt>
 	);
 }

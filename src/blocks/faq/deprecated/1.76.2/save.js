@@ -1,5 +1,4 @@
 import { RichText, InnerBlocks, useBlockProps } from '@wordpress/block-editor';
-import { __ } from '@wordpress/i18n';
 
 export default function save({ attributes }) {
 	const { heading } = attributes;
@@ -13,12 +12,8 @@ export default function save({ attributes }) {
 				tagName="dt"
 				className={'vk_faq_title'}
 				value={heading}
-				aria-label={__('Question', 'vk-blocks-pro')}
 			/>
-			<dd
-				className={`vk_faq_content`}
-				aria-label={__('Answer', 'vk-blocks-pro')}
-			>
+			<dd className={`vk_faq_content`}>
 				<InnerBlocks.Content />
 			</dd>
 		</dl>

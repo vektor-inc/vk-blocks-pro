@@ -58,6 +58,9 @@
 	},
 	"supports": {
 		"html": false,
-		"className": true
+		"className": true,
+		"spacing": {
+			"padding": true
+		}
 	}
 }

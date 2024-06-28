@@ -75,14 +75,6 @@ document.addEventListener('DOMContentLoaded', function () {
 			}
 		});
 
-		// 初期状態でアクティブでないタブボディにhidden="until-found"を追加
-		const vkTabBodiesAll = vkTabBodies.querySelectorAll('.vk_tab_bodys_body');
-		vkTabBodiesAll.forEach((tabBody) => {
-			if (!tabBody.classList.contains('vk_tab_bodys_body-state-active')) {
-				tabBody.setAttribute('hidden', 'until-found');
-			}
-		});
-
 		Array.prototype.forEach.call(vkTabLabel, (TabLabel) => {
 			TabLabel.addEventListener('click', (e) => {
 				// ブロック ID を抽出
@@ -100,7 +92,6 @@ document.addEventListener('DOMContentLoaded', function () {
 					activeLabel.classList.add(
 						'vk_tab_labels_label-state-inactive'
 					);
-					activeLabel.setAttribute('aria-selected', 'false');
 					if (
 						!activeLabel
 							.closest('.vk_tab')
@@ -136,7 +127,6 @@ document.addEventListener('DOMContentLoaded', function () {
 					activeBody.classList.remove(
 						'vk_tab_bodys_body-state-active'
 					);
-					activeBody.setAttribute('hidden', 'until-found');
 				});
 
 				// 新しいアクティブなラベルとボディを設定
@@ -149,8 +139,6 @@ document.addEventListener('DOMContentLoaded', function () {
 				newActiveLabel.classList.remove(
 					'vk_tab_labels_label-state-inactive'
 				);
-				newActiveLabel.style.removeProperty('background-color');
-				newActiveLabel.setAttribute('aria-selected', 'true');
 				if (
 					newActiveLabel
 						.closest('.vk_tab')
@@ -172,27 +160,16 @@ document.addEventListener('DOMContentLoaded', function () {
 					} else {
 						newActiveLabel.style.color = borderTopColor;
 					}
-				} else {
-					const activeTabBody = vkTabBodies.querySelector(
-						`#vk_tab_bodys_body-${TabId}`
-					);
-					const activeTabBodyStyle =
-						window.getComputedStyle(activeTabBody);
-					newActiveLabel.style.backgroundColor =
-						activeTabBodyStyle.borderTopColor || '';
 				}
 
 				const newActiveBody = vkTabBodies.querySelector(
 					`#vk_tab_bodys_body-${TabId}`
 				);
 				newActiveBody.classList.add('vk_tab_bodys_body-state-active');
-				newActiveBody.removeAttribute('hidden');
-				newActiveBody.setAttribute(
-					'aria-labelledby',
-					`vk_tab_labels_label-${TabId}`
-				);
 
 				e.target.setAttribute('tabindex', '0');
+				e.target.setAttribute('aria-selected', 'true');
+
 				e.target.focus();
 			});
 
@@ -204,9 +181,6 @@ document.addEventListener('DOMContentLoaded', function () {
 					newTab = currentTab.previousElementSibling;
 				} else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
 					newTab = currentTab.nextElementSibling;
-				} else if (e.key === 'Enter' || e.key === ' ') {
-					e.preventDefault();
-					currentTab.click();
 				}
 
 				if (newTab) {

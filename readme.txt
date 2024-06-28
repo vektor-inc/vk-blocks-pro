@@ -106,11 +106,9 @@ e.g.
 == Changelog ==
 
 [ Specification Change ][ Slider ] Change padding style to core system.
+[ Specification Change ][ Tab (Pro) ] Accessibility support
+[ Bug fix ][ Table of Contents (Pro) ] Fix "OBJ" characters appeared in the Table of Contents on Windows.
 [ Bug fix ] Delete unnecessary development files included in 1.76.2.
-
-= 1.76.2 =
-[ Specification Change ] Change Font Awesome Version to 6.5.2
-[ Bug fix ] Fix load font awesome files
 
 = 1.76.1 =
 [ Bug fix ][ Fixed Display (Pro) ] Add css for position and alignment.
@@ -133,7 +131,7 @@ e.g.
 
 = 1.75.0 =
 [ Add Block ][ Fixed Display block (Pro) ] Add Fixed display block.
-[ Bug fix ][ Tab ] Fix the default line style to show the top of the border.
+[ Bug fix ][ Tab (Pro) ] Fix the default line style to show the top of the border.
 [ Specification Change ] Delete unnecessary css value  ( We abolished the --vk-size-text and changed it to 1rem. ).
 
 

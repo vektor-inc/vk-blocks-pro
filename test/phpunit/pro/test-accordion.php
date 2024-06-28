@@ -8,7 +8,7 @@
 /**
  * Accordion block test case.
  */
-class AccordionTest extends VK_UnitTestCase {
+class Accordion extends VK_UnitTestCase {
 	/**
 	 * Post object.
 	 *

@@ -76,7 +76,8 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 
 		// 初期状態でアクティブでないタブボディにhidden="until-found"を追加
-		const vkTabBodiesAll = vkTabBodies.querySelectorAll('.vk_tab_bodys_body');
+		const vkTabBodiesAll =
+			vkTabBodies.querySelectorAll('.vk_tab_bodys_body');
 		vkTabBodiesAll.forEach((tabBody) => {
 			if (!tabBody.classList.contains('vk_tab_bodys_body-state-active')) {
 				tabBody.setAttribute('hidden', 'until-found');

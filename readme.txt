@@ -105,6 +105,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Core Group ] Add toolbar link for components.
 [ Bug fix ] Delete unnecessary development files included in 1.76.2.
 
 = 1.76.2 =

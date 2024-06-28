@@ -13,7 +13,7 @@
 		}
 	],
 	"require": {
-		"vektor-inc/font-awesome-versions": "^0.5.0",
+		"vektor-inc/font-awesome-versions": "^0.6.2",
 		"vektor-inc/vk-swiper": "^0.3.4",
 		"tgmpa/tgm-plugin-activation": "dev-develop",
 		"yahnis-elsts/plugin-update-checker": "^5.0",

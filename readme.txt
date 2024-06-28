@@ -106,6 +106,7 @@ e.g.
 == Changelog ==
 
 [ Bug fix ] Delete unnecessary development files included in 1.76.2.
+[ Fix ][ FAQ ][ FAQ2 ] add aria-label for accessibility
 
 = 1.76.2 =
 [ Specification Change ] Change Font Awesome Version to 6.5.2

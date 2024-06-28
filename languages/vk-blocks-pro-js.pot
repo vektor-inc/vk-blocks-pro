@@ -1508,7 +1508,7 @@ msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:209
 #: src/blocks/border-box/edit.js:239
-#: src/extensions/core/group/style.js:46
+#: src/extensions/core/group/style.js:94
 msgid "Border Color"
 msgstr ""
 
@@ -3512,7 +3512,11 @@ msgstr ""
 msgid "Reverse"
 msgstr ""
 
-#: src/extensions/core/group/style.js:51
+#: src/extensions/core/group/style.js:181
+msgid "Group link"
+msgstr ""
+
+#: src/extensions/core/group/style.js:99
 msgid ""
 "Because of the theme that enabled theme.json become can specify the color "
 "from border panel that, specification from here is deprecated."

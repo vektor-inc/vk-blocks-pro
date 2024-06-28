@@ -10,7 +10,7 @@ module.exports = ( api ) => {
 			'@emotion/babel-plugin',
 			'babel-plugin-inline-json-import',
 			"@babel/plugin-transform-async-to-generator",
-    		"@babel/plugin-transform-regenerator"
-		 ],
+			"@babel/plugin-transform-regenerator"
+		],
 	};
 };

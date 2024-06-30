@@ -178,7 +178,7 @@ const save = (props) => {
 					href={linkUrl}
 					target={linkTarget}
 					rel={relAttribute}
-					aria-label="Group block link"
+					aria-label={__('Group link', 'vk-blocks-pro')}
 					className={`${prefix}-vk-link`}
 				></a>
 			)}

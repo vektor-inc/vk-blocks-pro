@@ -1508,7 +1508,7 @@ msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:209
 #: src/blocks/border-box/edit.js:239
-#: src/extensions/core/group/style.js:94
+#: src/extensions/core/group/style.js:46
 msgid "Border Color"
 msgstr ""
 
@@ -2040,15 +2040,15 @@ msgstr ""
 msgid "First Dot Number"
 msgstr ""
 
-#: src/blocks/_pro/tab-item/edit.js:132
+#: src/blocks/_pro/tab-item/edit.js:134
 msgid "Tab Color Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab-item/edit.js:135
+#: src/blocks/_pro/tab-item/edit.js:137
 msgid "Tab Color"
 msgstr ""
 
-#: src/blocks/_pro/tab-item/index.js:17
+#: src/blocks/_pro/tab-item/index.js:18
 msgid "Tab Item"
 msgstr ""
 
@@ -2060,31 +2060,31 @@ msgstr ""
 msgid "Tab 02"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:473
+#: src/blocks/_pro/tab/edit.js:475
 msgid "Tab Label [ %s ]"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:497
+#: src/blocks/_pro/tab/edit.js:501
 msgid "Tab size Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:499
+#: src/blocks/_pro/tab/edit.js:503
 msgid "Tab Size ( Smart Phone )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:516
+#: src/blocks/_pro/tab/edit.js:520
 msgid "Tab Size ( Tablet )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:533
+#: src/blocks/_pro/tab/edit.js:537
 msgid "Tab Size ( PC )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:537
+#: src/blocks/_pro/tab/edit.js:541
 msgid "Fit to the text"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:541
+#: src/blocks/_pro/tab/edit.js:545
 msgid "Monospaced"
 msgstr ""
 
@@ -3512,11 +3512,7 @@ msgstr ""
 msgid "Reverse"
 msgstr ""
 
-#: src/extensions/core/group/style.js:181
-msgid "Group link"
-msgstr ""
-
-#: src/extensions/core/group/style.js:99
+#: src/extensions/core/group/style.js:51
 msgid ""
 "Because of the theme that enabled theme.json become can specify the color "
 "from border panel that, specification from here is deprecated."

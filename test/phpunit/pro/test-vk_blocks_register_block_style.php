@@ -145,8 +145,8 @@ class BlockStyleTest extends VK_UnitTestCase {
 				$this->assertSame( wp_style_is( $handle, 'registered' ), $value );
 			}
 
-			delete_option( 'vk_blocks_options' );
-			wp_delete_post( $post_id, true );
-		}
-	}
+            delete_option( 'vk_blocks_options' );
+            wp_delete_post( $post_id, true );
+        }
+    }
 }

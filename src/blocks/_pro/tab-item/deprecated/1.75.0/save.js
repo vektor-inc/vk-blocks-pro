@@ -6,13 +6,13 @@ export default function save(props) {
 	const { tabBodyActive, tabColor, tabBodyBorderTop, blockId } = attributes;
 
 	let activeBodyClass = '';
-	if (tabBodyActive) {
+	if (tabBodyActive === true) {
 		activeBodyClass = ' vk_tab_bodys_body-state-active';
 	}
 
 	let tabBodyClass = '';
 	let tabBodyStyle = {};
-	if (tabBodyBorderTop) {
+	if (tabBodyBorderTop === true) {
 		tabBodyClass = ' has-border-top';
 		if (!isHexColor(tabColor)) {
 			tabBodyClass += ` has-${tabColor}-border-color`;
@@ -29,10 +29,17 @@ export default function save(props) {
 		style: {
 			...tabBodyStyle,
 		},
-		role: 'tabpanel',
-		'aria-labelledby': `vk_tab_labels_label-${blockId}`,
-		hidden: !tabBodyActive ? 'until-found' : undefined,
 	});
+
+	// Add vk_block-margin-0 class to existing tab group blocks
+	let newClassName = blockProps.className || '';
+	if (!/vk_block-margin-.*--margin-top/.test(newClassName)) {
+		newClassName += ' vk_block-margin-0--margin-top';
+	}
+	if (!/vk_block-margin-.*--margin-bottom/.test(newClassName)) {
+		newClassName += ' vk_block-margin-0--margin-bottom';
+	}
+	blockProps.className = newClassName.trim();
 
 	return (
 		<div {...blockProps}>

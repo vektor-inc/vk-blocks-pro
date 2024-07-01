@@ -1,6 +1,6 @@
 import save1_3_9 from './1.3.9/save';
 import save1_12_0 from './1.12.0/save';
-import save1_76_0 from './1.76.0/save';
+import save1_76_2 from './1.76.2/save';
 
 const blockAttributes = {};
 
@@ -16,8 +16,9 @@ const blockAttributes2 = {
 };
 
 /**
- * 1.76.0 で値を追加
+ * 1.76.2 で値を追加
  */
+/*
 const blockAttributes3 = {
 	...blockAttributes2,
 	initialState: {
@@ -41,11 +42,12 @@ const blockAttributes3 = {
 		default: false
 	}
 };
+*/
 
 const deprecated = [
 	{
-		attributes: blockAttributes3,
-		save: save1_76_0
+		attributes: blockAttributes2,
+		save: save1_76_2
 	},
 	{
 		attributes: blockAttributes2,

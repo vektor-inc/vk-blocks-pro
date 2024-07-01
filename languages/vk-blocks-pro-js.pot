@@ -551,6 +551,7 @@ msgid "XXL"
 msgstr ""
 
 #: src/admin/margin.js:51
+#: src/blocks/_pro/accordion/edit.js:139
 #: src/blocks/_pro/outer/edit.js:1028
 #: src/blocks/button/edit.js:537
 #: src/blocks/slider/edit.js:952
@@ -559,6 +560,7 @@ msgid "PC"
 msgstr ""
 
 #: src/admin/margin.js:55
+#: src/blocks/_pro/accordion/edit.js:122
 #: src/blocks/_pro/outer/edit.js:1012
 #: src/blocks/button/edit.js:472
 #: src/blocks/slider/edit.js:973
@@ -567,6 +569,7 @@ msgid "Tablet"
 msgstr ""
 
 #: src/admin/margin.js:59
+#: src/blocks/_pro/accordion/edit.js:105
 #: src/blocks/_pro/outer/edit.js:996
 #: src/blocks/button/edit.js:407
 #: src/blocks/slider/edit.js:994
@@ -617,6 +620,28 @@ msgstr ""
 #: src/admin/save-button.js:88
 #: src/extensions/common/custom-block-variation/save-button/index.js:75
 msgid "Save Success"
+msgstr ""
+
+#: src/blocks/_pro/accordion/edit.js:160
+msgid "Default Initial State"
+msgstr ""
+
+#: src/blocks/_pro/accordion/edit.js:164
+msgid "Close"
+msgstr ""
+
+#: src/blocks/_pro/accordion/edit.js:168
+msgid "Open"
+msgstr ""
+
+#: src/blocks/_pro/accordion/edit.js:93
+#: src/blocks/faq/edit.js:34
+#: src/blocks/faq2/edit.js:23
+msgid "Accordion Setting"
+msgstr ""
+
+#: src/blocks/_pro/accordion/edit.js:95
+msgid "Set initial state per device"
 msgstr ""
 
 #: src/blocks/_pro/accordion/index.js:22
@@ -2040,15 +2065,15 @@ msgstr ""
 msgid "First Dot Number"
 msgstr ""
 
-#: src/blocks/_pro/tab-item/edit.js:132
+#: src/blocks/_pro/tab-item/edit.js:134
 msgid "Tab Color Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab-item/edit.js:135
+#: src/blocks/_pro/tab-item/edit.js:137
 msgid "Tab Color"
 msgstr ""
 
-#: src/blocks/_pro/tab-item/index.js:17
+#: src/blocks/_pro/tab-item/index.js:18
 msgid "Tab Item"
 msgstr ""
 
@@ -2060,31 +2085,31 @@ msgstr ""
 msgid "Tab 02"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:473
+#: src/blocks/_pro/tab/edit.js:475
 msgid "Tab Label [ %s ]"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:497
+#: src/blocks/_pro/tab/edit.js:501
 msgid "Tab size Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:499
+#: src/blocks/_pro/tab/edit.js:503
 msgid "Tab Size ( Smart Phone )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:516
+#: src/blocks/_pro/tab/edit.js:520
 msgid "Tab Size ( Tablet )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:533
+#: src/blocks/_pro/tab/edit.js:537
 msgid "Tab Size ( PC )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:537
+#: src/blocks/_pro/tab/edit.js:541
 msgid "Fit to the text"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:541
+#: src/blocks/_pro/tab/edit.js:545
 msgid "Monospaced"
 msgstr ""
 
@@ -2527,11 +2552,6 @@ msgstr ""
 #: src/blocks/faq/edit.js:19
 #: src/blocks/faq2/edit.js:76
 msgid "You can be collapsing this block at VK Blocks Pro"
-msgstr ""
-
-#: src/blocks/faq/edit.js:34
-#: src/blocks/faq2/edit.js:23
-msgid "Accordion Setting"
 msgstr ""
 
 #: src/blocks/faq/edit.js:44

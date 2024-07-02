@@ -2,7 +2,6 @@ import { __ } from '@wordpress/i18n';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
-import classnames from 'classnames';
 
 export default function save({ attributes }) {
 	// eslint-disable-next-line camelcase

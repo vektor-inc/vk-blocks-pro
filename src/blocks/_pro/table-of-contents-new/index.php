@@ -21,10 +21,33 @@ function vk_blocks_register_block_table_of_contents_new() {
 		);
 	}
 
+	// Register Style.
+	if ( ! is_admin() ) {
+		wp_register_script(
+			'vk-blocks/table-of-contents-new-script',
+			VK_BLOCKS_DIR_URL . 'build/vk-table-of-contents-new.min.js',
+			array(),
+			VK_BLOCKS_VERSION,
+			true
+		);
+	}
+	
+	// Register Style.
+	if ( ! is_admin() ) {
+		wp_register_script(
+			'vk-blocks/table-of-contents-new-script',
+			VK_BLOCKS_DIR_URL . 'build/vk-table-of-contents-new.min.js',
+			array(),
+			VK_BLOCKS_VERSION,
+			true
+		);
+	}
+	
 	register_block_type(
 		__DIR__,
 		array(
 			'style'         => 'vk-blocks/table-of-contents-new',
+			'script'        => 'vk-blocks/table-of-contents-new-script',
 			'editor_style'  => 'vk-blocks-build-editor-css',
 			'editor_script' => 'vk-blocks-build-js',
 		)

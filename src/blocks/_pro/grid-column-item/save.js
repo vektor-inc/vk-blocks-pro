@@ -1,6 +1,8 @@
+import { __ } from '@wordpress/i18n';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import classnames from 'classnames';
 
 export default function save({ attributes }) {
 	// eslint-disable-next-line camelcase
@@ -19,6 +21,8 @@ export default function save({ attributes }) {
 		paddingX,
 		paddingBottom,
 		paddingUnit,
+		linkUrl,
+		linkTarget, // linkUrlとlinkTargetを追加
 	} = attributes;
 	// eslint-disable-next-line camelcase
 	const columnClass = `col-${convertToGrid(col_xs)} col-sm-${convertToGrid(
@@ -84,6 +88,23 @@ export default function save({ attributes }) {
 		style,
 	});
 
+	const relAttribute =
+		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
+
+	const GetLinkUrl = () => (
+		<a
+			href={linkUrl}
+			target={linkTarget}
+			className="vk_gridColumn_item_link"
+			rel={relAttribute}
+			aria-label={__('Grid column item link', 'vk-blocks-pro')}
+		>
+			<span className="screen-reader-text">
+				{__('Grid column item link', 'vk-blocks-pro')}
+			</span>
+		</a>
+	);
+
 	return (
 		<>
 			<div {...blockProps}>
@@ -101,11 +122,20 @@ export default function save({ attributes }) {
 								className={`vk_gridColumn_item_inner ${vkGridColumnTextColorClassName} ${vkGridColumnbackgroundColorColorClassName}`}
 								style={columStyle}
 							>
+								{linkUrl && GetLinkUrl()}
 								<InnerBlocks.Content />
 							</div>
 						);
 					}
-					return <InnerBlocks.Content />;
+					return (
+						<div
+							className={`vk_gridColumn_item_inner ${vkGridColumnTextColorClassName} ${vkGridColumnbackgroundColorColorClassName}`}
+							style={columStyle}
+						>
+							{linkUrl && GetLinkUrl()}
+							<InnerBlocks.Content />
+						</div>
+					);
 				})()}
 			</div>
 		</>

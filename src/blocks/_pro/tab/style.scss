@@ -95,6 +95,7 @@ $xl-min: 1200px;
 	}
 	.vk_tab_bodys {
 		border-top: 1px solid var(--vk-color-border);
+		margin-top: -1px; // border-top と重ねるため
 		.has-border-top {
 			border-top: none;
 		}

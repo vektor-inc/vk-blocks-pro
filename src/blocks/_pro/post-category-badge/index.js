@@ -15,6 +15,5 @@ export { metadata, name };
 
 export const settings = {
 	icon: <Icon />,
-	edit
+	edit,
 };
-

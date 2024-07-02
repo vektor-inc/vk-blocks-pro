@@ -5,7 +5,6 @@ import {
 	InspectorControls,
 	AlignmentToolbar,
 	BlockControls,
-	useBlockDisplayInformation
 } from '@wordpress/block-editor';
 import { useSelect } from '@wordpress/data';
 import {
@@ -16,7 +15,7 @@ import {
 } from '@wordpress/components';
 
 export default function CategoryBadgeEdit(props) {
-	const { attributes, setAttributes, clientId, context } = props;
+	const { attributes, setAttributes, context } = props;
 	const { hasLink, taxonomy, textAlign } = attributes;
 	const { postId, postType } = context;
 
@@ -35,7 +34,6 @@ export default function CategoryBadgeEdit(props) {
 	const taxonomies =
 		useSelect(
 			(select) => {
-
 				const allTaxonomies = select('core').getTaxonomies();
 
 				// post_tagとタグタイプのタクソノミーを除外して返す
@@ -44,15 +42,13 @@ export default function CategoryBadgeEdit(props) {
 							(_taxonomy) =>
 								_taxonomy.slug !== 'post_tag' &&
 								_taxonomy.hierarchical
-					  )
+						)
 					: [];
 			},
 			[postType]
 		) || [];
 
-	console.log(taxonomies);
 	// 対象のタームが見つからなかったらタクソノミ名を表示
-	const blockInformation = useBlockDisplayInformation( clientId );
 	const blockProps = useBlockProps({
 		className: classnames('vk_categoryBadge', {
 			[`has-text-align-${textAlign}`]: !!textAlign,
@@ -64,14 +60,12 @@ export default function CategoryBadgeEdit(props) {
 		},
 	});
 
-
 	const getLabelBySlug = (slug, taxonomies) => {
-		const taxonomy = taxonomies.find(tax => tax.slug === slug);
+		const taxonomy = taxonomies.find((tax) => tax.slug === slug);
 		return taxonomy ? taxonomy.name : null;
-	}
+	};
 
-	const selectedTaxonomyName = getLabelBySlug( taxonomy, taxonomies );
-	console.log(selectedTaxonomyName);	
+	const selectedTaxonomyName = getLabelBySlug(taxonomy, taxonomies);
 
 	const url = termColorInfo?.term_url ?? '';
 	const termName = isLoading ? (
@@ -79,7 +73,6 @@ export default function CategoryBadgeEdit(props) {
 	) : (
 		termColorInfo?.term_name ?? `(${selectedTaxonomyName})`
 	);
-
 
 	return (
 		<>

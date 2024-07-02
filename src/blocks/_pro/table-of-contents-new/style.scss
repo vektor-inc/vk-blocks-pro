@@ -71,34 +71,20 @@ $toc-left-margin: 1rem;
 		font-size: 0.8em;
 		letter-spacing: 2px;
 		line-height: 1;
-		text-align: center;
-		display: block;
-		margin: 0.5em auto 0;
-		width: 6em;
 		border: 1px solid #999;
 		padding: 3px 1em 2px;
 	}
-	.button_status-open {
-		&::before {
-			content: "CLOSE";
-		}
-	}
-	.button_status-close {
-		&::before {
-			content: "OPEN";
-		}
-	}
 	.button_status {
-		&::before {
-			color: #666;
-			font-size: 0.8em;
-			border-radius: 2px;
-			display: inline-block;
-			text-align: center;
-			margin: auto;
-			width: auto;
-			transition: all 0.35s;
-		}
+		color: #666;
+		font-size: 0.64em;
+		border-radius: 2px;
+		display: inline-block;
+		margin: auto;
+		width: auto;
+		transition: all 0.35s;
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
 	}
 	/* Accordion styles */
 	.tab {
@@ -124,16 +110,6 @@ $toc-left-margin: 1rem;
 	}
 	// :checked
 	input:checked {
-		~ .button_status-open {
-			&::before {
-				content: "OPEN";
-			}
-		}
-		~ .button_status-close {
-			&::before {
-				content: "CLOSE";
-			}
-		}
 		~ .tab_content-open {
 			max-height: 0;
 			padding: 0 1em;
@@ -141,6 +117,35 @@ $toc-left-margin: 1rem;
 		~ .tab_content-close {
 			max-height: 100%;
 			padding: 1em;
+		}
+	}
+
+	.vk_tableOfContents_list {
+		margin-bottom: 0; // for lightning
+	}
+
+	// 編集画面、または ver 1.76.2 以前で疑似要素を使用時
+	.button_status-open:not(#vk-tab-label) {
+		&::before {
+			content: "CLOSE";
+		}
+	}
+	.button_status-close:not(#vk-tab-label) {
+		&::before {
+			content: "OPEN";
+		}
+	}
+	// :checked
+	input:checked {
+		~ .button_status-open:not(#vk-tab-label) {
+			&::before {
+				content: "OPEN";
+			}
+		}
+		~ .button_status-close:not(#vk-tab-label) {
+			&::before {
+				content: "CLOSE";
+			}
 		}
 	}
 }

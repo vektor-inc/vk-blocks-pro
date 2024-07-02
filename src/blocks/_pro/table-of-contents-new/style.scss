@@ -119,4 +119,33 @@ $toc-left-margin: 1rem;
 			padding: 1em;
 		}
 	}
+
+	.vk_tableOfContents_list {
+		margin-bottom: 0; // for lightning
+	}
+
+	// ver 1.76.2 以前(疑似要素を使ってたころ)の対応
+	.button_status-open:not(#vk-tab-label) {
+		&::before {
+			content: "CLOSE";
+		}
+	}
+	.button_status-close:not(#vk-tab-label) {
+		&::before {
+			content: "OPEN";
+		}
+	}
+	// :checked
+	input:checked {
+		~ .button_status-open:not(#vk-tab-label) {
+			&::before {
+				content: "OPEN";
+			}
+		}
+		~ .button_status-close:not(#vk-tab-label) {
+			&::before {
+				content: "CLOSE";
+			}
+		}
+	}
 }

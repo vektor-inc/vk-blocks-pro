@@ -106,6 +106,7 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Grid Column (Pro) ] Add toolbar link for components by item.
+[ Add function ][ Outer (Pro) ] Add toolbar link for components.
 [ Add function ][ Accordion ] Added initial display state setting.
 [ Specification Change ][ Tab (Pro) ] Accessibility support
 [ Bug fix ][ Table of Contents (Pro) ] Fix "OBJ" characters appeared in the Table of Contents on Windows.
@@ -120,19 +121,11 @@ e.g.
 = 1.76.0 =
 [ Add function ] Add Setting for the position of VK Blocks on all block inserter. 
 [ Add function ][ Border Box ] Add title tag setting.
-= 1.76.1 =
-[ Bug fix ][ Fixed Display (Pro) ] Add css for position and alignment.
-[ Bug fix ][ Post List (Pro) ] Fixed sorting by display order other than publication date to work for multiple post types.
-[ Other ] Add Transform vk-blocks/heading ( Not Recommended ) to core/heading.
-[ Other ] Delete old deprecated code
-
-= 1.76.0 =
-[ Add function ] Add Setting for the position of VK Blocks on all block inserter. 
-[ Add function ][ Border Box ] Add title tag setting.
 [ Add function ][ Slider ] Add url interface to block toolbar for slider item.
 [ Specification Change ][ Post List (Pro) ] Displayed taxonomies now only show for selected post types.
 [ Specification Change ][ Responsive Spacer ] Added CSS to remove margins from the default theme.
 [ Bug fix ][ Tab ] Fix background color of tab disappearing when clicking active tab.
+[ Add function ][ Slider Item ] Add toolbar link for components.
 [ Other ] Add toolbar link to components.
 
 = 1.75.1 =

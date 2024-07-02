@@ -1,4 +1,5 @@
 import save0591 from './0.59.1/save';
+import save1_76_2 from './1.76.2/save';
 
 const blockAttributes = {
 	style: {
@@ -23,6 +24,10 @@ const deprecated = [
 	{
 		attributes: blockAttributes,
 		save: save0591,
+	},
+	{
+		attributes: blockAttributes,
+		save: save1_76_2,
 	},
 ];
 export default deprecated;

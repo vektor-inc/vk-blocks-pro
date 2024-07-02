@@ -5,6 +5,7 @@ import {
 	InspectorControls,
 	AlignmentToolbar,
 	BlockControls,
+	useBlockDisplayInformation
 } from '@wordpress/block-editor';
 import { useSelect } from '@wordpress/data';
 import {
@@ -15,7 +16,7 @@ import {
 } from '@wordpress/components';
 
 export default function CategoryBadgeEdit(props) {
-	const { attributes, setAttributes, context } = props;
+	const { attributes, setAttributes, clientId, context } = props;
 	const { hasLink, taxonomy, textAlign } = attributes;
 	const { postId, postType } = context;
 
@@ -30,21 +31,16 @@ export default function CategoryBadgeEdit(props) {
 		[taxonomy]
 	);
 
-	// 投稿に関連付けられたタクソノミーを取得
+	// タクソノミー一覧を取得
 	const taxonomies =
 		useSelect(
 			(select) => {
-				if (!postType) {
-					return null;
-				}
 
-				const relatedTaxonomies = select('core').getTaxonomies({
-					type: postType,
-				});
+				const allTaxonomies = select('core').getTaxonomies();
 
 				// post_tagとタグタイプのタクソノミーを除外して返す
-				return relatedTaxonomies
-					? relatedTaxonomies.filter(
+				return allTaxonomies
+					? allTaxonomies.filter(
 							(_taxonomy) =>
 								_taxonomy.slug !== 'post_tag' &&
 								_taxonomy.hierarchical
@@ -54,6 +50,9 @@ export default function CategoryBadgeEdit(props) {
 			[postType]
 		) || [];
 
+	console.log(taxonomies);
+	// 対象のタームが見つからなかったらタクソノミ名を表示
+	const blockInformation = useBlockDisplayInformation( clientId );
 	const blockProps = useBlockProps({
 		className: classnames('vk_categoryBadge', {
 			[`has-text-align-${textAlign}`]: !!textAlign,
@@ -65,12 +64,22 @@ export default function CategoryBadgeEdit(props) {
 		},
 	});
 
+
+	const getLabelBySlug = (slug, taxonomies) => {
+		const taxonomy = taxonomies.find(tax => tax.slug === slug);
+		return taxonomy ? taxonomy.name : null;
+	}
+
+	const selectedTaxonomyName = getLabelBySlug( taxonomy, taxonomies );
+	console.log(selectedTaxonomyName);	
+
 	const url = termColorInfo?.term_url ?? '';
 	const termName = isLoading ? (
 		<Spinner />
 	) : (
-		termColorInfo?.term_name ?? __('Not Set', 'vk-blocks-pro')
+		termColorInfo?.term_name ?? `(${selectedTaxonomyName})`
 	);
+
 
 	return (
 		<>

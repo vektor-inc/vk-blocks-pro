@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.3
 Tested up to: 6.5
-Stable tag: 1.76.1.1
+Stable tag: 1.77.0.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -105,6 +105,7 @@ e.g.
 
 == Changelog ==
 
+= 1.77.0 =
 [ Add function ][ Outer (Pro) ] Add toolbar link for components.
 [ Add function ][ Accordion ] Added initial display state setting.
 [ Specification Change ][ Tab (Pro) ] Accessibility support

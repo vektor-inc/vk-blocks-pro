@@ -125,6 +125,8 @@ const blockAttributes2 = {
 	}
 }
 
+/* 1.76.2よりあとのバージョンで追加された属性 */
+/*
 const blockAttributes3 = {
 	...blockAttributes2,
 	linkUrl: {
@@ -135,10 +137,11 @@ const blockAttributes3 = {
 		default: ''
 	}
 }
+*/
 
 const deprecated = [
 	{
-		attributes: blockAttributes3,
+		attributes: blockAttributes2,
 		save: save1_76_2,
 	},
 	{

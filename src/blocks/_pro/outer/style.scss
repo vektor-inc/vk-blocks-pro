@@ -1,5 +1,4 @@
 /*-------------------------------------------*/
-
 /* CSS
 /*-------------------------------------------*/
 $media-sm-up: 576px;
@@ -13,12 +12,24 @@ $media-lg-down: 991.98px;
 $media-xl-down: 1199.98px;
 $media-xxl-down: 1399.98px;
 
-//.wp-block-vk-blocks-outerがないと打ち消されてしまうので追加
+// .wp-block-vk-blocks-outerがないと打ち消されてしまうので追加
 .wp-block-vk-blocks-outer.vk_outer {
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	position: relative;
+
+	// リンク設定
+	& > .vkb-outer-link {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		color: transparent;
+		cursor: pointer;
+		z-index: 10;
+	}
 
 	/**
 	* Outer block deprecated
@@ -58,7 +69,8 @@ $media-xxl-down: 1399.98px;
 		}
 	}
 
-	.vk_outer_container {
+	.vk_outer_container,
+	.vkb-outer_container {
 		position: relative;
 		min-height: 24px;
 		z-index: 1;
@@ -67,17 +79,19 @@ $media-xxl-down: 1399.98px;
 		h3:first-child,
 		h4:first-child,
 		h5:first-child {
-			//他テーマ用
+			// 他テーマ用
 			margin-top: 0;
 		}
 	}
 }
+
 // これがないとレスポンシブスペーサーの共通高さが検出しない。
 .vk_outer {
 	display: block;
 	overflow: hidden;
 }
-//iOS Safari での1pxズレの予防のため　Only Safari 10.1+
+
+// iOS Safari での1pxズレの予防のため Only Safari 10.1+
 @supports (-webkit-touch-callout: none) {
 	.wp-block-vk-blocks-outer {
 		margin-top: -0.45px;
@@ -89,6 +103,7 @@ $media-xxl-down: 1399.98px;
 	padding-left: calc(50dvw - 50%);
 	padding-right: calc(50dvw - 50%);
 }
+
 $padding-none: 1.5em;
 $padding-sm: 2em;
 $padding-md: 2.5em;
@@ -166,6 +181,7 @@ $padding-xxl: 4em;
 	// 画面サイズ毎の指定が background に対してされていて attachment と size が無効化されるため !important を消さないこと
 	background-attachment: fixed !important;
 	background-size: cover !important;
+
 	// iPhone の時に fixed のままだとバグで反応せずに画像のcoverまで効かなくなって巨大な画像が表示されるので
 	// scroll で上書きする
 	@supports (-webkit-overflow-scrolling: touch) {
@@ -195,7 +211,7 @@ $padding-xxl: 4em;
 		position: absolute;
 		left: 0;
 		width: 100%;
-		pointer-events: none; //上に重なるとボタンなどのリンクが押せなくなるので追加
+		pointer-events: none; // 上に重なるとボタンなどのリンクが押せなくなるので追加
 	}
 }
 
@@ -222,12 +238,12 @@ $color-danger: #b52727;
 	min-height: var(--min-height-mobile);
 
 	@media (min-width: 576px) {
-		  min-height: var(--min-height-tablet);
-		}
-	  
-		@media (min-width: 992px) {
-		  min-height: var(--min-height-pc);
-		}
+		min-height: var(--min-height-tablet);
+	}
+
+	@media (min-width: 992px) {
+		min-height: var(--min-height-pc);
+	}
 }
 
 /*-------------------------------------------*/
@@ -241,22 +257,27 @@ $color-danger: #b52727;
 .vk_outer-paddingLR-use {
 	--padding-left: 1.5em;
 	--padding-right: 1.5em;
+
 	@media (min-width: $media-sm-up) {
 		--padding-left: 2em;
 		--padding-right: 2em;
 	}
+
 	@media (min-width: $media-md-up) {
 		--padding-left: 2.5em;
 		--padding-right: 2.5em;
 	}
+
 	@media (min-width: $media-lg-up) {
 		--padding-left: 3em;
 		--padding-right: 3em;
 	}
+
 	@media (min-width: $media-xl-up) {
 		--padding-left: 3.5em;
 		--padding-right: 3.5em;
 	}
+
 	@media (min-width: $media-xxl-up) {
 		--padding-left: 4em;
 		--padding-right: 4em;

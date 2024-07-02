@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2024-06-28T07:58:21+00:00\n"
-"PO-Revision-Date: 2024-07-01 09:16+0900\n"
+"POT-Creation-Date: 2024-07-02T01:46:16+00:00\n"
+"PO-Revision-Date: 2024-07-02 11:05+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -98,7 +98,6 @@ msgid "image"
 msgstr "画像"
 
 #: src/admin/block-category-position.js:20 inc/vk-blocks/admin/admin.php:109
-#: src/admin/block-category-position.js:20 inc/vk-blocks/admin/admin.php:109
 msgid "Block Category Position Setting"
 msgstr "ブロックカテゴリー位置設定"
 
@@ -112,17 +111,14 @@ msgstr "WordPress標準ブロックの下"
 
 #: src/admin/block-manager/index.js:51 src/admin/import-export/index.js:106
 #: inc/vk-blocks/admin/admin.php:118
-#: inc/vk-blocks/admin/admin.php:118
 msgid "Block Manager Setting"
 msgstr "ブロックマネージャー設定"
 
 #: src/admin/block-style-manager/index.js:27
 #: src/admin/import-export/index.js:115 inc/vk-blocks/admin/admin.php:119
-#: src/admin/import-export/index.js:115 inc/vk-blocks/admin/admin.php:119
 msgid "Block Style Manager Setting"
 msgstr "ブロックスタイルマネージャー設定"
 
-#: src/admin/breadcrumb.js:24 inc/vk-blocks-pro/admin-pro/admin-pro.php:15
 #: src/admin/breadcrumb.js:24 inc/vk-blocks-pro/admin-pro/admin-pro.php:15
 msgid "Breadcrumb Setting"
 msgstr "パンくずリスト設定"
@@ -216,7 +212,6 @@ msgstr "(例) %s-block-style"
 
 #: src/admin/custom-block-style/index.js:77
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:31
-#: src/admin/import-export/index.js:52 inc/vk-blocks/admin/admin.php:113
 #: src/admin/import-export/index.js:52 inc/vk-blocks/admin/admin.php:113
 msgid "Custom Block Style Setting"
 msgstr "カスタムブロックスタイル設定"
@@ -1524,7 +1519,7 @@ msgid "Border Width"
 msgstr "線の幅"
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:209
-#: src/blocks/border-box/edit.js:236 src/extensions/core/group/style.js:46
+#: src/blocks/border-box/edit.js:239 src/extensions/core/group/style.js:94
 msgid "Border Color"
 msgstr "線の色"
 
@@ -2039,15 +2034,15 @@ msgstr "Font Awesome の class 名が入力されている場合は数字は上�
 msgid "First Dot Number"
 msgstr "ステップの開始番号"
 
-#: src/blocks/_pro/tab-item/edit.js:132
+#: src/blocks/_pro/tab-item/edit.js:134
 msgid "Tab Color Setting"
 msgstr "タブカラー設定"
 
-#: src/blocks/_pro/tab-item/edit.js:135
+#: src/blocks/_pro/tab-item/edit.js:137
 msgid "Tab Color"
 msgstr "タブカラー"
 
-#: src/blocks/_pro/tab-item/index.js:17
+#: src/blocks/_pro/tab-item/index.js:18
 msgid "Tab Item"
 msgstr "タブアイテム"
 
@@ -2059,31 +2054,31 @@ msgstr "タブ 01"
 msgid "Tab 02"
 msgstr "タブ 02"
 
-#: src/blocks/_pro/tab/edit.js:473
+#: src/blocks/_pro/tab/edit.js:475
 msgid "Tab Label [ %s ]"
 msgstr "タブラベル [ %s ]"
 
-#: src/blocks/_pro/tab/edit.js:497
+#: src/blocks/_pro/tab/edit.js:501
 msgid "Tab size Setting"
 msgstr "タブサイズ設定"
 
-#: src/blocks/_pro/tab/edit.js:499
+#: src/blocks/_pro/tab/edit.js:503
 msgid "Tab Size ( Smart Phone )"
 msgstr "タブサイズ ( スマートフォン )"
 
-#: src/blocks/_pro/tab/edit.js:516
+#: src/blocks/_pro/tab/edit.js:520
 msgid "Tab Size ( Tablet )"
 msgstr "タブサイズ ( タブレット )"
 
-#: src/blocks/_pro/tab/edit.js:533
+#: src/blocks/_pro/tab/edit.js:537
 msgid "Tab Size ( PC )"
 msgstr "タブサイズ ( PC )"
 
-#: src/blocks/_pro/tab/edit.js:537
+#: src/blocks/_pro/tab/edit.js:541
 msgid "Fit to the text"
 msgstr "テキストに合わせる"
 
-#: src/blocks/_pro/tab/edit.js:541
+#: src/blocks/_pro/tab/edit.js:545
 msgid "Monospaced"
 msgstr "等幅"
 
@@ -3525,15 +3520,16 @@ msgstr "逆"
 
 #: src/extensions/core/group/style.js:181
 msgid "Group link"
-msgstr "グループリンク"
+msgstr "グループリンク!"
 
 #: src/extensions/core/group/style.js:99
+#, fuzzy
+#| msgid ""
+#| "Because of the theme that enabled theme.json become can specify the color "
 msgid ""
 "Because of the theme that enabled theme.json become can specify the color "
 "from border panel that, specification from here is deprecated."
-msgstr ""
-"theme.json が有効なテーマの場合は「枠線」パネルから色指定が可能になったため、"
-"ここでの色指定は非推奨になりました。"
+msgstr "ここでの色指定は非推奨になりました。"
 
 #: src/extensions/core/list/style.js:107
 msgid "List Icon Color"

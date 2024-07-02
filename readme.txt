@@ -66,6 +66,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Responsive BR
 * Columns direction
 * Custom CSS [ Pro ]
+* Link toolber
 
 [ Settings ]
 * Balloon
@@ -105,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Core Group ] Add toolbar link for components by item.
 [ Add function ][ Accordion ] Added initial display state setting.
 [ Specification Change ][ Tab (Pro) ] Accessibility support
 [ Bug fix ][ Table of Contents (Pro) ] Fix "OBJ" characters appeared in the Table of Contents on Windows.

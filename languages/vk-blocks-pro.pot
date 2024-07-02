@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.76.1.0\n"
+"Project-Id-Version: VK Blocks Pro 1.76.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-06-24T14:23:38+00:00\n"
+"POT-Creation-Date: 2024-07-01T04:29:53+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -560,6 +560,7 @@ msgid "XXL"
 msgstr ""
 
 #: src/admin/margin.js:51
+#: src/blocks/_pro/accordion/edit.js:139
 #: src/blocks/_pro/outer/edit.js:1028
 #: src/blocks/button/edit.js:537
 #: src/blocks/slider/edit.js:952
@@ -568,6 +569,7 @@ msgid "PC"
 msgstr ""
 
 #: src/admin/margin.js:55
+#: src/blocks/_pro/accordion/edit.js:122
 #: src/blocks/_pro/outer/edit.js:1012
 #: src/blocks/button/edit.js:472
 #: src/blocks/slider/edit.js:973
@@ -576,6 +578,7 @@ msgid "Tablet"
 msgstr ""
 
 #: src/admin/margin.js:59
+#: src/blocks/_pro/accordion/edit.js:105
 #: src/blocks/_pro/outer/edit.js:996
 #: src/blocks/button/edit.js:407
 #: src/blocks/slider/edit.js:994
@@ -626,6 +629,28 @@ msgstr ""
 #: src/admin/save-button.js:88
 #: src/extensions/common/custom-block-variation/save-button/index.js:75
 msgid "Save Success"
+msgstr ""
+
+#: src/blocks/_pro/accordion/edit.js:160
+msgid "Default Initial State"
+msgstr ""
+
+#: src/blocks/_pro/accordion/edit.js:164
+msgid "Close"
+msgstr ""
+
+#: src/blocks/_pro/accordion/edit.js:168
+msgid "Open"
+msgstr ""
+
+#: src/blocks/_pro/accordion/edit.js:93
+#: src/blocks/faq/edit.js:34
+#: src/blocks/faq2/edit.js:23
+msgid "Accordion Setting"
+msgstr ""
+
+#: src/blocks/_pro/accordion/edit.js:95
+msgid "Set initial state per device"
 msgstr ""
 
 #: src/blocks/_pro/accordion/index.js:22
@@ -2047,15 +2072,15 @@ msgstr ""
 msgid "First Dot Number"
 msgstr ""
 
-#: src/blocks/_pro/tab-item/edit.js:132
+#: src/blocks/_pro/tab-item/edit.js:134
 msgid "Tab Color Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab-item/edit.js:135
+#: src/blocks/_pro/tab-item/edit.js:137
 msgid "Tab Color"
 msgstr ""
 
-#: src/blocks/_pro/tab-item/index.js:17
+#: src/blocks/_pro/tab-item/index.js:18
 msgid "Tab Item"
 msgstr ""
 
@@ -2067,31 +2092,31 @@ msgstr ""
 msgid "Tab 02"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:473
+#: src/blocks/_pro/tab/edit.js:475
 msgid "Tab Label [ %s ]"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:497
+#: src/blocks/_pro/tab/edit.js:501
 msgid "Tab size Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:499
+#: src/blocks/_pro/tab/edit.js:503
 msgid "Tab Size ( Smart Phone )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:516
+#: src/blocks/_pro/tab/edit.js:520
 msgid "Tab Size ( Tablet )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:533
+#: src/blocks/_pro/tab/edit.js:537
 msgid "Tab Size ( PC )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:537
+#: src/blocks/_pro/tab/edit.js:541
 msgid "Fit to the text"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:541
+#: src/blocks/_pro/tab/edit.js:545
 msgid "Monospaced"
 msgstr ""
 
@@ -2535,11 +2560,6 @@ msgstr ""
 #: src/blocks/faq/edit.js:19
 #: src/blocks/faq2/edit.js:76
 msgid "You can be collapsing this block at VK Blocks Pro"
-msgstr ""
-
-#: src/blocks/faq/edit.js:34
-#: src/blocks/faq2/edit.js:23
-msgid "Accordion Setting"
 msgstr ""
 
 #: src/blocks/faq/edit.js:44
@@ -3672,7 +3692,6 @@ msgstr ""
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#. translators: %s = plugin name.
 #: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:76
 #: inc/tgm-plugin-activation/tgm-config.php:76
 msgid "Something went wrong with the plugin API."
@@ -3842,19 +3861,21 @@ msgstr ""
 msgid "Load Separete Setting"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/blocks.php:25
+#: dist/vk-blocks-pro/inc/vk-blocks/blocks.php:27
+#: dist/vk-blocks-pro/inc/vk-blocks/blocks.php:67
 #: inc/vk-blocks/blocks.php:27
 #: inc/vk-blocks/blocks.php:67
 msgid "Blocks Layout"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/blocks.php:38
+#: dist/vk-blocks-pro/inc/vk-blocks/blocks.php:40
+#: dist/vk-blocks-pro/inc/vk-blocks/blocks.php:54
 #: inc/vk-blocks/blocks.php:40
 #: inc/vk-blocks/blocks.php:54
 msgid "Blocks"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/blocks.php:52
+#: dist/vk-blocks-pro/inc/vk-blocks/blocks.php:81
 #: inc/vk-blocks/blocks.php:81
 msgid "Deprecated Blocks"
 msgstr ""
@@ -4084,13 +4105,13 @@ msgstr ""
 msgid "Setting saved."
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:255
+#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:327
 #: inc/vk-blocks/view/class-vk-blocks-postlist.php:312
 msgid "Post"
 msgstr ""
 
 #. translators: %s: 投稿タイプ名
-#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:259
+#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:331
 #: inc/vk-blocks/view/class-vk-blocks-postlist.php:316
 msgid "There are no %ss."
 msgstr ""

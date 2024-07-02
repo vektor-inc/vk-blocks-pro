@@ -65,7 +65,7 @@ export default function TabItemEdit(props) {
 	const parentTabBlockList = parentTabBlockIdList[0]
 		? select('core/block-editor').getBlocksByClientId(
 				parentTabBlockIdList[0]
-		  )
+			)
 		: [];
 
 	const parentTabBlock = parentTabBlockList[0] ? parentTabBlockList[0] : {};
@@ -122,12 +122,12 @@ export default function TabItemEdit(props) {
 	}, [clientId]);
 
 	let activeBodyClass = '';
-	if (tabBodyActive === true) {
+	if (tabBodyActive) {
 		activeBodyClass = ' vk_tab_bodys_body-state-active';
 	}
 	let tabBodyClass = '';
 	let tabBodyStyle = {};
-	if (tabBodyBorderTop === true) {
+	if (tabBodyBorderTop) {
 		tabBodyClass = ' has-border-top';
 		if (!isHexColor(tabColor)) {
 			tabBodyClass += ` has-${tabColor}-border-color`;
@@ -144,6 +144,8 @@ export default function TabItemEdit(props) {
 		style: {
 			...tabBodyStyle,
 		},
+		role: 'tabpanel',
+		'aria-labelledby': `vk_tab_labels_label-${blockId}`,
 	});
 
 	return (

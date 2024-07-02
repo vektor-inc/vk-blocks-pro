@@ -31,7 +31,7 @@ function vk_blocks_register_block_table_of_contents_new() {
 			true
 		);
 	}
-	
+
 	// Register Style.
 	if ( ! is_admin() ) {
 		wp_register_script(
@@ -42,7 +42,7 @@ function vk_blocks_register_block_table_of_contents_new() {
 			true
 		);
 	}
-	
+
 	register_block_type(
 		__DIR__,
 		array(

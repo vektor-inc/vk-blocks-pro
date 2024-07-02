@@ -105,6 +105,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Outer (Pro) ] Add toolbar link for components.
 [ Add function ][ Accordion ] Added initial display state setting.
 [ Specification Change ][ Tab (Pro) ] Accessibility support
 [ Bug fix ][ Table of Contents (Pro) ] Fix "OBJ" characters appeared in the Table of Contents on Windows.
@@ -132,6 +133,7 @@ e.g.
 [ Specification Change ][ Post List (Pro) ] Displayed taxonomies now only show for selected post types.
 [ Specification Change ][ Responsive Spacer ] Added CSS to remove margins from the default theme.
 [ Bug fix ][ Tab ] Fix background color of tab disappearing when clicking active tab.
+[ Add function ][ Slider Item ] Add toolbar link for components.
 [ Other ] Add toolbar link to components.
 
 = 1.75.1 =

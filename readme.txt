@@ -105,6 +105,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Tab (Pro) ] Fixed extra space being added to tabs depending on theme.
 [ Add function ][ Accordion ] Added initial display state setting.
 [ Specification Change ][ Tab (Pro) ] Accessibility support
 [ Bug fix ][ Table of Contents (Pro) ] Fix "OBJ" characters appeared in the Table of Contents on Windows.

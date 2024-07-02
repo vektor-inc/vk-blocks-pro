@@ -125,7 +125,6 @@ const blockAttributes2 = {
 	}
 }
 
-/*
 const blockAttributes3 = {
 	...blockAttributes2,
 	linkUrl: {
@@ -136,7 +135,6 @@ const blockAttributes3 = {
 		default: ''
 	}
 }
-*/
 
 const deprecated = [
 	{

@@ -104,6 +104,12 @@ export default function save({ attributes }) {
 		</a>
 	);
 
+	const hasPadding =
+		columStyle.paddingTop !== undefined ||
+		columStyle.paddingRight !== undefined ||
+		columStyle.paddingBottom !== undefined ||
+		columStyle.paddingLeft !== undefined;
+
 	return (
 		<>
 			<div {...blockProps}>
@@ -111,10 +117,7 @@ export default function save({ attributes }) {
 					if (
 						textColor !== undefined ||
 						backgroundColor !== undefined ||
-						columStyle.paddingTop !== undefined ||
-						columStyle.paddingRight !== undefined ||
-						columStyle.paddingBottom !== undefined ||
-						columStyle.paddingLeft !== undefined
+						hasPadding
 					) {
 						return (
 							<div
@@ -126,14 +129,16 @@ export default function save({ attributes }) {
 							</div>
 						);
 					}
-					return (
+					return linkUrl ? (
 						<div
 							className={`vk_gridColumn_item_inner ${vkGridColumnTextColorClassName} ${vkGridColumnbackgroundColorColorClassName}`}
 							style={columStyle}
 						>
-							{linkUrl && GetLinkUrl()}
+							{GetLinkUrl()}
 							<InnerBlocks.Content />
 						</div>
+					) : (
+						<InnerBlocks.Content />
 					);
 				})()}
 			</div>

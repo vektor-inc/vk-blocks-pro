@@ -88,7 +88,7 @@ const blockAttributes4 = {
 	},
 }
 
-/*
+
 // 1.34.1 で blockId を追加
 const blockAttributes5 = {
 	...blockAttributes4,
@@ -96,10 +96,10 @@ const blockAttributes5 = {
 		type: 'string',
 	},
 }
-*/
 
-const blockAttributes5 = {
-	...blockAttributes4,
+// 1.73.0 で linkUrl, linkTarget を追加
+const blockAttributes6 = {
+	...blockAttributes5,
 	linkUrl: {
 		type: 'string'
 	},
@@ -109,9 +109,10 @@ const blockAttributes5 = {
 	},
 }
 
+
 export default [
 	{
-		attributes: blockAttributes5,
+		attributes: blockAttributes6,
 		save: save1_76_0,
 	},
 	{

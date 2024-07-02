@@ -112,6 +112,10 @@ e.g.
 [ Bug fix ][ Table of Contents (Pro) ] Fix "OBJ" characters appeared in the Table of Contents on Windows.
 [ Bug fix ] Delete unnecessary development files included in 1.76.2.
 
+= 1.76.2 =
+[ Specification Change ] Change Font Awesome Version to 6.5.2
+[ Bug fix ] Fix load font awesome files
+
 = 1.76.1 =
 [ Bug fix ][ Fixed Display (Pro) ] Add css for position and alignment.
 [ Bug fix ][ Post List (Pro) ] Fixed sorting by display order other than publication date to work for multiple post types.

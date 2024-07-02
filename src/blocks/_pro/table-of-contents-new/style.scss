@@ -124,7 +124,7 @@ $toc-left-margin: 1rem;
 		margin-bottom: 0; // for lightning
 	}
 
-	// ver 1.76.2 以前(疑似要素を使ってたころ)の対応
+	// 編集画面、または ver 1.76.2 以前で疑似要素を使用時
 	.button_status-open:not(#vk-tab-label) {
 		&::before {
 			content: "CLOSE";

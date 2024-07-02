@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-07-02T05:52:44+00:00\n"
+"POT-Creation-Date: 2024-07-02T06:01:15+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -1784,7 +1784,6 @@ msgid "Wave"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:633
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:338
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:338
 msgid "Triangle"
 msgstr ""
@@ -1831,19 +1830,16 @@ msgid "Solid"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:845
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:444
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:444
 msgid "Dotted"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:849
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:448
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:448
 msgid "Dashed"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:853
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:452
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:452
 msgid "Double"
 msgstr ""

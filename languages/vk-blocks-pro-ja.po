@@ -98,6 +98,7 @@ msgid "image"
 msgstr "画像"
 
 #: src/admin/block-category-position.js:20 inc/vk-blocks/admin/admin.php:109
+#: src/admin/block-category-position.js:20 inc/vk-blocks/admin/admin.php:109
 msgid "Block Category Position Setting"
 msgstr "ブロックカテゴリー位置設定"
 
@@ -111,14 +112,17 @@ msgstr "WordPress標準ブロックの下"
 
 #: src/admin/block-manager/index.js:51 src/admin/import-export/index.js:106
 #: inc/vk-blocks/admin/admin.php:118
+#: inc/vk-blocks/admin/admin.php:118
 msgid "Block Manager Setting"
 msgstr "ブロックマネージャー設定"
 
 #: src/admin/block-style-manager/index.js:27
 #: src/admin/import-export/index.js:115 inc/vk-blocks/admin/admin.php:119
+#: src/admin/import-export/index.js:115 inc/vk-blocks/admin/admin.php:119
 msgid "Block Style Manager Setting"
 msgstr "ブロックスタイルマネージャー設定"
 
+#: src/admin/breadcrumb.js:24 inc/vk-blocks-pro/admin-pro/admin-pro.php:15
 #: src/admin/breadcrumb.js:24 inc/vk-blocks-pro/admin-pro/admin-pro.php:15
 msgid "Breadcrumb Setting"
 msgstr "パンくずリスト設定"
@@ -212,6 +216,7 @@ msgstr "(例) %s-block-style"
 
 #: src/admin/custom-block-style/index.js:77
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:31
+#: src/admin/import-export/index.js:52 inc/vk-blocks/admin/admin.php:113
 #: src/admin/import-export/index.js:52 inc/vk-blocks/admin/admin.php:113
 msgid "Custom Block Style Setting"
 msgstr "カスタムブロックスタイル設定"
@@ -564,20 +569,23 @@ msgstr "XL"
 msgid "XXL"
 msgstr "XXL"
 
-#: src/admin/margin.js:51 src/blocks/_pro/outer/edit.js:1028
-#: src/blocks/button/edit.js:537 src/blocks/slider/edit.js:952
+#: src/admin/margin.js:51 src/blocks/_pro/accordion/edit.js:139
+#: src/blocks/_pro/outer/edit.js:1028 src/blocks/button/edit.js:537
+#: src/blocks/slider/edit.js:952
 #: src/components/advanced-viewport-control/index.js:25
 msgid "PC"
 msgstr "PC"
 
-#: src/admin/margin.js:55 src/blocks/_pro/outer/edit.js:1012
-#: src/blocks/button/edit.js:472 src/blocks/slider/edit.js:973
+#: src/admin/margin.js:55 src/blocks/_pro/accordion/edit.js:122
+#: src/blocks/_pro/outer/edit.js:1012 src/blocks/button/edit.js:472
+#: src/blocks/slider/edit.js:973
 #: src/components/advanced-viewport-control/index.js:32
 msgid "Tablet"
 msgstr "タブレット"
 
-#: src/admin/margin.js:59 src/blocks/_pro/outer/edit.js:996
-#: src/blocks/button/edit.js:407 src/blocks/slider/edit.js:994
+#: src/admin/margin.js:59 src/blocks/_pro/accordion/edit.js:105
+#: src/blocks/_pro/outer/edit.js:996 src/blocks/button/edit.js:407
+#: src/blocks/slider/edit.js:994
 #: src/components/advanced-viewport-control/index.js:41
 msgid "Mobile"
 msgstr "モバイル"
@@ -623,6 +631,27 @@ msgstr "変更を保存"
 #: src/extensions/common/custom-block-variation/save-button/index.js:75
 msgid "Save Success"
 msgstr "保存しました"
+
+#: src/blocks/_pro/accordion/edit.js:160
+msgid "Default Initial State"
+msgstr "初期表示状態"
+
+#: src/blocks/_pro/accordion/edit.js:164
+msgid "Close"
+msgstr "閉じる"
+
+#: src/blocks/_pro/accordion/edit.js:168
+msgid "Open"
+msgstr "開く"
+
+#: src/blocks/_pro/accordion/edit.js:93 src/blocks/faq/edit.js:34
+#: src/blocks/faq2/edit.js:23
+msgid "Accordion Setting"
+msgstr "アコーディオン設定"
+
+#: src/blocks/_pro/accordion/edit.js:95
+msgid "Set initial state per device"
+msgstr "デバイスごとに初期状態を設定"
 
 #: src/blocks/_pro/accordion/index.js:22
 msgid "No background color"
@@ -1495,7 +1524,7 @@ msgid "Border Width"
 msgstr "線の幅"
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:209
-#: src/blocks/border-box/edit.js:239 src/extensions/core/group/style.js:94
+#: src/blocks/border-box/edit.js:236 src/extensions/core/group/style.js:46
 msgid "Border Color"
 msgstr "線の色"
 
@@ -2497,10 +2526,6 @@ msgstr "このブロックを折りたたみたい場合は 設定 > VK Blocks �
 #: src/blocks/faq/edit.js:19 src/blocks/faq2/edit.js:76
 msgid "You can be collapsing this block at VK Blocks Pro"
 msgstr "Pro版は回答部分を開閉式にできます"
-
-#: src/blocks/faq/edit.js:34 src/blocks/faq2/edit.js:23
-msgid "Accordion Setting"
-msgstr "アコーディオン設定"
 
 #: src/blocks/faq/edit.js:44
 msgid "Please enter a question."

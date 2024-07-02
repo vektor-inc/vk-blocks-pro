@@ -107,6 +107,7 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Core Group ] Add toolbar link for components.
+[ Add function ][ Accordion ] Added initial display state setting.
 [ Specification Change ][ Tab (Pro) ] Accessibility support
 [ Bug fix ][ Table of Contents (Pro) ] Fix "OBJ" characters appeared in the Table of Contents on Windows.
 [ Bug fix ] Delete unnecessary development files included in 1.76.2.

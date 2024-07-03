@@ -48,7 +48,12 @@ function vk_blocks_post_category_badge_render_callback( $attributes, $content, $
 	}
 }
 
-function vk_blocks_block_core_post_terms_build_variations() {
+/**
+ * Build Category Badge Block variations.
+ *
+ * @return array
+ */
+function vk_blocks_post_category_badge_build_variations() {
 	$taxonomies = get_taxonomies(
 		array(
 			'publicly_queryable' => true,
@@ -89,10 +94,10 @@ function vk_blocks_block_core_post_terms_build_variations() {
 	foreach ( $taxonomies as $taxonomy ) {
 		$variation = array(
 			'name'        => $taxonomy->name,
-			'title'       => 'カテゴリーバッジ/' . $taxonomy->label,
+			'title'       => __( 'Category Badge', 'vk-blocks-pro' ) . ' / ' . $taxonomy->label,
 			'description' => sprintf(
 				/* translators: %s: taxonomy's label */
-				__( 'Display a list of assigned terms from the taxonomy: %s' ),
+				__( 'Display a list of assigned terms from the taxonomy: %s', 'vk-blocks-pro' ),
 				$taxonomy->label
 			),
 			'attributes'  => array(
@@ -146,7 +151,7 @@ function vk_blocks_register_block_post_category_badge() {
 			'editor_style'       => 'vk-blocks-build-editor-css',
 			'editor_script'      => 'vk-blocks-build-js',
 			'render_callback'    => 'vk_blocks_post_category_badge_render_callback',
-			'variation_callback' => 'vk_blocks_block_core_post_terms_build_variations',
+			'variation_callback' => 'vk_blocks_post_category_badge_build_variations',
 		)
 	);
 }

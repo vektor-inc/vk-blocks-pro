@@ -106,6 +106,7 @@ e.g.
 == Changelog ==
 
 = 1.77.0 =
+[ Bug fix ][ Tab (Pro) ] Fixed extra space being added to tabs depending on theme.
 [ Add function ][ Outer (Pro) ] Add toolbar link for components.
 [ Add function ][ Accordion ] Added initial display state setting.
 [ Specification Change ][ Tab (Pro) ] Accessibility support

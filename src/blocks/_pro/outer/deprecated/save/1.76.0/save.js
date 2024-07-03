@@ -6,7 +6,6 @@ import classnames from 'classnames';
 /**
  * Internal dependencies
  */
-import { __ } from '@wordpress/i18n';
 import { componentDivider } from './component-divider';
 import GenerateBgImage from './GenerateBgImage';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
@@ -50,8 +49,6 @@ export default function save(props) {
 		minHeightValueMobile,
 		minHeightUnit,
 		blockId,
-		linkUrl,
-		linkTarget,
 	} = attributes;
 
 	let classPaddingLR;
@@ -123,7 +120,7 @@ export default function save(props) {
 		classPaddingVertical = 'vk_outer-paddingVertical-none';
 	}
 
-	// 上側セクションの傾き切り替え
+	//上側セクションの傾き切り替
 	//eslint-disable-next-line camelcase
 	if (!levelSettingPerDevice) {
 		if (upper_level) {
@@ -133,7 +130,7 @@ export default function save(props) {
 		whichSideUpper = 'upper';
 	}
 
-	// 下側セクションの傾き切り替え
+	//下側セクションの傾き切り替
 	//eslint-disable-next-line camelcase
 	if (!levelSettingPerDevice) {
 		if (lower_level) {
@@ -143,10 +140,10 @@ export default function save(props) {
 		whichSideLower = 'lower';
 	}
 
-	// 編集画面とサイト上の切り替え
+	//編集画面とサイト上の切り替え
 	const containerClass = 'vk_outer_container';
 
-	// Dividerエフェクトがない時のみ枠線を追
+	//Dividerエフェクトがない時のみ枠線を追
 	let borderStyleProperty = {};
 	//eslint-disable-next-line camelcase
 	if (!levelSettingPerDevice) {
@@ -237,26 +234,8 @@ export default function save(props) {
 				: undefined,
 		},
 	});
-
-	const relAttribute =
-		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
-	const GetLinkUrl = (
-		<a
-			href={linkUrl}
-			target={linkTarget}
-			className={`${prefix}-link`}
-			rel={relAttribute}
-			aria-label={__('Outer link', 'vk-blocks-pro')}
-		>
-			<span className="screen-reader-text">
-				{__('Outer link', 'vk-blocks-pro')}
-			</span>
-		</a>
-	);
-
 	return (
 		<div {...blockProps}>
-			{linkUrl && GetLinkUrl}
 			{GetBgImage}
 			<div>
 				{componentDivider(

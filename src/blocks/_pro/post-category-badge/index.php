@@ -62,26 +62,26 @@ function vk_blocks_block_core_post_terms_build_variations() {
 	// search results.
 	$built_ins         = array(
 		array(
-			'name'        => 'category-badge',
-			'title'       => 'カテゴリーバッジ',
-			'isDefault'   => true,
-			'attributes'  => array(
+			'name'       => 'category-badge',
+			'title'      => 'カテゴリーバッジ',
+			'isDefault'  => true,
+			'attributes' => array(
 				'style' => array(
 					'typography' => array(
-						'fontSize' => '0.8rem',
-						'fontWeight' => '500'
+						'fontSize'   => '0.8rem',
+						'fontWeight' => '500',
 					),
-					'spacing' => array(
+					'spacing'    => array(
 						'padding' => array(
-							'top' => '0',
+							'top'    => '0',
 							'bottom' => '0',
-							'left' => '1em',
-							'right' => '1em'
+							'left'   => '1em',
+							'right'  => '1em',
 						),
 					),
 				),
-			)
-		)
+			),
+		),
 	);
 	$custom_variations = array();
 
@@ -97,21 +97,21 @@ function vk_blocks_block_core_post_terms_build_variations() {
 			),
 			'attributes'  => array(
 				'taxonomy' => $taxonomy->name,
-				'style' => array(
+				'style'    => array(
 					'typography' => array(
-						'fontSize' => '0.8rem',
-						'fontWeight' => '500'
+						'fontSize'   => '0.8rem',
+						'fontWeight' => '500',
 					),
-					'spacing' => array(
+					'spacing'    => array(
 						'padding' => array(
-							'top' => '0',
+							'top'    => '0',
 							'bottom' => '0',
-							'left' => '1em',
-							'right' => '1em'
+							'left'   => '1em',
+							'right'  => '1em',
 						),
 					),
 				),
-			)
+			),
 		);
 		if ( $taxonomy->_builtin ) {
 			$built_ins[] = $variation;
@@ -142,10 +142,10 @@ function vk_blocks_register_block_post_category_badge() {
 	register_block_type(
 		__DIR__,
 		array(
-			'style'           => 'vk-blocks/post-category-badge',
-			'editor_style'    => 'vk-blocks-build-editor-css',
-			'editor_script'   => 'vk-blocks-build-js',
-			'render_callback' => 'vk_blocks_post_category_badge_render_callback',
+			'style'              => 'vk-blocks/post-category-badge',
+			'editor_style'       => 'vk-blocks-build-editor-css',
+			'editor_script'      => 'vk-blocks-build-js',
+			'render_callback'    => 'vk_blocks_post_category_badge_render_callback',
 			'variation_callback' => 'vk_blocks_block_core_post_terms_build_variations',
 		)
 	);

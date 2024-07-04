@@ -19,24 +19,19 @@
 			}
 		}
 	}
-	.vk_slider.vk_swiper.vk_slider.vk_swiper.alignwide {
-		max-width: var(--vk-width-editor-wide);
-		.vk_slider_item {
-			max-width: var(--vk-width-editor-wide);
-			&.vk_slider_item-paddingLR-use,
-			&.vk_slider_item-paddingLR-zero{
-				.vk_slider_item_container{
-						max-width:100%;
-					.wp-block:where(:not(.is-layout-constrained)){
-						max-width:100%;
-					}
-				}
-			}
-		}
-	}
-}
-// インサーターが左右左右中央にならないので補正
-.vk_slider>.vk_slider_wrapper>div>.block-editor-inner-blocks>.block-editor-block-list__layout>.block-list-appender {
-	margin-left:auto;
-	margin-right:auto;
+	// .vk_slider.vk_swiper.vk_slider.vk_swiper.alignwide {
+	// 	max-width: var(--vk-width-editor-wide);
+	// 	.vk_slider_item {
+	// 		max-width: var(--vk-width-editor-wide);
+	// 		&.vk_slider_item-paddingLR-use,
+	// 		&.vk_slider_item-paddingLR-zero{
+	// 			.vk_slider_item_container{
+	// 					max-width:100%;
+	// 				.wp-block:where(:not(.is-layout-constrained)){
+	// 					max-width:100%;
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// }
 }

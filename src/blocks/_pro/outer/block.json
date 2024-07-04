@@ -140,6 +140,13 @@
 			"type": "string",
 			"default": "px"
 		},
+		"linkUrl": {
+			"type": "string"
+		},
+		"linkTarget": {
+			"type": "string",
+			"default": ""
+		},
 		"clientId": {
 			"type": "string"
 		},

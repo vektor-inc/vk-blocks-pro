@@ -105,6 +105,8 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Slider ] Add 'Wide' to width.
+
 = 1.77.0 =
 [ Add function ][ Outer (Pro) ] Add toolbar link for components.
 [ Add function ][ Accordion ] Added initial display state setting.

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-07-04T06:14:29+00:00\n"
+"POT-Creation-Date: 2024-07-04T07:39:03+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -92,7 +92,6 @@ msgid "image"
 msgstr ""
 
 #: src/admin/block-category-position.js:20
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:109
 #: inc/vk-blocks/admin/admin.php:109
 msgid "Block Category Position Setting"
 msgstr ""
@@ -107,14 +106,14 @@ msgstr ""
 
 #: src/admin/block-manager/index.js:51
 #: src/admin/import-export/index.js:106
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:118
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:117
 #: inc/vk-blocks/admin/admin.php:118
 msgid "Block Manager Setting"
 msgstr ""
 
 #: src/admin/block-style-manager/index.js:27
 #: src/admin/import-export/index.js:115
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:119
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:118
 #: inc/vk-blocks/admin/admin.php:119
 msgid "Block Style Manager Setting"
 msgstr ""
@@ -213,7 +212,7 @@ msgstr ""
 #: src/admin/custom-block-style/index.js:77
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:31
 #: src/admin/import-export/index.js:52
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:113
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:112
 #: inc/vk-blocks/admin/admin.php:113
 msgid "Custom Block Style Setting"
 msgstr ""
@@ -368,7 +367,7 @@ msgstr ""
 
 #: src/admin/custom-format/index.js:50
 #: src/admin/import-export/index.js:39
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:112
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:111
 #: inc/vk-blocks/admin/admin.php:112
 msgid "Custom Format Setting"
 msgstr ""
@@ -462,7 +461,7 @@ msgid "License Key"
 msgstr ""
 
 #: src/admin/import-export/index.js:167
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:120
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:119
 #: inc/vk-blocks/admin/admin.php:120
 msgid "Import Export Tool"
 msgstr ""
@@ -588,7 +587,7 @@ msgid "Mobile"
 msgstr ""
 
 #: src/admin/margin.js:72
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:115
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:114
 #: inc/vk-blocks/admin/admin.php:115
 msgid "Common Margin Setting"
 msgstr ""
@@ -1538,7 +1537,7 @@ msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:209
 #: src/blocks/border-box/edit.js:239
-#: src/extensions/core/group/style.js:46
+#: src/extensions/core/group/style.js:94
 msgid "Border Color"
 msgstr ""
 
@@ -1903,7 +1902,7 @@ msgid "Not Set"
 msgstr ""
 
 #: src/blocks/_pro/post-category-badge/edit.js:86
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:135
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:134
 #: inc/vk-blocks/admin/admin.php:135
 msgid "Setting"
 msgstr ""
@@ -3527,7 +3526,11 @@ msgstr ""
 msgid "Reverse"
 msgstr ""
 
-#: src/extensions/core/group/style.js:51
+#: src/extensions/core/group/style.js:181
+msgid "Group link"
+msgstr ""
+
+#: src/extensions/core/group/style.js:99
 msgid "Because of the theme that enabled theme.json become can specify the color from border panel that, specification from here is deprecated."
 msgstr ""
 
@@ -3708,7 +3711,6 @@ msgstr ""
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#. translators: %s = plugin name.
 #: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:76
 #: inc/tgm-plugin-activation/tgm-config.php:76
 msgid "Something went wrong with the plugin API."
@@ -3868,12 +3870,12 @@ msgstr ""
 msgid "Blocks Setting"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:110
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:109
 #: inc/vk-blocks/admin/admin.php:110
 msgid "Balloon Block Setting"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:116
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:115
 #: inc/vk-blocks/admin/admin.php:116
 msgid "Load Separete Setting"
 msgstr ""
@@ -4122,13 +4124,13 @@ msgstr ""
 msgid "Setting saved."
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:312
+#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:327
 #: inc/vk-blocks/view/class-vk-blocks-postlist.php:312
 msgid "Post"
 msgstr ""
 
 #. translators: %s: 投稿タイプ名
-#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:316
+#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:331
 #: inc/vk-blocks/view/class-vk-blocks-postlist.php:316
 msgid "There are no %ss."
 msgstr ""

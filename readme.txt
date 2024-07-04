@@ -66,6 +66,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Responsive BR
 * Columns direction
 * Custom CSS [ Pro ]
+* Link toolber
 
 [ Settings ]
 * Balloon
@@ -105,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Core Group ] Add toolbar link for components by item.
 = 1.78.0 =
 [ Other ] Attend to WordPress 6.6
 

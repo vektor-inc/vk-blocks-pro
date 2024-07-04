@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.3
 Tested up to: 6.5
-Stable tag: 1.77.0.0
+Stable tag: 1.77.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -105,12 +105,16 @@ e.g.
 
 == Changelog ==
 
+= 1.78.0 =
+[ Other ] Attend to WordPress 6.6
+
 = 1.77.0 =
 [ Add function ][ Outer (Pro) ] Add toolbar link for components.
 [ Add function ][ Accordion ] Added initial display state setting.
 [ Specification Change ][ Tab (Pro) ] Accessibility support
 [ Bug fix ][ Table of Contents (Pro) ] Fix "OBJ" characters appeared in the Table of Contents on Windows.
 [ Bug fix ] Delete unnecessary development files included in 1.76.2.
+[ Fix ][ FAQ / FAQ2 ] add aria-label for accessibility
 
 = 1.76.2 =
 [ Specification Change ] Change Font Awesome Version to 6.5.2

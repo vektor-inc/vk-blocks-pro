@@ -2593,12 +2593,12 @@ msgstr ""
 msgid "Border Rounded"
 msgstr ""
 
-#: src/blocks/faq/save.js:10
+#: src/blocks/faq/save.js:16
 #: src/blocks/faq2-q/save.js:9
 msgid "Question"
 msgstr ""
 
-#: src/blocks/faq/save.js:19
+#: src/blocks/faq/save.js:20
 #: src/blocks/faq2-a/save.js:9
 msgid "Answer"
 msgstr ""

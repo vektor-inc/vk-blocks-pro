@@ -105,6 +105,8 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Category Badge (Pro) ] Enabled taxonomy specification regardless of post type.
+
 = 1.76.0 =
 [ Add function ] Add Setting for the position of VK Blocks on all block inserter. 
 [ Add function ][ Border Box ] Add title tag setting.

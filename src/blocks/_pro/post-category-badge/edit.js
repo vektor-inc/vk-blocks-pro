@@ -60,13 +60,17 @@ export default function CategoryBadgeEdit(props) {
 		},
 	});
 
-	const getLabelBySlug = (slug, taxonomies) => taxonomies.find(tax => tax.slug === slug)?.name || 'Auto';
+	const getLabelBySlug = (slug, taxonomies) =>
+		taxonomies.find((tax) => tax.slug === slug)?.name || 'Auto';
 
 	const selectedTaxonomyName = getLabelBySlug(taxonomy, taxonomies);
 
 	const url = termColorInfo?.term_url || '';
-	const termName = isLoading ? <Spinner /> : (termColorInfo?.term_name || `(${selectedTaxonomyName})`);
-
+	const termName = isLoading ? (
+		<Spinner />
+	) : (
+		termColorInfo?.term_name || `(${selectedTaxonomyName})`
+	);
 
 	return (
 		<>

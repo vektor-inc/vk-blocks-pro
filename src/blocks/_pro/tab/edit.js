@@ -245,6 +245,8 @@ export default function TabEdit(props) {
 			newActiveLabel.classList.remove(
 				'vk_tab_labels_label-state-inactive'
 			);
+			newActiveLabel.style.removeProperty('background-color');
+
 			const activeTabBody = document.querySelector(`#block-${TabId}`);
 			const activeTabBodyStyle = window.getComputedStyle(activeTabBody);
 			if (
@@ -450,8 +452,8 @@ export default function TabEdit(props) {
 							);
 						}
 					}}
-					onKeyPress={(e) => {
-						if (e.key === 'Enter') {
+					onKeyDown={(e) => {
+						if (e.key === 'Enter' || e.key === ' ') {
 							liOnClick(e);
 						}
 					}}
@@ -482,7 +484,9 @@ export default function TabEdit(props) {
 			);
 		});
 		tablabelsEdit = (
-			<ul className={tabListClassName}>{tablabelsEditList}</ul>
+			<ul className={tabListClassName} role="tablist">
+				{tablabelsEditList}
+			</ul>
 		);
 	}
 

@@ -13,7 +13,7 @@ export default function save(props) {
 		className = '',
 		tabDisplayOptionsSp,
 		tabDisplayOptionsTab,
-		tabDisplayOptionsPc
+		tabDisplayOptionsPc,
 	} = attributes;
 
 	const tabSizePrefix = 'vk_tab_labels-tabSize';
@@ -147,8 +147,7 @@ export default function save(props) {
 					/>
 				</li>
 			);
-			}
-		);
+		});
 		tabList = (
 			<ul className={tabListClassName} role="tablist">
 				{tabListInner}

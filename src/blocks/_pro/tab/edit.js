@@ -26,7 +26,7 @@ export default function TabEdit(props) {
 		className,
 		tabDisplayOptionsSp,
 		tabDisplayOptionsTab,
-		tabDisplayOptionsPc
+		tabDisplayOptionsPc,
 	} = attributes;
 
 	const ALLOWED_BLOCKS = ['vk-blocks/tab-item'];
@@ -517,6 +517,12 @@ export default function TabEdit(props) {
 		<>
 			<InspectorControls>
 				<PanelBody title={__('Tab size Setting', 'vk-blocks-pro')}>
+					<p>
+						{__(
+							'If you have many labels or the screen width is narrow, you can adjust it here.',
+							'vk-blocks-pro'
+						)}
+					</p>
 					<RadioControl
 						label={__('Tab Size ( Smart Phone )', 'vk-blocks-pro')}
 						selected={tabSizeSp}
@@ -571,7 +577,10 @@ export default function TabEdit(props) {
 				</PanelBody>
 				<PanelBody title={__('Tab Display Options', 'vk-blocks-pro')}>
 					<RadioControl
-						label={__('Tab Display Options ( Smart Phone )', 'vk-blocks-pro')}
+						label={__(
+							'Tab Display Options ( Smart Phone )',
+							'vk-blocks-pro'
+						)}
 						selected={tabDisplayOptionsSp}
 						options={[
 							{
@@ -592,8 +601,10 @@ export default function TabEdit(props) {
 						}}
 					/>
 					<RadioControl
-						label={__('Tab Display Options ( Tablet )', 'vk-blocks-pro')}
-						    help={__('Use these settings when there are many tabs or the screen width is narrow.', 'vk-blocks-pro')}
+						label={__(
+							'Tab Display Options ( Tablet )',
+							'vk-blocks-pro'
+						)}
 						selected={tabDisplayOptionsTab}
 						options={[
 							{
@@ -614,7 +625,10 @@ export default function TabEdit(props) {
 						}}
 					/>
 					<RadioControl
-						label={__('Tab Display Options ( PC )', 'vk-blocks-pro')}
+						label={__(
+							'Tab Display Options ( PC )',
+							'vk-blocks-pro'
+						)}
 						selected={tabDisplayOptionsPc}
 						options={[
 							{

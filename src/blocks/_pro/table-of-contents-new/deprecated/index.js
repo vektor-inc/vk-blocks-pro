@@ -1,4 +1,4 @@
-import save1_77_0 from './1.77.0/save';
+import save1_78_0 from './1.78.0/save';
 import save0591 from './0.59.1/save';
 
 
@@ -24,7 +24,7 @@ const blockAttributes = {
 const deprecated = [
 	{
 		attributes: blockAttributes,
-		save: save1_77_0,
+		save: save1_78_0,
 	},
 	{
 		attributes: blockAttributes,

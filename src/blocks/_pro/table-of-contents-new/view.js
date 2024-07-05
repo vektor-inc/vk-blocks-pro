@@ -9,14 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	const openButton = document.getElementById('vk-tab-label');
 	openButton.addEventListener('click', function () {
 		// 直前にあるチェックボックスで判断する
-		var status = openButton.previousElementSibling;
-		if( status && status.type === 'checkbox'){
-			if( status.checked ){
+		const status = openButton.previousElementSibling;
+		if (status && status.type === 'checkbox') {
+			if (status.checked) {
 				openButton.textContent = 'CLOSE';
-			}
-			else{
+			} else {
 				openButton.textContent = 'OPEN';
-			}	
-		}    
+			}
+		}
 	});
 });

@@ -107,6 +107,8 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Core Group ] Add toolbar link for components by item.
+[ Add function ][ Grid Column (Pro) ] Add toolbar link for components by item.
+
 = 1.78.0 =
 [ Other ] Attend to WordPress 6.6
 

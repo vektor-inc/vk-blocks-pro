@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2024-07-01T05:41:28+00:00\n"
-"PO-Revision-Date: 2024-07-01 14:44+0900\n"
+"POT-Creation-Date: 2024-07-02T07:02:48+00:00\n"
+"PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -12,16 +12,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.4.4\n"
-"X-Poedit-Basepath: ../../..\n"
-"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
-"X-Poedit-WPHeader: vk-blocks.php\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.min.js\n"
-"X-Poedit-SearchPathExcluded-1: node_modules\n"
 
 #: src/admin/balloon/add-button.js:38
 msgid "Added balloon image setting"
@@ -338,14 +328,14 @@ msgid "Color"
 msgstr "色"
 
 #: src/admin/custom-format/index.js:208
-#: src/blocks/_pro/grid-column-item/edit.js:104
+#: src/blocks/_pro/grid-column-item/edit.js:102
 #: src/blocks/_pro/gridcolcard/edit-common.js:166 src/blocks/button/edit.js:749
 #: src/blocks/heading/edit.js:324
 msgid "Text Color"
 msgstr "文字の色"
 
 #: src/admin/custom-format/index.js:239
-#: src/blocks/_pro/grid-column-item/edit.js:110
+#: src/blocks/_pro/grid-column-item/edit.js:108
 #: src/blocks/_pro/gridcolcard/edit-common.js:172
 #: src/blocks/border-box/edit.js:248 src/blocks/button/edit.js:732
 #: src/blocks/icon/edit.js:304
@@ -610,7 +600,7 @@ msgid ""
 msgstr ""
 "レスポンシブスペーサーなどで使用する共通余白のサイズを指定してください。"
 
-#: src/admin/margin.js:81 src/blocks/_pro/grid-column-item/edit.js:175
+#: src/admin/margin.js:81 src/blocks/_pro/grid-column-item/edit.js:173
 #: src/blocks/_pro/grid-column/edit.js:78
 msgid "Unit"
 msgstr "単位"
@@ -1376,55 +1366,59 @@ msgstr "固定位置"
 msgid "Top"
 msgstr "上 "
 
-#: src/blocks/_pro/grid-column-item/edit.js:102
+#: src/blocks/_pro/grid-column-item/edit.js:100
 #: src/blocks/_pro/gridcolcard/edit-common.js:164
 msgid "Color Settings"
 msgstr "色設定"
 
-#: src/blocks/_pro/grid-column-item/edit.js:120
+#: src/blocks/_pro/grid-column-item/edit.js:118
 msgid "Margin setting inside the item"
 msgstr "アイテム内の余白設定"
 
-#: src/blocks/_pro/grid-column-item/edit.js:127
+#: src/blocks/_pro/grid-column-item/edit.js:125
 msgid "Padding (Top)"
 msgstr "余白 (上)"
 
-#: src/blocks/_pro/grid-column-item/edit.js:143
+#: src/blocks/_pro/grid-column-item/edit.js:141
 #: src/blocks/_pro/outer/edit.js:536 src/blocks/slider-item/edit.js:134
 msgid "Padding (Left and Right)"
 msgstr "余白 (左右)"
 
-#: src/blocks/_pro/grid-column-item/edit.js:159
+#: src/blocks/_pro/grid-column-item/edit.js:157
 msgid "Padding (Bottom)"
 msgstr "余白 (下)"
 
-#: src/blocks/_pro/grid-column-item/edit.js:190
+#: src/blocks/_pro/grid-column-item/edit.js:186
 #: src/blocks/_pro/grid-column/edit.js:91 src/blocks/_pro/outer/edit.js:1065
 #: src/blocks/icon-outer/edit.js:183 src/blocks/icon/edit.js:172
 #: src/utils/unit-options.js:6
 msgid "px"
 msgstr "px"
 
-#: src/blocks/_pro/grid-column-item/edit.js:194
+#: src/blocks/_pro/grid-column-item/edit.js:187
 #: src/blocks/_pro/grid-column/edit.js:95 src/blocks/_pro/outer/edit.js:1069
 #: src/blocks/icon-outer/edit.js:187 src/blocks/icon/edit.js:176
 #: src/utils/unit-options.js:10
 msgid "em"
 msgstr "em"
 
-#: src/blocks/_pro/grid-column-item/edit.js:198
+#: src/blocks/_pro/grid-column-item/edit.js:188
 #: src/blocks/_pro/grid-column/edit.js:99 src/blocks/_pro/outer/edit.js:1073
 #: src/blocks/icon-outer/edit.js:191 src/blocks/icon/edit.js:180
 #: src/utils/unit-options.js:14
 msgid "rem"
 msgstr "rem"
 
-#: src/blocks/_pro/grid-column-item/edit.js:202
+#: src/blocks/_pro/grid-column-item/edit.js:189
 #: src/blocks/_pro/grid-column/edit.js:103 src/blocks/_pro/outer/edit.js:1001
 #: src/blocks/icon-outer/edit.js:195 src/blocks/icon/edit.js:184
 #: src/utils/unit-options.js:18
 msgid "vw"
 msgstr "vw"
+
+#: src/blocks/_pro/grid-column-item/save.js:102
+msgid "Grid column item link"
+msgstr "グリッドカラムアイテムリンク"
 
 #: src/blocks/_pro/grid-column/edit.js:53
 msgid "Layout Columns"
@@ -4787,8 +4781,9 @@ msgid "Grid Column Item"
 msgstr "グリッドカラムアイテム"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/grid-column-item/block.json
-#: inc/vk-blocks/build/blocks/_pro/grid-column-item/block.json
-#: src/blocks/_pro/grid-column-item/block.json
+#, fuzzy
+#| msgctxt "block description"
+#| msgid "One item in a grit column block."
 msgctxt "block description"
 msgid "One item in a grit column block."
 msgstr "グリッドカラムブロック内の1つのアイテムです。"
@@ -5084,6 +5079,15 @@ msgid ""
 "Displays a simple schedule and other information that is useful for "
 "explaining the order."
 msgstr "順番を説明する時に便利でシンプルなスケジュールなどを表示します。"
+
+#: inc/vk-blocks/build/blocks/_pro/grid-column-item/block.json
+#: src/blocks/_pro/grid-column-item/block.json
+#, fuzzy
+#| msgctxt "block description"
+#| msgid "One item in a grit column block."
+msgctxt "block description"
+msgid "One item in a grid column block."
+msgstr "グリッドカラムブロック内の1つのアイテムです。"
 
 #~ msgid "Display position from the top of the page"
 #~ msgstr "ページ上部からの表示位置"

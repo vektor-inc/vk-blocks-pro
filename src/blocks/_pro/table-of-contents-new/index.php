@@ -21,7 +21,7 @@ function vk_blocks_register_block_table_of_contents_new() {
 		);
 	}
 
-	// Register Style.
+	// Register Script.
 	if ( ! is_admin() ) {
 		wp_register_script(
 			'vk-blocks/table-of-contents-new-script',

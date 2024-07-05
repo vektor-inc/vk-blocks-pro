@@ -108,22 +108,22 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 				!formattedUrl.startsWith(window.location.origin) &&
 				!formattedUrl.startsWith('#');
 
-			const fetchTitle = function(url) {
+			const fetchTitle = function (url) {
 				if (url.startsWith('#')) {
 					return Promise.resolve(url); // アンカーリンクの場合はそのまま返す
 				}
 				return fetch(url, { method: 'GET' })
-					.then(response => response.text())
-					.then(text => {
+					.then((response) => response.text())
+					.then((text) => {
 						const titleMatch = text.match(/<title>(.*?)<\/title>/i);
 						return titleMatch ? titleMatch[1] : url;
 					})
-					.catch(error => {
+					.catch(() => {
 						return url;
 					});
 			};
 
-			fetchTitle(formattedUrl).then(title => {
+			fetchTitle(formattedUrl).then((title) => {
 				setLinkTitle(title);
 			});
 
@@ -142,7 +142,7 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 							style={{ width: '16px', height: '16px' }}
 						/>
 					);
-				} catch (error) {
+				} catch {
 					setIcon(link); // URLが無効な場合はリンクアイコンを使用
 				}
 			}
@@ -167,10 +167,11 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 		setIsOpen(false);
 	};
 
-	const handleCopy = function(url) {
+	const handleCopy = function (url) {
 		const formattedUrl = url.startsWith('#') ? url : formatUrl(url);
 		if (typeof window !== 'undefined' && window.navigator.clipboard) {
-			window.navigator.clipboard.writeText(formattedUrl)
+			window.navigator.clipboard
+				.writeText(formattedUrl)
 				.then(() => {
 					setAriaMessage(
 						__('Link copied to clipboard.', 'vk-blocks-pro')
@@ -178,7 +179,7 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 					setSnackbarVisible(true);
 					setTimeout(() => setSnackbarVisible(false), 3000);
 				})
-				.catch(error => {
+				.catch(() => {
 					// console.error('Failed to copy: ', error);
 				});
 		} else {
@@ -190,9 +191,7 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 			textArea.select();
 			document.execCommand('copy');
 			document.body.removeChild(textArea);
-			setAriaMessage(
-				__('Link copied to clipboard.', 'vk-blocks-pro')
-			);
+			setAriaMessage(__('Link copied to clipboard.', 'vk-blocks-pro'));
 			setSnackbarVisible(true);
 			setTimeout(() => setSnackbarVisible(false), 3000);
 		}

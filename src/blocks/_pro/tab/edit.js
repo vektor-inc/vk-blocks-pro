@@ -315,13 +315,19 @@ export default function TabEdit(props) {
 
 	// Remove scroll or wrap classes if "Not set" is selected
 	if (tabDisplayOptionsSp === 'notSet') {
-		tabListClassName = tabListClassName.replace(' vk_tab_labels--wrap-sp', '').replace(' vk_tab_labels--scroll-sp', '');
+		tabListClassName = tabListClassName
+			.replace(' vk_tab_labels--wrap-sp', '')
+			.replace(' vk_tab_labels--scroll-sp', '');
 	}
 	if (tabDisplayOptionsTab === 'notSet') {
-		tabListClassName = tabListClassName.replace(' vk_tab_labels--wrap-tab', '').replace(' vk_tab_labels--scroll-tab', '');
+		tabListClassName = tabListClassName
+			.replace(' vk_tab_labels--wrap-tab', '')
+			.replace(' vk_tab_labels--scroll-tab', '');
 	}
 	if (tabDisplayOptionsPc === 'notSet') {
-		tabListClassName = tabListClassName.replace(' vk_tab_labels--wrap-pc', '').replace(' vk_tab_labels--scroll-pc', '');
+		tabListClassName = tabListClassName
+			.replace(' vk_tab_labels--wrap-pc', '')
+			.replace(' vk_tab_labels--scroll-pc', '');
 	}
 
 	let tablabelsEditList = '';
@@ -636,7 +642,10 @@ export default function TabEdit(props) {
 						}}
 					/>
 					<RadioControl
-						label={__('Tab Display Options ( PC )', 'vk-blocks-pro')}
+						label={__(
+							'Tab Display Options ( PC )',
+							'vk-blocks-pro'
+						)}
 						selected={tabDisplayOptionsPc}
 						options={[
 							{

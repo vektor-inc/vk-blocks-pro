@@ -311,7 +311,7 @@ msgid "Color"
 msgstr ""
 
 #: src/admin/custom-format/index.js:208
-#: src/blocks/_pro/grid-column-item/edit.js:104
+#: src/blocks/_pro/grid-column-item/edit.js:102
 #: src/blocks/_pro/gridcolcard/edit-common.js:166
 #: src/blocks/button/edit.js:749
 #: src/blocks/heading/edit.js:324
@@ -319,7 +319,7 @@ msgid "Text Color"
 msgstr ""
 
 #: src/admin/custom-format/index.js:239
-#: src/blocks/_pro/grid-column-item/edit.js:110
+#: src/blocks/_pro/grid-column-item/edit.js:108
 #: src/blocks/_pro/gridcolcard/edit-common.js:172
 #: src/blocks/border-box/edit.js:248
 #: src/blocks/button/edit.js:732
@@ -588,7 +588,7 @@ msgid ""
 msgstr ""
 
 #: src/admin/margin.js:81
-#: src/blocks/_pro/grid-column-item/edit.js:175
+#: src/blocks/_pro/grid-column-item/edit.js:173
 #: src/blocks/_pro/grid-column/edit.js:78
 msgid "Unit"
 msgstr ""
@@ -1364,30 +1364,30 @@ msgstr ""
 msgid "Top"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:102
+#: src/blocks/_pro/grid-column-item/edit.js:100
 #: src/blocks/_pro/gridcolcard/edit-common.js:164
 msgid "Color Settings"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:120
+#: src/blocks/_pro/grid-column-item/edit.js:118
 msgid "Margin setting inside the item"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:127
+#: src/blocks/_pro/grid-column-item/edit.js:125
 msgid "Padding (Top)"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:143
+#: src/blocks/_pro/grid-column-item/edit.js:141
 #: src/blocks/_pro/outer/edit.js:536
 #: src/blocks/slider-item/edit.js:134
 msgid "Padding (Left and Right)"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:159
+#: src/blocks/_pro/grid-column-item/edit.js:157
 msgid "Padding (Bottom)"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:190
+#: src/blocks/_pro/grid-column-item/edit.js:186
 #: src/blocks/_pro/grid-column/edit.js:91
 #: src/blocks/_pro/outer/edit.js:1065
 #: src/blocks/icon-outer/edit.js:183
@@ -1396,7 +1396,7 @@ msgstr ""
 msgid "px"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:194
+#: src/blocks/_pro/grid-column-item/edit.js:187
 #: src/blocks/_pro/grid-column/edit.js:95
 #: src/blocks/_pro/outer/edit.js:1069
 #: src/blocks/icon-outer/edit.js:187
@@ -1405,7 +1405,7 @@ msgstr ""
 msgid "em"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:198
+#: src/blocks/_pro/grid-column-item/edit.js:188
 #: src/blocks/_pro/grid-column/edit.js:99
 #: src/blocks/_pro/outer/edit.js:1073
 #: src/blocks/icon-outer/edit.js:191
@@ -1414,13 +1414,17 @@ msgstr ""
 msgid "rem"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:202
+#: src/blocks/_pro/grid-column-item/edit.js:189
 #: src/blocks/_pro/grid-column/edit.js:103
 #: src/blocks/_pro/outer/edit.js:1001
 #: src/blocks/icon-outer/edit.js:195
 #: src/blocks/icon/edit.js:184
 #: src/utils/unit-options.js:18
 msgid "vw"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/save.js:102
+msgid "Grid column item link"
 msgstr ""
 
 #: src/blocks/_pro/grid-column/edit.js:53
@@ -1533,7 +1537,7 @@ msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:209
 #: src/blocks/border-box/edit.js:239
-#: src/extensions/core/group/style.js:46
+#: src/extensions/core/group/style.js:94
 msgid "Border Color"
 msgstr ""
 
@@ -2593,6 +2597,16 @@ msgstr ""
 msgid "Border Rounded"
 msgstr ""
 
+#: src/blocks/faq/save.js:16
+#: src/blocks/faq2-q/save.js:9
+msgid "Question"
+msgstr ""
+
+#: src/blocks/faq/save.js:20
+#: src/blocks/faq2-a/save.js:9
+msgid "Answer"
+msgstr ""
+
 #: src/blocks/faq2/edit.js:38
 msgid "Use common settings"
 msgstr ""
@@ -3537,7 +3551,11 @@ msgstr ""
 msgid "Reverse"
 msgstr ""
 
-#: src/extensions/core/group/style.js:51
+#: src/extensions/core/group/style.js:181
+msgid "Group link"
+msgstr ""
+
+#: src/extensions/core/group/style.js:99
 msgid ""
 "Because of the theme that enabled theme.json become can specify the color "
 "from border panel that, specification from here is deprecated."

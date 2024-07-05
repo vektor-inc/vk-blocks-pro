@@ -105,6 +105,13 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Outer (Pro) ] Add serrated in divider style.
+[ Add function ][ Core Group ] Add toolbar link for components by item.
+[ Add function ][ Grid Column (Pro) ] Add toolbar link for components by item.
+
+= 1.78.0 =
+[ Other ] Attend to WordPress 6.6
+
 = 1.77.0 =
 [ Add function ][ Outer (Pro) ] Add toolbar link for components.
 [ Add function ][ Accordion ] Added initial display state setting.

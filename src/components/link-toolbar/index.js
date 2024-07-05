@@ -108,21 +108,22 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 				!formattedUrl.startsWith(window.location.origin) &&
 				!formattedUrl.startsWith('#');
 
-			const fetchTitle = async (url) => {
+			const fetchTitle = function(url) {
 				if (url.startsWith('#')) {
-					return url; // アンカーリンクの場合はそのまま返す
+					return Promise.resolve(url); // アンカーリンクの場合はそのまま返す
 				}
-				try {
-					const response = await fetch(url, { method: 'GET' });
-					const text = await response.text();
-					const titleMatch = text.match(/<title>(.*?)<\/title>/i);
-					return titleMatch ? titleMatch[1] : url;
-				} catch (error) {
-					return url;
-				}
+				return fetch(url, { method: 'GET' })
+					.then(response => response.text())
+					.then(text => {
+						const titleMatch = text.match(/<title>(.*?)<\/title>/i);
+						return titleMatch ? titleMatch[1] : url;
+					})
+					.catch(error => {
+						return url;
+					});
 			};
 
-			fetchTitle(formattedUrl).then((title) => {
+			fetchTitle(formattedUrl).then(title => {
 				setLinkTitle(title);
 			});
 
@@ -166,33 +167,34 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 		setIsOpen(false);
 	};
 
-	const handleCopy = async (url) => {
+	const handleCopy = function(url) {
 		const formattedUrl = url.startsWith('#') ? url : formatUrl(url);
-		try {
-			if (typeof window !== 'undefined' && window.navigator.clipboard) {
-				await window.navigator.clipboard.writeText(formattedUrl);
-				setAriaMessage(
-					__('Link copied to clipboard.', 'vk-blocks-pro')
-				);
-				setSnackbarVisible(true);
-				setTimeout(() => setSnackbarVisible(false), 3000);
-			} else {
-				// Clipboard API がサポートされていない場合のフォールバック
-				const textArea = document.createElement('textarea');
-				textArea.value = formattedUrl;
-				document.body.appendChild(textArea);
-				textArea.focus();
-				textArea.select();
-				document.execCommand('copy');
-				document.body.removeChild(textArea);
-				setAriaMessage(
-					__('Link copied to clipboard.', 'vk-blocks-pro')
-				);
-				setSnackbarVisible(true);
-				setTimeout(() => setSnackbarVisible(false), 3000);
-			}
-		} catch (error) {
-			// console.error('Failed to copy: ', error);
+		if (typeof window !== 'undefined' && window.navigator.clipboard) {
+			window.navigator.clipboard.writeText(formattedUrl)
+				.then(() => {
+					setAriaMessage(
+						__('Link copied to clipboard.', 'vk-blocks-pro')
+					);
+					setSnackbarVisible(true);
+					setTimeout(() => setSnackbarVisible(false), 3000);
+				})
+				.catch(error => {
+					// console.error('Failed to copy: ', error);
+				});
+		} else {
+			// Clipboard API がサポートされていない場合のフォールバック
+			const textArea = document.createElement('textarea');
+			textArea.value = formattedUrl;
+			document.body.appendChild(textArea);
+			textArea.focus();
+			textArea.select();
+			document.execCommand('copy');
+			document.body.removeChild(textArea);
+			setAriaMessage(
+				__('Link copied to clipboard.', 'vk-blocks-pro')
+			);
+			setSnackbarVisible(true);
+			setTimeout(() => setSnackbarVisible(false), 3000);
 		}
 	};
 

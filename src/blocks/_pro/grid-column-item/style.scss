@@ -2,11 +2,29 @@
 /* CSS
 /*-------------------------------------------*/
 .wp-block-vk-blocks-grid-column-item{
-  box-sizing: border-box;
-  img {
-    max-width: 100%;
-  }
-  .vk_gridColumn_item_inner {
-    height:100%;
-  }
+	box-sizing: border-box;
+	img {
+		max-width: 100%;
+	}
+	.vk_gridColumn_item_inner {
+		height:100%;
+		word-wrap: break-word;
+		// リンク設定
+		&:has(.vk_gridColumn_item_link){
+			position: relative;
+		}
+		& > .vk_gridColumn_item_link {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			color: transparent;
+			cursor: pointer;
+			z-index: 10;
+		}
+		& > *:first-of-type:not(.vk_gridColumn_item_link) {
+			margin-top: 0;
+		}
+	}
 }

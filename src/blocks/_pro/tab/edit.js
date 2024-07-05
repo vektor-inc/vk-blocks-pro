@@ -313,6 +313,17 @@ export default function TabEdit(props) {
 		}
 	});
 
+	// Remove scroll or wrap classes if "Not set" is selected
+	if (tabDisplayOptionsSp === 'notSet') {
+		tabListClassName = tabListClassName.replace(' vk_tab_labels--wrap-sp', '').replace(' vk_tab_labels--scroll-sp', '');
+	}
+	if (tabDisplayOptionsTab === 'notSet') {
+		tabListClassName = tabListClassName.replace(' vk_tab_labels--wrap-tab', '').replace(' vk_tab_labels--scroll-tab', '');
+	}
+	if (tabDisplayOptionsPc === 'notSet') {
+		tabListClassName = tabListClassName.replace(' vk_tab_labels--wrap-pc', '').replace(' vk_tab_labels--scroll-pc', '');
+	}
+
 	let tablabelsEditList = '';
 	let tablabelsEdit = '';
 
@@ -516,13 +527,7 @@ export default function TabEdit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Tab size Setting', 'vk-blocks-pro')}>
-					<p>
-						{__(
-							'If you have many labels or the screen width is narrow, you can adjust it here.',
-							'vk-blocks-pro'
-						)}
-					</p>
+				<PanelBody title={__('Tab Size Setting', 'vk-blocks-pro')}>
 					<RadioControl
 						label={__('Tab Size ( Smart Phone )', 'vk-blocks-pro')}
 						selected={tabSizeSp}
@@ -576,6 +581,12 @@ export default function TabEdit(props) {
 					/>
 				</PanelBody>
 				<PanelBody title={__('Tab Display Options', 'vk-blocks-pro')}>
+					<p>
+						{__(
+							'If there are many labels or the screen width is narrow, you can adjust it here. *Tab size setting will not be effective.',
+							'vk-blocks-pro'
+						)}
+					</p>
 					<RadioControl
 						label={__(
 							'Tab Display Options ( Smart Phone )',
@@ -625,10 +636,7 @@ export default function TabEdit(props) {
 						}}
 					/>
 					<RadioControl
-						label={__(
-							'Tab Display Options ( PC )',
-							'vk-blocks-pro'
-						)}
+						label={__('Tab Display Options ( PC )', 'vk-blocks-pro')}
 						selected={tabDisplayOptionsPc}
 						options={[
 							{

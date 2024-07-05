@@ -139,12 +139,13 @@ const componentDivider = (
 	const serratedSectionStyle = (level, color) => {
 		const absLevel = Math.abs(level);
 		const baseSerrationCount = 40;
-		const serrationCount = level >= 0 
-			? baseSerrationCount + Math.floor(absLevel / 5) 
-			: Math.max(baseSerrationCount - Math.floor(absLevel / 5), 5);
+		const serrationCount =
+			level >= 0
+				? baseSerrationCount + Math.floor(absLevel / 5)
+				: Math.max(baseSerrationCount - Math.floor(absLevel / 5), 5);
 		const step = 100 / serrationCount;
 		const height = 10;
-	
+
 		const pathData = Array.from({ length: serrationCount + 1 })
 			.map((_, i) => {
 				const x = i * step;
@@ -152,7 +153,7 @@ const componentDivider = (
 				return `${x},${y}`;
 			})
 			.join(' L ');
-	
+
 		return (
 			<path
 				d={`M0,100 L ${pathData} L100,100 Z`}
@@ -162,7 +163,7 @@ const componentDivider = (
 			/>
 		);
 	};
-	
+
 	//背景色をクリアした時は、白に変更
 	if (!color) {
 		color = '#fff';

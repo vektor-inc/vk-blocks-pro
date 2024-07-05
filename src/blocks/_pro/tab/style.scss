@@ -2,7 +2,7 @@
 	--vk-color-border: rgba(0,0,0,.12);
 	--vk-color-bg-accent-wh: rgba(255,255,255,0.65);
 	--vk-color-bg-inactive: rgba(0, 0, 0, .08);
-	--default-color:#337ab7;
+	--default-color: #337ab7;
 }
 
 $xs-max: 575.98px;
@@ -27,9 +27,6 @@ $xl-min: 1200px;
 		border-right: 1px solid var(--vk-color-border);
 		border-left: 1px solid var(--vk-color-border);
 		border-radius: 0;
-		// &:last-child {
-		//	border-right: 1px solid var(--vk-color-border);
-		// }
 		&::before, &::after {
 			position: absolute;
 			bottom: 0;
@@ -42,7 +39,6 @@ $xl-min: 1200px;
 			bottom: 0;
 			z-index: 0;
 			height: 1px;
-			// background-color: var(--vk-color-border); //重なる部分が濃くなるため
 		}
 		&::after {
 			top: 0;
@@ -61,11 +57,11 @@ $xl-min: 1200px;
 			&::after {
 				z-index: 1;
 				height: 2px;
-				// background-color: var(--default-color); // ここで色を指定すると hover での色変更が効かない
 				transition: all .5s ease-out;
 			}
 		}
 		& > div {
+			height: 100%;
 			padding: calc( 1rem * 0.5 ) calc( 1rem * 1 );
 			border-top: 2px solid transparent;
 		}
@@ -73,13 +69,11 @@ $xl-min: 1200px;
 			color: var(--default-color);
 			background-color: #fff !important;
 			&::before {
-				// content: none;
 				background-color: #fff;
 			}
 			&::after {
 				z-index: 1;
 				height: 2px;
-				// background-color: var(--default-color); // ここで色を指定すると hover での色変更が効かない
 			}
 		}
 		&.vk_tab_labels_label-state-inactive {
@@ -88,7 +82,6 @@ $xl-min: 1200px;
 				background-color: var(--vk-color-bg-inactive);
 			}
 			&:hover {
-				// background-color: #fff; // ここで色を指定すると hover での色変更が効かない
 				opacity: 0.8;
 			}
 		}
@@ -124,7 +117,7 @@ $xl-min: 1200px;
 		flex-wrap: wrap;
 		justify-content: space-between;
 		.vk_tab_labels_label,
-		.vk_tab_labels_label.has-background { // has-background がないと 編集画面で x-t9 の .has-background の padding 0 指定に負ける
+		.vk_tab_labels_label.has-background {
 			background-color: var(--default-color);
 			position: relative;
 			list-style: none;
@@ -139,7 +132,6 @@ $xl-min: 1200px;
 			&.vk_tab_labels_label-state-active,
 			&.has-background {
 				background-color: var(--default-color);
-				// font-weight: bold;
 				color: #fff;
 			}
 			&.vk_tab_labels_label-state-inactive {
@@ -205,6 +197,118 @@ $xl-min: 1200px;
 		}
 		&--pc-monospaced li {
 			width: 100%;
+		}
+	}
+}
+
+/* Display Setting for Many Tabs */
+.vk_tab_labels--scroll_notice {
+	background-color: #ffeb3b;
+	padding: 5px;
+	border-radius: 3px;
+	font-size: 12px;
+}
+@media (max-width: $xs-max) {
+	.vk_tab_labels {
+		&--scroll {
+			&-sp {
+				position: relative;
+				overflow-x: auto;
+				white-space: nowrap !important;
+				.vk_tab_labels_label > div {
+					white-space: nowrap !important;
+				}
+				/* Scrollbar styles */
+				&::-webkit-scrollbar {
+					height: 8px;
+				}
+				&::-webkit-scrollbar-track {
+					background: var(--vk-color-bg-inactive);
+					border-radius: 10px;
+				}
+				&::-webkit-scrollbar-thumb {
+					background: var(--vk-color-border);
+					border-radius: 10px;
+				}
+			}
+		}
+		&--wrap-sp {
+			display: flex;
+			flex-wrap: wrap !important;
+			.vk_tab_labels_label {
+				flex: 1 1 calc(50% - .75rem);
+				box-sizing: border-box;
+			}
+		}
+	}
+}
+
+@media (min-width: $sm-min) {
+	.vk_tab_labels {
+		&--scroll {
+			&-tab {
+				position: relative;
+				overflow-x: auto;
+				white-space: nowrap !important;
+				.vk_tab_labels_label > div {
+					white-space: nowrap !important;
+				}
+				/* Scrollbar styles */
+				&::-webkit-scrollbar {
+					height: 8px;
+				}
+				&::-webkit-scrollbar-track {
+					background: var(--vk-color-bg-inactive);
+					border-radius: 10px;
+				}
+				&::-webkit-scrollbar-thumb {
+					background: var(--vk-color-border);
+					border-radius: 10px;
+				}
+			}
+		}
+		&--wrap-tab {
+			display: flex;
+			flex-wrap: wrap !important;
+			.vk_tab_labels_label {
+				flex: 1 1 calc(50% - .75rem);
+				box-sizing: border-box;
+			}
+		}
+	}
+}
+
+@media (min-width: $lg-min) {
+	.vk_tab_labels {
+		&--scroll {
+			&-pc {
+				position: relative;
+				overflow-x: auto;
+				white-space: nowrap !important;
+				.vk_tab_labels_label > div {
+					white-space: nowrap !important;
+				}
+				/* Scrollbar styles */
+				&::-webkit-scrollbar {
+					height: 8px;
+				}
+				&::-webkit-scrollbar-track {
+					background: var(--vk-color-bg-inactive);
+					border-radius: 10px;
+				}
+				&::-webkit-scrollbar-thumb {
+					background: var(--vk-color-border);
+					border-radius: 10px;
+				}
+			}
+		}
+		&--wrap-pc {
+			display: flex;
+			flex-wrap: wrap !important;
+			.vk_tab_labels_label {
+				flex: 1 1 calc(50% - .75rem);
+				box-sizing: border-box;
+			}
 		}
 	}
 }

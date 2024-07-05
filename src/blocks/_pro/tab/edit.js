@@ -24,6 +24,9 @@ export default function TabEdit(props) {
 		firstActive,
 		blockId,
 		className,
+		tabDisplayOptionsSp,
+		tabDisplayOptionsTab,
+		tabDisplayOptionsPc
 	} = attributes;
 
 	const ALLOWED_BLOCKS = ['vk-blocks/tab-item'];
@@ -289,6 +292,21 @@ export default function TabEdit(props) {
 	];
 
 	let tabListClassName = `vk_tab_labels`;
+	if (tabDisplayOptionsSp === 'wrap') {
+		tabListClassName += ' vk_tab_labels--wrap-sp';
+	} else if (tabDisplayOptionsSp === 'scroll') {
+		tabListClassName += ' vk_tab_labels--scroll-sp';
+	}
+	if (tabDisplayOptionsTab === 'wrap') {
+		tabListClassName += ' vk_tab_labels--wrap-tab';
+	} else if (tabDisplayOptionsTab === 'scroll') {
+		tabListClassName += ' vk_tab_labels--scroll-tab';
+	}
+	if (tabDisplayOptionsPc === 'wrap') {
+		tabListClassName += ' vk_tab_labels--wrap-pc';
+	} else if (tabDisplayOptionsPc === 'scroll') {
+		tabListClassName += ' vk_tab_labels--scroll-pc';
+	}
 	tabSizes.forEach((tabSize) => {
 		if (tabSize.attribute !== null && tabSize.attribute !== undefined) {
 			tabListClassName += ` ${tabSizePrefix}--${tabSize.name}-${tabSize.attribute}`;
@@ -548,6 +566,72 @@ export default function TabEdit(props) {
 						]}
 						onChange={(value) => {
 							setAttributes({ tabSizePc: value });
+						}}
+					/>
+				</PanelBody>
+				<PanelBody title={__('Tab Display Options', 'vk-blocks-pro')}>
+					<RadioControl
+						label={__('Tab Display Options ( Smart Phone )', 'vk-blocks-pro')}
+						selected={tabDisplayOptionsSp}
+						options={[
+							{
+								label: __('Not set', 'vk-blocks-pro'),
+								value: 'notSet',
+							},
+							{
+								label: __('Scroll', 'vk-blocks-pro'),
+								value: 'scroll',
+							},
+							{
+								label: __('Wrap to 2 rows', 'vk-blocks-pro'),
+								value: 'wrap',
+							},
+						]}
+						onChange={(value) => {
+							setAttributes({ tabDisplayOptionsSp: value });
+						}}
+					/>
+					<RadioControl
+						label={__('Tab Display Options ( Tablet )', 'vk-blocks-pro')}
+						    help={__('Use these settings when there are many tabs or the screen width is narrow.', 'vk-blocks-pro')}
+						selected={tabDisplayOptionsTab}
+						options={[
+							{
+								label: __('Not set', 'vk-blocks-pro'),
+								value: 'notSet',
+							},
+							{
+								label: __('Scroll', 'vk-blocks-pro'),
+								value: 'scroll',
+							},
+							{
+								label: __('Wrap to 2 rows', 'vk-blocks-pro'),
+								value: 'wrap',
+							},
+						]}
+						onChange={(value) => {
+							setAttributes({ tabDisplayOptionsTab: value });
+						}}
+					/>
+					<RadioControl
+						label={__('Tab Display Options ( PC )', 'vk-blocks-pro')}
+						selected={tabDisplayOptionsPc}
+						options={[
+							{
+								label: __('Not set', 'vk-blocks-pro'),
+								value: 'notSet',
+							},
+							{
+								label: __('Scroll', 'vk-blocks-pro'),
+								value: 'scroll',
+							},
+							{
+								label: __('Wrap to 2 rows', 'vk-blocks-pro'),
+								value: 'wrap',
+							},
+						]}
+						onChange={(value) => {
+							setAttributes({ tabDisplayOptionsPc: value });
 						}}
 					/>
 				</PanelBody>

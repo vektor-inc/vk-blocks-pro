@@ -11,6 +11,9 @@ export default function save(props) {
 		firstActive,
 		blockId,
 		className = '',
+		tabDisplayOptionsSp,
+		tabDisplayOptionsTab,
+		tabDisplayOptionsPc
 	} = attributes;
 
 	const tabSizePrefix = 'vk_tab_labels-tabSize';
@@ -31,6 +34,21 @@ export default function save(props) {
 	];
 
 	let tabListClassName = `vk_tab_labels`;
+	if (tabDisplayOptionsSp === 'wrap') {
+		tabListClassName += ' vk_tab_labels--wrap-sp';
+	} else if (tabDisplayOptionsSp === 'scroll') {
+		tabListClassName += ' vk_tab_labels--scroll-sp';
+	}
+	if (tabDisplayOptionsTab === 'wrap') {
+		tabListClassName += ' vk_tab_labels--wrap-tab';
+	} else if (tabDisplayOptionsTab === 'scroll') {
+		tabListClassName += ' vk_tab_labels--scroll-tab';
+	}
+	if (tabDisplayOptionsPc === 'wrap') {
+		tabListClassName += ' vk_tab_labels--wrap-pc';
+	} else if (tabDisplayOptionsPc === 'scroll') {
+		tabListClassName += ' vk_tab_labels--scroll-pc';
+	}
 	tabSizes.forEach((tabSize) => {
 		if (tabSize.attribute !== null && tabSize.attribute !== undefined) {
 			tabListClassName += ` ${tabSizePrefix}--${tabSize.name}-${tabSize.attribute}`;
@@ -129,7 +147,8 @@ export default function save(props) {
 					/>
 				</li>
 			);
-		});
+			}
+		);
 		tabList = (
 			<ul className={tabListClassName} role="tablist">
 				{tabListInner}

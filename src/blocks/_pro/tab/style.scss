@@ -89,6 +89,7 @@ $xl-min: 1200px;
 				background-color: var(--vk-color-bg-inactive);
 			}
 			&:hover {
+				// background-color: #fff; // ここで色を指定すると hover での色変更が効かない
 				opacity: 0.8;
 			}
 		}

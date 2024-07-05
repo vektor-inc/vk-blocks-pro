@@ -835,7 +835,7 @@ export default function SliderEdit(props) {
 					onChange={(nextWidth) =>
 						setAttributes({ width: nextWidth })
 					}
-					controls={['wide' , 'full']}
+					controls={['wide', 'full']}
 				/>
 				<ToolbarGroup>
 					<ToolbarDropdownMenu
@@ -926,7 +926,9 @@ export default function SliderEdit(props) {
 							</Button>
 							<Button
 								isSmall={true}
-								variant={width === 'wide' ? 'primary' : 'secondary'}
+								variant={
+									width === 'wide' ? 'primary' : 'secondary'
+								}
 								onClick={() => setAttributes({ width: 'wide' })}
 							>
 								{__('Wide', 'vk-blocks-pro')}

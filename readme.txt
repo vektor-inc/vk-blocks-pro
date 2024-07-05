@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+[ Fix ][ Table of Contents (Pro) ] Improved pseudo elements for frontend page accessibility.
 [ Add function ][ Core Group ] Add toolbar link for components by item.
 [ Add function ][ Grid Column (Pro) ] Add toolbar link for components by item.
 

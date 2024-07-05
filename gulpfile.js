@@ -84,6 +84,10 @@ gulp.task('helper-js-pro', (done) => {
 		.pipe(uglify())
 		.pipe(rename('vk-tab.min.js'))
 		.pipe(gulp.dest('./build/'));
+	gulp.src('src/blocks/_pro/table-of-contents-new/view.js')
+		.pipe(uglify())
+		.pipe(rename('vk-table-of-contents-new.min.js'))
+		.pipe(gulp.dest('./build/'));
 	done();
 });
 
@@ -299,45 +303,3 @@ gulp.task(
 
 // Default Tasks
 gulp.task('default', gulp.series('watch'));
-
-// copy dist ////////////////////////////////////////////////
-
-gulp.task('dist', (done) => {
-	gulp.src(
-		[
-			'./build/**',
-			'./inc/**',
-			'./languages/**',
-			'./vendor/**',
-			'./*.txt',
-			'./*.png',
-			'./*.php',
-			'!./src/**',
-			'!./tests/**',
-			'!./dist/**',
-			'!./node_modules/**',
-		],
-		{ base: './' }
-	).pipe(gulp.dest('dist/vk-blocks-pro')); // distディレクトリに出力
-	done();
-});
-
-// 無料版のリポジトリにコピーされた上で無料版リポジトリで実行される
-gulp.task('dist:free', (done) => {
-	gulp.src(
-		[
-			'./build/**',
-			'./inc/**',
-			'./vendor/**',			
-			'./*.txt',
-			'./*.png',
-			'./*.php',
-			'!./src/**',
-			'!./test/**',
-			'!./dist/**',
-			'!./node_modules/**',
-		],
-		{ base: './' }
-	).pipe(gulp.dest('dist/vk-blocks')); // distディレクトリに出力
-	done();
-});

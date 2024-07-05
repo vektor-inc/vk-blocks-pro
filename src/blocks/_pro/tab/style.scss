@@ -27,6 +27,9 @@ $xl-min: 1200px;
 		border-right: 1px solid var(--vk-color-border);
 		border-left: 1px solid var(--vk-color-border);
 		border-radius: 0;
+		// &:last-child {
+		//	border-right: 1px solid var(--vk-color-border);
+		// }
 		&::before, &::after {
 			position: absolute;
 			bottom: 0;
@@ -39,6 +42,7 @@ $xl-min: 1200px;
 			bottom: 0;
 			z-index: 0;
 			height: 1px;
+			// background-color: var(--vk-color-border); //重なる部分が濃くなるため
 		}
 		&::after {
 			top: 0;
@@ -57,6 +61,7 @@ $xl-min: 1200px;
 			&::after {
 				z-index: 1;
 				height: 2px;
+				// background-color: var(--default-color); // ここで色を指定すると hover での色変更が効かない
 				transition: all .5s ease-out;
 			}
 		}
@@ -69,11 +74,13 @@ $xl-min: 1200px;
 			color: var(--default-color);
 			background-color: #fff !important;
 			&::before {
+				// content: none;
 				background-color: #fff;
 			}
 			&::after {
 				z-index: 1;
 				height: 2px;
+				// background-color: var(--default-color); // ここで色を指定すると hover での色変更が効かない
 			}
 		}
 		&.vk_tab_labels_label-state-inactive {
@@ -117,7 +124,7 @@ $xl-min: 1200px;
 		flex-wrap: wrap;
 		justify-content: space-between;
 		.vk_tab_labels_label,
-		.vk_tab_labels_label.has-background {
+		.vk_tab_labels_label.has-background { // has-background がないと 編集画面で x-t9 の .has-background の padding 0 指定に負ける
 			background-color: var(--default-color);
 			position: relative;
 			list-style: none;
@@ -132,6 +139,7 @@ $xl-min: 1200px;
 			&.vk_tab_labels_label-state-active,
 			&.has-background {
 				background-color: var(--default-color);
+				// font-weight: bold;
 				color: #fff;
 			}
 			&.vk_tab_labels_label-state-inactive {

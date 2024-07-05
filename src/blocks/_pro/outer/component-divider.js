@@ -135,6 +135,34 @@ const componentDivider = (
 		}
 	};
 
+	// eslint-disable-next-line no-shadow
+	const serratedSectionStyle = (level, color) => {
+		const absLevel = Math.abs(level);
+		const baseSerrationCount = 40;
+		const serrationCount = level >= 0 
+			? baseSerrationCount + Math.floor(absLevel / 5) 
+			: Math.max(baseSerrationCount - Math.floor(absLevel / 5), 5);
+		const step = 100 / serrationCount;
+		const height = 10;
+	
+		const pathData = Array.from({ length: serrationCount + 1 })
+			.map((_, i) => {
+				const x = i * step;
+				const y = i % 2 === 0 ? 100 - height : 100;
+				return `${x},${y}`;
+			})
+			.join(' L ');
+	
+		return (
+			<path
+				d={`M0,100 L ${pathData} L100,100 Z`}
+				strokeWidth="0"
+				fill={isHexColor(color) ? color : 'currentColor'}
+				className={pathClassNames}
+			/>
+		);
+	};
+	
 	//背景色をクリアした時は、白に変更
 	if (!color) {
 		color = '#fff';
@@ -154,6 +182,9 @@ const componentDivider = (
 		} else if (dividerType === 'triangle') {
 			sectionPadding = Math.abs(lvl);
 			return triangleSectionStyle(lvl, color);
+		} else if (dividerType === 'serrated') {
+			sectionPadding = Math.abs(lvl);
+			return serratedSectionStyle(lvl, color);
 		}
 	};
 

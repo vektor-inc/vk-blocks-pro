@@ -632,6 +632,10 @@ export default function OuterEdit(props) {
 									value: 'triangle',
 									label: __('Triangle', 'vk-blocks-pro'),
 								},
+								{
+									value: 'serrated',
+									label: __('Serrated', 'vk-blocks-pro'),
+								},
 							]}
 						/>
 					</BaseControl>

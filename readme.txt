@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Outer (Pro) ] Add serrated in divider style.
 [ Add function ][ Core Group ] Add toolbar link for components by item.
 [ Add function ][ Grid Column (Pro) ] Add toolbar link for components by item.
 

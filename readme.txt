@@ -106,9 +106,9 @@ e.g.
 
 == Changelog ==
 
-[ Add function ][ Category Badge (Pro) ] Enabled taxonomy specification regardless of post type.
 [ Add function ][ Core Group ] Add toolbar link for components by item.
 [ Add function ][ Grid Column (Pro) ] Add toolbar link for components by item.
+[ Add function ][ Category Badge (Pro) ] Enabled taxonomy specification regardless of post type.
 
 = 1.78.0 =
 [ Other ] Attend to WordPress 6.6

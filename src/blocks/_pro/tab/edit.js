@@ -292,18 +292,18 @@ export default function TabEdit(props) {
 	];
 
 	let tabListClassName = `vk_tab_labels`;
-	if (tabDisplayOptionsSp === 'wrap') {
-		tabListClassName += ' vk_tab_labels--wrap-sp';
+	if (tabDisplayOptionsSp === 'wrap2rows') {
+		tabListClassName += ' vk_tab_labels--wrap-2rows-sp';
 	} else if (tabDisplayOptionsSp === 'scroll') {
 		tabListClassName += ' vk_tab_labels--scroll-sp';
 	}
-	if (tabDisplayOptionsTab === 'wrap') {
-		tabListClassName += ' vk_tab_labels--wrap-tab';
+	if (tabDisplayOptionsTab === 'wrap2rows') {
+		tabListClassName += ' vk_tab_labels--wrap-2rows-tab';
 	} else if (tabDisplayOptionsTab === 'scroll') {
 		tabListClassName += ' vk_tab_labels--scroll-tab';
 	}
-	if (tabDisplayOptionsPc === 'wrap') {
-		tabListClassName += ' vk_tab_labels--wrap-pc';
+	if (tabDisplayOptionsPc === 'wrap2rows') {
+		tabListClassName += ' vk_tab_labels--wrap-2rows-pc';
 	} else if (tabDisplayOptionsPc === 'scroll') {
 		tabListClassName += ' vk_tab_labels--scroll-pc';
 	}
@@ -316,17 +316,17 @@ export default function TabEdit(props) {
 	// Remove scroll or wrap classes if "Not set" is selected
 	if (tabDisplayOptionsSp === 'notSet') {
 		tabListClassName = tabListClassName
-			.replace(' vk_tab_labels--wrap-sp', '')
+			.replace(' vk_tab_labels--wrap-2rows-sp', '')
 			.replace(' vk_tab_labels--scroll-sp', '');
 	}
 	if (tabDisplayOptionsTab === 'notSet') {
 		tabListClassName = tabListClassName
-			.replace(' vk_tab_labels--wrap-tab', '')
+			.replace(' vk_tab_labels--wrap-2rows-tab', '')
 			.replace(' vk_tab_labels--scroll-tab', '');
 	}
 	if (tabDisplayOptionsPc === 'notSet') {
 		tabListClassName = tabListClassName
-			.replace(' vk_tab_labels--wrap-pc', '')
+			.replace(' vk_tab_labels--wrap-2rows-pc', '')
 			.replace(' vk_tab_labels--scroll-pc', '');
 	}
 
@@ -610,7 +610,7 @@ export default function TabEdit(props) {
 							},
 							{
 								label: __('Wrap to 2 rows', 'vk-blocks-pro'),
-								value: 'wrap',
+								value: 'wrap2rows',
 							},
 						]}
 						onChange={(value) => {
@@ -634,7 +634,7 @@ export default function TabEdit(props) {
 							},
 							{
 								label: __('Wrap to 2 rows', 'vk-blocks-pro'),
-								value: 'wrap',
+								value: 'wrap2rows',
 							},
 						]}
 						onChange={(value) => {
@@ -658,7 +658,7 @@ export default function TabEdit(props) {
 							},
 							{
 								label: __('Wrap to 2 rows', 'vk-blocks-pro'),
-								value: 'wrap',
+								value: 'wrap2rows',
 							},
 						]}
 						onChange={(value) => {

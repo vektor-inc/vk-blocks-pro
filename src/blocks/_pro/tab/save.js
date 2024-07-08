@@ -34,18 +34,18 @@ export default function save(props) {
 	];
 
 	let tabListClassName = `vk_tab_labels`;
-	if (tabDisplayOptionsSp === 'wrap') {
-		tabListClassName += ' vk_tab_labels--wrap-sp';
+	if (tabDisplayOptionsSp === 'wrap2rows') {
+		tabListClassName += ' vk_tab_labels--wrap-2rows-sp';
 	} else if (tabDisplayOptionsSp === 'scroll') {
 		tabListClassName += ' vk_tab_labels--scroll-sp';
 	}
-	if (tabDisplayOptionsTab === 'wrap') {
-		tabListClassName += ' vk_tab_labels--wrap-tab';
+	if (tabDisplayOptionsTab === 'wrap2rows') {
+		tabListClassName += ' vk_tab_labels--wrap-2rows-tab';
 	} else if (tabDisplayOptionsTab === 'scroll') {
 		tabListClassName += ' vk_tab_labels--scroll-tab';
 	}
-	if (tabDisplayOptionsPc === 'wrap') {
-		tabListClassName += ' vk_tab_labels--wrap-pc';
+	if (tabDisplayOptionsPc === 'wrap2rows') {
+		tabListClassName += ' vk_tab_labels--wrap-2rows-pc';
 	} else if (tabDisplayOptionsPc === 'scroll') {
 		tabListClassName += ' vk_tab_labels--scroll-pc';
 	}

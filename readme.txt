@@ -106,8 +106,12 @@ e.g.
 
 == Changelog ==
 
-[ Add function ][ Slider ] Add 'Wide' to width.
+[ Bug fix ] Fixed an error in the component link toolbar in WordPress version 6.6.
+[ Fix ][ Table of Contents (Pro) ] Improved pseudo elements for frontend page accessibility.
 [ Add function ][ Core Group ] Add toolbar link for components by item.
+[ Add function ][ Grid Column (Pro) ] Add toolbar link for components by item.
+[ Add function ][ Slider ] Add 'Wide' to width.
+
 = 1.78.0 =
 [ Other ] Attend to WordPress 6.6
 

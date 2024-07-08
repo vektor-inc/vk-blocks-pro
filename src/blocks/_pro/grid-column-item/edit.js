@@ -4,21 +4,19 @@ import {
 	BaseControl,
 	RangeControl,
 	SelectControl,
-	ToolbarGroup,
 } from '@wordpress/components';
 import {
 	InnerBlocks,
 	useBlockProps,
 	InspectorControls,
-	BlockControls,
 } from '@wordpress/block-editor';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
-import LinkToolbar from '@vkblocks/components/link-toolbar';
 
 export default function GridColumnItemEdit(props) {
 	const { attributes, setAttributes } = props;
+	// eslint-disable-next-line camelcase
 	const {
 		col_xs,
 		col_sm,
@@ -34,31 +32,47 @@ export default function GridColumnItemEdit(props) {
 		paddingX,
 		paddingBottom,
 		paddingUnit,
-		linkUrl,
-		linkTarget,
 	} = attributes;
+	// eslint-disable-next-line camelcase
 	const columnClass = `col-${convertToGrid(col_xs)} col-sm-${convertToGrid(
 		col_sm
 	)} col-md-${convertToGrid(col_md)} col-lg-${convertToGrid(
 		col_lg
 	)} col-xl-${convertToGrid(col_xl)} col-xxl-${convertToGrid(col_xxl)}`;
+	// margin bottom
 	let style;
 	if (marginBottom) {
 		style = { marginBottom: marginBottom + unit };
 	}
 	const columStyle = {
-		color: isHexColor(textColor) ? textColor : undefined,
-		background: isHexColor(backgroundColor) ? backgroundColor : undefined,
+		color:
+			textColor !== null &&
+			textColor !== undefined &&
+			isHexColor(textColor)
+				? textColor
+				: undefined,
+		background:
+			backgroundColor !== null &&
+			backgroundColor !== undefined &&
+			isHexColor(backgroundColor)
+				? backgroundColor
+				: undefined,
 		paddingTop:
-			paddingTop !== undefined ? paddingTop + paddingUnit : undefined,
+			paddingTop !== null && paddingTop !== undefined
+				? paddingTop + paddingUnit
+				: undefined,
 		paddingRight:
-			paddingX !== undefined ? paddingX + paddingUnit : undefined,
+			paddingX !== null && paddingX !== undefined
+				? paddingX + paddingUnit
+				: undefined,
 		paddingBottom:
-			paddingBottom !== undefined
+			paddingBottom !== null && paddingBottom !== undefined
 				? paddingBottom + paddingUnit
 				: undefined,
 		paddingLeft:
-			paddingX !== undefined ? paddingX + paddingUnit : undefined,
+			paddingX !== null && paddingX !== undefined
+				? paddingX + paddingUnit
+				: undefined,
 	};
 
 	let vkGridColumnTextColorClassName = '';
@@ -84,18 +98,6 @@ export default function GridColumnItemEdit(props) {
 
 	return (
 		<>
-			<BlockControls>
-				<ToolbarGroup>
-					<LinkToolbar
-						linkUrl={linkUrl}
-						setLinkUrl={(url) => setAttributes({ linkUrl: url })}
-						linkTarget={linkTarget}
-						setLinkTarget={(target) =>
-							setAttributes({ linkTarget: target })
-						}
-					/>
-				</ToolbarGroup>
-			</BlockControls>
 			<InspectorControls>
 				<PanelBody title={__('Color Settings', 'vk-blocks-pro')}>
 					<BaseControl
@@ -183,10 +185,22 @@ export default function GridColumnItemEdit(props) {
 							}
 						}}
 						options={[
-							{ value: 'px', label: __('px', 'vk-blocks-pro') },
-							{ value: 'em', label: __('em', 'vk-blocks-pro') },
-							{ value: 'rem', label: __('rem', 'vk-blocks-pro') },
-							{ value: 'vw', label: __('vw', 'vk-blocks-pro') },
+							{
+								value: 'px',
+								label: __('px', 'vk-blocks-pro'),
+							},
+							{
+								value: 'em',
+								label: __('em', 'vk-blocks-pro'),
+							},
+							{
+								value: 'rem',
+								label: __('rem', 'vk-blocks-pro'),
+							},
+							{
+								value: 'vw',
+								label: __('vw', 'vk-blocks-pro'),
+							},
 						]}
 					/>
 				</PanelBody>

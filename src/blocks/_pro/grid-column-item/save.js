@@ -1,4 +1,3 @@
-import { __ } from '@wordpress/i18n';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
@@ -20,8 +19,6 @@ export default function save({ attributes }) {
 		paddingX,
 		paddingBottom,
 		paddingUnit,
-		linkUrl,
-		linkTarget, // linkUrlとlinkTargetを追加
 	} = attributes;
 	// eslint-disable-next-line camelcase
 	const columnClass = `col-${convertToGrid(col_xs)} col-sm-${convertToGrid(
@@ -87,29 +84,6 @@ export default function save({ attributes }) {
 		style,
 	});
 
-	const relAttribute =
-		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
-
-	const GetLinkUrl = () => (
-		<a
-			href={linkUrl}
-			target={linkTarget}
-			className="vk_gridColumn_item_link"
-			rel={relAttribute}
-			aria-label={__('Grid column item link', 'vk-blocks-pro')}
-		>
-			<span className="screen-reader-text">
-				{__('Grid column item link', 'vk-blocks-pro')}
-			</span>
-		</a>
-	);
-
-	const hasPadding =
-		columStyle.paddingTop !== undefined ||
-		columStyle.paddingRight !== undefined ||
-		columStyle.paddingBottom !== undefined ||
-		columStyle.paddingLeft !== undefined;
-
 	return (
 		<>
 			<div {...blockProps}>
@@ -117,29 +91,21 @@ export default function save({ attributes }) {
 					if (
 						textColor !== undefined ||
 						backgroundColor !== undefined ||
-						hasPadding
+						columStyle.paddingTop !== undefined ||
+						columStyle.paddingRight !== undefined ||
+						columStyle.paddingBottom !== undefined ||
+						columStyle.paddingLeft !== undefined
 					) {
 						return (
 							<div
 								className={`vk_gridColumn_item_inner ${vkGridColumnTextColorClassName} ${vkGridColumnbackgroundColorColorClassName}`}
 								style={columStyle}
 							>
-								{linkUrl && GetLinkUrl()}
 								<InnerBlocks.Content />
 							</div>
 						);
 					}
-					return linkUrl ? (
-						<div
-							className={`vk_gridColumn_item_inner ${vkGridColumnTextColorClassName} ${vkGridColumnbackgroundColorColorClassName}`}
-							style={columStyle}
-						>
-							{GetLinkUrl()}
-							<InnerBlocks.Content />
-						</div>
-					) : (
-						<InnerBlocks.Content />
-					);
+					return <InnerBlocks.Content />;
 				})()}
 			</div>
 		</>

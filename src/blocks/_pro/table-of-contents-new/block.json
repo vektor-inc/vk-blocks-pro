@@ -5,9 +5,6 @@
 	"description": "This is a table of contents that is automatically generated according to the headings when added.",
 	"textdomain": "vk-blocks-pro",
 	"category": "vk-blocks-cat",
-	"editorScript": "vk-blocks-build-js",
-	"editorStyle": "vk-blocks-build-editor-css",
-	"style": "vk-blocks/table-of-contents-new",
 	"attributes": {
 		"style": {
 			"type": "string",

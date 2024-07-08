@@ -2,7 +2,7 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/grid-column-item",
 	"title": "Grid Column Item",
-	"description": "One item in a grit column block.",
+	"description": "One item in a grid column block.",
 	"textdomain": "vk-blocks-pro",
 	"category": "vk-blocks-cat-layout",
 	"parent": ["vk-blocks/grid-column"],
@@ -89,17 +89,12 @@
 			"type": "string",
 			"default": "{\"title\": \"left\", \"text\":\"left\" ,\"button\":\"right\"}"
 		},
+		"linkUrl": {
+			"type": "string"
+		},
 		"linkTarget": {
 			"type": "string",
-			"source": "attribute",
-			"selector": "a",
-			"attribute": "target"
-		},
-		"rel": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "a",
-			"attribute": "rel"
+			"default": ""
 		},
 		"marginBottom": {
 			"type": "number",

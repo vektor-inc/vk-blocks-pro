@@ -252,7 +252,7 @@ $xl-min: 1200px;
 	}
 }
 
-@media (min-width: $sm-min) {
+@media (min-width: $sm-min) and (max-width: $md-max) {
 	.vk_tab_labels {
 		&--scroll {
 			&-tab {

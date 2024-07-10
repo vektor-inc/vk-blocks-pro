@@ -17,6 +17,7 @@ import {
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { registerBlockVariation } from '@wordpress/blocks';
 import LinkToolbar from '@vkblocks/components/link-toolbar';
+import { ReactComponent as Icon } from './icon.svg';
 
 /**
  * Check if the block type is valid for customization.
@@ -231,12 +232,15 @@ registerBlockVariation('core/group', {
 	name: 'alert-test',
 	title: __('Alert Test', 'vk-blocks-pro'),
 	scope: ['inserter'],
+	icon: <Icon />,
+	category: 'vk-blocks-variation',
 	attributes: {
 		className: 'is-style-vk-group-alert-warning',
 		layout: {
 			type: 'constrained',
 		},
 	},
+	keyword: __('alert', 'vk-blocks-pro'),
 	innerBlocks: [
 		{
 			name: 'core/columns',

@@ -15,6 +15,7 @@ import {
 	InnerBlocks,
 } from '@wordpress/block-editor';
 import { createHigherOrderComponent } from '@wordpress/compose';
+import { registerBlockVariation } from '@wordpress/blocks';
 import LinkToolbar from '@vkblocks/components/link-toolbar';
 
 /**
@@ -225,3 +226,105 @@ addFilter(
 	'vk-blocks/group-save',
 	overrideBlockSettings
 );
+
+registerBlockVariation('core/group', {
+	name: 'alert-test',
+	title: __('Alert Test', 'vk-blocks-pro'),
+	scope: ['inserter'],
+	attributes: {
+		className: 'is-style-vk-group-alert-warning',
+		layout: {
+			type: 'constrained',
+		},
+	},
+	innerBlocks: [
+		{
+			name: 'core/columns',
+			innerBlocks: [
+				{
+					name: 'core/column',
+					attributes: {
+						width: '50px',
+					},
+					innerBlocks: [
+						{
+							name: 'core/group',
+							attributes: {
+								layout: {
+									type: 'constrained',
+								},
+							},
+							innerBlocks: [
+								{
+									name: 'vk-blocks/icon',
+									attributes: {
+										faIcon: '<i class="fas fa-exclamation-triangle"></i>',
+										iconSize: '24',
+										iconMargin: 0,
+										iconRadius: 0,
+										iconAlign: 'center',
+										iconType: '2',
+										iconColor: '#bd8c06',
+									},
+								},
+								{
+									name: 'core/paragraph',
+									attributes: {
+										align: 'center',
+										content: 'Point',
+									},
+								},
+							],
+						},
+					],
+				},
+				{
+					name: 'core/column',
+					attributes: {
+						width: '90%',
+					},
+					innerBlocks: [
+						{
+							name: 'core/group',
+							attributes: {
+								style: {
+									border: {
+										left: {
+											color: '#c9960b',
+										},
+									},
+									spacing: {
+										padding: {
+											left: 'var:preset|spacing|40',
+										},
+									},
+								},
+								layout: {
+									type: 'constrained',
+								},
+							},
+							innerBlocks: [
+								{
+									name: 'core/paragraph',
+									attributes: {
+										content:
+											'この記事は Lightning 15.4 以降でのみ有効です。最新版にアップデートしてご確認ください。',
+									},
+								},
+							],
+						},
+					],
+				},
+			],
+		},
+	],
+});
+
+registerBlockVariation('core/media-text', {
+	name: 'media-text-custom',
+	title: 'Media & Text Custom',
+	attributes: {
+		align: 'wide',
+		backgroundColor: 'accent',
+	},
+});

@@ -24,13 +24,13 @@ function vk_blocks_blocks_categories( $categories ) {
 				array(
 					array(
 						'slug'  => 'vk-blocks-variation',
-						'title' => $vk_blocks_prefix . __( 'Blocks Variation' , 'vk-blocks-pro' ),
+						'title' => $vk_blocks_prefix . __( 'Blocks Variation', 'vk-blocks-pro' ),
 						'icon'  => '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z" /><path d="M19 13H5v-2h14v2z" /></svg>',
 					),
 				),
 				$categories
 			);
-		} 
+		}
 		if ( ! in_array( 'vk-blocks-cat-layout', $keys, true ) ) {
 			$categories = array_merge(
 				array(
@@ -88,13 +88,13 @@ function vk_blocks_blocks_categories( $categories ) {
 				array(
 					array(
 						'slug'  => 'vk-blocks-variation',
-						'title' => $vk_blocks_prefix . __( 'Blocks Variation' , 'vk-blocks-pro' ),
+						'title' => $vk_blocks_prefix . __( 'Blocks Variation', 'vk-blocks-pro' ),
 						'icon'  => '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z" /><path d="M19 13H5v-2h14v2z" /></svg>',
 					),
 				),
 				$categories
 			);
-		} 
+		}
 	}
 
 	if ( ! in_array( 'vk-blocks-cat-deprecated', $keys, true ) ) {

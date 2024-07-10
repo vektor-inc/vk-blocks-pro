@@ -234,13 +234,13 @@ registerBlockVariation('core/group', {
 	scope: ['inserter'],
 	icon: <Icon />,
 	category: 'vk-blocks-variation',
+	keyword: __('alert', 'vk-blocks-pro'),
 	attributes: {
 		className: 'is-style-vk-group-alert-warning',
 		layout: {
 			type: 'constrained',
 		},
 	},
-	keyword: __('alert', 'vk-blocks-pro'),
 	innerBlocks: [
 		{
 			name: 'core/columns',
@@ -322,4 +322,93 @@ registerBlockVariation('core/group', {
 			],
 		},
 	],
+	example: {
+		attributes: {
+			className: 'is-style-vk-group-alert-warning',
+			layout: {
+				type: 'constrained',
+			},
+		},
+		innerBlocks: [
+			{
+				name: 'core/columns',
+				innerBlocks: [
+					{
+						name: 'core/column',
+						attributes: {
+							width: '50px',
+						},
+						innerBlocks: [
+							{
+								name: 'core/group',
+								attributes: {
+									layout: {
+										type: 'constrained',
+									},
+								},
+								innerBlocks: [
+									{
+										name: 'vk-blocks/icon',
+										attributes: {
+											faIcon: '<i class="fas fa-exclamation-triangle"></i>',
+											iconSize: '24',
+											iconMargin: 0,
+											iconRadius: 0,
+											iconAlign: 'center',
+											iconType: '2',
+											iconColor: '#bd8c06',
+										},
+									},
+									{
+										name: 'core/paragraph',
+										attributes: {
+											align: 'center',
+											content: 'Point',
+										},
+									},
+								],
+							},
+						],
+					},
+					{
+						name: 'core/column',
+						attributes: {
+							width: '90%',
+						},
+						innerBlocks: [
+							{
+								name: 'core/group',
+								attributes: {
+									style: {
+										border: {
+											left: {
+												color: '#c9960b',
+											},
+										},
+										spacing: {
+											padding: {
+												left: 'var:preset|spacing|40',
+											},
+										},
+									},
+									layout: {
+										type: 'constrained',
+									},
+								},
+								innerBlocks: [
+									{
+										name: 'core/paragraph',
+										attributes: {
+											content:
+												'この記事は Lightning 15.4 以降でのみ有効です。最新版にアップデートしてご確認ください。',
+										},
+									},
+								],
+							},
+						],
+					},
+				],
+			},
+		],
+	},
 });

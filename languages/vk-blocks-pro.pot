@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-07-10T04:44:47+00:00\n"
+"POT-Creation-Date: 2024-07-10T06:02:22+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -3544,7 +3544,7 @@ msgstr ""
 msgid "Alert Test"
 msgstr ""
 
-#: src/extensions/core/group/style.js:243
+#: src/extensions/core/group/style.js:237
 msgid "alert"
 msgstr ""
 

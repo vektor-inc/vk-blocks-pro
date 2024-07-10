@@ -3567,7 +3567,7 @@ msgstr ""
 msgid "Alert Test"
 msgstr ""
 
-#: src/extensions/core/group/style.js:243
+#: src/extensions/core/group/style.js:237
 msgid "alert"
 msgstr ""
 

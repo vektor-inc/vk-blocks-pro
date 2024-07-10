@@ -34,7 +34,8 @@
 		left: 0;
 		right: 0;
 		place-self: center;
-		width: 100%;
+		width: 100%;		
+		max-width: 100%;
 	}
 	&-right {
 		top: 50%;
@@ -57,6 +58,7 @@
 		bottom: 0;
 		place-self: center;
 		width: 100%;
+		max-width: 100%;
 	}
 	&-left {
 		top: 50%;

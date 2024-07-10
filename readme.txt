@@ -5,7 +5,7 @@ Tags: Gutenberg,FAQ,alert
 Requires at least: 6.3
 Tested up to: 6.5
 Stable tag: 1.77.0.1
-Requires PHP: 7.4
+Requires PHP: 7.De
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+[ Design Bug Fix ][ Fixed Display (Pro) ] Add max-width for position top and bottom.
 [ Add function ][ Tab (Pro) ] Add settings for when there are many labels or the screen width is narrow.
 [ Bug fix ] Fixed an error in the component link toolbar in WordPress version 6.6.
 [ Fix ][ Table of Contents (Pro) ] Improved pseudo elements for frontend page accessibility.

@@ -18,7 +18,7 @@
 
 .wp-block-vk-blocks-outer.vk_outer.vk_outer-width-full {
 	width: 100%;
-	max-width: 100vw;
+	max-width: 100svw;
 	margin-left: 0;
 	margin-right: 0;
 	padding-left: 0;
@@ -28,8 +28,8 @@
 		width: 100%;
 		max-width: 100vw;
 
-		padding-left: var(--vk-outer-padding-lr);
-		padding-right: var(--vk-outer-padding-lr);
+		padding-left: var(--vk-outer-padding);
+		padding-right: var(--vk-outer-padding);
 
 		.block-editor-inner-blocks {
 			max-width: 100vw;

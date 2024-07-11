@@ -1538,7 +1538,7 @@ msgid "Border Width"
 msgstr "線の幅"
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:209
-#: src/blocks/border-box/edit.js:239 src/extensions/core/group/style.js:46
+#: src/blocks/border-box/edit.js:239 src/extensions/core/group/style.js:94
 msgid "Border Color"
 msgstr "線の色"
 
@@ -2585,6 +2585,14 @@ msgstr "枠線 ピン角"
 msgid "Border Rounded"
 msgstr "枠線 角丸"
 
+#: src/blocks/faq2-a/save.js:9
+msgid "Answer"
+msgstr "回答"
+
+#: src/blocks/faq2-q/save.js:9
+msgid "Question"
+msgstr "質問"
+
 #: src/blocks/faq2/edit.js:38
 msgid "Use common settings"
 msgstr "共通設定を使用"
@@ -3555,7 +3563,11 @@ msgstr "カラムの方向"
 msgid "Reverse"
 msgstr "逆"
 
-#: src/extensions/core/group/style.js:51
+#: src/extensions/core/group/style.js:181
+msgid "Group link"
+msgstr "グループリンク"
+
+#: src/extensions/core/group/style.js:99
 msgid ""
 "Because of the theme that enabled theme.json become can specify the color "
 "from border panel that, specification from here is deprecated."

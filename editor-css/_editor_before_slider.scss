@@ -8,6 +8,11 @@
 		max-width: 100vw;
 		.vk_slider_item {
 			max-width: 100vw;
+		}
+	}
+	.vk_slider.vk_swiper.vk_slider.vk_swiper.alignwide,
+	.vk_slider.vk_swiper.vk_slider.vk_swiper.alignfull {
+		.vk_slider_item {
 			&.vk_slider_item-paddingLR-use,
 			&.vk_slider_item-paddingLR-zero{
 				.vk_slider_item_container{
@@ -19,9 +24,4 @@
 			}
 		}
 	}
-}
-// インサーターが左右左右中央にならないので補正
-vk_slider>.vk_slider_wrapper>div>.block-editor-inner-blocks>.block-editor-block-list__layout>.block-list-appender {
-	margin-left:auto;
-	margin-right:auto;
 }

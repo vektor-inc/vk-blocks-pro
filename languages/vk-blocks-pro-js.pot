@@ -1533,7 +1533,7 @@ msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:209
 #: src/blocks/border-box/edit.js:239
-#: src/extensions/core/group/style.js:46
+#: src/extensions/core/group/style.js:94
 msgid "Border Color"
 msgstr ""
 
@@ -2593,6 +2593,16 @@ msgstr ""
 msgid "Border Rounded"
 msgstr ""
 
+#: src/blocks/faq/save.js:16
+#: src/blocks/faq2-q/save.js:9
+msgid "Question"
+msgstr ""
+
+#: src/blocks/faq/save.js:20
+#: src/blocks/faq2-a/save.js:9
+msgid "Answer"
+msgstr ""
+
 #: src/blocks/faq2/edit.js:38
 msgid "Use common settings"
 msgstr ""
@@ -3537,7 +3547,11 @@ msgstr ""
 msgid "Reverse"
 msgstr ""
 
-#: src/extensions/core/group/style.js:51
+#: src/extensions/core/group/style.js:181
+msgid "Group link"
+msgstr ""
+
+#: src/extensions/core/group/style.js:99
 msgid ""
 "Because of the theme that enabled theme.json become can specify the color "
 "from border panel that, specification from here is deprecated."

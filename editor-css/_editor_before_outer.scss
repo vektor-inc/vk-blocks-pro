@@ -4,39 +4,59 @@
 .vk_outer-width-full.vk_outer-paddingLR-use,
 .vk_outer-width-full.vk_outer-paddingLR-zero{
 	// コンテンツエリアをはみ出させる
-	.wp-block { max-width:100%; }
-}
-
-.is-sidebar-opened & .vk_outer-width-full.vk_outer-paddingLR-use,
-.is-sidebar-opened & .vk_outer-width-full.vk_outer-paddingLR-zero{
-	// サイドバー表示時に全幅要素がはみ出してサイドバーの下などに入り込むのを防止
-	margin-left: calc( 50% - 50vw + 140px );
-	margin-right: calc( 50% - 50vw + 140px );
-	// コンテンツエリアをはみ出させる
-	.wp-block { max-width:100%; }
+	.wp-block:where(:not( 
+		.alignfull,
+		.alignwide,
+		[data-align="wide"],
+		[data-align="full"] 
+	)) { 
+		max-width:100%; 
+		.is-layout-constrained {
+			width: var(--vk-width-container);
+			max-width: var(--vk-width-container);
+		}
+	}
 }
 
 .wp-block-vk-blocks-outer.vk_outer.vk_outer-width-full {
-	width: 100%;
-	max-width: 100svw;
+	width: var(--vk-width-full);
+	max-width: var(--vk-width-full);
 	margin-left: 0;
 	margin-right: 0;
 	padding-left: 0;
 	padding-right: 0;
 	&.vk_outer-paddingLR-use,
 	&.vk_outer-paddingLR-zero {
-		width: 100%;
-		max-width: 100vw;
-
 		padding-left: var(--vk-outer-padding);
 		padding-right: var(--vk-outer-padding);
-
 		.block-editor-inner-blocks {
-			max-width: 100vw;
+			max-width: var(--vk-width-full);
 		}
 	}
 	.block-editor-inner-blocks {
-		max-width: 1110px;
+		// max-width: 1110px;
 		margin: auto;
+	}
+	&.vk_outer-paddingLR-use {
+		[data-align=wide] {
+			width: calc( var(--vk-width-full) - var(--vk-outer-padding)  );
+			max-width: calc( var(--vk-width-full) - var(--vk-outer-padding)  );
+			margin-left: calc( var(--vk-outer-padding) / -2 );
+		}
+		[data-align=full] {
+			width: var(--vk-width-full);
+			max-width:  var(--vk-width-full);
+			margin-left: calc( var(--vk-outer-padding) * -1 );
+		}
+	}
+	&.vk_outer-paddingLR-none {
+		[data-align=wide] {
+			width: calc( var(--vk-width-container) + ( var(--vk-width-full) -  var(--vk-width-container) ) / 2 );
+			max-width: calc( var(--vk-width-container) + ( var(--vk-width-full) -  var(--vk-width-container) ) / 2 );
+			margin-left: calc( ( var(--vk-width-container) - var(--vk-width-full) ) / 4 );
+		}
+		[data-align=full] {
+			margin-left: calc( ( var(--vk-width-container) - var(--vk-width-full) ) / 2 );
+		}
 	}
 }

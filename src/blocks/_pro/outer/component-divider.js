@@ -39,9 +39,7 @@ const componentDivider = (
 				/>
 			);
 		} else if (level < 0) {
-			//絶対値に変換
 			const absLevel = Math.abs(level);
-
 			return (
 				<path
 					d={`m100,${100 - absLevel} L0,100 L100,100 z`}
@@ -136,6 +134,31 @@ const componentDivider = (
 	};
 
 	// eslint-disable-next-line no-shadow
+	const largeTriangleSectionStyle = (level, color) => {
+		const absLevel = Math.abs(level);
+	
+		if (level > 0) {
+			return (
+				<path
+					d={`M50,${100 - absLevel} H50 L50,${100 - absLevel} 100,100 H100 V100 H0 Z`}
+					strokeWidth="0"
+					fill={isHexColor(color) ? color : 'currentColor'}
+					className={pathClassNames}
+				/>
+			);
+		} else if (level < 0) {
+			return (
+				<path
+					d={`M0,${100 - absLevel} H0 L50,100 100,${100 - absLevel} H100 V100 H0 Z`}
+					strokeWidth="0"
+					fill={isHexColor(color) ? color : 'currentColor'}
+					className={pathClassNames}
+				/>
+			);
+		}
+	};
+	
+	// eslint-disable-next-line no-shadow
 	const serratedSectionStyle = (level, color) => {
 		const absLevel = Math.abs(level);
 		const baseSerrationCount = 40;
@@ -183,6 +206,15 @@ const componentDivider = (
 		} else if (dividerType === 'triangle') {
 			sectionPadding = Math.abs(lvl);
 			return triangleSectionStyle(lvl, color);
+		} else if (dividerType === 'largeTriangle') {
+			sectionPadding = Math.abs(lvl);
+			return largeTriangleSectionStyle(lvl, color);
+		} else if (dividerType === 'book') {
+			sectionPadding = Math.abs(lvl);
+			return bookSectionStyle(lvl, color);
+		} else if (dividerType === 'pyramid') {
+			sectionPadding = Math.abs(lvl);
+			return pyramidSectionStyle(lvl, color);
 		} else if (dividerType === 'serrated') {
 			sectionPadding = Math.abs(lvl);
 			return serratedSectionStyle(lvl, color);

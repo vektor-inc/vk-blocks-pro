@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Tab (Pro) ] Fixed extra space being added to tabs depending on theme.
 [ Bug fix ][ Fixed Display (Pro) ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment. 
 [ Add function ][ Tab (Pro) ] Add settings for when there are many labels or the screen width is narrow.
 [ Bug fix ] Fixed an error in the component link toolbar in WordPress version 6.6.

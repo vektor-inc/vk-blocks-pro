@@ -634,10 +634,7 @@ export default function OuterEdit(props) {
 								},
 								{
 									value: 'largeTriangle',
-									label: __(
-										'Large triangle',
-										'vk-blocks-pro'
-									),
+									label: __('Large triangle','vk-blocks-pro'),
 								},
 								{
 									value: 'serrated',

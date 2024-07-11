@@ -159,16 +159,12 @@ const save = (props) => {
 	const { attributes } = props;
 	const { linkUrl, linkTarget, className } = attributes;
 
-	// Use block properties, setting className to include has-link if linkUrl is present
 	const blockProps = useBlockProps.save({
 		className: linkUrl ? `${className} has-link` : className,
 	});
 
-	// Determine rel attribute based on linkTarget
-	const relAttribute =
-		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
+	const relAttribute = linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
 
-	// Extract prefix for custom link class
 	const prefix = 'wp-block-group';
 
 	return (
@@ -182,10 +178,13 @@ const save = (props) => {
 					className={`${prefix}-vk-link`}
 				></a>
 			)}
-			<InnerBlocks.Content />
+			<div className="wp-block-group__inner-container">
+				<InnerBlocks.Content />
+			</div>
 		</div>
 	);
 };
+
 
 // Support for existing group blocks and version management
 import { assign } from 'lodash';

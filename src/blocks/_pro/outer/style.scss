@@ -250,37 +250,30 @@ $color-danger: #b52727;
 /* 管理画面
 /*-------------------------------------------*/
 :root {
-	--padding-left: 0;
-	--padding-right: 0;
+	--vk-outer-padding-lr: 0;
 }
 
 .vk_outer-paddingLR-use {
-	--padding-left: 1.5em;
-	--padding-right: 1.5em;
+	--vk-outer-padding-lr: 1.5em;
 
 	@media (min-width: $media-sm-up) {
-		--padding-left: 2em;
-		--padding-right: 2em;
+		--vk-outer-padding-lr: 2em;
 	}
 
 	@media (min-width: $media-md-up) {
-		--padding-left: 2.5em;
-		--padding-right: 2.5em;
+		--vk-outer-padding-lr: 2.5em;
 	}
 
 	@media (min-width: $media-lg-up) {
-		--padding-left: 3em;
-		--padding-right: 3em;
+		--vk-outer-padding-lr: 3em;
 	}
 
 	@media (min-width: $media-xl-up) {
-		--padding-left: 3.5em;
-		--padding-right: 3.5em;
+		--vk-outer-padding-lr: 3.5em;
 	}
 
 	@media (min-width: $media-xxl-up) {
-		--padding-left: 4em;
-		--padding-right: 4em;
+		--vk-outer-padding-lr: 4em;
 	}
 }
 

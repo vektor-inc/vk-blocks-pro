@@ -42,6 +42,8 @@ export default function TabItemEdit(props) {
 						background: '#ffffff',
 					},
 				},
+				className:
+					'vk_block-margin-0--margin-top vk_block-margin-0--margin-bottom',
 			},
 			[['core/paragraph']],
 		],
@@ -100,6 +102,24 @@ export default function TabItemEdit(props) {
 			}
 		}
 	}, [tabColor]);
+
+	// Add vk_block-margin-0 class to existing tab group blocks
+	useEffect(() => {
+		const currentBlock = select('core/block-editor').getBlock(clientId);
+		const innerBlocks = currentBlock.innerBlocks;
+		innerBlocks.forEach((block) => {
+			let newClassName = block.attributes.className || '';
+			if (!/vk_block-margin-.*--margin-top/.test(newClassName)) {
+				newClassName += ' vk_block-margin-0--margin-top';
+			}
+			if (!/vk_block-margin-.*--margin-bottom/.test(newClassName)) {
+				newClassName += ' vk_block-margin-0--margin-bottom';
+			}
+			updateBlockAttributes(block.clientId, {
+				className: newClassName.trim(),
+			});
+		});
+	}, [clientId]);
 
 	let activeBodyClass = '';
 	if (tabBodyActive) {

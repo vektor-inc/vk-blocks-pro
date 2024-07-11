@@ -136,7 +136,7 @@ const componentDivider = (
 	// eslint-disable-next-line no-shadow
 	const largeTriangleSectionStyle = (level, color) => {
 		const absLevel = Math.abs(level);
-	
+
 		if (level > 0) {
 			return (
 				<path
@@ -157,7 +157,7 @@ const componentDivider = (
 			);
 		}
 	};
-	
+
 	// eslint-disable-next-line no-shadow
 	const serratedSectionStyle = (level, color) => {
 		const absLevel = Math.abs(level);
@@ -209,12 +209,6 @@ const componentDivider = (
 		} else if (dividerType === 'largeTriangle') {
 			sectionPadding = Math.abs(lvl);
 			return largeTriangleSectionStyle(lvl, color);
-		} else if (dividerType === 'book') {
-			sectionPadding = Math.abs(lvl);
-			return bookSectionStyle(lvl, color);
-		} else if (dividerType === 'pyramid') {
-			sectionPadding = Math.abs(lvl);
-			return pyramidSectionStyle(lvl, color);
 		} else if (dividerType === 'serrated') {
 			sectionPadding = Math.abs(lvl);
 			return serratedSectionStyle(lvl, color);

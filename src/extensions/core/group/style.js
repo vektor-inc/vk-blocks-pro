@@ -157,13 +157,14 @@ addFilter('editor.BlockEdit', 'vk-blocks/group-style', addBlockControl);
  */
 const save = (props) => {
 	const { attributes } = props;
-	const { linkUrl, linkTarget, className } = attributes;
+	const { linkUrl, linkTarget, className = '' } = attributes;
 
 	const blockProps = useBlockProps.save({
 		className: linkUrl ? `${className} has-link` : className,
 	});
 
-	const relAttribute = linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
+	const relAttribute =
+		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
 
 	const prefix = 'wp-block-group';
 
@@ -178,13 +179,17 @@ const save = (props) => {
 					className={`${prefix}-vk-link`}
 				></a>
 			)}
-			<div className="wp-block-group__inner-container">
+			{className.includes('img-replacement-wrap') && (
+				<div className="wp-block-group__inner-container">
+					<InnerBlocks.Content />
+				</div>
+			)}
+			{!className.includes('img-replacement-wrap') && (
 				<InnerBlocks.Content />
-			</div>
+			)}
 		</div>
 	);
 };
-
 
 // Support for existing group blocks and version management
 import { assign } from 'lodash';

@@ -463,17 +463,17 @@ msgstr ""
 msgid "FAQ Block Setting"
 msgstr ""
 
-#: src/admin/license.js:49
+#: src/admin/license.js:56
 msgid "License key"
 msgstr ""
 
-#: src/admin/license.js:52
+#: src/admin/license.js:59
 msgid ""
 "Please enter a license key of valid Vektor Passport ( or Lightning G3 Pro "
 "Pack or Lightning Pro )."
 msgstr ""
 
-#: src/admin/license.js:58
+#: src/admin/license.js:65
 msgid ""
 "Once you enter the license key you will be able to do a one click update "
 "from the administration screen."

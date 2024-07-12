@@ -40,6 +40,7 @@ export const addAttribute = (settings) => {
 			...settings.attributes,
 			color: {
 				type: 'string',
+				default: '',
 			},
 			linkUrl: {
 				type: 'string',
@@ -48,6 +49,10 @@ export const addAttribute = (settings) => {
 			linkTarget: {
 				type: 'string',
 				default: '',
+			},
+			tagName: {
+				type: 'string',
+				default: 'div',
 			},
 		};
 	}
@@ -157,7 +162,7 @@ addFilter('editor.BlockEdit', 'vk-blocks/group-style', addBlockControl);
  */
 const save = (props) => {
 	const { attributes } = props;
-	const { linkUrl, linkTarget, className = '' } = attributes;
+	const { linkUrl, linkTarget, className = '', tagName: CustomTag = 'div' } = attributes;
 
 	const blockProps = useBlockProps.save({
 		className: linkUrl ? `${className} has-link` : className,
@@ -169,7 +174,7 @@ const save = (props) => {
 	const prefix = 'wp-block-group';
 
 	return (
-		<div {...blockProps}>
+		<CustomTag {...blockProps}>
 			{linkUrl && (
 				<a
 					href={linkUrl}
@@ -179,15 +184,14 @@ const save = (props) => {
 					className={`${prefix}-vk-link`}
 				></a>
 			)}
-			{className.includes('img-replacement-wrap') && (
+			{className.includes('img-replacement-wrap') ? (
 				<div className="wp-block-group__inner-container">
 					<InnerBlocks.Content />
 				</div>
-			)}
-			{!className.includes('img-replacement-wrap') && (
+			) : (
 				<InnerBlocks.Content />
 			)}
-		</div>
+		</CustomTag>
 	);
 };
 
@@ -217,6 +221,12 @@ const overrideBlockSettings = (settings, name) => {
 			newSettings.attributes.linkTarget = {
 				type: 'string',
 				default: '',
+			};
+		}
+		if (!newSettings.attributes.tagName) {
+			newSettings.attributes.tagName = {
+				type: 'string',
+				default: 'div',
 			};
 		}
 		return newSettings;

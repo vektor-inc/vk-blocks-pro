@@ -2074,11 +2074,11 @@ msgstr ""
 msgid "First Dot Number"
 msgstr ""
 
-#: src/blocks/_pro/tab-item/edit.js:134
+#: src/blocks/_pro/tab-item/edit.js:154
 msgid "Tab Color Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab-item/edit.js:137
+#: src/blocks/_pro/tab-item/edit.js:157
 msgid "Tab Color"
 msgstr ""
 

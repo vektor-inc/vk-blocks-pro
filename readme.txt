@@ -115,6 +115,7 @@ e.g.
 [ Add function ][ Core Group ] Add toolbar link for components by item.
 [ Add function ][ Grid Column (Pro) ] Add toolbar link for components by item.
 [ Add function ][ Slider ] Add 'Wide' to width.
+[ Other ][ Outer ] Refactored CSS of width treatment to prevent layout corruption on the edit screen.
 
 = 1.78.0 =
 [ Other ] Attend to WordPress 6.6

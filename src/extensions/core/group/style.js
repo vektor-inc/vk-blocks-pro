@@ -162,7 +162,12 @@ addFilter('editor.BlockEdit', 'vk-blocks/group-style', addBlockControl);
  */
 const save = (props) => {
 	const { attributes } = props;
-	const { linkUrl, linkTarget, className = '', tagName: CustomTag = 'div' } = attributes;
+	const {
+		linkUrl,
+		linkTarget,
+		className = '',
+		tagName: CustomTag = 'div',
+	} = attributes;
 
 	const blockProps = useBlockProps.save({
 		className: linkUrl ? `${className} has-link` : className,

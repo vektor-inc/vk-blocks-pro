@@ -115,6 +115,7 @@ e.g.
 [ Add function ][ Core Group ] Add toolbar link for components by item.
 [ Add function ][ Grid Column (Pro) ] Add toolbar link for components by item.
 [ Add function ][ Slider ] Add 'Wide' to width.
+[ Bug fix ][ Table of Contents (Pro) ] Fix JavaScript Error at no Table of Contents
 
 = 1.78.0 =
 [ Other ] Attend to WordPress 6.6

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-07-12T06:17:53+00:00\n"
+"POT-Creation-Date: 2024-07-12T07:50:42+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -481,16 +481,16 @@ msgstr ""
 msgid "FAQ Block Setting"
 msgstr ""
 
-#: src/admin/license.js:56
-msgid "License key"
-msgstr ""
-
-#: src/admin/license.js:59
+#: src/admin/license.js:24
 msgid "Please enter a license key of valid Vektor Passport ( or Lightning G3 Pro Pack or Lightning Pro )."
 msgstr ""
 
-#: src/admin/license.js:65
+#: src/admin/license.js:30
 msgid "Once you enter the license key you will be able to do a one click update from the administration screen."
+msgstr ""
+
+#: src/admin/license.js:37
+msgid "License key"
 msgstr ""
 
 #: src/admin/load-separate.js:36

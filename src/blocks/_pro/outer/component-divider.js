@@ -210,7 +210,7 @@ const componentDivider = (
 			sectionPadding = Math.abs(lvl);
 			return largeTriangleSectionStyle(lvl, color);
 		} else if (dividerType === 'serrated') {
-			sectionPadding = Math.abs(lvl);
+			sectionPadding = 10;
 			return serratedSectionStyle(lvl, color);
 		}
 	};

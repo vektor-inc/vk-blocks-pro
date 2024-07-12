@@ -429,6 +429,10 @@ class VK_Blocks_Global_Settings {
 					'name'  => 'vk-image-wave04',
 					'label' => __( 'Wave04', 'vk-blocks-pro' ),
 				),
+				array(
+					'name'  => 'vk-image-circle',
+					'label' => __( 'Circle', 'vk-blocks-pro' ),
+				),
 			),
 			'core/group'   => array(
 				array(

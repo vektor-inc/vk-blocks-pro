@@ -145,6 +145,7 @@ function vk_blocks_blocks_assets() {
 			--vk_image-mask-wave02: url(' . VK_BLOCKS_URL . 'images/wave02.svg);
 			--vk_image-mask-wave03: url(' . VK_BLOCKS_URL . 'images/wave03.svg);
 			--vk_image-mask-wave04: url(' . VK_BLOCKS_URL . 'images/wave04.svg);
+			--vk_image-mask-circle: url(' . VK_BLOCKS_URL . 'images/circle.svg);
 		}
 	';
 

@@ -2230,6 +2230,38 @@ msgstr ""
 msgid "Danger"
 msgstr ""
 
+#: src/blocks/alert/variations.js:12
+msgid "This is success alert."
+msgstr ""
+
+#: src/blocks/alert/variations.js:17
+msgid "Alert Info"
+msgstr ""
+
+#: src/blocks/alert/variations.js:22
+msgid "This is info alert."
+msgstr ""
+
+#: src/blocks/alert/variations.js:27
+msgid "Alert Warning"
+msgstr ""
+
+#: src/blocks/alert/variations.js:32
+msgid "This is warning alert."
+msgstr ""
+
+#: src/blocks/alert/variations.js:37
+msgid "Alert Danger"
+msgstr ""
+
+#: src/blocks/alert/variations.js:42
+msgid "This is danger alert."
+msgstr ""
+
+#: src/blocks/alert/variations.js:7
+msgid "Alert Success"
+msgstr ""
+
 #: src/blocks/ancestor-page-list/edit.js:100
 msgid "Add link to ancestor page title"
 msgstr ""

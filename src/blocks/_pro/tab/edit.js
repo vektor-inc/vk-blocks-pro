@@ -24,6 +24,9 @@ export default function TabEdit(props) {
 		firstActive,
 		blockId,
 		className,
+		tabDisplayOptionsSp,
+		tabDisplayOptionsTab,
+		tabDisplayOptionsPc,
 	} = attributes;
 
 	const ALLOWED_BLOCKS = ['vk-blocks/tab-item'];
@@ -289,11 +292,43 @@ export default function TabEdit(props) {
 	];
 
 	let tabListClassName = `vk_tab_labels`;
+	if (tabDisplayOptionsSp === 'wrap2rows') {
+		tabListClassName += ' vk_tab_labels--wrap-2rows-sp';
+	} else if (tabDisplayOptionsSp === 'scroll') {
+		tabListClassName += ' vk_tab_labels--scroll-sp';
+	}
+	if (tabDisplayOptionsTab === 'wrap2rows') {
+		tabListClassName += ' vk_tab_labels--wrap-2rows-tab';
+	} else if (tabDisplayOptionsTab === 'scroll') {
+		tabListClassName += ' vk_tab_labels--scroll-tab';
+	}
+	if (tabDisplayOptionsPc === 'wrap2rows') {
+		tabListClassName += ' vk_tab_labels--wrap-2rows-pc';
+	} else if (tabDisplayOptionsPc === 'scroll') {
+		tabListClassName += ' vk_tab_labels--scroll-pc';
+	}
 	tabSizes.forEach((tabSize) => {
 		if (tabSize.attribute !== null && tabSize.attribute !== undefined) {
 			tabListClassName += ` ${tabSizePrefix}--${tabSize.name}-${tabSize.attribute}`;
 		}
 	});
+
+	// Remove scroll or wrap classes if "Not set" is selected
+	if (tabDisplayOptionsSp === 'notSet') {
+		tabListClassName = tabListClassName
+			.replace(' vk_tab_labels--wrap-2rows-sp', '')
+			.replace(' vk_tab_labels--scroll-sp', '');
+	}
+	if (tabDisplayOptionsTab === 'notSet') {
+		tabListClassName = tabListClassName
+			.replace(' vk_tab_labels--wrap-2rows-tab', '')
+			.replace(' vk_tab_labels--scroll-tab', '');
+	}
+	if (tabDisplayOptionsPc === 'notSet') {
+		tabListClassName = tabListClassName
+			.replace(' vk_tab_labels--wrap-2rows-pc', '')
+			.replace(' vk_tab_labels--scroll-pc', '');
+	}
 
 	let tablabelsEditList = '';
 	let tablabelsEdit = '';
@@ -498,7 +533,7 @@ export default function TabEdit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Tab size Setting', 'vk-blocks-pro')}>
+				<PanelBody title={__('Tab Size Setting', 'vk-blocks-pro')}>
 					<RadioControl
 						label={__('Tab Size ( Smart Phone )', 'vk-blocks-pro')}
 						selected={tabSizeSp}
@@ -548,6 +583,86 @@ export default function TabEdit(props) {
 						]}
 						onChange={(value) => {
 							setAttributes({ tabSizePc: value });
+						}}
+					/>
+				</PanelBody>
+				<PanelBody title={__('Tab Display Options', 'vk-blocks-pro')}>
+					<p>
+						{__(
+							'If there are many labels or the screen width is narrow, you can adjust it here. *Tab size setting will not be effective.',
+							'vk-blocks-pro'
+						)}
+					</p>
+					<RadioControl
+						label={__(
+							'Tab Display Options ( Smart Phone )',
+							'vk-blocks-pro'
+						)}
+						selected={tabDisplayOptionsSp}
+						options={[
+							{
+								label: __('Not set', 'vk-blocks-pro'),
+								value: 'notSet',
+							},
+							{
+								label: __('Scroll', 'vk-blocks-pro'),
+								value: 'scroll',
+							},
+							{
+								label: __('Wrap to 2 rows', 'vk-blocks-pro'),
+								value: 'wrap2rows',
+							},
+						]}
+						onChange={(value) => {
+							setAttributes({ tabDisplayOptionsSp: value });
+						}}
+					/>
+					<RadioControl
+						label={__(
+							'Tab Display Options ( Tablet )',
+							'vk-blocks-pro'
+						)}
+						selected={tabDisplayOptionsTab}
+						options={[
+							{
+								label: __('Not set', 'vk-blocks-pro'),
+								value: 'notSet',
+							},
+							{
+								label: __('Scroll', 'vk-blocks-pro'),
+								value: 'scroll',
+							},
+							{
+								label: __('Wrap to 2 rows', 'vk-blocks-pro'),
+								value: 'wrap2rows',
+							},
+						]}
+						onChange={(value) => {
+							setAttributes({ tabDisplayOptionsTab: value });
+						}}
+					/>
+					<RadioControl
+						label={__(
+							'Tab Display Options ( PC )',
+							'vk-blocks-pro'
+						)}
+						selected={tabDisplayOptionsPc}
+						options={[
+							{
+								label: __('Not set', 'vk-blocks-pro'),
+								value: 'notSet',
+							},
+							{
+								label: __('Scroll', 'vk-blocks-pro'),
+								value: 'scroll',
+							},
+							{
+								label: __('Wrap to 2 rows', 'vk-blocks-pro'),
+								value: 'wrap2rows',
+							},
+						]}
+						onChange={(value) => {
+							setAttributes({ tabDisplayOptionsPc: value });
 						}}
 					/>
 				</PanelBody>

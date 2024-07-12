@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.3
 Tested up to: 6.5
-Stable tag: 1.76.1.1
+Stable tag: 1.77.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -66,6 +66,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Responsive BR
 * Columns direction
 * Custom CSS [ Pro ]
+* Link toolber
 
 [ Settings ]
 * Balloon
@@ -106,9 +107,29 @@ e.g.
 == Changelog ==
 
 [ Specification Change ][ Slider ] Change padding style to core system.
+[ Bug fix ][ Tab (Pro) ] Fixed extra space being added to tabs depending on theme.
+[ Bug fix ][ Fixed Display (Pro) ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment. 
+[ Add function ][ Tab (Pro) ] Add settings for when there are many labels or the screen width is narrow.
+[ Bug fix ] Fixed an error in the component link toolbar in WordPress version 6.6.
+[ Fix ][ Table of Contents (Pro) ] Improved pseudo elements for frontend page accessibility.
+[ Add function ][ Core Group ] Add toolbar link for components by item.
+[ Add function ][ Grid Column (Pro) ] Add toolbar link for components by item.
+[ Add function ][ Slider ] Add 'Wide' to width.
+
+= 1.78.0 =
+[ Other ] Attend to WordPress 6.6
+
+= 1.77.0 =
+[ Add function ][ Outer (Pro) ] Add toolbar link for components.
+[ Add function ][ Accordion ] Added initial display state setting.
 [ Specification Change ][ Tab (Pro) ] Accessibility support
 [ Bug fix ][ Table of Contents (Pro) ] Fix "OBJ" characters appeared in the Table of Contents on Windows.
 [ Bug fix ] Delete unnecessary development files included in 1.76.2.
+[ Fix ][ FAQ / FAQ2 ] add aria-label for accessibility
+
+= 1.76.2 =
+[ Specification Change ] Change Font Awesome Version to 6.5.2
+[ Bug fix ] Fix load font awesome files
 
 = 1.76.1 =
 [ Bug fix ][ Fixed Display (Pro) ] Add css for position and alignment.
@@ -123,6 +144,7 @@ e.g.
 [ Specification Change ][ Post List (Pro) ] Displayed taxonomies now only show for selected post types.
 [ Specification Change ][ Responsive Spacer ] Added CSS to remove margins from the default theme.
 [ Bug fix ][ Tab ] Fix background color of tab disappearing when clicking active tab.
+[ Add function ][ Slider Item ] Add toolbar link for components.
 [ Other ] Add toolbar link to components.
 
 = 1.75.1 =

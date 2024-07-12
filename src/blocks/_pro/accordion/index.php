@@ -52,3 +52,27 @@ function vk_blocks_register_block_accordion() {
 	);
 }
 add_action( 'init', 'vk_blocks_register_block_accordion', 99 );
+
+/**
+ * Renders the accordion block.
+ *
+ * @param array  $attributes The block attributes.
+ * @param string $content    The block content.
+ * @return string The rendered HTML of the accordion block.
+ */
+function vk_blocks_render_accordion_block( $attributes, $content ) {
+	// Ensure required attributes are set
+	$container_class = isset( $attributes['containerClass'] ) ? $attributes['containerClass'] : '';
+	$initial_state   = isset( $attributes['initialState'] ) ? $attributes['initialState'] : '';
+
+	// Sanitize and escape attributes
+	$container_class = esc_attr( $container_class );
+	$initial_state   = esc_attr( $initial_state );
+
+	// Build the output
+	$output  = '<div class="' . $container_class . '" data-state="' . $initial_state . '">';
+	$output .= wp_kses_post( $content );
+	$output .= '</div>';
+
+	return $output;
+}

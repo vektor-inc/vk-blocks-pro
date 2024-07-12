@@ -2,7 +2,7 @@
 	--vk-color-border: rgba(0,0,0,.12);
 	--vk-color-bg-accent-wh: rgba(255,255,255,0.65);
 	--vk-color-bg-inactive: rgba(0, 0, 0, .08);
-	--default-color:#337ab7;
+	--default-color: #337ab7;
 }
 
 $xs-max: 575.98px;
@@ -66,6 +66,7 @@ $xl-min: 1200px;
 			}
 		}
 		& > div {
+			height: 100%;
 			padding: calc( 1rem * 0.5 ) calc( 1rem * 1 );
 			border-top: 2px solid transparent;
 		}
@@ -95,6 +96,7 @@ $xl-min: 1200px;
 	}
 	.vk_tab_bodys {
 		border-top: 1px solid var(--vk-color-border);
+		margin-top: -1px; // border-top と重ねるため
 		.has-border-top {
 			border-top: none;
 		}
@@ -118,8 +120,6 @@ $xl-min: 1200px;
 	margin-bottom: calc( 1rem * 2);
 	&_labels{
 		--vk-tab-gap:calc( 1rem * 0.2 );
-		padding: 0;
-		margin: 0;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
@@ -151,6 +151,10 @@ $xl-min: 1200px;
 				opacity: 0.8;
 			}
 		}
+	}
+	.vk_tab_labels{ // この指定がないとULの指定に負けてしまうことがあるため
+		padding: 0;
+		margin: 0;
 	}
 }
 
@@ -205,6 +209,118 @@ $xl-min: 1200px;
 		}
 		&--pc-monospaced li {
 			width: 100%;
+		}
+	}
+}
+
+/* Display Setting for Many Tabs */
+.vk_tab_labels--scroll_notice {
+	background-color: #ffeb3b;
+	padding: 5px;
+	border-radius: 3px;
+	font-size: 12px;
+}
+@media (max-width: $xs-max) {
+	.vk_tab_labels {
+		&--scroll {
+			&-sp {
+				position: relative;
+				overflow-x: auto;
+				white-space: nowrap !important;
+				.vk_tab_labels_label > div {
+					white-space: nowrap !important;
+				}
+				/* Scrollbar styles */
+				&::-webkit-scrollbar {
+					height: 8px;
+				}
+				&::-webkit-scrollbar-track {
+					background: var(--vk-color-bg-inactive);
+					border-radius: 10px;
+				}
+				&::-webkit-scrollbar-thumb {
+					background: var(--vk-color-border);
+					border-radius: 10px;
+				}
+			}
+		}
+		&--wrap-2rows-sp {
+			display: flex;
+			flex-wrap: wrap !important;
+			.vk_tab_labels_label {
+				flex: 1 1 calc(50% - .75rem);
+				box-sizing: border-box;
+			}
+		}
+	}
+}
+
+@media (min-width: $sm-min) and (max-width: $md-max) {
+	.vk_tab_labels {
+		&--scroll {
+			&-tab {
+				position: relative;
+				overflow-x: auto;
+				white-space: nowrap !important;
+				.vk_tab_labels_label > div {
+					white-space: nowrap !important;
+				}
+				/* Scrollbar styles */
+				&::-webkit-scrollbar {
+					height: 8px;
+				}
+				&::-webkit-scrollbar-track {
+					background: var(--vk-color-bg-inactive);
+					border-radius: 10px;
+				}
+				&::-webkit-scrollbar-thumb {
+					background: var(--vk-color-border);
+					border-radius: 10px;
+				}
+			}
+		}
+		&--wrap-2rows-tab {
+			display: flex;
+			flex-wrap: wrap !important;
+			.vk_tab_labels_label {
+				flex: 1 1 calc(50% - .75rem);
+				box-sizing: border-box;
+			}
+		}
+	}
+}
+
+@media (min-width: $lg-min) {
+	.vk_tab_labels {
+		&--scroll {
+			&-pc {
+				position: relative;
+				overflow-x: auto;
+				white-space: nowrap !important;
+				.vk_tab_labels_label > div {
+					white-space: nowrap !important;
+				}
+				/* Scrollbar styles */
+				&::-webkit-scrollbar {
+					height: 8px;
+				}
+				&::-webkit-scrollbar-track {
+					background: var(--vk-color-bg-inactive);
+					border-radius: 10px;
+				}
+				&::-webkit-scrollbar-thumb {
+					background: var(--vk-color-border);
+					border-radius: 10px;
+				}
+			}
+		}
+		&--wrap-2rows-pc {
+			display: flex;
+			flex-wrap: wrap !important;
+			.vk_tab_labels_label {
+				flex: 1 1 calc(50% - .75rem);
+				box-sizing: border-box;
+			}
 		}
 	}
 }

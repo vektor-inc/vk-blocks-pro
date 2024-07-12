@@ -34,6 +34,16 @@ export default function save(props) {
 		hidden: !tabBodyActive ? 'until-found' : undefined,
 	});
 
+	// Add vk_block-margin-0 class to existing tab group blocks
+	let newClassName = blockProps.className || '';
+	if (!/vk_block-margin-.*--margin-top/.test(newClassName)) {
+		newClassName += ' vk_block-margin-0--margin-top';
+	}
+	if (!/vk_block-margin-.*--margin-bottom/.test(newClassName)) {
+		newClassName += ' vk_block-margin-0--margin-bottom';
+	}
+	blockProps.className = newClassName.trim();
+
 	return (
 		<div {...blockProps}>
 			<InnerBlocks.Content />

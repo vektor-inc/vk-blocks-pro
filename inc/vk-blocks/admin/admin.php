@@ -201,7 +201,6 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 		array(
 			'options'          => VK_Blocks_Options::get_options(),
 			'isLicenseSetting' => vk_blocks_is_license_setting(),
-			'licenseCheck'     => vk_blocks_license_check(),
 			'isPro'            => vk_blocks_is_pro(),
 			'deprecatedLists'  => VK_Blocks_Options::get_deprecated_lists(),
 			'blockJsonLists'   => $block_json_lists,

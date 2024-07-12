@@ -192,13 +192,7 @@ const save = (props) => {
 					className={`${prefix}-vk-link`}
 				></a>
 			)}
-			{className.includes('img-replacement-wrap') ? (
-				<div className="wp-block-group__inner-container">
-					<InnerBlocks.Content />
-				</div>
-			) : (
-				<InnerBlocks.Content />
-			)}
+			<InnerBlocks.Content />
 		</CustomTag>
 	);
 };

@@ -195,10 +195,6 @@ const blockAttributes8 = {
 const deprecated = [
 	{
 		attributes: blockAttributes7,
-		save: save1_78_0,
-	},
-	{
-		attributes: blockAttributes7,
 		save: save1_76_0,
 	},
 	{

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-07-04T07:39:03+00:00\n"
+"POT-Creation-Date: 2024-07-12T02:03:54+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -326,7 +326,7 @@ msgid "Color"
 msgstr ""
 
 #: src/admin/custom-format/index.js:208
-#: src/blocks/_pro/grid-column-item/edit.js:104
+#: src/blocks/_pro/grid-column-item/edit.js:102
 #: src/blocks/_pro/gridcolcard/edit-common.js:166
 #: src/blocks/button/edit.js:749
 #: src/blocks/heading/edit.js:324
@@ -334,7 +334,7 @@ msgid "Text Color"
 msgstr ""
 
 #: src/admin/custom-format/index.js:239
-#: src/blocks/_pro/grid-column-item/edit.js:110
+#: src/blocks/_pro/grid-column-item/edit.js:108
 #: src/blocks/_pro/gridcolcard/edit-common.js:172
 #: src/blocks/border-box/edit.js:248
 #: src/blocks/button/edit.js:732
@@ -481,16 +481,16 @@ msgstr ""
 msgid "FAQ Block Setting"
 msgstr ""
 
-#: src/admin/license.js:24
+#: src/admin/license.js:49
+msgid "License key"
+msgstr ""
+
+#: src/admin/license.js:52
 msgid "Please enter a license key of valid Vektor Passport ( or Lightning G3 Pro Pack or Lightning Pro )."
 msgstr ""
 
-#: src/admin/license.js:30
+#: src/admin/license.js:58
 msgid "Once you enter the license key you will be able to do a one click update from the administration screen."
-msgstr ""
-
-#: src/admin/license.js:37
-msgid "License key"
 msgstr ""
 
 #: src/admin/load-separate.js:36
@@ -563,7 +563,7 @@ msgstr ""
 #: src/blocks/_pro/accordion/edit.js:139
 #: src/blocks/_pro/outer/edit.js:1043
 #: src/blocks/button/edit.js:537
-#: src/blocks/slider/edit.js:952
+#: src/blocks/slider/edit.js:961
 #: src/components/advanced-viewport-control/index.js:25
 msgid "PC"
 msgstr ""
@@ -572,7 +572,7 @@ msgstr ""
 #: src/blocks/_pro/accordion/edit.js:122
 #: src/blocks/_pro/outer/edit.js:1027
 #: src/blocks/button/edit.js:472
-#: src/blocks/slider/edit.js:973
+#: src/blocks/slider/edit.js:982
 #: src/components/advanced-viewport-control/index.js:32
 msgid "Tablet"
 msgstr ""
@@ -581,7 +581,7 @@ msgstr ""
 #: src/blocks/_pro/accordion/edit.js:105
 #: src/blocks/_pro/outer/edit.js:1011
 #: src/blocks/button/edit.js:407
-#: src/blocks/slider/edit.js:994
+#: src/blocks/slider/edit.js:1003
 #: src/components/advanced-viewport-control/index.js:41
 msgid "Mobile"
 msgstr ""
@@ -597,7 +597,7 @@ msgid "Please specify the size of the common margin used for responsive spacers,
 msgstr ""
 
 #: src/admin/margin.js:81
-#: src/blocks/_pro/grid-column-item/edit.js:175
+#: src/blocks/_pro/grid-column-item/edit.js:173
 #: src/blocks/_pro/grid-column/edit.js:78
 msgid "Unit"
 msgstr ""
@@ -856,7 +856,7 @@ msgid "2:3"
 msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:145
-#: src/blocks/slider/edit.js:940
+#: src/blocks/slider/edit.js:949
 msgid "Height"
 msgstr ""
 
@@ -1103,7 +1103,7 @@ msgid "Image Height"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:88
-#: src/blocks/slider/edit.js:945
+#: src/blocks/slider/edit.js:954
 msgid "Slide Height for each device."
 msgstr ""
 
@@ -1259,7 +1259,7 @@ msgstr ""
 #: src/blocks/icon/edit.js:292
 #: src/blocks/pr-blocks/edit.js:262
 #: src/blocks/pr-content/edit.js:131
-#: src/components/link-toolbar/index.js:274
+#: src/components/link-toolbar/index.js:275
 msgid "Open link new tab."
 msgstr ""
 
@@ -1366,30 +1366,30 @@ msgstr ""
 msgid "Top"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:102
+#: src/blocks/_pro/grid-column-item/edit.js:100
 #: src/blocks/_pro/gridcolcard/edit-common.js:164
 msgid "Color Settings"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:120
+#: src/blocks/_pro/grid-column-item/edit.js:118
 msgid "Margin setting inside the item"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:127
+#: src/blocks/_pro/grid-column-item/edit.js:125
 msgid "Padding (Top)"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:143
+#: src/blocks/_pro/grid-column-item/edit.js:141
 #: src/blocks/_pro/outer/edit.js:536
 #: src/blocks/slider-item/edit.js:134
 msgid "Padding (Left and Right)"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:159
+#: src/blocks/_pro/grid-column-item/edit.js:157
 msgid "Padding (Bottom)"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:190
+#: src/blocks/_pro/grid-column-item/edit.js:186
 #: src/blocks/_pro/grid-column/edit.js:91
 #: src/blocks/_pro/outer/edit.js:1065
 #: src/blocks/icon-outer/edit.js:183
@@ -1398,7 +1398,7 @@ msgstr ""
 msgid "px"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:194
+#: src/blocks/_pro/grid-column-item/edit.js:187
 #: src/blocks/_pro/grid-column/edit.js:95
 #: src/blocks/_pro/outer/edit.js:1069
 #: src/blocks/icon-outer/edit.js:187
@@ -1407,7 +1407,7 @@ msgstr ""
 msgid "em"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:198
+#: src/blocks/_pro/grid-column-item/edit.js:188
 #: src/blocks/_pro/grid-column/edit.js:99
 #: src/blocks/_pro/outer/edit.js:1073
 #: src/blocks/icon-outer/edit.js:191
@@ -1416,13 +1416,17 @@ msgstr ""
 msgid "rem"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:202
+#: src/blocks/_pro/grid-column-item/edit.js:189
 #: src/blocks/_pro/grid-column/edit.js:103
 #: src/blocks/_pro/outer/edit.js:1001
 #: src/blocks/icon-outer/edit.js:195
 #: src/blocks/icon/edit.js:184
 #: src/utils/unit-options.js:18
 msgid "vw"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/save.js:102
+msgid "Grid column item link"
 msgstr ""
 
 #: src/blocks/_pro/grid-column/edit.js:53
@@ -1444,20 +1448,20 @@ msgstr ""
 #: src/blocks/_pro/gridcolcard-item/edit.js:232
 #: src/blocks/_pro/select-post-list-item/edit.js:66
 #: src/blocks/button/edit.js:249
-#: src/components/link-toolbar/index.js:233
+#: src/components/link-toolbar/index.js:234
 msgid "Unlink"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:233
 #: src/blocks/button/edit.js:250
-#: src/components/link-toolbar/index.js:234
+#: src/components/link-toolbar/index.js:235
 msgid "Input Link URL"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:263
 #: src/blocks/_pro/select-post-list-item/edit.js:102
 #: src/blocks/button/edit.js:278
-#: src/components/link-toolbar/index.js:268
+#: src/components/link-toolbar/index.js:269
 msgid "Submit"
 msgstr ""
 
@@ -1514,7 +1518,7 @@ msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:152
 #: src/blocks/heading/edit.js:376
-#: src/blocks/slider/edit.js:1158
+#: src/blocks/slider/edit.js:1167
 msgid "Hide"
 msgstr ""
 
@@ -2059,7 +2063,7 @@ msgstr ""
 #: src/blocks/_pro/table-of-contents-new/edit.js:129
 #: src/blocks/_pro/timeline-item/edit.js:103
 #: src/blocks/heading/edit.js:264
-#: src/blocks/slider/edit.js:1134
+#: src/blocks/slider/edit.js:1143
 #: src/blocks/staff/edit.js:173
 #: src/components/advanced-color-gradient-control/index.js:37
 msgid "Default"
@@ -2089,40 +2093,72 @@ msgstr ""
 msgid "Tab Item"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:33
+#: src/blocks/_pro/tab/edit.js:36
 msgid "Tab 01"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:37
+#: src/blocks/_pro/tab/edit.js:40
 msgid "Tab 02"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:475
+#: src/blocks/_pro/tab/edit.js:510
 msgid "Tab Label [ %s ]"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:501
-msgid "Tab size Setting"
+#: src/blocks/_pro/tab/edit.js:536
+msgid "Tab Size Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:503
+#: src/blocks/_pro/tab/edit.js:538
 msgid "Tab Size ( Smart Phone )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:520
+#: src/blocks/_pro/tab/edit.js:555
 msgid "Tab Size ( Tablet )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:537
+#: src/blocks/_pro/tab/edit.js:572
 msgid "Tab Size ( PC )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:541
+#: src/blocks/_pro/tab/edit.js:576
 msgid "Fit to the text"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:545
+#: src/blocks/_pro/tab/edit.js:580
 msgid "Monospaced"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:589
+msgid "Tab Display Options"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:591
+msgid "If there are many labels or the screen width is narrow, you can adjust it here. *Tab size setting will not be effective."
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:597
+msgid "Tab Display Options ( Smart Phone )"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:621
+msgid "Tab Display Options ( Tablet )"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:645
+msgid "Tab Display Options ( PC )"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:652
+msgid "Not set"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:656
+msgid "Scroll"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:660
+msgid "Wrap to 2 rows"
 msgstr ""
 
 #: src/blocks/_pro/tab/index.js:18
@@ -2134,6 +2170,7 @@ msgid "Line"
 msgstr ""
 
 #: src/blocks/_pro/table-of-contents-new/deprecated/0.59.1/save.js:19
+#: src/blocks/_pro/table-of-contents-new/deprecated/1.78.0/save.js:16
 #: src/blocks/_pro/table-of-contents-new/edit.js:162
 #: src/blocks/_pro/table-of-contents-new/save.js:16
 msgid "Table of Contents"
@@ -2445,12 +2482,13 @@ msgid "Button Position:"
 msgstr ""
 
 #: src/blocks/button/edit.js:365
-#: src/blocks/slider/edit.js:1162
+#: src/blocks/slider/edit.js:1171
 #: src/components/display-items-control/index.js:136
 msgid "Center"
 msgstr ""
 
 #: src/blocks/button/edit.js:385
+#: src/blocks/slider/edit.js:934
 msgid "Wide"
 msgstr ""
 
@@ -2873,55 +2911,55 @@ msgstr ""
 msgid "Slider item link"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1017
+#: src/blocks/slider/edit.js:1026
 msgid "Slider Settings"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1021
+#: src/blocks/slider/edit.js:1030
 msgid "Effect "
 msgstr ""
 
-#: src/blocks/slider/edit.js:1031
+#: src/blocks/slider/edit.js:1040
 msgid "Slide"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1035
+#: src/blocks/slider/edit.js:1044
 msgid "Fade"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1042
+#: src/blocks/slider/edit.js:1051
 msgid "Loop "
 msgstr ""
 
-#: src/blocks/slider/edit.js:1052
+#: src/blocks/slider/edit.js:1061
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1062
+#: src/blocks/slider/edit.js:1071
 msgid "Stop AutoPlay when swipe"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1072
+#: src/blocks/slider/edit.js:1081
 msgid "Display Time"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1099
+#: src/blocks/slider/edit.js:1108
 msgid "Change Speed"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1123
+#: src/blocks/slider/edit.js:1132
 msgid "Pagination Type"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1138
+#: src/blocks/slider/edit.js:1147
 msgid "Number of slides"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1151
+#: src/blocks/slider/edit.js:1160
 msgid "Navigation Position"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1166
+#: src/blocks/slider/edit.js:1175
 msgid "Bottom on Mobile device"
 msgstr ""
 
@@ -3009,7 +3047,7 @@ msgstr ""
 msgid "Preview ( Slide )"
 msgstr ""
 
-#: src/blocks/slider/edit.js:934
+#: src/blocks/slider/edit.js:943
 msgid "Full Wide"
 msgstr ""
 
@@ -3226,7 +3264,7 @@ msgstr ""
 msgid "Currently selected"
 msgstr ""
 
-#: src/components/link-toolbar/index.js:303
+#: src/components/link-toolbar/index.js:304
 msgid "Link copied to clipboard."
 msgstr ""
 
@@ -4715,8 +4753,6 @@ msgid "Grid Column Item"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/grid-column-item/block.json
-#: inc/vk-blocks/build/blocks/_pro/grid-column-item/block.json
-#: src/blocks/_pro/grid-column-item/block.json
 msgctxt "block description"
 msgid "One item in a grit column block."
 msgstr ""
@@ -4999,4 +5035,10 @@ msgstr ""
 #: src/blocks/_pro/timeline/block.json
 msgctxt "block description"
 msgid "Displays a simple schedule and other information that is useful for explaining the order."
+msgstr ""
+
+#: inc/vk-blocks/build/blocks/_pro/grid-column-item/block.json
+#: src/blocks/_pro/grid-column-item/block.json
+msgctxt "block description"
+msgid "One item in a grid column block."
 msgstr ""

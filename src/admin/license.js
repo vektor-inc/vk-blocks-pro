@@ -14,6 +14,41 @@ export default function AdminLicense() {
 	const { vkBlocksOption, setVkBlocksOption, setReloadFlag } =
 		useContext(AdminContext);
 
+	const licenseCheck = vkBlocksObject.licenseCheck; // eslint-disable-line no-undef
+	let licenceForm = '';
+	if (licenseCheck === 'valid') {
+		licenceForm = (
+			<input
+				type="text"
+				name="vk_blocks_pro_license_key"
+				value="●●●●●●●●●●●●●●●●●●●●●"
+				disabled
+			/>
+		);
+	} else {
+		licenceForm = (
+			<TextControl
+				id="vk-blocks-pro-license-key"
+				label={__('License key', 'vk-blocks-pro')}
+				className="admin-text-control"
+				name="vk_blocks_options[vk_blocks_pro_license_key]"
+				value={
+					!vkBlocksOption.vk_blocks_pro_license_key
+						? ''
+						: vkBlocksOption.vk_blocks_pro_license_key
+				}
+				onChange={(newValue) => {
+					newValue = newValue.trim();
+					setVkBlocksOption({
+						...vkBlocksOption,
+						vk_blocks_pro_license_key: newValue,
+					});
+					setReloadFlag(true);
+				}}
+			/>
+		);
+	}
+
 	return (
 		<>
 			<section>
@@ -32,25 +67,7 @@ export default function AdminLicense() {
 						'vk-blocks-pro'
 					)}
 				</p>
-				<TextControl
-					id="vk-blocks-pro-license-key"
-					label={__('License key', 'vk-blocks-pro')}
-					className="admin-text-control"
-					name="vk_blocks_options[vk_blocks_pro_license_key]"
-					value={
-						!vkBlocksOption.vk_blocks_pro_license_key
-							? ''
-							: vkBlocksOption.vk_blocks_pro_license_key
-					}
-					onChange={(newValue) => {
-						newValue = newValue.trim();
-						setVkBlocksOption({
-							...vkBlocksOption,
-							vk_blocks_pro_license_key: newValue,
-						});
-						setReloadFlag(true);
-					}}
-				/>
+				{licenceForm}
 			</section>
 		</>
 	);

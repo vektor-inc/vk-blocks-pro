@@ -30,21 +30,15 @@ export default function CategoryBadgeEdit(props) {
 		[taxonomy]
 	);
 
-	// 投稿に関連付けられたタクソノミーを取得
+	// タクソノミー一覧を取得
 	const taxonomies =
 		useSelect(
 			(select) => {
-				if (!postType) {
-					return null;
-				}
-
-				const relatedTaxonomies = select('core').getTaxonomies({
-					type: postType,
-				});
+				const allTaxonomies = select('core').getTaxonomies();
 
 				// post_tagとタグタイプのタクソノミーを除外して返す
-				return relatedTaxonomies
-					? relatedTaxonomies.filter(
+				return allTaxonomies
+					? allTaxonomies.filter(
 							(_taxonomy) =>
 								_taxonomy.slug !== 'post_tag' &&
 								_taxonomy.hierarchical
@@ -54,6 +48,7 @@ export default function CategoryBadgeEdit(props) {
 			[postType]
 		) || [];
 
+	// 対象のタームが見つからなかったらタクソノミ名を表示
 	const blockProps = useBlockProps({
 		className: classnames('vk_categoryBadge', {
 			[`has-text-align-${textAlign}`]: !!textAlign,
@@ -65,11 +60,16 @@ export default function CategoryBadgeEdit(props) {
 		},
 	});
 
-	const url = termColorInfo?.term_url ?? '';
+	const getLabelBySlug = (slug, taxonomies) =>
+		taxonomies.find((tax) => tax.slug === slug)?.name || 'Auto';
+
+	const selectedTaxonomyName = getLabelBySlug(taxonomy, taxonomies);
+
+	const url = termColorInfo?.term_url || '';
 	const termName = isLoading ? (
 		<Spinner />
 	) : (
-		termColorInfo?.term_name ?? __('Not Set', 'vk-blocks-pro')
+		termColorInfo?.term_name || `(${selectedTaxonomyName})`
 	);
 
 	return (

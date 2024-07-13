@@ -26,6 +26,22 @@
 			"type": "number",
 			"default": 0
 		},
+		"tabDisplayOptionsSp": {
+			"type": "string",
+			"default": "notSet"
+		},
+		"tabDisplayOptionsTab": {
+			"type": "string",
+			"default": "notSet"
+		},
+		"tabDisplayOptionsPc": {
+			"type": "string",
+			"default": "notSet"
+		},
+		"displayManyTabs": {
+			"type": "boolean",
+			"default": false
+		},
 		"blockId": {
 			"type": "string",
 			"default": ""

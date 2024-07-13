@@ -106,15 +106,16 @@ e.g.
 
 == Changelog ==
 
-[ Specification Change ][ Slider ] Change padding style to core system from original.
-[ Bug fix ][ Tab (Pro) ] Fixed extra space being added to tabs depending on theme.
-[ Bug fix ][ Fixed Display (Pro) ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment. 
 [ Add function ][ Tab (Pro) ] Add settings for when there are many labels or the screen width is narrow.
-[ Bug fix ] Fixed an error in the component link toolbar in WordPress version 6.6.
-[ Fix ][ Table of Contents (Pro) ] Improved pseudo elements for frontend page accessibility.
 [ Add function ][ Core Group ] Add toolbar link for components by item.
 [ Add function ][ Grid Column (Pro) ] Add toolbar link for components by item.
 [ Add function ][ Slider ] Add 'Wide' to width.
+[ Specification Change ][ Category Badge (Pro) ] Enabled taxonomy specification regardless of post type.
+[ Specification Change ][ Slider ] Change padding style to core system from original.
+[ Bug fix ] Fixed an error in the component link toolbar in WordPress version 6.6.
+[ Bug fix ][ Tab (Pro) ] Fixed extra space being added to tabs depending on theme.
+[ Bug fix ][ Fixed Display (Pro) ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment. 
+[ Other ][ Table of Contents (Pro) ] Improved pseudo elements for frontend page accessibility.
 [ Other ][ Outer ] Refactored CSS of width treatment to prevent layout corruption on the edit screen.
 
 = 1.78.0 =

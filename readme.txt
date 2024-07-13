@@ -110,6 +110,7 @@ e.g.
 [ Add function ][ Core Group ] Add toolbar link for components by item.
 [ Add function ][ Grid Column (Pro) ] Add toolbar link for components by item.
 [ Add function ][ Slider ] Add 'Wide' to width.
+[ Specification Change ] Hide license key when license key is valid.
 [ Specification Change ][ Category Badge (Pro) ] Enabled taxonomy specification regardless of post type.
 [ Specification Change ][ Slider ] Change padding style to core system from original.
 [ Bug fix ] Fixed an error in the component link toolbar in WordPress version 6.6.

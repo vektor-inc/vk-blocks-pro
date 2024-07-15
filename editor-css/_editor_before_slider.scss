@@ -10,6 +10,8 @@
 	.vk_slider.vk_swiper.alignfull {
 		.vk_slider_item {
 			max-width:100%;
+			// Lightning theme.json 有効時など コアが margin-block-start: 24px; つけてくるので打消し
+			.vk_slider_item-background-area,
 			.vk_slider_item_container{
 				margin-block-start: 0; // コアが margin-block-start: 24px; つけてくるので打消し
 			}

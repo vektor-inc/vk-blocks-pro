@@ -28,6 +28,10 @@
 			// overflow: hidden;
 		}
 	}
+	.vk_slider_item-background-area{
+		max-width:100%;
+		margin-block-start: 0;
+	}
 	.swiper-wrapper {
 		transition-timing-function: cubic-bezier(0.77, 0.2, 0.05, 1);
 	}
@@ -111,32 +115,6 @@
 		&.swiper-button-mobile-bottom{
 		top:unset;
 		bottom: 10px;
-		}
-	}
-}
-
-
-/*-------------------------------------------*/
-/* 管理画面
-/*-------------------------------------------*/
-.editor-styles-wrapper {
-	.swiper-container.vk_slider.vk_width-full {
-		//全幅の時
-		margin-left: -10px;
-		margin-right: -10px;
-		width: calc(100% - -20px);
-		max-width: 100vw;
-		.vk_slider_item {
-			margin: auto;
-			&.vk_slider_item-paddingLR-use,
-			&.vk_slider_item-paddingLR-zero{
-				.vk_slider_item_container{
-						max-width:100%;
-					.wp-block{
-						max-width:100%;
-					}
-				}
-			}
 		}
 	}
 }

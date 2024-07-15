@@ -2,17 +2,16 @@
 /* 管理画面
 /*-------------------------------------------*/
 .edit-post-visual-editor {
-	/* vk_width-full は廃止になったが互換処理のために 2022年7月末までは残す */
-	.vk_slider.vk_swiper.vk_slider.vk_swiper.vk_width-full,
-	.vk_slider.vk_swiper.vk_slider.vk_swiper.alignfull {
-		max-width: 100vw;
-		.vk_slider_item {
-			max-width: 100vw;
-		}
+	.is-layout-constrained .vk_slider_item-background-area {
+		max-width: 100%; // コアが --wp--style--global--content-size つけてくるので打消し
 	}
-	.vk_slider.vk_swiper.vk_slider.vk_swiper.alignwide,
-	.vk_slider.vk_swiper.vk_slider.vk_swiper.alignfull {
+	.vk_slider.vk_swiper.alignwide,
+	.vk_slider.vk_swiper.alignfull {
 		.vk_slider_item {
+			max-width:100%;
+			.vk_slider_item_container{
+				margin-block-start: 0; // コアが margin-block-start: 24px; つけてくるので打消し
+			}
 			&.vk_slider_item-paddingLR-use,
 			&.vk_slider_item-paddingLR-zero{
 				.vk_slider_item_container{

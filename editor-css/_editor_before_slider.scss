@@ -1,7 +1,8 @@
 /*-------------------------------------------*/
 /* 管理画面
 /*-------------------------------------------*/
-.edit-post-visual-editor {
+// .edit-post-visual-editor だとモバイルやタブレットの iframe で効かないので .editor-styles-wrapper で指定
+.editor-styles-wrapper{
 	.is-layout-constrained .vk_slider_item-background-area {
 		max-width: 100%; // コアが --wp--style--global--content-size つけてくるので打消し
 	}

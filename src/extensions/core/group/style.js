@@ -12,6 +12,8 @@ import {
 	BlockControls,
 	useBlockProps,
 	InnerBlocks,
+	InspectorControls,
+	PanelBody,
 } from '@wordpress/block-editor';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import LinkToolbar from '@vkblocks/components/link-toolbar';

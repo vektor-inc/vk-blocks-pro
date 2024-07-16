@@ -92,13 +92,22 @@ addFilter('editor.BlockEdit', 'vk-blocks/cover-style', addBlockControl);
  */
 const save = (props) => {
 	const { attributes } = props;
-	const { linkUrl, linkTarget, className = '', url, dimRatio, customOverlayColor, overlayColor } = attributes;
+	const {
+		linkUrl,
+		linkTarget,
+		className = '',
+		url,
+		dimRatio,
+		customOverlayColor,
+		overlayColor,
+	} = attributes;
 
 	const blockProps = useBlockProps.save({
-		className: className,
+		className,
 	});
 
-	const relAttribute = linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
+	const relAttribute =
+		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
 
 	const overlayColorValue = customOverlayColor || overlayColor;
 	const textColorClass = getTextColorClass(overlayColorValue);
@@ -127,7 +136,9 @@ const save = (props) => {
 					data-object-fit="cover"
 				/>
 			)}
-			<div className={`wp-block-cover__inner-container ${textColorClass}`}>
+			<div
+				className={`wp-block-cover__inner-container ${textColorClass}`}
+			>
 				<InnerBlocks.Content />
 			</div>
 		</div>
@@ -160,7 +171,9 @@ const getTextColorClass = (overlayColor) => {
 	const calculateLuminance = (rgb) => {
 		const [r, g, b] = rgb.map((v) => {
 			v /= 255;
-			return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+			return v <= 0.03928
+				? v / 12.92
+				: Math.pow((v + 0.055) / 1.055, 2.4);
 		});
 		return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 	};

@@ -6,16 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	// 開/閉 切り替え (:before 疑似要素のアクセシビリティ問題に対応 #2087)
-	const openButton = document.getElementById('vk-tab-label');
-	openButton.addEventListener('click', function () {
-		// 直前にあるチェックボックスで判断する
-		const status = openButton.previousElementSibling;
-		if (status && status.type === 'checkbox') {
-			if (status.checked) {
-				openButton.textContent = 'CLOSE';
-			} else {
-				openButton.textContent = 'OPEN';
+	document.querySelectorAll('#vk-tab-label').forEach((item) => {
+		item.addEventListener('click', function () {
+			// 直前にあるチェックボックスで判断する
+			const status = item.previousElementSibling;
+			if (status && status.type === 'checkbox') {
+				if (status.checked) {
+					item.textContent = 'CLOSE';
+				} else {
+					item.textContent = 'OPEN';
+				}
 			}
-		}
+		});
 	});
 });

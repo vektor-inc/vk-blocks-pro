@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.78.0.0\n"
+"Project-Id-Version: VK Blocks Pro 1.79.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-07-12T05:15:00+00:00\n"
+"POT-Creation-Date: 2024-07-16T08:01:20+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -1526,7 +1526,7 @@ msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:209
 #: src/blocks/border-box/edit.js:239
-#: src/extensions/core/group/style.js:94
+#: src/extensions/core/group/style.js:99
 msgid "Border Color"
 msgstr ""
 
@@ -1641,12 +1641,6 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: src/blocks/_pro/outer/deprecated/save/1.78.0/save.js:252
-#: src/blocks/_pro/outer/edit.js:418
-#: src/blocks/_pro/outer/save.js:252
-msgid "Outer link"
-msgstr ""
-
 #: src/blocks/_pro/outer/edit.js:1018
 msgid "Min Height Setting"
 msgstr ""
@@ -1674,6 +1668,11 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:1100
 #: src/utils/unit-options.js:34
 msgid "dvh"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:418
+#: src/blocks/_pro/outer/save.js:252
+msgid "Outer link"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:424
@@ -1890,10 +1889,6 @@ msgstr ""
 msgid "Auto"
 msgstr ""
 
-#: src/blocks/_pro/post-category-badge/edit.js:72
-msgid "Not Set"
-msgstr ""
-
 #: src/blocks/_pro/post-category-badge/edit.js:86
 #: inc/vk-blocks/admin/admin.php:135
 msgid "Setting"
@@ -1905,10 +1900,6 @@ msgstr ""
 
 #: src/blocks/_pro/post-category-badge/edit.js:96
 msgid "Select Taxonomy"
-msgstr ""
-
-#: src/blocks/_pro/post-category-badge/variations.js:13
-msgid "Category Badge"
 msgstr ""
 
 #. Filter by %s
@@ -3533,12 +3524,12 @@ msgstr ""
 msgid "Reverse"
 msgstr ""
 
-#: src/extensions/core/group/style.js:181
-msgid "Group link"
+#: src/extensions/core/group/style.js:104
+msgid "Because of the theme that enabled theme.json become can specify the color from border panel that, specification from here is deprecated."
 msgstr ""
 
-#: src/extensions/core/group/style.js:99
-msgid "Because of the theme that enabled theme.json become can specify the color from border panel that, specification from here is deprecated."
+#: src/extensions/core/group/style.js:191
+msgid "Group link"
 msgstr ""
 
 #: src/extensions/core/list/style.js:107
@@ -3894,6 +3885,17 @@ msgstr ""
 #: inc/vk-blocks/build/blocks/_pro/archive-list/index.php:89
 #: src/blocks/_pro/archive-list/index.php:89
 msgid "Please select month"
+msgstr ""
+
+#: inc/vk-blocks/build/blocks/_pro/post-category-badge/index.php:97
+#: src/blocks/_pro/post-category-badge/index.php:97
+msgid "Category Badge"
+msgstr ""
+
+#. translators: %s: taxonomy's label
+#: inc/vk-blocks/build/blocks/_pro/post-category-badge/index.php:100
+#: src/blocks/_pro/post-category-badge/index.php:100
+msgid "Display a list of assigned terms from the taxonomy: %s"
 msgstr ""
 
 #: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:95

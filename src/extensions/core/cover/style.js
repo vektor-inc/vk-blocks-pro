@@ -92,19 +92,15 @@ addFilter('editor.BlockEdit', 'vk-blocks/cover-style', addBlockControl);
  */
 const save = (props) => {
 	const { attributes } = props;
-	const { linkUrl, linkTarget, className } = attributes;
+	const { linkUrl, linkTarget, className = '', url, dimRatio, customOverlayColor, overlayColor } = attributes;
 
-	// Use block properties, setting className to include has-link if linkUrl is present
 	const blockProps = useBlockProps.save({
-		className: linkUrl ? `${className} has-link` : className,
+		className: className,
 	});
 
-	// Determine rel attribute based on linkTarget
-	const relAttribute =
-		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
+	const relAttribute = linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
 
-	// Extract prefix for custom link class
-	const prefix = 'wp-block-cover';
+	const textColorClass = getTextColorClass(customOverlayColor || overlayColor);
 
 	return (
 		<div {...blockProps}>
@@ -114,12 +110,61 @@ const save = (props) => {
 					target={linkTarget}
 					rel={relAttribute}
 					aria-label={__('Cover link', 'vk-blocks-pro')}
-					className={`${prefix}-vk-link`}
+					className="wp-block-cover-vk-link"
 				></a>
 			)}
-			<InnerBlocks.Content />
+			<span
+				aria-hidden="true"
+				className={`wp-block-cover__background has-background-dim-${dimRatio} has-${overlayColor}-background-color`}
+				style={{ backgroundColor: customOverlayColor }}
+			></span>
+			{url && (
+				<img
+					className="wp-block-cover__image-background"
+					alt=""
+					src={url}
+					data-object-fit="cover"
+				/>
+			)}
+			<div className={`wp-block-cover__inner-container ${textColorClass}`}>
+				<InnerBlocks.Content />
+			</div>
 		</div>
 	);
+};
+
+/**
+ * Determine the appropriate text color class based on the overlay color.
+ *
+ * @param {string} overlayColor The overlay color.
+ * @return {string} The text color class.
+ */
+const getTextColorClass = (overlayColor) => {
+	// Convert hex color to RGB
+	const hexToRgb = (hex) => {
+		if (hex.startsWith('#')) {
+			hex = hex.slice(1);
+		}
+		const r = parseInt(hex.slice(0, 2), 16);
+		const g = parseInt(hex.slice(2, 4), 16);
+		const b = parseInt(hex.slice(4, 6), 16);
+		return [r, g, b];
+	};
+
+	// Calculate luminance
+	const calculateLuminance = (rgb) => {
+		const [r, g, b] = rgb.map((v) => {
+			v /= 255;
+			return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+		});
+		return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+	};
+
+	const rgb = hexToRgb(overlayColor);
+	const luminance = calculateLuminance(rgb);
+
+	// Return appropriate class based on luminance
+	return luminance > 0.5 ? 'has-dark-text-color' : 'has-light-text-color';
 };
 
 // Support for existing cover blocks and version management

@@ -92,26 +92,16 @@ addFilter('editor.BlockEdit', 'vk-blocks/cover-style', addBlockControl);
  */
 const save = (props) => {
 	const { attributes } = props;
-	const {
-		linkUrl,
-		linkTarget,
-		className = '',
-		url,
-		dimRatio,
-		customOverlayColor,
-		overlayColor,
-	} = attributes;
+	const { linkUrl, linkTarget, className = '', url, dimRatio, customOverlayColor, overlayColor } = attributes;
 
 	const blockProps = useBlockProps.save({
-		className,
+		className: className,
 	});
 
-	const relAttribute =
-		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
+	const relAttribute = linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
 
-	const textColorClass = getTextColorClass(
-		customOverlayColor || overlayColor
-	);
+	const overlayColorValue = customOverlayColor || overlayColor;
+	const textColorClass = getTextColorClass(overlayColorValue);
 
 	return (
 		<div {...blockProps}>
@@ -127,7 +117,7 @@ const save = (props) => {
 			<span
 				aria-hidden="true"
 				className={`wp-block-cover__background has-background-dim-${dimRatio} has-${overlayColor}-background-color`}
-				style={{ backgroundColor: customOverlayColor }}
+				style={{ backgroundColor: overlayColorValue }}
 			></span>
 			{url && (
 				<img
@@ -137,9 +127,7 @@ const save = (props) => {
 					data-object-fit="cover"
 				/>
 			)}
-			<div
-				className={`wp-block-cover__inner-container ${textColorClass}`}
-			>
+			<div className={`wp-block-cover__inner-container ${textColorClass}`}>
 				<InnerBlocks.Content />
 			</div>
 		</div>
@@ -153,6 +141,10 @@ const save = (props) => {
  * @return {string} The text color class.
  */
 const getTextColorClass = (overlayColor) => {
+	if (!overlayColor) {
+		return 'has-light-text-color'; // デフォルトで明るいテキスト色を返す
+	}
+
 	// Convert hex color to RGB
 	const hexToRgb = (hex) => {
 		if (hex.startsWith('#')) {
@@ -168,9 +160,7 @@ const getTextColorClass = (overlayColor) => {
 	const calculateLuminance = (rgb) => {
 		const [r, g, b] = rgb.map((v) => {
 			v /= 255;
-			return v <= 0.03928
-				? v / 12.92
-				: Math.pow((v + 0.055) / 1.055, 2.4);
+			return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
 		});
 		return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 	};

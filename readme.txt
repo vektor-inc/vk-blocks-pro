@@ -3,7 +3,7 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,m
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.3
-Tested up to: 6.5
+Tested up to: 6.6
 Stable tag: 1.78.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
@@ -107,6 +107,7 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Core Cover ] Add toolbar link for components by item.
+[ Add function ][ Outer (Pro) ] Add serrated and large triangle in divider style.
 
 = 1.79.0 =
 [ Add function ][ Tab (Pro) ] Add settings for when there are many labels or the screen width is narrow.

@@ -6,14 +6,13 @@
 import { convertColorClass } from '@vkblocks/utils/color-code-to-class.js';
 import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
-import { ToolbarGroup } from '@wordpress/components';
+import { PanelBody, ToolbarGroup } from '@wordpress/components';
 import {
+	InspectorControls,
 	ColorPalette,
 	BlockControls,
 	useBlockProps,
 	InnerBlocks,
-	InspectorControls,
-	PanelBody,
 } from '@wordpress/block-editor';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import LinkToolbar from '@vkblocks/components/link-toolbar';
@@ -41,7 +40,6 @@ export const addAttribute = (settings) => {
 			...settings.attributes,
 			color: {
 				type: 'string',
-				default: '',
 			},
 			linkUrl: {
 				type: 'string',
@@ -50,10 +48,6 @@ export const addAttribute = (settings) => {
 			linkTarget: {
 				type: 'string',
 				default: '',
-			},
-			tagName: {
-				type: 'string',
-				default: 'div',
 			},
 		};
 	}
@@ -163,24 +157,22 @@ addFilter('editor.BlockEdit', 'vk-blocks/group-style', addBlockControl);
  */
 const save = (props) => {
 	const { attributes } = props;
-	const {
-		linkUrl,
-		linkTarget,
-		className = '',
-		tagName: CustomTag = 'div',
-	} = attributes;
+	const { linkUrl, linkTarget, className } = attributes;
 
+	// Use block properties, setting className to include has-link if linkUrl is present
 	const blockProps = useBlockProps.save({
 		className: linkUrl ? `${className} has-link` : className,
 	});
 
+	// Determine rel attribute based on linkTarget
 	const relAttribute =
 		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
 
+	// Extract prefix for custom link class
 	const prefix = 'wp-block-group';
 
 	return (
-		<CustomTag {...blockProps}>
+		<div {...blockProps}>
 			{linkUrl && (
 				<a
 					href={linkUrl}
@@ -191,7 +183,7 @@ const save = (props) => {
 				></a>
 			)}
 			<InnerBlocks.Content />
-		</CustomTag>
+		</div>
 	);
 };
 
@@ -221,12 +213,6 @@ const overrideBlockSettings = (settings, name) => {
 			newSettings.attributes.linkTarget = {
 				type: 'string',
 				default: '',
-			};
-		}
-		if (!newSettings.attributes.tagName) {
-			newSettings.attributes.tagName = {
-				type: 'string',
-				default: 'div',
 			};
 		}
 		return newSettings;

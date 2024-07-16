@@ -64,13 +64,16 @@ addFilter('editor.BlockEdit', 'vk-blocks/cover-style', addBlockControl);
 
 const save = (props) => {
 	const { attributes } = props;
-	const { linkUrl, linkTarget, url, dimRatio, minHeight, id } =
-		attributes;
+	const { linkUrl, linkTarget, url, dimRatio, minHeight, id } = attributes;
 
 	const blockProps = useBlockProps.save({
-		className: `is-light`,
+		className: `is-light alignfull`,
 		style: {
 			minHeight,
+			paddingTop: 0,
+			paddingRight: 0,
+			paddingBottom: 0,
+			paddingLeft: 0,
 		},
 	});
 
@@ -91,6 +94,7 @@ const save = (props) => {
 			<span
 				aria-hidden="true"
 				className={`wp-block-cover__background has-background-dim-${dimRatio} has-black-background-color has-background-dim`}
+				style={{ backgroundColor: '#000' }} // `#000` を適切な背景色に置き換える
 			></span>
 			{url && (
 				<img

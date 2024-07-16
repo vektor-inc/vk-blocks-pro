@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Outer (Pro) ] Add serrated and large triangle in divider style.
+
 = 1.79.0 =
 [ Add function ][ Tab (Pro) ] Add settings for when there are many labels or the screen width is narrow.
 [ Add function ][ Core Group ] Add toolbar link for components by item.

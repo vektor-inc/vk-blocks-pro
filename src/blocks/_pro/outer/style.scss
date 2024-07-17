@@ -143,6 +143,26 @@ $media-xxl-down: 1399.98px;
 }
 
 .vk_outer-paddingVertical-use {
+	--vk-outer-padding: 1.5em;
+	@media (min-width: $media-sm-up) {
+		--vk-outer-padding: 2em;
+	}
+
+	@media (min-width: $media-md-up) {
+		--vk-outer-padding: 2.5em;
+	}
+
+	@media (min-width: $media-lg-up) {
+		--vk-outer-padding: 3em;
+	}
+
+	@media (min-width: $media-xl-up) {
+		--vk-outer-padding: 3.5em;
+	}
+
+	@media (min-width: $media-xxl-up) {
+		--vk-outer-padding: 4em;
+	}
 	padding-top: var(--vk-outer-padding);
 	padding-bottom: var(--vk-outer-padding);
 }

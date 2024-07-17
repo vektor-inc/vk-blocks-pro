@@ -66,6 +66,12 @@ figure.wp-block-image{
                 border-radius: $border_radius;
             }
         }
+        &-circle {
+            img {
+                mask-image: var(--vk_image-mask-circle);
+                @include mask;
+            }
+        }
 
         &-border {
             img {
@@ -118,12 +124,6 @@ figure.wp-block-image{
                 @include mask;
             }
         }
-        &-circle {
-            img {
-                mask-image: var(--vk_image-mask-circle);
-                @include mask;
-            }
-        }
 
     }
 }
@@ -136,6 +136,14 @@ figure.wp-block-image{
             &.alignleft, &.alignright, &.aligncenter{
                 img {
                     border-radius: $border_radius;
+                }
+            }
+        }
+        &-circle figure{
+            &.alignleft, &.alignright, &.aligncenter{
+                img{
+                    mask-image: var(--vk_image-mask-circle);
+                    @include mask;
                 }
             }
         }
@@ -204,14 +212,6 @@ figure.wp-block-image{
             &.alignleft, &.alignright, &.aligncenter{
                 img{
                     mask-image: var(--vk_image-mask-wave04);
-                    @include mask;
-                }
-            }
-        }
-        &-circle figure{
-            &.alignleft, &.alignright, &.aligncenter{
-                img{
-                    mask-image: var(--vk_image-mask-circle);
                     @include mask;
                 }
             }

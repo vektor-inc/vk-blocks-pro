@@ -394,6 +394,10 @@ class VK_Blocks_Global_Settings {
 					'label' => __( 'Rounded02', 'vk-blocks-pro' ),
 				),
 				array(
+					'name'  => 'vk-image-circle',
+					'label' => __( 'Circle', 'vk-blocks-pro' ),
+				),
+				array(
 					'name'  => 'vk-image-border',
 					'label' => __( 'Border', 'vk-blocks-pro' ),
 				),
@@ -428,10 +432,6 @@ class VK_Blocks_Global_Settings {
 				array(
 					'name'  => 'vk-image-wave04',
 					'label' => __( 'Wave04', 'vk-blocks-pro' ),
-				),
-				array(
-					'name'  => 'vk-image-circle',
-					'label' => __( 'Circle', 'vk-blocks-pro' ),
 				),
 			),
 			'core/group'   => array(

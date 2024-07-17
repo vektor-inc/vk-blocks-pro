@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.3
 Tested up to: 6.6
-Stable tag: 1.78.0.1
+Stable tag: 1.79.1.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -107,6 +107,9 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Outer (Pro) ] Add serrated and large triangle in divider style.
+
+= 1.79.1 =
+[ Bug Fix (Free) ] Fixed an issue where blocks couldn't be used in WordPress 6.6.
 
 = 1.79.0 =
 [ Add function ][ Tab (Pro) ] Add settings for when there are many labels or the screen width is narrow.

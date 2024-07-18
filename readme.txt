@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Add Setting ][ Alert ] Add icon setting and inner block.
+
 = 1.80.0 =
 [ Add function ][ Outer (Pro) ] Add serrated and large triangle in divider style.
 [ Bug Fix ][ Outer (Pro) ] Add vertical padding variables.

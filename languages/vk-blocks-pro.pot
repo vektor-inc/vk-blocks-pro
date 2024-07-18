@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.78.0.0\n"
+"Project-Id-Version: VK Blocks Pro 1.79.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-07-12T07:50:42+00:00\n"
+"POT-Creation-Date: 2024-07-18T01:34:19+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -561,7 +561,7 @@ msgstr ""
 
 #: src/admin/margin.js:51
 #: src/blocks/_pro/accordion/edit.js:139
-#: src/blocks/_pro/outer/edit.js:1043
+#: src/blocks/_pro/outer/edit.js:1054
 #: src/blocks/button/edit.js:537
 #: src/blocks/slider/edit.js:961
 #: src/components/advanced-viewport-control/index.js:25
@@ -570,7 +570,7 @@ msgstr ""
 
 #: src/admin/margin.js:55
 #: src/blocks/_pro/accordion/edit.js:122
-#: src/blocks/_pro/outer/edit.js:1027
+#: src/blocks/_pro/outer/edit.js:1038
 #: src/blocks/button/edit.js:472
 #: src/blocks/slider/edit.js:982
 #: src/components/advanced-viewport-control/index.js:32
@@ -579,7 +579,7 @@ msgstr ""
 
 #: src/admin/margin.js:59
 #: src/blocks/_pro/accordion/edit.js:105
-#: src/blocks/_pro/outer/edit.js:1011
+#: src/blocks/_pro/outer/edit.js:1022
 #: src/blocks/button/edit.js:407
 #: src/blocks/slider/edit.js:1003
 #: src/components/advanced-viewport-control/index.js:41
@@ -1390,7 +1390,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:186
 #: src/blocks/_pro/grid-column/edit.js:91
-#: src/blocks/_pro/outer/edit.js:1065
+#: src/blocks/_pro/outer/edit.js:1076
 #: src/blocks/icon-outer/edit.js:183
 #: src/blocks/icon/edit.js:172
 #: src/utils/unit-options.js:6
@@ -1399,7 +1399,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:187
 #: src/blocks/_pro/grid-column/edit.js:95
-#: src/blocks/_pro/outer/edit.js:1069
+#: src/blocks/_pro/outer/edit.js:1080
 #: src/blocks/icon-outer/edit.js:187
 #: src/blocks/icon/edit.js:176
 #: src/utils/unit-options.js:10
@@ -1408,7 +1408,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:188
 #: src/blocks/_pro/grid-column/edit.js:99
-#: src/blocks/_pro/outer/edit.js:1073
+#: src/blocks/_pro/outer/edit.js:1084
 #: src/blocks/icon-outer/edit.js:191
 #: src/blocks/icon/edit.js:180
 #: src/utils/unit-options.js:14
@@ -1417,7 +1417,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:189
 #: src/blocks/_pro/grid-column/edit.js:103
-#: src/blocks/_pro/outer/edit.js:1001
+#: src/blocks/_pro/outer/edit.js:1012
 #: src/blocks/icon-outer/edit.js:195
 #: src/blocks/icon/edit.js:184
 #: src/utils/unit-options.js:18
@@ -1540,7 +1540,7 @@ msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:209
 #: src/blocks/border-box/edit.js:239
-#: src/extensions/core/group/style.js:94
+#: src/extensions/core/group/style.js:99
 msgid "Border Color"
 msgstr ""
 
@@ -1655,31 +1655,31 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1007
+#: src/blocks/_pro/outer/edit.js:1018
 msgid "Min Height Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1059
+#: src/blocks/_pro/outer/edit.js:1070
 #: src/components/advanced-unit-control/index.js:13
 msgid "Unit Type"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1077
+#: src/blocks/_pro/outer/edit.js:1088
 #: src/utils/unit-options.js:22
 msgid "vh"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1081
+#: src/blocks/_pro/outer/edit.js:1092
 #: src/utils/unit-options.js:26
 msgid "svh"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1085
+#: src/blocks/_pro/outer/edit.js:1096
 #: src/utils/unit-options.js:30
 msgid "lvh"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1089
+#: src/blocks/_pro/outer/edit.js:1100
 #: src/utils/unit-options.js:34
 msgid "dvh"
 msgstr ""
@@ -1806,31 +1806,39 @@ msgstr ""
 msgid "Triangle"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:640
+#: src/blocks/_pro/outer/edit.js:637
+msgid "Large triangle"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:644
+msgid "Serrated"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:651
 msgid "Settings for each device"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:653
+#: src/blocks/_pro/outer/edit.js:664
 msgid "Upper Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:735
+#: src/blocks/_pro/outer/edit.js:746
 msgid "Lower Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:818
+#: src/blocks/_pro/outer/edit.js:829
 msgid "Border Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:823
+#: src/blocks/_pro/outer/edit.js:834
 msgid "Border will disappear when divider effect is applied."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:829
+#: src/blocks/_pro/outer/edit.js:840
 msgid "Border type"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:837
+#: src/blocks/_pro/outer/edit.js:848
 #: src/blocks/_pro/step-item/edit.js:147
 #: src/blocks/_pro/timeline-item/edit.js:113
 #: src/blocks/balloon/edit.js:559
@@ -1839,7 +1847,7 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:841
+#: src/blocks/_pro/outer/edit.js:852
 #: src/blocks/_pro/step-item/edit.js:118
 #: src/blocks/_pro/timeline-item/edit.js:88
 #: src/blocks/pr-content/edit.js:145
@@ -1848,60 +1856,56 @@ msgstr ""
 msgid "Solid"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:845
+#: src/blocks/_pro/outer/edit.js:856
 #: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:444
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:444
 msgid "Dotted"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:849
+#: src/blocks/_pro/outer/edit.js:860
 #: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:448
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:448
 msgid "Dashed"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:853
+#: src/blocks/_pro/outer/edit.js:864
 #: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:452
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:452
 msgid "Double"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:857
+#: src/blocks/_pro/outer/edit.js:868
 msgid "Groove"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:861
+#: src/blocks/_pro/outer/edit.js:872
 msgid "Ridge"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:865
+#: src/blocks/_pro/outer/edit.js:876
 msgid "Inset"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:869
+#: src/blocks/_pro/outer/edit.js:880
 msgid "Outset"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:881
+#: src/blocks/_pro/outer/edit.js:892
 msgid "Border width"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:893
+#: src/blocks/_pro/outer/edit.js:904
 #: src/blocks/icon-outer/edit.js:212
 #: src/blocks/icon/edit.js:201
 msgid "Border radius"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:909
+#: src/blocks/_pro/outer/edit.js:920
 msgid "Container Inner Side Space Setting"
 msgstr ""
 
 #: src/blocks/_pro/post-category-badge/edit.js:100
 msgid "Auto"
-msgstr ""
-
-#: src/blocks/_pro/post-category-badge/edit.js:72
-msgid "Not Set"
 msgstr ""
 
 #: src/blocks/_pro/post-category-badge/edit.js:86
@@ -1916,10 +1920,6 @@ msgstr ""
 
 #: src/blocks/_pro/post-category-badge/edit.js:96
 msgid "Select Taxonomy"
-msgstr ""
-
-#: src/blocks/_pro/post-category-badge/variations.js:13
-msgid "Category Badge"
 msgstr ""
 
 #. Filter by %s
@@ -3552,12 +3552,12 @@ msgstr ""
 msgid "Reverse"
 msgstr ""
 
-#: src/extensions/core/group/style.js:181
-msgid "Group link"
+#: src/extensions/core/group/style.js:104
+msgid "Because of the theme that enabled theme.json become can specify the color from border panel that, specification from here is deprecated."
 msgstr ""
 
-#: src/extensions/core/group/style.js:99
-msgid "Because of the theme that enabled theme.json become can specify the color from border panel that, specification from here is deprecated."
+#: src/extensions/core/group/style.js:191
+msgid "Group link"
 msgstr ""
 
 #: src/extensions/core/list/style.js:107
@@ -4199,6 +4199,17 @@ msgstr ""
 #: dist/vk-blocks-pro/vk-blocks.php:342
 #: vk-blocks.php:342
 msgid "Re-acquisition of updates"
+msgstr ""
+
+#: inc/vk-blocks/build/blocks/_pro/post-category-badge/index.php:97
+#: src/blocks/_pro/post-category-badge/index.php:97
+msgid "Category Badge"
+msgstr ""
+
+#. translators: %s: taxonomy's label
+#: inc/vk-blocks/build/blocks/_pro/post-category-badge/index.php:100
+#: src/blocks/_pro/post-category-badge/index.php:100
+msgid "Display a list of assigned terms from the taxonomy: %s"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/alert/block.json

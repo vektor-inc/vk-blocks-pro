@@ -1,3 +1,18 @@
+.vk_alert{
+  display: flex;
+  align-items: center;
+  &_icon{
+    width: 50px;
+    margin-left: 1rem;
+    &_text{
+      text-align: center;
+    }
+  }
+  &_content{
+    flex-basis:90%;
+  }
+}
+
 .alert{
 
 	padding: 1em;

@@ -5,16 +5,20 @@ export default function save({ attributes }) {
 	const { style, icon, iconText } = attributes;
 
 	const blockProps = useBlockProps.save({
-		className: `alert alert-${style}`,
+		className: `vk_alert alert alert-${style}`,
 	});
+
 
 	let alertIcon = '';
 	if (icon !== '' && icon !== undefined) {
 		alertIcon = (
-			<div className="alert-icon">
-				<div className="alert-icon-icon">{parse(icon)}</div>
-				<div className="alert-icon-text">
-					<RichText.Content tagName="span" value={iconText} />
+			<div className="vk_alert_icon">
+				<div className="vk_alert_icon_icon">{parse(icon)}</div>
+				<div className="vk_alert_icon_text">
+					<RichText.Content
+						tagName="span"
+						value={iconText}
+					/>
 				</div>
 			</div>
 		);
@@ -22,8 +26,10 @@ export default function save({ attributes }) {
 
 	return (
 		<div {...blockProps}>
-			{alertIcon}
+		{alertIcon}
+		<div className="vk_alert_content">
 			<InnerBlocks.Content />
 		</div>
+	</div>
 	);
 }

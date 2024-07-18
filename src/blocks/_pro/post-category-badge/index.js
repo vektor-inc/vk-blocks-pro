@@ -11,10 +11,9 @@ import edit from './edit';
 
 const { name } = metadata;
 export { metadata, name };
-import variations from './variations';
+//import variations from './variations';
 
 export const settings = {
 	icon: <Icon />,
 	edit,
-	variations,
 };

@@ -9,19 +9,12 @@ export default function save({ attributes }) {
 	});
 
 	let alertIcon = '';
-	if (
-		icon !== '' &&
-		icon !== undefined
-	) {
+	if (icon !== '' && icon !== undefined) {
 		alertIcon = (
 			<div className="alert-icon">
 				<div className="alert-icon-icon">{parse(icon)}</div>
 				<div className="alert-icon-text">
-					<RichText.Content
-						tagName="span"
-						value={iconText}
-						
-					/>
+					<RichText.Content tagName="span" value={iconText} />
 				</div>
 			</div>
 		);

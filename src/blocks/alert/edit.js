@@ -19,10 +19,7 @@ export default function AlertEdit(props) {
 	});
 
 	let alertIcon = '';
-	if (
-		icon !== '' &&
-		icon !== undefined
-	) {
+	if (icon !== '' && icon !== undefined) {
 		alertIcon = (
 			<div className="alert-icon">
 				<div className="alert-icon-icon">{parse(icon)}</div>

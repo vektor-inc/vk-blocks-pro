@@ -1,47 +1,50 @@
-
 .wp-block-table{
-    thead th,tfoot td{
-        font-weight: bold;
-    }
-    &.is-style-vk-table {
-        &-border-top-bottom {
+	thead th,tfoot td{
+		font-weight: bold;
+	}
+	&.is-style-vk-table {
+		&-border-top-bottom {
 			table,
 			th,
 			td {
-                border-left: none;
-                border-right: none;
+				border-left: none;
+				border-right: none;
 			}
-        }
-        &-border {
+		}
+		&-border {
 			// theme.json のあるファイルでテーブルの線の色指定がない場合のみ適用
 			table:where(:not(.has-border-color)){
 				th,td{
 					border:1px solid var(--vk-color-border-hr);
 				}
 			}
-        }
-        &-border-stripes{
-            tbody tr:nth-child(2n+1) {
-                background-color: #f0f0f0;
-            }
+		}
+		&-border-stripes{
+			tbody tr:nth-child(2n+1) {
+				background-color: #f0f0f0;
+			}
 			// theme.json のあるファイルでテーブルの線の色指定がない場合のみ適用
 			table:where(:not(.has-border-color)){
 				th,td{
 					border:1px solid var(--vk-color-border-hr);
 				}
 			}
-        }
-    }
+		}
+		&-scrollable {
+			overflow-x: auto;
+			white-space: nowrap;
+		}
+	}
 }
 
 /*      編集画面
 /*-------------------------------------------*/
 .editor-styles-wrapper {
-    .wp-block-table{
-        &.is-style-regular{//デフォルトのボーダーカラー
-            th,td{
-                border-color: var(--vk-color-border-hr);
-            }
-        }
-    }
+	.wp-block-table{
+		&.is-style-regular{//デフォルトのボーダーカラー
+			th,td{
+				border-color: var(--vk-color-border-hr);
+			}
+		}
+	}
 }

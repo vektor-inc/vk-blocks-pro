@@ -1611,6 +1611,7 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:137
 #: src/blocks/_pro/step-item/edit.js:82
+#: src/blocks/alert/edit.js:76
 #: src/blocks/border-box/edit.js:272
 #: src/blocks/button/edit.js:760
 #: src/blocks/heading/edit.js:335
@@ -2234,30 +2235,38 @@ msgstr ""
 msgid "label"
 msgstr ""
 
-#: src/blocks/alert/edit.js:19
+#: src/blocks/alert/edit.js:32
+msgid "Icon Text"
+msgstr ""
+
+#: src/blocks/alert/edit.js:44
 #: src/blocks/heading/edit.js:255
 msgid "Style Settings"
 msgstr ""
 
-#: src/blocks/alert/edit.js:25
+#: src/blocks/alert/edit.js:46
+msgid "Alert Style"
+msgstr ""
+
+#: src/blocks/alert/edit.js:56
 #: src/blocks/button/edit.js:692
 #: src/blocks/pr-content/edit.js:171
 msgid "Success"
 msgstr ""
 
-#: src/blocks/alert/edit.js:29
+#: src/blocks/alert/edit.js:60
 #: src/blocks/button/edit.js:696
 #: src/blocks/pr-content/edit.js:175
 msgid "Info"
 msgstr ""
 
-#: src/blocks/alert/edit.js:33
+#: src/blocks/alert/edit.js:64
 #: src/blocks/button/edit.js:700
 #: src/blocks/pr-content/edit.js:179
 msgid "Warning"
 msgstr ""
 
-#: src/blocks/alert/edit.js:37
+#: src/blocks/alert/edit.js:68
 #: src/blocks/button/edit.js:704
 #: src/blocks/pr-content/edit.js:183
 msgid "Danger"

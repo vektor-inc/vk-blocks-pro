@@ -10,10 +10,13 @@
 			"type": "string",
 			"default": "info"
 		},
-		"content": {
+		"icon": {
 			"type": "string",
-			"source": "html",
-			"selector": "p"
+			"default": ""
+		},
+		"iconText": {
+			"type": "string",
+			"default": ""
 		}
 	},
 	"supports": {

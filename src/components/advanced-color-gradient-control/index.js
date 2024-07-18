@@ -23,7 +23,9 @@ export const AdvancedColorGradientControl = (props) => {
 	);
 
 	const defaultGradients = [...useSettings('color.gradients.default')[0]];
-	const themeGradients = [...useSettings('color.gradients.theme')[0]];
+	const themeGradients = [
+		...(useSettings('color.gradients.theme')?.[0] || []),
+	];
 
 	const gradientsArray = [];
 	if (themeGradients?.length > 0) {

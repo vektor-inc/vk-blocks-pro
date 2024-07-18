@@ -2058,7 +2058,7 @@ msgstr ""
 #: src/blocks/heading/edit.js:264
 #: src/blocks/slider/edit.js:1143
 #: src/blocks/staff/edit.js:173
-#: src/components/advanced-color-gradient-control/index.js:37
+#: src/components/advanced-color-gradient-control/index.js:39
 msgid "Default"
 msgstr ""
 
@@ -2262,14 +2262,14 @@ msgid "Info"
 msgstr ""
 
 #: src/blocks/alert/edit.js:61
-#: src/blocks/alert/variations.js:51
+#: src/blocks/alert/variations.js:54
 #: src/blocks/button/edit.js:700
 #: src/blocks/pr-content/edit.js:179
 msgid "Warning"
 msgstr ""
 
 #: src/blocks/alert/edit.js:65
-#: src/blocks/alert/variations.js:70
+#: src/blocks/alert/variations.js:73
 #: src/blocks/button/edit.js:704
 #: src/blocks/pr-content/edit.js:183
 msgid "Danger"
@@ -2291,15 +2291,15 @@ msgstr ""
 msgid "This is a information alert."
 msgstr ""
 
-#: src/blocks/alert/variations.js:45
+#: src/blocks/alert/variations.js:48
 msgid "Alert Warning"
 msgstr ""
 
-#: src/blocks/alert/variations.js:57
+#: src/blocks/alert/variations.js:60
 msgid "This is a warning alert."
 msgstr ""
 
-#: src/blocks/alert/variations.js:64
+#: src/blocks/alert/variations.js:67
 msgid "Alert Danger"
 msgstr ""
 
@@ -2307,7 +2307,7 @@ msgstr ""
 msgid "Alert Success"
 msgstr ""
 
-#: src/blocks/alert/variations.js:76
+#: src/blocks/alert/variations.js:79
 msgid "This is a danger alert."
 msgstr ""
 
@@ -3194,7 +3194,7 @@ msgstr ""
 msgid "minchoBody"
 msgstr ""
 
-#: src/components/advanced-color-gradient-control/index.js:31
+#: src/components/advanced-color-gradient-control/index.js:33
 msgid "Theme"
 msgstr ""
 

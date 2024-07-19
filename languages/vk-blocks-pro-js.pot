@@ -2057,7 +2057,7 @@ msgstr ""
 #: src/blocks/heading/edit.js:264
 #: src/blocks/slider/edit.js:1143
 #: src/blocks/staff/edit.js:173
-#: src/components/advanced-color-gradient-control/index.js:37
+#: src/components/advanced-color-gradient-control/index.js:39
 msgid "Default"
 msgstr ""
 
@@ -3146,7 +3146,7 @@ msgstr ""
 msgid "minchoBody"
 msgstr ""
 
-#: src/components/advanced-color-gradient-control/index.js:31
+#: src/components/advanced-color-gradient-control/index.js:33
 msgid "Theme"
 msgstr ""
 

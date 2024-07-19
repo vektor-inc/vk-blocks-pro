@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ] Fixed in WordPress 6.4.x / 6.5.x so that blocks can be used.
+
 = 1.80.0 =
 [ Add function ][ Outer (Pro) ] Add serrated and large triangle in divider style.
 [ Bug Fix ][ Outer (Pro) ] Add vertical padding variables.

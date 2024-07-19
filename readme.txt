@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Blog Card (Pro) ] Fixed child blocks of blog cards not being displayed on the edit screen.
+
 = 1.80.0 =
 [ Add function ][ Outer (Pro) ] Add serrated and large triangle in divider style.
 [ Bug Fix ][ Outer (Pro) ] Add vertical padding variables.

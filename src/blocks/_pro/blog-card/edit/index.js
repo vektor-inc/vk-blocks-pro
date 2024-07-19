@@ -82,6 +82,13 @@ export default function BlogCardWrapperEdit(props) {
 			'vk-blocks/blog-card-site-title',
 			'vk-blocks/blog-card-title',
 		],
+		allowedBlocks: [
+			'vk-blocks/blog-card-excerpt',
+			'vk-blocks/blog-card-featured-image',
+			'vk-blocks/blog-card-site-logo',
+			'vk-blocks/blog-card-site-title',
+			'vk-blocks/blog-card-title',
+		],
 	});
 
 	// url以外のattributesをundefinedにする

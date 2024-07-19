@@ -106,7 +106,9 @@ e.g.
 
 == Changelog ==
 
+
 [ Bug Fix ] Fixed in WordPress 6.4.x / 6.5.x so that blocks can be used.
+[ Design Bug Fix ][ Fixed Display (Pro) ] Add max-width for position top and bottom.
 
 = 1.80.0 =
 [ Add function ][ Outer (Pro) ] Add serrated and large triangle in divider style.

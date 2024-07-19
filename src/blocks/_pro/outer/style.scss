@@ -112,7 +112,7 @@ $media-xxl-down: 1399.98px;
 	--vk-outer-padding: 0;
 }
 
-.vk_outer-paddingLR-use {
+.vk_outer-paddingLR-use, .vk_outer-paddingVertical-use {
 	--vk-outer-padding: 1.5em;
 	@media (min-width: $media-sm-up) {
 		--vk-outer-padding: 2em;
@@ -133,6 +133,9 @@ $media-xxl-down: 1399.98px;
 	@media (min-width: $media-xxl-up) {
 		--vk-outer-padding: 4em;
 	}
+}
+
+.vk_outer-paddingLR-use {
 	padding-left: var(--vk-outer-padding);
 	padding-right: var(--vk-outer-padding);
 }

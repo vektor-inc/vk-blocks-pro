@@ -107,7 +107,11 @@ e.g.
 == Changelog ==
 
 [ Design Bug Fix ][ Fixed Display (Pro) ] Add max-width for position top and bottom.
+
+= 1.80.0 =
 [ Add function ][ Outer (Pro) ] Add serrated and large triangle in divider style.
+[ Bug Fix ][ Outer (Pro) ] Add vertical padding variables.
+[ Bug Fix ][ Grid Colum (Pro) ] Fix error
 
 = 1.79.1 =
 [ Bug Fix (Free) ] Fixed an issue where blocks couldn't be used in WordPress 6.6.

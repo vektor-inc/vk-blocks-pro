@@ -4,3 +4,5 @@
 *.ttf binary
 *.woff binary
 *.woff2 binary
+*.php text eol=lf
+*.php -text

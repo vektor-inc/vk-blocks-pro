@@ -120,6 +120,7 @@ class VK_Blocks_Block_Loader {
 
 		// 結合CSSを登録.
 		if ( self::should_load_separate_assets() && ! is_admin() ) {
+
 			// ハンドル名vk-blocks-build-cssはwp_add_inline_styleで使用している箇所があるので登録する
 			// 分割読み込みの場合 : false = 結合CSSを読み込まない.
 			wp_register_style( 'vk-blocks-build-css', false, array(), VK_BLOCKS_VERSION );
@@ -154,7 +155,7 @@ class VK_Blocks_Block_Loader {
 
 		// 翻訳を追加.
 		if ( function_exists( 'wp_set_script_translations' ) ) {
-			wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks' );
+			wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks-pro', VK_BLOCKS_DIR_PATH . 'languages' );
 		}
 
 		// 各ブロックを読み込む（一括/分割共通）.
@@ -176,6 +177,7 @@ class VK_Blocks_Block_Loader {
 	 *  @return array Return filter style, script, editor_style and editor_script added.
 	 */
 	public function separate_assets_load_reducer( $args ) {
+
 		/************************************************
 		 * Load Separate file case
 		 * 分割読み込みの場合

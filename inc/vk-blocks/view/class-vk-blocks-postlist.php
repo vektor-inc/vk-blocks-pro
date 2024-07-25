@@ -27,11 +27,11 @@ class PostList
      */
     public static function renderPostList($attributes, $wp_query, $options_loop)
     {
-        if (!empty($attributes['className'])) {
+        if (! empty($attributes['className'])) {
             $options_loop['class_loop_outer'] .= ' ' . $attributes['className'];
         }
 
-        if (!isset($wp_query) || false === $wp_query || 'false' === $wp_query || empty($wp_query->posts)) {
+        if (! isset($wp_query) || false === $wp_query || 'false' === $wp_query || empty($wp_query->posts)) {
             return wp_kses_post(self::getRenderNoPost($wp_query));
         }
 
@@ -90,7 +90,7 @@ class PostList
      */
     private function isArrayExist($arr)
     {
-        return !empty($arr);
+        return ! empty($arr);
     }
 
     /**
@@ -110,7 +110,7 @@ class PostList
 
         foreach ($is_checked_terms as $term_id) {
             $term = get_term($term_id);
-            if (!$term || is_wp_error($term)) {
+            if (! $term || is_wp_error($term)) {
                 continue; // Skip invalid or non-existent terms
             }
             $post_type_taxonomies = get_object_taxonomies($post_type);
@@ -121,7 +121,7 @@ class PostList
                     'field'    => 'term_id',
                     'terms'    => $term_id,
                 );
-                $return[] = $new_array;
+                $return[]  = $new_array;
             }
         }
         return $return;
@@ -146,14 +146,14 @@ class PostList
         }
 
         $post__not_in = array();
-        if (!empty($attributes['selfIgnore'])) {
-            $post__not_in = array(get_the_ID());
+        if (! empty($attributes['selfIgnore'])) {
+            $post__not_in = array( get_the_ID() );
         }
 
         $offset = isset($attributes['offset']) ? intval($attributes['offset']) : 0;
 
         $date_query = array();
-        if (!empty($attributes['targetPeriod'])) {
+        if (! empty($attributes['targetPeriod'])) {
             switch ($attributes['targetPeriod']) {
                 case 'from-today':
                     $date_query = array(
@@ -188,7 +188,7 @@ class PostList
         global $wp_query;
         // とりあえず１を入れつつ2ページ目の情報があったら上書き
         $paged = 1;
-        if (!empty($attributes['pagedlock'])) {
+        if (! empty($attributes['pagedlock'])) {
             $paged = 1;
         } elseif (is_singular() && isset($wp_query->query_vars['page'])) {
             $paged = $wp_query->query_vars['page'];
@@ -196,12 +196,12 @@ class PostList
             $paged = $wp_query->query_vars['paged'];
         }
 
-        $all_posts = array();
+        $all_posts    = array();
         $offset_count = 0;
 
         foreach ($is_checked_post_type as $post_type) {
             $posts_per_page = 100; // 一度に取得する投稿件数を制限
-            $args = array(
+            $args           = array(
                 'post_type'      => $post_type,
                 'paged'          => $paged,
                 'posts_per_page' => $posts_per_page,
@@ -210,12 +210,12 @@ class PostList
                 'post__not_in'   => $post__not_in,
                 'date_query'     => $date_query,
                 // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
-                'tax_query'      => !empty($is_checked_terms) ? self::formatTerms($tax_query_relation, $is_checked_terms, $post_type) : array(),
+                'tax_query'      => ! empty($is_checked_terms) ? self::formatTerms($tax_query_relation, $is_checked_terms, $post_type) : array(),
             );
 
             while (true) {
                 $temp_query = new WP_Query($args);
-                if (!$temp_query->have_posts()) {
+                if (! $temp_query->have_posts()) {
                     break;
                 }
 
@@ -248,7 +248,7 @@ class PostList
                             return strtotime($b->post_modified) - strtotime($a->post_modified);
                         }
                     } elseif ('title' === $attributes['orderby']) {
-                        return strcmp($a->post_title, $b->post_title) * ('ASC' === $attributes['order'] ? 1 : -1);
+                        return strcmp($a->post_title, $b->post_title) * ( 'ASC' === $attributes['order'] ? 1 : -1 );
                     } else {
                         return 0;
                     }
@@ -258,8 +258,8 @@ class PostList
 
         $all_posts = array_slice($all_posts, $offset, intval($attributes['numberPosts']));
 
-        $wp_query_combined = new WP_Query();
-        $wp_query_combined->posts = $all_posts;
+        $wp_query_combined             = new WP_Query();
+        $wp_query_combined->posts      = $all_posts;
         $wp_query_combined->post_count = count($all_posts);
 
         return $wp_query_combined;
@@ -276,15 +276,15 @@ class PostList
     {
         // ParentIdを指定
         if (isset($attributes['selectId']) && 'false' !== $attributes['selectId']) {
-            $select_id = ($attributes['selectId'] > 0) ? $attributes['selectId'] : get_the_ID();
+            $select_id = ( $attributes['selectId'] > 0 ) ? $attributes['selectId'] : get_the_ID();
 
             $post__not_in = array();
-            if (!empty($attributes['selfIgnore'])) {
-                $post__not_in = array(get_the_ID());
+            if (! empty($attributes['selfIgnore'])) {
+                $post__not_in = array( get_the_ID() );
             }
 
             $offset = '';
-            if (!empty($attributes['offset'])) {
+            if (! empty($attributes['offset'])) {
                 $offset = intval($attributes['offset']);
             }
 
@@ -313,19 +313,19 @@ class PostList
     public static function getRenderNoPost($wp_query = null)
     {
         $name = '';
-        if (!empty($wp_query->query['post_type'])) {
+        if (! empty($wp_query->query['post_type'])) {
             if (is_array($wp_query->query['post_type'])) {
                 $post_type = $wp_query->query['post_type'][0];
             } else {
                 $post_type = $wp_query->query['post_type'];
             }
             $post_type_object = get_post_type_object($post_type);
-            if (!empty($post_type_object->label)) {
+            if (! empty($post_type_object->label)) {
                 $name = $post_type_object->label;
             }
         }
 
-        if (!$name) {
+        if (! $name) {
             $name = __('Post', 'vk-blocks-pro');
         }
 

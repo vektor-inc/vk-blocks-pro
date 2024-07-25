@@ -192,10 +192,11 @@ class Vk_Blocks_PostList {
 		$offset_count = 0;
 
 		foreach ( $is_checked_post_type as $post_type ) {
+			$posts_per_page = 100; // 一度に取得する投稿件数を制限
 			$args = array(
 				'post_type'      => $post_type,
-				'paged'          => 1,
-				'posts_per_page' => -1,
+				'paged'          => $paged,
+				'posts_per_page' => $posts_per_page,
 				'order'          => $attributes['order'],
 				'orderby'        => $attributes['orderby'],
 				'post__not_in'   => $post__not_in,
@@ -208,8 +209,13 @@ class Vk_Blocks_PostList {
 				$args['tax_query'] = self::format_terms( $tax_query_relation, $is_checked_terms, $post_type );
 			}
 
-			$temp_query = new WP_Query( $args );
-			$all_posts  = array_merge( $all_posts, $temp_query->posts );
+			do {
+				$temp_query = new WP_Query( $args );
+				$all_posts  = array_merge( $all_posts, $temp_query->posts );
+				$args['paged']++;
+			} while ( $temp_query->max_num_pages >= $args['paged'] );
+
+			wp_reset_postdata(); // ページごとにデータをリセット
 		}
 
 		if ( 'rand' === $attributes['orderby'] ) {

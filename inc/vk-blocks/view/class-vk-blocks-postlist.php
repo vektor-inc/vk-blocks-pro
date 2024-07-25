@@ -35,7 +35,7 @@ class PostList
             return wp_kses_post(self::getRenderNoPost($wp_query));
         }
 
-        $options = [
+        $options = array(
             'layout'                     => esc_html($attributes['layout']),
             'slug'                       => '',
             'display_image'              => esc_html($attributes['display_image']),
@@ -72,7 +72,7 @@ class PostList
             'vkb_hidden_xs'              => $attributes['vkb_hidden_xs'] ?? '',
             'margin_top'                 => $attributes['marginTop'] ?? '',
             'margin_bottom'              => $attributes['marginBottom'] ?? '',
-        ];
+        );
 
         $elm = VK_Component_Posts::get_loop($wp_query, $options, $options_loop);
 
@@ -104,9 +104,9 @@ class PostList
      */
     private static function formatTerms($tax_query_relation, $is_checked_terms, $post_type)
     {
-        $return = [
+        $return = array(
             'relation' => $tax_query_relation,
-        ];
+        );
 
         foreach ($is_checked_terms as $term_id) {
             $term = get_term($term_id);
@@ -116,12 +116,12 @@ class PostList
             $post_type_taxonomies = get_object_taxonomies($post_type);
 
             if (in_array($term->taxonomy, $post_type_taxonomies, true)) {
-                $new_array = [
+                $new_array = array(
                     'taxonomy' => $term->taxonomy,
                     'field'    => 'term_id',
                     'terms'    => $term_id,
-                ];
-                $return[]  = $new_array;
+                );
+                $return[] = $new_array;
             }
         }
         return $return;
@@ -145,42 +145,42 @@ class PostList
             return false;
         }
 
-        $post__not_in = [];
+        $post__not_in = array();
         if (!empty($attributes['selfIgnore'])) {
-            $post__not_in = [get_the_ID()];
+            $post__not_in = array(get_the_ID());
         }
 
         $offset = isset($attributes['offset']) ? intval($attributes['offset']) : 0;
 
-        $date_query = [];
+        $date_query = array();
         if (!empty($attributes['targetPeriod'])) {
             switch ($attributes['targetPeriod']) {
                 case 'from-today':
-                    $date_query = [
-                        [
+                    $date_query = array(
+                        array(
                             'column'    => 'post_date_gmt',
                             'after'     => gmdate('Y-m-d'),
                             'inclusive' => true,
-                        ],
-                    ];
+                        ),
+                    );
                     break;
                 case 'from-now':
-                    $date_query = [
-                        [
+                    $date_query = array(
+                        array(
                             'column'    => 'post_date_gmt',
                             'after'     => gmdate('Y-m-d H:i:s'),
                             'inclusive' => true,
-                        ],
-                    ];
+                        ),
+                    );
                     break;
                 case 'from-tomorrow':
-                    $date_query = [
-                        [
+                    $date_query = array(
+                        array(
                             'column'    => 'post_date_gmt',
                             'after'     => gmdate('Y-m-d', strtotime('+1 day')),
                             'inclusive' => true,
-                        ],
-                    ];
+                        ),
+                    );
                     break;
             }
         }
@@ -196,12 +196,12 @@ class PostList
             $paged = $wp_query->query_vars['paged'];
         }
 
-        $all_posts    = [];
+        $all_posts = array();
         $offset_count = 0;
 
         foreach ($is_checked_post_type as $post_type) {
             $posts_per_page = 100; // 一度に取得する投稿件数を制限
-            $args = [
+            $args = array(
                 'post_type'      => $post_type,
                 'paged'          => $paged,
                 'posts_per_page' => $posts_per_page,
@@ -210,8 +210,8 @@ class PostList
                 'post__not_in'   => $post__not_in,
                 'date_query'     => $date_query,
                 // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
-                'tax_query'      => !empty($is_checked_terms) ? self::formatTerms($tax_query_relation, $is_checked_terms, $post_type) : [],
-            ];
+                'tax_query'      => !empty($is_checked_terms) ? self::formatTerms($tax_query_relation, $is_checked_terms, $post_type) : array(),
+            );
 
             while (true) {
                 $temp_query = new WP_Query($args);
@@ -225,7 +225,7 @@ class PostList
                     break;
                 }
 
-                $args['paged']++;
+                ++$args['paged'];
             }
         }
 
@@ -258,8 +258,8 @@ class PostList
 
         $all_posts = array_slice($all_posts, $offset, intval($attributes['numberPosts']));
 
-        $wp_query_combined             = new WP_Query();
-        $wp_query_combined->posts      = $all_posts;
+        $wp_query_combined = new WP_Query();
+        $wp_query_combined->posts = $all_posts;
         $wp_query_combined->post_count = count($all_posts);
 
         return $wp_query_combined;
@@ -278,9 +278,9 @@ class PostList
         if (isset($attributes['selectId']) && 'false' !== $attributes['selectId']) {
             $select_id = ($attributes['selectId'] > 0) ? $attributes['selectId'] : get_the_ID();
 
-            $post__not_in = [];
+            $post__not_in = array();
             if (!empty($attributes['selfIgnore'])) {
-                $post__not_in = [get_the_ID()];
+                $post__not_in = array(get_the_ID());
             }
 
             $offset = '';
@@ -288,7 +288,7 @@ class PostList
                 $offset = intval($attributes['offset']);
             }
 
-            $args = [
+            $args = array(
                 'post_type'      => 'page',
                 'paged'          => 0, // 0で全件取得
                 'posts_per_page' => -1,
@@ -297,7 +297,7 @@ class PostList
                 'post_parent'    => intval($select_id),
                 'offset'         => $offset,
                 'post__not_in'   => $post__not_in,
-            ];
+            );
             return new WP_Query($args);
         } else {
             return false;

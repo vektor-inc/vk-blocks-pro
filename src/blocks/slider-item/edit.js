@@ -77,7 +77,10 @@ export default function SliderItemEdit(props) {
 		const currentLeftPadding = attributes?.style?.spacing?.padding?.left;
 		const currentRightPadding = attributes?.style?.spacing?.padding?.right;
 
-		if (paddingValue !== currentLeftPadding || paddingValue !== currentRightPadding) {
+		if (
+			paddingValue !== currentLeftPadding ||
+			paddingValue !== currentRightPadding
+		) {
 			setAttributes((prevAttrs) => ({
 				...prevAttrs,
 				style: {

@@ -74,22 +74,25 @@ export default function SliderItemEdit(props) {
 
 	// コアの余白システムに値を適用
 	useEffect(() => {
-		if (
-			paddingValue !== attributes.style?.spacing?.padding?.left ||
-			paddingValue !== attributes.style?.spacing?.padding?.right
-		) {
-			setAttributes({
+		const currentLeftPadding = attributes?.style?.spacing?.padding?.left;
+		const currentRightPadding = attributes?.style?.spacing?.padding?.right;
+
+		if (paddingValue !== currentLeftPadding || paddingValue !== currentRightPadding) {
+			setAttributes((prevAttrs) => ({
+				...prevAttrs,
 				style: {
+					...prevAttrs.style,
 					spacing: {
+						...prevAttrs.style?.spacing,
 						padding: {
 							left: paddingValue,
 							right: paddingValue,
 						},
 					},
 				},
-			});
+			}));
 		}
-	}, [paddingValue]);
+	}, [paddingValue, attributes?.style?.spacing?.padding]);
 
 	let containerClass = '';
 	if (classPaddingLR === ` is-layout-constrained` || classPaddingLR === '') {
@@ -109,6 +112,8 @@ export default function SliderItemEdit(props) {
 
 	const bgAreaStyles = {
 		backgroundColor: isHexColor(bgColor) ? bgColor : undefined,
+		paddingLeft: paddingValue,
+		paddingRight: paddingValue,
 	};
 
 	const GetBgImage = (

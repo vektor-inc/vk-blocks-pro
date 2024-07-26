@@ -309,11 +309,11 @@ class Vk_Blocks_PostList {
 		}
 
 		if ( ! $name ) {
-			$name = __( 'Post', 'vk-blocks' );
+			$name = __( 'Post', 'vk-blocks-pro' );
 		}
 
 		/* translators: %s: 投稿タイプ名 */
-		$html = '<div class="alert alert-warning text-center">' . sprintf( __( 'There are no %ss.', 'vk-blocks' ), $name ) . '</div>';
+		$html = '<div class="alert alert-warning text-center">' . sprintf( __( 'There are no %ss.', 'vk-blocks-pro' ), $name ) . '</div>';
 		return apply_filters( 'vk_blocks_post_list_render_no_post', $html, $wp_query );
 	}
 }

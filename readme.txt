@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Slider Item ] Fix infinite loop in slider item block when used in reusable blocks.
 
 = 1.80.1 =
 [ Bug Fix ] Fixed in WordPress 6.4.x / 6.5.x so that blocks can be used.

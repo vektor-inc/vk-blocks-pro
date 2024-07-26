@@ -107,6 +107,8 @@ e.g.
 == Changelog ==
 
 
+[ Bug fix ] The split loading option is now supported for core/heading, core/image, and core/table styles.
+
 = 1.80.1 =
 [ Bug Fix ] Fixed in WordPress 6.4.x / 6.5.x so that blocks can be used.
 [ Design Bug Fix ][ Fixed Display (Pro) ] Add max-width for position top and bottom.

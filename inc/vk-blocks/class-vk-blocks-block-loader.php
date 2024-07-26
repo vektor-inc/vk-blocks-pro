@@ -100,8 +100,16 @@ class VK_Blocks_Block_Loader {
 	 */
 	public function add_styles() {
 		// 分割読み込みの場合は register されるファイルが false 指定で何も読み込まれなくなっている.
-		wp_enqueue_style( 'vk-blocks-build-css' );
-		wp_enqueue_style( 'vk-blocks-utils-common-css' );
+		if ( self::should_load_separate_assets() ) {
+			// 各ブロックごとのスタイルをここで読み込む
+			wp_enqueue_style( 'vk-blocks-utils-common-css', VK_BLOCKS_DIR_URL . 'build/utils/common.css', array(), VK_BLOCKS_VERSION );
+			wp_enqueue_style( 'vk-blocks/core-table', VK_BLOCKS_DIR_URL . 'build/extensions/core/table/style.css', array(), VK_BLOCKS_VERSION );
+			wp_enqueue_style( 'vk-blocks/core-heading', VK_BLOCKS_DIR_URL . 'build/extensions/core/heading/style.css', array(), VK_BLOCKS_VERSION );
+			wp_enqueue_style( 'vk-blocks/core-image', VK_BLOCKS_DIR_URL . 'build/extensions/core/image/style.css', array(), VK_BLOCKS_VERSION );
+		} else {
+			// 結合ファイルを読み込む
+			wp_enqueue_style( 'vk-blocks-build-css' );
+		}
 	}
 
 	/**
@@ -118,6 +126,9 @@ class VK_Blocks_Block_Loader {
 			wp_register_style( 'vk-blocks-build-css', false, array(), VK_BLOCKS_VERSION );
 			// src/utils内の内の共通cssの読み込み .
 			wp_register_style( 'vk-blocks-utils-common-css', VK_BLOCKS_DIR_URL . 'build/utils/common.css', array(), VK_BLOCKS_VERSION );
+			wp_register_style( 'vk-blocks/core-table', VK_BLOCKS_DIR_URL . 'build/extensions/core/table/style.css', array(), VK_BLOCKS_VERSION );
+			wp_register_style( 'vk-blocks/core-heading', VK_BLOCKS_DIR_URL . 'build/extensions/core/heading/style.css', array(), VK_BLOCKS_VERSION );
+			wp_register_style( 'vk-blocks/core-image', VK_BLOCKS_DIR_URL . 'build/extensions/core/image/style.css', array(), VK_BLOCKS_VERSION );
 		} else {
 			// 一括読み込みの場合 : 結合CSSを登録.
 			wp_register_style( 'vk-blocks-build-css', VK_BLOCKS_DIR_URL . 'build/block-build.css', array(), VK_BLOCKS_VERSION );

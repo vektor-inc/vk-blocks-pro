@@ -74,7 +74,10 @@ export default function SliderItemEdit(props) {
 
 	// コアの余白システムに値を適用
 	useEffect(() => {
-		if (paddingValue !== attributes.style?.spacing?.padding?.left || paddingValue !== attributes.style?.spacing?.padding?.right) {
+		if (
+			paddingValue !== attributes.style?.spacing?.padding?.left ||
+			paddingValue !== attributes.style?.spacing?.padding?.right
+		) {
 			setAttributes({
 				style: {
 					spacing: {
@@ -86,7 +89,7 @@ export default function SliderItemEdit(props) {
 				},
 			});
 		}
-	}, [paddingValue]);	
+	}, [paddingValue]);
 
 	let containerClass = '';
 	if (classPaddingLR === ` is-layout-constrained` || classPaddingLR === '') {

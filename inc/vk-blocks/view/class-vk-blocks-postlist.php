@@ -195,7 +195,7 @@ class Vk_Blocks_PostList {
 			$args = array(
 				'post_type'      => $post_type,
 				'paged'          => $paged,
-				'posts_per_page' => isset( $attributes['numberPosts'] ) ? intval( $attributes['numberPosts'] ) : 6, // デフォルトの投稿取得件数を6に設定し、属性で上書き可能に
+				'posts_per_page' => 100, // 一度に取得する投稿の件数を制限
 				'order'          => $attributes['order'],
 				'orderby'        => $attributes['orderby'],
 				'post__not_in'   => $post__not_in,
@@ -208,8 +208,16 @@ class Vk_Blocks_PostList {
 				$args['tax_query'] = self::format_terms( $tax_query_relation, $is_checked_terms, $post_type );
 			}
 
-			$temp_query = new WP_Query( $args );
-			$all_posts  = array_merge( $all_posts, $temp_query->posts );
+			do {
+				$temp_query = new WP_Query( $args );
+				if ( $temp_query->have_posts() ) {
+					$all_posts = array_merge( $all_posts, $temp_query->posts );
+					$paged++;
+					$args['paged'] = $paged;
+				} else {
+					break;
+				}
+			} while ( $temp_query->have_posts() );
 		}
 
 		if ( 'rand' === $attributes['orderby'] ) {

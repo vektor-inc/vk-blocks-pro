@@ -212,7 +212,7 @@ class Vk_Blocks_PostList {
 				$temp_query = new WP_Query( $args );
 				if ( $temp_query->have_posts() ) {
 					$all_posts = array_merge( $all_posts, $temp_query->posts );
-					$paged++;
+					++$paged;
 					$args['paged'] = $paged;
 				} else {
 					break;

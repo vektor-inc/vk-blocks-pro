@@ -4,7 +4,12 @@
  */
 import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
-import { PanelBody, ToggleControl, Icon } from '@wordpress/components';
+import {
+	PanelBody,
+	ToggleControl,
+	SelectControl,
+	Icon,
+} from '@wordpress/components';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { InspectorControls } from '@wordpress/block-editor';
 
@@ -25,6 +30,10 @@ export const addAttribute = (settings) => {
 			scrollable: {
 				type: 'boolean',
 			},
+			scrollBreakpoint: {
+				type: 'string',
+				default: 'table-scrollable-pc', // デフォルトをPCブレイクポイントに設定
+			},
 		};
 	}
 	return settings;
@@ -35,7 +44,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 	return (props) => {
 		if (isValidBlockType(props.name) && props.isSelected) {
 			const { attributes, setAttributes } = props;
-			const { scrollable, className } = attributes;
+			const { scrollable, scrollBreakpoint, className } = attributes;
 
 			// アイコンのスタイル
 			let iconStyle = {
@@ -78,6 +87,9 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 									if (checked) {
 										newClassName +=
 											' is-style-vk-table-scrollable';
+										tableScroll(); // スクロール機能を呼び出し
+									} else {
+										removeTableScroll(); // スクロール機能を取り外し
 									}
 
 									setAttributes({
@@ -86,6 +98,34 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 									});
 								}}
 							/>
+							{scrollable && (
+								<SelectControl
+									label={__(
+										'Scroll Breakpoint',
+										'vk-blocks-pro'
+									)}
+									value={scrollBreakpoint}
+									options={[
+										{
+											label: 'PC and up',
+											value: 'table-scrollable-pc',
+										},
+										{
+											label: 'Tablet and up',
+											value: 'table-scrollable-tablet',
+										},
+										{
+											label: 'Mobile and up',
+											value: 'table-scrollable-mobile',
+										},
+									]}
+									onChange={(value) =>
+										setAttributes({
+											scrollBreakpoint: value,
+										})
+									}
+								/>
+							)}
 						</PanelBody>
 					</InspectorControls>
 				</>
@@ -96,3 +136,82 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 	};
 }, 'addMyCustomBlockControls');
 addFilter('editor.BlockEdit', 'vk-blocks/table-style', addBlockControl);
+
+const addExtraProps = (saveElementProps, blockType, attributes) => {
+	if (isValidBlockType(blockType.name)) {
+		if (attributes.scrollable) {
+			saveElementProps.className = saveElementProps.className
+				? saveElementProps.className
+				: '';
+			saveElementProps.className += ' is-style-vk-table-scrollable';
+			saveElementProps['data-scroll-breakpoint'] =
+				attributes.scrollBreakpoint;
+		} else {
+			saveElementProps.className = saveElementProps.className
+				.replace('is-style-vk-table-scrollable', '')
+				.trim();
+			delete saveElementProps['data-scroll-breakpoint'];
+		}
+	}
+
+	return saveElementProps;
+};
+const tableScroll = () => {
+	const tables = document.querySelectorAll(
+		'.wp-block-table.is-style-vk-table-scrollable'
+	);
+	tables.forEach((table) => {
+		const breakpoint =
+			table.getAttribute('data-scroll-breakpoint') || '767px';
+		const minWidth = parseInt(breakpoint.replace(/\D/g, ''), 10);
+
+		const handleResize = () => {
+			const currentWidth = window.innerWidth;
+			if (currentWidth <= minWidth) {
+				table.style.overflowX = 'auto';
+				table.style.webkitOverflowScrolling = 'touch';
+
+				const innerTable = table.querySelector('table');
+				if (innerTable) {
+					innerTable.style.whiteSpace = 'nowrap';
+				}
+			} else {
+				table.style.overflowX = '';
+				table.style.webkitOverflowScrolling = '';
+
+				const innerTable = table.querySelector('table');
+				if (innerTable) {
+					innerTable.style.whiteSpace = '';
+				}
+			}
+		};
+
+		// 初回の呼び出し
+		handleResize();
+
+		// リサイズイベントの設定
+		window.addEventListener('resize', handleResize);
+	});
+};
+
+// スクロール機能を取り外し
+const removeTableScroll = () => {
+	const tables = document.querySelectorAll(
+		'.wp-block-table.is-style-vk-table-scrollable'
+	);
+	tables.forEach((table) => {
+		table.style.overflowX = '';
+		table.style.webkitOverflowScrolling = '';
+
+		const innerTable = table.querySelector('table');
+		if (innerTable) {
+			innerTable.style.whiteSpace = '';
+		}
+	});
+};
+
+addFilter(
+	'blocks.getSaveContent.extraProps',
+	'vk-blocks/table-style',
+	addExtraProps
+);

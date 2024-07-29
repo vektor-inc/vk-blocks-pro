@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+[ Editor Design Bug Fix ][ Slider Item ]Fixed to hide content that exceeds the height when setting the slider height.
 [ Add function ][ Slider Item ] Fix infinite loop in slider item block when used in reusable blocks.
 
 [ Bug fix ] The split loading option is now supported for core/heading, core/image, and core/table styles.

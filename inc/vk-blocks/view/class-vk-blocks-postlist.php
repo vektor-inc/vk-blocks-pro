@@ -20,6 +20,7 @@ class Vk_Blocks_PostList {
 	 * @return string
 	 */
 	public static function render_post_list( $attributes, $wp_query, $options_loop ) {
+
 		if ( ! empty( $attributes['className'] ) ) {
 			$options_loop['class_loop_outer'] .= ' ' . esc_attr( $attributes['className'] );
 		}
@@ -128,6 +129,7 @@ class Vk_Blocks_PostList {
 	 * @return WP_Query|bool WP_Query object or false.
 	 */
 	public static function get_loop_query( $attributes ) {
+
 		$is_checked_post_type = json_decode( $attributes['isCheckedPostType'], true );
 
 		$is_checked_terms   = json_decode( $attributes['isCheckedTerms'], true );
@@ -213,21 +215,12 @@ class Vk_Blocks_PostList {
 				unset( $args['date_query'] );
 			}
 
-			do {
-				$temp_query = new WP_Query( $args );
-				if ( $temp_query->have_posts() ) {
-					$all_posts = array_merge( $all_posts, $temp_query->posts );
-					++$paged;
-					$args['paged'] = $paged;
-					// メモリを解放するためにキャッシュをクリア
-					wp_cache_flush();
-					// PHPのメモリも解放
-					unset( $temp_query );
-					gc_collect_cycles();
-				} else {
-					break;
-				}
-			} while ( isset( $temp_query ) && $temp_query->have_posts() );
+			$temp_query = new WP_Query( $args );
+			if ( $temp_query->have_posts() ) {
+				$all_posts = array_merge( $all_posts, $temp_query->posts );
+			}
+
+			wp_reset_postdata();
 		}
 
 		if ( 'rand' === $attributes['orderby'] ) {

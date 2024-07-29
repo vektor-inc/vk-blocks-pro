@@ -21,7 +21,7 @@ class Vk_Blocks_PostList {
 	 */
 	public static function render_post_list( $attributes, $wp_query, $options_loop ) {
 		if ( ! empty( $attributes['className'] ) ) {
-			$options_loop['class_loop_outer'] .= ' ' . $attributes['className'];
+			$options_loop['class_loop_outer'] .= ' ' . esc_attr( $attributes['className'] );
 		}
 
 		if ( ! isset( $wp_query ) || false === $wp_query || 'false' === $wp_query || empty( $wp_query->posts ) ) {
@@ -38,32 +38,32 @@ class Vk_Blocks_PostList {
 			'display_new'                => esc_html( $attributes['display_new'] ),
 			'display_taxonomies'         => esc_html( $attributes['display_taxonomies'] ),
 			'display_btn'                => esc_html( $attributes['display_btn'] ),
-			'image_default_url'          => VK_BLOCKS_URL . 'images/no-image.png',
+			'image_default_url'          => esc_url( VK_BLOCKS_URL . 'images/no-image.png' ),
 			'overlay'                    => false,
 			'new_text'                   => esc_html( $attributes['new_text'] ),
 			'new_date'                   => esc_html( $attributes['new_date'] ),
 			'btn_text'                   => esc_html( $attributes['btn_text'] ),
 			'btn_align'                  => esc_html( $attributes['btn_align'] ),
-			'col_xs'                     => esc_html( $attributes['col_xs'] ),
-			'col_sm'                     => esc_html( $attributes['col_sm'] ),
-			'col_md'                     => esc_html( $attributes['col_md'] ),
-			'col_lg'                     => esc_html( $attributes['col_lg'] ),
-			'col_xl'                     => esc_html( $attributes['col_xl'] ),
-			'col_xxl'                    => esc_html( $attributes['col_xxl'] ),
+			'col_xs'                     => intval( $attributes['col_xs'] ),
+			'col_sm'                     => intval( $attributes['col_sm'] ),
+			'col_md'                     => intval( $attributes['col_md'] ),
+			'col_lg'                     => intval( $attributes['col_lg'] ),
+			'col_xl'                     => intval( $attributes['col_xl'] ),
+			'col_xxl'                    => intval( $attributes['col_xxl'] ),
 			'class_outer'                => '',
 			'class_title'                => '',
 			'body_prepend'               => '',
 			'body_append'                => '',
-			'vkb_hidden'                 => isset( $attributes['vkb_hidden'] ) ? $attributes['vkb_hidden'] : '',
-			'vkb_hidden_xxl'             => isset( $attributes['vkb_hidden_xxl'] ) ? $attributes['vkb_hidden_xxl'] : '',
-			'vkb_hidden_xl'              => isset( $attributes['vkb_hidden_xl'] ) ? $attributes['vkb_hidden_xl'] : '',
-			'vkb_hidden_xl_v2'           => isset( $attributes['vkb_hidden_xl_v2'] ) ? $attributes['vkb_hidden_xl_v2'] : '',
-			'vkb_hidden_lg'              => isset( $attributes['vkb_hidden_lg'] ) ? $attributes['vkb_hidden_lg'] : '',
-			'vkb_hidden_md'              => isset( $attributes['vkb_hidden_md'] ) ? $attributes['vkb_hidden_md'] : '',
-			'vkb_hidden_sm'              => isset( $attributes['vkb_hidden_sm'] ) ? $attributes['vkb_hidden_sm'] : '',
-			'vkb_hidden_xs'              => isset( $attributes['vkb_hidden_xs'] ) ? $attributes['vkb_hidden_xs'] : '',
-			'marginTop'                  => isset( $attributes['marginTop'] ) ? $attributes['marginTop'] : '',
-			'marginBottom'               => isset( $attributes['marginBottom'] ) ? $attributes['marginBottom'] : '',
+			'vkb_hidden'                 => isset( $attributes['vkb_hidden'] ) ? esc_attr( $attributes['vkb_hidden'] ) : '',
+			'vkb_hidden_xxl'             => isset( $attributes['vkb_hidden_xxl'] ) ? esc_attr( $attributes['vkb_hidden_xxl'] ) : '',
+			'vkb_hidden_xl'              => isset( $attributes['vkb_hidden_xl'] ) ? esc_attr( $attributes['vkb_hidden_xl'] ) : '',
+			'vkb_hidden_xl_v2'           => isset( $attributes['vkb_hidden_xl_v2'] ) ? esc_attr( $attributes['vkb_hidden_xl_v2'] ) : '',
+			'vkb_hidden_lg'              => isset( $attributes['vkb_hidden_lg'] ) ? esc_attr( $attributes['vkb_hidden_lg'] ) : '',
+			'vkb_hidden_md'              => isset( $attributes['vkb_hidden_md'] ) ? esc_attr( $attributes['vkb_hidden_md'] ) : '',
+			'vkb_hidden_sm'              => isset( $attributes['vkb_hidden_sm'] ) ? esc_attr( $attributes['vkb_hidden_sm'] ) : '',
+			'vkb_hidden_xs'              => isset( $attributes['vkb_hidden_xs'] ) ? esc_attr( $attributes['vkb_hidden_xs'] ) : '',
+			'marginTop'                  => isset( $attributes['marginTop'] ) ? esc_attr( $attributes['marginTop'] ) : '',
+			'marginBottom'               => isset( $attributes['marginBottom'] ) ? esc_attr( $attributes['marginBottom'] ) : '',
 		);
 
 		$elm = VK_Component_Posts::get_loop( $wp_query, $options, $options_loop );
@@ -196,16 +196,21 @@ class Vk_Blocks_PostList {
 				'post_type'      => $post_type,
 				'paged'          => $paged,
 				'posts_per_page' => 100, // 一度に取得する投稿の件数を制限
-				'order'          => $attributes['order'],
-				'orderby'        => $attributes['orderby'],
-				'post__not_in'   => $post__not_in,
+				'order'          => esc_sql( $attributes['order'] ),
+				'orderby'        => esc_sql( $attributes['orderby'] ),
+				'post__not_in'   => array_map( 'intval', $post__not_in ),
 				'date_query'     => $date_query,
-			    // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
 				'tax_query'      => ! empty( $is_checked_terms ) ? self::format_terms( $tax_query_relation, $is_checked_terms, $post_type ) : array(),
+				'update_post_meta_cache' => false, // postmeta のキャッシュのアップデートを無効化
+				'no_found_rows'          => true, // 総数のカウントを無効化
 			);
 
-			if ( ! empty( $is_checked_terms ) ) {
-				$args['tax_query'] = self::format_terms( $tax_query_relation, $is_checked_terms, $post_type );
+			if ( empty( $args['tax_query'] ) ) {
+				unset( $args['tax_query'] );
+			}
+
+			if ( empty( $args['date_query'] ) ) {
+				unset( $args['date_query'] );
 			}
 
 			do {
@@ -214,10 +219,15 @@ class Vk_Blocks_PostList {
 					$all_posts = array_merge( $all_posts, $temp_query->posts );
 					++$paged;
 					$args['paged'] = $paged;
+					// メモリを解放するためにキャッシュをクリア
+					wp_cache_flush();
+					// PHPのメモリも解放
+					unset( $temp_query );
+					gc_collect_cycles();
 				} else {
 					break;
 				}
-			} while ( $temp_query->have_posts() );
+			} while ( isset( $temp_query ) && $temp_query->have_posts() );
 		}
 
 		if ( 'rand' === $attributes['orderby'] ) {
@@ -267,7 +277,7 @@ class Vk_Blocks_PostList {
 
 		// ParentIdを指定.
 		if ( isset( $attributes['selectId'] ) && 'false' !== $attributes['selectId'] ) {
-			$select_id = ( $attributes['selectId'] > 0 ) ? $attributes['selectId'] : get_the_ID();
+			$select_id = ( $attributes['selectId'] > 0 ) ? intval( $attributes['selectId'] ) : get_the_ID();
 
 			$post__not_in = array();
 			if ( ! empty( $attributes['selfIgnore'] ) ) {
@@ -289,6 +299,7 @@ class Vk_Blocks_PostList {
 				'post_parent'    => intval( $select_id ),
 				'offset'         => $offset,
 				'post__not_in'   => $post__not_in,
+				'no_found_rows'  => true, // 総数のカウントを無効化
 			);
 			return new WP_Query( $args );
 		} else {

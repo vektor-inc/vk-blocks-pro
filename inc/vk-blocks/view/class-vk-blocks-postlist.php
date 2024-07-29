@@ -193,14 +193,14 @@ class Vk_Blocks_PostList {
 
 		foreach ( $is_checked_post_type as $post_type ) {
 			$args = array(
-				'post_type'      => $post_type,
-				'paged'          => $paged,
-				'posts_per_page' => 100, // 一度に取得する投稿の件数を制限
-				'order'          => esc_sql( $attributes['order'] ),
-				'orderby'        => esc_sql( $attributes['orderby'] ),
-				'post__not_in'   => array_map( 'intval', $post__not_in ),
-				'date_query'     => $date_query,
-				'tax_query'      => ! empty( $is_checked_terms ) ? self::format_terms( $tax_query_relation, $is_checked_terms, $post_type ) : array(),
+				'post_type'              => $post_type,
+				'paged'                  => $paged,
+				'posts_per_page'         => 100, // 一度に取得する投稿の件数を制限
+				'order'                  => esc_sql( $attributes['order'] ),
+				'orderby'                => esc_sql( $attributes['orderby'] ),
+				'post__not_in'           => array_map( 'intval', $post__not_in ),
+				'date_query'             => $date_query,
+				'tax_query'              => ! empty( $is_checked_terms ) ? self::format_terms( $tax_query_relation, $is_checked_terms, $post_type ) : array(),
 				'update_post_meta_cache' => false, // postmeta のキャッシュのアップデートを無効化
 				'no_found_rows'          => true, // 総数のカウントを無効化
 			);

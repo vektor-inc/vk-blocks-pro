@@ -100,16 +100,11 @@ class VK_Blocks_Block_Loader {
 	 */
 	public function add_styles() {
 		// 分割読み込みの場合は register されるファイルが false 指定で何も読み込まれなくなっている.
-		if ( self::should_load_separate_assets() ) {
-			// 各ブロックごとのスタイルをここで読み込む
-			wp_enqueue_style( 'vk-blocks-utils-common-css', VK_BLOCKS_DIR_URL . 'build/utils/common.css', array(), VK_BLOCKS_VERSION );
-			wp_enqueue_style( 'vk-blocks/core-table', VK_BLOCKS_DIR_URL . 'build/extensions/core/table/style.css', array(), VK_BLOCKS_VERSION );
-			wp_enqueue_style( 'vk-blocks/core-heading', VK_BLOCKS_DIR_URL . 'build/extensions/core/heading/style.css', array(), VK_BLOCKS_VERSION );
-			wp_enqueue_style( 'vk-blocks/core-image', VK_BLOCKS_DIR_URL . 'build/extensions/core/image/style.css', array(), VK_BLOCKS_VERSION );
-		} else {
-			// 結合ファイルを読み込む
-			wp_enqueue_style( 'vk-blocks-build-css' );
-		}
+		wp_enqueue_style( 'vk-blocks-build-css' );
+		wp_enqueue_style( 'vk-blocks-utils-common-css' );
+		wp_enqueue_style( 'vk-blocks/core-table', VK_BLOCKS_DIR_URL . 'build/extensions/core/table/style.css', array(), VK_BLOCKS_VERSION );
+		wp_enqueue_style( 'vk-blocks/core-heading', VK_BLOCKS_DIR_URL . 'build/extensions/core/heading/style.css', array(), VK_BLOCKS_VERSION );
+		wp_enqueue_style( 'vk-blocks/core-image', VK_BLOCKS_DIR_URL . 'build/extensions/core/image/style.css', array(), VK_BLOCKS_VERSION );
 	}
 
 	/**

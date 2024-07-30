@@ -101,7 +101,7 @@ class VK_Blocks_Block_Loader {
 	public function add_styles() {
 		// 分割読み込みの場合は register されるファイルが false 指定で何も読み込まれなくなっている.
 		wp_enqueue_style( 'vk-blocks-build-css' );
-		wp_enqueue_style( 'vk-blocks-utils-common-css');
+		wp_enqueue_style( 'vk-blocks-utils-common-css' );
 		wp_enqueue_style( 'vk-blocks/core-table', VK_BLOCKS_DIR_URL . 'build/extensions/core/table/style.css', array(), VK_BLOCKS_VERSION );
 		wp_enqueue_style( 'vk-blocks/core-heading', VK_BLOCKS_DIR_URL . 'build/extensions/core/heading/style.css', array(), VK_BLOCKS_VERSION );
 		wp_enqueue_style( 'vk-blocks/core-image', VK_BLOCKS_DIR_URL . 'build/extensions/core/image/style.css', array(), VK_BLOCKS_VERSION );

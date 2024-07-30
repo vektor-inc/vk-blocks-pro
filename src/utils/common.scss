@@ -4,6 +4,7 @@
 
 .text-nowrap {
 	white-space: nowrap;
+	color :#ff6900;
 }
 
 /*-------------------------------------------*/
@@ -120,14 +121,8 @@
 }
 
 /*-------------------------------------------*/
-/* リストデザイン
+/* パレット設定
 /*-------------------------------------------*/
-@mixin mark-before {
-	font-family: "Font Awesome 5 Free";
-	font-weight: 900;
-	position: absolute;
-}
-
 $stylePalette: (
 	is-style-vk-arrow-mark: "\f138",
 	is-style-vk-triangle-mark: "\f0da",
@@ -141,28 +136,63 @@ $stylePalette: (
 );
 
 $colorPalette: (
-	vk-has-pale-pink-color: #f78da7,
-	vk-has-vivid-red-color: #cf2e2e,
-	vk-has-luminous-vivid-orange-color: #ff6900,
-	vk-has-luminous-vivid-amber-color: #fcb900,
-	vk-has-light-green-cyan-color: #7bdcb5,
-	vk-has-vivid-green-cyan-color: #00d084,
-	vk-has-pale-cyan-blue-color: #8ed1fc,
-	vk-has-vivid-cyan-blue-color: #0693e3,
-	vk-has-vivid-purple-color: #9b51e0,
-	vk-has-very-light-gray-color: #eee,
-	vk-has-cyan-bluish-gray-color: #abb8c3,
-	vk-has-very-dark-gray-color: #313131,
-	vk-has-white-color: #ffffff,
-	vk-has-vk-color-primary-color: var(--wp--preset--color--vk-color-primary),
-	vk-has-vk-color-primary-dark-color: var(--wp--preset--color--vk-color-primary-dark),
-	vk-has-vk-color-primary-vivid-color: var(--wp--preset--color--vk-color-primary-vivid),
-	vk-has-vk-color-custom-1-color: var(--wp--preset--color--vk-color-custom-1),
-	vk-has-vk-color-custom-2-color: var(--wp--preset--color--vk-color-custom-2),
-	vk-has-vk-color-custom-3-color: var(--wp--preset--color--vk-color-custom-3),
-	vk-has-vk-color-custom-4-color: var(--wp--preset--color--vk-color-custom-4),
-	vk-has-vk-color-custom-5-color: var(--wp--preset--color--vk-color-custom-5),
+	has-vk-pale-pink: #f78da7,
+	has-vk-vivid-red: #cf2e2e,
+	has-vk-luminous-vivid-orange: #ff6900,
+	has-vk-luminous-vivid-amber: #fcb900,
+	has-vk-light-green-cyan: #7bdcb5,
+	has-vk-vivid-green-cyan: #00d084,
+	has-vk-pale-cyan-blue: #8ed1fc,
+	has-vk-vivid-cyan-blue: #0693e3,
+	has-vk-vivid-purple: #9b51e0,
+	has-vk-very-light-gray: #eee,
+	has-vk-cyan-bluish-gray: #abb8c3,
+	has-vk-very-dark-gray: #313131,
+	has-vk-white: #ffffff,
+	has-vk-color-primary: var(--wp--preset--color--vk-color-primary),
+	has-vk-color-primary-dark: var(--wp--preset--color--vk-color-primary-dark),
+	has-vk-color-primary-vivid: var(--wp--preset--color--vk-color-primary-vivid),
+	has-vk-color-custom-1: var(--wp--preset--color--vk-color-custom-1),
+	has-vk-color-custom-2: var(--wp--preset--color--vk-color-custom-2),
+	has-vk-color-custom-3: var(--wp--preset--color--vk-color-custom-3),
+	has-vk-color-custom-4: var(--wp--preset--color--vk-color-custom-4),
+	has-vk-color-custom-5: var(--wp--preset--color--vk-color-custom-5),
 );
+
+/*-------------------------------------------*/
+/* カラー設定
+/*-------------------------------------------*/
+@each $colorClass, $color in $colorPalette {
+	:root,
+	:root .editor-styles-wrapper {
+		// 一般的なカラー設定
+		.#{$colorClass}-background-color {
+			@if $colorClass == has-vk-color-primary {
+				// has-vk-color-primary-background-colorクラスはデフォルトで設定される。Lightning以外のテーマに対応するため代替値を設定
+				background-color: var(--wp--preset--color--vk-color-primary, #337ab7);
+			} @else {
+				background-color: #{$color};
+			}
+		}
+
+		.#{$colorClass}-color {
+			@if $colorClass == has-vk-color-primary {
+				color: var(--wp--preset--color--vk-color-primary, #337ab7);
+			} @else {
+				color: #{$color};
+			}
+		}
+	}
+}
+
+/*-------------------------------------------*/
+/* リストデザイン
+/*-------------------------------------------*/
+@mixin mark-before {
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	position: absolute;
+}
 
 ul,
 ol {
@@ -353,8 +383,8 @@ ol {
 			}
 		}
 
-		&.is-style-vk-numbered-circle-mark.#{$colorClass},
-		&.is-style-vk-numbered-square-mark.#{$colorClass} {
+		&.is-style-vk-numbered-circle-mark.#{$colorClass}-color,
+		&.is-style-vk-numbered-square-mark.#{$colorClass}-color {
 			li::before {
 				color: #ffffff;
 				background-color: $color;
@@ -424,7 +454,7 @@ ol {
 	}
 
 	@each $colorClass, $color in $colorPalette {
-		&.#{$colorClass} {
+		&.#{$colorClass}-color {
 			border-color: $color;
 			.wp-block-group__inner-container {
 				border-color: $color;

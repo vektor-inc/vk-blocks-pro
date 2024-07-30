@@ -163,8 +163,7 @@ $colorPalette: (
 /* カラー設定
 /*-------------------------------------------*/
 @each $colorClass, $color in $colorPalette {
-	:root,
-	:root .editor-styles-wrapper {
+	:root {
 		// 一般的なカラー設定
 		.#{$colorClass}-background-color {
 			@if $colorClass == has-vk-color-primary {

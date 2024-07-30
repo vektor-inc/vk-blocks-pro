@@ -32,7 +32,7 @@ export const addAttribute = (settings) => {
 			},
 			scrollBreakpoint: {
 				type: 'string',
-				default: 'table-scrollable-pc', // デフォルトをPCブレイクポイントに設定
+				default: 'table-scrollable-mobile', // デフォルトをMobileブレイクポイントに設定
 			},
 		};
 	}
@@ -60,6 +60,31 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 				};
 			}
 
+			const updateScrollAttributes = (checked, value) => {
+				let newClassName = className || '';
+
+				// 現在のクラス名から is-style-vk-table-scrollable を削除
+				newClassName = newClassName
+					.replace('is-style-vk-table-scrollable', '')
+					.trim();
+
+				// scrollable クラスを付与または削除
+				if (checked) {
+					newClassName += ' is-style-vk-table-scrollable';
+				} else {
+					removeTableScroll();
+				}
+
+				setAttributes({
+					className: newClassName.trim(),
+					scrollable: checked,
+					scrollBreakpoint: value,
+				});
+
+				// スクロール機能を呼び出し
+				updateTableScrollAttributes();
+			};
+
 			return (
 				<>
 					<BlockEdit {...props} />
@@ -72,31 +97,12 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 							<ToggleControl
 								label={__('Scrollable', 'vk-blocks-pro')}
 								checked={scrollable}
-								onChange={(checked) => {
-									let newClassName = className || '';
-
-									// 現在のクラス名から is-style-vk-table-scrollable を削除
-									newClassName = newClassName
-										.replace(
-											'is-style-vk-table-scrollable',
-											''
-										)
-										.trim();
-
-									// scrollable クラスを付与または削除
-									if (checked) {
-										newClassName +=
-											' is-style-vk-table-scrollable';
-										tableScroll(); // スクロール機能を呼び出し
-									} else {
-										removeTableScroll(); // スクロール機能を取り外し
-									}
-
-									setAttributes({
-										className: newClassName.trim(),
-										scrollable: checked,
-									});
-								}}
+								onChange={(checked) =>
+									updateScrollAttributes(
+										checked,
+										scrollBreakpoint
+									)
+								}
 							/>
 							{scrollable && (
 								<SelectControl
@@ -120,9 +126,10 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 										},
 									]}
 									onChange={(value) =>
-										setAttributes({
-											scrollBreakpoint: value,
-										})
+										updateScrollAttributes(
+											scrollable,
+											value
+										)
 									}
 								/>
 							)}
@@ -156,13 +163,22 @@ const addExtraProps = (saveElementProps, blockType, attributes) => {
 
 	return saveElementProps;
 };
-const tableScroll = () => {
+addFilter(
+	'blocks.getSaveContent.extraProps',
+	'vk-blocks/table-style',
+	addExtraProps
+);
+
+// 横スクロールを処理する関数を定義
+const updateTableScrollAttributes = () => {
 	const tables = document.querySelectorAll(
 		'.wp-block-table.is-style-vk-table-scrollable'
 	);
 	tables.forEach((table) => {
 		const breakpoint =
-			table.getAttribute('data-scroll-breakpoint') || '767px';
+			table.getAttribute('data-scroll-breakpoint') ||
+			'table-scrollable-mobile';
+		table.setAttribute('data-scroll-breakpoint', breakpoint);
 		const minWidth = parseInt(breakpoint.replace(/\D/g, ''), 10);
 
 		const handleResize = () => {
@@ -202,6 +218,7 @@ const removeTableScroll = () => {
 	tables.forEach((table) => {
 		table.style.overflowX = '';
 		table.style.webkitOverflowScrolling = '';
+		table.removeAttribute('data-scroll-breakpoint');
 
 		const innerTable = table.querySelector('table');
 		if (innerTable) {
@@ -210,8 +227,4 @@ const removeTableScroll = () => {
 	});
 };
 
-addFilter(
-	'blocks.getSaveContent.extraProps',
-	'vk-blocks/table-style',
-	addExtraProps
-);
+document.addEventListener('DOMContentLoaded', updateTableScrollAttributes);

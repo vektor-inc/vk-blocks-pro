@@ -186,8 +186,6 @@ class Vk_Blocks_PostList {
 			$paged = $wp_query->query_vars['page'];
 		} elseif ( isset( $wp_query->query_vars['paged'] ) ) {
 			$paged = $wp_query->query_vars['paged'];
-		} else {
-			$paged = get_query_var( 'paged', 1 );
 		}
 
 		$all_posts    = array();

@@ -12,6 +12,7 @@ import {
 } from '@wordpress/components';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { InspectorControls } from '@wordpress/block-editor';
+import { useEffect, useState } from '@wordpress/element';
 
 /**
  * Internal dependencies
@@ -42,17 +43,45 @@ addFilter('blocks.registerBlockType', 'vk-blocks/table-style', addAttribute);
 
 export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 	return (props) => {
-		if (isValidBlockType(props.name) && props.isSelected) {
-			const { attributes, setAttributes } = props;
-			const { scrollable, scrollBreakpoint, className } = attributes;
+		const { attributes, setAttributes } = props;
+		const { scrollable, scrollBreakpoint, className } = attributes;
+		
+		const [localScrollable, setLocalScrollable] = useState(scrollable);
+		const [localScrollBreakpoint, setLocalScrollBreakpoint] = useState(scrollBreakpoint);
 
+		useEffect(() => {
+			const tableElement = document.querySelector('.is-style-vk-table-scrollable');
+			if (tableElement) {
+				if (localScrollable) {
+					tableElement.setAttribute('data-scroll-breakpoint', localScrollBreakpoint);
+				} else {
+					tableElement.removeAttribute('data-scroll-breakpoint');
+				}
+			}
+		}, [localScrollBreakpoint, localScrollable]);
+
+		useEffect(() => {
+			const selectElement = document.querySelector('.components-select-control__input');
+			const options = selectElement?.options;
+			if (options) {
+				for (let i = 0; i < options.length; i++) {
+					if (options[i].value === localScrollBreakpoint) {
+						options[i].setAttribute('id', 'table-scrollable-selected');
+					} else {
+						options[i].removeAttribute('id');
+					}
+				}
+			}
+		}, [localScrollBreakpoint]);
+
+		if (isValidBlockType(props.name) && props.isSelected) {
 			// アイコンのスタイル
 			let iconStyle = {
 				width: '24px',
 				height: '24px',
 			};
 
-			if (scrollable) {
+			if (localScrollable) {
 				iconStyle = {
 					...iconStyle,
 					color: '#fff',
@@ -78,10 +107,25 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 				setAttributes({
 					className: newClassName.trim(),
 					scrollable: checked,
-					scrollBreakpoint: value,
+					scrollBreakpoint: value === 'table-scrollable-mobile' ? 'table-scrollable-mobile' : value,
 				});
 
+				setLocalScrollable(checked);
+				setLocalScrollBreakpoint(value === 'table-scrollable-mobile' ? 'table-scrollable-mobile' : value);
+
 				// スクロール機能を呼び出し
+				updateTableScrollAttributes();
+			};
+
+			const handleToggleChange = (checked) => {
+				updateScrollAttributes(checked, localScrollBreakpoint);
+			};
+
+			const handleSelectChange = (value) => {
+				setLocalScrollBreakpoint(value);
+				setAttributes({
+					scrollBreakpoint: value,
+				});
 				updateTableScrollAttributes();
 			};
 
@@ -96,21 +140,13 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 						>
 							<ToggleControl
 								label={__('Scrollable', 'vk-blocks-pro')}
-								checked={scrollable}
-								onChange={(checked) =>
-									updateScrollAttributes(
-										checked,
-										scrollBreakpoint
-									)
-								}
+								checked={localScrollable}
+								onChange={handleToggleChange}
 							/>
-							{scrollable && (
+							{localScrollable && (
 								<SelectControl
-									label={__(
-										'Scroll Breakpoint',
-										'vk-blocks-pro'
-									)}
-									value={scrollBreakpoint}
+									label={__('Scroll Breakpoint', 'vk-blocks-pro')}
+									value={localScrollBreakpoint}
 									options={[
 										{
 											label: 'PC and up',
@@ -125,12 +161,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 											value: 'table-scrollable-mobile',
 										},
 									]}
-									onChange={(value) =>
-										updateScrollAttributes(
-											scrollable,
-											value
-										)
-									}
+									onChange={handleSelectChange}
 								/>
 							)}
 						</PanelBody>
@@ -175,9 +206,8 @@ const updateTableScrollAttributes = () => {
 		'.wp-block-table.is-style-vk-table-scrollable'
 	);
 	tables.forEach((table) => {
-		const breakpoint =
-			table.getAttribute('data-scroll-breakpoint') ||
-			'table-scrollable-mobile';
+		const selectedOption = table.querySelector('option#table-scrollable-selected');
+		const breakpoint = selectedOption ? selectedOption.value : 'table-scrollable-mobile';
 		table.setAttribute('data-scroll-breakpoint', breakpoint);
 		const minWidth = parseInt(breakpoint.replace(/\D/g, ''), 10);
 

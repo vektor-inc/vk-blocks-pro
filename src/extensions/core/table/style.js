@@ -45,15 +45,21 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 	return (props) => {
 		const { attributes, setAttributes } = props;
 		const { scrollable, scrollBreakpoint, className } = attributes;
-		
+
 		const [localScrollable, setLocalScrollable] = useState(scrollable);
-		const [localScrollBreakpoint, setLocalScrollBreakpoint] = useState(scrollBreakpoint);
+		const [localScrollBreakpoint, setLocalScrollBreakpoint] =
+			useState(scrollBreakpoint);
 
 		useEffect(() => {
-			const tableElement = document.querySelector('.is-style-vk-table-scrollable');
+			const tableElement = document.querySelector(
+				'.is-style-vk-table-scrollable'
+			);
 			if (tableElement) {
 				if (localScrollable) {
-					tableElement.setAttribute('data-scroll-breakpoint', localScrollBreakpoint);
+					tableElement.setAttribute(
+						'data-scroll-breakpoint',
+						localScrollBreakpoint
+					);
 				} else {
 					tableElement.removeAttribute('data-scroll-breakpoint');
 				}
@@ -61,12 +67,17 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 		}, [localScrollBreakpoint, localScrollable]);
 
 		useEffect(() => {
-			const selectElement = document.querySelector('.components-select-control__input');
+			const selectElement = document.querySelector(
+				'.components-select-control__input'
+			);
 			const options = selectElement?.options;
 			if (options) {
 				for (let i = 0; i < options.length; i++) {
 					if (options[i].value === localScrollBreakpoint) {
-						options[i].setAttribute('id', 'table-scrollable-selected');
+						options[i].setAttribute(
+							'id',
+							'table-scrollable-selected'
+						);
 					} else {
 						options[i].removeAttribute('id');
 					}
@@ -107,11 +118,18 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 				setAttributes({
 					className: newClassName.trim(),
 					scrollable: checked,
-					scrollBreakpoint: value === 'table-scrollable-mobile' ? 'table-scrollable-mobile' : value,
+					scrollBreakpoint:
+						value === 'table-scrollable-mobile'
+							? 'table-scrollable-mobile'
+							: value,
 				});
 
 				setLocalScrollable(checked);
-				setLocalScrollBreakpoint(value === 'table-scrollable-mobile' ? 'table-scrollable-mobile' : value);
+				setLocalScrollBreakpoint(
+					value === 'table-scrollable-mobile'
+						? 'table-scrollable-mobile'
+						: value
+				);
 
 				// スクロール機能を呼び出し
 				updateTableScrollAttributes();
@@ -145,7 +163,10 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 							/>
 							{localScrollable && (
 								<SelectControl
-									label={__('Scroll Breakpoint', 'vk-blocks-pro')}
+									label={__(
+										'Scroll Breakpoint',
+										'vk-blocks-pro'
+									)}
 									value={localScrollBreakpoint}
 									options={[
 										{
@@ -206,8 +227,12 @@ const updateTableScrollAttributes = () => {
 		'.wp-block-table.is-style-vk-table-scrollable'
 	);
 	tables.forEach((table) => {
-		const selectedOption = table.querySelector('option#table-scrollable-selected');
-		const breakpoint = selectedOption ? selectedOption.value : 'table-scrollable-mobile';
+		const selectedOption = table.querySelector(
+			'option#table-scrollable-selected'
+		);
+		const breakpoint = selectedOption
+			? selectedOption.value
+			: 'table-scrollable-mobile';
 		table.setAttribute('data-scroll-breakpoint', breakpoint);
 		const minWidth = parseInt(breakpoint.replace(/\D/g, ''), 10);
 

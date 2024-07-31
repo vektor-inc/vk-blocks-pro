@@ -107,6 +107,7 @@ e.g.
 == Changelog ==
 
 [ Bug fix ][ Post list (Pro) ] Fixed post query to prevent memory overflow by paginating results.
+[ Design Bug Fix ] Added dynamic color settings for common css.
 [ Add function ][ Slider Item ] Fix infinite loop in slider item block when used in reusable blocks.
 [ Bug fix ] The split loading option is now supported for core/heading, core/image, and core/table styles.
 

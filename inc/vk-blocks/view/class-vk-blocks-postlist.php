@@ -194,7 +194,7 @@ class Vk_Blocks_PostList {
 		foreach ( $is_checked_post_type as $post_type ) {
 			$args = array(
 				'post_type'      => $post_type,
-				'paged'          => 1,
+				'paged'          => $paged,
 				'posts_per_page' => -1,
 				'order'          => $attributes['order'],
 				'orderby'        => $attributes['orderby'],

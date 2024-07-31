@@ -105,9 +105,10 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-[ Specification Change ] Update VK Component
-[ Add function ][ Slider Item ] Fix infinite loop in slider item block when used in reusable blocks.
 
+[ Add function ][ Slider Item ] Fix infinite loop in slider item block when used in reusable blocks.
+[ Specification Change ] Update VK Component
+[ Design Bug Fix ] Added dynamic color settings for common css.
 [ Bug fix ] The split loading option is now supported for core/heading, core/image, and core/table styles.
 
 = 1.80.1 =

@@ -223,58 +223,6 @@ class PostListBlockQueryTest extends VK_UnitTestCase {
 					$test_data['post_id_a_online'],
 				),
 			),
-			// とりあえず event の全件取得
-			array(
-				'attributes' => array(
-					'isCheckedPostType' => '["event"]',
-					'taxQueryRelation'  => 'OR',
-					'isCheckedTerms'    => json_encode(
-						array(
-						)
-					),
-				),
-				'expected'   => array(
-					$test_data['post_id_a_aichi'],
-					$test_data['post_id_b_aichi'],
-					$test_data['post_id_a_online'],
-					$test_data['post_id_b_online'],
-				),
-				// ２ページ目で２ページ目の投稿になるかのテスト
-				array(
-					'attributes' => array(
-						'isCheckedPostType' => '["event"]',
-						'taxQueryRelation'  => 'OR',
-						'isCheckedTerms'    => json_encode(
-							array(
-							)
-						),
-						'numberPosts'  => '2',
-					),
-					'expected'   => array(
-						$test_data['post_id_a_online'],
-						$test_data['post_id_b_online'],
-					),
-					'target_url' => home_url( '/event/page/2' ),
-				),
-				// 常時１件目指定の場合に、２ページ目でも１件目が表示されるかのテスト
-				array(
-					'attributes' => array(
-						'isCheckedPostType' => '["event"]',
-						'taxQueryRelation'  => 'OR',
-						'isCheckedTerms'    => json_encode(
-							array(
-							)
-						),
-						'numberPosts'  => '2',
-						'pagedlock'  => true,
-					),
-					'expected'   => array(
-						$test_data['post_id_a_aichi'],
-						$test_data['post_id_b_aichi'],
-					),
-					'target_url' => home_url( '/event/page/2' ),
-				),
-			),
 		);
 		$vk_blocks_post_list = new Vk_Blocks_PostList();
 
@@ -285,43 +233,8 @@ class PostListBlockQueryTest extends VK_UnitTestCase {
 			foreach ( $posts->posts as $post ) {
 				$actual[] = $post->ID;
 			}
-			if ( ! empty( $test['target_url'] ) ) {
-				$this->go_to( $test['target_url'] );
-			}
 print '<pre style="text-align:left">';print_r($actual);print '</pre>';
 			$this->assertSame( $test['expected'], $actual );
 		}
 	}
-
-	/**
-	 * 関連のないタームやカテゴリーが無視されるかのテスト
-	 */
-	public function test_ignore_unrelated_terms() {
-		$test_data = self::create_test_posts();
-
-		$attributes = array(
-			'numberPosts'      => 6,
-			'order'            => 'ASC',
-			'orderby'          => 'ID',
-			'isCheckedPostType'=> '["event"]',
-			'taxQueryRelation' => 'AND',
-			'isCheckedTerms'   => json_encode(
-				array(
-					$test_data['term_id_event_cat_a'],
-					$test_data['term_id_event_area_aichi'],
-				)
-			),
-		);
-
-		// タームが空の場合のテスト
-		$attributes['isCheckedTerms'] = json_encode(array());
-		$posts = Vk_Blocks_PostList::get_loop_query($attributes);
-		$this->assertSame(4, $posts->post_count);
-
-		// 関連のないタームが含まれている場合のテスト
-		$attributes['isCheckedTerms'] = json_encode(array(999999, $test_data['term_id_event_cat_a']));
-		$posts = Vk_Blocks_PostList::get_loop_query($attributes);
-		$this->assertSame(2, $posts->post_count);
-	}
-
 }

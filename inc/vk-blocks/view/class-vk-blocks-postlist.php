@@ -270,7 +270,7 @@ class Vk_Blocks_PostList {
 
 		// ParentIdを指定.
 		if ( isset( $attributes['selectId'] ) && 'false' !== $attributes['selectId'] ) {
-			$select_id = ( $attributes['selectId'] > 0 ) ? intval( $attributes['selectId'] ) : get_the_ID();
+			$select_id = ( $attributes['selectId'] > 0 ) ? $attributes['selectId'] : get_the_ID();
 
 			$post__not_in = array();
 			if ( ! empty( $attributes['selfIgnore'] ) ) {
@@ -286,13 +286,12 @@ class Vk_Blocks_PostList {
 				'post_type'      => 'page',
 				'paged'          => 0,
 				// 0で全件取得
-				'posts_per_page' => isset( $attributes['numberPosts'] ) ? intval( $attributes['numberPosts'] ) : 6, // デフォルトの投稿取得件数を6に設定し、属性で上書き可能に
+				'posts_per_page' => -1,
 				'order'          => 'ASC',
 				'orderby'        => 'menu_order',
 				'post_parent'    => intval( $select_id ),
 				'offset'         => $offset,
 				'post__not_in'   => $post__not_in,
-				'no_found_rows'  => true, // 総数のカウントを無効化
 			);
 			return new WP_Query( $args );
 		} else {

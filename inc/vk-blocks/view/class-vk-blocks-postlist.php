@@ -189,6 +189,8 @@ class Vk_Blocks_PostList {
 		}
 
 		$args = array(
+			// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
+			'tax_query'              => ! empty( $is_checked_terms ) ? self::format_terms( $tax_query_relation, $is_checked_terms, $is_checked_post_type ) : array(),
 			'post_type'              => $is_checked_post_type,
 			'paged'                  => $paged,
 			'posts_per_page'         => intval( $attributes['numberPosts'] ),
@@ -196,7 +198,6 @@ class Vk_Blocks_PostList {
 			'orderby'                => $attributes['orderby'],
 			'post__not_in'           => array_map( 'intval', $post__not_in ),
 			'date_query'             => $date_query,
-			'tax_query'              => ! empty( $is_checked_terms ) ? self::format_terms( $tax_query_relation, $is_checked_terms, $is_checked_post_type ) : array(),
 			'update_post_meta_cache' => false,
 			'no_found_rows'          => true,
 			'offset'                 => $offset,

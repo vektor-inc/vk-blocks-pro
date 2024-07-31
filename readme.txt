@@ -107,7 +107,8 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Slider Item ] Fix infinite loop in slider item block when used in reusable blocks.
-[ Specification Change ] Update VK Component
+[ Specification Change ] Add a circle style to the image block.
+[ Specification Change ] Update VK Component.
 [ Design Bug Fix ] Added dynamic color settings for common css.
 [ Bug fix ] The split loading option is now supported for core/heading, core/image, and core/table styles.
 

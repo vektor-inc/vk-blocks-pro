@@ -190,7 +190,8 @@ class Vk_Blocks_PostList {
 			$paged = get_query_var( 'paged', 1 );
 		}
 
-		$all_posts = array(); // 初期化
+		$all_posts    = array();
+		$offset_count = 0;
 
 		foreach ( $is_checked_post_type as $post_type ) {
 			$args = array(
@@ -201,8 +202,13 @@ class Vk_Blocks_PostList {
 				'orderby'        => $attributes['orderby'],
 				'post__not_in'   => $post__not_in,
 				'date_query'     => $date_query,
+				// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
 				'tax_query'      => ! empty( $is_checked_terms ) ? self::format_terms( $tax_query_relation, $is_checked_terms, $post_type ) : array(),
 			);
+
+			if ( ! empty( $is_checked_terms ) ) {
+				$args['tax_query'] = self::format_terms( $tax_query_relation, $is_checked_terms, $post_type );
+			}
 
 			$temp_query = new WP_Query( $args );
 			$all_posts  = array_merge( $all_posts, $temp_query->posts );

@@ -131,20 +131,20 @@ class Vk_Blocks_PostList {
 	public static function get_loop_query( $attributes ) {
 
 		$is_checked_post_type = json_decode( $attributes['isCheckedPostType'], true );
-		$is_checked_terms   = json_decode( $attributes['isCheckedTerms'], true );
-		$tax_query_relation = isset( $attributes['taxQueryRelation'] ) ? $attributes['taxQueryRelation'] : 'OR';
-	
+		$is_checked_terms     = json_decode( $attributes['isCheckedTerms'], true );
+		$tax_query_relation   = isset( $attributes['taxQueryRelation'] ) ? $attributes['taxQueryRelation'] : 'OR';
+
 		if ( empty( $is_checked_post_type ) ) {
 			return false;
 		}
-	
+
 		$post__not_in = array();
 		if ( ! empty( $attributes['selfIgnore'] ) ) {
 			$post__not_in = array( get_the_ID() );
 		}
-	
+
 		$offset = isset( $attributes['offset'] ) ? intval( $attributes['offset'] ) : 0;
-	
+
 		$date_query = array();
 		if ( ! empty( $attributes['targetPeriod'] ) ) {
 			switch ( $attributes['targetPeriod'] ) {
@@ -177,7 +177,7 @@ class Vk_Blocks_PostList {
 					break;
 			}
 		}
-	
+
 		global $wp_query;
 		$paged = 1;
 		if ( ! empty( $attributes['pagedlock'] ) ) {
@@ -187,7 +187,7 @@ class Vk_Blocks_PostList {
 		} elseif ( isset( $wp_query->query_vars['paged'] ) ) {
 			$paged = $wp_query->query_vars['paged'];
 		}
-	
+
 		$args = array(
 			'post_type'              => $is_checked_post_type,
 			'paged'                  => $paged,
@@ -201,10 +201,10 @@ class Vk_Blocks_PostList {
 			'no_found_rows'          => true,
 			'offset'                 => $offset,
 		);
-	
+
 		// クエリ実行
 		$wp_query_combined = new WP_Query( $args );
-	
+
 		return $wp_query_combined;
 	}
 

@@ -197,9 +197,9 @@ class Vk_Blocks_PostList {
 			$args = array(
 				'post_type'              => $post_type,
 				'paged'                  => $paged,
-				'posts_per_page'         => 100, // 一度に取得する投稿の件数を制限
-				'order'                  => esc_sql( $attributes['order'] ),
-				'orderby'                => esc_sql( $attributes['orderby'] ),
+				'posts_per_page'         => intval( $attributes['numberPosts'] ),
+				'order'                  => $attributes['order'],
+				'orderby'                => $attributes['orderby'],
 				'post__not_in'           => array_map( 'intval', $post__not_in ),
 				'date_query'             => $date_query,
 				'tax_query'              => ! empty( $is_checked_terms ) ? self::format_terms( $tax_query_relation, $is_checked_terms, $post_type ) : array(),

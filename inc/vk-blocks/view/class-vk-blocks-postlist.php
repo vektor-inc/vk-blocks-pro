@@ -131,21 +131,20 @@ class Vk_Blocks_PostList {
 	public static function get_loop_query( $attributes ) {
 
 		$is_checked_post_type = json_decode( $attributes['isCheckedPostType'], true );
-
 		$is_checked_terms   = json_decode( $attributes['isCheckedTerms'], true );
 		$tax_query_relation = isset( $attributes['taxQueryRelation'] ) ? $attributes['taxQueryRelation'] : 'OR';
-
+	
 		if ( empty( $is_checked_post_type ) ) {
 			return false;
 		}
-
+	
 		$post__not_in = array();
 		if ( ! empty( $attributes['selfIgnore'] ) ) {
 			$post__not_in = array( get_the_ID() );
 		}
-
+	
 		$offset = isset( $attributes['offset'] ) ? intval( $attributes['offset'] ) : 0;
-
+	
 		$date_query = array();
 		if ( ! empty( $attributes['targetPeriod'] ) ) {
 			switch ( $attributes['targetPeriod'] ) {
@@ -178,9 +177,8 @@ class Vk_Blocks_PostList {
 					break;
 			}
 		}
-
+	
 		global $wp_query;
-		// とりあえず１を入れつつ2ページ目の情報があったら上書き
 		$paged = 1;
 		if ( ! empty( $attributes['pagedlock'] ) ) {
 			$paged = 1;
@@ -189,73 +187,24 @@ class Vk_Blocks_PostList {
 		} elseif ( isset( $wp_query->query_vars['paged'] ) ) {
 			$paged = $wp_query->query_vars['paged'];
 		}
-
-		$all_posts    = array();
-		$offset_count = 0;
-
-		foreach ( $is_checked_post_type as $post_type ) {
-			$args = array(
-				'post_type'              => $post_type,
-				'paged'                  => $paged,
-				'posts_per_page'         => intval( $attributes['numberPosts'] ),
-				'order'                  => $attributes['order'],
-				'orderby'                => $attributes['orderby'],
-				'post__not_in'           => array_map( 'intval', $post__not_in ),
-				'date_query'             => $date_query,
-				'tax_query'              => ! empty( $is_checked_terms ) ? self::format_terms( $tax_query_relation, $is_checked_terms, $post_type ) : array(),
-				'update_post_meta_cache' => false, // postmeta のキャッシュのアップデートを無効化
-				'no_found_rows'          => true, // 総数のカウントを無効化
-			);
-
-			if ( empty( $args['tax_query'] ) ) {
-				unset( $args['tax_query'] );
-			}
-
-			if ( empty( $args['date_query'] ) ) {
-				unset( $args['date_query'] );
-			}
-
-			$temp_query = new WP_Query( $args );
-			if ( $temp_query->have_posts() ) {
-				$all_posts = array_merge( $all_posts, $temp_query->posts );
-			}
-
-			wp_reset_postdata();
-		}
-
-		if ( 'rand' === $attributes['orderby'] ) {
-			shuffle( $all_posts );
-		} else {
-			usort(
-				$all_posts,
-				function ( $a, $b ) use ( $attributes ) {
-					if ( 'date' === $attributes['orderby'] ) {
-						if ( 'ASC' === $attributes['order'] ) {
-							return strtotime( $a->post_date ) - strtotime( $b->post_date );
-						} else {
-							return strtotime( $b->post_date ) - strtotime( $a->post_date );
-						}
-					} elseif ( 'modified' === $attributes['orderby'] ) {
-						if ( 'ASC' === $attributes['order'] ) {
-							return strtotime( $a->post_modified ) - strtotime( $b->post_modified );
-						} else {
-							return strtotime( $b->post_modified ) - strtotime( $a->post_modified );
-						}
-					} elseif ( 'title' === $attributes['orderby'] ) {
-						return strcmp( $a->post_title, $b->post_title ) * ( 'ASC' === $attributes['order'] ? 1 : -1 );
-					} else {
-						return 0;
-					}
-				}
-			);
-		}
-
-		$all_posts = array_slice( $all_posts, $offset, intval( $attributes['numberPosts'] ) );
-
-		$wp_query_combined             = new WP_Query();
-		$wp_query_combined->posts      = $all_posts;
-		$wp_query_combined->post_count = count( $all_posts );
-
+	
+		$args = array(
+			'post_type'              => $is_checked_post_type,
+			'paged'                  => $paged,
+			'posts_per_page'         => intval( $attributes['numberPosts'] ),
+			'order'                  => $attributes['order'],
+			'orderby'                => $attributes['orderby'],
+			'post__not_in'           => array_map( 'intval', $post__not_in ),
+			'date_query'             => $date_query,
+			'tax_query'              => ! empty( $is_checked_terms ) ? self::format_terms( $tax_query_relation, $is_checked_terms, $is_checked_post_type ) : array(),
+			'update_post_meta_cache' => false,
+			'no_found_rows'          => true,
+			'offset'                 => $offset,
+		);
+	
+		// クエリ実行
+		$wp_query_combined = new WP_Query( $args );
+	
 		return $wp_query_combined;
 	}
 

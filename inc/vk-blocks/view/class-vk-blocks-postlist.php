@@ -179,6 +179,7 @@ class Vk_Blocks_PostList {
 		}
 
 		global $wp_query;
+		// とりあえず１を入れつつ2ページ目の情報があったら上書き
 		$paged = 1;
 		if ( ! empty( $attributes['pagedlock'] ) ) {
 			$paged = 1;
@@ -202,7 +203,6 @@ class Vk_Blocks_PostList {
 			'offset'                 => $offset,
 		);
 
-		// クエリ実行
 		$wp_query_combined = new WP_Query( $args );
 
 		return $wp_query_combined;

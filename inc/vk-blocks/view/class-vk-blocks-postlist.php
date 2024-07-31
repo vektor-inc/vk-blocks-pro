@@ -189,9 +189,9 @@ class Vk_Blocks_PostList {
 		} else {
 			$paged = get_query_var( 'paged', 1 );
 		}
-		
+
 		$all_posts = array(); // 初期化
-		
+
 		foreach ( $is_checked_post_type as $post_type ) {
 			$args = array(
 				'post_type'      => $post_type,
@@ -203,11 +203,11 @@ class Vk_Blocks_PostList {
 				'date_query'     => $date_query,
 				'tax_query'      => ! empty( $is_checked_terms ) ? self::format_terms( $tax_query_relation, $is_checked_terms, $post_type ) : array(),
 			);
-		
+
 			$temp_query = new WP_Query( $args );
 			$all_posts  = array_merge( $all_posts, $temp_query->posts );
-		}		
-		
+		}
+
 		if ( 'rand' === $attributes['orderby'] ) {
 			shuffle( $all_posts );
 		} else {

@@ -223,6 +223,58 @@ class PostListBlockQueryTest extends VK_UnitTestCase {
 					$test_data['post_id_a_online'],
 				),
 			),
+			// とりあえず event の全件取得
+			array(
+				'attributes' => array(
+					'isCheckedPostType' => '["event"]',
+					'taxQueryRelation'  => 'OR',
+					'isCheckedTerms'    => json_encode(
+						array(
+						)
+					),
+				),
+				'expected'   => array(
+					$test_data['post_id_a_aichi'],
+					$test_data['post_id_b_aichi'],
+					$test_data['post_id_a_online'],
+					$test_data['post_id_b_online'],
+				),
+				// ２ページ目で２ページ目の投稿になるかのテスト
+				array(
+					'attributes' => array(
+						'isCheckedPostType' => '["event"]',
+						'taxQueryRelation'  => 'OR',
+						'isCheckedTerms'    => json_encode(
+							array(
+							)
+						),
+						'numberPosts'  => '2',
+					),
+					'expected'   => array(
+						$test_data['post_id_a_online'],
+						$test_data['post_id_b_online'],
+					),
+					'target_url' => home_url( '/event/page/2' ),
+				),
+				// 常時１件目指定の場合に、２ページ目でも１件目が表示されるかのテスト
+				array(
+					'attributes' => array(
+						'isCheckedPostType' => '["event"]',
+						'taxQueryRelation'  => 'OR',
+						'isCheckedTerms'    => json_encode(
+							array(
+							)
+						),
+						'numberPosts'  => '2',
+						'pagedlock'  => true,
+					),
+					'expected'   => array(
+						$test_data['post_id_a_aichi'],
+						$test_data['post_id_b_aichi'],
+					),
+					'target_url' => home_url( '/event/page/2' ),
+				),
+			),
 		);
 		$vk_blocks_post_list = new Vk_Blocks_PostList();
 

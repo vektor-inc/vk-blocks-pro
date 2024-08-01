@@ -106,11 +106,11 @@ e.g.
 
 == Changelog ==
 
+[ Editor Design Bug Fix ][ Slider Item ]Fixed to hide content that exceeds the height when setting the slider height.
+[ Design Bug Fix ] Added dynamic color settings for common css.
 [ Add function ][ Slider Item ] Fix infinite loop in slider item block when used in reusable blocks.
 [ Specification Change ] Add a circle style to the image block.
 [ Specification Change ] Update VK Component.
-[ Design Bug Fix ] Added dynamic color settings for common css.
-[ Design Bug Fix ] Added dynamic color settings for common css.
 [ Bug fix ][ Post List (Pro) ] Fixed pagination handling.
 [ Bug fix ] The split loading option is now supported for core/heading, core/image, and core/table styles.
 

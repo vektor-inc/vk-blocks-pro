@@ -51,19 +51,26 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 			useState(scrollBreakpoint);
 
 		useEffect(() => {
-			const tableElement = document.querySelector(
+			if (scrollable !== localScrollable) {
+				setLocalScrollable(scrollable);
+			}
+			if (scrollBreakpoint !== localScrollBreakpoint) {
+				setLocalScrollBreakpoint(scrollBreakpoint);
+			}
+		}, [scrollable, scrollBreakpoint]);
+
+		useEffect(() => {
+			const tableElements = document.querySelectorAll(
 				'.is-style-vk-table-scrollable'
 			);
-			if (tableElement) {
+			tableElements.forEach((tableElement) => {
 				if (localScrollable) {
 					tableElement.setAttribute(
 						'data-scroll-breakpoint',
 						localScrollBreakpoint
 					);
-				} else {
-					tableElement.removeAttribute('data-scroll-breakpoint');
 				}
-			}
+			});
 		}, [localScrollBreakpoint, localScrollable]);
 
 		useEffect(() => {
@@ -74,12 +81,11 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 			if (options) {
 				for (let i = 0; i < options.length; i++) {
 					if (options[i].value === localScrollBreakpoint) {
-						options[i].setAttribute(
-							'id',
+						options[i].classList.add('table-scrollable-selected');
+					} else {
+						options[i].classList.remove(
 							'table-scrollable-selected'
 						);
-					} else {
-						options[i].removeAttribute('id');
 					}
 				}
 			}
@@ -111,28 +117,20 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 				// scrollable クラスを付与または削除
 				if (checked) {
 					newClassName += ' is-style-vk-table-scrollable';
+					setAttributes({
+						className: newClassName.trim(),
+						scrollable: checked,
+						scrollBreakpoint: value,
+					});
+					setLocalScrollable(checked);
+					setLocalScrollBreakpoint(value);
 				} else {
-					removeTableScroll();
+					setAttributes({
+						className: newClassName.trim(),
+						scrollable: checked,
+					});
+					setLocalScrollable(checked);
 				}
-
-				setAttributes({
-					className: newClassName.trim(),
-					scrollable: checked,
-					scrollBreakpoint:
-						value === 'table-scrollable-mobile'
-							? 'table-scrollable-mobile'
-							: value,
-				});
-
-				setLocalScrollable(checked);
-				setLocalScrollBreakpoint(
-					value === 'table-scrollable-mobile'
-						? 'table-scrollable-mobile'
-						: value
-				);
-
-				// スクロール機能を呼び出し
-				updateTableScrollAttributes();
 			};
 
 			const handleToggleChange = (checked) => {
@@ -144,7 +142,6 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 				setAttributes({
 					scrollBreakpoint: value,
 				});
-				updateTableScrollAttributes();
 			};
 
 			return (
@@ -228,7 +225,7 @@ const updateTableScrollAttributes = () => {
 	);
 	tables.forEach((table) => {
 		const selectedOption = table.querySelector(
-			'option#table-scrollable-selected'
+			'option.table-scrollable-selected'
 		);
 		const breakpoint = selectedOption
 			? selectedOption.value
@@ -262,23 +259,6 @@ const updateTableScrollAttributes = () => {
 
 		// リサイズイベントの設定
 		window.addEventListener('resize', handleResize);
-	});
-};
-
-// スクロール機能を取り外し
-const removeTableScroll = () => {
-	const tables = document.querySelectorAll(
-		'.wp-block-table.is-style-vk-table-scrollable'
-	);
-	tables.forEach((table) => {
-		table.style.overflowX = '';
-		table.style.webkitOverflowScrolling = '';
-		table.removeAttribute('data-scroll-breakpoint');
-
-		const innerTable = table.querySelector('table');
-		if (innerTable) {
-			innerTable.style.whiteSpace = '';
-		}
 	});
 };
 

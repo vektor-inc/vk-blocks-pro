@@ -3,6 +3,7 @@
 /*-------------------------------------------*/
 // 横スクロール
 @mixin scrollable-table {
+	display: block;
 	overflow-x: auto;
 	-webkit-overflow-scrolling: touch;
 
@@ -88,20 +89,17 @@
 	&.is-style-vk-table-scrollable {
 
 		&[data-scroll-breakpoint="table-scrollable-pc"] {
-			display: block;
 			@include scrollable-table;
 		}
 
 		&[data-scroll-breakpoint="table-scrollable-tablet"] {
 			@media (max-width: 991.98px) {
-				display: block;
 				@include scrollable-table;
 			}
 		}
 
 		&[data-scroll-breakpoint="table-scrollable-mobile"] {
 			@media (max-width: 575.98px) {
-				display: block;
 				@include scrollable-table;
 			}
 		}
@@ -118,25 +116,7 @@
 			}
 		}
 		&.is-style-vk-table-scrollable {
-	
-			&[data-scroll-breakpoint="table-scrollable-pc"] {
-				display: block;
-				@include scrollable-table-editor;
-			}
-	
-			&[data-scroll-breakpoint="table-scrollable-tablet"] {
-				@media (max-width: 991.98px) {
-					display: block;
-					@include scrollable-table-editor;
-				}
-			}
-	
-			&[data-scroll-breakpoint="table-scrollable-mobile"] {
-				@media (max-width: 575.98px) {
-					display: block;
-					@include scrollable-table-editor;
-				}
-			}
+			@include scrollable-table-editor;
 		}
 	}
 }

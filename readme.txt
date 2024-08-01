@@ -106,8 +106,12 @@ e.g.
 
 == Changelog ==
 
+[ Editor Design Bug Fix ][ Slider Item ]Fixed to hide content that exceeds the height when setting the slider height.
+[ Design Bug Fix ] Added dynamic color settings for common css.
 [ Add function ][ Slider Item ] Fix infinite loop in slider item block when used in reusable blocks.
-
+[ Specification Change ] Add a circle style to the image block.
+[ Specification Change ] Update VK Component.
+[ Bug fix ][ Post List (Pro) ] Fixed pagination handling.
 [ Bug fix ] The split loading option is now supported for core/heading, core/image, and core/table styles.
 
 = 1.80.1 =
@@ -175,7 +179,6 @@ e.g.
 [ Add Block ][ Fixed Display block (Pro) ] Add Fixed display block.
 [ Bug fix ][ Tab (Pro) ] Fix the default line style to show the top of the border.
 [ Specification Change ] Delete unnecessary css value  ( We abolished the --vk-size-text and changed it to 1rem. ).
-
 
 = 1.74.0 =
 [ Specification Change ] Fix block categories order

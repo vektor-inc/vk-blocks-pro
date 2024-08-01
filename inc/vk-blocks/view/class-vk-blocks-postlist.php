@@ -194,13 +194,13 @@ class Vk_Blocks_PostList {
 		foreach ( $is_checked_post_type as $post_type ) {
 			$args = array(
 				'post_type'      => $post_type,
-				'paged'          => 1,
-				'posts_per_page' => -1,
+				'paged'          => $paged,
+				'posts_per_page' => intval( $attributes['numberPosts'] ),
 				'order'          => $attributes['order'],
 				'orderby'        => $attributes['orderby'],
 				'post__not_in'   => $post__not_in,
 				'date_query'     => $date_query,
-			    // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
+				// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
 				'tax_query'      => ! empty( $is_checked_terms ) ? self::format_terms( $tax_query_relation, $is_checked_terms, $post_type ) : array(),
 			);
 

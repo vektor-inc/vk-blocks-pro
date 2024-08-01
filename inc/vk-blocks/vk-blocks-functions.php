@@ -141,6 +141,7 @@ function vk_blocks_blocks_assets() {
 	$dynamic_css = '
 		:root {
 			--vk_flow-arrow: url(' . VK_BLOCKS_URL . 'images/arrow_bottom.svg);
+			--vk_image-mask-circle: url(' . VK_BLOCKS_URL . 'images/circle.svg);
 			--vk_image-mask-wave01: url(' . VK_BLOCKS_URL . 'images/wave01.svg);
 			--vk_image-mask-wave02: url(' . VK_BLOCKS_URL . 'images/wave02.svg);
 			--vk_image-mask-wave03: url(' . VK_BLOCKS_URL . 'images/wave03.svg);

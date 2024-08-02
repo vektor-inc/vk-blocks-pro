@@ -16,8 +16,6 @@ export default function GridColumnEdit(props) {
 	const { getBlocksByClientId } = select('core/block-editor');
 	const { updateBlockAttributes } = dispatch('core/block-editor');
 
-	
-
 	useEffect(() => {
 		if (
 			clientId === undefined ||
@@ -44,7 +42,6 @@ export default function GridColumnEdit(props) {
 			}
 		}
 	}, [props]);
-	
 
 	const ALLOWED_BLOCKS = ['vk-blocks/grid-column-item'];
 	const TEMPLATE = [['vk-blocks/grid-column-item']];

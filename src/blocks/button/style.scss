@@ -22,6 +22,7 @@ $xxl-min: 1400px;
 a.vk_button_link {
 	text-decoration: none;
 }
+
 :root,
 :root .editor-styles-wrapper {
 	.has-vk-color-primary-background-color,
@@ -403,8 +404,6 @@ a.vk_button_link {
 			user-select: text;
 			text-decoration: none;
 			font-size: calc( 1rem * 1 );
-
-			
 		}
 		&.btn-lg{
 			font-size:calc( 1rem * 1.25 );

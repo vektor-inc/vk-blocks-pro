@@ -149,7 +149,10 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 					<BlockEdit {...props} />
 					<InspectorControls>
 						<PanelBody
-							title={__('Horizontal Scroll setting', 'vk-blocks-pro')}
+							title={__(
+								'Horizontal Scroll setting',
+								'vk-blocks-pro'
+							)}
 							icon={<Icon icon={IconSVG} style={iconStyle} />}
 							initialOpen={false}
 						>
@@ -167,15 +170,15 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 									value={localScrollBreakpoint}
 									options={[
 										{
-											label: 'Mobile and up',
+											label: 'Mobile size',
 											value: 'table-scrollable-mobile',
 										},
 										{
-											label: 'Tablet and up',
+											label: 'Tablet size',
 											value: 'table-scrollable-tablet',
 										},
 										{
-											label: 'PC and up',
+											label: 'PC size',
 											value: 'table-scrollable-pc',
 										},
 									]}

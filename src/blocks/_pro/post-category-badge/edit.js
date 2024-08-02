@@ -11,7 +11,6 @@ import {
 	PanelBody,
 	ToggleControl,
 	SelectControl,
-	// Spinner, // 使用されていないため削除
 } from '@wordpress/components';
 
 export default function CategoryBadgeEdit(props) {
@@ -35,8 +34,21 @@ export default function CategoryBadgeEdit(props) {
 			[postType]
 		) || [];
 
-	// タクソノミーが未設定の場合、自動でデフォルトを設定
-	const autoTaxonomy = taxonomy || (taxonomies.length > 0 ? 'category' : '');
+	// 自動判定用の関数
+	function getAutoTaxonomy(taxonomies, postType) {
+		// 投稿タイプに関連するカスタムタクソノミーを優先して選択
+		const customTaxonomy = taxonomies.find((tax) => tax.types.includes(postType));
+		if (customTaxonomy) {
+			return customTaxonomy.slug;
+		}
+
+		// カスタムタクソノミーがない場合はカテゴリーを選択
+		const defaultTaxonomy = taxonomies.find((tax) => tax.slug === 'category');
+		return defaultTaxonomy ? defaultTaxonomy.slug : '';
+	}
+
+	// タクソノミーが「Auto」に設定されている場合の処理
+	const autoTaxonomy = taxonomy === '' ? getAutoTaxonomy(taxonomies, postType) : taxonomy;
 
 	// termColorを取得（VKTermColor::get_post_single_term_info() の返り値）
 	const { value: termColorInfo, isResolving: isLoading } = useSelect(
@@ -70,10 +82,6 @@ export default function CategoryBadgeEdit(props) {
 			},
 			[autoTaxonomy, postId]
 		) || [];
-
-	// const selectedTaxonomyName = autoTaxonomy
-	// 	? taxonomies.find((tax) => tax.slug === autoTaxonomy)?.name
-	// 	: __('Auto', 'vk-blocks-pro'); // 使用されていないため削除
 
 	const selectedTerm = terms && terms.length > 0 ? terms[0] : null;
 
@@ -116,7 +124,7 @@ export default function CategoryBadgeEdit(props) {
 					{taxonomies.length > 1 && (
 						<SelectControl
 							label={__('Select Taxonomy', 'vk-blocks-pro')}
-							value={autoTaxonomy}
+							value={taxonomy === '' ? '' : taxonomy} // 表面上は「自動」に表示
 							options={[
 								{
 									label: __('Auto', 'vk-blocks-pro'),

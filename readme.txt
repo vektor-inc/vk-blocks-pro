@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+[ Design Bug Fix ][ button ] Fixed the priority of the "Outline" of the VK button is higher than the theme CSS.
 [ Editor Design Bug Fix ][ Slider Item ]Fixed to hide content that exceeds the height when setting the slider height.
 [ Design Bug Fix ] Added dynamic color settings for common css.
 [ Add function ][ Slider Item ] Fix infinite loop in slider item block when used in reusable blocks.

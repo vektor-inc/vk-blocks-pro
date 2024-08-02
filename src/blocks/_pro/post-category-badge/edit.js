@@ -11,40 +11,13 @@ import {
 	PanelBody,
 	ToggleControl,
 	SelectControl,
-	Spinner,
-	Notice,
+	// Spinner, // 使用されていないため削除
 } from '@wordpress/components';
 
 export default function CategoryBadgeEdit(props) {
 	const { attributes, setAttributes, context } = props;
 	const { hasLink, taxonomy, textAlign } = attributes;
 	const { postId, postType } = context;
-
-	// termColorを取得（VKTermColor::get_post_single_term_info() の返り値）
-	const { termColorInfo, isLoading, hasError } = useSelect(
-		(select) => {
-			try {
-				// ターム情報を取得し、エラーハンドリングを追加
-				const termInfo = select('vk-blocks/term-color').getTermColorInfo(
-					postId,
-					taxonomy
-				);
-				return {
-					termColorInfo: termInfo,
-					isLoading: !termInfo,
-					hasError: termInfo === undefined,
-				};
-			} catch {
-				// エラーが発生した場合の処理
-				return {
-					termColorInfo: null,
-					isLoading: false,
-					hasError: true,
-				};
-			}
-		},
-		[taxonomy, postId]
-	);
 
 	// タクソノミー一覧を取得
 	const taxonomies =
@@ -62,41 +35,64 @@ export default function CategoryBadgeEdit(props) {
 			[postType]
 		) || [];
 
-	// ブロックのプロパティを設定
+	// タクソノミーが未設定の場合、自動でデフォルトを設定
+	const autoTaxonomy = taxonomy || (taxonomies.length > 0 ? 'category' : '');
+
+	// termColorを取得（VKTermColor::get_post_single_term_info() の返り値）
+	const { value: termColorInfo, isResolving: isLoading } = useSelect(
+		(select) => {
+			if (!autoTaxonomy) {
+				return { value: {}, isResolving: false };
+			}
+			return select('vk-blocks/term-color').getTermColorInfo(
+				postId,
+				autoTaxonomy
+			);
+		},
+		[autoTaxonomy, postId]
+	);
+
+	// 投稿に関連付けられたタームを取得
+	const terms =
+		useSelect(
+			(select) => {
+				if (!autoTaxonomy) {
+					return [];
+				}
+				return select('core').getEntityRecords(
+					'taxonomy',
+					autoTaxonomy,
+					{
+						per_page: -1,
+						post: postId,
+					}
+				);
+			},
+			[autoTaxonomy, postId]
+		) || [];
+
+	// const selectedTaxonomyName = autoTaxonomy
+	// 	? taxonomies.find((tax) => tax.slug === autoTaxonomy)?.name
+	// 	: __('Auto', 'vk-blocks-pro'); // 使用されていないため削除
+
+	const selectedTerm = terms && terms.length > 0 ? terms[0] : null;
+
 	const blockProps = useBlockProps({
 		className: classnames('vk_categoryBadge', {
 			[`has-text-align-${textAlign}`]: !!textAlign,
 		}),
 		style: {
-			// termColorInfoが取得された場合にスタイルを適用
-			backgroundColor: termColorInfo?.color ?? '#999999',
+			backgroundColor: !isLoading && (termColorInfo?.color ?? '#999999'),
 			color: termColorInfo?.text_color ?? '#FFFFFF',
-			opacity: termColorInfo?.term_name ? 1 : 0.3,
+			opacity: !isLoading && !termColorInfo?.term_name ? 0.3 : 1,
 		},
 	});
 
-	const getLabelBySlug = (slug, taxonomies) =>
-		taxonomies.find((tax) => tax.slug === slug)?.name || 'Auto';
+	// ターム名が未確定の場合は何も表示しない
+	const termName = isLoading || !selectedTerm ? null : selectedTerm.name;
 
-	const selectedTaxonomyName = getLabelBySlug(taxonomy, taxonomies);
-
-	let termName;
-	if (isLoading) {
-		// データが読み込まれている間にスピナーを表示
-		termName = <Spinner />;
-	} else if (hasError) {
-		// エラーが発生した場合にエラーメッセージを表示
-		termName = (
-			<Notice status="error">
-				{__('Error: Unable to fetch term data', 'vk-blocks-pro')}
-			</Notice>
-		);
-	} else {
-		// データが正常に取得された場合にターム名を表示
-		termName = termColorInfo?.term_name || `(${selectedTaxonomyName})`;
-	}
-
-	const url = termColorInfo?.term_url || '';
+	// url が未定義の場合は空文字を代入
+	const termUrl = termColorInfo?.term_url || '';
 
 	return (
 		<>
@@ -120,7 +116,7 @@ export default function CategoryBadgeEdit(props) {
 					{taxonomies.length > 1 && (
 						<SelectControl
 							label={__('Select Taxonomy', 'vk-blocks-pro')}
-							value={taxonomy}
+							value={autoTaxonomy}
 							options={[
 								{
 									label: __('Auto', 'vk-blocks-pro'),
@@ -138,17 +134,18 @@ export default function CategoryBadgeEdit(props) {
 					)}
 				</PanelBody>
 			</InspectorControls>
-			{hasLink && url ? (
-				<a
-					{...blockProps}
-					href={url}
-					onClick={(event) => event.preventDefault()}
-				>
-					{termName}
-				</a>
-			) : (
-				<div {...blockProps}>{termName}</div>
-			)}
+			{termName &&
+				(hasLink && termUrl ? (
+					<a
+						{...blockProps}
+						href={termUrl}
+						onClick={(event) => event.preventDefault()}
+					>
+						{termName}
+					</a>
+				) : (
+					<div {...blockProps}>{termName}</div>
+				))}
 		</>
 	);
 }

@@ -12,6 +12,7 @@ import {
 	ToggleControl,
 	SelectControl,
 	Spinner,
+	Notice,
 } from '@wordpress/components';
 
 export default function CategoryBadgeEdit(props) {
@@ -20,14 +21,29 @@ export default function CategoryBadgeEdit(props) {
 	const { postId, postType } = context;
 
 	// termColorを取得（VKTermColor::get_post_single_term_info() の返り値）
-	const { value: termColorInfo, isLoading } = useSelect(
+	const { termColorInfo, isLoading, hasError } = useSelect(
 		(select) => {
-			return select('vk-blocks/term-color').getTermColorInfo(
-				postId,
-				taxonomy
-			);
+			try {
+				// ターム情報を取得し、エラーハンドリングを追加
+				const termInfo = select('vk-blocks/term-color').getTermColorInfo(
+					postId,
+					taxonomy
+				);
+				return {
+					termColorInfo: termInfo,
+					isLoading: !termInfo,
+					hasError: termInfo === undefined,
+				};
+			} catch {
+				// エラーが発生した場合の処理
+				return {
+					termColorInfo: null,
+					isLoading: false,
+					hasError: true,
+				};
+			}
 		},
-		[taxonomy]
+		[taxonomy, postId]
 	);
 
 	// タクソノミー一覧を取得
@@ -35,8 +51,6 @@ export default function CategoryBadgeEdit(props) {
 		useSelect(
 			(select) => {
 				const allTaxonomies = select('core').getTaxonomies();
-
-				// post_tagとタグタイプのタクソノミーを除外して返す
 				return allTaxonomies
 					? allTaxonomies.filter(
 							(_taxonomy) =>
@@ -48,15 +62,16 @@ export default function CategoryBadgeEdit(props) {
 			[postType]
 		) || [];
 
-	// 対象のタームが見つからなかったらタクソノミ名を表示
+	// ブロックのプロパティを設定
 	const blockProps = useBlockProps({
 		className: classnames('vk_categoryBadge', {
 			[`has-text-align-${textAlign}`]: !!textAlign,
 		}),
 		style: {
-			backgroundColor: !isLoading && (termColorInfo?.color ?? '#999999'),
+			// termColorInfoが取得された場合にスタイルを適用
+			backgroundColor: termColorInfo?.color ?? '#999999',
 			color: termColorInfo?.text_color ?? '#FFFFFF',
-			opacity: !isLoading && !termColorInfo?.term_name ? 0.3 : 1,
+			opacity: termColorInfo?.term_name ? 1 : 0.3,
 		},
 	});
 
@@ -65,12 +80,23 @@ export default function CategoryBadgeEdit(props) {
 
 	const selectedTaxonomyName = getLabelBySlug(taxonomy, taxonomies);
 
+	let termName;
+	if (isLoading) {
+		// データが読み込まれている間にスピナーを表示
+		termName = <Spinner />;
+	} else if (hasError) {
+		// エラーが発生した場合にエラーメッセージを表示
+		termName = (
+			<Notice status="error">
+				{__('Error: Unable to fetch term data', 'vk-blocks-pro')}
+			</Notice>
+		);
+	} else {
+		// データが正常に取得された場合にターム名を表示
+		termName = termColorInfo?.term_name || `(${selectedTaxonomyName})`;
+	}
+
 	const url = termColorInfo?.term_url || '';
-	const termName = isLoading ? (
-		<Spinner />
-	) : (
-		termColorInfo?.term_name || `(${selectedTaxonomyName})`
-	);
 
 	return (
 		<>
@@ -115,7 +141,7 @@ export default function CategoryBadgeEdit(props) {
 			{hasLink && url ? (
 				<a
 					{...blockProps}
-					href={termColorInfo.term_url}
+					href={url}
 					onClick={(event) => event.preventDefault()}
 				>
 					{termName}

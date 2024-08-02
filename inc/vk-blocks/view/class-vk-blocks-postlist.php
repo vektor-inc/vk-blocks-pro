@@ -204,9 +204,7 @@ class Vk_Blocks_PostList {
 		);
 
 		// クエリ実行
-		$wp_query_combined = new WP_Query( $args );
-
-		return $wp_query_combined;
+		return new WP_Query( $args );
 	}
 
 	/**

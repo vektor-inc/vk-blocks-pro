@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Category Badge (Pro) ] Fixed error handling and compatibility.
 [ Editor Design Bug Fix ][ Slider Item ]Fixed to hide content that exceeds the height when setting the slider height.
 [ Design Bug Fix ] Added dynamic color settings for common css.
 [ Add function ][ Slider Item ] Fix infinite loop in slider item block when used in reusable blocks.

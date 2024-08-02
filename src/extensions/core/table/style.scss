@@ -9,13 +9,14 @@
 
 	table {
 		table-layout: auto;
+
+		th, td {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
 	}
 
-	th, td {
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
 }
 
 @mixin scrollable-table-editor {
@@ -24,13 +25,13 @@
 
 	table {
 		table-layout: auto;
-	}
 
-	th, td {
-		> div[role="textbox"] {
-			white-space: nowrap !important;
-			overflow: hidden;
-			text-overflow: ellipsis;
+		th, td {
+			> div[role="textbox"] {
+				white-space: nowrap !important;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
 		}
 	}
 }
@@ -88,8 +89,10 @@
 
 	&.is-style-vk-table-scrollable {
 
-		&[data-scroll-breakpoint="table-scrollable-pc"] {
-			@include scrollable-table;
+		&[data-scroll-breakpoint="table-scrollable-mobile"] {
+			@media (max-width: 575.98px) {
+				@include scrollable-table;
+			}
 		}
 
 		&[data-scroll-breakpoint="table-scrollable-tablet"] {
@@ -98,10 +101,8 @@
 			}
 		}
 
-		&[data-scroll-breakpoint="table-scrollable-mobile"] {
-			@media (max-width: 575.98px) {
-				@include scrollable-table;
-			}
+		&[data-scroll-breakpoint="table-scrollable-pc"] {
+			@include scrollable-table;
 		}
 	}
 }

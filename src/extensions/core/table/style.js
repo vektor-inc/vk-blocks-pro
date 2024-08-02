@@ -11,7 +11,7 @@ import {
 	Icon,
 } from '@wordpress/components';
 import { createHigherOrderComponent } from '@wordpress/compose';
-import { InspectorControls, RichText } from '@wordpress/block-editor';
+import { InspectorControls } from '@wordpress/block-editor';
 import { useEffect, useState } from '@wordpress/element';
 
 /**
@@ -58,6 +58,38 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 				setLocalScrollBreakpoint(scrollBreakpoint);
 			}
 		}, [scrollable, scrollBreakpoint]);
+
+		useEffect(() => {
+			const tableElements = document.querySelectorAll(
+				'.is-style-vk-table-scrollable'
+			);
+			tableElements.forEach((tableElement) => {
+				if (localScrollable) {
+					tableElement.setAttribute(
+						'data-scroll-breakpoint',
+						localScrollBreakpoint
+					);
+				}
+			});
+		}, [localScrollBreakpoint, localScrollable]);
+
+		useEffect(() => {
+			const selectElement = document.querySelector(
+				'.components-select-control__input'
+			);
+			const options = selectElement?.options;
+			if (options) {
+				for (let i = 0; i < options.length; i++) {
+					if (options[i].value === localScrollBreakpoint) {
+						options[i].classList.add('table-scrollable-selected');
+					} else {
+						options[i].classList.remove(
+							'table-scrollable-selected'
+						);
+					}
+				}
+			}
+		}, [localScrollBreakpoint]);
 
 		if (isValidBlockType(props.name) && props.isSelected) {
 			// アイコンのスタイル
@@ -117,7 +149,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 					<BlockEdit {...props} />
 					<InspectorControls>
 						<PanelBody
-							title={__('Horizontal Scrolling Setting', 'vk-blocks-pro')}
+							title={__('Table Option', 'vk-blocks-pro')}
 							icon={<Icon icon={IconSVG} style={iconStyle} />}
 							initialOpen={false}
 						>
@@ -135,30 +167,19 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 									value={localScrollBreakpoint}
 									options={[
 										{
-											label: 'PC and up',
-											value: 'table-scrollable-pc',
+											label: 'Mobile and up',
+											value: 'table-scrollable-mobile',
 										},
 										{
 											label: 'Tablet and up',
 											value: 'table-scrollable-tablet',
 										},
 										{
-											label: 'Mobile and up',
-											value: 'table-scrollable-mobile',
+											label: 'PC and up',
+											value: 'table-scrollable-pc',
 										},
 									]}
 									onChange={handleSelectChange}
-								/>
-							)}
-							{localScrollable && (
-								<RichText
-									tagName="p"
-									value={__(
-										'Note: To check the screen width where horizontal scrolling will occur, please preview the page.',
-										'vk-blocks-pro'
-									)}
-									allowedFormats={[]}
-									disabled
 								/>
 							)}
 						</PanelBody>

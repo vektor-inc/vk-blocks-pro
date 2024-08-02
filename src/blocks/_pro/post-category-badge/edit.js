@@ -11,7 +11,7 @@ import {
 	PanelBody,
 	ToggleControl,
 	SelectControl,
-	Spinner,
+	// Spinner, // 使用されていないため削除
 } from '@wordpress/components';
 
 export default function CategoryBadgeEdit(props) {
@@ -20,19 +20,20 @@ export default function CategoryBadgeEdit(props) {
 	const { postId, postType } = context;
 
 	// タクソノミー一覧を取得
-	const taxonomies = useSelect(
-		(select) => {
-			const allTaxonomies = select('core').getTaxonomies();
-			return allTaxonomies
-				? allTaxonomies.filter(
-						(_taxonomy) =>
-							_taxonomy.slug !== 'post_tag' &&
-							_taxonomy.hierarchical
-				  )
-				: [];
-		},
-		[postType]
-	) || [];
+	const taxonomies =
+		useSelect(
+			(select) => {
+				const allTaxonomies = select('core').getTaxonomies();
+				return allTaxonomies
+					? allTaxonomies.filter(
+							(_taxonomy) =>
+								_taxonomy.slug !== 'post_tag' &&
+								_taxonomy.hierarchical
+						)
+					: [];
+			},
+			[postType]
+		) || [];
 
 	// タクソノミーが未設定の場合、自動でデフォルトを設定
 	const autoTaxonomy = taxonomy || (taxonomies.length > 0 ? 'category' : '');
@@ -40,7 +41,9 @@ export default function CategoryBadgeEdit(props) {
 	// termColorを取得（VKTermColor::get_post_single_term_info() の返り値）
 	const { value: termColorInfo, isResolving: isLoading } = useSelect(
 		(select) => {
-			if (!autoTaxonomy) return { value: {}, isResolving: false };
+			if (!autoTaxonomy) {
+				return { value: {}, isResolving: false };
+			}
 			return select('vk-blocks/term-color').getTermColorInfo(
 				postId,
 				autoTaxonomy
@@ -50,20 +53,27 @@ export default function CategoryBadgeEdit(props) {
 	);
 
 	// 投稿に関連付けられたタームを取得
-	const terms = useSelect(
-		(select) => {
-			if (!autoTaxonomy) return [];
-			return select('core').getEntityRecords('taxonomy', autoTaxonomy, {
-				per_page: -1,
-				post: postId,
-			});
-		},
-		[autoTaxonomy, postId]
-	) || [];
+	const terms =
+		useSelect(
+			(select) => {
+				if (!autoTaxonomy) {
+					return [];
+				}
+				return select('core').getEntityRecords(
+					'taxonomy',
+					autoTaxonomy,
+					{
+						per_page: -1,
+						post: postId,
+					}
+				);
+			},
+			[autoTaxonomy, postId]
+		) || [];
 
-	const selectedTaxonomyName = autoTaxonomy
-		? taxonomies.find((tax) => tax.slug === autoTaxonomy)?.name
-		: __('Auto', 'vk-blocks-pro');
+	// const selectedTaxonomyName = autoTaxonomy
+	// 	? taxonomies.find((tax) => tax.slug === autoTaxonomy)?.name
+	// 	: __('Auto', 'vk-blocks-pro'); // 使用されていないため削除
 
 	const selectedTerm = terms && terms.length > 0 ? terms[0] : null;
 
@@ -124,8 +134,8 @@ export default function CategoryBadgeEdit(props) {
 					)}
 				</PanelBody>
 			</InspectorControls>
-			{termName && (
-				hasLink && termUrl ? (
+			{termName &&
+				(hasLink && termUrl ? (
 					<a
 						{...blockProps}
 						href={termUrl}
@@ -135,8 +145,7 @@ export default function CategoryBadgeEdit(props) {
 					</a>
 				) : (
 					<div {...blockProps}>{termName}</div>
-				)
-			)}
+				))}
 		</>
 	);
 }

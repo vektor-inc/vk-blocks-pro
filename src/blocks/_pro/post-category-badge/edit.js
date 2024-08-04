@@ -20,16 +20,19 @@ export default function CategoryBadgeEdit(props) {
 	const { postId, postType } = context;
 
 	// termColorを取得（VKTermColor::get_post_single_term_info() の返り値）
-	const { value: termColorInfo, isResolving: isLoading } = useSelect(
-		(select) => {
-			if (!autoTaxonomy) return { value: {}, isResolving: false };
-			return select('vk-blocks/term-color').getTermColorInfo(
-				postId,
-				autoTaxonomy
-			);
-		},
-		[autoTaxonomy, postId]
-	) || {};
+	const { value: termColorInfo, isResolving: isLoading } =
+		useSelect(
+			(select) => {
+				if (!autoTaxonomy) {
+					return { value: {}, isResolving: false };
+				}
+				return select('vk-blocks/term-color').getTermColorInfo(
+					postId,
+					autoTaxonomy
+				);
+			},
+			[autoTaxonomy, postId]
+		) || {};
 
 	// タクソノミー名取得
 	function getTaxonomyName(slug, taxonomies) {
@@ -54,40 +57,43 @@ export default function CategoryBadgeEdit(props) {
 	}
 
 	// タクソノミー一覧を取得
-	const taxonomies = useSelect(
-		(select) => {
-			const allTaxonomies = select('core').getTaxonomies();
-			return allTaxonomies
-				? allTaxonomies.filter(
-						(_taxonomy) =>
-							_taxonomy.slug !== 'post_tag' &&
-							_taxonomy.hierarchical
-					)
-				: [];
-		},
-		[postType]
-	) || [];
+	const taxonomies =
+		useSelect(
+			(select) => {
+				const allTaxonomies = select('core').getTaxonomies();
+				return allTaxonomies
+					? allTaxonomies.filter(
+							(_taxonomy) =>
+								_taxonomy.slug !== 'post_tag' &&
+								_taxonomy.hierarchical
+						)
+					: [];
+			},
+			[postType]
+		) || [];
 
 	// タクソノミーが「Auto」に設定されている場合の処理
-	const autoTaxonomy = taxonomy === '' ? getAutoTaxonomy(taxonomies, postType) : taxonomy;
+	const autoTaxonomy =
+		taxonomy === '' ? getAutoTaxonomy(taxonomies, postType) : taxonomy;
 
 	// 投稿に関連付けられたタームを取得
-	const terms = useSelect(
-		(select) => {
-			if (!autoTaxonomy) {
-				return [];
-			}
-			return select('core').getEntityRecords(
-				'taxonomy',
-				autoTaxonomy,
-				{
-					per_page: -1, // すべてのタームを取得
-					post: postId,
+	const terms =
+		useSelect(
+			(select) => {
+				if (!autoTaxonomy) {
+					return [];
 				}
-			);
-		},
-		[autoTaxonomy, postId]
-	) || [];
+				return select('core').getEntityRecords(
+					'taxonomy',
+					autoTaxonomy,
+					{
+						per_page: -1, // すべてのタームを取得
+						post: postId,
+					}
+				);
+			},
+			[autoTaxonomy, postId]
+		) || [];
 
 	const selectedTerm = terms.length > 0 ? terms[0] : null;
 
@@ -106,13 +112,15 @@ export default function CategoryBadgeEdit(props) {
 	const termUrl = termColorInfo?.term_url || '';
 
 	// 対象のタームが見つからなかったらタクソノミ名を表示
-	const termName = isLoading ? (
-		<Spinner />
-	) : selectedTerm ? (
-		selectedTerm.name
-	) : (
-		getTaxonomyName(autoTaxonomy, taxonomies)
-	);
+	let termName;
+
+	if (isLoading) {
+		termName = <Spinner />;
+	} else if (selectedTerm) {
+		termName = selectedTerm.name;
+	} else {
+		termName = getTaxonomyName(autoTaxonomy, taxonomies);
+	}
 
 	return (
 		<>

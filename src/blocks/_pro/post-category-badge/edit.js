@@ -11,6 +11,7 @@ import {
 	PanelBody,
 	ToggleControl,
 	SelectControl,
+	Spinner,
 } from '@wordpress/components';
 
 export default function CategoryBadgeEdit(props) {
@@ -18,73 +19,79 @@ export default function CategoryBadgeEdit(props) {
 	const { hasLink, taxonomy, textAlign } = attributes;
 	const { postId, postType } = context;
 
-	// タクソノミー一覧を取得
-	const taxonomies =
-		useSelect(
-			(select) => {
-				const allTaxonomies = select('core').getTaxonomies();
-				return allTaxonomies
-					? allTaxonomies.filter(
-							(_taxonomy) =>
-								_taxonomy.slug !== 'post_tag' &&
-								_taxonomy.hierarchical
-						)
-					: [];
-			},
-			[postType]
-		) || [];
-
-	// 自動判定用の関数
-	function getAutoTaxonomy(taxonomies, postType) {
-		// 投稿タイプに関連するカスタムタクソノミーを優先して選択
-		const customTaxonomy = taxonomies.find((tax) => tax.types.includes(postType));
-		if (customTaxonomy) {
-			return customTaxonomy.slug;
-		}
-
-		// カスタムタクソノミーがない場合はカテゴリーを選択
-		const defaultTaxonomy = taxonomies.find((tax) => tax.slug === 'category');
-		return defaultTaxonomy ? defaultTaxonomy.slug : '';
-	}
-
-	// タクソノミーが「Auto」に設定されている場合の処理
-	const autoTaxonomy = taxonomy === '' ? getAutoTaxonomy(taxonomies, postType) : taxonomy;
-
 	// termColorを取得（VKTermColor::get_post_single_term_info() の返り値）
 	const { value: termColorInfo, isResolving: isLoading } = useSelect(
 		(select) => {
-			if (!autoTaxonomy) {
-				return { value: {}, isResolving: false };
-			}
+			if (!autoTaxonomy) return { value: {}, isResolving: false };
 			return select('vk-blocks/term-color').getTermColorInfo(
 				postId,
 				autoTaxonomy
 			);
 		},
 		[autoTaxonomy, postId]
-	);
+	) || {};
+
+	// タクソノミー名取得
+	function getTaxonomyName(slug, taxonomies) {
+		return taxonomies.find((tax) => tax.slug === slug)?.name || '';
+	}
+
+	// 自動タクソノミー選択
+	function getAutoTaxonomy(taxonomies, postType) {
+		// 投稿タイプに関連するカスタムタクソノミーを優先して選択
+		const customTaxonomy = taxonomies.find((tax) =>
+			tax.types.includes(postType)
+		);
+		if (customTaxonomy) {
+			return customTaxonomy.slug;
+		}
+
+		// カスタムタクソノミーがない場合はカテゴリーを選択
+		const defaultTaxonomy = taxonomies.find(
+			(tax) => tax.slug === 'category'
+		);
+		return defaultTaxonomy ? defaultTaxonomy.slug : '';
+	}
+
+	// タクソノミー一覧を取得
+	const taxonomies = useSelect(
+		(select) => {
+			const allTaxonomies = select('core').getTaxonomies();
+			return allTaxonomies
+				? allTaxonomies.filter(
+						(_taxonomy) =>
+							_taxonomy.slug !== 'post_tag' &&
+							_taxonomy.hierarchical
+					)
+				: [];
+		},
+		[postType]
+	) || [];
+
+	// タクソノミーが「Auto」に設定されている場合の処理
+	const autoTaxonomy = taxonomy === '' ? getAutoTaxonomy(taxonomies, postType) : taxonomy;
 
 	// 投稿に関連付けられたタームを取得
-	const terms =
-		useSelect(
-			(select) => {
-				if (!autoTaxonomy) {
-					return [];
+	const terms = useSelect(
+		(select) => {
+			if (!autoTaxonomy) {
+				return [];
+			}
+			return select('core').getEntityRecords(
+				'taxonomy',
+				autoTaxonomy,
+				{
+					per_page: -1, // すべてのタームを取得
+					post: postId,
 				}
-				return select('core').getEntityRecords(
-					'taxonomy',
-					autoTaxonomy,
-					{
-						per_page: -1,
-						post: postId,
-					}
-				);
-			},
-			[autoTaxonomy, postId]
-		) || [];
+			);
+		},
+		[autoTaxonomy, postId]
+	) || [];
 
-	const selectedTerm = terms && terms.length > 0 ? terms[0] : null;
+	const selectedTerm = terms.length > 0 ? terms[0] : null;
 
+	// ブロック要素の属性やスタイルを設定
 	const blockProps = useBlockProps({
 		className: classnames('vk_categoryBadge', {
 			[`has-text-align-${textAlign}`]: !!textAlign,
@@ -96,11 +103,16 @@ export default function CategoryBadgeEdit(props) {
 		},
 	});
 
-	// ターム名が未確定の場合は何も表示しない
-	const termName = isLoading || !selectedTerm ? null : selectedTerm.name;
-
-	// url が未定義の場合は空文字を代入
 	const termUrl = termColorInfo?.term_url || '';
+
+	// 対象のタームが見つからなかったらタクソノミ名を表示
+	const termName = isLoading ? (
+		<Spinner />
+	) : selectedTerm ? (
+		selectedTerm.name
+	) : (
+		getTaxonomyName(autoTaxonomy, taxonomies)
+	);
 
 	return (
 		<>
@@ -124,7 +136,7 @@ export default function CategoryBadgeEdit(props) {
 					{taxonomies.length > 1 && (
 						<SelectControl
 							label={__('Select Taxonomy', 'vk-blocks-pro')}
-							value={taxonomy === '' ? '' : taxonomy} // 表面上は「自動」に表示
+							value={taxonomy === '' ? '' : taxonomy}
 							options={[
 								{
 									label: __('Auto', 'vk-blocks-pro'),

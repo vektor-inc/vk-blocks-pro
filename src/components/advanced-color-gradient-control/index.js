@@ -4,7 +4,7 @@ import {
 	getGradientSlugByValue,
 	getColorObjectByColorValue,
 	useSettings,
-	useSetting,
+	useSetting, // 6.4 互換
 } from '@wordpress/block-editor';
 import { colorSlugToColorCode } from '@vkblocks/utils/color-slug-to-color-code';
 import { gradientSlugToGradientCode } from '@vkblocks/utils/gradient-slug-to-gradient-code';
@@ -29,7 +29,7 @@ export const AdvancedColorGradientControl = (props) => {
 	if (typeof useSettings === 'function') {
 		defaultGradients = [...useSettings('color.gradients.default')[0]];
 		themeGradients = [...(useSettings('color.gradients.theme')?.[0] || [])];
-	} else if (typeof useSetting === 'function') {
+	} else if (typeof useSetting === 'function') { // 6.4 互換
 		defaultGradients = [...useSetting('color.gradients.default')[0]];
 		themeGradients = [...(useSetting('color.gradients.theme')?.[0] || [])];
 	}

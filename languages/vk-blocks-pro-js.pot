@@ -589,7 +589,7 @@ msgstr ""
 
 #: src/admin/margin.js:81
 #: src/blocks/_pro/grid-column-item/edit.js:173
-#: src/blocks/_pro/grid-column/edit.js:86
+#: src/blocks/_pro/grid-column/edit.js:83
 msgid "Unit"
 msgstr ""
 
@@ -1387,7 +1387,7 @@ msgid "Padding (Bottom)"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:186
-#: src/blocks/_pro/grid-column/edit.js:99
+#: src/blocks/_pro/grid-column/edit.js:96
 #: src/blocks/_pro/outer/edit.js:1076
 #: src/blocks/icon-outer/edit.js:183
 #: src/blocks/icon/edit.js:172
@@ -1396,7 +1396,7 @@ msgid "px"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:187
-#: src/blocks/_pro/grid-column/edit.js:103
+#: src/blocks/_pro/grid-column/edit.js:100
 #: src/blocks/_pro/outer/edit.js:1080
 #: src/blocks/icon-outer/edit.js:187
 #: src/blocks/icon/edit.js:176
@@ -1405,7 +1405,7 @@ msgid "em"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:188
-#: src/blocks/_pro/grid-column/edit.js:107
+#: src/blocks/_pro/grid-column/edit.js:104
 #: src/blocks/_pro/outer/edit.js:1084
 #: src/blocks/icon-outer/edit.js:191
 #: src/blocks/icon/edit.js:180
@@ -1414,7 +1414,7 @@ msgid "rem"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:189
-#: src/blocks/_pro/grid-column/edit.js:111
+#: src/blocks/_pro/grid-column/edit.js:108
 #: src/blocks/_pro/outer/edit.js:1012
 #: src/blocks/icon-outer/edit.js:195
 #: src/blocks/icon/edit.js:184
@@ -1426,15 +1426,15 @@ msgstr ""
 msgid "Grid column item link"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:61
+#: src/blocks/_pro/grid-column/edit.js:58
 msgid "Layout Columns"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:67
+#: src/blocks/_pro/grid-column/edit.js:64
 msgid "Column Margin Bottom Setting"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:71
+#: src/blocks/_pro/grid-column/edit.js:68
 msgid "Margin Bottom"
 msgstr ""
 

@@ -58,7 +58,8 @@ const DimensionControls = ({
 
 	if (typeof useSettings === 'function') {
 		spacingUnits = [...useSettings('spacing.units')[0]];
-	} else if (typeof useSetting === 'function') { // 6.4 互換
+	} else if (typeof useSetting === 'function') {
+		// 6.4 互換
 		spacingUnits = [...useSetting('spacing.units')[0]];
 	}
 

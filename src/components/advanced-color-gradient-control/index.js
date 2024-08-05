@@ -29,7 +29,8 @@ export const AdvancedColorGradientControl = (props) => {
 	if (typeof useSettings === 'function') {
 		defaultGradients = [...useSettings('color.gradients.default')[0]];
 		themeGradients = [...(useSettings('color.gradients.theme')?.[0] || [])];
-	} else if (typeof useSetting === 'function') { // 6.4 互換
+	} else if (typeof useSetting === 'function') {
+		// 6.4 互換
 		defaultGradients = [...useSetting('color.gradients.default')[0]];
 		themeGradients = [...(useSetting('color.gradients.theme')?.[0] || [])];
 	}

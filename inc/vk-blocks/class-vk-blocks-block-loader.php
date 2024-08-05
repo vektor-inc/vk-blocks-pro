@@ -144,7 +144,7 @@ class VK_Blocks_Block_Loader {
 			wp_register_script(
 				'react-jsx-runtime',
 				$this->assets_build_url . 'react-jsx-runtime.js',
-				[ 'react' ],
+				array( 'react' ),
 				'18.3.1',
 				true
 			);

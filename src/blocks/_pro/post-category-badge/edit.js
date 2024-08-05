@@ -13,35 +13,36 @@ import {
 	SelectControl,
 	Spinner,
 } from '@wordpress/components';
+import { useEffect, useState } from 'react';
 
 export default function CategoryBadgeEdit(props) {
 	const { attributes, setAttributes, context } = props;
 	const { hasLink, taxonomy, textAlign } = attributes;
 	const { postId, postType } = context;
 
-	// termColorを取得（VKTermColor::get_post_single_term_info() の返り値）
-	const { value: termColorInfo, isResolving: isLoading } =
-		useSelect(
-			(select) => {
-				if (!autoTaxonomy) {
-					return { value: {}, isResolving: false };
-				}
-				return select('vk-blocks/term-color').getTermColorInfo(
-					postId,
-					autoTaxonomy
-				);
-			},
-			[autoTaxonomy, postId]
-		) || {};
+	const [bgColor, setBgColor] = useState('#999999');
+	const [textColor, setTextColor] = useState('#FFFFFF');
+	const [opacity, setOpacity] = useState(0.3);
+	const [termUrl, setTermUrl] = useState('');
+	const [termName, setTermName] = useState('');
 
-	// タクソノミー名取得
-	function getTaxonomyName(slug, taxonomies) {
-		return taxonomies.find((tax) => tax.slug === slug)?.name || '';
-	}
+	// タクソノミー一覧を取得
+	const taxonomies = useSelect(
+		(select) => {
+			const allTaxonomies = select('core').getTaxonomies();
+			return allTaxonomies
+				? allTaxonomies.filter(
+						(_taxonomy) =>
+							_taxonomy.slug !== 'post_tag' &&
+							_taxonomy.hierarchical
+					)
+				: [];
+		},
+		[postType]
+	) || [];
 
 	// 自動タクソノミー選択
 	function getAutoTaxonomy(taxonomies, postType) {
-		// 投稿タイプに関連するカスタムタクソノミーを優先して選択
 		const customTaxonomy = taxonomies.find((tax) =>
 			tax.types.includes(postType)
 		);
@@ -49,53 +50,71 @@ export default function CategoryBadgeEdit(props) {
 			return customTaxonomy.slug;
 		}
 
-		// カスタムタクソノミーがない場合はカテゴリーを選択
 		const defaultTaxonomy = taxonomies.find(
 			(tax) => tax.slug === 'category'
 		);
 		return defaultTaxonomy ? defaultTaxonomy.slug : '';
 	}
 
-	// タクソノミー一覧を取得
-	const taxonomies =
-		useSelect(
-			(select) => {
-				const allTaxonomies = select('core').getTaxonomies();
-				return allTaxonomies
-					? allTaxonomies.filter(
-							(_taxonomy) =>
-								_taxonomy.slug !== 'post_tag' &&
-								_taxonomy.hierarchical
-						)
-					: [];
-			},
-			[postType]
-		) || [];
-
 	// タクソノミーが「Auto」に設定されている場合の処理
 	const autoTaxonomy =
 		taxonomy === '' ? getAutoTaxonomy(taxonomies, postType) : taxonomy;
 
 	// 投稿に関連付けられたタームを取得
-	const terms =
-		useSelect(
-			(select) => {
-				if (!autoTaxonomy) {
-					return [];
+	const terms = useSelect(
+		(select) => {
+			if (!autoTaxonomy) {
+				return [];
+			}
+			return select('core').getEntityRecords(
+				'taxonomy',
+				autoTaxonomy,
+				{
+					per_page: -1,
+					post: postId,
 				}
-				return select('core').getEntityRecords(
-					'taxonomy',
-					autoTaxonomy,
-					{
-						per_page: -1, // すべてのタームを取得
-						post: postId,
-					}
-				);
-			},
-			[autoTaxonomy, postId]
-		) || [];
+			);
+		},
+		[autoTaxonomy, postId]
+	) || [];
 
 	const selectedTerm = terms.length > 0 ? terms[0] : null;
+
+	// タームカラー情報を取得
+	const { value: termColorInfo, isResolving } = useSelect(
+		(select) => {
+			if (!selectedTerm) {
+				return { value: null, isResolving: false };
+			}
+			const response = select('vk-blocks/term-color').getTermColorInfo(
+				postId,
+				autoTaxonomy
+			);
+			return response || { value: null, isResolving: false };
+		},
+		[autoTaxonomy, postId, selectedTerm]
+	);
+
+	useEffect(() => {
+
+		if (termColorInfo && termColorInfo.color) {
+			setBgColor(termColorInfo.color);
+			setTextColor(termColorInfo.text_color || '#FFFFFF');
+			setTermUrl(termColorInfo.term_url || '');
+			setOpacity(1);
+			setTermName(termColorInfo.term_name || '');
+		} else if (selectedTerm) {
+			setTermName(selectedTerm.name);
+			setOpacity(1);
+		} else {
+			setOpacity(0.3);
+		}
+	}, [termColorInfo, selectedTerm]);
+
+	// タクソノミー名を取得
+	function getTaxonomyName(slug, taxonomies) {
+		return taxonomies.find((tax) => tax.slug === slug)?.name || '';
+	}
 
 	// ブロック要素の属性やスタイルを設定
 	const blockProps = useBlockProps({
@@ -103,24 +122,13 @@ export default function CategoryBadgeEdit(props) {
 			[`has-text-align-${textAlign}`]: !!textAlign,
 		}),
 		style: {
-			backgroundColor: !isLoading && (termColorInfo?.color ?? '#999999'),
-			color: termColorInfo?.text_color ?? '#FFFFFF',
-			opacity: !isLoading && !termColorInfo?.term_name ? 0.3 : 1,
+			backgroundColor: bgColor,
+			color: textColor,
+			opacity: opacity,
 		},
 	});
 
-	const termUrl = termColorInfo?.term_url || '';
-
-	// 対象のタームが見つからなかったらタクソノミ名を表示
-	let termName;
-
-	if (isLoading) {
-		termName = <Spinner />;
-	} else if (selectedTerm) {
-		termName = selectedTerm.name;
-	} else {
-		termName = getTaxonomyName(autoTaxonomy, taxonomies);
-	}
+	const displayTermName = isResolving ? <Spinner /> : termName || getTaxonomyName(autoTaxonomy, taxonomies);
 
 	return (
 		<>
@@ -162,17 +170,17 @@ export default function CategoryBadgeEdit(props) {
 					)}
 				</PanelBody>
 			</InspectorControls>
-			{termName &&
+			{displayTermName &&
 				(hasLink && termUrl ? (
 					<a
 						{...blockProps}
 						href={termUrl}
 						onClick={(event) => event.preventDefault()}
 					>
-						{termName}
+						{displayTermName}
 					</a>
 				) : (
-					<div {...blockProps}>{termName}</div>
+					<div {...blockProps}>{displayTermName}</div>
 				))}
 		</>
 	);

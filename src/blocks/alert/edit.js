@@ -15,7 +15,7 @@ export default function AlertEdit(props) {
 	const iconFamily = vkFontAwesome.iconFamily; // eslint-disable-line no-undef
 
 	const blockProps = useBlockProps({
-		className: `vk_alert alert alert-${style}`,
+		className: `vk_alert alert alert-${style} ${icon ? 'has-alert-icon' : ''}`,
 	});
 
 	let alertIcon = '';

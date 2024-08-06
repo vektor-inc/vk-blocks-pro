@@ -5,7 +5,7 @@ export default function save({ attributes }) {
 	const { style, icon, iconText } = attributes;
 
 	const blockProps = useBlockProps.save({
-		className: `vk_alert alert alert-${style}`,
+		className: `vk_alert alert alert-${style} ${icon ? 'has-alert-icon' : ''}`,
 	});
 
 	let alertIcon = '';

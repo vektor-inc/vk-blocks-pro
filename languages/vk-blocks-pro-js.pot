@@ -589,7 +589,7 @@ msgstr ""
 
 #: src/admin/margin.js:81
 #: src/blocks/_pro/grid-column-item/edit.js:173
-#: src/blocks/_pro/grid-column/edit.js:78
+#: src/blocks/_pro/grid-column/edit.js:86
 msgid "Unit"
 msgstr ""
 
@@ -1387,7 +1387,7 @@ msgid "Padding (Bottom)"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:186
-#: src/blocks/_pro/grid-column/edit.js:91
+#: src/blocks/_pro/grid-column/edit.js:99
 #: src/blocks/_pro/outer/edit.js:1076
 #: src/blocks/icon-outer/edit.js:183
 #: src/blocks/icon/edit.js:172
@@ -1396,7 +1396,7 @@ msgid "px"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:187
-#: src/blocks/_pro/grid-column/edit.js:95
+#: src/blocks/_pro/grid-column/edit.js:103
 #: src/blocks/_pro/outer/edit.js:1080
 #: src/blocks/icon-outer/edit.js:187
 #: src/blocks/icon/edit.js:176
@@ -1405,7 +1405,7 @@ msgid "em"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:188
-#: src/blocks/_pro/grid-column/edit.js:99
+#: src/blocks/_pro/grid-column/edit.js:107
 #: src/blocks/_pro/outer/edit.js:1084
 #: src/blocks/icon-outer/edit.js:191
 #: src/blocks/icon/edit.js:180
@@ -1414,7 +1414,7 @@ msgid "rem"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:189
-#: src/blocks/_pro/grid-column/edit.js:103
+#: src/blocks/_pro/grid-column/edit.js:111
 #: src/blocks/_pro/outer/edit.js:1012
 #: src/blocks/icon-outer/edit.js:195
 #: src/blocks/icon/edit.js:184
@@ -1426,15 +1426,15 @@ msgstr ""
 msgid "Grid column item link"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:53
+#: src/blocks/_pro/grid-column/edit.js:61
 msgid "Layout Columns"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:59
+#: src/blocks/_pro/grid-column/edit.js:67
 msgid "Column Margin Bottom Setting"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:63
+#: src/blocks/_pro/grid-column/edit.js:71
 msgid "Margin Bottom"
 msgstr ""
 
@@ -1690,40 +1690,40 @@ msgid "Outer link"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:424
-#: src/blocks/slider-item/edit.js:162
+#: src/blocks/slider-item/edit.js:175
 msgid "Background Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:429
 #: src/blocks/pr-content/edit.js:67
-#: src/blocks/slider-item/edit.js:166
+#: src/blocks/slider-item/edit.js:179
 msgid "Color Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:430
-#: src/blocks/slider-item/edit.js:168
+#: src/blocks/slider-item/edit.js:181
 msgid ""
 "Color will overcome background image. If you want to display image, set "
 "opacity 0."
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:442
-#: src/blocks/slider-item/edit.js:180
+#: src/blocks/slider-item/edit.js:193
 msgid "Opacity Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:456
-#: src/blocks/slider-item/edit.js:215
+#: src/blocks/slider-item/edit.js:228
 msgid "Background Image PC"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:472
-#: src/blocks/slider-item/edit.js:231
+#: src/blocks/slider-item/edit.js:244
 msgid "Background Image Tablet"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:482
-#: src/blocks/slider-item/edit.js:241
+#: src/blocks/slider-item/edit.js:254
 msgid "Background Image Mobile"
 msgstr ""
 
@@ -1749,7 +1749,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:530
 #: src/blocks/pr-content/edit.js:244
-#: src/blocks/slider-item/edit.js:144
+#: src/blocks/slider-item/edit.js:157
 msgid "Layout Setting"
 msgstr ""
 
@@ -2927,19 +2927,19 @@ msgstr ""
 msgid "Slider item link"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:148
+#: src/blocks/slider-item/edit.js:161
 msgid "Vertical align"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:194
+#: src/blocks/slider-item/edit.js:207
 msgid "Background Image Size"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:201
+#: src/blocks/slider-item/edit.js:214
 msgid "cover"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:205
+#: src/blocks/slider-item/edit.js:218
 msgid "repeat"
 msgstr ""
 

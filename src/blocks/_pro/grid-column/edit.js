@@ -8,6 +8,7 @@ import {
 import { select, dispatch } from '@wordpress/data';
 import { PanelBody, RangeControl, SelectControl } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
+import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 
 export default function GridColumnEdit(props) {
 	const { attributes, clientId } = props;
@@ -15,28 +16,32 @@ export default function GridColumnEdit(props) {
 	const { getBlocksByClientId } = select('core/block-editor');
 	const { updateBlockAttributes } = dispatch('core/block-editor');
 
-	const thisBlock = getBlocksByClientId(clientId);
-
 	useEffect(() => {
-		if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
-			const thisInnerBlocks = thisBlock[0].innerBlocks;
+		if (
+			clientId === undefined ||
+			isParentReusableBlock(clientId) === false
+		) {
+			const thisBlock = getBlocksByClientId(clientId);
+			if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
+				const thisInnerBlocks = thisBlock[0].innerBlocks;
 
-			thisInnerBlocks.forEach(function (thisInnerBlock) {
-				updateBlockAttributes(thisInnerBlock.clientId, {
-					name: attributes.name,
-					layout: attributes.layout,
-					col_xs: attributes.col_xs,
-					col_sm: attributes.col_sm,
-					col_md: attributes.col_md,
-					col_lg: attributes.col_lg,
-					col_xl: attributes.col_xl,
-					col_xxl: attributes.col_xxl,
-					marginBottom: attributes.marginBottom,
-					unit: attributes.unit,
+				thisInnerBlocks.forEach(function (thisInnerBlock) {
+					updateBlockAttributes(thisInnerBlock.clientId, {
+						name: attributes.name,
+						layout: attributes.layout,
+						col_xs: attributes.col_xs,
+						col_sm: attributes.col_sm,
+						col_md: attributes.col_md,
+						col_lg: attributes.col_lg,
+						col_xl: attributes.col_xl,
+						col_xxl: attributes.col_xxl,
+						marginBottom: attributes.marginBottom,
+						unit: attributes.unit,
+					});
 				});
-			});
+			}
 		}
-	}, [thisBlock, attributes]);
+	}, [props]);
 
 	const ALLOWED_BLOCKS = ['vk-blocks/grid-column-item'];
 	const TEMPLATE = [['vk-blocks/grid-column-item']];

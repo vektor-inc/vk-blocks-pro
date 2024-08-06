@@ -1,7 +1,3 @@
-/**
- * table-style block type
- *
- */
 import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
 import {
@@ -79,6 +75,13 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 			});
 		};
 
+		// アイコンのスタイル
+		const iconStyle = {
+			width: '24px',
+			height: '24px',
+			...(scrollable && { color: '#fff', background: '#1e1e1e' }),
+		};
+
 		if (isValidBlockType(props.name) && props.isSelected) {
 			return (
 				<>
@@ -86,10 +89,10 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 					<InspectorControls>
 						<PanelBody
 							title={__(
-								'Horizontal Scroll setting',
+								'Table Horizontal Scroll',
 								'vk-blocks-pro'
 							)}
-							icon={<Icon icon={IconSVG} />}
+							icon={<Icon icon={IconSVG} style={iconStyle} />}
 							initialOpen={false}
 						>
 							<ToggleControl

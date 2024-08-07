@@ -32,6 +32,10 @@
 			"type": "string",
 			"default": "normal"
 		},
+		"bgFocalPoint": {
+			"type": "object",
+			"default": { "x": 0.5, "y": 0.5 }
+		},
 		"padding_left_and_right": {
 			"type": "string",
 			"default": "0"

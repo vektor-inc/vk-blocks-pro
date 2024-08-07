@@ -3,7 +3,17 @@
     thead th,tfoot td{
         font-weight: bold;
     }
-    &.is-style-vk-table {
+    &.is-style-vk-table {     
+        &-border-top-bottom,
+        &-border,
+        &-border-stripes{
+            // theme.json のあるファイルでテーブルの線の色指定がない場合のみ適用
+			table:where(:not(.has-border-color)){
+				:where(th,td){
+					border:1px solid var(--vk-color-border-hr);
+				}
+			}
+        }
         &-border-top-bottom {
 			table,
 			th,
@@ -12,24 +22,11 @@
                 border-right: none;
 			}
         }
-        &-border {
-			// theme.json のあるファイルでテーブルの線の色指定がない場合のみ適用
-			table:where(:not(.has-border-color)){
-				th,td{
-					border:1px solid var(--vk-color-border-hr);
-				}
-			}
-        }
+
         &-border-stripes{
             tbody tr:nth-child(2n+1) {
                 background-color: #f0f0f0;
             }
-			// theme.json のあるファイルでテーブルの線の色指定がない場合のみ適用
-			table:where(:not(.has-border-color)){
-				th,td{
-					border:1px solid var(--vk-color-border-hr);
-				}
-			}
         }
     }
 }

@@ -589,7 +589,7 @@ msgstr ""
 
 #: src/admin/margin.js:81
 #: src/blocks/_pro/grid-column-item/edit.js:173
-#: src/blocks/_pro/grid-column/edit.js:78
+#: src/blocks/_pro/grid-column/edit.js:83
 msgid "Unit"
 msgstr ""
 
@@ -814,66 +814,66 @@ msgstr ""
 msgid "Max number of words"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:100
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:101
+msgid "Aspect ratio"
+msgstr ""
+
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:106
+msgid "Original"
+msgstr ""
+
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:110
 msgid "Square"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:104
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:114
 msgid "16:9"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:108
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:118
 msgid "4:3"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:112
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:122
 msgid "3:2"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:116
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:126
 msgid "9:16"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:120
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:130
 msgid "3:4"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:124
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:134
 msgid "2:3"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:145
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:155
 #: src/blocks/slider/edit.js:949
 msgid "Height"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:167
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:177
 #: src/blocks/_pro/outer/edit.js:533
 #: src/blocks/balloon/edit.js:508
 #: src/blocks/slider/edit.js:915
 msgid "Width"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:35
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:39
 msgid ""
 "Image is scaled and cropped to fill the entire space without being "
 "distorted."
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:38
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:42
 msgid "Image is scaled to fill the space without clipping nor distorting."
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:41
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:45
 msgid "Image will be stretched and distorted to completely fill the space."
-msgstr ""
-
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:91
-msgid "Aspect ratio"
-msgstr ""
-
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:96
-msgid "Original"
 msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/edit.js:48
@@ -1387,7 +1387,7 @@ msgid "Padding (Bottom)"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:186
-#: src/blocks/_pro/grid-column/edit.js:91
+#: src/blocks/_pro/grid-column/edit.js:96
 #: src/blocks/_pro/outer/edit.js:1076
 #: src/blocks/icon-outer/edit.js:183
 #: src/blocks/icon/edit.js:172
@@ -1396,7 +1396,7 @@ msgid "px"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:187
-#: src/blocks/_pro/grid-column/edit.js:95
+#: src/blocks/_pro/grid-column/edit.js:100
 #: src/blocks/_pro/outer/edit.js:1080
 #: src/blocks/icon-outer/edit.js:187
 #: src/blocks/icon/edit.js:176
@@ -1405,7 +1405,7 @@ msgid "em"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:188
-#: src/blocks/_pro/grid-column/edit.js:99
+#: src/blocks/_pro/grid-column/edit.js:104
 #: src/blocks/_pro/outer/edit.js:1084
 #: src/blocks/icon-outer/edit.js:191
 #: src/blocks/icon/edit.js:180
@@ -1414,7 +1414,7 @@ msgid "rem"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:189
-#: src/blocks/_pro/grid-column/edit.js:103
+#: src/blocks/_pro/grid-column/edit.js:108
 #: src/blocks/_pro/outer/edit.js:1012
 #: src/blocks/icon-outer/edit.js:195
 #: src/blocks/icon/edit.js:184
@@ -1426,15 +1426,15 @@ msgstr ""
 msgid "Grid column item link"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:53
+#: src/blocks/_pro/grid-column/edit.js:58
 msgid "Layout Columns"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:59
+#: src/blocks/_pro/grid-column/edit.js:64
 msgid "Column Margin Bottom Setting"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:63
+#: src/blocks/_pro/grid-column/edit.js:68
 msgid "Margin Bottom"
 msgstr ""
 
@@ -1689,40 +1689,40 @@ msgid "Outer link"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:424
-#: src/blocks/slider-item/edit.js:162
+#: src/blocks/slider-item/edit.js:175
 msgid "Background Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:429
 #: src/blocks/pr-content/edit.js:67
-#: src/blocks/slider-item/edit.js:166
+#: src/blocks/slider-item/edit.js:179
 msgid "Color Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:430
-#: src/blocks/slider-item/edit.js:168
+#: src/blocks/slider-item/edit.js:181
 msgid ""
 "Color will overcome background image. If you want to display image, set "
 "opacity 0."
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:442
-#: src/blocks/slider-item/edit.js:180
+#: src/blocks/slider-item/edit.js:193
 msgid "Opacity Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:456
-#: src/blocks/slider-item/edit.js:215
+#: src/blocks/slider-item/edit.js:228
 msgid "Background Image PC"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:472
-#: src/blocks/slider-item/edit.js:231
+#: src/blocks/slider-item/edit.js:244
 msgid "Background Image Tablet"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:482
-#: src/blocks/slider-item/edit.js:241
+#: src/blocks/slider-item/edit.js:254
 msgid "Background Image Mobile"
 msgstr ""
 
@@ -1748,7 +1748,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:530
 #: src/blocks/pr-content/edit.js:244
-#: src/blocks/slider-item/edit.js:144
+#: src/blocks/slider-item/edit.js:157
 msgid "Layout Setting"
 msgstr ""
 
@@ -2057,7 +2057,7 @@ msgstr ""
 #: src/blocks/heading/edit.js:264
 #: src/blocks/slider/edit.js:1143
 #: src/blocks/staff/edit.js:173
-#: src/components/advanced-color-gradient-control/index.js:37
+#: src/components/advanced-color-gradient-control/index.js:46
 msgid "Default"
 msgstr ""
 
@@ -2879,19 +2879,19 @@ msgstr ""
 msgid "Slider item link"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:148
+#: src/blocks/slider-item/edit.js:161
 msgid "Vertical align"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:194
+#: src/blocks/slider-item/edit.js:207
 msgid "Background Image Size"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:201
+#: src/blocks/slider-item/edit.js:214
 msgid "cover"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:205
+#: src/blocks/slider-item/edit.js:218
 msgid "repeat"
 msgstr ""
 
@@ -3146,7 +3146,7 @@ msgstr ""
 msgid "minchoBody"
 msgstr ""
 
-#: src/components/advanced-color-gradient-control/index.js:31
+#: src/components/advanced-color-gradient-control/index.js:40
 msgid "Theme"
 msgstr ""
 
@@ -3663,22 +3663,22 @@ msgctxt "Word count type. Do not translate!"
 msgid "words"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:19
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:23
 msgctxt "Scale option for Image dimension control"
 msgid "Cover"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:23
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:27
 msgctxt "Scale option for Image dimension control"
 msgid "Contain"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:27
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:31
 msgctxt "Scale option for Image dimension control"
 msgid "Fill"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:73
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:83
 msgctxt "Image scaling options"
 msgid "Scale"
 msgstr ""

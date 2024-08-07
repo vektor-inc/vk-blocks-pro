@@ -102,6 +102,9 @@ class VK_Blocks_Block_Loader {
 		// 分割読み込みの場合は register されるファイルが false 指定で何も読み込まれなくなっている.
 		wp_enqueue_style( 'vk-blocks-build-css' );
 		wp_enqueue_style( 'vk-blocks-utils-common-css' );
+		wp_enqueue_style( 'vk-blocks/core-table', VK_BLOCKS_DIR_URL . 'build/extensions/core/table/style.css', array(), VK_BLOCKS_VERSION );
+		wp_enqueue_style( 'vk-blocks/core-heading', VK_BLOCKS_DIR_URL . 'build/extensions/core/heading/style.css', array(), VK_BLOCKS_VERSION );
+		wp_enqueue_style( 'vk-blocks/core-image', VK_BLOCKS_DIR_URL . 'build/extensions/core/image/style.css', array(), VK_BLOCKS_VERSION );
 	}
 
 	/**
@@ -118,6 +121,9 @@ class VK_Blocks_Block_Loader {
 			wp_register_style( 'vk-blocks-build-css', false, array(), VK_BLOCKS_VERSION );
 			// src/utils内の内の共通cssの読み込み .
 			wp_register_style( 'vk-blocks-utils-common-css', VK_BLOCKS_DIR_URL . 'build/utils/common.css', array(), VK_BLOCKS_VERSION );
+			wp_register_style( 'vk-blocks/core-table', VK_BLOCKS_DIR_URL . 'build/extensions/core/table/style.css', array(), VK_BLOCKS_VERSION );
+			wp_register_style( 'vk-blocks/core-heading', VK_BLOCKS_DIR_URL . 'build/extensions/core/heading/style.css', array(), VK_BLOCKS_VERSION );
+			wp_register_style( 'vk-blocks/core-image', VK_BLOCKS_DIR_URL . 'build/extensions/core/image/style.css', array(), VK_BLOCKS_VERSION );
 		} else {
 			// 一括読み込みの場合 : 結合CSSを登録.
 			wp_register_style( 'vk-blocks-build-css', VK_BLOCKS_DIR_URL . 'build/block-build.css', array(), VK_BLOCKS_VERSION );
@@ -131,6 +137,17 @@ class VK_Blocks_Block_Loader {
 		if ( file_exists( $style_path ) ) {
 			$dynamic_css = file_get_contents( $style_path );
 			wp_add_inline_style( 'wp-edit-blocks', $dynamic_css );
+		}
+
+		// WordPress 6.5 以下の対策
+		if ( ! wp_script_is( 'react-jsx-runtime', 'registered' ) ) {
+			wp_register_script(
+				'react-jsx-runtime',
+				$this->assets_build_url . 'react-jsx-runtime.js',
+				array( 'react' ),
+				'18.3.1',
+				true
+			);
 		}
 
 		// 編集画面のjs登録 : 設定に関わらず結合JSを登録 -> 各ブロックのindex.phpから呼び出される.

@@ -25,6 +25,7 @@ export default function save(props) {
 		bgImageMobile,
 		bgImageTablet,
 		bgImage,
+		bgFocalPoint,
 		outerWidth,
 		padding_left_and_right, //eslint-disable-line camelcase
 		padding_top_and_bottom, //eslint-disable-line camelcase
@@ -83,6 +84,15 @@ export default function save(props) {
 			></span>
 		</>
 	);
+
+	// スタイルに背景位置を反映
+	const backgroundStyles = {
+		backgroundImage: bgImage ? `url(${bgImage})` : undefined,
+		backgroundPosition: bgFocalPoint
+			? `${bgFocalPoint.x * 100}% ${bgFocalPoint.y * 100}%`
+			: undefined,
+		minHeight: minHeightValuePC ? `${minHeightValuePC}${minHeightUnit}` : undefined,
+	};
 
 	//幅のクラス切り替え
 	const classWidth =
@@ -208,35 +218,35 @@ export default function save(props) {
 		};
 	}
 
-	const blockProps = useBlockProps.save({
-		className: classnames(
-			`vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
-			{
-				[`has-border-color`]:
-					borderStyle !== 'none' && borderColor !== undefined,
-				[`has-${borderColor}-border-color`]:
-					borderStyle !== 'none' &&
-					borderColor !== undefined &&
-					!isHexColor(borderColor),
-				[`vk_outer-minHeight`]:
-					minHeightValuePC > 0 ||
-					minHeightValueTablet > 0 ||
-					minHeightValueMobile > 0,
-			}
-		),
-		style: {
-			...borderStyleProperty,
-			'--min-height-mobile': minHeightValueMobile
-				? `${minHeightValueMobile}${minHeightUnit}`
-				: undefined,
-			'--min-height-tablet': minHeightValueTablet
-				? `${minHeightValueTablet}${minHeightUnit}`
-				: undefined,
-			'--min-height-pc': minHeightValuePC
-				? `${minHeightValuePC}${minHeightUnit}`
-				: undefined,
-		},
-	});
+	const blockProps = useBlockProps.save({		className: classnames(
+		`vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
+		{
+			[`has-border-color`]:
+				borderStyle !== 'none' && borderColor !== undefined,
+			[`has-${borderColor}-border-color`]:
+				borderStyle !== 'none' &&
+				borderColor !== undefined &&
+				!isHexColor(borderColor),
+			[`vk_outer-minHeight`]:
+				minHeightValuePC > 0 ||
+				minHeightValueTablet > 0 ||
+				minHeightValueMobile > 0,
+		}
+	),
+	style: {
+		...borderStyleProperty,
+		'--min-height-mobile': minHeightValueMobile
+			? `${minHeightValueMobile}${minHeightUnit}`
+			: undefined,
+		'--min-height-tablet': minHeightValueTablet
+			? `${minHeightValueTablet}${minHeightUnit}`
+			: undefined,
+		'--min-height-pc': minHeightValuePC
+			? `${minHeightValuePC}${minHeightUnit}`
+			: undefined,
+		...backgroundStyles,
+	},
+});
 
 	const relAttribute =
 		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
@@ -255,7 +265,7 @@ export default function save(props) {
 	);
 
 	return (
-		<div {...blockProps}>
+		<div {...blockProps} style={backgroundStyles}>
 			{linkUrl && GetLinkUrl}
 			{GetBgImage}
 			<div>

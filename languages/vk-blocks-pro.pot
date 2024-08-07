@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-02T01:16:19+00:00\n"
+"POT-Creation-Date: 2024-08-05T04:25:15+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -589,7 +589,7 @@ msgstr ""
 
 #: src/admin/margin.js:81
 #: src/blocks/_pro/grid-column-item/edit.js:173
-#: src/blocks/_pro/grid-column/edit.js:86
+#: src/blocks/_pro/grid-column/edit.js:83
 msgid "Unit"
 msgstr ""
 
@@ -816,64 +816,64 @@ msgstr ""
 msgid "Max number of words"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:100
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:101
+msgid "Aspect ratio"
+msgstr ""
+
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:106
+msgid "Original"
+msgstr ""
+
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:110
 msgid "Square"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:104
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:114
 msgid "16:9"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:108
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:118
 msgid "4:3"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:112
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:122
 msgid "3:2"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:116
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:126
 msgid "9:16"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:120
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:130
 msgid "3:4"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:124
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:134
 msgid "2:3"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:145
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:155
 #: src/blocks/slider/edit.js:949
 msgid "Height"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:167
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:177
 #: src/blocks/_pro/outer/edit.js:533
 #: src/blocks/balloon/edit.js:508
 #: src/blocks/slider/edit.js:915
 msgid "Width"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:35
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:39
 msgid "Image is scaled and cropped to fill the entire space without being distorted."
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:38
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:42
 msgid "Image is scaled to fill the space without clipping nor distorting."
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:41
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:45
 msgid "Image will be stretched and distorted to completely fill the space."
-msgstr ""
-
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:91
-msgid "Aspect ratio"
-msgstr ""
-
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:96
-msgid "Original"
 msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/edit.js:48
@@ -1377,7 +1377,7 @@ msgid "Padding (Bottom)"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:186
-#: src/blocks/_pro/grid-column/edit.js:99
+#: src/blocks/_pro/grid-column/edit.js:96
 #: src/blocks/_pro/outer/edit.js:1076
 #: src/blocks/icon-outer/edit.js:183
 #: src/blocks/icon/edit.js:172
@@ -1386,7 +1386,7 @@ msgid "px"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:187
-#: src/blocks/_pro/grid-column/edit.js:103
+#: src/blocks/_pro/grid-column/edit.js:100
 #: src/blocks/_pro/outer/edit.js:1080
 #: src/blocks/icon-outer/edit.js:187
 #: src/blocks/icon/edit.js:176
@@ -1395,7 +1395,7 @@ msgid "em"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:188
-#: src/blocks/_pro/grid-column/edit.js:107
+#: src/blocks/_pro/grid-column/edit.js:104
 #: src/blocks/_pro/outer/edit.js:1084
 #: src/blocks/icon-outer/edit.js:191
 #: src/blocks/icon/edit.js:180
@@ -1404,7 +1404,7 @@ msgid "rem"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:189
-#: src/blocks/_pro/grid-column/edit.js:111
+#: src/blocks/_pro/grid-column/edit.js:108
 #: src/blocks/_pro/outer/edit.js:1012
 #: src/blocks/icon-outer/edit.js:195
 #: src/blocks/icon/edit.js:184
@@ -1416,15 +1416,15 @@ msgstr ""
 msgid "Grid column item link"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:61
+#: src/blocks/_pro/grid-column/edit.js:58
 msgid "Layout Columns"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:67
+#: src/blocks/_pro/grid-column/edit.js:64
 msgid "Column Margin Bottom Setting"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:71
+#: src/blocks/_pro/grid-column/edit.js:68
 msgid "Margin Bottom"
 msgstr ""
 
@@ -2044,7 +2044,7 @@ msgstr ""
 #: src/blocks/heading/edit.js:264
 #: src/blocks/slider/edit.js:1143
 #: src/blocks/staff/edit.js:173
-#: src/components/advanced-color-gradient-control/index.js:39
+#: src/components/advanced-color-gradient-control/index.js:46
 msgid "Default"
 msgstr ""
 
@@ -3111,7 +3111,7 @@ msgstr ""
 msgid "minchoBody"
 msgstr ""
 
-#: src/components/advanced-color-gradient-control/index.js:33
+#: src/components/advanced-color-gradient-control/index.js:40
 msgid "Theme"
 msgstr ""
 
@@ -3606,22 +3606,22 @@ msgctxt "Word count type. Do not translate!"
 msgid "words"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:19
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:23
 msgctxt "Scale option for Image dimension control"
 msgid "Cover"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:23
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:27
 msgctxt "Scale option for Image dimension control"
 msgid "Contain"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:27
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:31
 msgctxt "Scale option for Image dimension control"
 msgid "Fill"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:73
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:83
 msgctxt "Image scaling options"
 msgid "Scale"
 msgstr ""

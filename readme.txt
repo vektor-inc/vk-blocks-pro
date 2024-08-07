@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix][ Blog Card ] Make it editable in the edit screen in WordPress 6.6
 [ Bug Fix ] Setting a grid column block inside a reusable block no longer causes an error.
 [ Editor Design Bug Fix ][ Slider Item ]Fixed to hide content that exceeds the height when setting the slider height.
 [ Design Bug Fix ] Added dynamic color settings for common css.
@@ -115,6 +116,7 @@ e.g.
 [ Bug fix ][ Post list (Pro) ] Fixed post query to prevent memory overflow by paginating results.
 [ Bug fix ][ Post List (Pro) ] Fixed pagination handling.
 [ Bug fix ] The split loading option is now supported for core/heading, core/image, and core/table styles.
+
 
 = 1.80.1 =
 [ Bug Fix ] Fixed in WordPress 6.4.x / 6.5.x so that blocks can be used.

@@ -3,232 +3,88 @@
  *
  * @package
  */
-/**
- * group-style block type
- *
- * @package
- */
-import { convertColorClass } from '@vkblocks/utils/color-code-to-class.js';
-import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
-import { PanelBody, ToolbarGroup } from '@wordpress/components';
-import {
-	InspectorControls,
-	ColorPalette,
-	BlockControls,
-	useBlockProps,
-	InnerBlocks,
-} from '@wordpress/block-editor';
 import { createHigherOrderComponent } from '@wordpress/compose';
+import { BlockControls } from '@wordpress/block-editor';
+import { ToolbarGroup } from '@wordpress/components';
+import { Fragment } from '@wordpress/element';
 import LinkToolbar from '@vkblocks/components/link-toolbar';
 
-/**
- * Check if the block type is valid for customization.
- *
- * @param {string} name The name of the block type.
- * @return {boolean} Whether the block type is valid.
- */
-const isValidBlockType = (name) => {
-	const validBlockTypes = ['core/group'];
-	return validBlockTypes.includes(name);
-};
+const isCoverBlock = (name) => name === 'core/cover';
 
-/**
- * Add custom attributes to the block settings.
- *
- * @param {Object} settings The block settings.
- * @return {Object} The modified block settings.
- */
-export const addAttribute = (settings) => {
-	if (isValidBlockType(settings.name)) {
-		settings.attributes = {
-			...settings.attributes,
-			color: {
-				type: 'string',
-			},
-			linkUrl: {
-				type: 'string',
-				default: '',
-			},
-			linkTarget: {
-				type: 'string',
-				default: '',
-			},
-		};
+const enhanceCoverBlock = createHigherOrderComponent((BlockEdit) => {
+	return (props) => {
+		if (!isCoverBlock(props.name)) {
+			return <BlockEdit {...props} />;
+		}
+
+		const { attributes: { linkUrl, linkTarget }, setAttributes } = props;
+
+		return (
+			<Fragment>
+				<BlockEdit {...props} />
+				<BlockControls>
+					<ToolbarGroup>
+						<LinkToolbar
+							linkUrl={linkUrl}
+							setLinkUrl={(url) => setAttributes({ linkUrl: url })}
+							linkTarget={linkTarget}
+							setLinkTarget={(target) => setAttributes({ linkTarget: target })}
+						/>
+					</ToolbarGroup>
+				</BlockControls>
+			</Fragment>
+		);
+	};
+}, 'enhanceCoverBlock');
+
+const addLinkAttributesToCoverBlock = (settings, name) => {
+	if (!isCoverBlock(name)) {
+		return settings;
 	}
+
+	settings.attributes = {
+		...settings.attributes,
+		linkUrl: {
+			type: 'string',
+			default: '',
+		},
+		linkTarget: {
+			type: 'string',
+			default: '_self',
+		},
+	};
+
 	return settings;
 };
-addFilter('blocks.registerBlockType', 'vk-blocks/group-style', addAttribute);
 
-/**
- * Add custom controls to the block edit interface.
- *
- * @param {Function} BlockEdit The block edit component.
- * @return {Function} The modified block edit component.
- */
-export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
-	let activeColor = '';
+const insertLinkIntoCoverBlock = (element, blockType, attributes) => {
+	if (!isCoverBlock(blockType.name)) {
+		return element;
+	}
 
-	return (props) => {
-		if (isValidBlockType(props.name) && props.isSelected) {
-			if (props.attributes.color) {
-				activeColor = props.attributes.color;
-			} else {
-				activeColor = '#fffd6b';
-			}
+	const { linkUrl, linkTarget } = attributes;
 
-			return (
-				<>
-					<BlockEdit {...props} />
-					<BlockControls>
-						<ToolbarGroup>
-							<LinkToolbar
-								linkUrl={props.attributes.linkUrl}
-								setLinkUrl={(url) =>
-									props.setAttributes({ linkUrl: url })
-								}
-								linkTarget={props.attributes.linkTarget}
-								setLinkTarget={(target) =>
-									props.setAttributes({ linkTarget: target })
-								}
-							/>
-						</ToolbarGroup>
-					</BlockControls>
-					<InspectorControls>
-						<PanelBody
-							title={__('Border Color', 'vk-blocks-pro')}
-							initialOpen={false}
-							className="group-border-color-controle"
-						>
-							<p className="font-size-11px alert alert-danger">
-								{__(
-									'Because of the theme that enabled theme.json become can specify the color from border panel that, specification from here is deprecated.',
-									'vk-blocks-pro'
-								)}
-							</p>
-							<ColorPalette
-								value={activeColor}
-								disableCustomColors={true}
-								onChange={(newColor) => {
-									let newClassName =
-										convertColorClass(newColor);
+	if (!linkUrl) {
+		return element;
+	}
 
-									if (props.attributes.className) {
-										let inputClassName =
-											props.attributes.className;
-
-										inputClassName =
-											inputClassName.split(' ');
-
-										const filterClassName =
-											inputClassName.filter(
-												function (name) {
-													return (
-														-1 ===
-														name.indexOf('vk-has-')
-													);
-												}
-											);
-
-										filterClassName.push(newClassName);
-
-										newClassName =
-											filterClassName.join(' ');
-									}
-
-									activeColor = newColor;
-									props.setAttributes({
-										className: newClassName,
-										color: newColor,
-									});
-								}}
-							/>
-						</PanelBody>
-					</InspectorControls>
-				</>
-			);
-		}
-		return <BlockEdit {...props} />;
-	};
-}, 'addMyCustomBlockControls');
-
-addFilter('editor.BlockEdit', 'vk-blocks/group-style', addBlockControl);
-
-/**
- * Define the save function for the group block, including link settings.
- *
- * @param {Object} props The block properties.
- * @return {JSX.Element} The saved content.
- */
-const save = (props) => {
-	const { attributes } = props;
-	const { linkUrl, linkTarget, className } = attributes;
-
-	// Use block properties, setting className to include has-link if linkUrl is present
-	const blockProps = useBlockProps.save({
-		className: linkUrl ? `${className} has-link` : className,
-	});
-
-	// Determine rel attribute based on linkTarget
-	const relAttribute =
-		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
-
-	// Extract prefix for custom link class
-	const prefix = 'wp-block-group';
-
+	// アンカータグにスクリーンリーダー向けのラベルを追加
 	return (
-		<div {...blockProps}>
-			{linkUrl && (
-				<a
-					href={linkUrl}
-					target={linkTarget}
-					rel={relAttribute}
-					aria-label={__('Group link', 'vk-blocks-pro')}
-					className={`${prefix}-vk-link`}
-				>
-					<span className="screen-reader-text">VK Cover link</span>
-				</a>
-			)}
-			<InnerBlocks.Content />
+		<div {...element.props}>
+			<a
+				href={linkUrl}
+				target={linkTarget}
+				rel={linkTarget === '_blank' ? 'noopener noreferrer' : ''}
+				className="wp-block-cover-vk-link"
+			>
+				<span className="screen-reader-text">Cover link</span>
+			</a>
+			{element.props.children}
 		</div>
 	);
 };
 
-// Support for existing group blocks and version management
-import { assign } from 'lodash';
-
-/**
- * Override block settings to include custom save function and attributes.
- *
- * @param {Object} settings The block settings.
- * @param {string} name     The block name.
- * @return {Object} The modified block settings.
- */
-const overrideBlockSettings = (settings, name) => {
-	if (name === 'core/group') {
-		const newSettings = assign({}, settings, {
-			save,
-		});
-		// Support for existing group blocks by adding default values for new attributes
-		if (!newSettings.attributes.linkUrl) {
-			newSettings.attributes.linkUrl = {
-				type: 'string',
-				default: '',
-			};
-		}
-		if (!newSettings.attributes.linkTarget) {
-			newSettings.attributes.linkTarget = {
-				type: 'string',
-				default: '',
-			};
-		}
-		return newSettings;
-	}
-	return settings;
-};
-
-addFilter(
-	'blocks.registerBlockType',
-	'vk-blocks/group-save',
-	overrideBlockSettings
-);
+addFilter('editor.BlockEdit', 'custom/enhance-cover-block', enhanceCoverBlock);
+addFilter('blocks.registerBlockType', 'custom/add-link-attributes', addLinkAttributesToCoverBlock);
+addFilter('blocks.getSaveElement', 'custom/insert-link-into-cover-block', insertLinkIntoCoverBlock);

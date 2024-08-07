@@ -76,7 +76,6 @@ const insertLinkIntoCoverBlock = (element, blockType, attributes) => {
 		return element;
 	}
 
-	// アンカータグにスクリーンリーダー向けのラベルを追加
 	return (
 		<div {...element.props}>
 			<a

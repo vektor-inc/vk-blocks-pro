@@ -105,7 +105,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-
+[ Specification Change ] Delete width setting from sidebar.
 [ Bug Fix][ Blog Card ] Make it editable in the edit screen in WordPress 6.6
 [ Bug Fix ] Setting a grid column block inside a reusable block no longer causes an error.
 [ Editor Design Bug Fix ][ Slider Item ]Fixed to hide content that exceeds the height when setting the slider height.

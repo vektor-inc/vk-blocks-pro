@@ -7,7 +7,6 @@ import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { BlockControls } from '@wordpress/block-editor';
 import { ToolbarGroup } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
 import LinkToolbar from '@vkblocks/components/link-toolbar';
 
 const isCoverBlock = (name) => name === 'core/cover';
@@ -24,7 +23,7 @@ const enhanceCoverBlock = createHigherOrderComponent((BlockEdit) => {
 		} = props;
 
 		return (
-			<Fragment>
+			<>
 				<BlockEdit {...props} />
 				<BlockControls>
 					<ToolbarGroup>
@@ -40,7 +39,7 @@ const enhanceCoverBlock = createHigherOrderComponent((BlockEdit) => {
 						/>
 					</ToolbarGroup>
 				</BlockControls>
-			</Fragment>
+			</>
 		);
 	};
 }, 'enhanceCoverBlock');
@@ -92,13 +91,5 @@ const insertLinkIntoCoverBlock = (element, blockType, attributes) => {
 };
 
 addFilter('editor.BlockEdit', 'custom/enhance-cover-block', enhanceCoverBlock);
-addFilter(
-	'blocks.registerBlockType',
-	'custom/add-link-attributes',
-	addLinkAttributesToCoverBlock
-);
-addFilter(
-	'blocks.getSaveElement',
-	'custom/insert-link-into-cover-block',
-	insertLinkIntoCoverBlock
-);
+addFilter('blocks.registerBlockType', 'custom/add-link-attributes', addLinkAttributesToCoverBlock);
+addFilter('blocks.getSaveElement', 'custom/insert-link-into-cover-block', insertLinkIntoCoverBlock);

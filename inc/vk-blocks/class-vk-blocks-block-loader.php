@@ -139,6 +139,17 @@ class VK_Blocks_Block_Loader {
 			wp_add_inline_style( 'wp-edit-blocks', $dynamic_css );
 		}
 
+		// WordPress 6.5 以下の対策
+		if ( ! wp_script_is( 'react-jsx-runtime', 'registered' ) ) {
+			wp_register_script(
+				'react-jsx-runtime',
+				$this->assets_build_url . 'react-jsx-runtime.js',
+				array( 'react' ),
+				'18.3.1',
+				true
+			);
+		}
+
 		// 編集画面のjs登録 : 設定に関わらず結合JSを登録 -> 各ブロックのindex.phpから呼び出される.
 		wp_register_script(
 			'vk-blocks-build-js',

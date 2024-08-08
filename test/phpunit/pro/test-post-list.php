@@ -122,7 +122,7 @@ class PostListBlockTest extends VK_UnitTestCase {
 		$this->post_id = 0;
 	}
 
-	// テスト投稿を作成 //////////////////////////////////////
+	// 絞り込み検証用のテスト投稿を作成 //////////////////////////////////////
 	public static function create_test_posts() {
 		$created_data              = array();
 		$created_data['user_a_id'] = wp_create_user( 'user_a', 'password', 'user_a@test.com' );
@@ -332,9 +332,10 @@ class PostListBlockTest extends VK_UnitTestCase {
 
 		);
 
+		// 検証データをループして実行
 		foreach ( $test_data as $key => $value ) {
 			$query = Vk_Blocks_PostList::get_loop_query( $value['attributes'] );
-			// オブジェクトで返ってくるので、投稿タイトルの配列に変換
+			// オブジェクトで返ってくるので、比較しやすいように投稿タイトルの配列に変換
 			$actual = self::get_query_posts_title_array( $query );
 
 			$this->assertEquals( $value['expected'], $actual );

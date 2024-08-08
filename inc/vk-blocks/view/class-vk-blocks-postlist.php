@@ -20,8 +20,9 @@ class Vk_Blocks_PostList {
 	 * @return string
 	 */
 	public static function render_post_list( $attributes, $wp_query, $options_loop ) {
+
 		if ( ! empty( $attributes['className'] ) ) {
-			$options_loop['class_loop_outer'] .= ' ' . $attributes['className'];
+			$options_loop['class_loop_outer'] .= ' ' . esc_attr( $attributes['className'] );
 		}
 
 		if ( ! isset( $wp_query ) || false === $wp_query || 'false' === $wp_query || empty( $wp_query->posts ) ) {
@@ -38,7 +39,7 @@ class Vk_Blocks_PostList {
 			'display_new'                => esc_html( $attributes['display_new'] ),
 			'display_taxonomies'         => esc_html( $attributes['display_taxonomies'] ),
 			'display_btn'                => esc_html( $attributes['display_btn'] ),
-			'image_default_url'          => VK_BLOCKS_URL . 'images/no-image.png',
+			'image_default_url'          => esc_url( VK_BLOCKS_URL . 'images/no-image.png' ),
 			'overlay'                    => false,
 			'new_text'                   => esc_html( $attributes['new_text'] ),
 			'new_date'                   => esc_html( $attributes['new_date'] ),
@@ -54,16 +55,16 @@ class Vk_Blocks_PostList {
 			'class_title'                => '',
 			'body_prepend'               => '',
 			'body_append'                => '',
-			'vkb_hidden'                 => isset( $attributes['vkb_hidden'] ) ? $attributes['vkb_hidden'] : '',
-			'vkb_hidden_xxl'             => isset( $attributes['vkb_hidden_xxl'] ) ? $attributes['vkb_hidden_xxl'] : '',
-			'vkb_hidden_xl'              => isset( $attributes['vkb_hidden_xl'] ) ? $attributes['vkb_hidden_xl'] : '',
-			'vkb_hidden_xl_v2'           => isset( $attributes['vkb_hidden_xl_v2'] ) ? $attributes['vkb_hidden_xl_v2'] : '',
-			'vkb_hidden_lg'              => isset( $attributes['vkb_hidden_lg'] ) ? $attributes['vkb_hidden_lg'] : '',
-			'vkb_hidden_md'              => isset( $attributes['vkb_hidden_md'] ) ? $attributes['vkb_hidden_md'] : '',
-			'vkb_hidden_sm'              => isset( $attributes['vkb_hidden_sm'] ) ? $attributes['vkb_hidden_sm'] : '',
-			'vkb_hidden_xs'              => isset( $attributes['vkb_hidden_xs'] ) ? $attributes['vkb_hidden_xs'] : '',
-			'marginTop'                  => isset( $attributes['marginTop'] ) ? $attributes['marginTop'] : '',
-			'marginBottom'               => isset( $attributes['marginBottom'] ) ? $attributes['marginBottom'] : '',
+			'vkb_hidden'                 => isset( $attributes['vkb_hidden'] ) ? esc_attr( $attributes['vkb_hidden'] ) : '',
+			'vkb_hidden_xxl'             => isset( $attributes['vkb_hidden_xxl'] ) ? esc_attr( $attributes['vkb_hidden_xxl'] ) : '',
+			'vkb_hidden_xl'              => isset( $attributes['vkb_hidden_xl'] ) ? esc_attr( $attributes['vkb_hidden_xl'] ) : '',
+			'vkb_hidden_xl_v2'           => isset( $attributes['vkb_hidden_xl_v2'] ) ? esc_attr( $attributes['vkb_hidden_xl_v2'] ) : '',
+			'vkb_hidden_lg'              => isset( $attributes['vkb_hidden_lg'] ) ? esc_attr( $attributes['vkb_hidden_lg'] ) : '',
+			'vkb_hidden_md'              => isset( $attributes['vkb_hidden_md'] ) ? esc_attr( $attributes['vkb_hidden_md'] ) : '',
+			'vkb_hidden_sm'              => isset( $attributes['vkb_hidden_sm'] ) ? esc_attr( $attributes['vkb_hidden_sm'] ) : '',
+			'vkb_hidden_xs'              => isset( $attributes['vkb_hidden_xs'] ) ? esc_attr( $attributes['vkb_hidden_xs'] ) : '',
+			'marginTop'                  => isset( $attributes['marginTop'] ) ? esc_attr( $attributes['marginTop'] ) : '',
+			'marginBottom'               => isset( $attributes['marginBottom'] ) ? esc_attr( $attributes['marginBottom'] ) : '',
 		);
 
 		$elm = VK_Component_Posts::get_loop( $wp_query, $options, $options_loop );
@@ -128,10 +129,10 @@ class Vk_Blocks_PostList {
 	 * @return WP_Query|bool WP_Query object or false.
 	 */
 	public static function get_loop_query( $attributes ) {
-		$is_checked_post_type = json_decode( $attributes['isCheckedPostType'], true );
 
-		$is_checked_terms   = json_decode( $attributes['isCheckedTerms'], true );
-		$tax_query_relation = isset( $attributes['taxQueryRelation'] ) ? $attributes['taxQueryRelation'] : 'OR';
+		$is_checked_post_type = json_decode( $attributes['isCheckedPostType'], true );
+		$is_checked_terms     = json_decode( $attributes['isCheckedTerms'], true );
+		$tax_query_relation   = isset( $attributes['taxQueryRelation'] ) ? $attributes['taxQueryRelation'] : 'OR';
 
 		if ( empty( $is_checked_post_type ) ) {
 			return false;
@@ -178,7 +179,6 @@ class Vk_Blocks_PostList {
 		}
 
 		global $wp_query;
-		// とりあえず１を入れつつ2ページ目の情報があったら上書き
 		$paged = 1;
 		if ( ! empty( $attributes['pagedlock'] ) ) {
 			$paged = 1;
@@ -188,64 +188,23 @@ class Vk_Blocks_PostList {
 			$paged = $wp_query->query_vars['paged'];
 		}
 
-		$all_posts    = array();
-		$offset_count = 0;
+		$args = array(
+			// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
+			'tax_query'              => ! empty( $is_checked_terms ) ? self::format_terms( $tax_query_relation, $is_checked_terms, $is_checked_post_type ) : array(),
+			'post_type'              => $is_checked_post_type,
+			'paged'                  => $paged,
+			'posts_per_page'         => intval( $attributes['numberPosts'] ),
+			'order'                  => $attributes['order'],
+			'orderby'                => $attributes['orderby'],
+			'post__not_in'           => array_map( 'intval', $post__not_in ),
+			'date_query'             => $date_query,
+			'update_post_meta_cache' => false,
+			'no_found_rows'          => true,
+			'offset'                 => $offset,
+		);
 
-		foreach ( $is_checked_post_type as $post_type ) {
-			$args = array(
-				'post_type'      => $post_type,
-				'paged'          => 1,
-				'posts_per_page' => -1,
-				'order'          => $attributes['order'],
-				'orderby'        => $attributes['orderby'],
-				'post__not_in'   => $post__not_in,
-				'date_query'     => $date_query,
-			    // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
-				'tax_query'      => ! empty( $is_checked_terms ) ? self::format_terms( $tax_query_relation, $is_checked_terms, $post_type ) : array(),
-			);
-
-			if ( ! empty( $is_checked_terms ) ) {
-				$args['tax_query'] = self::format_terms( $tax_query_relation, $is_checked_terms, $post_type );
-			}
-
-			$temp_query = new WP_Query( $args );
-			$all_posts  = array_merge( $all_posts, $temp_query->posts );
-		}
-
-		if ( 'rand' === $attributes['orderby'] ) {
-			shuffle( $all_posts );
-		} else {
-			usort(
-				$all_posts,
-				function ( $a, $b ) use ( $attributes ) {
-					if ( 'date' === $attributes['orderby'] ) {
-						if ( 'ASC' === $attributes['order'] ) {
-							return strtotime( $a->post_date ) - strtotime( $b->post_date );
-						} else {
-							return strtotime( $b->post_date ) - strtotime( $a->post_date );
-						}
-					} elseif ( 'modified' === $attributes['orderby'] ) {
-						if ( 'ASC' === $attributes['order'] ) {
-							return strtotime( $a->post_modified ) - strtotime( $b->post_modified );
-						} else {
-							return strtotime( $b->post_modified ) - strtotime( $a->post_modified );
-						}
-					} elseif ( 'title' === $attributes['orderby'] ) {
-						return strcmp( $a->post_title, $b->post_title ) * ( 'ASC' === $attributes['order'] ? 1 : -1 );
-					} else {
-						return 0;
-					}
-				}
-			);
-		}
-
-		$all_posts = array_slice( $all_posts, $offset, intval( $attributes['numberPosts'] ) );
-
-		$wp_query_combined             = new WP_Query();
-		$wp_query_combined->posts      = $all_posts;
-		$wp_query_combined->post_count = count( $all_posts );
-
-		return $wp_query_combined;
+		// クエリ実行
+		return new WP_Query( $args );
 	}
 
 	/**

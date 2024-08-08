@@ -66,6 +66,13 @@ figure.wp-block-image{
                 border-radius: $border_radius;
             }
         }
+        &-circle {
+            img {
+                mask-image: var(--vk_image-mask-circle);
+                @include mask;
+            }
+        }
+
         &-border {
             img {
                 border: $border_primary;
@@ -129,6 +136,14 @@ figure.wp-block-image{
             &.alignleft, &.alignright, &.aligncenter{
                 img {
                     border-radius: $border_radius;
+                }
+            }
+        }
+        &-circle figure{
+            &.alignleft, &.alignright, &.aligncenter{
+                img{
+                    mask-image: var(--vk_image-mask-circle);
+                    @include mask;
                 }
             }
         }
@@ -201,6 +216,7 @@ figure.wp-block-image{
                 }
             }
         }
+
     }
 }
 

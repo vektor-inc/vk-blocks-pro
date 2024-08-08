@@ -111,7 +111,7 @@ e.g.
 [ Specification Change ] Add a circle style to the image block.
 [ Specification Change ] Update VK Component.
 [ Design Bug Fix ] Added dynamic color settings for common css.
-[ Editor Design Bug Fix ][ Slider Item ]Fixed to hide content that exceeds the height when setting the slider height.
+[ Editor Design Bug Fix ][ Slider Item ] Fixed to hide content that exceeds the height when setting the slider height.
 [ Bug fix ][ Slider Item ] Fix infinite loop in slider item block when used in reusable blocks.
 [ Bug fix ][ Accordion(Pro) ] Remove resize event causing accordion closure on scroll.
 [ Bug Fix ][ Blog Card ] Make it editable in the edit screen in WordPress 6.6

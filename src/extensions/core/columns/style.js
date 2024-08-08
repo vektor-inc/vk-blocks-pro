@@ -157,12 +157,21 @@ const insertLinkIntoColumnBlock = (element, blockType, attributes) => {
 		return element;
 	}
 
+	// rel 属性の設定
+	let relAttribute = '';
+
+	if (linkTarget === '_blank') {
+		relAttribute = 'noopener noreferrer';
+	} else if (linkTarget === '_self' || linkTarget === '') {
+		relAttribute = 'noopener';
+	}
+
 	return (
 		<div {...element.props}>
 			<a
 				href={linkUrl}
 				target={linkTarget}
-				rel={linkTarget === '_blank' ? 'noopener noreferrer' : ''}
+				rel={relAttribute}
 				className="wp-block-column-vk-link"
 			>
 				{element.props.children}

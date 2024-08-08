@@ -313,6 +313,17 @@ class PostListBlockTest extends VK_UnitTestCase {
 				),
 				'expected'   => array( 'Event post', 'Normal post' ),
 			),
+			'カテゴリーの or 検索' => array(
+				'attributes' => array(
+					'numberPosts'       => 6.0,
+					'isCheckedPostType' => '["post"]',
+					'isCheckedTerms'    => '[ ' . self::get_term_id_by_name( 'child_category', 'category' ) . ',' . self::get_term_id_by_name( 'parent_category', 'category' ) .' ]',
+					'order'             => 'ASC',
+					'orderby'           => 'title',
+					'taxQueryRelation'  => 'OR',
+				),
+				'expected'   => array( 'Child-category post', 'Normal post' ),
+			),
 
 		);
 

@@ -106,7 +106,7 @@ e.g.
 
 == Changelog ==
 
-[ Add function ][ Core Cover ] Add toolbar link for components by item.
+[ Add function ][ Core Cover ] Add toolbar link for components.
 [ Add function ][ Table ] Add horizontal scrolling Setting.
 [ Bug fix ][ Accordion(Pro) ] Remove resize event causing accordion closure on scroll.
 [ Bug Fix ][ Blog Card ] Make it editable in the edit screen in WordPress 6.6
@@ -134,7 +134,7 @@ e.g.
 
 = 1.79.0 =
 [ Add function ][ Tab (Pro) ] Add settings for when there are many labels or the screen width is narrow.
-[ Add function ][ Core Group ] Add toolbar link for components by item.
+[ Add function ][ Core Group ] Add toolbar link for components.
 [ Add function ][ Grid Column (Pro) ] Add toolbar link for components by item.
 [ Add function ][ Slider ] Add 'Wide' to width.
 [ Specification Change ] Hide license key when license key is valid.

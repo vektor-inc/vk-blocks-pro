@@ -149,19 +149,19 @@ class PostListBlockTest extends VK_UnitTestCase {
 		);
 
 		// Create test category
-		$catarr             = array(
+		$catarr                                   = array(
 			'cat_name' => 'parent_category',
 		);
 		$created_data['terms']['parent_category'] = wp_insert_category( $catarr );
 
-		$catarr            = array(
+		$catarr                                  = array(
 			'cat_name'        => 'child_category',
 			'category_parent' => $created_data['terms']['parent_category'],
 		);
 		$created_data['terms']['child_category'] = wp_insert_category( $catarr );
 
 		// Create test term
-		$args          = array(
+		$args                                     = array(
 			'slug' => 'event_cate_name',
 		);
 		$created_data['terms']['event_cate_name'] = wp_insert_term( 'event_cate_name', 'event_cat', $args );
@@ -169,7 +169,7 @@ class PostListBlockTest extends VK_UnitTestCase {
 		// test posts data
 		$test_posts_array = array(
 			array(
-				'post'          => array(
+				'post'  => array(
 					'post_title'   => 'Normal post',
 					'post_type'    => 'post',
 					'post_status'  => 'publish',
@@ -177,12 +177,12 @@ class PostListBlockTest extends VK_UnitTestCase {
 					'post_author'  => $created_data['user_a_id'],
 					'post_date'    => date( 'Y-m-d H:i:s', strtotime( '-1 day' ) ),
 				),
-				'terms'         => array(
+				'terms' => array(
 					'category' => array( 'parent_category' ),
 				),
 			),
 			array(
-				'post'          => array(
+				'post'  => array(
 					'post_title'   => 'Child-category post',
 					'post_type'    => 'post',
 					'post_status'  => 'publish',
@@ -190,12 +190,12 @@ class PostListBlockTest extends VK_UnitTestCase {
 					'post_author'  => $created_data['user_a_id'],
 					'post_date'    => date( 'Y-m-d H:i:s', strtotime( '-1 day' ) ),
 				),
-				'terms'         => array(
+				'terms' => array(
 					'category' => array( 'child_category' ),
 				),
 			),
 			array(
-				'post'          => array(
+				'post'  => array(
 					'post_title'   => 'Event post',
 					'post_type'    => 'event',
 					'post_status'  => 'publish',
@@ -203,7 +203,7 @@ class PostListBlockTest extends VK_UnitTestCase {
 					'post_author'  => $created_data['user_a_id'],
 					'post_date'    => date( 'Y-m-d H:i:s', strtotime( '-1 day' ) ),
 				),
-				'terms'         => array(
+				'terms' => array(
 					'event_cat' => array( 'event_cate_name' ),
 				),
 			),
@@ -213,7 +213,7 @@ class PostListBlockTest extends VK_UnitTestCase {
 		// テスト投稿作成
 		foreach ( $test_posts_array as $test_post_data ) {
 			// テスト投稿作成
-			$post_id               = wp_insert_post( $test_post_data['post'] );
+			$post_id                 = wp_insert_post( $test_post_data['post'] );
 			$created_data['posts'][] = $post_id;
 			if ( ! empty( $test_post_data['terms'] ) && is_array( $test_post_data['terms'] ) ) {
 				foreach ( $test_post_data['terms'] as $taxonomy => $term_names ) {
@@ -227,14 +227,14 @@ class PostListBlockTest extends VK_UnitTestCase {
 	}
 
 	// WP_Query の posts プロパティを投稿タイトルの配列に変換 ///////////////////////////
-	public static function query_convert_to_posts_array( $query ) {
+	public static function get_query_posts_title_array( $query ) {
 
 		// 投稿タイトルを格納するための配列を初期化
 		$titles = array();
 
 		// 投稿が存在するか確認
-		if (!empty($query->posts)) {
-			foreach ($query->posts as $post) {
+		if ( ! empty( $query->posts ) ) {
+			foreach ( $query->posts as $post ) {
 				// 投稿タイトルを配列に追加
 				$titles[] = $post->post_title;
 			}
@@ -245,13 +245,13 @@ class PostListBlockTest extends VK_UnitTestCase {
 	// ターム名からタームIDを取得 //////////////////////////////////////////
 	public static function get_term_id_by_name( $term_name, $taxonomy ) {
 		// 'name' を基準にタームを取得
-		$term = get_term_by('name', $term_name, $taxonomy);
-		
+		$term = get_term_by( 'name', $term_name, $taxonomy );
+
 		// タームが存在する場合はそのIDを返す
-		if ($term) {
+		if ( $term ) {
 			return $term->term_id;
 		}
-		
+
 		// タームが存在しない場合は false を返す
 		return false;
 	}
@@ -260,49 +260,43 @@ class PostListBlockTest extends VK_UnitTestCase {
 	 * Test get_loop_query
 	 */
 	public function test_get_loop_query() {
+
+		// テスト投稿を作成
 		$test_posts = self::create_test_posts();
 
+		// 検証データ
 		$test_data = array(
-			'イベント情報のみ' => array(
+			'イベント情報のみ'       => array(
 				'attributes' => array(
-					// 'new_date'          => 7.0,
 					'numberPosts'       => 6.0,
 					'isCheckedPostType' => '["event"]',
-					// 'coreTerms'         => '[]',
 					'isCheckedTerms'    => '[]',
 					'order'             => 'ASC',
 					'orderby'           => 'title',
-					// 'offset'            => 0,
 				),
 				'expected'   => array( 'Event post' ),
 			),
 			'通常の投稿 と イベント情報' => array(
 				'attributes' => array(
-					// 'new_date'          => 7.0,
 					'numberPosts'       => 6.0,
 					'isCheckedPostType' => '["post","event"]',
-					// 'coreTerms'         => '[]',
 					'isCheckedTerms'    => '[]',
 					'order'             => 'ASC',
 					'orderby'           => 'title',
-					// 'offset'            => 0,
 				),
 				'expected'   => array( 'Child-category post', 'Event post', 'Normal post' ),
 			),
-			'通常の投稿 と イベント情報' => array(
+			'子カテゴリーの投稿のみ'    => array(
 				'attributes' => array(
-					// 'new_date'          => 7.0,
 					'numberPosts'       => 6.0,
 					'isCheckedPostType' => '["post"]',
-					// 'coreTerms'         => '[]',
-					'isCheckedTerms'    => '['.self::get_term_id_by_name('child_category', 'category').']',
+					'isCheckedTerms'    => '[' . self::get_term_id_by_name( 'child_category', 'category' ) . ']',
 					'order'             => 'ASC',
 					'orderby'           => 'title',
-					// 'offset'            => 0,
 				),
 				'expected'   => array( 'Child-category post' ),
 			),
-			'オフセットして取得' => array(
+			'オフセットして取得'      => array(
 				'attributes' => array(
 					'numberPosts'       => 6.0,
 					'isCheckedPostType' => '["post","event"]',
@@ -313,22 +307,22 @@ class PostListBlockTest extends VK_UnitTestCase {
 				),
 				'expected'   => array( 'Event post', 'Normal post' ),
 			),
-			'カテゴリーの or 検索' => array(
+			'カテゴリーの or 検索'   => array(
 				'attributes' => array(
 					'numberPosts'       => 6.0,
 					'isCheckedPostType' => '["post"]',
-					'isCheckedTerms'    => '[ ' . self::get_term_id_by_name( 'child_category', 'category' ) . ',' . self::get_term_id_by_name( 'parent_category', 'category' ) .' ]',
+					'isCheckedTerms'    => '[ ' . self::get_term_id_by_name( 'child_category', 'category' ) . ',' . self::get_term_id_by_name( 'parent_category', 'category' ) . ' ]',
 					'order'             => 'ASC',
 					'orderby'           => 'title',
 					'taxQueryRelation'  => 'OR',
 				),
 				'expected'   => array( 'Child-category post', 'Normal post' ),
 			),
-			'カテゴリーの AND 検索' => array(
+			'カテゴリーの AND 検索'  => array(
 				'attributes' => array(
 					'numberPosts'       => 6.0,
 					'isCheckedPostType' => '["post"]',
-					'isCheckedTerms'    => '[ ' . self::get_term_id_by_name( 'child_category', 'category' ) . ',' . self::get_term_id_by_name( 'parent_category', 'category' ) .' ]',
+					'isCheckedTerms'    => '[ ' . self::get_term_id_by_name( 'child_category', 'category' ) . ',' . self::get_term_id_by_name( 'parent_category', 'category' ) . ' ]',
 					'order'             => 'ASC',
 					'orderby'           => 'title',
 					'taxQueryRelation'  => 'AND',
@@ -345,6 +339,7 @@ class PostListBlockTest extends VK_UnitTestCase {
 
 			$this->assertEquals( $value['expected'], $actual );
 		}
+		// テスト投稿を削除
 		foreach ( $test_posts['posts'] as $id ) {
 			wp_delete_post( $id, true );
 		}

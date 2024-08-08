@@ -115,7 +115,7 @@ e.g.
 [ Bug fix ][ Slider Item ] Fix infinite loop in slider item block when used in reusable blocks.
 [ Bug fix ][ Accordion(Pro) ] Remove resize event causing accordion closure on scroll.
 [ Bug Fix ][ Blog Card ] Make it editable in the edit screen in WordPress 6.6
-[ Bug Fix ] Setting a grid column block inside a reusable block no longer causes an error.
+[ Bug Fix ][ Grid Column (Pro) ] Setting a grid column block inside a reusable block no longer causes an error.
 [ Bug fix ][ Post list (Pro) ] Fixed post query to prevent memory overflow by paginating results.
 [ Bug fix ][ Post List (Pro) ] Fixed pagination handling.
 [ Bug fix ] The split loading option is now supported for core/heading, core/image, and core/table styles.

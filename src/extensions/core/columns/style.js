@@ -4,7 +4,12 @@
  */
 import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
-import { PanelBody, ToggleControl, Icon, ToolbarGroup } from '@wordpress/components';
+import {
+	PanelBody,
+	ToggleControl,
+	Icon,
+	ToolbarGroup,
+} from '@wordpress/components';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { InspectorControls, BlockControls } from '@wordpress/block-editor';
 import classnames from 'classnames';
@@ -159,7 +164,6 @@ const insertLinkIntoColumnBlock = (element, blockType, attributes) => {
 				target={linkTarget}
 				rel={linkTarget === '_blank' ? 'noopener noreferrer' : ''}
 				className="wp-block-column-vk-link"
-				style={{ display: 'block', width: '100%', height: '100%' }}
 			>
 				{element.props.children}
 			</a>
@@ -167,4 +171,8 @@ const insertLinkIntoColumnBlock = (element, blockType, attributes) => {
 	);
 };
 
-addFilter('blocks.getSaveElement', 'vk-blocks/insert-link-into-column', insertLinkIntoColumnBlock);
+addFilter(
+	'blocks.getSaveElement',
+	'vk-blocks/insert-link-into-column',
+	insertLinkIntoColumnBlock
+);

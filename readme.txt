@@ -107,6 +107,9 @@ e.g.
 == Changelog ==
 [ Specification Change ] Delete width setting from sidebar.
 [ Bug Fix][ Blog Card ] Make it editable in the edit screen in WordPress 6.6
+[ Add function ][ Table ] Add horizontal scrolling Setting.
+[ Bug fix ][ Accordion(Pro) ] Remove resize event causing accordion closure on scroll.
+[ Bug Fix ][ Blog Card ] Make it editable in the edit screen in WordPress 6.6
 [ Bug Fix ] Setting a grid column block inside a reusable block no longer causes an error.
 [ Editor Design Bug Fix ][ Slider Item ]Fixed to hide content that exceeds the height when setting the slider height.
 [ Design Bug Fix ] Added dynamic color settings for common css.
@@ -148,7 +151,7 @@ e.g.
 
 = 1.77.0 =
 [ Add function ][ Outer (Pro) ] Add toolbar link for components.
-[ Add function ][ Accordion ] Added initial display state setting.
+[ Add function ][ Accordion(Pro) ] Added initial display state setting.
 [ Specification Change ][ Tab (Pro) ] Accessibility support
 [ Bug fix ][ Table of Contents (Pro) ] Fix "OBJ" characters appeared in the Table of Contents on Windows.
 [ Bug fix ] Delete unnecessary development files included in 1.76.2.
@@ -216,7 +219,7 @@ e.g.
 [ Editor Design Bug fix ][ Slider ] Fixed an issue where slider item height disappears when editorMode is slide and alignfull.
 
 = 1.71.0 =
-[ Add function ][ Accordion ] Add plain style to accordion block.
+[ Add function ][ Accordion(Pro) ] Add plain style to accordion block.
 [ Add Function ][ icon ] Add Font color option in solid type icon.
 [ Bug fix ][ Button ] Fixed buttonColorCustom in the editor to display the correct color.
 [ Bug fix ][ Table of Contents (Pro) ] Fixed visibility issue in 6.5.

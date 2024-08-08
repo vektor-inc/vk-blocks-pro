@@ -242,7 +242,8 @@ class PostListBlockTest extends VK_UnitTestCase {
 		return $titles;
 	}
 
-	public static function get_term_id_by_name($term_name, $taxonomy) {
+	// ターム名からタームIDを取得 //////////////////////////////////////////
+	public static function get_term_id_by_name( $term_name, $taxonomy ) {
 		// 'name' を基準にタームを取得
 		$term = get_term_by('name', $term_name, $taxonomy);
 		
@@ -301,13 +302,24 @@ class PostListBlockTest extends VK_UnitTestCase {
 				),
 				'expected'   => array( 'Child-category post' ),
 			),
+			'オフセットして取得' => array(
+				'attributes' => array(
+					'numberPosts'       => 6.0,
+					'isCheckedPostType' => '["post","event"]',
+					'isCheckedTerms'    => '[]',
+					'order'             => 'ASC',
+					'orderby'           => 'title',
+					'offset'            => 1,
+				),
+				'expected'   => array( 'Event post', 'Normal post' ),
+			),
 
 		);
 
 		foreach ( $test_data as $key => $value ) {
 			$query = Vk_Blocks_PostList::get_loop_query( $value['attributes'] );
 			// オブジェクトで返ってくるので、投稿タイトルの配列に変換
-			$actual = self::query_convert_to_posts_array( $query );
+			$actual = self::get_query_posts_title_array( $query );
 
 			$this->assertEquals( $value['expected'], $actual );
 		}

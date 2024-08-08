@@ -54,7 +54,6 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 		const { reverse, className, linkUrl, linkTarget } = attributes;
 
 		if (isColumnsBlock(props.name) && props.isSelected) {
-
 			// カラムの方向設定
 			// アイコン設定
 			let iconStyle = {

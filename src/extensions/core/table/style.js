@@ -101,28 +101,45 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 								onChange={handleToggleChange}
 							/>
 							{scrollable && (
-								<SelectControl
-									label={__(
-										'Horizontal Scroll Breakpoint',
-										'vk-blocks-pro'
-									)}
-									value={scrollBreakpoint}
-									options={[
-										{
-											label: 'Mobile size',
-											value: 'table-scrollable-mobile',
-										},
-										{
-											label: 'Tablet size',
-											value: 'table-scrollable-tablet',
-										},
-										{
-											label: 'PC size',
-											value: 'table-scrollable-pc',
-										},
-									]}
-									onChange={handleSelectChange}
-								/>
+								<>
+									<SelectControl
+										label={__(
+											'Horizontal Scroll Breakpoint',
+											'vk-blocks-pro'
+										)}
+										value={scrollBreakpoint}
+										options={[
+											{
+												label: __(
+													'Mobile size',
+													'vk-blocks-pro'
+												),
+												value: 'table-scrollable-mobile',
+											},
+											{
+												label: __(
+													'Tablet size',
+													'vk-blocks-pro'
+												),
+												value: 'table-scrollable-tablet',
+											},
+											{
+												label: __(
+													'PC size',
+													'vk-blocks-pro'
+												),
+												value: 'table-scrollable-pc',
+											},
+										]}
+										onChange={handleSelectChange}
+									/>
+									<p>
+										{__(
+											'Table cells are no longer fixed width when horizontal scroll breakpoint is reached.',
+											'vk-blocks-pro'
+										)}
+									</p>
+								</>
 							)}
 						</PanelBody>
 					</InspectorControls>

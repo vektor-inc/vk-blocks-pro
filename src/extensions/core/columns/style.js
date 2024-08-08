@@ -4,27 +4,38 @@
  */
 import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
-import { PanelBody, ToggleControl, Icon } from '@wordpress/components';
+import { PanelBody, ToggleControl, Icon, ToolbarGroup } from '@wordpress/components';
 import { createHigherOrderComponent } from '@wordpress/compose';
-import { InspectorControls } from '@wordpress/block-editor';
+import { InspectorControls, BlockControls } from '@wordpress/block-editor';
 import classnames from 'classnames';
+import LinkToolbar from '@vkblocks/components/link-toolbar';
 
 /**
  * Internal dependencies
  */
 import { ReactComponent as IconSVG } from './icon.svg';
 
-const isValidBlockType = (name) => {
-	const validBlockTypes = ['core/columns'];
-	return validBlockTypes.includes(name);
-};
+const isColumnsBlock = (name) => name === 'core/columns';
+const isColumnBlock = (name) => name === 'core/column';
 
 export const addAttribute = (settings) => {
-	if (isValidBlockType(settings.name)) {
+	if (isColumnsBlock(settings.name)) {
 		settings.attributes = {
 			...settings.attributes,
 			reverse: {
 				type: 'boolean',
+			},
+		};
+	} else if (isColumnBlock(settings.name)) {
+		settings.attributes = {
+			...settings.attributes,
+			linkUrl: {
+				type: 'string',
+				default: '',
+			},
+			linkTarget: {
+				type: 'string',
+				default: '_self',
 			},
 		};
 	}
@@ -34,11 +45,11 @@ addFilter('blocks.registerBlockType', 'vk-blocks/columns-style', addAttribute);
 
 export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 	return (props) => {
-		if (isValidBlockType(props.name) && props.isSelected) {
-			const { attributes, setAttributes } = props;
-			const { reverse, className } = attributes;
+		const { attributes, setAttributes } = props;
+		const { reverse, className, linkUrl, linkTarget } = attributes;
 
-			// アイコンのスタイル
+		if (isColumnsBlock(props.name) && props.isSelected) {
+			// カラムの方向設定
 			let iconStyle = {
 				width: '24px',
 				height: '24px',
@@ -102,9 +113,58 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 					</InspectorControls>
 				</>
 			);
+		} else if (isColumnBlock(props.name) && props.isSelected) {
+			// カラムのリンク設定
+			return (
+				<>
+					<BlockEdit {...props} />
+					<BlockControls>
+						<ToolbarGroup>
+							<LinkToolbar
+								linkUrl={linkUrl}
+								setLinkUrl={(url) =>
+									setAttributes({ linkUrl: url })
+								}
+								linkTarget={linkTarget}
+								setLinkTarget={(target) =>
+									setAttributes({ linkTarget: target })
+								}
+							/>
+						</ToolbarGroup>
+					</BlockControls>
+				</>
+			);
 		}
 
 		return <BlockEdit {...props} />;
 	};
 }, 'addMyCustomBlockControls');
 addFilter('editor.BlockEdit', 'vk-blocks/columns-style', addBlockControl);
+
+const insertLinkIntoColumnBlock = (element, blockType, attributes) => {
+	if (!isColumnBlock(blockType.name)) {
+		return element;
+	}
+
+	const { linkUrl, linkTarget } = attributes;
+
+	if (!linkUrl) {
+		return element;
+	}
+
+	return (
+		<div {...element.props}>
+			<a
+				href={linkUrl}
+				target={linkTarget}
+				rel={linkTarget === '_blank' ? 'noopener noreferrer' : ''}
+				className="wp-block-column-vk-link"
+				style={{ display: 'block', width: '100%', height: '100%' }}
+			>
+				{element.props.children}
+			</a>
+		</div>
+	);
+};
+
+addFilter('blocks.getSaveElement', 'vk-blocks/insert-link-into-column', insertLinkIntoColumnBlock);

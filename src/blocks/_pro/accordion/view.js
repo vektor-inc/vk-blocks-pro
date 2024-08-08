@@ -48,9 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		}
 
-		// 初期ロード時とウィンドウサイズが変わった時に実行
+		// 初期ロード時に実行
 		updateAccordion();
-		window.addEventListener('resize', updateAccordion);
 	});
 });
 

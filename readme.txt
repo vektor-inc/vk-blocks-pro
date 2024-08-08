@@ -107,6 +107,7 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Core Cover ] Add toolbar link for components by item.
+[ Add function ][ Table ] Add horizontal scrolling Setting.
 [ Bug fix ][ Accordion(Pro) ] Remove resize event causing accordion closure on scroll.
 [ Bug Fix ][ Blog Card ] Make it editable in the edit screen in WordPress 6.6
 [ Bug Fix ] Setting a grid column block inside a reusable block no longer causes an error.

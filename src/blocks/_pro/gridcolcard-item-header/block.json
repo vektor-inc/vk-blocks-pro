@@ -29,7 +29,7 @@
 		},
 		"headerDisplay": {
 			"type": "string",
-			"default": "delete"
+			"default": "display"
 		}
 	}
 }

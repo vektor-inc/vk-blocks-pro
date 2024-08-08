@@ -115,6 +115,7 @@ e.g.
 [ Add function ][ Slider Item ] Fix infinite loop in slider item block when used in reusable blocks.
 [ Specification Change ] Add a circle style to the image block.
 [ Specification Change ] Update VK Component.
+[ Bug fix ][ Post list (Pro) ] Fixed post query to prevent memory overflow by paginating results.
 [ Bug fix ][ Post List (Pro) ] Fixed pagination handling.
 [ Bug fix ] The split loading option is now supported for core/heading, core/image, and core/table styles.
 

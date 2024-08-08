@@ -91,5 +91,13 @@ const insertLinkIntoCoverBlock = (element, blockType, attributes) => {
 };
 
 addFilter('editor.BlockEdit', 'custom/enhance-cover-block', enhanceCoverBlock);
-addFilter('blocks.registerBlockType', 'custom/add-link-attributes', addLinkAttributesToCoverBlock);
-addFilter('blocks.getSaveElement', 'custom/insert-link-into-cover-block', insertLinkIntoCoverBlock);
+addFilter(
+	'blocks.registerBlockType',
+	'custom/add-link-attributes',
+	addLinkAttributesToCoverBlock
+);
+addFilter(
+	'blocks.getSaveElement',
+	'custom/insert-link-into-cover-block',
+	insertLinkIntoCoverBlock
+);

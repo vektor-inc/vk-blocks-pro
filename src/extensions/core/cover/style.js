@@ -5,12 +5,11 @@
  */
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
-import { BlockControls } from '@wordpress/block-editor';
+import { BlockControls, useBlockProps } from '@wordpress/block-editor';
 import { ToolbarGroup } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 import LinkToolbar from '@vkblocks/components/link-toolbar';
 import { __ } from '@wordpress/i18n';
-import { useBlockProps } from '@wordpress/block-editor';
 
 const isCoverBlock = (name) => name === 'core/cover';
 
@@ -20,7 +19,10 @@ const enhanceCoverBlock = createHigherOrderComponent((BlockEdit) => {
 			return <BlockEdit {...props} />;
 		}
 
-		const { attributes: { linkUrl, linkTarget }, setAttributes } = props;
+		const {
+			attributes: { linkUrl, linkTarget },
+			setAttributes,
+		} = props;
 
 		return (
 			<Fragment>
@@ -29,9 +31,13 @@ const enhanceCoverBlock = createHigherOrderComponent((BlockEdit) => {
 					<ToolbarGroup>
 						<LinkToolbar
 							linkUrl={linkUrl}
-							setLinkUrl={(url) => setAttributes({ linkUrl: url })}
+							setLinkUrl={(url) =>
+								setAttributes({ linkUrl: url })
+							}
 							linkTarget={linkTarget}
-							setLinkTarget={(target) => setAttributes({ linkTarget: target })}
+							setLinkTarget={(target) =>
+								setAttributes({ linkTarget: target })
+							}
 						/>
 					</ToolbarGroup>
 				</BlockControls>
@@ -72,11 +78,14 @@ const insertLinkIntoCoverBlock = (element, blockType, attributes) => {
 	}
 
 	const blockProps = useBlockProps.save({
-		className: linkUrl ? `${element.props.className} has-link` : element.props.className,
+		className: linkUrl
+			? `${element.props.className} has-link`
+			: element.props.className,
 	});
 
 	// rel 属性の設定
-	const relAttribute = linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
+	const relAttribute =
+		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
 
 	return (
 		<div {...blockProps}>
@@ -93,5 +102,13 @@ const insertLinkIntoCoverBlock = (element, blockType, attributes) => {
 };
 
 addFilter('editor.BlockEdit', 'custom/enhance-cover-block', enhanceCoverBlock);
-addFilter('blocks.registerBlockType', 'custom/add-link-attributes', addLinkAttributesToCoverBlock);
-addFilter('blocks.getSaveElement', 'custom/insert-link-into-cover-block', insertLinkIntoCoverBlock);
+addFilter(
+	'blocks.registerBlockType',
+	'custom/add-link-attributes',
+	addLinkAttributesToCoverBlock
+);
+addFilter(
+	'blocks.getSaveElement',
+	'custom/insert-link-into-cover-block',
+	insertLinkIntoCoverBlock
+);

@@ -111,14 +111,16 @@ e.g.
 
 = 1.81.0 =
 [ Add function ][ Table ] Add horizontal scrolling Setting.
-[ Specification Change ] Add a circle style to the image block.
+[ Specification Change ][ Image ] Add a circle style to the image block.
+[ Specification Change ][ Slider ] Delete width setting from sidebar.
 [ Specification Change ] Update VK Component.
-[ Design Bug Fix ] Added dynamic color settings for common css.
-[ Editor Design Bug Fix ][ Slider Item ] Fixed to hide content that exceeds the height when setting the slider height.
+[ Bug fix ] Added dynamic color settings for common css.
+[ Bug fix ][ Slider Item ] Fixed to hide content that exceeds the height when setting the slider height.
+[ Bug fix ][ Category Badge (Pro) ] Fixed an issue where the spinner continued to display on the edit screen in WordPress 6.6
 [ Bug fix ][ Slider Item ] Fix infinite loop in slider item block when used in reusable blocks.
 [ Bug fix ][ Accordion(Pro) ] Remove resize event causing accordion closure on scroll.
 [ Bug Fix ][ Blog Card ] Make it editable in the edit screen in WordPress 6.6
-[ Bug Fix ][ Grid Column (Pro) ] Setting a grid column block inside a reusable block no longer causes an error.
+[ Bug Fix ][ Grid Column Card (Pro) ] Setting a grid column block inside a reusable block no longer causes an error.
 [ Bug fix ][ Post list (Pro) ] Fixed post query to prevent memory overflow by paginating results.
 [ Bug fix ][ Post List (Pro) ] Fixed pagination handling.
 [ Bug fix ] The split loading option is now supported for core/heading, core/image, and core/table styles.

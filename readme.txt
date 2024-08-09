@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ][ Grid Column Card (Pro) ] Change 'delete' to 'display' for headerDisplay and footerDisplay.
+
 = 1.81.0 =
 [ Add function ][ Table ] Add horizontal scrolling Setting.
 [ Specification Change ] Add a circle style to the image block.

@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Column ] Add toolbar link for components.
+
 = 1.81.0 =
 [ Add function ][ Table ] Add horizontal scrolling Setting.
 [ Specification Change ][ Image ] Add a circle style to the image block.

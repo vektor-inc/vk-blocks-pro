@@ -45,6 +45,9 @@ const enhanceCoverBlock = createHigherOrderComponent((BlockEdit) => {
 	};
 }, 'enhanceCoverBlock');
 
+// この関数をフィルターに追加
+addFilter('editor.BlockEdit', 'custom/enhance-cover-block', enhanceCoverBlock);
+
 const addLinkAttributesToCoverBlock = (settings, name) => {
 	if (!isCoverBlock(name)) {
 		return settings;
@@ -64,6 +67,13 @@ const addLinkAttributesToCoverBlock = (settings, name) => {
 
 	return settings;
 };
+
+// この関数をフィルターに追加
+addFilter(
+	'blocks.registerBlockType',
+	'custom/add-link-attributes',
+	addLinkAttributesToCoverBlock
+);
 
 const insertLinkIntoCoverBlock = (element, blockType, attributes) => {
 	if (!isCoverBlock(blockType.name)) {

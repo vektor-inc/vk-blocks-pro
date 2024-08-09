@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Grid Column Card (Pro) ] Fixed that Grid Column Card Item Footer block button horizontal align right not work.
+
 = 1.81.0 =
 [ Add function ][ Table ] Add horizontal scrolling Setting.
 [ Specification Change ][ Image ] Add a circle style to the image block.

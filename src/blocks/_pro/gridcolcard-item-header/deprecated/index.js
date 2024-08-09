@@ -1,5 +1,6 @@
-import save001 from './0.0.1/save';
 import save000 from './0.0.0/save';
+import save001 from './0.0.1/save';
+// import save1_81_0 from './1.81.0/save';
 
 const blockAttributes = {
 	containerSpace: {
@@ -25,7 +26,21 @@ const blockAttributes = {
 	}
 };
 
+/*
+const blockAttributes2 = {
+	...blockAttributes,
+	headerDisplay: {
+		type: 'string',
+		default: 'display'
+	}
+};
+*/
+
 const deprecated = [
+	{
+	//	attributes: blockAttributes2,
+	//	save: save1_81_0,
+	},
 	{
 		attributes: blockAttributes,
 		save: save001,

@@ -76,32 +76,32 @@ addFilter(
 );
 
 const insertLinkIntoCoverBlock = (element, blockType, attributes) => {
-	if (!isCoverBlock(blockType.name)) {
-		return element;
-	}
+    if (!isCoverBlock(blockType.name)) {
+        return element;
+    }
 
-	const { linkUrl, linkTarget } = attributes;
+    const { linkUrl, linkTarget } = attributes;
 
-	if (!linkUrl) {
-		return element;
-	}
+    if (!linkUrl) {
+        return element;
+    }
 
-	// rel 属性の設定
-	const relAttribute = linkTarget === '_blank' ? 'noopener noreferrer' : '';
+    // rel 属性の設定
+    const relAttribute = linkTarget === '_blank' ? 'noopener noreferrer' : undefined;
 
-	return (
-		<div {...element.props}>
-			<a
-				href={linkUrl}
-				target={linkTarget}
-				rel={relAttribute}
-				className="wp-block-cover-vk-link"
-			>
-				<span className="screen-reader-text">Cover link</span>
-			</a>
-			{element.props.children}
-		</div>
-	);
+    return (
+        <div {...element.props}>
+            <a
+                href={linkUrl}
+                target={linkTarget || undefined}
+                rel={relAttribute}
+                className="wp-block-cover-vk-link"
+            >
+                <span className="screen-reader-text">Cover link</span>
+            </a>
+            {element.props.children}
+        </div>
+    );
 };
 
 addFilter(

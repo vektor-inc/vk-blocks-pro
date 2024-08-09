@@ -631,15 +631,651 @@ $xxl-min: 1400px;
 /*-------------------------------------------*/
 /* カラム
 /*-------------------------------------------*/
-.wp-block-columns {
-	/* リンク設定 */
+:root {
+	--vk-margin-elem:2rem;
+}
+
+.text-nowrap {
+	white-space: nowrap;
+}
+
+/*-------------------------------------------*/
+/* 余白（レスポンシブスペーサー,共通余白で使用）
+/*-------------------------------------------*/
+:root {
+	--vk-margin-xxs : 0.375rem;
+	--vk-margin-xs : 0.75rem;
+	--vk-margin-sm : 1.5rem;
+	--vk-margin-md : 2.4rem;
+	--vk-margin-lg : 4rem;
+	--vk-margin-xl : 6rem;
+	--vk-margin-xxl : 9rem;
+}
+.vk_block{
+	&-margin-0 {
+		&--margin-top {
+			margin-top: 0 !important;
+			& > table { //テーマ側でtableにmargin-bottom や margin-top の余白がついている場合、完全に0にならないので必要
+				margin-top:0;
+			}
+		}
+		&--margin-bottom {
+			margin-bottom: 0 !important;
+			& > table { //テーマ側でtableにmargin-bottom や margin-top の余白がついている場合、完全に0にならないので必要
+				margin-bottom:0;
+			}
+		}
+	}
+	&-margin-xxs {
+		margin-top: var(--vk-margin-xxs); /* 旧バージョンでdeprecatedが走ってない状態のfallback */
+		&--margin-top {
+			margin-top: var(--vk-margin-xxs) !important;
+		}
+		&--margin-bottom {
+			margin-bottom: var(--vk-margin-xxs) !important;
+		}
+		&--height {
+			height: var(--vk-margin-xxs);
+		}
+	}
+	&-margin-xs {
+		margin-top: var(--vk-margin-xs); /* 旧バージョンでdeprecatedが走ってない状態のfallback */
+		&--margin-top {
+			margin-top: var(--vk-margin-xs) !important;
+		}
+		&--margin-bottom {
+			margin-bottom: var(--vk-margin-xs) !important;
+		}
+		&--height {
+			height: var(--vk-margin-xs);
+		}
+	}
+	&-margin-sm {
+		margin-top: var(--vk-margin-sm); /* 旧バージョンでdeprecatedが走ってない状態のfallback */
+		&--margin-top {
+			margin-top: var(--vk-margin-sm) !important;
+		}
+		&--margin-bottom {
+			margin-bottom: var(--vk-margin-sm) !important;
+		}
+		&--height {
+			height: var(--vk-margin-sm);
+		}
+	}
+	&-margin-md {
+		margin-top: var(--vk-margin-md); /* 旧バージョンでdeprecatedが走ってない状態のfallback */
+		&--margin-top {
+			margin-top: var(--vk-margin-md) !important;
+		}
+		&--margin-bottom {
+			margin-bottom: var(--vk-margin-md) !important;
+		}
+		&--height {
+			height: var(--vk-margin-md);
+		}
+	}
+	&-margin-lg {
+		margin-top: var(--vk-margin-lg); /* 旧バージョンでdeprecatedが走ってない状態のfallback */
+		&--margin-top {
+			margin-top: var(--vk-margin-lg) !important;
+		}
+		&--margin-bottom {
+			margin-bottom: var(--vk-margin-lg) !important;
+		}
+		&--height {
+			height: var(--vk-margin-lg);
+		}
+	}
+	&-margin-xl {
+		margin-top: var(--vk-margin-xl); /* 旧バージョンでdeprecatedが走ってない状態のfallback */
+		&--margin-top {
+			margin-top: var(--vk-margin-xl) !important;
+		}
+		&--margin-bottom {
+			margin-bottom: var(--vk-margin-xl) !important;
+		}
+		&--height {
+			height: var(--vk-margin-xl);
+		}
+	}
+	&-margin-xxl {
+		margin-top: var(--vk-margin-xxl); /* 旧バージョンでdeprecatedが走ってない状態のfallback */
+		&--margin-top {
+			margin-top: var(--vk-margin-xxl) !important;
+		}
+		&--margin-bottom {
+			margin-bottom: var(--vk-margin-xxl) !important;
+		}
+		&--height {
+			height: var(--vk-margin-xxl);
+		}
+	}
+}
+
+/*-------------------------------------------*/
+/* パレット設定
+/*-------------------------------------------*/
+$stylePalette: (
+	is-style-vk-arrow-mark: "\f138",
+	is-style-vk-triangle-mark: "\f0da",
+	is-style-vk-check-mark: "\f00c",
+	is-style-vk-check-circle-mark: "\f058",
+	is-style-vk-check-square-mark: "\f14a",
+	is-style-vk-handpoint-mark: "\f0a4",
+	is-style-vk-pencil-mark: "\f303",
+	is-style-vk-smile-mark: "\f118",
+	is-style-vk-frown-mark: "\f119",
+);
+
+$colorPalette: (
+	has-vk-pale-pink: #f78da7,
+	has-vk-vivid-red: #cf2e2e,
+	has-vk-luminous-vivid-orange: #ff6900,
+	has-vk-luminous-vivid-amber: #fcb900,
+	has-vk-light-green-cyan: #7bdcb5,
+	has-vk-vivid-green-cyan: #00d084,
+	has-vk-pale-cyan-blue: #8ed1fc,
+	has-vk-vivid-cyan-blue: #0693e3,
+	has-vk-vivid-purple: #9b51e0,
+	has-vk-very-light-gray: #eee,
+	has-vk-cyan-bluish-gray: #abb8c3,
+	has-vk-very-dark-gray: #313131,
+	has-vk-white: #ffffff,
+	has-vk-color-primary: var(--wp--preset--color--vk-color-primary),
+	has-vk-color-primary-dark: var(--wp--preset--color--vk-color-primary-dark),
+	has-vk-color-primary-vivid: var(--wp--preset--color--vk-color-primary-vivid),
+	has-vk-color-custom-1: var(--wp--preset--color--vk-color-custom-1),
+	has-vk-color-custom-2: var(--wp--preset--color--vk-color-custom-2),
+	has-vk-color-custom-3: var(--wp--preset--color--vk-color-custom-3),
+	has-vk-color-custom-4: var(--wp--preset--color--vk-color-custom-4),
+	has-vk-color-custom-5: var(--wp--preset--color--vk-color-custom-5),
+);
+
+/*-------------------------------------------*/
+/* カラー設定
+/*-------------------------------------------*/
+@each $colorClass, $color in $colorPalette {
+	:root {
+		// 一般的なカラー設定
+		.#{$colorClass}-background-color {
+			@if $colorClass == has-vk-color-primary {
+				// has-vk-color-primary-background-colorクラスはデフォルトで設定される。Lightning以外のテーマに対応するため代替値を設定
+				background-color: var(--wp--preset--color--vk-color-primary, #337ab7);
+			} @else {
+				background-color: #{$color};
+			}
+		}
+
+		.#{$colorClass}-color {
+			@if $colorClass == has-vk-color-primary {
+				color: var(--wp--preset--color--vk-color-primary, #337ab7);
+			} @else {
+				color: #{$color};
+			}
+		}
+	}
+}
+
+/*-------------------------------------------*/
+/* リストデザイン
+/*-------------------------------------------*/
+@mixin mark-before {
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	position: absolute;
+}
+
+ul,
+ol {
+	&.is-style {
+		&-vk-arrow-mark,
+		&-vk-triangle-mark,
+		&-vk-check-mark,
+		&-vk-check-circle-mark,
+		&-vk-check-square-mark,
+		&-vk-handpoint-mark,
+		&-vk-pencil-mark,
+		&-vk-smile-mark,
+		&-vk-frown-mark,
+		&-vk-numbered-circle-mark,
+		&-vk-numbered-square-mark {
+			padding-inline-start: 2em;
+			li {
+				list-style: none;
+				position: relative;
+				margin-top:0;
+				margin-left: 0;
+				margin:calc( 1rem * 0.8 ) 0;
+				line-height: calc( 1rem * 1.65 );
+			}
+		}
+	}
+
+	&.is-style-vk-numbered-circle-mark {
+		counter-reset: number;
+		list-style-type: none;
+
+		li {
+			position: relative;
+			list-style: none;
+			padding-left: .5em;
+			&:before {
+				position: absolute;
+				left: 0;
+				counter-increment: number;
+				content: counter(number);
+				margin-left: -1.8em;
+				background: #222;
+				color: #fff;
+				text-indent: 0;
+				display: inline-block;
+				font-weight: bold;
+				border-radius: 50%;
+				font-size: calc( 1rem * 1 );
+				line-height: calc( 1rem * 1.8 );
+				width: 26px;
+				height: 26px;
+				text-align: center;
+			}
+
+			ul,
+			ol {
+				counter-reset: num_inner;
+				content: counter(num_inner);
+
+				li {
+					&:before {
+						counter-increment: num_inner;
+						content: counter(num_inner);
+					}
+				}
+			}
+		}
+	}
+
+	&.is-style-vk-numbered-square-mark {
+		counter-reset: number;
+		list-style-type: none;
+
+		li {
+			position: relative;
+			list-style: none;
+			padding-left: .5em;
+			&:before {
+				position: absolute;
+				left: -0.3em;
+				counter-increment: number;
+				content: counter(number);
+				margin-left: -25px;
+				background: #222;
+				color: #fff;
+				text-indent: 0;
+				display: inline-block;
+				font-weight: bold;
+				font-size: calc( 1rem * 1 );
+				line-height: calc( 1rem * 1.8 );
+				width: 26px;
+				height: 26px;
+				text-align: center;
+				border-radius: 2px;
+			}
+
+			ul,
+			ol {
+				counter-reset: num_inner;
+				content: counter(num_inner);
+
+				li {
+					&:before {
+						counter-increment: num_inner;
+						content: counter(num_inner);
+					}
+				}
+			}
+		}
+	}
+
+	&.is-style-vk-numbered-circle-mark,
+	&.is-style-vk-numbered-square-mark {
+		&.fa-lg {
+			li::before {
+				left: -0.8em;
+			}
+		}
+
+		&.fa-2x {
+			li {
+				line-height: 1.25em;
+			}
+
+			li::before {
+				left: -1.1em;
+			}
+		}
+
+		&.fa-3x {
+			li {
+				line-height: 1.25em;
+			}
+
+			li::before {
+				left: -1.4em;
+			}
+		}
+
+		&.fa-4x {
+			li {
+				line-height: 1.25em;
+			}
+
+			li::before {
+				left: -1.5em;
+			}
+		}
+
+		&.fa-5x {
+			li {
+				line-height: 1.25em;
+			}
+
+			li::before {
+				left: -1.6em;
+			}
+		}
+	}
+
+	@each $styleClass, $faCode in $stylePalette {
+		&.#{$styleClass} {
+			li {
+				&::before {
+					@include mark-before;
+					content: $faCode;
+					left: -1.5em;
+				}
+			}
+		}
+		&.is-style-vk-default {
+			li {
+				&::before {
+					font-size: 22px;
+					line-height: 1.1em;
+				}
+			}
+		}
+	}
+
+	@each $colorClass, $color in $colorPalette {
+		&.#{$colorClass} {
+			li::marker {
+				color: $color;
+			}
+			li::before {
+				color: $color;
+			}
+		}
+
+		&.is-style-vk-numbered-circle-mark.#{$colorClass}-color,
+		&.is-style-vk-numbered-square-mark.#{$colorClass}-color {
+			li::before {
+				color: #ffffff;
+				background-color: $color;
+			}
+		}
+	}
+}
+//ul,ol
+
+/*-------------------------------------------*/
+/* グループブロック　デザイン
+/*-------------------------------------------*/
+
+@mixin pad-mag {
+	padding: 1.8em;
+	margin-top: var( --vk-margin-elem );
+	margin-bottom: var( --vk-margin-elem );
+}
+@mixin inner-item-pad-mag {
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-bottom: 1rem;
+	}
+	ul,
+	ol {
+		margin-top: 0;
+		li:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.wp-block-group {
+	h3:first-child,
+	h4:first-child {
+		margin-top: 0;
+	}
+
+	/* *:last-child で指定するとブロックエディタでカラムの中にいれた時に枠の外にはみ出す */
+	p,
+	ul,
+	ol,
+	dl,
+	table,
+	.wp-block-columns {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	// リンク設定
+	&.has-link {
+		position: relative;
+	}
 	&-vk-link {
-		display: block;
+		position: absolute;
+		top: 0; 
+		left: 0;
 		width: 100%;
 		height: 100%;
+		color: transparent;
+		cursor: pointer;
+		z-index: 10;
 	}
+
+	@each $colorClass, $color in $colorPalette {
+		&.#{$colorClass}-color {
+			border-color: $color;
+			.wp-block-group__inner-container {
+				border-color: $color;
+			}
+		}
+	}
+} //.wp-block-group
+.is-style-vk-group {
+	&-solid {
+		border: solid 3px;
+		@include pad-mag;
+		@include inner-item-pad-mag;
+	}
+	&-solid-roundcorner {
+		border: solid 3px;
+		border-radius: 8px;
+		@include pad-mag;
+		@include inner-item-pad-mag;
+	}
+	&-dotted {
+		border: dotted 1px;
+		@include pad-mag;
+		@include inner-item-pad-mag;
+	}
+	&-dashed {
+		border: dashed 2px;
+		@include pad-mag;
+		@include inner-item-pad-mag;
+	}
+	&-double {
+		border: double 5px;
+		@include pad-mag;
+		@include inner-item-pad-mag;
+	}
+	&-stitch {
+		position: relative;
+		margin: 1em auto;
+		padding: 2.3em;
+		border-radius: 8px;
+		&::before {
+			content: "";
+			position: absolute;
+			top: .5em;
+			left: .5em;
+			width: calc(100% - 1em);
+			height: calc(100% - 1em);
+			border: dashed 2px;
+			border-radius: 8px;
+			pointer-events: none;
+		}
+		//@include inner-item-pad-mag;
+		// thema.jsonでは .wp-block-group__inner-container がつかないためコメントアウト
+		//.wp-block-group__inner-container {
+		//	border: dashed 2px;
+		//	border-radius: 8px;
+		//	padding: 1.8em;
+		// }
+	}
+	&-top-bottom-border {
+		border-top: solid 1px;
+		border-bottom: solid 1px;
+		@include pad-mag;
+		@include inner-item-pad-mag;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	&-shadow {
+		box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+		@include pad-mag;
+		@include inner-item-pad-mag;
+	}
+	&-alert-info {
+		background-color: #d9edf7;
+		color: #31708f;
+		border-radius: 3px;
+		border: 1px solid #bce8f1;
+		@include pad-mag;
+		@include inner-item-pad-mag;
+	}
+	&-alert-success {
+		background-color: #dff0d8;
+		color: #3c763d;
+		border-radius: 3px;
+		border: 1px solid #d6e9c6;
+		@include pad-mag;
+		@include inner-item-pad-mag;
+	}
+	&-alert-warning {
+		background-color: #fcf8e3;
+		color: #8a6d3b;
+		border-radius: 3px;
+		border: 1px solid #faebcc;
+		@include pad-mag;
+		@include inner-item-pad-mag;
+	}
+	&-alert-danger {
+		background-color: #f2dede;
+		color: #a94442;
+		border-radius: 3px;
+		border: 1px solid #ebccd1;
+		@include pad-mag;
+		@include inner-item-pad-mag;
+	}
+}
+
+
+/*-------------------------------------------*/
+/* Group Block
+/*-------------------------------------------*/
+.editor-styles-wrapper .wp-block-group {
+	// これがないとコアに勝手にwidthが左右1em余白をあけられる
+	// → だがしかし Grid Column 2 で中の要素が勝手に小さくされるので一旦コメントアウト
+	.wp-block{
+		// width:auto;
+	}
+}
+
+/*-------------------------------------------*/
+/* YouTube
+/*-------------------------------------------*/
+.wp-block-embed {
+	&-youtube {
+		iframe {
+			width: 100%;
+		}
+	}
+}
+
+.has-text-align-right {
+	text-align: right;
+}
+.has-text-align-left {
+	text-align: left;
+}
+.has-text-align-center {
+	text-align: center;
+}
+
+/*-------------------------------------------*/
+/* ソーシャルアイコン
+/*-------------------------------------------*/
+.wp-block-social-links{
+	flex-wrap: wrap;
+}
+
+/*-------------------------------------------*/
+/* col-xxl
+/*-------------------------------------------*/
+$xxl-min: 1400px;
+.col {
+    // Bootstrap4 では xxl サイズがないので独自に追加
+    @media (min-width: $xxl-min) {
+		&-xxl-2 {
+			flex: 0 0 16.66667%;
+			max-width: 16.66667%;
+		}
+		&-xxl-3 {
+			flex: 0 0 25%;
+			max-width: 25%;
+		}
+		&-xxl-4 {
+			flex: 0 0 33.33333%;
+			max-width: 33.33333%;
+		}
+		&-xxl-6 {
+			flex: 0 0 50%;
+			max-width: 50%;
+		}
+		&-xxl-12 {
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+	}
+}
+
+/*-------------------------------------------*/
+/* カラム
+/*-------------------------------------------*/
+.wp-block-columns {
 	/* カラムの方向 */
 	&.wp-block-columns.is-vk-row-reverse {
     	flex-direction: row-reverse;
+	}
+	.wp-block-column {
+		/* リンク設定 */
+		&-vk-link {
+			display: block;
+			width: 100%;
+			height: 100%;
+			text-decoration: none;
+		}
 	}
 }

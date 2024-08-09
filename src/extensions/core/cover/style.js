@@ -5,7 +5,7 @@
  */
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
-import { BlockControls, useBlockProps  } from '@wordpress/block-editor';
+import { BlockControls, useBlockProps } from '@wordpress/block-editor';
 import { ToolbarGroup } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 import LinkToolbar from '@vkblocks/components/link-toolbar';

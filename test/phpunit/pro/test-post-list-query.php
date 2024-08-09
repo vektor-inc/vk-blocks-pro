@@ -292,7 +292,7 @@ print '<pre style="text-align:left">';print_r($actual);print '</pre>';
 			$this->assertSame( $test['expected'], $actual );
 		}
 	}
-
+	
 	/**
 	 * 関連のないタームやカテゴリーが無視されるかのテスト
 	 */
@@ -323,5 +323,4 @@ print '<pre style="text-align:left">';print_r($actual);print '</pre>';
 		$posts = Vk_Blocks_PostList::get_loop_query($attributes);
 		$this->assertSame(2, $posts->post_count);
 	}
-
 }

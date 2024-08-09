@@ -11,6 +11,7 @@ import SliderHook0_56_4 from './0.56.4';
 import SliderHook0_49_7 from './0.49.7';
 
 export default [
+	SliderHook1_48_1, // 1.80.1
 	SliderHook1_48_1, // 1.51.0
 	SliderHook1_48_1, // 1.48.1
 	SliderHook1_34_1,

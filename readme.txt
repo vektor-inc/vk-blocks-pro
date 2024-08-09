@@ -106,6 +106,9 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Core Cover ] Add toolbar link for components.
+[ Specification Change ] Delete width setting from sidebar.
+
 = 1.81.0 =
 [ Add function ][ Table ] Add horizontal scrolling Setting.
 [ Specification Change ][ Image ] Add a circle style to the image block.
@@ -136,7 +139,7 @@ e.g.
 
 = 1.79.0 =
 [ Add function ][ Tab (Pro) ] Add settings for when there are many labels or the screen width is narrow.
-[ Add function ][ Core Group ] Add toolbar link for components by item.
+[ Add function ][ Core Group ] Add toolbar link for components.
 [ Add function ][ Grid Column (Pro) ] Add toolbar link for components by item.
 [ Add function ][ Slider ] Add 'Wide' to width.
 [ Specification Change ] Hide license key when license key is valid.

@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.3
 Tested up to: 6.6
-Stable tag: 1.79.1.1
+Stable tag: 1.80.1.2
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -107,16 +107,22 @@ e.g.
 == Changelog ==
 
 [ Add Setting ][ Alert ] Add icon setting and inner block.
-[ Bug Fix][ Blog Card ] Make it editable in the edit screen in WordPress 6.6
-[ Bug Fix ] Setting a grid column block inside a reusable block no longer causes an error.
-[ Editor Design Bug Fix ][ Slider Item ]Fixed to hide content that exceeds the height when setting the slider height.
-[ Design Bug Fix ] Added dynamic color settings for common css.
-[ Add function ][ Slider Item ] Fix infinite loop in slider item block when used in reusable blocks.
-[ Specification Change ] Add a circle style to the image block.
+
+= 1.81.0 =
+[ Add function ][ Table ] Add horizontal scrolling Setting.
+[ Specification Change ][ Image ] Add a circle style to the image block.
+[ Specification Change ][ Slider ] Delete width setting from sidebar.
 [ Specification Change ] Update VK Component.
+[ Bug fix ] Added dynamic color settings for common css.
+[ Bug fix ][ Slider Item ] Fixed to hide content that exceeds the height when setting the slider height.
+[ Bug fix ][ Category Badge (Pro) ] Fixed an issue where the spinner continued to display on the edit screen in WordPress 6.6
+[ Bug fix ][ Slider Item ] Fix infinite loop in slider item block when used in reusable blocks.
+[ Bug fix ][ Accordion(Pro) ] Remove resize event causing accordion closure on scroll.
+[ Bug Fix ][ Blog Card ] Make it editable in the edit screen in WordPress 6.6
+[ Bug Fix ][ Grid Column Card (Pro) ] Setting a grid column block inside a reusable block no longer causes an error.
+[ Bug fix ][ Post list (Pro) ] Fixed post query to prevent memory overflow by paginating results.
 [ Bug fix ][ Post List (Pro) ] Fixed pagination handling.
 [ Bug fix ] The split loading option is now supported for core/heading, core/image, and core/table styles.
-
 
 = 1.80.1 =
 [ Bug Fix ] Fixed in WordPress 6.4.x / 6.5.x so that blocks can be used.
@@ -149,7 +155,7 @@ e.g.
 
 = 1.77.0 =
 [ Add function ][ Outer (Pro) ] Add toolbar link for components.
-[ Add function ][ Accordion ] Added initial display state setting.
+[ Add function ][ Accordion(Pro) ] Added initial display state setting.
 [ Specification Change ][ Tab (Pro) ] Accessibility support
 [ Bug fix ][ Table of Contents (Pro) ] Fix "OBJ" characters appeared in the Table of Contents on Windows.
 [ Bug fix ] Delete unnecessary development files included in 1.76.2.
@@ -217,7 +223,7 @@ e.g.
 [ Editor Design Bug fix ][ Slider ] Fixed an issue where slider item height disappears when editorMode is slide and alignfull.
 
 = 1.71.0 =
-[ Add function ][ Accordion ] Add plain style to accordion block.
+[ Add function ][ Accordion(Pro) ] Add plain style to accordion block.
 [ Add Function ][ icon ] Add Font color option in solid type icon.
 [ Bug fix ][ Button ] Fixed buttonColorCustom in the editor to display the correct color.
 [ Bug fix ][ Table of Contents (Pro) ] Fixed visibility issue in 6.5.

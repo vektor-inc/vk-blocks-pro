@@ -1,5 +1,5 @@
 /**
- * core-style block type
+ * cover-style block type
  *
  * @package
  */
@@ -9,6 +9,8 @@ import { BlockControls } from '@wordpress/block-editor';
 import { ToolbarGroup } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 import LinkToolbar from '@vkblocks/components/link-toolbar';
+import { __ } from '@wordpress/i18n';
+import { useBlockProps } from '@wordpress/block-editor';
 
 const isCoverBlock = (name) => name === 'core/cover';
 
@@ -18,10 +20,7 @@ const enhanceCoverBlock = createHigherOrderComponent((BlockEdit) => {
 			return <BlockEdit {...props} />;
 		}
 
-		const {
-			attributes: { linkUrl, linkTarget },
-			setAttributes,
-		} = props;
+		const { attributes: { linkUrl, linkTarget }, setAttributes } = props;
 
 		return (
 			<Fragment>
@@ -30,13 +29,9 @@ const enhanceCoverBlock = createHigherOrderComponent((BlockEdit) => {
 					<ToolbarGroup>
 						<LinkToolbar
 							linkUrl={linkUrl}
-							setLinkUrl={(url) =>
-								setAttributes({ linkUrl: url })
-							}
+							setLinkUrl={(url) => setAttributes({ linkUrl: url })}
 							linkTarget={linkTarget}
-							setLinkTarget={(target) =>
-								setAttributes({ linkTarget: target })
-							}
+							setLinkTarget={(target) => setAttributes({ linkTarget: target })}
 						/>
 					</ToolbarGroup>
 				</BlockControls>
@@ -44,9 +39,6 @@ const enhanceCoverBlock = createHigherOrderComponent((BlockEdit) => {
 		);
 	};
 }, 'enhanceCoverBlock');
-
-// この関数をフィルターに追加
-addFilter('editor.BlockEdit', 'custom/enhance-cover-block', enhanceCoverBlock);
 
 const addLinkAttributesToCoverBlock = (settings, name) => {
 	if (!isCoverBlock(name)) {
@@ -68,44 +60,38 @@ const addLinkAttributesToCoverBlock = (settings, name) => {
 	return settings;
 };
 
-// この関数をフィルターに追加
-addFilter(
-	'blocks.registerBlockType',
-	'custom/add-link-attributes',
-	addLinkAttributesToCoverBlock
-);
-
 const insertLinkIntoCoverBlock = (element, blockType, attributes) => {
-    if (!isCoverBlock(blockType.name)) {
-        return element;
-    }
+	if (blockType.name !== 'core/cover') {
+		return element;
+	}
 
-    const { linkUrl, linkTarget } = attributes;
+	const { linkUrl, linkTarget } = attributes;
 
-    if (!linkUrl) {
-        return element;
-    }
+	if (!linkUrl) {
+		return element;
+	}
 
-    // rel 属性の設定
-    const relAttribute = linkTarget === '_blank' ? 'noopener noreferrer' : undefined;
+	const blockProps = useBlockProps.save({
+		className: linkUrl ? `${element.props.className} has-link` : element.props.className,
+	});
 
-    return (
-        <div {...element.props}>
-            <a
-                href={linkUrl}
-                target={linkTarget || undefined}
-                rel={relAttribute}
-                className="wp-block-cover-vk-link"
-            >
-                <span className="screen-reader-text">Cover link</span>
-            </a>
-            {element.props.children}
-        </div>
-    );
+	// rel 属性の設定
+	const relAttribute = linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
+
+	return (
+		<div {...blockProps}>
+			<a
+				href={linkUrl}
+				target={linkTarget}
+				rel={relAttribute}
+				aria-label={__('Cover link', 'vk-blocks-pro')}
+				className="wp-block-cover-vk-link"
+			></a>
+			{element.props.children}
+		</div>
+	);
 };
 
-addFilter(
-	'blocks.getSaveElement',
-	'custom/insert-link-into-cover-block',
-	insertLinkIntoCoverBlock
-);
+addFilter('editor.BlockEdit', 'custom/enhance-cover-block', enhanceCoverBlock);
+addFilter('blocks.registerBlockType', 'custom/add-link-attributes', addLinkAttributesToCoverBlock);
+addFilter('blocks.getSaveElement', 'custom/insert-link-into-cover-block', insertLinkIntoCoverBlock);

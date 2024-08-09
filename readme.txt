@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] Delete width setting from sidebar.
+
 = 1.81.0 =
 [ Add function ][ Table ] Add horizontal scrolling Setting.
 [ Specification Change ] Add a circle style to the image block.

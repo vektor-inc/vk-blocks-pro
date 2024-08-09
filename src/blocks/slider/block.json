@@ -43,8 +43,7 @@
 			"type": "string"
 		},
 		"width": {
-			"type": "string",
-			"default": ""
+			"type": "string"
 		},
 		"loop": {
 			"type": "boolean",

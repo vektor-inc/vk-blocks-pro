@@ -12,7 +12,7 @@
 	"attributes": {
 		"footerDisplay": {
 			"type": "string",
-			"default": "delete"
+			"default": "display"
 		}
 	}
 }

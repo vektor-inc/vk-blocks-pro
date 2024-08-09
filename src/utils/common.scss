@@ -1267,7 +1267,7 @@ $xxl-min: 1400px;
 .wp-block-columns {
 	/* カラムの方向 */
 	&.wp-block-columns.is-vk-row-reverse {
-    	flex-direction: row-reverse;
+		flex-direction: row-reverse;
 	}
 	.wp-block-column {
 		/* リンク設定 */

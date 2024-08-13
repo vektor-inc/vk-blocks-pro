@@ -27,7 +27,6 @@ import {
 	SelectControl,
 	ToggleControl,
 	ToolbarGroup,
-	FocalPointPicker,
 } from '@wordpress/components';
 import {
 	InspectorControls,
@@ -36,7 +35,7 @@ import {
 	BlockControls,
 	BlockAlignmentToolbar,
 } from '@wordpress/block-editor';
-import { useEffect, useRef } from '@wordpress/element';
+import { useEffect } from '@wordpress/element';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 
 export default function OuterEdit(props) {
@@ -47,7 +46,6 @@ export default function OuterEdit(props) {
 		bgImageTablet,
 		bgImageMobile,
 		bgPosition,
-		bgFocalPoint,
 		outerWidth,
 		padding_left_and_right, //eslint-disable-line camelcase
 		padding_top_and_bottom, //eslint-disable-line camelcase
@@ -340,63 +338,8 @@ export default function OuterEdit(props) {
 			[key]: toNumber(value, min, max),
 		});
 	};
-	
-	// useRefの定義
-	const blockRef = useRef(null);
-
-	// フォーカルポイントを背景位置に変換する関数
-	const coordsToBackgroundPosition = (value) => {
-		if (!value || (isNaN(value.x) && isNaN(value.y))) {
-			return '50% 50%';
-		}
-
-		const x = isNaN(value.x) ? 0.5 : value.x;
-		const y = isNaN(value.y) ? 0.5 : value.y;
-
-		return `${x * 100}% ${y * 100}%`;
-	};
-
-	// 背景位置をリアルタイムで更新する関数
-	const updateBackgroundPosition = (value) => {
-		if (blockRef.current) {
-			blockRef.current.style.backgroundPosition = coordsToBackgroundPosition(value);
-		}
-	};
-
-	const onChangeBgFocalPoint = (value) => {
-		// 画像が消された場合、フォーカルポイントを50% 50%にリセット
-		if (!bgImage) {
-			value = { x: 0.5, y: 0.5 };
-		}
-
-		// ドラッグ中にリアルタイムで背景位置を更新
-		if (blockRef.current) {
-			updateBackgroundPosition(value);
-		}
-
-		// 最終位置を保存
-		setAttributes({ bgFocalPoint: value });
-	};
-
-	useEffect(() => {
-		if (blockRef.current) {
-			blockRef.current.style.backgroundPosition = coordsToBackgroundPosition(bgFocalPoint);
-		}
-	}, [bgFocalPoint]);
-
-	useEffect(() => {
-		if (!bgImage && (bgFocalPoint.x !== 0.5 || bgFocalPoint.y !== 0.5)) {
-			setAttributes({ bgFocalPoint: { x: 0.5, y: 0.5 } });
-		}
-	}, [bgImage]);
 
 	const blockProps = useBlockProps({
-		ref: blockRef,
-		style: {
-			backgroundImage: `url(${bgImage})`,
-			backgroundPosition: `${bgFocalPoint.x * 100}% ${bgFocalPoint.y * 100}%`,
-			minHeight: `${minHeightValuePC}${minHeightUnit}`,
-		},
 		className: classnames(
 			`vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 			{
@@ -412,8 +355,20 @@ export default function OuterEdit(props) {
 					minHeightValueMobile > 0,
 			}
 		),
-	});	
-	
+		style: {
+			...borderStyleProperty,
+			'--min-height-mobile': minHeightValueMobile
+				? `${minHeightValueMobile}${minHeightUnit}`
+				: undefined,
+			'--min-height-tablet': minHeightValueTablet
+				? `${minHeightValueTablet}${minHeightUnit}`
+				: undefined,
+			'--min-height-pc': minHeightValuePC
+				? `${minHeightValuePC}${minHeightUnit}`
+				: undefined,
+		},
+	});
+
 	// minHeightUnit に基づいて動的に最大値を設定
 	const getMaxHeight = (unit) => {
 		switch (unit) {
@@ -533,16 +488,6 @@ export default function OuterEdit(props) {
 							{...props}
 						/>
 					</BaseControl>
-					<BaseControl label={__('Focal Point Picker', 'vk-blocks-pro')}>
-						<FocalPointPicker
-							url={bgImage}
-							value={bgFocalPoint}
-							onChange={onChangeBgFocalPoint}
-							onDrag={ (x, y) => {
-							  updateBackgroundPosition(x, y);
-							}}
-						/>
-					</BaseControl>
 					<BaseControl
 						label={__('Background image Position', 'vk-blocks-pro')}
 						help=""
@@ -565,7 +510,6 @@ export default function OuterEdit(props) {
 										'vk-blocks-pro'
 									),
 									value: 'fixed',
-									help: __('This will not work on iPhone.', 'vk-blocks-pro')
 								},
 								{
 									label: __(

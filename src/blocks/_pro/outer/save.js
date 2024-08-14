@@ -101,25 +101,24 @@ export default function save(props) {
 		classBgPosition = 'vk_outer-bgPosition-normal';
 	}
 
-	//classPaddingLRのクラス切り替え
+	// classPaddingLRのクラス切り替え
 	classPaddingLR = '';
-	//eslint-disable-next-line camelcase
-	if (padding_left_and_right === '0') {
-		classPaddingLR = 'vk_outer-paddingLR-none';
-		//eslint-disable-next-line camelcase
+	if (
+		padding_left_and_right === '0' ||
+		padding_left_and_right === 'vk_outer-paddingLR-none'
+	) {
+		classPaddingLR = ` is-layout-constrained container`;
 	} else if (padding_left_and_right === '1') {
-		classPaddingLR = 'vk_outer-paddingLR-use';
-		//eslint-disable-next-line camelcase
+		classPaddingLR = ` vk_outer-paddingLR-use`;
 	} else if (padding_left_and_right === '2') {
-		// Fit to content area width
-		classPaddingLR = 'vk_outer-paddingLR-zero';
+		classPaddingLR = ` vk_outer-paddingLR-zero`;
 	}
 
-	//classPaddingVerticalのクラス切り替
-	//eslint-disable-next-line camelcase
+	// classPaddingVerticalのクラス切り替え
+	classPaddingVertical = '';
 	if (padding_top_and_bottom === '1') {
 		classPaddingVertical = 'vk_outer-paddingVertical-use';
-	} else {
+	} else if (padding_top_and_bottom === '0') {
 		classPaddingVertical = 'vk_outer-paddingVertical-none';
 	}
 
@@ -235,6 +234,10 @@ export default function save(props) {
 			'--min-height-pc': minHeightValuePC
 				? `${minHeightValuePC}${minHeightUnit}`
 				: undefined,
+			'paddingLeft': padding_left_and_right === '0' ? '0' : '',
+			'paddingRight': padding_left_and_right === '0' ? '0' : '',
+			'paddingTop': padding_top_and_bottom === '0' ? '0' : '',
+			'paddingBottom': padding_top_and_bottom === '0' ? '0' : ''
 		},
 	});
 

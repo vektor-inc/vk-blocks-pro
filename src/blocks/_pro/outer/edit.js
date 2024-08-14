@@ -222,27 +222,72 @@ export default function OuterEdit(props) {
 		classBgPosition = 'vk_outer-bgPosition-normal';
 	}
 
-	//classPaddingLRのクラス切り替え
+	// classPaddingLRのクラス切り替え
 	classPaddingLR = '';
-	//eslint-disable-next-line camelcase
-	if (padding_left_and_right === '0') {
-		classPaddingLR = 'vk_outer-paddingLR-none';
-		//eslint-disable-next-line camelcase
+	let paddingValueLR = '';
+
+	if (
+		padding_left_and_right === '0' ||
+		padding_left_and_right === 'vk_outer-paddingLR-none'
+	) {
+		classPaddingLR = `is-layout-constrained`;
+		paddingValueLR = '0';
 	} else if (padding_left_and_right === '1') {
-		classPaddingLR = 'vk_outer-paddingLR-use';
-		//eslint-disable-next-line camelcase
+		classPaddingLR = `vk_outer-paddingLR-use`;
+		paddingValueLR = '4em';
 	} else if (padding_left_and_right === '2') {
-		// Fit to content area width
-		classPaddingLR = 'vk_outer-paddingLR-zero';
+		classPaddingLR = `vk_outer-paddingLR-zero`;
+		paddingValueLR = '0';
 	}
 
-	//classPaddingVerticalのクラス切り替
-	//eslint-disable-next-line camelcase
+	if (classPaddingLR === `is-layout-constrained` || classPaddingLR === '') {
+		classPaddingLR = classnames(classPaddingLR, 'container');
+	}
+
+	// classPaddingVerticalのクラス切り替え
+	let paddingValueVertical = '';
 	if (padding_top_and_bottom === '1') {
+		paddingValueVertical = '4em';
 		classPaddingVertical = 'vk_outer-paddingVertical-use';
-	} else {
+	} else if (padding_top_and_bottom === '0') {
+		paddingValueVertical = '0';
 		classPaddingVertical = 'vk_outer-paddingVertical-none';
 	}
+
+	// スタイルを useEffect で設定
+	useEffect(() => {
+		const currentPadding = attributes?.style?.spacing?.padding || {};
+
+		const needsUpdate =
+			paddingValueLR !== currentPadding.left ||
+			paddingValueLR !== currentPadding.right ||
+			paddingValueVertical !== currentPadding.top ||
+			paddingValueVertical !== currentPadding.bottom;
+
+		if (needsUpdate) {
+			setAttributes((prevAttrs) => ({
+				...prevAttrs,
+				style: {
+					...prevAttrs.style,
+					spacing: {
+						...prevAttrs.style?.spacing,
+						padding: {
+							...currentPadding,
+							left: paddingValueLR,
+							right: paddingValueLR,
+							top: paddingValueVertical,
+							bottom: paddingValueVertical,
+						},
+					},
+				},
+			}));
+		}
+	}, [
+		paddingValueLR,
+		paddingValueVertical,
+		padding_top_and_bottom,
+		attributes?.style?.spacing?.padding,
+	]);
 
 	//上側セクションの傾き切り替
 	//eslint-disable-next-line camelcase

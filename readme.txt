@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Post list (Pro) / selected post list(Pro) / Child page list (Pro) ] Fix error when 'new_date' attribute is empty.
 [ Add function ][ Core Cover ] Add toolbar link for components.
 [ Specification Change ] Delete width setting from sidebar.
 

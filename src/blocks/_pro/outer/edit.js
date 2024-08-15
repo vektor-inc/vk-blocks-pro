@@ -79,11 +79,11 @@ export default function OuterEdit(props) {
 		blockId,
 	} = attributes;
 
-	let classPaddingLR;
-	let classPaddingVertical;
-	let classBgPosition;
-	let whichSideUpper;
-	let whichSideLower;
+	let classPaddingLR = '';
+	let classPaddingVertical = '';
+	let classBgPosition = '';
+	let whichSideUpper = '';
+	let whichSideLower = '';
 
 	const containerClass = 'vk_outer_container';
 
@@ -204,14 +204,13 @@ export default function OuterEdit(props) {
 		</>
 	);
 
-	//幅のクラス切り替え
-	// eslint-disable-next-line prefer-const
+	// 幅のクラス切り替え
 	const classWidth =
 		outerWidth === 'full' || outerWidth === 'wide'
 			? `vk_outer-width-${outerWidth} align${outerWidth}`
 			: 'vk_outer-width-normal';
 
-	//classBgPositionのクラス切り替え
+	// classBgPositionのクラス切り替え
 	if (bgPosition === 'parallax') {
 		classBgPosition = 'vk_outer-bgPosition-parallax vk-prlx';
 	} else if (bgPosition === 'fixed') {
@@ -223,75 +222,22 @@ export default function OuterEdit(props) {
 	}
 
 	// classPaddingLRのクラス切り替え
-	classPaddingLR = '';
-	let paddingValueLR = '';
-
-	if (
-		padding_left_and_right === '0' ||
-		padding_left_and_right === 'vk_outer-paddingLR-none'
-	) {
-		classPaddingLR = `is-layout-constrained`;
-		paddingValueLR = '0';
+	if (padding_left_and_right === '0') {
+		classPaddingLR = `is-layout-constrained container`;
 	} else if (padding_left_and_right === '1') {
 		classPaddingLR = `vk_outer-paddingLR-use`;
-		paddingValueLR = '4em';
 	} else if (padding_left_and_right === '2') {
 		classPaddingLR = `vk_outer-paddingLR-zero`;
-		paddingValueLR = '0';
-	}
-
-	if (classPaddingLR === `is-layout-constrained` || classPaddingLR === '') {
-		classPaddingLR = classnames(classPaddingLR, 'container');
 	}
 
 	// classPaddingVerticalのクラス切り替え
-	let paddingValueVertical = '';
 	if (padding_top_and_bottom === '1') {
-		paddingValueVertical = '4em';
 		classPaddingVertical = 'vk_outer-paddingVertical-use';
 	} else if (padding_top_and_bottom === '0') {
-		paddingValueVertical = '0';
 		classPaddingVertical = 'vk_outer-paddingVertical-none';
 	}
 
-	// スタイルを useEffect で設定
-	useEffect(() => {
-		const currentPadding = attributes?.style?.spacing?.padding || {};
-
-		const needsUpdate =
-			paddingValueLR !== currentPadding.left ||
-			paddingValueLR !== currentPadding.right ||
-			paddingValueVertical !== currentPadding.top ||
-			paddingValueVertical !== currentPadding.bottom;
-
-		if (needsUpdate) {
-			setAttributes((prevAttrs) => ({
-				...prevAttrs,
-				style: {
-					...prevAttrs.style,
-					spacing: {
-						...prevAttrs.style?.spacing,
-						padding: {
-							...currentPadding,
-							left: paddingValueLR,
-							right: paddingValueLR,
-							top: paddingValueVertical,
-							bottom: paddingValueVertical,
-						},
-					},
-				},
-			}));
-		}
-	}, [
-		paddingValueLR,
-		paddingValueVertical,
-		padding_left_and_right,
-		padding_top_and_bottom,
-		attributes?.style?.spacing?.padding,
-	]);
-
-	//上側セクションの傾き切り替
-	//eslint-disable-next-line camelcase
+	// 上側セクションの傾き切り替え
 	if (!levelSettingPerDevice) {
 		if (upper_level) {
 			whichSideUpper = 'upper';
@@ -300,8 +246,7 @@ export default function OuterEdit(props) {
 		whichSideUpper = 'upper';
 	}
 
-	//下側セクションの傾き切り替
-	//eslint-disable-next-line camelcase
+	// 下側セクションの傾き切り替え
 	if (!levelSettingPerDevice) {
 		if (lower_level) {
 			whichSideLower = 'lower';
@@ -309,18 +254,18 @@ export default function OuterEdit(props) {
 	} else if (lower_level_mobile || lower_level_tablet || lower_level_pc) {
 		whichSideLower = 'lower';
 	}
-	//borderColorクリア時に白をセットする
+	// borderColorクリア時に白をセットする
 	if (borderColor === null || borderColor === undefined) {
 		setAttributes({ borderColor: '#fff' });
 	}
 
-	//Dividerエフェクトがない時のみ枠線を追
+	// Dividerエフェクトがない時のみ枠線を追
 	let borderStyleProperty = {};
 
 	if (!levelSettingPerDevice) {
 		if (
-			upper_level === 0 && //eslint-disable-line camelcase
-			lower_level === 0 && //eslint-disable-line camelcase
+			upper_level === 0 &&
+			lower_level === 0 &&
 			borderWidth > 0 &&
 			borderStyle !== 'none'
 		) {
@@ -333,21 +278,19 @@ export default function OuterEdit(props) {
 						: undefined,
 				borderRadius: `${borderRadius}px`,
 			};
-			//eslint-disable-next-line camelcase
 		} else if (upper_level !== 0 || lower_level !== 0) {
-			//eslint-disable-line camelcase
 			borderStyleProperty = {
 				border: `none`,
 				borderRadius: `0px`,
 			};
 		}
 	} else if (
-		upper_level_mobile === 0 && //eslint-disable-line camelcase
-		upper_level_tablet === 0 && //eslint-disable-line camelcase
-		upper_level_pc === 0 && //eslint-disable-line camelcase
-		lower_level_mobile === 0 && //eslint-disable-line camelcase
-		lower_level_tablet === 0 && //eslint-disable-line camelcase
-		lower_level_pc === 0 && //eslint-disable-line camelcase
+		upper_level_mobile === 0 &&
+		upper_level_tablet === 0 &&
+		upper_level_pc === 0 &&
+		lower_level_mobile === 0 &&
+		lower_level_tablet === 0 &&
+		lower_level_pc === 0 &&
 		borderWidth > 0 &&
 		borderStyle !== 'none'
 	) {
@@ -360,7 +303,6 @@ export default function OuterEdit(props) {
 					: undefined,
 			borderRadius: `${borderRadius}px`,
 		};
-		//eslint-disable-next-line camelcase
 	} else if (
 		upper_level_mobile !== 0 ||
 		upper_level_tablet !== 0 ||
@@ -369,7 +311,6 @@ export default function OuterEdit(props) {
 		lower_level_tablet !== 0 ||
 		lower_level_pc !== 0
 	) {
-		//eslint-disable-line camelcase
 		borderStyleProperty = {
 			border: `none`,
 			borderRadius: `0px`,
@@ -412,8 +353,27 @@ export default function OuterEdit(props) {
 			'--min-height-pc': minHeightValuePC
 				? `${minHeightValuePC}${minHeightUnit}`
 				: undefined,
+			...(classPaddingLR === 'vk_outer-paddingLR-use' && {
+				paddingLeft: '4em',
+				paddingRight: '4em',
+			}),
+			...(classPaddingLR === 'vk_outer-paddingLR-zero' && {
+				paddingLeft: '0',
+				paddingRight: '0',
+			}),
+			paddingTop: '',
+			paddingBottom: '',
 		},
 	});
+	
+	// paddingTop と paddingBottom の設定
+	if (padding_top_and_bottom === '0') {
+		blockProps.style.paddingTop = '0';
+		blockProps.style.paddingBottom = '0';
+	} else if (padding_top_and_bottom === '1') {
+		blockProps.style.paddingTop = '4em';
+		blockProps.style.paddingBottom = '4em';
+	}	
 
 	// minHeightUnit に基づいて動的に最大値を設定
 	const getMaxHeight = (unit) => {
@@ -641,6 +601,7 @@ export default function OuterEdit(props) {
 									padding_top_and_bottom: value,
 								})
 							}
+							allowUndefined={false}
 						/>
 						<p>
 							{__(

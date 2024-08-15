@@ -5,7 +5,6 @@
  * @package vektor-inc/vk-blocks-pro
  */
 
-
 /**
  * スペーサーのサイズ（数値）を取得する関数
  *

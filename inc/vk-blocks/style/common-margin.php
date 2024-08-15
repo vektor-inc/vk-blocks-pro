@@ -1,5 +1,12 @@
 <?php
 /**
+ * Common Margin CSS
+ *
+ * @package vektor-inc/vk-blocks-pro
+ */
+
+
+/**
  * スペーサーのサイズ（数値）を取得する関数
  *
  * @param array  $options VK Blocks 共通オプション.

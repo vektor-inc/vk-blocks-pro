@@ -224,19 +224,22 @@ export default function OuterEdit(props) {
 
 	// classPaddingLRのクラス切り替え
 	classPaddingLR = '';
+	//eslint-disable-next-line camelcase
 	let paddingValueLR = '';
 
 	if (
 		padding_left_and_right === '0' ||
 		padding_left_and_right === 'vk_outer-paddingLR-none'
 	) {
-		classPaddingLR = `is-layout-constrained`;
+		classPaddingLR = 'is-layout-constrained';
 		paddingValueLR = '0';
 	} else if (padding_left_and_right === '1') {
-		classPaddingLR = `vk_outer-paddingLR-use`;
+		classPaddingLR = 'vk_outer-paddingLR-use';
+		//eslint-disable-next-line camelcase
 		paddingValueLR = '4em';
 	} else if (padding_left_and_right === '2') {
-		classPaddingLR = `vk_outer-paddingLR-zero`;
+		// Fit to content area width
+		classPaddingLR = 'vk_outer-paddingLR-zero';
 		paddingValueLR = '0';
 	}
 
@@ -246,6 +249,7 @@ export default function OuterEdit(props) {
 
 	// classPaddingVerticalのクラス切り替え
 	let paddingValueVertical = '';
+	//eslint-disable-next-line camelcase
 	if (padding_top_and_bottom === '1') {
 		paddingValueVertical = '4em';
 		classPaddingVertical = 'vk_outer-paddingVertical-use';
@@ -254,7 +258,7 @@ export default function OuterEdit(props) {
 		classPaddingVertical = 'vk_outer-paddingVertical-none';
 	}
 
-	// スタイルを useEffect で設定
+	// paddingスタイル設定
 	useEffect(() => {
 		const currentPadding = attributes?.style?.spacing?.padding || {};
 
@@ -290,7 +294,7 @@ export default function OuterEdit(props) {
 		attributes?.style?.spacing?.padding,
 	]);
 
-	//上側セクションの傾き切り替
+	//上側セクションの傾き切り替え
 	//eslint-disable-next-line camelcase
 	if (!levelSettingPerDevice) {
 		if (upper_level) {
@@ -300,7 +304,7 @@ export default function OuterEdit(props) {
 		whichSideUpper = 'upper';
 	}
 
-	//下側セクションの傾き切り替
+	//下側セクションの傾き切り替え
 	//eslint-disable-next-line camelcase
 	if (!levelSettingPerDevice) {
 		if (lower_level) {

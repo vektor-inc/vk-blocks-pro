@@ -20,38 +20,38 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 export default function save(props) {
 	const { attributes } = props;
 	const {
-		bgColor = '',
-		bgPosition = '',
-		bgImageMobile = '',
-		bgImageTablet = '',
-		bgImage = '',
-		outerWidth = 'normal',
-		padding_left_and_right = '0', //eslint-disable-line camelcase
-		padding_top_and_bottom = '0', //eslint-disable-line camelcase
-		opacity = 1,
-		levelSettingPerDevice = false,
-		upper_level = 0, //eslint-disable-line camelcase
-		upper_level_mobile = 0, //eslint-disable-line camelcase
-		upper_level_tablet = 0, //eslint-disable-line camelcase
-		upper_level_pc = 0, //eslint-disable-line camelcase
-		lower_level = 0, //eslint-disable-line camelcase
-		lower_level_mobile = 0, //eslint-disable-line camelcase
-		lower_level_tablet = 0, //eslint-disable-line camelcase
-		lower_level_pc = 0, //eslint-disable-line camelcase
-		upperDividerBgColor = '',
-		lowerDividerBgColor = '',
-		dividerType = '',
-		borderWidth = 0,
-		borderStyle = 'none',
-		borderColor = '',
-		borderRadius = 0,
-		minHeightValuePC = 0,
-		minHeightValueTablet = 0,
-		minHeightValueMobile = 0,
-		minHeightUnit = 'px',
-		blockId = '',
-		linkUrl = '',
-		linkTarget = '_self',
+		bgColor,
+		bgPosition,
+		bgImageMobile,
+		bgImageTablet,
+		bgImage,
+		outerWidth,
+		padding_left_and_right, //eslint-disable-line camelcase
+		padding_top_and_bottom, //eslint-disable-line camelcase
+		opacity,
+		levelSettingPerDevice,
+		upper_level, //eslint-disable-line camelcase
+		upper_level_mobile, //eslint-disable-line camelcase
+		upper_level_tablet, //eslint-disable-line camelcase
+		upper_level_pc, //eslint-disable-line camelcase
+		lower_level, //eslint-disable-line camelcase
+		lower_level_mobile, //eslint-disable-line camelcase
+		lower_level_tablet, //eslint-disable-line camelcase
+		lower_level_pc, //eslint-disable-line camelcase
+		upperDividerBgColor,
+		lowerDividerBgColor,
+		dividerType,
+		borderWidth,
+		borderStyle,
+		borderColor,
+		borderRadius,
+		minHeightValuePC,
+		minHeightValueTablet,
+		minHeightValueMobile,
+		minHeightUnit,
+		blockId,
+		linkUrl,
+		linkTarget,
 	} = attributes;
 
 	let classPaddingLR;
@@ -103,19 +103,22 @@ export default function save(props) {
 
 	// classPaddingLRのクラス切り替え
 	classPaddingLR = '';
+	//eslint-disable-next-line camelcase
 	let paddingValueLR = '';
 
 	if (
 		padding_left_and_right === '0' ||
 		padding_left_and_right === 'vk_outer-paddingLR-none'
 	) {
-		classPaddingLR = `is-layout-constrained`;
+		classPaddingLR = 'is-layout-constrained';
 		paddingValueLR = '0';
 	} else if (padding_left_and_right === '1') {
-		classPaddingLR = `vk_outer-paddingLR-use`;
+		classPaddingLR = 'vk_outer-paddingLR-use';
+		//eslint-disable-next-line camelcase
 		paddingValueLR = '4em';
 	} else if (padding_left_and_right === '2') {
-		classPaddingLR = `vk_outer-paddingLR-zero`;
+		// Fit to content area width
+		classPaddingLR = 'vk_outer-paddingLR-zero';
 		paddingValueLR = '0';
 	}
 
@@ -125,6 +128,7 @@ export default function save(props) {
 
 	// classPaddingVerticalのクラス切り替え
 	let paddingValueVertical = '';
+	//eslint-disable-next-line camelcase
 	if (padding_top_and_bottom === '1') {
 		paddingValueVertical = '4em';
 		classPaddingVertical = 'vk_outer-paddingVertical-use';
@@ -134,6 +138,7 @@ export default function save(props) {
 	}
 
 	// 上側セクションの傾き切り替え
+	//eslint-disable-next-line camelcase
 	if (!levelSettingPerDevice) {
 		if (upper_level) {
 			whichSideUpper = 'upper';
@@ -143,6 +148,7 @@ export default function save(props) {
 	}
 
 	// 下側セクションの傾き切り替え
+	//eslint-disable-next-line camelcase
 	if (!levelSettingPerDevice) {
 		if (lower_level) {
 			whichSideLower = 'lower';
@@ -172,7 +178,9 @@ export default function save(props) {
 						: undefined,
 				borderRadius: `${borderRadius}px`,
 			};
+			//eslint-disable-next-line camelcase
 		} else if (upper_level !== 0 || lower_level !== 0) {
+			//eslint-disable-next-line camelcase
 			borderStyleProperty = {
 				border: `none`,
 				borderRadius: `0px`,
@@ -197,6 +205,7 @@ export default function save(props) {
 					: undefined,
 			borderRadius: `${borderRadius}px`,
 		};
+		//eslint-disable-next-line camelcase
 	} else if (
 		upper_level_mobile !== 0 ||
 		upper_level_tablet !== 0 ||
@@ -205,6 +214,7 @@ export default function save(props) {
 		lower_level_tablet !== 0 ||
 		lower_level_pc !== 0
 	) {
+		//eslint-disable-next-line camelcase
 		borderStyleProperty = {
 			border: `none`,
 			borderRadius: `0px`,

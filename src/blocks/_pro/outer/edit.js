@@ -254,42 +254,41 @@ export default function OuterEdit(props) {
 		classPaddingVertical = 'vk_outer-paddingVertical-none';
 	}
 
-// スタイルを useEffect で設定
-useEffect(() => {
-    const currentPadding = attributes?.style?.spacing?.padding || {};
+	// スタイルを useEffect で設定
+	useEffect(() => {
+		const currentPadding = attributes?.style?.spacing?.padding || {};
 
-    const needsUpdate =
-        paddingValueLR !== currentPadding.left ||
-        paddingValueLR !== currentPadding.right ||
-        paddingValueVertical !== currentPadding.top ||
-        paddingValueVertical !== currentPadding.bottom;
+		const needsUpdate =
+			paddingValueLR !== currentPadding.left ||
+			paddingValueLR !== currentPadding.right ||
+			paddingValueVertical !== currentPadding.top ||
+			paddingValueVertical !== currentPadding.bottom;
 
-    if (needsUpdate) {
-        setAttributes((prevAttrs) => ({
-            ...prevAttrs,
-            style: {
-                ...prevAttrs.style,
-                spacing: {
-                    ...prevAttrs.style?.spacing,
-                    padding: {
-                        ...currentPadding,
-                        left: paddingValueLR,
-                        right: paddingValueLR,
-                        top: paddingValueVertical,
-                        bottom: paddingValueVertical,
-                    },
-                },
-            },
-        }));
-    }
-}, [
-    paddingValueLR,
-    paddingValueVertical,
-    padding_left_and_right,
-    padding_top_and_bottom,
-    attributes?.style?.spacing?.padding,
-]);
-
+		if (needsUpdate) {
+			setAttributes((prevAttrs) => ({
+				...prevAttrs,
+				style: {
+					...prevAttrs.style,
+					spacing: {
+						...prevAttrs.style?.spacing,
+						padding: {
+							...currentPadding,
+							left: paddingValueLR,
+							right: paddingValueLR,
+							top: paddingValueVertical,
+							bottom: paddingValueVertical,
+						},
+					},
+				},
+			}));
+		}
+	}, [
+		paddingValueLR,
+		paddingValueVertical,
+		padding_left_and_right,
+		padding_top_and_bottom,
+		attributes?.style?.spacing?.padding,
+	]);
 
 	//上側セクションの傾き切り替
 	//eslint-disable-next-line camelcase

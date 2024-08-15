@@ -221,3 +221,20 @@ function vk_blocks_get_spacer_size_style_all( $options ) {
 	}
 	return $dynamic_css;
 }
+
+/**
+ * VK Blocks Assets
+ */
+function vk_blocks_print_spacer_size_style() {
+	$vk_blocks_options = VK_Blocks_Options::get_options();
+
+	$dynamic_css = vk_blocks_get_spacer_size_style_all( $vk_blocks_options );
+
+	$dynamic_css = vk_blocks_minify_css( $dynamic_css );
+
+	wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );
+	wp_add_inline_style( 'vk-blocks-utils-common-css', $dynamic_css );
+	// // --vk_image-mask-waveはコアの画像ブロックに依存するのでwp-edit-blocksを追加
+	wp_add_inline_style( 'wp-edit-blocks', $dynamic_css );
+}
+add_action( 'init', 'vk_blocks_print_spacer_size_style', 10 );

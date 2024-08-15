@@ -108,6 +108,7 @@ e.g.
 
 [ Add function ][ Core Cover ] Add toolbar link for components.
 [ Specification Change ] Delete width setting from sidebar.
+[ Specification Change ] Refactor
 
 = 1.81.0 =
 [ Add function ][ Table ] Add horizontal scrolling Setting.

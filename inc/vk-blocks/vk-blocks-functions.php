@@ -149,8 +149,6 @@ function vk_blocks_blocks_assets() {
 		}
 	';
 
-	$dynamic_css .= vk_blocks_get_spacer_size_style_all( $vk_blocks_options );
-
 	// Pro版のためfunction_existsを挟む
 	if ( function_exists( 'vk_blocks_get_custom_format_lists_inline_css' ) ) {
 		$dynamic_css .= vk_blocks_get_custom_format_lists_inline_css();

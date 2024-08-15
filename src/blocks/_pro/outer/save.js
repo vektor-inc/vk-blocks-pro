@@ -52,7 +52,6 @@ export default function save(props) {
 		blockId = '',
 		linkUrl = '',
 		linkTarget = '_self',
-		className = '',
 	} = attributes;
 
 	let classPaddingLR;
@@ -103,33 +102,35 @@ export default function save(props) {
 	}
 
 	// classPaddingLRのクラス切り替え
-	let paddingLeft, paddingRight;
 	classPaddingLR = '';
+	let paddingValueLR = '';
 
 	if (
 		padding_left_and_right === '0' ||
 		padding_left_and_right === 'vk_outer-paddingLR-none'
 	) {
-		classPaddingLR = `is-layout-constrained container`;
-		paddingLeft = undefined;
-		paddingRight = undefined;
+		classPaddingLR = `is-layout-constrained`;
+		paddingValueLR = '0';
 	} else if (padding_left_and_right === '1') {
-		paddingLeft = '4em';
-		paddingRight = '4em';
+		classPaddingLR = `vk_outer-paddingLR-use`;
+		paddingValueLR = '4em';
 	} else if (padding_left_and_right === '2') {
-		paddingLeft = '0';
-		paddingRight = '0';
+		classPaddingLR = `vk_outer-paddingLR-zero`;
+		paddingValueLR = '0';
+	}
+
+	if (classPaddingLR === `is-layout-constrained` || classPaddingLR === '') {
+		classPaddingLR = classnames(classPaddingLR, 'container');
 	}
 
 	// classPaddingVerticalのクラス切り替え
-	let paddingTop, paddingBottom;
-
+	let paddingValueVertical = '';
 	if (padding_top_and_bottom === '1') {
-		paddingTop = '4em';
-		paddingBottom = '4em';
+		paddingValueVertical = '4em';
+		classPaddingVertical = 'vk_outer-paddingVertical-use';
 	} else if (padding_top_and_bottom === '0') {
-		paddingTop = '0';
-		paddingBottom = '0';
+		paddingValueVertical = '0';
+		classPaddingVertical = 'vk_outer-paddingVertical-none';
 	}
 
 	// 上側セクションの傾き切り替え
@@ -212,7 +213,7 @@ export default function save(props) {
 
 	const blockProps = useBlockProps.save({
 		className: classnames(
-			`vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition} ${className}`,
+			`vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 			{
 				[`has-border-color`]:
 					borderStyle !== 'none' && borderColor !== undefined,
@@ -228,6 +229,10 @@ export default function save(props) {
 		),
 		style: {
 			...borderStyleProperty,
+			paddingLeft: paddingValueLR,
+			paddingRight: paddingValueLR,
+			paddingTop: paddingValueVertical,
+			paddingBottom: paddingValueVertical,
 			'--min-height-mobile': minHeightValueMobile
 				? `${minHeightValueMobile}${minHeightUnit}`
 				: undefined,
@@ -237,10 +242,6 @@ export default function save(props) {
 			'--min-height-pc': minHeightValuePC
 				? `${minHeightValuePC}${minHeightUnit}`
 				: undefined,
-			paddingLeft,
-			paddingRight,
-			paddingTop,
-			paddingBottom,
 		},
 	});
 

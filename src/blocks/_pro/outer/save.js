@@ -207,6 +207,19 @@ export default function save(props) {
 		};
 	}
 
+	let paddingLeft, paddingRight;
+
+	if (classPaddingLR.includes('container')) {
+		paddingLeft = undefined;
+		paddingRight = undefined;
+	} else if (padding_left_and_right === '0') {
+		paddingLeft = '0';
+		paddingRight = '0';
+	} else {
+		paddingLeft = '';
+		paddingRight = '';
+	}
+
 	const blockProps = useBlockProps.save({
 		className: classnames(
 			`vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
@@ -234,12 +247,30 @@ export default function save(props) {
 			'--min-height-pc': minHeightValuePC
 				? `${minHeightValuePC}${minHeightUnit}`
 				: undefined,
-			'paddingLeft': padding_left_and_right === '0' ? '0' : '',
-			'paddingRight': padding_left_and_right === '0' ? '0' : '',
-			'paddingTop': padding_top_and_bottom === '0' ? '0' : '',
-			'paddingBottom': padding_top_and_bottom === '0' ? '0' : ''
+			paddingLeft,
+			paddingRight,
+			paddingTop: '',
+			paddingBottom: '',
 		},
 	});
+
+	// paddingTop と paddingBottom の設定
+	if (padding_top_and_bottom === '0') {
+		blockProps.style.paddingTop = '0';
+		blockProps.style.paddingBottom = '0';
+	} else if (padding_top_and_bottom === '1') {
+		blockProps.style.paddingTop = '4em';
+		blockProps.style.paddingBottom = '4em';
+	}
+
+	// paddingTop と paddingBottom の設定
+	if (padding_top_and_bottom === '0') {
+		blockProps.style.paddingTop = '0';
+		blockProps.style.paddingBottom = '0';
+	} else if (padding_top_and_bottom === '1') {
+		blockProps.style.paddingTop = '4em';
+		blockProps.style.paddingBottom = '4em';
+	}
 
 	const relAttribute =
 		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';

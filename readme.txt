@@ -108,7 +108,7 @@ e.g.
 
 [ Add function ][ Core Cover ] Add toolbar link for components.
 [ Specification Change ] Delete width setting from sidebar.
-[ Specification Change ] Refactor
+[ Specification Change ] Change the location of the margin-related CSS code.
 
 = 1.81.0 =
 [ Add function ][ Table ] Add horizontal scrolling Setting.

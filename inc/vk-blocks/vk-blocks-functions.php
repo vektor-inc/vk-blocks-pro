@@ -14,6 +14,7 @@ require_once __DIR__ . '/utils/array-merge.php';
 require_once __DIR__ . '/utils/minify-css.php';
 require_once __DIR__ . '/style/balloon.php';
 require_once __DIR__ . '/style/hidden-extension.php';
+require_once __DIR__ . '/style/common-margin.php';
 require_once __DIR__ . '/extensions/core/list.php';
 require_once __DIR__ . '/view/responsive-br.php';
 require_once __DIR__ . '/view/class-vk-blocks-postlist.php';

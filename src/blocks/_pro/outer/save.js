@@ -114,10 +114,8 @@ export default function save(props) {
 		paddingValueLR = '0';
 	} else if (padding_left_and_right === '1') {
 		classPaddingLR = 'vk_outer-paddingLR-use';
-		//eslint-disable-next-line camelcase
 		paddingValueLR = '4em';
 	} else if (padding_left_and_right === '2') {
-		// Fit to content area width
 		classPaddingLR = 'vk_outer-paddingLR-zero';
 		paddingValueLR = '0';
 	}
@@ -126,16 +124,19 @@ export default function save(props) {
 		classPaddingLR = classnames(classPaddingLR, 'container');
 	}
 
-	// classPaddingVerticalのクラス切り替え
-	let paddingValueVertical = '';
-	//eslint-disable-next-line camelcase
-	if (padding_top_and_bottom === '1') {
-		paddingValueVertical = '4em';
-		classPaddingVertical = 'vk_outer-paddingVertical-use';
-	} else if (padding_top_and_bottom === '0') {
-		paddingValueVertical = '0';
-		classPaddingVertical = 'vk_outer-paddingVertical-none';
-	}
+// classPaddingVerticalのクラス切り替え
+let paddingValueVertical = '';
+if (padding_top_and_bottom === '1') {
+	paddingValueVertical = '4em';
+	classPaddingVertical = 'vk_outer-paddingVertical-use';
+} else if (padding_top_and_bottom === '0') {
+	paddingValueVertical = '0';
+	classPaddingVertical = 'vk_outer-paddingVertical-none';
+} else {
+	// padding_top_and_bottom に数値が設定されている場合、その値を反映
+	paddingValueVertical = padding_top_and_bottom;
+	classPaddingVertical = 'vk_outer-paddingVertical-custom';
+}
 
 	// 上側セクションの傾き切り替え
 	//eslint-disable-next-line camelcase
@@ -238,13 +239,11 @@ export default function save(props) {
 			}
 		),
 		style: {
-			...borderStyleProperty,
-			// パディング値が 0 でない場合のみスタイルを適用
-			...(paddingValueLR !== '0' && {
+			...(paddingValueLR !== '0' && paddingValueLR !== '4em' && {
 				paddingLeft: paddingValueLR,
 				paddingRight: paddingValueLR,
 			}),
-			...(paddingValueVertical !== '0' && {
+			...(paddingValueVertical !== '0' && paddingValueVertical !== '4em' && {
 				paddingTop: paddingValueVertical,
 				paddingBottom: paddingValueVertical,
 			}),
@@ -257,6 +256,7 @@ export default function save(props) {
 			'--min-height-pc': minHeightValuePC
 				? `${minHeightValuePC}${minHeightUnit}`
 				: undefined,
+			...borderStyleProperty,
 		},
 	});
 

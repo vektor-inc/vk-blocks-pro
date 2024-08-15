@@ -222,19 +222,31 @@ export default function OuterEdit(props) {
 	}
 
 	// classPaddingLRのクラス切り替え
+	let paddingLeft, paddingRight;
+	classPaddingLR = '';
+
 	if (padding_left_and_right === '0') {
 		classPaddingLR = `is-layout-constrained container`;
+		paddingLeft = undefined;
+		paddingRight = undefined;
 	} else if (padding_left_and_right === '1') {
-		classPaddingLR = `vk_outer-paddingLR-use`;
+		paddingLeft = '4em';
+		paddingRight = '4em';
 	} else if (padding_left_and_right === '2') {
-		classPaddingLR = `vk_outer-paddingLR-zero`;
+		paddingLeft = '0';
+		paddingRight = '0';
 	}
 
 	// classPaddingVerticalのクラス切り替え
+	let paddingTop, paddingBottom;
+	classPaddingVertical = '';
+
 	if (padding_top_and_bottom === '1') {
-		classPaddingVertical = 'vk_outer-paddingVertical-use';
+		paddingTop = '4em';
+		paddingBottom = '4em';
 	} else if (padding_top_and_bottom === '0') {
-		classPaddingVertical = 'vk_outer-paddingVertical-none';
+		paddingTop = '0';
+		paddingBottom = '0';
 	}
 
 	// 上側セクションの傾き切り替え
@@ -353,27 +365,12 @@ export default function OuterEdit(props) {
 			'--min-height-pc': minHeightValuePC
 				? `${minHeightValuePC}${minHeightUnit}`
 				: undefined,
-			...(classPaddingLR === 'vk_outer-paddingLR-use' && {
-				paddingLeft: '4em',
-				paddingRight: '4em',
-			}),
-			...(classPaddingLR === 'vk_outer-paddingLR-zero' && {
-				paddingLeft: '0',
-				paddingRight: '0',
-			}),
-			paddingTop: '',
-			paddingBottom: '',
+			paddingLeft,
+			paddingRight,
+			paddingTop,
+			paddingBottom,
 		},
 	});
-
-	// paddingTop と paddingBottom の設定
-	if (padding_top_and_bottom === '0') {
-		blockProps.style.paddingTop = '0';
-		blockProps.style.paddingBottom = '0';
-	} else if (padding_top_and_bottom === '1') {
-		blockProps.style.paddingTop = '4em';
-		blockProps.style.paddingBottom = '4em';
-	}
 
 	// minHeightUnit に基づいて動的に最大値を設定
 	const getMaxHeight = (unit) => {

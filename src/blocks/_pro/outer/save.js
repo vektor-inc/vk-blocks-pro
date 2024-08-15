@@ -114,21 +114,22 @@ export default function save(props) {
 		paddingLeft = undefined;
 		paddingRight = undefined;
 	} else if (padding_left_and_right === '1') {
-		classPaddingLR = `vk_outer-paddingLR-use`;
 		paddingLeft = '4em';
 		paddingRight = '4em';
 	} else if (padding_left_and_right === '2') {
-		classPaddingLR = `vk_outer-paddingLR-zero`;
 		paddingLeft = '0';
 		paddingRight = '0';
 	}
 
 	// classPaddingVerticalのクラス切り替え
-	classPaddingVertical = '';
+	let paddingTop, paddingBottom;
+
 	if (padding_top_and_bottom === '1') {
-		classPaddingVertical = 'vk_outer-paddingVertical-use';
+		paddingTop = '4em';
+		paddingBottom = '4em';
 	} else if (padding_top_and_bottom === '0') {
-		classPaddingVertical = 'vk_outer-paddingVertical-none';
+		paddingTop = '0';
+		paddingBottom = '0';
 	}
 
 	// 上側セクションの傾き切り替え
@@ -238,19 +239,10 @@ export default function save(props) {
 				: undefined,
 			paddingLeft,
 			paddingRight,
-			paddingTop: '',
-			paddingBottom: '',
+			paddingTop,
+			paddingBottom,
 		},
 	});
-
-	// paddingTop と paddingBottom の設定
-	if (padding_top_and_bottom === '0') {
-		blockProps.style.paddingTop = '0';
-		blockProps.style.paddingBottom = '0';
-	} else if (padding_top_and_bottom === '1') {
-		blockProps.style.paddingTop = '4em';
-		blockProps.style.paddingBottom = '4em';
-	}
 
 	const relAttribute =
 		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';

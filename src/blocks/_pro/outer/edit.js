@@ -365,7 +365,7 @@ export default function OuterEdit(props) {
 			paddingBottom: '',
 		},
 	});
-	
+
 	// paddingTop と paddingBottom の設定
 	if (padding_top_and_bottom === '0') {
 		blockProps.style.paddingTop = '0';
@@ -373,7 +373,7 @@ export default function OuterEdit(props) {
 	} else if (padding_top_and_bottom === '1') {
 		blockProps.style.paddingTop = '4em';
 		blockProps.style.paddingBottom = '4em';
-	}	
+	}
 
 	// minHeightUnit に基づいて動的に最大値を設定
 	const getMaxHeight = (unit) => {

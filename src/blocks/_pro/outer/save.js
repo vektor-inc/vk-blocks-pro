@@ -53,7 +53,7 @@ export default function save(props) {
 		linkUrl = '',
 		linkTarget = '_self',
 		className = '',
-	} = attributes;	
+	} = attributes;
 
 	let classPaddingLR;
 	let classPaddingVertical;
@@ -105,8 +105,11 @@ export default function save(props) {
 	// classPaddingLRのクラス切り替え
 	let paddingLeft, paddingRight;
 	classPaddingLR = '';
-	
-	if (padding_left_and_right === '0' || padding_left_and_right === 'vk_outer-paddingLR-none') {
+
+	if (
+		padding_left_and_right === '0' ||
+		padding_left_and_right === 'vk_outer-paddingLR-none'
+	) {
 		classPaddingLR = `is-layout-constrained container`;
 		paddingLeft = undefined;
 		paddingRight = undefined;

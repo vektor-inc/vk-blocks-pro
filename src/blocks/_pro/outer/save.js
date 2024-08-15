@@ -239,10 +239,15 @@ export default function save(props) {
 		),
 		style: {
 			...borderStyleProperty,
-			paddingLeft: paddingValueLR,
-			paddingRight: paddingValueLR,
-			paddingTop: paddingValueVertical,
-			paddingBottom: paddingValueVertical,
+			// パディング値が 0 でない場合のみスタイルを適用
+			...(paddingValueLR !== '0' && {
+				paddingLeft: paddingValueLR,
+				paddingRight: paddingValueLR,
+			}),
+			...(paddingValueVertical !== '0' && {
+				paddingTop: paddingValueVertical,
+				paddingBottom: paddingValueVertical,
+			}),
 			'--min-height-mobile': minHeightValueMobile
 				? `${minHeightValueMobile}${minHeightUnit}`
 				: undefined,

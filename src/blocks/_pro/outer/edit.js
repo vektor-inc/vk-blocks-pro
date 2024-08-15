@@ -261,13 +261,13 @@ export default function OuterEdit(props) {
 	// paddingスタイル設定
 	useEffect(() => {
 		const currentPadding = attributes?.style?.spacing?.padding || {};
-
+	
 		const needsUpdate =
 			paddingValueLR !== currentPadding.left ||
 			paddingValueLR !== currentPadding.right ||
 			paddingValueVertical !== currentPadding.top ||
 			paddingValueVertical !== currentPadding.bottom;
-
+	
 		if (needsUpdate) {
 			setAttributes((prevAttrs) => ({
 				...prevAttrs,

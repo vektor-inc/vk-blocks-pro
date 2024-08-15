@@ -261,13 +261,13 @@ export default function OuterEdit(props) {
 	// paddingスタイル設定
 	useEffect(() => {
 		const currentPadding = attributes?.style?.spacing?.padding || {};
-	
+
 		const needsUpdate =
 			paddingValueLR !== currentPadding.left ||
 			paddingValueLR !== currentPadding.right ||
 			paddingValueVertical !== currentPadding.top ||
 			paddingValueVertical !== currentPadding.bottom;
-	
+
 		if (needsUpdate) {
 			setAttributes((prevAttrs) => ({
 				...prevAttrs,
@@ -277,10 +277,10 @@ export default function OuterEdit(props) {
 						...prevAttrs.style?.spacing,
 						padding: {
 							...currentPadding,
-							left: paddingValueLR,
-							right: paddingValueLR,
-							top: paddingValueVertical,
-							bottom: paddingValueVertical,
+							left: paddingValueLR !== '0' && paddingValueLR !== '4em' ? paddingValueLR : undefined,
+							right: paddingValueLR !== '0' && paddingValueLR !== '4em' ? paddingValueLR : undefined,
+							top: paddingValueVertical !== '0' && paddingValueVertical !== '4em' ? paddingValueVertical : undefined,
+							bottom: paddingValueVertical !== '0' && paddingValueVertical !== '4em' ? paddingValueVertical : undefined,
 						},
 					},
 				},
@@ -294,17 +294,17 @@ export default function OuterEdit(props) {
 		attributes?.style?.spacing?.padding,
 	]);
 
-	//上側セクションの傾き切り替え
-	//eslint-disable-next-line camelcase
-	if (!levelSettingPerDevice) {
-		if (upper_level) {
+		//上側セクションの傾き切り替え
+		//eslint-disable-next-line camelcase
+		if (!levelSettingPerDevice) {
+			if (upper_level) {
+				whichSideUpper = 'upper';
+			}
+		} else if (upper_level_mobile || upper_level_tablet || upper_level_pc) {
 			whichSideUpper = 'upper';
 		}
-	} else if (upper_level_mobile || upper_level_tablet || upper_level_pc) {
-		whichSideUpper = 'upper';
-	}
 
-	//下側セクションの傾き切り替え
+		//下側セクションの傾き切り替え
 	//eslint-disable-next-line camelcase
 	if (!levelSettingPerDevice) {
 		if (lower_level) {

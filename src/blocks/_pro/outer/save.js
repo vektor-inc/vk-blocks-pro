@@ -124,19 +124,15 @@ export default function save(props) {
 		classPaddingLR = classnames(classPaddingLR, 'container');
 	}
 
-// classPaddingVerticalのクラス切り替え
-let paddingValueVertical = '';
-if (padding_top_and_bottom === '1') {
-	paddingValueVertical = '4em';
-	classPaddingVertical = 'vk_outer-paddingVertical-use';
-} else if (padding_top_and_bottom === '0') {
-	paddingValueVertical = '0';
-	classPaddingVertical = 'vk_outer-paddingVertical-none';
-} else {
-	// padding_top_and_bottom に数値が設定されている場合、その値を反映
-	paddingValueVertical = padding_top_and_bottom;
-	classPaddingVertical = 'vk_outer-paddingVertical-custom';
-}
+	// classPaddingVerticalのクラス切り替え
+	let paddingValueVertical = '';
+	if (padding_top_and_bottom === '1') {
+		paddingValueVertical = '4em';
+		classPaddingVertical = 'vk_outer-paddingVertical-use';
+	} else if (padding_top_and_bottom === '0') {
+		paddingValueVertical = '0';
+		classPaddingVertical = 'vk_outer-paddingVertical-none';
+	}
 
 	// 上側セクションの傾き切り替え
 	//eslint-disable-next-line camelcase
@@ -226,16 +222,9 @@ if (padding_top_and_bottom === '1') {
 		className: classnames(
 			`vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 			{
-				[`has-border-color`]:
-					borderStyle !== 'none' && borderColor !== undefined,
-				[`has-${borderColor}-border-color`]:
-					borderStyle !== 'none' &&
-					borderColor !== undefined &&
-					!isHexColor(borderColor),
-				[`vk_outer-minHeight`]:
-					minHeightValuePC > 0 ||
-					minHeightValueTablet > 0 ||
-					minHeightValueMobile > 0,
+				[`has-border-color`]: borderStyle !== 'none' && borderColor !== undefined,
+				[`has-${borderColor}-border-color`]: borderStyle !== 'none' && borderColor !== undefined && !isHexColor(borderColor),
+				[`vk_outer-minHeight`]: minHeightValuePC > 0 || minHeightValueTablet > 0 || minHeightValueMobile > 0,
 			}
 		),
 		style: {
@@ -247,19 +236,13 @@ if (padding_top_and_bottom === '1') {
 				paddingTop: paddingValueVertical,
 				paddingBottom: paddingValueVertical,
 			}),
-			'--min-height-mobile': minHeightValueMobile
-				? `${minHeightValueMobile}${minHeightUnit}`
-				: undefined,
-			'--min-height-tablet': minHeightValueTablet
-				? `${minHeightValueTablet}${minHeightUnit}`
-				: undefined,
-			'--min-height-pc': minHeightValuePC
-				? `${minHeightValuePC}${minHeightUnit}`
-				: undefined,
+			'--min-height-mobile': minHeightValueMobile ? `${minHeightValueMobile}${minHeightUnit}` : undefined,
+			'--min-height-tablet': minHeightValueTablet ? `${minHeightValueTablet}${minHeightUnit}` : undefined,
+			'--min-height-pc': minHeightValuePC ? `${minHeightValuePC}${minHeightUnit}` : undefined,
 			...borderStyleProperty,
 		},
 	});
-
+	
 	const relAttribute =
 		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
 	const GetLinkUrl = (

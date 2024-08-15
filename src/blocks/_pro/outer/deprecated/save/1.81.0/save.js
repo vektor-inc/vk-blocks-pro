@@ -25,9 +25,6 @@ export default function save(props) {
 		bgImageMobile,
 		bgImageTablet,
 		bgImage,
-		bgFocalPoint,
-		bgFocalPointTablet,
-		bgFocalPointMobile,
 		outerWidth,
 		padding_left_and_right, //eslint-disable-line camelcase
 		padding_top_and_bottom, //eslint-disable-line camelcase
@@ -87,23 +84,13 @@ export default function save(props) {
 		</>
 	);
 
-	const backgroundStyles = {
-		backgroundImage:
-			bgImageMobile ? `url(${bgImageMobile})` :
-			bgImageTablet ? `url(${bgImageTablet})` :
-			bgImage ? `url(${bgImage})` : undefined,
-		backgroundPosition:
-			bgImageMobile ? `${bgFocalPointMobile.x * 100}% ${bgFocalPointMobile.y * 100}%` :
-			bgImageTablet ? `${bgFocalPointTablet.x * 100}% ${bgFocalPointTablet.y * 100}%` :
-			bgImage ? `${bgFocalPoint.x * 100}% ${bgFocalPoint.y * 100}%` : undefined,
-		minHeight: minHeightValuePC ? `${minHeightValuePC}${minHeightUnit}` : undefined,
-	};
-
+	//幅のクラス切り替え
 	const classWidth =
 		outerWidth === 'full' || outerWidth === 'wide'
 			? `vk_outer-width-${outerWidth} align${outerWidth}`
 			: 'vk_outer-width-normal';
 
+	//classBgPositionのクラス切り替え
 	if (bgPosition === 'parallax') {
 		classBgPosition = 'vk_outer-bgPosition-parallax vk-prlx';
 	} else if (bgPosition === 'fixed') {
@@ -114,21 +101,30 @@ export default function save(props) {
 		classBgPosition = 'vk_outer-bgPosition-normal';
 	}
 
+	//classPaddingLRのクラス切り替え
 	classPaddingLR = '';
+	//eslint-disable-next-line camelcase
 	if (padding_left_and_right === '0') {
 		classPaddingLR = 'vk_outer-paddingLR-none';
+		//eslint-disable-next-line camelcase
 	} else if (padding_left_and_right === '1') {
 		classPaddingLR = 'vk_outer-paddingLR-use';
+		//eslint-disable-next-line camelcase
 	} else if (padding_left_and_right === '2') {
+		// Fit to content area width
 		classPaddingLR = 'vk_outer-paddingLR-zero';
 	}
 
+	//classPaddingVerticalのクラス切り替
+	//eslint-disable-next-line camelcase
 	if (padding_top_and_bottom === '1') {
 		classPaddingVertical = 'vk_outer-paddingVertical-use';
 	} else {
 		classPaddingVertical = 'vk_outer-paddingVertical-none';
 	}
 
+	// 上側セクションの傾き切り替え
+	//eslint-disable-next-line camelcase
 	if (!levelSettingPerDevice) {
 		if (upper_level) {
 			whichSideUpper = 'upper';
@@ -137,6 +133,8 @@ export default function save(props) {
 		whichSideUpper = 'upper';
 	}
 
+	// 下側セクションの傾き切り替え
+	//eslint-disable-next-line camelcase
 	if (!levelSettingPerDevice) {
 		if (lower_level) {
 			whichSideLower = 'lower';
@@ -145,13 +143,16 @@ export default function save(props) {
 		whichSideLower = 'lower';
 	}
 
+	// 編集画面とサイト上の切り替え
 	const containerClass = 'vk_outer_container';
 
+	// Dividerエフェクトがない時のみ枠線を追
 	let borderStyleProperty = {};
+	//eslint-disable-next-line camelcase
 	if (!levelSettingPerDevice) {
 		if (
-			upper_level === 0 &&
-			lower_level === 0 &&
+			upper_level === 0 && //eslint-disable-line camelcase
+			lower_level === 0 && //eslint-disable-line camelcase
 			borderWidth > 0 &&
 			borderStyle !== 'none'
 		) {
@@ -164,19 +165,21 @@ export default function save(props) {
 						: undefined,
 				borderRadius: `${borderRadius}px`,
 			};
+			//eslint-disable-next-line camelcase
 		} else if (upper_level !== 0 || lower_level !== 0) {
+			//eslint-disable-line camelcase
 			borderStyleProperty = {
 				border: `none`,
 				borderRadius: `0px`,
 			};
 		}
 	} else if (
-		upper_level_mobile === 0 &&
-		upper_level_tablet === 0 &&
-		upper_level_pc === 0 &&
-		lower_level_mobile === 0 &&
-		lower_level_tablet === 0 &&
-		lower_level_pc === 0 &&
+		upper_level_mobile === 0 && //eslint-disable-line camelcase
+		upper_level_tablet === 0 && //eslint-disable-line camelcase
+		upper_level_pc === 0 && //eslint-disable-line camelcase
+		lower_level_mobile === 0 && //eslint-disable-line camelcase
+		lower_level_tablet === 0 && //eslint-disable-line camelcase
+		lower_level_pc === 0 && //eslint-disable-line camelcase
 		borderWidth > 0 &&
 		borderStyle !== 'none'
 	) {
@@ -189,6 +192,7 @@ export default function save(props) {
 					: undefined,
 			borderRadius: `${borderRadius}px`,
 		};
+		//eslint-disable-next-line camelcase
 	} else if (
 		upper_level_mobile !== 0 ||
 		upper_level_tablet !== 0 ||
@@ -197,6 +201,7 @@ export default function save(props) {
 		lower_level_tablet !== 0 ||
 		lower_level_pc !== 0
 	) {
+		//eslint-disable-line camelcase
 		borderStyleProperty = {
 			border: `none`,
 			borderRadius: `0px`,
@@ -230,7 +235,6 @@ export default function save(props) {
 			'--min-height-pc': minHeightValuePC
 				? `${minHeightValuePC}${minHeightUnit}`
 				: undefined,
-			...backgroundStyles,
 		},
 	});
 
@@ -251,7 +255,7 @@ export default function save(props) {
 	);
 
 	return (
-		<div {...blockProps} style={backgroundStyles}>
+		<div {...blockProps}>
 			{linkUrl && GetLinkUrl}
 			{GetBgImage}
 			<div>

@@ -222,27 +222,42 @@ export default function save(props) {
 		className: classnames(
 			`vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 			{
-				[`has-border-color`]: borderStyle !== 'none' && borderColor !== undefined,
-				[`has-${borderColor}-border-color`]: borderStyle !== 'none' && borderColor !== undefined && !isHexColor(borderColor),
-				[`vk_outer-minHeight`]: minHeightValuePC > 0 || minHeightValueTablet > 0 || minHeightValueMobile > 0,
+				[`has-border-color`]:
+					borderStyle !== 'none' && borderColor !== undefined,
+				[`has-${borderColor}-border-color`]:
+					borderStyle !== 'none' &&
+					borderColor !== undefined &&
+					!isHexColor(borderColor),
+				[`vk_outer-minHeight`]:
+					minHeightValuePC > 0 ||
+					minHeightValueTablet > 0 ||
+					minHeightValueMobile > 0,
 			}
 		),
 		style: {
-			...(paddingValueLR !== '0' && paddingValueLR !== '4em' && {
-				paddingLeft: paddingValueLR,
-				paddingRight: paddingValueLR,
-			}),
-			...(paddingValueVertical !== '0' && paddingValueVertical !== '4em' && {
-				paddingTop: paddingValueVertical,
-				paddingBottom: paddingValueVertical,
-			}),
-			'--min-height-mobile': minHeightValueMobile ? `${minHeightValueMobile}${minHeightUnit}` : undefined,
-			'--min-height-tablet': minHeightValueTablet ? `${minHeightValueTablet}${minHeightUnit}` : undefined,
-			'--min-height-pc': minHeightValuePC ? `${minHeightValuePC}${minHeightUnit}` : undefined,
+			...(paddingValueLR !== '0' &&
+				paddingValueLR !== '4em' && {
+					paddingLeft: paddingValueLR,
+					paddingRight: paddingValueLR,
+				}),
+			...(paddingValueVertical !== '0' &&
+				paddingValueVertical !== '4em' && {
+					paddingTop: paddingValueVertical,
+					paddingBottom: paddingValueVertical,
+				}),
+			'--min-height-mobile': minHeightValueMobile
+				? `${minHeightValueMobile}${minHeightUnit}`
+				: undefined,
+			'--min-height-tablet': minHeightValueTablet
+				? `${minHeightValueTablet}${minHeightUnit}`
+				: undefined,
+			'--min-height-pc': minHeightValuePC
+				? `${minHeightValuePC}${minHeightUnit}`
+				: undefined,
 			...borderStyleProperty,
 		},
 	});
-	
+
 	const relAttribute =
 		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
 	const GetLinkUrl = (

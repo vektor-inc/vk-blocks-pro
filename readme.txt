@@ -107,6 +107,11 @@ e.g.
 == Changelog ==
 
 [ Add Setting ][ Alert ] Add icon setting and inner block.
+[ Bug fix ][ Post list (Pro) / selected post list(Pro) / Child page list (Pro) ] Fix error when 'new_date' attribute is empty.
+[ Bug fix ][ Grid Column Card (Pro) ] Fixed that Grid Column Card Item Footer block button horizontal align right not work.
+[ Add function ][ Core Cover ] Add toolbar link for components.
+[ Specification Change ] Delete width setting from sidebar.
+[ Specification Change ] Change the location of the margin-related CSS code.
 
 = 1.81.0 =
 [ Add function ][ Table ] Add horizontal scrolling Setting.
@@ -138,7 +143,7 @@ e.g.
 
 = 1.79.0 =
 [ Add function ][ Tab (Pro) ] Add settings for when there are many labels or the screen width is narrow.
-[ Add function ][ Core Group ] Add toolbar link for components by item.
+[ Add function ][ Core Group ] Add toolbar link for components.
 [ Add function ][ Grid Column (Pro) ] Add toolbar link for components by item.
 [ Add function ][ Slider ] Add 'Wide' to width.
 [ Specification Change ] Hide license key when license key is valid.

@@ -135,32 +135,45 @@ $stylePalette: (
 );
 
 $colorPalette: (
-	has-vk-pale-pink: #f78da7,
-	has-vk-vivid-red: #cf2e2e,
-	has-vk-luminous-vivid-orange: #ff6900,
-	has-vk-luminous-vivid-amber: #fcb900,
-	has-vk-light-green-cyan: #7bdcb5,
-	has-vk-vivid-green-cyan: #00d084,
-	has-vk-pale-cyan-blue: #8ed1fc,
-	has-vk-vivid-cyan-blue: #0693e3,
-	has-vk-vivid-purple: #9b51e0,
-	has-vk-very-light-gray: #eee,
-	has-vk-cyan-bluish-gray: #abb8c3,
-	has-vk-very-dark-gray: #313131,
-	has-vk-white: #ffffff,
-	has-vk-color-primary: var(--wp--preset--color--vk-color-primary),
-	has-vk-color-primary-dark: var(--wp--preset--color--vk-color-primary-dark),
-	has-vk-color-primary-vivid: var(--wp--preset--color--vk-color-primary-vivid),
-	has-vk-color-custom-1: var(--wp--preset--color--vk-color-custom-1),
-	has-vk-color-custom-2: var(--wp--preset--color--vk-color-custom-2),
-	has-vk-color-custom-3: var(--wp--preset--color--vk-color-custom-3),
-	has-vk-color-custom-4: var(--wp--preset--color--vk-color-custom-4),
-	has-vk-color-custom-5: var(--wp--preset--color--vk-color-custom-5),
+	(pale-pink, #f78da7),
+	(vivid-red, #cf2e2e),
+	(luminous-vivid-orange, #ff6900),
+	(luminous-vivid-amber, #fcb900),
+	(light-green-cyan, #7bdcb5),
+	(vivid-green-cyan, #00d084),
+	(pale-cyan-blue, #8ed1fc),
+	(vivid-cyan-blue, #0693e3),
+	(vivid-purple, #9b51e0),
+	(very-light-gray, #eee),
+	(cyan-bluish-gray, #abb8c3),
+	(very-dark-gray, #313131),
+	(white, #ffffff),
+	(color-primary, var(--wp--preset--color--vk-color-primary)),
+	(color-primary-dark, var(--wp--preset--color--vk-color-primary-dark)),
+	(color-primary-vivid, var(--wp--preset--color--vk-color-primary-vivid)),
+	(color-custom-1, var(--wp--preset--color--vk-color-custom-1)),
+	(color-custom-2, var(--wp--preset--color--vk-color-custom-2)),
+	(color-custom-3, var(--wp--preset--color--vk-color-custom-3)),
+	(color-custom-4, var(--wp--preset--color--vk-color-custom-4)),
+	(color-custom-5, var(--wp--preset--color--vk-color-custom-5))
 );
 
 /*-------------------------------------------*/
 /* カラー設定
 /*-------------------------------------------*/
+@each $name, $color in $colorPalette {
+	:root {
+		.has-vk-#{$name}-color,
+		.vk-has-#{$name}-color {
+			color: #{$color};
+		}
+		.has-vk-#{$name}-background-color,
+		.vk-has-#{$name}-background-color {
+			background-color: #{$color};
+		}
+	}
+}
+
 @each $colorClass, $color in $colorPalette {
 	:root {
 		// 一般的なカラー設定

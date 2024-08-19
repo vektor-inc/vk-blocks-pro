@@ -107,8 +107,10 @@ e.g.
 == Changelog ==
 
 [ Bug fix ][ Post list (Pro) / selected post list(Pro) / Child page list (Pro) ] Fix error when 'new_date' attribute is empty.
+[ Bug fix ][ Grid Column Card (Pro) ] Fixed that Grid Column Card Item Footer block button horizontal align right not work.
 [ Add function ][ Core Cover ] Add toolbar link for components.
 [ Specification Change ] Delete width setting from sidebar.
+[ Specification Change ] Change the location of the margin-related CSS code.
 
 = 1.81.0 =
 [ Add function ][ Table ] Add horizontal scrolling Setting.

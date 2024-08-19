@@ -14,6 +14,7 @@ require_once __DIR__ . '/utils/array-merge.php';
 require_once __DIR__ . '/utils/minify-css.php';
 require_once __DIR__ . '/style/balloon.php';
 require_once __DIR__ . '/style/hidden-extension.php';
+require_once __DIR__ . '/style/common-margin.php';
 require_once __DIR__ . '/extensions/core/list.php';
 require_once __DIR__ . '/view/responsive-br.php';
 require_once __DIR__ . '/view/class-vk-blocks-postlist.php';
@@ -148,8 +149,6 @@ function vk_blocks_blocks_assets() {
 			--vk_image-mask-wave04: url(' . VK_BLOCKS_URL . 'images/wave04.svg);
 		}
 	';
-
-	$dynamic_css .= vk_blocks_get_spacer_size_style_all( $vk_blocks_options );
 
 	// Pro版のためfunction_existsを挟む
 	if ( function_exists( 'vk_blocks_get_custom_format_lists_inline_css' ) ) {

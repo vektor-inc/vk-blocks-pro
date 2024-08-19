@@ -3568,6 +3568,10 @@ msgstr ""
 msgid "Reverse"
 msgstr ""
 
+#: src/extensions/core/cover/style.js:97
+msgid "Cover link"
+msgstr ""
+
 #: src/extensions/core/group/style.js:104
 msgid ""
 "Because of the theme that enabled theme.json become can specify the color "

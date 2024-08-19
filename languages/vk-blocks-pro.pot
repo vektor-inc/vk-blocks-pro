@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-09T05:31:01+00:00\n"
+"POT-Creation-Date: 2024-08-15T05:04:07+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -3545,6 +3545,10 @@ msgstr ""
 
 #: src/extensions/core/columns/style.js:65
 msgid "Reverse"
+msgstr ""
+
+#: src/extensions/core/cover/style.js:97
+msgid "Cover link"
 msgstr ""
 
 #: src/extensions/core/group/style.js:104

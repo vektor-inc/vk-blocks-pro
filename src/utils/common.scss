@@ -465,13 +465,16 @@ ol {
 	}
 
 	@each $colorClass, $color in $colorPalette {
-		&.#{$colorClass}-color {
+		&.vk-has-#{$colorClass}-color,
+		&.has-vk-#{$colorClass}-color {
+			color: initial;
 			border-color: $color;
 			.wp-block-group__inner-container {
+				color: initial;
 				border-color: $color;
 			}
 		}
-	}
+	}	
 } //.wp-block-group
 .is-style-vk-group {
 	&-solid {

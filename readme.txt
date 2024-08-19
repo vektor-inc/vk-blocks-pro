@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ] Added support for custom CSS including pseudo-elements.
 [ Bug fix ][ Post list (Pro) / selected post list(Pro) / Child page list (Pro) ] Fix error when 'new_date' attribute is empty.
 [ Bug fix ][ Grid Column Card (Pro) ] Fixed that Grid Column Card Item Footer block button horizontal align right not work.
 [ Add function ][ Core Cover ] Add toolbar link for components.

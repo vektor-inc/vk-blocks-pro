@@ -161,19 +161,6 @@ $colorPalette: (
 /*-------------------------------------------*/
 /* カラー設定
 /*-------------------------------------------*/
-@each $name, $color in $colorPalette {
-	:root {
-		.has-vk-#{$name}-color,
-		.vk-has-vk-#{$name}-color {
-			color: #{$color};
-		}
-		.has-vk-#{$name}-background-color,
-		.vk-has-vk-#{$name}-background-color {
-			background-color: #{$color};
-		}
-	}
-}
-
 @each $colorClass, $color in $colorPalette {
 	:root {
 		// 一般的なカラー設定

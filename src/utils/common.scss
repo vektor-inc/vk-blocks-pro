@@ -164,11 +164,11 @@ $colorPalette: (
 @each $name, $color in $colorPalette {
 	:root {
 		.has-vk-#{$name}-color,
-		.vk-has-#{$name}-color {
+		.vk-has-vk-#{$name}-color {
 			color: #{$color};
 		}
 		.has-vk-#{$name}-background-color,
-		.vk-has-#{$name}-background-color {
+		.vk-has-vk-#{$name}-background-color {
 			background-color: #{$color};
 		}
 	}
@@ -177,17 +177,20 @@ $colorPalette: (
 @each $colorClass, $color in $colorPalette {
 	:root {
 		// 一般的なカラー設定
-		.#{$colorClass}-background-color {
-			@if $colorClass == has-vk-color-primary {
-				// has-vk-color-primary-background-colorクラスはデフォルトで設定される。Lightning以外のテーマに対応するため代替値を設定
+		.vk-has-#{$colorClass}-background-color,
+		.has-vk-#{$colorClass}-background-color {
+			@if $colorClass == color-primary {
+				// color-primaryに関する特殊処理
 				background-color: var(--wp--preset--color--vk-color-primary, #337ab7);
 			} @else {
 				background-color: #{$color};
 			}
 		}
 
-		.#{$colorClass}-color {
-			@if $colorClass == has-vk-color-primary {
+		.vk-has-#{$colorClass}-color,
+		.has-vk-#{$colorClass}-color {
+			@if $colorClass == color-primary {
+				// color-primaryに関する特殊処理
 				color: var(--wp--preset--color--vk-color-primary, #337ab7);
 			} @else {
 				color: #{$color};
@@ -474,7 +477,7 @@ ol {
 				border-color: $color;
 			}
 		}
-	}	
+	}
 } //.wp-block-group
 .is-style-vk-group {
 	&-solid {

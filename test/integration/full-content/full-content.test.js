@@ -33,7 +33,8 @@ import {
 } from '../../e2e-tests/fixtures/utils';
 
 const blockBasenames = getAvailableBlockFixturesBasenames();
-
+// 段落ブロックが必要なので読み込み
+import '@wordpress/block-library/build-module/paragraph/init';
 import { registerVKBlocks } from '@vkblocks/blocks/bundle'
 
 /**
@@ -241,7 +242,7 @@ describe('full post content fixture', () => {
 			// `save` functions and attributes.
 			// The `core/template` is not worth testing here because it's never saved, it's covered better in e2e tests.
 			.filter(
-				(name) => !['core/embed', 'core/template', 'vk-blocks/breadcrumb', 'vk-blocks/ancestor-page-list', 'vk-blocks/page-content', 'vk-blocks/post-list', 'vk-blocks/select-post-list-item', 'vk-blocks/child-page', 'vk-blocks/dynamic-text', 'vk-blocks/taxonomy', 'vk-blocks/archive-list', 'vk-blocks/card-item', 'vk-blocks/grid-column-item', 'vk-blocks/gridcolcard-item', 'vk-blocks/gridcolcard-item-body', 'vk-blocks/gridcolcard-item-footer', 'vk-blocks/gridcolcard-item-header', 'vk-blocks/step-item', 'vk-blocks/timeline-item', 'vk-blocks/grid-column-item', 'vk-blocks/icon-card-item', 'vk-blocks/faq2-a', 'vk-blocks/faq2-q', 'vk-blocks/slider-item', 'vk-blocks/tab-item', 'vk-blocks/accordion-trigger', 'vk-blocks/accordion-target','vk-blocks/blog-card-title','vk-blocks/blog-card-featured-image','vk-blocks/blog-card-excerpt','vk-blocks/blog-card-site-logo','vk-blocks/blog-card-site-title', 'vk-blocks/post-category-badge'].includes(name)
+				(name) => !['core/paragraph', 'core/embed', 'core/template', 'vk-blocks/breadcrumb', 'vk-blocks/ancestor-page-list', 'vk-blocks/page-content', 'vk-blocks/post-list', 'vk-blocks/select-post-list-item', 'vk-blocks/child-page', 'vk-blocks/dynamic-text', 'vk-blocks/taxonomy', 'vk-blocks/archive-list', 'vk-blocks/card-item', 'vk-blocks/grid-column-item', 'vk-blocks/gridcolcard-item', 'vk-blocks/gridcolcard-item-body', 'vk-blocks/gridcolcard-item-footer', 'vk-blocks/gridcolcard-item-header', 'vk-blocks/step-item', 'vk-blocks/timeline-item', 'vk-blocks/grid-column-item', 'vk-blocks/icon-card-item', 'vk-blocks/faq2-a', 'vk-blocks/faq2-q', 'vk-blocks/slider-item', 'vk-blocks/tab-item', 'vk-blocks/accordion-trigger', 'vk-blocks/accordion-target','vk-blocks/blog-card-title','vk-blocks/blog-card-featured-image','vk-blocks/blog-card-excerpt','vk-blocks/blog-card-site-logo','vk-blocks/blog-card-site-title', 'vk-blocks/post-category-badge'].includes(name)
 			)
 			.forEach((name) => {
 				const nameToFilename = blockNameToFixtureBasename(name);

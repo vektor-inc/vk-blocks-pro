@@ -17,6 +17,11 @@
 		"iconText": {
 			"type": "string",
 			"default": ""
+		},
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": "p"
 		}
 	},
 	"supports": {

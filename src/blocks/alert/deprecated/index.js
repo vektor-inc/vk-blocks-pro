@@ -1,4 +1,4 @@
-import save1_79_0 from './1.79.0/save';
+import { save as save1_79_0, migrate as migrate1_79_0 } from './1.79.0/save';
 import save000 from './0.0.0/save';
 
 const blockAttributes = {
@@ -16,6 +16,7 @@ const blockAttributes = {
 const deprecated = [
 	{
 		attributes: blockAttributes,
+		migrate: migrate1_79_0,
 		save: save1_79_0,
 	},
 	{

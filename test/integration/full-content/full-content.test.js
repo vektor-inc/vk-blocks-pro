@@ -35,6 +35,8 @@ import {
 const blockBasenames = getAvailableBlockFixturesBasenames();
 // 段落ブロックが必要なので読み込み
 import '@wordpress/block-library/build-module/paragraph/init';
+
+// VK Blocks を読み込み
 import { registerVKBlocks } from '@vkblocks/blocks/bundle'
 
 /**

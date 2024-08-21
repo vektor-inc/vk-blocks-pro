@@ -118,7 +118,6 @@ class CustomCssExtensionTest extends VK_UnitTestCase {
 		$expected_pattern = '/<style id="vk-blocks-custom-css">\.vk_custom_css_\d+ { color: red; }<\/style>/';
 		$this->assertMatchesRegularExpression( $expected_pattern, $output );
 	
-		// テスト結果の表示
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
 		print 'vk_blocks_output_custom_css() Test' . PHP_EOL;

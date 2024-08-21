@@ -95,7 +95,7 @@ function vk_blocks_render_custom_css( $block_content, $block ) {
 		return $block_content;
 	}
 
-	$css = $block['attrs']['vkbCustomCss'];
+	$css          = $block['attrs']['vkbCustomCss'];
 	$unique_class = '';
 
 	// selector文字列があるとき

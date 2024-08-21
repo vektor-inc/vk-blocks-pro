@@ -2343,7 +2343,7 @@ msgstr "角丸２"
 #: src/blocks/balloon/edit.js:502
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:398
 msgid "Circle"
-msgstr "丸抜き"
+msgstr "正円"
 
 #: src/blocks/balloon/edit.js:511 src/blocks/button/edit.js:590
 msgid "100%"

@@ -645,11 +645,17 @@ $xxl-min: 1400px;
 	.wp-block-column {
 		/* リンク設定 */
 		&-vk-link {
-			display: block;
+			display: contents;
 			width: 100%;
 			height: 100%;
 			text-decoration: none;
+			> p {
+				line-height: var(--vk-line-height); // 自動で入るコアの .is-layout-flow CSSに負けるため
+			}
 		}
+	}
+	.wp-block-columns:has(.wp-block-column-vk-link) {
+		margin-bottom: 0; // これがないとコアに勝手にmargin-bottomがついてしまう
 	}
 }
 

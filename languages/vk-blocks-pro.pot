@@ -2,16 +2,16 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.81.0.1\n"
+"Project-Id-Version: VK Blocks Pro 1.82.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-20T02:39:25+00:00\n"
+"POT-Creation-Date: 2024-08-21T05:22:15+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.10.0\n"
+"X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: vk-blocks-pro\n"
 
 #: src/admin/balloon/add-button.js:38
@@ -2078,63 +2078,63 @@ msgstr ""
 msgid "Tab 02"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:510
+#: src/blocks/_pro/tab/edit.js:526
 msgid "Tab Label [ %s ]"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:536
+#: src/blocks/_pro/tab/edit.js:552
 msgid "Tab Size Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:538
+#: src/blocks/_pro/tab/edit.js:554
 msgid "Tab Size ( Smart Phone )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:555
+#: src/blocks/_pro/tab/edit.js:571
 msgid "Tab Size ( Tablet )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:572
+#: src/blocks/_pro/tab/edit.js:588
 msgid "Tab Size ( PC )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:576
+#: src/blocks/_pro/tab/edit.js:592
 msgid "Fit to the text"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:580
+#: src/blocks/_pro/tab/edit.js:596
 msgid "Monospaced"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:589
+#: src/blocks/_pro/tab/edit.js:605
 msgid "Tab Display Options"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:591
+#: src/blocks/_pro/tab/edit.js:607
 msgid "If there are many labels or the screen width is narrow, you can adjust it here. *Tab size setting will not be effective."
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:597
+#: src/blocks/_pro/tab/edit.js:613
 msgid "Tab Display Options ( Smart Phone )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:621
+#: src/blocks/_pro/tab/edit.js:637
 msgid "Tab Display Options ( Tablet )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:645
+#: src/blocks/_pro/tab/edit.js:661
 msgid "Tab Display Options ( PC )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:652
+#: src/blocks/_pro/tab/edit.js:668
 msgid "Not set"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:656
+#: src/blocks/_pro/tab/edit.js:672
 msgid "Scroll"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:660
+#: src/blocks/_pro/tab/edit.js:676
 msgid "Wrap to 2 rows"
 msgstr ""
 
@@ -3726,7 +3726,6 @@ msgstr ""
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#. translators: %s = plugin name.
 #: inc/tgm-plugin-activation/tgm-config.php:76
 msgid "Something went wrong with the plugin API."
 msgstr ""

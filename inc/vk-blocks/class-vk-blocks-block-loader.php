@@ -105,36 +105,6 @@ class VK_Blocks_Block_Loader {
 		wp_enqueue_style( 'vk-blocks/core-table', VK_BLOCKS_DIR_URL . 'build/extensions/core/table/style.css', array(), VK_BLOCKS_VERSION );
 		wp_enqueue_style( 'vk-blocks/core-heading', VK_BLOCKS_DIR_URL . 'build/extensions/core/heading/style.css', array(), VK_BLOCKS_VERSION );
 		wp_enqueue_style( 'vk-blocks/core-image', VK_BLOCKS_DIR_URL . 'build/extensions/core/image/style.css', array(), VK_BLOCKS_VERSION );
-
-		// カスタムCSSを取得して追加
-		$custom_css = $this->get_custom_css_for_blocks();
-		if ( ! empty( $custom_css ) ) {
-			wp_add_inline_style( 'vk-blocks-build-css', $custom_css );
-		}
-	}
-
-	/**
-	 * ブロックごとのカスタムCSSを取得
-	 *
-	 * @return string
-	 */
-	private function get_custom_css_for_blocks() {
-		global $wp_query;
-		$custom_css = '';
-
-		if ( have_posts() ) {
-			while ( have_posts() ) {
-				the_post();
-				$blocks = parse_blocks( get_the_content() );
-				foreach ( $blocks as $block ) {
-					$block_content = render_block( $block );
-					$custom_css .= vk_blocks_render_custom_css( '', $block );
-				}
-			}
-			rewind_posts();
-		}
-
-		return $custom_css;
 	}
 
 	/**

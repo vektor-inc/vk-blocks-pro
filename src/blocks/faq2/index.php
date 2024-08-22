@@ -79,8 +79,8 @@ function vk_blocks_collect_faq_data( $block_content, $block ) {
 
 		foreach ( $questions as $index => $question ) {
 			// HTML タグをすべて削除して1行にまとめる
-			$question_text = trim( preg_replace( "/\r|\n|\r\n|\n\n/", "", strip_tags( $doc->saveHTML($question) ) ) );
-			$answer_text   = null !== $answers->item( $index ) ? trim( preg_replace( "/\r|\n|\r\n|\n\n/", "", strip_tags( $doc->saveHTML($answers->item( $index )) ) ) ) : '';
+			$question_text = trim( preg_replace( "/\r|\n|\r\n|\n\n/", '', strip_tags( $doc->saveHTML( $question ) ) ) );
+			$answer_text   = null !== $answers->item( $index ) ? trim( preg_replace( "/\r|\n|\r\n|\n\n/", '', strip_tags( $doc->saveHTML( $answers->item( $index ) ) ) ) ) : '';
 
 			$vk_blocks_faq_data[] = array(
 				'@type'          => 'Question',

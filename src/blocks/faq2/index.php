@@ -78,10 +78,9 @@ function vk_blocks_collect_faq_data( $block_content, $block ) {
 		$answers   = $doc->getElementsByTagName( 'dd' );
 
 		foreach ( $questions as $index => $question ) {
-			// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
-			$question_text = trim( $question->textContent );
-			// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
-			$answer_text = null !== $answers->item( $index ) ? trim( $answers->item( $index )->textContent ) : '';
+			// HTML タグをすべて削除して1行にまとめる
+			$question_text = trim( preg_replace( "/\r|\n|\r\n|\n\n/", "", strip_tags( $doc->saveHTML($question) ) ) );
+			$answer_text   = null !== $answers->item( $index ) ? trim( preg_replace( "/\r|\n|\r\n|\n\n/", "", strip_tags( $doc->saveHTML($answers->item( $index )) ) ) ) : '';
 
 			$vk_blocks_faq_data[] = array(
 				'@type'          => 'Question',
@@ -98,29 +97,31 @@ function vk_blocks_collect_faq_data( $block_content, $block ) {
 }
 add_filter( 'render_block', 'vk_blocks_collect_faq_data', 10, 2 );
 
-/**
- * Output the collected FAQ data as JSON-LD.
- */
-function vk_blocks_output_faq_json_ld() {
-	global $vk_blocks_faq_data;
+if ( ! function_exists( 'vk_blocks_output_faq_json_ld' ) ) {
+	/**
+	 * Output the collected FAQ data as JSON-LD.
+	 */
+	function vk_blocks_output_faq_json_ld() {
+		global $vk_blocks_faq_data;
 
-	if ( ! empty( $vk_blocks_faq_data ) ) {
-		$faq_schema = array(
-			'@context'   => 'https://schema.org',
-			'@type'      => 'FAQPage',
-			'mainEntity' => $vk_blocks_faq_data,
-		);
+		if ( ! empty( $vk_blocks_faq_data ) ) {
+			$faq_schema = array(
+				'@context'   => 'https://schema.org',
+				'@type'      => 'FAQPage',
+				'mainEntity' => $vk_blocks_faq_data,
+			);
 
-		// PHP 5.3 以前の互換性のためのチェック
-		$json_options = 0;
-		if ( defined( 'JSON_UNESCAPED_UNICODE' ) ) {
-			$json_options |= constant( 'JSON_UNESCAPED_UNICODE' );
+			// PHP 5.3 以前の互換性のためのチェック
+			$json_options = 0;
+			if ( defined( 'JSON_UNESCAPED_UNICODE' ) ) {
+				$json_options |= constant( 'JSON_UNESCAPED_UNICODE' );
+			}
+			if ( defined( 'JSON_UNESCAPED_SLASHES' ) ) {
+				$json_options |= constant( 'JSON_UNESCAPED_SLASHES' );
+			}
+
+			echo '<script type="application/ld+json">' . wp_json_encode( $faq_schema, $json_options ) . '</script>';
 		}
-		if ( defined( 'JSON_UNESCAPED_SLASHES' ) ) {
-			$json_options |= constant( 'JSON_UNESCAPED_SLASHES' );
-		}
-
-		echo '<script type="application/ld+json">' . wp_json_encode( $faq_schema, $json_options ) . '</script>';
 	}
+	add_action( 'wp_footer', 'vk_blocks_output_faq_json_ld' );
 }
-add_action( 'wp_footer', 'vk_blocks_output_faq_json_ld' );

@@ -78,8 +78,10 @@ function vk_blocks_collect_faq_data( $block_content, $block ) {
 		$answers   = $doc->getElementsByTagName( 'dd' );
 
 		foreach ( $questions as $index => $question ) {
-			$question_text = trim( $question->textContent ); // snake_caseに修正
-			$answer_text   = null !== $answers->item( $index ) ? trim( $answers->item( $index )->textContent ) : ''; // snake_caseに修正
+			// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
+			$question_text = trim( $question->textContent );
+			// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
+			$answer_text = null !== $answers->item( $index ) ? trim( $answers->item( $index )->textContent ) : '';
 
 			$vk_blocks_faq_data[] = array(
 				'@type'          => 'Question',

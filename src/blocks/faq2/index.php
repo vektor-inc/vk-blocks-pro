@@ -21,7 +21,7 @@ function vk_blocks_register_block_faq2() {
 		);
 	}
 
-	// Register Style.
+	// Register Script.
 	if ( ! is_admin() ) {
 		wp_register_script(
 			'vk-blocks/faq-script',
@@ -32,11 +32,7 @@ function vk_blocks_register_block_faq2() {
 		);
 	}
 
-	// クラシックテーマ & 6.5 環境で $assets = array() のように空にしないと重複登録になるため
-	// ここで初期化しておく
 	$assets = array();
-	// Attend to load separate assets.
-	// 分割読み込みが有効な場合のみ、分割読み込み用のスクリプトを登録する
 	if ( method_exists( 'VK_Blocks_Block_Loader', 'should_load_separate_assets' ) && VK_Blocks_Block_Loader::should_load_separate_assets() ) {
 		$assets = array(
 			'style'         => 'vk-blocks/faq',
@@ -54,28 +50,66 @@ function vk_blocks_register_block_faq2() {
 add_action( 'init', 'vk_blocks_register_block_faq2', 99 );
 
 /**
- * Render faq2 block
+ * Collect FAQ data for all blocks on the page.
  *
- * @param string $block_content block_content.
- * @param array  $block block.
- * @return string
+ * @param string $block_content The block content.
+ * @param array  $block         The block data.
+ * @return string The block content.
  */
-function vk_blocks_faq2_render_callback( $block_content, $block ) {
-	$vk_blocks_options = VK_Blocks_Options::get_options();
-	if ( 'vk-blocks/faq2' === $block['blockName'] ) {
-		if ( ! empty( $block['attrs']['showContent'] ) && 'default' !== $block['attrs']['showContent'] ) {
-			$vk_blocks_options['new_faq_accordion'] = $block['attrs']['showContent'];
-		}
+function vk_blocks_collect_faq_data( $block_content, $block ) {
+	global $vk_blocks_faq_data;
 
-		if ( ! empty( $vk_blocks_options['new_faq_accordion'] ) && 'open' === $vk_blocks_options['new_faq_accordion'] ) {
-			$block_content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-accordion-open', $block_content );
-		} elseif ( ! empty( $vk_blocks_options['new_faq_accordion'] ) && 'close' === $vk_blocks_options['new_faq_accordion'] ) {
-			$block_content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-accordion-close', $block_content );
-		} else {
-			$block_content = str_replace( '[accordion_trigger_switch]', '', $block_content );
+	if ( 'vk-blocks/faq2' === $block['blockName'] ) {
+		$doc = new DOMDocument();
+		libxml_use_internal_errors( true );
+
+		// PHP 5.3 以前の互換性のためのチェック
+		$options = defined( 'LIBXML_HTML_NOIMPLIED' ) && defined( 'LIBXML_HTML_NODEFDTD' ) ? LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD : 0;
+
+		$doc->loadHTML( '<?xml encoding="utf-8" ?>' . $block_content, $options );
+
+		$questions = $doc->getElementsByTagName( 'dt' );
+		$answers   = $doc->getElementsByTagName( 'dd' );
+
+		foreach ( $questions as $index => $question ) {
+			$question_text = trim( $question->textContent );
+			$answer_text   = null !== $answers->item( $index ) ? trim( $answers->item( $index )->textContent ) : '';
+
+			$vk_blocks_faq_data[] = array(
+				'@type'          => 'Question',
+				'name'           => $question_text,
+				'acceptedAnswer' => array(
+					'@type' => 'Answer',
+					'text'  => $answer_text,
+				),
+			);
 		}
 	}
+
 	return $block_content;
 }
+add_filter( 'render_block', 'vk_blocks_collect_faq_data', 10, 2 );
 
-add_filter( 'render_block', 'vk_blocks_faq2_render_callback', 10, 2 );
+/**
+ * Output the collected FAQ data as JSON-LD.
+ */
+function vk_blocks_output_faq_json_ld() {
+	global $vk_blocks_faq_data;
+
+	if ( ! empty( $vk_blocks_faq_data ) ) {
+		$faq_schema = array(
+			'@context'   => 'https://schema.org',
+			'@type'      => 'FAQPage',
+			'mainEntity' => $vk_blocks_faq_data,
+		);
+
+		// PHP 5.3 以前の互換性のためのチェック
+		$json_options = 0;
+		if ( defined( 'JSON_UNESCAPED_UNICODE' ) && defined( 'JSON_UNESCAPED_SLASHES' ) ) {
+			$json_options = JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES;
+		}
+
+		echo '<script type="application/ld+json">' . wp_json_encode( $faq_schema, $json_options ) . '</script>';
+	}
+}
+add_action( 'wp_footer', 'vk_blocks_output_faq_json_ld' );

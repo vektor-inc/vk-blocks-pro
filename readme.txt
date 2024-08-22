@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Classic FAQ / New FAQ ] Support structured data.
 [ Add function ][ Column ] Add toolbar link for components.
 
 = 1.82.0 =
@@ -166,7 +167,7 @@ e.g.
 [ Specification Change ][ Tab (Pro) ] Accessibility support
 [ Bug fix ][ Table of Contents (Pro) ] Fix "OBJ" characters appeared in the Table of Contents on Windows.
 [ Bug fix ] Delete unnecessary development files included in 1.76.2.
-[ Fix ][ FAQ / FAQ2 ] add aria-label for accessibility
+[ Fix ][ FAQ / New FAQ ] add aria-label for accessibility
 
 = 1.76.2 =
 [ Specification Change ] Change Font Awesome Version to 6.5.2
@@ -327,7 +328,7 @@ e.g.
 = 1.60.0 =
 [ Add Function ] Add Font Awesome icon custom list function.
 [ Add Function ][ Dynamic Text Block (Pro) ] URL support for custom fields.
-[ Add Function ][ FAQ2 ] Add an accordion default option on a per-block.
+[ Add Function ][ New FAQ ] Add an accordion default option on a per-block.
 [ Specification Change ] Disable HTML editing for blocks with inner blocks, as the blocks are broken.
 [ Bug fix ][ Dynamic Text (Pro) ] Fix php warning that brought by can't get post type name on search result page.
 [ Bug fix ][ Dynamic Text (Pro) ] Fix php warning that brought by can't get ancestor page on search result page.
@@ -986,7 +987,7 @@ Cope with WordPress 5.9
 [ Bug fix ][ Slider ] Bug fix under css optimize
 
 = 1.2.3 =
-[ Bug fix ][ FAQ2 ] Fix PHP notices.
+[ Bug fix ][ New FAQ ] Fix PHP notices.
 
 = 1.2.2 =
 [ Specification Change ][ Slider ] Fix default slide speed and use cubic-bezier.

@@ -173,10 +173,10 @@ const insertLinkIntoColumnBlock = (element, blockType, attributes) => {
 				href={linkUrl}
 				target={linkTarget}
 				rel={relAttribute}
+				aria-label={__('Column link', 'vk-blocks-pro')}
 				className="wp-block-column-vk-link"
-			>
-				{element.props.children}
-			</a>
+			></a>
+			{element.props.children}
 		</div>
 	);
 };

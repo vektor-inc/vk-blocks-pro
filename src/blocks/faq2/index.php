@@ -64,7 +64,13 @@ function vk_blocks_collect_faq_data( $block_content, $block ) {
 		libxml_use_internal_errors( true );
 
 		// PHP 5.3 以前の互換性のためのチェック
-		$options = defined( 'LIBXML_HTML_NOIMPLIED' ) && defined( 'LIBXML_HTML_NODEFDTD' ) ? LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD : 0;
+		$options = 0;
+		if ( defined( 'LIBXML_HTML_NOIMPLIED' ) ) {
+			$options |= constant( 'LIBXML_HTML_NOIMPLIED' );
+		}
+		if ( defined( 'LIBXML_HTML_NODEFDTD' ) ) {
+			$options |= constant( 'LIBXML_HTML_NODEFDTD' );
+		}
 
 		$doc->loadHTML( '<?xml encoding="utf-8" ?>' . $block_content, $options );
 
@@ -72,8 +78,8 @@ function vk_blocks_collect_faq_data( $block_content, $block ) {
 		$answers   = $doc->getElementsByTagName( 'dd' );
 
 		foreach ( $questions as $index => $question ) {
-			$question_text = trim( $question->textContent );
-			$answer_text   = null !== $answers->item( $index ) ? trim( $answers->item( $index )->textContent ) : '';
+			$question_text = trim( $question->textContent ); // snake_caseに修正
+			$answer_text   = null !== $answers->item( $index ) ? trim( $answers->item( $index )->textContent ) : ''; // snake_caseに修正
 
 			$vk_blocks_faq_data[] = array(
 				'@type'          => 'Question',
@@ -105,8 +111,11 @@ function vk_blocks_output_faq_json_ld() {
 
 		// PHP 5.3 以前の互換性のためのチェック
 		$json_options = 0;
-		if ( defined( 'JSON_UNESCAPED_UNICODE' ) && defined( 'JSON_UNESCAPED_SLASHES' ) ) {
-			$json_options = JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES;
+		if ( defined( 'JSON_UNESCAPED_UNICODE' ) ) {
+			$json_options |= constant( 'JSON_UNESCAPED_UNICODE' );
+		}
+		if ( defined( 'JSON_UNESCAPED_SLASHES' ) ) {
+			$json_options |= constant( 'JSON_UNESCAPED_SLASHES' );
 		}
 
 		echo '<script type="application/ld+json">' . wp_json_encode( $faq_schema, $json_options ) . '</script>';

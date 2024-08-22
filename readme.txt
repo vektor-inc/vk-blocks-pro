@@ -107,6 +107,7 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Column ] Add toolbar link for components.
+[ Bug fix ][ Tab Item ] When duplicating an active tab-item block, no more than one tab-item block becomes active.
 
 = 1.82.0 =
 [ Add function ][ Core Cover ] Add toolbar link for components.

@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.3
 Tested up to: 6.6
-Stable tag: 1.80.1.2
+Stable tag: 1.81.0.2
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -107,11 +107,14 @@ e.g.
 == Changelog ==
 
 [ Add Setting ][ Alert ] Add icon setting and inner block.
-[ Bug fix ][ Post list (Pro) / selected post list(Pro) / Child page list (Pro) ] Fix error when 'new_date' attribute is empty.
-[ Bug fix ][ Grid Column Card (Pro) ] Fixed that Grid Column Card Item Footer block button horizontal align right not work.
+[ Bug fix ][ Tab Item ] When duplicating an active tab-item block, no more than one tab-item block becomes active.
+
+= 1.82.0 =
 [ Add function ][ Core Cover ] Add toolbar link for components.
-[ Specification Change ] Delete width setting from sidebar.
 [ Specification Change ] Change the location of the margin-related CSS code.
+[ Bug fix ] Added dynamic color settings for `vk-has-*` and `has-vk-*` classes.
+[ Bug fix ][ Post list (Pro) / Selected post list (Pro) / Child page list (Pro) ] Fix error when 'new_date' attribute is empty.
+[ Bug fix ][ Post list (Pro) / Selected post list (Pro) / Child page list (Pro) ] Fixed an issue where the button would remain aligned to the left even when it was set to align to the right.
 
 = 1.81.0 =
 [ Add function ][ Table ] Add horizontal scrolling Setting.

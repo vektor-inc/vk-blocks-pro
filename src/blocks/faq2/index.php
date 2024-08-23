@@ -114,46 +114,48 @@ function vk_blocks_faq2_render_callback( $block_content, $block ) {
 
 add_filter( 'render_block', 'vk_blocks_faq2_render_callback', 10, 2 );
 
-/**
- * Output the collected structured data as JSON-LD.
- */
-function vk_blocks_output_schema_json_ld() {
-	global $vk_blocks_faq_data;
+if ( ! function_exists( 'vk_blocks_output_schema_json_ld' ) ) {
+	/**
+	 * Output the collected structured data as JSON-LD.
+	 */
+	function vk_blocks_output_schema_json_ld() {
+		global $vk_blocks_faq_data;
 
-	$schema_graph = array();
+		$schema_graph = array();
 
-	if ( ! empty( $vk_blocks_faq_data ) && apply_filters( 'vk_blocks_output_faq_schema', true ) ) {
-		$faq_schema     = array(
-			'@type'      => 'FAQPage',
-			'mainEntity' => $vk_blocks_faq_data,
-		);
-		$schema_graph[] = $faq_schema;
-	}
-
-	$schema_graph = apply_filters( 'vk_blocks_additional_schema_graph', $schema_graph );
-
-	if ( ! empty( $schema_graph ) ) {
-		if ( count( $schema_graph ) > 1 ) {
-			$schema_output = array(
-				'@context' => 'https://schema.org',
-				'@graph'   => $schema_graph,
+		if ( ! empty( $vk_blocks_faq_data ) && apply_filters( 'vk_blocks_output_faq_schema', true ) ) {
+			$faq_schema     = array(
+				'@type'      => 'FAQPage',
+				'mainEntity' => $vk_blocks_faq_data,
 			);
-		} else {
-			$schema_output = array(
-				'@context' => 'https://schema.org',
-			) + $schema_graph[0];  // 配列の最初の要素を直接結合
+			$schema_graph[] = $faq_schema;
 		}
 
-		// PHP 5.3 以前の互換性のためのチェック
-		$json_options = 0;
-		if ( defined( 'JSON_UNESCAPED_UNICODE' ) ) {
-			$json_options |= constant( 'JSON_UNESCAPED_UNICODE' );
-		}
-		if ( defined( 'JSON_UNESCAPED_SLASHES' ) ) {
-			$json_options |= constant( 'JSON_UNESCAPED_SLASHES' );
-		}
+		$schema_graph = apply_filters( 'vk_blocks_additional_schema_graph', $schema_graph );
 
-		echo '<script type="application/ld+json">' . wp_json_encode( $schema_output, $json_options ) . '</script>';
+		if ( ! empty( $schema_graph ) ) {
+			if ( count( $schema_graph ) > 1 ) {
+				$schema_output = array(
+					'@context' => 'https://schema.org',
+					'@graph'   => $schema_graph,
+				);
+			} else {
+				$schema_output = array(
+					'@context' => 'https://schema.org',
+				) + $schema_graph[0];  // 配列の最初の要素を直接結合
+			}
+
+			// PHP 5.3 以前の互換性のためのチェック
+			$json_options = 0;
+			if ( defined( 'JSON_UNESCAPED_UNICODE' ) ) {
+				$json_options |= constant( 'JSON_UNESCAPED_UNICODE' );
+			}
+			if ( defined( 'JSON_UNESCAPED_SLASHES' ) ) {
+				$json_options |= constant( 'JSON_UNESCAPED_SLASHES' );
+			}
+
+			echo '<script type="application/ld+json">' . wp_json_encode( $schema_output, $json_options ) . '</script>';
+		}
 	}
+	add_action( 'wp_footer', 'vk_blocks_output_schema_json_ld' );
 }
-add_action( 'wp_footer', 'vk_blocks_output_schema_json_ld' );

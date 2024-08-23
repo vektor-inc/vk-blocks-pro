@@ -32,7 +32,11 @@ function vk_blocks_register_block_faq2() {
 		);
 	}
 
+	// クラシックテーマ & 6.5 環境で $assets = array() のように空にしないと重複登録になるため
+	// ここで初期化しておく
 	$assets = array();
+	// Attend to load separate assets.
+	// 分割読み込みが有効な場合のみ、分割読み込み用のスクリプトを登録する
 	if ( method_exists( 'VK_Blocks_Block_Loader', 'should_load_separate_assets' ) && VK_Blocks_Block_Loader::should_load_separate_assets() ) {
 		$assets = array(
 			'style'         => 'vk-blocks/faq',
@@ -50,13 +54,13 @@ function vk_blocks_register_block_faq2() {
 add_action( 'init', 'vk_blocks_register_block_faq2', 99 );
 
 /**
- * Collect FAQ data for all blocks on the page.
+ * Render faq2 block
  *
- * @param string $block_content The block content.
- * @param array  $block         The block data.
- * @return string The block content.
+ * @param string $block_content block_content.
+ * @param array $block block.
+ * @return string
  */
-function vk_blocks_collect_faq_data( $block_content, $block ) {
+function vk_blocks_faq2_render_callback( $block_content, $block ) {
 	global $vk_blocks_faq_data;
 
 	if ( 'vk-blocks/faq2' === $block['blockName'] ) {
@@ -97,7 +101,7 @@ function vk_blocks_collect_faq_data( $block_content, $block ) {
 
 	return $block_content;
 }
-add_filter( 'render_block', 'vk_blocks_collect_faq_data', 10, 2 );
+add_filter( 'render_block', 'vk_blocks_faq2_render_callback', 10, 2 );
 
 if ( ! function_exists( 'vk_blocks_output_schema_json_ld' ) ) {
 	/**

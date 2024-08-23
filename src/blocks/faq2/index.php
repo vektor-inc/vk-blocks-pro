@@ -61,10 +61,20 @@ add_action( 'init', 'vk_blocks_register_block_faq2', 99 );
  * @return string
  */
 function vk_blocks_faq2_render_callback( $block_content, $block ) {
-	global $vk_blocks_faq_data;
+	$vk_blocks_options = VK_Blocks_Options::get_options();
 
 	if ( 'vk-blocks/faq2' === $block['blockName'] ) {
+		if ( ! empty( $vk_blocks_options['new_faq_accordion'] ) && 'open' === $vk_blocks_options['new_faq_accordion'] ) {
+			$block_content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-accordion-open', $block_content );
+		} elseif ( ! empty( $vk_blocks_options['new_faq_accordion'] ) && 'close' === $vk_blocks_options['new_faq_accordion'] ) {
+			$block_content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-accordion-close', $block_content );
+		} else {
+			$block_content = str_replace( '[accordion_trigger_switch]', '', $block_content );
+		}
+
+		// 構造化データの追加
 		if ( apply_filters( 'vk_blocks_output_faq_schema', true ) ) {
+			global $vk_blocks_faq_data;
 			$doc = new DOMDocument();
 			libxml_use_internal_errors( true );
 
@@ -101,50 +111,49 @@ function vk_blocks_faq2_render_callback( $block_content, $block ) {
 
 	return $block_content;
 }
+
 add_filter( 'render_block', 'vk_blocks_faq2_render_callback', 10, 2 );
 
-if ( ! function_exists( 'vk_blocks_output_schema_json_ld' ) ) {
-	/**
-	 * Output the collected structured data as JSON-LD.
-	 */
-	function vk_blocks_output_schema_json_ld() {
-		global $vk_blocks_faq_data;
+/**
+ * Output the collected structured data as JSON-LD.
+ */
+function vk_blocks_output_schema_json_ld() {
+	global $vk_blocks_faq_data;
 
-		$schema_graph = array();
+	$schema_graph = array();
 
-		if ( ! empty( $vk_blocks_faq_data ) && apply_filters( 'vk_blocks_output_faq_schema', true ) ) {
-			$faq_schema     = array(
-				'@type'      => 'FAQPage',
-				'mainEntity' => $vk_blocks_faq_data,
-			);
-			$schema_graph[] = $faq_schema;
-		}
-
-		$schema_graph = apply_filters( 'vk_blocks_additional_schema_graph', $schema_graph );
-
-		if ( ! empty( $schema_graph ) ) {
-			if ( count( $schema_graph ) > 1 ) {
-				$schema_output = array(
-					'@context' => 'https://schema.org',
-					'@graph'   => $schema_graph,
-				);
-			} else {
-				$schema_output = array(
-					'@context' => 'https://schema.org',
-				) + $schema_graph[0];  // 配列の最初の要素を直接結合
-			}
-
-			// PHP 5.3 以前の互換性のためのチェック
-			$json_options = 0;
-			if ( defined( 'JSON_UNESCAPED_UNICODE' ) ) {
-				$json_options |= constant( 'JSON_UNESCAPED_UNICODE' );
-			}
-			if ( defined( 'JSON_UNESCAPED_SLASHES' ) ) {
-				$json_options |= constant( 'JSON_UNESCAPED_SLASHES' );
-			}
-
-			echo '<script type="application/ld+json">' . wp_json_encode( $schema_output, $json_options ) . '</script>';
-		}
+	if ( ! empty( $vk_blocks_faq_data ) && apply_filters( 'vk_blocks_output_faq_schema', true ) ) {
+		$faq_schema     = array(
+			'@type'      => 'FAQPage',
+			'mainEntity' => $vk_blocks_faq_data,
+		);
+		$schema_graph[] = $faq_schema;
 	}
-	add_action( 'wp_footer', 'vk_blocks_output_schema_json_ld' );
+
+	$schema_graph = apply_filters( 'vk_blocks_additional_schema_graph', $schema_graph );
+
+	if ( ! empty( $schema_graph ) ) {
+		if ( count( $schema_graph ) > 1 ) {
+			$schema_output = array(
+				'@context' => 'https://schema.org',
+				'@graph'   => $schema_graph,
+			);
+		} else {
+			$schema_output = array(
+				'@context' => 'https://schema.org',
+			) + $schema_graph[0];  // 配列の最初の要素を直接結合
+		}
+
+		// PHP 5.3 以前の互換性のためのチェック
+		$json_options = 0;
+		if ( defined( 'JSON_UNESCAPED_UNICODE' ) ) {
+			$json_options |= constant( 'JSON_UNESCAPED_UNICODE' );
+		}
+		if ( defined( 'JSON_UNESCAPED_SLASHES' ) ) {
+			$json_options |= constant( 'JSON_UNESCAPED_SLASHES' );
+		}
+
+		echo '<script type="application/ld+json">' . wp_json_encode( $schema_output, $json_options ) . '</script>';
+	}
 }
+add_action( 'wp_footer', 'vk_blocks_output_schema_json_ld' );

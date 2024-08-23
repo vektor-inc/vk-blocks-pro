@@ -99,17 +99,36 @@ add_filter( 'render_block', 'vk_blocks_collect_faq_data', 10, 2 );
 
 if ( ! function_exists( 'vk_blocks_output_schema_json_ld' ) ) {
 	/**
-	 * Output the collected FAQ data as JSON-LD.
+	 * Output the collected structured data as JSON-LD.
 	 */
 	function vk_blocks_output_schema_json_ld() {
 		global $vk_blocks_faq_data;
 
+		$schema_graph = array();
+
+		// FAQ構造化データを追加
 		if ( ! empty( $vk_blocks_faq_data ) ) {
 			$faq_schema = array(
-				'@context'   => 'https://schema.org',
 				'@type'      => 'FAQPage',
 				'mainEntity' => $vk_blocks_faq_data,
 			);
+			$schema_graph[] = $faq_schema;
+		}
+
+		// 他の構造化データを動的に追加
+		$schema_graph = apply_filters( 'vk_blocks_additional_schema_graph', $schema_graph );
+
+		if ( ! empty( $schema_graph ) ) {
+			if ( count( $schema_graph ) > 1 ) {
+				$schema_output = array(
+					'@context' => 'https://schema.org',
+					'@graph'   => $schema_graph,
+				);
+			} else {
+				$schema_output = array(
+					'@context' => 'https://schema.org',
+				) + $schema_graph[0];  // 配列の最初の要素を直接結合
+			}
 
 			// PHP 5.3 以前の互換性のためのチェック
 			$json_options = 0;
@@ -120,7 +139,7 @@ if ( ! function_exists( 'vk_blocks_output_schema_json_ld' ) ) {
 				$json_options |= constant( 'JSON_UNESCAPED_SLASHES' );
 			}
 
-			echo '<script type="application/ld+json">' . wp_json_encode( $faq_schema, $json_options ) . '</script>';
+			echo '<script type="application/ld+json">' . wp_json_encode( $schema_output, $json_options ) . '</script>';
 		}
 	}
 	add_action( 'wp_footer', 'vk_blocks_output_schema_json_ld' );

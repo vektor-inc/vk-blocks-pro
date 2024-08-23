@@ -107,11 +107,11 @@ function vk_blocks_faq_render_callback( $block_content, $block ) {
 
 add_filter( 'render_block', 'vk_blocks_faq_render_callback', 10, 2 );
 
-if ( ! function_exists( 'vk_blocks_output_faq_json_ld' ) ) {
+if ( ! function_exists( 'vk_blocks_output_schema_json_ld' ) ) {
 	/**
 	 * Output the collected FAQ data as JSON-LD.
 	 */
-	function vk_blocks_output_faq_json_ld() {
+	function vk_blocks_output_schema_json_ld() {
 		global $vk_blocks_faq_data;
 
 		if ( ! empty( $vk_blocks_faq_data ) ) {
@@ -133,5 +133,5 @@ if ( ! function_exists( 'vk_blocks_output_faq_json_ld' ) ) {
 			echo '<script type="application/ld+json">' . wp_json_encode( $faq_schema, $json_options ) . '</script>';
 		}
 	}
-	add_action( 'wp_footer', 'vk_blocks_output_faq_json_ld' );
+	add_action( 'wp_footer', 'vk_blocks_output_schema_json_ld' );
 }

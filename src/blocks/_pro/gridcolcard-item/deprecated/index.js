@@ -1,6 +1,6 @@
 import save1_38_0 from './1.38.0/save';
 import save1_71_0 from './1.71.0/save';
-import save1_82_0 from './1.81.0/save';
+import save1_82_0 from './1.82.0/save';
 
 const blockAttributes = {
 	editLock: {

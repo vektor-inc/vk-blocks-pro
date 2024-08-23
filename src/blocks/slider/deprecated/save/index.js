@@ -1,4 +1,5 @@
 /* eslint camelcase: 0 */
+import save1_80_1 from './1.80.1/save';
 import save1_51_0 from './1.51.0/save';
 import save1_48_1 from './1.48.1/save';
 import save1_34_1 from './1.34.1/save';
@@ -159,7 +160,6 @@ const blockAttributes8 = {
 }
 
 // 1.51.0 時点から追加された値
-/*
  const blockAttributes9 = {
 	...blockAttributes8,
 	centeredSlides: {
@@ -171,9 +171,23 @@ const blockAttributes8 = {
 		default: 'default'
 	},
 }
-*/
+
+// 1.80.1 時点からの変更点
+/*
+const blockAttributes10 = {
+	...blockAttributes9,
+	width: {
+		type: 'string'
+	},
+}
+	*/
+
 
 const deprecated = [
+	{
+		attributes: blockAttributes9,
+		save: save1_80_1,
+	},
 	{
 		attributes: blockAttributes8,
 		save: save1_51_0,

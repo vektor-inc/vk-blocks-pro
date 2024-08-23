@@ -135,27 +135,27 @@ $stylePalette: (
 );
 
 $colorPalette: (
-	has-vk-pale-pink: #f78da7,
-	has-vk-vivid-red: #cf2e2e,
-	has-vk-luminous-vivid-orange: #ff6900,
-	has-vk-luminous-vivid-amber: #fcb900,
-	has-vk-light-green-cyan: #7bdcb5,
-	has-vk-vivid-green-cyan: #00d084,
-	has-vk-pale-cyan-blue: #8ed1fc,
-	has-vk-vivid-cyan-blue: #0693e3,
-	has-vk-vivid-purple: #9b51e0,
-	has-vk-very-light-gray: #eee,
-	has-vk-cyan-bluish-gray: #abb8c3,
-	has-vk-very-dark-gray: #313131,
-	has-vk-white: #ffffff,
-	has-vk-color-primary: var(--wp--preset--color--vk-color-primary),
-	has-vk-color-primary-dark: var(--wp--preset--color--vk-color-primary-dark),
-	has-vk-color-primary-vivid: var(--wp--preset--color--vk-color-primary-vivid),
-	has-vk-color-custom-1: var(--wp--preset--color--vk-color-custom-1),
-	has-vk-color-custom-2: var(--wp--preset--color--vk-color-custom-2),
-	has-vk-color-custom-3: var(--wp--preset--color--vk-color-custom-3),
-	has-vk-color-custom-4: var(--wp--preset--color--vk-color-custom-4),
-	has-vk-color-custom-5: var(--wp--preset--color--vk-color-custom-5),
+	(pale-pink, #f78da7),
+	(vivid-red, #cf2e2e),
+	(luminous-vivid-orange, #ff6900),
+	(luminous-vivid-amber, #fcb900),
+	(light-green-cyan, #7bdcb5),
+	(vivid-green-cyan, #00d084),
+	(pale-cyan-blue, #8ed1fc),
+	(vivid-cyan-blue, #0693e3),
+	(vivid-purple, #9b51e0),
+	(very-light-gray, #eee),
+	(cyan-bluish-gray, #abb8c3),
+	(very-dark-gray, #313131),
+	(white, #ffffff),
+	(color-primary, var(--wp--preset--color--vk-color-primary)),
+	(color-primary-dark, var(--wp--preset--color--vk-color-primary-dark)),
+	(color-primary-vivid, var(--wp--preset--color--vk-color-primary-vivid)),
+	(color-custom-1, var(--wp--preset--color--vk-color-custom-1)),
+	(color-custom-2, var(--wp--preset--color--vk-color-custom-2)),
+	(color-custom-3, var(--wp--preset--color--vk-color-custom-3)),
+	(color-custom-4, var(--wp--preset--color--vk-color-custom-4)),
+	(color-custom-5, var(--wp--preset--color--vk-color-custom-5))
 );
 
 /*-------------------------------------------*/
@@ -164,17 +164,20 @@ $colorPalette: (
 @each $colorClass, $color in $colorPalette {
 	:root {
 		// 一般的なカラー設定
-		.#{$colorClass}-background-color {
-			@if $colorClass == has-vk-color-primary {
-				// has-vk-color-primary-background-colorクラスはデフォルトで設定される。Lightning以外のテーマに対応するため代替値を設定
+		.vk-has-#{$colorClass}-background-color,
+		.has-vk-#{$colorClass}-background-color {
+			@if $colorClass == color-primary {
+				// color-primaryに関する特殊処理
 				background-color: var(--wp--preset--color--vk-color-primary, #337ab7);
 			} @else {
 				background-color: #{$color};
 			}
 		}
 
-		.#{$colorClass}-color {
-			@if $colorClass == has-vk-color-primary {
+		.vk-has-#{$colorClass}-color,
+		.has-vk-#{$colorClass}-color {
+			@if $colorClass == color-primary {
+				// color-primaryに関する特殊処理
 				color: var(--wp--preset--color--vk-color-primary, #337ab7);
 			} @else {
 				color: #{$color};
@@ -452,9 +455,12 @@ ol {
 	}
 
 	@each $colorClass, $color in $colorPalette {
-		&.#{$colorClass}-color {
+		&.vk-has-#{$colorClass}-color,
+		&.has-vk-#{$colorClass}-color {
+			color: initial;
 			border-color: $color;
 			.wp-block-group__inner-container {
+				color: initial;
 				border-color: $color;
 			}
 		}
@@ -634,5 +640,25 @@ $xxl-min: 1400px;
 .wp-block-columns {
 	&.wp-block-columns.is-vk-row-reverse {
     	flex-direction: row-reverse;
+	}
+}
+
+/*-------------------------------------------*/
+/* カバーブロック
+/*-------------------------------------------*/
+.wp-block-cover {
+	// リンク設定
+	&.has-link {
+		position: relative;
+	}
+	&-vk-link {
+		position: absolute;
+		top: 0; 
+		left: 0;
+		width: 100%;
+		height: 100%;
+		color: transparent;
+		cursor: pointer;
+		z-index: 10;
 	}
 }

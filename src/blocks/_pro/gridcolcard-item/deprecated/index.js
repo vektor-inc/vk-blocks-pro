@@ -1,6 +1,6 @@
 import save1_38_0 from './1.38.0/save';
 import save1_71_0 from './1.71.0/save';
-// import save1_81_0 from './1.81.0/save';
+import save1_82_0 from './1.81.0/save';
 
 const blockAttributes = {
 	editLock: {
@@ -32,11 +32,11 @@ const blockAttributes = {
 	},
 	headerDisplay: {
 		type: 'string',
-		default: 'delete'
+		default: 'display' // デフォルト値を変更
 	},
 	footerDisplay: {
 		type: 'string',
-		default: 'delete'
+		default: 'display' // デフォルト値を変更
 	},
 	borderRadius: {
 		type: 'string',
@@ -68,25 +68,33 @@ const blockAttributes2 = {
 	},
 };
 
-/*
-// 1.81.0 からの変更で追加したもの
 const blockAttributes3 = {
 	...blockAttributes2,
 	headerDisplay: {
 		type: 'string',
-		default: 'display'
+		default: 'delete' // 以前のデフォルト値
 	},
 	footerDisplay: {
 		type: 'string',
-		default: 'display'
+		default: 'delete' // 以前のデフォルト値
 	},
 };
-*/
 
 const deprecated = [
 	{
-	//	attributes: blockAttributes3,
-	//	save: save1_81_0,
+		attributes: blockAttributes3,
+		save: save1_82_0,
+		migrate: (attributes) => {
+			// 必要に応じて、旧データから新データに変換するロジックをここに追加
+			let newAttributes = { ...attributes };
+			if (!attributes.headerDisplay) {
+				newAttributes.headerDisplay = 'delete';
+			}
+			if (!attributes.footerDisplay) {
+				newAttributes.footerDisplay = 'delete';
+			}
+			return newAttributes;
+		},
 	},
 	{
 		attributes: blockAttributes2,
@@ -97,4 +105,5 @@ const deprecated = [
 		save: save1_38_0,
 	},
 ];
+
 export default deprecated;

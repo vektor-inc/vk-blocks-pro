@@ -6,7 +6,7 @@
  */
 
 /**
- * Faq2 block test case.
+ * Faq block test case.
  */
 class Faq2Test extends WP_UnitTestCase {
 	/**
@@ -20,10 +20,10 @@ class Faq2Test extends WP_UnitTestCase {
 		// Create a block instance
 		$block_content = '
 			<dl>
-				<dt>Question A?</dt>
-				<dd>Answer A</dd>
-				<dt>Question B?</dt>
-				<dd>Answer B</dd>
+				<dt>Question 1?</dt>
+				<dd>Answer 1</dd>
+				<dt>Question 2?</dt>
+				<dd>Answer 2</dd>
 			</dl>';
 
 		// Simulate rendering the block
@@ -34,7 +34,7 @@ class Faq2Test extends WP_UnitTestCase {
 		);
 
 		// Apply the render callback
-		$rendered_content = vk_blocks_collect_faq_data($block_content, $block);
+		$rendered_content = vk_blocks_faq2_render_callback($block_content, $block);
 
 		// Print the test details
 		print PHP_EOL;
@@ -45,10 +45,10 @@ class Faq2Test extends WP_UnitTestCase {
 		print $rendered_content . PHP_EOL;
 
 		// Check that the block content is rendered correctly
-		$this->assertStringContainsString('Question A?', $rendered_content);
-		$this->assertStringContainsString('Answer A', $rendered_content);
-		$this->assertStringContainsString('Question B?', $rendered_content);
-		$this->assertStringContainsString('Answer B', $rendered_content);
+		$this->assertStringContainsString('Question 1?', $rendered_content);
+		$this->assertStringContainsString('Answer 1', $rendered_content);
+		$this->assertStringContainsString('Question 2?', $rendered_content);
+		$this->assertStringContainsString('Answer 2', $rendered_content);
 
 		// Print the structured data
 		print 'Structured Data:' . PHP_EOL;
@@ -58,20 +58,20 @@ class Faq2Test extends WP_UnitTestCase {
 		$this->assertCount(2, $vk_blocks_faq_data);
 
 		$this->assertEquals('Question', $vk_blocks_faq_data[0]['@type']);
-		$this->assertEquals('Question A?', $vk_blocks_faq_data[0]['name']);
+		$this->assertEquals('Question 1?', $vk_blocks_faq_data[0]['name']);
 		$this->assertEquals('Answer', $vk_blocks_faq_data[0]['acceptedAnswer']['@type']);
-		$this->assertEquals('Answer A', $vk_blocks_faq_data[0]['acceptedAnswer']['text']);
+		$this->assertEquals('Answer 1', $vk_blocks_faq_data[0]['acceptedAnswer']['text']);
 
 		$this->assertEquals('Question', $vk_blocks_faq_data[1]['@type']);
-		$this->assertEquals('Question B?', $vk_blocks_faq_data[1]['name']);
+		$this->assertEquals('Question 2?', $vk_blocks_faq_data[1]['name']);
 		$this->assertEquals('Answer', $vk_blocks_faq_data[1]['acceptedAnswer']['@type']);
-		$this->assertEquals('Answer B', $vk_blocks_faq_data[1]['acceptedAnswer']['text']);
+		$this->assertEquals('Answer 2', $vk_blocks_faq_data[1]['acceptedAnswer']['text']);
 	}
 
 	/**
 	 * Test if the structured data is output as JSON-LD in the footer.
 	 */
-	public function test_faq2_json_ld_output() {
+	public function test_faq_json_ld_output() {
 		// Set up global variable for structured data
 		global $vk_blocks_faq_data;
 		$vk_blocks_faq_data = array(
@@ -97,7 +97,7 @@ class Faq2Test extends WP_UnitTestCase {
 		// Print the JSON-LD output
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
-		print 'test_faq2_json_ld_output()' . PHP_EOL;
+		print 'test_faq_json_ld_output()' . PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
 		print 'JSON-LD Output:' . PHP_EOL;
 		print $output . PHP_EOL;

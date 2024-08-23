@@ -57,7 +57,7 @@ add_action( 'init', 'vk_blocks_register_block_faq2', 99 );
  * Render faq2 block
  *
  * @param string $block_content block_content.
- * @param array $block block.
+ * @param array  $block block.
  * @return string
  */
 function vk_blocks_faq2_render_callback( $block_content, $block ) {

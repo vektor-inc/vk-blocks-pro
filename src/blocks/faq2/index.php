@@ -108,7 +108,7 @@ if ( ! function_exists( 'vk_blocks_output_schema_json_ld' ) ) {
 
 		// FAQ構造化データを追加
 		if ( ! empty( $vk_blocks_faq_data ) ) {
-			$faq_schema = array(
+			$faq_schema     = array(
 				'@type'      => 'FAQPage',
 				'mainEntity' => $vk_blocks_faq_data,
 			);

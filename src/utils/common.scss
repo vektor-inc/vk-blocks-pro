@@ -660,7 +660,13 @@ $xxl-min: 1400px;
 		}
 	}
 	.wp-block-columns:has(.wp-block-column-vk-link) {
-		margin-bottom: 0; // これがないとコアに勝手にmargin-bottomがついてしまう
+		.wp-block-column {
+			> * {
+				&:first-of-type {
+					margin-top: 0;
+				}
+			}
+		}
 	}
 }
 

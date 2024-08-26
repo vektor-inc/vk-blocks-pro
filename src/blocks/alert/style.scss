@@ -12,9 +12,9 @@
   $color: nth($var, 3);
   $color-border: nth($var, 4);
   .alert-#{$class-name} {
-    background-color: $color-bg;
-    color: $color;
-    border-color: $color-border;
+	background-color: $color-bg;
+	color: $color;
+	border-color: $color-border;
   }
 }
 
@@ -25,7 +25,7 @@
 	&_icon{
 		display: flex !important;
 		flex-wrap: wrap;
-    flex-direction: column;
+		flex-direction: column;
 		justify-content: center;
 		align-content: center;
 		height: 100%;
@@ -55,6 +55,7 @@
 		justify-content: center;
 		place-items: center;
 		> .vk_alert_content{
+			min-width: 0;
 			width: 100%;
 			padding: 0 1rem;
 			border-left: 1.5px solid currentColor;
@@ -113,9 +114,9 @@
 	}
 	.alert {
 		&.has-alert-icon {
-	    padding: 1em 1em 1em 0;
+		padding: 1em 1em 1em 0;
   	  margin: 1em auto;
-    	border-radius: 3px;
+		border-radius: 3px;
 		}
 		p {
 				margin-block-end: 0;

@@ -26,6 +26,7 @@ import { link, linkOff, keyboardReturn } from '@wordpress/icons';
 import classnames from 'classnames';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { isGradientStyle } from '@vkblocks/utils/is-gradient-style';
+import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 
 export default function Edit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -87,63 +88,65 @@ export default function Edit(props) {
 	// 親ブロック情報取得
 	const parentBlock = getBlocksByClientId(rootClientId);
 	useEffect(() => {
-		// Send attribute to child
-		if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
-			const thisInnerBlocks = thisBlock[0].innerBlocks;
-			thisInnerBlocks.forEach(function (thisInnerBlock) {
-				updateBlockAttributes(thisInnerBlock.clientId, {
-					containerSpace: attributes.containerSpace,
-					headerImageAspectRatio: attributes.headerImageAspectRatio,
-					headerImageFit: attributes.headerImageFit,
-					headerDisplay: attributes.headerDisplay,
-					footerDisplay: attributes.footerDisplay,
+		if ( isParentReusableBlock(clientId) === false ) {
+			// Send attribute to child
+			if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
+				const thisInnerBlocks = thisBlock[0].innerBlocks;
+				thisInnerBlocks.forEach(function (thisInnerBlock) {
+					updateBlockAttributes(thisInnerBlock.clientId, {
+						containerSpace: attributes.containerSpace,
+						headerImageAspectRatio: attributes.headerImageAspectRatio,
+						headerImageFit: attributes.headerImageFit,
+						headerDisplay: attributes.headerDisplay,
+						footerDisplay: attributes.footerDisplay,
+					});
 				});
-			});
-		}
+			}
 
-		// Send attribute to parent
-		if (editMode === 'all') {
-			if (parentBlock && parentBlock[0] && parentBlock[0].innerBlocks) {
-				const parentInnerBlocks = parentBlock[0].innerBlocks;
+			// Send attribute to parent
+			if (editMode === 'all') {
+				if (parentBlock && parentBlock[0] && parentBlock[0].innerBlocks) {
+					const parentInnerBlocks = parentBlock[0].innerBlocks;
 
-				// 兄弟ブロックの値の変更
-				parentInnerBlocks.forEach(function (thisInnerBlock) {
-					// 編集ロックがかかっていないものだけ上書きする
-					if (thisInnerBlock.attributes.editLock === false) {
-						updateBlockAttributes(thisInnerBlock.clientId, {
-							editMode: attributes.editMode,
-							containerSpace: attributes.containerSpace,
-							headerImageAspectRatio:
-								attributes.headerImageAspectRatio,
-							headerImageFit: attributes.headerImageFit,
-							headerDisplay: attributes.headerDisplay,
-							footerDisplay: attributes.footerDisplay,
-							borderRadius: attributes.borderRadius,
-							border: attributes.border,
-							borderColor: attributes.borderColor,
-							borderWidth: attributes.borderWidth,
-							textColor: attributes.textColor,
-							backgroundColor: attributes.backgroundColor,
-							backgroundGradient: attributes.backgroundGradient,
-						});
-					}
-				});
+					// 兄弟ブロックの値の変更
+					parentInnerBlocks.forEach(function (thisInnerBlock) {
+						// 編集ロックがかかっていないものだけ上書きする
+						if (thisInnerBlock.attributes.editLock === false) {
+							updateBlockAttributes(thisInnerBlock.clientId, {
+								editMode: attributes.editMode,
+								containerSpace: attributes.containerSpace,
+								headerImageAspectRatio:
+									attributes.headerImageAspectRatio,
+								headerImageFit: attributes.headerImageFit,
+								headerDisplay: attributes.headerDisplay,
+								footerDisplay: attributes.footerDisplay,
+								borderRadius: attributes.borderRadius,
+								border: attributes.border,
+								borderColor: attributes.borderColor,
+								borderWidth: attributes.borderWidth,
+								textColor: attributes.textColor,
+								backgroundColor: attributes.backgroundColor,
+								backgroundGradient: attributes.backgroundGradient,
+							});
+						}
+					});
 
-				// 子ブロックから親ブロックの値の変更
-				updateBlockAttributes(rootClientId, {
-					containerSpace: attributes.containerSpace,
-					headerImageAspectRatio: attributes.headerImageAspectRatio,
-					headerImageFit: attributes.headerImageFit,
-					headerDisplay: attributes.headerDisplay,
-					footerDisplay: attributes.footerDisplay,
-					borderRadius: attributes.borderRadius,
-					border: attributes.border,
-					borderColor: attributes.borderColor,
-					borderWidth: attributes.borderWidth,
-					textColor: attributes.textColor,
-					backgroundColor: attributes.backgroundColor,
-					backgroundGradient: attributes.backgroundGradient,
-				});
+					// 子ブロックから親ブロックの値の変更
+					updateBlockAttributes(rootClientId, {
+						containerSpace: attributes.containerSpace,
+						headerImageAspectRatio: attributes.headerImageAspectRatio,
+						headerImageFit: attributes.headerImageFit,
+						headerDisplay: attributes.headerDisplay,
+						footerDisplay: attributes.footerDisplay,
+						borderRadius: attributes.borderRadius,
+						border: attributes.border,
+						borderColor: attributes.borderColor,
+						borderWidth: attributes.borderWidth,
+						textColor: attributes.textColor,
+						backgroundColor: attributes.backgroundColor,
+						backgroundGradient: attributes.backgroundGradient,
+					});
+				}
 			}
 		}
 	}, [thisBlock, attributes]);

@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Grid Column Card ] Fix infinite loop in grid column card block when used in reusable blocks.
+
 = 1.83.0 =
 [ Add Setting ][ Alert ] Add icon setting and inner block.
 [ Bug fix ] [ Core List ] Add support for handling list color in old settings.

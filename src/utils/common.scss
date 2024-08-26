@@ -217,6 +217,7 @@ ol {
 				margin-left: 0;
 				margin:calc( 1rem * 0.8 ) 0;
 				line-height: calc( 1rem * 1.65 );
+				color: initial;
 			}
 		}
 	}
@@ -357,7 +358,6 @@ ol {
 	@each $styleClass, $faCode in $stylePalette {
 		&.#{$styleClass} {
 			li {
-				color: initial;
 				&::before {
 					@include mark-before;
 					content: $faCode;

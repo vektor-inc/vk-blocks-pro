@@ -57,7 +57,7 @@ export default function Edit(props) {
 	const thisBlock = getBlocksByClientId(clientId);
 
 	useEffect(() => {
-		if ( isParentReusableBlock(clientId) === false ) {
+		if (isParentReusableBlock(clientId) === false) {
 			if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
 				// インナーブロックの情報を取得
 				const thisInnerBlocks = thisBlock[0].innerBlocks;

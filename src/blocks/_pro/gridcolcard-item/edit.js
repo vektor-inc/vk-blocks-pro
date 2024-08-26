@@ -88,14 +88,15 @@ export default function Edit(props) {
 	// 親ブロック情報取得
 	const parentBlock = getBlocksByClientId(rootClientId);
 	useEffect(() => {
-		if ( isParentReusableBlock(clientId) === false ) {
+		if (isParentReusableBlock(clientId) === false) {
 			// Send attribute to child
 			if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
 				const thisInnerBlocks = thisBlock[0].innerBlocks;
 				thisInnerBlocks.forEach(function (thisInnerBlock) {
 					updateBlockAttributes(thisInnerBlock.clientId, {
 						containerSpace: attributes.containerSpace,
-						headerImageAspectRatio: attributes.headerImageAspectRatio,
+						headerImageAspectRatio:
+							attributes.headerImageAspectRatio,
 						headerImageFit: attributes.headerImageFit,
 						headerDisplay: attributes.headerDisplay,
 						footerDisplay: attributes.footerDisplay,
@@ -105,7 +106,11 @@ export default function Edit(props) {
 
 			// Send attribute to parent
 			if (editMode === 'all') {
-				if (parentBlock && parentBlock[0] && parentBlock[0].innerBlocks) {
+				if (
+					parentBlock &&
+					parentBlock[0] &&
+					parentBlock[0].innerBlocks
+				) {
 					const parentInnerBlocks = parentBlock[0].innerBlocks;
 
 					// 兄弟ブロックの値の変更
@@ -126,7 +131,8 @@ export default function Edit(props) {
 								borderWidth: attributes.borderWidth,
 								textColor: attributes.textColor,
 								backgroundColor: attributes.backgroundColor,
-								backgroundGradient: attributes.backgroundGradient,
+								backgroundGradient:
+									attributes.backgroundGradient,
 							});
 						}
 					});
@@ -134,7 +140,8 @@ export default function Edit(props) {
 					// 子ブロックから親ブロックの値の変更
 					updateBlockAttributes(rootClientId, {
 						containerSpace: attributes.containerSpace,
-						headerImageAspectRatio: attributes.headerImageAspectRatio,
+						headerImageAspectRatio:
+							attributes.headerImageAspectRatio,
 						headerImageFit: attributes.headerImageFit,
 						headerDisplay: attributes.headerDisplay,
 						footerDisplay: attributes.footerDisplay,

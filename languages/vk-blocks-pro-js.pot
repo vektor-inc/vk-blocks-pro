@@ -1609,6 +1609,7 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:137
 #: src/blocks/_pro/step-item/edit.js:82
+#: src/blocks/alert/edit.js:73
 #: src/blocks/border-box/edit.js:272
 #: src/blocks/button/edit.js:760
 #: src/blocks/heading/edit.js:335
@@ -2232,33 +2233,80 @@ msgstr ""
 msgid "label"
 msgstr ""
 
-#: src/blocks/alert/edit.js:19
+#: src/blocks/alert/edit.js:29
+msgid "Icon Text"
+msgstr ""
+
+#: src/blocks/alert/edit.js:41
 #: src/blocks/heading/edit.js:255
 msgid "Style Settings"
 msgstr ""
 
-#: src/blocks/alert/edit.js:25
+#: src/blocks/alert/edit.js:43
+msgid "Alert Style"
+msgstr ""
+
+#: src/blocks/alert/edit.js:53
+#: src/blocks/alert/variations.js:13
 #: src/blocks/button/edit.js:692
 #: src/blocks/pr-content/edit.js:171
 msgid "Success"
 msgstr ""
 
-#: src/blocks/alert/edit.js:29
+#: src/blocks/alert/edit.js:57
 #: src/blocks/button/edit.js:696
 #: src/blocks/pr-content/edit.js:175
 msgid "Info"
 msgstr ""
 
-#: src/blocks/alert/edit.js:33
+#: src/blocks/alert/edit.js:61
+#: src/blocks/alert/variations.js:54
 #: src/blocks/button/edit.js:700
 #: src/blocks/pr-content/edit.js:179
 msgid "Warning"
 msgstr ""
 
-#: src/blocks/alert/edit.js:37
+#: src/blocks/alert/edit.js:65
+#: src/blocks/alert/variations.js:73
 #: src/blocks/button/edit.js:704
 #: src/blocks/pr-content/edit.js:183
 msgid "Danger"
+msgstr ""
+
+#: src/blocks/alert/variations.js:19
+msgid "This is a success alert."
+msgstr ""
+
+#: src/blocks/alert/variations.js:26
+msgid "Alert Info"
+msgstr ""
+
+#: src/blocks/alert/variations.js:32
+msgid "Information"
+msgstr ""
+
+#: src/blocks/alert/variations.js:38
+msgid "This is a information alert."
+msgstr ""
+
+#: src/blocks/alert/variations.js:48
+msgid "Alert Warning"
+msgstr ""
+
+#: src/blocks/alert/variations.js:60
+msgid "This is a warning alert."
+msgstr ""
+
+#: src/blocks/alert/variations.js:67
+msgid "Alert Danger"
+msgstr ""
+
+#: src/blocks/alert/variations.js:7
+msgid "Alert Success"
+msgstr ""
+
+#: src/blocks/alert/variations.js:79
+msgid "This is a danger alert."
 msgstr ""
 
 #: src/blocks/ancestor-page-list/edit.js:100

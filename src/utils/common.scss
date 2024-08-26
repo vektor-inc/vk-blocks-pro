@@ -386,15 +386,17 @@ ol {
 			}
 		}
 
-		&.is-style-vk-numbered-circle-mark.vk-has-#{$colorClass}-color,
-		&.is-style-vk-numbered-circle-mark.has-vk-#{$colorClass}-color, 
-		&.is-style-vk-numbered-square-mark.vk-has-#{$colorClass}-color,
-		&.is-style-vk-numbered-square-mark.has-vk-#{$colorClass}-color {
-			li::before {
-				color: #ffffff;
-				background-color: $color;
+		&.is-style-vk-numbered-circle-mark,
+		&.is-style-vk-numbered-square-mark {
+			&.vk-has-#{$colorClass}-color,
+			&.has-vk-#{$colorClass}-color {
+				li::before {
+					color: #fff;
+					background-color: $color;
+				}
 			}
 		}
+		
 	}
 }
 //ul,ol

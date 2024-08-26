@@ -380,24 +380,24 @@ ol {
 	@each $colorClass, $color in $colorPalette {
 		&.vk-has-#{$colorClass}-color,
 		&.has-vk-#{$colorClass}-color {
-		  li::marker {
-			color: $color;
-		  }
-		  li::before {
-			color: $color;
-		  }
+			li::marker {
+				color: $color;
+			}
+			li::before {
+				color: $color;
+			}
 		}
-	  
+
 		&.is-style-vk-numbered-circle-mark.vk-has-#{$colorClass}-color,
 		&.is-style-vk-numbered-circle-mark.has-vk-#{$colorClass}-color, 
 		&.is-style-vk-numbered-square-mark.vk-has-#{$colorClass}-color,
 		&.is-style-vk-numbered-square-mark.has-vk-#{$colorClass}-color {
-		  li::before {
-			color: #ffffff;
-			background-color: $color;
-		  }
+			li::before {
+				color: #ffffff;
+				background-color: $color;
+			}
 		}
-	  }	  
+	}
 }
 //ul,ol
 
@@ -615,8 +615,8 @@ ol {
 /*-------------------------------------------*/
 $xxl-min: 1400px;
 .col {
-    // Bootstrap4 では xxl サイズがないので独自に追加
-    @media (min-width: $xxl-min) {
+	// Bootstrap4 では xxl サイズがないので独自に追加
+	@media (min-width: $xxl-min) {
 		&-xxl-2 {
 			flex: 0 0 16.66667%;
 			max-width: 16.66667%;
@@ -645,7 +645,7 @@ $xxl-min: 1400px;
 /*-------------------------------------------*/
 .wp-block-columns {
 	&.wp-block-columns.is-vk-row-reverse {
-    	flex-direction: row-reverse;
+		flex-direction: row-reverse;
 	}
 }
 

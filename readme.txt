@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ] [ Core List ] Add support for handling list color in old settings.
 [ Bug fix ][ Tab Item ] When duplicating an active tab-item block, no more than one tab-item block becomes active.
 
 = 1.82.0 =

@@ -210,6 +210,10 @@ ol {
 		&-vk-numbered-circle-mark,
 		&-vk-numbered-square-mark {
 			padding-inline-start: 2em;
+			&:not(.has-text-color), 
+			&:not(.has-link-color) {
+				color: initial;
+			}
 			li {
 				list-style: none;
 				position: relative;
@@ -217,7 +221,6 @@ ol {
 				margin-left: 0;
 				margin:calc( 1rem * 0.8 ) 0;
 				line-height: calc( 1rem * 1.65 );
-				color: initial;
 			}
 		}
 	}

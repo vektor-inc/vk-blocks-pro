@@ -10,13 +10,10 @@
 
 		.block-editor-block-list__layout {
 			display: flex;
+			align-items: center;
 			flex-wrap: wrap;
 			clear: both; // To be cope with inline image float and so on.
-			margin-left: -8px;
-
-			.vk_button {
-				margin: 4px 0 4px 8px;
-			}
+			gap: 8px;
 		}
 
 		&-justify-left {

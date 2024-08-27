@@ -33,7 +33,10 @@ export const ColumnLayout = (props) => {
 	return (
 		<>
 			<BaseControl
-				label={__('Column ( Screen size : Extra small )', 'vk-blocks')}
+				label={__(
+					'Column ( Screen size : Extra small )',
+					'vk-blocks-pro'
+				)}
 				id={'vk_columns-xs'}
 			>
 				<RangeControl
@@ -49,7 +52,7 @@ export const ColumnLayout = (props) => {
 				/>
 			</BaseControl>
 			<BaseControl
-				label={__('Column ( Screen size : Small )', 'vk-blocks')}
+				label={__('Column ( Screen size : Small )', 'vk-blocks-pro')}
 				id={'vk_columns-xs'}
 			>
 				<RangeControl
@@ -65,7 +68,7 @@ export const ColumnLayout = (props) => {
 				/>
 			</BaseControl>
 			<BaseControl
-				label={__('Column ( Screen size : Medium )', 'vk-blocks')}
+				label={__('Column ( Screen size : Medium )', 'vk-blocks-pro')}
 				id={'vk_columns-xs'}
 			>
 				<RangeControl
@@ -81,7 +84,7 @@ export const ColumnLayout = (props) => {
 				/>
 			</BaseControl>
 			<BaseControl
-				label={__('Column ( Screen size : Large )', 'vk-blocks')}
+				label={__('Column ( Screen size : Large )', 'vk-blocks-pro')}
 				id={'vk_columns-xs'}
 			>
 				<RangeControl
@@ -97,7 +100,10 @@ export const ColumnLayout = (props) => {
 				/>
 			</BaseControl>
 			<BaseControl
-				label={__('Column ( Screen size : Extra large )', 'vk-blocks')}
+				label={__(
+					'Column ( Screen size : Extra large )',
+					'vk-blocks-pro'
+				)}
 				id={'vk_columns-xs'}
 			>
 				<RangeControl
@@ -113,7 +119,7 @@ export const ColumnLayout = (props) => {
 				/>
 			</BaseControl>
 			<BaseControl
-				label={__('Column ( Screen size : XX large )', 'vk-blocks')}
+				label={__('Column ( Screen size : XX large )', 'vk-blocks-pro')}
 				id={'vk_columns-xs'}
 			>
 				<RangeControl

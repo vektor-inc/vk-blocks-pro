@@ -49,6 +49,16 @@ $xxl-min: 1400px;
 /*-------------------------------------------*/
 /* If exclude the .vk_posts that, when you select the .media don't work */
 .vk_posts .vk_post-col {
+	// 5 と 7 は horizontal でのみ使用
+	// 他のように -30px でないのは そもそも -30px 自体が vk_post の独自仕様であるため 
+	// horizontal では -30px をつける必要がないのでつけていない
+	&-5 {
+		width: 41.67%;
+	}
+	&-7 {
+		width: 58.33%;
+	}
+
 	&-xs-2 {
 		width: calc(16.66% - 30px);
 	}
@@ -176,6 +186,18 @@ $xxl-min: 1400px;
 			right: 0;
 			top: 0;
 			z-index: 100;
+		}
+		&.media-img {
+			/* 
+			overflow:hidden; がないと
+			* G3
+			* メディアレイアウト
+			* フッターウィジェット無し
+			* 投稿リストの最後の投稿の抜粋文字数が少ない
+			の条件下で、画像が見えないエリアでhtmlエリアをはみ出して、
+			htmlエリアがスクロール反応してしまい、下端にスクロールした時の挙動が不安定になる
+			*/
+			overflow:hidden;
 		}
 	}
 	& &_title {
@@ -313,6 +335,13 @@ $xxl-min: 1400px;
 	}
 
 	&.card-horizontal {
+		// テーマなどが bootstrap の grid を読み込むと、
+		// horizontal に残っている col-5/col-7 のクラスにpadding をつけられてしまうので打ち消し
+		// （ horizontal から col-5/col-7 のクラスを削除したらこちらも削除可 ）
+		.vk_post-col-5,
+		.vk_post-col-7 {
+			padding: 0;
+		}
 		.vk_post_imgOuter {
 			height: 100%;
 			border-bottom: none;
@@ -326,7 +355,13 @@ $xxl-min: 1400px;
 				border-right:none;
 				border-left:$border_image;
 			}
+			.card-horizontal-inner-row {
+				flex-direction: row-reverse;
+			}
 		}
+	}
+	.card-horizontal-inner-row {
+		display: flex;
 	}
 }
 

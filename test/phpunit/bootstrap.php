@@ -39,14 +39,13 @@ define( 'GUTENBERG_LOAD_VENDOR_SCRIPTS', false );
  * テストするプラグインを読み込み
  */
 function _manually_load_plugin() {
-	require_once dirname( dirname( dirname( __FILE__ ) ) ) . '/vk-blocks.php';
+	// ./temp/themes/ から読み込む
+	register_theme_directory( dirname( dirname( __DIR__ ) ) . '/temp/themes/' );
+	search_theme_directories();
+	require_once dirname( dirname( dirname( __FILE__ ) ) ) . '/vk-blocks.php';	
 }
 tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );
 
-/**
- *  utilsを読み込み
- */
-require_once dirname( __FILE__ ) . '/utils.php';
 
 /**
  * Adds a wp_die handler for use during tests.
@@ -77,6 +76,13 @@ $GLOBALS['wp_tests_options'] = array(
 
 // Start up the WP testing environment.
 require $_tests_dir . '/includes/bootstrap.php';
+
+/**
+ *  utils、custom_assertを読み込み
+ */
+require_once dirname( __FILE__ ) . '/utils.php';
+require_once dirname( __FILE__ ) . '/custom-assert.php';
+require_once dirname( __FILE__ ) . '/vk-unit-test-case.php';
 
 // Use existing behavior for wp_die during actual test execution.
 remove_filter( 'wp_die_handler', 'fail_if_died' );

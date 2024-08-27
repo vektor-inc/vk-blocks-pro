@@ -52,7 +52,7 @@ export class DepComponent extends Component {
 		}
 
 		const deleteImgBtn = () => {
-			dispatch('core/editor').updateBlockAttributes(clientId, {
+			dispatch('core/block-editor').updateBlockAttributes(clientId, {
 				image: null,
 			});
 		};
@@ -74,7 +74,7 @@ export class DepComponent extends Component {
 									onClick={open}
 									className={'button button-large'}
 								>
-									{__('Select image', 'vk-blocks')}
+									{__('Select image', 'vk-blocks-pro')}
 								</Button>
 							) : (
 								<Fragment>
@@ -91,7 +91,7 @@ export class DepComponent extends Component {
 											'image-button button button-delete'
 										}
 									>
-										{__('Delete Image', 'vk-blocks')}
+										{__('Delete Image', 'vk-blocks-pro')}
 									</Button>
 								</Fragment>
 							)}
@@ -150,7 +150,7 @@ export class DepComponent extends Component {
 						}
 						placeholder={__(
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 					/>
 				);
@@ -191,7 +191,7 @@ export class DepComponent extends Component {
 						className={titleClass}
 						value={title}
 						onChange={(value) => setAttributes({ title: value })}
-						placeholder={__('Title', 'vk-blocks')}
+						placeholder={__('Title', 'vk-blocks-pro')}
 					/>
 				);
 			}

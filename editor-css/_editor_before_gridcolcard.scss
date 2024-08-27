@@ -1,0 +1,86 @@
+.editor-styles-wrapper {
+	.vk_gridcolcard_item.wp-block {
+		--global--spacing-vertical : 0;
+		// core の classic.css とかいうのが .wp-block に対して追加してくる余白の打ち消し
+		margin-top:revert;
+		margin-bottom:revert;
+		width:100%;
+	}
+	.vk_gridcolcard_item:not(.has-child-selected) {
+	   .vk_gridcolcard_item_container > .block-editor-inner-blocks > .block-editor-block-list__layout {
+		   [data-block] {
+			   --global--spacing-vertical : 5px;
+		   }
+		}
+	}
+	.vk_gridcolcard_item_header,
+	.vk_gridcolcard_item_body,
+	.vk_gridcolcard_item_footer{
+		&.wp-block {
+			margin-top:0;
+			margin-bottom:0;
+		}
+	}
+	.vk_gridcolcard {
+		& > .block-editor-inner-blocks > .block-editor-block-list__layout {
+			display: grid; // この指定がないと編集画面でgridにならない
+		}
+		&_item > .vk_gridcolcard_item_container{
+			border:1px dotted #ccc;
+		}
+	}
+	.vk_gridcolcard_item_container {
+		grid-template-rows : auto;
+		&  > .block-editor-inner-blocks {
+			margin:0 !important; /* outerブロックの指定に負ける（VK Blocks側が悪いので要調整） */
+			display: grid;
+			grid-template-rows : auto;
+			& > .block-editor-block-list__layout {
+				display: flex;  // これがないと高さが伸びないので上下揃えが効かない
+				flex-direction: column; // flex指定してしまってるので要素が縦積みになるように指定
+				margin-top:0;
+				margin-bottom:0;
+				grid-template-rows : 1fr;
+			}
+		} 
+	}
+	.vk_gridcolcard_item_header {
+		min-width:100%;
+		.block-editor-inner-blocks,
+		.block-editor-block-list__layout {
+			min-width:100%;
+			height:100%;
+		}
+		.wp-block-image.wp-block {
+			margin:0;
+		}
+	}
+	.vk_gridcolcard_item_body,
+	.vk_gridcolcard_item_footer{
+	 	width:100%;
+	}
+	[class*="vk_gridcolcard_item_body-valign"] {
+		display: grid;
+		height:100%; // これがないと高さが伸びないので上下揃えが効かない
+	}
+	.vk_gridcolcard_item_body-valign-bottom {
+		align-content: center;
+	}
+	.vk_gridcolcard_item_body-valign-bottom {
+		align-content: end;
+	}
+}
+
+.vk_gridcolcard > .block-editor-inner-blocks {
+	width:100%;
+}
+
+.vk_gridcolcard,
+.vk_gridcolcard_item,
+.vk_gridcolcard_item_container{
+	&  > .block-editor-inner-blocks > .block-editor-block-list__layout {
+		display: grid;
+		align-content: stretch;
+		box-sizing: border-box;
+	}
+}

@@ -67,7 +67,7 @@
 			"default": "<i class='fas fa-user'></i>"
 		}
 	},
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
 		"className": true
 	}

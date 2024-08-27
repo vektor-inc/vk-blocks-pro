@@ -27,6 +27,10 @@
 			"type": "string",
 			"default": "0"
 		},
+		"buttonEffect": {
+			"type": "string",
+			"default": ""
+		},
 		"buttonColor": {
 			"type": "string",
 			"default": "primary"
@@ -41,21 +45,53 @@
 			"type": "string",
 			"default": "left"
 		},
+		"buttonWidthMobile": {
+			"type": "number",
+			"default": 0
+		},
+		"buttonWidthTablet": {
+			"type": "number",
+			"default": 0
+		},
+		"buttonWidth": {
+			"type": "number",
+			"default": 0
+		},
+		"outerGap": {
+			"type": "string",
+			"default": null
+		},
 		"fontAwesomeIconBefore": {
 			"type": "string"
 		},
 		"fontAwesomeIconAfter": {
 			"type": "string"
 		},
+		"iconSizeBefore": {
+			"type": "string",
+			"default": null
+		},
+		"iconSizeAfter": {
+			"type": "string",
+			"default": null
+		},
+		"borderRadius": {
+			"type": "string",
+			"default": null
+		},
 		"clientId": {
 			"type": "string"
 		},
 		"blockId": {
 			"type": "string"
+		},
+		"old_1_31_0": {
+			"type": "string",
+			"default": true
 		}
 	},
 	"description": "A button link that can display icons before and after.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
 		"className": true,
 		"anchor": true

@@ -20,7 +20,7 @@ export const CardAlignControls = (props) => {
 		return (
 			<BaseControl
 				key={index}
-				label={__(capitalize(label), 'vk-blocks')} // eslint-disable-line @wordpress/i18n-no-variables
+				label={__(`${capitalize(label)}`, 'vk-blocks-pro')} // eslint-disable-line @wordpress/i18n-no-variables
 				id={'vk_card-align'}
 			>
 				<AlignControl schema={schema} {...props} />
@@ -30,7 +30,7 @@ export const CardAlignControls = (props) => {
 
 	const alignControls = ['title', 'text', 'button'].map(createAlignControl);
 	return (
-		<PanelBody title={__('Align', 'vk-blocks')} initialOpen={false}>
+		<PanelBody title={__('Align', 'vk-blocks-pro')} initialOpen={false}>
 			{alignControls}
 		</PanelBody>
 	);

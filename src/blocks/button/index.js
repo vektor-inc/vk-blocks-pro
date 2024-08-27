@@ -9,6 +9,7 @@ import metadata from './block.json';
 import save from './save';
 import { deprecated } from './deprecated/save/';
 import deprecatedHooks from './deprecated/hooks';
+import transforms from './transforms';
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
@@ -27,17 +28,25 @@ export const settings = {
 			buttonTarget: false,
 			buttonSize: 'md',
 			buttonType: '0',
+			buttonEffect: '',
 			buttonColor: 'primary',
 			buttonTextColorCustom: 'undefined',
 			buttonColorCustom: 'undefined',
 			buttonAlign: 'left',
+			buttonWidthMobile: 0,
+			buttonWidthTablet: 0,
+			outerGap: null,
+			buttonWidth: 0,
 			fontAwesomeIconBefore: iconUser,
 			fontAwesomeIconAfter: iconUser,
+			iconSizeBefore: null,
+			iconSizeAfter: null,
 		},
 	},
 	edit,
 	save,
 	deprecated,
+	transforms,
 };
 
 const generateInlineCss = (attributes) => {
@@ -90,17 +99,61 @@ const generateInlineCss = (attributes) => {
 	return inlineCss;
 };
 
+const generateInlineGapCss = (attributes, isSave) => {
+	const {
+		buttonWidthMobile,
+		buttonWidthTablet,
+		buttonWidth,
+		outerGap,
+		blockId,
+	} = attributes;
+	let inlineCss = '';
+	const propaty = isSave
+		? '.vk_button'
+		: '.vk_buttons .vk_buttons_col .block-editor-block-list__layout .vk_button';
+
+	// 親ブロックのギャップを反映
+	if (outerGap) {
+		if (buttonWidthMobile) {
+			inlineCss += `@media (max-width: 575.98px) {
+				${propaty}.vk_button-${blockId} {
+					width: calc(${buttonWidthMobile}% - calc(${outerGap} - calc(${outerGap} / (100 / ${buttonWidthMobile}))) - 1px);
+				}
+			}`;
+		}
+		if (buttonWidthTablet) {
+			inlineCss += `@media(min-width: 576px) and (max-width: 991.98px) {
+				${propaty}.vk_button-${blockId} {
+					width: calc(${buttonWidthTablet}% - calc(${outerGap} - calc(${outerGap} / (100 / ${buttonWidthTablet}))) - 1px);
+				}
+			}`;
+		}
+		if (buttonWidth) {
+			inlineCss += `@media (min-width: 992px) {
+					${propaty}.vk_button-${blockId} {
+					width: calc(${buttonWidth}% - calc(${outerGap} - calc(${outerGap} / (100 / ${buttonWidth}))) - 1px );
+				}
+			}`;
+		}
+	}
+
+	return inlineCss;
+};
+
 const VKButtonInlineEditorCss = createHigherOrderComponent((BlockEdit) => {
 	return (props) => {
 		const { attributes } = props;
 
 		if ('vk-blocks/button' === props.name) {
 			const cssTag = generateInlineCss(attributes);
-			if (cssTag !== '') {
+			const cssEditor = generateInlineGapCss(attributes, false);
+			if (cssTag !== '' || cssEditor !== '') {
 				return (
 					<>
 						<BlockEdit {...props} />
-						<style type="text/css">{cssTag}</style>
+						<style type="text/css">
+							{cssTag} {cssEditor}
+						</style>
 					</>
 				);
 			}
@@ -123,11 +176,14 @@ const VKButtonInlineCss = (el, type, attributes) => {
 			// NOTE: useBlockProps + style要素を挿入する場合、useBlockPropsを使った要素が最初（上）にこないと、
 			// カスタムクラスを追加する処理が失敗する[
 			const cssTag = generateInlineCss(attributes);
-			if (cssTag !== '') {
+			const cssEditor = generateInlineGapCss(attributes, true);
+			if (cssTag !== '' || cssEditor !== '') {
 				return (
 					<>
 						{el}
-						<style type="text/css">{cssTag}</style>
+						<style type="text/css">
+							{cssTag} {cssEditor}
+						</style>
 					</>
 				);
 			}

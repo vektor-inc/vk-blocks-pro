@@ -2,39 +2,39 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/spacer",
 	"title": "Responsive Spacer",
-    "description": "Use responsive spacers to get the margins right.",
+	"description": "Use responsive spacers to get the margins right.",
 	"category": "vk-blocks-cat",
 	"attributes": {
 		"anchor": {
-            "type": "string",
-            "default": null
-        },
-        "spaceType": {
-            "type": "string",
-            "default": "margin-top"
-        },
-        "unit": {
-            "type": "string",
-            "default": "px"
-        },
-        "pc": {
-            "type": "number",
-            "default": 40
-        },
-        "tablet": {
-            "type": "number",
-            "default": 30
-        },
-        "mobile": {
-            "type": "number",
-            "default": 20
-        },
-        "spaceSize": {
-            "type": "string",
-            "default": "medium"
-        }
+			"type": "string",
+			"default": null
+		},
+		"spaceType": {
+			"type": "string",
+			"default": "margin-top"
+		},
+		"unit": {
+			"type": "string",
+			"default": "px"
+		},
+		"pc": {
+			"type": "number",
+			"default": 40
+		},
+		"tablet": {
+			"type": "number",
+			"default": 30
+		},
+		"mobile": {
+			"type": "number",
+			"default": 20
+		},
+		"spaceSize": {
+			"type": "string",
+			"default": "medium"
+		}
 	},
-    "textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
 		"anchor": true
 	}

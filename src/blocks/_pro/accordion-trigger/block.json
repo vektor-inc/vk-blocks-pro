@@ -3,7 +3,7 @@
 	"name": "vk-blocks/accordion-trigger",
 	"title": "Accordion Trigger",
 	"description": "This is the title area where you can freely add blocks.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"category": "vk-blocks-cat",
 	"parent": ["vk-blocks/accordion"],
 	"attributes": {
@@ -17,6 +17,7 @@
 		}
 	},
 	"supports": {
+		"html": false,
 		"anchor": true,
 		"className": true
 	}

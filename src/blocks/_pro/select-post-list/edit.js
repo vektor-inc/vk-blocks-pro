@@ -108,6 +108,7 @@ export default function SelectPostListEdit(props) {
 				<InnerBlocks
 					template={TEMPLATE}
 					allowedBlocks={ALLOWED_BLOCKS}
+					orientation="horizontal"
 				/>
 			</div>
 		</>

@@ -1,12 +1,14 @@
 //管理画面側の見出しブロックのスタイルのcssになります。
 //cssを修正する場合はfunctions-color.phpのdynamic_css部分とこちらのscssを修正してください。
 
+:root {
+	--vk-heading-has-background-padding: 0.6em 0.7em 0.5em;
+}
+
 $color_key: #337ab7;
 
 @mixin title_unset {
 	position: relative;
-	margin-left: auto;
-	margin-right: auto;
 	outline: unset;
 	outline-offset: unset;
 	box-shadow: unset;
@@ -43,9 +45,20 @@ $color_key: #337ab7;
 
 .is-style-vk-heading {
 	&,
-	.edit-post-visual-editor .editor-styles-wrapper & {
+	.editor-styles-wrapper .block-editor-block-list__layout & {
 		h3.is-style-vk-heading:after {
 			border-bottom: none !important;
+		}
+		&-plain,
+		&-background_fill_lightgray,
+		&-double_black,
+		&-double_bottomborder_black,
+		&-solid_black,
+		&-solid_bottomborder_black,
+		&-dotted_bottomborder_black{
+			&:not(.has-text-align-center,.has-text-align-right){
+				text-align: left;
+			}
 		}
 		&-plain {
 			@include title_unset;
@@ -59,6 +72,11 @@ $color_key: #337ab7;
 			&::after {
 				content: none;
 			}
+			//コア側の見出し背景色の余白が優先されるので上書き用
+			&[class*=has-background]{
+				padding: var(--vk-heading-has-background-padding);
+			}
+
 		}
 
 		// &-speech_balloon_fill {
@@ -129,7 +147,7 @@ $color_key: #337ab7;
 			@include title_unset;
 
 			border: none;
-			background-color: #efefef;
+			background-color: var(--wp--preset--color--bg-secondary,#efefef );
 			padding: 0.6em 0.7em 0.5em;
 			margin-bottom: 1.2em;
 			border-radius: 4px;
@@ -137,6 +155,10 @@ $color_key: #337ab7;
 			&::before,
 			&::after {
 				content: none;
+			}
+			//コア側の見出し背景色の余白が優先されるので上書き用
+			&[class*=has-background]{
+				padding: var(--vk-heading-has-background-padding);
 			}
 		}
 
@@ -194,6 +216,10 @@ $color_key: #337ab7;
 			&::after {
 				content: none;
 			}
+			//コア側の見出し背景色の余白が優先されるので上書き用
+			&[class*=has-background]{
+				padding: var(--vk-heading-has-background-padding);
+			}
 		}
 
 		// &-double_bottomborder {
@@ -216,6 +242,10 @@ $color_key: #337ab7;
 			&::before,
 			&::after {
 				content: none;
+			}
+			//コア側の見出し背景色の余白が優先されるので上書き用
+			&[class*=has-background]{
+				padding: var(--vk-heading-has-background-padding);
 			}
 		}
 
@@ -242,6 +272,10 @@ $color_key: #337ab7;
 			&::after {
 				content: none;
 			}
+			//コア側の見出し背景色の余白が優先されるので上書き用
+			&[class*=has-background]{
+				padding: var(--vk-heading-has-background-padding);
+			}
 		}
 
 		// &-solid_bottomborder {
@@ -264,6 +298,10 @@ $color_key: #337ab7;
 			&::before,
 			&::after {
 				content: none;
+			}
+			//コア側の見出し背景色の余白が優先されるので上書き用
+			&[class*=has-background]{
+				padding: var(--vk-heading-has-background-padding);
 			}
 		}
 
@@ -304,6 +342,10 @@ $color_key: #337ab7;
 			&::after {
 				content: none;
 			}
+			//コア側の見出し背景色の余白が優先されるので上書き用
+			&[class*=has-background]{
+				padding: var(--vk-heading-has-background-padding);
+			}
 		}
 
 		&-both_ends {
@@ -321,7 +363,7 @@ $color_key: #337ab7;
 			&::after {
 				content: "";
 				flex-grow: 1;
-				border-bottom: 1px solid #333;
+				border-bottom: 1px solid currentColor;
 				position: unset;
 				width: unset;
 				border-left: unset;
@@ -421,19 +463,18 @@ $color_key: #337ab7;
 			&::before,
 			&::after {
 				@include title_brackets_before_after;
-
-				border-top: solid 1px #333;
-				border-bottom: solid 1px #333;
+				border-top: solid 1px currentColor;
+				border-bottom: solid 1px currentColor;
 				background: unset;
 			}
 
 			&::before {
-				border-left: solid 1px #333;
+				border-left: solid 1px currentColor;
 				left: 0;
 			}
 
 			&::after {
-				border-right: solid 1px #333 !important;
+				border-right: solid 1px currentColor !important;
 				right: 0;
 				left: auto;
 			}

@@ -1,7 +1,19 @@
 //*      .flowBox
-
 /*-------------------------------------------*/
+$xs-max: 575.98px;
+$sm-max: 767.98px;
+$md-max: 991.98px;
+$lg-max: 1199.98px;
+$xl-max: 1399.98px;
+
+$sm-min: 576px;
+$md-min: 768px;
+$lg-min: 992px;
+$xl-min: 1200px;
+$xxl-min: 1200px;
+
 .vk_flow{ // 編集画面でcssの指定が軽くて負けるので、優先させるため記述
+	margin-block-start:0; //global-styles-inline-cssのmargin-block-startがつくので打ち消し
 	margin-bottom: 0;
 	.vk_flow_frame {
 		display: flex;
@@ -9,14 +21,23 @@
 		border: 3px solid #e5e5e5;
 		margin: 0;
 		justify-content: space-between;
+		@media (max-width: $xs-max) {
+			flex-wrap: wrap;
+		}
 	}
 
 	.vk_flow_frame_text {
 		display: block;
 		overflow: hidden;
 		margin: 0;
-		width: 100%;
 		box-sizing: border-box;
+		width: 100%;
+		@media (max-width: $xs-max) {
+			margin-bottom: 1em;
+		}
+		@media (min-width: $sm-min) {
+			margin-right: 15px;
+		}
 	}
 
 	.vk_flow_frame_text_title,
@@ -40,7 +61,6 @@
 
 	.vk_flow_frame_image {
 		max-width: 150px;
-		margin-left: 15px;
 		box-sizing: border-box;
 	}
 

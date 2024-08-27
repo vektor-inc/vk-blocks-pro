@@ -18,16 +18,16 @@ export default function FlowEdit({ attributes, setAttributes, clientId }) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Display of arrow', 'vk-blocks')}>
+				<PanelBody title={__('Display of arrow', 'vk-blocks-pro')}>
 					<RadioControl
 						selected={arrowFlag}
 						options={[
 							{
-								label: __('Arrow display', 'vk-blocks'),
+								label: __('Arrow display', 'vk-blocks-pro'),
 								value: 'vk_flow-arrow-on',
 							},
 							{
-								label: __('Arrow hidden', 'vk-blocks'),
+								label: __('Arrow hidden', 'vk-blocks-pro'),
 								value: 'vk_flow-arrow-off',
 							},
 						]}
@@ -49,7 +49,7 @@ export default function FlowEdit({ attributes, setAttributes, clientId }) {
 								setAttributes({ heading: value })
 							}
 							value={heading}
-							placeholder={__('Input title', 'vk-blocks')}
+							placeholder={__('Input title', 'vk-blocks-pro')}
 						/>
 						<RichText
 							key={`${clientId}3`}
@@ -59,7 +59,7 @@ export default function FlowEdit({ attributes, setAttributes, clientId }) {
 								setAttributes({ content: value })
 							}
 							value={content}
-							placeholder={__('Input content', 'vk-blocks')}
+							placeholder={__('Input content', 'vk-blocks-pro')}
 						/>
 					</dl>
 					<div className={'vk_flow_frame_image'}>
@@ -81,7 +81,7 @@ export default function FlowEdit({ attributes, setAttributes, clientId }) {
 									}
 								>
 									{!insertImage ? (
-										__('Select image', 'vk-blocks')
+										__('Select image', 'vk-blocks-pro')
 									) : (
 										<img
 											className={'icon-image'}

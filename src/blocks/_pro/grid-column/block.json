@@ -3,7 +3,7 @@
 	"name": "vk-blocks/grid-column",
 	"title": "Grid Column",
 	"description": "Set the number of columns to be displayed for each screen size.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"category": "vk-blocks-cat-layout",
 	"attributes": {
 		"name": {
@@ -48,6 +48,7 @@
 		}
 	},
 	"supports": {
+		"html": false,
 		"className": true
 	}
 }

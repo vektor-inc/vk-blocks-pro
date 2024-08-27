@@ -2,76 +2,71 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/staff",
 	"category": "vk-blocks-cat",
-    "title": "Staff",
-    "description": "Used for staff introduction, company introduction, school introduction, menu, etc.",
-    "textdomain": "vk-blocks",
+	"title": "Staff",
+	"description": "Used for staff introduction, company introduction, school introduction, menu, etc.",
+	"textdomain": "vk-blocks-pro",
 	"attributes": {
 		"vk_staff_text_name": {
-            "type": "string",
-            "source": "html",
-            "selector": "h3"
-        },
-        "vk_staff_text_caption": {
-            "type": "string",
-            "source": "html",
-            "selector": "p.vk_staff_text_caption"
-        },
-        "vk_staff_text_role": {
-            "type": "string",
-            "source": "html",
-            "selector": "p.vk_staff_text_role"
-        },
-        "vk_staff_text_profileTitle": {
-            "type": "string",
-            "source": "html",
-            "selector": "h4"
-        },
-        "vk_staff_text_profileText": {
-            "type": "string",
-            "source": "html",
-            "selector": "p.vk_staff_text_profileText"
-        },
-        "vk_staff_photo_image": {
-            "type": "string",
-            "default": ""
-        },
-        "vk_staff_photo_image_alt": {
-            "type": "string",
-            "default": "Profile Picture"
-        },
-        "vk_staff_layout": {
-            "type": "string",
-            "default": "default"
-        },
-        "vk_staff_nameColor": {
-            "type": "string",
-            "default": "inherit"
-        },
-        "vk_staff_captionColor": {
-            "type": "string",
-            "default": "inherit"
-        },
-        "vk_staff_positionColor": {
-            "type": "string",
-            "default": "inherit"
-        },
-        "vk_staff_profileTitleColor": {
-            "type": "string",
-            "default": "inherit"
-        },
-        "vk_staff_profileTextColor": {
-            "type": "string",
-            "default": "inherit"
-        },
-        "vk_staff_photoBorder": {
-            "type": "string",
-            "default": "default"
-        },
-        "vk_staff_fontFamily": {
-            "type": "string",
-            "default": "0"
-        }
-    },
+			"type": "string",
+			"source": "html",
+			"selector": "h3"
+		},
+		"vk_staff_text_caption": {
+			"type": "string",
+			"source": "html",
+			"selector": "p.vk_staff_text_caption"
+		},
+		"vk_staff_text_role": {
+			"type": "string",
+			"source": "html",
+			"selector": "p.vk_staff_text_role"
+		},
+		"vk_staff_text_profileTitle": {
+			"type": "string",
+			"source": "html",
+			"selector": "h4"
+		},
+		"vk_staff_text_profileText": {
+			"type": "string",
+			"source": "html",
+			"selector": "p.vk_staff_text_profileText"
+		},
+		"vk_staff_photo_image": {
+			"type": "string",
+			"default": ""
+		},
+		"vk_staff_photo_image_alt": {
+			"type": "string",
+			"default": "Profile Picture"
+		},
+		"vk_staff_layout": {
+			"type": "string",
+			"default": "default"
+		},
+		"vk_staff_nameColor": {
+			"type": "string"
+		},
+		"vk_staff_captionColor": {
+			"type": "string"
+		},
+		"vk_staff_positionColor": {
+			"type": "string"
+		},
+		"vk_staff_profileTitleColor": {
+			"type": "string"
+		},
+		"vk_staff_profileTextColor": {
+			"type": "string"
+		},
+		"vk_staff_photoBorder": {
+			"type": "string",
+			"default": "default"
+		},
+		"vk_staff_fontFamily": {
+			"type": "string",
+			"default": "0"
+		}
+	},
 	"supports": {
 		"className": true
 	}

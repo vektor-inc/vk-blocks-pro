@@ -131,13 +131,25 @@ export const returnHtml = (sources, attributes, className) => {
 
 			preNumber = preNumber + '. ';
 
-			let content = data.attributes.content
+			const content = data.attributes.content
 				? data.attributes.content
 				: data.attributes.title;
 
-			// この条件分岐がないと見出し配置して文字列が undefinedの時にreplace対象がなくてエディタがクラッシュする
-			if (content) {
-				content = content.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '');
+			// タグ除去メソッド
+			const removeHtmlTags = (text) => {
+				return text.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '');
+			};
+
+			let displayContent;
+			if (typeof content === 'string') {
+				displayContent = removeHtmlTags(content);
+			} else if (
+				// 6.5 の関係で、見出し・段落ブロックからcontentを取得する場合、attributes.content.text を参照しなければならなくなったので、attributes.content でも attributes.content.text でも対応できるように
+				// https://make.wordpress.org/core/2024/03/06/new-feature-the-block-bindings-api/
+				typeof content === 'object' &&
+				typeof content.text === 'string'
+			) {
+				displayContent = removeHtmlTags(content.text);
 			}
 
 			return (
@@ -152,11 +164,12 @@ export const returnHtml = (sources, attributes, className) => {
 						<span className={`${baseClass}_link_preNumber`}>
 							{preNumber}
 						</span>
-						{content}
+						{displayContent}
 					</a>
 				</li>
 			);
 		});
 	}
+	//console.log(returnHtmlContent);
 	return ReactDOMServer.renderToString(returnHtmlContent);
 };

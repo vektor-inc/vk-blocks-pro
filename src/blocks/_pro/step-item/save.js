@@ -1,10 +1,10 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function save(props) {
 	const { attributes } = props;
-	let { color, style, styleLine, dotCaption, dotNum, faIcon } = attributes;
+	const { color, style, styleLine, dotCaption, dotNum, faIcon } = attributes;
 
 	const containerClass = ' vk_step_item';
 	let styleClass = '';
@@ -39,14 +39,10 @@ export default function save(props) {
 		styleLineClass = ' vk_step_item_lineStyle-none';
 	}
 
-	//過去バージョンをリカバリーした時にiconを正常に表示する
-	if (faIcon && !faIcon.match(/<i/)) {
-		faIcon = `<i class="${faIcon}"></i>`;
-	}
-
 	const blockProps = useBlockProps.save({
 		className: `${containerClass} ${styleLineClass}`,
 	});
+
 	return (
 		<div {...blockProps}>
 			<div className={'vk_step_item_content'}>
@@ -59,7 +55,7 @@ export default function save(props) {
 				<div className={'vk_step_item_dot_caption'}>{dotCaption}</div>
 				{(() => {
 					if (faIcon) {
-						return ReactHtmlParser(faIcon);
+						return parse(faIcon);
 					} else if (dotNum) {
 						return (
 							<div className={'vk_step_item_dot_num'}>

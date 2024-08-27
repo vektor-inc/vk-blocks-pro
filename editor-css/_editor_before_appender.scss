@@ -1,0 +1,45 @@
+// インサーター（親ブロックを選択時に末尾に表示される）
+.wp-block-vk-blocks-icon-card.is-selected > .vk_posts-edit,
+.vk_posts.is-selected > .vk_posts-edit, // カードブロック
+.vk_buttons > .vk_buttons_col,
+.vk_icons > .vk_icons_col,
+.vk_posts.is-selected,
+.swiper-container > .swiper-wrapper > div,
+:is(.vk_gridColumn).is-selected {
+	& > .block-editor-inner-blocks > .block-editor-block-list__layout > .block-list-appender{
+		position: relative;
+		border:1px dashed #ccc;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0 15px 15px;
+		min-height:50px;
+		&:hover{
+			border-style: solid;
+			border-color:#333;
+		}
+	}
+}
+
+.vk_posts.wp-block-vk-blocks-card.is-selected {
+	& > .vk_posts-edit > .block-editor-inner-blocks > .block-editor-block-list__layout > .block-list-appender{
+		margin-bottom:30px;
+	}
+}
+.vk_buttons.is-selected > .vk_buttons_col {
+	& > .block-editor-inner-blocks > .block-editor-block-list__layout > .block-list-appender{
+		margin-top:4px;
+		width:100px;
+	}
+}
+.vk_icons.is-selected > .vk_icons_col {
+	& > .block-editor-inner-blocks > .block-editor-block-list__layout > .block-list-appender{
+		margin-top:4px;
+		width:100px;
+	}
+}
+.swiper-container > .swiper-wrapper > div {
+	& > .block-editor-inner-blocks > .block-editor-block-list__layout > .block-list-appender {
+		margin: 0 0 15px;
+	}
+}

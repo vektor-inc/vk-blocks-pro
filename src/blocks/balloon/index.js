@@ -3,12 +3,7 @@
  *
  */
 
-import {
-	iconPicture,
-	content,
-	iconName,
-	baseColor,
-} from '../../utils/example-data';
+import { iconPicture, content, iconName } from '../../utils/example-data';
 import deprecated from './deprecated/';
 import { ReactComponent as Icon } from './icon.svg';
 import edit from './edit';
@@ -25,7 +20,7 @@ export const settings = {
 		attributes: {
 			balloonName: iconName,
 			balloonType: 'type-speech',
-			balloonBgColor: baseColor,
+			balloonBgColor: '#f5f5f5',
 			balloonAlign: 'position-left',
 			IconImage: iconPicture,
 			balloonImageType: 'normal',

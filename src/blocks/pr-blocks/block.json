@@ -1,25 +1,25 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/pr-blocks",
-	"title": "PR Blocks",
+	"title": "PR Blocks (not recommended)",
 	"category": "vk-blocks-cat",
 	"attributes": {
-		"heading1" :{
+		"heading1": {
 			"type": "string",
 			"source": "html",
 			"selector": ".vk_prBlocks_item_title-1"
 		},
-		"heading2" :{
+		"heading2": {
 			"type": "string",
 			"source": "html",
 			"selector": ".vk_prBlocks_item_title-2"
 		},
-		"heading3" :{
+		"heading3": {
 			"type": "string",
 			"source": "html",
 			"selector": ".vk_prBlocks_item_title-3"
 		},
-		"heading4" :{
+		"heading4": {
 			"type": "string",
 			"source": "html",
 			"selector": ".vk_prBlocks_item_title-4"
@@ -92,16 +92,16 @@
 			"type": "string",
 			"default": "<i class=\"fas fa-file\"></i>"
 		},
-		"color1":{
+		"color1": {
 			"type": "string"
 		},
-		"color2":{
+		"color2": {
 			"type": "string"
 		},
-		"color3":{
+		"color3": {
 			"type": "string"
 		},
-		"color4":{
+		"color4": {
 			"type": "string"
 		},
 		"bgType1": {
@@ -137,8 +137,8 @@
 			"default": ""
 		}
 	},
-	"description": "This is a PR block where you can place images and icon.",
-	"textdomain": "vk-blocks",
+	"description": "This is a PR block where you can place images and icon. But currently, it is possible to create the same layout by combining Column Block and Icon Block, so this block is not recommended. Please check Columns category of Block Patterns.",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
 		"className": true
 	}

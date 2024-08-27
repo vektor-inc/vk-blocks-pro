@@ -1,0 +1,44 @@
+.custom_block_variation_modal {
+	.components-modal__content {
+		padding-bottom: 0;
+	}
+	.move-button-container {
+		display: flex;
+		flex-direction: column;
+		.components-button.has-icon {
+			height: 24px;
+			padding: 6px;
+		}
+	}
+	.block-mover-button.is-up-button svg {
+		top: 5px;
+		flex-shrink: 0;
+		position: relative;
+	}
+
+	.block-mover-button.is-down-button svg {
+		bottom: 5px;
+		flex-shrink: 0;
+		position: relative;
+	}
+	h4 {
+		margin-top: 0;
+		margin-bottom: 12px;
+	}
+	.block-variation-error-text {
+		margin-top: 8px;
+		margin-bottom: 0;
+		color: #c00;
+	}
+	.block-variation-category-list {
+		.components-base-control {
+			margin-bottom: ８px;
+		}
+	}
+	.components-base-control + .components-base-control{
+		margin-top: 8px;
+	}
+	.components-form-token-field__label{
+		font-size: 12px;	
+	}
+}

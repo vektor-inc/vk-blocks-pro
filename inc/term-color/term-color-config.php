@@ -36,6 +36,6 @@ add_filter( 'term_color_taxonomies_custom', 'vk_blocks_term_color_taxonomies_cus
  * @return void
  */
 function vk_blocks_load_term_color() {
-	require_once dirname( __FILE__ ) . '/package/class.term-color.php';
+	\VektorInc\VK_Term_Color\VkTermColor::init();
 }
 add_action( 'init', 'vk_blocks_load_term_color' );

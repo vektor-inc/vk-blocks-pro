@@ -1,5 +1,5 @@
 import { useBlockProps } from '@wordpress/block-editor';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import { __ } from '@wordpress/i18n';
 
 export default function save(props) {
@@ -13,15 +13,19 @@ export default function save(props) {
 		<div {...blockProps}>
 			<div className="tab">
 				<div className={'vk_tableOfContents_title'}>
-					{__('Table of Contents', 'vk-blocks')}
+					{__('Table of Contents', 'vk-blocks-pro')}
 				</div>
 				<input type="checkbox" id="chck1" />
 				<label
 					className={`tab-label vk_tableOfContents_openCloseBtn button_status button_status-${open}`}
 					htmlFor="chck1"
-				/>
+					id="vk-tab-label"
+				>
+					{'open' === open && <>CLOSE</>}
+					{'open' !== open && <>OPEN</>}
+				</label>
 				<ul className={`vk_tableOfContents_list tab_content-${open}`}>
-					{ReactHtmlParser(renderHtml)}
+					{parse(renderHtml)}
 				</ul>
 			</div>
 		</div>

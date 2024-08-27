@@ -8,7 +8,7 @@ import { registerFormatType, toggleFormat } from '@wordpress/rich-text';
 import { RichTextToolbarButton } from '@wordpress/block-editor';
 
 registerFormatType('vk-blocks/nowrap', {
-	title: __('No wrap', 'vk-blocks'),
+	title: __('No wrap', 'vk-blocks-pro'),
 	tagName: 'span',
 	className: 'text-nowrap',
 	edit(props) {
@@ -18,7 +18,7 @@ registerFormatType('vk-blocks/nowrap', {
 			<>
 				<RichTextToolbarButton
 					icon={Icon}
-					title={__('No wrap', 'vk-blocks')}
+					title={__('No wrap', 'vk-blocks-pro')}
 					onClick={() => {
 						props.onChange(
 							toggleFormat(value, { type: 'vk-blocks/nowrap' })

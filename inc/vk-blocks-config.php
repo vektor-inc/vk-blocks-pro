@@ -1,12 +1,14 @@
 <?php
 /**
- * Load VK Blocks Files
+ * Load VK Blocks Inc Files
+ *
+ * このファイルはinc直下にある各ロードするファイルを読み込むだけ
  *
  * @package vk-blocks
  */
 
 // Load composer autoload.
-require_once dirname( dirname( __FILE__ ) ) . '/vendor/autoload.php';
+require_once dirname( __DIR__ ) . '/vendor/autoload.php';
 
 use VektorInc\VK_Color_Palette_Manager\VkColorPaletteManager;
 
@@ -20,9 +22,6 @@ if ( ! function_exists( 'vk_blocks_active' ) ) {
 	// Set asset Path.
 	define( 'VK_BLOCKS_PATH', plugin_dir_path( __FILE__ ) . 'vk-blocks/' );
 
-	// Set src path.
-	define( 'VK_BLOCKS_SRC_PATH', plugin_dir_path( dirname( __FILE__ ) ) . 'src/' );
-
 	// Set version number.
 	define( 'VK_BLOCKS_VERSION', vk_blocks_get_version() );
 
@@ -31,18 +30,12 @@ if ( ! function_exists( 'vk_blocks_active' ) ) {
 	if ( $vk_blocks_prefix ) {
 		$vk_blocks_prefix .= ' ';
 	}
-	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/class-vk-blocks-block-loader.php';
-	VK_Blocks_Block_Loader::init();
 
-
-	require_once plugin_dir_path( __FILE__ ) . 'vk-helpers/config.php';
-	require_once plugin_dir_path( __FILE__ ) . 'vk-admin/vk-admin-config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/helpers.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-components/vk-components-config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/load-vk-components.php';
-	require_once plugin_dir_path( __FILE__ ) . 'font-awesome/font-awesome-config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'term-color/term-color-config.php';
-	require_once plugin_dir_path( __FILE__ ) . 'vk-css-optimize/vk-css-optimize-config.php';
+	require_once plugin_dir_path( __FILE__ ) . 'vk-css-optimize/config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-swiper/config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-customize-helpers/vk-customize-helpers-config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'tgm-plugin-activation/tgm-config.php';
@@ -53,13 +46,7 @@ if ( ! function_exists( 'vk_blocks_active' ) ) {
 	}
 
 	require_once plugin_dir_path( __FILE__ ) . 'admin-notices.php';
-
 	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/vk-blocks-functions.php';
-
-	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/App/RestAPI/BlockMeta/class-vk-blocks-entrypoint.php';
-	// BlockMeta用のAPIルートを設定.
-	new Vk_Blocks_EntryPoint();
-
 	// プロ版の設定ファイルを読み込み.
 	if ( file_exists( plugin_dir_path( __FILE__ ) . 'vk-blocks-pro-config.php' ) ) {
 		require_once plugin_dir_path( __FILE__ ) . 'vk-blocks-pro-config.php';

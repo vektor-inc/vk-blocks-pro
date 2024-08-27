@@ -3,31 +3,71 @@
 /*-------------------------------------------*/
 .vk-blocks-advanced-popover-control {
 	.components-popover__content {
-		min-width: 260px;
+		min-width: 280px;
 		margin-left: -46px !important;
 		padding: 20px 15px;
-		.vk_icon_list {
-			margin-top: 5px;
-			.components-base-control__field {
+		.vk_icon_list_wrap {
+			max-height: 300px;
+			overflow-y: scroll;
+			.vk_icon_list_title {
+				margin: 0;
+			}
+			.vk_icon_list {
 				display: flex;
 				flex-wrap: wrap;
-				.components-radio-control__option {
-					border: 1px solid #666;
-					width: 38px;
-					height: 38px;
-					border-radius: 3px;
+				margin-top: 5px;
+				.vk_icon_area {
 					margin-right: 7px;
-					position: relative;
-					input {
-						display: none;
+					.vk_icon_button_icon_area {
+						position: relative;
+						.vk_icon_button {
+							border: 1px solid #666;
+							color: inherit;
+							width: 36px;
+							height: 36px;
+							border-radius: 3px;
+							position: relative;
+							box-shadow: none;
+							i {
+								font-size: 1.5em;
+								position: absolute;
+								top: 50%;
+								left: 50%;
+								-webkit-transform: translateY(-50%) translateX(-50%);
+								transform: translateY(-50%) translateX(-50%);
+							}
+						}
+						.vk_icon_button_closeSmall {
+							position: absolute;
+							top: -10%;
+							left: 80%;
+							padding: 0;
+							min-width: auto;
+							width: 12px;
+							height: 12px;
+							background: #fff;
+							border-radius: 50%;
+							svg {
+								width: 100%;
+								height: 100%;
+							}
+						}
 					}
-					.svg-inline--fa,
-					i {
-						font-size: 1.5em;
-						position: absolute;
-						top: 50%;
-						left: 50%;
-						transform: translateY(-50%) translateX(-50%);
+					.vk_icon_button_button_area {
+						display: flex;
+						justify-content: space-between;
+						margin-bottom:  5px;
+						.vk_icon_button_chevronLeft,
+						.vk_icon_button_chevronRight {
+							padding: 0;
+							min-width: auto;
+							width: 12px;
+							height: 12px;
+							svg {
+								width: 100%;
+								height: 100%;
+							}
+						}
 					}
 				}
 			}

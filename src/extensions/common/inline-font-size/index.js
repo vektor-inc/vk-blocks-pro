@@ -1,144 +1,88 @@
 /**
- * highlighter block type
+ * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { useState } from '@wordpress/element';
-import {
-	registerFormatType,
-	applyFormat,
-	removeFormat,
-	getActiveFormat,
-	useAnchorRef,
-} from '@wordpress/rich-text';
+import { useCallback, useState } from '@wordpress/element';
+import { registerFormatType, removeFormat } from '@wordpress/rich-text';
+import { RichTextToolbarButton } from '@wordpress/block-editor';
+import { Icon } from '@wordpress/components';
 
-import { RichTextToolbarButton, URLPopover } from '@wordpress/block-editor';
-
-import { FontSizePicker, Button } from '@wordpress/components';
-
-import { ReactComponent as Icon } from './icon.svg';
+/**
+ * Internal dependencies
+ */
+import { ReactComponent as IconSVG } from './icon.svg';
+import { default as InlineFontSizeUI, getActiveInlineFontSize } from './inline';
 
 const name = 'vk-blocks/inline-font-size';
 
-const FontSizeEdit = (props) => {
-	const { value, isActive, onChange } = props;
+function FontSizeEdit({
+	value,
+	onChange,
+	isActive,
+	activeAttributes,
+	contentRef,
+}) {
 	const shortcutType = 'primary';
 	const shortcutChar = 'h';
 
-	// 選択した font-size を格納
-	let selectedFontSize;
-
-	if (isActive) {
-		const activeFormat = getActiveFormat(value, name);
-		selectedFontSize = activeFormat.attributes.data;
-	}
-	const pickerStyle = {
-		width: '200px',
-	};
 	const iconStyle = {
 		width: '24px',
 		height: '24px',
 	};
-	const buttonStyle = {
-		marginTop: '16px',
-		padding: '0 16px',
-		height: '30px',
-	};
-	const anchorRef = useAnchorRef({ ref: props.contentRef, value });
 	const [isSettingFontSize, setIsSettingFontSize] = useState(false);
 
-	const fontSizes = [
-		{
-			name: __('Small', 'vk-blocks'),
-			slug: 'small',
-			size: '12px',
-		},
-		{
-			name: __('Normal', 'vk-blocks'),
-			slug: 'normal',
-			size: '16px',
-		},
-		{
-			name: __('Big', 'vk-blocks'),
-			slug: 'big',
-			size: '18px',
-		},
-		{
-			name: __('Extra big', 'vk-blocks'),
-			slug: 'extra-big',
-			size: '21px',
-		},
-	];
+	const enableIsAddingFontSize = useCallback(
+		() => setIsSettingFontSize(true),
+		[setIsSettingFontSize]
+	);
+	const disableIsAddingFontSize = useCallback(
+		() => setIsSettingFontSize(false),
+		[setIsSettingFontSize]
+	);
 
-	const fallbackFontSize = 16;
+	const activeInlineFontSize = getActiveInlineFontSize(value, name);
+
+	const hasFontSizeToChoose = !!!value.length || !activeInlineFontSize;
+	if (!hasFontSizeToChoose && !isActive) {
+		return null;
+	}
 
 	return (
 		<>
 			<RichTextToolbarButton
-				title={__('Inline Font Size', 'vk-blocks')}
-				onClick={() => {
-					setIsSettingFontSize(true);
-				}}
+				title={__('Inline Font Size', 'vk-blocks-pro')}
+				onClick={
+					hasFontSizeToChoose
+						? enableIsAddingFontSize
+						: () => onChange(removeFormat(value, name))
+				}
 				shortcutType={shortcutType}
 				shortcutCharacter={shortcutChar}
-				key={isActive ? 'text-color' : 'text-color-not-active'}
 				className="format-library-text-color-button"
-				name={isActive ? 'text-color' : undefined}
+				isActive={isActive}
 				icon={
 					<>
-						<Icon icon={Icon} style={iconStyle} />
+						<Icon icon={IconSVG} style={iconStyle} />
 					</>
 				}
 			/>
 			{isSettingFontSize && (
-				<URLPopover
+				<InlineFontSizeUI
+					name={name}
+					onClose={disableIsAddingFontSize}
+					activeAttributes={activeAttributes}
 					value={value}
-					className="components-inline-color-popover"
-					anchorRef={anchorRef}
-					onClose={() => setIsSettingFontSize(false)}
-				>
-					<div style={pickerStyle}>
-						<FontSizePicker
-							fontSizes={fontSizes}
-							value={selectedFontSize}
-							fallbackFontSize={fallbackFontSize}
-							withSlider={true}
-							onChange={(newFontSize) => {
-								if (newFontSize) {
-									onChange(
-										applyFormat(value, {
-											type: name,
-											attributes: {
-												data: `${newFontSize}`,
-												style: `font-size: ${newFontSize};`,
-											},
-										})
-									);
-								} else {
-									// reset font size
-									onChange(removeFormat(value, name));
-								}
-								//setIsSettingFontSize(false);
-							}}
-						/>
-						<Button
-							onClick={() => {
-								setIsSettingFontSize(false);
-							}}
-							isSmall
-							isSecondary
-							style={buttonStyle}
-						>
-							{__('Apply', 'vk-blocks')}
-						</Button>
-					</div>
-				</URLPopover>
+					onChange={onChange}
+					contentRef={contentRef}
+					setIsSettingFontSize={setIsSettingFontSize}
+				/>
 			)}
 		</>
 	);
-};
+}
 
-registerFormatType(name, {
-	title: __('Inline font size', 'vk-blocks'),
+export const inlineFontSize = {
+	title: __('Inline font size', 'vk-blocks-pro'),
 	tagName: 'span',
 	className: 'vk_inline-font-size',
 	attributes: {
@@ -146,4 +90,6 @@ registerFormatType(name, {
 		style: 'style',
 	},
 	edit: FontSizeEdit,
-});
+};
+
+registerFormatType(name, inlineFontSize);

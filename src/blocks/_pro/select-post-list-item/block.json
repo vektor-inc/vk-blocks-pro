@@ -5,7 +5,7 @@
 	"category": "vk-blocks-cat",
 	"parent": ["vk-blocks/select-post-list"],
 	"attributes": {
-		"className":{
+		"className": {
 			"type": "string",
 			"default": ""
 		},
@@ -91,7 +91,7 @@
 		}
 	},
 	"description": "A single item in the select post list.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
 		"className": true
 	}

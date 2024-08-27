@@ -2,7 +2,7 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
 import { isNotJSON } from '@vkblocks/utils/is-not-json';
 import { Component } from '@wordpress/element';
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function save(props) {
@@ -160,7 +160,7 @@ export class ComponentBlockSave extends Component {
 					className={`vk_prBlocks_item_icon_outer ${iconOuterClass}`}
 					style={iconOuterInlineStyle}
 				>
-					{ReactHtmlParser(faIconTag)}
+					{parse(faIconTag)}
 				</div>
 			);
 		})();

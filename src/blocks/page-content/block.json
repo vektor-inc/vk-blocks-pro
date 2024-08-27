@@ -10,7 +10,7 @@
 		}
 	},
 	"description": "Displays the body content of the specified parent page.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
 		"className": true
 	}

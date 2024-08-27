@@ -1,0 +1,41 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/taxonomy",
+	"category": "vk-blocks-cat",
+	"title": "Taxonomy",
+	"description": "Display Taxnomy List Pulldown",
+	"textdomain": "vk-blocks-pro",
+	"attributes": {
+		"isSelectedTaxonomy": {
+			"type": "string",
+			"default": "category"
+		},
+		"displayAsDropdown": {
+			"type": "boolean",
+			"default": false
+		},
+		"showHierarchy": {
+			"type": "boolean",
+			"default": false
+		},
+		"showPostCounts": {
+			"type": "boolean",
+			"default": false
+		},
+		"hideIfEmpty": {
+			"type": "boolean",
+			"default": false
+		},
+		"showOnlyTopLevel": {
+			"type": "boolean",
+			"default": false
+		},
+		"className": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"className": true
+	}
+}

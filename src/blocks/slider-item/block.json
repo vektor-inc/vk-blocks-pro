@@ -1,0 +1,66 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/slider-item",
+	"title": "Slider Item",
+	"description": "This is one item in the slider.",
+	"textdomain": "vk-blocks-pro",
+	"category": "vk-blocks-cat-layout",
+	"parent": ["vk-blocks/slider"],
+	"attributes": {
+		"verticalAlignment": {
+			"type": "string",
+			"default": "center"
+		},
+		"bgColor": {
+			"type": "string"
+		},
+		"bgImage": {
+			"type": "string",
+			"default": null
+		},
+		"bgImageTablet": {
+			"type": "string",
+			"default": null
+		},
+		"bgImageMobile": {
+			"type": "string",
+			"default": null
+		},
+		"opacity": {
+			"type": "number",
+			"default": 0.5
+		},
+		"bgSize": {
+			"type": "string",
+			"default": "repeat"
+		},
+		"padding_left_and_right": {
+			"type": "string",
+			"default": "0"
+		},
+		"padding_top_and_bottom": {
+			"type": "string",
+			"default": "1"
+		},
+		"linkUrl": {
+			"type": "string"
+		},
+		"linkTarget": {
+			"type": "string",
+			"default": ""
+		},
+		"clientId": {
+			"type": "string"
+		},
+		"blockId": {
+			"type": "string"
+		}
+	},
+	"supports": {
+		"html": false,
+		"className": true,
+		"spacing": {
+			"padding": true
+		}
+	}
+}

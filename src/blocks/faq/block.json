@@ -4,7 +4,10 @@
 	"title": "Classic FAQ",
 	"category": "vk-blocks-cat",
 	"description": "Displays a combination of questions and answers.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
+	"editorScript": "vk-blocks-build-js",
+	"editorStyle": "vk-blocks-build-editor-css",
+	"style": "vk-blocks/faq",
 	"attributes": {
 		"heading": {
 			"type": "string",
@@ -13,6 +16,7 @@
 		}
 	},
 	"supports": {
+		"html": false,
 		"anchor": true
 	}
 }

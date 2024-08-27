@@ -19,12 +19,12 @@ import {
 import { select, dispatch } from '@wordpress/data';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 import { useEffect } from '@wordpress/element';
+import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 
 export default function CardEdit(props) {
-	const { attributes, clientId, name } = props;
+	const { attributes, setAttributes, clientId, name } = props;
 	const { blockId } = attributes;
 	attributes.name = name;
-	attributes.clientId = clientId;
 
 	const { getBlocksByClientId } = select('core/block-editor');
 	const { updateBlockAttributes } = dispatch('core/block-editor');
@@ -32,10 +32,16 @@ export default function CardEdit(props) {
 	const thisBlock = getBlocksByClientId(clientId);
 
 	useEffect(() => {
+		if (attributes.clientId !== undefined) {
+			setAttributes({ clientId: undefined });
+		}
+		if (
+			blockId === undefined ||
+			isParentReusableBlock(clientId) === false
+		) {
+			setAttributes({ blockId: clientId });
+		}
 		if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
-			updateBlockAttributes(clientId, { clientId });
-			updateBlockAttributes(clientId, { blockId: clientId });
-
 			const thisInnerBlocks = thisBlock[0].innerBlocks;
 			thisInnerBlocks.forEach(function (thisInnerBlock) {
 				//className以外の値で、子要素のattributesをアップデート
@@ -74,12 +80,15 @@ export default function CardEdit(props) {
 				<ColumnLayoutControl {...props} />
 				<DisplayItemsControlForCards {...props} />
 				<PanelBody
-					title={__('Image Height', 'vk-blocks')}
+					title={__('Image Height', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<AdvancedUnitControl {...props} />
 					<BaseControl
-						label={__('Slide Height for each device.', 'vk-blocks')}
+						label={__(
+							'Slide Height for each device.',
+							'vk-blocks-pro'
+						)}
 						id={`vk_card-SlideHeight`}
 					>
 						<AdvancedViewportControl
@@ -99,6 +108,7 @@ export default function CardEdit(props) {
 					<InnerBlocks
 						template={TEMPLATE}
 						allowedBlocks={ALLOWED_BLOCKS}
+						orientation="horizontal"
 					/>
 				</div>
 			</div>
@@ -116,9 +126,12 @@ export const DisplayItemsControlForCards = (props) => {
 		btn_text, //eslint-disable-line camelcase
 	} = attributes;
 	return (
-		<PanelBody title={__('Display item', 'vk-blocks')} initialOpen={false}>
+		<PanelBody
+			title={__('Display item', 'vk-blocks-pro')}
+			initialOpen={false}
+		>
 			<CheckboxControl
-				label={__('Title', 'vk-blocks')}
+				label={__('Title', 'vk-blocks-pro')}
 				className={'mb-1'}
 				checked={display_title} //eslint-disable-line camelcase
 				onChange={(checked) =>
@@ -128,11 +141,11 @@ export const DisplayItemsControlForCards = (props) => {
 			<p className="alert alert-danger">
 				{__(
 					'Warning! When you hidden this item, you will lose the content.',
-					'vk-blocks'
+					'vk-blocks-pro'
 				)}
 			</p>
 			<CheckboxControl
-				label={__('Excerpt Text', 'vk-blocks')}
+				label={__('Excerpt Text', 'vk-blocks-pro')}
 				className={'mb-1'}
 				checked={display_excerpt} //eslint-disable-line camelcase
 				onChange={(checked) =>
@@ -142,32 +155,32 @@ export const DisplayItemsControlForCards = (props) => {
 			<p className="alert alert-danger">
 				{__(
 					'Warning! When you hidden this item, you will lose the content.',
-					'vk-blocks'
+					'vk-blocks-pro'
 				)}
 			</p>
 			<CheckboxControl
-				label={__('Image', 'vk-blocks')}
+				label={__('Image', 'vk-blocks-pro')}
 				checked={display_image} //eslint-disable-line camelcase
 				onChange={(checked) =>
 					setAttributes({ display_image: checked })
 				}
 			/>
 			<CheckboxControl
-				label={__('Button', 'vk-blocks')}
+				label={__('Button', 'vk-blocks-pro')}
 				checked={display_btn} //eslint-disable-line camelcase
 				onChange={(checked) => setAttributes({ display_btn: checked })}
 			/>
 			<h4 className={'postList_itemCard_button-option'}>
-				{__('Button option', 'vk-blocks')}
+				{__('Button option', 'vk-blocks-pro')}
 			</h4>
 			<p>
 				{__(
 					"Click each card block to set the target url. You can find the url form at it's sidebar.",
-					'vk-blocks'
+					'vk-blocks-pro'
 				)}
 			</p>
 			<TextControl
-				label={__('Button text', 'vk-blocks')}
+				label={__('Button text', 'vk-blocks-pro')}
 				value={btn_text} //eslint-disable-line camelcase
 				onChange={(value) => setAttributes({ btn_text: value })}
 			/>

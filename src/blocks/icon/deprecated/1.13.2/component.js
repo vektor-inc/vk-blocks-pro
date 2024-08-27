@@ -1,5 +1,5 @@
 import { Component } from '@wordpress/element';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 
 export class VKBIcon extends Component {
 	render() {
@@ -101,7 +101,7 @@ export class VKBIcon extends Component {
 		const blockContent = (
 			<>
 				<div className={borderClass} style={borderStyle}>
-					{ReactHtmlParser(faIconTag)}
+					{parse(faIconTag)}
 				</div>
 			</>
 		);

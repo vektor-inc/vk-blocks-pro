@@ -40,7 +40,7 @@ $answer-color: #337ab7;
 		line-height: 2.1rem;
 		text-align: center;
 		position: absolute;
-		font-family:"areal";
+		font-family: "Arial", sans-serif;
 	}
 	p{
 		&:first-of-type{
@@ -209,19 +209,4 @@ $answer-color: #337ab7;
 		overflow: hidden;
 	}
 
-}
-
-/*      編集画面
-/*-------------------------------------------*/
-// フロント画面と比べると余白が大きく空くので追加
-.editor-styles-wrapper {
-	.vk_faq{
-		.block-editor-inner-blocks{
-			div.block-editor-block-list__block:not(.is_hovered){
-				margin-top: 0;
-				margin-bottom: 0;
-			}
-			.wp-block:not(.is_hovered){width: 100%;}
-		}
-	}
 }

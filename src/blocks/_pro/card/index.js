@@ -5,7 +5,6 @@
 import { title, content, pictureJson } from '@vkblocks/utils/example-data';
 import { ReactComponent as Icon } from './icon.svg';
 
-import { useEffect } from '@wordpress/element';
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
 
@@ -69,7 +68,7 @@ export const settings = {
 };
 
 const generateInlineCss = (attributes) => {
-	let { clientId, mobile, tablet, pc, unit } = attributes;
+	let { blockId, mobile, tablet, pc, unit } = attributes;
 
 	//For recovering block.
 	if (undefined === unit) {
@@ -85,84 +84,73 @@ const generateInlineCss = (attributes) => {
 		pc = 150;
 	}
 
-	const cardImgSelector = `.${prefix}${clientId} .vk_card_item .vk_post_imgOuter::before`;
-	return `@media (max-width: 576px) {
+	const cardImgSelector = `.${prefix}${blockId} .vk_card_item .vk_post_imgOuter::before`;
+	return `@media (max-width: 575.98px) {
 		${cardImgSelector}{
 			padding-top:${mobile}${unit}!important;
 		}
 	}
-	@media (min-width: 577px) and (max-width: 768px) {
+	@media (min-width: 576px) and (max-width: 991.98px) {
 		${cardImgSelector}{
 			padding-top:${tablet}${unit}!important;
 		}
 	}
-	@media (min-width: 769px) {
+	@media (min-width: 992px) {
 		${cardImgSelector}{
 			padding-top:${pc}${unit}!important;
 		}
 	}`;
 };
 
-addFilter(
-	'editor.BlockEdit',
-	'vk-blocks/card-addInlineEditorsCss',
-	createHigherOrderComponent((BlockEdit) => {
-		return (props) => {
-			const { attributes, setAttributes, clientId } = props;
+const VKCardInlineEditorCss = createHigherOrderComponent((BlockEdit) => {
+	return (props) => {
+		const { attributes } = props;
 
-			if ('vk-blocks/card' === props.name) {
-				useEffect(() => {
-					setAttributes({ clientId });
-				}, []);
+		if ('vk-blocks/card' === props.name) {
+			const cssTag = generateInlineCss(attributes);
 
-				const cssTag = generateInlineCss(attributes);
+			return (
+				<>
+					<BlockEdit {...props} />
+					<style type="text/css">{cssTag}</style>
+				</>
+			);
+		}
+		return <BlockEdit {...props} />;
+	};
+}, 'VKCardInlineEditorCss');
+addFilter('editor.BlockEdit', 'vk-blocks/card', VKCardInlineEditorCss);
 
-				return (
-					<>
-						<BlockEdit {...props} />
-						<style type="text/css">{cssTag}</style>
-					</>
-				);
-			}
-			return <BlockEdit {...props} />;
-		};
-	}, 'addInlineEditorsCss')
-);
+const VKCardInlineCss = (el, type, attributes) => {
+	if ('vk-blocks/card' === type.name) {
+		//現在実行されている deprecated内の save関数のindexを取得
+		const deprecatedFuncIndex = deprecated.findIndex(
+			(item) => item.save === type.save
+		);
 
-addFilter(
-	'blocks.getSaveElement',
-	'vk-blocks/card-addInlineFrontCss',
-	(el, type, attributes) => {
-		if ('vk-blocks/card' === type.name) {
-			//現在実行されている deprecated内の save関数のindexを取得
-			const deprecatedFuncIndex = deprecated.findIndex(
-				(item) => item.save === type.save
+		// 最新版
+		if (-1 === deprecatedFuncIndex) {
+			// NOTE: useBlockProps + style要素を挿入する場合、useBlockPropsを使った要素が最初（上）にこないと、
+			// カスタムクラスを追加する処理が失敗する
+			const cssTag = generateInlineCss(attributes);
+			return (
+				<>
+					{el}
+					<style type="text/css">{cssTag}</style>
+				</>
 			);
 
-			// 最新版
-			if (-1 === deprecatedFuncIndex) {
-				// NOTE: useBlockProps + style要素を挿入する場合、useBlockPropsを使った要素が最初（上）にこないと、
-				// カスタムクラスを追加する処理が失敗する
-				const cssTag = generateInlineCss(attributes);
-				return (
-					<>
-						{el}
-						<style type="text/css">{cssTag}</style>
-					</>
-				);
-
-				//後方互換
-			}
-			let DeprecatedHook;
-			// Deprecated Hooks が Deprecated Save関数より少ない場合にエラーが出ないように。
-			if (deprecatedHooks.length > deprecatedFuncIndex) {
-				DeprecatedHook = deprecatedHooks[deprecatedFuncIndex];
-			} else {
-				DeprecatedHook = deprecatedHooks[deprecatedHooks.length - 1];
-			}
-			return <DeprecatedHook el={el} attributes={attributes} />;
+			//後方互換
 		}
-		return el;
-	},
-	11
-);
+		let DeprecatedHook;
+		// Deprecated Hooks が Deprecated Save関数より少ない場合にエラーが出ないように。
+		if (deprecatedHooks.length > deprecatedFuncIndex) {
+			DeprecatedHook = deprecatedHooks[deprecatedFuncIndex];
+		} else {
+			DeprecatedHook = deprecatedHooks[deprecatedHooks.length - 1];
+		}
+		return <DeprecatedHook el={el} attributes={attributes} />;
+	}
+	return el;
+};
+addFilter('blocks.getSaveElement', 'vk-blocks/card', VKCardInlineCss, 11);

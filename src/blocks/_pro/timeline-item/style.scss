@@ -2,18 +2,63 @@
 /* CSS
 /*-------------------------------------------*/
 .vk_timeline {
-	margin: 2em auto;
+	// theme.json があると body .is-layout-flow > * に対して margin-block-start/end ともに 0 がつくので暫定的な上書き処理
+	&,
+	body .container .is-layout-flow > & {
+		margin: 2em auto; 
+	}
 	.vk_timeline_item {
 		position: relative;
 		padding: 0 0 2.4em 1.8em;
-		padding:0 0 calc(var(--vk-size-text) * 2.4 ) calc(var(--vk-size-text) * 1.8 );
+		padding:0 0 0 calc( 1rem * 1.8 );
 		h3:first-of-type,
 		h4:first-of-type {
-			margin-top: calc(var(--vk-size-text) * 0.5 );
+			margin-top: calc( 1rem * 0.5 );
 		}
 		&_caption {
 			margin-bottom: 1.5em;
 			color: #666;
+		}
+		&_content {
+			/*
+			 まず最後の要素の下にマージンがある場合、そのマージンが高さとして検出されずに vk_step_item_content から下にはみ出る。
+			 vk_step_item_content がマージン分を検出しないと、左側のラインが次のステップとの間に余白ができてしまう。
+
+			 回避対応 A : display:block; overflow:hidden;
+			 中の要素にシャドウをつけた場合、シャドウが hidden で切れてしまう。
+
+			 @since 1.49.0
+			 回避対応 B : display:grid;
+			 grid では直下に div など配置しないと幅の制限が適切に制御できず、
+			 コードブロックなどがはみ出してしまう
+
+			 回避対応 C : display:grid; overflow:hidden;
+			 コードブロックなど、はみ出し部分が非表示にはなるが、
+			 強制的に非表示にしているので見切れている部分に横スライドができなくなる。
+
+			 回避対応 D : display:table;
+			 コードブロックを配置するとはみ出してしまう。
+
+			 @since 1.53.1
+			 回避対応 E : clearfix & border:1px solid rgba(0,0,0,0);
+			 border:1px solid rgba(0,0,0,0); がないと高さが検出されないので注意
+			 */
+			 &:after {
+				border:1px solid rgba(0,0,0,0);
+				content: "";
+				display: block;
+				clear: both;
+			}
+
+			& > *:last-child{
+				margin-bottom:var(--vk-margin-md);
+			}
+			//親のブロックがdisplay:grid;になっており、 
+			//デザイン設定>見出しデザインで設定すると、marginのleftとrightに auto が入り中央に寄ってしまう為、unsetを追加
+			h1,h2,h3,h4,h5,h6{
+				margin-left:unset;
+				margin-right: unset;
+			}
 		}
 
 		&_style {
@@ -25,6 +70,19 @@
 			width: 14px;
 			height: 14px;
 			border-radius: 50%;
+			box-sizing: border-box;
+			&.vk_timeline_item_style-default {
+				&:not(.has-background) {
+					background-color: #337ab7;
+				}				
+			}
+
+			&.vk_timeline_item_style-outlined {
+				border: 3px solid currentColor;
+				&:not(.has-text-color) {
+					color: #337ab7;
+				}
+			}
 		}
 	}
 }

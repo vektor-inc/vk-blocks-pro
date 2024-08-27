@@ -13,7 +13,7 @@
 // @import "type";
 // @import "images";
 // @import "code";
-@import "grid";
+// @import "grid";
 // @import "tables";
 // @import "forms";
 @import "buttons";
@@ -42,3 +42,15 @@
 // @import "spinners";
 // @import "utilities";
 // @import "print";
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}

@@ -1,6 +1,19 @@
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+// 編集画面でcssの指定が軽くて負けるので、優先させるため .wp-block-vk-blocks-spacer を記述
+.wp-block-vk-blocks-spacer.vk_spacer {
+	margin-block-start:0; //デフォルトテーマでmargin-block-startがつくので打ち消し
+	margin-bottom: 0;
+}
+
+.vk_spacer-type-margin-top,
+.vk_spacer-type-margin-bottom{
+	div[class*="vk_block-margin"]{
+		display:block;
+		overflow:hidden;
+	}
+}
 .vk_spacer-type-height {
 	display:block;
 	overflow:hidden;
@@ -21,17 +34,17 @@
 	}
 }
 
-// Small devices (landscape phones, 576px以下)
-@media (max-width: 576px) {
+// Small devices (landscape phones, 575.98px以下)
+@media (max-width: 575.98px) {
 	@include switchVisibility(none, none, block);
 }
 
-// Medium devices (tablets, 577pxから768px)
-@media (min-width: 577px) and (max-width: 768px) {
+// Medium devices (tablets, 577pxから 991.98px)
+@media (min-width: 576px) and (max-width: 991.98px) {
 	@include switchVisibility(none, block, none);
 }
 
-// Large devices (desktops, 769px以上)
-@media (min-width: 769px) {
+// Large devices (desktops, 992px以上)
+@media (min-width: 992px) {
 	@include switchVisibility(block, none, none);
 }

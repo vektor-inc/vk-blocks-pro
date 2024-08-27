@@ -13,7 +13,7 @@
 .vk_card {
 	&_item {
 	  .vk_post_title.card-title {
-		font-size: calc(var(--vk-size-text) * 1 );
+		font-size: calc( 1rem * 1 );
 	  }
 	  .vk_post_excerpt.card-text {
 		font-size: 14px;
@@ -24,7 +24,7 @@
 /* .vk_icon-card
 /*-------------------------------------------*/
 .vk_icon-card_item {
-	@media screen and (max-width: 992px) {
+	@media screen and (max-width: 991.98px) {
 		margin-bottom: 1.5em;
 	}
 }
@@ -112,7 +112,6 @@
 	.vk_icon_card_item_summary, // 本当は vk_icon-card が正しいのに vk_icon_card で出力されている
 	.vk_icon-card_item_summary {
 		margin-bottom: 0.5em;
-		text-align: center;
 		line-height: 1.8em;
 		a {
 			color:var(--vk-color-text-body);

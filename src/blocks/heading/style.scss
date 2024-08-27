@@ -30,7 +30,9 @@
 .vk_heading.vk_heading-style-plain {
 	.vk_heading_title {
 		@include reset;
-		color: unset;
+		&:not(.has-text-color) {
+			color: unset;
+		}
 		&:after {
 			@include reset;
 		}

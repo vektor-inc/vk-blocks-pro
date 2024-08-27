@@ -1,5 +1,5 @@
 import { Component } from '@wordpress/element';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 
 export class VKBButton extends Component {
 	render() {
@@ -130,9 +130,9 @@ export class VKBButton extends Component {
 				target={buttonTarget ? '_blank' : null}
 				rel={'noopener'}
 			>
-				{ReactHtmlParser(iconBefore)}
+				{parse(iconBefore)}
 				{richText}
-				{ReactHtmlParser(iconAfter)}
+				{parse(iconAfter)}
 				{/*サブキャプションが入力された時のみ表示*/}
 				{subCaption && (
 					<p className={'vk_button_link_subCaption'}>{subCaption}</p>

@@ -1,7 +1,8 @@
 /*-------------------------------------------*/
 /* .wp-block-vk-blocks-grid-column Layout
 /*-------------------------------------------*/
-.wp-block-vk-blocks-grid-column .block-editor-inner-blocks .block-editor-block-list__layout {
+
+.vk_gridColumn > .block-editor-inner-blocks > .block-editor-block-list__layout {
 	border:none;
 	display: flex;
 	flex-direction: row;
@@ -9,16 +10,12 @@
     margin-right: -15px;
 	margin-left: -15px;
 
-	.block-list-appender{
-		height: 100px;
-	}
 	//inner-blocksの中のinner-blocksのcss打ち消し
 	.block-editor-inner-blocks .block-editor-block-list__layout{
-		display: unset;
 		flex-direction:unset;
 		flex-wrap: unset;
-		//inner-blocksの中のinner-blocksがソーシャルアイコンブロックだった場合
-		&.wp-block-social-links {
+		&.wp-block-social-links, //inner-blocksの中のinner-blocksがソーシャルアイコンブロックだった場合
+		&.wp-block-group { //inner-blocksの中のinner-blocksがグループブロックだった場合
 			display: flex;
 			flex-direction: row;
 			flex-wrap: wrap;
@@ -42,167 +39,178 @@
 		}
 	}
 
-	& > .col-xs-2 , & > .col-xs-2 + .block-list-appender.wp-block {
+	& > .col-xs-2,
+	& > .col-xs-2 + .block-list-appender.wp-block {
 		width: calc(16.66% - 30px);
 		max-width: var(--vk-width-couter-col-2) ;
 	}
-	& > .col-xs-3 , & > .col-xs-3 + .block-list-appender.wp-block {
+	& > .col-xs-3,
+	& > .col-xs-3 + .block-list-appender.wp-block {
 		width: calc(25% - 30px);
 		max-width: var(--vk-width-couter-col-3) ;
 	}
-	& > .col-xs-4 , & > .col-xs-4 + .block-list-appender.wp-block {
+	& > .col-xs-4,
+	& > .col-xs-4 + .block-list-appender.wp-block {
 		width: calc(33.3% - 30px);
 		max-width: var(--vk-width-couter-col-4) ;
 	}
 
-	& > .col-xs-6 , & > .col-xs-6 + .block-list-appender.wp-block {
+	& > .col-xs-6,
+	& > .col-xs-6 + .block-list-appender.wp-block {
 		width: calc(50% - 30px);
 		max-width: var(--vk-width-couter-col-6) ;
 	}
 
-	& > .col-xs-12 , & > .col-xs-12 + .block-list-appender.wp-block {
+	& > .col-xs-12,
+	& > .col-xs-12 + .block-list-appender.wp-block {
 		width: calc(100% - 30px);
 		max-width: var(--vk-width-couter-col-12) ;
 	}
 	@media (min-width: $sm-min) {
-		& > .col-sm-2 , & > .col-sm-2 + .block-list-appender.wp-block {
+		& > .col-sm-2,
+		& > .col-sm-2 + .block-list-appender.wp-block {
 			width: calc(16.66% - 30px);
 			max-width: var(--vk-width-couter-col-2) ;
 		}
-		& > .col-sm-3 , & > .col-sm-3 + .block-list-appender.wp-block {
+		& > .col-sm-3,
+		& > .col-sm-3 + .block-list-appender.wp-block {
 			width: calc(25% - 30px);
 			max-width: var(--vk-width-couter-col-3) ;
 		}
-		& > .col-sm-4 , & > .col-sm-4 + .block-list-appender.wp-block {
+		& > .col-sm-4,
+		& > .col-sm-4 + .block-list-appender.wp-block {
 			width: calc(33.3% - 30px);
 			max-width: var(--vk-width-couter-col-4) ;
 		}
-		& > .col-sm-6 , & > .col-sm-6 + .block-list-appender.wp-block {
+		& > .col-sm-6,
+		& > .col-sm-6 + .block-list-appender.wp-block {
 			width: calc(50% - 30px);
 			max-width: var(--vk-width-couter-col-6) ;
 		}
-		& > .col-sm-12 , & > .col-sm-12 + .block-list-appender.wp-block {
+		& > .col-sm-12,
+		& > .col-sm-12 + .block-list-appender.wp-block {
 			width: calc(100% - 30px);
 			max-width: var(--vk-width-couter-col-12) ;
 		}
 	}
 	@media (min-width: $md-min) {
-		& > .col-md-2 , & > .col-md-2 + .block-list-appender.wp-block {
+		& > .col-md-2,
+		& > .col-md-2 + .block-list-appender.wp-block {
 			width: calc(16.66% - 30px);
 			max-width: var(--vk-width-couter-col-2) ;
 		}
-		& > .col-md-3 , & > .col-md-3 + .block-list-appender.wp-block {
+		& > .col-md-3,
+		& > .col-md-3 + .block-list-appender.wp-block {
 			width: calc(25% - 30px);
 			max-width: var(--vk-width-couter-col-3) ;
 		}
-		& > .col-md-4 , & > .col-md-4 + .block-list-appender.wp-block {
+		& > .col-md-4,
+		& > .col-md-4 + .block-list-appender.wp-block {
 			width: calc(33.3% - 30px);
 			max-width: var(--vk-width-couter-col-4) ;
 		}
-		& > .col-md-6 , & > .col-md-6 + .block-list-appender.wp-block {
+		& > .col-md-6,
+		& > .col-md-6 + .block-list-appender.wp-block {
 			width: calc(50% - 30px);
 			max-width: var(--vk-width-couter-col-6) ;
 		}
-		& > .col-md-12 , & > .col-md-12 + .block-list-appender.wp-block {
+		& > .col-md-12,
+		& > .col-md-12 + .block-list-appender.wp-block {
 			width: calc(100% - 30px);
 			max-width: var(--vk-width-couter-col-12) ;
 		}
 	}
 	@media (min-width: $lg-min) {
-		& > .col-lg-2 , & > .col-lg-2 + .block-list-appender.wp-block {
+		& > .col-lg-2,
+		& > .col-lg-2 + .block-list-appender.wp-block {
 			width: calc(16.66% - 30px);
 			max-width: var(--vk-width-couter-col-2) ;
 		}
-		& > .col-lg-3 , & > .col-lg-3 + .block-list-appender.wp-block {
+		& > .col-lg-3,
+		& > .col-lg-3 + .block-list-appender.wp-block {
 			width: calc(25% - 30px);
 			max-width: var(--vk-width-couter-col-3) ;
 		}
-		& > .col-lg-4 , & > .col-lg-4 + .block-list-appender.wp-block {
+		& > .col-lg-4,
+		& > .col-lg-4 + .block-list-appender.wp-block {
 			width: calc(33.3% - 30px);
 			max-width: var(--vk-width-couter-col-4) ;
 		}
-		& > .col-lg-6 , & > .col-lg-6 + .block-list-appender.wp-block {
+		& > .col-lg-6,
+		& > .col-lg-6 + .block-list-appender.wp-block {
 			width: calc(50% - 30px);
 			max-width: var(--vk-width-couter-col-6) ;
 		}
-		& > .col-lg-12 , & > .col-lg-12 + .block-list-appender.wp-block {
+		& > .col-lg-12,
+		& > .col-lg-12 + .block-list-appender.wp-block {
 			width: calc(100% - 30px);
 			max-width: var(--vk-width-couter-col-12) ;
 		}
 	}
 	@media (min-width: $xl-min) {
-		& > .col-xl-2 , & > .col-xl-2 + .block-list-appender.wp-block {
+		& > .col-xl-2,
+		& > .col-xl-2 + .block-list-appender.wp-block {
 			width: calc(16.66% - 30px);
 			max-width: var(--vk-width-couter-col-2) ;
 		}
-		& > .col-xl-3 , & > .col-xl-3 + .block-list-appender.wp-block {
+		& > .col-xl-3,
+		& > .col-xl-3 + .block-list-appender.wp-block {
 			width: calc(25% - 30px);
 			max-width: var(--vk-width-couter-col-3) ;
 		}
-		& > .col-xl-4 , & > .col-xl-4 + .block-list-appender.wp-block {
+		& > .col-xl-4,
+		& > .col-xl-4 + .block-list-appender.wp-block {
 			width: calc(33.3% - 30px);
 			max-width: var(--vk-width-couter-col-4) ;
 		}
-		& > .col-xl-6 , & > .col-xl-6 + .block-list-appender.wp-block  {
+		& > .col-xl-6,
+		& > .col-xl-6 + .block-list-appender.wp-block  {
 			width: calc(50% - 30px);
 			max-width: var(--vk-width-couter-col-6) ;
 		}
-		& > .col-xl-12 , & > .col-xl-12 + .block-list-appender.wp-block {
+		& > .col-xl-12,
+		& > .col-xl-12 + .block-list-appender.wp-block {
 			width: calc(100% - 30px);
 			max-width: var(--vk-width-couter-col-12) ;
 		}
 	}
 	@media (min-width: $xxl-min) {
-		& > .col-xxl-2 , & > .col-xxl-2 + .block-list-appender.wp-block {
+		& > .col-xxl-2,
+		& > .col-xxl-2 + .block-list-appender.wp-block {
 			width: calc(16.66% - 30px);
 			max-width: var(--vk-width-couter-col-2) ;
 		}
-		& > .col-xxl-3 , & > .col-xxl-3 + .block-list-appender.wp-block {
+		& > .col-xxl-3,
+		& > .col-xxl-3 + .block-list-appender.wp-block {
 			width: calc(25% - 30px);
 			max-width: var(--vk-width-couter-col-3) ;
 		}
-		& > .col-xxl-4 , & > .col-xxl-4 + .block-list-appender.wp-block {
+		& > .col-xxl-4,
+		& > .col-xxl-4 + .block-list-appender.wp-block {
 			width: calc(33.3% - 30px);
 			max-width: var(--vk-width-couter-col-4) ;
 		}
-		& > .col-xxl-6 , & > .col-xxl-6 + .block-list-appender.wp-block {
+		& > .col-xxl-6,
+		& > .col-xxl-6 + .block-list-appender.wp-block {
 			width: calc(50% - 30px);
 			max-width: var(--vk-width-couter-col-6) ;
 		}
-		& > .col-xxl-12 , & > .col-xxl-12 + .block-list-appender.wp-block {
+		& > .col-xxl-12,
+		& > .col-xxl-12 + .block-list-appender.wp-block {
 			width: calc(100% - 30px);
 			max-width: var(--vk-width-couter-col-12) ;
 		}
 	}
 
-	//インサーターの調整
-	
-	.wp-block-vk-blocks-grid-column-item + .block-list-appender.wp-block {
-		border: 1px dashed #ccc;
-		margin: 0 15px 15px;
-		&:hover{
-			border-style: solid;
-			border-color:$color-hover;
-		}
-		.block-editor-button-block-appender {
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			margin: auto;
-		}
-	}
-
-}//.wp-block-vk-blocks-grid-column 
-
-.wp-block-vk-blocks-grid-column  .block-list-appender{
-	width: 100%;
-}
-
-
+}//.wp-block-vk-blocks-grid-column
 
 .wp-block-vk-blocks-grid-column  {
+	&-item {
+		.vk_gridColumn_item_inner {
+			// 編集画面で背景色がはみ出すのを防ぐ
+			box-sizing: border-box;
+		}
+	}
 	div[data-type="vk-blocks/grid-column-item"]{
 		// これがないとカラムのセルが潰れて中に何もいれられない
 		min-height:30px;

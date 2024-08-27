@@ -10,6 +10,9 @@
 	}
 }
 .wp-block-vk-blocks-icon { //編集画面で負けるので先頭に追加
+	.vk_icon_frame {
+		line-height: 1;
+	}
 	.vk_icon {
 		&_border {
 			display: inline-block;
@@ -73,13 +76,8 @@
 			}
 		}
 	}
-	// <<< END
 }
 
-
-.wp-block-vk-blocks-icon {
-
-}
 
 // デフォルトのカラー
 .wp-block-vk-blocks-icon {

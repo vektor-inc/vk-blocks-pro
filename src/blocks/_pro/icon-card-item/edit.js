@@ -6,7 +6,7 @@ import {
 	InspectorControls,
 	useBlockProps,
 } from '@wordpress/block-editor';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
@@ -38,7 +38,8 @@ export default function IconCardItemedit(props) {
 		activeControl,
 	} = attributes;
 	const align = JSON.parse(fixBrokenUnicode(activeControl));
-
+	// eslint-disable-next-line no-undef
+	const iconFamily = vkFontAwesome.iconFamily;
 	let style = {};
 	let iconOuterClass = '';
 	let iconColor = '';
@@ -114,9 +115,9 @@ export default function IconCardItemedit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Icon Card Setting', 'vk-blocks')}>
+				<PanelBody title={__('Icon Card Setting', 'vk-blocks-pro')}>
 					<BaseControl
-						label={__('Link URL:', 'vk-blocks')}
+						label={__('Link URL:', 'vk-blocks-pro')}
 						id={`vk_iconCardItem-url`}
 					>
 						<TextControl
@@ -124,7 +125,7 @@ export default function IconCardItemedit(props) {
 							onChange={(value) => setAttributes({ url: value })}
 						/>
 						<CheckboxControl
-							label={__('Open link new tab.', 'vk-blocks')}
+							label={__('Open link new tab.', 'vk-blocks-pro')}
 							checked={urlOpenType}
 							onChange={(checked) =>
 								setAttributes({ urlOpenType: checked })
@@ -132,7 +133,12 @@ export default function IconCardItemedit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Icon ( Font Awesome )', 'vk-blocks')}
+						label={
+							__('Icon', 'vk-blocks-pro') +
+							' ( ' +
+							iconFamily +
+							' )'
+						}
 						id={`vk_iconCardItem-icon`}
 					>
 						<FontAwesome attributeName={'faIcon'} {...props} />
@@ -140,15 +146,15 @@ export default function IconCardItemedit(props) {
 					<BaseControl>
 						<AdvancedColorPalette schema={'color'} {...props} />
 						<RadioControl
-							label={__('Icon Background:', 'vk-blocks')}
+							label={__('Icon Background:', 'vk-blocks-pro')}
 							selected={bgType}
 							options={[
 								{
-									label: __('Solid color', 'vk-blocks'),
+									label: __('Solid color', 'vk-blocks-pro'),
 									value: '0',
 								},
 								{
-									label: __('No background', 'vk-blocks'),
+									label: __('No background', 'vk-blocks-pro'),
 									value: '1',
 								},
 							]}
@@ -165,7 +171,7 @@ export default function IconCardItemedit(props) {
 					className={`vk_icon-card_item_icon_outer ${iconOutlineClass} ${iconOuterClass}`}
 					style={style}
 				>
-					{ReactHtmlParser(faIconTag)}
+					{parse(faIconTag)}
 				</div>
 				<RichText
 					className={`vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}`}
@@ -188,7 +194,7 @@ export default function IconCardItemedit(props) {
 						'vk-blocks/highlighter', // 蛍光マーカー
 						'vk-blocks/responsive-br', // Select a direction (レスポンシブ改行)
 					]}
-					placeholder={__('Input Title', 'vk-blocks')}
+					placeholder={__('Input Title', 'vk-blocks-pro')}
 				/>
 				<RichText
 					className={`vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-${align.text}`}
@@ -210,7 +216,7 @@ export default function IconCardItemedit(props) {
 						'vk-blocks/responsive-br', // Select a direction (レスポンシブ改行)
 						'vk-blocks/nowrap', // nowrap
 					]}
-					placeholder={__('Input Content', 'vk-blocks')}
+					placeholder={__('Input Content', 'vk-blocks-pro')}
 				/>
 			</div>
 		</>

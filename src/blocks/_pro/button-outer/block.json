@@ -4,14 +4,22 @@
 	"title": "Button Outer",
 	"category": "vk-blocks-cat",
 	"description": "Display the VK Button block horizontally.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"attributes": {
 		"buttonsJustify": {
 			"type": "string",
 			"default": "left"
+		},
+		"gap": {
+			"type": "string",
+			"default": null
+		},
+		"blockId": {
+			"type": "string"
 		}
 	},
 	"supports": {
+		"html": false,
 		"className": true
 	}
 }

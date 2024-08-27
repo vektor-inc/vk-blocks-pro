@@ -28,7 +28,7 @@
 		}
 	},
 	"description": "Displays a sequential description in time series.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
 		"className": true
 	}

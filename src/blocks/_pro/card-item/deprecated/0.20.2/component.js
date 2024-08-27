@@ -61,11 +61,12 @@ export class CardItem extends Component {
 		}
 
 		const deleteImgBtn = () => {
-			dispatch('core/editor').updateBlockAttributes(clientId, {
+			dispatch('core/block-editor').updateBlockAttributes(clientId, {
 				image: null,
 			});
 		};
 
+<<<<<<< HEAD
 		const uploadImgBtn = (image) => {
 			const imageParsed = JSON.parse(fixBrokenUnicode(image));
 			return (
@@ -109,6 +110,42 @@ export class CardItem extends Component {
 				/>
 			);
 		};
+=======
+    const uploadImgBtn = image => {
+      const imageParsed = JSON.parse( fixBrokenUnicode(image) );
+      return (
+        <MediaUpload
+          onSelect={value => setAttributes({ image: JSON.stringify(value) })}
+          type="image"
+          className={"vk_post_imgOuter_img card-img-top"}
+          value={image}
+          render={({ open }) => (
+            <>
+              {!imageParsed ? (
+                <Button onClick={open} className={"button button-large"}>
+                  {__("Select image", 'vk-blocks-pro')}
+                </Button>
+              ) : (
+                <>
+                  <img
+                    className={"vk_post_imgOuter_img card-img-top"}
+                    src={imageParsed.sizes.full.url}
+                    alt={imageParsed.alt}
+                  />
+                  <Button
+                    onClick={deleteImgBtn}
+                    className={"image-button button button-delete"}
+                  >
+                    {__("Delete Image", 'vk-blocks-pro')}
+                  </Button>
+                </>
+              )}
+            </>
+          )}
+        />
+      );
+    };
+>>>>>>> develop
 
 		const renderImage = (display_image) => {
 			if (display_image) {
@@ -160,7 +197,7 @@ export class CardItem extends Component {
 						}
 						placeholder={__(
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 					/>
 				);
@@ -199,7 +236,7 @@ export class CardItem extends Component {
 						className={titleClass}
 						value={title}
 						onChange={(value) => setAttributes({ title: value })}
-						placeholder={__('Title', 'vk-blocks')}
+						placeholder={__('Title', 'vk-blocks-pro')}
 					/>
 				);
 			}

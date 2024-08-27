@@ -3,7 +3,7 @@ import { PanelBody, SelectControl, BaseControl } from '@wordpress/components';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { dispatch, select } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import {
 	isAllowedBlock,
 	returnHtml,
@@ -13,7 +13,7 @@ import {
 import { useCurrentBlocks, useBlocksByName } from '@vkblocks/utils/hooks';
 
 export default function TOCEdit(props) {
-	const { attributes, setAttributes, className } = props;
+	const { attributes, setAttributes, className, clientId } = props;
 	const { style, open, renderHtml } = attributes;
 	const blockProps = useBlockProps({
 		className: `vk_tableOfContents vk_tableOfContents-style-${style} tabs`,
@@ -27,19 +27,13 @@ export default function TOCEdit(props) {
 		if (!findBlocks) {
 			return;
 		}
+		const { updateBlockAttributes } = dispatch('core/block-editor');
+		const { getBlockOrder, getBlockRootClientId } =
+			select('core/block-editor');
 
+		const headingBlocks = ['core/heading', 'vk-blocks/heading'];
+		const hasInnerBlocks = ['vk-blocks/outer', 'core/cover', 'core/group'];
 		blocks.forEach(function (block) {
-			const { updateBlockAttributes } = dispatch('core/block-editor');
-			const { getBlockOrder, getBlockRootClientId } =
-				select('core/block-editor');
-
-			const headingBlocks = ['core/heading', 'vk-blocks/heading'];
-			const hasInnerBlocks = [
-				'vk-blocks/outer',
-				'core/cover',
-				'core/group',
-			];
-
 			// 見出しにカスタムIDを追加
 			if (
 				block.attributes.anchor === undefined &&
@@ -63,49 +57,39 @@ export default function TOCEdit(props) {
 					}
 				});
 			}
+		});
+		// 目次ブロックをアップデート
+		const blocksOrder = getBlockOrder();
+		const headings = getHeadings(headingBlocks);
+		const innerHeadings = getInnerHeadings(headingBlocks, hasInnerBlocks);
+		const allHeadings = headings.concat(innerHeadings);
 
-			// 目次ブロックをアップデート
-			if (
-				isAllowedBlock(block.name, ['vk-blocks/table-of-contents-new'])
-			) {
-				const blocksOrder = getBlockOrder();
-				const headings = getHeadings(headingBlocks);
-				const innerHeadings = getInnerHeadings(
-					headingBlocks,
-					hasInnerBlocks
-				);
-				const allHeadings = headings.concat(innerHeadings);
+		const allHeadingsSorted = allHeadings.map((heading) => {
+			const index = blocksOrder.indexOf(heading.clientId);
+			const rootIndex = blocksOrder.indexOf(
+				getBlockRootClientId(heading.clientId)
+			);
+			let finalIndex;
 
-				const allHeadingsSorted = allHeadings.map((heading) => {
-					const index = blocksOrder.indexOf(heading.clientId);
-					const rootIndex = blocksOrder.indexOf(
-						getBlockRootClientId(heading.clientId)
-					);
-					let finalIndex;
-
-					if (index >= 0) {
-						finalIndex = index;
-					} else if (rootIndex >= 0) {
-						finalIndex = rootIndex;
-					}
-
-					return { index: finalIndex, block: heading };
-				});
-				allHeadingsSorted.sort(
-					(first, second) => first.index - second.index
-				);
-
-				const render = returnHtml(
-					allHeadingsSorted,
-					block.attributes,
-					className,
-					block.attributes.open
-				);
-
-				updateBlockAttributes(block.clientId, {
-					renderHtml: render,
-				});
+			if (index >= 0) {
+				finalIndex = index;
+			} else if (rootIndex >= 0) {
+				finalIndex = rootIndex;
 			}
+
+			return { index: finalIndex, block: heading };
+		});
+		allHeadingsSorted.sort((first, second) => first.index - second.index);
+
+		const render = returnHtml(
+			allHeadingsSorted,
+			attributes,
+			className,
+			attributes.open
+		);
+
+		updateBlockAttributes(clientId, {
+			renderHtml: render,
 		});
 	}, [blocks]);
 
@@ -114,25 +98,25 @@ export default function TOCEdit(props) {
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={__('Note on duplicating headings', 'vk-blocks')}
+					title={__('Note on duplicating headings', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<BaseControl>
 						<p>
 							{__(
 								'If you duplicate a heading, the table of contents block will not work properly, please reassign the ID.',
-								'vk-blocks'
+								'vk-blocks-pro'
 							)}
 						</p>
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
-					title={__('Display type', 'vk-blocks')}
+					title={__('Display type', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<BaseControl
 						id={`vk-toc-style`}
-						label={__('Style', 'vk-blocks')}
+						label={__('Style', 'vk-blocks-pro')}
 					>
 						<SelectControl
 							value={style}
@@ -142,18 +126,18 @@ export default function TOCEdit(props) {
 							options={[
 								{
 									value: 'default',
-									label: __('Default', 'vk-blocks'),
+									label: __('Default', 'vk-blocks-pro'),
 								},
 								{
 									value: '',
-									label: __('No frame', 'vk-blocks'),
+									label: __('No frame', 'vk-blocks-pro'),
 								},
 							]}
 						/>
 					</BaseControl>
 					<BaseControl
 						id={`vk_toc-displayStaus`}
-						label={__('Default Display Status', 'vk-blocks')}
+						label={__('Default Display Status', 'vk-blocks-pro')}
 					>
 						<SelectControl
 							value={open}
@@ -161,11 +145,11 @@ export default function TOCEdit(props) {
 							options={[
 								{
 									value: 'open',
-									label: __('OPEN', 'vk-blocks'),
+									label: __('OPEN', 'vk-blocks-pro'),
 								},
 								{
 									value: 'close',
-									label: __('CLOSE', 'vk-blocks'),
+									label: __('CLOSE', 'vk-blocks-pro'),
 								},
 							]}
 						/>
@@ -175,7 +159,7 @@ export default function TOCEdit(props) {
 			<div {...blockProps}>
 				<div className="tab">
 					<div className={'vk_tableOfContents_title'}>
-						{__('Table of Contents', 'vk-blocks')}
+						{__('Table of Contents', 'vk-blocks-pro')}
 					</div>
 					<input type="checkbox" id="chck1" />
 					<label
@@ -185,7 +169,7 @@ export default function TOCEdit(props) {
 					<ul
 						className={`vk_tableOfContents_list tab_content-${open}`}
 					>
-						{ReactHtmlParser(renderHtml)}
+						{parse(renderHtml)}
 					</ul>
 				</div>
 			</div>

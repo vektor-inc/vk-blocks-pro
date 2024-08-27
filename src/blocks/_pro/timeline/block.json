@@ -5,8 +5,9 @@
 	"category": "vk-blocks-cat",
 	"attributes": {},
 	"description": "Displays a simple schedule and other information that is useful for explaining the order.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
+		"html": false,
 		"className": true
 	}
 }

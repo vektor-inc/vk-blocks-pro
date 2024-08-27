@@ -1,5 +1,4 @@
 /*-------------------------------------------*/
-
 /* CSS
 /*-------------------------------------------*/
 $media-sm-up: 576px;
@@ -13,81 +12,132 @@ $media-lg-down: 991.98px;
 $media-xl-down: 1199.98px;
 $media-xxl-down: 1399.98px;
 
-//.wp-block-vk-blocks-outerがないと打ち消されてしまうので追加
+.vk_outer {
+	box-sizing: border-box;
+}
+
+// .wp-block-vk-blocks-outerがないと打ち消されてしまうので追加
 .wp-block-vk-blocks-outer.vk_outer {
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	position: relative;
-	transform: translateZ(0); // Safari 1px bug 対応
-	.vk_outer_container {
-		min-height: 40px;
-		h1:first-child, 
-		h2:first-child, 
-		h3:first-child, 
-		h4:first-child, 
-		h5:first-child {//他テーマ用
+
+	// リンク設定
+	& > .vkb-outer-link {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		color: transparent;
+		cursor: pointer;
+		z-index: 10;
+	}
+
+	/**
+	* Outer block deprecated
+	* WordPress6.0からhas-border-colorのクラス全体にborder-style: solid;がつくようになった
+	* https://github.com/WordPress/gutenberg/pull/33743
+	* vk-blocks 1.26.0 〜 1.33.2.0までの間,枠線の種類をなし(none)を選んだとしてもborderのclassがついてしまったためhas-border-colorはborder-styleはnoneにする
+	* https://github.com/vektor-inc/vk-blocks-pro/issues/1187
+	*/
+	&.has-border-color {
+		border-style: none;
+	}
+
+	.vk_outer-background-area.has-background-dim::before {
+		content: "";
+		z-index: 1;
+	}
+
+	// 背景色が選択されていない時
+	.vk_outer-background-area:not([class*="-background-color"]) {
+		background-color: #f3f4f5;
+	}
+
+	.vk_outer-background-area,
+	.vk_outer-background-area.has-background-dim::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		opacity: 0.5;
+	}
+
+	// 互換性対応 1.60.0 以前のスタイル
+	@for $i from 0 through 10 {
+		.vk_outer-background-area.has-background-dim-#{ $i } {
+			opacity: $i * 0.1;
+		}
+	}
+
+	.vk_outer_container,
+	.vkb-outer_container {
+		position: relative;
+		min-height: 24px;
+		z-index: 1;
+		h1:first-child,
+		h2:first-child,
+		h3:first-child,
+		h4:first-child,
+		h5:first-child {
+			// 他テーマ用
 			margin-top: 0;
 		}
 	}
 }
+
 // これがないとレスポンシブスペーサーの共通高さが検出しない。
-.vk_outer{
-	display:block; 
-	overflow:hidden;
+.vk_outer {
+	display: block;
+	overflow: hidden;
 }
-//iOS Safari での1pxズレの予防のため　Only Safari 10.1+
+
+// iOS Safari での1pxズレの予防のため Only Safari 10.1+
 @supports (-webkit-touch-callout: none) {
 	.wp-block-vk-blocks-outer {
 		margin-top: -0.45px;
 	}
 }
 
-.vk_outer-width-full {
-	margin-left: calc(50% - 50vw);
-	margin-right: calc(50% - 50vw);
-}
-
 // Fit to content area width
 .vk_outer-width-full.vk_outer-paddingLR-none {
-	padding-left: calc(50vw - 50%);
-	padding-right: calc(50vw - 50%);
+	padding-left: calc(50svw - 50%);
+	padding-right: calc(50svw - 50%);
 }
-$padding-none: 1.5em;
-$padding-sm: 2em;
-$padding-md: 2.5em;
-$padding-lg: 3em;
-$padding-xl: 3.5em;
-$padding-xxl: 4em;
 
-.vk_outer-paddingLR-use {
-	padding-left: $padding-none;
-	padding-right: $padding-none;
+:root {
+	--vk-outer-padding: 0;
+}
 
+.vk_outer-paddingLR-use, .vk_outer-paddingVertical-use {
+	--vk-outer-padding: 1.5em;
 	@media (min-width: $media-sm-up) {
-		padding-left: $padding-sm;
-		padding-right: $padding-sm;
+		--vk-outer-padding: 2em;
 	}
 
 	@media (min-width: $media-md-up) {
-		padding-left: $padding-md;
-		padding-right: $padding-md;
+		--vk-outer-padding: 2.5em;
 	}
 
 	@media (min-width: $media-lg-up) {
-		padding-left: $padding-lg;
-		padding-right: $padding-lg;
+		--vk-outer-padding: 3em;
 	}
 
 	@media (min-width: $media-xl-up) {
-		padding-left: $padding-xl;
-		padding-right: $padding-xl;
+		--vk-outer-padding: 3.5em;
 	}
 
 	@media (min-width: $media-xxl-up) {
-		padding-left: $padding-xxl;
-		padding-right: $padding-xxl;
+		--vk-outer-padding: 4em;
 	}
+}
+
+.vk_outer-paddingLR-use {
+	padding-left: var(--vk-outer-padding);
+	padding-right: var(--vk-outer-padding);
 }
 
 .vk_outer-paddingLR-zero {
@@ -96,33 +146,8 @@ $padding-xxl: 4em;
 }
 
 .vk_outer-paddingVertical-use {
-	padding-top: $padding-none;
-	padding-bottom: $padding-none;
-
-	@media (min-width: $media-sm-up) {
-		padding-top: $padding-sm;
-		padding-bottom: $padding-sm;
-	}
-
-	@media (min-width: $media-md-up) {
-		padding-top: $padding-md;
-		padding-bottom: $padding-md;
-	}
-
-	@media (min-width: $media-lg-up) {
-		padding-top: $padding-lg;
-		padding-bottom: $padding-lg;
-	}
-
-	@media (min-width: $media-xl-up) {
-		padding-top: $padding-xl;
-		padding-bottom: $padding-xl;
-	}
-
-	@media (min-width: $media-xxl-up) {
-		padding-top: $padding-xxl;
-		padding-bottom: $padding-xxl;
-	}
+	padding-top: var(--vk-outer-padding);
+	padding-bottom: var(--vk-outer-padding);
 }
 
 .vk_outer-bgPosition-fixed {
@@ -130,10 +155,11 @@ $padding-xxl: 4em;
 	// 画面サイズ毎の指定が background に対してされていて attachment と size が無効化されるため !important を消さないこと
 	background-attachment: fixed !important;
 	background-size: cover !important;
+
 	// iPhone の時に fixed のままだとバグで反応せずに画像のcoverまで効かなくなって巨大な画像が表示されるので
 	// scroll で上書きする
 	@supports (-webkit-overflow-scrolling: touch) {
-		background-attachment: scroll;
+		background-attachment: scroll !important;
 	}
 }
 
@@ -159,7 +185,7 @@ $padding-xxl: 4em;
 		position: absolute;
 		left: 0;
 		width: 100%;
-		pointer-events: none; //上に重なるとボタンなどのリンクが押せなくなるので追加
+		pointer-events: none; // 上に重なるとボタンなどのリンクが押せなくなるので追加
 	}
 }
 
@@ -176,65 +202,52 @@ $padding-xxl: 4em;
 	}
 }
 
-$color-danger: #b52727;
+// Min Height Setting
+.vk_outer-minHeight {
+	display: grid;
+	align-items: center;
+	height: 100%;
+	min-height: var(--min-height-mobile);
 
+	@media (min-width: 576px) {
+		min-height: var(--min-height-tablet);
+	}
+
+	@media (min-width: 992px) {
+		min-height: var(--min-height-pc);
+	}
+}
 
 /*-------------------------------------------*/
 /* 管理画面
 /*-------------------------------------------*/
-:root {
-	--padding-left: 0;
-	--padding-right: 0;
-}
+@mixin switchVisibility($pc, $tablet, $mobile) {
+	.vk_outer {
+		.vk_outer-display-pc {
+			display: $pc;
+		}
 
-.vk_outer-paddingLR-use {
-	--padding-left: 1.5em;
-	--padding-right: 1.5em;
-	@media (min-width: $media-sm-up) {
-		--padding-left: 2em;
-		--padding-right: 2em;
-	}
-	@media (min-width: $media-md-up) {
-		--padding-left: 2.5em;
-		--padding-right: 2.5em;
-	}
-	@media (min-width: $media-lg-up) {
-		--padding-left: 3em;
-		--padding-right: 3em;
-	}
-	@media (min-width: $media-xl-up) {
-		--padding-left: 3.5em;
-		--padding-right: 3.5em;
-	}
-	@media (min-width: $media-xxl-up) {
-		--padding-left: 4em;
-		--padding-right: 4em;
+		.vk_outer-display-tablet {
+			display: $tablet;
+		}
+
+		.vk_outer-display-mobile {
+			display: $mobile;
+		}
 	}
 }
 
-.edit-post-visual-editor {
-	.wp-block-vk-blocks-outer.vk_outer.vk_outer-width-full {
-		width: 100%;
-		max-width: 100vw;
-		margin-left: 0;
-		margin-right: 0;
-		padding-left: 0;
-		padding-right: 0;
-		&.vk_outer-paddingLR-use,
-		&.vk_outer-paddingLR-zero {
-			width: 100%;
-			max-width: 100vw;
+// Small devices (landscape phones, 575.98px以下)
+@media (max-width: 575.98px) {
+	@include switchVisibility(none, none, block);
+}
 
-			padding-left: var(--padding-left);
-			padding-right: var(--padding-right);
+// Medium devices (tablets, 577pxから 991.98px)
+@media (min-width: 576px) and (max-width: 991.98px) {
+	@include switchVisibility(none, block, none);
+}
 
-			.block-editor-inner-blocks {
-				max-width: 100vw;
-			}
-		}
-		.block-editor-inner-blocks {
-			max-width: 1110px;
-			margin: auto;
-		}
-	}
+// Large devices (desktops, 992px以上)
+@media (min-width: 992px) {
+	@include switchVisibility(block, none, none);
 }

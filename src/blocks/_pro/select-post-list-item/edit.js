@@ -33,7 +33,7 @@ export default function SelectPostListItemEdit(props) {
 			<div className="alert alert-warning text-center">
 				{__(
 					'Because no post is selected, The block Will not render',
-					'vk-blocks'
+					'vk-blocks-pro'
 				)}
 			</div>
 		);
@@ -66,8 +66,8 @@ export default function SelectPostListItemEdit(props) {
 											? __('Unlink')
 											: __(
 													'Input Internal Post URL',
-													'vk-blocks'
-											  )
+													'vk-blocks-pro'
+												)
 									}
 									onClick={setLink}
 								/>
@@ -75,37 +75,34 @@ export default function SelectPostListItemEdit(props) {
 						}}
 						renderContent={(params) => {
 							return (
-								<div className="block-editor-url-input__button block-editor-link-control">
-									<form
-										className="block-editor-link-control__search-input-wrapper"
-										onSubmit={() => {
-											if (url.indexOf(homeUrl) === -1) {
-												setAttributes({ url: '' });
-											}
-											params.onClose();
-										}}
-									>
-										<div className="block-editor-link-control__search-input">
-											<URLInput
-												value={url}
-												onChange={(v, post) => {
-													setAttributes({ url: v });
-													if (post && post.title) {
-														// select post
-														params.onClose();
-													}
-												}}
-											/>
-											<div className="block-editor-link-control__search-actions">
-												<Button
-													icon={keyboardReturn}
-													label={__('Submit')}
-													type="submit"
-												/>
-											</div>
-										</div>
-									</form>
-								</div>
+								<form
+									className="block-editor-url-popover__link-editor"
+									onSubmit={() => {
+										if (url.indexOf(homeUrl) === -1) {
+											setAttributes({ url: '' });
+										}
+										params.onClose();
+									}}
+								>
+									<div className="block-editor-url-input">
+										<URLInput
+											__nextHasNoMarginBottom
+											value={url}
+											onChange={(v, post) => {
+												setAttributes({ url: v });
+												if (post && post.title) {
+													// select post
+													params.onClose();
+												}
+											}}
+										/>
+									</div>
+									<Button
+										icon={keyboardReturn}
+										label={__('Submit')}
+										type="submit"
+									/>
+								</form>
 							);
 						}}
 					/>

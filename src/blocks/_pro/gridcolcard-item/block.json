@@ -1,0 +1,80 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/gridcolcard-item",
+	"title": "Grid Column Card Item",
+	"textdomain": "vk-blocks-pro",
+	"category": "vk-blocks-cat-layout",
+	"description": "It is a block of single column of Grid Column Card.",
+	"parent": ["vk-blocks/gridcolcard"],
+	"supports": {
+		"anchor": true,
+		"html": false,
+		"color": {
+			"text": false,
+			"background": false
+		}
+	},
+	"attributes": {
+		"editLock": {
+			"type": "boolean",
+			"default": false
+		},
+		"textColor": {
+			"type": "string"
+		},
+		"backgroundColor": {
+			"type": "string"
+		},
+		"containerSpace": {
+			"type": "object",
+			"default": {
+				"top": null,
+				"left": null,
+				"right": null,
+				"bottom": null
+			}
+		},
+		"headerImageAspectRatio": {
+			"type": "string",
+			"default": "1.618/1"
+		},
+		"headerImageFit": {
+			"type": "boolean",
+			"default": true
+		},
+		"headerDisplay": {
+			"type": "string",
+			"default": "delete"
+		},
+		"footerDisplay": {
+			"type": "string",
+			"default": "delete"
+		},
+		"borderRadius": {
+			"type": "string",
+			"default": null
+		},
+		"border": {
+			"type": "boolean",
+			"default": false
+		},
+		"borderColor": {
+			"type": "string",
+			"default": "#e5e5e5"
+		},
+		"borderWidth": {
+			"type": "string",
+			"default": "1px"
+		},
+		"backgroundGradient": {
+			"type": "string"
+		},
+		"url": {
+			"type": "string"
+		},
+		"urlOpenType": {
+			"type": "boolean",
+			"default": false
+		}
+	}
+}

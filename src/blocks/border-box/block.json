@@ -7,11 +7,18 @@
 		"heading": {
 			"type": "string",
 			"source": "html",
-			"selector": "h4"
+			"selector": "h3,h4,h5,h6,p",
+			"__experimentalRole": "content"
+		},
+		"headingTag": {
+			"type": "string",
+			"default": "h4"
 		},
 		"color": {
-			"type": "string",
-			"default": "red"
+			"type": "string"
+		},
+		"borderColor": {
+			"type": "string"
 		},
 		"bgColor": {
 			"type": "string",
@@ -20,11 +27,15 @@
 		"faIcon": {
 			"type": "string",
 			"default": ""
+		},
+		"bodyAlign": {
+			"type": "string"
 		}
 	},
 	"description": "This is a border box where you can place headings to attract attention.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
+		"html": false,
 		"className": true
 	}
 }

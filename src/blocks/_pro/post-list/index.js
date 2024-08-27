@@ -38,6 +38,7 @@ export const settings = {
 			btn_align: 'text-right',
 			numberPosts: 6,
 			isCheckedPostType: '["post","page"]',
+			taxQueryRelation: 'AND',
 			order: 'DESC',
 			orderby: 'date',
 		},

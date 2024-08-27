@@ -1,0 +1,44 @@
+/*-------------------------------------------*/
+/* 管理画面
+/*-------------------------------------------*/
+// .edit-post-visual-editor だとモバイルやタブレットの iframe で効かないので .editor-styles-wrapper で指定
+.editor-styles-wrapper{
+	.is-layout-constrained .vk_slider_item-background-area {
+		max-width: 100%; // コアが --wp--style--global--content-size つけてくるので打消し
+	}
+	.vk_slider.vk_swiper{
+		&.vk_slider_editorMode--default {//編集モードが編集の時
+			.vk_slider_item {
+				display: flex;
+			}
+		}
+		.vk_slider_item {
+			box-sizing: border-box;
+			//デバイス毎の高さに数字を入れ、その高さよりも大きいブロックが入った場合に編集画面ではみ出すので追加
+			overflow: hidden;
+			//編集画面ではswiper-slideのクラス名がついていない（クリックすると付与される）ので、swiper-slideと同じプロパティを追加
+			display: flex;
+			flex-direction: column;
+			// Lightning theme.json 有効時など コアが margin-block-start: 24px; つけてくるので打消し
+			.vk_slider_item-background-area,
+			.vk_slider_item_container{
+				margin-block-start: 0; // コアが margin-block-start: 24px; つけてくるので打消し
+			}
+		}
+		&.alignwide,
+		&.alignfull {
+			.vk_slider_item {
+				max-width:100%;
+				&.vk_slider_item-paddingLR-use,
+				&.vk_slider_item-paddingLR-zero{
+					.vk_slider_item_container{
+							max-width:100%;
+						.wp-block:where(:not(.is-layout-constrained)){
+							max-width:100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}

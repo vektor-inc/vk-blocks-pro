@@ -1,5 +1,7 @@
+import { __ } from '@wordpress/i18n';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function save({ attributes }) {
 	// eslint-disable-next-line camelcase
@@ -18,6 +20,8 @@ export default function save({ attributes }) {
 		paddingX,
 		paddingBottom,
 		paddingUnit,
+		linkUrl,
+		linkTarget, // linkUrlとlinkTargetを追加
 	} = attributes;
 	// eslint-disable-next-line camelcase
 	const columnClass = `col-${convertToGrid(col_xs)} col-sm-${convertToGrid(
@@ -33,11 +37,15 @@ export default function save({ attributes }) {
 
 	const columStyle = {
 		color:
-			textColor !== null && textColor !== undefined
+			textColor !== null &&
+			textColor !== undefined &&
+			isHexColor(textColor)
 				? textColor
 				: undefined,
 		background:
-			backgroundColor !== null && backgroundColor !== undefined
+			backgroundColor !== null &&
+			backgroundColor !== undefined &&
+			isHexColor(backgroundColor)
 				? backgroundColor
 				: undefined,
 		paddingTop:
@@ -58,33 +66,80 @@ export default function save({ attributes }) {
 				: undefined,
 	};
 
+	let vkGridColumnTextColorClassName = '';
+	if (textColor !== undefined) {
+		vkGridColumnTextColorClassName += ` has-text-color`;
+		if (!isHexColor(textColor)) {
+			vkGridColumnTextColorClassName += ` has-${textColor}-color`;
+		}
+	}
+
+	let vkGridColumnbackgroundColorColorClassName = '';
+	if (backgroundColor !== undefined) {
+		vkGridColumnbackgroundColorColorClassName += ` has-background-color`;
+		if (!isHexColor(backgroundColor)) {
+			vkGridColumnbackgroundColorColorClassName += ` has-${backgroundColor}-background-color`;
+		}
+	}
+
 	const blockProps = useBlockProps.save({
 		className: `vk_gridColumn_item ${columnClass}`,
 		style,
 	});
+
+	const relAttribute =
+		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
+
+	const GetLinkUrl = () => (
+		<a
+			href={linkUrl}
+			target={linkTarget}
+			className="vk_gridColumn_item_link"
+			rel={relAttribute}
+			aria-label={__('Grid column item link', 'vk-blocks-pro')}
+		>
+			<span className="screen-reader-text">
+				{__('Grid column item link', 'vk-blocks-pro')}
+			</span>
+		</a>
+	);
+
+	const hasPadding =
+		columStyle.paddingTop !== undefined ||
+		columStyle.paddingRight !== undefined ||
+		columStyle.paddingBottom !== undefined ||
+		columStyle.paddingLeft !== undefined;
 
 	return (
 		<>
 			<div {...blockProps}>
 				{(() => {
 					if (
-						columStyle.color !== undefined ||
-						columStyle.background !== undefined ||
-						columStyle.paddingTop !== undefined ||
-						columStyle.paddingRight !== undefined ||
-						columStyle.paddingBottom !== undefined ||
-						columStyle.paddingLeft !== undefined
+						textColor !== undefined ||
+						backgroundColor !== undefined ||
+						hasPadding
 					) {
 						return (
 							<div
-								className="vk_gridColumn_item_inner"
+								className={`vk_gridColumn_item_inner ${vkGridColumnTextColorClassName} ${vkGridColumnbackgroundColorColorClassName}`}
 								style={columStyle}
 							>
+								{linkUrl && GetLinkUrl()}
 								<InnerBlocks.Content />
 							</div>
 						);
 					}
-					return <InnerBlocks.Content />;
+					return linkUrl ? (
+						<div
+							className={`vk_gridColumn_item_inner ${vkGridColumnTextColorClassName} ${vkGridColumnbackgroundColorColorClassName}`}
+							style={columStyle}
+						>
+							{GetLinkUrl()}
+							<InnerBlocks.Content />
+						</div>
+					) : (
+						<InnerBlocks.Content />
+					);
 				})()}
 			</div>
 		</>

@@ -25,41 +25,54 @@ function vk_blocks_register_block_accordion() {
 	if ( ! is_admin() ) {
 		wp_register_script(
 			'vk-blocks/accordion-script',
-			VK_BLOCKS_DIR_URL . 'inc/vk-blocks/build/vk-accordion.min.js',
+			VK_BLOCKS_DIR_URL . 'build/vk-accordion.min.js',
 			array(),
 			VK_BLOCKS_VERSION,
 			true
 		);
 	}
 
-	// Register Script.
-	$asset = include VK_BLOCKS_DIR_PATH . 'build/_pro/accordion/block-build.asset.php';
-	wp_register_script(
-		'vk-blocks/accordion',
-		VK_BLOCKS_DIR_URL . 'build/accordion/block-build.js',
-		$asset['dependencies'],
-		VK_BLOCKS_VERSION,
-		true
-	);
-
-	if ( vk_blocks_is_lager_than_wp( '5.8' ) ) {
-		register_block_type(
-			__DIR__,
-			array(
-				'style'         => 'vk-blocks/accordion',
-				'script'        => 'vk-blocks/accordion-script',
-				'editor_style'  => 'vk-blocks-build-editor-css',
-				'editor_script' => 'vk-blocks-build-js',
-			)
-		);
-	} else {
-		register_block_type_from_metadata(
-			__DIR__,
-			array(
-				'editor_style'  => 'vk-blocks-build-editor-css',
-				'editor_script' => 'vk-blocks-build-js',
-			)
+	// クラシックテーマ & 6.5 環境で $assets = array() のように空にしないと重複登録になるため
+	// ここで初期化しておく
+	$assets = array();
+	// Attend to load separate assets.
+	// 分割読み込みが有効な場合のみ、分割読み込み用のスクリプトを登録する
+	if ( method_exists( 'VK_Blocks_Block_Loader', 'should_load_separate_assets' ) && VK_Blocks_Block_Loader::should_load_separate_assets() ) {
+		$assets = array(
+			'style'         => 'vk-blocks/accordion',
+			'script'        => 'vk-blocks/accordion-script',
+			'editor_style'  => 'vk-blocks-build-editor-css',
+			'editor_script' => 'vk-blocks-build-js',
 		);
 	}
+
+	register_block_type(
+		__DIR__,
+		$assets
+	);
 }
 add_action( 'init', 'vk_blocks_register_block_accordion', 99 );
+
+/**
+ * Renders the accordion block.
+ *
+ * @param array  $attributes The block attributes.
+ * @param string $content    The block content.
+ * @return string The rendered HTML of the accordion block.
+ */
+function vk_blocks_render_accordion_block( $attributes, $content ) {
+	// Ensure required attributes are set
+	$container_class = isset( $attributes['containerClass'] ) ? $attributes['containerClass'] : '';
+	$initial_state   = isset( $attributes['initialState'] ) ? $attributes['initialState'] : '';
+
+	// Sanitize and escape attributes
+	$container_class = esc_attr( $container_class );
+	$initial_state   = esc_attr( $initial_state );
+
+	// Build the output
+	$output  = '<div class="' . $container_class . '" data-state="' . $initial_state . '">';
+	$output .= wp_kses_post( $content );
+	$output .= '</div>';
+
+	return $output;
+}

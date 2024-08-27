@@ -1,5 +1,9 @@
 //hexカラーコード定義をrgbaに変換
 export default function hex2rgba(hex, alpha) {
+	// rgbaの場合は、そのまま返す（例：rgba( 255,255,255,0.1 )）
+	if (hex.substring(0, 4) === 'rgba') {
+		return hex;
+	}
 	// ロングバージョンの場合（例：#FF0000）
 	let r = hex.match(/^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i);
 	let c = null;

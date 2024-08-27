@@ -1,0 +1,17 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/breadcrumb",
+	"category": "vk-blocks-cat",
+	"title": "Breadcrumb",
+	"description": "Displays breadcrumbs of a page's hierarchy, or a post's categories.This block is not displayed on the front page.",
+	"textdomain": "vk-blocks-pro",
+	"supports": {
+		"className": true,
+		"typography": {
+			"fontSize": true
+		},
+		"spacing": {
+			"padding": true
+		}
+	}
+}

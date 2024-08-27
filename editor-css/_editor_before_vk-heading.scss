@@ -1,0 +1,12 @@
+/*-------------------------------------------*/
+/* vk blocks Heading Level Dropdown
+/*-------------------------------------------*/
+// WordPress5.8でcssが崩れるので独自のクラスを追加
+.vk-blocks-heading-level-dropdown {
+	.components-popover__content {
+		min-width: auto;
+		> div {
+			padding: 8px;
+		}
+	}
+}

@@ -1,5 +1,5 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 
 export default function save(props) {
 	const { attributes } = props;
@@ -44,7 +44,7 @@ export default function save(props) {
 				<div className={'vk_step_item_dot_caption'}>{dotCaption}</div>
 				{(() => {
 					if (faIcon) {
-						return ReactHtmlParser(faIcon);
+						return parse(faIcon);
 					} else if (dotNum) {
 						return (
 							<div className={'vk_step_item_dot_num'}>

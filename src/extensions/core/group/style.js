@@ -1,33 +1,71 @@
 /**
  * group-style block type
  *
+ * @package
  */
 import { convertColorClass } from '@vkblocks/utils/color-code-to-class.js';
-import { assign } from 'lodash';
 import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
-import { PanelBody } from '@wordpress/components';
-import { InspectorControls, ColorPalette } from '@wordpress/block-editor';
+import { PanelBody, ToolbarGroup } from '@wordpress/components';
+import {
+	InspectorControls,
+	ColorPalette,
+	BlockControls,
+	useBlockProps,
+	InnerBlocks,
+} from '@wordpress/block-editor';
 import { createHigherOrderComponent } from '@wordpress/compose';
-import { registerBlockStyle } from '@wordpress/blocks';
+import LinkToolbar from '@vkblocks/components/link-toolbar';
 
+/**
+ * Check if the block type is valid for customization.
+ *
+ * @param {string} name The name of the block type.
+ * @return {boolean} Whether the block type is valid.
+ */
 const isValidBlockType = (name) => {
 	const validBlockTypes = ['core/group'];
 	return validBlockTypes.includes(name);
 };
 
+/**
+ * Add custom attributes to the block settings.
+ *
+ * @param {Object} settings The block settings.
+ * @return {Object} The modified block settings.
+ */
 export const addAttribute = (settings) => {
 	if (isValidBlockType(settings.name)) {
-		settings.attributes = assign(settings.attributes, {
+		settings.attributes = {
+			...settings.attributes,
 			color: {
 				type: 'string',
+				default: '',
 			},
-		});
+			linkUrl: {
+				type: 'string',
+				default: '',
+			},
+			linkTarget: {
+				type: 'string',
+				default: '',
+			},
+			tagName: {
+				type: 'string',
+				default: 'div',
+			},
+		};
 	}
 	return settings;
 };
 addFilter('blocks.registerBlockType', 'vk-blocks/group-style', addAttribute);
 
+/**
+ * Add custom controls to the block edit interface.
+ *
+ * @param {Function} BlockEdit The block edit component.
+ * @return {Function} The modified block edit component.
+ */
 export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 	let activeColor = '';
 
@@ -42,12 +80,32 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 			return (
 				<>
 					<BlockEdit {...props} />
+					<BlockControls>
+						<ToolbarGroup>
+							<LinkToolbar
+								linkUrl={props.attributes.linkUrl}
+								setLinkUrl={(url) =>
+									props.setAttributes({ linkUrl: url })
+								}
+								linkTarget={props.attributes.linkTarget}
+								setLinkTarget={(target) =>
+									props.setAttributes({ linkTarget: target })
+								}
+							/>
+						</ToolbarGroup>
+					</BlockControls>
 					<InspectorControls>
 						<PanelBody
-							title={__('Border Color', 'vk-blocks')}
+							title={__('Border Color', 'vk-blocks-pro')}
 							initialOpen={false}
 							className="group-border-color-controle"
 						>
+							<p className="font-size-11px alert alert-danger">
+								{__(
+									'Because of the theme that enabled theme.json become can specify the color from border panel that, specification from here is deprecated.',
+									'vk-blocks-pro'
+								)}
+							</p>
 							<ColorPalette
 								value={activeColor}
 								disableCustomColors={true}
@@ -63,14 +121,14 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 											inputClassName.split(' ');
 
 										const filterClassName =
-											inputClassName.filter(function (
-												name
-											) {
-												return (
-													-1 ===
-													name.indexOf('vk-has-')
-												);
-											});
+											inputClassName.filter(
+												function (name) {
+													return (
+														-1 ===
+														name.indexOf('vk-has-')
+													);
+												}
+											);
 
 										filterClassName.push(newClassName);
 
@@ -96,53 +154,90 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 
 addFilter('editor.BlockEdit', 'vk-blocks/group-style', addBlockControl);
 
-registerBlockStyle('core/group', [
-	{
-		name: 'vk-group-solid',
-		label: __('Solid', 'vk-blocks'),
-	},
-	{
-		name: 'vk-group-solid-roundcorner',
-		label: __('Solid Roundcorner', 'vk-blocks'),
-	},
-	{
-		name: 'vk-group-dotted',
-		label: __('Dotted', 'vk-blocks'),
-	},
-	{
-		name: 'vk-group-dashed',
-		label: __('Dashed', 'vk-blocks'),
-	},
-	{
-		name: 'vk-group-double',
-		label: __('Double', 'vk-blocks'),
-	},
-	{
-		name: 'vk-group-stitch',
-		label: __('Stitch', 'vk-blocks'),
-	},
-	{
-		name: 'vk-group-top-bottom-border',
-		label: __('Border Top Bottom', 'vk-blocks'),
-	},
-	{
-		name: 'vk-group-shadow',
-		label: __('Shadow', 'vk-blocks'),
-	},
-	{
-		name: 'vk-group-alert-info',
-		label: __('Info', 'vk-blocks'),
-	},
-	{
-		name: 'vk-group-alert-success',
-		label: __('Success', 'vk-blocks'),
-	},
-	{
-		name: 'vk-group-alert-warning',
-		label: __('Warning', 'vk-blocks'),
-	},
-	{
-		name: 'vk-group-alert-danger',
-		label: __('Danger', 'vk-blocks'),
-	},
-]);
+/**
+ * Define the save function for the group block, including link settings.
+ *
+ * @param {Object} props The block properties.
+ * @return {JSX.Element} The saved content.
+ */
+const save = (props) => {
+	const { attributes } = props;
+	const {
+		linkUrl,
+		linkTarget,
+		className = '',
+		tagName: CustomTag = 'div',
+	} = attributes;
+
+	// Use block properties, setting className to include has-link if linkUrl is present
+	const blockProps = useBlockProps.save({
+		className: linkUrl ? `${className} has-link` : className,
+	});
+
+	// Determine rel attribute based on linkTarget
+	const relAttribute =
+		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
+
+	// Extract prefix for custom link class
+	const prefix = 'wp-block-group';
+
+	return (
+		<CustomTag {...blockProps}>
+			{linkUrl && (
+				<a
+					href={linkUrl}
+					target={linkTarget}
+					rel={relAttribute}
+					aria-label={__('Group link', 'vk-blocks-pro')}
+					className={`${prefix}-vk-link`}
+				></a>
+			)}
+			<InnerBlocks.Content />
+		</CustomTag>
+	);
+};
+
+// Support for existing group blocks and version management
+import { assign } from 'lodash';
+
+/**
+ * Override block settings to include custom save function and attributes.
+ *
+ * @param {Object} settings The block settings.
+ * @param {string} name     The block name.
+ * @return {Object} The modified block settings.
+ */
+const overrideBlockSettings = (settings, name) => {
+	if (name === 'core/group') {
+		const newSettings = assign({}, settings, {
+			save,
+		});
+		// Support for existing group blocks by adding default values for new attributes
+		if (!newSettings.attributes.linkUrl) {
+			newSettings.attributes.linkUrl = {
+				type: 'string',
+				default: '',
+			};
+		}
+		if (!newSettings.attributes.linkTarget) {
+			newSettings.attributes.linkTarget = {
+				type: 'string',
+				default: '',
+			};
+		}
+		if (!newSettings.attributes.tagName) {
+			newSettings.attributes.tagName = {
+				type: 'string',
+				default: 'div',
+			};
+		}
+		return newSettings;
+	}
+	return settings;
+};
+
+addFilter(
+	'blocks.registerBlockType',
+	'vk-blocks/group-save',
+	overrideBlockSettings
+);

@@ -1,4 +1,4 @@
-/*globals vk_block_post_type_params */
+/* globals vk_block_post_type_params */
 // import WordPress Scripts
 import { __, sprintf } from '@wordpress/i18n';
 import {
@@ -7,15 +7,16 @@ import {
 	BaseControl,
 	SelectControl,
 	CheckboxControl,
+	ButtonGroup,
+	Button,
 	TextControl,
 	FormTokenField,
 } from '@wordpress/components';
-import { useState } from '@wordpress/element';
+import { useState, useEffect } from '@wordpress/element';
 import ServerSideRender from '@wordpress/server-side-render';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
-
 // Load VK Blocks Utils
-import { usePostTypes, useTaxonomies } from '@vkblocks/utils/hooks';
+import { useTaxonomies } from '@vkblocks/utils/hooks';
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
 
 // Load VK Blocks Compornents
@@ -24,17 +25,27 @@ import { ColumnLayoutControl } from '@vkblocks/components/column-layout-control'
 import { AdvancedCheckboxControl } from '@vkblocks/components/advanced-checkbox-control';
 
 export default function PostListEdit(props) {
-	const { attributes, setAttributes, name } = props;
+	const { attributes, setAttributes, name, clientId } = props;
 	const {
 		numberPosts,
 		isCheckedPostType,
+		taxQueryRelation,
 		isCheckedTerms,
 		offset,
+		targetPeriod,
 		order,
 		orderby,
 		selfIgnore,
+		pagedlock,
 	} = attributes;
 	attributes.name = name;
+
+	// 以前の値を切り替え
+	useEffect(() => {
+		if (targetPeriod === undefined) {
+			setAttributes({ targetPeriod: 'all' });
+		}
+	}, [clientId]);
 
 	const [isCheckedTermsData, setIsCheckedTermsData] = useState(
 		JSON.parse(fixBrokenUnicode(isCheckedTerms))
@@ -43,31 +54,75 @@ export default function PostListEdit(props) {
 		JSON.parse(fixBrokenUnicode(isCheckedPostType))
 	);
 
+	const postTypeToTaxonomyMap = {};
+	const taxonomies = useTaxonomies();
+	const termsByTaxonomyName = vk_block_post_type_params.term_by_taxonomy_name;
+
+	taxonomies.forEach((taxonomy) => {
+		taxonomy.types.forEach((postType) => {
+			if (!postTypeToTaxonomyMap[postType]) {
+				postTypeToTaxonomyMap[postType] = [];
+			}
+			postTypeToTaxonomyMap[postType].push(taxonomy.slug);
+		});
+	});
+
 	const saveStateTerms = (termId) => {
-		isCheckedTermsData.push(termId);
-		setIsCheckedTermsData(isCheckedTermsData);
+		if (!isCheckedTermsData.includes(termId)) {
+			isCheckedTermsData.push(termId);
+			setIsCheckedTermsData([...isCheckedTermsData]);
+		}
+	};
+
+	const removeStateTerms = (termId) => {
+		const newTermsData = isCheckedTermsData.filter((id) => id !== termId);
+		setIsCheckedTermsData(newTermsData);
+		setAttributes({
+			isCheckedTerms: JSON.stringify(newTermsData),
+		});
 	};
 
 	const saveStatePostTypes = (slug) => {
-		isCheckedPostTypeData.push(slug);
-		setIsCheckedPostTypeData(isCheckedPostTypeData);
+		let newPostTypeData = [...isCheckedPostTypeData];
+		let newTermsData = [...isCheckedTermsData];
+		if (!newPostTypeData.includes(slug)) {
+			newPostTypeData.push(slug);
+		} else {
+			newPostTypeData = newPostTypeData.filter((type) => type !== slug);
+			const postTypeTaxonomies = postTypeToTaxonomyMap[slug] || [];
+			postTypeTaxonomies.forEach((taxonomy) => {
+				const terms = termsByTaxonomyName[taxonomy] || [];
+				terms.forEach((term) => {
+					newTermsData = newTermsData.filter(
+						(id) => id !== term.term_id
+					);
+				});
+			});
+		}
+		setIsCheckedPostTypeData(newPostTypeData);
+		setIsCheckedTermsData(newTermsData);
+		setAttributes({
+			isCheckedPostType: JSON.stringify(newPostTypeData),
+			isCheckedTerms: JSON.stringify(newTermsData),
+		});
 	};
 
-	const postTypes = usePostTypes();
-	let postTypesProps = postTypes.map((postType) => {
-		return {
-			label: postType.name,
-			slug: postType.slug,
-		};
-	});
+	let postTypesProps = vk_block_post_type_params.post_type_option;
+
 	// メディアと再利用ブロックを除外
 	postTypesProps = postTypesProps.filter(
 		(postType) =>
 			'attachment' !== postType.slug && 'wp_block' !== postType.slug
 	);
 
-	const taxonomies = useTaxonomies();
-	const termsByTaxonomyName = vk_block_post_type_params.term_by_taxonomy_name;
+	const getTaxonomiesByPostType = (postType) => {
+		return taxonomies.filter((taxonomy) => {
+			return (
+				taxonomy.types.includes(postType) &&
+				termsByTaxonomyName[taxonomy.slug]?.length
+			);
+		});
+	};
 
 	const replaceIsCheckedTermData = (taxonomyRestbase, termIds, newIds) => {
 		const removedTermIds = termIds.filter((termId) => {
@@ -82,7 +137,14 @@ export default function PostListEdit(props) {
 		return removedTermIds.concat(newIds);
 	};
 
-	const termFormTokenFields = taxonomies
+	// termFormTokenFields ////////////////////////////////////////////////////////
+	// Tag Filter
+	const selectedPostTypes = isCheckedPostTypeData;
+	const filteredTaxonomies = selectedPostTypes.flatMap((postType) =>
+		getTaxonomiesByPostType(postType)
+	);
+
+	const termFormTokenFields = filteredTaxonomies
 		.filter((taxonomy) => {
 			return !taxonomy.hierarchical && termsByTaxonomyName[taxonomy.slug];
 		})
@@ -117,7 +179,7 @@ export default function PostListEdit(props) {
 					key={taxonomy.slug}
 					label={sprintf(
 						// translators: Filter by %s
-						__('Filter by %s', 'vk-blocks'),
+						__('Filter by %s', 'vk-blocks-pro'),
 						taxonomy.labels.name
 					)}
 					value={isCheckedTermsData
@@ -149,8 +211,9 @@ export default function PostListEdit(props) {
 			) : null;
 		}, taxonomies);
 
+	// taxonomiesCheckBox ////////////////////////////////////////////////////////
 	// key を BaseControlのlabelに代入。valueの配列をmapでAdvancedCheckboxControlに渡す
-	const taxonomiesCheckBox = taxonomies
+	const taxonomiesCheckBox = filteredTaxonomies
 		.filter((taxonomy) => {
 			return (
 				taxonomy.hierarchical === true &&
@@ -171,7 +234,7 @@ export default function PostListEdit(props) {
 				<BaseControl
 					label={sprintf(
 						// translators: Filter by %s
-						__('Filter by %s', 'vk-blocks'),
+						__('Filter by %s', 'vk-blocks-pro'),
 						taxonomy.labels.name
 					)}
 					id={`vk_postList-terms`}
@@ -182,6 +245,7 @@ export default function PostListEdit(props) {
 						rawData={taxonomiesProps}
 						checkedData={isCheckedTermsData}
 						saveState={saveStateTerms}
+						removeState={removeStateTerms} // チェック解除時の処理を追加
 						{...props}
 					/>
 				</BaseControl>
@@ -190,15 +254,29 @@ export default function PostListEdit(props) {
 
 	const blockProps = useBlockProps();
 
+	// `offset`が空の場合に0に設定する
+	useEffect(() => {
+		if (offset === undefined || offset === null || offset === '') {
+			setAttributes({ offset: 0 });
+		}
+	}, [offset]);
+
+	useEffect(() => {
+		setAttributes({
+			isCheckedPostType: JSON.stringify(isCheckedPostTypeData),
+			isCheckedTerms: JSON.stringify(isCheckedTermsData),
+		});
+	}, [isCheckedPostTypeData, isCheckedTermsData]);
+
 	return (
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={__('Display conditions', 'vk-blocks')}
+					title={__('Display conditions', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<BaseControl
-						label={__('Filter by PostTypes', 'vk-blocks')}
+						label={__('Filter by PostTypes', 'vk-blocks-pro')}
 						id={`vk_postList-postTypes`}
 					>
 						<AdvancedCheckboxControl
@@ -209,10 +287,36 @@ export default function PostListEdit(props) {
 							{...props}
 						/>
 					</BaseControl>
+					<hr />
+					<h4 className={`mt-0 mb-2`}>
+						{__('Taxonomy filter condition', 'vk-blocks-pro')}
+					</h4>
+					<ButtonGroup className={`mb-3`}>
+						<Button
+							isSmall
+							isPrimary={taxQueryRelation === 'OR'}
+							isSecondary={taxQueryRelation !== 'OR'}
+							onClick={() =>
+								setAttributes({ taxQueryRelation: 'OR' })
+							}
+						>
+							{__('OR ( Whichever apply )', 'vk-blocks-pro')}
+						</Button>
+						<Button
+							isSmall
+							isPrimary={taxQueryRelation === 'AND'}
+							isSecondary={taxQueryRelation !== 'AND'}
+							onClick={() =>
+								setAttributes({ taxQueryRelation: 'AND' })
+							}
+						>
+							{__('AND ( All apply )', 'vk-blocks-pro')}
+						</Button>
+					</ButtonGroup>
 					{taxonomiesCheckBox}
 					{termFormTokenFields}
 					<BaseControl
-						label={__('Number of Posts', 'vk-blocks')}
+						label={__('Number of Posts', 'vk-blocks-pro')}
 						id={`vk_postList-numberPosts`}
 					>
 						<RangeControl
@@ -225,7 +329,43 @@ export default function PostListEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Order', 'vk-blocks')}
+						label={__('Filter by Date', 'vk-blocks-pro')}
+						id={`vk_postList-dateFilter`}
+					>
+						<SelectControl
+							label={__('Period of Time', 'vk-blocks-pro')}
+							value={targetPeriod}
+							onChange={(value) =>
+								setAttributes({ targetPeriod: value })
+							}
+							options={[
+								{
+									value: 'all',
+									label: __('Whole Period', 'vk-blocks-pro'),
+								},
+								{
+									value: 'from-today',
+									label: __('From Today', 'vk-blocks-pro'),
+								},
+								{
+									value: 'from-now',
+									label: __('From Now', 'vk-blocks-pro'),
+								},
+								{
+									value: 'from-tomorrow',
+									label: __('From Tomorrow', 'vk-blocks-pro'),
+								},
+							]}
+						/>
+						<p>
+							{__(
+								'* If you choose a future period, you will need to customize it so that future posts will be published immediately.',
+								'vk-blocks-pro'
+							)}
+						</p>
+					</BaseControl>
+					<BaseControl
+						label={__('Order', 'vk-blocks-pro')}
 						id={`vk_postList-order`}
 					>
 						<SelectControl
@@ -234,17 +374,17 @@ export default function PostListEdit(props) {
 							options={[
 								{
 									value: 'ASC',
-									label: __('ASC', 'vk-blocks'),
+									label: __('ASC', 'vk-blocks-pro'),
 								},
 								{
 									value: 'DESC',
-									label: __('DESC', 'vk-blocks'),
+									label: __('DESC', 'vk-blocks-pro'),
 								},
 							]}
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Order by', 'vk-blocks')}
+						label={__('Order by', 'vk-blocks-pro')}
 						id={`vk_postList-orderBy`}
 					>
 						<SelectControl
@@ -253,31 +393,36 @@ export default function PostListEdit(props) {
 							options={[
 								{
 									value: 'date',
-									label: __('Published Date', 'vk-blocks'),
+									label: __(
+										'Published Date',
+										'vk-blocks-pro'
+									),
 								},
 								{
 									value: 'modified',
-									label: __('Modefied Date', 'vk-blocks'),
+									label: __('Modefied Date', 'vk-blocks-pro'),
 								},
 								{
 									value: 'title',
-									label: __('Title', 'vk-blocks'),
+									label: __('Title', 'vk-blocks-pro'),
 								},
 								{
 									value: 'rand',
-									label: __('Random', 'vk-blocks'),
+									label: __('Random', 'vk-blocks-pro'),
 								},
 							]}
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('offset', 'vk-blocks')}
+						label={__('offset', 'vk-blocks-pro')}
 						id={`vk_postList-offset`}
 					>
 						<TextControl
 							value={offset}
 							onChange={(v) =>
-								setAttributes({ offset: parseInt(v, 10) })
+								setAttributes({
+									offset: v === '' ? 0 : parseInt(v, 10),
+								})
 							}
 							type="number"
 							min="0"
@@ -285,7 +430,19 @@ export default function PostListEdit(props) {
 					</BaseControl>
 					<BaseControl>
 						<CheckboxControl
-							label={__('Ignore this post', 'vk-blocks')}
+							label={__(
+								'Display from the first post always',
+								'vk-blocks-pro'
+							)}
+							checked={pagedlock}
+							onChange={(v) => setAttributes({ pagedlock: v })}
+							help={__(
+								'Display from the first post even on pages beyond the second page.',
+								'vk-blocks-pro'
+							)}
+						/>
+						<CheckboxControl
+							label={__('Ignore this post', 'vk-blocks-pro')}
 							checked={selfIgnore}
 							onChange={(v) => setAttributes({ selfIgnore: v })}
 						/>

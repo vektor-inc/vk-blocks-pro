@@ -3,12 +3,11 @@
 	"name": "vk-blocks/faq2-q",
 	"title": "FAQ Question",
 	"category": "vk-blocks-cat",
-	"parent": [
-		"vk-blocks/faq2"
-	],
+	"parent": ["vk-blocks/faq2"],
 	"description": "Question area where you can freely add blocks.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
+		"html": false,
 		"anchor": true,
 		"className": true,
 		"reusable": false

@@ -1,0 +1,66 @@
+.custom_format_item {
+	display: flex;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+	padding: 20px;
+	margin: 20px 0;
+	border-radius: 5px;
+	background-color: rgba(255,255,255,0.9);
+	box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,1);
+	justify-content: space-between;
+	border: 1px solid #ccc;
+
+	.custom_format_item_control,
+	.custom_format_item_preview {
+		width: 49%;
+
+		@media screen and (max-width: 991.98px) {
+			width: 100%;
+		}
+	}
+
+	.custom_format_item_control {
+		max-height: 70vh;
+		overflow: auto;
+
+		.components-circular-option-picker {
+			min-width: auto;
+		}
+	}
+
+	.custom_format_item_preview {
+		text-align: center;
+
+		> p{
+			margin-top: 0;
+			border: 1px solid #e0e0e0;
+			padding: 50px 20px;
+		}
+	}
+	.components-base-control__label{
+		margin-right: 8px;
+	}
+	input[type=text].components-text-control__input{
+		border: 1px solid #ccc;
+	}
+
+}
+//ボタン
+#vk-blocks-admin{
+	.components-button{
+		&.delete-item-button,
+		&.add-item-button{
+			background: #f6f7f7;
+			width: 100%;
+			justify-content: center;
+			border-radius: 3px;
+		}
+	}
+}
+
+.custom_format_add_modal {
+	.custom_format_item_name_error {
+		margin-top: 0;
+		color: #c00;
+	}
+}

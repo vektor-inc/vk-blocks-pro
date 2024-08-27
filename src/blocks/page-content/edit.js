@@ -7,7 +7,7 @@ import { usePosts } from '@vkblocks/utils/hooks';
 const getPagesSelect = (pages) => {
 	const defaultSelect = [
 		{
-			label: __('Unspecified', 'vk-blocks'),
+			label: __('Unspecified', 'vk-blocks-pro'),
 			value: -1,
 		},
 	];
@@ -37,7 +37,7 @@ export default function PageContentEdit({ attributes, setAttributes }) {
 			<div className="alert alert-warning text-center">
 				{__(
 					'Because no post is selected, The block Will not render',
-					'vk-blocks'
+					'vk-blocks-pro'
 				)}
 			</div>
 		);
@@ -56,12 +56,12 @@ export default function PageContentEdit({ attributes, setAttributes }) {
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={__('Page Setting', 'vk-blocks')}
+					title={__('Page Setting', 'vk-blocks-pro')}
 					initialOpen={true}
 				>
 					<BaseControl id={'vb-call-01'}>
 						<SelectControl
-							label={__('Select Page', 'vk-blocks')}
+							label={__('Select Page', 'vk-blocks-pro')}
 							value={TargetPost}
 							options={pagesSelect}
 							onChange={(value) =>
@@ -70,6 +70,12 @@ export default function PageContentEdit({ attributes, setAttributes }) {
 								})
 							}
 						/>
+						<p className="alert alert-danger">
+							{__(
+								'This block can display private content. Please note that this content will be public even if you set the original page to private.',
+								'vk-blocks-pro'
+							)}
+						</p>
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>

@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.3
 Tested up to: 6.6
-Stable tag: 1.81.0.2
+Stable tag: 1.82.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -107,6 +107,11 @@ e.g.
 == Changelog ==
 
 [ Add function ] Added support for custom CSS including pseudo-elements.
+
+= 1.83.0 =
+[ Add Setting ][ Alert ] Add icon setting and inner block.
+[ Bug fix ] [ Core List ] Add support for handling list color in old settings.
+[ Bug fix ][ Tab Item ] When duplicating an active tab-item block, no more than one tab-item block becomes active.
 
 = 1.82.0 =
 [ Add function ][ Core Cover ] Add toolbar link for components.

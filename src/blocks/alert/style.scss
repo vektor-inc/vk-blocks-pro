@@ -1,42 +1,125 @@
+/*-------------------------------------------*/
+/* カラーバリエーション
+/*-------------------------------------------*/
+@each $var in (
+  (success, #dff0d8, #3c763d, #d6e9c6),
+  (info, #d9edf7, #31708f, #bce8f1),
+  (warning, #fcf8e3, #8a6d3b, #faebcc),
+  (danger, #f2dede, #a94442, #ebccd1)
+) {
+  $class-name: nth($var, 1);
+  $color-bg: nth($var, 2);
+  $color: nth($var, 3);
+  $color-border: nth($var, 4);
+  .alert-#{$class-name} {
+	background-color: $color-bg;
+	color: $color;
+	border-color: $color-border;
+  }
+}
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+.vk_alert{
+	&_icon{
+		display: flex !important;
+		flex-wrap: wrap;
+		flex-direction: column;
+		justify-content: center;
+		align-content: center;
+		height: 100%;
+		background-color: initial !important;
+		width: 75px;
+		&_text:has(span:not(:empty)){
+			margin-top: .375rem;
+			margin-left: 0;
+			text-align: center;
+			font-size: 12px;
+			font-weight: bold;
+			word-break: break-word;
+			line-height: 1;
+		}
+		&_icon{
+			place-self: center;
+			> i{
+				margin-right: 0;
+				font-size: 24px;
+			}
+		}
+	}
+	&.has-alert-icon {
+		display: grid;
+		grid-template-columns: 1fr 6fr;
+		align-items: center;
+		justify-content: center;
+		place-items: center;
+		> .vk_alert_content{
+			min-width: 0;
+			width: 100%;
+			padding: 0 1rem;
+			border-left: 1.5px solid currentColor;
+		}
+	}
+}
+
 .alert{
 
 	padding: 1em;
-  margin: 1em auto;
-  border-radius: 3px;
+	margin: 1em auto;
+	border-radius: 3px;
 	p {
 		margin:0;
 	}
 
-  & + &{
-    margin-top: 2em;
-  }
+	& + &{
+		margin-top: 2em;
+	}
 
-  a{
-    transition: color .3s linear, opacity .3s linear;
-    &:link, &:visited{
-      opacity: .8;
-      text-decoration: underline;
-    }
-    &:hover, &:visited{
-      opacity: 1;
-      text-decoration: none;
-    }
-  }
+	a{
+		transition: color .3s linear, opacity .3s linear;
+		&:link, &:visited{
+			opacity: .8;
+			text-decoration: underline;
+		}
+		&:hover, &:visited{
+			opacity: 1;
+			text-decoration: none;
+		}
+	}
 
-  @each $var in (
-                  (success, #dff0d8,#3c763d,#d6e9c6),
-                  (info, #d9edf7,#31708f,#bce8f1),
-                  (warning, #fcf8e3,#8a6d3b,#faebcc),
-                  (danger, #f2dede,#a94442,#ebccd1),
-  ){
-    $class-name: nth($var, 1);
-    $color-bg: nth($var, 2);
-    $color: nth($var, 3);
-    $color-border :nth($var, 4);
-    &-#{$class-name}{
-      background-color: $color-bg;
-      color:$color;
-      border-color:$color-border;
-    }
-  }
+	&.has-alert-icon {
+		padding: 1em 0;
+	}
+
+}
+
+/*-------------------------------------------*/
+/* 編集画面用
+/*-------------------------------------------*/
+.editor-styles-wrapper {
+	.vk_alert{
+		&.has-alert-icon{
+			.vk_alert_content{
+				width: calc(100% - 1rem);
+				padding: 0 0 0 1rem;
+			}
+		}
+		.vk_alert_icon{
+			padding: .5rem;
+			&_icon > i{
+				margin-right: 0;
+			}
+		}
+	}
+	.alert {
+		&.has-alert-icon {
+		padding: 1em 1em 1em 0;
+  	  margin: 1em auto;
+		border-radius: 3px;
+		}
+		p {
+				margin-block-end: 0;
+		}
+	}
 }

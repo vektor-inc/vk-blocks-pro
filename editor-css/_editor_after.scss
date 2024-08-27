@@ -8,6 +8,15 @@
 	display: block;
 }
 
+/* 固定ページブロック調整用 */
+.vk_pageContent {
+	.vk_buttons > .vk_buttons_col,
+	.vk_icons > .vk_icons_col {
+		display: flex;
+		margin-left: -8px;
+	}
+}
+
 /* .vk_hidden.vk_hidden は2つじゃないと上書きできない  */
 .vk_hidden {
 	display: block !important;
@@ -73,3 +82,5 @@
   }
 }
 }
+
+@import "./editor_after_admin_sidebar";

@@ -1,0 +1,11 @@
+{
+	"vkBlocksOptions": {
+		"balloon_border_width": 1,
+		"balloon_meta_lists": [
+			{
+				"name": "test-name-1",
+				"src": "https://www.vektor-inc.co.jp/wp-content/uploads/2020/04/vws_logo_2020_og.png"
+			}
+		]
+	}
+}

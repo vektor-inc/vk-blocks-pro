@@ -1,0 +1,46 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/blog-card-excerpt",
+	"category": "vk-blocks-cat",
+	"title": "Blog Card Excerpt",
+	"description": "Shows an excerpt retrieved from a URL.",
+	"textdomain": "vk-blocks-pro",
+	"ancestor": ["vk-blocks/blog-card"],
+	"attributes": {
+		"textAlign": {
+			"type": "string"
+		},
+		"excerptLength": {
+			"type": "number"
+		}
+	},
+	"usesContext": ["vk-blocks/blog-card-url"],
+	"supports": {
+		"html": false,
+		"reusable": false,
+		"color": {
+			"gradients": true,
+			"__experimentalDefaultControls": {
+				"background": true,
+				"text": true
+			}
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"__experimentalFontFamily": true,
+			"__experimentalFontWeight": true,
+			"__experimentalFontStyle": true,
+			"__experimentalTextTransform": true,
+			"__experimentalTextDecoration": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalDefaultControls": {
+				"fontSize": true
+			}
+		}
+	}
+}

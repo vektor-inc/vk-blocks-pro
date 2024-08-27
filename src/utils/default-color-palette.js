@@ -15,17 +15,20 @@ export class DefaultColorPalette extends React.Component {
 
 		return (
 			<RadioControl
-				label={__('Default Color:', 'vk-blocks')}
+				label={__('Default Color:', 'vk-blocks-pro')}
 				selected={dcpColor}
 				options={[
-					{ label: __('Primary', 'vk-blocks'), value: 'primary' },
-					{ label: __('Secondary', 'vk-blocks'), value: 'secondary' },
-					{ label: __('Success', 'vk-blocks'), value: 'success' },
-					{ label: __('Info', 'vk-blocks'), value: 'info' },
-					{ label: __('Warning', 'vk-blocks'), value: 'warning' },
-					{ label: __('Danger', 'vk-blocks'), value: 'danger' },
-					{ label: __('Light', 'vk-blocks'), value: 'light' },
-					{ label: __('Dark', 'vk-blocks'), value: 'dark' },
+					{ label: __('Primary', 'vk-blocks-pro'), value: 'primary' },
+					{
+						label: __('Secondary', 'vk-blocks-pro'),
+						value: 'secondary',
+					},
+					{ label: __('Success', 'vk-blocks-pro'), value: 'success' },
+					{ label: __('Info', 'vk-blocks-pro'), value: 'info' },
+					{ label: __('Warning', 'vk-blocks-pro'), value: 'warning' },
+					{ label: __('Danger', 'vk-blocks-pro'), value: 'danger' },
+					{ label: __('Light', 'vk-blocks-pro'), value: 'light' },
+					{ label: __('Dark', 'vk-blocks-pro'), value: 'dark' },
 				]}
 				onChange={(value) => setAttributes({ dcpColor: value })}
 			/>

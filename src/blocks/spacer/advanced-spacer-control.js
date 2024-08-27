@@ -6,17 +6,21 @@ const AdvancedSpacerControl = (props) => {
 	const { spaceType } = attributes;
 	return (
 		<SelectControl
-			label={__('Space Type', 'vk-blocks')}
+			label={__('Space Type', 'vk-blocks-pro')}
 			value={spaceType}
 			onChange={(value) => setAttributes({ spaceType: value })}
 			options={[
 				{
 					value: 'height',
-					label: __('height', 'vk-blocks'),
+					label: __('height', 'vk-blocks-pro'),
 				},
 				{
 					value: 'margin-top',
-					label: __('margin-top', 'vk-blocks'),
+					label: __('margin-top', 'vk-blocks-pro'),
+				},
+				{
+					value: 'margin-bottom',
+					label: __('margin-bottom', 'vk-blocks-pro'),
 				},
 			]}
 		/>

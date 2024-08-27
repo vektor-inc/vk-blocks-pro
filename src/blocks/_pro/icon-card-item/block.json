@@ -2,7 +2,7 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/icon-card-item",
 	"category": "vk-blocks-cat",
-	"title":"Icon Card Item",
+	"title": "Icon Card Item",
 	"attributes": {
 		"col_xs": {
 			"type": "number",
@@ -67,7 +67,7 @@
 		}
 	},
 	"description": "This is one item in an icon card.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"parent": ["vk-blocks/icon-card"],
 	"supports": {
 		"className": true

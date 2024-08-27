@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import { __ } from '@wordpress/i18n';
 
 export default function save(props) {
@@ -16,7 +16,7 @@ export default function save(props) {
 		>
 			<div className="tab">
 				<div className={'vk_tableOfContents_title'}>
-					{__('Table of Contents', 'vk-blocks')}
+					{__('Table of Contents', 'vk-blocks-pro')}
 				</div>
 				<input type="checkbox" id="chck1" />
 				<label
@@ -24,7 +24,7 @@ export default function save(props) {
 					htmlFor="chck1"
 				></label>
 				<ul className={`vk_tableOfContents_list tab_content-${open}`}>
-					{ReactHtmlParser(renderHtml)}
+					{parse(renderHtml)}
 				</ul>
 			</div>
 		</div>

@@ -1,4 +1,4 @@
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import { Component } from '@wordpress/element';
 
 export class Fontawesome extends Component {
@@ -36,9 +36,9 @@ export class Fontawesome extends Component {
 
 		return (
 			<>
-				{ReactHtmlParser(iconBefore)}
+				{parse(iconBefore)}
 				<span className="vk_button_link_txt">{buttonText}</span>
-				{ReactHtmlParser(iconAfter)}
+				{parse(iconAfter)}
 			</>
 		);
 	}

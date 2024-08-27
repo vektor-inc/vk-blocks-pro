@@ -1,0 +1,29 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/archive-list",
+	"category": "vk-blocks-cat",
+	"title": "Archive list",
+	"attributes": {
+		"postType": {
+			"type": "string",
+			"default": "post"
+		},
+		"displayType": {
+			"type": "string",
+			"default": "monthly"
+		},
+		"displayDropdown": {
+			"type": "boolean",
+			"default": false
+		},
+		"showCount": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"description": "Displays a list of archives",
+	"textdomain": "vk-blocks-pro",
+	"supports": {
+		"className": true
+	}
+}

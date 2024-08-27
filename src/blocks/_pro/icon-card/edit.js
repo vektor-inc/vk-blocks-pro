@@ -62,14 +62,17 @@ export default function IconCardEdit(props) {
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={__('Columns', 'vk-blocks')}
+					title={__('Columns', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<ColumnLayout {...props} />
 				</PanelBody>
-				<PanelBody title={__('Align', 'vk-blocks')} initialOpen={false}>
+				<PanelBody
+					title={__('Align', 'vk-blocks-pro')}
+					initialOpen={false}
+				>
 					<BaseControl
-						label={__('Title', 'vk-blocks')}
+						label={__('Title', 'vk-blocks-pro')}
 						id={`vk_iconCard-title`}
 					>
 						<AlignControl
@@ -80,7 +83,7 @@ export default function IconCardEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Text', 'vk-blocks')}
+						label={__('Text', 'vk-blocks-pro')}
 						id={`vk_iconCard-text`}
 					>
 						<AlignControl
@@ -97,6 +100,7 @@ export default function IconCardEdit(props) {
 					<InnerBlocks
 						template={TEMPLATE}
 						allowedBlocks={ALLOWED_BLOCKS}
+						orientation="horizontal"
 					/>
 				</div>
 			</div>

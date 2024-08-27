@@ -3,6 +3,9 @@
 	"name": "vk-blocks/animation",
 	"category": "vk-blocks-cat",
 	"title": "Animation",
+	"editorScript": "vk-blocks-build-js",
+	"editorStyle": "vk-blocks-build-editor-css",
+	"style": "vk-blocks/animation",
 	"attributes": {
 		"effect": {
 			"type": "string",
@@ -16,14 +19,21 @@
 			"type": "string",
 			"default": "short"
 		},
+		"once": {
+			"type": "boolean",
+			"default": false
+		},
 		"clientId": {
-			"type": "string",
-			"default": ""
+			"type": "string"
+		},
+		"blockId": {
+			"type": "string"
 		}
 	},
 	"description": "Add animation to elements when scrolling the page.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
+		"html": false,
 		"className": true
 	}
 }

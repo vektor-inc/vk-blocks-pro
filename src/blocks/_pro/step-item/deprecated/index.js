@@ -1,4 +1,5 @@
 /* eslint camelcase: 0 */
+import save1_36_2 from './1.36.2/save';
 import save1_20_0 from './1.20.0/save';
 import save0_60_1 from './0.60.1/save';
 import save0_0_2 from './0.0.2/save';
@@ -28,45 +29,33 @@ const blockAttributes = {
 	},
 };
 
+const blockAttributes2 = {
+	...blockAttributes,
+	faIcon: {
+		type: 'string',
+		default: '',
+	},
+}
+
 const deprecated = [
 	{
-		attributes: {
-			...blockAttributes,
-			faIcon: {
-				type: 'string',
-				default: '',
-			},
-		},
+		attributes: blockAttributes2,
+		save: save1_36_2,
+	},
+	{
+		attributes: blockAttributes2,
 		save: save1_20_0,
 	},
 	{
-		attributes: {
-			...blockAttributes,
-			faIcon: {
-				type: 'string',
-				default: '',
-			},
-		},
+		attributes: blockAttributes2,
 		save: save0_60_1,
 	},
 	{
-		attributes: {
-			...blockAttributes,
-			faIcon: {
-				type: 'string',
-				default: '',
-			},
-		},
+		attributes: blockAttributes2,
 		save: save0_0_2,
 	},
 	{
-		attributes: {
-			...blockAttributes,
-			faIcon: {
-				type: 'string',
-				default: '',
-			},
-		},
+		attributes: blockAttributes2,
 		save: save0_0_1,
 	},
 	{

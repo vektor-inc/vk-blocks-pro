@@ -6,18 +6,15 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
-
-import { dispatchEditor } from '@vkblocks/utils/depModules';
+import { dispatch } from '@wordpress/data';
 import { asyncGetInnerBlocks } from '@vkblocks/utils/asyncHooks';
-
-const { updateBlockAttributes } = dispatchEditor;
 
 export default function StepEdit({ attributes, setAttributes, clientId }) {
 	const { firstDotNum } = attributes;
 	const containerClass = ' vk_step';
 	const ALLOWED_BLOCKS = ['vk-blocks/step-item'];
 	const TEMPLATE = [['vk-blocks/step-item']];
-
+	const { updateBlockAttributes } = dispatch('core/block-editor');
 	const currentInnerBlocks = asyncGetInnerBlocks(clientId);
 
 	useEffect(() => {
@@ -35,7 +32,7 @@ export default function StepEdit({ attributes, setAttributes, clientId }) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('First Dot Number', 'vk-blocks')}>
+				<PanelBody title={__('First Dot Number', 'vk-blocks-pro')}>
 					<input
 						type="number"
 						id={'dot-number'}

@@ -1,0 +1,100 @@
+name: PHP Unit Test & Deploy develop
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  php_unit:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-versions: ['7.4', '8.0', '8.1']
+        wp-versions: ['6.6','6.5','6.4']
+    name: PHP Unit test ${{ matrix.php-versions }} / WP ${{ matrix.wp-versions }} Test
+    services:
+      mysql:
+        image: mysql:5.7
+        ports:
+          - 3306
+        env:
+          MYSQL_ROOT_PASSWORD: wordpress
+          MYSQL_DATABASE: wordpress
+          MYSQL_USER: wordpress
+          MYSQL_PASSWORD: wordpress
+    steps:
+    - uses: actions/checkout@v2
+
+    # setup node based on the version from the .node-version file, fetched in the previous step
+    - name: Setup Node.js (.node-version)
+      uses: actions/setup-node@v2
+      with:
+        node-version: 20.x
+
+    - name: Cache multiple paths
+      uses: actions/cache@v2
+      with:
+        path: vendor
+        key: ${{ runner.os }}-php${{ matrix.php-versions }}-${{ hashFiles('**/composer.lock') }}
+    - name: Setup PHP ${{ matrix.php-versions }}
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php-versions }}
+    - name: install npm scripts
+      run: npm install
+    - name: install Composer Package
+      run: composer install
+    - name: Install WP-CLI
+      run: |
+        curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+        chmod +x wp-cli.phar
+        sudo mv wp-cli.phar /usr/local/bin/wp
+    - name: Install several WordPress version by wp-env.override.json
+      run: WP_ENV_PHP_VERSION=${{ matrix.php-versions }} WP_ENV_CORE=WordPress/WordPress#${{ matrix.wp-versions }} npm run wp-env start --update
+    - name: Check WordPress Version
+      run: npm run wp-env run cli wp core version
+    # Change Permissions
+    - name: Change Permissions
+      run: sudo chmod -R 777 ~/wp-env
+    # Build
+    - name: Build
+      run: npm run build
+    - name: Install VK Blocks
+      run: |
+       npm run wp-env run cli --env-cwd='wp-content/plugins/vk-blocks-pro' wp plugin install vk-blocks
+    # PHPUnit
+    - name: PHP Unit Test
+      run: npm run phpunit
+  deployment:
+    runs-on: ubuntu-latest
+    needs: [php_unit]
+    steps:
+      - name: checkout    
+        uses: actions/checkout@v2
+      - name: Setup Node.js (.node-version)
+        uses: actions/setup-node@v2
+        with:
+          node-version: 20.x
+      - name: install npm scripts
+        run: npm install    
+      - name: Install WP-CLI
+        run: |
+          curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+          chmod +x wp-cli.phar
+          mv wp-cli.phar /usr/local/bin/wp        
+      - name: Build and Dist
+        run: npm run dist                   
+      # Deploy test server
+      - name: Deploy to test server [ Deprecated ]
+        uses: burnett01/rsync-deployments@4.1
+        with:
+          switches: -avzr
+          path: /dist/vk-blocks-pro/
+          remote_path: /home/vs4/www/vk-block-test/wp-content/plugins/vk-blocks-pro/
+          remote_host: ${{ secrets.DEPLOY_HOST_VS4 }}
+          remote_port: ${{ secrets.DEPLOY_PORT_VS4 }}
+          remote_user: ${{ secrets.DEPLOY_USER_VS4 }}
+          remote_key: ${{ secrets.DEPLOY_KEY_VS4 }}

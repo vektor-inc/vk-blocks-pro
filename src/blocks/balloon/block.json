@@ -17,6 +17,10 @@
 			"type": "string",
 			"default": "type-speech"
 		},
+		"balloonFullWidth": {
+			"type": "boolean",
+			"default": false
+		},
 		"balloonBorder": {
 			"type": "boolean",
 			"default": false
@@ -30,12 +34,10 @@
 			"default": "thin"
 		},
 		"balloonBorderColor": {
-			"type": "string",
-			"default": "#cccccc"
+			"type": "string"
 		},
 		"balloonBgColor": {
-			"type": "string",
-			"default": "#f5f5f5"
+			"type": "string"
 		},
 		"balloonAlign": {
 			"type": "string",
@@ -54,8 +56,9 @@
 			"default": "none"
 		}
 	},
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
+		"html": false,
 		"className": true
 	}
 }

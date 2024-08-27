@@ -1,0 +1,31 @@
+/*-------------------------------------------*/
+/* .breadcrumb
+/*-------------------------------------------*/
+.vk_breadcrumb {
+    font-size: 12px;
+    &_list {
+        margin:0;
+        padding: 6px 0;
+        &_item {
+            display: inline-block;
+            margin: 0;
+            list-style: none;
+			a {
+				text-decoration: none;
+			}
+			i {
+				margin-right:0.5em;
+			}
+            &:after {
+                content : '/';
+                margin-left:0.5em;
+                margin-right:0.5em;
+            }
+            &:last-child:after {
+                content : '';
+                margin-left:0;
+                margin-right:0;
+            }
+        }
+    }
+}

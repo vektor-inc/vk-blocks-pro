@@ -30,8 +30,9 @@
 		}
 	},
 	"description": "This element sets the icon, color, and style of the step mark.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
+		"html": false,
 		"className": true
 	}
 }

@@ -1,0 +1,35 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/gridcolcard-item-header",
+	"title": "Grid Column Card Item header",
+	"textdomain": "vk-blocks-pro",
+	"category": "vk-blocks-cat-layout",
+	"description": "Header image area of Grid Column Card Block Item",
+	"parent": ["vk-blocks/gridcolcard-item"],
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"containerSpace": {
+			"type": "object",
+			"default": {
+				"top": null,
+				"left": null,
+				"right": null,
+				"bottom": null
+			}
+		},
+		"headerImageAspectRatio": {
+			"type": "string",
+			"default": "1.618/1"
+		},
+		"headerImageFit": {
+			"type": "boolean",
+			"default": true
+		},
+		"headerDisplay": {
+			"type": "string",
+			"default": "delete"
+		}
+	}
+}

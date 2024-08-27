@@ -3,15 +3,39 @@
 	"name": "vk-blocks/accordion",
 	"title": "Accordion",
 	"description": "Collapses and hides content when the content is long.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"category": "vk-blocks-cat",
+	"editorScript": "vk-blocks-build-js",
+	"editorStyle": "vk-blocks-build-editor-css",
+	"style": "vk-blocks/accordion",
 	"attributes": {
 		"containerClass": {
 			"type": "string",
 			"default": "vk_accordion"
+		},
+		"initialState": {
+			"type": "string",
+			"default": "close"
+		},
+		"initialStateMobile": {
+			"type": "string",
+			"default": ""
+		},
+		"initialStateTablet": {
+			"type": "string",
+			"default": ""
+		},
+		"initialStateDesktop": {
+			"type": "string",
+			"default": ""
+		},
+		"isDeviceSpecific": {
+			"type": "boolean",
+			"default": false
 		}
 	},
 	"supports": {
+		"html": false,
 		"anchor": true,
 		"className": true
 	}

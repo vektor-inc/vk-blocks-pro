@@ -1,3 +1,13 @@
+/**
+ * GenerateBgImage deprecated
+ *
+ * save.jsに反映される内容がutils内にあると互換性対応が出来ないので各ブロック内に移植
+ *
+ * 以下で使用
+ * Outer 0.60.0-1.26.0
+ * Slider Item 0.0.0-1.22.1
+ * 関連 #925 #950 #1032
+ */
 import hex2rgba from './hex-to-rgba';
 const GenerateBgImage = (props) => {
 	const { attributes, clientId, prefix } = props;

@@ -1,5 +1,5 @@
 import { Component } from '@wordpress/element';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export class VKBButton extends Component {
@@ -14,14 +14,16 @@ export class VKBButton extends Component {
 		const buttonTarget = this.props.lbTarget;
 		let fontAwesomeIconBefore = this.props.lbFontAwesomeIconBefore;
 		let fontAwesomeIconAfter = this.props.lbFontAwesomeIconAfter;
+		const iconSizeBefore = this.props.lbIconSizeBefore;
+		const iconSizeAfter = this.props.lbIconSizeAfter;
 		const richText = this.props.lbRichtext;
 		const subCaption = this.props.lbsubCaption;
+		const inlineStyle = this.props.inlineStyle;
+		const borderRadius = this.props.borderRadius;
 		let aClass = '';
-		let aStyle = {};
 		let iconBefore = '';
 		let iconAfter = '';
 
-		aStyle = null;
 		aClass = `vk_button_link`;
 
 		// 塗り
@@ -74,6 +76,20 @@ export class VKBButton extends Component {
 			}
 		}
 
+		// 文字色がカスタムカラーの場合
+		/*
+		if (
+			buttonTextColorCustom !== undefined &&
+			isHexColor(buttonTextColorCustom) &&
+			isSelected
+		) {
+			aStyle = {
+				// 編集画面対策
+				color: `${buttonTextColorCustom}`,
+			};
+		}
+		*/
+
 		aClass = `${aClass} btn-${buttonSize}`;
 
 		if (buttonAlign === 'block') {
@@ -89,41 +105,46 @@ export class VKBButton extends Component {
 		}
 
 		if (fontAwesomeIconBefore) {
-			fontAwesomeIconBefore = fontAwesomeIconBefore.replace(
-				/ fas/g,
-				'fas'
-			);
-
-			//add class and inline css
-			const faIconFragmentBefore = fontAwesomeIconBefore.split(' ');
-			faIconFragmentBefore[1] =
-				' ' + faIconFragmentBefore[1] + ` vk_button_link_before `;
-			iconBefore = faIconFragmentBefore.join('');
+			let fontAwesomeIconBeforeClassName =
+				fontAwesomeIconBefore.match(/class="(.*?)"/)[1];
+			fontAwesomeIconBeforeClassName += ` vk_button_link_before`;
+			const styleBefore = iconSizeBefore
+				? ` style='font-size: ${iconSizeBefore}'`
+				: '';
+			iconBefore = `<i class="${fontAwesomeIconBeforeClassName}"${styleBefore}></i>`;
 		}
 		if (fontAwesomeIconAfter) {
-			fontAwesomeIconAfter = fontAwesomeIconAfter.replace(/ fas/g, 'fas');
+			let fontAwesomeIconAfterClassName =
+				fontAwesomeIconAfter.match(/class="(.*?)"/)[1];
+			fontAwesomeIconAfterClassName += ` vk_button_link_after`;
+			const styleAfter = iconSizeAfter
+				? ` style='font-size: ${iconSizeAfter}'`
+				: '';
+			iconAfter = `<i class="${fontAwesomeIconAfterClassName}"${styleAfter}></i>`;
+		}
 
-			//add class and inline css
-			const faIconFragmentAfter = fontAwesomeIconAfter.split(' ');
-			faIconFragmentAfter[1] =
-				' ' + faIconFragmentAfter[1] + ` vk_button_link_after `;
-			iconAfter = faIconFragmentAfter.join('');
+		// inlineStyleからborderRadiusを含む新しいスタイルオブジェクトを構築
+		const btnInlineStyle = { ...inlineStyle };
+		if (borderRadius) {
+			btnInlineStyle.borderRadius = borderRadius;
 		}
 
 		return (
 			/* eslint react/jsx-no-target-blank: 0 */
 			<a
 				href={buttonUrl}
-				style={aStyle}
+				style={btnInlineStyle}
 				className={aClass}
 				role={'button'}
 				aria-pressed={true}
 				target={buttonTarget ? '_blank' : null}
 				rel={'noopener'}
 			>
-				{ReactHtmlParser(iconBefore)}
-				{richText}
-				{ReactHtmlParser(iconAfter)}
+				<div className={'vk_button_link_caption'}>
+					{parse(iconBefore)}
+					{richText}
+					{parse(iconAfter)}
+				</div>
 				{/*サブキャプションが入力された時のみ表示*/}
 				{subCaption && (
 					<p className={'vk_button_link_subCaption'}>{subCaption}</p>

@@ -1,0 +1,95 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/gridcolcard",
+	"title": "Grid Column Card",
+	"textdomain": "vk-blocks-pro",
+	"category": "vk-blocks-cat-layout",
+	"description": "This block can flexible column layout",
+	"supports": {
+		"html": false,
+		"align": true
+	},
+	"attributes": {
+		"colWidthMin": {
+			"type": "string",
+			"default": "300px"
+		},
+		"colWidthMinTablet": {
+			"type": "string",
+			"default": "300px"
+		},
+		"colWidthMinPC": {
+			"type": "string",
+			"default": "300px"
+		},
+		"gap": {
+			"type": "string",
+			"default": "30px"
+		},
+		"gapRow": {
+			"type": "string",
+			"default": null
+		},
+		"overwrite": {
+			"type": "boolean",
+			"default": false
+		},
+		"textColor": {
+			"type": "string"
+		},
+		"backgroundColor": {
+			"type": "string"
+		},
+		"backgroundGradient": {
+			"type": "string"
+		},
+		"containerSpace": {
+			"type": "object",
+			"default": {
+				"top": null,
+				"left": null,
+				"right": null,
+				"bottom": null
+			}
+		},
+		"headerImageAspectRatio": {
+			"type": "string",
+			"default": "1.618/1"
+		},
+		"headerImageFit": {
+			"type": "boolean",
+			"default": true
+		},
+		"headerDisplay": {
+			"type": "string",
+			"default": "delete"
+		},
+		"footerDisplay": {
+			"type": "string",
+			"default": "delete"
+		},
+		"borderRadius": {
+			"type": "string",
+			"default": null
+		},
+		"border": {
+			"type": "boolean",
+			"default": false
+		},
+		"borderColor": {
+			"type": "string",
+			"default": "#e5e5e5"
+		},
+		"borderWidth": {
+			"type": "string",
+			"default": "1px"
+		},
+		"blockId": {
+			"type": "string"
+		},
+		"old_1_31_0": {
+			"type": "boolean",
+			"default": true
+		}
+	}
+}

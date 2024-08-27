@@ -1,0 +1,53 @@
+.margin-setting {
+	.unit-select {
+		width: 7em;
+	}
+	&__unit {
+		display: flex;
+		align-items: center;
+		margin-bottom: 1em;
+		span {
+			margin-right: 4px;
+		}
+		.components-base-control__field {
+			margin-bottom: 0;
+		}
+	}
+	&__table {
+		width: 100%;
+		td {
+			padding:2px 3px;
+		}
+		tbody {
+			th,
+			td {
+				width:6em;
+				&.margin-setting__custom {
+					width:auto;
+				}
+			}
+			th {
+				text-align: left;
+				font-weight:normal;
+			}
+		}
+		.components-base-control__field {
+			margin: 0;
+		}
+		.components-text-control__input,
+		.components-input-control__input {
+			margin:0;
+			margin-bottom:0 !important;
+			background-color: #fff;
+		}
+		.components-input-control__input {
+			text-align: right;
+		}
+		.components-input-control__container .components-input-control__input {
+			width: 5em;
+		}
+		.margin-setting__custom input {
+			width:100%;
+		}
+	}
+}

@@ -36,6 +36,7 @@ export class PRcontent extends Component {
 		let aStyle = {};
 		let imageBorderProperty = 'none';
 
+<<<<<<< HEAD
 		if (layout === 'right') {
 			containerClass = classNames(
 				className,
@@ -47,9 +48,125 @@ export class PRcontent extends Component {
 				className,
 				containerClass,
 				'vk_prContent-layout-imageLeft'
+=======
+	  if (layout === "right") {
+		containerClass = classNames(
+		  className,
+		  containerClass,
+		  "vk_prContent-layout-imageRight"
+		);
+	  } else {
+		containerClass = classNames(
+		  className,
+		  containerClass,
+		  "vk_prContent-layout-imageLeft"
+		);
+	  }
+
+	  if (buttonColorCustom) {
+		btnClass = `${btnClass} vk_button-color-custom`;
+		aClass = `${aClass} btn-primary`;
+
+		// 塗り
+		if (buttonType === "0") {
+		  aStyle = {
+			backgroundColor: buttonColorCustom,
+			border: `1px solid ${buttonColorCustom}`
+		  };
+		  // 塗りなし
+		} else if (buttonType === "1") {
+		  aStyle = {
+			backgroundColor: "transparent",
+			border: "1px solid " + buttonColorCustom,
+			color: buttonColorCustom
+		  };
+		}
+
+		// カスタムカラーじゃない場合
+	  } else if (!buttonColorCustom) {
+		// 塗り
+		if (buttonType === "0") {
+		  aClass = `${aClass} btn-${buttonColor}`;
+		  aStyle = null;
+		  // 塗りなし
+		} else if (buttonType === "1") {
+		  aClass = `${aClass} btn-outline-${buttonColor}`;
+		  aStyle = null;
+		}
+	  }
+
+	  //borderColorが指定されなかった場合はボーダーを非表示に
+	  if (ImageBorderColor) {
+		imageBorderProperty = `1px solid ${ImageBorderColor}`;
+	  } else {
+		imageBorderProperty = `none`;
+	  }
+
+	  const saveImage = value => {
+		if (value) {
+		  setAttributes({ Image: JSON.stringify(value) });
+		}
+	  };
+
+	  const renderImage = for_ => {
+		if (for_ === "edit") {
+		  if (Image && Image.indexOf("{") === -1) {
+			return (
+	  <MediaUpload
+		  onSelect={ value => setAttributes({ Image: value.sizes.full.url }) }
+		  type=" image"
+		  value={ Image }
+		  render={ ({ open }) => (
+			  <Button
+				  onClick={ open }
+				  className={ Image ? "image-button" : "button button-large" }
+				  >
+				  { !Image ? (
+					  __("Select image", 'vk-blocks-pro')
+					) : (
+	  <img
+		  className={ "vk_prContent_colImg_image" }
+		  src={ Image }
+		  alt={ __("Upload image", 'vk-blocks-pro') }
+		  style={ { border: imageBorderProperty } }
+						/>
+					  ) }
+			  </Button>
+				) }
+			  />
+			);
+				  }
+			const ImageParse = JSON.parse( fixBrokenUnicode(Image) );
+			return (
+	  <MediaUpload
+		  onSelect={ saveImage }
+		  type=" image"
+		  value={ ImageParse }
+		  render={ ({ open }) => (
+			  <Button
+				  onClick={ open }
+				  className={
+					  ImageParse ? "image-button" : "button button-large"
+					}
+				  >
+				  { Image === null || typeof ImageParse.sizes === "undefined" ? (
+					  __("Select image", 'vk-blocks-pro')
+					) : (
+	  <img
+		  className={ "vk_prContent_colImg_image" }
+		  src={ ImageParse.sizes.full.url }
+		  alt={ ImageParse.alt }
+		  style={ { border: imageBorderProperty } }
+						/>
+					  ) }
+			  </Button>
+				) }
+			  />
+>>>>>>> develop
 			);
 		}
 
+<<<<<<< HEAD
 		if (buttonColorCustom) {
 			btnClass = `${btnClass} vk_button-color-custom`;
 			aClass = `${aClass} btn-primary`;
@@ -67,6 +184,21 @@ export class PRcontent extends Component {
 					border: '1px solid ' + buttonColorCustom,
 					color: buttonColorCustom,
 				};
+=======
+		} else if (for_ === "save") {
+		  if (!Image) {
+			return __("Select image", 'vk-blocks-pro');
+		  }
+			if (Image && Image.indexOf("{") === -1) {
+			  return (
+				<img
+					className={ "vk_prContent_colImg_image" }
+					src={ Image }
+					alt={ __("Upload image", 'vk-blocks-pro') }
+					style={ { border: imageBorderProperty } }
+				/>
+			  );
+>>>>>>> develop
 			}
 
 			// カスタムカラーじゃない場合
@@ -99,6 +231,7 @@ export class PRcontent extends Component {
 			if (for_ === 'edit') {
 				if (Image && Image.indexOf('{') === -1) {
 					return (
+<<<<<<< HEAD
 						<MediaUpload
 							onSelect={(value) =>
 								setAttributes({ Image: value.sizes.full.url })
@@ -134,6 +267,26 @@ export class PRcontent extends Component {
 								</Button>
 							)}
 						/>
+=======
+						<Fragment>
+			<RichText
+				tagName="h3"
+				className={ "vk_prContent_colTxt_title" }
+				onChange={ value => setAttributes({ title: value }) }
+				value={ title }
+				placeholder={ __("Input title.", 'vk-blocks-pro') }
+				style={ { color: titleColor } }
+						/>
+			<RichText
+				tagName="p"
+				className={ "vk_prContent_colTxt_text" }
+				onChange={ value => setAttributes({ content: value }) }
+				value={ content }
+				placeholder={ __("Input content.", 'vk-blocks-pro') }
+				style={ { color: contentColor } }
+						/>
+		</Fragment>
+>>>>>>> develop
 					);
 				}
 				const ImageParse = JSON.parse(fixBrokenUnicode(Image));

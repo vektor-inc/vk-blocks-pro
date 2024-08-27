@@ -12,14 +12,15 @@ import {
 } from '@wordpress/components';
 import {
 	InspectorControls,
-	ColorPalette,
 	BlockControls,
 	AlignmentToolbar,
 	RichText,
 	useBlockProps,
 } from '@wordpress/block-editor';
-
-import ReactHtmlParser from 'react-html-parser';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
+import parse from 'html-react-parser';
+import classnames from 'classnames';
 
 const renderTitle = (level, contents, tStyle, headingStyle) => {
 	switch (level) {
@@ -82,29 +83,11 @@ export default function HeaddingEdit(props) {
 		fontAwesomeIconColor,
 	} = attributes;
 
+	// eslint-disable-next-line no-undef
+	const iconFamily = vkFontAwesome.iconFamily;
+
 	const setTitleFontSize = (newLevel) => {
 		setAttributes({ level: newLevel });
-
-		switch (newLevel) {
-			case 1:
-				setAttributes({ titleSize: 3.6 });
-				break;
-			case 2:
-				setAttributes({ titleSize: 2.8 });
-				break;
-			case 3:
-				setAttributes({ titleSize: 2.2 });
-				break;
-			case 4:
-				setAttributes({ titleSize: 2.0 });
-				break;
-			case 5:
-				setAttributes({ titleSize: 1.8 });
-				break;
-			case 6:
-				setAttributes({ titleSize: 1.6 });
-				break;
-		}
 	};
 
 	const containerClass = `vk_heading vk_heading-style-${titleStyle}`;
@@ -116,9 +99,24 @@ export default function HeaddingEdit(props) {
 				: undefined,
 	};
 
+	let headingColorClassName = '';
+	if (titleColor !== undefined) {
+		headingColorClassName += `has-text-color`;
+		if (!isHexColor(titleColor)) {
+			headingColorClassName += ` has-${titleColor}-color`;
+		}
+	}
+
+	const headingStyle = classnames('vk_heading_title', {
+		[`vk_heading_title-style-${titleStyle}`]: !!titleStyle,
+		[`${headingColorClassName}`]: !!headingColorClassName,
+	});
+
 	const tStyle = {
 		color:
-			titleColor !== null && titleColor !== undefined
+			titleColor !== null &&
+			titleColor !== undefined &&
+			isHexColor(titleColor)
 				? titleColor
 				: undefined,
 		fontSize:
@@ -132,10 +130,24 @@ export default function HeaddingEdit(props) {
 		textAlign: align !== null && align !== undefined ? align : undefined,
 	};
 
-	const headingStyle = `vk_heading_title vk_heading_title-style-${titleStyle}`;
+	let subTextColorClassName = '';
+	if (subTextColor !== undefined) {
+		subTextColorClassName += `has-text-color`;
+		if (!isHexColor(subTextColor)) {
+			subTextColorClassName += ` has-${subTextColor}-color`;
+		}
+	}
+
+	const subTextClass = classnames('vk_heading_subtext', {
+		[`vk_heading_subtext-style-${titleStyle}`]: !!titleStyle,
+		[`${subTextColorClassName}`]: !!subTextColorClassName,
+	});
+
 	const subTextStyle = {
 		color:
-			subTextColor !== null && subTextColor !== undefined
+			subTextColor !== null &&
+			subTextColor !== undefined &&
+			isHexColor(subTextColor)
 				? subTextColor
 				: undefined,
 		fontSize:
@@ -144,23 +156,47 @@ export default function HeaddingEdit(props) {
 				: undefined,
 		textAlign: align !== null && align !== undefined ? align : undefined,
 	};
-	const subTextClass = `vk_heading_subtext vk_heading_subtext-style-${titleStyle}`;
 
-	let iconBefore = '';
-	let iconAfter = '';
-	const fontAwesomeIconStyle = fontAwesomeIconColor
-		? `style="color:${fontAwesomeIconColor};"`
-		: '';
-	if (fontAwesomeIconBefore) {
-		//add inline css
-		const faIconFragmentBefore = fontAwesomeIconBefore.split('<i');
+	let iconColorClassName = '';
+	if (fontAwesomeIconColor !== undefined) {
+		iconColorClassName += `has-text-color`;
+		if (!isHexColor(fontAwesomeIconColor)) {
+			iconColorClassName += ` has-${fontAwesomeIconColor}-color`;
+		}
+	}
+
+	const fontAwesomeIconStyle =
+		fontAwesomeIconColor && isHexColor(fontAwesomeIconColor)
+			? `style="color:${fontAwesomeIconColor};"`
+			: '';
+
+	let iconBefore = fontAwesomeIconBefore;
+	let iconAfter = fontAwesomeIconAfter;
+	//add class
+	if (iconBefore && iconColorClassName) {
+		const faIconFragmentBefore = iconBefore.split('<i class="');
+		faIconFragmentBefore[0] =
+			faIconFragmentBefore[0] + `<i class="${iconColorClassName} `;
+		iconBefore = faIconFragmentBefore.join('');
+	}
+
+	if (iconAfter && iconColorClassName) {
+		const faIconFragmentAfter = iconAfter.split('<i class="');
+		faIconFragmentAfter[0] =
+			faIconFragmentAfter[0] + `<i class="${iconColorClassName} `;
+		iconAfter = faIconFragmentAfter.join('');
+	}
+
+	//add inline css
+	if (iconBefore && fontAwesomeIconStyle) {
+		const faIconFragmentBefore = iconBefore.split('<i');
 		faIconFragmentBefore[0] =
 			faIconFragmentBefore[0] + `<i ${fontAwesomeIconStyle} `;
 		iconBefore = faIconFragmentBefore.join('');
 	}
-	if (fontAwesomeIconAfter) {
-		//add class and inline css
-		const faIconFragmentAfter = fontAwesomeIconAfter.split('<i');
+
+	if (iconAfter && fontAwesomeIconStyle) {
+		const faIconFragmentAfter = iconAfter.split('<i');
 		faIconFragmentAfter[0] =
 			faIconFragmentAfter[0] + `<i ${fontAwesomeIconStyle} `;
 		iconAfter = faIconFragmentAfter.join('');
@@ -168,16 +204,16 @@ export default function HeaddingEdit(props) {
 
 	const titleContent = (
 		<>
-			{ReactHtmlParser(iconBefore)}
+			{parse(iconBefore)}
 			<RichText
 				tagName={'span'}
 				value={title}
 				onChange={(value) => {
 					setAttributes({ title: value });
 				}}
-				placeholder={__('Input title…', 'vk-blocks')}
+				placeholder={__('Input title…', 'vk-blocks-pro')}
 			/>
-			{ReactHtmlParser(iconAfter)}
+			{parse(iconAfter)}
 		</>
 	);
 
@@ -190,7 +226,7 @@ export default function HeaddingEdit(props) {
 				onChange={(value) => setAttributes({ subText: value })}
 				style={subTextStyle}
 				className={subTextClass}
-				placeholder={__('Input sub text…', 'vk-blocks')}
+				placeholder={__('Input sub text…', 'vk-blocks-pro')}
 			/>
 		);
 	}
@@ -216,30 +252,30 @@ export default function HeaddingEdit(props) {
 				/>
 			</BlockControls>
 			<InspectorControls>
-				<PanelBody title={__('Style Settings', 'vk-blocks')}>
+				<PanelBody title={__('Style Settings', 'vk-blocks-pro')}>
 					<SelectControl
-						label={__('Heading style', 'vk-blocks')}
+						label={__('Heading style', 'vk-blocks-pro')}
 						value={titleStyle}
 						onChange={(value) =>
 							setAttributes({ titleStyle: value })
 						}
 						options={[
 							{
-								label: __('Default', 'vk-blocks'),
+								label: __('Default', 'vk-blocks-pro'),
 								value: 'default',
 							},
 							{
-								label: __('Plain', 'vk-blocks'),
+								label: __('Plain', 'vk-blocks-pro'),
 								value: 'plain',
 							},
 						]}
 					/>
 				</PanelBody>
-				<PanelBody title={__('Margin Setting', 'vk-blocks')}>
+				<PanelBody title={__('Margin Setting', 'vk-blocks-pro')}>
 					<p>
 						{__(
 							'Margin between Heading and sub text (rem)',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 					</p>
 					<RangeControl
@@ -256,7 +292,7 @@ export default function HeaddingEdit(props) {
 					<p>
 						{__(
 							'Margin bottom size of after this block (rem)',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 					</p>
 					<RangeControl
@@ -271,9 +307,9 @@ export default function HeaddingEdit(props) {
 						resetFallbackValue={null}
 					/>
 				</PanelBody>
-				<PanelBody title={__('Heading Settings', 'vk-blocks')}>
+				<PanelBody title={__('Heading Settings', 'vk-blocks-pro')}>
 					<RangeControl
-						label={__('Text size (rem)', 'vk-blocks')}
+						label={__('Text size (rem)', 'vk-blocks-pro')}
 						value={titleSize}
 						onChange={(value) => {
 							setAttributes({ titleSize: value });
@@ -285,22 +321,22 @@ export default function HeaddingEdit(props) {
 						resetFallbackValue={null}
 					/>
 					<BaseControl
-						label={__('Text Color', 'vk-blocks')}
+						label={__('Text Color', 'vk-blocks-pro')}
 						id={`vk_heading_textColor`}
 					>
-						<ColorPalette
-							value={titleColor}
-							onChange={(value) =>
-								setAttributes({ titleColor: value })
-							}
+						<AdvancedColorPalette
+							schema={'titleColor'}
+							{...props}
 						/>
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
-					title={__('Font Awesome Icon Settings', 'vk-blocks')}
+					title={
+						__('Icon', 'vk-blocks-pro') + ' ( ' + iconFamily + ' )'
+					}
 				>
 					<BaseControl
-						label={__('Before text', 'vk-blocks')}
+						label={__('Before text', 'vk-blocks-pro')}
 						id={`vk_heading_beforeText`}
 					>
 						<FontAwesome
@@ -309,7 +345,7 @@ export default function HeaddingEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('After text', 'vk-blocks')}
+						label={__('After text', 'vk-blocks-pro')}
 						id={`vk_heading_afterText`}
 					>
 						<FontAwesome
@@ -318,30 +354,26 @@ export default function HeaddingEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Icon Color', 'vk-blocks')}
+						label={__('Icon Color', 'vk-blocks-pro')}
 						id={`vk_heading_iconColor`}
 					>
-						<ColorPalette
-							value={fontAwesomeIconColor}
-							onChange={(value) =>
-								setAttributes({
-									fontAwesomeIconColor: value,
-								})
-							}
+						<AdvancedColorPalette
+							schema={'fontAwesomeIconColor'}
+							{...props}
 						/>
 					</BaseControl>
 				</PanelBody>
-				<PanelBody title={__('Sub Text Settings', 'vk-blocks')}>
+				<PanelBody title={__('Sub Text Settings', 'vk-blocks-pro')}>
 					<RadioControl
-						label={__('Position', 'vk-blocks')}
+						label={__('Position', 'vk-blocks-pro')}
 						selected={subTextFlag}
 						options={[
 							{
-								label: __('Display', 'vk-blocks'),
+								label: __('Display', 'vk-blocks-pro'),
 								value: 'on',
 							},
 							{
-								label: __('Hide', 'vk-blocks'),
+								label: __('Hide', 'vk-blocks-pro'),
 								value: 'off',
 							},
 						]}
@@ -349,7 +381,7 @@ export default function HeaddingEdit(props) {
 							setAttributes({ subTextFlag: value })
 						}
 					/>
-					<p>{__('Text size (rem)', 'vk-blocks')}</p>
+					<p>{__('Text size (rem)', 'vk-blocks-pro')}</p>
 					<RangeControl
 						value={subTextSize}
 						onChange={(value) => {
@@ -361,12 +393,7 @@ export default function HeaddingEdit(props) {
 						allowReset={true}
 						resetFallbackValue={null}
 					/>
-					<ColorPalette
-						value={subTextColor}
-						onChange={(value) =>
-							setAttributes({ subTextColor: value })
-						}
-					/>
+					<AdvancedColorPalette schema={'subTextColor'} {...props} />
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>

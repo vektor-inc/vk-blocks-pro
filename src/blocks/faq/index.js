@@ -23,32 +23,32 @@ export const settings = {
 	styles: [
 		{
 			name: 'vk_faq-normal',
-			label: __('Normal', 'vk-blocks'),
+			label: __('Normal', 'vk-blocks-pro'),
 			isDefault: true,
 		},
 		{
 			name: 'vk_faq-bgfill-circle',
-			label: __('Bgfill Circle', 'vk-blocks'),
+			label: __('Bgfill Circle', 'vk-blocks-pro'),
 		},
 		{
 			name: 'vk_faq-bgfill-square',
-			label: __('Bgfill Square', 'vk-blocks'),
+			label: __('Bgfill Square', 'vk-blocks-pro'),
 		},
 		{
 			name: 'vk_faq-bgfill-rounded',
-			label: __('Bgfill Rounded', 'vk-blocks'),
+			label: __('Bgfill Rounded', 'vk-blocks-pro'),
 		},
 		{
 			name: 'vk_faq-border-circle',
-			label: __('Border Circle', 'vk-blocks'),
+			label: __('Border Circle', 'vk-blocks-pro'),
 		},
 		{
 			name: 'vk_faq-border-square',
-			label: __('Border Square', 'vk-blocks'),
+			label: __('Border Square', 'vk-blocks-pro'),
 		},
 		{
 			name: 'vk_faq-border-rounded',
-			label: __('Border Rounded', 'vk-blocks'),
+			label: __('Border Rounded', 'vk-blocks-pro'),
 		},
 	],
 	example: {

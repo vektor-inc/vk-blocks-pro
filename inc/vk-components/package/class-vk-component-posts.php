@@ -3,7 +3,7 @@
  * VK Components Posts
  *
  * @package VK Component
- * @version 1.2.0
+ * @version 1.6.0
  *
  * *********************** CAUTION ***********************
  * The original of this file is located at:
@@ -52,6 +52,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				'display_btn'                => false,
 				'image_default_url'          => false,
 				'overlay'                    => false,
+				'title_tag'                  => 'h5',
 				'btn_text'                   => __( 'Read more', 'vk-blocks' ),
 				'btn_align'                  => 'text-right',
 				'new_text'                   => __( 'New!!', 'vk-blocks' ),
@@ -76,6 +77,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 		public static function get_loop_options( $loop_options, $wp_query ) {
 			$default = array(
 				'pagination_display'   => false,
+				'pagination_mid_size'  => 1,
 				'archive_link_display' => false,
 				'class_loop_outer'     => null,
 			);
@@ -114,7 +116,8 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 		 * @return void
 		 */
 		public static function the_view( $post, $options ) {
-			echo wp_kses_post( self::get_view( $post, $options ) );
+			$allowed_html = self::vk_kses_post();
+			echo wp_kses( self::get_view( $post, $options ), $allowed_html );
 		}
 
 		/**
@@ -128,6 +131,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 		 */
 		public static function get_loop( $wp_query, $options, $loop_options = array() ) {
 			// Outer Post Type classes.
+
 			$patterns                    = self::get_patterns();
 			$loop_outer_class_post_types = array();
 			if ( ! isset( $wp_query->query['post_type'] ) ) {
@@ -186,6 +190,12 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 			if ( ! empty( $options['vkb_hidden_xs'] ) ) {
 				array_push( $hidden_class, 'vk_hidden-xs' );
 			}
+			if ( ! empty( $options['marginTop'] ) ) {
+				array_push( $hidden_class, $options['marginTop'] );
+			}
+			if ( ! empty( $options['marginBottom'] ) ) {
+				array_push( $hidden_class, $options['marginBottom'] );
+			}
 
 			$loop = '';
 			if ( $wp_query->have_posts() ) :
@@ -213,7 +223,11 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				}
 
 				if ( ! empty( $loop_options['pagination_display'] ) ) {
-					$loop .= self::get_pagenation( $wp_query );
+					$pagenation_args = array();
+					if ( isset( $loop_options['pagination_mid_size'] ) && is_int( $loop_options['pagination_mid_size'] ) ) {
+						$pagenation_args['mid_size'] = $loop_options['pagination_mid_size'];
+					}
+					$loop .= self::get_pagenation( $wp_query, $pagenation_args );
 				}
 
 			endif;
@@ -285,7 +299,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 			$args = wp_parse_args(
 				$args,
 				array(
-					'mid_size'           => 1,
+					'mid_size'           => 1, // get_loop では loop_options のデフォルト値で上書きされる.
 					'prev_text'          => '&laquo;',
 					'next_text'          => '&raquo;',
 					'screen_reader_text' => __( 'Posts navigation', 'vk-blocks' ),
@@ -298,8 +312,18 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 
 			$html = '';
 
-			global $paged;
-			$current_page = $paged;
+			$paged = 0;
+			if ( is_singular() && isset( $wp_query->query_vars['page'] ) ) {
+				$paged = $wp_query->query_vars['page'];
+			} elseif ( isset( $wp_query->query_vars['paged'] ) ) {
+				$paged = $wp_query->query_vars['paged'];
+			}
+			// 1 ページ目は paged が 0 で返ってくるので 1 にする
+			if ( 0 === $paged ) {
+				$current_page = 1;
+			} else {
+				$current_page = $paged;
+			}
 
 			// 最後のページ.
 			$max_num_pages = intval( $wp_query->max_num_pages );
@@ -312,12 +336,8 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				$html .= '<h4 class="screen-reader-text">' . $args['screen_reader_text'] . '</h4>';
 				$html .= '<div class="nav-links"><ul class="page-numbers">';
 
-				if ( 0 === $paged ) {
-					$current_page = 1;
-				}
-
 				// [ << ]
-				// 現在のページが２ページ目以降の場合.
+				// 現在のページが２ページ目以降の場合 << を表示.
 				if ( $current_page > 1 ) {
 					$html .= '<li><a class="prev page-numbers" href="' . get_pagenum_link( $paged - 1 ) . '">' . $args['prev_text'] . '</a></li>';
 				}
@@ -379,6 +399,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				}
 
 				// [ >> ]
+				// paged が 最後のページより小さい場合に >> を表示.
 				if ( $current_page < $max_num_pages ) {
 					$html .= '<li><a class="next page-numbers" href="' . get_pagenum_link( $current_page + 1 ) . '">' . $args['next_text'] . '</a></li>';
 				}
@@ -403,6 +424,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				'class' => array(),
 				'role'  => array(),
 				'style' => array(),
+				'title' => array(),
 			);
 			$tags        = array(
 				'div',
@@ -442,16 +464,30 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				'img',
 				'ruby',
 				'rt',
+				'iframe',
 			);
 			foreach ( $tags as $tag ) {
 				$allowed_html[ $tag ] = $common_attr;
 			}
-			$allowed_html['a']['href']    = array();
-			$allowed_html['a']['target']  = array();
-			$allowed_html['img']['src']   = array();
-			$allowed_html['img']['sizes'] = array();
-			$allowed_html['ruby']         = array();
-			$allowed_html['rt']           = array();
+			$allowed_html['a']['href']                = array();
+			$allowed_html['a']['target']              = array();
+			$allowed_html['img']['src']               = array();
+			$allowed_html['img']['sizes']             = array();
+			$allowed_html['ruby']                     = array();
+			$allowed_html['rt']                       = array();
+			$allowed_html['iframe']['src']            = array();
+			$allowed_html['iframe']['width']          = array();
+			$allowed_html['iframe']['height']         = array();
+			$allowed_html['iframe']['loading']        = array();
+			$allowed_html['iframe']['referrerpolicy'] = array();
+			$allowed_html['iframe']['allow']          = array();
+			$allowed_html['form']['method']           = array();
+			$allowed_html['form']['action']           = array();
+			$allowed_html['input']['type']            = array();
+			$allowed_html['input']['name']            = array();
+			$allowed_html['input']['value']           = array();
+			$allowed_html['input']['class']           = array();
+			$allowed_html['input']['style']           = array();
 			return $allowed_html;
 		}
 
@@ -494,7 +530,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 			if ( $options['display_btn'] && 'postListText' !== $options['layout'] ) {
 				$class_outer .= ' vk_post-btn-display';
 			}
-			global $post;
+
 			$html = '<div id="post-' . esc_attr( $post->ID ) . '" class="vk_post vk_post-postType-' . esc_attr( $post->post_type ) . ' ' . join( ' ', get_post_class( $class_outer ) ) . '">';
 			return $html;
 		}
@@ -597,7 +633,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				$html .= $options['body_prepend'];
 			}
 
-			$html .= '<h5 class="vk_post_title ' . $layout_type . '-title">';
+			$html .= '<' . $options['title_tag'] . ' class="vk_post_title ' . $layout_type . '-title">';
 
 			/*
 			カードインテキストの場合、リンクの中にリンクがあるとブラウザでDOMが書き換えられるので
@@ -626,7 +662,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				$html .= '</a>';
 			}
 
-			$html .= '</h5>';
+			$html .= '</' . $options['title_tag'] . '>';
 
 			if ( $options['display_date'] ) {
 				$html .= '<div class="vk_post_date ' . $layout_type . '-date published">';
@@ -685,7 +721,10 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 					} // foreach
 					$html .= '</div>';
 				}
+				
 			}
+
+			$html .= apply_filters( 'vk_post_taxonomies_after', '' );
 
 			if ( $options['textlink'] ) {
 				if ( $options['display_btn'] ) {
@@ -804,17 +843,19 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 		public static function get_view_type_card_horizontal( $post, $options ) {
 			$html  = '';
 			$html .= self::get_view_first_div( $post, $options );
-			$html .= '<div class="row no-gutters card-horizontal-inner-row">';
+			$html .= '<div class="card-horizontal-inner-row">';
 
 			if ( $options['display_image'] ) {
-				$html .= '<div class="col-5 card-img-outer">';
+				// col-5 は古いクラス名 / 現在は vk_post-col-5 にスタイルをあてている
+				$html .= '<div class="vk_post-col-5 col-5 card-img-outer">';
 				$attr  = array(
 					'class_outer' => '',
 					'class_image' => 'card-img card-img-use-bg',
 				);
 				$html .= self::get_thumbnail_image( $post, $options, $attr );
 				$html .= '</div><!-- /.col -->';
-				$html .= '<div class="col-7">';
+				// col-7 は古いクラス名 / 現在は vk_post-col-7 にスタイルをあてている
+				$html .= '<div class="vk_post-col-7 col-7">';
 			}
 
 			$html .= self::get_view_body( $post, $options );

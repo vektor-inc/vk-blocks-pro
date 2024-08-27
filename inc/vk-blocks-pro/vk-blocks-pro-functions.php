@@ -6,23 +6,14 @@
  */
 
 // Pro 用の管理画面を読み込み.
-require_once dirname( __FILE__ ) . '/admin-pro/admin-pro.php';
-
-/**
- * VK Blocks Pro Get Options
- *
- * デフォルトのオプション
- *
- * @param array $defaults defaults.
- */
-function vk_blocks_pro_get_options( $defaults ) {
-	$defaults = array(
-		'display_vk_block_template' => 'display',
-		'new_faq_accordion'         => 'disable',
-	);
-	return $defaults;
-}
-add_filter( 'vk_blocks_default_options', 'vk_blocks_pro_get_options' );
+require_once __DIR__ . '/admin-pro/admin-pro.php';
+require_once __DIR__ . '/extensions/common/custom-css-extension.php';
+require_once __DIR__ . '/extensions/common/custom-format.php';
+require_once __DIR__ . '/extensions/common/custom-block-style.php';
+require_once __DIR__ . '/blocks/class-vk-blocks-blog-card.php';
+VK_Blocks_Blog_Card::init();
+require_once __DIR__ . '/App/RestAPI/BlockMeta/class-vk-blocks-pro-entrypoint.php';
+new Vk_Blocks_Pro_EntryPoint();
 
 /**
  * Pro 専用のスクリプトの読み込み
@@ -36,18 +27,21 @@ function vk_blocks_pro_load_scripts() {
 	}
 
 	// Accordion Block
-	wp_enqueue_script( 'vk-blocks-accordion', VK_BLOCKS_URL . 'build/vk-accordion.min.js', array(), VK_BLOCKS_VERSION, true );
+	wp_enqueue_script( 'vk-blocks-accordion', VK_BLOCKS_DIR_URL . 'build/vk-accordion.min.js', array(), VK_BLOCKS_VERSION, true );
 
 	// Faq Block
-	wp_enqueue_script( 'vk-blocks-faq2', VK_BLOCKS_URL . 'build/vk-faq2.min.js', array(), VK_BLOCKS_VERSION, true );
+	wp_enqueue_script( 'vk-blocks-faq2', VK_BLOCKS_DIR_URL . 'build/vk-faq2.min.js', array(), VK_BLOCKS_VERSION, true );
 
 	// Animation Block
-	wp_enqueue_script( 'vk-blocks-animation', VK_BLOCKS_URL . 'build/vk-animation.min.js', array(), VK_BLOCKS_VERSION, true );
+	wp_enqueue_script( 'vk-blocks-animation', VK_BLOCKS_DIR_URL . 'build/vk-animation.min.js', array(), VK_BLOCKS_VERSION, true );
 
-	// Slider Block
-	global $vk_swiper_url;
-	wp_enqueue_style( 'vk-swiper-style', $vk_swiper_url . 'assets/css/swiper.min.css', array(), SWIPER_VERSION );
+	// Fixed Display Block
+	wp_enqueue_script( 'vk-blocks-fixed-display', VK_BLOCKS_DIR_URL . 'build/vk-fixed-display.min.js', array(), VK_BLOCKS_VERSION, true );
 
-	wp_enqueue_script( 'vk-blocks-slider', VK_BLOCKS_URL . 'build/vk-slider.min.js', array( 'vk-swiper-script' ), VK_BLOCKS_VERSION, true );
+	// Tab Block
+	wp_enqueue_script( 'vk-blocks-tab', VK_BLOCKS_DIR_URL . 'build/vk-tab.min.js', array(), VK_BLOCKS_VERSION, true );
+
+	// Tab of Contents Block
+	wp_enqueue_script( 'vk-blocks-table-of-contents-new', VK_BLOCKS_DIR_URL . 'build/vk-table-of-contents-new.min.js', array(), VK_BLOCKS_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'vk_blocks_pro_load_scripts' );

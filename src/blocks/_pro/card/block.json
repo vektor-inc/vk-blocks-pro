@@ -3,7 +3,7 @@
 	"name": "vk-blocks/card",
 	"title": "Card",
 	"description": "A card where you can place images, headings, text, and links.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"category": "vk-blocks-cat",
 	"attributes": {
 		"postId": {
@@ -122,15 +122,14 @@
 			"default": 150
 		},
 		"clientId": {
-			"type": "string",
-			"default": ""
+			"type": "string"
 		},
 		"blockId": {
-			"type": "string",
-			"default": ""
+			"type": "string"
 		}
 	},
 	"supports": {
+		"html": false,
 		"className": true
 	}
 }

@@ -9,10 +9,9 @@
  * Render responsive br block
  *
  * @param string $block_content block_content.
- * @param array  $block block.
  * @return string
  */
-function vk_blocks_responsive_br_filter( $block_content, $block ) {
+function vk_blocks_responsive_br_filter( $block_content ) {
 	// 分割読み込みをオンかつblock_contentから[br-が含まれていたらresponsive-brのcssをenqueueをする
 	if ( VK_Blocks_Block_Loader::should_load_separate_assets() && preg_match( '/\[br-/', $block_content ) ) {
 		wp_enqueue_style(

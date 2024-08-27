@@ -1,0 +1,11 @@
+.wp-block-vk-blocks-blog-card {
+	box-sizing: border-box;
+
+	.wp-block-columns {
+		&:not(.is-not-stacked-on-mobile).vk_flex-wrap-reverse-on-mobile {
+			@media (max-width: 782px) {
+				flex-wrap: wrap-reverse!important;
+			}
+		}
+	}
+}

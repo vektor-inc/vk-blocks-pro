@@ -1,0 +1,26 @@
+.wp-block-vk-blocks-blog-card-site-logo {
+	box-sizing: border-box;
+	line-height: 0;
+
+	a {
+		display: inline-block;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	// Inherit border radius from style variations.
+	a,
+	img {
+		border-radius: inherit;
+	}
+
+	&.aligncenter {
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+
+}

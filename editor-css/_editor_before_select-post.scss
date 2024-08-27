@@ -8,6 +8,17 @@
 		display: flex;
 		flex-wrap: wrap;
 		clear: both;
+		.wp-block-vk-blocks-select-post-list-item {
+			margin-top:0; // コアが html :where(.wp-block) { に対して 28px 追加するので打ち消し
+			.alert{ // はみ出し防止
+				box-sizing: border-box;
+			}
+		}
+	}
+	&.vk_posts-layout-postListText { // テキスト1カラムの場合
+		.block-editor-block-list__layout {
+			display: block;
+		}
 	}
 	.wp-block {
 		margin-left: 15px;
@@ -20,20 +31,6 @@
 			height: 100%;
 		}
 	}
-	.block-list-appender.wp-block {
-		border: 1px solid #cccccc;
-		min-height: 4em;
-		.block-editor-button-block-appender {
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			margin: auto;
-		}
-
-	}
-
 }
 
 .vk_selectPostList-edit-col-12 {

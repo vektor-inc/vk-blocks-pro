@@ -17,7 +17,7 @@ function vk_blocks_load_vk_components( $hook_suffix ) {
 		return;
 	}
 
-	wp_register_style( 'vk-components-style', VK_BLOCKS_URL . '/build/vk-components.css', false, filemtime( VK_BLOCKS_PATH . '/build/vk-components.css' ) );
+	wp_register_style( 'vk-components-style', VK_BLOCKS_DIR_URL . 'build/vk-components.css', false, filemtime( VK_BLOCKS_DIR_PATH . '/build/vk-components.css' ) );
 
 	// 管理画面
 	if ( is_admin() ) {

@@ -5,26 +5,40 @@ import {
 	BaseControl,
 	SelectControl,
 	TextControl,
+	ButtonGroup,
+	Button,
 } from '@wordpress/components';
 import {
 	InspectorControls,
 	InnerBlocks,
 	useBlockProps,
 } from '@wordpress/block-editor';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { useEffect } from '@wordpress/element';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 
 export default function StepItemEdit(props) {
-	const { attributes, setAttributes } = props;
-	let { color, style, styleLine, dotCaption, dotNum, faIcon } = attributes;
+	const { attributes, setAttributes, clientId } = props;
+	const { color, style, styleLine, dotCaption, dotNum, faIcon } = attributes;
 
 	const containerClass = ' vk_step_item';
 	let styleClass = '';
 	let inlineStyle = {};
 	let styleLineClass = '';
 
+	// eslint-disable-next-line no-undef
+	const iconFamily = vkFontAwesome.iconFamily;
+
 	const TEMPLATE = [['core/heading', { level: 4 }], ['core/paragraph']];
+
+	// コンソールエラー回避のため useEffect を使用（実行タイミングの問題）
+	useEffect(() => {
+		//過去バージョンをリカバリーした時にiconを正常に表示する
+		if (faIcon && !faIcon.match(/<i/)) {
+			setAttributes({ faIcon: `<i class="${faIcon}"></i>` });
+		}
+	}, [clientId]);
 
 	if (style === 'solid') {
 		styleClass = ' vk_step_item_style-default';
@@ -54,11 +68,6 @@ export default function StepItemEdit(props) {
 		styleLineClass = ' vk_step_item_lineStyle-none';
 	}
 
-	//過去バージョンをリカバリーした時にiconを正常に表示する
-	if (faIcon && !faIcon.match(/<i/)) {
-		faIcon = `<i class="${faIcon}"></i>`;
-	}
-
 	const blockProps = useBlockProps({
 		className: `${containerClass} ${styleLineClass}`,
 	});
@@ -66,13 +75,18 @@ export default function StepItemEdit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Step Mark', 'vk-blocks')}>
+				<PanelBody title={__('Step Mark', 'vk-blocks-pro')}>
 					<BaseControl
 						id="dot-fa"
-						label={__('Icon ( Font Awesome )', 'vk-blocks')}
+						label={
+							__('Icon', 'vk-blocks-pro') +
+							' ( ' +
+							iconFamily +
+							' )'
+						}
 						help={__(
 							'If Font Awesome tags entered, it will overrides the number.',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 					>
 						<FontAwesome attributeName={'faIcon'} {...props} />
@@ -84,14 +98,14 @@ export default function StepItemEdit(props) {
 							onChange={(value) =>
 								setAttributes({ dotCaption: value })
 							}
-							placeholder={__('Ex,6:00AM', 'vk-blocks')}
+							placeholder={__('Ex,6:00AM', 'vk-blocks-pro')}
 						/>
 					</BaseControl>
 				</PanelBody>
-				<PanelBody title={__('Color', 'vk-blocks')}>
+				<PanelBody title={__('Color', 'vk-blocks-pro')}>
 					<AdvancedColorPalette schema={'color'} {...props} />
 				</PanelBody>
-				<PanelBody title={__('Style', 'vk-blocks')}>
+				<PanelBody title={__('Style', 'vk-blocks-pro')}>
 					<BaseControl id="style-dot" label="Dot Style">
 						<SelectControl
 							value={style}
@@ -101,32 +115,38 @@ export default function StepItemEdit(props) {
 							options={[
 								{
 									value: 'solid',
-									label: __('Solid', 'vk-blocks'),
+									label: __('Solid', 'vk-blocks-pro'),
 								},
 								{
 									value: 'outlined',
-									label: __('Outlined', 'vk-blocks'),
+									label: __('Outlined', 'vk-blocks-pro'),
 								},
 							]}
 						/>
 					</BaseControl>
 					<BaseControl id="style-line" label="Line Style">
-						<SelectControl
-							value={styleLine}
-							onChange={(value) =>
-								setAttributes({ styleLine: value })
-							}
-							options={[
-								{
-									value: 'default',
-									label: __('Default', 'vk-blocks'),
-								},
-								{
-									value: 'none',
-									label: __('None', 'vk-blocks'),
-								},
-							]}
-						/>
+						<ButtonGroup className={`mb-3`}>
+							<Button
+								isSmall
+								isPrimary={styleLine === 'default'}
+								isSecondary={styleLine !== 'default'}
+								onClick={() =>
+									setAttributes({ styleLine: 'default' })
+								}
+							>
+								{__('Default', 'vk-blocks-pro')}
+							</Button>
+							<Button
+								isSmall
+								isPrimary={styleLine === 'none'}
+								isSecondary={styleLine !== 'none'}
+								onClick={() =>
+									setAttributes({ styleLine: 'none' })
+								}
+							>
+								{__('None', 'vk-blocks-pro')}
+							</Button>
+						</ButtonGroup>
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>
@@ -143,7 +163,7 @@ export default function StepItemEdit(props) {
 					</div>
 					{(() => {
 						if (faIcon) {
-							return ReactHtmlParser(faIcon);
+							return parse(faIcon);
 						} else if (dotNum) {
 							return (
 								<div className={'vk_step_item_dot_num'}>

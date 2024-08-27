@@ -1,13 +1,44 @@
+import { __ } from '@wordpress/i18n';
 import {
 	InnerBlocks,
 	useBlockProps,
 	JustifyContentControl,
 	BlockControls,
+	InspectorControls,
 } from '@wordpress/block-editor';
+import {
+	PanelBody,
+	__experimentalUnitControl as UnitControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
+} from '@wordpress/components';
+import { useEffect } from '@wordpress/element';
+import { select, dispatch } from '@wordpress/data';
 
 export default function ButtonOuterEdit(props) {
-	const { attributes, setAttributes } = props;
-	const { buttonsJustify } = attributes;
+	const { attributes, setAttributes, clientId } = props;
+	const { buttonsJustify, gap } = attributes;
+
+	// インナーブロックに gap を反映
+	// このブロックの情報を取得するメソッドを取得
+	const { updateBlockAttributes } = dispatch('core/block-editor');
+	const { getBlocksByClientId } = select('core/block-editor');
+
+	// このブロックの情報を取得
+	const thisBlock = getBlocksByClientId(clientId);
+
+	useEffect(() => {
+		if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
+			// インナーブロックの情報を取得
+			const thisInnerBlocks = thisBlock[0].innerBlocks;
+
+			// インナーブロックをループ
+			thisInnerBlocks.forEach(function (thisInnerBlock) {
+				// 子ブロックのattributeをアップデート
+				updateBlockAttributes(thisInnerBlock.clientId, {
+					outerGap: gap,
+				});
+			});
+		}
+	}, [thisBlock, attributes]);
 
 	// blocksProps を予め定義
 	const blockProps = useBlockProps({
@@ -20,6 +51,20 @@ export default function ButtonOuterEdit(props) {
 
 	return (
 		<>
+			<InspectorControls>
+				<PanelBody
+					title={__('Button Common Setting', 'vk-blocks-pro')}
+					initialOpen={true}
+				>
+					<UnitControl
+						label={__('Button gap size', 'vk-blocks-pro')}
+						value={gap}
+						onChange={(value) =>
+							setAttributes({ gap: value ? value : null })
+						}
+					/>
+				</PanelBody>
+			</InspectorControls>
 			<BlockControls group="block">
 				<JustifyContentControl
 					allowedControls={[
@@ -34,19 +79,27 @@ export default function ButtonOuterEdit(props) {
 					}
 					popoverProps={{
 						position: 'bottom right',
-						isAlternate: true,
+						variant: 'toolbar',
 					}}
 				/>
 			</BlockControls>
 			<div {...blockProps}>
 				<div
-					className={`vk_buttons_col vk_buttons_col-justify-${buttonsJustify}`}
+					className={`vk_buttons_col vk_buttons_col-justify-${buttonsJustify}  vk_buttonouter-${clientId}`}
 				>
 					<InnerBlocks
 						allowedBlocks={ALLOWED_BLOCKS}
 						template={TEMPLATE}
 						templateLock={false}
+						orientation="horizontal"
 					/>
+					<style>
+						{`
+						.vk_buttonouter-${clientId} > .block-editor-inner-blocks > .block-editor-block-list__layout{
+							gap:${gap};
+						}
+						`}
+					</style>
 				</div>
 			</div>
 		</>

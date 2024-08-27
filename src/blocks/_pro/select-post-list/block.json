@@ -82,8 +82,9 @@
 		}
 	},
 	"description": "Displays an arbitrarily specified page with the layout of the posting list.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
+		"html": false,
 		"className": true
 	}
 }

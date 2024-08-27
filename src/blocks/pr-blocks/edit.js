@@ -18,7 +18,7 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 
@@ -38,6 +38,9 @@ export default function PrBlocksEdit(props) {
 		insertImage2,
 		insertImage3,
 	} = attributes;
+
+	// eslint-disable-next-line no-undef
+	const iconFamily = vkFontAwesome.iconFamily;
 
 	const containerClass = `vk_prBlocks row`;
 
@@ -72,18 +75,18 @@ export default function PrBlocksEdit(props) {
 	const renderEditAltImage = (insertImage) => {
 		if (isNotJSON(insertImage)) {
 			return !insertImage ? (
-				__('Select image', 'vk-blocks')
+				__('Select image', 'vk-blocks-pro')
 			) : (
 				<img
 					className={'icon-image'}
 					src={insertImage}
-					alt={__('Upload image', 'vk-blocks')}
+					alt={__('Upload image', 'vk-blocks-pro')}
 				/>
 			);
 		}
 		const IconImageParse = JSON.parse(fixBrokenUnicode(insertImage));
 		return !insertImage ? (
-			__('Select image', 'vk-blocks')
+			__('Select image', 'vk-blocks-pro')
 		) : (
 			<img
 				className={'icon-image'}
@@ -96,9 +99,9 @@ export default function PrBlocksEdit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('PR Block1 Setting', 'vk-blocks')}>
+				<PanelBody title={__('PR Block1 Setting', 'vk-blocks-pro')}>
 					<BaseControl
-						label={__('Link URL:', 'vk-blocks')}
+						label={__('Link URL:', 'vk-blocks-pro')}
 						id={`vk_prBlocks_linkUrl1`}
 					>
 						<TextControl
@@ -106,7 +109,7 @@ export default function PrBlocksEdit(props) {
 							onChange={(value) => setAttributes({ url1: value })}
 						/>
 						<CheckboxControl
-							label={__('Open link new tab.', 'vk-blocks')}
+							label={__('Open link new tab.', 'vk-blocks-pro')}
 							checked={urlOpenType1}
 							onChange={(checked) =>
 								setAttributes({ urlOpenType1: checked })
@@ -114,21 +117,26 @@ export default function PrBlocksEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Icon 1', 'vk-blocks')}
+						label={
+							__('Icon 1', 'vk-blocks-pro') +
+							' ( ' +
+							iconFamily +
+							' )'
+						}
 						id={`vk_prBlocks_Icon1`}
 					>
 						<FontAwesome attributeName={'icon1'} {...props} />
 						<AdvancedColorPalette schema={'color1'} {...props} />
 						<RadioControl
-							label={__('Icon Background:', 'vk-blocks')}
+							label={__('Icon Background:', 'vk-blocks-pro')}
 							selected={bgType1}
 							options={[
 								{
-									label: __('Solid color', 'vk-blocks'),
+									label: __('Solid color', 'vk-blocks-pro'),
 									value: '0',
 								},
 								{
-									label: __('No background', 'vk-blocks'),
+									label: __('No background', 'vk-blocks-pro'),
 									value: '1',
 								},
 							]}
@@ -138,14 +146,14 @@ export default function PrBlocksEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						// label={ __('PR Image 1', 'vk-blocks') }
+						// label={ __('PR Image 1', 'vk-blocks-pro') }
 						help={__(
 							'When you have an image. Image is displayed with priority',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 					>
 						<h4 className="components-base-control__title">
-							{__('PR Image 1', 'vk-blocks')}
+							{__('PR Image 1', 'vk-blocks-pro')}
 						</h4>
 						<MediaUpload
 							onSelect={uploadNonAltImage1}
@@ -166,9 +174,9 @@ export default function PrBlocksEdit(props) {
 						/>
 					</BaseControl>
 				</PanelBody>
-				<PanelBody title={__('PR Block2 Setting', 'vk-blocks')}>
+				<PanelBody title={__('PR Block2 Setting', 'vk-blocks-pro')}>
 					<BaseControl
-						label={__('Link URL:', 'vk-blocks')}
+						label={__('Link URL:', 'vk-blocks-pro')}
 						id={`vk_prBlocks_linkUrl2`}
 					>
 						<TextControl
@@ -176,7 +184,7 @@ export default function PrBlocksEdit(props) {
 							onChange={(value) => setAttributes({ url2: value })}
 						/>
 						<CheckboxControl
-							label={__('Open link new tab.', 'vk-blocks')}
+							label={__('Open link new tab.', 'vk-blocks-pro')}
 							checked={urlOpenType2}
 							onChange={(checked) =>
 								setAttributes({ urlOpenType2: checked })
@@ -184,21 +192,26 @@ export default function PrBlocksEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Icon 2', 'vk-blocks')}
+						label={
+							__('Icon 2', 'vk-blocks-pro') +
+							' ( ' +
+							iconFamily +
+							' )'
+						}
 						id={`vk_prBlocks_Icon2`}
 					>
 						<FontAwesome attributeName={'icon2'} {...props} />
 						<AdvancedColorPalette schema={'color2'} {...props} />
 						<RadioControl
-							label={__('Icon Background:', 'vk-blocks')}
+							label={__('Icon Background:', 'vk-blocks-pro')}
 							selected={bgType2}
 							options={[
 								{
-									label: __('Solid color', 'vk-blocks'),
+									label: __('Solid color', 'vk-blocks-pro'),
 									value: '0',
 								},
 								{
-									label: __('No background', 'vk-blocks'),
+									label: __('No background', 'vk-blocks-pro'),
 									value: '1',
 								},
 							]}
@@ -208,14 +221,14 @@ export default function PrBlocksEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						// label={ __('PR Image 2', 'vk-blocks') }
+						// label={ __('PR Image 2', 'vk-blocks-pro') }
 						help={__(
 							'When you have an image. Image is displayed with priority.',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 					>
 						<h4 className="components-base-control__title">
-							{__('PR Image 2', 'vk-blocks')}
+							{__('PR Image 2', 'vk-blocks-pro')}
 						</h4>
 						<MediaUpload
 							onSelect={uploadNonAltImage2}
@@ -236,9 +249,9 @@ export default function PrBlocksEdit(props) {
 						/>
 					</BaseControl>
 				</PanelBody>
-				<PanelBody title={__('PR Block3 Setting', 'vk-blocks')}>
+				<PanelBody title={__('PR Block3 Setting', 'vk-blocks-pro')}>
 					<BaseControl
-						label={__('Link URL:', 'vk-blocks')}
+						label={__('Link URL:', 'vk-blocks-pro')}
 						id={`vk_prBlocks_linkUrl3`}
 					>
 						<TextControl
@@ -246,7 +259,7 @@ export default function PrBlocksEdit(props) {
 							onChange={(value) => setAttributes({ url3: value })}
 						/>
 						<CheckboxControl
-							label={__('Open link new tab.', 'vk-blocks')}
+							label={__('Open link new tab.', 'vk-blocks-pro')}
 							checked={urlOpenType3}
 							onChange={(checked) =>
 								setAttributes({ urlOpenType3: checked })
@@ -254,21 +267,26 @@ export default function PrBlocksEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Icon 3', 'vk-blocks')}
+						label={
+							__('Icon 3', 'vk-blocks-pro') +
+							' ( ' +
+							iconFamily +
+							' )'
+						}
 						id={`vk_prBlocks_Icon3`}
 					>
 						<FontAwesome attributeName={'icon3'} {...props} />
 						<AdvancedColorPalette schema={'color3'} {...props} />
 						<RadioControl
-							label={__('Icon Background:', 'vk-blocks')}
+							label={__('Icon Background:', 'vk-blocks-pro')}
 							selected={bgType3}
 							options={[
 								{
-									label: __('Solid color', 'vk-blocks'),
+									label: __('Solid color', 'vk-blocks-pro'),
 									value: '0',
 								},
 								{
-									label: __('No background', 'vk-blocks'),
+									label: __('No background', 'vk-blocks-pro'),
 									value: '1',
 								},
 							]}
@@ -278,14 +296,14 @@ export default function PrBlocksEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						// label={ __('PR Image 3', 'vk-blocks') }
+						// label={ __('PR Image 3', 'vk-blocks-pro') }
 						help={__(
 							'When you have an image. Image is displayed with priority.',
-							'vk-blocks'
+							'vk-blocks-pro'
 						)}
 					>
 						<h4 className="components-base-control__title">
-							{__('PR Image 3', 'vk-blocks')}
+							{__('PR Image 3', 'vk-blocks-pro')}
 						</h4>
 						<MediaUpload
 							onSelect={uploadNonAltImage3}
@@ -457,7 +475,7 @@ export class ComponentBlockEdit extends Component {
 					className={`vk_prBlocks_item_icon_outer ${iconOuterClass}`}
 					style={iconOuterInlineStyle}
 				>
-					{ReactHtmlParser(faIconTag)}
+					{parse(faIconTag)}
 				</div>
 			);
 		})();
@@ -475,7 +493,7 @@ export class ComponentBlockEdit extends Component {
 					tagName={'h3'}
 					onChange={(value) => setAttributes({ heading1: value })}
 					value={heading1}
-					placeholder={__('Input Title', 'vk-blocks')}
+					placeholder={__('Input Title', 'vk-blocks-pro')}
 				/>
 			);
 			richTextPSave = (
@@ -484,7 +502,7 @@ export class ComponentBlockEdit extends Component {
 					tagName={'p'}
 					onChange={(value) => setAttributes({ content1: value })}
 					value={content1}
-					placeholder={__('Input Content', 'vk-blocks')}
+					placeholder={__('Input Content', 'vk-blocks-pro')}
 				/>
 			);
 		} else if (blockNum === 2) {
@@ -494,7 +512,7 @@ export class ComponentBlockEdit extends Component {
 					tagName={'h3'}
 					onChange={(value) => setAttributes({ heading2: value })}
 					value={heading2}
-					placeholder={__('Input Title', 'vk-blocks')}
+					placeholder={__('Input Title', 'vk-blocks-pro')}
 				/>
 			);
 			richTextPSave = (
@@ -503,7 +521,7 @@ export class ComponentBlockEdit extends Component {
 					tagName={'p'}
 					onChange={(value) => setAttributes({ content2: value })}
 					value={content2}
-					placeholder={__('Input Content', 'vk-blocks')}
+					placeholder={__('Input Content', 'vk-blocks-pro')}
 				/>
 			);
 		} else if (blockNum === 3) {
@@ -513,7 +531,7 @@ export class ComponentBlockEdit extends Component {
 					tagName={'h3'}
 					onChange={(value) => setAttributes({ heading3: value })}
 					value={heading3}
-					placeholder={__('Input Title', 'vk-blocks')}
+					placeholder={__('Input Title', 'vk-blocks-pro')}
 				/>
 			);
 			richTextPSave = (
@@ -522,7 +540,7 @@ export class ComponentBlockEdit extends Component {
 					tagName={'p'}
 					onChange={(value) => setAttributes({ content3: value })}
 					value={content3}
-					placeholder={__('Input Content', 'vk-blocks')}
+					placeholder={__('Input Content', 'vk-blocks-pro')}
 				/>
 			);
 		}

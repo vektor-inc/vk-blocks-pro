@@ -21,7 +21,7 @@ import {
 } from './utils';
 import { PrContentMediaUploadEdit } from './mediaUpload';
 import { FontAwesome } from '@vkblocks/utils/font-awesome-new';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 
 export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 	const {
@@ -41,7 +41,8 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 		fontAwesomeIconBefore,
 		fontAwesomeIconAfter,
 	} = attributes;
-
+	// eslint-disable-next-line no-undef
+	const iconFamily = vkFontAwesome.iconFamily;
 	const containerClass = getContainerClass(layout);
 	const btnClass = getButtonClass(buttonColorCustom);
 	const linkClass = getLinkClass(buttonColor, buttonColorCustom, buttonType);
@@ -63,12 +64,12 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={__('Color Setting', 'vk-blocks')}
+					title={__('Color Setting', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<BaseControl
 						id={`vk_prContent_titleColor-${clientId}`}
-						label={__('Title Color', 'vk-blocks')}
+						label={__('Title Color', 'vk-blocks-pro')}
 					>
 						<ColorPalette
 							value={titleColor}
@@ -79,7 +80,7 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 					</BaseControl>
 					<BaseControl
 						id={`vk_prContent_contentColor-${clientId}`}
-						label={__('Content Color', 'vk-blocks')}
+						label={__('Content Color', 'vk-blocks-pro')}
 					>
 						<ColorPalette
 							value={contentColor}
@@ -90,7 +91,7 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 					</BaseControl>
 					<BaseControl
 						id={`vk_prContent_image-borderColor-${clientId}`}
-						label={__('Image Border Color', 'vk-blocks')}
+						label={__('Image Border Color', 'vk-blocks-pro')}
 					>
 						<ColorPalette
 							value={ImageBorderColor}
@@ -101,12 +102,12 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
-					title={__('Button Setting', 'vk-blocks')}
+					title={__('Button Setting', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<BaseControl
 						id={`vk_prContent_buttonText-${clientId}`}
-						label={__('Button Text', 'vk-blocks')}
+						label={__('Button Text', 'vk-blocks-pro')}
 					>
 						<TextControl
 							value={buttonText}
@@ -118,7 +119,7 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 					</BaseControl>
 					<BaseControl
 						id={`vk_prContent_linkUrl-${clientId}`}
-						label={__('Link URL', 'vk-blocks')}
+						label={__('Link URL', 'vk-blocks-pro')}
 					>
 						<TextControl
 							value={url}
@@ -127,7 +128,7 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 						/>
 					</BaseControl>
 					<CheckboxControl
-						label={__('Open link new tab.', 'vk-blocks')}
+						label={__('Open link new tab.', 'vk-blocks-pro')}
 						checked={buttonTarget}
 						onChange={(checked) =>
 							setAttributes({ buttonTarget: checked })
@@ -135,13 +136,19 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 					/>
 					<BaseControl
 						id={`vk_prContent_buttonType-${clientId}`}
-						label={__('Button Type', 'vk-blocks')}
+						label={__('Button Type', 'vk-blocks-pro')}
 					>
 						<RadioControl
 							selected={buttonType}
 							options={[
-								{ label: __('Solid', 'vk-blocks'), value: '0' },
-								{ label: __('Ghost', 'vk-blocks'), value: '1' },
+								{
+									label: __('Solid', 'vk-blocks-pro'),
+									value: '0',
+								},
+								{
+									label: __('Ghost', 'vk-blocks-pro'),
+									value: '1',
+								},
 							]}
 							onChange={(value) =>
 								setAttributes({ buttonType: value })
@@ -149,32 +156,41 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 						/>
 					</BaseControl>
 					<RadioControl
-						label={__('Default Color:', 'vk-blocks')}
+						label={__('Default Color:', 'vk-blocks-pro')}
 						selected={buttonColor}
 						options={[
 							{
-								label: __('Primary', 'vk-blocks'),
+								label: __('Primary', 'vk-blocks-pro'),
 								value: 'primary',
 							},
 							{
-								label: __('Secondary', 'vk-blocks'),
+								label: __('Secondary', 'vk-blocks-pro'),
 								value: 'secondary',
 							},
 							{
-								label: __('Success', 'vk-blocks'),
+								label: __('Success', 'vk-blocks-pro'),
 								value: 'success',
 							},
-							{ label: __('Info', 'vk-blocks'), value: 'info' },
 							{
-								label: __('Warning', 'vk-blocks'),
+								label: __('Info', 'vk-blocks-pro'),
+								value: 'info',
+							},
+							{
+								label: __('Warning', 'vk-blocks-pro'),
 								value: 'warning',
 							},
 							{
-								label: __('Danger', 'vk-blocks'),
+								label: __('Danger', 'vk-blocks-pro'),
 								value: 'danger',
 							},
-							{ label: __('Light', 'vk-blocks'), value: 'light' },
-							{ label: __('Dark', 'vk-blocks'), value: 'dark' },
+							{
+								label: __('Light', 'vk-blocks-pro'),
+								value: 'light',
+							},
+							{
+								label: __('Dark', 'vk-blocks-pro'),
+								value: 'dark',
+							},
 						]}
 						onChange={(value) =>
 							setAttributes({ buttonColor: value })
@@ -182,7 +198,7 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 					/>
 					<BaseControl
 						id={`vk_prContent_buttonColor-${clientId}`}
-						label={__('Button Color', 'vk-blocks')}
+						label={__('Button Color', 'vk-blocks-pro')}
 					>
 						<ColorPalette
 							value={buttonColorCustom}
@@ -193,11 +209,14 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 					</BaseControl>
 					<BaseControl id={`vk_prContent_icon-${clientId}`}>
 						<h4 className="mt-0 mb-2">
-							{__('Icon ( Font Awesome )', 'vk-blocks')}
+							{__('Icon', 'vk-blocks-pro') +
+								' ( ' +
+								iconFamily +
+								' )'}
 						</h4>
 						<BaseControl
 							id={`vk_prContent_icon_beforeText${clientId}`}
-							label={__('Before text', 'vk-blocks')}
+							label={__('Before text', 'vk-blocks-pro')}
 						>
 							<FontAwesome
 								attributeName={'fontAwesomeIconBefore'}
@@ -209,7 +228,7 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 						</BaseControl>
 						<BaseControl
 							id={`vk_prContent_icon_afterText-${clientId}`}
-							label={__('After text', 'vk-blocks')}
+							label={__('After text', 'vk-blocks-pro')}
 						>
 							<FontAwesome
 								attributeName={'fontAwesomeIconAfter'}
@@ -222,15 +241,21 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
-					title={__('Layout Setting', 'vk-blocks')}
+					title={__('Layout Setting', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
 					<RadioControl
-						label={__('Layout Type', 'vk-blocks')}
+						label={__('Layout Type', 'vk-blocks-pro')}
 						selected={layout}
 						options={[
-							{ label: __('Right', 'vk-blocks'), value: 'right' },
-							{ label: __('Left', 'vk-blocks'), value: 'left' },
+							{
+								label: __('Right', 'vk-blocks-pro'),
+								value: 'right',
+							},
+							{
+								label: __('Left', 'vk-blocks-pro'),
+								value: 'left',
+							},
 						]}
 						onChange={(value) => setAttributes({ layout: value })}
 					/>
@@ -250,7 +275,7 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 						className={'vk_prContent_colTxt_title'}
 						onChange={(value) => setAttributes({ title: value })}
 						value={title}
-						placeholder={__('Input title.', 'vk-blocks')}
+						placeholder={__('Input title.', 'vk-blocks-pro')}
 						style={{ color: titleColor }}
 					/>
 					<RichText
@@ -258,7 +283,7 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 						className={'vk_prContent_colTxt_text'}
 						onChange={(value) => setAttributes({ content: value })}
 						value={content}
-						placeholder={__('Input content.', 'vk-blocks')}
+						placeholder={__('Input content.', 'vk-blocks-pro')}
 						style={{ color: contentColor }}
 					/>
 					{buttonText && (
@@ -275,11 +300,11 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 										: undefined
 								}
 							>
-								{ReactHtmlParser(iconBefore)}
+								{parse(iconBefore)}
 								<span className="vk_button_link_txt">
 									{buttonText}
 								</span>
-								{ReactHtmlParser(iconAfter)}
+								{parse(iconAfter)}
 							</a>
 						</div>
 					)}

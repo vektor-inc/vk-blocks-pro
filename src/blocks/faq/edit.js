@@ -13,12 +13,12 @@ export default function FAQEdit({ attributes, setAttributes }) {
 	if (vk_blocks_check.is_pro) {
 		massage = __(
 			'If you want to be collapsing this block, you can set it at Setting > VK Blocks',
-			'vk-blocks'
+			'vk-blocks-pro'
 		);
 	} else {
 		massage = __(
 			'You can be collapsing this block at VK Blocks Pro',
-			'vk-blocks'
+			'vk-blocks-pro'
 		);
 	}
 	const { heading, content } = attributes;
@@ -31,7 +31,7 @@ export default function FAQEdit({ attributes, setAttributes }) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Accordion Setting', 'vk-blocks')}>
+				<PanelBody title={__('Accordion Setting', 'vk-blocks-pro')}>
 					<PanelRow>{massage}</PanelRow>
 				</PanelBody>
 			</InspectorControls>
@@ -41,7 +41,10 @@ export default function FAQEdit({ attributes, setAttributes }) {
 					className={'vk_faq_title'}
 					onChange={(value) => setAttributes({ heading: value })}
 					value={heading}
-					placeholder={__('Please enter a question.', 'vk-blocks')}
+					placeholder={__(
+						'Please enter a question.',
+						'vk-blocks-pro'
+					)}
 				/>
 				<dd className={`vk_faq_content`}>
 					<InnerBlocks template={TEMPLATE} />

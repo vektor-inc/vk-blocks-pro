@@ -63,7 +63,7 @@ export default function CardItemEdit(props) {
 	}
 
 	const deleteImgBtn = () => {
-		dispatch('core/editor').updateBlockAttributes(clientId, {
+		dispatch('core/block-editor').updateBlockAttributes(clientId, {
 			image: null,
 		});
 	};
@@ -85,7 +85,7 @@ export default function CardItemEdit(props) {
 								onClick={open}
 								className={'button button-large'}
 							>
-								{__('Select image', 'vk-blocks')}
+								{__('Select image', 'vk-blocks-pro')}
 							</Button>
 						) : (
 							<>
@@ -102,7 +102,7 @@ export default function CardItemEdit(props) {
 										'image-button button button-delete'
 									}
 								>
-									{__('Delete Image', 'vk-blocks')}
+									{__('Delete Image', 'vk-blocks-pro')}
 								</Button>
 							</>
 						)}
@@ -139,7 +139,7 @@ export default function CardItemEdit(props) {
 					onChange={(value) => setAttributes({ excerpt_text: value })}
 					placeholder={__(
 						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-						'vk-blocks'
+						'vk-blocks-pro'
 					)}
 				/>
 			);
@@ -179,7 +179,7 @@ export default function CardItemEdit(props) {
 					className={titleClass}
 					value={title}
 					onChange={(value) => setAttributes({ title: value })}
-					placeholder={__('Title', 'vk-blocks')}
+					placeholder={__('Title', 'vk-blocks-pro')}
 				/>
 			);
 		}
@@ -214,12 +214,15 @@ ${btnClass}`,
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('URL', 'vk-blocks')}>
+				<PanelBody title={__('URL', 'vk-blocks-pro')}>
 					<BaseControl id="sidebar-card-block-url">
 						<TextControl
 							value={url}
 							onChange={(value) => setAttributes({ url: value })}
-							placeholder={__('https://example.com', 'vk-blocks')}
+							placeholder={__(
+								'https://example.com',
+								'vk-blocks-pro'
+							)}
 						/>
 					</BaseControl>
 					<LinkControl blockName={'card'} {...props} />

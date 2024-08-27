@@ -52,14 +52,14 @@ export const DepPRcarditem = (props) => {
 						props.setAttributes({ heading: value })
 					}
 					value={heading}
-					placeholder={__('Input Title', 'vk-blocks')}
+					placeholder={__('Input Title', 'vk-blocks-pro')}
 				/>
 				<RichText
 					className={`vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-${align.text}`}
 					tagName={'p'}
 					onChange={(value) => setAttributes({ content: value })}
 					value={content}
-					placeholder={__('Input Content', 'vk-blocks')}
+					placeholder={__('Input Content', 'vk-blocks-pro')}
 				/>
 			</>
 		);

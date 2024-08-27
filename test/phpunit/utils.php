@@ -28,3 +28,5 @@ function vk_blocks_unescape_html( $html ) {
 	// URLを開発環境に変更
 	return vk_blocks_replace_url( $html );
 }
+
+

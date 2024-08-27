@@ -1,0 +1,18 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/gridcolcard-item-footer",
+	"title": "Grid Column Card Item Footer",
+	"textdomain": "vk-blocks-pro",
+	"category": "vk-blocks-cat-layout",
+	"description": "Footer button area of Grid Column Card Block Item",
+	"parent": ["vk-blocks/gridcolcard-item"],
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"footerDisplay": {
+			"type": "string",
+			"default": "delete"
+		}
+	}
+}

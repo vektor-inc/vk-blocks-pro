@@ -1,6 +1,6 @@
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
 import { RichText, useBlockProps } from '@wordpress/block-editor';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 
 export default function save(props) {
@@ -74,7 +74,7 @@ export default function save(props) {
 		<>
 			<a href={url} class="vk_icon-card_item_link">
 				<div className="vk_icon-card_item_icon_outer" style={style}>
-					{ReactHtmlParser(faIconTag)}
+					{parse(faIconTag)}
 				</div>
 			</a>
 			<RichText.Content

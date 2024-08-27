@@ -1,0 +1,14 @@
+.vk_ancestorPageList {
+	&-hiddenGrandChild-true{
+		ul li {
+			.children {
+				display: none;
+			}
+			&.current_page_ancestor {
+				.children {
+					display: block;
+				}
+			}
+		}
+	}
+}

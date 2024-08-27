@@ -9,8 +9,7 @@
 			"default": "6:00AM"
 		},
 		"color": {
-			"type": "string",
-			"default": "#337ab7"
+			"type": "string"
 		},
 		"style": {
 			"type": "string",
@@ -22,8 +21,9 @@
 		}
 	},
 	"description": "This element sets the label, color, and style of the timeline.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
+		"html": false,
 		"className": true
 	}
 }

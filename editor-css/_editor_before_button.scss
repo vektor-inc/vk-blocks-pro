@@ -1,3 +1,9 @@
+
+// theme.json があるとコアに a:where(:not(.wp-element-button)) { text-decoration: underline; } が入るため打ち消し
+.editor-styles-wrapper a.vk_button_link {
+	text-decoration: none;
+}
+
 .wp-block-vk-blocks-button.block-editor-block-list__block.wp-block.vk_button.vk_button-align-wide {
 	display: block;
 	margin-left: auto;
@@ -15,7 +21,7 @@ $vk-color-dark:#343a40;
 
 .vk_button{ // ← V2以降に編集画面用CSSファイルに移植すること
 	.btn.has-vk-color-primary-background-color {
-		background-color: var(--vk-color-primary);
+		background-color: var(--wp--preset--color--vk-color-primary);
 	}
 	.btn.has-vk-color-secondary-background-color {
 		background-color: $vk-color-secondary;
@@ -32,6 +38,7 @@ $vk-color-dark:#343a40;
 	.btn.has-vk-color-danger-background-color {
 		background-color: $vk-color-danger;
 	}
+	// https://getbootstrap.jp/docs/5.0/components/buttons/
 	.btn.has-vk-color-light-background-color {
 		background-color: $vk-color-light;
 	}
@@ -39,7 +46,7 @@ $vk-color-dark:#343a40;
 		background-color: $vk-color-dark;
 	}
 	.btn.has-vk-color-primary-color {
-		color: var(--vk-color-primary);
+		color: var(--wp--preset--color--vk-color-primary);
 	}
 	.btn.has-vk-color-secondary-color {
 		color: $vk-color-secondary;

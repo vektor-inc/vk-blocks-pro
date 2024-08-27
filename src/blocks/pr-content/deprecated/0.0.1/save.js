@@ -89,7 +89,7 @@ export class PRContent extends Component {
 									}
 								>
 									{!Image ? (
-										__('Select image', 'vk-blocks')
+										__('Select image', 'vk-blocks-pro')
 									) : (
 										<img
 											className={
@@ -98,7 +98,7 @@ export class PRContent extends Component {
 											src={Image}
 											alt={__(
 												'Upload image',
-												'vk-blocks'
+												'vk-blocks-pro'
 											)}
 											style={{
 												border: `1px solid ${ImageBorderColor}`,
@@ -109,12 +109,12 @@ export class PRContent extends Component {
 							)}
 						/>
 					) : !Image ? (
-						__('Select image', 'vk-blocks')
+						__('Select image', 'vk-blocks-pro')
 					) : (
 						<img
 							className={'vk_prContent_colImg_image'}
 							src={Image}
-							alt={__('Upload image', 'vk-blocks')}
+							alt={__('Upload image', 'vk-blocks-pro')}
 							style={{ border: `1px solid ${ImageBorderColor}` }}
 						/>
 					)}
@@ -133,7 +133,7 @@ export class PRContent extends Component {
 										value={title}
 										placeholder={__(
 											'Input title.',
-											'vk-blocks'
+											'vk-blocks-pro'
 										)}
 										style={{ color: titleColor }}
 									/>
@@ -146,7 +146,7 @@ export class PRContent extends Component {
 										value={content}
 										placeholder={__(
 											'Input content.',
-											'vk-blocks'
+											'vk-blocks-pro'
 										)}
 										style={{ color: contentColor }}
 									/>

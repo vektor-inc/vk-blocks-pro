@@ -8,6 +8,7 @@ import edit from './edit';
 import save from './save';
 import deprecatedHooks from './deprecated/hooks';
 import deprecated from './deprecated/save';
+import transforms from './transforms';
 
 import { addFilter } from '@wordpress/hooks';
 
@@ -17,6 +18,7 @@ export { metadata, name };
 
 export const settings = {
 	icon: <Icon />,
+	transforms,
 	edit,
 	save,
 	deprecated,
@@ -43,7 +45,7 @@ const addAnimationActiveClass = (el, type, attributes) => {
 
 			//後方互換
 		}
-		const DeprecatedHook = deprecatedHooks[0];
+		const DeprecatedHook = deprecatedHooks[deprecatedFuncIndex];
 		return <DeprecatedHook el={el} attributes={attributes} />;
 	}
 	// Slider以外のブロック

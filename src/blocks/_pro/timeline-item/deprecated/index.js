@@ -1,4 +1,6 @@
-import save0591 from './0.59.1/save';
+import save1_36_2 from './1.36.2/save';
+import save1_20_4 from './1.20.4/save';
+import save0_59_1 from './0.59.1/save';
 
 const blockAttributes = {
 	label: {
@@ -19,10 +21,25 @@ const blockAttributes = {
 	},
 };
 
+const blockAttributes2 = {
+	...blockAttributes,
+	color: {
+		type: 'string',
+	},
+}
+
 const deprecated = [
 	{
+		attributes: blockAttributes2,
+		save: save1_36_2,
+	},
+	{
+		attributes: blockAttributes2,
+		save: save1_20_4,
+	},
+	{
 		attributes: blockAttributes,
-		save: save0591,
+		save: save0_59_1,
 	},
 ];
 export default deprecated;

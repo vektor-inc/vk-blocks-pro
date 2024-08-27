@@ -10,8 +10,9 @@
 		}
 	},
 	"description": "Set and display step marks, which are useful when explaining the order.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
+		"html": false,
 		"className": true
 	}
 }

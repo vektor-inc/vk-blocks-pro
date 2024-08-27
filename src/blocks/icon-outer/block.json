@@ -34,8 +34,9 @@
 		}
 	},
 	"description": "Display the Font Awesome icons horizontally.",
-	"textdomain": "vk-blocks",
+	"textdomain": "vk-blocks-pro",
 	"supports": {
+		"html": false,
 		"className": true
 	}
 }

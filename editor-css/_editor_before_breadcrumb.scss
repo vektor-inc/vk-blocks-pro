@@ -1,0 +1,28 @@
+/*-------------------------------------------*/
+/* vk_breadcrumb
+/*-------------------------------------------*/
+.editor-styles-wrapper {
+	.is-layout-constrained > .wp-block-vk-blocks-breadcrumb {
+		// X-T9 などブロックテーマで theme.json から blockGap 指定のある場合の
+		// .editor-styles-wrapper .is-layout-constrained > * + * {
+		// 	 margin-block-start: var(--wp--custom--spacing--small);
+		// } などの打ち消し
+		margin-block-start: 0;
+	}
+	.wp-block-vk-blocks-breadcrumb {
+		font-size: 12px;
+		margin-block-start: 0;
+		.vk_breadcrumb {
+			font-size: inherit;
+		}
+	}
+	.vk_breadcrumb {
+		.vk_breadcrumb_list {
+			margin-block-start: 0;
+			padding-left:0;
+		}
+		.vk_breadcrumb_list_item {
+			margin:0;
+		}
+	}
+}

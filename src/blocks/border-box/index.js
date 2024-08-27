@@ -21,7 +21,6 @@ export const settings = {
 	example: {
 		attributes: {
 			heading: title,
-			color: 'red',
 			faIcon: iconUser,
 		},
 		innerBlocks: [
@@ -36,28 +35,28 @@ export const settings = {
 	styles: [
 		{
 			name: 'vk_borderBox-style-solid-kado-tit-tab',
-			label: __('Solid Angle Tab', 'vk-blocks'),
+			label: __('Solid Angle Tab', 'vk-blocks-pro'),
 			isDefault: true,
 		},
 		{
 			name: 'vk_borderBox-style-solid-round-tit-tab',
-			label: __('Solid Round Tab', 'vk-blocks'),
+			label: __('Solid Round Tab', 'vk-blocks-pro'),
 		},
 		{
 			name: 'vk_borderBox-style-solid-kado-tit-banner',
-			label: __('Solid Angle Banner', 'vk-blocks'),
+			label: __('Solid Angle Banner', 'vk-blocks-pro'),
 		},
 		{
 			name: 'vk_borderBox-style-solid-kado-tit-onborder',
-			label: __('Solid Angle Onborder', 'vk-blocks'),
+			label: __('Solid Angle Onborder', 'vk-blocks-pro'),
 		},
 		{
 			name: 'vk_borderBox-style-solid-kado-tit-inner',
-			label: __('Solid Angle Inner', 'vk-blocks'),
+			label: __('Solid Angle Inner', 'vk-blocks-pro'),
 		},
 		{
 			name: 'vk_borderBox-style-solid-kado-iconFeature',
-			label: __('Solid Angle iconFeature', 'vk-blocks'),
+			label: __('Solid Angle iconFeature', 'vk-blocks-pro'),
 		},
 	],
 	edit,

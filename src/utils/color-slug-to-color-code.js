@@ -11,7 +11,7 @@ export const colorSlugToColorCode = (color) => {
 	let colorCode;
 	if (color) {
 		// カラーパレットの色名・スラッグ・カラーコードを取得
-		const colorSet = select('core/editor').getEditorSettings().colors;
+		const colorSet = select('core/block-editor').getSettings().colors;
 
 		// titleColor の色コードを colorSet から探して色データを取得
 		const ColorValue = getColorObjectByAttributeValues(colorSet, color);

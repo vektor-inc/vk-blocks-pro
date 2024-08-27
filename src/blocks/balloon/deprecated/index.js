@@ -1,11 +1,5 @@
-import save000 from './0.0.0/save';
-import save001 from './0.0.1/save';
-import save002 from './0.0.2/save';
-import save003 from './0.0.3/save';
-import save004 from './0.0.4/save';
-import save0_37_1 from './0.37.1/save';
-import save0_58_6 from './0.58.6/save';
-import save0_58_7 from './0.58.7/save';
+import save1_20_5 from './1.20.5/save';
+import save1_20_7 from './1.20.7/save';
 
 const blockAttributes = {
 	content: {
@@ -79,14 +73,46 @@ const blockAttributes4 = {
 		type: 'string',
 		default: null,
 	},
+<<<<<<< HEAD
 };
+=======
+	// balloonTypeのdefaultがtype-serifからtype-speechにver 0.56.0で変更された調整
+	balloonType: {
+		type: 'string',
+		default: 'type-speech',
+	},
+}
+>>>>>>> develop
+
+const blockAttributes5 = {
+	...blockAttributes4,
+	balloonBorderColor: {
+		type: 'string',
+		default: "#cccccc",
+	},
+	balloonBgColor: {
+		type: 'string',
+		default: "#f5f5f5",
+	},
+}
+
+/* 次回対応おねがいします
+const blockAttributes6 = {
+	...blockAttributes5,
+	"balloonFullWidth": {
+		"type": "boolean",
+		"default": false
+	},
+}
+*/
 
 const deprecated = [
 	{
-		attributes: blockAttributes4,
-		save: save0_58_7,
+		attributes: blockAttributes5,
+		save: save1_20_7,
 	},
 	{
+<<<<<<< HEAD
 		attributes: blockAttributes4,
 		save: save0_58_6,
 	},
@@ -113,6 +139,10 @@ const deprecated = [
 	{
 		attributes: blockAttributes,
 		save: save000,
+=======
+		attributes: blockAttributes5,
+		save: save1_20_5,
+>>>>>>> develop
 	},
 ];
 export default deprecated;

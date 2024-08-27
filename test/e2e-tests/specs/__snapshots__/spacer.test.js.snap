@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spacer should insert block name in Japanese 1`] = `
+"<!-- wp:vk-blocks/spacer -->
+<div class=\\"wp-block-vk-blocks-spacer vk_spacer vk_spacer-type-margin-top\\"><div class=\\"vk_block-margin-md--margin-top\\"></div></div>
+<!-- /wp:vk-blocks/spacer -->"
+`;

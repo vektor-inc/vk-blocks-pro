@@ -18,7 +18,7 @@ $border_primary: 1px solid #e5e5e5;
         width:auto;
     }
     figcaption {
-       display: block;
+       display: block !important; //管理画面で負けるので important 追加
        margin: 8px 0 0;
     }
 }
@@ -53,13 +53,11 @@ $border_primary: 1px solid #e5e5e5;
 //他テーマ用に追加
 .wp-block-image figcaption {
     text-align: center;
-    font-size: calc(var(--vk-size-text)* 0.75 );
+    font-size: calc( 1rem* 0.75 );
 }
 
 //左寄せ、右寄せが未指定の場合はfigureに.is-style-vk-image のクラス名が付く
 //figure.wp-block-imageの「.wp-block-image」をつけないと、角丸2のスタイルがつかないので追加
-
-
 figure.wp-block-image{
     // width: fit-content;
     &.is-style-vk-image {
@@ -68,6 +66,13 @@ figure.wp-block-image{
                 border-radius: $border_radius;
             }
         }
+        &-circle {
+            img {
+                mask-image: var(--vk_image-mask-circle);
+                @include mask;
+            }
+        }
+
         &-border {
             img {
                 border: $border_primary;
@@ -123,13 +128,22 @@ figure.wp-block-image{
     }
 }
 
-//左寄せ、右寄せを指定した場合はdivのほうに.is-style-vk-image のクラス名が付くので、以下を追加する必要がある
+//theme.json が有効時、左寄せ・右寄せを指定した場合はdivのほうに.is-style-vk-image のクラス名が付くので、以下を追加する必要がある。
+//このdivのラッパーはtheme.json が無効の場合はdivラッパーが削除される。
 .wp-block-image{
     &.is-style-vk-image {
         &-rounded figure{
             &.alignleft, &.alignright, &.aligncenter{
                 img {
                     border-radius: $border_radius;
+                }
+            }
+        }
+        &-circle figure{
+            &.alignleft, &.alignright, &.aligncenter{
+                img{
+                    mask-image: var(--vk_image-mask-circle);
+                    @include mask;
                 }
             }
         }
@@ -199,6 +213,38 @@ figure.wp-block-image{
                 img{
                     mask-image: var(--vk_image-mask-wave04);
                     @include mask;
+                }
+            }
+        }
+
+    }
+}
+
+//「フォトフレーム傾き左」「フォトフレーム傾き右」で「クリックで拡大」をONにした時、拡大された画像の一部が欠けるので、拡大された時にフォトフレームの傾きをリセット
+.wp-lightbox-overlay.zoom.active {
+    figure.wp-block-image{
+        &.is-style-vk-image {
+            &-photoFrame-tilt-right{
+                transform: none;
+            }
+    
+            &-photoFrame-tilt-left{
+                transform: none;
+            }
+        }
+    }
+    // theme.json が有効時、左寄せ・右寄せを指定した場合はdivでラッパーされるので追加
+    .wp-block-image{ 
+        &.is-style-vk-image {
+            &-photoFrame-tilt-right, &-photoFrame-tilt-right figure{
+                &.alignleft, &.alignright, &.aligncenter{
+                    transform: none;
+                }
+            }
+    
+            &-photoFrame-tilt-left, &-photoFrame-tilt-left figure{
+                &.alignleft, &.alignright, &.aligncenter{
+                    transform: none;
                 }
             }
         }

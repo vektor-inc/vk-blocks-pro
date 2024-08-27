@@ -1,0 +1,82 @@
+body{
+	--admin-sidebar-width: 160px;
+	--admin-sidebar-folded-width: 36px;
+	--admin-vk-blocks-snacbar-margin : 22px;
+}
+.components-snackbar {
+	position: fixed;
+	bottom: var(--admin-vk-blocks-snacbar-margin);
+	left:calc(var(--admin-sidebar-width) + var(--admin-vk-blocks-snacbar-margin));
+	.folded & {
+		left:calc(var(--admin-sidebar-folded-width) + var(--admin-vk-blocks-snacbar-margin));
+	}
+}
+
+// カラーパレットを選択した時の円がズレるので編集画面と同じCSSを追加する
+// https://github.com/WordPress/gutenberg/blob/b452a86c0ab7c2fe4d2dc8b6c04afdbfa6403775/packages/edit-post/src/style.scss#L62-L71
+#vk-blocks-admin {
+	*,
+	*::after,
+	*::before {
+		box-sizing: border-box;
+	}
+}
+
+.vk_admin_selectControl {
+	width: 50%;
+}
+
+.vk_admin_page {
+	.adminMain #adminContent_main,
+	.adminMain.column_3 {
+		overflow: visible;
+	}
+	section {
+		padding-bottom: 1.5em
+	}
+	.nowrap {
+		white-space: nowrap;
+	}
+	.submit.sticky {
+		position: sticky;
+		bottom: 0;
+		background-color: rgba(240, 240, 240, .80);
+
+		.update-button {
+			padding: 0 3em;
+		}
+	}
+}
+.vk_admin_tooltip {
+	&__trigger {
+		margin-left:5px;
+		display: inline-block;
+		position: relative;
+		border:1px solid var(--wp-admin-theme-color);
+		display: inline-block;
+		padding: 0 5px;
+		line-height: 16px;
+		font-size:11px;
+		cursor: pointer;
+		background-color: var(--wp-admin-theme-color);
+		color:#fff;
+	}
+	&__body {
+		visibility: hidden;
+		display: block;
+		position: absolute;
+		margin-top:-2px;
+		z-index: 9999;
+		background-color: #fff;
+		border: 1px solid var(--wp-admin-theme-color);
+		border-radius: 3px;
+		padding: 10px;
+		box-shadow:1px 1px 3px rgba(0,0,0,0.2);
+	}
+	&:hover,
+	&:focus-within {
+		.vk_admin_tooltip__body {
+			visibility: visible;
+		}
+	}
+}

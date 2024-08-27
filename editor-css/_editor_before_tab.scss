@@ -1,0 +1,26 @@
+/*      編集画面
+/*-------------------------------------------*/
+
+.vk_tab{
+	position: relative;
+	&.is-style-vk_tab_labels-line .vk_tab_labels {
+		margin-bottom: -1px;
+	}
+	ul.vk_tab_labels{
+		margin:0;
+		padding: 0;
+		li {
+			margin-bottom:0;
+		}
+	}
+	.block-list-appender{
+		position: absolute;
+		top: calc( 1rem * -6 );
+		right: calc( 1rem * 0 );
+	}
+}
+
+.vk_tab_bodys .vk_tab_bodys_body.vk_tab_bodys_body-state-active {
+	margin-top: 0;
+	margin-bottom: 0;
+}

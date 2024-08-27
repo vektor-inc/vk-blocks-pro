@@ -19,7 +19,7 @@ export const AlignControl = (props) => {
 		return {
 			icon: alignIcon,
 			// translators: %s is align.
-			title: sprintf(__(`Align %s`, 'vk-blocks'), align),
+			title: sprintf(__(`Align %s`, 'vk-blocks-pro'), align),
 			isActive: activeControl === align,
 			onClick: () => {
 				schema[component] = align;

@@ -1,0 +1,62 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/blog-card-title",
+	"category": "vk-blocks-cat",
+	"title": "Blog Card Title",
+	"description": "Displays the title obtained from the URL.",
+	"textdomain": "vk-blocks-pro",
+	"ancestor": ["vk-blocks/blog-card"],
+	"attributes": {
+		"textAlign": {
+			"type": "string"
+		},
+		"level": {
+			"type": "number",
+			"default": 5
+		},
+		"isLink": {
+			"type": "boolean",
+			"default": true
+		},
+		"rel": {
+			"type": "string",
+			"attribute": "rel",
+			"default": ""
+		},
+		"linkTarget": {
+			"type": "string",
+			"default": "_self"
+		}
+	},
+	"usesContext": ["vk-blocks/blog-card-url"],
+	"supports": {
+		"color": {
+			"gradients": true,
+			"link": true,
+			"__experimentalDefaultControls": {
+				"background": true,
+				"text": true,
+				"link": true
+			}
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"__experimentalFontFamily": true,
+			"__experimentalFontWeight": true,
+			"__experimentalFontStyle": true,
+			"__experimentalTextTransform": true,
+			"__experimentalTextDecoration": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalDefaultControls": {
+				"fontSize": true
+			}
+		},
+		"html": false,
+		"reusable": false
+	}
+}

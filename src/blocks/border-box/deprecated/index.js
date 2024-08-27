@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-import save000 from './0.0.0/save';
-import save001 from './0.0.1/save';
-=======
 import save1_21_0 from './1.21.0/save';
 import save1_29_2 from './1.29.2/save';
 import save1_75_0 from './1.75.0/save';
->>>>>>> develop
 
 const blockAttributes = {
 	heading: {
@@ -46,21 +41,6 @@ const blockAttributes3 = {
 
 const deprecated = [
 	{
-<<<<<<< HEAD
-		attributes: {
-			...blockAttributes,
-			bgColor: {
-				type: 'string',
-				default: 'transparent',
-			},
-		},
-		save: save001,
-	},
-	{
-		attributes: blockAttributes,
-		save: save000,
-	},
-=======
 		attributes: blockAttributes3,
 		save: save1_75_0,
 	},
@@ -72,6 +52,5 @@ const deprecated = [
 		attributes: blockAttributes,
 		save: save1_21_0,
 	}
->>>>>>> develop
 ];
 export default deprecated;

@@ -66,51 +66,6 @@ export class CardItem extends Component {
 			});
 		};
 
-<<<<<<< HEAD
-		const uploadImgBtn = (image) => {
-			const imageParsed = JSON.parse(fixBrokenUnicode(image));
-			return (
-				<MediaUpload
-					onSelect={(value) =>
-						setAttributes({ image: JSON.stringify(value) })
-					}
-					type="image"
-					className={'vk_post_imgOuter_img card-img-top'}
-					value={image}
-					render={({ open }) => (
-						<>
-							{!imageParsed ? (
-								<Button
-									onClick={open}
-									className={'button button-large'}
-								>
-									{__('Select image', 'vk-blocks')}
-								</Button>
-							) : (
-								<>
-									<img
-										className={
-											'vk_post_imgOuter_img card-img-top'
-										}
-										src={imageParsed.sizes.full.url}
-										alt={imageParsed.alt}
-									/>
-									<Button
-										onClick={deleteImgBtn}
-										className={
-											'image-button button button-delete'
-										}
-									>
-										{__('Delete Image', 'vk-blocks')}
-									</Button>
-								</>
-							)}
-						</>
-					)}
-				/>
-			);
-		};
-=======
     const uploadImgBtn = image => {
       const imageParsed = JSON.parse( fixBrokenUnicode(image) );
       return (
@@ -145,31 +100,27 @@ export class CardItem extends Component {
         />
       );
     };
->>>>>>> develop
 
-		const renderImage = (display_image) => {
-			if (display_image) {
-				if (isEdit(for_)) {
-					return (
-						<>
-							<div
-								className={imgContainerClass}
-								style={imageStyle}
-							>
-								<div className="card-img-overlay"></div>
-								{uploadImgBtn(image)}
-							</div>
-						</>
-					);
-				} else {
-					return (
-						<div className={imgContainerClass} style={imageStyle}>
-							{switchAddUrltoImage(url)}
-						</div>
-					);
-				}
-			}
-		};
+    const renderImage = display_image => {
+      if (display_image) {
+        if (isEdit(for_)) {
+          return (
+            <>
+              <div className={imgContainerClass} style={imageStyle}>
+                <div className="card-img-overlay"></div>
+                {uploadImgBtn(image)}
+              </div>
+            </>
+          );
+        } else {
+          return (
+            <div className={imgContainerClass} style={imageStyle}>
+              {switchAddUrltoImage(url)}
+            </div>
+          );
+        }
+      }
+	};
 
 		const switchAddUrltoImage = (url) => {
 			const overlay = <div className="card-img-overlay"></div>;

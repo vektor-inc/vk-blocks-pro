@@ -67,16 +67,16 @@ const blockAttributes2 = {
 	faIcon: {
 		type: 'string',
 		default: '<i class="fas fa-user"></i>',
-	},
-};
+	}
+}
 
 const blockAttributes3 = {
 	...blockAttributes2,
 	col_xxl: {
 		type: 'number',
 		default: 3,
-	},
-};
+	}
+}
 
 const deprecated = [
 	{
@@ -87,7 +87,7 @@ const deprecated = [
 	// 独自後方互換処理のための、後方互換を追加
 	{
 		attributes: blockAttributes3,
-		save: save0_0_2,
+		save:save0_0_2
 	},
 	// {
 	// 	attributes: blockAttributes3,

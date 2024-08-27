@@ -1,5 +1,5 @@
-export default function SliderHook0_49_7({ el, attributes }) {
-	return (
+export default function SliderHook0_49_7( {el, attributes}) {
+	return(
 		<div>
 			<script>{`window.addEventListener('load', (event) => {
 			let animationElm = document.querySelector('.vk_animation-${attributes.clientId}');

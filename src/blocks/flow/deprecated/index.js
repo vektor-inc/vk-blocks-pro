@@ -2,7 +2,7 @@ import save000 from './0.0.0/save';
 import save1_8_0 from './1.8.0/save';
 
 
-const blockAttributes = {
+const blockAttributes =  {
 	heading: {
 		type: 'string',
 		source: 'html',
@@ -21,7 +21,7 @@ const blockAttributes = {
 		type: 'string',
 		default: null, // no image by default!
 	},
-};
+}
 
 const deprecated = [
 	{

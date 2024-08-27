@@ -125,16 +125,21 @@ export const ComponentV2 = (props) => {
 
 	return (
 		<>
-			<GenerateMediaqueryCss {...props} />
-			<OuterBlockInner {...defaultProps} />
+			<GenerateMediaqueryCss { ...props } />
+			<OuterBlockInner { ...defaultProps } />
 		</>
 	);
 };
 
 const GenerateMediaqueryCss = (props) => {
 	const { attributes, clientId } = props;
-	const { bgImageMobile, bgImageTablet, bgImage, bgColor, opacity } =
-		attributes;
+	const {
+		bgImageMobile,
+		bgImageTablet,
+		bgImage,
+		bgColor,
+		opacity,
+	} = attributes;
 
 	const mobileViewport = 'max-width: 575.98px';
 	const tabletViewport = 'min-width: 576px';

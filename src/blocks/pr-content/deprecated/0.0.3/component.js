@@ -34,13 +34,13 @@ export class PRcontent extends Component {
 		let aStyle = {};
 		let imageBorderProperty = 'none';
 
-		let titleStyle = {};
-		if (titleColor && titleColor !== '') {
-			titleStyle = { color: titleColor };
+		let titleStyle = {}
+		if(titleColor && titleColor !== "") {
+			titleStyle = {color:titleColor}
 		}
-		let contentStyle = {};
-		if (contentColor && contentColor !== '') {
-			contentStyle = { color: contentColor };
+		let contentStyle = {}
+		if(contentColor && contentColor !== "") {
+			contentStyle = {color:contentColor}
 		}
 
 		if (layout === 'right') {

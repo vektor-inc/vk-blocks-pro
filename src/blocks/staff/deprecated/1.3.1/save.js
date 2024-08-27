@@ -34,8 +34,7 @@ export default function save({ attributes, className }) {
 
 	// 画像の線のクラスとimgタグの親タグのクラス名を生成.
 	const imgBorderClassName = classnames('vk_staff_photo', {
-		[`vk_staff_photo-border-${vk_staff_photoBorder}`]:
-			!!vk_staff_photoBorder, // eslint-disable-line camelcase
+		[`vk_staff_photo-border-${vk_staff_photoBorder}`]: !!vk_staff_photoBorder, // eslint-disable-line camelcase
 	});
 
 	return (

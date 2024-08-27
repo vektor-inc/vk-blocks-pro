@@ -1,7 +1,7 @@
-import classNames from 'classnames';
+import classNames from "classnames";
 import { InnerBlocks } from '@wordpress/block-editor';
 
-export default function save(props) {
+export default function save( props ) {
 	let { effect, speed, range, clientId } = props.attributes;
 
 	//For recovering block.

@@ -10,6 +10,14 @@
 			"type": "string",
 			"default": "info"
 		},
+		"icon": {
+			"type": "string",
+			"default": ""
+		},
+		"iconText": {
+			"type": "string",
+			"default": ""
+		},
 		"content": {
 			"type": "string",
 			"source": "html",

@@ -1247,7 +1247,7 @@ msgid "Setting up a link"
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:389
-#: src/blocks/_pro/gridcolcard-item/edit.js:336
+#: src/blocks/_pro/gridcolcard-item/edit.js:339
 #: src/blocks/_pro/icon-card-item/edit.js:128
 #: src/blocks/button/edit.js:283
 #: src/blocks/icon/edit.js:292
@@ -1440,63 +1440,63 @@ msgstr ""
 msgid "You can create a variety of layouts with grid column card blocks."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:232
+#: src/blocks/_pro/gridcolcard-item/edit.js:235
 #: src/blocks/_pro/select-post-list-item/edit.js:66
 #: src/blocks/button/edit.js:249
 #: src/components/link-toolbar/index.js:234
 msgid "Unlink"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:233
+#: src/blocks/_pro/gridcolcard-item/edit.js:236
 #: src/blocks/button/edit.js:250
 #: src/components/link-toolbar/index.js:235
 msgid "Input Link URL"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:263
+#: src/blocks/_pro/gridcolcard-item/edit.js:266
 #: src/blocks/_pro/select-post-list-item/edit.js:102
 #: src/blocks/button/edit.js:278
 #: src/components/link-toolbar/index.js:269
 msgid "Submit"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:287
+#: src/blocks/_pro/gridcolcard-item/edit.js:290
 msgid "Edit mode"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:297
+#: src/blocks/_pro/gridcolcard-item/edit.js:300
 msgid "All columns"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:305
+#: src/blocks/_pro/gridcolcard-item/edit.js:308
 msgid "This column only"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:310
+#: src/blocks/_pro/gridcolcard-item/edit.js:313
 msgid "Edit Lock"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:313
+#: src/blocks/_pro/gridcolcard-item/edit.js:316
 msgid "Lock edits this block from the parent and other Grid Column Item block"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:324
+#: src/blocks/_pro/gridcolcard-item/edit.js:327
 msgid "Column Setting"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:328
+#: src/blocks/_pro/gridcolcard-item/edit.js:331
 #: src/blocks/_pro/icon-card-item/edit.js:120
 #: src/blocks/pr-blocks/edit.js:254
 msgid "Link URL:"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:343
+#: src/blocks/_pro/gridcolcard-item/edit.js:346
 msgid ""
 "If you set a link URL, do not place the link element (text or button) in "
 "the Grid Column Card Item. It may not be displayed correctly."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:347
+#: src/blocks/_pro/gridcolcard-item/edit.js:350
 msgid "Make sure that no link is specified for the image block, etc."
 msgstr ""
 
@@ -1546,42 +1546,42 @@ msgstr ""
 msgid "Column header media area"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:118
+#: src/blocks/_pro/gridcolcard/edit.js:120
 msgid "Column Width Setting"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:122
+#: src/blocks/_pro/gridcolcard/edit.js:124
 msgid ""
 "If you specify the minimum column size on a tablet or PC with %, it will be "
 "easier to align the number of columns in the upper and lower rows according "
 "to the screen size."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:128
+#: src/blocks/_pro/gridcolcard/edit.js:130
 msgid "Column min width (Mobile)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:136
+#: src/blocks/_pro/gridcolcard/edit.js:138
 msgid "Column min width (Tablet / Optional)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:147
+#: src/blocks/_pro/gridcolcard/edit.js:149
 msgid "Column min width (PC / Optional)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:158
+#: src/blocks/_pro/gridcolcard/edit.js:160
 msgid "Column Gap Setting"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:162
+#: src/blocks/_pro/gridcolcard/edit.js:164
 msgid "Column gap size"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:168
+#: src/blocks/_pro/gridcolcard/edit.js:170
 msgid "Column row-gap size (optional)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:177
+#: src/blocks/_pro/gridcolcard/edit.js:179
 msgid "Specify all columns at once"
 msgstr ""
 
@@ -2092,65 +2092,65 @@ msgstr ""
 msgid "Tab 02"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:526
+#: src/blocks/_pro/tab/edit.js:510
 msgid "Tab Label [ %s ]"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:552
+#: src/blocks/_pro/tab/edit.js:536
 msgid "Tab Size Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:554
+#: src/blocks/_pro/tab/edit.js:538
 msgid "Tab Size ( Smart Phone )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:571
+#: src/blocks/_pro/tab/edit.js:555
 msgid "Tab Size ( Tablet )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:588
+#: src/blocks/_pro/tab/edit.js:572
 msgid "Tab Size ( PC )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:592
+#: src/blocks/_pro/tab/edit.js:576
 msgid "Fit to the text"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:596
+#: src/blocks/_pro/tab/edit.js:580
 msgid "Monospaced"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:605
+#: src/blocks/_pro/tab/edit.js:589
 msgid "Tab Display Options"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:607
+#: src/blocks/_pro/tab/edit.js:591
 msgid ""
 "If there are many labels or the screen width is narrow, you can adjust it "
 "here. *Tab size setting will not be effective."
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:613
+#: src/blocks/_pro/tab/edit.js:597
 msgid "Tab Display Options ( Smart Phone )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:637
+#: src/blocks/_pro/tab/edit.js:621
 msgid "Tab Display Options ( Tablet )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:661
+#: src/blocks/_pro/tab/edit.js:645
 msgid "Tab Display Options ( PC )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:668
+#: src/blocks/_pro/tab/edit.js:652
 msgid "Not set"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:672
+#: src/blocks/_pro/tab/edit.js:656
 msgid "Scroll"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:676
+#: src/blocks/_pro/tab/edit.js:660
 msgid "Wrap to 2 rows"
 msgstr ""
 

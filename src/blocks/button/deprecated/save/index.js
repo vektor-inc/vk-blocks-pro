@@ -60,7 +60,7 @@ const blockAttributes2 = {
 		type: 'string',
 		default: '',
 	},
-};
+}
 
 const blockAttributes3 = {
 	...blockAttributes2,

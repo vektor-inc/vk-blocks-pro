@@ -129,16 +129,16 @@ const blockAttributes2 = {
 	clientId: {
 		type: 'string',
 		default: '',
-	},
-};
+	}
+}
 
 const blockAttributes3 = {
 	...blockAttributes2,
 	blockId: {
 		type: 'string',
-		default: '',
-	},
-};
+		default: ''
+	}
+}
 
 /*
 // 1.34.1 で attributes を変更
@@ -156,9 +156,6 @@ const blockAttributes4 = {
 const deprecated = [
 	{
 		attributes: blockAttributes3,
-<<<<<<< HEAD
-		save: save1_0_4,
-=======
 		save: save1_34_1
 	},
 	{
@@ -168,7 +165,6 @@ const deprecated = [
 	{
 		attributes:blockAttributes3,
 		save: save1_0_4
->>>>>>> develop
 	},
 	{
 		attributes: blockAttributes2,

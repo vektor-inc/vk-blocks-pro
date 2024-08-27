@@ -2,7 +2,7 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 export default function save() {
 	const blockProps = useBlockProps.save({
-		className: `vk_accordion-target vk_accordion-target-close`,
+		className: `vk_accordion-target`,
 	});
 	return (
 		<div {...blockProps}>

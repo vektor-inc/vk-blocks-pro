@@ -36,7 +36,7 @@ const generateInlineCss = (attributes) => {
 	);
 };
 
-export default function CardHook({ el, attributes }) {
+export default function CardHook( {el,attributes}) {
 	const cssTag = generateInlineCss(attributes);
 	return (
 		<div>

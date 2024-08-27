@@ -33,7 +33,7 @@ const blockAttributes2 = {
 		type: 'string',
 		default: 'normal',
 	},
-};
+}
 
 const blockAttributes3 = {
 	...blockAttributes2,
@@ -45,7 +45,7 @@ const blockAttributes3 = {
 		type: 'string',
 		default: 'none', // no image by default!
 	},
-};
+}
 
 const blockAttributes4 = {
 	...blockAttributes3,
@@ -73,16 +73,12 @@ const blockAttributes4 = {
 		type: 'string',
 		default: null,
 	},
-<<<<<<< HEAD
-};
-=======
 	// balloonTypeのdefaultがtype-serifからtype-speechにver 0.56.0で変更された調整
 	balloonType: {
 		type: 'string',
 		default: 'type-speech',
 	},
 }
->>>>>>> develop
 
 const blockAttributes5 = {
 	...blockAttributes4,
@@ -112,37 +108,8 @@ const deprecated = [
 		save: save1_20_7,
 	},
 	{
-<<<<<<< HEAD
-		attributes: blockAttributes4,
-		save: save0_58_6,
-	},
-	{
-		attributes: blockAttributes4,
-		save: save004,
-	},
-	{
-		attributes: blockAttributes3,
-		save: save003,
-	},
-	{
-		attributes: blockAttributes3,
-		save: save002,
-	},
-	{
-		attributes: blockAttributes2,
-		save: save0_37_1,
-	},
-	{
-		attributes: blockAttributes2,
-		save: save001,
-	},
-	{
-		attributes: blockAttributes,
-		save: save000,
-=======
 		attributes: blockAttributes5,
 		save: save1_20_5,
->>>>>>> develop
 	},
 ];
 export default deprecated;

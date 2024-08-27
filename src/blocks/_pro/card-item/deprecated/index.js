@@ -84,11 +84,11 @@ const blockAttributes = {
 		attribute: 'target',
 	},
 	rel: {
-		type: 'string',
-		source: 'attribute',
-		selector: 'a',
-		attribute: 'rel',
-	},
+	  type: "string",
+	  source: "attribute",
+	  selector: "a",
+	  attribute: "rel",
+	}
 };
 
 const blockAttributes2 = {
@@ -109,7 +109,7 @@ const blockAttributes2 = {
 		type: 'boolean',
 		default: true,
 	},
-};
+}
 
 const blockAttributes3 = {
 	...blockAttributes2,
@@ -117,7 +117,8 @@ const blockAttributes3 = {
 		type: 'number',
 		default: 3,
 	},
-};
+}
+
 
 const deprecated = [
 	{

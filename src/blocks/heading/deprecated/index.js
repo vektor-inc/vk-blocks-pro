@@ -35,8 +35,8 @@ const blockAttributes = {
 		default: 2, // version < 0.17.7 は デフォルト値が 2.6
 	},
 	titleMarginBottom: {
-		type: 'number',
-		default: 1,
+		type: "number",
+		default: 1
 	},
 	subText: {
 		source: 'html',

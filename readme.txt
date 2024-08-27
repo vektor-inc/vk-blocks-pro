@@ -111,7 +111,8 @@ e.g.
 
 = 1.83.0 =
 [ Add Setting ][ Alert ] Add icon setting and inner block.
-[ Bug fix ] [ Core List ] Add support for handling list color in old settings.
+[ Bug fix ][ Grid Column Card ] Fix infinite loop in grid column card block when used in reusable blocks.
+[ Bug fix ][ Core List ] Add support for handling list color in old settings.
 [ Bug fix ][ Tab Item ] When duplicating an active tab-item block, no more than one tab-item block becomes active.
 
 = 1.82.0 =

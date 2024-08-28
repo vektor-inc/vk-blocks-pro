@@ -1,14 +1,35 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
-import { useEffect } from '@wordpress/element';
+import { useEffect, useRef } from 'react';
 
 export default function AccordionTriggerEdit() {
 	const blockProps = useBlockProps({
 		className: `vk_accordion-trigger`,
 	});
+	const accordionToggleRef = useRef(null);
 
-	// アコーディオン開閉のための状態管理とイベントハンドラ
+	useEffect(() => {
+		// 初期状態の設定を取得
+		const vkAccordion = accordionToggleRef.current.closest('.vk_accordion-container, .vk_accordion');
+		const initialState = vkAccordion.getAttribute('data-initial-state');
+
+		const vkAccordionToggle = accordionToggleRef.current;
+		const vkAccordionTarget = vkAccordion.querySelector('.vk_accordion-target');
+
+		// 初期状態に基づいてクラスとaria属性を設定
+		if (initialState !== 'close') {  // 'close'でない場合、'open'にする
+			vkAccordionToggle.classList.add('vk_accordion-toggle-open');
+			vkAccordionTarget.classList.add('vk_accordion-target-open');
+			vkAccordionToggle.setAttribute('aria-expanded', 'true');
+		} else {
+			vkAccordionToggle.classList.add('vk_accordion-toggle-close');
+			vkAccordionTarget.classList.add('vk_accordion-target-close');
+			vkAccordionToggle.setAttribute('aria-expanded', 'false');
+		}
+	}, []);
+
 	const OnClickToggle = (e) => {
-		const vkAccordion = e.target.closest('.vk_accordion');
+		// vk_accordion-container または vk_accordion を持つ最も近い要素を探す
+		const vkAccordion = e.target.closest('.vk_accordion-container, .vk_accordion');
 		const vkAccordionToggle = vkAccordion.querySelector('.vk_accordion-toggle');
 		const vkAccordionTarget = vkAccordion.querySelector('.vk_accordion-target');
 
@@ -17,34 +38,15 @@ export default function AccordionTriggerEdit() {
 			vkAccordionToggle.classList.add('vk_accordion-toggle-open');
 			vkAccordionTarget.classList.remove('vk_accordion-target-close');
 			vkAccordionTarget.classList.add('vk_accordion-target-open');
+			vkAccordionToggle.setAttribute('aria-expanded', 'true');
 		} else {
 			vkAccordionToggle.classList.remove('vk_accordion-toggle-open');
 			vkAccordionToggle.classList.add('vk_accordion-toggle-close');
 			vkAccordionTarget.classList.remove('vk_accordion-target-open');
 			vkAccordionTarget.classList.add('vk_accordion-target-close');
+			vkAccordionToggle.setAttribute('aria-expanded', 'false');
 		}
 	};
-
-	useEffect(() => {
-		// 初期化: アコーディオン要素とトグルを設定
-		const vkAccordion = document.querySelector('.vk_accordion');
-		if (vkAccordion) {
-			const vkAccordionToggle = vkAccordion.querySelector('.vk_accordion-toggle');
-			if (vkAccordionToggle) {
-				vkAccordionToggle.addEventListener('click', OnClickToggle);
-			}
-		}
-
-		// クリーンアップ関数: イベントリスナーの削除
-		return () => {
-			if (vkAccordion) {
-				const vkAccordionToggle = vkAccordion.querySelector('.vk_accordion-toggle');
-				if (vkAccordionToggle) {
-					vkAccordionToggle.removeEventListener('click', OnClickToggle);
-				}
-			}
-		};
-	}, []); // 初期ロード時のみ実行
 
 	return (
 		<>
@@ -55,11 +57,20 @@ export default function AccordionTriggerEdit() {
 				/>
 				{/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
 				<span
-					className={`vk_accordion-toggle vk_accordion-toggle-open`}
+					ref={accordionToggleRef}
+					className="vk_accordion-toggle"  // 初期状態のクラスはJSで設定
+					onClick={(e) => {
+						OnClickToggle(e);
+					}}
 					role="button"
 					tabIndex={0}
-					aria-expanded="true"
+					onKeyPress={(e) => {
+						if (e.key === 'Enter' || e.key === ' ') {
+							OnClickToggle(e);
+						}
+					}}
 					aria-controls="accordion-content"
+					aria-label="Toggle"
 				></span>
 			</div>
 		</>

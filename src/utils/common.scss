@@ -642,9 +642,18 @@ $xxl-min: 1400px;
 	&.wp-block-columns.is-vk-row-reverse {
 		flex-direction: row-reverse;
 	}
+	/* リンク設定 */
+	&:has(.wp-block-column-vk-link) {
+		.wp-block-column {
+			> * {
+				&:first-of-type {
+					margin-top: 0;
+				}
+			}
+		}
+	}
 	.wp-block-column:has(.wp-block-column-vk-link) {
 		position: relative;
-		/* リンク設定 */
 		.wp-block-column-vk-link {
 			position: absolute;
 			top: 0; 
@@ -656,15 +665,6 @@ $xxl-min: 1400px;
 			z-index: 10;
 			> p {
 				line-height: var(--vk-line-height); // 自動で入るコアの .is-layout-flow CSSに負けるため
-			}
-		}
-	}
-	.wp-block-columns:has(.wp-block-column-vk-link) {
-		.wp-block-column {
-			> * {
-				&:first-of-type {
-					margin-top: 0;
-				}
 			}
 		}
 	}

@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Link toolbar ] Add auto-conversion of relative URLs to full URLs.
+
 = 1.83.0 =
 [ Add Function ][ Alert ] Add icon setting and inner block.
 [ Bug fix ][ Grid Column Card ] Fixed an issue where using a synced pattern would cause the destination edit page to crash.

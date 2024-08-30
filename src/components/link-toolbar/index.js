@@ -197,6 +197,7 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 		}
 	};
 
+	// URLのフォーマット関数を更新
 	const formatUrl = (url) => {
 		if (
 			url.startsWith('http://') ||
@@ -206,6 +207,13 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 		) {
 			return url;
 		}
+		// URLが内部パスである場合、現在のドメインを使用してフルURLを作成
+		if (url.startsWith('/')) {
+			const protocol = window.location.protocol;
+			const host = window.location.host;
+			return `${protocol}//${host}${url}`;
+		}
+		// URLが内部パスでもフルパスでもない場合、httpを追加
 		return 'http://' + url;
 	};
 

@@ -199,23 +199,20 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 
 	// URLのフォーマット関数を更新
 	const formatUrl = (url) => {
+		// 絶対パス・相対パス・アンカーリンクであればそのまま返す
 		if (
 			url.startsWith('http://') ||
 			url.startsWith('https://') ||
+			url.startsWith('/') ||
 			url.startsWith('#') ||
 			url === ''
 		) {
 			return url;
 		}
-		// URLが内部パスである場合、現在のドメインを使用してフルURLを作成
-		if (url.startsWith('/')) {
-			const protocol = window.location.protocol;
-			const host = window.location.host;
-			return `${protocol}//${host}${url}`;
-		}
-		// URLが内部パスでもフルパスでもない場合、httpを追加
+		// その他のリンクは http:// を付加する
 		return 'http://' + url;
 	};
+	
 
 	const handleSubmit = () => {
 		if (linkUrl) {

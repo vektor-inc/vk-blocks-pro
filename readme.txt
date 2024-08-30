@@ -109,8 +109,9 @@ e.g.
 [ Add function ][ Accordion(Pro) ] Enabled accordion toggle in the editor.
 
 = 1.83.0 =
-[ Add Setting ][ Alert ] Add icon setting and inner block.
-[ Bug fix ] [ Core List ] Add support for handling list color in old settings.
+[ Add Function ][ Alert ] Add icon setting and inner block.
+[ Bug fix ][ Grid Column Card ] Fixed an issue where using a synced pattern would cause the destination edit page to crash.
+[ Bug fix ][ Core List ] Add support for handling list color in old settings.
 [ Bug fix ][ Tab Item ] When duplicating an active tab-item block, no more than one tab-item block becomes active.
 
 = 1.82.0 =

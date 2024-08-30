@@ -106,7 +106,7 @@ e.g.
 
 == Changelog ==
 
-[ Bug fix ][ Link toolbar ] Add auto-conversion of relative URLs to full URLs.
+[ Bug fix ][ Link toolbar ] Fix to prevent adding http:// or https:// when a relative path is entered.
 
 = 1.83.0 =
 [ Add Function ][ Alert ] Add icon setting and inner block.

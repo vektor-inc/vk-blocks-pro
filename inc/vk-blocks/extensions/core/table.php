@@ -33,9 +33,9 @@ function vk_blocks_render_core_table( $block_content, $block ) {
 	// Prepare scroll hint only if <figure> is found.
 	if ( $processor->next_tag( array( 'tag_name' => 'figure' ) ) ) {
 		$scroll_message_text = ! empty( $block['attrs']['scrollMessageText'] ) ? $block['attrs']['scrollMessageText'] : __( 'You can scroll', 'vk-blocks-pro' );
-		$scroll_icon_left = ! empty( $block['attrs']['scrollIconLeft'] ) ? extract_icon_class($block['attrs']['scrollIconLeft']) : 'fa-caret-left';
-		$scroll_icon_right = ! empty( $block['attrs']['scrollIconRight'] ) ? extract_icon_class($block['attrs']['scrollIconRight']) : 'fa-caret-right';
-		$scroll_breakpoint = ! empty( $block['attrs']['scrollBreakpoint'] ) ? $block['attrs']['scrollBreakpoint'] : 'table-scrollable-mobile';
+		$scroll_icon_left    = ! empty( $block['attrs']['scrollIconLeft'] ) ? vk_blocks_extract_icon_class( $block['attrs']['scrollIconLeft'] ) : 'fa-caret-left';
+		$scroll_icon_right   = ! empty( $block['attrs']['scrollIconRight'] ) ? vk_blocks_extract_icon_class( $block['attrs']['scrollIconRight'] ) : 'fa-caret-right';
+		$scroll_breakpoint   = ! empty( $block['attrs']['scrollBreakpoint'] ) ? $block['attrs']['scrollBreakpoint'] : 'table-scrollable-mobile';
 
 		$scroll_hint = sprintf(
 			'<div class="vk-scroll-hint" data-scroll-breakpoint="%s" data-hint-icon-left="%s" data-hint-icon-right="%s">
@@ -52,7 +52,7 @@ function vk_blocks_render_core_table( $block_content, $block ) {
 		);
 
 		// Insert scroll hint before the <figure> tag.
-		$block_content = preg_replace('/(<figure\b[^>]*>)/i', $scroll_hint . '$1', $block_content);
+		$block_content = preg_replace( '/(<figure\b[^>]*>)/i', $scroll_hint . '$1', $block_content );
 	}
 
 	return $block_content;
@@ -64,9 +64,9 @@ function vk_blocks_render_core_table( $block_content, $block ) {
  * @param string $html_string The HTML string to extract class from.
  * @return string The extracted class name(s) or an empty string if none found.
  */
-function extract_icon_class($html_string) {
+function vk_blocks_extract_icon_class( $html_string ) {
 	// Use a regular expression to extract the class name
-	if (preg_match('/class="([^"]+)"/', $html_string, $matches)) {
+	if ( preg_match( '/class="([^"]+)"/', $html_string, $matches ) ) {
 		return $matches[1];
 	}
 	return '';

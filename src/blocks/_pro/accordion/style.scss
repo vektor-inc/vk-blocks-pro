@@ -227,20 +227,7 @@
 			margin-bottom: 0;
 		}
 		.vk_accordion-toggle {//absoluteだとテキスト編集できないので
-			// position: unset;
-		}
-		.block-editor-inner-blocks {// toggleの上にinner-blocksを重ねる
-			position: relative;
-			z-index: 1;
-			width: fit-content;
-			.block-list-appender {//新規ブロックを追加するボタンの位置を調整
-				right: -30px;
-			}
-		}
-		.vk_accordion-toggle-close::after,
-		.vk_accordion-toggle-open::after {
-			z-index: 2;
-			right: calc(4rem - 8px);
+			position: unset;
 		}
 	}
 

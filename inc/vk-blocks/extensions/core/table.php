@@ -5,5 +5,5 @@
  * @package vk-blocks
  */
 
-// VK_Blocks_Scroll_Hint クラスをインクルード
-require_once plugin_dir_path( __FILE__ ) . '../../view/scroll-hint.php';
+// VK_Blocks_ScrollHintRenderer クラスをインクルード
+require_once plugin_dir_path( __FILE__ ) . '../../view/class-vk-blocks-scroll-hint-renderer.php';

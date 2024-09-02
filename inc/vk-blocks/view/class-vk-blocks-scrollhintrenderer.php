@@ -59,7 +59,9 @@ class VK_Blocks_ScrollHintRenderer {
 		$scroll_message_text = ! empty( $block['attrs']['scrollMessageText'] ) ? $block['attrs']['scrollMessageText'] : __( 'You can scroll', 'vk-blocks-pro' );
 		$scroll_icon_left    = ! empty( $block['attrs']['scrollIconLeft'] ) ? self::extract_icon_class( $block['attrs']['scrollIconLeft'] ) : 'fa-solid fa-caret-left';
 		$scroll_icon_right   = ! empty( $block['attrs']['scrollIconRight'] ) ? self::extract_icon_class( $block['attrs']['scrollIconRight'] ) : 'fa-solid fa-caret-right';
-		$scroll_breakpoint   = ! empty( $block['attrs']['scrollBreakpoint'] ) ? $block['attrs']['scrollBreakpoint'] : 'table-scrollable-mobile';
+
+		// スクロールブレイクポイントのデフォルト値を設定
+		$scroll_breakpoint   = self::determine_scroll_breakpoint( $block );
 
 		return sprintf(
 			'<div class="vk-scroll-hint" data-scroll-breakpoint="%s" data-hint-icon-left="%s" data-hint-icon-right="%s">
@@ -74,6 +76,27 @@ class VK_Blocks_ScrollHintRenderer {
 			esc_html( $scroll_message_text ),
 			esc_attr( $scroll_icon_right )
 		);
+	}
+
+	/**
+	 * Determine the scroll breakpoint value.
+	 *
+	 * @param array $block The block data.
+	 * @return string The scroll breakpoint.
+	 */
+	private static function determine_scroll_breakpoint( $block ) {
+		// クラス名からプレフィックスを抽出してスクロールブレイクポイントを決定
+		if ( ! empty( $block['attrs']['scrollBreakpoint'] ) ) {
+			return $block['attrs']['scrollBreakpoint'];
+		}
+
+		// デフォルトのブレイクポイントを設定 (例: table-scrollable-mobile)
+		if ( preg_match( '/is-style-vk-([a-zA-Z0-9_-]+)-scrollable/', $block['attrs']['className'], $matches ) ) {
+			return $matches[1] . '-scrollable-mobile';
+		}
+
+		// デフォルト値
+		return 'table-scrollable-mobile';
 	}
 
 	/**

@@ -9,19 +9,14 @@ export default function AccordionTriggerEdit() {
 
 	useEffect(() => {
 		// 初期状態の設定を取得
-		const vkAccordion = accordionToggleRef.current.closest(
-			'.vk_accordion-container, .vk_accordion'
-		);
+		const vkAccordion = accordionToggleRef.current.closest('.vk_accordion-container, .vk_accordion');
 		const initialState = vkAccordion.getAttribute('data-initial-state');
 
 		const vkAccordionToggle = accordionToggleRef.current;
-		const vkAccordionTarget = vkAccordion.querySelector(
-			'.vk_accordion-target'
-		);
+		const vkAccordionTarget = vkAccordion.querySelector('.vk_accordion-target');
 
 		// 初期状態に基づいてクラスとaria属性を設定
-		if (initialState !== 'close') {
-			// 'close'でない場合、'open'にする
+		if (initialState !== 'close') {  // 'close'でない場合、'open'にする
 			vkAccordionToggle.classList.add('vk_accordion-toggle-open');
 			vkAccordionTarget.classList.add('vk_accordion-target-open');
 			vkAccordionToggle.setAttribute('aria-expanded', 'true');
@@ -34,15 +29,9 @@ export default function AccordionTriggerEdit() {
 
 	const OnClickToggle = (e) => {
 		// vk_accordion-container または vk_accordion を持つ最も近い要素を探す
-		const vkAccordion = e.target.closest(
-			'.vk_accordion-container, .vk_accordion'
-		);
-		const vkAccordionToggle = vkAccordion.querySelector(
-			'.vk_accordion-toggle'
-		);
-		const vkAccordionTarget = vkAccordion.querySelector(
-			'.vk_accordion-target'
-		);
+		const vkAccordion = e.target.closest('.vk_accordion-container, .vk_accordion');
+		const vkAccordionToggle = vkAccordion.querySelector('.vk_accordion-toggle');
+		const vkAccordionTarget = vkAccordion.querySelector('.vk_accordion-target');
 
 		if (vkAccordionToggle.classList.contains('vk_accordion-toggle-close')) {
 			vkAccordionToggle.classList.remove('vk_accordion-toggle-close');
@@ -69,7 +58,7 @@ export default function AccordionTriggerEdit() {
 				{/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
 				<span
 					ref={accordionToggleRef}
-					className="vk_accordion-toggle" // 初期状態のクラスはJSで設定
+					className="vk_accordion-toggle"  // 初期状態のクラスはJSで設定
 					onClick={(e) => {
 						OnClickToggle(e);
 					}}

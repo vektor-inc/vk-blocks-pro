@@ -9,7 +9,6 @@ import {
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import ScrollHint from '@vkblocks/components/scroll-hint';
-import parse from 'html-react-parser';
 
 /**
  * Internal dependencies
@@ -19,6 +18,12 @@ import { ReactComponent as IconSVG } from './icon.svg';
 const isValidBlockType = (name) => {
 	const validBlockTypes = ['core/table'];
 	return validBlockTypes.includes(name);
+};
+
+// クラス名を抽出する関数
+const extractIconClass = (htmlString) => {
+	const match = htmlString.match(/class="([^"]+)"/);
+	return match ? match[1] : '';
 };
 
 export const addAttribute = (settings) => {
@@ -71,9 +76,46 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 			scrollIconRight,
 		} = attributes;
 
+		// 高度な設定の追加 CSS クラスに `is-style-vk-table-scrollable` を追加または削除
+		const updatedClassName = className ? className.split(' ') : [];
+		if (
+			scrollable &&
+			!updatedClassName.includes('is-style-vk-table-scrollable')
+		) {
+			updatedClassName.push('is-style-vk-table-scrollable');
+		} else if (
+			!scrollable &&
+			updatedClassName.includes('is-style-vk-table-scrollable')
+		) {
+			const index = updatedClassName.indexOf(
+				'is-style-vk-table-scrollable'
+			);
+			if (index > -1) {
+				updatedClassName.splice(index, 1);
+			}
+		}
+
+		// className 属性を更新
+		setAttributes({ className: updatedClassName.join(' ') });
+
+		// クラス名を管理するためのブロックプロパティ
 		const blockProps = useBlockProps({
-			className,
+			className: updatedClassName.join(' '),
 		});
+
+		// アイコンのスタイル
+		let iconStyle = {
+			width: '24px',
+			height: '24px',
+		};
+
+		if (scrollable) {
+			iconStyle = {
+				...iconStyle,
+				color: '#fff',
+				background: '#1e1e1e',
+			};
+		}
 
 		// handleToggleChange関数の定義
 		const handleToggleChange = (checked) => {
@@ -102,19 +144,16 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 			setAttributes({ scrollMessageText: value });
 		};
 
-		// アイコンのスタイル
-		let iconStyle = {
-			width: '24px',
-			height: '24px',
+		// アイコンの変更をハンドルする関数
+		const handleIconChange = (position, value) => {
+			if (position === 'left') {
+				const newIconClass = extractIconClass(value); // クラス名を抽出
+				setAttributes({ scrollIconLeft: newIconClass });
+			} else if (position === 'right') {
+				const newIconClass = extractIconClass(value); // クラス名を抽出
+				setAttributes({ scrollIconRight: newIconClass });
+			}
 		};
-
-		if (scrollable) {
-			iconStyle = {
-				...iconStyle,
-				color: '#fff',
-				background: '#1e1e1e',
-			};
-		}
 
 		if (isValidBlockType(name) && props.isSelected) {
 			const blockEditContent = <BlockEdit {...props} />;
@@ -126,12 +165,22 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 							<div
 								className="vk-scroll-hint"
 								data-scroll-breakpoint={scrollBreakpoint}
-								data-hint-icon-left={scrollIconLeft}
-								data-hint-icon-right={scrollIconRight}
+								data-hint-icon-left={extractIconClass(
+									scrollIconLeft
+								)}
+								data-hint-icon-right={extractIconClass(
+									scrollIconRight
+								)}
 							>
-								{parse(scrollIconLeft)}
+								<i
+									className={extractIconClass(scrollIconLeft)}
+								></i>
 								<span>{scrollMessageText}</span>
-								{parse(scrollIconRight)}
+								<i
+									className={extractIconClass(
+										scrollIconRight
+									)}
+								></i>
 							</div>
 						)}
 						{blockEditContent}
@@ -148,7 +197,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 							<ToggleControl
 								label={__('Scrollable', 'vk-blocks-pro')}
 								checked={scrollable}
-								onChange={handleToggleChange} // ここで正しい関数を参照
+								onChange={handleToggleChange}
 							/>
 							{scrollable && (
 								<>
@@ -194,6 +243,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 										handleMessageTextChange={
 											handleMessageTextChange
 										}
+										handleIconChange={handleIconChange}
 										{...props}
 									/>
 								</>
@@ -220,19 +270,31 @@ const addExtraProps = (saveElementProps, blockType, attributes) => {
 			saveElementProps['data-scroll-breakpoint'] =
 				attributes.scrollBreakpoint;
 
-			// Add the Scroll Hint component before the table if showScrollMessage is true
+			// showScrollMessageがtrueの場合、Scroll Hintコンポーネントを追加
 			if (attributes.showScrollMessage) {
 				saveElementProps.children = [
 					<div
 						key="scroll-hint"
 						className="vk-scroll-hint"
 						data-scroll-breakpoint={attributes.scrollBreakpoint}
-						data-hint-icon-left={attributes.scrollIconLeft}
-						data-hint-icon-right={attributes.scrollIconRight}
+						data-hint-icon-left={extractIconClass(
+							attributes.scrollIconLeft
+						)}
+						data-hint-icon-right={extractIconClass(
+							attributes.scrollIconRight
+						)}
 					>
-						{parse(attributes.scrollIconLeft)}
+						<i
+							className={extractIconClass(
+								attributes.scrollIconLeft
+							)}
+						></i>
 						<span>{attributes.scrollMessageText}</span>
-						{parse(attributes.scrollIconRight)}
+						<i
+							className={extractIconClass(
+								attributes.scrollIconRight
+							)}
+						></i>
 					</div>,
 					saveElementProps.children,
 				];
@@ -258,7 +320,7 @@ addFilter(
 	addExtraProps
 );
 
-// 横スクロールを処理する関数を定義
+// アイコンが正しく表示されるように、必要に応じて状態とDOMを更新
 const updateTableScrollAttributes = () => {
 	const tables = document.querySelectorAll(
 		'.wp-block-table.is-style-vk-table-scrollable'
@@ -286,12 +348,12 @@ const updateTableScrollAttributes = () => {
 			if (iconLeftClass) {
 				scrollHintDiv.querySelector(
 					'.fa-solid.fa-caret-left'
-				).className = `fa-solid ${iconLeftClass}`;
+				).className = `${iconLeftClass}`; // クラス名を動的に更新
 			}
 			if (iconRightClass) {
 				scrollHintDiv.querySelector(
 					'.fa-solid.fa-caret-right'
-				).className = `fa-solid ${iconRightClass}`;
+				).className = `${iconRightClass}`; // クラス名を動的に更新
 			}
 		}
 	});

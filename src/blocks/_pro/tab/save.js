@@ -9,11 +9,11 @@ export default function save(props) {
 		tabSizeTab,
 		tabSizePc,
 		firstActive,
-		blockId,
 		className = '',
 		tabDisplayOptionsSp,
 		tabDisplayOptionsTab,
 		tabDisplayOptionsPc,
+		blockId,
 	} = attributes;
 
 	const tabSizePrefix = 'vk_tab_labels-tabSize';
@@ -155,9 +155,25 @@ export default function save(props) {
 		);
 	}
 
+	// クラス名に基づいて data-scroll-breakpoint を設定
+	const dataScrollBreakpoints = [];
+
+	if (tabDisplayOptionsSp === 'scroll') {
+		dataScrollBreakpoints.push('tab-scrollable-mobile');
+	}
+	if (tabDisplayOptionsTab === 'scroll') {
+		dataScrollBreakpoints.push('tab-scrollable-tablet');
+	}
+	if (tabDisplayOptionsPc === 'scroll') {
+		dataScrollBreakpoints.push('tab-scrollable-pc');
+	}
+
 	const blockProps = useBlockProps.save({
 		className: `vk_tab ${className || ''}`,
 		id: `vk-tab-id-${blockId}`,
+		...(dataScrollBreakpoints.length > 0 && {
+			'data-scroll-breakpoint': dataScrollBreakpoints.join(' '),
+		}),
 	});
 
 	return (

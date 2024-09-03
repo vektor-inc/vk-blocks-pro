@@ -106,9 +106,8 @@ e.g.
 
 == Changelog ==
  
-
 [ Add function ][ Core Table ] Add scroll hint for horizontal scrolling.
-[ Add function ][ Accordion(Pro) ] Enabled accordion toggle in the editor.
+[ Add function ][ Column ] Add toolbar link for components.
 
 = 1.83.0 =
 [ Add Setting ][ Alert ] Add icon setting and inner block.

@@ -42,6 +42,26 @@
 			"type": "boolean",
 			"default": false
 		},
+		"showScrollMessage": {
+			"type": "boolean",
+			"default": false
+		},
+		"scrollMessageText": {
+			"type": "string",
+			"default": "You can scroll"
+		},
+		"scrollIconLeft": {
+			"type": "string",
+			"default": "fa-solid fa-caret-left"
+		},
+		"scrollIconRight": {
+			"type": "string",
+			"default": "fa-solid fa-caret-right"
+		},
+		"scrollBreakpoint": {
+			"type": "string",
+			"default": ""
+		},
 		"blockId": {
 			"type": "string",
 			"default": ""

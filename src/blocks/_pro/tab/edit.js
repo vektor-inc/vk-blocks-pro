@@ -35,6 +35,19 @@ export default function TabEdit(props) {
 		blockId,
 	} = attributes;
 
+	// クラス名を抽出する関数
+	const extractIconClass = (input) => {
+		if (!input) return '';
+		// <i>タグ内のclass属性の値を抽出する正規表現
+		const match = input.match(/class=["']([^"']+)["']/);
+		// マッチしたクラス名があれば返し、なければ入力値をそのまま返す
+		return match ? match[1].trim() : input.trim();
+	};
+
+	// 現在のアイコンのクラス名を抽出
+	const leftIconClass = extractIconClass(scrollIconLeft);
+	const rightIconClass = extractIconClass(scrollIconRight);
+
 	// 高度な設定の追加 CSS クラスに `is-style-vk-tab-scrollable` を追加または削除
 	const updatedClassName = className ? className.split(' ') : [];
 
@@ -59,16 +72,6 @@ export default function TabEdit(props) {
 
 	// クラス名を更新
 	setAttributes({ className: updatedClassName.join(' ') });
-
-	// エラーチェックとデフォルト値の設定を行う
-	useEffect(() => {
-		if (!scrollIconLeft || !scrollIconRight) {
-			setAttributes({
-				scrollIconLeft: scrollIconLeft || 'fa-solid fa-caret-left',
-				scrollIconRight: scrollIconRight || 'fa-solid fa-caret-right',
-			});
-		}
-	}, [scrollIconLeft, scrollIconRight, setAttributes]);
 
 	const ALLOWED_BLOCKS = ['vk-blocks/tab-item'];
 	const TEMPLATE = [
@@ -741,8 +744,8 @@ export default function TabEdit(props) {
 					<ScrollHint
 						showScrollMessage={showScrollMessage}
 						scrollMessageText={scrollMessageText}
-						scrollIconLeft={scrollIconLeft}
-						scrollIconRight={scrollIconRight}
+						scrollIconLeft={leftIconClass} 
+						scrollIconRight={rightIconClass}
 						dataScrollBreakpoint={dataScrollBreakpoint}
 						handleScrollMessageToggle={handleScrollMessageToggle}
 						handleMessageTextChange={handleMessageTextChange}
@@ -752,6 +755,19 @@ export default function TabEdit(props) {
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
+				{/* Scroll hint */}
+				{isScrollable && (
+					<div
+						className="vk-scroll-hint"
+						data-scroll-breakpoint={dataScrollBreakpoint}
+						data-hint-icon-left={leftIconClass}
+						data-hint-icon-right={rightIconClass}
+					>
+						<i className={leftIconClass}></i>
+						<span>{scrollMessageText}</span>
+						<i className={rightIconClass}></i>
+					</div>
+				)}
 				{tablabelsEdit}
 				<div className="vk_tab_bodys">
 					<InnerBlocks

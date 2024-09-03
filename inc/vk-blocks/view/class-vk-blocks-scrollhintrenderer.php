@@ -59,8 +59,8 @@ class VK_Blocks_ScrollHintRenderer {
 		$scroll_message_text = ! empty( $block['attrs']['scrollMessageText'] ) ? $block['attrs']['scrollMessageText'] : __( 'You can scroll', 'vk-blocks-pro' );
 
 		// クラス名の取得を修正：設定されているクラスをそのまま使用
-		$scroll_icon_left    = ! empty( $block['attrs']['scrollIconLeft'] ) ? $block['attrs']['scrollIconLeft'] : 'fa-solid fa-caret-left';
-		$scroll_icon_right   = ! empty( $block['attrs']['scrollIconRight'] ) ? $block['attrs']['scrollIconRight'] : 'fa-solid fa-caret-right';
+		$scroll_icon_left = ! empty( $block['attrs']['scrollIconLeft'] ) ? self::extract_icon_class( $block['attrs']['scrollIconLeft'] ) : 'fa-solid fa-caret-left';
+		$scroll_icon_right = ! empty( $block['attrs']['scrollIconRight'] ) ? self::extract_icon_class( $block['attrs']['scrollIconRight'] ) : 'fa-solid fa-caret-right';
 
 		// クラス名に基づいて data-scroll-breakpoint を設定
 		$scroll_breakpoint = self::determine_scroll_breakpoint( $block );

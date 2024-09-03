@@ -11,6 +11,7 @@ import { dispatch, useSelect } from '@wordpress/data';
 import { __, sprintf } from '@wordpress/i18n';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
+import ScrollHint from '@vkblocks/components/scroll-hint';
 
 export default function TabEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -22,12 +23,52 @@ export default function TabEdit(props) {
 		tabBodyPaddingMode,
 		tabBodyPaddingAll,
 		firstActive,
-		blockId,
 		className,
 		tabDisplayOptionsSp,
 		tabDisplayOptionsTab,
 		tabDisplayOptionsPc,
+		showScrollMessage,
+		scrollMessageText,
+		scrollIconLeft,
+		scrollIconRight,
+		dataScrollBreakpoint,
+		blockId,
 	} = attributes;
+
+	// 高度な設定の追加 CSS クラスに `is-style-vk-tab-scrollable` を追加または削除
+	const updatedClassName = className ? className.split(' ') : [];
+
+	// `scroll` と `showScrollMessage` が両方とも true であり、かついずれかのブレークポイントが 'scroll' の場合にクラスを追加
+	const isScrollable =
+		(tabDisplayOptionsSp === 'scroll' ||
+			tabDisplayOptionsTab === 'scroll' ||
+			tabDisplayOptionsPc === 'scroll') &&
+		showScrollMessage;
+
+	if (isScrollable) {
+		if (!updatedClassName.includes('is-style-vk-tab-scrollable')) {
+			updatedClassName.push('is-style-vk-tab-scrollable');
+		}
+	} else {
+		// `scroll` がどのブレークポイントでも設定されていない場合、または `showScrollMessage` が false の場合にクラスを削除
+		const index = updatedClassName.indexOf('is-style-vk-tab-scrollable');
+		if (index > -1) {
+			updatedClassName.splice(index, 1);
+		}
+	}
+
+	// クラス名を更新
+	setAttributes({ className: updatedClassName.join(' ') });
+
+	// エラーチェックとデフォルト値の設定を行う
+	useEffect(() => {
+		if (!scrollIconLeft || !scrollIconRight) {
+			setAttributes({
+				scrollIconLeft: scrollIconLeft || 'fa-solid fa-caret-left',
+				scrollIconRight: scrollIconRight || 'fa-solid fa-caret-right',
+			});
+		}
+	}, [scrollIconLeft, scrollIconRight, setAttributes]);
 
 	const ALLOWED_BLOCKS = ['vk-blocks/tab-item'];
 	const TEMPLATE = [
@@ -265,10 +306,6 @@ export default function TabEdit(props) {
 			childBlocks.forEach((childBlock, index) => {
 				if (TabId === childBlock.clientId) {
 					setAttributes({ firstActive: parseInt(index, 10) });
-					// 子ブロックを選択状態にする -> タブ文字が隠れて編集できなくなるので一旦コメントアウト
-					// dispatch('core/block-editor').selectBlock(
-					//  childBlock.clientId
-					// );
 				}
 			});
 		}
@@ -277,18 +314,9 @@ export default function TabEdit(props) {
 	const tabSizePrefix = 'vk_tab_labels-tabSize';
 
 	const tabSizes = [
-		{
-			name: 'sp',
-			attribute: tabSizeSp,
-		},
-		{
-			name: 'tab',
-			attribute: tabSizeTab,
-		},
-		{
-			name: 'pc',
-			attribute: tabSizePc,
-		},
+		{ name: 'sp', attribute: tabSizeSp },
+		{ name: 'tab', attribute: tabSizeTab },
+		{ name: 'pc', attribute: tabSizePc },
 	];
 
 	let tabListClassName = `vk_tab_labels`;
@@ -332,6 +360,50 @@ export default function TabEdit(props) {
 
 	let tablabelsEditList = '';
 	let tablabelsEdit = '';
+
+	// スクロールヒント表示のトグル切り替え
+	const handleScrollMessageToggle = (checked) => {
+		setAttributes({ showScrollMessage: checked });
+	};
+
+	// スクロールメッセージのテキスト変更ハンドラー
+	const handleMessageTextChange = (value) => {
+		setAttributes({ scrollMessageText: value });
+	};
+
+	// アイコンの変更をハンドルする関数
+	const handleIconChange = (position, value) => {
+		if (position === 'left') {
+			setAttributes({ scrollIconLeft: value });
+		} else if (position === 'right') {
+			setAttributes({ scrollIconRight: value });
+		}
+	};
+
+	useEffect(() => {
+		// ブレイクポイントを計算する関数
+		const calculateScrollBreakpoint = () => {
+			const scrollBreakpoints = [];
+			if (tabDisplayOptionsSp === 'scroll') {
+				scrollBreakpoints.push('tab-scrollable-mobile');
+			}
+			if (tabDisplayOptionsTab === 'scroll') {
+				scrollBreakpoints.push('tab-scrollable-tablet');
+			}
+			if (tabDisplayOptionsPc === 'scroll') {
+				scrollBreakpoints.push('tab-scrollable-pc');
+			}
+			return scrollBreakpoints.join(' ');
+		};
+
+		// ブレイクポイントを設定
+		const scrollBreakpoint = calculateScrollBreakpoint();
+
+		// 属性を強制的に更新する
+		if (scrollBreakpoint !== attributes.scrollBreakpoint) {
+			setAttributes({ scrollBreakpoint });
+		}
+	}, [tabDisplayOptionsSp, tabDisplayOptionsTab, tabDisplayOptionsPc]);
 
 	if (childBlocks.length !== 0) {
 		tablabelsEditList = childBlocks.map((childBlock, index) => {
@@ -526,7 +598,8 @@ export default function TabEdit(props) {
 	}
 
 	const blockProps = useBlockProps({
-		className: `vk_tab`,
+		className: `vk_tab ${attributes.className || ''}`,
+		'data-scroll-breakpoint': attributes.dataScrollBreakpoint || '',
 		id: `vk-tab-id-${blockId}`,
 	});
 
@@ -664,6 +737,17 @@ export default function TabEdit(props) {
 						onChange={(value) => {
 							setAttributes({ tabDisplayOptionsPc: value });
 						}}
+					/>
+					<ScrollHint
+						showScrollMessage={showScrollMessage}
+						scrollMessageText={scrollMessageText}
+						scrollIconLeft={scrollIconLeft}
+						scrollIconRight={scrollIconRight}
+						dataScrollBreakpoint={dataScrollBreakpoint}
+						handleScrollMessageToggle={handleScrollMessageToggle}
+						handleMessageTextChange={handleMessageTextChange}
+						handleIconChange={handleIconChange}
+						{...props}
 					/>
 				</PanelBody>
 			</InspectorControls>

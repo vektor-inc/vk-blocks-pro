@@ -3619,11 +3619,15 @@ msgstr ""
 msgid "Responsive BR "
 msgstr ""
 
-#: src/extensions/core/columns/style.js:60
+#: src/extensions/core/columns/style.js:176
+msgid "Column link"
+msgstr ""
+
+#: src/extensions/core/columns/style.js:77
 msgid "Column Direction"
 msgstr ""
 
-#: src/extensions/core/columns/style.js:65
+#: src/extensions/core/columns/style.js:82
 msgid "Reverse"
 msgstr ""
 
@@ -3645,31 +3649,31 @@ msgstr ""
 msgid "List Icon Color"
 msgstr ""
 
-#: src/extensions/core/table/style.js:174
+#: src/extensions/core/table/style.js:190
 msgid "Table Horizontal Scroll"
 msgstr ""
 
-#: src/extensions/core/table/style.js:179
+#: src/extensions/core/table/style.js:198
 msgid "Scrollable"
 msgstr ""
 
-#: src/extensions/core/table/style.js:186
+#: src/extensions/core/table/style.js:205
 msgid "Horizontal Scroll Breakpoint"
 msgstr ""
 
-#: src/extensions/core/table/style.js:189
+#: src/extensions/core/table/style.js:212
 msgid "Mobile size"
 msgstr ""
 
-#: src/extensions/core/table/style.js:190
+#: src/extensions/core/table/style.js:219
 msgid "Tablet size"
 msgstr ""
 
-#: src/extensions/core/table/style.js:191
+#: src/extensions/core/table/style.js:226
 msgid "PC size"
 msgstr ""
 
-#: src/extensions/core/table/style.js:49
+#: src/extensions/core/table/style.js:48
 msgid "You can scroll"
 msgstr ""
 

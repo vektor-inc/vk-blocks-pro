@@ -737,36 +737,6 @@ $xxl-min: 1400px;
 	}
 }
 
-.vk-scroll-hint {
-	display: none;
-
-	&[data-scroll-breakpoint="table-scrollable-mobile"] {
-		@media (max-width: 575.98px) {
-			@include scrollable-table-scroll-hint;
-		}
-	}
-
-	&[data-scroll-breakpoint="table-scrollable-tablet"] {
-		@media (max-width: 991.98px) {
-			@include scrollable-table-scroll-hint;
-		}
-	}
-
-	&[data-scroll-breakpoint="table-scrollable-pc"] {
-		@include scrollable-table-scroll-hint;
-	}
-
-	+ * {
-		margin-top: 0;
-	}
-}
-
-.editor-styles-wrapper {
-	.vk-scroll-hint {
-		@include scrollable-table-scroll-hint;
-	}
-}
-
 /*-------------------------------------------*/
 /* カラム
 /*-------------------------------------------*/

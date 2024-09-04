@@ -105,4 +105,3 @@ class VK_Blocks_ScrollHintRenderer {
 }
 
 add_action( 'init', array( 'VK_Blocks_ScrollHintRenderer', 'init' ) );
-

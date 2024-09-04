@@ -5,10 +5,11 @@ import {
 	CheckboxControl,
 	Button,
 	Tooltip,
+	TextControl,
 } from '@wordpress/components';
 import { URLInput } from '@wordpress/block-editor';
 import { __, sprintf } from '@wordpress/i18n';
-import { link, linkOff, keyboardReturn, globe, copy } from '@wordpress/icons';
+import { link, linkOff, keyboardReturn, globe, copy, edit } from '@wordpress/icons';
 
 const LinkPreview = ({
 	linkUrl,
@@ -17,6 +18,7 @@ const LinkPreview = ({
 	linkTarget,
 	onRemove,
 	onCopy,
+	onEditLinkClick,
 }) => {
 	const displayURL =
 		linkUrl.startsWith('http://') || linkUrl.startsWith('https://')
@@ -59,6 +61,15 @@ const LinkPreview = ({
 						</span>
 					</span>
 				</span>
+				{/* Edit link の追加 */}
+				<Tooltip text={__('Edit link', 'vk-blocks-pro')}>
+					<Button
+						icon={edit}
+						label={__('Edit link', 'vk-blocks-pro')}
+						onClick={onEditLinkClick}
+						size="compact"
+					/>
+				</Tooltip>
 				<Tooltip text={__('Deleting Link', 'vk-blocks-pro')}>
 					<button
 						type="button"
@@ -72,10 +83,7 @@ const LinkPreview = ({
 					</button>
 				</Tooltip>
 				<Tooltip
-					text={sprintf(
-						__('Copy link: %s', 'vk-blocks-pro'),
-						linkUrl
-					)}
+					text={sprintf(__('Copy link: %s', 'vk-blocks-pro'), linkUrl)}
 				>
 					<button
 						type="button"
@@ -100,6 +108,11 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 	const [isSnackbarVisible, setSnackbarVisible] = useState(false);
 	const [isSubmitDisabled, setSubmitDisabled] = useState(true);
 	const [ariaMessage, setAriaMessage] = useState('');
+
+	// 統合された状態を追加
+	const [linkDescription, setLinkDescription] = useState('');
+	const [relAttribute, setRelAttribute] = useState('');
+	const [isEditingLink, setIsEditingLink] = useState(false);
 
 	useEffect(() => {
 		if (linkUrl) {
@@ -173,9 +186,7 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 			window.navigator.clipboard
 				.writeText(formattedUrl)
 				.then(() => {
-					setAriaMessage(
-						__('Link copied to clipboard.', 'vk-blocks-pro')
-					);
+					setAriaMessage(__('Link copied to clipboard.', 'vk-blocks-pro'));
 					setSnackbarVisible(true);
 					setTimeout(() => setSnackbarVisible(false), 3000);
 				})
@@ -209,14 +220,38 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 		return 'http://' + url;
 	};
 
+	const handleEditLinkClick = () => {
+		setIsEditingLink(!isEditingLink); // 編集モードを切り替える
+	};
+
 	const handleSubmit = () => {
 		if (linkUrl) {
 			setLinkUrl(formatUrl(linkUrl));
 		}
 	};
 
+	const handleSaveEdit = () => {
+		// リンク URL の保存
+		setLinkUrl(linkUrl);
+		// リンクの説明と rel 属性の保存
+		setRelAttribute(relAttribute);
+		setLinkDescription(linkDescription);
+		setIsEditingLink(false); // 編集モードを終了する
+	};
+
+	// リンクを新しいタブで開くかどうかをチェックし、rel属性を更新
+	const handleLinkTargetChange = (checked) => {
+		setLinkTarget(checked ? '_blank' : '');
+		if (checked) {
+			setRelAttribute('noopener noreferrer');
+		} else {
+			setRelAttribute('');
+		}
+	};
+
 	return (
 		<>
+			{/* リンク表示部分 */}
 			<Dropdown
 				popoverProps={{ placement: 'bottom-start' }}
 				renderToggle={({ isOpen, onToggle }) => {
@@ -249,6 +284,7 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 								linkTarget={linkTarget}
 								onRemove={handleRemove}
 								onCopy={handleCopy}
+								onEditLinkClick={handleEditLinkClick}
 							/>
 						)}
 						<form
@@ -272,16 +308,30 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 								/>
 							</div>
 							<CheckboxControl
-								label={__(
-									'Open link new tab.',
-									'vk-blocks-pro'
-								)}
+								label={__('Open link new tab.', 'vk-blocks-pro')}
 								checked={linkTarget === '_blank'}
-								onChange={(checked) =>
-									setLinkTarget(checked ? '_blank' : '')
-								}
+								onChange={handleLinkTargetChange} // 新しいハンドラーを使用
 							/>
 						</form>
+
+						{/* 編集モードの表示 */}
+						{isEditingLink && (
+							<div>
+								<TextControl
+									label={__('Rel Attribute', 'vk-blocks-pro')}
+									value={relAttribute}
+									onChange={(value) => setRelAttribute(value)}
+								/>
+								<TextControl
+									label={__('Link Description', 'vk-blocks-pro')} // aria-labelとhidden textの統合
+									value={linkDescription}
+									onChange={(value) => setLinkDescription(value)}
+								/>
+								<Button isPrimary onClick={handleSaveEdit}>
+									{__('Save', 'vk-blocks-pro')}
+								</Button>
+							</div>
+						)}
 					</div>
 				)}
 			/>

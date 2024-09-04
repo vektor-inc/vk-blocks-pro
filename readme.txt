@@ -106,7 +106,9 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Link toolbar ] Add edit link setting.
 [ Add function ][ Column ] Add toolbar link for components.
+
 = 1.83.0 =
 [ Add Function ][ Alert ] Add icon setting and inner block.
 [ Bug fix ][ Grid Column Card ] Fixed an issue where using a synced pattern would cause the destination edit page to crash.

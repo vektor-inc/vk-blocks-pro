@@ -57,8 +57,8 @@ class VK_Blocks_ScrollHintRenderer {
 	 */
 	public static function generate_scroll_hint( $block ) {
 		$scroll_message_text = ! empty( $block['attrs']['scrollMessageText'] ) ? $block['attrs']['scrollMessageText'] : __( 'You can scroll', 'vk-blocks-pro' );
-		$scroll_icon_left    = ! empty( $block['attrs']['scrollIconLeft'] ) ? self::extract_icon_class( $block['attrs']['scrollIconLeft'] ) : 'fa-solid fa-caret-left';
-		$scroll_icon_right   = ! empty( $block['attrs']['scrollIconRight'] ) ? self::extract_icon_class( $block['attrs']['scrollIconRight'] ) : 'fa-solid fa-caret-right';
+		$scroll_icon_left    = ! empty( $block['attrs']['scrollIconLeft'] ) ? self::extract_icon_class( $block['attrs']['scrollIconLeft'] ) : '';
+		$scroll_icon_right   = ! empty( $block['attrs']['scrollIconRight'] ) ? self::extract_icon_class( $block['attrs']['scrollIconRight'] ) : '';
 
 		// ブレイクポイントを取得し、デフォルト値を設定
 		$default_breakpoint = apply_filters( 'vk_blocks_default_scroll_breakpoint', 'table-scrollable-mobile', $block );
@@ -71,18 +71,22 @@ class VK_Blocks_ScrollHintRenderer {
 
 		$scroll_breakpoint_attr = implode( ' ', $scroll_breakpoints );
 
+		// アイコンタグの生成
+		$icon_left_html  = $scroll_icon_left ? sprintf( '<i class="%s"></i>', esc_attr( $scroll_icon_left ) ) : '';
+		$icon_right_html = $scroll_icon_right ? sprintf( '<i class="%s"></i>', esc_attr( $scroll_icon_right ) ) : '';
+
 		return sprintf(
 			'<div class="vk-scroll-hint" data-scroll-breakpoint="%s" data-hint-icon-left="%s" data-hint-icon-right="%s">
-				<i class="%s"></i>
+				%s
 				<span>%s</span>
-				<i class="%s"></i>
+				%s
 			</div>',
 			esc_attr( $scroll_breakpoint_attr ),
 			esc_attr( $scroll_icon_left ),
 			esc_attr( $scroll_icon_right ),
-			esc_attr( $scroll_icon_left ),
+			$icon_left_html,  // アイコンタグを条件に応じて出力
 			esc_html( $scroll_message_text ),
-			esc_attr( $scroll_icon_right )
+			$icon_right_html  // アイコンタグを条件に応じて出力
 		);
 	}
 
@@ -101,3 +105,4 @@ class VK_Blocks_ScrollHintRenderer {
 }
 
 add_action( 'init', array( 'VK_Blocks_ScrollHintRenderer', 'init' ) );
+

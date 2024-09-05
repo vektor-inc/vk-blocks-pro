@@ -57,39 +57,57 @@ class VK_Blocks_ScrollHintRenderer {
 	 */
 	public static function generate_scroll_hint( $block ) {
 		$scroll_message_text = ! empty( $block['attrs']['scrollMessageText'] ) ? $block['attrs']['scrollMessageText'] : __( 'You can scroll', 'vk-blocks-pro' );
-		$scroll_icon_left    = ! empty( $block['attrs']['scrollIconLeft'] ) ? self::extract_icon_class( $block['attrs']['scrollIconLeft'] ) : '';
-		$scroll_icon_right   = ! empty( $block['attrs']['scrollIconRight'] ) ? self::extract_icon_class( $block['attrs']['scrollIconRight'] ) : '';
 
-		// ブレイクポイントを取得し、デフォルト値を設定
+		// アイコン出力フラグの確認
+		$icon_output_left = isset( $block['attrs']['iconOutputLeft'] ) ? filter_var( $block['attrs']['iconOutputLeft'], FILTER_VALIDATE_BOOLEAN ) : true;
+		$icon_output_right = isset( $block['attrs']['iconOutputRight'] ) ? filter_var( $block['attrs']['iconOutputRight'], FILTER_VALIDATE_BOOLEAN ) : true;
+
+		// <i>タグからクラス名を抽出
+		$scroll_icon_left_class = ! empty( $block['attrs']['scrollIconLeft'] ) ? self::extract_icon_class( $block['attrs']['scrollIconLeft'] ) : 'fa-solid fa-caret-left';
+		$scroll_icon_right_class = ! empty( $block['attrs']['scrollIconRight'] ) ? self::extract_icon_class( $block['attrs']['scrollIconRight'] ) : 'fa-solid fa-caret-right';
+
+		// デバッグ用のログを追加
+		error_log( 'scroll_icon_left_class: ' . $scroll_icon_left_class );
+		error_log( 'scroll_icon_right_class: ' . $scroll_icon_right_class );
+
 		$default_breakpoint = apply_filters( 'vk_blocks_default_scroll_breakpoint', 'table-scrollable-mobile', $block );
-		$scroll_breakpoints = array();
-		if ( ! empty( $block['attrs']['scrollBreakpoint'] ) ) {
-			$scroll_breakpoints[] = $block['attrs']['scrollBreakpoint'];
-		} else {
-			$scroll_breakpoints[] = $default_breakpoint; // フィルターから取得したデフォルトブレイクポイントを使用
+		$scroll_breakpoints = ! empty( $block['attrs']['scrollBreakpoint'] ) ? $block['attrs']['scrollBreakpoint'] : $default_breakpoint;
+
+		$scroll_breakpoint_attr = implode( ' ', (array) $scroll_breakpoints );
+
+		// クラス名が存在する場合のみアイコンを表示
+		$left_icon_html = $icon_output_left ? '<i class="' . esc_attr( $scroll_icon_left_class ) . '"></i>' : '';
+		$right_icon_html = $icon_output_right ? '<i class="' . esc_attr( $scroll_icon_right_class ) . '"></i>' : '';
+
+		// データ属性の設定
+		$attributes = sprintf('data-scroll-breakpoint="%s"', esc_attr($scroll_breakpoint_attr));
+
+		// アイコンの出力フラグに基づいてdata属性を設定
+		$attributes .= sprintf(' data-icon-output-left="%s"', $icon_output_left ? 'true' : 'false');
+		$attributes .= sprintf(' data-icon-output-right="%s"', $icon_output_right ? 'true' : 'false');
+
+		// アイコンの出力フラグが true の場合のみ、data-hint-icon を追加
+		if ($icon_output_left && !empty($scroll_icon_left_class)) {
+			$attributes .= sprintf(' data-hint-icon-left="%s"', esc_attr($scroll_icon_left_class));
 		}
 
-		$scroll_breakpoint_attr = implode( ' ', $scroll_breakpoints );
-
-		// アイコンタグの生成
-		$icon_left_html  = $scroll_icon_left ? sprintf( '<i class="%s"></i>', esc_attr( $scroll_icon_left ) ) : '';
-		$icon_right_html = $scroll_icon_right ? sprintf( '<i class="%s"></i>', esc_attr( $scroll_icon_right ) ) : '';
+		if ($icon_output_right && !empty($scroll_icon_right_class)) {
+			$attributes .= sprintf(' data-hint-icon-right="%s"', esc_attr($scroll_icon_right_class));
+		}
 
 		return sprintf(
-			'<div class="vk-scroll-hint" data-scroll-breakpoint="%s" data-hint-icon-left="%s" data-hint-icon-right="%s">
+			'<div class="vk-scroll-hint" %s>
 				%s
 				<span>%s</span>
 				%s
 			</div>',
-			esc_attr( $scroll_breakpoint_attr ),
-			esc_attr( $scroll_icon_left ),
-			esc_attr( $scroll_icon_right ),
-			$icon_left_html,  // アイコンタグを条件に応じて出力
-			esc_html( $scroll_message_text ),
-			$icon_right_html  // アイコンタグを条件に応じて出力
+			$attributes,
+			$left_icon_html,
+			esc_html($scroll_message_text),
+			$right_icon_html
 		);
 	}
-
+	
 	/**
 	 * Extract class names from an HTML string.
 	 *
@@ -97,11 +115,18 @@ class VK_Blocks_ScrollHintRenderer {
 	 * @return string The extracted class name(s) or an empty string if none found.
 	 */
 	private static function extract_icon_class( $html_string ) {
-		if ( preg_match( '/class="([^"]+)"/', $html_string, $matches ) ) {
-			return $matches[1];
+		error_log( 'extract_icon_class called with: ' . $html_string );
+	
+		// <i> タグからクラス属性を抽出
+		if ( preg_match( '/<i.*?class="([^"]+)"/', $html_string, $matches ) ) {
+			error_log( 'Match found: ' . $matches[1] );
+			return $matches[1]; // クラス名を正しく返す
 		}
-		return '';
+	
+		error_log( 'No match found' );
+		return ''; // 見つからない場合は空文字列を返す
 	}
+		
 }
 
 add_action( 'init', array( 'VK_Blocks_ScrollHintRenderer', 'init' ) );

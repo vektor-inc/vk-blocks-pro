@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { __ } from '@wordpress/i18n';
 import { ToggleControl, TextControl, BaseControl } from '@wordpress/components';
 import { FontAwesome } from '@vkblocks/utils/font-awesome-new';
@@ -9,9 +10,30 @@ const ScrollMessageControls = ({
 	scrollIconRight,
 	handleScrollMessageToggle,
 	handleMessageTextChange,
+	setAttributes,
 	iconFamily,
 	...props
 }) => {
+	// 初期状態のアイコン出力フラグをpropsから取得
+	const [iconOutputLeft, setIconOutputLeft] = useState(scrollIconLeft !== '');
+	const [iconOutputRight, setIconOutputRight] = useState(scrollIconRight !== '');
+
+	useEffect(() => {
+		setAttributes({ iconOutputLeft });
+		setAttributes({ iconOutputRight });
+	}, [iconOutputLeft, iconOutputRight, setAttributes]);
+
+	// アイコンの出力トグル関数
+	const handleIconOutputToggle = (position) => {
+		if (position === 'left') {
+			setIconOutputLeft(!iconOutputLeft);
+			setAttributes({ scrollIconLeft: !iconOutputLeft ? '<i class="fa-solid fa-caret-left"></i>' : '' });
+		} else if (position === 'right') {
+			setIconOutputRight(!iconOutputRight);
+			setAttributes({ scrollIconRight: !iconOutputRight ? '<i class="fa-solid fa-caret-right"></i>' : '' });
+		}
+	};
+
 	return (
 		<>
 			<ToggleControl
@@ -27,29 +49,40 @@ const ScrollMessageControls = ({
 						onChange={handleMessageTextChange}
 					/>
 					<h4 className={`mt-0 mb-2`}>
-						{__('Icon', 'vk-blocks-pro') +
-							' ( ' +
-							iconFamily +
-							' )'}
+						{__('Icon', 'vk-blocks-pro') + ' ( ' + iconFamily + ' )'}
 					</h4>
-					<BaseControl
-						label={__('Before text', 'vk-blocks-pro')}
-						id={`vk_alert-icon-left`}
-					>
-						<FontAwesome
-							attributeName={'scrollIconLeft'}
-							{...props}
-						/>
-					</BaseControl>
-					<BaseControl
-						label={__('After text', 'vk-blocks-pro')}
-						id={`vk_alert-icon-right`}
-					>
-						<FontAwesome
-							attributeName={'scrollIconRight'}
-							{...props}
-						/>
-					</BaseControl>
+					<ToggleControl
+						label={__('Output Before Text Icon', 'vk-blocks-pro')}
+						checked={iconOutputLeft}
+						onChange={() => handleIconOutputToggle('left')}
+					/>
+					{iconOutputLeft && (
+						<BaseControl
+							label={__('Before text', 'vk-blocks-pro')}
+							id={`vk_alert-icon-left`}
+						>
+							<FontAwesome
+								attributeName={'scrollIconLeft'}
+								{...props}
+							/>
+						</BaseControl>
+					)}
+					<ToggleControl
+						label={__('Output After Text Icon', 'vk-blocks-pro')}
+						checked={iconOutputRight}
+						onChange={() => handleIconOutputToggle('right')}
+					/>
+					{iconOutputRight && (
+						<BaseControl
+							label={__('After text', 'vk-blocks-pro')}
+							id={`vk_alert-icon-right`}
+						>
+							<FontAwesome
+								attributeName={'scrollIconRight'}
+								{...props}
+							/>
+						</BaseControl>
+					)}
 				</>
 			)}
 		</>

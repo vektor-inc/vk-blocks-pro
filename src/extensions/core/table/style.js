@@ -1,3 +1,4 @@
+// React Component
 import { useEffect } from 'react';
 import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
@@ -16,19 +17,19 @@ import ScrollHint from '@vkblocks/components/scroll-hint';
  */
 import { ReactComponent as IconSVG } from './icon.svg';
 
-// クラス名を抽出する関数
+// Function to extract class name from an HTML string
 const extractIconClass = (htmlString) => {
 	const match = htmlString.match(/class="([^"]+)"/);
 	return match ? match[1] : '';
 };
 
-// 対象となるブロックタイプを定義
+// Define the valid block types
 const isValidBlockType = (name) => {
 	const validBlockTypes = ['core/table'];
 	return validBlockTypes.includes(name);
 };
 
-// ブロック属性を追加
+// Add attributes to block settings
 export const addAttribute = (settings) => {
 	if (isValidBlockType(settings.name)) {
 		settings.attributes = {
@@ -70,7 +71,7 @@ export const addAttribute = (settings) => {
 };
 addFilter('blocks.registerBlockType', 'vk-blocks/table-style', addAttribute);
 
-// ブロックエディットコンポーネントを拡張
+// Enhance the Block Edit component
 export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 	return (props) => {
 		const { attributes, setAttributes, name } = props;
@@ -86,7 +87,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 			iconOutputRight,
 		} = attributes;
 
-		// 高度な設定の追加 CSS クラスに `is-style-vk-table-scrollable` を追加または削除
+		// Add or remove the CSS class for scrollable style
 		const updatedClassName = className ? className.split(' ') : [];
 		if (
 			scrollable &&
@@ -105,15 +106,15 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 			}
 		}
 
-		// className 属性を更新
+		// Update className attribute
 		setAttributes({ className: updatedClassName.join(' ') });
 
-		// クラス名を管理するためのブロックプロパティ
+		// Block properties for managing className
 		const blockProps = useBlockProps({
 			className: updatedClassName.join(' '),
 		});
 
-		// アイコンのスタイル
+		// Define icon styles
 		let iconStyle = {
 			width: '24px',
 			height: '24px',
@@ -127,45 +128,45 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 			};
 		}
 
-		// handleToggleChange関数の定義
+		// Handle scrollable toggle change
 		const handleToggleChange = (checked) => {
 			setAttributes({ scrollable: checked });
 
 			if (!checked) {
 				setAttributes({
 					showScrollMessage: false,
-					scrollBreakpoint: 'table-scrollable-mobile', // デフォルトのブレイクポイントに戻す
+					scrollBreakpoint: 'table-scrollable-mobile', // Reset to default breakpoint
 				});
 			}
 		};
 
-		// ブレイクポイント変更時のハンドリング関数
+		// Handle breakpoint selection change
 		const handleSelectChange = (value) => {
 			setAttributes({ scrollBreakpoint: value });
 		};
 
-		// スクロールメッセージのトグル切り替え
+		// Handle scroll message toggle
 		const handleScrollMessageToggle = (checked) => {
 			setAttributes({ showScrollMessage: checked });
 		};
 
-		// スクロールメッセージのテキスト変更ハンドラー
+		// Handle scroll message text change
 		const handleMessageTextChange = (value) => {
 			setAttributes({ scrollMessageText: value });
 		};
 
-		// アイコンの変更をハンドルする関数
+		// Handle icon change
 		const handleIconChange = (position, value) => {
 			if (position === 'left') {
-				const newIconClass = extractIconClass(value); // クラス名を抽出
+				const newIconClass = extractIconClass(value); // Extract class name
 				setAttributes({ scrollIconLeft: newIconClass });
 			} else if (position === 'right') {
-				const newIconClass = extractIconClass(value); // クラス名を抽出
+				const newIconClass = extractIconClass(value); // Extract class name
 				setAttributes({ scrollIconRight: newIconClass });
 			}
 		};
 
-		// アイコン出力のトグル
+		// Toggle icon output
 		const handleIconOutputToggle = (position) => {
 			if (position === 'left') {
 				setAttributes({ iconOutputLeft: !iconOutputLeft });
@@ -174,7 +175,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 			}
 		};
 
-		// useEffectを使用してコンポーネントがマウントされた後に属性を更新
+		// Update attributes after component mounts or updates
 		useEffect(() => {
 			const updateTableScrollAttributes = () => {
 				const tables = document.querySelectorAll(
@@ -185,8 +186,22 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 						table.getAttribute('data-scroll-breakpoint') ||
 						'table-scrollable-mobile';
 					table.setAttribute('data-scroll-breakpoint', breakpoint);
+					table.setAttribute(
+						'data-output-scroll-hint',
+						showScrollMessage ? 'true' : 'false'
+					);
 
-					// スクロールヒントアイコンの生成
+					// Add or remove data-output-scroll-message based on showScrollMessage
+					if (showScrollMessage) {
+						table.setAttribute(
+							'data-output-scroll-message',
+							'true'
+						);
+					} else {
+						table.removeAttribute('data-output-scroll-message');
+					}
+
+					// スクロールヒントアイコンの更新
 					const scrollHintDiv = table.previousElementSibling; // .vk-scroll-hint を取得
 					if (
 						scrollHintDiv &&
@@ -199,23 +214,28 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 							'data-hint-icon-right'
 						);
 
-						// アイコンのクラス名をチェックし、設定する
+						// アイコンの出力をチェックして動的に表示
 						if (
 							scrollHintDiv.getAttribute(
 								'data-icon-output-left'
 							) === 'true' &&
 							iconLeftClass
 						) {
-							scrollHintDiv.querySelector(
-								'.fa-solid.fa-caret-left'
-							).className = `${iconLeftClass}`; // クラス名を動的に更新
+							const leftIconElement =
+								scrollHintDiv.querySelector('i.left-icon');
+							if (!leftIconElement) {
+								// 存在しない場合、動的にアイコンを追加
+								scrollHintDiv.insertAdjacentHTML(
+									'afterbegin',
+									`<i class="${iconLeftClass} left-icon"></i>`
+								);
+							}
 						} else {
-							// アイコン出力フラグがfalseの場合はアイコンを削除
-							const leftIconElement = scrollHintDiv.querySelector(
-								'.fa-solid.fa-caret-left'
-							);
+							// アイコンの出力フラグがfalseの場合はアイコンを表示しない
+							const leftIconElement =
+								scrollHintDiv.querySelector('i.left-icon');
 							if (leftIconElement) {
-								leftIconElement.remove();
+								leftIconElement.style.display = 'none';
 							}
 						}
 
@@ -225,17 +245,21 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 							) === 'true' &&
 							iconRightClass
 						) {
-							scrollHintDiv.querySelector(
-								'.fa-solid.fa-caret-right'
-							).className = `${iconRightClass}`; // クラス名を動的に更新
-						} else {
-							// アイコン出力フラグがfalseの場合はアイコンを削除
 							const rightIconElement =
-								scrollHintDiv.querySelector(
-									'.fa-solid.fa-caret-right'
+								scrollHintDiv.querySelector('i.right-icon');
+							if (!rightIconElement) {
+								// 存在しない場合、動的にアイコンを追加
+								scrollHintDiv.insertAdjacentHTML(
+									'beforeend',
+									`<i class="${iconRightClass} right-icon"></i>`
 								);
+							}
+						} else {
+							// アイコンの出力フラグがfalseの場合はアイコンを表示しない
+							const rightIconElement =
+								scrollHintDiv.querySelector('i.right-icon');
 							if (rightIconElement) {
-								rightIconElement.remove();
+								rightIconElement.style.display = 'none';
 							}
 						}
 					}
@@ -263,6 +287,9 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 							<div
 								className="vk-scroll-hint"
 								data-scroll-breakpoint={scrollBreakpoint}
+								data-output-scroll-hint={
+									showScrollMessage ? 'true' : 'false'
+								}
 								data-icon-output-left={
 									iconOutputLeft ? 'true' : 'false'
 								}
@@ -282,17 +309,17 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 							>
 								{iconOutputLeft && (
 									<i
-										className={extractIconClass(
+										className={`${extractIconClass(
 											scrollIconLeft
-										)}
+										)} left-icon`}
 									></i>
 								)}
 								<span>{scrollMessageText}</span>
 								{iconOutputRight && (
 									<i
-										className={extractIconClass(
+										className={`${extractIconClass(
 											scrollIconRight
-										)}
+										)} right-icon`}
 									></i>
 								)}
 							</div>
@@ -376,7 +403,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 }, 'addMyCustomBlockControls');
 addFilter('editor.BlockEdit', 'vk-blocks/table-style', addBlockControl);
 
-// 保存用のエクストラコンテンツを追加
+// Add extra content for save
 const addExtraProps = (saveElementProps, blockType, attributes) => {
 	if (isValidBlockType(blockType.name)) {
 		if (attributes.scrollable) {
@@ -386,18 +413,23 @@ const addExtraProps = (saveElementProps, blockType, attributes) => {
 			saveElementProps.className += ' is-style-vk-table-scrollable';
 			saveElementProps['data-scroll-breakpoint'] =
 				attributes.scrollBreakpoint;
+			saveElementProps['data-output-scroll-hint'] =
+				attributes.showScrollMessage ? 'true' : 'false';
 			saveElementProps['data-icon-output-left'] =
 				attributes.iconOutputLeft ? 'true' : 'false';
 			saveElementProps['data-icon-output-right'] =
 				attributes.iconOutputRight ? 'true' : 'false';
 
-			// showScrollMessageがtrueの場合、Scroll Hintコンポーネントを追加
+			// Add Scroll Hint component if showScrollMessage is true
 			if (attributes.showScrollMessage) {
 				saveElementProps.children = [
 					<div
 						key="scroll-hint"
 						className="vk-scroll-hint"
 						data-scroll-breakpoint={attributes.scrollBreakpoint}
+						data-output-scroll-hint={
+							attributes.showScrollMessage ? 'true' : 'false'
+						}
 						data-icon-output-left={
 							attributes.iconOutputLeft ? 'true' : 'false'
 						}
@@ -417,17 +449,17 @@ const addExtraProps = (saveElementProps, blockType, attributes) => {
 					>
 						{attributes.iconOutputLeft && (
 							<i
-								className={extractIconClass(
+								className={`${extractIconClass(
 									attributes.scrollIconLeft
-								)}
+								)} left-icon`}
 							></i>
 						)}
 						<span>{attributes.scrollMessageText}</span>
 						{attributes.iconOutputRight && (
 							<i
-								className={extractIconClass(
+								className={`${extractIconClass(
 									attributes.scrollIconRight
-								)}
+								)} right-icon`}
 							></i>
 						)}
 					</div>,
@@ -442,8 +474,12 @@ const addExtraProps = (saveElementProps, blockType, attributes) => {
 				.replace('is-style-vk-table-scrollable', '')
 				.trim();
 			delete saveElementProps['data-scroll-breakpoint'];
+			delete saveElementProps['data-output-scroll-hint'];
 			delete saveElementProps['data-hint-icon-left'];
 			delete saveElementProps['data-hint-icon-right'];
+			delete saveElementProps['data-icon-output-left'];
+			delete saveElementProps['data-icon-output-right'];
+			delete saveElementProps['data-output-scroll-message']; // Remove data attribute if not needed
 		}
 	}
 

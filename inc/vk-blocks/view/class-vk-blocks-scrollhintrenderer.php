@@ -26,14 +26,14 @@ class VK_Blocks_ScrollHintRenderer {
 	 */
 	public static function render_with_scroll_hint( $block_content, $block ) {
 
-	// クラス名が 'is-style-vk-*-scrollable' かつ data-output-scroll-hint="true" が存在するか確認
-	if (
-		empty($block['attrs']['className']) || 
-		!preg_match('/is-style-vk-[a-zA-Z0-9_-]+-scrollable/', $block['attrs']['className']) ||
-		strpos($block_content, 'data-output-scroll-hint="true"') === false
-	) {
-		return $block_content;
-	}
+		// クラス名が 'is-style-vk-*-scrollable' かつ data-output-scroll-hint="true" が存在するか確認
+		if (
+		empty( $block['attrs']['className'] ) ||
+		! preg_match( '/is-style-vk-[a-zA-Z0-9_-]+-scrollable/', $block['attrs']['className'] ) ||
+		strpos( $block_content, 'data-output-scroll-hint="true"' ) === false
+		) {
+			return $block_content;
+		}
 
 		// WordPressバージョンが6.2以上の場合に WP_HTML_Tag_Processor クラスをロード
 		if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {

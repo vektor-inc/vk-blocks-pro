@@ -26,10 +26,14 @@ class VK_Blocks_ScrollHintRenderer {
 	 */
 	public static function render_with_scroll_hint( $block_content, $block ) {
 
-		// クラス名が 'is-style-vk-*-scrollable' パターンにマッチするか確認
-		if ( empty( $block['attrs']['className'] ) || ! preg_match( '/is-style-vk-[a-zA-Z0-9_-]+-scrollable/', $block['attrs']['className'] ) ) {
-			return $block_content;
-		}
+	// クラス名が 'is-style-vk-*-scrollable' かつ data-output-scroll-hint="true" が存在するか確認
+	if (
+		empty($block['attrs']['className']) || 
+		!preg_match('/is-style-vk-[a-zA-Z0-9_-]+-scrollable/', $block['attrs']['className']) ||
+		strpos($block_content, 'data-output-scroll-hint="true"') === false
+	) {
+		return $block_content;
+	}
 
 		// WordPressバージョンが6.2以上の場合に WP_HTML_Tag_Processor クラスをロード
 		if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
@@ -75,8 +79,14 @@ class VK_Blocks_ScrollHintRenderer {
 		$left_icon_html  = $icon_output_left ? '<i class="' . esc_attr( $scroll_icon_left_class ) . '"></i>' : '';
 		$right_icon_html = $icon_output_right ? '<i class="' . esc_attr( $scroll_icon_right_class ) . '"></i>' : '';
 
+		// スクロールメッセージ出力フラグの確認
+		$output_scroll_message = isset( $block['attrs']['showScrollMessage'] ) ? filter_var( $block['attrs']['showScrollMessage'], FILTER_VALIDATE_BOOLEAN ) : false;
+
 		// データ属性の設定
 		$attributes = sprintf( 'data-scroll-breakpoint="%s"', esc_attr( $scroll_breakpoint_attr ) );
+
+		// スクロールメッセージの出力フラグに基づいてdata属性を設定
+		$attributes .= sprintf( ' data-output-scroll-message="%s"', $output_scroll_message ? 'true' : 'false' );
 
 		// アイコンの出力フラグに基づいてdata属性を設定
 		$attributes .= sprintf( ' data-icon-output-left="%s"', $icon_output_left ? 'true' : 'false' );

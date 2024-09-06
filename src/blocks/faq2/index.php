@@ -77,7 +77,6 @@ function vk_blocks_faq2_render_callback( $block_content, $block ) {
 
 		// 構造化データの追加
 		VK_Blocks_Faq_Schema_Manager::add_content( $block_content );
-		
 	}
 
 	return $block_content;

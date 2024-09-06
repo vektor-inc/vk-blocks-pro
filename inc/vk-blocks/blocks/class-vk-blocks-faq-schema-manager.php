@@ -1,51 +1,51 @@
 <?php
 class VK_Blocks_Faq_Schema_Manager {
 
-    private static $datas = array();
+	private static $datas = array();
 
-    public static function add_content( $block_content ) {
-            // 構造化データの追加
-        if ( apply_filters( 'vk_blocks_output_faq_schema', true ) ) {
-            $doc = new DOMDocument();
-            libxml_use_internal_errors( true );
+	public static function add_content( $block_content ) {
+			// 構造化データの追加
+		if ( apply_filters( 'vk_blocks_output_faq_schema', true ) ) {
+			$doc = new DOMDocument();
+			libxml_use_internal_errors( true );
 
-            // PHP 5.3 以前の互換性のためのチェック
-            $options = 0;
-            if ( defined( 'LIBXML_HTML_NOIMPLIED' ) ) {
-                $options |= constant( 'LIBXML_HTML_NOIMPLIED' );
-            }
-            if ( defined( 'LIBXML_HTML_NODEFDTD' ) ) {
-                $options |= constant( 'LIBXML_HTML_NODEFDTD' );
-            }
+			// PHP 5.3 以前の互換性のためのチェック
+			$options = 0;
+			if ( defined( 'LIBXML_HTML_NOIMPLIED' ) ) {
+				$options |= constant( 'LIBXML_HTML_NOIMPLIED' );
+			}
+			if ( defined( 'LIBXML_HTML_NODEFDTD' ) ) {
+				$options |= constant( 'LIBXML_HTML_NODEFDTD' );
+			}
 
-            $doc->loadHTML( '<?xml encoding="utf-8" ?>' . $block_content, $options );
+			$doc->loadHTML( '<?xml encoding="utf-8" ?>' . $block_content, $options );
 
-            $questions = $doc->getElementsByTagName( 'dt' );
-            $answers   = $doc->getElementsByTagName( 'dd' );
+			$questions = $doc->getElementsByTagName( 'dt' );
+			$answers   = $doc->getElementsByTagName( 'dd' );
 
-            foreach ( $questions as $index => $question ) {
-                // HTML タグをすべて削除して1行にまとめる
-                $question_text = trim( preg_replace( "/\r|\n|\r\n|\n\n/", '', strip_tags( $doc->saveHTML( $question ) ) ) );
-                $answer_text   = null !== $answers->item( $index ) ? trim( preg_replace( "/\r|\n|\r\n|\n\n/", '', strip_tags( $doc->saveHTML( $answers->item( $index ) ) ) ) ) : '';
+			foreach ( $questions as $index => $question ) {
+				// HTML タグをすべて削除して1行にまとめる
+				$question_text = trim( preg_replace( "/\r|\n|\r\n|\n\n/", '', strip_tags( $doc->saveHTML( $question ) ) ) );
+				$answer_text   = null !== $answers->item( $index ) ? trim( preg_replace( "/\r|\n|\r\n|\n\n/", '', strip_tags( $doc->saveHTML( $answers->item( $index ) ) ) ) ) : '';
 
-                self::$datas[] = array(
-                    '@type'          => 'Question',
-                    'name'           => $question_text,
-                    'acceptedAnswer' => array(
-                        '@type' => 'Answer',
-                        'text'  => $answer_text,
-                    ),
-                );
-            }
-        }        
-    }
+				self::$datas[] = array(
+					'@type'          => 'Question',
+					'name'           => $question_text,
+					'acceptedAnswer' => array(
+						'@type' => 'Answer',
+						'text'  => $answer_text,
+					),
+				);
+			}
+		}
+	}
 
-    public static function init() {
-        add_action( 'wp_footer', array( __CLASS__, 'output_schema' ) );
-    }
+	public static function init() {
+		add_action( 'wp_footer', array( __CLASS__, 'output_schema' ) );
+	}
 
-    public static function output_schema() {
-        $schema_graph = array();
+	public static function output_schema() {
+		$schema_graph = array();
 
 		if ( ! empty( self::$datas ) && apply_filters( 'vk_blocks_output_faq_schema', true ) ) {
 			$faq_schema     = array(
@@ -79,6 +79,6 @@ class VK_Blocks_Faq_Schema_Manager {
 			}
 
 			echo '<script type="application/ld+json">' . wp_json_encode( $schema_output, $json_options ) . '</script>';
-		}        
-    }
+		}
+	}
 }

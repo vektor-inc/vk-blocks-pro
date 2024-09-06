@@ -106,12 +106,14 @@ e.g.
 
 == Changelog ==
 
+
 [ Add function ] Added support for custom CSS including pseudo-elements.
 [ Bug fix ][ Grid Column Card ] Fix infinite loop in grid column card block when used in reusable blocks.
+[ Add function ][ Column ] Add toolbar link for components.
 
 = 1.83.0 =
-[ Add Setting ][ Alert ] Add icon setting and inner block.
-[ Bug fix ][ Grid Column Card ] Fix infinite loop in grid column card block when used in reusable blocks.
+[ Add Function ][ Alert ] Add icon setting and inner block.
+[ Bug fix ][ Grid Column Card ] Fixed an issue where using a synced pattern would cause the destination edit page to crash.
 [ Bug fix ][ Core List ] Add support for handling list color in old settings.
 [ Bug fix ][ Tab Item ] When duplicating an active tab-item block, no more than one tab-item block becomes active.
 

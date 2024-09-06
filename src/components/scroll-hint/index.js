@@ -10,9 +10,12 @@ const ScrollMessageControls = ({
 	scrollIconRight,
 	setAttributes,
 	attributes,
-	iconFamily,
 	...props
 }) => {
+
+	// eslint-disable-next-line no-undef
+	const iconFamily = vkFontAwesome.iconFamily;
+
 	const [iconOutputLeft, setIconOutputLeft] = useState(scrollIconLeft !== '');
 	const [iconOutputRight, setIconOutputRight] = useState(
 		scrollIconRight !== ''
@@ -24,15 +27,15 @@ const ScrollMessageControls = ({
 			iconOutputLeft,
 			iconOutputRight,
 		});
-	}, [iconOutputLeft, iconOutputRight]);
+	}, [iconOutputLeft, iconOutputRight, setAttributes]);
 
-	const handleScrollMessageToggle = (checked) => {
-		setAttributes({ showScrollMessage: checked });
-	};
+	const handleScrollMessageToggle = (isChecked) => {
+		setAttributes({ showScrollMessage: isChecked });
+	};	
 
 	const handleMessageTextChange = (value) => {
 		setAttributes({ scrollMessageText: value });
-	};	
+	};
 
 	const handleIconChange = (position, iconClass) => {
 		if (position === 'left') {
@@ -70,7 +73,7 @@ const ScrollMessageControls = ({
 					<TextControl
 						label={__('Scroll Message Text', 'vk-blocks-pro')}
 						value={scrollMessageText}
-						onChange={(value) => handleMessageTextChange(value)}  // handleMessageTextChangeに正しく引数を渡す
+						onChange={(value) => handleMessageTextChange(value)} // handleMessageTextChangeに正しく引数を渡す
 					/>
 					<h4>
 						{__('Icon', 'vk-blocks-pro') +

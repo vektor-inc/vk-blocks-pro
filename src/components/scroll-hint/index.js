@@ -12,7 +12,6 @@ const ScrollMessageControls = ({
 	attributes,
 	...props
 }) => {
-
 	// eslint-disable-next-line no-undef
 	const iconFamily = vkFontAwesome.iconFamily;
 
@@ -31,7 +30,7 @@ const ScrollMessageControls = ({
 
 	const handleScrollMessageToggle = (isChecked) => {
 		setAttributes({ showScrollMessage: isChecked });
-	};	
+	};
 
 	const handleMessageTextChange = (value) => {
 		setAttributes({ scrollMessageText: value });

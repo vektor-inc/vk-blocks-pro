@@ -306,7 +306,8 @@ const addExtraProps = (saveElementProps, blockType, attributes) => {
 				? saveElementProps.className
 				: '';
 			saveElementProps.className += ' is-style-vk-table-scrollable';
-			saveElementProps['data-scroll-breakpoint'] = attributes.scrollBreakpoint;
+			saveElementProps['data-scroll-breakpoint'] =
+				attributes.scrollBreakpoint;
 
 			// 'showScrollMessage' が true の場合のみ 'data-output-scroll-hint' を追加
 			if (attributes.showScrollMessage) {

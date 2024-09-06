@@ -83,4 +83,4 @@ function vk_blocks_faq2_render_callback( $block_content, $block ) {
 	return $block_content;
 }
 
-
+add_filter( 'render_block', 'vk_blocks_faq2_render_callback', 10, 2 );

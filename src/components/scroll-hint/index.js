@@ -8,7 +8,6 @@ const ScrollMessageControls = ({
 	scrollMessageText,
 	scrollIconLeft,
 	scrollIconRight,
-	handleMessageTextChange,
 	setAttributes,
 	attributes,
 	iconFamily,
@@ -30,6 +29,10 @@ const ScrollMessageControls = ({
 	const handleScrollMessageToggle = (checked) => {
 		setAttributes({ showScrollMessage: checked });
 	};
+
+	const handleMessageTextChange = (value) => {
+		setAttributes({ scrollMessageText: value });
+	};	
 
 	const handleIconChange = (position, iconClass) => {
 		if (position === 'left') {
@@ -67,7 +70,7 @@ const ScrollMessageControls = ({
 					<TextControl
 						label={__('Scroll Message Text', 'vk-blocks-pro')}
 						value={scrollMessageText}
-						onChange={handleMessageTextChange}
+						onChange={(value) => handleMessageTextChange(value)}  // handleMessageTextChangeに正しく引数を渡す
 					/>
 					<h4>
 						{__('Icon', 'vk-blocks-pro') +

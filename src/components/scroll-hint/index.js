@@ -8,38 +8,48 @@ const ScrollMessageControls = ({
 	scrollMessageText,
 	scrollIconLeft,
 	scrollIconRight,
-	handleScrollMessageToggle,
 	handleMessageTextChange,
 	setAttributes,
 	attributes,
 	iconFamily,
 	...props
 }) => {
-	// 初期状態のアイコン出力フラグをpropsから取得
 	const [iconOutputLeft, setIconOutputLeft] = useState(scrollIconLeft !== '');
 	const [iconOutputRight, setIconOutputRight] = useState(
 		scrollIconRight !== ''
 	);
 
+	// アイコン出力の状態に応じて data-attributes を更新
 	useEffect(() => {
-		setAttributes({ iconOutputLeft });
-		setAttributes({ iconOutputRight });
-	}, [iconOutputLeft, iconOutputRight, setAttributes]);
+		setAttributes({
+			iconOutputLeft,
+			iconOutputRight,
+		});
+	}, [iconOutputLeft, iconOutputRight]);
 
-	// アイコンの出力トグル関数
+	const handleScrollMessageToggle = (checked) => {
+		setAttributes({ showScrollMessage: checked });
+	};
+
+	const handleIconChange = (position, iconClass) => {
+		if (position === 'left') {
+			setAttributes({ scrollIconLeft: iconClass });
+		} else if (position === 'right') {
+			setAttributes({ scrollIconRight: iconClass });
+		}
+	};
+
 	const handleIconOutputToggle = (position) => {
 		if (position === 'left') {
 			setIconOutputLeft(!iconOutputLeft);
 			setAttributes({
-				scrollIconLeft: !iconOutputLeft
-					? '<i class="fa-solid fa-caret-left"></i>'
-					: '',
+				scrollIconLeft: !iconOutputLeft ? 'fa-solid fa-caret-left' : '',
 			});
 		} else if (position === 'right') {
 			setIconOutputRight(!iconOutputRight);
 			setAttributes({
 				scrollIconRight: !iconOutputRight
-					? '<i class="fa-solid fa-caret-right"></i>'
+					? 'fa-solid fa-caret-right'
 					: '',
 			});
 		}
@@ -50,7 +60,7 @@ const ScrollMessageControls = ({
 			<ToggleControl
 				label={__('Show Scroll Message', 'vk-blocks-pro')}
 				checked={showScrollMessage}
-				onChange={handleScrollMessageToggle}
+				onChange={() => handleScrollMessageToggle(!showScrollMessage)}
 			/>
 			{showScrollMessage && (
 				<>
@@ -59,7 +69,7 @@ const ScrollMessageControls = ({
 						value={scrollMessageText}
 						onChange={handleMessageTextChange}
 					/>
-					<h4 className={`mt-0 mb-2`}>
+					<h4>
 						{__('Icon', 'vk-blocks-pro') +
 							' ( ' +
 							iconFamily +
@@ -73,12 +83,16 @@ const ScrollMessageControls = ({
 					{iconOutputLeft && (
 						<BaseControl
 							label={__('Before text', 'vk-blocks-pro')}
-							id={`vk_alert-icon-left`}
+							id="scrollIconLeftControl"
 						>
 							<FontAwesome
 								attributeName={'scrollIconLeft'}
-								attributes={attributes} // attributes を渡す
-								setAttributes={setAttributes} // ensure this is a function
+								attributes={attributes}
+								setAttributes={setAttributes}
+								modeClass={true}
+								onChange={(iconClass) =>
+									handleIconChange('left', iconClass)
+								}
 								{...props}
 							/>
 						</BaseControl>
@@ -91,12 +105,16 @@ const ScrollMessageControls = ({
 					{iconOutputRight && (
 						<BaseControl
 							label={__('After text', 'vk-blocks-pro')}
-							id={`vk_alert-icon-right`}
+							id="scrollIconRightControl"
 						>
 							<FontAwesome
 								attributeName={'scrollIconRight'}
-								attributes={attributes} // attributes を渡す
-								setAttributes={setAttributes} // ensure this is a function
+								attributes={attributes}
+								setAttributes={setAttributes}
+								modeClass={true}
+								onChange={(iconClass) =>
+									handleIconChange('right', iconClass)
+								}
 								{...props}
 							/>
 						</BaseControl>

@@ -66,9 +66,9 @@ class VK_Blocks_ScrollHintRenderer {
 		$icon_output_left  = isset( $block['attrs']['iconOutputLeft'] ) ? filter_var( $block['attrs']['iconOutputLeft'], FILTER_VALIDATE_BOOLEAN ) : true;
 		$icon_output_right = isset( $block['attrs']['iconOutputRight'] ) ? filter_var( $block['attrs']['iconOutputRight'], FILTER_VALIDATE_BOOLEAN ) : true;
 
-		// <i>タグからクラス名を抽出
-		$scroll_icon_left_class  = ! empty( $block['attrs']['scrollIconLeft'] ) ? self::extract_icon_class( $block['attrs']['scrollIconLeft'] ) : 'fa-solid fa-caret-left';
-		$scroll_icon_right_class = ! empty( $block['attrs']['scrollIconRight'] ) ? self::extract_icon_class( $block['attrs']['scrollIconRight'] ) : 'fa-solid fa-caret-right';
+		// クラス名は直接使用
+		$scroll_icon_left_class  = ! empty( $block['attrs']['scrollIconLeft'] ) ? $block['attrs']['scrollIconLeft'] : 'fa-solid fa-caret-left';
+		$scroll_icon_right_class = ! empty( $block['attrs']['scrollIconRight'] ) ? $block['attrs']['scrollIconRight'] : 'fa-solid fa-caret-right';
 
 		$default_breakpoint = apply_filters( 'vk_blocks_default_scroll_breakpoint', 'table-scrollable-mobile', $block );
 		$scroll_breakpoints = ! empty( $block['attrs']['scrollBreakpoint'] ) ? $block['attrs']['scrollBreakpoint'] : $default_breakpoint;
@@ -112,20 +112,6 @@ class VK_Blocks_ScrollHintRenderer {
 			esc_html( $scroll_message_text ),
 			$right_icon_html
 		);
-	}
-
-	/**
-	 * Extract class names from an HTML string.
-	 *
-	 * @param string $html_string The HTML string to extract class from.
-	 * @return string The extracted class name(s) or an empty string if none found.
-	 */
-	private static function extract_icon_class( $html_string ) {
-		// <i> タグからクラス属性を抽出
-		if ( preg_match( '/<i.*?class="([^"]+)"/', $html_string, $matches ) ) {
-			return $matches[1]; // クラス名を正しく返す
-		}
-		return ''; // 見つからない場合は空文字列を返す
 	}
 }
 

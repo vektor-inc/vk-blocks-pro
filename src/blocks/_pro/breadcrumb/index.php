@@ -53,6 +53,9 @@
 		 'class_list'         => 'vk_breadcrumb_list',
 		 'class_list_item'    => 'vk_breadcrumb_list_item',
 	 );
+
+	return $vk_breadcrumb->get_breadcrumb( $breadcrumb_options );
+
  }
  
  /**
@@ -109,10 +112,20 @@ function vk_blocks_register_breadcrumb_separator_style() {
 
 	// セパレーターのデザインが設定されている場合に動的CSSを生成
 	if ( '' !== $separator_design ) {
-		// セパレーターの文字列を適切にエスケープ
 		$separator_escaped = addslashes( $separator_design );
-		$dynamic_css = '<style>li.vk_breadcrumb_list_item:after, .breadcrumb-list li:after { content: "' . $separator_escaped . '"; }</style>';
-		echo $dynamic_css; // グローバルにスタイルを出力
+		$dynamic_css = '
+  			<style>
+     			li.vk_breadcrumb_list_item:after,
+				.breadcrumb-list li:after,
+				.breadSection .breadcrumb > li + li:before {
+    				content: "' . $separator_escaped . '";
+	  			}
+				.breadcrumb-list li:last-child:after,
+				.p-breadcrumbs li+li:before {
+					content: none;
+				}
+      		</style>';
+		echo $dynamic_css; 
 	}
 }
 add_action( 'wp_footer', 'vk_blocks_register_breadcrumb_separator_style' );

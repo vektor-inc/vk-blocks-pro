@@ -210,6 +210,10 @@ ol {
 		&-vk-numbered-circle-mark,
 		&-vk-numbered-square-mark {
 			padding-inline-start: 2em;
+			&:not(.has-text-color), 
+			&:not(.has-link-color) {
+				color: initial;
+			}
 			li {
 				list-style: none;
 				position: relative;
@@ -375,7 +379,8 @@ ol {
 	}
 
 	@each $colorClass, $color in $colorPalette {
-		&.#{$colorClass} {
+		&.vk-has-#{$colorClass}-color,
+		&.has-vk-#{$colorClass}-color {
 			li::marker {
 				color: $color;
 			}
@@ -384,13 +389,17 @@ ol {
 			}
 		}
 
-		&.is-style-vk-numbered-circle-mark.#{$colorClass}-color,
-		&.is-style-vk-numbered-square-mark.#{$colorClass}-color {
-			li::before {
-				color: #ffffff;
-				background-color: $color;
+		&.is-style-vk-numbered-circle-mark,
+		&.is-style-vk-numbered-square-mark {
+			&.vk-has-#{$colorClass}-color,
+			&.has-vk-#{$colorClass}-color {
+				li::before {
+					color: #fff;
+					background-color: $color;
+				}
 			}
 		}
+
 	}
 }
 //ul,ol
@@ -609,8 +618,8 @@ ol {
 /*-------------------------------------------*/
 $xxl-min: 1400px;
 .col {
-    // Bootstrap4 では xxl サイズがないので独自に追加
-    @media (min-width: $xxl-min) {
+	// Bootstrap4 では xxl サイズがないので独自に追加
+	@media (min-width: $xxl-min) {
 		&-xxl-2 {
 			flex: 0 0 16.66667%;
 			max-width: 16.66667%;
@@ -635,11 +644,38 @@ $xxl-min: 1400px;
 }
 
 /*-------------------------------------------*/
-/* カラムの方向
+/* カラム
 /*-------------------------------------------*/
 .wp-block-columns {
+	/* カラムの方向 */
 	&.wp-block-columns.is-vk-row-reverse {
-    	flex-direction: row-reverse;
+		flex-direction: row-reverse;
+	}
+	/* リンク設定 */
+	&:has(.wp-block-column-vk-link) {
+		.wp-block-column {
+			> * {
+				&:first-of-type {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+	.wp-block-column:has(.wp-block-column-vk-link) {
+		position: relative;
+		.wp-block-column-vk-link {
+			position: absolute;
+			top: 0; 
+			left: 0;
+			width: 100%;
+			height: 100%;
+			color: transparent;
+			cursor: pointer;
+			z-index: 10;
+			> p {
+				line-height: var(--vk-line-height); // 自動で入るコアの .is-layout-flow CSSに負けるため
+			}
+		}
 	}
 }
 

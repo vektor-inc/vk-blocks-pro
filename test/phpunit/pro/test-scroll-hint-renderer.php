@@ -34,8 +34,8 @@ class VK_Blocks_ScrollHintRendererTest extends VK_UnitTestCase {
             'attrs'     => array(
                 'className'           => 'is-style-vk-table-scrollable',
                 'scrollMessageText'   => 'Scroll to see more',
-                'scrollIconLeft'      => '<i class="fa-solid fa-caret-left"></i>',
-                'scrollIconRight'     => '<i class="fa-solid fa-caret-right"></i>',
+                'scrollIconLeft'      => 'fa-solid fa-caret-left',
+                'scrollIconRight'     => 'fa-solid fa-caret-right',
                 'scrollBreakpoint'    => 'table-scrollable-mobile',
                 'iconOutputLeft'      => true,
                 'iconOutputRight'     => true,
@@ -67,8 +67,8 @@ class VK_Blocks_ScrollHintRendererTest extends VK_UnitTestCase {
             'attrs'     => array(
                 'className'           => 'is-style-vk-table-scrollable',
                 'scrollMessageText'   => 'Scroll to see more',
-                'scrollIconLeft'      => '<i class="fa-solid fa-caret-left"></i>',
-                'scrollIconRight'     => '<i class="fa-solid fa-caret-right"></i>',
+                'scrollIconLeft'      => 'fa-solid fa-caret-left',
+                'scrollIconRight'     => 'fa-solid fa-caret-right',
                 'scrollBreakpoint'    => 'table-scrollable-mobile',
                 'iconOutputLeft'      => true,
                 'iconOutputRight'     => true,
@@ -109,8 +109,8 @@ class VK_Blocks_ScrollHintRendererTest extends VK_UnitTestCase {
         $block = array(
             'attrs' => array(
                 'scrollMessageText' => 'Scroll to see more',
-                'scrollIconLeft'    => '<i class="fa-solid fa-caret-left"></i>',
-                'scrollIconRight'   => '<i class="fa-solid fa-caret-right"></i>',
+                'scrollIconLeft'    => 'fa-solid fa-caret-left',
+                'scrollIconRight'   => 'fa-solid fa-caret-right',
                 'scrollBreakpoint'  => 'table-scrollable-mobile',
                 'iconOutputLeft'    => true,
                 'iconOutputRight'   => true,
@@ -137,8 +137,8 @@ class VK_Blocks_ScrollHintRendererTest extends VK_UnitTestCase {
         $block = array(
             'attrs' => array(
                 'scrollMessageText' => 'Scroll to see more',
-                'scrollIconLeft'    => '<i class="fa-solid fa-caret-left"></i>',
-                'scrollIconRight'   => '<i class="fa-solid fa-caret-right"></i>',
+                'scrollIconLeft'    => 'fa-solid fa-caret-left',
+                'scrollIconRight'   => 'fa-solid fa-caret-right',
                 'scrollBreakpoint'  => 'table-scrollable-mobile',
                 'iconOutputLeft'    => false,
                 'iconOutputRight'   => true,
@@ -164,8 +164,8 @@ class VK_Blocks_ScrollHintRendererTest extends VK_UnitTestCase {
         $block = array(
             'attrs' => array(
                 'scrollMessageText' => 'Scroll to see more',
-                'scrollIconLeft'    => '<i class="fa-solid fa-caret-left"></i>',
-                'scrollIconRight'   => '<i class="fa-solid fa-caret-right"></i>',
+                'scrollIconLeft'    => 'fa-solid fa-caret-left',
+                'scrollIconRight'   => 'fa-solid fa-caret-right',
                 'scrollBreakpoint'  => 'table-scrollable-mobile',
                 'iconOutputLeft'    => false,
                 'iconOutputRight'   => false,

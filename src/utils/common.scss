@@ -698,3 +698,13 @@ $xxl-min: 1400px;
 		z-index: 10;
 	}
 }
+
+/*-------------------------------------------*/
+/* バンくずリスト
+/*-------------------------------------------*/
+/* セパレーター設定 */
+li.vk_breadcrumb_list_item.has-separator:after,
+.breadcrumb-list li.has-separator:after,
+.breadSection .breadcrumb > li + li.has-separator:before {
+    visibility: hidden;
+}

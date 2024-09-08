@@ -1,14 +1,21 @@
+/* global vkBreadcrumbSeparator, requestAnimationFrame */
+
 function addSeparatorClass() {
-    const breadcrumbItems = document.querySelectorAll('li.vk_breadcrumb_list_item, .breadcrumb-list li, .breadSection .breadcrumb > li + li');
-    breadcrumbItems.forEach(function (item) {
-        item.classList.add('has-separator');
-    });
+	const breadcrumbItems = document.querySelectorAll(
+		'li.vk_breadcrumb_list_item, .breadcrumb-list li, .breadSection .breadcrumb > li + li'
+	);
+	breadcrumbItems.forEach(function (item) {
+		item.classList.add('has-separator');
+	});
 }
 
 // vkBreadcrumbSeparator.separator が存在する場合のみ実行
-if (typeof vkBreadcrumbSeparator !== 'undefined' && vkBreadcrumbSeparator.separator) {
-    // requestAnimationFrameでブラウザの再描画前に実行
-    requestAnimationFrame(addSeparatorClass);
+if (
+	typeof vkBreadcrumbSeparator !== 'undefined' &&
+	vkBreadcrumbSeparator.separator
+) {
+	// requestAnimationFrameでブラウザの再描画前に実行
+	requestAnimationFrame(addSeparatorClass);
 }
 
 document.addEventListener('DOMContentLoaded', function () {

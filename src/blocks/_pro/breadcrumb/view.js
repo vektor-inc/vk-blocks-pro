@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			styleElement.innerHTML = `
 				li.vk_breadcrumb_list_item:not(:last-child).has-separator.loaded:after, 
 				.breadcrumb-list li:not(:last-child).has-separator.loaded:after, 
-				.breadSection .breadcrumb > li + li:not(:last-child).has-separator.loaded:before { 
+				.breadSection .breadcrumb > li + li.has-separator.loaded:before { 
 					content: "${separator}";
 				}
 			`;

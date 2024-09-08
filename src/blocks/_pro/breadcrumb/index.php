@@ -90,7 +90,7 @@ function vk_blocks_register_block_breadcrumb() {
 		array(
 			'separator' => esc_attr( $separator_design ),
 		)
-	);	
+	);
 
 	global $vk_blocks_common_attributes;
 	register_block_type(

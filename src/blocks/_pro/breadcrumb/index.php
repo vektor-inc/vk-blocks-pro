@@ -78,7 +78,7 @@ function vk_blocks_register_block_breadcrumb() {
 		VK_BLOCKS_DIR_URL . 'build/vk-breadcrumb.min.js',
 		array(),
 		VK_BLOCKS_VERSION,
-		true
+		false
 	);
 
 	// セパレーターの値を JavaScript に渡す

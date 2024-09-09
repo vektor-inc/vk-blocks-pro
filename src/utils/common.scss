@@ -703,7 +703,13 @@ $xxl-min: 1400px;
 /* パンくずリスト
 /*-------------------------------------------*/
 /* セパレーター設定 */
-li.vk_breadcrumb_list_item.has-separator:after,
+.vk_breadcrumb_list_item.has-separator:after,
+.breadcrumb-list li.has-separator:after,
+.breadSection .breadcrumb > li + li.has-separator:before {
+    visibility: hidden;
+}
+
+.vk_breadcrumb_list_item.has-separator:after,
 .breadcrumb-list li.has-separator:after,
 .breadSection .breadcrumb > li + li.has-separator:before {
     visibility: hidden;
@@ -713,7 +719,7 @@ li.vk_breadcrumb_list_item.has-separator:after,
 	content: none;
 }
 
-li.has-separator:not(:last-child).loaded:after,
+.vk_breadcrumb_list_item.has-separator:not(:last-child).loaded:after,
 .breadcrumb-list li:not(:last-child).has-separator.loaded:after,
 .breadSection .breadcrumb > li + li.has-separator.loaded:before {
     visibility: visible;

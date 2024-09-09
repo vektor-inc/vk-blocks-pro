@@ -2,7 +2,7 @@
 
 function addSeparatorClass() {
 	const breadcrumbItems = document.querySelectorAll(
-		'li.vk_breadcrumb_list_item, .breadcrumb-list li, .breadSection .breadcrumb > li + li'
+		'.vk_breadcrumb_list_item, .breadcrumb-list li, .breadSection .breadcrumb > li + li'
 	);
 	breadcrumbItems.forEach(function (item) {
 		item.classList.add('has-separator');
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	if (typeof vkBreadcrumbSeparator !== 'undefined') {
 		const separator = vkBreadcrumbSeparator.separator;
 		const breadcrumbItems = document.querySelectorAll(
-			'li.vk_breadcrumb_list_item, .breadcrumb-list li, .breadSection .breadcrumb > li + li'
+			'.vk_breadcrumb_list_item, .breadcrumb-list li, .breadSection .breadcrumb > li + li'
 		);
 
 		if (separator && breadcrumbItems.length > 0) {
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			// 動的にスタイルを作成して適用
 			const styleElement = document.createElement('style');
 			styleElement.innerHTML = `
-				li.vk_breadcrumb_list_item:not(:last-child).has-separator.loaded:after, 
+				.vk_breadcrumb_list_item:not(:last-child).has-separator.loaded:after, 
 				.breadcrumb-list li:not(:last-child).has-separator.loaded:after, 
 				.breadSection .breadcrumb > li + li.has-separator.loaded:before { 
 					content: "${separator}";

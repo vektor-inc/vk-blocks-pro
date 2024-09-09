@@ -110,8 +110,9 @@ e.g.
 [ Add function ][ Classic FAQ / New FAQ ] Support structured data.
 [ Add Function ] Add a mode to extract class name for Font awesome icon.
 [ Add function ] Added support for custom CSS including pseudo-elements.
-[ Bug fix ][ Grid Column Card ] Fix infinite loop in grid column card block when used in reusable blocks.
 [ Add function ][ Column ] Add toolbar link for components.
+[ Specification Change ][ Link toolbar ] Fix to prevent adding http:// or https:// when a relative path is entered.
+[ Bug fix ][ Grid Column Card ] Fix infinite loop in grid column card block when used in reusable blocks.
 
 = 1.83.0 =
 [ Add Function ][ Alert ] Add icon setting and inner block.

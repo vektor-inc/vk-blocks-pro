@@ -1,5 +1,5 @@
 import { useState, useContext, useEffect } from '@wordpress/element';
-import { TextControl } from '@wordpress/components'; // TextControl を追加
+import { TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { AdminContext } from '@vkblocks/admin/index';
 

@@ -42,6 +42,10 @@ require_once __DIR__ . '/blocks.php';
 require_once __DIR__ . '/App/RestAPI/BlockMeta/class-vk-blocks-entrypoint.php';
 new Vk_Blocks_EntryPoint();
 
+// ブロック関連の処理
+require_once __DIR__ . '/blocks/class-vk-blocks-faq-schema-manager.php';
+VK_Blocks_Faq_Schema_Manager::init();
+
 /**
  * VK Blocks active
  */

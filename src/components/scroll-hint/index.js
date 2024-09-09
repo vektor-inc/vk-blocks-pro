@@ -16,7 +16,9 @@ const ScrollMessageControls = ({
 	const iconFamily = vkFontAwesome.iconFamily;
 
 	const [iconOutputLeft, setIconOutputLeft] = useState(scrollIconLeft !== '');
-	const [iconOutputRight, setIconOutputRight] = useState(scrollIconRight !== '');
+	const [iconOutputRight, setIconOutputRight] = useState(
+		scrollIconRight !== ''
+	);
 
 	// アイコンの状態が空の場合には、トグルをOFFに設定
 	useEffect(() => {

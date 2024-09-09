@@ -16,7 +16,7 @@
 			i {
 				margin-right:0.5em;
 			}
-            &:after {
+            &:not(.p-breadcrumbs_item):after { // Katawara対応
                 content : '/';
                 margin-left:0.5em;
                 margin-right:0.5em;

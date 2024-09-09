@@ -21,7 +21,7 @@ function vk_blocks_register_block_faq2() {
 		);
 	}
 
-	// Register Style.
+	// Register Script.
 	if ( ! is_admin() ) {
 		wp_register_script(
 			'vk-blocks/faq-script',
@@ -74,7 +74,11 @@ function vk_blocks_faq2_render_callback( $block_content, $block ) {
 		} else {
 			$block_content = str_replace( '[accordion_trigger_switch]', '', $block_content );
 		}
+
+		// 構造化データの追加
+		VK_Blocks_Faq_Schema_Manager::add_content( $block_content );
 	}
+
 	return $block_content;
 }
 

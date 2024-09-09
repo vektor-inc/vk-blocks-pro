@@ -105,15 +105,18 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
- 
+
 [ Add function ][ Core Table ] Add scroll hint for horizontal scrolling.
+[ Add function ][ Classic FAQ / New FAQ ] Support structured data.
+[ Add Function ] Add a mode to extract class name for Font awesome icon.
 [ Add function ] Added support for custom CSS including pseudo-elements.
 [ Bug fix ][ Grid Column Card ] Fix infinite loop in grid column card block when used in reusable blocks.
 [ Add function ][ Column ] Add toolbar link for components.
 
 = 1.83.0 =
-[ Add Setting ][ Alert ] Add icon setting and inner block.
-[ Bug fix ] [ Core List ] Add support for handling list color in old settings.
+[ Add Function ][ Alert ] Add icon setting and inner block.
+[ Bug fix ][ Grid Column Card ] Fixed an issue where using a synced pattern would cause the destination edit page to crash.
+[ Bug fix ][ Core List ] Add support for handling list color in old settings.
 [ Bug fix ][ Tab Item ] When duplicating an active tab-item block, no more than one tab-item block becomes active.
 
 = 1.82.0 =
@@ -124,8 +127,8 @@ e.g.
 [ Bug fix ][ Post list (Pro) / Selected post list (Pro) / Child page list (Pro) ] Fixed an issue where the button would remain aligned to the left even when it was set to align to the right.
 
 = 1.81.0 =
-[ Add function ][ Core Table ] Add horizontal scrolling setting.
-[ Specification Change ][ Core Image ] Add a circle style to the image block.
+[ Add function ][ Table ] Add horizontal scrolling Setting.
+[ Specification Change ][ Image ] Add a circle style to the image block.
 [ Specification Change ][ Slider ] Delete width setting from sidebar.
 [ Specification Change ] Update VK Component.
 [ Bug fix ] Added dynamic color settings for common css.
@@ -250,7 +253,7 @@ e.g.
 
 = 1.70.0 =
 [ Specification Change ] core/social-link, core/site-logo, core/site-title and core/site-tagline correspond to margin-extension
-[ Add function ][ Breadcrumb ] Add the ability to input breadcrumb separators.
+[ Add function ][ Breadcrumb(Pro) ] Add the ability to input breadcrumb separators.
 
 = 1.69.1 =
 [ Bug fix ][ Inline Font Size ] Applies only Font Size has a numeric value.

@@ -644,100 +644,6 @@ $xxl-min: 1400px;
 }
 
 /*-------------------------------------------*/
-/* スクロールヒント
-/*-------------------------------------------*/
-@mixin scrollable-table-scroll-hint {
-	display: block;
-	text-align: right;
-	font-size: .85rem;
-	&:has(i:last-of-type ) {
-		margin-right: 3px;
-	}
-	i {
-		margin: 0;
-		&:first-of-type {
-			animation: shake-left 1.5s ease-in-out infinite;
-		}
-		&:last-of-type {
-			animation: shake-right 1.5s ease-in-out infinite;
-		}
- 	}
-  	/* 横揺れアニメーションの定義 */
-	@keyframes shake-left {
-		0% { transform: translateX(0); }
-		50% { transform: translateX(-3px); }
-		100% { transform: translateX(0); }
-	}
-	@keyframes shake-right {
-		0% { transform: translateX(0); }
-		50% { transform: translateX(3px); }
-		100% { transform: translateX(0); }
-	}
-}
-
-.vk-scroll-hint {
-	display: none;
-
-	&[data-scroll-breakpoint="table-scrollable-mobile"] {
-		@media (max-width: 575.98px) {
-			@include scrollable-table-scroll-hint;
-		}
-	}
-
-	&[data-scroll-breakpoint="table-scrollable-tablet"] {
-		@media (max-width: 991.98px) {
-			@include scrollable-table-scroll-hint;
-		}
-	}
-
-	&[data-scroll-breakpoint="table-scrollable-pc"] {
-		@include scrollable-table-scroll-hint;
-	}
-
-	+ * {
-		margin-top: 0;
-	}
-}
-
-.editor-styles-wrapper {
-	.vk-scroll-hint {
-		@include scrollable-table-scroll-hint;
-	}
-}
-
-/*-------------------------------------------*/
-/* スクロールヒント
-/*-------------------------------------------*/
-@mixin scrollable-table-scroll-hint {
-	display: block;
-	text-align: right;
-	font-size: .85rem;
-	&:has(i:last-of-type ) {
-		margin-right: 3px;
-	}
-	i {
-		margin: 0;
-		&:first-of-type {
-			animation: shake-left 1.5s ease-in-out infinite;
-		}
-		&:last-of-type {
-			animation: shake-right 1.5s ease-in-out infinite;
-		}
- 	}
-  	/* 横揺れアニメーションの定義 */
-	@keyframes shake-left {
-		0% { transform: translateX(0); }
-		50% { transform: translateX(-3px); }
-		100% { transform: translateX(0); }
-	}
-	@keyframes shake-right {
-		0% { transform: translateX(0); }
-		50% { transform: translateX(3px); }
-		100% { transform: translateX(0); }
-	}
-}
-
-/*-------------------------------------------*/
 /* カラム
 /*-------------------------------------------*/
 .wp-block-columns {
@@ -791,4 +697,30 @@ $xxl-min: 1400px;
 		cursor: pointer;
 		z-index: 10;
 	}
+}
+
+/*-------------------------------------------*/
+/* パンくずリスト
+/*-------------------------------------------*/
+/* セパレーター設定 */
+.vk_breadcrumb_list_item.has-separator:after,
+.breadcrumb-list li.has-separator:after,
+.breadSection .breadcrumb > li + li.has-separator:before {
+    visibility: hidden;
+}
+
+.vk_breadcrumb_list_item.has-separator:after,
+.breadcrumb-list li.has-separator:after,
+.breadSection .breadcrumb > li + li.has-separator:before {
+    visibility: hidden;
+}
+
+.p-breadcrumbs li+li.has-separator:before {
+	content: none;
+}
+
+.vk_breadcrumb_list_item.has-separator:not(:last-child).loaded:after,
+.breadcrumb-list li:not(:last-child).has-separator.loaded:after,
+.breadSection .breadcrumb > li + li.has-separator.loaded:before {
+    visibility: visible;
 }

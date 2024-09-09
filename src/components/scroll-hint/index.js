@@ -16,9 +16,17 @@ const ScrollMessageControls = ({
 	const iconFamily = vkFontAwesome.iconFamily;
 
 	const [iconOutputLeft, setIconOutputLeft] = useState(scrollIconLeft !== '');
-	const [iconOutputRight, setIconOutputRight] = useState(
-		scrollIconRight !== ''
-	);
+	const [iconOutputRight, setIconOutputRight] = useState(scrollIconRight !== '');
+
+	// アイコンの状態が空の場合には、トグルをOFFに設定
+	useEffect(() => {
+		if (attributes.scrollIconLeft === '') {
+			setIconOutputLeft(false);
+		}
+		if (attributes.scrollIconRight === '') {
+			setIconOutputRight(false);
+		}
+	}, [attributes.scrollIconLeft, attributes.scrollIconRight]);
 
 	// アイコン出力の状態に応じて data-attributes を更新
 	useEffect(() => {
@@ -44,19 +52,34 @@ const ScrollMessageControls = ({
 		}
 	};
 
+	// ToggleControlが動いたときに状態を更新
 	const handleIconOutputToggle = (position) => {
 		if (position === 'left') {
 			setIconOutputLeft(!iconOutputLeft);
-			setAttributes({
-				scrollIconLeft: !iconOutputLeft ? 'fa-solid fa-caret-left' : '',
-			});
+
+			// トグルがONになった場合にデフォルトアイコンを設定、OFFになった場合は削除
+			if (!iconOutputLeft && !attributes.scrollIconLeft) {
+				setAttributes({
+					scrollIconLeft: 'fa-solid fa-caret-left',
+				});
+			} else if (iconOutputLeft) {
+				setAttributes({
+					scrollIconLeft: '',
+				});
+			}
 		} else if (position === 'right') {
 			setIconOutputRight(!iconOutputRight);
-			setAttributes({
-				scrollIconRight: !iconOutputRight
-					? 'fa-solid fa-caret-right'
-					: '',
-			});
+
+			// トグルがONになった場合にデフォルトアイコンを設定、OFFになった場合は削除
+			if (!iconOutputRight && !attributes.scrollIconRight) {
+				setAttributes({
+					scrollIconRight: 'fa-solid fa-caret-right',
+				});
+			} else if (iconOutputRight) {
+				setAttributes({
+					scrollIconRight: '',
+				});
+			}
 		}
 	};
 

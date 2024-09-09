@@ -107,6 +107,8 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Breadcrumb(Pro) ] Add breadcrumb settings now work with Vektor Inc. theme products.
+[ Add function ][ Classic FAQ / New FAQ ] Support structured data.
+[ Add Function ] Add a mode to extract class name for Font awesome icon.
 [ Add function ] Added support for custom CSS including pseudo-elements.
 [ Bug fix ][ Grid Column Card ] Fix infinite loop in grid column card block when used in reusable blocks.
 [ Add function ][ Column ] Add toolbar link for components.

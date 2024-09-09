@@ -107,6 +107,8 @@ e.g.
 == Changelog ==
  
 [ Add function ][ Core Table ] Add scroll hint for horizontal scrolling.
+[ Add function ] Added support for custom CSS including pseudo-elements.
+[ Bug fix ][ Grid Column Card ] Fix infinite loop in grid column card block when used in reusable blocks.
 [ Add function ][ Column ] Add toolbar link for components.
 
 = 1.83.0 =

@@ -191,6 +191,7 @@ class Vk_Blocks_PostList {
 
 		$args = array(
 			'post_type'              => $is_checked_post_type,
+			// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
 			'tax_query'              => ! empty( $is_checked_terms ) ? self::format_terms( $tax_query_relation, $is_checked_terms, $is_checked_post_type ) : array(),
 			'paged'                  => $paged,
 			// 0で全件取得

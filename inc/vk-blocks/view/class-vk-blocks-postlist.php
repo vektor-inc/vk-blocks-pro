@@ -21,7 +21,7 @@ class Vk_Blocks_PostList {
 	 */
 	public static function render_post_list( $attributes, $wp_query, $options_loop ) {
 		if ( ! empty( $attributes['className'] ) ) {
-			$options_loop['class_loop_outer'] .= ' ' . $attributes['className'];
+			$options_loop['class_loop_outer'] .= ' ' . esc_attr( $attributes['className'] );
 		}
 
 		if ( ! isset( $wp_query ) || false === $wp_query || 'false' === $wp_query || empty( $wp_query->posts ) ) {
@@ -38,7 +38,7 @@ class Vk_Blocks_PostList {
 			'display_new'                => esc_html( $attributes['display_new'] ),
 			'display_taxonomies'         => esc_html( $attributes['display_taxonomies'] ),
 			'display_btn'                => esc_html( $attributes['display_btn'] ),
-			'image_default_url'          => VK_BLOCKS_URL . 'images/no-image.png',
+			'image_default_url'          => esc_url( VK_BLOCKS_URL . 'images/no-image.png' ),
 			'overlay'                    => false,
 			'new_text'                   => esc_html( $attributes['new_text'] ),
 			'new_date'                   => esc_html( $attributes['new_date'] ),
@@ -54,16 +54,16 @@ class Vk_Blocks_PostList {
 			'class_title'                => '',
 			'body_prepend'               => '',
 			'body_append'                => '',
-			'vkb_hidden'                 => $attributes['vkb_hidden'],
-			'vkb_hidden_xxl'             => $attributes['vkb_hidden_xxl'],
-			'vkb_hidden_xl'              => $attributes['vkb_hidden_xl'],
-			'vkb_hidden_xl_v2'           => $attributes['vkb_hidden_xl_v2'],
-			'vkb_hidden_lg'              => $attributes['vkb_hidden_lg'],
-			'vkb_hidden_md'              => $attributes['vkb_hidden_md'],
-			'vkb_hidden_sm'              => $attributes['vkb_hidden_sm'],
-			'vkb_hidden_xs'              => $attributes['vkb_hidden_xs'],
-			'marginTop'                  => $attributes['marginTop'],
-			'marginBottom'               => $attributes['marginBottom'],
+			'vkb_hidden'                 => isset( $attributes['vkb_hidden'] ) ? esc_attr( $attributes['vkb_hidden'] ) : '',
+			'vkb_hidden_xxl'             => isset( $attributes['vkb_hidden_xxl'] ) ? esc_attr( $attributes['vkb_hidden_xxl'] ) : '',
+			'vkb_hidden_xl'              => isset( $attributes['vkb_hidden_xl'] ) ? esc_attr( $attributes['vkb_hidden_xl'] ) : '',
+			'vkb_hidden_xl_v2'           => isset( $attributes['vkb_hidden_xl_v2'] ) ? esc_attr( $attributes['vkb_hidden_xl_v2'] ) : '',
+			'vkb_hidden_lg'              => isset( $attributes['vkb_hidden_lg'] ) ? esc_attr( $attributes['vkb_hidden_lg'] ) : '',
+			'vkb_hidden_md'              => isset( $attributes['vkb_hidden_md'] ) ? esc_attr( $attributes['vkb_hidden_md'] ) : '',
+			'vkb_hidden_sm'              => isset( $attributes['vkb_hidden_sm'] ) ? esc_attr( $attributes['vkb_hidden_sm'] ) : '',
+			'vkb_hidden_xs'              => isset( $attributes['vkb_hidden_xs'] ) ? esc_attr( $attributes['vkb_hidden_xs'] ) : '',
+			'marginTop'                  => isset( $attributes['marginTop'] ) ? esc_attr( $attributes['marginTop'] ) : '',
+			'marginBottom'               => isset( $attributes['marginBottom'] ) ? esc_attr( $attributes['marginBottom'] ) : '',
 		);
 
 		$elm = VK_Component_Posts::get_loop( $wp_query, $options, $options_loop );
@@ -80,7 +80,7 @@ class Vk_Blocks_PostList {
 	 *
 	 * @return bool
 	 */
-	private static function is_array_exist( $arr ) {
+	private function is_array_exist( $arr ) {
 		if ( ! $arr ) {
 			return false;
 		}
@@ -188,26 +188,26 @@ class Vk_Blocks_PostList {
 			$paged = $wp_query->query_vars['paged'];
 		}
 		$args = array(
-			'post_type'      => $is_checked_post_type,
-			'tax_query'         => ! empty( $is_checked_terms ) ? self::format_terms( $tax_query_relation, $is_checked_terms, $is_checked_post_type ) : array(),
-			'paged'          => $paged,
+			'post_type'              => $is_checked_post_type,
+			'tax_query'              => ! empty( $is_checked_terms ) ? self::format_terms( $tax_query_relation, $is_checked_terms, $is_checked_post_type ) : array(),
+			'paged'                  => $paged,
 			// 0で全件取得
-			'posts_per_page' => intval( $attributes['numberPosts'] ),
-			'order'          => $attributes['order'],
-			'orderby'        => $attributes['orderby'],
-			'offset'         => $offset,
-			'post__not_in'   => $post__not_in,
-			'date_query' => $date_query,
+			'posts_per_page'         => intval( $attributes['numberPosts'] ),
+			'order'                  => $attributes['order'],
+			'orderby'                => $attributes['orderby'],
+			'offset'                 => $offset,
+			'post__not_in'           => $post__not_in,
+			'date_query'             => $date_query,
 			'update_post_meta_cache' => false,
-			'no_found_rows'  => true,
+			'no_found_rows'          => true,
+			// 'no_found_rows'  => ! ( isset( $attributes['pagination_display'] ) && $attributes['pagination_display'] ),
 		);
 		if ( ! empty( $date_query ) ) {
 			$args['date_query'] = $date_query;
 		}
 		$args = apply_filters( 'vk_blocks_post_list_query_args', $args, $attributes );
-		
-		return new WP_Query( $args );
 
+		return new WP_Query( $args );
 	}
 
 	/**

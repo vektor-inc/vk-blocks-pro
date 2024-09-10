@@ -244,7 +244,6 @@ const LinkToolbar = ({
 		// その他のリンクは http:// を付加する
 		return 'http://' + url;
 	};
-	
 
 	const handleEditLinkClick = () => {
 		setIsEditingLink(!isEditingLink);

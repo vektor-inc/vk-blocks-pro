@@ -112,7 +112,6 @@ e.g.
 [ Add function ] Added support for custom CSS including pseudo-elements.
 [ Add function ][ Column ] Add toolbar link for components.
 [ Specification Change ][ Link toolbar ] Fix to prevent adding http:// or https:// when a relative path is entered.
-[ Bug fix ][ Grid Column Card ] Fix infinite loop in grid column card block when used in reusable blocks.
 
 = 1.83.0 =
 [ Add Function ][ Alert ] Add icon setting and inner block.

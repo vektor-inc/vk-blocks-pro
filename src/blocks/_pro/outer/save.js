@@ -225,7 +225,7 @@ export default function save(props) {
 			rel={relAttribute || undefined}
 			aria-label={linkDescription}
 		>
-			<span className="vk-link-description">{linkDescription}</span>
+			<span className="visually-hidden">{linkDescription}</span>
 		</a>
 	) : null;
 

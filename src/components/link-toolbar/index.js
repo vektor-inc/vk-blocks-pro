@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { getBlockType } from '@wordpress/blocks';
 import {
 	ToolbarButton,
 	Dropdown,
@@ -7,7 +8,7 @@ import {
 	Tooltip,
 	TextControl,
 } from '@wordpress/components';
-import { URLInput } from '@wordpress/block-editor';
+import { URLInput, useBlockEditContext } from '@wordpress/block-editor';
 import { __, sprintf } from '@wordpress/i18n';
 import {
 	link,
@@ -119,11 +120,13 @@ const LinkToolbar = ({
 	setLinkUrl,
 	linkTarget,
 	setLinkTarget,
+	relAttribute,
+	setAttributes,
 	linkDescription,
 	setLinkDescription,
-	relAttribute, // relAttribute を受け取る
-	setAttributes, // setAttributes を受け取る
 }) => {
+	const { name: blockName } = useBlockEditContext();
+	const [defaultDescription, setDefaultDescription] = useState('');
 	const [isOpen, setIsOpen] = useState(false);
 	const [linkTitle, setLinkTitle] = useState('');
 	const [icon, setIcon] = useState(null);
@@ -178,9 +181,6 @@ const LinkToolbar = ({
 				}
 			}
 		}
-	}, [linkUrl]);
-
-	useEffect(() => {
 		setSubmitDisabled(!linkUrl || linkUrl.trim() === '');
 	}, [linkUrl]);
 
@@ -194,8 +194,8 @@ const LinkToolbar = ({
 
 	const handleRemove = () => {
 		setLinkUrl('');
-		setLinkTarget('_self'); // リセット時は _self に設定
-		setLinkDescription(''); // link descriptionのリセット
+		setLinkTarget('_self');
+		setLinkDescription('');
 		setIsOpen(false);
 	};
 
@@ -267,6 +267,18 @@ const LinkToolbar = ({
 		}
 		setAttributes({ relAttribute: updatedRel });
 	};
+
+	useEffect(() => {
+		// ブロック名をもとにリンク説明を設定
+		if (blockName) {
+			const blockType = getBlockType(blockName); // ブロックタイプ情報を取得
+			const blockTitle =
+				blockType?.title || __('Default link', 'vk-blocks-pro'); // ブロックのタイトルかデフォルト値
+			setDefaultDescription(
+				`${blockTitle} ${__('link', 'vk-blocks-pro')}`
+			);
+		}
+	}, [blockName]);
 
 	return (
 		<>
@@ -389,10 +401,25 @@ const LinkToolbar = ({
 										'Accessibility link description',
 										'vk-blocks-pro'
 									)}
-									value={linkDescription}
-									onChange={(value) =>
-										setLinkDescription(value)
-									}
+									value={
+										linkDescription === defaultDescription
+											? ''
+											: linkDescription
+									} // デフォルト説明の時は空に見せる
+									onChange={(value) => {
+										// 入力があればそれを保存、なければデフォルトに戻す
+										setLinkDescription(
+											value || defaultDescription
+										);
+									}}
+									onBlur={() => {
+										// 空にした場合、フォーカスが外れた時にデフォルト説明に戻す
+										if (linkDescription.trim() === '') {
+											setLinkDescription(
+												defaultDescription
+											);
+										}
+									}}
 								/>
 							</div>
 						)}

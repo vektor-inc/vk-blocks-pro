@@ -199,7 +199,7 @@ class Vk_Blocks_PostList {
 			'order'                  => $attributes['order'],
 			'orderby'                => $attributes['orderby'],
 			'offset'                 => $offset,
-			'post__not_in'           => $post__not_in,
+			'post__not_in'           => array_map( 'intval', $post__not_in ),
 			'date_query'             => $date_query,
 			'update_post_meta_cache' => false,
 			'no_found_rows'          => true,

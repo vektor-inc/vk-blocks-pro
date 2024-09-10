@@ -368,7 +368,10 @@ const LinkToolbar = ({
 						{isEditingLink && (
 							<div>
 								<CheckboxControl
-									label={__('Add no referrer', 'vk-blocks-pro')}
+									label={__(
+										'Add noreferrer',
+										'vk-blocks-pro'
+									)}
 									checked={
 										relAttribute?.includes('noreferrer') ||
 										false
@@ -378,7 +381,7 @@ const LinkToolbar = ({
 									}}
 								/>
 								<CheckboxControl
-									label={__('Add no follow', 'vk-blocks-pro')}
+									label={__('Add nofollow', 'vk-blocks-pro')}
 									checked={
 										relAttribute?.includes('nofollow') ||
 										false

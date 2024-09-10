@@ -644,6 +644,52 @@ $xxl-min: 1400px;
 }
 
 /*-------------------------------------------*/
+/* link-toolbarのリンク
+/*-------------------------------------------*/
+@mixin vk-link-toolbar {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		color: transparent;
+		cursor: pointer;
+		text-decoration: none;
+		z-index: 10;
+		.vk-link-description {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			padding: 0;
+			margin: -1px;
+			overflow: hidden;
+			clip: rect(0, 0, 0, 0);
+			border: 0;
+		}
+	}
+
+.wp-block {
+	/* Outerブロック */
+	&-vk-blocks-outer {
+		& > .vkb-outer-link {
+			@include vk-link-toolbar
+		}
+	}
+	/* カバーブロック */
+	&-cover {
+		// リンク設定
+		&.has-link {
+			position: relative;
+		}
+		&.vk-link {
+			@include vk-link-toolbar
+		}
+	}
+}
+
+
+
+/*-------------------------------------------*/
 /* カラム
 /*-------------------------------------------*/
 .wp-block-columns {
@@ -654,47 +700,20 @@ $xxl-min: 1400px;
 	/* リンク設定 */
 	&:has(.wp-block-column-vk-link) {
 		.wp-block-column {
+			position: relative;
 			> * {
 				&:first-of-type {
 					margin-top: 0;
 				}
 			}
-		}
-	}
-	.wp-block-column:has(.wp-block-column-vk-link) {
-		position: relative;
-		.wp-block-column-vk-link {
-			position: absolute;
-			top: 0; 
-			left: 0;
-			width: 100%;
-			height: 100%;
-			color: transparent;
-			cursor: pointer;
-			z-index: 10;
 			> p {
 				line-height: var(--vk-line-height); // 自動で入るコアの .is-layout-flow CSSに負けるため
-			}
+			}	
 		}
 	}
-}
-
-/*-------------------------------------------*/
-/* カバーブロック
-/*-------------------------------------------*/
-.wp-block-cover {
-	// リンク設定
-	&.has-link {
-		position: relative;
-	}
-	&-vk-link {
-		position: absolute;
-		top: 0; 
-		left: 0;
-		width: 100%;
-		height: 100%;
-		color: transparent;
-		cursor: pointer;
-		z-index: 10;
+	.wp-block-column {
+		&.vk-link {
+			@include vk-link-toolbar
+		}
 	}
 }

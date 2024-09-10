@@ -188,7 +188,7 @@ class Vk_Blocks_PostList {
 		} elseif ( isset( $wp_query->query_vars['paged'] ) ) {
 			$paged = $wp_query->query_vars['paged'];
 		}
-		
+
 		$args = array(
 			'post_type'              => $is_checked_post_type,
 			'tax_query'              => ! empty( $is_checked_terms ) ? self::format_terms( $tax_query_relation, $is_checked_terms, $is_checked_post_type ) : array(),
@@ -203,7 +203,7 @@ class Vk_Blocks_PostList {
 			'update_post_meta_cache' => false,
 			'no_found_rows'          => true,
 		);
-		
+
 		if ( ! empty( $date_query ) ) {
 			$args['date_query'] = $date_query;
 		}

@@ -229,17 +229,22 @@ const LinkToolbar = ({
 		}
 	};
 
+	// URLのフォーマット関数を更新
 	const formatUrl = (url) => {
+		// 絶対パス・相対パス・アンカーリンクであればそのまま返す
 		if (
 			url.startsWith('http://') ||
 			url.startsWith('https://') ||
+			url.startsWith('/') ||
 			url.startsWith('#') ||
 			url === ''
 		) {
 			return url;
 		}
+		// その他のリンクは http:// を付加する
 		return 'http://' + url;
 	};
+	
 
 	const handleEditLinkClick = () => {
 		setIsEditingLink(!isEditingLink);

@@ -717,3 +717,55 @@ $xxl-min: 1400px;
 		}
 	}
 }
+
+/*-------------------------------------------*/
+/* パンくずリスト
+/*-------------------------------------------*/
+/* セパレーター設定 */
+.vk_breadcrumb_list_item.has-separator:after,
+.breadcrumb-list li.has-separator:after,
+.breadSection .breadcrumb > li + li.has-separator:before {
+    visibility: hidden;
+}
+
+.vk_breadcrumb_list_item.has-separator:after,
+.breadcrumb-list li.has-separator:after,
+.breadSection .breadcrumb > li + li.has-separator:before {
+    visibility: hidden;
+}
+
+.p-breadcrumbs li+li.has-separator:before {
+	content: none;
+}
+
+.vk_breadcrumb_list_item.has-separator:not(:last-child).loaded:after,
+.breadcrumb-list li:not(:last-child).has-separator.loaded:after,
+.breadSection .breadcrumb > li + li.has-separator.loaded:before {
+    visibility: visible;
+}
+
+/*-------------------------------------------*/
+/* パンくずリスト
+/*-------------------------------------------*/
+/* セパレーター設定 */
+.vk_breadcrumb_list_item.has-separator:after,
+.breadcrumb-list li.has-separator:after,
+.breadSection .breadcrumb > li + li.has-separator:before {
+    visibility: hidden;
+}
+
+.vk_breadcrumb_list_item.has-separator:after,
+.breadcrumb-list li.has-separator:after,
+.breadSection .breadcrumb > li + li.has-separator:before {
+    visibility: hidden;
+}
+
+.p-breadcrumbs li+li.has-separator:before {
+	content: none;
+}
+
+.vk_breadcrumb_list_item.has-separator:not(:last-child).loaded:after,
+.breadcrumb-list li:not(:last-child).has-separator.loaded:after,
+.breadSection .breadcrumb > li + li.has-separator.loaded:before {
+    visibility: visible;
+}

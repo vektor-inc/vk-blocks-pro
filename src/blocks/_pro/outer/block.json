@@ -141,9 +141,18 @@
 			"default": "px"
 		},
 		"linkUrl": {
-			"type": "string"
+			"type": "string",
+			"default": ""
 		},
 		"linkTarget": {
+			"type": "string",
+			"default": "_self"
+		},
+		"relAttribute": {
+			"type": "string",
+			"default": ""
+		},
+		"linkDescription": {
 			"type": "string",
 			"default": ""
 		},

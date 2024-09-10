@@ -9,13 +9,22 @@ import {
 } from '@wordpress/components';
 import { URLInput } from '@wordpress/block-editor';
 import { __, sprintf } from '@wordpress/i18n';
-import { link, linkOff, keyboardReturn, globe, copy, edit } from '@wordpress/icons';
+import {
+	link,
+	linkOff,
+	keyboardReturn,
+	globe,
+	copy,
+	edit,
+} from '@wordpress/icons';
 
 const LinkPreview = ({
 	linkUrl,
 	linkTitle,
 	icon,
 	linkTarget,
+	relAttribute,
+	linkDescription,
 	onRemove,
 	onCopy,
 	onEditLinkClick,
@@ -40,7 +49,8 @@ const LinkPreview = ({
 							className="components-external-link block-editor-link-control__search-item-title"
 							href={displayURL}
 							target={linkTarget}
-							rel="noopener noreferrer"
+							rel={relAttribute?.trim() || undefined} // 余分なスペースを削除
+							aria-label={linkDescription}
 						>
 							<span
 								data-wp-c16t="true"
@@ -83,7 +93,10 @@ const LinkPreview = ({
 					</button>
 				</Tooltip>
 				<Tooltip
-					text={sprintf(__('Copy link: %s', 'vk-blocks-pro'), linkUrl)}
+					text={sprintf(
+						__('Copy link: %s', 'vk-blocks-pro'),
+						linkUrl
+					)}
 				>
 					<button
 						type="button"
@@ -101,17 +114,22 @@ const LinkPreview = ({
 	);
 };
 
-const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
+const LinkToolbar = ({
+	linkUrl,
+	setLinkUrl,
+	linkTarget,
+	setLinkTarget,
+	linkDescription,
+	setLinkDescription,
+	relAttribute, // relAttribute を受け取る
+	setAttributes, // setAttributes を受け取る
+}) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [linkTitle, setLinkTitle] = useState('');
 	const [icon, setIcon] = useState(null);
 	const [isSnackbarVisible, setSnackbarVisible] = useState(false);
 	const [isSubmitDisabled, setSubmitDisabled] = useState(true);
 	const [ariaMessage, setAriaMessage] = useState('');
-
-	// 統合された状態を追加
-	const [linkDescription, setLinkDescription] = useState('');
-	const [relAttribute, setRelAttribute] = useState('');
 	const [isEditingLink, setIsEditingLink] = useState(false);
 
 	useEffect(() => {
@@ -176,7 +194,8 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 
 	const handleRemove = () => {
 		setLinkUrl('');
-		setLinkTarget('');
+		setLinkTarget('_self'); // リセット時は _self に設定
+		setLinkDescription(''); // link descriptionのリセット
 		setIsOpen(false);
 	};
 
@@ -186,7 +205,9 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 			window.navigator.clipboard
 				.writeText(formattedUrl)
 				.then(() => {
-					setAriaMessage(__('Link copied to clipboard.', 'vk-blocks-pro'));
+					setAriaMessage(
+						__('Link copied to clipboard.', 'vk-blocks-pro')
+					);
 					setSnackbarVisible(true);
 					setTimeout(() => setSnackbarVisible(false), 3000);
 				})
@@ -231,22 +252,26 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 	};
 
 	const handleSaveEdit = () => {
-		// リンク URL の保存
 		setLinkUrl(linkUrl);
-		// リンクの説明と rel 属性の保存
-		setRelAttribute(relAttribute);
 		setLinkDescription(linkDescription);
-		setIsEditingLink(false); // 編集モードを終了する
+		setIsEditingLink(false);
 	};
 
-	// リンクを新しいタブで開くかどうかをチェックし、rel属性を更新
-	const handleLinkTargetChange = (checked) => {
-		setLinkTarget(checked ? '_blank' : '');
+	const handleRelChange = (type, checked) => {
+		let updatedRel = relAttribute || '';
 		if (checked) {
-			setRelAttribute('noopener noreferrer');
+			// 新しいタイプを追加
+			if (!updatedRel.includes(type)) {
+				updatedRel = `${updatedRel} ${type}`.trim();
+			}
 		} else {
-			setRelAttribute('');
+			// チェックが外れた場合、タイプを削除
+			updatedRel = updatedRel
+				.replace(type, '')
+				.replace(/\s+/g, ' ')
+				.trim();
 		}
+		setAttributes({ relAttribute: updatedRel });
 	};
 
 	return (
@@ -282,6 +307,8 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 								linkTitle={linkTitle}
 								icon={icon}
 								linkTarget={linkTarget}
+								relAttribute={relAttribute}
+								linkDescription={linkDescription}
 								onRemove={handleRemove}
 								onCopy={handleCopy}
 								onEditLinkClick={handleEditLinkClick}
@@ -308,24 +335,67 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 								/>
 							</div>
 							<CheckboxControl
-								label={__('Open link new tab.', 'vk-blocks-pro')}
+								label={__(
+									'Open link new tab.',
+									'vk-blocks-pro'
+								)}
 								checked={linkTarget === '_blank'}
-								onChange={handleLinkTargetChange} // 新しいハンドラーを使用
+								onChange={(checked) => {
+									setLinkTarget(checked ? '_blank' : '_self');
+									if (
+										checked &&
+										!relAttribute.includes('noopener')
+									) {
+										setAttributes({
+											relAttribute:
+												`${relAttribute} noopener`.trim(),
+										});
+									}
+									if (
+										checked &&
+										!relAttribute.includes('noreferrer')
+									) {
+										setAttributes({
+											relAttribute:
+												`${relAttribute} noreferrer`.trim(),
+										});
+									}
+								}}
 							/>
 						</form>
 
 						{/* 編集モードの表示 */}
 						{isEditingLink && (
 							<div>
-								<TextControl
-									label={__('Rel Attribute', 'vk-blocks-pro')}
-									value={relAttribute}
-									onChange={(value) => setRelAttribute(value)}
+								<CheckboxControl
+									label={__('Add no referrer', 'vk-blocks-pro')}
+									checked={
+										relAttribute?.includes('noreferrer') ||
+										false
+									}
+									onChange={(checked) => {
+										handleRelChange('noreferrer', checked);
+									}}
+								/>
+								<CheckboxControl
+									label={__('Add no follow', 'vk-blocks-pro')}
+									checked={
+										relAttribute?.includes('nofollow') ||
+										false
+									}
+									onChange={(checked) => {
+										handleRelChange('nofollow', checked);
+									}}
 								/>
 								<TextControl
-									label={__('Link Description', 'vk-blocks-pro')} // aria-labelとhidden textの統合
+									label={__(
+										'Link Description',
+										'vk-blocks-pro'
+									)}
 									value={linkDescription}
-									onChange={(value) => setLinkDescription(value)}
+									onChange={(value) =>
+										setLinkDescription(value)
+									}
 								/>
 								<Button isPrimary onClick={handleSaveEdit}>
 									{__('Save', 'vk-blocks-pro')}

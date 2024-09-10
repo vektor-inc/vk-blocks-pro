@@ -74,8 +74,6 @@ export default function OuterEdit(props) {
 		minHeightValueTablet,
 		minHeightValueMobile,
 		minHeightUnit,
-		linkUrl,
-		linkTarget,
 		blockId,
 	} = attributes;
 
@@ -205,7 +203,6 @@ export default function OuterEdit(props) {
 	);
 
 	//幅のクラス切り替え
-	// eslint-disable-next-line prefer-const
 	const classWidth =
 		outerWidth === 'full' || outerWidth === 'wide'
 			? `vk_outer-width-${outerWidth} align${outerWidth}`
@@ -409,13 +406,14 @@ export default function OuterEdit(props) {
 				/>
 				<ToolbarGroup>
 					<LinkToolbar
-						linkUrl={linkUrl}
+						linkUrl={attributes.linkUrl}
 						setLinkUrl={(url) => setAttributes({ linkUrl: url })}
-						linkTarget={linkTarget}
-						setLinkTarget={(target) =>
-							setAttributes({ linkTarget: target })
-						}
-						aria-label={__('Outer link', 'vk-blocks-pro')}
+						linkTarget={attributes.linkTarget}
+						setLinkTarget={(target) => setAttributes({ linkTarget: target })}
+						linkDescription={attributes.linkDescription}
+						setLinkDescription={(desc) => setAttributes({ linkDescription: desc })}
+						relAttribute={attributes.relAttribute}
+						setAttributes={setAttributes}
 					/>
 				</ToolbarGroup>
 			</BlockControls>

@@ -242,19 +242,13 @@ const LinkToolbar = ({
 	};
 
 	const handleEditLinkClick = () => {
-		setIsEditingLink(!isEditingLink); // 編集モードを切り替える
+		setIsEditingLink(!isEditingLink);
 	};
 
 	const handleSubmit = () => {
 		if (linkUrl) {
 			setLinkUrl(formatUrl(linkUrl));
 		}
-	};
-
-	const handleSaveEdit = () => {
-		setLinkUrl(linkUrl);
-		setLinkDescription(linkDescription);
-		setIsEditingLink(false);
 	};
 
 	const handleRelChange = (type, checked) => {
@@ -392,7 +386,7 @@ const LinkToolbar = ({
 								/>
 								<TextControl
 									label={__(
-										'Link Description',
+										'Accessibility link description',
 										'vk-blocks-pro'
 									)}
 									value={linkDescription}
@@ -400,9 +394,6 @@ const LinkToolbar = ({
 										setLinkDescription(value)
 									}
 								/>
-								<Button isPrimary onClick={handleSaveEdit}>
-									{__('Save', 'vk-blocks-pro')}
-								</Button>
 							</div>
 						)}
 					</div>

@@ -20,6 +20,7 @@ class Vk_Blocks_PostList {
 	 * @return string
 	 */
 	public static function render_post_list( $attributes, $wp_query, $options_loop ) {
+
 		if ( ! empty( $attributes['className'] ) ) {
 			$options_loop['class_loop_outer'] .= ' ' . esc_attr( $attributes['className'] );
 		}
@@ -187,6 +188,7 @@ class Vk_Blocks_PostList {
 		} elseif ( isset( $wp_query->query_vars['paged'] ) ) {
 			$paged = $wp_query->query_vars['paged'];
 		}
+		
 		$args = array(
 			'post_type'              => $is_checked_post_type,
 			'tax_query'              => ! empty( $is_checked_terms ) ? self::format_terms( $tax_query_relation, $is_checked_terms, $is_checked_post_type ) : array(),
@@ -200,8 +202,8 @@ class Vk_Blocks_PostList {
 			'date_query'             => $date_query,
 			'update_post_meta_cache' => false,
 			'no_found_rows'          => true,
-			// 'no_found_rows'  => ! ( isset( $attributes['pagination_display'] ) && $attributes['pagination_display'] ),
 		);
+		
 		if ( ! empty( $date_query ) ) {
 			$args['date_query'] = $date_query;
 		}

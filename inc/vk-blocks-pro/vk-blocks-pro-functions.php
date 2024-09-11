@@ -29,14 +29,11 @@ function vk_blocks_pro_load_scripts() {
 	// Accordion Block
 	wp_enqueue_script( 'vk-blocks-accordion', VK_BLOCKS_DIR_URL . 'build/vk-accordion.min.js', array(), VK_BLOCKS_VERSION, true );
 
-	// Animation Block
-	wp_enqueue_script( 'vk-blocks-animation', VK_BLOCKS_DIR_URL . 'build/vk-animation.min.js', array(), VK_BLOCKS_VERSION, true );
-
-	// Breadcrumb Block
-	wp_enqueue_script( 'vk-blocks-breadcrumb', VK_BLOCKS_DIR_URL . 'build/vk-breadcrumb.min.js', array(), VK_BLOCKS_VERSION, true );
-
 	// Faq Block
 	wp_enqueue_script( 'vk-blocks-faq2', VK_BLOCKS_DIR_URL . 'build/vk-faq2.min.js', array(), VK_BLOCKS_VERSION, true );
+
+	// Animation Block
+	wp_enqueue_script( 'vk-blocks-animation', VK_BLOCKS_DIR_URL . 'build/vk-animation.min.js', array(), VK_BLOCKS_VERSION, true );
 
 	// Fixed Display Block
 	wp_enqueue_script( 'vk-blocks-fixed-display', VK_BLOCKS_DIR_URL . 'build/vk-fixed-display.min.js', array(), VK_BLOCKS_VERSION, true );

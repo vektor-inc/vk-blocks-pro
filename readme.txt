@@ -106,14 +106,17 @@ e.g.
 
 == Changelog ==
 
+<<<<<<< fix/post-list/pagination
 [ Bug fix ][ Breadcrumb(Pro) ] Fixed pagination customization in post list.
 [ Add function ][ Breadcrumb(Pro) ] Add breadcrumb settings now work with Vektor Inc. theme products.
+=======
+
+>>>>>>> develop
 [ Add function ][ Classic FAQ / New FAQ ] Support structured data.
 [ Add Function ] Add a mode to extract class name for Font awesome icon.
 [ Add function ] Added support for custom CSS including pseudo-elements.
 [ Add function ][ Column ] Add toolbar link for components.
 [ Specification Change ][ Link toolbar ] Fix to prevent adding http:// or https:// when a relative path is entered.
-[ Bug fix ][ Grid Column Card ] Fix infinite loop in grid column card block when used in reusable blocks.
 
 = 1.83.0 =
 [ Add Function ][ Alert ] Add icon setting and inner block.
@@ -255,7 +258,7 @@ e.g.
 
 = 1.70.0 =
 [ Specification Change ] core/social-link, core/site-logo, core/site-title and core/site-tagline correspond to margin-extension
-[ Add function ][ Breadcrumb(Pro) ] Add the ability to input breadcrumb separators.
+[ Add function ][ Breadcrumb ] Add the ability to input breadcrumb separators.
 
 = 1.69.1 =
 [ Bug fix ][ Inline Font Size ] Applies only Font Size has a numeric value.

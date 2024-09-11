@@ -107,6 +107,7 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Core Table ] Add scroll hint for horizontal scrolling.
+[ Bug fix ][ Post List(Pro) ] Fixed pagination customization in post list.
 [ Add function ][ Classic FAQ / New FAQ ] Support structured data.
 [ Add Function ] Add a mode to extract class name for Font awesome icon.
 [ Add function ] Added support for custom CSS including pseudo-elements.

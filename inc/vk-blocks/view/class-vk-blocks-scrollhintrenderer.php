@@ -59,54 +59,54 @@ class VK_Blocks_ScrollHintRenderer {
 	 * @param array $block The block data.
 	 * @return string The scroll hint HTML.
 	 */
-    public static function generate_scroll_hint( $block ) {
+	public static function generate_scroll_hint( $block ) {
 
-        // デフォルトの設定を一括で処理
-        $default_attrs = array(
-            'scrollMessageText'   => __( 'You can scroll', 'vk-blocks-pro' ),
-            'iconOutputLeft'      => true,
-            'iconOutputRight'     => true,
-            'scrollIconLeft'      => 'fa-solid fa-caret-left',
-            'scrollIconRight'     => 'fa-solid fa-caret-right',
-            'scrollBreakpoint'    => apply_filters( 'vk_blocks_default_scroll_breakpoint', 'table-scrollable-mobile', $block ),
-            'showScrollMessage'   => false,
-        );
+		// デフォルトの設定を一括で処理
+		$default_attrs = array(
+			'scrollMessageText' => __( 'You can scroll', 'vk-blocks-pro' ),
+			'iconOutputLeft'    => true,
+			'iconOutputRight'   => true,
+			'scrollIconLeft'    => 'fa-solid fa-caret-left',
+			'scrollIconRight'   => 'fa-solid fa-caret-right',
+			'scrollBreakpoint'  => apply_filters( 'vk_blocks_default_scroll_breakpoint', 'table-scrollable-mobile', $block ),
+			'showScrollMessage' => false,
+		);
 
-        // ブロックの属性をデフォルト設定で上書き
-        $attrs = wp_parse_args( $block['attrs'], $default_attrs );
+		// ブロックの属性をデフォルト設定で上書き
+		$attrs = wp_parse_args( $block['attrs'], $default_attrs );
 
-        // アイコンHTMLを生成
-        $left_icon_html  = $attrs['iconOutputLeft'] ? '<i class="' . esc_attr( $attrs['scrollIconLeft'] ) . '"></i>' : '';
-        $right_icon_html = $attrs['iconOutputRight'] ? '<i class="' . esc_attr( $attrs['scrollIconRight'] ) . '"></i>' : '';
+		// アイコンHTMLを生成
+		$left_icon_html  = $attrs['iconOutputLeft'] ? '<i class="' . esc_attr( $attrs['scrollIconLeft'] ) . '"></i>' : '';
+		$right_icon_html = $attrs['iconOutputRight'] ? '<i class="' . esc_attr( $attrs['scrollIconRight'] ) . '"></i>' : '';
 
-        // スクロールブレイクポイントをスペースで連結
-        $scroll_breakpoint_attr = implode( ' ', (array) $attrs['scrollBreakpoint'] );
+		// スクロールブレイクポイントをスペースで連結
+		$scroll_breakpoint_attr = implode( ' ', (array) $attrs['scrollBreakpoint'] );
 
-        // データ属性を組み立て
-        $attributes  = sprintf( 'data-scroll-breakpoint="%s"', esc_attr( $scroll_breakpoint_attr ) );
-        $attributes .= sprintf( ' data-output-scroll-message="%s"', $attrs['showScrollMessage'] ? 'true' : 'false' );
-        $attributes .= sprintf( ' data-icon-output-left="%s"', $attrs['iconOutputLeft'] ? 'true' : 'false' );
-        $attributes .= sprintf( ' data-icon-output-right="%s"', $attrs['iconOutputRight'] ? 'true' : 'false' );
+		// データ属性を組み立て
+		$attributes  = sprintf( 'data-scroll-breakpoint="%s"', esc_attr( $scroll_breakpoint_attr ) );
+		$attributes .= sprintf( ' data-output-scroll-message="%s"', $attrs['showScrollMessage'] ? 'true' : 'false' );
+		$attributes .= sprintf( ' data-icon-output-left="%s"', $attrs['iconOutputLeft'] ? 'true' : 'false' );
+		$attributes .= sprintf( ' data-icon-output-right="%s"', $attrs['iconOutputRight'] ? 'true' : 'false' );
 
-        // アイコンがある場合、data-hint-icon 属性を追加
-        if ( $attrs['iconOutputLeft'] && ! empty( $attrs['scrollIconLeft'] ) ) {
-            $attributes .= sprintf( ' data-hint-icon-left="%s"', esc_attr( $attrs['scrollIconLeft'] ) );
-        }
-        if ( $attrs['iconOutputRight'] && ! empty( $attrs['scrollIconRight'] ) ) {
-            $attributes .= sprintf( ' data-hint-icon-right="%s"', esc_attr( $attrs['scrollIconRight'] ) );
-        }
+		// アイコンがある場合、data-hint-icon 属性を追加
+		if ( $attrs['iconOutputLeft'] && ! empty( $attrs['scrollIconLeft'] ) ) {
+			$attributes .= sprintf( ' data-hint-icon-left="%s"', esc_attr( $attrs['scrollIconLeft'] ) );
+		}
+		if ( $attrs['iconOutputRight'] && ! empty( $attrs['scrollIconRight'] ) ) {
+			$attributes .= sprintf( ' data-hint-icon-right="%s"', esc_attr( $attrs['scrollIconRight'] ) );
+		}
 
-        // スクロールヒントのHTMLを生成して返す
-        return sprintf(
-            '<div class="vk-scroll-hint" %s>
-                %s
-                <span>%s</span>
-                %s
-            </div>',
-            $attributes,
-            $left_icon_html,
-            esc_html( $attrs['scrollMessageText'] ),
-            $right_icon_html
-        );
-    }
+		// スクロールヒントのHTMLを生成して返す
+		return sprintf(
+			'<div class="vk-scroll-hint" %s>
+				%s
+				<span>%s</span>
+				%s
+			</div>',
+			$attributes,
+			$left_icon_html,
+			esc_html( $attrs['scrollMessageText'] ),
+			$right_icon_html
+		);
+	}
 }

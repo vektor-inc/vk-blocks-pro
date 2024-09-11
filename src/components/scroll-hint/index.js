@@ -36,7 +36,7 @@ const ScrollMessageControls = ({
 			iconOutputLeft,
 			iconOutputRight,
 		});
-	}, [iconOutputLeft, iconOutputRight, setAttributes]);
+	}, [iconOutputLeft, iconOutputRight]);
 
 	const handleScrollMessageToggle = (isChecked) => {
 		setAttributes({ showScrollMessage: isChecked });

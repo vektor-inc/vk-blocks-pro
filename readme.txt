@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.3
 Tested up to: 6.6
-Stable tag: 1.82.0.1
+Stable tag: 1.83.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -106,12 +106,13 @@ e.g.
 
 == Changelog ==
 
-[ Add function ] Add a mode to extract class name for Font awesome icon.
-[ Add function ] Added support for custom CSS including pseudo-elements.
+= 1.84.0 =
 [ Add function ][ Column ] Add toolbar link for components.
 [ Specification change ][ Classic FAQ / New FAQ ] Support structured data.
-[ Specification change ][ Link toolbar ] Fix to prevent adding http:// or https:// when a relative path is entered.
+[ Bug fix ][ Link toolbar ] Fix to prevent adding http:// or https:// when a relative path is entered.
 [ Bug fix ][ Breadcrumb(Pro) ] Fixed pagination customization in post list.
+[ Other ] Add a mode to extract class name for Font awesome icon.
+[ Other ] Supports custom CSS including pseudo-elements even in block-by-block lazy loading mode.
 
 = 1.83.0 =
 [ Add function ][ Alert ] Add icon setting and inner block.

@@ -289,18 +289,18 @@ const LinkToolbar = ({
 	const handleTargetChange = (checked) => {
 		// ターゲットを設定
 		setLinkTarget(checked ? '_blank' : '_self');
-		
+
 		// rel 属性の更新処理
 		let updatedRel = relAttribute || '';
-		
+
 		// noopener がすでに含まれていない場合のみ追加
 		if (!updatedRel.includes('noopener')) {
 			updatedRel = `${updatedRel} noopener`.trim();
 		}
-	
+
 		// noopener を常に rel 属性に保持
 		setAttributes({ relAttribute: updatedRel });
-	};	
+	};
 
 	useEffect(() => {
 		// ブロック名をもとにリンク説明を設定
@@ -347,7 +347,11 @@ const LinkToolbar = ({
 								linkTitle={linkTitle}
 								icon={icon}
 								linkTarget={linkTarget}
-								relAttribute={(relAttribute || '').includes('noopener') ? relAttribute : `${relAttribute} noopener`.trim()}
+								relAttribute={
+									(relAttribute || '').includes('noopener')
+										? relAttribute
+										: `${relAttribute} noopener`.trim()
+								}
 								linkDescription={linkDescription}
 								defaultDescription={defaultDescription}
 								onRemove={handleRemove}

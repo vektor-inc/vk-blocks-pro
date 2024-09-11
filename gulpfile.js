@@ -76,10 +76,6 @@ gulp.task('helper-js-pro', (done) => {
 		.pipe(uglify())
 		.pipe(rename('vk-animation.min.js'))
 		.pipe(gulp.dest('./build/'));
-	gulp.src('src/blocks/_pro/breadcrumb/view.js')
-		.pipe(uglify())
-		.pipe(rename('vk-breadcrumb.min.js'))
-		.pipe(gulp.dest('./build/'));
 	gulp.src('src/blocks/_pro/fixed-display/view.js')
 		.pipe(uglify())
 		.pipe(rename('vk-fixed-display.min.js'))

@@ -222,11 +222,7 @@ export default function save(props) {
 			href={linkUrl}
 			className={`${prefix}-link`}
 			target={linkTarget}
-			rel={
-				linkTarget === '_blank'
-					? `${relAttribute ? relAttribute + ' ' : ''}noopener`
-					: relAttribute || undefined
-			}
+			rel={relAttribute || undefined}
 			aria-label={linkDescription}
 		>
 			<span className="visually-hidden">{linkDescription}</span>

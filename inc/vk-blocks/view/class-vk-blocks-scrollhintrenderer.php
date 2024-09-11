@@ -59,58 +59,54 @@ class VK_Blocks_ScrollHintRenderer {
 	 * @param array $block The block data.
 	 * @return string The scroll hint HTML.
 	 */
-	public static function generate_scroll_hint( $block ) {
-		$scroll_message_text = ! empty( $block['attrs']['scrollMessageText'] ) ? $block['attrs']['scrollMessageText'] : __( 'You can scroll', 'vk-blocks-pro' );
+    public static function generate_scroll_hint( $block ) {
 
-		// アイコン出力フラグの確認
-		$icon_output_left  = isset( $block['attrs']['iconOutputLeft'] ) ? filter_var( $block['attrs']['iconOutputLeft'], FILTER_VALIDATE_BOOLEAN ) : true;
-		$icon_output_right = isset( $block['attrs']['iconOutputRight'] ) ? filter_var( $block['attrs']['iconOutputRight'], FILTER_VALIDATE_BOOLEAN ) : true;
+        // デフォルトの設定を一括で処理
+        $default_attrs = array(
+            'scrollMessageText'   => __( 'You can scroll', 'vk-blocks-pro' ),
+            'iconOutputLeft'      => true,
+            'iconOutputRight'     => true,
+            'scrollIconLeft'      => 'fa-solid fa-caret-left',
+            'scrollIconRight'     => 'fa-solid fa-caret-right',
+            'scrollBreakpoint'    => apply_filters( 'vk_blocks_default_scroll_breakpoint', 'table-scrollable-mobile', $block ),
+            'showScrollMessage'   => false,
+        );
 
-		// クラス名は直接使用
-		$scroll_icon_left_class  = ! empty( $block['attrs']['scrollIconLeft'] ) ? $block['attrs']['scrollIconLeft'] : 'fa-solid fa-caret-left';
-		$scroll_icon_right_class = ! empty( $block['attrs']['scrollIconRight'] ) ? $block['attrs']['scrollIconRight'] : 'fa-solid fa-caret-right';
+        // ブロックの属性をデフォルト設定で上書き
+        $attrs = wp_parse_args( $block['attrs'], $default_attrs );
 
-		$default_breakpoint = apply_filters( 'vk_blocks_default_scroll_breakpoint', 'table-scrollable-mobile', $block );
-		$scroll_breakpoints = ! empty( $block['attrs']['scrollBreakpoint'] ) ? $block['attrs']['scrollBreakpoint'] : $default_breakpoint;
+        // アイコンHTMLを生成
+        $left_icon_html  = $attrs['iconOutputLeft'] ? '<i class="' . esc_attr( $attrs['scrollIconLeft'] ) . '"></i>' : '';
+        $right_icon_html = $attrs['iconOutputRight'] ? '<i class="' . esc_attr( $attrs['scrollIconRight'] ) . '"></i>' : '';
 
-		$scroll_breakpoint_attr = implode( ' ', (array) $scroll_breakpoints );
+        // スクロールブレイクポイントをスペースで連結
+        $scroll_breakpoint_attr = implode( ' ', (array) $attrs['scrollBreakpoint'] );
 
-		// クラス名が存在する場合のみアイコンを表示
-		$left_icon_html  = $icon_output_left ? '<i class="' . esc_attr( $scroll_icon_left_class ) . '"></i>' : '';
-		$right_icon_html = $icon_output_right ? '<i class="' . esc_attr( $scroll_icon_right_class ) . '"></i>' : '';
+        // データ属性を組み立て
+        $attributes  = sprintf( 'data-scroll-breakpoint="%s"', esc_attr( $scroll_breakpoint_attr ) );
+        $attributes .= sprintf( ' data-output-scroll-message="%s"', $attrs['showScrollMessage'] ? 'true' : 'false' );
+        $attributes .= sprintf( ' data-icon-output-left="%s"', $attrs['iconOutputLeft'] ? 'true' : 'false' );
+        $attributes .= sprintf( ' data-icon-output-right="%s"', $attrs['iconOutputRight'] ? 'true' : 'false' );
 
-		// スクロールメッセージ出力フラグの確認
-		$output_scroll_message = isset( $block['attrs']['showScrollMessage'] ) ? filter_var( $block['attrs']['showScrollMessage'], FILTER_VALIDATE_BOOLEAN ) : false;
+        // アイコンがある場合、data-hint-icon 属性を追加
+        if ( $attrs['iconOutputLeft'] && ! empty( $attrs['scrollIconLeft'] ) ) {
+            $attributes .= sprintf( ' data-hint-icon-left="%s"', esc_attr( $attrs['scrollIconLeft'] ) );
+        }
+        if ( $attrs['iconOutputRight'] && ! empty( $attrs['scrollIconRight'] ) ) {
+            $attributes .= sprintf( ' data-hint-icon-right="%s"', esc_attr( $attrs['scrollIconRight'] ) );
+        }
 
-		// データ属性の設定
-		$attributes = sprintf( 'data-scroll-breakpoint="%s"', esc_attr( $scroll_breakpoint_attr ) );
-
-		// スクロールメッセージの出力フラグに基づいてdata属性を設定
-		$attributes .= sprintf( ' data-output-scroll-message="%s"', $output_scroll_message ? 'true' : 'false' );
-
-		// アイコンの出力フラグに基づいてdata属性を設定
-		$attributes .= sprintf( ' data-icon-output-left="%s"', $icon_output_left ? 'true' : 'false' );
-		$attributes .= sprintf( ' data-icon-output-right="%s"', $icon_output_right ? 'true' : 'false' );
-
-		// アイコンの出力フラグが true の場合のみ、data-hint-icon を追加
-		if ( $icon_output_left && ! empty( $scroll_icon_left_class ) ) {
-			$attributes .= sprintf( ' data-hint-icon-left="%s"', esc_attr( $scroll_icon_left_class ) );
-		}
-
-		if ( $icon_output_right && ! empty( $scroll_icon_right_class ) ) {
-			$attributes .= sprintf( ' data-hint-icon-right="%s"', esc_attr( $scroll_icon_right_class ) );
-		}
-
-		return sprintf(
-			'<div class="vk-scroll-hint" %s>
-				%s
-				<span>%s</span>
-				%s
-			</div>',
-			$attributes,
-			$left_icon_html,
-			esc_html( $scroll_message_text ),
-			$right_icon_html
-		);
-	}
+        // スクロールヒントのHTMLを生成して返す
+        return sprintf(
+            '<div class="vk-scroll-hint" %s>
+                %s
+                <span>%s</span>
+                %s
+            </div>',
+            $attributes,
+            $left_icon_html,
+            esc_html( $attrs['scrollMessageText'] ),
+            $right_icon_html
+        );
+    }
 }

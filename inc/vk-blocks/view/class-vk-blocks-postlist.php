@@ -179,6 +179,7 @@ class Vk_Blocks_PostList {
 		}
 
 		global $wp_query;
+		// とりあえず１を入れつつ2ページ目の情報があったら上書き
 		$paged = 1;
 		if ( ! empty( $attributes['pagedlock'] ) ) {
 			$paged = 1;
@@ -189,21 +190,26 @@ class Vk_Blocks_PostList {
 		}
 
 		$args = array(
+			'post_type'              => $is_checked_post_type,
 			// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
 			'tax_query'              => ! empty( $is_checked_terms ) ? self::format_terms( $tax_query_relation, $is_checked_terms, $is_checked_post_type ) : array(),
-			'post_type'              => $is_checked_post_type,
 			'paged'                  => $paged,
+			// 0で全件取得
 			'posts_per_page'         => intval( $attributes['numberPosts'] ),
 			'order'                  => $attributes['order'],
 			'orderby'                => $attributes['orderby'],
+			'offset'                 => $offset,
 			'post__not_in'           => array_map( 'intval', $post__not_in ),
 			'date_query'             => $date_query,
 			'update_post_meta_cache' => false,
 			'no_found_rows'          => true,
-			'offset'                 => $offset,
 		);
 
-		// クエリ実行
+		if ( ! empty( $date_query ) ) {
+			$args['date_query'] = $date_query;
+		}
+		$args = apply_filters( 'vk_blocks_post_list_query_args', $args, $attributes );
+
 		return new WP_Query( $args );
 	}
 

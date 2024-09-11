@@ -106,7 +106,12 @@ e.g.
 
 == Changelog ==
 
+<<<<<<< fix/post-list/pagination
+[ Bug fix ][ Breadcrumb(Pro) ] Fixed pagination customization in post list.
+[ Add function ][ Breadcrumb(Pro) ] Add breadcrumb settings now work with Vektor Inc. theme products.
+=======
 
+>>>>>>> develop
 [ Add function ][ Classic FAQ / New FAQ ] Support structured data.
 [ Add Function ] Add a mode to extract class name for Font awesome icon.
 [ Add function ] Added support for custom CSS including pseudo-elements.

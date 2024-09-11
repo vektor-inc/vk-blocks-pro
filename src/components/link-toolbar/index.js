@@ -351,25 +351,28 @@ const LinkToolbar = ({
 								)}
 								checked={linkTarget === '_blank'}
 								onChange={(checked) => {
+									// ターゲットを設定
 									setLinkTarget(checked ? '_blank' : '_self');
-									if (
-										checked &&
-										!relAttribute.includes('noopener')
-									) {
-										setAttributes({
-											relAttribute:
-												`${relAttribute} noopener`.trim(),
-										});
+
+									// rel 属性の更新処理
+									let updatedRel = relAttribute || '';
+
+									if (checked) {
+										// target="_blank" の場合、必ず "noopener" を追加
+										if (!updatedRel.includes('noopener')) {
+											updatedRel =
+												`${updatedRel} noopener`.trim();
+										}
+									} else {
+										// target="_self" の場合、"noopener" を削除
+										updatedRel = updatedRel
+											.replace('noopener', '')
+											.replace(/\s+/g, ' ') // 余分なスペースを削除
+											.trim();
 									}
-									if (
-										checked &&
-										!relAttribute.includes('noreferrer')
-									) {
-										setAttributes({
-											relAttribute:
-												`${relAttribute} noreferrer`.trim(),
-										});
-									}
+
+									// 更新された rel 属性を設定
+									setAttributes({ relAttribute: updatedRel });
 								}}
 							/>
 						</form>

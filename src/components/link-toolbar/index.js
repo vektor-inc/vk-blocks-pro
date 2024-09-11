@@ -26,6 +26,7 @@ const LinkPreview = ({
 	linkTarget,
 	relAttribute,
 	linkDescription,
+	defaultDescription,
 	onRemove,
 	onCopy,
 	onEditLinkClick,
@@ -51,7 +52,7 @@ const LinkPreview = ({
 							href={displayURL}
 							target={linkTarget}
 							rel={relAttribute?.trim() || undefined} // 余分なスペースを削除
-							aria-label={linkDescription}
+							aria-label={linkDescription || defaultDescription}
 						>
 							<span
 								data-wp-c16t="true"
@@ -138,6 +139,11 @@ const LinkToolbar = ({
 	useEffect(() => {
 		if (linkUrl) {
 			const formattedUrl = formatUrl(linkUrl);
+
+			if (!linkDescription || linkDescription.trim() === '') {
+				setLinkDescription(defaultDescription);
+			}
+
 			const isExternalLink =
 				!formattedUrl.startsWith(window.location.origin) &&
 				!formattedUrl.startsWith('#');
@@ -182,7 +188,7 @@ const LinkToolbar = ({
 			}
 		}
 		setSubmitDisabled(!linkUrl || linkUrl.trim() === '');
-	}, [linkUrl]);
+	}, [linkUrl, linkDescription, defaultDescription]);
 
 	const handleToggle = () => {
 		if (!isOpen) {
@@ -258,19 +264,32 @@ const LinkToolbar = ({
 	const handleRelChange = (type, checked) => {
 		let updatedRel = relAttribute || '';
 		if (checked) {
-			// 新しいタイプを追加
 			if (!updatedRel.includes(type)) {
 				updatedRel = `${updatedRel} ${type}`.trim();
 			}
 		} else {
-			// チェックが外れた場合、タイプを削除
-			updatedRel = updatedRel
-				.replace(type, '')
-				.replace(/\s+/g, ' ')
-				.trim();
+			updatedRel = updatedRel.replace(type, '').replace(/\s+/g, ' ').trim();
 		}
 		setAttributes({ relAttribute: updatedRel });
 	};
+	
+	const handleTargetChange = (checked) => {
+		// ターゲットを設定
+		setLinkTarget(checked ? '_blank' : '_self');
+	
+		// rel 属性の更新処理
+		let updatedRel = relAttribute || '';
+		if (checked) {
+			// ターゲットが _blank の場合、noopener を追加
+			if (!updatedRel.includes('noopener')) {
+				updatedRel = `${updatedRel} noopener`.trim();
+			}
+		} else {
+			// _self の場合、noopener を削除
+			updatedRel = updatedRel.replace('noopener', '').replace(/\s+/g, ' ').trim();
+		}
+		setAttributes({ relAttribute: updatedRel });
+	};	
 
 	useEffect(() => {
 		// ブロック名をもとにリンク説明を設定
@@ -319,6 +338,7 @@ const LinkToolbar = ({
 								linkTarget={linkTarget}
 								relAttribute={relAttribute}
 								linkDescription={linkDescription}
+								defaultDescription={defaultDescription}
 								onRemove={handleRemove}
 								onCopy={handleCopy}
 								onEditLinkClick={handleEditLinkClick}
@@ -350,34 +370,10 @@ const LinkToolbar = ({
 									'vk-blocks-pro'
 								)}
 								checked={linkTarget === '_blank'}
-								onChange={(checked) => {
-									// ターゲットを設定
-									setLinkTarget(checked ? '_blank' : '_self');
-
-									// rel 属性の更新処理
-									let updatedRel = relAttribute || '';
-
-									if (checked) {
-										// target="_blank" の場合、必ず "noopener" を追加
-										if (!updatedRel.includes('noopener')) {
-											updatedRel =
-												`${updatedRel} noopener`.trim();
-										}
-									} else {
-										// target="_self" の場合、"noopener" を削除
-										updatedRel = updatedRel
-											.replace('noopener', '')
-											.replace(/\s+/g, ' ') // 余分なスペースを削除
-											.trim();
-									}
-
-									// 更新された rel 属性を設定
-									setAttributes({ relAttribute: updatedRel });
-								}}
+								onChange={(checked) => handleTargetChange(checked)}
 							/>
 						</form>
 
-						{/* 編集モードの表示 */}
 						{isEditingLink && (
 							<div>
 								<CheckboxControl
@@ -412,16 +408,15 @@ const LinkToolbar = ({
 										linkDescription === defaultDescription
 											? ''
 											: linkDescription
-									} // デフォルト説明の時は空に見せる
+									}
 									onChange={(value) => {
-										// 入力があればそれを保存、なければデフォルトに戻す
 										setLinkDescription(
 											value || defaultDescription
 										);
 									}}
 									onBlur={() => {
-										// 空にした場合、フォーカスが外れた時にデフォルト説明に戻す
-										if (linkDescription.trim() === '') {
+										// 空の場合、defaultDescriptionに戻す
+										if (!linkDescription.trim()) {
 											setLinkDescription(
 												defaultDescription
 											);

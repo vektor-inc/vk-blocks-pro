@@ -268,15 +268,18 @@ const LinkToolbar = ({
 				updatedRel = `${updatedRel} ${type}`.trim();
 			}
 		} else {
-			updatedRel = updatedRel.replace(type, '').replace(/\s+/g, ' ').trim();
+			updatedRel = updatedRel
+				.replace(type, '')
+				.replace(/\s+/g, ' ')
+				.trim();
 		}
 		setAttributes({ relAttribute: updatedRel });
 	};
-	
+
 	const handleTargetChange = (checked) => {
 		// ターゲットを設定
 		setLinkTarget(checked ? '_blank' : '_self');
-	
+
 		// rel 属性の更新処理
 		let updatedRel = relAttribute || '';
 		if (checked) {
@@ -286,10 +289,13 @@ const LinkToolbar = ({
 			}
 		} else {
 			// _self の場合、noopener を削除
-			updatedRel = updatedRel.replace('noopener', '').replace(/\s+/g, ' ').trim();
+			updatedRel = updatedRel
+				.replace('noopener', '')
+				.replace(/\s+/g, ' ')
+				.trim();
 		}
 		setAttributes({ relAttribute: updatedRel });
-	};	
+	};
 
 	useEffect(() => {
 		// ブロック名をもとにリンク説明を設定
@@ -370,7 +376,9 @@ const LinkToolbar = ({
 									'vk-blocks-pro'
 								)}
 								checked={linkTarget === '_blank'}
-								onChange={(checked) => handleTargetChange(checked)}
+								onChange={(checked) =>
+									handleTargetChange(checked)
+								}
 							/>
 						</form>
 

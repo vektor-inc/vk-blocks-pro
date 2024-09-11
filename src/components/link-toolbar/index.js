@@ -137,6 +137,16 @@ const LinkToolbar = ({
 	const [isEditingLink, setIsEditingLink] = useState(false);
 
 	useEffect(() => {
+		// relAttribute に noopener が含まれていない場合は追加
+		if (relAttribute && !relAttribute.includes('noopener')) {
+			setAttributes({ relAttribute: `${relAttribute} noopener`.trim() });
+		} else if (!relAttribute) {
+			// relAttribute が未定義の場合は noopener を追加
+			setAttributes({ relAttribute: 'noopener' });
+		}
+	}, [relAttribute]);
+
+	useEffect(() => {
 		if (linkUrl) {
 			const formattedUrl = formatUrl(linkUrl);
 
@@ -279,23 +289,18 @@ const LinkToolbar = ({
 	const handleTargetChange = (checked) => {
 		// ターゲットを設定
 		setLinkTarget(checked ? '_blank' : '_self');
-
+		
 		// rel 属性の更新処理
 		let updatedRel = relAttribute || '';
-		if (checked) {
-			// ターゲットが _blank の場合、noopener を追加
-			if (!updatedRel.includes('noopener')) {
-				updatedRel = `${updatedRel} noopener`.trim();
-			}
-		} else {
-			// _self の場合、noopener を削除
-			updatedRel = updatedRel
-				.replace('noopener', '')
-				.replace(/\s+/g, ' ')
-				.trim();
+		
+		// noopener がすでに含まれていない場合のみ追加
+		if (!updatedRel.includes('noopener')) {
+			updatedRel = `${updatedRel} noopener`.trim();
 		}
+	
+		// noopener を常に rel 属性に保持
 		setAttributes({ relAttribute: updatedRel });
-	};
+	};	
 
 	useEffect(() => {
 		// ブロック名をもとにリンク説明を設定
@@ -342,7 +347,7 @@ const LinkToolbar = ({
 								linkTitle={linkTitle}
 								icon={icon}
 								linkTarget={linkTarget}
-								relAttribute={relAttribute}
+								relAttribute={(relAttribute || '').includes('noopener') ? relAttribute : `${relAttribute} noopener`.trim()}
 								linkDescription={linkDescription}
 								defaultDescription={defaultDescription}
 								onRemove={handleRemove}

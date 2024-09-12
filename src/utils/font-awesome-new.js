@@ -68,7 +68,12 @@ const FontAwesomeIconList = [
 ];
 
 export const FontAwesome = (props) => {
-	const { attributeName, attributes, setAttributes } = props;
+	const {
+		attributeName,
+		attributes,
+		setAttributes,
+		modeClass = false,
+	} = props;
 	// eslint-disable-next-line no-undef
 	const iconsUrl = vkFontAwesome.iconsUrl;
 	// eslint-disable-next-line no-undef
@@ -81,6 +86,24 @@ export const FontAwesome = (props) => {
 	const [isWaiting, setIsWaiting] = useState(false);
 	const [version, setVersion] = useState();
 	const [isEditMode, setIsEditMode] = useState(false);
+
+	// クラス名を抽出する関数
+	const extractIconClass = (htmlString) => {
+		const match = htmlString.match(/class="([^"]+)"/);
+		return match ? match[1] : htmlString;
+	};
+
+	const handleIconSelect = (iconPreset) => {
+		const value = modeClass ? extractIconClass(iconPreset) : iconPreset;
+		setAttributes({
+			[attributeName]: value,
+		});
+	};
+
+	const handleTextControlChange = (value) => {
+		const extractedClass = extractIconClass(value);
+		setAttributes({ [attributeName]: extractedClass });
+	};
 
 	const { canUserEdit, optionObj } = useSelect((select) => {
 		const { canUser } = select(coreStore);
@@ -190,9 +213,9 @@ export const FontAwesome = (props) => {
 														className="vk_icon_button"
 														variant="secondary"
 														onClick={() =>
-															setAttributes({
-																[attributeName]: `${iconPreset}`,
-															})
+															handleIconSelect(
+																iconPreset
+															)
 														}
 													>
 														{iconPreset &&
@@ -338,9 +361,9 @@ export const FontAwesome = (props) => {
 													className="vk_icon_button"
 													variant="secondary"
 													onClick={() =>
-														setAttributes({
-															[attributeName]: `${iconPreset}`,
-														})
+														handleIconSelect(
+															iconPreset
+														)
 													}
 												>
 													{iconPreset &&
@@ -429,7 +452,13 @@ export const FontAwesome = (props) => {
 		<>
 			<TextControl
 				value={attributes[attributeName]}
-				onChange={(value) => setAttributes({ [attributeName]: value })}
+				onChange={(value) => {
+					if (modeClass) {
+						handleTextControlChange(value);
+					} else {
+						setAttributes({ [attributeName]: value });
+					}
+				}}
 				placeholder={'<i class="fa-solid fa-circle-right"></i>'}
 				className="mb-0"
 			/>

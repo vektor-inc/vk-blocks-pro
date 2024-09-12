@@ -106,7 +106,7 @@ e.g.
 
 == Changelog ==
 
-[ Bug fix ] [ Breadcrumb (Pro) ] Fixed an issue where the separator setting in the Breadcrumb block was not being loaded correctly (now loaded from view.js).
+[ Bug fix ][ Breadcrumb (Pro) ] Fixed an issue where the separator setting in the Breadcrumb block was not being loaded correctly (now loaded from view.js).
 
 = 1.84.0 =
 [ Add function ][ Column ] Add toolbar link for components.

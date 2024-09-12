@@ -215,6 +215,8 @@ export default function Edit(props) {
 	const blockProps = useBlockProps({
 		className: containerClasses,
 		style,
+		'data-header-display': headerDisplay,
+		'data-footer-display': footerDisplay,
 	});
 
 	return (

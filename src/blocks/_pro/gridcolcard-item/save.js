@@ -76,6 +76,8 @@ export default function save(props) {
 	const blockProps = useBlockProps.save({
 		className: containerClasses,
 		style,
+		'data-header-display': headerDisplay,
+		'data-footer-display': footerDisplay,
 	});
 
 	const TagName = url ? 'a' : 'div';

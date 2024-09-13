@@ -269,7 +269,7 @@ export default function PostListEdit(props) {
 	}, [isCheckedPostTypeData, isCheckedTermsData]);
 
 	useEffect(() => {
-		// リンクを無効化
+		// リンクを無効にする
 		const disableLinks = () => {
 			const links = document.querySelectorAll('.vk_post_imgOuter a');
 			links.forEach((link) => {

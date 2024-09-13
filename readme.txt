@@ -106,7 +106,7 @@ e.g.
 
 == Changelog ==
 
-[ Specification change ][ Post List (Pro) ] Disabled link interactions.
+[ Specification change ][ Post List (Pro) ] Disable link on edit screen.
 
 = 1.84.0 =
 [ Add function ][ Column ] Add toolbar link for components.

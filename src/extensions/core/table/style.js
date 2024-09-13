@@ -88,30 +88,21 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 		} = attributes;
 
 		// Add or remove the CSS class for scrollable style
-		const updatedClassName = className ? className.split(' ') : [];
-		if (
-			scrollable &&
-			!updatedClassName.includes('is-style-vk-table-scrollable')
-		) {
-			updatedClassName.push('is-style-vk-table-scrollable');
-		} else if (
-			!scrollable &&
-			updatedClassName.includes('is-style-vk-table-scrollable')
-		) {
-			const index = updatedClassName.indexOf(
-				'is-style-vk-table-scrollable'
-			);
-			if (index > -1) {
-				updatedClassName.splice(index, 1);
-			}
+		const updatedClassName = new Set(className ? className.split(' ') : []);
+
+		if (scrollable) {
+			updatedClassName.add('is-style-vk-table-scrollable');
+		} else {
+			updatedClassName.delete('is-style-vk-table-scrollable');
 		}
 
 		// Update className attribute
-		setAttributes({ className: updatedClassName.join(' ') });
+		const newClassName = Array.from(updatedClassName).join(' ');
+		setAttributes({ className: newClassName });
 
-		// Block properties for managing className
+		// Define block properties with updated className
 		const blockProps = useBlockProps({
-			className: updatedClassName.join(' '),
+			className: newClassName, // Assign the updated className here
 		});
 
 		// Define icon styles

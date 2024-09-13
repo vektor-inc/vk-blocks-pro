@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification change ][ Post List (Pro) ] Disabled link interactions.
+
 = 1.84.0 =
 [ Add function ][ Column ] Add toolbar link for components.
 [ Specification change ][ Classic FAQ / New FAQ ] Support structured data.

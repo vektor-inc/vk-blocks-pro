@@ -32,11 +32,11 @@ const blockAttributes = {
 	},
 	headerDisplay: {
 		type: 'string',
-		default: 'display' // デフォルト値を変更
+		default: 'delete'
 	},
 	footerDisplay: {
 		type: 'string',
-		default: 'display' // デフォルト値を変更
+		default: 'delete'
 	},
 	borderRadius: {
 		type: 'string',

@@ -268,6 +268,31 @@ export default function PostListEdit(props) {
 		});
 	}, [isCheckedPostTypeData, isCheckedTermsData]);
 
+	useEffect(() => {
+		// リンクを無効化する関数
+		const disableLinks = () => {
+			const links = document.querySelectorAll('.vk_post_imgOuter a');
+			links.forEach((link) => {
+				link.addEventListener('click', (event) => {
+					event.preventDefault();
+				});
+				link.style.cursor = 'default';
+				link.style.boxShadow = 'unset';
+			});
+		};
+
+		setTimeout(disableLinks, 1000); // DOM の更新を待つためにタイムアウトを利用
+
+		return () => {
+			const links = document.querySelectorAll('.vk_post_imgOuter a');
+			links.forEach((link) => {
+				link.removeEventListener('click', (event) => {
+					event.preventDefault();
+				});
+			});
+		};
+	}, []);
+
 	return (
 		<>
 			<InspectorControls>

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-09-09T23:22:53+00:00\n"
+"POT-Creation-Date: 2024-09-11T08:08:51+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -1245,7 +1245,7 @@ msgstr ""
 #: src/blocks/icon/edit.js:292
 #: src/blocks/pr-blocks/edit.js:262
 #: src/blocks/pr-content/edit.js:131
-#: src/components/link-toolbar/index.js:275
+#: src/components/link-toolbar/index.js:279
 msgid "Open link new tab."
 msgstr ""
 
@@ -1433,20 +1433,20 @@ msgstr ""
 #: src/blocks/_pro/gridcolcard-item/edit.js:242
 #: src/blocks/_pro/select-post-list-item/edit.js:66
 #: src/blocks/button/edit.js:249
-#: src/components/link-toolbar/index.js:234
+#: src/components/link-toolbar/index.js:238
 msgid "Unlink"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:243
 #: src/blocks/button/edit.js:250
-#: src/components/link-toolbar/index.js:235
+#: src/components/link-toolbar/index.js:239
 msgid "Input Link URL"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:273
 #: src/blocks/_pro/select-post-list-item/edit.js:102
 #: src/blocks/button/edit.js:278
-#: src/components/link-toolbar/index.js:269
+#: src/components/link-toolbar/index.js:273
 msgid "Submit"
 msgstr ""
 
@@ -3271,7 +3271,7 @@ msgstr ""
 msgid "Currently selected"
 msgstr ""
 
-#: src/components/link-toolbar/index.js:304
+#: src/components/link-toolbar/index.js:308
 msgid "Link copied to clipboard."
 msgstr ""
 
@@ -4147,12 +4147,13 @@ msgstr ""
 msgid "Setting saved."
 msgstr ""
 
-#: inc/vk-blocks/view/class-vk-blocks-postlist.php:271
+#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:271
+#: inc/vk-blocks/view/class-vk-blocks-postlist.php:277
 msgid "Post"
 msgstr ""
 
-#. translators: %s: 投稿タイプ名
-#: inc/vk-blocks/view/class-vk-blocks-postlist.php:275
+#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:275
+#: inc/vk-blocks/view/class-vk-blocks-postlist.php:281
 msgid "There are no %ss."
 msgstr ""
 

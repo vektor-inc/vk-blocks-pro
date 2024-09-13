@@ -212,7 +212,6 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 		// その他のリンクは http:// を付加する
 		return 'http://' + url;
 	};
-	
 
 	const handleSubmit = () => {
 		if (linkUrl) {

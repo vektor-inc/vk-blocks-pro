@@ -1253,7 +1253,7 @@ msgstr ""
 #: src/blocks/icon/edit.js:292
 #: src/blocks/pr-blocks/edit.js:262
 #: src/blocks/pr-content/edit.js:131
-#: src/components/link-toolbar/index.js:275
+#: src/components/link-toolbar/index.js:279
 msgid "Open link new tab."
 msgstr ""
 
@@ -1443,20 +1443,20 @@ msgstr ""
 #: src/blocks/_pro/gridcolcard-item/edit.js:242
 #: src/blocks/_pro/select-post-list-item/edit.js:66
 #: src/blocks/button/edit.js:249
-#: src/components/link-toolbar/index.js:234
+#: src/components/link-toolbar/index.js:238
 msgid "Unlink"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:243
 #: src/blocks/button/edit.js:250
-#: src/components/link-toolbar/index.js:235
+#: src/components/link-toolbar/index.js:239
 msgid "Input Link URL"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:273
 #: src/blocks/_pro/select-post-list-item/edit.js:102
 #: src/blocks/button/edit.js:278
-#: src/components/link-toolbar/index.js:269
+#: src/components/link-toolbar/index.js:273
 msgid "Submit"
 msgstr ""
 
@@ -3306,7 +3306,7 @@ msgstr ""
 msgid "Currently selected"
 msgstr ""
 
-#: src/components/link-toolbar/index.js:304
+#: src/components/link-toolbar/index.js:308
 msgid "Link copied to clipboard."
 msgstr ""
 

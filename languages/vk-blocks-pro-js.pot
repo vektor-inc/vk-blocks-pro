@@ -1253,7 +1253,7 @@ msgstr ""
 #: src/blocks/icon/edit.js:292
 #: src/blocks/pr-blocks/edit.js:262
 #: src/blocks/pr-content/edit.js:131
-#: src/components/link-toolbar/index.js:275
+#: src/components/link-toolbar/index.js:279
 msgid "Open link new tab."
 msgstr ""
 
@@ -1443,20 +1443,20 @@ msgstr ""
 #: src/blocks/_pro/gridcolcard-item/edit.js:242
 #: src/blocks/_pro/select-post-list-item/edit.js:66
 #: src/blocks/button/edit.js:249
-#: src/components/link-toolbar/index.js:234
+#: src/components/link-toolbar/index.js:238
 msgid "Unlink"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:243
 #: src/blocks/button/edit.js:250
-#: src/components/link-toolbar/index.js:235
+#: src/components/link-toolbar/index.js:239
 msgid "Input Link URL"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:273
 #: src/blocks/_pro/select-post-list-item/edit.js:102
 #: src/blocks/button/edit.js:278
-#: src/components/link-toolbar/index.js:269
+#: src/components/link-toolbar/index.js:273
 msgid "Submit"
 msgstr ""
 
@@ -1617,7 +1617,7 @@ msgstr ""
 #: src/blocks/pr-content/edit.js:212
 #: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:142
 #: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:167
-#: src/utils/font-awesome-new.js:166
+#: src/utils/font-awesome-new.js:189
 msgid "Icon"
 msgstr ""
 
@@ -3303,7 +3303,7 @@ msgstr ""
 msgid "Currently selected"
 msgstr ""
 
-#: src/components/link-toolbar/index.js:304
+#: src/components/link-toolbar/index.js:308
 msgid "Link copied to clipboard."
 msgstr ""
 
@@ -3608,11 +3608,15 @@ msgstr ""
 msgid "Responsive BR "
 msgstr ""
 
-#: src/extensions/core/columns/style.js:60
+#: src/extensions/core/columns/style.js:176
+msgid "Column link"
+msgstr ""
+
+#: src/extensions/core/columns/style.js:77
 msgid "Column Direction"
 msgstr ""
 
-#: src/extensions/core/columns/style.js:65
+#: src/extensions/core/columns/style.js:82
 msgid "Reverse"
 msgstr ""
 
@@ -3688,48 +3692,48 @@ msgstr ""
 msgid "Lorem ipsum"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:172
+#: src/utils/font-awesome-new.js:195
 msgid "Custom list"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:324
+#: src/utils/font-awesome-new.js:347
 msgid "Preset"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:363
+#: src/utils/font-awesome-new.js:386
 msgid "Font Awesome icon list"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:366
+#: src/utils/font-awesome-new.js:389
 msgid ""
 "If you want to use an icon other than the ones listed above, you can use "
 "any of the icons from Font Awesome's icon list Please select a tag and "
 "enter it."
 msgstr ""
 
-#: src/utils/font-awesome-new.js:371
+#: src/utils/font-awesome-new.js:394
 msgid "Ex) "
 msgstr ""
 
-#: src/utils/font-awesome-new.js:385
+#: src/utils/font-awesome-new.js:408
 msgid "Add selected icon to custom list"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:393
+#: src/utils/font-awesome-new.js:416
 msgid "Delete/Sort mode"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:409
+#: src/utils/font-awesome-new.js:432
 msgid ""
 "When you click save button, the window will be reloaded and this setting "
 "will be applied."
 msgstr ""
 
-#: src/utils/font-awesome-new.js:419
+#: src/utils/font-awesome-new.js:442
 msgid "Save"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:437
+#: src/utils/font-awesome-new.js:466
 msgid "Select Icon"
 msgstr ""
 

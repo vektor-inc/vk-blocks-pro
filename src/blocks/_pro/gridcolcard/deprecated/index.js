@@ -1,6 +1,6 @@
 import save1_31_0 from './1.31.0/save';
 import save1_37_0 from './1.37.0/save';
-//import save1_81_0 from './1.81.0/save';
+import save1_84_0 from './1.84.0/save';
 
 const blockAttributes = {
 	colWidthMin: {
@@ -84,7 +84,6 @@ const blockAttributes2 = {
 	},
 };
 
-/*
 // 1.81.0 からの変更で追加したもの
 const blockAttributes3 = {
 	...blockAttributes2,
@@ -97,12 +96,11 @@ const blockAttributes3 = {
 		default: 'display'
 	},
 };
-*/
 
 const deprecated = [
 	{
-	//	attributes: blockAttributes3,
-	//	save: save1_81_0,
+		attributes: blockAttributes3,
+		save: save1_84_0,
 	},
 	{
 		attributes: blockAttributes2,

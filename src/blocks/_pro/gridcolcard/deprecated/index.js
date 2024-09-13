@@ -84,7 +84,7 @@ const blockAttributes2 = {
 	},
 };
 
-// 1.81.0 からの変更で追加したもの
+// 1.37.0 からの変更で追加したもの
 const blockAttributes3 = {
 	...blockAttributes2,
 	headerDisplay: {

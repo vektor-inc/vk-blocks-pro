@@ -44,11 +44,11 @@
 		},
 		"headerDisplay": {
 			"type": "string",
-			"default": "display"
+			"default": "delete"
 		},
 		"footerDisplay": {
 			"type": "string",
-			"default": "display"
+			"default": "delete"
 		},
 		"borderRadius": {
 			"type": "string",

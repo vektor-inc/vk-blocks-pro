@@ -165,7 +165,7 @@ function vk_blocks_output_custom_css() {
 		// カスタムCSSをサニタイズ
 		$sanitized_css = vk_blocks_sanitize_custom_css( $vk_blocks_custom_css_collection );
 
-		// CSSのエスケープを行わずそのまま出力
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo '<style id="vk-blocks-custom-css">' . $sanitized_css . '</style>';
 	}
 }

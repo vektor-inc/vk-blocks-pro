@@ -80,8 +80,6 @@ $vk_blocks_custom_css_collection = '';
 /**
  * Render Custom Css Extension css
  *
- * @see https://github.com/WordPress/gutenberg/blob/3358251ae150e33dd6c0e0fb15be110cca1b5c59/lib/block-supports/layout.php#L294
- *
  * @param string $block_content block_content.
  * @param array  $block block.
  * @return string
@@ -104,8 +102,9 @@ function vk_blocks_render_custom_css( $block_content, $block ) {
 	if ( strpos( $css, 'selector' ) !== false ) {
 		// Uniqueクラスを生成
 		$unique_class = wp_unique_id( 'vk_custom_css_' );
+		
 		// selectorをUniqueクラスに変換
-		$css = preg_replace( '/selector/', '.' . $unique_class, $css );
+		$css = str_replace( 'selector', '.' . $unique_class, $css );
 
 		// vk_custom_cssをUniqueクラスに変換
 		$block_content = preg_replace( '/(class="[^"]*)vk_custom_css([^"]*")/', '$1' . $unique_class . '$2', $block_content, 1 );
@@ -140,8 +139,7 @@ function vk_blocks_output_custom_css() {
 	global $vk_blocks_custom_css_collection;
 
 	if ( ! empty( $vk_blocks_custom_css_collection ) ) {
-		// wp_ksesで必要最低限のHTMLタグのみ許可して出力
-		echo '<style id="vk-blocks-custom-css">' . wp_kses( $vk_blocks_custom_css_collection, array( 'style' => array() ) ) . '</style>';
+		echo '<style id="vk-blocks-custom-css">' . $vk_blocks_custom_css_collection . '</style>';
 	}
 }
 add_action( 'wp_footer', 'vk_blocks_output_custom_css', 20 );

@@ -5,9 +5,40 @@
  * @package vk-blocks
  */
 
-class CustomCssExtensionTest extends VK_UnitTestCase {
+class CustomCssExtensionTest extends VK_UnitTestCase {public function test_footer_output_custom_css() {
+	global $vk_blocks_custom_css_collection;
 
-	public function test_block_content_preg_replace() {
+	// 初期化
+	$vk_blocks_custom_css_collection = '';
+
+	// ブロックの設定
+	$block = array(
+		'blockName' => 'core/paragraph',
+		'attrs'     => array(
+			'vkbCustomCss' => 'selector > p { color: red; }',
+		),
+	);
+
+	// カスタムCSSをレンダリングして蓄積
+	$block_content = '<p class="vk_custom_css">This is a test block.</p>';
+	vk_blocks_render_custom_css( $block_content, $block );
+
+	// 出力をキャプチャ
+	ob_start();
+	vk_blocks_output_custom_css();
+	$output = ob_get_clean();
+
+	// 正規表現を使用して柔軟なアサーション
+	$expected_pattern = '/<style id="vk-blocks-custom-css">\.vk_custom_css_\d+ > p { color: red; }<\/style>/';
+	$this->assertMatchesRegularExpression( $expected_pattern, $output );
+
+	print PHP_EOL;
+	print '------------------------------------' . PHP_EOL;
+	print 'vk_blocks_output_custom_css() Test' . PHP_EOL;
+	print '------------------------------------' . PHP_EOL;
+	print 'Actual Output: ' . $output . PHP_EOL;
+}
+public function test_footer_output_custom_css() {
 
 		// ブロックコンテナのCSSクラス内のvk_custom_cssだけを変える。ブロックコンテンツ内のspan class内の vk_custom_cssは変更しないようにする。
 		// correct内 %d の箇所が連番になります。
@@ -132,5 +163,5 @@ class CustomCssExtensionTest extends VK_UnitTestCase {
 		print '------------------------------------' . PHP_EOL;
 		print 'Actual Output: ' . $output . PHP_EOL;
 	}
-	
+
 }

@@ -132,5 +132,44 @@ class CustomCssExtensionTest extends VK_UnitTestCase {
 		print '------------------------------------' . PHP_EOL;
 		print 'Actual Output: ' . $output . PHP_EOL;
 	}
-	
+
+	public function test_vk_blocks_sanitize_custom_css() {
+		print PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+		print 'vk_blocks_sanitize_custom_css() Test' . PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+
+		$tests = array(
+			array(
+				'name'     => 'ふつう',
+				'css'      => '.selector { color: red; }',
+				'expected' => '.selector { color: red; }',
+			),
+			array(
+				'name'     => ': あり',
+				'css'      => '.selector:before { color: red; }',
+				'expected' => '.selector:before { color: red; }',
+			),
+			array(
+				'name'     => '::あり',
+				'css'      => '.selector::before { color: red; }',
+				'expected' => '.selector::before { color: red; }',
+			),
+			array(
+				'name'     => ' > あり',
+				'css'      => '.selector:before > p { color: red; }',
+				'expected' => '.selector:before > p { color: red; }',
+			),
+			array(
+				'name'     => 'XSS',
+				'css'      => '<script>location.href="https://www.youtube.com/"</script>',
+				'expected' => '',
+			),
+		);
+
+		foreach ( $tests as $test ) {
+			$actual = vk_blocks_sanitize_custom_css( $test['css'] );
+			$this->assertEquals( $test['expected'], $actual, $test['name'] );
+		}
+	}
 }

@@ -161,6 +161,11 @@ class CustomCssExtensionTest extends VK_UnitTestCase {
 				'expected' => '.selector:before > p { color: red; }',
 			),
 			array(
+				'name'     => '# あり',
+				'css'      => '#unique-id { color: red; }',
+				'expected' => '#unique-id { color: red; }',
+			),
+			array(
 				'name'     => '@mediaクエリ',
 				'css'      => '@media (max-width: 600px) { .responsive { font-size: 14px; } }',
 				'expected' => '@media (max-width: 600px) { .responsive { font-size: 14px; } }',

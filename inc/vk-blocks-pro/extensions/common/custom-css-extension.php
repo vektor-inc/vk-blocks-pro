@@ -145,14 +145,18 @@ function vk_blocks_sanitize_custom_css( $css ) {
 	$css = preg_replace( '!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $css );
 	$css = trim( $css );
 
-	// 許可するCSSプロパティやセレクタのルールを指定（ここでは一例）
-	$allowed_patterns = '/[^{};]+\s*{\s*[^{};]+:\s*[^{};]+;\s*}/';
+	// 許可されたCSSパターン（@mediaクエリ、@keyframes、通常のCSSルールに対応）
+	$allowed_patterns = '/(@[a-z\-]*[^{]*{(?:[^{}]*{[^}]*}|[^}]*)*})|([^{};]+\s*{\s*[^{}]+;\s*})/s';
 
 	// 許可されたパターンのみを抽出
 	preg_match_all( $allowed_patterns, $css, $matches );
 
 	// 抽出されたCSSを連結
-	return implode( ' ', $matches[0] );
+	$sanitized_css = implode( ' ', $matches[0] );
+
+	// 余分なスペースをトリム
+	$sanitized_css = preg_replace( '/\s+/', ' ', $sanitized_css );
+	return trim( $sanitized_css );
 }
 
 /**

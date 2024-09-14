@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][Custom CSS (Pro)] Replaced wp_kses with a sanitization function in vk_blocks_output_custom_css.
+
 = 1.84.0 =
 [ Add function ][ Column ] Add toolbar link for components.
 [ Specification change ][ Classic FAQ / New FAQ ] Support structured data.

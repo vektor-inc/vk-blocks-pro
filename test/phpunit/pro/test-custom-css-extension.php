@@ -9,12 +9,11 @@ class CustomCssExtensionTest extends VK_UnitTestCase {
 
 	public function test_block_content_preg_replace() {
 
-        // ブロックコンテナのCSSクラス内のvk_custom_cssだけを変える。ブロックコンテンツ内のspan class内の vk_custom_cssは変更しないようにする。
-        // correct内 %d の箇所が連番になります。
+		// ブロックコンテナのCSSクラス内のvk_custom_cssだけを変える。ブロックコンテンツ内のspan class内の vk_custom_cssは変更しないようにする。
+		// correct内 %d の箇所が連番になります。
 		$test_data = array(
 
-
-            // ブロックCSSクラスの先頭に vk_custom_css が来るパターン、かつ内側のspan classの中身のパターンを変える
+			// ブロックCSSクラスの先頭に vk_custom_css が来るパターン、かつ内側のspan classの中身のパターンを変える
 			array(
 				'block_content' => '<p class="vk_custom_css vk_test_1">Lorem ipsum dolor sit amet, <span class="vk_custom_css">consectetur adipisci elit</span>, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.</p>',
 				'correct' => '<p class="vk_custom_css_%d vk_test_1">Lorem ipsum dolor sit amet, <span class="vk_custom_css">consectetur adipisci elit</span>, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.</p>',
@@ -31,8 +30,8 @@ class CustomCssExtensionTest extends VK_UnitTestCase {
 				'block_content' => '<p class="vk_custom_css vk_test_1">Lorem ipsum dolor sit amet, <span class="vk_custom_css vk_test_3">consectetur adipisci elit</span>, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.</p>',
 				'correct' => '<p class="vk_custom_css_%d vk_test_1">Lorem ipsum dolor sit amet, <span class="vk_custom_css vk_test_3">consectetur adipisci elit</span>, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.</p>',
 			),          
-            
-            // ブロックCSSクラスの真ん中に vk_custom_css が来るパターン、かつ内側のspan classの中身のパターンを変える
+
+			// ブロックCSSクラスの真ん中に vk_custom_css が来るパターン、かつ内側のspan classの中身のパターンを変える
 			array(
 				'block_content' => '<p class="vk_test_1 vk_custom_css vk_test_2">Lorem ipsum dolor sit amet, <span class="vk_custom_css">consectetur adipisci elit</span>, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.</p>',
 				'correct' => '<p class="vk_test_1 vk_custom_css_%d vk_test_2">Lorem ipsum dolor sit amet, <span class="vk_custom_css">consectetur adipisci elit</span>, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.</p>',
@@ -53,38 +52,47 @@ class CustomCssExtensionTest extends VK_UnitTestCase {
 				'correct' => '<p class="vk_test_1 vk_custom_css_%d vk_test_2">Lorem ipsum dolor sit amet, <span class="vk_custom_css vk_test_3">consectetur adipisci elit</span>, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.</p>',
 			),   
 
-            // ブロックCSSクラスの最後に vk_custom_css が来るパターン、かつ内側のspan classの中身のパターンを変える
+			// ブロックCSSクラスの最後に vk_custom_css が来るパターン、かつ内側のspan classの中身のパターンを変える
 			array(
 				'block_content' => '<p class="vk_test_1 vk_custom_css">Lorem ipsum dolor sit amet, <span class="vk_custom_css">consectetur adipisci elit</span>, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.</p>',
 				'correct' => '<p class="vk_test_1 vk_custom_css_%d">Lorem ipsum dolor sit amet, <span class="vk_custom_css">consectetur adipisci elit</span>, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.</p>',
 			),
-            array(
+			array(
 				'block_content' => '<p class="vk_test_1 vk_custom_css">Lorem ipsum dolor sit amet, <span class="vk_test_3 vk_custom_css">consectetur adipisci elit</span>, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.</p>',
 				'correct' => '<p class="vk_test_1 vk_custom_css_%d">Lorem ipsum dolor sit amet, <span class="vk_test_3 vk_custom_css">consectetur adipisci elit</span>, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.</p>',
 			),	           
-            array(
+			array(
 				'block_content' => '<p class="vk_test_1 vk_custom_css">Lorem ipsum dolor sit amet, <span class="vk_test_3 vk_custom_css vk_test_4">consectetur adipisci elit</span>, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.</p>',
 				'correct' => '<p class="vk_test_1 vk_custom_css_%d">Lorem ipsum dolor sit amet, <span class="vk_test_3 vk_custom_css vk_test_4">consectetur adipisci elit</span>, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.</p>',
 			),
-            array(
+			array(
 				'block_content' => '<p class="vk_test_1 vk_custom_css">Lorem ipsum dolor sit amet, <span class="vk_custom_css vk_test_3">consectetur adipisci elit</span>, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.</p>',
 				'correct' => '<p class="vk_test_1 vk_custom_css_%d">Lorem ipsum dolor sit amet, <span class="vk_custom_css vk_test_3">consectetur adipisci elit</span>, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.</p>',
-			),	            	                               	
+			),	            
+
+			// CSS構文で > や : が正しく処理されるかのテスト
+			array(
+				'block_content' => '<p class="vk_custom_css">Lorem ipsum dolor sit amet, <span class="selector > p">consectetur adipisci elit</span></p>',
+				'correct' => '<p class="vk_custom_css_%d">Lorem ipsum dolor sit amet, <span class="selector > p">consectetur adipisci elit</span></p>',
+			),
+			array(
+				'block_content' => '<p class="vk_custom_css">Lorem ipsum dolor sit amet, <span class="selector:after">consectetur adipisci elit</span></p>',
+				'correct' => '<p class="vk_custom_css_%d">Lorem ipsum dolor sit amet, <span class="selector:after">consectetur adipisci elit</span></p>',
+			),
 		);
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
 		print 'vk_blocks_render_custom_css()' . PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
 
-        $block = array(
-            'blockName' => 'core/paragraph',
-            'attrs' => array(
-                'vkbCustomCss' => 'selector { color: red; }'
-            )
-        );
+		$block = array(
+			'blockName' => 'core/paragraph',
+			'attrs' => array(
+				'vkbCustomCss' => 'selector { color: red; }'
+			)
+		);
 	
 		// vk_blocks_render_custom_css は wp_unique_id で ナンバリングしているので、wp_unique_id で帰ってきた値に1足したものと比較するようにする
-  
 		foreach ( $test_data as $test_value ) {
 			$return  = vk_blocks_render_custom_css($test_value['block_content'], $block);
 			VkCustomAssert::assertStringMatchesNumericFormat($test_value['correct'], $return);
@@ -101,7 +109,7 @@ class CustomCssExtensionTest extends VK_UnitTestCase {
 		$block = array(
 			'blockName' => 'core/paragraph',
 			'attrs'     => array(
-				'vkbCustomCss' => 'selector { color: red; }',
+				'vkbCustomCss' => 'selector > p { color: red; }',
 			),
 		);
 	
@@ -115,7 +123,7 @@ class CustomCssExtensionTest extends VK_UnitTestCase {
 		$output = ob_get_clean();
 	
 		// 正規表現を使用して柔軟なアサーション
-		$expected_pattern = '/<style id="vk-blocks-custom-css">\.vk_custom_css_\d+ { color: red; }<\/style>/';
+		$expected_pattern = '/<style id="vk-blocks-custom-css">\.vk_custom_css_\d+ > p { color: red; }<\/style>/';
 		$this->assertMatchesRegularExpression( $expected_pattern, $output );
 	
 		print PHP_EOL;
@@ -124,5 +132,44 @@ class CustomCssExtensionTest extends VK_UnitTestCase {
 		print '------------------------------------' . PHP_EOL;
 		print 'Actual Output: ' . $output . PHP_EOL;
 	}
-	
+
+	public function test_vk_blocks_sanitize_custom_css() {
+		print PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+		print 'vk_blocks_sanitize_custom_css() Test' . PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+
+		$tests = array(
+			array(
+				'name'     => 'ふつう',
+				'css'      => '.selector { color: red; }',
+				'expected' => '.selector { color: red; }',
+			),
+			array(
+				'name'     => ': あり',
+				'css'      => '.selector:before { color: red; }',
+				'expected' => '.selector:before { color: red; }',
+			),
+			array(
+				'name'     => '::あり',
+				'css'      => '.selector::before { color: red; }',
+				'expected' => '.selector::before { color: red; }',
+			),
+			array(
+				'name'     => ' > あり',
+				'css'      => '.selector:before > p { color: red; }',
+				'expected' => '.selector:before > p { color: red; }',
+			),
+			array(
+				'name'     => 'XSS',
+				'css'      => '<script>location.href="https://www.youtube.com/"</script>',
+				'expected' => '',
+			),
+		);
+
+		foreach ( $tests as $test ) {
+			$actual = vk_blocks_sanitize_custom_css( $test['css'] );
+			$this->assertEquals( $test['expected'], $actual, $test['name'] );
+		}
+	}
 }

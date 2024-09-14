@@ -162,9 +162,9 @@ function vk_blocks_output_custom_css() {
 	global $vk_blocks_custom_css_collection;
 
 	if ( ! empty( $vk_blocks_custom_css_collection ) ) {
-		// カスタムCSSをサニタイズして出力
+		// カスタムCSSをサニタイズしてエスケープして出力
 		$sanitized_css = vk_blocks_sanitize_custom_css( $vk_blocks_custom_css_collection );
-		echo '<style id="vk-blocks-custom-css">' . $sanitized_css . '</style>';
+		echo '<style id="vk-blocks-custom-css">' . esc_html( $sanitized_css ) . '</style>';
 	}
 }
 add_action( 'wp_footer', 'vk_blocks_output_custom_css', 20 );

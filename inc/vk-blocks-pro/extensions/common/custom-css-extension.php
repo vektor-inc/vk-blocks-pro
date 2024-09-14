@@ -145,7 +145,7 @@ function vk_blocks_sanitize_custom_css( $css ) {
 	$css = preg_replace( '!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $css );
 	$css = trim( $css );
 
-	// 許可されたCSSパターン（@mediaクエリ、@keyframes、通常のCSSルールに対応）
+	// 許可されたCSSパターン
 	$allowed_patterns = '/(@[a-z\-]*[^{]*{(?:[^{}]*{[^}]*}|[^}]*)*})|([^{};]+\s*{\s*[^{}]+;\s*})/s';
 
 	// 許可されたパターンのみを抽出

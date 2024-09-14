@@ -104,7 +104,7 @@ function vk_blocks_render_custom_css( $block_content, $block ) {
 	if ( strpos( $css, 'selector' ) !== false ) {
 		// Uniqueクラスを生成
 		$unique_class = wp_unique_id( 'vk_custom_css_' );
-		
+
 		// selectorをUniqueクラスに変換
 		$css = preg_replace( '/selector/', '.' . $unique_class, $css );
 

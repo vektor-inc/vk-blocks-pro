@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+= 1.84.2 =
 [ Bug fix ][ Custom CSS (Pro) ] Replaced an improved sanitation function in `vk_blocks_output custom css` to handle various CSS patterns.
 
 = 1.84.1 =

@@ -138,7 +138,7 @@ class CustomCssExtensionTest extends VK_UnitTestCase {
 		print '------------------------------------' . PHP_EOL;
 		print 'vk_blocks_sanitize_custom_css() Test' . PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
-
+	
 		$tests = array(
 			array(
 				'name'     => 'ふつう',
@@ -161,15 +161,66 @@ class CustomCssExtensionTest extends VK_UnitTestCase {
 				'expected' => '.selector:before > p { color: red; }',
 			),
 			array(
+				'name'     => '# あり',
+				'css'      => '#unique-id { color: red; }',
+				'expected' => '#unique-id { color: red; }',
+			),
+			array(
+				'name'     => '@mediaクエリ',
+				'css'      => '@media (max-width: 600px) { .responsive { font-size: 14px; } }',
+				'expected' => '@media (max-width: 600px) { .responsive { font-size: 14px; } }',
+			),
+			array(
+				'name'     => 'アニメーション',
+				'css'      => '@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } .animate { animation: fadeIn 2s; }',
+				'expected' => '@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } .animate { animation: fadeIn 2s; }',
+			),
+			array(
+				'name'     => '属性セレクタ',
+				'css'      => 'input[type="text"] { border: 1px solid #000; }',
+				'expected' => 'input[type="text"] { border: 1px solid #000; }',
+			),
+			array(
+				'name'     => '隣接セレクタ',
+				'css'      => '.item + .item { margin-top: 10px; }',
+				'expected' => '.item + .item { margin-top: 10px; }',
+			),
+			array(
+				'name'     => '疑似クラス・疑似要素',
+				'css'      => 'ul li:nth-child(2n+1) { background-color: lightgray; } a::after { content: " ↗"; }',
+				'expected' => 'ul li:nth-child(2n+1) { background-color: lightgray; } a::after { content: " ↗"; }',
+			),
+			array(
+				'name'     => '重要なスタイル',
+				'css'      => '.important { color: black !important; }',
+				'expected' => '.important { color: black !important; }',
+			),
+			array(
+				'name'     => 'カスタムプロパティ',
+				'css'      => ':root { --main-bg-color: coral; } .var-usage { background-color: var(--main-bg-color); }',
+				'expected' => ':root { --main-bg-color: coral; } .var-usage { background-color: var(--main-bg-color); }',
+			),
+			array(
+				'name'     => '複数設定',
+				'css'      => '.mulch-line { color: pink; font-size: 2rem; }',
+				'expected' => '.mulch-line { color: pink; font-size: 2rem; }',
+			),
+			array(
 				'name'     => 'XSS',
 				'css'      => '<script>location.href="https://www.youtube.com/"</script>',
 				'expected' => '',
 			),
+			array(
+				'name'     => '複数!important',
+				'css'      => '.selector { width: 50px !important;margin: 1em auto 2em auto !important;height: 1px!important; }',
+				'expected' => '.selector { width: 50px !important;margin: 1em auto 2em auto !important;height: 1px!important; }',
+			),
 		);
-
+	
 		foreach ( $tests as $test ) {
 			$actual = vk_blocks_sanitize_custom_css( $test['css'] );
 			$this->assertEquals( $test['expected'], $actual, $test['name'] );
 		}
 	}
+	
 }

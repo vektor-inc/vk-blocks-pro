@@ -210,6 +210,11 @@ class CustomCssExtensionTest extends VK_UnitTestCase {
 				'css'      => '<script>location.href="https://www.youtube.com/"</script>',
 				'expected' => '',
 			),
+			array(
+				'name'     => '複数!important',
+				'css'      => '.selector { width: 50px !important;margin: 1em auto 2em auto !important;height: 1px!important; }',
+				'expected' => '.selector { width: 50px !important;margin: 1em auto 2em auto !important;height: 1px!important; }',
+			),
 		);
 	
 		foreach ( $tests as $test ) {

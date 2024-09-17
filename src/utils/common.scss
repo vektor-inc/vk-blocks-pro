@@ -210,7 +210,7 @@ ol {
 		&-vk-numbered-circle-mark,
 		&-vk-numbered-square-mark {
 			padding-inline-start: 2em;
-			&:not(.has-text-color), 
+			&:not(.has-text-color),
 			&:not(.has-link-color) {
 				color: initial;
 			}
@@ -454,7 +454,7 @@ ol {
 	}
 	&-vk-link {
 		position: absolute;
-		top: 0; 
+		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
@@ -684,6 +684,64 @@ $xxl-min: 1400px;
 		&.vk-link {
 			@include vk-link-toolbar
 		}
+/* スクロールヒント
+/*-------------------------------------------*/
+@mixin scrollable-table-scroll-hint {
+	display: block;
+	text-align: right;
+	font-size: .85rem;
+	&:has(i:last-of-type ) {
+		margin-right: 3px;
+	}
+	i {
+		margin: 0;
+		&:first-of-type {
+			animation: shake-left 1.5s ease-in-out infinite;
+		}
+		&:last-of-type {
+			animation: shake-right 1.5s ease-in-out infinite;
+		}
+ 	}
+  	/* 横揺れアニメーションの定義 */
+	@keyframes shake-left {
+		0% { transform: translateX(0); }
+		50% { transform: translateX(-3px); }
+		100% { transform: translateX(0); }
+	}
+	@keyframes shake-right {
+		0% { transform: translateX(0); }
+		50% { transform: translateX(3px); }
+		100% { transform: translateX(0); }
+	}
+}
+
+.vk-scroll-hint {
+	display: none;
+
+	&[data-scroll-breakpoint="table-scrollable-mobile"] {
+		@media (max-width: 575.98px) {
+			@include scrollable-table-scroll-hint;
+		}
+	}
+
+	&[data-scroll-breakpoint="table-scrollable-tablet"] {
+		@media (max-width: 991.98px) {
+			@include scrollable-table-scroll-hint;
+		}
+	}
+
+	&[data-scroll-breakpoint="table-scrollable-pc"] {
+		@include scrollable-table-scroll-hint;
+	}
+
+	+ * {
+		margin-top: 0;
+	}
+}
+
+.editor-styles-wrapper {
+	.vk-scroll-hint {
+		@include scrollable-table-scroll-hint;
 	}
 }
 
@@ -706,7 +764,7 @@ $xxl-min: 1400px;
 			}
 			> p {
 				line-height: var(--vk-line-height); // 自動で入るコアの .is-layout-flow CSSに負けるため
-			}	
+			}
 		}
 	}
 	.wp-block-column {

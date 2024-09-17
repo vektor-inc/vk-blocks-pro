@@ -108,6 +108,12 @@ e.g.
 
 [ Add function ][ Core Table ] Add scroll hint for horizontal scrolling.
 
+= 1.84.2 =
+[ Bug fix ][ Custom CSS (Pro) ] Replaced an improved sanitation function in `vk_blocks_output custom css` to handle various CSS patterns.
+
+= 1.84.1 =
+[ Bug fix ][ Custom CSS (Pro) ] Replaced wp_kses with a sanitization function in vk_blocks_output_custom_css.
+
 = 1.84.0 =
 [ Add function ][ Column ] Add toolbar link for components.
 [ Specification change ][ Classic FAQ / New FAQ ] Support structured data.

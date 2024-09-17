@@ -684,6 +684,10 @@ $xxl-min: 1400px;
 		&.vk-link {
 			@include vk-link-toolbar
 		}
+	}
+}
+
+/*-------------------------------------------*/
 /* スクロールヒント
 /*-------------------------------------------*/
 @mixin scrollable-table-scroll-hint {

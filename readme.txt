@@ -106,6 +106,9 @@ e.g.
 
 == Changelog ==
 
+[ fix ][ Alert ] Fixed the alert variation icon.
+[ Add function ][ Core Table ] Add scroll hint for horizontal scrolling.
+
 = 1.84.2 =
 [ Bug fix ][ Custom CSS (Pro) ] Replaced an improved sanitation function in `vk_blocks_output custom css` to handle various CSS patterns.
 

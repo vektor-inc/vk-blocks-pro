@@ -18,6 +18,8 @@ require_once __DIR__ . '/style/common-margin.php';
 require_once __DIR__ . '/extensions/core/list.php';
 require_once __DIR__ . '/view/responsive-br.php';
 require_once __DIR__ . '/view/class-vk-blocks-postlist.php';
+require_once __DIR__ . '/view/class-vk-blocks-scrollhintrenderer.php';
+VK_Blocks_ScrollHintRenderer::init();
 
 require_once __DIR__ . '/class-vk-blocks-print-css-variables.php';
 

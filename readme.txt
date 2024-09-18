@@ -106,8 +106,6 @@ e.g.
 
 == Changelog ==
 
-[ Add function ][ Core Table ] Add scroll hint for horizontal scrolling.
-
 = 1.84.2 =
 [ Bug fix ][ Custom CSS (Pro) ] Replaced an improved sanitation function in `vk_blocks_output custom css` to handle various CSS patterns.
 
@@ -118,7 +116,7 @@ e.g.
 [ Add function ][ Column ] Add toolbar link for components.
 [ Specification change ][ Classic FAQ / New FAQ ] Support structured data.
 [ Bug fix ][ Link toolbar ] Fix to prevent adding http:// or https:// when a relative path is entered.
-[ Bug fix ][ Post List(Pro) ] Fixed pagination customization in post list.
+[ Bug fix ][ Breadcrumb(Pro) ] Fixed pagination customization in post list.
 [ Other ] Add a mode to extract class name for Font awesome icon.
 [ Other ] Supports custom CSS including pseudo-elements even in block-by-block lazy loading mode.
 

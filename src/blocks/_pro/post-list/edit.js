@@ -269,10 +269,25 @@ export default function PostListEdit(props) {
 	}, [isCheckedPostTypeData, isCheckedTermsData]);
 
 	useEffect(() => {
-		// リンクを無効にする
+		// リンクを無効にする関数
 		const disableLinks = () => {
-			const links = document.querySelectorAll('.vk_post_imgOuter a');
+			// 無効化するリンクのセレクタ
+			const links = document.querySelectorAll('.vk_post_imgOuter a, .vk_post .vk_post_title a, .postListText_title a, .card-intext .card-intext-inner');
 			links.forEach((link) => {
+				link.addEventListener('click', (event) => {
+					event.preventDefault();
+				});
+				link.style.cursor = 'default';
+				link.style.boxShadow = 'unset';
+	
+				// ホバー効果を無効化
+				link.style.color = 'inherit';
+				link.style.textDecorationColor = 'inherit';
+			});
+	
+			// postListText_singleTermLabel_inner のリンクはクリック無効化のみ
+			const singleTermLinks = document.querySelectorAll('.postListText_singleTermLabel_inner');
+			singleTermLinks.forEach((link) => {
 				link.addEventListener('click', (event) => {
 					event.preventDefault();
 				});
@@ -280,18 +295,20 @@ export default function PostListEdit(props) {
 				link.style.boxShadow = 'unset';
 			});
 		};
-
+	
+		// 初回およびattributesの変更時にリンクを無効化
 		setTimeout(disableLinks, 1000); // DOM の更新を待つためにタイムアウトを利用
-
+	
+		// クリーンアップ関数
 		return () => {
-			const links = document.querySelectorAll('.vk_post_imgOuter a');
+			const links = document.querySelectorAll('.vk_post_imgOuter a, .vk_post .vk_post_title a, .postListText_title a, .card-intext .card-intext-inner, .postListText_singleTermLabel_inner');
 			links.forEach((link) => {
 				link.removeEventListener('click', (event) => {
 					event.preventDefault();
 				});
 			});
 		};
-	}, []);
+	}, [attributes]);			
 
 	return (
 		<>

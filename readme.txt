@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Breadcrumb (Pro) ] Fixed an issue where the separator setting in the Breadcrumb block was not being loaded correctly (now loaded from view.js).
 [ Add function ][ Core Table ] Add scroll hint for horizontal scrolling.
 
 = 1.84.2 =
@@ -118,6 +119,7 @@ e.g.
 [ Add function ][ Column ] Add toolbar link for components.
 [ Specification change ][ Classic FAQ / New FAQ ] Support structured data.
 [ Bug fix ][ Link toolbar ] Fix to prevent adding http:// or https:// when a relative path is entered.
+[ Bug fix ][ Post list (Pro) ] Fixed pagination customization in post list.
 [ Bug fix ][ Post List(Pro) ] Fixed pagination customization in post list.
 [ Other ] Add a mode to extract class name for Font awesome icon.
 [ Other ] Supports custom CSS including pseudo-elements even in block-by-block lazy loading mode.

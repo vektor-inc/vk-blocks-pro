@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+[ Design Bug fix ][ Icon ] Lowered the priority of the Icon block's color setting to ensure .has-vk-color-primary-color is applied correctly.
 [ Bug fix ][ Breadcrumb (Pro) ] Fixed an issue where the separator setting in the Breadcrumb block was not being loaded correctly (now loaded from view.js).
 [ Add function ][ Core Table ] Add scroll hint for horizontal scrolling.
 

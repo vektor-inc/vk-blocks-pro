@@ -106,9 +106,11 @@ e.g.
 
 == Changelog ==
 
-[ Specification change ][ Post List (Pro) ] Disable link on edit screen.
-[ Bug fix ][ Breadcrumb (Pro) ] Fixed an issue where the separator setting in the Breadcrumb block was not being loaded correctly (now loaded from view.js).
 [ Add function ][ Core Table ] Add scroll hint for horizontal scrolling.
+[ Specification change ][ Post List (Pro) ] Disable link on edit screen.
+[ Specification change ][ Alert ] Fixed the alert variation icon.
+[ Bug fix ][ Breadcrumb (Pro) ] Fixed an issue where the separator setting in the Breadcrumb block was not being loaded correctly (now loaded from view.js).
+[ Bug fix ] Fixed an issue where abnormal load occurred on a server that cannot use auto-update.
 
 = 1.84.2 =
 [ Bug fix ][ Custom CSS (Pro) ] Replaced an improved sanitation function in `vk_blocks_output custom css` to handle various CSS patterns.

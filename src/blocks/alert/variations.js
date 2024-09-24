@@ -69,7 +69,7 @@ const variations = [
 		name: 'alert-danger',
 		title: __('Alert Danger', 'vk-blocks-pro'),
 		scope: ['inserter', 'transform'],
-		icon:  <Icon />,
+		icon: <Icon />,
 		attributes: {
 			style: 'danger',
 			icon: '<i class="fa-solid fa-circle-exclamation"></i>',

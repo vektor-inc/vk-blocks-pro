@@ -26,7 +26,9 @@ import { AdvancedCheckboxControl } from '@vkblocks/components/advanced-checkbox-
 
 // リンクを無効化
 const disableLinks = () => {
-	const links = document.querySelectorAll('.vk_post_imgOuter a, .vk_post .vk_post_title a, .postListText_title a, .card-intext .card-intext-inner');
+	const links = document.querySelectorAll(
+		'.vk_post_imgOuter a, .vk_post .vk_post_title a, .postListText_title a, .card-intext .card-intext-inner'
+	);
 	links.forEach((link) => {
 		link.addEventListener('click', (event) => {
 			event.preventDefault();
@@ -40,7 +42,9 @@ const disableLinks = () => {
 	});
 
 	// クリック無効化のみ
-	const singleTermLinks = document.querySelectorAll('.postListText_singleTermLabel_inner, .vk_post_btnOuter a');
+	const singleTermLinks = document.querySelectorAll(
+		'.postListText_singleTermLabel_inner, .vk_post_btnOuter a'
+	);
 	singleTermLinks.forEach((link) => {
 		link.addEventListener('click', (event) => {
 			event.preventDefault();
@@ -300,14 +304,16 @@ export default function PostListEdit(props) {
 
 		// クリーンアップ関数
 		return () => {
-			const links = document.querySelectorAll('.vk_post_imgOuter a, .vk_post .vk_post_title a, .postListText_title a, .card-intext .card-intext-inner, .postListText_singleTermLabel_inner, .vk_post_btnOuter a');
+			const links = document.querySelectorAll(
+				'.vk_post_imgOuter a, .vk_post .vk_post_title a, .postListText_title a, .card-intext .card-intext-inner, .postListText_singleTermLabel_inner, .vk_post_btnOuter a'
+			);
 			links.forEach((link) => {
 				link.removeEventListener('click', (event) => {
 					event.preventDefault();
 				});
 			});
 		};
-	}, [attributes]);	
+	}, [attributes]);
 
 	return (
 		<>

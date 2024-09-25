@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ] Due to an issue where the hidden setting does not function properly when TreeShaking is enabled and CSS splitting is disabled, TreeShaking has been temporarily disabled as a workaround.
+
 = 1.85.0 =
 [ Add function ][ Core Table ] Add scroll hint for horizontal scrolling.
 [ Specification change ][ Post List (Pro) ] Disable link on edit screen.

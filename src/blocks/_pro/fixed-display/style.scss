@@ -38,7 +38,6 @@
 		max-width: 100% !important;
 	}
 	&-right {
-		top: 50%;
 		right: 0;
 		> * {
 			margin-left: auto;
@@ -61,7 +60,6 @@
 		max-width: 100% !important;
 	}
 	&-left {
-		top: 50%;
 		left: 0;
 		> * {
 			margin-right: auto;
@@ -74,6 +72,12 @@
 			margin-right: calc((100% - 100vw) / 2) !important;
 			margin-left: 0 !important;
 		}
+	}
+	&-from-top {
+		top: 50%;
+	}
+	&-from-bottom {
+		bottom: 50%;
 	}
 }
 
@@ -117,7 +121,7 @@
 .logged-in.admin-bar:not(.scrolled) {
 	
 	.vk_fixed-display-position {
-		&-top {
+		&-  {
 			top: var(--admin-bar-offset);
 		}
 		&-right, &-left {

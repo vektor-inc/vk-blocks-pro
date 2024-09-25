@@ -8,15 +8,17 @@ export default function save({ attributes }) {
 		scrollTimingUnit,
 		blockId,
 		scrollPersistVisible,
-		fixedTopPosition,
-		fixedTopPositionUnit,
+		fixedPositionType,
+		fixedPositionValue,
+		fixedPositionUnit,
 	} = attributes;
 
 	const blockProps = useBlockProps.save({
-		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} vk_fixed-display-${blockId}`,
+		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} vk_fixed-display-${blockId} vk_fixed-display-position-from-${fixedPositionType}`,
 		style: {
-			top: ['right', 'left'].includes(position)
-				? `${fixedTopPosition}${fixedTopPositionUnit}`
+			// positionが「right」または「left」の場合に「top」や「bottom」を適用
+			[fixedPositionType]: ['right', 'left'].includes(position)
+				? `${fixedPositionValue}${fixedPositionUnit}`
 				: undefined,
 		},
 		...(mode === 'show-on-scroll' && {

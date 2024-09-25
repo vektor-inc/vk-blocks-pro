@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+= 1.85.1 =
 [ Bug fix ] Due to an issue where the hidden setting does not function properly when TreeShaking is enabled and CSS splitting is disabled, TreeShaking has been temporarily disabled as a workaround.
 
 = 1.85.0 =

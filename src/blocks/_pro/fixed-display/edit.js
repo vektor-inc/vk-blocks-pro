@@ -10,6 +10,7 @@ import {
 	SelectControl,
 	ToggleControl,
 	PanelRow,
+	RadioControl,
 } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
@@ -32,8 +33,9 @@ export default function FixedDisplayEdit(props) {
 		scrollTiming = 100,
 		scrollTimingUnit = 'px',
 		scrollPersistVisible = false,
-		fixedTopPosition = 50,
-		fixedTopPositionUnit = 'svh',
+		fixedPositionType = 'top',
+		fixedPositionValue = 50,
+		fixedPositionUnit = 'svh',
 	} = attributes;
 
 	useEffect(() => {
@@ -54,12 +56,11 @@ export default function FixedDisplayEdit(props) {
 	}, [clientId, mode, position, blockId, scrollPersistVisible]);
 
 	const blockProps = useBlockProps({
-		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} vk_fixed-display-${blockId}`,
+		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} vk_fixed-display-${blockId} vk_fixed-display-position-from-${fixedPositionType}`,
 		style: {
-			// Apply top position only on the front end
-			top:
+			[fixedPositionType]:
 				typeof window === 'undefined' || !window.wp?.blockEditor
-					? `${fixedTopPosition}${fixedTopPositionUnit}`
+					? `${fixedPositionValue}${fixedPositionUnit}`
 					: undefined,
 		},
 	});
@@ -112,25 +113,60 @@ export default function FixedDisplayEdit(props) {
 						]}
 					/>
 					{['right', 'left'].includes(position) && (
-						<UnitControl
-							label={__(
-								'Fixed position from the top',
-								'vk-blocks-pro'
-							)}
-							value={`${fixedTopPosition}${fixedTopPositionUnit}`}
-							onChange={(nextValue) => {
-								const unit =
-									units.find((unit) =>
-										nextValue.endsWith(unit.value)
-									) || units[0];
-								const value = parseFloat(nextValue) || 0;
-								setAttributes({
-									fixedTopPosition: value,
-									fixedTopPositionUnit: unit.value,
-								});
-							}}
-							units={units}
-						/>
+						<>
+							<RadioControl
+								label={__(
+									'Fixed position origin',
+									'vk-blocks-pro'
+								)}
+								selected={fixedPositionType}
+								options={[
+									{
+										label: __(
+											'Fixed position from the top',
+											'vk-blocks-pro'
+										),
+										value: 'top',
+									},
+									{
+										label: __(
+											'Fixed position from the bottom',
+											'vk-blocks-pro'
+										),
+										value: 'bottom',
+									},
+								]}
+								onChange={(value) =>
+									setAttributes({ fixedPositionType: value })
+								}
+							/>
+							<UnitControl
+								label={
+									fixedPositionType === 'top'
+										? __(
+												'Fixed position from the top',
+												'vk-blocks-pro'
+											)
+										: __(
+												'Fixed position from the bottom',
+												'vk-blocks-pro'
+											)
+								}
+								value={`${fixedPositionValue}${fixedPositionUnit}`}
+								onChange={(nextValue) => {
+									const unit =
+										units.find((unit) =>
+											nextValue.endsWith(unit.value)
+										) || units[0];
+									const value = parseFloat(nextValue) || 0;
+									setAttributes({
+										fixedPositionValue: value,
+										fixedPositionUnit: unit.value,
+									});
+								}}
+								units={units}
+							/>
+						</>
 					)}
 					{mode === 'show-on-scroll' && (
 						<>

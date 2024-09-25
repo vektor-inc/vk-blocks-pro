@@ -27,11 +27,15 @@
 			"type": "boolean",
 			"default": false
 		},
-		"fixedTopPosition": {
+		"fixedPositionType": {
+			"type": "string",
+			"default": "top"
+		},
+		"fixedPositionValue": {
 			"type": "number",
 			"default": 50
 		},
-		"fixedTopPositionUnit": {
+		"fixedPositionUnit": {
 			"type": "string",
 			"default": "svh"
 		},

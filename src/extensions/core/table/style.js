@@ -118,27 +118,29 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 					'.wp-block-table.is-style-vk-table-scrollable'
 				);
 				tables.forEach((table) => {
-					const breakpoint =
-						table.getAttribute('data-scroll-breakpoint') ||
-						'table-scrollable-mobile';
-					table.setAttribute('data-scroll-breakpoint', breakpoint);
-
-					// data-output-scroll-hintがない場合、自動でfalseを設定
-					if (!table.hasAttribute('data-output-scroll-hint')) {
-						table.setAttribute('data-output-scroll-hint', 'false');
+					if (scrollable) {
+						const breakpoint =
+							table.getAttribute('data-scroll-breakpoint') ||
+							'table-scrollable-mobile';
+						table.setAttribute('data-scroll-breakpoint', breakpoint);
+					} else {
+						// scrollable が off の場合クラスを外す
+						table.classList.remove('is-style-vk-table-scrollable');
+						table.removeAttribute('data-scroll-breakpoint');
 					}
-
+		
+					// data-output-scroll-hintがない場合、自動でfalseを設定
 					table.setAttribute(
 						'data-output-scroll-hint',
 						showScrollMessage ? 'true' : 'false'
 					);
-
+		
 					// iconOutputLeftの制御
 					table.setAttribute(
 						'data-icon-output-left',
 						iconOutputLeft ? 'true' : 'false'
 					);
-
+		
 					// iconOutputRightの制御
 					table.setAttribute(
 						'data-icon-output-right',
@@ -146,7 +148,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 					);
 				});
 			};
-
+		
 			updateTableScrollAttributes();
 		}, [
 			scrollable,
@@ -156,7 +158,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 			scrollIconRight,
 			iconOutputLeft,
 			iconOutputRight,
-		]);
+		]);	
 
 		if (isValidBlockType(name) && props.isSelected) {
 			const blockEditContent = <BlockEdit {...props} />;
@@ -270,13 +272,8 @@ const addExtraProps = (saveElementProps, blockType, attributes) => {
 			attributes.scrollable ? 'is-style-vk-table-scrollable' : ''
 		}`.trim();
 
-		// 'scrollable' が true の場合のみ 'data-scroll-breakpoint' を設定
-		if (attributes.scrollable) {
-			saveElementProps['data-scroll-breakpoint'] =
-				attributes.scrollBreakpoint;
-		} else {
-			delete saveElementProps['data-scroll-breakpoint'];
-		}
+		saveElementProps['data-scroll-breakpoint'] =
+			attributes.scrollBreakpoint;
 
 		// 'showScrollMessage' が true の場合のみ 'data-output-scroll-hint' を追加
 		if (attributes.showScrollMessage) {
@@ -299,7 +296,6 @@ const addExtraProps = (saveElementProps, blockType, attributes) => {
 			delete saveElementProps['data-icon-output-right'];
 		}
 	} else {
-		// scrollable が false の場合に不要な属性を削除
 		delete saveElementProps['data-scroll-breakpoint'];
 		delete saveElementProps['data-output-scroll-hint'];
 		delete saveElementProps['data-icon-output-left'];

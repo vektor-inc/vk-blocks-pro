@@ -272,7 +272,8 @@ const addExtraProps = (saveElementProps, blockType, attributes) => {
 
 		// 'scrollable' が true の場合のみ 'data-scroll-breakpoint' を設定
 		if (attributes.scrollable) {
-			saveElementProps['data-scroll-breakpoint'] = attributes.scrollBreakpoint;
+			saveElementProps['data-scroll-breakpoint'] =
+				attributes.scrollBreakpoint;
 		} else {
 			delete saveElementProps['data-scroll-breakpoint'];
 		}

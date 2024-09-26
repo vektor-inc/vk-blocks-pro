@@ -123,14 +123,14 @@ export default function FixedDisplayEdit(props) {
 								options={[
 									{
 										label: __(
-											'Fixed position from the top',
+											'Top section',
 											'vk-blocks-pro'
 										),
 										value: 'top',
 									},
 									{
 										label: __(
-											'Fixed position from the bottom',
+											'Bottom section',
 											'vk-blocks-pro'
 										),
 										value: 'bottom',

@@ -56,7 +56,7 @@ export default function FixedDisplayEdit(props) {
 	}, [clientId, mode, position, blockId, scrollPersistVisible]);
 
 	const blockProps = useBlockProps({
-		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} vk_fixed-display-${blockId} vk_fixed-display-position-from-${fixedPositionType}`,
+		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} vk_fixed-display-position-from-${fixedPositionType} vk_fixed-display-${blockId}`,
 		style: {
 			[fixedPositionType]:
 				typeof window === 'undefined' || !window.wp?.blockEditor

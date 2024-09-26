@@ -74,10 +74,8 @@
 		}
 	}
 	&-from-top {
-		top: 50%;
 	}
 	&-from-bottom {
-		bottom: 50%;
 	}
 }
 
@@ -121,11 +119,25 @@
 .logged-in.admin-bar:not(.scrolled) {
 	
 	.vk_fixed-display-position {
-		&-  {
+		&-top {
 			top: var(--admin-bar-offset);
 		}
-		&-right, &-left {
+		&-from-top {
 			top: calc(50svh + var(--admin-bar-offset));
+		}
+		&-from-bottom {
+			bottom: calc(50svh + var(--admin-bar-offset));
+		}
+	}	
+}
+
+.block-editor-block-list__layout {
+	.vk_fixed-display-position {
+		&-from-top {
+			top: unset !important;
+		}
+		&-from-bottom {
+			bottom: unset !important;
 		}
 	}	
 }

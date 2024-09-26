@@ -270,8 +270,12 @@ const addExtraProps = (saveElementProps, blockType, attributes) => {
 			attributes.scrollable ? 'is-style-vk-table-scrollable' : ''
 		}`.trim();
 
-		saveElementProps['data-scroll-breakpoint'] =
-			attributes.scrollBreakpoint;
+		// 'scrollable' が true の場合のみ 'data-scroll-breakpoint' を設定
+		if (attributes.scrollable) {
+			saveElementProps['data-scroll-breakpoint'] = attributes.scrollBreakpoint;
+		} else {
+			delete saveElementProps['data-scroll-breakpoint'];
+		}
 
 		// 'showScrollMessage' が true の場合のみ 'data-output-scroll-hint' を追加
 		if (attributes.showScrollMessage) {
@@ -294,6 +298,7 @@ const addExtraProps = (saveElementProps, blockType, attributes) => {
 			delete saveElementProps['data-icon-output-right'];
 		}
 	} else {
+		// scrollable が false の場合に不要な属性を削除
 		delete saveElementProps['data-scroll-breakpoint'];
 		delete saveElementProps['data-output-scroll-hint'];
 		delete saveElementProps['data-icon-output-left'];

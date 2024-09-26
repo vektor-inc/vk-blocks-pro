@@ -106,7 +106,7 @@ e.g.
 
 == Changelog ==
 
-[ Bug fix ][ Core/table ] Fixed an issue where the class was not removed when table scrolling was disabled
+[ Bug fix ][ Core/table ] Fixed the class was not removed when table scrolling was disabled.
 
 = 1.85.1 =
 [ Bug fix ] Due to an issue where the hidden setting does not function properly when TreeShaking is enabled and CSS splitting is disabled, TreeShaking has been temporarily disabled as a workaround.

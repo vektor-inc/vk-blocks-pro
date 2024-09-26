@@ -27,7 +27,7 @@ add_filter( 'vk_css_tree_shaking_handles', 'vk_blocks_css_tree_shaking_handles' 
  *
  * @param array $inidata CSS Tree Shaking Exclude Paramator.
  */
-function vk_blocks_css_tree_shaking_exclude_class( $inidata ) {
+function vk_blocks_css_tree_shaking_exclude_class( $jsaddlist ) {
 	$exclude_classes_array = array(
 		'swiper-pagination-bullet',
 		'swiper-pagination-bullet-active',
@@ -73,9 +73,9 @@ function vk_blocks_css_tree_shaking_exclude_class( $inidata ) {
 		'vk_post-col-xxl-2',
 	);
 
-	$inidata['class'] = array_unique( array_merge( $inidata['class'], $exclude_classes_array ) );
+	$jsaddlist = array_unique( array_merge( $jsaddlist, $exclude_classes_array ) );
 
-	return $inidata;
+	return $jsaddlist;
 }
 add_filter( 'css_tree_shaking_exclude', 'vk_blocks_css_tree_shaking_exclude_class' );
 

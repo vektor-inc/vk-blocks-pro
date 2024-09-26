@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.3
 Tested up to: 6.6
-Stable tag: 1.84.0.1
+Stable tag: 1.85.1.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -105,6 +105,11 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+[ Add function ] [ Fixed Display (Pro) ] Added an option for "Fixed display from the bottom."
+
+= 1.85.1 =
+[ Bug fix ] Due to an issue where the hidden setting does not function properly when TreeShaking is enabled and CSS splitting is disabled, TreeShaking has been temporarily disabled as a workaround.
 
 = 1.85.0 =
 [ Add function ][ Core Table ] Add scroll hint for horizontal scrolling.

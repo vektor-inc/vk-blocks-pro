@@ -113,46 +113,61 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 
 		// コンポーネントのマウントまたは更新後に属性を更新
 		useEffect(() => {
+			// 初期ロード時にクラスや属性を確認して scrollable を ON にする
+			const checkTableScrollAttributes = () => {
+				const tables = document.querySelectorAll('.wp-block-table');
+				tables.forEach((table) => {
+					// もし is-style-vk-table-scrollable クラスや data-scroll-breakpoint 属性がついていたら scrollable を ON に設定
+					if (
+						table.classList.contains('is-style-vk-table-scrollable') ||
+						table.hasAttribute('data-scroll-breakpoint')
+					) {
+						setAttributes({ scrollable: true });
+					}
+				});
+			};
+		
+			// コンポーネントの初回レンダリング時に実行
+			checkTableScrollAttributes();
+		}, []); // 初期レンダリング時のみ実行
+		
+		// scrollable の状態が確定したら処理を実行
+		useEffect(() => {
 			const updateTableScrollAttributes = () => {
 				const tables = document.querySelectorAll(
 					'.wp-block-table.is-style-vk-table-scrollable'
 				);
 				tables.forEach((table) => {
-					if (scrollable) {
+					if (!scrollable) {
+						table.classList.remove('is-style-vk-table-scrollable');
+						table.removeAttribute('data-scroll-breakpoint');
+					} else {
 						const breakpoint =
 							table.getAttribute('data-scroll-breakpoint') ||
 							'table-scrollable-mobile';
-						table.setAttribute(
-							'data-scroll-breakpoint',
-							breakpoint
-						);
-					} else {
-						// scrollable が off の場合クラスを外す
-						table.classList.remove('is-style-vk-table-scrollable');
-						table.removeAttribute('data-scroll-breakpoint');
+						table.setAttribute('data-scroll-breakpoint', breakpoint);
 					}
-
-					// data-output-scroll-hintがない場合、自動でfalseを設定
+		
 					table.setAttribute(
 						'data-output-scroll-hint',
 						showScrollMessage ? 'true' : 'false'
 					);
-
-					// iconOutputLeftの制御
+		
 					table.setAttribute(
 						'data-icon-output-left',
 						iconOutputLeft ? 'true' : 'false'
 					);
-
-					// iconOutputRightの制御
+		
 					table.setAttribute(
 						'data-icon-output-right',
 						iconOutputRight ? 'true' : 'false'
 					);
 				});
 			};
-
-			updateTableScrollAttributes();
+		
+			if (typeof scrollable !== 'undefined') {
+				updateTableScrollAttributes();
+			}
 		}, [
 			scrollable,
 			scrollBreakpoint,
@@ -161,7 +176,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 			scrollIconRight,
 			iconOutputLeft,
 			iconOutputRight,
-		]);
+		]);				
 
 		if (isValidBlockType(name) && props.isSelected) {
 			const blockEditContent = <BlockEdit {...props} />;
@@ -302,7 +317,7 @@ const addExtraProps = (saveElementProps, blockType, attributes) => {
 			delete saveElementProps['data-icon-output-right'];
 		}
 	} else {
-		// scrollable が false の場合に不要な属性を削除
+		// 他のブロックでは不要な属性を削除
 		delete saveElementProps['data-scroll-breakpoint'];
 		delete saveElementProps['data-output-scroll-hint'];
 		delete saveElementProps['data-icon-output-left'];

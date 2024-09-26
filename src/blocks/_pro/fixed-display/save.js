@@ -16,7 +16,6 @@ export default function save({ attributes }) {
 	const blockProps = useBlockProps.save({
 		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} vk_fixed-display-position-from-${fixedPositionType} vk_fixed-display-${blockId}`,
 		style: {
-			// positionが「right」または「left」の場合に「top」や「bottom」を適用
 			[fixedPositionType]: ['right', 'left'].includes(position)
 				? `${fixedPositionValue}${fixedPositionUnit}`
 				: undefined,

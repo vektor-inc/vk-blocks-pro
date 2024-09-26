@@ -122,25 +122,28 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 						const breakpoint =
 							table.getAttribute('data-scroll-breakpoint') ||
 							'table-scrollable-mobile';
-						table.setAttribute('data-scroll-breakpoint', breakpoint);
+						table.setAttribute(
+							'data-scroll-breakpoint',
+							breakpoint
+						);
 					} else {
 						// scrollable が off の場合クラスを外す
 						table.classList.remove('is-style-vk-table-scrollable');
 						table.removeAttribute('data-scroll-breakpoint');
 					}
-		
+
 					// data-output-scroll-hintがない場合、自動でfalseを設定
 					table.setAttribute(
 						'data-output-scroll-hint',
 						showScrollMessage ? 'true' : 'false'
 					);
-		
+
 					// iconOutputLeftの制御
 					table.setAttribute(
 						'data-icon-output-left',
 						iconOutputLeft ? 'true' : 'false'
 					);
-		
+
 					// iconOutputRightの制御
 					table.setAttribute(
 						'data-icon-output-right',
@@ -148,7 +151,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 					);
 				});
 			};
-		
+
 			updateTableScrollAttributes();
 		}, [
 			scrollable,
@@ -158,7 +161,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 			scrollIconRight,
 			iconOutputLeft,
 			iconOutputRight,
-		]);	
+		]);
 
 		if (isValidBlockType(name) && props.isSelected) {
 			const blockEditContent = <BlockEdit {...props} />;

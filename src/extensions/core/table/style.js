@@ -271,12 +271,15 @@ addFilter('editor.BlockEdit', 'vk-blocks/table-style', addBlockControl);
 // 保存時に追加のプロパティを設定
 const addExtraProps = (saveElementProps, blockType, attributes) => {
 	if (isValidBlockType(blockType.name)) {
-		saveElementProps.className = `${saveElementProps.className || ''} ${
-			attributes.scrollable ? 'is-style-vk-table-scrollable' : ''
-		}`.trim();
-
-		saveElementProps['data-scroll-breakpoint'] =
-			attributes.scrollBreakpoint;
+		// 'scrollable' が true の場合のみ 'is-style-vk-table-scrollable' クラスと 'data-scroll-breakpoint' を設定
+		if (attributes.scrollable) {
+			saveElementProps.className = `${saveElementProps.className || ''} is-style-vk-table-scrollable`.trim();
+			saveElementProps['data-scroll-breakpoint'] = attributes.scrollBreakpoint;
+		} else {
+			// 'scrollable' が false の場合、クラスと属性を削除
+			saveElementProps.className = saveElementProps.className.replace('is-style-vk-table-scrollable', '').trim();
+			delete saveElementProps['data-scroll-breakpoint'];
+		}
 
 		// 'showScrollMessage' が true の場合のみ 'data-output-scroll-hint' を追加
 		if (attributes.showScrollMessage) {
@@ -299,6 +302,7 @@ const addExtraProps = (saveElementProps, blockType, attributes) => {
 			delete saveElementProps['data-icon-output-right'];
 		}
 	} else {
+		// scrollable が false の場合に不要な属性を削除
 		delete saveElementProps['data-scroll-breakpoint'];
 		delete saveElementProps['data-output-scroll-hint'];
 		delete saveElementProps['data-icon-output-left'];

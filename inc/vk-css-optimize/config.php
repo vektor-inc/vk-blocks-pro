@@ -77,7 +77,7 @@ function vk_blocks_css_tree_shaking_exclude_class( $jsaddlist ) {
 
 	return $jsaddlist;
 }
-add_filter( 'css_tree_shaking_exclude', 'vk_blocks_css_tree_shaking_exclude_class' );
+add_filter( 'css_tree_shaking_js_added_class', 'vk_blocks_css_tree_shaking_exclude_class' );
 
 /**
  * CSS Optimize option default

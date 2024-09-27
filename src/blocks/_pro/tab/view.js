@@ -193,6 +193,21 @@ document.addEventListener('DOMContentLoaded', function () {
 					`vk_tab_labels_label-${TabId}`
 				);
 
+				// iframeの再読み込み処理
+				const iframes = newActiveBody.querySelectorAll('iframe');
+				iframes.forEach((iframe) => {
+					const currentHeight = iframe.style.height;
+
+					const src = iframe.getAttribute('src');
+					iframe.setAttribute('src', src);
+
+					iframe.style.height = currentHeight;
+
+					iframe.onload = function() {
+						console.log('iframe loaded');
+					};
+				});
+	
 				e.target.setAttribute('tabindex', '0');
 				e.target.focus();
 			});

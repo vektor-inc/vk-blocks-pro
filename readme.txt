@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Add function ] [ Fixed Display (Pro) ] Added an option for "Fixed display from the bottom."
+
 = 1.85.1 =
 [ Bug fix ] Due to an issue where the hidden setting does not function properly when TreeShaking is enabled and CSS splitting is disabled, TreeShaking has been temporarily disabled as a workaround.
 
@@ -127,7 +129,6 @@ e.g.
 [ Specification change ][ Classic FAQ / New FAQ ] Support structured data.
 [ Bug fix ][ Link toolbar ] Fix to prevent adding http:// or https:// when a relative path is entered.
 [ Bug fix ][ Post list (Pro) ] Fixed pagination customization in post list.
-[ Bug fix ][ Breadcrumb(Pro) ] Fixed pagination customization in post list.
 [ Other ] Add a mode to extract class name for Font awesome icon.
 [ Other ] Supports custom CSS including pseudo-elements even in block-by-block lazy loading mode.
 

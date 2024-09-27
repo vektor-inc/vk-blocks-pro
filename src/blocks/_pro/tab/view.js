@@ -230,8 +230,7 @@ document.addEventListener('DOMContentLoaded', function () {
 					iframe.setAttribute('src', src); // そのまま再設定のみを行う
 
 					// iframeの高さを保存していた値に再設定
-					iframe.style.height =
-						iframeHeights[newActiveBody.id];
+					iframe.style.height = iframeHeights[newActiveBody.id];
 				});
 
 				// タブがアクティブになった瞬間にiframeの高さを計算して調整

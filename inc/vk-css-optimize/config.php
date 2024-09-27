@@ -27,7 +27,7 @@ add_filter( 'vk_css_tree_shaking_handles', 'vk_blocks_css_tree_shaking_handles' 
  *
  * @param array $inidata CSS Tree Shaking Exclude Paramator.
  */
-function vk_blocks_css_tree_shaking_exclude_class( $jsaddlist ) {
+function vk_blocks_css_tree_shaking_js_added_class( $jsaddlist ) {
 	$exclude_classes_array = array(
 		'swiper-pagination-bullet',
 		'swiper-pagination-bullet-active',
@@ -77,7 +77,7 @@ function vk_blocks_css_tree_shaking_exclude_class( $jsaddlist ) {
 
 	return $jsaddlist;
 }
-add_filter( 'css_tree_shaking_js_added_class', 'vk_blocks_css_tree_shaking_exclude_class' );
+add_filter( 'css_tree_shaking_js_added_class', 'vk_blocks_css_tree_shaking_js_added_class' );
 
 /**
  * CSS Optimize option default

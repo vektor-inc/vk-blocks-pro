@@ -198,16 +198,16 @@ class VK_Blocks_Block_Loader {
 		 */
 		foreach ( $this->get_block_names( array( 'is_pro' => false ) ) as $block_name ) {
 			if ( ! empty( $args['style'] ) && 'vk-blocks/' . $block_name === $args['style'] ) {
-				$args['style']  = null;
-				$args['script'] = null;
+				$args['style_handles']  = array();
+				$args['script_handles'] = array();
 			}
 		}
 
 		foreach ( $this->get_block_names( array( 'is_pro' => true ) ) as $block_name ) {
 			if ( file_exists( VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/build/blocks/_pro/' . $block_name . '/index.php' ) ) {
 				if ( ! empty( $args['style'] ) && 'vk-blocks/' . $block_name === $args['style'] ) {
-					$args['style']  = null;
-					$args['script'] = null;
+					$args['style_handles']  = array();
+					$args['script_handles'] = array();
 				}
 			}
 		}

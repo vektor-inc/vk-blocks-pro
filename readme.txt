@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Add function ] Added the functionality to apply the vk-scroll-hint class to all elements with the vk_hidden and vk_hidden-XXX classes.
+
 = 1.85.1 =
 [ Bug fix ] Due to an issue where the hidden setting does not function properly when TreeShaking is enabled and CSS splitting is disabled, TreeShaking has been temporarily disabled as a workaround.
 

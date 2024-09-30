@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Tab (Pro) ] Added a process to dynamically calculate and set the iframe height when the tab becomes active.
 [ Bug Fix ] Fixed an issue where disabling separated loading caused all block CSS to load.
 [ Add function ] [ Fixed Display (Pro) ] Added an option for "Fixed display from the bottom."
 

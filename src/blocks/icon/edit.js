@@ -10,6 +10,7 @@ import {
 	ButtonGroup,
 	Button,
 	SelectControl,
+	ToolbarGroup,
 } from '@wordpress/components';
 import {
 	InspectorControls,
@@ -21,6 +22,7 @@ import { select } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
 
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
+import LinkToolbar from '@vkblocks/components/link-toolbar';
 
 export default function IconEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -269,6 +271,18 @@ export default function IconEdit(props) {
 	return (
 		<>
 			{commonBlockControl}
+			<BlockControls>
+				<ToolbarGroup>
+					<LinkToolbar
+						linkUrl={iconUrl}
+						setLinkUrl={(url) => setAttributes({ iconUrl: url })}
+						linkTarget={iconTarget}
+						setLinkTarget={(target) =>
+							setAttributes({ iconTarget: target })
+						}
+					/>
+				</ToolbarGroup>
+			</BlockControls>
 			<InspectorControls>
 				<PanelBody title={__('Icon Setting', 'vk-blocks-pro')}>
 					<BaseControl

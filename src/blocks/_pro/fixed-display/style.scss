@@ -9,6 +9,24 @@
 	position: fixed;
 	margin-block-start: 0;
 	z-index: 99999;
+	
+	/* タイマー機能用クラス */
+	&.is-timed-display {
+		opacity: 0;
+		transition: opacity 0.3s ease;
+
+		&.is-visible {
+			opacity: 1;
+		}
+	}
+
+	&.is-timed-hide {
+
+		&:not(.is-visible) {
+			opacity: 0;
+			transition: opacity 0.3s ease;
+		}
+	}
 }
 
 .vk_fixed-display-mode {
@@ -24,7 +42,6 @@
 			opacity: 1;
 		}
 	}
-
 }
 
 .vk_fixed-display-position {
@@ -110,6 +127,13 @@
 				}
 			}
 		}
+
+		&-from-top {
+			top: unset !important;
+		}
+		&-from-bottom {
+			bottom: unset !important;
+		}
 	}
 }
 
@@ -127,17 +151,6 @@
 		}
 		&-from-bottom {
 			bottom: calc(50svh + var(--admin-bar-offset));
-		}
-	}	
-}
-
-.block-editor-block-list__layout {
-	.vk_fixed-display-position {
-		&-from-top {
-			top: unset !important;
-		}
-		&-from-bottom {
-			bottom: unset !important;
 		}
 	}	
 }

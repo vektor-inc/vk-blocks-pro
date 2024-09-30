@@ -1,6 +1,6 @@
 /* eslint-env browser */
 
-// スクロールイベントリスナーを追加
+// スクロールタイミング設定
 window.addEventListener('scroll', function () {
 	const items = document.querySelectorAll(
 		'.vk_fixed-display-mode-show-on-scroll'
@@ -21,6 +21,31 @@ window.addEventListener('scroll', function () {
 			item.classList.add('is-visible');
 		} else if (!scrollPersistVisible) {
 			item.classList.remove('is-visible');
+		}
+	});
+});
+
+// 表示・非表示タイマー設定
+window.addEventListener('DOMContentLoaded', function () {
+	const items = document.querySelectorAll('.vk_fixed-display');
+
+	items.forEach((item) => {
+		const displayAfterSeconds = parseInt(item.getAttribute('data-display-after-seconds'), 10);
+		const hideAfterSeconds = parseInt(item.getAttribute('data-hide-after-seconds'), 10);
+
+		if (displayAfterSeconds > 0) {
+			setTimeout(() => {
+				item.classList.add('is-visible');
+			}, displayAfterSeconds * 1000);
+		} else {
+			item.classList.add('is-visible');
+		}
+
+		// X秒後に非表示
+		if (hideAfterSeconds > 0) {
+			setTimeout(() => {
+				item.classList.remove('is-visible');
+			}, hideAfterSeconds * 1000);
 		}
 	});
 });
@@ -47,6 +72,6 @@ function convertUnitToPixels(value, unit) {
 		case 'svh':
 			return (value * window.innerHeight) / 100;
 		default:
-			return value; // 単位が不明な場合はピクセル値として扱う
+			return value;
 	}
 }

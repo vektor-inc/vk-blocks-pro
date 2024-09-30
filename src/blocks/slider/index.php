@@ -62,6 +62,5 @@ function vk_blocks_register_block_slider() {
 		__DIR__,
 		$assets
 	);
-
 }
 add_action( 'init', 'vk_blocks_register_block_slider', 99 );

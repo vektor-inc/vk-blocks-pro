@@ -1,6 +1,6 @@
 import save1_75_0 from './1.75.0/save';
 import save1_81_1 from './1.81.1/save';
-import save1_85_1 from './1.85.1./save';
+import save1_85_1 from './1.85.1/save';
 
 const blockAttributes = {
 	mode: {

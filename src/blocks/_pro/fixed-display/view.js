@@ -30,8 +30,14 @@ window.addEventListener('DOMContentLoaded', function () {
 	const items = document.querySelectorAll('.vk_fixed-display');
 
 	items.forEach((item) => {
-		const displayAfterSeconds = parseInt(item.getAttribute('data-display-after-seconds'), 10);
-		const hideAfterSeconds = parseInt(item.getAttribute('data-hide-after-seconds'), 10);
+		const displayAfterSeconds = parseInt(
+			item.getAttribute('data-display-after-seconds'),
+			10
+		);
+		const hideAfterSeconds = parseInt(
+			item.getAttribute('data-hide-after-seconds'),
+			10
+		);
 
 		if (displayAfterSeconds > 0) {
 			setTimeout(() => {

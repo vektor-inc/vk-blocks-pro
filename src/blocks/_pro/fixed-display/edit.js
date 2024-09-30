@@ -66,7 +66,7 @@ export default function FixedDisplayEdit(props) {
 					? `${fixedPositionValue}${fixedPositionUnit}`
 					: undefined,
 		},
-	});		
+	});
 
 	return (
 		<>
@@ -204,23 +204,36 @@ export default function FixedDisplayEdit(props) {
 						</>
 					)}
 				</PanelBody>
-				<PanelBody title={__('Fixed Display Behavior Setting', 'vk-blocks-pro')}>
-				<TextControl
-					label={__('Display after seconds', 'vk-blocks-pro')}
-					value={displayAfterSeconds || '0'}
-					onChange={(value) => setAttributes({ displayAfterSeconds: parseFloat(value) || 0 })}
-					type="number"
-					min="0"
-					step="0.1"
-				/>
-				<TextControl
-					label={__('Hide after seconds', 'vk-blocks-pro')}
-					value={hideAfterSeconds || '0'}
-					onChange={(value) => setAttributes({ hideAfterSeconds: parseFloat(value) || 0 })}
-					type="number"
-					min="0"
-					step="0.1"
-				/>
+				<PanelBody
+					title={__(
+						'Fixed Display Behavior Setting',
+						'vk-blocks-pro'
+					)}
+				>
+					<TextControl
+						label={__('Display after seconds', 'vk-blocks-pro')}
+						value={displayAfterSeconds || '0'}
+						onChange={(value) =>
+							setAttributes({
+								displayAfterSeconds: parseFloat(value) || 0,
+							})
+						}
+						type="number"
+						min="0"
+						step="0.1"
+					/>
+					<TextControl
+						label={__('Hide after seconds', 'vk-blocks-pro')}
+						value={hideAfterSeconds || '0'}
+						onChange={(value) =>
+							setAttributes({
+								hideAfterSeconds: parseFloat(value) || 0,
+							})
+						}
+						type="number"
+						min="0"
+						step="0.1"
+					/>
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>

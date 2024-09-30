@@ -11,8 +11,8 @@ export default function save({ attributes }) {
 		fixedPositionType,
 		fixedPositionValue,
 		fixedPositionUnit,
-        displayAfterSeconds,
-        hideAfterSeconds,
+		displayAfterSeconds,
+		hideAfterSeconds,
 	} = attributes;
 
 	const blockProps = useBlockProps.save({
@@ -35,7 +35,7 @@ export default function save({ attributes }) {
 		...(hideAfterSeconds > 0 && {
 			'data-hide-after-seconds': hideAfterSeconds.toString(),
 		}),
-	});	
+	});
 
 	return (
 		<div {...blockProps}>

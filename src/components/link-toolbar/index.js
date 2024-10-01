@@ -122,7 +122,7 @@ const LinkToolbar = ({
 	linkTarget,
 	setLinkTarget,
 	relAttribute,
-	setAttributes,
+	setRelAttributes,
 	linkDescription,
 	setLinkDescription,
 }) => {
@@ -139,12 +139,16 @@ const LinkToolbar = ({
 	useEffect(() => {
 		// relAttribute に noopener が含まれていない場合は追加
 		if (relAttribute && !relAttribute.includes('noopener')) {
-			setAttributes({ relAttribute: `${relAttribute} noopener`.trim() });
+			if (typeof setRelAttributes === 'function') {
+				setRelAttributes(`${relAttribute} noopener`.trim());
+			}
 		} else if (!relAttribute) {
 			// relAttribute が未定義の場合は noopener を追加
-			setAttributes({ relAttribute: 'noopener' });
+			if (typeof setRelAttributes === 'function') {
+				setRelAttributes('noopener');
+			}
 		}
-	}, [relAttribute]);
+	}, [relAttribute]);	
 
 	useEffect(() => {
 		if (linkUrl) {
@@ -283,24 +287,29 @@ const LinkToolbar = ({
 				.replace(/\s+/g, ' ')
 				.trim();
 		}
-		setAttributes({ relAttribute: updatedRel });
+		// setRelAttributes が渡されていれば、それを使用して relAttribute を更新
+		if (typeof setRelAttributes === 'function') {
+			setRelAttributes(updatedRel);
+		}
 	};
 
 	const handleTargetChange = (checked) => {
 		// ターゲットを設定
 		setLinkTarget(checked ? '_blank' : '_self');
-
+	
 		// rel 属性の更新処理
 		let updatedRel = relAttribute || '';
-
+	
 		// noopener がすでに含まれていない場合のみ追加
 		if (!updatedRel.includes('noopener')) {
 			updatedRel = `${updatedRel} noopener`.trim();
 		}
-
+	
 		// noopener を常に rel 属性に保持
-		setAttributes({ relAttribute: updatedRel });
-	};
+		if (typeof setRelAttributes === 'function') {
+			setRelAttributes(updatedRel);
+		}
+	};	
 
 	useEffect(() => {
 		// ブロック名をもとにリンク説明を設定
@@ -393,29 +402,16 @@ const LinkToolbar = ({
 
 						{isEditingLink && (
 							<div>
-								<CheckboxControl
-									label={__(
-										'Add noreferrer',
-										'vk-blocks-pro'
-									)}
-									checked={
-										relAttribute?.includes('noreferrer') ||
-										false
-									}
-									onChange={(checked) => {
-										handleRelChange('noreferrer', checked);
-									}}
-								/>
-								<CheckboxControl
-									label={__('Add nofollow', 'vk-blocks-pro')}
-									checked={
-										relAttribute?.includes('nofollow') ||
-										false
-									}
-									onChange={(checked) => {
-										handleRelChange('nofollow', checked);
-									}}
-								/>
+							<CheckboxControl
+								label={__('Add noreferrer', 'vk-blocks-pro')}
+								checked={relAttribute?.includes('noreferrer') || false}
+								onChange={(checked) => handleRelChange('noreferrer', checked)}
+							/>
+							<CheckboxControl
+								label={__('Add nofollow', 'vk-blocks-pro')}
+								checked={relAttribute?.includes('nofollow') || false}
+								onChange={(checked) => handleRelChange('nofollow', checked)}
+							/>
 								<TextControl
 									label={__(
 										'Accessibility link description',

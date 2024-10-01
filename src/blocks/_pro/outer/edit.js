@@ -395,6 +395,10 @@ export default function OuterEdit(props) {
 		});
 	};
 
+	const setRelAttributes = (newRel) => {
+		setAttributes({ relAttribute: newRel });
+	};
+
 	return (
 		<>
 			<BlockControls>
@@ -418,7 +422,7 @@ export default function OuterEdit(props) {
 							setAttributes({ linkDescription: desc })
 						}
 						relAttribute={attributes.relAttribute}
-						setAttributes={setAttributes}
+						setRelAttributes={setRelAttributes}
 					/>
 				</ToolbarGroup>
 			</BlockControls>

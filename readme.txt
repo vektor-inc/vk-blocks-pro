@@ -109,6 +109,7 @@ e.g.
 [ Bug fix ][ Tab (Pro) ] Added a process to dynamically calculate and set the iframe height when the tab becomes active.
 [ Bug Fix ] Fixed an issue where disabling separated loading caused all block CSS to load.
 [ Add function ] [ Fixed Display (Pro) ] Added an option for "Fixed display from the bottom."
+[ Add function ] Added to apply the vk-scroll-hint class to all elements with the vk_hidden and vk_hidden-XXX classes.
 [ Add function ][ icon ] Add toolbar link for components.
 
 = 1.85.1 =

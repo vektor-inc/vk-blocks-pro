@@ -217,9 +217,15 @@ const LinkToolbar = ({
 	};
 
 	const handleRemove = () => {
-		setLinkUrl('');
-		setLinkTarget('_self');
-		setLinkDescription('');
+		if (typeof setLinkUrl === 'function') {
+			setLinkUrl('');
+		}
+		if (typeof setLinkTarget === 'function') {
+			setLinkTarget('_self');
+		}
+		if (typeof setLinkDescription === 'function') {
+			setLinkDescription('');
+		}
 		setIsOpen(false);
 	};
 
@@ -239,7 +245,6 @@ const LinkToolbar = ({
 					// console.error('Failed to copy: ', error);
 				});
 		} else {
-			// Clipboard API がサポートされていない場合のフォールバック
 			const textArea = document.createElement('textarea');
 			textArea.value = formattedUrl;
 			document.body.appendChild(textArea);
@@ -274,10 +279,10 @@ const LinkToolbar = ({
 	};
 
 	const handleSubmit = () => {
-		if (linkUrl) {
+		if (typeof setLinkUrl === 'function') {
 			setLinkUrl(formatUrl(linkUrl));
 		}
-	};
+	};	
 
 	const handleRelChange = (type, checked) => {
 		let updatedRel = relAttribute || '';
@@ -291,25 +296,22 @@ const LinkToolbar = ({
 				.replace(/\s+/g, ' ')
 				.trim();
 		}
-		// setRelAttributes が渡されていれば、それを使用して relAttribute を更新
 		if (typeof setRelAttributes === 'function') {
 			setRelAttributes(updatedRel);
 		}
-	};
+	};	
 
 	const handleTargetChange = (checked) => {
-		// ターゲットを設定
-		setLinkTarget(checked ? '_blank' : '_self');
-
-		// rel 属性の更新処理
+		if (typeof setLinkTarget === 'function') {
+			setLinkTarget(checked ? '_blank' : '_self');
+		}
+	
 		let updatedRel = relAttribute || '';
-
-		// noopener がすでに含まれていない場合のみ追加
+	
 		if (!updatedRel.includes('noopener')) {
 			updatedRel = `${updatedRel} noopener`.trim();
 		}
-
-		// noopener を常に rel 属性に保持
+	
 		if (typeof setRelAttributes === 'function') {
 			setRelAttributes(updatedRel);
 		}
@@ -369,7 +371,11 @@ const LinkToolbar = ({
 								defaultDescription={defaultDescription}
 								onRemove={handleRemove}
 								onCopy={handleCopy}
-								onEditLinkClick={isSupportBlock ? handleEditLinkClick : undefined}
+								onEditLinkClick={
+									isSupportBlock
+										? handleEditLinkClick
+										: undefined
+								}
 								isSupportBlock={isSupportBlock}
 							/>
 						)}

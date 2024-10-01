@@ -1,6 +1,22 @@
 document.addEventListener('DOMContentLoaded', function () {
 	const vkTabs = document.querySelectorAll('.vk_tab');
 
+	// 各タブのiframeを管理する関数
+	const adjustIframeHeight = (tabBody) => {
+		const iframes = tabBody.querySelectorAll('iframe');
+		iframes.forEach((iframe) => {
+			// iframeのheight属性を取得
+			const iframeHeight = iframe.getAttribute('height');
+
+			// heightが数値だけの場合はpxを付け、単位付きの場合はそのまま使用
+			if (iframeHeight && /^\d+$/.test(iframeHeight)) {
+				iframe.style.height = iframeHeight + 'px';
+			} else {
+				iframe.style.height = iframeHeight;
+			}
+		});
+	};
+
 	Array.prototype.forEach.call(vkTabs, (vkTab) => {
 		const vkTabLabels = vkTab.querySelector('.vk_tab_labels');
 		const vkTabLabel = vkTab.querySelectorAll('.vk_tab_labels_label');
@@ -85,6 +101,20 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 
 		Array.prototype.forEach.call(vkTabLabel, (TabLabel) => {
+			// タブ内のiframeごとの高さを保持するオブジェクトを定義
+			const iframeHeights = {};
+
+			// iframeの高さを初期化時に取得して保存
+			const allIframes = document.querySelectorAll(
+				'.vk_tab_bodys_body iframe'
+			);
+			allIframes.forEach((iframe) => {
+				const tabId = iframe.closest('.vk_tab_bodys_body').id;
+				iframeHeights[tabId] =
+					iframe.style.height || iframe.clientHeight + 'px';
+			});
+
+			// タブがクリックされたときの処理
 			TabLabel.addEventListener('click', (e) => {
 				// ブロック ID を抽出
 				const TabLabelId = e.target.closest('.vk_tab_labels_label').id;
@@ -192,6 +222,19 @@ document.addEventListener('DOMContentLoaded', function () {
 					'aria-labelledby',
 					`vk_tab_labels_label-${TabId}`
 				);
+
+				// iframeの再読み込み処理
+				const iframes = newActiveBody.querySelectorAll('iframe');
+				iframes.forEach((iframe) => {
+					const src = iframe.getAttribute('src');
+					iframe.setAttribute('src', src); // そのまま再設定のみを行う
+
+					// iframeの高さを保存していた値に再設定
+					iframe.style.height = iframeHeights[newActiveBody.id];
+				});
+
+				// タブがアクティブになった瞬間にiframeの高さを計算して調整
+				adjustIframeHeight(newActiveBody);
 
 				e.target.setAttribute('tabindex', '0');
 				e.target.focus();

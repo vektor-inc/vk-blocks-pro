@@ -6,6 +6,7 @@ import { ReactComponent as Icon } from './icon.svg';
 import metadata from './block.json';
 import edit from './edit';
 import save from './save';
+import deprecated from './deprecated';
 
 import { addFilter } from '@wordpress/hooks';
 
@@ -18,10 +19,11 @@ export const settings = {
 	category: 'vk-blocks-cat',
 	edit,
 	save,
+	deprecated,
 };
 
 /**
- * 	表示領域に入った時に適用させるフィルター。
+ * 表示領域に入った時に適用させるフィルター
  *
  * @param {*} el
  * @param {*} type

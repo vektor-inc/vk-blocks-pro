@@ -5,6 +5,7 @@ export default function AccordionTriggerEdit() {
 	const blockProps = useBlockProps({
 		className: `vk_accordion-trigger`,
 	});
+
 	const accordionToggleRef = useRef(null);
 
 	useEffect(() => {
@@ -66,7 +67,6 @@ export default function AccordionTriggerEdit() {
 					templateLock={false}
 					template={[['core/paragraph']]}
 				/>
-				{/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
 				<span
 					ref={accordionToggleRef}
 					className="vk_accordion-toggle" // 初期状態のクラスはJSで設定

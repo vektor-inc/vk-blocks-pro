@@ -72,6 +72,12 @@ function vk_blocks_add_custom_css_attributes( $settings, $metadata ) {
 add_filter( 'block_type_metadata_settings', 'vk_blocks_add_custom_css_attributes', 10, 2 );
 
 /**
+ * CSSを蓄積するためのグローバル変数
+ */
+global $vk_blocks_custom_css_collection;
+$vk_blocks_custom_css_collection = '';
+
+/**
  * Render Custom Css Extension css
  *
  * @see https://github.com/WordPress/gutenberg/blob/3358251ae150e33dd6c0e0fb15be110cca1b5c59/lib/block-supports/layout.php#L294
@@ -81,6 +87,8 @@ add_filter( 'block_type_metadata_settings', 'vk_blocks_add_custom_css_attributes
  * @return string
  */
 function vk_blocks_render_custom_css( $block_content, $block ) {
+	global $vk_blocks_custom_css_collection;
+
 	if ( ! vk_blocks_has_custom_css_support( $block['blockName'] ) ) {
 		return $block_content;
 	}
@@ -89,24 +97,80 @@ function vk_blocks_render_custom_css( $block_content, $block ) {
 		return $block_content;
 	}
 
-	$css = $block['attrs']['vkbCustomCss'];
+	$css          = $block['attrs']['vkbCustomCss'];
+	$unique_class = '';
+
 	// selector文字列があるとき
 	if ( strpos( $css, 'selector' ) !== false ) {
 		// Uniqueクラスを生成
 		$unique_class = wp_unique_id( 'vk_custom_css_' );
+
 		// selectorをUniqueクラスに変換
 		$css = preg_replace( '/selector/', '.' . $unique_class, $css );
 
 		// vk_custom_cssをUniqueクラスに変換
 		$block_content = preg_replace( '/(class="[^"]*)vk_custom_css([^"]*")/', '$1' . $unique_class . '$2', $block_content, 1 );
 	}
-	$css = vk_blocks_minify_css( $css );
-	if ( function_exists( 'wp_enqueue_block_support_styles' ) ) {
-		wp_enqueue_block_support_styles( $css );
-		// 5.8のサポートを切るならelse内は削除する
-	} else {
-		$block_content = '<style>' . $css . '</style>' . $block_content;
+
+	// フッターでCSSを一括して出力する方式に変更したためコメントアウト
+	// $css = vk_blocks_minify_css( $css );
+	// if ( function_exists( 'wp_enqueue_block_support_styles' ) ) {
+	// wp_enqueue_block_support_styles( $css );
+	// 5.8のサポートを切るならelse内は削除する
+	// } else {
+	// $block_content = '<style>' . $css . '</style>' . $block_content;
+	// }
+
+	// CSSを蓄積する
+	$vk_blocks_custom_css_collection .= $css;
+
+	// 新しいUniqueクラスがない場合はCSSを出力しない
+	if ( ! $unique_class ) {
+		return $block_content;
 	}
+
+	// フロントエンドに直接スタイルを出力しない
 	return $block_content;
 }
 add_filter( 'render_block', 'vk_blocks_render_custom_css', 10, 2 );
+
+/**
+ * カスタムCSSをサニタイズする
+ *
+ * @param string $css カスタムCSSの内容.
+ * @return string サニタイズされたCSS
+ */
+function vk_blocks_sanitize_custom_css( $css ) {
+	// コメントや余分なスペースを削除
+	$css = preg_replace( '!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $css );
+	$css = trim( $css );
+
+	// 許可されたCSSパターン
+	$allowed_patterns = '/(@[a-z\-]*[^{]*{(?:[^{}]*{[^}]*}|[^}]*)*})|([^{};]+\s*{\s*[^{}]+;\s*})/s';
+
+	// 許可されたパターンのみを抽出
+	preg_match_all( $allowed_patterns, $css, $matches );
+
+	// 抽出されたCSSを連結
+	$sanitized_css = implode( ' ', $matches[0] );
+
+	// 余分なスペースをトリム
+	$sanitized_css = preg_replace( '/\s+/', ' ', $sanitized_css );
+	return trim( $sanitized_css );
+}
+
+/**
+ * フッターで蓄積されたカスタムCSSを出力
+ */
+function vk_blocks_output_custom_css() {
+	global $vk_blocks_custom_css_collection;
+
+	if ( ! empty( $vk_blocks_custom_css_collection ) ) {
+		// カスタムCSSをサニタイズ
+		$sanitized_css = vk_blocks_sanitize_custom_css( $vk_blocks_custom_css_collection );
+
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<style id="vk-blocks-custom-css">' . $sanitized_css . '</style>';
+	}
+}
+add_action( 'wp_footer', 'vk_blocks_output_custom_css', 20 );

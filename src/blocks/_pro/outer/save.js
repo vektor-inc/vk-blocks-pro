@@ -1,10 +1,20 @@
+/**
+ * External dependencies
+ */
 import classnames from 'classnames';
+
+/**
+ * Internal dependencies
+ */
 import { componentDivider } from './component-divider';
 import GenerateBgImage from './GenerateBgImage';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
-
 const prefix = 'vkb-outer';
+
+/**
+ * WordPress dependencies
+ */
 
 export default function save(props) {
 	const { attributes } = props;
@@ -15,12 +25,12 @@ export default function save(props) {
 		bgImageTablet,
 		bgImage,
 		outerWidth,
-		padding_left_and_right,
-		padding_top_and_bottom,
+		padding_left_and_right, //eslint-disable-line camelcase
+		padding_top_and_bottom, //eslint-disable-line camelcase
 		opacity,
 		levelSettingPerDevice,
-		upper_level,
-		upper_level_mobile,
+		upper_level, //eslint-disable-line camelcase
+		upper_level_mobile, //eslint-disable-line camelcase
 		upper_level_tablet,
 		upper_level_pc,
 		lower_level,

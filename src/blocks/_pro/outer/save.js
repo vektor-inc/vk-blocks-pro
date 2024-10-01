@@ -10,11 +10,11 @@ import { componentDivider } from './component-divider';
 import GenerateBgImage from './GenerateBgImage';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
-const prefix = 'vkb-outer';
 
 /**
  * WordPress dependencies
  */
+const prefix = 'vkb-outer';
 
 export default function save(props) {
 	const { attributes } = props;

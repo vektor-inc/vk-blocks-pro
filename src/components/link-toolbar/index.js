@@ -282,7 +282,7 @@ const LinkToolbar = ({
 		if (typeof setLinkUrl === 'function') {
 			setLinkUrl(formatUrl(linkUrl));
 		}
-	};	
+	};
 
 	const handleRelChange = (type, checked) => {
 		let updatedRel = relAttribute || '';
@@ -299,19 +299,19 @@ const LinkToolbar = ({
 		if (typeof setRelAttributes === 'function') {
 			setRelAttributes(updatedRel);
 		}
-	};	
+	};
 
 	const handleTargetChange = (checked) => {
 		if (typeof setLinkTarget === 'function') {
 			setLinkTarget(checked ? '_blank' : '_self');
 		}
-	
+
 		let updatedRel = relAttribute || '';
-	
+
 		if (!updatedRel.includes('noopener')) {
 			updatedRel = `${updatedRel} noopener`.trim();
 		}
-	
+
 		if (typeof setRelAttributes === 'function') {
 			setRelAttributes(updatedRel);
 		}

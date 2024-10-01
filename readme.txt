@@ -105,10 +105,11 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-
+[ Bug fix ] Fix load styles when separate load is enable.
 [ Bug fix ][ Tab (Pro) ] Added a process to dynamically calculate and set the iframe height when the tab becomes active.
 [ Bug Fix ] Fixed an issue where disabling separated loading caused all block CSS to load.
 [ Add function ] [ Fixed Display (Pro) ] Added an option for "Fixed display from the bottom."
+[ Add function ][ icon ] Add toolbar link for components.
 
 = 1.85.1 =
 [ Bug fix ] Due to an issue where the hidden setting does not function properly when TreeShaking is enabled and CSS splitting is disabled, TreeShaking has been temporarily disabled as a workaround.

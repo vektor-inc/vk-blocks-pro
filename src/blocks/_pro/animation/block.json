@@ -5,7 +5,7 @@
 	"title": "Animation",
 	"editorScript": "vk-blocks-build-js",
 	"editorStyle": "vk-blocks-build-editor-css",
-	"style": "vk-blocks/animation",
+	"style": "vk-blocks-build-css",
 	"attributes": {
 		"effect": {
 			"type": "string",

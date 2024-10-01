@@ -105,6 +105,8 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+[ Add function ][ Link toolbar ] Add edit link setting.
 [ Bug fix ] Fix load styles when separate load is enable.
 [ Bug fix ][ Tab (Pro) ] Added a process to dynamically calculate and set the iframe height when the tab becomes active.
 [ Bug Fix ] Fixed an issue where disabling separated loading caused all block CSS to load.

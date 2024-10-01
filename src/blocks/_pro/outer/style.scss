@@ -23,18 +23,6 @@ $media-xxl-down: 1399.98px;
 	background-repeat: no-repeat;
 	position: relative;
 
-	// リンク設定
-	& > .vkb-outer-link {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		color: transparent;
-		cursor: pointer;
-		z-index: 10;
-	}
-
 	/**
 	* Outer block deprecated
 	* WordPress6.0からhas-border-colorのクラス全体にborder-style: solid;がつくようになった

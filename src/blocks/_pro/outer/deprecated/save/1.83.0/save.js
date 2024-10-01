@@ -6,15 +6,16 @@ import classnames from 'classnames';
 /**
  * Internal dependencies
  */
+import { __ } from '@wordpress/i18n';
 import { componentDivider } from './component-divider';
 import GenerateBgImage from './GenerateBgImage';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
-import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+const prefix = 'vkb-outer';
 
 /**
  * WordPress dependencies
  */
-const prefix = 'vkb-outer';
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 export default function save(props) {
 	const { attributes } = props;
@@ -31,12 +32,12 @@ export default function save(props) {
 		levelSettingPerDevice,
 		upper_level, //eslint-disable-line camelcase
 		upper_level_mobile, //eslint-disable-line camelcase
-		upper_level_tablet,
-		upper_level_pc,
-		lower_level,
-		lower_level_mobile,
-		lower_level_tablet,
-		lower_level_pc,
+		upper_level_tablet, //eslint-disable-line camelcase
+		upper_level_pc, //eslint-disable-line camelcase
+		lower_level, //eslint-disable-line camelcase
+		lower_level_mobile, //eslint-disable-line camelcase
+		lower_level_tablet, //eslint-disable-line camelcase
+		lower_level_pc, //eslint-disable-line camelcase
 		upperDividerBgColor,
 		lowerDividerBgColor,
 		dividerType,
@@ -48,11 +49,9 @@ export default function save(props) {
 		minHeightValueTablet,
 		minHeightValueMobile,
 		minHeightUnit,
+		blockId,
 		linkUrl,
 		linkTarget,
-		relAttribute,
-		linkDescription,
-		blockId,
 	} = attributes;
 
 	let classPaddingLR;
@@ -85,13 +84,13 @@ export default function save(props) {
 		</>
 	);
 
-	// 幅のクラス切り替え
+	//幅のクラス切り替え
 	const classWidth =
 		outerWidth === 'full' || outerWidth === 'wide'
 			? `vk_outer-width-${outerWidth} align${outerWidth}`
 			: 'vk_outer-width-normal';
 
-	// classBgPositionのクラス切り替え
+	//classBgPositionのクラス切り替え
 	if (bgPosition === 'parallax') {
 		classBgPosition = 'vk_outer-bgPosition-parallax vk-prlx';
 	} else if (bgPosition === 'fixed') {
@@ -102,17 +101,22 @@ export default function save(props) {
 		classBgPosition = 'vk_outer-bgPosition-normal';
 	}
 
-	// classPaddingLRのクラス切り替え
+	//classPaddingLRのクラス切り替え
 	classPaddingLR = '';
+	//eslint-disable-next-line camelcase
 	if (padding_left_and_right === '0') {
 		classPaddingLR = 'vk_outer-paddingLR-none';
+		//eslint-disable-next-line camelcase
 	} else if (padding_left_and_right === '1') {
 		classPaddingLR = 'vk_outer-paddingLR-use';
+		//eslint-disable-next-line camelcase
 	} else if (padding_left_and_right === '2') {
+		// Fit to content area width
 		classPaddingLR = 'vk_outer-paddingLR-zero';
 	}
 
-	// classPaddingVerticalのクラス切り替え
+	//classPaddingVerticalのクラス切り替
+	//eslint-disable-next-line camelcase
 	if (padding_top_and_bottom === '1') {
 		classPaddingVertical = 'vk_outer-paddingVertical-use';
 	} else {
@@ -120,6 +124,7 @@ export default function save(props) {
 	}
 
 	// 上側セクションの傾き切り替え
+	//eslint-disable-next-line camelcase
 	if (!levelSettingPerDevice) {
 		if (upper_level) {
 			whichSideUpper = 'upper';
@@ -129,6 +134,7 @@ export default function save(props) {
 	}
 
 	// 下側セクションの傾き切り替え
+	//eslint-disable-next-line camelcase
 	if (!levelSettingPerDevice) {
 		if (lower_level) {
 			whichSideLower = 'lower';
@@ -142,10 +148,11 @@ export default function save(props) {
 
 	// Dividerエフェクトがない時のみ枠線を追
 	let borderStyleProperty = {};
+	//eslint-disable-next-line camelcase
 	if (!levelSettingPerDevice) {
 		if (
-			upper_level === 0 &&
-			lower_level === 0 &&
+			upper_level === 0 && //eslint-disable-line camelcase
+			lower_level === 0 && //eslint-disable-line camelcase
 			borderWidth > 0 &&
 			borderStyle !== 'none'
 		) {
@@ -158,19 +165,21 @@ export default function save(props) {
 						: undefined,
 				borderRadius: `${borderRadius}px`,
 			};
+			//eslint-disable-next-line camelcase
 		} else if (upper_level !== 0 || lower_level !== 0) {
+			//eslint-disable-line camelcase
 			borderStyleProperty = {
 				border: `none`,
 				borderRadius: `0px`,
 			};
 		}
 	} else if (
-		upper_level_mobile === 0 &&
-		upper_level_tablet === 0 &&
-		upper_level_pc === 0 &&
-		lower_level_mobile === 0 &&
-		lower_level_tablet === 0 &&
-		lower_level_pc === 0 &&
+		upper_level_mobile === 0 && //eslint-disable-line camelcase
+		upper_level_tablet === 0 && //eslint-disable-line camelcase
+		upper_level_pc === 0 && //eslint-disable-line camelcase
+		lower_level_mobile === 0 && //eslint-disable-line camelcase
+		lower_level_tablet === 0 && //eslint-disable-line camelcase
+		lower_level_pc === 0 && //eslint-disable-line camelcase
 		borderWidth > 0 &&
 		borderStyle !== 'none'
 	) {
@@ -183,6 +192,7 @@ export default function save(props) {
 					: undefined,
 			borderRadius: `${borderRadius}px`,
 		};
+		//eslint-disable-next-line camelcase
 	} else if (
 		upper_level_mobile !== 0 ||
 		upper_level_tablet !== 0 ||
@@ -191,6 +201,7 @@ export default function save(props) {
 		lower_level_tablet !== 0 ||
 		lower_level_pc !== 0
 	) {
+		//eslint-disable-line camelcase
 		borderStyleProperty = {
 			border: `none`,
 			borderRadius: `0px`,
@@ -227,21 +238,25 @@ export default function save(props) {
 		},
 	});
 
-	const GetLinkUrl = linkUrl ? (
+	const relAttribute =
+		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
+	const GetLinkUrl = (
 		<a
 			href={linkUrl}
-			className={`${prefix}-link`}
 			target={linkTarget}
-			rel={relAttribute || undefined}
-			aria-label={linkDescription}
+			className={`${prefix}-link`}
+			rel={relAttribute}
+			aria-label={__('Outer link', 'vk-blocks-pro')}
 		>
-			<span className="visually-hidden">{linkDescription}</span>
+			<span className="screen-reader-text">
+				{__('Outer link', 'vk-blocks-pro')}
+			</span>
 		</a>
-	) : null;
+	);
 
 	return (
 		<div {...blockProps}>
-			{GetLinkUrl}
+			{linkUrl && GetLinkUrl}
 			{GetBgImage}
 			<div>
 				{componentDivider(

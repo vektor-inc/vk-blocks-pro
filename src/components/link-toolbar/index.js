@@ -1,22 +1,36 @@
 import { useState, useEffect } from 'react';
+import { getBlockType } from '@wordpress/blocks';
 import {
 	ToolbarButton,
 	Dropdown,
 	CheckboxControl,
 	Button,
 	Tooltip,
+	TextControl,
 } from '@wordpress/components';
-import { URLInput } from '@wordpress/block-editor';
+import { URLInput, useBlockEditContext } from '@wordpress/block-editor';
 import { __, sprintf } from '@wordpress/i18n';
-import { link, linkOff, keyboardReturn, globe, copy } from '@wordpress/icons';
+import {
+	link,
+	linkOff,
+	keyboardReturn,
+	globe,
+	copy,
+	edit,
+} from '@wordpress/icons';
 
 const LinkPreview = ({
 	linkUrl,
 	linkTitle,
 	icon,
 	linkTarget,
+	relAttribute,
+	linkDescription,
+	defaultDescription,
 	onRemove,
 	onCopy,
+	onEditLinkClick = () => {},
+	isSupportBlock,
 }) => {
 	const displayURL =
 		linkUrl.startsWith('http://') || linkUrl.startsWith('https://')
@@ -38,7 +52,8 @@ const LinkPreview = ({
 							className="components-external-link block-editor-link-control__search-item-title"
 							href={displayURL}
 							target={linkTarget}
-							rel="noopener noreferrer"
+							rel={relAttribute?.trim() || undefined} // 余分なスペースを削除
+							aria-label={linkDescription || defaultDescription}
 						>
 							<span
 								data-wp-c16t="true"
@@ -59,6 +74,16 @@ const LinkPreview = ({
 						</span>
 					</span>
 				</span>
+				{isSupportBlock && (
+					<Tooltip text={__('Edit link', 'vk-blocks-pro')}>
+						<Button
+							icon={edit}
+							label={__('Edit link', 'vk-blocks-pro')}
+							onClick={onEditLinkClick}
+							size="compact"
+						/>
+					</Tooltip>
+				)}
 				<Tooltip text={__('Deleting Link', 'vk-blocks-pro')}>
 					<button
 						type="button"
@@ -93,17 +118,50 @@ const LinkPreview = ({
 	);
 };
 
-const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
+const LinkToolbar = ({
+	linkUrl,
+	setLinkUrl,
+	linkTarget,
+	setLinkTarget,
+	linkDescription = '',
+	setLinkDescription = () => {},
+	relAttribute = '',
+	setRelAttributes = () => {},
+}) => {
+	const { name: blockName } = useBlockEditContext();
+	// 新しい機能を追加した時用のフラグ
+	const isSupportBlock = ['vk-blocks/outer'].includes(blockName);
+	const [defaultDescription, setDefaultDescription] = useState('');
 	const [isOpen, setIsOpen] = useState(false);
 	const [linkTitle, setLinkTitle] = useState('');
 	const [icon, setIcon] = useState(null);
 	const [isSnackbarVisible, setSnackbarVisible] = useState(false);
 	const [isSubmitDisabled, setSubmitDisabled] = useState(true);
 	const [ariaMessage, setAriaMessage] = useState('');
+	const [isEditingLink, setIsEditingLink] = useState(false);
+
+	useEffect(() => {
+		// relAttribute に noopener が含まれていない場合は追加
+		if (relAttribute && !relAttribute.includes('noopener')) {
+			if (typeof setRelAttributes === 'function') {
+				setRelAttributes(`${relAttribute} noopener`.trim());
+			}
+		} else if (!relAttribute) {
+			// relAttribute が未定義の場合は noopener を追加
+			if (typeof setRelAttributes === 'function') {
+				setRelAttributes('noopener');
+			}
+		}
+	}, [relAttribute, setRelAttributes]);
 
 	useEffect(() => {
 		if (linkUrl) {
 			const formattedUrl = formatUrl(linkUrl);
+
+			if (!linkDescription || linkDescription.trim() === '') {
+				setLinkDescription(defaultDescription);
+			}
+
 			const isExternalLink =
 				!formattedUrl.startsWith(window.location.origin) &&
 				!formattedUrl.startsWith('#');
@@ -147,11 +205,8 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 				}
 			}
 		}
-	}, [linkUrl]);
-
-	useEffect(() => {
 		setSubmitDisabled(!linkUrl || linkUrl.trim() === '');
-	}, [linkUrl]);
+	}, [linkUrl, linkDescription, defaultDescription]);
 
 	const handleToggle = () => {
 		if (!isOpen) {
@@ -162,8 +217,15 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 	};
 
 	const handleRemove = () => {
-		setLinkUrl('');
-		setLinkTarget('');
+		if (typeof setLinkUrl === 'function') {
+			setLinkUrl('');
+		}
+		if (typeof setLinkTarget === 'function') {
+			setLinkTarget('_self');
+		}
+		if (typeof setLinkDescription === 'function') {
+			setLinkDescription('');
+		}
 		setIsOpen(false);
 	};
 
@@ -183,7 +245,6 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 					// console.error('Failed to copy: ', error);
 				});
 		} else {
-			// Clipboard API がサポートされていない場合のフォールバック
 			const textArea = document.createElement('textarea');
 			textArea.value = formattedUrl;
 			document.body.appendChild(textArea);
@@ -213,14 +274,64 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 		return 'http://' + url;
 	};
 
+	const handleEditLinkClick = () => {
+		setIsEditingLink(!isEditingLink);
+	};
+
 	const handleSubmit = () => {
-		if (linkUrl) {
+		if (typeof setLinkUrl === 'function') {
 			setLinkUrl(formatUrl(linkUrl));
 		}
 	};
 
+	const handleRelChange = (type, checked) => {
+		let updatedRel = relAttribute || '';
+		if (checked) {
+			if (!updatedRel.includes(type)) {
+				updatedRel = `${updatedRel} ${type}`.trim();
+			}
+		} else {
+			updatedRel = updatedRel
+				.replace(type, '')
+				.replace(/\s+/g, ' ')
+				.trim();
+		}
+		if (typeof setRelAttributes === 'function') {
+			setRelAttributes(updatedRel);
+		}
+	};
+
+	const handleTargetChange = (checked) => {
+		if (typeof setLinkTarget === 'function') {
+			setLinkTarget(checked ? '_blank' : '_self');
+		}
+
+		let updatedRel = relAttribute || '';
+
+		if (!updatedRel.includes('noopener')) {
+			updatedRel = `${updatedRel} noopener`.trim();
+		}
+
+		if (typeof setRelAttributes === 'function') {
+			setRelAttributes(updatedRel);
+		}
+	};
+
+	useEffect(() => {
+		// ブロック名をもとにリンク説明を設定
+		if (blockName) {
+			const blockType = getBlockType(blockName); // ブロックタイプ情報を取得
+			const blockTitle =
+				blockType?.title || __('Default link', 'vk-blocks-pro'); // ブロックのタイトルかデフォルト値
+			setDefaultDescription(
+				`${blockTitle} ${__('link', 'vk-blocks-pro')}`
+			);
+		}
+	}, [blockName]);
+
 	return (
 		<>
+			{/* リンク表示部分 */}
 			<Dropdown
 				popoverProps={{ placement: 'bottom-start' }}
 				renderToggle={({ isOpen, onToggle }) => {
@@ -251,8 +362,21 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 								linkTitle={linkTitle}
 								icon={icon}
 								linkTarget={linkTarget}
+								relAttribute={
+									(relAttribute || '').includes('noopener')
+										? relAttribute
+										: `${relAttribute} noopener`.trim()
+								}
+								linkDescription={linkDescription}
+								defaultDescription={defaultDescription}
 								onRemove={handleRemove}
 								onCopy={handleCopy}
+								onEditLinkClick={
+									isSupportBlock
+										? handleEditLinkClick
+										: undefined
+								}
+								isSupportBlock={isSupportBlock}
 							/>
 						)}
 						<form
@@ -282,10 +406,62 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 								)}
 								checked={linkTarget === '_blank'}
 								onChange={(checked) =>
-									setLinkTarget(checked ? '_blank' : '')
+									handleTargetChange(checked)
 								}
 							/>
 						</form>
+
+						{isEditingLink && (
+							<div>
+								<CheckboxControl
+									label={__(
+										'Add noreferrer',
+										'vk-blocks-pro'
+									)}
+									checked={
+										relAttribute?.includes('noreferrer') ||
+										false
+									}
+									onChange={(checked) =>
+										handleRelChange('noreferrer', checked)
+									}
+								/>
+								<CheckboxControl
+									label={__('Add nofollow', 'vk-blocks-pro')}
+									checked={
+										relAttribute?.includes('nofollow') ||
+										false
+									}
+									onChange={(checked) =>
+										handleRelChange('nofollow', checked)
+									}
+								/>
+								<TextControl
+									label={__(
+										'Accessibility link description',
+										'vk-blocks-pro'
+									)}
+									value={
+										linkDescription === defaultDescription
+											? ''
+											: linkDescription
+									}
+									onChange={(value) => {
+										setLinkDescription(
+											value || defaultDescription
+										);
+									}}
+									onBlur={() => {
+										// 空の場合、defaultDescriptionに戻す
+										if (!linkDescription.trim()) {
+											setLinkDescription(
+												defaultDescription
+											);
+										}
+									}}
+								/>
+							</div>
+						)}
 					</div>
 				)}
 			/>

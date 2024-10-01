@@ -74,8 +74,6 @@ export default function OuterEdit(props) {
 		minHeightValueTablet,
 		minHeightValueMobile,
 		minHeightUnit,
-		linkUrl,
-		linkTarget,
 		blockId,
 	} = attributes;
 
@@ -397,6 +395,10 @@ export default function OuterEdit(props) {
 		});
 	};
 
+	const setRelAttributes = (newRel) => {
+		setAttributes({ relAttribute: newRel });
+	};
+
 	return (
 		<>
 			<BlockControls>
@@ -409,13 +411,18 @@ export default function OuterEdit(props) {
 				/>
 				<ToolbarGroup>
 					<LinkToolbar
-						linkUrl={linkUrl}
+						linkUrl={attributes.linkUrl}
 						setLinkUrl={(url) => setAttributes({ linkUrl: url })}
-						linkTarget={linkTarget}
+						linkTarget={attributes.linkTarget}
 						setLinkTarget={(target) =>
 							setAttributes({ linkTarget: target })
 						}
-						aria-label={__('Outer link', 'vk-blocks-pro')}
+						linkDescription={attributes.linkDescription}
+						setLinkDescription={(desc) =>
+							setAttributes({ linkDescription: desc })
+						}
+						relAttribute={attributes.relAttribute}
+						setRelAttributes={setRelAttributes}
 					/>
 				</ToolbarGroup>
 			</BlockControls>

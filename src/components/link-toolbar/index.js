@@ -29,7 +29,8 @@ const LinkPreview = ({
 	defaultDescription,
 	onRemove,
 	onCopy,
-	onEditLinkClick,
+	onEditLinkClick = () => {},
+	isSupportBlock,
 }) => {
 	const displayURL =
 		linkUrl.startsWith('http://') || linkUrl.startsWith('https://')
@@ -73,15 +74,16 @@ const LinkPreview = ({
 						</span>
 					</span>
 				</span>
-				{/* Edit link の追加 */}
-				<Tooltip text={__('Edit link', 'vk-blocks-pro')}>
-					<Button
-						icon={edit}
-						label={__('Edit link', 'vk-blocks-pro')}
-						onClick={onEditLinkClick}
-						size="compact"
-					/>
-				</Tooltip>
+				{isSupportBlock && (
+					<Tooltip text={__('Edit link', 'vk-blocks-pro')}>
+						<Button
+							icon={edit}
+							label={__('Edit link', 'vk-blocks-pro')}
+							onClick={onEditLinkClick}
+							size="compact"
+						/>
+					</Tooltip>
+				)}
 				<Tooltip text={__('Deleting Link', 'vk-blocks-pro')}>
 					<button
 						type="button"
@@ -121,12 +123,14 @@ const LinkToolbar = ({
 	setLinkUrl,
 	linkTarget,
 	setLinkTarget,
-	relAttribute,
-	setRelAttributes,
-	linkDescription,
-	setLinkDescription,
+	linkDescription = '',
+	setLinkDescription = () => {},
+	relAttribute = '',
+	setRelAttributes = () => {},
 }) => {
 	const { name: blockName } = useBlockEditContext();
+	// 新しい機能を追加した時用のフラグ
+	const isSupportBlock = ['vk-blocks/outer'].includes(blockName);
 	const [defaultDescription, setDefaultDescription] = useState('');
 	const [isOpen, setIsOpen] = useState(false);
 	const [linkTitle, setLinkTitle] = useState('');
@@ -148,7 +152,7 @@ const LinkToolbar = ({
 				setRelAttributes('noopener');
 			}
 		}
-	}, [relAttribute]);	
+	}, [relAttribute, setRelAttributes]);
 
 	useEffect(() => {
 		if (linkUrl) {
@@ -296,20 +300,20 @@ const LinkToolbar = ({
 	const handleTargetChange = (checked) => {
 		// ターゲットを設定
 		setLinkTarget(checked ? '_blank' : '_self');
-	
+
 		// rel 属性の更新処理
 		let updatedRel = relAttribute || '';
-	
+
 		// noopener がすでに含まれていない場合のみ追加
 		if (!updatedRel.includes('noopener')) {
 			updatedRel = `${updatedRel} noopener`.trim();
 		}
-	
+
 		// noopener を常に rel 属性に保持
 		if (typeof setRelAttributes === 'function') {
 			setRelAttributes(updatedRel);
 		}
-	};	
+	};
 
 	useEffect(() => {
 		// ブロック名をもとにリンク説明を設定
@@ -365,7 +369,8 @@ const LinkToolbar = ({
 								defaultDescription={defaultDescription}
 								onRemove={handleRemove}
 								onCopy={handleCopy}
-								onEditLinkClick={handleEditLinkClick}
+								onEditLinkClick={isSupportBlock ? handleEditLinkClick : undefined}
+								isSupportBlock={isSupportBlock}
 							/>
 						)}
 						<form
@@ -402,16 +407,29 @@ const LinkToolbar = ({
 
 						{isEditingLink && (
 							<div>
-							<CheckboxControl
-								label={__('Add noreferrer', 'vk-blocks-pro')}
-								checked={relAttribute?.includes('noreferrer') || false}
-								onChange={(checked) => handleRelChange('noreferrer', checked)}
-							/>
-							<CheckboxControl
-								label={__('Add nofollow', 'vk-blocks-pro')}
-								checked={relAttribute?.includes('nofollow') || false}
-								onChange={(checked) => handleRelChange('nofollow', checked)}
-							/>
+								<CheckboxControl
+									label={__(
+										'Add noreferrer',
+										'vk-blocks-pro'
+									)}
+									checked={
+										relAttribute?.includes('noreferrer') ||
+										false
+									}
+									onChange={(checked) =>
+										handleRelChange('noreferrer', checked)
+									}
+								/>
+								<CheckboxControl
+									label={__('Add nofollow', 'vk-blocks-pro')}
+									checked={
+										relAttribute?.includes('nofollow') ||
+										false
+									}
+									onChange={(checked) =>
+										handleRelChange('nofollow', checked)
+									}
+								/>
 								<TextControl
 									label={__(
 										'Accessibility link description',

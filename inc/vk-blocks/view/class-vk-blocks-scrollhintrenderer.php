@@ -43,7 +43,13 @@ class VK_Blocks_ScrollHintRenderer {
 
 		// 'is-style-vk-*-scrollable' クラスを持つ任意のタグにスクロールヒントを適用
 		if ( $processor->next_tag() && preg_match( '/is-style-vk-[a-zA-Z0-9_-]+-scrollable/', $processor->get_attribute( 'class' ) ) ) {
-			$scroll_hint = self::generate_scroll_hint( $block );
+			// vk_hidden や vk_hidden-XXX のすべてのクラスを抽出
+			$hidden_classes = array();
+			if ( preg_match_all( '/vk_hidden(-[a-zA-Z0-9_-]+)?/', $processor->get_attribute( 'class' ), $matches ) ) {
+				$hidden_classes = $matches[0]; // すべての vk_hidden や vk_hidden-XXX クラスを取得
+			}
+
+			$scroll_hint = self::generate_scroll_hint( $block, $hidden_classes );
 
 			// マッチしたタグの前にスクロールヒントを挿入
 			$block_content = preg_replace( '/(<[^>]*class="[^"]*is-style-vk-[a-zA-Z0-9_-]+-scrollable[^"]*"[^>]*>)/i', $scroll_hint . '$1', $block_content );
@@ -56,9 +62,10 @@ class VK_Blocks_ScrollHintRenderer {
 	 * Generate the scroll hint HTML.
 	 *
 	 * @param array $block The block data.
+	 * @param array $hidden_classes Optional hidden classes to add to the scroll hint.
 	 * @return string The scroll hint HTML.
 	 */
-	public static function generate_scroll_hint( $block ) {
+	public static function generate_scroll_hint( $block, $hidden_classes = array() ) {
 
 		// デフォルトの設定を一括で処理
 		$default_attrs = array(
@@ -95,13 +102,20 @@ class VK_Blocks_ScrollHintRenderer {
 			$attributes .= sprintf( ' data-hint-icon-right="%s"', esc_attr( $attrs['scrollIconRight'] ) );
 		}
 
+		// vk_hidden クラスがあればクラスに追加
+		$extra_classes = 'vk-scroll-hint';
+		if ( ! empty( $hidden_classes ) ) {
+			$extra_classes .= ' ' . implode( ' ', array_map( 'esc_attr', $hidden_classes ) );
+		}
+
 		// スクロールヒントのHTMLを生成して返す
 		return sprintf(
-			'<div class="vk-scroll-hint" %s>
+			'<div class="%s" %s>
 				%s
 				<span>%s</span>
 				%s
 			</div>',
+			esc_attr( $extra_classes ),
 			$attributes,
 			$left_icon_html,
 			esc_html( $attrs['scrollMessageText'] ),

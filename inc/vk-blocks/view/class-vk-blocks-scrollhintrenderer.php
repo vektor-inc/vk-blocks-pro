@@ -26,11 +26,10 @@ class VK_Blocks_ScrollHintRenderer {
 	 */
 	public static function render_with_scroll_hint( $block_content, $block ) {
 
-		// クラス名が 'is-style-vk-*-scrollable' かつ data-output-scroll-hint="true" が存在するか確認
+		// $block_content においてクラス名に 'is-style-vk-*-scrollable' が含まれ、なおかつ data-output-scroll-hint="true" が存在するか確認
 		if (
-		empty( $block['attrs']['className'] ) ||
-		! preg_match( '/is-style-vk-[a-zA-Z0-9_-]+-scrollable/', $block['attrs']['className'] ) ||
-		strpos( $block_content, 'data-output-scroll-hint="true"' ) === false
+			! preg_match( '/is-style-vk-[a-zA-Z0-9_-]+-scrollable/', $block_content ) ||
+			strpos( $block_content, 'data-output-scroll-hint="true"' ) === false
 		) {
 			return $block_content;
 		}

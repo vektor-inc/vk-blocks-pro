@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2024-09-09T08:16:12+00:00\n"
+"POT-Creation-Date: 2024-09-26T00:53:29+00:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1237,10 +1237,10 @@ msgid "Setting up a link"
 msgstr "リンクの設定"
 
 #: src/blocks/_pro/dynamic-text/edit.js:389
-#: src/blocks/_pro/gridcolcard-item/edit.js:346
+#: src/blocks/_pro/gridcolcard-item/edit.js:348
 #: src/blocks/_pro/icon-card-item/edit.js:128 src/blocks/button/edit.js:283
 #: src/blocks/icon/edit.js:292 src/blocks/pr-blocks/edit.js:262
-#: src/blocks/pr-content/edit.js:131 src/components/link-toolbar/index.js:275
+#: src/blocks/pr-content/edit.js:131 src/components/link-toolbar/index.js:279
 msgid "Open link new tab."
 msgstr "リンクを別ウィンドウで開く"
 
@@ -1285,39 +1285,59 @@ msgstr "p"
 msgid "span"
 msgstr "span"
 
-#: src/blocks/_pro/fixed-display/edit.js:101 src/blocks/balloon/edit.js:434
+#: src/blocks/_pro/fixed-display/edit.js:100
+msgid "Top"
+msgstr "上 "
+
+#: src/blocks/_pro/fixed-display/edit.js:102 src/blocks/balloon/edit.js:434
 #: src/blocks/button/edit.js:375 src/blocks/pr-content/edit.js:252
 #: src/components/display-items-control/index.js:140
 msgid "Right"
 msgstr "右"
 
-#: src/blocks/_pro/fixed-display/edit.js:105
+#: src/blocks/_pro/fixed-display/edit.js:106
 msgid "Bottom"
 msgstr "下 "
 
-#: src/blocks/_pro/fixed-display/edit.js:109 src/blocks/balloon/edit.js:422
+#: src/blocks/_pro/fixed-display/edit.js:110 src/blocks/balloon/edit.js:422
 #: src/blocks/button/edit.js:355 src/blocks/pr-content/edit.js:256
 #: src/components/display-items-control/index.js:132
 msgid "Left"
 msgstr "左"
 
-#: src/blocks/_pro/fixed-display/edit.js:116
+#: src/blocks/_pro/fixed-display/edit.js:118
+msgid "Fixed position origin"
+msgstr "固定位置の基準"
+
+#: src/blocks/_pro/fixed-display/edit.js:125
+msgid "Top section"
+msgstr "上部"
+
+#: src/blocks/_pro/fixed-display/edit.js:132
+msgid "Bottom section"
+msgstr "下部"
+
+#: src/blocks/_pro/fixed-display/edit.js:146
 msgid "Fixed position from the top"
 msgstr "上部からの固定位置"
 
-#: src/blocks/_pro/fixed-display/edit.js:138
+#: src/blocks/_pro/fixed-display/edit.js:150
+msgid "Fixed position from the bottom"
+msgstr "下部からの固定位置"
+
+#: src/blocks/_pro/fixed-display/edit.js:174
 msgid "Timing to display"
 msgstr "表示するタイミング"
 
-#: src/blocks/_pro/fixed-display/edit.js:154
+#: src/blocks/_pro/fixed-display/edit.js:190
 msgid "Persist visibility once visible"
 msgstr "一度表示したら表示を維持する"
 
-#: src/blocks/_pro/fixed-display/edit.js:70
+#: src/blocks/_pro/fixed-display/edit.js:71
 msgid "Fixed Display Setting"
 msgstr "固定表示設定"
 
-#: src/blocks/_pro/fixed-display/edit.js:73
+#: src/blocks/_pro/fixed-display/edit.js:74
 msgid ""
 "The fixed position of the fixed position block will not change on the edit "
 "screen. Please check on the front screen."
@@ -1325,27 +1345,23 @@ msgstr ""
 "編集画面では固定位置ブロックの固定位置は変わりません。フロント画面でご確認く"
 "ださい。"
 
-#: src/blocks/_pro/fixed-display/edit.js:80
+#: src/blocks/_pro/fixed-display/edit.js:81
 #: src/blocks/_pro/table-of-contents-new/edit.js:114
 #: src/components/column-layout-control/index.js:69
 msgid "Display type"
 msgstr "表示タイプ"
 
-#: src/blocks/_pro/fixed-display/edit.js:85
+#: src/blocks/_pro/fixed-display/edit.js:86
 msgid "Always Visible"
 msgstr "常に表示"
 
-#: src/blocks/_pro/fixed-display/edit.js:89
+#: src/blocks/_pro/fixed-display/edit.js:90
 msgid "Show on Scroll"
 msgstr "スクロールしたら表示"
 
-#: src/blocks/_pro/fixed-display/edit.js:95
+#: src/blocks/_pro/fixed-display/edit.js:96
 msgid "Fixed position"
 msgstr "固定位置"
-
-#: src/blocks/_pro/fixed-display/edit.js:99
-msgid "Top"
-msgstr "上 "
 
 #: src/blocks/_pro/grid-column-item/edit.js:100
 #: src/blocks/_pro/gridcolcard/edit-common.js:164
@@ -1417,55 +1433,55 @@ msgstr "下部の余白"
 msgid "You can create a variety of layouts with grid column card blocks."
 msgstr "グリッドカラムカードブロックでは柔軟なレイアウトが可能です。"
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:242
+#: src/blocks/_pro/gridcolcard-item/edit.js:244
 #: src/blocks/_pro/select-post-list-item/edit.js:66
-#: src/blocks/button/edit.js:249 src/components/link-toolbar/index.js:234
+#: src/blocks/button/edit.js:249 src/components/link-toolbar/index.js:238
 msgid "Unlink"
 msgstr "リンクを解除する"
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:243 src/blocks/button/edit.js:250
-#: src/components/link-toolbar/index.js:235
+#: src/blocks/_pro/gridcolcard-item/edit.js:245 src/blocks/button/edit.js:250
+#: src/components/link-toolbar/index.js:239
 msgid "Input Link URL"
 msgstr "リンクURL"
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:273
+#: src/blocks/_pro/gridcolcard-item/edit.js:275
 #: src/blocks/_pro/select-post-list-item/edit.js:102
-#: src/blocks/button/edit.js:278 src/components/link-toolbar/index.js:269
+#: src/blocks/button/edit.js:278 src/components/link-toolbar/index.js:273
 msgid "Submit"
 msgstr "送信"
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:297
+#: src/blocks/_pro/gridcolcard-item/edit.js:299
 msgid "Edit mode"
 msgstr "編集モード"
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:307
+#: src/blocks/_pro/gridcolcard-item/edit.js:309
 msgid "All columns"
 msgstr "すべてのカラム"
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:315
+#: src/blocks/_pro/gridcolcard-item/edit.js:317
 msgid "This column only"
 msgstr "このカラムのみ"
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:320
+#: src/blocks/_pro/gridcolcard-item/edit.js:322
 msgid "Edit Lock"
 msgstr "編集ロック"
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:323
+#: src/blocks/_pro/gridcolcard-item/edit.js:325
 msgid "Lock edits this block from the parent and other Grid Column Item block"
 msgstr ""
 "このブロックをロックして親ブロックや他のブロックの変更を受け取らないようにす"
 "る"
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:334
+#: src/blocks/_pro/gridcolcard-item/edit.js:336
 msgid "Column Setting"
 msgstr "カラム設定"
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:338
+#: src/blocks/_pro/gridcolcard-item/edit.js:340
 #: src/blocks/_pro/icon-card-item/edit.js:120 src/blocks/pr-blocks/edit.js:254
 msgid "Link URL:"
 msgstr "リンク URL:"
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:353
+#: src/blocks/_pro/gridcolcard-item/edit.js:355
 msgid ""
 "If you set a link URL, do not place the link element (text or button) in the "
 "Grid Column Card Item. It may not be displayed correctly."
@@ -1473,7 +1489,7 @@ msgstr ""
 "リンクURLを設定する場合は、グリッドカラムカードアイテム内にリンク要素（テキス"
 "トやボタン）を配置しないでください。 正しく表示されない場合があります。"
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:357
+#: src/blocks/_pro/gridcolcard-item/edit.js:359
 msgid "Make sure that no link is specified for the image block, etc."
 msgstr "画像ブロックなどにもリンクが指定されていないか注意してください。"
 
@@ -1588,7 +1604,7 @@ msgstr "アイコンカード設定"
 #: src/blocks/_pro/step-item/edit.js:82 src/blocks/alert/edit.js:73
 #: src/blocks/border-box/edit.js:272 src/blocks/button/edit.js:760
 #: src/blocks/heading/edit.js:335 src/blocks/icon/edit.js:276
-#: src/blocks/pr-content/edit.js:212 src/components/scroll-hint/index.js:103
+#: src/blocks/pr-content/edit.js:212
 #: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:142
 #: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:167
 #: src/utils/font-awesome-new.js:189
@@ -2569,12 +2585,12 @@ msgstr ""
 "は、クリアボタンをクリックしてください。"
 
 #: src/blocks/button/edit.js:767 src/blocks/heading/edit.js:339
-#: src/blocks/pr-content/edit.js:219 src/components/scroll-hint/index.js:115
+#: src/blocks/pr-content/edit.js:219
 msgid "Before text"
 msgstr "文字の前"
 
 #: src/blocks/button/edit.js:789 src/blocks/heading/edit.js:348
-#: src/blocks/pr-content/edit.js:231 src/components/scroll-hint/index.js:137
+#: src/blocks/pr-content/edit.js:231
 msgid "After text"
 msgstr "文字の後"
 
@@ -3261,7 +3277,7 @@ msgstr "リンクターゲット"
 msgid "Currently selected"
 msgstr "現在のページ"
 
-#: src/components/link-toolbar/index.js:304
+#: src/components/link-toolbar/index.js:308
 msgid "Link copied to clipboard."
 msgstr "リンクをクリップボードにコピーしました"
 
@@ -3276,22 +3292,6 @@ msgstr "リンクをコピー: %s"
 #: src/components/link-toolbar/index.js:83
 msgid "Copy link"
 msgstr "リンクをコピー"
-
-#: src/components/scroll-hint/index.js:109
-msgid "Output Before Text Icon"
-msgstr "テキストの前にアイコンを出力"
-
-#: src/components/scroll-hint/index.js:131
-msgid "Output After Text Icon"
-msgstr "テキストの後にアイコンを出力"
-
-#: src/components/scroll-hint/index.js:91
-msgid "Show Scroll Message"
-msgstr "スクロールメッセージを表示"
-
-#: src/components/scroll-hint/index.js:98
-msgid "Scroll Message Text"
-msgstr "スクロールメッセージのテキスト"
 
 #: src/extensions/common/custom-block-variation/block-variation-explorer/sidebar.js:17
 msgid "Create"
@@ -3630,34 +3630,37 @@ msgstr "グループリンク"
 msgid "List Icon Color"
 msgstr "リストアイコンの色"
 
-#: src/extensions/core/table/style.js:235
-msgid "Table Horizontal Scroll"
-msgstr "テーブル水平方向スクロール"
-
-#: src/extensions/core/table/style.js:243
-msgid "Scrollable"
-msgstr "スクロール"
-
-#: src/extensions/core/table/style.js:250
+#: src/extensions/core/table/style.js:106
 msgid "Horizontal Scroll Breakpoint"
 msgstr "水平スクロールのブレイクポイント"
 
-#: src/extensions/core/table/style.js:257
+#: src/extensions/core/table/style.js:113
 msgid "Mobile size"
 msgstr "モバイル"
 
-#: src/extensions/core/table/style.js:264
+#: src/extensions/core/table/style.js:120
 msgid "Tablet size"
 msgstr "タブレット"
 
-#: src/extensions/core/table/style.js:271
+#: src/extensions/core/table/style.js:127
 msgid "PC size"
 msgstr "PC"
 
-#: src/extensions/core/table/style.js:50
-#: inc/vk-blocks/view/class-vk-blocks-scrollhintrenderer.php:63
-msgid "You can scroll"
-msgstr "スクロールできます"
+#: src/extensions/core/table/style.js:137
+msgid ""
+"Table cells are no longer fixed width when horizontal scroll breakpoint is "
+"reached."
+msgstr ""
+"水平スクロールのブレークポイントに達すると、テーブルセルの幅が固定されなくな"
+"ります。"
+
+#: src/extensions/core/table/style.js:91
+msgid "Table Horizontal Scroll"
+msgstr "テーブルの水平方向スクロール"
+
+#: src/extensions/core/table/style.js:99
+msgid "Scrollable"
+msgstr "スクロール"
 
 #: src/utils/example-data.js:14
 msgid "Theoretical Physicist"
@@ -4205,12 +4208,12 @@ msgstr "スティッチ"
 msgid "Setting saved."
 msgstr "設定を保存しました。"
 
-#: inc/vk-blocks/view/class-vk-blocks-postlist.php:271
+#: inc/vk-blocks/view/class-vk-blocks-postlist.php:277
 msgid "Post"
 msgstr "投稿"
 
 #. translators: %s: 投稿タイプ名
-#: inc/vk-blocks/view/class-vk-blocks-postlist.php:275
+#: inc/vk-blocks/view/class-vk-blocks-postlist.php:281
 msgid "There are no %ss."
 msgstr "該当の%sはありません。"
 
@@ -4978,13 +4981,6 @@ msgid ""
 "Displays a simple schedule and other information that is useful for "
 "explaining the order."
 msgstr "順番を説明する時に便利でシンプルなスケジュールなどを表示します。"
-
-#~ msgid ""
-#~ "Table cells are no longer fixed width when horizontal scroll breakpoint "
-#~ "is reached."
-#~ msgstr ""
-#~ "水平スクロールのブレークポイントに達すると、テーブルセルの幅が固定されなく"
-#~ "なります。"
 
 #~ msgid "Full Wide"
 #~ msgstr "全幅"

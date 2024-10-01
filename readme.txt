@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.3
 Tested up to: 6.6
-Stable tag: 1.83.0.1
+Stable tag: 1.85.1.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -107,7 +107,20 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Link toolbar ] Add edit link setting.
+[ Bug fix ] Fix load styles when separate load is enable.
+[ Bug fix ][ Tab (Pro) ] Added a process to dynamically calculate and set the iframe height when the tab becomes active.
+[ Bug Fix ] Fixed an issue where disabling separated loading caused all block CSS to load.
+[ Add function ] [ Fixed Display (Pro) ] Added an option for "Fixed display from the bottom."
+
+= 1.85.1 =
+[ Bug fix ] Due to an issue where the hidden setting does not function properly when TreeShaking is enabled and CSS splitting is disabled, TreeShaking has been temporarily disabled as a workaround.
+
+= 1.85.0 =
 [ Add function ][ Core Table ] Add scroll hint for horizontal scrolling.
+[ Specification change ][ Post List (Pro) ] Disable link on edit screen.
+[ Specification change ][ Alert ] Fixed the alert variation icon.
+[ Bug fix ][ Breadcrumb (Pro) ] Fixed an issue where the separator setting in the Breadcrumb block was not being loaded correctly (now loaded from view.js).
+[ Bug fix ] Fixed an issue where abnormal load occurred on a server that cannot use auto-update.
 
 = 1.84.2 =
 [ Bug fix ][ Custom CSS (Pro) ] Replaced an improved sanitation function in `vk_blocks_output custom css` to handle various CSS patterns.
@@ -119,7 +132,7 @@ e.g.
 [ Add function ][ Column ] Add toolbar link for components.
 [ Specification change ][ Classic FAQ / New FAQ ] Support structured data.
 [ Bug fix ][ Link toolbar ] Fix to prevent adding http:// or https:// when a relative path is entered.
-[ Bug fix ][ Post List(Pro) ] Fixed pagination customization in post list.
+[ Bug fix ][ Post list (Pro) ] Fixed pagination customization in post list.
 [ Other ] Add a mode to extract class name for Font awesome icon.
 [ Other ] Supports custom CSS including pseudo-elements even in block-by-block lazy loading mode.
 

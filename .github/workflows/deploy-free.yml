@@ -14,7 +14,6 @@ env:
   GIT_REPOSITORY_USER: ${{ secrets.GIT_REPOSITORY_USER }}
   GIT_REPOSITORY_FREE: ${{ secrets.GIT_REPOSITORY_FREE }}
   GIT_USER: ${{ secrets.GIT_USER }}
-  DEPLOY_KEY_FREE: ${{ secrets.DEPLOY_KEY_FREE }}
 # 無料版のリポジトリをPro版の中で一旦 clone して、bin/deploy-free.sh で処理する
 
 jobs:
@@ -42,8 +41,8 @@ jobs:
       uses: MrSquaare/ssh-setup-action@v3
       with:
           host: github.com
-          private-key: ${ DEPLOY_KEY_FREE }
-          private-key-name: deploy_key_free
+          private-key: ${{ secrets.DEPLOY_KEY_FREE }}
+          private-key-name: vk-blocks-free
 
     # 通常版を（Pro版の中に）クローン
     - run: git clone git@github.com:${GIT_REPOSITORY_USER}/${GIT_REPOSITORY_FREE}.git ./temp/plugins/${GIT_REPOSITORY_FREE}

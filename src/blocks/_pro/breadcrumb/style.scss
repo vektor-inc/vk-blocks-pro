@@ -26,6 +26,14 @@
                 margin-left:0;
                 margin-right:0;
             }
+            &.has-separator {
+                &:after {
+                    visibility: hidden;
+                }
+                &:not(:last-child).loaded:after {
+                    visibility: visible;
+                }
+            }
         }
     }
 }

@@ -68,9 +68,9 @@ window.addEventListener('scroll', function () {
 		// スクロール位置が指定したタイミングを超えた場合にタイマーを開始
 		if (
 			window.scrollY > timingInPixels &&
-			!item.classList.contains('is-scrolled-visible')
+			!item.classList.contains('is-visible')
 		) {
-			item.classList.add('is-scrolled-visible');
+			item.classList.add('is-visible');
 
 			const displayAfterSeconds =
 				parseFloat(item.getAttribute('data-display-after-seconds')) ||
@@ -87,7 +87,7 @@ window.addEventListener('scroll', function () {
 				dontShowAgain
 			);
 		} else if (window.scrollY < timingInPixels && !scrollPersistVisible) {
-			item.classList.remove('is-scrolled-visible');
+			item.classList.remove('is-visible');
 			item.classList.remove('is-timed-visible');
 		}
 	});

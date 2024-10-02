@@ -40,7 +40,7 @@
 		opacity: 0;
 		transition: opacity 0.3s ease;
 		
-		&.is-scrolled-visible {
+		&.is-visible {
 			opacity: 1;
 		}
 	}

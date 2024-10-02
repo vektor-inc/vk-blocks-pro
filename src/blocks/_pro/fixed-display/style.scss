@@ -102,7 +102,14 @@
 /* 編集画面用
 /*-------------------------------------------*/
 .block-editor-block-list__block {
-
+	&.vk_fixed-display {
+		
+		/* タイマー機能用クラス */
+		&.is-timed-hide,
+		&.is-timed-display {
+				opacity: unset;
+		}
+	}
 	&.vk_fixed-display-position {
 		width: auto;
 		&-right {

@@ -42,25 +42,38 @@ export default function FixedDisplayEdit(props) {
 		dontShowAgain,
 	} = attributes;
 
-	// blockIdの初期設定のみ
 	useEffect(() => {
-		if (!blockId || !isParentReusableBlock(clientId)) {
+		if (
+			blockId === undefined ||
+			isParentReusableBlock(clientId) === false
+		) {
 			setAttributes({ blockId: clientId });
 		}
-	}, [clientId, blockId, setAttributes]);
 
-	// ポジションの変更時にfixedPositionTypeをクリア
+		setAttributes({
+			mode: mode || 'always-visible',
+			position: position || 'right',
+			scrollPersistVisible:
+				scrollPersistVisible !== undefined
+					? scrollPersistVisible
+					: false,
+		});
+	}, [clientId, mode, position, blockId, scrollPersistVisible]);
+
 	const handlePositionChange = (newPosition) => {
+		// 位置が top または bottom に変更された場合、fixedPositionType をクリア
 		if (['top', 'bottom'].includes(newPosition)) {
 			setAttributes({ fixedPositionType: undefined });
 		}
 		setAttributes({ position: newPosition });
 	};
 
-	// blockProps の定義
+	// ここで blockProps を一度だけ定義
 	const blockProps = useBlockProps({
 		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} ${
-			['top', 'bottom'].includes(position) ? '' : `vk_fixed-display-position-from-${fixedPositionType}`
+			['top', 'bottom'].includes(position)
+				? ''
+				: `vk_fixed-display-position-from-${fixedPositionType}`
 		} vk_fixed-display-${blockId}`,
 		style: {
 			[fixedPositionType]: ['right', 'left'].includes(position)
@@ -254,22 +267,22 @@ export default function FixedDisplayEdit(props) {
 							setAttributes({ dontShowAgain: value })
 						}
 					/>
-						<PanelRow>
-							<p>
-								{__(
-									'In private browsing mode or environments where certain features are disabled, this block may appear again on future visits.',
-									'vk-blocks-pro'
-								)}
-							</p>
-						</PanelRow>
-					</PanelBody>
-				</InspectorControls>
-				<div {...blockProps}>
-					<InnerBlocks
-						templateLock={false}
-						template={[['core/paragraph']]}
-					/>
-				</div>
+					<PanelRow>
+						<p>
+							{__(
+								'In private browsing mode or environments where certain features are disabled, this block may appear again on future visits.',
+								'vk-blocks-pro'
+							)}
+						</p>
+					</PanelRow>
+				</PanelBody>
+			</InspectorControls>
+			<div {...blockProps}>
+				<InnerBlocks
+					templateLock={false}
+					template={[['core/paragraph']]}
+				/>
+			</div>
 		</>
 	);
 }

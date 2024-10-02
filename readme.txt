@@ -106,7 +106,7 @@ e.g.
 
 == Changelog ==
 
-[ Add function ][ Fixed Display ( Pro ) ] Added a time-based display and hide.
+[ Add function ][ Fixed Display (Pro) ] Added a timer feature to control block appearance/disappearance and a "Do not show again for returning visitors" option. Local Storage is used, but no personal data is collected or tracked.
 [ Bug fix ] Fix load styles when separate load is enable.
 [ Bug fix ][ Tab (Pro) ] Added a process to dynamically calculate and set the iframe height when the tab becomes active.
 [ Bug Fix ] Fixed an issue where disabling separated loading caused all block CSS to load.

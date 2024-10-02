@@ -42,42 +42,32 @@ export default function FixedDisplayEdit(props) {
 		dontShowAgain,
 	} = attributes;
 
+	// blockIdの初期設定のみ
 	useEffect(() => {
-		if (
-			blockId === undefined ||
-			isParentReusableBlock(clientId) === false
-		) {
+		if (!blockId || !isParentReusableBlock(clientId)) {
 			setAttributes({ blockId: clientId });
 		}
+	}, [clientId, blockId, setAttributes]);
 
-		setAttributes({
-			mode: mode || 'always-visible',
-			position: position || 'right',
-			scrollPersistVisible:
-				scrollPersistVisible !== undefined ? scrollPersistVisible : false,
-		});
-	}, [clientId, mode, position, blockId, scrollPersistVisible]);
-
+	// ポジションの変更時にfixedPositionTypeをクリア
 	const handlePositionChange = (newPosition) => {
-		// 位置が top または bottom に変更された場合、fixedPositionType をクリア
 		if (['top', 'bottom'].includes(newPosition)) {
 			setAttributes({ fixedPositionType: undefined });
 		}
 		setAttributes({ position: newPosition });
 	};
-	
-	// ここで blockProps を一度だけ定義
+
+	// blockProps の定義
 	const blockProps = useBlockProps({
 		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} ${
 			['top', 'bottom'].includes(position) ? '' : `vk_fixed-display-position-from-${fixedPositionType}`
 		} vk_fixed-display-${blockId}`,
 		style: {
-			[fixedPositionType]:
-				['right', 'left'].includes(position)
-					? `${fixedPositionValue}${fixedPositionUnit}`
-					: undefined,
+			[fixedPositionType]: ['right', 'left'].includes(position)
+				? `${fixedPositionValue}${fixedPositionUnit}`
+				: undefined,
 		},
-	});	
+	});
 
 	return (
 		<>

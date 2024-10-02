@@ -65,12 +65,17 @@ window.addEventListener('scroll', function () {
 
 		const timingInPixels = convertUnitToPixels(timing, unit);
 
+		// すでに発火しているか確認
+		const isTriggered = item.getAttribute('data-is-triggered') === 'true';
+
 		// スクロール位置が指定したタイミングを超えた場合にタイマーを開始
 		if (
 			window.scrollY > timingInPixels &&
-			!item.classList.contains('is-visible')
+			!item.classList.contains('is-visible') &&
+			!isTriggered
 		) {
 			item.classList.add('is-visible');
+			item.setAttribute('data-is-triggered', 'true'); // 発火済みと設定
 
 			const displayAfterSeconds =
 				parseFloat(item.getAttribute('data-display-after-seconds')) ||
@@ -86,9 +91,12 @@ window.addEventListener('scroll', function () {
 				blockId,
 				dontShowAgain
 			);
-		} else if (window.scrollY < timingInPixels && !scrollPersistVisible) {
+		}
+		// scrollPersistVisibleがONのときだけ再発火可能にする
+		else if (scrollPersistVisible && window.scrollY < timingInPixels) {
 			item.classList.remove('is-visible');
 			item.classList.remove('is-timed-visible');
+			item.setAttribute('data-is-triggered', 'false'); // 発火解除
 		}
 	});
 });

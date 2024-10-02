@@ -28,7 +28,6 @@ export default function save({ attributes }) {
 		...(hideAfterSeconds > 0 && {
 			'data-hide-after-seconds': hideAfterSeconds.toString(),
 		}),
-
 		...(dontShowAgain && {
 			'data-dont-show-again': 'true',
 		}),
@@ -42,7 +41,9 @@ export default function save({ attributes }) {
 
 	const blockProps = useBlockProps.save({
 		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} ${
-			['top', 'bottom'].includes(position) ? '' : `vk_fixed-display-position-from-${fixedPositionType}`
+			['top', 'bottom'].includes(position)
+				? ''
+				: `vk_fixed-display-position-from-${fixedPositionType}`
 		} vk_fixed-display-${blockId} ${
 			displayAfterSeconds > 0 ? 'is-timed-display' : ''
 		} ${hideAfterSeconds > 0 ? 'is-timed-hide' : ''}`,
@@ -52,7 +53,7 @@ export default function save({ attributes }) {
 				: undefined,
 		},
 		...dataAttributes,
-	});	
+	});
 
 	return (
 		<div {...blockProps}>

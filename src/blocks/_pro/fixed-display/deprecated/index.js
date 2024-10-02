@@ -61,7 +61,11 @@ const blockAttributes3 = {
 		type: 'number',
 		default: 0
 	},
-	"hideAfterSeconds": {
+	hideAfterSeconds: {
+		type: 'number',
+		default: 0
+	},
+	dontShowAgain: {
 		type: 'number',
 		default: 0
 	},

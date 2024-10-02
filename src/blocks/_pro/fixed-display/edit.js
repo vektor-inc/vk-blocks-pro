@@ -254,6 +254,14 @@ export default function FixedDisplayEdit(props) {
 							setAttributes({ dontShowAgain: value })
 						}
 					/>
+					<PanelRow>
+						<p>
+							{__(
+								'In private browsing mode or environments where certain features are disabled, this block may appear again on future visits.',
+								'vk-blocks-pro'
+							)}
+						</p>
+					</PanelRow>
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>

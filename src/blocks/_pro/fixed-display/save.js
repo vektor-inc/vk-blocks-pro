@@ -16,7 +16,6 @@ export default function save({ attributes }) {
 		blockId,
 	} = attributes;
 
-	// データ属性を動的に構築
 	const dataAttributes = {
 		...(mode === 'show-on-scroll' && {
 			'data-scroll-timing': scrollTiming.toString(),
@@ -29,22 +28,22 @@ export default function save({ attributes }) {
 		...(hideAfterSeconds > 0 && {
 			'data-hide-after-seconds': hideAfterSeconds.toString(),
 		}),
-		// dontShowAgainは削除されないようにする
+
 		...(dontShowAgain && {
 			'data-dont-show-again': 'true',
 		}),
 	};
 
-	// スクロール表示が無効（常に表示）になった場合、スクロール関連のデータ属性を削除
 	if (mode !== 'show-on-scroll') {
 		delete dataAttributes['data-scroll-timing'];
 		delete dataAttributes['data-scroll-timing-unit'];
 		delete dataAttributes['data-persist-visible'];
 	}
 
-	// blockPropsにデータ属性を含めて保存
 	const blockProps = useBlockProps.save({
-		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} vk_fixed-display-position-from-${fixedPositionType} vk_fixed-display-${blockId} ${
+		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} ${
+			['top', 'bottom'].includes(position) ? '' : `vk_fixed-display-position-from-${fixedPositionType}`
+		} vk_fixed-display-${blockId} ${
 			displayAfterSeconds > 0 ? 'is-timed-display' : ''
 		} ${hideAfterSeconds > 0 ? 'is-timed-hide' : ''}`,
 		style: {
@@ -53,7 +52,7 @@ export default function save({ attributes }) {
 				: undefined,
 		},
 		...dataAttributes,
-	});
+	});	
 
 	return (
 		<div {...blockProps}>

@@ -49,25 +49,35 @@ export default function FixedDisplayEdit(props) {
 		) {
 			setAttributes({ blockId: clientId });
 		}
+
 		setAttributes({
 			mode: mode || 'always-visible',
 			position: position || 'right',
 			scrollPersistVisible:
-				scrollPersistVisible !== undefined
-					? scrollPersistVisible
-					: false,
+				scrollPersistVisible !== undefined ? scrollPersistVisible : false,
 		});
 	}, [clientId, mode, position, blockId, scrollPersistVisible]);
 
+	const handlePositionChange = (newPosition) => {
+		// 位置が top または bottom に変更された場合、fixedPositionType をクリア
+		if (['top', 'bottom'].includes(newPosition)) {
+			setAttributes({ fixedPositionType: undefined });
+		}
+		setAttributes({ position: newPosition });
+	};
+	
+	// ここで blockProps を一度だけ定義
 	const blockProps = useBlockProps({
-		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} vk_fixed-display-position-from-${fixedPositionType} vk_fixed-display-${blockId}`,
+		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} ${
+			['top', 'bottom'].includes(position) ? '' : `vk_fixed-display-position-from-${fixedPositionType}`
+		} vk_fixed-display-${blockId}`,
 		style: {
 			[fixedPositionType]:
-				typeof window === 'undefined' || !window.wp?.blockEditor
+				['right', 'left'].includes(position)
 					? `${fixedPositionValue}${fixedPositionUnit}`
 					: undefined,
 		},
-	});
+	});	
 
 	return (
 		<>
@@ -101,7 +111,7 @@ export default function FixedDisplayEdit(props) {
 					<SelectControl
 						label={__('Fixed position', 'vk-blocks-pro')}
 						value={position}
-						onChange={(value) => setAttributes({ position: value })}
+						onChange={handlePositionChange} // handlePositionChange に変更
 						options={[
 							{ label: __('Top', 'vk-blocks-pro'), value: 'top' },
 							{
@@ -254,22 +264,22 @@ export default function FixedDisplayEdit(props) {
 							setAttributes({ dontShowAgain: value })
 						}
 					/>
-					<PanelRow>
-						<p>
-							{__(
-								'In private browsing mode or environments where certain features are disabled, this block may appear again on future visits.',
-								'vk-blocks-pro'
-							)}
-						</p>
-					</PanelRow>
-				</PanelBody>
-			</InspectorControls>
-			<div {...blockProps}>
-				<InnerBlocks
-					templateLock={false}
-					template={[['core/paragraph']]}
-				/>
-			</div>
+						<PanelRow>
+							<p>
+								{__(
+									'In private browsing mode or environments where certain features are disabled, this block may appear again on future visits.',
+									'vk-blocks-pro'
+								)}
+							</p>
+						</PanelRow>
+					</PanelBody>
+				</InspectorControls>
+				<div {...blockProps}>
+					<InnerBlocks
+						templateLock={false}
+						template={[['core/paragraph']]}
+					/>
+				</div>
 		</>
 	);
 }

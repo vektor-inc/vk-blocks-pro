@@ -6,24 +6,18 @@ export default function save({ attributes }) {
 		position,
 		scrollTiming,
 		scrollTimingUnit,
-		blockId,
 		scrollPersistVisible,
 		fixedPositionType,
 		fixedPositionValue,
 		fixedPositionUnit,
 		displayAfterSeconds,
 		hideAfterSeconds,
+		dontShowAgain,
+		blockId,
 	} = attributes;
 
-	const blockProps = useBlockProps.save({
-		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} vk_fixed-display-position-from-${fixedPositionType} vk_fixed-display-${blockId} ${
-			displayAfterSeconds > 0 ? 'is-timed-display' : ''
-		} ${hideAfterSeconds > 0 ? 'is-timed-hide' : ''}`,
-		style: {
-			[fixedPositionType]: ['right', 'left'].includes(position)
-				? `${fixedPositionValue}${fixedPositionUnit}`
-				: undefined,
-		},
+	// データ属性を動的に構築
+	const dataAttributes = {
 		...(mode === 'show-on-scroll' && {
 			'data-scroll-timing': scrollTiming.toString(),
 			'data-scroll-timing-unit': scrollTimingUnit,
@@ -35,6 +29,29 @@ export default function save({ attributes }) {
 		...(hideAfterSeconds > 0 && {
 			'data-hide-after-seconds': hideAfterSeconds.toString(),
 		}),
+		...(dontShowAgain && {
+			'data-dont-show-again': 'true',
+		}),
+	};
+
+	// スクロール表示が無効（常に表示）になった場合、スクロール関連のデータ属性を削除
+	if (mode !== 'show-on-scroll') {
+		delete dataAttributes['data-scroll-timing'];
+		delete dataAttributes['data-scroll-timing-unit'];
+		delete dataAttributes['data-persist-visible'];
+	}
+
+	// blockPropsにデータ属性を含めて保存
+	const blockProps = useBlockProps.save({
+		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} vk_fixed-display-position-from-${fixedPositionType} vk_fixed-display-${blockId} ${
+			displayAfterSeconds > 0 ? 'is-timed-display' : ''
+		} ${hideAfterSeconds > 0 ? 'is-timed-hide' : ''}`,
+		style: {
+			[fixedPositionType]: ['right', 'left'].includes(position)
+				? `${fixedPositionValue}${fixedPositionUnit}`
+				: undefined,
+		},
+		...dataAttributes, // 動的に構築したデータ属性を追加
 	});
 
 	return (

@@ -39,6 +39,7 @@ export default function FixedDisplayEdit(props) {
 		fixedPositionUnit = 'svh',
 		displayAfterSeconds,
 		hideAfterSeconds,
+		dontShowAgain,
 	} = attributes;
 
 	useEffect(() => {
@@ -71,11 +72,13 @@ export default function FixedDisplayEdit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Fixed Display Setting', 'vk-blocks-pro')}>
+				<PanelBody
+					title={__('Fixed Display Settings', 'vk-blocks-pro')}
+				>
 					<PanelRow>
 						<p>
 							{__(
-								'The fixed position of the fixed position block will not change on the edit screen. Please check on the front screen.',
+								'The fixed position of the block will not change on the edit screen. Please check on the front screen.',
 								'vk-blocks-pro'
 							)}
 						</p>
@@ -171,45 +174,48 @@ export default function FixedDisplayEdit(props) {
 							/>
 						</>
 					)}
-					{mode === 'show-on-scroll' && (
-						<>
-							<UnitControl
-								label={__('Timing to display', 'vk-blocks-pro')}
-								value={`${scrollTiming}${scrollTimingUnit}`}
-								onChange={(nextValue) => {
-									const unit =
-										units.find((unit) =>
-											nextValue.endsWith(unit.value)
-										) || units[0];
-									const value = parseFloat(nextValue) || 0;
-									setAttributes({
-										scrollTiming: value,
-										scrollTimingUnit: unit.value,
-									});
-								}}
-								units={units}
-							/>
-							<ToggleControl
-								label={__(
-									'Persist visibility once visible',
+				</PanelBody>
+				{mode === 'show-on-scroll' && (
+					<PanelBody
+						title={__('Scroll Display Settings', 'vk-blocks-pro')}
+					>
+						<UnitControl
+							label={__('Timing to display', 'vk-blocks-pro')}
+							value={`${scrollTiming}${scrollTimingUnit}`}
+							onChange={(nextValue) => {
+								const unit =
+									units.find((unit) =>
+										nextValue.endsWith(unit.value)
+									) || units[0];
+								const value = parseFloat(nextValue) || 0;
+								setAttributes({
+									scrollTiming: value,
+									scrollTimingUnit: unit.value,
+								});
+							}}
+							units={units}
+						/>
+						<ToggleControl
+							label={__(
+								'Persist visibility once visible',
+								'vk-blocks-pro'
+							)}
+							checked={scrollPersistVisible}
+							onChange={(value) =>
+								setAttributes({ scrollPersistVisible: value })
+							}
+						/>
+						<PanelRow>
+							<p>
+								{__(
+									'This block will appear when the user scrolls to a specific point on the page. You can also set the timing for how long after scrolling it appears and when it disappears.',
 									'vk-blocks-pro'
 								)}
-								checked={scrollPersistVisible}
-								onChange={(value) =>
-									setAttributes({
-										scrollPersistVisible: value,
-									})
-								}
-							/>
-						</>
-					)}
-				</PanelBody>
-				<PanelBody
-					title={__(
-						'Fixed Display Behavior Setting',
-						'vk-blocks-pro'
-					)}
-				>
+							</p>
+						</PanelRow>
+					</PanelBody>
+				)}
+				<PanelBody title={__('Timer Settings', 'vk-blocks-pro')}>
 					<TextControl
 						label={__('Display after seconds', 'vk-blocks-pro')}
 						value={displayAfterSeconds || '0'}
@@ -233,6 +239,20 @@ export default function FixedDisplayEdit(props) {
 						type="number"
 						min="0"
 						step="0.1"
+					/>
+				</PanelBody>
+				<PanelBody
+					title={__('Visitor Return Settings', 'vk-blocks-pro')}
+				>
+					<ToggleControl
+						label={__(
+							'Do not show again for returning visitors',
+							'vk-blocks-pro'
+						)}
+						checked={dontShowAgain}
+						onChange={(value) =>
+							setAttributes({ dontShowAgain: value })
+						}
 					/>
 				</PanelBody>
 			</InspectorControls>

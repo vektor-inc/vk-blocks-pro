@@ -47,6 +47,10 @@
 			"type": "number",
 			"default": 0
 		},
+		"dontShowAgain": {
+			"type": "number",
+			"default": 0
+		},
 		"clientId": {
 			"type": "string"
 		},

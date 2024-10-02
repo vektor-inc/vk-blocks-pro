@@ -11,22 +11,24 @@
 	z-index: 99999;
 	
 	/* タイマー機能用クラス */
+	&.is-timed-hide {
+
+		&:not(.is-timed-visible) {
+			opacity: 0;
+			transition: opacity 0.3s ease;
+			pointer-events: none;
+		}
+	}
+
 	&.is-timed-display {
 		opacity: 0;
 		transition: opacity 0.3s ease;
 
-		&.is-visible {
+		&.is-timed-visible {
 			opacity: 1;
 		}
 	}
 
-	&.is-timed-hide {
-
-		&:not(.is-visible) {
-			opacity: 0;
-			transition: opacity 0.3s ease;
-		}
-	}
 }
 
 .vk_fixed-display-mode {
@@ -38,7 +40,7 @@
 		opacity: 0;
 		transition: opacity 0.3s ease;
 		
-		&.is-visible {
+		&.is-scrolled-visible {
 			opacity: 1;
 		}
 	}

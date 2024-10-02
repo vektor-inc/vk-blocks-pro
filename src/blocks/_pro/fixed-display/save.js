@@ -29,6 +29,7 @@ export default function save({ attributes }) {
 		...(hideAfterSeconds > 0 && {
 			'data-hide-after-seconds': hideAfterSeconds.toString(),
 		}),
+		// dontShowAgainは削除されないようにする
 		...(dontShowAgain && {
 			'data-dont-show-again': 'true',
 		}),
@@ -51,7 +52,7 @@ export default function save({ attributes }) {
 				? `${fixedPositionValue}${fixedPositionUnit}`
 				: undefined,
 		},
-		...dataAttributes, // 動的に構築したデータ属性を追加
+		...dataAttributes,
 	});
 
 	return (

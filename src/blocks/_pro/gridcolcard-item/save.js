@@ -74,15 +74,14 @@ export default function save(props) {
 		textColor && isHexColor(textColor) ? textColor : null;
 
 	const blockProps = useBlockProps.save({
-		className: classnames(
-			containerClasses,
-			{
-				'vk_gridcolcard_item-noHeader': headerDisplay === 'delete',
-				'vk_gridcolcard_item-noFooter': footerDisplay === 'delete',
-				[`vk_gridcolcard_item-header-${headerDisplay}`]: headerDisplay !== 'delete',
-				[`vk_gridcolcard_item-footer-${footerDisplay}`]: footerDisplay !== 'delete',
-			}
-		),
+		className: classnames(containerClasses, {
+			'vk_gridcolcard_item-noHeader': headerDisplay === 'delete',
+			'vk_gridcolcard_item-noFooter': footerDisplay === 'delete',
+			[`vk_gridcolcard_item-header-${headerDisplay}`]:
+				headerDisplay !== 'delete',
+			[`vk_gridcolcard_item-footer-${footerDisplay}`]:
+				footerDisplay !== 'delete',
+		}),
 		style,
 	});
 

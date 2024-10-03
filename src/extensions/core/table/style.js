@@ -113,41 +113,61 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 
 		// コンポーネントのマウントまたは更新後に属性を更新
 		useEffect(() => {
+			// 初期ロード時にクラスや属性を確認して scrollable を ON にする
+			const checkTableScrollAttributes = () => {
+				const tables = document.querySelectorAll('.wp-block-table');
+				tables.forEach((table) => {
+					// もし is-style-vk-table-scrollable クラスや data-scroll-breakpoint 属性がついていたら scrollable を ON に設定
+					if (
+						table.classList.contains('is-style-vk-table-scrollable') ||
+						table.hasAttribute('data-scroll-breakpoint')
+					) {
+						setAttributes({ scrollable: true });
+					}
+				});
+			};
+		
+			// コンポーネントの初回レンダリング時に実行
+			checkTableScrollAttributes();
+		}, []); // 初期レンダリング時のみ実行
+		
+		// scrollable の状態が確定したら処理を実行
+		useEffect(() => {
 			const updateTableScrollAttributes = () => {
 				const tables = document.querySelectorAll(
 					'.wp-block-table.is-style-vk-table-scrollable'
 				);
 				tables.forEach((table) => {
-					const breakpoint =
-						table.getAttribute('data-scroll-breakpoint') ||
-						'table-scrollable-mobile';
-					table.setAttribute('data-scroll-breakpoint', breakpoint);
-
-					// data-output-scroll-hintがない場合、自動でfalseを設定
-					if (!table.hasAttribute('data-output-scroll-hint')) {
-						table.setAttribute('data-output-scroll-hint', 'false');
+					if (!scrollable) {
+						table.classList.remove('is-style-vk-table-scrollable');
+						table.removeAttribute('data-scroll-breakpoint');
+					} else {
+						const breakpoint =
+							table.getAttribute('data-scroll-breakpoint') ||
+							'table-scrollable-mobile';
+						table.setAttribute('data-scroll-breakpoint', breakpoint);
 					}
-
+		
 					table.setAttribute(
 						'data-output-scroll-hint',
 						showScrollMessage ? 'true' : 'false'
 					);
-
-					// iconOutputLeftの制御
+		
 					table.setAttribute(
 						'data-icon-output-left',
 						iconOutputLeft ? 'true' : 'false'
 					);
-
-					// iconOutputRightの制御
+		
 					table.setAttribute(
 						'data-icon-output-right',
 						iconOutputRight ? 'true' : 'false'
 					);
 				});
 			};
-
-			updateTableScrollAttributes();
+		
+			if (typeof scrollable !== 'undefined') {
+				updateTableScrollAttributes();
+			}
 		}, [
 			scrollable,
 			scrollBreakpoint,
@@ -156,7 +176,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 			scrollIconRight,
 			iconOutputLeft,
 			iconOutputRight,
-		]);
+		]);				
 
 		if (isValidBlockType(name) && props.isSelected) {
 			const blockEditContent = <BlockEdit {...props} />;
@@ -266,12 +286,15 @@ addFilter('editor.BlockEdit', 'vk-blocks/table-style', addBlockControl);
 // 保存時に追加のプロパティを設定
 const addExtraProps = (saveElementProps, blockType, attributes) => {
 	if (isValidBlockType(blockType.name)) {
-		saveElementProps.className = `${saveElementProps.className || ''} ${
-			attributes.scrollable ? 'is-style-vk-table-scrollable' : ''
-		}`.trim();
-
-		saveElementProps['data-scroll-breakpoint'] =
-			attributes.scrollBreakpoint;
+		// 'scrollable' が true の場合のみ 'is-style-vk-table-scrollable' クラスと 'data-scroll-breakpoint' を設定
+		if (attributes.scrollable) {
+			saveElementProps.className = `${saveElementProps.className || ''} is-style-vk-table-scrollable`.trim();
+			saveElementProps['data-scroll-breakpoint'] = attributes.scrollBreakpoint;
+		} else {
+			// 'scrollable' が false の場合、クラスと属性を削除
+			saveElementProps.className = saveElementProps.className.replace('is-style-vk-table-scrollable', '').trim();
+			delete saveElementProps['data-scroll-breakpoint'];
+		}
 
 		// 'showScrollMessage' が true の場合のみ 'data-output-scroll-hint' を追加
 		if (attributes.showScrollMessage) {
@@ -294,6 +317,7 @@ const addExtraProps = (saveElementProps, blockType, attributes) => {
 			delete saveElementProps['data-icon-output-right'];
 		}
 	} else {
+		// 他のブロックでは不要な属性を削除
 		delete saveElementProps['data-scroll-breakpoint'];
 		delete saveElementProps['data-output-scroll-hint'];
 		delete saveElementProps['data-icon-output-left'];

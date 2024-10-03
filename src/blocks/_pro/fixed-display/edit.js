@@ -61,7 +61,6 @@ export default function FixedDisplayEdit(props) {
 	}, [clientId, mode, position, blockId, scrollPersistVisible]);
 
 	const handlePositionChange = (newPosition) => {
-		// 位置が top または bottom に変更された場合、fixedPositionType をクリア
 		if (['top', 'bottom'].includes(newPosition)) {
 			setAttributes({ fixedPositionType: undefined });
 		}
@@ -113,7 +112,7 @@ export default function FixedDisplayEdit(props) {
 					<SelectControl
 						label={__('Fixed position', 'vk-blocks-pro')}
 						value={position}
-						onChange={handlePositionChange} // handlePositionChange に変更
+						onChange={handlePositionChange}
 						options={[
 							{ label: __('Top', 'vk-blocks-pro'), value: 'top' },
 							{

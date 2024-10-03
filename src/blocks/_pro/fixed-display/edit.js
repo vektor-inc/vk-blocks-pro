@@ -269,7 +269,7 @@ export default function FixedDisplayEdit(props) {
 					<PanelRow>
 						<p>
 							{__(
-								'In private browsing mode or environments where certain features are disabled, this block may appear again on future visits.',
+								'Since this block uses Session Storage, it may reappear after the browser is closed or in private browsing mode.',
 								'vk-blocks-pro'
 							)}
 						</p>

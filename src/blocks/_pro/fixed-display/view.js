@@ -1,13 +1,13 @@
 /* eslint-env browser */
 
-// LocalStorage にフラグを保存する関数
-function setLocalStorageFlag(key, value) {
-	localStorage.setItem(key, value);
+// SessionStorage にフラグを保存する関数
+function setSessionStorageFlag(key, value) {
+	sessionStorage.setItem(key, value);
 }
 
-// LocalStorage からフラグを取得する関数
-function getLocalStorageFlag(key) {
-	return localStorage.getItem(key) !== null;
+// SessionStorage からフラグを取得する関数
+function getSessionStorageFlag(key) {
+	return sessionStorage.getItem(key) !== null;
 }
 
 // 要素の表示・非表示を制御する共通関数
@@ -22,13 +22,13 @@ function handleVisibility(
 		setTimeout(() => {
 			item.classList.add('is-timed-visible');
 			if (dontShowAgain) {
-				setLocalStorageFlag(`displayed_${blockId}`, 'true');
+				setSessionStorageFlag(`displayed_${blockId}`, 'true');
 			}
 		}, displayAfterSeconds * 1000);
 	} else {
 		item.classList.add('is-timed-visible');
 		if (dontShowAgain) {
-			setLocalStorageFlag(`displayed_${blockId}`, 'true');
+			setSessionStorageFlag(`displayed_${blockId}`, 'true');
 		}
 	}
 
@@ -53,10 +53,9 @@ window.addEventListener('scroll', function () {
 		const dontShowAgain =
 			item.getAttribute('data-dont-show-again') === 'true';
 
-		// dontShowAgainが有効で、一度表示済みなら何もしない
-		if (dontShowAgain && getLocalStorageFlag(`displayed_${blockId}`)) {
+		if (dontShowAgain && getSessionStorageFlag(`displayed_${blockId}`)) {
 			return;
-		}
+		}			
 
 		const timing = parseInt(item.getAttribute('data-scroll-timing'), 10);
 		const unit = item.getAttribute('data-scroll-timing-unit');
@@ -115,9 +114,8 @@ window.addEventListener('DOMContentLoaded', function () {
 		const blockId = item.getAttribute('data-block-id');
 		const dontShowAgain =
 			item.getAttribute('data-dont-show-again') === 'true';
-
-		// dontShowAgainが有効で、一度表示済みなら何もしない
-		if (dontShowAgain && getLocalStorageFlag(`displayed_${blockId}`)) {
+			
+		if (dontShowAgain && getSessionStorageFlag(`displayed_${blockId}`)) {
 			return;
 		}
 

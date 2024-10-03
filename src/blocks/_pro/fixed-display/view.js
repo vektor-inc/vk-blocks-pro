@@ -1,11 +1,10 @@
 /* eslint-env browser */
 
-// SessionStorage にフラグを保存する関数
+// SessionStorage設定
 function setSessionStorageFlag(key, value) {
 	sessionStorage.setItem(key, value);
 }
 
-// SessionStorage からフラグを取得する関数
 function getSessionStorageFlag(key) {
 	return sessionStorage.getItem(key) !== null;
 }
@@ -55,7 +54,7 @@ window.addEventListener('scroll', function () {
 
 		if (dontShowAgain && getSessionStorageFlag(`displayed_${blockId}`)) {
 			return;
-		}			
+		}
 
 		const timing = parseInt(item.getAttribute('data-scroll-timing'), 10);
 		const unit = item.getAttribute('data-scroll-timing-unit');
@@ -92,7 +91,7 @@ window.addEventListener('scroll', function () {
 			);
 		}
 		// scrollPersistVisibleがONのときだけ再発火可能にする
-		else if (scrollPersistVisible && window.scrollY < timingInPixels) {
+		else if (!scrollPersistVisible && window.scrollY < timingInPixels) {
 			item.classList.remove('is-visible');
 			item.classList.remove('is-timed-visible');
 			item.setAttribute('data-is-triggered', 'false'); // 発火解除
@@ -114,7 +113,7 @@ window.addEventListener('DOMContentLoaded', function () {
 		const blockId = item.getAttribute('data-block-id');
 		const dontShowAgain =
 			item.getAttribute('data-dont-show-again') === 'true';
-			
+
 		if (dontShowAgain && getSessionStorageFlag(`displayed_${blockId}`)) {
 			return;
 		}

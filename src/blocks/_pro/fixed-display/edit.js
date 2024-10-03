@@ -68,12 +68,11 @@ export default function FixedDisplayEdit(props) {
 		setAttributes({ position: newPosition });
 	};
 
-	// ここで blockProps を一度だけ定義
 	const blockProps = useBlockProps({
 		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} ${
-			['top', 'bottom'].includes(position)
-				? ''
-				: `vk_fixed-display-position-from-${fixedPositionType}`
+			['right', 'left'].includes(position)
+				? `vk_fixed-display-position-from-${fixedPositionType}`
+				: ''
 		} vk_fixed-display-${blockId}`,
 		style: {
 			[fixedPositionType]: ['right', 'left'].includes(position)
@@ -218,14 +217,6 @@ export default function FixedDisplayEdit(props) {
 								setAttributes({ scrollPersistVisible: value })
 							}
 						/>
-						<PanelRow>
-							<p>
-								{__(
-									'This block will appear when the user scrolls to a specific point on the page. You can also set the timing for how long after scrolling it appears and when it disappears.',
-									'vk-blocks-pro'
-								)}
-							</p>
-						</PanelRow>
 					</PanelBody>
 				)}
 				<PanelBody title={__('Timer Settings', 'vk-blocks-pro')}>
@@ -253,6 +244,14 @@ export default function FixedDisplayEdit(props) {
 						min="0"
 						step="0.1"
 					/>
+					<PanelRow>
+						<p>
+							{__(
+								'When combined with "Show on Scroll", you can set the time the block remains visible after the user scrolls to a specific point, as well as when it disappears.',
+								'vk-blocks-pro'
+							)}
+						</p>
+					</PanelRow>
 				</PanelBody>
 				<PanelBody
 					title={__('Visitor Return Settings', 'vk-blocks-pro')}

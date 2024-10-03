@@ -41,9 +41,9 @@ export default function save({ attributes }) {
 
 	const blockProps = useBlockProps.save({
 		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} ${
-			['top', 'bottom'].includes(position)
-				? ''
-				: `vk_fixed-display-position-from-${fixedPositionType}`
+			['right', 'left'].includes(position)
+				? `vk_fixed-display-position-from-${fixedPositionType}`
+				: ''
 		} vk_fixed-display-${blockId} ${
 			displayAfterSeconds > 0 ? 'is-timed-display' : ''
 		} ${hideAfterSeconds > 0 ? 'is-timed-hide' : ''}`,

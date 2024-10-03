@@ -24,7 +24,6 @@ export default function save({ attributes }) {
 				? `${fixedPositionValue}${fixedPositionUnit}`
 				: undefined,
 		},
-		// モードが 'show-on-scroll' の場合、データ属性を追加
 		...(mode === 'show-on-scroll' && {
 			'data-scroll-timing': scrollTiming.toString(),
 			'data-scroll-timing-unit': scrollTimingUnit,

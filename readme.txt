@@ -106,7 +106,7 @@ e.g.
 
 == Changelog ==
 
-[ Specification change ] [ Grid Column Card (Pro) ] Changed the default settings of headerDisplay and footerDisplay from "Delete" to "Display".
+[ Specification change ][ Grid Column Card (Pro) ] Changed the default settings of headerDisplay and footerDisplay from "Delete" to "Display".
 [ Bug fix ][ Core/table ] Fixed the class was not removed when table scrolling was disabled.
 [ Bug fix ] Fix load styles when separate load is enable.
 [ Bug fix ][ Tab (Pro) ] Added a process to dynamically calculate and set the iframe height when the tab becomes active.

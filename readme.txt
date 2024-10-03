@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Grid Column Card (Pro) ] Add translation.
+
 = 1.85.1 =
 [ Bug fix ] Due to an issue where the hidden setting does not function properly when TreeShaking is enabled and CSS splitting is disabled, TreeShaking has been temporarily disabled as a workaround.
 
@@ -133,7 +135,7 @@ e.g.
 
 = 1.83.0 =
 [ Add function ][ Alert ] Add icon setting and inner block.
-[ Bug fix ][ Grid Column Card ] Fixed an issue where using a synced pattern would cause the destination edit page to crash.
+[ Bug fix ][ Grid Column Card (Pro) ] Fixed an issue where using a synced pattern would cause the destination edit page to crash.
 [ Bug fix ][ Core List ] Add support for handling list color in old settings.
 [ Bug fix ][ Tab Item ] When duplicating an active tab-item block, no more than one tab-item block becomes active.
 
@@ -182,7 +184,7 @@ e.g.
 [ Specification change ][ Slider ] Change padding style to core system from original.
 [ Bug fix ] Fixed an error in the component link toolbar in WordPress version 6.6.
 [ Bug fix ][ Tab (Pro) ] Fixed extra space being added to tabs depending on theme.
-[ Bug fix ][ Fixed Display (Pro) ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment. 
+[ Bug fix ][ Fixed Display (Pro) ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment.
 [ Other ][ Table of Contents (Pro) ] Improved pseudo elements for frontend page accessibility.
 [ Other ][ Outer ] Refactored CSS of width treatment to prevent layout corruption on the edit screen.
 
@@ -208,7 +210,7 @@ e.g.
 [ Other ] Delete old deprecated code
 
 = 1.76.0 =
-[ Add function ] Add Setting for the position of VK Blocks on all block inserter. 
+[ Add function ] Add Setting for the position of VK Blocks on all block inserter.
 [ Add function ][ Border Box ] Add title tag setting.
 [ Add function ][ Slider ] Add url interface to block toolbar for slider item.
 [ Specification change ][ Post List (Pro) ] Displayed taxonomies now only show for selected post types.
@@ -241,14 +243,14 @@ e.g.
 [ Add function ][ Outer (Pro) ] Added option to min height setting.
 [ Specification change ][ Custom CSS (Pro) ] Changed the custom CSS text area to be wider
 [ Specification change ][ Outer ] Remove the negative margin for .vk_outer-width-full.
-[ Bug fix ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment. 
+[ Bug fix ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment.
 [ Bug fix ] Remove min-height from "Custom CSS" on edit screen.
 [ Other ] Fixed useSetting deprecated
 
 = 1.72.1 =
 [ Specification change ][ Pro ] Attend to I18N Improvements in 6.5.
 [ Other ] Fixed useSetting deprecated
-[ Bug fix ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment. 
+[ Bug fix ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment.
 
 = 1.72.0 =
 [ Specification change ][ Child Page List ] Hide "Term's name on Image" and "Taxonomies (all)" display options.

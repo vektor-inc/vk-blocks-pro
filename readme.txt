@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.3
 Tested up to: 6.6
-Stable tag: 1.84.0.1
+Stable tag: 1.85.1.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -107,6 +107,12 @@ e.g.
 == Changelog ==
 
 [ Bug fix ][ Grid Column Card (Pro) ] Add translation.
+[ Bug fix ][ Core/table ] Fixed the class was not removed when table scrolling was disabled.
+[ Bug fix ] Fix load styles when separate load is enable.
+[ Bug fix ][ Tab (Pro) ] Added a process to dynamically calculate and set the iframe height when the tab becomes active.
+[ Bug Fix ] Fixed an issue where disabling separated loading caused all block CSS to load.
+[ Add function ] [ Fixed Display (Pro) ] Added an option for "Fixed display from the bottom."
+[ Add function ] Added to apply the vk-scroll-hint class to all elements with the vk_hidden and vk_hidden-XXX classes.
 
 = 1.85.1 =
 [ Bug fix ] Due to an issue where the hidden setting does not function properly when TreeShaking is enabled and CSS splitting is disabled, TreeShaking has been temporarily disabled as a workaround.
@@ -129,7 +135,6 @@ e.g.
 [ Specification change ][ Classic FAQ / New FAQ ] Support structured data.
 [ Bug fix ][ Link toolbar ] Fix to prevent adding http:// or https:// when a relative path is entered.
 [ Bug fix ][ Post list (Pro) ] Fixed pagination customization in post list.
-[ Bug fix ][ Breadcrumb(Pro) ] Fixed pagination customization in post list.
 [ Other ] Add a mode to extract class name for Font awesome icon.
 [ Other ] Supports custom CSS including pseudo-elements even in block-by-block lazy loading mode.
 

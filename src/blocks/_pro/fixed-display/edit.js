@@ -67,7 +67,7 @@ export default function FixedDisplayEdit(props) {
 					? `${fixedPositionValue}${fixedPositionUnit}`
 					: undefined,
 		},
-	});	
+	});
 
 	return (
 		<>

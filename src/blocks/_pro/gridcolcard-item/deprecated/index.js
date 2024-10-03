@@ -1,6 +1,6 @@
 import save1_38_0 from './1.38.0/save';
 import save1_71_0 from './1.71.0/save';
-import save1_84_0 from './1.84.0/save';
+import save1_85_1 from './1.85.1/save';
 
 const blockAttributes = {
 	editLock: {
@@ -71,7 +71,7 @@ const blockAttributes2 = {
 const deprecated = [
 	{
 		attributes: blockAttributes2,
-		save: save1_84_0,
+		save: save1_85_1,
 	},
 	{
 		attributes: blockAttributes,

@@ -23,6 +23,7 @@
 	&.is-timed-display {
 		opacity: 0;
 		transition: opacity 0.3s ease;
+		pointer-events: none;
 
 		&.is-timed-visible {
 			opacity: 1;

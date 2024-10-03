@@ -1247,7 +1247,7 @@ msgid "Setting up a link"
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:389
-#: src/blocks/_pro/gridcolcard-item/edit.js:346
+#: src/blocks/_pro/gridcolcard-item/edit.js:348
 #: src/blocks/_pro/icon-card-item/edit.js:128
 #: src/blocks/button/edit.js:283
 #: src/blocks/icon/edit.js:292
@@ -1298,7 +1298,11 @@ msgstr ""
 msgid "span"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:101
+#: src/blocks/_pro/fixed-display/edit.js:100
+msgid "Top"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:102
 #: src/blocks/balloon/edit.js:434
 #: src/blocks/button/edit.js:375
 #: src/blocks/pr-content/edit.js:252
@@ -1306,11 +1310,11 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:105
+#: src/blocks/_pro/fixed-display/edit.js:106
 msgid "Bottom"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:109
+#: src/blocks/_pro/fixed-display/edit.js:110
 #: src/blocks/balloon/edit.js:422
 #: src/blocks/button/edit.js:355
 #: src/blocks/pr-content/edit.js:256
@@ -1318,48 +1322,60 @@ msgstr ""
 msgid "Left"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:116
+#: src/blocks/_pro/fixed-display/edit.js:118
+msgid "Fixed position origin"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:125
+msgid "Top section"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:132
+msgid "Bottom section"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:146
 msgid "Fixed position from the top"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:138
+#: src/blocks/_pro/fixed-display/edit.js:150
+msgid "Fixed position from the bottom"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:174
 msgid "Timing to display"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:154
+#: src/blocks/_pro/fixed-display/edit.js:190
 msgid "Persist visibility once visible"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:70
+#: src/blocks/_pro/fixed-display/edit.js:71
 msgid "Fixed Display Setting"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:73
+#: src/blocks/_pro/fixed-display/edit.js:74
 msgid ""
 "The fixed position of the fixed position block will not change on the edit "
 "screen. Please check on the front screen."
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:80
+#: src/blocks/_pro/fixed-display/edit.js:81
 #: src/blocks/_pro/table-of-contents-new/edit.js:114
 #: src/components/column-layout-control/index.js:69
 msgid "Display type"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:85
+#: src/blocks/_pro/fixed-display/edit.js:86
 msgid "Always Visible"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:89
+#: src/blocks/_pro/fixed-display/edit.js:90
 msgid "Show on Scroll"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:95
+#: src/blocks/_pro/fixed-display/edit.js:96
 msgid "Fixed position"
-msgstr ""
-
-#: src/blocks/_pro/fixed-display/edit.js:99
-msgid "Top"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:100
@@ -1440,63 +1456,63 @@ msgstr ""
 msgid "You can create a variety of layouts with grid column card blocks."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:242
+#: src/blocks/_pro/gridcolcard-item/edit.js:244
 #: src/blocks/_pro/select-post-list-item/edit.js:66
 #: src/blocks/button/edit.js:249
 #: src/components/link-toolbar/index.js:238
 msgid "Unlink"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:243
+#: src/blocks/_pro/gridcolcard-item/edit.js:245
 #: src/blocks/button/edit.js:250
 #: src/components/link-toolbar/index.js:239
 msgid "Input Link URL"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:273
+#: src/blocks/_pro/gridcolcard-item/edit.js:275
 #: src/blocks/_pro/select-post-list-item/edit.js:102
 #: src/blocks/button/edit.js:278
 #: src/components/link-toolbar/index.js:273
 msgid "Submit"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:297
+#: src/blocks/_pro/gridcolcard-item/edit.js:299
 msgid "Edit mode"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:307
+#: src/blocks/_pro/gridcolcard-item/edit.js:309
 msgid "All columns"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:315
+#: src/blocks/_pro/gridcolcard-item/edit.js:317
 msgid "This column only"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:320
+#: src/blocks/_pro/gridcolcard-item/edit.js:322
 msgid "Edit Lock"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:323
+#: src/blocks/_pro/gridcolcard-item/edit.js:325
 msgid "Lock edits this block from the parent and other Grid Column Item block"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:334
+#: src/blocks/_pro/gridcolcard-item/edit.js:336
 msgid "Column Setting"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:338
+#: src/blocks/_pro/gridcolcard-item/edit.js:340
 #: src/blocks/_pro/icon-card-item/edit.js:120
 #: src/blocks/pr-blocks/edit.js:254
 msgid "Link URL:"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:353
+#: src/blocks/_pro/gridcolcard-item/edit.js:355
 msgid ""
 "If you set a link URL, do not place the link element (text or button) in "
 "the Grid Column Card Item. It may not be displayed correctly."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:357
+#: src/blocks/_pro/gridcolcard-item/edit.js:359
 msgid "Make sure that no link is specified for the image block, etc."
 msgstr ""
 

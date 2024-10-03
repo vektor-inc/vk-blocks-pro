@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.3
 Tested up to: 6.6
-Stable tag: 1.83.0.1
+Stable tag: 1.85.1.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -107,6 +107,28 @@ e.g.
 == Changelog ==
 
 [ Specification Change ][ Grid Column Card (Pro) ] Change 'delete' to 'display' for headerDisplay and footerDisplay.
+[ Bug fix ][ Core/table ] Fixed the class was not removed when table scrolling was disabled.
+[ Bug fix ] Fix load styles when separate load is enable.
+[ Bug fix ][ Tab (Pro) ] Added a process to dynamically calculate and set the iframe height when the tab becomes active.
+[ Bug Fix ] Fixed an issue where disabling separated loading caused all block CSS to load.
+[ Add function ] [ Fixed Display (Pro) ] Added an option for "Fixed display from the bottom."
+[ Add function ] Added to apply the vk-scroll-hint class to all elements with the vk_hidden and vk_hidden-XXX classes.
+
+= 1.85.1 =
+[ Bug fix ] Due to an issue where the hidden setting does not function properly when TreeShaking is enabled and CSS splitting is disabled, TreeShaking has been temporarily disabled as a workaround.
+
+= 1.85.0 =
+[ Add function ][ Core Table ] Add scroll hint for horizontal scrolling.
+[ Specification change ][ Post List (Pro) ] Disable link on edit screen.
+[ Specification change ][ Alert ] Fixed the alert variation icon.
+[ Bug fix ][ Breadcrumb (Pro) ] Fixed an issue where the separator setting in the Breadcrumb block was not being loaded correctly (now loaded from view.js).
+[ Bug fix ] Fixed an issue where abnormal load occurred on a server that cannot use auto-update.
+
+= 1.84.2 =
+[ Bug fix ][ Custom CSS (Pro) ] Replaced an improved sanitation function in `vk_blocks_output custom css` to handle various CSS patterns.
+
+= 1.84.1 =
+[ Bug fix ][ Custom CSS (Pro) ] Replaced wp_kses with a sanitization function in vk_blocks_output_custom_css.
 
 = 1.84.0 =
 [ Add function ][ Column ] Add toolbar link for components.
@@ -167,7 +189,7 @@ e.g.
 [ Specification change ][ Slider ] Change padding style to core system from original.
 [ Bug fix ] Fixed an error in the component link toolbar in WordPress version 6.6.
 [ Bug fix ][ Tab (Pro) ] Fixed extra space being added to tabs depending on theme.
-[ Bug fix ][ Fixed Display (Pro) ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment. 
+[ Bug fix ][ Fixed Display (Pro) ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment.
 [ Other ][ Table of Contents (Pro) ] Improved pseudo elements for frontend page accessibility.
 [ Other ][ Outer ] Refactored CSS of width treatment to prevent layout corruption on the edit screen.
 
@@ -193,7 +215,7 @@ e.g.
 [ Other ] Delete old deprecated code
 
 = 1.76.0 =
-[ Add function ] Add Setting for the position of VK Blocks on all block inserter. 
+[ Add function ] Add Setting for the position of VK Blocks on all block inserter.
 [ Add function ][ Border Box ] Add title tag setting.
 [ Add function ][ Slider ] Add url interface to block toolbar for slider item.
 [ Specification change ][ Post List (Pro) ] Displayed taxonomies now only show for selected post types.
@@ -226,14 +248,14 @@ e.g.
 [ Add function ][ Outer (Pro) ] Added option to min height setting.
 [ Specification change ][ Custom CSS (Pro) ] Changed the custom CSS text area to be wider
 [ Specification change ][ Outer ] Remove the negative margin for .vk_outer-width-full.
-[ Bug fix ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment. 
+[ Bug fix ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment.
 [ Bug fix ] Remove min-height from "Custom CSS" on edit screen.
 [ Other ] Fixed useSetting deprecated
 
 = 1.72.1 =
 [ Specification change ][ Pro ] Attend to I18N Improvements in 6.5.
 [ Other ] Fixed useSetting deprecated
-[ Bug fix ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment. 
+[ Bug fix ] Fixed an issue with redundant JavaScript loading in the WordPress 6.5 environment.
 
 = 1.72.0 =
 [ Specification change ][ Child Page List ] Hide "Term's name on Image" and "Taxonomies (all)" display options.

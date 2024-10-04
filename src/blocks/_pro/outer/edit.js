@@ -390,25 +390,17 @@ export default function OuterEdit(props) {
 	}, [bgFocalPointPC, bgFocalPointTablet, bgFocalPointMobile]);
 
 	useEffect(() => {
-		if (
-			!bgImage &&
-			(bgFocalPointPC.x !== 0.5 || bgFocalPointPC.y !== 0.5)
-		) {
+		// bgFocalPointPCが未定義または不正な値の場合にデフォルト値を設定
+		if (!bgFocalPointPC || bgFocalPointPC.x === undefined || bgFocalPointPC.y === undefined) {
 			setAttributes({ bgFocalPointPC: { x: 0.5, y: 0.5 } });
 		}
-		if (
-			!bgImageTablet &&
-			(bgFocalPointTablet.x !== 0.5 || bgFocalPointTablet.y !== 0.5)
-		) {
+		if (!bgFocalPointTablet || bgFocalPointTablet.x === undefined || bgFocalPointTablet.y === undefined) {
 			setAttributes({ bgFocalPointTablet: { x: 0.5, y: 0.5 } });
 		}
-		if (
-			!bgImageMobile &&
-			(bgFocalPointMobile.x !== 0.5 || bgFocalPointMobile.y !== 0.5)
-		) {
+		if (!bgFocalPointMobile || bgFocalPointMobile.x === undefined || bgFocalPointMobile.y === undefined) {
 			setAttributes({ bgFocalPointMobile: { x: 0.5, y: 0.5 } });
 		}
-	}, [bgImage, bgImageTablet, bgImageMobile]);
+	}, [bgImage, bgImageTablet, bgImageMobile]);	
 
 	const backgroundStyles = {
 		backgroundImage: bgImage ? `url(${bgImage})` : undefined,

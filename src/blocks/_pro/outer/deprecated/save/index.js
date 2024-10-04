@@ -20,6 +20,7 @@ import save1_61_2 from './1.61.2/save';
 import save1_64_0 from './1.64.0/save';
 import save1_71_0 from './1.71.0/save';
 import save1_76_0 from './1.76.0/save';
+import save1_85_1 from './1.85.1/save';
 
 const blockAttributes = {
 	bgColor: {
@@ -179,7 +180,6 @@ const blockAttributes7 = {
 };
 
 // 1.71.0 から attributes を変更
-/*
 const blockAttributes8 = {
 	...blockAttributes7,
 	linkUrl: {
@@ -190,11 +190,26 @@ const blockAttributes8 = {
 		default: ''
 	},
 };
-*/
+
+// 1.76.0 から attributes を変更
+const blockAttributes9 = {
+	...blockAttributes8,
+	linkUrl: {
+		type: 'string',
+	},
+	bgFocalPoint: {
+		type: 'object',
+		default: { 'x': 0.5, 'y': 0.5 }
+	},
+};
 
 const deprecated = [
 	{
-		attributes: blockAttributes7,
+		attributes: blockAttributes9,
+		save: save1_85_1,
+	},
+	{
+		attributes: blockAttributes8,
 		save: save1_76_0,
 	},
 	{

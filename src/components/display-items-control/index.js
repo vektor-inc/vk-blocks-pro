@@ -96,7 +96,7 @@ export const DisplayItemsControl = (props) => {
 				)}
 				value={new_date} //eslint-disable-line camelcase
 				onChange={(value) =>
-					setAttributes({ new_date: parseInt(value) })
+					setAttributes({ new_date: parseInt(value) || 0 })
 				}
 				type={'number'}
 			/>

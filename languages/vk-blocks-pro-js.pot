@@ -554,7 +554,7 @@ msgstr ""
 #: src/blocks/_pro/accordion/edit.js:139
 #: src/blocks/_pro/outer/edit.js:1054
 #: src/blocks/button/edit.js:537
-#: src/blocks/slider/edit.js:961
+#: src/blocks/slider/edit.js:927
 #: src/components/advanced-viewport-control/index.js:25
 msgid "PC"
 msgstr ""
@@ -563,7 +563,7 @@ msgstr ""
 #: src/blocks/_pro/accordion/edit.js:122
 #: src/blocks/_pro/outer/edit.js:1038
 #: src/blocks/button/edit.js:472
-#: src/blocks/slider/edit.js:982
+#: src/blocks/slider/edit.js:948
 #: src/components/advanced-viewport-control/index.js:32
 msgid "Tablet"
 msgstr ""
@@ -572,7 +572,7 @@ msgstr ""
 #: src/blocks/_pro/accordion/edit.js:105
 #: src/blocks/_pro/outer/edit.js:1022
 #: src/blocks/button/edit.js:407
-#: src/blocks/slider/edit.js:1003
+#: src/blocks/slider/edit.js:969
 #: src/components/advanced-viewport-control/index.js:41
 msgid "Mobile"
 msgstr ""
@@ -699,7 +699,6 @@ msgstr ""
 #: src/blocks/button/edit.js:330
 #: src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:21
-#: src/blocks/slider/edit.js:925
 #: src/extensions/common/inline-font-size/inline.js:28
 msgid "Normal"
 msgstr ""
@@ -814,51 +813,50 @@ msgstr ""
 msgid "Max number of words"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:101
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:102
 msgid "Aspect ratio"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:106
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:107
 msgid "Original"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:110
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:111
 msgid "Square"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:114
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:115
 msgid "16:9"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:118
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:119
 msgid "4:3"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:122
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:123
 msgid "3:2"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:126
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:127
 msgid "9:16"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:130
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:131
 msgid "3:4"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:134
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:135
 msgid "2:3"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:155
-#: src/blocks/slider/edit.js:949
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:156
+#: src/blocks/slider/edit.js:915
 msgid "Height"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:177
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:178
 #: src/blocks/_pro/outer/edit.js:533
 #: src/blocks/balloon/edit.js:508
-#: src/blocks/slider/edit.js:915
 msgid "Width"
 msgstr ""
 
@@ -1100,7 +1098,7 @@ msgid "Image Height"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:88
-#: src/blocks/slider/edit.js:954
+#: src/blocks/slider/edit.js:920
 msgid "Slide Height for each device."
 msgstr ""
 
@@ -1249,13 +1247,13 @@ msgid "Setting up a link"
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:389
-#: src/blocks/_pro/gridcolcard-item/edit.js:336
+#: src/blocks/_pro/gridcolcard-item/edit.js:348
 #: src/blocks/_pro/icon-card-item/edit.js:128
 #: src/blocks/button/edit.js:283
 #: src/blocks/icon/edit.js:292
 #: src/blocks/pr-blocks/edit.js:262
 #: src/blocks/pr-content/edit.js:131
-#: src/components/link-toolbar/index.js:275
+#: src/components/link-toolbar/index.js:279
 msgid "Open link new tab."
 msgstr ""
 
@@ -1300,7 +1298,11 @@ msgstr ""
 msgid "span"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:101
+#: src/blocks/_pro/fixed-display/edit.js:100
+msgid "Top"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:102
 #: src/blocks/balloon/edit.js:434
 #: src/blocks/button/edit.js:375
 #: src/blocks/pr-content/edit.js:252
@@ -1308,11 +1310,11 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:105
+#: src/blocks/_pro/fixed-display/edit.js:106
 msgid "Bottom"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:109
+#: src/blocks/_pro/fixed-display/edit.js:110
 #: src/blocks/balloon/edit.js:422
 #: src/blocks/button/edit.js:355
 #: src/blocks/pr-content/edit.js:256
@@ -1320,48 +1322,60 @@ msgstr ""
 msgid "Left"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:116
+#: src/blocks/_pro/fixed-display/edit.js:118
+msgid "Fixed position origin"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:125
+msgid "Top section"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:132
+msgid "Bottom section"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:146
 msgid "Fixed position from the top"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:138
+#: src/blocks/_pro/fixed-display/edit.js:150
+msgid "Fixed position from the bottom"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:174
 msgid "Timing to display"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:154
+#: src/blocks/_pro/fixed-display/edit.js:190
 msgid "Persist visibility once visible"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:70
+#: src/blocks/_pro/fixed-display/edit.js:71
 msgid "Fixed Display Setting"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:73
+#: src/blocks/_pro/fixed-display/edit.js:74
 msgid ""
 "The fixed position of the fixed position block will not change on the edit "
 "screen. Please check on the front screen."
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:80
+#: src/blocks/_pro/fixed-display/edit.js:81
 #: src/blocks/_pro/table-of-contents-new/edit.js:114
 #: src/components/column-layout-control/index.js:69
 msgid "Display type"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:85
+#: src/blocks/_pro/fixed-display/edit.js:86
 msgid "Always Visible"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:89
+#: src/blocks/_pro/fixed-display/edit.js:90
 msgid "Show on Scroll"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:95
+#: src/blocks/_pro/fixed-display/edit.js:96
 msgid "Fixed position"
-msgstr ""
-
-#: src/blocks/_pro/fixed-display/edit.js:99
-msgid "Top"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:100
@@ -1442,63 +1456,63 @@ msgstr ""
 msgid "You can create a variety of layouts with grid column card blocks."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:232
+#: src/blocks/_pro/gridcolcard-item/edit.js:244
 #: src/blocks/_pro/select-post-list-item/edit.js:66
 #: src/blocks/button/edit.js:249
-#: src/components/link-toolbar/index.js:234
+#: src/components/link-toolbar/index.js:238
 msgid "Unlink"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:233
+#: src/blocks/_pro/gridcolcard-item/edit.js:245
 #: src/blocks/button/edit.js:250
-#: src/components/link-toolbar/index.js:235
+#: src/components/link-toolbar/index.js:239
 msgid "Input Link URL"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:263
+#: src/blocks/_pro/gridcolcard-item/edit.js:275
 #: src/blocks/_pro/select-post-list-item/edit.js:102
 #: src/blocks/button/edit.js:278
-#: src/components/link-toolbar/index.js:269
+#: src/components/link-toolbar/index.js:273
 msgid "Submit"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:287
+#: src/blocks/_pro/gridcolcard-item/edit.js:299
 msgid "Edit mode"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:297
+#: src/blocks/_pro/gridcolcard-item/edit.js:309
 msgid "All columns"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:305
+#: src/blocks/_pro/gridcolcard-item/edit.js:317
 msgid "This column only"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:310
+#: src/blocks/_pro/gridcolcard-item/edit.js:322
 msgid "Edit Lock"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:313
+#: src/blocks/_pro/gridcolcard-item/edit.js:325
 msgid "Lock edits this block from the parent and other Grid Column Item block"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:324
+#: src/blocks/_pro/gridcolcard-item/edit.js:336
 msgid "Column Setting"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:328
+#: src/blocks/_pro/gridcolcard-item/edit.js:340
 #: src/blocks/_pro/icon-card-item/edit.js:120
 #: src/blocks/pr-blocks/edit.js:254
 msgid "Link URL:"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:343
+#: src/blocks/_pro/gridcolcard-item/edit.js:355
 msgid ""
 "If you set a link URL, do not place the link element (text or button) in "
 "the Grid Column Card Item. It may not be displayed correctly."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:347
+#: src/blocks/_pro/gridcolcard-item/edit.js:359
 msgid "Make sure that no link is specified for the image block, etc."
 msgstr ""
 
@@ -1517,7 +1531,7 @@ msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:152
 #: src/blocks/heading/edit.js:376
-#: src/blocks/slider/edit.js:1167
+#: src/blocks/slider/edit.js:1133
 msgid "Hide"
 msgstr ""
 
@@ -1548,42 +1562,42 @@ msgstr ""
 msgid "Column header media area"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:118
+#: src/blocks/_pro/gridcolcard/edit.js:120
 msgid "Column Width Setting"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:122
+#: src/blocks/_pro/gridcolcard/edit.js:124
 msgid ""
 "If you specify the minimum column size on a tablet or PC with %, it will be "
 "easier to align the number of columns in the upper and lower rows according "
 "to the screen size."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:128
+#: src/blocks/_pro/gridcolcard/edit.js:130
 msgid "Column min width (Mobile)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:136
+#: src/blocks/_pro/gridcolcard/edit.js:138
 msgid "Column min width (Tablet / Optional)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:147
+#: src/blocks/_pro/gridcolcard/edit.js:149
 msgid "Column min width (PC / Optional)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:158
+#: src/blocks/_pro/gridcolcard/edit.js:160
 msgid "Column Gap Setting"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:162
+#: src/blocks/_pro/gridcolcard/edit.js:164
 msgid "Column gap size"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:168
+#: src/blocks/_pro/gridcolcard/edit.js:170
 msgid "Column row-gap size (optional)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:177
+#: src/blocks/_pro/gridcolcard/edit.js:179
 msgid "Specify all columns at once"
 msgstr ""
 
@@ -1611,6 +1625,7 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:137
 #: src/blocks/_pro/step-item/edit.js:82
+#: src/blocks/alert/edit.js:73
 #: src/blocks/border-box/edit.js:272
 #: src/blocks/button/edit.js:760
 #: src/blocks/heading/edit.js:335
@@ -1618,7 +1633,7 @@ msgstr ""
 #: src/blocks/pr-content/edit.js:212
 #: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:142
 #: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:167
-#: src/utils/font-awesome-new.js:166
+#: src/utils/font-awesome-new.js:189
 msgid "Icon"
 msgstr ""
 
@@ -1897,20 +1912,20 @@ msgstr ""
 msgid "Container Inner Side Space Setting"
 msgstr ""
 
-#: src/blocks/_pro/post-category-badge/edit.js:100
-msgid "Auto"
-msgstr ""
-
-#: src/blocks/_pro/post-category-badge/edit.js:86
+#: src/blocks/_pro/post-category-badge/edit.js:108
 msgid "Setting"
 msgstr ""
 
-#: src/blocks/_pro/post-category-badge/edit.js:88
+#: src/blocks/_pro/post-category-badge/edit.js:110
 msgid "Enable Term Link"
 msgstr ""
 
-#: src/blocks/_pro/post-category-badge/edit.js:96
+#: src/blocks/_pro/post-category-badge/edit.js:118
 msgid "Select Taxonomy"
+msgstr ""
+
+#: src/blocks/_pro/post-category-badge/edit.js:122
+msgid "Auto"
 msgstr ""
 
 #: src/blocks/_pro/post-list/edit.js:237
@@ -2055,9 +2070,9 @@ msgstr ""
 #: src/blocks/_pro/table-of-contents-new/edit.js:129
 #: src/blocks/_pro/timeline-item/edit.js:103
 #: src/blocks/heading/edit.js:264
-#: src/blocks/slider/edit.js:1143
+#: src/blocks/slider/edit.js:1109
 #: src/blocks/staff/edit.js:173
-#: src/components/advanced-color-gradient-control/index.js:46
+#: src/components/advanced-color-gradient-control/index.js:47
 msgid "Default"
 msgstr ""
 
@@ -2234,33 +2249,80 @@ msgstr ""
 msgid "label"
 msgstr ""
 
-#: src/blocks/alert/edit.js:19
+#: src/blocks/alert/edit.js:29
+msgid "Icon Text"
+msgstr ""
+
+#: src/blocks/alert/edit.js:41
 #: src/blocks/heading/edit.js:255
 msgid "Style Settings"
 msgstr ""
 
-#: src/blocks/alert/edit.js:25
+#: src/blocks/alert/edit.js:43
+msgid "Alert Style"
+msgstr ""
+
+#: src/blocks/alert/edit.js:53
+#: src/blocks/alert/variations.js:13
 #: src/blocks/button/edit.js:692
 #: src/blocks/pr-content/edit.js:171
 msgid "Success"
 msgstr ""
 
-#: src/blocks/alert/edit.js:29
+#: src/blocks/alert/edit.js:57
 #: src/blocks/button/edit.js:696
 #: src/blocks/pr-content/edit.js:175
 msgid "Info"
 msgstr ""
 
-#: src/blocks/alert/edit.js:33
+#: src/blocks/alert/edit.js:61
+#: src/blocks/alert/variations.js:54
 #: src/blocks/button/edit.js:700
 #: src/blocks/pr-content/edit.js:179
 msgid "Warning"
 msgstr ""
 
-#: src/blocks/alert/edit.js:37
+#: src/blocks/alert/edit.js:65
+#: src/blocks/alert/variations.js:73
 #: src/blocks/button/edit.js:704
 #: src/blocks/pr-content/edit.js:183
 msgid "Danger"
+msgstr ""
+
+#: src/blocks/alert/variations.js:19
+msgid "This is a success alert."
+msgstr ""
+
+#: src/blocks/alert/variations.js:26
+msgid "Alert Info"
+msgstr ""
+
+#: src/blocks/alert/variations.js:32
+msgid "Information"
+msgstr ""
+
+#: src/blocks/alert/variations.js:38
+msgid "This is a information alert."
+msgstr ""
+
+#: src/blocks/alert/variations.js:48
+msgid "Alert Warning"
+msgstr ""
+
+#: src/blocks/alert/variations.js:60
+msgid "This is a warning alert."
+msgstr ""
+
+#: src/blocks/alert/variations.js:67
+msgid "Alert Danger"
+msgstr ""
+
+#: src/blocks/alert/variations.js:7
+msgid "Alert Success"
+msgstr ""
+
+#: src/blocks/alert/variations.js:79
+msgid "This is a danger alert."
 msgstr ""
 
 #: src/blocks/ancestor-page-list/edit.js:100
@@ -2471,13 +2533,12 @@ msgid "Button Position:"
 msgstr ""
 
 #: src/blocks/button/edit.js:365
-#: src/blocks/slider/edit.js:1171
+#: src/blocks/slider/edit.js:1137
 #: src/components/display-items-control/index.js:136
 msgid "Center"
 msgstr ""
 
 #: src/blocks/button/edit.js:385
-#: src/blocks/slider/edit.js:934
 msgid "Wide"
 msgstr ""
 
@@ -2895,55 +2956,47 @@ msgstr ""
 msgid "repeat"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1026
-msgid "Slider Settings"
-msgstr ""
-
-#: src/blocks/slider/edit.js:1030
-msgid "Effect "
-msgstr ""
-
-#: src/blocks/slider/edit.js:1040
+#: src/blocks/slider/edit.js:1006
 msgid "Slide"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1044
+#: src/blocks/slider/edit.js:1010
 msgid "Fade"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1051
+#: src/blocks/slider/edit.js:1017
 msgid "Loop "
 msgstr ""
 
-#: src/blocks/slider/edit.js:1061
+#: src/blocks/slider/edit.js:1027
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1071
+#: src/blocks/slider/edit.js:1037
 msgid "Stop AutoPlay when swipe"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1081
+#: src/blocks/slider/edit.js:1047
 msgid "Display Time"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1108
+#: src/blocks/slider/edit.js:1074
 msgid "Change Speed"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1132
+#: src/blocks/slider/edit.js:1098
 msgid "Pagination Type"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1147
+#: src/blocks/slider/edit.js:1113
 msgid "Number of slides"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1160
+#: src/blocks/slider/edit.js:1126
 msgid "Navigation Position"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1175
+#: src/blocks/slider/edit.js:1141
 msgid "Bottom on Mobile device"
 msgstr ""
 
@@ -3045,8 +3098,12 @@ msgstr ""
 msgid "Preview ( Slide )"
 msgstr ""
 
-#: src/blocks/slider/edit.js:943
-msgid "Full Wide"
+#: src/blocks/slider/edit.js:992
+msgid "Slider Settings"
+msgstr ""
+
+#: src/blocks/slider/edit.js:996
+msgid "Effect "
 msgstr ""
 
 #: src/blocks/spacer/advanced-spacer-control.js:15
@@ -3146,7 +3203,7 @@ msgstr ""
 msgid "minchoBody"
 msgstr ""
 
-#: src/components/advanced-color-gradient-control/index.js:40
+#: src/components/advanced-color-gradient-control/index.js:41
 msgid "Theme"
 msgstr ""
 
@@ -3262,7 +3319,7 @@ msgstr ""
 msgid "Currently selected"
 msgstr ""
 
-#: src/components/link-toolbar/index.js:304
+#: src/components/link-toolbar/index.js:308
 msgid "Link copied to clipboard."
 msgstr ""
 
@@ -3567,12 +3624,20 @@ msgstr ""
 msgid "Responsive BR "
 msgstr ""
 
-#: src/extensions/core/columns/style.js:60
+#: src/extensions/core/columns/style.js:176
+msgid "Column link"
+msgstr ""
+
+#: src/extensions/core/columns/style.js:77
 msgid "Column Direction"
 msgstr ""
 
-#: src/extensions/core/columns/style.js:65
+#: src/extensions/core/columns/style.js:82
 msgid "Reverse"
+msgstr ""
+
+#: src/extensions/core/cover/style.js:97
+msgid "Cover link"
 msgstr ""
 
 #: src/extensions/core/group/style.js:104
@@ -3587,6 +3652,36 @@ msgstr ""
 
 #: src/extensions/core/list/style.js:107
 msgid "List Icon Color"
+msgstr ""
+
+#: src/extensions/core/table/style.js:106
+msgid "Horizontal Scroll Breakpoint"
+msgstr ""
+
+#: src/extensions/core/table/style.js:113
+msgid "Mobile size"
+msgstr ""
+
+#: src/extensions/core/table/style.js:120
+msgid "Tablet size"
+msgstr ""
+
+#: src/extensions/core/table/style.js:127
+msgid "PC size"
+msgstr ""
+
+#: src/extensions/core/table/style.js:137
+msgid ""
+"Table cells are no longer fixed width when horizontal scroll breakpoint is "
+"reached."
+msgstr ""
+
+#: src/extensions/core/table/style.js:91
+msgid "Table Horizontal Scroll"
+msgstr ""
+
+#: src/extensions/core/table/style.js:99
+msgid "Scrollable"
 msgstr ""
 
 #: src/utils/example-data.js:14
@@ -3613,48 +3708,48 @@ msgstr ""
 msgid "Lorem ipsum"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:172
+#: src/utils/font-awesome-new.js:195
 msgid "Custom list"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:324
+#: src/utils/font-awesome-new.js:347
 msgid "Preset"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:363
+#: src/utils/font-awesome-new.js:386
 msgid "Font Awesome icon list"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:366
+#: src/utils/font-awesome-new.js:389
 msgid ""
 "If you want to use an icon other than the ones listed above, you can use "
 "any of the icons from Font Awesome's icon list Please select a tag and "
 "enter it."
 msgstr ""
 
-#: src/utils/font-awesome-new.js:371
+#: src/utils/font-awesome-new.js:394
 msgid "Ex) "
 msgstr ""
 
-#: src/utils/font-awesome-new.js:385
+#: src/utils/font-awesome-new.js:408
 msgid "Add selected icon to custom list"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:393
+#: src/utils/font-awesome-new.js:416
 msgid "Delete/Sort mode"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:409
+#: src/utils/font-awesome-new.js:432
 msgid ""
 "When you click save button, the window will be reloaded and this setting "
 "will be applied."
 msgstr ""
 
-#: src/utils/font-awesome-new.js:419
+#: src/utils/font-awesome-new.js:442
 msgid "Save"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:437
+#: src/utils/font-awesome-new.js:466
 msgid "Select Icon"
 msgstr ""
 
@@ -3678,7 +3773,7 @@ msgctxt "Scale option for Image dimension control"
 msgid "Fill"
 msgstr ""
 
-#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:83
+#: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:84
 msgctxt "Image scaling options"
 msgid "Scale"
 msgstr ""

@@ -189,64 +189,28 @@ class Vk_Blocks_PostList {
 			$paged = $wp_query->query_vars['paged'];
 		}
 
-		$all_posts    = array();
-		$offset_count = 0;
+		$args = array(
+			'post_type'              => $is_checked_post_type,
+			// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
+			'tax_query'              => ! empty( $is_checked_terms ) ? self::format_terms( $tax_query_relation, $is_checked_terms, $is_checked_post_type ) : array(),
+			'paged'                  => $paged,
+			// 0で全件取得
+			'posts_per_page'         => intval( $attributes['numberPosts'] ),
+			'order'                  => $attributes['order'],
+			'orderby'                => $attributes['orderby'],
+			'offset'                 => $offset,
+			'post__not_in'           => array_map( 'intval', $post__not_in ),
+			'date_query'             => $date_query,
+			'update_post_meta_cache' => false,
+			'no_found_rows'          => true,
+		);
 
-		foreach ( $is_checked_post_type as $post_type ) {
-			$args = array(
-				'post_type'      => $post_type,
-				'paged'          => $paged,
-				'posts_per_page' => intval( $attributes['numberPosts'] ),
-				'order'          => $attributes['order'],
-				'orderby'        => $attributes['orderby'],
-				'post__not_in'   => $post__not_in,
-				'date_query'     => $date_query,
-				// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
-				'tax_query'      => ! empty( $is_checked_terms ) ? self::format_terms( $tax_query_relation, $is_checked_terms, $post_type ) : array(),
-			);
-
-			if ( ! empty( $is_checked_terms ) ) {
-				$args['tax_query'] = self::format_terms( $tax_query_relation, $is_checked_terms, $post_type );
-			}
-
-			$temp_query = new WP_Query( $args );
-			$all_posts  = array_merge( $all_posts, $temp_query->posts );
+		if ( ! empty( $date_query ) ) {
+			$args['date_query'] = $date_query;
 		}
+		$args = apply_filters( 'vk_blocks_post_list_query_args', $args, $attributes );
 
-		if ( 'rand' === $attributes['orderby'] ) {
-			shuffle( $all_posts );
-		} else {
-			usort(
-				$all_posts,
-				function ( $a, $b ) use ( $attributes ) {
-					if ( 'date' === $attributes['orderby'] ) {
-						if ( 'ASC' === $attributes['order'] ) {
-							return strtotime( $a->post_date ) - strtotime( $b->post_date );
-						} else {
-							return strtotime( $b->post_date ) - strtotime( $a->post_date );
-						}
-					} elseif ( 'modified' === $attributes['orderby'] ) {
-						if ( 'ASC' === $attributes['order'] ) {
-							return strtotime( $a->post_modified ) - strtotime( $b->post_modified );
-						} else {
-							return strtotime( $b->post_modified ) - strtotime( $a->post_modified );
-						}
-					} elseif ( 'title' === $attributes['orderby'] ) {
-						return strcmp( $a->post_title, $b->post_title ) * ( 'ASC' === $attributes['order'] ? 1 : -1 );
-					} else {
-						return 0;
-					}
-				}
-			);
-		}
-
-		$all_posts = array_slice( $all_posts, $offset, intval( $attributes['numberPosts'] ) );
-
-		$wp_query_combined             = new WP_Query();
-		$wp_query_combined->posts      = $all_posts;
-		$wp_query_combined->post_count = count( $all_posts );
-
-		return $wp_query_combined;
+		return new WP_Query( $args );
 	}
 
 	/**

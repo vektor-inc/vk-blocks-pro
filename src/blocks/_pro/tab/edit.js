@@ -166,7 +166,7 @@ export default function TabEdit(props) {
 				}
 			});
 		}
-	}, [firstActive]);
+	}, [firstActive, childBlocks]);
 
 	useEffect(() => {
 		if (childBlocks) {

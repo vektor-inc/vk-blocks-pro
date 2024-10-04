@@ -43,8 +43,8 @@
 		}
 	}
 
-	.vk_icon_frame:not(.is-style-outline):not(.is-style-noline) {
-		.vk_icon_font {
+	.vk_icon_frame:where(:not(.is-style-outline)):where(:not(.is-style-noline)) {
+		.vk_icon_font:where(:not([class*="has-vk-color-"])) { // x-t9で has-vk-color-* クラスに白がつくのでnotを追加
 			color: #fff;
 		}
 	}
@@ -69,9 +69,9 @@
 		}
 	}
 
-	div:not(.is-style-outline):not(.is-style-noline) {
-		.vk_icon_border:not(.vk_icon_border_frame):not(.vk_icon_border_none) {
-			.vk_icon_font {
+	div:where(:not(.is-style-outline)):where(:not(.is-style-noline)) {
+		.vk_icon_border:where(:not(.vk_icon_border_frame)):where(:not(.vk_icon_border_none)) {
+			.vk_icon_font:where(:not([class*="has-vk-color-"])) { // x-t9で has-vk-color-* クラスに白がつくのでnotを追加
 				color: #fff;
 			}
 		}

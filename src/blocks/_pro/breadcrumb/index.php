@@ -54,23 +54,6 @@ function vk_blocks_breadcrumb_render_callback( $attributes ) {
 		'class_list_item'    => 'vk_breadcrumb_list_item',
 	);
 
-	// ブロックの属性からセパレーターデザインの値を取得
-	$vk_blocks_options = VK_Blocks_Options::get_options();
-
-	if ( isset( $vk_blocks_options['vk_blocks_pro_breadcrumb_separator'] ) ) {
-		$separator_design = $vk_blocks_options['vk_blocks_pro_breadcrumb_separator'];
-	} else {
-		$separator_design = '';
-	}
-
-	if ( '' === $separator_design ) {
-		return $vk_breadcrumb->get_breadcrumb( $breadcrumb_options );
-	}
-
-	// パンくずリストにスタイルを追加
-	$style = 'li.vk_breadcrumb_list_item:after { content: "' . $separator_design . '"; }';
-	wp_add_inline_style( 'vk-blocks/breadcrumb', $style );
-
 	return $vk_breadcrumb->get_breadcrumb( $breadcrumb_options );
 }
 
@@ -80,7 +63,6 @@ function vk_blocks_breadcrumb_render_callback( $attributes ) {
  * @return void
  */
 function vk_blocks_register_block_breadcrumb() {
-
 	// Register Style.
 	if ( ! is_admin() ) {
 		wp_register_style(
@@ -90,6 +72,25 @@ function vk_blocks_register_block_breadcrumb() {
 			VK_BLOCKS_VERSION
 		);
 	}
+
+	wp_enqueue_script(
+		'vk-blocks/breadcrumb-script',
+		VK_BLOCKS_DIR_URL . 'build/vk-breadcrumb.min.js',
+		array(),
+		VK_BLOCKS_VERSION,
+		false
+	);
+
+	// セパレーターの値を JavaScript に渡す
+	$vk_blocks_options = VK_Blocks_Options::get_options();
+	$separator_design  = isset( $vk_blocks_options['vk_blocks_pro_breadcrumb_separator'] ) ? $vk_blocks_options['vk_blocks_pro_breadcrumb_separator'] : '';
+	wp_localize_script(
+		'vk-blocks/breadcrumb-script',
+		'vkBreadcrumbSeparator',
+		array(
+			'separator' => esc_attr( $separator_design ),
+		)
+	);
 
 	global $vk_blocks_common_attributes;
 	register_block_type(

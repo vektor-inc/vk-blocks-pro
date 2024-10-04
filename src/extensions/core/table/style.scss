@@ -1,44 +1,123 @@
 
-.wp-block-table{
-    thead th,tfoot td{
-        font-weight: bold;
-    }
-    &.is-style-vk-table {     
-        &-border-top-bottom,
-        &-border,
-        &-border-stripes{
-            // theme.json のあるファイルでテーブルの線の色指定がない場合のみ適用
-			table:where(:not(.has-border-color)){
-				:where(th,td){
-					border:1px solid var(--vk-color-border-hr);
+/*      mixin
+/*-------------------------------------------*/
+// 横スクロール
+@mixin scrollable-table {
+	display: block;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+
+	table {
+		table-layout: auto;
+
+		th, td {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	}
+
+}
+
+@mixin scrollable-table-editor {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+
+	table {
+		table-layout: auto;
+
+		th, td {
+			> div[role="textbox"] {
+				white-space: nowrap !important;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
+	}
+}
+
+
+/*      フロントエンド
+/*-------------------------------------------*/
+.wp-block-table {
+	thead th, tfoot td {
+		font-weight: bold;
+	}
+
+	&.is-style-vk-table {     
+		&-border-top-bottom,
+		&-border,
+		&-border-stripes {
+			// theme.json のあるファイルでテーブルの線の色指定がない場合のみ適用
+			table:where(:not(.has-border-color)) {
+				:where(th, td) {
+					border: 1px solid var(--vk-color-border-hr);
 				}
 			}
-        }
-        &-border-top-bottom {
+		}
+
+		&-border-top-bottom {
 			table,
 			th,
 			td {
-                border-left: none;
-                border-right: none;
+				border-left: none;
+				border-right: none;
 			}
-        }
+		}
 
-        &-border-stripes{
-            tbody tr:nth-child(2n+1) {
-                background-color: #f0f0f0;
-            }
-        }
-    }
+		&-border {
+			// theme.json のあるファイルでテーブルの線の色指定がない場合のみ適用
+			table:where(:not(.has-border-color)) {
+				th, td {
+					border: 1px solid var(--vk-color-border-hr);
+				}
+			}
+		}
+
+		&-border-stripes {
+			tbody tr:nth-child(2n+1) {
+				background-color: #f0f0f0;
+			}
+			// theme.json のあるファイルでテーブルの線の色指定がない場合のみ適用
+			table:where(:not(.has-border-color)) {
+				th, td {
+					border: 1px solid var(--vk-color-border-hr);
+				}
+			}
+		}
+	}
+
+	&.is-style-vk-table-scrollable {
+
+		&[data-scroll-breakpoint="table-scrollable-mobile"] {
+			@media (max-width: 575.98px) {
+				@include scrollable-table;
+			}
+		}
+
+		&[data-scroll-breakpoint="table-scrollable-tablet"] {
+			@media (max-width: 991.98px) {
+				@include scrollable-table;
+			}
+		}
+
+		&[data-scroll-breakpoint="table-scrollable-pc"] {
+			@include scrollable-table;
+		}
+	}
 }
 
 /*      編集画面
 /*-------------------------------------------*/
 .editor-styles-wrapper {
-    .wp-block-table{
-        &.is-style-regular{//デフォルトのボーダーカラー
-            th,td{
-                border-color: var(--vk-color-border-hr);
-            }
-        }
-    }
+	.wp-block-table {
+		&.is-style-regular { //デフォルトのボーダーカラー
+			th, td {
+				border-color: var(--vk-color-border-hr);
+			}
+		}
+		&.is-style-vk-table-scrollable {
+			@include scrollable-table-editor;
+		}
+	}
 }

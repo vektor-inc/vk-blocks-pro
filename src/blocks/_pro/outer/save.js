@@ -61,7 +61,6 @@ export default function save(props) {
 	let whichSideUpper;
 	let whichSideLower;
 
-	// 背景色クラスの設定
 	const bgColorClasses = classnames({
 		[`has-background`]: bgColor !== undefined,
 		[`has-${bgColor}-background-color`]:
@@ -69,13 +68,11 @@ export default function save(props) {
 		[`has-background-dim`]: opacity !== undefined,
 	});
 
-	// 背景色スタイルの設定
 	const bgColorStyles = {
 		backgroundColor: isHexColor(bgColor) ? bgColor : undefined,
 		opacity: opacity !== undefined ? opacity : undefined,
 	};
 
-	// 背景画像の設定
 	const GetBgImage = (
 		<>
 			{(bgImage || bgImageTablet || bgImageMobile) && (
@@ -88,7 +85,6 @@ export default function save(props) {
 		</>
 	);
 
-	// スタイルに背景位置を反映
 	const backgroundStyles = {
 		backgroundImage: bgImage ? `url(${bgImage})` : undefined,
 		backgroundPosition: bgFocalPoint
@@ -105,7 +101,7 @@ export default function save(props) {
 			? `vk_outer-width-${outerWidth} align${outerWidth}`
 			: 'vk_outer-width-normal';
 
-	// 背景位置のクラス切り替え
+	// classBgPositionのクラス切り替え
 	if (bgPosition === 'parallax') {
 		classBgPosition = 'vk_outer-bgPosition-parallax vk-prlx';
 	} else if (bgPosition === 'fixed') {
@@ -161,7 +157,7 @@ export default function save(props) {
 	// 編集画面とサイト上の切り替え
 	const containerClass = 'vk_outer_container';
 
-	// 枠線設定の適用
+	// Dividerエフェクトがない時のみ枠線を追加
 	let borderStyleProperty = {};
 	//eslint-disable-next-line camelcase
 	if (!levelSettingPerDevice) {
@@ -180,6 +176,7 @@ export default function save(props) {
 						: undefined,
 				borderRadius: `${borderRadius}px`,
 			};
+			//eslint-disable-next-line camelcase
 		} else if (upper_level !== 0 || lower_level !== 0) {
 			//eslint-disable-line camelcase
 			borderStyleProperty = {
@@ -222,8 +219,20 @@ export default function save(props) {
 		};
 	}
 
-	// ブロックプロパティの設定
 	const blockProps = useBlockProps.save({
+		style: {
+			...borderStyleProperty,
+			'--min-height-mobile': minHeightValueMobile
+				? `${minHeightValueMobile}${minHeightUnit}`
+				: undefined,
+			'--min-height-tablet': minHeightValueTablet
+				? `${minHeightValueTablet}${minHeightUnit}`
+				: undefined,
+			'--min-height-pc': minHeightValuePC
+				? `${minHeightValuePC}${minHeightUnit}`
+				: undefined,
+			...backgroundStyles,
+		},
 		className: classnames(
 			`vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 			{
@@ -239,19 +248,6 @@ export default function save(props) {
 					minHeightValueMobile > 0,
 			}
 		),
-		style: {
-			...borderStyleProperty,
-			'--min-height-mobile': minHeightValueMobile
-				? `${minHeightValueMobile}${minHeightUnit}`
-				: undefined,
-			'--min-height-tablet': minHeightValueTablet
-				? `${minHeightValueTablet}${minHeightUnit}`
-				: undefined,
-			'--min-height-pc': minHeightValuePC
-				? `${minHeightValuePC}${minHeightUnit}`
-				: undefined,
-			...backgroundStyles,
-		},
 	});
 
 	// リンクの設定

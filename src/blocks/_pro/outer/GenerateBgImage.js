@@ -1,103 +1,181 @@
 const GenerateBgImage = (props) => {
 	const { attributes, prefix } = props;
-	const { bgImageMobile, bgImageTablet, bgImage, bgSize, blockId } =
-		attributes;
+	const {
+		bgImageMobile,
+		bgImageTablet,
+		bgImage,
+		bgFocalPointPC,
+		bgFocalPointTablet,
+		bgFocalPointMobile,
+		bgSize,
+		blockId,
+	} = attributes;
 
 	const mobileViewport = 'max-width: 575.98px';
 	const tabletViewport = 'min-width: 576px';
 	const pcViewport = 'min-width: 992px';
 	const underPcViewport = 'max-width: 992.98px';
 
+	// 背景位置の変換関数
+	const coordsToBackgroundPosition = (focalPoint) => {
+		if (!focalPoint || (isNaN(focalPoint.x) && isNaN(focalPoint.y))) {
+			return '50% 50%';
+		}
+		const x = isNaN(focalPoint.x) ? 0.5 : focalPoint.x;
+		const y = isNaN(focalPoint.y) ? 0.5 : focalPoint.y;
+		return `${x * 100}% ${y * 100}%`;
+	};
+
 	let backgroundStyle;
-	const backgroundPosition = 'background-position:center!important;';
 	if ('cover' === bgSize) {
-		backgroundStyle = `background-size:${bgSize}!important; ${backgroundPosition}`;
+		backgroundStyle = `background-size:${bgSize}!important;`;
 	} else if ('repeat' === bgSize) {
-		backgroundStyle = `background-repeat:${bgSize}!important; background-size: auto; ${backgroundPosition}`;
+		backgroundStyle = `background-repeat:${bgSize}!important; background-size: auto;`;
 	} else {
 		backgroundStyle = ``;
 	}
 
-	//moible only
+	// モバイルのみ
 	if (bgImageMobile && !bgImageTablet && !bgImage) {
 		return (
-			<style>{`.${prefix}-${blockId}{background-image: url(${bgImageMobile}); ${backgroundStyle}}`}</style>
-		);
-	}
-	//tablet only
-	if (!bgImageMobile && bgImageTablet && !bgImage) {
-		return (
-			<style>{`.${prefix}-${blockId}{background-image: url(${bgImageTablet}); ${backgroundStyle}}`}</style>
-		);
-	}
-	//pc only
-	if (!bgImageMobile && !bgImageTablet && bgImage) {
-		return (
-			<style>{`.${prefix}-${blockId}{background-image: url(${bgImage}); ${backgroundStyle}}`}</style>
-		);
-	}
-	//pc -mobile
-	if (bgImageMobile && !bgImageTablet && bgImage) {
-		return (
 			<style>
 				{`
-          @media screen and (${underPcViewport}) {
-            .${prefix}-${blockId}{background-image: url(${bgImageMobile}); ${backgroundStyle}}
-         }
-          @media screen and (${pcViewport}) {
-            .${prefix}-${blockId}{background-image: url(${bgImage}); ${backgroundStyle}}
-         }
-          `}
-			</style>
-		);
-	}
-	//pc -tablet
-	if (!bgImageMobile && bgImageTablet && bgImage) {
-		return (
-			<style>
-				{`
-          @media screen and (${underPcViewport}) {
-            .${prefix}-${blockId}{background-image: url(${bgImageTablet}); ${backgroundStyle}}
-         }
-          @media screen and (${pcViewport}) {
-            .${prefix}-${blockId}{background-image: url(${bgImage}); ${backgroundStyle}}
-         }
-          `}
-			</style>
-		);
-	}
-	//tablet - mobile
-	if (bgImageMobile && bgImageTablet && !bgImage) {
-		return (
-			<style>
-				{`
-          @media screen and (${mobileViewport}) {
-            .${prefix}-${blockId}{background-image: url(${bgImageMobile}); ${backgroundStyle}}
-         }
-          @media screen and (${tabletViewport}) {
-            .${prefix}-${blockId}{background-image: url(${bgImageTablet}); ${backgroundStyle}}
-         }
+        .${prefix}-${blockId} {
+          background-image: url(${bgImageMobile}) !important;
+          background-position: ${coordsToBackgroundPosition(bgFocalPointMobile)}!important;
+          ${backgroundStyle}
+        }
         `}
 			</style>
 		);
 	}
-	//pc -tablet - mobile
+	// タブレットのみ
+	if (!bgImageMobile && bgImageTablet && !bgImage) {
+		return (
+			<style>
+				{`
+        .${prefix}-${blockId} {
+          background-image: url(${bgImageTablet}) !important;
+          background-position: ${coordsToBackgroundPosition(bgFocalPointTablet)}!important;
+          ${backgroundStyle}
+        }
+        `}
+			</style>
+		);
+	}
+	// PCのみ
+	if (!bgImageMobile && !bgImageTablet && bgImage) {
+		return (
+			<style>
+				{`
+        .${prefix}-${blockId} {
+          background-image: url(${bgImage}) !important;
+          background-position: ${coordsToBackgroundPosition(bgFocalPointPC)}!important;
+          ${backgroundStyle}
+        }
+        `}
+			</style>
+		);
+	}
+	// PCとモバイル
+	if (bgImageMobile && !bgImageTablet && bgImage) {
+		return (
+			<style>
+				{`
+        @media screen and (${underPcViewport}) {
+          .${prefix}-${blockId} {
+            background-image: url(${bgImageMobile}) !important;
+            background-position: ${coordsToBackgroundPosition(bgFocalPointMobile)}!important;
+            ${backgroundStyle}
+          }
+        }
+        @media screen and (${pcViewport}) {
+          .${prefix}-${blockId} {
+            background-image: url(${bgImage}) !important;
+            background-position: ${coordsToBackgroundPosition(bgFocalPointPC)}!important;
+            ${backgroundStyle}
+          }
+        }
+        `}
+			</style>
+		);
+	}
+	// PCとタブレット
+	if (!bgImageMobile && bgImageTablet && bgImage) {
+		return (
+			<style>
+				{`
+        @media screen and (${underPcViewport}) {
+          .${prefix}-${blockId} {
+            background-image: url(${bgImageTablet}) !important;
+            background-position: ${coordsToBackgroundPosition(bgFocalPointTablet)}!important;
+            ${backgroundStyle}
+          }
+        }
+        @media screen and (${pcViewport}) {
+          .${prefix}-${blockId} {
+            background-image: url(${bgImage}) !important;
+            background-position: ${coordsToBackgroundPosition(bgFocalPointPC)}!important;
+            ${backgroundStyle}
+          }
+        }
+        `}
+			</style>
+		);
+	}
+	// タブレットとモバイル
+	if (bgImageMobile && bgImageTablet && !bgImage) {
+		return (
+			<style>
+				{`
+        @media screen and (${mobileViewport}) {
+          .${prefix}-${blockId} {
+            background-image: url(${bgImageMobile}) !important;
+            background-position: ${coordsToBackgroundPosition(bgFocalPointMobile)}!important;
+            ${backgroundStyle}
+          }
+        }
+        @media screen and (${tabletViewport}) {
+          .${prefix}-${blockId} {
+            background-image: url(${bgImageTablet}) !important;
+            background-position: ${coordsToBackgroundPosition(bgFocalPointTablet)}!important;
+            ${backgroundStyle}
+          }
+        }
+        `}
+			</style>
+		);
+	}
+	// PC、タブレット、モバイル
 	if (bgImageMobile && bgImageTablet && bgImage) {
 		return (
 			<style>
 				{`
         @media screen and (${mobileViewport}) {
-          .${prefix}-${blockId}{background-image: url(${bgImageMobile}); ${backgroundStyle}}
-       }
+          .${prefix}-${blockId} {
+            background-image: url(${bgImageMobile}) !important;
+            background-position: ${coordsToBackgroundPosition(bgFocalPointMobile)}!important;
+            ${backgroundStyle}
+          }
+        }
         @media screen and (${tabletViewport}) {
-          .${prefix}-${blockId}{background-image: url(${bgImageTablet}); ${backgroundStyle}}
-       }
+          .${prefix}-${blockId} {
+            background-image: url(${bgImageTablet}) !important;
+            background-position: ${coordsToBackgroundPosition(bgFocalPointTablet)}!important;
+            ${backgroundStyle}
+          }
+        }
         @media screen and (${pcViewport}) {
-          .${prefix}-${blockId}{background-image: url(${bgImage}); ${backgroundStyle}}
-       }
+          .${prefix}-${blockId} {
+            background-image: url(${bgImage}) !important;
+            background-position: ${coordsToBackgroundPosition(bgFocalPointPC)}!important;
+            ${backgroundStyle}
+          }
+        }
         `}
 			</style>
 		);
 	}
 };
+
 export default GenerateBgImage;

@@ -25,7 +25,9 @@ export default function save(props) {
 		bgImageMobile,
 		bgImageTablet,
 		bgImage,
-		bgFocalPoint,
+		bgFocalPointPC,
+		bgFocalPointTablet,
+		bgFocalPointMobile,
 		outerWidth,
 		padding_left_and_right, //eslint-disable-line camelcase
 		padding_top_and_bottom, //eslint-disable-line camelcase
@@ -87,13 +89,27 @@ export default function save(props) {
 
 	const backgroundStyles = {
 		backgroundImage: bgImage ? `url(${bgImage})` : undefined,
-		backgroundPosition: bgFocalPoint
-			? `${bgFocalPoint.x * 100}% ${bgFocalPoint.y * 100}%`
+		backgroundPosition: bgFocalPointPC
+			? `${bgFocalPointPC.x * 100}% ${bgFocalPointPC.y * 100}%`
 			: undefined,
-		minHeight: minHeightValuePC
+		'--bg-image-mobile': bgImageMobile ? `url(${bgImageMobile})` : undefined,
+		'--bg-image-tablet': bgImageTablet ? `url(${bgImageTablet})` : undefined,
+		'--bg-position-mobile': bgFocalPointMobile
+			? `${bgFocalPointMobile.x * 100}% ${bgFocalPointMobile.y * 100}%`
+			: undefined,
+		'--bg-position-tablet': bgFocalPointTablet
+			? `${bgFocalPointTablet.x * 100}% ${bgFocalPointTablet.y * 100}%`
+			: undefined,
+		'--min-height-mobile': minHeightValueMobile
+			? `${minHeightValueMobile}${minHeightUnit}`
+			: 'auto',
+		'--min-height-tablet': minHeightValueTablet
+			? `${minHeightValueTablet}${minHeightUnit}`
+			: 'auto',
+		'--min-height-pc': minHeightValuePC
 			? `${minHeightValuePC}${minHeightUnit}`
-			: undefined,
-	};
+			: 'auto',
+	};	
 
 	// 幅クラスの切り替え
 	const classWidth =
@@ -221,17 +237,8 @@ export default function save(props) {
 
 	const blockProps = useBlockProps.save({
 		style: {
-			...borderStyleProperty,
-			'--min-height-mobile': minHeightValueMobile
-				? `${minHeightValueMobile}${minHeightUnit}`
-				: undefined,
-			'--min-height-tablet': minHeightValueTablet
-				? `${minHeightValueTablet}${minHeightUnit}`
-				: undefined,
-			'--min-height-pc': minHeightValuePC
-				? `${minHeightValuePC}${minHeightUnit}`
-				: undefined,
 			...backgroundStyles,
+			...borderStyleProperty,
 		},
 		className: classnames(
 			`vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
@@ -268,7 +275,7 @@ export default function save(props) {
 	);
 
 	return (
-		<div {...blockProps}>
+		<div {...blockProps} style={{ ...backgroundStyles, ...borderStyleProperty }}>
 			{linkUrl && GetLinkUrl}
 			{GetBgImage}
 			<div>

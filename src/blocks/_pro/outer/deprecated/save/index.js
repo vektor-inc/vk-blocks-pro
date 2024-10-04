@@ -194,10 +194,15 @@ const blockAttributes8 = {
 // 1.76.0 から attributes を変更
 const blockAttributes9 = {
 	...blockAttributes8,
-	linkUrl: {
-		type: 'string',
+	bgFocalPointPC: {
+		type: 'object',
+		default: { 'x': 0.5, 'y': 0.5 }
 	},
-	bgFocalPoint: {
+	bgFocalPointTablet: {
+		type: 'object',
+		default: { 'x': 0.5, 'y': 0.5 }
+	},
+	bgFocalPointMobile: {
 		type: 'object',
 		default: { 'x': 0.5, 'y': 0.5 }
 	},

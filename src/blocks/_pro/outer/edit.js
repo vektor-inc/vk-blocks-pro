@@ -47,7 +47,9 @@ export default function OuterEdit(props) {
 		bgImageTablet,
 		bgImageMobile,
 		bgPosition,
-		bgFocalPoint,
+		bgFocalPointPC,
+		bgFocalPointTablet,
+		bgFocalPointMobile,
 		outerWidth,
 		padding_left_and_right, //eslint-disable-line camelcase
 		padding_top_and_bottom, //eslint-disable-line camelcase
@@ -364,42 +366,76 @@ export default function OuterEdit(props) {
 		}
 	};
 
-	const onChangeBgFocalPoint = (value) => {
-		// 画像が消された場合、フォーカルポイントを50% 50%にリセット
-		if (!bgImage) {
-			value = { x: 0.5, y: 0.5 };
-		}
-
-		// ドラッグ中にリアルタイムで背景位置を更新
-		if (blockRef.current) {
-			updateBackgroundPosition(value);
-		}
-
-		// 最終位置を保存
-		setAttributes({ bgFocalPoint: value });
-	};
-
+	// 既存の useEffect の中に updateBackgroundPosition を追加
 	useEffect(() => {
 		if (blockRef.current) {
-			blockRef.current.style.backgroundPosition =
-				coordsToBackgroundPosition(bgFocalPoint);
+			// フォーカルポイントが変更されたときにリアルタイムで背景位置を更新
+			updateBackgroundPosition(bgFocalPointPC);
+			updateBackgroundPosition(bgFocalPointTablet);
+			updateBackgroundPosition(bgFocalPointMobile);
+
+			blockRef.current.style.setProperty(
+				'--bg-position-pc',
+				coordsToBackgroundPosition(bgFocalPointPC)
+			);
+			blockRef.current.style.setProperty(
+				'--bg-position-tablet',
+				coordsToBackgroundPosition(bgFocalPointTablet)
+			);
+			blockRef.current.style.setProperty(
+				'--bg-position-mobile',
+				coordsToBackgroundPosition(bgFocalPointMobile)
+			);
 		}
-	}, [bgFocalPoint]);
+	}, [bgFocalPointPC, bgFocalPointTablet, bgFocalPointMobile]);
 
 	useEffect(() => {
-		if (!bgImage && (bgFocalPoint.x !== 0.5 || bgFocalPoint.y !== 0.5)) {
-			setAttributes({ bgFocalPoint: { x: 0.5, y: 0.5 } });
+		if (
+			!bgImage &&
+			(bgFocalPointPC.x !== 0.5 || bgFocalPointPC.y !== 0.5)
+		) {
+			setAttributes({ bgFocalPointPC: { x: 0.5, y: 0.5 } });
 		}
-	}, [bgImage]);
+		if (
+			!bgImageTablet &&
+			(bgFocalPointTablet.x !== 0.5 || bgFocalPointTablet.y !== 0.5)
+		) {
+			setAttributes({ bgFocalPointTablet: { x: 0.5, y: 0.5 } });
+		}
+		if (
+			!bgImageMobile &&
+			(bgFocalPointMobile.x !== 0.5 || bgFocalPointMobile.y !== 0.5)
+		) {
+			setAttributes({ bgFocalPointMobile: { x: 0.5, y: 0.5 } });
+		}
+	}, [bgImage, bgImageTablet, bgImageMobile]);
 
 	const backgroundStyles = {
 		backgroundImage: bgImage ? `url(${bgImage})` : undefined,
-		backgroundPosition: bgFocalPoint
-			? `${bgFocalPoint.x * 100}% ${bgFocalPoint.y * 100}%`
+		backgroundPosition: bgFocalPointPC
+			? `${bgFocalPointPC.x * 100}% ${bgFocalPointPC.y * 100}%`
 			: undefined,
-		minHeight: minHeightValuePC
+		'--bg-image-mobile': bgImageMobile
+			? `url(${bgImageMobile})`
+			: undefined,
+		'--bg-image-tablet': bgImageTablet
+			? `url(${bgImageTablet})`
+			: undefined,
+		'--bg-position-mobile': bgFocalPointMobile
+			? `${bgFocalPointMobile.x * 100}% ${bgFocalPointMobile.y * 100}%`
+			: undefined,
+		'--bg-position-tablet': bgFocalPointTablet
+			? `${bgFocalPointTablet.x * 100}% ${bgFocalPointTablet.y * 100}%`
+			: undefined,
+		'--min-height-mobile': minHeightValueMobile
+			? `${minHeightValueMobile}${minHeightUnit}`
+			: 'auto',
+		'--min-height-tablet': minHeightValueTablet
+			? `${minHeightValueTablet}${minHeightUnit}`
+			: 'auto',
+		'--min-height-pc': minHeightValuePC
 			? `${minHeightValuePC}${minHeightUnit}`
-			: undefined,
+			: 'auto',
 	};
 
 	const blockProps = useBlockProps({
@@ -407,15 +443,6 @@ export default function OuterEdit(props) {
 		style: {
 			...backgroundStyles,
 			...borderStyleProperty,
-			'--min-height-mobile': minHeightValueMobile
-				? `${minHeightValueMobile}${minHeightUnit}`
-				: undefined,
-			'--min-height-tablet': minHeightValueTablet
-				? `${minHeightValueTablet}${minHeightUnit}`
-				: undefined,
-			'--min-height-pc': minHeightValuePC
-				? `${minHeightValuePC}${minHeightUnit}`
-				: undefined,
 		},
 		className: classnames(
 			`vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
@@ -554,18 +581,45 @@ export default function OuterEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Focal Point Picker', 'vk-blocks-pro')}
-						id="vk_outer-focalPointPicker"
+						label={__('Focal Point Picker (PC)', 'vk-blocks-pro')}
+						id={`vk_outer-focalPointPickerPC`}
 					>
 						<FocalPointPicker
 							url={bgImage}
-							value={bgFocalPoint}
-							onChange={(value) => {
-								onChangeBgFocalPoint(value, false);
-							}}
-							onDrag={(value) => {
-								onChangeBgFocalPoint(value, true);
-							}}
+							value={attributes.bgFocalPointPC}
+							onChange={(value) =>
+								setAttributes({ bgFocalPointPC: value })
+							}
+						/>
+					</BaseControl>
+					<BaseControl
+						label={__(
+							'Focal Point Picker (Tablet)',
+							'vk-blocks-pro'
+						)}
+						id={`vk_outer-focalPointPickerTablet`}
+					>
+						<FocalPointPicker
+							url={bgImageTablet}
+							value={attributes.bgFocalPointTablet}
+							onChange={(value) =>
+								setAttributes({ bgFocalPointTablet: value })
+							}
+						/>
+					</BaseControl>
+					<BaseControl
+						label={__(
+							'Focal Point Picker (Mobile)',
+							'vk-blocks-pro'
+						)}
+						id={`vk_outer-focalPointPickerMobile`}
+					>
+						<FocalPointPicker
+							url={bgImageMobile}
+							value={attributes.bgFocalPointMobile}
+							onChange={(value) =>
+								setAttributes({ bgFocalPointMobile: value })
+							}
 						/>
 					</BaseControl>
 					<BaseControl

@@ -32,9 +32,17 @@
 			"type": "string",
 			"default": "normal"
 		},
-		"bgFocalPoint": {
-			"type": "object",
-			"default": { "x": 0.5, "y": 0.5 }
+		"bgFocalPointPC": {
+		"type": "object",
+		"default": { "x": 0.5, "y": 0.5 }
+		},
+		"bgFocalPointTablet": {
+		"type": "object",
+		"default": { "x": 0.5, "y": 0.5 }
+		},
+		"bgFocalPointMobile": {
+		"type": "object",
+		"default": { "x": 0.5, "y": 0.5 }
 		},
 		"padding_left_and_right": {
 			"type": "string",

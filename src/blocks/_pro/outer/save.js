@@ -92,8 +92,12 @@ export default function save(props) {
 		backgroundPosition: bgFocalPointPC
 			? `${bgFocalPointPC.x * 100}% ${bgFocalPointPC.y * 100}%`
 			: undefined,
-		'--bg-image-mobile': bgImageMobile ? `url(${bgImageMobile})` : undefined,
-		'--bg-image-tablet': bgImageTablet ? `url(${bgImageTablet})` : undefined,
+		'--bg-image-mobile': bgImageMobile
+			? `url(${bgImageMobile})`
+			: undefined,
+		'--bg-image-tablet': bgImageTablet
+			? `url(${bgImageTablet})`
+			: undefined,
 		'--bg-position-mobile': bgFocalPointMobile
 			? `${bgFocalPointMobile.x * 100}% ${bgFocalPointMobile.y * 100}%`
 			: undefined,
@@ -109,7 +113,7 @@ export default function save(props) {
 		'--min-height-pc': minHeightValuePC
 			? `${minHeightValuePC}${minHeightUnit}`
 			: 'auto',
-	};	
+	};
 
 	// 幅クラスの切り替え
 	const classWidth =
@@ -275,7 +279,10 @@ export default function save(props) {
 	);
 
 	return (
-		<div {...blockProps} style={{ ...backgroundStyles, ...borderStyleProperty }}>
+		<div
+			{...blockProps}
+			style={{ ...backgroundStyles, ...borderStyleProperty }}
+		>
 			{linkUrl && GetLinkUrl}
 			{GetBgImage}
 			<div>

@@ -397,7 +397,9 @@ export default function OuterEdit(props) {
 		backgroundPosition: bgFocalPoint
 			? `${bgFocalPoint.x * 100}% ${bgFocalPoint.y * 100}%`
 			: undefined,
-		minHeight: minHeightValuePC ? `${minHeightValuePC}${minHeightUnit}` : undefined,
+		minHeight: minHeightValuePC
+			? `${minHeightValuePC}${minHeightUnit}`
+			: undefined,
 	};
 
 	const blockProps = useBlockProps({

@@ -61,6 +61,7 @@ export default function save(props) {
 	let whichSideUpper;
 	let whichSideLower;
 
+	// 背景色クラスの設定
 	const bgColorClasses = classnames({
 		[`has-background`]: bgColor !== undefined,
 		[`has-${bgColor}-background-color`]:
@@ -68,11 +69,13 @@ export default function save(props) {
 		[`has-background-dim`]: opacity !== undefined,
 	});
 
+	// 背景色スタイルの設定
 	const bgColorStyles = {
 		backgroundColor: isHexColor(bgColor) ? bgColor : undefined,
 		opacity: opacity !== undefined ? opacity : undefined,
 	};
 
+	// 背景画像の設定
 	const GetBgImage = (
 		<>
 			{(bgImage || bgImageTablet || bgImageMobile) && (
@@ -91,16 +94,18 @@ export default function save(props) {
 		backgroundPosition: bgFocalPoint
 			? `${bgFocalPoint.x * 100}% ${bgFocalPoint.y * 100}%`
 			: undefined,
-		minHeight: minHeightValuePC ? `${minHeightValuePC}${minHeightUnit}` : undefined,
+		minHeight: minHeightValuePC
+			? `${minHeightValuePC}${minHeightUnit}`
+			: undefined,
 	};
 
-	//幅のクラス切り替え
+	// 幅クラスの切り替え
 	const classWidth =
 		outerWidth === 'full' || outerWidth === 'wide'
 			? `vk_outer-width-${outerWidth} align${outerWidth}`
 			: 'vk_outer-width-normal';
 
-	//classBgPositionのクラス切り替え
+	// 背景位置のクラス切り替え
 	if (bgPosition === 'parallax') {
 		classBgPosition = 'vk_outer-bgPosition-parallax vk-prlx';
 	} else if (bgPosition === 'fixed') {
@@ -111,7 +116,7 @@ export default function save(props) {
 		classBgPosition = 'vk_outer-bgPosition-normal';
 	}
 
-	//classPaddingLRのクラス切り替え
+	// classPaddingLRの切り替え
 	classPaddingLR = '';
 	//eslint-disable-next-line camelcase
 	if (padding_left_and_right === '0') {
@@ -125,7 +130,7 @@ export default function save(props) {
 		classPaddingLR = 'vk_outer-paddingLR-zero';
 	}
 
-	//classPaddingVerticalのクラス切り替
+	// classPaddingVerticalの切り替え
 	//eslint-disable-next-line camelcase
 	if (padding_top_and_bottom === '1') {
 		classPaddingVertical = 'vk_outer-paddingVertical-use';
@@ -156,7 +161,7 @@ export default function save(props) {
 	// 編集画面とサイト上の切り替え
 	const containerClass = 'vk_outer_container';
 
-	// Dividerエフェクトがない時のみ枠線を追
+	// 枠線設定の適用
 	let borderStyleProperty = {};
 	//eslint-disable-next-line camelcase
 	if (!levelSettingPerDevice) {
@@ -175,7 +180,6 @@ export default function save(props) {
 						: undefined,
 				borderRadius: `${borderRadius}px`,
 			};
-			//eslint-disable-next-line camelcase
 		} else if (upper_level !== 0 || lower_level !== 0) {
 			//eslint-disable-line camelcase
 			borderStyleProperty = {
@@ -218,36 +222,39 @@ export default function save(props) {
 		};
 	}
 
-	const blockProps = useBlockProps.save({		className: classnames(
-		`vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
-		{
-			[`has-border-color`]:
-				borderStyle !== 'none' && borderColor !== undefined,
-			[`has-${borderColor}-border-color`]:
-				borderStyle !== 'none' &&
-				borderColor !== undefined &&
-				!isHexColor(borderColor),
-			[`vk_outer-minHeight`]:
-				minHeightValuePC > 0 ||
-				minHeightValueTablet > 0 ||
-				minHeightValueMobile > 0,
-		}
-	),
-	style: {
-		...borderStyleProperty,
-		'--min-height-mobile': minHeightValueMobile
-			? `${minHeightValueMobile}${minHeightUnit}`
-			: undefined,
-		'--min-height-tablet': minHeightValueTablet
-			? `${minHeightValueTablet}${minHeightUnit}`
-			: undefined,
-		'--min-height-pc': minHeightValuePC
-			? `${minHeightValuePC}${minHeightUnit}`
-			: undefined,
-		...backgroundStyles,
-	},
-});
+	// ブロックプロパティの設定
+	const blockProps = useBlockProps.save({
+		className: classnames(
+			`vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
+			{
+				[`has-border-color`]:
+					borderStyle !== 'none' && borderColor !== undefined,
+				[`has-${borderColor}-border-color`]:
+					borderStyle !== 'none' &&
+					borderColor !== undefined &&
+					!isHexColor(borderColor),
+				[`vk_outer-minHeight`]:
+					minHeightValuePC > 0 ||
+					minHeightValueTablet > 0 ||
+					minHeightValueMobile > 0,
+			}
+		),
+		style: {
+			...borderStyleProperty,
+			'--min-height-mobile': minHeightValueMobile
+				? `${minHeightValueMobile}${minHeightUnit}`
+				: undefined,
+			'--min-height-tablet': minHeightValueTablet
+				? `${minHeightValueTablet}${minHeightUnit}`
+				: undefined,
+			'--min-height-pc': minHeightValuePC
+				? `${minHeightValuePC}${minHeightUnit}`
+				: undefined,
+			...backgroundStyles,
+		},
+	});
 
+	// リンクの設定
 	const relAttribute =
 		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
 	const GetLinkUrl = (
@@ -265,7 +272,7 @@ export default function save(props) {
 	);
 
 	return (
-		<div {...blockProps} style={backgroundStyles}>
+		<div {...blockProps}>
 			{linkUrl && GetLinkUrl}
 			{GetBgImage}
 			<div>

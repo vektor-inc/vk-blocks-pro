@@ -119,18 +119,20 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 				tables.forEach((table) => {
 					// もし is-style-vk-table-scrollable クラスや data-scroll-breakpoint 属性がついていたら scrollable を ON に設定
 					if (
-						table.classList.contains('is-style-vk-table-scrollable') ||
+						table.classList.contains(
+							'is-style-vk-table-scrollable'
+						) ||
 						table.hasAttribute('data-scroll-breakpoint')
 					) {
 						setAttributes({ scrollable: true });
 					}
 				});
 			};
-		
+
 			// コンポーネントの初回レンダリング時に実行
 			checkTableScrollAttributes();
 		}, []); // 初期レンダリング時のみ実行
-		
+
 		// scrollable の状態が確定したら処理を実行
 		useEffect(() => {
 			const updateTableScrollAttributes = () => {
@@ -145,26 +147,29 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 						const breakpoint =
 							table.getAttribute('data-scroll-breakpoint') ||
 							'table-scrollable-mobile';
-						table.setAttribute('data-scroll-breakpoint', breakpoint);
+						table.setAttribute(
+							'data-scroll-breakpoint',
+							breakpoint
+						);
 					}
-		
+
 					table.setAttribute(
 						'data-output-scroll-hint',
 						showScrollMessage ? 'true' : 'false'
 					);
-		
+
 					table.setAttribute(
 						'data-icon-output-left',
 						iconOutputLeft ? 'true' : 'false'
 					);
-		
+
 					table.setAttribute(
 						'data-icon-output-right',
 						iconOutputRight ? 'true' : 'false'
 					);
 				});
 			};
-		
+
 			if (typeof scrollable !== 'undefined') {
 				updateTableScrollAttributes();
 			}
@@ -176,7 +181,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 			scrollIconRight,
 			iconOutputLeft,
 			iconOutputRight,
-		]);				
+		]);
 
 		if (isValidBlockType(name) && props.isSelected) {
 			const blockEditContent = <BlockEdit {...props} />;
@@ -288,11 +293,15 @@ const addExtraProps = (saveElementProps, blockType, attributes) => {
 	if (isValidBlockType(blockType.name)) {
 		// 'scrollable' が true の場合のみ 'is-style-vk-table-scrollable' クラスと 'data-scroll-breakpoint' を設定
 		if (attributes.scrollable) {
-			saveElementProps.className = `${saveElementProps.className || ''} is-style-vk-table-scrollable`.trim();
-			saveElementProps['data-scroll-breakpoint'] = attributes.scrollBreakpoint;
+			saveElementProps.className =
+				`${saveElementProps.className || ''} is-style-vk-table-scrollable`.trim();
+			saveElementProps['data-scroll-breakpoint'] =
+				attributes.scrollBreakpoint;
 		} else {
 			// 'scrollable' が false の場合、クラスと属性を削除
-			saveElementProps.className = saveElementProps.className.replace('is-style-vk-table-scrollable', '').trim();
+			saveElementProps.className = saveElementProps.className
+				.replace('is-style-vk-table-scrollable', '')
+				.trim();
 			delete saveElementProps['data-scroll-breakpoint'];
 		}
 

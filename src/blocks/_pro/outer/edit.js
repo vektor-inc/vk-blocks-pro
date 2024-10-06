@@ -364,25 +364,26 @@ export default function OuterEdit(props) {
 			Tablet: bgImageTablet,
 			Mobile: bgImageMobile,
 		}[device];
-	
+
 		// 画像がない場合はフォーカルポイントをリセット
 		const focalPoint = imageForDevice ? value : { x: 0.5, y: 0.5 };
-	
+
 		if (blockRef.current) {
 			blockRef.current.style.setProperty(
 				`--bg-position-${device.toLowerCase()}`,
 				coordsToBackgroundPosition(focalPoint)
 			);
 		}
-	
+
 		setAttributes({ [`bgFocalPoint${device}`]: focalPoint });
 	};
-	
+
 	useEffect(() => {
 		if (blockRef.current) {
 			['PC', 'Tablet', 'Mobile'].forEach((device) => {
 				const focalPoint = attributes[`bgFocalPoint${device}`];
-				const backgroundPosition = coordsToBackgroundPosition(focalPoint);
+				const backgroundPosition =
+					coordsToBackgroundPosition(focalPoint);
 				blockRef.current.style.setProperty(
 					`--bg-position-${device.toLowerCase()}`,
 					backgroundPosition

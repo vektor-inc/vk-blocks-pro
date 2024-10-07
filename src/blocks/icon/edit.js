@@ -278,7 +278,7 @@ export default function IconEdit(props) {
 						setLinkUrl={(url) => setAttributes({ iconUrl: url })}
 						linkTarget={iconTarget ? '_blank' : ''}
 						setLinkTarget={(target) =>
-							setAttributes({ iconTarget: (target? true: false) })
+							setAttributes({ iconTarget: !!target })
 						}
 					/>
 				</ToolbarGroup>

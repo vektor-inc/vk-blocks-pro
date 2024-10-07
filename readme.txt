@@ -107,6 +107,7 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Outer (Pro) ] Added the ability to set a focal point for background images.
+[ Add function ][ icon ] Add toolbar link for components.
 
 = 1.86.0 =
 [ Add function ] [ Fixed Display (Pro) ] Added an option for "Fixed display from the bottom."

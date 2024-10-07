@@ -219,30 +219,68 @@ export default function FixedDisplayEdit(props) {
 					</PanelBody>
 				)}
 				<PanelBody title={__('Timer Settings', 'vk-blocks-pro')}>
-					<TextControl
-						label={__('Display after seconds', 'vk-blocks-pro')}
-						value={displayAfterSeconds || '0'}
-						onChange={(value) =>
-							setAttributes({
-								displayAfterSeconds: parseFloat(value) || 0,
-							})
-						}
-						type="number"
-						min="0"
-						step="0.1"
+					<ToggleControl
+						label={__('Enable Display After Seconds', 'vk-blocks-pro')}
+						checked={displayAfterSeconds > 0}
+						onChange={(value) => {
+							if (value) {
+								// ONにしたときにデフォルトの秒数を設定
+								setAttributes({ displayAfterSeconds: 1 });
+							} else {
+								// OFFにしたときに値を0にする
+								setAttributes({ displayAfterSeconds: 0 });
+							}
+						}}
 					/>
-					<TextControl
-						label={__('Hide after seconds', 'vk-blocks-pro')}
-						value={hideAfterSeconds || '0'}
-						onChange={(value) =>
-							setAttributes({
-								hideAfterSeconds: parseFloat(value) || 0,
-							})
-						}
-						type="number"
-						min="0"
-						step="0.1"
+					{displayAfterSeconds > 0 && (
+						<TextControl
+							label={__('Display after seconds', 'vk-blocks-pro')}
+							value={displayAfterSeconds || '0'}
+							onChange={(value) => {
+								const parsedValue = parseFloat(value) || 0;
+								setAttributes({
+									displayAfterSeconds: parsedValue,
+								});
+								if (parsedValue === 0) {
+									// 0になったらトグルを自動的にOFFにする
+									setAttributes({ displayAfterSeconds: 0 });
+								}
+							}}
+							type="number"
+							min="0"
+							step="0.1"
+						/>
+					)}
+
+					<ToggleControl
+						label={__('Enable Hide After Seconds', 'vk-blocks-pro')}
+						checked={hideAfterSeconds > 0}
+						onChange={(value) => {
+							if (value) {
+								setAttributes({ hideAfterSeconds: 1 });
+							} else {
+								setAttributes({ hideAfterSeconds: 0 });
+							}
+						}}
 					/>
+					{hideAfterSeconds > 0 && (
+						<TextControl
+							label={__('Hide after seconds', 'vk-blocks-pro')}
+							value={hideAfterSeconds || '0'}
+							onChange={(value) => {
+								const parsedValue = parseFloat(value) || 0;
+								setAttributes({
+									hideAfterSeconds: parsedValue,
+								});
+								if (parsedValue === 0) {
+									setAttributes({ hideAfterSeconds: 0 });
+								}
+							}}
+							type="number"
+							min="0"
+							step="0.1"
+						/>
+					)}
 					<PanelRow>
 						<p>
 							{__(

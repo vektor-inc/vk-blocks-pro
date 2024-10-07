@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.85.1.1\n"
+"Project-Id-Version: VK Blocks Pro 1.86.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-10-03T05:42:48+00:00\n"
+"POT-Creation-Date: 2024-10-07T01:16:14+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -1363,27 +1363,35 @@ msgid "Timer Settings"
 msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:223
+msgid "Enable Display After Seconds"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:240
 msgid "Display after seconds"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:235
+#: src/blocks/_pro/fixed-display/edit.js:259
+msgid "Enable Hide After Seconds"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:271
 msgid "Hide after seconds"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:248
+#: src/blocks/_pro/fixed-display/edit.js:289
 msgid "When combined with \"Show on Scroll\", you can set the time the block remains visible after the user scrolls to a specific point, as well as when it disappears."
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:256
-msgid "Visitor Return Settings"
+#: src/blocks/_pro/fixed-display/edit.js:297
+msgid "Display Settings Until Browser is Closed"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:259
-msgid "Do not show again for returning visitors"
+#: src/blocks/_pro/fixed-display/edit.js:300
+msgid "Do not display again until the browser is closed"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:270
-msgid "Since this feature uses Session Storage, the content may reappear after closing the browser or in private browsing mode."
+#: src/blocks/_pro/fixed-display/edit.js:311
+msgid "When enabled, the same content will not be shown again until the visitor closes their browser."
 msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:87
@@ -3653,27 +3661,27 @@ msgstr ""
 msgid "List Icon Color"
 msgstr ""
 
-#: src/extensions/core/table/style.js:221
+#: src/extensions/core/table/style.js:226
 msgid "Table Horizontal Scroll"
 msgstr ""
 
-#: src/extensions/core/table/style.js:229
+#: src/extensions/core/table/style.js:234
 msgid "Scrollable"
 msgstr ""
 
-#: src/extensions/core/table/style.js:236
+#: src/extensions/core/table/style.js:241
 msgid "Horizontal Scroll Breakpoint"
 msgstr ""
 
-#: src/extensions/core/table/style.js:243
+#: src/extensions/core/table/style.js:248
 msgid "Mobile size"
 msgstr ""
 
-#: src/extensions/core/table/style.js:250
+#: src/extensions/core/table/style.js:255
 msgid "Tablet size"
 msgstr ""
 
-#: src/extensions/core/table/style.js:257
+#: src/extensions/core/table/style.js:262
 msgid "PC size"
 msgstr ""
 

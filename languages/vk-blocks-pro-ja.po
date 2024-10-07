@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2024-10-03T05:42:00+00:00\n"
+"POT-Creation-Date: 2024-10-07T01:09:57+00:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1354,14 +1354,22 @@ msgid "Timer Settings"
 msgstr "タイマー設定"
 
 #: src/blocks/_pro/fixed-display/edit.js:223
+msgid "Enable Display After Seconds"
+msgstr "表示までの秒数を設定"
+
+#: src/blocks/_pro/fixed-display/edit.js:240
 msgid "Display after seconds"
 msgstr "表示までの秒数"
 
-#: src/blocks/_pro/fixed-display/edit.js:235
+#: src/blocks/_pro/fixed-display/edit.js:259
+msgid "Enable Hide After Seconds"
+msgstr "非表示までの秒数を設定"
+
+#: src/blocks/_pro/fixed-display/edit.js:271
 msgid "Hide after seconds"
 msgstr "非表示までの秒数"
 
-#: src/blocks/_pro/fixed-display/edit.js:248
+#: src/blocks/_pro/fixed-display/edit.js:289
 msgid ""
 "When combined with \"Show on Scroll\", you can set the time the block "
 "remains visible after the user scrolls to a specific point, as well as when "
@@ -1371,21 +1379,21 @@ msgstr ""
 "トに到達した後に、ブロックが表示される時間や、非表示になるタイミングを設定で"
 "きます。"
 
-#: src/blocks/_pro/fixed-display/edit.js:256
-msgid "Visitor Return Settings"
-msgstr "再訪問時の設定"
+#: src/blocks/_pro/fixed-display/edit.js:297
+msgid "Display Settings Until Browser is Closed"
+msgstr "ブラウザを閉じるまでの表示設定"
 
-#: src/blocks/_pro/fixed-display/edit.js:259
-msgid "Do not show again for returning visitors"
-msgstr "再訪問者には表示しない"
+#: src/blocks/_pro/fixed-display/edit.js:300
+msgid "Do not display again until the browser is closed"
+msgstr "ブラウザを閉じるまで再表示しない"
 
-#: src/blocks/_pro/fixed-display/edit.js:270
+#: src/blocks/_pro/fixed-display/edit.js:311
 msgid ""
-"Since this feature uses Session Storage, the content may reappear after "
-"closing the browser or in private browsing mode."
+"When enabled, the same content will not be shown again until the visitor "
+"closes their browser."
 msgstr ""
-"この機能はSession Storageを使用しているため、ブラウザを閉じた後やプライベート"
-"ブラウジングモードでは再度表示される場合があります。"
+"有効にすると、訪問者がブラウザを閉じるまで、同じコンテンツは再表示されませ"
+"ん。"
 
 #: src/blocks/_pro/fixed-display/edit.js:87
 msgid "Fixed Display Settings"
@@ -3690,27 +3698,27 @@ msgstr "グループリンク"
 msgid "List Icon Color"
 msgstr "リストアイコンの色"
 
-#: src/extensions/core/table/style.js:221
+#: src/extensions/core/table/style.js:226
 msgid "Table Horizontal Scroll"
 msgstr "テーブルの水平方向スクロール"
 
-#: src/extensions/core/table/style.js:229
+#: src/extensions/core/table/style.js:234
 msgid "Scrollable"
 msgstr "スクロール"
 
-#: src/extensions/core/table/style.js:236
+#: src/extensions/core/table/style.js:241
 msgid "Horizontal Scroll Breakpoint"
 msgstr "水平スクロールのブレイクポイント"
 
-#: src/extensions/core/table/style.js:243
+#: src/extensions/core/table/style.js:248
 msgid "Mobile size"
 msgstr "モバイル"
 
-#: src/extensions/core/table/style.js:250
+#: src/extensions/core/table/style.js:255
 msgid "Tablet size"
 msgstr "タブレット"
 
-#: src/extensions/core/table/style.js:257
+#: src/extensions/core/table/style.js:262
 msgid "PC size"
 msgstr "PC"
 
@@ -5040,6 +5048,19 @@ msgid ""
 "Displays a simple schedule and other information that is useful for "
 "explaining the order."
 msgstr "順番を説明する時に便利でシンプルなスケジュールなどを表示します。"
+
+#~ msgid "Visitor Return Settings"
+#~ msgstr "再訪問時の設定"
+
+#~ msgid "Do not show again for returning visitors"
+#~ msgstr "再訪問者には表示しない"
+
+#~ msgid ""
+#~ "Since this feature uses Session Storage, the content may reappear after "
+#~ "closing the browser or in private browsing mode."
+#~ msgstr ""
+#~ "この機能はSession Storageを使用しているため、ブラウザを閉じた後やプライ"
+#~ "ベートブラウジングモードでは再度表示される場合があります。"
 
 #~ msgid ""
 #~ "In private browsing mode or environments where certain features are "

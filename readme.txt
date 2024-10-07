@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Link Toolbar ] Added to skip retrieving metadata (title and favicon) for external links in link toolbar to prevent CORS errors.
 [ Add function ][ icon ] Add toolbar link for components.
 
 = 1.86.0 =

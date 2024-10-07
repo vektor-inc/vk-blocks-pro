@@ -1,0 +1,116 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/post-list-slider",
+	"category": "vk-blocks-cat",
+	"title": "Post List Slider",
+	"style": "vk-blocks-build-css",
+	"editorStyle": "vk-blocks-build-editor-css",
+	"editorScript": "vk-blocks-build-js",
+	"attributes": {
+		"layout": {
+			"type": "string",
+			"default": "card"
+		},
+		"display_image": {
+			"type": "boolean",
+			"default": true
+		},
+		"display_image_overlay_term": {
+			"type": "boolean",
+			"default": true
+		},
+		"display_excerpt": {
+			"type": "boolean",
+			"default": false
+		},
+		"display_author": {
+			"type": "boolean",
+			"default": false
+		},
+		"display_date": {
+			"type": "boolean",
+			"default": true
+		},
+		"display_new": {
+			"type": "boolean",
+			"default": true
+		},
+		"display_taxonomies": {
+			"type": "boolean",
+			"default": false
+		},
+		"display_btn": {
+			"type": "boolean",
+			"default": false
+		},
+		"new_date": {
+			"type": "number",
+			"default": 7
+		},
+		"new_text": {
+			"type": "string",
+			"default": "New!!"
+		},
+		"btn_text": {
+			"type": "string",
+			"default": "Read more"
+		},
+		"btn_align": {
+			"type": "string",
+			"default": "text-right"
+		},
+		"numberPosts": {
+			"type": "number",
+			"default": 6
+		},
+		"isCheckedPostType": {
+			"type": "string",
+			"default": "[\"post\"]"
+		},
+		"coreTerms": {
+			"type": "string",
+			"default": "[]"
+		},
+		"taxQueryRelation": {
+			"type": "string",
+			"default": "OR"
+		},
+		"isCheckedTerms": {
+			"type": "string",
+			"default": "[]"
+		},
+		"targetPeriod": {
+			"type": "string",
+			"default": "all"
+		},
+		"order": {
+			"type": "string",
+			"default": "DESC"
+		},
+		"orderby": {
+			"type": "string",
+			"default": "date"
+		},
+		"offset": {
+			"type": "number",
+			"default": 0
+		},
+		"pagedlock": {
+			"type": "boolean",
+			"default": false
+		},
+		"selfIgnore": {
+			"type": "boolean",
+			"default": false
+		},
+		"className": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"description": "Displays the list of posts by setting the post type, classification, and number of posts to display.",
+	"textdomain": "vk-blocks-pro",
+	"supports": {
+		"className": true
+	}
+}

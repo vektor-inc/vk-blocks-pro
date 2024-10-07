@@ -106,7 +106,10 @@ const CommonItemControl = (props) => {
 					return (
 						<>
 							<ComboboxControl
-								label="Card header image aspect ratio"
+								label={__(
+									'Card header image aspect ratio',
+									'vk-blocks-pro'
+								)}
 								value={headerImageAspectRatio}
 								onChange={(value) =>
 									setAttributes({

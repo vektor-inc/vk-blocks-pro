@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Grid Column Card (Pro) ] Add translation.
 [ Bug fix ][ Category Badge (Pro) ] Added Pro label to the inserter. 
 [ Add function ][ Link Toolbar ] Added to skip retrieving metadata (title and favicon) for external links in link toolbar to prevent CORS errors.
 [ Add function ][ icon ] Add toolbar link for components.
@@ -144,7 +145,7 @@ e.g.
 
 = 1.83.0 =
 [ Add function ][ Alert ] Add icon setting and inner block.
-[ Bug fix ][ Grid Column Card ] Fixed an issue where using a synced pattern would cause the destination edit page to crash.
+[ Bug fix ][ Grid Column Card (Pro) ] Fixed an issue where using a synced pattern would cause the destination edit page to crash.
 [ Bug fix ][ Core List ] Add support for handling list color in old settings.
 [ Bug fix ][ Tab Item ] When duplicating an active tab-item block, no more than one tab-item block becomes active.
 

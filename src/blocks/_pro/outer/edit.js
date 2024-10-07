@@ -358,39 +358,46 @@ export default function OuterEdit(props) {
 		return `${x * 100}% ${y * 100}%`;
 	};
 
-	const handleBgFocalPointChange = (value, device) => {
+	const onChangeBgFocalPoint = (value, device) => {
 		const imageForDevice = {
 			PC: bgImage,
 			Tablet: bgImageTablet,
-			Mobile: bgImageMobile,
+			Mobile: bgImageMobile
 		}[device];
-
-		// 画像がない場合はフォーカルポイントをリセット
-		const focalPoint = imageForDevice ? value : { x: 0.5, y: 0.5 };
-
-		if (blockRef.current) {
-			blockRef.current.style.setProperty(
-				`--bg-position-${device.toLowerCase()}`,
-				coordsToBackgroundPosition(focalPoint)
-			);
+	
+		if (!imageForDevice) {
+			value = { x: 0.5, y: 0.5 };
 		}
+	
+		if (blockRef.current) {
+			updateBackgroundPosition(value);
+		}
+	
+		setAttributes({ [`bgFocalPoint${device}`]: value });
+	};
 
-		setAttributes({ [`bgFocalPoint${device}`]: focalPoint });
+	// 背景位置をリアルタイムで更新する関数
+	const updateBackgroundPosition = (value) => {
+		if (blockRef.current) {
+			blockRef.current.style.backgroundPosition =
+				coordsToBackgroundPosition(value);
+		}
 	};
 
 	useEffect(() => {
 		if (blockRef.current) {
+			// デバイスごとに背景位置を更新
 			['PC', 'Tablet', 'Mobile'].forEach((device) => {
 				const focalPoint = attributes[`bgFocalPoint${device}`];
-				const backgroundPosition =
-					coordsToBackgroundPosition(focalPoint);
+				const backgroundPosition = coordsToBackgroundPosition(focalPoint);
 				blockRef.current.style.setProperty(
 					`--bg-position-${device.toLowerCase()}`,
 					backgroundPosition
 				);
+				updateBackgroundPosition(focalPoint);
 			});
 		}
-	}, [bgFocalPointPC, bgFocalPointTablet, bgFocalPointMobile]);
+	}, [bgFocalPointPC, bgFocalPointTablet, bgFocalPointMobile]);	
 
 	useEffect(() => {
 		// bgFocalPointPCが未定義または不正な値の場合にデフォルト値を設定
@@ -595,10 +602,10 @@ export default function OuterEdit(props) {
 							url={bgImage}
 							value={attributes.bgFocalPointPC}
 							onChange={(value) => {
-								handleBgFocalPointChange(value, 'PC');
+								onChangeBgFocalPoint(value, 'PC');
 							}}
 							onDrag={(value) => {
-								handleBgFocalPointChange(value, 'PC');
+								onChangeBgFocalPoint(value, 'PC');
 							}}
 						/>
 					</BaseControl>
@@ -613,10 +620,10 @@ export default function OuterEdit(props) {
 							url={bgImageTablet}
 							value={attributes.bgFocalPointTablet}
 							onChange={(value) => {
-								handleBgFocalPointChange(value, 'Tablet');
+								onChangeBgFocalPoint(value, 'Tablet');
 							}}
 							onDrag={(value) => {
-								handleBgFocalPointChange(value, 'Tablet');
+								onChangeBgFocalPoint(value, 'Tablet');
 							}}
 						/>
 					</BaseControl>
@@ -631,10 +638,10 @@ export default function OuterEdit(props) {
 							url={bgImageMobile}
 							value={attributes.bgFocalPointMobile}
 							onChange={(value) => {
-								handleBgFocalPointChange(value, 'Mobile');
+								onChangeBgFocalPoint(value, 'Mobile');
 							}}
 							onDrag={(value) => {
-								handleBgFocalPointChange(value, 'Mobile');
+								onChangeBgFocalPoint(value, 'Mobile');
 							}}
 						/>
 					</BaseControl>

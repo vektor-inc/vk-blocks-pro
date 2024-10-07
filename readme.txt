@@ -107,6 +107,7 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Outer (Pro) ] Added the ability to set a focal point for background images.
+[ Add function ][ Link Toolbar ] Added to skip retrieving metadata (title and favicon) for external links in link toolbar to prevent CORS errors.
 [ Add function ][ icon ] Add toolbar link for components.
 
 = 1.86.0 =

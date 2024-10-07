@@ -38,7 +38,6 @@
 		max-width: 100% !important;
 	}
 	&-right {
-		top: 50%;
 		right: 0;
 		> * {
 			margin-left: auto;
@@ -61,7 +60,6 @@
 		max-width: 100% !important;
 	}
 	&-left {
-		top: 50%;
 		left: 0;
 		> * {
 			margin-right: auto;
@@ -74,6 +72,10 @@
 			margin-right: calc((100% - 100vw) / 2) !important;
 			margin-left: 0 !important;
 		}
+	}
+	&-from-top {
+	}
+	&-from-bottom {
 	}
 }
 
@@ -120,8 +122,22 @@
 		&-top {
 			top: var(--admin-bar-offset);
 		}
-		&-right, &-left {
+		&-from-top {
 			top: calc(50svh + var(--admin-bar-offset));
+		}
+		&-from-bottom {
+			bottom: calc(50svh + var(--admin-bar-offset));
+		}
+	}	
+}
+
+.block-editor-block-list__layout {
+	.vk_fixed-display-position {
+		&-from-top {
+			top: unset !important;
+		}
+		&-from-bottom {
+			bottom: unset !important;
 		}
 	}	
 }

@@ -34,7 +34,7 @@ msgstr ""
 #: src/admin/balloon/index.js:148
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:75
 #: src/admin/custom-format/delete-item-button.js:74
-#: src/blocks/_pro/gridcolcard/edit-common.js:160
+#: src/blocks/_pro/gridcolcard/edit-common.js:163
 #: src/extensions/common/custom-block-variation/block-variation-list/item/title-area/delete-button/index.js:33
 msgid "Delete"
 msgstr ""
@@ -312,7 +312,7 @@ msgstr ""
 
 #: src/admin/custom-format/index.js:208
 #: src/blocks/_pro/grid-column-item/edit.js:102
-#: src/blocks/_pro/gridcolcard/edit-common.js:166
+#: src/blocks/_pro/gridcolcard/edit-common.js:169
 #: src/blocks/button/edit.js:749
 #: src/blocks/heading/edit.js:324
 msgid "Text Color"
@@ -320,7 +320,7 @@ msgstr ""
 
 #: src/admin/custom-format/index.js:239
 #: src/blocks/_pro/grid-column-item/edit.js:108
-#: src/blocks/_pro/gridcolcard/edit-common.js:172
+#: src/blocks/_pro/gridcolcard/edit-common.js:175
 #: src/blocks/border-box/edit.js:248
 #: src/blocks/button/edit.js:732
 #: src/blocks/icon/edit.js:304
@@ -1298,7 +1298,11 @@ msgstr ""
 msgid "span"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:101
+#: src/blocks/_pro/fixed-display/edit.js:100
+msgid "Top"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:102
 #: src/blocks/balloon/edit.js:434
 #: src/blocks/button/edit.js:375
 #: src/blocks/pr-content/edit.js:252
@@ -1306,11 +1310,11 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:105
+#: src/blocks/_pro/fixed-display/edit.js:106
 msgid "Bottom"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:109
+#: src/blocks/_pro/fixed-display/edit.js:110
 #: src/blocks/balloon/edit.js:422
 #: src/blocks/button/edit.js:355
 #: src/blocks/pr-content/edit.js:256
@@ -1318,52 +1322,64 @@ msgstr ""
 msgid "Left"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:116
+#: src/blocks/_pro/fixed-display/edit.js:118
+msgid "Fixed position origin"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:125
+msgid "Top section"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:132
+msgid "Bottom section"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:146
 msgid "Fixed position from the top"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:138
+#: src/blocks/_pro/fixed-display/edit.js:150
+msgid "Fixed position from the bottom"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:174
 msgid "Timing to display"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:154
+#: src/blocks/_pro/fixed-display/edit.js:190
 msgid "Persist visibility once visible"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:70
+#: src/blocks/_pro/fixed-display/edit.js:71
 msgid "Fixed Display Setting"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:73
+#: src/blocks/_pro/fixed-display/edit.js:74
 msgid ""
 "The fixed position of the fixed position block will not change on the edit "
 "screen. Please check on the front screen."
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:80
+#: src/blocks/_pro/fixed-display/edit.js:81
 #: src/blocks/_pro/table-of-contents-new/edit.js:114
 #: src/components/column-layout-control/index.js:69
 msgid "Display type"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:85
+#: src/blocks/_pro/fixed-display/edit.js:86
 msgid "Always Visible"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:89
+#: src/blocks/_pro/fixed-display/edit.js:90
 msgid "Show on Scroll"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:95
+#: src/blocks/_pro/fixed-display/edit.js:96
 msgid "Fixed position"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:99
-msgid "Top"
-msgstr ""
-
 #: src/blocks/_pro/grid-column-item/edit.js:100
-#: src/blocks/_pro/gridcolcard/edit-common.js:164
+#: src/blocks/_pro/gridcolcard/edit-common.js:167
 msgid "Color Settings"
 msgstr ""
 
@@ -1500,39 +1516,43 @@ msgstr ""
 msgid "Make sure that no link is specified for the image block, etc."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:119
+#: src/blocks/_pro/gridcolcard/edit-common.js:109
+msgid "Card header image aspect ratio"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:122
 msgid "Image fit to column"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:134
+#: src/blocks/_pro/gridcolcard/edit-common.js:137
 msgid "Column footer button area"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:144
+#: src/blocks/_pro/gridcolcard/edit-common.js:147
 #: src/blocks/heading/edit.js:372
 msgid "Display"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:152
+#: src/blocks/_pro/gridcolcard/edit-common.js:155
 #: src/blocks/heading/edit.js:376
 #: src/blocks/slider/edit.js:1133
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:183
+#: src/blocks/_pro/gridcolcard/edit-common.js:186
 msgid "Column Radius"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:189
+#: src/blocks/_pro/gridcolcard/edit-common.js:192
 #: src/blocks/balloon/edit.js:310
 msgid "Border"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:198
+#: src/blocks/_pro/gridcolcard/edit-common.js:201
 msgid "Border Width"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:209
+#: src/blocks/_pro/gridcolcard/edit-common.js:212
 #: src/blocks/border-box/edit.js:239
 #: src/extensions/core/group/style.js:99
 msgid "Border Color"
@@ -3657,27 +3677,27 @@ msgstr ""
 msgid "List Icon Color"
 msgstr ""
 
-#: src/extensions/core/table/style.js:201
+#: src/extensions/core/table/style.js:221
 msgid "Table Horizontal Scroll"
 msgstr ""
 
-#: src/extensions/core/table/style.js:209
+#: src/extensions/core/table/style.js:229
 msgid "Scrollable"
 msgstr ""
 
-#: src/extensions/core/table/style.js:216
+#: src/extensions/core/table/style.js:236
 msgid "Horizontal Scroll Breakpoint"
 msgstr ""
 
-#: src/extensions/core/table/style.js:223
+#: src/extensions/core/table/style.js:243
 msgid "Mobile size"
 msgstr ""
 
-#: src/extensions/core/table/style.js:230
+#: src/extensions/core/table/style.js:250
 msgid "Tablet size"
 msgstr ""
 
-#: src/extensions/core/table/style.js:237
+#: src/extensions/core/table/style.js:257
 msgid "PC size"
 msgstr ""
 

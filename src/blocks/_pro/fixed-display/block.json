@@ -5,7 +5,7 @@
 	"title": "Fixed display",
 	"editorScript": "vk-blocks-build-js",
 	"editorStyle": "vk-blocks-build-editor-css",
-	"style": "vk-blocks/fixed-display",
+	"style": "vk-blocks-build-css",
 	"attributes": {
 		"mode": {
 			"type": "string",
@@ -27,11 +27,15 @@
 			"type": "boolean",
 			"default": false
 		},
-		"fixedTopPosition": {
+		"fixedPositionType": {
+			"type": "string",
+			"default": "top"
+		},
+		"fixedPositionValue": {
 			"type": "number",
 			"default": 50
 		},
-		"fixedTopPositionUnit": {
+		"fixedPositionUnit": {
 			"type": "string",
 			"default": "svh"
 		},

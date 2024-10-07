@@ -362,17 +362,17 @@ export default function OuterEdit(props) {
 		const imageForDevice = {
 			PC: bgImage,
 			Tablet: bgImageTablet,
-			Mobile: bgImageMobile
+			Mobile: bgImageMobile,
 		}[device];
-	
+
 		if (!imageForDevice) {
 			value = { x: 0.5, y: 0.5 };
 		}
-	
+
 		if (blockRef.current) {
 			updateBackgroundPosition(value);
 		}
-	
+
 		setAttributes({ [`bgFocalPoint${device}`]: value });
 	};
 
@@ -389,7 +389,8 @@ export default function OuterEdit(props) {
 			// デバイスごとに背景位置を更新
 			['PC', 'Tablet', 'Mobile'].forEach((device) => {
 				const focalPoint = attributes[`bgFocalPoint${device}`];
-				const backgroundPosition = coordsToBackgroundPosition(focalPoint);
+				const backgroundPosition =
+					coordsToBackgroundPosition(focalPoint);
 				blockRef.current.style.setProperty(
 					`--bg-position-${device.toLowerCase()}`,
 					backgroundPosition
@@ -397,7 +398,7 @@ export default function OuterEdit(props) {
 				updateBackgroundPosition(focalPoint);
 			});
 		}
-	}, [bgFocalPointPC, bgFocalPointTablet, bgFocalPointMobile]);	
+	}, [bgFocalPointPC, bgFocalPointTablet, bgFocalPointMobile]);
 
 	useEffect(() => {
 		// bgFocalPointPCが未定義または不正な値の場合にデフォルト値を設定

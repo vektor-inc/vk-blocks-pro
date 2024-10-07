@@ -136,12 +136,12 @@ function vk_blocks_post_list_slider_render_callback( $attributes ) {
 		$html .= '<div class="swiper-wrapper">';
 		while ( $wp_query->have_posts() ) {
 			$wp_query->the_post();
-			$html .= '<div class="swiper-slide">';			
+			$html .= '<div class="swiper-slide">';
 			global $post;
-			$html .= VK_Component_Posts::get_view( $post, $options );			
+			$html .= VK_Component_Posts::get_view( $post, $options );
 			$html .= '</div>';
 		}
-		$html .= '</div>';		
+		$html .= '</div>';
 		$html .= '<div class="swiper-button-prev"></div>';
 		$html .= '<div class="swiper-button-next"></div>';
 		$html .= '</div>';

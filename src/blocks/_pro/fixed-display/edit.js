@@ -294,7 +294,10 @@ export default function FixedDisplayEdit(props) {
 					</PanelRow>
 				</PanelBody>
 				<PanelBody
-					title={__('Display Settings Until Browser is Closed', 'vk-blocks-pro')}
+					title={__(
+						'Display Settings Until Browser is Closed',
+						'vk-blocks-pro'
+					)}
 				>
 					<ToggleControl
 						label={__(

@@ -107,12 +107,17 @@ e.g.
 == Changelog ==
 
 [ Bug fix ][ Grid Column Card (Pro) ] Add translation.
+[ Bug fix ][ Category Badge (Pro) ] Added Pro label to the inserter. 
+[ Add function ][ Link Toolbar ] Added to skip retrieving metadata (title and favicon) for external links in link toolbar to prevent CORS errors.
+[ Add function ][ icon ] Add toolbar link for components.
+
+= 1.86.0 =
+[ Add function ] [ Fixed Display (Pro) ] Added an option for "Fixed display from the bottom."
+[ Add function ] Added to apply the vk-scroll-hint class to all elements with the vk_hidden and vk_hidden-XXX classes.
 [ Bug fix ][ Core/table ] Fixed the class was not removed when table scrolling was disabled.
 [ Bug fix ] Fix load styles when separate load is enable.
 [ Bug fix ][ Tab (Pro) ] Added a process to dynamically calculate and set the iframe height when the tab becomes active.
-[ Bug Fix ] Fixed an issue where disabling separated loading caused all block CSS to load.
-[ Add function ] [ Fixed Display (Pro) ] Added an option for "Fixed display from the bottom."
-[ Add function ] Added to apply the vk-scroll-hint class to all elements with the vk_hidden and vk_hidden-XXX classes.
+[ Bug fix ] Fixed an issue where disabling separated loading caused all block CSS to load.
 
 = 1.85.1 =
 [ Bug fix ] Due to an issue where the hidden setting does not function properly when TreeShaking is enabled and CSS splitting is disabled, TreeShaking has been temporarily disabled as a workaround.

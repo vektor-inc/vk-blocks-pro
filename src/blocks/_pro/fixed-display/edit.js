@@ -220,7 +220,10 @@ export default function FixedDisplayEdit(props) {
 				)}
 				<PanelBody title={__('Timer Settings', 'vk-blocks-pro')}>
 					<ToggleControl
-						label={__('Enable Display After Seconds', 'vk-blocks-pro')}
+						label={__(
+							'Enable Display After Seconds',
+							'vk-blocks-pro'
+						)}
 						checked={displayAfterSeconds > 0}
 						onChange={(value) => {
 							if (value) {
@@ -291,11 +294,11 @@ export default function FixedDisplayEdit(props) {
 					</PanelRow>
 				</PanelBody>
 				<PanelBody
-					title={__('Visitor Return Settings', 'vk-blocks-pro')}
+					title={__('Display Settings Until Browser is Closed', 'vk-blocks-pro')}
 				>
 					<ToggleControl
 						label={__(
-							'Do not show again for returning visitors',
+							'Do not display again until the browser is closed',
 							'vk-blocks-pro'
 						)}
 						checked={dontShowAgain}
@@ -306,7 +309,7 @@ export default function FixedDisplayEdit(props) {
 					<PanelRow>
 						<p>
 							{__(
-								'Since this feature uses Session Storage, the content may reappear after closing the browser or in private browsing mode.',
+								'When enabled, the same content will not be shown again until the visitor closes their browser.',
 								'vk-blocks-pro'
 							)}
 						</p>

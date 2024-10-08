@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.3
 Tested up to: 6.6
-Stable tag: 1.85.1.1
+Stable tag: 1.86.1.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -105,11 +105,16 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-[ Bug fix ][ Slider ] Adjusting the timing of loading swiper to prevent the slider from collapsing.
-[ Bug fix ][ Grid Column Card (Pro) ] Add translation.
-[ Bug fix ][ Category Badge (Pro) ] Added Pro label to the inserter. 
+
+= 1.87.0 =
 [ Add function ][ Link Toolbar ] Added to skip retrieving metadata (title and favicon) for external links in link toolbar to prevent CORS errors.
 [ Add function ][ icon ] Add toolbar link for components.
+[ Bug fix ][ Slider ] Adjusting the timing of loading swiper to prevent the slider from collapsing.
+[ Bug fix ][ Grid Column Card (Pro) ] Add translation.
+[ Bug fix ][ Category Badge (Pro) ] Added Pro label to the inserter.
+
+= 1.86.1 =
+[ Bug fix ] Roll back 1.85.1
 
 = 1.86.0 =
 [ Add function ] [ Fixed Display (Pro) ] Added an option for "Fixed display from the bottom."

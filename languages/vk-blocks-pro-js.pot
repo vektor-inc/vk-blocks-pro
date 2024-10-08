@@ -34,7 +34,7 @@ msgstr ""
 #: src/admin/balloon/index.js:148
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:75
 #: src/admin/custom-format/delete-item-button.js:74
-#: src/blocks/_pro/gridcolcard/edit-common.js:160
+#: src/blocks/_pro/gridcolcard/edit-common.js:163
 #: src/extensions/common/custom-block-variation/block-variation-list/item/title-area/delete-button/index.js:33
 msgid "Delete"
 msgstr ""
@@ -312,7 +312,7 @@ msgstr ""
 
 #: src/admin/custom-format/index.js:208
 #: src/blocks/_pro/grid-column-item/edit.js:102
-#: src/blocks/_pro/gridcolcard/edit-common.js:166
+#: src/blocks/_pro/gridcolcard/edit-common.js:169
 #: src/blocks/button/edit.js:749
 #: src/blocks/heading/edit.js:324
 msgid "Text Color"
@@ -320,7 +320,7 @@ msgstr ""
 
 #: src/admin/custom-format/index.js:239
 #: src/blocks/_pro/grid-column-item/edit.js:108
-#: src/blocks/_pro/gridcolcard/edit-common.js:172
+#: src/blocks/_pro/gridcolcard/edit-common.js:175
 #: src/blocks/border-box/edit.js:248
 #: src/blocks/button/edit.js:732
 #: src/blocks/icon/edit.js:304
@@ -1002,7 +1002,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/edit.js:182
 #: src/blocks/_pro/card/edit.js:134
 #: src/blocks/_pro/icon-card/edit.js:75
-#: src/blocks/_pro/post-list/edit.js:407
+#: src/blocks/_pro/post-list/edit.js:442
 msgid "Title"
 msgstr ""
 
@@ -1111,7 +1111,7 @@ msgid "Check your settings from the settings sidebar."
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:115
-#: src/blocks/_pro/post-list/edit.js:275
+#: src/blocks/_pro/post-list/edit.js:310
 msgid "Display conditions"
 msgstr ""
 
@@ -1120,7 +1120,7 @@ msgid "Parent"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:134
-#: src/blocks/_pro/post-list/edit.js:445
+#: src/blocks/_pro/post-list/edit.js:480
 msgid "Ignore this post"
 msgstr ""
 
@@ -1247,7 +1247,7 @@ msgid "Setting up a link"
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:389
-#: src/blocks/_pro/gridcolcard-item/edit.js:348
+#: src/blocks/_pro/gridcolcard-item/edit.js:346
 #: src/blocks/_pro/icon-card-item/edit.js:128
 #: src/blocks/button/edit.js:283
 #: src/blocks/icon/edit.js:292
@@ -1379,7 +1379,7 @@ msgid "Fixed position"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:100
-#: src/blocks/_pro/gridcolcard/edit-common.js:164
+#: src/blocks/_pro/gridcolcard/edit-common.js:167
 msgid "Color Settings"
 msgstr ""
 
@@ -1456,99 +1456,103 @@ msgstr ""
 msgid "You can create a variety of layouts with grid column card blocks."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:244
+#: src/blocks/_pro/gridcolcard-item/edit.js:242
 #: src/blocks/_pro/select-post-list-item/edit.js:66
 #: src/blocks/button/edit.js:249
 #: src/components/link-toolbar/index.js:238
 msgid "Unlink"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:245
+#: src/blocks/_pro/gridcolcard-item/edit.js:243
 #: src/blocks/button/edit.js:250
 #: src/components/link-toolbar/index.js:239
 msgid "Input Link URL"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:275
+#: src/blocks/_pro/gridcolcard-item/edit.js:273
 #: src/blocks/_pro/select-post-list-item/edit.js:102
 #: src/blocks/button/edit.js:278
 #: src/components/link-toolbar/index.js:273
 msgid "Submit"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:299
+#: src/blocks/_pro/gridcolcard-item/edit.js:297
 msgid "Edit mode"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:309
+#: src/blocks/_pro/gridcolcard-item/edit.js:307
 msgid "All columns"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:317
+#: src/blocks/_pro/gridcolcard-item/edit.js:315
 msgid "This column only"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:322
+#: src/blocks/_pro/gridcolcard-item/edit.js:320
 msgid "Edit Lock"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:325
+#: src/blocks/_pro/gridcolcard-item/edit.js:323
 msgid "Lock edits this block from the parent and other Grid Column Item block"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:336
+#: src/blocks/_pro/gridcolcard-item/edit.js:334
 msgid "Column Setting"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:340
+#: src/blocks/_pro/gridcolcard-item/edit.js:338
 #: src/blocks/_pro/icon-card-item/edit.js:120
 #: src/blocks/pr-blocks/edit.js:254
 msgid "Link URL:"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:355
+#: src/blocks/_pro/gridcolcard-item/edit.js:353
 msgid ""
 "If you set a link URL, do not place the link element (text or button) in "
 "the Grid Column Card Item. It may not be displayed correctly."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:359
+#: src/blocks/_pro/gridcolcard-item/edit.js:357
 msgid "Make sure that no link is specified for the image block, etc."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:119
+#: src/blocks/_pro/gridcolcard/edit-common.js:109
+msgid "Card header image aspect ratio"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:122
 msgid "Image fit to column"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:134
+#: src/blocks/_pro/gridcolcard/edit-common.js:137
 msgid "Column footer button area"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:144
+#: src/blocks/_pro/gridcolcard/edit-common.js:147
 #: src/blocks/heading/edit.js:372
 msgid "Display"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:152
+#: src/blocks/_pro/gridcolcard/edit-common.js:155
 #: src/blocks/heading/edit.js:376
 #: src/blocks/slider/edit.js:1133
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:183
+#: src/blocks/_pro/gridcolcard/edit-common.js:186
 msgid "Column Radius"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:189
+#: src/blocks/_pro/gridcolcard/edit-common.js:192
 #: src/blocks/balloon/edit.js:310
 msgid "Border"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:198
+#: src/blocks/_pro/gridcolcard/edit-common.js:201
 msgid "Border Width"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:209
+#: src/blocks/_pro/gridcolcard/edit-common.js:212
 #: src/blocks/border-box/edit.js:239
 #: src/extensions/core/group/style.js:99
 msgid "Border Color"
@@ -1631,6 +1635,7 @@ msgstr ""
 #: src/blocks/heading/edit.js:335
 #: src/blocks/icon/edit.js:276
 #: src/blocks/pr-content/edit.js:212
+#: src/components/scroll-hint/index.js:103
 #: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:142
 #: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:167
 #: src/utils/font-awesome-new.js:189
@@ -1933,93 +1938,93 @@ msgstr ""
 msgid "Filter by %s"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:279
+#: src/blocks/_pro/post-list/edit.js:314
 msgid "Filter by PostTypes"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:292
+#: src/blocks/_pro/post-list/edit.js:327
 msgid "Taxonomy filter condition"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:303
+#: src/blocks/_pro/post-list/edit.js:338
 msgid "OR ( Whichever apply )"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:313
+#: src/blocks/_pro/post-list/edit.js:348
 msgid "AND ( All apply )"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:319
+#: src/blocks/_pro/post-list/edit.js:354
 msgid "Number of Posts"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:332
+#: src/blocks/_pro/post-list/edit.js:367
 msgid "Filter by Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:336
+#: src/blocks/_pro/post-list/edit.js:371
 msgid "Period of Time"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:344
+#: src/blocks/_pro/post-list/edit.js:379
 msgid "Whole Period"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:348
+#: src/blocks/_pro/post-list/edit.js:383
 msgid "From Today"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:352
+#: src/blocks/_pro/post-list/edit.js:387
 msgid "From Now"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:356
+#: src/blocks/_pro/post-list/edit.js:391
 msgid "From Tomorrow"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:361
+#: src/blocks/_pro/post-list/edit.js:396
 msgid ""
 "* If you choose a future period, you will need to customize it so that "
 "future posts will be published immediately."
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:368
+#: src/blocks/_pro/post-list/edit.js:403
 msgid "Order"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:377
+#: src/blocks/_pro/post-list/edit.js:412
 msgid "ASC"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:381
+#: src/blocks/_pro/post-list/edit.js:416
 msgid "DESC"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:387
+#: src/blocks/_pro/post-list/edit.js:422
 msgid "Order by"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:396
+#: src/blocks/_pro/post-list/edit.js:431
 msgid "Published Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:403
+#: src/blocks/_pro/post-list/edit.js:438
 msgid "Modefied Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:411
+#: src/blocks/_pro/post-list/edit.js:446
 msgid "Random"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:417
+#: src/blocks/_pro/post-list/edit.js:452
 msgid "offset"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:433
+#: src/blocks/_pro/post-list/edit.js:468
 msgid "Display from the first post always"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:439
+#: src/blocks/_pro/post-list/edit.js:474
 msgid "Display from the first post even on pages beyond the second page."
 msgstr ""
 
@@ -2263,7 +2268,7 @@ msgid "Alert Style"
 msgstr ""
 
 #: src/blocks/alert/edit.js:53
-#: src/blocks/alert/variations.js:13
+#: src/blocks/alert/variations.js:16
 #: src/blocks/button/edit.js:692
 #: src/blocks/pr-content/edit.js:171
 msgid "Success"
@@ -2276,52 +2281,52 @@ msgid "Info"
 msgstr ""
 
 #: src/blocks/alert/edit.js:61
-#: src/blocks/alert/variations.js:54
+#: src/blocks/alert/variations.js:57
 #: src/blocks/button/edit.js:700
 #: src/blocks/pr-content/edit.js:179
 msgid "Warning"
 msgstr ""
 
 #: src/blocks/alert/edit.js:65
-#: src/blocks/alert/variations.js:73
+#: src/blocks/alert/variations.js:76
 #: src/blocks/button/edit.js:704
 #: src/blocks/pr-content/edit.js:183
 msgid "Danger"
 msgstr ""
 
-#: src/blocks/alert/variations.js:19
-msgid "This is a success alert."
-msgstr ""
-
-#: src/blocks/alert/variations.js:26
-msgid "Alert Info"
-msgstr ""
-
-#: src/blocks/alert/variations.js:32
-msgid "Information"
-msgstr ""
-
-#: src/blocks/alert/variations.js:38
-msgid "This is a information alert."
-msgstr ""
-
-#: src/blocks/alert/variations.js:48
-msgid "Alert Warning"
-msgstr ""
-
-#: src/blocks/alert/variations.js:60
-msgid "This is a warning alert."
-msgstr ""
-
-#: src/blocks/alert/variations.js:67
-msgid "Alert Danger"
-msgstr ""
-
-#: src/blocks/alert/variations.js:7
+#: src/blocks/alert/variations.js:10
 msgid "Alert Success"
 msgstr ""
 
-#: src/blocks/alert/variations.js:79
+#: src/blocks/alert/variations.js:22
+msgid "This is a success alert."
+msgstr ""
+
+#: src/blocks/alert/variations.js:29
+msgid "Alert Info"
+msgstr ""
+
+#: src/blocks/alert/variations.js:35
+msgid "Information"
+msgstr ""
+
+#: src/blocks/alert/variations.js:41
+msgid "This is a information alert."
+msgstr ""
+
+#: src/blocks/alert/variations.js:51
+msgid "Alert Warning"
+msgstr ""
+
+#: src/blocks/alert/variations.js:63
+msgid "This is a warning alert."
+msgstr ""
+
+#: src/blocks/alert/variations.js:70
+msgid "Alert Danger"
+msgstr ""
+
+#: src/blocks/alert/variations.js:82
 msgid "This is a danger alert."
 msgstr ""
 
@@ -2625,12 +2630,14 @@ msgstr ""
 #: src/blocks/button/edit.js:767
 #: src/blocks/heading/edit.js:339
 #: src/blocks/pr-content/edit.js:219
+#: src/components/scroll-hint/index.js:115
 msgid "Before text"
 msgstr ""
 
 #: src/blocks/button/edit.js:789
 #: src/blocks/heading/edit.js:348
 #: src/blocks/pr-content/edit.js:231
+#: src/components/scroll-hint/index.js:137
 msgid "After text"
 msgstr ""
 
@@ -3335,6 +3342,22 @@ msgstr ""
 msgid "Copy link"
 msgstr ""
 
+#: src/components/scroll-hint/index.js:109
+msgid "Output Before Text Icon"
+msgstr ""
+
+#: src/components/scroll-hint/index.js:131
+msgid "Output After Text Icon"
+msgstr ""
+
+#: src/components/scroll-hint/index.js:91
+msgid "Show Scroll Message"
+msgstr ""
+
+#: src/components/scroll-hint/index.js:98
+msgid "Scroll Message Text"
+msgstr ""
+
 #: src/extensions/common/custom-block-variation/block-variation-explorer/sidebar.js:17
 msgid "Create"
 msgstr ""
@@ -3654,34 +3677,32 @@ msgstr ""
 msgid "List Icon Color"
 msgstr ""
 
-#: src/extensions/core/table/style.js:106
-msgid "Horizontal Scroll Breakpoint"
-msgstr ""
-
-#: src/extensions/core/table/style.js:113
-msgid "Mobile size"
-msgstr ""
-
-#: src/extensions/core/table/style.js:120
-msgid "Tablet size"
-msgstr ""
-
-#: src/extensions/core/table/style.js:127
-msgid "PC size"
-msgstr ""
-
-#: src/extensions/core/table/style.js:137
-msgid ""
-"Table cells are no longer fixed width when horizontal scroll breakpoint is "
-"reached."
-msgstr ""
-
-#: src/extensions/core/table/style.js:91
+#: src/extensions/core/table/style.js:221
 msgid "Table Horizontal Scroll"
 msgstr ""
 
-#: src/extensions/core/table/style.js:99
+#: src/extensions/core/table/style.js:229
 msgid "Scrollable"
+msgstr ""
+
+#: src/extensions/core/table/style.js:236
+msgid "Horizontal Scroll Breakpoint"
+msgstr ""
+
+#: src/extensions/core/table/style.js:243
+msgid "Mobile size"
+msgstr ""
+
+#: src/extensions/core/table/style.js:250
+msgid "Tablet size"
+msgstr ""
+
+#: src/extensions/core/table/style.js:257
+msgid "PC size"
+msgstr ""
+
+#: src/extensions/core/table/style.js:41
+msgid "You can scroll"
 msgstr ""
 
 #: src/utils/example-data.js:14

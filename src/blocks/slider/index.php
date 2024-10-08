@@ -14,14 +14,14 @@ use VektorInc\VK_Swiper\VkSwiper;
  */
 function vk_blocks_register_block_slider() {
 	// Register Style.
-	if ( ! is_admin() ) {
+	//if ( ! is_admin() ) {
 		wp_register_style(
 			'vk-blocks/slider',
 			VK_BLOCKS_DIR_URL . 'build/slider/style.css',
-			array( 'vk-swiper-style' ),
+			array( 'vk-swiper-style'),
 			VK_BLOCKS_VERSION
 		);
-	}
+	//}
 
 	// Register Script.
 	if ( ! is_admin() ) {

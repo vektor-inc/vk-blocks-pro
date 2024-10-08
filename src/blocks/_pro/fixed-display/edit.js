@@ -13,7 +13,7 @@ import {
 	RadioControl,
 	TextControl,
 } from '@wordpress/components';
-import { useEffect } from '@wordpress/element';
+import { useState, useEffect } from '@wordpress/element';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 
 const units = [
@@ -41,6 +41,9 @@ export default function FixedDisplayEdit(props) {
 		hideAfterSeconds,
 		dontShowAgain,
 	} = attributes;
+
+	const [tempDisplayAfterSeconds, setTempDisplayAfterSeconds] = useState(displayAfterSeconds || '0');
+	const [tempHideAfterSeconds, setTempHideAfterSeconds] = useState(hideAfterSeconds || '0');
 
 	useEffect(() => {
 		if (
@@ -227,10 +230,8 @@ export default function FixedDisplayEdit(props) {
 						checked={displayAfterSeconds > 0}
 						onChange={(value) => {
 							if (value) {
-								// ONにしたときにデフォルトの秒数を設定
-								setAttributes({ displayAfterSeconds: 1 });
+								setAttributes({ displayAfterSeconds: Math.max(0.1, displayAfterSeconds || 0.1) });
 							} else {
-								// OFFにしたときに値を0にする
 								setAttributes({ displayAfterSeconds: 0 });
 							}
 						}}
@@ -238,29 +239,29 @@ export default function FixedDisplayEdit(props) {
 					{displayAfterSeconds > 0 && (
 						<TextControl
 							label={__('Display after seconds', 'vk-blocks-pro')}
-							value={displayAfterSeconds || '0'}
+							value={tempDisplayAfterSeconds}
 							onChange={(value) => {
-								const parsedValue = parseFloat(value) || 0;
+								setTempDisplayAfterSeconds(value);
+							}}
+							onBlur={() => {
+								const parsedValue = parseFloat(tempDisplayAfterSeconds);
+								const finalValue = isNaN(parsedValue) || parsedValue < 0.1 ? 0.1 : parsedValue;
 								setAttributes({
-									displayAfterSeconds: parsedValue,
+									displayAfterSeconds: finalValue,
 								});
-								if (parsedValue === 0) {
-									// 0になったらトグルを自動的にOFFにする
-									setAttributes({ displayAfterSeconds: 0 });
-								}
+								setTempDisplayAfterSeconds(finalValue.toString());
 							}}
 							type="number"
-							min="0"
+							min="0.1"
 							step="0.1"
 						/>
 					)}
-
 					<ToggleControl
 						label={__('Enable Hide After Seconds', 'vk-blocks-pro')}
 						checked={hideAfterSeconds > 0}
 						onChange={(value) => {
 							if (value) {
-								setAttributes({ hideAfterSeconds: 1 });
+								setAttributes({ hideAfterSeconds: Math.max(0.1, hideAfterSeconds || 0.1) });
 							} else {
 								setAttributes({ hideAfterSeconds: 0 });
 							}
@@ -269,20 +270,22 @@ export default function FixedDisplayEdit(props) {
 					{hideAfterSeconds > 0 && (
 						<TextControl
 							label={__('Hide after seconds', 'vk-blocks-pro')}
-							value={hideAfterSeconds || '0'}
+							value={tempHideAfterSeconds}
 							onChange={(value) => {
-								const parsedValue = parseFloat(value) || 0;
-								setAttributes({
-									hideAfterSeconds: parsedValue,
-								});
-								if (parsedValue === 0) {
-									setAttributes({ hideAfterSeconds: 0 });
-								}
+								setTempHideAfterSeconds(value);
 							}}
-							type="number"
-							min="0"
-							step="0.1"
-						/>
+							onBlur={() => {
+								const parsedValue = parseFloat(tempHideAfterSeconds);
+								const finalValue = isNaN(parsedValue) || parsedValue < 0.1 ? 0.1 : parsedValue;
+								setAttributes({
+									hideAfterSeconds: finalValue,
+								});
+								setTempHideAfterSeconds(finalValue.toString());
+							}}
+						type="number"
+						min="0.1"
+						step="0.1"
+					/>
 					)}
 					<PanelRow>
 						<p>

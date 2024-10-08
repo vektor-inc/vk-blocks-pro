@@ -103,7 +103,22 @@ function vk_blocks_post_list_slider_render_callback( $attributes ) {
 			'offset'                     => 0,
 			'pagedlock'                  => false,
 			'selfIgnore'                 => false,
+			'loop'                       => true,
+			'effect'                     => 'slide',
+			'speed'                      => 500,		
+			'autoPlay'                   => true,
+			'autoPlayStop'               => false,
+			'autoPlayDelay'              => 2500,
+			'pagination'                 => 'bullets',
+			'width'                      => '',
+			'slidesPerViewMobile'        => 1,
+			'slidesPerViewTablet'        => 1,
+			'slidesPerViewPC'            => 1,
+			'slidesPerGroup'             => 1,
+			'centeredSlides'             => false,
+			'blockId'                    => '',
 			'className'                  => '',
+
 		)
 	);
 
@@ -129,10 +144,26 @@ function vk_blocks_post_list_slider_render_callback( $attributes ) {
 		'class_outer'                => $attributes['className'],
 	);
 
+	$slider_data = array(
+		'loop'                => $attributes['loop'],
+		'effect'              => 'slide',
+		'speed'               => $attributes['speed'],		
+		'autoPlay'            => $attributes['autoPlay'],
+		'autoPlayStop'        => $attributes['autoPlayStop'],
+		'autoPlayDelay'       => $attributes['autoPlayDelay'],
+		'pagination'          => $attributes['pagination'],
+		'slidesPerViewMobile' => $attributes['slidesPerViewMobile'],
+		'slidesPerViewTablet' => $attributes['slidesPerViewTablet'],
+		'slidesPerViewPC'     => $attributes['slidesPerViewPC'],
+		'slidesPerGroup'      => $attributes['slidesPerGroup'],
+		'centeredSlides'      => $attributes['centeredSlides'],
+		'blockId'             => $attributes['blockId'],
+	);
+	$slider_data = json_encode( $slider_data );
 	$html = '';
 
 	if ( $wp_query->have_posts() ) {
-		$html .= '<div class="swiper">';
+		$html .= '<div class="swiper" data-vk-post-list-slider="' . $slider_data . '">';
 		$html .= '<div class="swiper-wrapper">';
 		while ( $wp_query->have_posts() ) {
 			$wp_query->the_post();
@@ -156,6 +187,27 @@ function vk_blocks_post_list_slider_render_callback( $attributes ) {
  * @return void
  */
 function vk_blocks_register_block_post_list_slider() {
+
+	// Register Style.
+	if ( ! is_admin() ) {
+		wp_register_style(
+			'vk-blocks/post-list-slider',
+			VK_BLOCKS_DIR_URL . 'build/slider/style.css',
+			array( 'vk-swiper-style' ),
+			VK_BLOCKS_VERSION
+		);
+	}
+
+	// Register Script.
+	if ( ! is_admin() ) {
+		wp_register_script(
+			'vk-blocks/post-list-slider-script',
+			VK_BLOCKS_DIR_URL . 'build/vk-post-list-slider.min.js',
+			array( 'vk-swiper-script' ),
+			VK_BLOCKS_VERSION,
+			true
+		);
+	}
 
 	register_block_type(
 		__DIR__,

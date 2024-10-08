@@ -1,6 +1,6 @@
 document.defaultView.addEventListener('load', function () {
 	// //data-vkb-slider属性のNodeを取得
-	let sliderNodeList = document.querySelectorAll('[data-vkb-slider]');
+	let sliderNodeList = document.querySelectorAll('[data-vk-post-list-slider]');
 	// 配列に変換。
 	sliderNodeList = Array.from(sliderNodeList);
 

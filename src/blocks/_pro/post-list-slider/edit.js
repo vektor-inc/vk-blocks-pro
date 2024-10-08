@@ -24,14 +24,14 @@ import {
 // Load VK Blocks Utils
 import { useTaxonomies } from '@vkblocks/utils/hooks';
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
-
+import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 // Load VK Blocks Compornents
 import { DisplayItemsControl } from '@vkblocks/components/display-items-control';
 import { AdvancedCheckboxControl } from '@vkblocks/components/advanced-checkbox-control';
 import { AdvancedToggleControl } from '@vkblocks/components/advanced-toggle-control';
-import { MultiItemSetting } from './edit-slider.js';
+import { MultiItemSetting } from './edit-components/multi-item-setting.js';
 export default function PostListSliderEdit(props) {
-	const { attributes, setAttributes, name, clientId } = props;
+	const { attributes, setAttributes, clientId } = props;
 	const {
 		layout,
 		numberPosts,
@@ -58,13 +58,19 @@ export default function PostListSliderEdit(props) {
 		navigationPosition,
 		blockId,
 	} = attributes;
-	attributes.name = name;
 
 	// 以前の値を切り替え
 	useEffect(() => {
 		if (targetPeriod === undefined) {
 			setAttributes({ targetPeriod: 'all' });
 		}
+		if (
+			blockId === undefined ||
+			isParentReusableBlock(clientId) === false
+		) {
+			setAttributes({ blockId: clientId });
+		}
+		
 	}, [clientId]);
 
 	const [isCheckedTermsData, setIsCheckedTermsData] = useState(

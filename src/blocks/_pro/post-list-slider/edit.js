@@ -14,7 +14,13 @@ import {
 } from '@wordpress/components';
 import { useState, useEffect } from '@wordpress/element';
 import ServerSideRender from '@wordpress/server-side-render';
-import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
+import {
+	BlockControls,
+	BlockAlignmentToolbar,
+	InspectorControls,
+	useBlockProps,
+	__experimentalUnitControl as UnitControl,
+} from '@wordpress/block-editor';
 // Load VK Blocks Utils
 import { useTaxonomies } from '@vkblocks/utils/hooks';
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
@@ -22,7 +28,8 @@ import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
 // Load VK Blocks Compornents
 import { DisplayItemsControl } from '@vkblocks/components/display-items-control';
 import { AdvancedCheckboxControl } from '@vkblocks/components/advanced-checkbox-control';
-
+import { AdvancedToggleControl } from '@vkblocks/components/advanced-toggle-control';
+import { MultiItemSetting } from './edit-slider.js';
 export default function PostListSliderEdit(props) {
 	const { attributes, setAttributes, name, clientId } = props;
 	const {
@@ -37,6 +44,19 @@ export default function PostListSliderEdit(props) {
 		orderby,
 		selfIgnore,
 		pagedlock,
+		pc,
+		tablet,
+		mobile,
+		autoPlay,
+		autoPlayStop,
+		autoPlayDelay,
+		pagination,
+		width,
+		loop,
+		effect,
+		speed,
+		navigationPosition,
+		blockId,
 	} = attributes;
 	attributes.name = name;
 
@@ -252,7 +272,17 @@ export default function PostListSliderEdit(props) {
 			);
 		}, termsByTaxonomyName);
 
-	const blockProps = useBlockProps();
+	// 幅のクラス名変更
+	let alignClass = '';
+	if ('full' === width) {
+		alignClass = ' alignfull';
+	} else if ('wide' === width) {
+		alignClass = ' alignwide';
+	}
+
+	const blockProps = useBlockProps({
+		className: `vk_post_list_slider vk_swiper vk_slider_${blockId}${alignClass}`,
+	});
 
 	// `offset`が空の場合に0に設定する
 	useEffect(() => {
@@ -305,6 +335,15 @@ export default function PostListSliderEdit(props) {
 
 	return (
 		<>
+			<BlockControls>
+				<BlockAlignmentToolbar
+					value={width}
+					onChange={(nextWidth) =>
+						setAttributes({ width: nextWidth })
+					}
+					controls={['wide', 'full']}
+				/>
+			</BlockControls>
 			<InspectorControls>
 				<PanelBody
 					title={__('Display conditions', 'vk-blocks-pro')}
@@ -531,8 +570,191 @@ export default function PostListSliderEdit(props) {
 						/>
 					</BaseControl>
 				</PanelBody>
-
 				<DisplayItemsControl {...props} />
+				<PanelBody
+					title={__('Height', 'vk-blocks-pro')}
+					initialOpen={false}
+				>
+					<UnitControl
+						label={__('PC', 'vk-blocks-pro')}
+						onChange={(value) => setAttributes({ pc: value })}
+						value={pc}
+					/>
+					<UnitControl
+						label={__('Tablet', 'vk-blocks-pro')}
+						onChange={(value) => setAttributes({ tablet: value })}
+						value={tablet}
+					/>
+					<UnitControl
+						label={__('Mobile', 'vk-blocks-pro')}
+						onChange={(value) => setAttributes({ mobile: value })}
+						value={mobile}
+					/>
+				</PanelBody>
+				<PanelBody
+					title={__('Slider Settings', 'vk-blocks-pro')}
+					initialOpen={false}
+				>
+					<BaseControl
+						label={__('Effect ', 'vk-blocks-pro')}
+						id={`vk_slider-effect`}
+					>
+						<SelectControl
+							value={effect}
+							onChange={(value) =>
+								setAttributes({ effect: value })
+							}
+							options={[
+								{
+									label: __('Slide', 'vk-blocks-pro'),
+									value: 'slide',
+								},
+								{
+									label: __('Fade', 'vk-blocks-pro'),
+									value: 'fade',
+								},
+							]}
+						/>
+					</BaseControl>
+					<BaseControl
+						label={__('Loop ', 'vk-blocks-pro')}
+						id={`vk_slider-loop`}
+					>
+						<AdvancedToggleControl
+							initialFixedTable={loop}
+							schema={'loop'}
+							{...props}
+						/>
+					</BaseControl>
+					<BaseControl
+						label={__('AutoPlay', 'vk-blocks-pro')}
+						id={`vk_slider-autoPlay`}
+					>
+						<AdvancedToggleControl
+							initialFixedTable={autoPlay}
+							schema={'autoPlay'}
+							{...props}
+						/>
+					</BaseControl>
+					<BaseControl
+						label={__('Stop AutoPlay when swipe', 'vk-blocks-pro')}
+						id={`vk_slider-autoPlay`}
+					>
+						<AdvancedToggleControl
+							initialFixedTable={autoPlayStop}
+							schema={'autoPlayStop'}
+							{...props}
+						/>
+					</BaseControl>
+					<BaseControl
+						label={__('Display Time', 'vk-blocks-pro')}
+						id={`vk_slider-autoPlay`}
+					>
+						<TextControl
+							type={'number'}
+							value={autoPlayDelay}
+							onChange={(value) => {
+								if (
+									Number(value) === NaN ||
+									Number(value) < 0
+								) {
+									setAttributes({
+										autoPlayDelay: 0,
+									});
+								} else {
+									setAttributes({
+										autoPlayDelay: parseInt(
+											Number(value),
+											10
+										),
+									});
+								}
+							}}
+							min={0}
+						/>
+					</BaseControl>
+					<BaseControl
+						label={__('Change Speed', 'vk-blocks-pro')}
+						id={`vk_slider-changeSpeed`}
+					>
+						<TextControl
+							type={'number'}
+							value={speed}
+							onChange={(value) => {
+								if (
+									Number(value) === NaN ||
+									Number(value) < 0
+								) {
+									setAttributes({
+										speed: 0,
+									});
+								} else {
+									setAttributes({
+										speed: parseInt(Number(value), 10),
+									});
+								}
+							}}
+							min={0}
+						/>
+					</BaseControl>
+					<BaseControl
+						label={__('Pagination Type', 'vk-blocks-pro')}
+						id={`vk_slider-displayPagination`}
+					>
+						<SelectControl
+							value={pagination}
+							options={[
+								{
+									label: __('Hide', 'vk-blocks-pro'),
+									value: 'hide',
+								},
+								{
+									label: __('Default', 'vk-blocks-pro'),
+									value: 'bullets',
+								},
+								{
+									label: __(
+										'Number of slides',
+										'vk-blocks-pro'
+									),
+									value: 'fraction',
+								},
+							]}
+							onChange={(value) =>
+								setAttributes({ pagination: value })
+							}
+						/>
+					</BaseControl>
+					<BaseControl
+						label={__('Navigation Position', 'vk-blocks-pro')}
+						id={`vk_slider-navigationPosition`}
+					>
+						<SelectControl
+							value={navigationPosition}
+							options={[
+								{
+									label: __('Hide', 'vk-blocks-pro'),
+									value: 'hide',
+								},
+								{
+									label: __('Center', 'vk-blocks-pro'),
+									value: 'center',
+								},
+								{
+									label: __(
+										'Bottom on Mobile device',
+										'vk-blocks-pro'
+									),
+									value: 'mobile-bottom',
+								},
+							]}
+							onChange={(value) =>
+								setAttributes({ navigationPosition: value })
+							}
+						/>
+					</BaseControl>
+				</PanelBody>
+				<MultiItemSetting {...props} />
 			</InspectorControls>
 			<div {...blockProps}>
 				<ServerSideRender

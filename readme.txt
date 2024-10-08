@@ -105,7 +105,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-
+[ Bug fix ][ Slider ] Adjusting the timing of loading swiper to prevent the slider from collapsing.
 [ Bug fix ][ Grid Column Card (Pro) ] Add translation.
 [ Bug fix ][ Category Badge (Pro) ] Added Pro label to the inserter. 
 [ Add function ][ Link Toolbar ] Added to skip retrieving metadata (title and favicon) for external links in link toolbar to prevent CORS errors.

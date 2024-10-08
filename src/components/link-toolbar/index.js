@@ -106,25 +106,27 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 			const formattedUrl = formatUrl(linkUrl);
 			const isExternalLink =
 				!formattedUrl.startsWith(window.location.origin) &&
-				!formattedUrl.startsWith('#');  // 外部リンクかどうか判定
-	
+				!formattedUrl.startsWith('#'); // 外部リンクかどうか判定
+
 			// 外部リンクの場合はプレビュー（タイトル取得）をスキップする
 			if (!isExternalLink) {
 				const fetchTitle = function (url) {
 					if (url.startsWith('#')) {
-						return Promise.resolve(url);  // アンカーリンクの場合はそのまま返す
+						return Promise.resolve(url); // アンカーリンクの場合はそのまま返す
 					}
 					return fetch(url, { method: 'GET' })
 						.then((response) => response.text())
 						.then((text) => {
-							const titleMatch = text.match(/<title>(.*?)<\/title>/i);
+							const titleMatch = text.match(
+								/<title>(.*?)<\/title>/i
+							);
 							return titleMatch ? titleMatch[1] : url;
 						})
 						.catch(() => {
 							return url;
 						});
 				};
-	
+
 				fetchTitle(formattedUrl).then((title) => {
 					setLinkTitle(title);
 				});
@@ -132,12 +134,12 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 				// 外部リンクの場合はそのままリンクURLをタイトルとして設定する
 				setLinkTitle(formattedUrl);
 			}
-	
+
 			// アイコン設定
 			if (isExternalLink) {
-				setIcon(globe);  // 外部リンクの場合は地球アイコン
+				setIcon(globe); // 外部リンクの場合は地球アイコン
 			} else if (formattedUrl.startsWith('#')) {
-				setIcon(globe);  // アンカーリンクにも地球アイコンを使用
+				setIcon(globe); // アンカーリンクにも地球アイコンを使用
 			} else {
 				try {
 					const domain = new URL(formattedUrl).origin;
@@ -150,11 +152,11 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 						/>
 					);
 				} catch {
-					setIcon(link);  // URLが無効な場合はリンクアイコンを使用
+					setIcon(link); // URLが無効な場合はリンクアイコンを使用
 				}
 			}
 		}
-	}, [linkUrl]);	
+	}, [linkUrl]);
 
 	useEffect(() => {
 		setSubmitDisabled(!linkUrl || linkUrl.trim() === '');

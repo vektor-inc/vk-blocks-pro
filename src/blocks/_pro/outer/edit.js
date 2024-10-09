@@ -50,6 +50,9 @@ export default function OuterEdit(props) {
 		bgFocalPointPC,
 		bgFocalPointTablet,
 		bgFocalPointMobile,
+		enableFocalPointPC,
+		enableFocalPointTablet,
+		enableFocalPointMobile,
 		outerWidth,
 		padding_left_and_right, //eslint-disable-line camelcase
 		padding_top_and_bottom, //eslint-disable-line camelcase
@@ -361,8 +364,8 @@ export default function OuterEdit(props) {
 	const onChangeBgFocalPoint = (value, device) => {
 		const imageForDevice = {
 			PC: bgImage,
-			Tablet: bgImageTablet,
-			Mobile: bgImageMobile,
+			Tablet: bgImageTablet || bgImage,
+			Mobile: bgImageMobile || bgImageTablet || bgImage,
 		}[device];
 
 		if (!imageForDevice) {
@@ -424,6 +427,117 @@ export default function OuterEdit(props) {
 			setAttributes({ bgFocalPointMobile: { x: 0.5, y: 0.5 } });
 		}
 	}, [bgImage, bgImageTablet, bgImageMobile]);
+
+	const defaultFocalPoint = { x: 0.5, y: 0.5 };
+
+	useEffect(() => {
+		// 画像が設定された場合に対応するフォーカルポイントを自動でONにする
+		if (bgImage && !enableFocalPointPC) {
+			setAttributes({ enableFocalPointPC: true });
+		}
+		if (bgImageTablet && !enableFocalPointTablet) {
+			setAttributes({ enableFocalPointTablet: true });
+		}
+		if (bgImageMobile && !enableFocalPointMobile) {
+			setAttributes({ enableFocalPointMobile: true });
+		}
+	}, [bgImage, bgImageTablet, bgImageMobile]);
+
+	useEffect(() => {
+		// 画像が設定された場合に対応するフォーカルポイントを自動でONにする
+		if (bgImage && !enableFocalPointPC) {
+			setAttributes({ enableFocalPointPC: true });
+		}
+		if (bgImageTablet && !enableFocalPointTablet) {
+			setAttributes({ enableFocalPointTablet: true });
+		}
+		if (bgImageMobile && !enableFocalPointMobile) {
+			setAttributes({ enableFocalPointMobile: true });
+		}
+
+		// 背景画像が削除された場合、対応するフォーカルポイントをOFFにする
+		if (!bgImage) {
+			setAttributes({ enableFocalPointPC: false });
+		}
+		if (!bgImageTablet) {
+			setAttributes({ enableFocalPointTablet: false });
+		}
+		if (!bgImageMobile) {
+			setAttributes({ enableFocalPointMobile: false });
+		}
+	}, [bgImage, bgImageTablet, bgImageMobile]);
+
+	useEffect(() => {
+		const getFocalPoint = (device) => {
+			return attributes[`bgFocalPoint${device}`] || defaultFocalPoint;
+		};
+
+		// PC, Tablet, Mobile それぞれのフォーカルポイントを継承させるロジック
+		let bgPositionPC;
+		if (enableFocalPointPC) {
+			bgPositionPC = getFocalPoint('PC');
+		} else {
+			bgPositionPC = defaultFocalPoint;
+		}
+		
+		let bgPositionTablet;
+		if (enableFocalPointTablet) {
+			bgPositionTablet = getFocalPoint('Tablet');
+		} else if (enableFocalPointPC) {
+			bgPositionTablet = bgPositionPC;
+		} else {
+			bgPositionTablet = defaultFocalPoint;
+		}
+		
+		let bgPositionMobile;
+		if (enableFocalPointMobile) {
+			bgPositionMobile = getFocalPoint('Mobile');
+		} else if (enableFocalPointTablet) {
+			bgPositionMobile = bgPositionTablet;
+		} else if (enableFocalPointPC) {
+			bgPositionMobile = bgPositionPC;
+		} else {
+			bgPositionMobile = defaultFocalPoint;
+		}			
+
+		// デバイスごとの背景位置をCSS変数に設定
+		if (blockRef.current) {
+			blockRef.current.style.setProperty(
+				'--bg-position-pc',
+				coordsToBackgroundPosition(bgPositionPC)
+			);
+			blockRef.current.style.setProperty(
+				'--bg-position-tablet',
+				coordsToBackgroundPosition(bgPositionTablet)
+			);
+			blockRef.current.style.setProperty(
+				'--bg-position-mobile',
+				coordsToBackgroundPosition(bgPositionMobile)
+			);
+			updateBackgroundPosition(bgPositionPC);
+		}
+	}, [
+		enableFocalPointPC,
+		enableFocalPointTablet,
+		enableFocalPointMobile,
+		bgFocalPointPC,
+		bgFocalPointTablet,
+		bgFocalPointMobile,
+	]);
+
+	const handleToggleChange = (device) => {
+		const attributeKey = `enableFocalPoint${device}`;
+		const focalPointKey = `bgFocalPoint${device}`;
+		const isEnabled = attributes[attributeKey];
+
+		// トグルの状態を切り替える
+		setAttributes({ [attributeKey]: !isEnabled });
+
+		// OFFにした場合、デフォルトの中央位置にリセット
+		if (isEnabled) {
+			setAttributes({ [focalPointKey]: defaultFocalPoint });
+		}
+	};
 
 	const backgroundStyles = {
 		backgroundImage: bgImage ? `url(${bgImage})` : undefined,
@@ -596,56 +710,115 @@ export default function OuterEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Focal Point Picker (PC)', 'vk-blocks-pro')}
-						id={`vk_outer-focalPointPickerPC`}
+						label={__('Enable Focal Point for PC', 'vk-blocks-pro')}
+						id="vk_outer-enableFocalPointPC"
 					>
-						<FocalPointPicker
-							url={bgImage}
-							value={attributes.bgFocalPointPC}
-							onChange={(value) => {
-								onChangeBgFocalPoint(value, 'PC');
-							}}
-							onDrag={(value) => {
-								onChangeBgFocalPoint(value, 'PC');
-							}}
+						<ToggleControl
+							label={__('Enable PC Focal Point', 'vk-blocks-pro')}
+							checked={enableFocalPointPC}
+							onChange={() => handleToggleChange('PC')}
+							disabled={!bgImage}
 						/>
 					</BaseControl>
+					{enableFocalPointPC && (
+						<BaseControl
+							label={__(
+								'Focal Point Picker (PC)',
+								'vk-blocks-pro'
+							)}
+							id="vk_outer-focalPointPickerPC"
+						>
+							<FocalPointPicker
+								url={bgImage || bgImageTablet || bgImageMobile}
+								value={bgFocalPointPC}
+								onChange={(value) =>
+									onChangeBgFocalPoint(value, 'PC')
+								}
+								onDrag={(value) =>
+									onChangeBgFocalPoint(value, 'PC')
+								}
+							/>
+						</BaseControl>
+					)}
+
 					<BaseControl
 						label={__(
-							'Focal Point Picker (Tablet)',
+							'Enable Focal Point for Tablet',
 							'vk-blocks-pro'
 						)}
-						id={`vk_outer-focalPointPickerTablet`}
+						id="vk_outer-enableFocalPointTablet"
 					>
-						<FocalPointPicker
-							url={bgImageTablet}
-							value={attributes.bgFocalPointTablet}
-							onChange={(value) => {
-								onChangeBgFocalPoint(value, 'Tablet');
-							}}
-							onDrag={(value) => {
-								onChangeBgFocalPoint(value, 'Tablet');
-							}}
+						<ToggleControl
+							label={__(
+								'Enable Tablet Focal Point',
+								'vk-blocks-pro'
+							)}
+							checked={enableFocalPointTablet}
+							onChange={() => handleToggleChange('Tablet')}
+							disabled={!bgImageTablet && !bgImage}
 						/>
 					</BaseControl>
+					{enableFocalPointTablet && (
+						<BaseControl
+							label={__(
+								'Focal Point Picker (Tablet)',
+								'vk-blocks-pro'
+							)}
+							id="vk_outer-focalPointPickerTablet"
+						>
+							<FocalPointPicker
+								url={bgImageTablet || bgImage}
+								value={bgFocalPointTablet}
+								onChange={(value) =>
+									onChangeBgFocalPoint(value, 'Tablet')
+								}
+								onDrag={(value) =>
+									onChangeBgFocalPoint(value, 'Tablet')
+								}
+							/>
+						</BaseControl>
+					)}
+
 					<BaseControl
 						label={__(
-							'Focal Point Picker (Mobile)',
+							'Enable Focal Point for Mobile',
 							'vk-blocks-pro'
 						)}
-						id={`vk_outer-focalPointPickerMobile`}
+						id="vk_outer-enableFocalPointMobile"
 					>
-						<FocalPointPicker
-							url={bgImageMobile}
-							value={attributes.bgFocalPointMobile}
-							onChange={(value) => {
-								onChangeBgFocalPoint(value, 'Mobile');
-							}}
-							onDrag={(value) => {
-								onChangeBgFocalPoint(value, 'Mobile');
-							}}
+						<ToggleControl
+							label={__(
+								'Enable Mobile Focal Point',
+								'vk-blocks-pro'
+							)}
+							checked={enableFocalPointMobile}
+							onChange={() => handleToggleChange('Mobile')}
+							disabled={
+								!bgImage && !bgImageTablet && !bgImageMobile
+							}
 						/>
 					</BaseControl>
+					{enableFocalPointMobile && (
+						<BaseControl
+							label={__(
+								'Focal Point Picker (Mobile)',
+								'vk-blocks-pro'
+							)}
+							id="vk_outer-focalPointPickerMobile"
+						>
+							<FocalPointPicker
+								url={bgImageMobile || bgImageTablet || bgImage}
+								value={bgFocalPointMobile}
+								onChange={(value) =>
+									onChangeBgFocalPoint(value, 'Mobile')
+								}
+								onDrag={(value) =>
+									onChangeBgFocalPoint(value, 'Mobile')
+								}
+							/>
+						</BaseControl>
+					)}
+
 					<BaseControl
 						label={__('Background image Position', 'vk-blocks-pro')}
 						help=""

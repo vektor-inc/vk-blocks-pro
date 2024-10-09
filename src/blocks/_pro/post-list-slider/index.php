@@ -111,6 +111,7 @@ function vk_blocks_post_list_slider_render_callback( $attributes ) {
 			'autoPlayDelay'              => 2500,
 			'pagination'                 => 'bullets',
 			'width'                      => '',
+			'navigationPosition'         => 'mobile-bottom',
 			'slidesPerViewMobile'        => 1,
 			'slidesPerViewTablet'        => 1,
 			'slidesPerViewPC'            => 1,
@@ -160,10 +161,27 @@ function vk_blocks_post_list_slider_render_callback( $attributes ) {
 		'blockId'             => $attributes['blockId'],
 	);
 	$slider_data = json_encode( $slider_data );
+
+	$classes = array(
+		'vk_post_list_slider',
+		'swiper',
+		'vk_swiper',
+		'vk_post_list_slider-' . $attributes['blockId'],
+	);
+	if ( ! empty( $attributes['width'] ) ) {
+		$classes[] = 'align' . $attributes['width'];
+	}
+	$wrapper_attributes = get_block_wrapper_attributes(
+		array(
+			'class' => implode( ' ', $classes ),
+			'data-vk-post-list-slider' => $slider_data,
+		)
+	);
+
 	$html = '';
 
 	if ( $wp_query->have_posts() ) {
-		$html .= '<div class="swiper" data-vk-post-list-slider="' . $slider_data . '">';
+		$html .= '<div ' . $wrapper_attributes . '>';
 		$html .= '<div class="swiper-wrapper">';
 		while ( $wp_query->have_posts() ) {
 			$wp_query->the_post();
@@ -173,8 +191,9 @@ function vk_blocks_post_list_slider_render_callback( $attributes ) {
 			$html .= '</div>';
 		}
 		$html .= '</div>';
-		$html .= '<div class="swiper-button-prev"></div>';
-		$html .= '<div class="swiper-button-next"></div>';
+		$html .= '<div class="swiper-button-prev swiper-button-' . $attributes['navigationPosition'] . '"></div>';
+		$html .= '<div class="swiper-button-next swiper-button-' . $attributes['navigationPosition'] . '"></div>';
+		$html .= '<div class="swiper-pagination swiper-pagination-'. $attributes['pagination'] . '"></div>';
 		$html .= '</div>';
 	}
 	wp_reset_postdata();
@@ -192,7 +211,7 @@ function vk_blocks_register_block_post_list_slider() {
 	if ( ! is_admin() ) {
 		wp_register_style(
 			'vk-blocks/post-list-slider',
-			VK_BLOCKS_DIR_URL . 'build/slider/style.css',
+			VK_BLOCKS_DIR_URL . 'build/post-list-slider/style.css',
 			array( 'vk-swiper-style' ),
 			VK_BLOCKS_VERSION
 		);

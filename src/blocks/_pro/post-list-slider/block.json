@@ -6,7 +6,11 @@
 	"styleHandles": ["vk-blocks-build-css"],
 	"scriptHandles": ["vk-swiper-script", "vk-blocks/post-list-slider-script"],
 	"editorStyleHandles": ["vk-swiper-style", "vk-blocks-build-editor-css"],
-	"editorScriptHandles": ["vk-blocks-build-js", "vk-swiper-script", "vk-blocks/post-list-slider-script"],
+	"editorScriptHandles": [
+		"vk-blocks-build-js",
+		"vk-swiper-script",
+		"vk-blocks/post-list-slider-script"
+	],
 	"attributes": {
 		"layout": {
 			"type": "string",

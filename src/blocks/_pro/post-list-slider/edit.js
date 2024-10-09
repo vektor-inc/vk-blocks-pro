@@ -29,7 +29,8 @@ import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block'
 import { DisplayItemsControl } from '@vkblocks/components/display-items-control';
 import { AdvancedCheckboxControl } from '@vkblocks/components/advanced-checkbox-control';
 import { AdvancedToggleControl } from '@vkblocks/components/advanced-toggle-control';
-import { MultiItemSetting } from './edit-components/multi-item-setting.js';
+import { MultiItemSetting } from './multi-item-setting.js';
+import { LaunchSwiper } from './slider.js';
 export default function PostListSliderEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const {
@@ -59,6 +60,21 @@ export default function PostListSliderEdit(props) {
 		blockId,
 	} = attributes;
 
+	const blockEditorRoot = document.querySelector(
+		'.block-editor .is-root-container'
+	);
+	if (blockEditorRoot) {
+		LaunchSwiper(blockEditorRoot);
+	}
+	const iframe = document.querySelector('#site-editor iframe');
+	if (iframe) {
+		const siteEditorRoot =
+			iframe.contentWindow.document.querySelector('.is-root-container');
+		if (siteEditorRoot) {
+			LaunchSwiper(siteEditorRoot);
+		}
+	}
+
 	// 以前の値を切り替え
 	useEffect(() => {
 		if (targetPeriod === undefined) {
@@ -70,7 +86,6 @@ export default function PostListSliderEdit(props) {
 		) {
 			setAttributes({ blockId: clientId });
 		}
-		
 	}, [clientId]);
 
 	const [isCheckedTermsData, setIsCheckedTermsData] = useState(
@@ -278,17 +293,7 @@ export default function PostListSliderEdit(props) {
 			);
 		}, termsByTaxonomyName);
 
-	// 幅のクラス名変更
-	let alignClass = '';
-	if ('full' === width) {
-		alignClass = ' alignfull';
-	} else if ('wide' === width) {
-		alignClass = ' alignwide';
-	}
-
-	const blockProps = useBlockProps({
-		className: `vk_post_list_slider vk_swiper vk_slider_${blockId}${alignClass}`,
-	});
+	const blockProps = useBlockProps();
 
 	// `offset`が空の場合に0に設定する
 	useEffect(() => {

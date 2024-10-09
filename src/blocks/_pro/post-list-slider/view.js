@@ -1,6 +1,8 @@
 document.defaultView.addEventListener('load', function () {
 	// //data-vkb-slider属性のNodeを取得
-	let sliderNodeList = document.querySelectorAll('[data-vk-post-list-slider]');
+	let sliderNodeList = document.querySelectorAll(
+		'[data-vk-post-list-slider]'
+	);
 	// 配列に変換。
 	sliderNodeList = Array.from(sliderNodeList);
 
@@ -8,7 +10,7 @@ document.defaultView.addEventListener('load', function () {
 		for (const index in sliderNodeList) {
 			const sliderNode = sliderNodeList[index];
 			const attributes = JSON.parse(
-				sliderNode.getAttribute('data-vkb-slider')
+				sliderNode.getAttribute('data-vk-post-list-slider')
 			);
 			if (!sliderNode.classList.contains('swiper')) {
 				sliderNode.classList.add('swiper');
@@ -22,7 +24,7 @@ document.defaultView.addEventListener('load', function () {
 			}
 
 			let SwiperSetting = `
-			var swiper${index} = new Swiper ('.vk_slider_${sliderId}', {
+			var swiper${index} = new Swiper ('.vk_post_list_slider-${sliderId}', {
 			`;
 
 			if (attributes.autoPlay) {

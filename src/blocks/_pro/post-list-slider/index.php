@@ -105,7 +105,7 @@ function vk_blocks_post_list_slider_render_callback( $attributes ) {
 			'selfIgnore'                 => false,
 			'loop'                       => true,
 			'effect'                     => 'slide',
-			'speed'                      => 500,		
+			'speed'                      => 500,
 			'autoPlay'                   => true,
 			'autoPlayStop'               => false,
 			'autoPlayDelay'              => 2500,
@@ -148,7 +148,7 @@ function vk_blocks_post_list_slider_render_callback( $attributes ) {
 	$slider_data = array(
 		'loop'                => $attributes['loop'],
 		'effect'              => 'slide',
-		'speed'               => $attributes['speed'],		
+		'speed'               => $attributes['speed'],
 		'autoPlay'            => $attributes['autoPlay'],
 		'autoPlayStop'        => $attributes['autoPlayStop'],
 		'autoPlayDelay'       => $attributes['autoPlayDelay'],
@@ -173,7 +173,7 @@ function vk_blocks_post_list_slider_render_callback( $attributes ) {
 	}
 	$wrapper_attributes = get_block_wrapper_attributes(
 		array(
-			'class' => implode( ' ', $classes ),
+			'class'                    => implode( ' ', $classes ),
 			'data-vk-post-list-slider' => $slider_data,
 		)
 	);
@@ -193,7 +193,7 @@ function vk_blocks_post_list_slider_render_callback( $attributes ) {
 		$html .= '</div>';
 		$html .= '<div class="swiper-button-prev swiper-button-' . $attributes['navigationPosition'] . '"></div>';
 		$html .= '<div class="swiper-button-next swiper-button-' . $attributes['navigationPosition'] . '"></div>';
-		$html .= '<div class="swiper-pagination swiper-pagination-'. $attributes['pagination'] . '"></div>';
+		$html .= '<div class="swiper-pagination swiper-pagination-' . $attributes['pagination'] . '"></div>';
 		$html .= '</div>';
 	}
 	wp_reset_postdata();

@@ -14,7 +14,7 @@
 	"attributes": {
 		"layout": {
 			"type": "string",
-			"default": "card"
+			"default": "card-intext"
 		},
 		"display_image": {
 			"type": "boolean",

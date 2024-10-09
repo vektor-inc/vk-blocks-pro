@@ -479,7 +479,7 @@ export default function OuterEdit(props) {
 		} else {
 			bgPositionPC = defaultFocalPoint;
 		}
-		
+
 		let bgPositionTablet;
 		if (enableFocalPointTablet) {
 			bgPositionTablet = getFocalPoint('Tablet');
@@ -488,7 +488,7 @@ export default function OuterEdit(props) {
 		} else {
 			bgPositionTablet = defaultFocalPoint;
 		}
-		
+
 		let bgPositionMobile;
 		if (enableFocalPointMobile) {
 			bgPositionMobile = getFocalPoint('Mobile');
@@ -498,7 +498,7 @@ export default function OuterEdit(props) {
 			bgPositionMobile = bgPositionPC;
 		} else {
 			bgPositionMobile = defaultFocalPoint;
-		}			
+		}
 
 		// デバイスごとの背景位置をCSS変数に設定
 		if (blockRef.current) {
@@ -709,17 +709,12 @@ export default function OuterEdit(props) {
 							{...props}
 						/>
 					</BaseControl>
-					<BaseControl
-						label={__('Enable Focal Point for PC', 'vk-blocks-pro')}
-						id="vk_outer-enableFocalPointPC"
-					>
-						<ToggleControl
-							label={__('Enable PC Focal Point', 'vk-blocks-pro')}
-							checked={enableFocalPointPC}
-							onChange={() => handleToggleChange('PC')}
-							disabled={!bgImage}
-						/>
-					</BaseControl>
+					<ToggleControl
+						label={__('Enable PC Focal Point', 'vk-blocks-pro')}
+						checked={enableFocalPointPC}
+						onChange={() => handleToggleChange('PC')}
+						disabled={!bgImage}
+					/>
 					{enableFocalPointPC && (
 						<BaseControl
 							label={__(
@@ -740,24 +735,15 @@ export default function OuterEdit(props) {
 							/>
 						</BaseControl>
 					)}
-
-					<BaseControl
+					<ToggleControl
 						label={__(
-							'Enable Focal Point for Tablet',
+							'Enable Tablet Focal Point',
 							'vk-blocks-pro'
 						)}
-						id="vk_outer-enableFocalPointTablet"
-					>
-						<ToggleControl
-							label={__(
-								'Enable Tablet Focal Point',
-								'vk-blocks-pro'
-							)}
-							checked={enableFocalPointTablet}
-							onChange={() => handleToggleChange('Tablet')}
-							disabled={!bgImageTablet && !bgImage}
-						/>
-					</BaseControl>
+						checked={enableFocalPointTablet}
+						onChange={() => handleToggleChange('Tablet')}
+						disabled={!bgImageTablet && !bgImage}
+					/>
 					{enableFocalPointTablet && (
 						<BaseControl
 							label={__(
@@ -778,26 +764,17 @@ export default function OuterEdit(props) {
 							/>
 						</BaseControl>
 					)}
-
-					<BaseControl
+					<ToggleControl
 						label={__(
-							'Enable Focal Point for Mobile',
+							'Enable Mobile Focal Point',
 							'vk-blocks-pro'
 						)}
-						id="vk_outer-enableFocalPointMobile"
-					>
-						<ToggleControl
-							label={__(
-								'Enable Mobile Focal Point',
-								'vk-blocks-pro'
-							)}
-							checked={enableFocalPointMobile}
-							onChange={() => handleToggleChange('Mobile')}
-							disabled={
-								!bgImage && !bgImageTablet && !bgImageMobile
-							}
-						/>
-					</BaseControl>
+						checked={enableFocalPointMobile}
+						onChange={() => handleToggleChange('Mobile')}
+						disabled={
+							!bgImage && !bgImageTablet && !bgImageMobile
+						}
+					/>
 					{enableFocalPointMobile && (
 						<BaseControl
 							label={__(
@@ -818,7 +795,6 @@ export default function OuterEdit(props) {
 							/>
 						</BaseControl>
 					)}
-
 					<BaseControl
 						label={__('Background image Position', 'vk-blocks-pro')}
 						help=""

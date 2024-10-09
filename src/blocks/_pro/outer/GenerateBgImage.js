@@ -58,12 +58,12 @@ const GenerateBgImage = (props) => {
 		return (
 			<style>
 				{`
-        .${prefix}-${blockId} {
-          background-image: url(${bgImageMobile}) !important;
-          background-position: ${coordsToBackgroundPosition(focalPointMobile)}!important;
-          ${backgroundStyle}
-        }
-        `}
+				.${prefix}-${blockId} {
+					background-image: url(${bgImageMobile}) !important;
+					background-position: ${coordsToBackgroundPosition(focalPointMobile)}!important;
+					${backgroundStyle}
+					}
+				`}
 			</style>
 		);
 	}
@@ -72,14 +72,17 @@ const GenerateBgImage = (props) => {
 		return (
 			<style>
 				{`
-			.${prefix}-${blockId} {
-				background-image: url(${bgImageTablet}) !important;
-				background-position: ${coordsToBackgroundPosition(focalPointTablet)}!important;
-			}
-			@media screen and (${mobileViewport}) {
-				background-position: ${coordsToBackgroundPosition(focalPointMobile)}!important;
-			}
-			`}
+				.${prefix}-${blockId} {
+					background-image: url(${bgImageTablet}) !important;
+					${backgroundStyle}
+				}
+				@media screen and (${mobileViewport}) {
+				.${prefix}-${blockId} {
+					background-position: ${coordsToBackgroundPosition(focalPointMobile)}!important;
+					${backgroundStyle}
+				}
+				}
+				`}
 			</style>
 		);
 	}
@@ -88,28 +91,28 @@ const GenerateBgImage = (props) => {
 		return (
 			<style>
 				{`
-					.${prefix}-${blockId} {
-						background-image: url(${bgImage}) !important;
-						${backgroundStyle}
-					}
-					@media screen and (${mobileViewport}) {
-					.${prefix}-${blockId} {
-						background-position: ${coordsToBackgroundPosition(focalPointMobile)}!important;
-						${backgroundStyle}
-					}
-					}
-					@media screen and (${tabletViewport}) {
-					.${prefix}-${blockId} {
-						background-position: ${coordsToBackgroundPosition(focalPointTablet)}!important;
-						${backgroundStyle}
-					}
-					}
-					@media screen and (${pcViewport}) {
-					.${prefix}-${blockId} {
-						background-position: ${coordsToBackgroundPosition(focalPointPC)}!important;
-						${backgroundStyle}
-					}
-					}
+				.${prefix}-${blockId} {
+					background-image: url(${bgImage}) !important;
+					${backgroundStyle}
+				}
+				@media screen and (${mobileViewport}) {
+				.${prefix}-${blockId} {
+					background-position: ${coordsToBackgroundPosition(focalPointMobile)}!important;
+					${backgroundStyle}
+				}
+				}
+				@media screen and (${tabletViewport}) {
+				.${prefix}-${blockId} {
+					background-position: ${coordsToBackgroundPosition(focalPointTablet)}!important;
+					${backgroundStyle}
+				}
+				}
+				@media screen and (${pcViewport}) {
+				.${prefix}-${blockId} {
+					background-position: ${coordsToBackgroundPosition(focalPointPC)}!important;
+					${backgroundStyle}
+				}
+				}
 				`}
 			</style>
 		);

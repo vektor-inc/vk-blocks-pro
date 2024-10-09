@@ -736,10 +736,7 @@ export default function OuterEdit(props) {
 						</BaseControl>
 					)}
 					<ToggleControl
-						label={__(
-							'Enable Tablet Focal Point',
-							'vk-blocks-pro'
-						)}
+						label={__('Enable Tablet Focal Point', 'vk-blocks-pro')}
 						checked={enableFocalPointTablet}
 						onChange={() => handleToggleChange('Tablet')}
 						disabled={!bgImageTablet && !bgImage}
@@ -765,15 +762,10 @@ export default function OuterEdit(props) {
 						</BaseControl>
 					)}
 					<ToggleControl
-						label={__(
-							'Enable Mobile Focal Point',
-							'vk-blocks-pro'
-						)}
+						label={__('Enable Mobile Focal Point', 'vk-blocks-pro')}
 						checked={enableFocalPointMobile}
 						onChange={() => handleToggleChange('Mobile')}
-						disabled={
-							!bgImage && !bgImageTablet && !bgImageMobile
-						}
+						disabled={!bgImage && !bgImageTablet && !bgImageMobile}
 					/>
 					{enableFocalPointMobile && (
 						<BaseControl

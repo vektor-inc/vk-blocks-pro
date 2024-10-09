@@ -206,6 +206,18 @@ const blockAttributes9 = {
 		type: 'object',
 		default: { 'x': 0.5, 'y': 0.5 }
 	},
+	enableFocalPointPC: {
+	  type: 'boolean',
+	  default: false
+	},
+	enableFocalPointTablet: {
+	  type: 'boolean',
+	  default: false
+	},
+	enableFocalPointMobile: {
+	  type: 'boolean',
+	  default: false
+	},
 };
 
 const deprecated = [

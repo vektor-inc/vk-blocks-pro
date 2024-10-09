@@ -436,11 +436,14 @@ export default function OuterEdit(props) {
 		if ((bgImageTablet || bgImage) && !enableFocalPointTablet) {
 			setAttributes({ enableFocalPointTablet: true });
 		}
-		if ((bgImageMobile || bgImageTablet || bgImage) && !enableFocalPointMobile) {
+		if (
+			(bgImageMobile || bgImageTablet || bgImage) &&
+			!enableFocalPointMobile
+		) {
 			setAttributes({ enableFocalPointMobile: true });
 		}
 	}, [bgImage, bgImageTablet, bgImageMobile]);
-	
+
 	// 背景画像の削除時のフォーカルポイントの自動OFF処理
 	useEffect(() => {
 		if (!bgImage && enableFocalPointPC) {
@@ -449,10 +452,22 @@ export default function OuterEdit(props) {
 		if (!bgImageTablet && enableFocalPointTablet && !bgImage) {
 			setAttributes({ enableFocalPointTablet: false });
 		}
-		if (!bgImageMobile && enableFocalPointMobile && !bgImageTablet && !bgImage) {
+		if (
+			!bgImageMobile &&
+			enableFocalPointMobile &&
+			!bgImageTablet &&
+			!bgImage
+		) {
 			setAttributes({ enableFocalPointMobile: false });
 		}
-	}, [bgImage, bgImageTablet, bgImageMobile, enableFocalPointPC, enableFocalPointTablet, enableFocalPointMobile]);	
+	}, [
+		bgImage,
+		bgImageTablet,
+		bgImageMobile,
+		enableFocalPointPC,
+		enableFocalPointTablet,
+		enableFocalPointMobile,
+	]);
 
 	useEffect(() => {
 		const getFocalPoint = (device) => {

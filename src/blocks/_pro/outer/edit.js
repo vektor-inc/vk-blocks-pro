@@ -348,6 +348,7 @@ export default function OuterEdit(props) {
 
 	// useRefの定義
 	const blockRef = useRef(null);
+	const defaultFocalPoint = { x: 0.5, y: 0.5 };
 
 	// フォーカルポイントを背景位置に変換する関数
 	const coordsToBackgroundPosition = (value) => {
@@ -425,21 +426,6 @@ export default function OuterEdit(props) {
 			bgFocalPointMobile.y === undefined
 		) {
 			setAttributes({ bgFocalPointMobile: { x: 0.5, y: 0.5 } });
-		}
-	}, [bgImage, bgImageTablet, bgImageMobile]);
-
-	const defaultFocalPoint = { x: 0.5, y: 0.5 };
-
-	useEffect(() => {
-		// 画像が設定された場合に対応するフォーカルポイントを自動でONにする
-		if (bgImage && !enableFocalPointPC) {
-			setAttributes({ enableFocalPointPC: true });
-		}
-		if (bgImageTablet && !enableFocalPointTablet) {
-			setAttributes({ enableFocalPointTablet: true });
-		}
-		if (bgImageMobile && !enableFocalPointMobile) {
-			setAttributes({ enableFocalPointMobile: true });
 		}
 	}, [bgImage, bgImageTablet, bgImageMobile]);
 

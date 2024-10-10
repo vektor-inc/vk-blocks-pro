@@ -30,6 +30,127 @@ import { DisplayItemsControl } from '@vkblocks/components/display-items-control'
 import { AdvancedCheckboxControl } from '@vkblocks/components/advanced-checkbox-control';
 import { AdvancedToggleControl } from '@vkblocks/components/advanced-toggle-control';
 import { MultiItemSetting } from './multi-item-setting.js';
+import Swiper from 'swiper/bundle';
+
+const swiper = {};
+
+const LaunchSwiper = (attributes) => {
+	const {
+		pagination,
+		loop,
+		effect,
+		speed,
+		navigationPosition,
+		slidesPerGroup,
+		slidesPerViewMobile,
+		slidesPerViewTablet,
+		slidesPerViewPC,
+		centeredSlides,
+		blockId,
+	} = attributes;
+
+	const swiperSetting = {};
+
+	if (pagination) {
+		swiperSetting.pagination = {
+			el: '.swiper-pagination',
+			clickable: true,
+			type: pagination,
+			renderFraction(currentClass, totalClass) {
+				return (
+					'<span class="' +
+					currentClass +
+					'"></span>' +
+					' / ' +
+					'<span class="' +
+					totalClass +
+					'"></span>'
+				);
+			},
+		};
+	}
+
+	if (speed) {
+		swiperSetting.speed = speed;
+	}
+
+	if (effect) {
+		swiperSetting.effect = effect;
+	}
+
+	if (loop) {
+		swiperSetting.loop = loop;
+	}
+
+	if (navigationPosition) {
+		swiperSetting.navigation = {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		};
+	}
+
+	if (effect !== 'fade') {
+		if (slidesPerViewMobile) {
+			swiperSetting.slidesPerView = slidesPerViewMobile;
+			if (
+				slidesPerGroup &&
+				slidesPerGroup === 'slides-per-view' &&
+				Number.isInteger(slidesPerViewMobile)
+			) {
+				swiperSetting.slidesPerGroup = slidesPerViewMobile;
+			} else {
+				swiperSetting.slidesPerGroup = 1;
+			}
+		} else {
+			swiperSetting.slidesPerView = 1;
+			swiperSetting.slidesPerGroup = 1;
+		}
+
+		if (attributes.slidesPerViewTablet || attributes.slidesPerViewPC) {
+			// Responsive breakpoints
+			swiperSetting.breakpoints = {};
+			if (slidesPerViewTablet) {
+				swiperSetting.breakpoints[576] = {
+					slidesPerView: slidesPerViewTablet,
+				};
+				if (
+					slidesPerGroup &&
+					slidesPerGroup === 'slides-per-view' &&
+					Number.isInteger(slidesPerViewTablet)
+				) {
+					swiperSetting.breakpoints[576].slidesPerGroup =
+						slidesPerViewTablet;
+				}
+			}
+			if (slidesPerViewPC) {
+				swiperSetting.breakpoints[1024] = {
+					slidesPerView: slidesPerViewPC,
+				};
+				if (
+					slidesPerGroup &&
+					slidesPerGroup === 'slides-per-view' &&
+					Number.isInteger(slidesPerViewPC)
+				) {
+					swiperSetting.breakpoints[1024].slidesPerGroup =
+						slidesPerViewPC;
+				}
+			}
+		}
+
+		if (centeredSlides) {
+			swiperSetting.centeredSlides = centeredSlides;
+		}
+
+		swiper[blockId] = new Swiper(
+			`.vk_post_list_slider-${blockId}`,
+			swiperSetting
+		);
+		if (pagination === 'hide') {
+			swiper[blockId].pagination.destroy();
+		}
+	}
+};
+
 export default function PostListSliderEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const {
@@ -58,6 +179,8 @@ export default function PostListSliderEdit(props) {
 		navigationPosition,
 		blockId,
 	} = attributes;
+
+	LaunchSwiper(attributes);
 
 	// 以前の値を切り替え
 	useEffect(() => {

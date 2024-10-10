@@ -237,7 +237,6 @@ function vk_blocks_register_block_post_list_slider() {
 		__DIR__,
 		$assets
 	);
-
 }
 add_action( 'init', 'vk_blocks_register_block_post_list_slider', 99 );
 

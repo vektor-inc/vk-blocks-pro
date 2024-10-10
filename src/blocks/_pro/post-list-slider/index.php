@@ -230,6 +230,7 @@ function vk_blocks_register_block_post_list_slider() {
 			'script_handles'        => array(),
 			'editor_style_handles'  => array( 'vk-swiper-style', 'vk-blocks-build-editor-css' ),
 			'editor_script_handles' => array( 'vk-blocks-build-js' ),
+			'render_callback' => 'vk_blocks_post_list_slider_render_callback',
 		);
 	}
 

@@ -217,23 +217,27 @@ function vk_blocks_register_block_post_list_slider() {
 		);
 	}
 
-	// Register Script.
-	if ( ! is_admin() ) {
-		wp_register_script(
-			'vk-blocks/post-list-slider-script',
-			VK_BLOCKS_DIR_URL . 'build/vk-post-list-slider.min.js',
-			array( 'vk-swiper-script' ),
-			VK_BLOCKS_VERSION,
-			true
+	// クラシックテーマ & 6.5 環境で $assets = array() のように空にしないと重複登録になるため
+	// ここで初期化しておく
+	$assets = array(
+		'render_callback' => 'vk_blocks_post_list_slider_render_callback',
+	);
+	// Attend to load separate assets.
+	// 分割読み込みが有効な場合のみ、分割読み込み用のスクリプトを登録する
+	if ( method_exists( 'VK_Blocks_Block_Loader', 'should_load_separate_assets' ) && VK_Blocks_Block_Loader::should_load_separate_assets() ) {
+		$assets = array(
+			'style_handles'         => array( 'vk-blocks/post-list-slider' ),
+			'script_handles'        => array(),
+			'editor_style_handles'  => array( 'vk-swiper-style', 'vk-blocks-build-editor-css' ),
+			'editor_script_handles' => array( 'vk-blocks-build-js' ),
 		);
 	}
 
 	register_block_type(
 		__DIR__,
-		array(
-			'render_callback' => 'vk_blocks_post_list_slider_render_callback',
-		)
+		$assets
 	);
+
 }
 add_action( 'init', 'vk_blocks_register_block_post_list_slider', 99 );
 

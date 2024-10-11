@@ -341,6 +341,17 @@ export default function PostListSliderEdit(props) {
 				/>
 			</BlockControls>
 			<InspectorControls>
+				<BaseControl
+					id={'vk_postList-info'}
+					title={__('Infomation', 'vk-blocks-pro')}
+				>
+					<div className="alert alert-info font-size-11px">
+						{__(
+							'Please check the actual behavior on the live site.',
+							'vk-blocks-pro'
+						)}
+					</div>
+				</BaseControl>
 				<PanelBody
 					title={__('Display conditions', 'vk-blocks-pro')}
 					initialOpen={false}

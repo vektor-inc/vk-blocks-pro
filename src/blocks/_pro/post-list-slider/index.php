@@ -180,7 +180,7 @@ function vk_blocks_post_list_slider_render_callback( $attributes ) {
 
 	$html = '';
 
-	if ( $wp_query->have_posts() ) {
+	if ( ! empty( $wp_query ) && $wp_query->have_posts() ) {
 		$html .= '<div ' . $wrapper_attributes . '>';
 		$html .= '<div class="swiper-wrapper">';
 		while ( $wp_query->have_posts() ) {

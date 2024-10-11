@@ -7,7 +7,7 @@ export default function GoogleMapEdit({ attributes, setAttributes }) {
 
     // ブロック全体に適用するプロパティを取得
     const blockProps = useBlockProps({
-        className: 'vk-google-map',
+        className: 'vk-visual-embed',
     });
 
     return (
@@ -29,7 +29,7 @@ export default function GoogleMapEdit({ attributes, setAttributes }) {
             <div style={{ position: 'relative' }}>
                 {iframeCode && (
                     <div
-                        className="vk-google-map-preview"
+                        className="vk-visual-embed-preview"
                         dangerouslySetInnerHTML={{ __html: iframeCode }}
                         style={{ pointerEvents: 'none' }}
                     />

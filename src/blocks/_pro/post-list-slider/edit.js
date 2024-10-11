@@ -558,6 +558,10 @@ export default function PostListSliderEdit(props) {
 									value: 'media',
 									label: __('Media', 'vk-blocks-pro'),
 								},
+								{
+									value: 'postListText',
+									label: __('Text 1 Column', 'vk-blocks-pro'),
+								},
 							]}
 						/>
 					</BaseControl>

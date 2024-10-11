@@ -553,7 +553,7 @@ msgstr ""
 #: src/admin/margin.js:51
 #: src/blocks/_pro/accordion/edit.js:139
 #: src/blocks/_pro/outer/edit.js:1054
-#: src/blocks/_pro/post-list-slider/edit.js:571
+#: src/blocks/_pro/post-list-slider/edit.js:575
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:174
 #: src/blocks/button/edit.js:537
 #: src/blocks/slider/edit.js:927
@@ -564,7 +564,7 @@ msgstr ""
 #: src/admin/margin.js:55
 #: src/blocks/_pro/accordion/edit.js:122
 #: src/blocks/_pro/outer/edit.js:1038
-#: src/blocks/_pro/post-list-slider/edit.js:576
+#: src/blocks/_pro/post-list-slider/edit.js:580
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:201
 #: src/blocks/button/edit.js:472
 #: src/blocks/slider/edit.js:948
@@ -575,7 +575,7 @@ msgstr ""
 #: src/admin/margin.js:59
 #: src/blocks/_pro/accordion/edit.js:105
 #: src/blocks/_pro/outer/edit.js:1022
-#: src/blocks/_pro/post-list-slider/edit.js:581
+#: src/blocks/_pro/post-list-slider/edit.js:585
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:230
 #: src/blocks/button/edit.js:407
 #: src/blocks/slider/edit.js:969
@@ -856,7 +856,7 @@ msgid "2:3"
 msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:156
-#: src/blocks/_pro/post-list-slider/edit.js:567
+#: src/blocks/_pro/post-list-slider/edit.js:571
 #: src/blocks/slider/edit.js:915
 msgid "Height"
 msgstr ""
@@ -1545,7 +1545,7 @@ msgid "Display"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:155
-#: src/blocks/_pro/post-list-slider/edit.js:728
+#: src/blocks/_pro/post-list-slider/edit.js:732
 #: src/blocks/heading/edit.js:376
 #: src/blocks/slider/edit.js:1133
 msgid "Hide"
@@ -2088,57 +2088,62 @@ msgstr ""
 msgid "Media"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:587
+#: src/blocks/_pro/post-list-slider/edit.js:563
+#: src/components/column-layout-control/index.js:46
+msgid "Text 1 Column"
+msgstr ""
+
+#: src/blocks/_pro/post-list-slider/edit.js:591
 #: src/blocks/slider/edit.js:992
 msgid "Slider Settings"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:591
+#: src/blocks/_pro/post-list-slider/edit.js:595
 #: src/blocks/slider/edit.js:996
 msgid "Effect "
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:601
+#: src/blocks/_pro/post-list-slider/edit.js:605
 #: src/blocks/slider/edit.js:1006
 msgid "Slide"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:605
+#: src/blocks/_pro/post-list-slider/edit.js:609
 #: src/blocks/slider/edit.js:1010
 msgid "Fade"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:612
+#: src/blocks/_pro/post-list-slider/edit.js:616
 #: src/blocks/slider/edit.js:1017
 msgid "Loop "
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:622
+#: src/blocks/_pro/post-list-slider/edit.js:626
 #: src/blocks/slider/edit.js:1027
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:632
+#: src/blocks/_pro/post-list-slider/edit.js:636
 #: src/blocks/slider/edit.js:1037
 msgid "Stop AutoPlay when swipe"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:642
+#: src/blocks/_pro/post-list-slider/edit.js:646
 #: src/blocks/slider/edit.js:1047
 msgid "Display Time"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:669
+#: src/blocks/_pro/post-list-slider/edit.js:673
 #: src/blocks/slider/edit.js:1074
 msgid "Change Speed"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:693
+#: src/blocks/_pro/post-list-slider/edit.js:697
 #: src/blocks/slider/edit.js:1098
 msgid "Pagination Type"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:704
+#: src/blocks/_pro/post-list-slider/edit.js:708
 #: src/blocks/_pro/step-item/edit.js:137
 #: src/blocks/_pro/table-of-contents-new/edit.js:129
 #: src/blocks/_pro/timeline-item/edit.js:103
@@ -2149,24 +2154,24 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:708
+#: src/blocks/_pro/post-list-slider/edit.js:712
 #: src/blocks/slider/edit.js:1113
 msgid "Number of slides"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:721
+#: src/blocks/_pro/post-list-slider/edit.js:725
 #: src/blocks/slider/edit.js:1126
 msgid "Navigation Position"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:732
+#: src/blocks/_pro/post-list-slider/edit.js:736
 #: src/blocks/button/edit.js:365
 #: src/blocks/slider/edit.js:1137
 #: src/components/display-items-control/index.js:136
 msgid "Center"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:736
+#: src/blocks/_pro/post-list-slider/edit.js:740
 #: src/blocks/slider/edit.js:1141
 msgid "Bottom on Mobile device"
 msgstr ""
@@ -3346,10 +3351,6 @@ msgstr ""
 
 #: src/components/column-layout-control/index.js:20
 msgid "Card (Image Round)"
-msgstr ""
-
-#: src/components/column-layout-control/index.js:46
-msgid "Text 1 Column"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:65

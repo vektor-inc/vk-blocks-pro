@@ -114,6 +114,10 @@ class VK_Blocks_Global_Settings {
 				'is_deprecated' => true,
 			),
 			array(
+				'name'   => 'visual-embed',
+				'is_pro' => false,
+			),
+			array(
 				'name'   => 'accordion',
 				'is_pro' => true,
 			),

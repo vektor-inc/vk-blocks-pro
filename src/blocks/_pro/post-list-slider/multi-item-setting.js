@@ -1,4 +1,3 @@
-import { useSelect } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
 import {
 	PanelBody,
@@ -9,7 +8,7 @@ import {
 } from '@wordpress/components';
 
 export const MultiItemSetting = (props) => {
-	const { attributes, setAttributes, clientId } = props;
+	const { attributes, setAttributes } = props;
 	const {
 		slidesPerGroup,
 		slidesPerViewMobile,
@@ -17,12 +16,9 @@ export const MultiItemSetting = (props) => {
 		slidesPerViewPC,
 		loop,
 		effect,
+		numberPosts,
 		centeredSlides,
 	} = attributes;
-	// インナーブロックを取得
-	const innerBlocks = useSelect((select) =>
-		select('core/block-editor').getBlocks(clientId)
-	);
 
 	let demicalPointAlert = '';
 	if (slidesPerGroup === 'one-by-one') {
@@ -49,7 +45,7 @@ export const MultiItemSetting = (props) => {
 	const slidesPerViewAlert = (
 		<div className="text-danger font-size-11px">
 			{__(
-				'Enter integer divisors for the number of placed slide items for each display size.',
+				'Enter integer divisors for the number of posts for each display size.',
 				'vk-blocks-pro'
 			)}
 		</div>
@@ -58,7 +54,7 @@ export const MultiItemSetting = (props) => {
 	// 上記アラートを表示するか否かのモバイル時の処理
 	let slidesPerViewMobileAlert = '';
 	if (
-		innerBlocks.length % parseInt(slidesPerViewMobile) !== 0 &&
+		numberPosts % parseInt(slidesPerViewMobile) !== 0 &&
 		slidesPerGroup === 'slides-per-view'
 	) {
 		slidesPerViewMobileAlert = slidesPerViewAlert;
@@ -67,7 +63,7 @@ export const MultiItemSetting = (props) => {
 	// 上記アラートを表示するか否かのタブレット時の処理
 	let slidesPerViewTabletAlert = '';
 	if (
-		innerBlocks.length % parseInt(slidesPerViewTablet) !== 0 &&
+		numberPosts % parseInt(slidesPerViewTablet) !== 0 &&
 		slidesPerGroup === 'slides-per-view'
 	) {
 		slidesPerViewTabletAlert = slidesPerViewAlert;
@@ -76,7 +72,7 @@ export const MultiItemSetting = (props) => {
 	// 上記アラートを表示するか否かの PC 時の処理
 	let slidesPerViewPCAlert = '';
 	if (
-		innerBlocks.length % parseInt(slidesPerViewPC) !== 0 &&
+		numberPosts % parseInt(slidesPerViewPC) !== 0 &&
 		slidesPerGroup === 'slides-per-view'
 	) {
 		slidesPerViewPCAlert = slidesPerViewAlert;
@@ -88,7 +84,16 @@ export const MultiItemSetting = (props) => {
 		sloderPerViewLoopAlert = (
 			<div className="alert alert-danger font-size-11px">
 				{__(
-					'If you want to loop slides, the number of placed slide items must be greater than or equal to twice the number of items you want to display per view.',
+					'If you want to loop slides, the number of posts must be greater than or equal to twice the number of posts you want to display per view.',
+					'vk-blocks-pro'
+				)}
+			</div>
+		);
+	} else if (centeredSlides) {
+		sloderPerViewLoopAlert = (
+			<div className="alert alert-danger font-size-11px">
+				{__(
+					'If you want to loop slides, the number of posts must be greater than or equal to the number of posts you want to display per view + 2.',
 					'vk-blocks-pro'
 				)}
 			</div>
@@ -97,7 +102,7 @@ export const MultiItemSetting = (props) => {
 		sloderPerViewLoopAlert = (
 			<div className="alert alert-danger font-size-11px">
 				{__(
-					'If you want to loop slides, the number of placed slide items must be greater than or equal to the number of items you want to display per view + 1.',
+					'If you want to loop slides, the number of posts must be greater than or equal to the number of posts you want to display per view + 1.',
 					'vk-blocks-pro'
 				)}
 			</div>
@@ -114,26 +119,26 @@ export const MultiItemSetting = (props) => {
 	if (!!loop) {
 		if (
 			(slidesPerGroup === 'slides-per-view' &&
-				innerBlocks.length / slidesPerViewMobile < 2) ||
+				numberPosts / slidesPerViewMobile < 2) ||
 			(slidesPerGroup === 'one-by-one' &&
-				innerBlocks.length - (slidesPerViewMobile + 1) < 0)
+				numberPosts - (slidesPerViewMobile + 1) < 0)
 		) {
 			slidesPerViewMobileLoopAlert = sloderPerViewLoopAlert;
 		}
 		if (
 			(slidesPerGroup === 'slides-per-view' &&
-				innerBlocks.length / slidesPerViewTablet < 2) ||
+				numberPosts / slidesPerViewTablet < 2) ||
 			(slidesPerGroup === 'one-by-one' &&
-				innerBlocks.length - (slidesPerViewTablet + 1) < 0)
+				numberPosts - (slidesPerViewTablet + 1) < 0)
 		) {
 			slidesPerViewTabletLoopAlert = sloderPerViewLoopAlert;
 		}
 
 		if (
 			(slidesPerGroup === 'slides-per-view' &&
-				innerBlocks.length / slidesPerViewPC < 2) ||
+				numberPosts / slidesPerViewPC < 2) ||
 			(slidesPerGroup === 'one-by-one' &&
-				innerBlocks.length - (slidesPerViewPC + 1) < 0)
+				numberPosts - (slidesPerViewPC + 1) < 0)
 		) {
 			slidesPerViewPCLoopAlert = sloderPerViewLoopAlert;
 		}
@@ -155,7 +160,7 @@ export const MultiItemSetting = (props) => {
 				>
 					<p className="font-size-11px">
 						{__(
-							'Enter divisors for the number of placed slide items for each display size.',
+							'Enter divisors for the number of posts for each display size.',
 							'vk-blocks-pro'
 						)}
 						{__(
@@ -252,7 +257,7 @@ export const MultiItemSetting = (props) => {
 				</BaseControl>
 				<BaseControl
 					label={__(
-						'Number of items to change in a transition',
+						'Number of posts to change in a transition',
 						'vk-blocks-pro'
 					)}
 					id={`vk_slider-slidesPerGroup`}
@@ -267,7 +272,7 @@ export const MultiItemSetting = (props) => {
 							},
 							{
 								label: __(
-									'Same as the number of items to display',
+									'Same as the number of posts to display',
 									'vk-blocks-pro'
 								),
 								value: 'slides-per-view',
@@ -292,7 +297,7 @@ export const MultiItemSetting = (props) => {
 							setAttributes({ centeredSlides: checked })
 						}
 						help={__(
-							'If you specify the center, you can display items that are cut off on the left and right.',
+							'If you specify the center, you can display posts that are cut off on the left and right.',
 							'vk-blocks-pro'
 						)}
 					/>

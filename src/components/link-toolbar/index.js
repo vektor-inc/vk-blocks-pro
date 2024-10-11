@@ -19,7 +19,10 @@ const LinkPreview = ({
 	onCopy,
 }) => {
 	const displayURL =
-		linkUrl.startsWith('http://') || linkUrl.startsWith('https://') || linkUrl.startsWith('tel:') || linkUrl.startsWith('mailto:')
+		linkUrl.startsWith('http://') ||
+		linkUrl.startsWith('https://') ||
+		linkUrl.startsWith('tel:') ||
+		linkUrl.startsWith('mailto:')
 			? linkUrl
 			: 'http://' + linkUrl;
 

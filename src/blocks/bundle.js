@@ -34,6 +34,7 @@ import * as slider from './slider';
 import * as sliderItem from './slider-item';
 import * as spacer from './spacer';
 import * as staff from './staff';
+import * as staff from './visual-embed';
 
 /**
  * Store

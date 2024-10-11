@@ -164,8 +164,8 @@ $colorPalette: (
 @each $colorClass, $color in $colorPalette {
 	:root {
 		// 一般的なカラー設定
-		.vk-has-#{$colorClass}-background-color,
-		.has-vk-#{$colorClass}-background-color {
+		.vk-has-#{"#{$colorClass}"}-background-color,
+		.has-vk-#{"#{$colorClass}"}-background-color {
 			@if $colorClass == color-primary {
 				// color-primaryに関する特殊処理
 				background-color: var(--wp--preset--color--vk-color-primary, #337ab7);
@@ -174,8 +174,8 @@ $colorPalette: (
 			}
 		}
 
-		.vk-has-#{$colorClass}-color,
-		.has-vk-#{$colorClass}-color {
+		.vk-has-#{"#{$colorClass}"}-color,
+		.has-vk-#{"#{$colorClass}"}-color {
 			@if $colorClass == color-primary {
 				// color-primaryに関する特殊処理
 				color: var(--wp--preset--color--vk-color-primary, #337ab7);
@@ -210,7 +210,7 @@ ol {
 		&-vk-numbered-circle-mark,
 		&-vk-numbered-square-mark {
 			padding-inline-start: 2em;
-			&:not(.has-text-color), 
+			&:not(.has-text-color),
 			&:not(.has-link-color) {
 				color: initial;
 			}
@@ -379,8 +379,8 @@ ol {
 	}
 
 	@each $colorClass, $color in $colorPalette {
-		&.vk-has-#{$colorClass}-color,
-		&.has-vk-#{$colorClass}-color {
+		&.vk-has-#{"#{$colorClass}"}-color,
+		&.has-vk-#{"#{$colorClass}"}-color {
 			li::marker {
 				color: $color;
 			}
@@ -391,8 +391,8 @@ ol {
 
 		&.is-style-vk-numbered-circle-mark,
 		&.is-style-vk-numbered-square-mark {
-			&.vk-has-#{$colorClass}-color,
-			&.has-vk-#{$colorClass}-color {
+			&.vk-has-#{"#{$colorClass}"}-color,
+			&.has-vk-#{"#{$colorClass}"}-color {
 				li::before {
 					color: #fff;
 					background-color: $color;
@@ -454,7 +454,7 @@ ol {
 	}
 	&-vk-link {
 		position: absolute;
-		top: 0; 
+		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
@@ -464,8 +464,8 @@ ol {
 	}
 
 	@each $colorClass, $color in $colorPalette {
-		&.vk-has-#{$colorClass}-color,
-		&.has-vk-#{$colorClass}-color {
+		&.vk-has-#{"#{$colorClass}"}-color,
+		&.has-vk-#{"#{$colorClass}"}-color {
 			color: initial;
 			border-color: $color;
 			.wp-block-group__inner-container {
@@ -665,7 +665,7 @@ $xxl-min: 1400px;
 		position: relative;
 		.wp-block-column-vk-link {
 			position: absolute;
-			top: 0; 
+			top: 0;
 			left: 0;
 			width: 100%;
 			height: 100%;
@@ -689,7 +689,7 @@ $xxl-min: 1400px;
 	}
 	&-vk-link {
 		position: absolute;
-		top: 0; 
+		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;

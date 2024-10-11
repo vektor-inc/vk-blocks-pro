@@ -4,7 +4,7 @@ export default function save({ attributes }) {
 	const { iframeCode } = attributes;
 	const blockProps = useBlockProps.save();
 
-	// iframeCode 内の <a> タグに rel="noopener" を追加
+	// iframeCode 内の <a> タグに rel="noopener" を追加(リカバリーエラーになるため)
 	const updatedIframeCode = iframeCode.replace(/<a /g, '<a rel="noopener" ');
 
 	return (

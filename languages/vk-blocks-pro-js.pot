@@ -553,8 +553,8 @@ msgstr ""
 #: src/admin/margin.js:51
 #: src/blocks/_pro/accordion/edit.js:139
 #: src/blocks/_pro/outer/edit.js:1054
-#: src/blocks/_pro/post-list-slider/edit.js:697
-#: src/blocks/_pro/post-list-slider/multi-item-setting.js:169
+#: src/blocks/_pro/post-list-slider/edit.js:571
+#: src/blocks/_pro/post-list-slider/multi-item-setting.js:174
 #: src/blocks/button/edit.js:537
 #: src/blocks/slider/edit.js:927
 #: src/components/advanced-viewport-control/index.js:25
@@ -564,8 +564,8 @@ msgstr ""
 #: src/admin/margin.js:55
 #: src/blocks/_pro/accordion/edit.js:122
 #: src/blocks/_pro/outer/edit.js:1038
-#: src/blocks/_pro/post-list-slider/edit.js:702
-#: src/blocks/_pro/post-list-slider/multi-item-setting.js:196
+#: src/blocks/_pro/post-list-slider/edit.js:576
+#: src/blocks/_pro/post-list-slider/multi-item-setting.js:201
 #: src/blocks/button/edit.js:472
 #: src/blocks/slider/edit.js:948
 #: src/components/advanced-viewport-control/index.js:32
@@ -575,8 +575,8 @@ msgstr ""
 #: src/admin/margin.js:59
 #: src/blocks/_pro/accordion/edit.js:105
 #: src/blocks/_pro/outer/edit.js:1022
-#: src/blocks/_pro/post-list-slider/edit.js:707
-#: src/blocks/_pro/post-list-slider/multi-item-setting.js:225
+#: src/blocks/_pro/post-list-slider/edit.js:581
+#: src/blocks/_pro/post-list-slider/multi-item-setting.js:230
 #: src/blocks/button/edit.js:407
 #: src/blocks/slider/edit.js:969
 #: src/components/advanced-viewport-control/index.js:41
@@ -856,7 +856,7 @@ msgid "2:3"
 msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:156
-#: src/blocks/_pro/post-list-slider/edit.js:693
+#: src/blocks/_pro/post-list-slider/edit.js:567
 #: src/blocks/slider/edit.js:915
 msgid "Height"
 msgstr ""
@@ -1009,7 +1009,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/edit.js:182
 #: src/blocks/_pro/card/edit.js:134
 #: src/blocks/_pro/icon-card/edit.js:75
-#: src/blocks/_pro/post-list-slider/edit.js:599
+#: src/blocks/_pro/post-list-slider/edit.js:477
 #: src/blocks/_pro/post-list/edit.js:442
 msgid "Title"
 msgstr ""
@@ -1119,7 +1119,7 @@ msgid "Check your settings from the settings sidebar."
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:115
-#: src/blocks/_pro/post-list-slider/edit.js:467
+#: src/blocks/_pro/post-list-slider/edit.js:345
 #: src/blocks/_pro/post-list/edit.js:310
 msgid "Display conditions"
 msgstr ""
@@ -1129,7 +1129,7 @@ msgid "Parent"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:134
-#: src/blocks/_pro/post-list-slider/edit.js:637
+#: src/blocks/_pro/post-list-slider/edit.js:515
 #: src/blocks/_pro/post-list/edit.js:480
 msgid "Ignore this post"
 msgstr ""
@@ -1375,7 +1375,7 @@ msgid ""
 msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:85
-#: src/blocks/_pro/post-list-slider/edit.js:648
+#: src/blocks/_pro/post-list-slider/edit.js:526
 #: src/blocks/_pro/table-of-contents-new/edit.js:114
 #: src/components/column-layout-control/index.js:69
 msgid "Display type"
@@ -1545,7 +1545,7 @@ msgid "Display"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:155
-#: src/blocks/_pro/post-list-slider/edit.js:854
+#: src/blocks/_pro/post-list-slider/edit.js:728
 #: src/blocks/heading/edit.js:376
 #: src/blocks/slider/edit.js:1133
 msgid "Hide"
@@ -1945,205 +1945,200 @@ msgstr ""
 msgid "Auto"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:385
+#: src/blocks/_pro/post-list-slider/edit.js:263
 #: src/blocks/_pro/post-list/edit.js:237
 #. Filter by %s
 msgid "Filter by %s"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:471
+#: src/blocks/_pro/post-list-slider/edit.js:349
 #: src/blocks/_pro/post-list/edit.js:314
 msgid "Filter by PostTypes"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:484
+#: src/blocks/_pro/post-list-slider/edit.js:362
 #: src/blocks/_pro/post-list/edit.js:327
 msgid "Taxonomy filter condition"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:495
+#: src/blocks/_pro/post-list-slider/edit.js:373
 #: src/blocks/_pro/post-list/edit.js:338
 msgid "OR ( Whichever apply )"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:505
+#: src/blocks/_pro/post-list-slider/edit.js:383
 #: src/blocks/_pro/post-list/edit.js:348
 msgid "AND ( All apply )"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:511
+#: src/blocks/_pro/post-list-slider/edit.js:389
 #: src/blocks/_pro/post-list/edit.js:354
 msgid "Number of Posts"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:524
+#: src/blocks/_pro/post-list-slider/edit.js:402
 #: src/blocks/_pro/post-list/edit.js:367
 msgid "Filter by Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:528
+#: src/blocks/_pro/post-list-slider/edit.js:406
 #: src/blocks/_pro/post-list/edit.js:371
 msgid "Period of Time"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:536
+#: src/blocks/_pro/post-list-slider/edit.js:414
 #: src/blocks/_pro/post-list/edit.js:379
 msgid "Whole Period"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:540
+#: src/blocks/_pro/post-list-slider/edit.js:418
 #: src/blocks/_pro/post-list/edit.js:383
 msgid "From Today"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:544
+#: src/blocks/_pro/post-list-slider/edit.js:422
 #: src/blocks/_pro/post-list/edit.js:387
 msgid "From Now"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:548
+#: src/blocks/_pro/post-list-slider/edit.js:426
 #: src/blocks/_pro/post-list/edit.js:391
 msgid "From Tomorrow"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:553
+#: src/blocks/_pro/post-list-slider/edit.js:431
 #: src/blocks/_pro/post-list/edit.js:396
 msgid ""
 "* If you choose a future period, you will need to customize it so that "
 "future posts will be published immediately."
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:560
+#: src/blocks/_pro/post-list-slider/edit.js:438
 #: src/blocks/_pro/post-list/edit.js:403
 msgid "Order"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:569
+#: src/blocks/_pro/post-list-slider/edit.js:447
 #: src/blocks/_pro/post-list/edit.js:412
 msgid "ASC"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:573
+#: src/blocks/_pro/post-list-slider/edit.js:451
 #: src/blocks/_pro/post-list/edit.js:416
 msgid "DESC"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:579
+#: src/blocks/_pro/post-list-slider/edit.js:457
 #: src/blocks/_pro/post-list/edit.js:422
 msgid "Order by"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:588
+#: src/blocks/_pro/post-list-slider/edit.js:466
 #: src/blocks/_pro/post-list/edit.js:431
 msgid "Published Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:595
+#: src/blocks/_pro/post-list-slider/edit.js:473
 #: src/blocks/_pro/post-list/edit.js:438
 msgid "Modefied Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:603
+#: src/blocks/_pro/post-list-slider/edit.js:481
 #: src/blocks/_pro/post-list/edit.js:446
 msgid "Random"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:609
+#: src/blocks/_pro/post-list-slider/edit.js:487
 #: src/blocks/_pro/post-list/edit.js:452
 msgid "offset"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:625
+#: src/blocks/_pro/post-list-slider/edit.js:503
 #: src/blocks/_pro/post-list/edit.js:468
 msgid "Display from the first post always"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:631
+#: src/blocks/_pro/post-list-slider/edit.js:509
 #: src/blocks/_pro/post-list/edit.js:474
 msgid "Display from the first post even on pages beyond the second page."
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:659
+#: src/blocks/_pro/post-list-slider/edit.js:537
 #: src/components/column-layout-control/index.js:26
 msgid "Card"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:663
+#: src/blocks/_pro/post-list-slider/edit.js:541
 #: src/components/column-layout-control/index.js:30
 msgid "Card (No border)"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:670
+#: src/blocks/_pro/post-list-slider/edit.js:548
 #: src/components/column-layout-control/index.js:34
 msgid "Card (Intext)"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:674
+#: src/blocks/_pro/post-list-slider/edit.js:552
 #: src/components/column-layout-control/index.js:38
 msgid "Card (Horizontal)"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:681
+#: src/blocks/_pro/post-list-slider/edit.js:559
 #: src/components/column-layout-control/index.js:42
 msgid "Media"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:685
-#: src/components/column-layout-control/index.js:46
-msgid "Text 1 Column"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:713
+#: src/blocks/_pro/post-list-slider/edit.js:587
 #: src/blocks/slider/edit.js:992
 msgid "Slider Settings"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:717
+#: src/blocks/_pro/post-list-slider/edit.js:591
 #: src/blocks/slider/edit.js:996
 msgid "Effect "
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:727
+#: src/blocks/_pro/post-list-slider/edit.js:601
 #: src/blocks/slider/edit.js:1006
 msgid "Slide"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:731
+#: src/blocks/_pro/post-list-slider/edit.js:605
 #: src/blocks/slider/edit.js:1010
 msgid "Fade"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:738
+#: src/blocks/_pro/post-list-slider/edit.js:612
 #: src/blocks/slider/edit.js:1017
 msgid "Loop "
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:748
+#: src/blocks/_pro/post-list-slider/edit.js:622
 #: src/blocks/slider/edit.js:1027
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:758
+#: src/blocks/_pro/post-list-slider/edit.js:632
 #: src/blocks/slider/edit.js:1037
 msgid "Stop AutoPlay when swipe"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:768
+#: src/blocks/_pro/post-list-slider/edit.js:642
 #: src/blocks/slider/edit.js:1047
 msgid "Display Time"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:795
+#: src/blocks/_pro/post-list-slider/edit.js:669
 #: src/blocks/slider/edit.js:1074
 msgid "Change Speed"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:819
+#: src/blocks/_pro/post-list-slider/edit.js:693
 #: src/blocks/slider/edit.js:1098
 msgid "Pagination Type"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:830
+#: src/blocks/_pro/post-list-slider/edit.js:704
 #: src/blocks/_pro/step-item/edit.js:137
 #: src/blocks/_pro/table-of-contents-new/edit.js:129
 #: src/blocks/_pro/timeline-item/edit.js:103
@@ -2154,110 +2149,105 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:834
+#: src/blocks/_pro/post-list-slider/edit.js:708
 #: src/blocks/slider/edit.js:1113
 msgid "Number of slides"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:847
+#: src/blocks/_pro/post-list-slider/edit.js:721
 #: src/blocks/slider/edit.js:1126
 msgid "Navigation Position"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:858
+#: src/blocks/_pro/post-list-slider/edit.js:732
 #: src/blocks/button/edit.js:365
 #: src/blocks/slider/edit.js:1137
 #: src/components/display-items-control/index.js:136
 msgid "Center"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:862
+#: src/blocks/_pro/post-list-slider/edit.js:736
 #: src/blocks/slider/edit.js:1141
 msgid "Bottom on Mobile device"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/multi-item-setting.js:146
+#: src/blocks/_pro/post-list-slider/multi-item-setting.js:104
+msgid ""
+"If you want to loop slides, the number of posts must be greater than or "
+"equal to the number of posts you want to display per view + 1."
+msgstr ""
+
+#: src/blocks/_pro/post-list-slider/multi-item-setting.js:151
 #: src/blocks/slider/edit.js:642
 msgid "Multi-item Display Setting"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/multi-item-setting.js:150
+#: src/blocks/_pro/post-list-slider/multi-item-setting.js:155
 #: src/blocks/slider/edit.js:646
 msgid "Number of Items to display per view"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/multi-item-setting.js:157
-#: src/blocks/slider/edit.js:653
-msgid "Enter divisors for the number of placed slide items for each display size."
+#: src/blocks/_pro/post-list-slider/multi-item-setting.js:162
+msgid "Enter divisors for the number of posts for each display size."
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/multi-item-setting.js:161
+#: src/blocks/_pro/post-list-slider/multi-item-setting.js:166
 #: src/blocks/slider/edit.js:657
 msgid "If the number is not divisible, the sliding behaviour will be unnatural"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/multi-item-setting.js:254
-#: src/blocks/slider/edit.js:750
-msgid "Number of items to change in a transition"
+#: src/blocks/_pro/post-list-slider/multi-item-setting.js:259
+msgid "Number of posts to change in a transition"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/multi-item-setting.js:265
-#: src/blocks/slider/edit.js:761
-msgid "One by One"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/multi-item-setting.js:269
-#: src/blocks/slider/edit.js:765
-msgid "Same as the number of items to display"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/multi-item-setting.js:285
-#: src/blocks/slider/edit.js:781
-msgid "Centering the active slide"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/multi-item-setting.js:294
-#: src/blocks/slider/edit.js:790
-msgid ""
-"If you specify the center, you can display items that are cut off on the "
-"left and right."
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/multi-item-setting.js:31
+#: src/blocks/_pro/post-list-slider/multi-item-setting.js:27
 #: src/blocks/slider/edit.js:499
 msgid ""
 "If you specifying a numbers with decimals such as 1.5, Please set "
 "\"Centering the active slide\""
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/multi-item-setting.js:40
+#: src/blocks/_pro/post-list-slider/multi-item-setting.js:270
+#: src/blocks/slider/edit.js:761
+msgid "One by One"
+msgstr ""
+
+#: src/blocks/_pro/post-list-slider/multi-item-setting.js:274
+msgid "Same as the number of posts to display"
+msgstr ""
+
+#: src/blocks/_pro/post-list-slider/multi-item-setting.js:290
+#: src/blocks/slider/edit.js:781
+msgid "Centering the active slide"
+msgstr ""
+
+#: src/blocks/_pro/post-list-slider/multi-item-setting.js:299
+msgid ""
+"If you specify the center, you can display posts that are cut off on the "
+"left and right."
+msgstr ""
+
+#: src/blocks/_pro/post-list-slider/multi-item-setting.js:36
 #: src/blocks/slider/edit.js:508
 msgid ""
 "The decimal point can be set for the display number only when the display "
 "is switched one by one."
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/multi-item-setting.js:51
-#: src/blocks/slider/edit.js:519
-msgid ""
-"Enter integer divisors for the number of placed slide items for each "
-"display size."
+#: src/blocks/_pro/post-list-slider/multi-item-setting.js:47
+msgid "Enter integer divisors for the number of posts for each display size."
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/multi-item-setting.js:90
-#: src/blocks/slider/edit.js:558
+#: src/blocks/_pro/post-list-slider/multi-item-setting.js:86
 msgid ""
-"If you want to loop slides, the number of placed slide items must be "
-"greater than or equal to twice the number of items you want to display per "
-"view."
+"If you want to loop slides, the number of posts must be greater than or "
+"equal to twice the number of posts you want to display per view."
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/multi-item-setting.js:99
-#: src/blocks/slider/edit.js:567
+#: src/blocks/_pro/post-list-slider/multi-item-setting.js:95
 msgid ""
-"If you want to loop slides, the number of placed slide items must be "
-"greater than or equal to the number of items you want to display per view + "
-"1."
+"If you want to loop slides, the number of posts must be greater than or "
+"equal to the number of posts you want to display per view + 2."
 msgstr ""
 
 #: src/blocks/_pro/post-new-badge/edit.js:59
@@ -3179,6 +3169,44 @@ msgstr ""
 msgid "repeat"
 msgstr ""
 
+#: src/blocks/slider/edit.js:519
+msgid ""
+"Enter integer divisors for the number of placed slide items for each "
+"display size."
+msgstr ""
+
+#: src/blocks/slider/edit.js:558
+msgid ""
+"If you want to loop slides, the number of placed slide items must be "
+"greater than or equal to twice the number of items you want to display per "
+"view."
+msgstr ""
+
+#: src/blocks/slider/edit.js:567
+msgid ""
+"If you want to loop slides, the number of placed slide items must be "
+"greater than or equal to the number of items you want to display per view + "
+"1."
+msgstr ""
+
+#: src/blocks/slider/edit.js:653
+msgid "Enter divisors for the number of placed slide items for each display size."
+msgstr ""
+
+#: src/blocks/slider/edit.js:750
+msgid "Number of items to change in a transition"
+msgstr ""
+
+#: src/blocks/slider/edit.js:765
+msgid "Same as the number of items to display"
+msgstr ""
+
+#: src/blocks/slider/edit.js:790
+msgid ""
+"If you specify the center, you can display items that are cut off on the "
+"left and right."
+msgstr ""
+
 #: src/blocks/slider/edit.js:849
 msgid "Change Slide Editor Mode"
 msgstr ""
@@ -3318,6 +3346,10 @@ msgstr ""
 
 #: src/components/column-layout-control/index.js:20
 msgid "Card (Image Round)"
+msgstr ""
+
+#: src/components/column-layout-control/index.js:46
+msgid "Text 1 Column"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:65

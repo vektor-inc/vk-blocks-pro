@@ -1,0 +1,18 @@
+{
+    "apiVersion": 2,
+    "name": "vk-blocks/visual-embed",
+    "title": "Visual Embed",
+    "description": "Embed content using iFrames and see a live preview directly in the editor. Perfect for embedding maps, forms, and other interactive content with ease.",
+    "category": "vk-blocks-cat",
+    "attributes": {
+        "iframeCode": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "supports": {
+        "html": false,
+        "className": true,
+        "align": [ "wide", "full" ]
+    }
+}

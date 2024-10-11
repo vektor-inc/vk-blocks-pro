@@ -1,18 +1,18 @@
 {
-    "apiVersion": 2,
-    "name": "vk-blocks/visual-embed",
-    "title": "Visual Embed",
-    "description": "Embed content using iFrames and see a live preview directly in the editor. Perfect for embedding maps, forms, and other interactive content with ease.",
-    "category": "vk-blocks-cat",
-    "attributes": {
-        "iframeCode": {
-            "type": "string",
-            "default": ""
-        }
-    },
-    "supports": {
-        "html": false,
-        "className": true,
-        "align": [ "wide", "full" ]
-    }
+	"apiVersion": 2,
+	"name": "vk-blocks/visual-embed",
+	"title": "Visual Embed",
+	"description": "Easily embed maps and other content with a live preview in the editor.",
+	"category": "vk-blocks-cat",
+	"attributes": {
+		"iframeCode": {
+			"type": "string",
+			"default": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sus!4v1609459543842!5m2!1sen!2sus\" width=\"100%\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+		}
+	},
+	"supports": {
+		"html": false,
+		"className": true,
+		"align": [ "wide", "full" ]
+	}
 }

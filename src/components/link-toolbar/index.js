@@ -19,7 +19,7 @@ const LinkPreview = ({
 	onCopy,
 }) => {
 	const displayURL =
-		linkUrl.startsWith('http://') || linkUrl.startsWith('https://')
+		linkUrl.startsWith('http://') || linkUrl.startsWith('https://') || linkUrl.startsWith('tel:') || linkUrl.startsWith('mailto:')
 			? linkUrl
 			: 'http://' + linkUrl;
 
@@ -214,6 +214,8 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 			url.startsWith('https://') ||
 			url.startsWith('/') ||
 			url.startsWith('#') ||
+			url.startsWith('tel:') ||
+			url.startsWith('mailto:') ||
 			url === ''
 		) {
 			return url;

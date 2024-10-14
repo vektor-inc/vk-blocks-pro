@@ -5,19 +5,19 @@ defaultConfig.module.rules.splice(0, 1) // JSをトランスパイルするル�
 
 // path 操作用のモジュールをインポート
 const path = require( 'path' );
-module.exports = (env = {}) => {
+module.exports = (env = {}, argv) => {
 	// env.enableCache が true ならキャッシュを有効にする
 	const isCacheEnabled = env.enableCache === 'true';
-  
+
 	defaultConfig.module.rules.splice(0, 1);
-  
+
 	let entries = {
 	  'block': path.join(__dirname, 'src/blocks/index.js'),
 	  'admin': path.join(__dirname, 'src/admin/index.js'),
 	};
-  
+
 	let webpackCacheConfig = false;
-  
+
 	if (isCacheEnabled) {
 		webpackCacheConfig = {
 			type: 'filesystem',
@@ -27,8 +27,14 @@ module.exports = (env = {}) => {
 		};
 	}
 
+	let sourceMap = false;
+	if (argv.mode === 'development') {
+		sourceMap = 'source-map';
+	}
 	return {
 		...defaultConfig,
+		mode: argv.mode,
+		devtool: sourceMap, // ソースマップの生成を有効にする設定
 		entry: entries,
 		cache: webpackCacheConfig,
 		output: {

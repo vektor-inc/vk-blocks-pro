@@ -6,6 +6,7 @@ defaultConfig.module.rules.splice(0, 1) // JSをトランスパイルするル�
 // path 操作用のモジュールをインポート
 const path = require( 'path' );
 module.exports = (env = {}, argv) => {
+
 	// env.enableCache が true ならキャッシュを有効にする
 	const isCacheEnabled = env.enableCache === 'true';
 

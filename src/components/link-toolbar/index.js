@@ -19,7 +19,10 @@ const LinkPreview = ({
 	onCopy,
 }) => {
 	const displayURL =
-		linkUrl.startsWith('http://') || linkUrl.startsWith('https://')
+		linkUrl.startsWith('http://') ||
+		linkUrl.startsWith('https://') ||
+		linkUrl.startsWith('tel:') ||
+		linkUrl.startsWith('mailto:')
 			? linkUrl
 			: 'http://' + linkUrl;
 
@@ -106,31 +109,40 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 			const formattedUrl = formatUrl(linkUrl);
 			const isExternalLink =
 				!formattedUrl.startsWith(window.location.origin) &&
-				!formattedUrl.startsWith('#');
+				!formattedUrl.startsWith('#'); // 外部リンクかどうか判定
 
-			const fetchTitle = function (url) {
-				if (url.startsWith('#')) {
-					return Promise.resolve(url); // アンカーリンクの場合はそのまま返す
-				}
-				return fetch(url, { method: 'GET' })
-					.then((response) => response.text())
-					.then((text) => {
-						const titleMatch = text.match(/<title>(.*?)<\/title>/i);
-						return titleMatch ? titleMatch[1] : url;
-					})
-					.catch(() => {
-						return url;
-					});
-			};
+			// 外部リンクの場合はプレビュー（タイトル取得）をスキップする
+			if (!isExternalLink) {
+				const fetchTitle = function (url) {
+					if (url.startsWith('#')) {
+						return Promise.resolve(url); // アンカーリンクの場合はそのまま返す
+					}
+					return fetch(url, { method: 'GET' })
+						.then((response) => response.text())
+						.then((text) => {
+							const titleMatch = text.match(
+								/<title>(.*?)<\/title>/i
+							);
+							return titleMatch ? titleMatch[1] : url;
+						})
+						.catch(() => {
+							return url;
+						});
+				};
 
-			fetchTitle(formattedUrl).then((title) => {
-				setLinkTitle(title);
-			});
+				fetchTitle(formattedUrl).then((title) => {
+					setLinkTitle(title);
+				});
+			} else {
+				// 外部リンクの場合はそのままリンクURLをタイトルとして設定する
+				setLinkTitle(formattedUrl);
+			}
 
+			// アイコン設定
 			if (isExternalLink) {
-				setIcon(globe);
+				setIcon(globe); // 外部リンクの場合は地球アイコン
 			} else if (formattedUrl.startsWith('#')) {
-				setIcon(globe);
+				setIcon(globe); // アンカーリンクにも地球アイコンを使用
 			} else {
 				try {
 					const domain = new URL(formattedUrl).origin;
@@ -205,6 +217,8 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 			url.startsWith('https://') ||
 			url.startsWith('/') ||
 			url.startsWith('#') ||
+			url.startsWith('tel:') ||
+			url.startsWith('mailto:') ||
 			url === ''
 		) {
 			return url;

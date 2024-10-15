@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.3
 Tested up to: 6.6
-Stable tag: 1.85.1.1
+Stable tag: 1.86.1.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -107,12 +107,25 @@ e.g.
 == Changelog ==
 
 [ Specification change ][ Grid Column Card (Pro) ] Changed the default settings of headerDisplay and footerDisplay from "Delete" to "Display".
+[ Bug fix ][ Link Component ] Fix adding "http://" with "tel:" and "mailto:" link.
+
+= 1.87.0 =
+[ Add function ][ Link Toolbar ] Added to skip retrieving metadata (title and favicon) for external links in link toolbar to prevent CORS errors.
+[ Add function ][ icon ] Add toolbar link for components.
+[ Bug fix ][ Slider ] Adjusting the timing of loading swiper to prevent the slider from collapsing.
+[ Bug fix ][ Grid Column Card (Pro) ] Add translation.
+[ Bug fix ][ Category Badge (Pro) ] Added Pro label to the inserter.
+
+= 1.86.1 =
+[ Bug fix ] Roll back 1.85.1
+
+= 1.86.0 =
+[ Add function ] [ Fixed Display (Pro) ] Added an option for "Fixed display from the bottom."
+[ Add function ] Added to apply the vk-scroll-hint class to all elements with the vk_hidden and vk_hidden-XXX classes.
 [ Bug fix ][ Core/table ] Fixed the class was not removed when table scrolling was disabled.
 [ Bug fix ] Fix load styles when separate load is enable.
 [ Bug fix ][ Tab (Pro) ] Added a process to dynamically calculate and set the iframe height when the tab becomes active.
-[ Bug Fix ] Fixed an issue where disabling separated loading caused all block CSS to load.
-[ Add function ] [ Fixed Display (Pro) ] Added an option for "Fixed display from the bottom."
-[ Add function ] Added to apply the vk-scroll-hint class to all elements with the vk_hidden and vk_hidden-XXX classes.
+[ Bug fix ] Fixed an issue where disabling separated loading caused all block CSS to load.
 
 = 1.85.1 =
 [ Bug fix ] Due to an issue where the hidden setting does not function properly when TreeShaking is enabled and CSS splitting is disabled, TreeShaking has been temporarily disabled as a workaround.
@@ -140,7 +153,7 @@ e.g.
 
 = 1.83.0 =
 [ Add function ][ Alert ] Add icon setting and inner block.
-[ Bug fix ][ Grid Column Card ] Fixed an issue where using a synced pattern would cause the destination edit page to crash.
+[ Bug fix ][ Grid Column Card (Pro) ] Fixed an issue where using a synced pattern would cause the destination edit page to crash.
 [ Bug fix ][ Core List ] Add support for handling list color in old settings.
 [ Bug fix ][ Tab Item ] When duplicating an active tab-item block, no more than one tab-item block becomes active.
 

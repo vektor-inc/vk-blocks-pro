@@ -14,7 +14,11 @@ export default function save({ attributes }) {
 	} = attributes;
 
 	const blockProps = useBlockProps.save({
-		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} vk_fixed-display-position-from-${fixedPositionType} vk_fixed-display-${blockId}`,
+		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} ${
+			['right', 'left'].includes(position)
+				? `vk_fixed-display-position-from-${fixedPositionType}`
+				: ''
+		} vk_fixed-display-${blockId}`,
 		style: {
 			[fixedPositionType]: ['right', 'left'].includes(position)
 				? `${fixedPositionValue}${fixedPositionUnit}`

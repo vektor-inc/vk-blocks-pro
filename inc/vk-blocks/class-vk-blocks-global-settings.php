@@ -232,6 +232,10 @@ class VK_Blocks_Global_Settings {
 				'is_pro' => true,
 			),
 			array(
+				'name'   => 'post-list-slider',
+				'is_pro' => true,
+			),
+			array(
 				'name'   => 'post-new-badge',
 				'is_pro' => true,
 			),

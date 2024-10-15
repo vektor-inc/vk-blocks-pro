@@ -1,4 +1,4 @@
-import save1_83_0 from './1.83.0/save';
+import save1_87_0 from './1.87.0/save';
 
 const blockAttributes = {
 	footerDisplay: {
@@ -10,7 +10,7 @@ const blockAttributes = {
 const deprecated = [
 	{
 		attributes: blockAttributes,
-		save: save1_83_0,
+		save: save1_87_0,
 	},
 ];
 export default deprecated;

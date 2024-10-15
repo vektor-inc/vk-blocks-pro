@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Link Component ] Fix adding "http://" with "tel:" and "mailto:" link.
+
 = 1.87.0 =
 [ Add function ][ Link Toolbar ] Added to skip retrieving metadata (title and favicon) for external links in link toolbar to prevent CORS errors.
 [ Add function ][ icon ] Add toolbar link for components.

@@ -3,20 +3,7 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 export default function Edit(props) {
 	const { attributes } = props;
 	const { footerDisplay } = attributes;
-
-	// "core/buttons" ブロックを中央寄せに設定
-	const TEMPLATE = [
-		[
-			'core/buttons',
-			{
-				layout: {
-					type: 'flex',
-					justifyContent: 'center',
-				},
-			},
-		],
-	];
-
+	const TEMPLATE = [['core/buttons']];
 	const ALLOWED_BLOCKS = [
 		'vk-blocks/button',
 		'vk-blocks/button-outer',

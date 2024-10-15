@@ -40,7 +40,9 @@ export default function save({ attributes }) {
 	}
 
 	const blockProps = useBlockProps.save({
-		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} vk_fixed-display-position-from-${fixedPositionType} vk_fixed-display-${blockId}`,
+		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} ${
+			fixedPositionType !== undefined ? `vk_fixed-display-position-from-${fixedPositionType}` : ''
+		} vk_fixed-display-${blockId}`,
 		style: {
 			[fixedPositionType]: ['right', 'left'].includes(position)
 				? `${fixedPositionValue}${fixedPositionUnit}`

@@ -42,8 +42,12 @@ export default function FixedDisplayEdit(props) {
 		dontShowAgain,
 	} = attributes;
 
-	const [tempDisplayAfterSeconds, setTempDisplayAfterSeconds] = useState(displayAfterSeconds || '0');
-	const [tempHideAfterSeconds, setTempHideAfterSeconds] = useState(hideAfterSeconds || '0');
+	const [tempDisplayAfterSeconds, setTempDisplayAfterSeconds] = useState(
+		displayAfterSeconds || '0'
+	);
+	const [tempHideAfterSeconds, setTempHideAfterSeconds] = useState(
+		hideAfterSeconds || '0'
+	);
 
 	useEffect(() => {
 		if (
@@ -65,7 +69,7 @@ export default function FixedDisplayEdit(props) {
 
 	const handlePositionChange = (newPosition) => {
 		if (['top', 'bottom'].includes(newPosition)) {
-			setAttributes({ fixedPositionType: undefined });
+			setAttributes({ fixedPositionType: '' });
 		}
 		setAttributes({ position: newPosition });
 	};
@@ -230,7 +234,12 @@ export default function FixedDisplayEdit(props) {
 						checked={displayAfterSeconds > 0}
 						onChange={(value) => {
 							if (value) {
-								setAttributes({ displayAfterSeconds: Math.max(0.1, displayAfterSeconds || 0.1) });
+								setAttributes({
+									displayAfterSeconds: Math.max(
+										0.1,
+										displayAfterSeconds || 0.1
+									),
+								});
 							} else {
 								setAttributes({ displayAfterSeconds: 0 });
 							}
@@ -244,12 +253,19 @@ export default function FixedDisplayEdit(props) {
 								setTempDisplayAfterSeconds(value);
 							}}
 							onBlur={() => {
-								const parsedValue = parseFloat(tempDisplayAfterSeconds);
-								const finalValue = isNaN(parsedValue) || parsedValue < 0.1 ? 0.1 : parsedValue;
+								const parsedValue = parseFloat(
+									tempDisplayAfterSeconds
+								);
+								const finalValue =
+									isNaN(parsedValue) || parsedValue < 0.1
+										? 0.1
+										: parsedValue;
 								setAttributes({
 									displayAfterSeconds: finalValue,
 								});
-								setTempDisplayAfterSeconds(finalValue.toString());
+								setTempDisplayAfterSeconds(
+									finalValue.toString()
+								);
 							}}
 							type="number"
 							min="0.1"
@@ -261,7 +277,12 @@ export default function FixedDisplayEdit(props) {
 						checked={hideAfterSeconds > 0}
 						onChange={(value) => {
 							if (value) {
-								setAttributes({ hideAfterSeconds: Math.max(0.1, hideAfterSeconds || 0.1) });
+								setAttributes({
+									hideAfterSeconds: Math.max(
+										0.1,
+										hideAfterSeconds || 0.1
+									),
+								});
 							} else {
 								setAttributes({ hideAfterSeconds: 0 });
 							}
@@ -275,17 +296,21 @@ export default function FixedDisplayEdit(props) {
 								setTempHideAfterSeconds(value);
 							}}
 							onBlur={() => {
-								const parsedValue = parseFloat(tempHideAfterSeconds);
-								const finalValue = isNaN(parsedValue) || parsedValue < 0.1 ? 0.1 : parsedValue;
+								const parsedValue =
+									parseFloat(tempHideAfterSeconds);
+								const finalValue =
+									isNaN(parsedValue) || parsedValue < 0.1
+										? 0.1
+										: parsedValue;
 								setAttributes({
 									hideAfterSeconds: finalValue,
 								});
 								setTempHideAfterSeconds(finalValue.toString());
 							}}
-						type="number"
-						min="0.1"
-						step="0.1"
-					/>
+							type="number"
+							min="0.1"
+							step="0.1"
+						/>
 					)}
 					<PanelRow>
 						<p>

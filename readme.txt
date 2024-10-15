@@ -106,13 +106,11 @@ e.g.
 
 == Changelog ==
 
-<<<<<<< HEAD
 [ Add function ][ Fixed Display (Pro) ] Added a timer feature to control block appearance/disappearance and a "Do not show again for returning visitors" option. Session Storage is used, and no personal data is collected or tracked. Since Session Storage is used, the block may reappear after the browser is closed or in private browsing mode.
 [ Bug fix ][ Grid Column Card (Pro) ] Add translation.
 [ Bug fix ][ Category Badge (Pro) ] Added Pro label to the inserter. 
-=======
+
 = 1.87.0 =
->>>>>>> develop
 [ Add function ][ Link Toolbar ] Added to skip retrieving metadata (title and favicon) for external links in link toolbar to prevent CORS errors.
 [ Add function ][ icon ] Add toolbar link for components.
 [ Bug fix ][ Slider ] Adjusting the timing of loading swiper to prevent the slider from collapsing.

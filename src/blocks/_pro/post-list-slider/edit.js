@@ -329,6 +329,16 @@ export default function PostListSliderEdit(props) {
 		};
 	}, [attributes]);
 
+	useEffect(() => {
+		if (layout === 'postListText') {
+			setAttributes({ slidesPerGroup: 'one-by-one' });
+			setAttributes({ slidesPerViewMobile: 1 });
+			setAttributes({ slidesPerViewTablet: 1 });
+			setAttributes({ slidesPerViewPC: 1 });
+			setAttributes({ centeredSlides: false });
+		}
+	}, [layout]);
+
 	return (
 		<>
 			<BlockControls>
@@ -761,7 +771,7 @@ export default function PostListSliderEdit(props) {
 						/>
 					</BaseControl>
 				</PanelBody>
-				<MultiItemSetting {...props} />
+				{layout !== 'postListText' && <MultiItemSetting {...props} />}
 			</InspectorControls>
 			<div {...blockProps}>
 				<ServerSideRender

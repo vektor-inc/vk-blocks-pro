@@ -105,7 +105,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-
+[ Bug fix ][ Slider ] Add alert message.
 [ Bug fix ][ Link Component ] Fix adding "http://" with "tel:" and "mailto:" link.
 
 = 1.87.0 =

@@ -107,6 +107,7 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Outer (Pro) ] Added the ability to set a focal point for background images.
+[ Bug fix ][ Link Component ] Fix adding "http://" with "tel:" and "mailto:" link.
 
 = 1.87.0 =
 [ Add function ][ icon ] Add toolbar link for components.

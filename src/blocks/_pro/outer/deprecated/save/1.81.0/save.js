@@ -101,36 +101,25 @@ export default function save(props) {
 		classBgPosition = 'vk_outer-bgPosition-normal';
 	}
 
-	// classPaddingLRのクラス切り替え
+	//classPaddingLRのクラス切り替え
 	classPaddingLR = '';
 	//eslint-disable-next-line camelcase
-	let paddingValueLR = '';
-
-	if (
-		padding_left_and_right === '0' ||
-		padding_left_and_right === 'vk_outer-paddingLR-none'
-	) {
-		classPaddingLR = 'is-layout-constrained';
-		paddingValueLR = '0';
+	if (padding_left_and_right === '0') {
+		classPaddingLR = 'vk_outer-paddingLR-none';
+		//eslint-disable-next-line camelcase
 	} else if (padding_left_and_right === '1') {
 		classPaddingLR = 'vk_outer-paddingLR-use';
-		paddingValueLR = '4em';
+		//eslint-disable-next-line camelcase
 	} else if (padding_left_and_right === '2') {
+		// Fit to content area width
 		classPaddingLR = 'vk_outer-paddingLR-zero';
-		paddingValueLR = '0';
 	}
 
-	if (classPaddingLR === `is-layout-constrained` || classPaddingLR === '') {
-		classPaddingLR = classnames(classPaddingLR, 'container');
-	}
-
-	// classPaddingVerticalのクラス切り替え
-	let paddingValueVertical = '';
+	//classPaddingVerticalのクラス切り替
+	//eslint-disable-next-line camelcase
 	if (padding_top_and_bottom === '1') {
-		paddingValueVertical = '4em';
 		classPaddingVertical = 'vk_outer-paddingVertical-use';
-	} else if (padding_top_and_bottom === '0') {
-		paddingValueVertical = '0';
+	} else {
 		classPaddingVertical = 'vk_outer-paddingVertical-none';
 	}
 
@@ -159,6 +148,7 @@ export default function save(props) {
 
 	// Dividerエフェクトがない時のみ枠線を追
 	let borderStyleProperty = {};
+	//eslint-disable-next-line camelcase
 	if (!levelSettingPerDevice) {
 		if (
 			upper_level === 0 && //eslint-disable-line camelcase
@@ -177,7 +167,7 @@ export default function save(props) {
 			};
 			//eslint-disable-next-line camelcase
 		} else if (upper_level !== 0 || lower_level !== 0) {
-			//eslint-disable-next-line camelcase
+			//eslint-disable-line camelcase
 			borderStyleProperty = {
 				border: `none`,
 				borderRadius: `0px`,
@@ -211,7 +201,7 @@ export default function save(props) {
 		lower_level_tablet !== 0 ||
 		lower_level_pc !== 0
 	) {
-		//eslint-disable-next-line camelcase
+		//eslint-disable-line camelcase
 		borderStyleProperty = {
 			border: `none`,
 			borderRadius: `0px`,
@@ -235,16 +225,7 @@ export default function save(props) {
 			}
 		),
 		style: {
-			...(paddingValueLR !== '0' &&
-				paddingValueLR !== '4em' && {
-					paddingLeft: paddingValueLR,
-					paddingRight: paddingValueLR,
-				}),
-			...(paddingValueVertical !== '0' &&
-				paddingValueVertical !== '4em' && {
-					paddingTop: paddingValueVertical,
-					paddingBottom: paddingValueVertical,
-				}),
+			...borderStyleProperty,
 			'--min-height-mobile': minHeightValueMobile
 				? `${minHeightValueMobile}${minHeightUnit}`
 				: undefined,
@@ -254,7 +235,6 @@ export default function save(props) {
 			'--min-height-pc': minHeightValuePC
 				? `${minHeightValuePC}${minHeightUnit}`
 				: undefined,
-			...borderStyleProperty,
 		},
 	});
 

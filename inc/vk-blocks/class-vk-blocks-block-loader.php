@@ -103,7 +103,10 @@ class VK_Blocks_Block_Loader {
 			wp_enqueue_style( 'vk-blocks-build-css' );
 			wp_enqueue_style( 'vk-blocks-utils-common-css' );
 	}
-
+	
+	/**
+	 * K Blocks Add Styles for Editor
+	 */
 	public function add_editor_styles() {
 		// 管理画面でのみフッターにエディタCSSを読み込む
 		add_action(

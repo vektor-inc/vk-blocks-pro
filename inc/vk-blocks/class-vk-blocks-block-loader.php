@@ -99,9 +99,18 @@ class VK_Blocks_Block_Loader {
 	 * VK Blocks Add Styles
 	 */
 	public function add_styles() {
-		// 分割読み込みの場合は register されるファイルが false 指定で何も読み込まれなくなっている.
-		wp_enqueue_style( 'vk-blocks-build-css' );
-		wp_enqueue_style( 'vk-blocks-utils-common-css' );
+		global $wp_styles;
+
+		// すべてのテーマスタイルを取得
+		$theme_style_handles = array();
+		foreach ( $wp_styles->queue as $handle ) {
+			// テーマ関連のスタイルシートハンドルのみをフィルタリングするためのロジックを追加することも可能
+			$theme_style_handles[] = $handle;
+		}
+
+		// VK Blocksのスタイルを最後に読み込むように調整
+		wp_enqueue_style( 'vk-blocks-build-css', VK_BLOCKS_DIR_URL . 'build/block-build.css', $theme_style_handles, VK_BLOCKS_VERSION );
+		wp_enqueue_style( 'vk-blocks-utils-common-css', VK_BLOCKS_DIR_URL . 'build/utils/common.css', array(), VK_BLOCKS_VERSION );
 	}
 
 	/**

@@ -32,6 +32,30 @@
 			"type": "string",
 			"default": "normal"
 		},
+		"bgFocalPointPC": {
+			"type": "object",
+			"default": { "x": 0.5, "y": 0.5 }
+		},
+		"bgFocalPointTablet": {
+			"type": "object",
+			"default": { "x": 0.5, "y": 0.5 }
+		},
+		"bgFocalPointMobile": {
+			"type": "object",
+			"default": { "x": 0.5, "y": 0.5 }
+		},
+		"enableFocalPointPC": {
+			"type": "boolean",
+			"default": false
+		},
+		"enableFocalPointTablet": {
+			"type": "boolean",
+			"default": false
+		},
+		"enableFocalPointMobile": {
+			"type": "boolean",
+			"default": false
+		},
 		"padding_left_and_right": {
 			"type": "string",
 			"default": "0"

@@ -106,12 +106,15 @@ class VK_Blocks_Block_Loader {
 
 	public function add_editor_styles() {
 		// 管理画面でのみフッターにエディタCSSを読み込む
-		add_action( 'admin_footer', function() {
-			if ( wp_style_is( 'vk-blocks-build-editor-css', 'registered' ) ) {
-				wp_enqueue_style( 'vk-blocks-build-editor-css' );
+		add_action(
+			'admin_footer',
+			function () {
+				if ( wp_style_is( 'vk-blocks-build-editor-css', 'registered' ) ) {
+					wp_enqueue_style( 'vk-blocks-build-editor-css' );
+				}
 			}
-		});
-	}	
+		);
+	}
 
 	/**
 	 * Register Blocks Assets

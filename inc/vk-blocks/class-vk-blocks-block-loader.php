@@ -86,12 +86,12 @@ class VK_Blocks_Block_Loader {
 	public function load_css_action() {
 		$hook_point = apply_filters( 'vk_blocks_enqueue_point', 'wp_enqueue_scripts' );
 
-		// load registered css on front（結合ファイル指定の場合のみ結合CSSが読み込まれる）.
-		add_action( $hook_point, array( $this, 'add_styles' ) );
+		// フロントエンド用のスタイルを読み込む.
+		add_action( $hook_point, array( $this, 'add_styles' ), 999 );
 
-		// load registered css on admin（結合ファイル指定の場合のみ結合CSSが読み込まれる）.
+		// 管理画面用のスタイルを後に読み込む.
 		if ( is_admin() ) {
-			add_action( 'enqueue_block_assets', array( $this, 'add_styles' ) );
+			add_action( 'enqueue_block_assets', array( $this, 'add_editor_styles' ), 999 );
 		}
 	}
 
@@ -99,25 +99,32 @@ class VK_Blocks_Block_Loader {
 	 * VK Blocks Add Styles
 	 */
 	public function add_styles() {
-		global $wp_styles;
-
-		// すべてのテーマスタイルを取得
-		$theme_style_handles = array();
-		foreach ( $wp_styles->queue as $handle ) {
-			// テーマ関連のスタイルシートハンドルのみをフィルタリングするためのロジックを追加することも可能
-			$theme_style_handles[] = $handle;
-		}
-
-		// VK Blocksのスタイルを最後に読み込むように調整
-		wp_enqueue_style( 'vk-blocks-build-css', VK_BLOCKS_DIR_URL . 'build/block-build.css', $theme_style_handles, VK_BLOCKS_VERSION );
-		wp_enqueue_style( 'vk-blocks-utils-common-css', VK_BLOCKS_DIR_URL . 'build/utils/common.css', array(), VK_BLOCKS_VERSION );
+		// 分割読み込みの場合は register されるファイルが false 指定で何も読み込まれなくなっている.
+			wp_enqueue_style( 'vk-blocks-build-css' );
+			wp_enqueue_style( 'vk-blocks-utils-common-css' );
 	}
+
+	public function add_editor_styles() {
+		// 管理画面でのみフッターにエディタCSSを読み込む
+		add_action( 'admin_footer', function() {
+			if ( wp_style_is( 'vk-blocks-build-editor-css', 'registered' ) ) {
+				wp_enqueue_style( 'vk-blocks-build-editor-css' );
+			}
+		});
+	}	
 
 	/**
 	 * Register Blocks Assets
 	 */
 	public function register_blocks_assets() {
+		global $wp_styles; // グローバル変数から現在のスタイルハンドルを取得する
 		$asset_file = include $this->assets_build_path . 'block-build.asset.php';
+
+		// 現在キューに入っているすべてのスタイルハンドルを取得
+		$theme_style_handles = array();
+		if ( isset( $wp_styles->queue ) ) {
+			$theme_style_handles = $wp_styles->queue;
+		}
 
 		// 結合CSSを登録.
 		if ( self::should_load_separate_assets() && ! is_admin() ) {
@@ -125,24 +132,35 @@ class VK_Blocks_Block_Loader {
 			// ハンドル名vk-blocks-build-cssはwp_add_inline_styleで使用している箇所があるので登録する
 			// 分割読み込みの場合 : false = 結合CSSを読み込まない.
 			wp_register_style( 'vk-blocks-build-css', false, array(), VK_BLOCKS_VERSION );
-			// src/utils内の内の共通cssの読み込み .
+			// src/utils内の共通CSSの読み込み.
 			wp_register_style( 'vk-blocks-utils-common-css', VK_BLOCKS_DIR_URL . 'build/utils/common.css', array(), VK_BLOCKS_VERSION );
 		} else {
 			// 一括読み込みの場合 : 結合CSSを登録.
-			wp_register_style( 'vk-blocks-build-css', VK_BLOCKS_DIR_URL . 'build/block-build.css', array( 'vk-swiper-style' ), VK_BLOCKS_VERSION );
+			wp_register_style(
+				'vk-blocks-build-css',
+				VK_BLOCKS_DIR_URL . 'build/block-build.css',
+				$theme_style_handles, // 取得したスタイルハンドルを依存関係に追加
+				VK_BLOCKS_VERSION
+			);
+			wp_register_style(
+				'vk-blocks-utils-common-css',
+				VK_BLOCKS_DIR_URL . 'build/utils/common.css',
+				$theme_style_handles, // 取得したスタイルハンドルを依存関係に追加
+				VK_BLOCKS_VERSION
+			);
 		}
 
-		// 編集画面のCSS登録 : 分割読み込みの設定に関わらず結合CSSを登録 -> 各ブロックのindex.phpから呼び出される.
+		// 編集画面のCSS登録 : 分割読み込みの設定に関わらず結合CSSを登録.
 		wp_register_style( 'vk-blocks-build-editor-css', VK_BLOCKS_DIR_URL . 'build/block-build-editor.css', array(), VK_BLOCKS_VERSION );
 
-		// ↑の 編集画面の wp_register_style( 'vk-blocks-build-editor-css' だけだとテーマエディタの iframe でCSSが反映されないのでインラインで追加登録 .
+		// 編集画面のCSSをインラインで追加.
 		$style_path = wp_normalize_path( VK_BLOCKS_DIR_PATH . '/build/block-build-editor.css' );
 		if ( file_exists( $style_path ) ) {
 			$dynamic_css = file_get_contents( $style_path );
 			wp_add_inline_style( 'wp-edit-blocks', $dynamic_css );
 		}
 
-		// WordPress 6.5 以下の対策
+		// WordPress 6.5 以下の対策.
 		if ( ! wp_script_is( 'react-jsx-runtime', 'registered' ) ) {
 			wp_register_script(
 				'react-jsx-runtime',
@@ -153,7 +171,7 @@ class VK_Blocks_Block_Loader {
 			);
 		}
 
-		// 編集画面のjs登録 : 設定に関わらず結合JSを登録 -> 各ブロックのindex.phpから呼び出される.
+		// 編集画面のJS登録.
 		wp_register_script(
 			'vk-blocks-build-js',
 			$this->assets_build_url . 'block-build.js',
@@ -162,7 +180,7 @@ class VK_Blocks_Block_Loader {
 			true
 		);
 
-		// 翻訳を追加.
+		// 翻訳の設定.
 		if ( function_exists( 'wp_set_script_translations' ) ) {
 			wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks-pro', VK_BLOCKS_DIR_PATH . 'languages' );
 		}

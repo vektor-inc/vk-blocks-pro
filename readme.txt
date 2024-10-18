@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Fixed Display (Pro) ] Added a timer feature to control block appearance/disappearance and a "Do not show again for returning visitors" option. Session Storage is used, and no personal data is collected or tracked. Since Session Storage is used, the block may reappear after the browser is closed or in private browsing mode.
 [ Bug fix ][ Link Component ] Fix adding "http://" with "tel:" and "mailto:" link.
 [ Bug fix ][ Slider ] Fix an issue where full width alignment does not work in tt4 and tt5.
 

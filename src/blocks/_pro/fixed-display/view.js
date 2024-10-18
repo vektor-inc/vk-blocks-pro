@@ -1,27 +1,131 @@
 /* eslint-env browser */
 
-// スクロールイベントリスナーを追加
+// SessionStorage設定
+function setSessionStorageFlag(key, value) {
+	sessionStorage.setItem(key, value);
+}
+
+function getSessionStorageFlag(key) {
+	return sessionStorage.getItem(key) !== null;
+}
+
+// 要素の表示・非表示を制御する共通関数
+function handleVisibility(
+	item,
+	displayAfterSeconds,
+	hideAfterSeconds,
+	blockId,
+	dontShowAgain
+) {
+	if (displayAfterSeconds > 0) {
+		setTimeout(() => {
+			item.classList.add('is-timed-visible');
+			if (dontShowAgain) {
+				setSessionStorageFlag(`displayed_${blockId}`, 'true');
+			}
+		}, displayAfterSeconds * 1000);
+	} else {
+		item.classList.add('is-timed-visible');
+		if (dontShowAgain) {
+			setSessionStorageFlag(`displayed_${blockId}`, 'true');
+		}
+	}
+
+	if (hideAfterSeconds > 0) {
+		setTimeout(
+			() => {
+				item.classList.remove('is-timed-visible');
+			},
+			(displayAfterSeconds + hideAfterSeconds) * 1000
+		);
+	}
+}
+
+// スクロールタイミング設定
 window.addEventListener('scroll', function () {
 	const items = document.querySelectorAll(
 		'.vk_fixed-display-mode-show-on-scroll'
 	);
 
 	items.forEach((item) => {
-		// data属性からスクロールタイミングと単位、及びscrollPersistVisibleを取得
+		const blockId = item.getAttribute('data-block-id');
+		const dontShowAgain =
+			item.getAttribute('data-dont-show-again') === 'true';
+
+		if (dontShowAgain && getSessionStorageFlag(`displayed_${blockId}`)) {
+			return;
+		}
+
 		const timing = parseInt(item.getAttribute('data-scroll-timing'), 10);
 		const unit = item.getAttribute('data-scroll-timing-unit');
 		const scrollPersistVisible =
 			item.getAttribute('data-persist-visible') === 'true';
 
-		// 単位に応じたピクセル値への変換
 		const timingInPixels = convertUnitToPixels(timing, unit);
 
-		// スクロール位置が指定したタイミングを超えた場合に.is-visibleクラスを付与
-		if (window.scrollY > timingInPixels) {
+		// すでに発火しているか確認
+		const isTriggered = item.getAttribute('data-is-triggered') === 'true';
+
+		// スクロール位置が指定したタイミングを超えた場合にタイマーを開始
+		if (
+			window.scrollY > timingInPixels &&
+			!item.classList.contains('is-visible') &&
+			!isTriggered
+		) {
 			item.classList.add('is-visible');
-		} else if (!scrollPersistVisible) {
-			item.classList.remove('is-visible');
+			item.setAttribute('data-is-triggered', 'true'); // 発火済みと設定
+
+			const displayAfterSeconds =
+				parseFloat(item.getAttribute('data-display-after-seconds')) ||
+				0;
+			const hideAfterSeconds =
+				parseFloat(item.getAttribute('data-hide-after-seconds')) || 0;
+
+			// handleVisibility関数を使用して表示・非表示を制御
+			handleVisibility(
+				item,
+				displayAfterSeconds,
+				hideAfterSeconds,
+				blockId,
+				dontShowAgain
+			);
 		}
+		// scrollPersistVisibleがONのときだけ再発火可能にする
+		else if (!scrollPersistVisible && window.scrollY < timingInPixels) {
+			item.classList.remove('is-visible');
+			item.classList.remove('is-timed-visible');
+			item.setAttribute('data-is-triggered', 'false'); // 発火解除
+		}
+	});
+});
+
+// 表示・非表示タイマー設定
+window.addEventListener('DOMContentLoaded', function () {
+	const items = document.querySelectorAll(
+		'.vk_fixed-display-mode-always-visible'
+	);
+
+	items.forEach((item) => {
+		const displayAfterSeconds =
+			parseFloat(item.getAttribute('data-display-after-seconds')) || 0;
+		const hideAfterSeconds =
+			parseFloat(item.getAttribute('data-hide-after-seconds')) || 0;
+		const blockId = item.getAttribute('data-block-id');
+		const dontShowAgain =
+			item.getAttribute('data-dont-show-again') === 'true';
+
+		if (dontShowAgain && getSessionStorageFlag(`displayed_${blockId}`)) {
+			return;
+		}
+
+		// handleVisibility関数を使用して表示・非表示を制御
+		handleVisibility(
+			item,
+			displayAfterSeconds,
+			hideAfterSeconds,
+			blockId,
+			dontShowAgain
+		);
 	});
 });
 
@@ -47,6 +151,6 @@ function convertUnitToPixels(value, unit) {
 		case 'svh':
 			return (value * window.innerHeight) / 100;
 		default:
-			return value; // 単位が不明な場合はピクセル値として扱う
+			return value;
 	}
 }

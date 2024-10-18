@@ -62,11 +62,11 @@
 		},
 		"headerDisplay": {
 			"type": "string",
-			"default": "delete"
+			"default": "display"
 		},
 		"footerDisplay": {
 			"type": "string",
-			"default": "delete"
+			"default": "display"
 		},
 		"borderRadius": {
 			"type": "string",

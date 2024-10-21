@@ -107,6 +107,7 @@ e.g.
 == Changelog ==
 
 [ Specification change ][ Grid Column Card (Pro) ] Changed the default settings of headerDisplay and footerDisplay from "Delete" to "Display".
+[ Specification change ] Add filter vk_post_taxonomies_html ( Update VK Components 1.6.1 )
 [ Bug fix ][ Link Component ] Fix adding "http://" with "tel:" and "mailto:" link.
 [ Bug fix ][ Slider ] Fix an issue where full width alignment does not work in tt4 and tt5.
 

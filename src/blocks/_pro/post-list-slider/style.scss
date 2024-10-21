@@ -2,8 +2,10 @@
 /* CSS
 /*-------------------------------------------*/
 .vk_post_list_slider {
-    .card-intext {
-        width: calc(100% - 30px);
-    }
+	.vk_post {
+		width: calc(100% - 30px);
+	}
+	.postListText  {
+		width: calc(100% - 9.6rem);
+	}
 }
-

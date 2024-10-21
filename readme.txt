@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.3
 Tested up to: 6.6
-Stable tag: 1.86.1.0
+Stable tag: 1.87.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -105,6 +105,12 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 1.88.0 =
+[ Specification change ][ Grid Column Card (Pro) ] Changed the default settings of headerDisplay and footerDisplay from "Delete" to "Display".
+[ Specification change ] Add filter vk_post_taxonomies_html ( Update VK Components 1.6.1 )
+[ Bug fix ][ Link Component ] Fix adding "http://" with "tel:" and "mailto:" link.
+[ Bug fix ][ Slider ] Fix an issue where full width alignment does not work in tt4 and tt5.
 
 = 1.87.0 =
 [ Add function ][ Link Toolbar ] Added to skip retrieving metadata (title and favicon) for external links in link toolbar to prevent CORS errors.

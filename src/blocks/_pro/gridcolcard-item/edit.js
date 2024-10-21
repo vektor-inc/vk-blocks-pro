@@ -213,7 +213,14 @@ export default function Edit(props) {
 	const alertClass = url ? 'mb-3 alert alert-danger' : 'mb-3';
 
 	const blockProps = useBlockProps({
-		className: containerClasses,
+		className: classnames(containerClasses, {
+			'vk_gridcolcard_item-noHeader': headerDisplay === 'delete',
+			'vk_gridcolcard_item-noFooter': footerDisplay === 'delete',
+			[`vk_gridcolcard_item-header-${headerDisplay}`]:
+				headerDisplay !== 'delete',
+			[`vk_gridcolcard_item-footer-${footerDisplay}`]:
+				footerDisplay !== 'delete',
+		}),
 		style,
 	});
 

@@ -108,6 +108,7 @@ e.g.
 
 [ Specification change ][ Grid Column Card (Pro) ] Changed the default settings of headerDisplay and footerDisplay from "Delete" to "Display".
 [ Bug fix ][ Link Component ] Fix adding "http://" with "tel:" and "mailto:" link.
+[ Bug fix ][ Slider ] Fix an issue where full width alignment does not work in tt4 and tt5.
 
 = 1.87.0 =
 [ Add function ][ Link Toolbar ] Added to skip retrieving metadata (title and favicon) for external links in link toolbar to prevent CORS errors.

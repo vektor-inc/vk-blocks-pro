@@ -183,6 +183,7 @@ const save = (props) => {
 
 	return (
 		<CustomTag {...blockProps}>
+			<InnerBlocks.Content />
 			{linkUrl && (
 				<a
 					href={linkUrl}
@@ -190,12 +191,7 @@ const save = (props) => {
 					rel={relAttribute}
 					aria-label={__('Group link', 'vk-blocks-pro')}
 					className={`${prefix}-vk-link`}
-				>
-					<InnerBlocks.Content />
-				</a>
-			)}
-			{!linkUrl && (
-				<InnerBlocks.Content />
+				></a>
 			)}
 		</CustomTag>
 	);

@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Add function ] [ Accordion (Pro) ] Added the ability to toggle the Accordion block open and close in the editing screen.
+
 = 1.88.0 =
 [ Specification change ][ Grid Column Card (Pro) ] Changed the default settings of headerDisplay and footerDisplay from "Delete" to "Display".
 [ Specification change ] Add filter vk_post_taxonomies_html ( Update VK Components 1.6.1 )

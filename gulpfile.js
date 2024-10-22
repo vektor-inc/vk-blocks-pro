@@ -92,6 +92,10 @@ gulp.task('helper-js-pro', (done) => {
 		.pipe(uglify())
 		.pipe(rename('vk-table-of-contents-new.min.js'))
 		.pipe(gulp.dest('./build/'));
+	gulp.src('src/blocks/_pro/post-list-slider/view.js')
+		.pipe(uglify())
+		.pipe(rename('vk-post-list-slider.min.js'))
+		.pipe(gulp.dest('./build/'));
 	done();
 });
 

@@ -190,9 +190,13 @@ const save = (props) => {
 					rel={relAttribute}
 					aria-label={__('Group link', 'vk-blocks-pro')}
 					className={`${prefix}-vk-link`}
-				></a>
+				>
+					<InnerBlocks.Content />
+				</a>
 			)}
-			<InnerBlocks.Content />
+			{!linkUrl && (
+				<InnerBlocks.Content />
+			)}
 		</CustomTag>
 	);
 };

@@ -224,8 +224,12 @@
 	.vk_accordion-trigger {
 
 		padding-right: calc( 1rem * 4 );
+		* {
+			cursor: initial;
+		}
 		.block-editor-inner-blocks {
 			position: inherit;
+			cursor: initial;
 			z-index: 1;
 		}
 		.block-editor-block-list__block {

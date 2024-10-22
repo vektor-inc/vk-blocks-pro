@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-10-15T01:59:00+00:00\n"
+"POT-Creation-Date: 2024-10-21T14:55:12+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -1249,13 +1249,13 @@ msgid "Setting up a link"
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:389
-#: src/blocks/_pro/gridcolcard-item/edit.js:346
+#: src/blocks/_pro/gridcolcard-item/edit.js:353
 #: src/blocks/_pro/icon-card-item/edit.js:128
 #: src/blocks/button/edit.js:283
 #: src/blocks/icon/edit.js:306
 #: src/blocks/pr-blocks/edit.js:262
 #: src/blocks/pr-content/edit.js:131
-#: src/components/link-toolbar/index.js:288
+#: src/components/link-toolbar/index.js:293
 msgid "Open link new tab."
 msgstr ""
 
@@ -1457,61 +1457,61 @@ msgstr ""
 msgid "You can create a variety of layouts with grid column card blocks."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:242
+#: src/blocks/_pro/gridcolcard-item/edit.js:249
 #: src/blocks/_pro/select-post-list-item/edit.js:66
 #: src/blocks/button/edit.js:249
-#: src/components/link-toolbar/index.js:247
+#: src/components/link-toolbar/index.js:252
 msgid "Unlink"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:243
+#: src/blocks/_pro/gridcolcard-item/edit.js:250
 #: src/blocks/button/edit.js:250
-#: src/components/link-toolbar/index.js:248
+#: src/components/link-toolbar/index.js:253
 msgid "Input Link URL"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:273
+#: src/blocks/_pro/gridcolcard-item/edit.js:280
 #: src/blocks/_pro/select-post-list-item/edit.js:102
 #: src/blocks/button/edit.js:278
-#: src/components/link-toolbar/index.js:282
+#: src/components/link-toolbar/index.js:287
 msgid "Submit"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:297
+#: src/blocks/_pro/gridcolcard-item/edit.js:304
 msgid "Edit mode"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:307
+#: src/blocks/_pro/gridcolcard-item/edit.js:314
 msgid "All columns"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:315
+#: src/blocks/_pro/gridcolcard-item/edit.js:322
 msgid "This column only"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:320
+#: src/blocks/_pro/gridcolcard-item/edit.js:327
 msgid "Edit Lock"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:323
+#: src/blocks/_pro/gridcolcard-item/edit.js:330
 msgid "Lock edits this block from the parent and other Grid Column Item block"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:334
+#: src/blocks/_pro/gridcolcard-item/edit.js:341
 msgid "Column Setting"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:338
+#: src/blocks/_pro/gridcolcard-item/edit.js:345
 #: src/blocks/_pro/icon-card-item/edit.js:120
 #: src/blocks/pr-blocks/edit.js:254
 msgid "Link URL:"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:353
+#: src/blocks/_pro/gridcolcard-item/edit.js:360
 msgid "If you set a link URL, do not place the link element (text or button) in the Grid Column Card Item. It may not be displayed correctly."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:357
+#: src/blocks/_pro/gridcolcard-item/edit.js:364
 msgid "Make sure that no link is specified for the image block, etc."
 msgstr ""
 
@@ -3390,23 +3390,23 @@ msgstr ""
 msgid "Link target"
 msgstr ""
 
-#: src/components/link-toolbar/index.js:28
+#: src/components/link-toolbar/index.js:31
 msgid "Currently selected"
 msgstr ""
 
-#: src/components/link-toolbar/index.js:317
+#: src/components/link-toolbar/index.js:322
 msgid "Link copied to clipboard."
 msgstr ""
 
-#: src/components/link-toolbar/index.js:66
+#: src/components/link-toolbar/index.js:69
 msgid "Deleting Link"
 msgstr ""
 
-#: src/components/link-toolbar/index.js:76
+#: src/components/link-toolbar/index.js:79
 msgid "Copy link: %s"
 msgstr ""
 
-#: src/components/link-toolbar/index.js:83
+#: src/components/link-toolbar/index.js:86
 msgid "Copy link"
 msgstr ""
 
@@ -3753,6 +3753,7 @@ msgid "PC size"
 msgstr ""
 
 #: src/extensions/core/table/style.js:41
+#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-scrollhintrenderer.php:72
 #: inc/vk-blocks/view/class-vk-blocks-scrollhintrenderer.php:72
 msgid "You can scroll"
 msgstr ""
@@ -3921,6 +3922,7 @@ msgstr ""
 msgid "Installing Plugin: %s"
 msgstr ""
 
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:76
 #: inc/tgm-plugin-activation/tgm-config.php:76
 msgid "Something went wrong with the plugin API."
 msgstr ""

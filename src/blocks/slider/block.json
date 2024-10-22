@@ -5,6 +5,9 @@
 	"description": "This slider allows you to place various items.Slider is do not move in edit screen.",
 	"textdomain": "vk-blocks-pro",
 	"category": "vk-blocks-cat-layout",
+	"editorScriptHandles": ["vk-blocks-build-js"],
+	"editorStyleHandles": ["vk-swiper-style", "vk-blocks-build-editor-css"],
+	"styleHandles": ["vk-blocks-build-css"],
 	"attributes": {
 		"editorMode": {
 			"type": "string",

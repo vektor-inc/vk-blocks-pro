@@ -16,32 +16,36 @@ export default function save({ attributes }) {
 		blockId,
 	} = attributes;
 
-	const dataAttributes = {
-		...(mode === 'show-on-scroll' && {
-			'data-scroll-timing': scrollTiming.toString(),
-			'data-scroll-timing-unit': scrollTimingUnit,
-			'data-persist-visible': scrollPersistVisible ? 'true' : 'false',
-		}),
-		...(displayAfterSeconds > 0 && {
-			'data-display-after-seconds': displayAfterSeconds.toString(),
-		}),
-		...(hideAfterSeconds > 0 && {
-			'data-hide-after-seconds': hideAfterSeconds.toString(),
-		}),
-		...(dontShowAgain && {
-			'data-dont-show-again': 'true',
-		}),
-	};
+	// データ属性を定義し、条件に基づいて設定する
+	const dataAttributes = {};
 
-	if (mode !== 'show-on-scroll') {
-		delete dataAttributes['data-scroll-timing'];
-		delete dataAttributes['data-scroll-timing-unit'];
-		delete dataAttributes['data-persist-visible'];
+	if (mode === 'show-on-scroll') {
+		dataAttributes['data-scroll-timing'] = scrollTiming.toString();
+		dataAttributes['data-scroll-timing-unit'] = scrollTimingUnit;
+		if (scrollPersistVisible) {
+			dataAttributes['data-persist-visible'] = 'true';
+		}
 	}
 
+	if (mode === 'display-hide-after-time' && displayAfterSeconds > 0) {
+		dataAttributes['data-display-after-seconds'] =
+			displayAfterSeconds.toString();
+	}
+
+	if (mode === 'display-hide-after-time' && hideAfterSeconds > 0) {
+		dataAttributes['data-hide-after-seconds'] = hideAfterSeconds.toString();
+	}
+
+	if (dontShowAgain) {
+		dataAttributes['data-dont-show-again'] = 'true';
+	}
+
+	// ブロックのプロパティを定義
 	const blockProps = useBlockProps.save({
 		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} ${
-			fixedPositionType !== undefined ? `vk_fixed-display-position-from-${fixedPositionType}` : ''
+			['right', 'left'].includes(position) && fixedPositionType
+				? `vk_fixed-display-position-from-${fixedPositionType}`
+				: ''
 		} vk_fixed-display-${blockId} ${
 			displayAfterSeconds > 0 ? 'is-timed-display' : ''
 		}`,
@@ -51,7 +55,7 @@ export default function save({ attributes }) {
 				: undefined,
 		},
 		...dataAttributes,
-	});	
+	});
 
 	return (
 		<div {...blockProps}>

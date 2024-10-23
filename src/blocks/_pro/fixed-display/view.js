@@ -58,7 +58,8 @@ window.addEventListener('scroll', function () {
 
 		const timing = parseInt(item.getAttribute('data-scroll-timing'), 10);
 		const unit = item.getAttribute('data-scroll-timing-unit');
-		const scrollPersistVisible = item.getAttribute('data-persist-visible') === 'true';
+		const scrollPersistVisible =
+			item.getAttribute('data-persist-visible') === 'true';
 		const timingInPixels = convertUnitToPixels(timing, unit);
 
 		// スクロール位置が指定したタイミングを超えた場合に要素を表示

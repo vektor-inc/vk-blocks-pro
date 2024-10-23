@@ -41,17 +41,17 @@ export default function save({ attributes }) {
 
 	const blockProps = useBlockProps.save({
 		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} ${
-			fixedPositionType !== undefined
-				? `vk_fixed-display-position-from-${fixedPositionType}`
-				: ''
-		} vk_fixed-display-${blockId}`,
+			fixedPositionType !== undefined ? `vk_fixed-display-position-from-${fixedPositionType}` : ''
+		} vk_fixed-display-${blockId} ${
+			displayAfterSeconds > 0 ? 'is-timed-display' : ''
+		}`,
 		style: {
 			[fixedPositionType]: ['right', 'left'].includes(position)
 				? `${fixedPositionValue}${fixedPositionUnit}`
 				: undefined,
 		},
 		...dataAttributes,
-	});
+	});	
 
 	return (
 		<div {...blockProps}>

@@ -58,43 +58,14 @@ window.addEventListener('scroll', function () {
 
 		const timing = parseInt(item.getAttribute('data-scroll-timing'), 10);
 		const unit = item.getAttribute('data-scroll-timing-unit');
-		const scrollPersistVisible =
-			item.getAttribute('data-persist-visible') === 'true';
-
+		const scrollPersistVisible = item.getAttribute('data-persist-visible') === 'true';
 		const timingInPixels = convertUnitToPixels(timing, unit);
 
-		// すでに発火しているか確認
-		const isTriggered = item.getAttribute('data-is-triggered') === 'true';
-
-		// スクロール位置が指定したタイミングを超えた場合にタイマーを開始
-		if (
-			window.scrollY > timingInPixels &&
-			!item.classList.contains('is-visible') &&
-			!isTriggered
-		) {
+		// スクロール位置が指定したタイミングを超えた場合に要素を表示
+		if (window.scrollY > timingInPixels) {
 			item.classList.add('is-visible');
-			item.setAttribute('data-is-triggered', 'true'); // 発火済みと設定
-
-			const displayAfterSeconds =
-				parseFloat(item.getAttribute('data-display-after-seconds')) ||
-				0;
-			const hideAfterSeconds =
-				parseFloat(item.getAttribute('data-hide-after-seconds')) || 0;
-
-			// handleVisibility関数を使用して表示・非表示を制御
-			handleVisibility(
-				item,
-				displayAfterSeconds,
-				hideAfterSeconds,
-				blockId,
-				dontShowAgain
-			);
-		}
-		// scrollPersistVisibleがONのときだけ再発火可能にする
-		else if (!scrollPersistVisible && window.scrollY < timingInPixels) {
+		} else if (!scrollPersistVisible) {
 			item.classList.remove('is-visible');
-			item.classList.remove('is-timed-visible');
-			item.setAttribute('data-is-triggered', 'false'); // 発火解除
 		}
 	});
 });
@@ -102,7 +73,7 @@ window.addEventListener('scroll', function () {
 // 表示・非表示タイマー設定
 window.addEventListener('DOMContentLoaded', function () {
 	const items = document.querySelectorAll(
-		'.vk_fixed-display-mode-always-visible'
+		'.vk_fixed-display-mode-display-hide-after-time'
 	);
 
 	items.forEach((item) => {

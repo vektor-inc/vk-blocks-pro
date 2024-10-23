@@ -114,6 +114,10 @@ export default function FixedDisplayEdit(props) {
 								label: __('Show on Scroll', 'vk-blocks-pro'),
 								value: 'show-on-scroll',
 							},
+							{
+								label: __('Display and Hide After Time', 'vk-blocks-pro'),
+								value: 'display-after-time',
+							},
 						]}
 					/>
 					<SelectControl
@@ -146,17 +150,11 @@ export default function FixedDisplayEdit(props) {
 								selected={fixedPositionType}
 								options={[
 									{
-										label: __(
-											'Top section',
-											'vk-blocks-pro'
-										),
+										label: __('Top section', 'vk-blocks-pro'),
 										value: 'top',
 									},
 									{
-										label: __(
-											'Bottom section',
-											'vk-blocks-pro'
-										),
+										label: __('Bottom section', 'vk-blocks-pro'),
 										value: 'bottom',
 									},
 								]}
@@ -167,14 +165,8 @@ export default function FixedDisplayEdit(props) {
 							<UnitControl
 								label={
 									fixedPositionType === 'top'
-										? __(
-												'Fixed position from the top',
-												'vk-blocks-pro'
-											)
-										: __(
-												'Fixed position from the bottom',
-												'vk-blocks-pro'
-											)
+										? __('Fixed position from the top', 'vk-blocks-pro')
+										: __('Fixed position from the bottom', 'vk-blocks-pro')
 								}
 								value={`${fixedPositionValue}${fixedPositionUnit}`}
 								onChange={(nextValue) => {
@@ -225,27 +217,8 @@ export default function FixedDisplayEdit(props) {
 						/>
 					</PanelBody>
 				)}
-				<PanelBody title={__('Timer Settings', 'vk-blocks-pro')}>
-					<ToggleControl
-						label={__(
-							'Enable Display After Seconds',
-							'vk-blocks-pro'
-						)}
-						checked={displayAfterSeconds > 0}
-						onChange={(value) => {
-							if (value) {
-								setAttributes({
-									displayAfterSeconds: Math.max(
-										0.1,
-										displayAfterSeconds || 0.1
-									),
-								});
-							} else {
-								setAttributes({ displayAfterSeconds: 0 });
-							}
-						}}
-					/>
-					{displayAfterSeconds > 0 && (
+				{mode === 'display-after-time' && (
+					<PanelBody title={__('Timer Settings', 'vk-blocks-pro')}>
 						<TextControl
 							label={__('Display after seconds', 'vk-blocks-pro')}
 							value={tempDisplayAfterSeconds}
@@ -257,8 +230,8 @@ export default function FixedDisplayEdit(props) {
 									tempDisplayAfterSeconds
 								);
 								const finalValue =
-									isNaN(parsedValue) || parsedValue < 0.1
-										? 0.1
+									isNaN(parsedValue) || parsedValue < 0
+										? 0
 										: parsedValue;
 								setAttributes({
 									displayAfterSeconds: finalValue,
@@ -268,27 +241,9 @@ export default function FixedDisplayEdit(props) {
 								);
 							}}
 							type="number"
-							min="0.1"
+							min="0"
 							step="0.1"
 						/>
-					)}
-					<ToggleControl
-						label={__('Enable Hide After Seconds', 'vk-blocks-pro')}
-						checked={hideAfterSeconds > 0}
-						onChange={(value) => {
-							if (value) {
-								setAttributes({
-									hideAfterSeconds: Math.max(
-										0.1,
-										hideAfterSeconds || 0.1
-									),
-								});
-							} else {
-								setAttributes({ hideAfterSeconds: 0 });
-							}
-						}}
-					/>
-					{hideAfterSeconds > 0 && (
 						<TextControl
 							label={__('Hide after seconds', 'vk-blocks-pro')}
 							value={tempHideAfterSeconds}
@@ -299,8 +254,8 @@ export default function FixedDisplayEdit(props) {
 								const parsedValue =
 									parseFloat(tempHideAfterSeconds);
 								const finalValue =
-									isNaN(parsedValue) || parsedValue < 0.1
-										? 0.1
+									isNaN(parsedValue) || parsedValue < 0
+										? 0
 										: parsedValue;
 								setAttributes({
 									hideAfterSeconds: finalValue,
@@ -308,19 +263,19 @@ export default function FixedDisplayEdit(props) {
 								setTempHideAfterSeconds(finalValue.toString());
 							}}
 							type="number"
-							min="0.1"
+							min="0"
 							step="0.1"
 						/>
-					)}
-					<PanelRow>
-						<p>
-							{__(
-								'When combined with "Show on Scroll", you can set the time the block remains visible after the user scrolls to a specific point, as well as when it disappears.',
-								'vk-blocks-pro'
-							)}
-						</p>
-					</PanelRow>
-				</PanelBody>
+						<PanelRow>
+							<p>
+								{__(
+									'When combined with "Show on Scroll", you can set the time the block remains visible after the user scrolls to a specific point, as well as when it disappears.',
+									'vk-blocks-pro'
+								)}
+							</p>
+						</PanelRow>
+					</PanelBody>
+				)}
 				<PanelBody
 					title={__(
 						'Display Settings Until Browser is Closed',

@@ -115,8 +115,11 @@ export default function FixedDisplayEdit(props) {
 								value: 'show-on-scroll',
 							},
 							{
-								label: __('Display and Hide After Time', 'vk-blocks-pro'),
-								value: 'display-after-time',
+								label: __(
+									'Display and Hide After Time',
+									'vk-blocks-pro'
+								),
+								value: 'display-hide-after-time',
 							},
 						]}
 					/>
@@ -150,11 +153,17 @@ export default function FixedDisplayEdit(props) {
 								selected={fixedPositionType}
 								options={[
 									{
-										label: __('Top section', 'vk-blocks-pro'),
+										label: __(
+											'Top section',
+											'vk-blocks-pro'
+										),
 										value: 'top',
 									},
 									{
-										label: __('Bottom section', 'vk-blocks-pro'),
+										label: __(
+											'Bottom section',
+											'vk-blocks-pro'
+										),
 										value: 'bottom',
 									},
 								]}
@@ -165,8 +174,14 @@ export default function FixedDisplayEdit(props) {
 							<UnitControl
 								label={
 									fixedPositionType === 'top'
-										? __('Fixed position from the top', 'vk-blocks-pro')
-										: __('Fixed position from the bottom', 'vk-blocks-pro')
+										? __(
+												'Fixed position from the top',
+												'vk-blocks-pro'
+											)
+										: __(
+												'Fixed position from the bottom',
+												'vk-blocks-pro'
+											)
 								}
 								value={`${fixedPositionValue}${fixedPositionUnit}`}
 								onChange={(nextValue) => {
@@ -217,7 +232,7 @@ export default function FixedDisplayEdit(props) {
 						/>
 					</PanelBody>
 				)}
-				{mode === 'display-after-time' && (
+				{mode === 'display-hide-after-time' && (
 					<PanelBody title={__('Timer Settings', 'vk-blocks-pro')}>
 						<TextControl
 							label={__('Display after seconds', 'vk-blocks-pro')}

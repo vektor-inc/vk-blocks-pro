@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Grid Column Card (Pro) ] Fixed slider overflow in Grid Column Card Item Body.
+
 = 1.88.0 =
 [ Specification change ][ Grid Column Card (Pro) ] Changed the default settings of headerDisplay and footerDisplay from "Delete" to "Display".
 [ Specification change ] Add filter vk_post_taxonomies_html ( Update VK Components 1.6.1 )

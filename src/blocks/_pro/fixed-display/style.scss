@@ -9,6 +9,27 @@
 	position: fixed;
 	margin-block-start: 0;
 	z-index: 99999;
+	
+	/* タイマー機能用クラス */
+	&.is-timed-hide {
+
+		&:not(.is-timed-visible) {
+			opacity: 0;
+			transition: opacity 0.3s ease;
+			pointer-events: none;
+		}
+	}
+
+	&.is-timed-display {
+		opacity: 0;
+		transition: opacity 0.3s ease;
+		pointer-events: none;
+
+		&.is-timed-visible {
+			opacity: 1;
+		}
+	}
+
 }
 
 .vk_fixed-display-mode {
@@ -24,7 +45,6 @@
 			opacity: 1;
 		}
 	}
-
 }
 
 .vk_fixed-display-position {
@@ -83,6 +103,14 @@
 /* 編集画面用
 /*-------------------------------------------*/
 .block-editor-block-list__block {
+	&.vk_fixed-display {
+		
+		/* タイマー機能用クラス */
+		&.is-timed-hide,
+		&.is-timed-display {
+				opacity: unset;
+		}
+	}
 
 	&.vk_fixed-display-position {
 		width: auto;
@@ -110,6 +138,13 @@
 				}
 			}
 		}
+
+		&-from-top {
+			top: unset !important;
+		}
+		&-from-bottom {
+			bottom: unset !important;
+		}
 	}
 }
 
@@ -127,17 +162,6 @@
 		}
 		&-from-bottom {
 			bottom: calc(50svh + var(--admin-bar-offset));
-		}
-	}	
-}
-
-.block-editor-block-list__layout {
-	.vk_fixed-display-position {
-		&-from-top {
-			top: unset !important;
-		}
-		&-from-bottom {
-			bottom: unset !important;
 		}
 	}	
 }

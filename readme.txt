@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Fixed Display (Pro) ] Added a timer feature to control block appearance/disappearance and a "Do not show again for returning visitors" option. Session Storage is used, and no personal data is collected or tracked. Since Session Storage is used, the block may reappear after the browser is closed or in private browsing mode.
+
 = 1.88.0 =
 [ Specification change ][ Grid Column Card (Pro) ] Changed the default settings of headerDisplay and footerDisplay from "Delete" to "Display".
 [ Specification change ] Add filter vk_post_taxonomies_html ( Update VK Components 1.6.1 )

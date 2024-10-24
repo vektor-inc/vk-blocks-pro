@@ -553,6 +553,7 @@ export default function SliderEdit(props) {
 	// ループに関するアラート
 	let sloderPerViewLoopAlert = '';
 	if (slidesPerGroup === 'slides-per-view') {
+		// 一度に遷移するスライドアイテムの数 : 表示アイテム数と同じ
 		sloderPerViewLoopAlert = (
 			<div className="alert alert-danger font-size-11px">
 				{__(
@@ -561,11 +562,15 @@ export default function SliderEdit(props) {
 				)}
 			</div>
 		);
-	} else {
+	} else if (slidesPerGroup !== 'slides-per-view') {
+		// 一度に遷移するスライドアイテムの数 : １つずつ
 		if (attributes.centeredSlides) {
+			// アクティブスライドを中央にする場合
 			sloderPerViewLoopAlert = (
 				<div className="alert alert-danger font-size-11px">
-					If the active slide is in the center, the number of placed slide items must be greater than or equal to the number of items you want to display in one view + 2.
+					If the active slide is in the center, the number of placed
+					slide items must be greater than or equal to the number of
+					items you want to display in one view + 2.
 				</div>
 			);
 		} else {
@@ -578,7 +583,6 @@ export default function SliderEdit(props) {
 				</div>
 			);
 		}
-
 	}
 
 	/* ループ時のアラート */

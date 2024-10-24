@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.3
 Tested up to: 6.6
-Stable tag: 1.87.0.1
+Stable tag: 1.88.0.2
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+= 1.89.0 =
 [ Add function ][ Outer (Pro) ] Added support for core text color settings.
 [ Add function ][ Accordion (Pro) ] Added the ability to toggle the Accordion block open and close in the editing screen.
 [ Bug Fix ][ Grid Column Card (Pro) ] Fixed slider overflow in Grid Column Card Item Body.

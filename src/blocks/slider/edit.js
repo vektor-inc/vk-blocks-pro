@@ -562,7 +562,8 @@ export default function SliderEdit(props) {
 				)}
 			</div>
 		);
-	} else if (slidesPerGroup !== 'slides-per-view') { // else だけだと lint でエラーにされてコミットさせてもらえないため...
+	} else if (slidesPerGroup !== 'slides-per-view') {
+		// ↑ else だけだと lint でエラーにされてコミットさせてもらえないため...
 		// 一度に遷移するスライドアイテムの数 : １つずつ
 		if (attributes.centeredSlides) {
 			// アクティブスライドを中央にする場合

@@ -161,7 +161,8 @@
 		"className": true,
 		"anchor": true,
 		"color": {
-			"text": true
+			"text": true,
+			"background": false
 		}
 	}
 }

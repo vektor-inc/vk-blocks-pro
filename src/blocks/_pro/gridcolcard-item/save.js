@@ -15,6 +15,7 @@ export default function save(props) {
 		borderRadius,
 		border,
 		borderColor,
+		borderWidth,
 		backgroundGradient,
 		url,
 		urlOpenType,
@@ -59,9 +60,9 @@ export default function save(props) {
 		style.background = `${backgroundGradient}`;
 	}
 
-	// 線の色
+	// 線の色と太さ
 	if (border) {
-		style.borderWidth = `1px`;
+		style.borderWidth = borderWidth;
 		if (isHexColor(borderColor)) {
 			// custom color
 			style.borderColor = `${borderColor}`;
@@ -73,7 +74,14 @@ export default function save(props) {
 		textColor && isHexColor(textColor) ? textColor : null;
 
 	const blockProps = useBlockProps.save({
-		className: containerClasses,
+		className: classnames(containerClasses, {
+			'vk_gridcolcard_item-noHeader': headerDisplay === 'delete',
+			'vk_gridcolcard_item-noFooter': footerDisplay === 'delete',
+			[`vk_gridcolcard_item-header-${headerDisplay}`]:
+				headerDisplay !== 'delete',
+			[`vk_gridcolcard_item-footer-${footerDisplay}`]:
+				footerDisplay !== 'delete',
+		}),
 		style,
 	});
 

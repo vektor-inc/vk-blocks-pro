@@ -3,7 +3,7 @@
  * VK Components Posts
  *
  * @package VK Component
- * @version 1.6.0
+ * @version 1.6.1
  *
  * *********************** CAUTION ***********************
  * The original of this file is located at:
@@ -714,12 +714,19 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				}
 				if ( $taxonomies ) {
 					$html .= '<div class="vk_post_taxonomies">';
+
+					// 各タクソノミーの処理
+					$taxonomies_html = '';
 					foreach ( $taxonomies as $key => $value ) {
-						$html .= '<dl class="vk_post_taxonomy vk_post_taxonomy-' . $key . '">' . $value . '</dl>';
+						$taxonomies_html .= '<dl class="vk_post_taxonomy vk_post_taxonomy-' . $key . '">' . $value . '</dl>';
 					} // foreach
+
+					$html .= apply_filters( 'vk_post_taxonomies_html', $taxonomies_html );
 					$html .= '</div>';
 				}
 			}
+
+			$html .= apply_filters( 'vk_post_taxonomies_after', '' );
 
 			if ( $options['textlink'] ) {
 				if ( $options['display_btn'] ) {

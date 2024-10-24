@@ -67,7 +67,7 @@ export default function SelectPostListItemEdit(props) {
 											: __(
 													'Input Internal Post URL',
 													'vk-blocks-pro'
-											  )
+												)
 									}
 									onClick={setLink}
 								/>

@@ -8,7 +8,9 @@ const advancedSetAttributes = (schema, saveData, setAttributes) => {
 export const AdvancedCheckboxControl = (props) => {
 	const { schema, rawData, checkedData, setAttributes, saveState } = props;
 
-	if (!rawData || !checkedData) return false;
+	if (!rawData || !checkedData) {
+		return false;
+	}
 
 	const checkBoxComponents = rawData.map((data) => {
 		return (

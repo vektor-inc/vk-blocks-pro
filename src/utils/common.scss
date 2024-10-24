@@ -10,11 +10,13 @@
 /* 余白（レスポンシブスペーサー,共通余白で使用）
 /*-------------------------------------------*/
 :root {
+	--vk-margin-xxs : 0.375rem;
 	--vk-margin-xs : 0.75rem;
 	--vk-margin-sm : 1.5rem;
 	--vk-margin-md : 2.4rem;
 	--vk-margin-lg : 4rem;
 	--vk-margin-xl : 6rem;
+	--vk-margin-xxl : 9rem;
 }
 .vk_block{
 	&-margin-0 {
@@ -29,6 +31,18 @@
 			& > table { //テーマ側でtableにmargin-bottom や margin-top の余白がついている場合、完全に0にならないので必要
 				margin-bottom:0;
 			}
+		}
+	}
+	&-margin-xxs {
+		margin-top: var(--vk-margin-xxs); /* 旧バージョンでdeprecatedが走ってない状態のfallback */
+		&--margin-top {
+			margin-top: var(--vk-margin-xxs) !important;
+		}
+		&--margin-bottom {
+			margin-bottom: var(--vk-margin-xxs) !important;
+		}
+		&--height {
+			height: var(--vk-margin-xxs);
 		}
 	}
 	&-margin-xs {
@@ -91,17 +105,23 @@
 			height: var(--vk-margin-xl);
 		}
 	}
+	&-margin-xxl {
+		margin-top: var(--vk-margin-xxl); /* 旧バージョンでdeprecatedが走ってない状態のfallback */
+		&--margin-top {
+			margin-top: var(--vk-margin-xxl) !important;
+		}
+		&--margin-bottom {
+			margin-bottom: var(--vk-margin-xxl) !important;
+		}
+		&--height {
+			height: var(--vk-margin-xxl);
+		}
+	}
 }
 
 /*-------------------------------------------*/
-/* リストデザイン
+/* パレット設定
 /*-------------------------------------------*/
-@mixin mark-before {
-	font-family: "Font Awesome 5 Free";
-	font-weight: 900;
-	position: absolute;
-}
-
 $stylePalette: (
 	is-style-vk-arrow-mark: "\f138",
 	is-style-vk-triangle-mark: "\f0da",
@@ -115,28 +135,65 @@ $stylePalette: (
 );
 
 $colorPalette: (
-	vk-has-pale-pink-color: #f78da7,
-	vk-has-vivid-red-color: #cf2e2e,
-	vk-has-luminous-vivid-orange-color: #ff6900,
-	vk-has-luminous-vivid-amber-color: #fcb900,
-	vk-has-light-green-cyan-color: #7bdcb5,
-	vk-has-vivid-green-cyan-color: #00d084,
-	vk-has-pale-cyan-blue-color: #8ed1fc,
-	vk-has-vivid-cyan-blue-color: #0693e3,
-	vk-has-vivid-purple-color: #9b51e0,
-	vk-has-very-light-gray-color: #eee,
-	vk-has-cyan-bluish-gray-color: #abb8c3,
-	vk-has-very-dark-gray-color: #313131,
-	vk-has-white-color: #ffffff,
-	vk-has-vk-color-primary-color: var(--wp--preset--color--vk-color-primary),
-	vk-has-vk-color-primary-dark-color: var(--wp--preset--color--vk-color-primary-dark),
-	vk-has-vk-color-primary-vivid-color: var(--wp--preset--color--vk-color-primary-vivid),
-	vk-has-vk-color-custom-1-color: var(--wp--preset--color--vk-color-custom-1),
-	vk-has-vk-color-custom-2-color: var(--wp--preset--color--vk-color-custom-2),
-	vk-has-vk-color-custom-3-color: var(--wp--preset--color--vk-color-custom-3),
-	vk-has-vk-color-custom-4-color: var(--wp--preset--color--vk-color-custom-4),
-	vk-has-vk-color-custom-5-color: var(--wp--preset--color--vk-color-custom-5),
+	(pale-pink, #f78da7),
+	(vivid-red, #cf2e2e),
+	(luminous-vivid-orange, #ff6900),
+	(luminous-vivid-amber, #fcb900),
+	(light-green-cyan, #7bdcb5),
+	(vivid-green-cyan, #00d084),
+	(pale-cyan-blue, #8ed1fc),
+	(vivid-cyan-blue, #0693e3),
+	(vivid-purple, #9b51e0),
+	(very-light-gray, #eee),
+	(cyan-bluish-gray, #abb8c3),
+	(very-dark-gray, #313131),
+	(white, #ffffff),
+	(color-primary, var(--wp--preset--color--vk-color-primary)),
+	(color-primary-dark, var(--wp--preset--color--vk-color-primary-dark)),
+	(color-primary-vivid, var(--wp--preset--color--vk-color-primary-vivid)),
+	(color-custom-1, var(--wp--preset--color--vk-color-custom-1)),
+	(color-custom-2, var(--wp--preset--color--vk-color-custom-2)),
+	(color-custom-3, var(--wp--preset--color--vk-color-custom-3)),
+	(color-custom-4, var(--wp--preset--color--vk-color-custom-4)),
+	(color-custom-5, var(--wp--preset--color--vk-color-custom-5))
 );
+
+/*-------------------------------------------*/
+/* カラー設定
+/*-------------------------------------------*/
+@each $colorClass, $color in $colorPalette {
+	:root {
+		// 一般的なカラー設定
+		.vk-has-#{"#{$colorClass}"}-background-color,
+		.has-vk-#{"#{$colorClass}"}-background-color {
+			@if $colorClass == color-primary {
+				// color-primaryに関する特殊処理
+				background-color: var(--wp--preset--color--vk-color-primary, #337ab7);
+			} @else {
+				background-color: #{$color};
+			}
+		}
+
+		.vk-has-#{"#{$colorClass}"}-color,
+		.has-vk-#{"#{$colorClass}"}-color {
+			@if $colorClass == color-primary {
+				// color-primaryに関する特殊処理
+				color: var(--wp--preset--color--vk-color-primary, #337ab7);
+			} @else {
+				color: #{$color};
+			}
+		}
+	}
+}
+
+/*-------------------------------------------*/
+/* リストデザイン
+/*-------------------------------------------*/
+@mixin mark-before {
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	position: absolute;
+}
 
 ul,
 ol {
@@ -153,13 +210,17 @@ ol {
 		&-vk-numbered-circle-mark,
 		&-vk-numbered-square-mark {
 			padding-inline-start: 2em;
+			&:not(.has-text-color),
+			&:not(.has-link-color) {
+				color: initial;
+			}
 			li {
 				list-style: none;
 				position: relative;
 				margin-top:0;
 				margin-left: 0;
-				margin:calc( var(--vk-size-text) * 0.8 ) 0;
-				line-height: calc( var(--vk-size-text) * 1.65 );
+				margin:calc( 1rem * 0.8 ) 0;
+				line-height: calc( 1rem * 1.65 );
 			}
 		}
 	}
@@ -184,8 +245,8 @@ ol {
 				display: inline-block;
 				font-weight: bold;
 				border-radius: 50%;
-				font-size: calc( var(--vk-size-text) * 1 );
-				line-height: calc( var(--vk-size-text) * 1.8 );
+				font-size: calc( 1rem * 1 );
+				line-height: calc( 1rem * 1.8 );
 				width: 26px;
 				height: 26px;
 				text-align: center;
@@ -225,8 +286,8 @@ ol {
 				text-indent: 0;
 				display: inline-block;
 				font-weight: bold;
-				font-size: calc( var(--vk-size-text) * 1 );
-				line-height: calc( var(--vk-size-text) * 1.8 );
+				font-size: calc( 1rem * 1 );
+				line-height: calc( 1rem * 1.8 );
 				width: 26px;
 				height: 26px;
 				text-align: center;
@@ -318,7 +379,8 @@ ol {
 	}
 
 	@each $colorClass, $color in $colorPalette {
-		&.#{$colorClass} {
+		&.vk-has-#{"#{$colorClass}"}-color,
+		&.has-vk-#{"#{$colorClass}"}-color {
 			li::marker {
 				color: $color;
 			}
@@ -327,13 +389,17 @@ ol {
 			}
 		}
 
-		&.is-style-vk-numbered-circle-mark.#{$colorClass},
-		&.is-style-vk-numbered-square-mark.#{$colorClass} {
-			li::before {
-				color: #ffffff;
-				background-color: $color;
+		&.is-style-vk-numbered-circle-mark,
+		&.is-style-vk-numbered-square-mark {
+			&.vk-has-#{"#{$colorClass}"}-color,
+			&.has-vk-#{"#{$colorClass}"}-color {
+				li::before {
+					color: #fff;
+					background-color: $color;
+				}
 			}
 		}
+
 	}
 }
 //ul,ol
@@ -382,10 +448,28 @@ ol {
 		}
 	}
 
+	// リンク設定
+	&.has-link {
+		position: relative;
+	}
+	&-vk-link {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		color: transparent;
+		cursor: pointer;
+		z-index: 10;
+	}
+
 	@each $colorClass, $color in $colorPalette {
-		&.#{$colorClass} {
+		&.vk-has-#{"#{$colorClass}"}-color,
+		&.has-vk-#{"#{$colorClass}"}-color {
+			color: initial;
 			border-color: $color;
 			.wp-block-group__inner-container {
+				color: initial;
 				border-color: $color;
 			}
 		}
@@ -534,8 +618,8 @@ ol {
 /*-------------------------------------------*/
 $xxl-min: 1400px;
 .col {
-    // Bootstrap4 では xxl サイズがないので独自に追加
-    @media (min-width: $xxl-min) {
+	// Bootstrap4 では xxl サイズがないので独自に追加
+	@media (min-width: $xxl-min) {
 		&-xxl-2 {
 			flex: 0 0 16.66667%;
 			max-width: 16.66667%;
@@ -556,5 +640,123 @@ $xxl-min: 1400px;
 			flex: 0 0 100%;
 			max-width: 100%;
 		}
+	}
+}
+
+/*-------------------------------------------*/
+/* カラム
+/*-------------------------------------------*/
+.wp-block-columns {
+	/* カラムの方向 */
+	&.wp-block-columns.is-vk-row-reverse {
+		flex-direction: row-reverse;
+	}
+	/* リンク設定 */
+	&:has(.wp-block-column-vk-link) {
+		.wp-block-column {
+			> * {
+				&:first-of-type {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+	.wp-block-column:has(.wp-block-column-vk-link) {
+		position: relative;
+		.wp-block-column-vk-link {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			color: transparent;
+			cursor: pointer;
+			z-index: 10;
+			> p {
+				line-height: var(--vk-line-height); // 自動で入るコアの .is-layout-flow CSSに負けるため
+			}
+		}
+	}
+}
+
+/*-------------------------------------------*/
+/* カバーブロック
+/*-------------------------------------------*/
+.wp-block-cover {
+	// リンク設定
+	&.has-link {
+		position: relative;
+	}
+	&-vk-link {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		color: transparent;
+		cursor: pointer;
+		z-index: 10;
+	}
+}
+
+/*-------------------------------------------*/
+/* スクロールヒント
+/*-------------------------------------------*/
+@mixin scrollable-table-scroll-hint {
+	display: block;
+	text-align: right;
+	font-size: .85rem;
+	&:has(i:last-of-type ) {
+		margin-right: 3px;
+	}
+	i {
+		margin: 0;
+		&:first-of-type {
+			animation: shake-left 1.5s ease-in-out infinite;
+		}
+		&:last-of-type {
+			animation: shake-right 1.5s ease-in-out infinite;
+		}
+ 	}
+  	/* 横揺れアニメーションの定義 */
+	@keyframes shake-left {
+		0% { transform: translateX(0); }
+		50% { transform: translateX(-3px); }
+		100% { transform: translateX(0); }
+	}
+	@keyframes shake-right {
+		0% { transform: translateX(0); }
+		50% { transform: translateX(3px); }
+		100% { transform: translateX(0); }
+	}
+}
+
+.vk-scroll-hint {
+	display: none;
+
+	&[data-scroll-breakpoint="table-scrollable-mobile"] {
+		@media (max-width: 575.98px) {
+			@include scrollable-table-scroll-hint;
+		}
+	}
+
+	&[data-scroll-breakpoint="table-scrollable-tablet"] {
+		@media (max-width: 991.98px) {
+			@include scrollable-table-scroll-hint;
+		}
+	}
+
+	&[data-scroll-breakpoint="table-scrollable-pc"] {
+		@include scrollable-table-scroll-hint;
+	}
+
+	+ * {
+		margin-top: 0;
+	}
+}
+
+.editor-styles-wrapper {
+	.vk-scroll-hint {
+		@include scrollable-table-scroll-hint;
 	}
 }

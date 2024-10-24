@@ -10,7 +10,11 @@ import {
 	__experimentalUseCustomUnits as useCustomUnits,
 	__experimentalToolsPanelItem as ToolsPanelItem,
 } from '@wordpress/components';
-import { InspectorControls, useSetting } from '@wordpress/block-editor';
+import {
+	InspectorControls,
+	useSettings,
+	useSetting, // 6.4 互換
+} from '@wordpress/block-editor';
 
 const SCALE_OPTIONS = (
 	<>
@@ -49,9 +53,20 @@ const DimensionControls = ({
 	setAttributes,
 }) => {
 	const defaultUnits = ['px', '%', 'vw', 'em', 'rem'];
+
+	let spacingUnits;
+
+	if (typeof useSettings === 'function') {
+		spacingUnits = [...useSettings('spacing.units')[0]];
+	} else if (typeof useSetting === 'function') {
+		// 6.4 互換
+		spacingUnits = [...useSetting('spacing.units')[0]];
+	}
+
 	const units = useCustomUnits({
-		availableUnits: useSetting('spacing.units') || defaultUnits,
+		availableUnits: spacingUnits || defaultUnits,
 	});
+
 	const onDimensionChange = (dimension, nextValue) => {
 		const parsedValue = parseFloat(nextValue);
 		/**
@@ -59,7 +74,9 @@ const DimensionControls = ({
 		 * we don't want to set the attribute, as it would
 		 * end up having the unit as value without any number.
 		 */
-		if (isNaN(parsedValue) && nextValue) return;
+		if (isNaN(parsedValue) && nextValue) {
+			return;
+		}
 		setAttributes({
 			[dimension]: parsedValue < 0 ? '0' : nextValue,
 		});

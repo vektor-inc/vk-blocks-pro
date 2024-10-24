@@ -1,40 +1,32 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from '@wordpress/e2e-test-utils-playwright';
 
-test('Common margin', async ({ page }) => {
-	await page.goto('http://localhost:8889/wp-login.php');
-	await page.getByLabel('Username or Email Address').click();
-	await page.getByLabel('Username or Email Address').fill('admin');
-	await page.getByLabel('Username or Email Address').press('Tab');
-	await page.getByLabel('Password', { exact: true }).fill('password');
-	await page.getByRole('button', { name: 'Log In' }).click();
-	await page.goto('http://localhost:8889/wp-admin/post-new.php');
+test.describe( 'Block', () => {
+	test.beforeEach( async ( { admin, page } ) => {
+		// パーマリンクを設定
+		await admin.visitAdminPage( 'options-permalink.php' );
+		await page.getByText( 'Post name' ).click();
+		await page.getByRole( 'button', { name: 'Save Changes' } ).click();
 
-	// Check if the modal is visible
-	const isModalVisible = await page.isVisible('.components-modal__frame');
+        // 非推奨ブロックを有効化
+        // await admin.visitAdminPage( 'options-general.php?page=vk_blocks_options' );
+        // await page.getByRole('checkbox', { name: 'VKDeprecated Blocks' }).check();
+        // await page.locator('div').filter({ hasText: /^Save setting$/ }).click();
 
-	// If the modal is visible, click the close button
-	if (isModalVisible) {
-		await page.click('button[aria-label="Close"]');
-	}
+		// それぞれのテストの前に新しい投稿を作成する
+		await admin.createNewPost();
+	} );
 
-	await page.getByRole('button', { name: 'Toggle block inserter' }).click();
-	await page.getByPlaceholder('Search').fill('breadcrumb');
-	await page.getByRole('option', { name: 'Breadcrumb', exact: true }).click();
-	await page.getByRole('button', { name: 'Margin the block' }).click();
-	await page.getByRole('menuitem', { name: 'Top XL' }).click();
+	test( 'should be created', async ( { editor, page } ) => {
+		// ブロックを挿入する
+		await editor.insertBlock( {
+			name: 'vk-blocks/breadcrumb',
+		} );
+		await page.getByRole('button', { name: 'Margin the block' }).click();
+		await page.getByRole('menuitem', { name: 'Top XL' }).click();
 
-	// パンくず要素を取得
-	const element = await page.$('div.wp-block-vk-blocks-breadcrumb');
-	if (element !== null) {
-		const classAttribute = await element.getAttribute('class');
-		if (classAttribute !== null) {
-			// パンくず要素に vk_block-margin-xl--margin-top クラスが付与されているか確認
-			const hasClass = classAttribute.includes('vk_block-margin-xl--margin-top');
-			expect(hasClass).toBeTruthy();
-		} else {
-			throw new Error('classAttribute is null');
-		}
-	} else {
-		throw new Error('Element not found');
-	}
-});
+		await expect( page.getByLabel('Block: Breadcrumb') ).toHaveClass(
+			'block-editor-block-list__block wp-block is-selected vk_block-margin-xl--margin-top wp-block-vk-blocks-breadcrumb'
+		);
+
+	} );
+} );

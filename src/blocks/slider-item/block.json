@@ -42,6 +42,13 @@
 			"type": "string",
 			"default": "1"
 		},
+		"linkUrl": {
+			"type": "string"
+		},
+		"linkTarget": {
+			"type": "string",
+			"default": ""
+		},
 		"clientId": {
 			"type": "string"
 		},
@@ -51,6 +58,9 @@
 	},
 	"supports": {
 		"html": false,
-		"className": true
+		"className": true,
+		"spacing": {
+			"padding": true
+		}
 	}
 }

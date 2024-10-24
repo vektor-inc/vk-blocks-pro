@@ -62,11 +62,11 @@
 		},
 		"headerDisplay": {
 			"type": "string",
-			"default": "delete"
+			"default": "display"
 		},
 		"footerDisplay": {
 			"type": "string",
-			"default": "delete"
+			"default": "display"
 		},
 		"borderRadius": {
 			"type": "string",
@@ -79,6 +79,10 @@
 		"borderColor": {
 			"type": "string",
 			"default": "#e5e5e5"
+		},
+		"borderWidth": {
+			"type": "string",
+			"default": "1px"
 		},
 		"blockId": {
 			"type": "string"

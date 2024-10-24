@@ -9,5 +9,7 @@ module.exports = {
 		'@wordpress/i18n-translator-comments': 'off',
 		'react-hooks/exhaustive-deps': 'off',
 		'no-shadow': 'off',
+		'jsdoc/no-undefined-types': 'off',
+		'react-hooks/rules-of-hooks': 'off',
 	},
 };

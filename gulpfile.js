@@ -10,49 +10,19 @@ const notify = require('gulp-notify');
 
 // replace_text_domain
 gulp.task('text-domain-pro', (done) => {
-	// vk-admin.
-	gulp.src(['./inc/vk-admin/package/*.php'])
-		.pipe(replace("'vk_admin_textdomain'", "'vk-blocks'"))
-		.pipe(gulp.dest('./inc/vk-admin/package/'));
-	// font-awesome.
-	gulp.src(['./inc/font-awesome/package/*.php'])
-		.pipe(replace("'vk_font_awesome_version_textdomain'", "'vk-blocks'"))
-		.pipe(gulp.dest('./inc/font-awesome/package/'));
-	// term-color.
-	gulp.src(['./inc/term-color/package/*.php'])
-		.pipe(replace("'vk_term_color_textdomain'", "'vk-blocks'"))
-		.pipe(gulp.dest('./inc/term-color/package/'));
 	// vk-components.
 	gulp.src(['./inc/vk-components/package/*.php'])
 		.pipe(replace("'vk_components_textdomain'", "'vk-blocks'"))
 		.pipe(gulp.dest('./inc/vk-components/package/'));
-	gulp.src(['./inc/vk-css-optimize/package/*.php'])
-		.pipe(replace("'css_optimize_textdomain'", "'vk-blocks'"))
-		.pipe(gulp.dest('./inc/vk-css-optimize/package/'));
 	done();
 });
 
 // replace_text_domain
 gulp.task('text-domain-free', (done) => {
-	// vk-admin.
-	gulp.src(['./inc/vk-admin/package/*.php'])
-		.pipe(replace("'vk_admin_textdomain'", "'vk-blocks'"))
-		.pipe(gulp.dest('./inc/vk-admin/package/'));
-	// font-awesome.
-	gulp.src(['./inc/font-awesome/package/*.php'])
-		.pipe(replace("'vk_font_awesome_version_textdomain'", "'vk-blocks'"))
-		.pipe(gulp.dest('./inc/font-awesome/package/'));
-	// term-color.
-	gulp.src(['./inc/term-color/package/*.php'])
-		.pipe(replace("'vk_term_color_textdomain'", "'vk-blocks'"))
-		.pipe(gulp.dest('./inc/term-color/package/'));
 	// vk-components.
 	gulp.src(['./inc/vk-components/package/*.php'])
 		.pipe(replace("'vk_components_textdomain'", "'vk-blocks'"))
 		.pipe(gulp.dest('./inc/vk-components/package/'));
-	gulp.src(['./inc/vk-css-optimize/package/*.php'])
-		.pipe(replace("'css_optimize_textdomain'", "'vk-blocks'"))
-		.pipe(gulp.dest('./inc/vk-css-optimize/package/'));
 	gulp.src(['./inc/**',])
 		.pipe(replace(/__\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "__( $1, 'vk-blocks' )"))
 		.pipe(replace(/_e\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_e( $1, 'vk-blocks' )"))
@@ -105,6 +75,22 @@ gulp.task('helper-js-pro', (done) => {
 	gulp.src('src/blocks/_pro/animation/view.js')
 		.pipe(uglify())
 		.pipe(rename('vk-animation.min.js'))
+		.pipe(gulp.dest('./build/'));
+	gulp.src('src/blocks/_pro/breadcrumb/view.js')
+		.pipe(uglify())
+		.pipe(rename('vk-breadcrumb.min.js'))
+		.pipe(gulp.dest('./build/'));
+	gulp.src('src/blocks/_pro/fixed-display/view.js')
+		.pipe(uglify())
+		.pipe(rename('vk-fixed-display.min.js'))
+		.pipe(gulp.dest('./build/'));
+	gulp.src('src/blocks/_pro/tab/view.js')
+		.pipe(uglify())
+		.pipe(rename('vk-tab.min.js'))
+		.pipe(gulp.dest('./build/'));
+	gulp.src('src/blocks/_pro/table-of-contents-new/view.js')
+		.pipe(uglify())
+		.pipe(rename('vk-table-of-contents-new.min.js'))
 		.pipe(gulp.dest('./build/'));
 	done();
 });
@@ -231,7 +217,7 @@ gulp.task('sass-separate-free', (done) => {
 
 // ブロックごとのscssそれぞれビルド pro
 gulp.task('sass-separate-pro', (done) => {
-	gulp.src('./src/blocks/pro/**/*.scss')
+	gulp.src('./src/blocks/_pro/**/*.scss')
 		.pipe(
 			sass({
 				errLogToConsole: true,
@@ -321,45 +307,3 @@ gulp.task(
 
 // Default Tasks
 gulp.task('default', gulp.series('watch'));
-
-// copy dist ////////////////////////////////////////////////
-
-gulp.task('dist', (done) => {
-	gulp.src(
-		[
-			'./build/**',
-			'./inc/**',
-			'./languages/**',
-			'./vendor/**',
-			'./*.txt',
-			'./*.png',
-			'./*.php',
-			'!./src/**',
-			'!./tests/**',
-			'!./dist/**',
-			'!./node_modules/**',
-		],
-		{ base: './' }
-	).pipe(gulp.dest('dist/vk-blocks-pro')); // distディレクトリに出力
-	done();
-});
-
-// 無料版のリポジトリにコピーされた上で無料版リポジトリで実行される
-gulp.task('dist:free', (done) => {
-	gulp.src(
-		[
-			'./build/**',
-			'./inc/**',
-			'./vendor/**',			
-			'./*.txt',
-			'./*.png',
-			'./*.php',
-			'!./src/**',
-			'!./test/**',
-			'!./dist/**',
-			'!./node_modules/**',
-		],
-		{ base: './' }
-	).pipe(gulp.dest('dist/vk-blocks')); // distディレクトリに出力
-	done();
-});

@@ -57,35 +57,38 @@ export default function Edit(props) {
 	const thisBlock = getBlocksByClientId(clientId);
 
 	useEffect(() => {
-		if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
-			// インナーブロックの情報を取得
-			const thisInnerBlocks = thisBlock[0].innerBlocks;
+		if (isParentReusableBlock(clientId) === false) {
+			if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
+				// インナーブロックの情報を取得
+				const thisInnerBlocks = thisBlock[0].innerBlocks;
 
-			// インナーブロックをループ
-			thisInnerBlocks.forEach(function (thisInnerBlock) {
-				// 編集ロックがかかっていないものだけ上書きする
-				if (thisInnerBlock.attributes.editLock === false) {
-					// 子ブロックのattributeをアップデート
-					updateBlockAttributes(thisInnerBlock.clientId, {
-						// 子ブロックの編集モードを変更
-						// selfになってないと親を書き換えに帰ってくるので無限ループになる
-						editMode: 'self',
+				// インナーブロックをループ
+				thisInnerBlocks.forEach(function (thisInnerBlock) {
+					// 編集ロックがかかっていないものだけ上書きする
+					if (thisInnerBlock.attributes.editLock === false) {
+						// 子ブロックのattributeをアップデート
+						updateBlockAttributes(thisInnerBlock.clientId, {
+							// 子ブロックの編集モードを変更
+							// selfになってないと親を書き換えに帰ってくるので無限ループになる
+							editMode: 'self',
 
-						containerSpace: attributes.containerSpace,
-						headerImageAspectRatio:
-							attributes.headerImageAspectRatio,
-						headerImageFit: attributes.headerImageFit,
-						headerDisplay: attributes.headerDisplay,
-						footerDisplay: attributes.footerDisplay,
-						borderRadius: attributes.borderRadius,
-						border: attributes.border,
-						borderColor: attributes.borderColor,
-						textColor: attributes.textColor,
-						backgroundColor: attributes.backgroundColor,
-						backgroundGradient: attributes.backgroundGradient,
-					});
-				}
-			});
+							containerSpace: attributes.containerSpace,
+							headerImageAspectRatio:
+								attributes.headerImageAspectRatio,
+							headerImageFit: attributes.headerImageFit,
+							headerDisplay: attributes.headerDisplay,
+							footerDisplay: attributes.footerDisplay,
+							borderRadius: attributes.borderRadius,
+							border: attributes.border,
+							borderColor: attributes.borderColor,
+							borderWidth: attributes.borderWidth,
+							textColor: attributes.textColor,
+							backgroundColor: attributes.backgroundColor,
+							backgroundGradient: attributes.backgroundGradient,
+						});
+					}
+				});
+			}
 		}
 	}, [thisBlock, attributes]);
 

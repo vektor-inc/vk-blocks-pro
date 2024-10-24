@@ -26,6 +26,7 @@ import { link, linkOff, keyboardReturn } from '@wordpress/icons';
 import classnames from 'classnames';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { isGradientStyle } from '@vkblocks/utils/is-gradient-style';
+import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 
 export default function Edit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -50,6 +51,7 @@ export default function Edit(props) {
 		borderRadius,
 		border,
 		borderColor,
+		borderWidth,
 		textColor,
 		backgroundColor,
 		backgroundGradient,
@@ -57,8 +59,8 @@ export default function Edit(props) {
 		urlOpenType,
 	} = attributes;
 
-	// editModeは値として保持させずに常に個別モードでスタートさせる
-	const [editMode, setEditMode] = useState('self');
+	// editModeは値として保持させずに常にすべてのカラムモードでスタートさせる
+	const [editMode, setEditMode] = useState('all');
 
 	const { rootClientId } = useSelect(
 		(select) => {
@@ -86,61 +88,72 @@ export default function Edit(props) {
 	// 親ブロック情報取得
 	const parentBlock = getBlocksByClientId(rootClientId);
 	useEffect(() => {
-		// Send attribute to child
-		if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
-			const thisInnerBlocks = thisBlock[0].innerBlocks;
-			thisInnerBlocks.forEach(function (thisInnerBlock) {
-				updateBlockAttributes(thisInnerBlock.clientId, {
-					containerSpace: attributes.containerSpace,
-					headerImageAspectRatio: attributes.headerImageAspectRatio,
-					headerImageFit: attributes.headerImageFit,
-					headerDisplay: attributes.headerDisplay,
-					footerDisplay: attributes.footerDisplay,
+		if (isParentReusableBlock(clientId) === false) {
+			// Send attribute to child
+			if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
+				const thisInnerBlocks = thisBlock[0].innerBlocks;
+				thisInnerBlocks.forEach(function (thisInnerBlock) {
+					updateBlockAttributes(thisInnerBlock.clientId, {
+						containerSpace: attributes.containerSpace,
+						headerImageAspectRatio:
+							attributes.headerImageAspectRatio,
+						headerImageFit: attributes.headerImageFit,
+						headerDisplay: attributes.headerDisplay,
+						footerDisplay: attributes.footerDisplay,
+					});
 				});
-			});
-		}
+			}
 
-		// Send attribute to parent
-		if (editMode === 'all') {
-			if (parentBlock && parentBlock[0] && parentBlock[0].innerBlocks) {
-				const parentInnerBlocks = parentBlock[0].innerBlocks;
+			// Send attribute to parent
+			if (editMode === 'all') {
+				if (
+					parentBlock &&
+					parentBlock[0] &&
+					parentBlock[0].innerBlocks
+				) {
+					const parentInnerBlocks = parentBlock[0].innerBlocks;
 
-				// 兄弟ブロックの値の変更
-				parentInnerBlocks.forEach(function (thisInnerBlock) {
-					// 編集ロックがかかっていないものだけ上書きする
-					if (thisInnerBlock.attributes.editLock === false) {
-						updateBlockAttributes(thisInnerBlock.clientId, {
-							editMode: attributes.editMode,
-							containerSpace: attributes.containerSpace,
-							headerImageAspectRatio:
-								attributes.headerImageAspectRatio,
-							headerImageFit: attributes.headerImageFit,
-							headerDisplay: attributes.headerDisplay,
-							footerDisplay: attributes.footerDisplay,
-							borderRadius: attributes.borderRadius,
-							border: attributes.border,
-							borderColor: attributes.borderColor,
-							textColor: attributes.textColor,
-							backgroundColor: attributes.backgroundColor,
-							backgroundGradient: attributes.backgroundGradient,
-						});
-					}
-				});
+					// 兄弟ブロックの値の変更
+					parentInnerBlocks.forEach(function (thisInnerBlock) {
+						// 編集ロックがかかっていないものだけ上書きする
+						if (thisInnerBlock.attributes.editLock === false) {
+							updateBlockAttributes(thisInnerBlock.clientId, {
+								editMode: attributes.editMode,
+								containerSpace: attributes.containerSpace,
+								headerImageAspectRatio:
+									attributes.headerImageAspectRatio,
+								headerImageFit: attributes.headerImageFit,
+								headerDisplay: attributes.headerDisplay,
+								footerDisplay: attributes.footerDisplay,
+								borderRadius: attributes.borderRadius,
+								border: attributes.border,
+								borderColor: attributes.borderColor,
+								borderWidth: attributes.borderWidth,
+								textColor: attributes.textColor,
+								backgroundColor: attributes.backgroundColor,
+								backgroundGradient:
+									attributes.backgroundGradient,
+							});
+						}
+					});
 
-				// 子ブロックから親ブロックの値の変更
-				updateBlockAttributes(rootClientId, {
-					containerSpace: attributes.containerSpace,
-					headerImageAspectRatio: attributes.headerImageAspectRatio,
-					headerImageFit: attributes.headerImageFit,
-					headerDisplay: attributes.headerDisplay,
-					footerDisplay: attributes.footerDisplay,
-					borderRadius: attributes.borderRadius,
-					border: attributes.border,
-					borderColor: attributes.borderColor,
-					textColor: attributes.textColor,
-					backgroundColor: attributes.backgroundColor,
-					backgroundGradient: attributes.backgroundGradient,
-				});
+					// 子ブロックから親ブロックの値の変更
+					updateBlockAttributes(rootClientId, {
+						containerSpace: attributes.containerSpace,
+						headerImageAspectRatio:
+							attributes.headerImageAspectRatio,
+						headerImageFit: attributes.headerImageFit,
+						headerDisplay: attributes.headerDisplay,
+						footerDisplay: attributes.footerDisplay,
+						borderRadius: attributes.borderRadius,
+						border: attributes.border,
+						borderColor: attributes.borderColor,
+						borderWidth: attributes.borderWidth,
+						textColor: attributes.textColor,
+						backgroundColor: attributes.backgroundColor,
+						backgroundGradient: attributes.backgroundGradient,
+					});
+				}
 			}
 		}
 	}, [thisBlock, attributes]);
@@ -183,9 +196,9 @@ export default function Edit(props) {
 		style.background = `${backgroundGradient}`;
 	}
 
-	// 線の色
+	// 線の色と太さ
 	if (border) {
-		style.borderWidth = `1px`;
+		style.borderWidth = borderWidth;
 		if (isHexColor(borderColor)) {
 			// custom color
 			style.borderColor = `${borderColor}`;
@@ -200,7 +213,14 @@ export default function Edit(props) {
 	const alertClass = url ? 'mb-3 alert alert-danger' : 'mb-3';
 
 	const blockProps = useBlockProps({
-		className: containerClasses,
+		className: classnames(containerClasses, {
+			'vk_gridcolcard_item-noHeader': headerDisplay === 'delete',
+			'vk_gridcolcard_item-noFooter': footerDisplay === 'delete',
+			[`vk_gridcolcard_item-header-${headerDisplay}`]:
+				headerDisplay !== 'delete',
+			[`vk_gridcolcard_item-footer-${footerDisplay}`]:
+				footerDisplay !== 'delete',
+		}),
 		style,
 	});
 
@@ -230,7 +250,7 @@ export default function Edit(props) {
 											: __(
 													'Input Link URL',
 													'vk-blocks-pro'
-											  )
+												)
 									}
 									onClick={setLink}
 								/>

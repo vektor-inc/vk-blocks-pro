@@ -21,6 +21,7 @@ const CommonItemControl = (props) => {
 		containerSpace,
 		borderRadius,
 		border,
+		borderWidth,
 		headerImageAspectRatio,
 		headerImageFit,
 	} = attributes;
@@ -105,7 +106,10 @@ const CommonItemControl = (props) => {
 					return (
 						<>
 							<ComboboxControl
-								label="Card header image aspect ratio"
+								label={__(
+									'Card header image aspect ratio',
+									'vk-blocks-pro'
+								)}
 								value={headerImageAspectRatio}
 								onChange={(value) =>
 									setAttributes({
@@ -193,6 +197,17 @@ const CommonItemControl = (props) => {
 				if (border) {
 					return (
 						<>
+							<UnitControl
+								label={__('Border Width', 'vk-blocks-pro')}
+								value={borderWidth}
+								onChange={(newBorderWidth) =>
+									setAttributes({
+										borderWidth: newBorderWidth,
+									})
+								}
+								min={1}
+								max={10}
+							/>
 							<BaseControl
 								label={__('Border Color', 'vk-blocks-pro')}
 								id={`vk_gridcolcard_border_color`}

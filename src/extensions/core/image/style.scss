@@ -53,7 +53,7 @@ $border_primary: 1px solid #e5e5e5;
 //他テーマ用に追加
 .wp-block-image figcaption {
     text-align: center;
-    font-size: calc(var(--vk-size-text)* 0.75 );
+    font-size: calc( 1rem* 0.75 );
 }
 
 //左寄せ、右寄せが未指定の場合はfigureに.is-style-vk-image のクラス名が付く
@@ -66,6 +66,13 @@ figure.wp-block-image{
                 border-radius: $border_radius;
             }
         }
+        &-circle {
+            img {
+                mask-image: var(--vk_image-mask-circle);
+                @include mask;
+            }
+        }
+
         &-border {
             img {
                 border: $border_primary;
@@ -129,6 +136,14 @@ figure.wp-block-image{
             &.alignleft, &.alignright, &.aligncenter{
                 img {
                     border-radius: $border_radius;
+                }
+            }
+        }
+        &-circle figure{
+            &.alignleft, &.alignright, &.aligncenter{
+                img{
+                    mask-image: var(--vk_image-mask-circle);
+                    @include mask;
                 }
             }
         }
@@ -201,6 +216,7 @@ figure.wp-block-image{
                 }
             }
         }
+
     }
 }
 

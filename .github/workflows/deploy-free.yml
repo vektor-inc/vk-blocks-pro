@@ -10,10 +10,10 @@ on:
 
 env:
   plugin_name: vk-blocks-pro
-  GIT_TOKEN: ${{ secrets.ACCESSTOKEN_FOR_VK_BLOCKS_FREE }}
+  GIT_REPOSITORY_MAIL: ${{ secrets.GIT_REPOSITORY_MAIL }}
+  GIT_REPOSITORY_USER: ${{ secrets.GIT_REPOSITORY_USER }}
+  GIT_REPOSITORY_FREE: ${{ secrets.GIT_REPOSITORY_FREE }}
   GIT_USER: ${{ secrets.GIT_USER }}
-  GIT_REPOSITORY: ${{ secrets.GIT_REPOSITORY }}
-
 # 無料版のリポジトリをPro版の中で一旦 clone して、bin/deploy-free.sh で処理する
 
 jobs:
@@ -29,22 +29,25 @@ jobs:
     - name: Get tag version
       run: echo "RELEASE_VERSION=$(echo ${GITHUB_REF:10})" >> $GITHUB_ENV
 
-    # get the node version from the .node-version file
-    - name: Read .node-version
-      run: echo "##[set-output name=NODEVERSION;]$(cat .node-version)"
-      id: nodenv
-
     # setup node based on the version from the .node-version file, fetched in the previous step
     - name: Setup Node.js (.node-version)
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
-        node-version: "${{ steps.nodenv.outputs.NODEVERSION }}"
+        node-version: 20.x
 
     - run: npm install -g npm
-    # 無料版を（Pro版の中に）クローン
-    - run: git clone https://${GIT_USER}:${GIT_TOKEN}@github.com/${GIT_REPOSITORY} ./temp/plugins/vk-blocks
+    # SSH Key の設定
+    - name: Setup SSH Key
+      uses: MrSquaare/ssh-setup-action@v3
+      with:
+          host: github.com
+          private-key: ${{ secrets.DEPLOY_KEY_FREE }}
+          private-key-name: vk-blocks-free
+
+    # 通常版を（Pro版の中に）クローン
+    - run: git clone git@github.com:${GIT_REPOSITORY_USER}/${GIT_REPOSITORY_FREE}.git ./temp/plugins/${GIT_REPOSITORY_FREE}
     # VK Blocks の Githubにアクセスできるユーザーの設定
-    - run: git config --global user.email "info@vektor-inc.co.jp"
-    - run: git config --global user.name "github-workflows-vk-blocks-pro"
+    - run: git config --global user.email "${GIT_REPOSITORY_MAIL}"
+    - run: git config --global user.name "${GIT_USER}"
     # # 無料版にデプロイするスクリプトにタグ名を引数で渡す。
     - run: bash bin/deploy-free.sh $RELEASE_VERSION

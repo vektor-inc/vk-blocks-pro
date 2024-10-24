@@ -1,4 +1,4 @@
-/* globals vk_block_post_type_params */
+/* globals vk_block_post_type_params, MutationObserver */
 // import WordPress Scripts
 import { __, sprintf } from '@wordpress/i18n';
 import {
@@ -54,14 +54,57 @@ export default function PostListEdit(props) {
 		JSON.parse(fixBrokenUnicode(isCheckedPostType))
 	);
 
+	const postTypeToTaxonomyMap = {};
+	const taxonomies = useTaxonomies();
+	const termsByTaxonomyName = vk_block_post_type_params.term_by_taxonomy_name;
+
+	taxonomies.forEach((taxonomy) => {
+		taxonomy.types.forEach((postType) => {
+			if (!postTypeToTaxonomyMap[postType]) {
+				postTypeToTaxonomyMap[postType] = [];
+			}
+			postTypeToTaxonomyMap[postType].push(taxonomy.slug);
+		});
+	});
+
 	const saveStateTerms = (termId) => {
-		isCheckedTermsData.push(termId);
-		setIsCheckedTermsData(isCheckedTermsData);
+		if (!isCheckedTermsData.includes(termId)) {
+			isCheckedTermsData.push(termId);
+			setIsCheckedTermsData([...isCheckedTermsData]);
+		}
+	};
+
+	const removeStateTerms = (termId) => {
+		const newTermsData = isCheckedTermsData.filter((id) => id !== termId);
+		setIsCheckedTermsData(newTermsData);
+		setAttributes({
+			isCheckedTerms: JSON.stringify(newTermsData),
+		});
 	};
 
 	const saveStatePostTypes = (slug) => {
-		isCheckedPostTypeData.push(slug);
-		setIsCheckedPostTypeData(isCheckedPostTypeData);
+		let newPostTypeData = [...isCheckedPostTypeData];
+		let newTermsData = [...isCheckedTermsData];
+		if (!newPostTypeData.includes(slug)) {
+			newPostTypeData.push(slug);
+		} else {
+			newPostTypeData = newPostTypeData.filter((type) => type !== slug);
+			const postTypeTaxonomies = postTypeToTaxonomyMap[slug] || [];
+			postTypeTaxonomies.forEach((taxonomy) => {
+				const terms = termsByTaxonomyName[taxonomy] || [];
+				terms.forEach((term) => {
+					newTermsData = newTermsData.filter(
+						(id) => id !== term.term_id
+					);
+				});
+			});
+		}
+		setIsCheckedPostTypeData(newPostTypeData);
+		setIsCheckedTermsData(newTermsData);
+		setAttributes({
+			isCheckedPostType: JSON.stringify(newPostTypeData),
+			isCheckedTerms: JSON.stringify(newTermsData),
+		});
 	};
 
 	let postTypesProps = vk_block_post_type_params.post_type_option;
@@ -72,8 +115,14 @@ export default function PostListEdit(props) {
 			'attachment' !== postType.slug && 'wp_block' !== postType.slug
 	);
 
-	const taxonomies = useTaxonomies();
-	const termsByTaxonomyName = vk_block_post_type_params.term_by_taxonomy_name;
+	const getTaxonomiesByPostType = (postType) => {
+		return taxonomies.filter((taxonomy) => {
+			return (
+				taxonomy.types.includes(postType) &&
+				termsByTaxonomyName[taxonomy.slug]?.length
+			);
+		});
+	};
 
 	const replaceIsCheckedTermData = (taxonomyRestbase, termIds, newIds) => {
 		const removedTermIds = termIds.filter((termId) => {
@@ -90,7 +139,12 @@ export default function PostListEdit(props) {
 
 	// termFormTokenFields ////////////////////////////////////////////////////////
 	// Tag Filter
-	const termFormTokenFields = taxonomies
+	const selectedPostTypes = isCheckedPostTypeData;
+	const filteredTaxonomies = selectedPostTypes.flatMap((postType) =>
+		getTaxonomiesByPostType(postType)
+	);
+
+	const termFormTokenFields = filteredTaxonomies
 		.filter((taxonomy) => {
 			return !taxonomy.hierarchical && termsByTaxonomyName[taxonomy.slug];
 		})
@@ -159,7 +213,7 @@ export default function PostListEdit(props) {
 
 	// taxonomiesCheckBox ////////////////////////////////////////////////////////
 	// key を BaseControlのlabelに代入。valueの配列をmapでAdvancedCheckboxControlに渡す
-	const taxonomiesCheckBox = taxonomies
+	const taxonomiesCheckBox = filteredTaxonomies
 		.filter((taxonomy) => {
 			return (
 				taxonomy.hierarchical === true &&
@@ -191,6 +245,7 @@ export default function PostListEdit(props) {
 						rawData={taxonomiesProps}
 						checkedData={isCheckedTermsData}
 						saveState={saveStateTerms}
+						removeState={removeStateTerms} // チェック解除時の処理を追加
 						{...props}
 					/>
 				</BaseControl>
@@ -198,6 +253,55 @@ export default function PostListEdit(props) {
 		}, termsByTaxonomyName);
 
 	const blockProps = useBlockProps();
+
+	// `offset`が空の場合に0に設定する
+	useEffect(() => {
+		if (offset === undefined || offset === null || offset === '') {
+			setAttributes({ offset: 0 });
+		}
+	}, [offset]);
+
+	useEffect(() => {
+		setAttributes({
+			isCheckedPostType: JSON.stringify(isCheckedPostTypeData),
+			isCheckedTerms: JSON.stringify(isCheckedTermsData),
+		});
+	}, [isCheckedPostTypeData, isCheckedTermsData]);
+
+	// リンクを無効にする関数
+	const disableLinks = () => {
+		const links = document.querySelectorAll(
+			'.vk_post_imgOuter a, .vk_post .vk_post_title a, .postListText_title a, .card-intext .card-intext-inner, .postListText_singleTermLabel_inner, .vk_post_btnOuter a'
+		);
+		links.forEach((link) => {
+			link.addEventListener('click', (event) => {
+				event.preventDefault();
+			});
+			link.style.cursor = 'default';
+			link.style.boxShadow = 'unset';
+
+			// ホバー効果を無効化
+			link.style.color = 'inherit';
+			link.style.textDecorationColor = 'inherit';
+		});
+	};
+
+	useEffect(() => {
+		// MutationObserverでDOMの変化を監視
+		const observer = new MutationObserver(disableLinks);
+
+		// body全体を監視
+		const targetNode = document.querySelector('body');
+		observer.observe(targetNode, { childList: true, subtree: true });
+
+		// 初回およびattributesの変更時にリンクを無効化
+		disableLinks();
+
+		// クリーンアップ関数
+		return () => {
+			observer.disconnect(); // 監視を停止
+		};
+	}, [attributes]);
 
 	return (
 		<>
@@ -351,7 +455,9 @@ export default function PostListEdit(props) {
 						<TextControl
 							value={offset}
 							onChange={(v) =>
-								setAttributes({ offset: parseInt(v, 10) })
+								setAttributes({
+									offset: v === '' ? 0 : parseInt(v, 10),
+								})
 							}
 							type="number"
 							min="0"
@@ -384,6 +490,7 @@ export default function PostListEdit(props) {
 				<ServerSideRender
 					block="vk-blocks/post-list"
 					attributes={attributes}
+					onRendered={disableLinks}
 				/>
 			</div>
 		</>

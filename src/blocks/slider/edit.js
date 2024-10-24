@@ -835,7 +835,7 @@ export default function SliderEdit(props) {
 					onChange={(nextWidth) =>
 						setAttributes({ width: nextWidth })
 					}
-					controls={['full']}
+					controls={['wide', 'full']}
 				/>
 				<ToolbarGroup>
 					<ToolbarDropdownMenu
@@ -907,31 +907,6 @@ export default function SliderEdit(props) {
 								}
 							>
 								{__('Preview ( Slide )', 'vk-blocks-pro')}
-							</Button>
-						</ButtonGroup>
-					</BaseControl>
-				</PanelBody>
-				<PanelBody
-					title={__('Width', 'vk-blocks-pro')}
-					initialOpen={true}
-				>
-					<BaseControl id={`vk_slider-width`}>
-						<ButtonGroup>
-							<Button
-								isSmall={true}
-								variant={width === '' ? 'primary' : 'secondary'}
-								onClick={() => setAttributes({ width: '' })}
-							>
-								{__('Normal', 'vk-blocks-pro')}
-							</Button>
-							<Button
-								isSmall={true}
-								variant={
-									width === 'full' ? 'primary' : 'secondary'
-								}
-								onClick={() => setAttributes({ width: 'full' })}
-							>
-								{__('Full Wide', 'vk-blocks-pro')}
 							</Button>
 						</ButtonGroup>
 					</BaseControl>

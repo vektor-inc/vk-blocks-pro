@@ -21,7 +21,7 @@ function vk_blocks_register_block_faq2() {
 		);
 	}
 
-	// Register Style.
+	// Register Script.
 	if ( ! is_admin() ) {
 		wp_register_script(
 			'vk-blocks/faq-script',
@@ -32,14 +32,23 @@ function vk_blocks_register_block_faq2() {
 		);
 	}
 
-	register_block_type(
-		__DIR__,
-		array(
+	// クラシックテーマ & 6.5 環境で $assets = array() のように空にしないと重複登録になるため
+	// ここで初期化しておく
+	$assets = array();
+	// Attend to load separate assets.
+	// 分割読み込みが有効な場合のみ、分割読み込み用のスクリプトを登録する
+	if ( method_exists( 'VK_Blocks_Block_Loader', 'should_load_separate_assets' ) && VK_Blocks_Block_Loader::should_load_separate_assets() ) {
+		$assets = array(
 			'style'         => 'vk-blocks/faq',
 			'script'        => 'vk-blocks/faq-script',
 			'editor_style'  => 'vk-blocks-build-editor-css',
 			'editor_script' => 'vk-blocks-build-js',
-		)
+		);
+	}
+
+	register_block_type(
+		__DIR__,
+		$assets
 	);
 }
 add_action( 'init', 'vk_blocks_register_block_faq2', 99 );
@@ -65,7 +74,11 @@ function vk_blocks_faq2_render_callback( $block_content, $block ) {
 		} else {
 			$block_content = str_replace( '[accordion_trigger_switch]', '', $block_content );
 		}
+
+		// 構造化データの追加
+		VK_Blocks_Faq_Schema_Manager::add_content( $block_content );
 	}
+
 	return $block_content;
 }
 

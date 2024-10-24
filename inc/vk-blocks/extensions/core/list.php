@@ -49,7 +49,7 @@ function vk_blocks_render_core_list( $block_content, $block ) {
 				'selector'     => ".is-style-vk-numbered-square-mark.{$unique_classname} li::before",
 				'declarations' => array(
 					'color'            => '#fff',
-					'background-color' => vk_blocks_get_color_code( $block['attrs']['color'] ),
+					'background-color' => vk_blocks_get_color_code( $block['attrs']['color'] ) . ' !important',
 				),
 			),
 		);
@@ -59,7 +59,7 @@ function vk_blocks_render_core_list( $block_content, $block ) {
 				'selector'     => ".is-style-vk-numbered-circle-mark.{$unique_classname} li::before",
 				'declarations' => array(
 					'color'            => '#fff',
-					'background-color' => vk_blocks_get_color_code( $block['attrs']['color'] ),
+					'background-color' => vk_blocks_get_color_code( $block['attrs']['color'] ) . ' !important',
 				),
 			),
 		);
@@ -68,7 +68,7 @@ function vk_blocks_render_core_list( $block_content, $block ) {
 			array(
 				'selector'     => ".{$unique_classname} li::marker,.{$unique_classname} li::before",
 				'declarations' => array(
-					'color' => vk_blocks_get_color_code( $block['attrs']['color'] ),
+					'color' => vk_blocks_get_color_code( $block['attrs']['color'] ) . ' !important',
 				),
 			),
 		);

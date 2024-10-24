@@ -12,6 +12,7 @@ import { componentDivider } from './component-divider';
 import GenerateBgImage from './GenerateBgImage';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
+import LinkToolbar from '@vkblocks/components/link-toolbar';
 const prefix = 'vkb-outer';
 
 /**
@@ -25,6 +26,7 @@ import {
 	BaseControl,
 	SelectControl,
 	ToggleControl,
+	ToolbarGroup,
 } from '@wordpress/components';
 import {
 	InspectorControls,
@@ -68,6 +70,12 @@ export default function OuterEdit(props) {
 		innerSideSpaceValueTablet,
 		innerSideSpaceValueMobile,
 		innerSideSpaceUnit,
+		minHeightValuePC,
+		minHeightValueTablet,
+		minHeightValueMobile,
+		minHeightUnit,
+		linkUrl,
+		linkTarget,
 		blockId,
 	} = attributes;
 
@@ -341,10 +349,53 @@ export default function OuterEdit(props) {
 					borderStyle !== 'none' &&
 					borderColor !== undefined &&
 					!isHexColor(borderColor),
+				[`vk_outer-minHeight`]:
+					minHeightValuePC > 0 ||
+					minHeightValueTablet > 0 ||
+					minHeightValueMobile > 0,
 			}
 		),
-		style: borderStyleProperty,
+		style: {
+			...borderStyleProperty,
+			'--min-height-mobile': minHeightValueMobile
+				? `${minHeightValueMobile}${minHeightUnit}`
+				: undefined,
+			'--min-height-tablet': minHeightValueTablet
+				? `${minHeightValueTablet}${minHeightUnit}`
+				: undefined,
+			'--min-height-pc': minHeightValuePC
+				? `${minHeightValuePC}${minHeightUnit}`
+				: undefined,
+		},
 	});
+
+	// minHeightUnit に基づいて動的に最大値を設定
+	const getMaxHeight = (unit) => {
+		switch (unit) {
+			case 'px':
+				return 1000;
+			case 'em':
+			case 'rem':
+				return 500;
+			case 'vh':
+			case 'svh':
+			case 'lvh':
+			case 'dvh':
+				return 100;
+			default:
+				return 500;
+		}
+	};
+
+	const handleUnitChange = (newUnit) => {
+		const newMax = getMaxHeight(newUnit);
+		setAttributes({
+			minHeightUnit: newUnit,
+			minHeightValuePC: Math.min(minHeightValuePC, newMax),
+			minHeightValueTablet: Math.min(minHeightValueTablet, newMax),
+			minHeightValueMobile: Math.min(minHeightValueMobile, newMax),
+		});
+	};
 
 	return (
 		<>
@@ -356,6 +407,17 @@ export default function OuterEdit(props) {
 					}
 					controls={['full']}
 				/>
+				<ToolbarGroup>
+					<LinkToolbar
+						linkUrl={linkUrl}
+						setLinkUrl={(url) => setAttributes({ linkUrl: url })}
+						linkTarget={linkTarget}
+						setLinkTarget={(target) =>
+							setAttributes({ linkTarget: target })
+						}
+						aria-label={__('Outer link', 'vk-blocks-pro')}
+					/>
+				</ToolbarGroup>
 			</BlockControls>
 			<InspectorControls>
 				<PanelBody
@@ -570,12 +632,26 @@ export default function OuterEdit(props) {
 									value: 'triangle',
 									label: __('Triangle', 'vk-blocks-pro'),
 								},
+								{
+									value: 'largeTriangle',
+									label: __(
+										'Large triangle',
+										'vk-blocks-pro'
+									),
+								},
+								{
+									value: 'serrated',
+									label: __('Serrated', 'vk-blocks-pro'),
+								},
 							]}
 						/>
 					</BaseControl>
 					<BaseControl>
 						<ToggleControl
-							label={__('端末毎に設定', 'vk-blocks-pro')}
+							label={__(
+								'Settings for each device',
+								'vk-blocks-pro'
+							)}
 							checked={levelSettingPerDevice}
 							onChange={(checked) =>
 								setAttributes({
@@ -934,6 +1010,94 @@ export default function OuterEdit(props) {
 							{
 								value: 'vw',
 								label: __('vw', 'vk-blocks-pro'),
+							},
+						]}
+					/>
+				</PanelBody>
+				<PanelBody
+					title={__('Min Height Setting', 'vk-blocks-pro')}
+					initialOpen={false}
+				>
+					<RangeControl
+						label={__('Mobile', 'vk-blocks-pro')}
+						value={minHeightValueMobile}
+						onChange={(value) =>
+							setAttributesByUnit(
+								'minHeightValueMobile',
+								value,
+								minHeightUnit,
+								0,
+								getMaxHeight(minHeightUnit)
+							)
+						}
+						min="0"
+						max={getMaxHeight(minHeightUnit)}
+						step={'px' === minHeightUnit ? 1 : 0.1}
+					/>
+					<RangeControl
+						label={__('Tablet', 'vk-blocks-pro')}
+						value={minHeightValueTablet}
+						onChange={(value) =>
+							setAttributesByUnit(
+								'minHeightValueTablet',
+								value,
+								minHeightUnit,
+								0,
+								getMaxHeight(minHeightUnit)
+							)
+						}
+						min="0"
+						max={getMaxHeight(minHeightUnit)}
+						step={'px' === minHeightUnit ? 1 : 0.1}
+					/>
+					<RangeControl
+						label={__('PC', 'vk-blocks-pro')}
+						value={minHeightValuePC}
+						onChange={(value) =>
+							setAttributesByUnit(
+								'minHeightValuePC',
+								value,
+								minHeightUnit,
+								0,
+								getMaxHeight(minHeightUnit)
+							)
+						}
+						min="0"
+						max={getMaxHeight(minHeightUnit)}
+						step={'px' === minHeightUnit ? 1 : 0.1}
+					/>
+					<SelectControl
+						label={__('Unit Type', 'vk-blocks-pro')}
+						value={minHeightUnit}
+						onChange={handleUnitChange}
+						options={[
+							{
+								value: 'px',
+								label: __('px', 'vk-blocks-pro'),
+							},
+							{
+								value: 'em',
+								label: __('em', 'vk-blocks-pro'),
+							},
+							{
+								value: 'rem',
+								label: __('rem', 'vk-blocks-pro'),
+							},
+							{
+								value: 'vh',
+								label: __('vh', 'vk-blocks-pro'),
+							},
+							{
+								value: 'svh',
+								label: __('svh', 'vk-blocks-pro'),
+							},
+							{
+								value: 'lvh',
+								label: __('lvh', 'vk-blocks-pro'),
+							},
+							{
+								value: 'dvh',
+								label: __('dvh', 'vk-blocks-pro'),
 							},
 						]}
 					/>

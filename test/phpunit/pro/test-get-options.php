@@ -53,9 +53,16 @@ class GetOptionsTest extends VK_UnitTestCase {
 			array(
 				'option'  => null,
 				'correct' => array(
+					'block_category_position' => 'above-core-blocks',
 					'balloon_border_width' => 1,
 					'margin_unit' => 'rem',
 					'margin_size' => array(
+						'xxl' => array(
+							'mobile' => null,
+							'tablet' => null,
+							'pc' => null,
+							'custom' => '',
+						),
 						'xl' => array(
 							'mobile' => null,
 							'tablet' => null,
@@ -81,6 +88,12 @@ class GetOptionsTest extends VK_UnitTestCase {
 							'custom' => '',
 						),
 						'xs' => array(
+							'mobile' => null,
+							'tablet' => null,
+							'pc' => null,
+							'custom' => '',
+						),
+						'xxs' => array(
 							'mobile' => null,
 							'tablet' => null,
 							'pc' => null,
@@ -284,9 +297,16 @@ class GetOptionsTest extends VK_UnitTestCase {
 					),
 				),
 			),
-			// カスタムCSS編集画面識別フラグ非表示 v
+			// margin_sizeのxl,lg,md,sm,xsに値が設定されているときに、xxl,xxsが追加された場合
 			array(
-				'option_check_target' => 'show_custom_css_editor_flag',
+				'option_check_target' => array(
+					['margin_size','xxl','mobile'],
+					['margin_size','xxl','tablet'],
+					['margin_size','xxl','pc'],
+					['margin_size','xxs','mobile'],
+					['margin_size','xxs','tablet'],
+					['margin_size','xxs','pc'],
+				),
 				'option'  => array(
 					'new_faq_accordion' => 'open',
 					'balloon_border_width' => 2,
@@ -319,18 +339,35 @@ class GetOptionsTest extends VK_UnitTestCase {
 						),
 					),
 					'load_separate_option' => true,
-					'vk_blocks_pro_license_key' => 'test_license_key',
 				),
-				'correct' => 'show',
+				'correct' => array(
+					'margin_size' => array(
+						'xxl' => array(
+							'mobile' => null,
+							'tablet' => null,
+							'pc' => null,
+						),
+						'xxs' => array(
+							'mobile' => null,
+							'tablet' => null,
+							'pc' => null,
+						),
+					),
+				),
 			),
-			// カスタム書式追加
+			// カスタムCSS編集画面識別フラグ非表示 v
 			array(
-				'option_check_target' => 'custom_format_lists',
+				'option_check_target' => 'show_custom_css_editor_flag',
 				'option'  => array(
 					'new_faq_accordion' => 'open',
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
 					'margin_size' => array(
+						'xxl' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
 						'xl' => array(
 							'mobile' => 1,
 							'tablet' => 2,
@@ -352,6 +389,60 @@ class GetOptionsTest extends VK_UnitTestCase {
 							'pc' => 3,
 						),
 						'xs' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'xxs' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+					),
+					'load_separate_option' => true,
+					'vk_blocks_pro_license_key' => 'test_license_key',
+				),
+				'correct' => 'show',
+			),
+			// カスタム書式追加
+			array(
+				'option_check_target' => 'custom_format_lists',
+				'option'  => array(
+					'new_faq_accordion' => 'open',
+					'balloon_border_width' => 2,
+					'margin_unit' => 'px',
+					'margin_size' => array(
+						'xxl' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'xl' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'lg' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'md' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'sm' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'xs' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'xxs' => array(
 							'mobile' => 1,
 							'tablet' => 2,
 							'pc' => 3,
@@ -386,6 +477,11 @@ class GetOptionsTest extends VK_UnitTestCase {
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
 					'margin_size' => array(
+						'xxl' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
 						'xl' => array(
 							'mobile' => 1,
 							'tablet' => 2,
@@ -407,6 +503,11 @@ class GetOptionsTest extends VK_UnitTestCase {
 							'pc' => 3,
 						),
 						'xs' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'xxs' => array(
 							'mobile' => 1,
 							'tablet' => 2,
 							'pc' => 3,
@@ -456,6 +557,11 @@ class GetOptionsTest extends VK_UnitTestCase {
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
 					'margin_size' => array(
+						'xxl' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
 						'xl' => array(
 							'mobile' => 1,
 							'tablet' => 2,
@@ -477,6 +583,11 @@ class GetOptionsTest extends VK_UnitTestCase {
 							'pc' => 3,
 						),
 						'xs' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'xxs' => array(
 							'mobile' => 1,
 							'tablet' => 2,
 							'pc' => 3,
@@ -533,6 +644,11 @@ class GetOptionsTest extends VK_UnitTestCase {
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
 					'margin_size' => array(
+						'xxl' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
 						'xl' => array(
 							'mobile' => 1,
 							'tablet' => 2,
@@ -554,6 +670,11 @@ class GetOptionsTest extends VK_UnitTestCase {
 							'pc' => 3,
 						),
 						'xs' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'xxs' => array(
 							'mobile' => 1,
 							'tablet' => 2,
 							'pc' => 3,
@@ -618,6 +739,11 @@ class GetOptionsTest extends VK_UnitTestCase {
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
 					'margin_size' => array(
+						'xxl' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
 						'xl' => array(
 							'mobile' => 1,
 							'tablet' => 2,
@@ -639,6 +765,11 @@ class GetOptionsTest extends VK_UnitTestCase {
 							'pc' => 3,
 						),
 						'xs' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'xxs' => array(
 							'mobile' => 1,
 							'tablet' => 2,
 							'pc' => 3,
@@ -708,6 +839,12 @@ class GetOptionsTest extends VK_UnitTestCase {
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
 					'margin_size' => array(
+						'xxl' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+							'custom' => 'var(--wp--custom--spacing--xx-small)',
+						),
 						'xl' => array(
 							'mobile' => 1,
 							'tablet' => 2,
@@ -733,6 +870,12 @@ class GetOptionsTest extends VK_UnitTestCase {
 							'custom' => 'var(--wp--custom--spacing--xx-small)',
 						),
 						'xs' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+							'custom' => 'var(--wp--custom--spacing--xx-small)',
+						),
+						'xxs' => array(
 							'mobile' => 1,
 							'tablet' => 2,
 							'pc' => 3,
@@ -819,6 +962,12 @@ class GetOptionsTest extends VK_UnitTestCase {
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
 					'margin_size' => array(
+						'xxl' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+							'custom' => 'var(--wp--custom--spacing--xx-small)',
+						),
 						'xl' => array(
 							'mobile' => 1,
 							'tablet' => 2,
@@ -844,6 +993,12 @@ class GetOptionsTest extends VK_UnitTestCase {
 							'custom' => 'var(--wp--custom--spacing--xx-small)',
 						),
 						'xs' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+							'custom' => 'var(--wp--custom--spacing--xx-small)',
+						),
+						'xxs' => array(
 							'mobile' => 1,
 							'tablet' => 2,
 							'pc' => 3,
@@ -934,6 +1089,12 @@ class GetOptionsTest extends VK_UnitTestCase {
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
 					'margin_size' => array(
+						'xxl' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+							'custom' => 'var(--wp--custom--spacing--xx-small)',
+						),
 						'xl' => array(
 							'mobile' => 1,
 							'tablet' => 2,
@@ -959,6 +1120,12 @@ class GetOptionsTest extends VK_UnitTestCase {
 							'custom' => 'var(--wp--custom--spacing--xx-small)',
 						),
 						'xs' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+							'custom' => 'var(--wp--custom--spacing--xx-small)',
+						),
+						'xxs' => array(
 							'mobile' => 1,
 							'tablet' => 2,
 							'pc' => 3,
@@ -1056,9 +1223,16 @@ class GetOptionsTest extends VK_UnitTestCase {
 					),
 				),
 				'correct'  => array(
+					'block_category_position' => 'above-core-blocks',
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
 					'margin_size' => array(
+						'xxl' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+							'custom' => 'var(--wp--custom--spacing--xx-small)',
+						),
 						'xl' => array(
 							'mobile' => 1,
 							'tablet' => 2,
@@ -1084,6 +1258,12 @@ class GetOptionsTest extends VK_UnitTestCase {
 							'custom' => 'var(--wp--custom--spacing--xx-small)',
 						),
 						'xs' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc'     => 3,
+							'custom' => 'var(--wp--custom--spacing--xx-small)',
+						),
+						'xxs' => array(
 							'mobile' => 1,
 							'tablet' => 2,
 							'pc'     => 3,

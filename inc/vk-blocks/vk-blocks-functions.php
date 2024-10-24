@@ -14,9 +14,12 @@ require_once __DIR__ . '/utils/array-merge.php';
 require_once __DIR__ . '/utils/minify-css.php';
 require_once __DIR__ . '/style/balloon.php';
 require_once __DIR__ . '/style/hidden-extension.php';
+require_once __DIR__ . '/style/common-margin.php';
 require_once __DIR__ . '/extensions/core/list.php';
 require_once __DIR__ . '/view/responsive-br.php';
 require_once __DIR__ . '/view/class-vk-blocks-postlist.php';
+require_once __DIR__ . '/view/class-vk-blocks-scrollhintrenderer.php';
+VK_Blocks_ScrollHintRenderer::init();
 
 require_once __DIR__ . '/class-vk-blocks-print-css-variables.php';
 
@@ -40,6 +43,10 @@ require_once __DIR__ . '/init.php';
 require_once __DIR__ . '/blocks.php';
 require_once __DIR__ . '/App/RestAPI/BlockMeta/class-vk-blocks-entrypoint.php';
 new Vk_Blocks_EntryPoint();
+
+// ブロック関連の処理
+require_once __DIR__ . '/blocks/class-vk-blocks-faq-schema-manager.php';
+VK_Blocks_Faq_Schema_Manager::init();
 
 /**
  * VK Blocks active
@@ -141,14 +148,13 @@ function vk_blocks_blocks_assets() {
 	$dynamic_css = '
 		:root {
 			--vk_flow-arrow: url(' . VK_BLOCKS_URL . 'images/arrow_bottom.svg);
+			--vk_image-mask-circle: url(' . VK_BLOCKS_URL . 'images/circle.svg);
 			--vk_image-mask-wave01: url(' . VK_BLOCKS_URL . 'images/wave01.svg);
 			--vk_image-mask-wave02: url(' . VK_BLOCKS_URL . 'images/wave02.svg);
 			--vk_image-mask-wave03: url(' . VK_BLOCKS_URL . 'images/wave03.svg);
 			--vk_image-mask-wave04: url(' . VK_BLOCKS_URL . 'images/wave04.svg);
 		}
 	';
-
-	$dynamic_css .= vk_blocks_get_spacer_size_style_all( $vk_blocks_options );
 
 	// Pro版のためfunction_existsを挟む
 	if ( function_exists( 'vk_blocks_get_custom_format_lists_inline_css' ) ) {

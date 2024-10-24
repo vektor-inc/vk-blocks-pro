@@ -124,6 +124,29 @@
 			"type": "string",
 			"default": "px"
 		},
+		"minHeightValuePC": {
+			"type": "number",
+			"default": 0
+		},
+		"minHeightValueTablet": {
+			"type": "number",
+			"default": 0
+		},
+		"minHeightValueMobile": {
+			"type": "number",
+			"default": 0
+		},
+		"minHeightUnit": {
+			"type": "string",
+			"default": "px"
+		},
+		"linkUrl": {
+			"type": "string"
+		},
+		"linkTarget": {
+			"type": "string",
+			"default": ""
+		},
 		"clientId": {
 			"type": "string"
 		},

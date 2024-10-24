@@ -22,6 +22,8 @@
 	.editor-block-list-item-vk-blocks-button-outer:after,
 	.editor-block-list-item-vk-blocks-card:after,
 	.editor-block-list-item-vk-blocks-child-page:after,
+	.editor-block-list-item-vk-blocks-post-category-badge\/category-badge:after,
+	[class*="editor-block-list-item-vk-blocks-post-category-badge"]:after,
 	.editor-block-list-item-vk-blocks-dynamic-text:after,
 	.editor-block-list-item-vk-blocks-timeline:after,
 	.editor-block-list-item-vk-blocks-step:after,
@@ -34,7 +36,8 @@
 	.editor-block-list-item-vk-blocks-grid-column:after,
 	.editor-block-list-item-vk-blocks-gridcolcard:after,
 	.editor-block-list-item-vk-blocks-icon-card:after,
-	.editor-block-list-item-vk-blocks-fixed-display:after {
+	.editor-block-list-item-vk-blocks-fixed-display:after,
+	.editor-block-list-item-vk-blocks-tab:after {
 		position: absolute;
 		top: 0;
 		right: 0;
@@ -252,6 +255,11 @@ div[data-type="vk-blocks/page-content"].is-selected{
 
 // アニメーションブロックの識別用枠線
 @import "./editor_before_animation";
+
+// 固定表示ブロックの識別用枠線
+@import "./editor_before_fixed-display";
+
+@import "./editor_before_tab";
 
 // アイコンカードの見出しがテーマの見出し指定機能に負けるので上書き
 @import "./editor_before_icon-card";

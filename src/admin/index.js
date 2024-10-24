@@ -9,7 +9,7 @@ import {
 	useEffect,
 } from '@wordpress/element';
 import { useSelect } from '@wordpress/data';
-
+import 'regenerator-runtime/runtime';
 /**
  * Internal dependencies
  */
@@ -18,6 +18,7 @@ import '@vkblocks/utils/store/termColor';
 
 import { STORE_NAME } from '@vkblocks/utils/store/constants';
 import AdminLicense from '@vkblocks/admin/license';
+import AdminBlockCategoryPosition from '@vkblocks/admin/block-category-position';
 import AdminBalloon from '@vkblocks/admin/balloon';
 import AdminMargin from '@vkblocks/admin/margin';
 import AdminLoadSeparate from '@vkblocks/admin/load-separate';
@@ -65,6 +66,7 @@ export default function VKBlocksAdmin() {
 				}}
 			>
 				{vkBlocksObject.isLicenseSetting && <AdminLicense />}
+				<AdminBlockCategoryPosition />
 				<AdminBalloon />
 				{vkBlocksObject.isPro && <AdminCustomFormat />}
 				{vkBlocksObject.isPro && <AdminCustomBlockStyle />}

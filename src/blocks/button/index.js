@@ -197,3 +197,22 @@ const VKButtonInlineCss = (el, type, attributes) => {
 	return el;
 };
 addFilter('blocks.getSaveElement', 'vk-blocks/button', VKButtonInlineCss, 11);
+
+/**
+ * Adds the button block to the allowed blocks of the core/navigation block.
+ *
+ * @param {Object} settings - The block settings.
+ * @param {string} name     - The block name.
+ * @return {Object} - The modified block settings.
+ */
+const VKButtonAllowNav = (settings, name) => {
+	if (name === 'core/navigation') {
+		const { allowedBlocks = [] } = settings;
+		return {
+			...settings,
+			allowedBlocks: [...allowedBlocks, 'vk-blocks/button'],
+		};
+	}
+	return settings;
+};
+addFilter('blocks.registerBlockType', 'vk-blocks/button', VKButtonAllowNav, 11);

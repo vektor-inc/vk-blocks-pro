@@ -569,9 +569,10 @@ export default function SliderEdit(props) {
 			// アクティブスライドを中央にする場合
 			sloderPerViewLoopAlert = (
 				<div className="alert alert-danger font-size-11px">
-					If the active slide is in the center, the number of placed
-					slide items must be greater than or equal to the number of
-					items you want to display in one view + 2.
+					{__(
+						'If the active slide is in the center, the number of placed slide items must be greater than or equal to the number of items you want to display in one view + 2.',
+						'vk-blocks-pro'
+					)}
 				</div>
 			);
 		} else {

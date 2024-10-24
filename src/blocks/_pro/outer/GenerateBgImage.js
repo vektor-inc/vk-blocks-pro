@@ -74,6 +74,7 @@ const GenerateBgImage = (props) => {
 				{`
 				.${prefix}-${blockId} {
 					background-image: url(${bgImageTablet}) !important;
+					background-position: ${coordsToBackgroundPosition(focalPointTablet)}!important;
 					${backgroundStyle}
 				}
 				@media screen and (${mobileViewport}) {

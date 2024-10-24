@@ -562,7 +562,7 @@ export default function SliderEdit(props) {
 				)}
 			</div>
 		);
-	} else if (slidesPerGroup !== 'slides-per-view') {
+	} else if (slidesPerGroup !== 'slides-per-view') { // else だけだと lint でエラーにされてコミットさせてもらえないため...
 		// 一度に遷移するスライドアイテムの数 : １つずつ
 		if (attributes.centeredSlides) {
 			// アクティブスライドを中央にする場合
@@ -594,24 +594,39 @@ export default function SliderEdit(props) {
 	let slidesPerViewPCLoopAlert = '';
 	if (!!loop) {
 		if (
-			(slidesPerGroup === 'slides-per-view' && innerBlocks.length / slidesPerViewMobile < 2) ||
-			(slidesPerGroup === 'one-by-one' && innerBlocks.length - (slidesPerViewMobile + 1) < 0 && !attributes.centeredSlides) ||
-			(slidesPerGroup === 'one-by-one' && innerBlocks.length - (slidesPerViewMobile + 2) < 0 && attributes.centeredSlides)
+			(slidesPerGroup === 'slides-per-view' &&
+				innerBlocks.length / slidesPerViewMobile < 2) ||
+			(slidesPerGroup === 'one-by-one' &&
+				innerBlocks.length - (slidesPerViewMobile + 1) < 0 &&
+				!attributes.centeredSlides) ||
+			(slidesPerGroup === 'one-by-one' &&
+				innerBlocks.length - (slidesPerViewMobile + 2) < 0 &&
+				attributes.centeredSlides)
 		) {
 			slidesPerViewMobileLoopAlert = sloderPerViewLoopAlert;
 		}
 		if (
-			(slidesPerGroup === 'slides-per-view' && innerBlocks.length / slidesPerViewTablet < 2) ||
-			(slidesPerGroup === 'one-by-one' && innerBlocks.length - (slidesPerViewTablet + 1) < 0 && !attributes.centeredSlides) ||
-			(slidesPerGroup === 'one-by-one' && innerBlocks.length - (slidesPerViewTablet + 2) < 0 && attributes.centeredSlides)
+			(slidesPerGroup === 'slides-per-view' &&
+				innerBlocks.length / slidesPerViewTablet < 2) ||
+			(slidesPerGroup === 'one-by-one' &&
+				innerBlocks.length - (slidesPerViewTablet + 1) < 0 &&
+				!attributes.centeredSlides) ||
+			(slidesPerGroup === 'one-by-one' &&
+				innerBlocks.length - (slidesPerViewTablet + 2) < 0 &&
+				attributes.centeredSlides)
 		) {
 			slidesPerViewTabletLoopAlert = sloderPerViewLoopAlert;
 		}
 
 		if (
-			(slidesPerGroup === 'slides-per-view' && innerBlocks.length / slidesPerViewPC < 2) ||
-			(slidesPerGroup === 'one-by-one' && innerBlocks.length - (slidesPerViewPC + 1) < 0 && !attributes.centeredSlides) ||
-			(slidesPerGroup === 'one-by-one' && innerBlocks.length - (slidesPerViewPC + 2) < 0 && attributes.centeredSlides)
+			(slidesPerGroup === 'slides-per-view' &&
+				innerBlocks.length / slidesPerViewPC < 2) ||
+			(slidesPerGroup === 'one-by-one' &&
+				innerBlocks.length - (slidesPerViewPC + 1) < 0 &&
+				!attributes.centeredSlides) ||
+			(slidesPerGroup === 'one-by-one' &&
+				innerBlocks.length - (slidesPerViewPC + 2) < 0 &&
+				attributes.centeredSlides)
 		) {
 			slidesPerViewPCLoopAlert = sloderPerViewLoopAlert;
 		}

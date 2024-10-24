@@ -107,6 +107,7 @@ e.g.
 == Changelog ==
 
 [ Bug Fix ][ Grid Column Card (Pro) ] Fixed slider overflow in Grid Column Card Item Body.
+[ Bug fix ][ core/roup ] Fixed an issue where unwanted classes were assigned when links were present in the group block.
 
 = 1.88.0 =
 [ Specification change ][ Grid Column Card (Pro) ] Changed the default settings of headerDisplay and footerDisplay from "Delete" to "Display".

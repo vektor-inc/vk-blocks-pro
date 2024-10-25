@@ -187,6 +187,90 @@ const componentDivider = (
 		);
 	};
 
+	// eslint-disable-next-line no-shadow
+	const bookSectionStyle = (level, color) => {
+		const absLevel = Math.abs(level);
+		let pathData;
+	
+		if (level < 0) {
+			// -100 から 0 の場合のパスデータ（中央が下に移動）
+			const controlPoint1X = 40;
+			const controlPoint1Y = 100 - absLevel * 0.3;
+			const peakX = 50;
+			const peakY = 100 - absLevel;
+			const controlPoint2X = 60;
+			const controlPoint2Y = 100 - absLevel * 0.3;
+	
+			pathData = `
+				M0,100 
+				H0 
+				C${controlPoint1X},${controlPoint1Y}, ${peakX},${peakY}, ${peakX},${peakY} 
+				C${peakX},${peakY}, ${controlPoint2X},${controlPoint2Y}, 100,100 
+				H100 
+				V100 
+				H0 
+				Z
+			`;
+		} else if (level === 0) {
+			// 0 の場合はフラット
+			const controlPoint1X = 40;
+			const controlPoint1Y = 100;
+			const peakX = 50;
+			const peakY = 100;
+			const controlPoint2X = 60;
+			const controlPoint2Y = 100;
+	
+			pathData = `
+				M0,100 
+				H0 
+				C${controlPoint1X},${controlPoint1Y}, ${peakX},${peakY}, ${peakX},${peakY} 
+				C${peakX},${peakY}, ${controlPoint2X},${controlPoint2Y}, 100,100 
+				H100 
+				V100 
+				H0 
+				Z
+			`;
+		} else {
+			// 0 から 100 の場合のパスデータ（理想の形に基づく）
+			const controlPoint1X = 40;
+			// 両端の制御点を30の位置に
+			const controlPoint1Y = level === 100 ? 30 : 100 - level * 0.7;
+	
+			const peakX = 50;
+			// 中央の頂点は100に固定
+			const peakY = 100;
+	
+			const controlPoint2X = 60;
+			// 右側の制御点も同様に30の位置に
+			const controlPoint2Y = level === 100 ? 30 : 100 - level * 0.7;
+	
+			const startY = level === 100 ? 0 : 100 - level;
+	
+			pathData = `
+				M0,${startY} 
+				H0 
+				C${controlPoint1X},${controlPoint1Y}, ${peakX},${peakY}, ${peakX},${peakY} 
+				C${peakX},${peakY}, ${controlPoint2X},${controlPoint2Y}, 100,${startY} 
+				H100 
+				V100 
+				H0 
+				Z
+			`;
+		}
+	
+		return (
+			<path
+				d={pathData}
+				strokeWidth="0"
+				fill={isHexColor(color) ? color : 'currentColor'}
+				className={classnames({
+					[`has-text-color`]: color !== undefined,
+					[`has-${color}-color`]: color !== undefined && !isHexColor(color),
+				})}
+			/>
+		);
+	};
+	
 	//背景色をクリアした時は、白に変更
 	if (!color) {
 		color = '#fff';
@@ -212,7 +296,10 @@ const componentDivider = (
 		} else if (dividerType === 'serrated') {
 			sectionPadding = 10;
 			return serratedSectionStyle(lvl, color);
-		}
+		} else if (dividerType === 'book') {
+			sectionPadding = Math.abs(lvl);
+			return bookSectionStyle(lvl, color);
+		} 
 	};
 
 	lenderDivider = getSectionStyle(level);

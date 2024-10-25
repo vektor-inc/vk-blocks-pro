@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Outer (Pro) ] Added the ability to set a focal point for background images.
+
 = 1.89.0 =
 [ Add function ][ Outer (Pro) ] Added support for core text color settings.
 [ Specification Change ][ Accordion (Pro) ] Added the ability to toggle the Accordion block open and close in the editing screen.
@@ -119,8 +121,8 @@ e.g.
 [ Bug fix ][ Slider ] Fix an issue where full width alignment does not work in tt4 and tt5.
 
 = 1.87.0 =
-[ Add function ][ Link Toolbar ] Added to skip retrieving metadata (title and favicon) for external links in link toolbar to prevent CORS errors.
 [ Add function ][ icon ] Add toolbar link for components.
+[ Bug fix ][ Link Toolbar ] Added to skip retrieving metadata (title and favicon) for external links in link toolbar to prevent CORS errors.
 [ Bug fix ][ Slider ] Adjusting the timing of loading swiper to prevent the slider from collapsing.
 [ Bug fix ][ Grid Column Card (Pro) ] Add translation.
 [ Bug fix ][ Category Badge (Pro) ] Added Pro label to the inserter.

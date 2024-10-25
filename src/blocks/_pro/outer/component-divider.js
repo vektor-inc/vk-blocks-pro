@@ -266,6 +266,75 @@ const componentDivider = (
 		);
 	};
 
+	// eslint-disable-next-line no-shadow
+	const pyramidSectionStyle = (level, color) => {
+		const absLevel = Math.abs(level);
+		let pathData;
+	
+		if (level < 0) {
+			// -100 から 0 の場合のパスデータ（右寄りのフタコブラクダの形状）
+			const firstPeakX = 25;
+			const firstPeakY = 100 - absLevel * 0.6; // 左側の一つ目の山
+			const dipX = 40;
+			const dipY = 100 - absLevel * 0.2; // 中央の谷
+			const secondPeakX = 75;
+			const secondPeakY = 100 - absLevel; // 右側の二つ目の山
+			const rightEndY = 100 - absLevel * 0.5; // 右端の高さ
+	
+			pathData = `
+				M0,100
+				H0
+				L${firstPeakX},${firstPeakY} ${dipX},${dipY} ${secondPeakX},${secondPeakY} 100,${rightEndY}
+				H100
+				V100
+				H0
+				Z
+			`;
+		} else if (level === 0) {
+			// 0 の場合はフラット
+			pathData = `
+				M0,100 
+				H0 
+				L0,100 35,100 65,100 85,100 100,100 
+				H100 
+				V100 
+				H0 
+				Z
+			`;
+		} else {
+			// 0 から 100 の場合のパスデータ（左寄りのフタコブラクダの形状）
+			const firstPeakX = 75; // 右寄りにした一つ目の山を左寄りに移動
+			const firstPeakY = 100 - level * 0.6; // 左側の一つ目の山の高さ
+			const dipX = 60; // 中央の谷を左右反転
+			const dipY = 100 - level * 0.2; // 中央の谷の高さ
+			const secondPeakX = 25; // 右寄りにした二つ目の山を左寄りに移動
+			const secondPeakY = 100 - level; // 右側の二つ目の山の高さ
+			const leftEndY = 100 - level * 0.5; // 左端の高さ
+	
+			pathData = `
+				M0,${leftEndY}
+				H0
+				L${secondPeakX},${secondPeakY} ${dipX},${dipY} ${firstPeakX},${firstPeakY} 100,100
+				H100
+				V100
+				H0
+				Z
+			`;
+		}
+	
+		return (
+			<path
+				d={pathData}
+				strokeWidth="0"
+				fill={isHexColor(color) ? color : 'currentColor'}
+				className={classnames({
+					[`has-text-color`]: color !== undefined,
+					[`has-${color}-color`]: color !== undefined && !isHexColor(color),
+				})}
+			/>
+		);
+	};
+	
 	//背景色をクリアした時は、白に変更
 	if (!color) {
 		color = '#fff';
@@ -294,6 +363,9 @@ const componentDivider = (
 		} else if (dividerType === 'book') {
 			sectionPadding = Math.abs(lvl);
 			return bookSectionStyle(lvl, color);
+		} else if (dividerType === 'pyramid') {
+			sectionPadding = Math.abs(lvl);
+			return pyramidSectionStyle(lvl, color);
 		}
 	};
 

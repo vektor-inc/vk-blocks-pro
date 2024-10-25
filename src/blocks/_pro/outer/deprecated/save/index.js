@@ -20,6 +20,7 @@ import save1_61_2 from './1.61.2/save';
 import save1_64_0 from './1.64.0/save';
 import save1_71_0 from './1.71.0/save';
 import save1_76_0 from './1.76.0/save';
+import save1_89_0 from './1.89.0/save';
 
 const blockAttributes = {
 	bgColor: {

@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Slider ] Add alert message.
+
 = 1.89.0 =
 [ Add function ][ Outer (Pro) ] Added support for core text color settings.
 [ Specification Change ][ Accordion (Pro) ] Added the ability to toggle the Accordion block open and close in the editing screen.

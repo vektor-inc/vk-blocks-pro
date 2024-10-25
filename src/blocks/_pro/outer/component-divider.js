@@ -193,7 +193,6 @@ const componentDivider = (
 		let pathData;
 
 		if (level > 0) {
-			// 0 から -100 の場合のパスデータ（中央が下に移動）
 			const controlPoint1X = 40;
 			const controlPoint1Y = 100 - level * 0.1;
 			const peakX = 50;
@@ -212,7 +211,6 @@ const componentDivider = (
 				Z
 			`;
 		} else if (level === 0) {
-			// 0 の場合はフラット
 			const controlPoint1X = 40;
 			const controlPoint1Y = 100;
 			const peakX = 50;
@@ -231,7 +229,6 @@ const componentDivider = (
 				Z
 			`;
 		} else {
-			// 0 から 100 の場合のパスデータ（中央が上に移動）
 			const controlPoint1X = 40;
 			const controlPoint1Y = absLevel === 100 ? 30 : 100 - absLevel * 0.9;
 			const peakX = 50;
@@ -272,14 +269,13 @@ const componentDivider = (
 		let pathData;
 
 		if (level < 0) {
-			// -100 から 0 の場合のパスデータ（右寄りのフタコブラクダの形状）
 			const firstPeakX = 25;
-			const firstPeakY = 100 - absLevel * 0.6; // 左側の一つ目の山
+			const firstPeakY = 100 - absLevel * 0.6;
 			const dipX = 40;
-			const dipY = 100 - absLevel * 0.2; // 中央の谷
+			const dipY = 100 - absLevel * 0.2;
 			const secondPeakX = 75;
-			const secondPeakY = 100 - absLevel; // 右側の二つ目の山
-			const rightEndY = 100 - absLevel * 0.5; // 右端の高さ
+			const secondPeakY = 100 - absLevel;
+			const rightEndY = 100 - absLevel * 0.5;
 
 			pathData = `
 				M0,100
@@ -291,7 +287,6 @@ const componentDivider = (
 				Z
 			`;
 		} else if (level === 0) {
-			// 0 の場合はフラット
 			pathData = `
 				M0,100 
 				H0 
@@ -302,14 +297,13 @@ const componentDivider = (
 				Z
 			`;
 		} else {
-			// 0 から 100 の場合のパスデータ（左寄りのフタコブラクダの形状）
-			const firstPeakX = 75; // 右寄りにした一つ目の山を左寄りに移動
-			const firstPeakY = 100 - level * 0.6; // 左側の一つ目の山の高さ
-			const dipX = 60; // 中央の谷を左右反転
-			const dipY = 100 - level * 0.2; // 中央の谷の高さ
-			const secondPeakX = 25; // 右寄りにした二つ目の山を左寄りに移動
-			const secondPeakY = 100 - level; // 右側の二つ目の山の高さ
-			const leftEndY = 100 - level * 0.5; // 左端の高さ
+			const firstPeakX = 75;
+			const firstPeakY = 100 - level * 0.6;
+			const dipX = 60;
+			const dipY = 100 - level * 0.2;
+			const secondPeakX = 25;
+			const secondPeakY = 100 - level;
+			const leftEndY = 100 - level * 0.5;
 
 			pathData = `
 				M0,${leftEndY}

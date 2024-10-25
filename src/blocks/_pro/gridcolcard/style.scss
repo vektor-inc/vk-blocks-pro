@@ -52,6 +52,10 @@
 			&-valign-bottom{
 				align-content: end;
 			}
+			> .swiper{ //スライダーがはみ出すため打消し用
+				margin-left: unset;
+				margin-right: unset
+			}
 		}
 		&_footer{
 			display: grid;

@@ -3780,7 +3780,7 @@ msgid ""
 "from border panel that, specification from here is deprecated."
 msgstr ""
 
-#: src/extensions/core/group/style.js:191
+#: src/extensions/core/group/style.js:192
 msgid "Group link"
 msgstr ""
 

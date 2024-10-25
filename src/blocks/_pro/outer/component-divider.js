@@ -195,11 +195,11 @@ const componentDivider = (
 		if (level < 0) {
 			// -100 から 0 の場合のパスデータ（中央が下に移動）
 			const controlPoint1X = 40;
-			const controlPoint1Y = 100 - absLevel * 0.3;
+			const controlPoint1Y = 100 - absLevel * 0.1;
 			const peakX = 50;
 			const peakY = 100 - absLevel;
 			const controlPoint2X = 60;
-			const controlPoint2Y = 100 - absLevel * 0.3;
+			const controlPoint2Y = 100 - absLevel * 0.1;
 	
 			pathData = `
 				M0,100 
@@ -234,7 +234,7 @@ const componentDivider = (
 			// 0 から 100 の場合のパスデータ（理想の形に基づく）
 			const controlPoint1X = 40;
 			// 両端の制御点を30の位置に
-			const controlPoint1Y = level === 100 ? 30 : 100 - level * 0.7;
+			const controlPoint1Y = level === 100 ? 30 : 100 - level * 0.9;
 	
 			const peakX = 50;
 			// 中央の頂点は100に固定
@@ -242,7 +242,7 @@ const componentDivider = (
 	
 			const controlPoint2X = 60;
 			// 右側の制御点も同様に30の位置に
-			const controlPoint2Y = level === 100 ? 30 : 100 - level * 0.7;
+			const controlPoint2Y = level === 100 ? 30 : 100 - level * 0.9;
 	
 			const startY = level === 100 ? 0 : 100 - level;
 	

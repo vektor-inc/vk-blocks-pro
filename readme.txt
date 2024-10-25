@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Outer (Pro) ] Add book in divider style.
 [ Bug fix ][ Slider ] Add alert message.
 
 = 1.89.0 =

@@ -191,7 +191,7 @@ const componentDivider = (
 	const bookSectionStyle = (level, color) => {
 		const absLevel = Math.abs(level);
 		let pathData;
-	
+
 		if (level > 0) {
 			// 0 から -100 の場合のパスデータ（中央が下に移動）
 			const controlPoint1X = 40;
@@ -200,7 +200,7 @@ const componentDivider = (
 			const peakY = 100 - level;
 			const controlPoint2X = 60;
 			const controlPoint2Y = 100 - level * 0.1;
-	
+
 			pathData = `
 				M0,100 
 				H0 
@@ -219,7 +219,7 @@ const componentDivider = (
 			const peakY = 100;
 			const controlPoint2X = 60;
 			const controlPoint2Y = 100;
-	
+
 			pathData = `
 				M0,100 
 				H0 
@@ -239,7 +239,7 @@ const componentDivider = (
 			const controlPoint2X = 60;
 			const controlPoint2Y = absLevel === 100 ? 30 : 100 - absLevel * 0.9;
 			const startY = absLevel === 100 ? 0 : 100 - absLevel;
-	
+
 			pathData = `
 				M0,${startY} 
 				H0 
@@ -251,7 +251,7 @@ const componentDivider = (
 				Z
 			`;
 		}
-	
+
 		return (
 			<path
 				d={pathData}
@@ -259,12 +259,13 @@ const componentDivider = (
 				fill={isHexColor(color) ? color : 'currentColor'}
 				className={classnames({
 					[`has-text-color`]: color !== undefined,
-					[`has-${color}-color`]: color !== undefined && !isHexColor(color),
+					[`has-${color}-color`]:
+						color !== undefined && !isHexColor(color),
 				})}
 			/>
 		);
 	};
-	
+
 	//背景色をクリアした時は、白に変更
 	if (!color) {
 		color = '#fff';

@@ -179,7 +179,6 @@ const blockAttributes7 = {
 };
 
 // 1.71.0 から attributes を変更
-/*
 const blockAttributes8 = {
 	...blockAttributes7,
 	linkUrl: {
@@ -190,11 +189,14 @@ const blockAttributes8 = {
 		default: ''
 	},
 };
-*/
 
 const deprecated = [
 	{
-		attributes: blockAttributes7,
+		attributes: blockAttributes8,
+		save: save1_89_0,
+	},
+	{
+		attributes: blockAttributes8,
 		save: save1_76_0,
 	},
 	{

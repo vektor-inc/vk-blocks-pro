@@ -211,7 +211,7 @@ function vk_blocks_register_block_post_list_slider() {
 	if ( ! is_admin() ) {
 		wp_register_style(
 			'vk-blocks/post-list-slider',
-			VK_BLOCKS_DIR_URL . 'build/post-list-slider/style.css',
+			VK_BLOCKS_DIR_URL . 'build/_pro/post-list-slider/style.css',
 			array( 'vk-swiper-style' ),
 			VK_BLOCKS_VERSION
 		);

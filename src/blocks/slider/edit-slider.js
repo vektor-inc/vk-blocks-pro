@@ -300,3 +300,25 @@ export const SliderObserver = (editorRoot) => {
 	const observer = new MutationObserver(callback); // eslint-disable-line no-undef
 	observer.observe(editorRoot, config);
 };
+
+const editorRootLaunch = (editorRoot) => {
+	LaunchSwiperAll(editorRoot);
+	SliderObserver(editorRoot);
+};
+
+export const editSliderLaunch = () => {
+    const blockEditorRoot = document.querySelector(
+        '.block-editor .is-root-container'
+    );
+    if (blockEditorRoot) {
+        editorRootLaunch(blockEditorRoot);
+    }
+    const iframe = document.querySelector('#site-editor iframe');
+    if (iframe) {
+        const siteEditorRoot =
+            iframe.contentWindow.document.querySelector('.is-root-container');
+        if (siteEditorRoot) {
+            editorRootLaunch(siteEditorRoot);
+        }
+    }
+}

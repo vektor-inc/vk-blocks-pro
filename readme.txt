@@ -107,11 +107,13 @@ e.g.
 == Changelog ==
 
 [ Refactoring ][ Slider ] Refactored editor script.
+[ Add function ][ Outer (Pro) ] Add book and pyramid in divider style.
+[ Bug fix ][ Slider ] Add alert message.
 
 = 1.89.0 =
 [ Add function ][ Outer (Pro) ] Added support for core text color settings.
-[ Add function ][ Accordion (Pro) ] Added the ability to toggle the Accordion block open and close in the editing screen.
-[ Bug Fix ][ Grid Column Card (Pro) ] Fixed slider overflow in Grid Column Card Item Body.
+[ Specification Change ][ Accordion (Pro) ] Added the ability to toggle the Accordion block open and close in the editing screen.
+[ Bug fix ][ Grid Column Card (Pro) ] Fixed slider overflow in Grid Column Card Item Body.
 [ Bug fix ][ core/roup ] Fixed an issue where unwanted classes were assigned when links were present in the group block.
 
 = 1.88.0 =

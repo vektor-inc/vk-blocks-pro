@@ -86,6 +86,7 @@ export const MultiItemSetting = (props) => {
 	// ループに関するアラート
 	let sloderPerViewLoopAlert = '';
 	if (slidesPerGroup === 'slides-per-view') {
+		// 一度に遷移するスライドアイテムの数 : 表示アイテム数と同じ
 		sloderPerViewLoopAlert = (
 			<div className="alert alert-danger font-size-11px">
 				{__(
@@ -94,15 +95,29 @@ export const MultiItemSetting = (props) => {
 				)}
 			</div>
 		);
-	} else {
-		sloderPerViewLoopAlert = (
-			<div className="alert alert-danger font-size-11px">
-				{__(
-					'If you want to loop slides, the number of placed slide items must be greater than or equal to the number of items you want to display per view + 1.',
-					'vk-blocks-pro'
-				)}
-			</div>
-		);
+	} else if (slidesPerGroup !== 'slides-per-view') {
+		// ↑ else だけだと lint でエラーにされてコミットさせてもらえないため...
+		// 一度に遷移するスライドアイテムの数 : １つずつ
+		if (attributes.centeredSlides) {
+			// アクティブスライドを中央にする場合
+			sloderPerViewLoopAlert = (
+				<div className="alert alert-danger font-size-11px">
+					{__(
+						'If the active slide is in the center, the number of placed slide items must be greater than or equal to the number of items you want to display in one view + 2.',
+						'vk-blocks-pro'
+					)}
+				</div>
+			);
+		} else {
+			sloderPerViewLoopAlert = (
+				<div className="alert alert-danger font-size-11px">
+					{__(
+						'If you want to loop slides, the number of placed slide items must be greater than or equal to the number of items you want to display per view + 1.',
+						'vk-blocks-pro'
+					)}
+				</div>
+			);
+		}
 	}
 
 	/* ループ時のアラート */
@@ -117,7 +132,11 @@ export const MultiItemSetting = (props) => {
 			(slidesPerGroup === 'slides-per-view' &&
 				innerBlocks.length / slidesPerViewMobile < 2) ||
 			(slidesPerGroup === 'one-by-one' &&
-				innerBlocks.length - (slidesPerViewMobile + 1) < 0)
+				innerBlocks.length - (slidesPerViewMobile + 1) < 0 &&
+				!attributes.centeredSlides) ||
+			(slidesPerGroup === 'one-by-one' &&
+				innerBlocks.length - (slidesPerViewMobile + 2) < 0 &&
+				attributes.centeredSlides)
 		) {
 			slidesPerViewMobileLoopAlert = sloderPerViewLoopAlert;
 		}
@@ -125,7 +144,11 @@ export const MultiItemSetting = (props) => {
 			(slidesPerGroup === 'slides-per-view' &&
 				innerBlocks.length / slidesPerViewTablet < 2) ||
 			(slidesPerGroup === 'one-by-one' &&
-				innerBlocks.length - (slidesPerViewTablet + 1) < 0)
+				innerBlocks.length - (slidesPerViewTablet + 1) < 0 &&
+				!attributes.centeredSlides) ||
+			(slidesPerGroup === 'one-by-one' &&
+				innerBlocks.length - (slidesPerViewTablet + 2) < 0 &&
+				attributes.centeredSlides)
 		) {
 			slidesPerViewTabletLoopAlert = sloderPerViewLoopAlert;
 		}
@@ -134,7 +157,11 @@ export const MultiItemSetting = (props) => {
 			(slidesPerGroup === 'slides-per-view' &&
 				innerBlocks.length / slidesPerViewPC < 2) ||
 			(slidesPerGroup === 'one-by-one' &&
-				innerBlocks.length - (slidesPerViewPC + 1) < 0)
+				innerBlocks.length - (slidesPerViewPC + 1) < 0 &&
+				!attributes.centeredSlides) ||
+			(slidesPerGroup === 'one-by-one' &&
+				innerBlocks.length - (slidesPerViewPC + 2) < 0 &&
+				attributes.centeredSlides)
 		) {
 			slidesPerViewPCLoopAlert = sloderPerViewLoopAlert;
 		}

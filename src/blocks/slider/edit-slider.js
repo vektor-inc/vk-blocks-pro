@@ -307,18 +307,18 @@ const editorRootLaunch = (editorRoot) => {
 };
 
 export const editSliderLaunch = () => {
-    const blockEditorRoot = document.querySelector(
-        '.block-editor .is-root-container'
-    );
-    if (blockEditorRoot) {
-        editorRootLaunch(blockEditorRoot);
-    }
-    const iframe = document.querySelector('#site-editor iframe');
-    if (iframe) {
-        const siteEditorRoot =
-            iframe.contentWindow.document.querySelector('.is-root-container');
-        if (siteEditorRoot) {
-            editorRootLaunch(siteEditorRoot);
-        }
-    }
-}
+	const blockEditorRoot = document.querySelector(
+		'.block-editor .is-root-container'
+	);
+	if (blockEditorRoot) {
+		editorRootLaunch(blockEditorRoot);
+	}
+	const iframe = document.querySelector('#site-editor iframe');
+	if (iframe) {
+		const siteEditorRoot =
+			iframe.contentWindow.document.querySelector('.is-root-container');
+		if (siteEditorRoot) {
+			editorRootLaunch(siteEditorRoot);
+		}
+	}
+};

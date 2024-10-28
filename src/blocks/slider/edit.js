@@ -168,8 +168,6 @@ export default function SliderEdit(props) {
 		}
 	}, [slidesPerGroup]);
 
-	
-
 	const containerClass = ' vk_grid-column';
 	const ALLOWED_BLOCKS = ['vk-blocks/slider-item'];
 	const TEMPLATE = [['vk-blocks/slider-item']];

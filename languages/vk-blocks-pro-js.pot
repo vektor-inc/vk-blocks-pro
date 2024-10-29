@@ -552,33 +552,33 @@ msgstr ""
 
 #: src/admin/margin.js:51
 #: src/blocks/_pro/accordion/edit.js:139
-#: src/blocks/_pro/outer/edit.js:1054
-#: src/blocks/_pro/post-list-slider/edit.js:596
+#: src/blocks/_pro/outer/edit.js:1062
+#: src/blocks/_pro/post-list-slider/edit.js:585
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:174
 #: src/blocks/button/edit.js:537
-#: src/blocks/slider/edit.js:927
+#: src/blocks/slider/edit.js:954
 #: src/components/advanced-viewport-control/index.js:25
 msgid "PC"
 msgstr ""
 
 #: src/admin/margin.js:55
 #: src/blocks/_pro/accordion/edit.js:122
-#: src/blocks/_pro/outer/edit.js:1038
-#: src/blocks/_pro/post-list-slider/edit.js:601
+#: src/blocks/_pro/outer/edit.js:1046
+#: src/blocks/_pro/post-list-slider/edit.js:590
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:201
 #: src/blocks/button/edit.js:472
-#: src/blocks/slider/edit.js:948
+#: src/blocks/slider/edit.js:975
 #: src/components/advanced-viewport-control/index.js:32
 msgid "Tablet"
 msgstr ""
 
 #: src/admin/margin.js:59
 #: src/blocks/_pro/accordion/edit.js:105
-#: src/blocks/_pro/outer/edit.js:1022
-#: src/blocks/_pro/post-list-slider/edit.js:606
+#: src/blocks/_pro/outer/edit.js:1030
+#: src/blocks/_pro/post-list-slider/edit.js:595
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:230
 #: src/blocks/button/edit.js:407
-#: src/blocks/slider/edit.js:969
+#: src/blocks/slider/edit.js:996
 #: src/components/advanced-viewport-control/index.js:41
 msgid "Mobile"
 msgstr ""
@@ -856,8 +856,8 @@ msgid "2:3"
 msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:156
-#: src/blocks/_pro/post-list-slider/edit.js:592
-#: src/blocks/slider/edit.js:915
+#: src/blocks/_pro/post-list-slider/edit.js:581
+#: src/blocks/slider/edit.js:942
 msgid "Height"
 msgstr ""
 
@@ -1009,7 +1009,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/edit.js:182
 #: src/blocks/_pro/card/edit.js:134
 #: src/blocks/_pro/icon-card/edit.js:75
-#: src/blocks/_pro/post-list-slider/edit.js:498
+#: src/blocks/_pro/post-list-slider/edit.js:487
 #: src/blocks/_pro/post-list/edit.js:442
 msgid "Title"
 msgstr ""
@@ -1106,7 +1106,7 @@ msgid "Image Height"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:88
-#: src/blocks/slider/edit.js:920
+#: src/blocks/slider/edit.js:947
 msgid "Slide Height for each device."
 msgstr ""
 
@@ -1119,7 +1119,7 @@ msgid "Check your settings from the settings sidebar."
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:115
-#: src/blocks/_pro/post-list-slider/edit.js:366
+#: src/blocks/_pro/post-list-slider/edit.js:355
 #: src/blocks/_pro/post-list/edit.js:310
 msgid "Display conditions"
 msgstr ""
@@ -1129,7 +1129,7 @@ msgid "Parent"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:134
-#: src/blocks/_pro/post-list-slider/edit.js:536
+#: src/blocks/_pro/post-list-slider/edit.js:525
 #: src/blocks/_pro/post-list/edit.js:480
 msgid "Ignore this post"
 msgstr ""
@@ -1375,7 +1375,7 @@ msgid ""
 msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:85
-#: src/blocks/_pro/post-list-slider/edit.js:547
+#: src/blocks/_pro/post-list-slider/edit.js:536
 #: src/blocks/_pro/table-of-contents-new/edit.js:114
 #: src/components/column-layout-control/index.js:69
 msgid "Display type"
@@ -1413,7 +1413,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:186
 #: src/blocks/_pro/grid-column/edit.js:96
-#: src/blocks/_pro/outer/edit.js:1076
+#: src/blocks/_pro/outer/edit.js:1084
 #: src/blocks/icon-outer/edit.js:183
 #: src/blocks/icon/edit.js:174
 #: src/utils/unit-options.js:6
@@ -1422,7 +1422,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:187
 #: src/blocks/_pro/grid-column/edit.js:100
-#: src/blocks/_pro/outer/edit.js:1080
+#: src/blocks/_pro/outer/edit.js:1088
 #: src/blocks/icon-outer/edit.js:187
 #: src/blocks/icon/edit.js:178
 #: src/utils/unit-options.js:10
@@ -1431,7 +1431,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:188
 #: src/blocks/_pro/grid-column/edit.js:104
-#: src/blocks/_pro/outer/edit.js:1084
+#: src/blocks/_pro/outer/edit.js:1092
 #: src/blocks/icon-outer/edit.js:191
 #: src/blocks/icon/edit.js:182
 #: src/utils/unit-options.js:14
@@ -1440,7 +1440,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:189
 #: src/blocks/_pro/grid-column/edit.js:108
-#: src/blocks/_pro/outer/edit.js:1012
+#: src/blocks/_pro/outer/edit.js:1020
 #: src/blocks/icon-outer/edit.js:195
 #: src/blocks/icon/edit.js:186
 #: src/utils/unit-options.js:18
@@ -1545,9 +1545,9 @@ msgid "Display"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:155
-#: src/blocks/_pro/post-list-slider/edit.js:753
+#: src/blocks/_pro/post-list-slider/edit.js:742
 #: src/blocks/heading/edit.js:376
-#: src/blocks/slider/edit.js:1133
+#: src/blocks/slider/edit.js:1160
 msgid "Hide"
 msgstr ""
 
@@ -1686,38 +1686,39 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1018
+#: src/blocks/_pro/outer/deprecated/save/1.89.0/save.js:252
+#: src/blocks/_pro/outer/edit.js:418
+#: src/blocks/_pro/outer/save.js:252
+msgid "Outer link"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:1026
 msgid "Min Height Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1070
+#: src/blocks/_pro/outer/edit.js:1078
 #: src/components/advanced-unit-control/index.js:13
 msgid "Unit Type"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1088
+#: src/blocks/_pro/outer/edit.js:1096
 #: src/utils/unit-options.js:22
 msgid "vh"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1092
+#: src/blocks/_pro/outer/edit.js:1100
 #: src/utils/unit-options.js:26
 msgid "svh"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1096
+#: src/blocks/_pro/outer/edit.js:1104
 #: src/utils/unit-options.js:30
 msgid "lvh"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1100
+#: src/blocks/_pro/outer/edit.js:1108
 #: src/utils/unit-options.js:34
 msgid "dvh"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:418
-#: src/blocks/_pro/outer/save.js:252
-msgid "Outer link"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:424
@@ -1847,31 +1848,39 @@ msgstr ""
 msgid "Serrated"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:651
+#: src/blocks/_pro/outer/edit.js:648
+msgid "Book"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:652
+msgid "Pyramid"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:659
 msgid "Settings for each device"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:664
+#: src/blocks/_pro/outer/edit.js:672
 msgid "Upper Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:746
+#: src/blocks/_pro/outer/edit.js:754
 msgid "Lower Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:829
+#: src/blocks/_pro/outer/edit.js:837
 msgid "Border Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:834
+#: src/blocks/_pro/outer/edit.js:842
 msgid "Border will disappear when divider effect is applied."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:840
+#: src/blocks/_pro/outer/edit.js:848
 msgid "Border type"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:848
+#: src/blocks/_pro/outer/edit.js:856
 #: src/blocks/_pro/step-item/edit.js:147
 #: src/blocks/_pro/timeline-item/edit.js:113
 #: src/blocks/balloon/edit.js:559
@@ -1880,52 +1889,52 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:852
+#: src/blocks/_pro/outer/edit.js:860
 #: src/blocks/_pro/step-item/edit.js:118
 #: src/blocks/_pro/timeline-item/edit.js:88
 #: src/blocks/pr-content/edit.js:145
 msgid "Solid"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:856
+#: src/blocks/_pro/outer/edit.js:864
 msgid "Dotted"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:860
+#: src/blocks/_pro/outer/edit.js:868
 msgid "Dashed"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:864
+#: src/blocks/_pro/outer/edit.js:872
 msgid "Double"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:868
+#: src/blocks/_pro/outer/edit.js:876
 msgid "Groove"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:872
+#: src/blocks/_pro/outer/edit.js:880
 msgid "Ridge"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:876
+#: src/blocks/_pro/outer/edit.js:884
 msgid "Inset"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:880
+#: src/blocks/_pro/outer/edit.js:888
 msgid "Outset"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:892
+#: src/blocks/_pro/outer/edit.js:900
 msgid "Border width"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:904
+#: src/blocks/_pro/outer/edit.js:912
 #: src/blocks/icon-outer/edit.js:212
 #: src/blocks/icon/edit.js:203
 msgid "Border radius"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:920
+#: src/blocks/_pro/outer/edit.js:928
 msgid "Container Inner Side Space Setting"
 msgstr ""
 
@@ -1951,237 +1960,233 @@ msgstr ""
 msgid "Filter by %s"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:356
-msgid "Infomation"
-msgstr ""
-
 #: src/blocks/_pro/post-list-slider/edit.js:359
-msgid "Please check the actual behavior on the live site."
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:370
 #: src/blocks/_pro/post-list/edit.js:314
 msgid "Filter by PostTypes"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:383
+#: src/blocks/_pro/post-list-slider/edit.js:372
 #: src/blocks/_pro/post-list/edit.js:327
 msgid "Taxonomy filter condition"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:394
+#: src/blocks/_pro/post-list-slider/edit.js:383
 #: src/blocks/_pro/post-list/edit.js:338
 msgid "OR ( Whichever apply )"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:404
+#: src/blocks/_pro/post-list-slider/edit.js:393
 #: src/blocks/_pro/post-list/edit.js:348
 msgid "AND ( All apply )"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:410
+#: src/blocks/_pro/post-list-slider/edit.js:399
 #: src/blocks/_pro/post-list/edit.js:354
 msgid "Number of Posts"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:423
+#: src/blocks/_pro/post-list-slider/edit.js:412
 #: src/blocks/_pro/post-list/edit.js:367
 msgid "Filter by Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:427
+#: src/blocks/_pro/post-list-slider/edit.js:416
 #: src/blocks/_pro/post-list/edit.js:371
 msgid "Period of Time"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:435
+#: src/blocks/_pro/post-list-slider/edit.js:424
 #: src/blocks/_pro/post-list/edit.js:379
 msgid "Whole Period"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:439
+#: src/blocks/_pro/post-list-slider/edit.js:428
 #: src/blocks/_pro/post-list/edit.js:383
 msgid "From Today"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:443
+#: src/blocks/_pro/post-list-slider/edit.js:432
 #: src/blocks/_pro/post-list/edit.js:387
 msgid "From Now"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:447
+#: src/blocks/_pro/post-list-slider/edit.js:436
 #: src/blocks/_pro/post-list/edit.js:391
 msgid "From Tomorrow"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:452
+#: src/blocks/_pro/post-list-slider/edit.js:441
 #: src/blocks/_pro/post-list/edit.js:396
 msgid ""
 "* If you choose a future period, you will need to customize it so that "
 "future posts will be published immediately."
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:459
+#: src/blocks/_pro/post-list-slider/edit.js:448
 #: src/blocks/_pro/post-list/edit.js:403
 msgid "Order"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:468
+#: src/blocks/_pro/post-list-slider/edit.js:457
 #: src/blocks/_pro/post-list/edit.js:412
 msgid "ASC"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:472
+#: src/blocks/_pro/post-list-slider/edit.js:461
 #: src/blocks/_pro/post-list/edit.js:416
 msgid "DESC"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:478
+#: src/blocks/_pro/post-list-slider/edit.js:467
 #: src/blocks/_pro/post-list/edit.js:422
 msgid "Order by"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:487
+#: src/blocks/_pro/post-list-slider/edit.js:476
 #: src/blocks/_pro/post-list/edit.js:431
 msgid "Published Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:494
+#: src/blocks/_pro/post-list-slider/edit.js:483
 #: src/blocks/_pro/post-list/edit.js:438
 msgid "Modefied Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:502
+#: src/blocks/_pro/post-list-slider/edit.js:491
 #: src/blocks/_pro/post-list/edit.js:446
 msgid "Random"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:508
+#: src/blocks/_pro/post-list-slider/edit.js:497
 #: src/blocks/_pro/post-list/edit.js:452
 msgid "offset"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:524
+#: src/blocks/_pro/post-list-slider/edit.js:513
 #: src/blocks/_pro/post-list/edit.js:468
 msgid "Display from the first post always"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:530
+#: src/blocks/_pro/post-list-slider/edit.js:519
 #: src/blocks/_pro/post-list/edit.js:474
 msgid "Display from the first post even on pages beyond the second page."
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:558
+#: src/blocks/_pro/post-list-slider/edit.js:547
 #: src/components/column-layout-control/index.js:26
 msgid "Card"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:562
+#: src/blocks/_pro/post-list-slider/edit.js:551
 #: src/components/column-layout-control/index.js:30
 msgid "Card (No border)"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:569
+#: src/blocks/_pro/post-list-slider/edit.js:558
 #: src/components/column-layout-control/index.js:34
 msgid "Card (Intext)"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:573
+#: src/blocks/_pro/post-list-slider/edit.js:562
 #: src/components/column-layout-control/index.js:38
 msgid "Card (Horizontal)"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:580
+#: src/blocks/_pro/post-list-slider/edit.js:569
 #: src/components/column-layout-control/index.js:42
 msgid "Media"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:584
+#: src/blocks/_pro/post-list-slider/edit.js:573
 #: src/components/column-layout-control/index.js:46
 msgid "Text 1 Column"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:612
-#: src/blocks/slider/edit.js:992
+#: src/blocks/_pro/post-list-slider/edit.js:601
+#: src/blocks/slider/edit.js:1019
 msgid "Slider Settings"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:616
-#: src/blocks/slider/edit.js:996
+#: src/blocks/_pro/post-list-slider/edit.js:605
+#: src/blocks/slider/edit.js:1023
 msgid "Effect "
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:626
-#: src/blocks/slider/edit.js:1006
+#: src/blocks/_pro/post-list-slider/edit.js:615
+#: src/blocks/slider/edit.js:1033
 msgid "Slide"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:630
-#: src/blocks/slider/edit.js:1010
+#: src/blocks/_pro/post-list-slider/edit.js:619
+#: src/blocks/slider/edit.js:1037
 msgid "Fade"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:637
-#: src/blocks/slider/edit.js:1017
+#: src/blocks/_pro/post-list-slider/edit.js:626
+#: src/blocks/slider/edit.js:1044
 msgid "Loop "
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:647
-#: src/blocks/slider/edit.js:1027
+#: src/blocks/_pro/post-list-slider/edit.js:636
+#: src/blocks/slider/edit.js:1054
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:657
-#: src/blocks/slider/edit.js:1037
+#: src/blocks/_pro/post-list-slider/edit.js:646
+#: src/blocks/slider/edit.js:1064
 msgid "Stop AutoPlay when swipe"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:667
-#: src/blocks/slider/edit.js:1047
+#: src/blocks/_pro/post-list-slider/edit.js:656
+#: src/blocks/slider/edit.js:1074
 msgid "Display Time"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:694
-#: src/blocks/slider/edit.js:1074
+#: src/blocks/_pro/post-list-slider/edit.js:683
+#: src/blocks/slider/edit.js:1101
 msgid "Change Speed"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:718
-#: src/blocks/slider/edit.js:1098
+#: src/blocks/_pro/post-list-slider/edit.js:707
+#: src/blocks/slider/edit.js:1125
 msgid "Pagination Type"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:729
+#: src/blocks/_pro/post-list-slider/edit.js:718
 #: src/blocks/_pro/step-item/edit.js:137
 #: src/blocks/_pro/table-of-contents-new/edit.js:129
 #: src/blocks/_pro/timeline-item/edit.js:103
 #: src/blocks/heading/edit.js:264
-#: src/blocks/slider/edit.js:1109
+#: src/blocks/slider/edit.js:1136
 #: src/blocks/staff/edit.js:173
 #: src/components/advanced-color-gradient-control/index.js:47
 msgid "Default"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:733
-#: src/blocks/slider/edit.js:1113
+#: src/blocks/_pro/post-list-slider/edit.js:722
+#: src/blocks/slider/edit.js:1140
 msgid "Number of slides"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:746
-#: src/blocks/slider/edit.js:1126
+#: src/blocks/_pro/post-list-slider/edit.js:735
+#: src/blocks/slider/edit.js:1153
 msgid "Navigation Position"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:757
+#: src/blocks/_pro/post-list-slider/edit.js:746
 #: src/blocks/button/edit.js:365
-#: src/blocks/slider/edit.js:1137
+#: src/blocks/slider/edit.js:1164
 #: src/components/display-items-control/index.js:136
 msgid "Center"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:761
-#: src/blocks/slider/edit.js:1141
+#: src/blocks/_pro/post-list-slider/edit.js:750
+#: src/blocks/slider/edit.js:1168
 msgid "Bottom on Mobile device"
+msgstr ""
+
+#: src/blocks/_pro/post-list-slider/edit.js:767
+msgid "Please check the actual behavior on the live site."
 msgstr ""
 
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:104
@@ -2191,12 +2196,12 @@ msgid ""
 msgstr ""
 
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:151
-#: src/blocks/slider/edit.js:642
+#: src/blocks/slider/edit.js:669
 msgid "Multi-item Display Setting"
 msgstr ""
 
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:155
-#: src/blocks/slider/edit.js:646
+#: src/blocks/slider/edit.js:673
 msgid "Number of Items to display per view"
 msgstr ""
 
@@ -2205,7 +2210,7 @@ msgid "Enter divisors for the number of posts for each display size."
 msgstr ""
 
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:166
-#: src/blocks/slider/edit.js:657
+#: src/blocks/slider/edit.js:684
 msgid "If the number is not divisible, the sliding behaviour will be unnatural"
 msgstr ""
 
@@ -2221,7 +2226,7 @@ msgid ""
 msgstr ""
 
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:270
-#: src/blocks/slider/edit.js:761
+#: src/blocks/slider/edit.js:788
 msgid "One by One"
 msgstr ""
 
@@ -2230,7 +2235,7 @@ msgid "Same as the number of posts to display"
 msgstr ""
 
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:290
-#: src/blocks/slider/edit.js:781
+#: src/blocks/slider/edit.js:808
 msgid "Centering the active slide"
 msgstr ""
 
@@ -3188,63 +3193,70 @@ msgid ""
 "display size."
 msgstr ""
 
-#: src/blocks/slider/edit.js:558
+#: src/blocks/slider/edit.js:559
 msgid ""
 "If you want to loop slides, the number of placed slide items must be "
 "greater than or equal to twice the number of items you want to display per "
 "view."
 msgstr ""
 
-#: src/blocks/slider/edit.js:567
+#: src/blocks/slider/edit.js:572
+msgid ""
+"If the active slide is in the center, the number of placed slide items must "
+"be greater than or equal to the number of items you want to display in one "
+"view + 2."
+msgstr ""
+
+#: src/blocks/slider/edit.js:581
 msgid ""
 "If you want to loop slides, the number of placed slide items must be "
 "greater than or equal to the number of items you want to display per view + "
 "1."
 msgstr ""
 
-#: src/blocks/slider/edit.js:653
+#: src/blocks/slider/edit.js:680
 msgid "Enter divisors for the number of placed slide items for each display size."
 msgstr ""
 
-#: src/blocks/slider/edit.js:750
+#: src/blocks/slider/edit.js:777
 msgid "Number of items to change in a transition"
 msgstr ""
 
-#: src/blocks/slider/edit.js:765
+#: src/blocks/slider/edit.js:792
 msgid "Same as the number of items to display"
 msgstr ""
 
-#: src/blocks/slider/edit.js:790
+#: src/blocks/slider/edit.js:817
 msgid ""
 "If you specify the center, you can display items that are cut off on the "
 "left and right."
 msgstr ""
 
-#: src/blocks/slider/edit.js:849
+#: src/blocks/slider/edit.js:876
 msgid "Change Slide Editor Mode"
 msgstr ""
 
-#: src/blocks/slider/edit.js:852
+#: src/blocks/slider/edit.js:879
 msgid "Edit ( Stacked Layout ) Mode"
 msgstr ""
 
-#: src/blocks/slider/edit.js:862
+#: src/blocks/slider/edit.js:889
 msgid "Preview ( Slide ) Mode"
 msgstr ""
 
-#: src/blocks/slider/edit.js:877
+#: src/blocks/slider/edit.js:904
 msgid "Editor Setting"
 msgstr ""
 
-#: src/blocks/slider/edit.js:881
+#: src/blocks/slider/edit.js:908
 msgid "Editor Mode"
 msgstr ""
 
-#: src/blocks/slider/edit.js:896
+#: src/blocks/slider/edit.js:923
 msgid "Edit ( Stacked Layout )"
 msgstr ""
 
-#: src/blocks/slider/edit.js:909
+#: src/blocks/slider/edit.js:936
 msgid "Preview ( Slide )"
 msgstr ""
 

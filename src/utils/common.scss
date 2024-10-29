@@ -627,6 +627,7 @@ ol {
 	height: auto; //100%だとサイトエディター画面でおかしくなるのでautoに
 	position: relative;
 	.swiper-wrapper {
+		height: auto; //100%だとサイトエディター画面でおかしくなるのでautoに
 		transition-timing-function: cubic-bezier(0.77, 0.2, 0.05, 1);
 	}
 	//vk_slider用のnextとprevボタン	
@@ -660,57 +661,59 @@ ol {
 			}
 		}
 	}
-}
 
-// ↓ これ要る？
-.swiper-slide {
-	font-size: 18px;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-}
+	// ↓ これ要る？
+	.swiper-slide {
+		height: auto; //100%だとおかしくなるのでautoに
+		font-size: 18px;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
 
-//paginationの親枠
-.swiper-container-horizontal>.swiper-pagination-bullets{
-	padding-left:3.2rem;
-	padding-right:3.2rem;
-	box-sizing: border-box; //他のFSEテーマではみ出るので追加
-}
-//pagination
-.swiper-pagination{
-	//標準
-	&-bullet{ 
-		border-radius: unset;
-		width: 30px;
-		height: 5px;
-		background-color: #ccc;
-		opacity: unset;
-		outline: 1px solid var(--vk-color-background-white-translucent);
-		&-active {
-			background: #666;
+	//paginationの親枠
+	.swiper-container-horizontal>.swiper-pagination-bullets{
+		padding-left:3.2rem;
+		padding-right:3.2rem;
+		box-sizing: border-box; //他のFSEテーマではみ出るので追加
+	}
+	//pagination
+	.swiper-pagination{
+		//標準
+		&-bullet{ 
+			border-radius: unset;
+			width: 30px;
+			height: 5px;
+			background-color: #ccc;
+			opacity: unset;
+			outline: 1px solid var(--vk-color-background-white-translucent);
+			&-active {
+				background: #666;
+			}
+		}
+		//標準以外（スライドの枚数）
+		&.swiper-pagination-fraction:not(.swiper-pagination-bullets){
+			width: auto;
+			left: 50%;
+			transform: translateX(-50%);
+			background: var(--vk-color-background-white-translucent);
+			padding: 0.4rem 1.5rem;
+			border-radius: 30px;
+			bottom: 5px;
 		}
 	}
-	//標準以外（スライドの枚数）
-	&.swiper-pagination-fraction:not(.swiper-pagination-bullets){
-		width: auto;
-		left: 50%;
-		transform: translateX(-50%);
-		background: var(--vk-color-background-white-translucent);
-		padding: 0.4rem 1.5rem;
-		border-radius: 30px;
-		bottom: 5px;
-	}
-}
 
-//矢印ボタン モバイルは下部
-@media (max-width: 575.98px) {
-	.swiper-button-next, 
-	.swiper-button-prev{
-		&.swiper-button-mobile-bottom{
-		top:unset;
-		bottom: 10px;
+	//矢印ボタン モバイルは下部
+	@media (max-width: 575.98px) {
+		.swiper-button-next, 
+		.swiper-button-prev{
+			&.swiper-button-mobile-bottom{
+			top:unset;
+			bottom: 10px;
+			}
 		}
 	}
+
 }
 
 /*-------------------------------------------*/

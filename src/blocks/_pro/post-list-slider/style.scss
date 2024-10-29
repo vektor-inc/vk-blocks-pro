@@ -15,7 +15,9 @@
 
 	.swiper-pagination {
 		position: inherit;
-		display: initial;
+		&.swiper-pagination-fraction {
+			display: initial;
+		}
 	}
 }
 

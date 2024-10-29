@@ -7,19 +7,18 @@
 		width: calc(100% - 30px);
 		&.postListText {
 			width: calc(100% - 9.6rem);
+			padding: 0;
+			border-bottom: 0;
 		}
+	}
+
+	.swiper-pagination {
+		position: inherit;
 	}
 }
 
-@media (min-width: 768px) {
-	.vk_post_list_slider {
-		.vk_post {
-			margin-bottom: 1.5rem;
-		}
-	}
-}
-
-//矢印ボタン モバイルは下部
+/* 矢印ボタン */
+//モバイルは下部
 @media (max-width: 575.98px) {
 	.vk_post_list_slider {
 		.swiper-button-next, 
@@ -31,4 +30,3 @@
 		}
 	}
 }
- 

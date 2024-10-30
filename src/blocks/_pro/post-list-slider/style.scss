@@ -6,17 +6,18 @@
 	.vk_post {
 		width: calc(100% - 30px);
 		&.postListText {
-			width: calc(100% - 9.6rem);
-			padding: 0;
-			font-size: 14px;
-			border-bottom: 0;
+			width: calc(100% - 9.6rem);		
+			border-bottom: none;
+			.postListText_title{ // lightning テーマで .swiper-slide p に負けてしまうため追加
+				font-size: 14px;
+			}
 		}
 	}
 
 	.swiper-pagination {
 		position: inherit;
 		&.swiper-pagination-fraction {
-			display: initial;
+			display: inline-block;
 		}
 	}
 }

@@ -763,7 +763,7 @@ export default function PostListSliderEdit(props) {
 				{layout !== 'postListText' && <MultiItemSetting {...props} />}
 			</InspectorControls>
 			<div {...blockProps}>
-				<div className="alert alert-info font-size-11px">
+				<div className="alert alert-info font-size-14px">
 					{__(
 						'Please check the actual behavior on the live site.',
 						'vk-blocks-pro'

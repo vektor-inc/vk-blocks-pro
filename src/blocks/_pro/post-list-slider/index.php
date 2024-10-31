@@ -197,7 +197,7 @@ function vk_blocks_post_list_slider_render_callback( $attributes ) {
 		}
 		if ( 'hide' !== $attributes['pagination'] ) {
 			$html .= '<div class="swiper-pagination swiper-pagination-' . $attributes['pagination'] . '"></div>';
-		}		
+		}
 		$html .= '</div>';
 	}
 	wp_reset_postdata();

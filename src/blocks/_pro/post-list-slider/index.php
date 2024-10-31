@@ -191,9 +191,13 @@ function vk_blocks_post_list_slider_render_callback( $attributes ) {
 			$html .= '</div>';
 		}
 		$html .= '</div>';
-		$html .= '<div class="swiper-button-prev swiper-button-' . $attributes['navigationPosition'] . '"></div>';
-		$html .= '<div class="swiper-button-next swiper-button-' . $attributes['navigationPosition'] . '"></div>';
-		$html .= '<div class="swiper-pagination swiper-pagination-' . $attributes['pagination'] . '"></div>';
+		if ( 'hide' !== $attributes['navigationPosition'] ) {
+			$html .= '<div class="swiper-button-prev swiper-button-' . $attributes['navigationPosition'] . '"></div>';
+			$html .= '<div class="swiper-button-next swiper-button-' . $attributes['navigationPosition'] . '"></div>';
+		}
+		if ( 'hide' !== $attributes['pagination'] ) {
+			$html .= '<div class="swiper-pagination swiper-pagination-' . $attributes['pagination'] . '"></div>';
+		}		
 		$html .= '</div>';
 	}
 	wp_reset_postdata();

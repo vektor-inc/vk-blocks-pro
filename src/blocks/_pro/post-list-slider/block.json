@@ -108,15 +108,6 @@
 			"type": "boolean",
 			"default": false
 		},
-		"pc": {
-			"type": "string"
-		},
-		"tablet": {
-			"type": "string"
-		},
-		"mobile": {
-			"type": "string"
-		},
 		"autoPlay": {
 			"type": "boolean",
 			"default": true

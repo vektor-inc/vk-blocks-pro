@@ -147,7 +147,7 @@ function vk_blocks_post_list_slider_render_callback( $attributes ) {
 
 	$slider_data = array(
 		'loop'                => $attributes['loop'],
-		'effect'              => 'slide',
+		'effect'              => $attributes['effect'],
 		'speed'               => $attributes['speed'],
 		'autoPlay'            => $attributes['autoPlay'],
 		'autoPlayStop'        => $attributes['autoPlayStop'],

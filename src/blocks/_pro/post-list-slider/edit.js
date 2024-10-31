@@ -19,7 +19,6 @@ import {
 	BlockAlignmentToolbar,
 	InspectorControls,
 	useBlockProps,
-	__experimentalUnitControl as UnitControl,
 } from '@wordpress/block-editor';
 // Load VK Blocks Utils
 import { useTaxonomies } from '@vkblocks/utils/hooks';
@@ -45,9 +44,6 @@ export default function PostListSliderEdit(props) {
 		orderby,
 		selfIgnore,
 		pagedlock,
-		pc,
-		tablet,
-		mobile,
 		autoPlay,
 		autoPlayStop,
 		autoPlayDelay,
@@ -577,26 +573,6 @@ export default function PostListSliderEdit(props) {
 					</BaseControl>
 				</PanelBody>
 				<DisplayItemsControl {...props} />
-				<PanelBody
-					title={__('Height', 'vk-blocks-pro')}
-					initialOpen={false}
-				>
-					<UnitControl
-						label={__('PC', 'vk-blocks-pro')}
-						onChange={(value) => setAttributes({ pc: value })}
-						value={pc}
-					/>
-					<UnitControl
-						label={__('Tablet', 'vk-blocks-pro')}
-						onChange={(value) => setAttributes({ tablet: value })}
-						value={tablet}
-					/>
-					<UnitControl
-						label={__('Mobile', 'vk-blocks-pro')}
-						onChange={(value) => setAttributes({ mobile: value })}
-						value={mobile}
-					/>
-				</PanelBody>
 				<PanelBody
 					title={__('Slider Settings', 'vk-blocks-pro')}
 					initialOpen={false}

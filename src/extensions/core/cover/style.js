@@ -90,6 +90,7 @@ const insertLinkIntoCoverBlock = (element, blockType, attributes) => {
 
 	return (
 		<div {...blockProps}>
+			{element.props.children}
 			<a
 				href={linkUrl}
 				target={linkTarget}
@@ -97,7 +98,6 @@ const insertLinkIntoCoverBlock = (element, blockType, attributes) => {
 				aria-label={__('Cover link', 'vk-blocks-pro')}
 				className="wp-block-cover-vk-link"
 			></a>
-			{element.props.children}
 		</div>
 	);
 };

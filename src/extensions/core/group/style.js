@@ -183,6 +183,7 @@ const save = (props) => {
 
 	return (
 		<CustomTag {...blockProps}>
+			<InnerBlocks.Content />
 			{linkUrl && (
 				<a
 					href={linkUrl}
@@ -192,7 +193,6 @@ const save = (props) => {
 					className={`${prefix}-vk-link`}
 				></a>
 			)}
-			<InnerBlocks.Content />
 		</CustomTag>
 	);
 };

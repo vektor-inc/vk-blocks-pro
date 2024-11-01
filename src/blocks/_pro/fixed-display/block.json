@@ -48,8 +48,8 @@
 			"default": 0
 		},
 		"dontShowAgain": {
-			"type": "number",
-			"default": 0
+			"type": "boolean",
+			"default": false
 		},
 		"clientId": {
 			"type": "string"

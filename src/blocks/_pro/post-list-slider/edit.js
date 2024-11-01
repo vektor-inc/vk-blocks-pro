@@ -742,10 +742,13 @@ export default function PostListSliderEdit(props) {
 					initialOpen={false}
 				>
 					<BaseControl
-						label={__('Background Color', 'vk-blocks-pro') }
+						label={__('Background Color', 'vk-blocks-pro')}
 						id={`vk_postList-blockId`}
 					>
-						<AdvancedColorPalette schema={'backGroundColor'} {...props} />
+						<AdvancedColorPalette
+							schema={'backGroundColor'}
+							{...props}
+						/>
 					</BaseControl>
 				</PanelBody>
 				{layout !== 'postListText' && <MultiItemSetting {...props} />}

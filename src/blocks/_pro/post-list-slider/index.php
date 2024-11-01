@@ -103,6 +103,7 @@ function vk_blocks_post_list_slider_render_callback( $attributes ) {
 			'offset'                     => 0,
 			'pagedlock'                  => false,
 			'selfIgnore'                 => false,
+			'backGroundColor'            => '',
 			'loop'                       => true,
 			'effect'                     => 'slide',
 			'speed'                      => 500,
@@ -167,6 +168,8 @@ function vk_blocks_post_list_slider_render_callback( $attributes ) {
 		'swiper',
 		'vk_swiper',
 		'vk_post_list_slider-' . $attributes['blockId'],
+		'vk_post_list_slider-navigation-' . $attributes['navigationPosition'],
+		'vk_post_list_slider-pagination-' . $attributes['pagination'],
 	);
 	if ( ! empty( $attributes['width'] ) ) {
 		$classes[] = 'align' . $attributes['width'];
@@ -178,6 +181,21 @@ function vk_blocks_post_list_slider_render_callback( $attributes ) {
 		)
 	);
 
+	// 背景色の処理
+	$slide_class = '';
+	$slide_style = '';
+	if ( ! empty( $attributes['backGroundColor'] ) ) {
+		if ( preg_match( '/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/', $attributes['backGroundColor'] ) ) {
+			$slide_style .= 'background-color: ' . $attributes['backGroundColor'] . ';';
+		} else {
+			$slide_class .= ' has-background-color has-' . $attributes['backGroundColor'] . '-background-color';
+		}
+	}
+
+	if ( ! empty( $slide_style ) ) {
+		$slide_style = ' style="' . $slide_style . '"';
+	}
+
 	$html = '';
 
 	if ( ! empty( $wp_query ) && $wp_query->have_posts() ) {
@@ -185,7 +203,7 @@ function vk_blocks_post_list_slider_render_callback( $attributes ) {
 		$html .= '<div class="swiper-wrapper">';
 		while ( $wp_query->have_posts() ) {
 			$wp_query->the_post();
-			$html .= '<div class="swiper-slide">';
+			$html .= '<div class="swiper-slide' . $slide_class . '"' . $slide_style . '>';
 			global $post;
 			$html .= VK_Component_Posts::get_view( $post, $options );
 			$html .= '</div>';

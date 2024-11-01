@@ -108,6 +108,9 @@
 			"type": "boolean",
 			"default": false
 		},
+		"backGroundColor": {
+			"type": "string"
+		},
 		"autoPlay": {
 			"type": "boolean",
 			"default": true

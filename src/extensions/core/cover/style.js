@@ -99,7 +99,6 @@ const insertLinkIntoCoverBlock = (element, blockType, attributes) => {
 	);
 };
 
-
 addFilter('editor.BlockEdit', 'custom/enhance-cover-block', enhanceCoverBlock);
 addFilter(
 	'blocks.registerBlockType',

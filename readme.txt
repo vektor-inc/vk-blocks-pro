@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ] The split loading option is now supported for core/heading, core/image, and core/table styles for block editor.
 [ Add function ][ Outer (Pro) ] Add book and pyramid in divider style.
 [ Bug fix ][ Slider ] Add alert message.
 

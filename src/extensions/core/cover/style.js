@@ -77,19 +77,16 @@ const insertLinkIntoCoverBlock = (element, blockType, attributes) => {
 		return element;
 	}
 
-	const blockProps = useBlockProps.save({
-		className: linkUrl
-			? `${element.props.className} has-link`
-			: element.props.className,
-		style: element.props.style,
-	});
+	// `element` から既存のクラスを取得
+	const existingClassName = element.props.className || '';
 
-	// rel 属性の設定
+	// リンク属性の rel 設定
 	const relAttribute =
 		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
 
+	// `element` の中に `<a>` タグを追加し、クラス名の変更を避ける
 	return (
-		<div {...blockProps}>
+		<div className={`${existingClassName} has-link`}>
 			{element.props.children}
 			<a
 				href={linkUrl}
@@ -97,6 +94,7 @@ const insertLinkIntoCoverBlock = (element, blockType, attributes) => {
 				rel={relAttribute}
 				aria-label={__('Cover link', 'vk-blocks-pro')}
 				className="wp-block-cover-vk-link"
+				style={{ position: 'absolute', inset: 0, zIndex: 10 }}
 			></a>
 		</div>
 	);

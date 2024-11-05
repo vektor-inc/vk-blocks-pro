@@ -107,6 +107,7 @@ e.g.
 == Changelog ==
 
 [ Add Block ] Add Post list Slider block.
+[ Bug fix ][ Cover ] Fixed an issue where, after setting a link in the Cover block and adding two unstyled headings inside it, the content positioning would not apply upon returning to the editing screen (editing screen only).
 [ Add function ][ Outer (Pro) ] Add book and pyramid in divider style.
 [ Bug fix ][ Slider ] Add alert message.
 

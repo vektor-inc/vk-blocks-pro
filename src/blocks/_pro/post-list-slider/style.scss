@@ -9,8 +9,13 @@
 			border-bottom: none;
 			.postListText_title{ // lightning テーマで .swiper-slide p に負けてしまうため追加
 				font-size: 14px;
+				line-height: 1.4;
 			}
 		}
+
+	}
+	.has-background-color .vk_post.card {	
+		margin-top: 15px;			
 	}
 	&.vk_post_list_slider-navigation-hide {
 		.vk_post.postListText {

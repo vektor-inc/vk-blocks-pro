@@ -5,7 +5,7 @@
  */
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
-import { BlockControls, useBlockProps } from '@wordpress/block-editor';
+import { BlockControls } from '@wordpress/block-editor';
 import { ToolbarGroup } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 import LinkToolbar from '@vkblocks/components/link-toolbar';
@@ -79,7 +79,8 @@ const insertLinkIntoCoverBlock = (element, blockType, attributes) => {
 
 	// `element` から既存のクラスを取得し、リンクがある場合にのみ `has-link` を追加
 	const existingClassName = element.props.className || '';
-	const classNameWithLink = `${existingClassName} ${linkUrl ? 'has-link' : ''}`.trim();
+	const classNameWithLink =
+		`${existingClassName} ${linkUrl ? 'has-link' : ''}`.trim();
 
 	// rel 属性の設定
 	const relAttribute =

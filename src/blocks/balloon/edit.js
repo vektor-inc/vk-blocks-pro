@@ -22,6 +22,9 @@ import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 /*globals vk_blocks_params */
 
+// eslint-disable-next-line camelcase,no-undef
+const defaultAvatar = img_path.full_path;
+
 export default function BalloonEdit(props) {
 	const { attributes, setAttributes } = props;
 	const {
@@ -588,27 +591,13 @@ export default function BalloonEdit(props) {
 						className={`vk_balloon_icon_image vk_balloon_icon_image-type-${balloonImageType} ${iconImageBorderClass}`}
 						value={IconImage}
 						render={({ open }) => (
-							<Button
-								onClick={open}
-								className={
-									IconImage
-										? 'image-button'
-										: 'button button-large'
-								}
-							>
-								{!IconImage ? (
-									__('Select image', 'vk-blocks-pro')
-								) : (
-									<img
-										className={`vk_balloon_icon_image vk_balloon_icon_image-type-${balloonImageType} ${iconImageBorderClass}`}
-										style={iconImageColorStyle}
-										src={IconImage}
-										alt={__(
-											'Upload image',
-											'vk-blocks-pro'
-										)}
-									/>
-								)}
+							<Button onClick={open} className="image-button">
+								<img
+									className={`vk_balloon_icon_image vk_balloon_icon_image-type-${balloonImageType} ${iconImageBorderClass}`}
+									style={iconImageColorStyle}
+									src={IconImage ? IconImage : defaultAvatar}
+									alt={__('Upload image', 'vk-blocks-pro')}
+								/>
 							</Button>
 						)}
 					/>

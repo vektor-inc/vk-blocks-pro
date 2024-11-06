@@ -31,3 +31,14 @@ function vk_blocks_register_block_vk_balloon() {
 	);
 }
 add_action( 'init', 'vk_blocks_register_block_vk_balloon', 99 );
+
+function vk_blocks_balloon_enqueue_block_assets() {
+	wp_localize_script(
+		'vk-blocks-build-js',
+		'img_path',
+		array(
+			'full_path' => plugin_dir_url('').'vk-blocks-pro/inc/vk-blocks/images/avatar.png',
+		)
+	);
+}
+add_action( 'enqueue_block_editor_assets', 'vk_blocks_balloon_enqueue_block_assets' );

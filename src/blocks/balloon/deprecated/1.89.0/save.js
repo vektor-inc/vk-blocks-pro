@@ -36,9 +36,6 @@ export default function save({ attributes }) {
 		delete iconImageColorStyle.background;
 	}
 
-	// eslint-disable-next-line camelcase,no-undef
-	const defaultAvatar = img_path.full_path;
-
 	//吹き出しに枠線を追加オン
 	if (balloonBorder === true) {
 		contentBorderClass += 'vk_balloon_content-border-true';
@@ -266,12 +263,12 @@ export default function save({ attributes }) {
 	return (
 		<div {...blockProps}>
 			<div className={`vk_balloon_icon`}>
-				{
+				{IconImage ? (
 					<figure>
 						<img
 							className={`vk_balloon_icon_image vk_balloon_icon_image-type-${balloonImageType} ${iconImageBorderClass}`}
 							style={iconImageColorStyle}
-							src={IconImage ? IconImage : defaultAvatar}
+							src={IconImage}
 							alt=""
 						/>
 						<RichText.Content
@@ -280,7 +277,9 @@ export default function save({ attributes }) {
 							value={balloonName}
 						/>
 					</figure>
-				}
+				) : (
+					''
+				)}
 			</div>
 			<div className={`vk_balloon_content_outer`}>
 				<div

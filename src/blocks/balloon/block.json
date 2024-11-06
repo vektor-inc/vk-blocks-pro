@@ -45,7 +45,7 @@
 		},
 		"IconImage": {
 			"type": "string",
-			"defaul": null
+			"default": null
 		},
 		"balloonImageType": {
 			"type": "string",

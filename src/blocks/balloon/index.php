@@ -37,7 +37,7 @@ function vk_blocks_balloon_enqueue_block_assets() {
 		'vk-blocks-build-js',
 		'img_path',
 		array(
-			'full_path' => plugin_dir_url('').'vk-blocks-pro/inc/vk-blocks/images/avatar.png',
+			'full_path' => plugin_dir_url( '' ) . 'vk-blocks-pro/inc/vk-blocks/images/avatar.png',
 		)
 	);
 }

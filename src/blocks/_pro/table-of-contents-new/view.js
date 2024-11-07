@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	// 開/閉 切り替え (:before 疑似要素のアクセシビリティ問題に対応 #2087)
     document.querySelectorAll('#vk-tab-label').forEach((item) => {
         const status = item.previousElementSibling; // チェックボックス
-        const initialStateOpen = status.getAttribute('data-initial-open') === 'open';
+        const tabContent = item.closest('.tab').querySelector('.tab_content-open, .tab_content-close');
+        const initialStateOpen = tabContent.classList.contains('tab_content-open');
 
         // 初期状態に基づいてボタンのテキストとチェックボックスの状態を設定
         if (initialStateOpen) {

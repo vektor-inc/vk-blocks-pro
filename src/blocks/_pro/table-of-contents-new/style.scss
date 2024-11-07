@@ -107,31 +107,31 @@ $toc-left-margin: 1rem;
 			font-size: 0.75em;
 			cursor: pointer;
 		}
+	}
 
-		// label
-		input:checked~.button_status-open {
-			~ .tab_content-open {
-				max-height: 0;
-				padding: 0 1em;
-			}
+	// label
+	input:checked~.button_status-open {
+		~ .tab_content-open {
+			max-height: 100%;
+			padding: 1em;
 		}
-		.button_status-open {
-			~ .tab_content-open {
-				max-height: 100%;
-				padding: 1em;
-			}
+	}
+	.button_status-open {
+		~ .tab_content-open {
+			max-height: 0;
+			padding: 0 1em;
 		}
-		input:checked~.button_status-close {
-			~ .tab_content-close {
-				max-height: 100%;
-				padding: 1em;
-			}
+	}
+	input:checked~.button_status-close {
+		~ .tab_content-close {
+			max-height: 100%;
+			padding: 1em;
 		}
-		.button_status-close {
-			~ .tab_content-close {
-				max-height: 0;
-				padding: 0 1em;
-			}
+	}
+	.button_status-close {
+		~ .tab_content-close {
+			max-height: 0;
+			padding: 0 1em;
 		}
 	}
 
@@ -161,23 +161,6 @@ $toc-left-margin: 1rem;
 			&::before {
 				content: "CLOSE";
 			}
-		}
-	}
-}
-
-/*-------------------------------------------*/
-/*      編集画面
-/*-------------------------------------------*/
-.editor-styles-wrapper {
-	// :checked
-	input:checked {
-		~ .tab_content-open {
-			max-height: 0;
-			padding: 0 1em;
-		}
-		~ .tab_content-close {
-			max-height: 100%;
-			padding: 1em;
 		}
 	}
 }

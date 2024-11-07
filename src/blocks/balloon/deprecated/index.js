@@ -100,6 +100,12 @@ const blockAttributes6 = {
 		type: 'boolean',
 		default: false
 	},
+	balloonBorderColor: {
+		type: 'string',
+	},
+	balloonBgColor: {
+		type: 'string',
+	},
 }
 
 

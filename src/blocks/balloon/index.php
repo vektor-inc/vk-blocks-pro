@@ -32,6 +32,11 @@ function vk_blocks_register_block_vk_balloon() {
 }
 add_action( 'init', 'vk_blocks_register_block_vk_balloon', 99 );
 
+/**
+ * Get image path.
+ *
+ * @return void
+ */
 function vk_blocks_balloon_enqueue_block_assets() {
 	wp_localize_script(
 		'vk-blocks-build-js',

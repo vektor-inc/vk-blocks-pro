@@ -1,4 +1,4 @@
-=== VK Blocks ===
+ === VK Blocks ===
 Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird,chiakikouno,doshimaf,mtdkei
 Donate link:
 Tags: Gutenberg,FAQ,alert
@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Table of Contents (Pro) ] Fixed "CLOSE" label not appearing after clicking the "OPEN" button when the initial state is set to "CLOSE".
 [ Bug fix ] The split loading option is now supported for core/heading, core/image, and core/table styles for block editor.
 [ Bug fix ][ Cover ] Fixed an issue where, after setting a link in the Cover block and adding two unstyled headings inside it, the content positioning would not apply upon returning to the editing screen (editing screen only).
 [ Add function ][ Outer (Pro) ] Add book and pyramid in divider style.

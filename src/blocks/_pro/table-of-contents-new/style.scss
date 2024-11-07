@@ -108,8 +108,7 @@ $toc-left-margin: 1rem;
 				cursor: pointer;
 			}
 	}
-
-	// label
+	// :checked
 	input:checked~.button_status-open {
 		~ .tab_content-open {
 			max-height: 100%;

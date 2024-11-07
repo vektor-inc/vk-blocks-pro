@@ -90,23 +90,23 @@ $toc-left-margin: 1rem;
 	.tab {
     width: 100%;
 		overflow: hidden;
-		&_content-open {
-			max-height: 100%;
-			padding: 1em;
-			transition: all 0.35s;
-		}
-		&_content-close {
-			max-height: 0;
-			padding: 0 1em;
-			transition: all 0.35s;
-		}
-		&-close {
-			display: flex;
-			justify-content: flex-end;
-			padding: 1em;
-			font-size: 0.75em;
-			cursor: pointer;
-		}
+			&_content-open {
+				max-height: 100%;
+				padding: 1em;
+				transition: all 0.35s;
+			}
+			&_content-close {
+				max-height: 0;
+				padding: 0 1em;
+				transition: all 0.35s;
+			}
+			&-close {
+				display: flex;
+				justify-content: flex-end;
+				padding: 1em;
+				font-size: 0.75em;
+				cursor: pointer;
+			}
 	}
 
 	// label

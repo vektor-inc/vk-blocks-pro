@@ -91,7 +91,7 @@ $toc-left-margin: 1rem;
     width: 100%;
 		overflow: hidden;
 		&_content-open {
-			max-height: auto;
+			max-height: 100%;
 			padding: 1em;
 			transition: all 0.35s;
 		}
@@ -109,14 +109,26 @@ $toc-left-margin: 1rem;
 		}
 
 		// label
-		&.is-open {
-			.tab_content-open, .tab_content-close {
+		input:checked~.button_status-open {
+			~ .tab_content-open {
+				max-height: 0;
+				padding: 0 1em;
+			}
+		}
+		.button_status-open {
+			~ .tab_content-open {
 				max-height: 100%;
 				padding: 1em;
 			}
 		}
-		&.is-close {
-			.tab_content-open, .tab_content-close {
+		input:checked~.button_status-close {
+			~ .tab_content-close {
+				max-height: 100%;
+				padding: 1em;
+			}
+		}
+		.button_status-close {
+			~ .tab_content-close {
 				max-height: 0;
 				padding: 0 1em;
 			}

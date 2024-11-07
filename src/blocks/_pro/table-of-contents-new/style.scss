@@ -90,19 +90,6 @@ $toc-left-margin: 1rem;
 	.tab {
     width: 100%;
 		overflow: hidden;
-			// label
-			&.is-open {
-				.tab_content-open, .tab_content-close {
-					max-height: 100%;
-					padding: 1em;
-				}
-			}
-			&.is-close {
-				.tab_content-open, .tab_content-close {
-					max-height: 0;
-					padding: 0 1em;
-				}
-			}	
 			&_content-open {
 				max-height: auto;
 				padding: 1em;
@@ -148,6 +135,23 @@ $toc-left-margin: 1rem;
 			&::before {
 				content: "CLOSE";
 			}
+		}
+	}
+}
+
+/*-------------------------------------------*/
+/*      編集画面
+/*-------------------------------------------*/
+.editor-styles-wrapper {
+	// :checked
+	input:checked {
+		~ .tab_content-open {
+			max-height: 0;
+			padding: 0 1em;
+		}
+		~ .tab_content-close {
+			max-height: 100%;
+			padding: 1em;
 		}
 	}
 }

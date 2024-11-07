@@ -552,27 +552,27 @@ msgstr ""
 
 #: src/admin/margin.js:51
 #: src/blocks/_pro/accordion/edit.js:139
-#: src/blocks/_pro/outer/edit.js:1054
+#: src/blocks/_pro/outer/edit.js:1062
 #: src/blocks/button/edit.js:537
-#: src/blocks/slider/edit.js:927
+#: src/blocks/slider/edit.js:954
 #: src/components/advanced-viewport-control/index.js:25
 msgid "PC"
 msgstr ""
 
 #: src/admin/margin.js:55
 #: src/blocks/_pro/accordion/edit.js:122
-#: src/blocks/_pro/outer/edit.js:1038
+#: src/blocks/_pro/outer/edit.js:1046
 #: src/blocks/button/edit.js:472
-#: src/blocks/slider/edit.js:948
+#: src/blocks/slider/edit.js:975
 #: src/components/advanced-viewport-control/index.js:32
 msgid "Tablet"
 msgstr ""
 
 #: src/admin/margin.js:59
 #: src/blocks/_pro/accordion/edit.js:105
-#: src/blocks/_pro/outer/edit.js:1022
+#: src/blocks/_pro/outer/edit.js:1030
 #: src/blocks/button/edit.js:407
-#: src/blocks/slider/edit.js:969
+#: src/blocks/slider/edit.js:996
 #: src/components/advanced-viewport-control/index.js:41
 msgid "Mobile"
 msgstr ""
@@ -695,7 +695,7 @@ msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:130
 #: src/blocks/_pro/tab/index.js:23
-#: src/blocks/balloon/edit.js:482
+#: src/blocks/balloon/edit.js:485
 #: src/blocks/button/edit.js:330
 #: src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:21
@@ -748,17 +748,17 @@ msgid "Trembling Y"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:80
-#: src/blocks/balloon/edit.js:567
+#: src/blocks/balloon/edit.js:570
 msgid "Trembling X"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:84
-#: src/blocks/balloon/edit.js:571
+#: src/blocks/balloon/edit.js:574
 msgid "Pounding"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:88
-#: src/blocks/balloon/edit.js:575
+#: src/blocks/balloon/edit.js:578
 msgid "Shaking"
 msgstr ""
 
@@ -850,13 +850,13 @@ msgid "2:3"
 msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:156
-#: src/blocks/slider/edit.js:915
+#: src/blocks/slider/edit.js:942
 msgid "Height"
 msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:178
 #: src/blocks/_pro/outer/edit.js:533
-#: src/blocks/balloon/edit.js:508
+#: src/blocks/balloon/edit.js:511
 msgid "Width"
 msgstr ""
 
@@ -1013,7 +1013,6 @@ msgstr ""
 #: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:82
 #: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:86
 #: src/blocks/_pro/card-item/edit.js:88
-#: src/blocks/balloon/edit.js:600
 #: src/blocks/flow/edit.js:84
 #: src/blocks/pr-blocks/edit.js:89
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:130
@@ -1098,7 +1097,7 @@ msgid "Image Height"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:88
-#: src/blocks/slider/edit.js:920
+#: src/blocks/slider/edit.js:947
 msgid "Slide Height for each device."
 msgstr ""
 
@@ -1307,7 +1306,7 @@ msgid "Top"
 msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:106
-#: src/blocks/balloon/edit.js:434
+#: src/blocks/balloon/edit.js:437
 #: src/blocks/button/edit.js:375
 #: src/blocks/pr-content/edit.js:252
 #: src/components/display-items-control/index.js:140
@@ -1319,7 +1318,7 @@ msgid "Bottom"
 msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:114
-#: src/blocks/balloon/edit.js:422
+#: src/blocks/balloon/edit.js:425
 #: src/blocks/button/edit.js:355
 #: src/blocks/pr-content/edit.js:256
 #: src/components/display-items-control/index.js:132
@@ -1402,7 +1401,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:186
 #: src/blocks/_pro/grid-column/edit.js:96
-#: src/blocks/_pro/outer/edit.js:1076
+#: src/blocks/_pro/outer/edit.js:1084
 #: src/blocks/icon-outer/edit.js:183
 #: src/blocks/icon/edit.js:174
 #: src/utils/unit-options.js:6
@@ -1411,7 +1410,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:187
 #: src/blocks/_pro/grid-column/edit.js:100
-#: src/blocks/_pro/outer/edit.js:1080
+#: src/blocks/_pro/outer/edit.js:1088
 #: src/blocks/icon-outer/edit.js:187
 #: src/blocks/icon/edit.js:178
 #: src/utils/unit-options.js:10
@@ -1420,7 +1419,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:188
 #: src/blocks/_pro/grid-column/edit.js:104
-#: src/blocks/_pro/outer/edit.js:1084
+#: src/blocks/_pro/outer/edit.js:1092
 #: src/blocks/icon-outer/edit.js:191
 #: src/blocks/icon/edit.js:182
 #: src/utils/unit-options.js:14
@@ -1429,7 +1428,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:189
 #: src/blocks/_pro/grid-column/edit.js:108
-#: src/blocks/_pro/outer/edit.js:1012
+#: src/blocks/_pro/outer/edit.js:1020
 #: src/blocks/icon-outer/edit.js:195
 #: src/blocks/icon/edit.js:186
 #: src/utils/unit-options.js:18
@@ -1535,7 +1534,7 @@ msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:155
 #: src/blocks/heading/edit.js:376
-#: src/blocks/slider/edit.js:1133
+#: src/blocks/slider/edit.js:1160
 msgid "Hide"
 msgstr ""
 
@@ -1544,7 +1543,7 @@ msgid "Column Radius"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:192
-#: src/blocks/balloon/edit.js:310
+#: src/blocks/balloon/edit.js:313
 msgid "Border"
 msgstr ""
 
@@ -1674,38 +1673,39 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1018
+#: src/blocks/_pro/outer/deprecated/save/1.89.0/save.js:252
+#: src/blocks/_pro/outer/edit.js:418
+#: src/blocks/_pro/outer/save.js:252
+msgid "Outer link"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:1026
 msgid "Min Height Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1070
+#: src/blocks/_pro/outer/edit.js:1078
 #: src/components/advanced-unit-control/index.js:13
 msgid "Unit Type"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1088
+#: src/blocks/_pro/outer/edit.js:1096
 #: src/utils/unit-options.js:22
 msgid "vh"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1092
+#: src/blocks/_pro/outer/edit.js:1100
 #: src/utils/unit-options.js:26
 msgid "svh"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1096
+#: src/blocks/_pro/outer/edit.js:1104
 #: src/utils/unit-options.js:30
 msgid "lvh"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1100
+#: src/blocks/_pro/outer/edit.js:1108
 #: src/utils/unit-options.js:34
 msgid "dvh"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:418
-#: src/blocks/_pro/outer/save.js:252
-msgid "Outer link"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:424
@@ -1807,7 +1807,7 @@ msgid "Divider Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:613
-#: src/blocks/balloon/edit.js:439
+#: src/blocks/balloon/edit.js:442
 msgid "Type"
 msgstr ""
 
@@ -1835,85 +1835,93 @@ msgstr ""
 msgid "Serrated"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:651
+#: src/blocks/_pro/outer/edit.js:648
+msgid "Book"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:652
+msgid "Pyramid"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:659
 msgid "Settings for each device"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:664
+#: src/blocks/_pro/outer/edit.js:672
 msgid "Upper Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:746
+#: src/blocks/_pro/outer/edit.js:754
 msgid "Lower Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:829
+#: src/blocks/_pro/outer/edit.js:837
 msgid "Border Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:834
+#: src/blocks/_pro/outer/edit.js:842
 msgid "Border will disappear when divider effect is applied."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:840
+#: src/blocks/_pro/outer/edit.js:848
 msgid "Border type"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:848
+#: src/blocks/_pro/outer/edit.js:856
 #: src/blocks/_pro/step-item/edit.js:147
 #: src/blocks/_pro/timeline-item/edit.js:113
-#: src/blocks/balloon/edit.js:559
+#: src/blocks/balloon/edit.js:562
 #: src/blocks/button/edit.js:658
 #: src/blocks/staff/edit.js:177
 msgid "None"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:852
+#: src/blocks/_pro/outer/edit.js:860
 #: src/blocks/_pro/step-item/edit.js:118
 #: src/blocks/_pro/timeline-item/edit.js:88
 #: src/blocks/pr-content/edit.js:145
 msgid "Solid"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:856
+#: src/blocks/_pro/outer/edit.js:864
 msgid "Dotted"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:860
+#: src/blocks/_pro/outer/edit.js:868
 msgid "Dashed"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:864
+#: src/blocks/_pro/outer/edit.js:872
 msgid "Double"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:868
+#: src/blocks/_pro/outer/edit.js:876
 msgid "Groove"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:872
+#: src/blocks/_pro/outer/edit.js:880
 msgid "Ridge"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:876
+#: src/blocks/_pro/outer/edit.js:884
 msgid "Inset"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:880
+#: src/blocks/_pro/outer/edit.js:888
 msgid "Outset"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:892
+#: src/blocks/_pro/outer/edit.js:900
 msgid "Border width"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:904
+#: src/blocks/_pro/outer/edit.js:912
 #: src/blocks/icon-outer/edit.js:212
 #: src/blocks/icon/edit.js:203
 msgid "Border radius"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:920
+#: src/blocks/_pro/outer/edit.js:928
 msgid "Container Inner Side Space Setting"
 msgstr ""
 
@@ -2075,7 +2083,7 @@ msgstr ""
 #: src/blocks/_pro/table-of-contents-new/edit.js:129
 #: src/blocks/_pro/timeline-item/edit.js:103
 #: src/blocks/heading/edit.js:264
-#: src/blocks/slider/edit.js:1109
+#: src/blocks/slider/edit.js:1136
 #: src/blocks/staff/edit.js:173
 #: src/components/advanced-color-gradient-control/index.js:47
 msgid "Default"
@@ -2358,93 +2366,93 @@ msgstr ""
 msgid "Ancestor page title class name"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:134
+#: src/blocks/balloon/edit.js:137
 msgid " Image Border"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:137
+#: src/blocks/balloon/edit.js:140
 msgid "Add border to image"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:145
+#: src/blocks/balloon/edit.js:148
 msgid "* You can change border width on Setting > VK Blocks"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:152
+#: src/blocks/balloon/edit.js:155
 msgid "Border color of speech balloon"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:313
+#: src/blocks/balloon/edit.js:316
 msgid "Add border to balloon"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:403
+#: src/blocks/balloon/edit.js:406
 msgid "Balloon setting"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:405
+#: src/blocks/balloon/edit.js:408
 #: src/blocks/heading/edit.js:368
 msgid "Position"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:408
+#: src/blocks/balloon/edit.js:411
 msgid "Please specify the layout of the balloon."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:442
+#: src/blocks/balloon/edit.js:445
 msgid "Please select the type of balloon."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:456
+#: src/blocks/balloon/edit.js:459
 msgid "Speech"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:466
+#: src/blocks/balloon/edit.js:469
 msgid "Thinking"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:471
+#: src/blocks/balloon/edit.js:474
 msgid "Image Style"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:492
+#: src/blocks/balloon/edit.js:495
 msgid "Rounded"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:502
+#: src/blocks/balloon/edit.js:505
 msgid "Circle"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:511
+#: src/blocks/balloon/edit.js:514
 #: src/blocks/button/edit.js:590
 msgid "100%"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:522
+#: src/blocks/balloon/edit.js:525
 msgid "Background color of speech balloon"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:533
+#: src/blocks/balloon/edit.js:536
 msgid "Default Icon Setting"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:538
+#: src/blocks/balloon/edit.js:541
 msgid "You can register default icons from Settings > VK Blocks in Admin."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:544
+#: src/blocks/balloon/edit.js:547
 msgid "Animation setting"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:546
+#: src/blocks/balloon/edit.js:549
 msgid "Please select the type of animation."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:563
+#: src/blocks/balloon/edit.js:566
 msgid "Trembling"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:606
+#: src/blocks/balloon/edit.js:599
 #: src/blocks/pr-blocks/edit.js:83
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:135
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:117
@@ -2460,7 +2468,7 @@ msgstr ""
 msgid "Upload image"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:622
+#: src/blocks/balloon/edit.js:611
 msgid "Icon Name"
 msgstr ""
 
@@ -2538,7 +2546,7 @@ msgid "Button Position:"
 msgstr ""
 
 #: src/blocks/button/edit.js:365
-#: src/blocks/slider/edit.js:1137
+#: src/blocks/slider/edit.js:1164
 #: src/components/display-items-control/index.js:136
 msgid "Center"
 msgstr ""
@@ -2963,47 +2971,55 @@ msgstr ""
 msgid "repeat"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1006
+#: src/blocks/slider/edit.js:1019
+msgid "Slider Settings"
+msgstr ""
+
+#: src/blocks/slider/edit.js:1023
+msgid "Effect "
+msgstr ""
+
+#: src/blocks/slider/edit.js:1033
 msgid "Slide"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1010
+#: src/blocks/slider/edit.js:1037
 msgid "Fade"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1017
+#: src/blocks/slider/edit.js:1044
 msgid "Loop "
 msgstr ""
 
-#: src/blocks/slider/edit.js:1027
+#: src/blocks/slider/edit.js:1054
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1037
+#: src/blocks/slider/edit.js:1064
 msgid "Stop AutoPlay when swipe"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1047
+#: src/blocks/slider/edit.js:1074
 msgid "Display Time"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1074
+#: src/blocks/slider/edit.js:1101
 msgid "Change Speed"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1098
+#: src/blocks/slider/edit.js:1125
 msgid "Pagination Type"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1113
+#: src/blocks/slider/edit.js:1140
 msgid "Number of slides"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1126
+#: src/blocks/slider/edit.js:1153
 msgid "Navigation Position"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1141
+#: src/blocks/slider/edit.js:1168
 msgid "Bottom on Mobile device"
 msgstr ""
 
@@ -3025,92 +3041,91 @@ msgid ""
 "display size."
 msgstr ""
 
-#: src/blocks/slider/edit.js:558
+#: src/blocks/slider/edit.js:559
 msgid ""
 "If you want to loop slides, the number of placed slide items must be "
 "greater than or equal to twice the number of items you want to display per "
 "view."
 msgstr ""
 
-#: src/blocks/slider/edit.js:567
+#: src/blocks/slider/edit.js:572
+msgid ""
+"If the active slide is in the center, the number of placed slide items must "
+"be greater than or equal to the number of items you want to display in one "
+"view + 2."
+msgstr ""
+
+#: src/blocks/slider/edit.js:581
 msgid ""
 "If you want to loop slides, the number of placed slide items must be "
 "greater than or equal to the number of items you want to display per view + "
 "1."
 msgstr ""
 
-#: src/blocks/slider/edit.js:642
+#: src/blocks/slider/edit.js:669
 msgid "Multi-item Display Setting"
 msgstr ""
 
-#: src/blocks/slider/edit.js:646
+#: src/blocks/slider/edit.js:673
 msgid "Number of Items to display per view"
 msgstr ""
 
-#: src/blocks/slider/edit.js:653
+#: src/blocks/slider/edit.js:680
 msgid "Enter divisors for the number of placed slide items for each display size."
 msgstr ""
 
-#: src/blocks/slider/edit.js:657
+#: src/blocks/slider/edit.js:684
 msgid "If the number is not divisible, the sliding behaviour will be unnatural"
 msgstr ""
 
-#: src/blocks/slider/edit.js:750
+#: src/blocks/slider/edit.js:777
 msgid "Number of items to change in a transition"
 msgstr ""
 
-#: src/blocks/slider/edit.js:761
+#: src/blocks/slider/edit.js:788
 msgid "One by One"
 msgstr ""
 
-#: src/blocks/slider/edit.js:765
+#: src/blocks/slider/edit.js:792
 msgid "Same as the number of items to display"
 msgstr ""
 
-#: src/blocks/slider/edit.js:781
+#: src/blocks/slider/edit.js:808
 msgid "Centering the active slide"
 msgstr ""
 
-#: src/blocks/slider/edit.js:790
+#: src/blocks/slider/edit.js:817
 msgid ""
 "If you specify the center, you can display items that are cut off on the "
 "left and right."
 msgstr ""
 
-#: src/blocks/slider/edit.js:849
+#: src/blocks/slider/edit.js:876
 msgid "Change Slide Editor Mode"
 msgstr ""
 
-#: src/blocks/slider/edit.js:852
+#: src/blocks/slider/edit.js:879
 msgid "Edit ( Stacked Layout ) Mode"
 msgstr ""
 
-#: src/blocks/slider/edit.js:862
+#: src/blocks/slider/edit.js:889
 msgid "Preview ( Slide ) Mode"
 msgstr ""
 
-#: src/blocks/slider/edit.js:877
+#: src/blocks/slider/edit.js:904
 msgid "Editor Setting"
 msgstr ""
 
-#: src/blocks/slider/edit.js:881
+#: src/blocks/slider/edit.js:908
 msgid "Editor Mode"
 msgstr ""
 
-#: src/blocks/slider/edit.js:896
+#: src/blocks/slider/edit.js:923
 msgid "Edit ( Stacked Layout )"
 msgstr ""
 
-#: src/blocks/slider/edit.js:909
+#: src/blocks/slider/edit.js:936
 msgid "Preview ( Slide )"
-msgstr ""
-
-#: src/blocks/slider/edit.js:992
-msgid "Slider Settings"
-msgstr ""
-
-#: src/blocks/slider/edit.js:996
-msgid "Effect "
 msgstr ""
 
 #: src/blocks/spacer/advanced-spacer-control.js:15
@@ -3659,7 +3674,7 @@ msgstr ""
 msgid "Reverse"
 msgstr ""
 
-#: src/extensions/core/cover/style.js:97
+#: src/extensions/core/cover/style.js:96
 msgid "Cover link"
 msgstr ""
 

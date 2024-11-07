@@ -17,12 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		// 初期状態に基づいてボタンのテキストとチェックボックスの状態を設定
 		if (initialStateOpen) {
 			item.textContent = 'CLOSE';
-			status.checked = true; // チェックボックスをチェック状態に
-			item.closest('.tab').classList.add('is-open'); // 開いた状態のクラスを追加
+			status.checked = true;
+			item.closest('.tab').classList.add('is-open');
 		} else {
 			item.textContent = 'OPEN';
-			status.checked = false; // チェックボックスを非チェック状態に
-			item.closest('.tab').classList.add('is-close'); // 閉じた状態のクラスを追加
+			status.checked = false;
+			item.closest('.tab').classList.add('is-close');
 		}
 
 		// ボタンクリック時にクラスをトグル

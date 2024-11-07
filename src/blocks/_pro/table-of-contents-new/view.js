@@ -18,26 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (initialStateOpen) {
 			item.textContent = 'CLOSE';
 			status.checked = true;
-			item.closest('.tab').classList.add('is-open');
 		} else {
 			item.textContent = 'OPEN';
 			status.checked = false;
-			item.closest('.tab').classList.add('is-close');
 		}
 
-		// ボタンクリック時にクラスをトグル
+		// ボタンクリック時にテキストをトグル
 		item.addEventListener('click', function () {
 			if (status && status.type === 'checkbox') {
 				setTimeout(() => {
 					item.textContent = status.checked ? 'CLOSE' : 'OPEN';
-					item.closest('.tab').classList.toggle(
-						'is-open',
-						status.checked
-					);
-					item.closest('.tab').classList.toggle(
-						'is-close',
-						!status.checked
-					);
 				}, 0);
 			}
 		});

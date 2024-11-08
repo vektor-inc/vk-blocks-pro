@@ -80,11 +80,6 @@ export default function FixedDisplayEdit(props) {
 				? `vk_fixed-display-position-from-${fixedPositionType}`
 				: ''
 		} vk_fixed-display-${blockId}`,
-		style: {
-			[fixedPositionType]: ['right', 'left'].includes(position)
-				? `${fixedPositionValue}${fixedPositionUnit}`
-				: undefined,
-		},
 	});
 
 	return (
@@ -292,12 +287,12 @@ export default function FixedDisplayEdit(props) {
 					</PanelBody>
 				)}
 				{mode !== 'always-visible' && (
-				<PanelBody
-					title={__(
-						'Display Settings Until Browser is Closed',
-						'vk-blocks-pro'
-					)}
-				>
+					<PanelBody
+						title={__(
+							'Display Settings Until Browser is Closed',
+							'vk-blocks-pro'
+						)}
+					>
 						<ToggleControl
 							label={__(
 								'Do not display again until the browser is closed',
@@ -316,7 +311,7 @@ export default function FixedDisplayEdit(props) {
 								)}
 							</p>
 						</PanelRow>
-				</PanelBody>
+					</PanelBody>
 				)}
 			</InspectorControls>
 			<div {...blockProps}>

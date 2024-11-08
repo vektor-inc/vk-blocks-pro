@@ -297,24 +297,28 @@ export default function FixedDisplayEdit(props) {
 						'vk-blocks-pro'
 					)}
 				>
-					<ToggleControl
-						label={__(
-							'Do not display again until the browser is closed',
-							'vk-blocks-pro'
-						)}
-						checked={dontShowAgain}
-						onChange={(value) =>
-							setAttributes({ dontShowAgain: value })
-						}
-					/>
-					<PanelRow>
-						<p>
-							{__(
-								'When enabled, the same content will not be shown again until the visitor closes their browser.',
+					{mode !== 'always-visible' && (
+						<ToggleControl
+							label={__(
+								'Do not display again until the browser is closed',
 								'vk-blocks-pro'
 							)}
-						</p>
-					</PanelRow>
+							checked={dontShowAgain}
+							onChange={(value) =>
+								setAttributes({ dontShowAgain: value })
+							}
+						/>
+					)}
+					{mode !== 'always-visible' && (
+						<PanelRow>
+							<p>
+								{__(
+									'When enabled, the same content will not be shown again until the visitor closes their browser.',
+									'vk-blocks-pro'
+								)}
+							</p>
+						</PanelRow>
+					)}
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>

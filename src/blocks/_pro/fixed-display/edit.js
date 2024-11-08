@@ -291,13 +291,13 @@ export default function FixedDisplayEdit(props) {
 						</PanelRow>
 					</PanelBody>
 				)}
+				{mode !== 'always-visible' && (
 				<PanelBody
 					title={__(
 						'Display Settings Until Browser is Closed',
 						'vk-blocks-pro'
 					)}
 				>
-					{mode !== 'always-visible' && (
 						<ToggleControl
 							label={__(
 								'Do not display again until the browser is closed',
@@ -308,8 +308,6 @@ export default function FixedDisplayEdit(props) {
 								setAttributes({ dontShowAgain: value })
 							}
 						/>
-					)}
-					{mode !== 'always-visible' && (
 						<PanelRow>
 							<p>
 								{__(
@@ -318,8 +316,8 @@ export default function FixedDisplayEdit(props) {
 								)}
 							</p>
 						</PanelRow>
-					)}
 				</PanelBody>
+				)}
 			</InspectorControls>
 			<div {...blockProps}>
 				<InnerBlocks

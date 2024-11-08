@@ -72,7 +72,7 @@ window.addEventListener('scroll', function () {
 });
 
 // 表示・非表示タイマー設定
-window.addEventListener('DOMContentLoaded', function () {
+function initializeDisplayHide() {
 	const items = document.querySelectorAll(
 		'.vk_fixed-display-mode-display-hide-after-time'
 	);
@@ -99,7 +99,11 @@ window.addEventListener('DOMContentLoaded', function () {
 			dontShowAgain
 		);
 	});
-});
+}
+
+// 両方のイベントで関数を呼び出し
+window.addEventListener('DOMContentLoaded', initializeDisplayHide);
+window.addEventListener('load', initializeDisplayHide);
 
 // 単位をピクセル値に変換する関数
 function convertUnitToPixels(value, unit) {

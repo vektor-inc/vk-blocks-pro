@@ -9,38 +9,6 @@ function getSessionStorageFlag(key) {
 	return sessionStorage.getItem(key) !== null;
 }
 
-// 要素の表示・非表示を制御する共通関数
-function handleVisibility(
-	item,
-	displayAfterSeconds,
-	hideAfterSeconds,
-	blockId,
-	dontShowAgain
-) {
-	if (displayAfterSeconds > 0) {
-		setTimeout(() => {
-			item.classList.add('is-timed-visible');
-			if (dontShowAgain) {
-				setSessionStorageFlag(`displayed_${blockId}`, 'true');
-			}
-		}, displayAfterSeconds * 1000);
-	} else {
-		item.classList.add('is-timed-visible');
-		if (dontShowAgain) {
-			setSessionStorageFlag(`displayed_${blockId}`, 'true');
-		}
-	}
-
-	if (hideAfterSeconds > 0) {
-		setTimeout(
-			() => {
-				item.classList.remove('is-timed-visible');
-			},
-			(displayAfterSeconds + hideAfterSeconds) * 1000
-		);
-	}
-}
-
 // スクロールタイミング設定
 window.addEventListener('scroll', function () {
 	const items = document.querySelectorAll(
@@ -72,16 +40,55 @@ window.addEventListener('scroll', function () {
 });
 
 // 表示・非表示タイマー設定
+function handleVisibility(
+	item,
+	displayAfterSeconds,
+	hideAfterSeconds,
+	blockId,
+	dontShowAgain
+) {
+	// displayAfterSeconds がある場合のみ、is-timed-visible クラスを追加
+	if (displayAfterSeconds !== null && displayAfterSeconds > 0) {
+		setTimeout(() => {
+			item.classList.add('is-timed-visible');
+			if (dontShowAgain) {
+				setSessionStorageFlag(`displayed_${blockId}`, 'true');
+			}
+		}, displayAfterSeconds * 1000);
+	} else if (displayAfterSeconds === 0) {
+		item.classList.add('is-timed-visible');
+		if (dontShowAgain) {
+			setSessionStorageFlag(`displayed_${blockId}`, 'true');
+		}
+	}
+
+	// hideAfterSeconds が指定されている場合、時間経過後に is-timed-hide クラスを追加
+	if (hideAfterSeconds > 0) {
+		setTimeout(
+			() => {
+				item.classList.remove('is-timed-visible');
+				item.classList.add('is-timed-hide');
+			},
+			(displayAfterSeconds || 0) * 1000 + hideAfterSeconds * 1000
+		);
+	}
+}
+
+// DOM読み込み後に初期化関数を実行
 function initializeDisplayHide() {
 	const items = document.querySelectorAll(
 		'.vk_fixed-display-mode-display-hide-after-time'
 	);
 
 	items.forEach((item) => {
-		const displayAfterSeconds =
-			parseFloat(item.getAttribute('data-display-after-seconds')) || 0;
+		const displayAfterSecondsAttr = item.getAttribute(
+			'data-display-after-seconds'
+		);
 		const hideAfterSeconds =
 			parseFloat(item.getAttribute('data-hide-after-seconds')) || 0;
+		const displayAfterSeconds = displayAfterSecondsAttr
+			? parseFloat(displayAfterSecondsAttr)
+			: null;
 		const blockId = item.getAttribute('data-block-id');
 		const dontShowAgain =
 			item.getAttribute('data-dont-show-again') === 'true';
@@ -101,7 +108,7 @@ function initializeDisplayHide() {
 	});
 }
 
-// 両方のイベントで関数を呼び出し
+window.initializeDisplayHide = initializeDisplayHide;
 window.addEventListener('DOMContentLoaded', initializeDisplayHide);
 window.addEventListener('load', initializeDisplayHide);
 

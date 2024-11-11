@@ -79,11 +79,13 @@ const insertLinkIntoCoverBlock = (element, blockType, attributes) => {
 
 	// `element` から既存のクラスを取得し、リンクがある場合にのみ `has-link` を追加
 	const existingClassName = element.props.className || '';
-	const classNameWithLink = `${existingClassName} ${linkUrl ? 'has-link' : ''}`.trim();
+	const classNameWithLink =
+		`${existingClassName} ${linkUrl ? 'has-link' : ''}`.trim();
 	const existingStyle = element.props.style || {};
 
 	// rel 属性の設定
-	const relAttribute = linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
+	const relAttribute =
+		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
 
 	return (
 		<div className={classNameWithLink} style={existingStyle}>

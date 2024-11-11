@@ -42,10 +42,10 @@ class VK_Blocks_Fixed_Display {
 	 * @return string 変更されたHTMLコンテンツ.
 	 */
 	public function filter_block_opacity( $block_content, $block ) {
-		if ( isset( $block['attrs']['mode'] ) && in_array( $block['attrs']['mode'], [ 'display-hide-after-time', 'show-on-scroll' ], true ) ) {
+		if ( isset( $block['attrs']['mode'] ) && in_array( $block['attrs']['mode'], array( 'display-hide-after-time', 'show-on-scroll' ), true ) ) {
 			// 指定されたモードの場合、初期 opacity: 0 を適用
 			$block_content = preg_replace( '/(<div\b[^>]*class="[^"]*vk_fixed-display-mode-(display-hide-after-time|show-on-scroll)[^"]*")/i', '$1 style="opacity:0;"', $block_content );
 		}
 		return $block_content;
-	}	
+	}
 }

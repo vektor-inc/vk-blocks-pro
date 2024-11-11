@@ -9,27 +9,6 @@
 	position: fixed;
 	margin-block-start: 0;
 	z-index: 99999;
-	
-	/* タイマー機能用クラス */
-	&.is-timed-hide {
-
-		&:not(.is-timed-visible) {
-			opacity: 0;
-			transition: opacity 0.3s ease;
-			pointer-events: none;
-		}
-	}
-
-	&.is-timed-display {
-		opacity: 0;
-		transition: opacity 0.3s ease;
-		pointer-events: none;
-
-		&.is-timed-visible {
-			opacity: 1;
-		}
-	}
-
 }
 
 .vk_fixed-display-mode {
@@ -38,13 +17,36 @@
 	}
 	
 	&-show-on-scroll {
-		opacity: 0;
 		transition: opacity 0.3s ease;
 		pointer-events: none;
 		
 		&.is-visible {
-			opacity: 1;
+			opacity: 1 !important;
 			pointer-events: auto;
+		}
+	}
+
+	&-display-hide-after-time {
+		opacity: 1 !important;
+		transition: opacity 0.3s ease;
+
+		&.is-timed-display {
+			opacity: 0 !important;
+			pointer-events: none;
+
+			&.is-timed-visible {
+				opacity: 1 !important;
+			}
+		}
+
+		&.is-timed-hide {
+			transition: opacity 0.3s ease;
+
+			&:not(.is-timed-visible),
+			&.is-timed-hidden {
+				opacity: 0 !important;
+				pointer-events: none;
+			}
 		}
 	}
 }

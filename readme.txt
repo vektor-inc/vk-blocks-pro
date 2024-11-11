@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Cover ] Fixed inline styles not being retained when adding a link.
+
 = 1.90.0 =
 [ Add function ][ Outer (Pro) ] Add book and pyramid in divider style.
 [ Bug fix ] The split loading option is now supported for core/heading, core/image, and core/table styles for block editor.

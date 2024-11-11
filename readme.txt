@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+= 1.90.1 =
 [ Bug fix ][ Cover ] Fixed inline styles not being retained when adding a link.
 
 = 1.90.0 =

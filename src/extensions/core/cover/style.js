@@ -77,6 +77,7 @@ const insertLinkIntoCoverBlock = (element, blockType, attributes) => {
 		return element;
 	}
 
+	// `element` から既存のクラスを取得し、リンクがある場合にのみ `has-link` を追加
 	const existingClassName = element.props.className || '';
 	const classNameWithLink = `${existingClassName} ${linkUrl ? 'has-link' : ''}`.trim();
 	const existingStyle = element.props.style || {};

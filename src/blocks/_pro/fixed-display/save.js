@@ -4,52 +4,61 @@ export default function save({ attributes }) {
 	const {
 		mode,
 		position,
-		scrollTiming,
-		scrollTimingUnit,
-		scrollPersistVisible,
-		fixedPositionType,
-		fixedPositionValue,
-		fixedPositionUnit,
-		displayAfterSeconds,
-		hideAfterSeconds,
-		dontShowAgain,
+		scrollTiming = 0, // デフォルト値を設定
+		scrollTimingUnit = 'px',
+		scrollPersistVisible = false,
+		fixedPositionType = 'top',
+		fixedPositionValue = 50,
+		fixedPositionUnit = 'svh',
+		displayAfterSeconds = 0,
+		hideAfterSeconds = 0,
+		dontShowAgain = false,
 		blockId,
 	} = attributes;
 
-	// データ属性を定義し、条件に基づいて設定する
-	const dataAttributes = {};
+	// dataAttributesとクラスを初期化
+	const dataAttributes = { 'data-block-id': blockId || '' };
+	let extraClasses = '';
 
+	// "show-on-scroll"モードのときにのみスクロール関連の属性を設定
 	if (mode === 'show-on-scroll') {
 		dataAttributes['data-scroll-timing'] = scrollTiming.toString();
 		dataAttributes['data-scroll-timing-unit'] = scrollTimingUnit;
 		if (scrollPersistVisible) {
 			dataAttributes['data-persist-visible'] = 'true';
 		}
+		extraClasses += ' vk_fixed-display-mode-show-on-scroll';
+	} else if (mode === 'display-hide-after-time') {
+		// "display-hide-after-time"モードのときにのみタイミング属性を設定
+		if (displayAfterSeconds > 0) {
+			dataAttributes['data-display-after-seconds'] =
+				displayAfterSeconds.toString();
+			extraClasses += ' is-timed-display'; // displayタイミングがある場合のクラス
+		}
+		if (hideAfterSeconds > 0) {
+			dataAttributes['data-hide-after-seconds'] =
+				hideAfterSeconds.toString();
+		}
+		extraClasses += ' vk_fixed-display-mode-display-hide-after-time';
+	} else if (mode === 'always-visible') {
+		// "always-visible"モード専用のクラス
+		extraClasses += ' vk_fixed-display-mode-always-visible';
 	}
 
-	if (mode === 'display-hide-after-time' && displayAfterSeconds > 0) {
-		dataAttributes['data-display-after-seconds'] =
-			displayAfterSeconds.toString();
-	}
-
-	if (mode === 'display-hide-after-time' && hideAfterSeconds > 0) {
-		dataAttributes['data-hide-after-seconds'] = hideAfterSeconds.toString();
-	}
-
+	// dontShowAgain が true のときにデータ属性を追加
 	if (dontShowAgain) {
 		dataAttributes['data-dont-show-again'] = 'true';
 	}
 
-	// ブロックのプロパティを定義
+	// ブロックのプロパティを設定し、不要なクラスが残らないようにする
 	const blockProps = useBlockProps.save({
-		className: `vk_fixed-display vk_fixed-display-mode-${mode} vk_fixed-display-position-${position} ${
+		className: `vk_fixed-display vk_fixed-display-position-${position} ${
 			['right', 'left'].includes(position) && fixedPositionType
 				? `vk_fixed-display-position-from-${fixedPositionType}`
 				: ''
-		} vk_fixed-display-${blockId} ${
-			displayAfterSeconds > 0 ? 'is-timed-display' : ''
-		}`,
+		} vk_fixed-display-${blockId}${extraClasses}`, // モード別にクラスを切り替え
 		style: {
+			// モードに応じて必要な場合のみポジションスタイルを適用
 			[fixedPositionType]: ['right', 'left'].includes(position)
 				? `${fixedPositionValue}${fixedPositionUnit}`
 				: undefined,

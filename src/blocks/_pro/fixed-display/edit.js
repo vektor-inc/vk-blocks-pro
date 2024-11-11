@@ -31,16 +31,23 @@ export default function FixedDisplayEdit(props) {
 		mode,
 		position,
 		blockId,
-		scrollTiming = 100,
-		scrollTimingUnit = 'px',
-		scrollPersistVisible = false,
-		fixedPositionType = 'top',
-		fixedPositionValue = 50,
-		fixedPositionUnit = 'svh',
+		scrollTiming,
+		scrollTimingUnit,
+		scrollPersistVisible,
+		fixedPositionType,
+		fixedPositionValue,
+		fixedPositionUnit,
 		displayAfterSeconds,
 		hideAfterSeconds,
 		dontShowAgain,
 	} = attributes;
+
+	const [tempScrollTiming, setTempScrollTiming] = useState(
+		scrollTiming || '0'
+	);
+	const [tempScrollTimingUnit, setTempScrollTimingUnit] = useState(
+		scrollTimingUnit || 'px'
+	);
 
 	const [tempDisplayAfterSeconds, setTempDisplayAfterSeconds] = useState(
 		displayAfterSeconds || '0'
@@ -49,6 +56,7 @@ export default function FixedDisplayEdit(props) {
 		hideAfterSeconds || '0'
 	);
 
+	// モードが切り替わる際に関連する属性をリセットし、一時変数もリセット
 	const resetModeAttributes = () => {
 		setAttributes({
 			scrollTiming: undefined,
@@ -57,11 +65,22 @@ export default function FixedDisplayEdit(props) {
 			displayAfterSeconds: undefined,
 			hideAfterSeconds: undefined,
 		});
+		setTempScrollTiming('0');
+		setTempScrollTimingUnit('px');
+		setTempDisplayAfterSeconds('0');
+		setTempHideAfterSeconds('0');
 	};
 
 	useEffect(() => {
 		resetModeAttributes();
 	}, [mode]);
+
+	useEffect(() => {
+		setTempScrollTiming(scrollTiming || '0');
+		setTempScrollTimingUnit(scrollTimingUnit || 'px');
+		setTempDisplayAfterSeconds(displayAfterSeconds || '0');
+		setTempHideAfterSeconds(hideAfterSeconds || '0');
+	}, [scrollTiming, scrollTimingUnit, displayAfterSeconds, hideAfterSeconds]);
 
 	useEffect(() => {
 		if (
@@ -215,13 +234,15 @@ export default function FixedDisplayEdit(props) {
 					>
 						<UnitControl
 							label={__('Timing to display', 'vk-blocks-pro')}
-							value={`${scrollTiming}${scrollTimingUnit}`}
+							value={`${tempScrollTiming}${tempScrollTimingUnit}`}
 							onChange={(nextValue) => {
 								const unit =
 									units.find((unit) =>
 										nextValue.endsWith(unit.value)
 									) || units[0];
 								const value = parseFloat(nextValue) || 0;
+								setTempScrollTiming(value);
+								setTempScrollTimingUnit(unit.value);
 								setAttributes({
 									scrollTiming: value,
 									scrollTimingUnit: unit.value,

@@ -103,13 +103,13 @@ class VK_Blocks_Block_Loader {
 		wp_enqueue_style( 'vk-blocks-utils-common-css' );
 
 		// 分割読み込みが有効かどうかをチェック
-		if ( self::should_load_separate_assets() ) {
+		if ( self::should_load_separate_assets() && ! is_admin() ) {
 			// 分割読み込みが有効な場合は個別のスタイルを読み込む
 			wp_enqueue_style( 'vk-blocks/core-table', VK_BLOCKS_DIR_URL . 'build/extensions/core/table/style.css', array(), VK_BLOCKS_VERSION );
 			wp_enqueue_style( 'vk-blocks/core-heading', VK_BLOCKS_DIR_URL . 'build/extensions/core/heading/style.css', array(), VK_BLOCKS_VERSION );
 			wp_enqueue_style( 'vk-blocks/core-image', VK_BLOCKS_DIR_URL . 'build/extensions/core/image/style.css', array(), VK_BLOCKS_VERSION );
 		} else {
-			// 分割読み込みが無効な場合は結合スタイルのみを読み込む
+			// 分割読み込みが無効な場合はフロントエンド画面では結合スタイルを読み込まない
 			wp_enqueue_style( 'vk-blocks-build-css' );
 		}
 	}

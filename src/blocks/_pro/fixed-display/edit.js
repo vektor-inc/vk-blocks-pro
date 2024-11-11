@@ -62,7 +62,7 @@ export default function FixedDisplayEdit(props) {
 	useEffect(() => {
 		resetModeAttributes();
 	}, [mode]);
-	
+
 	useEffect(() => {
 		if (
 			blockId === undefined ||
@@ -243,94 +243,103 @@ export default function FixedDisplayEdit(props) {
 				)}
 				{mode === 'display-hide-after-time' && (
 					<PanelBody title={__('Timer Settings', 'vk-blocks-pro')}>
-
-					<ToggleControl
-						label={__(
-							'Enable Display After Seconds',
-							'vk-blocks-pro'
+						<ToggleControl
+							label={__(
+								'Enable Display After Seconds',
+								'vk-blocks-pro'
+							)}
+							checked={displayAfterSeconds > 0}
+							onChange={(value) => {
+								if (value) {
+									setAttributes({
+										displayAfterSeconds: Math.max(
+											0.1,
+											displayAfterSeconds || 0.1
+										),
+									});
+								} else {
+									setAttributes({ displayAfterSeconds: 0 });
+								}
+							}}
+						/>
+						{displayAfterSeconds > 0 && (
+							<TextControl
+								label={__(
+									'Display after seconds',
+									'vk-blocks-pro'
+								)}
+								value={tempDisplayAfterSeconds}
+								onChange={(value) => {
+									setTempDisplayAfterSeconds(value);
+								}}
+								onBlur={() => {
+									const parsedValue = parseFloat(
+										tempDisplayAfterSeconds
+									);
+									const finalValue =
+										isNaN(parsedValue) || parsedValue < 0
+											? 0
+											: parsedValue;
+									setAttributes({
+										displayAfterSeconds: finalValue,
+									});
+									setTempDisplayAfterSeconds(
+										finalValue.toString()
+									);
+								}}
+								type="number"
+								min="0"
+								step="0.1"
+							/>
 						)}
-						checked={displayAfterSeconds > 0}
-						onChange={(value) => {
-							if (value) {
-								setAttributes({
-									displayAfterSeconds: Math.max(
-										0.1,
-										displayAfterSeconds || 0.1
-									),
-								});
-							} else {
-								setAttributes({ displayAfterSeconds: 0 });
-							}
-						}}
-					/>
-					{displayAfterSeconds > 0 && (
-						<TextControl
-							label={__('Display after seconds', 'vk-blocks-pro')}
-							value={tempDisplayAfterSeconds}
+						<ToggleControl
+							label={__(
+								'Enable Hide After Seconds',
+								'vk-blocks-pro'
+							)}
+							checked={hideAfterSeconds > 0}
 							onChange={(value) => {
-								setTempDisplayAfterSeconds(value);
+								if (value) {
+									setAttributes({
+										hideAfterSeconds: Math.max(
+											0.1,
+											hideAfterSeconds || 0.1
+										),
+									});
+								} else {
+									setAttributes({ hideAfterSeconds: 0 });
+								}
 							}}
-							onBlur={() => {
-								const parsedValue = parseFloat(
-									tempDisplayAfterSeconds
-								);
-								const finalValue =
-									isNaN(parsedValue) || parsedValue < 0
-										? 0
-										: parsedValue;
-								setAttributes({
-									displayAfterSeconds: finalValue,
-								});
-								setTempDisplayAfterSeconds(
-									finalValue.toString()
-								);
-							}}
-							type="number"
-							min="0"
-							step="0.1"
 						/>
-
-					)}
-					<ToggleControl
-						label={__('Enable Hide After Seconds', 'vk-blocks-pro')}
-						checked={hideAfterSeconds > 0}
-						onChange={(value) => {
-							if (value) {
-								setAttributes({
-									hideAfterSeconds: Math.max(
-										0.1,
-										hideAfterSeconds || 0.1
-									),
-								});
-							} else {
-								setAttributes({ hideAfterSeconds: 0 });
-							}
-						}}
-					/>
-					{hideAfterSeconds > 0 && (
-						<TextControl
-							label={__('Hide after seconds', 'vk-blocks-pro')}
-							value={tempHideAfterSeconds}
-							onChange={(value) => {
-								setTempHideAfterSeconds(value);
-							}}
-							onBlur={() => {
-								const parsedValue =
-									parseFloat(tempHideAfterSeconds);
-								const finalValue =
-									isNaN(parsedValue) || parsedValue < 0
-										? 0
-										: parsedValue;
-								setAttributes({
-									hideAfterSeconds: finalValue,
-								});
-								setTempHideAfterSeconds(finalValue.toString());
-							}}
-							type="number"
-							min="0"
-							step="0.1"
-						/>
-					)}
+						{hideAfterSeconds > 0 && (
+							<TextControl
+								label={__(
+									'Hide after seconds',
+									'vk-blocks-pro'
+								)}
+								value={tempHideAfterSeconds}
+								onChange={(value) => {
+									setTempHideAfterSeconds(value);
+								}}
+								onBlur={() => {
+									const parsedValue =
+										parseFloat(tempHideAfterSeconds);
+									const finalValue =
+										isNaN(parsedValue) || parsedValue < 0
+											? 0
+											: parsedValue;
+									setAttributes({
+										hideAfterSeconds: finalValue,
+									});
+									setTempHideAfterSeconds(
+										finalValue.toString()
+									);
+								}}
+								type="number"
+								min="0"
+								step="0.1"
+							/>
+						)}
 					</PanelBody>
 				)}
 				{mode !== 'always-visible' && (

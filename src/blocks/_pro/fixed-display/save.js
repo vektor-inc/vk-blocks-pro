@@ -56,7 +56,7 @@ export default function save({ attributes }) {
 			['right', 'left'].includes(position) && fixedPositionType
 				? `vk_fixed-display-position-from-${fixedPositionType}`
 				: ''
-		} vk_fixed-display-${blockId}${extraClasses}`, // モード別にクラスを切り替え
+		} vk_fixed-display-${blockId}${extraClasses}`,
 		style: {
 			// モードに応じて必要な場合のみポジションスタイルを適用
 			[fixedPositionType]: ['right', 'left'].includes(position)

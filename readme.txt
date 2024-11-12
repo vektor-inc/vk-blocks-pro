@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Table of Contents (Pro) ] Fixed "CLOSE" label not appearing after clicking the "OPEN" button when the initial state is set to "CLOSE".
+
 = 1.90.1 =
 [ Bug fix ][ Cover ] Fixed inline styles not being retained when adding a link.
 

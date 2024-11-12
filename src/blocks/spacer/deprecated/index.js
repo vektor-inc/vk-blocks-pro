@@ -1,7 +1,3 @@
-import save000 from './0.0.0/save';
-import save001 from './0.0.1/save';
-import save002 from './0.0.2/save';
-import save0_57_4 from './0.57.4/save';
 import save1_3_2 from './1.3.2/save';
 import save1_13_2 from './1.13.2/save';
 import save1_25_1 from './1.25.1/save';
@@ -79,22 +75,6 @@ const deprecated = [
     {
         attributes:blockAttributes2,
         save: save1_3_2,
-    },
-    {
-        attributes: blockAttributes2,
-        save: save0_57_4,
-    },
-    {
-        attributes: blockAttributes2,
-        save: save002,
-    },
-    {
-        attributes: blockAttributes,
-        save: save001,
-    },
-    {
-        attributes: blockAttributes,
-        save: save000,
     },
 ];
 

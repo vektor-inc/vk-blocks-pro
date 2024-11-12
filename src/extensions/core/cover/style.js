@@ -81,13 +81,14 @@ const insertLinkIntoCoverBlock = (element, blockType, attributes) => {
 	const existingClassName = element.props.className || '';
 	const classNameWithLink =
 		`${existingClassName} ${linkUrl ? 'has-link' : ''}`.trim();
+	const existingStyle = element.props.style || {};
 
 	// rel 属性の設定
 	const relAttribute =
 		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
 
 	return (
-		<div className={classNameWithLink}>
+		<div className={classNameWithLink} style={existingStyle}>
 			{element.props.children}
 			<a
 				href={linkUrl}

@@ -176,7 +176,6 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 		}
 	);
 
-
 	// 本来 Pro 版でしか読み込まないが、1.36.0.0 は間違って読み込んでしまっており
 	// 無料版 1.36.0 を有効化していると previously declared になるため ! function_exists() を通した上で宣言している.
 	if ( ! function_exists( 'vk_blocks_update_checker' ) ) {

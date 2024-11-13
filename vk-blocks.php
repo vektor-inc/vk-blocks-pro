@@ -156,17 +156,17 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 			// サイトのロケールを取得
 			$locale = determine_locale();
 			// 翻訳ファイルのパスを指定
-			$path   = plugin_dir_path( __FILE__ ) . 'languages';
-	
+			$path = plugin_dir_path( __FILE__ ) . 'languages';
+
 			// 日本語の設定のみ翻訳ファイルを読み込み
 			if ( strpos( $locale, 'ja' ) === 0 ) {
 				// PHPファイルの翻訳読み込み
 				load_textdomain( 'vk-blocks-pro', $path . '/vk-blocks-pro-ja.mo' );
-	
+
 				// JavaScriptファイルの翻訳設定
 				add_action(
 					'wp_enqueue_scripts',
-					function() use ( $path ) {
+					function () use ( $path ) {
 						// スクリプト登録後に翻訳設定
 						wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks-pro', $path );
 						wp_set_script_translations( 'vk-blocks-admin-js', 'vk-blocks-pro', $path );
@@ -174,7 +174,7 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 				);
 			}
 		}
-	);	
+	);
 
 	// 本来 Pro 版でしか読み込まないが、1.36.0.0 は間違って読み込んでしまっており
 	// 無料版 1.36.0 を有効化していると previously declared になるため ! function_exists() を通した上で宣言している.

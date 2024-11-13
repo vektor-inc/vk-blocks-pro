@@ -62,17 +62,17 @@ add_action(
 		// サイトのロケールを取得
 		$locale = determine_locale();
 		// 翻訳ファイルのパスを指定
-		$path   = plugin_dir_path( __FILE__ ) . 'languages';
-	
+		$path = plugin_dir_path( __FILE__ ) . 'languages';
+
 		// 日本語の設定のみ翻訳ファイルを読み込み
-			if ( strpos( $locale, 'ja' ) === 0 ) {
+		if ( strpos( $locale, 'ja' ) === 0 ) {
 			// PHPファイルの翻訳読み込み
 			load_textdomain( 'vk-blocks-pro', $path . '/vk-blocks-pro-ja.mo' );
-	
+
 			// JavaScriptファイルの翻訳設定
 			add_action(
 				'wp_enqueue_scripts',
-				function() use ( $path ) {
+				function () use ( $path ) {
 					// スクリプト登録後に翻訳設定
 					wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks-pro', $path );
 					wp_set_script_translations( 'vk-blocks-admin-js', 'vk-blocks-pro', $path );

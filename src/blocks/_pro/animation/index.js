@@ -34,7 +34,7 @@ export const settings = {
  */
 const addAnimationActiveClass = (el, type, attributes) => {
 	if ('vk-blocks/animation' === type.name) {
-		//現在実行されている deprecated内の save関数のindexを取得
+		// 現在実行されている deprecated 内の save 関数の index を取得
 		const deprecatedFuncIndex = deprecated.findIndex(
 			(item) => item.save === type.save
 		);
@@ -42,9 +42,14 @@ const addAnimationActiveClass = (el, type, attributes) => {
 		// 最新版
 		if (-1 === deprecatedFuncIndex) {
 			return el;
-
-			//後方互換
 		}
+
+		// deprecatedFuncIndex が予期せぬ数値の場合も考慮して、エラーハンドリングを強化
+		if (typeof deprecatedFuncIndex !== 'number' || deprecatedFuncIndex < 0) {
+			return el;
+		}
+
+		// 後方互換
 		const DeprecatedHook = deprecatedHooks[deprecatedFuncIndex];
 		return <DeprecatedHook el={el} attributes={attributes} />;
 	}

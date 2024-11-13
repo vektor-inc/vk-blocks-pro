@@ -55,12 +55,39 @@ function vk_blocks_active() {
 	return true;
 }
 
+// 翻訳を実行
+add_action(
+	'init',
+	function () {
+		$locale = determine_locale(); // サイトのロケールを取得
+		$path   = plugin_dir_path( __FILE__ ) . 'languages';
+
+		// 日本語の設定のみ翻訳ファイルを読み込み
+		if ( strpos( $locale, 'ja' ) === 0 ) {
+			// PHPファイルの翻訳読み込み
+			load_textdomain( 'vk-blocks-pro', $path . '/vk-blocks-pro-ja.mo' );
+
+			// JavaScriptファイルの翻訳設定
+			wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks-pro', $path );
+			wp_set_script_translations( 'vk-blocks-admin-js', 'vk-blocks-pro', $path );
+		}
+	}
+);
+
 add_action(
 	'plugins_loaded',
 	function () {
-		// Load language files.
-		$path = dirname( plugin_basename( __FILE__ ) ) . '/languages';
-		load_plugin_textdomain( 'vk-blocks-pro', false, $path );
+		$locale = determine_locale();
+		$path   = plugin_dir_path( __FILE__ ) . 'languages';
+
+		if ( strpos( $locale, 'ja' ) === 0 ) {
+			// PHPファイルの翻訳読み込み
+			load_textdomain( 'vk-blocks-pro', $path . '/vk-blocks-pro-ja.mo' );
+
+			// JavaScriptファイルの翻訳設定
+			wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks-pro', $path );
+			wp_set_script_translations( 'vk-blocks-admin-js', 'vk-blocks-pro', $path );
+		}
 	}
 );
 

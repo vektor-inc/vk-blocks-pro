@@ -45,7 +45,10 @@ const addAnimationActiveClass = (el, type, attributes) => {
 		}
 
 		// deprecatedFuncIndex が予期せぬ数値の場合も考慮して、エラーハンドリングを強化
-		if (typeof deprecatedFuncIndex !== 'number' || deprecatedFuncIndex < 0) {
+		if (
+			typeof deprecatedFuncIndex !== 'number' ||
+			deprecatedFuncIndex < 0
+		) {
 			return el;
 		}
 

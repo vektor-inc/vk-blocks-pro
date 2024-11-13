@@ -59,7 +59,7 @@ function vk_blocks_active() {
 add_action(
 	'init',
 	function () {
-		$locale = determine_locale(); // サイトのロケールを取得
+		$locale = determine_locale();
 		$path   = plugin_dir_path( __FILE__ ) . 'languages';
 
 		// 日本語の設定のみ翻訳ファイルを読み込み

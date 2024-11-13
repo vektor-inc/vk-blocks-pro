@@ -154,8 +154,8 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 		'init',
 		function () {
 			$locale = determine_locale(); // サイトのロケールを取得
-			$path = plugin_dir_path( __FILE__ ) . 'languages';
-			
+			$path   = plugin_dir_path( __FILE__ ) . 'languages';
+
 			// 日本語の設定のみ翻訳ファイルを読み込み
 			if ( strpos( $locale, 'ja' ) === 0 ) {
 				// PHPファイルの翻訳読み込み
@@ -172,8 +172,8 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 		'plugins_loaded',
 		function () {
 			$locale = determine_locale();
-			$path = plugin_dir_path( __FILE__ ) . 'languages';
-			
+			$path   = plugin_dir_path( __FILE__ ) . 'languages';
+
 			if ( strpos( $locale, 'ja' ) === 0 ) {
 				// PHPファイルの翻訳読み込み
 				load_textdomain( 'vk-blocks-pro', $path . '/vk-blocks-pro-ja.mo' );

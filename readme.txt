@@ -2,9 +2,9 @@
 Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird,chiakikouno,doshimaf,mtdkei
 Donate link:
 Tags: Gutenberg,FAQ,alert
-Requires at least: 6.3
-Tested up to: 6.6
-Stable tag: 1.90.0.1
+Requires at least: 6.4
+Tested up to: 6.7
+Stable tag: 1.90.1.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -107,6 +107,13 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Fixed Display (Pro) ] Added a timer feature to control block appearance/disappearance and a "Do not show again for returning visitors" option. Session Storage is used, and no personal data is collected or tracked. Since Session Storage is used, the block may reappear after the browser is closed or in private browsing mode.
+
+= 1.91.0 =
+[ Specification change ] Adjusted translation file loading to comply with changes in WordPress 6.7.
+[ Bug fix ][ Table of Contents (Pro) ] Fixed "CLOSE" label not appearing after clicking the "OPEN" button when the initial state is set to "CLOSE".
+
+= 1.90.1 =
+[ Bug fix ][ Cover ] Fixed inline styles not being retained when adding a link.
 
 = 1.90.0 =
 [ Add function ][ Outer (Pro) ] Add book and pyramid in divider style.

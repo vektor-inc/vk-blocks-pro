@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ] Fix checkbox misalignment in the admin panel.
+
 = 1.91.0 =
 [ Specification change ] Adjusted translation file loading to comply with changes in WordPress 6.7.
 [ Bug fix ][ Table of Contents (Pro) ] Fixed "CLOSE" label not appearing after clicking the "OPEN" button when the initial state is set to "CLOSE".

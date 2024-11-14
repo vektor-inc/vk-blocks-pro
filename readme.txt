@@ -105,6 +105,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+[ Bug fix ][ Category Badge (Pro) ] exclude tag.
 
 = 1.91.0 =
 [ Specification change ] Adjusted translation file loading to comply with changes in WordPress 6.7.

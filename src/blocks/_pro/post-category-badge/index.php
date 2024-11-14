@@ -62,6 +62,7 @@ function vk_blocks_post_category_badge_build_variations() {
 		'objects'
 	);
 
+
 	// Split the available taxonomies to `built_in` and custom ones,
 	// in order to prioritize the `built_in` taxonomies at the
 	// search results.
@@ -92,6 +93,8 @@ function vk_blocks_post_category_badge_build_variations() {
 
 	// Create and register the eligible taxonomies variations.
 	foreach ( $taxonomies as $taxonomy ) {
+		if(!$taxonomy->hierarchical) continue;
+
 		$variation = array(
 			'name'        => $taxonomy->name,
 			'title'       => __( 'Category Badge', 'vk-blocks-pro' ) . ' / ' . $taxonomy->label,

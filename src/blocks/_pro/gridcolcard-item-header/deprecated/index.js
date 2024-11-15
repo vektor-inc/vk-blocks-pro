@@ -1,6 +1,3 @@
-import save000 from './0.0.0/save';
-import save001 from './0.0.1/save';
-
 const blockAttributes = {
 	containerSpace: {
 		type: 'object',
@@ -25,14 +22,5 @@ const blockAttributes = {
 	}
 };
 
-const deprecated = [
-	{
-		attributes: blockAttributes,
-		save: save001,
-	},
-	{
-		attributes: blockAttributes,
-		save: save000,
-	},
-];
+const deprecated = [];
 export default deprecated;

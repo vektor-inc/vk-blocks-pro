@@ -7,7 +7,4 @@ export default [
 	CardHook1_34_1,
 	CardHook1_23_0,
 	CardHook1_0_4,
-	CardHook1_0_4,
-	CardHook1_0_4,
-	CardHook1_0_4,
 ];

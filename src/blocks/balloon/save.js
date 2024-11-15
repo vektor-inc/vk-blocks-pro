@@ -37,7 +37,10 @@ export default function save({ attributes }) {
 	}
 
 	// eslint-disable-next-line camelcase,no-undef
-	const defaultAvatar = img_path.full_path;
+	const defaultAvatar =
+		typeof img_path !== 'undefined' && !!img_path.full_path // eslint-disable-line no-undef
+			? img_path.full_path // eslint-disable-line no-undef
+			: '';
 
 	//吹き出しに枠線を追加オン
 	if (balloonBorder === true) {

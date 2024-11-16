@@ -106,6 +106,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ] Avoiding translation errors in WordPress 6.7
 [ Bug fix ] Fix checkbox misalignment in the admin panel.
 
 = 1.91.0 =

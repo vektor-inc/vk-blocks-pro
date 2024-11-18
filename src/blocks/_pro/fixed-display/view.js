@@ -30,10 +30,33 @@ window.addEventListener('scroll', function () {
 			item.getAttribute('data-persist-visible') === 'true';
 		const timingInPixels = convertUnitToPixels(timing, unit);
 
+		// 一度非表示にされたら再表示しない
+		const wasHidden = item.getAttribute('data-hide-maintained') === 'true';
+
 		// スクロール位置が指定したタイミングを超えた場合に要素を表示
-		if (window.scrollY > timingInPixels) {
-			item.classList.add('is-visible');
-		} else if (!scrollPersistVisible) {
+		if (window.scrollY > timingInPixels && !wasHidden) {
+			if (!item.classList.contains('is-visible')) {
+				item.classList.add('is-visible');
+
+				// 非表示タイマーの処理
+				const hideAfterSecondsAttr = item.getAttribute(
+					'data-hide-after-seconds'
+				);
+				const hideAfterSeconds = parseFloat(hideAfterSecondsAttr) || 0;
+
+				// `scrollPersistVisible` が無効な場合のみ非表示タイマーをセット
+				if (hideAfterSeconds > 0 && !scrollPersistVisible) {
+					setTimeout(() => {
+						if (item.classList.contains('is-visible')) {
+							item.classList.remove('is-visible');
+							item.classList.add('is-hidden');
+							item.setAttribute('data-hide-maintained', 'true'); // 非表示状態を維持
+						}
+					}, hideAfterSeconds * 1000);
+				}
+			}
+		} else if (!scrollPersistVisible && !wasHidden) {
+			// タイミングを超えなかった場合、Persistが無効な時に非表示
 			item.classList.remove('is-visible');
 		}
 	});
@@ -51,7 +74,6 @@ function handleVisibility(
 	if (displayAfterSeconds >= 0) {
 		setTimeout(() => {
 			item.classList.add('is-timed-visible');
-			// dontShowAgain が true の場合、SessionStorage に記録
 			if (dontShowAgain) {
 				setSessionStorageFlag(`displayed_${blockId}`, 'true');
 			}
@@ -60,10 +82,15 @@ function handleVisibility(
 
 	// hideAfterSeconds が 0 より大きい場合に非表示
 	if (hideAfterSeconds > 0) {
-		setTimeout(() => {
-			item.classList.remove('is-timed-visible');
-			item.classList.add('is-timed-hide');
-		}, (displayAfterSeconds || 0) * 1000 + hideAfterSeconds * 1000);
+		setTimeout(
+			() => {
+				if (item.classList.contains('is-visible')) {
+					item.classList.remove('is-visible');
+					item.classList.add('is-hidden');
+				}
+			},
+			(displayAfterSeconds || 0) * 1000 + hideAfterSeconds * 1000
+		);
 	}
 }
 

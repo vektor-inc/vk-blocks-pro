@@ -57,18 +57,17 @@ export default function FixedDisplayEdit(props) {
 	);
 
 	// モードが切り替わる際に関連する属性をリセットし、一時変数もリセット
+	const prevModeRef = useRef(mode);
 
-    const prevModeRef = useRef(mode);
+	useEffect(() => {
+		const prevMode = prevModeRef.current;
 
-    useEffect(() => {
-        const prevMode = prevModeRef.current;
+		if (prevMode !== mode) {
+			resetModeAttributes();
+		}
 
-        if (prevMode !== mode) {
-            resetModeAttributes();
-        }
-
-        prevModeRef.current = mode;
-    }, [mode]);
+		prevModeRef.current = mode;
+	}, [mode]);
 
 	const resetModeAttributes = () => {
 		setAttributes({
@@ -294,6 +293,7 @@ export default function FixedDisplayEdit(props) {
 							type="number"
 							min="0"
 							step="0.1"
+							disabled={scrollPersistVisible}
 						/>
 					</PanelBody>
 				)}

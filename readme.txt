@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.4
 Tested up to: 6.7
-Stable tag: 1.90.1.1
+Stable tag: 1.91.1.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -107,6 +107,12 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Fixed Display (Pro) ] Added a timer feature to control block appearance/disappearance and a "Do not show again for returning visitors" option. Session Storage is used, and no personal data is collected or tracked. Since Session Storage is used, the block may reappear after the browser is closed or in private browsing mode.
+
+= 1.91.2 =
+[ Bug fix ] Fix checkbox misalignment in the admin panel.
+
+= 1.91.1 =
+[ Bug fix ] Avoiding translation errors in WordPress 6.7
 
 = 1.91.0 =
 [ Specification change ] Adjusted translation file loading to comply with changes in WordPress 6.7.

@@ -1,8 +1,3 @@
-import save000 from './0.0.0/save';
-import save001 from './0.0.1/save';
-import save0_0_2 from './0.0.2/save';
-import save0_49_8 from './0.49.8/save';
-import save0_60_1 from './0.60.1/save';
 import save1_20_2 from './1.20.2/save';
 
 const blockAttributes = {
@@ -83,27 +78,5 @@ const deprecated = [
 		attributes: blockAttributes3,
 		save: save1_20_2
 	},
-	// Fix: https://github.com/vektor-inc/vk-blocks-pro/issues/349
-	// 独自後方互換処理のための、後方互換を追加
-	{
-		attributes: blockAttributes3,
-		save:save0_0_2
-	},
-	// {
-	// 	attributes: blockAttributes3,
-	// 	save: save0_60_1,
-	// },
-	// {
-	// 	attributes: blockAttributes3,
-	// 	save: save0_49_8,
-	// },
-	// {
-	// 	attributes: blockAttributes2,
-	// 	save: save001,
-	// },
-	// {
-	// 	attributes: blockAttributes,
-	// 	save: save000,
-	// },
 ];
 export default deprecated;

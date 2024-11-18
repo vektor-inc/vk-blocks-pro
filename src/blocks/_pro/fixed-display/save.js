@@ -33,7 +33,7 @@ export default function save({ attributes }) {
 		if (displayAfterSeconds > 0) {
 			dataAttributes['data-display-after-seconds'] =
 				displayAfterSeconds.toString();
-			extraClasses += ' is-timed-display'; // displayタイミングがある場合のクラス
+			extraClasses += ' is-timed-display';
 		}
 		if (hideAfterSeconds > 0) {
 			dataAttributes['data-hide-after-seconds'] =
@@ -56,7 +56,7 @@ export default function save({ attributes }) {
 			['right', 'left'].includes(position) && fixedPositionType
 				? `vk_fixed-display-position-from-${fixedPositionType}`
 				: ''
-		} vk_fixed-display-${blockId}${extraClasses}`,
+		} vk_fixed-display-${blockId} ${extraClasses}`,
 		style: {
 			// モードに応じて必要な場合のみポジションスタイルを適用
 			[fixedPositionType]: ['right', 'left'].includes(position)

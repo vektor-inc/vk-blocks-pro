@@ -47,30 +47,23 @@ function handleVisibility(
 	blockId,
 	dontShowAgain
 ) {
-	// displayAfterSeconds がある場合のみ、is-timed-visible クラスを追加
-	if (displayAfterSeconds !== null && displayAfterSeconds > 0) {
+	// displayAfterSeconds が 0 以上の場合に表示
+	if (displayAfterSeconds >= 0) {
 		setTimeout(() => {
 			item.classList.add('is-timed-visible');
+			// dontShowAgain が true の場合、SessionStorage に記録
 			if (dontShowAgain) {
 				setSessionStorageFlag(`displayed_${blockId}`, 'true');
 			}
 		}, displayAfterSeconds * 1000);
-	} else if (displayAfterSeconds === 0) {
-		item.classList.add('is-timed-visible');
-		if (dontShowAgain) {
-			setSessionStorageFlag(`displayed_${blockId}`, 'true');
-		}
 	}
 
-	// hideAfterSeconds が指定されている場合、時間経過後に is-timed-hide クラスを追加
+	// hideAfterSeconds が 0 より大きい場合に非表示
 	if (hideAfterSeconds > 0) {
-		setTimeout(
-			() => {
-				item.classList.remove('is-timed-visible');
-				item.classList.add('is-timed-hide');
-			},
-			(displayAfterSeconds || 0) * 1000 + hideAfterSeconds * 1000
-		);
+		setTimeout(() => {
+			item.classList.remove('is-timed-visible');
+			item.classList.add('is-timed-hide');
+		}, (displayAfterSeconds || 0) * 1000 + hideAfterSeconds * 1000);
 	}
 }
 

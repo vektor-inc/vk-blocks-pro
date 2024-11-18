@@ -26,6 +26,9 @@ export default function save({ attributes }) {
 		dataAttributes['data-scroll-timing-unit'] = scrollTimingUnit;
 		if (scrollPersistVisible) {
 			dataAttributes['data-persist-visible'] = 'true';
+		} else if (hideAfterSeconds > 0) {
+			dataAttributes['data-hide-after-seconds'] =
+				hideAfterSeconds.toString();
 		}
 		extraClasses += ' vk_fixed-display-mode-show-on-scroll';
 	} else if (mode === 'display-hide-after-time') {

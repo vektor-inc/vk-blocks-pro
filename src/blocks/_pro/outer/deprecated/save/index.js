@@ -1,15 +1,3 @@
-import save000 from './0.0.0/save';
-import save001 from './0.0.1/save';
-import save002 from './0.0.2/save';
-import save003 from './0.0.3/save';
-import save004 from './0.0.4/save';
-import save005 from './0.0.5/save';
-import save006 from './0.0.6/save';
-import save007 from './0.0.7/save';
-import save008 from './0.0.8/save';
-import save009 from './0.0.9/save';
-import save0_37_1 from './0.37.1/save';
-import save0_60_0 from './0.60.0/save';
 import save1_0_13 from './1.0.13/save';
 import save1_26_0 from './1.26.0/save';
 import save1_34_1 from './1.34.1/save';
@@ -236,54 +224,6 @@ const deprecated = [
 	{
 		attributes: blockAttributes3,
 		save: save1_0_13,
-	},
-	{
-		attributes: blockAttributes3,
-		save: save0_60_0,
-	},
-	{
-		attributes: blockAttributes3,
-		save: save0_37_1,
-	},
-	{
-		attributes: blockAttributes3,
-		save: save009,
-	},
-	{
-		attributes: blockAttributes2,
-		save: save008,
-	},
-	{
-		attributes: blockAttributes2,
-		save: save007,
-	},
-	{
-		attributes: blockAttributes2,
-		save: save006,
-	},
-	{
-		attributes: blockAttributes2,
-		save: save005,
-	},
-	{
-		attributes: blockAttributes2,
-		save: save004,
-	},
-	{
-		attributes: blockAttributes2,
-		save: save003,
-	},
-	{
-		attributes: blockAttributes2,
-		save: save002,
-	},
-	{
-		attributes: blockAttributes2,
-		save: save001,
-	},
-	{
-		attributes: blockAttributes,
-		save: save000,
 	},
 ];
 

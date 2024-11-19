@@ -268,12 +268,55 @@ export default function FixedDisplayEdit(props) {
 								setAttributes({ scrollPersistVisible: value })
 							}
 						/>
+					</PanelBody>
+				)}
+				{['display-hide-after-time', 'show-on-scroll'].includes(
+					mode
+				) && (
+					<PanelBody title={__('Timer Settings', 'vk-blocks-pro')}>
+						<PanelRow>
+							<p>
+								{__(
+									'Set the timing for display and hide. Enter 0 to disable timing for each option.',
+									'vk-blocks-pro'
+								)}
+							</p>
+						</PanelRow>
+						{mode === 'display-hide-after-time' && (
+							<>
+								<TextControl
+									label={__(
+										'Display after seconds',
+										'vk-blocks-pro'
+									)}
+									value={tempDisplayAfterSeconds}
+									onChange={(value) => {
+										setTempDisplayAfterSeconds(value);
+									}}
+									onBlur={() => {
+										const parsedValue = parseFloat(
+											tempDisplayAfterSeconds
+										);
+										const finalValue =
+											isNaN(parsedValue) ||
+											parsedValue < 0
+												? 0
+												: parsedValue;
+										setAttributes({
+											displayAfterSeconds: finalValue,
+										});
+										setTempDisplayAfterSeconds(
+											finalValue.toString()
+										);
+									}}
+									type="number"
+									min="0"
+									step="0.1"
+								/>
+							</>
+						)}
 						<TextControl
 							label={__('Hide after seconds', 'vk-blocks-pro')}
-							help={__(
-								'Set to 0 to keep the content visible.',
-								'vk-blocks-pro'
-							)}
 							value={tempHideAfterSeconds}
 							onChange={(value) => {
 								setTempHideAfterSeconds(value);
@@ -294,65 +337,6 @@ export default function FixedDisplayEdit(props) {
 							min="0"
 							step="0.1"
 							disabled={scrollPersistVisible}
-						/>
-					</PanelBody>
-				)}
-				{mode === 'display-hide-after-time' && (
-					<PanelBody title={__('Timer Settings', 'vk-blocks-pro')}>
-						<PanelRow>
-							<p>
-								{__(
-									'Set the timing for display and hide. Enter 0 to disable timing for each option.',
-									'vk-blocks-pro'
-								)}
-							</p>
-						</PanelRow>
-						<TextControl
-							label={__('Display after seconds', 'vk-blocks-pro')}
-							value={tempDisplayAfterSeconds}
-							onChange={(value) => {
-								setTempDisplayAfterSeconds(value);
-							}}
-							onBlur={() => {
-								const parsedValue = parseFloat(
-									tempDisplayAfterSeconds
-								);
-								const finalValue =
-									isNaN(parsedValue) || parsedValue < 0
-										? 0
-										: parsedValue;
-								setAttributes({
-									displayAfterSeconds: finalValue,
-								});
-								setTempDisplayAfterSeconds(
-									finalValue.toString()
-								);
-							}}
-							type="number"
-							min="0"
-							step="0.1"
-						/>
-						<TextControl
-							label={__('Hide after seconds', 'vk-blocks-pro')}
-							value={tempHideAfterSeconds}
-							onChange={(value) => {
-								setTempHideAfterSeconds(value);
-							}}
-							onBlur={() => {
-								const parsedValue =
-									parseFloat(tempHideAfterSeconds);
-								const finalValue =
-									isNaN(parsedValue) || parsedValue < 0
-										? 0
-										: parsedValue;
-								setAttributes({
-									hideAfterSeconds: finalValue,
-								});
-								setTempHideAfterSeconds(finalValue.toString());
-							}}
-							type="number"
-							min="0"
-							step="0.1"
 						/>
 					</PanelBody>
 				)}

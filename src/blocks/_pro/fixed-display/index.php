@@ -62,7 +62,6 @@ function vk_blocks_register_block_fixed_display() {
 		);
 	}
 
-	// Register the block
 	register_block_type(
 		__DIR__,
 		$assets

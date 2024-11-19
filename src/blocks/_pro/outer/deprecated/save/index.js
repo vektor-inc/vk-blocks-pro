@@ -21,6 +21,7 @@ import save1_64_0 from './1.64.0/save';
 import save1_71_0 from './1.71.0/save';
 import save1_76_0 from './1.76.0/save';
 import save1_89_0 from './1.89.0/save';
+import save1_90_1 from './1.90.1/save';
 
 const blockAttributes = {
 	bgColor: {
@@ -191,7 +192,42 @@ const blockAttributes8 = {
 	},
 };
 
+/*
+// 1.76.0 から attributes を変更
+const blockAttributes9 = {
+	...blockAttributes8,
+	bgFocalPointPC: {
+		type: 'object',
+		default: { 'x': 0.5, 'y': 0.5 }
+	},
+	bgFocalPointTablet: {
+		type: 'object',
+		default: { 'x': 0.5, 'y': 0.5 }
+	},
+	bgFocalPointMobile: {
+		type: 'object',
+		default: { 'x': 0.5, 'y': 0.5 }
+	},
+	enableFocalPointPC: {
+	  type: 'boolean',
+	  default: false
+	},
+	enableFocalPointTablet: {
+	  type: 'boolean',
+	  default: false
+	},
+	enableFocalPointMobile: {
+	  type: 'boolean',
+	  default: false
+	},
+};
+*/
+
 const deprecated = [
+	{
+		attributes: blockAttributes8,
+		save: save1_90_1,
+	},
 	{
 		attributes: blockAttributes8,
 		save: save1_89_0,

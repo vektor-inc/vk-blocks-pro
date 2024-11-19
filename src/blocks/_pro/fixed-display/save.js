@@ -4,15 +4,15 @@ export default function save({ attributes }) {
 	const {
 		mode,
 		position,
-		scrollTiming = 0, // デフォルト値を設定
-		scrollTimingUnit = 'px',
-		scrollPersistVisible = false,
-		fixedPositionType = 'top',
-		fixedPositionValue = 50,
-		fixedPositionUnit = 'svh',
-		displayAfterSeconds = 0,
-		hideAfterSeconds = 0,
-		dontShowAgain = false,
+		scrollTiming,
+		scrollTimingUnit,
+		scrollPersistVisible,
+		fixedPositionType,
+		fixedPositionValue,
+		fixedPositionUnit,
+		displayAfterSeconds,
+		hideAfterSeconds,
+		dontShowAgain,
 		blockId,
 	} = attributes;
 

@@ -127,7 +127,7 @@ export default function FixedDisplayEdit(props) {
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={__('Fixed Display Settings', 'vk-blocks-pro')}
+					title={__('Fixed Display Setting', 'vk-blocks-pro')}
 				>
 					<PanelRow>
 						<p>
@@ -238,7 +238,7 @@ export default function FixedDisplayEdit(props) {
 				</PanelBody>
 				{mode === 'show-on-scroll' && (
 					<PanelBody
-						title={__('Scroll Display Settings', 'vk-blocks-pro')}
+						title={__('Scroll Display Setting', 'vk-blocks-pro')}
 					>
 						<UnitControl
 							label={__('Timing to display', 'vk-blocks-pro')}
@@ -273,7 +273,7 @@ export default function FixedDisplayEdit(props) {
 				{['display-hide-after-time', 'show-on-scroll'].includes(
 					mode
 				) && (
-					<PanelBody title={__('Timer Settings', 'vk-blocks-pro')}>
+					<PanelBody title={__('Timer Setting', 'vk-blocks-pro')}>
 						<PanelRow>
 							<p>
 								{__(
@@ -343,7 +343,7 @@ export default function FixedDisplayEdit(props) {
 				{mode === 'display-hide-after-time' && (
 					<PanelBody
 						title={__(
-							'Display Settings Until Browser is Closed',
+							'Display Setting Until Browser is Closed',
 							'vk-blocks-pro'
 						)}
 					>

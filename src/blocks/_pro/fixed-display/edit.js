@@ -126,9 +126,7 @@ export default function FixedDisplayEdit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody
-					title={__('Fixed Display Setting', 'vk-blocks-pro')}
-				>
+				<PanelBody title={__('Fixed Display Setting', 'vk-blocks-pro')}>
 					<PanelRow>
 						<p>
 							{__(

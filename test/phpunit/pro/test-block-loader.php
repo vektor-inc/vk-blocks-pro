@@ -67,4 +67,48 @@ class BlockLoaderTest extends VK_UnitTestCase {
 			$this->assertSame( $correct, $return );
 		}
 	}
+
+	public function test_add_styles_with_separate_assets() {
+	
+		$test_cases = array(
+			array(
+				'option'  => true,
+				'expected_individual' => true, 
+				'expected_combined'   => false,
+			),
+			array(
+				'option'  => false,
+				'expected_individual' => false,
+				'expected_combined'   => true,
+			),
+		);
+	
+		foreach ( $test_cases as $case ) {
+			// 各ケースごとに分割読み込みオプションを設定
+			update_option( 'vk_blocks_options', array( 'load_separate_option' => $case['option'] ) );
+	
+			// 既存のスタイルをクリア
+			wp_dequeue_style( 'vk-blocks-build-css' );
+			wp_dequeue_style( 'vk-blocks/core-table' );
+			wp_dequeue_style( 'vk-blocks/core-heading' );
+			wp_dequeue_style( 'vk-blocks/core-image' );
+	
+			// VK_Blocks_Block_Loader クラスのインスタンスを init メソッドから取得
+			$loader = VK_Blocks_Block_Loader::init();
+	
+			// スタイルを読み込む
+			$loader->add_styles();
+	
+			// 分割読み込みのオプションが有効な場合は個別スタイルがエンキューされることを確認
+			$this->assertSame( $case['expected_individual'], wp_style_is( 'vk-blocks/core-table', 'enqueued' ) );
+			$this->assertSame( $case['expected_individual'], wp_style_is( 'vk-blocks/core-heading', 'enqueued' ) );
+			$this->assertSame( $case['expected_individual'], wp_style_is( 'vk-blocks/core-image', 'enqueued' ) );
+	
+			// 分割読み込みのオプションが無効な場合は結合スタイルがエンキューされることを確認
+			$this->assertSame( $case['expected_combined'], wp_style_is( 'vk-blocks-build-css', 'enqueued' ) );
+	
+			// 設定を元に戻す
+			delete_option( 'vk_blocks_options' );
+		}
+	}
 }

@@ -51,10 +51,10 @@ function vk_blocks_register_block_fixed_display() {
 	$assets = array();
 	if ( method_exists( 'VK_Blocks_Block_Loader', 'should_load_separate_assets' ) && VK_Blocks_Block_Loader::should_load_separate_assets() ) {
 		$assets = array(
-			'style'         => 'vk-blocks/fixed-display',
-			'script'        => 'vk-blocks/fixed-display-script',
-			'editor_style'  => 'vk-blocks-build-editor-css',
-			'editor_script' => 'vk-blocks-build-js',
+			'style'           => 'vk-blocks/fixed-display',
+			'script'          => 'vk-blocks/fixed-display-script',
+			'editor_style'    => 'vk-blocks-build-editor-css',
+			'editor_script'   => 'vk-blocks-build-js',
 			'render_callback' => 'vk_blocks_fixed_display_render_callback',
 		);
 	}

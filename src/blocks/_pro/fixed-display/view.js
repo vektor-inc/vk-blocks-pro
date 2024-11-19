@@ -73,24 +73,24 @@ function handleVisibility(
 	// displayAfterSeconds が 0 以上の場合に表示
 	if (displayAfterSeconds >= 0) {
 		setTimeout(() => {
-			item.classList.add('is-timed-visible');
-			if (dontShowAgain) {
-				setSessionStorageFlag(`displayed_${blockId}`, 'true');
+			if (!item.classList.contains('is-timed-visible')) {
+				item.classList.add('is-timed-visible');
+
+				if (dontShowAgain) {
+					setSessionStorageFlag(`displayed_${blockId}`, 'true');
+				}
 			}
 		}, displayAfterSeconds * 1000);
 	}
 
 	// hideAfterSeconds が 0 より大きい場合に非表示
 	if (hideAfterSeconds > 0) {
-		setTimeout(
-			() => {
-				if (item.classList.contains('is-visible')) {
-					item.classList.remove('is-visible');
-					item.classList.add('is-hidden');
-				}
-			},
-			(displayAfterSeconds || 0) * 1000 + hideAfterSeconds * 1000
-		);
+		setTimeout(() => {
+			if (item.classList.contains('is-timed-visible')) {
+				item.classList.remove('is-timed-visible');
+				item.classList.add('is-hidden');
+			}
+		}, (displayAfterSeconds || 0) * 1000 + hideAfterSeconds * 1000);
 	}
 }
 

@@ -130,7 +130,13 @@ function initializeDisplayHide() {
 		}
 
 		// 他のモードは初期表示とタイマーを適用
-		handleVisibility(item, displayAfterSeconds, hideAfterSeconds, blockId, dontShowAgain);
+		handleVisibility(
+			item,
+			displayAfterSeconds,
+			hideAfterSeconds,
+			blockId,
+			dontShowAgain
+		);
 	});
 }
 

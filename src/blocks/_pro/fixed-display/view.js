@@ -9,6 +9,9 @@ function getSessionStorageFlag(key) {
 	return sessionStorage.getItem(key) !== null;
 }
 
+// 状態管理用のマップを初期化
+const blockStates = new Map();
+
 // スクロールタイミング設定
 window.addEventListener('scroll', function () {
 	const items = document.querySelectorAll(
@@ -17,12 +20,6 @@ window.addEventListener('scroll', function () {
 
 	items.forEach((item) => {
 		const blockId = item.getAttribute('data-block-id');
-		const dontShowAgain =
-			item.getAttribute('data-dont-show-again') === 'true';
-
-		if (dontShowAgain && getSessionStorageFlag(`displayed_${blockId}`)) {
-			return;
-		}
 
 		const timing = parseInt(item.getAttribute('data-scroll-timing'), 10);
 		const unit = item.getAttribute('data-scroll-timing-unit');
@@ -30,32 +27,36 @@ window.addEventListener('scroll', function () {
 			item.getAttribute('data-persist-visible') === 'true';
 		const timingInPixels = convertUnitToPixels(timing, unit);
 
-		// 一度非表示にされたら再表示しない
-		const wasHidden = item.getAttribute('data-hide-maintained') === 'true';
+		// 初期状態をマップに設定
+		if (!blockStates.has(blockId)) {
+			blockStates.set(blockId, { wasHidden: false });
+		}
 
-		// スクロール位置が指定したタイミングを超えた場合に要素を表示
-		if (window.scrollY > timingInPixels && !wasHidden) {
+		// ブロックの状態を取得
+		const blockState = blockStates.get(blockId);
+
+		// 一度非表示にされたら再表示しない (ページリロードでリセットされる)
+		if (window.scrollY > timingInPixels && !blockState.wasHidden) {
 			if (!item.classList.contains('is-visible')) {
 				item.classList.add('is-visible');
 
-				// 非表示タイマーの処理
 				const hideAfterSecondsAttr = item.getAttribute(
 					'data-hide-after-seconds'
 				);
 				const hideAfterSeconds = parseFloat(hideAfterSecondsAttr) || 0;
 
-				// `scrollPersistVisible` が無効な場合のみ非表示タイマーをセット
+				// 非表示タイマーの処理
 				if (hideAfterSeconds > 0 && !scrollPersistVisible) {
 					setTimeout(() => {
 						if (item.classList.contains('is-visible')) {
 							item.classList.remove('is-visible');
 							item.classList.add('is-hidden');
-							item.setAttribute('data-hide-maintained', 'true'); // 非表示状態を維持
+							blockStates.set(blockId, { wasHidden: true });
 						}
 					}, hideAfterSeconds * 1000);
 				}
 			}
-		} else if (!scrollPersistVisible && !wasHidden) {
+		} else if (!scrollPersistVisible && blockState.wasHidden) {
 			// タイミングを超えなかった場合、Persistが無効な時に非表示
 			item.classList.remove('is-visible');
 		}
@@ -75,7 +76,6 @@ function handleVisibility(
 		setTimeout(() => {
 			if (!item.classList.contains('is-timed-visible')) {
 				item.classList.add('is-timed-visible');
-
 				if (dontShowAgain) {
 					setSessionStorageFlag(`displayed_${blockId}`, 'true');
 				}
@@ -100,7 +100,7 @@ function handleVisibility(
 // DOM読み込み後に初期化関数を実行
 function initializeDisplayHide() {
 	const items = document.querySelectorAll(
-		'.vk_fixed-display-mode-display-hide-after-time'
+		'.vk_fixed-display-mode-display-hide-after-time, .vk_fixed-display-mode-show-on-scroll, .vk_fixed-display-mode-always-visible'
 	);
 
 	items.forEach((item) => {
@@ -116,18 +116,21 @@ function initializeDisplayHide() {
 		const dontShowAgain =
 			item.getAttribute('data-dont-show-again') === 'true';
 
+		// dontShowAgain が有効で、セッションストレージに記録がある場合はスキップ
 		if (dontShowAgain && getSessionStorageFlag(`displayed_${blockId}`)) {
 			return;
 		}
 
-		// handleVisibility関数を使用して表示・非表示を制御
-		handleVisibility(
-			item,
-			displayAfterSeconds,
-			hideAfterSeconds,
-			blockId,
-			dontShowAgain
-		);
+		// モードに応じて適切な処理を実行
+		const mode = item.getAttribute('data-mode');
+
+		if (mode === 'show-on-scroll') {
+			// スクロール時の動作は scroll イベントで制御
+			return;
+		}
+
+		// 他のモードは初期表示とタイマーを適用
+		handleVisibility(item, displayAfterSeconds, hideAfterSeconds, blockId, dontShowAgain);
 	});
 }
 

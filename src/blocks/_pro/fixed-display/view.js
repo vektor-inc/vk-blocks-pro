@@ -85,12 +85,15 @@ function handleVisibility(
 
 	// hideAfterSeconds が 0 より大きい場合に非表示
 	if (hideAfterSeconds > 0) {
-		setTimeout(() => {
-			if (item.classList.contains('is-timed-visible')) {
-				item.classList.remove('is-timed-visible');
-				item.classList.add('is-hidden');
-			}
-		}, (displayAfterSeconds || 0) * 1000 + hideAfterSeconds * 1000);
+		setTimeout(
+			() => {
+				if (item.classList.contains('is-timed-visible')) {
+					item.classList.remove('is-timed-visible');
+					item.classList.add('is-hidden');
+				}
+			},
+			(displayAfterSeconds || 0) * 1000 + hideAfterSeconds * 1000
+		);
 	}
 }
 

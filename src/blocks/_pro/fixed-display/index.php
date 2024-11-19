@@ -47,8 +47,11 @@ function vk_blocks_register_block_fixed_display() {
 		);
 	}
 
-	// Handle classic themes and separate asset loading
+	// クラシックテーマ & 6.5 環境で $assets = array() のように空にしないと重複登録になるため
+	// ここで初期化しておく
 	$assets = array();
+	// Attend to load separate assets.
+	// 分割読み込みが有効な場合のみ、分割読み込み用のスクリプトを登録する
 	if ( method_exists( 'VK_Blocks_Block_Loader', 'should_load_separate_assets' ) && VK_Blocks_Block_Loader::should_load_separate_assets() ) {
 		$assets = array(
 			'style'           => 'vk-blocks/fixed-display',

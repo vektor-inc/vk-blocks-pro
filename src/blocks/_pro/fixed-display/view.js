@@ -50,7 +50,6 @@ window.addEventListener('scroll', function () {
 					setTimeout(() => {
 						if (item.classList.contains('is-visible')) {
 							item.classList.remove('is-visible');
-							item.classList.add('is-hidden');
 							blockStates.set(blockId, { wasHidden: true });
 						}
 					}, hideAfterSeconds * 1000);
@@ -89,7 +88,6 @@ function handleVisibility(
 			() => {
 				if (item.classList.contains('is-timed-visible')) {
 					item.classList.remove('is-timed-visible');
-					item.classList.add('is-hidden');
 				}
 			},
 			(displayAfterSeconds || 0) * 1000 + hideAfterSeconds * 1000

@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Design Bug Fix ] [ Grid Column Card ( Pro ) ] Fixed only dots being displayed as separators.
+
 = 1.91.2 =
 [ Bug fix ] Fix checkbox misalignment in the admin panel.
 

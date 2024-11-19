@@ -8,18 +8,17 @@
 /**
  * Adds initial opacity: 0 to blocks in specific modes.
  *
- * @param string $block_content The HTML content of the block.
- * @param array  $block         The block details array.
+ * @param array  $attributes Block attributes.
+ * @param string $content Block content.
  * @return string The modified block content.
  */
-function vk_blocks_fixed_display_add_opacity( $block_content, $block ) {
-	if ( isset( $block['attrs']['mode'] ) && in_array( $block['attrs']['mode'], array( 'display-hide-after-time', 'show-on-scroll' ), true ) ) {
-		// Apply opacity: 0 for specific modes
-		$block_content = preg_replace( '/(<div\b[^>]*class="[^"]*vk_fixed-display-mode-(display-hide-after-time|show-on-scroll)[^"]*")/i', '$1 style="opacity:0;"', $block_content );
+function vk_blocks_fixed_display_render_callback( $attributes, $content ) {
+	// Check for specific modes and apply opacity: 0
+	if ( isset( $attributes['mode'] ) && in_array( $attributes['mode'], array( 'display-hide-after-time', 'show-on-scroll' ), true ) ) {
+		$content = preg_replace( '/(<div\b[^>]*class="[^"]*vk_fixed-display-mode-(display-hide-after-time|show-on-scroll)[^"]*")/i', '$1 style="opacity:0;"', $content );
 	}
-	return $block_content;
+	return $content;
 }
-add_filter( 'render_block', 'vk_blocks_fixed_display_add_opacity', 10, 2 );
 
 /**
  * Registers the fixed display block.
@@ -56,6 +55,7 @@ function vk_blocks_register_block_fixed_display() {
 			'script'        => 'vk-blocks/fixed-display-script',
 			'editor_style'  => 'vk-blocks-build-editor-css',
 			'editor_script' => 'vk-blocks-build-js',
+			'render_callback' => 'vk_blocks_fixed_display_render_callback',
 		);
 	}
 

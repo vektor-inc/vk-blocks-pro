@@ -1,6 +1,5 @@
 import save1_20_2 from './1.20.2/save';
 import save1_3_1 from './1.3.1/save';
-import save0_58 from './0.58/save';
 
 export const blockAttributes = {
     vk_staff_text_name: {
@@ -82,10 +81,6 @@ const deprecated = [
     {
         attributes: blockAttributes2,
         save: save1_3_1
-    },
-    {
-        attributes: blockAttributes,
-        save: save0_58
     }
 ];
 

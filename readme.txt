@@ -106,6 +106,8 @@ e.g.
 
 == Changelog ==
 
+[ Add Block ] Add Post list Slider block.
+[ Bug fix ][ Cover ] Fixed an issue where, after setting a link in the Cover block and adding two unstyled headings inside it, the content positioning would not apply upon returning to the editing screen (editing screen only).
 [ Design Bug Fix ] [ Grid Column Card ( Pro ) ] Fixed only dots being displayed as separators.
 
 = 1.91.2 =

@@ -614,6 +614,108 @@ ol {
 }
 
 /*-------------------------------------------*/
+/* Swiper
+/*-------------------------------------------*/
+:root {
+	--vk-color-background-white-translucent:rgba(255, 255, 255, 0.5);
+}
+
+.vk_slider,
+.vk_post_list_slider {
+	//共通ではないためvk_sliderの中に格納
+	width: 100%;
+	height: auto; //100%だとサイトエディター画面でおかしくなるのでautoに
+	position: relative;
+	.swiper-wrapper {
+		height: auto; //100%だとおかしくなるのでautoに
+		transition-timing-function: cubic-bezier(0.77, 0.2, 0.05, 1);
+	}
+	//vk_slider用のnextとprevボタン	
+	.swiper-button-next,
+	.swiper-button-prev {
+		color: var(--vk-color-text-body);
+		background-color: var(--vk-color-background-white-translucent);
+		border-radius: var(--vk-size-radius);
+		background-image: none;
+		width: 2.4rem;
+		height: 2.4rem;
+		z-index: 20;
+		&:after {
+			font-size: 1.2rem;
+		}
+	}
+
+}
+
+.swiper-container {
+	/* vk_width-full は廃止になったが互換処理のために 2022年10月末までは残す */
+	&.vk_width-full {
+		//全幅の時
+		margin: 0 calc(50% - 50vw);
+		width: 100vw;
+	}
+	&-horizontal{
+		>.swiper-pagination-bullets {
+			.swiper-pagination-bullet{
+				margin: 0 5px;
+			}
+		}
+	}
+}
+
+// ↓ これ要る？
+.swiper-slide {
+	height: auto; //100%だとおかしくなるのでautoに
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+//paginationの親枠
+.swiper-container-horizontal>.swiper-pagination-bullets{
+	padding-left:3.2rem;
+	padding-right:3.2rem;
+	box-sizing: border-box; //他のFSEテーマではみ出るので追加
+}
+//pagination
+.swiper-pagination{
+	//標準
+	&-bullet{ 
+		border-radius: unset;
+		width: 30px;
+		height: 5px;
+		background-color: #ccc;
+		opacity: unset;
+		outline: 1px solid var(--vk-color-background-white-translucent);
+		&-active {
+			background: #666;
+		}
+	}
+	//標準以外（スライドの枚数）
+	&.swiper-pagination-fraction:not(.swiper-pagination-bullets){
+		width: auto;
+		left: 50%;
+		transform: translateX(-50%);
+		background: var(--vk-color-background-white-translucent);
+		padding: 0.4rem 1.5rem;
+		border-radius: 30px;
+		bottom: 5px;
+	}
+}
+
+//矢印ボタン モバイルは下部
+@media (max-width: 575.98px) {
+	.swiper-button-next, 
+	.swiper-button-prev{
+		&.swiper-button-mobile-bottom{
+		top:unset;
+		bottom: 10px;
+		}
+	}
+}
+
+/*-------------------------------------------*/
 /* col-xxl
 /*-------------------------------------------*/
 $xxl-min: 1400px;

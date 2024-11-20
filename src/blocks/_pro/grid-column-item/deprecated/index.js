@@ -1,5 +1,3 @@
-import save0_45_2 from './0.45.2/save';
-import save0_60_1 from './0.60.1/save';
 import save1_4_1 from './1.4.1/save';
 import save1_13_2 from './1.13.2/save';
 import save1_20_5 from './1.20.5/save';
@@ -155,14 +153,6 @@ const deprecated = [
 	{
 		attributes: blockAttributes,
 		save: save1_4_1,
-	},
-	{
-		attributes: blockAttributes,
-		save: save0_60_1,
-	},
-	{
-		attributes: blockAttributes,
-		save: save0_45_2,
 	},
 ];
 export default deprecated;

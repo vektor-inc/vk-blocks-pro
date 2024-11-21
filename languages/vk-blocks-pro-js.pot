@@ -552,27 +552,27 @@ msgstr ""
 
 #: src/admin/margin.js:51
 #: src/blocks/_pro/accordion/edit.js:139
-#: src/blocks/_pro/outer/edit.js:1054
+#: src/blocks/_pro/outer/edit.js:1062
 #: src/blocks/button/edit.js:537
-#: src/blocks/slider/edit.js:927
+#: src/blocks/slider/edit.js:954
 #: src/components/advanced-viewport-control/index.js:25
 msgid "PC"
 msgstr ""
 
 #: src/admin/margin.js:55
 #: src/blocks/_pro/accordion/edit.js:122
-#: src/blocks/_pro/outer/edit.js:1038
+#: src/blocks/_pro/outer/edit.js:1046
 #: src/blocks/button/edit.js:472
-#: src/blocks/slider/edit.js:948
+#: src/blocks/slider/edit.js:975
 #: src/components/advanced-viewport-control/index.js:32
 msgid "Tablet"
 msgstr ""
 
 #: src/admin/margin.js:59
 #: src/blocks/_pro/accordion/edit.js:105
-#: src/blocks/_pro/outer/edit.js:1022
+#: src/blocks/_pro/outer/edit.js:1030
 #: src/blocks/button/edit.js:407
-#: src/blocks/slider/edit.js:969
+#: src/blocks/slider/edit.js:996
 #: src/components/advanced-viewport-control/index.js:41
 msgid "Mobile"
 msgstr ""
@@ -850,7 +850,7 @@ msgid "2:3"
 msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:156
-#: src/blocks/slider/edit.js:915
+#: src/blocks/slider/edit.js:942
 msgid "Height"
 msgstr ""
 
@@ -980,12 +980,11 @@ msgstr ""
 msgid "Button gap size"
 msgstr ""
 
-#: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:149
-#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:151
-#: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:156
-#: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:154
-#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:157
-#: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:161
+#: src/blocks/_pro/card-item/edit.js:105
+#: src/components/advanced-media-upload/index.js:34
+msgid "Delete Image"
+msgstr ""
+
 #: src/blocks/_pro/card-item/edit.js:140
 #: src/utils/example-data.js:3
 msgid ""
@@ -993,55 +992,11 @@ msgid ""
 "tempor incididunt ut labore et dolore magna aliqua. "
 msgstr ""
 
-#: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:190
-#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:194
-#: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:201
-#: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:199
-#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:206
-#: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:210
 #: src/blocks/_pro/card-item/edit.js:182
 #: src/blocks/_pro/card/edit.js:134
 #: src/blocks/_pro/icon-card/edit.js:75
 #: src/blocks/_pro/post-list/edit.js:442
 msgid "Title"
-msgstr ""
-
-#: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:81
-#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:77
-#: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:82
-#: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:80
-#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:82
-#: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:86
-#: src/blocks/_pro/card-item/edit.js:88
-#: src/blocks/balloon/edit.js:600
-#: src/blocks/flow/edit.js:84
-#: src/blocks/pr-blocks/edit.js:89
-#: src/blocks/pr-content/deprecated/0.0.0/save.js:130
-#: src/blocks/pr-content/deprecated/0.0.1/save.js:112
-#: src/blocks/pr-content/deprecated/0.0.2/save.js:207
-#: src/blocks/pr-content/deprecated/0.0.3/component.js:178
-#: src/blocks/pr-content/deprecated/0.43.0/save.js:178
-#: src/blocks/pr-content/deprecated/0.5.1/save.js:116
-#: src/blocks/pr-content/deprecated/0.56.3/component.js:156
-#: src/blocks/pr-content/deprecated/0.58.7/component.js:171
-#: src/blocks/pr-content/deprecated/0.58.9/component.js:171
-#: src/blocks/pr-content/deprecated/1.7.1/mediaUpload.js:68
-#: src/blocks/pr-content/mediaUpload.js:68
-#: src/blocks/staff/deprecated/0.58/component.js:96
-#: src/blocks/staff/edit.js:359
-#: src/components/advanced-media-upload/index.js:47
-msgid "Select image"
-msgstr ""
-
-#: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:94
-#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:94
-#: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:99
-#: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:97
-#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:99
-#: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:103
-#: src/blocks/_pro/card-item/edit.js:105
-#: src/components/advanced-media-upload/index.js:34
-msgid "Delete Image"
 msgstr ""
 
 #: src/blocks/_pro/card-item/edit.js:217
@@ -1051,6 +1006,17 @@ msgstr ""
 
 #: src/blocks/_pro/card-item/edit.js:222
 msgid "https://example.com"
+msgstr ""
+
+#: src/blocks/_pro/card-item/edit.js:88
+#: src/blocks/balloon/edit.js:600
+#: src/blocks/flow/edit.js:84
+#: src/blocks/pr-blocks/edit.js:89
+#: src/blocks/pr-content/deprecated/1.7.1/mediaUpload.js:68
+#: src/blocks/pr-content/mediaUpload.js:68
+#: src/blocks/staff/edit.js:359
+#: src/components/advanced-media-upload/index.js:47
+msgid "Select image"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:130
@@ -1098,7 +1064,7 @@ msgid "Image Height"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:88
-#: src/blocks/slider/edit.js:920
+#: src/blocks/slider/edit.js:947
 msgid "Slide Height for each device."
 msgstr ""
 
@@ -1402,7 +1368,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:186
 #: src/blocks/_pro/grid-column/edit.js:96
-#: src/blocks/_pro/outer/edit.js:1076
+#: src/blocks/_pro/outer/edit.js:1084
 #: src/blocks/icon-outer/edit.js:183
 #: src/blocks/icon/edit.js:174
 #: src/utils/unit-options.js:6
@@ -1411,7 +1377,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:187
 #: src/blocks/_pro/grid-column/edit.js:100
-#: src/blocks/_pro/outer/edit.js:1080
+#: src/blocks/_pro/outer/edit.js:1088
 #: src/blocks/icon-outer/edit.js:187
 #: src/blocks/icon/edit.js:178
 #: src/utils/unit-options.js:10
@@ -1420,7 +1386,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:188
 #: src/blocks/_pro/grid-column/edit.js:104
-#: src/blocks/_pro/outer/edit.js:1084
+#: src/blocks/_pro/outer/edit.js:1092
 #: src/blocks/icon-outer/edit.js:191
 #: src/blocks/icon/edit.js:182
 #: src/utils/unit-options.js:14
@@ -1429,7 +1395,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:189
 #: src/blocks/_pro/grid-column/edit.js:108
-#: src/blocks/_pro/outer/edit.js:1012
+#: src/blocks/_pro/outer/edit.js:1020
 #: src/blocks/icon-outer/edit.js:195
 #: src/blocks/icon/edit.js:186
 #: src/utils/unit-options.js:18
@@ -1535,7 +1501,7 @@ msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:155
 #: src/blocks/heading/edit.js:376
-#: src/blocks/slider/edit.js:1133
+#: src/blocks/slider/edit.js:1160
 msgid "Hide"
 msgstr ""
 
@@ -1674,38 +1640,39 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1018
+#: src/blocks/_pro/outer/deprecated/save/1.89.0/save.js:252
+#: src/blocks/_pro/outer/edit.js:418
+#: src/blocks/_pro/outer/save.js:252
+msgid "Outer link"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:1026
 msgid "Min Height Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1070
+#: src/blocks/_pro/outer/edit.js:1078
 #: src/components/advanced-unit-control/index.js:13
 msgid "Unit Type"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1088
+#: src/blocks/_pro/outer/edit.js:1096
 #: src/utils/unit-options.js:22
 msgid "vh"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1092
+#: src/blocks/_pro/outer/edit.js:1100
 #: src/utils/unit-options.js:26
 msgid "svh"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1096
+#: src/blocks/_pro/outer/edit.js:1104
 #: src/utils/unit-options.js:30
 msgid "lvh"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1100
+#: src/blocks/_pro/outer/edit.js:1108
 #: src/utils/unit-options.js:34
 msgid "dvh"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:418
-#: src/blocks/_pro/outer/save.js:252
-msgid "Outer link"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:424
@@ -1835,31 +1802,39 @@ msgstr ""
 msgid "Serrated"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:651
+#: src/blocks/_pro/outer/edit.js:648
+msgid "Book"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:652
+msgid "Pyramid"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:659
 msgid "Settings for each device"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:664
+#: src/blocks/_pro/outer/edit.js:672
 msgid "Upper Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:746
+#: src/blocks/_pro/outer/edit.js:754
 msgid "Lower Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:829
+#: src/blocks/_pro/outer/edit.js:837
 msgid "Border Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:834
+#: src/blocks/_pro/outer/edit.js:842
 msgid "Border will disappear when divider effect is applied."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:840
+#: src/blocks/_pro/outer/edit.js:848
 msgid "Border type"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:848
+#: src/blocks/_pro/outer/edit.js:856
 #: src/blocks/_pro/step-item/edit.js:147
 #: src/blocks/_pro/timeline-item/edit.js:113
 #: src/blocks/balloon/edit.js:559
@@ -1868,52 +1843,52 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:852
+#: src/blocks/_pro/outer/edit.js:860
 #: src/blocks/_pro/step-item/edit.js:118
 #: src/blocks/_pro/timeline-item/edit.js:88
 #: src/blocks/pr-content/edit.js:145
 msgid "Solid"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:856
+#: src/blocks/_pro/outer/edit.js:864
 msgid "Dotted"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:860
+#: src/blocks/_pro/outer/edit.js:868
 msgid "Dashed"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:864
+#: src/blocks/_pro/outer/edit.js:872
 msgid "Double"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:868
+#: src/blocks/_pro/outer/edit.js:876
 msgid "Groove"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:872
+#: src/blocks/_pro/outer/edit.js:880
 msgid "Ridge"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:876
+#: src/blocks/_pro/outer/edit.js:884
 msgid "Inset"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:880
+#: src/blocks/_pro/outer/edit.js:888
 msgid "Outset"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:892
+#: src/blocks/_pro/outer/edit.js:900
 msgid "Border width"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:904
+#: src/blocks/_pro/outer/edit.js:912
 #: src/blocks/icon-outer/edit.js:212
 #: src/blocks/icon/edit.js:203
 msgid "Border radius"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:920
+#: src/blocks/_pro/outer/edit.js:928
 msgid "Container Inner Side Space Setting"
 msgstr ""
 
@@ -2075,7 +2050,7 @@ msgstr ""
 #: src/blocks/_pro/table-of-contents-new/edit.js:129
 #: src/blocks/_pro/timeline-item/edit.js:103
 #: src/blocks/heading/edit.js:264
-#: src/blocks/slider/edit.js:1109
+#: src/blocks/slider/edit.js:1136
 #: src/blocks/staff/edit.js:173
 #: src/components/advanced-color-gradient-control/index.js:47
 msgid "Default"
@@ -2446,15 +2421,6 @@ msgstr ""
 
 #: src/blocks/balloon/edit.js:606
 #: src/blocks/pr-blocks/edit.js:83
-#: src/blocks/pr-content/deprecated/0.0.0/save.js:135
-#: src/blocks/pr-content/deprecated/0.0.1/save.js:117
-#: src/blocks/pr-content/deprecated/0.0.2/save.js:214
-#: src/blocks/pr-content/deprecated/0.0.3/component.js:185
-#: src/blocks/pr-content/deprecated/0.43.0/save.js:185
-#: src/blocks/pr-content/deprecated/0.5.1/save.js:121
-#: src/blocks/pr-content/deprecated/0.56.3/component.js:163
-#: src/blocks/pr-content/deprecated/0.58.7/component.js:178
-#: src/blocks/pr-content/deprecated/0.58.9/component.js:178
 #: src/blocks/pr-content/deprecated/1.7.1/mediaUpload.js:130
 #: src/blocks/pr-content/mediaUpload.js:130
 msgid "Upload image"
@@ -2538,7 +2504,7 @@ msgid "Button Position:"
 msgstr ""
 
 #: src/blocks/button/edit.js:365
-#: src/blocks/slider/edit.js:1137
+#: src/blocks/slider/edit.js:1164
 #: src/components/display-items-control/index.js:136
 msgid "Center"
 msgstr ""
@@ -2875,32 +2841,6 @@ msgstr ""
 msgid "PR Image 3"
 msgstr ""
 
-#: src/blocks/pr-content/deprecated/0.0.0/save.js:152
-#: src/blocks/pr-content/deprecated/0.0.1/save.js:134
-#: src/blocks/pr-content/deprecated/0.0.2/save.js:251
-#: src/blocks/pr-content/deprecated/0.0.3/component.js:222
-#: src/blocks/pr-content/deprecated/0.43.0/save.js:222
-#: src/blocks/pr-content/deprecated/0.5.1/save.js:138
-#: src/blocks/pr-content/deprecated/0.56.3/component.js:197
-#: src/blocks/pr-content/deprecated/0.58.7/component.js:215
-#: src/blocks/pr-content/deprecated/0.58.9/component.js:215
-#: src/blocks/pr-content/edit.js:278
-msgid "Input title."
-msgstr ""
-
-#: src/blocks/pr-content/deprecated/0.0.0/save.js:165
-#: src/blocks/pr-content/deprecated/0.0.1/save.js:147
-#: src/blocks/pr-content/deprecated/0.0.2/save.js:264
-#: src/blocks/pr-content/deprecated/0.0.3/component.js:235
-#: src/blocks/pr-content/deprecated/0.43.0/save.js:235
-#: src/blocks/pr-content/deprecated/0.5.1/save.js:151
-#: src/blocks/pr-content/deprecated/0.56.3/component.js:205
-#: src/blocks/pr-content/deprecated/0.58.7/component.js:228
-#: src/blocks/pr-content/deprecated/0.58.9/component.js:228
-#: src/blocks/pr-content/edit.js:286
-msgid "Input content."
-msgstr ""
-
 #: src/blocks/pr-content/deprecated/1.7.1/mediaUpload.js:120
 #: src/blocks/pr-content/mediaUpload.js:120
 msgid "Select Image"
@@ -2928,6 +2868,14 @@ msgstr ""
 
 #: src/blocks/pr-content/edit.js:248
 msgid "Layout Type"
+msgstr ""
+
+#: src/blocks/pr-content/edit.js:278
+msgid "Input title."
+msgstr ""
+
+#: src/blocks/pr-content/edit.js:286
+msgid "Input content."
 msgstr ""
 
 #: src/blocks/pr-content/edit.js:72
@@ -2963,47 +2911,55 @@ msgstr ""
 msgid "repeat"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1006
+#: src/blocks/slider/edit.js:1019
+msgid "Slider Settings"
+msgstr ""
+
+#: src/blocks/slider/edit.js:1023
+msgid "Effect "
+msgstr ""
+
+#: src/blocks/slider/edit.js:1033
 msgid "Slide"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1010
+#: src/blocks/slider/edit.js:1037
 msgid "Fade"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1017
+#: src/blocks/slider/edit.js:1044
 msgid "Loop "
 msgstr ""
 
-#: src/blocks/slider/edit.js:1027
+#: src/blocks/slider/edit.js:1054
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1037
+#: src/blocks/slider/edit.js:1064
 msgid "Stop AutoPlay when swipe"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1047
+#: src/blocks/slider/edit.js:1074
 msgid "Display Time"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1074
+#: src/blocks/slider/edit.js:1101
 msgid "Change Speed"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1098
+#: src/blocks/slider/edit.js:1125
 msgid "Pagination Type"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1113
+#: src/blocks/slider/edit.js:1140
 msgid "Number of slides"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1126
+#: src/blocks/slider/edit.js:1153
 msgid "Navigation Position"
 msgstr ""
 
-#: src/blocks/slider/edit.js:1141
+#: src/blocks/slider/edit.js:1168
 msgid "Bottom on Mobile device"
 msgstr ""
 
@@ -3025,92 +2981,91 @@ msgid ""
 "display size."
 msgstr ""
 
-#: src/blocks/slider/edit.js:558
+#: src/blocks/slider/edit.js:559
 msgid ""
 "If you want to loop slides, the number of placed slide items must be "
 "greater than or equal to twice the number of items you want to display per "
 "view."
 msgstr ""
 
-#: src/blocks/slider/edit.js:567
+#: src/blocks/slider/edit.js:572
+msgid ""
+"If the active slide is in the center, the number of placed slide items must "
+"be greater than or equal to the number of items you want to display in one "
+"view + 2."
+msgstr ""
+
+#: src/blocks/slider/edit.js:581
 msgid ""
 "If you want to loop slides, the number of placed slide items must be "
 "greater than or equal to the number of items you want to display per view + "
 "1."
 msgstr ""
 
-#: src/blocks/slider/edit.js:642
+#: src/blocks/slider/edit.js:669
 msgid "Multi-item Display Setting"
 msgstr ""
 
-#: src/blocks/slider/edit.js:646
+#: src/blocks/slider/edit.js:673
 msgid "Number of Items to display per view"
 msgstr ""
 
-#: src/blocks/slider/edit.js:653
+#: src/blocks/slider/edit.js:680
 msgid "Enter divisors for the number of placed slide items for each display size."
 msgstr ""
 
-#: src/blocks/slider/edit.js:657
+#: src/blocks/slider/edit.js:684
 msgid "If the number is not divisible, the sliding behaviour will be unnatural"
 msgstr ""
 
-#: src/blocks/slider/edit.js:750
+#: src/blocks/slider/edit.js:777
 msgid "Number of items to change in a transition"
 msgstr ""
 
-#: src/blocks/slider/edit.js:761
+#: src/blocks/slider/edit.js:788
 msgid "One by One"
 msgstr ""
 
-#: src/blocks/slider/edit.js:765
+#: src/blocks/slider/edit.js:792
 msgid "Same as the number of items to display"
 msgstr ""
 
-#: src/blocks/slider/edit.js:781
+#: src/blocks/slider/edit.js:808
 msgid "Centering the active slide"
 msgstr ""
 
-#: src/blocks/slider/edit.js:790
+#: src/blocks/slider/edit.js:817
 msgid ""
 "If you specify the center, you can display items that are cut off on the "
 "left and right."
 msgstr ""
 
-#: src/blocks/slider/edit.js:849
+#: src/blocks/slider/edit.js:876
 msgid "Change Slide Editor Mode"
 msgstr ""
 
-#: src/blocks/slider/edit.js:852
+#: src/blocks/slider/edit.js:879
 msgid "Edit ( Stacked Layout ) Mode"
 msgstr ""
 
-#: src/blocks/slider/edit.js:862
+#: src/blocks/slider/edit.js:889
 msgid "Preview ( Slide ) Mode"
 msgstr ""
 
-#: src/blocks/slider/edit.js:877
+#: src/blocks/slider/edit.js:904
 msgid "Editor Setting"
 msgstr ""
 
-#: src/blocks/slider/edit.js:881
+#: src/blocks/slider/edit.js:908
 msgid "Editor Mode"
 msgstr ""
 
-#: src/blocks/slider/edit.js:896
+#: src/blocks/slider/edit.js:923
 msgid "Edit ( Stacked Layout )"
 msgstr ""
 
-#: src/blocks/slider/edit.js:909
+#: src/blocks/slider/edit.js:936
 msgid "Preview ( Slide )"
-msgstr ""
-
-#: src/blocks/slider/edit.js:992
-msgid "Slider Settings"
-msgstr ""
-
-#: src/blocks/slider/edit.js:996
-msgid "Effect "
 msgstr ""
 
 #: src/blocks/spacer/advanced-spacer-control.js:15
@@ -3143,31 +3098,6 @@ msgstr ""
 
 #: src/blocks/spacer/edit.js:75
 msgid "Spacer Settings"
-msgstr ""
-
-#: src/blocks/staff/deprecated/0.58/component.js:50
-#: src/blocks/staff/edit.js:284
-msgid "Your Name"
-msgstr ""
-
-#: src/blocks/staff/deprecated/0.58/component.js:58
-#: src/blocks/staff/edit.js:296
-msgid "Caption"
-msgstr ""
-
-#: src/blocks/staff/deprecated/0.58/component.js:66
-#: src/blocks/staff/edit.js:308
-msgid "Role position"
-msgstr ""
-
-#: src/blocks/staff/deprecated/0.58/component.js:74
-#: src/blocks/staff/edit.js:321
-msgid "Profile title"
-msgstr ""
-
-#: src/blocks/staff/deprecated/0.58/component.js:82
-#: src/blocks/staff/edit.js:337
-msgid "Profile text"
 msgstr ""
 
 #: src/blocks/staff/edit.js:145
@@ -3208,6 +3138,26 @@ msgstr ""
 
 #: src/blocks/staff/edit.js:261
 msgid "minchoBody"
+msgstr ""
+
+#: src/blocks/staff/edit.js:284
+msgid "Your Name"
+msgstr ""
+
+#: src/blocks/staff/edit.js:296
+msgid "Caption"
+msgstr ""
+
+#: src/blocks/staff/edit.js:308
+msgid "Role position"
+msgstr ""
+
+#: src/blocks/staff/edit.js:321
+msgid "Profile title"
+msgstr ""
+
+#: src/blocks/staff/edit.js:337
+msgid "Profile text"
 msgstr ""
 
 #: src/components/advanced-color-gradient-control/index.js:41

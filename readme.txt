@@ -106,8 +106,8 @@ e.g.
 
 == Changelog ==
 
-[ Other ][ Slider ] Refactoring editor script.
 [ Add Block ] Add Post list Slider block.
+[ Other ][ Slider ] Refactoring editor script.
 [ Bug fix ][ Cover ] Fixed an issue where, after setting a link in the Cover block and adding two unstyled headings inside it, the content positioning would not apply upon returning to the editing screen (editing screen only).
 [ Bug Fix ][ Grid Column Card (Pro) ] Fixed only dots being displayed as separators.
 [ Bug fix ][ Post List (Pro) ] Since WordPress 6.7.1 started outputting contain-intrinsic-size: 3000px 1500px, add a reset for this in .card.

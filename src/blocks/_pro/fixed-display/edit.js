@@ -340,10 +340,7 @@ export default function FixedDisplayEdit(props) {
 				)}
 				{mode === 'display-hide-after-time' && (
 					<PanelBody
-						title={__(
-							'Redisplay settings',
-							'vk-blocks-pro'
-						)}
+						title={__('Redisplay settings', 'vk-blocks-pro')}
 					>
 						<ToggleControl
 							label={__(

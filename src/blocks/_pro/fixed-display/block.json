@@ -39,6 +39,18 @@
 			"type": "string",
 			"default": "svh"
 		},
+		"displayAfterSeconds": {
+			"type": "number",
+			"default": 0
+		},
+		"hideAfterSeconds": {
+			"type": "number",
+			"default": 0
+		},
+		"dontShowAgain": {
+			"type": "boolean",
+			"default": false
+		},
 		"clientId": {
 			"type": "string"
 		},

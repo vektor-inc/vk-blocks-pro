@@ -1274,15 +1274,44 @@ msgstr ""
 msgid "span"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:100
+#: src/blocks/_pro/fixed-display/edit.js:129
+msgid "Fixed Display Setting"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:132
+msgid ""
+"The fixed position of the fixed position block will not change on the edit "
+"screen. Please check on the front screen."
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:139
+#: src/blocks/_pro/post-list-slider/edit.js:533
+#: src/blocks/_pro/table-of-contents-new/edit.js:114
+#: src/components/column-layout-control/index.js:69
+msgid "Display type"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:144
+msgid "Always Visible"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:148
+msgid "Show on Scroll"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:152
+msgid "Specify the time until display and hide"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:161
 msgid "Fixed position"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:104
+#: src/blocks/_pro/fixed-display/edit.js:165
 msgid "Top"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:106
+#: src/blocks/_pro/fixed-display/edit.js:167
 #: src/blocks/balloon/edit.js:434
 #: src/blocks/button/edit.js:375
 #: src/blocks/pr-content/edit.js:252
@@ -1290,11 +1319,11 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:110
+#: src/blocks/_pro/fixed-display/edit.js:171
 msgid "Bottom"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:114
+#: src/blocks/_pro/fixed-display/edit.js:175
 #: src/blocks/balloon/edit.js:422
 #: src/blocks/button/edit.js:355
 #: src/blocks/pr-content/edit.js:256
@@ -1302,57 +1331,68 @@ msgstr ""
 msgid "Left"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:122
+#: src/blocks/_pro/fixed-display/edit.js:183
 msgid "Fixed position origin"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:129
+#: src/blocks/_pro/fixed-display/edit.js:190
 msgid "Top section"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:136
+#: src/blocks/_pro/fixed-display/edit.js:197
 msgid "Bottom section"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:150
+#: src/blocks/_pro/fixed-display/edit.js:211
 msgid "Fixed position from the top"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:154
+#: src/blocks/_pro/fixed-display/edit.js:215
 msgid "Fixed position from the bottom"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:178
+#: src/blocks/_pro/fixed-display/edit.js:239
+msgid "Scroll Display Setting"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:242
 msgid "Timing to display"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:194
+#: src/blocks/_pro/fixed-display/edit.js:260
 msgid "Persist visibility once visible"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:75
-msgid "Fixed Display Setting"
+#: src/blocks/_pro/fixed-display/edit.js:274
+msgid "Timer Setting"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:78
+#: src/blocks/_pro/fixed-display/edit.js:277
 msgid ""
-"The fixed position of the fixed position block will not change on the edit "
-"screen. Please check on the front screen."
+"Set the timing for display and hide. Enter 0 to disable timing for each "
+"option."
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:85
-#: src/blocks/_pro/post-list-slider/edit.js:533
-#: src/blocks/_pro/table-of-contents-new/edit.js:114
-#: src/components/column-layout-control/index.js:69
-msgid "Display type"
+#: src/blocks/_pro/fixed-display/edit.js:286
+msgid "Seconds until display"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:90
-msgid "Always Visible"
+#: src/blocks/_pro/fixed-display/edit.js:317
+msgid "Seconds until hide"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:94
-msgid "Show on Scroll"
+#: src/blocks/_pro/fixed-display/edit.js:343
+msgid "Redisplay settings"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:349
+msgid "Do not display again until the browser is closed"
+msgstr ""
+
+#: src/blocks/_pro/fixed-display/edit.js:360
+msgid ""
+"When enabled, the same content will not be shown again until the visitor "
+"closes their browser."
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:100

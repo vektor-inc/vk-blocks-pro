@@ -150,7 +150,7 @@ export default function FixedDisplayEdit(props) {
 							},
 							{
 								label: __(
-									'Display and Hide After Time',
+									'Specify the time until display and hide',
 									'vk-blocks-pro'
 								),
 								value: 'display-hide-after-time',
@@ -284,7 +284,7 @@ export default function FixedDisplayEdit(props) {
 							<>
 								<TextControl
 									label={__(
-										'Display after seconds',
+										'Seconds until display',
 										'vk-blocks-pro'
 									)}
 									value={tempDisplayAfterSeconds}
@@ -314,7 +314,7 @@ export default function FixedDisplayEdit(props) {
 							</>
 						)}
 						<TextControl
-							label={__('Hide after seconds', 'vk-blocks-pro')}
+							label={__('Seconds until hide', 'vk-blocks-pro')}
 							value={tempHideAfterSeconds}
 							onChange={(value) => {
 								setTempHideAfterSeconds(value);
@@ -341,7 +341,7 @@ export default function FixedDisplayEdit(props) {
 				{mode === 'display-hide-after-time' && (
 					<PanelBody
 						title={__(
-							'Display Setting Until Browser is Closed',
+							'Redisplay settings',
 							'vk-blocks-pro'
 						)}
 					>

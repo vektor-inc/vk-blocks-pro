@@ -4092,7 +4092,7 @@ msgstr "カテゴリー"
 #: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:199
 #: src/blocks/_pro/taxonomy/index.php:199
 msgid "All of %s"
-msgstr ""
+msgstr "全ての%s"
 
 #: inc/vk-blocks/build/blocks/_pro/taxonomy/index.php:243
 #: src/blocks/_pro/taxonomy/index.php:243

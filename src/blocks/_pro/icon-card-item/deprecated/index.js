@@ -21,6 +21,10 @@ const blockAttributes = {
 		type: 'number',
 		default: 3,
 	},
+	col_xxl: {
+		type: 'number',
+		default: 3,
+	},
 	url: {
 		type: 'string',
 		default: '',
@@ -55,27 +59,15 @@ const blockAttributes = {
 		source: 'html',
 		selector: '.vk_icon_card_item_summary',
 	},
-};
-
-const blockAttributes2 = {
-	...blockAttributes,
 	faIcon: {
 		type: 'string',
 		default: '<i class="fas fa-user"></i>',
 	}
-}
-
-const blockAttributes3 = {
-	...blockAttributes2,
-	col_xxl: {
-		type: 'number',
-		default: 3,
-	}
-}
+};
 
 const deprecated = [
 	{
-		attributes: blockAttributes3,
+		attributes: blockAttributes,
 		save: save1_20_2
 	},
 ];

@@ -18,22 +18,18 @@ const blockAttributes = {
 		type: 'string',
 		default: 'default',
 	},
-};
-
-const blockAttributes2 = {
-	...blockAttributes,
 	color: {
 		type: 'string',
 	},
-}
+};
 
 const deprecated = [
 	{
-		attributes: blockAttributes2,
+		attributes: blockAttributes,
 		save: save1_36_2,
 	},
 	{
-		attributes: blockAttributes2,
+		attributes: blockAttributes,
 		save: save1_20_4,
 	},
 ];

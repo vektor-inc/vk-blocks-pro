@@ -75,18 +75,10 @@ const blockAttributes = {
 		type: 'number',
 		default: 0,
 	},
-};
-
-const blockAttributes2 = {
-	...blockAttributes,
 	defaultBgColor: {
 		type: 'string',
 		default: '#f3f4f5',
 	},
-};
-
-const blockAttributes3 = {
-	...blockAttributes2,
 	bgImageTablet: {
 		type: 'string',
 		default: null,
@@ -101,8 +93,8 @@ const blockAttributes3 = {
 	},
 };
 
-const blockAttributes4 = {
-	...blockAttributes3,
+const blockAttributes2 = {
+	...blockAttributes,
 	innerSideSpaceValuePC: {
 		type: "number",
 		default: 0
@@ -123,8 +115,8 @@ const blockAttributes4 = {
 
 
 // 1.34.1 から attributes を変更
-const blockAttributes5 = {
-	...blockAttributes4,
+const blockAttributes3 = {
+	...blockAttributes2,
 	clientId: {
 		type: 'string',
 	},
@@ -134,8 +126,8 @@ const blockAttributes5 = {
 };
 
 // 1.61.2 から attributes を変更
-const blockAttributes6 = {
-	...blockAttributes5,
+const blockAttributes4 = {
+	...blockAttributes3,
 	levelSettingPerDevice: {
 		type: 'boolean',
 	},
@@ -160,16 +152,16 @@ const blockAttributes6 = {
 };
 
 // 1.64.0 から attributes を変更
-const blockAttributes7 = {
-	...blockAttributes6,
+const blockAttributes5 = {
+	...blockAttributes4,
 	minHeight: {
 		type: 'object',
 	},
 };
 
 // 1.71.0 から attributes を変更
-const blockAttributes8 = {
-	...blockAttributes7,
+const blockAttributes6 = {
+	...blockAttributes5,
 	linkUrl: {
 		type: 'string',
 	},
@@ -181,48 +173,48 @@ const blockAttributes8 = {
 
 const deprecated = [
 	{
-		attributes: blockAttributes8,
+		attributes: blockAttributes6,
 		save: save1_89_0,
 	},
 	{
-		attributes: blockAttributes8,
+		attributes: blockAttributes6,
 		save: save1_76_0,
 	},
 	{
-		attributes: blockAttributes7,
+		attributes: blockAttributes5,
 		save: save1_71_0,
 	},
 	{
-		attributes: blockAttributes6,
+		attributes: blockAttributes4,
 		save: save1_64_0,
 	},
 	{
-		attributes: blockAttributes5,
+		attributes: blockAttributes3,
 		save: save1_61_2,
 	},
 	{
-		attributes: blockAttributes5,
+		attributes: blockAttributes3,
 		save: save1_60_0,
 	},
 	{
-		attributes: blockAttributes5,
+		attributes: blockAttributes3,
 		save: save1_50_1,
 	},
 	//ブロックテンプレート用のdeprecated
 	{
-		attributes: blockAttributes5,
+		attributes: blockAttributes3,
 		save: save1_36_2,
 	},
 	{
-		attributes: blockAttributes4,
+		attributes: blockAttributes2,
 		save: save1_34_1,
 	},
 	{
-		attributes: blockAttributes4,
+		attributes: blockAttributes2,
 		save: save1_26_0,
 	},
 	{
-		attributes: blockAttributes3,
+		attributes: blockAttributes,
 		save: save1_0_13,
 	},
 ];

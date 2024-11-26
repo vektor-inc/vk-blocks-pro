@@ -173,6 +173,7 @@ export function DisplayCondition(props) {
 						schema={'isCheckedTerms'}
 						rawData={taxonomiesProps}
 						checkedData={isCheckedTermsData}
+						setAttributes={setAttributes}
 						saveState={saveStateTerms}
 						removeState={removeStateTerms}
 						{...props}
@@ -263,6 +264,7 @@ export function DisplayCondition(props) {
 					setAttributes={setAttributes}
 					saveState={saveStatePostTypes}
 					removeState={removeStateTerms}
+					{...props}
 				/>
 			</BaseControl>
 			<hr />

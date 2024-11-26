@@ -2849,14 +2849,14 @@ msgstr ""
 #: src/blocks/button/edit.js:767
 #: src/blocks/heading/edit.js:339
 #: src/blocks/pr-content/edit.js:219
-#: src/components/scroll-hint/index.js:115
+#: src/components/scroll-hint/index.js:118
 msgid "Before text"
 msgstr ""
 
 #: src/blocks/button/edit.js:789
 #: src/blocks/heading/edit.js:348
 #: src/blocks/pr-content/edit.js:231
-#: src/components/scroll-hint/index.js:137
+#: src/components/scroll-hint/index.js:143
 msgid "After text"
 msgstr ""
 
@@ -3441,7 +3441,7 @@ msgstr ""
 msgid "Display the icon before the text"
 msgstr ""
 
-#: src/components/scroll-hint/index.js:131
+#: src/components/scroll-hint/index.js:134
 msgid "Display the icon after the text."
 msgstr ""
 

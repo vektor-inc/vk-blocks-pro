@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.91.2.0\n"
+"Project-Id-Version: VK Blocks Pro 1.92.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-11-26T17:02:25+00:00\n"
+"POT-Creation-Date: 2024-11-26T17:52:03+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -2844,14 +2844,14 @@ msgstr ""
 #: src/blocks/button/edit.js:767
 #: src/blocks/heading/edit.js:339
 #: src/blocks/pr-content/edit.js:219
-#: src/components/scroll-hint/index.js:115
+#: src/components/scroll-hint/index.js:118
 msgid "Before text"
 msgstr ""
 
 #: src/blocks/button/edit.js:789
 #: src/blocks/heading/edit.js:348
 #: src/blocks/pr-content/edit.js:231
-#: src/components/scroll-hint/index.js:137
+#: src/components/scroll-hint/index.js:143
 msgid "After text"
 msgstr ""
 
@@ -3419,7 +3419,7 @@ msgstr ""
 msgid "Display the icon before the text"
 msgstr ""
 
-#: src/components/scroll-hint/index.js:131
+#: src/components/scroll-hint/index.js:134
 msgid "Display the icon after the text."
 msgstr ""
 

@@ -78,13 +78,18 @@ function handleVisibility(
 	blockId,
 	dontShowAgain
 ) {
-	const mode = item.classList.contains(
-		'vk_fixed-display-mode-display-hide-after-time'
-	)
-		? 'display-hide-after-time'
-		: item.classList.contains('vk_fixed-display-mode-show-on-scroll')
-			? 'show-on-scroll'
-			: 'always-visible';
+	let mode;
+	if (
+		item.classList.contains('vk_fixed-display-mode-display-hide-after-time')
+	) {
+		mode = 'display-hide-after-time';
+	} else if (
+		item.classList.contains('vk_fixed-display-mode-show-on-scroll')
+	) {
+		mode = 'show-on-scroll';
+	} else {
+		mode = 'always-visible';
+	}
 
 	// displayAfterSeconds が設定されている場合
 	if (
@@ -94,7 +99,7 @@ function handleVisibility(
 	) {
 		setTimeout(() => {
 			if (!item.classList.contains('is-timed-visible')) {
-				item.classList.add('is-timed-visible')
+				item.classList.add('is-timed-visible');
 				if (dontShowAgain) {
 					setSessionStorageFlag(`displayed_${blockId}`, 'true');
 				}
@@ -117,7 +122,6 @@ function handleVisibility(
 		mode === 'display-hide-after-time' &&
 		(displayAfterSeconds === null || displayAfterSeconds < 0)
 	) {
-
 		// hideAfterSeconds の時間後に非表示クラスを付与
 		if (hideAfterSeconds > 0) {
 			setTimeout(() => {

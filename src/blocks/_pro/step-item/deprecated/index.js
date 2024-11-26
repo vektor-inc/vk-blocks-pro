@@ -23,23 +23,19 @@ const blockAttributes = {
 		type: 'number',
 		default: 1,
 	},
-};
-
-const blockAttributes2 = {
-	...blockAttributes,
 	faIcon: {
 		type: 'string',
 		default: '',
 	},
-}
+};
 
 const deprecated = [
 	{
-		attributes: blockAttributes2,
+		attributes: blockAttributes,
 		save: save1_36_2,
 	},
 	{
-		attributes: blockAttributes2,
+		attributes: blockAttributes,
 		save: save1_20_0,
 	},
 ];

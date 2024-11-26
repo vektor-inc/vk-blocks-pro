@@ -31,6 +31,13 @@ export function DisplayCondition(props) {
 		offset,
 	} = attributes;
 
+	// 以前の値を切り替え
+	useEffect(() => {
+		if (targetPeriod === undefined) {
+			setAttributes({ targetPeriod: 'all' });
+		}
+	}, [targetPeriod, setAttributes]);
+
 	const [isCheckedTermsData, setIsCheckedTermsData] = useState(
 		JSON.parse(fixBrokenUnicode(isCheckedTerms))
 	);
@@ -51,11 +58,66 @@ export function DisplayCondition(props) {
 		});
 	});
 
-	useEffect(() => {
-		if (targetPeriod === undefined) {
-			setAttributes({ targetPeriod: 'all' });
+	const saveStateTerms = (termId) => {
+		if (!isCheckedTermsData.includes(termId)) {
+			isCheckedTermsData.push(termId);
+			setIsCheckedTermsData([...isCheckedTermsData]);
 		}
-	}, [targetPeriod, setAttributes]);
+	};
+
+	const removeStateTerms = (termId) => {
+		const newTermsData = isCheckedTermsData.filter((id) => id !== termId);
+		setIsCheckedTermsData(newTermsData);
+		setAttributes({
+			isCheckedTerms: JSON.stringify(newTermsData),
+		});
+	};
+
+	const saveStatePostTypes = (slug) => {
+		let newPostTypeData = [...isCheckedPostTypeData];
+		let newTermsData = [...isCheckedTermsData];
+		if (!newPostTypeData.includes(slug)) {
+			newPostTypeData.push(slug);
+		} else {
+			newPostTypeData = newPostTypeData.filter((type) => type !== slug);
+			const postTypeTaxonomies = postTypeToTaxonomyMap[slug] || [];
+			postTypeTaxonomies.forEach((taxonomy) => {
+				const terms = termsByTaxonomyName[taxonomy] || [];
+				terms.forEach((term) => {
+					newTermsData = newTermsData.filter(
+						(id) => id !== term.term_id
+					);
+				});
+			});
+		}
+		setIsCheckedPostTypeData(newPostTypeData);
+		setIsCheckedTermsData(newTermsData);
+		setAttributes({
+			isCheckedPostType: JSON.stringify(newPostTypeData),
+			isCheckedTerms: JSON.stringify(newTermsData),
+		});
+	};
+
+	let postTypesProps = vk_block_post_type_params.post_type_option;
+
+	// メディアと再利用ブロックを除外
+	postTypesProps = postTypesProps.filter(
+		(postType) =>
+			'attachment' !== postType.slug && 'wp_block' !== postType.slug
+	);
+
+	const replaceIsCheckedTermData = (taxonomyRestbase, termIds, newIds) => {
+		const removedTermIds = termIds.filter((termId) => {
+			let find = false;
+			termsByTaxonomyName[taxonomyRestbase].forEach((term) => {
+				if (term.term_id === termId) {
+					find = true;
+				}
+			});
+			return !find;
+		});
+		return removedTermIds.concat(newIds);
+	};
 
 	const getTaxonomiesByPostType = (postType) => {
 		return taxonomies.filter((taxonomy) => {
@@ -173,9 +235,8 @@ export function DisplayCondition(props) {
 						schema={'isCheckedTerms'}
 						rawData={taxonomiesProps}
 						checkedData={isCheckedTermsData}
-						setAttributes={setAttributes}
 						saveState={saveStateTerms}
-						removeState={removeStateTerms}
+						removeState={removeStateTerms} // チェック解除時の処理を追加
 						{...props}
 					/>
 				</BaseControl>
@@ -187,66 +248,14 @@ export function DisplayCondition(props) {
 		if (offset === undefined || offset === null || offset === '') {
 			setAttributes({ offset: 0 });
 		}
-	}, [offset, setAttributes]);
+	}, [offset]);
 
-	const saveStateTerms = (termId) => {
-		if (!isCheckedTermsData.includes(termId)) {
-			isCheckedTermsData.push(termId);
-			setIsCheckedTermsData([...isCheckedTermsData]);
-		}
-	};
-
-	const removeStateTerms = (termId) => {
-		const newTermsData = isCheckedTermsData.filter((id) => id !== termId);
-		setIsCheckedTermsData(newTermsData);
-		setAttributes({ isCheckedTerms: JSON.stringify(newTermsData) });
-	};
-
-	const saveStatePostTypes = (slug) => {
-		let newPostTypeData = [...isCheckedPostTypeData];
-		let newTermsData = [...isCheckedTermsData];
-		if (!newPostTypeData.includes(slug)) {
-			newPostTypeData.push(slug);
-		} else {
-			newPostTypeData = newPostTypeData.filter((type) => type !== slug);
-			const postTypeTaxonomies = postTypeToTaxonomyMap[slug] || [];
-			postTypeTaxonomies.forEach((taxonomy) => {
-				const terms = termsByTaxonomyName[taxonomy] || [];
-				terms.forEach((term) => {
-					newTermsData = newTermsData.filter(
-						(id) => id !== term.term_id
-					);
-				});
-			});
-		}
-		setIsCheckedPostTypeData(newPostTypeData);
-		setIsCheckedTermsData(newTermsData);
+	useEffect(() => {
 		setAttributes({
-			isCheckedPostType: JSON.stringify(newPostTypeData),
-			isCheckedTerms: JSON.stringify(newTermsData),
+			isCheckedPostType: JSON.stringify(isCheckedPostTypeData),
+			isCheckedTerms: JSON.stringify(isCheckedTermsData),
 		});
-	};
-
-	let postTypesProps = vk_block_post_type_params.post_type_option;
-
-	// メディアと再利用ブロックを除外
-	postTypesProps = postTypesProps.filter(
-		(postType) =>
-			postType.slug !== 'attachment' && postType.slug !== 'wp_block'
-	);
-
-	const replaceIsCheckedTermData = (taxonomyRestbase, termIds, newIds) => {
-		const removedTermIds = termIds.filter((termId) => {
-			let find = false;
-			termsByTaxonomyName[taxonomyRestbase].forEach((term) => {
-				if (term.term_id === termId) {
-					find = true;
-				}
-			});
-			return !find;
-		});
-		return removedTermIds.concat(newIds);
-	};
+	}, [isCheckedPostTypeData, isCheckedTermsData]);
 
 	return (
 		<PanelBody

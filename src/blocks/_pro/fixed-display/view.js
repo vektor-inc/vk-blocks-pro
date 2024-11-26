@@ -40,8 +40,8 @@ window.addEventListener('scroll', function () {
 		// ブロックの状態を取得
 		const blockState = blockStates.get(blockId);
 
+		// 一度非表示にされたら再表示しない
 		if (window.scrollY > timingInPixels && !blockState.wasHidden) {
-			// 表示ロジック
 			if (!item.classList.contains('is-visible')) {
 				item.classList.add('is-visible');
 
@@ -78,30 +78,52 @@ function handleVisibility(
 	blockId,
 	dontShowAgain
 ) {
-	const mode = item.getAttribute('data-mode');
+	const mode = item.classList.contains(
+		'vk_fixed-display-mode-display-hide-after-time'
+	)
+		? 'display-hide-after-time'
+		: item.classList.contains('vk_fixed-display-mode-show-on-scroll')
+			? 'show-on-scroll'
+			: 'always-visible';
 
-	// displayAfterSeconds が 0 以上の場合に表示
-	if (mode === 'display-hide-after-time' && displayAfterSeconds >= 0) {
+	// displayAfterSeconds が設定されている場合
+	if (
+		mode === 'display-hide-after-time' &&
+		displayAfterSeconds !== null &&
+		displayAfterSeconds >= 0
+	) {
 		setTimeout(() => {
 			if (!item.classList.contains('is-timed-visible')) {
-				item.classList.add('is-timed-visible');
+				item.classList.add('is-timed-visible')
 				if (dontShowAgain) {
 					setSessionStorageFlag(`displayed_${blockId}`, 'true');
 				}
 			}
+
+			// hideAfterSeconds が設定されている場合に非表示処理を追加
+			if (hideAfterSeconds > 0) {
+				setTimeout(() => {
+					if (item.classList.contains('is-timed-visible')) {
+						item.classList.remove('is-timed-visible');
+						item.classList.add('is-timed-hide');
+					}
+				}, hideAfterSeconds * 1000);
+			}
 		}, displayAfterSeconds * 1000);
 	}
 
-	// hideAfterSeconds が 0 より大きい場合に非表示
-	if (hideAfterSeconds > 0) {
-		setTimeout(
-			() => {
-				if (item.classList.contains('is-timed-visible')) {
-					item.classList.remove('is-timed-visible');
-				}
-			},
-			(displayAfterSeconds || 0) * 1000 + hideAfterSeconds * 1000
-		);
+	// displayAfterSeconds が null の場合
+	if (
+		mode === 'display-hide-after-time' &&
+		(displayAfterSeconds === null || displayAfterSeconds < 0)
+	) {
+
+		// hideAfterSeconds の時間後に非表示クラスを付与
+		if (hideAfterSeconds > 0) {
+			setTimeout(() => {
+				item.classList.add('is-timed-hide');
+			}, hideAfterSeconds * 1000);
+		}
 	}
 }
 

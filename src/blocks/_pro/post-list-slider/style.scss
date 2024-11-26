@@ -2,6 +2,9 @@
 /* CSS
 /*-------------------------------------------*/
 .vk_post_list_slider {
+	.swiper-slide{
+		font-size: unset; //カード（インテキスト）でズレるので打ち消し
+	}
 	.vk_post {
 		width: calc(100% - 30px);
 		&.postListText {

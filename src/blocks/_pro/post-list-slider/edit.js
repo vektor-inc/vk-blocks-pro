@@ -28,7 +28,6 @@ import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block'
 import { DisplayItemsControl } from '@vkblocks/components/display-items-control';
 import { AdvancedCheckboxControl } from '@vkblocks/components/advanced-checkbox-control';
 import { AdvancedToggleControl } from '@vkblocks/components/advanced-toggle-control';
-import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import { MultiItemSetting } from './multi-item-setting.js';
 
 export default function PostListSliderEdit(props) {
@@ -734,20 +733,6 @@ export default function PostListSliderEdit(props) {
 							onChange={(value) =>
 								setAttributes({ navigationPosition: value })
 							}
-						/>
-					</BaseControl>
-				</PanelBody>
-				<PanelBody
-					title={__('Background Color Setting', 'vk-blocks-pro')}
-					initialOpen={false}
-				>
-					<BaseControl
-						label={__('Background Color', 'vk-blocks-pro')}
-						id={`vk_postList-blockId`}
-					>
-						<AdvancedColorPalette
-							schema={'backGroundColor'}
-							{...props}
 						/>
 					</BaseControl>
 				</PanelBody>

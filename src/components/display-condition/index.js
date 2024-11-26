@@ -1,34 +1,37 @@
 /* global vk_block_post_type_params */
 import { __, sprintf } from '@wordpress/i18n';
 import {
+	RangeControl,
 	PanelBody,
 	BaseControl,
-	ButtonGroup,
-	Button,
-	RangeControl,
 	SelectControl,
 	CheckboxControl,
+	ButtonGroup,
+	Button,
 	TextControl,
 	FormTokenField,
 } from '@wordpress/components';
-import { useTaxonomies } from '@vkblocks/utils/hooks';
 import { useState, useEffect } from '@wordpress/element';
-import { AdvancedCheckboxControl } from '@vkblocks/components/advanced-checkbox-control';
+// Load VK Blocks Utils
+import { useTaxonomies } from '@vkblocks/utils/hooks';
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
+
+// Load VK Blocks Compornents
+import { AdvancedCheckboxControl } from '@vkblocks/components/advanced-checkbox-control';
 
 export function DisplayCondition(props) {
 	const { attributes, setAttributes } = props;
 	const {
+		numberPosts,
 		isCheckedPostType,
+		taxQueryRelation,
 		isCheckedTerms,
+		offset,
 		targetPeriod,
 		order,
 		orderby,
-		taxQueryRelation,
-		numberPosts,
 		selfIgnore,
 		pagedlock,
-		offset,
 	} = attributes;
 
 	// 以前の値を切り替え

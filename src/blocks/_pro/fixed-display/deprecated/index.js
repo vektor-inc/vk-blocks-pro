@@ -1,5 +1,6 @@
 import save1_75_0 from './1.75.0/save';
 import save1_81_1 from './1.81.1/save';
+import save1_86_0 from './1.86.0/save';
 
 const blockAttributes = {
 	mode: {
@@ -54,7 +55,27 @@ const blockAttributes2 = {
 	},
 };
 
+const blockAttributes3 = {
+	...blockAttributes2,
+	displayAfterSeconds: {
+		type: 'number',
+		default: 0
+	},
+	hideAfterSeconds: {
+		type: 'number',
+		default: 0
+	},
+	dontShowAgain: {
+		type: 'boolean',
+		default: false,
+	},
+};
+
 const deprecated = [
+	{
+		attributes: blockAttributes3,
+		save: save1_86_0,
+	},
 	{
 		attributes: blockAttributes2,
 		save: save1_81_1,

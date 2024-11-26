@@ -27,6 +27,11 @@ window.addEventListener('scroll', function () {
 			item.getAttribute('data-persist-visible') === 'true';
 		const timingInPixels = convertUnitToPixels(timing, unit);
 
+		const hideAfterSecondsAttr = item.getAttribute(
+			'data-hide-after-seconds'
+		);
+		const hideAfterSeconds = parseFloat(hideAfterSecondsAttr) || 0;
+
 		// 初期状態をマップに設定
 		if (!blockStates.has(blockId)) {
 			blockStates.set(blockId, { wasHidden: false });
@@ -35,15 +40,10 @@ window.addEventListener('scroll', function () {
 		// ブロックの状態を取得
 		const blockState = blockStates.get(blockId);
 
-		// 一度非表示にされたら再表示しない (ページリロードでリセットされる)
+		// 一度非表示にされたら再表示しない
 		if (window.scrollY > timingInPixels && !blockState.wasHidden) {
 			if (!item.classList.contains('is-visible')) {
 				item.classList.add('is-visible');
-
-				const hideAfterSecondsAttr = item.getAttribute(
-					'data-hide-after-seconds'
-				);
-				const hideAfterSeconds = parseFloat(hideAfterSecondsAttr) || 0;
 
 				// 非表示タイマーの処理
 				if (hideAfterSeconds > 0 && !scrollPersistVisible) {
@@ -55,9 +55,17 @@ window.addEventListener('scroll', function () {
 					}, hideAfterSeconds * 1000);
 				}
 			}
-		} else if (!scrollPersistVisible && blockState.wasHidden) {
-			// タイミングを超えなかった場合、Persistが無効な時に非表示
-			item.classList.remove('is-visible');
+		} else {
+			// 非表示ロジック
+			if (!scrollPersistVisible && blockState.wasHidden) {
+				// 一度非表示になったものは再表示しない
+				return;
+			}
+			if (!scrollPersistVisible) {
+				if (item.classList.contains('is-visible')) {
+					item.classList.remove('is-visible');
+				}
+			}
 		}
 	});
 });
@@ -70,8 +78,25 @@ function handleVisibility(
 	blockId,
 	dontShowAgain
 ) {
-	// displayAfterSeconds が 0 以上の場合に表示
-	if (displayAfterSeconds >= 0) {
+	let mode;
+	if (
+		item.classList.contains('vk_fixed-display-mode-display-hide-after-time')
+	) {
+		mode = 'display-hide-after-time';
+	} else if (
+		item.classList.contains('vk_fixed-display-mode-show-on-scroll')
+	) {
+		mode = 'show-on-scroll';
+	} else {
+		mode = 'always-visible';
+	}
+
+	// displayAfterSeconds が設定されている場合
+	if (
+		mode === 'display-hide-after-time' &&
+		displayAfterSeconds !== null &&
+		displayAfterSeconds >= 0
+	) {
 		setTimeout(() => {
 			if (!item.classList.contains('is-timed-visible')) {
 				item.classList.add('is-timed-visible');
@@ -79,19 +104,30 @@ function handleVisibility(
 					setSessionStorageFlag(`displayed_${blockId}`, 'true');
 				}
 			}
+
+			// hideAfterSeconds が設定されている場合に非表示処理を追加
+			if (hideAfterSeconds > 0) {
+				setTimeout(() => {
+					if (item.classList.contains('is-timed-visible')) {
+						item.classList.remove('is-timed-visible');
+						item.classList.add('is-timed-hide');
+					}
+				}, hideAfterSeconds * 1000);
+			}
 		}, displayAfterSeconds * 1000);
 	}
 
-	// hideAfterSeconds が 0 より大きい場合に非表示
-	if (hideAfterSeconds > 0) {
-		setTimeout(
-			() => {
-				if (item.classList.contains('is-timed-visible')) {
-					item.classList.remove('is-timed-visible');
-				}
-			},
-			(displayAfterSeconds || 0) * 1000 + hideAfterSeconds * 1000
-		);
+	// displayAfterSeconds が null の場合
+	if (
+		mode === 'display-hide-after-time' &&
+		(displayAfterSeconds === null || displayAfterSeconds < 0)
+	) {
+		// hideAfterSeconds の時間後に非表示クラスを付与
+		if (hideAfterSeconds > 0) {
+			setTimeout(() => {
+				item.classList.add('is-timed-hide');
+			}, hideAfterSeconds * 1000);
+		}
 	}
 }
 
@@ -123,11 +159,11 @@ function initializeDisplayHide() {
 		const mode = item.getAttribute('data-mode');
 
 		if (mode === 'show-on-scroll') {
-			// スクロール時の動作は scroll イベントで制御
+			// スクロール時の動作は scroll イベントで制御するため、何もしない
 			return;
 		}
 
-		// 他のモードは初期表示とタイマーを適用
+		// "スクロールしたら表示"以外のモードでのみ handleVisibility を適用
 		handleVisibility(
 			item,
 			displayAfterSeconds,

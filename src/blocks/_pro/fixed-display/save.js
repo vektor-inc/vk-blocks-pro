@@ -22,7 +22,9 @@ export default function save({ attributes }) {
 
 	// "show-on-scroll"モードのときにのみスクロール関連の属性を設定
 	if (mode === 'show-on-scroll') {
-		dataAttributes['data-scroll-timing'] = scrollTiming.toString();
+		dataAttributes['data-scroll-timing'] = scrollTiming
+			? scrollTiming.toString()
+			: '0';
 		dataAttributes['data-scroll-timing-unit'] = scrollTimingUnit;
 		if (scrollPersistVisible) {
 			dataAttributes['data-persist-visible'] = 'true';

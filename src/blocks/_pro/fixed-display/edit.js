@@ -334,7 +334,10 @@ export default function FixedDisplayEdit(props) {
 							type="number"
 							min="0"
 							step="0.1"
-							disabled={scrollPersistVisible}
+							disabled={
+								scrollPersistVisible &&
+								mode === 'show-on-scroll'
+							}
 						/>
 					</PanelBody>
 				)}

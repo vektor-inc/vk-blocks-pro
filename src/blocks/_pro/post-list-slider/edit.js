@@ -28,7 +28,6 @@ import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block'
 import { DisplayItemsControl } from '@vkblocks/components/display-items-control';
 import { AdvancedCheckboxControl } from '@vkblocks/components/advanced-checkbox-control';
 import { AdvancedToggleControl } from '@vkblocks/components/advanced-toggle-control';
-import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import { MultiItemSetting } from './multi-item-setting.js';
 
 export default function PostListSliderEdit(props) {

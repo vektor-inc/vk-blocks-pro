@@ -106,7 +106,10 @@ const ScrollMessageControls = ({
 							' )'}
 					</h4>
 					<ToggleControl
-						label={__('Output Before Text Icon', 'vk-blocks-pro')}
+						label={__(
+							'Display the icon before the text',
+							'vk-blocks-pro'
+						)}
 						checked={iconOutputLeft}
 						onChange={() => handleIconOutputToggle('left')}
 					/>
@@ -128,7 +131,10 @@ const ScrollMessageControls = ({
 						</BaseControl>
 					)}
 					<ToggleControl
-						label={__('Output After Text Icon', 'vk-blocks-pro')}
+						label={__(
+							'Display the icon after the text.',
+							'vk-blocks-pro'
+						)}
 						checked={iconOutputRight}
 						onChange={() => handleIconOutputToggle('right')}
 					/>

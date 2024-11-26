@@ -107,11 +107,13 @@ e.g.
 == Changelog ==
 
 [ Other ][ Post list (Pro) / Post list slider (Pro) ] Refactored "Display Conditions" by modularizing them into components.
-[ Specification change ] Change the style of the options page to Gutenberg components.
-[ Other ][ Slider ] Refactoring editor script.
+
+= 1.92.0 =
 [ Add Block ] Add Post list Slider block.
-[ Bug fix ][ Cover ] Fixed an issue where, after setting a link in the Cover block and adding two unstyled headings inside it, the content positioning would not apply upon returning to the editing screen (editing screen only).
-[ Design Bug Fix ] [ Grid Column Card (Pro) ] Fixed only dots being displayed as separators.
+[ Add function ][ Fixed Display (Pro) ] Added a timer feature to control block appearance/disappearance and a "Do not show again for returning visitors" option. Session Storage is used, and no personal data is collected or tracked. Since Session Storage is used, the block may reappear after the browser is closed or in private browsing mode.
+[ Bug Fix ][ Grid Column Card (Pro) ] Fixed only dots being displayed as separators.
+[ Bug fix ][ Post List (Pro) ] Since WordPress 6.7.1 started outputting contain-intrinsic-size: 3000px 1500px, add a reset for this in .card.
+[ Other ][ Slider ] Refactoring editor script.
 
 = 1.91.2 =
 [ Bug fix ] Fix checkbox misalignment in the admin panel.

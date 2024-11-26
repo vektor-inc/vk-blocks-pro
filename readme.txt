@@ -106,10 +106,12 @@ e.g.
 
 == Changelog ==
 
+[ Other ][ Post list (Pro) / Post list slider (Pro) ] Refactored "Display Conditions" by modularizing them into components.
+[ Specification change ] Change the style of the options page to Gutenberg components.
 [ Other ][ Slider ] Refactoring editor script.
 [ Add Block ] Add Post list Slider block.
 [ Bug fix ][ Cover ] Fixed an issue where, after setting a link in the Cover block and adding two unstyled headings inside it, the content positioning would not apply upon returning to the editing screen (editing screen only).
-[ Design Bug Fix ] [ Grid Column Card ( Pro ) ] Fixed only dots being displayed as separators.
+[ Design Bug Fix ] [ Grid Column Card (Pro) ] Fixed only dots being displayed as separators.
 
 = 1.91.2 =
 [ Bug fix ] Fix checkbox misalignment in the admin panel.

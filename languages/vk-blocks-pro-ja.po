@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2024-11-25T15:29:14+00:00\n"
+"POT-Creation-Date: 2024-11-26T17:01:18+00:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -339,7 +339,6 @@ msgstr "文字の色"
 #: src/admin/custom-format/index.js:239
 #: src/blocks/_pro/grid-column-item/edit.js:108
 #: src/blocks/_pro/gridcolcard/edit-common.js:175
-#: src/blocks/_pro/post-list-slider/edit.js:745
 #: src/blocks/border-box/edit.js:248 src/blocks/button/edit.js:732
 #: src/blocks/icon/edit.js:318
 msgid "Background Color"
@@ -822,10 +821,8 @@ msgid "Settings"
 msgstr "設定"
 
 #: src/blocks/_pro/blog-card-excerpt/edit.js:81
-#, fuzzy
-#| msgid "Number of Posts"
 msgid "Max number of words"
-msgstr "表示件数"
+msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:102
 msgid "Aspect ratio"
@@ -1011,7 +1008,7 @@ msgstr ""
 
 #: src/blocks/_pro/card-item/edit.js:182 src/blocks/_pro/card/edit.js:134
 #: src/blocks/_pro/icon-card/edit.js:75
-#: src/blocks/_pro/post-list-slider/edit.js:484
+#: src/blocks/_pro/post-list-slider/edit.js:483
 #: src/blocks/_pro/post-list/edit.js:442
 msgid "Title"
 msgstr "タイトル"
@@ -1092,7 +1089,7 @@ msgid "Check your settings from the settings sidebar."
 msgstr "設定サイドバーから設定を確認してください。"
 
 #: src/blocks/_pro/child-page/edit.js:115
-#: src/blocks/_pro/post-list-slider/edit.js:352
+#: src/blocks/_pro/post-list-slider/edit.js:351
 #: src/blocks/_pro/post-list/edit.js:310
 msgid "Display conditions"
 msgstr "表示条件"
@@ -1102,7 +1099,7 @@ msgid "Parent"
 msgstr "親ページ"
 
 #: src/blocks/_pro/child-page/edit.js:134
-#: src/blocks/_pro/post-list-slider/edit.js:522
+#: src/blocks/_pro/post-list-slider/edit.js:521
 #: src/blocks/_pro/post-list/edit.js:480
 msgid "Ignore this post"
 msgstr "この投稿を除く"
@@ -1295,7 +1292,7 @@ msgstr ""
 "ださい。"
 
 #: src/blocks/_pro/fixed-display/edit.js:139
-#: src/blocks/_pro/post-list-slider/edit.js:533
+#: src/blocks/_pro/post-list-slider/edit.js:532
 #: src/blocks/_pro/table-of-contents-new/edit.js:114
 #: src/components/column-layout-control/index.js:69
 msgid "Display type"
@@ -1389,7 +1386,7 @@ msgstr "表示するまでの秒数"
 msgid "Seconds until hide"
 msgstr "非表示にするまでの秒数"
 
-#: src/blocks/_pro/fixed-display/edit.js:343
+#: src/blocks/_pro/fixed-display/edit.js:346
 msgid "Redisplay settings"
 msgstr "再表示設定"
 
@@ -1552,7 +1549,7 @@ msgid "Display"
 msgstr "表示"
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:155
-#: src/blocks/_pro/post-list-slider/edit.js:719 src/blocks/heading/edit.js:376
+#: src/blocks/_pro/post-list-slider/edit.js:718 src/blocks/heading/edit.js:376
 #: src/blocks/slider/edit.js:535
 msgid "Hide"
 msgstr "非表示"
@@ -1952,67 +1949,67 @@ msgid "Auto"
 msgstr "自動"
 
 #. Filter by %s
-#: src/blocks/_pro/post-list-slider/edit.js:260
+#: src/blocks/_pro/post-list-slider/edit.js:259
 #: src/blocks/_pro/post-list/edit.js:237
 msgid "Filter by %s"
 msgstr "%sで絞り込み"
 
-#: src/blocks/_pro/post-list-slider/edit.js:356
+#: src/blocks/_pro/post-list-slider/edit.js:355
 #: src/blocks/_pro/post-list/edit.js:314
 msgid "Filter by PostTypes"
 msgstr "投稿タイプ"
 
-#: src/blocks/_pro/post-list-slider/edit.js:369
+#: src/blocks/_pro/post-list-slider/edit.js:368
 #: src/blocks/_pro/post-list/edit.js:327
 msgid "Taxonomy filter condition"
 msgstr "分類絞り込み条件"
 
-#: src/blocks/_pro/post-list-slider/edit.js:380
+#: src/blocks/_pro/post-list-slider/edit.js:379
 #: src/blocks/_pro/post-list/edit.js:338
 msgid "OR ( Whichever apply )"
 msgstr "OR ( どれか )"
 
-#: src/blocks/_pro/post-list-slider/edit.js:390
+#: src/blocks/_pro/post-list-slider/edit.js:389
 #: src/blocks/_pro/post-list/edit.js:348
 msgid "AND ( All apply )"
 msgstr "AND ( すべて )"
 
-#: src/blocks/_pro/post-list-slider/edit.js:396
+#: src/blocks/_pro/post-list-slider/edit.js:395
 #: src/blocks/_pro/post-list/edit.js:354
 msgid "Number of Posts"
 msgstr "表示件数"
 
-#: src/blocks/_pro/post-list-slider/edit.js:409
+#: src/blocks/_pro/post-list-slider/edit.js:408
 #: src/blocks/_pro/post-list/edit.js:367
 msgid "Filter by Date"
 msgstr "日付で絞り込み"
 
-#: src/blocks/_pro/post-list-slider/edit.js:413
+#: src/blocks/_pro/post-list-slider/edit.js:412
 #: src/blocks/_pro/post-list/edit.js:371
 msgid "Period of Time"
 msgstr "期間"
 
-#: src/blocks/_pro/post-list-slider/edit.js:421
+#: src/blocks/_pro/post-list-slider/edit.js:420
 #: src/blocks/_pro/post-list/edit.js:379
 msgid "Whole Period"
 msgstr "全期間"
 
-#: src/blocks/_pro/post-list-slider/edit.js:425
+#: src/blocks/_pro/post-list-slider/edit.js:424
 #: src/blocks/_pro/post-list/edit.js:383
 msgid "From Today"
 msgstr "今日以降"
 
-#: src/blocks/_pro/post-list-slider/edit.js:429
+#: src/blocks/_pro/post-list-slider/edit.js:428
 #: src/blocks/_pro/post-list/edit.js:387
 msgid "From Now"
 msgstr "現在以降"
 
-#: src/blocks/_pro/post-list-slider/edit.js:433
+#: src/blocks/_pro/post-list-slider/edit.js:432
 #: src/blocks/_pro/post-list/edit.js:391
 msgid "From Tomorrow"
 msgstr "明日以降"
 
-#: src/blocks/_pro/post-list-slider/edit.js:438
+#: src/blocks/_pro/post-list-slider/edit.js:437
 #: src/blocks/_pro/post-list/edit.js:396
 msgid ""
 "* If you choose a future period, you will need to customize it so that "
@@ -2021,127 +2018,127 @@ msgstr ""
 "※ 未来の期間を選択する場合は、未来の投稿が即時公開になるように別途カスタマイ"
 "ズが必要です。"
 
-#: src/blocks/_pro/post-list-slider/edit.js:445
+#: src/blocks/_pro/post-list-slider/edit.js:444
 #: src/blocks/_pro/post-list/edit.js:403
 msgid "Order"
 msgstr "表示順"
 
-#: src/blocks/_pro/post-list-slider/edit.js:454
+#: src/blocks/_pro/post-list-slider/edit.js:453
 #: src/blocks/_pro/post-list/edit.js:412
 msgid "ASC"
 msgstr "昇順"
 
-#: src/blocks/_pro/post-list-slider/edit.js:458
+#: src/blocks/_pro/post-list-slider/edit.js:457
 #: src/blocks/_pro/post-list/edit.js:416
 msgid "DESC"
 msgstr "降順"
 
-#: src/blocks/_pro/post-list-slider/edit.js:464
+#: src/blocks/_pro/post-list-slider/edit.js:463
 #: src/blocks/_pro/post-list/edit.js:422
 msgid "Order by"
 msgstr "表示順"
 
-#: src/blocks/_pro/post-list-slider/edit.js:473
+#: src/blocks/_pro/post-list-slider/edit.js:472
 #: src/blocks/_pro/post-list/edit.js:431
 msgid "Published Date"
 msgstr "公開日"
 
-#: src/blocks/_pro/post-list-slider/edit.js:480
+#: src/blocks/_pro/post-list-slider/edit.js:479
 #: src/blocks/_pro/post-list/edit.js:438
 msgid "Modefied Date"
 msgstr "更新日"
 
-#: src/blocks/_pro/post-list-slider/edit.js:488
+#: src/blocks/_pro/post-list-slider/edit.js:487
 #: src/blocks/_pro/post-list/edit.js:446
 msgid "Random"
 msgstr "ランダム"
 
-#: src/blocks/_pro/post-list-slider/edit.js:494
+#: src/blocks/_pro/post-list-slider/edit.js:493
 #: src/blocks/_pro/post-list/edit.js:452
 msgid "offset"
 msgstr "オフセット数"
 
-#: src/blocks/_pro/post-list-slider/edit.js:510
+#: src/blocks/_pro/post-list-slider/edit.js:509
 #: src/blocks/_pro/post-list/edit.js:468
 msgid "Display from the first post always"
 msgstr "常に最初の投稿から表示する"
 
-#: src/blocks/_pro/post-list-slider/edit.js:516
+#: src/blocks/_pro/post-list-slider/edit.js:515
 #: src/blocks/_pro/post-list/edit.js:474
 msgid "Display from the first post even on pages beyond the second page."
 msgstr "2ページ目以降のページでも、常に最初の投稿から表示する。"
 
-#: src/blocks/_pro/post-list-slider/edit.js:544
+#: src/blocks/_pro/post-list-slider/edit.js:543
 #: src/components/column-layout-control/index.js:26
 msgid "Card"
 msgstr "カード"
 
-#: src/blocks/_pro/post-list-slider/edit.js:548
+#: src/blocks/_pro/post-list-slider/edit.js:547
 #: src/components/column-layout-control/index.js:30
 msgid "Card (No border)"
 msgstr "カード（線なし）"
 
-#: src/blocks/_pro/post-list-slider/edit.js:555
+#: src/blocks/_pro/post-list-slider/edit.js:554
 #: src/components/column-layout-control/index.js:34
 msgid "Card (Intext)"
 msgstr "カード（インテキスト）"
 
-#: src/blocks/_pro/post-list-slider/edit.js:559
+#: src/blocks/_pro/post-list-slider/edit.js:558
 #: src/components/column-layout-control/index.js:38
 msgid "Card (Horizontal)"
 msgstr "カード（水平）"
 
-#: src/blocks/_pro/post-list-slider/edit.js:566
+#: src/blocks/_pro/post-list-slider/edit.js:565
 #: src/components/column-layout-control/index.js:42
 msgid "Media"
 msgstr "メディア"
 
-#: src/blocks/_pro/post-list-slider/edit.js:570
+#: src/blocks/_pro/post-list-slider/edit.js:569
 #: src/components/column-layout-control/index.js:46
 msgid "Text 1 Column"
 msgstr "テキスト 1 カラム"
 
-#: src/blocks/_pro/post-list-slider/edit.js:578 src/blocks/slider/edit.js:394
+#: src/blocks/_pro/post-list-slider/edit.js:577 src/blocks/slider/edit.js:394
 msgid "Slider Settings"
 msgstr "スライド設定"
 
-#: src/blocks/_pro/post-list-slider/edit.js:582 src/blocks/slider/edit.js:398
+#: src/blocks/_pro/post-list-slider/edit.js:581 src/blocks/slider/edit.js:398
 msgid "Effect "
 msgstr "エフェクト"
 
-#: src/blocks/_pro/post-list-slider/edit.js:592 src/blocks/slider/edit.js:408
+#: src/blocks/_pro/post-list-slider/edit.js:591 src/blocks/slider/edit.js:408
 msgid "Slide"
 msgstr "スライド"
 
-#: src/blocks/_pro/post-list-slider/edit.js:596 src/blocks/slider/edit.js:412
+#: src/blocks/_pro/post-list-slider/edit.js:595 src/blocks/slider/edit.js:412
 msgid "Fade"
 msgstr "フェード"
 
-#: src/blocks/_pro/post-list-slider/edit.js:603 src/blocks/slider/edit.js:419
+#: src/blocks/_pro/post-list-slider/edit.js:602 src/blocks/slider/edit.js:419
 msgid "Loop "
 msgstr "繰り返し"
 
-#: src/blocks/_pro/post-list-slider/edit.js:613 src/blocks/slider/edit.js:429
+#: src/blocks/_pro/post-list-slider/edit.js:612 src/blocks/slider/edit.js:429
 msgid "AutoPlay"
 msgstr "自動再生"
 
-#: src/blocks/_pro/post-list-slider/edit.js:623 src/blocks/slider/edit.js:439
+#: src/blocks/_pro/post-list-slider/edit.js:622 src/blocks/slider/edit.js:439
 msgid "Stop AutoPlay when swipe"
 msgstr "スワイプ時に自動再生を停止"
 
-#: src/blocks/_pro/post-list-slider/edit.js:633 src/blocks/slider/edit.js:449
+#: src/blocks/_pro/post-list-slider/edit.js:632 src/blocks/slider/edit.js:449
 msgid "Display Time"
 msgstr "表示時間"
 
-#: src/blocks/_pro/post-list-slider/edit.js:660 src/blocks/slider/edit.js:476
+#: src/blocks/_pro/post-list-slider/edit.js:659 src/blocks/slider/edit.js:476
 msgid "Change Speed"
 msgstr "切り替え時間"
 
-#: src/blocks/_pro/post-list-slider/edit.js:684 src/blocks/slider/edit.js:500
+#: src/blocks/_pro/post-list-slider/edit.js:683 src/blocks/slider/edit.js:500
 msgid "Pagination Type"
 msgstr "ページネーションの種類"
 
-#: src/blocks/_pro/post-list-slider/edit.js:695
+#: src/blocks/_pro/post-list-slider/edit.js:694
 #: src/blocks/_pro/step-item/edit.js:137
 #: src/blocks/_pro/table-of-contents-new/edit.js:129
 #: src/blocks/_pro/timeline-item/edit.js:103 src/blocks/heading/edit.js:264
@@ -2150,46 +2147,35 @@ msgstr "ページネーションの種類"
 msgid "Default"
 msgstr "標準"
 
-#: src/blocks/_pro/post-list-slider/edit.js:699 src/blocks/slider/edit.js:515
+#: src/blocks/_pro/post-list-slider/edit.js:698 src/blocks/slider/edit.js:515
 msgid "Number of slides"
 msgstr "スライドの枚数"
 
-#: src/blocks/_pro/post-list-slider/edit.js:712 src/blocks/slider/edit.js:528
+#: src/blocks/_pro/post-list-slider/edit.js:711 src/blocks/slider/edit.js:528
 msgid "Navigation Position"
 msgstr "ナビゲーションの位置"
 
-#: src/blocks/_pro/post-list-slider/edit.js:723 src/blocks/button/edit.js:365
+#: src/blocks/_pro/post-list-slider/edit.js:722 src/blocks/button/edit.js:365
 #: src/blocks/slider/edit.js:539
 #: src/components/display-items-control/index.js:136
 msgid "Center"
 msgstr "中央"
 
-#: src/blocks/_pro/post-list-slider/edit.js:727 src/blocks/slider/edit.js:543
+#: src/blocks/_pro/post-list-slider/edit.js:726 src/blocks/slider/edit.js:543
 msgid "Bottom on Mobile device"
 msgstr "モバイルでは下部に表示"
 
-#: src/blocks/_pro/post-list-slider/edit.js:741
-#, fuzzy
-#| msgid "Background Setting"
-msgid "Background Color Setting"
-msgstr "背景設定"
-
-#: src/blocks/_pro/post-list-slider/edit.js:758
+#: src/blocks/_pro/post-list-slider/edit.js:743
 msgid "Please check the actual behavior on the live site."
-msgstr ""
+msgstr "実際の動作は公開画面で確認してください。"
 
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:104
-#, fuzzy
-#| msgid ""
-#| "If you want to loop slides, the number of placed slide items must be "
-#| "greater than or equal to the number of items you want to display per view "
-#| "+ 1."
 msgid ""
 "If you want to loop slides, the number of posts must be greater than or "
 "equal to the number of posts you want to display per view + 1."
 msgstr ""
-"スライドをループさせたい場合、配置されたスライドアイテムの数は、1ビューに表示"
-"したいアイテム数＋1以上である必要があります。"
+"スライドをループさせたい場合、投稿の数は、1ビューに表示したいアイテム数＋1以"
+"上である必要があります。"
 
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:151
 #: src/blocks/slider/edit-multiItem.js:175
@@ -2202,11 +2188,8 @@ msgid "Number of Items to display per view"
 msgstr "一度に表示するスライドアイテムの数"
 
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:162
-#, fuzzy
-#| msgid ""
-#| "Enter divisors for the number of placed slide items for each display size."
 msgid "Enter divisors for the number of posts for each display size."
-msgstr "配置済みのスライドアイテムを割り切れる数を入力してください。"
+msgstr "表示（取得）件数を割り切れる数を入力してください。"
 
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:166
 #: src/blocks/slider/edit-multiItem.js:190
@@ -2214,10 +2197,8 @@ msgid "If the number is not divisible, the sliding behaviour will be unnatural"
 msgstr "割り切れない数の場合、スライド動作が不自然になります。"
 
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:259
-#, fuzzy
-#| msgid "Number of items to change in a transition"
 msgid "Number of posts to change in a transition"
-msgstr "一度に遷移するスライドアイテムの数"
+msgstr "一度に遷移する投稿の数"
 
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:27
 #: src/blocks/slider/edit-multiItem.js:32
@@ -2234,10 +2215,8 @@ msgid "One by One"
 msgstr "１つずつ"
 
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:274
-#, fuzzy
-#| msgid "Same as the number of items to display"
 msgid "Same as the number of posts to display"
-msgstr "表示アイテム数と同じ"
+msgstr "表示投稿数と同じ"
 
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:290
 #: src/blocks/slider/edit-multiItem.js:314
@@ -2245,10 +2224,6 @@ msgid "Centering the active slide"
 msgstr "アクティブスライドを中央にする"
 
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:299
-#, fuzzy
-#| msgid ""
-#| "If you specify the center, you can display items that are cut off on the "
-#| "left and right."
 msgid ""
 "If you specify the center, you can display posts that are cut off on the "
 "left and right."
@@ -2263,38 +2238,24 @@ msgstr ""
 "表示番号に小数点を設定できるのは、表示を 1 つずつ切り替える場合のみです。"
 
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:47
-#, fuzzy
-#| msgid ""
-#| "Enter integer divisors for the number of placed slide items for each "
-#| "display size."
-msgid "Enter integer divisors for the number of posts for each display size."
-msgstr "各表示サイズのスライド アイテムの配置数の整数の約数を入力します。"
+msgid "Enter a value as an integer divisor of the number of items to retrieve."
+msgstr "表示（取得）件数の整数の約数で入力してください。"
 
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:86
-#, fuzzy
-#| msgid ""
-#| "If you want to loop slides, the number of placed slide items must be "
-#| "greater than or equal to twice the number of items you want to display "
-#| "per view."
 msgid ""
 "If you want to loop slides, the number of posts must be greater than or "
 "equal to twice the number of posts you want to display per view."
 msgstr ""
-"スライドをループさせたい場合、配置されたスライドアイテムの数は、1ビューに表示"
-"したいアイテム数の2倍以上である必要があります。"
+"スライドをループさせたい場合、投稿の数は、1ビューに表示したいアイテム数の2倍"
+"以上である必要があります。"
 
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:95
-#, fuzzy
-#| msgid ""
-#| "If you want to loop slides, the number of placed slide items must be "
-#| "greater than or equal to the number of items you want to display per view "
-#| "+ 1."
 msgid ""
 "If you want to loop slides, the number of posts must be greater than or "
 "equal to the number of posts you want to display per view + 2."
 msgstr ""
-"スライドをループさせたい場合、配置されたスライドアイテムの数は、1ビューに表示"
-"したいアイテム数＋1以上である必要があります。"
+"スライドをループさせたい場合、投稿の数は、1ビューに表示したいアイテム数＋2以"
+"上である必要があります。"
 
 #: src/blocks/_pro/post-new-badge/edit.js:59
 msgid "New Badge setting"
@@ -3183,18 +3144,13 @@ msgid "repeat"
 msgstr "リピート"
 
 #: src/blocks/slider/edit-multiItem.js:105
-#, fuzzy
-#| msgid ""
-#| "If you want to loop slides, the number of placed slide items must be "
-#| "greater than or equal to the number of items you want to display per view "
-#| "+ 1."
 msgid ""
 "If the active slide is in the center, the number of placed slide items must "
 "be greater than or equal to the number of items you want to display in one "
 "view + 2."
 msgstr ""
-"スライドをループさせたい場合、配置されたスライドアイテムの数は、1ビューに表示"
-"したいアイテム数＋1以上である必要があります。"
+"アクティブスライドを中央にする場合、配置されたスライドアイテムの数は、1ビュー"
+"に表示したいアイテム数＋2以上である必要があります。"
 
 #: src/blocks/slider/edit-multiItem.js:114
 msgid ""
@@ -3447,10 +3403,8 @@ msgid "Link target"
 msgstr "リンクターゲット"
 
 #: src/components/link-toolbar/index.js:31
-#, fuzzy
-#| msgid "Current page"
 msgid "Currently selected"
-msgstr "現在のページ"
+msgstr ""
 
 #: src/components/link-toolbar/index.js:322
 msgid "Link copied to clipboard."
@@ -3469,12 +3423,12 @@ msgid "Copy link"
 msgstr "リンクをコピー"
 
 #: src/components/scroll-hint/index.js:109
-msgid "Output Before Text Icon"
-msgstr ""
+msgid "Display the icon before the text"
+msgstr "テキストの前にアイコンを表示する"
 
 #: src/components/scroll-hint/index.js:131
-msgid "Output After Text Icon"
-msgstr ""
+msgid "Display the icon after the text."
+msgstr "テキストの後にアイコンを表示する"
 
 #: src/components/scroll-hint/index.js:91
 msgid "Show Scroll Message"
@@ -5382,6 +5336,11 @@ msgstr "順番を説明する時に便利でシンプルなスケジュールな
 msgctxt "block title"
 msgid "Post List Slider"
 msgstr "投稿リストスライダー"
+
+#, fuzzy
+#~| msgid "Background Setting"
+#~ msgid "Background Color Setting"
+#~ msgstr "背景設定"
 
 #~ msgid "Display Setting Until Browser is Closed"
 #~ msgstr "表示設定：ブラウザを閉じるまで表示"

@@ -45,7 +45,7 @@ export const MultiItemSetting = (props) => {
 	const slidesPerViewAlert = (
 		<div className="text-danger font-size-11px">
 			{__(
-				'Enter integer divisors for the number of posts for each display size.',
+				'Enter a value as an integer divisor of the number of items to retrieve.',
 				'vk-blocks-pro'
 			)}
 		</div>

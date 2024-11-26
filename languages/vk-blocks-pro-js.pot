@@ -321,7 +321,6 @@ msgstr ""
 #: src/admin/custom-format/index.js:239
 #: src/blocks/_pro/grid-column-item/edit.js:108
 #: src/blocks/_pro/gridcolcard/edit-common.js:175
-#: src/blocks/_pro/post-list-slider/edit.js:745
 #: src/blocks/border-box/edit.js:248
 #: src/blocks/button/edit.js:732
 #: src/blocks/icon/edit.js:318
@@ -1385,11 +1384,11 @@ msgstr ""
 msgid "Redisplay settings"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:349
+#: src/blocks/_pro/fixed-display/edit.js:346
 msgid "Do not display again until the browser is closed"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:360
+#: src/blocks/_pro/fixed-display/edit.js:357
 msgid ""
 "When enabled, the same content will not be shown again until the visitor "
 "closes their browser."
@@ -2191,11 +2190,7 @@ msgstr ""
 msgid "Bottom on Mobile device"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:741
-msgid "Background Color Setting"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:758
+#: src/blocks/_pro/post-list-slider/edit.js:744
 msgid "Please check the actual behavior on the live site."
 msgstr ""
 

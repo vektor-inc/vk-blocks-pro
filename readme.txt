@@ -107,6 +107,8 @@ e.g.
 
 == Changelog ==
 
+[ Design Bug Fix ][ VK Button ] Fixed an issue where the text of a button with an icon was dropping in a column. Reset the word-break property to its initial value for better compatibility in Firefox.
+
 = 1.92.0 =
 [ Add Block ] Add Post list Slider block.
 [ Add function ][ Fixed Display (Pro) ] Added a timer feature to control block appearance/disappearance and a "Do not show again for returning visitors" option. Session Storage is used, and no personal data is collected or tracked. Since Session Storage is used, the block may reappear after the browser is closed or in private browsing mode.

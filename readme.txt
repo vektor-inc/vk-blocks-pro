@@ -46,6 +46,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Fixed Display [ Pro ]
 * Icon Card [ Pro ] (not recommended)
 * Post list [ Pro ]
+* Post list Slider [ Pro ]
 * New Badge [ Pro ]
 * Selected Post List [ Pro ]
 * Step [ Pro ]

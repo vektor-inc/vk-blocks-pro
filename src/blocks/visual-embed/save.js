@@ -2,14 +2,21 @@ import { useBlockProps } from '@wordpress/block-editor';
 
 export default function save({ attributes }) {
 	const { iframeCode } = attributes;
-	const blockProps = useBlockProps.save();
 
-	// iframeCode 内の <a> タグに rel="noopener" を追加(リカバリーエラーになるため)
 	const updatedIframeCode = iframeCode.replace(/<a /g, '<a rel="noopener" ');
+
+	const blockProps = useBlockProps.save({
+		className: 'vk-visual-embed',
+	});
 
 	return (
 		<div {...blockProps}>
-			<div dangerouslySetInnerHTML={{ __html: updatedIframeCode }} />
+			{iframeCode && (
+				<div
+					className="vk-visual-embed-preview"
+					dangerouslySetInnerHTML={{ __html: updatedIframeCode }}
+				/>
+			)}
 		</div>
 	);
 }

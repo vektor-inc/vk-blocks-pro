@@ -6,12 +6,27 @@
  */
 
 /**
- * Register Fixed display block.
+ * Adds initial opacity: 0 to blocks in specific modes.
+ *
+ * @param array  $attributes Block attributes.
+ * @param string $content Block content.
+ * @return string The modified block content.
+ */
+function vk_blocks_fixed_display_render_callback( $attributes, $content ) {
+	// Check for specific modes and apply opacity: 0
+	if ( isset( $attributes['mode'] ) && in_array( $attributes['mode'], array( 'display-hide-after-time', 'show-on-scroll' ), true ) ) {
+		$content = preg_replace( '/(<div\b[^>]*class="[^"]*vk_fixed-display-mode-(display-hide-after-time|show-on-scroll)[^"]*")/i', '$1 style="opacity:0;"', $content );
+	}
+	return $content;
+}
+
+/**
+ * Registers the fixed display block.
  *
  * @return void
  */
 function vk_blocks_register_block_fixed_display() {
-	// Register Style.
+	// Register Style
 	if ( ! is_admin() ) {
 		wp_register_style(
 			'vk-blocks/fixed-display',
@@ -21,7 +36,7 @@ function vk_blocks_register_block_fixed_display() {
 		);
 	}
 
-	// Register Style.
+	// Register Script
 	if ( ! is_admin() ) {
 		wp_register_script(
 			'vk-blocks/fixed-display-script',
@@ -39,10 +54,11 @@ function vk_blocks_register_block_fixed_display() {
 	// 分割読み込みが有効な場合のみ、分割読み込み用のスクリプトを登録する
 	if ( method_exists( 'VK_Blocks_Block_Loader', 'should_load_separate_assets' ) && VK_Blocks_Block_Loader::should_load_separate_assets() ) {
 		$assets = array(
-			'style'         => 'vk-blocks/fixed-display',
-			'script'        => 'vk-blocks/fixed-display-script',
-			'editor_style'  => 'vk-blocks-build-editor-css',
-			'editor_script' => 'vk-blocks-build-js',
+			'style'           => 'vk-blocks/fixed-display',
+			'script'          => 'vk-blocks/fixed-display-script',
+			'editor_style'    => 'vk-blocks-build-editor-css',
+			'editor_script'   => 'vk-blocks-build-js',
+			'render_callback' => 'vk_blocks_fixed_display_render_callback',
 		);
 	}
 

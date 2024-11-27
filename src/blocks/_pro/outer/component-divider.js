@@ -187,6 +187,97 @@ const componentDivider = (
 		);
 	};
 
+	// eslint-disable-next-line no-shadow
+	const bookSectionStyle = (level, color) => {
+		const absLevel = Math.abs(level);
+		let pathData;
+
+		if (level > 0) {
+			const controlPoint1X = 40;
+			const controlPoint1Y = 100 - level * 0.1;
+			const peakX = 50;
+			const peakY = 100 - level;
+			const controlPoint2X = 60;
+			const controlPoint2Y = 100 - level * 0.1;
+
+			pathData = `M0,100 H0 C${controlPoint1X},${controlPoint1Y} ${peakX},${peakY} ${peakX},${peakY} C${peakX},${peakY} ${controlPoint2X},${controlPoint2Y} 100,100 H100 V100 H0 Z`;
+		} else if (level === 0) {
+			const controlPoint1X = 40;
+			const controlPoint1Y = 100;
+			const peakX = 50;
+			const peakY = 100;
+			const controlPoint2X = 60;
+			const controlPoint2Y = 100;
+
+			pathData = `M0,100 H0 C${controlPoint1X},${controlPoint1Y} ${peakX},${peakY} ${peakX},${peakY} C${peakX},${peakY} ${controlPoint2X},${controlPoint2Y} 100,100 H100 V100 H0 Z`;
+		} else {
+			const controlPoint1X = 40;
+			const controlPoint1Y = absLevel === 100 ? 30 : 100 - absLevel * 0.9;
+			const peakX = 50;
+			const peakY = 100;
+			const controlPoint2X = 60;
+			const controlPoint2Y = absLevel === 100 ? 30 : 100 - absLevel * 0.9;
+			const startY = absLevel === 100 ? 0 : 100 - absLevel;
+
+			pathData = `M0,${startY} H0 C${controlPoint1X},${controlPoint1Y} ${peakX},${peakY} ${peakX},${peakY} C${peakX},${peakY} ${controlPoint2X},${controlPoint2Y} 100,${startY} H100 V100 H0 Z`;
+		}
+
+		return (
+			<path
+				d={pathData}
+				strokeWidth="0"
+				fill={isHexColor(color) ? color : 'currentColor'}
+				className={classnames({
+					[`has-text-color`]: color !== undefined,
+					[`has-${color}-color`]:
+						color !== undefined && !isHexColor(color),
+				})}
+			/>
+		);
+	};
+
+	// eslint-disable-next-line no-shadow
+	const pyramidSectionStyle = (level, color) => {
+		const absLevel = Math.abs(level);
+		let pathData;
+
+		if (level < 0) {
+			const firstPeakX = 25;
+			const firstPeakY = 100 - absLevel * 0.6;
+			const dipX = 40;
+			const dipY = 100 - absLevel * 0.2;
+			const secondPeakX = 75;
+			const secondPeakY = 100 - absLevel;
+			const rightEndY = 100 - absLevel * 0.5;
+
+			pathData = `M0,100 H0 L${firstPeakX},${firstPeakY} ${dipX},${dipY} ${secondPeakX},${secondPeakY} 100,${rightEndY} H100 V100 H0 Z`;
+		} else if (level === 0) {
+			pathData = `M0,100 H0 L0,100 35,100 65,100 85,100 100,100 H100 V100 H0 Z`;
+		} else {
+			const firstPeakX = 75;
+			const firstPeakY = 100 - level * 0.6;
+			const dipX = 60;
+			const dipY = 100 - level * 0.2;
+			const secondPeakX = 25;
+			const secondPeakY = 100 - level;
+			const leftEndY = 100 - level * 0.5;
+
+			pathData = `M0,${leftEndY} H0 L${secondPeakX},${secondPeakY} ${dipX},${dipY} ${firstPeakX},${firstPeakY} 100,100 H100 V100 H0 Z`;
+		}
+
+		return (
+			<path
+				d={pathData}
+				strokeWidth="0"
+				fill={isHexColor(color) ? color : 'currentColor'}
+				className={classnames({
+					[`has-text-color`]: color !== undefined,
+					[`has-${color}-color`]:
+						color !== undefined && !isHexColor(color),
+				})}
+			/>
+		);
+	};
 	//背景色をクリアした時は、白に変更
 	if (!color) {
 		color = '#fff';
@@ -212,6 +303,12 @@ const componentDivider = (
 		} else if (dividerType === 'serrated') {
 			sectionPadding = 10;
 			return serratedSectionStyle(lvl, color);
+		} else if (dividerType === 'book') {
+			sectionPadding = Math.abs(lvl);
+			return bookSectionStyle(lvl, color);
+		} else if (dividerType === 'pyramid') {
+			sectionPadding = Math.abs(lvl);
+			return pyramidSectionStyle(lvl, color);
 		}
 	};
 

@@ -1,9 +1,3 @@
-import save0_20_2 from './0.20.2/save';
-import save0_20_3 from './0.20.3/save';
-import save0_20_4 from './0.20.4/save';
-import save0_20_5 from './0.20.5/save';
-import save0_20_6 from './0.20.6/save';
-import save0_60_1 from './0.60.1/save';
 import save1_2_4 from './1.2.4/save';
 
 const blockAttributes = {
@@ -124,30 +118,6 @@ const deprecated = [
 	{
 		attributes: blockAttributes3,
 		save: save1_2_4,
-	},
-	{
-		attributes: blockAttributes3,
-		save: save0_60_1,
-	},
-	{
-		attributes: blockAttributes2,
-		save: save0_20_6,
-	},
-	{
-		attributes: blockAttributes2,
-		save: save0_20_5,
-	},
-	{
-		attributes: blockAttributes2,
-		save: save0_20_4,
-	},
-	{
-		attributes: blockAttributes2,
-		save: save0_20_3,
-	},
-	{
-		attributes: blockAttributes,
-		save: save0_20_2,
 	},
 ];
 

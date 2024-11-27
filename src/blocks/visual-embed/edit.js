@@ -15,16 +15,18 @@ export default function EmbedCodeEdit({ attributes, setAttributes }) {
 
 	// iframeの属性を解析して幅と高さを取得
 	const extractIframeAttributes = (code) => {
-		if (typeof window.DOMParser === 'undefined') return;
-	
+		if (typeof window.DOMParser === 'undefined') {
+			return;
+		}
+
 		const parser = new window.DOMParser();
 		const doc = parser.parseFromString(code, 'text/html');
 		const iframe = doc.querySelector('iframe');
-	
+
 		if (iframe) {
 			const newWidth = iframe.getAttribute('width') || iframeWidth;
 			const newHeight = iframe.getAttribute('height') || iframeHeight;
-	
+
 			// 抽出した値を設定パネルに反映
 			setAttributes({
 				iframeWidth: newWidth,
@@ -35,16 +37,22 @@ export default function EmbedCodeEdit({ attributes, setAttributes }) {
 
 	// iframeの属性を解析・更新する関数
 	const updateIframeAttributes = (newWidth, newHeight) => {
-		if (!iframeCode || typeof window.DOMParser === 'undefined') return;
-	
+		if (!iframeCode || typeof window.DOMParser === 'undefined') {
+			return;
+		}
+
 		const parser = new window.DOMParser();
 		const doc = parser.parseFromString(iframeCode, 'text/html');
 		const iframe = doc.querySelector('iframe');
-	
+
 		if (iframe) {
-			if (newWidth) iframe.setAttribute('width', newWidth);
-			if (newHeight) iframe.setAttribute('height', newHeight);
-	
+			if (newWidth) {
+				iframe.setAttribute('width', newWidth);
+			}
+			if (newHeight) {
+				iframe.setAttribute('height', newHeight);
+			}
+
 			// 更新後のiframeコードを設定
 			setAttributes({
 				iframeCode: iframe.outerHTML,

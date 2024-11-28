@@ -179,6 +179,7 @@ $xxl-min: 1400px;
 	}
 	&_body {
 		box-sizing: border-box;
+		font-size: 14px;
 	}
 	&_imgOuter {
 		position: relative;
@@ -208,6 +209,7 @@ $xxl-min: 1400px;
 		line-height: 1.4;
 		font-weight: bold;
 		margin-bottom: 0;
+		margin-top: 0;
 		a {
 			color: var(--vk-color-text-body);
 		}

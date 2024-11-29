@@ -106,7 +106,10 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+
 [ Bug fix ][ Post List (Pro) ] Remove white space above title
+[ Design Bug Fix ][ Post list Slider (Pro) ] Fixed an issue where post list did not have consistent heights.
 [ Design Bug Fix ][ VK Button ] Fixed an issue where the text of a button with an icon was dropping in a column. Reset the word-break property to its initial value for better compatibility in Firefox.
 
 = 1.92.0 =

@@ -575,7 +575,7 @@ e.g.
 [ Bug fix ][ button ] buttonColorCustom clear convert to primary.
 
 = 1.41.1 =
-[ Bug fix ] Fix don't display Admin screen in case of fic option value
+[ Bug fix ] Fix don't display Admin screen in case of spacific option value
 
 = 1.41.0 =
 [ Add function ][ Balloon ] Add width option.

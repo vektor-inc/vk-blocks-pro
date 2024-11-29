@@ -9,6 +9,16 @@
 	position: fixed;
 	margin-block-start: 0;
 	z-index: 99999;
+	
+	> * {
+		&:first-of-type {
+			margin-block-start: 0;
+		}
+
+		&:last-of-type {
+			margin-block-end: 0;
+		}
+	}
 }
 
 .vk_fixed-display-mode {
@@ -17,14 +27,39 @@
 	}
 	
 	&-show-on-scroll {
-		opacity: 0;
 		transition: opacity 0.3s ease;
-		
+		pointer-events: none;
+		opacity: 0;
+
 		&.is-visible {
-			opacity: 1;
+			opacity: 1 !important;
+			pointer-events: auto;
 		}
 	}
 
+	&-display-hide-after-time {
+		opacity: 1 !important;
+		transition: opacity 0.3s ease;
+
+		&.is-timed-display {
+			opacity: 0 !important;
+			pointer-events: none;
+
+			&.is-timed-visible {
+				opacity: 1 !important;
+			}
+		}
+
+		&.is-timed-hide {
+			transition: opacity 0.3s ease;
+
+			&:not(.is-timed-visible),
+			&.is-timed-hidden {
+				opacity: 0 !important;
+				pointer-events: none;
+			}
+		}
+	}
 }
 
 .vk_fixed-display-position {
@@ -83,6 +118,14 @@
 /* 編集画面用
 /*-------------------------------------------*/
 .block-editor-block-list__block {
+	&.vk_fixed-display {
+		
+		/* タイマー機能用クラス */
+		&.is-timed-hide,
+		&.is-timed-display {
+				opacity: unset;
+		}
+	}
 
 	&.vk_fixed-display-position {
 		width: auto;
@@ -110,13 +153,20 @@
 				}
 			}
 		}
+
+		&-from-top {
+			top: unset !important;
+		}
+		&-from-bottom {
+			bottom: unset !important;
+		}
 	}
 }
 
 /*-------------------------------------------*/
 /* 管理画面用
 /*-------------------------------------------*/
-.logged-in.admin-bar:not(.scrolled) {
+.logged-in.admin-bar {
 	
 	.vk_fixed-display-position {
 		&-top {
@@ -127,17 +177,6 @@
 		}
 		&-from-bottom {
 			bottom: calc(50svh + var(--admin-bar-offset));
-		}
-	}	
-}
-
-.block-editor-block-list__layout {
-	.vk_fixed-display-position {
-		&-from-top {
-			top: unset !important;
-		}
-		&-from-bottom {
-			bottom: unset !important;
 		}
 	}	
 }

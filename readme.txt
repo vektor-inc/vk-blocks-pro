@@ -46,6 +46,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Fixed Display [ Pro ]
 * Icon Card [ Pro ] (not recommended)
 * Post list [ Pro ]
+* Post list Slider [ Pro ]
 * New Badge [ Pro ]
 * Selected Post List [ Pro ]
 * Step [ Pro ]
@@ -106,11 +107,16 @@ e.g.
 
 == Changelog ==
 
-[ Add function ][ Link toolbar ] Add edit link setting.
+[ Specification change ][ Link toolbar ] Add edit link setting.
+[ Design Bug Fix ][ Post list Slider (Pro) ] Fixed an issue where post list did not have consistent heights.
+[ Design Bug Fix ][ VK Button ] Fixed an issue where the text of a button with an icon was dropping in a column. Reset the word-break property to its initial value for better compatibility in Firefox.
 
+= 1.92.0 =
 [ Add Block ] Add Post list Slider block.
-[ Bug fix ][ Cover ] Fixed an issue where, after setting a link in the Cover block and adding two unstyled headings inside it, the content positioning would not apply upon returning to the editing screen (editing screen only).
-[ Design Bug Fix ] [ Grid Column Card ( Pro ) ] Fixed only dots being displayed as separators.
+[ Add function ][ Fixed Display (Pro) ] Added a timer feature to control block appearance/disappearance and a "Do not show again for returning visitors" option. Session Storage is used, and no personal data is collected or tracked. Since Session Storage is used, the block may reappear after the browser is closed or in private browsing mode.
+[ Bug Fix ][ Grid Column Card (Pro) ] Fixed only dots being displayed as separators.
+[ Bug fix ][ Post List (Pro) ] Since WordPress 6.7.1 started outputting contain-intrinsic-size: 3000px 1500px, add a reset for this in .card.
+[ Other ][ Slider ] Refactoring editor script.
 
 = 1.91.2 =
 [ Bug fix ] Fix checkbox misalignment in the admin panel.
@@ -569,7 +575,7 @@ e.g.
 [ Bug fix ][ button ] buttonColorCustom clear convert to primary.
 
 = 1.41.1 =
-[ Bug fix ] Fix don't display Admin screen in case of spacific option value
+[ Bug fix ] Fix don't display Admin screen in case of fic option value
 
 = 1.41.0 =
 [ Add function ][ Balloon ] Add width option.

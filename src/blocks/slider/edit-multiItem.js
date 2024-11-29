@@ -6,9 +6,10 @@ import {
 	RadioControl,
 	ToggleControl,
 } from '@wordpress/components';
+import { useSelect } from '@wordpress/data';
 
 export const MultiItemSetting = (props) => {
-	const { attributes, setAttributes } = props;
+	const { attributes, setAttributes, clientId } = props;
 	const {
 		slidesPerGroup,
 		slidesPerViewMobile,
@@ -16,9 +17,13 @@ export const MultiItemSetting = (props) => {
 		slidesPerViewPC,
 		loop,
 		effect,
-		numberPosts,
 		centeredSlides,
 	} = attributes;
+
+	// インナーブロックを取得
+	const innerBlocks = useSelect((select) =>
+		select('core/block-editor').getBlocks(clientId)
+	);
 
 	let demicalPointAlert = '';
 	if (slidesPerGroup === 'one-by-one') {
@@ -45,7 +50,7 @@ export const MultiItemSetting = (props) => {
 	const slidesPerViewAlert = (
 		<div className="text-danger font-size-11px">
 			{__(
-				'Enter a value as an integer divisor of the number of items to retrieve.',
+				'Enter integer divisors for the number of placed slide items for each display size.',
 				'vk-blocks-pro'
 			)}
 		</div>
@@ -54,7 +59,7 @@ export const MultiItemSetting = (props) => {
 	// 上記アラートを表示するか否かのモバイル時の処理
 	let slidesPerViewMobileAlert = '';
 	if (
-		numberPosts % parseInt(slidesPerViewMobile) !== 0 &&
+		innerBlocks.length % parseInt(slidesPerViewMobile) !== 0 &&
 		slidesPerGroup === 'slides-per-view'
 	) {
 		slidesPerViewMobileAlert = slidesPerViewAlert;
@@ -63,7 +68,7 @@ export const MultiItemSetting = (props) => {
 	// 上記アラートを表示するか否かのタブレット時の処理
 	let slidesPerViewTabletAlert = '';
 	if (
-		numberPosts % parseInt(slidesPerViewTablet) !== 0 &&
+		innerBlocks.length % parseInt(slidesPerViewTablet) !== 0 &&
 		slidesPerGroup === 'slides-per-view'
 	) {
 		slidesPerViewTabletAlert = slidesPerViewAlert;
@@ -72,7 +77,7 @@ export const MultiItemSetting = (props) => {
 	// 上記アラートを表示するか否かの PC 時の処理
 	let slidesPerViewPCAlert = '';
 	if (
-		numberPosts % parseInt(slidesPerViewPC) !== 0 &&
+		innerBlocks.length % parseInt(slidesPerViewPC) !== 0 &&
 		slidesPerGroup === 'slides-per-view'
 	) {
 		slidesPerViewPCAlert = slidesPerViewAlert;
@@ -81,32 +86,38 @@ export const MultiItemSetting = (props) => {
 	// ループに関するアラート
 	let sloderPerViewLoopAlert = '';
 	if (slidesPerGroup === 'slides-per-view') {
+		// 一度に遷移するスライドアイテムの数 : 表示アイテム数と同じ
 		sloderPerViewLoopAlert = (
 			<div className="alert alert-danger font-size-11px">
 				{__(
-					'If you want to loop slides, the number of posts must be greater than or equal to twice the number of posts you want to display per view.',
+					'If you want to loop slides, the number of placed slide items must be greater than or equal to twice the number of items you want to display per view.',
 					'vk-blocks-pro'
 				)}
 			</div>
 		);
-	} else if (centeredSlides) {
-		sloderPerViewLoopAlert = (
-			<div className="alert alert-danger font-size-11px">
-				{__(
-					'If you want to loop slides, the number of posts must be greater than or equal to the number of posts you want to display per view + 2.',
-					'vk-blocks-pro'
-				)}
-			</div>
-		);
-	} else {
-		sloderPerViewLoopAlert = (
-			<div className="alert alert-danger font-size-11px">
-				{__(
-					'If you want to loop slides, the number of posts must be greater than or equal to the number of posts you want to display per view + 1.',
-					'vk-blocks-pro'
-				)}
-			</div>
-		);
+	} else if (slidesPerGroup !== 'slides-per-view') {
+		// ↑ else だけだと lint でエラーにされてコミットさせてもらえないため...
+		// 一度に遷移するスライドアイテムの数 : １つずつ
+		if (attributes.centeredSlides) {
+			// アクティブスライドを中央にする場合
+			sloderPerViewLoopAlert = (
+				<div className="alert alert-danger font-size-11px">
+					{__(
+						'If the active slide is in the center, the number of placed slide items must be greater than or equal to the number of items you want to display in one view + 2.',
+						'vk-blocks-pro'
+					)}
+				</div>
+			);
+		} else {
+			sloderPerViewLoopAlert = (
+				<div className="alert alert-danger font-size-11px">
+					{__(
+						'If you want to loop slides, the number of placed slide items must be greater than or equal to the number of items you want to display per view + 1.',
+						'vk-blocks-pro'
+					)}
+				</div>
+			);
+		}
 	}
 
 	/* ループ時のアラート */
@@ -119,30 +130,43 @@ export const MultiItemSetting = (props) => {
 	if (!!loop) {
 		if (
 			(slidesPerGroup === 'slides-per-view' &&
-				numberPosts / slidesPerViewMobile < 2) ||
+				innerBlocks.length / slidesPerViewMobile < 2) ||
 			(slidesPerGroup === 'one-by-one' &&
-				numberPosts - (slidesPerViewMobile + 1) < 0)
+				innerBlocks.length - (slidesPerViewMobile + 1) < 0 &&
+				!attributes.centeredSlides) ||
+			(slidesPerGroup === 'one-by-one' &&
+				innerBlocks.length - (slidesPerViewMobile + 2) < 0 &&
+				attributes.centeredSlides)
 		) {
 			slidesPerViewMobileLoopAlert = sloderPerViewLoopAlert;
 		}
 		if (
 			(slidesPerGroup === 'slides-per-view' &&
-				numberPosts / slidesPerViewTablet < 2) ||
+				innerBlocks.length / slidesPerViewTablet < 2) ||
 			(slidesPerGroup === 'one-by-one' &&
-				numberPosts - (slidesPerViewTablet + 1) < 0)
+				innerBlocks.length - (slidesPerViewTablet + 1) < 0 &&
+				!attributes.centeredSlides) ||
+			(slidesPerGroup === 'one-by-one' &&
+				innerBlocks.length - (slidesPerViewTablet + 2) < 0 &&
+				attributes.centeredSlides)
 		) {
 			slidesPerViewTabletLoopAlert = sloderPerViewLoopAlert;
 		}
 
 		if (
 			(slidesPerGroup === 'slides-per-view' &&
-				numberPosts / slidesPerViewPC < 2) ||
+				innerBlocks.length / slidesPerViewPC < 2) ||
 			(slidesPerGroup === 'one-by-one' &&
-				numberPosts - (slidesPerViewPC + 1) < 0)
+				innerBlocks.length - (slidesPerViewPC + 1) < 0 &&
+				!attributes.centeredSlides) ||
+			(slidesPerGroup === 'one-by-one' &&
+				innerBlocks.length - (slidesPerViewPC + 2) < 0 &&
+				attributes.centeredSlides)
 		) {
 			slidesPerViewPCLoopAlert = sloderPerViewLoopAlert;
 		}
 	}
+
 	// 複数枚表示設定
 	let multiItemSetting = '';
 	if (effect !== 'fade') {
@@ -160,7 +184,7 @@ export const MultiItemSetting = (props) => {
 				>
 					<p className="font-size-11px">
 						{__(
-							'Enter divisors for the number of posts for each display size.',
+							'Enter divisors for the number of placed slide items for each display size.',
 							'vk-blocks-pro'
 						)}
 						{__(
@@ -257,7 +281,7 @@ export const MultiItemSetting = (props) => {
 				</BaseControl>
 				<BaseControl
 					label={__(
-						'Number of posts to change in a transition',
+						'Number of items to change in a transition',
 						'vk-blocks-pro'
 					)}
 					id={`vk_slider-slidesPerGroup`}
@@ -272,7 +296,7 @@ export const MultiItemSetting = (props) => {
 							},
 							{
 								label: __(
-									'Same as the number of posts to display',
+									'Same as the number of items to display',
 									'vk-blocks-pro'
 								),
 								value: 'slides-per-view',
@@ -297,7 +321,7 @@ export const MultiItemSetting = (props) => {
 							setAttributes({ centeredSlides: checked })
 						}
 						help={__(
-							'If you specify the center, you can display posts that are cut off on the left and right.',
+							'If you specify the center, you can display items that are cut off on the left and right.',
 							'vk-blocks-pro'
 						)}
 					/>

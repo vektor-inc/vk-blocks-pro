@@ -1,4 +1,4 @@
-/* globals MutationObserver */
+/* globals MutationObserver, vk_block_post_type_params */
 // import WordPress Scripts
 import { useEffect } from '@wordpress/element';
 import ServerSideRender from '@wordpress/server-side-render';
@@ -10,8 +10,10 @@ import { ColumnLayoutControl } from '@vkblocks/components/column-layout-control'
 import { DisplayCondition } from '@vkblocks/components/display-condition';
 
 export default function PostListEdit(props) {
-	const { attributes, setAttributes, vkBlockParams, name } = props;
-	attributes.name = name;
+	const { attributes, setAttributes } = props;
+
+	const postTypesProps = vk_block_post_type_params.post_type_option;
+	const termsByTaxonomyName = vk_block_post_type_params.term_by_taxonomy_name;
 
 	const blockProps = useBlockProps();
 
@@ -56,7 +58,8 @@ export default function PostListEdit(props) {
 				<DisplayCondition
 					attributes={attributes}
 					setAttributes={setAttributes}
-					vkBlockParams={vkBlockParams}
+					postTypesProps={postTypesProps}
+					termsByTaxonomyName={termsByTaxonomyName}
 				/>
 				<ColumnLayoutControl {...props} />
 				<DisplayItemsControl {...props} />

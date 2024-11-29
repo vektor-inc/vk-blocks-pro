@@ -281,7 +281,6 @@ export default function PostListEdit(props) {
 			link.style.boxShadow = 'unset';
 
 			// ホバー効果を無効化
-			link.style.color = 'inherit';
 			link.style.textDecorationColor = 'inherit';
 		});
 	};

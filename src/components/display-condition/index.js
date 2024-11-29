@@ -1,4 +1,3 @@
-/* global vk_block_post_type_params */
 import { __, sprintf } from '@wordpress/i18n';
 import {
 	RangeControl,
@@ -11,7 +10,7 @@ import {
 	TextControl,
 	FormTokenField,
 } from '@wordpress/components';
-import { useState, useEffect } from '@wordpress/element';
+import { useState, useEffect, useMemo } from '@wordpress/element';
 // Load VK Blocks Utils
 import { useTaxonomies } from '@vkblocks/utils/hooks';
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
@@ -20,7 +19,8 @@ import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
 import { AdvancedCheckboxControl } from '@vkblocks/components/advanced-checkbox-control';
 
 export function DisplayCondition(props) {
-	const { attributes, setAttributes } = props;
+	const { attributes, setAttributes, postTypesProps, termsByTaxonomyName } =
+		props;
 	const {
 		numberPosts,
 		isCheckedPostType,
@@ -50,7 +50,6 @@ export function DisplayCondition(props) {
 
 	const postTypeToTaxonomyMap = {};
 	const taxonomies = useTaxonomies();
-	const termsByTaxonomyName = vk_block_post_type_params.term_by_taxonomy_name;
 
 	taxonomies.forEach((taxonomy) => {
 		taxonomy.types.forEach((postType) => {
@@ -63,8 +62,9 @@ export function DisplayCondition(props) {
 
 	const saveStateTerms = (termId) => {
 		if (!isCheckedTermsData.includes(termId)) {
-			isCheckedTermsData.push(termId);
-			setIsCheckedTermsData([...isCheckedTermsData]);
+			const updatedTerms = [...isCheckedTermsData, termId];
+			setIsCheckedTermsData(updatedTerms);
+			setAttributes({ isCheckedTerms: JSON.stringify(updatedTerms) });
 		}
 	};
 
@@ -101,13 +101,13 @@ export function DisplayCondition(props) {
 		});
 	};
 
-	let postTypesProps = vk_block_post_type_params.post_type_option;
-
 	// メディアと再利用ブロックを除外
-	postTypesProps = postTypesProps.filter(
-		(postType) =>
-			'attachment' !== postType.slug && 'wp_block' !== postType.slug
-	);
+	const filteredPostTypesProps = useMemo(() => {
+		return postTypesProps.filter(
+			(postType) =>
+				'attachment' !== postType.slug && 'wp_block' !== postType.slug
+		);
+	}, [postTypesProps]);
 
 	const replaceIsCheckedTermData = (taxonomyRestbase, termIds, newIds) => {
 		const removedTermIds = termIds.filter((termId) => {
@@ -271,7 +271,7 @@ export function DisplayCondition(props) {
 			>
 				<AdvancedCheckboxControl
 					schema={'isCheckedPostType'}
-					rawData={postTypesProps}
+					rawData={filteredPostTypesProps}
 					checkedData={isCheckedPostTypeData}
 					setAttributes={setAttributes}
 					saveState={saveStatePostTypes}

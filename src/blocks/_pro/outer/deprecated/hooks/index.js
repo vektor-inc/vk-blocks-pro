@@ -7,7 +7,8 @@ import OuterHook0_0_1 from './0.0.1'
 // saveの数分必要
 export default [
 	// 後方互換
-	OuterHook1_60_0, // 1.83.0
+	OuterHook1_60_0, // 1.92.0
+	OuterHook1_60_0, // 1.89.0
 	OuterHook1_60_0, // 1.76.0
 	OuterHook1_60_0, // 1.71.0
 	OuterHook1_60_0, // 1.64.0

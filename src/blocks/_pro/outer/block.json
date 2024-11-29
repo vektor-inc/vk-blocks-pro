@@ -168,6 +168,10 @@
 	"supports": {
 		"html": false,
 		"className": true,
-		"anchor": true
+		"anchor": true,
+		"color": {
+			"text": true,
+			"background": false
+		}
 	}
 }

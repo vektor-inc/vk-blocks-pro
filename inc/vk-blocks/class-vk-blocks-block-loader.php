@@ -99,12 +99,19 @@ class VK_Blocks_Block_Loader {
 	 * VK Blocks Add Styles
 	 */
 	public function add_styles() {
-		// 分割読み込みの場合は register されるファイルが false 指定で何も読み込まれなくなっている.
-		wp_enqueue_style( 'vk-blocks-build-css' );
+		// 共通のスタイル
 		wp_enqueue_style( 'vk-blocks-utils-common-css' );
-		wp_enqueue_style( 'vk-blocks/core-table', VK_BLOCKS_DIR_URL . 'build/extensions/core/table/style.css', array(), VK_BLOCKS_VERSION );
-		wp_enqueue_style( 'vk-blocks/core-heading', VK_BLOCKS_DIR_URL . 'build/extensions/core/heading/style.css', array(), VK_BLOCKS_VERSION );
-		wp_enqueue_style( 'vk-blocks/core-image', VK_BLOCKS_DIR_URL . 'build/extensions/core/image/style.css', array(), VK_BLOCKS_VERSION );
+
+		// 分割読み込みが有効かどうかをチェック
+		if ( self::should_load_separate_assets() && ! is_admin() ) {
+			// 分割読み込みが有効な場合は個別のスタイルを読み込む
+			wp_enqueue_style( 'vk-blocks/core-table', VK_BLOCKS_DIR_URL . 'build/extensions/core/table/style.css', array(), VK_BLOCKS_VERSION );
+			wp_enqueue_style( 'vk-blocks/core-heading', VK_BLOCKS_DIR_URL . 'build/extensions/core/heading/style.css', array(), VK_BLOCKS_VERSION );
+			wp_enqueue_style( 'vk-blocks/core-image', VK_BLOCKS_DIR_URL . 'build/extensions/core/image/style.css', array(), VK_BLOCKS_VERSION );
+		} else {
+			// 分割読み込みが無効な場合はフロントエンド画面では結合スタイルを読み込まない
+			wp_enqueue_style( 'vk-blocks-build-css' );
+		}
 	}
 
 	/**
@@ -121,12 +128,9 @@ class VK_Blocks_Block_Loader {
 			wp_register_style( 'vk-blocks-build-css', false, array(), VK_BLOCKS_VERSION );
 			// src/utils内の内の共通cssの読み込み .
 			wp_register_style( 'vk-blocks-utils-common-css', VK_BLOCKS_DIR_URL . 'build/utils/common.css', array(), VK_BLOCKS_VERSION );
-			wp_register_style( 'vk-blocks/core-table', VK_BLOCKS_DIR_URL . 'build/extensions/core/table/style.css', array(), VK_BLOCKS_VERSION );
-			wp_register_style( 'vk-blocks/core-heading', VK_BLOCKS_DIR_URL . 'build/extensions/core/heading/style.css', array(), VK_BLOCKS_VERSION );
-			wp_register_style( 'vk-blocks/core-image', VK_BLOCKS_DIR_URL . 'build/extensions/core/image/style.css', array(), VK_BLOCKS_VERSION );
 		} else {
 			// 一括読み込みの場合 : 結合CSSを登録.
-			wp_register_style( 'vk-blocks-build-css', VK_BLOCKS_DIR_URL . 'build/block-build.css', array(), VK_BLOCKS_VERSION );
+			wp_register_style( 'vk-blocks-build-css', VK_BLOCKS_DIR_URL . 'build/block-build.css', array( 'vk-swiper-style' ), VK_BLOCKS_VERSION );
 		}
 
 		// 編集画面のCSS登録 : 分割読み込みの設定に関わらず結合CSSを登録 -> 各ブロックのindex.phpから呼び出される.

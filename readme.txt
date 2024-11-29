@@ -46,6 +46,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Fixed Display [ Pro ]
 * Icon Card [ Pro ] (not recommended)
 * Post list [ Pro ]
+* Post list Slider [ Pro ]
 * New Badge [ Pro ]
 * Selected Post List [ Pro ]
 * Step [ Pro ]
@@ -107,6 +108,7 @@ e.g.
 == Changelog ==
 
 [ Other ][ Post list (Pro) / Post list slider (Pro) ] Refactored "Display Conditions" by modularizing them into components.
+[ Design Bug Fix ][ VK Button ] Fixed an issue where the text of a button with an icon was dropping in a column. Reset the word-break property to its initial value for better compatibility in Firefox.
 
 = 1.92.0 =
 [ Add Block ] Add Post list Slider block.

@@ -1,3 +1,4 @@
+/* globals vk_block_post_type_params */
 // import WordPress Scripts
 import { __ } from '@wordpress/i18n';
 import {
@@ -21,8 +22,11 @@ import { AdvancedToggleControl } from '@vkblocks/components/advanced-toggle-cont
 import { MultiItemSetting } from './multi-item-setting.js';
 
 export default function PostListSliderEdit(props) {
-	const { attributes, setAttributes, vkBlockParams, name } = props;
-	attributes.name = name;
+	const { attributes, setAttributes } = props;
+
+	const postTypesProps = vk_block_post_type_params.post_type_option;
+	const termsByTaxonomyName = vk_block_post_type_params.term_by_taxonomy_name;
+
 	const {
 		layout,
 		autoPlay,
@@ -63,7 +67,8 @@ export default function PostListSliderEdit(props) {
 				<DisplayCondition
 					attributes={attributes}
 					setAttributes={setAttributes}
-					vkBlockParams={vkBlockParams}
+					postTypesProps={postTypesProps}
+					termsByTaxonomyName={termsByTaxonomyName}
 				/>
 				<PanelBody
 					title={__('Display type', 'vk-blocks-pro')}

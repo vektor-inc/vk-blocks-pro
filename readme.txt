@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.4
 Tested up to: 6.7
-Stable tag: 1.91.1.1
+Stable tag: 1.92.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -46,6 +46,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Fixed Display [ Pro ]
 * Icon Card [ Pro ] (not recommended)
 * Post list [ Pro ]
+* Post list Slider [ Pro ]
 * New Badge [ Pro ]
 * Selected Post List [ Pro ]
 * Step [ Pro ]
@@ -105,6 +106,12 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+
+= 1.92.1 =
+[ Bug fix ][ Post List (Pro) ] Remove white space above title
+[ Design Bug Fix ][ Post list Slider (Pro) ] Fixed an issue where post list did not have consistent heights.
+[ Design Bug Fix ][ VK Button ] Fixed an issue where the text of a button with an icon was dropping in a column. Reset the word-break property to its initial value for better compatibility in Firefox.
 
 = 1.92.0 =
 [ Add Block ] Add Post list Slider block.

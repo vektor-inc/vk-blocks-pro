@@ -19,7 +19,7 @@ const LinkPreview = ({
 	onRemove,
 	onCopy,
 	relAttribute,
-	linkDescription
+	linkDescription,
 }) => {
 	const displayURL =
 		linkUrl.startsWith('http://') ||
@@ -100,7 +100,7 @@ const LinkPreview = ({
 	);
 };
 
-const LinkToolbar = ( props ) => {
+const LinkToolbar = (props) => {
 	const {
 		linkUrl,
 		setLinkUrl,
@@ -258,9 +258,7 @@ const LinkToolbar = ( props ) => {
 			}
 		}
 		setRelAttribute(rel.join(' '));
-	}
-
-
+	};
 
 	return (
 		<>
@@ -328,42 +326,56 @@ const LinkToolbar = ( props ) => {
 									setLinkTarget(checked ? '_blank' : '')
 								}
 							/>
-							{(relAttribute !== undefined  && typeof setRelAttribute === 'function') &&
-								<>
-								<CheckboxControl
-									label={__(
-										'Add noreferrer',
-										'vk-blocks-pro'
-									)}
-									checked={
-										relAttribute.includes('noreferrer') ||
-										false
-									}
-									onChange={(checked) =>
-										handleRelChange('noreferrer', checked)
-									}
-								/>
-								<CheckboxControl
-									label={__('Add nofollow', 'vk-blocks-pro')}
-									checked={
-										relAttribute.includes('nofollow') ||
-										false
-									}
-									onChange={(checked) =>
-										handleRelChange('nofollow', checked)
-									}
-								/>
-								</>
-							}
-							{ typeof setLinkDescription === 'function' && (
+							{relAttribute !== undefined &&
+								typeof setRelAttribute === 'function' && (
+									<>
+										<CheckboxControl
+											label={__(
+												'Add noreferrer',
+												'vk-blocks-pro'
+											)}
+											checked={
+												relAttribute.includes(
+													'noreferrer'
+												) || false
+											}
+											onChange={(checked) =>
+												handleRelChange(
+													'noreferrer',
+													checked
+												)
+											}
+										/>
+										<CheckboxControl
+											label={__(
+												'Add nofollow',
+												'vk-blocks-pro'
+											)}
+											checked={
+												relAttribute.includes(
+													'nofollow'
+												) || false
+											}
+											onChange={(checked) =>
+												handleRelChange(
+													'nofollow',
+													checked
+												)
+											}
+										/>
+									</>
+								)}
+							{typeof setLinkDescription === 'function' && (
 								<TextControl
 									label={__(
 										'Accessibility link description',
 										'vk-blocks-pro'
 									)}
 									value={linkDescription}
-									onChange={(value) => setLinkDescription(value)}
-									/>
+									onChange={(value) =>
+										setLinkDescription(value)
+									}
+								/>
 							)}
 						</form>
 					</div>

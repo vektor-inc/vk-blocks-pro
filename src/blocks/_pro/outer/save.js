@@ -53,7 +53,7 @@ export default function save(props) {
 		linkUrl,
 		linkTarget,
 		relAttribute,
-		linkDescription
+		linkDescription,
 	} = attributes;
 
 	let classPaddingLR;
@@ -239,7 +239,6 @@ export default function save(props) {
 				: undefined,
 		},
 	});
-
 
 	const GetLinkUrl = (
 		<a

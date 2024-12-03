@@ -92,7 +92,7 @@ function vk_blocks_post_category_badge_build_variations() {
 
 	// Create and register the eligible taxonomies variations.
 	foreach ( $taxonomies as $taxonomy ) {
-		if ( ! $taxonomy->hierarchical ) {
+		if ( ! $taxonomy->hierarchical && 'post_tag' === $taxonomy->name ) {
 			continue;
 		}
 

@@ -107,6 +107,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Post List Slider ( Pro ) ] Fix 404 Error of Load Module.
 
 = 1.92.1 =
 [ Bug fix ][ Post List (Pro) ] Remove white space above title

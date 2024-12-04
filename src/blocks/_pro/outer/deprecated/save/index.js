@@ -172,7 +172,6 @@ const blockAttributes6 = {
 	},
 };
 
-/*
 // 1.76.0 から attributes を変更
 const blockAttributes7 = {
 	...blockAttributes6,
@@ -185,11 +184,10 @@ const blockAttributes7 = {
 		default: '',
 	},
 };
-*/
 
 const deprecated = [
 	{
-		attributes: blockAttributes6,
+		attributes: blockAttributes7,
 		save: save1_92_1,
 	},
 	{

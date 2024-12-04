@@ -109,6 +109,7 @@ e.g.
 
 [ Add function ][ Link toolbar ] Added settings for "rel" and link description.
 [ Add function ][ Outer (Pro) ] Added support for "rel" and link description settings in the link toolbar.
+[ Bug Fix ][ Post List Slider ( Pro ) ] Fix 404 Error of Load Module.
 
 = 1.92.1 =
 [ Bug fix ][ Post List (Pro) ] Remove white space above title

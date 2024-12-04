@@ -106,6 +106,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+[ Bug fix ][ Category Badge (Pro) ] exclude tag.
 
 [ Bug Fix ][ Post List Slider ( Pro ) ] Fix 404 Error of Load Module.
 

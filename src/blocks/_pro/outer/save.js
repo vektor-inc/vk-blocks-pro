@@ -246,10 +246,10 @@ export default function save(props) {
 			target={linkTarget}
 			className={`${prefix}-link`}
 			rel={relAttribute}
-			aria-label={linkDescription}
+			aria-label=	{linkDescription ? linkDescription : __('Outer link', 'vk-blocks')}
 		>
 			<span className="screen-reader-text">
-				{__('Outer link', 'vk-blocks-pro')}
+				{linkDescription ? linkDescription : __('Outer link', 'vk-blocks')}
 			</span>
 		</a>
 	);

@@ -5,7 +5,7 @@
  * @package vk-blocks
  */
 
- use VektorInc\VK_Component\VK_Component_Posts;
+use VektorInc\VK_Component\VK_Component_Posts;
 
 /**
  * Boostrapの読み込み

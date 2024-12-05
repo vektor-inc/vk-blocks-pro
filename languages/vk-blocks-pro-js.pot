@@ -1001,8 +1001,8 @@ msgstr ""
 #: src/blocks/_pro/card-item/edit.js:182
 #: src/blocks/_pro/card/edit.js:134
 #: src/blocks/_pro/icon-card/edit.js:75
-#: src/blocks/_pro/post-list-slider/edit.js:483
-#: src/blocks/_pro/post-list/edit.js:442
+#: src/blocks/_pro/post-list-slider/edit.js:482
+#: src/blocks/_pro/post-list/edit.js:441
 msgid "Title"
 msgstr ""
 
@@ -1084,8 +1084,8 @@ msgid "Check your settings from the settings sidebar."
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:115
-#: src/blocks/_pro/post-list-slider/edit.js:351
-#: src/blocks/_pro/post-list/edit.js:310
+#: src/blocks/_pro/post-list-slider/edit.js:350
+#: src/blocks/_pro/post-list/edit.js:309
 msgid "Display conditions"
 msgstr ""
 
@@ -1094,8 +1094,8 @@ msgid "Parent"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:134
-#: src/blocks/_pro/post-list-slider/edit.js:521
-#: src/blocks/_pro/post-list/edit.js:480
+#: src/blocks/_pro/post-list-slider/edit.js:520
+#: src/blocks/_pro/post-list/edit.js:479
 msgid "Ignore this post"
 msgstr ""
 
@@ -1284,7 +1284,7 @@ msgid ""
 msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:139
-#: src/blocks/_pro/post-list-slider/edit.js:532
+#: src/blocks/_pro/post-list-slider/edit.js:531
 #: src/blocks/_pro/table-of-contents-new/edit.js:114
 #: src/components/column-layout-control/index.js:69
 msgid "Display type"
@@ -1550,7 +1550,7 @@ msgid "Display"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:155
-#: src/blocks/_pro/post-list-slider/edit.js:718
+#: src/blocks/_pro/post-list-slider/edit.js:717
 #: src/blocks/heading/edit.js:376
 #: src/blocks/slider/edit.js:535
 msgid "Hide"
@@ -1622,24 +1622,6 @@ msgstr ""
 msgid "Specify all columns at once"
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/deprecated/0.0.0/component.js:55
-#: src/blocks/_pro/icon-card-item/deprecated/0.0.1/component.js:70
-#: src/blocks/_pro/icon-card-item/deprecated/0.49.8/component.js:71
-#: src/blocks/_pro/icon-card-item/deprecated/0.60.1/component.js:85
-#: src/blocks/_pro/icon-card-item/edit.js:197
-#: src/blocks/pr-blocks/edit.js:534
-msgid "Input Title"
-msgstr ""
-
-#: src/blocks/_pro/icon-card-item/deprecated/0.0.0/component.js:62
-#: src/blocks/_pro/icon-card-item/deprecated/0.0.1/component.js:77
-#: src/blocks/_pro/icon-card-item/deprecated/0.49.8/component.js:78
-#: src/blocks/_pro/icon-card-item/deprecated/0.60.1/component.js:106
-#: src/blocks/_pro/icon-card-item/edit.js:219
-#: src/blocks/pr-blocks/edit.js:543
-msgid "Input Content"
-msgstr ""
-
 #: src/blocks/_pro/icon-card-item/edit.js:118
 msgid "Icon Card Setting"
 msgstr ""
@@ -1676,6 +1658,16 @@ msgstr ""
 #: src/blocks/button/edit.js:620
 #: src/blocks/pr-blocks/edit.js:289
 msgid "No background"
+msgstr ""
+
+#: src/blocks/_pro/icon-card-item/edit.js:197
+#: src/blocks/pr-blocks/edit.js:534
+msgid "Input Title"
+msgstr ""
+
+#: src/blocks/_pro/icon-card-item/edit.js:219
+#: src/blocks/pr-blocks/edit.js:543
+msgid "Input Content"
 msgstr ""
 
 #: src/blocks/_pro/icon-card/edit.js:65
@@ -1965,199 +1957,199 @@ msgstr ""
 msgid "Filter by %s"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:355
-#: src/blocks/_pro/post-list/edit.js:314
+#: src/blocks/_pro/post-list-slider/edit.js:354
+#: src/blocks/_pro/post-list/edit.js:313
 msgid "Filter by PostTypes"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:368
-#: src/blocks/_pro/post-list/edit.js:327
+#: src/blocks/_pro/post-list-slider/edit.js:367
+#: src/blocks/_pro/post-list/edit.js:326
 msgid "Taxonomy filter condition"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:379
-#: src/blocks/_pro/post-list/edit.js:338
+#: src/blocks/_pro/post-list-slider/edit.js:378
+#: src/blocks/_pro/post-list/edit.js:337
 msgid "OR ( Whichever apply )"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:389
-#: src/blocks/_pro/post-list/edit.js:348
+#: src/blocks/_pro/post-list-slider/edit.js:388
+#: src/blocks/_pro/post-list/edit.js:347
 msgid "AND ( All apply )"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:395
-#: src/blocks/_pro/post-list/edit.js:354
+#: src/blocks/_pro/post-list-slider/edit.js:394
+#: src/blocks/_pro/post-list/edit.js:353
 msgid "Number of Posts"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:408
-#: src/blocks/_pro/post-list/edit.js:367
+#: src/blocks/_pro/post-list-slider/edit.js:407
+#: src/blocks/_pro/post-list/edit.js:366
 msgid "Filter by Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:412
-#: src/blocks/_pro/post-list/edit.js:371
+#: src/blocks/_pro/post-list-slider/edit.js:411
+#: src/blocks/_pro/post-list/edit.js:370
 msgid "Period of Time"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:420
-#: src/blocks/_pro/post-list/edit.js:379
+#: src/blocks/_pro/post-list-slider/edit.js:419
+#: src/blocks/_pro/post-list/edit.js:378
 msgid "Whole Period"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:424
-#: src/blocks/_pro/post-list/edit.js:383
+#: src/blocks/_pro/post-list-slider/edit.js:423
+#: src/blocks/_pro/post-list/edit.js:382
 msgid "From Today"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:428
-#: src/blocks/_pro/post-list/edit.js:387
+#: src/blocks/_pro/post-list-slider/edit.js:427
+#: src/blocks/_pro/post-list/edit.js:386
 msgid "From Now"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:432
-#: src/blocks/_pro/post-list/edit.js:391
+#: src/blocks/_pro/post-list-slider/edit.js:431
+#: src/blocks/_pro/post-list/edit.js:390
 msgid "From Tomorrow"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:437
-#: src/blocks/_pro/post-list/edit.js:396
+#: src/blocks/_pro/post-list-slider/edit.js:436
+#: src/blocks/_pro/post-list/edit.js:395
 msgid ""
 "* If you choose a future period, you will need to customize it so that "
 "future posts will be published immediately."
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:444
-#: src/blocks/_pro/post-list/edit.js:403
+#: src/blocks/_pro/post-list-slider/edit.js:443
+#: src/blocks/_pro/post-list/edit.js:402
 msgid "Order"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:453
-#: src/blocks/_pro/post-list/edit.js:412
+#: src/blocks/_pro/post-list-slider/edit.js:452
+#: src/blocks/_pro/post-list/edit.js:411
 msgid "ASC"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:457
-#: src/blocks/_pro/post-list/edit.js:416
+#: src/blocks/_pro/post-list-slider/edit.js:456
+#: src/blocks/_pro/post-list/edit.js:415
 msgid "DESC"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:463
-#: src/blocks/_pro/post-list/edit.js:422
+#: src/blocks/_pro/post-list-slider/edit.js:462
+#: src/blocks/_pro/post-list/edit.js:421
 msgid "Order by"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:472
-#: src/blocks/_pro/post-list/edit.js:431
+#: src/blocks/_pro/post-list-slider/edit.js:471
+#: src/blocks/_pro/post-list/edit.js:430
 msgid "Published Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:479
-#: src/blocks/_pro/post-list/edit.js:438
+#: src/blocks/_pro/post-list-slider/edit.js:478
+#: src/blocks/_pro/post-list/edit.js:437
 msgid "Modefied Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:487
-#: src/blocks/_pro/post-list/edit.js:446
+#: src/blocks/_pro/post-list-slider/edit.js:486
+#: src/blocks/_pro/post-list/edit.js:445
 msgid "Random"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:493
-#: src/blocks/_pro/post-list/edit.js:452
+#: src/blocks/_pro/post-list-slider/edit.js:492
+#: src/blocks/_pro/post-list/edit.js:451
 msgid "offset"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:509
-#: src/blocks/_pro/post-list/edit.js:468
+#: src/blocks/_pro/post-list-slider/edit.js:508
+#: src/blocks/_pro/post-list/edit.js:467
 msgid "Display from the first post always"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:515
-#: src/blocks/_pro/post-list/edit.js:474
+#: src/blocks/_pro/post-list-slider/edit.js:514
+#: src/blocks/_pro/post-list/edit.js:473
 msgid "Display from the first post even on pages beyond the second page."
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:543
+#: src/blocks/_pro/post-list-slider/edit.js:542
 #: src/components/column-layout-control/index.js:26
 msgid "Card"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:547
+#: src/blocks/_pro/post-list-slider/edit.js:546
 #: src/components/column-layout-control/index.js:30
 msgid "Card (No border)"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:554
+#: src/blocks/_pro/post-list-slider/edit.js:553
 #: src/components/column-layout-control/index.js:34
 msgid "Card (Intext)"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:558
+#: src/blocks/_pro/post-list-slider/edit.js:557
 #: src/components/column-layout-control/index.js:38
 msgid "Card (Horizontal)"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:565
+#: src/blocks/_pro/post-list-slider/edit.js:564
 #: src/components/column-layout-control/index.js:42
 msgid "Media"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:569
+#: src/blocks/_pro/post-list-slider/edit.js:568
 #: src/components/column-layout-control/index.js:46
 msgid "Text 1 Column"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:577
+#: src/blocks/_pro/post-list-slider/edit.js:576
 #: src/blocks/slider/edit.js:394
 msgid "Slider Settings"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:581
+#: src/blocks/_pro/post-list-slider/edit.js:580
 #: src/blocks/slider/edit.js:398
 msgid "Effect "
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:591
+#: src/blocks/_pro/post-list-slider/edit.js:590
 #: src/blocks/slider/edit.js:408
 msgid "Slide"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:595
+#: src/blocks/_pro/post-list-slider/edit.js:594
 #: src/blocks/slider/edit.js:412
 msgid "Fade"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:602
+#: src/blocks/_pro/post-list-slider/edit.js:601
 #: src/blocks/slider/edit.js:419
 msgid "Loop "
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:612
+#: src/blocks/_pro/post-list-slider/edit.js:611
 #: src/blocks/slider/edit.js:429
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:622
+#: src/blocks/_pro/post-list-slider/edit.js:621
 #: src/blocks/slider/edit.js:439
 msgid "Stop AutoPlay when swipe"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:632
+#: src/blocks/_pro/post-list-slider/edit.js:631
 #: src/blocks/slider/edit.js:449
 msgid "Display Time"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:659
+#: src/blocks/_pro/post-list-slider/edit.js:658
 #: src/blocks/slider/edit.js:476
 msgid "Change Speed"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:683
+#: src/blocks/_pro/post-list-slider/edit.js:682
 #: src/blocks/slider/edit.js:500
 msgid "Pagination Type"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:694
+#: src/blocks/_pro/post-list-slider/edit.js:693
 #: src/blocks/_pro/step-item/edit.js:137
 #: src/blocks/_pro/table-of-contents-new/edit.js:129
 #: src/blocks/_pro/timeline-item/edit.js:103
@@ -2168,29 +2160,29 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:698
+#: src/blocks/_pro/post-list-slider/edit.js:697
 #: src/blocks/slider/edit.js:515
 msgid "Number of slides"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:711
+#: src/blocks/_pro/post-list-slider/edit.js:710
 #: src/blocks/slider/edit.js:528
 msgid "Navigation Position"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:722
+#: src/blocks/_pro/post-list-slider/edit.js:721
 #: src/blocks/button/edit.js:365
 #: src/blocks/slider/edit.js:539
 #: src/components/display-items-control/index.js:136
 msgid "Center"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:726
+#: src/blocks/_pro/post-list-slider/edit.js:725
 #: src/blocks/slider/edit.js:543
 msgid "Bottom on Mobile device"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:743
+#: src/blocks/_pro/post-list-slider/edit.js:742
 msgid "Please check the actual behavior on the live site."
 msgstr ""
 

@@ -7,6 +7,7 @@
 
 use VektorInc\VK_Component\VK_Component_Posts;
 VK_Component_Posts::init();
+
 /**
  * Boostrapの読み込み
  *

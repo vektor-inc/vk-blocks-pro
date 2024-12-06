@@ -7,6 +7,7 @@ export default function save({ attributes }) {
 		balloonType,
 		balloonBorder,
 		balloonFullWidth,
+		balloonIconDisplay,
 		balloonImageBorder,
 		balloonBorderColor,
 		balloonBgColor,
@@ -35,6 +36,12 @@ export default function save({ attributes }) {
 	if ('background' in iconImageColorStyle) {
 		delete iconImageColorStyle.background;
 	}
+
+	// eslint-disable-next-line camelcase,no-undef
+	const defaultAvatar =
+		typeof img_path !== 'undefined' && !!img_path.full_path // eslint-disable-line no-undef
+			? img_path.full_path // eslint-disable-line no-undef
+			: '';
 
 	//吹き出しに枠線を追加オン
 	if (balloonBorder === true) {
@@ -263,12 +270,13 @@ export default function save({ attributes }) {
 	return (
 		<div {...blockProps}>
 			<div className={`vk_balloon_icon`}>
-				{IconImage ? (
+				{balloonIconDisplay ||
+				(balloonIconDisplay === 'undefined' && IconImage) ? (
 					<figure>
 						<img
 							className={`vk_balloon_icon_image vk_balloon_icon_image-type-${balloonImageType} ${iconImageBorderClass}`}
 							style={iconImageColorStyle}
-							src={IconImage}
+							src={IconImage ? IconImage : defaultAvatar}
 							alt=""
 						/>
 						<RichText.Content

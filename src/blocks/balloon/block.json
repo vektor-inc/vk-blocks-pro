@@ -21,6 +21,10 @@
 			"type": "boolean",
 			"default": false
 		},
+		"balloonIconDisplay": {
+			"type": "boolean",
+			"default": true
+		},
 		"balloonBorder": {
 			"type": "boolean",
 			"default": false
@@ -45,7 +49,7 @@
 		},
 		"IconImage": {
 			"type": "string",
-			"defaul": null
+			"default": null
 		},
 		"balloonImageType": {
 			"type": "string",

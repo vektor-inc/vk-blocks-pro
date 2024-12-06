@@ -1,5 +1,6 @@
 import save1_20_5 from './1.20.5/save';
 import save1_20_7 from './1.20.7/save';
+import save1_89_0 from './1.89.0/save';
 
 const blockAttributes = {
 	content: {
@@ -92,17 +93,33 @@ const blockAttributes5 = {
 	},
 }
 
-/* 次回対応おねがいします
+
 const blockAttributes6 = {
 	...blockAttributes5,
-	"balloonFullWidth": {
-		"type": "boolean",
-		"default": false
+	balloonFullWidth: {
+		type: 'boolean',
+		default: false
+	},
+	balloonBorderColor: {
+		type: 'string',
+	},
+	balloonBgColor: {
+		type: 'string',
 	},
 }
-*/
+
 
 const deprecated = [
+	{
+		attributes: blockAttributes6,
+		save: save1_89_0,
+		migrate: (attributes) => {
+			return {
+				...attributes,
+				balloonIconDisplay: false,
+			};
+		},
+	},
 	{
 		attributes: blockAttributes5,
 		save: save1_20_7,

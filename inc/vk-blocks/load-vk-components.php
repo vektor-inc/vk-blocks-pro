@@ -18,7 +18,7 @@ function vk_blocks_load_vk_components( $hook_suffix ) {
 	if ( 'lightning' === $template || 'lightning-pro' === $template || 'katawara' === $template ) {
 		return;
 	}
-	
+
 	VK_Component_Posts::register_style( 'vk-components-style' );
 
 	// 管理画面

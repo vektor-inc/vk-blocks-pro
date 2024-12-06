@@ -9,6 +9,7 @@ import save1_64_0 from './1.64.0/save';
 import save1_71_0 from './1.71.0/save';
 import save1_76_0 from './1.76.0/save';
 import save1_89_0 from './1.89.0/save';
+import save1_92_1 from './1.92.1/save';
 
 const blockAttributes = {
 	bgColor: {
@@ -171,7 +172,24 @@ const blockAttributes6 = {
 	},
 };
 
+// 1.76.0 から attributes を変更
+const blockAttributes7 = {
+	...blockAttributes6,
+	relAttribute: {
+		type: 'string',
+		default: '',
+	},
+	linkDescription: {
+		type: 'string',
+		default: '',
+	},
+};
+
 const deprecated = [
+	{
+		attributes: blockAttributes7,
+		save: save1_92_1,
+	},
 	{
 		attributes: blockAttributes6,
 		save: save1_89_0,

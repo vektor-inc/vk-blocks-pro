@@ -52,8 +52,6 @@ export default function save(props) {
 		blockId,
 		linkUrl,
 		linkTarget,
-		relAttribute,
-		linkDescription,
 	} = attributes;
 
 	let classPaddingLR;
@@ -240,22 +238,18 @@ export default function save(props) {
 		},
 	});
 
+	const relAttribute =
+		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
 	const GetLinkUrl = (
 		<a
 			href={linkUrl}
 			target={linkTarget}
 			className={`${prefix}-link`}
 			rel={relAttribute}
-			aria-label={
-				linkDescription
-					? linkDescription
-					: __('Outer link', 'vk-blocks-pro')
-			}
+			aria-label={__('Outer link', 'vk-blocks-pro')}
 		>
 			<span className="screen-reader-text">
-				{linkDescription
-					? linkDescription
-					: __('Outer link', 'vk-blocks-pro')}
+				{__('Outer link', 'vk-blocks-pro')}
 			</span>
 		</a>
 	);

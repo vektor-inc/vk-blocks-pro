@@ -113,6 +113,12 @@ const deprecated = [
 	{
 		attributes: blockAttributes6,
 		save: save1_89_0,
+		migrate: (attributes) => {
+			return {
+				...attributes,
+				balloonIconDisplay: false,
+			};
+		},
 	},
 	{
 		attributes: blockAttributes5,

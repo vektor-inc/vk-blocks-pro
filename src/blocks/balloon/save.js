@@ -7,6 +7,7 @@ export default function save({ attributes }) {
 		balloonType,
 		balloonBorder,
 		balloonFullWidth,
+		balloonIconDisplay,
 		balloonImageBorder,
 		balloonBorderColor,
 		balloonBgColor,
@@ -269,7 +270,8 @@ export default function save({ attributes }) {
 	return (
 		<div {...blockProps}>
 			<div className={`vk_balloon_icon`}>
-				{
+				{balloonIconDisplay ||
+				(balloonIconDisplay === 'undefined' && IconImage.length > 0) ? (
 					<figure>
 						<img
 							className={`vk_balloon_icon_image vk_balloon_icon_image-type-${balloonImageType} ${iconImageBorderClass}`}
@@ -283,7 +285,9 @@ export default function save({ attributes }) {
 							value={balloonName}
 						/>
 					</figure>
-				}
+				) : (
+					''
+				)}
 			</div>
 			<div className={`vk_balloon_content_outer`}>
 				<div

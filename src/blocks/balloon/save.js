@@ -271,7 +271,7 @@ export default function save({ attributes }) {
 		<div {...blockProps}>
 			<div className={`vk_balloon_icon`}>
 				{balloonIconDisplay ||
-				(balloonIconDisplay === 'undefined' && IconImage.length > 0) ? (
+					(balloonIconDisplay === 'undefined' && IconImage) ? (
 					<figure>
 						<img
 							className={`vk_balloon_icon_image vk_balloon_icon_image-type-${balloonImageType} ${iconImageBorderClass}`}

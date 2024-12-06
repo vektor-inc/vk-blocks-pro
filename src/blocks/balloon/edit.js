@@ -598,7 +598,7 @@ export default function BalloonEdit(props) {
 			</InspectorControls>
 			<div {...blockProps}>
 				{balloonIconDisplay ||
-					(balloonIconDisplay === 'undefined' && IconImage) ? (
+				(balloonIconDisplay === 'undefined' && IconImage) ? (
 					<div className={`vk_balloon_icon`}>
 						<MediaUpload
 							onSelect={(value) =>

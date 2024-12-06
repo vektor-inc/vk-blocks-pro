@@ -5,6 +5,8 @@
  * @package vk-blocks
  */
 
+use VektorInc\VK_Component\VK_Component_Posts;
+
 /**
  * Register select-post-list-item Block
  *

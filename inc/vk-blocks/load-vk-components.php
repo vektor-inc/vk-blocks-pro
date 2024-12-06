@@ -6,7 +6,7 @@
  */
 
 use VektorInc\VK_Component\VK_Component_Posts;
-
+VK_Component_Posts::init();
 /**
  * Boostrapの読み込み
  *
@@ -18,8 +18,8 @@ function vk_blocks_load_vk_components( $hook_suffix ) {
 	if ( 'lightning' === $template || 'lightning-pro' === $template || 'katawara' === $template ) {
 		return;
 	}
-
-	VK_Component_Posts::register_style();
+	
+	VK_Component_Posts::register_style( 'vk-components-style' );
 
 	// 管理画面
 	if ( is_admin() ) {

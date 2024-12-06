@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eea73f7777f1220bdbebc6a0bf042fec",
+    "content-hash": "c907641e2a3745140310d33b896a482f",
     "packages": [
         {
             "name": "tgmpa/tgm-plugin-activation",
@@ -247,16 +247,16 @@
         },
         {
             "name": "vektor-inc/vk-component",
-            "version": "0.0.13",
+            "version": "0.0.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vektor-inc/vk-components.git",
-                "reference": "35ab4621a512a18f9157cfbd3d61c0d684bde034"
+                "reference": "f147f2f07dd7ec61e1b9c4e5c683942db2873192"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vektor-inc/vk-components/zipball/35ab4621a512a18f9157cfbd3d61c0d684bde034",
-                "reference": "35ab4621a512a18f9157cfbd3d61c0d684bde034",
+                "url": "https://api.github.com/repos/vektor-inc/vk-components/zipball/f147f2f07dd7ec61e1b9c4e5c683942db2873192",
+                "reference": "f147f2f07dd7ec61e1b9c4e5c683942db2873192",
                 "shasum": ""
             },
             "require": {
@@ -285,9 +285,9 @@
             "description": "Vektor Component",
             "support": {
                 "issues": "https://github.com/vektor-inc/vk-components/issues",
-                "source": "https://github.com/vektor-inc/vk-components/tree/0.0.13"
+                "source": "https://github.com/vektor-inc/vk-components/tree/0.0.16"
             },
-            "time": "2024-12-05T07:18:34+00:00"
+            "time": "2024-12-06T00:49:56+00:00"
         },
         {
             "name": "vektor-inc/vk-css-optimize",
@@ -1577,16 +1577,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.6.21",
+            "version": "9.6.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "de6abf3b6f8dd955fac3caad3af7a9504e8c2ffa"
+                "reference": "f80235cb4d3caa59ae09be3adf1ded27521d1a9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/de6abf3b6f8dd955fac3caad3af7a9504e8c2ffa",
-                "reference": "de6abf3b6f8dd955fac3caad3af7a9504e8c2ffa",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/f80235cb4d3caa59ae09be3adf1ded27521d1a9c",
+                "reference": "f80235cb4d3caa59ae09be3adf1ded27521d1a9c",
                 "shasum": ""
             },
             "require": {
@@ -1597,7 +1597,7 @@
                 "ext-mbstring": "*",
                 "ext-xml": "*",
                 "ext-xmlwriter": "*",
-                "myclabs/deep-copy": "^1.12.0",
+                "myclabs/deep-copy": "^1.12.1",
                 "phar-io/manifest": "^2.0.4",
                 "phar-io/version": "^3.2.1",
                 "php": ">=7.3",
@@ -1660,7 +1660,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.21"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.22"
             },
             "funding": [
                 {
@@ -1676,7 +1676,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-19T10:50:18+00:00"
+            "time": "2024-12-05T13:48:26+00:00"
         },
         {
             "name": "sebastian/cli-parser",

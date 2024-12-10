@@ -184,10 +184,10 @@ class Vk_Blocks_PostList {
 		if ( ! empty( $attributes['pagedlock'] ) ) {
 			$paged = 1;
 		} elseif ( is_singular() && isset( $wp_query->query_vars['page'] ) ) {
-			$paged = $wp_query->query_vars['page'];
+			$paged  = $wp_query->query_vars['page'];
 			$offset = null;
 		} elseif ( isset( $wp_query->query_vars['paged'] ) ) {
-			$paged = $wp_query->query_vars['paged'];
+			$paged  = $wp_query->query_vars['paged'];
 			$offset = null;
 		}
 

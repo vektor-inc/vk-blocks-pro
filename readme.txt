@@ -106,8 +106,10 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-[ Bug fix ][ Category Badge (Pro) ] exclude tag.
 
+[ Bug fix ][ Post List Slider ( Pro ) ] Fix the issue where posts are always displayed from the first post regardless of the "Display from the first post always" setting.
+[ Bug fix ][ Post List ( Pro ) ] Fix the issue where posts are always displayed from the first post regardless of the "Display from the first post always" setting.
+[ Bug fix ][ Category Badge (Pro) ] exclude tag.
 [ Add function ][ Link toolbar ] Added settings for "rel" and link description.
 [ Add function ][ Outer (Pro) ] Added support for "rel" and link description settings in the link toolbar.
 [ Bug Fix ][ Post List Slider ( Pro ) ] Fix 404 Error of Load Module.

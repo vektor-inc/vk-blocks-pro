@@ -185,8 +185,10 @@ class Vk_Blocks_PostList {
 			$paged = 1;
 		} elseif ( is_singular() && isset( $wp_query->query_vars['page'] ) ) {
 			$paged = $wp_query->query_vars['page'];
+			$offset = null;
 		} elseif ( isset( $wp_query->query_vars['paged'] ) ) {
 			$paged = $wp_query->query_vars['paged'];
+			$offset = null;
 		}
 
 		$args = array(
@@ -198,12 +200,15 @@ class Vk_Blocks_PostList {
 			'posts_per_page'         => intval( $attributes['numberPosts'] ),
 			'order'                  => $attributes['order'],
 			'orderby'                => $attributes['orderby'],
-			'offset'                 => $offset,
 			'post__not_in'           => array_map( 'intval', $post__not_in ),
 			'date_query'             => $date_query,
 			'update_post_meta_cache' => false,
 			'no_found_rows'          => true,
 		);
+
+		if ( ! is_null( $offset ) ) {
+			$args['offset'] = $offset;
+		}
 
 		if ( ! empty( $date_query ) ) {
 			$args['date_query'] = $date_query;

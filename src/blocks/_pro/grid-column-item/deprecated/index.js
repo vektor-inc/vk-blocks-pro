@@ -2,6 +2,7 @@ import save1_4_1 from './1.4.1/save';
 import save1_13_2 from './1.13.2/save';
 import save1_20_5 from './1.20.5/save';
 import save1_78_0 from './1.78.0/save';
+import save1_92_1 from './1.92.1/save';
 
 const blockAttributes = {
 	layout: {
@@ -123,8 +124,7 @@ const blockAttributes2 = {
 	}
 }
 
-/* 1.78.0よりあとのバージョンで追加された属性 */
-/*
+// 1.78.0よりあとのバージョンで追加された属性
 const blockAttributes3 = {
 	...blockAttributes2,
 	linkUrl: {
@@ -135,11 +135,26 @@ const blockAttributes3 = {
 		default: ''
 	}
 }
-*/
+
+const blockAttributes4 = {
+	...blockAttributes3,
+	relAttribute: {
+		type: 'string',
+		default: '',
+	},
+	linkDescription: {
+		type: 'string',
+		default: '',
+	}
+}
 
 const deprecated = [
 	{
-		attributes: blockAttributes2,
+		attributes: blockAttributes4,
+		save: save1_92_1,
+	},
+	{
+		attributes: blockAttributes3,
 		save: save1_78_0,
 	},
 	{

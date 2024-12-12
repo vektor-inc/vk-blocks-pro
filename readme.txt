@@ -108,6 +108,7 @@ e.g.
 == Changelog ==
 
 [ Other ][ Post list (Pro) / Post list slider (Pro) ] Refactored "Display Conditions" by modularizing them into components.
+[ Add function ][ ballon ] Add default avatar.
 [ Bug fix ][ Category Badge (Pro) ] exclude tag.
 [ Add function ][ Link toolbar ] Added settings for "rel" and link description.
 [ Add function ][ Outer (Pro) ] Added support for "rel" and link description settings in the link toolbar.

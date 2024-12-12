@@ -106,9 +106,10 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-[ Bug fix ][ Table of Contents ] Fix line break.
-[ Bug fix ][ Category Badge (Pro) ] exclude tag.
 
+[ Bug fix ][ Table of Contents ] Fix line break.
+[ Add function ][ ballon ] Add default avatar.
+[ Bug fix ][ Category Badge (Pro) ] exclude tag.
 [ Add function ][ Link toolbar ] Added settings for "rel" and link description.
 [ Add function ][ Outer (Pro) ] Added support for "rel" and link description settings in the link toolbar.
 [ Bug Fix ][ Post List Slider ( Pro ) ] Fix 404 Error of Load Module.

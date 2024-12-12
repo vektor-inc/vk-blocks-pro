@@ -107,6 +107,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Table of Contents ] Fix line break.
 [ Add function ][ ballon ] Add default avatar.
 [ Bug fix ][ Category Badge (Pro) ] exclude tag.
 [ Add function ][ Link toolbar ] Added settings for "rel" and link description.

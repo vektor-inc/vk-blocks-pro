@@ -143,7 +143,7 @@ class Vk_Blocks_PostList {
 			$post__not_in = array( get_the_ID() );
 		}
 
-		$offset = isset( $attributes['offset'] ) ? intval( $attributes['offset'] ) : 0;
+		$offset         = isset( $attributes['offset'] ) ? intval( $attributes['offset'] ) : 0;
 		$posts_per_page = isset( $attributes['numberPosts'] ) ? intval( $attributes['numberPosts'] ) : 0;
 
 		$date_query = array();

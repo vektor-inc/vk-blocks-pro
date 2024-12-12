@@ -303,7 +303,6 @@ export default function PostListSliderEdit(props) {
 			link.style.boxShadow = 'unset';
 
 			// ホバー効果を無効化
-			link.style.color = 'inherit';
 			link.style.textDecorationColor = 'inherit';
 		});
 	};

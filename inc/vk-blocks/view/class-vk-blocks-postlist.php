@@ -135,7 +135,7 @@ class Vk_Blocks_PostList {
 		$tax_query_relation   = isset( $attributes['taxQueryRelation'] ) ? $attributes['taxQueryRelation'] : 'OR';
 
 		if ( empty( $is_checked_post_type ) ) {
-			$is_checked_post_type = 'any';
+			return false;
 		}
 
 		$post__not_in = array();

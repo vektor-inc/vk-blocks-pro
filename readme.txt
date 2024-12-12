@@ -109,6 +109,7 @@ e.g.
 
 [ Bug fix ][ Post List Slider ( Pro ) ] Fix the issue where posts are always displayed from the first post regardless of the "Display from the first post always" setting.
 [ Bug fix ][ Post List ( Pro ) ] Fix the issue where posts are always displayed from the first post regardless of the "Display from the first post always" setting.
+[ Bug Fix ][ Post List (Pro) ][ Post List Slider (Pro) ] Fixed missing "No relevant posts." message when no post types are selected.
 [ Add function ][ ballon ] Add default avatar.
 [ Bug fix ][ Category Badge (Pro) ] exclude tag.
 [ Add function ][ Link toolbar ] Added settings for "rel" and link description.
@@ -169,7 +170,7 @@ e.g.
 [ Bug fix ] Roll back 1.85.1
 
 = 1.86.0 =
-[ Add function ] [ Fixed Display (Pro) ] Added an option for "Fixed display from the bottom."
+[ Add function ][ Fixed Display (Pro) ] Added an option for "Fixed display from the bottom."
 [ Add function ] Added to apply the vk-scroll-hint class to all elements with the vk_hidden and vk_hidden-XXX classes.
 [ Bug fix ][ Core/table ] Fixed the class was not removed when table scrolling was disabled.
 [ Bug fix ] Fix load styles when separate load is enable.

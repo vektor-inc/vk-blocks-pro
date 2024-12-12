@@ -99,7 +99,6 @@ e.g.
 
 == Frequently Asked Questions ==
 
-
 == Screenshots ==
 
 1. VK Blocks can be selected from the VK Blocks Panel.
@@ -108,7 +107,6 @@ e.g.
 == Changelog ==
 
 [ Bug Fix ][ Post List (Pro) ][ Post List Slider (Pro) ] Fixed missing "No relevant posts." message when no post types are selected.
-[ Add function ][ Fixed Display (Pro) ] Added an option for "Fixed display from the bottom."
 [ Add function ][ ballon ] Add default avatar.
 [ Bug fix ][ Category Badge (Pro) ] exclude tag.
 [ Add function ][ Link toolbar ] Added settings for "rel" and link description.

@@ -137,7 +137,7 @@ export const returnHtml = (sources, attributes, className) => {
 
 			// タグ除去メソッド
 			const removeHtmlTags = (text) => {
-				return text.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '');
+				return text.replace(/(<|\[)("[^"]*"|'[^']*'|[^'">])*(>|\])/g, '');
 			};
 
 			let displayContent;

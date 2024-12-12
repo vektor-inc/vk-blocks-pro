@@ -106,6 +106,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+[ Bug fix ][ Table of Contents ] Fix line break.
 [ Bug fix ][ Category Badge (Pro) ] exclude tag.
 
 [ Add function ][ Link toolbar ] Added settings for "rel" and link description.

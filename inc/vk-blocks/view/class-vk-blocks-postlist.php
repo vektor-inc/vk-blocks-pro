@@ -144,6 +144,7 @@ class Vk_Blocks_PostList {
 		}
 
 		$offset = isset( $attributes['offset'] ) ? intval( $attributes['offset'] ) : 0;
+		$posts_per_page = isset( $attributes['numberPosts'] ) ? intval( $attributes['numberPosts'] ) : 0;
 
 		$date_query = array();
 		if ( ! empty( $attributes['targetPeriod'] ) ) {
@@ -179,16 +180,17 @@ class Vk_Blocks_PostList {
 		}
 
 		global $wp_query;
+
 		// とりあえず１を入れつつ2ページ目の情報があったら上書き
 		$paged = 1;
 		if ( ! empty( $attributes['pagedlock'] ) ) {
 			$paged = 1;
 		} elseif ( is_singular() && isset( $wp_query->query_vars['page'] ) ) {
-			$paged  = $wp_query->query_vars['page'];
-			$offset = null;
+			$paged  = $wp_query->query_vars['page'] ? $wp_query->query_vars['page'] : 1;
+			$offset = $offset + $posts_per_page * ( $paged - 1 );
 		} elseif ( isset( $wp_query->query_vars['paged'] ) ) {
-			$paged  = $wp_query->query_vars['paged'];
-			$offset = null;
+			$paged  = $wp_query->query_vars['paged'] ? $wp_query->query_vars['paged'] : 1;
+			$offset = $offset + $posts_per_page * ( $paged - 1 );
 		}
 
 		$args = array(
@@ -197,7 +199,7 @@ class Vk_Blocks_PostList {
 			'tax_query'              => ! empty( $is_checked_terms ) ? self::format_terms( $tax_query_relation, $is_checked_terms, $is_checked_post_type ) : array(),
 			'paged'                  => $paged,
 			// 0で全件取得
-			'posts_per_page'         => intval( $attributes['numberPosts'] ),
+			'posts_per_page'         => $posts_per_page,
 			'order'                  => $attributes['order'],
 			'orderby'                => $attributes['orderby'],
 			'post__not_in'           => array_map( 'intval', $post__not_in ),

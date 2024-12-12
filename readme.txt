@@ -107,6 +107,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Post List (Pro) ][ Post List Slider (Pro) ] Fixed missing "No relevant posts." message when no post types are selected.
+[ Add function ][ Fixed Display (Pro) ] Added an option for "Fixed display from the bottom."
 [ Add function ][ ballon ] Add default avatar.
 [ Bug fix ][ Category Badge (Pro) ] exclude tag.
 [ Add function ][ Link toolbar ] Added settings for "rel" and link description.
@@ -168,8 +170,6 @@ e.g.
 
 = 1.86.0 =
 
-[ Bug Fix ][ Post List (Pro) ][ Post List Slider (Pro) ] Fixed missing "No relevant posts." message when no post types are selected.
-[ Add function ][ Fixed Display (Pro) ] Added an option for "Fixed display from the bottom."
 [ Add function ] Added to apply the vk-scroll-hint class to all elements with the vk_hidden and vk_hidden-XXX classes.
 [ Bug fix ][ Core/table ] Fixed the class was not removed when table scrolling was disabled.
 [ Bug fix ] Fix load styles when separate load is enable.

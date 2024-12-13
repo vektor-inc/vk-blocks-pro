@@ -107,6 +107,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Table of Contents ] Fix line break.
 [ Bug Fix ][ Post List (Pro) ][ Post List Slider (Pro) ] Fixed missing "No relevant posts." message when no post types are selected.
 [ Add function ][ ballon ] Add default avatar.
 [ Bug fix ][ Category Badge (Pro) ] exclude tag.

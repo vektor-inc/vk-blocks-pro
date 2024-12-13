@@ -125,10 +125,6 @@ function vk_blocks_post_list_slider_render_callback( $attributes ) {
 
 	$wp_query = Vk_Blocks_PostList::get_loop_query( $attributes );
 
-	if ( ! isset( $wp_query ) || false === $wp_query || 'false' === $wp_query || empty( $wp_query->posts ) ) {
-		return wp_kses_post( Vk_Blocks_PostList::get_render_no_post( $wp_query ) );
-	}
-
 	$options = array(
 		'layout'                     => $attributes['layout'],
 		'display_image'              => $attributes['display_image'],

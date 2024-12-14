@@ -19,9 +19,11 @@
 }
 
 .vk_balloon_icon {
-	flex-basis: 80px;
 	flex-shrink: 0;
 	text-align: center;
+	&:not(:empty) {
+	flex-basis: 80px;
+	}
 	&_image:not(.has-text-color) {
 		color: #ccc;
 	}

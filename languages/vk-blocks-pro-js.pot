@@ -701,7 +701,7 @@ msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:130
 #: src/blocks/_pro/tab/index.js:23
-#: src/blocks/balloon/edit.js:482
+#: src/blocks/balloon/edit.js:489
 #: src/blocks/button/edit.js:330
 #: src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:21
@@ -754,17 +754,17 @@ msgid "Trembling Y"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:80
-#: src/blocks/balloon/edit.js:567
+#: src/blocks/balloon/edit.js:585
 msgid "Trembling X"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:84
-#: src/blocks/balloon/edit.js:571
+#: src/blocks/balloon/edit.js:589
 msgid "Pounding"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:88
-#: src/blocks/balloon/edit.js:575
+#: src/blocks/balloon/edit.js:593
 msgid "Shaking"
 msgstr ""
 
@@ -862,7 +862,7 @@ msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:178
 #: src/blocks/_pro/outer/edit.js:543
-#: src/blocks/balloon/edit.js:508
+#: src/blocks/balloon/edit.js:515
 msgid "Width"
 msgstr ""
 
@@ -1001,8 +1001,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/edit.js:182
 #: src/blocks/_pro/card/edit.js:134
 #: src/blocks/_pro/icon-card/edit.js:75
-#: src/blocks/_pro/post-list-slider/edit.js:482
-#: src/blocks/_pro/post-list/edit.js:441
+#: src/components/display-condition/index.js:388
 msgid "Title"
 msgstr ""
 
@@ -1016,7 +1015,6 @@ msgid "https://example.com"
 msgstr ""
 
 #: src/blocks/_pro/card-item/edit.js:88
-#: src/blocks/balloon/edit.js:600
 #: src/blocks/flow/edit.js:84
 #: src/blocks/pr-blocks/edit.js:89
 #: src/blocks/pr-content/deprecated/1.7.1/mediaUpload.js:68
@@ -1084,8 +1082,7 @@ msgid "Check your settings from the settings sidebar."
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:115
-#: src/blocks/_pro/post-list-slider/edit.js:350
-#: src/blocks/_pro/post-list/edit.js:309
+#: src/components/display-condition/index.js:265
 msgid "Display conditions"
 msgstr ""
 
@@ -1094,8 +1091,7 @@ msgid "Parent"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:134
-#: src/blocks/_pro/post-list-slider/edit.js:520
-#: src/blocks/_pro/post-list/edit.js:479
+#: src/components/display-condition/index.js:426
 msgid "Ignore this post"
 msgstr ""
 
@@ -1284,7 +1280,7 @@ msgid ""
 msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:139
-#: src/blocks/_pro/post-list-slider/edit.js:531
+#: src/blocks/_pro/post-list-slider/edit.js:78
 #: src/blocks/_pro/table-of-contents-new/edit.js:114
 #: src/components/column-layout-control/index.js:69
 msgid "Display type"
@@ -1311,7 +1307,7 @@ msgid "Top"
 msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:167
-#: src/blocks/balloon/edit.js:434
+#: src/blocks/balloon/edit.js:441
 #: src/blocks/button/edit.js:375
 #: src/blocks/pr-content/edit.js:252
 #: src/components/display-items-control/index.js:140
@@ -1323,7 +1319,7 @@ msgid "Bottom"
 msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:175
-#: src/blocks/balloon/edit.js:422
+#: src/blocks/balloon/edit.js:429
 #: src/blocks/button/edit.js:355
 #: src/blocks/pr-content/edit.js:256
 #: src/components/display-items-control/index.js:132
@@ -1550,7 +1546,7 @@ msgid "Display"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:155
-#: src/blocks/_pro/post-list-slider/edit.js:717
+#: src/blocks/_pro/post-list-slider/edit.js:264
 #: src/blocks/heading/edit.js:376
 #: src/blocks/slider/edit.js:535
 msgid "Hide"
@@ -1561,7 +1557,7 @@ msgid "Column Radius"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:192
-#: src/blocks/balloon/edit.js:310
+#: src/blocks/balloon/edit.js:317
 msgid "Border"
 msgstr ""
 
@@ -1818,7 +1814,7 @@ msgid "Divider Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:623
-#: src/blocks/balloon/edit.js:439
+#: src/blocks/balloon/edit.js:446
 msgid "Type"
 msgstr ""
 
@@ -1881,7 +1877,7 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:866
 #: src/blocks/_pro/step-item/edit.js:147
 #: src/blocks/_pro/timeline-item/edit.js:113
-#: src/blocks/balloon/edit.js:559
+#: src/blocks/balloon/edit.js:577
 #: src/blocks/button/edit.js:658
 #: src/blocks/staff/edit.js:177
 msgid "None"
@@ -1952,205 +1948,77 @@ msgstr ""
 msgid "Auto"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:259
-#: src/blocks/_pro/post-list/edit.js:237
-#. Filter by %s
-msgid "Filter by %s"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:354
-#: src/blocks/_pro/post-list/edit.js:313
-msgid "Filter by PostTypes"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:367
-#: src/blocks/_pro/post-list/edit.js:326
-msgid "Taxonomy filter condition"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:378
-#: src/blocks/_pro/post-list/edit.js:337
-msgid "OR ( Whichever apply )"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:388
-#: src/blocks/_pro/post-list/edit.js:347
-msgid "AND ( All apply )"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:394
-#: src/blocks/_pro/post-list/edit.js:353
-msgid "Number of Posts"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:407
-#: src/blocks/_pro/post-list/edit.js:366
-msgid "Filter by Date"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:411
-#: src/blocks/_pro/post-list/edit.js:370
-msgid "Period of Time"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:419
-#: src/blocks/_pro/post-list/edit.js:378
-msgid "Whole Period"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:423
-#: src/blocks/_pro/post-list/edit.js:382
-msgid "From Today"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:427
-#: src/blocks/_pro/post-list/edit.js:386
-msgid "From Now"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:431
-#: src/blocks/_pro/post-list/edit.js:390
-msgid "From Tomorrow"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:436
-#: src/blocks/_pro/post-list/edit.js:395
-msgid ""
-"* If you choose a future period, you will need to customize it so that "
-"future posts will be published immediately."
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:443
-#: src/blocks/_pro/post-list/edit.js:402
-msgid "Order"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:452
-#: src/blocks/_pro/post-list/edit.js:411
-msgid "ASC"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:456
-#: src/blocks/_pro/post-list/edit.js:415
-msgid "DESC"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:462
-#: src/blocks/_pro/post-list/edit.js:421
-msgid "Order by"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:471
-#: src/blocks/_pro/post-list/edit.js:430
-msgid "Published Date"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:478
-#: src/blocks/_pro/post-list/edit.js:437
-msgid "Modefied Date"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:486
-#: src/blocks/_pro/post-list/edit.js:445
-msgid "Random"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:492
-#: src/blocks/_pro/post-list/edit.js:451
-msgid "offset"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:508
-#: src/blocks/_pro/post-list/edit.js:467
-msgid "Display from the first post always"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:514
-#: src/blocks/_pro/post-list/edit.js:473
-msgid "Display from the first post even on pages beyond the second page."
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:542
-#: src/components/column-layout-control/index.js:26
-msgid "Card"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:546
-#: src/components/column-layout-control/index.js:30
-msgid "Card (No border)"
-msgstr ""
-
-#: src/blocks/_pro/post-list-slider/edit.js:553
+#: src/blocks/_pro/post-list-slider/edit.js:100
 #: src/components/column-layout-control/index.js:34
 msgid "Card (Intext)"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:557
+#: src/blocks/_pro/post-list-slider/edit.js:104
 #: src/components/column-layout-control/index.js:38
 msgid "Card (Horizontal)"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:564
+#: src/blocks/_pro/post-list-slider/edit.js:111
 #: src/components/column-layout-control/index.js:42
 msgid "Media"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:568
+#: src/blocks/_pro/post-list-slider/edit.js:115
 #: src/components/column-layout-control/index.js:46
 msgid "Text 1 Column"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:576
+#: src/blocks/_pro/post-list-slider/edit.js:123
 #: src/blocks/slider/edit.js:394
 msgid "Slider Settings"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:580
+#: src/blocks/_pro/post-list-slider/edit.js:127
 #: src/blocks/slider/edit.js:398
 msgid "Effect "
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:590
+#: src/blocks/_pro/post-list-slider/edit.js:137
 #: src/blocks/slider/edit.js:408
 msgid "Slide"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:594
+#: src/blocks/_pro/post-list-slider/edit.js:141
 #: src/blocks/slider/edit.js:412
 msgid "Fade"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:601
+#: src/blocks/_pro/post-list-slider/edit.js:148
 #: src/blocks/slider/edit.js:419
 msgid "Loop "
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:611
+#: src/blocks/_pro/post-list-slider/edit.js:158
 #: src/blocks/slider/edit.js:429
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:621
+#: src/blocks/_pro/post-list-slider/edit.js:168
 #: src/blocks/slider/edit.js:439
 msgid "Stop AutoPlay when swipe"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:631
+#: src/blocks/_pro/post-list-slider/edit.js:178
 #: src/blocks/slider/edit.js:449
 msgid "Display Time"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:658
+#: src/blocks/_pro/post-list-slider/edit.js:205
 #: src/blocks/slider/edit.js:476
 msgid "Change Speed"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:682
+#: src/blocks/_pro/post-list-slider/edit.js:229
 #: src/blocks/slider/edit.js:500
 msgid "Pagination Type"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:693
+#: src/blocks/_pro/post-list-slider/edit.js:240
 #: src/blocks/_pro/step-item/edit.js:137
 #: src/blocks/_pro/table-of-contents-new/edit.js:129
 #: src/blocks/_pro/timeline-item/edit.js:103
@@ -2161,30 +2029,40 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:697
+#: src/blocks/_pro/post-list-slider/edit.js:244
 #: src/blocks/slider/edit.js:515
 msgid "Number of slides"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:710
+#: src/blocks/_pro/post-list-slider/edit.js:257
 #: src/blocks/slider/edit.js:528
 msgid "Navigation Position"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:721
+#: src/blocks/_pro/post-list-slider/edit.js:268
 #: src/blocks/button/edit.js:365
 #: src/blocks/slider/edit.js:539
 #: src/components/display-items-control/index.js:136
 msgid "Center"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:725
+#: src/blocks/_pro/post-list-slider/edit.js:272
 #: src/blocks/slider/edit.js:543
 msgid "Bottom on Mobile device"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:742
+#: src/blocks/_pro/post-list-slider/edit.js:289
 msgid "Please check the actual behavior on the live site."
+msgstr ""
+
+#: src/blocks/_pro/post-list-slider/edit.js:89
+#: src/components/column-layout-control/index.js:26
+msgid "Card"
+msgstr ""
+
+#: src/blocks/_pro/post-list-slider/edit.js:93
+#: src/components/column-layout-control/index.js:30
+msgid "Card (No border)"
 msgstr ""
 
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:104
@@ -2585,100 +2463,100 @@ msgstr ""
 msgid "Ancestor page title class name"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:134
+#: src/blocks/balloon/edit.js:141
 msgid " Image Border"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:137
+#: src/blocks/balloon/edit.js:144
 msgid "Add border to image"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:145
+#: src/blocks/balloon/edit.js:152
 msgid "* You can change border width on Setting > VK Blocks"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:152
+#: src/blocks/balloon/edit.js:159
 msgid "Border color of speech balloon"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:313
+#: src/blocks/balloon/edit.js:320
 msgid "Add border to balloon"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:403
+#: src/blocks/balloon/edit.js:410
 msgid "Balloon setting"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:405
+#: src/blocks/balloon/edit.js:412
 #: src/blocks/heading/edit.js:368
 msgid "Position"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:408
+#: src/blocks/balloon/edit.js:415
 msgid "Please specify the layout of the balloon."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:442
+#: src/blocks/balloon/edit.js:449
 msgid "Please select the type of balloon."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:456
+#: src/blocks/balloon/edit.js:463
 msgid "Speech"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:466
+#: src/blocks/balloon/edit.js:473
 msgid "Thinking"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:471
+#: src/blocks/balloon/edit.js:478
 msgid "Image Style"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:492
+#: src/blocks/balloon/edit.js:499
 msgid "Rounded"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:502
+#: src/blocks/balloon/edit.js:509
 msgid "Circle"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:511
+#: src/blocks/balloon/edit.js:518
 #: src/blocks/button/edit.js:590
 msgid "100%"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:522
+#: src/blocks/balloon/edit.js:540
 msgid "Background color of speech balloon"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:533
+#: src/blocks/balloon/edit.js:551
 msgid "Default Icon Setting"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:538
+#: src/blocks/balloon/edit.js:556
 msgid "You can register default icons from Settings > VK Blocks in Admin."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:544
+#: src/blocks/balloon/edit.js:562
 msgid "Animation setting"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:546
+#: src/blocks/balloon/edit.js:564
 msgid "Please select the type of animation."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:563
+#: src/blocks/balloon/edit.js:581
 msgid "Trembling"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:606
+#: src/blocks/balloon/edit.js:622
 #: src/blocks/pr-blocks/edit.js:83
 #: src/blocks/pr-content/deprecated/1.7.1/mediaUpload.js:130
 #: src/blocks/pr-content/mediaUpload.js:130
 msgid "Upload image"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:622
+#: src/blocks/balloon/edit.js:637
 msgid "Icon Name"
 msgstr ""
 
@@ -3364,6 +3242,101 @@ msgstr ""
 
 #: src/components/column-layout/index.js:87
 msgid "Column ( Screen size : Large )"
+msgstr ""
+
+#: src/components/display-condition/index.js:231
+#. Filter by %s
+msgid "Filter by %s"
+msgstr ""
+
+#: src/components/display-condition/index.js:269
+msgid "Filter by PostTypes"
+msgstr ""
+
+#: src/components/display-condition/index.js:284
+msgid "Taxonomy filter condition"
+msgstr ""
+
+#: src/components/display-condition/index.js:293
+msgid "OR ( Whichever apply )"
+msgstr ""
+
+#: src/components/display-condition/index.js:301
+msgid "AND ( All apply )"
+msgstr ""
+
+#: src/components/display-condition/index.js:307
+msgid "Number of Posts"
+msgstr ""
+
+#: src/components/display-condition/index.js:318
+msgid "Filter by Date"
+msgstr ""
+
+#: src/components/display-condition/index.js:322
+msgid "Period of Time"
+msgstr ""
+
+#: src/components/display-condition/index.js:328
+msgid "Whole Period"
+msgstr ""
+
+#: src/components/display-condition/index.js:332
+msgid "From Today"
+msgstr ""
+
+#: src/components/display-condition/index.js:336
+msgid "From Now"
+msgstr ""
+
+#: src/components/display-condition/index.js:340
+msgid "From Tomorrow"
+msgstr ""
+
+#: src/components/display-condition/index.js:345
+msgid ""
+"* If you choose a future period, you will need to customize it so that "
+"future posts will be published immediately."
+msgstr ""
+
+#: src/components/display-condition/index.js:352
+msgid "Order"
+msgstr ""
+
+#: src/components/display-condition/index.js:361
+msgid "ASC"
+msgstr ""
+
+#: src/components/display-condition/index.js:365
+msgid "DESC"
+msgstr ""
+
+#: src/components/display-condition/index.js:371
+msgid "Order by"
+msgstr ""
+
+#: src/components/display-condition/index.js:380
+msgid "Published Date"
+msgstr ""
+
+#: src/components/display-condition/index.js:384
+msgid "Modefied Date"
+msgstr ""
+
+#: src/components/display-condition/index.js:392
+msgid "Random"
+msgstr ""
+
+#: src/components/display-condition/index.js:398
+msgid "offset"
+msgstr ""
+
+#: src/components/display-condition/index.js:414
+msgid "Display from the first post always"
+msgstr ""
+
+#: src/components/display-condition/index.js:420
+msgid "Display from the first post even on pages beyond the second page."
 msgstr ""
 
 #: src/components/display-items-control/index.js:104

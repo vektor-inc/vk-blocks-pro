@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.4
 Tested up to: 6.7
-Stable tag: 1.92.0.1
+Stable tag: 1.92.1.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -107,15 +107,16 @@ e.g.
 
 == Changelog ==
 
-[ Bug Fix ][ Post List (Pro) ][ Post List Slider (Pro) ] Fixed missing "No relevant posts." message when no post types are selected.
-[ Other ][ Post list (Pro) / Post list slider (Pro) ] Refactored "Display Conditions" by modularizing them into components.
-[ Bug fix ][ Table of Contents ] Fix line break.
-[ Bug Fix ][ Post List (Pro) ][ Post List Slider (Pro) ] Fixed missing "No relevant posts." message when no post types are selected.
-[ Add function ][ ballon ] Add default avatar.
-[ Bug fix ][ Category Badge (Pro) ] exclude tag.
+= 1.93.0 =
 [ Add function ][ Link toolbar ] Added settings for "rel" and link description.
 [ Add function ][ Outer (Pro) ] Added support for "rel" and link description settings in the link toolbar.
-[ Bug Fix ][ Post List Slider ( Pro ) ] Fix 404 Error of Load Module.
+[ Add function ][ ballon ] Add default avatar.
+[ Other ][ Post list (Pro) / Post list slider (Pro) ] Refactored "Display Conditions" by modularizing them into components.
+[ Bug fix ][ Post List (Pro) ][ Post List Slider (Pro) ] Fixed missing "No relevant posts." message when no post types are selected.
+[ Bug fix ][ Table of Contents ] Fix line break.
+[ Bug fix ][ Post List (Pro) ][ Post List Slider (Pro) ] Fixed missing "No relevant posts." message when no post types are selected.
+[ Bug fix ][ Category Badge (Pro) ] exclude tag.
+[ Bug fix ][ Post List Slider ( Pro ) ] Fix 404 Error of Load Module.
 
 = 1.92.1 =
 [ Bug fix ][ Post List (Pro) ] Remove white space above title

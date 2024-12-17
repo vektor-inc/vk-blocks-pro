@@ -28,17 +28,7 @@ export const getInnerHeadings = (headingBlocks, hasInnerBlocks) => {
 	return headings;
 };
 
-export const returnHtml = (sources, attributes, className) => {
-	const { style } = attributes;
-	if (!className) {
-		className = 'vk_tableOfContents';
-	} else {
-		className = className + ' vk_tableOfContents';
-	}
-
-	if (style) {
-		className = className + ' vk_tableOfContents-style-' + style;
-	}
+export const returnHtml = (sources) => {
 
 	const countSeparater = '.';
 	let h2Count = 0;
@@ -142,7 +132,5 @@ export const returnHtml = (sources, attributes, className) => {
 			.join(''); // Arrayを結合して、1つのHTML文字列に変換
 	}
 
-	return returnHtmlContent
-		? `<ul class="${className}">${returnHtmlContent}</ul>`
-		: '';
+	return returnHtmlContent || '';
 };

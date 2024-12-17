@@ -29,7 +29,6 @@ export const getInnerHeadings = (headingBlocks, hasInnerBlocks) => {
 };
 
 export const returnHtml = (sources) => {
-
 	const countSeparater = '.';
 	let h2Count = 0;
 	let h3Count = 0;

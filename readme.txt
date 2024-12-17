@@ -113,8 +113,8 @@ e.g.
 [ Other ][ Post list (Pro) / Post list slider (Pro) ] Refactored "Display Conditions" by modularizing them into components.
 [ Bug fix ][ Post List (Pro) ][ Post List Slider (Pro) ] Fixed missing "No relevant posts." message when no post types are selected.
 [ Bug fix ][ Table of Contents (Pro) ] Fix line break.
-[ Bug fix ][ Category Badge (Pro) ] exclude tag.
-[ Bug fix ][ Post List Slider ( Pro ) ] Fix 404 Error of Load Module.
+[ Bug fix ][ Category Badge (Pro) ] Exclude post_tag.
+[ Bug fix ][ Post List Slider ( Pro ) ] Fix 404 Error of Load Module at free version.
 
 = 1.92.1 =
 [ Bug fix ][ Post List (Pro) ] Remove white space above title

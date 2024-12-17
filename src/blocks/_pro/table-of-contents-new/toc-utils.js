@@ -1,4 +1,3 @@
-import ReactDOMServer from 'react-dom/server';
 import { select } from '@wordpress/data';
 
 export const isAllowedBlock = (name, allowedBlocks) => {
@@ -56,55 +55,82 @@ export const returnHtml = (sources, attributes, className) => {
 
 	let returnHtmlContent = '';
 	if (sources) {
-		returnHtmlContent = sources.map((source) => {
-			const baseClass = 'vk_tableOfContents_list_item';
-			const data = source.block;
-			const level = data.attributes.level;
+		returnHtmlContent = sources
+			.map((source) => {
+				const baseClass = 'vk_tableOfContents_list_item';
+				const data = source.block;
+				const level = data.attributes.level;
 
-			let preNumber = '';
+				let preNumber = '';
 
-			if (level === 2) {
-				h2Count++;
-				preNumber = h2Count;
-				h3Count = 0;
-				h4Count = 0;
-				h5Count = 0;
-				h6Count = 0;
-			} else if (level === 3) {
-				h3Count++;
-				preNumber = h2Count + countSeparater + h3Count;
-				h4Count = 0;
-				h5Count = 0;
-				h6Count = 0;
-			} else if (level === 4) {
-				h4Count++;
-				preNumber = h2Count + countSeparater + fixZero(h3Count) + countSeparater + h4Count;
-				h5Count = 0;
-				h6Count = 0;
-			} else if (level === 5) {
-				h5Count++;
-				preNumber = h2Count + countSeparater + fixZero(h3Count) + countSeparater + fixZero(h4Count) + countSeparater + h5Count;
-				h6Count = 0;
-			} else if (level === 6) {
-				h6Count++;
-				preNumber = h2Count + countSeparater + fixZero(h3Count) + countSeparater + fixZero(h4Count) + countSeparater + fixZero(h5Count) + countSeparater + h6Count;
-			}
+				if (level === 2) {
+					h2Count++;
+					preNumber = h2Count;
+					h3Count = 0;
+					h4Count = 0;
+					h5Count = 0;
+					h6Count = 0;
+				} else if (level === 3) {
+					h3Count++;
+					preNumber = h2Count + countSeparater + h3Count;
+					h4Count = 0;
+					h5Count = 0;
+					h6Count = 0;
+				} else if (level === 4) {
+					h4Count++;
+					preNumber =
+						h2Count +
+						countSeparater +
+						fixZero(h3Count) +
+						countSeparater +
+						h4Count;
+					h5Count = 0;
+					h6Count = 0;
+				} else if (level === 5) {
+					h5Count++;
+					preNumber =
+						h2Count +
+						countSeparater +
+						fixZero(h3Count) +
+						countSeparater +
+						fixZero(h4Count) +
+						countSeparater +
+						h5Count;
+					h6Count = 0;
+				} else if (level === 6) {
+					h6Count++;
+					preNumber =
+						h2Count +
+						countSeparater +
+						fixZero(h3Count) +
+						countSeparater +
+						fixZero(h4Count) +
+						countSeparater +
+						fixZero(h5Count) +
+						countSeparater +
+						h6Count;
+				}
 
-			preNumber = preNumber + '. ';
+				preNumber = preNumber + '. ';
 
-			const content = data.attributes.content || data.attributes.title;
+				const content =
+					data.attributes.content || data.attributes.title;
 
-			// タグ除去メソッド
-			const removeHtmlTags = (text) => text.replace(/(<|\[)("[^"]*"|'[^']*'|[^'">])*(>|\])/g, '');
+				// タグ除去メソッド
+				const removeHtmlTags = (text) =>
+					text.replace(/(<|\[)("[^"]*"|'[^']*'|[^'">])*(>|\])/g, '');
 
-			let displayContent = '';
-			if (typeof content === 'string') {
-				displayContent = removeHtmlTags(content);
-			} else if (typeof content === 'object' && typeof content.text === 'string') {
-				displayContent = removeHtmlTags(content.text);
-			}
+				let displayContent = '';
+				if (typeof content === 'string') {
+					displayContent = removeHtmlTags(content);
+				} else if (
+					typeof content === 'object' &&
+					typeof content.text === 'string'
+				) {
+					displayContent = removeHtmlTags(content.text);
+				}
 
-			return `
+				return `
 				<li class="${baseClass} ${baseClass}-h-${level}">
 					<a href="#${data.attributes.anchor}" class="${baseClass}_link">
 						<span class="${baseClass}_link_preNumber">${preNumber}</span>
@@ -112,8 +138,11 @@ export const returnHtml = (sources, attributes, className) => {
 					</a>
 				</li>
 			`;
-		}).join(''); // Arrayを結合して、1つのHTML文字列に変換
+			})
+			.join(''); // Arrayを結合して、1つのHTML文字列に変換
 	}
 
-	return returnHtmlContent ? `<ul class="${className}">${returnHtmlContent}</ul>` : '';
+	return returnHtmlContent
+		? `<ul class="${className}">${returnHtmlContent}</ul>`
+		: '';
 };

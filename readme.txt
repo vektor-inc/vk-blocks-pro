@@ -108,13 +108,11 @@ e.g.
 == Changelog ==
 
 = 1.93.0 =
-[ Add function ][ Link toolbar ] Added settings for "rel" and link description.
-[ Add function ][ Outer (Pro) ] Added support for "rel" and link description settings in the link toolbar.
-[ Add function ][ ballon ] Add default avatar.
+[ Add function ][ Link toolbar ][ Outer (Pro) ] Added settings for "rel" and link description.
+[ Add function ][ Ballon ] Add default avatar.
 [ Other ][ Post list (Pro) / Post list slider (Pro) ] Refactored "Display Conditions" by modularizing them into components.
 [ Bug fix ][ Post List (Pro) ][ Post List Slider (Pro) ] Fixed missing "No relevant posts." message when no post types are selected.
 [ Bug fix ][ Table of Contents ] Fix line break.
-[ Bug fix ][ Post List (Pro) ][ Post List Slider (Pro) ] Fixed missing "No relevant posts." message when no post types are selected.
 [ Bug fix ][ Category Badge (Pro) ] exclude tag.
 [ Bug fix ][ Post List Slider ( Pro ) ] Fix 404 Error of Load Module.
 

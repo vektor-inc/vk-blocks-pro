@@ -58,9 +58,7 @@ export const returnHtml = (sources, attributes, className) => {
 	if (sources) {
 		returnHtmlContent = sources.map((source) => {
 			const baseClass = 'vk_tableOfContents_list_item';
-
 			const data = source.block;
-
 			const level = data.attributes.level;
 
 			let preNumber = '';
@@ -68,111 +66,54 @@ export const returnHtml = (sources, attributes, className) => {
 			if (level === 2) {
 				h2Count++;
 				preNumber = h2Count;
-
-				// Reset
 				h3Count = 0;
 				h4Count = 0;
 				h5Count = 0;
 				h6Count = 0;
-			}
-
-			if (level === 3) {
+			} else if (level === 3) {
 				h3Count++;
 				preNumber = h2Count + countSeparater + h3Count;
-
-				// Reset
 				h4Count = 0;
 				h5Count = 0;
 				h6Count = 0;
-			}
-
-			if (level === 4) {
+			} else if (level === 4) {
 				h4Count++;
-				preNumber =
-					h2Count +
-					countSeparater +
-					fixZero(h3Count) +
-					countSeparater +
-					h4Count;
-
-				// Reset
+				preNumber = h2Count + countSeparater + fixZero(h3Count) + countSeparater + h4Count;
 				h5Count = 0;
 				h6Count = 0;
-			}
-
-			if (level === 5) {
+			} else if (level === 5) {
 				h5Count++;
-				preNumber =
-					h2Count +
-					countSeparater +
-					fixZero(h3Count) +
-					countSeparater +
-					fixZero(h4Count) +
-					countSeparater +
-					h5Count;
-
-				// Reset
+				preNumber = h2Count + countSeparater + fixZero(h3Count) + countSeparater + fixZero(h4Count) + countSeparater + h5Count;
 				h6Count = 0;
-			}
-
-			if (level === 6) {
+			} else if (level === 6) {
 				h6Count++;
-				preNumber =
-					h2Count +
-					countSeparater +
-					fixZero(h3Count) +
-					countSeparater +
-					fixZero(h4Count) +
-					countSeparater +
-					fixZero(h5Count) +
-					countSeparater +
-					h6Count;
+				preNumber = h2Count + countSeparater + fixZero(h3Count) + countSeparater + fixZero(h4Count) + countSeparater + fixZero(h5Count) + countSeparater + h6Count;
 			}
 
 			preNumber = preNumber + '. ';
 
-			const content = data.attributes.content
-				? data.attributes.content
-				: data.attributes.title;
+			const content = data.attributes.content || data.attributes.title;
 
 			// タグ除去メソッド
-			const removeHtmlTags = (text) => {
-				return text.replace(
-					/(<|\[)("[^"]*"|'[^']*'|[^'">])*(>|\])/g,
-					''
-				);
-			};
+			const removeHtmlTags = (text) => text.replace(/(<|\[)("[^"]*"|'[^']*'|[^'">])*(>|\])/g, '');
 
-			let displayContent;
+			let displayContent = '';
 			if (typeof content === 'string') {
 				displayContent = removeHtmlTags(content);
-			} else if (
-				// 6.5 の関係で、見出し・段落ブロックからcontentを取得する場合、attributes.content.text を参照しなければならなくなったので、attributes.content でも attributes.content.text でも対応できるように
-				// https://make.wordpress.org/core/2024/03/06/new-feature-the-block-bindings-api/
-				typeof content === 'object' &&
-				typeof content.text === 'string'
-			) {
+			} else if (typeof content === 'object' && typeof content.text === 'string') {
 				displayContent = removeHtmlTags(content.text);
 			}
 
-			return (
-				<li
-					key={data.clientId}
-					className={`${baseClass} ${baseClass}-h-${level}`}
-				>
-					<a
-						href={`#${data.attributes.anchor}`}
-						className={`${baseClass}_link`}
-					>
-						<span className={`${baseClass}_link_preNumber`}>
-							{preNumber}
-						</span>
-						{displayContent}
+			return `
+				<li class="${baseClass} ${baseClass}-h-${level}">
+					<a href="#${data.attributes.anchor}" class="${baseClass}_link">
+						<span class="${baseClass}_link_preNumber">${preNumber}</span>
+						${displayContent}
 					</a>
 				</li>
-			);
-		});
+			`;
+		}).join(''); // Arrayを結合して、1つのHTML文字列に変換
 	}
-	//console.log(returnHtmlContent);
-	return ReactDOMServer.renderToString(returnHtmlContent);
+
+	return returnHtmlContent ? `<ul class="${className}">${returnHtmlContent}</ul>` : '';
 };

@@ -198,6 +198,7 @@ $colorPalette: (
 ul,
 ol {
 	&.is-style {
+		&-default,
 		&-vk-arrow-mark,
 		&-vk-triangle-mark,
 		&-vk-check-mark,
@@ -214,7 +215,7 @@ ol {
 			&:not(.has-link-color) {
 				color: initial;
 			}
-			li {
+			&:where(:not(.is-style-default)) li {
 				list-style: none;
 				position: relative;
 				margin-top:0;

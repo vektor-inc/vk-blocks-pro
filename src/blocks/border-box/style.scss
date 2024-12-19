@@ -110,7 +110,7 @@
 			padding: 1.5em 2em 1.5em;
 		}
 
-		& > *:not(.has-text-color) {
+		& > *:not([class*="alert-"]):not(.has-text-color) {
 			// 枠線の色が影響しないようにする
 			color: initial;
 		}

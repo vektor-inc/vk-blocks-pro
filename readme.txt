@@ -106,6 +106,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+[ Design Bug Fix ][ Core List ] Improved handling of is-style-default color styles.
 
 = 1.93.0 =
 [ Add function ][ Link toolbar ][ Outer (Pro) ] Added settings for "rel" and link description.

@@ -1281,7 +1281,7 @@ msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:139
 #: src/blocks/_pro/post-list-slider/edit.js:78
-#: src/blocks/_pro/table-of-contents-new/edit.js:114
+#: src/blocks/_pro/table-of-contents-new/edit.js:109
 #: src/components/column-layout-control/index.js:69
 msgid "Display type"
 msgstr ""
@@ -2020,7 +2020,7 @@ msgstr ""
 
 #: src/blocks/_pro/post-list-slider/edit.js:240
 #: src/blocks/_pro/step-item/edit.js:137
-#: src/blocks/_pro/table-of-contents-new/edit.js:129
+#: src/blocks/_pro/table-of-contents-new/edit.js:124
 #: src/blocks/_pro/timeline-item/edit.js:103
 #: src/blocks/heading/edit.js:264
 #: src/blocks/slider/edit.js:511
@@ -2175,7 +2175,7 @@ msgid "Ex,6:00AM"
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:108
-#: src/blocks/_pro/table-of-contents-new/edit.js:119
+#: src/blocks/_pro/table-of-contents-new/edit.js:114
 #: src/blocks/_pro/timeline-item/edit.js:74
 #: src/blocks/icon-outer/edit.js:229
 #: src/blocks/icon/edit.js:218
@@ -2290,35 +2290,35 @@ msgid "Line"
 msgstr ""
 
 #: src/blocks/_pro/table-of-contents-new/deprecated/1.78.0/save.js:16
-#: src/blocks/_pro/table-of-contents-new/edit.js:162
+#: src/blocks/_pro/table-of-contents-new/edit.js:157
 #: src/blocks/_pro/table-of-contents-new/save.js:16
 msgid "Table of Contents"
 msgstr ""
 
 #: src/blocks/_pro/table-of-contents-new/edit.js:101
-msgid "Note on duplicating headings"
-msgstr ""
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:106
 msgid ""
 "If you duplicate a heading, the table of contents block will not work "
 "properly, please reassign the ID."
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:133
+#: src/blocks/_pro/table-of-contents-new/edit.js:128
 msgid "No frame"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:140
+#: src/blocks/_pro/table-of-contents-new/edit.js:135
 msgid "Default Display Status"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:148
+#: src/blocks/_pro/table-of-contents-new/edit.js:143
 msgid "OPEN"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:152
+#: src/blocks/_pro/table-of-contents-new/edit.js:147
 msgid "CLOSE"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:96
+msgid "Note on duplicating headings"
 msgstr ""
 
 #: src/blocks/_pro/taxonomy/edit.js:107

@@ -106,6 +106,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+[ Design Bug Fix ][ Tab (Pro) ] Added a CSS class to improve style priority with the Lightning theme.
 
 = 1.93.0 =
 [ Add function ][ Link toolbar ][ Outer (Pro) ] Added settings for "rel" and link description.

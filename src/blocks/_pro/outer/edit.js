@@ -414,18 +414,13 @@ export default function OuterEdit(props) {
 						linkUrl={linkUrl}
 						setLinkUrl={(url) => setAttributes({ linkUrl: url })}
 						linkTarget={linkTarget}
-						setLinkTarget={(target) =>
-							setAttributes({ linkTarget: target })
-						}
+						setLinkTarget={(target) => setAttributes({ linkTarget: target || undefined })}
 						relAttribute={relAttribute}
-						setRelAttribute={(rel) =>
-							setAttributes({ relAttribute: rel })
-						}
+						setRelAttribute={(rel) => setAttributes({ relAttribute: rel || undefined })}
 						linkDescription={linkDescription}
 						setLinkDescription={(description) =>
 							setAttributes({ linkDescription: description })
 						}
-						aria-label={__('Outer link', 'vk-blocks-pro')}
 					/>
 				</ToolbarGroup>
 			</BlockControls>

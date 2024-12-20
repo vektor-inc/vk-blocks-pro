@@ -243,14 +243,9 @@ export default function save(props) {
 	const GetLinkUrl = (
 		<a
 			href={linkUrl}
-			target={linkTarget}
+			{...(linkTarget ? { target: linkTarget } : {})}
+			{...(relAttribute ? { rel: relAttribute } : {})}
 			className={`${prefix}-link`}
-			rel={relAttribute}
-			aria-label={
-				linkDescription
-					? linkDescription
-					: __('Outer link', 'vk-blocks-pro')
-			}
 		>
 			<span className="screen-reader-text">
 				{linkDescription

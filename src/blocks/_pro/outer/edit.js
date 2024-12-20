@@ -415,11 +415,11 @@ export default function OuterEdit(props) {
 						setLinkUrl={(url) => setAttributes({ linkUrl: url })}
 						linkTarget={linkTarget}
 						setLinkTarget={(target) =>
-							setAttributes({ linkTarget: target || undefined })
+							setAttributes({ linkTarget: target })
 						}
 						relAttribute={relAttribute}
 						setRelAttribute={(rel) =>
-							setAttributes({ relAttribute: rel || undefined })
+							setAttributes({ relAttribute: rel })
 						}
 						linkDescription={linkDescription}
 						setLinkDescription={(description) =>

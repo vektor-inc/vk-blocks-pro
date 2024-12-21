@@ -13,7 +13,7 @@ import {
 import { useCurrentBlocks, useBlocksByName } from '@vkblocks/utils/hooks';
 
 export default function TOCEdit(props) {
-	const { attributes, setAttributes, className, clientId } = props;
+	const { attributes, setAttributes, clientId } = props;
 	const { style, open, renderHtml } = attributes;
 	const blockProps = useBlockProps({
 		className: `vk_tableOfContents vk_tableOfContents-style-${style} tabs`,
@@ -81,12 +81,7 @@ export default function TOCEdit(props) {
 		});
 		allHeadingsSorted.sort((first, second) => first.index - second.index);
 
-		const render = returnHtml(
-			allHeadingsSorted,
-			attributes,
-			className,
-			attributes.open
-		);
+		const render = returnHtml(allHeadingsSorted);
 
 		updateBlockAttributes(clientId, {
 			renderHtml: render,

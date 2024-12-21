@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.4
 Tested up to: 6.7
-Stable tag: 1.92.0.1
+Stable tag: 1.92.1.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -106,12 +106,18 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-[ Bug fix ][ Category Badge (Pro) ] exclude tag.
+[ Design Bug Fix ][ Core List ][ Border Box ] Improved handling of List's is-style-default style and Border Box color.
+[ Add function ][ Grid Column (Pro) ] Added settings for "rel" and link description.
+[ Specification change ][ Outer (Pro) ] Removed the aria-label attribute from links, and updated to exclude target and rel attributes when they are empty.
 
-[ Add function ][ Grid Column (Pro) ] Added support for "rel" and link description settings in the link toolbar.
-[ Add function ][ Link toolbar ] Added settings for "rel" and link description.
-[ Add function ][ Outer (Pro) ] Added support for "rel" and link description settings in the link toolbar.
-[ Bug Fix ][ Post List Slider ( Pro ) ] Fix 404 Error of Load Module.
+= 1.93.0 =
+[ Add function ][ Link toolbar ][ Outer (Pro) ] Added settings for "rel" and link description.
+[ Add function ][ Ballon ] Add default avatar.
+[ Other ][ Post list (Pro) / Post list slider (Pro) ] Refactored "Display Conditions" by modularizing them into components.
+[ Bug fix ][ Post List (Pro) ][ Post List Slider (Pro) ] Fixed missing "No relevant posts." message when no post types are selected.
+[ Bug fix ][ Table of Contents (Pro) ] Fix line break.
+[ Bug fix ][ Category Badge (Pro) ] Exclude post_tag.
+[ Bug fix ][ Post List Slider ( Pro ) ] Fix 404 Error of Load Module at free version.
 
 = 1.92.1 =
 [ Bug fix ][ Post List (Pro) ] Remove white space above title
@@ -167,7 +173,7 @@ e.g.
 [ Bug fix ] Roll back 1.85.1
 
 = 1.86.0 =
-[ Add function ] [ Fixed Display (Pro) ] Added an option for "Fixed display from the bottom."
+[ Add function ][ Fixed Display (Pro) ] Added an option for "Fixed display from the bottom."
 [ Add function ] Added to apply the vk-scroll-hint class to all elements with the vk_hidden and vk_hidden-XXX classes.
 [ Bug fix ][ Core/table ] Fixed the class was not removed when table scrolling was disabled.
 [ Bug fix ] Fix load styles when separate load is enable.

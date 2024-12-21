@@ -22,8 +22,6 @@ export default function save({ attributes }) {
 		paddingUnit,
 		linkUrl,
 		linkTarget, // linkUrlとlinkTargetを追加
-		relAttribute,
-		linkDescription,
 	} = attributes;
 	// eslint-disable-next-line camelcase
 	const columnClass = `col-${convertToGrid(col_xs)} col-sm-${convertToGrid(
@@ -89,22 +87,19 @@ export default function save({ attributes }) {
 		style,
 	});
 
+	const relAttribute =
+		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
+
 	const GetLinkUrl = () => (
 		<a
 			href={linkUrl}
 			target={linkTarget}
 			className="vk_gridColumn_item_link"
 			rel={relAttribute}
-			aria-label={
-				linkDescription
-					? linkDescription
-					: __('Grid column item link', 'vk-blocks-pro')
-			}
+			aria-label={__('Grid column item link', 'vk-blocks-pro')}
 		>
 			<span className="screen-reader-text">
-				{linkDescription
-					? linkDescription
-					: __('Grid column item link', 'vk-blocks-pro')}
+				{__('Grid column item link', 'vk-blocks-pro')}
 			</span>
 		</a>
 	);

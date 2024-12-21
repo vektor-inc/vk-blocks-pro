@@ -89,12 +89,13 @@ export default function save({ attributes }) {
 		style,
 	});
 
+	const newRelAttribute = linkTarget === '_blank' ? relAttribute : 'noopener';
 	const GetLinkUrl = () => (
 		<a
 			href={linkUrl}
 			target={linkTarget}
+			rel={newRelAttribute}
 			className="vk_gridColumn_item_link"
-			rel={relAttribute}
 			aria-label={
 				linkDescription
 					? linkDescription

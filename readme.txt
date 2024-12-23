@@ -108,7 +108,7 @@ e.g.
 == Changelog ==
 [ Design Bug Fix ][ Tab (Pro) ] Added a CSS class to improve style priority with the Lightning theme.
 [ Design Bug Fix ][ Core List ][ Border Box ] Improved handling of List's is-style-default style and Border Box color.
-
+[ Add function ][ Grid Column (Pro) ] Added settings for "rel" and link description.
 [ Specification change ][ Outer (Pro) ] Removed the aria-label attribute from links, and updated to exclude target and rel attributes when they are empty.
 
 = 1.93.0 =

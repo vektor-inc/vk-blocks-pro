@@ -10,6 +10,7 @@ import save1_71_0 from './1.71.0/save';
 import save1_76_0 from './1.76.0/save';
 import save1_89_0 from './1.89.0/save';
 import save1_92_1 from './1.92.1/save';
+import save1_93_0 from './1.93.0/save';
 
 const blockAttributes = {
 	bgColor: {
@@ -186,6 +187,10 @@ const blockAttributes7 = {
 };
 
 const deprecated = [
+	{
+		attributes: blockAttributes7,
+		save: save1_93_0,
+	},
 	{
 		attributes: blockAttributes7,
 		save: save1_92_1,

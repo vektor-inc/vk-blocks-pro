@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.4
 Tested up to: 6.7
-Stable tag: 1.92.1.1
+Stable tag: 1.93.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -106,6 +106,13 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 1.93.1 =
+[ Bug fix ][ Post List ( Pro ) / Post List Slider ( Pro ) ] Fix the issue where posts are always displayed from the first post regardless of the "Display from the first post always" setting.
+[ Bug fix ][ Post List (Pro) ][ Post List Slider (Pro) ] Fixed missing "No relevant posts." message when no post types are selected.
+[ Bug fix ][ Tab (Pro) ] Added a CSS class to improve style priority with the Lightning theme.
+[ Bug fix ][ Core List ][ Border Box ] Improved handling of List's is-style-default style and Border Box color.
+[ Specification change ][ Outer (Pro) ] Removed the aria-label attribute from links, and updated to exclude target and rel attributes when they are empty.
 
 = 1.93.0 =
 [ Add function ][ Link toolbar ][ Outer (Pro) ] Added settings for "rel" and link description.

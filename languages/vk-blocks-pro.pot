@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.92.1.0\n"
+"Project-Id-Version: VK Blocks Pro 1.93.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-12-17T14:05:27+00:00\n"
+"POT-Creation-Date: 2024-12-19T12:43:20+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -1284,7 +1284,7 @@ msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:139
 #: src/blocks/_pro/post-list-slider/edit.js:78
-#: src/blocks/_pro/table-of-contents-new/edit.js:114
+#: src/blocks/_pro/table-of-contents-new/edit.js:109
 #: src/components/column-layout-control/index.js:69
 msgid "Display type"
 msgstr ""
@@ -2026,7 +2026,7 @@ msgstr ""
 
 #: src/blocks/_pro/post-list-slider/edit.js:240
 #: src/blocks/_pro/step-item/edit.js:137
-#: src/blocks/_pro/table-of-contents-new/edit.js:129
+#: src/blocks/_pro/table-of-contents-new/edit.js:124
 #: src/blocks/_pro/timeline-item/edit.js:103
 #: src/blocks/heading/edit.js:264
 #: src/blocks/slider/edit.js:511
@@ -2169,7 +2169,7 @@ msgid "Ex,6:00AM"
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:108
-#: src/blocks/_pro/table-of-contents-new/edit.js:119
+#: src/blocks/_pro/table-of-contents-new/edit.js:114
 #: src/blocks/_pro/timeline-item/edit.js:74
 #: src/blocks/icon-outer/edit.js:229
 #: src/blocks/icon/edit.js:218
@@ -2282,33 +2282,33 @@ msgid "Line"
 msgstr ""
 
 #: src/blocks/_pro/table-of-contents-new/deprecated/1.78.0/save.js:16
-#: src/blocks/_pro/table-of-contents-new/edit.js:162
+#: src/blocks/_pro/table-of-contents-new/edit.js:157
 #: src/blocks/_pro/table-of-contents-new/save.js:16
 msgid "Table of Contents"
 msgstr ""
 
 #: src/blocks/_pro/table-of-contents-new/edit.js:101
-msgid "Note on duplicating headings"
-msgstr ""
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:106
 msgid "If you duplicate a heading, the table of contents block will not work properly, please reassign the ID."
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:133
+#: src/blocks/_pro/table-of-contents-new/edit.js:128
 msgid "No frame"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:140
+#: src/blocks/_pro/table-of-contents-new/edit.js:135
 msgid "Default Display Status"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:148
+#: src/blocks/_pro/table-of-contents-new/edit.js:143
 msgid "OPEN"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:152
+#: src/blocks/_pro/table-of-contents-new/edit.js:147
 msgid "CLOSE"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:96
+msgid "Note on duplicating headings"
 msgstr ""
 
 #: src/blocks/_pro/taxonomy/edit.js:107

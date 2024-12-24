@@ -106,9 +106,10 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-[ Design Bug Fix ][ Core List ][ Border Box ] Improved handling of List's is-style-default style and Border Box color.
 [ Add function ][ Grid Column (Pro) ] Added settings for "rel" and link description.
+[ Specification change ][ Grid Column (Pro) ] Removed the aria-label attribute from links, and updated to exclude target and rel attributes when they are empty.
 [ Specification change ][ Outer (Pro) ] Removed the aria-label attribute from links, and updated to exclude target and rel attributes when they are empty.
+[ Design Bug Fix ][ Core List ][ Border Box ] Improved handling of List's is-style-default style and Border Box color.
 
 = 1.93.0 =
 [ Add function ][ Link toolbar ][ Outer (Pro) ] Added settings for "rel" and link description.

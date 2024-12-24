@@ -89,19 +89,12 @@ export default function save({ attributes }) {
 		style,
 	});
 
-	// const newRelAttribute = linkTarget === '_blank' ? relAttribute : 'noopener';
-
 	const GetLinkUrl = () => (
 		<a
 			href={linkUrl}
-			target={linkTarget}
-			rel={relAttribute}
+			{...(linkTarget ? { target: linkTarget } : {})}
+			{...(relAttribute ? { rel: relAttribute } : {})}
 			className="vk_gridColumn_item_link"
-			aria-label={
-				linkDescription
-					? linkDescription
-					: __('Grid column item link', 'vk-blocks-pro')
-			}
 		>
 			<span className="screen-reader-text">
 				{linkDescription

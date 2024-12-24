@@ -121,12 +121,22 @@ const blockAttributes2 = {
 	},
 	paddingBottom: {
 		type: 'number'
+	},
+	marginBottom: {
+    	type: 'number',
+	    default: null
+	},
+	unit: {
+		type: 'string',
+		default: 'px'
 	}
 }
 
-// 1.78.0よりあとのバージョンで追加された属性
-const blockAttributes3 = {
-	...blockAttributes2,
+/* 1.78.0よりあとのバージョンで追加された属性 */
+const { rel, ...blockAttributes3 } = blockAttributes2;
+
+const blockAttributes4 = {
+	...blockAttributes3,
 	linkUrl: {
 		type: 'string'
 	},
@@ -136,24 +146,9 @@ const blockAttributes3 = {
 	}
 }
 
-// 1.93.0 よりあとのバージョンで追加された属性
-/*
-const blockAttributes4 = {
-	...blockAttributes3,
-	relAttribute: {
-		type: 'string',
-		default: '',
-	},
-	linkDescription: {
-		type: 'string',
-		default: '',
-	}
-}
-*/
-
 const deprecated = [
 	{
-		attributes: blockAttributes3,
+		attributes: blockAttributes4,
 		save: save1_93_0,
 	},
 	{

@@ -5,7 +5,7 @@
  * @package vk-blocks
  */
 
- use VektorInc\VK_Swiper\VkSwiper;
+use VektorInc\VK_Swiper\VkSwiper;
 
 /**
  * Post List Get Block Data

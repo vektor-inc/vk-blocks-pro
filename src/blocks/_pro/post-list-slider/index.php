@@ -5,6 +5,8 @@
  * @package vk-blocks
  */
 
+ use VektorInc\VK_Swiper\VkSwiper;
+
 /**
  * Post List Get Block Data
  *
@@ -227,6 +229,15 @@ function vk_blocks_register_block_post_list_slider() {
 		);
 	}
 
+	VkSwiper::register_swiper();
+
+	wp_register_script(
+		'vk-blocks/post-list-slider-script',
+		VK_BLOCKS_DIR_URL . 'build/vk-post-list-slider.min.js',
+		array( 'vk-swiper-script' ),
+		VK_BLOCKS_VERSION,
+		true
+	);
 	// クラシックテーマ & 6.5 環境で $assets = array() のように空にしないと重複登録になるため
 	// ここで初期化しておく
 	$assets = array(
@@ -237,7 +248,7 @@ function vk_blocks_register_block_post_list_slider() {
 	if ( method_exists( 'VK_Blocks_Block_Loader', 'should_load_separate_assets' ) && VK_Blocks_Block_Loader::should_load_separate_assets() ) {
 		$assets = array(
 			'style_handles'         => array( 'vk-blocks/post-list-slider' ),
-			'script_handles'        => array(),
+			'script_handles'        => array( 'vk-blocks/post-list-slider-script' ),
 			'editor_style_handles'  => array( 'vk-swiper-style', 'vk-blocks-build-editor-css' ),
 			'editor_script_handles' => array( 'vk-blocks-build-js' ),
 			'render_callback'       => 'vk_blocks_post_list_slider_render_callback',

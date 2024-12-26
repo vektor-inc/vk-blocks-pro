@@ -20,9 +20,10 @@ import { DisplayItemsControl } from '@vkblocks/components/display-items-control'
 import { DisplayCondition } from '@vkblocks/components/display-condition';
 import { AdvancedToggleControl } from '@vkblocks/components/advanced-toggle-control';
 import { MultiItemSetting } from './multi-item-setting.js';
+import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 
 export default function PostListSliderEdit(props) {
-	const { attributes, setAttributes } = props;
+	const { attributes, setAttributes, clientId } = props;
 
 	const postTypesProps = vk_block_post_type_params.post_type_option;
 	const termsByTaxonomyName = vk_block_post_type_params.term_by_taxonomy_name;
@@ -38,9 +39,21 @@ export default function PostListSliderEdit(props) {
 		effect,
 		speed,
 		navigationPosition,
+		blockId,
 	} = attributes;
 
 	const blockProps = useBlockProps();
+
+	useEffect(() => {
+		// blockID が定義されていない場合は blockID に clientID を挿入
+		// 再利用ブロックのインナーブロックではない場合 blockID を更新
+		if (
+			blockId === undefined ||
+			isParentReusableBlock(clientId) === false
+		) {
+			setAttributes({ blockId: clientId });
+		}
+	}, [clientId]);
 
 	useEffect(() => {
 		if (layout === 'postListText') {

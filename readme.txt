@@ -107,6 +107,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Post List Slider (Pro) ] Fixed sliding behavior when multiple post-list-slider blocks are present.
+
 = 1.93.1 =
 [ Bug fix ][ Post List (Pro) / Post List Slider (Pro) ] Fix the issue where posts are always displayed from the first post regardless of the "Display from the first post always" setting.
 [ Bug fix ][ Post List (Pro) / Post List Slider (Pro) ] Fixed missing "No relevant posts." message when no post types are selected.

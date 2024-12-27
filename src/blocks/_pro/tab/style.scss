@@ -152,9 +152,11 @@ $xl-min: 1200px;
 			}
 		}
 	}
-	.vk_tab_labels{ // この指定がないとULの指定に負けてしまうことがあるため
-		padding: 0;
-		margin: 0;
+	&.wp-block-vk-blocks-tab { //theme.jsonが有効のlightning g3 でmarginが空いてしまうためクラス名追加
+		.vk_tab_labels{ // この指定がないとULの指定に負けてしまうことがあるため
+			padding: 0;
+			margin: 0;
+		}
 	}
 }
 

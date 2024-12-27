@@ -7,7 +7,6 @@
 	"category": "vk-blocks-cat-layout",
 	"editorScriptHandles": ["vk-blocks-build-js"],
 	"editorStyleHandles": ["vk-swiper-style", "vk-blocks-build-editor-css"],
-	"styleHandles": ["vk-blocks-build-css"],
 	"attributes": {
 		"editorMode": {
 			"type": "string",

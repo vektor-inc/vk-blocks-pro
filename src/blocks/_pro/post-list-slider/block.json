@@ -3,7 +3,6 @@
 	"name": "vk-blocks/post-list-slider",
 	"category": "vk-blocks-cat",
 	"title": "Post List Slider",
-	"styleHandles": ["vk-blocks-build-css"],
 	"editorStyleHandles": ["vk-swiper-style", "vk-blocks-build-editor-css"],
 	"editorScriptHandles": ["vk-blocks-build-js"],
 	"attributes": {

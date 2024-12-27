@@ -108,7 +108,6 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Grid Column (Pro) ] Added noreferrer, nofollow, and link description options to the link feature.
-[ Specification change ][ Grid Column (Pro) ] Removed the aria-label attribute from links, and updated to exclude target and rel attributes when they are empty.
 [ Design Bug Fix ][ Post List Slider (Pro) ] Added bottom margin when the display type is set to "Media" to create spacing between the pagination and the block.
 
 = 1.93.2 =

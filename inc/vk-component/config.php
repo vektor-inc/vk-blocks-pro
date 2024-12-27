@@ -1,7 +1,10 @@
 <?php
 /**
  * VK Component Config
+ * 
+ * @package VK Blocks
  */
+
 use VektorInc\VK_Component\VK_Component_Button;
 use VektorInc\VK_Component\VK_Component_Mini_Contents;
 use VektorInc\VK_Component\VK_Component_Posts;

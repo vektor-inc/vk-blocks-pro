@@ -1,7 +1,7 @@
 <?php
 /**
  * VK Component Config
- * 
+ *
  * @package VK Blocks
  */
 

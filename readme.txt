@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.4
 Tested up to: 6.7
-Stable tag: 1.92.1.1
+Stable tag: 1.93.1.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -106,8 +106,19 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-[ Add function ][ Grid Column (Pro) ] Added settings for "rel" and link description.
+
+[ Add function ][ Grid Column (Pro) ] Added noreferrer, nofollow, and link description options to the link feature.
 [ Specification change ][ Grid Column (Pro) ] Removed the aria-label attribute from links, and updated to exclude target and rel attributes when they are empty.
+[ Design Bug Fix ][ Post List Slider (Pro) ] Added bottom margin when the display type is set to "Media" to create spacing between the pagination and the block.
+
+= 1.93.2 =
+[ Bug fix ][ Post List Slider (Pro) ] Fixed sliding behavior when multiple post-list-slider blocks are present.
+
+= 1.93.1 =
+[ Bug fix ][ Post List (Pro) / Post List Slider (Pro) ] Fix the issue where posts are always displayed from the first post regardless of the "Display from the first post always" setting.
+[ Bug fix ][ Post List (Pro) / Post List Slider (Pro) ] Fixed missing "No relevant posts." message when no post types are selected.
+[ Bug fix ][ Tab (Pro) ] Added a CSS class to improve style priority with the Lightning theme.
+[ Bug fix ][ Core List / Border Box ] Improved handling of List's is-style-default style and Border Box color.
 [ Specification change ][ Outer (Pro) ] Removed the aria-label attribute from links, and updated to exclude target and rel attributes when they are empty.
 [ Design Bug Fix ][ Core List ][ Border Box ] Improved handling of List's is-style-default style and Border Box color.
 
@@ -118,7 +129,7 @@ e.g.
 [ Bug fix ][ Post List (Pro) ][ Post List Slider (Pro) ] Fixed missing "No relevant posts." message when no post types are selected.
 [ Bug fix ][ Table of Contents (Pro) ] Fix line break.
 [ Bug fix ][ Category Badge (Pro) ] Exclude post_tag.
-[ Bug fix ][ Post List Slider ( Pro ) ] Fix 404 Error of Load Module at free version.
+[ Bug fix ][ Post List Slider (Pro) ] Fix 404 Error of Load Module at free version.
 
 = 1.92.1 =
 [ Bug fix ][ Post List (Pro) ] Remove white space above title
@@ -363,7 +374,7 @@ e.g.
 = 1.68.0 =
 [ Add function ][ Dynamic Text (Pro) ] Add feature to display logged-in username.
 [ Specification change ][ Hidden extension ] Add VK Icon
-[ Specification change ][ Outer ( Pro ) ] Allowed decimal points in 'Container Inner Side Space Setting'.
+[ Specification change ][ Outer (Pro) ] Allowed decimal points in 'Container Inner Side Space Setting'.
 [ Specification change ][ Headding ] Marked as Not Recommended
 
 = 1.67.0 =
@@ -413,7 +424,7 @@ e.g.
 [ Bug fix ][ Button ] Fix console warning
 
 = 1.61.2 =
-[ Bug fix ][ Outer ( Pro ) ] Fixed opacity with previous Outer version.
+[ Bug fix ][ Outer (Pro) ] Fixed opacity with previous Outer version.
 
 = 1.61.1 =
 [ Bug fix ] Fix error WordPress 6.3 live previewing block themes.
@@ -422,7 +433,7 @@ e.g.
 = 1.61.0 =
 [ Specification change ] Update the required WordPress version.
 [ Specification change ] Changed to display Font Awesome version change button only when select is changed.
-[ Specification change ][ Outer ( Pro ) ]  Change opacity setting can be set in increments of 0.01.
+[ Specification change ][ Outer (Pro) ]  Change opacity setting can be set in increments of 0.01.
 [ Specification change ][ Animation(Pro) ] Fix WordPress 6.3 transforms settings.
 [ Bug fix ][ Taxonomy (Pro) ] Fixed error when selected taxonomy dose not exists.
 [ Bug fix ][ Taxonomy (Pro) ] Fixed individual CSS was loaded on all pages with classic theme.
@@ -437,7 +448,7 @@ e.g.
 [ Bug fix ][ Icon Block ] Fix enable hidden extension.
 
 = 1.59.0 =
-[ Add Filter Hook ( Pro ) ] Add filter fook of display license key form or not
+[ Add Filter Hook (Pro) ] Add filter fook of display license key form or not
 [ Specification change ] Change option value update via Redux Store.
 [ Bug fix ][ Page Content ] Fix duplicate Additional CSS classes.
 [ Bug fix ] Fix swiper file path ( // -> / )

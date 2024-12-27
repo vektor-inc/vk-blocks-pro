@@ -149,6 +149,10 @@ const blockAttributes4 = {
 const deprecated = [
 	{
 		attributes: blockAttributes4,
+		migrate: (attributes) => {
+			attributes.relAttribute = '';
+			return attributes;
+		},
 		save: save1_93_0,
 	},
 	{

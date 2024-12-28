@@ -1,6 +1,7 @@
 import save1_75_0 from './1.75.0/save';
 import save1_81_1 from './1.81.1/save';
 import save1_86_0 from './1.86.0/save';
+import save1_93_2 from './1.93.2/save';
 
 const blockAttributes = {
 	mode: {
@@ -72,6 +73,10 @@ const blockAttributes3 = {
 };
 
 const deprecated = [
+	{
+		attributes: blockAttributes3,
+		save: save1_93_2,
+	},
 	{
 		attributes: blockAttributes3,
 		save: save1_86_0,

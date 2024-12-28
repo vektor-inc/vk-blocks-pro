@@ -35,7 +35,7 @@ export default function save({ attributes }) {
 		extraClasses += ' vk_fixed-display-mode-show-on-scroll';
 	} else if (mode === 'display-hide-after-time') {
 		// "display-hide-after-time"モードのときにのみタイミング属性を設定
-		if (displayAfterSeconds !== null && displayAfterSeconds >= 0) {
+		if (displayAfterSeconds > 0) {
 			dataAttributes['data-display-after-seconds'] =
 				displayAfterSeconds.toString();
 			extraClasses += ' is-timed-display';

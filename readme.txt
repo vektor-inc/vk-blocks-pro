@@ -106,7 +106,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-
+[ Bug fix ][ Fixed Display (Pro) ] When the number of seconds until display is zero, it will not be displayed again until the browser is closed, but this has been fixed.
 [ Design Bug Fix ][ Post List Slider (Pro) ] Added bottom margin when the display type is set to "Media" to create spacing between the pagination and the block.
 
 = 1.93.2 =

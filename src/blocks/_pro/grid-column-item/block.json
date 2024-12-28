@@ -96,6 +96,14 @@
 			"type": "string",
 			"default": ""
 		},
+		"relAttribute": {
+			"type": "string",
+			"default": ""
+		},
+		"linkDescription": {
+			"type": "string",
+			"default": ""
+		},
 		"marginBottom": {
 			"type": "number",
 			"default": null

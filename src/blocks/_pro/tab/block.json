@@ -4,7 +4,6 @@
 	"category": "vk-blocks-cat",
 	"editorScript": "vk-blocks-build-js",
 	"editorStyle": "vk-blocks-build-editor-css",
-	"style": "vk-blocks-build-css",
 	"attributes": {
 		"tabOptionJSON": {
 			"type": "string",

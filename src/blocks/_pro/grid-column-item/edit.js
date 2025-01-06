@@ -36,6 +36,8 @@ export default function GridColumnItemEdit(props) {
 		paddingUnit,
 		linkUrl,
 		linkTarget,
+		relAttribute,
+		linkDescription,
 	} = attributes;
 	const columnClass = `col-${convertToGrid(col_xs)} col-sm-${convertToGrid(
 		col_sm
@@ -92,6 +94,14 @@ export default function GridColumnItemEdit(props) {
 						linkTarget={linkTarget}
 						setLinkTarget={(target) =>
 							setAttributes({ linkTarget: target })
+						}
+						relAttribute={relAttribute}
+						setRelAttribute={(rel) =>
+							setAttributes({ relAttribute: rel })
+						}
+						linkDescription={linkDescription}
+						setLinkDescription={(description) =>
+							setAttributes({ linkDescription: description })
 						}
 					/>
 				</ToolbarGroup>

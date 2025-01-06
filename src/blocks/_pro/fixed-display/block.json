@@ -5,7 +5,6 @@
 	"title": "Fixed display",
 	"editorScript": "vk-blocks-build-js",
 	"editorStyle": "vk-blocks-build-editor-css",
-	"style": "vk-blocks-build-css",
 	"attributes": {
 		"mode": {
 			"type": "string",

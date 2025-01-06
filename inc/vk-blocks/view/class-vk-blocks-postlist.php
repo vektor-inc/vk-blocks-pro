@@ -5,6 +5,8 @@
  * @package vk_blocks
  */
 
+use VektorInc\VK_Component\VK_Component_Posts;
+
 /**
  * VK Blocks PostList
  */

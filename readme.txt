@@ -110,6 +110,7 @@ e.g.
 [ Add function ][ Grid Column (Pro) ] Added noreferrer, nofollow, and link description options to the link feature.
 [ Design Bug Fix ] Change CSS order.
 [ Design Bug Fix ][ Post List Slider (Pro) ] Added bottom margin when the display type is set to "Media" to create spacing between the pagination and the block.
+[ Other ] Load VK Componemts from Composer.
 
 = 1.93.2 =
 [ Bug fix ][ Post List Slider (Pro) ] Fixed sliding behavior when multiple post-list-slider blocks are present.

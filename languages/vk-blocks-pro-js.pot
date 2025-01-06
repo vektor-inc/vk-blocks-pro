@@ -311,7 +311,7 @@ msgid "Color"
 msgstr ""
 
 #: src/admin/custom-format/index.js:208
-#: src/blocks/_pro/grid-column-item/edit.js:102
+#: src/blocks/_pro/grid-column-item/edit.js:112
 #: src/blocks/_pro/gridcolcard/edit-common.js:169
 #: src/blocks/button/edit.js:749
 #: src/blocks/heading/edit.js:324
@@ -319,7 +319,7 @@ msgid "Text Color"
 msgstr ""
 
 #: src/admin/custom-format/index.js:239
-#: src/blocks/_pro/grid-column-item/edit.js:108
+#: src/blocks/_pro/grid-column-item/edit.js:118
 #: src/blocks/_pro/gridcolcard/edit-common.js:175
 #: src/blocks/border-box/edit.js:248
 #: src/blocks/button/edit.js:732
@@ -594,7 +594,7 @@ msgid ""
 msgstr ""
 
 #: src/admin/margin.js:81
-#: src/blocks/_pro/grid-column-item/edit.js:173
+#: src/blocks/_pro/grid-column-item/edit.js:183
 #: src/blocks/_pro/grid-column/edit.js:83
 msgid "Unit"
 msgstr ""
@@ -1390,29 +1390,34 @@ msgid ""
 "closes their browser."
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:100
+#: src/blocks/_pro/grid-column-item/deprecated/1.93.0/save.js:102
+#: src/blocks/_pro/grid-column-item/save.js:102
+msgid "Grid column item link"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:110
 #: src/blocks/_pro/gridcolcard/edit-common.js:167
 msgid "Color Settings"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:118
+#: src/blocks/_pro/grid-column-item/edit.js:128
 msgid "Margin setting inside the item"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:125
+#: src/blocks/_pro/grid-column-item/edit.js:135
 msgid "Padding (Top)"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:141
+#: src/blocks/_pro/grid-column-item/edit.js:151
 #: src/blocks/_pro/outer/edit.js:545
 msgid "Padding (Left and Right)"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:157
+#: src/blocks/_pro/grid-column-item/edit.js:167
 msgid "Padding (Bottom)"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:186
+#: src/blocks/_pro/grid-column-item/edit.js:196
 #: src/blocks/_pro/grid-column/edit.js:96
 #: src/blocks/_pro/outer/edit.js:1093
 #: src/blocks/icon-outer/edit.js:183
@@ -1421,7 +1426,7 @@ msgstr ""
 msgid "px"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:187
+#: src/blocks/_pro/grid-column-item/edit.js:197
 #: src/blocks/_pro/grid-column/edit.js:100
 #: src/blocks/_pro/outer/edit.js:1097
 #: src/blocks/icon-outer/edit.js:187
@@ -1430,7 +1435,7 @@ msgstr ""
 msgid "em"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:188
+#: src/blocks/_pro/grid-column-item/edit.js:198
 #: src/blocks/_pro/grid-column/edit.js:104
 #: src/blocks/_pro/outer/edit.js:1101
 #: src/blocks/icon-outer/edit.js:191
@@ -1439,17 +1444,13 @@ msgstr ""
 msgid "rem"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:189
+#: src/blocks/_pro/grid-column-item/edit.js:199
 #: src/blocks/_pro/grid-column/edit.js:108
 #: src/blocks/_pro/outer/edit.js:1029
 #: src/blocks/icon-outer/edit.js:195
 #: src/blocks/icon/edit.js:186
 #: src/utils/unit-options.js:18
 msgid "vw"
-msgstr ""
-
-#: src/blocks/_pro/grid-column-item/save.js:102
-msgid "Grid column item link"
 msgstr ""
 
 #: src/blocks/_pro/grid-column/edit.js:58

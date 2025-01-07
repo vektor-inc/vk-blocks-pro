@@ -52,7 +52,7 @@ test.describe( 'Block', () => {
 
 		// 変換内容
 		await expect( page.locator( '.wp-block-heading' ) ).toHaveClass(
-			'block-editor-rich-text__editable block-editor-block-list__block wp-block is-multi-selected wp-elements-0 has-contrast-color has-text-color wp-block-heading rich-text'
+			'block-editor-rich-text__editable block-editor-block-list__block wp-block is-multi-selected wp-elements-0 has-accent-1-color has-text-color wp-block-heading rich-text'
 		);
 		await expect( page.locator( '.wp-block-heading' ) ).toHaveCSS(
 			'margin-bottom',
@@ -60,10 +60,10 @@ test.describe( 'Block', () => {
 		);
 		await expect( page.locator( 'p.has-text-color' ) ).toHaveCSS(
 			'font-size',
-			'32px'
+			'31.2896px'
 		);
 		await expect( page.locator( '.wp-block-heading' ) ).toHaveClass(
-			'block-editor-rich-text__editable block-editor-block-list__block wp-block is-multi-selected wp-elements-0 has-contrast-color has-text-color wp-block-heading rich-text'
+			'block-editor-rich-text__editable block-editor-block-list__block wp-block is-multi-selected wp-elements-0 has-accent-1-color has-text-color wp-block-heading rich-text'
 		);
 		await expect( page.locator( '.wp-block-heading' ) ).toHaveCSS(
 			'margin-bottom',
@@ -71,7 +71,7 @@ test.describe( 'Block', () => {
 		);
 		await expect( page.locator( 'p.has-text-color' ) ).toHaveCSS(
 			'font-size',
-			'32px'
+			'31.2896px'
 		);
 
 	} );

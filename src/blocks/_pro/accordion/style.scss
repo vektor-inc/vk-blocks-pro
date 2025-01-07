@@ -211,6 +211,9 @@
 		.vk_accordion-trigger {
 			//フロント画面では.vk_accordion-toggle-openが付くクラスに対してborder-bottomが付いているので、編集画面では追加で記述
 			border-bottom: 1px dotted var(--vk-color-border);
+			.block-list-appender {
+				right: -24px;
+			}
 		}
 	}
 	//ブロックを配置した時にisDefaultに設置したclassが付かない（スタイルをクリックしたときにclassが付く）ので、共通のclass名にcssを追加して、
@@ -220,14 +223,16 @@
 	}
 	.vk_accordion-trigger {
 
-		cursor:unset; //編集画面では展開しないのでカーソルをunset
+		padding-right: calc( 1rem * 4 );
+		.block-editor-inner-blocks {
+			position: inherit;
+			cursor: initial;
+			z-index: 1;
+		}
 		.block-editor-block-list__block {
 			// 余白が大きく空くので追加
 			margin-top: 0;
 			margin-bottom: 0;
-		}
-		.vk_accordion-toggle {//absoluteだとテキスト編集できないので
-			position: unset;
 		}
 	}
 

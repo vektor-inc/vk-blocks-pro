@@ -5,6 +5,7 @@ import {
 	CheckboxControl,
 	Button,
 	Tooltip,
+	TextControl,
 } from '@wordpress/components';
 import { URLInput } from '@wordpress/block-editor';
 import { __, sprintf } from '@wordpress/i18n';
@@ -17,9 +18,14 @@ const LinkPreview = ({
 	linkTarget,
 	onRemove,
 	onCopy,
+	relAttribute,
+	linkDescription,
 }) => {
 	const displayURL =
-		linkUrl.startsWith('http://') || linkUrl.startsWith('https://')
+		linkUrl.startsWith('http://') ||
+		linkUrl.startsWith('https://') ||
+		linkUrl.startsWith('tel:') ||
+		linkUrl.startsWith('mailto:')
 			? linkUrl
 			: 'http://' + linkUrl;
 
@@ -38,7 +44,8 @@ const LinkPreview = ({
 							className="components-external-link block-editor-link-control__search-item-title"
 							href={displayURL}
 							target={linkTarget}
-							rel="noopener noreferrer"
+							rel={relAttribute}
+							aria-label={linkDescription}
 						>
 							<span
 								data-wp-c16t="true"
@@ -93,7 +100,17 @@ const LinkPreview = ({
 	);
 };
 
-const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
+const LinkToolbar = (props) => {
+	const {
+		linkUrl,
+		setLinkUrl,
+		linkTarget,
+		setLinkTarget,
+		linkDescription,
+		setLinkDescription,
+		relAttribute,
+		setRelAttribute,
+	} = props;
 	const [isOpen, setIsOpen] = useState(false);
 	const [linkTitle, setLinkTitle] = useState('');
 	const [icon, setIcon] = useState(null);
@@ -214,6 +231,8 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 			url.startsWith('https://') ||
 			url.startsWith('/') ||
 			url.startsWith('#') ||
+			url.startsWith('tel:') ||
+			url.startsWith('mailto:') ||
 			url === ''
 		) {
 			return url;
@@ -226,6 +245,19 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 		if (linkUrl) {
 			setLinkUrl(formatUrl(linkUrl));
 		}
+	};
+
+	const handleRelChange = (type, checked) => {
+		const rel = relAttribute ? relAttribute.split(' ') : [];
+		if (checked) {
+			rel.push(type);
+		} else {
+			const index = rel.indexOf(type);
+			if (index !== -1) {
+				rel.splice(index, 1);
+			}
+		}
+		setRelAttribute(rel.join(' '));
 	};
 
 	return (
@@ -294,6 +326,57 @@ const LinkToolbar = ({ linkUrl, setLinkUrl, linkTarget, setLinkTarget }) => {
 									setLinkTarget(checked ? '_blank' : '')
 								}
 							/>
+							{relAttribute !== undefined &&
+								typeof setRelAttribute === 'function' && (
+									<>
+										<CheckboxControl
+											label={__(
+												'Add noreferrer',
+												'vk-blocks-pro'
+											)}
+											checked={
+												relAttribute.includes(
+													'noreferrer'
+												) || false
+											}
+											onChange={(checked) =>
+												handleRelChange(
+													'noreferrer',
+													checked
+												)
+											}
+										/>
+										<CheckboxControl
+											label={__(
+												'Add nofollow',
+												'vk-blocks-pro'
+											)}
+											checked={
+												relAttribute.includes(
+													'nofollow'
+												) || false
+											}
+											onChange={(checked) =>
+												handleRelChange(
+													'nofollow',
+													checked
+												)
+											}
+										/>
+									</>
+								)}
+							{typeof setLinkDescription === 'function' && (
+								<TextControl
+									label={__(
+										'Accessibility link description',
+										'vk-blocks-pro'
+									)}
+									value={linkDescription}
+									onChange={(value) =>
+										setLinkDescription(value)
+									}
+								/>
+							)}
 						</form>
 					</div>
 				)}

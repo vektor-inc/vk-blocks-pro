@@ -12,7 +12,6 @@
 	},
 	"editorScript": "vk-blocks-build-js",
 	"editorStyle": "vk-blocks-build-editor-css",
-	"style": "vk-blocks-build-css",
 	"attributes": {
 		"showContent": {
 			"type": "string",

@@ -5,7 +5,7 @@
  */
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
-import { BlockControls, useBlockProps } from '@wordpress/block-editor';
+import { BlockControls } from '@wordpress/block-editor';
 import { ToolbarGroup } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 import LinkToolbar from '@vkblocks/components/link-toolbar';
@@ -77,19 +77,19 @@ const insertLinkIntoCoverBlock = (element, blockType, attributes) => {
 		return element;
 	}
 
-	const blockProps = useBlockProps.save({
-		className: linkUrl
-			? `${element.props.className} has-link`
-			: element.props.className,
-		style: element.props.style,
-	});
+	// `element` から既存のクラスを取得し、リンクがある場合にのみ `has-link` を追加
+	const existingClassName = element.props.className || '';
+	const classNameWithLink =
+		`${existingClassName} ${linkUrl ? 'has-link' : ''}`.trim();
+	const existingStyle = element.props.style || {};
 
 	// rel 属性の設定
 	const relAttribute =
 		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
 
 	return (
-		<div {...blockProps}>
+		<div className={classNameWithLink} style={existingStyle}>
+			{element.props.children}
 			<a
 				href={linkUrl}
 				target={linkTarget}
@@ -97,7 +97,6 @@ const insertLinkIntoCoverBlock = (element, blockType, attributes) => {
 				aria-label={__('Cover link', 'vk-blocks-pro')}
 				className="wp-block-cover-vk-link"
 			></a>
-			{element.props.children}
 		</div>
 	);
 };

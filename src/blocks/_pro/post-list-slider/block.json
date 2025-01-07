@@ -1,0 +1,177 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/post-list-slider",
+	"category": "vk-blocks-cat",
+	"title": "Post List Slider",
+	"editorStyleHandles": ["vk-swiper-style", "vk-blocks-build-editor-css"],
+	"editorScriptHandles": ["vk-blocks-build-js"],
+	"attributes": {
+		"layout": {
+			"type": "string",
+			"default": "card-intext"
+		},
+		"display_image": {
+			"type": "boolean",
+			"default": true
+		},
+		"display_image_overlay_term": {
+			"type": "boolean",
+			"default": true
+		},
+		"display_excerpt": {
+			"type": "boolean",
+			"default": false
+		},
+		"display_author": {
+			"type": "boolean",
+			"default": false
+		},
+		"display_date": {
+			"type": "boolean",
+			"default": true
+		},
+		"display_new": {
+			"type": "boolean",
+			"default": true
+		},
+		"display_taxonomies": {
+			"type": "boolean",
+			"default": false
+		},
+		"display_btn": {
+			"type": "boolean",
+			"default": false
+		},
+		"new_date": {
+			"type": "number",
+			"default": 7
+		},
+		"new_text": {
+			"type": "string",
+			"default": "New!!"
+		},
+		"btn_text": {
+			"type": "string",
+			"default": "Read more"
+		},
+		"btn_align": {
+			"type": "string",
+			"default": "text-right"
+		},
+		"numberPosts": {
+			"type": "number",
+			"default": 6
+		},
+		"isCheckedPostType": {
+			"type": "string",
+			"default": "[\"post\"]"
+		},
+		"coreTerms": {
+			"type": "string",
+			"default": "[]"
+		},
+		"taxQueryRelation": {
+			"type": "string",
+			"default": "OR"
+		},
+		"isCheckedTerms": {
+			"type": "string",
+			"default": "[]"
+		},
+		"targetPeriod": {
+			"type": "string",
+			"default": "all"
+		},
+		"order": {
+			"type": "string",
+			"default": "DESC"
+		},
+		"orderby": {
+			"type": "string",
+			"default": "date"
+		},
+		"offset": {
+			"type": "number",
+			"default": 0
+		},
+		"pagedlock": {
+			"type": "boolean",
+			"default": false
+		},
+		"selfIgnore": {
+			"type": "boolean",
+			"default": false
+		},
+		"autoPlay": {
+			"type": "boolean",
+			"default": true
+		},
+		"autoPlayStop": {
+			"type": "boolean",
+			"default": false
+		},
+		"autoPlayDelay": {
+			"type": "number",
+			"default": 2500
+		},
+		"pagination": {
+			"type": "string",
+			"default": "bullets"
+		},
+		"width": {
+			"type": "string"
+		},
+		"loop": {
+			"type": "boolean",
+			"default": true
+		},
+		"effect": {
+			"type": "string",
+			"default": "slide"
+		},
+		"speed": {
+			"type": "number",
+			"default": 500
+		},
+		"slidesPerView": {
+			"type": "number",
+			"default": 1
+		},
+		"slidesPerViewMobile": {
+			"type": "number",
+			"default": 1
+		},
+		"slidesPerViewTablet": {
+			"type": "number",
+			"default": 1
+		},
+		"slidesPerViewPC": {
+			"type": "number",
+			"default": 1
+		},
+		"slidesPerGroup": {
+			"type": "string",
+			"default": "one-by-one"
+		},
+		"centeredSlides": {
+			"type": "boolean",
+			"default": false
+		},
+		"navigationPosition": {
+			"type": "string",
+			"default": "mobile-bottom"
+		},
+		"blockId": {
+			"type": "string"
+		},
+		"className": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"description": "Displays the list of posts by setting the post type, classification, and number of posts to display.",
+	"textdomain": "vk-blocks-pro",
+	"supports": {
+		"className": true
+	}
+}

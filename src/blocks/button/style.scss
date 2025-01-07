@@ -421,6 +421,7 @@ a.vk_button_link {
 		}
 
 		&_caption {
+			word-break: initial; // FireFox で tt5 の場合カラム内でテキストが段落ちするので初期値にリセット
 			display: inline-flex;
 			align-items: center;
  			justify-content: center;

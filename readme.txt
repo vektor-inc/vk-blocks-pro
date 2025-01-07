@@ -108,6 +108,36 @@ e.g.
 == Changelog ==
 
 [ Add Block ][ Visual Embed ] Add Visual Embed block.
+[ Add function ][ Grid Column (Pro) ] Added noreferrer, nofollow, and link description options to the link feature.
+[ Bug fix ][ Fixed Display (Pro) ] When the number of seconds until display is zero, it will not be displayed again until the browser is closed, but this has been fixed.
+[ Design Bug Fix ] Change CSS order.
+[ Design Bug Fix ][ Post List Slider (Pro) ] Added bottom margin when the display type is set to "Media" to create spacing between the pagination and the block.
+[ Other ] Load VK Componemts from Composer.
+
+= 1.93.2 =
+[ Bug fix ][ Post List Slider (Pro) ] Fixed sliding behavior when multiple post-list-slider blocks are present.
+
+= 1.93.1 =
+[ Bug fix ][ Post List (Pro) / Post List Slider (Pro) ] Fix the issue where posts are always displayed from the first post regardless of the "Display from the first post always" setting.
+[ Bug fix ][ Post List (Pro) / Post List Slider (Pro) ] Fixed missing "No relevant posts." message when no post types are selected.
+[ Bug fix ][ Tab (Pro) ] Added a CSS class to improve style priority with the Lightning theme.
+[ Bug fix ][ Core List / Border Box ] Improved handling of List's is-style-default style and Border Box color.
+[ Specification change ][ Outer (Pro) ] Removed the aria-label attribute from links, and updated to exclude target and rel attributes when they are empty.
+[ Design Bug Fix ][ Core List ][ Border Box ] Improved handling of List's is-style-default style and Border Box color.
+
+= 1.93.0 =
+[ Add function ][ Link toolbar ][ Outer (Pro) ] Added settings for "rel" and link description.
+[ Add function ][ Ballon ] Add default avatar.
+[ Other ][ Post list (Pro) / Post list slider (Pro) ] Refactored "Display Conditions" by modularizing them into components.
+[ Bug fix ][ Post List (Pro) ][ Post List Slider (Pro) ] Fixed missing "No relevant posts." message when no post types are selected.
+[ Bug fix ][ Table of Contents (Pro) ] Fix line break.
+[ Bug fix ][ Category Badge (Pro) ] Exclude post_tag.
+[ Bug fix ][ Post List Slider (Pro) ] Fix 404 Error of Load Module at free version.
+
+= 1.92.1 =
+[ Bug fix ][ Post List (Pro) ] Remove white space above title
+[ Design Bug Fix ][ Post list Slider (Pro) ] Fixed an issue where post list did not have consistent heights.
+[ Design Bug Fix ][ VK Button ] Fixed an issue where the text of a button with an icon was dropping in a column. Reset the word-break property to its initial value for better compatibility in Firefox.
 
 = 1.92.0 =
 [ Add Block ] Add Post list Slider block.

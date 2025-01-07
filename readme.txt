@@ -33,6 +33,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Staff (not recommended)
 * Page list from ancestor
 * Slider
+* Visual Embed
 * Accordion [ Pro ]
 * Animation [ Pro ]
 * Archive list [ Pro ]
@@ -105,6 +106,8 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+[ Add Block ][ Visual Embed ] Add Visual Embed block.
 
 = 1.92.0 =
 [ Add Block ] Add Post list Slider block.

@@ -5,7 +5,6 @@
 import { ReactComponent as Icon } from './icon.svg';
 import { title, content, iconUser } from '@vkblocks/utils/example-data';
 
-import deprecated from './deprecated/';
 import edit from './edit';
 import metadata from './block.json';
 import save from './save';
@@ -49,5 +48,4 @@ export const settings = {
 	},
 	edit,
 	save,
-	deprecated,
 };

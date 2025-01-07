@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.4
 Tested up to: 6.7
-Stable tag: 1.91.1.1
+Stable tag: 1.93.1.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -47,6 +47,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Fixed Display [ Pro ]
 * Icon Card [ Pro ] (not recommended)
 * Post list [ Pro ]
+* Post list Slider [ Pro ]
 * New Badge [ Pro ]
 * Selected Post List [ Pro ]
 * Step [ Pro ]
@@ -106,6 +107,36 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+[ Bug fix ][ Fixed Display (Pro) ] When the number of seconds until display is zero, it will not be displayed again until the browser is closed, but this has been fixed.
+[ Add function ][ Grid Column (Pro) ] Added noreferrer, nofollow, and link description options to the link feature.
+[ Design Bug Fix ] Change CSS order.
+[ Design Bug Fix ][ Post List Slider (Pro) ] Added bottom margin when the display type is set to "Media" to create spacing between the pagination and the block.
+[ Other ] Load VK Componemts from Composer.
+
+= 1.93.2 =
+[ Bug fix ][ Post List Slider (Pro) ] Fixed sliding behavior when multiple post-list-slider blocks are present.
+
+= 1.93.1 =
+[ Bug fix ][ Post List (Pro) / Post List Slider (Pro) ] Fix the issue where posts are always displayed from the first post regardless of the "Display from the first post always" setting.
+[ Bug fix ][ Post List (Pro) / Post List Slider (Pro) ] Fixed missing "No relevant posts." message when no post types are selected.
+[ Bug fix ][ Tab (Pro) ] Added a CSS class to improve style priority with the Lightning theme.
+[ Bug fix ][ Core List / Border Box ] Improved handling of List's is-style-default style and Border Box color.
+[ Specification change ][ Outer (Pro) ] Removed the aria-label attribute from links, and updated to exclude target and rel attributes when they are empty.
+[ Design Bug Fix ][ Core List ][ Border Box ] Improved handling of List's is-style-default style and Border Box color.
+
+= 1.93.0 =
+[ Add function ][ Link toolbar ][ Outer (Pro) ] Added settings for "rel" and link description.
+[ Add function ][ Ballon ] Add default avatar.
+[ Other ][ Post list (Pro) / Post list slider (Pro) ] Refactored "Display Conditions" by modularizing them into components.
+[ Bug fix ][ Post List (Pro) ][ Post List Slider (Pro) ] Fixed missing "No relevant posts." message when no post types are selected.
+[ Bug fix ][ Table of Contents (Pro) ] Fix line break.
+[ Bug fix ][ Category Badge (Pro) ] Exclude post_tag.
+[ Bug fix ][ Post List Slider (Pro) ] Fix 404 Error of Load Module at free version.
+
+= 1.92.1 =
+[ Bug fix ][ Post List (Pro) ] Remove white space above title
+[ Design Bug Fix ][ Post list Slider (Pro) ] Fixed an issue where post list did not have consistent heights.
+[ Design Bug Fix ][ VK Button ] Fixed an issue where the text of a button with an icon was dropping in a column. Reset the word-break property to its initial value for better compatibility in Firefox.
 
 [ Add Block ][ Visual Embed ] Add Visual Embed block.
 [ Add function ][ Grid Column (Pro) ] Added noreferrer, nofollow, and link description options to the link feature.
@@ -188,7 +219,7 @@ e.g.
 [ Bug fix ] Roll back 1.85.1
 
 = 1.86.0 =
-[ Add function ] [ Fixed Display (Pro) ] Added an option for "Fixed display from the bottom."
+[ Add function ][ Fixed Display (Pro) ] Added an option for "Fixed display from the bottom."
 [ Add function ] Added to apply the vk-scroll-hint class to all elements with the vk_hidden and vk_hidden-XXX classes.
 [ Bug fix ][ Core/table ] Fixed the class was not removed when table scrolling was disabled.
 [ Bug fix ] Fix load styles when separate load is enable.
@@ -377,7 +408,7 @@ e.g.
 = 1.68.0 =
 [ Add function ][ Dynamic Text (Pro) ] Add feature to display logged-in username.
 [ Specification change ][ Hidden extension ] Add VK Icon
-[ Specification change ][ Outer ( Pro ) ] Allowed decimal points in 'Container Inner Side Space Setting'.
+[ Specification change ][ Outer (Pro) ] Allowed decimal points in 'Container Inner Side Space Setting'.
 [ Specification change ][ Headding ] Marked as Not Recommended
 
 = 1.67.0 =
@@ -427,7 +458,7 @@ e.g.
 [ Bug fix ][ Button ] Fix console warning
 
 = 1.61.2 =
-[ Bug fix ][ Outer ( Pro ) ] Fixed opacity with previous Outer version.
+[ Bug fix ][ Outer (Pro) ] Fixed opacity with previous Outer version.
 
 = 1.61.1 =
 [ Bug fix ] Fix error WordPress 6.3 live previewing block themes.
@@ -436,7 +467,7 @@ e.g.
 = 1.61.0 =
 [ Specification change ] Update the required WordPress version.
 [ Specification change ] Changed to display Font Awesome version change button only when select is changed.
-[ Specification change ][ Outer ( Pro ) ]  Change opacity setting can be set in increments of 0.01.
+[ Specification change ][ Outer (Pro) ]  Change opacity setting can be set in increments of 0.01.
 [ Specification change ][ Animation(Pro) ] Fix WordPress 6.3 transforms settings.
 [ Bug fix ][ Taxonomy (Pro) ] Fixed error when selected taxonomy dose not exists.
 [ Bug fix ][ Taxonomy (Pro) ] Fixed individual CSS was loaded on all pages with classic theme.
@@ -451,7 +482,7 @@ e.g.
 [ Bug fix ][ Icon Block ] Fix enable hidden extension.
 
 = 1.59.0 =
-[ Add Filter Hook ( Pro ) ] Add filter fook of display license key form or not
+[ Add Filter Hook (Pro) ] Add filter fook of display license key form or not
 [ Specification change ] Change option value update via Redux Store.
 [ Bug fix ][ Page Content ] Fix duplicate Additional CSS classes.
 [ Bug fix ] Fix swiper file path ( // -> / )

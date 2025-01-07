@@ -5,6 +5,8 @@
  * @package vk-blocks
  */
 
+use VektorInc\VK_Component\VK_Component_Posts;
+
 /**
  * Boostrapの読み込み
  *
@@ -17,7 +19,7 @@ function vk_blocks_load_vk_components( $hook_suffix ) {
 		return;
 	}
 
-	wp_register_style( 'vk-components-style', VK_BLOCKS_DIR_URL . 'build/vk-components.css', false, filemtime( VK_BLOCKS_DIR_PATH . '/build/vk-components.css' ) );
+	VK_Component_Posts::register_style( 'vk-components-style' );
 
 	// 管理画面
 	if ( is_admin() ) {

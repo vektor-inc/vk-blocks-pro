@@ -22,6 +22,12 @@ import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 /*globals vk_blocks_params */
 
+// eslint-disable-next-line camelcase,no-undef
+const defaultAvatar =
+	typeof img_path !== 'undefined' && !!img_path.full_path // eslint-disable-line no-undef
+		? img_path.full_path // eslint-disable-line no-undef
+		: '';
+
 export default function BalloonEdit(props) {
 	const { attributes, setAttributes } = props;
 	const {
@@ -30,6 +36,7 @@ export default function BalloonEdit(props) {
 		balloonType,
 		balloonBorder,
 		balloonFullWidth,
+		balloonIconDisplay,
 		balloonImageBorder,
 		balloonBorderColor,
 		balloonBgColor,
@@ -516,6 +523,17 @@ export default function BalloonEdit(props) {
 						/>
 					</BaseControl>
 
+					<BaseControl>
+						<p className={'mb-1 block-prop-title'}>icon display</p>
+						<ToggleControl
+							label={'display'}
+							checked={balloonIconDisplay}
+							onChange={(checked) =>
+								setAttributes({ balloonIconDisplay: checked })
+							}
+						/>
+					</BaseControl>
+
 					{BorderSetting}
 
 					<p className={'mb-1 block-prop-title'}>
@@ -579,49 +597,50 @@ export default function BalloonEdit(props) {
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
-				<div className={`vk_balloon_icon`}>
-					<MediaUpload
-						onSelect={(value) =>
-							setAttributes({ IconImage: value.sizes.full.url })
-						}
-						type="image"
-						className={`vk_balloon_icon_image vk_balloon_icon_image-type-${balloonImageType} ${iconImageBorderClass}`}
-						value={IconImage}
-						render={({ open }) => (
-							<Button
-								onClick={open}
-								className={
-									IconImage
-										? 'image-button'
-										: 'button button-large'
-								}
-							>
-								{!IconImage ? (
-									__('Select image', 'vk-blocks-pro')
-								) : (
+				{balloonIconDisplay ||
+				(balloonIconDisplay === 'undefined' && IconImage) ? (
+					<div className={`vk_balloon_icon`}>
+						<MediaUpload
+							onSelect={(value) =>
+								setAttributes({
+									IconImage: value.sizes.full.url,
+								})
+							}
+							type="image"
+							className={`vk_balloon_icon_image vk_balloon_icon_image-type-${balloonImageType} ${iconImageBorderClass}`}
+							value={IconImage}
+							render={({ open }) => (
+								<Button onClick={open} className="image-button">
 									<img
 										className={`vk_balloon_icon_image vk_balloon_icon_image-type-${balloonImageType} ${iconImageBorderClass}`}
 										style={iconImageColorStyle}
-										src={IconImage}
+										src={
+											IconImage
+												? IconImage
+												: defaultAvatar
+										}
 										alt={__(
 											'Upload image',
 											'vk-blocks-pro'
 										)}
 									/>
-								)}
-							</Button>
-						)}
-					/>
-					<RichText
-						tagName="figcaption"
-						className={'vk_balloon_icon_name'}
-						onChange={(value) =>
-							setAttributes({ balloonName: value })
-						}
-						value={balloonName}
-						placeholder={__('Icon Name', 'vk-blocks-pro')}
-					/>
-				</div>
+								</Button>
+							)}
+						/>
+						<RichText
+							tagName="figcaption"
+							className={'vk_balloon_icon_name'}
+							onChange={(value) =>
+								setAttributes({ balloonName: value })
+							}
+							value={balloonName}
+							placeholder={__('Icon Name', 'vk-blocks-pro')}
+						/>
+					</div>
+				) : (
+					''
+				)}
+
 				<div className={`vk_balloon_content_outer`}>
 					<div
 						className={`vk_balloon_content ${contentBackgroundClass} ${contentBorderClass}`}

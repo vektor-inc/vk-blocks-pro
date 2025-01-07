@@ -76,6 +76,8 @@ export default function OuterEdit(props) {
 		minHeightUnit,
 		linkUrl,
 		linkTarget,
+		relAttribute,
+		linkDescription,
 		blockId,
 	} = attributes;
 
@@ -415,7 +417,14 @@ export default function OuterEdit(props) {
 						setLinkTarget={(target) =>
 							setAttributes({ linkTarget: target })
 						}
-						aria-label={__('Outer link', 'vk-blocks-pro')}
+						relAttribute={relAttribute}
+						setRelAttribute={(rel) =>
+							setAttributes({ relAttribute: rel })
+						}
+						linkDescription={linkDescription}
+						setLinkDescription={(description) =>
+							setAttributes({ linkDescription: description })
+						}
 					/>
 				</ToolbarGroup>
 			</BlockControls>

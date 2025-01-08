@@ -171,6 +171,14 @@
 			"type": "string",
 			"default": ""
 		},
+		"relAttribute": {
+			"type": "string",
+			"default": ""
+		},
+		"linkDescription": {
+			"type": "string",
+			"default": ""
+		},
 		"clientId": {
 			"type": "string"
 		},

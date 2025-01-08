@@ -55,6 +55,8 @@ export default function save(props) {
 		blockId,
 		linkUrl,
 		linkTarget,
+		relAttribute,
+		linkDescription,
 	} = attributes;
 
 	let classPaddingLR;
@@ -261,19 +263,17 @@ export default function save(props) {
 		),
 	});
 
-	// リンクの設定
-	const relAttribute =
-		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
 	const GetLinkUrl = (
 		<a
 			href={linkUrl}
-			target={linkTarget}
+			{...(linkTarget ? { target: linkTarget } : {})}
+			{...(relAttribute ? { rel: relAttribute } : {})}
 			className={`${prefix}-link`}
-			rel={relAttribute}
-			aria-label={__('Outer link', 'vk-blocks-pro')}
 		>
 			<span className="screen-reader-text">
-				{__('Outer link', 'vk-blocks-pro')}
+				{linkDescription
+					? linkDescription
+					: __('Outer link', 'vk-blocks-pro')}
 			</span>
 		</a>
 	);

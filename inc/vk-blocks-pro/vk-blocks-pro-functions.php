@@ -46,5 +46,8 @@ function vk_blocks_pro_load_scripts() {
 
 	// Tab of Contents Block
 	wp_enqueue_script( 'vk-blocks-table-of-contents-new', VK_BLOCKS_DIR_URL . 'build/vk-table-of-contents-new.min.js', array(), VK_BLOCKS_VERSION, true );
+
+	// Post List Slider Block
+	wp_enqueue_script( 'vk-blocks-post-list-slider', VK_BLOCKS_DIR_URL . 'build/vk-post-list-slider.min.js', array( 'vk-swiper-script' ), VK_BLOCKS_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'vk_blocks_pro_load_scripts' );

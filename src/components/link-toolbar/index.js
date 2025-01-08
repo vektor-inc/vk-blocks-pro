@@ -80,6 +80,7 @@ const LinkPreview = ({
 				</Tooltip>
 				<Tooltip
 					text={sprintf(
+						// translators: %s is the link URL
 						__('Copy link: %s', 'vk-blocks-pro'),
 						linkUrl
 					)}

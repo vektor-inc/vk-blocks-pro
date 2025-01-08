@@ -507,7 +507,8 @@ export default function TabEdit(props) {
 							});
 						}}
 						placeholder={sprintf(
-							__('Tab Label [ %s ]', 'vk-Blocks-pro'),
+							// translators: %s is the tab number
+							__('Tab Label [ %s ]', 'vk-blocks-pro'),
 							index + 1
 						)}
 						onClick={(e) => {

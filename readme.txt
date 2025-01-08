@@ -109,8 +109,9 @@ e.g.
 
 [ Add function ][ Grid Column (Pro) ] Added noreferrer, nofollow, and link description options to the link feature.
 [ Add function ][ Outer (Pro) ] Added the ability to set a focal point for background images.
-[ Design Bug Fix ] Change CSS order.
 [ Bug fix ][ Fixed Display (Pro) ] When the number of seconds until display is zero, it will not be displayed again until the browser is closed, but this has been fixed.
+[ Design Bug Fix ] Change CSS order.
+[ Design Bug fix ][ Slider ][ Post List Slider (Pro) ] Fix an issue where full width alignment does not work in tt4 and tt5.
 [ Design Bug Fix ][ Post List Slider (Pro) ] Added bottom margin when the display type is set to "Media" to create spacing between the pagination and the block.
 [ Other ] Load VK Componemts from Composer.
 

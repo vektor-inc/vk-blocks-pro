@@ -1,6 +1,6 @@
-
 // WordPress 6.5 以下の対策
 const reactJSXRuntimePolyfill = {
+	mode: 'production',
 	entry: {
 		'react-jsx-runtime': {
 			import: 'react/jsx-runtime',
@@ -17,7 +17,6 @@ const reactJSXRuntimePolyfill = {
 	externals: {
 		react: 'React',
 	},
-        // Other config...
 };
 
 module.exports = [ reactJSXRuntimePolyfill ];

@@ -2,9 +2,6 @@
 /* CSS
 /*-------------------------------------------*/
 .vk_slider {
-	//共通ではないためvk_sliderの中に格納
-	height: auto; //100%だとサイトエディター画面でおかしくなるのでautoに
-	position: relative;
 	&_item {
 		height:auto; // これがないと高さが100%にならない
 		&.vk_valign-top {

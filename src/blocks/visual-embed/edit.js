@@ -72,7 +72,7 @@ export default function EmbedCodeEdit({ attributes, setAttributes }) {
 						value={iframeCode}
 						onChange={(newCode) => {
 							setAttributes({ iframeCode: newCode });
-							extractIframeAttributes(newCode); // コードを解析して幅と高さを取得
+							extractIframeAttributes(newCode);
 						}}
 						help={__(
 							'Please paste the iframe embed code directly. (e.g., Google Maps)',

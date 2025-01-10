@@ -17,10 +17,10 @@ export { metadata, name };
 export const settings = {
 	icon: <Icon />,
 	category: 'vk-blocks-cat',
+	transforms: createWrapUnwrapTransforms('vk-blocks/fixed-display'),
 	edit,
 	save,
 	deprecated,
-	transforms: createWrapUnwrapTransforms('vk-blocks/fixed-display'),
 };
 
 /**

@@ -107,8 +107,9 @@ e.g.
 
 == Changelog ==
 
-[ Add Function ][ Fixed Display (Pro) ] Added transforms settings to wrap and unwrap.
 [ Add function ][ Grid Column (Pro) ] Added noreferrer, nofollow, and link description options to the link feature.
+[ Add Function ][ Fixed Display (Pro) ][ Outer (Pro) ] Added transforms settings to wrap and unwrap for util.
+[ Specification Change ][ Animation (Pro) ] Fixed transforms settings to wrap and unwrap for util.
 [ Bug fix ][ Fixed Display (Pro) ] When the number of seconds until display is zero, it will not be displayed again until the browser is closed, but this has been fixed.
 [ Design Bug Fix ] Change CSS order.
 [ Design Bug fix ][ Slider ][ Post List Slider (Pro) ] Fix an issue where full width alignment does not work in tt4 and tt5.

@@ -4,7 +4,12 @@ import {
 	useBlockProps,
 	BlockControls,
 } from '@wordpress/block-editor';
-import { PanelBody, TextareaControl, TextControl } from '@wordpress/components';
+import {
+	PanelBody,
+	TextareaControl,
+	TextControl,
+	Notice,
+} from '@wordpress/components';
 
 export default function EmbedCodeEdit({ attributes, setAttributes }) {
 	const { iframeCode, iframeWidth, iframeHeight } = attributes;
@@ -16,7 +21,7 @@ export default function EmbedCodeEdit({ attributes, setAttributes }) {
 	// iframeの属性を解析して幅と高さを取得
 	const extractIframeAttributes = (code) => {
 		if (typeof window.DOMParser === 'undefined') {
-			return;
+			return false;
 		}
 
 		const parser = new window.DOMParser();
@@ -32,7 +37,11 @@ export default function EmbedCodeEdit({ attributes, setAttributes }) {
 				iframeWidth: newWidth,
 				iframeHeight: newHeight,
 			});
+
+			return true; // iframeが見つかった場合はtrueを返す
 		}
+
+		return false; // iframeが見つからない場合はfalseを返す
 	};
 
 	// iframeの属性を解析・更新する関数
@@ -62,6 +71,9 @@ export default function EmbedCodeEdit({ attributes, setAttributes }) {
 		}
 	};
 
+	// iframeタグが存在するかをチェック
+	const isIframe = iframeCode && extractIframeAttributes(iframeCode);
+
 	return (
 		<div {...blockProps}>
 			<BlockControls />
@@ -85,10 +97,7 @@ export default function EmbedCodeEdit({ attributes, setAttributes }) {
 						onChange={(newWidth) =>
 							updateIframeAttributes(newWidth, iframeHeight)
 						}
-						help={__(
-							'Specify the iframe width (e.g., 100%, 600px).',
-							'vk-blocks-pro'
-						)}
+						disabled={!isIframe}
 					/>
 					<TextControl
 						label={__('Iframe Height', 'vk-blocks-pro')}
@@ -96,11 +105,16 @@ export default function EmbedCodeEdit({ attributes, setAttributes }) {
 						onChange={(newHeight) =>
 							updateIframeAttributes(iframeWidth, newHeight)
 						}
-						help={__(
-							'Specify the iframe height (e.g., 400px).',
-							'vk-blocks-pro'
-						)}
+						disabled={!isIframe}
 					/>
+					{!isIframe && (
+						<Notice status="warning" isDismissible={false}>
+							{__(
+								'Note: These settings are only applicable to iframe tags. Other embed codes will not respond to these adjustments.',
+								'vk-blocks-pro'
+							)}
+						</Notice>
+					)}
 				</PanelBody>
 			</InspectorControls>
 			<div style={{ position: 'relative' }}>

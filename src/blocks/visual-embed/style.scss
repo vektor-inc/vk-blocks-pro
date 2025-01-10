@@ -1,7 +1,14 @@
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-.vk-visual-embed iframe {
-	display: block;
-	border: none;
+.vk-visual-embed {
+
+	&.aligncenter {
+		justify-items: center;
+	}
+
+	iframe {
+		display: block;
+		border: none;
+	}
 }

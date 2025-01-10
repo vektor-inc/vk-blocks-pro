@@ -2,7 +2,7 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/visual-embed",
 	"title": "Visual Embed",
-	"description": "Easily embed maps and other content with a live preview in the editor.",
+	"description": "Easily embed iframe content with a live preview in the editor, perfect for maps, videos, and other iframe-based media.",
 	"category": "vk-blocks-cat",
 	"attributes": {
 		"iframeCode": {

@@ -10,6 +10,7 @@ import edit from './edit';
 import save from './save';
 import deprecated from './deprecated/save/';
 import deprecatedHooks from './deprecated/hooks/';
+import createWrapUnwrapTransforms from '@vkblocks/utils/wrap-unwrap';
 
 const { name } = metadata;
 
@@ -17,6 +18,7 @@ export { metadata, name };
 
 export const settings = {
 	icon: <Icon />,
+	transforms: createWrapUnwrapTransforms('vk-blocks/outer'),
 	edit,
 	save,
 	deprecated,

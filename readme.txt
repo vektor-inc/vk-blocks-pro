@@ -33,6 +33,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Staff (not recommended)
 * Page list from ancestor
 * Slider
+* Visual Embed
 * Accordion [ Pro ]
 * Animation [ Pro ]
 * Archive list [ Pro ]
@@ -107,6 +108,7 @@ e.g.
 
 == Changelog ==
 
+[ Add Block ][ Visual Embed ] Add Visual Embed block.
 [ Add function ][ Grid Column (Pro) ] Added noreferrer, nofollow, and link description options to the link feature.
 [ Bug fix ][ Fixed Display (Pro) ] When the number of seconds until display is zero, it will not be displayed again until the browser is closed, but this has been fixed.
 [ Design Bug Fix ] Change CSS order.

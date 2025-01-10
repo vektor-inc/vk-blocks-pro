@@ -7,6 +7,7 @@ import metadata from './block.json';
 import edit from './edit';
 import save from './save';
 import deprecated from './deprecated';
+import transforms from './transforms';
 
 import { addFilter } from '@wordpress/hooks';
 
@@ -17,6 +18,7 @@ export { metadata, name };
 export const settings = {
 	icon: <Icon />,
 	category: 'vk-blocks-cat',
+	transforms,
 	edit,
 	save,
 	deprecated,

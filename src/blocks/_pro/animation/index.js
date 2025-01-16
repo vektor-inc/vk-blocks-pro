@@ -8,7 +8,7 @@ import edit from './edit';
 import save from './save';
 import deprecatedHooks from './deprecated/hooks';
 import deprecated from './deprecated/save';
-import transforms from './transforms';
+import createWrapUnwrapTransforms from '@vkblocks/utils/wrap-unwrap';
 
 import { addFilter } from '@wordpress/hooks';
 
@@ -18,7 +18,7 @@ export { metadata, name };
 
 export const settings = {
 	icon: <Icon />,
-	transforms,
+	transforms: createWrapUnwrapTransforms('vk-blocks/animation'),
 	edit,
 	save,
 	deprecated,

@@ -108,7 +108,7 @@ e.g.
 
 == Changelog ==
 
-[ Editor Design Bug Fix ] [ Grid Column Card (Pro) ]Fixed an issue where buttons in vk_gridcolcard_item_footer were not expanding their width when wrapped in an Outer block.
+= 1.94.0 =
 [ Add Block ][ Visual Embed ] Add Visual Embed block.
 [ Add function ][ Grid Column (Pro) ] Added noreferrer, nofollow, and link description options to the link feature.
 [ Add function ][ Fixed Display (Pro) ][ Outer (Pro) ] Added transforms settings to wrap and unwrap for util.
@@ -118,6 +118,7 @@ e.g.
 [ Design Bug Fix ] Change CSS order.
 [ Design Bug fix ][ Slider ][ Post List Slider (Pro) ] Fix an issue where full width alignment does not work in tt4 and tt5.
 [ Design Bug Fix ][ Post List Slider (Pro) ] Added bottom margin when the display type is set to "Media" to create spacing between the pagination and the block.
+[ Editor Design Bug Fix ] [ Grid Column Card (Pro) ]Fixed an issue where buttons in vk_gridcolcard_item_footer were not expanding their width when wrapped in an Outer block.
 [ Other ] Load VK Componemts from Composer.
 
 = 1.93.2 =

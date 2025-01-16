@@ -1224,7 +1224,7 @@ msgstr ""
 #: src/blocks/icon/edit.js:306
 #: src/blocks/pr-blocks/edit.js:262
 #: src/blocks/pr-content/edit.js:131
-#: src/components/link-toolbar/index.js:320
+#: src/components/link-toolbar/index.js:321
 msgid "Open link new tab."
 msgstr ""
 
@@ -1269,44 +1269,44 @@ msgstr ""
 msgid "span"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:129
+#: src/blocks/_pro/fixed-display/edit.js:137
 msgid "Fixed Display Setting"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:132
+#: src/blocks/_pro/fixed-display/edit.js:140
 msgid ""
 "The fixed position of the fixed position block will not change on the edit "
 "screen. Please check on the front screen."
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:139
+#: src/blocks/_pro/fixed-display/edit.js:147
 #: src/blocks/_pro/post-list-slider/edit.js:91
 #: src/blocks/_pro/table-of-contents-new/edit.js:109
 #: src/components/column-layout-control/index.js:69
 msgid "Display type"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:144
+#: src/blocks/_pro/fixed-display/edit.js:152
 msgid "Always Visible"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:148
+#: src/blocks/_pro/fixed-display/edit.js:156
 msgid "Show on Scroll"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:152
+#: src/blocks/_pro/fixed-display/edit.js:160
 msgid "Specify the time until display and hide"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:161
+#: src/blocks/_pro/fixed-display/edit.js:169
 msgid "Fixed position"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:165
+#: src/blocks/_pro/fixed-display/edit.js:173
 msgid "Top"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:167
+#: src/blocks/_pro/fixed-display/edit.js:175
 #: src/blocks/balloon/edit.js:441
 #: src/blocks/button/edit.js:375
 #: src/blocks/pr-content/edit.js:252
@@ -1314,11 +1314,11 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:171
+#: src/blocks/_pro/fixed-display/edit.js:179
 msgid "Bottom"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:175
+#: src/blocks/_pro/fixed-display/edit.js:183
 #: src/blocks/balloon/edit.js:429
 #: src/blocks/button/edit.js:355
 #: src/blocks/pr-content/edit.js:256
@@ -1326,65 +1326,65 @@ msgstr ""
 msgid "Left"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:183
+#: src/blocks/_pro/fixed-display/edit.js:191
 msgid "Fixed position origin"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:190
+#: src/blocks/_pro/fixed-display/edit.js:198
 msgid "Top section"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:197
+#: src/blocks/_pro/fixed-display/edit.js:205
 msgid "Bottom section"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:211
+#: src/blocks/_pro/fixed-display/edit.js:219
 msgid "Fixed position from the top"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:215
+#: src/blocks/_pro/fixed-display/edit.js:223
 msgid "Fixed position from the bottom"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:239
+#: src/blocks/_pro/fixed-display/edit.js:247
 msgid "Scroll Display Setting"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:242
+#: src/blocks/_pro/fixed-display/edit.js:250
 msgid "Timing to display"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:260
+#: src/blocks/_pro/fixed-display/edit.js:268
 msgid "Persist visibility once visible"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:274
+#: src/blocks/_pro/fixed-display/edit.js:282
 msgid "Timer Setting"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:277
+#: src/blocks/_pro/fixed-display/edit.js:285
 msgid ""
 "Set the timing for display and hide. Enter 0 to disable timing for each "
 "option."
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:286
+#: src/blocks/_pro/fixed-display/edit.js:294
 msgid "Seconds until display"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:317
+#: src/blocks/_pro/fixed-display/edit.js:325
 msgid "Seconds until hide"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:346
+#: src/blocks/_pro/fixed-display/edit.js:354
 msgid "Redisplay settings"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:349
+#: src/blocks/_pro/fixed-display/edit.js:357
 msgid "Do not display again until the browser is closed"
 msgstr ""
 
-#: src/blocks/_pro/fixed-display/edit.js:360
+#: src/blocks/_pro/fixed-display/edit.js:368
 msgid ""
 "When enabled, the same content will not be shown again until the visitor "
 "closes their browser."
@@ -1472,20 +1472,20 @@ msgstr ""
 #: src/blocks/_pro/gridcolcard-item/edit.js:249
 #: src/blocks/_pro/select-post-list-item/edit.js:66
 #: src/blocks/button/edit.js:249
-#: src/components/link-toolbar/index.js:279
+#: src/components/link-toolbar/index.js:280
 msgid "Unlink"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:250
 #: src/blocks/button/edit.js:250
-#: src/components/link-toolbar/index.js:280
+#: src/components/link-toolbar/index.js:281
 msgid "Input Link URL"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:280
 #: src/blocks/_pro/select-post-list-item/edit.js:102
 #: src/blocks/button/edit.js:278
-#: src/components/link-toolbar/index.js:314
+#: src/components/link-toolbar/index.js:315
 msgid "Submit"
 msgstr ""
 
@@ -2220,65 +2220,66 @@ msgstr ""
 msgid "Tab 02"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:510
+#: src/blocks/_pro/tab/edit.js:511
+#. %s is the tab number
 msgid "Tab Label [ %s ]"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:536
+#: src/blocks/_pro/tab/edit.js:537
 msgid "Tab Size Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:538
+#: src/blocks/_pro/tab/edit.js:539
 msgid "Tab Size ( Smart Phone )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:555
+#: src/blocks/_pro/tab/edit.js:556
 msgid "Tab Size ( Tablet )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:572
+#: src/blocks/_pro/tab/edit.js:573
 msgid "Tab Size ( PC )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:576
+#: src/blocks/_pro/tab/edit.js:577
 msgid "Fit to the text"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:580
+#: src/blocks/_pro/tab/edit.js:581
 msgid "Monospaced"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:589
+#: src/blocks/_pro/tab/edit.js:590
 msgid "Tab Display Options"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:591
+#: src/blocks/_pro/tab/edit.js:592
 msgid ""
 "If there are many labels or the screen width is narrow, you can adjust it "
 "here. *Tab size setting will not be effective."
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:597
+#: src/blocks/_pro/tab/edit.js:598
 msgid "Tab Display Options ( Smart Phone )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:621
+#: src/blocks/_pro/tab/edit.js:622
 msgid "Tab Display Options ( Tablet )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:645
+#: src/blocks/_pro/tab/edit.js:646
 msgid "Tab Display Options ( PC )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:652
+#: src/blocks/_pro/tab/edit.js:653
 msgid "Not set"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:656
+#: src/blocks/_pro/tab/edit.js:657
 msgid "Scroll"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:660
+#: src/blocks/_pro/tab/edit.js:661
 msgid "Wrap to 2 rows"
 msgstr ""
 
@@ -3201,6 +3202,32 @@ msgstr ""
 msgid "Profile text"
 msgstr ""
 
+#: src/blocks/visual-embed/edit.js:103
+msgid "Iframe Height"
+msgstr ""
+
+#: src/blocks/visual-embed/edit.js:112
+msgid ""
+"Note: These settings are only applicable to iframe tags. Other embed codes "
+"will not respond to these adjustments."
+msgstr ""
+
+#: src/blocks/visual-embed/edit.js:81
+msgid "Embed Code Settings"
+msgstr ""
+
+#: src/blocks/visual-embed/edit.js:83
+msgid "Embed Code"
+msgstr ""
+
+#: src/blocks/visual-embed/edit.js:89
+msgid "Please paste the iframe embed code directly. (e.g., Google Maps)"
+msgstr ""
+
+#: src/blocks/visual-embed/edit.js:95
+msgid "Iframe Width"
+msgstr ""
+
 #: src/components/advanced-color-gradient-control/index.js:41
 msgid "Theme"
 msgstr ""
@@ -3384,7 +3411,7 @@ msgstr ""
 msgid "Link target"
 msgstr ""
 
-#: src/components/link-toolbar/index.js:333
+#: src/components/link-toolbar/index.js:334
 msgid "Add noreferrer"
 msgstr ""
 
@@ -3392,15 +3419,15 @@ msgstr ""
 msgid "Currently selected"
 msgstr ""
 
-#: src/components/link-toolbar/index.js:350
+#: src/components/link-toolbar/index.js:351
 msgid "Add nofollow"
 msgstr ""
 
-#: src/components/link-toolbar/index.js:370
+#: src/components/link-toolbar/index.js:371
 msgid "Accessibility link description"
 msgstr ""
 
-#: src/components/link-toolbar/index.js:400
+#: src/components/link-toolbar/index.js:401
 msgid "Link copied to clipboard."
 msgstr ""
 
@@ -3408,11 +3435,12 @@ msgstr ""
 msgid "Deleting Link"
 msgstr ""
 
-#: src/components/link-toolbar/index.js:83
+#: src/components/link-toolbar/index.js:84
+#. %s is the link URL
 msgid "Copy link: %s"
 msgstr ""
 
-#: src/components/link-toolbar/index.js:90
+#: src/components/link-toolbar/index.js:91
 msgid "Copy link"
 msgstr ""
 

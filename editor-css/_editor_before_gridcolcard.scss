@@ -71,7 +71,8 @@
 	}
 }
 
-.vk_gridcolcard > .block-editor-inner-blocks {
+.vk_gridcolcard > .block-editor-inner-blocks,
+.vk_gridcolcard_item_footer > .block-editor-inner-blocks {
 	width:100%;
 }
 

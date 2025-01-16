@@ -108,6 +108,7 @@ e.g.
 
 == Changelog ==
 
+[ Editor Design Bug Fix ] [ Grid Column Card (Pro) ]Fixed an issue where buttons in vk_gridcolcard_item_footer were not expanding their width when wrapped in an Outer block.
 [ Add Block ][ Visual Embed ] Add Visual Embed block.
 [ Add function ][ Grid Column (Pro) ] Added noreferrer, nofollow, and link description options to the link feature.
 [ Add function ][ Fixed Display (Pro) ][ Outer (Pro) ] Added transforms settings to wrap and unwrap for util.

@@ -624,7 +624,6 @@ ol {
 .vk_slider,
 .vk_post_list_slider {
 	//共通ではないためvk_sliderの中に格納
-	width: 100%;
 	height: auto; //100%だとサイトエディター画面でおかしくなるのでautoに
 	position: relative;
 	.swiper-wrapper {

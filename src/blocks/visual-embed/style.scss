@@ -1,0 +1,15 @@
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+.vk-visual-embed {
+
+	&.aligncenter {
+		display: grid;
+		justify-items: center;
+	}
+
+	iframe {
+		display: block;
+		border: none;
+	}
+}

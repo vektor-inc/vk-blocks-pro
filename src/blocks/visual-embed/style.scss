@@ -2,14 +2,13 @@
 /* CSS
 /*-------------------------------------------*/
 .vk-visual-embed {
-
 	&.aligncenter {
 		display: grid;
 		justify-items: center;
 	}
-
 	iframe {
 		display: block;
 		border: none;
+		margin: 0; // lightning などテーマによっては余白がつくので追加
 	}
 }

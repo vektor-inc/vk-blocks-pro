@@ -87,7 +87,8 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 		} = attributes;
 
 		const blockProps = useBlockProps({
-			className: `${scrollable ? 'is-style-vk-table-scrollable' : ''} ${alignVertical ? 'is-style-vk-table-align-vertical' : ''}`.trim(),
+			className:
+				`${scrollable ? 'is-style-vk-table-scrollable' : ''} ${alignVertical ? 'is-style-vk-table-align-vertical' : ''}`.trim(),
 		});
 
 		// アイコンスタイルを定義

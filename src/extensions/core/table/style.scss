@@ -36,6 +36,39 @@
 	}
 }
 
+// 縦積み
+@mixin align-vertical-table {
+
+	table {
+		table-layout: auto;
+
+		:is(th,td) {
+			width: 100%;
+			display: block;
+			border-top: none;
+			}
+		:is(td + td) {
+			border-bottom: none;
+		}
+	}
+
+}
+
+@mixin align-verticaltable-editor {
+
+	table {
+		table-layout: auto;
+
+		:is(th,td) {
+			width: 100%;
+			display: block;
+			border-top: none;
+			}
+		:is(td + td) {
+			border-bottom: none;
+		}
+	}
+}
 
 /*      フロントエンド
 /*-------------------------------------------*/
@@ -105,6 +138,25 @@
 			@include scrollable-table;
 		}
 	}
+
+	&.is-style-vk-table-align-vertical {
+
+		&[data-align-vertical-breakpoint="table-align-vertical-mobile"] {
+			@media (max-width: 575.98px) {
+				@include align-vertical-table;
+			}
+		}
+
+		&[data-align-vertical-breakpoint="table-align-vertical-tablet"] {
+			@media (max-width: 991.98px) {
+				@include align-vertical-table;
+			}
+		}
+
+		&[data-align-vertical-breakpoint="table-align-vertical-pc"] {
+			@include align-vertical-table;
+		}
+	}
 }
 
 /*      編集画面
@@ -118,6 +170,9 @@
 		}
 		&.is-style-vk-table-scrollable {
 			@include scrollable-table-editor;
+		}
+		&.is-style-vk-table-align-vertical {
+			@include align-verticaltable-editor;
 		}
 	}
 }

@@ -40,34 +40,24 @@
 @mixin align-vertical-table {
 
 	table {
-		table-layout: auto;
-
-		:is(th,td) {
+	
+		:is(th, td) {
 			width: 100%;
 			display: block;
-			border-top: none;
+			border-top-color: transparent;
+			box-sizing: border-box;
+	
+			/* 最後のセルには border-bottom: none を適用 */
+			&:last-of-type:not(:last-child) {
+				border-bottom-color: transparent;
 			}
-		:is(td + td) {
-			border-bottom: none;
 		}
-	}
-
-}
-
-@mixin align-verticaltable-editor {
-
-	table {
-		table-layout: auto;
-
-		:is(th,td) {
-			width: 100%;
-			display: block;
-			border-top: none;
-			}
-		:is(td + td) {
-			border-bottom: none;
+	
+		/* 最初の行を除外するためのスタイル */
+		tr:first-of-type :is(th, td):first-of-type {
+			border-top-color: var(--vk-color-border-hr);
 		}
-	}
+	}	
 }
 
 /*      フロントエンド
@@ -172,7 +162,7 @@
 			@include scrollable-table-editor;
 		}
 		&.is-style-vk-table-align-vertical {
-			@include align-verticaltable-editor;
+			@include align-vertical-table;
 		}
 	}
 }

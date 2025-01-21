@@ -429,13 +429,13 @@ const addExtraProps = (saveElementProps, blockType, attributes) => {
 
 		// alignVerticalがtrueの場合にalignVerticalBreakpointを設定
 		if (attributes.alignVertical) {
-			saveElementProps.className += ` table-align-vertical-${attributes.alignVerticalBreakpoint}`;
+			saveElementProps.className += ` is-style-vk-table-align-vertical`;
 			saveElementProps['data-align-vertical-breakpoint'] =
 				attributes.alignVerticalBreakpoint;
 		} else {
 			// alignVerticalがfalseの場合、不要なクラスや属性を削除
 			saveElementProps.className = saveElementProps.className
-				.replace(/table-align-vertical-\S+/g, '')
+				.replace('is-style-vk-table-align-vertical', '')
 				.trim();
 			delete saveElementProps['data-align-vertical-breakpoint'];
 		}

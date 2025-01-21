@@ -348,7 +348,10 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 							)}
 						</PanelBody>
 						<PanelBody
-							title={__('Table Vertical Alignment', 'vk-blocks-pro')}
+							title={__(
+								'Table Vertical Alignment',
+								'vk-blocks-pro'
+							)}
 							icon={
 								<Icon
 									icon={IconSVG}
@@ -358,7 +361,10 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 							initialOpen={false}
 						>
 							<ToggleControl
-								label={__('Vertical Alignment', 'vk-blocks-pro')}
+								label={__(
+									'Vertical Alignment',
+									'vk-blocks-pro'
+								)}
 								checked={alignVertical}
 								onChange={handleAlignVerticalToggleChange}
 							/>

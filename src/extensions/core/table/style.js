@@ -243,8 +243,8 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 			scrollIconRight,
 			iconOutputLeft,
 			iconOutputRight,
-			alignVertical, // alignVertical を依存関係に追加
-			alignVerticalBreakpoint, // alignVerticalBreakpoint を依存関係に追加
+			alignVertical,
+			alignVerticalBreakpoint,
 		]);
 
 		if (isValidBlockType(name) && props.isSelected) {
@@ -348,7 +348,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 							)}
 						</PanelBody>
 						<PanelBody
-							title={__('Table Align Vertical', 'vk-blocks-pro')}
+							title={__('Table Vertical Alignment', 'vk-blocks-pro')}
 							icon={
 								<Icon
 									icon={IconSVG}
@@ -358,7 +358,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 							initialOpen={false}
 						>
 							<ToggleControl
-								label={__('Align vertically', 'vk-blocks-pro')}
+								label={__('Vertical Alignment', 'vk-blocks-pro')}
 								checked={alignVertical}
 								onChange={handleAlignVerticalToggleChange}
 							/>
@@ -366,7 +366,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 								<>
 									<SelectControl
 										label={__(
-											'Align Vertical Breakpoint',
+											'Vertical Alignment Breakpoint',
 											'vk-blocks-pro'
 										)}
 										value={alignVerticalBreakpoint}

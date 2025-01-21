@@ -105,8 +105,16 @@ export default function FixedDisplayEdit(props) {
 				scrollPersistVisible !== undefined
 					? scrollPersistVisible
 					: false,
+			scrollTimingUnit: scrollTimingUnit || 'px',
 		});
-	}, [clientId, mode, position, blockId, scrollPersistVisible]);
+	}, [
+		clientId,
+		mode,
+		position,
+		blockId,
+		scrollPersistVisible,
+		scrollTimingUnit,
+	]);
 
 	const handlePositionChange = (newPosition) => {
 		if (['top', 'bottom'].includes(newPosition)) {

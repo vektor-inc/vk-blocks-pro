@@ -1,0 +1,16 @@
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+.vk-visual-embed {
+
+	&.aligncenter {
+		display: grid;
+		justify-items: center;
+	}
+
+	iframe {
+		display: block;
+		border: none;
+		margin-bottom: 0; // lightning で余白がつくので追加
+	}
+}

@@ -33,6 +33,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Staff (not recommended)
 * Page list from ancestor
 * Slider
+* Visual Embed
 * Accordion [ Pro ]
 * Animation [ Pro ]
 * Archive list [ Pro ]
@@ -107,13 +108,20 @@ e.g.
 
 == Changelog ==
 
-[ Add function ][ Grid Column (Pro) ] Added noreferrer, nofollow, and link description options to the link feature.
 [ Add function ][ Outer (Pro) ] Added the ability to set a focal point for background images.
+
+= 1.94.0 =
+[ Add Block ][ Visual Embed ] Add Visual Embed block.
+[ Add function ][ Grid Column (Pro) ] Added noreferrer, nofollow, and link description options to the link feature.
+[ Add function ][ Fixed Display (Pro) / Outer (Pro) ] Added transforms settings to wrap and unwrap for util.
+[ Specification change ][ Animation (Pro) ] Fixed transforms settings to wrap and unwrap for util.
 [ Bug fix ][ Fixed Display (Pro) ] When the number of seconds until display is zero, it will not be displayed again until the browser is closed, but this has been fixed.
+[ Bug fix ][ Fixed Display (Pro) ] Fixed a problem with enabling "Display on Scroll" under certain conditions that caused a recovery error.
 [ Design Bug Fix ] Change CSS order.
 [ Design Bug fix ][ Slider ][ Post List Slider (Pro) ] Fix an issue where full width alignment does not work in tt4 and tt5.
 [ Design Bug Fix ][ Post List Slider (Pro) ] Added bottom margin when the display type is set to "Media" to create spacing between the pagination and the block.
-[ Other ] Load VK Componemts from Composer.
+[ Editor Design Bug Fix ] [ Grid Column Card (Pro) ]Fixed an issue where buttons in vk_gridcolcard_item_footer were not expanding their width when wrapped in an Outer block.
+[ Specification Change ] Load VK Componemts from Composer.
 
 = 1.93.2 =
 [ Bug fix ][ Post List Slider (Pro) ] Fixed sliding behavior when multiple post-list-slider blocks are present.

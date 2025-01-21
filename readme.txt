@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.4
 Tested up to: 6.7
-Stable tag: 1.93.1.1
+Stable tag: 1.94.1.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -109,6 +109,9 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Core Table ] Add Vertical alignment setting.
+
+= 1.94.1 =
+[ Specification change ][ Visual Embed ] Add margin:0; to iframe tag
 
 = 1.94.0 =
 [ Add Block ][ Visual Embed ] Add Visual Embed block.

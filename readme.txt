@@ -108,6 +108,8 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Core Table ] Add Vertical alignment setting.
+
 = 1.94.0 =
 [ Add Block ][ Visual Embed ] Add Visual Embed block.
 [ Add function ][ Grid Column (Pro) ] Added noreferrer, nofollow, and link description options to the link feature.

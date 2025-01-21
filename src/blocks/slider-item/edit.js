@@ -151,7 +151,6 @@ export default function SliderItemEdit(props) {
 						setLinkTarget={(target) =>
 							setAttributes({ linkTarget: target })
 						}
-
 						relAttribute={relAttribute}
 						setRelAttribute={(rel) =>
 							setAttributes({ relAttribute: rel })

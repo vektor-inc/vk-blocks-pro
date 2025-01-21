@@ -83,7 +83,6 @@ export default function save(props) {
 			href={linkUrl}
 			{...(linkTarget ? { target: linkTarget } : {})}
 			{...(relAttribute ? { rel: relAttribute } : {})}
-
 			className={`${prefix}-link`}
 		>
 			<span className="screen-reader-text">

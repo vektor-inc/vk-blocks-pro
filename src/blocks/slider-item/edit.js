@@ -42,6 +42,8 @@ export default function SliderItemEdit(props) {
 		bgImage,
 		linkUrl,
 		linkTarget,
+		relAttribute,
+		linkDescription,
 		blockId,
 	} = attributes;
 
@@ -148,6 +150,15 @@ export default function SliderItemEdit(props) {
 						linkTarget={linkTarget}
 						setLinkTarget={(target) =>
 							setAttributes({ linkTarget: target })
+						}
+
+						relAttribute={relAttribute}
+						setRelAttribute={(rel) =>
+							setAttributes({ relAttribute: rel })
+						}
+						linkDescription={linkDescription}
+						setLinkDescription={(description) =>
+							setAttributes({ linkDescription: description })
 						}
 					/>
 				</ToolbarGroup>

@@ -107,6 +107,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+[ Specification change ][ Slider ] Removed the aria-label attribute from links, and updated to exclude target and rel attributes when they are empty.
 
 = 1.94.0 =
 [ Add Block ][ Visual Embed ] Add Visual Embed block.

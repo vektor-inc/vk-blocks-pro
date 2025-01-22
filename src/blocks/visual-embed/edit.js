@@ -4,6 +4,7 @@ import {
 	useBlockProps,
 	BlockControls,
 } from '@wordpress/block-editor';
+
 import {
 	PanelBody,
 	TextareaControl,
@@ -16,7 +17,14 @@ import { useState } from '@wordpress/element';
 const ALLOWED_URL_PATTERNS = [
 	'https://*.google.com/*',
 	'https://*.youtube.com/embed/*',
+	'https://www.openstreetmap.org/export/*'
 ];
+
+// フィルターフックを使用してURLパターンを変更
+const filteredAllowedUrlPatterns = [
+	...ALLOWED_URL_PATTERNS,
+	...vk_blocks_pro_allowed_url_patterns
+]
 
 export default function EmbedCodeEdit({ attributes, setAttributes }) {
 	const { iframeCode, iframeWidth, iframeHeight } = attributes;
@@ -40,7 +48,7 @@ export default function EmbedCodeEdit({ attributes, setAttributes }) {
 		if (!src) {
 			return false;
 		}
-		return ALLOWED_URL_PATTERNS.some((pattern) => {
+		return filteredAllowedUrlPatterns.some((pattern) => {
 			// ワイルドカードパターンを正規表現に変換
 			const regexPattern = pattern
 				.replace(/\./g, '\\.')
@@ -122,6 +130,7 @@ export default function EmbedCodeEdit({ attributes, setAttributes }) {
 				iframeWidth: newWidth || iframeWidth,
 				iframeHeight: newHeight || iframeHeight,
 			});
+			setTempIframeCode(iframe.outerHTML);
 		}
 	};
 
@@ -193,7 +202,7 @@ export default function EmbedCodeEdit({ attributes, setAttributes }) {
 								return;
 							}
 							if (/^\d+(px|%)?$/.test(iframeWidth)) {
-								updateIframeAttributes(
+									updateIframeAttributes(
 									iframeWidth,
 									iframeHeight
 								);

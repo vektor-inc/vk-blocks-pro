@@ -15,6 +15,8 @@ export default function save({ attributes }) {
 		iconFontColor,
 		iconUrl,
 		iconTarget,
+		relAttribute,
+		linkDescription,
 	} = attributes;
 
 	if (faIcon && !faIcon.match(/<i/)) {
@@ -40,6 +42,8 @@ export default function save({ attributes }) {
 				lbFontColor={iconFontColor}
 				lbUrl={iconUrl}
 				lbTarget={iconTarget}
+				lbRelAttribute={relAttribute}
+				lbLinkDescription={linkDescription}
 			/>
 		</div>
 	);

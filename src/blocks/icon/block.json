@@ -48,6 +48,14 @@
 		"iconTarget": {
 			"type": "Boolean",
 			"default": false
+		},
+		"relAttribute": {
+			"type": "string",
+			"default": ""
+		},
+		"linkDescription": {
+			"type": "string",
+			"default": ""
 		}
 	},
 	"description": "Display icons with Font Awesome.",

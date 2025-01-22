@@ -108,6 +108,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Visual Embed ] Enhanced validation for XSS protection and restricted allowed URLs.
+
 = 1.94.1 =
 [ Specification change ][ Visual Embed ] Add margin:0; to iframe tag
 

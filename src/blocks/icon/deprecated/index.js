@@ -1,5 +1,7 @@
 import save1_13_2 from './1.13.2/save';
 import save1_16_1 from './1.16.1/save';
+import save1_94_1 from './1.94.1/save';
+
 
 const blockAttributes = {
 	faIcon: {
@@ -48,15 +50,6 @@ const blockAttributes = {
 	},
 };
 
-/* 次回対応おねがいします
-const blockAttributes3 = {
-	...blockAttributes2,
-	iconFontColor: {
-		type: 'string',
-	},
-}
-*/
-
 const blockAttributes2 = {
 	...blockAttributes,
 	iconColor: {
@@ -67,7 +60,25 @@ const blockAttributes2 = {
 	},
 }
 
+const blockAttributes3 = {
+	...blockAttributes2,
+	iconFontColor: {
+		type: 'string',
+	},
+	relAttribute: {
+		type: 'string',
+		default: ''
+	},
+	linkDescription: {
+		type: 'string',
+		default: ''
+	}
+}
 export const deprecated = [
+	{
+		attributes: blockAttributes3,
+		save: save1_94_1,
+	},
 	{
 		attributes: blockAttributes2,
 		save: save1_16_1,

@@ -17,14 +17,15 @@ import { useState } from '@wordpress/element';
 const ALLOWED_URL_PATTERNS = [
 	'https://*.google.com/*',
 	'https://*.youtube.com/embed/*',
-	'https://www.openstreetmap.org/export/*'
+	'https://www.openstreetmap.org/export/*',
 ];
 
 // フィルターフックを使用してURLパターンを変更
 const filteredAllowedUrlPatterns = [
 	...ALLOWED_URL_PATTERNS,
-	...vk_blocks_pro_allowed_url_patterns
-]
+	// eslint-disable-next-line no-undef
+	...vk_blocks_pro_allowed_url_patterns,
+];
 
 export default function EmbedCodeEdit({ attributes, setAttributes }) {
 	const { iframeCode, iframeWidth, iframeHeight } = attributes;
@@ -202,7 +203,7 @@ export default function EmbedCodeEdit({ attributes, setAttributes }) {
 								return;
 							}
 							if (/^\d+(px|%)?$/.test(iframeWidth)) {
-									updateIframeAttributes(
+								updateIframeAttributes(
 									iframeWidth,
 									iframeHeight
 								);

@@ -151,7 +151,7 @@ export class VKBIcon extends Component {
 				<a
 					href={iconUrl}
 					className="vk_icon_link"
-					{...(iconTarget ? { target: iconTarget } : {})}
+					{...(iconTarget ? { target: '_blank' } : {})}
 					{...(relAttribute ? { rel: relAttribute } : {})}
 				>
 					<span className="screen-reader-text">

@@ -163,7 +163,7 @@ export default function EmbedCodeEdit({ attributes, setAttributes }) {
 							setTempIframeCode(sanitizedCode);
 						}}
 						help={__(
-							'Please paste the iframe embed code directly. Only iframe tags with allowed URLs (Google Maps, YouTube) are permitted.',
+							'Please paste the iframe embed code directly. Only iframe tags with allowed URLs (Google Maps, Google Calendar, Google Forms, YouTube、OpenStreetMap) are permitted.',
 							'vk-blocks-pro'
 						)}
 					/>

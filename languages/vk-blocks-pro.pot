@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.94.0.0\n"
+"Project-Id-Version: VK Blocks Pro 1.94.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-01-17T01:36:57+00:00\n"
+"POT-Creation-Date: 2025-01-23T02:48:52+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -3182,28 +3182,40 @@ msgstr ""
 msgid "Profile text"
 msgstr ""
 
-#: src/blocks/visual-embed/edit.js:103
-msgid "Iframe Height"
-msgstr ""
-
-#: src/blocks/visual-embed/edit.js:112
-msgid "Note: These settings are only applicable to iframe tags. Other embed codes will not respond to these adjustments."
-msgstr ""
-
-#: src/blocks/visual-embed/edit.js:81
+#: src/blocks/visual-embed/edit.js:143
 msgid "Embed Code Settings"
 msgstr ""
 
-#: src/blocks/visual-embed/edit.js:83
+#: src/blocks/visual-embed/edit.js:145
 msgid "Embed Code"
 msgstr ""
 
-#: src/blocks/visual-embed/edit.js:89
-msgid "Please paste the iframe embed code directly. (e.g., Google Maps)"
+#: src/blocks/visual-embed/edit.js:166
+msgid "Please paste the iframe embed code directly. Only iframe tags with allowed URLs (Google Maps, Google Calendar, Google Forms, YouTube、OpenStreetMap, Vimeo) are permitted."
 msgstr ""
 
-#: src/blocks/visual-embed/edit.js:95
+#: src/blocks/visual-embed/edit.js:177
+msgid "Please enter an iframe embed code."
+msgstr ""
+
+#: src/blocks/visual-embed/edit.js:189
+msgid "The provided URL is not allowed. Please use an approved embed source."
+msgstr ""
+
+#: src/blocks/visual-embed/edit.js:196
 msgid "Iframe Width"
+msgstr ""
+
+#: src/blocks/visual-embed/edit.js:219
+msgid "Iframe Height"
+msgstr ""
+
+#: src/blocks/visual-embed/edit.js:243
+msgid "Note: These settings are only applicable to iframe tags. Other embed codes will not respond to these adjustments."
+msgstr ""
+
+#: src/blocks/visual-embed/edit.js:83
+msgid "Only allowed URLs can be embedded."
 msgstr ""
 
 #: src/components/advanced-color-gradient-control/index.js:41

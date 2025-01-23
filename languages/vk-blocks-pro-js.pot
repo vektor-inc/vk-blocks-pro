@@ -3202,30 +3202,45 @@ msgstr ""
 msgid "Profile text"
 msgstr ""
 
-#: src/blocks/visual-embed/edit.js:103
+#: src/blocks/visual-embed/edit.js:143
+msgid "Embed Code Settings"
+msgstr ""
+
+#: src/blocks/visual-embed/edit.js:145
+msgid "Embed Code"
+msgstr ""
+
+#: src/blocks/visual-embed/edit.js:166
+msgid ""
+"Please paste the iframe embed code directly. Only iframe tags with allowed "
+"URLs (Google Maps, Google Calendar, Google Forms, YouTube、OpenStreetMap, "
+"Vimeo) are permitted."
+msgstr ""
+
+#: src/blocks/visual-embed/edit.js:177
+msgid "Please enter an iframe embed code."
+msgstr ""
+
+#: src/blocks/visual-embed/edit.js:189
+msgid "The provided URL is not allowed. Please use an approved embed source."
+msgstr ""
+
+#: src/blocks/visual-embed/edit.js:196
+msgid "Iframe Width"
+msgstr ""
+
+#: src/blocks/visual-embed/edit.js:219
 msgid "Iframe Height"
 msgstr ""
 
-#: src/blocks/visual-embed/edit.js:112
+#: src/blocks/visual-embed/edit.js:243
 msgid ""
 "Note: These settings are only applicable to iframe tags. Other embed codes "
 "will not respond to these adjustments."
 msgstr ""
 
-#: src/blocks/visual-embed/edit.js:81
-msgid "Embed Code Settings"
-msgstr ""
-
 #: src/blocks/visual-embed/edit.js:83
-msgid "Embed Code"
-msgstr ""
-
-#: src/blocks/visual-embed/edit.js:89
-msgid "Please paste the iframe embed code directly. (e.g., Google Maps)"
-msgstr ""
-
-#: src/blocks/visual-embed/edit.js:95
-msgid "Iframe Width"
+msgid "Only allowed URLs can be embedded."
 msgstr ""
 
 #: src/components/advanced-color-gradient-control/index.js:41

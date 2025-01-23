@@ -46,8 +46,10 @@ function vk_blocks_visual_embed_set_data() {
 
 	wp_localize_script(
 		'vk-blocks-build-js',
-		'vk_blocks_pro_allowed_url_patterns',
-		apply_filters( 'vk_blocks_visual_embed_allowed_url_patterns', array() )
+		'vkBlocksVisualEmbed',
+		array(
+			'allowedUrlPatterns' => apply_filters( 'vk_blocks_visual_embed_allowed_url_patterns', array() ),
+		)
 	);
 }
 add_action( 'enqueue_block_editor_assets', 'vk_blocks_visual_embed_set_data' );

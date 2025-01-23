@@ -32,3 +32,22 @@ function vk_blocks_register_block_google_map() {
 	);
 }
 add_action( 'init', 'vk_blocks_register_block_google_map', 99 );
+
+/**
+ * Set allowed URL patterns for visual embed block in the editor.
+ *
+ * This function localizes the script with allowed URL patterns
+ * that can be used in the visual embed block. The patterns are
+ * filterable to allow customization from other plugins or themes.
+ *
+ * @return void
+ */
+function vk_blocks_visual_embed_set_data() {
+
+	wp_localize_script(
+		'vk-blocks-build-js',
+		'vk_blocks_pro_allowed_url_patterns',
+		apply_filters( 'vk_blocks_visual_embed_allowed_url_patterns', array() )
+	);
+}
+add_action( 'enqueue_block_editor_assets', 'vk_blocks_visual_embed_set_data' );

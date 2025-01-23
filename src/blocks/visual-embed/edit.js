@@ -13,6 +13,12 @@ import {
 } from '@wordpress/components';
 import { useState } from '@wordpress/element';
 
+const allowedUrlPatterns =
+	typeof vkBlocksVisualEmbed !== 'undefined' && // eslint-disable-line no-undef
+	vkBlocksVisualEmbed.allowedUrlPatterns // eslint-disable-line no-undef
+		? vkBlocksVisualEmbed.allowedUrlPatterns // eslint-disable-line no-undef
+		: [];
+
 // 許可するURLパターンの配列
 const ALLOWED_URL_PATTERNS = [
 	'https://*.google.com/*',
@@ -25,7 +31,7 @@ const ALLOWED_URL_PATTERNS = [
 const filteredAllowedUrlPatterns = [
 	...ALLOWED_URL_PATTERNS,
 	// eslint-disable-next-line no-undef
-	...vk_blocks_pro_allowed_url_patterns,
+	...allowedUrlPatterns,
 ];
 
 export default function EmbedCodeEdit({ attributes, setAttributes }) {

@@ -15,8 +15,10 @@
 		&.wp-block-social-links, //inner-blocksの中のinner-blocksがソーシャルアイコンブロックだった場合
 		&.wp-block-group { //inner-blocksの中のinner-blocksがグループブロックだった場合
 			display: flex;
-			flex-direction: row;
 			flex-wrap: wrap;
+		}
+		&.wp-block-group:where(:not(.is-vertical)){ //垂直レイアウトの場合は除外したいため追加
+			flex-direction: row;
 		}
 	}
 

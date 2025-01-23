@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2025-01-16T19:23:39+00:00\n"
+"POT-Creation-Date: 2025-01-23T02:45:29+00:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1832,11 +1832,11 @@ msgstr "ギザギザ"
 
 #: src/blocks/_pro/outer/edit.js:657
 msgid "Book"
-msgstr ""
+msgstr "本"
 
 #: src/blocks/_pro/outer/edit.js:661
 msgid "Pyramid"
-msgstr ""
+msgstr "ピラミッド"
 
 #: src/blocks/_pro/outer/edit.js:668
 msgid "Settings for each device"
@@ -3187,11 +3187,45 @@ msgstr "プロフィールタイトル"
 msgid "Profile text"
 msgstr "プロフィールテキスト"
 
-#: src/blocks/visual-embed/edit.js:103
+#: src/blocks/visual-embed/edit.js:143
+msgid "Embed Code Settings"
+msgstr "埋め込みコードの設定"
+
+#: src/blocks/visual-embed/edit.js:145
+msgid "Embed Code"
+msgstr "埋め込みコード"
+
+#: src/blocks/visual-embed/edit.js:166
+msgid ""
+"Please paste the iframe embed code directly. Only iframe tags with allowed "
+"URLs (Google Maps, Google Calendar, Google Forms, YouTube、OpenStreetMap, "
+"Vimeo) are permitted."
+msgstr ""
+"iframe 埋め込みコードを直接貼り付けてください。許可された URL (Google マッ"
+"プ、Google カレンダー、Google フォーム、YouTube、OpenStreetMap、Vimeo) の "
+"iframe タグのみが許可されます。"
+
+#: src/blocks/visual-embed/edit.js:177
+#, fuzzy
+#| msgid "Please enter a title."
+msgid "Please enter an iframe embed code."
+msgstr "見出しを入力してください。"
+
+#: src/blocks/visual-embed/edit.js:189
+msgid "The provided URL is not allowed. Please use an approved embed source."
+msgstr ""
+"指定された URL は許可されていません。承認された埋め込みソースを使用してくださ"
+"い。"
+
+#: src/blocks/visual-embed/edit.js:196
+msgid "Iframe Width"
+msgstr "iframeの幅"
+
+#: src/blocks/visual-embed/edit.js:219
 msgid "Iframe Height"
 msgstr "iframeの高さ"
 
-#: src/blocks/visual-embed/edit.js:112
+#: src/blocks/visual-embed/edit.js:243
 msgid ""
 "Note: These settings are only applicable to iframe tags. Other embed codes "
 "will not respond to these adjustments."
@@ -3199,22 +3233,9 @@ msgstr ""
 "注意: これらの設定はiframeタグにのみ適用されます。他の埋め込みコードには対応"
 "していません。"
 
-#: src/blocks/visual-embed/edit.js:81
-msgid "Embed Code Settings"
-msgstr "埋め込みコードの設定"
-
 #: src/blocks/visual-embed/edit.js:83
-msgid "Embed Code"
-msgstr "埋め込みコード"
-
-#: src/blocks/visual-embed/edit.js:89
-msgid "Please paste the iframe embed code directly. (e.g., Google Maps)"
-msgstr ""
-"iframeタグの埋め込みコードを直接貼り付けてください。（例：Googleマップ）"
-
-#: src/blocks/visual-embed/edit.js:95
-msgid "Iframe Width"
-msgstr "iframeの幅"
+msgid "Only allowed URLs can be embedded."
+msgstr "許可された URL のみを埋め込むことができます。"
 
 #: src/components/advanced-color-gradient-control/index.js:41
 msgid "Theme"
@@ -5368,6 +5389,10 @@ msgid ""
 "Displays a simple schedule and other information that is useful for "
 "explaining the order."
 msgstr "順番を説明する時に便利でシンプルなスケジュールなどを表示します。"
+
+#~ msgid "Please paste the iframe embed code directly. (e.g., Google Maps)"
+#~ msgstr ""
+#~ "iframeタグの埋め込みコードを直接貼り付けてください。（例：Googleマップ）"
 
 #, fuzzy
 #~| msgid "Background Setting"

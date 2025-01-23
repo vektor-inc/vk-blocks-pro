@@ -18,6 +18,7 @@ const ALLOWED_URL_PATTERNS = [
 	'https://*.google.com/*',
 	'https://*.youtube.com/embed/*',
 	'https://www.openstreetmap.org/export/*',
+	'https://player.vimeo.com/*',
 ];
 
 // フィルターフックを使用してURLパターンを変更
@@ -163,7 +164,7 @@ export default function EmbedCodeEdit({ attributes, setAttributes }) {
 							setTempIframeCode(sanitizedCode);
 						}}
 						help={__(
-							'Please paste the iframe embed code directly. Only iframe tags with allowed URLs (Google Maps, Google Calendar, Google Forms, YouTube、OpenStreetMap) are permitted.',
+							'Please paste the iframe embed code directly. Only iframe tags with allowed URLs (Google Maps, Google Calendar, Google Forms, YouTube、OpenStreetMap, Vimeo) are permitted.',
 							'vk-blocks-pro'
 						)}
 					/>

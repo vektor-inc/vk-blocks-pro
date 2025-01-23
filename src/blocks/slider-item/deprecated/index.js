@@ -5,6 +5,7 @@ import save1_27_7 from './1.27.7/save';
 import save1_34_1 from './1.34.1/save';
 import save1_73_0 from './1.73.0/save';
 import save1_76_0 from './1.76.0/save';
+import save1_94_0 from './1.94.0/save';
 
 const blockAttributes = {
 	verticalAlignment: {
@@ -107,8 +108,24 @@ const blockAttributes6 = {
 	},
 }
 
+// 1.73.0 で linkUrl, linkTarget を追加
+const blockAttributes7 = {
+	...blockAttributes6,
+	relAttribute: {
+		type: 'string',
+		default: ''
+	},
+	linkDescription: {
+		type: 'string',
+		default: ''
+	},
+}
 
 export default [
+	{
+		attributes: blockAttributes7,
+		save: save1_94_0,
+	},
 	{
 		attributes: blockAttributes6,
 		save: save1_76_0,

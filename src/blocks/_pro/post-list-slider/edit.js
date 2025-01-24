@@ -27,7 +27,7 @@ export default function PostListSliderEdit(props) {
 
 	const postTypesProps = vk_block_post_type_params.post_type_option;
 	const termsByTaxonomyName = vk_block_post_type_params.term_by_taxonomy_name;
-
+	const stickyPosts = attributes.stickyPosts;
 	const {
 		layout,
 		autoPlay,
@@ -82,6 +82,7 @@ export default function PostListSliderEdit(props) {
 					setAttributes={setAttributes}
 					postTypesProps={postTypesProps}
 					termsByTaxonomyName={termsByTaxonomyName}
+					stickyPosts={stickyPosts}
 				/>
 				<PanelBody
 					title={__('Display type', 'vk-blocks-pro')}

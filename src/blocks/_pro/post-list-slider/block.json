@@ -164,6 +164,10 @@
 		"blockId": {
 			"type": "string"
 		},
+		"stickyPosts": {
+			"type": "string",
+			"default": "include"
+		},
 		"className": {
 			"type": "string",
 			"default": ""

@@ -227,9 +227,9 @@ class Vk_Blocks_PostList {
 			case 'only':
 				$sticky_posts = get_option( 'sticky_posts' );
 				if ( ! empty( $sticky_posts ) ) {
-					$args['post__in'] = $sticky_posts;
+					$args['post__in']       = $sticky_posts;
 					$args['posts_per_page'] = count( $sticky_posts );
-					$args['orderby'] = 'post__in';
+					$args['orderby']        = 'post__in';
 				}
 				break;
 		}

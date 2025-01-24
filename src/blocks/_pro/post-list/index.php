@@ -217,11 +217,11 @@ function vk_blocks_register_block_post_list() {
 						'type'    => 'boolean',
 						'default' => false,
 					),
-					'selfIgnore'  => array(
+					'selfIgnore'                 => array(
 						'type'    => 'boolean',
 						'default' => false,
 					),
-					'stickyPosts'           => array(
+					'stickyPosts'                => array(
 						'type'    => 'string',
 						'default' => 'include',
 					),

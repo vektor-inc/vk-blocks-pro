@@ -218,9 +218,9 @@ class Vk_Blocks_PostList {
 			$args['date_query'] = $date_query;
 		}
 
-		$stickyPosts = isset( $attributes['stickyPosts'] ) ? $attributes['stickyPosts'] : 'include';
+		$sticky_posts = isset( $attributes['stickyPosts'] ) ? $attributes['stickyPosts'] : 'include';
 
-		switch ( $stickyPosts ) {
+		switch ( $sticky_posts ) {
 			case 'include':
 				$args['ignore_sticky_posts'] = false; // スティッキーポストを含める
 				break;

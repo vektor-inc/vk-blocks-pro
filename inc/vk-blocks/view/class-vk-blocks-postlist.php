@@ -218,20 +218,26 @@ class Vk_Blocks_PostList {
 			$args['date_query'] = $date_query;
 		}
 
-		$stickyPosts = isset($attributes['stickyPosts']) ? $attributes['stickyPosts'] : 'include';
+		$stickyPosts = isset( $attributes['stickyPosts'] ) ? $attributes['stickyPosts'] : 'include';
 
 		switch ( $stickyPosts ) {
 			case 'include':
+				$args['ignore_sticky_posts'] = false; // スティッキーポストを含める
 				break;
+
 			case 'exclude':
-				$args['post__not_in'] = get_option( 'sticky_posts' );
+				$args['post__not_in']        = array_merge( $args['post__not_in'], get_option( 'sticky_posts' ) );
+				$args['ignore_sticky_posts'] = true; // スティッキーポストを無視
 				break;
+
 			case 'only':
 				$sticky_posts = get_option( 'sticky_posts' );
 				if ( ! empty( $sticky_posts ) ) {
 					$args['post__in']       = $sticky_posts;
 					$args['posts_per_page'] = count( $sticky_posts );
 					$args['orderby']        = 'post__in';
+				} else {
+					$args['post__in'] = array( 0 ); // スティッキーポストが存在しない場合
 				}
 				break;
 		}

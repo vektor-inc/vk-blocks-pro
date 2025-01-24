@@ -253,7 +253,8 @@ function vk_blocks_post_list_set_data() {
 		'vk_block_post_type_params',
 		array(
 			'post_type_option'      => $block_data['post_type_option'],
-			'term_by_taxonomy_name' => $block_data['term_by_taxonomy_name'],)
+			'term_by_taxonomy_name' => $block_data['term_by_taxonomy_name'],
+		)
 	);
 }
 add_action( 'enqueue_block_editor_assets', 'vk_blocks_post_list_set_data' );

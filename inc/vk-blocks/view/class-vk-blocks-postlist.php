@@ -222,12 +222,12 @@ class Vk_Blocks_PostList {
 
 		switch ( $sticky_posts ) {
 			case 'include':
-				$args['ignore_sticky_posts'] = false; // スティッキーポストを含める
+				$args['ignore_sticky_posts'] = false;
 				break;
 
 			case 'exclude':
 				$args['post__not_in']        = array_merge( $args['post__not_in'], get_option( 'sticky_posts' ) );
-				$args['ignore_sticky_posts'] = true; // スティッキーポストを無視
+				$args['ignore_sticky_posts'] = true;
 				break;
 
 			case 'only':
@@ -237,7 +237,7 @@ class Vk_Blocks_PostList {
 					$args['posts_per_page'] = count( $sticky_posts );
 					$args['orderby']        = 'post__in';
 				} else {
-					$args['post__in'] = array( 0 ); // スティッキーポストが存在しない場合
+					$args['post__in'] = array( 0 );
 				}
 				break;
 		}

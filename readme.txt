@@ -107,6 +107,8 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+[ Add function ][ Post List (Pro) / Post List Slider (Pro) ] Added the ability to set sticky posts to display.
 [ Add function ][ Slider ] Added noreferrer, nofollow, and link description options to the link feature.
 
 = 1.94.2 =

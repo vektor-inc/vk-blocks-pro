@@ -20,7 +20,7 @@ export default function save(props) {
 		url,
 		urlOpenType,
 		relAttribute,
-		linkDescription
+		linkDescription,
 	} = attributes;
 
 	// カラーパレットに対応
@@ -110,9 +110,7 @@ export default function save(props) {
 						: __('Grid column card item', 'vk-blocks-pro')}
 				</span>
 
-
 				<InnerBlocks.Content />
-
 			</TagName>
 		</div>
 	);

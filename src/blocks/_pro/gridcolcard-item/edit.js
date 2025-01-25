@@ -14,7 +14,7 @@ import {
 	InnerBlocks,
 	useBlockProps,
 	BlockControls,
-	store as blockEditorStore
+	store as blockEditorStore,
 } from '@wordpress/block-editor';
 import { useSelect, useDispatch } from '@wordpress/data';
 import { useEffect, useState } from '@wordpress/element';
@@ -24,7 +24,6 @@ import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { isGradientStyle } from '@vkblocks/utils/is-gradient-style';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 import LinkToolbar from '@vkblocks/components/link-toolbar';
-
 
 export default function Edit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -235,7 +234,7 @@ export default function Edit(props) {
 			}
 		}
 
-		setAttributes({ relAttribute: rel.join(' ') })
+		setAttributes({ relAttribute: rel.join(' ') });
 	};
 
 	return (
@@ -244,18 +243,15 @@ export default function Edit(props) {
 				<ToolbarGroup>
 					<LinkToolbar
 						linkUrl={url}
-						setLinkUrl={(url) => setAttributes({ url: url })}
-
+						setLinkUrl={(url) => setAttributes({ url })}
 						linkTarget={urlOpenType ? '_blank' : undefined}
 						setLinkTarget={(target) => {
-							setAttributes({ urlOpenType: !!target })
+							setAttributes({ urlOpenType: !!target });
 						}}
-
 						relAttribute={relAttribute}
 						setRelAttribute={(rel) =>
 							setAttributes({ relAttribute: rel })
 						}
-
 						linkDescription={linkDescription}
 						setLinkDescription={(description) =>
 							setAttributes({ linkDescription: description })
@@ -322,44 +318,31 @@ export default function Edit(props) {
 						/>
 
 						<CheckboxControl
-							label={__(
-								'Add noreferrer',
-								'vk-blocks-pro'
-							)}
+							label={__('Add noreferrer', 'vk-blocks-pro')}
 							checked={
-								relAttribute.includes(
-									'noreferrer'
-								) || false
+								relAttribute.includes('noreferrer') || false
 							}
 							onChange={(checked) =>
-								handleRelChange(
-									'noreferrer',
-									checked
-								)
+								handleRelChange('noreferrer', checked)
 							}
 						/>
 						<CheckboxControl
-							label={__(
-								'Add nofollow',
-								'vk-blocks-pro'
-							)}
-							checked={
-								relAttribute.includes(
-									'nofollow'
-								) || false
-							}
+							label={__('Add nofollow', 'vk-blocks-pro')}
+							checked={relAttribute.includes('nofollow') || false}
 							onChange={(checked) =>
-								handleRelChange(
-									'nofollow',
-									checked
-								)
+								handleRelChange('nofollow', checked)
 							}
 						/>
 
 						<TextControl
-							label={__('Accessibility link description', 'vk-blocks-pro')}
+							label={__(
+								'Accessibility link description',
+								'vk-blocks-pro'
+							)}
 							value={linkDescription}
-							onChange={(value) => setAttributes({ linkDescription: value })}
+							onChange={(value) =>
+								setAttributes({ linkDescription: value })
+							}
 						/>
 
 						<p className={alertClass}>

@@ -100,15 +100,21 @@ export default function save(props) {
 					paddingRight: containerSpace.right,
 					color: textColorCustom,
 				}}
-				href={url}
-				target={urlOpenType ? '_blank' : undefined}
-				{...(relAttribute ? { rel: relAttribute } : {})}
+				{...(TagName === 'a'
+					? {
+						href: url,
+						target: urlOpenType ? '_blank' : undefined,
+						rel: relAttribute || undefined,
+					}
+					: {})}
 			>
-				<span className="screen-reader-text">
-					{linkDescription
-						? linkDescription
-						: __('Grid column card item', 'vk-blocks-pro')}
-				</span>
+				{TagName === 'a' && (
+					<span className="screen-reader-text">
+						{linkDescription
+							? linkDescription
+							: __('Grid column card item', 'vk-blocks-pro')}
+					</span>
+				)}
 
 				<InnerBlocks.Content />
 			</TagName>

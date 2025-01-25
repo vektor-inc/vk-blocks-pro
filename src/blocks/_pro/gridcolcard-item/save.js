@@ -1,7 +1,7 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { isGradientStyle } from '@vkblocks/utils/is-gradient-style';
-
+import { __ } from '@wordpress/i18n';
 import classnames from 'classnames';
 
 export default function save(props) {
@@ -19,6 +19,8 @@ export default function save(props) {
 		backgroundGradient,
 		url,
 		urlOpenType,
+		relAttribute,
+		linkDescription
 	} = attributes;
 
 	// カラーパレットに対応
@@ -100,9 +102,17 @@ export default function save(props) {
 				}}
 				href={url}
 				target={urlOpenType ? '_blank' : undefined}
-				rel={urlOpenType ? 'noopener noreferrer' : undefined}
+				{...(relAttribute ? { rel: relAttribute } : {})}
 			>
+				<span className="screen-reader-text">
+					{linkDescription
+						? linkDescription
+						: __('Grid column card item', 'vk-blocks-pro')}
+				</span>
+
+
 				<InnerBlocks.Content />
+
 			</TagName>
 		</div>
 	);

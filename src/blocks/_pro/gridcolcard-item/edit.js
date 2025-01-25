@@ -8,25 +8,23 @@ import {
 	CheckboxControl,
 	TextControl,
 	ToolbarGroup,
-	ToolbarButton,
-	Dropdown,
 } from '@wordpress/components';
 import {
 	InspectorControls,
 	InnerBlocks,
 	useBlockProps,
 	BlockControls,
-	store as blockEditorStore,
-	URLInput,
+	store as blockEditorStore
 } from '@wordpress/block-editor';
 import { useSelect, useDispatch } from '@wordpress/data';
 import { useEffect, useState } from '@wordpress/element';
 import CommonItemControl from '../gridcolcard/edit-common.js';
-import { link, linkOff, keyboardReturn } from '@wordpress/icons';
 import classnames from 'classnames';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { isGradientStyle } from '@vkblocks/utils/is-gradient-style';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
+import LinkToolbar from '@vkblocks/components/link-toolbar';
+
 
 export default function Edit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -57,6 +55,8 @@ export default function Edit(props) {
 		backgroundGradient,
 		url,
 		urlOpenType,
+		relAttribute,
+		linkDescription,
 	} = attributes;
 
 	// editModeは値として保持させずに常にすべてのカラムモードでスタートさせる
@@ -224,78 +224,42 @@ export default function Edit(props) {
 		style,
 	});
 
+	const handleRelChange = (type, checked) => {
+		const rel = relAttribute ? relAttribute.split(' ') : [];
+		if (checked) {
+			rel.push(type);
+		} else {
+			const index = rel.indexOf(type);
+			if (index !== -1) {
+				rel.splice(index, 1);
+			}
+		}
+
+		setAttributes({ relAttribute: rel.join(' ') })
+	};
+
 	return (
 		<>
 			<BlockControls>
 				<ToolbarGroup>
-					<Dropdown
-						renderToggle={({ isOpen, onToggle }) => {
-							const setLink = () => {
-								if (isOpen && url !== '') {
-									// linkOff
-									setAttributes({ url: '' });
-								}
-								onToggle();
-							};
-							return (
-								<ToolbarButton
-									aria-expanded={isOpen}
-									icon={url !== '' && isOpen ? linkOff : link}
-									isActive={
-										url !== '' && isOpen ? true : false
-									}
-									label={
-										url !== '' && isOpen
-											? __('Unlink')
-											: __(
-													'Input Link URL',
-													'vk-blocks-pro'
-												)
-									}
-									onClick={setLink}
-								/>
-							);
+					<LinkToolbar
+						linkUrl={url}
+						setLinkUrl={(url) => setAttributes({ url: url })}
+
+						linkTarget={urlOpenType ? '_blank' : undefined}
+						setLinkTarget={(target) => {
+							setAttributes({ urlOpenType: !!target })
 						}}
-						renderContent={(params) => {
-							return (
-								<form
-									onSubmit={() => {
-										params.onClose();
-									}}
-								>
-									<div className="vk-block-editor-url-input-wrapper">
-										<div className="block-editor-url-input">
-											<URLInput
-												__nextHasNoMarginBottom
-												value={url}
-												onChange={(value) => {
-													setAttributes({
-														url: value,
-													});
-												}}
-											/>
-										</div>
-										<Button
-											icon={keyboardReturn}
-											label={__('Submit')}
-											type="submit"
-										/>
-									</div>
-									<CheckboxControl
-										label={__(
-											'Open link new tab.',
-											'vk-blocks-pro'
-										)}
-										checked={urlOpenType}
-										onChange={(checked) =>
-											setAttributes({
-												urlOpenType: checked,
-											})
-										}
-									/>
-								</form>
-							);
-						}}
+
+						relAttribute={relAttribute}
+						setRelAttribute={(rel) =>
+							setAttributes({ relAttribute: rel })
+						}
+
+						linkDescription={linkDescription}
+						setLinkDescription={(description) =>
+							setAttributes({ linkDescription: description })
+						}
 					/>
 				</ToolbarGroup>
 			</BlockControls>
@@ -356,6 +320,48 @@ export default function Edit(props) {
 								setAttributes({ urlOpenType: checked })
 							}
 						/>
+
+						<CheckboxControl
+							label={__(
+								'Add noreferrer',
+								'vk-blocks-pro'
+							)}
+							checked={
+								relAttribute.includes(
+									'noreferrer'
+								) || false
+							}
+							onChange={(checked) =>
+								handleRelChange(
+									'noreferrer',
+									checked
+								)
+							}
+						/>
+						<CheckboxControl
+							label={__(
+								'Add nofollow',
+								'vk-blocks-pro'
+							)}
+							checked={
+								relAttribute.includes(
+									'nofollow'
+								) || false
+							}
+							onChange={(checked) =>
+								handleRelChange(
+									'nofollow',
+									checked
+								)
+							}
+						/>
+
+						<TextControl
+							label={__('Accessibility link description', 'vk-blocks-pro')}
+							value={linkDescription}
+							onChange={(value) => setAttributes({ linkDescription: value })}
+						/>
+
 						<p className={alertClass}>
 							{__(
 								'If you set a link URL, do not place the link element (text or button) in the Grid Column Card Item. It may not be displayed correctly.',

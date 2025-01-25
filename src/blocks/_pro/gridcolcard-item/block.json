@@ -75,6 +75,14 @@
 		"urlOpenType": {
 			"type": "boolean",
 			"default": false
+		},
+		"relAttribute": {
+			"type": "string",
+			"default": ""
+		},
+		"linkDescription": {
+			"type": "string",
+			"default": ""
 		}
 	}
 }

@@ -107,6 +107,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+[ Add function ][ Grid Column Card (Pro) ] Added noreferrer, nofollow, and link description options to the link feature for each card.
 
 = 1.94.2 =
 [ Bug fix / Specification Change ][ Visual Embed ] Strengthened validation for XSS protection and restricted the range of allowed URLs.

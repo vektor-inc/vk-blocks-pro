@@ -83,9 +83,9 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 		$list = $this->get_post_list_using_page_content_block( 'unpublic' );
 
 		if ( $list ) {
-			$alert = '<div class="notice notice-warning is-dismissible">';
+			$alert  = '<div class="notice notice-warning is-dismissible">';
 			$alert .= '<p>' . __( 'The following posts contain Page Content Blocks referencing non-public pages:', 'vk-blocks-pro' ) . '</p>';
-			$alert .=  $list;
+			$alert .= $list;
 			$alert .= '<p>' . vk_blocks_get_page_content_private_alert() . '</p>';
 			$alert .= '</div>';
 			echo wp_kses_post( $alert );

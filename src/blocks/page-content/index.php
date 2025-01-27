@@ -56,9 +56,17 @@ function vk_blocks_page_content_render_callback( $attributes ) {
 	$page_content_id = ! empty( $attributes['TargetPost'] ) ? $attributes['TargetPost'] : -1;
 	$post            = get_post( $page_content_id );
 
+	$is_rest_request = defined( 'REST_REQUEST' ) && REST_REQUEST;
+
 	// 投稿が存在し、公開されているかを確認
 	if ( ! $post || 'publish' !== $post->post_status ) {
-		return __( 'Post not found or not public.', 'vk-blocks-pro' );
+		if ( is_admin() || $is_rest_request ) {
+			return '<div class="alert alert-warning" style="padding:1.5rem;"><p>' . __( 'Post not found or not public.', 'vk-blocks-pro' ) . '</p><ul class="mb-0"><li class="mb-0">'.__( 'From version 1.95.0 onwards, non-public pages can no longer be displayed.
+If you want to display non-public content in multiple locations, please register it as a synced pattern and place it in the desired locations instead of using this block.' ).'</li></ul></div>';
+		} else {
+			// 公開画面では何も表示しない
+			return '';
+		}
 	}
 
 	$page_content = $post->post_content;

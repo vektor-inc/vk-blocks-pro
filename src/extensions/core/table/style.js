@@ -56,6 +56,14 @@ export const addAttribute = (settings) => {
 				type: 'boolean',
 				default: true,
 			},
+			alignVertical: {
+				type: 'boolean',
+				default: false,
+			},
+			alignVerticalBreakpoint: {
+				type: 'string',
+				default: 'table-align-vertical-mobile',
+			},
 		};
 	}
 	return settings;
@@ -74,25 +82,44 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 			scrollIconRight,
 			iconOutputLeft,
 			iconOutputRight,
+			alignVertical,
+			alignVerticalBreakpoint,
 		} = attributes;
 
 		const blockProps = useBlockProps({
-			className: scrollable ? 'is-style-vk-table-scrollable' : '',
+			className:
+				`${scrollable ? 'is-style-vk-table-scrollable' : ''} ${alignVertical ? 'is-style-vk-table-align-vertical' : ''}`.trim(),
 		});
 
 		// アイコンスタイルを定義
-		let iconStyle = {
+		const iconStyle = {
 			width: '24px',
 			height: '24px',
 		};
 
-		if (scrollable) {
-			iconStyle = {
-				...iconStyle,
-				color: '#fff',
-				background: '#1e1e1e',
-			};
-		}
+		// scrollable に関連するアイコンスタイル
+		const scrollableIconStyle = {
+			color: scrollable ? '#fff' : 'initial', // scrollable が ON のときは白、OFF のときはデフォルト
+			background: scrollable ? '#1e1e1e' : 'transparent', // scrollable が ON のときは背景色、OFF のときは透明
+		};
+
+		// alignVertical に関連するアイコンスタイル
+		const alignVerticalIconStyle = {
+			color: alignVertical ? '#fff' : 'initial', // alignVertical が ON のときは白、OFF のときはデフォルト
+			background: alignVertical ? '#1e1e1e' : 'transparent', // alignVertical が ON のときは背景色、OFF のときは透明
+		};
+
+		// scrollable 用アイコンスタイルを独立して適用
+		const scrollableIconStyleFinal = {
+			...iconStyle,
+			...scrollableIconStyle,
+		};
+
+		// alignVertical 用アイコンスタイルを独立して適用
+		const alignVerticalIconStyleFinal = {
+			...iconStyle,
+			...alignVerticalIconStyle,
+		};
 
 		// スクロール可能トグル変更のハンドル
 		const handleToggleChange = (checked) => {
@@ -111,9 +138,26 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 			setAttributes({ scrollBreakpoint: value });
 		};
 
+		// alignVerticalトグル変更のハンドル
+		const handleAlignVerticalToggleChange = (checked) => {
+			setAttributes({ alignVertical: checked });
+
+			if (!checked) {
+				// OFF の場合、関連するクラスや属性をリセット
+				setAttributes({
+					alignVerticalBreakpoint: 'table-align-vertical-mobile',
+				});
+			}
+		};
+
+		// alignVerticalブレークポイント選択変更のハンドル
+		const handleAlignVerticalSelectChange = (value) => {
+			setAttributes({ alignVerticalBreakpoint: value });
+		};
+
 		// コンポーネントのマウントまたは更新後に属性を更新
 		useEffect(() => {
-			// 初期ロード時にクラスや属性を確認して scrollable を ON にする
+			// 初期ロード時にクラスや属性を確認して scrollable を ON にする∂
 			const checkTableScrollAttributes = () => {
 				const tables = document.querySelectorAll('.wp-block-table');
 				tables.forEach((table) => {
@@ -135,11 +179,11 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 
 		// scrollable の状態が確定したら処理を実行
 		useEffect(() => {
-			const updateTableScrollAttributes = () => {
-				const tables = document.querySelectorAll(
-					'.wp-block-table.is-style-vk-table-scrollable'
-				);
+			const updateTableAttributes = () => {
+				// .wp-block-table を持つすべてのテーブル要素を取得
+				const tables = document.querySelectorAll('.wp-block-table');
 				tables.forEach((table) => {
+					// scrollable 状態に応じてクラスと属性を更新
 					if (!scrollable) {
 						table.classList.remove('is-style-vk-table-scrollable');
 						table.removeAttribute('data-scroll-breakpoint');
@@ -147,6 +191,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 						const breakpoint =
 							table.getAttribute('data-scroll-breakpoint') ||
 							'table-scrollable-mobile';
+						table.classList.add('is-style-vk-table-scrollable');
 						table.setAttribute(
 							'data-scroll-breakpoint',
 							breakpoint
@@ -167,11 +212,28 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 						'data-icon-output-right',
 						iconOutputRight ? 'true' : 'false'
 					);
+
+					// alignVertical 状態に応じたクラスと属性を更新
+					if (!alignVertical) {
+						// alignVertical が OFF の場合
+						table.classList.remove(
+							'is-style-vk-table-align-vertical'
+						);
+						table.removeAttribute('data-align-vertical-breakpoint');
+					} else {
+						// alignVertical が ON の場合
+						table.classList.add('is-style-vk-table-align-vertical');
+						table.setAttribute(
+							'data-align-vertical-breakpoint',
+							alignVerticalBreakpoint
+						);
+					}
 				});
 			};
 
+			// 状態が undefined でない場合のみ実行
 			if (typeof scrollable !== 'undefined') {
-				updateTableScrollAttributes();
+				updateTableAttributes();
 			}
 		}, [
 			scrollable,
@@ -181,6 +243,8 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 			scrollIconRight,
 			iconOutputLeft,
 			iconOutputRight,
+			alignVertical,
+			alignVerticalBreakpoint,
 		]);
 
 		if (isValidBlockType(name) && props.isSelected) {
@@ -227,7 +291,12 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 								'Table Horizontal Scroll',
 								'vk-blocks-pro'
 							)}
-							icon={<Icon icon={IconSVG} style={iconStyle} />}
+							icon={
+								<Icon
+									icon={IconSVG}
+									style={scrollableIconStyleFinal}
+								/>
+							}
 							initialOpen={false}
 						>
 							<ToggleControl
@@ -278,6 +347,65 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 								</>
 							)}
 						</PanelBody>
+						<PanelBody
+							title={__(
+								'Table Vertical Alignment',
+								'vk-blocks-pro'
+							)}
+							icon={
+								<Icon
+									icon={IconSVG}
+									style={alignVerticalIconStyleFinal}
+								/>
+							}
+							initialOpen={false}
+						>
+							<ToggleControl
+								label={__(
+									'Vertical Alignment',
+									'vk-blocks-pro'
+								)}
+								checked={alignVertical}
+								onChange={handleAlignVerticalToggleChange}
+							/>
+							{alignVertical && (
+								<>
+									<SelectControl
+										label={__(
+											'Vertical Alignment Breakpoint',
+											'vk-blocks-pro'
+										)}
+										value={alignVerticalBreakpoint}
+										options={[
+											{
+												label: __(
+													'Mobile size',
+													'vk-blocks-pro'
+												),
+												value: 'table-align-vertical-mobile',
+											},
+											{
+												label: __(
+													'Tablet size',
+													'vk-blocks-pro'
+												),
+												value: 'table-align-vertical-tablet',
+											},
+											{
+												label: __(
+													'PC size',
+													'vk-blocks-pro'
+												),
+												value: 'table-align-vertical-pc',
+											},
+										]}
+										onChange={
+											handleAlignVerticalSelectChange
+										}
+									/>
+								</>
+							)}
+						</PanelBody>
 					</InspectorControls>
 				</>
 			);
@@ -297,12 +425,19 @@ const addExtraProps = (saveElementProps, blockType, attributes) => {
 				`${saveElementProps.className || ''} is-style-vk-table-scrollable`.trim();
 			saveElementProps['data-scroll-breakpoint'] =
 				attributes.scrollBreakpoint;
+		}
+
+		// alignVerticalがtrueの場合にalignVerticalBreakpointを設定
+		if (attributes.alignVertical) {
+			saveElementProps.className += ` is-style-vk-table-align-vertical`;
+			saveElementProps['data-align-vertical-breakpoint'] =
+				attributes.alignVerticalBreakpoint;
 		} else {
-			// 'scrollable' が false の場合、クラスと属性を削除
+			// alignVerticalがfalseの場合、不要なクラスや属性を削除
 			saveElementProps.className = saveElementProps.className
-				.replace('is-style-vk-table-scrollable', '')
+				.replace('is-style-vk-table-align-vertical', '')
 				.trim();
-			delete saveElementProps['data-scroll-breakpoint'];
+			delete saveElementProps['data-align-vertical-breakpoint'];
 		}
 
 		// 'showScrollMessage' が true の場合のみ 'data-output-scroll-hint' を追加
@@ -331,6 +466,7 @@ const addExtraProps = (saveElementProps, blockType, attributes) => {
 		delete saveElementProps['data-output-scroll-hint'];
 		delete saveElementProps['data-icon-output-left'];
 		delete saveElementProps['data-icon-output-right'];
+		delete saveElementProps['data-align-vertical-breakpoint'];
 	}
 
 	return saveElementProps;

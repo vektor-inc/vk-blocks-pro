@@ -5,6 +5,10 @@
  * @package VK Blocks
  */
 
+require_once plugin_dir_path( __FILE__ ) . 'class-check-using-vk-page-content-block.php';
+// クラスのインスタンスを作成して自動的にアクションを登録
+new checkUsingVKPageContentBlock(); 
+
 /**
  * Registers the `vk-blocks/page-content` block.
  *

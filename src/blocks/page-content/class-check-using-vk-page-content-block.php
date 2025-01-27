@@ -72,7 +72,7 @@ class checkUsingVKPageContentBlock {
 				'admin_notices',
 				function () use ( $list ) {
 					echo '<div class="notice notice-warning is-dismissible"><p>' . __( 'The following posts contain Page Content Blocks referencing non-public pages:', 'vk-blocks-pro' ) . '</p>' . $list;
-					echo '<p>' . wp_kses_post( get_vk_blocks_page_content_private_alert() ) . '</p>';
+					echo '<p>' . wp_kses_post( vk_blocks_get_page_content_private_alert() ) . '</p>';
 					echo '</div>';
 				}
 			);

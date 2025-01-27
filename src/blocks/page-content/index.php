@@ -46,7 +46,7 @@ add_filter( 'vk_page_content', 'wp_filter_content_tags' );
 add_filter( 'vk_page_content', 'do_shortcode', 11 );
 add_filter( 'vk_page_content', 'capital_P_dangit', 11 );
 
-function get_vk_blocks_page_content_private_alert() {
+function vk_blocks_get_page_content_private_alert() {
 	$alert = __(
 		"From VK Blocks version 1.95.0 onwards, non-public page's content can no longer be displayed.
 If you want to display non-public content in multiple locations, please create it as a Synced pattern(Reusable block) and place it in the desired locations instead of using Page Content block.",
@@ -70,7 +70,7 @@ function vk_blocks_page_content_render_callback( $attributes ) {
 	// 投稿が存在し、公開されているかを確認
 	if ( ! $post || 'publish' !== $post->post_status ) {
 		if ( is_admin() || $is_rest_request ) {
-			return '<div class="alert alert-danger" style="padding:1.5rem;"><p class="text-center" style="font-weight:bold;">' . __( 'Post not found or not public.', 'vk-blocks-pro' ) . '</p><p class="mb-0">' . get_vk_blocks_page_content_private_alert() . '</p></div>';
+			return '<div class="alert alert-danger" style="padding:1.5rem;"><p class="text-center" style="font-weight:bold;">' . __( 'Post not found or not public.', 'vk-blocks-pro' ) . '</p><p class="mb-0">' . vk_blocks_get_page_content_private_alert() . '</p></div>';
 		} else {
 			// Front Page
 			return '';

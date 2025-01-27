@@ -1,7 +1,15 @@
 <?php
+/**
+ * class VK_Blocks_Check_Using_VK_Page_Content_Block
+ *
+ * @package vektor-inc/vk-blocks-pro
+ */
 
 class VK_Blocks_Check_Using_VK_Page_Content_Block {
 
+	/**
+	 * Constructor
+	 */
 	public function __construct() {
 		// ダッシュボードでアラートを表示
 		add_action( 'admin_init', array( $this, 'display_alert' ) );

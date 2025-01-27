@@ -14,35 +14,49 @@ class checkUsingVKPageContentBlock {
      * @return string
      */
     public function get_post_list_using_page_content_block( $post_status ) {
-        $args = array(
-            'post_type'   => 'any',
-            'post_status' => 'any',
-            's'           => '<!-- wp:vk-blocks/page-content',
-        );
-
-        $query = new WP_Query( $args );
         $output = '';
+        $paged = 1;
+        $posts_per_page = 100; // 一度に処理する投稿数
 
-        if ( $query->have_posts() ) {
-            while ( $query->have_posts() ) {
-                $query->the_post();
-                $content = get_the_content();
-                preg_match_all( '/<!-- wp:vk-blocks\/page-content {"TargetPost":(\d+)} \/-->/', $content, $matches );
+        do {
+            $args = array(
+                'post_type'      => 'any',
+                'post_status'    => 'any',
+                's'              => '<!-- wp:vk-blocks/page-content',
+                'posts_per_page' => $posts_per_page,
+                'paged'          => $paged,
+            );
 
-                if ( ! empty( $matches[1] ) ) {
-                    foreach ( $matches[1] as $target_post_id ) {
-                        $target_post = get_post( $target_post_id );
+            $query = new WP_Query( $args );
 
-                        if ( 'unpublic' === $post_status && 'publish' === $target_post->post_status ) {
-                            continue;
+            if ( $query->have_posts() ) {
+                while ( $query->have_posts() ) {
+                    $query->the_post();
+                    $content = get_the_content();
+                    preg_match_all( '/<!-- wp:vk-blocks\/page-content {"TargetPost":(\d+)} \/-->/', $content, $matches );
+
+                    $include_post = false; // この投稿をリストに含めるかどうか
+
+                    if ( ! empty( $matches[1] ) ) {
+                        foreach ( $matches[1] as $target_post_id ) {
+                            $target_post = get_post( $target_post_id );
+
+                            if ( 'unpublic' === $post_status && 'publish' !== $target_post->post_status ) {
+                                $include_post = true;
+                                break; // 一つでも非公開のものがあればリストに含める
+                            }
                         }
+                    }
 
+                    if ( $include_post ) {
                         $output .= '<li><a href="' . get_edit_post_link() . '" target="_blank">' . get_the_title() . '</a></li>';
                     }
                 }
+                wp_reset_postdata();
             }
-            wp_reset_postdata();
-        }
+
+            $paged++;
+        } while ( $query->have_posts() );
 
         return $output ? '<ul>' . $output . '</ul>' : '';
     }

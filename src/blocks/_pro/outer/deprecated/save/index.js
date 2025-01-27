@@ -72,7 +72,7 @@ const blockAttributes = {
 	},
 	borderColor: {
 		type: 'string',
-		default: '#000',
+		default: '#fff',
 	},
 	borderRadius: {
 		type: 'number',
@@ -133,32 +133,52 @@ const blockAttributes4 = {
 	...blockAttributes3,
 	levelSettingPerDevice: {
 		type: 'boolean',
+		default: false
 	},
 	upper_level_mobile: {
 		type: 'number',
+		default: 0
 	},
 	upper_level_tablet: {
 		type: 'number',
+		default: 0
 	},
 	upper_level_pc: {
 		type: 'number',
+		default: 0
 	},
 	lower_level_mobile: {
 		type: 'number',
+		default: 0
 	},
 	lower_level_tablet: {
 		type: 'number',
+		default: 0
 	},
 	lower_level_pc: {
 		type: 'number',
+		default: 0
 	},
 };
 
 // 1.64.0 から attributes を変更
 const blockAttributes5 = {
 	...blockAttributes4,
-	minHeight: {
-		type: 'object',
+	minHeightValuePC: {
+		type: 'number',
+		default: 0
+	},
+	minHeightValueTablet: {
+		type: 'number',
+		default: 0
+	},
+	minHeightValueMobile: {
+		type: 'number',
+		default: 0
+	},
+	minHeightUnit: {
+		type: 'string',
+		default: 'px'
 	},
 };
 

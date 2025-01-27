@@ -58,7 +58,7 @@ function vk_blocks_page_content_render_callback( $attributes ) {
 
 	// 投稿が存在し、公開されているかを確認
 	if ( ! $post || 'publish' !== $post->post_status ) {
-		return __( 'Post not found or not public.', 'vk-blocks' );
+		return __( 'Post not found or not public.', 'vk-blocks-pro' );
 	}
 
 	$page_content = $post->post_content;

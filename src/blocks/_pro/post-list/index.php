@@ -221,6 +221,10 @@ function vk_blocks_register_block_post_list() {
 						'type'    => 'boolean',
 						'default' => false,
 					),
+					'stickyPosts'                => array(
+						'type'    => 'string',
+						'default' => 'include',
+					),
 					'className'                  => array(
 						'type'    => 'string',
 						'default' => '',

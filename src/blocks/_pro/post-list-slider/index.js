@@ -35,6 +35,7 @@ export const settings = {
 			taxQueryRelation: 'AND',
 			order: 'DESC',
 			orderby: 'date',
+			stickyPosts: 'include',
 		},
 	},
 	edit,

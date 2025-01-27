@@ -32,6 +32,7 @@ export function DisplayCondition(props) {
 		orderby,
 		selfIgnore,
 		pagedlock,
+		stickyPosts,
 	} = attributes;
 
 	// 以前の値を切り替え
@@ -426,6 +427,33 @@ export function DisplayCondition(props) {
 					label={__('Ignore this post', 'vk-blocks-pro')}
 					checked={selfIgnore}
 					onChange={(v) => setAttributes({ selfIgnore: v })}
+				/>
+			</BaseControl>
+			<BaseControl>
+				<SelectControl
+					label={__('Sticky Posts', 'vk-blocks-pro')}
+					value={stickyPosts}
+					options={[
+						{
+							label: __('Include', 'vk-blocks-pro'),
+							value: 'include',
+						},
+						{
+							label: __('Exclude', 'vk-blocks-pro'),
+							value: 'exclude',
+						},
+						{ label: __('Only', 'vk-blocks-pro'), value: 'only' },
+					]}
+					onChange={(value) => {
+						setAttributes({ stickyPosts: value });
+						if (value === 'include') {
+							setAttributes({ stickyPosts: false });
+						}
+					}}
+					help={__(
+						'Sticky posts always appear first, regardless of their publish date.',
+						'vk-blocks-pro'
+					)}
 				/>
 			</BaseControl>
 		</PanelBody>

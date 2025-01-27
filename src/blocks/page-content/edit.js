@@ -70,12 +70,6 @@ export default function PageContentEdit({ attributes, setAttributes }) {
 								})
 							}
 						/>
-						<p className="alert alert-danger">
-							{__(
-								'From version 1.95.0 onwards, non-public pages can no longer be displayed.If you want to display non-public content in multiple locations, please create it as a synced pattern and place it in the desired locations instead of using this block.',
-								'vk-blocks-pro'
-							)}
-						</p>
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>

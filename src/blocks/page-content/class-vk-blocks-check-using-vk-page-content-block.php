@@ -6,12 +6,12 @@
  */
 
 /**
- * VK_Blocks_Check_Using_VK_Page_Content_Block
+ * VK_Blocks_Check_Using_VK_Page_Content_Block.
  */
 class VK_Blocks_Check_Using_VK_Page_Content_Block {
 
 	/**
-	 * Constructor
+	 * Constructor.
 	 */
 	public function __construct() {
 		// ダッシュボードでアラートを表示
@@ -19,7 +19,7 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 	}
 
 	/**
-	 * 固定ページ本文ブロックが使われている記事リストを返す
+	 * 固定ページ本文ブロックが使われている記事リストを返す.
 	 *
 	 * @param string $post_status : all / unpublic
 	 * @return string
@@ -82,7 +82,7 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 			add_action(
 				'admin_notices',
 				function () use ( $list ) {
-					echo '<div class="notice notice-warning is-dismissible"><p>' . __( 'The following posts contain Page Content Blocks referencing non-public pages:', 'vk-blocks-pro' ) . '</p>' . wp_kses_post( $list );
+					echo '<div class="notice notice-warning is-dismissible"><p>' . esc_html__( 'The following posts contain Page Content Blocks referencing non-public pages:', 'vk-blocks-pro' ) . '</p>' . wp_kses_post( $list );
 					echo '<p>' . wp_kses_post( vk_blocks_get_page_content_private_alert() ) . '</p>';
 					echo '</div>';
 				}

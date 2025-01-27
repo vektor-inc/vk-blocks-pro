@@ -178,5 +178,5 @@ add_action( 'wp_enqueue_scripts', 'vk_blocks_content_enqueue_scripts' );
 
 // 非公開の投稿を参照して表示していないかのチェック
 // Check if it is displaying content from non-public pages.
-require_once plugin_dir_path( __FILE__ ) . 'class-check-using-vk-page-content-block.php';
-new checkUsingVKPageContentBlock();
+require_once plugin_dir_path( __FILE__ ) . 'class-vk-blocks-check-using-vk-page-content-block.php';
+new VKBlocksCheckUsingVKPageContentBlock();

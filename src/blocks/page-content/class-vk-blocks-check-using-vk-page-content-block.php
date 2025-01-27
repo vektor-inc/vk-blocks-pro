@@ -5,6 +5,9 @@
  * @package vektor-inc/vk-blocks-pro
  */
 
+/**
+ * VK_Blocks_Check_Using_VK_Page_Content_Block
+ */
 class VK_Blocks_Check_Using_VK_Page_Content_Block {
 
 	/**

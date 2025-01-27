@@ -1,6 +1,6 @@
 <?php
 /**
- * class VK_Blocks_Check_Using_VK_Page_Content_Block
+ * Class VK_Blocks_Check_Using_VK_Page_Content_Block
  *
  * @package vektor-inc/vk-blocks-pro
  */

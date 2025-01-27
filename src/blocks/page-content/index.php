@@ -46,6 +46,11 @@ add_filter( 'vk_page_content', 'wp_filter_content_tags' );
 add_filter( 'vk_page_content', 'do_shortcode', 11 );
 add_filter( 'vk_page_content', 'capital_P_dangit', 11 );
 
+/**
+ * Get Page Content Private Alert Message
+ *
+ * @return string
+ */
 function vk_blocks_get_page_content_private_alert() {
 	$alert = __(
 		"From VK Blocks version 1.95.0 onwards, non-public page's content can no longer be displayed.

@@ -1,6 +1,6 @@
 <?php
 /**
- * Class VK_Blocks_Check_Using_VK_Page_Content_Block
+ * VK_Blocks_Check_Using_VK_Page_Content_Block Class
  *
  * This class checks for the use of Page Content Blocks that reference non-public pages
  * and displays an alert in the WordPress admin dashboard if any are found.

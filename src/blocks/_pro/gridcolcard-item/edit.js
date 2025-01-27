@@ -320,15 +320,18 @@ export default function Edit(props) {
 						<CheckboxControl
 							label={__('Add noreferrer', 'vk-blocks-pro')}
 							checked={
-								relAttribute.includes('noreferrer') || false
+								!!relAttribute?.includes('noreferrer')
 							}
 							onChange={(checked) =>
 								handleRelChange('noreferrer', checked)
 							}
 						/>
+
 						<CheckboxControl
 							label={__('Add nofollow', 'vk-blocks-pro')}
-							checked={relAttribute.includes('nofollow') || false}
+							checked={
+								!!relAttribute?.includes('nofollow')
+							}
 							onChange={(checked) =>
 								handleRelChange('nofollow', checked)
 							}

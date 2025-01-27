@@ -80,6 +80,14 @@ const blockAttributes3 = {
 		type: 'string',
 		default: 'display'
 	},
+	relAttribute: {
+		"type": "string",
+		"default": ""
+	},
+	linkDescription: {
+		"type": "string",
+		"default": ""
+	}
 };
 
 const deprecated = [

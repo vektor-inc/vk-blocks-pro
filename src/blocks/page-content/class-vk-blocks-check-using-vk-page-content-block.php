@@ -1,6 +1,6 @@
 <?php
 
-class VKBlocksCheckUsingVKPageContentBlock {
+class VK_Blocks_Check_Using_VK_Page_Content_Block {
 
 	public function __construct() {
 		// ダッシュボードでアラートを表示

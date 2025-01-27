@@ -54,7 +54,14 @@ add_filter( 'vk_page_content', 'capital_P_dangit', 11 );
  */
 function vk_blocks_page_content_render_callback( $attributes ) {
 	$page_content_id = ! empty( $attributes['TargetPost'] ) ? $attributes['TargetPost'] : -1;
-	$page_content    = -1 !== $page_content_id ? get_post( $page_content_id )->post_content : '';
+	$post            = get_post( $page_content_id );
+
+	// 投稿が存在し、公開されているかを確認
+	if ( ! $post || 'publish' !== $post->post_status ) {
+		return __( 'Post not found or not public.', 'vk-blocks' );
+	}
+
+	$page_content = $post->post_content;
 	vk_blocks_content_enqueue_scripts( $page_content );
 
 	$vk_blocks_options = VK_Blocks_Options::get_options();

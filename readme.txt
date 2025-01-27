@@ -107,6 +107,8 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+[ Specification Change ][ Page Content ] Modify the specification so that the display is shown only when the referenced page is public.
 [ Add function ][ Slider ] Added noreferrer, nofollow, and link description options to the link feature.
 
 = 1.94.2 =

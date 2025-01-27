@@ -2,16 +2,20 @@
 /**
  * Class VK_Blocks_Check_Using_VK_Page_Content_Block
  *
- * @package vektor-inc/vk-blocks-pro
+ * This class checks for the use of Page Content Blocks that reference non-public pages
+ * and displays an alert in the WordPress admin dashboard if any are found.
+ *
+ * @package VK Blocks
  */
 
 /**
- * VK_Blocks_Check_Using_VK_Page_Content_Block.
+ * VK_Blocks_Check_Using_VK_Page_Content_Block class.
  */
 class VK_Blocks_Check_Using_VK_Page_Content_Block {
 
 	/**
 	 * Constructor.
+	 * Initializes the class and sets up the admin notice action.
 	 */
 	public function __construct() {
 		// ダッシュボードでアラートを表示
@@ -21,8 +25,8 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 	/**
 	 * 固定ページ本文ブロックが使われている記事リストを返す.
 	 *
-	 * @param string $post_status : all / unpublic
-	 * @return string
+	 * @param string $post_status The post status to filter by: 'all' or 'unpublic'.
+	 * @return string The list of posts using the page content block.
 	 */
 	public function get_post_list_using_page_content_block( $post_status ) {
 		$output         = '';
@@ -60,7 +64,7 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 					}
 
 					if ( $include_post ) {
-						$output .= '<li><a href="' . get_edit_post_link() . '" target="_blank">' . get_the_title() . '</a></li>';
+						$output .= '<li><a href="' . esc_url( get_edit_post_link() ) . '" target="_blank">' . esc_html( get_the_title() ) . '</a></li>';
 					}
 				}
 				wp_reset_postdata();
@@ -73,7 +77,7 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 	}
 
 	/**
-	 * 非公開のコンテンツを参照する固定ページ本文ブロックが使われているページのリストを表示するメソッド
+	 * 非公開のコンテンツを参照する固定ページ本文ブロックが使われているページのリストを表示するメソッド.
 	 */
 	public function display_alert() {
 		$list = $this->get_post_list_using_page_content_block( 'unpublic' );

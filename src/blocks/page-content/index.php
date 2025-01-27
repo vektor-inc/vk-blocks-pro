@@ -46,8 +46,9 @@ add_filter( 'vk_page_content', 'wp_filter_content_tags' );
 add_filter( 'vk_page_content', 'do_shortcode', 11 );
 add_filter( 'vk_page_content', 'capital_P_dangit', 11 );
 
-function get_vk_blocks_page_content_private_alert(){
-	$alert =  __( "From VK Blocks version 1.95.0 onwards, non-public page's content can no longer be displayed.
+function get_vk_blocks_page_content_private_alert() {
+	$alert = __(
+		"From VK Blocks version 1.95.0 onwards, non-public page's content can no longer be displayed.
 If you want to display non-public content in multiple locations, please create it as a Synced pattern(Reusable block) and place it in the desired locations instead of using Page Content block.",
 		'vk-blocks-pro'
 	);
@@ -173,4 +174,4 @@ add_action( 'wp_enqueue_scripts', 'vk_blocks_content_enqueue_scripts' );
 // 非公開の投稿を参照して表示していないかのチェック
 // Check if it is displaying content from non-public pages.
 require_once plugin_dir_path( __FILE__ ) . 'class-check-using-vk-page-content-block.php';
-new checkUsingVKPageContentBlock(); 
+new checkUsingVKPageContentBlock();

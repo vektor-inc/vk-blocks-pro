@@ -64,22 +64,22 @@ const blockAttributes = {
 const blockAttributes2 = {
 	...blockAttributes,
 	borderWidth: {
-		type: 'number',
-		default: 1,
+		type: 'string',
+		default: '1px',
 	},
 };
 
-// 1.94.2 からの変更で追加したもの
+// 1.87.0 からの変更で追加したもの
 const blockAttributes3 = {
 	...blockAttributes2,
-	relAttribute: {
-		"type": "string",
-		"default": ""
+	headerDisplay: {
+		type: 'string',
+		default: 'display'
 	},
-	linkDescription: {
-		"type": "string",
-		"default": ""
-	}
+	footerDisplay: {
+		type: 'string',
+		default: 'display'
+	},
 };
 
 const deprecated = [

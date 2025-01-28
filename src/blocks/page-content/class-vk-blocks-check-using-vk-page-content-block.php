@@ -31,7 +31,7 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 	public function get_post_list_using_page_content_block( $post_status ) {
 		$output         = '';
 		$paged          = 1;
-		$posts_per_page = 100; // 一度に処理する投稿数
+		$posts_per_page = 100;
 
 		do {
 			$args = array(

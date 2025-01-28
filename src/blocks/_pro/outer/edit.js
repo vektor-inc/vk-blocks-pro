@@ -439,7 +439,10 @@ export default function OuterEdit(props) {
 		const focalPoints = [
 			{ image: bgImage, key: 'enableFocalPointPC' },
 			{ image: bgImageTablet || bgImage, key: 'enableFocalPointTablet' },
-			{ image: bgImageMobile || bgImageTablet || bgImage, key: 'enableFocalPointMobile' },
+			{
+				image: bgImageMobile || bgImageTablet || bgImage,
+				key: 'enableFocalPointMobile',
+			},
 		];
 
 		focalPoints.forEach(({ image, key }) => updateFocalPoint(image, key));

@@ -311,7 +311,9 @@ export const editSliderLaunch = () => {
 		'.block-editor__container iframe'
 	);
 	if (blockEditorRoot && blockEditorRoot.contentWindow) {
-		const editorRoot = blockEditorRoot.contentWindow.document.querySelector('.block-editor-block-list__layout');
+		const editorRoot = blockEditorRoot.contentWindow.document.querySelector(
+			'.block-editor-block-list__layout'
+		);
 		if (editorRoot) {
 			editorRootLaunch(editorRoot);
 		}

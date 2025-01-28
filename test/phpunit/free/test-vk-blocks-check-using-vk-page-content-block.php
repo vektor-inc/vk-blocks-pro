@@ -63,18 +63,18 @@ class Test_VK_Blocks_Check_Using_VK_Page_Content_Block extends WP_UnitTestCase {
         ) );
     }
 
-    // public function tearDown(): void {
-    //     // テストで作成した投稿を削除
-    //     wp_delete_post( $this->public_page_id_A, true );
-    //     wp_delete_post( $this->private_page_id_B, true );
-    //     wp_delete_post( $this->draft_page_id_C, true );
-    //     wp_delete_post( $this->no_using_page_id, true );
-    //     wp_delete_post( $this->using_A_page_id, true );
-    //     wp_delete_post( $this->using_B_page_id, true );
-    //     wp_delete_post( $this->using_A_and_B_page_id, true );
+    public function tearDown(): void {
+        // テストで作成した投稿を削除
+        wp_delete_post( $this->public_page_id_A, true );
+        wp_delete_post( $this->private_page_id_B, true );
+        wp_delete_post( $this->draft_page_id_C, true );
+        wp_delete_post( $this->no_using_page_id, true );
+        wp_delete_post( $this->using_A_page_id, true );
+        wp_delete_post( $this->using_B_page_id, true );
+        wp_delete_post( $this->using_A_and_B_page_id, true );
 
-    //     parent::tearDown();
-    // }
+        parent::tearDown();
+    }
 
     public function test_get_post_list_using_page_content_block() {
 

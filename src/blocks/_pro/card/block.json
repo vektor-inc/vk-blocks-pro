@@ -1,5 +1,5 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "vk-blocks/card",
 	"title": "Card",
 	"description": "A card where you can place images, headings, text, and links.",

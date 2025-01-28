@@ -1,5 +1,5 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "vk-blocks/select-post-list-item",
 	"title": "Selected Post List Item",
 	"category": "vk-blocks-cat",

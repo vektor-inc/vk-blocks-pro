@@ -1,5 +1,5 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "vk-blocks/spacer",
 	"title": "Responsive Spacer",
 	"description": "Use responsive spacers to get the margins right.",

@@ -1,5 +1,5 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "vk-blocks/child-page",
 	"title": "Child page list",
 	"description": "When a parent page is specified, a list of its child pages will be displayed.",

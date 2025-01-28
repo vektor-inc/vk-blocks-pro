@@ -1,5 +1,5 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "vk-blocks/pr-content",
 	"title": "PR Content",
 	"description": "This is PR content where you can place images, headlines, text, and buttons.",

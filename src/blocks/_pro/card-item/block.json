@@ -1,5 +1,5 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "vk-blocks/card-item",
 	"title": "Card Item",
 	"description": "A single item in a card block.",

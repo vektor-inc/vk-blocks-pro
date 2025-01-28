@@ -1,5 +1,5 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "vk-blocks/grid-column",
 	"title": "Grid Column",
 	"description": "Set the number of columns to be displayed for each screen size.",

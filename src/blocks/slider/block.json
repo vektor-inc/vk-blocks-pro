@@ -1,5 +1,5 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "vk-blocks/slider",
 	"title": "Slider",
 	"description": "This slider allows you to place various items.Slider is do not move in edit screen.",

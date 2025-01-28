@@ -1,5 +1,5 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "vk-blocks/blog-card-excerpt",
 	"category": "vk-blocks-cat",
 	"title": "Blog Card Excerpt",

@@ -1,5 +1,5 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "vk-blocks/grid-column-item",
 	"title": "Grid Column Item",
 	"description": "One item in a grid column block.",

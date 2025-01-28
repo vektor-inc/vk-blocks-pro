@@ -1,5 +1,5 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "vk-blocks/post-new-badge",
 	"category": "vk-blocks-cat",
 	"title": "New Badge",

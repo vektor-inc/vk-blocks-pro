@@ -1,5 +1,5 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "vk-blocks/pr-blocks",
 	"title": "PR Blocks (not recommended)",
 	"category": "vk-blocks-cat",

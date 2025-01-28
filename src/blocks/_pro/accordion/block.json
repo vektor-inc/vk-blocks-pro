@@ -1,5 +1,5 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "vk-blocks/accordion",
 	"title": "Accordion",
 	"description": "Collapses and hides content when the content is long.",

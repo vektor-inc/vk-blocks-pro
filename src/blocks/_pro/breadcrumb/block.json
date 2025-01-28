@@ -1,5 +1,5 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "vk-blocks/breadcrumb",
 	"category": "vk-blocks-cat",
 	"title": "Breadcrumb",

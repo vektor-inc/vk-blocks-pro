@@ -1,5 +1,5 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "vk-blocks/tab",
 	"category": "vk-blocks-cat",
 	"editorScript": "vk-blocks-build-js",

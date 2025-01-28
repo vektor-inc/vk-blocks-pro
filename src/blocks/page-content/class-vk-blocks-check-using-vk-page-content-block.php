@@ -54,11 +54,17 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 
 					if ( ! empty( $matches[1] ) ) {
 						foreach ( $matches[1] as $target_post_id ) {
-							$target_post = get_post( $target_post_id );
-
-							if ( 'unpublic' === $post_status && 'publish' !== $target_post->post_status ) {
+							// 参照先の投稿ステータスに関係なく固定ページ本文ブロックが使われている記事全てをリストに含める場合
+							// Include all posts using the page content block regardless of the status of the referenced post.
+							if ( 'all' === $post_status ) {
 								$include_post = true;
-								break; // 一つでも非公開のものがあればリストに含める
+								break;
+							} else {
+								$target_post = get_post( $target_post_id );
+								if ( 'unpublic' === $post_status && 'publish' !== $target_post->post_status ) {
+									$include_post = true;
+									break; // 一つでも参照先が非公開のものがあればリストに含める
+								}
 							}
 						}
 					}

@@ -107,7 +107,9 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
 [ Add function ][ Slider ] Added noreferrer, nofollow, and link description options to the link feature.
+[ Specification change ] Fixed the zoom-out toggle not always displaying in the editor toolbar (updated blocks.json API version from 2 to 3).
 
 = 1.94.2 =
 [ Bug fix / Specification Change ][ Visual Embed ] Strengthened validation for XSS protection and restricted the range of allowed URLs.

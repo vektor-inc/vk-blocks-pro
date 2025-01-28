@@ -70,11 +70,20 @@
 			"type": "string"
 		},
 		"url": {
-			"type": "string"
+			"type": "string",
+			"default": ""
 		},
 		"urlOpenType": {
 			"type": "boolean",
 			"default": false
+		},
+		"relAttribute": {
+			"type": "string",
+			"default": ""
+		},
+		"linkDescription": {
+			"type": "string",
+			"default": ""
 		}
 	}
 }

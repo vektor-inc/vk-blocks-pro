@@ -1,6 +1,7 @@
 import save1_38_0 from './1.38.0/save';
 import save1_71_0 from './1.71.0/save';
 import save1_87_0 from './1.87.0/save';
+import save1_94_2 from './1.94.2/save';
 
 const blockAttributes = {
 	editLock: {
@@ -63,12 +64,37 @@ const blockAttributes = {
 const blockAttributes2 = {
 	...blockAttributes,
 	borderWidth: {
-		type: 'number',
-		default: 1,
+		type: 'string',
+		default: '1px',
 	},
 };
 
+// 1.87.0 からの変更で追加したもの
+const blockAttributes3 = {
+	...blockAttributes2,
+	headerDisplay: {
+		type: 'string',
+		default: 'display'
+	},
+	footerDisplay: {
+		type: 'string',
+		default: 'display'
+	},
+	relAttribute: {
+		"type": "string",
+		"default": ""
+	},
+	linkDescription: {
+		"type": "string",
+		"default": ""
+	}
+};
+
 const deprecated = [
+	{
+		attributes: blockAttributes3,
+		save: save1_94_2,
+	},
 	{
 		attributes: blockAttributes2,
 		save: save1_87_0,

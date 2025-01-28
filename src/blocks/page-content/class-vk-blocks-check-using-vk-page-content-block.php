@@ -19,7 +19,7 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 	 */
 	public function __construct() {
 		// ダッシュボードでアラートを表示
-		add_action( 'admin_notices', array( $this, 'display_alert' ) );
+		add_action( 'admin_init', array( $this, 'check_for_alert' ) );
 	}
 
 	/**
@@ -77,16 +77,30 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 	}
 
 	/**
+	 * Is run check for alert.
+	 */
+	public function check_for_alert() {
+		// ダッシュボードのトップページ以外は処理しない
+		// Don't run on pages other than the dashboard top page.
+		if ( ! is_admin() || 'index.php' !== $GLOBALS['pagenow'] ) {
+			return;
+		}
+
+		add_action( 'admin_notices', array( $this, 'display_alert' ) );
+	}
+
+	/**
 	 * 非公開のコンテンツを参照する固定ページ本文ブロックが使われているページのリストを表示するメソッド.
+	 * Displays a list of pages that use the page content block to reference non-public content.
 	 */
 	public function display_alert() {
 		$list = $this->get_post_list_using_page_content_block( 'unpublic' );
 
 		if ( $list ) {
 			$alert  = '<div class="notice notice-warning is-dismissible">';
-			$alert .= '<p>' . __( 'The following posts contain Page Content Blocks referencing non-public pages:', 'vk-blocks-pro' ) . '</p>';
-			$alert .= $list;
-			$alert .= '<p>' . vk_blocks_get_page_content_private_alert() . '</p>';
+			$alert .= '<p>' . esc_html__( 'The following posts contain Page Content Blocks referencing non-public pages:', 'vk-blocks-pro' ) . '</p>';
+			$alert .= wp_kses_post( $list );
+			$alert .= '<p>' . wp_kses_post( vk_blocks_get_page_content_private_alert() ) . '</p>';
 			$alert .= '</div>';
 			echo wp_kses_post( $alert );
 		}

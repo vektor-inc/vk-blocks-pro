@@ -27,6 +27,7 @@ import {
 	SelectControl,
 	ToggleControl,
 	ToolbarGroup,
+	FocalPointPicker,
 } from '@wordpress/components';
 import {
 	InspectorControls,
@@ -35,7 +36,7 @@ import {
 	BlockControls,
 	BlockAlignmentToolbar,
 } from '@wordpress/block-editor';
-import { useEffect } from '@wordpress/element';
+import { useEffect, useRef } from '@wordpress/element';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 
 export default function OuterEdit(props) {
@@ -46,6 +47,12 @@ export default function OuterEdit(props) {
 		bgImageTablet,
 		bgImageMobile,
 		bgPosition,
+		bgFocalPointPC,
+		bgFocalPointTablet,
+		bgFocalPointMobile,
+		enableFocalPointPC,
+		enableFocalPointTablet,
+		enableFocalPointMobile,
 		outerWidth,
 		padding_left_and_right, //eslint-disable-line camelcase
 		padding_top_and_bottom, //eslint-disable-line camelcase
@@ -341,7 +348,212 @@ export default function OuterEdit(props) {
 		});
 	};
 
+	// useRefの定義
+	const blockRef = useRef(null);
+	const defaultFocalPoint = { x: 0.5, y: 0.5 };
+
+	// フォーカルポイントを背景位置に変換する関数
+	const coordsToBackgroundPosition = (value) => {
+		if (!value || (isNaN(value.x) && isNaN(value.y))) {
+			return '50% 50%';
+		}
+
+		const x = isNaN(value.x) ? 0.5 : value.x;
+		const y = isNaN(value.y) ? 0.5 : value.y;
+
+		return `${x * 100}% ${y * 100}%`;
+	};
+
+	const onChangeBgFocalPoint = (value, device) => {
+		const imageForDevice = {
+			PC: bgImage,
+			Tablet: bgImageTablet || bgImage,
+			Mobile: bgImageMobile || bgImageTablet || bgImage,
+		}[device];
+
+		if (!imageForDevice) {
+			value = { x: 0.5, y: 0.5 };
+		}
+
+		if (blockRef.current) {
+			updateBackgroundPosition(value);
+		}
+
+		setAttributes({ [`bgFocalPoint${device}`]: value });
+	};
+
+	// 背景位置をリアルタイムで更新する関数
+	const updateBackgroundPosition = (value) => {
+		if (blockRef.current) {
+			blockRef.current.style.backgroundPosition =
+				coordsToBackgroundPosition(value);
+		}
+	};
+
+	useEffect(() => {
+		if (blockRef.current) {
+			// デバイスごとに背景位置を更新
+			['PC', 'Tablet', 'Mobile'].forEach((device) => {
+				const focalPoint = attributes[`bgFocalPoint${device}`];
+				const backgroundPosition =
+					coordsToBackgroundPosition(focalPoint);
+				blockRef.current.style.setProperty(
+					`--bg-position-${device.toLowerCase()}`,
+					backgroundPosition
+				);
+				updateBackgroundPosition(focalPoint);
+			});
+		}
+	}, [bgFocalPointPC, bgFocalPointTablet, bgFocalPointMobile]);
+
+	useEffect(() => {
+		// bgFocalPointPCが未定義または不正な値の場合にデフォルト値を設定
+		if (
+			!bgFocalPointPC ||
+			bgFocalPointPC.x === undefined ||
+			bgFocalPointPC.y === undefined
+		) {
+			setAttributes({ bgFocalPointPC: { x: 0.5, y: 0.5 } });
+		}
+		if (
+			!bgFocalPointTablet ||
+			bgFocalPointTablet.x === undefined ||
+			bgFocalPointTablet.y === undefined
+		) {
+			setAttributes({ bgFocalPointTablet: { x: 0.5, y: 0.5 } });
+		}
+		if (
+			!bgFocalPointMobile ||
+			bgFocalPointMobile.x === undefined ||
+			bgFocalPointMobile.y === undefined
+		) {
+			setAttributes({ bgFocalPointMobile: { x: 0.5, y: 0.5 } });
+		}
+	}, [bgImage, bgImageTablet, bgImageMobile]);
+
+	const updateFocalPoint = (image, enableKey) => {
+		setAttributes({ [enableKey]: !!image });
+	};
+
+	useEffect(() => {
+		const focalPoints = [
+			{ image: bgImage, key: 'enableFocalPointPC' },
+			{ image: bgImageTablet || bgImage, key: 'enableFocalPointTablet' },
+			{
+				image: bgImageMobile || bgImageTablet || bgImage,
+				key: 'enableFocalPointMobile',
+			},
+		];
+
+		focalPoints.forEach(({ image, key }) => updateFocalPoint(image, key));
+	}, [bgImage, bgImageTablet, bgImageMobile]);
+
+	useEffect(() => {
+		const getFocalPoint = (device) => {
+			return attributes[`bgFocalPoint${device}`] || defaultFocalPoint;
+		};
+
+		// PC, Tablet, Mobile それぞれのフォーカルポイントを継承させるロジック
+		let bgPositionPC;
+		if (enableFocalPointPC) {
+			bgPositionPC = getFocalPoint('PC');
+		} else {
+			bgPositionPC = defaultFocalPoint;
+		}
+
+		let bgPositionTablet;
+		if (enableFocalPointTablet) {
+			bgPositionTablet = getFocalPoint('Tablet');
+		} else if (enableFocalPointPC) {
+			bgPositionTablet = bgPositionPC;
+		} else {
+			bgPositionTablet = defaultFocalPoint;
+		}
+
+		let bgPositionMobile;
+		if (enableFocalPointMobile) {
+			bgPositionMobile = getFocalPoint('Mobile');
+		} else if (enableFocalPointTablet) {
+			bgPositionMobile = bgPositionTablet;
+		} else if (enableFocalPointPC) {
+			bgPositionMobile = bgPositionPC;
+		} else {
+			bgPositionMobile = defaultFocalPoint;
+		}
+
+		// デバイスごとの背景位置をCSS変数に設定
+		if (blockRef.current) {
+			blockRef.current.style.setProperty(
+				'--bg-position-pc',
+				coordsToBackgroundPosition(bgPositionPC)
+			);
+			blockRef.current.style.setProperty(
+				'--bg-position-tablet',
+				coordsToBackgroundPosition(bgPositionTablet)
+			);
+			blockRef.current.style.setProperty(
+				'--bg-position-mobile',
+				coordsToBackgroundPosition(bgPositionMobile)
+			);
+			updateBackgroundPosition(bgPositionPC);
+		}
+	}, [
+		enableFocalPointPC,
+		enableFocalPointTablet,
+		enableFocalPointMobile,
+		bgFocalPointPC,
+		bgFocalPointTablet,
+		bgFocalPointMobile,
+	]);
+
+	const handleToggleChange = (device) => {
+		const attributeKey = `enableFocalPoint${device}`;
+		const focalPointKey = `bgFocalPoint${device}`;
+		const isEnabled = attributes[attributeKey];
+
+		// トグルの状態を切り替える
+		setAttributes({ [attributeKey]: !isEnabled });
+
+		// OFFにした場合、デフォルトの中央位置にリセット
+		if (isEnabled) {
+			setAttributes({ [focalPointKey]: defaultFocalPoint });
+		}
+	};
+
+	const backgroundStyles = {
+		backgroundImage: bgImage ? `url(${bgImage})` : undefined,
+		backgroundPosition: bgFocalPointPC
+			? `${bgFocalPointPC.x * 100}% ${bgFocalPointPC.y * 100}%`
+			: undefined,
+		'--bg-image-mobile': bgImageMobile
+			? `url(${bgImageMobile})`
+			: undefined,
+		'--bg-image-tablet': bgImageTablet
+			? `url(${bgImageTablet})`
+			: undefined,
+		'--bg-position-mobile': bgFocalPointMobile
+			? `${bgFocalPointMobile.x * 100}% ${bgFocalPointMobile.y * 100}%`
+			: undefined,
+		'--bg-position-tablet': bgFocalPointTablet
+			? `${bgFocalPointTablet.x * 100}% ${bgFocalPointTablet.y * 100}%`
+			: undefined,
+		'--min-height-mobile': minHeightValueMobile
+			? `${minHeightValueMobile}${minHeightUnit}`
+			: 'auto',
+		'--min-height-tablet': minHeightValueTablet
+			? `${minHeightValueTablet}${minHeightUnit}`
+			: 'auto',
+		'--min-height-pc': minHeightValuePC
+			? `${minHeightValuePC}${minHeightUnit}`
+			: 'auto',
+	};
+
 	const blockProps = useBlockProps({
+		ref: blockRef,
+		style: {
+			...backgroundStyles,
+			...borderStyleProperty,
+		},
 		className: classnames(
 			`vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 			{
@@ -357,18 +569,6 @@ export default function OuterEdit(props) {
 					minHeightValueMobile > 0,
 			}
 		),
-		style: {
-			...borderStyleProperty,
-			'--min-height-mobile': minHeightValueMobile
-				? `${minHeightValueMobile}${minHeightUnit}`
-				: undefined,
-			'--min-height-tablet': minHeightValueTablet
-				? `${minHeightValueTablet}${minHeightUnit}`
-				: undefined,
-			'--min-height-pc': minHeightValuePC
-				? `${minHeightValuePC}${minHeightUnit}`
-				: undefined,
-		},
 	});
 
 	// minHeightUnit に基づいて動的に最大値を設定
@@ -497,6 +697,84 @@ export default function OuterEdit(props) {
 							{...props}
 						/>
 					</BaseControl>
+					<ToggleControl
+						label={__('Enable PC Focal Point', 'vk-blocks-pro')}
+						checked={enableFocalPointPC}
+						onChange={() => handleToggleChange('PC')}
+						disabled={!bgImage}
+					/>
+					{enableFocalPointPC && (
+						<BaseControl
+							label={__(
+								'Focal Point Picker (PC)',
+								'vk-blocks-pro'
+							)}
+							id="vk_outer-focalPointPickerPC"
+						>
+							<FocalPointPicker
+								url={bgImage || bgImageTablet || bgImageMobile}
+								value={bgFocalPointPC}
+								onChange={(value) =>
+									onChangeBgFocalPoint(value, 'PC')
+								}
+								onDrag={(value) =>
+									onChangeBgFocalPoint(value, 'PC')
+								}
+							/>
+						</BaseControl>
+					)}
+					<ToggleControl
+						label={__('Enable Tablet Focal Point', 'vk-blocks-pro')}
+						checked={enableFocalPointTablet}
+						onChange={() => handleToggleChange('Tablet')}
+						disabled={!bgImageTablet && !bgImage}
+					/>
+					{enableFocalPointTablet && (
+						<BaseControl
+							label={__(
+								'Focal Point Picker (Tablet)',
+								'vk-blocks-pro'
+							)}
+							id="vk_outer-focalPointPickerTablet"
+						>
+							<FocalPointPicker
+								url={bgImageTablet || bgImage}
+								value={bgFocalPointTablet}
+								onChange={(value) =>
+									onChangeBgFocalPoint(value, 'Tablet')
+								}
+								onDrag={(value) =>
+									onChangeBgFocalPoint(value, 'Tablet')
+								}
+							/>
+						</BaseControl>
+					)}
+					<ToggleControl
+						label={__('Enable Mobile Focal Point', 'vk-blocks-pro')}
+						checked={enableFocalPointMobile}
+						onChange={() => handleToggleChange('Mobile')}
+						disabled={!bgImage && !bgImageTablet && !bgImageMobile}
+					/>
+					{enableFocalPointMobile && (
+						<BaseControl
+							label={__(
+								'Focal Point Picker (Mobile)',
+								'vk-blocks-pro'
+							)}
+							id="vk_outer-focalPointPickerMobile"
+						>
+							<FocalPointPicker
+								url={bgImageMobile || bgImageTablet || bgImage}
+								value={bgFocalPointMobile}
+								onChange={(value) =>
+									onChangeBgFocalPoint(value, 'Mobile')
+								}
+								onDrag={(value) =>
+									onChangeBgFocalPoint(value, 'Mobile')
+								}
+							/>
+						</BaseControl>
+					)}
 					<BaseControl
 						label={__('Background image Position', 'vk-blocks-pro')}
 						help=""
@@ -519,6 +797,10 @@ export default function OuterEdit(props) {
 										'vk-blocks-pro'
 									),
 									value: 'fixed',
+									help: __(
+										'This will not work on iPhone.',
+										'vk-blocks-pro'
+									),
 								},
 								{
 									label: __(

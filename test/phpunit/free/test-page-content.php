@@ -7,6 +7,7 @@
 
 /**
  * Page Content block test case.
+ * * Test_Page_Content で同じ内容を行っているので、1.95.0 リリース以降 PageContentBlockTest は削除
  */
 class PageContentBlockTest extends VK_UnitTestCase {
 

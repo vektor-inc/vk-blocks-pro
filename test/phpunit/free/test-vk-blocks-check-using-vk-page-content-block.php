@@ -78,10 +78,10 @@ class Test_VK_Blocks_Check_Using_VK_Page_Content_Block extends WP_UnitTestCase {
 
     public function test_get_post_list_using_page_content_block() {
 
-		print PHP_EOL;
-		print '------------------------------------' . PHP_EOL;
-		print 'get_post_list_using_page_content_block()' . PHP_EOL;
-		print '------------------------------------' . PHP_EOL;
+		// print PHP_EOL;
+		// print '------------------------------------' . PHP_EOL;
+		// print 'get_post_list_using_page_content_block()' . PHP_EOL;
+		// print '------------------------------------' . PHP_EOL;
         $check_using_vk_page_content_block = new VK_Blocks_Check_Using_VK_Page_Content_Block();
 
         $tests = array(

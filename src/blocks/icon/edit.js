@@ -38,6 +38,8 @@ export default function IconEdit(props) {
 		iconColor,
 		iconFontColor,
 		iconUrl,
+		relAttribute,
+		linkDescription,
 		iconTarget,
 	} = attributes;
 
@@ -279,6 +281,14 @@ export default function IconEdit(props) {
 						linkTarget={iconTarget ? '_blank' : ''}
 						setLinkTarget={(target) =>
 							setAttributes({ iconTarget: !!target })
+						}
+						relAttribute={relAttribute}
+						setRelAttribute={(rel) =>
+							setAttributes({ relAttribute: rel })
+						}
+						linkDescription={linkDescription}
+						setLinkDescription={(description) =>
+							setAttributes({ linkDescription: description })
 						}
 					/>
 				</ToolbarGroup>

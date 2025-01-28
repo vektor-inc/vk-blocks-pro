@@ -1,4 +1,3 @@
-import { __ } from '@wordpress/i18n';
 import { Component } from '@wordpress/element';
 import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
@@ -17,8 +16,6 @@ export class VKBIcon extends Component {
 		const iconFontColor = this.props.lbFontColor;
 		const iconUrl = this.props.lbUrl;
 		const iconTarget = this.props.lbTarget;
-		const relAttribute = this.props.lbRelAttribute;
-		const linkDescription = this.props.lbLinkDescription;
 
 		// outer & align
 		let outerClass = 'vk_icon_frame';
@@ -148,17 +145,16 @@ export class VKBIcon extends Component {
 		let blockContentWrapper = '';
 		if (iconUrl !== null && iconUrl !== undefined && iconUrl !== '') {
 			blockContentWrapper = (
+				/*
+				 target=_blankで指定すると、WordPressが自動でnoopener noreferrerを付与する。
+				 ブロックでもrelを付与しないとブロックが壊れる。
+				 */
 				<a
 					href={iconUrl}
 					className="vk_icon_link"
-					{...(iconTarget ? { target: '_blank' } : {})}
-					{...(relAttribute ? { rel: relAttribute } : {})}
+					target={iconTarget && '_blank'}
+					rel={iconTarget && 'noopener noreferrer'}
 				>
-					<span className="screen-reader-text">
-						{linkDescription
-							? linkDescription
-							: __('Icon link', 'vk-blocks-pro')}
-					</span>
 					{blockContent}
 				</a>
 			);

@@ -1,0 +1,51 @@
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+.vk_post_list_slider {
+	.swiper-slide{
+		font-size: unset; //カード（インテキスト）でズレるので打ち消し
+	}
+	.vk_post {
+		height: 100%;
+		width: calc(100% - 30px);
+		&.postListText {
+			width: calc(100% - 9.6rem);		
+			border-bottom: none;
+			.postListText_title{ // lightning テーマで .swiper-slide p に負けてしまうため追加
+				font-size: 14px;
+				line-height: 1.4;
+			}
+		}
+		&.media{
+			margin-bottom:30px;
+		}
+	}
+	.has-background-color .vk_post.card {	
+		margin-top: 15px;			
+	}
+	&.vk_post_list_slider-navigation-hide {
+		.vk_post.postListText {
+			width: 100%;
+		}
+	}
+	.swiper-pagination {
+		position: inherit;
+		&.swiper-pagination-fraction {
+			display: inline-block;
+		}
+	}
+}
+
+/* 矢印ボタン */
+//モバイルは下部
+@media (max-width: 575.98px) {
+	.vk_post_list_slider {
+		.swiper-button-next, 
+		.swiper-button-prev{
+			&.swiper-button-mobile-bottom{
+				top:unset;
+				bottom: 0;
+			}
+		}
+	}
+}

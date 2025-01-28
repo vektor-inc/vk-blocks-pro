@@ -3,9 +3,9 @@
  * Plugin Name: VK Blocks Pro
  * Plugin URI: https://github.com/vektor-inc/vk-blocks
  * Description: This is a plugin that extends Block Editor.
- * Version: 1.88.0.0
- * Stable tag: 1.87.0.1
- * Requires at least: 6.3
+ * Version: 1.94.0.0
+ * Stable tag: 1.93.1.1
+ * Requires at least: 6.4
  * Author: Vektor,Inc.
  * Author URI: https://vektor-inc.co.jp
  * Text Domain: vk-blocks-pro
@@ -153,9 +153,26 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 	add_action(
 		'plugins_loaded',
 		function () {
-			// Load language files.
-			$path = dirname( plugin_basename( __FILE__ ) ) . '/languages';
-			load_plugin_textdomain( 'vk-blocks-pro', false, $path );
+			// サイトのロケールを取得
+			$locale = determine_locale();
+			// 翻訳ファイルのパスを指定
+			$path = plugin_dir_path( __FILE__ ) . 'languages';
+
+			// 日本語の設定のみ翻訳ファイルを読み込み
+			if ( strpos( $locale, 'ja' ) === 0 ) {
+				// PHPファイルの翻訳読み込み
+				load_textdomain( 'vk-blocks-pro', $path . '/vk-blocks-pro-ja.mo' );
+
+				// JavaScriptファイルの翻訳設定
+				add_action(
+					'wp_enqueue_scripts',
+					function () use ( $path ) {
+						// スクリプト登録後に翻訳設定
+						wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks-pro', $path );
+						wp_set_script_translations( 'vk-blocks-admin-js', 'vk-blocks-pro', $path );
+					}
+				);
+			}
 		}
 	);
 

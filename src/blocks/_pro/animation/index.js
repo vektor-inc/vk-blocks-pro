@@ -8,7 +8,7 @@ import edit from './edit';
 import save from './save';
 import deprecatedHooks from './deprecated/hooks';
 import deprecated from './deprecated/save';
-import transforms from './transforms';
+import createWrapUnwrapTransforms from '@vkblocks/utils/wrap-unwrap';
 
 import { addFilter } from '@wordpress/hooks';
 
@@ -18,7 +18,7 @@ export { metadata, name };
 
 export const settings = {
 	icon: <Icon />,
-	transforms,
+	transforms: createWrapUnwrapTransforms('vk-blocks/animation'),
 	edit,
 	save,
 	deprecated,
@@ -34,7 +34,7 @@ export const settings = {
  */
 const addAnimationActiveClass = (el, type, attributes) => {
 	if ('vk-blocks/animation' === type.name) {
-		//現在実行されている deprecated内の save関数のindexを取得
+		// 現在実行されている deprecated 内の save 関数の index を取得
 		const deprecatedFuncIndex = deprecated.findIndex(
 			(item) => item.save === type.save
 		);
@@ -42,9 +42,18 @@ const addAnimationActiveClass = (el, type, attributes) => {
 		// 最新版
 		if (-1 === deprecatedFuncIndex) {
 			return el;
-
-			//後方互換
 		}
+
+		// deprecatedFuncIndex が予期せぬ数値の場合も考慮して、エラーハンドリングを強化
+		if (
+			deprecatedFuncIndex >= 0 &&
+			deprecatedFuncIndex < deprecatedHooks.length &&
+			deprecatedHooks[deprecatedFuncIndex]
+		) {
+			return el;
+		}
+
+		// 後方互換
 		const DeprecatedHook = deprecatedHooks[deprecatedFuncIndex];
 		return <DeprecatedHook el={el} attributes={attributes} />;
 	}

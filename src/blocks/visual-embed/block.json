@@ -1,0 +1,27 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/visual-embed",
+	"category": "vk-blocks-cat",
+	"title": "Visual Embed",
+	"description": "Easily embed iframe content with a live preview in the editor, perfect for maps, videos, and other iframe-based media.",
+	"textdomain": "vk-blocks-pro",
+	"attributes": {
+		"iframeCode": {
+			"type": "string",
+			"default": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sus!4v1609459543842!5m2!1sen!2sus\" width=\"100%\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+		},
+		"iframeWidth": {
+			"type": "string",
+			"default": "100%"
+		},
+		"iframeHeight": {
+			"type": "string",
+			"default": "450px"
+		}
+	},
+	"supports": {
+		"html": false,
+		"className": true,
+		"align": ["left", "center", "right", "wide", "full"]
+	}
+}

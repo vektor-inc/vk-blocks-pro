@@ -9,20 +9,7 @@ const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 
 // replace_text_domain
-gulp.task('text-domain-pro', (done) => {
-	// vk-components.
-	gulp.src(['./inc/vk-components/package/*.php'])
-		.pipe(replace("'vk_components_textdomain'", "'vk-blocks'"))
-		.pipe(gulp.dest('./inc/vk-components/package/'));
-	done();
-});
-
-// replace_text_domain
 gulp.task('text-domain-free', (done) => {
-	// vk-components.
-	gulp.src(['./inc/vk-components/package/*.php'])
-		.pipe(replace("'vk_components_textdomain'", "'vk-blocks'"))
-		.pipe(gulp.dest('./inc/vk-components/package/'));
 	gulp.src(['./inc/**',])
 		.pipe(replace(/__\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "__( $1, 'vk-blocks' )"))
 		.pipe(replace(/_e\(\s*?(['"`].*?['"`]),\s*?['"`]vk-blocks-pro['"`]\s*?\)/gm, "_e( $1, 'vk-blocks' )"))
@@ -91,6 +78,10 @@ gulp.task('helper-js-pro', (done) => {
 	gulp.src('src/blocks/_pro/table-of-contents-new/view.js')
 		.pipe(uglify())
 		.pipe(rename('vk-table-of-contents-new.min.js'))
+		.pipe(gulp.dest('./build/'));
+	gulp.src('src/blocks/_pro/post-list-slider/view.js')
+		.pipe(uglify())
+		.pipe(rename('vk-post-list-slider.min.js'))
 		.pipe(gulp.dest('./build/'));
 	done();
 });
@@ -168,7 +159,7 @@ gulp.task('sass_bootstrap', (done) => {
 // VK Block で使用しているBootstrapのみコンパイル
 // ※ Lightning 以外のテーマで利用の際に読込
 gulp.task('sass_vk_components', (done) => {
-	gulp.src(['./inc/vk-components/package/_scss/*.scss'])
+	gulp.src(['./vendor/vektor-inc/vk-component/src/assets/scss'])
 		.pipe(
 			sass({
 				errLogToConsole: true,
@@ -241,7 +232,7 @@ gulp.task('watch', () => {
 		gulp.parallel('sass_bootstrap', 'sass_editor')
 	);
 	gulp.watch(
-		'inc/vk-components/**/*.scss',
+		'./vendor/vektor-inc/vk-component/src/assets/scss',
 		gulp.parallel('sass_vk_components', 'sass_editor')
 	);
 	gulp.watch(
@@ -265,7 +256,6 @@ gulp.task(
 gulp.task(
 	'build:dev:pro',
 	gulp.series(
-		'text-domain-pro',
 		'sass',
 		'helper-js',
 		'helper-js-pro',
@@ -292,7 +282,6 @@ gulp.task(
 gulp.task(
 	'build:pro',
 	gulp.series(
-		'text-domain-pro',
 		'sass',
 		'helper-js',
 		'helper-js-pro',

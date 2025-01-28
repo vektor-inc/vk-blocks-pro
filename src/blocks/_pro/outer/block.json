@@ -171,6 +171,14 @@
 			"type": "string",
 			"default": ""
 		},
+		"relAttribute": {
+			"type": "string",
+			"default": ""
+		},
+		"linkDescription": {
+			"type": "string",
+			"default": ""
+		},
 		"clientId": {
 			"type": "string"
 		},
@@ -183,6 +191,10 @@
 	"supports": {
 		"html": false,
 		"className": true,
-		"anchor": true
+		"anchor": true,
+		"color": {
+			"text": true,
+			"background": false
+		}
 	}
 }

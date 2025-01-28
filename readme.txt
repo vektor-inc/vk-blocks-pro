@@ -2,9 +2,9 @@
 Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird,chiakikouno,doshimaf,mtdkei
 Donate link:
 Tags: Gutenberg,FAQ,alert
-Requires at least: 6.3
-Tested up to: 6.6
-Stable tag: 1.87.0.1
+Requires at least: 6.4
+Tested up to: 6.7
+Stable tag: 1.93.1.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -33,6 +33,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Staff (not recommended)
 * Page list from ancestor
 * Slider
+* Visual Embed
 * Accordion [ Pro ]
 * Animation [ Pro ]
 * Archive list [ Pro ]
@@ -46,6 +47,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Fixed Display [ Pro ]
 * Icon Card [ Pro ] (not recommended)
 * Post list [ Pro ]
+* Post list Slider [ Pro ]
 * New Badge [ Pro ]
 * Selected Post List [ Pro ]
 * Step [ Pro ]
@@ -108,6 +110,76 @@ e.g.
 
 [ Add function ][ Outer (Pro) ] Added the ability to set a focal point for background images.
 
+= 1.94.0 =
+[ Add Block ][ Visual Embed ] Add Visual Embed block.
+[ Add function ][ Grid Column (Pro) ] Added noreferrer, nofollow, and link description options to the link feature.
+[ Add function ][ Fixed Display (Pro) / Outer (Pro) ] Added transforms settings to wrap and unwrap for util.
+[ Specification change ][ Animation (Pro) ] Fixed transforms settings to wrap and unwrap for util.
+[ Bug fix ][ Fixed Display (Pro) ] When the number of seconds until display is zero, it will not be displayed again until the browser is closed, but this has been fixed.
+[ Bug fix ][ Fixed Display (Pro) ] Fixed a problem with enabling "Display on Scroll" under certain conditions that caused a recovery error.
+[ Design Bug Fix ] Change CSS order.
+[ Design Bug fix ][ Slider ][ Post List Slider (Pro) ] Fix an issue where full width alignment does not work in tt4 and tt5.
+[ Design Bug Fix ][ Post List Slider (Pro) ] Added bottom margin when the display type is set to "Media" to create spacing between the pagination and the block.
+[ Editor Design Bug Fix ] [ Grid Column Card (Pro) ]Fixed an issue where buttons in vk_gridcolcard_item_footer were not expanding their width when wrapped in an Outer block.
+[ Specification Change ] Load VK Componemts from Composer.
+
+= 1.93.2 =
+[ Bug fix ][ Post List Slider (Pro) ] Fixed sliding behavior when multiple post-list-slider blocks are present.
+
+= 1.93.1 =
+[ Bug fix ][ Post List (Pro) / Post List Slider (Pro) ] Fix the issue where posts are always displayed from the first post regardless of the "Display from the first post always" setting.
+[ Bug fix ][ Post List (Pro) / Post List Slider (Pro) ] Fixed missing "No relevant posts." message when no post types are selected.
+[ Bug fix ][ Tab (Pro) ] Added a CSS class to improve style priority with the Lightning theme.
+[ Bug fix ][ Core List / Border Box ] Improved handling of List's is-style-default style and Border Box color.
+[ Specification change ][ Outer (Pro) ] Removed the aria-label attribute from links, and updated to exclude target and rel attributes when they are empty.
+[ Design Bug Fix ][ Core List ][ Border Box ] Improved handling of List's is-style-default style and Border Box color.
+
+= 1.93.0 =
+[ Add function ][ Link toolbar ][ Outer (Pro) ] Added settings for "rel" and link description.
+[ Add function ][ Ballon ] Add default avatar.
+[ Other ][ Post list (Pro) / Post list slider (Pro) ] Refactored "Display Conditions" by modularizing them into components.
+[ Bug fix ][ Post List (Pro) ][ Post List Slider (Pro) ] Fixed missing "No relevant posts." message when no post types are selected.
+[ Bug fix ][ Table of Contents (Pro) ] Fix line break.
+[ Bug fix ][ Category Badge (Pro) ] Exclude post_tag.
+[ Bug fix ][ Post List Slider (Pro) ] Fix 404 Error of Load Module at free version.
+
+= 1.92.1 =
+[ Bug fix ][ Post List (Pro) ] Remove white space above title
+[ Design Bug Fix ][ Post list Slider (Pro) ] Fixed an issue where post list did not have consistent heights.
+[ Design Bug Fix ][ VK Button ] Fixed an issue where the text of a button with an icon was dropping in a column. Reset the word-break property to its initial value for better compatibility in Firefox.
+
+= 1.92.0 =
+[ Add Block ] Add Post list Slider block.
+[ Add function ][ Fixed Display (Pro) ] Added a timer feature to control block appearance/disappearance and a "Do not show again for returning visitors" option. Session Storage is used, and no personal data is collected or tracked. Since Session Storage is used, the block may reappear after the browser is closed or in private browsing mode.
+[ Bug Fix ][ Grid Column Card (Pro) ] Fixed only dots being displayed as separators.
+[ Bug fix ][ Post List (Pro) ] Since WordPress 6.7.1 started outputting contain-intrinsic-size: 3000px 1500px, add a reset for this in .card.
+[ Other ][ Slider ] Refactoring editor script.
+
+= 1.91.2 =
+[ Bug fix ] Fix checkbox misalignment in the admin panel.
+
+= 1.91.1 =
+[ Bug fix ] Avoiding translation errors in WordPress 6.7
+
+= 1.91.0 =
+[ Specification change ] Adjusted translation file loading to comply with changes in WordPress 6.7.
+[ Bug fix ][ Table of Contents (Pro) ] Fixed "CLOSE" label not appearing after clicking the "OPEN" button when the initial state is set to "CLOSE".
+
+= 1.90.1 =
+[ Bug fix ][ Cover ] Fixed inline styles not being retained when adding a link.
+
+= 1.90.0 =
+[ Add function ][ Outer (Pro) ] Add book and pyramid in divider style.
+[ Bug fix ] The split loading option is now supported for core/heading, core/image, and core/table styles for block editor.
+[ Bug fix ][ Cover ] Fixed an issue where, after setting a link in the Cover block and adding two unstyled headings inside it, the content positioning would not apply upon returning to the editing screen (editing screen only).
+[ Other ][ Slider ] Add alert message.
+
+= 1.89.0 =
+[ Add function ][ Outer (Pro) ] Added support for core text color settings.
+[ Specification Change ][ Accordion (Pro) ] Added the ability to toggle the Accordion block open and close in the editing screen.
+[ Bug fix ][ Grid Column Card (Pro) ] Fixed slider overflow in Grid Column Card Item Body.
+[ Bug fix ][ core/roup ] Fixed an issue where unwanted classes were assigned when links were present in the group block.
+
 = 1.88.0 =
 [ Specification change ][ Grid Column Card (Pro) ] Changed the default settings of headerDisplay and footerDisplay from "Delete" to "Display".
 [ Specification change ] Add filter vk_post_taxonomies_html ( Update VK Components 1.6.1 )
@@ -115,8 +187,8 @@ e.g.
 [ Bug fix ][ Slider ] Fix an issue where full width alignment does not work in tt4 and tt5.
 
 = 1.87.0 =
+[ Add function ][ Link Toolbar ] Added to skip retrieving metadata (title and favicon) for external links in link toolbar to prevent CORS errors.
 [ Add function ][ icon ] Add toolbar link for components.
-[ Bug fix ][ Link Toolbar ] Added to skip retrieving metadata (title and favicon) for external links in link toolbar to prevent CORS errors.
 [ Bug fix ][ Slider ] Adjusting the timing of loading swiper to prevent the slider from collapsing.
 [ Bug fix ][ Grid Column Card (Pro) ] Add translation.
 [ Bug fix ][ Category Badge (Pro) ] Added Pro label to the inserter.
@@ -125,7 +197,7 @@ e.g.
 [ Bug fix ] Roll back 1.85.1
 
 = 1.86.0 =
-[ Add function ] [ Fixed Display (Pro) ] Added an option for "Fixed display from the bottom."
+[ Add function ][ Fixed Display (Pro) ] Added an option for "Fixed display from the bottom."
 [ Add function ] Added to apply the vk-scroll-hint class to all elements with the vk_hidden and vk_hidden-XXX classes.
 [ Bug fix ][ Core/table ] Fixed the class was not removed when table scrolling was disabled.
 [ Bug fix ] Fix load styles when separate load is enable.
@@ -314,7 +386,7 @@ e.g.
 = 1.68.0 =
 [ Add function ][ Dynamic Text (Pro) ] Add feature to display logged-in username.
 [ Specification change ][ Hidden extension ] Add VK Icon
-[ Specification change ][ Outer ( Pro ) ] Allowed decimal points in 'Container Inner Side Space Setting'.
+[ Specification change ][ Outer (Pro) ] Allowed decimal points in 'Container Inner Side Space Setting'.
 [ Specification change ][ Headding ] Marked as Not Recommended
 
 = 1.67.0 =
@@ -364,7 +436,7 @@ e.g.
 [ Bug fix ][ Button ] Fix console warning
 
 = 1.61.2 =
-[ Bug fix ][ Outer ( Pro ) ] Fixed opacity with previous Outer version.
+[ Bug fix ][ Outer (Pro) ] Fixed opacity with previous Outer version.
 
 = 1.61.1 =
 [ Bug fix ] Fix error WordPress 6.3 live previewing block themes.
@@ -373,7 +445,7 @@ e.g.
 = 1.61.0 =
 [ Specification change ] Update the required WordPress version.
 [ Specification change ] Changed to display Font Awesome version change button only when select is changed.
-[ Specification change ][ Outer ( Pro ) ]  Change opacity setting can be set in increments of 0.01.
+[ Specification change ][ Outer (Pro) ]  Change opacity setting can be set in increments of 0.01.
 [ Specification change ][ Animation(Pro) ] Fix WordPress 6.3 transforms settings.
 [ Bug fix ][ Taxonomy (Pro) ] Fixed error when selected taxonomy dose not exists.
 [ Bug fix ][ Taxonomy (Pro) ] Fixed individual CSS was loaded on all pages with classic theme.
@@ -388,7 +460,7 @@ e.g.
 [ Bug fix ][ Icon Block ] Fix enable hidden extension.
 
 = 1.59.0 =
-[ Add Filter Hook ( Pro ) ] Add filter fook of display license key form or not
+[ Add Filter Hook (Pro) ] Add filter fook of display license key form or not
 [ Specification change ] Change option value update via Redux Store.
 [ Bug fix ][ Page Content ] Fix duplicate Additional CSS classes.
 [ Bug fix ] Fix swiper file path ( // -> / )

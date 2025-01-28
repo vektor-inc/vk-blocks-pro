@@ -375,6 +375,7 @@ a.vk_button_link {
 			display: block;
 			margin-left: auto;
 			margin-right: auto;
+			width: 100%;
 			max-width: 70%;
 			.vk_button_btn,
 			.btn {
@@ -421,6 +422,7 @@ a.vk_button_link {
 		}
 
 		&_caption {
+			word-break: initial; // FireFox で tt5 の場合カラム内でテキストが段落ちするので初期値にリセット
 			display: inline-flex;
 			align-items: center;
  			justify-content: center;

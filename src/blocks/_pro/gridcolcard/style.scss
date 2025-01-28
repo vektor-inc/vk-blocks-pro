@@ -46,11 +46,19 @@
 		&_body{
 			display: grid;
 			align-content: start;
+			width: 100%;
 			&-valign-center{
 				align-content: center;
 			}
 			&-valign-bottom{
 				align-content: end;
+			}
+			hr{ //widthが効かないため
+				width:inherit;
+			}
+			> .swiper{ //スライダーがはみ出すため打消し用
+				margin-left: unset;
+				margin-right: unset
 			}
 		}
 		&_footer{

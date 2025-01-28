@@ -20,13 +20,25 @@ const removeSwiperClassName = (targetElement) => {
 
 // スライダーブロック単体の処理
 const LaunchSwiper = (slider) => {
+    if (!slider) {
+        console.error('LaunchSwiper: slider is null or undefined');
+        return;
+    }
+    console.log('LaunchSwiper: slider element found:', slider);
+
 	// 値を取得して配列に格納
 	const attributes = JSON.parse(slider.getAttribute('data-vkb-slider'));
+    if (!dataVkbSlider) {
+        console.error('LaunchSwiper: data-vkb-slider attribute is missing:', slider);
+        return;
+    }
+    console.log('LaunchSwiper: data-vkb-slider value:', dataVkbSlider);
 
 	// スライダーの ID を取得
 	if (attributes && (attributes.blockId || attributes.clientId)) {
 		// 対象の ID を取得
 		let sliderId = '';
+        console.log('LaunchSwiper: sliderId:', sliderId);
 		if (attributes.blockId !== undefined) {
 			sliderId = attributes.blockId;
 		} else if (attributes.clientId !== undefined) {
@@ -36,14 +48,20 @@ const LaunchSwiper = (slider) => {
 
 		// 編集モードに応じた処理を実行
 		if (attributes.editorMode && attributes.editorMode === 'slide') {
+			console.log('Editor mode is slide');
 			if (!swiper[sliderId]) {
+                console.log('LaunchSwiper: Initializing swiper for sliderId:', sliderId);
+
 				// swiper クラスを追加
 				const newSwiperDiv = slider.querySelector(
 					'.block-editor-inner-blocks'
 				);
 				if (newSwiperDiv) {
 					newSwiperDiv.classList.add('swiper');
-				}
+                    console.log('LaunchSwiper: Added swiper class to newSwiperDiv');
+                } else {
+                    console.warn('LaunchSwiper: newSwiperDiv not found');
+                }
 
 				// swiper-wrapper クラスを追加
 				const newSwiperWrapper = slider.querySelector(
@@ -51,7 +69,10 @@ const LaunchSwiper = (slider) => {
 				);
 				if (newSwiperWrapper) {
 					newSwiperWrapper.classList.add('swiper-wrapper');
-				}
+                    console.log('LaunchSwiper: Added swiper-wrapper class to newSwiperWrapper');
+                } else {
+                    console.warn('LaunchSwiper: newSwiperWrapper not found');
+                }
 
 				// スライダーアイテムのクラス処理
 				const newSwiperSlide =
@@ -203,6 +224,7 @@ const LaunchSwiper = (slider) => {
 				);
 			}
 		} else {
+			console.warn('Editor mode is not set to slide or is undefined:', attributes.editorMode);
 			// 不要な swiper クラスを削除
 			const newSwiperDiv = slider.querySelector(
 				'.block-editor-inner-blocks'
@@ -308,17 +330,22 @@ const editorRootLaunch = (editorRoot) => {
 
 export const editSliderLaunch = () => {
 	const blockEditorRoot = document.querySelector(
-		'.block-editor .is-root-container'
+		'.block-editor-writing-flow .block-editor'
 	);
-	if (blockEditorRoot) {
-		editorRootLaunch(blockEditorRoot);
-	}
+    if (blockEditorRoot) {
+        console.log('editSliderLaunch: blockEditorRoot found:', blockEditorRoot);
+        LaunchSwiperAll(blockEditorRoot);
+    } else {
+        console.warn('editSliderLaunch: blockEditorRoot not found');
+    }
 	const iframe = document.querySelector('#site-editor iframe');
 	if (iframe) {
+		console.log('editSliderLaunch: Found iframe:', iframe);
 		const siteEditorRoot =
 			iframe.contentWindow.document.querySelector('.is-root-container');
 		if (siteEditorRoot) {
 			editorRootLaunch(siteEditorRoot);
+			console.log('editSliderLaunch: Available siteEditorRoot:', siteEditorRoot);
 		}
 	}
 };

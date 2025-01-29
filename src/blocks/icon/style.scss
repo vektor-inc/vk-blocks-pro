@@ -11,18 +11,26 @@
 }
 .wp-block-vk-blocks-icon { //編集画面で負けるので先頭に追加
 	.vk_icon_frame {
+		display: flex;
 		line-height: 1;
+
+		&.text-center {
+			justify-content: center;
+		}
+		&.text-right {
+			justify-content: right;
+		}
 	}
 	.vk_icon {
 		&_border {
-			display: inline-block;
+			display: flex;
 			position: relative;
 			width: 80px;
 			height: 80px;
 			border-radius: 50%;
 		}
 		&_link {
-			display: inline-block;
+			display: flex;
 			&:hover {
 				opacity: .85;
 			}
@@ -53,10 +61,10 @@
 	.vk_icon {
 		&_align {
 			&_center {
-				text-align: center;
+				justify-content: center;
 			}
 			&_right {
-				text-align: right;
+				justify-content: right;
 			}
 		}
 

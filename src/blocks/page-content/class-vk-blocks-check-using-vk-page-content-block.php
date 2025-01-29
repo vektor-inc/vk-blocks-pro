@@ -145,7 +145,7 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 	 * 'checked-page-content-private' フラグを削除するメソッド
 	 * Deletes the 'checked-page-content-private' flag from vk_blocks_options.
 	 */
-	public function delete_checked_flag() {
+	public static function delete_checked_flag() {
 		$options = get_option( 'vk_blocks_options' );
 		if ( isset( $options['checked-page-content-private'] ) ) {
 			unset( $options['checked-page-content-private'] );

@@ -210,11 +210,6 @@ export default function TabEdit(props) {
 
 	const liOnClick = (e) => {
 		if (childBlocks) {
-			const iframe = document.querySelector(
-				'.block-editor-iframe__container iframe'
-			);
-			const iframeDocument = iframe?.contentWindow?.document;
-
 			const vkTab = e.target.closest('.vk_tab');
 			const vkTabLabels = vkTab.querySelector('.vk_tab_labels');
 
@@ -255,9 +250,7 @@ export default function TabEdit(props) {
 			);
 			newActiveLabel.style.removeProperty('background-color');
 
-			const activeTabBody = iframeDocument.querySelector(
-				`#block-${TabId}`
-			);
+			const activeTabBody = document.querySelector(`#block-${TabId}`);
 			const activeTabBodyStyle = window.getComputedStyle(activeTabBody);
 			if (
 				!newActiveLabel

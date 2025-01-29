@@ -2,7 +2,6 @@ import save1_13_2 from './1.13.2/save';
 import save1_16_1 from './1.16.1/save';
 import save1_94_2 from './1.94.2/save';
 
-
 const blockAttributes = {
 	faIcon: {
 		type: 'string',
@@ -65,6 +64,11 @@ const blockAttributes3 = {
 	iconFontColor: {
 		type: 'string',
 	},
+}
+
+/* 次回対応おねがいします
+const blockAttributes4 = {
+	...blockAttributes3,
 	relAttribute: {
 		type: 'string',
 		default: ''
@@ -74,10 +78,19 @@ const blockAttributes3 = {
 		default: ''
 	}
 }
+*/
+
 export const deprecated = [
 	{
 		attributes: blockAttributes3,
 		save: save1_94_2,
+		migrate: (attributes) => {
+			return {
+				...attributes,
+				relAttribute: '',
+				linkDescription: '',
+			};
+		},
 	},
 	{
 		attributes: blockAttributes2,

@@ -80,6 +80,11 @@ const blockAttributes3 = {
 		type: 'string',
 		default: 'display'
 	},
+};
+
+/* 次回対応おねがいします
+const blockAttributes4 = {
+	...blockAttributes3,
 	relAttribute: {
 		"type": "string",
 		"default": ""
@@ -89,11 +94,19 @@ const blockAttributes3 = {
 		"default": ""
 	}
 };
+*/
 
 const deprecated = [
 	{
 		attributes: blockAttributes3,
 		save: save1_94_2,
+		migrate: (attributes) => {
+			return {
+				...attributes,
+				relAttribute: '',
+				linkDescription: '',
+			};
+		},
 	},
 	{
 		attributes: blockAttributes2,

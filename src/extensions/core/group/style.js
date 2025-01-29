@@ -103,9 +103,13 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 								setRelAttribute={(rel) =>
 									props.setAttributes({ relAttribute: rel })
 								}
-								linkDescription={props.attributes.linkDescription}
+								linkDescription={
+									props.attributes.linkDescription
+								}
 								setLinkDescription={(description) =>
-									props.setAttributes({ linkDescription: description })
+									props.setAttributes({
+										linkDescription: description,
+									})
 								}
 							/>
 						</ToolbarGroup>

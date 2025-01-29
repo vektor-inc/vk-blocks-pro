@@ -79,10 +79,10 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 			++$paged;
 		} while ( $query->have_posts() );
 
-		if ( empty( $output ) ){
+		if ( empty( $output ) ) {
 			// 該当の投稿がなかったらチェック済みフラグを立てる
 			// If there are no posts that meet the criteria, set the checked flag.
-			$options = get_option( 'vk_blocks_options' );
+			$options                                 = get_option( 'vk_blocks_options' );
 			$options['checked-page-content-private'] = true;
 			update_option( 'vk_blocks_options', $options );
 			return;
@@ -106,7 +106,7 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 
 		// * 一度チェック済みになったら後から手動で非公開投稿を参照した固定ページブロックを配置した場合、アラートが表示されない欠点があるが、そもそも新規で配置する際は警告が表示されるので問題ないと判断
 		// * Once checked, there is a drawback that an alert will not be displayed if a page block referencing a private post is placed manually later, but it is not a problem because a warning will be displayed when placing a new one.
-		if ( $this->is_checked_flag() ){
+		if ( $this->is_checked_flag() ) {
 			return;
 		}
 

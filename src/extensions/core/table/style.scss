@@ -37,7 +37,7 @@
 }
 
 // 縦積み
-@mixin align-vertical-table {
+@mixin cell-vertical-table {
 
 	table {
 	
@@ -129,22 +129,22 @@
 		}
 	}
 
-	&.is-style-vk-table-align-vertical {
+	&.is-style-vk-table-cell-vertical {
 
-		&[data-align-vertical-breakpoint="table-align-vertical-mobile"] {
+		&[data-cell-vertical-breakpoint="table-cell-vertical-mobile"] {
 			@media (max-width: 575.98px) {
-				@include align-vertical-table;
+				@include cell-vertical-table;
 			}
 		}
 
-		&[data-align-vertical-breakpoint="table-align-vertical-tablet"] {
+		&[data-cell-vertical-breakpoint="table-cell-vertical-tablet"] {
 			@media (max-width: 991.98px) {
-				@include align-vertical-table;
+				@include cell-vertical-table;
 			}
 		}
 
-		&[data-align-vertical-breakpoint="table-align-vertical-pc"] {
-			@include align-vertical-table;
+		&[data-cell-vertical-breakpoint="table-cell-vertical-pc"] {
+			@include cell-vertical-table;
 		}
 	}
 }
@@ -161,8 +161,8 @@
 		&.is-style-vk-table-scrollable {
 			@include scrollable-table-editor;
 		}
-		&.is-style-vk-table-align-vertical {
-			@include align-vertical-table;
+		&.is-style-vk-table-cell-vertical {
+			@include cell-vertical-table;
 		}
 	}
 }

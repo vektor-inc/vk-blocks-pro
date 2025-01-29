@@ -1,5 +1,5 @@
 {
-	"apiVersion": 3,
+	"apiVersion": 2,
 	"name": "vk-blocks/alert",
 	"category": "vk-blocks-cat",
 	"title": "Alert",

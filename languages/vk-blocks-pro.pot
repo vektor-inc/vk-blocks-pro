@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.94.2.0\n"
+"Project-Id-Version: VK Blocks Pro 1.94.2.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-01-23T03:46:26+00:00\n"
+"POT-Creation-Date: 2025-01-29T03:51:05+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -1700,38 +1700,38 @@ msgid "dvh"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:433
-#: src/blocks/slider-item/edit.js:175
+#: src/blocks/slider-item/edit.js:185
 msgid "Background Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:438
 #: src/blocks/pr-content/edit.js:67
-#: src/blocks/slider-item/edit.js:179
+#: src/blocks/slider-item/edit.js:189
 msgid "Color Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:439
-#: src/blocks/slider-item/edit.js:181
+#: src/blocks/slider-item/edit.js:191
 msgid "Color will overcome background image. If you want to display image, set opacity 0."
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:451
-#: src/blocks/slider-item/edit.js:193
+#: src/blocks/slider-item/edit.js:203
 msgid "Opacity Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:465
-#: src/blocks/slider-item/edit.js:228
+#: src/blocks/slider-item/edit.js:238
 msgid "Background Image PC"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:481
-#: src/blocks/slider-item/edit.js:244
+#: src/blocks/slider-item/edit.js:254
 msgid "Background Image Tablet"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:491
-#: src/blocks/slider-item/edit.js:254
+#: src/blocks/slider-item/edit.js:264
 msgid "Background Image Mobile"
 msgstr ""
 
@@ -1757,7 +1757,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:539
 #: src/blocks/pr-content/edit.js:244
-#: src/blocks/slider-item/edit.js:157
+#: src/blocks/slider-item/edit.js:167
 msgid "Layout Setting"
 msgstr ""
 
@@ -2194,63 +2194,63 @@ msgid "Tab 02"
 msgstr ""
 
 #. %s is the tab number
-#: src/blocks/_pro/tab/edit.js:511
+#: src/blocks/_pro/tab/edit.js:518
 msgid "Tab Label [ %s ]"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:537
+#: src/blocks/_pro/tab/edit.js:544
 msgid "Tab Size Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:539
+#: src/blocks/_pro/tab/edit.js:546
 msgid "Tab Size ( Smart Phone )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:556
+#: src/blocks/_pro/tab/edit.js:563
 msgid "Tab Size ( Tablet )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:573
+#: src/blocks/_pro/tab/edit.js:580
 msgid "Tab Size ( PC )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:577
+#: src/blocks/_pro/tab/edit.js:584
 msgid "Fit to the text"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:581
+#: src/blocks/_pro/tab/edit.js:588
 msgid "Monospaced"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:590
+#: src/blocks/_pro/tab/edit.js:597
 msgid "Tab Display Options"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:592
+#: src/blocks/_pro/tab/edit.js:599
 msgid "If there are many labels or the screen width is narrow, you can adjust it here. *Tab size setting will not be effective."
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:598
+#: src/blocks/_pro/tab/edit.js:605
 msgid "Tab Display Options ( Smart Phone )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:622
+#: src/blocks/_pro/tab/edit.js:629
 msgid "Tab Display Options ( Tablet )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:646
+#: src/blocks/_pro/tab/edit.js:653
 msgid "Tab Display Options ( PC )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:653
+#: src/blocks/_pro/tab/edit.js:660
 msgid "Not set"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:657
+#: src/blocks/_pro/tab/edit.js:664
 msgid "Scroll"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:661
+#: src/blocks/_pro/tab/edit.js:668
 msgid "Wrap to 2 rows"
 msgstr ""
 
@@ -2982,23 +2982,24 @@ msgid "Image Border Color"
 msgstr ""
 
 #: src/blocks/slider-item/deprecated/1.76.0/save.js:83
-#: src/blocks/slider-item/save.js:90
+#: src/blocks/slider-item/deprecated/1.94.0/save.js:90
+#: src/blocks/slider-item/save.js:91
 msgid "Slider item link"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:161
+#: src/blocks/slider-item/edit.js:171
 msgid "Vertical align"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:207
+#: src/blocks/slider-item/edit.js:217
 msgid "Background Image Size"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:214
+#: src/blocks/slider-item/edit.js:224
 msgid "cover"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:218
+#: src/blocks/slider-item/edit.js:228
 msgid "repeat"
 msgstr ""
 
@@ -3154,39 +3155,39 @@ msgstr ""
 msgid "Profile text"
 msgstr ""
 
-#: src/blocks/visual-embed/edit.js:148
+#: src/blocks/visual-embed/edit.js:149
 msgid "Embed Code Settings"
 msgstr ""
 
-#: src/blocks/visual-embed/edit.js:150
+#: src/blocks/visual-embed/edit.js:151
 msgid "Embed Code"
 msgstr ""
 
-#: src/blocks/visual-embed/edit.js:171
+#: src/blocks/visual-embed/edit.js:172
 msgid "Please paste the iframe embed code directly. Only iframe tags with allowed URLs (Google Maps, Google Calendar, Google Forms, YouTube、OpenStreetMap, Vimeo) are permitted."
 msgstr ""
 
-#: src/blocks/visual-embed/edit.js:182
+#: src/blocks/visual-embed/edit.js:183
 msgid "Please enter an iframe embed code."
 msgstr ""
 
-#: src/blocks/visual-embed/edit.js:194
+#: src/blocks/visual-embed/edit.js:195
 msgid "The provided URL is not allowed. Please use an approved embed source."
 msgstr ""
 
-#: src/blocks/visual-embed/edit.js:201
+#: src/blocks/visual-embed/edit.js:202
 msgid "Iframe Width"
 msgstr ""
 
-#: src/blocks/visual-embed/edit.js:224
+#: src/blocks/visual-embed/edit.js:225
 msgid "Iframe Height"
 msgstr ""
 
-#: src/blocks/visual-embed/edit.js:248
+#: src/blocks/visual-embed/edit.js:249
 msgid "Note: These settings are only applicable to iframe tags. Other embed codes will not respond to these adjustments."
 msgstr ""
 
-#: src/blocks/visual-embed/edit.js:88
+#: src/blocks/visual-embed/edit.js:89
 msgid "Only allowed URLs can be embedded."
 msgstr ""
 

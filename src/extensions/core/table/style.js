@@ -348,10 +348,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 							)}
 						</PanelBody>
 						<PanelBody
-							title={__(
-								'Table Cell Vertical',
-								'vk-blocks-pro'
-							)}
+							title={__('Table Cell Vertical', 'vk-blocks-pro')}
 							icon={
 								<Icon
 									icon={IconSVG}
@@ -361,10 +358,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 							initialOpen={false}
 						>
 							<ToggleControl
-								label={__(
-									'Cell Vertical',
-									'vk-blocks-pro'
-								)}
+								label={__('Cell Vertical', 'vk-blocks-pro')}
 								checked={cellVertical}
 								onChange={handleCellVerticalToggleChange}
 							/>

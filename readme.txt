@@ -117,6 +117,8 @@ e.g.
 = 1.94.1 =
 [ Specification change ][ Visual Embed ] Add margin:0; to iframe tag
 
+[ Add function ][ Outer (Pro) ] Added the ability to set a focal point for background images.
+
 = 1.94.0 =
 [ Add Block ][ Visual Embed ] Add Visual Embed block.
 [ Add function ][ Grid Column (Pro) ] Added noreferrer, nofollow, and link description options to the link feature.

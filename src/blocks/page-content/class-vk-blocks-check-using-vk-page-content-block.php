@@ -138,7 +138,7 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 	 */
 	public function is_checked_flag() {
 		$options = get_option( 'vk_blocks_options' );
-		return ! empty( $options['checked-page-content-private'] ) && $options['checked-page-content-private'] === true;
+		return ! empty( $options['checked-page-content-private'] ) && true === $options['checked-page-content-private'];
 	}
 
 	/**

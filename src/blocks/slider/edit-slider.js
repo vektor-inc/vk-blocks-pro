@@ -308,15 +308,10 @@ const editorRootLaunch = (editorRoot) => {
 
 export const editSliderLaunch = () => {
 	const blockEditorRoot = document.querySelector(
-		'.block-editor__container iframe'
+		'.block-editor .is-root-container'
 	);
-	if (blockEditorRoot && blockEditorRoot.contentWindow) {
-		const editorRoot = blockEditorRoot.contentWindow.document.querySelector(
-			'.block-editor-block-list__layout'
-		);
-		if (editorRoot) {
-			editorRootLaunch(editorRoot);
-		}
+	if (blockEditorRoot) {
+		editorRootLaunch(blockEditorRoot);
 	}
 	const iframe = document.querySelector('#site-editor iframe');
 	if (iframe) {

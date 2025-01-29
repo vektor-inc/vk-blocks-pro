@@ -50,6 +50,14 @@ export const addAttribute = (settings) => {
 				type: 'string',
 				default: '',
 			},
+			relAttribute: {
+				type: 'string',
+				default: '',
+			},
+			linkDescription: {
+				type: 'string',
+				default: '',
+			},
 			tagName: {
 				type: 'string',
 				default: 'div',
@@ -90,6 +98,14 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 								linkTarget={props.attributes.linkTarget}
 								setLinkTarget={(target) =>
 									props.setAttributes({ linkTarget: target })
+								}
+								relAttribute={props.attributes.relAttribute}
+								setRelAttribute={(rel) =>
+									props.setAttributes({ relAttribute: rel })
+								}
+								linkDescription={props.attributes.linkDescription}
+								setLinkDescription={(description) =>
+									props.setAttributes({ linkDescription: description })
 								}
 							/>
 						</ToolbarGroup>
@@ -165,6 +181,8 @@ const save = (props) => {
 	const {
 		linkUrl,
 		linkTarget,
+		relAttribute,
+		linkDescription,
 		className = '',
 		tagName: CustomTag = 'div',
 	} = attributes;
@@ -175,8 +193,6 @@ const save = (props) => {
 	});
 
 	// Determine rel attribute based on linkTarget
-	const relAttribute =
-		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
 
 	// Extract prefix for custom link class
 	const prefix = 'wp-block-group';
@@ -187,11 +203,16 @@ const save = (props) => {
 			{linkUrl && (
 				<a
 					href={linkUrl}
-					target={linkTarget}
-					rel={relAttribute}
-					aria-label={__('Group link', 'vk-blocks-pro')}
+					{...(linkTarget ? { target: linkTarget } : {})}
+					{...(relAttribute ? { rel: relAttribute } : {})}
 					className={`${prefix}-vk-link`}
-				></a>
+				>
+					<span className="screen-reader-text">
+						{linkDescription
+							? linkDescription
+							: __('Group link', 'vk-blocks-pro')}
+					</span>
+				</a>
 			)}
 		</CustomTag>
 	);
@@ -221,6 +242,18 @@ const overrideBlockSettings = (settings, name) => {
 		}
 		if (!newSettings.attributes.linkTarget) {
 			newSettings.attributes.linkTarget = {
+				type: 'string',
+				default: '',
+			};
+		}
+		if (!newSettings.attributes.relAttribute) {
+			newSettings.attributes.relAttribute = {
+				type: 'string',
+				default: '',
+			};
+		}
+		if (!newSettings.attributes.linkDescription) {
+			newSettings.attributes.linkDescription = {
 				type: 'string',
 				default: '',
 			};

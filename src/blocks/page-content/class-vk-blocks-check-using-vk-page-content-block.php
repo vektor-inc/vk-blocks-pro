@@ -79,7 +79,16 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 			++$paged;
 		} while ( $query->have_posts() );
 
-		return $output ? '<ul>' . $output . '</ul>' : '';
+		if ( empty( $output ) ){
+			// 該当の投稿がなかったらチェック済みフラグを立てる
+			// If there are no posts that meet the criteria, set the checked flag.
+			$options = get_option( 'vk_blocks_options' );
+			$options['checked-page-content-private'] = true;
+			update_option( 'vk_blocks_options', $options );
+			return;
+		} else {
+			return '<ul>' . $output . '</ul>';
+		}
 	}
 
 	/**
@@ -89,6 +98,15 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 		// ダッシュボードのトップページ以外は処理しない
 		// Don't run on pages other than the dashboard top page.
 		if ( ! is_admin() || 'index.php' !== $GLOBALS['pagenow'] ) {
+			return;
+		}
+
+		// 既にチェック済みフラグが立ってる場合は何もしない
+		// If the checked flag is already set, do nothing.
+
+		// * 一度チェック済みになったら後から手動で非公開投稿を参照した固定ページブロックを配置した場合、アラートが表示されない欠点があるが、そもそも新規で配置する際は警告が表示されるので問題ないと判断
+		// * Once checked, there is a drawback that an alert will not be displayed if a page block referencing a private post is placed manually later, but it is not a problem because a warning will be displayed when placing a new one.
+		if ( $this->is_checked_flag() ){
 			return;
 		}
 
@@ -109,6 +127,29 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 			$alert .= '<p>' . wp_kses_post( vk_blocks_get_page_content_private_alert() ) . '</p>';
 			$alert .= '</div>';
 			echo wp_kses_post( $alert );
+		}
+	}
+
+	/**
+	 * 'checked-page-content-private' フラグが設定されているか確認するメソッド
+	 * Checks if the 'checked-page-content-private' flag is set to true in vk_blocks_options.
+	 *
+	 * @return bool
+	 */
+	public function is_checked_flag() {
+		$options = get_option( 'vk_blocks_options' );
+		return ! empty( $options['checked-page-content-private'] ) && $options['checked-page-content-private'] === true;
+	}
+
+	/**
+	 * 'checked-page-content-private' フラグを削除するメソッド
+	 * Deletes the 'checked-page-content-private' flag from vk_blocks_options.
+	 */
+	public function delete_checked_flag() {
+		$options = get_option( 'vk_blocks_options' );
+		if ( isset( $options['checked-page-content-private'] ) ) {
+			unset( $options['checked-page-content-private'] );
+			update_option( 'vk_blocks_options', $options );
 		}
 	}
 }

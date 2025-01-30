@@ -107,8 +107,9 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-[ Add function ][ Slider ] Added noreferrer, nofollow, and link description options to the link feature.
 
+[ Add function ][ Slider ] Added noreferrer, nofollow, and link description options to the link feature.
+[ Bug fix ] [ Icon ] Fixed an unwanted bottom margin appearing.
 [ Editor Design Bug Fix ] [ Grid Column (Pro) ] Fixed an issue where the 'is-vertical' layout of grid column items was not displayed vertically.
 
 = 1.94.2 =
@@ -116,7 +117,6 @@ e.g.
 
 = 1.94.1 =
 [ Specification change ][ Visual Embed ] Add margin:0; to iframe tag
-
 [ Add function ][ Outer (Pro) ] Added the ability to set a focal point for background images.
 
 = 1.94.0 =

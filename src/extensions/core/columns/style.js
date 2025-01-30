@@ -59,7 +59,14 @@ addFilter('blocks.registerBlockType', 'vk-blocks/columns-style', addAttribute);
 export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 	return (props) => {
 		const { attributes, setAttributes } = props;
-		const { reverse, className, linkUrl, linkTarget, relAttribute, linkDescription } = attributes;
+		const {
+			reverse,
+			className,
+			linkUrl,
+			linkTarget,
+			relAttribute,
+			linkDescription,
+		} = attributes;
 
 		if (isColumnsBlock(props.name) && props.isSelected) {
 			// カラムの方向設定

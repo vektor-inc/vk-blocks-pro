@@ -89,7 +89,9 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 		const blockProps = useBlockProps({
 			className:
 				`${scrollable ? 'is-style-vk-table-scrollable' : ''} ${cellVertical ? 'is-style-vk-table-cell-vertical' : ''}`.trim(),
-		});
+				...(scrollable && { 'data-scroll-breakpoint': scrollBreakpoint }),
+				...(cellVertical && { 'data-cell-vertical-breakpoint': cellVerticalBreakpoint }),
+			});
 
 		// アイコンスタイルを定義
 		const iconStyle = {

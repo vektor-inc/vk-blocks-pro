@@ -53,11 +53,10 @@
 			}
 		}
 	}
-
 	
 	/* 最初の行を除外するためのスタイル */
-	&:not(.is-style-stripe)	tr:first-of-type :is(th, td):first-of-type {
-		order: 1px solid;
+	&:not(.is-style-stripes) tr:first-of-type :is(th, td):first-of-type {
+		border-top: 1px solid;
 	}
 
 	&.is-style-vk-table {     
@@ -65,9 +64,9 @@
 		&-border,
 		&-border-stripes {
 			// theme.json のあるファイルでテーブルの線の色指定がない場合のみ適用
-			table:where(:not(.has-border-color)) {
-				:where(th, td) {
-					border: 1px solid var(--vk-color-border-hr);
+			table:not(.has-border-color) {
+				tr:first-of-type :is(th, td):first-of-type {
+					border-top: 1px solid var(--vk-color-border-hr);
 				}
 			}
 		}

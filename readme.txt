@@ -107,7 +107,8 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-[ Add function ][ Slider ] Added noreferrer, nofollow, and link description options to the link feature.
+
+[ Add function ][ Icon / Slider ] Added noreferrer, nofollow, and link description options to the link feature.
 
 [ Editor Design Bug Fix ] [ Grid Column (Pro) ] Fixed an issue where the 'is-vertical' layout of grid column items was not displayed vertically.
 

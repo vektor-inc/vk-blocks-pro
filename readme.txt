@@ -108,7 +108,8 @@ e.g.
 
 == Changelog ==
 
-[ Add function ][ Core Table ] Add Vertical alignment setting.
+[ Add function ][ Core Table ] Add table cell vertical setting.
+
 = 1.94.2 =
 [ Bug fix / Specification Change ][ Visual Embed ] Strengthened validation for XSS protection and restricted the range of allowed URLs.
 

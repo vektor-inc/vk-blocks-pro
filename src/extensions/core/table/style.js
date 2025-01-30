@@ -56,6 +56,14 @@ export const addAttribute = (settings) => {
 				type: 'boolean',
 				default: true,
 			},
+			cellVertical: {
+				type: 'boolean',
+				default: false,
+			},
+			cellVerticalBreakpoint: {
+				type: 'string',
+				default: 'table-cell-vertical-mobile',
+			},
 		};
 	}
 	return settings;
@@ -74,25 +82,48 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 			scrollIconRight,
 			iconOutputLeft,
 			iconOutputRight,
+			cellVertical,
+			cellVerticalBreakpoint,
 		} = attributes;
 
 		const blockProps = useBlockProps({
-			className: scrollable ? 'is-style-vk-table-scrollable' : '',
+			className:
+				`${scrollable ? 'is-style-vk-table-scrollable' : ''} ${cellVertical ? 'is-style-vk-table-cell-vertical' : ''}`.trim(),
+			...(scrollable && { 'data-scroll-breakpoint': scrollBreakpoint }),
+			...(cellVertical && {
+				'data-cell-vertical-breakpoint': cellVerticalBreakpoint,
+			}),
 		});
 
 		// アイコンスタイルを定義
-		let iconStyle = {
+		const iconStyle = {
 			width: '24px',
 			height: '24px',
 		};
 
-		if (scrollable) {
-			iconStyle = {
-				...iconStyle,
-				color: '#fff',
-				background: '#1e1e1e',
-			};
-		}
+		// scrollable に関連するアイコンスタイル
+		const scrollableIconStyle = {
+			color: scrollable ? '#fff' : 'initial', // scrollable が ON のときは白、OFF のときはデフォルト
+			background: scrollable ? '#1e1e1e' : 'transparent', // scrollable が ON のときは背景色、OFF のときは透明
+		};
+
+		// cellVertical に関連するアイコンスタイル
+		const cellVerticalIconStyle = {
+			color: cellVertical ? '#fff' : 'initial', // cellVertical が ON のときは白、OFF のときはデフォルト
+			background: cellVertical ? '#1e1e1e' : 'transparent', // cellVertical が ON のときは背景色、OFF のときは透明
+		};
+
+		// scrollable 用アイコンスタイルを独立して適用
+		const scrollableIconStyleFinal = {
+			...iconStyle,
+			...scrollableIconStyle,
+		};
+
+		// cellVertical 用アイコンスタイルを独立して適用
+		const cellVerticalIconStyleFinal = {
+			...iconStyle,
+			...cellVerticalIconStyle,
+		};
 
 		// スクロール可能トグル変更のハンドル
 		const handleToggleChange = (checked) => {
@@ -111,9 +142,26 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 			setAttributes({ scrollBreakpoint: value });
 		};
 
+		// cellVerticalトグル変更のハンドル
+		const handleCellVerticalToggleChange = (checked) => {
+			setAttributes({ cellVertical: checked });
+
+			if (!checked) {
+				// OFF の場合、関連するクラスや属性をリセット
+				setAttributes({
+					cellVerticalBreakpoint: 'table-cell-vertical-mobile',
+				});
+			}
+		};
+
+		// cellVerticalブレークポイント選択変更のハンドル
+		const handleCellVerticalSelectChange = (value) => {
+			setAttributes({ cellVerticalBreakpoint: value });
+		};
+
 		// コンポーネントのマウントまたは更新後に属性を更新
 		useEffect(() => {
-			// 初期ロード時にクラスや属性を確認して scrollable を ON にする
+			// 初期ロード時にクラスや属性を確認して scrollable を ON にする∂
 			const checkTableScrollAttributes = () => {
 				const tables = document.querySelectorAll('.wp-block-table');
 				tables.forEach((table) => {
@@ -133,13 +181,13 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 			checkTableScrollAttributes();
 		}, []); // 初期レンダリング時のみ実行
 
-		// scrollable の状態が確定したら処理を実行
+		// scrollable、cellVertical の状態が確定したら処理を実行
 		useEffect(() => {
-			const updateTableScrollAttributes = () => {
-				const tables = document.querySelectorAll(
-					'.wp-block-table.is-style-vk-table-scrollable'
-				);
+			const updateTableAttributes = () => {
+				// .wp-block-table を持つすべてのテーブル要素を取得
+				const tables = document.querySelectorAll('.wp-block-table');
 				tables.forEach((table) => {
+					// scrollable 状態に応じてクラスと属性を更新
 					if (!scrollable) {
 						table.classList.remove('is-style-vk-table-scrollable');
 						table.removeAttribute('data-scroll-breakpoint');
@@ -147,6 +195,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 						const breakpoint =
 							table.getAttribute('data-scroll-breakpoint') ||
 							'table-scrollable-mobile';
+						table.classList.add('is-style-vk-table-scrollable');
 						table.setAttribute(
 							'data-scroll-breakpoint',
 							breakpoint
@@ -167,11 +216,28 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 						'data-icon-output-right',
 						iconOutputRight ? 'true' : 'false'
 					);
+
+					// cellVertical 状態に応じたクラスと属性を更新
+					if (!cellVertical) {
+						// cellVertical が OFF の場合
+						table.classList.remove(
+							'is-style-vk-table-cell-vertical'
+						);
+						table.removeAttribute('data-cell-vertical-breakpoint');
+					} else {
+						// cellVertical が ON の場合
+						table.classList.add('is-style-vk-table-cell-vertical');
+						table.setAttribute(
+							'data-cell-vertical-breakpoint',
+							cellVerticalBreakpoint
+						);
+					}
 				});
 			};
 
+			// 状態が undefined でない場合のみ実行
 			if (typeof scrollable !== 'undefined') {
-				updateTableScrollAttributes();
+				updateTableAttributes();
 			}
 		}, [
 			scrollable,
@@ -181,6 +247,8 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 			scrollIconRight,
 			iconOutputLeft,
 			iconOutputRight,
+			cellVertical,
+			cellVerticalBreakpoint,
 		]);
 
 		if (isValidBlockType(name) && props.isSelected) {
@@ -227,7 +295,12 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 								'Table Horizontal Scroll',
 								'vk-blocks-pro'
 							)}
-							icon={<Icon icon={IconSVG} style={iconStyle} />}
+							icon={
+								<Icon
+									icon={IconSVG}
+									style={scrollableIconStyleFinal}
+								/>
+							}
 							initialOpen={false}
 						>
 							<ToggleControl
@@ -278,6 +351,59 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 								</>
 							)}
 						</PanelBody>
+						<PanelBody
+							title={__('Table Cell Vertical', 'vk-blocks-pro')}
+							icon={
+								<Icon
+									icon={IconSVG}
+									style={cellVerticalIconStyleFinal}
+								/>
+							}
+							initialOpen={false}
+						>
+							<ToggleControl
+								label={__('Cell Vertical', 'vk-blocks-pro')}
+								checked={cellVertical}
+								onChange={handleCellVerticalToggleChange}
+							/>
+							{cellVertical && (
+								<>
+									<SelectControl
+										label={__(
+											'Cell Vertical Breakpoint',
+											'vk-blocks-pro'
+										)}
+										value={cellVerticalBreakpoint}
+										options={[
+											{
+												label: __(
+													'Mobile size',
+													'vk-blocks-pro'
+												),
+												value: 'table-cell-vertical-mobile',
+											},
+											{
+												label: __(
+													'Tablet size',
+													'vk-blocks-pro'
+												),
+												value: 'table-cell-vertical-tablet',
+											},
+											{
+												label: __(
+													'PC size',
+													'vk-blocks-pro'
+												),
+												value: 'table-cell-vertical-pc',
+											},
+										]}
+										onChange={
+											handleCellVerticalSelectChange
+										}
+									/>
+								</>
+							)}
+						</PanelBody>
 					</InspectorControls>
 				</>
 			);
@@ -297,12 +423,19 @@ const addExtraProps = (saveElementProps, blockType, attributes) => {
 				`${saveElementProps.className || ''} is-style-vk-table-scrollable`.trim();
 			saveElementProps['data-scroll-breakpoint'] =
 				attributes.scrollBreakpoint;
+		}
+
+		// cellVerticalがtrueの場合にcellVerticalBreakpointを設定
+		if (attributes.cellVertical) {
+			saveElementProps.className += ` is-style-vk-table-cell-vertical`;
+			saveElementProps['data-cell-vertical-breakpoint'] =
+				attributes.cellVerticalBreakpoint;
 		} else {
-			// 'scrollable' が false の場合、クラスと属性を削除
+			// cellVerticalがfalseの場合、不要なクラスや属性を削除
 			saveElementProps.className = saveElementProps.className
-				.replace('is-style-vk-table-scrollable', '')
+				.replace('is-style-vk-table-cell-vertical', '')
 				.trim();
-			delete saveElementProps['data-scroll-breakpoint'];
+			delete saveElementProps['data-cell-vertical-breakpoint'];
 		}
 
 		// 'showScrollMessage' が true の場合のみ 'data-output-scroll-hint' を追加
@@ -331,6 +464,7 @@ const addExtraProps = (saveElementProps, blockType, attributes) => {
 		delete saveElementProps['data-output-scroll-hint'];
 		delete saveElementProps['data-icon-output-left'];
 		delete saveElementProps['data-icon-output-right'];
+		delete saveElementProps['data-cell-vertical-breakpoint'];
 	}
 
 	return saveElementProps;
@@ -339,4 +473,36 @@ addFilter(
 	'blocks.getSaveContent.extraProps',
 	'vk-blocks/table-style',
 	addExtraProps
+);
+
+const removeVkTableMobileBlockFromEditor = createHigherOrderComponent(
+	(BlockListBlock) => {
+		return (props) => {
+			const { attributes, setAttributes } = props;
+
+			// `cellVertical` が `true` の場合のみ `.vk-table--mobile-block` を削除
+			if (
+				attributes?.cellVertical &&
+				attributes?.className?.includes('vk-table--mobile-block')
+			) {
+				const updatedClassName = attributes.className
+					.replace(/\bvk-table--mobile-block\b/g, '')
+					.trim();
+
+				// `setAttributes` を使用して `className` を更新
+				if (updatedClassName !== attributes.className) {
+					setAttributes({ className: updatedClassName });
+				}
+			}
+
+			return <BlockListBlock {...props} />;
+		};
+	},
+	'withRemoveVkTableMobileBlock'
+);
+
+addFilter(
+	'editor.BlockListBlock',
+	'vk-blocks/remove-vk-table-mobile-block',
+	removeVkTableMobileBlockFromEditor
 );

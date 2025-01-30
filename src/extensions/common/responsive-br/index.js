@@ -31,7 +31,7 @@ registerFormatType(`vk-blocks/responsive-br`, {
 									return {
 										title:
 											__(
-												`Responsive BR `,
+												`Responsive BR`,
 												'vk-blocks-pro'
 											) + `( ${breakPoint} )`,
 										icon: <Icon />,

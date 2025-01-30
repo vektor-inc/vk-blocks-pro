@@ -176,6 +176,11 @@
 		}
 		&.is-style-vk-table-cell-vertical {
 			@include cell-vertical-table;
+			&:not(.is-style-stripes) table:not(.has-border-color) {
+				tr:first-of-type :is(th, td):first-of-type {
+					border-top: 1px solid var(--vk-color-border-hr);
+				}
+			}
 		}
 	}
 }

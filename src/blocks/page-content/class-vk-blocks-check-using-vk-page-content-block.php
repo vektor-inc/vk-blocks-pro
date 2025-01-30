@@ -83,7 +83,12 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 		if ( empty( $output ) ) {
 			// 該当の投稿がなかったらチェック済みフラグを立てる
 			// If there are no posts that meet the criteria, set the checked flag.
-			$flags                                 = get_option( 'vk_blocks_checked_flags' );
+			$flags = get_option( 'vk_blocks_checked_flags' );
+			// $flags が配列でない場合は空の配列をセット
+			// If $flags is not an array, set an empty array.
+			if ( ! is_array( $flags ) ) {
+				$flags = array();
+			}
 			$flags['checked-page-content-private'] = true;
 			update_option( 'vk_blocks_checked_flags', $flags );
 			return;

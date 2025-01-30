@@ -20,7 +20,7 @@ const enhanceCoverBlock = createHigherOrderComponent((BlockEdit) => {
 		}
 
 		const {
-			attributes: { linkUrl, linkTarget },
+			attributes: { linkUrl, linkTarget, relAttribute, linkDescription },
 			setAttributes,
 		} = props;
 
@@ -37,6 +37,16 @@ const enhanceCoverBlock = createHigherOrderComponent((BlockEdit) => {
 							linkTarget={linkTarget}
 							setLinkTarget={(target) =>
 								setAttributes({ linkTarget: target })
+							}
+							relAttribute={relAttribute}
+							setRelAttribute={(rel) =>
+								setAttributes({ relAttribute: rel })
+							}
+							linkDescription={
+								linkDescription
+							}
+							setLinkDescription={(description) =>
+								setAttributes({ linkDescription: description })
 							}
 						/>
 					</ToolbarGroup>
@@ -59,7 +69,15 @@ const addLinkAttributesToCoverBlock = (settings, name) => {
 		},
 		linkTarget: {
 			type: 'string',
-			default: '_self',
+			default: '',
+		},
+		relAttribute: {
+			type: 'string',
+			default: '',
+		},
+		linkDescription: {
+			type: 'string',
+			default: '',
 		},
 	};
 
@@ -71,7 +89,7 @@ const insertLinkIntoCoverBlock = (element, blockType, attributes) => {
 		return element;
 	}
 
-	const { linkUrl, linkTarget } = attributes;
+	const { linkUrl, linkTarget, relAttribute, linkDescription } = attributes;
 
 	if (!linkUrl) {
 		return element;
@@ -84,19 +102,22 @@ const insertLinkIntoCoverBlock = (element, blockType, attributes) => {
 	const existingStyle = element.props.style || {};
 
 	// rel 属性の設定
-	const relAttribute =
-		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
 
 	return (
 		<div className={classNameWithLink} style={existingStyle}>
 			{element.props.children}
 			<a
 				href={linkUrl}
-				target={linkTarget}
-				rel={relAttribute}
-				aria-label={__('Cover link', 'vk-blocks-pro')}
+				{...(linkTarget ? { target: linkTarget } : {})}
+				{...(relAttribute ? { rel: relAttribute } : {})}
 				className="wp-block-cover-vk-link"
-			></a>
+			>
+				<span className="screen-reader-text">
+					{linkDescription
+						? linkDescription
+						: __('Cover link', 'vk-blocks-pro')}
+				</span>
+			</a>
 		</div>
 	);
 };

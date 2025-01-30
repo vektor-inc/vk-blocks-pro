@@ -18,7 +18,7 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 	 *
 	 * @return void
 	 */
-	static public function activate() {
+	public static function activate() {
 		// ダッシュボードでアラートを表示
 		add_action( 'admin_init', array( __CLASS__, 'check_for_alert' ) );
 	}
@@ -29,7 +29,7 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 	 * @param string $post_status The post status to filter by: 'all' or 'unpublic'.
 	 * @return string The list of posts using the page content block.
 	 */
-	static public function get_post_list_using_page_content_block( $post_status ) {
+	public static function get_post_list_using_page_content_block( $post_status ) {
 		$output         = '';
 		$paged          = 1;
 		$posts_per_page = 100;
@@ -95,7 +95,7 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 	/**
 	 * Is run check for alert.
 	 */
-	static public function check_for_alert() {
+	public static function check_for_alert() {
 		// ダッシュボードのトップページ以外は処理しない
 		// Don't run on pages other than the dashboard top page.
 		if ( ! is_admin() || 'index.php' !== $GLOBALS['pagenow'] ) {
@@ -118,7 +118,7 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 	 * 非公開のコンテンツを参照する固定ページ本文ブロックが使われているページのリストを表示するメソッド.
 	 * Displays a list of pages that use the page content block to reference non-public content.
 	 */
-	static public function display_alert() {
+	public static function display_alert() {
 		$list = self::get_post_list_using_page_content_block( 'unpublic' );
 
 		if ( $list ) {
@@ -137,7 +137,7 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 	 *
 	 * @return bool
 	 */
-	static public function is_checked_flag() {
+	public static function is_checked_flag() {
 		$flags = get_option( 'vk_blocks_checked_flags' );
 		return ! empty( $flags['checked-page-content-private'] ) && true === $flags['checked-page-content-private'];
 	}
@@ -146,7 +146,7 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 	 * 'checked-page-content-private' フラグを削除するメソッド
 	 * Deletes the 'checked-page-content-private' flag from vk_blocks_options.
 	 */
-	static public function delete_checked_flag() {
+	public static function delete_checked_flag() {
 		$flags = get_option( 'vk_blocks_checked_flags' ); // 新しいオプション名
 		if ( isset( $flags['checked-page-content-private'] ) ) {
 			unset( $flags['checked-page-content-private'] );

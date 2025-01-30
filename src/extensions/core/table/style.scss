@@ -49,15 +49,29 @@
 	
 			/* 最後のセルには border-bottom: none を適用 */
 			&:last-of-type:not(:last-child) {
-				border-bottom-color: transparent;
+				border-bottom: none
 			}
 		}
+	}
+
 	
-		/* 最初の行を除外するためのスタイル */
-		tr:first-of-type :is(th, td):first-of-type {
-			border-top-color: var(--vk-color-border-hr);
+	/* 最初の行を除外するためのスタイル */
+	&:not(.is-style-stripe)	tr:first-of-type :is(th, td):first-of-type {
+		order: 1px solid;
+	}
+
+	&.is-style-vk-table {     
+		&-border-top-bottom,
+		&-border,
+		&-border-stripes {
+			// theme.json のあるファイルでテーブルの線の色指定がない場合のみ適用
+			table:where(:not(.has-border-color)) {
+				:where(th, td) {
+					border: 1px solid var(--vk-color-border-hr);
+				}
+			}
 		}
-	}	
+	}
 }
 
 /*      フロントエンド

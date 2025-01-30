@@ -40,7 +40,15 @@ export const addAttribute = (settings) => {
 			},
 			linkTarget: {
 				type: 'string',
-				default: '_self',
+				default: '',
+			},
+			relAttribute: {
+				type: 'string',
+				default: '',
+			},
+			linkDescription: {
+				type: 'string',
+				default: '',
 			},
 		};
 	}
@@ -51,7 +59,7 @@ addFilter('blocks.registerBlockType', 'vk-blocks/columns-style', addAttribute);
 export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 	return (props) => {
 		const { attributes, setAttributes } = props;
-		const { reverse, className, linkUrl, linkTarget } = attributes;
+		const { reverse, className, linkUrl, linkTarget, relAttribute, linkDescription } = attributes;
 
 		if (isColumnsBlock(props.name) && props.isSelected) {
 			// カラムの方向設定
@@ -135,6 +143,16 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 								setLinkTarget={(target) =>
 									setAttributes({ linkTarget: target })
 								}
+								relAttribute={relAttribute}
+								setRelAttribute={(rel) =>
+									setAttributes({ relAttribute: rel })
+								}
+								linkDescription={linkDescription}
+								setLinkDescription={(description) =>
+									setAttributes({
+										linkDescription: description,
+									})
+								}
 							/>
 						</ToolbarGroup>
 					</BlockControls>
@@ -152,30 +170,26 @@ const insertLinkIntoColumnBlock = (element, blockType, attributes) => {
 		return element;
 	}
 
-	const { linkUrl, linkTarget } = attributes;
+	const { linkUrl, linkTarget, relAttribute, linkDescription } = attributes;
 
 	if (!linkUrl) {
 		return element;
-	}
-
-	// rel 属性の設定
-	let relAttribute = '';
-
-	if (linkTarget === '_blank') {
-		relAttribute = 'noopener noreferrer';
-	} else if (linkTarget === '_self' || linkTarget === '') {
-		relAttribute = 'noopener';
 	}
 
 	return (
 		<div {...element.props}>
 			<a
 				href={linkUrl}
-				target={linkTarget}
-				rel={relAttribute}
-				aria-label={__('Column link', 'vk-blocks-pro')}
+				{...(linkTarget ? { target: linkTarget } : {})}
+				{...(relAttribute ? { rel: relAttribute } : {})}
 				className="wp-block-column-vk-link"
-			></a>
+			>
+				<span className="screen-reader-text">
+					{linkDescription
+						? linkDescription
+						: __('Column link', 'vk-blocks-pro')}
+				</span>
+			</a>
 			{element.props.children}
 		</div>
 	);

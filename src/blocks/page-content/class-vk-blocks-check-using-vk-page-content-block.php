@@ -14,12 +14,13 @@
 class VK_Blocks_Check_Using_VK_Page_Content_Block {
 
 	/**
-	 * Constructor.
-	 * Initializes the class and sets up the admin notice action.
+	 * Activate hooks.
+	 *
+	 * @return void
 	 */
-	public function __construct() {
+	static public function activate() {
 		// ダッシュボードでアラートを表示
-		add_action( 'admin_init', array( $this, 'check_for_alert' ) );
+		add_action( 'admin_init', array( __CLASS__, 'check_for_alert' ) );
 	}
 
 	/**
@@ -28,7 +29,7 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 	 * @param string $post_status The post status to filter by: 'all' or 'unpublic'.
 	 * @return string The list of posts using the page content block.
 	 */
-	public function get_post_list_using_page_content_block( $post_status ) {
+	static public function get_post_list_using_page_content_block( $post_status ) {
 		$output         = '';
 		$paged          = 1;
 		$posts_per_page = 100;
@@ -82,9 +83,9 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 		if ( empty( $output ) ) {
 			// 該当の投稿がなかったらチェック済みフラグを立てる
 			// If there are no posts that meet the criteria, set the checked flag.
-			$options                                 = get_option( 'vk_blocks_options' );
-			$options['checked-page-content-private'] = true;
-			update_option( 'vk_blocks_options', $options );
+			$flags                                 = get_option( 'vk_blocks_checked_flags' );
+			$flags['checked-page-content-private'] = true;
+			update_option( 'vk_blocks_checked_flags', $flags );
 			return;
 		} else {
 			return '<ul>' . $output . '</ul>';
@@ -94,7 +95,7 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 	/**
 	 * Is run check for alert.
 	 */
-	public function check_for_alert() {
+	static public function check_for_alert() {
 		// ダッシュボードのトップページ以外は処理しない
 		// Don't run on pages other than the dashboard top page.
 		if ( ! is_admin() || 'index.php' !== $GLOBALS['pagenow'] ) {
@@ -106,19 +107,19 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 
 		// * 一度チェック済みになったら後から手動で非公開投稿を参照した固定ページブロックを配置した場合、アラートが表示されない欠点があるが、そもそも新規で配置する際は警告が表示されるので問題ないと判断
 		// * Once checked, there is a drawback that an alert will not be displayed if a page block referencing a private post is placed manually later, but it is not a problem because a warning will be displayed when placing a new one.
-		if ( $this->is_checked_flag() ) {
+		if ( self::is_checked_flag() ) {
 			return;
 		}
 
-		add_action( 'admin_notices', array( $this, 'display_alert' ) );
+		add_action( 'admin_notices', array( __CLASS__, 'display_alert' ) );
 	}
 
 	/**
 	 * 非公開のコンテンツを参照する固定ページ本文ブロックが使われているページのリストを表示するメソッド.
 	 * Displays a list of pages that use the page content block to reference non-public content.
 	 */
-	public function display_alert() {
-		$list = $this->get_post_list_using_page_content_block( 'unpublic' );
+	static public function display_alert() {
+		$list = self::get_post_list_using_page_content_block( 'unpublic' );
 
 		if ( $list ) {
 			$alert  = '<div class="notice notice-warning is-dismissible">';
@@ -136,20 +137,20 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 	 *
 	 * @return bool
 	 */
-	public function is_checked_flag() {
-		$options = get_option( 'vk_blocks_options' );
-		return ! empty( $options['checked-page-content-private'] ) && true === $options['checked-page-content-private'];
+	static public function is_checked_flag() {
+		$flags = get_option( 'vk_blocks_checked_flags' );
+		return ! empty( $flags['checked-page-content-private'] ) && true === $flags['checked-page-content-private'];
 	}
 
 	/**
 	 * 'checked-page-content-private' フラグを削除するメソッド
 	 * Deletes the 'checked-page-content-private' flag from vk_blocks_options.
 	 */
-	public static function delete_checked_flag() {
-		$options = get_option( 'vk_blocks_options' );
-		if ( isset( $options['checked-page-content-private'] ) ) {
-			unset( $options['checked-page-content-private'] );
-			update_option( 'vk_blocks_options', $options );
+	static public function delete_checked_flag() {
+		$flags = get_option( 'vk_blocks_checked_flags' ); // 新しいオプション名
+		if ( isset( $flags['checked-page-content-private'] ) ) {
+			unset( $flags['checked-page-content-private'] );
+			update_option( 'vk_blocks_checked_flags', $flags ); // 新しいオプション名で更新
 		}
 	}
 }

@@ -42,9 +42,7 @@ const enhanceCoverBlock = createHigherOrderComponent((BlockEdit) => {
 							setRelAttribute={(rel) =>
 								setAttributes({ relAttribute: rel })
 							}
-							linkDescription={
-								linkDescription
-							}
+							linkDescription={linkDescription}
 							setLinkDescription={(description) =>
 								setAttributes({ linkDescription: description })
 							}

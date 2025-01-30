@@ -171,15 +171,50 @@
 				border-color: var(--vk-color-border-hr);
 			}
 		}
+
+
 		&.is-style-vk-table-scrollable {
-			@include scrollable-table-editor;
+
+			&[data-scroll-breakpoint="table-scrollable-mobile"] {
+				@media (max-width: 575.98px) {
+					@include scrollable-table-editor;
+				}
+			}
+	
+			&[data-scroll-breakpoint="table-scrollable-tablet"] {
+				@media (max-width: 991.98px) {
+					@include scrollable-table-editor;
+				}
+			}
+	
+			&[data-scroll-breakpoint="table-scrollable-pc"] {
+				@include scrollable-table-editor;
+			}
 		}
+	
 		&.is-style-vk-table-cell-vertical {
-			@include cell-vertical-table;
+
+			/* 最初の行を除外するためのスタイル */
 			&:not(.is-style-stripes) table:not(.has-border-color) {
 				tr:first-of-type :is(th, td):first-of-type {
 					border-top: 1px solid var(--vk-color-border-hr);
 				}
+			}
+	
+			&[data-cell-vertical-breakpoint="table-cell-vertical-mobile"] {
+				@media (max-width: 575.98px) {
+					@include cell-vertical-table;
+				}
+			}
+	
+			&[data-cell-vertical-breakpoint="table-cell-vertical-tablet"] {
+				@media (max-width: 991.98px) {
+					@include cell-vertical-table;
+				}
+			}
+	
+			&[data-cell-vertical-breakpoint="table-cell-vertical-pc"] {
+				@include cell-vertical-table;
 			}
 		}
 	}

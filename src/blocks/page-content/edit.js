@@ -23,9 +23,6 @@ const getPagesSelect = (pages, currentTargetPost) => {
 		},
 	];
 
-	// 現在選択されているページを特定する
-	const currentPage = pages.find((page) => page.id === currentTargetPost);
-
 	// 選択リストから非公開・パスワード保護のページを除外する（現在選択中のページは除く）
 	const availablePages = pages.filter(
 		(page) =>

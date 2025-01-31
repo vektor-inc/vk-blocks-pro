@@ -110,7 +110,8 @@ e.g.
 
 == Changelog ==
 
-[ Add function ][ Slider ] Added noreferrer, nofollow, and link description options to the link feature.
+[ Add function ][ Slider ] Added noreferrer, nofollow, and link description options to the link feature.z
+
 [ Editor Design Bug Fix ] [ Grid Column (Pro) ] Fixed an issue where the 'is-vertical' layout of grid column items was not displayed vertically.
 
 = 1.94.2 =

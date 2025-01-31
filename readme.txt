@@ -109,7 +109,7 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Icon / Slider ] Added noreferrer, nofollow, and link description options to the link feature.
-
+[ Add function ][ Grid Column Card (Pro) ] Added noreferrer, nofollow, and link description options to the link feature for each card.
 [ Editor Design Bug Fix ] [ Grid Column (Pro) ] Fixed an issue where the 'is-vertical' layout of grid column items was not displayed vertically.
 
 [ Add function ][ Core Table ] Add table cell vertical setting.

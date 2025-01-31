@@ -47,6 +47,20 @@ add_filter( 'vk_page_content', 'do_shortcode', 11 );
 add_filter( 'vk_page_content', 'capital_P_dangit', 11 );
 
 /**
+ * Get Page Content Private Alert Message
+ *
+ * @return string
+ */
+function vk_blocks_get_page_content_private_alert() {
+	$alert = __(
+		"From VK Blocks version 1.95.0 onwards, non-public or password protected page's content can no longer be displayed.
+If you want to display non-public content in multiple locations, please create it as a Synced pattern(Reusable block) and place it in the desired locations instead of using Page Content block.",
+		'vk-blocks-pro'
+	);
+	return $alert;
+}
+
+/**
  * Render Callback of Page Content Block
  *
  * @param array $attributes attributes.
@@ -54,7 +68,21 @@ add_filter( 'vk_page_content', 'capital_P_dangit', 11 );
  */
 function vk_blocks_page_content_render_callback( $attributes ) {
 	$page_content_id = ! empty( $attributes['TargetPost'] ) ? $attributes['TargetPost'] : -1;
-	$page_content    = -1 !== $page_content_id ? get_post( $page_content_id )->post_content : '';
+	$post            = get_post( $page_content_id );
+
+	$is_rest_request = defined( 'REST_REQUEST' ) && REST_REQUEST;
+
+	// 投稿が存在し、公開されているか、またはパスワード保護されていないかを確認
+	if ( ! $post || 'publish' !== $post->post_status || ! empty( $post->post_password ) ) {
+		if ( is_admin() || $is_rest_request ) {
+			return '<div class="alert alert-danger" style="padding:1.5rem;"><p class="text-center" style="font-weight:bold;">' . __( 'Post not found, not public, or password protected.', 'vk-blocks-pro' ) . '</p><p class="mb-0">' . vk_blocks_get_page_content_private_alert() . '</p></div>';
+		} else {
+			// Front Page
+			return '';
+		}
+	}
+
+	$page_content = $post->post_content;
 	vk_blocks_content_enqueue_scripts( $page_content );
 
 	$vk_blocks_options = VK_Blocks_Options::get_options();
@@ -147,3 +175,8 @@ function vk_blocks_content_enqueue_scripts( $page_content ) {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'vk_blocks_content_enqueue_scripts' );
+
+// 非公開の投稿を参照して表示していないかのチェック
+// Check if it is displaying content from non-public pages.
+require_once plugin_dir_path( __FILE__ ) . 'class-vk-blocks-check-using-vk-page-content-block.php';
+VK_Blocks_Check_Using_VK_Page_Content_Block::activate();

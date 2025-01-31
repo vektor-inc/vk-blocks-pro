@@ -393,3 +393,16 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 		}
 	}
 }
+
+if ( function_exists( 'register_deactivation_hook' ) ) {
+	register_deactivation_hook( __FILE__, 'vk_blocks_deactivate_function' );
+}
+
+/**
+ * Deactivate function
+ *
+ * @return void
+ */
+function vk_blocks_deactivate_function() {
+	delete_option( 'vk_blocks_checked_flags' );
+}

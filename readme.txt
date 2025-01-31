@@ -1,3 +1,5 @@
+!!!!!!! TEST !!!!!!!
+
 === VK Blocks ===
 Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird,chiakikouno,doshimaf,mtdkei
 Donate link:
@@ -108,11 +110,8 @@ e.g.
 
 == Changelog ==
 
-[ Add function ][ Icon / Slider ] Added noreferrer, nofollow, and link description options to the link feature.
-
+[ Add function ][ Slider ] Added noreferrer, nofollow, and link description options to the link feature.
 [ Editor Design Bug Fix ] [ Grid Column (Pro) ] Fixed an issue where the 'is-vertical' layout of grid column items was not displayed vertically.
-
-[ Add function ][ Core Table ] Add table cell vertical setting.
 
 = 1.94.2 =
 [ Bug fix / Specification Change ][ Visual Embed ] Strengthened validation for XSS protection and restricted the range of allowed URLs.

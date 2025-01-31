@@ -1,5 +1,5 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "vk-blocks/gridcolcard-item",
 	"title": "Grid Column Card Item",
 	"textdomain": "vk-blocks-pro",

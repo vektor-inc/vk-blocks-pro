@@ -108,7 +108,9 @@ e.g.
 
 == Changelog ==
 
-[ Add function ][ Slider ] Added noreferrer, nofollow, and link description options to the link feature.
+[ Add function ][ Icon / Slider ] Added noreferrer, nofollow, and link description options to the link feature.
+[ Editor Design Bug Fix ] [ Grid Column (Pro) ] Fixed an issue where the 'is-vertical' layout of grid column items was not displayed vertically.
+[ Add function ][ Core Table ] Add table cell vertical setting.
 [ Specification change ] Fixed the zoom-out toggle not always displaying in the editor toolbar (updated blocks.json API version from 2 to 3).
 
 = 1.94.2 =
@@ -116,6 +118,8 @@ e.g.
 
 = 1.94.1 =
 [ Specification change ][ Visual Embed ] Add margin:0; to iframe tag
+
+[ Add function ][ Outer (Pro) ] Added the ability to set a focal point for background images.
 
 = 1.94.0 =
 [ Add Block ][ Visual Embed ] Add Visual Embed block.

@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.4
 Tested up to: 6.7
-Stable tag: 1.94.1.0
+Stable tag: 1.94.2.2
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -108,11 +108,20 @@ e.g.
 
 == Changelog ==
 
+= 1.95.0 =
+[ Add function ][ Slider ] Added noreferrer, nofollow, and link description options to the link feature.
+[ Add function ][ Icon / Slider ] Added noreferrer, nofollow, and link description options to the link feature.
+[ Editor Design Bug Fix ] [ Grid Column (Pro) ] Fixed an issue where the 'is-vertical' layout of grid column items was not displayed vertically.
+[ Add function ][ Core Table ] Add table cell vertical setting.
+[ Specification Change ][ Page Content ] Modify the specification so that the display is shown only when the referenced page is public.
+
 = 1.94.2 =
 [ Bug fix / Specification Change ][ Visual Embed ] Strengthened validation for XSS protection and restricted the range of allowed URLs.
 
 = 1.94.1 =
 [ Specification change ][ Visual Embed ] Add margin:0; to iframe tag
+
+[ Add function ][ Outer (Pro) ] Added the ability to set a focal point for background images.
 
 = 1.94.0 =
 [ Add Block ][ Visual Embed ] Add Visual Embed block.

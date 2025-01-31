@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2025-01-23T02:45:29+00:00\n"
+"POT-Creation-Date: 2025-01-31T12:13:03+00:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -324,7 +324,7 @@ msgstr "改行しない"
 
 #: src/admin/custom-format/index.js:203 src/blocks/_pro/step-item/edit.js:105
 #: src/blocks/_pro/timeline-item/edit.js:71 src/blocks/border-box/edit.js:236
-#: src/blocks/button/edit.js:677 src/blocks/icon/edit.js:313
+#: src/blocks/button/edit.js:677 src/blocks/icon/edit.js:323
 #: src/blocks/staff/edit.js:199
 msgid "Color"
 msgstr "色"
@@ -340,7 +340,7 @@ msgstr "文字の色"
 #: src/blocks/_pro/grid-column-item/edit.js:118
 #: src/blocks/_pro/gridcolcard/edit-common.js:175
 #: src/blocks/border-box/edit.js:248 src/blocks/button/edit.js:732
-#: src/blocks/icon/edit.js:318
+#: src/blocks/icon/edit.js:328
 msgid "Background Color"
 msgstr "背景色"
 
@@ -537,7 +537,7 @@ msgid "ex)"
 msgstr "例）"
 
 #: src/admin/margin.js:141 src/blocks/border-box/edit.js:200
-#: src/blocks/icon-outer/edit.js:150 src/blocks/icon/edit.js:142
+#: src/blocks/icon-outer/edit.js:150 src/blocks/icon/edit.js:144
 msgid "Margin"
 msgstr "余白"
 
@@ -570,7 +570,7 @@ msgid "XXL"
 msgstr "XXL"
 
 #: src/admin/margin.js:51 src/blocks/_pro/accordion/edit.js:139
-#: src/blocks/_pro/outer/edit.js:1071
+#: src/blocks/_pro/outer/edit.js:1362
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:174
 #: src/blocks/button/edit.js:537 src/blocks/slider/edit-multiItem.js:198
 #: src/blocks/slider/edit.js:329
@@ -579,7 +579,7 @@ msgid "PC"
 msgstr "PC"
 
 #: src/admin/margin.js:55 src/blocks/_pro/accordion/edit.js:122
-#: src/blocks/_pro/outer/edit.js:1055
+#: src/blocks/_pro/outer/edit.js:1346
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:201
 #: src/blocks/button/edit.js:472 src/blocks/slider/edit-multiItem.js:225
 #: src/blocks/slider/edit.js:350
@@ -588,7 +588,7 @@ msgid "Tablet"
 msgstr "タブレット"
 
 #: src/admin/margin.js:59 src/blocks/_pro/accordion/edit.js:105
-#: src/blocks/_pro/outer/edit.js:1039
+#: src/blocks/_pro/outer/edit.js:1330
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:230
 #: src/blocks/button/edit.js:407 src/blocks/slider/edit-multiItem.js:254
 #: src/blocks/slider/edit.js:371
@@ -866,7 +866,7 @@ msgid "Height"
 msgstr "高さ"
 
 #: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:178
-#: src/blocks/_pro/outer/edit.js:542 src/blocks/balloon/edit.js:515
+#: src/blocks/_pro/outer/edit.js:833 src/blocks/balloon/edit.js:515
 msgid "Width"
 msgstr "幅"
 
@@ -1230,7 +1230,7 @@ msgstr "リンクの設定"
 #: src/blocks/_pro/dynamic-text/edit.js:389
 #: src/blocks/_pro/gridcolcard-item/edit.js:353
 #: src/blocks/_pro/icon-card-item/edit.js:128 src/blocks/button/edit.js:283
-#: src/blocks/icon/edit.js:306 src/blocks/pr-blocks/edit.js:262
+#: src/blocks/icon/edit.js:316 src/blocks/pr-blocks/edit.js:262
 #: src/blocks/pr-content/edit.js:131 src/components/link-toolbar/index.js:321
 msgid "Open link new tab."
 msgstr "リンクを別ウィンドウで開く"
@@ -1417,7 +1417,7 @@ msgid "Padding (Top)"
 msgstr "余白 (上)"
 
 #: src/blocks/_pro/grid-column-item/edit.js:151
-#: src/blocks/_pro/outer/edit.js:545
+#: src/blocks/_pro/outer/edit.js:836
 msgid "Padding (Left and Right)"
 msgstr "余白 (左右)"
 
@@ -1426,29 +1426,29 @@ msgid "Padding (Bottom)"
 msgstr "余白 (下)"
 
 #: src/blocks/_pro/grid-column-item/edit.js:196
-#: src/blocks/_pro/grid-column/edit.js:96 src/blocks/_pro/outer/edit.js:1093
-#: src/blocks/icon-outer/edit.js:183 src/blocks/icon/edit.js:174
+#: src/blocks/_pro/grid-column/edit.js:96 src/blocks/_pro/outer/edit.js:1384
+#: src/blocks/icon-outer/edit.js:183 src/blocks/icon/edit.js:176
 #: src/utils/unit-options.js:6
 msgid "px"
 msgstr "px"
 
 #: src/blocks/_pro/grid-column-item/edit.js:197
-#: src/blocks/_pro/grid-column/edit.js:100 src/blocks/_pro/outer/edit.js:1097
-#: src/blocks/icon-outer/edit.js:187 src/blocks/icon/edit.js:178
+#: src/blocks/_pro/grid-column/edit.js:100 src/blocks/_pro/outer/edit.js:1388
+#: src/blocks/icon-outer/edit.js:187 src/blocks/icon/edit.js:180
 #: src/utils/unit-options.js:10
 msgid "em"
 msgstr "em"
 
 #: src/blocks/_pro/grid-column-item/edit.js:198
-#: src/blocks/_pro/grid-column/edit.js:104 src/blocks/_pro/outer/edit.js:1101
-#: src/blocks/icon-outer/edit.js:191 src/blocks/icon/edit.js:182
+#: src/blocks/_pro/grid-column/edit.js:104 src/blocks/_pro/outer/edit.js:1392
+#: src/blocks/icon-outer/edit.js:191 src/blocks/icon/edit.js:184
 #: src/utils/unit-options.js:14
 msgid "rem"
 msgstr "rem"
 
 #: src/blocks/_pro/grid-column-item/edit.js:199
-#: src/blocks/_pro/grid-column/edit.js:108 src/blocks/_pro/outer/edit.js:1029
-#: src/blocks/icon-outer/edit.js:195 src/blocks/icon/edit.js:186
+#: src/blocks/_pro/grid-column/edit.js:108 src/blocks/_pro/outer/edit.js:1320
+#: src/blocks/icon-outer/edit.js:195 src/blocks/icon/edit.js:188
 #: src/utils/unit-options.js:18
 msgid "vw"
 msgstr "vw"
@@ -1630,7 +1630,7 @@ msgstr "アイコンカード設定"
 #: src/blocks/_pro/icon-card-item/edit.js:137
 #: src/blocks/_pro/step-item/edit.js:82 src/blocks/alert/edit.js:73
 #: src/blocks/border-box/edit.js:272 src/blocks/button/edit.js:760
-#: src/blocks/heading/edit.js:335 src/blocks/icon/edit.js:290
+#: src/blocks/heading/edit.js:335 src/blocks/icon/edit.js:300
 #: src/blocks/pr-content/edit.js:212 src/components/scroll-hint/index.js:103
 #: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:142
 #: src/extensions/common/custom-block-variation/create-variation/block-variation-form/index.js:167
@@ -1643,7 +1643,7 @@ msgid "Icon Background:"
 msgstr "アイコン背景:"
 
 #: src/blocks/_pro/icon-card-item/edit.js:153 src/blocks/button/edit.js:606
-#: src/blocks/icon-outer/edit.js:238 src/blocks/icon/edit.js:226
+#: src/blocks/icon-outer/edit.js:238 src/blocks/icon/edit.js:228
 #: src/blocks/pr-blocks/edit.js:285
 msgid "Solid color"
 msgstr "ベタ塗り"
@@ -1677,45 +1677,122 @@ msgstr "テキスト"
 #: src/blocks/_pro/outer/deprecated/save/1.89.0/save.js:252
 #: src/blocks/_pro/outer/deprecated/save/1.92.1/save.js:252
 #: src/blocks/_pro/outer/deprecated/save/1.93.0/save.js:258
-#: src/blocks/_pro/outer/save.js:253
+#: src/blocks/_pro/outer/deprecated/save/1.93.2/save.js:252
+#: src/blocks/_pro/outer/save.js:276
 msgid "Outer link"
 msgstr "Outerリンク"
 
-#: src/blocks/_pro/outer/edit.js:1035
+#: src/blocks/_pro/outer/edit.js:1054
+msgid "Lower Divider Level"
+msgstr "下部区切りレベル"
+
+#: src/blocks/_pro/outer/edit.js:1137
+msgid "Border Setting"
+msgstr "枠線の設定"
+
+#: src/blocks/_pro/outer/edit.js:1142
+msgid "Border will disappear when divider effect is applied."
+msgstr "枠線は区切りレベルを適用すると表示されなくなります。"
+
+#: src/blocks/_pro/outer/edit.js:1148
+msgid "Border type"
+msgstr "枠線の種類"
+
+#: src/blocks/_pro/outer/edit.js:1156 src/blocks/_pro/step-item/edit.js:147
+#: src/blocks/_pro/timeline-item/edit.js:113 src/blocks/balloon/edit.js:577
+#: src/blocks/button/edit.js:658 src/blocks/staff/edit.js:177
+msgid "None"
+msgstr "なし"
+
+#: src/blocks/_pro/outer/edit.js:1160 src/blocks/_pro/step-item/edit.js:118
+#: src/blocks/_pro/timeline-item/edit.js:88 src/blocks/pr-content/edit.js:145
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:448
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:448
+msgid "Solid"
+msgstr "直線"
+
+#: src/blocks/_pro/outer/edit.js:1164
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:456
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:456
+msgid "Dotted"
+msgstr "点線"
+
+#: src/blocks/_pro/outer/edit.js:1168
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:460
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:460
+msgid "Dashed"
+msgstr "Dashed"
+
+#: src/blocks/_pro/outer/edit.js:1172
+#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:464
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:464
+msgid "Double"
+msgstr "二重線"
+
+#: src/blocks/_pro/outer/edit.js:1176
+msgid "Groove"
+msgstr "Groove"
+
+#: src/blocks/_pro/outer/edit.js:1180
+msgid "Ridge"
+msgstr "Ridge"
+
+#: src/blocks/_pro/outer/edit.js:1184
+msgid "Inset"
+msgstr "Inset"
+
+#: src/blocks/_pro/outer/edit.js:1188
+msgid "Outset"
+msgstr "Outset"
+
+#: src/blocks/_pro/outer/edit.js:1200
+msgid "Border width"
+msgstr "枠線の幅"
+
+#: src/blocks/_pro/outer/edit.js:1212 src/blocks/icon-outer/edit.js:212
+#: src/blocks/icon/edit.js:205
+msgid "Border radius"
+msgstr "枠線のRの大きさ"
+
+#: src/blocks/_pro/outer/edit.js:1228
+msgid "Container Inner Side Space Setting"
+msgstr "コンテナ内側のスペース設定"
+
+#: src/blocks/_pro/outer/edit.js:1326
 msgid "Min Height Setting"
 msgstr "最小高さ設定"
 
-#: src/blocks/_pro/outer/edit.js:1087
+#: src/blocks/_pro/outer/edit.js:1378
 #: src/components/advanced-unit-control/index.js:13
 msgid "Unit Type"
 msgstr "単位"
 
-#: src/blocks/_pro/outer/edit.js:1105 src/utils/unit-options.js:22
+#: src/blocks/_pro/outer/edit.js:1396 src/utils/unit-options.js:22
 msgid "vh"
 msgstr "vh"
 
-#: src/blocks/_pro/outer/edit.js:1109 src/utils/unit-options.js:26
+#: src/blocks/_pro/outer/edit.js:1400 src/utils/unit-options.js:26
 msgid "svh"
 msgstr "svh"
 
-#: src/blocks/_pro/outer/edit.js:1113 src/utils/unit-options.js:30
+#: src/blocks/_pro/outer/edit.js:1404 src/utils/unit-options.js:30
 msgid "lvh"
 msgstr "vh"
 
-#: src/blocks/_pro/outer/edit.js:1117 src/utils/unit-options.js:34
+#: src/blocks/_pro/outer/edit.js:1408 src/utils/unit-options.js:34
 msgid "dvh"
 msgstr "dvh"
 
-#: src/blocks/_pro/outer/edit.js:433 src/blocks/slider-item/edit.js:175
+#: src/blocks/_pro/outer/edit.js:633 src/blocks/slider-item/edit.js:185
 msgid "Background Setting"
 msgstr "背景設定"
 
-#: src/blocks/_pro/outer/edit.js:438 src/blocks/pr-content/edit.js:67
-#: src/blocks/slider-item/edit.js:179
+#: src/blocks/_pro/outer/edit.js:638 src/blocks/pr-content/edit.js:67
+#: src/blocks/slider-item/edit.js:189
 msgid "Color Setting"
 msgstr "色設定"
 
-#: src/blocks/_pro/outer/edit.js:439 src/blocks/slider-item/edit.js:181
+#: src/blocks/_pro/outer/edit.js:639 src/blocks/slider-item/edit.js:191
 msgid ""
 "Color will overcome background image. If you want to display image, set "
 "opacity 0."
@@ -1723,72 +1800,96 @@ msgstr ""
 "色を指定すると画像よりも優先されます。画像を表示したい場合は、不透明度を0に設"
 "定します。"
 
-#: src/blocks/_pro/outer/edit.js:451 src/blocks/slider-item/edit.js:193
+#: src/blocks/_pro/outer/edit.js:651 src/blocks/slider-item/edit.js:203
 msgid "Opacity Setting"
 msgstr "透過設定"
 
-#: src/blocks/_pro/outer/edit.js:465 src/blocks/slider-item/edit.js:228
+#: src/blocks/_pro/outer/edit.js:665 src/blocks/slider-item/edit.js:238
 msgid "Background Image PC"
 msgstr "背景画像 ( PC )"
 
-#: src/blocks/_pro/outer/edit.js:481 src/blocks/slider-item/edit.js:244
+#: src/blocks/_pro/outer/edit.js:681 src/blocks/slider-item/edit.js:254
 msgid "Background Image Tablet"
 msgstr "背景画像 ( タブレット )"
 
-#: src/blocks/_pro/outer/edit.js:491 src/blocks/slider-item/edit.js:254
+#: src/blocks/_pro/outer/edit.js:691 src/blocks/slider-item/edit.js:264
 msgid "Background Image Mobile"
 msgstr "背景画像 ( モバイル )"
 
-#: src/blocks/_pro/outer/edit.js:501
+#: src/blocks/_pro/outer/edit.js:711
+msgid "(PC)"
+msgstr "（PC）"
+
+#: src/blocks/_pro/outer/edit.js:740
+msgid "(Tablet)"
+msgstr "（タブレット）"
+
+#: src/blocks/_pro/outer/edit.js:759
+msgid "Enable Focal Point"
+msgstr "フォーカルポイントを有効にする"
+
+#: src/blocks/_pro/outer/edit.js:766
+msgid "Focal Point Picker"
+msgstr "フォーカルピッカー"
+
+#: src/blocks/_pro/outer/edit.js:769
+msgid "(Mobile)"
+msgstr "（モバイル）"
+
+#: src/blocks/_pro/outer/edit.js:788
 msgid "Background image Position"
 msgstr "背景画像の位置"
 
-#: src/blocks/_pro/outer/edit.js:509
+#: src/blocks/_pro/outer/edit.js:796
 msgid "Repeat"
 msgstr "リピート"
 
-#: src/blocks/_pro/outer/edit.js:513
+#: src/blocks/_pro/outer/edit.js:800
 msgid "Cover"
 msgstr "カバー"
 
-#: src/blocks/_pro/outer/edit.js:517
+#: src/blocks/_pro/outer/edit.js:804
 msgid "Cover fixed (Not fixed on iPhone)"
 msgstr "カバー 固定（iPhoneでは固定されません）"
 
-#: src/blocks/_pro/outer/edit.js:524
+#: src/blocks/_pro/outer/edit.js:809
+msgid "This will not work on iPhone."
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:815
 msgid "Parallax (Non-guaranteed)"
 msgstr "パララックス（非保証）"
 
-#: src/blocks/_pro/outer/edit.js:539 src/blocks/pr-content/edit.js:244
-#: src/blocks/slider-item/edit.js:157
+#: src/blocks/_pro/outer/edit.js:830 src/blocks/pr-content/edit.js:244
+#: src/blocks/slider-item/edit.js:167
 msgid "Layout Setting"
 msgstr "レイアウト設定"
 
-#: src/blocks/_pro/outer/edit.js:552
+#: src/blocks/_pro/outer/edit.js:843
 msgid "Fit to the Content area"
 msgstr "コンテンツエリアに合わせる"
 
-#: src/blocks/_pro/outer/edit.js:559
+#: src/blocks/_pro/outer/edit.js:850
 msgid "Add padding to the Outer area"
 msgstr "アウターエリア内に余白を追加する"
 
-#: src/blocks/_pro/outer/edit.js:566
+#: src/blocks/_pro/outer/edit.js:857
 msgid "Remove padding from the Outer area"
 msgstr "アウターエリア内の余白を無くす"
 
-#: src/blocks/_pro/outer/edit.js:580
+#: src/blocks/_pro/outer/edit.js:871
 msgid "Padding (Top and Bottom)"
 msgstr "余白 (上下)"
 
-#: src/blocks/_pro/outer/edit.js:588
+#: src/blocks/_pro/outer/edit.js:879
 msgid "Use default padding"
 msgstr "標準の余白を使用"
 
-#: src/blocks/_pro/outer/edit.js:595
+#: src/blocks/_pro/outer/edit.js:886
 msgid "Do not use default padding"
 msgstr "標準の余白を使用しない"
 
-#: src/blocks/_pro/outer/edit.js:609
+#: src/blocks/_pro/outer/edit.js:900
 msgid ""
 "* If you select \"Do not use\" that, please set yourself it such as a spacer "
 "block."
@@ -1796,131 +1897,55 @@ msgstr ""
 "*「使用しない」を選択した場合はスペーサーブロックなどで任意に設定してくださ"
 "い。"
 
-#: src/blocks/_pro/outer/edit.js:617
+#: src/blocks/_pro/outer/edit.js:908
 msgid "Divider Setting"
 msgstr "区切りの設定"
 
-#: src/blocks/_pro/outer/edit.js:622 src/blocks/balloon/edit.js:446
+#: src/blocks/_pro/outer/edit.js:913 src/blocks/balloon/edit.js:446
 msgid "Type"
 msgstr "タイプ"
 
-#: src/blocks/_pro/outer/edit.js:630
+#: src/blocks/_pro/outer/edit.js:921
 msgid "Tilt"
 msgstr "傾斜"
 
-#: src/blocks/_pro/outer/edit.js:634
+#: src/blocks/_pro/outer/edit.js:925
 msgid "Curve"
 msgstr "カーブ"
 
-#: src/blocks/_pro/outer/edit.js:638
+#: src/blocks/_pro/outer/edit.js:929
 msgid "Wave"
 msgstr "波状"
 
-#: src/blocks/_pro/outer/edit.js:642
+#: src/blocks/_pro/outer/edit.js:933
 #: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:346
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:346
 msgid "Triangle"
 msgstr "三角"
 
-#: src/blocks/_pro/outer/edit.js:646
+#: src/blocks/_pro/outer/edit.js:937
 msgid "Large triangle"
 msgstr "大きい三角"
 
-#: src/blocks/_pro/outer/edit.js:653
+#: src/blocks/_pro/outer/edit.js:944
 msgid "Serrated"
 msgstr "ギザギザ"
 
-#: src/blocks/_pro/outer/edit.js:657
+#: src/blocks/_pro/outer/edit.js:948
 msgid "Book"
 msgstr "本"
 
-#: src/blocks/_pro/outer/edit.js:661
+#: src/blocks/_pro/outer/edit.js:952
 msgid "Pyramid"
 msgstr "ピラミッド"
 
-#: src/blocks/_pro/outer/edit.js:668
+#: src/blocks/_pro/outer/edit.js:959
 msgid "Settings for each device"
 msgstr "デバイス毎の設定"
 
-#: src/blocks/_pro/outer/edit.js:681
+#: src/blocks/_pro/outer/edit.js:972
 msgid "Upper Divider Level"
 msgstr "上部区切りレベル"
-
-#: src/blocks/_pro/outer/edit.js:763
-msgid "Lower Divider Level"
-msgstr "下部区切りレベル"
-
-#: src/blocks/_pro/outer/edit.js:846
-msgid "Border Setting"
-msgstr "枠線の設定"
-
-#: src/blocks/_pro/outer/edit.js:851
-msgid "Border will disappear when divider effect is applied."
-msgstr "枠線は区切りレベルを適用すると表示されなくなります。"
-
-#: src/blocks/_pro/outer/edit.js:857
-msgid "Border type"
-msgstr "枠線の種類"
-
-#: src/blocks/_pro/outer/edit.js:865 src/blocks/_pro/step-item/edit.js:147
-#: src/blocks/_pro/timeline-item/edit.js:113 src/blocks/balloon/edit.js:577
-#: src/blocks/button/edit.js:658 src/blocks/staff/edit.js:177
-msgid "None"
-msgstr "なし"
-
-#: src/blocks/_pro/outer/edit.js:869 src/blocks/_pro/step-item/edit.js:118
-#: src/blocks/_pro/timeline-item/edit.js:88 src/blocks/pr-content/edit.js:145
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:448
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:448
-msgid "Solid"
-msgstr "直線"
-
-#: src/blocks/_pro/outer/edit.js:873
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:456
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:456
-msgid "Dotted"
-msgstr "点線"
-
-#: src/blocks/_pro/outer/edit.js:877
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:460
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:460
-msgid "Dashed"
-msgstr "Dashed"
-
-#: src/blocks/_pro/outer/edit.js:881
-#: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:464
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:464
-msgid "Double"
-msgstr "二重線"
-
-#: src/blocks/_pro/outer/edit.js:885
-msgid "Groove"
-msgstr "Groove"
-
-#: src/blocks/_pro/outer/edit.js:889
-msgid "Ridge"
-msgstr "Ridge"
-
-#: src/blocks/_pro/outer/edit.js:893
-msgid "Inset"
-msgstr "Inset"
-
-#: src/blocks/_pro/outer/edit.js:897
-msgid "Outset"
-msgstr "Outset"
-
-#: src/blocks/_pro/outer/edit.js:909
-msgid "Border width"
-msgstr "枠線の幅"
-
-#: src/blocks/_pro/outer/edit.js:921 src/blocks/icon-outer/edit.js:212
-#: src/blocks/icon/edit.js:203
-msgid "Border radius"
-msgstr "枠線のRの大きさ"
-
-#: src/blocks/_pro/outer/edit.js:937
-msgid "Container Inner Side Space Setting"
-msgstr "コンテナ内側のスペース設定"
 
 #: src/blocks/_pro/post-category-badge/edit.js:108
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:135
@@ -2146,7 +2171,7 @@ msgid "New Badge"
 msgstr "新着バッジ"
 
 #: src/blocks/_pro/select-post-list-item/edit.js:34
-#: src/blocks/page-content/edit.js:38
+#: src/blocks/page-content/edit.js:59
 msgid "Because no post is selected, The block Will not render"
 msgstr "ページが選択されていないためこのブロックはレンダリングされません"
 
@@ -2162,7 +2187,7 @@ msgstr "例) 午前 6:00"
 #: src/blocks/_pro/step-item/edit.js:108
 #: src/blocks/_pro/table-of-contents-new/edit.js:114
 #: src/blocks/_pro/timeline-item/edit.js:74 src/blocks/icon-outer/edit.js:229
-#: src/blocks/icon/edit.js:218
+#: src/blocks/icon/edit.js:220
 msgid "Style"
 msgstr "スタイル"
 
@@ -2724,7 +2749,7 @@ msgid "After text"
 msgstr "文字の後"
 
 #: src/blocks/button/edit.js:796 src/blocks/icon-outer/edit.js:89
-#: src/blocks/icon/edit.js:84
+#: src/blocks/icon/edit.js:86
 msgid "Size"
 msgstr "サイズ"
 
@@ -2836,7 +2861,7 @@ msgstr "このブロック全体の下部の余白 (rem)"
 msgid "Heading Settings"
 msgstr "見出し設定"
 
-#: src/blocks/heading/edit.js:357 src/blocks/icon/edit.js:327
+#: src/blocks/heading/edit.js:357 src/blocks/icon/edit.js:337
 msgid "Icon Color"
 msgstr "アイコンの色"
 
@@ -2858,15 +2883,15 @@ msgstr "見出しレベルの変更"
 msgid "Heading %d"
 msgstr "見出し %d"
 
-#: src/blocks/icon-outer/edit.js:208 src/blocks/icon/edit.js:199
+#: src/blocks/icon-outer/edit.js:208 src/blocks/icon/edit.js:201
 msgid "Reset"
 msgstr "リセット"
 
-#: src/blocks/icon-outer/edit.js:246 src/blocks/icon/edit.js:237
+#: src/blocks/icon-outer/edit.js:246 src/blocks/icon/edit.js:239
 msgid "Icon & Frame"
 msgstr "アイコンと枠"
 
-#: src/blocks/icon-outer/edit.js:254 src/blocks/icon/edit.js:248
+#: src/blocks/icon-outer/edit.js:254 src/blocks/icon/edit.js:250
 msgid "Icon only"
 msgstr "アイコンのみ"
 
@@ -2874,33 +2899,37 @@ msgstr "アイコンのみ"
 msgid "Icon Common Setting"
 msgstr "アイコン共通設定"
 
-#: src/blocks/icon/edit.js:287
+#: src/blocks/icon/component.js:160
+msgid "Icon link"
+msgstr "アイコンリンク"
+
+#: src/blocks/icon/edit.js:297
 msgid "Icon Setting"
 msgstr "アイコン設定"
 
-#: src/blocks/icon/edit.js:301 src/blocks/pr-content/edit.js:122
+#: src/blocks/icon/edit.js:311 src/blocks/pr-content/edit.js:122
 msgid "Link URL"
 msgstr "リンクURL"
 
-#: src/blocks/page-content/edit.js:10 src/blocks/staff/edit.js:257
+#: src/blocks/page-content/edit.js:10
+msgid "Private"
+msgstr "非公開"
+
+#: src/blocks/page-content/edit.js:13
+msgid "Password Protected"
+msgstr "パスワード保護"
+
+#: src/blocks/page-content/edit.js:21 src/blocks/staff/edit.js:257
 msgid "Unspecified"
 msgstr "指定しない"
 
-#: src/blocks/page-content/edit.js:59
+#: src/blocks/page-content/edit.js:80
 msgid "Page Setting"
 msgstr "ページ設定"
 
-#: src/blocks/page-content/edit.js:64
+#: src/blocks/page-content/edit.js:85
 msgid "Select Page"
 msgstr "ページを選択"
-
-#: src/blocks/page-content/edit.js:74
-msgid ""
-"This block can display private content. Please note that this content will "
-"be public even if you set the original page to private."
-msgstr ""
-"このブロックは非公開のコンテンツも表示する事ができます。元のページを非公開に"
-"設定してもこのコンテンツは公開されますのでご注意ください。"
 
 #: src/blocks/pr-blocks/edit.js:102
 msgid "PR Block1 Setting"
@@ -2996,23 +3025,24 @@ msgid "Image Border Color"
 msgstr "画像の線の色"
 
 #: src/blocks/slider-item/deprecated/1.76.0/save.js:83
-#: src/blocks/slider-item/save.js:90
+#: src/blocks/slider-item/deprecated/1.94.0/save.js:90
+#: src/blocks/slider-item/save.js:91
 msgid "Slider item link"
 msgstr "スライダーアイテムリンク"
 
-#: src/blocks/slider-item/edit.js:161
+#: src/blocks/slider-item/edit.js:171
 msgid "Vertical align"
 msgstr "縦揃え"
 
-#: src/blocks/slider-item/edit.js:207
+#: src/blocks/slider-item/edit.js:217
 msgid "Background Image Size"
 msgstr "背景画像サイズ"
 
-#: src/blocks/slider-item/edit.js:214
+#: src/blocks/slider-item/edit.js:224
 msgid "cover"
 msgstr "カバー"
 
-#: src/blocks/slider-item/edit.js:218
+#: src/blocks/slider-item/edit.js:228
 msgid "repeat"
 msgstr "リピート"
 
@@ -3187,15 +3217,15 @@ msgstr "プロフィールタイトル"
 msgid "Profile text"
 msgstr "プロフィールテキスト"
 
-#: src/blocks/visual-embed/edit.js:143
+#: src/blocks/visual-embed/edit.js:149
 msgid "Embed Code Settings"
 msgstr "埋め込みコードの設定"
 
-#: src/blocks/visual-embed/edit.js:145
+#: src/blocks/visual-embed/edit.js:151
 msgid "Embed Code"
 msgstr "埋め込みコード"
 
-#: src/blocks/visual-embed/edit.js:166
+#: src/blocks/visual-embed/edit.js:172
 msgid ""
 "Please paste the iframe embed code directly. Only iframe tags with allowed "
 "URLs (Google Maps, Google Calendar, Google Forms, YouTube、OpenStreetMap, "
@@ -3205,27 +3235,25 @@ msgstr ""
 "プ、Google カレンダー、Google フォーム、YouTube、OpenStreetMap、Vimeo) の "
 "iframe タグのみが許可されます。"
 
-#: src/blocks/visual-embed/edit.js:177
-#, fuzzy
-#| msgid "Please enter a title."
+#: src/blocks/visual-embed/edit.js:183
 msgid "Please enter an iframe embed code."
-msgstr "見出しを入力してください。"
+msgstr "iframeの埋め込みコードを入力してください。"
 
-#: src/blocks/visual-embed/edit.js:189
+#: src/blocks/visual-embed/edit.js:195
 msgid "The provided URL is not allowed. Please use an approved embed source."
 msgstr ""
 "指定された URL は許可されていません。承認された埋め込みソースを使用してくださ"
 "い。"
 
-#: src/blocks/visual-embed/edit.js:196
+#: src/blocks/visual-embed/edit.js:202
 msgid "Iframe Width"
 msgstr "iframeの幅"
 
-#: src/blocks/visual-embed/edit.js:219
+#: src/blocks/visual-embed/edit.js:225
 msgid "Iframe Height"
 msgstr "iframeの高さ"
 
-#: src/blocks/visual-embed/edit.js:243
+#: src/blocks/visual-embed/edit.js:249
 msgid ""
 "Note: These settings are only applicable to iframe tags. Other embed codes "
 "will not respond to these adjustments."
@@ -3233,7 +3261,7 @@ msgstr ""
 "注意: これらの設定はiframeタグにのみ適用されます。他の埋め込みコードには対応"
 "していません。"
 
-#: src/blocks/visual-embed/edit.js:83
+#: src/blocks/visual-embed/edit.js:89
 msgid "Only allowed URLs can be embedded."
 msgstr "許可された URL のみを埋め込むことができます。"
 
@@ -3770,12 +3798,8 @@ msgstr "下 XL"
 msgid "No wrap"
 msgstr "No wrap"
 
-#: src/extensions/common/responsive-br/index.js:29
-msgid "Responsive BR"
-msgstr "画面サイズ毎の改行 "
-
 #: src/extensions/common/responsive-br/index.js:33
-msgid "Responsive BR "
+msgid "Responsive BR"
 msgstr "画面サイズ毎の改行 "
 
 #: src/extensions/core/columns/style.js:176
@@ -3810,27 +3834,39 @@ msgstr "グループリンク"
 msgid "List Icon Color"
 msgstr "リストアイコンの色"
 
-#: src/extensions/core/table/style.js:226
+#: src/extensions/core/table/style.js:294
 msgid "Table Horizontal Scroll"
 msgstr "テーブルの水平方向スクロール"
 
-#: src/extensions/core/table/style.js:234
+#: src/extensions/core/table/style.js:307
 msgid "Scrollable"
 msgstr "スクロール"
 
-#: src/extensions/core/table/style.js:241
+#: src/extensions/core/table/style.js:314
 msgid "Horizontal Scroll Breakpoint"
 msgstr "水平スクロールのブレイクポイント"
 
-#: src/extensions/core/table/style.js:248
+#: src/extensions/core/table/style.js:355
+msgid "Table Cell Vertical"
+msgstr "テーブルのセルの縦方向"
+
+#: src/extensions/core/table/style.js:365
+msgid "Cell Vertical"
+msgstr "セルを縦方向にする"
+
+#: src/extensions/core/table/style.js:372
+msgid "Cell Vertical Breakpoint"
+msgstr "セルを縦方向にするブレイクポイント"
+
+#: src/extensions/core/table/style.js:379
 msgid "Mobile size"
 msgstr "モバイル"
 
-#: src/extensions/core/table/style.js:255
+#: src/extensions/core/table/style.js:386
 msgid "Tablet size"
 msgstr "タブレット"
 
-#: src/extensions/core/table/style.js:262
+#: src/extensions/core/table/style.js:393
 msgid "PC size"
 msgstr "PC"
 
@@ -4247,9 +4283,33 @@ msgstr ""
 msgid "This message only display on the edit screen."
 msgstr "このメッセージは編集画面でのみ表示されます。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/page-content/index.php:123
-#: inc/vk-blocks/build/blocks/page-content/index.php:123
-#: src/blocks/page-content/index.php:123
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/page-content/class-vk-blocks-check-using-vk-page-content-block.php:131
+msgid ""
+"The following posts contain Page Content Blocks referencing non-public pages:"
+msgstr ""
+"以下のページは非公開のページの参照している固定ページ本文ブロックを使用してい"
+"ます"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/page-content/index.php:55
+msgid ""
+"From VK Blocks version 1.95.0 onwards, non-public page's content can no "
+"longer be displayed.\n"
+"If you want to display non-public content in multiple locations, please "
+"create it as a Synced pattern(Reusable block) and place it in the desired "
+"locations instead of using Page Content block."
+msgstr ""
+"VK Blocks 1.95.0 以降は非公開あるいはパスワード保護のコンテンツは表示されなく"
+"なりました。\n"
+"もし非表示のコンテンツを複数の場所に表示したい場合は同期パターン（再利用ブ"
+"ロック）を作成してこのブロックのかわりに配置してください。"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/page-content/index.php:78
+msgid "Post not found or not public."
+msgstr "投稿がないか非公開です"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/page-content/index.php:151
+#: inc/vk-blocks/build/blocks/page-content/index.php:151
+#: src/blocks/page-content/index.php:151
 msgid "Edit this area"
 msgstr "このエリアを編集"
 
@@ -4491,26 +4551,26 @@ msgstr ""
 "VK-Blocksと競合するため、VK All in One Expansion Unitの Block機能を停止しまし"
 "た。"
 
-#: dist/vk-blocks-pro/vk-blocks.php:316 vk-blocks.php:316
+#: dist/vk-blocks-pro/vk-blocks.php:317 vk-blocks.php:316
 msgid "License Key has no registered."
 msgstr "ライセンスキーが登録されていません。"
 
-#: dist/vk-blocks-pro/vk-blocks.php:321 vk-blocks.php:321
+#: dist/vk-blocks-pro/vk-blocks.php:322 vk-blocks.php:321
 msgid "The VK Blocks Pro license is invalid."
 msgstr "VK Blocks Pro のライセンスが無効です。"
 
-#: dist/vk-blocks-pro/vk-blocks.php:345 vk-blocks.php:345
+#: dist/vk-blocks-pro/vk-blocks.php:346 vk-blocks.php:345
 msgid ""
 "Please enter a valid license key for any of the following products on the "
 "settings screen."
 msgstr ""
 "設定画面で以下のいずれかの製品の有効なライセンスキーを入力してください。"
 
-#: dist/vk-blocks-pro/vk-blocks.php:355 vk-blocks.php:355
+#: dist/vk-blocks-pro/vk-blocks.php:356 vk-blocks.php:355
 msgid "Enter the license key"
 msgstr "ライセンスキーを入力"
 
-#: dist/vk-blocks-pro/vk-blocks.php:358 vk-blocks.php:358
+#: dist/vk-blocks-pro/vk-blocks.php:359 vk-blocks.php:358
 msgid ""
 "If this display does not disappear even after entering a valid license key, "
 "re-acquire the update."
@@ -4518,9 +4578,36 @@ msgstr ""
 "有効なライセンスキーを入力してもこの表示が消えない場合は更新の再取得をしてく"
 "ださい。"
 
-#: dist/vk-blocks-pro/vk-blocks.php:359 vk-blocks.php:359
+#: dist/vk-blocks-pro/vk-blocks.php:360 vk-blocks.php:359
 msgid "Re-acquisition of updates"
 msgstr "更新の再取得"
+
+#: inc/vk-blocks/build/blocks/page-content/class-vk-blocks-check-using-vk-page-content-block.php:131
+#: src/blocks/page-content/class-vk-blocks-check-using-vk-page-content-block.php:131
+msgid ""
+"The following posts contain Page Content Blocks referencing non-public pages"
+msgstr ""
+"以下のページは非公開のページの参照している固定ページ本文ブロックを使用してい"
+"ます"
+
+#: inc/vk-blocks/build/blocks/page-content/index.php:55
+#: src/blocks/page-content/index.php:55
+msgid ""
+"The Page Content block from VK Blocks version 1.95.0 onwards, non-public or "
+"password protected page's content can no longer be displayed.\n"
+"If you want to display non-public content in multiple locations, please "
+"create it as a Synced pattern(Reusable block) and place it in the desired "
+"locations instead of using Page Content block."
+msgstr ""
+"固定ページ本文ブロックは VK Blocks 1.95.0 以降は非公開あるいはパスワード保護"
+"のコンテンツは表示しないようになりました。\n"
+"もし非表示のコンテンツを複数の場所に表示したい場合は同期パターン（再利用ブ"
+"ロック）を作成してこのブロックのかわりに配置してください。"
+
+#: inc/vk-blocks/build/blocks/page-content/index.php:78
+#: src/blocks/page-content/index.php:78
+msgid "Post not found, not public, or password protected"
+msgstr "投稿が存在しないか非公開かパスワード保護されています"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/alert/block.json
 #: inc/vk-blocks/build/blocks/alert/block.json src/blocks/alert/block.json
@@ -5389,6 +5476,25 @@ msgid ""
 "Displays a simple schedule and other information that is useful for "
 "explaining the order."
 msgstr "順番を説明する時に便利でシンプルなスケジュールなどを表示します。"
+
+#~ msgid "Focal Point Picker (Mobile)"
+#~ msgstr "焦点ピッカー（モバイル）"
+
+#~ msgid "Enable Tablet Focal Point"
+#~ msgstr "タブレットでのフォーカルポイントを有効にする"
+
+#~ msgid "Enable Mobile Focal Point"
+#~ msgstr "モバイルでのフォーカルポイントを有効にする"
+
+#~ msgid ""
+#~ "This block can display private content. Please note that this content "
+#~ "will be public even if you set the original page to private."
+#~ msgstr ""
+#~ "このブロックは非公開のコンテンツも表示する事ができます。元のページを非公開"
+#~ "に設定してもこのコンテンツは公開されますのでご注意ください。"
+
+#~ msgid "Responsive BR "
+#~ msgstr "画面サイズ毎の改行 "
 
 #~ msgid "Please paste the iframe embed code directly. (e.g., Google Maps)"
 #~ msgstr ""

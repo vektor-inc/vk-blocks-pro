@@ -60,7 +60,7 @@ jobs:
         npx wp-scripts test-playwright --trace on --project=chromium common-margin.spec.ts
         npx wp-scripts test-playwright --trace on --project=chromium heading-transform.spec.ts
 
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       if: always()
       with:
         name: playwright-report

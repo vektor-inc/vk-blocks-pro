@@ -698,20 +698,21 @@ export default function OuterEdit(props) {
 						/>
 					</BaseControl>
 					<ToggleControl
-						label={__('Enable Focal Point', 'vk-blocks-pro') + __('(PC)', 'vk-blocks-pro') }
+						label={
+							__('Enable Focal Point', 'vk-blocks-pro') +
+							__('(PC)', 'vk-blocks-pro')
+						}
 						checked={enableFocalPointPC}
 						onChange={() => handleToggleChange('PC')}
 						disabled={!bgImage}
 					/>
 					{enableFocalPointPC && (
 						<BaseControl
-							label={__(
-								'Focal Point Picker',
-								'vk-blocks-pro'
-							) + ' ' + __(
-								'(PC)',
-								'vk-blocks-pro'
-							)}
+							label={
+								__('Focal Point Picker', 'vk-blocks-pro') +
+								' ' +
+								__('(PC)', 'vk-blocks-pro')
+							}
 							id="vk_outer-focalPointPickerPC"
 						>
 							<FocalPointPicker
@@ -727,20 +728,21 @@ export default function OuterEdit(props) {
 						</BaseControl>
 					)}
 					<ToggleControl
-						label={__('Enable Focal Point', 'vk-blocks-pro') + __('(Tablet)', 'vk-blocks-pro') }
+						label={
+							__('Enable Focal Point', 'vk-blocks-pro') +
+							__('(Tablet)', 'vk-blocks-pro')
+						}
 						checked={enableFocalPointTablet}
 						onChange={() => handleToggleChange('Tablet')}
 						disabled={!bgImageTablet && !bgImage}
 					/>
 					{enableFocalPointTablet && (
 						<BaseControl
-							label={__(
-								'Focal Point Picker',
-								'vk-blocks-pro'
-							) + ' ' + __(
-								'(Tablet)',
-								'vk-blocks-pro'
-							)}
+							label={
+								__('Focal Point Picker', 'vk-blocks-pro') +
+								' ' +
+								__('(Tablet)', 'vk-blocks-pro')
+							}
 							id="vk_outer-focalPointPickerTablet"
 						>
 							<FocalPointPicker
@@ -756,20 +758,21 @@ export default function OuterEdit(props) {
 						</BaseControl>
 					)}
 					<ToggleControl
-						label={__('Enable Focal Point', 'vk-blocks-pro') + __('(Mobile)', 'vk-blocks-pro') }
+						label={
+							__('Enable Focal Point', 'vk-blocks-pro') +
+							__('(Mobile)', 'vk-blocks-pro')
+						}
 						checked={enableFocalPointMobile}
 						onChange={() => handleToggleChange('Mobile')}
 						disabled={!bgImage && !bgImageTablet && !bgImageMobile}
 					/>
 					{enableFocalPointMobile && (
 						<BaseControl
-							label={__(
-								'Focal Point Picker',
-								'vk-blocks-pro'
-							) + ' ' + __(
-								'(Mobile)',
-								'vk-blocks-pro'
-							)}
+							label={
+								__('Focal Point Picker', 'vk-blocks-pro') +
+								' ' +
+								__('(Mobile)', 'vk-blocks-pro')
+							}
 							id="vk_outer-focalPointPickerMobile"
 						>
 							<FocalPointPicker

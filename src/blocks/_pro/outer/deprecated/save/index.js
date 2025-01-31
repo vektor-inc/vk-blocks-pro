@@ -11,6 +11,7 @@ import save1_76_0 from './1.76.0/save';
 import save1_89_0 from './1.89.0/save';
 import save1_92_1 from './1.92.1/save';
 import save1_93_0 from './1.93.0/save';
+import save1_93_2 from './1.93.2/save';
 
 const blockAttributes = {
 	bgColor: {
@@ -71,7 +72,7 @@ const blockAttributes = {
 	},
 	borderColor: {
 		type: 'string',
-		default: '#000',
+		default: '#fff',
 	},
 	borderRadius: {
 		type: 'number',
@@ -132,32 +133,52 @@ const blockAttributes4 = {
 	...blockAttributes3,
 	levelSettingPerDevice: {
 		type: 'boolean',
+		default: false
 	},
 	upper_level_mobile: {
 		type: 'number',
+		default: 0
 	},
 	upper_level_tablet: {
 		type: 'number',
+		default: 0
 	},
 	upper_level_pc: {
 		type: 'number',
+		default: 0
 	},
 	lower_level_mobile: {
 		type: 'number',
+		default: 0
 	},
 	lower_level_tablet: {
 		type: 'number',
+		default: 0
 	},
 	lower_level_pc: {
 		type: 'number',
+		default: 0
 	},
 };
 
 // 1.64.0 から attributes を変更
 const blockAttributes5 = {
 	...blockAttributes4,
-	minHeight: {
-		type: 'object',
+	minHeightValuePC: {
+		type: 'number',
+		default: 0
+	},
+	minHeightValueTablet: {
+		type: 'number',
+		default: 0
+	},
+	minHeightValueMobile: {
+		type: 'number',
+		default: 0
+	},
+	minHeightUnit: {
+		type: 'string',
+		default: 'px'
 	},
 };
 
@@ -185,6 +206,37 @@ const blockAttributes7 = {
 		default: '',
 	},
 };
+
+/*
+// save1_89_0 から attributes を変更
+const blockAttributes8 = {
+	...blockAttributes7,
+	bgFocalPointPC: {
+		type: 'object',
+		default: { 'x': 0.5, 'y': 0.5 }
+	},
+	bgFocalPointTablet: {
+		type: 'object',
+		default: { 'x': 0.5, 'y': 0.5 }
+	},
+	bgFocalPointMobile: {
+		type: 'object',
+		default: { 'x': 0.5, 'y': 0.5 }
+	},
+	enableFocalPointPC: {
+	  type: 'boolean',
+	  default: false
+	},
+	enableFocalPointTablet: {
+	  type: 'boolean',
+	  default: false
+	},
+	enableFocalPointMobile: {
+	  type: 'boolean',
+	  default: false
+	},
+};
+*/
 
 const deprecated = [
 	{

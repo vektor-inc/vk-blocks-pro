@@ -62,9 +62,9 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 								break;
 							} else {
 								$target_post = get_post( $target_post_id );
-								if ( 'unpublic' === $post_status && 'publish' !== $target_post->post_status ) {
+								if ( 'unpublic' === $post_status && ( 'publish' !== $target_post->post_status || ! empty( $target_post->post_password ) ) ) {
 									$include_post = true;
-									break; // 一つでも参照先が非公開のものがあればリストに含める
+									break; // 一つでも参照先が非公開またはパスワード保護されているものがあればリストに含める
 								}
 							}
 						}

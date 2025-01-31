@@ -4,19 +4,43 @@ import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import ServerSideRender from '@wordpress/server-side-render';
 import { usePosts } from '@vkblocks/utils/hooks';
 
-const getPagesSelect = (pages) => {
+const getPageLabel = (page) => {
+	let label = page.title.rendered;
+	if (page.status === 'private') {
+		label += ` (${__('Hidden', 'vk-blocks-pro')})`;
+	}
+	if (page.password) {
+		label += ` (${__('Password Protected', 'vk-blocks-pro')})`;
+	}
+	return label;
+};
+
+const getPagesSelect = (pages, currentTargetPost) => {
 	const defaultSelect = [
 		{
 			label: __('Unspecified', 'vk-blocks-pro'),
 			value: -1,
 		},
 	];
-	const pagesSelect = pages.map((page) => {
-		return {
-			label: page.title.rendered,
-			value: page.id,
-		};
-	});
+
+	// 現在選択されているページを特定する
+	const currentPage = pages.find((page) => page.id === currentTargetPost);
+
+	// 選択リストから非公開・パスワード保護のページを除外する（現在選択中のページは除く）
+	const availablePages = pages.filter(
+		(page) =>
+			(page.status === 'publish' && !page.password) ||
+			page.id === currentTargetPost
+	);
+
+	// 利用可能なページから選択オプションを作成する
+	const pagesSelect = availablePages.map((page) => ({
+		label:
+			page.status === 'private' || page.password
+				? getPageLabel(page)
+				: page.title.rendered,
+		value: page.id,
+	}));
 
 	return defaultSelect.concat(pagesSelect);
 };
@@ -29,7 +53,7 @@ export default function PageContentEdit({ attributes, setAttributes }) {
 		{ per_page: -1, status: 'private,publish' }
 	);
 
-	const pagesSelect = getPagesSelect(pages);
+	const pagesSelect = getPagesSelect(pages, TargetPost);
 
 	let editContent;
 	if (TargetPost === -1) {

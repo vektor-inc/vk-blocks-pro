@@ -698,7 +698,7 @@ export default function OuterEdit(props) {
 						/>
 					</BaseControl>
 					<ToggleControl
-						label={__('Enable PC Focal Point', 'vk-blocks-pro')}
+						label={__('Enable Focal Point', 'vk-blocks-pro') + __('(PC)', 'vk-blocks-pro') }
 						checked={enableFocalPointPC}
 						onChange={() => handleToggleChange('PC')}
 						disabled={!bgImage}
@@ -706,7 +706,10 @@ export default function OuterEdit(props) {
 					{enableFocalPointPC && (
 						<BaseControl
 							label={__(
-								'Focal Point Picker (PC)',
+								'Focal Point Picker',
+								'vk-blocks-pro'
+							) + ' ' + __(
+								'(PC)',
 								'vk-blocks-pro'
 							)}
 							id="vk_outer-focalPointPickerPC"
@@ -724,7 +727,7 @@ export default function OuterEdit(props) {
 						</BaseControl>
 					)}
 					<ToggleControl
-						label={__('Enable Tablet Focal Point', 'vk-blocks-pro')}
+						label={__('Enable Focal Point', 'vk-blocks-pro') + __('(Tablet)', 'vk-blocks-pro') }
 						checked={enableFocalPointTablet}
 						onChange={() => handleToggleChange('Tablet')}
 						disabled={!bgImageTablet && !bgImage}
@@ -732,7 +735,10 @@ export default function OuterEdit(props) {
 					{enableFocalPointTablet && (
 						<BaseControl
 							label={__(
-								'Focal Point Picker (Tablet)',
+								'Focal Point Picker',
+								'vk-blocks-pro'
+							) + ' ' + __(
+								'(Tablet)',
 								'vk-blocks-pro'
 							)}
 							id="vk_outer-focalPointPickerTablet"
@@ -750,7 +756,7 @@ export default function OuterEdit(props) {
 						</BaseControl>
 					)}
 					<ToggleControl
-						label={__('Enable Mobile Focal Point', 'vk-blocks-pro')}
+						label={__('Enable Focal Point', 'vk-blocks-pro') + __('(Mobile)', 'vk-blocks-pro') }
 						checked={enableFocalPointMobile}
 						onChange={() => handleToggleChange('Mobile')}
 						disabled={!bgImage && !bgImageTablet && !bgImageMobile}
@@ -758,7 +764,10 @@ export default function OuterEdit(props) {
 					{enableFocalPointMobile && (
 						<BaseControl
 							label={__(
-								'Focal Point Picker (Mobile)',
+								'Focal Point Picker',
+								'vk-blocks-pro'
+							) + ' ' + __(
+								'(Mobile)',
 								'vk-blocks-pro'
 							)}
 							id="vk_outer-focalPointPickerMobile"

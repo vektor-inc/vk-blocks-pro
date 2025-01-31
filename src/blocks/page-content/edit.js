@@ -7,7 +7,7 @@ import { usePosts } from '@vkblocks/utils/hooks';
 const getPageLabel = (page) => {
 	let label = page.title.rendered;
 	if (page.status === 'private') {
-		label += ` (${__('Hidden', 'vk-blocks-pro')})`;
+		label += ` (${__('Private', 'vk-blocks-pro')})`;
 	}
 	if (page.password) {
 		label += ` (${__('Password Protected', 'vk-blocks-pro')})`;

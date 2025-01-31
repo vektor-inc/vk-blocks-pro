@@ -128,7 +128,7 @@ class VK_Blocks_Check_Using_VK_Page_Content_Block {
 
 		if ( $list ) {
 			$alert  = '<div class="notice notice-warning is-dismissible">';
-			$alert .= '<p>' . esc_html__( 'The following posts contain Page Content Blocks referencing non-public pages:', 'vk-blocks-pro' ) . '</p>';
+			$alert .= '<p>' . esc_html__( 'The following posts contain Page Content Blocks referencing non-public pages', 'vk-blocks-pro' ) . '</p>';
 			$alert .= wp_kses_post( $list );
 			$alert .= '<p>' . wp_kses_post( vk_blocks_get_page_content_private_alert() ) . '</p>';
 			$alert .= '</div>';

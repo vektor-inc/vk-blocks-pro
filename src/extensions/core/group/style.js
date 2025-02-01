@@ -222,6 +222,51 @@ const save = (props) => {
 	);
 };
 
+
+const deprecated = [
+	{
+		attributes: {
+			color: { type: 'string', default: '' },
+			linkUrl: { type: 'string', default: '' },
+			linkTarget: { type: 'string', default: '' },
+			tagName: { type: 'string', default: 'div' },
+		},
+		save: (props) => {
+			const { attributes } = props;
+			const { linkUrl, linkTarget, className = '', tagName: CustomTag = 'div' } = attributes;
+
+			const blockProps = useBlockProps.save({
+				className: linkUrl ? `${className} has-link` : className,
+			});
+
+			const relAttribute = linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
+
+			return (
+				<CustomTag {...blockProps}>
+					<InnerBlocks.Content />
+					{linkUrl && (
+						<a
+							href={linkUrl}
+							target={linkTarget}
+							rel={relAttribute}
+							aria-label={__('Group link', 'vk-blocks-pro')}
+							className="wp-block-group-vk-link"
+						></a>
+					)}
+				</CustomTag>
+			);
+		},
+	},
+];
+const migrate = (attributes) => {
+	return {
+		...attributes,
+		relAttribute: attributes.relAttribute || '',
+		linkDescription: attributes.linkDescription || '',
+	};
+};
+
+
 // Support for existing group blocks and version management
 import { assign } from 'lodash';
 
@@ -234,9 +279,13 @@ import { assign } from 'lodash';
  */
 const overrideBlockSettings = (settings, name) => {
 	if (name === 'core/group') {
+
 		const newSettings = assign({}, settings, {
 			save,
+			deprecated,
+			migrate,
 		});
+
 		// Support for existing group blocks by adding default values for new attributes
 		if (!newSettings.attributes.linkUrl) {
 			newSettings.attributes.linkUrl = {
@@ -272,6 +321,8 @@ const overrideBlockSettings = (settings, name) => {
 	}
 	return settings;
 };
+
+
 
 addFilter(
 	'blocks.registerBlockType',

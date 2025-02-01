@@ -222,7 +222,6 @@ const save = (props) => {
 	);
 };
 
-
 const deprecated = [
 	{
 		attributes: {
@@ -233,13 +232,19 @@ const deprecated = [
 		},
 		save: (props) => {
 			const { attributes } = props;
-			const { linkUrl, linkTarget, className = '', tagName: CustomTag = 'div' } = attributes;
+			const {
+				linkUrl,
+				linkTarget,
+				className = '',
+				tagName: CustomTag = 'div',
+			} = attributes;
 
 			const blockProps = useBlockProps.save({
 				className: linkUrl ? `${className} has-link` : className,
 			});
 
-			const relAttribute = linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
+			const relAttribute =
+				linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
 
 			return (
 				<CustomTag {...blockProps}>
@@ -266,7 +271,6 @@ const migrate = (attributes) => {
 	};
 };
 
-
 // Support for existing group blocks and version management
 import { assign } from 'lodash';
 
@@ -279,7 +283,6 @@ import { assign } from 'lodash';
  */
 const overrideBlockSettings = (settings, name) => {
 	if (name === 'core/group') {
-
 		const newSettings = assign({}, settings, {
 			save,
 			deprecated,
@@ -321,8 +324,6 @@ const overrideBlockSettings = (settings, name) => {
 	}
 	return settings;
 };
-
-
 
 addFilter(
 	'blocks.registerBlockType',

@@ -4213,7 +4213,7 @@ msgstr "このメッセージは編集画面でのみ表示されます。"
 msgid ""
 "The following posts contain Page Content Blocks referencing non-public pages"
 msgstr ""
-"以下のページは非公開のページの参照している固定ページ本文ブロックを使用してい"
+"以下のページは非公開のページを参照している固定ページ本文ブロックを使用してい"
 "ます"
 
 #: inc/vk-blocks/build/blocks/page-content/index.php:55
@@ -4232,7 +4232,7 @@ msgid ""
 "create it as a Synced pattern(Reusable block) and place it in the desired "
 "locations instead of using Page Content block."
 msgstr ""
-"もし非表示のコンテンツを複数の場所に表示したい場合は同期パターン（再利用ブ"
+"もし非公開のコンテンツを複数の場所に表示したい場合は同期パターン（再利用ブ"
 "ロック）を作成してこの固定ページ本文ブロックのかわりに配置してください。"
 
 #: inc/vk-blocks/build/blocks/page-content/index.php:75

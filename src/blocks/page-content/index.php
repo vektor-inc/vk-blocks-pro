@@ -52,11 +52,8 @@ add_filter( 'vk_page_content', 'capital_P_dangit', 11 );
  * @return string
  */
 function vk_blocks_get_page_content_private_alert() {
-	$alert = __(
-		"The Page Content block from VK Blocks version 1.95.0 onwards, non-public or password protected page's content can no longer be displayed.
-If you want to display non-public content in multiple locations, please create it as a Synced pattern(Reusable block) and place it in the desired locations instead of using Page Content block.",
-		'vk-blocks-pro'
-	);
+	$alert  = __( "The Page Content block from VK Blocks version 1.95.0 onwards, non-public or password protected page's content can no longer be displayed.", 'vk-blocks-pro' );
+	$alert .= __( 'If you want to display non-public content in multiple locations, please create it as a Synced pattern(Reusable block) and place it in the desired locations instead of using Page Content block.', 'vk-blocks-pro' );
 	return $alert;
 }
 

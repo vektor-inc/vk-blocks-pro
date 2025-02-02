@@ -109,11 +109,10 @@ e.g.
 == Changelog ==
 
 = 1.95.0 =
-[ Add function ][ Slider ] Added noreferrer, nofollow, and link description options to the link feature.
 [ Add function ][ Icon / Slider ] Added noreferrer, nofollow, and link description options to the link feature.
-[ Editor Design Bug Fix ] [ Grid Column (Pro) ] Fixed an issue where the 'is-vertical' layout of grid column items was not displayed vertically.
 [ Add function ][ Core Table ] Add table cell vertical setting.
 [ Specification Change ][ Page Content ] Modify the specification so that the display is shown only when the referenced page is public.
+[ Editor Design Bug Fix ] [ Grid Column (Pro) ] Fixed an issue where the 'is-vertical' layout of grid column items was not displayed vertically.
 
 = 1.94.2 =
 [ Bug fix / Specification Change ][ Visual Embed ] Strengthened validation for XSS protection and restricted the range of allowed URLs.

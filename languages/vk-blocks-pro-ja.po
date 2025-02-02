@@ -4233,7 +4233,7 @@ msgid ""
 "locations instead of using Page Content block."
 msgstr ""
 "もし非公開のコンテンツを複数の場所に表示したい場合は同期パターン（再利用ブ"
-"ロック）を作成してこの固定ページ本文ブロックのかわりに配置してください。"
+"ロック）を作成して固定ページ本文ブロックのかわりに配置してください。"
 
 #: inc/vk-blocks/build/blocks/page-content/index.php:75
 #: src/blocks/page-content/index.php:75

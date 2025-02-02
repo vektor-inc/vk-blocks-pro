@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.94.2.1\n"
+"Project-Id-Version: VK Blocks Pro 1.95.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-01-31T12:19:08+00:00\n"
+"POT-Creation-Date: 2025-02-02T04:18:52+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -562,7 +562,7 @@ msgstr ""
 
 #: src/admin/margin.js:51
 #: src/blocks/_pro/accordion/edit.js:139
-#: src/blocks/_pro/outer/edit.js:1362
+#: src/blocks/_pro/outer/edit.js:1365
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:174
 #: src/blocks/button/edit.js:537
 #: src/blocks/slider/edit-multiItem.js:198
@@ -573,7 +573,7 @@ msgstr ""
 
 #: src/admin/margin.js:55
 #: src/blocks/_pro/accordion/edit.js:122
-#: src/blocks/_pro/outer/edit.js:1346
+#: src/blocks/_pro/outer/edit.js:1349
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:201
 #: src/blocks/button/edit.js:472
 #: src/blocks/slider/edit-multiItem.js:225
@@ -584,7 +584,7 @@ msgstr ""
 
 #: src/admin/margin.js:59
 #: src/blocks/_pro/accordion/edit.js:105
-#: src/blocks/_pro/outer/edit.js:1330
+#: src/blocks/_pro/outer/edit.js:1333
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:230
 #: src/blocks/button/edit.js:407
 #: src/blocks/slider/edit-multiItem.js:254
@@ -875,7 +875,7 @@ msgid "Height"
 msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:178
-#: src/blocks/_pro/outer/edit.js:833
+#: src/blocks/_pro/outer/edit.js:836
 #: src/blocks/balloon/edit.js:515
 msgid "Width"
 msgstr ""
@@ -1408,7 +1408,7 @@ msgid "Padding (Top)"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:151
-#: src/blocks/_pro/outer/edit.js:836
+#: src/blocks/_pro/outer/edit.js:839
 msgid "Padding (Left and Right)"
 msgstr ""
 
@@ -1418,7 +1418,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:196
 #: src/blocks/_pro/grid-column/edit.js:96
-#: src/blocks/_pro/outer/edit.js:1384
+#: src/blocks/_pro/outer/edit.js:1387
 #: src/blocks/icon-outer/edit.js:183
 #: src/blocks/icon/edit.js:176
 #: src/utils/unit-options.js:6
@@ -1427,7 +1427,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:197
 #: src/blocks/_pro/grid-column/edit.js:100
-#: src/blocks/_pro/outer/edit.js:1388
+#: src/blocks/_pro/outer/edit.js:1391
 #: src/blocks/icon-outer/edit.js:187
 #: src/blocks/icon/edit.js:180
 #: src/utils/unit-options.js:10
@@ -1436,7 +1436,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:198
 #: src/blocks/_pro/grid-column/edit.js:104
-#: src/blocks/_pro/outer/edit.js:1392
+#: src/blocks/_pro/outer/edit.js:1395
 #: src/blocks/icon-outer/edit.js:191
 #: src/blocks/icon/edit.js:184
 #: src/utils/unit-options.js:14
@@ -1445,7 +1445,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:199
 #: src/blocks/_pro/grid-column/edit.js:108
-#: src/blocks/_pro/outer/edit.js:1320
+#: src/blocks/_pro/outer/edit.js:1323
 #: src/blocks/icon-outer/edit.js:195
 #: src/blocks/icon/edit.js:188
 #: src/utils/unit-options.js:18
@@ -1686,23 +1686,23 @@ msgstr ""
 msgid "Outer link"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1054
+#: src/blocks/_pro/outer/edit.js:1057
 msgid "Lower Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1137
+#: src/blocks/_pro/outer/edit.js:1140
 msgid "Border Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1142
+#: src/blocks/_pro/outer/edit.js:1145
 msgid "Border will disappear when divider effect is applied."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1148
+#: src/blocks/_pro/outer/edit.js:1151
 msgid "Border type"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1156
+#: src/blocks/_pro/outer/edit.js:1159
 #: src/blocks/_pro/step-item/edit.js:147
 #: src/blocks/_pro/timeline-item/edit.js:113
 #: src/blocks/balloon/edit.js:577
@@ -1711,7 +1711,7 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1160
+#: src/blocks/_pro/outer/edit.js:1163
 #: src/blocks/_pro/step-item/edit.js:118
 #: src/blocks/_pro/timeline-item/edit.js:88
 #: src/blocks/pr-content/edit.js:145
@@ -1720,79 +1720,79 @@ msgstr ""
 msgid "Solid"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1164
+#: src/blocks/_pro/outer/edit.js:1167
 #: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:456
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:456
 msgid "Dotted"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1168
+#: src/blocks/_pro/outer/edit.js:1171
 #: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:460
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:460
 msgid "Dashed"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1172
+#: src/blocks/_pro/outer/edit.js:1175
 #: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:464
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:464
 msgid "Double"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1176
+#: src/blocks/_pro/outer/edit.js:1179
 msgid "Groove"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1180
+#: src/blocks/_pro/outer/edit.js:1183
 msgid "Ridge"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1184
+#: src/blocks/_pro/outer/edit.js:1187
 msgid "Inset"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1188
+#: src/blocks/_pro/outer/edit.js:1191
 msgid "Outset"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1200
+#: src/blocks/_pro/outer/edit.js:1203
 msgid "Border width"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1212
+#: src/blocks/_pro/outer/edit.js:1215
 #: src/blocks/icon-outer/edit.js:212
 #: src/blocks/icon/edit.js:205
 msgid "Border radius"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1228
+#: src/blocks/_pro/outer/edit.js:1231
 msgid "Container Inner Side Space Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1326
+#: src/blocks/_pro/outer/edit.js:1329
 msgid "Min Height Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1378
+#: src/blocks/_pro/outer/edit.js:1381
 #: src/components/advanced-unit-control/index.js:13
 msgid "Unit Type"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1396
+#: src/blocks/_pro/outer/edit.js:1399
 #: src/utils/unit-options.js:22
 msgid "vh"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1400
+#: src/blocks/_pro/outer/edit.js:1403
 #: src/utils/unit-options.js:26
 msgid "svh"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1404
+#: src/blocks/_pro/outer/edit.js:1407
 #: src/utils/unit-options.js:30
 msgid "lvh"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1408
+#: src/blocks/_pro/outer/edit.js:1411
 #: src/utils/unit-options.js:34
 msgid "dvh"
 msgstr ""
@@ -1833,132 +1833,132 @@ msgstr ""
 msgid "Background Image Mobile"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:711
+#: src/blocks/_pro/outer/edit.js:714
 msgid "(PC)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:740
+#: src/blocks/_pro/outer/edit.js:744
 msgid "(Tablet)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:759
+#: src/blocks/_pro/outer/edit.js:762
 msgid "Enable Focal Point"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:766
+#: src/blocks/_pro/outer/edit.js:772
 msgid "Focal Point Picker"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:769
+#: src/blocks/_pro/outer/edit.js:774
 msgid "(Mobile)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:788
+#: src/blocks/_pro/outer/edit.js:791
 msgid "Background image Position"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:796
+#: src/blocks/_pro/outer/edit.js:799
 msgid "Repeat"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:800
+#: src/blocks/_pro/outer/edit.js:803
 msgid "Cover"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:804
+#: src/blocks/_pro/outer/edit.js:807
 msgid "Cover fixed (Not fixed on iPhone)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:809
+#: src/blocks/_pro/outer/edit.js:812
 msgid "This will not work on iPhone."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:815
+#: src/blocks/_pro/outer/edit.js:818
 msgid "Parallax (Non-guaranteed)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:830
+#: src/blocks/_pro/outer/edit.js:833
 #: src/blocks/pr-content/edit.js:244
 #: src/blocks/slider-item/edit.js:167
 msgid "Layout Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:843
+#: src/blocks/_pro/outer/edit.js:846
 msgid "Fit to the Content area"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:850
+#: src/blocks/_pro/outer/edit.js:853
 msgid "Add padding to the Outer area"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:857
+#: src/blocks/_pro/outer/edit.js:860
 msgid "Remove padding from the Outer area"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:871
+#: src/blocks/_pro/outer/edit.js:874
 msgid "Padding (Top and Bottom)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:879
+#: src/blocks/_pro/outer/edit.js:882
 msgid "Use default padding"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:886
+#: src/blocks/_pro/outer/edit.js:889
 msgid "Do not use default padding"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:900
+#: src/blocks/_pro/outer/edit.js:903
 msgid "* If you select \"Do not use\" that, please set yourself it such as a spacer block."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:908
+#: src/blocks/_pro/outer/edit.js:911
 msgid "Divider Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:913
+#: src/blocks/_pro/outer/edit.js:916
 #: src/blocks/balloon/edit.js:446
 msgid "Type"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:921
+#: src/blocks/_pro/outer/edit.js:924
 msgid "Tilt"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:925
+#: src/blocks/_pro/outer/edit.js:928
 msgid "Curve"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:929
+#: src/blocks/_pro/outer/edit.js:932
 msgid "Wave"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:933
+#: src/blocks/_pro/outer/edit.js:936
 #: dist/vk-blocks-pro/inc/vk-blocks/class-vk-blocks-global-settings.php:346
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:346
 msgid "Triangle"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:937
+#: src/blocks/_pro/outer/edit.js:940
 msgid "Large triangle"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:944
+#: src/blocks/_pro/outer/edit.js:947
 msgid "Serrated"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:948
+#: src/blocks/_pro/outer/edit.js:951
 msgid "Book"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:952
+#: src/blocks/_pro/outer/edit.js:955
 msgid "Pyramid"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:959
+#: src/blocks/_pro/outer/edit.js:962
 msgid "Settings for each device"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:972
+#: src/blocks/_pro/outer/edit.js:975
 msgid "Upper Divider Level"
 msgstr ""
 

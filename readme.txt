@@ -108,6 +108,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ] [ Icon ] Fixed an unwanted bottom margin appearing.
 [ Specification change ] Fixed the zoom-out toggle not always displaying in the editor toolbar (updated blocks.json API version from 2 to 3).
 
 = 1.95.0 =
@@ -121,7 +122,6 @@ e.g.
 
 = 1.94.1 =
 [ Specification change ][ Visual Embed ] Add margin:0; to iframe tag
-
 [ Add function ][ Outer (Pro) ] Added the ability to set a focal point for background images.
 
 = 1.94.0 =

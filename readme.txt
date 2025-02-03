@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.4
 Tested up to: 6.7
-Stable tag: 1.94.1.0
+Stable tag: 1.95.0.4
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -108,10 +108,13 @@ e.g.
 
 == Changelog ==
 
+[ Specification change ] Fixed the zoom-out toggle not always displaying in the editor toolbar (updated blocks.json API version from 2 to 3).
+
+= 1.95.0 =
 [ Add function ][ Icon / Slider ] Added noreferrer, nofollow, and link description options to the link feature.
 [ Add function ][ Core Table ] Add table cell vertical setting.
+[ Specification Change ][ Page Content ] Modify the specification so that the display is shown only when the referenced page is public.
 [ Editor Design Bug Fix ] [ Grid Column (Pro) ] Fixed an issue where the 'is-vertical' layout of grid column items was not displayed vertically.
-[ Specification change ] Fixed the zoom-out toggle not always displaying in the editor toolbar (updated blocks.json API version from 2 to 3).
 
 = 1.94.2 =
 [ Bug fix / Specification Change ][ Visual Embed ] Strengthened validation for XSS protection and restricted the range of allowed URLs.

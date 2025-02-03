@@ -16,7 +16,7 @@ import {
 } from '@wordpress/block-editor';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import LinkToolbar from '@vkblocks/components/link-toolbar';
-
+import deprecated from './deprecated/index';
 /**
  * Check if the block type is valid for customization.
  *
@@ -222,54 +222,6 @@ const save = (props) => {
 	);
 };
 
-const deprecated = [
-	{
-		attributes: {
-			color: { type: 'string', default: '' },
-			linkUrl: { type: 'string', default: '' },
-			linkTarget: { type: 'string', default: '' },
-			tagName: { type: 'string', default: 'div' },
-		},
-		save: (props) => {
-			const { attributes } = props;
-			const {
-				linkUrl,
-				linkTarget,
-				className = '',
-				tagName: CustomTag = 'div',
-			} = attributes;
-
-			const blockProps = useBlockProps.save({
-				className: linkUrl ? `${className} has-link` : className,
-			});
-
-			const relAttribute =
-				linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
-
-			return (
-				<CustomTag {...blockProps}>
-					<InnerBlocks.Content />
-					{linkUrl && (
-						<a
-							href={linkUrl}
-							target={linkTarget}
-							rel={relAttribute}
-							aria-label={__('Group link', 'vk-blocks-pro')}
-							className="wp-block-group-vk-link"
-						></a>
-					)}
-				</CustomTag>
-			);
-		},
-	},
-];
-const migrate = (attributes) => {
-	return {
-		...attributes,
-		relAttribute: attributes.relAttribute || '',
-		linkDescription: attributes.linkDescription || '',
-	};
-};
 
 // Support for existing group blocks and version management
 import { assign } from 'lodash';
@@ -281,12 +233,24 @@ import { assign } from 'lodash';
  * @param {string} name     The block name.
  * @return {Object} The modified block settings.
  */
-const overrideBlockSettings = (settings, name) => {
-	if (name === 'core/group') {
+const overrideBlockSettings = (settings, name, currentDeprecated) => {
+	if (name === 'core/group' && currentDeprecated === null) {
+		const newDeprecated = [...settings.deprecated];
+		// Sort deprecated items in descending order of targetVersion to prevent index shifting
+		const sortedDeprecated = [...deprecated].sort((a, b) =>
+			(b.targetVersion || newDeprecated.length) - (a.targetVersion || newDeprecated.length)
+		);
+
+		sortedDeprecated.forEach((deprecatedItem) => {
+			const targetIndex = deprecatedItem.targetVersion || newDeprecated.length;
+			// Create a copy of the deprecatedItem without targetVersion
+			const itemToInsert = { ...deprecatedItem };
+			delete itemToInsert.targetVersion;
+			newDeprecated.splice(targetIndex, 0, itemToInsert);
+		});
 		const newSettings = assign({}, settings, {
 			save,
-			deprecated,
-			migrate,
+			deprecated: newDeprecated,
 		});
 
 		// Support for existing group blocks by adding default values for new attributes

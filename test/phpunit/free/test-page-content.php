@@ -7,6 +7,7 @@
 
 /**
  * Page Content block test case.
+ * * Test_Page_Content で同じ内容を行っているので、1.95.0 リリース以降 PageContentBlockTest は削除
  */
 class PageContentBlockTest extends VK_UnitTestCase {
 
@@ -60,4 +61,79 @@ class PageContentBlockTest extends VK_UnitTestCase {
 
 		$this->assertEquals( $expected, $actual );
 	}
-};
+}
+
+class Test_Page_Content extends WP_UnitTestCase {
+
+	public function setUp(): void {
+		parent::setUp();
+
+		// テスト用の固定ページを作成
+		$this->public_page_id = $this->factory->post->create( array(
+			'post_type'   => 'page',
+			'post_status' => 'publish',
+			'post_title'  => 'Public Page',
+			'post_content' => 'This is a public page.',
+		) );
+
+		$this->private_page_id = $this->factory->post->create( array(
+			'post_type'   => 'page',
+			'post_status' => 'private',
+			'post_title'  => 'Private Page',
+			'post_content' => 'This is a private page.',
+		) );
+
+		$this->draft_page_id = $this->factory->post->create( array(
+			'post_type'   => 'page',
+			'post_status' => 'draft',
+			'post_title'  => 'Draft Page',
+			'post_content' => 'This is a draft page.',
+		) );
+	}
+
+	public function tearDown(): void {
+		// テストで作成した投稿を削除
+		wp_delete_post( $this->public_page_id, true );
+		wp_delete_post( $this->private_page_id, true );
+		wp_delete_post( $this->draft_page_id, true );
+
+		parent::tearDown();
+	}
+
+	public function test_vk_blocks_page_content_render_callback() {
+		$tests = array(
+			array(
+				'test_name' => '通常の公開固定ページの場合',
+				'attributes' => [
+					'name'       => 'vk-blocks/page-content',
+					'className'  => '',
+					'TargetPost' => $this->public_page_id,
+				],
+				'expected' => '<div class="vk_pageContent vk_pageContent-id-' . $this->public_page_id . ' wp-block-vk-blocks-page-content">This is a public page.</div><a href="' . esc_url( get_edit_post_link( $this->public_page_id ) ) . '" class="vk_pageContent_editBtn btn btn-outline-primary btn-sm veu_adminEdit" target="_blank">' . __( 'Edit this area', 'vk-blocks-pro' ) . '</a>',
+			),
+			array(
+				'test_name' => '非公開の固定ページの場合',
+				'attributes' => [
+					'name'       => 'vk-blocks/page-content',
+					'className'  => '',
+					'TargetPost' => $this->private_page_id,
+				],
+				'expected' => '',
+			),
+			array(
+				'test_name' => '下書きの固定ページの場合',
+				'attributes' => [
+					'name'       => 'vk-blocks/page-content',
+					'className'  => '',
+					'TargetPost' => $this->draft_page_id,
+				],
+				'expected' => '',
+			),
+		);
+
+		foreach ( $tests as $test ) {
+			$result = vk_blocks_page_content_render_callback( $test['attributes'] );
+			$this->assertEquals( $test['expected'], $result, $test['test_name'] );
+		}
+	}
+}

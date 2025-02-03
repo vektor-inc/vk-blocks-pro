@@ -108,6 +108,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification change ] Fixed the zoom-out toggle not always displaying in the editor toolbar (updated blocks.json API version from 2 to 3).
+
 = 1.95.0 =
 [ Add function ][ Icon / Slider ] Added noreferrer, nofollow, and link description options to the link feature.
 [ Add function ][ Core Table ] Add table cell vertical setting.

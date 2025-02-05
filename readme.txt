@@ -108,6 +108,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Animation (Pro) / Fixed Display (Pro) / Outer (Pro) / Slider ] Added support for layout.allowJustification: false to allow full/wide align
 [ Bug fix ] [ Icon ] Fixed an unwanted bottom margin appearing.
 [ Specification change ] Fixed the zoom-out toggle not always displaying in the editor toolbar (updated blocks.json API version from 2 to 3).
 

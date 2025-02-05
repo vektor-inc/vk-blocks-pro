@@ -248,8 +248,15 @@ const deprecated = [
 		save: save1_93_0,
 	},
 	{
-		attributes: blockAttributes7,
+		attributes: blockAttributes6,
 		save: save1_92_1,
+		migrate: (attributes) => {
+			return {
+				...attributes,
+				relAttribute: attributes.relAttribute ?? '',
+				linkDescription: attributes.linkDescription ?? '',
+			};
+		},
 	},
 	{
 		attributes: blockAttributes6,

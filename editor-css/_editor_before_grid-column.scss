@@ -12,13 +12,13 @@
 
 	//inner-blocksの中のinner-blocksのcss打ち消し
 	.block-editor-inner-blocks .block-editor-block-list__layout{
-		flex-direction:unset;
-		flex-wrap: unset;
 		&.wp-block-social-links, //inner-blocksの中のinner-blocksがソーシャルアイコンブロックだった場合
 		&.wp-block-group { //inner-blocksの中のinner-blocksがグループブロックだった場合
 			display: flex;
-			flex-direction: row;
 			flex-wrap: wrap;
+		}
+		&.wp-block-group:where(:not(.is-vertical)){ //垂直レイアウトの場合は除外したいため追加
+			flex-direction: row;
 		}
 	}
 

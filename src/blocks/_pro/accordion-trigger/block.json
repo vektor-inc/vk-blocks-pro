@@ -1,5 +1,5 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "vk-blocks/accordion-trigger",
 	"title": "Accordion Trigger",
 	"description": "This is the title area where you can freely add blocks.",

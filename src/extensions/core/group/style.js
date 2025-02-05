@@ -230,7 +230,7 @@ import { assign } from 'lodash';
  *
  * @param {Object} settings          The block settings.
  * @param {string} name              The block name.
- * @param          currentDeprecated
+ * @param {Object} currentDeprecated
  * @return {Object} The modified block settings.
  */
 const overrideBlockSettings = (settings, name, currentDeprecated) => {

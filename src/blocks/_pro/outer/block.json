@@ -192,6 +192,9 @@
 		"html": false,
 		"className": true,
 		"anchor": true,
+		"layout": {
+			"allowJustification": false
+		},
 		"color": {
 			"text": true,
 			"background": false

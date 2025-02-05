@@ -108,7 +108,8 @@ e.g.
 
 == Changelog ==
 
-[ Bug fix ] [ Icon ] Fixed an unwanted bottom margin appearing.
+[ Add function ][ Animation (Pro) / Fixed Display (Pro) / Outer (Pro) ] Added support for layout.allowJustification: false, allowing full-width/wide alignment in block themes where wrapped blocks previously did not appear as full-width or wide in the editor.
+[ Bug fix ][ Icon ] Fixed an unwanted bottom margin appearing.
 [ Specification change ] Fixed the zoom-out toggle not always displaying in the editor toolbar (updated blocks.json API version from 2 to 3).
 
 = 1.95.0 =

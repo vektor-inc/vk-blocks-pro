@@ -33,6 +33,9 @@
 	"textdomain": "vk-blocks-pro",
 	"supports": {
 		"html": false,
-		"className": true
+		"className": true,
+		"layout": {
+			"allowJustification": false
+		}
 	}
 }

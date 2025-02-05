@@ -36,6 +36,42 @@
 	}
 }
 
+// 縦積み
+@mixin cell-vertical-table {
+
+	table {
+	
+		:is(th, td) {
+			width: 100%;
+			display: block;
+			border-top-color: transparent;
+			box-sizing: border-box;
+	
+			/* 最後のセルには border-bottom: none を適用 */
+			&:last-of-type:not(:last-child) {
+				border-bottom: none
+			}
+		}
+	}
+	
+	/* 最初の行を除外するためのスタイル */
+	&:not(.is-style-stripes) tr:first-of-type :is(th, td):first-of-type {
+		border-top: 1px solid;
+	}
+
+	&.is-style-vk-table {     
+		&-border-top-bottom,
+		&-border,
+		&-border-stripes {
+			// theme.json のあるファイルでテーブルの線の色指定がない場合のみ適用
+			table:not(.has-border-color) {
+				tr:first-of-type :is(th, td):first-of-type {
+					border-top: 1px solid var(--vk-color-border-hr);
+				}
+			}
+		}
+	}
+}
 
 /*      フロントエンド
 /*-------------------------------------------*/
@@ -105,6 +141,25 @@
 			@include scrollable-table;
 		}
 	}
+
+	&.is-style-vk-table-cell-vertical {
+
+		&[data-cell-vertical-breakpoint="table-cell-vertical-mobile"] {
+			@media (max-width: 575.98px) {
+				@include cell-vertical-table;
+			}
+		}
+
+		&[data-cell-vertical-breakpoint="table-cell-vertical-tablet"] {
+			@media (max-width: 991.98px) {
+				@include cell-vertical-table;
+			}
+		}
+
+		&[data-cell-vertical-breakpoint="table-cell-vertical-pc"] {
+			@include cell-vertical-table;
+		}
+	}
 }
 
 /*      編集画面
@@ -116,8 +171,51 @@
 				border-color: var(--vk-color-border-hr);
 			}
 		}
+
+
 		&.is-style-vk-table-scrollable {
-			@include scrollable-table-editor;
+
+			&[data-scroll-breakpoint="table-scrollable-mobile"] {
+				@media (max-width: 575.98px) {
+					@include scrollable-table-editor;
+				}
+			}
+	
+			&[data-scroll-breakpoint="table-scrollable-tablet"] {
+				@media (max-width: 991.98px) {
+					@include scrollable-table-editor;
+				}
+			}
+	
+			&[data-scroll-breakpoint="table-scrollable-pc"] {
+				@include scrollable-table-editor;
+			}
+		}
+	
+		&.is-style-vk-table-cell-vertical {
+
+			/* 最初の行を除外するためのスタイル */
+			&:not(.is-style-stripes) table:not(.has-border-color) {
+				tr:first-of-type :is(th, td):first-of-type {
+					border-top: 1px solid var(--vk-color-border-hr);
+				}
+			}
+	
+			&[data-cell-vertical-breakpoint="table-cell-vertical-mobile"] {
+				@media (max-width: 575.98px) {
+					@include cell-vertical-table;
+				}
+			}
+	
+			&[data-cell-vertical-breakpoint="table-cell-vertical-tablet"] {
+				@media (max-width: 991.98px) {
+					@include cell-vertical-table;
+				}
+			}
+	
+			&[data-cell-vertical-breakpoint="table-cell-vertical-pc"] {
+				@include cell-vertical-table;
+			}
 		}
 	}
 }

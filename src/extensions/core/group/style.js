@@ -222,27 +222,30 @@ const save = (props) => {
 	);
 };
 
-
 // Support for existing group blocks and version management
 import { assign } from 'lodash';
 
 /**
  * Override block settings to include custom save function and attributes.
  *
- * @param {Object} settings The block settings.
- * @param {string} name     The block name.
+ * @param {Object} settings          The block settings.
+ * @param {string} name              The block name.
+ * @param          currentDeprecated
  * @return {Object} The modified block settings.
  */
 const overrideBlockSettings = (settings, name, currentDeprecated) => {
 	if (name === 'core/group' && currentDeprecated === null) {
 		const newDeprecated = [...settings.deprecated];
 		// Sort deprecated items in descending order of targetVersion to prevent index shifting
-		const sortedDeprecated = [...deprecated].sort((a, b) =>
-			(b.targetVersion || newDeprecated.length) - (a.targetVersion || newDeprecated.length)
+		const sortedDeprecated = [...deprecated].sort(
+			(a, b) =>
+				(b.targetVersion || newDeprecated.length) -
+				(a.targetVersion || newDeprecated.length)
 		);
 
 		sortedDeprecated.forEach((deprecatedItem) => {
-			const targetIndex = deprecatedItem.targetVersion || newDeprecated.length;
+			const targetIndex =
+				deprecatedItem.targetVersion || newDeprecated.length;
 			// Create a copy of the deprecatedItem without targetVersion
 			const itemToInsert = { ...deprecatedItem };
 			delete itemToInsert.targetVersion;

@@ -391,7 +391,7 @@ export const FontAwesome = (props) => {
 					'vk-blocks-pro'
 				)}
 				<br />
-				{__('Ex) ', 'vk-blocks-pro')}
+				{__('Ex)', 'vk-blocks-pro')}
 				{'<i class="fa-solid fa-circle-right"></i>'}
 			</p>
 			{canUserEdit && (

@@ -138,7 +138,7 @@ export default function CardItemEdit(props) {
 					value={excerpt_text} //eslint-disable-line camelcase
 					onChange={(value) => setAttributes({ excerpt_text: value })}
 					placeholder={__(
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 						'vk-blocks-pro'
 					)}
 				/>

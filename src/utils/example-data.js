@@ -1,7 +1,7 @@
 import { __ } from '@wordpress/i18n';
 export const title = __('Lorem ipsum dolor', 'vk-blocks-pro');
 export const content = __(
-	'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+	'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 	'vk-blocks-pro'
 );
 export const iconName = __('Lorem ipsum', 'vk-blocks-pro');

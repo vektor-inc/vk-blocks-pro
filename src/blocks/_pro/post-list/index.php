@@ -255,10 +255,23 @@ function vk_blocks_post_list_set_data() {
 }
 add_action( 'enqueue_block_editor_assets', 'vk_blocks_post_list_set_data' );
 
+
 /**
- * Enqueue editor styles
+ * Enqueue vk-components.css only once in the editor iframe.
+ *
+ * This function ensures that vk-components.css is only enqueued once,
+ * even if multiple blocks request it.
+ *
+ * @package vk-blocks
  */
-function vk_blocks_enqueue_editor_iframe_post_list() {
+function vk_blocks_register_block_post_list_editor_styles() {
+	static $loaded = false; // 既に実行済みならスキップ
+
+	if ( $loaded ) {
+		return;
+	}
+	$loaded = true;
+
 	// `vk-blocks-pro` のルートディレクトリを取得
 	$plugin_root_path = WP_PLUGIN_DIR . '/vk-blocks-pro';
 	$plugin_root_url  = WP_PLUGIN_URL . '/vk-blocks-pro';
@@ -267,7 +280,7 @@ function vk_blocks_enqueue_editor_iframe_post_list() {
 	$css_path = $plugin_root_path . '/vendor/vektor-inc/vk-component/src/assets/css/vk-components.css';
 	$css_url  = $plugin_root_url . '/vendor/vektor-inc/vk-component/src/assets/css/vk-components.css';
 
-	// すでに `#vk-components-editor-style` が `enqueue` されているかチェック
+	// `vk-components-editor-style` がすでに登録済みならスキップ
 	if ( is_admin() && ! wp_style_is( 'vk-components-editor-style', 'enqueued' ) && file_exists( $css_path ) ) {
 		wp_enqueue_style(
 			'vk-components-editor-style',
@@ -277,4 +290,4 @@ function vk_blocks_enqueue_editor_iframe_post_list() {
 		);
 	}
 }
-add_action( 'enqueue_block_assets', 'vk_blocks_enqueue_editor_iframe_post_list' );
+add_action( 'enqueue_block_editor_assets', 'vk_blocks_register_block_post_list_editor_styles' );

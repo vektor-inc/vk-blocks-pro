@@ -285,9 +285,9 @@ function vk_blocks_post_list_slider_set_data() {
 add_action( 'enqueue_block_editor_assets', 'vk_blocks_post_list_slider_set_data' );
 
 /**
- * Enqueue editor styles
+ * Register editor styles for the Post List Slider block
  */
-function vk_blocks_enqueue_editor_iframe_post_list_slider() {
+function vk_blocks_register_block_post_list_slider_editor_styles() {
 	// `vk-blocks-pro` のルートディレクトリを取得
 	$plugin_root_path = WP_PLUGIN_DIR . '/vk-blocks-pro';
 	$plugin_root_url  = WP_PLUGIN_URL . '/vk-blocks-pro';
@@ -306,4 +306,4 @@ function vk_blocks_enqueue_editor_iframe_post_list_slider() {
 		);
 	}
 }
-add_action( 'enqueue_block_assets', 'vk_blocks_enqueue_editor_iframe_post_list_slider' );
+add_action( 'enqueue_block_editor_assets', 'vk_blocks_register_block_post_list_slider_editor_styles' );

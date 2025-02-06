@@ -287,7 +287,7 @@ add_action( 'enqueue_block_editor_assets', 'vk_blocks_post_list_slider_set_data'
 /**
  * Enqueue vk-components.css only once in the editor iframe.
  *
- * This function ensures that vk-components.css is only enqueued once, 
+ * This function ensures that vk-components.css is only enqueued once,
  * even if multiple blocks request it.
  *
  * @package vk-blocks

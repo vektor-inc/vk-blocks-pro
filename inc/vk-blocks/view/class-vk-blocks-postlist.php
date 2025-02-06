@@ -113,9 +113,10 @@ class Vk_Blocks_PostList {
 
 			if ( in_array( $term->taxonomy, $post_type_taxonomies, true ) ) {
 				$new_array = array(
-					'taxonomy' => $term->taxonomy,
-					'field'    => 'term_id',
-					'terms'    => $term_id,
+					'taxonomy'            => $term->taxonomy,
+					'field'               => 'term_id',
+					'terms'               => $term_id,
+					'ignore_sticky_posts' => false,
 				);
 				$return[]  = $new_array;
 			}

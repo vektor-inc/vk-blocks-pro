@@ -228,7 +228,7 @@ class Vk_Blocks_PostList {
 				break;
 
 			case 'exclude':
-				$args['post__not_in'] = array_merge( $args['post__not_in'] ?? array(), get_option( 'sticky_posts' ) );
+				$args['post__not_in'] = array_merge( $args['post__not_in'], get_option( 'sticky_posts' ) );
 				break;
 
 			case 'only':

@@ -230,7 +230,7 @@ class Vk_Blocks_PostList {
 				break;
 
 			case 'only':
-				$sticky_posts = get_option( 'sticky_posts' );
+				$sticky_posts     = get_option( 'sticky_posts' );
 				$args['post__in'] = ! empty( $sticky_posts ) ? $sticky_posts : array( 0 );
 				if ( ! empty( $sticky_posts ) ) {
 					$args['posts_per_page'] = count( $sticky_posts );

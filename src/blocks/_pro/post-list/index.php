@@ -258,23 +258,23 @@ add_action( 'enqueue_block_editor_assets', 'vk_blocks_post_list_set_data' );
 /**
  * Enqueue editor styles
  */
-function vk_blocks_enqueue_editor_iframe_post_list(){
-    // `vk-blocks-pro` のルートディレクトリを取得
-    $plugin_root_path = WP_PLUGIN_DIR . '/vk-blocks-pro';
-    $plugin_root_url  = WP_PLUGIN_URL . '/vk-blocks-pro';
+function vk_blocks_enqueue_editor_iframe_post_list() {
+	// `vk-blocks-pro` のルートディレクトリを取得
+	$plugin_root_path = WP_PLUGIN_DIR . '/vk-blocks-pro';
+	$plugin_root_url  = WP_PLUGIN_URL . '/vk-blocks-pro';
 
-    // `vendor/vektor-inc/vk-component/src/assets/css/vk-components.css` への正しいパスと URL
-    $css_path = $plugin_root_path . '/vendor/vektor-inc/vk-component/src/assets/css/vk-components.css';
-    $css_url  = $plugin_root_url . '/vendor/vektor-inc/vk-component/src/assets/css/vk-components.css';
+	// `vendor/vektor-inc/vk-component/src/assets/css/vk-components.css` への正しいパスと URL
+	$css_path = $plugin_root_path . '/vendor/vektor-inc/vk-component/src/assets/css/vk-components.css';
+	$css_url  = $plugin_root_url . '/vendor/vektor-inc/vk-component/src/assets/css/vk-components.css';
 
-    // すでに `#vk-components-editor-style` が `enqueue` されているかチェック
-    if (is_admin() && !wp_style_is('vk-components-editor-style', 'enqueued') && file_exists($css_path)) {
-        wp_enqueue_style(
-            'vk-components-editor-style',
-            $css_url,
-            array(),
-            filemtime($css_path)
-        );
-    }
+	// すでに `#vk-components-editor-style` が `enqueue` されているかチェック
+	if ( is_admin() && ! wp_style_is( 'vk-components-editor-style', 'enqueued' ) && file_exists( $css_path ) ) {
+		wp_enqueue_style(
+			'vk-components-editor-style',
+			$css_url,
+			array(),
+			filemtime( $css_path )
+		);
+	}
 }
-add_action('enqueue_block_assets', 'vk_blocks_enqueue_editor_iframe_post_list');
+add_action( 'enqueue_block_assets', 'vk_blocks_enqueue_editor_iframe_post_list' );

@@ -13,6 +13,39 @@ import { __ } from '@wordpress/i18n';
 
 const isCoverBlock = (name) => name === 'core/cover';
 
+const addLinkAttributesToCoverBlock = (settings, name) => {
+	if (!isCoverBlock(name)) {
+		return settings;
+	}
+
+	settings.attributes = {
+		...settings.attributes,
+		linkUrl: {
+			type: 'string',
+			default: '',
+		},
+		linkTarget: {
+			type: 'string',
+			default: '',
+		},
+		relAttribute: {
+			type: 'string',
+			default: '',
+		},
+		linkDescription: {
+			type: 'string',
+			default: '',
+		},
+	};
+
+	return settings;
+};
+addFilter(
+	'blocks.registerBlockType',
+	'custom/add-link-attributes',
+	addLinkAttributesToCoverBlock
+);
+
 const enhanceCoverBlock = createHigherOrderComponent((BlockEdit) => {
 	return (props) => {
 		if (!isCoverBlock(props.name)) {
@@ -53,81 +86,80 @@ const enhanceCoverBlock = createHigherOrderComponent((BlockEdit) => {
 		);
 	};
 }, 'enhanceCoverBlock');
+addFilter('editor.BlockEdit', 'custom/enhance-cover-block', enhanceCoverBlock);
 
-const addLinkAttributesToCoverBlock = (settings, name) => {
-	if (!isCoverBlock(name)) {
+/**
+ * 元の save 関数をラップし、リンク属性がある場合に上書きした保存処理を返す関数
+ *
+ * @param {Function} originalSave 既存の save 関数
+ * @returns {Function} 上書き用の save 関数
+ */
+const newCoverBlockSave = (originalSave) => {
+	return (props) => {
+		// オリジナルの保存要素を取得
+		const element = originalSave(props);
+		const { linkUrl, linkTarget, relAttribute, linkDescription } = props.attributes;
+
+		// リンク URL が設定されていなければ元の要素をそのまま返す
+		if (!linkUrl) {
+			return element;
+		}
+
+		// 既存のクラス名やスタイルを取得
+		const existingClassName = element.props.className || '';
+		const classNameWithLink = `${existingClassName} has-link`.trim();
+		const existingStyle = element.props.style || {};
+
+		// ラッパー <div> 内にオリジナルの子要素とリンク用の <a> 要素を追加
+		return (
+			<div className={classNameWithLink} style={existingStyle}>
+				{element.props.children}
+				<a
+					href={linkUrl}
+					{...(linkTarget ? { target: linkTarget } : {})}
+					{...(relAttribute ? { rel: relAttribute } : {})}
+					className="wp-block-cover-vk-link"
+				>
+					<span className="screen-reader-text">
+						{linkDescription
+							? linkDescription
+							: __('Cover link', 'vk-blocks-pro')}
+					</span>
+				</a>
+			</div>
+		);
+	};
+};
+
+import { assign } from 'lodash';
+
+/**
+ * core/cover ブロックの設定を上書きするフィルター関数
+ *
+ * @param {Object} settings ブロックの設定オブジェクト
+ * @param {string} name ブロック名
+ * @returns {Object} 変更後の設定オブジェクト
+ */
+const insertLinkIntoCoverBlock = (settings, name) => {
+	// 対象が core/cover ブロックでなければそのまま返す
+	if (name !== 'core/cover') {
 		return settings;
 	}
 
-	settings.attributes = {
-		...settings.attributes,
-		linkUrl: {
-			type: 'string',
-			default: '',
-		},
-		linkTarget: {
-			type: 'string',
-			default: '',
-		},
-		relAttribute: {
-			type: 'string',
-			default: '',
-		},
-		linkDescription: {
-			type: 'string',
-			default: '',
-		},
-	};
+	// 元の save 関数を取得して、新しい save 関数を作成
+	const originalSave = settings.save;
+	const save = newCoverBlockSave(originalSave);
 
-	return settings;
+	// lodash の assign を使って新しい設定オブジェクトを作成
+	const newSettings = assign({}, settings, {
+		save
+	});
+
+	return newSettings;
 };
 
-const insertLinkIntoCoverBlock = (element, blockType, attributes) => {
-	if (blockType.name !== 'core/cover') {
-		return element;
-	}
-
-	const { linkUrl, linkTarget, relAttribute, linkDescription } = attributes;
-
-	if (!linkUrl) {
-		return element;
-	}
-
-	// `element` から既存のクラスを取得し、リンクがある場合にのみ `has-link` を追加
-	const existingClassName = element.props.className || '';
-	const classNameWithLink =
-		`${existingClassName} ${linkUrl ? 'has-link' : ''}`.trim();
-	const existingStyle = element.props.style || {};
-
-	// rel 属性の設定
-
-	return (
-		<div className={classNameWithLink} style={existingStyle}>
-			{element.props.children}
-			<a
-				href={linkUrl}
-				{...(linkTarget ? { target: linkTarget } : {})}
-				{...(relAttribute ? { rel: relAttribute } : {})}
-				className="wp-block-cover-vk-link"
-			>
-				<span className="screen-reader-text">
-					{linkDescription
-						? linkDescription
-						: __('Cover link', 'vk-blocks-pro')}
-				</span>
-			</a>
-		</div>
-	);
-};
-
-addFilter('editor.BlockEdit', 'custom/enhance-cover-block', enhanceCoverBlock);
 addFilter(
 	'blocks.registerBlockType',
-	'custom/add-link-attributes',
-	addLinkAttributesToCoverBlock
-);
-addFilter(
-	'blocks.getSaveElement',
 	'custom/insert-link-into-cover-block',
 	insertLinkIntoCoverBlock
 );

@@ -208,6 +208,7 @@ class Vk_Blocks_PostList {
 			'date_query'             => $date_query,
 			'update_post_meta_cache' => false,
 			'no_found_rows'          => true,
+			'ignore_sticky_posts'    => false,
 		);
 
 		if ( ! is_null( $offset ) ) {
@@ -218,23 +219,19 @@ class Vk_Blocks_PostList {
 			$args['date_query'] = $date_query;
 		}
 
-		$sticky_posts = isset( $attributes['stickyPosts'] ) ? $attributes['stickyPosts'] : 'include';
-
-		switch ( $sticky_posts ) {
+		switch ( $attributes['stickyPosts'] ?? 'include' ) {
 			case 'include':
-				$args['ignore_sticky_posts'] = false;
 				break;
 
 			case 'exclude':
-				$args['post__not_in']        = array_merge( $args['post__not_in'], get_option( 'sticky_posts' ) );
-				$args['ignore_sticky_posts'] = true;
+				$args['post__not_in'] = array_merge( $args['post__not_in'], get_option( 'sticky_posts' ) );
 				break;
 
 			case 'only':
-				$sticky_posts = get_option( 'sticky_posts' );
-				if ( ! empty( $sticky_posts ) ) {
-					$args['post__in']       = $sticky_posts;
-					$args['posts_per_page'] = count( $sticky_posts );
+				$sticky_posts_mode = get_option( 'sticky_posts' );
+				if ( ! empty( $sticky_posts_mode ) ) {
+					$args['post__in']       = $sticky_posts_mode;
+					$args['posts_per_page'] = count( $sticky_posts_mode );
 					$args['orderby']        = 'post__in';
 				} else {
 					$args['post__in'] = array( 0 );

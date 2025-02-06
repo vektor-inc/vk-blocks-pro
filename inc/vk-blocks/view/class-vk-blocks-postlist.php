@@ -220,19 +220,22 @@ class Vk_Blocks_PostList {
 			$args['date_query'] = $date_query;
 		}
 
-		switch ( $attributes['stickyPosts'] ?? 'include' ) {
+		$sticky_posts_mode = isset( $attributes['stickyPosts'] ) ? $attributes['stickyPosts'] : 'include';
+
+		switch ( $sticky_posts_mode ) {
 			case 'include':
+				$args['ignore_sticky_posts'] = false;
 				break;
 
 			case 'exclude':
-				$args['post__not_in'] = array_merge( $args['post__not_in'], get_option( 'sticky_posts' ) );
+				$args['post__not_in'] = array_merge( $args['post__not_in'] ?? array(), get_option( 'sticky_posts' ) );
 				break;
 
 			case 'only':
-				$sticky_posts_mode = get_option( 'sticky_posts' );
-				if ( ! empty( $sticky_posts_mode ) ) {
-					$args['post__in']       = $sticky_posts_mode;
-					$args['posts_per_page'] = count( $sticky_posts_mode );
+				$sticky_posts = get_option( 'sticky_posts' );
+				if ( ! empty( $sticky_posts ) ) {
+					$args['post__in']       = $sticky_posts;
+					$args['posts_per_page'] = count( $sticky_posts );
 					$args['orderby']        = 'post__in';
 				} else {
 					$args['post__in'] = array( 0 );

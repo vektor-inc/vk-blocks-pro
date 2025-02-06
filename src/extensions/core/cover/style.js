@@ -92,13 +92,14 @@ addFilter('editor.BlockEdit', 'custom/enhance-cover-block', enhanceCoverBlock);
  * 元の save 関数をラップし、リンク属性がある場合に上書きした保存処理を返す関数
  *
  * @param {Function} originalSave 既存の save 関数
- * @returns {Function} 上書き用の save 関数
+ * @return {Function} 上書き用の save 関数
  */
 const newCoverBlockSave = (originalSave) => {
 	return (props) => {
 		// オリジナルの保存要素を取得
 		const element = originalSave(props);
-		const { linkUrl, linkTarget, relAttribute, linkDescription } = props.attributes;
+		const { linkUrl, linkTarget, relAttribute, linkDescription } =
+			props.attributes;
 
 		// リンク URL が設定されていなければ元の要素をそのまま返す
 		if (!linkUrl) {
@@ -137,8 +138,8 @@ import { assign } from 'lodash';
  * core/cover ブロックの設定を上書きするフィルター関数
  *
  * @param {Object} settings ブロックの設定オブジェクト
- * @param {string} name ブロック名
- * @returns {Object} 変更後の設定オブジェクト
+ * @param {string} name     ブロック名
+ * @return {Object} 変更後の設定オブジェクト
  */
 const insertLinkIntoCoverBlock = (settings, name) => {
 	// 対象が core/cover ブロックでなければそのまま返す
@@ -152,7 +153,7 @@ const insertLinkIntoCoverBlock = (settings, name) => {
 
 	// lodash の assign を使って新しい設定オブジェクトを作成
 	const newSettings = assign({}, settings, {
-		save
+		save,
 	});
 
 	return newSettings;

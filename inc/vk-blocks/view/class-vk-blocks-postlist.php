@@ -116,7 +116,6 @@ class Vk_Blocks_PostList {
 					'taxonomy'            => $term->taxonomy,
 					'field'               => 'term_id',
 					'terms'               => $term_id,
-					'ignore_sticky_posts' => false,
 				);
 				$return[]  = $new_array;
 			}
@@ -209,7 +208,6 @@ class Vk_Blocks_PostList {
 			'date_query'             => $date_query,
 			'update_post_meta_cache' => false,
 			'no_found_rows'          => true,
-			'ignore_sticky_posts'    => false,
 		);
 
 		if ( ! is_null( $offset ) ) {

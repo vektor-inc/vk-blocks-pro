@@ -1,4 +1,4 @@
-/* globals vk_block_post_type_params */
+/* globals MutationObserver, vk_block_post_type_params */
 // import WordPress Scripts
 import { __ } from '@wordpress/i18n';
 import {
@@ -64,6 +64,54 @@ export default function PostListSliderEdit(props) {
 			setAttributes({ centeredSlides: false });
 		}
 	}, [layout]);
+
+	const disableLinks = () => {
+		// iframe内のドキュメントを取得
+		const iframe = document.querySelector(
+			'.block-editor-iframe__container iframe'
+		);
+
+		const iframeDocument = iframe.contentWindow.document;
+
+		const links = iframeDocument.querySelectorAll(
+			'.vk_post  a, .card-intext .card-intext-inner, .postListText_singleTermLabel_inner'
+		);
+		links.forEach((link) => {
+			link.addEventListener('click', (event) => {
+				event.preventDefault();
+			});
+			link.style.cursor = 'default';
+			link.style.boxShadow = 'unset';
+
+			// ホバー効果を無効化
+			link.style.textDecorationColor = 'inherit';
+		});
+	};
+
+	useEffect(() => {
+		// MutationObserverでDOMの変化を監視
+		const observer = new MutationObserver(disableLinks);
+
+		// iframeの中身を監視
+		const iframe = document.querySelector(
+			'.block-editor-iframe__container iframe'
+		);
+		if (iframe && iframe.contentWindow) {
+			const iframeDocument = iframe.contentWindow.document;
+			observer.observe(iframeDocument.body, {
+				childList: true,
+				subtree: true,
+			});
+		}
+
+		// 初回およびattributesの変更時にリンクを無効化
+		disableLinks();
+
+		// クリーンアップ関数
+		return () => {
+			observer.disconnect(); // 監視を停止
+		};
+	}, [attributes]);
 
 	return (
 		<>
@@ -307,6 +355,7 @@ export default function PostListSliderEdit(props) {
 				<ServerSideRender
 					block="vk-blocks/post-list-slider"
 					attributes={attributes}
+					onRendered={disableLinks}
 				/>
 			</div>
 		</>

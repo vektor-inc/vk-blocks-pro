@@ -167,6 +167,9 @@ $toc-left-margin: 1rem;
 /*      編集画面
 /*-------------------------------------------*/
 .editor-styles-wrapper {
+	.vk_tableOfContents .vk_tableOfContents_openCloseBtn{ // apiVersion: 3 でinline-blockが効かなくなっていたため
+		display: inline-block;
+	}
 	input:checked~.button_status-open {
 		~ .tab_content-open {
 			max-height: 0;
@@ -179,4 +182,4 @@ $toc-left-margin: 1rem;
 			padding: 1em;
 		}
 	}
-}	
+}

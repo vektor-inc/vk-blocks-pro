@@ -285,7 +285,11 @@ function vk_blocks_post_list_slider_set_data() {
 add_action( 'enqueue_block_editor_assets', 'vk_blocks_post_list_slider_set_data' );
 
 /**
- * Register editor styles for the Post List Slider block
+ * Register editor styles for the Post List Slider block.
+ *
+ * This function ensures that vk-components.css is properly loaded within the block editor's iframe.
+ *
+ * @package vk-blocks
  */
 function vk_blocks_register_block_post_list_slider_editor_styles() {
 	// `vk-blocks-pro` のルートディレクトリを取得

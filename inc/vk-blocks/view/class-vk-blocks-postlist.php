@@ -234,7 +234,7 @@ class Vk_Blocks_PostList {
 
 				$args['post__in']       = $sticky_posts;
 				$args['posts_per_page'] = count( $sticky_posts );
-				$args['orderby']        = $attributes['orderby']; // 必ず設定される前提
+				$args['orderby']        = $attributes['orderby'];
 				break;
 		}
 

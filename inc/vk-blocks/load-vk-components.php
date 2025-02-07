@@ -8,7 +8,7 @@
 use VektorInc\VK_Component\VK_Component_Posts;
 
 /**
- * VK Components を読み込むべきか判定
+ * VK Components(Bootstrap) を読み込むべきか判定
  *
  * @return bool 読み込む場合 true、読み込まない場合 false
  */
@@ -26,16 +26,15 @@ if ( ! vk_blocks_should_load_vk_components() ) {
 }
 
 /**
- * VK Components のスタイルを登録 & 読み込み
+ * VK Components(Bootstrap) の登録 & 読み込み
  */
 function vk_blocks_register_vk_components_style() {
-	// VK Components のスタイルを登録
 	VK_Component_Posts::register_style( 'vk-components-style' );
 }
 add_action( 'init', 'vk_blocks_register_vk_components_style' );
 
 /**
- * VK Components のスタイルを管理画面とフロントに適用
+ * VK Components(Bootstrap) を管理画面とフロントに適用
  *
  * @param string $hook_suffix hook suffix.
  */
@@ -51,7 +50,7 @@ add_action( 'admin_enqueue_scripts', 'vk_blocks_enqueue_vk_components_style' );
 add_action( 'wp_enqueue_scripts', 'vk_blocks_enqueue_vk_components_style' );
 
 /**
- * エディター用の VK Components スタイルを適用
+ * エディター用の VK Components(Bootstrap) を適用
  */
 function vk_blocks_enqueue_vk_components_editor_style() {
 	// スタイルが登録されていない場合は登録

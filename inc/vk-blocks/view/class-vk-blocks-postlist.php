@@ -230,12 +230,11 @@ class Vk_Blocks_PostList {
 				break;
 
 			case 'only':
-				$sticky_posts     = get_option( 'sticky_posts' );
-				$args['post__in'] = ! empty( $sticky_posts ) ? $sticky_posts : array( 0 );
-				if ( ! empty( $sticky_posts ) ) {
-					$args['posts_per_page'] = count( $sticky_posts );
-					$args['orderby']        = 'post__in';
-				}
+				$sticky_posts = get_option( 'sticky_posts' ) ?: array( 0 );
+
+				$args['post__in']       = $sticky_posts;
+				$args['posts_per_page'] = count( $sticky_posts );
+				$args['orderby']        = $attributes['orderby']; // 必ず設定される前提
 				break;
 		}
 

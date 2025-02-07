@@ -112,7 +112,7 @@ export default function save(props) {
 					<span className="screen-reader-text">
 						{linkDescription
 							? linkDescription
-							: __('Grid column card item', 'vk-blocks-pro')}
+							: __('Grid column card item link', 'vk-blocks-pro')}
 					</span>
 				)}
 

@@ -108,6 +108,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Post List (Pro) / Post List Slider (Pro) ] Added the ability to set sticky posts to display.
 [ Bug fix ] [ Icon ] Fixed an unwanted bottom margin appearing.
 [ Specification change ] Fixed the zoom-out toggle not always displaying in the editor toolbar (updated blocks.json API version from 2 to 3).
 

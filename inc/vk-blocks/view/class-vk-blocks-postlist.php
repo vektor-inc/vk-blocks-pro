@@ -230,10 +230,10 @@ class Vk_Blocks_PostList {
 				break;
 
 			case 'only':
-				$sticky_posts           = get_option( 'sticky_posts' );
-				$args['post__in']       = $sticky_posts ?: array( 0 );
+				$sticky_posts = get_option( 'sticky_posts' );
+				$args['post__in'] = ! empty( $sticky_posts ) ? $sticky_posts : array( 0 );
 				$args['posts_per_page'] = count( $args['post__in'] );
-				$args['orderby']        = $attributes['orderby'];
+				$args['orderby'] = $attributes['orderby'];
 				break;
 		}
 

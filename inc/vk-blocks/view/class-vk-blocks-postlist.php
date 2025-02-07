@@ -234,7 +234,7 @@ class Vk_Blocks_PostList {
 				$args['post__in']       = $sticky_posts ?: array( 0 );
 				$args['posts_per_page'] = count( $args['post__in'] );
 				$args['orderby']        = $attributes['orderby'];
-				break;				
+				break;
 		}
 
 		$args = apply_filters( 'vk_blocks_post_list_query_args', $args, $attributes );

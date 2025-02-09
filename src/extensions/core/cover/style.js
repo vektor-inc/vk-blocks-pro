@@ -75,9 +75,11 @@ const extendCoverBlock = (settings, name) => {
 			}
 
 			const existingClassName = saveElement.props.className || '';
-			const classNameWithLink = `${existingClassName} ${linkUrl ? 'has-link' : ''}`.trim();
+			const classNameWithLink =
+				`${existingClassName} ${linkUrl ? 'has-link' : ''}`.trim();
 			const existingStyle = saveElement.props.style || {};
-			const relAttribute = linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
+			const relAttribute =
+				linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
 
 			return (
 				<div className={classNameWithLink} style={existingStyle}>

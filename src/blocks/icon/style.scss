@@ -28,11 +28,17 @@
 			width: 80px;
 			height: 80px;
 			border-radius: 50%;
+			&.has-inherit-background-color { // 親のテキストカラーを継承
+				background-color: currentColor;
+			}
 		}
 		&_link {
 			display: flex;
 			&:hover {
 				opacity: .85;
+			}
+			&:has(.vk_icon_border[class*="has-inherit"]){ // 親のテキストカラーを継承
+				color: currentColor;
 			}
 		}
 		&_font {

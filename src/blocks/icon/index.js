@@ -18,15 +18,15 @@ export const settings = {
 	example: {
 		attributes: {
 			faIcon: iconUser,
-			iconSize: 16,
+			iconSize: 36,
 			iconSizeUnit: 'px',
 			iconMargin: 22,
 			iconMarginUnit: 'px',
 			iconRadius: 50,
 			iconType: '0',
 			iconAlign: 'left',
-			iconColor: 'undefined',
-			iconFontColor: 'Inherit',
+			iconColor: 'Inherit',
+			iconFontColor: 'undefined',
 			iconUrl: url,
 			iconTarget: false,
 		},

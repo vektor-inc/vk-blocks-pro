@@ -18,7 +18,7 @@ export const settings = {
 	example: {
 		attributes: {
 			faIcon: iconUser,
-			iconSize: 36,
+			iconSize: 16,
 			iconSizeUnit: 'px',
 			iconMargin: 22,
 			iconMarginUnit: 'px',
@@ -26,7 +26,7 @@ export const settings = {
 			iconType: '0',
 			iconAlign: 'left',
 			iconColor: 'undefined',
-			iconFontColor: 'undefined',
+			iconFontColor: 'Inherit',
 			iconUrl: url,
 			iconTarget: false,
 		},

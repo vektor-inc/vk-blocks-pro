@@ -399,23 +399,21 @@ export default function TabEdit(props) {
 							const activeTabBody = document.querySelector(
 								`#block-${childBlock.attributes.blockId}`
 							);
-							const activeTabBodyStyle =
-								window.getComputedStyle(activeTabBody);
-							if (
-								!e.currentTarget
-									.closest('.vk_tab')
-									.classList.contains(
-										'is-style-vk_tab_labels-line'
-									)
-							) {
-								e.currentTarget.style.backgroundColor =
-									activeTabBodyStyle.borderTopColor || '';
+							// Only proceed if activeTabBody is a valid element
+							if (activeTabBody) {
+								const activeTabBodyStyle = window.getComputedStyle(activeTabBody);
+								if (
+									!e.currentTarget
+										.closest('.vk_tab')
+										.classList.contains('is-style-vk_tab_labels-line')
+								) {
+									e.currentTarget.style.backgroundColor =
+										activeTabBodyStyle.borderTopColor || '';
+								}
 							}
-							e.currentTarget.classList.add(
-								'hovered-temp-active'
-							);
+							e.currentTarget.classList.add('hovered-temp-active');
 						}
-					}}
+					}}					
 					onMouseOut={(e) => {
 						if (
 							!e.currentTarget.classList.contains(
@@ -451,23 +449,21 @@ export default function TabEdit(props) {
 							const activeTabBody = document.querySelector(
 								`#block-${childBlock.attributes.blockId}`
 							);
-							const activeTabBodyStyle =
-								window.getComputedStyle(activeTabBody);
-							if (
-								!e.currentTarget
-									.closest('.vk_tab')
-									.classList.contains(
-										'is-style-vk_tab_labels-line'
-									)
-							) {
-								e.currentTarget.style.backgroundColor =
-									activeTabBodyStyle.borderTopColor || '';
+							// activeTabBodyが存在する場合のみ、getComputedStyleを実行する
+							if (activeTabBody) {
+								const activeTabBodyStyle = window.getComputedStyle(activeTabBody);
+								if (
+									!e.currentTarget
+										.closest('.vk_tab')
+										.classList.contains('is-style-vk_tab_labels-line')
+								) {
+									e.currentTarget.style.backgroundColor =
+										activeTabBodyStyle.borderTopColor || '';
+								}
 							}
-							e.currentTarget.classList.add(
-								'hovered-temp-active'
-							);
+							e.currentTarget.classList.add('hovered-temp-active');
 						}
-					}}
+					}}					
 					onBlur={(e) => {
 						if (
 							!e.currentTarget.classList.contains(

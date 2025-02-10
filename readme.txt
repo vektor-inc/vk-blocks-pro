@@ -108,11 +108,10 @@ e.g.
 
 == Changelog ==
 [ Add function ][ group ] Added noreferrer, nofollow, and link description options to the link feature.
-
 [ Add function ][ Slider ] Added noreferrer, nofollow, and link description options to the link feature.
-
 [ Bug fix ] [ Icon ] Fixed an unwanted bottom margin appearing.
 [ Specification change ] Fixed the zoom-out toggle not always displaying in the editor toolbar (updated blocks.json API version from 2 to 3).
+[ Add function ][ Icon ] Added inherit parent element color option as default.
 
 = 1.95.0 =
 [ Add function ][ Icon / Slider ] Added noreferrer, nofollow, and link description options to the link feature.

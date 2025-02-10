@@ -325,7 +325,7 @@ export default function IconEdit(props) {
 				</PanelBody>
 				<PanelBody title={__('Color', 'vk-blocks-pro')}>
 					<CheckboxControl
-						label={__('Inherit Parent Color.', 'vk-blocks-pro')}
+						label={__('Inherit Parent Color', 'vk-blocks-pro')}
 						checked={isColorInherit}
 						onChange={(checked) => {
 							setAttributes({

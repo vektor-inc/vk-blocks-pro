@@ -25,7 +25,7 @@ export const settings = {
 			iconRadius: 50,
 			iconType: '0',
 			iconAlign: 'left',
-			iconColor: 'Inherit',
+			iconColor: 'undefined',
 			iconFontColor: 'undefined',
 			iconUrl: url,
 			iconTarget: false,

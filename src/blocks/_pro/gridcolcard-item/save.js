@@ -100,10 +100,10 @@ export default function save(props) {
 				}}
 				{...(TagName === 'a'
 					? {
-						href: url,
-						target: urlOpenType ? '_blank' : undefined,
-						rel: relAttribute || undefined,
-					}
+							href: url,
+							target: urlOpenType ? '_blank' : undefined,
+							rel: relAttribute || undefined,
+						}
 					: {})}
 			>
 				<InnerBlocks.Content />

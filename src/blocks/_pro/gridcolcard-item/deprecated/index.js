@@ -88,10 +88,6 @@ const blockAttributes4 = {
 	relAttribute: {
 		"type": "string",
 		"default": ""
-	},
-	linkDescription: {
-		"type": "string",
-		"default": ""
 	}
 };
 */
@@ -103,8 +99,7 @@ const deprecated = [
 		migrate: (attributes) => {
 			return {
 				...attributes,
-				relAttribute: '',
-				linkDescription: '',
+				relAttribute: ''
 			};
 		},
 	},

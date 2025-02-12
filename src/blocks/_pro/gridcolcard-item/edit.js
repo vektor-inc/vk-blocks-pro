@@ -55,7 +55,6 @@ export default function Edit(props) {
 		url,
 		urlOpenType,
 		relAttribute,
-		linkDescription,
 	} = attributes;
 
 	// editModeは値として保持させずに常にすべてのカラムモードでスタートさせる
@@ -252,10 +251,6 @@ export default function Edit(props) {
 						setRelAttribute={(rel) =>
 							setAttributes({ relAttribute: rel })
 						}
-						linkDescription={linkDescription}
-						setLinkDescription={(description) =>
-							setAttributes({ linkDescription: description })
-						}
 					/>
 				</ToolbarGroup>
 			</BlockControls>
@@ -330,17 +325,6 @@ export default function Edit(props) {
 							checked={!!relAttribute?.includes('nofollow')}
 							onChange={(checked) =>
 								handleRelChange('nofollow', checked)
-							}
-						/>
-
-						<TextControl
-							label={__(
-								'Accessibility link description',
-								'vk-blocks-pro'
-							)}
-							value={linkDescription}
-							onChange={(value) =>
-								setAttributes({ linkDescription: value })
 							}
 						/>
 

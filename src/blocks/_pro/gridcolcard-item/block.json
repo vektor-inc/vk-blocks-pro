@@ -80,10 +80,6 @@
 		"relAttribute": {
 			"type": "string",
 			"default": ""
-		},
-		"linkDescription": {
-			"type": "string",
-			"default": ""
 		}
 	}
 }

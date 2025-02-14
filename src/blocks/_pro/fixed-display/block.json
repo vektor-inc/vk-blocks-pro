@@ -63,6 +63,9 @@
 		"html": false,
 		"className": true,
 		"anchor": true,
+		"layout": {
+			"allowJustification": false
+		},
 		"color": {
 			"gradients": true,
 			"link": true,

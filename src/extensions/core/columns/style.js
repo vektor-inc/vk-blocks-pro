@@ -23,7 +23,6 @@ import { ReactComponent as IconSVG } from './icon.svg';
 const isColumnsBlock = (name) => name === 'core/columns';
 const isColumnBlock = (name) => name === 'core/column';
 
-
 export const enhanceColumnBlock = createHigherOrderComponent((BlockEdit) => {
 	return (props) => {
 		const { attributes, setAttributes } = props;
@@ -123,7 +122,6 @@ export const enhanceColumnBlock = createHigherOrderComponent((BlockEdit) => {
 }, 'addMyCustomBlockControls');
 
 const extendColumnBlock = (settings, name) => {
-
 	if (isColumnsBlock(settings.name)) {
 		settings.attributes = {
 			...settings.attributes,

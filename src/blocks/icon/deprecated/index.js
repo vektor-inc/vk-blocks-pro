@@ -83,9 +83,9 @@ const blockAttributes4 = {
 (iconColor のデフォルト値を変更しましたが、save1_95_0 で migrate しているので必要ないかもしれない)
 const blockAttributes5 = {
 	...blockAttributes4,
-	"iconColor": {
-		"type": "string",
-		"default": "inherit"
+	iconColor: {
+		type: 'string',
+		default: 'inherit'
 	}
 }
 */

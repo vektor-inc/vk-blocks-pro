@@ -1,5 +1,5 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "vk-blocks/fixed-display",
 	"category": "vk-blocks-cat",
 	"title": "Fixed display",
@@ -63,6 +63,9 @@
 		"html": false,
 		"className": true,
 		"anchor": true,
+		"layout": {
+			"allowJustification": false
+		},
 		"color": {
 			"gradients": true,
 			"link": true,

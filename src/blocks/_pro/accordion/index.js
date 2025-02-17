@@ -36,7 +36,7 @@ export const settings = {
 		},
 		{
 			name: 'vk_accordion-background-color-rounded',
-			label: __('Background color / Rounded ', 'vk-blocks-pro'),
+			label: __('Background color / Rounded', 'vk-blocks-pro'),
 		},
 		{
 			name: 'vk_accordion-background-color-rounded-border',

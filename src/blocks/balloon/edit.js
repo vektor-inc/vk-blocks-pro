@@ -138,7 +138,7 @@ export default function BalloonEdit(props) {
 				/>
 
 				<p className={'mb-1 block-prop-title'}>
-					{__(' Image Border', 'vk-blocks-pro')}
+					{__('Image Border', 'vk-blocks-pro')}
 				</p>
 				<ToggleControl
 					label={__('Add border to image', 'vk-blocks-pro')}

@@ -11,8 +11,10 @@ import { Fragment } from '@wordpress/element';
 import LinkToolbar from '@vkblocks/components/link-toolbar';
 import { __ } from '@wordpress/i18n';
 
+// コアの Cover ブロックかどうかを判定
 const isCoverBlock = (name) => name === 'core/cover';
 
+// Cover ブロックを拡張する HOC
 const enhanceCoverBlock = createHigherOrderComponent((BlockEdit) => {
 	return (props) => {
 		if (!isCoverBlock(props.name)) {
@@ -20,7 +22,7 @@ const enhanceCoverBlock = createHigherOrderComponent((BlockEdit) => {
 		}
 
 		const {
-			attributes: { linkUrl, linkTarget },
+			attributes: { linkUrl, linkTarget, relAttribute, linkDescription },
 			setAttributes,
 		} = props;
 
@@ -38,6 +40,14 @@ const enhanceCoverBlock = createHigherOrderComponent((BlockEdit) => {
 							setLinkTarget={(target) =>
 								setAttributes({ linkTarget: target })
 							}
+							relAttribute={relAttribute}
+							setRelAttribute={(rel) =>
+								setAttributes({ relAttribute: rel })
+							}
+							linkDescription={linkDescription}
+							setLinkDescription={(description) =>
+								setAttributes({ linkDescription: description })
+							}
 						/>
 					</ToolbarGroup>
 				</BlockControls>
@@ -46,10 +56,98 @@ const enhanceCoverBlock = createHigherOrderComponent((BlockEdit) => {
 	};
 }, 'enhanceCoverBlock');
 
-const extendCoverBlock = (settings, name) => {
-	if (!isCoverBlock(name)) {
+const extendCoverBlock = (settings, name, currentDeprecated) => {
+	if (!isCoverBlock(name) || currentDeprecated !== null) {
 		return settings;
 	}
+
+	const save = (props) => {
+		const { attributes } = props;
+		const { linkUrl, linkTarget, relAttribute, linkDescription } =
+			attributes;
+
+		// 元のブロックの `save` を取得
+		const saveElement = settings.save(props);
+
+		if (!saveElement || !linkUrl) {
+			return saveElement;
+		}
+
+		const existingClassName = saveElement.props.className || '';
+		const classNameWithLink = `${existingClassName} has-link`.trim();
+		const existingStyle = saveElement.props.style || {};
+
+		return (
+			<div className={classNameWithLink} style={existingStyle}>
+				{saveElement.props.children}
+				<a
+					href={linkUrl}
+					{...(linkTarget ? { target: linkTarget } : {})}
+					{...(relAttribute ? { rel: relAttribute } : {})}
+					className="wp-block-cover-vk-link"
+				>
+					<span className="screen-reader-text">
+						{linkDescription
+							? linkDescription
+							: __('Cover link', 'vk-blocks-pro')}
+					</span>
+				</a>
+			</div>
+		);
+	};
+
+	// 以前のバージョンの `save` を `deprecated` として登録
+	const deprecated = [
+		{
+			attributes: {
+				linkUrl: {
+					type: 'string',
+					default: '',
+				},
+				linkTarget: {
+					type: 'string',
+					default: '_self',
+				},
+				tagName: {
+					type: 'string',
+					default: 'div'
+				},
+			},
+
+			save: (props) => {
+				const { attributes } = props;
+				const { linkUrl, linkTarget } =
+					attributes;
+
+				// 元のブロックの `save` を取得
+				const saveElement = settings.save(props);
+
+				if (!saveElement || !linkUrl) {
+					return saveElement;
+				}
+
+				const existingClassName = saveElement.props.className || '';
+				const classNameWithLink =
+					`${existingClassName} ${linkUrl ? 'has-link' : ''}`.trim();
+				const existingStyle = saveElement.props.style || {};
+				const relAttribute =
+					linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
+
+				return (
+					<div className={classNameWithLink} style={existingStyle}>
+						{saveElement.props.children}
+						<a
+							href={linkUrl}
+							target={linkTarget}
+							rel={relAttribute}
+							aria-label={__('Cover link', 'vk-blocks-pro')}
+							className="wp-block-cover-vk-link"
+						></a>
+					</div>
+				);
+			},
+		},
+	];
 
 	return {
 		...settings,
@@ -61,39 +159,20 @@ const extendCoverBlock = (settings, name) => {
 			},
 			linkTarget: {
 				type: 'string',
-				default: '_self',
+				default: '',
+			},
+			relAttribute: {
+				type: 'string',
+				default: '',
+			},
+			linkDescription: {
+				type: 'string',
+				default: '',
 			},
 		},
 		edit: enhanceCoverBlock(settings.edit),
-		save: (props) => {
-			const { attributes } = props;
-			const { linkUrl, linkTarget } = attributes;
-			const saveElement = settings.save(props);
-
-			if (!linkUrl) {
-				return saveElement;
-			}
-
-			const existingClassName = saveElement.props.className || '';
-			const classNameWithLink =
-				`${existingClassName} ${linkUrl ? 'has-link' : ''}`.trim();
-			const existingStyle = saveElement.props.style || {};
-			const relAttribute =
-				linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
-
-			return (
-				<div className={classNameWithLink} style={existingStyle}>
-					{saveElement.props.children}
-					<a
-						href={linkUrl}
-						target={linkTarget}
-						rel={relAttribute}
-						aria-label={__('Cover link', 'vk-blocks-pro')}
-						className="wp-block-cover-vk-link"
-					></a>
-				</div>
-			);
-		},
+		save, // 修正した `save` を適用
+		deprecated, // 修正した `deprecated` を適用
 	};
 };
 

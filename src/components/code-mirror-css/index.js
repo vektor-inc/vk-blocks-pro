@@ -4,7 +4,7 @@
 import { __ } from '@wordpress/i18n';
 import { transformStyles } from '@wordpress/block-editor';
 import { useState, useRef, useEffect } from '@wordpress/element';
-import { Tooltip, Icon, ResizeObserver } from '@wordpress/components';
+import { Tooltip, Icon } from '@wordpress/components';
 import { info } from '@wordpress/icons';
 
 /**
@@ -62,7 +62,7 @@ export const CodeMirrorCss = (props) => {
 	// リサイズ検知して高さを動的に調整
 	useEffect(() => {
 		if (wrapperRef.current) {
-			const observer = new ResizeObserver(() => {
+			const observer = new window.ResizeObserver(() => {
 				if (isInitialLoad) {
 					wrapperRef.current.style.setProperty(
 						'height',
@@ -82,7 +82,7 @@ export const CodeMirrorCss = (props) => {
 		if (wrapperRef.current) {
 			const gutters = wrapperRef.current.querySelector('.cm-gutters');
 			if (gutters) {
-				const observer = new ResizeObserver(() => {
+				const observer = new window.ResizeObserver(() => {
 					const guttersHeight = gutters.offsetHeight;
 					if (guttersHeight < 200) {
 						gutters.style.setProperty(

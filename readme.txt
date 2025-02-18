@@ -109,7 +109,13 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Post List (Pro) / Post List Slider (Pro) ] Added the ability to set sticky posts to display.
-[ Bug fix ] [ Icon ] Fixed an unwanted bottom margin appearing.
+[ Add function ][ Grid Column Card (Pro) ] Added noreferrer and nofollow to the link feature.
+[ Add function ][ Animation (Pro) / Fixed Display (Pro) / Outer (Pro) ] Added support for layout.allowJustification: false, allowing full-width/wide alignment in block themes where wrapped blocks previously did not appear as full-width or wide in the editor.
+[ Add function ][ group ] Added noreferrer, nofollow, and link description options to the link feature.
+[ Add function ][ Icon / Slider ] Added noreferrer, nofollow, and link description options to the link feature.
+[ Add function ][ Slider ] Added noreferrer, nofollow, and link description options to the link feature.
+[ Bug fix ][ Icon ] Fixed an unwanted bottom margin appearing.
+[ Editor Design Bug Fix ] [ Grid Column (Pro) ] Fixed an issue where the 'is-vertical' layout of grid column items was not displayed vertically.
 [ Specification change ] Fixed the zoom-out toggle not always displaying in the editor toolbar (updated blocks.json API version from 2 to 3).
 
 = 1.95.0 =

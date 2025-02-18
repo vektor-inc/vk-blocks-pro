@@ -395,7 +395,7 @@ export default function SliderEdit(props) {
 					initialOpen={false}
 				>
 					<BaseControl
-						label={__('Effect ', 'vk-blocks-pro')}
+						label={__('Effect', 'vk-blocks-pro')}
 						id={`vk_slider-effect`}
 					>
 						<SelectControl
@@ -416,7 +416,7 @@ export default function SliderEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Loop ', 'vk-blocks-pro')}
+						label={__('Loop', 'vk-blocks-pro')}
 						id={`vk_slider-loop`}
 					>
 						<AdvancedToggleControl

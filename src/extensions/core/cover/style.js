@@ -110,14 +110,13 @@ const extendCoverBlock = (settings, name, currentDeprecated) => {
 				},
 				tagName: {
 					type: 'string',
-					default: 'div'
+					default: 'div',
 				},
 			},
 
 			save: (props) => {
 				const { attributes } = props;
-				const { linkUrl, linkTarget } =
-					attributes;
+				const { linkUrl, linkTarget } = attributes;
 
 				// 元のブロックの `save` を取得
 				const saveElement = settings.save(props);
@@ -131,7 +130,9 @@ const extendCoverBlock = (settings, name, currentDeprecated) => {
 					`${existingClassName} ${linkUrl ? 'has-link' : ''}`.trim();
 				const existingStyle = saveElement.props.style || {};
 				const relAttribute =
-					linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
+					linkTarget === '_blank'
+						? 'noopener noreferrer'
+						: 'noopener';
 
 				return (
 					<div className={classNameWithLink} style={existingStyle}>

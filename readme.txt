@@ -107,6 +107,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+[ Editor Design Bug Fix ][ Tab (Pro) ] Fixed the issue where the block inserter button (block-list-appender) inside the tab block (.vk_tab) was affecting other block inserter buttons. 
 [ Add function ][ group ] Added noreferrer, nofollow, and link description options to the link feature.
 [ Add function ][ Icon / Slider ] Added noreferrer, nofollow, and link description options to the link feature.
 [ Add function ][ Grid Column Card (Pro) ] Added noreferrer and nofollow to the link feature.

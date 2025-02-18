@@ -217,6 +217,26 @@ class Vk_Blocks_PostList {
 		if ( ! empty( $date_query ) ) {
 			$args['date_query'] = $date_query;
 		}
+
+		$sticky_posts_mode = isset( $attributes['stickyPosts'] ) ? $attributes['stickyPosts'] : 'include';
+
+		switch ( $sticky_posts_mode ) {
+			case 'include':
+				$args['ignore_sticky_posts'] = false;
+				break;
+
+			case 'exclude':
+				$args['post__not_in'] = array_merge( isset( $args['post__not_in'] ) ? $args['post__not_in'] : array(), get_option( 'sticky_posts' ) );
+				break;
+
+			case 'only':
+				$sticky_posts           = get_option( 'sticky_posts' );
+				$args['post__in']       = ! empty( $sticky_posts ) ? $sticky_posts : array( 0 );
+				$args['posts_per_page'] = count( $args['post__in'] );
+				$args['orderby']        = $attributes['orderby'];
+				break;
+		}
+
 		$args = apply_filters( 'vk_blocks_post_list_query_args', $args, $attributes );
 
 		return new WP_Query( $args );

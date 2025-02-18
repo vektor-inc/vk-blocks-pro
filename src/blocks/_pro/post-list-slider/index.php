@@ -105,6 +105,7 @@ function vk_blocks_post_list_slider_render_callback( $attributes ) {
 			'orderby'                    => 'date',
 			'offset'                     => 0,
 			'pagedlock'                  => false,
+			'stickyPosts'                => 'include',
 			'selfIgnore'                 => false,
 			'loop'                       => true,
 			'effect'                     => 'slide',

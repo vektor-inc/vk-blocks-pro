@@ -38,11 +38,12 @@ add_action( 'init', 'vk_blocks_register_vk_components_style' );
  *
  * @param string $hook_suffix hook suffix.
  */
-function vk_blocks_enqueue_vk_components_style( $hook_suffix ) {
-	// 管理画面
-	if ( is_admin() && in_array( $hook_suffix, array( 'post.php', 'post-new.php' ), true ) ) {
-		wp_enqueue_style( 'vk-components-style' );
-	} elseif ( ! is_admin() ) {
+function vk_blocks_enqueue_vk_components_style( $hook_suffix = '' ) {
+	if ( is_admin() ) {
+		if ( in_array( $hook_suffix, array( 'post.php', 'post-new.php' ), true ) ) {
+			wp_enqueue_style( 'vk-components-style' );
+		}
+	} else {
 		wp_enqueue_style( 'vk-components-style' );
 	}
 }

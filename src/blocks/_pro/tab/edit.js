@@ -293,10 +293,10 @@ export default function TabEdit(props) {
 					setAttributes({ firstActive: parseInt(index, 10) });
 				}
 			});
-					// 子ブロックを選択状態にする -> タブ文字が隠れて編集できなくなるので一旦コメントアウト
-					// dispatch('core/block-editor').selectBlock(
-					//  childBlock.clientId
-					// );
+			// 子ブロックを選択状態にする -> タブ文字が隠れて編集できなくなるので一旦コメントアウト
+			// dispatch('core/block-editor').selectBlock(
+			//  childBlock.clientId
+			// );
 		}
 	};
 

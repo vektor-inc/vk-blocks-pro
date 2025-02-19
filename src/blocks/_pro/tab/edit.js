@@ -210,6 +210,11 @@ export default function TabEdit(props) {
 
 	const liOnClick = (e) => {
 		if (childBlocks) {
+			const iframe = document.querySelector(
+				'.block-editor-iframe__container iframe'
+			);
+			const iframeDocument = iframe?.contentWindow?.document;
+
 			const vkTab = e.target.closest('.vk_tab');
 			const vkTabLabels = vkTab.querySelector('.vk_tab_labels');
 
@@ -250,7 +255,9 @@ export default function TabEdit(props) {
 			);
 			newActiveLabel.style.removeProperty('background-color');
 
-			const activeTabBody = document.querySelector(`#block-${TabId}`);
+			const activeTabBody = iframeDocument.querySelector(
+				`#block-${TabId}`
+			);
 			const activeTabBodyStyle = window.getComputedStyle(activeTabBody);
 			if (
 				!newActiveLabel
@@ -392,17 +399,20 @@ export default function TabEdit(props) {
 							const activeTabBody = document.querySelector(
 								`#block-${childBlock.attributes.blockId}`
 							);
-							const activeTabBodyStyle =
-								window.getComputedStyle(activeTabBody);
-							if (
-								!e.currentTarget
-									.closest('.vk_tab')
-									.classList.contains(
-										'is-style-vk_tab_labels-line'
-									)
-							) {
-								e.currentTarget.style.backgroundColor =
-									activeTabBodyStyle.borderTopColor || '';
+							// Only proceed if activeTabBody is a valid element
+							if (activeTabBody) {
+								const activeTabBodyStyle =
+									window.getComputedStyle(activeTabBody);
+								if (
+									!e.currentTarget
+										.closest('.vk_tab')
+										.classList.contains(
+											'is-style-vk_tab_labels-line'
+										)
+								) {
+									e.currentTarget.style.backgroundColor =
+										activeTabBodyStyle.borderTopColor || '';
+								}
 							}
 							e.currentTarget.classList.add(
 								'hovered-temp-active'
@@ -444,17 +454,20 @@ export default function TabEdit(props) {
 							const activeTabBody = document.querySelector(
 								`#block-${childBlock.attributes.blockId}`
 							);
-							const activeTabBodyStyle =
-								window.getComputedStyle(activeTabBody);
-							if (
-								!e.currentTarget
-									.closest('.vk_tab')
-									.classList.contains(
-										'is-style-vk_tab_labels-line'
-									)
-							) {
-								e.currentTarget.style.backgroundColor =
-									activeTabBodyStyle.borderTopColor || '';
+							// activeTabBodyが存在する場合のみ、getComputedStyleを実行する
+							if (activeTabBody) {
+								const activeTabBodyStyle =
+									window.getComputedStyle(activeTabBody);
+								if (
+									!e.currentTarget
+										.closest('.vk_tab')
+										.classList.contains(
+											'is-style-vk_tab_labels-line'
+										)
+								) {
+									e.currentTarget.style.backgroundColor =
+										activeTabBodyStyle.borderTopColor || '';
+								}
 							}
 							e.currentTarget.classList.add(
 								'hovered-temp-active'

@@ -1,5 +1,5 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "vk-blocks/outer",
 	"title": "Outer",
 	"category": "vk-blocks-cat-layout",
@@ -192,6 +192,9 @@
 		"html": false,
 		"className": true,
 		"anchor": true,
+		"layout": {
+			"allowJustification": false
+		},
 		"color": {
 			"text": true,
 			"background": false

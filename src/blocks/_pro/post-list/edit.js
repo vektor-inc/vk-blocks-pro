@@ -17,16 +17,10 @@ export default function PostListEdit(props) {
 
 	const blockProps = useBlockProps();
 
+	// リンクを無効にする関数
 	const disableLinks = () => {
-		// iframe内のドキュメントを取得
-		const iframe = document.querySelector(
-			'.block-editor-iframe__container iframe'
-		);
-
-		const iframeDocument = iframe.contentWindow.document;
-
-		const links = iframeDocument.querySelectorAll(
-			'.vk_post  a, .card-intext .card-intext-inner, .postListText_singleTermLabel_inner'
+		const links = document.querySelectorAll(
+			'.vk_post_imgOuter a, .vk_post .vk_post_title a, .postListText_title a, .card-intext .card-intext-inner, .postListText_singleTermLabel_inner, .vk_post_btnOuter a'
 		);
 		links.forEach((link) => {
 			link.addEventListener('click', (event) => {
@@ -44,17 +38,9 @@ export default function PostListEdit(props) {
 		// MutationObserverでDOMの変化を監視
 		const observer = new MutationObserver(disableLinks);
 
-		// iframeの中身を監視
-		const iframe = document.querySelector(
-			'.block-editor-iframe__container iframe'
-		);
-		if (iframe && iframe.contentWindow) {
-			const iframeDocument = iframe.contentWindow.document;
-			observer.observe(iframeDocument.body, {
-				childList: true,
-				subtree: true,
-			});
-		}
+		// body全体を監視
+		const targetNode = document.querySelector('body');
+		observer.observe(targetNode, { childList: true, subtree: true });
 
 		// 初回およびattributesの変更時にリンクを無効化
 		disableLinks();

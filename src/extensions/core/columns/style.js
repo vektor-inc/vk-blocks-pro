@@ -122,22 +122,23 @@ export const enhanceColumnBlock = createHigherOrderComponent((BlockEdit) => {
 }, 'addMyCustomBlockControls');
 
 const extendColumnBlock = (settings, name) => {
+
+	if (!isColumnBlock(name) && !isColumnsBlock(name)) {
+		return settings;
+	}
+
 	if (isColumnsBlock(settings.name)) {
 		settings.attributes = {
 			...settings.attributes,
 			reverse: {
 				type: 'boolean',
+				default: false,
 			},
 		};
 	}
 
-	if (!isColumnBlock(name)) {
-		return settings;
-	}
-
-	return {
-		...settings,
-		attributes: {
+	if (isColumnBlock(settings.name)) {
+		settings.attributes = {
 			...settings.attributes,
 			linkUrl: {
 				type: 'string',
@@ -147,6 +148,13 @@ const extendColumnBlock = (settings, name) => {
 				type: 'string',
 				default: '_self',
 			},
+		};
+	}
+
+	return {
+		...settings,
+		attributes: {
+			...settings.attributes,
 		},
 
 		edit: enhanceColumnBlock(settings.edit),

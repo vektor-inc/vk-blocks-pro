@@ -108,6 +108,9 @@ e.g.
 
 == Changelog ==
 
+= 1.96.1 =
+[ Other ] Rollback 1.95.0.3
+
 = 1.96.0 =
 [ Add function ][ Slider / group / Icon / Grid Column Card (Pro) ] Added noreferrer, nofollow, and link description options to the link feature.
 [ Specification change ][ Animation (Pro) / Fixed Display (Pro) / Outer (Pro) ] Added support for layout.allowJustification: false, allowing full-width/wide alignment in block themes where wrapped blocks previously did not appear as full-width or wide in the editor.

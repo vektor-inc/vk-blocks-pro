@@ -20,7 +20,9 @@ export default function PostListEdit(props) {
 	// リンクを無効にする関数
 	const disableLinks = () => {
 		// iframe の有無を確認して適切なドキュメントを取得
-		const iframe = document.querySelector('.block-editor-iframe__container iframe');
+		const iframe = document.querySelector(
+			'.block-editor-iframe__container iframe'
+		);
 		const targetDocument = iframe?.contentWindow?.document || document;
 
 		const links = targetDocument.querySelectorAll(
@@ -39,13 +41,18 @@ export default function PostListEdit(props) {
 
 	useEffect(() => {
 		// MutationObserverでDOMの変化を監視
-		const iframe = document.querySelector('.block-editor-iframe__container iframe');
+		const iframe = document.querySelector(
+			'.block-editor-iframe__container iframe'
+		);
 		const targetDocument = iframe?.contentWindow?.document || document;
 		const observerTarget = targetDocument.querySelector('body');
 
 		const observer = new MutationObserver(disableLinks);
 		if (observerTarget) {
-			observer.observe(observerTarget, { childList: true, subtree: true });
+			observer.observe(observerTarget, {
+				childList: true,
+				subtree: true,
+			});
 		}
 
 		// 初回およびattributesの変更時にリンクを無効化

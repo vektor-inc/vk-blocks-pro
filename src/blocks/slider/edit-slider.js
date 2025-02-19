@@ -309,12 +309,19 @@ const editorRootLaunch = (editorRoot) => {
 export const editSliderLaunch = () => {
 	const iframe = document.querySelector('.block-editor__container iframe');
 	const iframeDoc = iframe?.contentWindow?.document;
-	const editorRoot = iframeDoc?.querySelector('.block-editor-block-list__layout') || document.querySelector('.block-editor-block-list__layout');
+	const editorRoot =
+		iframeDoc?.querySelector('.block-editor-block-list__layout') ||
+		document.querySelector('.block-editor-block-list__layout');
 
-	if (editorRoot) editorRootLaunch(editorRoot);
+	if (editorRoot) {
+		editorRootLaunch(editorRoot);
+	}
 
 	const siteIframe = document.querySelector('#site-editor iframe');
-	const siteEditorRoot = siteIframe?.contentWindow?.document.querySelector('.is-root-container');
+	const siteEditorRoot =
+		siteIframe?.contentWindow?.document.querySelector('.is-root-container');
 
-	if (siteEditorRoot) editorRootLaunch(siteEditorRoot);
+	if (siteEditorRoot) {
+		editorRootLaunch(siteEditorRoot);
+	}
 };

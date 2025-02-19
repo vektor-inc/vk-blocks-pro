@@ -307,23 +307,14 @@ const editorRootLaunch = (editorRoot) => {
 };
 
 export const editSliderLaunch = () => {
-	const blockEditorRoot = document.querySelector(
-		'.block-editor__container iframe'
-	);
-	if (blockEditorRoot && blockEditorRoot.contentWindow) {
-		const editorRoot = blockEditorRoot.contentWindow.document.querySelector(
-			'.block-editor-block-list__layout'
-		);
-		if (editorRoot) {
-			editorRootLaunch(editorRoot);
-		}
-	}
-	const iframe = document.querySelector('#site-editor iframe');
-	if (iframe) {
-		const siteEditorRoot =
-			iframe.contentWindow.document.querySelector('.is-root-container');
-		if (siteEditorRoot) {
-			editorRootLaunch(siteEditorRoot);
-		}
-	}
+	const iframe = document.querySelector('.block-editor__container iframe');
+	const iframeDoc = iframe?.contentWindow?.document;
+	const editorRoot = iframeDoc?.querySelector('.block-editor-block-list__layout') || document.querySelector('.block-editor-block-list__layout');
+
+	if (editorRoot) editorRootLaunch(editorRoot);
+
+	const siteIframe = document.querySelector('#site-editor iframe');
+	const siteEditorRoot = siteIframe?.contentWindow?.document.querySelector('.is-root-container');
+
+	if (siteEditorRoot) editorRootLaunch(siteEditorRoot);
 };

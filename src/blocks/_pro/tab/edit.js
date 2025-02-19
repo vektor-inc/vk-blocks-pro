@@ -234,7 +234,8 @@ export default function TabEdit(props) {
 
 			const TabId = TabLabelId.replace('vk_tab_labels_label-', '');
 
-			/* --- ラベルの処理 --- */
+			/* ラベルの処理 */
+			// カレントを探して全て外す
 			const activeLabels = vkTabLabels.querySelectorAll(
 				'.vk_tab_labels_label-state-active'
 			);
@@ -270,7 +271,6 @@ export default function TabEdit(props) {
 				newActiveLabel.style.removeProperty('background-color');
 			}
 
-			/* --- 本体の処理 --- */
 			const activeTabBody = targetDocument.querySelector(
 				`#block-${TabId}`
 			);
@@ -287,12 +287,16 @@ export default function TabEdit(props) {
 				}
 			}
 
-			// タブ切り替えのステートを更新
+			/* 本体の処理 */
 			childBlocks.forEach((childBlock, index) => {
 				if (TabId === childBlock.clientId) {
 					setAttributes({ firstActive: parseInt(index, 10) });
 				}
 			});
+					// 子ブロックを選択状態にする -> タブ文字が隠れて編集できなくなるので一旦コメントアウト
+					// dispatch('core/block-editor').selectBlock(
+					//  childBlock.clientId
+					// );
 		}
 	};
 

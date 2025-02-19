@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.95.0.2\n"
+"Project-Id-Version: VK Blocks Pro 1.96.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-02-02T14:06:38+00:00\n"
+"POT-Creation-Date: 2025-02-19T00:55:07+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -667,7 +667,7 @@ msgid "Background color / Border"
 msgstr ""
 
 #: src/blocks/_pro/accordion/index.js:39
-msgid "Background color / Rounded "
+msgid "Background color / Rounded"
 msgstr ""
 
 #: src/blocks/_pro/accordion/index.js:43
@@ -989,7 +989,7 @@ msgstr ""
 
 #: src/blocks/_pro/card-item/edit.js:140
 #: src/utils/example-data.js:3
-msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 msgstr ""
 
 #: src/blocks/_pro/card-item/edit.js:182
@@ -1210,7 +1210,7 @@ msgid "Setting up a link"
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:389
-#: src/blocks/_pro/gridcolcard-item/edit.js:353
+#: src/blocks/_pro/gridcolcard-item/edit.js:308
 #: src/blocks/_pro/icon-card-item/edit.js:128
 #: src/blocks/button/edit.js:283
 #: src/blocks/icon/edit.js:316
@@ -1270,7 +1270,7 @@ msgid "The fixed position of the fixed position block will not change on the edi
 msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:147
-#: src/blocks/_pro/post-list-slider/edit.js:91
+#: src/blocks/_pro/post-list-slider/edit.js:139
 #: src/blocks/_pro/table-of-contents-new/edit.js:109
 #: src/components/column-layout-control/index.js:69
 msgid "Display type"
@@ -1455,61 +1455,51 @@ msgstr ""
 msgid "You can create a variety of layouts with grid column card blocks."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:249
-#: src/blocks/_pro/select-post-list-item/edit.js:66
-#: src/blocks/button/edit.js:249
-#: src/components/link-toolbar/index.js:280
-msgid "Unlink"
-msgstr ""
-
-#: src/blocks/_pro/gridcolcard-item/edit.js:250
-#: src/blocks/button/edit.js:250
-#: src/components/link-toolbar/index.js:281
-msgid "Input Link URL"
-msgstr ""
-
-#: src/blocks/_pro/gridcolcard-item/edit.js:280
-#: src/blocks/_pro/select-post-list-item/edit.js:102
-#: src/blocks/button/edit.js:278
-#: src/components/link-toolbar/index.js:315
-msgid "Submit"
-msgstr ""
-
-#: src/blocks/_pro/gridcolcard-item/edit.js:304
+#: src/blocks/_pro/gridcolcard-item/edit.js:259
 msgid "Edit mode"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:314
+#: src/blocks/_pro/gridcolcard-item/edit.js:269
 msgid "All columns"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:322
+#: src/blocks/_pro/gridcolcard-item/edit.js:277
 msgid "This column only"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:327
+#: src/blocks/_pro/gridcolcard-item/edit.js:282
 msgid "Edit Lock"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:330
+#: src/blocks/_pro/gridcolcard-item/edit.js:285
 msgid "Lock edits this block from the parent and other Grid Column Item block"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:341
+#: src/blocks/_pro/gridcolcard-item/edit.js:296
 msgid "Column Setting"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:345
+#: src/blocks/_pro/gridcolcard-item/edit.js:300
 #: src/blocks/_pro/icon-card-item/edit.js:120
 #: src/blocks/pr-blocks/edit.js:254
 msgid "Link URL:"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:360
+#: src/blocks/_pro/gridcolcard-item/edit.js:316
+#: src/components/link-toolbar/index.js:334
+msgid "Add noreferrer"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:324
+#: src/components/link-toolbar/index.js:351
+msgid "Add nofollow"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:332
 msgid "If you set a link URL, do not place the link element (text or button) in the Grid Column Card Item. It may not be displayed correctly."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:364
+#: src/blocks/_pro/gridcolcard-item/edit.js:336
 msgid "Make sure that no link is specified for the image block, etc."
 msgstr ""
 
@@ -1531,7 +1521,7 @@ msgid "Display"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:155
-#: src/blocks/_pro/post-list-slider/edit.js:277
+#: src/blocks/_pro/post-list-slider/edit.js:325
 #: src/blocks/heading/edit.js:376
 #: src/blocks/slider/edit.js:535
 msgid "Hide"
@@ -1554,7 +1544,7 @@ msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:212
 #: src/blocks/border-box/edit.js:239
-#: src/extensions/core/group/style.js:99
+#: src/extensions/core/group/style.js:119
 msgid "Border Color"
 msgstr ""
 
@@ -1959,87 +1949,87 @@ msgstr ""
 msgid "Auto"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:102
+#: src/blocks/_pro/post-list-slider/edit.js:150
 #: src/components/column-layout-control/index.js:26
 msgid "Card"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:106
+#: src/blocks/_pro/post-list-slider/edit.js:154
 #: src/components/column-layout-control/index.js:30
 msgid "Card (No border)"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:113
+#: src/blocks/_pro/post-list-slider/edit.js:161
 #: src/components/column-layout-control/index.js:34
 msgid "Card (Intext)"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:117
+#: src/blocks/_pro/post-list-slider/edit.js:165
 #: src/components/column-layout-control/index.js:38
 msgid "Card (Horizontal)"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:124
+#: src/blocks/_pro/post-list-slider/edit.js:172
 #: src/components/column-layout-control/index.js:42
 msgid "Media"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:128
+#: src/blocks/_pro/post-list-slider/edit.js:176
 #: src/components/column-layout-control/index.js:46
 msgid "Text 1 Column"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:136
+#: src/blocks/_pro/post-list-slider/edit.js:184
 #: src/blocks/slider/edit.js:394
 msgid "Slider Settings"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:140
+#: src/blocks/_pro/post-list-slider/edit.js:188
 #: src/blocks/slider/edit.js:398
-msgid "Effect "
+msgid "Effect"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:150
+#: src/blocks/_pro/post-list-slider/edit.js:198
 #: src/blocks/slider/edit.js:408
 msgid "Slide"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:154
+#: src/blocks/_pro/post-list-slider/edit.js:202
 #: src/blocks/slider/edit.js:412
 msgid "Fade"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:161
+#: src/blocks/_pro/post-list-slider/edit.js:209
 #: src/blocks/slider/edit.js:419
-msgid "Loop "
+msgid "Loop"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:171
+#: src/blocks/_pro/post-list-slider/edit.js:219
 #: src/blocks/slider/edit.js:429
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:181
+#: src/blocks/_pro/post-list-slider/edit.js:229
 #: src/blocks/slider/edit.js:439
 msgid "Stop AutoPlay when swipe"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:191
+#: src/blocks/_pro/post-list-slider/edit.js:239
 #: src/blocks/slider/edit.js:449
 msgid "Display Time"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:218
+#: src/blocks/_pro/post-list-slider/edit.js:266
 #: src/blocks/slider/edit.js:476
 msgid "Change Speed"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:242
+#: src/blocks/_pro/post-list-slider/edit.js:290
 #: src/blocks/slider/edit.js:500
 msgid "Pagination Type"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:253
+#: src/blocks/_pro/post-list-slider/edit.js:301
 #: src/blocks/_pro/step-item/edit.js:137
 #: src/blocks/_pro/table-of-contents-new/edit.js:124
 #: src/blocks/_pro/timeline-item/edit.js:103
@@ -2050,29 +2040,29 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:257
+#: src/blocks/_pro/post-list-slider/edit.js:305
 #: src/blocks/slider/edit.js:515
 msgid "Number of slides"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:270
+#: src/blocks/_pro/post-list-slider/edit.js:318
 #: src/blocks/slider/edit.js:528
 msgid "Navigation Position"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:281
+#: src/blocks/_pro/post-list-slider/edit.js:329
 #: src/blocks/button/edit.js:365
 #: src/blocks/slider/edit.js:539
 #: src/components/display-items-control/index.js:136
 msgid "Center"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:285
+#: src/blocks/_pro/post-list-slider/edit.js:333
 #: src/blocks/slider/edit.js:543
 msgid "Bottom on Mobile device"
 msgstr ""
 
-#: src/blocks/_pro/post-list-slider/edit.js:302
+#: src/blocks/_pro/post-list-slider/edit.js:350
 msgid "Please check the actual behavior on the live site."
 msgstr ""
 
@@ -2159,9 +2149,21 @@ msgstr ""
 msgid "New Badge"
 msgstr ""
 
+#: src/blocks/_pro/select-post-list-item/edit.js:102
+#: src/blocks/button/edit.js:278
+#: src/components/link-toolbar/index.js:315
+msgid "Submit"
+msgstr ""
+
 #: src/blocks/_pro/select-post-list-item/edit.js:34
 #: src/blocks/page-content/edit.js:59
 msgid "Because no post is selected, The block Will not render"
+msgstr ""
+
+#: src/blocks/_pro/select-post-list-item/edit.js:66
+#: src/blocks/button/edit.js:249
+#: src/components/link-toolbar/index.js:280
+msgid "Unlink"
 msgstr ""
 
 #: src/blocks/_pro/select-post-list-item/edit.js:67
@@ -2219,63 +2221,63 @@ msgid "Tab 02"
 msgstr ""
 
 #. %s is the tab number
-#: src/blocks/_pro/tab/edit.js:511
+#: src/blocks/_pro/tab/edit.js:514
 msgid "Tab Label [ %s ]"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:537
+#: src/blocks/_pro/tab/edit.js:540
 msgid "Tab Size Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:539
+#: src/blocks/_pro/tab/edit.js:542
 msgid "Tab Size ( Smart Phone )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:556
+#: src/blocks/_pro/tab/edit.js:559
 msgid "Tab Size ( Tablet )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:573
+#: src/blocks/_pro/tab/edit.js:576
 msgid "Tab Size ( PC )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:577
+#: src/blocks/_pro/tab/edit.js:580
 msgid "Fit to the text"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:581
+#: src/blocks/_pro/tab/edit.js:584
 msgid "Monospaced"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:590
+#: src/blocks/_pro/tab/edit.js:593
 msgid "Tab Display Options"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:592
+#: src/blocks/_pro/tab/edit.js:595
 msgid "If there are many labels or the screen width is narrow, you can adjust it here. *Tab size setting will not be effective."
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:598
+#: src/blocks/_pro/tab/edit.js:601
 msgid "Tab Display Options ( Smart Phone )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:622
+#: src/blocks/_pro/tab/edit.js:625
 msgid "Tab Display Options ( Tablet )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:646
+#: src/blocks/_pro/tab/edit.js:649
 msgid "Tab Display Options ( PC )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:653
+#: src/blocks/_pro/tab/edit.js:656
 msgid "Not set"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:657
+#: src/blocks/_pro/tab/edit.js:660
 msgid "Scroll"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:661
+#: src/blocks/_pro/tab/edit.js:664
 msgid "Wrap to 2 rows"
 msgstr ""
 
@@ -2464,7 +2466,7 @@ msgid "Ancestor page title class name"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:141
-msgid " Image Border"
+msgid "Image Border"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:144
@@ -2603,6 +2605,11 @@ msgstr ""
 
 #: src/blocks/border-box/index.js:59
 msgid "Solid Angle iconFeature"
+msgstr ""
+
+#: src/blocks/button/edit.js:250
+#: src/components/link-toolbar/index.js:281
+msgid "Input Link URL"
 msgstr ""
 
 #: src/blocks/button/edit.js:301
@@ -3405,16 +3412,8 @@ msgstr ""
 msgid "Link target"
 msgstr ""
 
-#: src/components/link-toolbar/index.js:334
-msgid "Add noreferrer"
-msgstr ""
-
 #: src/components/link-toolbar/index.js:34
 msgid "Currently selected"
-msgstr ""
-
-#: src/components/link-toolbar/index.js:351
-msgid "Add nofollow"
 msgstr ""
 
 #: src/components/link-toolbar/index.js:371
@@ -3736,16 +3735,17 @@ msgstr ""
 msgid "Reverse"
 msgstr ""
 
-#: src/extensions/core/cover/style.js:97
+#: src/extensions/core/cover/style.js:91
 msgid "Cover link"
 msgstr ""
 
-#: src/extensions/core/group/style.js:104
-msgid "Because of the theme that enabled theme.json become can specify the color from border panel that, specification from here is deprecated."
+#: src/extensions/core/group/deprecated/1.95.2/save.js:31
+#: src/extensions/core/group/style.js:217
+msgid "Group link"
 msgstr ""
 
-#: src/extensions/core/group/style.js:192
-msgid "Group link"
+#: src/extensions/core/group/style.js:124
+msgid "Because of the theme that enabled theme.json become can specify the color from border panel that, specification from here is deprecated."
 msgstr ""
 
 #: src/extensions/core/list/style.js:107
@@ -3834,7 +3834,7 @@ msgid "If you want to use an icon other than the ones listed above, you can use 
 msgstr ""
 
 #: src/utils/font-awesome-new.js:394
-msgid "Ex) "
+msgid "Ex)"
 msgstr ""
 
 #: src/utils/font-awesome-new.js:408

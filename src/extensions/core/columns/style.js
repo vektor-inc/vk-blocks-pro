@@ -122,7 +122,6 @@ export const enhanceColumnBlock = createHigherOrderComponent((BlockEdit) => {
 }, 'addMyCustomBlockControls');
 
 const extendColumnBlock = (settings, name) => {
-
 	if (!isColumnBlock(name) && !isColumnsBlock(name)) {
 		return settings;
 	}

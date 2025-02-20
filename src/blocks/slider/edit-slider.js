@@ -1,3 +1,4 @@
+import { select, subscribe } from '@wordpress/data';
 import Swiper from 'swiper/bundle';
 
 // スライダーの格納
@@ -306,22 +307,56 @@ const editorRootLaunch = (editorRoot) => {
 	SliderObserver(editorRoot);
 };
 
+// iframe 有無を確認して editorRoot を取得
+const getEditorRoot = () => {
+	// block-editor__container iframe を確認
+	const blockEditorIframe = document.querySelector(
+		'.block-editor__container iframe'
+	);
+	if (blockEditorIframe && blockEditorIframe.contentWindow) {
+		const editorRoot =
+			blockEditorIframe.contentWindow.document.querySelector(
+				'.block-editor-block-list__layout'
+			);
+		if (editorRoot) {
+			return editorRoot;
+		}
+	}
+
+	// site-editor iframe を確認
+	const siteEditorIframe = document.querySelector('#site-editor iframe');
+	if (siteEditorIframe && siteEditorIframe.contentWindow) {
+		const siteEditorRoot =
+			siteEditorIframe.contentWindow.document.querySelector(
+				'.is-root-container'
+			);
+		if (siteEditorRoot) {
+			return siteEditorRoot;
+		}
+	}
+
+	// iframe がない場合は通常の DOM から取得
+	return document.querySelector('.block-editor-block-list__layout');
+};
+
+// メイン処理
 export const editSliderLaunch = () => {
-	const iframe = document.querySelector('.block-editor__container iframe');
-	const iframeDoc = iframe?.contentWindow?.document;
-	const editorRoot =
-		iframeDoc?.querySelector('.block-editor-block-list__layout') ||
-		document.querySelector('.block-editor-block-list__layout');
-
-	if (editorRoot) {
-		editorRootLaunch(editorRoot);
+	// 初回起動
+	const initialEditorRoot = getEditorRoot();
+	if (initialEditorRoot) {
+		editorRootLaunch(initialEditorRoot);
 	}
 
-	const siteIframe = document.querySelector('#site-editor iframe');
-	const siteEditorRoot =
-		siteIframe?.contentWindow?.document.querySelector('.is-root-container');
-
-	if (siteEditorRoot) {
-		editorRootLaunch(siteEditorRoot);
-	}
+	// ブロックの変化を監視
+	subscribe(() => {
+		const editorRoot = getEditorRoot();
+		if (editorRoot) {
+			const blocks = select('core/block-editor').getBlocks();
+			blocks.forEach((block) => {
+				if (block.name === 'vk-blocks/slider') {
+					editorRootLaunch(editorRoot);
+				}
+			});
+		}
+	});
 };

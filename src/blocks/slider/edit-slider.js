@@ -340,9 +340,7 @@ export const editSliderLaunch = () => {
 		}
 
 		// iframeがない場合は通常のDOMを確認
-		return (
-			document.querySelector('.block-editor-block-list__layout')
-		);
+		return document.querySelector('.block-editor-block-list__layout');
 	};
 
 	// 初回起動時にeditorRootを取得してスライダー初期化

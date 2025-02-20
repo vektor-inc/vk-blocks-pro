@@ -307,41 +307,45 @@ const editorRootLaunch = (editorRoot) => {
 	SliderObserver(editorRoot);
 };
 
-// iframe 有無を確認して editorRoot を取得
-const getEditorRoot = () => {
-	// block-editor__container iframe を確認
-	const blockEditorIframe = document.querySelector(
-		'.block-editor__container iframe'
-	);
-	if (blockEditorIframe && blockEditorIframe.contentWindow) {
-		const editorRoot =
-			blockEditorIframe.contentWindow.document.querySelector(
-				'.block-editor-block-list__layout'
-			);
-		if (editorRoot) {
-			return editorRoot;
-		}
-	}
+export const editSliderLaunch = () => {
+	// iframeや通常DOMからeditorRootを取得する関数
+	const getEditorRoot = () => {
+		// block-editor__container iframeを確認
+		const blockEditorIframe = document.querySelector(
+			'.block-editor__container iframe'
+		);
 
-	// site-editor iframe を確認
-	const siteEditorIframe = document.querySelector('#site-editor iframe');
-	if (siteEditorIframe && siteEditorIframe.contentWindow) {
+		const blockEditorRoot =
+			blockEditorIframe?.contentDocument?.readyState === 'complete'
+				? blockEditorIframe.contentDocument.querySelector(
+						'.block-editor-block-list__layout'
+					)
+				: null;
+
+		if (blockEditorRoot) {
+			return blockEditorRoot;
+		}
+
+		// #site-editor iframeを確認
+		const siteEditorIframe = document.querySelector('#site-editor iframe');
 		const siteEditorRoot =
-			siteEditorIframe.contentWindow.document.querySelector(
-				'.is-root-container'
-			);
+			siteEditorIframe?.contentDocument?.readyState === 'complete'
+				? siteEditorIframe.contentDocument.querySelector(
+						'.is-root-container'
+					)
+				: null;
+
 		if (siteEditorRoot) {
 			return siteEditorRoot;
 		}
-	}
 
-	// iframe がない場合は通常の DOM から取得
-	return document.querySelector('.block-editor-block-list__layout');
-};
+		// iframeがない場合は通常のDOMを確認
+		return (
+			document.querySelector('.block-editor-block-list__layout')
+		);
+	};
 
-// メイン処理
-export const editSliderLaunch = () => {
-	// 初回起動
+	// 初回起動時にeditorRootを取得してスライダー初期化
 	const initialEditorRoot = getEditorRoot();
 	if (initialEditorRoot) {
 		editorRootLaunch(initialEditorRoot);

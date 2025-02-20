@@ -108,6 +108,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Post list (Pro) / Post list slider (Pro) / Tab (Pro) / Slider ] Fixed errors occurring regardless of whether the editing screen environment is in an iframe and improved the stability of feature performance.
+
 = 1.96.0 =
 [ Add function ][ Slider / group / Icon / Grid Column Card (Pro) ] Added noreferrer, nofollow, and link description options to the link feature.
 [ Specification change ][ Animation (Pro) / Fixed Display (Pro) / Outer (Pro) ] Added support for layout.allowJustification: false, allowing full-width/wide alignment in block themes where wrapped blocks previously did not appear as full-width or wide in the editor.

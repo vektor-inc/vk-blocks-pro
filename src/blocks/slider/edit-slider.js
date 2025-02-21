@@ -1,4 +1,3 @@
-import { select, subscribe } from '@wordpress/data';
 import Swiper from 'swiper/bundle';
 
 // スライダーの格納
@@ -308,57 +307,21 @@ const editorRootLaunch = (editorRoot) => {
 };
 
 export const editSliderLaunch = () => {
-	// iframeや通常DOMからeditorRootを取得する関数
-	const getEditorRoot = () => {
-		// block-editor__container iframeを確認
-		const blockEditorIframe = document.querySelector(
-			'.block-editor__container iframe'
-		);
+	const iframe = document.querySelector('.block-editor__container iframe');
+	const iframeDoc = iframe?.contentWindow?.document;
+	const editorRoot =
+		iframeDoc?.querySelector('.block-editor-block-list__layout') ||
+		document.querySelector('.block-editor-block-list__layout');
 
-		const blockEditorRoot =
-			blockEditorIframe?.contentDocument?.readyState === 'complete'
-				? blockEditorIframe.contentDocument.querySelector(
-						'.block-editor-block-list__layout'
-					)
-				: null;
-
-		if (blockEditorRoot) {
-			return blockEditorRoot;
-		}
-
-		// #site-editor iframeを確認
-		const siteEditorIframe = document.querySelector('#site-editor iframe');
-		const siteEditorRoot =
-			siteEditorIframe?.contentDocument?.readyState === 'complete'
-				? siteEditorIframe.contentDocument.querySelector(
-						'.is-root-container'
-					)
-				: null;
-
-		if (siteEditorRoot) {
-			return siteEditorRoot;
-		}
-
-		// iframeがない場合は通常のDOMを確認
-		return document.querySelector('.block-editor-block-list__layout');
-	};
-
-	// 初回起動時にeditorRootを取得してスライダー初期化
-	const initialEditorRoot = getEditorRoot();
-	if (initialEditorRoot) {
-		editorRootLaunch(initialEditorRoot);
+	if (editorRoot) {
+		editorRootLaunch(editorRoot);
 	}
 
-	// ブロックの変化を監視
-	subscribe(() => {
-		const editorRoot = getEditorRoot();
-		if (editorRoot) {
-			const blocks = select('core/block-editor').getBlocks();
-			blocks.forEach((block) => {
-				if (block.name === 'vk-blocks/slider') {
-					editorRootLaunch(editorRoot);
-				}
-			});
-		}
-	});
+	const siteIframe = document.querySelector('#site-editor iframe');
+	const siteEditorRoot =
+		siteIframe?.contentWindow?.document.querySelector('.is-root-container');
+
+	if (siteEditorRoot) {
+		editorRootLaunch(siteEditorRoot);
+	}
 };

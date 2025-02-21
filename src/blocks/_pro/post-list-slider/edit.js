@@ -65,16 +65,16 @@ export default function PostListSliderEdit(props) {
 		}
 	}, [layout]);
 
+	// リンクを無効にする関数
 	const disableLinks = () => {
-		// iframe内のドキュメントを取得
+		// iframe の有無を確認して適切なドキュメントを取得
 		const iframe = document.querySelector(
 			'.block-editor-iframe__container iframe'
 		);
+		const targetDocument = iframe?.contentWindow?.document || document;
 
-		const iframeDocument = iframe.contentWindow.document;
-
-		const links = iframeDocument.querySelectorAll(
-			'.vk_post  a, .card-intext .card-intext-inner, .postListText_singleTermLabel_inner'
+		const links = targetDocument.querySelectorAll(
+			'.vk_post_imgOuter a, .vk_post .vk_post_title a, .postListText_title a, .card-intext .card-intext-inner, .postListText_singleTermLabel_inner, .vk_post_btnOuter a'
 		);
 		links.forEach((link) => {
 			link.addEventListener('click', (event) => {
@@ -82,7 +82,6 @@ export default function PostListSliderEdit(props) {
 			});
 			link.style.cursor = 'default';
 			link.style.boxShadow = 'unset';
-
 			// ホバー効果を無効化
 			link.style.textDecorationColor = 'inherit';
 		});
@@ -90,15 +89,15 @@ export default function PostListSliderEdit(props) {
 
 	useEffect(() => {
 		// MutationObserverでDOMの変化を監視
-		const observer = new MutationObserver(disableLinks);
-
-		// iframeの中身を監視
 		const iframe = document.querySelector(
 			'.block-editor-iframe__container iframe'
 		);
-		if (iframe && iframe.contentWindow) {
-			const iframeDocument = iframe.contentWindow.document;
-			observer.observe(iframeDocument.body, {
+		const targetDocument = iframe?.contentWindow?.document || document;
+		const observerTarget = targetDocument.querySelector('body');
+
+		const observer = new MutationObserver(disableLinks);
+		if (observerTarget) {
+			observer.observe(observerTarget, {
 				childList: true,
 				subtree: true,
 			});

@@ -210,16 +210,28 @@ export default function TabEdit(props) {
 
 	const liOnClick = (e) => {
 		if (childBlocks) {
+			// iframeの有無を確認し、適切なdocumentを取得
 			const iframe = document.querySelector(
 				'.block-editor-iframe__container iframe'
 			);
-			const iframeDocument = iframe?.contentWindow?.document;
+			const targetDocument = iframe?.contentWindow?.document || document;
 
 			const vkTab = e.target.closest('.vk_tab');
+			if (!vkTab) {
+				return;
+			}
+
 			const vkTabLabels = vkTab.querySelector('.vk_tab_labels');
+			if (!vkTabLabels) {
+				return;
+			}
 
 			// ブロック ID を抽出
-			const TabLabelId = e.target.closest('.vk_tab_labels_label').id;
+			const TabLabelId = e.target.closest('.vk_tab_labels_label')?.id;
+			if (!TabLabelId) {
+				return;
+			}
+
 			const TabId = TabLabelId.replace('vk_tab_labels_label-', '');
 
 			/* ラベルの処理 */
@@ -249,23 +261,30 @@ export default function TabEdit(props) {
 			const newActiveLabel = vkTabLabels.querySelector(
 				`#vk_tab_labels_label-${TabId}`
 			);
-			newActiveLabel.classList.add('vk_tab_labels_label-state-active');
-			newActiveLabel.classList.remove(
-				'vk_tab_labels_label-state-inactive'
-			);
-			newActiveLabel.style.removeProperty('background-color');
+			if (newActiveLabel) {
+				newActiveLabel.classList.add(
+					'vk_tab_labels_label-state-active'
+				);
+				newActiveLabel.classList.remove(
+					'vk_tab_labels_label-state-inactive'
+				);
+				newActiveLabel.style.removeProperty('background-color');
+			}
 
-			const activeTabBody = iframeDocument.querySelector(
+			const activeTabBody = targetDocument.querySelector(
 				`#block-${TabId}`
 			);
-			const activeTabBodyStyle = window.getComputedStyle(activeTabBody);
-			if (
-				!newActiveLabel
-					.closest('.vk_tab')
-					.classList.contains('is-style-vk_tab_labels-line')
-			) {
-				newActiveLabel.style.backgroundColor =
-					activeTabBodyStyle.borderTopColor || '';
+			if (activeTabBody) {
+				const activeTabBodyStyle =
+					window.getComputedStyle(activeTabBody);
+				if (
+					!newActiveLabel
+						.closest('.vk_tab')
+						.classList.contains('is-style-vk_tab_labels-line')
+				) {
+					newActiveLabel.style.backgroundColor =
+						activeTabBodyStyle.borderTopColor || '';
+				}
 			}
 
 			/* 本体の処理 */

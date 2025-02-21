@@ -51,10 +51,16 @@ export default function SliderEdit(props) {
 		blockId,
 	} = attributes;
 
-	editSliderLaunch();
 	useEffect(() => {
-		editSliderLaunch();
-	}, [attributes]);
+		let timer;
+		if (editorMode) {
+			timer = setTimeout(() => {
+				editSliderLaunch();
+			}, 50);
+		}
+
+		return () => clearTimeout(timer);
+	}, [editorMode]);
 
 	useEffect(() => {
 		// attributes の clientId は使わなくなったので削除

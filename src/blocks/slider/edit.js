@@ -1,7 +1,7 @@
 import { AdvancedToggleControl } from '@vkblocks/components/advanced-toggle-control';
 import AdvancedUnitControl from '@vkblocks/components/advanced-unit-control';
 import { __ } from '@wordpress/i18n';
-import { useEffect,useCallback } from '@wordpress/element';
+import { useEffect } from '@wordpress/element';
 import {
 	InspectorControls,
 	BlockControls,
@@ -60,7 +60,7 @@ export default function SliderEdit(props) {
 		}
 	
 		return () => clearTimeout(timer);
-	}, [editorMode]);	
+	}, [editorMode]);
 
 	useEffect(() => {
 		// attributes の clientId は使わなくなったので削除
@@ -230,14 +230,6 @@ export default function SliderEdit(props) {
 			></div>
 		);
 	}
-	const handleEditorModeChange = useCallback(
-		(mode) => {
-			if (editorMode !== mode) {
-				setAttributes({ editorMode: mode });
-			}
-		},
-		[editorMode, setAttributes]
-	);
 
 	const blockProps = useBlockProps({
 		className: `vk_slider vk_swiper vk_slider_editorMode--${editorMode} vk_slider_${clientId}${alignClass}`,
@@ -254,30 +246,38 @@ export default function SliderEdit(props) {
 					controls={['wide', 'full']}
 				/>
 				<ToolbarGroup>
-<ToolbarDropdownMenu
-	icon={
-		editorMode === 'default' ? (
-			<Dashicon icon="edit" />
-		) : (
-			<Dashicon icon="visibility" />
-		)
-	}
-	label={__('Change Slide Editor Mode', 'vk-blocks-pro')}
-	controls={[
-		{
-			title: __('Edit ( Stacked Layout ) Mode', 'vk-blocks-pro'),
-			icon: <Dashicon icon="edit" />,
-			isActive: editorMode === 'default',
-			onClick: () => handleEditorModeChange('default'),
-		},
-		{
-			title: __('Preview ( Slide ) Mode', 'vk-blocks-pro'),
-			icon: <Dashicon icon="visibility" />,
-			isActive: editorMode === 'slide',
-			onClick: () => handleEditorModeChange('slide'),
-		},
-	]}
-/>
+					<ToolbarDropdownMenu
+						icon={
+							editorMode === 'default' ? (
+								<Dashicon icon="edit" />
+							) : (
+								<Dashicon icon="visibility" />
+							)
+						}
+						label={__('Change Slide Editor Mode', 'vk-blocks-pro')}
+						controls={[
+							{
+								title: __(
+									'Edit ( Stacked Layout ) Mode',
+									'vk-blocks-pro'
+								),
+								icon: <Dashicon icon="edit" />,
+								isActive: editorMode === 'default',
+								onClick: () =>
+									setAttributes({ editorMode: 'default' }),
+							},
+							{
+								title: __(
+									'Preview ( Slide ) Mode',
+									'vk-blocks-pro'
+								),
+								icon: <Dashicon icon="visibility" />,
+								isActive: editorMode === 'slide',
+								onClick: () =>
+									setAttributes({ editorMode: 'slide' }),
+							},
+						]}
+					/>
 				</ToolbarGroup>
 			</BlockControls>
 			<InspectorControls>

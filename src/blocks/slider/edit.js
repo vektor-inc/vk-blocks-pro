@@ -51,10 +51,11 @@ export default function SliderEdit(props) {
 		blockId,
 	} = attributes;
 
-	editSliderLaunch();
 	useEffect(() => {
-		editSliderLaunch();
-	}, [attributes]);
+		if (editorMode) {
+			editSliderLaunch();
+		}
+	}, [editorMode]);	
 
 	useEffect(() => {
 		// attributes の clientId は使わなくなったので削除

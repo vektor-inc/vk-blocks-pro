@@ -58,7 +58,7 @@ export default function SliderEdit(props) {
 				editSliderLaunch();
 			}, 50);
 		}
-	
+
 		return () => clearTimeout(timer);
 	}, [editorMode]);
 

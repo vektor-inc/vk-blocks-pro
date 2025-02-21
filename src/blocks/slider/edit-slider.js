@@ -75,12 +75,11 @@ const LaunchSwiper = (slider) => {
 				if (swiperButtonNext) {
 					swiperButtonNext.style.display = '';
 				}
-				const swiperPagination = slider.querySelector(
-					'.swiper-pagination'
-				);
+				const swiperPagination =
+					slider.querySelector('.swiper-pagination');
 				if (swiperPagination) {
 					swiperPagination.style.display = '';
-				}	
+				}
 
 				// Sloder の設定を作成
 				const SwiperSetting = {};
@@ -251,9 +250,7 @@ const LaunchSwiper = (slider) => {
 			}
 
 			// ページネーションの非表示
-			const swiperPagination = slider.querySelector(
-				'.swiper-pagination'
-			);
+			const swiperPagination = slider.querySelector('.swiper-pagination');
 			if (swiperPagination) {
 				swiperPagination.style.display = 'none';
 			}

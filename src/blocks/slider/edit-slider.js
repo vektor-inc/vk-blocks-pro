@@ -75,6 +75,12 @@ const LaunchSwiper = (slider) => {
 				if (swiperButtonNext) {
 					swiperButtonNext.style.display = '';
 				}
+				const swiperPagination = slider.querySelector(
+					'.swiper-pagination'
+				);
+				if (swiperPagination) {
+					swiperPagination.style.display = '';
+				}	
 
 				// Sloder の設定を作成
 				const SwiperSetting = {};
@@ -211,7 +217,7 @@ const LaunchSwiper = (slider) => {
 				removeSwiperClassName(newSwiperDiv);
 			}
 
-			// 不要な wiper-wrapper クラスを削除
+			// 不要な swiper-wrapper クラスを削除
 			const newSwiperWrapper = slider.querySelector(
 				'.block-editor-block-list__layout'
 			);
@@ -243,6 +249,15 @@ const LaunchSwiper = (slider) => {
 			if (swiperButtonNext) {
 				swiperButtonNext.style.display = 'none';
 			}
+
+			// ページネーションの非表示
+			const swiperPagination = slider.querySelector(
+				'.swiper-pagination'
+			);
+			if (swiperPagination) {
+				swiperPagination.style.display = 'none';
+			}
+
 			if (swiper[sliderId]) {
 				swiper[sliderId].destroy();
 				swiper[sliderId] = null;

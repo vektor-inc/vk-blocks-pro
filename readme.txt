@@ -108,8 +108,10 @@ e.g.
 
 == Changelog ==
 
+= 1.96.2 =
 [ Bug fix ][ Post list (Pro) / Post list slider (Pro) / Tab (Pro) / Slider ] Fixed errors occurring regardless of whether the editing screen environment is in an iframe and improved the stability of feature performance.
 [ Bug fix ][ Post list (Pro) / Post list slider (Pro) ] Fixed the text displayed when no posts are available by removing the 's' notation and standardizing the first letter to lowercase.
+[ Other ] Rollback 1.96.0
 
 = 1.96.1 =
 [ Other ] Rollback 1.95.0.3

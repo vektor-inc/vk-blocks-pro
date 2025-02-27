@@ -184,6 +184,7 @@ a.vk_button_link {
 	// アウトラインボタン（背景なし）の場合(.btnを含めるとカスタムカラーの 背景塗りなし:hover で背景が文字色と同じになる)
 	.has-text-color.is-style-outline {
 		background-color: transparent;
+		border: 1px solid currentColor;
 		&:hover {
 			/* 応急処置：規定カラー */
 			&.has-vk-color-primary-color {

@@ -40,6 +40,7 @@ export default function ButtonEdit(props) {
 		buttonColor,
 		buttonTextColorCustom,
 		buttonColorCustom,
+		buttonBorderColorCustom,
 		buttonAlign,
 		buttonWidthMobile,
 		buttonWidthTablet,
@@ -141,6 +142,7 @@ export default function ButtonEdit(props) {
 				buttonTextColorCustom: undefined,
 			});
 			updateBlockAttributes(clientId, { buttonColorCustom: undefined });
+			updateBlockAttributes(clientId, { buttonBorderColorCustom: undefined });
 		} else if (
 			buttonColorCustom === undefined &&
 			buttonColor === 'custom'
@@ -148,6 +150,7 @@ export default function ButtonEdit(props) {
 			updateBlockAttributes(clientId, { buttonColor: 'primary' });
 			updateBlockAttributes(clientId, {
 				buttonTextColorCustom: undefined,
+				buttonBorderColorCustom: undefined,
 			});
 		}
 	}, [buttonColor]);
@@ -836,6 +839,7 @@ export default function ButtonEdit(props) {
 				<VKBButton
 					lbTextColorCustom={buttonTextColorCustom}
 					lbColorCustom={buttonColorCustom}
+					lbBorderColorCustom={buttonBorderColorCustom}
 					lbColor={buttonColor}
 					lbType={buttonType}
 					lbAlign={buttonAlign}

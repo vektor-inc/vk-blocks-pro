@@ -51,7 +51,7 @@ export const settings = {
 };
 
 const generateInlineCss = (attributes) => {
-	const { buttonTextColorCustom, buttonColorCustom, buttonType, blockId } =
+	const { buttonTextColorCustom, buttonColorCustom, buttonBorderColorCustom, buttonType, blockId } =
 		attributes;
 	let inlineCss = '';
 
@@ -70,11 +70,13 @@ const generateInlineCss = (attributes) => {
 				background-color: transparent;
 				border: 1px solid ${buttonColorCustom};
 				color: ${buttonColorCustom};
+				border-color: ${buttonBorderColorCustom};
 			}
 			.vk_button-${blockId} .has-text-color.is-style-outline:hover {
 				background-color: ${buttonColorCustom};
 				border: 1px solid ${buttonColorCustom};
 				color: #fff;
+				border-color: ${buttonBorderColorCustom};
 			}`;
 		}
 		// テキストのみ
@@ -98,7 +100,7 @@ const generateInlineCss = (attributes) => {
 	}
 
 	if (buttonBorderColorCustom !== undefined && isHexColor(buttonBorderColorCustom)) {
-		inlineCss += `.vk_button-${blockId} .btn {
+		inlineCss += `.vk_button-${blockId} .has-border-color-${buttonBorderColorCustom.replace('#', '')} {
 			border-color: ${buttonBorderColorCustom};
 		}`;
 	}

@@ -755,6 +755,15 @@ export default function ButtonEdit(props) {
 								</BaseControl>
 							)}
 					</BaseControl>
+					<BaseControl
+						id={`vk_block_button_custom_border_color`}
+						label={__('Border Color', 'vk-blocks-pro')}
+					>
+						<AdvancedColorPalette
+							schema={'buttonBorderColorCustom'}
+							{...props}
+						/>
+					</BaseControl>
 					<BaseControl>
 						<h4 className={`mt-0 mb-2`}>
 							{__('Icon', 'vk-blocks-pro') +

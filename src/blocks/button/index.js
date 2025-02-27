@@ -32,6 +32,7 @@ export const settings = {
 			buttonColor: 'primary',
 			buttonTextColorCustom: 'undefined',
 			buttonColorCustom: 'undefined',
+			buttonBorderColorCustom: 'undefined',
 			buttonAlign: 'left',
 			buttonWidthMobile: 0,
 			buttonWidthTablet: 0,
@@ -94,6 +95,12 @@ const generateInlineCss = (attributes) => {
 				color: ${buttonTextColorCustom};
 			}`;
 		}
+	}
+
+	if (buttonBorderColorCustom !== undefined && isHexColor(buttonBorderColorCustom)) {
+		inlineCss += `.vk_button-${blockId} .btn {
+			border-color: ${buttonBorderColorCustom};
+		}`;
 	}
 
 	return inlineCss;

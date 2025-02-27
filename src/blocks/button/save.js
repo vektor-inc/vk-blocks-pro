@@ -15,6 +15,7 @@ export default function save(props) {
 		buttonColor,
 		buttonTextColorCustom,
 		buttonColorCustom,
+		buttonBorderColorCustom,
 		buttonAlign,
 		buttonWidthMobile,
 		buttonWidthTablet,
@@ -89,6 +90,7 @@ export default function save(props) {
 				lbIconSizeAfter={iconSizeAfter}
 				lbsubCaption={subCaption}
 				inlineStyle={btnInlineStyle}
+				lbBorderColorCustom={buttonBorderColorCustom}
 				lbRichtext={
 					<RichText.Content
 						tagName={'span'}

@@ -6,6 +6,7 @@ export class VKBButton extends Component {
 	render() {
 		const buttonTextColorCustom = this.props.lbTextColorCustom;
 		const buttonColorCustom = this.props.lbColorCustom;
+		const buttonBorderColorCustom = this.props.lbBorderColorCustom;
 		const buttonColor = this.props.lbColor;
 		const buttonType = this.props.lbType;
 		const buttonAlign = this.props.lbAlign;
@@ -127,6 +128,9 @@ export class VKBButton extends Component {
 		const btnInlineStyle = { ...inlineStyle };
 		if (borderRadius) {
 			btnInlineStyle.borderRadius = borderRadius;
+		}
+		if (buttonBorderColorCustom) {
+			btnInlineStyle.border = `1px solid ${buttonBorderColorCustom}`;
 		}
 
 		return (

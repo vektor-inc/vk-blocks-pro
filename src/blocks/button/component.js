@@ -58,9 +58,13 @@ export class VKBButton extends Component {
 				aClass += ` btn has-text-color is-style-outline has-vk-color-${buttonColor}-color`;
 			} else {
 				aClass += ` btn has-text-color is-style-outline`;
-				// カスタムパレットカラーの場合
+				// カスタムパレットの色の場合
 				if (!isHexColor(buttonColorCustom)) {
 					aClass += ` has-${buttonColorCustom}-color`;
+				}
+				// カスタムパレットの枠線の色の場合
+				if (!isHexColor(buttonBorderColorCustom)) {
+					aClass += ` has-${buttonBorderColorCustom}-border-color`;
 				}
 			}
 			// テキストのみ
@@ -90,6 +94,11 @@ export class VKBButton extends Component {
 			};
 		}
 		*/
+
+		// ボーダーカラー
+		if (buttonBorderColorCustom !== undefined && isHexColor(buttonBorderColorCustom)) {
+			aClass += ` has-border-color-${buttonBorderColorCustom.replace('#', '')}`;
+		}
 
 		aClass = `${aClass} btn-${buttonSize}`;
 
@@ -128,9 +137,6 @@ export class VKBButton extends Component {
 		const btnInlineStyle = { ...inlineStyle };
 		if (borderRadius) {
 			btnInlineStyle.borderRadius = borderRadius;
-		}
-		if (buttonBorderColorCustom) {
-			btnInlineStyle.border = `1px solid ${buttonBorderColorCustom}`;
 		}
 
 		return (

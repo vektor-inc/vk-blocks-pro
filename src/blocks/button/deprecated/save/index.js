@@ -9,6 +9,7 @@ import save1_39_2 from './1.39.2/save';
 import save1_43_0 from './1.43.0/save';
 import save1_70_1 from './1.70.1/save';
 import save1_72_1 from './1.72.1/save';
+import save1_96_2 from './1.96.2/save';
 
 const blockAttributes = {
 	content: {
@@ -166,8 +167,20 @@ const blockAttributes12 = {
 	},
 }
 
+const blockAttributes13 = {
+	...blockAttributes12,
+	buttonBorderColorCustom: {
+		type: 'string',
+		default: null
+	},
+}
+
 
 export const deprecated = [
+	{
+		attributes: blockAttributes13,
+		save: save1_96_2,
+	},
 	{
 		attributes: blockAttributes12,
 		save: save1_72_1,

@@ -93,6 +93,7 @@ class PostListBlockTest extends VK_UnitTestCase {
 			'order'                      => 'ASC',
 			'orderby'                    => 'title',
 			'offset'                     => 0.0,
+			'stickyPosts'                => 'include',
 			'selfIgnore'                 => true,
 			'vkb_hidden'                 => false,
 			'vkb_hidden_xxl'             => false,
@@ -307,6 +308,17 @@ class PostListBlockTest extends VK_UnitTestCase {
 				),
 				'expected'   => array( 'Event post', 'Normal post' ),
 			),
+			'スティッキーポストを除外' => array(
+				'attributes' => array(
+					'numberPosts'       => 6.0,
+					'isCheckedPostType' => '["post","event"]',
+					'isCheckedTerms'    => '[]',
+					'order'             => 'ASC',
+					'orderby'           => 'title',
+					'stickyPosts'       => 'exclude',
+				),
+				'expected' => array( 'Child-category post', 'Event post', 'Normal post' ),
+			),	
 			'カテゴリーの or 検索'   => array(
 				'attributes' => array(
 					'numberPosts'       => 6.0,

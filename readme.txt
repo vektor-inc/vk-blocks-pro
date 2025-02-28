@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.4
 Tested up to: 6.7
-Stable tag: 1.95.0.4
+Stable tag: 1.96.2.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -108,8 +108,13 @@ e.g.
 
 == Changelog ==
 
+
 [ Add function ][ Post List (Pro) / Post List Slider (Pro) ] Added the ability to set sticky posts to display.
+
+= 1.96.2 =
 [ Bug fix ][ Post list (Pro) / Post list slider (Pro) / Tab (Pro) / Slider ] Fixed errors occurring regardless of whether the editing screen environment is in an iframe and improved the stability of feature performance.
+[ Bug fix ][ Post list (Pro) / Post list slider (Pro) ] Fixed the text displayed when no posts are available by removing the 's' notation and standardizing the first letter to lowercase.
+[ Other ] Rollback 1.96.0
 
 = 1.96.1 =
 [ Other ] Rollback 1.95.0.3

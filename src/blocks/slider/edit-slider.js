@@ -75,6 +75,11 @@ const LaunchSwiper = (slider) => {
 				if (swiperButtonNext) {
 					swiperButtonNext.style.display = '';
 				}
+				const swiperPagination =
+					slider.querySelector('.swiper-pagination');
+				if (swiperPagination) {
+					swiperPagination.style.display = '';
+				}
 
 				// Sloder の設定を作成
 				const SwiperSetting = {};
@@ -211,7 +216,7 @@ const LaunchSwiper = (slider) => {
 				removeSwiperClassName(newSwiperDiv);
 			}
 
-			// 不要な wiper-wrapper クラスを削除
+			// 不要な swiper-wrapper クラスを削除
 			const newSwiperWrapper = slider.querySelector(
 				'.block-editor-block-list__layout'
 			);
@@ -243,6 +248,13 @@ const LaunchSwiper = (slider) => {
 			if (swiperButtonNext) {
 				swiperButtonNext.style.display = 'none';
 			}
+
+			// ページネーションの非表示
+			const swiperPagination = slider.querySelector('.swiper-pagination');
+			if (swiperPagination) {
+				swiperPagination.style.display = 'none';
+			}
+
 			if (swiper[sliderId]) {
 				swiper[sliderId].destroy();
 				swiper[sliderId] = null;
@@ -307,18 +319,21 @@ const editorRootLaunch = (editorRoot) => {
 };
 
 export const editSliderLaunch = () => {
-	const blockEditorRoot = document.querySelector(
-		'.block-editor .is-root-container'
-	);
-	if (blockEditorRoot) {
-		editorRootLaunch(blockEditorRoot);
+	const iframe = document.querySelector('.block-editor__container iframe');
+	const iframeDoc = iframe?.contentWindow?.document;
+	const editorRoot =
+		iframeDoc?.querySelector('.block-editor-block-list__layout') ||
+		document.querySelector('.block-editor-block-list__layout');
+
+	if (editorRoot) {
+		editorRootLaunch(editorRoot);
 	}
-	const iframe = document.querySelector('#site-editor iframe');
-	if (iframe) {
-		const siteEditorRoot =
-			iframe.contentWindow.document.querySelector('.is-root-container');
-		if (siteEditorRoot) {
-			editorRootLaunch(siteEditorRoot);
-		}
+
+	const siteIframe = document.querySelector('#site-editor iframe');
+	const siteEditorRoot =
+		siteIframe?.contentWindow?.document.querySelector('.is-root-container');
+
+	if (siteEditorRoot) {
+		editorRootLaunch(siteEditorRoot);
 	}
 };

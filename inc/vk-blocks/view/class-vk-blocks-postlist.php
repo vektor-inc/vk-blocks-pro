@@ -287,7 +287,7 @@ class Vk_Blocks_PostList {
 		}
 
 		/* translators: %s: 投稿タイプ名 */
-		$html = '<div class="alert alert-warning text-center">' . sprintf( __( 'There are no %ss.', 'vk-blocks-pro' ), $name ) . '</div>';
+		$html = '<div class="alert alert-warning text-center">' . sprintf( __( 'There are no %s.', 'vk-blocks-pro' ), strtolower( $name ) ) . '</div>';
 		return apply_filters( 'vk_blocks_post_list_render_no_post', $html, $wp_query );
 	}
 }

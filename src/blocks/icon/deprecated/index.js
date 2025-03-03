@@ -1,7 +1,7 @@
 import save1_13_2 from './1.13.2/save';
 import save1_16_1 from './1.16.1/save';
 import save1_94_2 from './1.94.2/save';
-import save1_95_0 from './1.95.0/save';
+import save1_96_2 from './1.96.2/save';
 
 const blockAttributes = {
 	faIcon: {
@@ -80,7 +80,7 @@ const blockAttributes4 = {
 }
 
 /* 次回対応おねがいします
-(iconColor のデフォルト値を変更しましたが、save1_95_0 で migrate しているので必要ないかもしれない)
+(iconColor のデフォルト値を変更しましたが、save1_96_2 で migrate しているので必要ないかもしれない)
 const blockAttributes5 = {
 	...blockAttributes4,
 	iconColor: {
@@ -93,7 +93,7 @@ const blockAttributes5 = {
 export const deprecated = [
 	{
 		attributes: blockAttributes4,
-		save: save1_95_0,
+		save: save1_96_2,
 		migrate: (attributes) => {
 			return {
 				...attributes,

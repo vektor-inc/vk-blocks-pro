@@ -1,4 +1,4 @@
-import save1_95_0 from './1.95.0/save';
+import save1_96_2 from './1.96.2/save';
 
 const blockAttributes = {
 	iconSize: {
@@ -34,6 +34,6 @@ const blockAttributes = {
 export const deprecated = [
 	{
 		attributes: blockAttributes,
-		save: save1_95_0,
+		save: save1_96_2,
 	},
 ];

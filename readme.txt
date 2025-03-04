@@ -107,6 +107,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+[ Bug fix ][ Ancestor Page List ] Fixed a warning message that appeared on the console when placing blocks.
 
 = 1.96.2 =
 [ Bug fix ][ Post list (Pro) / Post list slider (Pro) / Tab (Pro) / Slider ] Fixed errors occurring regardless of whether the editing screen environment is in an iframe and improved the stability of feature performance.

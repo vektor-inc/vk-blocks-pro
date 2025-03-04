@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     # 通常版をクローン Tagのバージョンを取得。
     # GITHUB_REFには、refs/tags/0.0.0 が値が入っているので前から10文字を削除して、バージョンのみを取得する。
     # https://qiita.com/maruware/items/3da1f5866f6f233a1ad1#%E3%82%BF%E3%82%B0%E5%90%8D%E3%82%92%E5%A4%89%E6%95%B0%E3%81%A8%E3%81%97%E3%81%A6%E4%BD%BF%E7%94%A8
@@ -31,7 +31,7 @@ jobs:
 
     # setup node based on the version from the .node-version file, fetched in the previous step
     - name: Setup Node.js (.node-version)
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: 20.x
 

@@ -108,6 +108,8 @@ e.g.
 
 == Changelog ==
 
+[ Design Bug Fix ][ Table ] Fixed overlapping borders when using vertical cells, and ensured the border color follows the theme settings.
+
 = 1.96.2 =
 [ Bug fix ][ Post list (Pro) / Post list slider (Pro) / Tab (Pro) / Slider ] Fixed errors occurring regardless of whether the editing screen environment is in an iframe and improved the stability of feature performance.
 [ Bug fix ][ Post list (Pro) / Post list slider (Pro) ] Fixed the text displayed when no posts are available by removing the 's' notation and standardizing the first letter to lowercase.

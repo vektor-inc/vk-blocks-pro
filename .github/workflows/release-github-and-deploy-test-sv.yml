@@ -15,11 +15,11 @@ jobs:
 
     # [ Start ] pre_ リリース と 本リリースで同じ処理 ##########################################
   
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     # setup node based on the version from the .node-version file, fetched in the previous step
     - name: Setup Node.js (.node-version)
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: 20.x
 

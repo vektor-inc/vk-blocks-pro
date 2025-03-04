@@ -46,17 +46,34 @@
 			display: block;
 			border-top-color: transparent;
 			box-sizing: border-box;
-	
 			/* 最後のセルには border-bottom: none を適用 */
 			&:last-of-type:not(:last-child) {
-				border-bottom: none
+				border-bottom: none;
 			}
 		}
 	}
 	
 	/* 最初の行を除外するためのスタイル */
-	&:not(.is-style-stripes) tr:first-of-type :is(th, td):first-of-type {
+	&:not(.is-style-stripes) tr:first-of-type :is(th, td):first-of-type{
 		border-top: 1px solid;
+		border-top-color:inherit;
+	}
+	/* 最初の行の最初の th, td に適用されるスタイル */
+	&:not(.is-style-stripes) table:where(:not(.has-border-color)) tr:first-of-type :is(th, td):first-of-type {
+		border-top-color: inherit;
+	}
+	/* 枠線の色が設定してある場合の th, td のスタイル */
+	.has-border-color tr :is(th, td){
+		border-left:none;
+		border-right:none;
+	}
+	/* 枠線の色が設定してある場合の最初の行の最初の th, td に適用されるスタイル */
+	.has-border-color tr:first-of-type :is(th, td):first-of-type{
+		border-top:none;
+	}
+	/* 枠線の色が設定してある場合の行の最後の th, td に適用されるスタイル */
+	.has-border-color tr :is(th, td):last-of-type{
+		border-bottom: none;
 	}
 
 	&.is-style-vk-table {     
@@ -87,7 +104,8 @@
 			// theme.json のあるファイルでテーブルの線の色指定がない場合のみ適用
 			table:where(:not(.has-border-color)) {
 				:where(th, td) {
-					border: 1px solid var(--vk-color-border-hr);
+					border: 1px solid;
+					border-color:inherit;
 				}
 			}
 		}
@@ -105,7 +123,8 @@
 			// theme.json のあるファイルでテーブルの線の色指定がない場合のみ適用
 			table:where(:not(.has-border-color)) {
 				th, td {
-					border: 1px solid var(--vk-color-border-hr);
+					border: 1px solid;
+					border-color: inherit;
 				}
 			}
 		}
@@ -117,7 +136,8 @@
 			// theme.json のあるファイルでテーブルの線の色指定がない場合のみ適用
 			table:where(:not(.has-border-color)) {
 				th, td {
-					border: 1px solid var(--vk-color-border-hr);
+					border: 1px solid;
+					border-color: inherit;
 				}
 			}
 		}

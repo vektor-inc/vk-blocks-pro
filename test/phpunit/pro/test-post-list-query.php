@@ -275,6 +275,24 @@ class PostListBlockQueryTest extends VK_UnitTestCase {
 					'target_url' => home_url( '/event/page/2' ),
 				),
 			),
+			// Stickt Post 除外設定
+			array(
+				'attributes' => array(
+					'isCheckedPostType' => '["event"]',
+					'isCheckedTerms'    => json_encode(
+						array(
+							$test_data['term_id_event_area_aichi'],
+							$test_data['term_id_event_cat_a'],
+						)
+					),
+					'stickyPosts'       => 'exclude'
+				),
+				'expected'   => array(
+					$test_data['post_id_a_aichi'],
+					$test_data['post_id_b_aichi'],
+					$test_data['post_id_a_online'],
+				),
+			),
 		);
 		$vk_blocks_post_list = new Vk_Blocks_PostList();
 

@@ -246,6 +246,7 @@ export default function SliderItemEdit(props) {
 						>
 							<AdvancedMediaUpload
 								schema={'bgImage'}
+								schemaId={'bgImageId'}
 								{...props}
 							/>
 						</div>
@@ -257,6 +258,7 @@ export default function SliderItemEdit(props) {
 					>
 						<AdvancedMediaUpload
 							schema={'bgImageTablet'}
+							schemaId={'bgImageTabletId'}
 							{...props}
 						/>
 					</BaseControl>
@@ -267,6 +269,7 @@ export default function SliderItemEdit(props) {
 					>
 						<AdvancedMediaUpload
 							schema={'bgImageMobile'}
+							schemaId={'bgImageMobileId'}
 							{...props}
 						/>
 					</BaseControl>

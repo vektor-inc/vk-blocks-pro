@@ -10,14 +10,15 @@ export const AdvancedMediaUpload = (props) => {
 	const deleteImgBtn = () => {
 		dispatch('core/block-editor').updateBlockAttributes(clientId, {
 			[schema]: null,
+			[schema + 'Id']: null,
 		});
 	};
 
 	return (
 		<MediaUpload
-			onSelect={(value) => setAttributes({ [schema]: value.url })}
+			onSelect={(value) => setAttributes({ [schema]: value.url, [schema + 'Id']: value.id })}
 			type="image"
-			value={attributes[schema]}
+			value={attributes[schema + 'Id']}
 			render={({ open }) => (
 				<>
 					{attributes[schema] ? (
@@ -27,12 +28,20 @@ export const AdvancedMediaUpload = (props) => {
 								className={'icon-image'}
 								src={attributes[schema]}
 							/>
+							<div class="components-button-group">
 							<Button
 								onClick={deleteImgBtn}
 								className={'image-button button button-delete'}
 							>
 								{__('Delete Image', 'vk-blocks-pro')}
 							</Button>
+							<Button
+								onClick={open}
+								className={'image-button button button-replace'}
+							>
+								{__('Replace Image', 'vk-blocks-pro')}
+							</Button>
+							</div>
 						</>
 					) : (
 						<>

@@ -24,6 +24,18 @@
 			"type": "string",
 			"default": null
 		},
+		"bgImageId": {
+			"type": "number",
+			"default": null
+		},
+		"bgImageTabletId": {
+			"type": "number",
+			"default": null
+		},
+		"bgImageMobileId": {
+			"type": "number",
+			"default": null
+		},
 		"outerWidth": {
 			"type": "string",
 			"default": "normal"

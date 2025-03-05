@@ -673,6 +673,7 @@ export default function OuterEdit(props) {
 						>
 							<AdvancedMediaUpload
 								schema={'bgImage'}
+								schemaId={'bgImageId'}
 								{...props}
 							/>
 						</div>
@@ -684,6 +685,7 @@ export default function OuterEdit(props) {
 					>
 						<AdvancedMediaUpload
 							schema={'bgImageTablet'}
+							schemaId={'bgImageTabletId'}
 							{...props}
 						/>
 					</BaseControl>
@@ -694,6 +696,7 @@ export default function OuterEdit(props) {
 					>
 						<AdvancedMediaUpload
 							schema={'bgImageMobile'}
+							schemaId={'bgImageMobileId'}
 							{...props}
 						/>
 					</BaseControl>

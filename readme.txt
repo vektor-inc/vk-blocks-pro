@@ -107,9 +107,8 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
 [ Bug fix ][ Ancestor Page List ] Fixed a warning message that appeared on the console when placing blocks.
-
-
 [ Add function ][ Post List (Pro) / Post List Slider (Pro) ] Added the ability to set sticky posts to display.
 
 = 1.96.2 =

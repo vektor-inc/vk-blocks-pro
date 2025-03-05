@@ -8,6 +8,7 @@ import {
 } from '@wordpress/components';
 import ServerSideRender from '@wordpress/server-side-render';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
+import { useEffect } from '@wordpress/element';
 
 export default function PostListEdit(props) {
 	const { attributes, setAttributes, name } = props;
@@ -23,14 +24,22 @@ export default function PostListEdit(props) {
 
 	const blockProps = useBlockProps();
 
-	const matches = ancestorTitleTagName.match(/^(h[2-6]).*/);
-	setAttributes({ ancestorTitleTagName: matches[1] });
+	// useEffectを使ってレンダリング後にstateを更新
+	useEffect(() => {
+		const matches = ancestorTitleTagName.match(/^(h[2-6]).*/);
+		if (matches && matches[1] !== ancestorTitleTagName) {
+			setAttributes({ ancestorTitleTagName: matches[1] });
+		}
 
-	const sanitizedValue = ancestorTitleClassName?.replace(
-		/[^a-zA-Z0-9-_ ]/g,
-		''
-	);
-	setAttributes({ ancestorTitleClassName: sanitizedValue });
+		const sanitizedValue = ancestorTitleClassName?.replace(
+			/[^a-zA-Z0-9-_ ]/g,
+			''
+		);
+		if (sanitizedValue !== ancestorTitleClassName) {
+			setAttributes({ ancestorTitleClassName: sanitizedValue });
+		}
+	}, [ancestorTitleTagName, ancestorTitleClassName, setAttributes]);
+
 	return (
 		<>
 			<InspectorControls>
@@ -84,7 +93,7 @@ export default function PostListEdit(props) {
 							'Ancestor page title class name',
 							'vk-blocks-pro'
 						)}
-						value={ancestorTitleClassName}
+						value={ancestorTitleClassName || ''}
 						className={`mt-0 mb-3`}
 						onChange={(value) => {
 							const _sanitizedValue = value.replace(

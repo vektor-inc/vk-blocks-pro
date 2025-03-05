@@ -109,6 +109,8 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Icon ] Added inherit parent element color option as default.
+[ Design Bug Fix ][ Table ] Fixed overlapping borders when using vertical cells, and ensured the border color follows the theme settings.
+
 [ Add function ][ Post List (Pro) / Post List Slider (Pro) ] Added the ability to set sticky posts to display.
 
 = 1.96.2 =

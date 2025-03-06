@@ -37,6 +37,7 @@ import {
 	BlockAlignmentToolbar,
 } from '@wordpress/block-editor';
 import { useEffect, useRef } from '@wordpress/element';
+import { select } from '@wordpress/data';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 
 export default function OuterEdit(props) {
@@ -187,17 +188,50 @@ export default function OuterEdit(props) {
 				lower_level_pc: lower_level,
 			});
 		}
-		if (!attributes.bgImageId && attributes.bgImage) {
-			setAttributes({ bgImageId: attributes.bgImage.id });
+	}, [clientId]);
+
+	useEffect(() => {
+		let isMounted = true;
+
+		async function updateBgImageId(imageUrl, idAttributeName) {
+			if (!imageUrl || attributes[idAttributeName]) {
+				return;
+			}
+
+			// 取得試行回数
+			let attempts = 0;
+			const maxAttempts = 10;
+
+			while (attempts < maxAttempts && isMounted) {
+				const media = select('core').getEntityRecords(
+					'postType',
+					'attachment',
+					{ per_page: -1 }
+				);
+
+				if (media && media.length > 0) {
+					const mediaItem = media.find(
+						(item) => item.source_url === imageUrl
+					);
+					if (mediaItem && mediaItem.id) {
+						setAttributes({ [idAttributeName]: mediaItem.id });
+						break;
+					}
+				}
+
+				attempts++;
+				await new Promise((resolve) => setTimeout(resolve, 500));
+			}
 		}
-		if (!attributes.bgImageTabletId && attributes.bgImageTablet) {
-			setAttributes({ bgImageTabletId: attributes.bgImageTablet.id });
-		}
-		if (!attributes.bgImageMobileId && attributes.bgImageMobile) {
-			setAttributes({ bgImageMobileId: attributes.bgImageMobile.id });
-		}
+
+		updateBgImageId(attributes.bgImage, 'bgImageId');
+		updateBgImageId(attributes.bgImageTablet, 'bgImageTabletId');
+		updateBgImageId(attributes.bgImageMobile, 'bgImageMobileId');
+
+		return () => {
+			isMounted = false;
+		};
 	}, [
-		clientId,
 		attributes.bgImage,
 		attributes.bgImageTablet,
 		attributes.bgImageMobile,

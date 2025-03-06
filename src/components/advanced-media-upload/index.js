@@ -2,7 +2,6 @@ import { __ } from '@wordpress/i18n';
 import { Button } from '@wordpress/components';
 import { MediaUpload } from '@wordpress/block-editor';
 import { dispatch } from '@wordpress/data';
-import { useEffect } from '@wordpress/element';
 import noImage from '../../../inc/vk-blocks/images/no-image.svg';
 
 export const AdvancedMediaUpload = (props) => {
@@ -17,34 +16,42 @@ export const AdvancedMediaUpload = (props) => {
 
 	const ensureImageId = (callback) => {
 		const schemaIdKey = schema + 'Id';
-	
+
 		if (attributes[schema] && !attributes[schemaIdKey]) {
-			wp.media.attachment(attributes[schema]).fetch().then((media) => {
-				if (media && media.id) {
-					setAttributes({ [schemaIdKey]: media.id });
-				}
-			});
+			wp.media
+				.attachment(attributes[schema])
+				.fetch()
+				.then((media) => {
+					if (media && media.id) {
+						setAttributes({ [schemaIdKey]: media.id });
+					}
+				});
 		}
-	
+
 		// すぐにコールバック（open）を実行
-		if (callback) callback();
-	};	
+		if (callback) {
+			callback();
+		}
+	};
 
 	return (
 		<MediaUpload
 			onSelect={(value) => {
 				const schemaIdKey = schema + 'Id'; // 例: "bgImageId"
 				const newAttributes = { [schema]: value.url };
-			
+
 				if (value.id) {
 					newAttributes[schemaIdKey] = value.id;
 				} else {
 					// IDがない場合、wp.media.attachment() を使って取得
-					wp.media.attachment(value.url).fetch().then((media) => {
-						if (media && media.id) {
-							setAttributes({ [schemaIdKey]: media.id });
-						}
-					});
+					wp.media
+						.attachment(value.url)
+						.fetch()
+						.then((media) => {
+							if (media && media.id) {
+								setAttributes({ [schemaIdKey]: media.id });
+							}
+						});
 				}
 				setAttributes(newAttributes);
 			}}
@@ -59,10 +66,12 @@ export const AdvancedMediaUpload = (props) => {
 								className={'icon-image'}
 								src={attributes[schema]}
 							/>
-							<div class="components-button-group">
+							<div className="components-button-group">
 								<Button
 									onClick={deleteImgBtn}
-									className={'image-button button button-delete'}
+									className={
+										'image-button button button-delete'
+									}
 								>
 									{__('Delete Image', 'vk-blocks-pro')}
 								</Button>
@@ -70,7 +79,9 @@ export const AdvancedMediaUpload = (props) => {
 									onClick={() => {
 										ensureImageId(open);
 									}}
-									className={'image-button button button-replace'}
+									className={
+										'image-button button button-replace'
+									}
 								>
 									{__('Replace Image', 'vk-blocks-pro')}
 								</Button>

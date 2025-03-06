@@ -160,6 +160,7 @@ button.image-button:not(.button-delete) {
 // VK Outer & スライダーアイテム 編集パネル
 $color-danger: #dd3333;
 .vk_outer_sidebar_bgImage,
+.vk_slider_item_sidebar_bgImage,
 .vk_slider_item_sidebar_bgImage_button_container {
 	position: relative;
 	.components-button:not(.image-button),

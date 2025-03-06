@@ -187,7 +187,21 @@ export default function OuterEdit(props) {
 				lower_level_pc: lower_level,
 			});
 		}
-	}, [clientId]);
+		if (!attributes.bgImageId && attributes.bgImage) {
+			setAttributes({ bgImageId: attributes.bgImage.id });
+		}
+		if (!attributes.bgImageTabletId && attributes.bgImageTablet) {
+			setAttributes({ bgImageTabletId: attributes.bgImageTablet.id });
+		}
+		if (!attributes.bgImageMobileId && attributes.bgImageMobile) {
+			setAttributes({ bgImageMobileId: attributes.bgImageMobile.id });
+		}
+	}, [
+		clientId,
+		attributes.bgImage,
+		attributes.bgImageTablet,
+		attributes.bgImageMobile,
+	]);
 
 	const bgColorClasses = classnames({
 		[`has-background`]: bgColor !== undefined,

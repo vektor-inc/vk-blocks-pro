@@ -62,50 +62,31 @@ export default function SliderItemEdit(props) {
 
 	useEffect(() => {
 		let isMounted = true;
-
-		async function updateBgImageId(imageUrl, idAttributeName) {
-			if (!imageUrl || attributes[idAttributeName]) {
-				return;
-			}
-
-			// 取得試行回数
-			let attempts = 0;
-			const maxAttempts = 10;
-
-			while (attempts < maxAttempts && isMounted) {
-				const media = select('core').getEntityRecords(
-					'postType',
-					'attachment',
-					{ per_page: -1 }
-				);
-
-				if (media && media.length > 0) {
-					const mediaItem = media.find(
-						(item) => item.source_url === imageUrl
-					);
-					if (mediaItem && mediaItem.id) {
-						setAttributes({ [idAttributeName]: mediaItem.id });
-						break;
-					}
+	
+		const updateBgImageId = async (imageUrl, idAttributeName) => {
+			if (!imageUrl || attributes[idAttributeName]) return;
+	
+			for (let attempts = 0; attempts < 10 && isMounted; attempts++) {
+				const media = select('core').getEntityRecords('postType', 'attachment', { per_page: -1 });
+				const mediaItem = media?.find((item) => item.source_url === imageUrl);
+	
+				if (mediaItem?.id) {
+					setAttributes({ [idAttributeName]: mediaItem.id });
+					return;
 				}
-
-				attempts++;
+	
 				await new Promise((resolve) => setTimeout(resolve, 500));
 			}
-		}
-
-		updateBgImageId(attributes.bgImage, 'bgImageId');
-		updateBgImageId(attributes.bgImageTablet, 'bgImageTabletId');
-		updateBgImageId(attributes.bgImageMobile, 'bgImageMobileId');
-
+		};
+	
+		['bgImage', 'bgImageTablet', 'bgImageMobile'].forEach((attr) =>
+			updateBgImageId(attributes[attr], `${attr}Id`)
+		);
+	
 		return () => {
 			isMounted = false;
 		};
-	}, [
-		attributes.bgImage,
-		attributes.bgImageTablet,
-		attributes.bgImageMobile,
-	]);
+	}, [attributes.bgImage, attributes.bgImageTablet, attributes.bgImageMobile]);	
 
 	// classPaddingLRのクラス切り替え
 	let classPaddingLR = '';

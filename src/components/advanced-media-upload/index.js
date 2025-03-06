@@ -34,19 +34,23 @@ export const AdvancedMediaUpload = (props) => {
 								className={'icon-image'}
 								src={attributes[schema]}
 							/>
-							<div class="components-button-group">
-							<Button
-								onClick={deleteImgBtn}
-								className={'image-button button button-delete'}
-							>
-								{__('Delete Image', 'vk-blocks-pro')}
-							</Button>
-							<Button
-								onClick={open}
-								className={'image-button button button-replace'}
-							>
-								{__('Replace Image', 'vk-blocks-pro')}
-							</Button>
+							<div className="components-button-group">
+								<Button
+									onClick={deleteImgBtn}
+									className={
+										'image-button button button-delete'
+									}
+								>
+									{__('Delete Image', 'vk-blocks-pro')}
+								</Button>
+								<Button
+									onClick={open}
+									className={
+										'image-button button button-replace'
+									}
+								>
+									{__('Replace Image', 'vk-blocks-pro')}
+								</Button>
 							</div>
 						</>
 					) : (

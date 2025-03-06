@@ -60,33 +60,46 @@ export default function SliderItemEdit(props) {
 		}
 	}, [clientId]);
 
+	// 既存ブロックの bgImage, bgImageTablet, bgImageMobile の ID を自動補完
 	useEffect(() => {
 		let isMounted = true;
-	
+
 		const updateBgImageId = async (imageUrl, idAttributeName) => {
-			if (!imageUrl || attributes[idAttributeName]) return;
-	
+			if (!imageUrl || attributes[idAttributeName]) {
+				return;
+			}
+
 			for (let attempts = 0; attempts < 10 && isMounted; attempts++) {
-				const media = select('core').getEntityRecords('postType', 'attachment', { per_page: -1 });
-				const mediaItem = media?.find((item) => item.source_url === imageUrl);
-	
+				const media = select('core').getEntityRecords(
+					'postType',
+					'attachment',
+					{ per_page: -1 }
+				);
+				const mediaItem = media?.find(
+					(item) => item.source_url === imageUrl
+				);
+
 				if (mediaItem?.id) {
 					setAttributes({ [idAttributeName]: mediaItem.id });
 					return;
 				}
-	
+
 				await new Promise((resolve) => setTimeout(resolve, 500));
 			}
 		};
-	
+
 		['bgImage', 'bgImageTablet', 'bgImageMobile'].forEach((attr) =>
 			updateBgImageId(attributes[attr], `${attr}Id`)
 		);
-	
+
 		return () => {
 			isMounted = false;
 		};
-	}, [attributes.bgImage, attributes.bgImageTablet, attributes.bgImageMobile]);	
+	}, [
+		attributes.bgImage,
+		attributes.bgImageTablet,
+		attributes.bgImageMobile,
+	]);
 
 	// classPaddingLRのクラス切り替え
 	let classPaddingLR = '';

@@ -14,7 +14,7 @@ export default function PostListEdit(props) {
 
 	const postTypesProps = vk_block_post_type_params.post_type_option;
 	const termsByTaxonomyName = vk_block_post_type_params.term_by_taxonomy_name;
-
+	const stickyPosts = attributes.stickyPosts;
 	const blockProps = useBlockProps();
 
 	// リンクを無効にする関数
@@ -72,6 +72,7 @@ export default function PostListEdit(props) {
 					setAttributes={setAttributes}
 					postTypesProps={postTypesProps}
 					termsByTaxonomyName={termsByTaxonomyName}
+					stickyPosts={stickyPosts}
 				/>
 				<ColumnLayoutControl {...props} />
 				<DisplayItemsControl {...props} />

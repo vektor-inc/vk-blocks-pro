@@ -96,14 +96,10 @@
 		"className": true,
 		"anchor": true,
 		"typography": {
-			"lineHeight": true,
 			"__experimentalFontFamily": true,
 			"__experimentalFontSize": true,
 			"__experimentalTextTransform": true,
 			"__experimentalLetterSpacing": true,
-			"__experimentalDefaultControls": {
-				"lineHeight": true
-			}
 		}
 	}
 }

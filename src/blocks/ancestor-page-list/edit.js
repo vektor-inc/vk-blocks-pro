@@ -10,7 +10,11 @@ import ServerSideRender from '@wordpress/server-side-render';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
 
-export default function PostListEdit(props) {
+// 正規表現を定数として定義
+const TITLE_TAG_REGEX = /^(h[2-6]).*/;
+const CLASS_NAME_REGEX = /[^a-zA-Z0-9-_ ]/g;
+
+export default function AncestorPageListEdit(props) {
 	const { attributes, setAttributes, name } = props;
 	const {
 		ancestorTitleDisplay,
@@ -20,25 +24,36 @@ export default function PostListEdit(props) {
 		displayHasChildOnly,
 		hiddenGrandChild,
 	} = attributes;
-	attributes.name = name;
+
+	// nameをsetAttributesで設定
+	useEffect(() => {
+		setAttributes({ name });
+	}, [name]);
 
 	const blockProps = useBlockProps();
 
+	// タイトルタグのバリデーション関数
+	const validateTitleTag = (value) => {
+		const matches = value?.match(TITLE_TAG_REGEX);
+		return matches ? matches[1] : 'h4'; // デフォルト値を設定
+	};
+
+	// クラス名のサニタイズ関数
+	const sanitizeClassName = (value) => {
+		return value?.replace(CLASS_NAME_REGEX, '') || '';
+	};
+
 	// useEffectを使ってレンダリング後にstateを更新
 	useEffect(() => {
-		const matches = ancestorTitleTagName.match(/^(h[2-6]).*/);
-		if (matches && matches[1] !== ancestorTitleTagName) {
-			setAttributes({ ancestorTitleTagName: matches[1] });
+		const validatedTag = validateTitleTag(ancestorTitleTagName);
+		if (validatedTag !== ancestorTitleTagName) {
+			setAttributes({ ancestorTitleTagName: validatedTag });
 		}
-
-		const sanitizedValue = ancestorTitleClassName?.replace(
-			/[^a-zA-Z0-9-_ ]/g,
-			''
-		);
+		const sanitizedValue = sanitizeClassName(ancestorTitleClassName);
 		if (sanitizedValue !== ancestorTitleClassName) {
 			setAttributes({ ancestorTitleClassName: sanitizedValue });
 		}
-	}, [ancestorTitleTagName, ancestorTitleClassName, setAttributes]);
+	}, [ancestorTitleTagName, ancestorTitleClassName]);
 
 	return (
 		<>
@@ -60,9 +75,8 @@ export default function PostListEdit(props) {
 						label={__('Archive title tag', 'vk-blocks-pro')}
 						value={ancestorTitleTagName}
 						onChange={(value) => {
-							const _matches = value.match(/^(h[2-6]).*/);
 							setAttributes({
-								ancestorTitleTagName: _matches[0],
+								ancestorTitleTagName: validateTitleTag(value),
 							});
 						}}
 						options={[
@@ -96,12 +110,9 @@ export default function PostListEdit(props) {
 						value={ancestorTitleClassName || ''}
 						className={`mt-0 mb-3`}
 						onChange={(value) => {
-							const _sanitizedValue = value.replace(
-								/[^a-zA-Z0-9-_ ]/g,
-								''
-							);
 							setAttributes({
-								ancestorTitleClassName: _sanitizedValue,
+								ancestorTitleClassName:
+									sanitizeClassName(value),
 							});
 						}}
 					/>

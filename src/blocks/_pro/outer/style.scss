@@ -220,6 +220,11 @@ $media-xxl-down: 1399.98px;
 		transform: rotate(180deg) translateY(0.5px) scale(1);
 		-webkit-transform: rotate(180deg) translateY(0.5px) scale(1);
 	}
+
+	.vk_outer_separator-position-lower svg {
+		transform: translateY(0.5px) scale(1);
+		-webkit-transform: translateY(0.5px) scale(1);
+	}
 }
 
 // Min Height Setting

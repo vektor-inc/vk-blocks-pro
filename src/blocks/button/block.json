@@ -16,7 +16,7 @@
 			"type": "string"
 		},
 		"buttonTarget": {
-			"type": "Boolean",
+			"type": "boolean",
 			"default": false
 		},
 		"buttonSize": {
@@ -99,7 +99,7 @@
 			"__experimentalFontFamily": true,
 			"__experimentalFontSize": true,
 			"__experimentalTextTransform": true,
-			"__experimentalLetterSpacing": true,
+			"__experimentalLetterSpacing": true
 		}
 	}
 }

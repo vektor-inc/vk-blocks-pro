@@ -11,7 +11,7 @@ import {
 	TextControl,
 	Notice,
 } from '@wordpress/components';
-import { useEffect, useState, useRef } from '@wordpress/element';
+import { useEffect, useRef, useState } from '@wordpress/element';
 
 const allowedUrlPatterns =
 	typeof vkBlocksVisualEmbed !== 'undefined' && // eslint-disable-line no-undef

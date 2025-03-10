@@ -37,7 +37,8 @@
 			"default": "0"
 		},
 		"iconColor": {
-			"type": "string"
+			"type": "string",
+			"default": "inherit"
 		},
 		"iconFontColor": {
 			"type": "string"

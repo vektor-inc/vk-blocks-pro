@@ -37,6 +37,31 @@ const filteredAllowedUrlPatterns = [
 export default function EmbedCodeEdit({ attributes, setAttributes }) {
 	const { iframeCode, iframeWidth, iframeHeight } = attributes;
 	const [tempIframeCode, setTempIframeCode] = useState(iframeCode);
+	const prevIframeWidth = useRef(attributes.iframeWidth);
+
+	useEffect(() => {
+		// align がユーザーによって設定されていたら変更しない
+		if (attributes.align !== undefined) {
+			return;
+		}
+
+		const isFullWidth = String(attributes.iframeWidth) === '100%';
+		const wasFullWidth = String(prevIframeWidth.current) === '100%';
+
+		// 100% から 100% 以外に変わった瞬間のみ align: "center" を適用
+		if (wasFullWidth && !isFullWidth) {
+			setAttributes({ align: 'center' });
+		}
+
+		// iframeWidth の変更を記録
+		prevIframeWidth.current = attributes.iframeWidth;
+	}, [attributes.iframeWidth]);
+
+	useEffect(() => {
+		if (iframeWidth && isIframe) {
+			updateIframeAttributes(iframeWidth, iframeHeight);
+		}
+	}, [iframeWidth, iframeHeight]);
 
 	// iframeを解析する関数
 	const parseIframeCode = (code) => {
@@ -141,27 +166,6 @@ export default function EmbedCodeEdit({ attributes, setAttributes }) {
 			setTempIframeCode(iframe.outerHTML);
 		}
 	};
-
-	// attributes.align の初期値を設定
-	const prevIframeWidth = useRef(attributes.iframeWidth);
-
-	useEffect(() => {
-		// align がユーザーによって設定されていたら変更しない
-		if (attributes.align !== undefined) {
-			return;
-		}
-
-		const isFullWidth = String(attributes.iframeWidth) === '100%';
-		const wasFullWidth = String(prevIframeWidth.current) === '100%';
-
-		// **100% から 100% 以外に変わった瞬間のみ align: "center" を適用**
-		if (wasFullWidth && !isFullWidth) {
-			setAttributes({ align: 'center' });
-		}
-
-		// **iframeWidth の変更を記録**
-		prevIframeWidth.current = attributes.iframeWidth;
-	}, [attributes.iframeWidth]);
 
 	return (
 		<div {...blockProps}>

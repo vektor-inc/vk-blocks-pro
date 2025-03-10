@@ -2,18 +2,80 @@
 /* CSS
 /*-------------------------------------------*/
 .vk-visual-embed {
-	&.aligncenter {
+
+	&.alignleft, 
+	&.aligncenter,
+	&.alignright {
 		display: grid;
-		justify-items: center;
+		width: 100%;
 	}
+	&.alignleft {
+		justify-items: start;
+		
+		iframe {
+			margin-right: auto;
+		}
+	}
+	&.aligncenter {
+		justify-items: center;
+		
+		iframe {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	&.alignright {
+		justify-items: end;
+		
+		iframe {
+			margin-left: auto;
+		}
+	}
+
+	&-preview {
+		width: 100%;
+	}
+
 	iframe {
 		display: block;
 		border: none;
 		margin: 0; // lightning などテーマによっては余白がつくので追加
+		max-width: 100%;
 	}
 }
 
-.block-editor {
+/*      編集画面
+/*-------------------------------------------*/
+.editor-styles-wrapper {
+	.wp-block {
+		&[data-align=left]:has(.vk-visual-embed) {
+			justify-items: start;
+			
+			.vk-visual-embed iframe {
+				margin-right: auto;
+			}
+		}
+		&[data-align=center]:has(.vk-visual-embed) {
+			justify-items: center;
+			
+			.vk-visual-embed iframe {
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+		&[data-align=right]:has(.vk-visual-embed) {
+			justify-items: end;
+			
+			.vk-visual-embed iframe {
+				margin-left: auto;
+			}
+		}
+
+		> div {
+			width: 100%;
+		}
+	}
+
 	.vk-visual-embed {
 		&_notice {
 			margin-bottom: 16px;

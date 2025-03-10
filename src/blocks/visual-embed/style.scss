@@ -2,18 +2,47 @@
 /* CSS
 /*-------------------------------------------*/
 .vk-visual-embed {
-	&.aligncenter {
+
+	&.alignleft, 
+	&.aligncenter,
+	&.alignright {
 		display: grid;
+		width: 100%;
+	}
+	&.alignleft {
+		justify-items: start;
+	}
+	&.aligncenter {
 		justify-items: center;
 	}
+	&.alignright {
+		justify-items: end;
+	}
+
 	iframe {
 		display: block;
 		border: none;
-		margin: 0; // lightning などテーマによっては余白がつくので追加
+		margin: 0 auto; // lightning などテーマによっては余白がつくので追加
+		max-width: 100%;
 	}
 }
 
-.block-editor {
+/*      編集画面
+/*-------------------------------------------*/
+.editor-styles-wrapper {
+	.wp-block[data-align=left]:has(.vk-visual-embed) {
+		justify-items: start;
+		.vk-visual-embed iframe {
+			margin-left: 0;
+		}
+	}
+	.wp-block[data-align=center]:has(.vk-visual-embed) {
+		justify-items: center;
+	}
+	.wp-block[data-align=right]:has(.vk-visual-embed) {
+		justify-items: end;
+	}
+
 	.vk-visual-embed {
 		&_notice {
 			margin-bottom: 16px;

@@ -1,0 +1,124 @@
+---
+description: 本プロジェクトにおけるコーディングルール
+globs: **/*.*
+alwaysApply: false
+---
+
+# 1. 前提
+- 本プロジェクトでは、WordPressのプラグイン「VK Blocks Pro」の開発を行います。
+- 本プロジェクトはWordPressの wp-content/plugins/vk-blocks-pro 内で動作することを前提とします。
+- 常にWordPressのコーディング規約に則ってコードを書いてください。
+- 名前空間を使用していません。関数やグローバル変数を定義する場合は 接頭辞`vk_blocks_`をつけてください。
+
+# 2. ファイル構成
+- **`inc/`**: PHPコードを原則ここに格納する
+  - **`inc/vk-blocks/`**: 本プラグインに関する処理はここに格納する
+    - **`class-vk-blocks-global-settings.php`**: 各ブロックの定義
+    - **`class-vk-blocks-block-loader.php`**: ブロックの読み込み処理全般
+    - **`class-vk-blocks-options.php`**: wp_optionsに保存する設定値の定義
+- **`src/`**: Gutenbergのカスタムブロック用のJSコードを原則ここに格納する
+  - **`blocks/`**: 1ブロック1ディレクトリで構成する。この中にedit.js / save.jsが格納される
+    - **`alert/`**: A colored box with four statuses, including annotations and alerts.
+    - **`ancestor-page-list/`**: Display Page list from ancestor page
+    - **`balloon/`**: These speech balloons are perfect for recreating conversations.
+    - **`border-box/`**: This is a border box where you can place headings to attract attention.
+    - **`button/`**: A button link that can display icons before and after.
+    - **`faq/`**: Displays a combination of questions and answers.
+    - **`faq2/`**: It displays a combination of questions and answers. You can freely add blocks to the question area as well.
+    - **`faq2-a/`**: Answer area where you can add blocks freely.
+    - **`faq2-q/`**: Question area where you can freely add blocks.
+    - **`flow/`**: Displays a sequential description in time series.
+    - **`heading/`**: This is a heading that allows you to set text size, subtext, icon, and margin.
+    - **`icon/`**: Display icons with Font Awesome.
+    - **`icon-outer/`**: Display the Font Awesome icons horizontally.
+    - **`page-content/`**: Displays the body content of the specified parent page.
+    - **`pr-blocks/`**: This is a PR block where you can place images and icon. But currently, it is possible to create the same layout by combining Column Block and Icon Block, so this block is not recommended. Please check Columns category of Block Patterns.
+    - **`pr-content/`**: This is PR content where you can place images, headlines, text, and buttons.
+    - **`slider/`**: This slider allows you to place various items.Slider is do not move in edit screen.
+    - **`slider-item/`**: This is one item in the slider.
+    - **`spacer/`**: Use responsive spacers to get the margins right.
+    - **`staff/`**: Used for staff introduction, company introduction, school introduction, menu, etc.
+    - **`visual-embed/`**: Easily embed iframe content with a live preview in the editor, perfect for maps, videos, and other iframe-based media.
+    - **`_pro`**: VK Blocks Pro版のブロックディレクトリ
+      - **`accordion`**: Collapses and hides content when the content is long.
+      - **`accordion-target`**: This is the content area where you can add blocks freely.
+      - **`accordion-trigger`**: This is the title area where you can freely add blocks.
+      - **`animation`**: Add animation to elements when scrolling the page.
+      - **`archive-list`**: Displays a list of archives
+      - **`blog-card`**: Add a block that fetches and displays content from a URL.
+      - **`blog-card-excerpt`**: Shows an excerpt retrieved from a URL.
+      - **`blog-card-featured-image`**: Displays the featured image obtained from the URL.
+      - **`blog-card-site-logo`**: Displays the site logo image obtained from the URL.
+      - **`blog-card-site-title`**: Displays the site title obtained from the URL.
+      - **`blog-card-title`**: Displays the title obtained from the URL.
+      - **`breadcrumb`**: Displays breadcrumbs of a page's hierarchy, or a post's categories.This block is not displayed on the front page.
+      - **`button-outer`**: Display the VK Button block horizontally.
+      - **`card`**: A card where you can place images, headings, text, and links.
+      - **`card-item`**: A single item in a card block.
+      - **`child-page`**: When a parent page is specified, a list of its child pages will be displayed.
+      - **`dynamic-text`**: Display dynamic text
+      - **`fixed-display`**: Remains fixed on the screen at all times.
+      - **`grid-column`**: Set the number of columns to be displayed for each screen size.
+      - **`grid-column-item`**: One item in a grid column block.
+      - **`gridcolcard`**: This block can flexible column layout
+      - **`gridcolcard-item`**: It is a block of single column of Grid Column Card.
+      - **`gridcolcard-item-body`**: Body of Grid Column Card Block Item
+      - **`gridcolcard-item-footer`**: Footer button area of Grid Column Card Block Item
+      - **`gridcolcard-item-header`**: Header image area of Grid Column Card Block Item
+      - **`icon-card`**: Display card with icons, headings, text, and links.
+      - **`icon-card-item`**: This is one item in an icon card.
+      - **`outer`**: Set the background image, color, and border to show the layout and divisions.
+      - **`post-category-badge`**: Displays a single category or custom taxonomy associated with the post. It allows for the specification of taxonomy and design.
+      - **`post-list`**: Displays the list of posts by setting the post type, classification, and number of posts to display.
+      - **`post-list-slider`**: Displays the list of posts by setting the post type, classification, and number of posts to display.
+      - **`post-new-badge`**: Easily highlight your latest post.
+      - **`select-post-list`**: Displays an arbitrarily specified page with the layout of the posting list.
+      - **`select-post-list-item`**: A single item in the select post list.
+      - **`step`**: Set and display step marks, which are useful when explaining the order.
+      - **`step-item`**: This element sets the icon, color, and style of the step mark.
+      - **`tab`**: undefined
+      - **`tab-item`**: undefined
+      - **`table-of-contents-new`**: This is a table of contents that is automatically generated according to the headings when added.
+      - **`taxonomy`**: Display Taxnomy List Pulldown
+      - **`timeline`**: Displays a simple schedule and other information that is useful for explaining the order.
+      - **`timeline-item`**: This element sets the label, color, and style of the timeline.
+- **`test`**: テストを格納する
+  - **`e2e`**: playwrightによるE2Eテストケースが格納される
+  - **`e2e-test`**: Gutenbergのテスト用
+    - **`fixtures`**: 各ブロックのフィクスチャーをここに格納する (*.html)
+  - **`phpunit`**: PHPUnit用
+    - **`free`**: VK Blocks 無料版で使うブロックのテストケース
+    - **`pro`**: VK Blocks Proで使うブロックのテストケース
+
+# 3. ビルド
+- **`npm run build`**でビルドを実行します。
+- 開発時は **`npm run build:cache`** を使いますが、その時々で指示があれば、それに従ってください。
+- 読み込むPHPのパッケージを変更する場合は、`composer install` が必要です。
+
+# 4. テスト
+## 4.1. PHPUnitテスト
+- `wp-env` が起動してなければ、起動する必要があります。
+- `npm run phpunit` ですべてのPHPUnitテストを実行できます。
+- テストケースは `test/phpunit` 内で、無料版のブロックのテストは `free/` に プロ版のブロックのテストは `pro/` に格納します。
+
+## 4.2. フィクスチャーテスト
+- `npm run test-unit` で非推奨プロセスの処理が正常に動作しているかをチェックできます。
+- 非推奨プロセス処理が必要な場合、`test/e2e-test/fixtures/`の対象のブロックのフィクスチャーを追加する必要があります。
+  - `vk-blocks__{block_name}.html` に保存されているHTMLを `vk-blocks__{block_name}__deprecated-0-0-0.html` にコピーします。0-0-0の部分は現在のバージョン番号が入ります。
+  - `vk-blocks__{block_name}.html`には、修正後のコードで生成したフィクスチャーに書き換えます。
+
+## 4.3． PlayWrightsテスト
+- `npm run test:e2e` でPlayWrightsテストを実行できます。
+- テストスクリプトは `test/e2e`にあります。
+
+# 5. ブロックを新規作成するときの手順
+- まずそのブロックが「無料版」か「プロ版」か設計者に確認してください。
+- 無料版は`src/blocks/`内に、プロ版は`src/blocks/_pro'内にブロックのディレクトリを作ります。各ブロックの構成を参考にしてください。
+  - `index.php`は他のブロックを参考に必ず設置してください。ビルド時に `inc/vk-blocks/build/blocks/` の各ブロック内へコピーされ、必要なファイルがエンキューされます。
+  - `index.php`、`index.js`、`block.json`、`edit.js`、`save.js`、`style.scss`、`icon.svg`が基本セットですが絶対的なものではありません。
+- `src/bundle.js` （無料版） もしくは `src/bundle-pro.js` （プロ版）にimport定義、ブロック定義を追加してください。
+- `inc/vk-blocks/class-vk-blocks-global-settings` のblocks()内にブロックの定義を追加してください。プロ版のブロックは is_proがtrue 、無料版はfalseになります。
+
+
+
+

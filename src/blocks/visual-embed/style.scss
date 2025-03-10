@@ -27,7 +27,22 @@
 	}
 }
 
-.block-editor {
+/*      編集画面
+/*-------------------------------------------*/
+.editor-styles-wrapper {
+	.wp-block[data-align=left]:has(.vk-visual-embed) {
+		justify-items: start;
+		.vk-visual-embed iframe {
+			margin-left: 0;
+		}
+	}
+	.wp-block[data-align=center]:has(.vk-visual-embed) {
+		justify-items: center;
+	}
+	.wp-block[data-align=right]:has(.vk-visual-embed) {
+		justify-items: end;
+	}
+
 	.vk-visual-embed {
 		&_notice {
 			margin-bottom: 16px;

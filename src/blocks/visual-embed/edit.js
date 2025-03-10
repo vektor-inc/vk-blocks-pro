@@ -11,8 +11,7 @@ import {
 	TextControl,
 	Notice,
 } from '@wordpress/components';
-import { select } from '@wordpress/data';
-import { useEffect, useState } from '@wordpress/element';
+import { useEffect, useState, useRef } from '@wordpress/element';
 
 const allowedUrlPatterns =
 	typeof vkBlocksVisualEmbed !== 'undefined' && // eslint-disable-line no-undef
@@ -35,7 +34,7 @@ const filteredAllowedUrlPatterns = [
 	...allowedUrlPatterns,
 ];
 
-export default function EmbedCodeEdit({ attributes, setAttributes, clientId }) {
+export default function EmbedCodeEdit({ attributes, setAttributes }) {
 	const { iframeCode, iframeWidth, iframeHeight } = attributes;
 	const [tempIframeCode, setTempIframeCode] = useState(iframeCode);
 
@@ -144,24 +143,24 @@ export default function EmbedCodeEdit({ attributes, setAttributes, clientId }) {
 	};
 
 	// attributes.align の初期値を設定
+	const prevIframeWidth = useRef(attributes.iframeWidth);
+
 	useEffect(() => {
-		// ユーザーがすでに align を変更していたら何もしない
+		// align がユーザーによって設定されていたら変更しない
 		if (attributes.align !== undefined) {
 			return;
 		}
 
-		// iframeWidth が明示的に "100%"（string）であるかチェック
 		const isFullWidth = String(attributes.iframeWidth) === '100%';
+		const wasFullWidth = String(prevIframeWidth.current) === '100%';
 
-		// 新規ブロック（まだ保存されていない）かつ iframeWidth が 100% 以外なら align: "center" をセット
-		if (!isFullWidth) {
-			const block = select('core/block-editor').getBlock(clientId);
-			if (block && !block.isPersistent) {
-				setAttributes({ align: 'center' });
-			}
-		} else {
-			setAttributes({ align: undefined }); // 100% の場合は align を削除
+		// **100% から 100% 以外に変わった瞬間のみ align: "center" を適用**
+		if (wasFullWidth && !isFullWidth) {
+			setAttributes({ align: 'center' });
 		}
+
+		// **iframeWidth の変更を記録**
+		prevIframeWidth.current = attributes.iframeWidth;
 	}, [attributes.iframeWidth]);
 
 	return (

@@ -47,8 +47,10 @@ export default function EmbedCodeEdit({ attributes, setAttributes }) {
 	};
 	const [isIframe, setIsIframe] = useState(!!parseIframeCode(iframeCode));
 
+	const alignClass = attributes.align || "center";
+
 	const blockProps = useBlockProps({
-		className: 'vk-visual-embed',
+		className: `vk-visual-embed align-${alignClass}`,
 	});
 
 	// iframeのsrc属性を検証する関数

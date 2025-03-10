@@ -5,8 +5,10 @@ export default function save({ attributes }) {
 
 	const updatedIframeCode = iframeCode.replace(/<a /g, '<a rel="noopener" ');
 
+	const alignClass = attributes.align || "center";
+
 	const blockProps = useBlockProps.save({
-		className: 'vk-visual-embed',
+		className: `vk-visual-embed align-${alignClass}`,
 	});
 
 	return (

@@ -108,10 +108,10 @@ e.g.
 
 == Changelog ==
 
-[ Add function ][ Icon ] Added inherit parent element color option as default.
-[ Design Bug Fix ][ Table ] Fixed overlapping borders when using vertical cells, and ensured the border color follows the theme settings.
-
+[ Add function ][ Outer (Pro) / Slider ] Added a replace button to allow changing the background image without deleting it.
 [ Add function ][ Post List (Pro) / Post List Slider (Pro) ] Added the ability to set sticky posts to display.
+[ Design Bug Fix ][ Table ] Fixed overlapping borders when using vertical cells, and ensured the border color follows the theme settings.
+[ Add function ][ Icon ] Added inherit parent element color option as default.
 
 = 1.96.2 =
 [ Bug fix ][ Post list (Pro) / Post list slider (Pro) / Tab (Pro) / Slider ] Fixed errors occurring regardless of whether the editing screen environment is in an iframe and improved the stability of feature performance.

@@ -157,29 +157,37 @@ button.image-button:not(.button-delete) {
 // archive-list
 @import "./editor_before_archive-list";
 
-// VK Outer 編集パネル
+// VK Outer & スライダーアイテム 編集パネル
 $color-danger: #dd3333;
-.vk_outer_sidebar_bgImage {
+.vk_outer_sidebar_bgImage,
+.vk_slider_item_sidebar_bgImage,
+.vk_slider_item_sidebar_bgImage_button_container {
 	position: relative;
-	.components-button {
+	.components-button:not(.image-button),
+	.components-button-group {
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translateY(-50%) translateX(-50%);
 		transition: all 1s;
 	}
-	.button-delete {
+	.components-button-group {
+		display: grid;
+		place-items: center;
+		gap: .375rem;
 		opacity: 0;
+		transition: all 1s;
+	}
+	.button-delete {
 		border: 1px solid $color-danger;
 		color: $color-danger;
-		transition: all 1s;
 		&:hover {
 			background-color: $color-danger;
 			border: 1px solid #b72a2a;
 			color: #fff;
 		}
 	}
-	&:hover .button-delete {
+	&:hover .components-button-group {
 		transition: all 1s;
 		opacity: 1;
 	}

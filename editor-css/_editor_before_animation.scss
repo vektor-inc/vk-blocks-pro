@@ -100,4 +100,14 @@
 			}
 		}
 	}
+	&.vk_animation-slide-down{
+		&.vk_animation-range-short,
+		&.vk_animation-range-normal,
+		&.vk_animation-range-long {
+			bottom:0;
+			&:before {
+				content:'Slide down';
+			}
+		}
+	}
 }

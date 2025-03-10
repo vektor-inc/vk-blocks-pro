@@ -65,6 +65,10 @@ export default function AnimationEdit(props) {
 								value: 'slide-right',
 							},
 							{
+								label: __('Slide Down', 'vk-blocks-pro'),
+								value: 'slide-down',
+							},
+							{
 								label: __('Left Right', 'vk-blocks-pro'),
 								value: 'left-right',
 							},

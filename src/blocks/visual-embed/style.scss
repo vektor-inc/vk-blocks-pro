@@ -2,14 +2,28 @@
 /* CSS
 /*-------------------------------------------*/
 .vk-visual-embed {
-	&.aligncenter {
+
+	&.alignleft, 
+	&.aligncenter,
+	&.alignright {
 		display: grid;
+		width: 100%;
+	}
+	&.alignleft {
+		justify-items: start;
+	}
+	&.aligncenter {
 		justify-items: center;
 	}
+	&.alignright {
+		justify-items: end;
+	}
+
 	iframe {
 		display: block;
 		border: none;
-		margin: 0; // lightning などテーマによっては余白がつくので追加
+		margin: 0 auto; // lightning などテーマによっては余白がつくので追加
+		max-width: 100%;
 	}
 }
 

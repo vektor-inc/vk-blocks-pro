@@ -143,27 +143,27 @@ export default function EmbedCodeEdit({ attributes, setAttributes, clientId }) {
 		}
 	};
 
+	// attributes.align の初期値を設定
 	useEffect(() => {
-        const block = select("core/block-editor").getBlock(clientId);
+		// ユーザーがすでに align を変更していたら何もしない
+		if (attributes.align !== undefined) {
+			return;
+		}
 
-        // ユーザーがすでに align を変更していたら何もしない
-        if (attributes.align !== undefined) {
-            return;
-        }
+		// iframeWidth が明示的に "100%"（string）であるかチェック
+		const isFullWidth = String(attributes.iframeWidth) === '100%';
 
-        // iframeWidth が明示的に "100%"（string）であるかチェック
-        const isFullWidth = String(attributes.iframeWidth) === "100%";
+		// 新規ブロック（まだ保存されていない）かつ iframeWidth が 100% 以外なら align: "center" をセット
+		if (!isFullWidth) {
+			const block = select('core/block-editor').getBlock(clientId);
+			if (block && !block.isPersistent) {
+				setAttributes({ align: 'center' });
+			}
+		} else {
+			setAttributes({ align: undefined }); // 100% の場合は align を削除
+		}
+	}, [attributes.iframeWidth]);
 
-        // 新規ブロック（まだ保存されていない）かつ iframeWidth が 100% 以外なら align: "center" をセット
-        if (block && !block.isPersistent) {
-            if (!isFullWidth) {
-                setAttributes({ align: "center" });
-            } else {
-                setAttributes({ align: undefined }); // 100% の場合は align を削除
-            }
-        }
-    }, [attributes.iframeWidth]); // ← ここを修正！`iframeWidth` の変更を監視
-	
 	return (
 		<div {...blockProps}>
 			<BlockControls />

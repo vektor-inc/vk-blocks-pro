@@ -47,7 +47,7 @@ export default function EmbedCodeEdit({ attributes, setAttributes }) {
 	};
 	const [isIframe, setIsIframe] = useState(!!parseIframeCode(iframeCode));
 
-	const alignClass = attributes.align || "center";
+	const alignClass = attributes.align || 'center';
 
 	const blockProps = useBlockProps({
 		className: `vk-visual-embed align-${alignClass}`,

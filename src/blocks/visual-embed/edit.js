@@ -11,7 +11,8 @@ import {
 	TextControl,
 	Notice,
 } from '@wordpress/components';
-import { useState } from '@wordpress/element';
+import { select } from '@wordpress/data';
+import { useEffect, useState } from '@wordpress/element';
 
 const allowedUrlPatterns =
 	typeof vkBlocksVisualEmbed !== 'undefined' && // eslint-disable-line no-undef
@@ -34,7 +35,7 @@ const filteredAllowedUrlPatterns = [
 	...allowedUrlPatterns,
 ];
 
-export default function EmbedCodeEdit({ attributes, setAttributes }) {
+export default function EmbedCodeEdit({ attributes, setAttributes, clientId }) {
 	const { iframeCode, iframeWidth, iframeHeight } = attributes;
 	const [tempIframeCode, setTempIframeCode] = useState(iframeCode);
 
@@ -47,10 +48,18 @@ export default function EmbedCodeEdit({ attributes, setAttributes }) {
 	};
 	const [isIframe, setIsIframe] = useState(!!parseIframeCode(iframeCode));
 
-	const alignClass = attributes.align || 'center';
+	// 初回レンダリング時に align が未設定の場合は "center" をセット
+    useEffect(() => {
+        const block = select("core/block-editor").getBlock(clientId);
+
+        // もし align が未設定 (undefined) かつ、新規ブロック（まだ保存されていない）なら "center" をセット
+        if (attributes.align === undefined && block && !block.isPersistent) {
+            setAttributes({ align: "center" });
+        }
+    }, []);
 
 	const blockProps = useBlockProps({
-		className: `vk-visual-embed align-${alignClass}`,
+		className: 'vk-visual-embed',
 	});
 
 	// iframeのsrc属性を検証する関数

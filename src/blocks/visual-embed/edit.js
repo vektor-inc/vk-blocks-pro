@@ -48,16 +48,6 @@ export default function EmbedCodeEdit({ attributes, setAttributes, clientId }) {
 	};
 	const [isIframe, setIsIframe] = useState(!!parseIframeCode(iframeCode));
 
-	// 初回レンダリング時に align が未設定の場合は "center" をセット
-    useEffect(() => {
-        const block = select("core/block-editor").getBlock(clientId);
-
-        // もし align が未設定 (undefined) かつ、新規ブロック（まだ保存されていない）なら "center" をセット
-        if (attributes.align === undefined && block && !block.isPersistent) {
-            setAttributes({ align: "center" });
-        }
-    }, []);
-
 	const blockProps = useBlockProps({
 		className: 'vk-visual-embed',
 	});
@@ -153,6 +143,27 @@ export default function EmbedCodeEdit({ attributes, setAttributes, clientId }) {
 		}
 	};
 
+	useEffect(() => {
+        const block = select("core/block-editor").getBlock(clientId);
+
+        // ユーザーがすでに align を変更していたら何もしない
+        if (attributes.align !== undefined) {
+            return;
+        }
+
+        // iframeWidth が明示的に "100%"（string）であるかチェック
+        const isFullWidth = String(attributes.iframeWidth) === "100%";
+
+        // 新規ブロック（まだ保存されていない）かつ iframeWidth が 100% 以外なら align: "center" をセット
+        if (block && !block.isPersistent) {
+            if (!isFullWidth) {
+                setAttributes({ align: "center" });
+            } else {
+                setAttributes({ align: undefined }); // 100% の場合は align を削除
+            }
+        }
+    }, [attributes.iframeWidth]); // ← ここを修正！`iframeWidth` の変更を監視
+	
 	return (
 		<div {...blockProps}>
 			<BlockControls />

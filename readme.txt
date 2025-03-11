@@ -111,7 +111,6 @@ e.g.
 [ Add function ][ Post List (Pro) / Post List Slider (Pro) ] Added the ability to set sticky posts to display.
 [ Add function ][ Outer (Pro) / Slider ] Added a replace button to allow changing the background image without deleting it.
 [ Add function ][ Button ] Added support for typography settings.
-[ Add function ][ Post List (Pro) / Post List Slider (Pro) ] Added the ability to set sticky posts to display.
 [ Design Bug Fix ][ Table ] Fixed overlapping borders when using vertical cells, and ensured the border color follows the theme settings.
 [ Editor Design Bug Fix ][ Ballon ] Fixed a layout distortion issue when enabling the vk_hidden setting in the editor.
 

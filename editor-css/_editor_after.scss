@@ -24,7 +24,7 @@
 
 	&.vk_balloon,
 	&.vk_posts{
-		// display block だとカラムがすべて落ちるため posts は flexで上書き
+		// display block だとカラムがすべて落ちるため posts と balloon は flexで上書き
 		display: flex !important;
 	}
 	@media (max-width: $xs-max) {
@@ -33,7 +33,7 @@
 
 			&.vk_balloon,
 			&.vk_posts{
-				// display block だとカラムがすべて落ちるため posts は flexで上書き
+				// display block だとカラムがすべて落ちるため posts と balloon は flexで上書き
 				display: flex !important;
 			}
 		}
@@ -44,7 +44,7 @@
 
 			&.vk_balloon,
 			&.vk_posts{
-				// display block だとカラムがすべて落ちるため posts は flexで上書き
+				// display block だとカラムがすべて落ちるため posts と balloon は flexで上書き
 				display: flex !important;
 			}
 		}
@@ -55,7 +55,7 @@
 
 			  &.vk_balloon,
 			&.vk_posts{
-				// display block だとカラムがすべて落ちるため posts は flexで上書き
+				// display block だとカラムがすべて落ちるため posts と balloon は flexで上書き
 				display: flex !important;
 	  		}
 		}
@@ -66,7 +66,7 @@
 
 			&.vk_balloon,
 			&.vk_posts{
-				// display block だとカラムがすべて落ちるため posts は flexで上書き
+				// display block だとカラムがすべて落ちるため posts と balloon は flexで上書き
 				display: flex !important;
 			}
 		}
@@ -75,7 +75,7 @@
 		&-xl {
 			display: block !important;
 	  		&.vk_posts{
-				// display block だとカラムがすべて落ちるため posts は flexで上書き
+				// display block だとカラムがすべて落ちるため posts と balloon は flexで上書き
 				display: flex !important;
 			}
 		}
@@ -86,7 +86,7 @@
 
 			&.vk_balloon,
 			&.vk_posts{
-				// display block だとカラムがすべて落ちるため posts は flexで上書き
+				// display block だとカラムがすべて落ちるため posts と balloon は flexで上書き
 				display: flex !important;
 			}
 		}

@@ -22,13 +22,13 @@
 	display: block !important;
 	color: var(--blue);
 
-    &.vk_posts{
-	    // display block だとカラムがすべて落ちるため posts は flexで上書き
-	    display: flex !important;
-    }
-    @media (max-width: $xs-max) {
-        &-xs {
-	        display: block !important;
+	&.vk_posts{
+		// display block だとカラムがすべて落ちるため posts は flexで上書き
+		display: flex !important;
+	}
+	@media (max-width: $xs-max) {
+		&-xs {
+			display: block !important;
 			&.vk_posts{
 				// display block だとカラムがすべて落ちるため posts は flexで上書き
 				display: flex !important;
@@ -44,17 +44,17 @@
 			}
 		}
 	}
-    @media (min-width: $md-min) and (max-width: $md-max) {
-    	&-md {
+	@media (min-width: $md-min) and (max-width: $md-max) {
+		&-md {
 	  		display: block !important;
 			&.vk_posts{
 				// display block だとカラムがすべて落ちるため posts は flexで上書き
 				display: flex !important;
 	  		}
-    	}
+		}
   	}
   	@media (min-width: $lg-min) and (max-width: $lg-max) {
-    	&-lg {
+		&-lg {
 			display: block !important;
 			&.vk_posts{
 				// display block だとカラムがすべて落ちるため posts は flexで上書き
@@ -63,7 +63,7 @@
 		}
 	}
   	@media (min-width: $xl-min) {
-    	&-xl {
+		&-xl {
 			display: block !important;
 	  		&.vk_posts{
 				// display block だとカラムがすべて落ちるため posts は flexで上書き
@@ -72,7 +72,7 @@
 		}
 	}
 	@media (min-width: $xxl-min) {
-    	&-xxl {
+		&-xxl {
 			display: block !important;
 			&.vk_posts{
 				// display block だとカラムがすべて落ちるため posts は flexで上書き

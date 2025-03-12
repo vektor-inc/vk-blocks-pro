@@ -113,6 +113,7 @@ e.g.
 [ Add function ][ Button ] Added support for typography settings.
 [ Specification change ] [ Visual Embed ] Added aligncenter when iframeWidth is set to a value other than "100%".
 [ Design Bug Fix ][ Table ] Fixed overlapping borders when using vertical cells, and ensured the border color follows the theme settings.
+[ Editor Design Bug Fix ][ Animation (Pro) / Fixed Display (Pro) / New Badge (Pro) / Category Badge (Pro) ] Fixed elements not becoming semi-transparent when set to be hidden in the editing screen.
 [ Editor Design Bug Fix ][ Ballon ] Fixed a layout distortion issue when enabling the vk_hidden setting in the editor.
 
 = 1.96.2 =

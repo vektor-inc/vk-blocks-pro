@@ -111,9 +111,9 @@ e.g.
 [ Add function ][ Post List (Pro) / Post List Slider (Pro) ] Added the ability to set sticky posts to display.
 [ Add function ][ Outer (Pro) / Slider ] Added a replace button to allow changing the background image without deleting it.
 [ Add function ][ Button ] Added support for typography settings.
+[ Add function ][ Icon ] Added inherit parent element color option as default.
 [ Specification change ] [ Visual Embed ] Added aligncenter when iframeWidth is set to a value other than "100%".
 [ Design Bug Fix ][ Table ] Fixed overlapping borders when using vertical cells, and ensured the border color follows the theme settings.
-[ Add function ][ Icon ] Added inherit parent element color option as default.
 [ Editor Design Bug Fix ][ Animation (Pro) / Fixed Display (Pro) / New Badge (Pro) / Category Badge (Pro) ] Fixed elements not becoming semi-transparent when set to be hidden in the editing screen.
 [ Editor Design Bug Fix ][ Ballon ] Fixed a layout distortion issue when enabling the vk_hidden setting in the editor.
 

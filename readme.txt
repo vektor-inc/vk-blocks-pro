@@ -115,6 +115,7 @@ e.g.
 [ Design Bug Fix ][ Table ] Fixed overlapping borders when using vertical cells, and ensured the border color follows the theme settings.
 [ Editor Design Bug Fix ][ Animation (Pro) / Fixed Display (Pro) / New Badge (Pro) / Category Badge (Pro) ] Fixed elements not becoming semi-transparent when set to be hidden in the editing screen.
 [ Editor Design Bug Fix ][ Ballon ] Fixed a layout distortion issue when enabling the vk_hidden setting in the editor.
+[ Bug fix ][ Ancestor Page List ] Fixed a warning message that appeared on the console when placing blocks.
 
 = 1.96.2 =
 [ Bug fix ][ Post list (Pro) / Post list slider (Pro) / Tab (Pro) / Slider ] Fixed errors occurring regardless of whether the editing screen environment is in an iframe and improved the stability of feature performance.

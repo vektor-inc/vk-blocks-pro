@@ -351,10 +351,10 @@ $color-danger: #b52727;
 /*-------------------------------------------*/
 .vk_edit_hidden_warning {
 	// border:1px dotted #666;
-	opacity: 0.4;
+	opacity: 0.4 !important;
 }
 .vk_edit_hidden_all {
-	opacity: 0.2;
+	opacity: 0.2 !important;
 }
 
 .vk_icon-card_item_title {//Added not to decorate

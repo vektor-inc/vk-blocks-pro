@@ -143,7 +143,8 @@ export default function AnimationEdit(props) {
 					{('fade-in' === effect ||
 						'slide-up' === effect ||
 						'slide-left' === effect ||
-						'slide-right' === effect) && (
+						'slide-right' === effect ||
+						'slide-down' === effect) && (
 						<>
 							<ToggleControl
 								label={__(

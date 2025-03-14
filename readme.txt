@@ -108,6 +108,7 @@ e.g.
 
 == Changelog ==
 
+= 1.97.0 =
 [ Add function ][ Animation (Pro) ] Added the "Slide Down" effect to the Animation effect options.
 [ Add function ][ Post List (Pro) / Post List Slider (Pro) ] Added the ability to set sticky posts to display.
 [ Add function ][ Outer (Pro) / Slider ] Added a replace button to allow changing the background image without deleting it.

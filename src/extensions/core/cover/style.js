@@ -56,8 +56,8 @@ const enhanceCoverBlock = createHigherOrderComponent((BlockEdit) => {
 	};
 }, 'enhanceCoverBlock');
 
-const extendCoverBlock = (settings, name, currentDeprecated) => {
-	if (!isCoverBlock(name) || currentDeprecated !== null) {
+const extendCoverBlock = (settings, name) => {
+	if (!isCoverBlock(name)) {
 		return settings;
 	}
 
@@ -96,60 +96,6 @@ const extendCoverBlock = (settings, name, currentDeprecated) => {
 		);
 	};
 
-	// 以前のバージョンの `save` を `deprecated` として登録
-	const deprecated = [
-		{
-			attributes: {
-				linkUrl: {
-					type: 'string',
-					default: '',
-				},
-				linkTarget: {
-					type: 'string',
-					default: '_self',
-				},
-				tagName: {
-					type: 'string',
-					default: 'div',
-				},
-			},
-
-			save: (props) => {
-				const { attributes } = props;
-				const { linkUrl, linkTarget } = attributes;
-
-				// 元のブロックの `save` を取得
-				const saveElement = settings.save(props);
-
-				if (!saveElement || !linkUrl) {
-					return saveElement;
-				}
-
-				const existingClassName = saveElement.props.className || '';
-				const classNameWithLink =
-					`${existingClassName} ${linkUrl ? 'has-link' : ''}`.trim();
-				const existingStyle = saveElement.props.style || {};
-				const relAttribute =
-					linkTarget === '_blank'
-						? 'noopener noreferrer'
-						: 'noopener';
-
-				return (
-					<div className={classNameWithLink} style={existingStyle}>
-						{saveElement.props.children}
-						<a
-							href={linkUrl}
-							target={linkTarget}
-							rel={relAttribute}
-							aria-label={__('Cover link', 'vk-blocks-pro')}
-							className="wp-block-cover-vk-link"
-						></a>
-					</div>
-				);
-			},
-		},
-	];
-
 	return {
 		...settings,
 		attributes: {
@@ -173,7 +119,6 @@ const extendCoverBlock = (settings, name, currentDeprecated) => {
 		},
 		edit: enhanceCoverBlock(settings.edit),
 		save, // 修正した `save` を適用
-		deprecated, // 修正した `deprecated` を適用
 	};
 };
 

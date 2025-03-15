@@ -162,7 +162,15 @@ const extendColumnBlock = (settings, name) => {
 			},
 			linkTarget: {
 				type: 'string',
-				default: '_self',
+				default: '',
+			},
+			relAttribute: {
+				type: 'string',
+				default: '',
+			},
+			linkDescription: {
+				type: 'string',
+				default: '',
 			},
 		};
 	}
@@ -176,25 +184,28 @@ const extendColumnBlock = (settings, name) => {
 		edit: enhanceColumnBlock(settings.edit),
 		save: (props) => {
 			const { attributes } = props;
-			const { linkUrl, linkTarget } = attributes;
+			const { linkUrl, linkTarget, relAttribute, linkDescription } =
+				attributes;
 			const saveElement = settings.save(props);
 
 			if (!linkUrl) {
 				return saveElement;
 			}
 
-			const relAttribute =
-				linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
-
 			return (
 				<div {...saveElement.props}>
 					<a
 						href={linkUrl}
-						target={linkTarget}
-						rel={relAttribute}
-						aria-label={__('Column link', 'vk-blocks-pro')}
+						{...(linkTarget ? { target: linkTarget } : {})}
+						{...(relAttribute ? { rel: relAttribute } : {})}
 						className="wp-block-column-vk-link"
-					></a>
+					>
+						<span className="screen-reader-text">
+							{linkDescription
+								? linkDescription
+								: __('Column link', 'vk-blocks-pro')}
+						</span>
+					</a>
 					{saveElement.props.children}
 				</div>
 			);
@@ -204,6 +215,6 @@ const extendColumnBlock = (settings, name) => {
 
 addFilter(
 	'blocks.registerBlockType',
-	'custom/extend-cover-block',
+	'custom/extend-column-block',
 	extendColumnBlock
 );

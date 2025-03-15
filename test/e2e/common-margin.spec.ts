@@ -24,7 +24,7 @@ test.describe( 'Block', () => {
 		await page.getByRole('button', { name: 'Margin the block' }).click();
 		await page.getByRole('menuitem', { name: 'Top XL' }).click();
 
-		await expect( page.getByLabel('Block: Breadcrumb') ).toHaveClass(
+		await expect( editor.canvas.getByLabel('Block: Breadcrumb') ).toHaveClass(
 			'block-editor-block-list__block wp-block is-selected vk_block-margin-xl--margin-top wp-block-vk-blocks-breadcrumb'
 		);
 

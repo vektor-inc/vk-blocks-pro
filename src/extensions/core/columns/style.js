@@ -23,40 +23,7 @@ import { ReactComponent as IconSVG } from './icon.svg';
 const isColumnsBlock = (name) => name === 'core/columns';
 const isColumnBlock = (name) => name === 'core/column';
 
-export const addAttribute = (settings) => {
-	if (isColumnsBlock(settings.name)) {
-		settings.attributes = {
-			...settings.attributes,
-			reverse: {
-				type: 'boolean',
-			},
-		};
-	} else if (isColumnBlock(settings.name)) {
-		settings.attributes = {
-			...settings.attributes,
-			linkUrl: {
-				type: 'string',
-				default: '',
-			},
-			linkTarget: {
-				type: 'string',
-				default: '',
-			},
-			relAttribute: {
-				type: 'string',
-				default: '',
-			},
-			linkDescription: {
-				type: 'string',
-				default: '',
-			},
-		};
-	}
-	return settings;
-};
-addFilter('blocks.registerBlockType', 'vk-blocks/columns-style', addAttribute);
-
-export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
+export const enhanceColumnBlock = createHigherOrderComponent((BlockEdit) => {
 	return (props) => {
 		const { attributes, setAttributes } = props;
 		const {
@@ -170,40 +137,73 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 		return <BlockEdit {...props} />;
 	};
 }, 'addMyCustomBlockControls');
-addFilter('editor.BlockEdit', 'vk-blocks/columns-style', addBlockControl);
 
-const insertLinkIntoColumnBlock = (element, blockType, attributes) => {
-	if (!isColumnBlock(blockType.name)) {
-		return element;
+const extendColumnBlock = (settings, name) => {
+	if (!isColumnBlock(name) && !isColumnsBlock(name)) {
+		return settings;
 	}
 
-	const { linkUrl, linkTarget, relAttribute, linkDescription } = attributes;
-
-	if (!linkUrl) {
-		return element;
+	if (isColumnsBlock(settings.name)) {
+		settings.attributes = {
+			...settings.attributes,
+			reverse: {
+				type: 'boolean',
+				default: false,
+			},
+		};
 	}
 
-	return (
-		<div {...element.props}>
-			<a
-				href={linkUrl}
-				{...(linkTarget ? { target: linkTarget } : {})}
-				{...(relAttribute ? { rel: relAttribute } : {})}
-				className="wp-block-column-vk-link"
-			>
-				<span className="screen-reader-text">
-					{linkDescription
-						? linkDescription
-						: __('Column link', 'vk-blocks-pro')}
-				</span>
-			</a>
-			{element.props.children}
-		</div>
-	);
+	if (isColumnBlock(settings.name)) {
+		settings.attributes = {
+			...settings.attributes,
+			linkUrl: {
+				type: 'string',
+				default: '',
+			},
+			linkTarget: {
+				type: 'string',
+				default: '_self',
+			},
+		};
+	}
+
+	return {
+		...settings,
+		attributes: {
+			...settings.attributes,
+		},
+
+		edit: enhanceColumnBlock(settings.edit),
+		save: (props) => {
+			const { attributes } = props;
+			const { linkUrl, linkTarget } = attributes;
+			const saveElement = settings.save(props);
+
+			if (!linkUrl) {
+				return saveElement;
+			}
+
+			const relAttribute =
+				linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
+
+			return (
+				<div {...saveElement.props}>
+					<a
+						href={linkUrl}
+						target={linkTarget}
+						rel={relAttribute}
+						aria-label={__('Column link', 'vk-blocks-pro')}
+						className="wp-block-column-vk-link"
+					></a>
+					{saveElement.props.children}
+				</div>
+			);
+		},
+	};
 };
 
 addFilter(
-	'blocks.getSaveElement',
-	'vk-blocks/insert-link-into-column',
-	insertLinkIntoColumnBlock
+	'blocks.registerBlockType',
+	'custom/extend-cover-block',
+	extendColumnBlock
 );

@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.4
 Tested up to: 6.7
-Stable tag: 1.94.1.0
+Stable tag: 1.96.2.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -109,8 +109,37 @@ e.g.
 == Changelog ==
 [ Add function ][ Column ] Added noreferrer, nofollow, and link description options to the link feature.
 
-[ Add function ][ Slider ] Added noreferrer, nofollow, and link description options to the link feature.
+= 1.97.0 =
+[ Add function ][ Animation (Pro) ] Added the "Slide Down" effect to the Animation effect options.
+[ Add function ][ Post List (Pro) / Post List Slider (Pro) ] Added the ability to set sticky posts to display.
+[ Add function ][ Outer (Pro) / Slider ] Added a replace button to allow changing the background image without deleting it.
+[ Add function ][ Button ] Added support for typography settings.
+[ Specification change ] [ Visual Embed ] Added aligncenter when iframeWidth is set to a value other than "100%".
+[ Design Bug Fix ][ Table ] Fixed overlapping borders when using vertical cells, and ensured the border color follows the theme settings.
+[ Editor Design Bug Fix ][ Animation (Pro) / Fixed Display (Pro) / New Badge (Pro) / Category Badge (Pro) ] Fixed elements not becoming semi-transparent when set to be hidden in the editing screen.
+[ Editor Design Bug Fix ][ Ballon ] Fixed a layout distortion issue when enabling the vk_hidden setting in the editor.
+[ Bug fix ][ Ancestor Page List ] Fixed a warning message that appeared on the console when placing blocks.
 
+= 1.96.2 =
+[ Bug fix ][ Post list (Pro) / Post list slider (Pro) / Tab (Pro) / Slider ] Fixed errors occurring regardless of whether the editing screen environment is in an iframe and improved the stability of feature performance.
+[ Bug fix ][ Post list (Pro) / Post list slider (Pro) ] Fixed the text displayed when no posts are available by removing the 's' notation and standardizing the first letter to lowercase.
+[ Other ] Rollback 1.96.0
+
+= 1.96.1 =
+[ Other ] Rollback 1.95.0.3
+
+= 1.96.0 =
+[ Add function ][ Slider / group / Icon / Grid Column Card (Pro) ] Added noreferrer, nofollow, and link description options to the link feature.
+[ Specification change ][ Animation (Pro) / Fixed Display (Pro) / Outer (Pro) ] Added support for layout.allowJustification: false, allowing full-width/wide alignment in block themes where wrapped blocks previously did not appear as full-width or wide in the editor.
+[ Specification change ] Fixed the zoom-out toggle not always displaying in the editor toolbar (updated blocks.json API version from 2 to 3).
+[ Editor Design Bug Fix ][ Tab (Pro) ] Fixed the issue where the block inserter button (block-list-appender) inside the tab block (.vk_tab) was affecting other block inserter buttons.
+[ Editor Design Bug Fix ] [ Grid Column (Pro) ] Fixed an issue where the 'is-vertical' layout of grid column items was not displayed vertically.
+[ Bug fix ][ Icon ] Fixed an unwanted bottom margin appearing.
+
+= 1.95.0 =
+[ Add function ][ Icon / Slider ] Added noreferrer, nofollow, and link description options to the link feature.
+[ Add function ][ Core Table ] Add table cell vertical setting.
+[ Specification Change ][ Page Content ] Modify the specification so that the display is shown only when the referenced page is public.
 [ Editor Design Bug Fix ] [ Grid Column (Pro) ] Fixed an issue where the 'is-vertical' layout of grid column items was not displayed vertically.
 
 = 1.94.2 =
@@ -118,7 +147,6 @@ e.g.
 
 = 1.94.1 =
 [ Specification change ][ Visual Embed ] Add margin:0; to iframe tag
-
 [ Add function ][ Outer (Pro) ] Added the ability to set a focal point for background images.
 
 = 1.94.0 =

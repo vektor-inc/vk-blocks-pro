@@ -1,4 +1,4 @@
-/* globals vk_block_post_type_params */
+/* globals MutationObserver, vk_block_post_type_params */
 // import WordPress Scripts
 import { __ } from '@wordpress/i18n';
 import {
@@ -27,6 +27,7 @@ export default function PostListSliderEdit(props) {
 
 	const postTypesProps = vk_block_post_type_params.post_type_option;
 	const termsByTaxonomyName = vk_block_post_type_params.term_by_taxonomy_name;
+	const stickyPosts = attributes.stickyPosts;
 
 	const {
 		layout,
@@ -65,6 +66,53 @@ export default function PostListSliderEdit(props) {
 		}
 	}, [layout]);
 
+	// リンクを無効にする関数
+	const disableLinks = () => {
+		// iframe の有無を確認して適切なドキュメントを取得
+		const iframe = document.querySelector(
+			'.block-editor-iframe__container iframe'
+		);
+		const targetDocument = iframe?.contentWindow?.document || document;
+
+		const links = targetDocument.querySelectorAll(
+			'.vk_post_imgOuter a, .vk_post .vk_post_title a, .postListText_title a, .card-intext .card-intext-inner, .postListText_singleTermLabel_inner, .vk_post_btnOuter a'
+		);
+		links.forEach((link) => {
+			link.addEventListener('click', (event) => {
+				event.preventDefault();
+			});
+			link.style.cursor = 'default';
+			link.style.boxShadow = 'unset';
+			// ホバー効果を無効化
+			link.style.textDecorationColor = 'inherit';
+		});
+	};
+
+	useEffect(() => {
+		// MutationObserverでDOMの変化を監視
+		const iframe = document.querySelector(
+			'.block-editor-iframe__container iframe'
+		);
+		const targetDocument = iframe?.contentWindow?.document || document;
+		const observerTarget = targetDocument.querySelector('body');
+
+		const observer = new MutationObserver(disableLinks);
+		if (observerTarget) {
+			observer.observe(observerTarget, {
+				childList: true,
+				subtree: true,
+			});
+		}
+
+		// 初回およびattributesの変更時にリンクを無効化
+		disableLinks();
+
+		// クリーンアップ関数
+		return () => {
+			observer.disconnect(); // 監視を停止
+		};
+	}, [attributes]);
+
 	return (
 		<>
 			<BlockControls>
@@ -82,6 +130,7 @@ export default function PostListSliderEdit(props) {
 					setAttributes={setAttributes}
 					postTypesProps={postTypesProps}
 					termsByTaxonomyName={termsByTaxonomyName}
+					stickyPosts={stickyPosts}
 				/>
 				<PanelBody
 					title={__('Display type', 'vk-blocks-pro')}
@@ -137,7 +186,7 @@ export default function PostListSliderEdit(props) {
 					initialOpen={false}
 				>
 					<BaseControl
-						label={__('Effect ', 'vk-blocks-pro')}
+						label={__('Effect', 'vk-blocks-pro')}
 						id={`vk_slider-effect`}
 					>
 						<SelectControl
@@ -158,7 +207,7 @@ export default function PostListSliderEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Loop ', 'vk-blocks-pro')}
+						label={__('Loop', 'vk-blocks-pro')}
 						id={`vk_slider-loop`}
 					>
 						<AdvancedToggleControl
@@ -307,6 +356,7 @@ export default function PostListSliderEdit(props) {
 				<ServerSideRender
 					block="vk-blocks/post-list-slider"
 					attributes={attributes}
+					onRendered={disableLinks}
 				/>
 			</div>
 		</>

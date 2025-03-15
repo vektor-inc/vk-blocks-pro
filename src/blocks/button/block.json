@@ -1,5 +1,5 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "vk-blocks/button",
 	"title": "Button",
 	"category": "vk-blocks-cat",
@@ -16,7 +16,7 @@
 			"type": "string"
 		},
 		"buttonTarget": {
-			"type": "Boolean",
+			"type": "boolean",
 			"default": false
 		},
 		"buttonSize": {
@@ -94,6 +94,12 @@
 	"textdomain": "vk-blocks-pro",
 	"supports": {
 		"className": true,
-		"anchor": true
+		"anchor": true,
+		"typography": {
+			"__experimentalFontFamily": true,
+			"__experimentalFontSize": true,
+			"__experimentalTextTransform": true,
+			"__experimentalLetterSpacing": true
+		}
 	}
 }

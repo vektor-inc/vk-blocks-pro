@@ -1,5 +1,5 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "vk-blocks/accordion-target",
 	"title": "Accordion Target",
 	"description": "This is the content area where you can add blocks freely.",

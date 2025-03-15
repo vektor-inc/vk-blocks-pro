@@ -1,5 +1,5 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "vk-blocks/post-list",
 	"category": "vk-blocks-cat",
 	"title": "Post list",
@@ -127,6 +127,10 @@
 		"selfIgnore": {
 			"type": "boolean",
 			"default": false
+		},
+		"stickyPosts": {
+			"type": "string",
+			"default": "include"
 		},
 		"className": {
 			"type": "string",

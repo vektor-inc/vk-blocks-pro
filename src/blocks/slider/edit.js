@@ -51,10 +51,16 @@ export default function SliderEdit(props) {
 		blockId,
 	} = attributes;
 
-	editSliderLaunch();
 	useEffect(() => {
-		editSliderLaunch();
-	}, [attributes]);
+		let timer;
+		if (editorMode) {
+			timer = setTimeout(() => {
+				editSliderLaunch();
+			}, 50);
+		}
+
+		return () => clearTimeout(timer);
+	}, [editorMode]);
 
 	useEffect(() => {
 		// attributes の clientId は使わなくなったので削除
@@ -395,7 +401,7 @@ export default function SliderEdit(props) {
 					initialOpen={false}
 				>
 					<BaseControl
-						label={__('Effect ', 'vk-blocks-pro')}
+						label={__('Effect', 'vk-blocks-pro')}
 						id={`vk_slider-effect`}
 					>
 						<SelectControl
@@ -416,7 +422,7 @@ export default function SliderEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Loop ', 'vk-blocks-pro')}
+						label={__('Loop', 'vk-blocks-pro')}
 						id={`vk_slider-loop`}
 					>
 						<AdvancedToggleControl

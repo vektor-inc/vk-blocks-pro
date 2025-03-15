@@ -1,5 +1,5 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "vk-blocks/post-list-slider",
 	"category": "vk-blocks-cat",
 	"title": "Post List Slider",
@@ -163,6 +163,10 @@
 		},
 		"blockId": {
 			"type": "string"
+		},
+		"stickyPosts": {
+			"type": "string",
+			"default": "include"
 		},
 		"className": {
 			"type": "string",

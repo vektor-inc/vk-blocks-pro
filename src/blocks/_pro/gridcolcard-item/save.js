@@ -1,7 +1,6 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { isGradientStyle } from '@vkblocks/utils/is-gradient-style';
-
 import classnames from 'classnames';
 
 export default function save(props) {
@@ -19,6 +18,7 @@ export default function save(props) {
 		backgroundGradient,
 		url,
 		urlOpenType,
+		relAttribute,
 	} = attributes;
 
 	// カラーパレットに対応
@@ -98,9 +98,13 @@ export default function save(props) {
 					paddingRight: containerSpace.right,
 					color: textColorCustom,
 				}}
-				href={url}
-				target={urlOpenType ? '_blank' : undefined}
-				rel={urlOpenType ? 'noopener noreferrer' : undefined}
+				{...(TagName === 'a'
+					? {
+							href: url,
+							target: urlOpenType ? '_blank' : undefined,
+							rel: relAttribute || undefined,
+						}
+					: {})}
 			>
 				<InnerBlocks.Content />
 			</TagName>

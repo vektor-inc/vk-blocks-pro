@@ -37,6 +37,7 @@ import {
 	BlockAlignmentToolbar,
 } from '@wordpress/block-editor';
 import { useEffect, useRef } from '@wordpress/element';
+import { select } from '@wordpress/data';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 
 export default function OuterEdit(props) {
@@ -188,6 +189,47 @@ export default function OuterEdit(props) {
 			});
 		}
 	}, [clientId]);
+
+	// 既存ブロックの bgImage, bgImageTablet, bgImageMobile の ID を自動補完
+	useEffect(() => {
+		let isMounted = true;
+
+		const updateBgImageId = async (imageUrl, idAttributeName) => {
+			if (!imageUrl || attributes[idAttributeName]) {
+				return;
+			}
+
+			for (let attempts = 0; attempts < 10 && isMounted; attempts++) {
+				const media = select('core').getEntityRecords(
+					'postType',
+					'attachment',
+					{ per_page: -1 }
+				);
+				const mediaItem = media?.find(
+					(item) => item.source_url === imageUrl
+				);
+
+				if (mediaItem?.id) {
+					setAttributes({ [idAttributeName]: mediaItem.id });
+					return;
+				}
+
+				await new Promise((resolve) => setTimeout(resolve, 500));
+			}
+		};
+
+		['bgImage', 'bgImageTablet', 'bgImageMobile'].forEach((attr) =>
+			updateBgImageId(attributes[attr], `${attr}Id`)
+		);
+
+		return () => {
+			isMounted = false;
+		};
+	}, [
+		attributes.bgImage,
+		attributes.bgImageTablet,
+		attributes.bgImageMobile,
+	]);
 
 	const bgColorClasses = classnames({
 		[`has-background`]: bgColor !== undefined,
@@ -673,6 +715,7 @@ export default function OuterEdit(props) {
 						>
 							<AdvancedMediaUpload
 								schema={'bgImage'}
+								schemaId={'bgImageId'}
 								{...props}
 							/>
 						</div>
@@ -684,6 +727,7 @@ export default function OuterEdit(props) {
 					>
 						<AdvancedMediaUpload
 							schema={'bgImageTablet'}
+							schemaId={'bgImageTabletId'}
 							{...props}
 						/>
 					</BaseControl>
@@ -694,21 +738,26 @@ export default function OuterEdit(props) {
 					>
 						<AdvancedMediaUpload
 							schema={'bgImageMobile'}
+							schemaId={'bgImageMobileId'}
 							{...props}
 						/>
 					</BaseControl>
 					<ToggleControl
-						label={__('Enable PC Focal Point', 'vk-blocks-pro')}
+						label={
+							__('Enable Focal Point', 'vk-blocks-pro') +
+							__('(PC)', 'vk-blocks-pro')
+						}
 						checked={enableFocalPointPC}
 						onChange={() => handleToggleChange('PC')}
 						disabled={!bgImage}
 					/>
 					{enableFocalPointPC && (
 						<BaseControl
-							label={__(
-								'Focal Point Picker (PC)',
-								'vk-blocks-pro'
-							)}
+							label={
+								__('Focal Point Picker', 'vk-blocks-pro') +
+								' ' +
+								__('(PC)', 'vk-blocks-pro')
+							}
 							id="vk_outer-focalPointPickerPC"
 						>
 							<FocalPointPicker
@@ -724,17 +773,21 @@ export default function OuterEdit(props) {
 						</BaseControl>
 					)}
 					<ToggleControl
-						label={__('Enable Tablet Focal Point', 'vk-blocks-pro')}
+						label={
+							__('Enable Focal Point', 'vk-blocks-pro') +
+							__('(Tablet)', 'vk-blocks-pro')
+						}
 						checked={enableFocalPointTablet}
 						onChange={() => handleToggleChange('Tablet')}
 						disabled={!bgImageTablet && !bgImage}
 					/>
 					{enableFocalPointTablet && (
 						<BaseControl
-							label={__(
-								'Focal Point Picker (Tablet)',
-								'vk-blocks-pro'
-							)}
+							label={
+								__('Focal Point Picker', 'vk-blocks-pro') +
+								' ' +
+								__('(Tablet)', 'vk-blocks-pro')
+							}
 							id="vk_outer-focalPointPickerTablet"
 						>
 							<FocalPointPicker
@@ -750,17 +803,21 @@ export default function OuterEdit(props) {
 						</BaseControl>
 					)}
 					<ToggleControl
-						label={__('Enable Mobile Focal Point', 'vk-blocks-pro')}
+						label={
+							__('Enable Focal Point', 'vk-blocks-pro') +
+							__('(Mobile)', 'vk-blocks-pro')
+						}
 						checked={enableFocalPointMobile}
 						onChange={() => handleToggleChange('Mobile')}
 						disabled={!bgImage && !bgImageTablet && !bgImageMobile}
 					/>
 					{enableFocalPointMobile && (
 						<BaseControl
-							label={__(
-								'Focal Point Picker (Mobile)',
-								'vk-blocks-pro'
-							)}
+							label={
+								__('Focal Point Picker', 'vk-blocks-pro') +
+								' ' +
+								__('(Mobile)', 'vk-blocks-pro')
+							}
 							id="vk_outer-focalPointPickerMobile"
 						>
 							<FocalPointPicker

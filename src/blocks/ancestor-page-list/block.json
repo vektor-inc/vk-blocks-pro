@@ -1,5 +1,5 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "vk-blocks/ancestor-page-list",
 	"category": "vk-blocks-cat",
 	"title": "Page list from ancestor",

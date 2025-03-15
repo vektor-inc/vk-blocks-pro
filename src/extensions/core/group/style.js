@@ -16,7 +16,7 @@ import {
 } from '@wordpress/block-editor';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import LinkToolbar from '@vkblocks/components/link-toolbar';
-
+import deprecated from './deprecated/index';
 /**
  * Check if the block type is valid for customization.
  *
@@ -47,6 +47,14 @@ export const addAttribute = (settings) => {
 				default: '',
 			},
 			linkTarget: {
+				type: 'string',
+				default: '',
+			},
+			relAttribute: {
+				type: 'string',
+				default: '',
+			},
+			linkDescription: {
 				type: 'string',
 				default: '',
 			},
@@ -90,6 +98,18 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 								linkTarget={props.attributes.linkTarget}
 								setLinkTarget={(target) =>
 									props.setAttributes({ linkTarget: target })
+								}
+								relAttribute={props.attributes.relAttribute}
+								setRelAttribute={(rel) =>
+									props.setAttributes({ relAttribute: rel })
+								}
+								linkDescription={
+									props.attributes.linkDescription
+								}
+								setLinkDescription={(description) =>
+									props.setAttributes({
+										linkDescription: description,
+									})
 								}
 							/>
 						</ToolbarGroup>
@@ -165,6 +185,8 @@ const save = (props) => {
 	const {
 		linkUrl,
 		linkTarget,
+		relAttribute,
+		linkDescription,
 		className = '',
 		tagName: CustomTag = 'div',
 	} = attributes;
@@ -175,8 +197,6 @@ const save = (props) => {
 	});
 
 	// Determine rel attribute based on linkTarget
-	const relAttribute =
-		linkTarget === '_blank' ? 'noopener noreferrer' : 'noopener';
 
 	// Extract prefix for custom link class
 	const prefix = 'wp-block-group';
@@ -187,11 +207,16 @@ const save = (props) => {
 			{linkUrl && (
 				<a
 					href={linkUrl}
-					target={linkTarget}
-					rel={relAttribute}
-					aria-label={__('Group link', 'vk-blocks-pro')}
+					{...(linkTarget ? { target: linkTarget } : {})}
+					{...(relAttribute ? { rel: relAttribute } : {})}
 					className={`${prefix}-vk-link`}
-				></a>
+				>
+					<span className="screen-reader-text">
+						{linkDescription
+							? linkDescription
+							: __('Group link', 'vk-blocks-pro')}
+					</span>
+				</a>
 			)}
 		</CustomTag>
 	);
@@ -203,15 +228,34 @@ import { assign } from 'lodash';
 /**
  * Override block settings to include custom save function and attributes.
  *
- * @param {Object} settings The block settings.
- * @param {string} name     The block name.
+ * @param {Object} settings          The block settings.
+ * @param {string} name              The block name.
+ * @param {Object} currentDeprecated
  * @return {Object} The modified block settings.
  */
-const overrideBlockSettings = (settings, name) => {
-	if (name === 'core/group') {
+const overrideBlockSettings = (settings, name, currentDeprecated) => {
+	if (name === 'core/group' && currentDeprecated === null) {
+		const newDeprecated = [...settings.deprecated];
+		// Sort deprecated items in descending order of targetVersion to prevent index shifting
+		const sortedDeprecated = [...deprecated].sort(
+			(a, b) =>
+				(b.targetVersion || newDeprecated.length) -
+				(a.targetVersion || newDeprecated.length)
+		);
+
+		sortedDeprecated.forEach((deprecatedItem) => {
+			const targetIndex =
+				deprecatedItem.targetVersion || newDeprecated.length;
+			// Create a copy of the deprecatedItem without targetVersion
+			const itemToInsert = { ...deprecatedItem };
+			delete itemToInsert.targetVersion;
+			newDeprecated.splice(targetIndex, 0, itemToInsert);
+		});
 		const newSettings = assign({}, settings, {
 			save,
+			deprecated: newDeprecated,
 		});
+
 		// Support for existing group blocks by adding default values for new attributes
 		if (!newSettings.attributes.linkUrl) {
 			newSettings.attributes.linkUrl = {
@@ -221,6 +265,18 @@ const overrideBlockSettings = (settings, name) => {
 		}
 		if (!newSettings.attributes.linkTarget) {
 			newSettings.attributes.linkTarget = {
+				type: 'string',
+				default: '',
+			};
+		}
+		if (!newSettings.attributes.relAttribute) {
+			newSettings.attributes.relAttribute = {
+				type: 'string',
+				default: '',
+			};
+		}
+		if (!newSettings.attributes.linkDescription) {
+			newSettings.attributes.linkDescription = {
 				type: 'string',
 				default: '',
 			};

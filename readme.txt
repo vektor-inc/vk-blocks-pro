@@ -107,6 +107,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+[ Add function ][ Column ] Added noreferrer, nofollow, and link description options to the link feature.
 
 = 1.97.0 =
 [ Add function ][ Animation (Pro) ] Added the "Slide Down" effect to the Animation effect options.

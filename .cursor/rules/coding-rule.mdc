@@ -5,17 +5,54 @@ alwaysApply: false
 ---
 
 # 1. 前提
+- 常に日本語で回答してください。
 - 本プロジェクトでは、WordPressのプラグイン「VK Blocks Pro」の開発を行います。
 - 本プロジェクトはWordPressの wp-content/plugins/vk-blocks-pro 内で動作することを前提とします。
 - 常にWordPressのコーディング規約に則ってコードを書いてください。
 - 名前空間を使用していません。関数やグローバル変数を定義する場合は 接頭辞`vk_blocks_`をつけてください。
+- インデントは常にタブを使ってください。スペースでのインデントは行いません。
 
 # 2. ファイル構成
 - **`inc/`**: PHPコードを原則ここに格納する
-  - **`inc/vk-blocks/`**: 本プラグインに関する処理はここに格納する
+  - **`vk-blocks/`**: 本プラグインに関する処理はここに格納する
     - **`class-vk-blocks-global-settings.php`**: 各ブロックの定義
     - **`class-vk-blocks-block-loader.php`**: ブロックの読み込み処理全般
     - **`class-vk-blocks-options.php`**: wp_optionsに保存する設定値の定義
+    - **`admin/`**: 管理画面に関する処理
+      - **`admin.php`**: 管理画面のメニューへの各種追加処理、設定画面で必要なJSのエンキュー
+      - **`images/**: 管理画面で使用する画像ファイル
+        - **`vk-blocks-logo_ol.svg`**: VK Blocksロゴ(SVG)
+        - **`vk-blocks-logo.png`**: VK Blocksロゴ(PNG)
+    - **`App/RestAPI/BlockMeta/`**: REST APIのエントリポイント
+      - **`class-vk-blocks-entrypoint`**: REST APIのエントリポイント
+    - **`blocks/`**: ブロックに関連する処理
+      - **`class-vk-blocks-faq-schema-manager.php`**: FAQブロックのスキーマ出力処理
+    - **`build/`**: ビルド結果を格納する
+    - **`extensions/core/`**: コア拡張に関連する処理
+      - **`list.php`**: リストブロック拡張に関連する処理
+    - **`fontawesome/`**: Font Awesomeに関連する処理
+      - **`class-vk-blocks-font-awesome-api.php`**: Font Awesomeに関連する処理
+      - **`font-awesome-config.php`**: Font Awesomeの設定値を定義する
+    - **`images/`**: プラグインで使用する画像ファイルを格納
+    - **`style/`**: ダイナミックCSS関連
+      - **`balloon.php`**: バルーンブロックに関連するCSS出力
+      - **`common-margin.php`**: 共通余白に関連するCSS出力
+      - **`hidden-extension.php`**: ブロックの非表示設定に関するCSS出力
+    - **`util/`**: ユーティリティ関連
+      - **`array-merge.php`**: 配列のマージ
+      - **`color-slug-to-color-code.php`**: 色のスラッグをカラーコードに変換する
+  - **`vk-blocks-pro/`**: Pro版に関連する処理はここに格納する
+    - **`vk-blocks-pro-functions.php`**: 本ディレクトリ内のPHPコードのreuqire、各JSのエンキュー
+    - **`admin-pro/`**: 管理画面に関する処理
+      - **`admin-pro.php`**: Pro版で設定画面のメニューに項目を追加する処理
+    - **`App/RestAPI/BlockMeta/`**:
+      - **`class-vk-blocks-entrypoint`**: REST APIのエントリポイント（Pro版に関連するもののみ）
+    - **`blocks`:** ブロックに関連する処理
+      - **`class-vk-blocks-blog-card.php`**: ブログカード関連の処理
+    - **`extensions/common`**: コア拡張に関連する処理
+      - **`custom-block-style.php`**: カスタムブロックスタイルに関連する処理
+      - **`custom-css-extensions.php`**: カスタムCSSに関連する処理
+      - **`custom-format.php`**: カスタムフォーマットに関連する処理
 - **`src/`**: Gutenbergのカスタムブロック用のJSコードを原則ここに格納する
   - **`blocks/`**: 1ブロック1ディレクトリで構成する。この中にedit.js / save.jsが格納される
     - **`alert/`**: A colored box with four statuses, including annotations and alerts.
@@ -118,7 +155,4 @@ alwaysApply: false
   - `index.php`、`index.js`、`block.json`、`edit.js`、`save.js`、`style.scss`、`icon.svg`が基本セットですが絶対的なものではありません。
 - `src/bundle.js` （無料版） もしくは `src/bundle-pro.js` （プロ版）にimport定義、ブロック定義を追加してください。
 - `inc/vk-blocks/class-vk-blocks-global-settings` のblocks()内にブロックの定義を追加してください。プロ版のブロックは is_proがtrue 、無料版はfalseになります。
-
-
-
 

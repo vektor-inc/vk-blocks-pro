@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.4
 Tested up to: 6.7
-Stable tag: 1.96.2.1
+Stable tag: 1.97.0.2
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -107,6 +107,9 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 1.98.0 =
+[ Specification change ][ Slider ] Changed slider height minimum from 40px to 24px.
 
 = 1.97.0 =
 [ Add function ][ Animation (Pro) ] Added the "Slide Down" effect to the Animation effect options.

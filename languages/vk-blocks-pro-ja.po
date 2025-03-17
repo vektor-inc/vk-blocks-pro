@@ -2465,8 +2465,6 @@ msgid "Archive title tag"
 msgstr "アーカイブタイトルタグ"
 
 #: src/blocks/balloon/edit.js:141
-#, fuzzy
-#| msgid " Image Border"
 msgid "Image Border"
 msgstr "画像の線"
 
@@ -3257,10 +3255,8 @@ msgid "Theme"
 msgstr "テーマ"
 
 #: src/components/advanced-media-upload/index.js:86
-#, fuzzy
-#| msgid "Delete Image"
 msgid "Replace Image"
-msgstr "画像を削除"
+msgstr "画像を置換"
 
 #: src/components/code-mirror-css/index.js:170
 msgid "Note : Contains double-byte spaces; CSS may not work."

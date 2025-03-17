@@ -107,6 +107,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
 [ Specification change ][ Slider] Changed slider height minimum from 40px to 24px.
 
 = 1.97.0 =

@@ -108,6 +108,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Blog Card (Pro) ] Fix PHP 8.x warning caused by missing 'clearCache' key.
+
 = 1.98.0 =
 [ Specification change ][ Slider ] Changed slider height minimum from 40px to 24px.
 

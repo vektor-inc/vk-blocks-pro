@@ -109,6 +109,7 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Column ] Added noreferrer, nofollow, and link description options to the link feature.
+[ Add function ][ Cover ] Added noreferrer, nofollow, and link description options to the link feature.
 
 = 1.98.0 =
 [ Specification change ][ Slider ] Changed slider height minimum from 40px to 24px.

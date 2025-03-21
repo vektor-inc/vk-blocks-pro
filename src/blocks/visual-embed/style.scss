@@ -3,7 +3,7 @@
 /*-------------------------------------------*/
 .vk-visual-embed {
 
-	&.alignleft, 
+	&.alignleft,
 	&.aligncenter,
 	&.alignright {
 		display: grid;
@@ -11,14 +11,14 @@
 	}
 	&.alignleft {
 		justify-items: start;
-		
+
 		iframe {
 			margin-right: auto;
 		}
 	}
 	&.aligncenter {
 		justify-items: center;
-		
+
 		iframe {
 			margin-left: auto;
 			margin-right: auto;
@@ -26,7 +26,7 @@
 	}
 	&.alignright {
 		justify-items: end;
-		
+
 		iframe {
 			margin-left: auto;
 		}
@@ -50,14 +50,14 @@
 	.wp-block {
 		&[data-align=left]:has(.vk-visual-embed) {
 			justify-items: start;
-			
+
 			.vk-visual-embed iframe {
 				margin-right: auto;
 			}
 		}
 		&[data-align=center]:has(.vk-visual-embed) {
 			justify-items: center;
-			
+
 			.vk-visual-embed iframe {
 				margin-left: auto;
 				margin-right: auto;
@@ -65,7 +65,7 @@
 		}
 		&[data-align=right]:has(.vk-visual-embed) {
 			justify-items: end;
-			
+
 			.vk-visual-embed iframe {
 				margin-left: auto;
 			}

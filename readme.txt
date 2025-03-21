@@ -107,6 +107,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
 [ Add function ][ Column ] Added noreferrer, nofollow, and link description options to the link feature.
 
 = 1.98.0 =

@@ -109,6 +109,7 @@ e.g.
 == Changelog ==
 
 [ Bug fix ][ Blog Card (Pro) ] Fix PHP 8.x warning caused by missing 'clearCache' key.
+[ Add function ][ Cover ] Added noreferrer, nofollow, and link description options to the link feature.
 
 = 1.98.0 =
 [ Specification change ][ Slider ] Changed slider height minimum from 40px to 24px.

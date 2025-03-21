@@ -57,7 +57,7 @@ const fetchUrlData = async (url, options = { clearCache: false }) => {
 		method: 'POST',
 		data: {
 			url,
-			clearCache: options.clearCache,
+			clearCache: !!options.clearCache,
 		},
 		// ...options,
 	}).then((res) => {

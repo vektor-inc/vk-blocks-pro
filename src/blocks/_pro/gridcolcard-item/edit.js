@@ -3,7 +3,6 @@ import {
 	PanelBody,
 	Button,
 	ButtonGroup,
-	ToggleControl,
 	BaseControl,
 	CheckboxControl,
 	TextControl,
@@ -41,7 +40,6 @@ export default function Edit(props) {
 	];
 
 	const {
-		editLock,
 		headerDisplay,
 		footerDisplay,
 		containerSpace,
@@ -272,25 +270,14 @@ export default function Edit(props) {
 							isSmall
 							isPrimary={editMode === 'self'}
 							isSecondary={editMode !== 'self'}
-							onClick={() => setEditMode('self')}
+							onClick={() => {
+								setEditMode('self');
+								setAttributes({ editLock: true });
+							}}
 						>
 							{__('This column only', 'vk-blocks-pro')}
 						</Button>
 					</ButtonGroup>
-					<hr />
-					<label htmlFor="vk_hiddenControl-hiddenEditLock">
-						{__('Edit Lock', 'vk-blocks-pro')}
-					</label>
-					<ToggleControl
-						label={__(
-							'Lock edits this block from the parent and other Grid Column Item block',
-							'vk-blocks-pro'
-						)}
-						checked={editLock}
-						onChange={(checked) =>
-							setAttributes({ editLock: checked })
-						}
-					/>
 				</PanelBody>
 				<PanelBody
 					title={__('Column Setting', 'vk-blocks-pro')}

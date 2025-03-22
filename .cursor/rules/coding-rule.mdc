@@ -3,16 +3,37 @@ description: 本プロジェクトにおけるコーディングルール
 globs: **/*.*
 alwaysApply: false
 ---
+## 1. 共通項目
+- 本プロジェクトはWordPressプラグイン「VK Blocks Pro」の開発を目的とする。
+- 本プロジェクトはWordPressプラグイン開発のコンテキストで動作する。
+- WordPressのコーディング標準およびベストプラクティスに従うこと。
+- PHP7.4以上で動作するコードを記述する。
+- インデントは常にタブを使用し、スペースでのインデントは行わない。
+- フロントエンドの出力は常にi18n関数（`__()` や `_e()`）を使用する。
+- XSSやSQLインジェクションを防ぐため、入力値のバリデーション・サニタイズをWordPressの関数を用いて実施する。
+- 本プロジェクトは名前空間を使用せず、関数やグローバル変数には接頭辞 `vk_blocks_` をつける。
+- すべての回答やドキュメントは日本語で記述すること。
 
-# 1. 前提
-- 常に日本語で回答してください。
-- 本プロジェクトでは、WordPressのプラグイン「VK Blocks Pro」の開発を行います。
-- 本プロジェクトはWordPressの wp-content/plugins/vk-blocks-pro 内で動作することを前提とします。
-- 常にWordPressのコーディング規約に則ってコードを書いてください。
-- 名前空間を使用していません。関数やグローバル変数を定義する場合は 接頭辞`vk_blocks_`をつけてください。
-- インデントは常にタブを使ってください。スペースでのインデントは行いません。
+## 2. PHP
+- PHPコードは原則として `inc/` に格納し、構造を明確に保つ。
+- `class-vk-blocks-global-settings.php` で各ブロックの設定を定義する。
+- `class-vk-blocks-options.php` で `wp_options` に保存する設定値を定義する。
+- `admin.php` では管理画面のメニュー追加や設定画面用JSのエンキュー処理を行う。
+- REST APIのエントリポイントは `App/RestAPI/BlockMeta/` に配置する。
+- Font Awesomeの設定は `fontawesome/` ディレクトリ内に格納する。
+- ダイナミックCSSの出力は `style/` ディレクトリ内のPHPファイルで行う。
+- PHPUnitのテストケースは `test/phpunit/` に格納し、無料版・Pro版ごとに `free/` `pro/` に分類する。
 
-# 2. ファイル構成
+## 3. JavaScript / React
+- Gutenbergのカスタムブロック用JSコードは `src/` に格納し、各ブロックは `src/blocks/` 配下にディレクトリを作成する。
+- ブロックごとに `index.php` `index.js` `block.json` `edit.js` `save.js` `style.scss` `icon.svg` を基本セットとして配置。
+- `src/bundle.js`（無料版） または `src/bundle-pro.js`（Pro版）に `import` 定義を追加する。
+- `inc/vk-blocks/class-vk-blocks-global-settings` の `blocks()` にブロックの定義を追加し、Pro版のブロックは `is_pro = true`、無料版は `is_pro = false` に設定する。
+- `npm run build` でビルドを実行する。
+- `npm run test-unit` でフィクスチャーテストを実施。
+- `npm run test:e2e` でPlaywrightによるE2Eテストを実行。
+
+## 4. ファイル構成
 - **`inc/`**: PHPコードを原則ここに格納する
   - **`vk-blocks/`**: 本プラグインに関する処理はここに格納する
     - **`class-vk-blocks-global-settings.php`**: 各ブロックの定義
@@ -127,28 +148,7 @@ alwaysApply: false
     - **`free`**: VK Blocks 無料版で使うブロックのテストケース
     - **`pro`**: VK Blocks Proで使うブロックのテストケース
 
-# 3. ビルド
-- **`npm run build`**でビルドを実行します。
-- 開発時は **`npm run build:cache`** を使いますが、その時々で指示があれば、それに従ってください。
-- 読み込むPHPのパッケージを変更する場合は、`composer install` が必要です。
-
-# 4. テスト
-## 4.1. PHPUnitテスト
-- `wp-env` が起動してなければ、起動する必要があります。
-- `npm run phpunit` ですべてのPHPUnitテストを実行できます。
-- テストケースは `test/phpunit` 内で、無料版のブロックのテストは `free/` に プロ版のブロックのテストは `pro/` に格納します。
-
-## 4.2. フィクスチャーテスト
-- `npm run test-unit` で非推奨プロセスの処理が正常に動作しているかをチェックできます。
-- 非推奨プロセス処理が必要な場合、`test/e2e-test/fixtures/`の対象のブロックのフィクスチャーを追加する必要があります。
-  - `vk-blocks__{block_name}.html` に保存されているHTMLを `vk-blocks__{block_name}__deprecated-0-0-0.html` にコピーします。0-0-0の部分は現在のバージョン番号が入ります。
-  - `vk-blocks__{block_name}.html`には、修正後のコードで生成したフィクスチャーに書き換えます。
-
-## 4.3． PlayWrightsテスト
-- `npm run test:e2e` でPlayWrightsテストを実行できます。
-- テストスクリプトは `test/e2e`にあります。
-
-# 5. ブロックを新規作成するときの手順
+## 5. ブロックを新規作成するときの手順
 - まずそのブロックが「無料版」か「プロ版」か設計者に確認してください。
 - 無料版は`src/blocks/`内に、プロ版は`src/blocks/_pro'内にブロックのディレクトリを作ります。各ブロックの構成を参考にしてください。
   - `index.php`は他のブロックを参考に必ず設置してください。ビルド時に `inc/vk-blocks/build/blocks/` の各ブロック内へコピーされ、必要なファイルがエンキューされます。

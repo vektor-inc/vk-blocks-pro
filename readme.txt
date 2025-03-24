@@ -108,8 +108,10 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Column ] Added noreferrer, nofollow, and link description options to the link feature.
 [ Add function ][ Cover ] Added noreferrer, nofollow, and link description options to the link feature.
 [ Specification change ][ Grid Column Card (Pro) ] Changed behavior to automatically enable "Edit Lock" when "This column only" edit mode is selected.The manual "Edit Lock" toggle has been removed. Selecting "This column only" now automatically locks the column.
+[ Bug Fix ][ Flow ] Fixed image overflow on the frontend and arrow misalignment in the editor.
 
 = 1.98.0 =
 [ Specification change ][ Slider ] Changed slider height minimum from 40px to 24px.

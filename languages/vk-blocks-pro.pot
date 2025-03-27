@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-27T06:11:31+00:00\n"
+"POT-Creation-Date: 2025-03-27T06:18:06+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -706,7 +706,7 @@ msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:134
 #: src/blocks/_pro/tab/index.js:23
-#: src/blocks/balloon/edit.js:489
+#: src/blocks/balloon/edit.js:476
 #: src/blocks/button/edit.js:330
 #: src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:21
@@ -764,17 +764,17 @@ msgid "Trembling Y"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:84
-#: src/blocks/balloon/edit.js:585
+#: src/blocks/balloon/edit.js:560
 msgid "Trembling X"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:88
-#: src/blocks/balloon/edit.js:589
+#: src/blocks/balloon/edit.js:564
 msgid "Pounding"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:92
-#: src/blocks/balloon/edit.js:593
+#: src/blocks/balloon/edit.js:568
 msgid "Shaking"
 msgstr ""
 
@@ -868,7 +868,7 @@ msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:178
 #: src/blocks/_pro/outer/edit.js:881
-#: src/blocks/balloon/edit.js:515
+#: src/blocks/balloon/edit.js:490
 msgid "Width"
 msgstr ""
 
@@ -1301,7 +1301,7 @@ msgid "Top"
 msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:175
-#: src/blocks/balloon/edit.js:441
+#: src/blocks/balloon/edit.js:434
 #: src/blocks/button/edit.js:375
 #: src/blocks/pr-content/edit.js:252
 #: src/components/display-items-control/index.js:140
@@ -1313,7 +1313,7 @@ msgid "Bottom"
 msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:183
-#: src/blocks/balloon/edit.js:429
+#: src/blocks/balloon/edit.js:430
 #: src/blocks/button/edit.js:355
 #: src/blocks/pr-content/edit.js:256
 #: src/components/display-items-control/index.js:132
@@ -1532,7 +1532,7 @@ msgid "Column Radius"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:170
-#: src/blocks/balloon/edit.js:317
+#: src/blocks/balloon/edit.js:318
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:392
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:410
 msgid "Border"
@@ -1696,7 +1696,7 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:1204
 #: src/blocks/_pro/step-item/edit.js:142
 #: src/blocks/_pro/timeline-item/edit.js:108
-#: src/blocks/balloon/edit.js:577
+#: src/blocks/balloon/edit.js:552
 #: src/blocks/button/edit.js:658
 #: src/blocks/staff/edit.js:177
 msgid "None"
@@ -1903,7 +1903,7 @@ msgid "Divider Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:961
-#: src/blocks/balloon/edit.js:446
+#: src/blocks/balloon/edit.js:439
 msgid "Type"
 msgstr ""
 
@@ -2474,101 +2474,101 @@ msgstr ""
 msgid "Archive title tag"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:141
+#: src/blocks/balloon/edit.js:142
 msgid "Image Border"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:144
+#: src/blocks/balloon/edit.js:145
 msgid "Add border to image"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:152
+#: src/blocks/balloon/edit.js:153
 msgid "* You can change border width on Setting > VK Blocks"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:159
+#: src/blocks/balloon/edit.js:160
 msgid "Border color of speech balloon"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:320
+#: src/blocks/balloon/edit.js:321
 msgid "Add border to balloon"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:410
+#: src/blocks/balloon/edit.js:411
 msgid "Balloon setting"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:412
+#: src/blocks/balloon/edit.js:413
 #: src/blocks/heading/edit.js:368
 msgid "Position"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:415
+#: src/blocks/balloon/edit.js:416
 msgid "Please specify the layout of the balloon."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:449
+#: src/blocks/balloon/edit.js:442
 msgid "Please select the type of balloon."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:463
+#: src/blocks/balloon/edit.js:456
 msgid "Speech"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:473
+#: src/blocks/balloon/edit.js:460
 msgid "Thinking"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:478
+#: src/blocks/balloon/edit.js:465
 msgid "Image Style"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:499
+#: src/blocks/balloon/edit.js:480
 msgid "Rounded"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:509
+#: src/blocks/balloon/edit.js:484
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:406
 msgid "Circle"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:518
+#: src/blocks/balloon/edit.js:493
 #: src/blocks/button/edit.js:590
 msgid "100%"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:540
+#: src/blocks/balloon/edit.js:515
 msgid "Background color of speech balloon"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:551
+#: src/blocks/balloon/edit.js:526
 msgid "Default Icon Setting"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:556
+#: src/blocks/balloon/edit.js:531
 msgid "You can register default icons from Settings > VK Blocks in Admin."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:562
+#: src/blocks/balloon/edit.js:537
 msgid "Animation setting"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:564
+#: src/blocks/balloon/edit.js:539
 msgid "Please select the type of animation."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:581
+#: src/blocks/balloon/edit.js:556
 msgid "Trembling"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:622
+#: src/blocks/balloon/edit.js:597
 #: src/blocks/pr-blocks/edit.js:83
 #: src/blocks/pr-content/deprecated/1.7.1/mediaUpload.js:130
 #: src/blocks/pr-content/mediaUpload.js:130
 msgid "Upload image"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:637
+#: src/blocks/balloon/edit.js:612
 msgid "Icon Name"
 msgstr ""
 

@@ -48,7 +48,7 @@ export default class AdvancedPopOverControl extends Component {
 						</Button>
 						{this.state.open && this.buttonRef.current && (
 							<Popover
-								anchorRect={this.buttonRef.current.getBoundingClientRect()}
+								anchor={this.buttonRef.current.getBoundingClientRect()}
 								children={this.props.renderComp}
 								onFocusOutside={handleOnClickOutside}
 								focusOnMount={'container'}

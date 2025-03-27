@@ -34,7 +34,7 @@ msgstr ""
 #: src/admin/balloon/index.js:148
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:75
 #: src/admin/custom-format/delete-item-button.js:74
-#: src/blocks/_pro/gridcolcard/edit-common.js:163
+#: src/blocks/_pro/gridcolcard/edit-common.js:141
 #: src/extensions/common/custom-block-variation/block-variation-list/item/title-area/delete-button/index.js:33
 msgid "Delete"
 msgstr ""
@@ -312,7 +312,7 @@ msgstr ""
 
 #: src/admin/custom-format/index.js:208
 #: src/blocks/_pro/grid-column-item/edit.js:112
-#: src/blocks/_pro/gridcolcard/edit-common.js:169
+#: src/blocks/_pro/gridcolcard/edit-common.js:147
 #: src/blocks/button/edit.js:749
 #: src/blocks/heading/edit.js:324
 msgid "Text Color"
@@ -320,7 +320,7 @@ msgstr ""
 
 #: src/admin/custom-format/index.js:239
 #: src/blocks/_pro/grid-column-item/edit.js:118
-#: src/blocks/_pro/gridcolcard/edit-common.js:175
+#: src/blocks/_pro/gridcolcard/edit-common.js:153
 #: src/blocks/border-box/edit.js:248
 #: src/blocks/button/edit.js:732
 #: src/blocks/icon/edit.js:328
@@ -1400,7 +1400,7 @@ msgid "Grid column item link"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:110
-#: src/blocks/_pro/gridcolcard/edit-common.js:167
+#: src/blocks/_pro/gridcolcard/edit-common.js:145
 msgid "Color Settings"
 msgstr ""
 
@@ -1523,44 +1523,40 @@ msgstr ""
 msgid "Make sure that no link is specified for the image block, etc."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:109
-msgid "Card header image aspect ratio"
-msgstr ""
-
-#: src/blocks/_pro/gridcolcard/edit-common.js:122
+#: src/blocks/_pro/gridcolcard/edit-common.js:111
 msgid "Image fit to column"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:137
+#: src/blocks/_pro/gridcolcard/edit-common.js:126
 msgid "Column footer button area"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:147
+#: src/blocks/_pro/gridcolcard/edit-common.js:133
 #: src/blocks/heading/edit.js:372
 msgid "Display"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:155
+#: src/blocks/_pro/gridcolcard/edit-common.js:137
 #: src/blocks/_pro/post-list-slider/edit.js:326
 #: src/blocks/heading/edit.js:376
 #: src/blocks/slider/edit.js:541
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:186
+#: src/blocks/_pro/gridcolcard/edit-common.js:164
 msgid "Column Radius"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:192
+#: src/blocks/_pro/gridcolcard/edit-common.js:170
 #: src/blocks/balloon/edit.js:317
 msgid "Border"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:201
+#: src/blocks/_pro/gridcolcard/edit-common.js:179
 msgid "Border Width"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:212
+#: src/blocks/_pro/gridcolcard/edit-common.js:190
 #: src/blocks/border-box/edit.js:239
 #: src/extensions/core/group/style.js:119
 msgid "Border Color"
@@ -1572,6 +1568,10 @@ msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:75
 msgid "Column header media area"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:98
+msgid "Card header image aspect ratio"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit.js:120
@@ -3819,19 +3819,19 @@ msgstr ""
 msgid "Responsive BR"
 msgstr ""
 
-#: src/extensions/core/columns/style.js:178
+#: src/extensions/core/columns/style.js:206
 msgid "Column link"
 msgstr ""
 
-#: src/extensions/core/columns/style.js:52
+#: src/extensions/core/columns/style.js:59
 msgid "Column Direction"
 msgstr ""
 
-#: src/extensions/core/columns/style.js:57
+#: src/extensions/core/columns/style.js:64
 msgid "Reverse"
 msgstr ""
 
-#: src/extensions/core/cover/style.js:91
+#: src/extensions/core/cover/style.js:92
 msgid "Cover link"
 msgstr ""
 

@@ -37,6 +37,7 @@ export default class AdvancedPopOverControl extends Component {
 						className={
 							'vk-blocks-button-icon-control__wrapper components-base-control__field'
 						}
+						ref={this.buttonRef}
 					>
 						<Button
 							isTertiary
@@ -48,7 +49,7 @@ export default class AdvancedPopOverControl extends Component {
 						</Button>
 						{this.state.open && this.buttonRef.current && (
 							<Popover
-								anchor={this.buttonRef.current.getBoundingClientRect()}
+								anchor={this.buttonRef.current}
 								children={this.props.renderComp}
 								onFocusOutside={handleOnClickOutside}
 								focusOnMount={'container'}

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-27T06:05:41+00:00\n"
+"POT-Creation-Date: 2025-03-27T06:11:31+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -1695,7 +1695,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:1204
 #: src/blocks/_pro/step-item/edit.js:142
-#: src/blocks/_pro/timeline-item/edit.js:113
+#: src/blocks/_pro/timeline-item/edit.js:108
 #: src/blocks/balloon/edit.js:577
 #: src/blocks/button/edit.js:658
 #: src/blocks/staff/edit.js:177
@@ -2036,7 +2036,7 @@ msgstr ""
 #: src/blocks/_pro/post-list-slider/edit.js:302
 #: src/blocks/_pro/step-item/edit.js:138
 #: src/blocks/_pro/table-of-contents-new/edit.js:124
-#: src/blocks/_pro/timeline-item/edit.js:103
+#: src/blocks/_pro/timeline-item/edit.js:104
 #: src/blocks/heading/edit.js:264
 #: src/blocks/slider/edit.js:517
 #: src/blocks/staff/edit.js:173
@@ -2193,6 +2193,7 @@ msgid "Outlined"
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:129
+#: src/blocks/_pro/timeline-item/edit.js:95
 msgid "Line style"
 msgstr ""
 

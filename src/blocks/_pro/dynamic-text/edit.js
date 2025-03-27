@@ -86,6 +86,7 @@ export default function DynamicTextEdit(props) {
 		ancestorPageHiddenOption,
 		parentPageHiddenOption,
 		customFieldName,
+		customFieldLinkText,
 		userNamePrefixText,
 		userNameSuffixText,
 		userNameLoggedOutText,
@@ -98,6 +99,7 @@ export default function DynamicTextEdit(props) {
 	attributes.parentPageHiddenOption = parentPageHiddenOption;
 	attributes.isLinkSet = isLinkSet;
 	attributes.isLinkTarget = isLinkTarget;
+	attributes.customFieldLinkText = customFieldLinkText;
 
 	// Hooks.
 	const blockProps = useBlockProps({
@@ -399,6 +401,15 @@ export default function DynamicTextEdit(props) {
 										/>
 									)}
 								</>
+							)}
+							{fieldType === 'url' && isLinkSet && (
+								<TextControl
+									label={__('Link Text', 'vk-blocks-pro')}
+									value={attributes.customFieldLinkText}
+									onChange={(value) =>
+										setAttributes({ customFieldLinkText: value })
+									}
+								/>
 							)}
 						</BaseControl>
 					)}

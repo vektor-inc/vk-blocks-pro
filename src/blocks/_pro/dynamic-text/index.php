@@ -22,6 +22,7 @@ function vk_blocks_dynamic_text_get_attributes_default() {
 		'userNameBeforeText'       => null,
 		'userNameAfterText'        => null,
 		'customFieldName'          => null,
+		'customFieldLinkText'      => null,
 		'fieldType'                => 'text',
 		'isLinkSet'                => false,
 		'isLinkTarget'             => false,
@@ -57,10 +58,11 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 	} elseif ( 'url' === $attributes['fieldType'] ) {
 		$custom_field_url = esc_url( get_post_meta( $block->context['postId'], $attributes['customFieldName'], true ) );
 		if ( $attributes['isLinkSet'] ) {
+			$link_text= !empty( $attributes['customFieldLinkText'] ) ? esc_html( $attributes['customFieldLinkText'] ) : $custom_field_url;
 			if ( $attributes['isLinkTarget'] ) {
-				$custom_field_content = '<a href="' . $custom_field_url . '" target="_blank" rel="noreferrer noopener">' . $custom_field_url . '</a>';
+				$custom_field_content = '<a href="' . $custom_field_url . '" target="_blank" rel="noreferrer noopener">' . $link_text . '</a>';
 			} else {
-				$custom_field_content = '<a href="' . $custom_field_url . '">' . $custom_field_url . '</a>';
+				$custom_field_content = '<a href="' . $custom_field_url . '">' . $link_text . '</a>';
 			}
 		} else {
 			$custom_field_content = $custom_field_url;
@@ -237,6 +239,10 @@ function vk_blocks_register_block_dynamic_text() {
 						'default' => true,
 					),
 					'customFieldName'          => array(
+						'type'    => 'string',
+						'default' => '',
+					),
+					'customFieldLinkText'      => array(
 						'type'    => 'string',
 						'default' => '',
 					),

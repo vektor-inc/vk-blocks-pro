@@ -29,6 +29,10 @@
 			"type": "string",
 			"default": null
 		},
+		"customFieldLinkText": {
+			"type": "string",
+			"default": "text"
+		},
 		"userNamePrefixText": {
 			"type": "string",
 			"default": null

@@ -407,7 +407,9 @@ export default function DynamicTextEdit(props) {
 									label={__('Link Text', 'vk-blocks-pro')}
 									value={attributes.customFieldLinkText}
 									onChange={(value) =>
-										setAttributes({ customFieldLinkText: value })
+										setAttributes({
+											customFieldLinkText: value,
+										})
 									}
 								/>
 							)}

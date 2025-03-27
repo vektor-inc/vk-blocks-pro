@@ -107,7 +107,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-
+[ Add function ][ dynamic-text ] When you set a link URL in the custom field display, you can now specify the link text.
 [ Add function ][ Column ] Added noreferrer, nofollow, and link description options to the link feature.
 [ Add function ][ Cover ] Added noreferrer, nofollow, and link description options to the link feature.
 [ Bug Fix ][ Flow ] Fixed image overflow on the frontend and arrow misalignment in the editor.

@@ -29,6 +29,10 @@
 			"type": "string",
 			"default": null
 		},
+		"postSlug": {
+			"type": "string",
+			"default": null
+		},
 		"userNamePrefixText": {
 			"type": "string",
 			"default": null

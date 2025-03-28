@@ -58,7 +58,7 @@ npm run translate
 翻訳は PoEdit などを使って `.po` ファイルを開いて編集するが、
 新たに翻訳箇所が追加された場合はメニューから「potファイルから更新」を選んで更新する
 
-## AI(Cusror)用コーディングルール
+## AI(Cursor)用コーディングルール
 .cursor/rules/*.mdc は Cursor用のコーディングルールです。
 coding-rule.mdc のファイル構成一覧は `npm run makerule:blocks` で自動的に生成します。
 

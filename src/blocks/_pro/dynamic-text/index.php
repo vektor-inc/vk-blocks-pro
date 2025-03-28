@@ -163,7 +163,7 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 	} elseif ( 'post-slug' === $attributes['displayElement'] ) {
 		$post = get_post();
 		if ( $post ) {
-			$block_content .= $post->post_name ? $post->post_name : __( 'No Slug Available', 'vk-blocks-pro' );
+			$block_content .= $post->post_name;
 		}
 	}
 	if ( $attributes['tagName'] ) {

@@ -366,6 +366,13 @@ export default function ButtonEdit(props) {
 									label={__('Block', 'vk-blocks-pro')}
 								/>
 							</ToggleGroupControl>
+							<style>
+								{`
+									.components-toggle-group-control-option-base {
+										padding: 0;
+									}
+								`}
+							</style>
 						</>
 					)}
 

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-28T02:10:55+00:00\n"
+"POT-Creation-Date: 2025-03-28T02:16:06+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -315,7 +315,7 @@ msgstr ""
 #: src/blocks/_pro/timeline-item/edit.js:71
 #: src/blocks/border-box/edit.js:236
 #: src/blocks/button/edit.js:543
-#: src/blocks/icon/edit.js:317
+#: src/blocks/icon/edit.js:316
 #: src/blocks/staff/edit.js:199
 msgid "Color"
 msgstr ""
@@ -333,7 +333,7 @@ msgstr ""
 #: src/blocks/_pro/gridcolcard/edit-common.js:153
 #: src/blocks/border-box/edit.js:248
 #: src/blocks/button/edit.js:598
-#: src/blocks/icon/edit.js:322
+#: src/blocks/icon/edit.js:321
 msgid "Background Color"
 msgstr ""
 
@@ -511,7 +511,7 @@ msgstr ""
 
 #: src/admin/margin.js:141
 #: src/blocks/border-box/edit.js:200
-#: src/blocks/icon-outer/edit.js:150
+#: src/blocks/icon-outer/edit.js:151
 #: src/blocks/icon/edit.js:145
 msgid "Margin"
 msgstr ""
@@ -1217,7 +1217,7 @@ msgstr ""
 #: src/blocks/_pro/gridcolcard-item/edit.js:308
 #: src/blocks/_pro/icon-card-item/edit.js:128
 #: src/blocks/button/edit.js:284
-#: src/blocks/icon/edit.js:310
+#: src/blocks/icon/edit.js:309
 #: src/blocks/pr-blocks/edit.js:262
 #: src/blocks/pr-content/edit.js:131
 #: src/components/link-toolbar/index.js:321
@@ -1410,7 +1410,7 @@ msgstr ""
 #: src/blocks/_pro/grid-column-item/edit.js:196
 #: src/blocks/_pro/grid-column/edit.js:96
 #: src/blocks/_pro/outer/edit.js:1432
-#: src/blocks/icon-outer/edit.js:183
+#: src/blocks/icon-outer/edit.js:184
 #: src/blocks/icon/edit.js:177
 #: src/utils/unit-options.js:6
 msgid "px"
@@ -1419,7 +1419,7 @@ msgstr ""
 #: src/blocks/_pro/grid-column-item/edit.js:197
 #: src/blocks/_pro/grid-column/edit.js:100
 #: src/blocks/_pro/outer/edit.js:1436
-#: src/blocks/icon-outer/edit.js:187
+#: src/blocks/icon-outer/edit.js:188
 #: src/blocks/icon/edit.js:181
 #: src/utils/unit-options.js:10
 msgid "em"
@@ -1428,7 +1428,7 @@ msgstr ""
 #: src/blocks/_pro/grid-column-item/edit.js:198
 #: src/blocks/_pro/grid-column/edit.js:104
 #: src/blocks/_pro/outer/edit.js:1440
-#: src/blocks/icon-outer/edit.js:191
+#: src/blocks/icon-outer/edit.js:192
 #: src/blocks/icon/edit.js:185
 #: src/utils/unit-options.js:14
 msgid "rem"
@@ -1437,7 +1437,7 @@ msgstr ""
 #: src/blocks/_pro/grid-column-item/edit.js:199
 #: src/blocks/_pro/grid-column/edit.js:108
 #: src/blocks/_pro/outer/edit.js:1368
-#: src/blocks/icon-outer/edit.js:195
+#: src/blocks/icon-outer/edit.js:196
 #: src/blocks/icon/edit.js:189
 #: src/utils/unit-options.js:18
 msgid "vw"
@@ -1606,7 +1606,7 @@ msgstr ""
 #: src/blocks/border-box/edit.js:272
 #: src/blocks/button/edit.js:626
 #: src/blocks/heading/edit.js:335
-#: src/blocks/icon/edit.js:294
+#: src/blocks/icon/edit.js:293
 #: src/blocks/pr-content/edit.js:212
 #: src/components/scroll-hint/index.js:103
 #: src/extensions/common/custom-block-variation/block-variation-list/item/body-area/index.js:142
@@ -1623,7 +1623,7 @@ msgstr ""
 #: src/blocks/_pro/icon-card-item/edit.js:153
 #: src/blocks/button/edit.js:500
 #: src/blocks/icon-outer/edit.js:238
-#: src/blocks/icon/edit.js:236
+#: src/blocks/icon/edit.js:235
 #: src/blocks/pr-blocks/edit.js:285
 msgid "Solid color"
 msgstr ""
@@ -1746,7 +1746,7 @@ msgid "Border width"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:1260
-#: src/blocks/icon-outer/edit.js:212
+#: src/blocks/icon-outer/edit.js:213
 #: src/blocks/icon/edit.js:206
 msgid "Border radius"
 msgstr ""
@@ -2731,7 +2731,7 @@ msgid "After text"
 msgstr ""
 
 #: src/blocks/button/edit.js:662
-#: src/blocks/icon-outer/edit.js:89
+#: src/blocks/icon-outer/edit.js:90
 #: src/blocks/icon/edit.js:87
 msgid "Size"
 msgstr ""
@@ -2850,7 +2850,7 @@ msgid "Heading Settings"
 msgstr ""
 
 #: src/blocks/heading/edit.js:357
-#: src/blocks/icon/edit.js:331
+#: src/blocks/icon/edit.js:330
 msgid "Icon Color"
 msgstr ""
 
@@ -2871,22 +2871,22 @@ msgstr ""
 msgid "Heading %d"
 msgstr ""
 
-#: src/blocks/icon-outer/edit.js:208
+#: src/blocks/icon-outer/edit.js:209
 #: src/blocks/icon/edit.js:202
 msgid "Reset"
 msgstr ""
 
-#: src/blocks/icon-outer/edit.js:246
-#: src/blocks/icon/edit.js:240
+#: src/blocks/icon-outer/edit.js:242
+#: src/blocks/icon/edit.js:239
 msgid "Icon & Frame"
 msgstr ""
 
-#: src/blocks/icon-outer/edit.js:254
-#: src/blocks/icon/edit.js:244
+#: src/blocks/icon-outer/edit.js:246
+#: src/blocks/icon/edit.js:243
 msgid "Icon only"
 msgstr ""
 
-#: src/blocks/icon-outer/edit.js:88
+#: src/blocks/icon-outer/edit.js:89
 msgid "Icon Common Setting"
 msgstr ""
 
@@ -2894,11 +2894,11 @@ msgstr ""
 msgid "Icon link"
 msgstr ""
 
-#: src/blocks/icon/edit.js:291
+#: src/blocks/icon/edit.js:290
 msgid "Icon Setting"
 msgstr ""
 
-#: src/blocks/icon/edit.js:305
+#: src/blocks/icon/edit.js:304
 #: src/blocks/pr-content/edit.js:122
 msgid "Link URL"
 msgstr ""

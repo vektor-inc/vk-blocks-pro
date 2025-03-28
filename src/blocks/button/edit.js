@@ -7,7 +7,8 @@ import {
 	BaseControl,
 	CheckboxControl,
 	TextControl,
-	ButtonGroup,
+	__experimentalToggleGroupControl as ToggleGroupControl,
+	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
 	Button,
 	ToolbarGroup,
 	ToolbarButton,
@@ -309,331 +310,204 @@ export default function ButtonEdit(props) {
 						placeholder={'Sub Caption'}
 					/>
 
-					<h4 className={`mt-0 mb-2`}>
+					<h4 className="mt-0 mb-2">
 						{__('Button Size:', 'vk-blocks-pro')}
 					</h4>
-					<ButtonGroup className={`mb-3`}>
-						<Button
-							isSmall
-							isPrimary={buttonSize === 'lg'}
-							isSecondary={buttonSize !== 'lg'}
-							onClick={() => setAttributes({ buttonSize: 'lg' })}
-						>
-							{__('Large', 'vk-blocks-pro')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={buttonSize === 'md'}
-							isSecondary={buttonSize !== 'md'}
-							onClick={() => setAttributes({ buttonSize: 'md' })}
-						>
-							{__('Normal', 'vk-blocks-pro')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={buttonSize === 'sm'}
-							isSecondary={buttonSize !== 'sm'}
-							onClick={() => setAttributes({ buttonSize: 'sm' })}
-						>
-							{__('Small', 'vk-blocks-pro')}
-						</Button>
-					</ButtonGroup>
+					<ToggleGroupControl
+						value={buttonSize}
+						onChange={(value) =>
+							setAttributes({ buttonSize: value })
+						}
+						isBlock
+					>
+						<ToggleGroupControlOption
+							value="lg"
+							label={__('Large', 'vk-blocks-pro')}
+						/>
+						<ToggleGroupControlOption
+							value="md"
+							label={__('Normal', 'vk-blocks-pro')}
+						/>
+						<ToggleGroupControlOption
+							value="sm"
+							label={__('Small', 'vk-blocks-pro')}
+						/>
+					</ToggleGroupControl>
 					{!isInnerButton && (
 						<>
-							<h4 className={`mt-0 mb-2`}>
+							<h4 className="mt-0 mb-2">
 								{__('Button Position:', 'vk-blocks-pro')}
 							</h4>
-							<ButtonGroup className={`mb-3`}>
-								<Button
-									isSmall
-									isPrimary={buttonAlign === 'left'}
-									isSecondary={buttonAlign !== 'left'}
-									onClick={() =>
-										setAttributes({ buttonAlign: 'left' })
-									}
-								>
-									{__('Left', 'vk-blocks-pro')}
-								</Button>
-								<Button
-									isSmall
-									isPrimary={buttonAlign === 'center'}
-									isSecondary={buttonAlign !== 'center'}
-									onClick={() =>
-										setAttributes({ buttonAlign: 'center' })
-									}
-								>
-									{__('Center', 'vk-blocks-pro')}
-								</Button>
-								<Button
-									isSmall
-									isPrimary={buttonAlign === 'right'}
-									isSecondary={buttonAlign !== 'right'}
-									onClick={() =>
-										setAttributes({ buttonAlign: 'right' })
-									}
-								>
-									{__('Right', 'vk-blocks-pro')}
-								</Button>
-								<Button
-									isSmall
-									isPrimary={buttonAlign === 'wide'}
-									isSecondary={buttonAlign !== 'wide'}
-									onClick={() =>
-										setAttributes({ buttonAlign: 'wide' })
-									}
-								>
-									{__('Wide', 'vk-blocks-pro')}
-								</Button>
-								<Button
-									isSmall
-									isPrimary={buttonAlign === 'block'}
-									isSecondary={buttonAlign !== 'block'}
-									onClick={() =>
-										setAttributes({ buttonAlign: 'block' })
-									}
-								>
-									{__('Block', 'vk-blocks-pro')}
-								</Button>
-							</ButtonGroup>
+							<ToggleGroupControl
+								value={buttonAlign}
+								onChange={(value) =>
+									setAttributes({ buttonAlign: value })
+								}
+								isBlock
+							>
+								<ToggleGroupControlOption
+									value="left"
+									label={__('Left', 'vk-blocks-pro')}
+								/>
+								<ToggleGroupControlOption
+									value="center"
+									label={__('Center', 'vk-blocks-pro')}
+								/>
+								<ToggleGroupControlOption
+									value="right"
+									label={__('Right', 'vk-blocks-pro')}
+								/>
+								<ToggleGroupControlOption
+									value="wide"
+									label={__('Wide', 'vk-blocks-pro')}
+								/>
+								<ToggleGroupControlOption
+									value="block"
+									label={__('Block', 'vk-blocks-pro')}
+								/>
+							</ToggleGroupControl>
 						</>
 					)}
 
 					{isInnerButton && (
 						<>
-							<h4 className={`mt-0 mb-2`}>
+							<h4 className="mt-0 mb-2">
 								{__('Button Width:', 'vk-blocks-pro')}
 							</h4>
-							<p className={`mt-0 mb-2`}>
+							<p className="mt-0 mb-2">
 								{__('Mobile', 'vk-blocks-pro')}
 							</p>
-							<ButtonGroup className={`mb-3`}>
-								<Button
-									isSmall
-									isPrimary={buttonWidthMobile === 25}
-									isSecondary={buttonWidthMobile !== 25}
-									onClick={() =>
-										setAttributes({
-											buttonWidthMobile:
-												buttonWidthMobile === 25
-													? 0
-													: 25,
-										})
-									}
-								>
-									{__('25%', 'vk-blocks-pro')}
-								</Button>
-								<Button
-									isSmall
-									isPrimary={buttonWidthMobile === 50}
-									isSecondary={buttonWidthMobile !== 50}
-									onClick={() =>
-										setAttributes({
-											buttonWidthMobile:
-												buttonWidthMobile === 50
-													? 0
-													: 50,
-										})
-									}
-								>
-									{__('50%', 'vk-blocks-pro')}
-								</Button>
-								<Button
-									isSmall
-									isPrimary={buttonWidthMobile === 75}
-									isSecondary={buttonWidthMobile !== 75}
-									onClick={() =>
-										setAttributes({
-											buttonWidthMobile:
-												buttonWidthMobile === 75
-													? 0
-													: 75,
-										})
-									}
-								>
-									{__('75%', 'vk-blocks-pro')}
-								</Button>
-								<Button
-									isSmall
-									isPrimary={buttonWidthMobile === 100}
-									isSecondary={buttonWidthMobile !== 100}
-									onClick={() =>
-										setAttributes({
-											buttonWidthMobile:
-												buttonWidthMobile === 100
-													? 0
-													: 100,
-										})
-									}
-								>
-									{__('100%', 'vk-blocks-pro')}
-								</Button>
-							</ButtonGroup>
-							<p className={`mt-0 mb-2`}>
+							<ToggleGroupControl
+								value={String(buttonWidthMobile)}
+								onChange={(value) => {
+									setAttributes({
+										buttonWidthMobile: Number(value),
+									});
+								}}
+								isBlock
+							>
+								<ToggleGroupControlOption
+									value="0"
+									label="Auto"
+								/>
+								<ToggleGroupControlOption
+									value="25"
+									label="25%"
+								/>
+								<ToggleGroupControlOption
+									value="50"
+									label="50%"
+								/>
+								<ToggleGroupControlOption
+									value="75"
+									label="75%"
+								/>
+								<ToggleGroupControlOption
+									value="100"
+									label="100%"
+								/>
+							</ToggleGroupControl>
+							<p className="mt-0 mb-2">
 								{__('Tablet', 'vk-blocks-pro')}
 							</p>
-							<ButtonGroup className={`mb-3`}>
-								<Button
-									isSmall
-									isPrimary={buttonWidthTablet === 25}
-									isSecondary={buttonWidthTablet !== 25}
-									onClick={() =>
-										setAttributes({
-											buttonWidthTablet:
-												buttonWidthTablet === 25
-													? 0
-													: 25,
-										})
-									}
-								>
-									{__('25%', 'vk-blocks-pro')}
-								</Button>
-								<Button
-									isSmall
-									isPrimary={buttonWidthTablet === 50}
-									isSecondary={buttonWidthTablet !== 50}
-									onClick={() =>
-										setAttributes({
-											buttonWidthTablet:
-												buttonWidthTablet === 50
-													? 0
-													: 50,
-										})
-									}
-								>
-									{__('50%', 'vk-blocks-pro')}
-								</Button>
-								<Button
-									isSmall
-									isPrimary={buttonWidthTablet === 75}
-									isSecondary={buttonWidthTablet !== 75}
-									onClick={() =>
-										setAttributes({
-											buttonWidthTablet:
-												buttonWidthTablet === 75
-													? 0
-													: 75,
-										})
-									}
-								>
-									{__('75%', 'vk-blocks-pro')}
-								</Button>
-								<Button
-									isSmall
-									isPrimary={buttonWidthTablet === 100}
-									isSecondary={buttonWidthTablet !== 100}
-									onClick={() =>
-										setAttributes({
-											buttonWidthTablet:
-												buttonWidthTablet === 100
-													? 0
-													: 100,
-										})
-									}
-								>
-									{__('100%', 'vk-blocks-pro')}
-								</Button>
-							</ButtonGroup>
-							<p className={`mt-0 mb-2`}>
+
+							<ToggleGroupControl
+								value={String(buttonWidthTablet)}
+								onChange={(value) => {
+									setAttributes({
+										buttonWidthTablet: Number(value),
+									});
+								}}
+								isBlock
+							>
+								<ToggleGroupControlOption
+									value="0"
+									label="Auto"
+								/>
+								<ToggleGroupControlOption
+									value="25"
+									label="25%"
+								/>
+								<ToggleGroupControlOption
+									value="50"
+									label="50%"
+								/>
+								<ToggleGroupControlOption
+									value="75"
+									label="75%"
+								/>
+								<ToggleGroupControlOption
+									value="100"
+									label="100%"
+								/>
+							</ToggleGroupControl>
+
+							<p className="mt-0 mb-2">
 								{__('PC', 'vk-blocks-pro')}
 							</p>
-							<ButtonGroup className={`mb-3`}>
-								<Button
-									isSmall
-									isPrimary={buttonWidth === 25}
-									isSecondary={buttonWidth !== 25}
-									onClick={() =>
-										setAttributes({
-											buttonWidth:
-												buttonWidth === 25 ? 0 : 25,
-										})
-									}
-								>
-									{__('25%', 'vk-blocks-pro')}
-								</Button>
-								<Button
-									isSmall
-									isPrimary={buttonWidth === 50}
-									isSecondary={buttonWidth !== 50}
-									onClick={() =>
-										setAttributes({
-											buttonWidth:
-												buttonWidth === 50 ? 0 : 50,
-										})
-									}
-								>
-									{__('50%', 'vk-blocks-pro')}
-								</Button>
-								<Button
-									isSmall
-									isPrimary={buttonWidth === 75}
-									isSecondary={buttonWidth !== 75}
-									onClick={() =>
-										setAttributes({
-											buttonWidth:
-												buttonWidth === 75 ? 0 : 75,
-										})
-									}
-								>
-									{__('75%', 'vk-blocks-pro')}
-								</Button>
-								<Button
-									isSmall
-									isPrimary={buttonWidth === 100}
-									isSecondary={buttonWidth !== 100}
-									onClick={() =>
-										setAttributes({
-											buttonWidth:
-												buttonWidth === 100 ? 0 : 100,
-										})
-									}
-								>
-									{__('100%', 'vk-blocks-pro')}
-								</Button>
-							</ButtonGroup>
+							<ToggleGroupControl
+								value={String(buttonWidth)}
+								onChange={(value) => {
+									setAttributes({
+										buttonWidth: Number(value),
+									});
+								}}
+								isBlock
+							>
+								<ToggleGroupControlOption
+									value="0"
+									label="Auto"
+								/>
+								<ToggleGroupControlOption
+									value="25"
+									label="25%"
+								/>
+								<ToggleGroupControlOption
+									value="50"
+									label="50%"
+								/>
+								<ToggleGroupControlOption
+									value="75"
+									label="75%"
+								/>
+								<ToggleGroupControlOption
+									value="100"
+									label="100%"
+								/>
+							</ToggleGroupControl>
 						</>
 					)}
 
-					<h4 className={`mt-0 mb-2`}>
+					<h4 className="mt-0 mb-2">
 						{__('Button Style:', 'vk-blocks-pro')}
 					</h4>
-					<ButtonGroup className={`mb-2`}>
-						<Button
-							isSmall
-							isPrimary={buttonType === '0'}
-							isSecondary={buttonType !== '0'}
-							onClick={() => setAttributes({ buttonType: '0' })}
-						>
-							{__('Solid color', 'vk-blocks-pro')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={buttonType === '1'}
-							isSecondary={buttonType !== '1'}
-							onClick={() => {
-								setAttributes({ buttonType: '1' });
+					<ToggleGroupControl
+						value={buttonType}
+						onChange={(value) => {
+							setAttributes({ buttonType: value });
+
+							if (value === '1' || value === '2') {
 								setAttributes({
 									buttonTextColorCustom: undefined,
+									buttonEffect: '',
 								});
-								setAttributes({ buttonEffect: '' });
-							}}
-						>
-							{__('No background', 'vk-blocks-pro')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={buttonType === '2'}
-							isSecondary={buttonType !== '2'}
-							onClick={() => {
-								setAttributes({ buttonType: '2' });
-								setAttributes({
-									buttonTextColorCustom: undefined,
-								});
-								setAttributes({ buttonEffect: '' });
-							}}
-						>
-							{__('Text only', 'vk-blocks-pro')}
-						</Button>
-					</ButtonGroup>
+							}
+						}}
+						isBlock
+					>
+						<ToggleGroupControlOption
+							value="0"
+							label={__('Solid color', 'vk-blocks-pro')}
+						/>
+						<ToggleGroupControlOption
+							value="1"
+							label={__('No background', 'vk-blocks-pro')}
+						/>
+						<ToggleGroupControlOption
+							value="2"
+							label={__('Text only', 'vk-blocks-pro')}
+						/>
+					</ToggleGroupControl>
 					<p className={`mb-3`}>
 						{__(
 							'If you select "No background", that you need to select a Custom Color.',
@@ -643,33 +517,25 @@ export default function ButtonEdit(props) {
 
 					{'0' === buttonType && (
 						<>
-							<h4 className={`mt-0 mb-2`}>
+							<h4 className="mt-0 mb-2">
 								{__('Button Effect:', 'vk-blocks-pro')}
 							</h4>
-							<ButtonGroup className={`mb-3`}>
-								<Button
-									isSmall
-									isPrimary={buttonEffect === ''}
-									isSecondary={buttonEffect !== ''}
-									onClick={() =>
-										setAttributes({ buttonEffect: '' })
-									}
-								>
-									{__('None', 'vk-blocks-pro')}
-								</Button>
-								<Button
-									isSmall
-									isPrimary={buttonEffect === 'shine'}
-									isSecondary={buttonEffect !== 'shine'}
-									onClick={() => {
-										setAttributes({
-											buttonEffect: 'shine',
-										});
-									}}
-								>
-									{__('Shine', 'vk-blocks-pro')}
-								</Button>
-							</ButtonGroup>
+							<ToggleGroupControl
+								value={buttonEffect}
+								onChange={(value) =>
+									setAttributes({ buttonEffect: value })
+								}
+								isBlock
+							>
+								<ToggleGroupControlOption
+									value=""
+									label={__('None', 'vk-blocks-pro')}
+								/>
+								<ToggleGroupControlOption
+									value="shine"
+									label={__('Shine', 'vk-blocks-pro')}
+								/>
+							</ToggleGroupControl>
 						</>
 					)}
 

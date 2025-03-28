@@ -304,7 +304,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:105
 #: src/blocks/_pro/timeline-item/edit.js:71
 #: src/blocks/border-box/edit.js:236
-#: src/blocks/button/edit.js:677
+#: src/blocks/button/edit.js:543
 #: src/blocks/icon/edit.js:323
 #: src/blocks/staff/edit.js:199
 msgid "Color"
@@ -313,7 +313,7 @@ msgstr ""
 #: src/admin/custom-format/index.js:208
 #: src/blocks/_pro/grid-column-item/edit.js:112
 #: src/blocks/_pro/gridcolcard/edit-common.js:147
-#: src/blocks/button/edit.js:749
+#: src/blocks/button/edit.js:615
 #: src/blocks/heading/edit.js:324
 msgid "Text Color"
 msgstr ""
@@ -322,7 +322,7 @@ msgstr ""
 #: src/blocks/_pro/grid-column-item/edit.js:118
 #: src/blocks/_pro/gridcolcard/edit-common.js:153
 #: src/blocks/border-box/edit.js:248
-#: src/blocks/button/edit.js:732
+#: src/blocks/button/edit.js:598
 #: src/blocks/icon/edit.js:328
 msgid "Background Color"
 msgstr ""
@@ -554,7 +554,7 @@ msgstr ""
 #: src/blocks/_pro/accordion/edit.js:139
 #: src/blocks/_pro/outer/edit.js:1410
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:174
-#: src/blocks/button/edit.js:537
+#: src/blocks/button/edit.js:446
 #: src/blocks/slider/edit-multiItem.js:198
 #: src/blocks/slider/edit.js:335
 #: src/components/advanced-viewport-control/index.js:25
@@ -565,7 +565,7 @@ msgstr ""
 #: src/blocks/_pro/accordion/edit.js:122
 #: src/blocks/_pro/outer/edit.js:1394
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:201
-#: src/blocks/button/edit.js:472
+#: src/blocks/button/edit.js:411
 #: src/blocks/slider/edit-multiItem.js:225
 #: src/blocks/slider/edit.js:356
 #: src/components/advanced-viewport-control/index.js:32
@@ -576,7 +576,7 @@ msgstr ""
 #: src/blocks/_pro/accordion/edit.js:105
 #: src/blocks/_pro/outer/edit.js:1378
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:230
-#: src/blocks/button/edit.js:407
+#: src/blocks/button/edit.js:378
 #: src/blocks/slider/edit-multiItem.js:254
 #: src/blocks/slider/edit.js:377
 #: src/components/advanced-viewport-control/index.js:41
@@ -706,7 +706,7 @@ msgstr ""
 #: src/blocks/_pro/animation/edit.js:134
 #: src/blocks/_pro/tab/index.js:23
 #: src/blocks/balloon/edit.js:476
-#: src/blocks/button/edit.js:330
+#: src/blocks/button/edit.js:329
 #: src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:21
 #: src/extensions/common/inline-font-size/inline.js:28
@@ -1224,7 +1224,7 @@ msgstr ""
 #: src/blocks/_pro/dynamic-text/edit.js:389
 #: src/blocks/_pro/gridcolcard-item/edit.js:308
 #: src/blocks/_pro/icon-card-item/edit.js:128
-#: src/blocks/button/edit.js:283
+#: src/blocks/button/edit.js:284
 #: src/blocks/icon/edit.js:316
 #: src/blocks/pr-blocks/edit.js:262
 #: src/blocks/pr-content/edit.js:131
@@ -1312,7 +1312,7 @@ msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:175
 #: src/blocks/balloon/edit.js:434
-#: src/blocks/button/edit.js:375
+#: src/blocks/button/edit.js:358
 #: src/blocks/pr-content/edit.js:252
 #: src/components/display-items-control/index.js:140
 msgid "Right"
@@ -1324,7 +1324,7 @@ msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:183
 #: src/blocks/balloon/edit.js:430
-#: src/blocks/button/edit.js:355
+#: src/blocks/button/edit.js:350
 #: src/blocks/pr-content/edit.js:256
 #: src/components/display-items-control/index.js:132
 msgid "Left"
@@ -1621,7 +1621,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:82
 #: src/blocks/alert/edit.js:73
 #: src/blocks/border-box/edit.js:272
-#: src/blocks/button/edit.js:760
+#: src/blocks/button/edit.js:626
 #: src/blocks/heading/edit.js:335
 #: src/blocks/icon/edit.js:300
 #: src/blocks/pr-content/edit.js:212
@@ -1638,7 +1638,7 @@ msgid "Icon Background:"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:153
-#: src/blocks/button/edit.js:606
+#: src/blocks/button/edit.js:500
 #: src/blocks/icon-outer/edit.js:238
 #: src/blocks/icon/edit.js:228
 #: src/blocks/pr-blocks/edit.js:285
@@ -1646,7 +1646,7 @@ msgid "Solid color"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:157
-#: src/blocks/button/edit.js:620
+#: src/blocks/button/edit.js:504
 #: src/blocks/pr-blocks/edit.js:289
 msgid "No background"
 msgstr ""
@@ -1714,7 +1714,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:142
 #: src/blocks/_pro/timeline-item/edit.js:108
 #: src/blocks/balloon/edit.js:552
-#: src/blocks/button/edit.js:658
+#: src/blocks/button/edit.js:532
 #: src/blocks/staff/edit.js:177
 msgid "None"
 msgstr ""
@@ -2070,7 +2070,7 @@ msgid "Navigation Position"
 msgstr ""
 
 #: src/blocks/_pro/post-list-slider/edit.js:330
-#: src/blocks/button/edit.js:365
+#: src/blocks/button/edit.js:354
 #: src/blocks/slider/edit.js:545
 #: src/components/display-items-control/index.js:136
 msgid "Center"
@@ -2181,7 +2181,7 @@ msgid "New Badge"
 msgstr ""
 
 #: src/blocks/_pro/select-post-list-item/edit.js:102
-#: src/blocks/button/edit.js:278
+#: src/blocks/button/edit.js:279
 #: src/components/link-toolbar/index.js:315
 msgid "Submit"
 msgstr ""
@@ -2192,7 +2192,7 @@ msgid "Because no post is selected, The block Will not render"
 msgstr ""
 
 #: src/blocks/_pro/select-post-list-item/edit.js:66
-#: src/blocks/button/edit.js:249
+#: src/blocks/button/edit.js:250
 #: src/components/link-toolbar/index.js:280
 msgid "Unlink"
 msgstr ""
@@ -2412,27 +2412,27 @@ msgstr ""
 
 #: src/blocks/alert/edit.js:53
 #: src/blocks/alert/variations.js:16
-#: src/blocks/button/edit.js:692
+#: src/blocks/button/edit.js:558
 #: src/blocks/pr-content/edit.js:171
 msgid "Success"
 msgstr ""
 
 #: src/blocks/alert/edit.js:57
-#: src/blocks/button/edit.js:696
+#: src/blocks/button/edit.js:562
 #: src/blocks/pr-content/edit.js:175
 msgid "Info"
 msgstr ""
 
 #: src/blocks/alert/edit.js:61
 #: src/blocks/alert/variations.js:57
-#: src/blocks/button/edit.js:700
+#: src/blocks/button/edit.js:566
 #: src/blocks/pr-content/edit.js:179
 msgid "Warning"
 msgstr ""
 
 #: src/blocks/alert/edit.js:65
 #: src/blocks/alert/variations.js:76
-#: src/blocks/button/edit.js:704
+#: src/blocks/button/edit.js:570
 #: src/blocks/pr-content/edit.js:183
 msgid "Danger"
 msgstr ""
@@ -2559,7 +2559,6 @@ msgid "Circle"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:493
-#: src/blocks/button/edit.js:590
 msgid "100%"
 msgstr ""
 
@@ -2646,145 +2645,133 @@ msgstr ""
 msgid "Solid Angle iconFeature"
 msgstr ""
 
-#: src/blocks/button/edit.js:250
+#: src/blocks/button/edit.js:251
 #: src/components/link-toolbar/index.js:281
 msgid "Input Link URL"
 msgstr ""
 
-#: src/blocks/button/edit.js:301
+#: src/blocks/button/edit.js:302
 msgid "Button setting"
 msgstr ""
 
-#: src/blocks/button/edit.js:303
+#: src/blocks/button/edit.js:304
 msgid "Sub Caption"
 msgstr ""
 
-#: src/blocks/button/edit.js:313
+#: src/blocks/button/edit.js:314
 msgid "Button Size:"
 msgstr ""
 
-#: src/blocks/button/edit.js:322
+#: src/blocks/button/edit.js:325
 msgid "Large"
 msgstr ""
 
-#: src/blocks/button/edit.js:338
+#: src/blocks/button/edit.js:333
 #: src/extensions/common/inline-font-size/inline.js:23
 msgid "Small"
 msgstr ""
 
-#: src/blocks/button/edit.js:344
+#: src/blocks/button/edit.js:339
 msgid "Button Position:"
 msgstr ""
 
-#: src/blocks/button/edit.js:385
+#: src/blocks/button/edit.js:362
 msgid "Wide"
 msgstr ""
 
-#: src/blocks/button/edit.js:395
+#: src/blocks/button/edit.js:366
 #: src/extensions/common/custom-block-variation/utils.js:31
 msgid "Block"
 msgstr ""
 
-#: src/blocks/button/edit.js:404
+#: src/blocks/button/edit.js:375
 msgid "Button Width:"
 msgstr ""
 
-#: src/blocks/button/edit.js:551
-msgid "25%"
-msgstr ""
-
-#: src/blocks/button/edit.js:564
-msgid "50%"
-msgstr ""
-
-#: src/blocks/button/edit.js:577
-msgid "75%"
-msgstr ""
-
-#: src/blocks/button/edit.js:597
+#: src/blocks/button/edit.js:482
 msgid "Button Style:"
 msgstr ""
 
-#: src/blocks/button/edit.js:634
+#: src/blocks/button/edit.js:508
 msgid "Text only"
 msgstr ""
 
-#: src/blocks/button/edit.js:638
+#: src/blocks/button/edit.js:512
 msgid "If you select \"No background\", that you need to select a Custom Color."
 msgstr ""
 
-#: src/blocks/button/edit.js:647
+#: src/blocks/button/edit.js:521
 msgid "Button Effect:"
 msgstr ""
 
-#: src/blocks/button/edit.js:670
+#: src/blocks/button/edit.js:536
 msgid "Shine"
 msgstr ""
 
-#: src/blocks/button/edit.js:680
+#: src/blocks/button/edit.js:546
 msgid "Default Color (Bootstrap)"
 msgstr ""
 
-#: src/blocks/button/edit.js:684
+#: src/blocks/button/edit.js:550
 #: src/blocks/pr-content/edit.js:163
 msgid "Primary"
 msgstr ""
 
-#: src/blocks/button/edit.js:688
+#: src/blocks/button/edit.js:554
 #: src/blocks/pr-content/edit.js:167
 msgid "Secondary"
 msgstr ""
 
-#: src/blocks/button/edit.js:708
+#: src/blocks/button/edit.js:574
 #: src/blocks/pr-content/edit.js:187
 msgid "Light"
 msgstr ""
 
-#: src/blocks/button/edit.js:712
+#: src/blocks/button/edit.js:578
 #: src/blocks/pr-content/edit.js:191
 msgid "Dark"
 msgstr ""
 
-#: src/blocks/button/edit.js:725
+#: src/blocks/button/edit.js:591
 msgid "Custom Color"
 msgstr ""
 
-#: src/blocks/button/edit.js:733
+#: src/blocks/button/edit.js:599
 #: src/blocks/pr-content/edit.js:201
 msgid "Button Color"
 msgstr ""
 
-#: src/blocks/button/edit.js:735
+#: src/blocks/button/edit.js:601
 msgid ""
 "This color palette overrides the default color. If you want to use the "
 "default color, click the clear button."
 msgstr ""
 
-#: src/blocks/button/edit.js:767
+#: src/blocks/button/edit.js:633
 #: src/blocks/heading/edit.js:339
 #: src/blocks/pr-content/edit.js:219
 #: src/components/scroll-hint/index.js:118
 msgid "Before text"
 msgstr ""
 
-#: src/blocks/button/edit.js:789
+#: src/blocks/button/edit.js:655
 #: src/blocks/heading/edit.js:348
 #: src/blocks/pr-content/edit.js:231
 #: src/components/scroll-hint/index.js:143
 msgid "After text"
 msgstr ""
 
-#: src/blocks/button/edit.js:796
+#: src/blocks/button/edit.js:662
 #: src/blocks/icon-outer/edit.js:89
 #: src/blocks/icon/edit.js:86
 msgid "Size"
 msgstr ""
 
-#: src/blocks/button/edit.js:810
+#: src/blocks/button/edit.js:676
 msgid "Button border radius"
 msgstr ""
 
-#: src/blocks/button/edit.js:851
+#: src/blocks/button/edit.js:717
 msgid "Input text"
 msgstr ""
 

@@ -1,12 +1,13 @@
 module.exports = {
     rootDir: '../',
     moduleNameMapper: {
-        "^@vkblocks/(.+)": "<rootDir>/src/$1"
+        "^@vkblocks/(.+)": "<rootDir>/src/$1",
+        "\\.svg$": "<rootDir>/test/__mocks__/svgMock.js"
     },
     preset: '@wordpress/jest-preset-default',
     transform: {
         "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "babel-jest",
-        ".+\\.(svg|css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub"
+        ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub"
     },
     transformIgnorePatterns: [
         // ここでは `swiper` と `uuid` をトランスパイルから除外するモジュールのリストから除外しています。

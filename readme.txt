@@ -107,7 +107,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-
+[ Specific Change ][ Some Block ] Change the editor component from Button Group to Toggle Group Control.
 [ Add function ][ Column ] Added noreferrer, nofollow, and link description options to the link feature.
 [ Add function ][ Cover ] Added noreferrer, nofollow, and link description options to the link feature.
 [ Bug Fix ][ Flow ] Fixed image overflow on the frontend and arrow misalignment in the editor.

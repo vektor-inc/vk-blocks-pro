@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-28T02:26:26+00:00\n"
+"POT-Creation-Date: 2025-03-28T02:32:10+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -517,37 +517,37 @@ msgid "Margin"
 msgstr ""
 
 #: src/admin/margin.js:20
-#: src/blocks/spacer/edit.js:84
+#: src/blocks/spacer/edit.js:85
 msgid "XXS"
 msgstr ""
 
 #: src/admin/margin.js:24
-#: src/blocks/spacer/edit.js:93
+#: src/blocks/spacer/edit.js:89
 msgid "XS"
 msgstr ""
 
 #: src/admin/margin.js:28
-#: src/blocks/spacer/edit.js:104
+#: src/blocks/spacer/edit.js:93
 msgid "S"
 msgstr ""
 
 #: src/admin/margin.js:32
-#: src/blocks/spacer/edit.js:115
+#: src/blocks/spacer/edit.js:97
 msgid "M"
 msgstr ""
 
 #: src/admin/margin.js:36
-#: src/blocks/spacer/edit.js:126
+#: src/blocks/spacer/edit.js:101
 msgid "L"
 msgstr ""
 
 #: src/admin/margin.js:40
-#: src/blocks/spacer/edit.js:135
+#: src/blocks/spacer/edit.js:105
 msgid "XL"
 msgstr ""
 
 #: src/admin/margin.js:44
-#: src/blocks/spacer/edit.js:144
+#: src/blocks/spacer/edit.js:109
 msgid "XXL"
 msgstr ""
 
@@ -3115,11 +3115,11 @@ msgstr ""
 msgid "Space Type"
 msgstr ""
 
-#: src/blocks/spacer/edit.js:155
+#: src/blocks/spacer/edit.js:113
 msgid "Custom"
 msgstr ""
 
-#: src/blocks/spacer/edit.js:159
+#: src/blocks/spacer/edit.js:118
 msgid "You can change each common margin size from Setting > VK Blocks"
 msgstr ""
 

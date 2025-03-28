@@ -5,8 +5,8 @@ import { __ } from '@wordpress/i18n';
 import {
 	PanelBody,
 	BaseControl,
-	ButtonGroup,
-	Button,
+	__experimentalToggleGroupControl as ToggleGroupControl,
+	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
 } from '@wordpress/components';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 
@@ -73,88 +73,47 @@ export default function SpacerEdit({
 		<>
 			<InspectorControls>
 				<PanelBody title={__('Spacer Settings', 'vk-blocks-pro')}>
-					<ButtonGroup className="mb-3">
-						<Button
-							isSmall
-							isPrimary={spaceSize === 'xxs'}
-							isSecondary={spaceSize !== 'xxs'}
-							onClick={() => setAttributes({ spaceSize: 'xxs' })}
-							style={{ padding: '0px 7px' }}
-						>
-							{__('XXS', 'vk-blocks-pro')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={spaceSize === 'xs'}
-							isSecondary={spaceSize !== 'xs'}
-							onClick={() => setAttributes({ spaceSize: 'xs' })}
-							style={{ padding: '0px 7px' }}
-						>
-							{__('XS', 'vk-blocks-pro')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={spaceSize === 'small'}
-							isSecondary={spaceSize !== 'small'}
-							onClick={() =>
-								setAttributes({ spaceSize: 'small' })
-							}
-							style={{ padding: '0px 7px' }}
-						>
-							{__('S', 'vk-blocks-pro')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={spaceSize === 'medium'}
-							isSecondary={spaceSize !== 'medium'}
-							onClick={() =>
-								setAttributes({ spaceSize: 'medium' })
-							}
-							style={{ padding: '0px 7px' }}
-						>
-							{__('M', 'vk-blocks-pro')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={spaceSize === 'large'}
-							isSecondary={spaceSize !== 'large'}
-							onClick={() =>
-								setAttributes({ spaceSize: 'large' })
-							}
-							style={{ padding: '0px 7px' }}
-						>
-							{__('L', 'vk-blocks-pro')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={spaceSize === 'xl'}
-							isSecondary={spaceSize !== 'xl'}
-							onClick={() => setAttributes({ spaceSize: 'xl' })}
-							style={{ padding: '0px 7px' }}
-						>
-							{__('XL', 'vk-blocks-pro')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={spaceSize === 'xxl'}
-							isSecondary={spaceSize !== 'xxl'}
-							onClick={() => setAttributes({ spaceSize: 'xxl' })}
-							style={{ padding: '0px 7px' }}
-						>
-							{__('XXL', 'vk-blocks-pro')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={spaceSize === 'custom'}
-							isSecondary={spaceSize !== 'custom'}
-							onClick={() =>
-								setAttributes({ spaceSize: 'custom' })
-							}
-							style={{ padding: '0px 7px' }}
-						>
-							{__('Custom', 'vk-blocks-pro')}
-						</Button>
-					</ButtonGroup>
+					<ToggleGroupControl
+						value={spaceSize}
+						onChange={(value) =>
+							setAttributes({ spaceSize: value })
+						}
+						isBlock
+					>
+						<ToggleGroupControlOption
+							value="xxs"
+							label={__('XXS', 'vk-blocks-pro')}
+						/>
+						<ToggleGroupControlOption
+							value="xs"
+							label={__('XS', 'vk-blocks-pro')}
+						/>
+						<ToggleGroupControlOption
+							value="small"
+							label={__('S', 'vk-blocks-pro')}
+						/>
+						<ToggleGroupControlOption
+							value="medium"
+							label={__('M', 'vk-blocks-pro')}
+						/>
+						<ToggleGroupControlOption
+							value="large"
+							label={__('L', 'vk-blocks-pro')}
+						/>
+						<ToggleGroupControlOption
+							value="xl"
+							label={__('XL', 'vk-blocks-pro')}
+						/>
+						<ToggleGroupControlOption
+							value="xxl"
+							label={__('XXL', 'vk-blocks-pro')}
+						/>
+						<ToggleGroupControlOption
+							value="custom"
+							label={__('Custom', 'vk-blocks-pro')}
+						/>
+					</ToggleGroupControl>
+
 					<p>
 						{__(
 							'You can change each common margin size from Setting > VK Blocks',

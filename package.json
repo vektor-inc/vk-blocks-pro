@@ -18,7 +18,7 @@
     "build:dev": "composer install && wp-scripts build --webpack-copy-php --config webpack.config.js --progress --mode=development && gulp build:dev:pro",
     "build": "wp-scripts build --webpack-copy-php --config webpack.config.js --progress --mode=production && gulp build:pro && npm run build:js && npm run translate",
     "build:cache": "composer install && wp-scripts build --webpack-copy-php --config webpack.config.js --progress --mode=development --env enableCache=true && gulp build:dev:pro",
-    "makedoc": "node generate-block-docs.js",
+    "makerule:blocks": "node .cursor/generate-block-docs.js",
     "build:dev:cache": "npm run build:cache",
     "build:free": "gulp text-domain-free && wp-scripts build --webpack-copy-php --config webpack.config.js && gulp build:free && npm run build:js",
     "build:pot": "wp i18n make-pot --merge=languages/vk-blocks-pro-js.pot --skip-js . languages/vk-blocks-pro.pot",

@@ -115,29 +115,29 @@ alwaysApply: false
       - **`custom-css-extensions.php`**: カスタムCSSに関連する処理
       - **`custom-format.php`**: カスタムフォーマットに関連する処理
 - **`src/`**: Gutenbergのカスタムブロック用のJSコードを原則ここに格納する
-  - **`blocks/`**: 1ブロック1ディレクトリで構成する。この中にedit.js / save.jsが格納される
-    - **`alert/`**: A colored box with four statuses, including annotations and alerts.
-    - **`ancestor-page-list/`**: Display Page list from ancestor page
-    - **`balloon/`**: These speech balloons are perfect for recreating conversations.
-    - **`border-box/`**: This is a border box where you can place headings to attract attention.
-    - **`button/`**: A button link that can display icons before and after.
-    - **`faq/`**: Displays a combination of questions and answers.
-    - **`faq2/`**: It displays a combination of questions and answers. You can freely add blocks to the question area as well.
-    - **`faq2-a/`**: Answer area where you can add blocks freely.
-    - **`faq2-q/`**: Question area where you can freely add blocks.
-    - **`flow/`**: Displays a sequential description in time series.
-    - **`heading/`**: This is a heading that allows you to set text size, subtext, icon, and margin.
-    - **`icon/`**: Display icons with Font Awesome.
-    - **`icon-outer/`**: Display the Font Awesome icons horizontally.
-    - **`page-content/`**: Displays the body content of the specified parent page.
-    - **`pr-blocks/`**: This is a PR block where you can place images and icon. But currently, it is possible to create the same layout by combining Column Block and Icon Block, so this block is not recommended. Please check Columns category of Block Patterns.
-    - **`pr-content/`**: This is PR content where you can place images, headlines, text, and buttons.
-    - **`slider/`**: This slider allows you to place various items.Slider is do not move in edit screen.
-    - **`slider-item/`**: This is one item in the slider.
-    - **`spacer/`**: Use responsive spacers to get the margins right.
-    - **`staff/`**: Used for staff introduction, company introduction, school introduction, menu, etc.
-    - **`visual-embed/`**: Easily embed iframe content with a live preview in the editor, perfect for maps, videos, and other iframe-based media.
-    - **`_pro`**: VK Blocks Pro版のブロックディレクトリ
+  - **`blocks/`**:
+    - **`alert`**: A colored box with four statuses, including annotations and alerts.
+    - **`ancestor-page-list`**: Display Page list from ancestor page
+    - **`balloon`**: These speech balloons are perfect for recreating conversations.
+    - **`border-box`**: This is a border box where you can place headings to attract attention.
+    - **`button`**: A button link that can display icons before and after.
+    - **`faq`**: Displays a combination of questions and answers.
+    - **`faq2`**: It displays a combination of questions and answers. You can freely add blocks to the question area as well.
+    - **`faq2-a`**: Answer area where you can add blocks freely.
+    - **`faq2-q`**: Question area where you can freely add blocks.
+    - **`flow`**: Displays a sequential description in time series.
+    - **`heading`**: This is a heading that allows you to set text size, subtext, icon, and margin.
+    - **`icon`**: Display icons with Font Awesome.
+    - **`icon-outer`**: Display the Font Awesome icons horizontally.
+    - **`page-content`**: Displays the body content of the specified parent page.
+    - **`pr-blocks`**: This is a PR block where you can place images and icon. But currently, it is possible to create the same layout by combining Column Block and Icon Block, so this block is not recommended. Please check Columns category of Block Patterns.
+    - **`pr-content`**: This is PR content where you can place images, headlines, text, and buttons.
+    - **`slider`**: This slider allows you to place various items.Slider is do not move in edit screen.
+    - **`slider-item`**: This is one item in the slider.
+    - **`spacer`**: Use responsive spacers to get the margins right.
+    - **`staff`**: Used for staff introduction, company introduction, school introduction, menu, etc.
+    - **`visual-embed`**: Easily embed iframe content with a live preview in the editor, perfect for maps, videos, and other iframe-based media.
+    - **`_pro/`**:
       - **`accordion`**: Collapses and hides content when the content is long.
       - **`accordion-target`**: This is the content area where you can add blocks freely.
       - **`accordion-trigger`**: This is the title area where you can freely add blocks.

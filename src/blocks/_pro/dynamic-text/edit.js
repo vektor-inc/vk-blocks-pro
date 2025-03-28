@@ -106,7 +106,7 @@ export default function DynamicTextEdit(props) {
 		}),
 	});
 
-	const { postType, parentPageId, currentUser } = useSelect((select) => {
+	const { postType, parentPageId, currentUser, postSlug } = useSelect((select) => {
 		const { getCurrentPostType, getEditedPostAttribute } =
 			select('core/editor');
 		const { getCurrentUser } = select('core');
@@ -115,6 +115,7 @@ export default function DynamicTextEdit(props) {
 			postType: getCurrentPostType(),
 			parentPageId: getEditedPostAttribute('parent'),
 			currentUser: getCurrentUser(),
+			postSlug: getEditedPostAttribute('slug'),
 		};
 	}, []);
 
@@ -166,6 +167,15 @@ export default function DynamicTextEdit(props) {
 			<div className="alert alert-warning text-center">
 				{__(
 					'This block is not rendered because no custom field name is specified.',
+					'vk-blocks-pro'
+				)}
+			</div>
+		);
+	} else if (displayElement === 'post-slug' && !postSlug) {
+		editContent = (
+			<div className="alert alert-warning text-center">
+				{__(
+					'Slug will appear after saving the post.',
 					'vk-blocks-pro'
 				)}
 			</div>

@@ -234,6 +234,15 @@ class DynamicText extends VK_UnitTestCase {
 				'target_url' => get_permalink( $data['post_id'] ),
 				'correct'    => '<span class="vk_dynamicText wp-block-vk-blocks-dynamic-text"><a href="https://vektor-inc.co.jp" target="_blank" rel="noreferrer noopener">https://vektor-inc.co.jp</a></span>',
 			),
+			// 投稿スラッグ
+			array(
+				'attributes' => array(
+					'displayElement' => 'post-slug',
+					'tagName'        => 'span',
+				),
+				'target_url' => get_permalink( $data['post_id'] ),
+				'correct'    => '<span class="vk_dynamicText wp-block-vk-blocks-dynamic-text">parent_post</span>',
+			),
 		);
 
 		print PHP_EOL;

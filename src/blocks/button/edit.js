@@ -343,6 +343,7 @@ export default function ButtonEdit(props) {
 								onChange={(value) =>
 									setAttributes({ buttonAlign: value })
 								}
+								className="vk-button-align-control"
 								isBlock
 							>
 								<ToggleGroupControlOption
@@ -368,7 +369,7 @@ export default function ButtonEdit(props) {
 							</ToggleGroupControl>
 							<style>
 								{`
-									.components-toggle-group-control-option-base {
+									.vk-button-align-control .components-toggle-group-control-option-base {
 										padding: 0;
 									}
 								`}

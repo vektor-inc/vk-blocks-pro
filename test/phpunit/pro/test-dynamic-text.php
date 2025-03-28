@@ -35,6 +35,7 @@ class DynamicText extends VK_UnitTestCase {
 			'post_type'   => 'post',
 			'post_status' => 'publish',
 			'post_parent' => '',
+			'post_name'   => 'expected-slug',
 		);
 		$data['post_id'] = wp_insert_post( $post );
 
@@ -241,7 +242,7 @@ class DynamicText extends VK_UnitTestCase {
 					'tagName'        => 'span',
 				),
 				'target_url' => get_permalink( $data['post_id'] ),
-				'correct'    => '<span class="vk_dynamicText wp-block-vk-blocks-dynamic-text">parent_post</span>',
+				'correct'    => '<span class="vk_dynamicText wp-block-vk-blocks-dynamic-text">expected-slug</span>',
 			),
 		);
 

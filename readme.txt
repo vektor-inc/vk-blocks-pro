@@ -108,8 +108,8 @@ e.g.
 
 == Changelog ==
 
-[ Add function ][ Column ] Added noreferrer, nofollow, and link description options to the link feature.
-[ Add function ][ Cover ] Added noreferrer, nofollow, and link description options to the link feature.
+[ Add function ][ Dynamic Text (Pro) ] Add "Post Slug" as a display element
+[ Add function ][ Column / Cover ] Added noreferrer, nofollow, and link description options to the link feature.
 [ Bug Fix ][ Flow ] Fixed image overflow on the frontend and arrow misalignment in the editor.
 
 = 1.98.0 =

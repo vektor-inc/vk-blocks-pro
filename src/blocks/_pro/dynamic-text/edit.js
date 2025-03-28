@@ -106,18 +106,21 @@ export default function DynamicTextEdit(props) {
 		}),
 	});
 
-	const { postType, parentPageId, currentUser, postSlug } = useSelect((select) => {
-		const { getCurrentPostType, getEditedPostAttribute } =
-			select('core/editor');
-		const { getCurrentUser } = select('core');
+	const { postType, parentPageId, currentUser, postSlug } = useSelect(
+		(select) => {
+			const { getCurrentPostType, getEditedPostAttribute } =
+				select('core/editor');
+			const { getCurrentUser } = select('core');
 
-		return {
-			postType: getCurrentPostType(),
-			parentPageId: getEditedPostAttribute('parent'),
-			currentUser: getCurrentUser(),
-			postSlug: getEditedPostAttribute('slug'),
-		};
-	}, []);
+			return {
+				postType: getCurrentPostType(),
+				parentPageId: getEditedPostAttribute('parent'),
+				currentUser: getCurrentUser(),
+				postSlug: getEditedPostAttribute('slug'),
+			};
+		},
+		[]
+	);
 
 	let editContent;
 	const editAlertContent = (
@@ -174,10 +177,7 @@ export default function DynamicTextEdit(props) {
 	} else if (displayElement === 'post-slug' && !postSlug) {
 		editContent = (
 			<div className="alert alert-warning text-center">
-				{__(
-					'Slug will appear after saving the post.',
-					'vk-blocks-pro'
-				)}
+				{__('Slug will appear after saving the post.', 'vk-blocks-pro')}
 			</div>
 		);
 	} else if (displayElement === 'please-select') {

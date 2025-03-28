@@ -3,37 +3,77 @@ description: 本プロジェクトにおけるコーディングルール
 globs: **/*.*
 alwaysApply: false
 ---
-## 1. 共通項目
-- 本プロジェクトはWordPressプラグイン「VK Blocks Pro」の開発を目的とする。
-- 本プロジェクトはWordPressプラグイン開発のコンテキストで動作する。
-- WordPressのコーディング標準およびベストプラクティスに従うこと。
-- PHP7.4以上で動作するコードを記述する。
-- インデントは常にタブを使用し、スペースでのインデントは行わない。
-- フロントエンドの出力は常にi18n関数（`__()` や `_e()`）を使用する。
-- XSSやSQLインジェクションを防ぐため、入力値のバリデーション・サニタイズをWordPressの関数を用いて実施する。
-- 本プロジェクトは名前空間を使用せず、関数やグローバル変数には接頭辞 `vk_blocks_` をつける。
-- すべての回答やドキュメントは日本語で記述すること。
+# VK Blocks Pro コーディングルール
 
-## 2. PHP
-- PHPコードは原則として `inc/` に格納し、構造を明確に保つ。
-- `class-vk-blocks-global-settings.php` で各ブロックの設定を定義する。
-- `class-vk-blocks-options.php` で `wp_options` に保存する設定値を定義する。
-- `admin.php` では管理画面のメニュー追加や設定画面用JSのエンキュー処理を行う。
-- REST APIのエントリポイントは `App/RestAPI/BlockMeta/` に配置する。
-- Font Awesomeの設定は `fontawesome/` ディレクトリ内に格納する。
-- ダイナミックCSSの出力は `style/` ディレクトリ内のPHPファイルで行う。
-- PHPUnitのテストケースは `test/phpunit/` に格納し、無料版・Pro版ごとに `free/` `pro/` に分類する。
+## 1. 共通ルール
+- 本プロジェクトは WordPress プラグイン「VK Blocks Pro」の開発を目的とし、WordPress プラグイン開発の文脈で動作します。
+- WordPress のコーディング規約およびベストプラクティスに従います。
+- PHP 7.4 以上に対応するコードを記述してください。
+- インデントは必ずタブを使用し、スペースでのインデントは禁止です。
+- フロントエンド出力には必ず `__()` や `_e()` などの i18n 関数を使用してください。
+- XSS や SQL インジェクション対策として、入力値は WordPress の関数を使って適切にバリデーションおよびサニタイズします。
+- 名前空間は使用せず、関数名やグローバル変数には必ず `vk_blocks_` 接頭辞を付けてください。
+- すべての回答は日本語で行ってください。
 
-## 3. JavaScript / React
-- Gutenbergのカスタムブロック用JSコードは `src/` に格納し、各ブロックは `src/blocks/` 配下にディレクトリを作成する。
-- ブロックごとに `index.php` `index.js` `block.json` `edit.js` `save.js` `style.scss` `icon.svg` を基本セットとして配置。
-- `src/bundle.js`（無料版） または `src/bundle-pro.js`（Pro版）に `import` 定義を追加する。
-- `inc/vk-blocks/class-vk-blocks-global-settings` の `blocks()` にブロックの定義を追加し、Pro版のブロックは `is_pro = true`、無料版は `is_pro = false` に設定する。
-- `npm run build` でビルドを実行する。
-- `npm run test-unit` でフィクスチャーテストを実施。
-- `npm run test:e2e` でPlaywrightによるE2Eテストを実行。
+## 2. PHP に関するルール
+- PHP ファイルは原則 `inc/` ディレクトリに格納し、構造的に整理します。
+- 各種ファイル配置の基準:
+  - `class-vk-blocks-global-settings.php`: 各ブロックの設定定義。
+  - `class-vk-blocks-options.php`: `wp_options` に保存する設定値。
+  - `admin.php`: 管理画面のメニュー追加および JS のエンキュー処理。
+  - REST API: `App/RestAPI/BlockMeta/` に配置。
+  - Font Awesome: `fontawesome/` 内に配置。
+  - ダイナミック CSS: `style/` 内の PHP ファイルで出力。
+- PHPUnit テスト:
+  - `test/phpunit/` に格納。
+  - 無料版は `free/`、Pro 版は `pro/` に分類。
+
+## 3. JavaScript / React に関するルール
+- Gutenberg カスタムブロックの JS コードは `src/` に配置。
+  - 各ブロックは `src/blocks/` 以下に専用ディレクトリを作成。
+  - 基本構成ファイル:
+    - `index.php`, `index.js`, `block.json`, `edit.js`, `save.js`, `style.scss`, `icon.svg`
+  - 無料版: `src/bundle.js` に import を追加。
+  - Pro 版: `src/bundle-pro.js` に import を追加。
+- ブロックの登録:
+  - `inc/vk-blocks/class-vk-blocks-global-settings.php` の `blocks()` メソッドに追加。
+  - 無料版は `is_pro = false`、Pro 版は `is_pro = true` に設定。
+- ビルド:
+  - `npm run build` でビルド。開発時は `npm run build:dev` や `npm run build:cache` が使えます。
+  - `npm run test-unit` でフィクスチャーテスト。
+  - `npm run test:e2e` で Playwright による E2E テストを実行。
 
 ## 4. ファイル構成
+- 詳細なディレクトリ構成と役割は本ドキュメント末尾「ファイル構成一覧」参照。
+- ディレクトリごとの用途に沿ってファイルを整理・配置する。
+
+## 5. ブロック作成手順
+1. ブロックが「無料版」か「Pro版」かを事前に確認。
+2. 以下のディレクトリにブロックディレクトリを作成:
+   - 無料版: `src/blocks/`
+   - Pro版: `src/blocks/_pro/`
+3. 最低限必要なファイルを準備:
+   - `index.php`, `index.js`, `block.json`, `edit.js`, `save.js`, `style.scss`, `icon.svg`
+4. `src/bundle.js` または `src/bundle-pro.js` に import を追加。
+5. `class-vk-blocks-global-settings.php` の `blocks()` に定義を追加。
+6. `is_pro` の値をブロックの種類に応じて設定（無料版=false, Pro版=true）。
+
+## 6. ブロックを新規作成するときの手順
+- まずそのブロックが「無料版」か「プロ版」か設計者に確認してください。
+- 無料版は`src/blocks/`内に、プロ版は`src/blocks/_pro'内にブロックのディレクトリを作ります。各ブロックの構成を参考にしてください。
+  - `index.php`は他のブロックを参考に必ず設置してください。ビルド時に `inc/vk-blocks/build/blocks/` の各ブロック内へコピーされ、必要なファイルがエンキューされます。
+  - `index.php`、`index.js`、`block.json`、`edit.js`、`save.js`、`style.scss`、`icon.svg`が基本セットですが絶対的なものではありません。
+- `src/bundle.js` （無料版） もしくは `src/bundle-pro.js` （プロ版）にimport定義、ブロック定義を追加してください。
+- `inc/vk-blocks/class-vk-blocks-global-settings` のblocks()内にブロックの定義を追加してください。プロ版のブロックは is_proがtrue 、無料版はfalseになります。
+
+## 7. テストに関するルール
+- フィクスチャーテスト: `test/e2e-test/fixtures` に HTML を配置。
+- E2E テスト: `test/e2e/` に Playwright のテストケースを格納。
+- PHPUnit:
+  - 無料版: `test/phpunit/free/`
+  - Pro 版: `test/phpunit/pro/`
+
+## 8. ファイル構成一覧
 - **`inc/`**: PHPコードを原則ここに格納する
   - **`vk-blocks/`**: 本プラグインに関する処理はここに格納する
     - **`class-vk-blocks-global-settings.php`**: 各ブロックの定義
@@ -148,11 +188,4 @@ alwaysApply: false
     - **`free`**: VK Blocks 無料版で使うブロックのテストケース
     - **`pro`**: VK Blocks Proで使うブロックのテストケース
 
-## 5. ブロックを新規作成するときの手順
-- まずそのブロックが「無料版」か「プロ版」か設計者に確認してください。
-- 無料版は`src/blocks/`内に、プロ版は`src/blocks/_pro'内にブロックのディレクトリを作ります。各ブロックの構成を参考にしてください。
-  - `index.php`は他のブロックを参考に必ず設置してください。ビルド時に `inc/vk-blocks/build/blocks/` の各ブロック内へコピーされ、必要なファイルがエンキューされます。
-  - `index.php`、`index.js`、`block.json`、`edit.js`、`save.js`、`style.scss`、`icon.svg`が基本セットですが絶対的なものではありません。
-- `src/bundle.js` （無料版） もしくは `src/bundle-pro.js` （プロ版）にimport定義、ブロック定義を追加してください。
-- `inc/vk-blocks/class-vk-blocks-global-settings` のblocks()内にブロックの定義を追加してください。プロ版のブロックは is_proがtrue 、無料版はfalseになります。
 

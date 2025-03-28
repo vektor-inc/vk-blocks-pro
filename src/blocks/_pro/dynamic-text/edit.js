@@ -177,7 +177,10 @@ export default function DynamicTextEdit(props) {
 	} else if (displayElement === 'post-slug' && !postSlug) {
 		editContent = (
 			<div className="alert alert-warning text-center">
-				{__('Set the slug and save the post to display it.', 'vk-blocks-pro')}
+				{__(
+					'Set the slug and save the post to display it.',
+					'vk-blocks-pro'
+				)}
 			</div>
 		);
 	} else if (displayElement === 'please-select') {

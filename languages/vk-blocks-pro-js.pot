@@ -1222,7 +1222,7 @@ msgid "Setting up a link"
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:389
-#: src/blocks/_pro/gridcolcard-item/edit.js:308
+#: src/blocks/_pro/gridcolcard-item/edit.js:305
 #: src/blocks/_pro/icon-card-item/edit.js:128
 #: src/blocks/button/edit.js:284
 #: src/blocks/icon/edit.js:309
@@ -1481,45 +1481,45 @@ msgstr ""
 msgid "All columns"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:277
+#: src/blocks/_pro/gridcolcard-item/edit.js:273
 msgid "This column only"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:282
+#: src/blocks/_pro/gridcolcard-item/edit.js:279
 msgid "Edit Lock"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:285
+#: src/blocks/_pro/gridcolcard-item/edit.js:282
 msgid "Lock edits this block from the parent and other Grid Column Item block"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:296
+#: src/blocks/_pro/gridcolcard-item/edit.js:293
 msgid "Column Setting"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:300
+#: src/blocks/_pro/gridcolcard-item/edit.js:297
 #: src/blocks/_pro/icon-card-item/edit.js:120
 #: src/blocks/pr-blocks/edit.js:254
 msgid "Link URL:"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:316
+#: src/blocks/_pro/gridcolcard-item/edit.js:313
 #: src/components/link-toolbar/index.js:334
 msgid "Add noreferrer"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:324
+#: src/blocks/_pro/gridcolcard-item/edit.js:321
 #: src/components/link-toolbar/index.js:351
 msgid "Add nofollow"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:332
+#: src/blocks/_pro/gridcolcard-item/edit.js:329
 msgid ""
 "If you set a link URL, do not place the link element (text or button) in "
 "the Grid Column Card Item. It may not be displayed correctly."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:336
+#: src/blocks/_pro/gridcolcard-item/edit.js:333
 msgid "Make sure that no link is specified for the image block, etc."
 msgstr ""
 

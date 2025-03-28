@@ -160,6 +160,11 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 		}
 	} elseif ( 'custom-field' === $attributes['displayElement'] ) {
 		$block_content .= vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $block );
+	} elseif ( 'post-slug' === $attributes['displayElement'] ) {
+		$post = get_post();
+		if ( $post ) {
+			$block_content .= $post->post_name; // 投稿スラッグを取得
+		}
 	}
 	if ( $attributes['tagName'] ) {
 		$block_content .= '</' . $attributes['tagName'] . '>';

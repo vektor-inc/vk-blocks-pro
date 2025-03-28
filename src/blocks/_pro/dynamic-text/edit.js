@@ -241,6 +241,10 @@ export default function DynamicTextEdit(props) {
 								{
 									value: 'custom-field',
 									label: __('Custom Field', 'vk-blocks-pro'),
+									},
+								{
+									value: 'post-slug',
+									label: __('Post Slug', 'vk-blocks-pro'),
 								},
 							]}
 						/>

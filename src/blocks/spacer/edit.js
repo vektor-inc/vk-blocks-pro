@@ -78,6 +78,7 @@ export default function SpacerEdit({
 						onChange={(value) =>
 							setAttributes({ spaceSize: value })
 						}
+						className="vk-spacer-size-control"
 						isBlock
 					>
 						<ToggleGroupControlOption
@@ -113,7 +114,13 @@ export default function SpacerEdit({
 							label={__('Custom', 'vk-blocks-pro')}
 						/>
 					</ToggleGroupControl>
-
+					<style>
+						{`
+							.vk-spacer-size-control .components-toggle-group-control-option-base {
+								padding: 0;
+							}
+						`}
+					</style>
 					<p>
 						{__(
 							'You can change each common margin size from Setting > VK Blocks',

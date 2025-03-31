@@ -1010,7 +1010,7 @@ msgid "Title"
 msgstr ""
 
 #: src/blocks/_pro/card-item/edit.js:217
-#: src/blocks/_pro/dynamic-text/edit.js:369
+#: src/blocks/_pro/dynamic-text/edit.js:386
 msgid "URL"
 msgstr ""
 
@@ -1103,125 +1103,137 @@ msgstr ""
 msgid "Current page"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:124
+#: src/blocks/_pro/dynamic-text/edit.js:128
 msgid "Please select display element from the Setting sidebar."
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:132
+#: src/blocks/_pro/dynamic-text/edit.js:136
 msgid "Post Type Name"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:136
+#: src/blocks/_pro/dynamic-text/edit.js:140
 msgid "Ancestor Page Title"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:140
+#: src/blocks/_pro/dynamic-text/edit.js:144
 msgid "Parent Page Title"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:153
+#: src/blocks/_pro/dynamic-text/edit.js:157
 msgid "Custom field"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:167
+#: src/blocks/_pro/dynamic-text/edit.js:171
 msgid "This block is not rendered because no custom field name is specified."
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:197
+#: src/blocks/_pro/dynamic-text/edit.js:180
+msgid "Set the slug and save the post to display it."
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:210
 msgid "Display element settings"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:202
+#: src/blocks/_pro/dynamic-text/edit.js:215
 msgid "Display element"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:211
+#: src/blocks/_pro/dynamic-text/edit.js:224
 msgid "Please Select"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:215
+#: src/blocks/_pro/dynamic-text/edit.js:228
 msgid "Post type name of the page being viewed"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:222
+#: src/blocks/_pro/dynamic-text/edit.js:235
 msgid "Page name in the ancestor hierarchy of the displayed page"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:229
+#: src/blocks/_pro/dynamic-text/edit.js:242
 msgid "Page name in the parent hierarchy of the displayed page"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:236
+#: src/blocks/_pro/dynamic-text/edit.js:249
 msgid "Current login user name"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:243
+#: src/blocks/_pro/dynamic-text/edit.js:256
 msgid "Custom Field"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:251
+#: src/blocks/_pro/dynamic-text/edit.js:260
+msgid "Post Slug"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:268
 msgid "Hide on Ancestor Hierarchy Pages"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:264
+#: src/blocks/_pro/dynamic-text/edit.js:281
 msgid "This block is not displayed on pages without a parent page."
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:275
+#: src/blocks/_pro/dynamic-text/edit.js:292
 msgid "Hide on Parent Hierarchy Pages"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:288
+#: src/blocks/_pro/dynamic-text/edit.js:305
 msgid ""
 "This block will not display on pages other than pages that have a parent "
 "hierarchy."
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:299
+#: src/blocks/_pro/dynamic-text/edit.js:316
 msgid "Prefix Label"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:306
+#: src/blocks/_pro/dynamic-text/edit.js:323
 msgid "Suffix Label"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:313
+#: src/blocks/_pro/dynamic-text/edit.js:330
 msgid "Text for Logged Out Users"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:325
+#: src/blocks/_pro/dynamic-text/edit.js:342
 msgid "Link to Login on Logout"
-msgstr ""
-
-#: src/blocks/_pro/dynamic-text/edit.js:341
-msgid "Custom Field Name"
-msgstr ""
-
-#: src/blocks/_pro/dynamic-text/edit.js:348
-msgid "Field Type"
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:35
 msgid "HTML element"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:357
-msgid "text"
-msgstr ""
-
-#: src/blocks/_pro/dynamic-text/edit.js:361
-msgid "textarea"
+#: src/blocks/_pro/dynamic-text/edit.js:358
+msgid "Custom Field Name"
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:365
+msgid "Field Type"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:374
+msgid "text"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:378
+msgid "textarea"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:382
 msgid "wysiwyg"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:376
+#: src/blocks/_pro/dynamic-text/edit.js:393
 msgid "Setting up a link"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:389
+#: src/blocks/_pro/dynamic-text/edit.js:40
+msgid "div (default)"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:406
 #: src/blocks/_pro/gridcolcard-item/edit.js:308
 #: src/blocks/_pro/icon-card-item/edit.js:128
 #: src/blocks/button/edit.js:283
@@ -1230,10 +1242,6 @@ msgstr ""
 #: src/blocks/pr-content/edit.js:131
 #: src/components/link-toolbar/index.js:321
 msgid "Open link new tab."
-msgstr ""
-
-#: src/blocks/_pro/dynamic-text/edit.js:40
-msgid "div (default)"
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:44
@@ -3819,19 +3827,19 @@ msgstr ""
 msgid "Responsive BR"
 msgstr ""
 
-#: src/extensions/core/columns/style.js:178
+#: src/extensions/core/columns/style.js:206
 msgid "Column link"
 msgstr ""
 
-#: src/extensions/core/columns/style.js:52
+#: src/extensions/core/columns/style.js:59
 msgid "Column Direction"
 msgstr ""
 
-#: src/extensions/core/columns/style.js:57
+#: src/extensions/core/columns/style.js:64
 msgid "Reverse"
 msgstr ""
 
-#: src/extensions/core/cover/style.js:91
+#: src/extensions/core/cover/style.js:92
 msgid "Cover link"
 msgstr ""
 

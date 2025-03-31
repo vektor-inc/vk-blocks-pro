@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2025-03-17T17:12:04+00:00\n"
+"POT-Creation-Date: 2025-03-30T23:39:09+00:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1005,7 +1005,7 @@ msgid "Title"
 msgstr "タイトル"
 
 #: src/blocks/_pro/card-item/edit.js:217
-#: src/blocks/_pro/dynamic-text/edit.js:369
+#: src/blocks/_pro/dynamic-text/edit.js:386
 msgid "URL"
 msgstr "URL"
 
@@ -1097,138 +1097,146 @@ msgstr "この投稿を除く"
 msgid "Current page"
 msgstr "現在のページ"
 
-#: src/blocks/_pro/dynamic-text/edit.js:124
+#: src/blocks/_pro/dynamic-text/edit.js:128
 msgid "Please select display element from the Setting sidebar."
 msgstr "設定サイドバーから表示要素を選択してください。"
 
-#: src/blocks/_pro/dynamic-text/edit.js:132
+#: src/blocks/_pro/dynamic-text/edit.js:136
 msgid "Post Type Name"
 msgstr "投稿タイプ名"
 
-#: src/blocks/_pro/dynamic-text/edit.js:136
+#: src/blocks/_pro/dynamic-text/edit.js:140
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
 #: src/blocks/ancestor-page-list/index.php:44
 msgid "Ancestor Page Title"
 msgstr "先祖ページのタイトル"
 
-#: src/blocks/_pro/dynamic-text/edit.js:140
+#: src/blocks/_pro/dynamic-text/edit.js:144
 msgid "Parent Page Title"
 msgstr "親ページのタイトル"
 
-#: src/blocks/_pro/dynamic-text/edit.js:153
+#: src/blocks/_pro/dynamic-text/edit.js:157
 msgid "Custom field"
 msgstr "カスタムフィールド"
 
-#: src/blocks/_pro/dynamic-text/edit.js:167
+#: src/blocks/_pro/dynamic-text/edit.js:171
 msgid "This block is not rendered because no custom field name is specified."
 msgstr ""
 "カスタムフィールド名が指定されていないため、このブロックは表示されません。"
 
-#: src/blocks/_pro/dynamic-text/edit.js:197
+#: src/blocks/_pro/dynamic-text/edit.js:180
+msgid "Set the slug and save the post to display it."
+msgstr "スラッグを設定して投稿を保存すると表示されます。"
+
+#: src/blocks/_pro/dynamic-text/edit.js:210
 msgid "Display element settings"
 msgstr "表示要素の設定"
 
-#: src/blocks/_pro/dynamic-text/edit.js:202
+#: src/blocks/_pro/dynamic-text/edit.js:215
 msgid "Display element"
 msgstr "表示要素"
 
-#: src/blocks/_pro/dynamic-text/edit.js:211
+#: src/blocks/_pro/dynamic-text/edit.js:224
 msgid "Please Select"
 msgstr "選択してください"
 
-#: src/blocks/_pro/dynamic-text/edit.js:215
+#: src/blocks/_pro/dynamic-text/edit.js:228
 msgid "Post type name of the page being viewed"
 msgstr "表示中のページの投稿タイプ名"
 
-#: src/blocks/_pro/dynamic-text/edit.js:222
+#: src/blocks/_pro/dynamic-text/edit.js:235
 msgid "Page name in the ancestor hierarchy of the displayed page"
 msgstr "表示中の固定ページの先祖階層のページ名"
 
-#: src/blocks/_pro/dynamic-text/edit.js:229
+#: src/blocks/_pro/dynamic-text/edit.js:242
 msgid "Page name in the parent hierarchy of the displayed page"
 msgstr "表示されているページの親階層にあるページ名"
 
-#: src/blocks/_pro/dynamic-text/edit.js:236
+#: src/blocks/_pro/dynamic-text/edit.js:249
 msgid "Current login user name"
 msgstr "現在のログインユーザー名"
 
-#: src/blocks/_pro/dynamic-text/edit.js:243
+#: src/blocks/_pro/dynamic-text/edit.js:256
 msgid "Custom Field"
 msgstr "カスタムフィールド"
 
-#: src/blocks/_pro/dynamic-text/edit.js:251
+#: src/blocks/_pro/dynamic-text/edit.js:260
+msgid "Post Slug"
+msgstr "投稿スラッグ"
+
+#: src/blocks/_pro/dynamic-text/edit.js:268
 msgid "Hide on Ancestor Hierarchy Pages"
 msgstr "先祖階層のページでは非表示にする"
 
-#: src/blocks/_pro/dynamic-text/edit.js:264
+#: src/blocks/_pro/dynamic-text/edit.js:281
 msgid "This block is not displayed on pages without a parent page."
 msgstr "このブロックは親ページがないページでは表示されません。"
 
-#: src/blocks/_pro/dynamic-text/edit.js:275
+#: src/blocks/_pro/dynamic-text/edit.js:292
 msgid "Hide on Parent Hierarchy Pages"
 msgstr "親階層のページでは非表示にする"
 
-#: src/blocks/_pro/dynamic-text/edit.js:288
+#: src/blocks/_pro/dynamic-text/edit.js:305
 msgid ""
 "This block will not display on pages other than pages that have a parent "
 "hierarchy."
 msgstr "このブロックは親階層を持つ固定ページ以外のページには表示されません。"
 
-#: src/blocks/_pro/dynamic-text/edit.js:299
+#: src/blocks/_pro/dynamic-text/edit.js:316
 msgid "Prefix Label"
 msgstr "接頭辞"
 
-#: src/blocks/_pro/dynamic-text/edit.js:306
+#: src/blocks/_pro/dynamic-text/edit.js:323
 msgid "Suffix Label"
 msgstr "接尾辞"
 
-#: src/blocks/_pro/dynamic-text/edit.js:313
+#: src/blocks/_pro/dynamic-text/edit.js:330
 msgid "Text for Logged Out Users"
 msgstr "ログアウトユーザー向けテキスト"
 
-#: src/blocks/_pro/dynamic-text/edit.js:325
+#: src/blocks/_pro/dynamic-text/edit.js:342
 msgid "Link to Login on Logout"
 msgstr "ログイン ログアウト リンク"
-
-#: src/blocks/_pro/dynamic-text/edit.js:341
-msgid "Custom Field Name"
-msgstr "カスタムフィールド値"
-
-#: src/blocks/_pro/dynamic-text/edit.js:348
-msgid "Field Type"
-msgstr "フィールドタイプ"
 
 #: src/blocks/_pro/dynamic-text/edit.js:35
 msgid "HTML element"
 msgstr "HTML 要素"
 
-#: src/blocks/_pro/dynamic-text/edit.js:357
+#: src/blocks/_pro/dynamic-text/edit.js:358
+msgid "Custom Field Name"
+msgstr "カスタムフィールド値"
+
+#: src/blocks/_pro/dynamic-text/edit.js:365
+msgid "Field Type"
+msgstr "フィールドタイプ"
+
+#: src/blocks/_pro/dynamic-text/edit.js:374
 msgid "text"
 msgstr "テキスト"
 
-#: src/blocks/_pro/dynamic-text/edit.js:361
+#: src/blocks/_pro/dynamic-text/edit.js:378
 msgid "textarea"
 msgstr "テキストエリア"
 
-#: src/blocks/_pro/dynamic-text/edit.js:365
+#: src/blocks/_pro/dynamic-text/edit.js:382
 msgid "wysiwyg"
 msgstr "wysiwyg"
 
-#: src/blocks/_pro/dynamic-text/edit.js:376
+#: src/blocks/_pro/dynamic-text/edit.js:393
 msgid "Setting up a link"
 msgstr "リンクの設定"
 
-#: src/blocks/_pro/dynamic-text/edit.js:389
+#: src/blocks/_pro/dynamic-text/edit.js:40
+msgid "div (default)"
+msgstr "div (標準)"
+
+#: src/blocks/_pro/dynamic-text/edit.js:406
 #: src/blocks/_pro/gridcolcard-item/edit.js:308
 #: src/blocks/_pro/icon-card-item/edit.js:128 src/blocks/button/edit.js:283
 #: src/blocks/icon/edit.js:316 src/blocks/pr-blocks/edit.js:262
 #: src/blocks/pr-content/edit.js:131 src/components/link-toolbar/index.js:321
 msgid "Open link new tab."
 msgstr "リンクを別ウィンドウで開く"
-
-#: src/blocks/_pro/dynamic-text/edit.js:40
-msgid "div (default)"
-msgstr "div (標準)"
 
 #: src/blocks/_pro/dynamic-text/edit.js:44
 msgid "h1"
@@ -3801,19 +3809,19 @@ msgstr "No wrap"
 msgid "Responsive BR"
 msgstr "画面サイズ毎の改行 "
 
-#: src/extensions/core/columns/style.js:178
+#: src/extensions/core/columns/style.js:206
 msgid "Column link"
 msgstr "カラムリンク"
 
-#: src/extensions/core/columns/style.js:52
+#: src/extensions/core/columns/style.js:59
 msgid "Column Direction"
 msgstr "カラムの方向"
 
-#: src/extensions/core/columns/style.js:57
+#: src/extensions/core/columns/style.js:64
 msgid "Reverse"
 msgstr "逆"
 
-#: src/extensions/core/cover/style.js:91
+#: src/extensions/core/cover/style.js:92
 msgid "Cover link"
 msgstr "カバーリンク"
 

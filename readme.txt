@@ -107,9 +107,11 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-[ Add function ][ dynamic-text ] When you set a link URL in the custom field display, you can now specify the link text.
-[ Add function ][ Column ] Added noreferrer, nofollow, and link description options to the link feature.
-[ Add function ][ Cover ] Added noreferrer, nofollow, and link description options to the link feature.
+
+[ Add function ][ Dynamic Text (Pro) ] When you set a link URL in the custom field display, you can now specify the link text.
+[ Add function ][ Dynamic Text (Pro) ] Add "Post Slug" as a display element
+[ Add function ][ Column / Cover ] Added noreferrer, nofollow, and link description options to the link feature.
+[ Bug fix ][ Blog Card (Pro) ] Fix PHP 8.x warning caused by missing 'clearCache' key.
 [ Bug Fix ][ Flow ] Fixed image overflow on the frontend and arrow misalignment in the editor.
 
 = 1.98.0 =

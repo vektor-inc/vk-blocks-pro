@@ -22,6 +22,7 @@ function vk_blocks_dynamic_text_get_attributes_default() {
 		'userNameBeforeText'       => null,
 		'userNameAfterText'        => null,
 		'customFieldName'          => null,
+		'postSlug'                 => null,
 		'customFieldLinkText'      => null,
 		'fieldType'                => 'text',
 		'isLinkSet'                => false,
@@ -162,6 +163,11 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 		}
 	} elseif ( 'custom-field' === $attributes['displayElement'] ) {
 		$block_content .= vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $block );
+	} elseif ( 'post-slug' === $attributes['displayElement'] ) {
+		$post = isset( $block->context['postId'] ) ? get_post( $block->context['postId'] ) : null;
+		if ( $post ) {
+			$block_content .= esc_html( $post->post_name );
+		}
 	}
 	if ( $attributes['tagName'] ) {
 		$block_content .= '</' . $attributes['tagName'] . '>';
@@ -239,6 +245,10 @@ function vk_blocks_register_block_dynamic_text() {
 						'default' => true,
 					),
 					'customFieldName'          => array(
+						'type'    => 'string',
+						'default' => '',
+					),
+					'postSlug'                 => array(
 						'type'    => 'string',
 						'default' => '',
 					),

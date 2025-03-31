@@ -304,7 +304,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:105
 #: src/blocks/_pro/timeline-item/edit.js:71
 #: src/blocks/border-box/edit.js:236
-#: src/blocks/button/edit.js:543
+#: src/blocks/button/edit.js:551
 #: src/blocks/icon/edit.js:316
 #: src/blocks/staff/edit.js:199
 msgid "Color"
@@ -313,7 +313,7 @@ msgstr ""
 #: src/admin/custom-format/index.js:208
 #: src/blocks/_pro/grid-column-item/edit.js:112
 #: src/blocks/_pro/gridcolcard/edit-common.js:147
-#: src/blocks/button/edit.js:615
+#: src/blocks/button/edit.js:623
 #: src/blocks/heading/edit.js:324
 msgid "Text Color"
 msgstr ""
@@ -322,7 +322,7 @@ msgstr ""
 #: src/blocks/_pro/grid-column-item/edit.js:118
 #: src/blocks/_pro/gridcolcard/edit-common.js:153
 #: src/blocks/border-box/edit.js:248
-#: src/blocks/button/edit.js:598
+#: src/blocks/button/edit.js:606
 #: src/blocks/icon/edit.js:321
 msgid "Background Color"
 msgstr ""
@@ -516,37 +516,37 @@ msgid "Margin"
 msgstr ""
 
 #: src/admin/margin.js:20
-#: src/blocks/spacer/edit.js:85
+#: src/blocks/spacer/edit.js:86
 msgid "XXS"
 msgstr ""
 
 #: src/admin/margin.js:24
-#: src/blocks/spacer/edit.js:89
+#: src/blocks/spacer/edit.js:90
 msgid "XS"
 msgstr ""
 
 #: src/admin/margin.js:28
-#: src/blocks/spacer/edit.js:93
+#: src/blocks/spacer/edit.js:94
 msgid "S"
 msgstr ""
 
 #: src/admin/margin.js:32
-#: src/blocks/spacer/edit.js:97
+#: src/blocks/spacer/edit.js:98
 msgid "M"
 msgstr ""
 
 #: src/admin/margin.js:36
-#: src/blocks/spacer/edit.js:101
+#: src/blocks/spacer/edit.js:102
 msgid "L"
 msgstr ""
 
 #: src/admin/margin.js:40
-#: src/blocks/spacer/edit.js:105
+#: src/blocks/spacer/edit.js:106
 msgid "XL"
 msgstr ""
 
 #: src/admin/margin.js:44
-#: src/blocks/spacer/edit.js:109
+#: src/blocks/spacer/edit.js:110
 msgid "XXL"
 msgstr ""
 
@@ -554,7 +554,7 @@ msgstr ""
 #: src/blocks/_pro/accordion/edit.js:139
 #: src/blocks/_pro/outer/edit.js:1410
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:174
-#: src/blocks/button/edit.js:446
+#: src/blocks/button/edit.js:454
 #: src/blocks/slider/edit-multiItem.js:198
 #: src/blocks/slider/edit.js:326
 #: src/components/advanced-viewport-control/index.js:25
@@ -565,7 +565,7 @@ msgstr ""
 #: src/blocks/_pro/accordion/edit.js:122
 #: src/blocks/_pro/outer/edit.js:1394
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:201
-#: src/blocks/button/edit.js:411
+#: src/blocks/button/edit.js:419
 #: src/blocks/slider/edit-multiItem.js:225
 #: src/blocks/slider/edit.js:347
 #: src/components/advanced-viewport-control/index.js:32
@@ -576,7 +576,7 @@ msgstr ""
 #: src/blocks/_pro/accordion/edit.js:105
 #: src/blocks/_pro/outer/edit.js:1378
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:230
-#: src/blocks/button/edit.js:378
+#: src/blocks/button/edit.js:386
 #: src/blocks/slider/edit-multiItem.js:254
 #: src/blocks/slider/edit.js:368
 #: src/components/advanced-viewport-control/index.js:41
@@ -1010,7 +1010,7 @@ msgid "Title"
 msgstr ""
 
 #: src/blocks/_pro/card-item/edit.js:217
-#: src/blocks/_pro/dynamic-text/edit.js:369
+#: src/blocks/_pro/dynamic-text/edit.js:386
 msgid "URL"
 msgstr ""
 
@@ -1103,125 +1103,137 @@ msgstr ""
 msgid "Current page"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:124
+#: src/blocks/_pro/dynamic-text/edit.js:128
 msgid "Please select display element from the Setting sidebar."
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:132
+#: src/blocks/_pro/dynamic-text/edit.js:136
 msgid "Post Type Name"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:136
+#: src/blocks/_pro/dynamic-text/edit.js:140
 msgid "Ancestor Page Title"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:140
+#: src/blocks/_pro/dynamic-text/edit.js:144
 msgid "Parent Page Title"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:153
+#: src/blocks/_pro/dynamic-text/edit.js:157
 msgid "Custom field"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:167
+#: src/blocks/_pro/dynamic-text/edit.js:171
 msgid "This block is not rendered because no custom field name is specified."
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:197
+#: src/blocks/_pro/dynamic-text/edit.js:180
+msgid "Set the slug and save the post to display it."
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:210
 msgid "Display element settings"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:202
+#: src/blocks/_pro/dynamic-text/edit.js:215
 msgid "Display element"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:211
+#: src/blocks/_pro/dynamic-text/edit.js:224
 msgid "Please Select"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:215
+#: src/blocks/_pro/dynamic-text/edit.js:228
 msgid "Post type name of the page being viewed"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:222
+#: src/blocks/_pro/dynamic-text/edit.js:235
 msgid "Page name in the ancestor hierarchy of the displayed page"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:229
+#: src/blocks/_pro/dynamic-text/edit.js:242
 msgid "Page name in the parent hierarchy of the displayed page"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:236
+#: src/blocks/_pro/dynamic-text/edit.js:249
 msgid "Current login user name"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:243
+#: src/blocks/_pro/dynamic-text/edit.js:256
 msgid "Custom Field"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:251
+#: src/blocks/_pro/dynamic-text/edit.js:260
+msgid "Post Slug"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:268
 msgid "Hide on Ancestor Hierarchy Pages"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:264
+#: src/blocks/_pro/dynamic-text/edit.js:281
 msgid "This block is not displayed on pages without a parent page."
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:275
+#: src/blocks/_pro/dynamic-text/edit.js:292
 msgid "Hide on Parent Hierarchy Pages"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:288
+#: src/blocks/_pro/dynamic-text/edit.js:305
 msgid ""
 "This block will not display on pages other than pages that have a parent "
 "hierarchy."
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:299
+#: src/blocks/_pro/dynamic-text/edit.js:316
 msgid "Prefix Label"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:306
+#: src/blocks/_pro/dynamic-text/edit.js:323
 msgid "Suffix Label"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:313
+#: src/blocks/_pro/dynamic-text/edit.js:330
 msgid "Text for Logged Out Users"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:325
+#: src/blocks/_pro/dynamic-text/edit.js:342
 msgid "Link to Login on Logout"
-msgstr ""
-
-#: src/blocks/_pro/dynamic-text/edit.js:341
-msgid "Custom Field Name"
-msgstr ""
-
-#: src/blocks/_pro/dynamic-text/edit.js:348
-msgid "Field Type"
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:35
 msgid "HTML element"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:357
-msgid "text"
-msgstr ""
-
-#: src/blocks/_pro/dynamic-text/edit.js:361
-msgid "textarea"
+#: src/blocks/_pro/dynamic-text/edit.js:358
+msgid "Custom Field Name"
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:365
+msgid "Field Type"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:374
+msgid "text"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:378
+msgid "textarea"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:382
 msgid "wysiwyg"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:376
+#: src/blocks/_pro/dynamic-text/edit.js:393
 msgid "Setting up a link"
 msgstr ""
 
-#: src/blocks/_pro/dynamic-text/edit.js:389
+#: src/blocks/_pro/dynamic-text/edit.js:40
+msgid "div (default)"
+msgstr ""
+
+#: src/blocks/_pro/dynamic-text/edit.js:406
 #: src/blocks/_pro/gridcolcard-item/edit.js:305
 #: src/blocks/_pro/icon-card-item/edit.js:128
 #: src/blocks/button/edit.js:284
@@ -1230,10 +1242,6 @@ msgstr ""
 #: src/blocks/pr-content/edit.js:131
 #: src/components/link-toolbar/index.js:321
 msgid "Open link new tab."
-msgstr ""
-
-#: src/blocks/_pro/dynamic-text/edit.js:40
-msgid "div (default)"
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:44
@@ -1312,7 +1320,7 @@ msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:175
 #: src/blocks/balloon/edit.js:434
-#: src/blocks/button/edit.js:358
+#: src/blocks/button/edit.js:359
 #: src/blocks/pr-content/edit.js:252
 #: src/components/display-items-control/index.js:140
 msgid "Right"
@@ -1324,7 +1332,7 @@ msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:183
 #: src/blocks/balloon/edit.js:430
-#: src/blocks/button/edit.js:350
+#: src/blocks/button/edit.js:351
 #: src/blocks/pr-content/edit.js:256
 #: src/components/display-items-control/index.js:132
 msgid "Left"
@@ -1621,7 +1629,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:82
 #: src/blocks/alert/edit.js:73
 #: src/blocks/border-box/edit.js:272
-#: src/blocks/button/edit.js:626
+#: src/blocks/button/edit.js:634
 #: src/blocks/heading/edit.js:335
 #: src/blocks/icon/edit.js:293
 #: src/blocks/pr-content/edit.js:212
@@ -1638,7 +1646,7 @@ msgid "Icon Background:"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:153
-#: src/blocks/button/edit.js:500
+#: src/blocks/button/edit.js:508
 #: src/blocks/icon-outer/edit.js:238
 #: src/blocks/icon/edit.js:235
 #: src/blocks/pr-blocks/edit.js:285
@@ -1646,7 +1654,7 @@ msgid "Solid color"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:157
-#: src/blocks/button/edit.js:504
+#: src/blocks/button/edit.js:512
 #: src/blocks/pr-blocks/edit.js:289
 msgid "No background"
 msgstr ""
@@ -1714,7 +1722,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:142
 #: src/blocks/_pro/timeline-item/edit.js:108
 #: src/blocks/balloon/edit.js:552
-#: src/blocks/button/edit.js:532
+#: src/blocks/button/edit.js:540
 #: src/blocks/staff/edit.js:177
 msgid "None"
 msgstr ""
@@ -2070,7 +2078,7 @@ msgid "Navigation Position"
 msgstr ""
 
 #: src/blocks/_pro/post-list-slider/edit.js:330
-#: src/blocks/button/edit.js:354
+#: src/blocks/button/edit.js:355
 #: src/blocks/slider/edit.js:536
 #: src/components/display-items-control/index.js:136
 msgid "Center"
@@ -2412,27 +2420,27 @@ msgstr ""
 
 #: src/blocks/alert/edit.js:53
 #: src/blocks/alert/variations.js:16
-#: src/blocks/button/edit.js:558
+#: src/blocks/button/edit.js:566
 #: src/blocks/pr-content/edit.js:171
 msgid "Success"
 msgstr ""
 
 #: src/blocks/alert/edit.js:57
-#: src/blocks/button/edit.js:562
+#: src/blocks/button/edit.js:570
 #: src/blocks/pr-content/edit.js:175
 msgid "Info"
 msgstr ""
 
 #: src/blocks/alert/edit.js:61
 #: src/blocks/alert/variations.js:57
-#: src/blocks/button/edit.js:566
+#: src/blocks/button/edit.js:574
 #: src/blocks/pr-content/edit.js:179
 msgid "Warning"
 msgstr ""
 
 #: src/blocks/alert/edit.js:65
 #: src/blocks/alert/variations.js:76
-#: src/blocks/button/edit.js:570
+#: src/blocks/button/edit.js:578
 #: src/blocks/pr-content/edit.js:183
 msgid "Danger"
 msgstr ""
@@ -2675,103 +2683,103 @@ msgstr ""
 msgid "Button Position:"
 msgstr ""
 
-#: src/blocks/button/edit.js:362
+#: src/blocks/button/edit.js:363
 msgid "Wide"
 msgstr ""
 
-#: src/blocks/button/edit.js:366
+#: src/blocks/button/edit.js:367
 #: src/extensions/common/custom-block-variation/utils.js:31
 msgid "Block"
 msgstr ""
 
-#: src/blocks/button/edit.js:375
+#: src/blocks/button/edit.js:383
 msgid "Button Width:"
 msgstr ""
 
-#: src/blocks/button/edit.js:482
+#: src/blocks/button/edit.js:490
 msgid "Button Style:"
 msgstr ""
 
-#: src/blocks/button/edit.js:508
+#: src/blocks/button/edit.js:516
 msgid "Text only"
 msgstr ""
 
-#: src/blocks/button/edit.js:512
+#: src/blocks/button/edit.js:520
 msgid "If you select \"No background\", that you need to select a Custom Color."
 msgstr ""
 
-#: src/blocks/button/edit.js:521
+#: src/blocks/button/edit.js:529
 msgid "Button Effect:"
 msgstr ""
 
-#: src/blocks/button/edit.js:536
+#: src/blocks/button/edit.js:544
 msgid "Shine"
 msgstr ""
 
-#: src/blocks/button/edit.js:546
+#: src/blocks/button/edit.js:554
 msgid "Default Color (Bootstrap)"
 msgstr ""
 
-#: src/blocks/button/edit.js:550
+#: src/blocks/button/edit.js:558
 #: src/blocks/pr-content/edit.js:163
 msgid "Primary"
 msgstr ""
 
-#: src/blocks/button/edit.js:554
+#: src/blocks/button/edit.js:562
 #: src/blocks/pr-content/edit.js:167
 msgid "Secondary"
 msgstr ""
 
-#: src/blocks/button/edit.js:574
+#: src/blocks/button/edit.js:582
 #: src/blocks/pr-content/edit.js:187
 msgid "Light"
 msgstr ""
 
-#: src/blocks/button/edit.js:578
+#: src/blocks/button/edit.js:586
 #: src/blocks/pr-content/edit.js:191
 msgid "Dark"
 msgstr ""
 
-#: src/blocks/button/edit.js:591
+#: src/blocks/button/edit.js:599
 msgid "Custom Color"
 msgstr ""
 
-#: src/blocks/button/edit.js:599
+#: src/blocks/button/edit.js:607
 #: src/blocks/pr-content/edit.js:201
 msgid "Button Color"
 msgstr ""
 
-#: src/blocks/button/edit.js:601
+#: src/blocks/button/edit.js:609
 msgid ""
 "This color palette overrides the default color. If you want to use the "
 "default color, click the clear button."
 msgstr ""
 
-#: src/blocks/button/edit.js:633
+#: src/blocks/button/edit.js:641
 #: src/blocks/heading/edit.js:339
 #: src/blocks/pr-content/edit.js:219
 #: src/components/scroll-hint/index.js:118
 msgid "Before text"
 msgstr ""
 
-#: src/blocks/button/edit.js:655
+#: src/blocks/button/edit.js:663
 #: src/blocks/heading/edit.js:348
 #: src/blocks/pr-content/edit.js:231
 #: src/components/scroll-hint/index.js:143
 msgid "After text"
 msgstr ""
 
-#: src/blocks/button/edit.js:662
+#: src/blocks/button/edit.js:670
 #: src/blocks/icon-outer/edit.js:90
 #: src/blocks/icon/edit.js:87
 msgid "Size"
 msgstr ""
 
-#: src/blocks/button/edit.js:676
+#: src/blocks/button/edit.js:684
 msgid "Button border radius"
 msgstr ""
 
-#: src/blocks/button/edit.js:717
+#: src/blocks/button/edit.js:725
 msgid "Input text"
 msgstr ""
 
@@ -3161,11 +3169,11 @@ msgstr ""
 msgid "Space Type"
 msgstr ""
 
-#: src/blocks/spacer/edit.js:113
+#: src/blocks/spacer/edit.js:114
 msgid "Custom"
 msgstr ""
 
-#: src/blocks/spacer/edit.js:118
+#: src/blocks/spacer/edit.js:125
 msgid "You can change each common margin size from Setting > VK Blocks"
 msgstr ""
 

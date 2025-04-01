@@ -6,7 +6,8 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 import {
-	ButtonGroup,
+	__experimentalToggleGroupControl as ToggleGroupControl,
+	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
 	PanelBody,
 	Button,
 	SelectControl,
@@ -417,30 +418,22 @@ export default function BalloonEdit(props) {
 							'vk-blocks-pro'
 						)}{' '}
 					</p>
-					<ButtonGroup className="mb-3">
-						<Button
-							isSmall
-							isPrimary={balloonAlign === 'position-left'}
-							isSecondary={balloonAlign !== 'position-left'}
-							onClick={() =>
-								setAttributes({ balloonAlign: 'position-left' })
-							}
-						>
-							{__('Left', 'vk-blocks-pro')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={balloonAlign === 'position-right'}
-							isSecondary={balloonAlign !== 'position-right'}
-							onClick={() =>
-								setAttributes({
-									balloonAlign: 'position-right',
-								})
-							}
-						>
-							{__('Right', 'vk-blocks-pro')}
-						</Button>
-					</ButtonGroup>
+					<ToggleGroupControl
+						value={balloonAlign}
+						onChange={(value) =>
+							setAttributes({ balloonAlign: value })
+						}
+						isBlock
+					>
+						<ToggleGroupControlOption
+							value="position-left"
+							label={__('Left', 'vk-blocks-pro')}
+						/>
+						<ToggleGroupControlOption
+							value="position-right"
+							label={__('Right', 'vk-blocks-pro')}
+						/>
+					</ToggleGroupControl>
 
 					<p className={'mb-1 block-prop-title'}>
 						{__('Type', 'vk-blocks-pro')}
@@ -451,64 +444,46 @@ export default function BalloonEdit(props) {
 							'vk-blocks-pro'
 						)}{' '}
 					</p>
-					<ButtonGroup className="mb-3">
-						<Button
-							isSmall
-							isPrimary={balloonType === 'type-speech'}
-							isSecondary={balloonType !== 'type-speech'}
-							onClick={() =>
-								setAttributes({ balloonType: 'type-speech' })
-							}
-						>
-							{__('Speech', 'vk-blocks-pro')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={balloonType === 'type-think'}
-							isSecondary={balloonType !== 'type-think'}
-							onClick={() =>
-								setAttributes({ balloonType: 'type-think' })
-							}
-						>
-							{__('Thinking', 'vk-blocks-pro')}
-						</Button>
-					</ButtonGroup>
+					<ToggleGroupControl
+						value={balloonType}
+						onChange={(value) =>
+							setAttributes({ balloonType: value })
+						}
+						isBlock
+					>
+						<ToggleGroupControlOption
+							value="type-speech"
+							label={__('Speech', 'vk-blocks-pro')}
+						/>
+						<ToggleGroupControlOption
+							value="type-think"
+							label={__('Thinking', 'vk-blocks-pro')}
+						/>
+					</ToggleGroupControl>
 
 					<p className={'mb-1 block-prop-title'}>
 						{__('Image Style', 'vk-blocks-pro')}
 					</p>
-					<ButtonGroup className="mb-3">
-						<Button
-							isSmall
-							isPrimary={balloonImageType === 'normal'}
-							isSecondary={balloonImageType !== 'normal'}
-							onClick={() =>
-								setAttributes({ balloonImageType: 'normal' })
-							}
-						>
-							{__('Normal', 'vk-blocks-pro')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={balloonImageType === 'rounded'}
-							isSecondary={balloonImageType !== 'rounded'}
-							onClick={() =>
-								setAttributes({ balloonImageType: 'rounded' })
-							}
-						>
-							{__('Rounded', 'vk-blocks-pro')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={balloonImageType === 'circle'}
-							isSecondary={balloonImageType !== 'circle'}
-							onClick={() =>
-								setAttributes({ balloonImageType: 'circle' })
-							}
-						>
-							{__('Circle', 'vk-blocks-pro')}
-						</Button>
-					</ButtonGroup>
+					<ToggleGroupControl
+						value={balloonImageType}
+						onChange={(value) =>
+							setAttributes({ balloonImageType: value })
+						}
+						isBlock
+					>
+						<ToggleGroupControlOption
+							value="normal"
+							label={__('Normal', 'vk-blocks-pro')}
+						/>
+						<ToggleGroupControlOption
+							value="rounded"
+							label={__('Rounded', 'vk-blocks-pro')}
+						/>
+						<ToggleGroupControlOption
+							value="circle"
+							label={__('Circle', 'vk-blocks-pro')}
+						/>
+					</ToggleGroupControl>
 
 					<BaseControl>
 						<p className={'mb-1 block-prop-title'}>

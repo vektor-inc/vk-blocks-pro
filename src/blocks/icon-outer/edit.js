@@ -11,7 +11,8 @@ import {
 	BaseControl,
 	TextControl,
 	RangeControl,
-	ButtonGroup,
+	__experimentalToggleGroupControl as ToggleGroupControl,
+	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
 	Button,
 	SelectControl,
 } from '@wordpress/components';
@@ -225,35 +226,26 @@ export default function IconOuterEdit(props) {
 							allowReset={true}
 						/>
 					</BaseControl>
-					<p className={`mt-0 mb-2`}>
-						{__('Style', 'vk-blocks-pro')}
-					</p>
-					<ButtonGroup className={`mb-3`}>
-						<Button
-							isSmall
-							isPrimary={iconType === '0'}
-							isSecondary={iconType !== '0'}
-							onClick={() => setAttributes({ iconType: '0' })}
-						>
-							{__('Solid color', 'vk-blocks-pro')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={iconType === '1'}
-							isSecondary={iconType !== '1'}
-							onClick={() => setAttributes({ iconType: '1' })}
-						>
-							{__('Icon & Frame', 'vk-blocks-pro')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={iconType === '2'}
-							isSecondary={iconType !== '2'}
-							onClick={() => setAttributes({ iconType: '2' })}
-						>
-							{__('Icon only', 'vk-blocks-pro')}
-						</Button>
-					</ButtonGroup>
+					<p className="mt-0 mb-2">{__('Style', 'vk-blocks-pro')}</p>
+
+					<ToggleGroupControl
+						value={iconType}
+						onChange={(value) => setAttributes({ iconType: value })}
+						isBlock
+					>
+						<ToggleGroupControlOption
+							value="0"
+							label={__('Solid color', 'vk-blocks-pro')}
+						/>
+						<ToggleGroupControlOption
+							value="1"
+							label={__('Icon & Frame', 'vk-blocks-pro')}
+						/>
+						<ToggleGroupControlOption
+							value="2"
+							label={__('Icon only', 'vk-blocks-pro')}
+						/>
+					</ToggleGroupControl>
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>

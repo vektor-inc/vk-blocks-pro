@@ -111,6 +111,7 @@ e.g.
 [ Add function ][ Dynamic Text (Pro) ] Add "Post Slug" as a display element
 [ Add function ][ Column / Cover ] Added noreferrer, nofollow, and link description options to the link feature.
 [ Specification change ][ Grid Column Card (Pro) ] Changed behavior to automatically enable "Edit Lock" when "This column only" edit mode is selected.The manual "Edit Lock" toggle has been removed. Selecting "This column only" now automatically locks the column.
+[ Specification Change ][ Some Block ] Change the editor component from Button Group to Toggle Group Control.
 [ Bug fix ][ Blog Card (Pro) ] Fix PHP 8.x warning caused by missing 'clearCache' key.
 [ Bug Fix ][ Flow ] Fixed image overflow on the frontend and arrow misalignment in the editor.
 

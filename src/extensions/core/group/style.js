@@ -257,7 +257,8 @@ const overrideBlockSettings = (settings, name, currentDeprecated) => {
 			supports: {
 				...settings.supports,
 				layout:
-					typeof settings.supports?.layout === 'object' || settings.supports?.layout === true
+					typeof settings.supports?.layout === 'object' ||
+					settings.supports?.layout === true
 						? settings.supports.layout
 						: {},
 			},

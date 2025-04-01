@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
 #: src/admin/balloon/add-button.js:38
 msgid "Added balloon image setting"
@@ -1996,10 +1996,8 @@ msgid "Fade"
 msgstr "フェード"
 
 #: src/blocks/_pro/post-list-slider/edit.js:210 src/blocks/slider/edit.js:425
-#, fuzzy
-#| msgid "Loop "
 msgid "Loop"
-msgstr "繰り返し"
+msgstr "ループ"
 
 #: src/blocks/_pro/post-list-slider/edit.js:220 src/blocks/slider/edit.js:435
 msgid "AutoPlay"
@@ -5469,8 +5467,8 @@ msgstr "順番を説明する時に便利でシンプルなスケジュールな
 
 #~ msgid ""
 #~ "If you choose \"Active Tree shaking\" that delete the useless css.If you "
-#~ "using active css class that please fill in class name. Ex) btn-active,"
-#~ "slide-active,scrolled"
+#~ "using active css class that please fill in class name. Ex) btn-"
+#~ "active,slide-active,scrolled"
 #~ msgstr ""
 #~ "Tree shaking を有効にしている場合、使用していないCSSは削除されます。もし使"
 #~ "用している動的クラスがある場合はクラス名を入力してください。 例）btn-"

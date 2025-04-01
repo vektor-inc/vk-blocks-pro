@@ -255,7 +255,7 @@ const overrideBlockSettings = (settings, name, currentDeprecated) => {
 							});
 						}
 						return list;
-				  })()
+					})()
 				: settings.deprecated;
 
 		const layoutValue =

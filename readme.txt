@@ -110,10 +110,10 @@ e.g.
 
 [ Add function ][ Dynamic Text (Pro) ] Add "Post Slug" as a display element
 [ Add function ][ Column / Cover ] Added noreferrer, nofollow, and link description options to the link feature.
-[ Specification change ][ Core Group ] Added defensive layout support fallback and safer deprecated merging for compatibility with themes like Astra.
 [ Specific Change ][ Some Block ] Change the editor component from Button Group to Toggle Group Control.
 [ Bug fix ][ Blog Card (Pro) ] Fix PHP 8.x warning caused by missing 'clearCache' key.
 [ Bug Fix ][ Flow ] Fixed image overflow on the frontend and arrow misalignment in the editor.
+[ Bug Fix ][ Core Group ] Prevented save errors when layout is undefined or invalid; also refactored deprecated handling.
 
 = 1.98.0 =
 [ Specification change ][ Slider ] Changed slider height minimum from 40px to 24px.

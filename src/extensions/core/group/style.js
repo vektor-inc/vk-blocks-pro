@@ -239,9 +239,10 @@ const overrideBlockSettings = (settings, name, currentDeprecated) => {
 	}
 
 	// layout の値を取得
-	const layoutValue = settings.supports && 'layout' in settings.supports
-	? settings.supports.layout
-	: {};
+	const layoutValue =
+		settings.supports && 'layout' in settings.supports
+			? settings.supports.layout
+			: {};
 
 	let newSettings = assign({}, settings, {
 		supports: {

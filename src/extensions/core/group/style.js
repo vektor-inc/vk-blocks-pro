@@ -252,9 +252,10 @@ const overrideBlockSettings = (settings, name, currentDeprecated) => {
 			newDeprecated.splice(targetIndex, 0, itemToInsert);
 		});
 
-		const layoutValue = settings.supports && 'layout' in settings.supports
-		? settings.supports.layout
-		: {};
+		const layoutValue =
+			settings.supports && 'layout' in settings.supports
+				? settings.supports.layout
+				: {};
 
 		const newSettings = assign({}, settings, {
 			save,

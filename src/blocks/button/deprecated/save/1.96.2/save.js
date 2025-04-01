@@ -15,7 +15,6 @@ export default function save(props) {
 		buttonColor,
 		buttonTextColorCustom,
 		buttonColorCustom,
-		buttonBorderColorCustom,
 		buttonAlign,
 		buttonWidthMobile,
 		buttonWidthTablet,
@@ -36,8 +35,6 @@ export default function save(props) {
 		(buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) ||
 		(buttonTextColorCustom !== undefined &&
 			isHexColor(buttonTextColorCustom)) ||
-		(buttonBorderColorCustom !== undefined &&
-			isHexColor(buttonBorderColorCustom)) ||
 		outerGap
 	) {
 		containerClass = `vk_button vk_button-color-custom vk_button-${blockId}`;
@@ -80,7 +77,6 @@ export default function save(props) {
 			<VKBButton
 				lbTextColorCustom={buttonTextColorCustom}
 				lbColorCustom={buttonColorCustom}
-				lbBorderColorCustom={buttonBorderColorCustom}
 				lbColor={buttonColor}
 				lbType={buttonType}
 				lbAlign={buttonAlign}

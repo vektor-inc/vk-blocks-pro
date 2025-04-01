@@ -113,7 +113,7 @@ e.g.
 [ Specific Change ][ Some Block ] Change the editor component from Button Group to Toggle Group Control.
 [ Bug fix ][ Blog Card (Pro) ] Fix PHP 8.x warning caused by missing 'clearCache' key.
 [ Bug Fix ][ Flow ] Fixed image overflow on the frontend and arrow misalignment in the editor.
-[ Bug Fix ][ Core Group ] Prevented save errors when layout is undefined or invalid; also refactored deprecated handling.
+[ Bug Fix ][ Core Group ] Fixed blank editor issue when layout is undefined or invalid in some themes.
 
 = 1.98.0 =
 [ Specification change ][ Slider ] Changed slider height minimum from 40px to 24px.

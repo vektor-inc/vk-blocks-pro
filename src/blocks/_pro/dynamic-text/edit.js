@@ -106,17 +106,21 @@ export default function DynamicTextEdit(props) {
 		}),
 	});
 
-	const { postType, parentPageId, currentUser } = useSelect((select) => {
-		const { getCurrentPostType, getEditedPostAttribute } =
-			select('core/editor');
-		const { getCurrentUser } = select('core');
+	const { postType, parentPageId, currentUser, postSlug } = useSelect(
+		(select) => {
+			const { getCurrentPostType, getEditedPostAttribute } =
+				select('core/editor');
+			const { getCurrentUser } = select('core');
 
-		return {
-			postType: getCurrentPostType(),
-			parentPageId: getEditedPostAttribute('parent'),
-			currentUser: getCurrentUser(),
-		};
-	}, []);
+			return {
+				postType: getCurrentPostType(),
+				parentPageId: getEditedPostAttribute('parent'),
+				currentUser: getCurrentUser(),
+				postSlug: getEditedPostAttribute('slug'),
+			};
+		},
+		[]
+	);
 
 	let editContent;
 	const editAlertContent = (
@@ -166,6 +170,15 @@ export default function DynamicTextEdit(props) {
 			<div className="alert alert-warning text-center">
 				{__(
 					'This block is not rendered because no custom field name is specified.',
+					'vk-blocks-pro'
+				)}
+			</div>
+		);
+	} else if (displayElement === 'post-slug' && !postSlug) {
+		editContent = (
+			<div className="alert alert-warning text-center">
+				{__(
+					'Set the slug and save the post to display it.',
 					'vk-blocks-pro'
 				)}
 			</div>
@@ -241,6 +254,10 @@ export default function DynamicTextEdit(props) {
 								{
 									value: 'custom-field',
 									label: __('Custom Field', 'vk-blocks-pro'),
+								},
+								{
+									value: 'post-slug',
+									label: __('Post Slug', 'vk-blocks-pro'),
 								},
 							]}
 						/>

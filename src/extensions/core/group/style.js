@@ -234,23 +234,29 @@ import { assign } from 'lodash';
  * @return {Object} The modified block settings.
  */
 const overrideBlockSettings = (settings, name, currentDeprecated) => {
-	if (name === 'core/group' && currentDeprecated === null) {
-		const newDeprecated = [...settings.deprecated];
-		// Sort deprecated items in descending order of targetVersion to prevent index shifting
-		const sortedDeprecated = [...deprecated].sort(
-			(a, b) =>
-				(b.targetVersion || newDeprecated.length) -
-				(a.targetVersion || newDeprecated.length)
-		);
+	if (name === 'core/group') {
+		const newDeprecated =
+			currentDeprecated === null
+				? (() => {
+						const list = [...(settings.deprecated || [])];
+						if (Array.isArray(deprecated)) {
+							const sortedDeprecated = [...deprecated].sort(
+								(a, b) =>
+									(b.targetVersion || list.length) -
+									(a.targetVersion || list.length)
+							);
 
-		sortedDeprecated.forEach((deprecatedItem) => {
-			const targetIndex =
-				deprecatedItem.targetVersion || newDeprecated.length;
-			// Create a copy of the deprecatedItem without targetVersion
-			const itemToInsert = { ...deprecatedItem };
-			delete itemToInsert.targetVersion;
-			newDeprecated.splice(targetIndex, 0, itemToInsert);
-		});
+							sortedDeprecated.forEach((deprecatedItem) => {
+								const targetIndex =
+									deprecatedItem.targetVersion || list.length;
+								const itemToInsert = { ...deprecatedItem };
+								delete itemToInsert.targetVersion;
+								list.splice(targetIndex, 0, itemToInsert);
+							});
+						}
+						return list;
+				  })()
+				: settings.deprecated;
 
 		const layoutValue =
 			settings.supports && 'layout' in settings.supports
@@ -297,6 +303,7 @@ const overrideBlockSettings = (settings, name, currentDeprecated) => {
 				default: 'div',
 			};
 		}
+
 		return newSettings;
 	}
 	return settings;

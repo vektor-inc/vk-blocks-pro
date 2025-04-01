@@ -536,7 +536,7 @@ export default function ButtonEdit(props) {
 								isBlock
 							>
 								<ToggleGroupControlOption
-									value=""
+									value="none"
 									label={__('None', 'vk-blocks-pro')}
 								/>
 								<ToggleGroupControlOption

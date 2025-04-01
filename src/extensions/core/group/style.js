@@ -234,79 +234,55 @@ import { assign } from 'lodash';
  * @return {Object} The modified block settings.
  */
 const overrideBlockSettings = (settings, name, currentDeprecated) => {
-	if (name === 'core/group') {
-		const newDeprecated =
-			currentDeprecated === null
-				? (() => {
-						const list = [...(settings.deprecated || [])];
-						if (Array.isArray(deprecated)) {
-							const sortedDeprecated = [...deprecated].sort(
-								(a, b) =>
-									(b.targetVersion || list.length) -
-									(a.targetVersion || list.length)
-							);
-
-							sortedDeprecated.forEach((deprecatedItem) => {
-								const targetIndex =
-									deprecatedItem.targetVersion || list.length;
-								const itemToInsert = { ...deprecatedItem };
-								delete itemToInsert.targetVersion;
-								list.splice(targetIndex, 0, itemToInsert);
-							});
-						}
-						return list;
-					})()
-				: settings.deprecated;
-
-		const layoutValue =
-			settings.supports && 'layout' in settings.supports
-				? settings.supports.layout
-				: {};
-
-		const newSettings = assign({}, settings, {
-			save,
-			deprecated: newDeprecated,
-			supports: {
-				...settings.supports,
-				layout: layoutValue,
-			},
-		});
-
-		// Support for existing group blocks by adding default values for new attributes
-		if (!newSettings.attributes.linkUrl) {
-			newSettings.attributes.linkUrl = {
-				type: 'string',
-				default: '',
-			};
-		}
-		if (!newSettings.attributes.linkTarget) {
-			newSettings.attributes.linkTarget = {
-				type: 'string',
-				default: '',
-			};
-		}
-		if (!newSettings.attributes.relAttribute) {
-			newSettings.attributes.relAttribute = {
-				type: 'string',
-				default: '',
-			};
-		}
-		if (!newSettings.attributes.linkDescription) {
-			newSettings.attributes.linkDescription = {
-				type: 'string',
-				default: '',
-			};
-		}
-		if (!newSettings.attributes.tagName) {
-			newSettings.attributes.tagName = {
-				type: 'string',
-				default: 'div',
-			};
-		}
-
-		return newSettings;
+	if (name !== 'core/group') {
+		return settings;
 	}
-	return settings;
+
+	// layout の値を取得
+	const layoutValue =
+		typeof settings.supports?.layout === 'object' ||
+		settings.supports?.layout === true
+			? settings.supports.layout
+			: {};
+
+	let newSettings = assign({}, settings, {
+		supports: {
+			...settings.supports,
+			layout: layoutValue,
+		},
+	});
+
+	// deprecated は currentDeprecated === null のときだけマージする
+	if (currentDeprecated === null) {
+		const newDeprecated = [...(settings.deprecated || [])];
+		const sorted = [...(Array.isArray(deprecated) ? deprecated : [])].sort(
+			(a, b) =>
+				(b.targetVersion || newDeprecated.length) -
+				(a.targetVersion || newDeprecated.length)
+		);
+		sorted.forEach((item) => {
+			const index = item.targetVersion || newDeprecated.length;
+			const copy = { ...item };
+			delete copy.targetVersion;
+			newDeprecated.splice(index, 0, copy);
+		});
+		newSettings = {
+			...newSettings,
+			deprecated: newDeprecated,
+			save,
+		};
+	}
+
+	newSettings.attributes = {
+		...(newSettings.attributes || {}),
+		linkUrl: { type: 'string', default: '' },
+		linkTarget: { type: 'string', default: '' },
+		relAttribute: { type: 'string', default: '' },
+		linkDescription: { type: 'string', default: '' },
+		tagName: { type: 'string', default: 'div' },
+	};
+
+	return newSettings;
 };
 
 addFilter(

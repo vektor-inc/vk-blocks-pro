@@ -254,6 +254,13 @@ const overrideBlockSettings = (settings, name, currentDeprecated) => {
 		const newSettings = assign({}, settings, {
 			save,
 			deprecated: newDeprecated,
+			supports: {
+				...settings.supports,
+				layout:
+					typeof settings.supports?.layout === 'object' || settings.supports?.layout === true
+						? settings.supports.layout
+						: {},
+			},
 		});
 
 		// Support for existing group blocks by adding default values for new attributes

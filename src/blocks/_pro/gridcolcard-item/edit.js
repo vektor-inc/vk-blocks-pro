@@ -261,7 +261,12 @@ export default function Edit(props) {
 				>
 					<ToggleGroupControl
 						value={editMode}
-						onChange={(value) => setEditMode(value)}
+						onChange={(value) => {
+							setEditMode(value);
+							if (value === 'self') {
+								setAttributes({ editLock: true });
+							}
+						}}
 						isBlock
 					>
 						<ToggleGroupControlOption

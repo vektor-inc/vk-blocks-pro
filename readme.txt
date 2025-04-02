@@ -108,11 +108,13 @@ e.g.
 
 == Changelog ==
 
+[ Specification change ][ Grid Column Card (Pro) ] When a user selects "This column only" in the edit mode, the edit lock will be automatically enabled. The manual "Edit Lock" toggle control has been removed since it is now automatically controlled by the edit mode selection.
+
 = 1.99.0 =
 [ Add function ][ Dynamic Text (Pro) ] Add "Post Slug" as a display element
 [ Add function ][ Column / Cover ] Added noreferrer, nofollow, and link description options to the link feature.
-[ Specific Change ][ Some Block ] Change the editor component from Button Group to Toggle Group Control.
-[ Bug Fix ][ Blog Card (Pro) ] Fix PHP 8.x warning caused by missing 'clearCache' key.
+[ Specification Change ][ Some Block ] Change the editor component from Button Group to Toggle Group Control.
+[ Bug fix ][ Blog Card (Pro) ] Fix PHP 8.x warning caused by missing 'clearCache' key.
 [ Bug Fix ][ Flow ] Fixed image overflow on the frontend and arrow misalignment in the editor.
 [ Bug Fix ][ Core Group ] Fixed blank editor issue when layout is undefined or invalid in some themes.
 

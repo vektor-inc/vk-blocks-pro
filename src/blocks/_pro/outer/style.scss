@@ -22,6 +22,7 @@ $media-xxl-down: 1399.98px;
 	background-size: cover;
 	background-repeat: no-repeat;
 	position: relative;
+	isolation: isolate;
 
 	// リンク設定
 	& > .vkb-outer-link {
@@ -98,7 +99,9 @@ $media-xxl-down: 1399.98px;
 // iOS Safari での1pxズレの予防のため Only Safari 10.1+
 @supports (-webkit-touch-callout: none) {
 	.wp-block-vk-blocks-outer {
-		margin-top: -0.45px;
+		margin-top: 0;
+		transform: translateZ(0);
+		-webkit-transform: translateZ(0);
 	}
 }
 
@@ -185,7 +188,7 @@ $media-xxl-down: 1399.98px;
 		position: absolute;
 		left: 0;
 		width: 100%;
-		pointer-events: none; // 上に重なるとボタンなどのリンクが押せなくなるので追加
+		pointer-events: none;
 	}
 }
 
@@ -199,6 +202,28 @@ $media-xxl-down: 1399.98px;
 .vk_outer_separator-position-lower {
 	svg {
 		bottom: 0;
+	}
+}
+
+// モバイルデバイス向けの特別な処理
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	.vk_outer_separator {
+		svg {
+			transform: translateY(-0.5px) scale(1);
+			-webkit-transform: translateY(-0.5px) scale(1);
+			backface-visibility: hidden;
+			-webkit-backface-visibility: hidden;
+		}
+	}
+
+	.vk_outer_separator-position-upper svg {
+		transform: rotate(180deg) translateY(0.5px) scale(1);
+		-webkit-transform: rotate(180deg) translateY(0.5px) scale(1);
+	}
+
+	.vk_outer_separator-position-lower svg {
+		transform: translateY(0.5px) scale(1);
+		-webkit-transform: translateY(0.5px) scale(1);
 	}
 }
 

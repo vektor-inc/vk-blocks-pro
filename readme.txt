@@ -2,7 +2,7 @@
 Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird,chiakikouno,doshimaf,mtdkei
 Donate link:
 Tags: Gutenberg,FAQ,alert
-Requires at least: 6.4
+Requires at least: 6.5
 Tested up to: 6.7
 Stable tag: 1.97.0.2
 Requires PHP: 7.4
@@ -109,10 +109,14 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Dynamic Text (Pro) ] When you set a link URL in the custom field display, you can now specify the link text.
+
+= 1.99.0 =
 [ Add function ][ Dynamic Text (Pro) ] Add "Post Slug" as a display element
 [ Add function ][ Column / Cover ] Added noreferrer, nofollow, and link description options to the link feature.
-[ Bug fix ][ Blog Card (Pro) ] Fix PHP 8.x warning caused by missing 'clearCache' key.
+[ Specific Change ][ Some Block ] Change the editor component from Button Group to Toggle Group Control.
+[ Bug Fix ][ Blog Card (Pro) ] Fix PHP 8.x warning caused by missing 'clearCache' key.
 [ Bug Fix ][ Flow ] Fixed image overflow on the frontend and arrow misalignment in the editor.
+[ Bug Fix ][ Core Group ] Fixed blank editor issue when layout is undefined or invalid in some themes.
 
 = 1.98.0 =
 [ Specification change ][ Slider ] Changed slider height minimum from 40px to 24px.

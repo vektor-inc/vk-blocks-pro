@@ -108,6 +108,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Dynamic Text (Pro) ] When you set a link URL in the custom field display, you can now specify the link text.
 [ Other ][ Compatibility with 6.8 ] Updated to handle the deprecation of __experimentalBoxControl and use OldBoxControl or NewBoxControl accordingly.
 
 = 1.99.0 =

@@ -108,6 +108,8 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Dynamic Text (Pro) ] When you set a link URL in the custom field display, you can now specify the link text.
+
 = 1.99.0 =
 [ Add function ][ Dynamic Text (Pro) ] Add "Post Slug" as a display element
 [ Add function ][ Column / Cover ] Added noreferrer, nofollow, and link description options to the link feature.

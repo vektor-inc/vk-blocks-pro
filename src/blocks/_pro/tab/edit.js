@@ -56,7 +56,8 @@ export default function TabEdit(props) {
 	}, [clientId]);
 
 	const childBlocks = useSelect(
-		(select) => select(blockEditorStore).getBlock(clientId).innerBlocks
+		(select) => select(blockEditorStore).getBlock(clientId).innerBlocks,
+		[clientId]
 	);
 
 	useEffect(() => {
@@ -150,7 +151,7 @@ export default function TabEdit(props) {
 				}
 			});
 		}
-	}, [tabOption.tabBodyBorderTop]);
+	}, [tabOption.tabBodyBorderTop, childBlocks]);
 
 	useEffect(() => {
 		if (childBlocks) {

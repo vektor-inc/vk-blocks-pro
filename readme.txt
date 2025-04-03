@@ -108,6 +108,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Dynamic Text (Pro) ] When you set a link URL in the custom field display, you can now specify the link text.
 [ Other ][ Some Block ] Compatible for WordPress 6.8
 
 = 1.99.0 =

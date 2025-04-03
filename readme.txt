@@ -109,6 +109,8 @@ e.g.
 == Changelog ==
 
 [ Specific Change ][ Some Block ] Compatible for WordPress 6.8
+[ Add function ][ Dynamic Text (Pro) ] When you set a link URL in the custom field display, you can now specify the link text.
+[ Other ][ Some Block ] Compatible for WordPress 6.8
 
 = 1.99.0 =
 [ Add function ][ Dynamic Text (Pro) ] Add "Post Slug" as a display element

@@ -108,7 +108,7 @@ e.g.
 
 == Changelog ==
 
-[ Specification Change ][ Tab (Pro) ] Added dependency array to useSelect hook to ensure compatibility with WordPress 6.8.
+[ Specification Change ][ Tab (Pro) ] Added dependency array to the useSelect hook to ensure compatibility with WordPress 6.8.
 
 = 1.99.0 =
 [ Add function ][ Dynamic Text (Pro) ] Add "Post Slug" as a display element

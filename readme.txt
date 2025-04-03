@@ -108,7 +108,7 @@ e.g.
 
 == Changelog ==
 
-[ Bug Fix ][ Tab (Pro) ] Fixed missing dependency array in useSelect hook, ensuring proper reactivity when selecting child blocks.
+[ Specification Change ][ Tab (Pro) ] Added dependency array to useSelect hook to ensure compatibility with WordPress 6.8.
 
 = 1.99.0 =
 [ Add function ][ Dynamic Text (Pro) ] Add "Post Slug" as a display element

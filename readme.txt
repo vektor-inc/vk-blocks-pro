@@ -108,6 +108,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Tab (Pro) ] Fixed missing dependency array in useSelect hook, ensuring proper reactivity when selecting child blocks.
+
 = 1.99.0 =
 [ Add function ][ Dynamic Text (Pro) ] Add "Post Slug" as a display element
 [ Add function ][ Column / Cover ] Added noreferrer, nofollow, and link description options to the link feature.

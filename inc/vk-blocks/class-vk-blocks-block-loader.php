@@ -78,6 +78,8 @@ class VK_Blocks_Block_Loader {
 			// 分割読み込み有効化.
 			add_filter( 'should_load_separate_core_block_assets', '__return_true' );
 		}
+
+		add_action( 'init', array( $this, 'register_on_demand_filter_with_option' ) );
 	}
 
 	/**
@@ -301,5 +303,63 @@ class VK_Blocks_Block_Loader {
 	 */
 	final public function __clone() {
 		throw new \Exception( sprintf( 'Clone is not allowed: %s', esc_html( get_class( $this ) ) ) );
+	}
+
+	/**
+	 * Register on demand filter with option
+	 *
+	 * @return void
+	 */
+	public function register_on_demand_filter_with_option() {
+		if ( version_compare( get_bloginfo( 'version' ), '6.8', '<' ) ) {
+			// WP6.8未満 → これまで通りVK独自方式
+			add_filter( 'should_load_block_assets_on_demand', array( $this, 'legacy_on_demand' ), PHP_INT_MAX );
+			return;
+		}
+
+		// WP6.8以上 → VKの設定に基づいてフィルター登録するが、他フィルターとの競合を避ける
+		add_filter( 'should_load_block_assets_on_demand', array( $this, 'merge_on_demand' ), PHP_INT_MAX );
+	}
+
+	/**
+	 * Legacy on demand filter
+	 *
+	 * @return bool
+	 */
+	public function legacy_on_demand() {
+		$options = VK_Blocks_Options::get_options();
+		return ! empty( $options['load_separate_option'] );
+	}
+
+	/**
+	 * Merge on demand filter
+	 *
+	 * @return bool
+	 */
+	public function merge_on_demand() {
+		$options = VK_Blocks_Options::get_options();
+
+		// 分割読み込みが無効な場合は false
+		if ( empty( $options['load_separate_option'] ) ) {
+			return false;
+		}
+
+		// VK Blocks優先設定がONの場合は他のフィルターを無視してVK Blocksの設定を使用
+		if ( ! empty( $options['follow_external_on_demand'] ) ) {
+			return true;
+		}
+
+		// デフォルトでは他のフィルターと協調する
+		remove_filter( 'should_load_block_assets_on_demand', array( $this, 'merge_on_demand' ), PHP_INT_MAX );
+		$other_filters_result = apply_filters( 'should_load_block_assets_on_demand', null );
+		add_filter( 'should_load_block_assets_on_demand', array( $this, 'merge_on_demand' ), PHP_INT_MAX );
+
+		// 他のフィルターが明示的にtrueを返している場合はそれを尊重
+		if ( true === $other_filters_result ) {
+			return true;
+		}
+
+		// それ以外の場合はVK Blocksの設定を使用
+		return true;
 	}
 }

@@ -53,7 +53,15 @@ jobs:
         chmod +x wp-cli.phar
         sudo mv wp-cli.phar /usr/local/bin/wp
     - name: Install several WordPress version by wp-env.override.json
-      run: WP_ENV_PHP_VERSION=${{ matrix.php-versions }} WP_ENV_CORE=WordPress/WordPress#${{ matrix.wp-versions }} npm run wp-env start --update
+      run: |
+        n=0
+        until [ "$n" -ge 3 ]
+        do
+          WP_ENV_PHP_VERSION=${{ matrix.php-versions }} WP_ENV_CORE=WordPress/WordPress#${{ matrix.wp-versions }} npm run wp-env start --update && break
+          n=$((n+1))
+          echo "Retrying wp-env start --update ($n)..."
+          sleep 5
+        done
     - name: Check WordPress Version
       run: npm run wp-env run cli wp core version
     # Change Permissions

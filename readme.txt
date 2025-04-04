@@ -108,7 +108,7 @@ e.g.
 
 == Changelog ==
 
-[ Specific Change ][ Some Block ] Compatible for WordPress 6.8
+[ Other ][ Some Block ] Compatible for WordPress 6.8
 
 = 1.99.0 =
 [ Add function ][ Dynamic Text (Pro) ] Add "Post Slug" as a display element

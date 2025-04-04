@@ -357,7 +357,10 @@ class VK_Blocks_Block_Loader {
 		// 他のフィルターが明示的にtrueを返している場合はそれを尊重
 		if ( true === $other_filters_result ) {
 			return true;
+		} elseif ( false === $other_filters_result ) {
+			return false;
 		}
+		return true;
 
 		// それ以外の場合はVK Blocksの設定を使用
 		return true;

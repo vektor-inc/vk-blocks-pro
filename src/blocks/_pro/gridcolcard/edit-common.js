@@ -1,7 +1,7 @@
 import { __ } from '@wordpress/i18n';
 import {
-	// eslint-disable-next-line
-	__experimentalBoxControl as BoxControl,
+	__experimentalBoxControl as OldBoxControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
+	BoxControl as NewBoxControl,
 	__experimentalUnitControl as UnitControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
 	ComboboxControl,
 	ToggleControl,
@@ -11,6 +11,8 @@ import {
 } from '@wordpress/components';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import { AdvancedColorGradientControl } from '@vkblocks/components/advanced-color-gradient-control';
+
+const BoxControl = OldBoxControl || NewBoxControl; // Fallback to the new BoxControl if the old one is not available
 
 const CommonItemControl = (props) => {
 	const { attributes, setAttributes } = props;

@@ -12,14 +12,14 @@ import {
 } from './toc-utils';
 
 const useCurrentBlocks = () => {
-	useSelect(
+	return useSelect(
 		(select) => select('core/block-editor').getBlocks(),
 		[] // 固定のセレクションなので空の依存配列でOK
 	);
 };
 
 const useBlocksByName = (blockName) => {
-	useSelect(
+	return useSelect(
 		(select) => {
 			const { getBlocks } = select('core/block-editor');
 			return getBlocks().filter((block) => block.name === blockName);
@@ -34,6 +34,8 @@ export default function TOCEdit(props) {
 	const blockProps = useBlockProps({
 		className: `vk_tableOfContents vk_tableOfContents-style-${style} tabs`,
 	});
+
+
 
 	const blocks = useCurrentBlocks();
 	const findBlocks = useBlocksByName('vk-blocks/table-of-contents-new');

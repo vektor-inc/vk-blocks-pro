@@ -68,7 +68,8 @@ $xxl-min: 1200px;
 		}
 	}
 
-	&.vk_flow-arrow-on::after {
+	&.vk_flow-arrow-on::after,
+	> .vk_flow_frame_arrow {
 		position: relative;
 		content: "";
 		background: var(--vk_flow-arrow) center 50% no-repeat;
@@ -95,14 +96,7 @@ $xxl-min: 1200px;
 // 編集画面
 // コア側のcssで矢印(after要素)の位置がおかしくなるので上書き
 .editor-styles-wrapper {
-	.block-editor-block-list__layout .block-editor-block-list__block:not([contenteditable=true]):focus:after, // lightning用
-	.is-outline-mode .block-editor-block-list__block:not(.rich-text):not([contenteditable=true]).is-selected.vk_flow-arrow-on:after,//選択中のブロック
-	.is-outline-mode .block-editor-block-list__block.is-hovered.vk_flow-arrow-on:not(.is-selected):after,//ホバーしているが未選択のブロック
-	.is-outline-mode .block-editor-block-list__block:not(.rich-text):not([contenteditable=true]).vk_flow-arrow-on:after{ // 通常状態のブロック
-			position: relative;
-			outline-style: unset;
-			top:unset;
-			bottom:unset;
-		}
-	
+	.vk_flow-arrow-on::after {
+		display: none;
+	}
 }

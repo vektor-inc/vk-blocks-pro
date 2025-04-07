@@ -97,6 +97,11 @@ $xxl-min: 1200px;
 // コア側のcssで矢印(after要素)の位置がおかしくなるので上書き
 .editor-styles-wrapper {
 	.vk_flow-arrow-on::after {
-		display: none;
+		background: none;
+		display: unset;
+		height: unset;
+		width: unset;
+		margin: unset;
+		overflow: unset;
 	}
 }

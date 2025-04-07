@@ -108,6 +108,7 @@ e.g.
 
 == Changelog ==
 
+[ Other ][ Table of Contents New ] Improve performance and reliability. 
 [ Add function ][ Dynamic Text (Pro) ] When you set a link URL in the custom field display, you can now specify the link text.
 
 = 1.99.0 =

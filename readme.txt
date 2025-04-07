@@ -109,6 +109,7 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Dynamic Text (Pro) ] When you set a link URL in the custom field display, you can now specify the link text.
+[ Bug Fix ][ Flow ] Fixed issue where block selection outline was not visible. The arrow indicator for flow blocks is now rendered via HTML instead of CSS to avoid conflicts with core styles.
 
 = 1.99.0 =
 [ Add function ][ Dynamic Text (Pro) ] Add "Post Slug" as a display element

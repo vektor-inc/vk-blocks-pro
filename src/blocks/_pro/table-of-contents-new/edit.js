@@ -35,8 +35,6 @@ export default function TOCEdit(props) {
 		className: `vk_tableOfContents vk_tableOfContents-style-${style} tabs`,
 	});
 
-
-
 	const blocks = useCurrentBlocks();
 	const findBlocks = useBlocksByName('vk-blocks/table-of-contents-new');
 

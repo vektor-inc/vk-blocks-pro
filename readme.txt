@@ -107,7 +107,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-
+[ Add function ][ Dynamic Text (Pro) ] Disable link on edit screen.
 [ Add function ][ Dynamic Text (Pro) ] When you set a link URL in the custom field display, you can now specify the link text.
 [ Bug Fix ][ Flow ] Fixed issue where block selection outline was not visible. The arrow indicator for flow blocks is now rendered via HTML instead of CSS to avoid conflicts with core styles.
 

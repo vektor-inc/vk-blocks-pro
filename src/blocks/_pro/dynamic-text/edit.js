@@ -1,3 +1,4 @@
+/* globals MutationObserver */
 import classnames from 'classnames';
 
 // import WordPress Scripts
@@ -10,6 +11,7 @@ import {
 	TextControl,
 	ToggleControl,
 } from '@wordpress/components';
+import { useEffect } from '@wordpress/element';
 import {
 	useBlockProps,
 	AlignmentControl,
@@ -196,6 +198,29 @@ export default function DynamicTextEdit(props) {
 			/>
 		);
 	}
+
+	useEffect(() => {
+		const iframe = document.querySelector(
+			'.block-editor-iframe__container iframe'
+		);
+		const targetDocument = iframe?.contentWindow?.document || document;
+		const disableLinks = () => {
+			const links = targetDocument.querySelectorAll('.vk_dynamicText a');
+			links.forEach((link) => {
+				link.style.pointerEvents = 'none';
+			});
+		};
+
+		const observer = new MutationObserver(disableLinks);
+		const targetNode = targetDocument.querySelector('body');
+
+		if (targetNode) {
+			observer.observe(targetNode, { childList: true, subtree: true });
+			disableLinks();
+		}
+
+		return () => observer.disconnect();
+	}, [attributes]);
 
 	return (
 		<>

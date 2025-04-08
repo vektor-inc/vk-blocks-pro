@@ -146,7 +146,7 @@ export default function TabEdit(props) {
 		if (childBlocks) {
 			childBlocks.forEach((childBlock) => {
 				updateBlockAttributes(childBlock.clientId, {
-					tabBodyBorderTop: tabBodyBorderTop,
+					tabBodyBorderTop,
 				});
 			});
 		}

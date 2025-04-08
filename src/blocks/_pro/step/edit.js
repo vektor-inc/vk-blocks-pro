@@ -46,7 +46,9 @@ export default function StepEdit({ attributes, setAttributes, clientId }) {
 							if (Number.isNaN(value) || value < 1) {
 								setAttributes({ firstDotNum: 1 });
 							} else {
-								setAttributes({ firstDotNum: parseInt(value, 10) });
+								setAttributes({
+									firstDotNum: parseInt(value, 10),
+								});
 							}
 						}}
 						value={firstDotNum}

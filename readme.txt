@@ -108,7 +108,9 @@ e.g.
 
 == Changelog ==
 
+[ Other ][ Table of Contents New ] Improve performance and reliability. 
 [ Add function ][ Dynamic Text (Pro) ] When you set a link URL in the custom field display, you can now specify the link text.
+[ Other ][ Some Block ] Compatible for WordPress 6.8
 [ Specification change ][ Dynamic Text (Pro) ] Disable link on edit screen.
 [ Other ][ Some Block ] Compatible for WordPress 6.8
 

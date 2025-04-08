@@ -111,6 +111,8 @@ e.g.
 [ Add function ][ Dynamic Text (Pro) ] When you set a link URL in the custom field display, you can now specify the link text.
 [ Specification change ][ Dynamic Text (Pro) ] Disable link on edit screen.
 [ Bug Fix ][ Flow ] Fix selection state not visible when block is selected (change arrow from CSS to HTML in editor)
+[ Other ][ Table of Contents New ] Improve performance and reliability.
+[ Other ][ Some Block ] Compatible for WordPress 6.8
 
 = 1.99.0 =
 [ Add function ][ Dynamic Text (Pro) ] Add "Post Slug" as a display element

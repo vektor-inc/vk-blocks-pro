@@ -1,7 +1,7 @@
 import { __ } from '@wordpress/i18n';
 import { PanelBody, SelectControl, BaseControl } from '@wordpress/components';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
-import { dispatch, select } from '@wordpress/data';
+import { dispatch, select, useSelect } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
 import parse from 'html-react-parser';
 import {
@@ -10,7 +10,23 @@ import {
 	getHeadings,
 	getInnerHeadings,
 } from './toc-utils';
-import { useCurrentBlocks, useBlocksByName } from '@vkblocks/utils/hooks';
+
+const useCurrentBlocks = () => {
+	return useSelect(
+		(select) => select('core/block-editor').getBlocks(),
+		[] // 固定のセレクションなので空の依存配列でOK
+	);
+};
+
+const useBlocksByName = (blockName) => {
+	return useSelect(
+		(select) => {
+			const { getBlocks } = select('core/block-editor');
+			return getBlocks().filter((block) => block.name === blockName);
+		},
+		[blockName] // blockNameが変わったときだけ再評価
+	);
+};
 
 export default function TOCEdit(props) {
 	const { attributes, setAttributes, clientId } = props;

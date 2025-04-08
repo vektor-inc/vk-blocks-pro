@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.5
 Tested up to: 6.7
-Stable tag: 1.97.0.2
+Stable tag: 1.99.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -108,11 +108,14 @@ e.g.
 
 == Changelog ==
 
-[ Bug Fix ][ Step ( Pro )] Fix it so that leaving the starting number for a step blank does not result in an error.
-[ Other ][ Table of Contents New ( Pro ) ] Improve performance and reliability. 
+[ Bug Fix ][ Step (Pro) ] Fix it so that leaving the starting number for a step blank does not result in an error.
+
+= 1.100.0 =
 [ Add function ][ Dynamic Text (Pro) ] When you set a link URL in the custom field display, you can now specify the link text.
-[ Other ][ Some Block ] Compatible for WordPress 6.8
 [ Specification change ][ Dynamic Text (Pro) ] Disable link on edit screen.
+[ Other ][ Table of Contents New ] Improve performance and reliability.
+[ Other ][ Some Block ] Compatible for WordPress 6.8
+[ Bug Fix ][ Flow ] Fix selection state not visible when block is selected (change arrow from CSS to HTML in editor)
 
 = 1.99.0 =
 [ Add function ][ Dynamic Text (Pro) ] Add "Post Slug" as a display element

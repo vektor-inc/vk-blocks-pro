@@ -105,44 +105,47 @@ export default function DynamicTextEdit(props) {
 	// 投稿タイプの表示名を取得
 	const { postTypeLabel, isLoading } = useSelect(
 		(select) => {
-			const { getPostType } = select('core');
-			const { getEntityRecord } = select('core');
+			const { getPostType, getEntityRecord } = select('core');
 			const siteSettings = getEntityRecord('root', 'site');
-			const postTypeObj = getPostType(queryPostType);
-			
-			// データ読み込み中の場合
+
+			// サイト設定の読み込み中
 			if (!siteSettings) {
 				return {
 					postTypeLabel: '',
-					isLoading: true
+					isLoading: true,
 				};
 			}
-			
-			// ホームページ設定を確認
-			const pageForPosts = siteSettings?.page_for_posts;
+
+			const pageForPosts = siteSettings.page_for_posts;
 
 			// 投稿一覧ページが固定ページに設定されている場合
 			if (pageForPosts && queryPostType === 'post') {
-				const postsPage = getEntityRecord('postType', 'page', pageForPosts);
+				const postsPage = getEntityRecord(
+					'postType',
+					'page',
+					pageForPosts
+				);
 				if (!postsPage) {
 					return {
 						postTypeLabel: '',
-						isLoading: true
+						isLoading: true,
 					};
 				}
+
 				return {
-					postTypeLabel: postsPage?.title?.rendered || postTypeObj?.labels?.singular_name ||
-						queryPostType.charAt(0).toUpperCase() + queryPostType.slice(1),
-					isLoading: false
+					postTypeLabel: postsPage?.title?.rendered,
+					isLoading: false,
 				};
 			}
 
+			// 通常の投稿タイプの場合
+			const postTypeObj = getPostType(queryPostType);
 			return {
 				postTypeLabel:
 					postTypeObj?.labels?.singular_name ||
 					queryPostType.charAt(0).toUpperCase() +
 						queryPostType.slice(1),
-				isLoading: false
+				isLoading: false,
 			};
 		},
 		[queryPostType]
@@ -152,7 +155,7 @@ export default function DynamicTextEdit(props) {
 		className: classnames({
 			[`has-text-align-${textAlign}`]: textAlign,
 			'is-in-query-loop': isInQueryLoop,
-			'is-loading': isLoading
+			'is-loading': isLoading,
 		}),
 	});
 

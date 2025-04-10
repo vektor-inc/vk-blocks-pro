@@ -107,7 +107,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-
+[ update ][ Dynamic Text (Pro) ] Allows i-tags in custom field link text.
 [ Bug Fix ][ Step (Pro) ] Fix it so that leaving the starting number for a step blank does not result in an error.
 
 = 1.100.0 =

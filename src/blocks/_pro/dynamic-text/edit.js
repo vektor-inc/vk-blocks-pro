@@ -80,7 +80,7 @@ function DynamicTextEditControls({ tagName, onSelectTagName }) {
 }
 
 export default function DynamicTextEdit(props) {
-	const { attributes, setAttributes } = props;
+	const { attributes, setAttributes, context } = props;
 	const {
 		textAlign,
 		displayElement,
@@ -88,7 +88,6 @@ export default function DynamicTextEdit(props) {
 		ancestorPageHiddenOption,
 		parentPageHiddenOption,
 		customFieldName,
-		customFieldLinkText,
 		userNamePrefixText,
 		userNameSuffixText,
 		userNameLoggedOutText,
@@ -97,107 +96,152 @@ export default function DynamicTextEdit(props) {
 		isLinkSet,
 		isLinkTarget,
 	} = attributes;
-	attributes.ancestorPageHiddenOption = ancestorPageHiddenOption;
-	attributes.parentPageHiddenOption = parentPageHiddenOption;
-	attributes.isLinkSet = isLinkSet;
-	attributes.isLinkTarget = isLinkTarget;
-	attributes.customFieldLinkText = customFieldLinkText;
 
-	// Hooks.
+	// クエリループのコンテキストを取得
+	const { queryId, query } = context || {};
+	const isInQueryLoop = queryId !== null;
+	const queryPostType = query?.postType || 'post';
+
+	// 投稿タイプの表示名を取得
+	const { postTypeLabel } = useSelect(
+		(select) => {
+			const { getPostType } = select('core');
+			const postTypeObj = getPostType(queryPostType);
+			return {
+				postTypeLabel:
+					postTypeObj?.labels?.singular_name ||
+					queryPostType.charAt(0).toUpperCase() +
+						queryPostType.slice(1),
+			};
+		},
+		[queryPostType]
+	);
+
 	const blockProps = useBlockProps({
 		className: classnames({
 			[`has-text-align-${textAlign}`]: textAlign,
+			'is-in-query-loop': isInQueryLoop,
 		}),
 	});
 
-	const { postType, parentPageId, currentUser, postSlug } = useSelect(
-		(select) => {
-			const { getCurrentPostType, getEditedPostAttribute } =
-				select('core/editor');
-			const { getCurrentUser } = select('core');
+	const { currentUser, postSlug } = useSelect((select) => {
+		const { getEditedPostAttribute } = select('core/editor');
+		const { getCurrentUser } = select('core');
 
-			return {
-				postType: getCurrentPostType(),
-				parentPageId: getEditedPostAttribute('parent'),
-				currentUser: getCurrentUser(),
-				postSlug: getEditedPostAttribute('slug'),
-			};
-		},
-		[]
-	);
+		return {
+			currentUser: getCurrentUser(),
+			postSlug: getEditedPostAttribute('slug'),
+		};
+	}, []);
 
-	let editContent;
-	const editAlertContent = (
-		<div className="alert alert-warning text-center">
-			{__(
-				'Please select display element from the Setting sidebar.',
-				'vk-blocks-pro'
-			)}
-		</div>
-	);
-	if (displayElement === 'post-type' && !postType) {
-		editContent = (
-			<TagName>{__('Post Type Name', 'vk-blocks-pro')}</TagName>
-		);
-	} else if (displayElement === 'ancestor-page' && !parentPageId) {
-		editContent = (
-			<TagName>{__('Ancestor Page Title', 'vk-blocks-pro')}</TagName>
-		);
-	} else if (displayElement === 'parent-page' && !parentPageId) {
-		editContent = (
-			<TagName>{__('Parent Page Title', 'vk-blocks-pro')}</TagName>
-		);
-	} else if (displayElement === 'user-name' && !currentUser) {
-		editContent = (
-			<TagName>
-				{(userNamePrefixText ?? '') +
-					currentUser.name +
-					(userNameSuffixText ?? '')}
-			</TagName>
-		);
-	} else if (displayElement === 'custom-field' && !postType) {
-		editContent = (
-			<TagName>
-				{__('Custom field', 'vk-blocks-pro')} ({customFieldName})
-			</TagName>
-		);
-	} else if (displayElement === 'user-name') {
-		editContent = (
-			<TagName>
-				{(userNamePrefixText ?? '') +
-					currentUser.name +
-					(userNameSuffixText ?? '')}
-			</TagName>
-		);
-	} else if (displayElement === 'custom-field' && !customFieldName) {
-		editContent = (
-			<div className="alert alert-warning text-center">
-				{__(
-					'This block is not rendered because no custom field name is specified.',
-					'vk-blocks-pro'
-				)}
-			</div>
-		);
-	} else if (displayElement === 'post-slug' && !postSlug) {
-		editContent = (
-			<div className="alert alert-warning text-center">
-				{__(
-					'Set the slug and save the post to display it.',
-					'vk-blocks-pro'
-				)}
-			</div>
-		);
-	} else if (displayElement === 'please-select') {
-		editContent = editAlertContent;
-	} else {
-		editContent = (
-			<ServerSideRender
-				skipBlockSupportAttributes
-				block="vk-blocks/dynamic-text"
-				attributes={attributes}
-			/>
-		);
-	}
+	// 表示内容を生成する関数
+	const getDisplayContent = () => {
+		// 選択要素が未選択の場合
+		if (displayElement === 'please-select') {
+			return (
+				<div className="alert alert-warning text-center">
+					{__(
+						'Please select display element from the Setting sidebar.',
+						'vk-blocks-pro'
+					)}
+				</div>
+			);
+		}
+
+		// クエリループ用
+		if (isInQueryLoop) {
+			const previewContent = {
+				'post-type': postTypeLabel,
+				'post-slug': `${postTypeLabel} ${__('Slug', 'vk-blocks-pro')}`,
+				'custom-field': customFieldName
+					? `${customFieldName} ${__('Value', 'vk-blocks-pro')} (${postTypeLabel})`
+					: '',
+				'ancestor-page': query?.parents
+					? `${postTypeLabel} ${__('Ancestor', 'vk-blocks-pro')}`
+					: null,
+				'parent-page': query?.parents
+					? `${postTypeLabel} ${__('Parent', 'vk-blocks-pro')}`
+					: null,
+				'user-name': __('User Name', 'vk-blocks-pro'),
+			}[displayElement];
+
+			if (!previewContent) {
+				return (
+					<div className="alert alert-info text-center">
+						{__(
+							'Preview display in query loop for %s.',
+							'vk-blocks-pro'
+						).replace('%s', postTypeLabel)}
+					</div>
+				);
+			}
+
+			return <TagName>{previewContent}</TagName>;
+		}
+
+		// 通常の表示処理
+		switch (displayElement) {
+			case 'custom-field':
+				if (!customFieldName) {
+					return (
+						<div className="alert alert-warning text-center">
+							{__(
+								'カスタムフィールド名を指定してください。',
+								'vk-blocks-pro'
+							)}
+						</div>
+					);
+				}
+				return (
+					<ServerSideRender
+						skipBlockSupportAttributes
+						block="vk-blocks/dynamic-text"
+						attributes={attributes}
+					/>
+				);
+
+			case 'post-slug':
+				if (!postSlug) {
+					return (
+						<div className="alert alert-warning text-center">
+							{__(
+								'Set the slug and save the post to display it.',
+								'vk-blocks-pro'
+							)}
+						</div>
+					);
+				}
+				return (
+					<ServerSideRender
+						skipBlockSupportAttributes
+						block="vk-blocks/dynamic-text"
+						attributes={attributes}
+					/>
+				);
+
+			case 'user-name':
+				if (!currentUser) {
+					return (
+						<TagName>
+							{userNameLoggedOutText ||
+								__('Not logged in', 'vk-blocks-pro')}
+						</TagName>
+					);
+				}
+				return (
+					<TagName>{`${userNamePrefixText || ''}${currentUser.name}${userNameSuffixText || ''}`}</TagName>
+				);
+
+			default:
+				return (
+					<ServerSideRender
+						skipBlockSupportAttributes
+						block="vk-blocks/dynamic-text"
+						attributes={attributes}
+					/>
+				);
+		}
+	};
 
 	useEffect(() => {
 		const iframe = document.querySelector(
@@ -465,7 +509,7 @@ export default function DynamicTextEdit(props) {
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<div {...blockProps}>{editContent}</div>
+			<div {...blockProps}>{getDisplayContent()}</div>
 		</>
 	);
 }

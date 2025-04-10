@@ -82,8 +82,9 @@ function DynamicTextEditControls({ tagName, onSelectTagName }) {
 export default function DynamicTextEdit(props) {
 	const { attributes, setAttributes, context } = props;
 
-	const isInQueryLoop = context?.queryId !== undefined && context?.queryId !== null;
-	
+	const isInQueryLoop =
+		context?.queryId !== undefined && context?.queryId !== null;
+
 	const queryPostType = context?.query?.postType || 'post';
 	const postTypeLabel = useSelect(
 		(select) => {
@@ -210,8 +211,12 @@ export default function DynamicTextEdit(props) {
 				? `${customFieldName} (${postTypeLabel})`
 				: __('(No custom field name)', 'vk-blocks-pro'),
 		}[displayElement];
-	
-		editContent = <TagName>{previewText || __('Dynamic Text', 'vk-blocks-pro')}</TagName>;
+
+		editContent = (
+			<TagName>
+				{previewText || __('Dynamic Text', 'vk-blocks-pro')}
+			</TagName>
+		);
 	} else {
 		editContent = (
 			<ServerSideRender

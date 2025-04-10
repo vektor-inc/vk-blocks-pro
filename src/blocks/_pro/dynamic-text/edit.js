@@ -139,6 +139,17 @@ export default function DynamicTextEdit(props) {
 		[]
 	);
 
+	const pageForPostsId = wp.data.select('core').getSite()?.page_for_posts;
+
+	const pageForPostsTitle = useSelect(
+		(select) => {
+			if (!pageForPostsId) return null;
+			const page = select('core').getEntityRecord('postType', 'page', pageForPostsId);
+			return page?.title?.rendered || null;
+		},
+		[pageForPostsId]
+	);
+
 	let editContent;
 	const editAlertContent = (
 		<div className="alert alert-warning text-center">
@@ -204,7 +215,9 @@ export default function DynamicTextEdit(props) {
 		editContent = editAlertContent;
 	} else if (isInQueryLoop) {
 		const previewText = {
-			'post-type': postTypeLabel,
+			'post-type': (queryPostType === 'post' && pageForPostsTitle)
+				? pageForPostsTitle
+				: postTypeLabel,
 			'post-slug': `${postTypeLabel} Slug`,
 			'user-name': __('User Name', 'vk-blocks-pro'),
 			'custom-field': customFieldName

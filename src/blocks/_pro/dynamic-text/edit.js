@@ -143,8 +143,14 @@ export default function DynamicTextEdit(props) {
 
 	const pageForPostsTitle = useSelect(
 		(select) => {
-			if (!pageForPostsId) return null;
-			const page = select('core').getEntityRecord('postType', 'page', pageForPostsId);
+			if (!pageForPostsId) {
+				return null;
+			}
+			const page = select('core').getEntityRecord(
+				'postType',
+				'page',
+				pageForPostsId
+			);
 			return page?.title?.rendered || null;
 		},
 		[pageForPostsId]
@@ -215,9 +221,10 @@ export default function DynamicTextEdit(props) {
 		editContent = editAlertContent;
 	} else if (isInQueryLoop) {
 		const previewText = {
-			'post-type': (queryPostType === 'post' && pageForPostsTitle)
-				? pageForPostsTitle
-				: postTypeLabel,
+			'post-type':
+				queryPostType === 'post' && pageForPostsTitle
+					? pageForPostsTitle
+					: postTypeLabel,
 			'post-slug': `${postTypeLabel} Slug`,
 			'user-name': __('User Name', 'vk-blocks-pro'),
 			'custom-field': customFieldName

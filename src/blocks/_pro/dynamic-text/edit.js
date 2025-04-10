@@ -227,9 +227,7 @@ export default function DynamicTextEdit(props) {
 					: postTypeLabel,
 			'post-slug': `${postTypeLabel} Slug`,
 			'user-name': __('User Name', 'vk-blocks-pro'),
-			'custom-field': customFieldName
-				? `${customFieldName} (${postTypeLabel})`
-				: __('(No custom field name)', 'vk-blocks-pro'),
+			'custom-field': `${customFieldName} (${postTypeLabel})`,
 		}[displayElement];
 
 		editContent = (

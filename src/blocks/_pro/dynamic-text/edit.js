@@ -178,84 +178,131 @@ export default function DynamicTextEdit(props) {
 		}),
 	});
 
-	useSelect((select) => {
+	const { postType, parentPageId, currentUser, postSlug } = useSelect((select) => {
 		const { getCurrentUser } = select('core');
 		return {
 			currentUser: getCurrentUser(),
+			postType: null,
+			parentPageId: null,
+			postSlug: null,
 		};
 	}, []);
 
-	// 表示内容を生成する関数
-	const getDisplayContent = () => {
-		if (isLoading) {
-			return <div>Loading...</div>;
-		}
+	let editContent;
+	const editAlertContent = (
+		<div className="alert alert-warning text-center">
+			{__(
+				'Please select display element from the Setting sidebar.',
+				'vk-blocks-pro'
+			)}
+		</div>
+	);
 
-		// 選択要素が未選択の場合
-		if (displayElement === 'please-select') {
-			return (
-				<div className="alert alert-warning text-center">
-					{__(
-						'Please select display element from the Setting sidebar.',
-						'vk-blocks-pro'
-					)}
+	if (isLoading) {
+		editContent = <div>Loading...</div>;
+	} else if (isInQueryLoop) {
+		// クエリループ内の表示処理
+		const previewContent = {
+			'post-type': postTypeLabel,
+			'post-slug': `${postTypeLabel} ${__('Slug', 'vk-blocks-pro')}`,
+			'custom-field': customFieldName
+				? `${customFieldName} ${__('Value', 'vk-blocks-pro')} (${postTypeLabel})`
+				: '',
+			'ancestor-page': `${postTypeLabel} ${__('Ancestor', 'vk-blocks-pro')}`,
+			'parent-page': `${postTypeLabel} ${__('Parent', 'vk-blocks-pro')}`,
+			'user-name': __('User Name', 'vk-blocks-pro'),
+		}[displayElement];
+
+		// 親ページ・祖先ページの表示条件チェック
+		if (
+			((displayElement === 'parent-page' && (!query?.parents || query.parents.length !== 1)) ||
+			(displayElement === 'ancestor-page' && (!query?.parents || query.parents.length === 0))) &&
+			previewContent
+		) {
+			const message = displayElement === 'parent-page'
+				? __('This block will be displayed only on pages that have a parent page.', 'vk-blocks-pro')
+				: __('This block will be displayed only on pages that have ancestor pages.', 'vk-blocks-pro');
+
+			editContent = (
+				<div className="alert alert-info text-center">
+					{message}
 				</div>
 			);
+		} else if (!previewContent) {
+			editContent = (
+				<div className="alert alert-info text-center">
+					{__(
+						'Preview display in query loop for %s.',
+						'vk-blocks-pro'
+					).replace('%s', postTypeLabel)}
+				</div>
+			);
+		} else {
+			editContent = <TagName>{previewContent}</TagName>;
 		}
-
-		// クエリループ用
-		if (isInQueryLoop) {
-			const previewContent = {
-				'post-type': postTypeLabel,
-				'post-slug': `${postTypeLabel} ${__('Slug', 'vk-blocks-pro')}`,
-				'custom-field': customFieldName
-					? `${customFieldName} ${__('Value', 'vk-blocks-pro')} (${postTypeLabel})`
-					: '',
-				'ancestor-page': `${postTypeLabel} ${__('Ancestor', 'vk-blocks-pro')}`,
-				'parent-page': `${postTypeLabel} ${__('Parent', 'vk-blocks-pro')}`,
-				'user-name': __('User Name', 'vk-blocks-pro'),
-			}[displayElement];
-
-			// 親ページ・祖先ページの表示条件チェック
-			if (
-				((displayElement === 'parent-page' && (!query?.parents || query.parents.length !== 1)) ||
-				(displayElement === 'ancestor-page' && (!query?.parents || query.parents.length === 0))) &&
-				previewContent
-			) {
-				const message = displayElement === 'parent-page'
-					? __('This block will be displayed only on pages that have a parent page.', 'vk-blocks-pro')
-					: __('This block will be displayed only on pages that have ancestor pages.', 'vk-blocks-pro');
-
-				return (
-					<div className="alert alert-info text-center">
-						{message}
-					</div>
-				);
-			}
-
-			if (!previewContent) {
-				return (
-					<div className="alert alert-info text-center">
-						{__(
-							'Preview display in query loop for %s.',
-							'vk-blocks-pro'
-						).replace('%s', postTypeLabel)}
-					</div>
-				);
-			}
-
-			return <TagName>{previewContent}</TagName>;
-		}
-
-		// 通常の表示処理
-		return (
+	} else if (displayElement === 'post-type' && !postType) {
+		editContent = (
+			<TagName>{__('Post Type Name', 'vk-blocks-pro')}</TagName>
+		);
+	} else if (displayElement === 'ancestor-page' && !parentPageId) {
+		editContent = (
+			<TagName>{__('Ancestor Page Title', 'vk-blocks-pro')}</TagName>
+		);
+	} else if (displayElement === 'parent-page' && !parentPageId) {
+		editContent = (
+			<TagName>{__('Parent Page Title', 'vk-blocks-pro')}</TagName>
+		);
+	} else if (displayElement === 'user-name' && !currentUser) {
+		editContent = (
+			<TagName>
+				{(userNamePrefixText ?? '') +
+					currentUser.name +
+					(userNameSuffixText ?? '')}
+			</TagName>
+		);
+	} else if (displayElement === 'custom-field' && !postType) {
+		editContent = (
+			<TagName>
+				{__('Custom field', 'vk-blocks-pro')} ({customFieldName})
+			</TagName>
+		);
+	} else if (displayElement === 'user-name') {
+		editContent = (
+			<TagName>
+				{(userNamePrefixText ?? '') +
+					currentUser.name +
+					(userNameSuffixText ?? '')}
+			</TagName>
+		);
+	} else if (displayElement === 'custom-field' && !customFieldName) {
+		editContent = (
+			<div className="alert alert-warning text-center">
+				{__(
+					'This block is not rendered because no custom field name is specified.',
+					'vk-blocks-pro'
+				)}
+			</div>
+		);
+	} else if (displayElement === 'post-slug' && !postSlug) {
+		editContent = (
+			<div className="alert alert-warning text-center">
+				{__(
+					'Set the slug and save the post to display it.',
+					'vk-blocks-pro'
+				)}
+			</div>
+		);
+	} else if (displayElement === 'please-select') {
+		editContent = editAlertContent;
+	} else {
+		editContent = (
 			<ServerSideRender
 				skipBlockSupportAttributes
 				block="vk-blocks/dynamic-text"
 				attributes={attributes}
 			/>
 		);
-	};
+	}
 
 	useEffect(() => {
 		const iframe = document.querySelector(
@@ -523,7 +570,7 @@ export default function DynamicTextEdit(props) {
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<div {...blockProps}>{getDisplayContent()}</div>
+			<div {...blockProps}>{editContent}</div>
 		</>
 	);
 }

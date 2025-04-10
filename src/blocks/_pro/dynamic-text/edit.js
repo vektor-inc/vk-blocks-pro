@@ -110,61 +110,31 @@ export default function DynamicTextEdit(props) {
 	const queryPostType = query?.postType || 'post';
 
 	// 投稿タイプの表示名を取得
-	const { postTypeLabel, isLoading } = useSelect(
+	const { postTypeLabel } = useSelect(
 		(select) => {
 			const { getPostType, getEntityRecord } = select('core');
 			const siteSettings = getEntityRecord('root', 'site');
+			const postTypeObj = getPostType(queryPostType);
 
-			// サイト設定の読み込み中
-			if (!siteSettings) {
-				return {
-					postTypeLabel: '',
-					isLoading: true,
-				};
-			}
-
-			const pageForPosts = siteSettings?.page_for_posts;
+			// 投稿タイプの基本ラベルを取得
+			const baseLabel = postTypeObj?.labels?.singular_name ||
+				queryPostType.charAt(0).toUpperCase() + queryPostType.slice(1);
 
 			// クエリループ内の投稿一覧ページの場合
-			if (isInQueryLoop && pageForPosts && queryPostType === 'post') {
+			if (isInQueryLoop && siteSettings?.page_for_posts && queryPostType === 'post') {
 				const postsPage = getEntityRecord(
 					'postType',
 					'page',
-					pageForPosts
+					siteSettings.page_for_posts
 				);
-				if (!postsPage) {
-					return {
-						postTypeLabel: '',
-						isLoading: true,
-					};
-				}
 
 				return {
-					postTypeLabel: postsPage?.title?.rendered,
-					isLoading: false,
+					postTypeLabel: postsPage?.title?.rendered || baseLabel,
 				};
 			}
 
-			// クエリループ内の通常の投稿タイプの場合
-			if (isInQueryLoop) {
-				const postTypeObj = getPostType(queryPostType);
-				return {
-					postTypeLabel:
-						postTypeObj?.labels?.singular_name ||
-						queryPostType.charAt(0).toUpperCase() +
-							queryPostType.slice(1),
-					isLoading: false,
-				};
-			}
-
-			// 通常の投稿タイプの場合（クエリループ外）
-			const postTypeObj = getPostType(queryPostType);
 			return {
-				postTypeLabel:
-					postTypeObj?.labels?.singular_name ||
-					queryPostType.charAt(0).toUpperCase() +
-						queryPostType.slice(1),
-				isLoading: false,
+				postTypeLabel: baseLabel,
 			};
 		},
 		[queryPostType, isInQueryLoop]
@@ -174,7 +144,6 @@ export default function DynamicTextEdit(props) {
 		className: classnames({
 			[`has-text-align-${textAlign}`]: textAlign,
 			'is-in-query-loop': isInQueryLoop,
-			'is-loading': isLoading,
 		}),
 	});
 
@@ -198,8 +167,8 @@ export default function DynamicTextEdit(props) {
 		</div>
 	);
 
-	if (isLoading) {
-		editContent = <div>Loading...</div>;
+	if (displayElement === 'please-select') {
+		editContent = editAlertContent;
 	} else if (isInQueryLoop) {
 		// クエリループ内の表示処理
 		const previewContent = {
@@ -207,36 +176,45 @@ export default function DynamicTextEdit(props) {
 			'post-slug': `${postTypeLabel} ${__('Slug', 'vk-blocks-pro')}`,
 			'custom-field': customFieldName
 				? `${customFieldName} ${__('Value', 'vk-blocks-pro')} (${postTypeLabel})`
-				: '',
-			'ancestor-page': `${postTypeLabel} ${__('Ancestor', 'vk-blocks-pro')}`,
-			'parent-page': `${postTypeLabel} ${__('Parent', 'vk-blocks-pro')}`,
+				: null,
+			'ancestor-page': query?.parents?.length > 1
+				? `${postTypeLabel} ${__('Ancestor', 'vk-blocks-pro')}`
+				: null,
+			'parent-page': query?.parents?.length === 1
+				? `${postTypeLabel} ${__('Parent', 'vk-blocks-pro')}`
+				: null,
 			'user-name': __('User Name', 'vk-blocks-pro'),
 		}[displayElement];
 
-		// 親ページ・祖先ページの表示条件チェック
-		if (
-			((displayElement === 'parent-page' && (!query?.parents || query.parents.length !== 1)) ||
-			(displayElement === 'ancestor-page' && (!query?.parents || query.parents.length === 0))) &&
-			previewContent
-		) {
-			const message = displayElement === 'parent-page'
-				? __('This block will be displayed only on pages that have a parent page.', 'vk-blocks-pro')
-				: __('This block will be displayed only on pages that have ancestor pages.', 'vk-blocks-pro');
-
-			editContent = (
-				<div className="alert alert-info text-center">
-					{message}
-				</div>
-			);
-		} else if (!previewContent) {
-			editContent = (
-				<div className="alert alert-info text-center">
-					{__(
-						'Preview display in query loop for %s.',
-						'vk-blocks-pro'
-					).replace('%s', postTypeLabel)}
-				</div>
-			);
+		if (!previewContent) {
+			if (displayElement === 'ancestor-page' || displayElement === 'parent-page') {
+				editContent = (
+					<div className="alert alert-info text-center">
+						{displayElement === 'parent-page'
+							? __('This block will be displayed only on child pages.', 'vk-blocks-pro')
+							: __('This block will be displayed only on descendant pages.', 'vk-blocks-pro')
+						}
+					</div>
+				);
+			} else if (displayElement === 'custom-field' && !customFieldName) {
+				editContent = (
+					<div className="alert alert-warning text-center">
+						{__(
+							'This block is not rendered because no custom field name is specified.',
+							'vk-blocks-pro'
+						)}
+					</div>
+				);
+			} else {
+				editContent = (
+					<div className="alert alert-info text-center">
+						{__(
+							'Preview display in query loop for %s.',
+							'vk-blocks-pro'
+						).replace('%s', postTypeLabel)}
+					</div>
+				);
+			}
 		} else {
 			editContent = <TagName>{previewContent}</TagName>;
 		}
@@ -292,8 +270,6 @@ export default function DynamicTextEdit(props) {
 				)}
 			</div>
 		);
-	} else if (displayElement === 'please-select') {
-		editContent = editAlertContent;
 	} else {
 		editContent = (
 			<ServerSideRender

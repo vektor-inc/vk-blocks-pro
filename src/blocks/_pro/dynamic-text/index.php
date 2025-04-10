@@ -59,7 +59,7 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 	} elseif ( 'url' === $attributes['fieldType'] ) {
 		$custom_field_url = esc_url( get_post_meta( $block->context['postId'], $attributes['customFieldName'], true ) );
 		if ( $attributes['isLinkSet'] ) {
-			$link_text = ! empty( $attributes['customFieldLinkText'] ) ? esc_html( $attributes['customFieldLinkText'] ) : $custom_field_url;
+			$link_text = ! empty( $attributes['customFieldLinkText'] ) ? wp_kses( $attributes['customFieldLinkText'] , array( 'i' => array( 'class' => array() ) ) ) : $custom_field_url;
 			if ( $attributes['isLinkTarget'] ) {
 				$custom_field_content = '<a href="' . $custom_field_url . '" target="_blank" rel="noreferrer noopener">' . $link_text . '</a>';
 			} else {

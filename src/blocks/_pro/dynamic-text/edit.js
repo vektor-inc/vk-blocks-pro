@@ -117,11 +117,16 @@ export default function DynamicTextEdit(props) {
 			const postTypeObj = getPostType(queryPostType);
 
 			// 投稿タイプの基本ラベルを取得
-			const baseLabel = postTypeObj?.labels?.singular_name ||
+			const baseLabel =
+				postTypeObj?.labels?.singular_name ||
 				queryPostType.charAt(0).toUpperCase() + queryPostType.slice(1);
 
 			// クエリループ内の投稿一覧ページの場合
-			if (isInQueryLoop && siteSettings?.page_for_posts && queryPostType === 'post') {
+			if (
+				isInQueryLoop &&
+				siteSettings?.page_for_posts &&
+				queryPostType === 'post'
+			) {
 				const postsPage = getEntityRecord(
 					'postType',
 					'page',
@@ -147,15 +152,18 @@ export default function DynamicTextEdit(props) {
 		}),
 	});
 
-	const { postType, parentPageId, currentUser, postSlug } = useSelect((select) => {
-		const { getCurrentUser } = select('core');
-		return {
-			currentUser: getCurrentUser(),
-			postType: null,
-			parentPageId: null,
-			postSlug: null,
-		};
-	}, []);
+	const { postType, parentPageId, currentUser, postSlug } = useSelect(
+		(select) => {
+			const { getCurrentUser } = select('core');
+			return {
+				currentUser: getCurrentUser(),
+				postType: null,
+				parentPageId: null,
+				postSlug: null,
+			};
+		},
+		[]
+	);
 
 	let editContent;
 	const editAlertContent = (
@@ -177,23 +185,33 @@ export default function DynamicTextEdit(props) {
 			'custom-field': customFieldName
 				? `${customFieldName} ${__('Value', 'vk-blocks-pro')} (${postTypeLabel})`
 				: null,
-			'ancestor-page': query?.parents?.length > 1
-				? `${postTypeLabel} ${__('Ancestor', 'vk-blocks-pro')}`
-				: null,
-			'parent-page': query?.parents?.length === 1
-				? `${postTypeLabel} ${__('Parent', 'vk-blocks-pro')}`
-				: null,
+			'ancestor-page':
+				query?.parents?.length > 1
+					? `${postTypeLabel} ${__('Ancestor', 'vk-blocks-pro')}`
+					: null,
+			'parent-page':
+				query?.parents?.length === 1
+					? `${postTypeLabel} ${__('Parent', 'vk-blocks-pro')}`
+					: null,
 			'user-name': __('User Name', 'vk-blocks-pro'),
 		}[displayElement];
 
 		if (!previewContent) {
-			if (displayElement === 'ancestor-page' || displayElement === 'parent-page') {
+			if (
+				displayElement === 'ancestor-page' ||
+				displayElement === 'parent-page'
+			) {
 				editContent = (
 					<div className="alert alert-info text-center">
 						{displayElement === 'parent-page'
-							? __('This block will be displayed only on child pages.', 'vk-blocks-pro')
-							: __('This block will be displayed only on descendant pages.', 'vk-blocks-pro')
-						}
+							? __(
+									'This block will be displayed only on child pages.',
+									'vk-blocks-pro'
+								)
+							: __(
+									'This block will be displayed only on descendant pages.',
+									'vk-blocks-pro'
+								)}
 					</div>
 				);
 			} else if (displayElement === 'custom-field' && !customFieldName) {

@@ -108,6 +108,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Step (Pro) ] Fix it so that leaving the starting number for a step blank does not result in an error.
+
 = 1.100.0 =
 [ Add function ][ Dynamic Text (Pro) ] When you set a link URL in the custom field display, you can now specify the link text.
 [ Specification change ][ Dynamic Text (Pro) ] Disable link on edit screen.

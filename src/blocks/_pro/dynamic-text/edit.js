@@ -436,14 +436,12 @@ export default function DynamicTextEdit(props) {
 									setAttributes({ customFieldName: value })
 								}
 							/>
-							{customFieldName && (
-								<div className="alert alert-warning mt-0 mb-4">
-									{__(
-										'This custom field may not be displayed if it is not set for the target post type.',
-										'vk-blocks-pro'
-									)}
-								</div>
-							)}
+							<div className="alert alert-warning mt-0 mb-4">
+								{__(
+									'This custom field may not be displayed if the field is not available or has no value in the content.',
+									'vk-blocks-pro'
+								)}
+							</div>
 							<SelectControl
 								label={__('Field Type', 'vk-blocks-pro')}
 								value={fieldType}

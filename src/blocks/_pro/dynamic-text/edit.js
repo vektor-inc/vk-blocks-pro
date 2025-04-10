@@ -81,6 +81,18 @@ function DynamicTextEditControls({ tagName, onSelectTagName }) {
 
 export default function DynamicTextEdit(props) {
 	const { attributes, setAttributes, context } = props;
+
+	const isInQueryLoop = context?.queryId !== undefined && context?.queryId !== null;
+	
+	const queryPostType = context?.query?.postType || 'post';
+	const postTypeLabel = useSelect(
+		(select) => {
+			const postTypeObj = select('core').getPostType(queryPostType);
+			return postTypeObj?.labels?.singular_name || queryPostType;
+		},
+		[queryPostType]
+	);
+
 	const {
 		textAlign,
 		displayElement,
@@ -97,69 +109,30 @@ export default function DynamicTextEdit(props) {
 		isLinkSet,
 		isLinkTarget,
 	} = attributes;
-
 	attributes.ancestorPageHiddenOption = ancestorPageHiddenOption;
 	attributes.parentPageHiddenOption = parentPageHiddenOption;
 	attributes.isLinkSet = isLinkSet;
 	attributes.isLinkTarget = isLinkTarget;
 	attributes.customFieldLinkText = customFieldLinkText;
 
-	// クエリループのコンテキストを取得
-	const { queryId, query } = context || {};
-	const isInQueryLoop = queryId !== null;
-	const queryPostType = query?.postType || 'post';
-
-	// 投稿タイプの表示名を取得
-	const { postTypeLabel } = useSelect(
-		(select) => {
-			const { getPostType, getEntityRecord } = select('core');
-			const siteSettings = getEntityRecord('root', 'site');
-			const postTypeObj = getPostType(queryPostType);
-
-			// 投稿タイプの基本ラベルを取得
-			const baseLabel =
-				postTypeObj?.labels?.singular_name ||
-				queryPostType.charAt(0).toUpperCase() + queryPostType.slice(1);
-
-			// クエリループ内の投稿一覧ページの場合
-			if (
-				isInQueryLoop &&
-				siteSettings?.page_for_posts &&
-				queryPostType === 'post'
-			) {
-				const postsPage = getEntityRecord(
-					'postType',
-					'page',
-					siteSettings.page_for_posts
-				);
-
-				return {
-					postTypeLabel: postsPage?.title?.rendered || baseLabel,
-				};
-			}
-
-			return {
-				postTypeLabel: baseLabel,
-			};
-		},
-		[queryPostType, isInQueryLoop]
-	);
-
+	// Hooks.
 	const blockProps = useBlockProps({
 		className: classnames({
 			[`has-text-align-${textAlign}`]: textAlign,
-			'is-in-query-loop': isInQueryLoop,
 		}),
 	});
 
 	const { postType, parentPageId, currentUser, postSlug } = useSelect(
 		(select) => {
+			const { getCurrentPostType, getEditedPostAttribute } =
+				select('core/editor');
 			const { getCurrentUser } = select('core');
+
 			return {
+				postType: getCurrentPostType(),
+				parentPageId: getEditedPostAttribute('parent'),
 				currentUser: getCurrentUser(),
-				postType: null,
-				parentPageId: null,
-				postSlug: null,
+				postSlug: getEditedPostAttribute('slug'),
 			};
 		},
 		[]
@@ -174,69 +147,7 @@ export default function DynamicTextEdit(props) {
 			)}
 		</div>
 	);
-
-	if (displayElement === 'please-select') {
-		editContent = editAlertContent;
-	} else if (isInQueryLoop) {
-		// クエリループ内の表示処理
-		const previewContent = {
-			'post-type': postTypeLabel,
-			'post-slug': `${postTypeLabel} ${__('Slug', 'vk-blocks-pro')}`,
-			'custom-field': customFieldName
-				? `${customFieldName} ${__('Value', 'vk-blocks-pro')} (${postTypeLabel})`
-				: null,
-			'ancestor-page':
-				query?.parents?.length > 1
-					? `${postTypeLabel} ${__('Ancestor', 'vk-blocks-pro')}`
-					: null,
-			'parent-page':
-				query?.parents?.length === 1
-					? `${postTypeLabel} ${__('Parent', 'vk-blocks-pro')}`
-					: null,
-			'user-name': __('User Name', 'vk-blocks-pro'),
-		}[displayElement];
-
-		if (!previewContent) {
-			if (
-				displayElement === 'ancestor-page' ||
-				displayElement === 'parent-page'
-			) {
-				editContent = (
-					<div className="alert alert-info text-center">
-						{displayElement === 'parent-page'
-							? __(
-									'This block will be displayed only on child pages.',
-									'vk-blocks-pro'
-								)
-							: __(
-									'This block will be displayed only on descendant pages.',
-									'vk-blocks-pro'
-								)}
-					</div>
-				);
-			} else if (displayElement === 'custom-field' && !customFieldName) {
-				editContent = (
-					<div className="alert alert-warning text-center">
-						{__(
-							'This block is not rendered because no custom field name is specified.',
-							'vk-blocks-pro'
-						)}
-					</div>
-				);
-			} else {
-				editContent = (
-					<div className="alert alert-info text-center">
-						{__(
-							'Preview display in query loop for %s.',
-							'vk-blocks-pro'
-						).replace('%s', postTypeLabel)}
-					</div>
-				);
-			}
-		} else {
-			editContent = <TagName>{previewContent}</TagName>;
-		}
-	} else if (displayElement === 'post-type' && !postType) {
+	if (displayElement === 'post-type' && !postType) {
 		editContent = (
 			<TagName>{__('Post Type Name', 'vk-blocks-pro')}</TagName>
 		);
@@ -288,6 +199,19 @@ export default function DynamicTextEdit(props) {
 				)}
 			</div>
 		);
+	} else if (displayElement === 'please-select') {
+		editContent = editAlertContent;
+	} else if (isInQueryLoop) {
+		const previewText = {
+			'post-type': postTypeLabel,
+			'post-slug': `${postTypeLabel} Slug`,
+			'user-name': __('User Name', 'vk-blocks-pro'),
+			'custom-field': customFieldName
+				? `${customFieldName} (${postTypeLabel})`
+				: __('(No custom field name)', 'vk-blocks-pro'),
+		}[displayElement];
+	
+		editContent = <TagName>{previewText || __('Dynamic Text', 'vk-blocks-pro')}</TagName>;
 	} else {
 		editContent = (
 			<ServerSideRender
@@ -546,7 +470,7 @@ export default function DynamicTextEdit(props) {
 							{fieldType === 'url' && isLinkSet && (
 								<TextControl
 									label={__('Link Text', 'vk-blocks-pro')}
-									value={customFieldLinkText}
+									value={attributes.customFieldLinkText}
 									onChange={(value) =>
 										setAttributes({
 											customFieldLinkText: value,

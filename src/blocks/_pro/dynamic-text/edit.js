@@ -116,7 +116,7 @@ export default function DynamicTextEdit(props) {
 				};
 			}
 
-			const pageForPosts = siteSettings.page_for_posts;
+			const pageForPosts = siteSettings?.page_for_posts;
 
 			// 投稿一覧ページが固定ページに設定されている場合
 			if (pageForPosts && queryPostType === 'post') {
@@ -159,18 +159,19 @@ export default function DynamicTextEdit(props) {
 		}),
 	});
 
-	const { currentUser, postSlug } = useSelect((select) => {
-		const { getEditedPostAttribute } = select('core/editor');
+	useSelect((select) => {
 		const { getCurrentUser } = select('core');
-
 		return {
 			currentUser: getCurrentUser(),
-			postSlug: getEditedPostAttribute('slug'),
 		};
 	}, []);
 
 	// 表示内容を生成する関数
 	const getDisplayContent = () => {
+		if (isLoading) {
+			return <div>Loading...</div>;
+		}
+
 		// 選択要素が未選択の場合
 		if (displayElement === 'please-select') {
 			return (
@@ -215,67 +216,13 @@ export default function DynamicTextEdit(props) {
 		}
 
 		// 通常の表示処理
-		switch (displayElement) {
-			case 'custom-field':
-				if (!customFieldName) {
-					return (
-						<div className="alert alert-warning text-center">
-							{__(
-								'カスタムフィールド名を指定してください。',
-								'vk-blocks-pro'
-							)}
-						</div>
-					);
-				}
-				return (
-					<ServerSideRender
-						skipBlockSupportAttributes
-						block="vk-blocks/dynamic-text"
-						attributes={attributes}
-					/>
-				);
-
-			case 'post-slug':
-				if (!postSlug) {
-					return (
-						<div className="alert alert-warning text-center">
-							{__(
-								'Set the slug and save the post to display it.',
-								'vk-blocks-pro'
-							)}
-						</div>
-					);
-				}
-				return (
-					<ServerSideRender
-						skipBlockSupportAttributes
-						block="vk-blocks/dynamic-text"
-						attributes={attributes}
-					/>
-				);
-
-			case 'user-name':
-				if (!currentUser) {
-					return (
-						<TagName>
-							{userNameLoggedOutText ||
-								__('Not logged in', 'vk-blocks-pro')}
-						</TagName>
-					);
-				}
-				return (
-					<TagName>{`${userNamePrefixText || ''}${currentUser.name}${userNameSuffixText || ''}`}</TagName>
-				);
-
-			default:
-				return (
-					<ServerSideRender
-						skipBlockSupportAttributes
-						block="vk-blocks/dynamic-text"
-						attributes={attributes}
-					/>
-				);
-		}
+		return (
+			<ServerSideRender
+				skipBlockSupportAttributes
+				block="vk-blocks/dynamic-text"
+				attributes={attributes}
+			/>
+		);
 	};
 
 	useEffect(() => {

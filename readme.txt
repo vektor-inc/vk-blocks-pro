@@ -108,6 +108,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Dynamic Text (Pro) ] Fixed incorrect behavior when the Dynamic Text block is placed inside a Query block on the editing screen.
+
 = 1.100.0 =
 [ Add function ][ Dynamic Text (Pro) ] When you set a link URL in the custom field display, you can now specify the link text.
 [ Specification change ][ Dynamic Text (Pro) ] Disable link on edit screen.

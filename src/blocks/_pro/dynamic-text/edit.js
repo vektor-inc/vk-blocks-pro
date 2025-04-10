@@ -88,6 +88,7 @@ export default function DynamicTextEdit(props) {
 		ancestorPageHiddenOption,
 		parentPageHiddenOption,
 		customFieldName,
+		customFieldLinkText,
 		userNamePrefixText,
 		userNameSuffixText,
 		userNameLoggedOutText,
@@ -96,6 +97,12 @@ export default function DynamicTextEdit(props) {
 		isLinkSet,
 		isLinkTarget,
 	} = attributes;
+
+	attributes.ancestorPageHiddenOption = ancestorPageHiddenOption;
+	attributes.parentPageHiddenOption = parentPageHiddenOption;
+	attributes.isLinkSet = isLinkSet;
+	attributes.isLinkTarget = isLinkTarget;
+	attributes.customFieldLinkText = customFieldLinkText;
 
 	// クエリループのコンテキストを取得
 	const { queryId, query } = context || {};
@@ -118,8 +125,8 @@ export default function DynamicTextEdit(props) {
 
 			const pageForPosts = siteSettings?.page_for_posts;
 
-			// 投稿一覧ページが固定ページに設定されている場合
-			if (pageForPosts && queryPostType === 'post') {
+			// クエリループ内の投稿一覧ページの場合
+			if (isInQueryLoop && pageForPosts && queryPostType === 'post') {
 				const postsPage = getEntityRecord(
 					'postType',
 					'page',
@@ -138,7 +145,19 @@ export default function DynamicTextEdit(props) {
 				};
 			}
 
-			// 通常の投稿タイプの場合
+			// クエリループ内の通常の投稿タイプの場合
+			if (isInQueryLoop) {
+				const postTypeObj = getPostType(queryPostType);
+				return {
+					postTypeLabel:
+						postTypeObj?.labels?.singular_name ||
+						queryPostType.charAt(0).toUpperCase() +
+							queryPostType.slice(1),
+					isLoading: false,
+				};
+			}
+
+			// 通常の投稿タイプの場合（クエリループ外）
 			const postTypeObj = getPostType(queryPostType);
 			return {
 				postTypeLabel:
@@ -148,7 +167,7 @@ export default function DynamicTextEdit(props) {
 				isLoading: false,
 			};
 		},
-		[queryPostType]
+		[queryPostType, isInQueryLoop]
 	);
 
 	const blockProps = useBlockProps({
@@ -192,14 +211,27 @@ export default function DynamicTextEdit(props) {
 				'custom-field': customFieldName
 					? `${customFieldName} ${__('Value', 'vk-blocks-pro')} (${postTypeLabel})`
 					: '',
-				'ancestor-page': query?.parents
-					? `${postTypeLabel} ${__('Ancestor', 'vk-blocks-pro')}`
-					: null,
-				'parent-page': query?.parents
-					? `${postTypeLabel} ${__('Parent', 'vk-blocks-pro')}`
-					: null,
+				'ancestor-page': `${postTypeLabel} ${__('Ancestor', 'vk-blocks-pro')}`,
+				'parent-page': `${postTypeLabel} ${__('Parent', 'vk-blocks-pro')}`,
 				'user-name': __('User Name', 'vk-blocks-pro'),
 			}[displayElement];
+
+			// 親ページ・祖先ページの表示条件チェック
+			if (
+				((displayElement === 'parent-page' && (!query?.parents || query.parents.length !== 1)) ||
+				(displayElement === 'ancestor-page' && (!query?.parents || query.parents.length === 0))) &&
+				previewContent
+			) {
+				const message = displayElement === 'parent-page'
+					? __('This block will be displayed only on pages that have a parent page.', 'vk-blocks-pro')
+					: __('This block will be displayed only on pages that have ancestor pages.', 'vk-blocks-pro');
+
+				return (
+					<div className="alert alert-info text-center">
+						{message}
+					</div>
+				);
+			}
 
 			if (!previewContent) {
 				return (
@@ -473,7 +505,7 @@ export default function DynamicTextEdit(props) {
 							{fieldType === 'url' && isLinkSet && (
 								<TextControl
 									label={__('Link Text', 'vk-blocks-pro')}
-									value={attributes.customFieldLinkText}
+									value={customFieldLinkText}
 									onChange={(value) =>
 										setAttributes({
 											customFieldLinkText: value,

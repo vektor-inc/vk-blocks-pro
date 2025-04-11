@@ -42,8 +42,8 @@ function vk_blocks_dynamic_text_get_attributes_default() {
  */
 function vk_blocks_dynamic_text_wrap_with_icons( $content, $attributes ) {
 	$icon_style_before = '';
-	$icon_style_after = '';
-	
+	$icon_style_after  = '';
+
 	if ( ! empty( $attributes['fontAwesomeIconBefore'] ) ) {
 		$icon_style_before = ' style="font-size:' . esc_attr( $attributes['fontAwesomeIconBefore'] ) . ';"';
 	}
@@ -89,7 +89,15 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 	} elseif ( 'url' === $attributes['fieldType'] ) {
 		$custom_field_url = esc_url( get_post_meta( $block->context['postId'], $attributes['customFieldName'], true ) );
 		if ( $attributes['isLinkSet'] ) {
-			$link_text = ! empty( $attributes['customFieldLinkText'] ) ? wp_kses( $attributes['customFieldLinkText'], array( 'i' => array( 'class' => array(), 'style' => array() ) ) ) : $custom_field_url;
+			$link_text = ! empty( $attributes['customFieldLinkText'] ) ? wp_kses(
+				$attributes['customFieldLinkText'],
+				array(
+					'i' => array(
+						'class' => array(),
+						'style' => array(),
+					),
+				)
+			) : $custom_field_url;
 			$link_text = vk_blocks_dynamic_text_wrap_with_icons( $link_text, $attributes );
 			if ( $attributes['isLinkTarget'] ) {
 				$custom_field_content = '<a href="' . $custom_field_url . '" target="_blank" rel="noreferrer noopener">' . $link_text . '</a>';
@@ -174,7 +182,7 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 				$prefix = isset( $attributes['userNamePrefixText'] ) ? esc_html( $attributes['userNamePrefixText'] ) : '';
 				$suffix = isset( $attributes['userNameSuffixText'] ) ? esc_html( $attributes['userNameSuffixText'] ) : '';
 
-				$content = $prefix . $current_user->display_name . $suffix;
+				$content        = $prefix . $current_user->display_name . $suffix;
 				$block_content .= vk_blocks_dynamic_text_wrap_with_icons( $content, $attributes );
 			}
 		} else {
@@ -309,11 +317,11 @@ function vk_blocks_register_block_dynamic_text() {
 						'type'    => 'string',
 						'default' => '',
 					),
-					'fontAwesomeIconBefore'           => array(
+					'fontAwesomeIconBefore'    => array(
 						'type'    => 'string',
 						'default' => '1rem',
 					),
-					'fontAwesomeIconAfter'            => array(
+					'fontAwesomeIconAfter'     => array(
 						'type'    => 'string',
 						'default' => '1rem',
 					),

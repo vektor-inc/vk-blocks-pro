@@ -505,7 +505,9 @@ export default function DynamicTextEdit(props) {
 									units={units}
 									onChange={(value) => {
 										setAttributes({
-											fontAwesomeIconBefore: parseFloat(value)
+											fontAwesomeIconBefore: parseFloat(
+												value
+											)
 												? value
 												: null,
 										});
@@ -528,7 +530,9 @@ export default function DynamicTextEdit(props) {
 									units={units}
 									onChange={(value) => {
 										setAttributes({
-											fontAwesomeIconAfter: parseFloat(value)
+											fontAwesomeIconAfter: parseFloat(
+												value
+											)
 												? value
 												: null,
 										});

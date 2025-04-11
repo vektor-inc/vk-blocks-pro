@@ -225,9 +225,8 @@ export default function DynamicTextEdit(props) {
 				queryPostType === 'post' && pageForPostsTitle
 					? pageForPostsTitle
 					: postTypeLabel,
-			'post-slug': `${postTypeLabel} Slug`,
-			'user-name': __('User Name', 'vk-blocks-pro'),
-			'custom-field': `${customFieldName} (${postTypeLabel})`,
+			'post-slug': postTypeLabel + ' Slug',
+			'custom-field': customFieldName + ' (' + postTypeLabel + ')',
 		}[displayElement];
 
 		editContent = (

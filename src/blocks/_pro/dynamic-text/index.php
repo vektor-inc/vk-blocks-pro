@@ -311,14 +311,6 @@ function vk_blocks_register_block_dynamic_text() {
 					),
 					'fontAwesomeIconBefore'    => array(
 						'type'    => 'string',
-						'default' => '',
-					),
-					'fontAwesomeIconAfter'     => array(
-						'type'    => 'string',
-						'default' => '',
-					),
-					'fontAwesomeIconBefore'    => array(
-						'type'    => 'string',
 						'default' => '1rem',
 					),
 					'fontAwesomeIconAfter'     => array(

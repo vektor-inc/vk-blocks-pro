@@ -3,7 +3,7 @@
 	"name": "vk-blocks/dynamic-text",
 	"category": "vk-blocks-cat",
 	"title": "Dynamic Text",
-	"usesContext": ["postId"],
+	"usesContext": ["postId", "queryId", "query"],
 	"attributes": {
 		"textAlign": {
 			"type": "string",

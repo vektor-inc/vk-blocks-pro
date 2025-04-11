@@ -80,7 +80,20 @@ function DynamicTextEditControls({ tagName, onSelectTagName }) {
 }
 
 export default function DynamicTextEdit(props) {
-	const { attributes, setAttributes } = props;
+	const { attributes, setAttributes, context } = props;
+
+	const isInQueryLoop =
+		context?.queryId !== undefined && context?.queryId !== null;
+
+	const queryPostType = context?.query?.postType || 'post';
+	const postTypeLabel = useSelect(
+		(select) => {
+			const postTypeObj = select('core').getPostType(queryPostType);
+			return postTypeObj?.labels?.singular_name || queryPostType;
+		},
+		[queryPostType]
+	);
+
 	const {
 		textAlign,
 		displayElement,
@@ -124,6 +137,23 @@ export default function DynamicTextEdit(props) {
 			};
 		},
 		[]
+	);
+
+	const pageForPostsId = wp.data.select('core').getSite()?.page_for_posts;
+
+	const pageForPostsTitle = useSelect(
+		(select) => {
+			if (!pageForPostsId) {
+				return null;
+			}
+			const page = select('core').getEntityRecord(
+				'postType',
+				'page',
+				pageForPostsId
+			);
+			return page?.title?.rendered || null;
+		},
+		[pageForPostsId]
 	);
 
 	let editContent;
@@ -189,6 +219,21 @@ export default function DynamicTextEdit(props) {
 		);
 	} else if (displayElement === 'please-select') {
 		editContent = editAlertContent;
+	} else if (isInQueryLoop) {
+		const previewText = {
+			'post-type':
+				queryPostType === 'post' && pageForPostsTitle
+					? pageForPostsTitle
+					: postTypeLabel,
+			'post-slug': postTypeLabel + ' Slug',
+			'custom-field': customFieldName + ' (' + postTypeLabel + ')',
+		}[displayElement];
+
+		editContent = (
+			<TagName>
+				{previewText || __('Dynamic Text', 'vk-blocks-pro')}
+			</TagName>
+		);
 	} else {
 		editContent = (
 			<ServerSideRender
@@ -388,6 +433,12 @@ export default function DynamicTextEdit(props) {
 									setAttributes({ customFieldName: value })
 								}
 							/>
+							<div className="alert alert-warning mt-0 mb-4">
+								{__(
+									'This custom field may not be displayed if the field is not available or has no value in the content.',
+									'vk-blocks-pro'
+								)}
+							</div>
 							<SelectControl
 								label={__('Field Type', 'vk-blocks-pro')}
 								value={fieldType}

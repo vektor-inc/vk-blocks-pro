@@ -27,8 +27,38 @@ function vk_blocks_dynamic_text_get_attributes_default() {
 		'fieldType'                => 'text',
 		'isLinkSet'                => false,
 		'isLinkTarget'             => false,
+		'fontAwesomeIconBefore'    => '1rem',
+		'fontAwesomeIconAfter'     => '1rem',
 	);
 	return $attributes_default;
+}
+
+/**
+ * Wrap content with Font Awesome icons
+ *
+ * @param string $content Content to wrap.
+ * @param array  $attributes Block attributes.
+ * @return string
+ */
+function vk_blocks_dynamic_text_wrap_with_icons( $content, $attributes ) {
+	$icon_style_before = '';
+	$icon_style_after = '';
+	
+	if ( ! empty( $attributes['fontAwesomeIconBefore'] ) ) {
+		$icon_style_before = ' style="font-size:' . esc_attr( $attributes['fontAwesomeIconBefore'] ) . ';"';
+	}
+	if ( ! empty( $attributes['fontAwesomeIconAfter'] ) ) {
+		$icon_style_after = ' style="font-size:' . esc_attr( $attributes['fontAwesomeIconAfter'] ) . ';"';
+	}
+
+	if ( ! empty( $attributes['fontAwesomeIconBefore'] ) ) {
+		$content = '<i class="' . esc_attr( $attributes['fontAwesomeIconBefore'] ) . '"' . $icon_style_before . '></i> ' . $content;
+	}
+	if ( ! empty( $attributes['fontAwesomeIconAfter'] ) ) {
+		$content = $content . ' <i class="' . esc_attr( $attributes['fontAwesomeIconAfter'] ) . '"' . $icon_style_after . '></i>';
+	}
+
+	return $content;
 }
 
 /**
@@ -59,7 +89,8 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 	} elseif ( 'url' === $attributes['fieldType'] ) {
 		$custom_field_url = esc_url( get_post_meta( $block->context['postId'], $attributes['customFieldName'], true ) );
 		if ( $attributes['isLinkSet'] ) {
-			$link_text = ! empty( $attributes['customFieldLinkText'] ) ? wp_kses( $attributes['customFieldLinkText'], array( 'i' => array( 'class' => array() ) ) ) : $custom_field_url;
+			$link_text = ! empty( $attributes['customFieldLinkText'] ) ? wp_kses( $attributes['customFieldLinkText'], array( 'i' => array( 'class' => array(), 'style' => array() ) ) ) : $custom_field_url;
+			$link_text = vk_blocks_dynamic_text_wrap_with_icons( $link_text, $attributes );
 			if ( $attributes['isLinkTarget'] ) {
 				$custom_field_content = '<a href="' . $custom_field_url . '" target="_blank" rel="noreferrer noopener">' . $link_text . '</a>';
 			} else {
@@ -143,7 +174,8 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 				$prefix = isset( $attributes['userNamePrefixText'] ) ? esc_html( $attributes['userNamePrefixText'] ) : '';
 				$suffix = isset( $attributes['userNameSuffixText'] ) ? esc_html( $attributes['userNameSuffixText'] ) : '';
 
-				$block_content .= $prefix . $current_user->display_name . $suffix;
+				$content = $prefix . $current_user->display_name . $suffix;
+				$block_content .= vk_blocks_dynamic_text_wrap_with_icons( $content, $attributes );
 			}
 		} else {
 			$loggedout_text = isset( $attributes['userNameLoggedOutText'] ) ? esc_html( $attributes['userNameLoggedOutText'] ) : '';
@@ -156,9 +188,10 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 					$request_uri = isset( $_SERVER['REQUEST_URI'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] ) ) : '';
 					$current_url = ( is_ssl() ? 'https://' : 'http://' ) . $http_host . $request_uri;
 				}
-				$block_content .= '<a href="' . wp_login_url( $current_url ) . '">' . esc_html( $loggedout_text ) . '</a>';
+				$loggedout_text = vk_blocks_dynamic_text_wrap_with_icons( $loggedout_text, $attributes );
+				$block_content .= '<a href="' . wp_login_url( $current_url ) . '">' . $loggedout_text . '</a>';
 			} else {
-				$block_content .= esc_html( $loggedout_text );
+				$block_content .= vk_blocks_dynamic_text_wrap_with_icons( $loggedout_text, $attributes );
 			}
 		}
 	} elseif ( 'custom-field' === $attributes['displayElement'] ) {
@@ -267,6 +300,22 @@ function vk_blocks_register_block_dynamic_text() {
 					'isLinkTarget'             => array(
 						'type'    => 'boolean',
 						'default' => false,
+					),
+					'fontAwesomeIconBefore'    => array(
+						'type'    => 'string',
+						'default' => '',
+					),
+					'fontAwesomeIconAfter'     => array(
+						'type'    => 'string',
+						'default' => '',
+					),
+					'fontAwesomeIconBefore'           => array(
+						'type'    => 'string',
+						'default' => '1rem',
+					),
+					'fontAwesomeIconAfter'            => array(
+						'type'    => 'string',
+						'default' => '1rem',
 					),
 				)
 			),

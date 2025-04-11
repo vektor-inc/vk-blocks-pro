@@ -1,5 +1,6 @@
 /* globals MutationObserver */
 import classnames from 'classnames';
+import { FontAwesome } from '@vkblocks/utils/font-awesome-new';
 
 // import WordPress Scripts
 import { __ } from '@wordpress/i18n';
@@ -10,6 +11,7 @@ import {
 	CheckboxControl,
 	TextControl,
 	ToggleControl,
+	__experimentalUnitControl as UnitControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
 } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 import {
@@ -96,6 +98,8 @@ export default function DynamicTextEdit(props) {
 		fieldType,
 		isLinkSet,
 		isLinkTarget,
+		fontAwesomeIconBefore,
+		fontAwesomeIconAfter,
 	} = attributes;
 	attributes.ancestorPageHiddenOption = ancestorPageHiddenOption;
 	attributes.parentPageHiddenOption = parentPageHiddenOption;
@@ -109,6 +113,9 @@ export default function DynamicTextEdit(props) {
 			[`has-text-align-${textAlign}`]: textAlign,
 		}),
 	});
+
+	// eslint-disable-next-line no-undef
+	const iconFamily = vkFontAwesome.iconFamily;
 
 	const { postType, parentPageId, currentUser, postSlug } = useSelect(
 		(select) => {
@@ -221,6 +228,13 @@ export default function DynamicTextEdit(props) {
 
 		return () => observer.disconnect();
 	}, [attributes]);
+
+	// アイコン単位
+	const units = [
+		{ value: 'px', label: 'px', default: 16 },
+		{ value: 'em', label: 'em', default: 1 },
+		{ value: 'rem', label: 'rem', default: 1 },
+	];
 
 	return (
 		<>
@@ -464,6 +478,66 @@ export default function DynamicTextEdit(props) {
 						}
 					/>
 				</PanelBody>
+				{(isLinkSet || displayElement === 'user-name') && (
+					<PanelBody
+						title={__('Icon Settings', 'vk-blocks-pro')}
+						initialOpen={false}
+					>
+						<BaseControl>
+							<h4 className={`mt-0 mb-2`}>
+								{__('Icon', 'vk-blocks-pro') +
+									' ( ' +
+									iconFamily +
+									' )'}
+							</h4>
+							<BaseControl
+								id={`vk_block_dynamic_text_fa_before_text`}
+								label={__('Before text', 'vk-blocks-pro')}
+							>
+								<FontAwesome
+									attributeName={'fontAwesomeIconBefore'}
+									modeClass={true}
+									{...props}
+								/>
+								<UnitControl
+									label={__('Size', 'vk-blocks-pro')}
+									value={fontAwesomeIconBefore}
+									units={units}
+									onChange={(value) => {
+										setAttributes({
+											fontAwesomeIconBefore: parseFloat(value)
+												? value
+												: null,
+										});
+									}}
+								/>
+							</BaseControl>
+							<hr />
+							<BaseControl
+								id={`vk_block_dynamic_text_fa_after_text`}
+								label={__('After text', 'vk-blocks-pro')}
+							>
+								<FontAwesome
+									attributeName={'fontAwesomeIconAfter'}
+									modeClass={true}
+									{...props}
+								/>
+								<UnitControl
+									label={__('Size', 'vk-blocks-pro')}
+									value={fontAwesomeIconAfter}
+									units={units}
+									onChange={(value) => {
+										setAttributes({
+											fontAwesomeIconAfter: parseFloat(value)
+												? value
+												: null,
+										});
+									}}
+								/>
+							</BaseControl>
+						</BaseControl>
+					</PanelBody>
+				)}
 			</InspectorControls>
 			<div {...blockProps}>{editContent}</div>
 		</>

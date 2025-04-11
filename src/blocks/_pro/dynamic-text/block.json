@@ -64,6 +64,14 @@
 		"isLinkTarget": {
 			"type": "boolean",
 			"default": false
+		},
+		"fontAwesomeIconBefore": {
+			"type": "string",
+			"default": "1rem"
+		},
+		"fontAwesomeIconAfter": {
+			"type": "string",
+			"default": "1rem"
 		}
 	},
 	"description": "Display dynamic text",

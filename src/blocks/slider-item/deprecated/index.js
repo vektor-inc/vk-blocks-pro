@@ -108,7 +108,7 @@ const blockAttributes6 = {
 	},
 }
 
-// 1.73.0 で linkUrl, linkTarget を追加
+/* 次回対応おねがいします
 const blockAttributes7 = {
 	...blockAttributes6,
 	relAttribute: {
@@ -120,11 +120,18 @@ const blockAttributes7 = {
 		default: ''
 	},
 }
-
+*/
 export default [
 	{
-		attributes: blockAttributes7,
+		attributes: blockAttributes6,
 		save: save1_94_0,
+		migrate: (attributes) => {
+			return {
+				...attributes,
+				relAttribute: '',
+				linkDescription: '',
+			};
+		},
 	},
 	{
 		attributes: blockAttributes6,

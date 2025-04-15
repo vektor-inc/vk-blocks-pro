@@ -306,7 +306,9 @@ export default function ButtonEdit(props) {
 					>
 						<URLInput
 							value={buttonUrl}
-							onChange={(value) => setAttributes({ buttonUrl: value })}
+							onChange={(value) =>
+								setAttributes({ buttonUrl: value })
+							}
 						/>
 					</BaseControl>
 					<CheckboxControl

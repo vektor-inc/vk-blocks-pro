@@ -68,7 +68,7 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 		$custom_field_content = wpautop( wp_kses_post( get_post_meta( $block->context['postId'], $attributes['customFieldName'], true ) ) );
 	} elseif ( 'url' === $attributes['fieldType'] ) {
 		$custom_field_url = esc_url( get_post_meta( $block->context['postId'], $attributes['customFieldName'], true ) );
-		if ( $attributes['isLinkSet'] ) {
+		if ( true === $attributes['isLinkSet'] ) {
 			$link_text = ! empty( $attributes['customFieldLinkText'] ) ? wp_kses( $attributes['customFieldLinkText'], array( 'i' => array( 'class' => array() ) ) ) : $custom_field_url;
 
 			// FontAwesomeアイコン処理
@@ -87,13 +87,13 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 				$icon_after     = '<i class="' . esc_attr( $fa_after_class ) . '"' . $style_after . '></i>';
 			}
 
-			if ( $attributes['isLinkTarget'] ) {
+			if ( true === $attributes['isLinkTarget'] ) {
 				$custom_field_content = '<a href="' . $custom_field_url . '" target="_blank" rel="noreferrer noopener">' . $link_text . '</a>';
 			} else {
 				$custom_field_content = '<a href="' . $custom_field_url . '">' . $link_text . '</a>';
 			}
 
-			if ( $attributes['isButtonStyle'] ) {
+			if ( true === $attributes['isButtonStyle'] ) {
 				// ボタンスタイルの場合はアイコン付きでHTMLを生成
 				$content_with_icons = $icon_before . $link_text . $icon_after;
 
@@ -178,7 +178,7 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 				$style_attr = ! empty( $inline_style ) ? ' style="' . $inline_style . '"' : '';
 
 				$custom_field_content = '<a href="' . $custom_field_url . '" class="' . $button_classes . '"'
-					. ( $attributes['isLinkTarget'] ? ' target="_blank" rel="noreferrer noopener"' : '' )
+					. ( true === $attributes['isLinkTarget'] ? ' target="_blank" rel="noreferrer noopener"' : '' )
 					. ' role="button" aria-pressed="true"'
 					. $style_attr . '>';
 
@@ -191,7 +191,7 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 
 				$custom_field_content .= '</a>';
 			} else {
-				$custom_field_content = '<a href="' . $custom_field_url . '"' . ( $attributes['isLinkTarget'] ? ' target="_blank" rel="noreferrer noopener"' : '' ) . '>' . $link_text . '</a>';
+				$custom_field_content = '<a href="' . $custom_field_url . '"' . ( true === $attributes['isLinkTarget'] ? ' target="_blank" rel="noreferrer noopener"' : '' ) . '>' . $link_text . '</a>';
 			}
 		} else {
 			$custom_field_content = $custom_field_url;
@@ -221,7 +221,7 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 	$wrapper_classes = get_block_wrapper_attributes( array( 'class' => $classes ) );
 
 	$block_content = '';
-	if ( $attributes['tagName'] ) {
+	if ( ! empty( $attributes['tagName'] ) ) {
 		$block_content .= '<' . $attributes['tagName'] . ' ' . $wrapper_classes . '>';
 	}
 	if ( 'post-type' === $attributes['displayElement'] ) {
@@ -237,7 +237,7 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 	} elseif ( 'ancestor-page' === $attributes['displayElement'] ) {
 		$post = get_post();
 		// 親ページがない（＝先祖階層） && 先祖階層のページを非表示にするオプションが有効の場合は処理を終了.
-		if ( empty( $post->post_parent ) && $attributes['ancestorPageHiddenOption'] ) {
+		if ( empty( $post->post_parent ) && true === $attributes['ancestorPageHiddenOption'] ) {
 			return;
 		}
 		// 先祖階層のページタイトルを取得.
@@ -253,7 +253,7 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 	} elseif ( 'parent-page' === $attributes['displayElement'] ) {
 		$post = get_post();
 		// 親ページがない（＝先祖階層） && 親ページを非表示にするオプションが有効の場合は処理を終了.
-		if ( empty( $post->post_parent ) && $attributes['parentPageHiddenOption'] ) {
+		if ( empty( $post->post_parent ) && true === $attributes['parentPageHiddenOption'] ) {
 			return;
 		}
 
@@ -293,11 +293,11 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 		$block_content .= vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $block );
 	} elseif ( 'post-slug' === $attributes['displayElement'] ) {
 		$post = isset( $block->context['postId'] ) ? get_post( $block->context['postId'] ) : null;
-		if ( null !== $post ) {
+		if ( $post ) {
 			$block_content .= esc_html( $post->post_name );
 		}
 	}
-	if ( $attributes['tagName'] ) {
+	if ( ! empty( $attributes['tagName'] ) ) {
 		$block_content .= '</' . $attributes['tagName'] . '>';
 	}
 

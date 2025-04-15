@@ -9,7 +9,7 @@ import {
 } from '@wordpress/components';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import { FontAwesome } from '@vkblocks/utils/font-awesome-new';
-import { Component, useState, useMemo } from '@wordpress/element';
+import { Component } from '@wordpress/element';
 import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import './style';
@@ -32,52 +32,32 @@ export const ButtonSettings = (props) => {
 			{ value: 'em', label: 'em', default: 1 },
 			{ value: 'rem', label: 'rem', default: 1 },
 		],
-		// dynamic-textなどbuttonAttrsで直接渡される場合のプロパティ
-		isButtonStyle,
-		buttonColor: propsButtonColor,
-		buttonType: propsButtonType,
-		buttonSize: propsButtonSize,
-		fontAwesomeIconBefore: propsFontAwesomeIconBefore,
-		fontAwesomeIconAfter: propsFontAwesomeIconAfter,
-		iconSizeBefore: propsIconSizeBefore,
-		iconSizeAfter: propsIconSizeAfter,
-		subCaption: propsSubCaption,
-		buttonTextColorCustom: propsButtonTextColorCustom,
-		buttonColorCustom: propsButtonColorCustom,
-		borderRadius: propsBorderRadius,
+		isButtonStyle = false,
 	} = props;
 
-	// dynamic-textブロックの場合はtrue
-	const isDynamicText = props.isButtonStyle || false;
+	const {
+		buttonColor = 'primary',
+		buttonType = '0',
+		buttonSize = 'md',
+		buttonAlign = 'center',
+		buttonEffect = 'none',
+		iconSizeBefore,
+		iconSizeAfter,
+		buttonWidth = 0,
+		buttonWidthTablet = 0,
+		buttonWidthMobile = 0,
+		borderRadius,
+		subCaption = '',
+	} = attributes;
 
-	// vk-blocks/buttonブロックの場合は必ず表示する（buttonColorとbuttonSizeが常に存在する）
-	// dynamic-textなど、他のブロックではbuttonColorとbuttonSizeの有無またはisButtonStyleでボタン設定かどうかを判断
+	// このブロックがボタン設定をサポートしていない場合は表示しない
 	const blockName = props.name || '';
 	const isButtonBlock =
 		blockName === 'vk-blocks/button' || blockName.includes('/button');
 
-	// attributesとプロパティを両方対応できるようにする
-	const effectiveButtonColor = propsButtonColor || attributes.buttonColor;
-	const effectiveButtonType = propsButtonType || attributes.buttonType;
-	const effectiveButtonSize = propsButtonSize || attributes.buttonSize;
-	const effectiveButtonTextColorCustom =
-		propsButtonTextColorCustom || attributes.buttonTextColorCustom;
-	const effectiveButtonColorCustom =
-		propsButtonColorCustom || attributes.buttonColorCustom;
-	const effectiveBorderRadius = propsBorderRadius || attributes.borderRadius;
-	const effectiveSubCaption = propsSubCaption || attributes.subCaption;
-
-	// 直接渡されたプロパティの場合はtrue（dynamic-textなど）
-	const hasDirectButtonProps =
-		isButtonStyle ||
-		!!propsButtonColor ||
-		!!propsButtonType ||
-		!!propsButtonSize;
-
-	// このブロックがボタン設定をサポートしていない場合は表示しない
 	if (
 		!isButtonBlock &&
-		!hasDirectButtonProps &&
+		!isButtonStyle &&
 		attributes.buttonSize === undefined &&
 		attributes.buttonColor === undefined
 	) {
@@ -93,60 +73,31 @@ export const ButtonSettings = (props) => {
 		);
 	}
 
-	// 属性にデフォルト値を設定（存在しない場合はundefinedのままにする）
-	const {
-		buttonSize = effectiveButtonSize || 'md',
-		buttonAlign = 'center',
-		buttonType = effectiveButtonType || '0',
-		buttonEffect = 'none',
-		buttonColor = effectiveButtonColor || 'primary',
-		fontAwesomeIconBefore = propsFontAwesomeIconBefore,
-		fontAwesomeIconAfter = propsFontAwesomeIconAfter,
-		iconSizeBefore = propsIconSizeBefore,
-		iconSizeAfter = propsIconSizeAfter,
-		buttonWidth = 0,
-		buttonWidthTablet = 0,
-		buttonWidthMobile = 0,
-		content = '',
-	} = attributes;
-
-	// subCaptionとカスタムカラー関連は別途処理
-	const subCaption = effectiveSubCaption;
-	const buttonColorCustom = effectiveButtonColorCustom;
-	const buttonTextColorCustom = effectiveButtonTextColorCustom;
-	const borderRadius = effectiveBorderRadius;
-
-	// setAttributesが存在しない場合、渡されたpropsを使う（dynamic-text用）
+	// setAttributesが存在しない場合の処理
 	const handleSetAttribute = (attrObj) => {
 		if (setAttributes) {
 			setAttributes(attrObj);
 		}
 	};
 
-	// dynamic-textブロックの場合はbuttonEffect,buttonWidthなどの不要項目を削除
-	const isDynamicTextButtonSettings = isDynamicText || isButtonStyle;
-
 	return (
 		<>
 			{attributes.content !== undefined && (
 				<TextControl
-					label={__('Button Text:', 'vk-blocks-pro')}
+					label={__('Button Text', 'vk-blocks-pro')}
 					onChange={(value) => handleSetAttribute({ content: value })}
 					value={attributes.content}
 				/>
 			)}
 
-			{attributes.subCaption !== undefined && (
-				<TextControl
-					label={__('Sub Caption:', 'vk-blocks-pro')}
-					onChange={(value) =>
-						handleSetAttribute({ subCaption: value })
-					}
-					value={attributes.subCaption}
-				/>
-			)}
+			<TextControl
+				label={__('Sub Caption', 'vk-blocks-pro')}
+				onChange={(value) => handleSetAttribute({ subCaption: value })}
+				value={subCaption}
+				className="mt-0 mb-3"
+			/>
 
-			<h4 className="mt-0 mb-2">{__('Button Size:', 'vk-blocks-pro')}</h4>
+			<h4 className="mt-0 mb-2">{__('Button Size', 'vk-blocks-pro')}</h4>
 			<ToggleGroupControl
 				value={buttonSize}
 				onChange={(value) => handleSetAttribute({ buttonSize: value })}
@@ -169,7 +120,7 @@ export const ButtonSettings = (props) => {
 			{!isInnerButton && attributes.buttonAlign !== undefined && (
 				<>
 					<h4 className="mt-0 mb-2">
-						{__('Button Position:', 'vk-blocks-pro')}
+						{__('Button Position', 'vk-blocks-pro')}
 					</h4>
 					<ToggleGroupControl
 						value={buttonAlign}
@@ -200,18 +151,13 @@ export const ButtonSettings = (props) => {
 							label={__('Block', 'vk-blocks-pro')}
 						/>
 					</ToggleGroupControl>
-					<style>{`
-						.vk-button-align-control .components-toggle-group-control-option-base {
-							padding: 0;
-						}
-					`}</style>
 				</>
 			)}
 
 			{isInnerButton && attributes.buttonWidth !== undefined && (
 				<>
 					<h4 className="mt-0 mb-2">
-						{__('Button Width:', 'vk-blocks-pro')}
+						{__('Button Width', 'vk-blocks-pro')}
 					</h4>
 					<p className="mt-0 mb-2">{__('Mobile', 'vk-blocks-pro')}</p>
 					<ToggleGroupControl
@@ -266,9 +212,7 @@ export const ButtonSettings = (props) => {
 				</>
 			)}
 
-			<h4 className="mt-0 mb-2">
-				{__('Button Style:', 'vk-blocks-pro')}
-			</h4>
+			<h4 className="mt-0 mb-2">{__('Button Style', 'vk-blocks-pro')}</h4>
 			<ToggleGroupControl
 				value={buttonType}
 				onChange={(value) => {
@@ -296,17 +240,11 @@ export const ButtonSettings = (props) => {
 					label={__('Text only', 'vk-blocks-pro')}
 				/>
 			</ToggleGroupControl>
-			<p className="mb-3">
-				{__(
-					'If you select "No background", that you need to select a Custom Color.',
-					'vk-blocks-pro'
-				)}
-			</p>
 
 			{'0' === buttonType && attributes.buttonEffect !== undefined && (
 				<>
 					<h4 className="mt-0 mb-2">
-						{__('Button Effect:', 'vk-blocks-pro')}
+						{__('Button Effect', 'vk-blocks-pro')}
 					</h4>
 					<ToggleGroupControl
 						value={buttonEffect}
@@ -372,237 +310,98 @@ export const ButtonSettings = (props) => {
 				onChange={(value) => handleSetAttribute({ buttonColor: value })}
 			/>
 
-			{/* dynamic-text用のアイコン選択UI */}
-			{isDynamicTextButtonSettings && (
-				<>
-					{/* dynamic-text用のサブキャプション設定 */}
-					<TextControl
-						label={__('Sub Caption:', 'vk-blocks-pro')}
-						onChange={(value) =>
-							handleSetAttribute({ subCaption: value })
-						}
-						value={attributes.subCaption || ''}
-						className="mt-0 mb-3"
+			<BaseControl
+				label={__('Custom Color', 'vk-blocks-pro')}
+				id="vk-block-button-custom-color"
+			>
+				<BaseControl
+					id="vk-block-button-custom-background-color"
+					label={
+						buttonType === '0' || buttonType === null
+							? __('Background Color', 'vk-blocks-pro')
+							: __('Button Color', 'vk-blocks-pro')
+					}
+					help={__(
+						'This color palette overrides the default color. If you want to use the default color, click the clear button.',
+						'vk-blocks-pro'
+					)}
+				>
+					<AdvancedColorPalette
+						schema={'buttonColorCustom'}
+						attributes={attributes}
+						setAttributes={handleSetAttribute}
 					/>
-
-					{/* dynamic-text用のカスタムカラー設定 */}
+				</BaseControl>
+				{(buttonType === '0' || buttonType === null) && (
 					<BaseControl
-						label={__('Custom Color', 'vk-blocks-pro')}
-						id="vk-block-button-custom-color-dynamic"
+						id="vk-block-button-custom-text-color"
+						label={__('Text Color', 'vk-blocks-pro')}
 					>
-						<BaseControl
-							id="vk-block-button-custom-background-color-dynamic"
-							label={
-								buttonType === '0' || buttonType === null
-									? __('Background Color', 'vk-blocks-pro')
-									: __('Button Color', 'vk-blocks-pro')
-							}
-							help={__(
-								'This color palette overrides the default color. If you want to use the default color, click the clear button.',
-								'vk-blocks-pro'
-							)}
-						>
-							<AdvancedColorPalette
-								schema={'buttonColorCustom'}
-								attributes={{
-									buttonColorCustom,
-								}}
-								setAttributes={handleSetAttribute}
-							/>
-						</BaseControl>
-						{(buttonType === '0' || buttonType === null) && (
-							<BaseControl
-								id="vk-block-button-custom-text-color-dynamic"
-								label={__('Text Color', 'vk-blocks-pro')}
-							>
-								<AdvancedColorPalette
-									schema={'buttonTextColorCustom'}
-									attributes={{
-										buttonTextColorCustom,
-									}}
-									setAttributes={handleSetAttribute}
-								/>
-							</BaseControl>
-						)}
-					</BaseControl>
-
-					{/* dynamic-text用のボーダーラジウス設定 */}
-					<h4 className="mt-0 mb-2">
-						{__('Button border radius', 'vk-blocks-pro')}
-					</h4>
-					<UnitControl
-						value={propsBorderRadius}
-						onChange={(value) => {
-							handleSetAttribute({ borderRadius: value || null });
-						}}
-						units={[
-							{ value: 'px', label: 'px', default: 5 },
-							{ value: '%', label: '%', default: 5 },
-							{ value: 'em', label: 'em', default: 1 },
-							{ value: 'rem', label: 'rem', default: 1 },
-						]}
-					/>
-
-					<h4 className="mt-0 mb-2">{__('Icon', 'vk-blocks-pro')}</h4>
-					<BaseControl
-						id="vk-block-button-fa-before-text-dynamic"
-						label={__('Before text', 'vk-blocks-pro')}
-					>
-						<FontAwesome
-							attributeName={'fontAwesomeIconBefore'}
-							attributes={{
-								fontAwesomeIconBefore,
-							}}
+						<AdvancedColorPalette
+							schema={'buttonTextColorCustom'}
+							attributes={attributes}
 							setAttributes={handleSetAttribute}
 						/>
-						<UnitControl
-							label={__('Size', 'vk-blocks-pro')}
-							value={iconSizeBefore}
-							units={units}
-							onChange={(value) => {
-								handleSetAttribute({
-									iconSizeBefore: parseFloat(value)
-										? value
-										: null,
-								});
-							}}
-						/>
 					</BaseControl>
-					<hr />
-					<BaseControl
-						id="vk-block-button-fa-after-text-dynamic"
-						label={__('After text', 'vk-blocks-pro')}
-					>
-						<FontAwesome
-							attributeName={'fontAwesomeIconAfter'}
-							attributes={{
-								fontAwesomeIconAfter,
-							}}
-							setAttributes={handleSetAttribute}
-						/>
-						<UnitControl
-							label={__('Size', 'vk-blocks-pro')}
-							value={iconSizeAfter}
-							units={units}
-							onChange={(value) => {
-								handleSetAttribute({
-									iconSizeAfter: parseFloat(value)
-										? value
-										: null,
-								});
-							}}
-						/>
-					</BaseControl>
-				</>
-			)}
+				)}
+			</BaseControl>
 
-			{/* 通常のボタン設定（buttonブロック用） */}
-			{
-				<>
-					<BaseControl
-						label={__('Custom Color', 'vk-blocks-pro')}
-						id="vk-block-button-custom-color"
-					>
-						<BaseControl
-							id="vk-block-button-custom-background-color"
-							label={
-								buttonType === '0' || buttonType === null
-									? __('Background Color', 'vk-blocks-pro')
-									: __('Button Color', 'vk-blocks-pro')
-							}
-							help={__(
-								'This color palette overrides the default color. If you want to use the default color, click the clear button.',
-								'vk-blocks-pro'
-							)}
-						>
-							<AdvancedColorPalette
-								schema={'buttonColorCustom'}
-								{...props}
-							/>
-						</BaseControl>
-						{(buttonType === '0' || buttonType === null) &&
-							buttonColorCustom !== undefined && (
-								<BaseControl
-									id="vk-block-button-custom-text-color"
-									label={__('Text Color', 'vk-blocks-pro')}
-								>
-									<AdvancedColorPalette
-										schema={'buttonTextColorCustom'}
-										{...props}
-									/>
-								</BaseControl>
-							)}
-					</BaseControl>
+			<h4 className="mt-0 mb-2">
+				{__('Button border radius', 'vk-blocks-pro')}
+			</h4>
+			<UnitControl
+				value={borderRadius}
+				onChange={(value) => {
+					handleSetAttribute({ borderRadius: value || null });
+				}}
+				units={units}
+			/>
 
-					<BaseControl>
-						<h4 className="mt-0 mb-2">
-							{__('Icon', 'vk-blocks-pro') +
-								' ( ' +
-								iconFamily +
-								' )'}
-						</h4>
-						<BaseControl
-							id="vk-block-button-fa-before-text"
-							label={__('Before text', 'vk-blocks-pro')}
-						>
-							<FontAwesome
-								attributeName={'fontAwesomeIconBefore'}
-								{...props}
-							/>
-							<UnitControl
-								label={__('Size', 'vk-blocks-pro')}
-								value={iconSizeBefore}
-								units={units}
-								onChange={(value) => {
-									handleSetAttribute({
-										iconSizeBefore: parseFloat(value)
-											? value
-											: null,
-									});
-								}}
-							/>
-						</BaseControl>
-						<hr />
-						<BaseControl
-							id="vk-block-button-fa-after-text"
-							label={__('After text', 'vk-blocks-pro')}
-						>
-							<FontAwesome
-								attributeName={'fontAwesomeIconAfter'}
-								{...props}
-							/>
-							<UnitControl
-								label={__('Size', 'vk-blocks-pro')}
-								value={iconSizeAfter}
-								units={units}
-								onChange={(value) => {
-									handleSetAttribute({
-										iconSizeAfter: parseFloat(value)
-											? value
-											: null,
-									});
-								}}
-							/>
-						</BaseControl>
-					</BaseControl>
-
-					<h4 className="mt-0 mb-2">
-						{__('Button border radius', 'vk-blocks-pro')}
-					</h4>
-					<UnitControl
-						value={attributes.borderRadius}
-						onChange={(value) => {
-							handleSetAttribute({ borderRadius: value || null });
-						}}
-						units={[
-							{ value: 'px', label: 'px', default: 5 },
-							{ value: '%', label: '%', default: 5 },
-							{ value: 'em', label: 'em', default: 1 },
-							{ value: 'rem', label: 'rem', default: 1 },
-						]}
-					/>
-				</>
-			}
+			<h4 className="mt-0 mb-2">
+				{__('Icon', 'vk-blocks-pro') +
+					(iconFamily ? ' ( ' + iconFamily + ' )' : '')}
+			</h4>
+			<BaseControl
+				id="vk-block-button-fa-before-text"
+				label={__('Before text', 'vk-blocks-pro')}
+			>
+				<FontAwesome
+					attributeName={'fontAwesomeIconBefore'}
+					attributes={attributes}
+					setAttributes={handleSetAttribute}
+				/>
+				<UnitControl
+					label={__('Size', 'vk-blocks-pro')}
+					value={iconSizeBefore}
+					units={units}
+					onChange={(value) => {
+						handleSetAttribute({
+							iconSizeBefore: parseFloat(value) ? value : null,
+						});
+					}}
+				/>
+			</BaseControl>
+			<hr />
+			<BaseControl
+				id="vk-block-button-fa-after-text"
+				label={__('After text', 'vk-blocks-pro')}
+			>
+				<FontAwesome
+					attributeName={'fontAwesomeIconAfter'}
+					attributes={attributes}
+					setAttributes={handleSetAttribute}
+				/>
+				<UnitControl
+					label={__('Size', 'vk-blocks-pro')}
+					value={iconSizeAfter}
+					units={units}
+					onChange={(value) => {
+						handleSetAttribute({
+							iconSizeAfter: parseFloat(value) ? value : null,
+						});
+					}}
+				/>
+			</BaseControl>
 		</>
 	);
 };

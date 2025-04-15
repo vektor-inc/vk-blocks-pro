@@ -1,3 +1,18 @@
 /*-------------------------------------------*/
 /* .dynamic-text
 /*-------------------------------------------*/
+
+.vk_dynamicText {
+  // ボタンスタイルのリンク
+  // コンポーネントスタイルを使用するため、独自スタイルは最小限に
+  a.vk_button_link {
+    // ここではコンポーネントの追加のスタイルのみ定義
+    &.btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+@import '../../../components/vkb-button-control/style.scss';

@@ -20,6 +20,7 @@ import {
 } from '@wordpress/block-editor';
 import { useSelect } from '@wordpress/data';
 import ServerSideRender from '@wordpress/server-side-render';
+import { ButtonSettings } from '@vkblocks/components/vkb-button-control';
 
 /**
  * Render Select controls for the Dynamic text block.
@@ -96,12 +97,36 @@ export default function DynamicTextEdit(props) {
 		fieldType,
 		isLinkSet,
 		isLinkTarget,
+		isButtonStyle,
+		buttonColor,
+		buttonType,
+		buttonSize,
+		fontAwesomeIconBefore,
+		fontAwesomeIconAfter,
+		iconSizeBefore,
+		iconSizeAfter,
+		borderRadius,
+		buttonTextColorCustom,
+		buttonColorCustom,
+		subCaption,
 	} = attributes;
 	attributes.ancestorPageHiddenOption = ancestorPageHiddenOption;
 	attributes.parentPageHiddenOption = parentPageHiddenOption;
 	attributes.isLinkSet = isLinkSet;
 	attributes.isLinkTarget = isLinkTarget;
 	attributes.customFieldLinkText = customFieldLinkText;
+	attributes.isButtonStyle = isButtonStyle;
+	attributes.buttonColor = buttonColor;
+	attributes.buttonType = buttonType;
+	attributes.buttonSize = buttonSize;
+	attributes.fontAwesomeIconBefore = fontAwesomeIconBefore;
+	attributes.fontAwesomeIconAfter = fontAwesomeIconAfter;
+	attributes.iconSizeBefore = iconSizeBefore;
+	attributes.iconSizeAfter = iconSizeAfter;
+	attributes.borderRadius = borderRadius;
+	attributes.buttonTextColorCustom = buttonTextColorCustom;
+	attributes.buttonColorCustom = buttonColorCustom;
+	attributes.subCaption = subCaption;
 
 	// Hooks.
 	const blockProps = useBlockProps({
@@ -445,15 +470,60 @@ export default function DynamicTextEdit(props) {
 								</>
 							)}
 							{fieldType === 'url' && isLinkSet && (
-								<TextControl
-									label={__('Link Text', 'vk-blocks-pro')}
-									value={attributes.customFieldLinkText}
-									onChange={(value) =>
+								<>
+									<TextControl
+										label={__('Link Text', 'vk-blocks-pro')}
+										value={attributes.customFieldLinkText}
+										onChange={(value) =>
 										setAttributes({
 											customFieldLinkText: value,
 										})
-									}
-								/>
+										}
+									/>
+									<ToggleControl
+										label={__('Button Style', 'vk-blocks-pro')}
+										checked={isButtonStyle}
+										onChange={(checked) =>
+											setAttributes({ isButtonStyle: checked })
+										}
+									/>
+								</>
+							)}
+							{isButtonStyle && (
+								<>
+									<h4 className="mb-2">{__('Button Settings', 'vk-blocks-pro')}</h4>
+									<ButtonSettings
+										isButtonStyle={true}
+										buttonColor={buttonColor || 'primary'}
+										buttonType={buttonType || '0'}
+										buttonSize={buttonSize || 'md'}
+										fontAwesomeIconBefore={fontAwesomeIconBefore}
+										fontAwesomeIconAfter={fontAwesomeIconAfter}
+										iconSizeBefore={iconSizeBefore}
+										iconSizeAfter={iconSizeAfter}
+										borderRadius={borderRadius}
+										buttonTextColorCustom={buttonTextColorCustom}
+										buttonColorCustom={buttonColorCustom}
+										lbsubCaption={subCaption}
+										attributeName={'fontAwesomeIconBefore'}
+										attributes={{
+											buttonColor,
+											buttonType,
+											buttonSize,
+											fontAwesomeIconBefore,
+											fontAwesomeIconAfter,
+											iconSizeBefore,
+											iconSizeAfter,
+											borderRadius,
+											buttonTextColorCustom,
+											buttonColorCustom,
+											subCaption
+										}}
+										setAttributes={(attrObj) => {
+											setAttributes(attrObj);
+										}}
+									/>
+								</>
 							)}
 						</BaseControl>
 					)}

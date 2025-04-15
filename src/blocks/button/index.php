@@ -24,7 +24,7 @@ function vk_blocks_register_block_button() {
 	register_block_type(
 		__DIR__,
 		array(
-			'style'         => 'vk-blocks/button',
+			'style'         => array('vk-blocks/button', 'vk-blocks/button-control'),
 			'editor_style'  => 'vk-blocks-build-editor-css',
 			'editor_script' => 'vk-blocks-build-js',
 		)

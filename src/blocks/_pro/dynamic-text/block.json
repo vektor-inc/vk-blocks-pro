@@ -64,6 +64,46 @@
 		"isLinkTarget": {
 			"type": "boolean",
 			"default": false
+		},
+		"isButtonStyle": {
+			"type": "boolean",
+			"default": false
+		},
+		"buttonColor": {
+			"type": "string",
+			"default": "primary"
+		},
+		"buttonType": {
+			"type": "string",
+			"default": "0"
+		},
+		"buttonSize": {
+			"type": "string",
+			"default": "md"
+		},
+		"borderRadius": {
+			"type": "string",
+			"default": null
+		},
+		"buttonColorCustom": {
+			"type": "string",
+			"default": null
+		},
+		"buttonTextColorCustom": {
+			"type": "string",
+			"default": null
+		},
+		"buttonAlign": {
+			"type": "string",
+			"default": null
+		},
+		"fontAwesomeIconBefore": {
+			"type": "string",
+			"default": null
+		},
+		"fontAwesomeIconAfter": {
+			"type": "string",
+			"default": null
 		}
 	},
 	"description": "Display dynamic text",

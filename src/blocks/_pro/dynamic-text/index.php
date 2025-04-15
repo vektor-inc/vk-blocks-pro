@@ -181,11 +181,6 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
  *
  * @return void
  */
-/**
- * Register Dynamic Text block.
- *
- * @return void
- */
 function vk_blocks_register_block_dynamic_text() {
 	// Register Style.
 	if ( ! is_admin() ) {

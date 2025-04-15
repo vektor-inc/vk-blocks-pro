@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.5
 Tested up to: 6.7
-Stable tag: 1.99.0.1
+Stable tag: 1.100.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -108,6 +108,7 @@ e.g.
 
 == Changelog ==
 
+= 1.101.0 =
 [ Specification change ][ Dynamic Text (Pro) ] Allows i-tags in custom field link text.
 [ Bug Fix ][ Step (Pro) ] Fix it so that leaving the starting number for a step blank does not result in an error.
 

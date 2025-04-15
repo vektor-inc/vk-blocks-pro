@@ -1,5 +1,8 @@
 import { __ } from '@wordpress/i18n';
-import { PanelBody } from '@wordpress/components';
+import {
+	PanelBody,
+	__experimentalNumberControl as NumberControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
+} from '@wordpress/components';
 import {
 	InspectorControls,
 	InnerBlocks,
@@ -37,12 +40,16 @@ export default function StepEdit({ attributes, setAttributes, clientId }) {
 		<>
 			<InspectorControls>
 				<PanelBody title={__('First Dot Number', 'vk-blocks-pro')}>
-					<input
-						type="number"
+					<NumberControl
 						id={'dot-number'}
-						onChange={(event) => {
-							const value = parseInt(event.target.value, 10);
-							setAttributes({ firstDotNum: value });
+						onChange={(value) => {
+							if (Number.isNaN(value) || value < 1) {
+								setAttributes({ firstDotNum: 1 });
+							} else {
+								setAttributes({
+									firstDotNum: parseInt(value, 10),
+								});
+							}
 						}}
 						value={firstDotNum}
 						min="1"

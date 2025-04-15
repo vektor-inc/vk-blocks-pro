@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.5
 Tested up to: 6.7
-Stable tag: 1.99.0.1
+Stable tag: 1.100.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -108,10 +108,14 @@ e.g.
 
 == Changelog ==
 
+= 1.101.0 =
+[ Specification change ][ Dynamic Text (Pro) ] Allows i-tags in custom field link text.
+[ Bug Fix ][ Step (Pro) ] Fix it so that leaving the starting number for a step blank does not result in an error.
+
 = 1.100.0 =
 [ Add function ][ Dynamic Text (Pro) ] When you set a link URL in the custom field display, you can now specify the link text.
 [ Specification change ][ Dynamic Text (Pro) ] Disable link on edit screen.
-[ Other ][ Table of Contents New ] Improve performance and reliability.
+[ Other ][ Table of Contents New (Pro)] Improve performance and reliability.
 [ Other ][ Some Block ] Compatible for WordPress 6.8
 [ Bug Fix ][ Flow ] Fix selection state not visible when block is selected (change arrow from CSS to HTML in editor)
 
@@ -131,7 +135,7 @@ e.g.
 [ Add function ][ Post List (Pro) / Post List Slider (Pro) ] Added the ability to set sticky posts to display.
 [ Add function ][ Outer (Pro) / Slider ] Added a replace button to allow changing the background image without deleting it.
 [ Add function ][ Button ] Added support for typography settings.
-[ Specification change ] [ Visual Embed ] Added aligncenter when iframeWidth is set to a value other than "100%".
+[ Specification change ][ Visual Embed ] Added aligncenter when iframeWidth is set to a value other than "100%".
 [ Design Bug Fix ][ Table ] Fixed overlapping borders when using vertical cells, and ensured the border color follows the theme settings.
 [ Editor Design Bug Fix ][ Animation (Pro) / Fixed Display (Pro) / New Badge (Pro) / Category Badge (Pro) ] Fixed elements not becoming semi-transparent when set to be hidden in the editing screen.
 [ Editor Design Bug Fix ][ Ballon ] Fixed a layout distortion issue when enabling the vk_hidden setting in the editor.
@@ -150,14 +154,14 @@ e.g.
 [ Specification change ][ Animation (Pro) / Fixed Display (Pro) / Outer (Pro) ] Added support for layout.allowJustification: false, allowing full-width/wide alignment in block themes where wrapped blocks previously did not appear as full-width or wide in the editor.
 [ Specification change ] Fixed the zoom-out toggle not always displaying in the editor toolbar (updated blocks.json API version from 2 to 3).
 [ Editor Design Bug Fix ][ Tab (Pro) ] Fixed the issue where the block inserter button (block-list-appender) inside the tab block (.vk_tab) was affecting other block inserter buttons.
-[ Editor Design Bug Fix ] [ Grid Column (Pro) ] Fixed an issue where the 'is-vertical' layout of grid column items was not displayed vertically.
+[ Editor Design Bug Fix ][ Grid Column (Pro) ] Fixed an issue where the 'is-vertical' layout of grid column items was not displayed vertically.
 [ Bug fix ][ Icon ] Fixed an unwanted bottom margin appearing.
 
 = 1.95.0 =
 [ Add function ][ Icon / Slider ] Added noreferrer, nofollow, and link description options to the link feature.
 [ Add function ][ Core Table ] Add table cell vertical setting.
 [ Specification Change ][ Page Content ] Modify the specification so that the display is shown only when the referenced page is public.
-[ Editor Design Bug Fix ] [ Grid Column (Pro) ] Fixed an issue where the 'is-vertical' layout of grid column items was not displayed vertically.
+[ Editor Design Bug Fix ][ Grid Column (Pro) ] Fixed an issue where the 'is-vertical' layout of grid column items was not displayed vertically.
 
 = 1.94.2 =
 [ Bug fix / Specification Change ][ Visual Embed ] Strengthened validation for XSS protection and restricted the range of allowed URLs.
@@ -176,7 +180,7 @@ e.g.
 [ Design Bug Fix ] Change CSS order.
 [ Design Bug fix ][ Slider ][ Post List Slider (Pro) ] Fix an issue where full width alignment does not work in tt4 and tt5.
 [ Design Bug Fix ][ Post List Slider (Pro) ] Added bottom margin when the display type is set to "Media" to create spacing between the pagination and the block.
-[ Editor Design Bug Fix ] [ Grid Column Card (Pro) ]Fixed an issue where buttons in vk_gridcolcard_item_footer were not expanding their width when wrapped in an Outer block.
+[ Editor Design Bug Fix ][ Grid Column Card (Pro) ]Fixed an issue where buttons in vk_gridcolcard_item_footer were not expanding their width when wrapped in an Outer block.
 [ Specification Change ] Load VK Componemts from Composer.
 
 = 1.93.2 =
@@ -377,7 +381,7 @@ e.g.
 = 1.75.0 =
 [ Add Block ][ Fixed Display block (Pro) ] Add Fixed display block.
 [ Bug fix ][ Tab (Pro) ] Fix the default line style to show the top of the border.
-[ Specification change ] Delete unnecessary css value  ( We abolished the --vk-size-text and changed it to 1rem. ).
+[ Specification change ] Delete unnecessary css value ( We abolished the --vk-size-text and changed it to 1rem. ).
 
 = 1.74.0 =
 [ Specification change ] Fix block categories order
@@ -487,7 +491,7 @@ e.g.
 [ Add Block ][ Blog Card (Pro) ] Add blog card block.
 [ Add Block ][ New Badge Block (Pro) ] Add a block to display recent posts.
 [ Add function ][ Outer (Pro) ] Add options to Divider for each PC, Tablet, and Mobile
-[ Specification change ] Updated  Font Awesome to 6.4.2.
+[ Specification change ] Updated Font Awesome to 6.4.2.
 [ Bug fix ][ Admin screen ] Fixed a bug where settings saved in an array were not imported.
 [ Bug fix ][ Button ] Fix console warning
 
@@ -501,7 +505,7 @@ e.g.
 = 1.61.0 =
 [ Specification change ] Update the required WordPress version.
 [ Specification change ] Changed to display Font Awesome version change button only when select is changed.
-[ Specification change ][ Outer (Pro) ]  Change opacity setting can be set in increments of 0.01.
+[ Specification change ][ Outer (Pro) ] Change opacity setting can be set in increments of 0.01.
 [ Specification change ][ Animation(Pro) ] Fix WordPress 6.3 transforms settings.
 [ Bug fix ][ Taxonomy (Pro) ] Fixed error when selected taxonomy dose not exists.
 [ Bug fix ][ Taxonomy (Pro) ] Fixed individual CSS was loaded on all pages with classic theme.
@@ -657,7 +661,7 @@ e.g.
 [ Other ] Update VK Component Posts 1.3.1
 
 = 1.42.0 =
-[ Specification change ] Update VK Component Posts ( Can use input tag on filter  )
+[ Specification change ] Update VK Component Posts ( Can use input tag on filter )
 [ Improvement ] Delete vk_blocks_get_options() function and change to VK_Blocks_Options::get_options().
 
 = 1.41.2 =
@@ -729,7 +733,7 @@ e.g.
 
 = 1.35.0 =
 [ Specification change ][ Animation(Pro) ] Corresponds reuse block & duplicate
-[ Specification change ][ Grid Column Card(Pro) ]  Corresponds reuse block & duplicate automatically
+[ Specification change ][ Grid Column Card(Pro) ] Corresponds reuse block & duplicate automatically
 [ Specification change ][ Card(Pro) ] Corresponds reuse block & duplicate automatically
 [ Specification change ][ Slider(Pro) ] Corresponds reuse block & duplicate automatically
 [ Specification change ][ Slider(Pro) ] Changed slider breakpoints to match specified breakpoints in VK Blocks
@@ -773,7 +777,7 @@ e.g.
 
 = 1.31.0 =
 [ Add function ][ GridColCard(Pro) ] Add link URL in toolbar and sidebar.
-[ Add function ] [ Breadcrumb(Pro) ] Add support fontSize and spacing.
+[ Add function ][ Breadcrumb(Pro) ] Add support fontSize and spacing.
 [ Improvement ][ margin extension ] Changed to add common margin class names to additional CSS classes.
 [ Bug fix ][ Accordion(Pro) ] Fix do not intend margin bottom 0 added to p tag.
 
@@ -796,7 +800,7 @@ e.g.
 = 1.29.0 =
 [ Add function ] Add margin extension in toolbar.
 [ Add Block ] GridColCard(Pro)
-[ Fix ] [ Breadcrumb(Pro) ] Add inserter Pro label.
+[ Fix ][ Breadcrumb(Pro) ] Add inserter Pro label.
 [ Other ] Update Font Awesome 6 -> 6.1
 
 = 1.28.0 =
@@ -822,7 +826,7 @@ e.g.
 [ Bug fix ][ Outer(Pro) ] Compatibility support
 [ Bug fix ][ Post List(Pro) ] Fix no post message
 
-= 1.27.1 - 1.27.4  =
+= 1.27.1 - 1.27.4 =
 [ Other ] Deploy Free Version.
 
 = 1.27.0 =
@@ -1160,11 +1164,11 @@ Cope with WordPress 5.9
 
 = 1.3.0 =
 [ Add New Block ][ Accordion ] Add New Accordion Block
-[ Translation ][ Post List ] Corrected the notation of the classification name
+[ Translation ][ Post List (Pro) ] Corrected the notation of the classification name
 [ Specification change ][ Card ] Remove link tag from title
 
 = 1.2.4 =
-[ Bug fix / Specification Change ][ Post List ] Fix too many tags and change tag UI
+[ Bug fix / Specification Change ][ Post List (Pro) ] Fix too many tags and change tag UI
 [ Bug fix ][ Slider ] Bug fix under css optimize
 
 = 1.2.3 =
@@ -1191,7 +1195,7 @@ Cope with WordPress 5.9
 [ Bug fix ][ Outer ] Fixed a bug where hiding doesn't work.
 
 = 1.0.14 =
-[ Specification change ][ PostList ] Filter terms by taxonomy in sidebar.
+[ Specification change ][ Post List (Pro) ] Filter terms by taxonomy in sidebar.
 [ Translation ] Fix translation in balloon settings.
 
 = 1.0.13 =
@@ -1217,10 +1221,10 @@ Cope with WordPress 5.9
 [ Design bug fix ][ Image ] fix style bug for core/image block.
 
 = 1.0.6 =
-[ Design bug fix ][ Slider ] [ Staff ][ PR Blocks ][ PR Content ] fix style bug for katawara.
+[ Design bug fix ][ Slider ][ Staff ][ PR Blocks ][ PR Content ] fix style bug for katawara.
 
 = 1.0.5 =
-[ Bug fix ][ Animation ] [ Balloon ][ Heading ][ PR Content ][ Icon Card ] Fix data by old versoin needs recovery.
+[ Bug fix ][ Animation ][ Balloon ][ Heading ][ PR Content ][ Icon Card ] Fix data by old versoin needs recovery.
 [ Design bug fix ][ QA Block ] Fix style in editor.
 [ Design bug fix ][ Button ] Fix style of sub caption.
 
@@ -1282,7 +1286,7 @@ Cope with WordPress 5.9
 [ Design bug fix ] Fix do not effect text align on theming by horizontal border
 
 = 0.54.0 =
-[ Add function ][ Post list ] Add Card (nonorder) layout and add display taxonomy
+[ Add function ][ Post List (Pro) ] Add Card (nonorder) layout and add display taxonomy
 [ Bug fix ][ Animation ] fix deprecated
 
 = 0.53.2 =
@@ -1507,7 +1511,7 @@ Add translate
 [ Bug Fix / Specification Change ][ Balloon ] Change Balloon HTML structure
 
 = 0.38.1 =
-[ Add new block ][  Slider(Pro) ]
+[ Add new block ][ Slider(Pro) ]
 [ Add function ][ Card(Pro) ] Add Image height setting
 [ Bug Fix / Specification Change ][ Balloon ] Change Balloon width 100%
 [ Add function ][ Border box ] add fill background
@@ -1541,7 +1545,7 @@ Add translate
 [ Specification change ][ Border Box ] icon list update
 
 = 0.35.4 =
-[ Bug fix ] [ BorderBox ] icon list layout bug fix
+[ Bug fix ][ BorderBox ] icon list layout bug fix
 
 = 0.35.3 =
 build only
@@ -1844,16 +1848,16 @@ build only
 [ Bug fix ][ column ] WordPress 5.3 column bug fix
 
 = 0.12.5 =
-[ Bug fix ][ post list ] WordPress 5.3 bug fix
+[ Bug fix ][ Post List (Pro) ] WordPress 5.3 bug fix
 
 = 0.12.4 =
-[ Bug fix ][ post list ] button display bug fix
+[ Bug fix ][ Post List (Pro) ] button display bug fix
 
 = 0.12.3 =
 [ Bug fix ] updater
 
 = 0.12.2 =
-[ Bug fix ][ post list ] taxonomy bug list
+[ Bug fix ][ Post List (Pro) ] taxonomy bug list
 [ add function ] updater
 
 = 0.12.1 =

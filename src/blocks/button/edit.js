@@ -1,5 +1,4 @@
 import { __ } from '@wordpress/i18n';
-import { VKBButton } from './component';
 import { ButtonSettings } from '@vkblocks/components/vkb-button-control';
 import {
 	PanelBody,

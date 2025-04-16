@@ -108,6 +108,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Outer ] Removed unintended borders above and below separators.
+
 = 1.101.0 =
 [ Specification change ][ Dynamic Text (Pro) ] Allows i-tags in custom field link text.
 [ Bug Fix ][ Step (Pro) ] Fix it so that leaving the starting number for a step blank does not result in an error.

@@ -85,15 +85,6 @@ export default function DynamicTextEdit(props) {
 	const isInQueryLoop =
 		context?.queryId !== undefined && context?.queryId !== null;
 
-	const queryPostType = context?.query?.postType || 'post';
-	const postTypeLabel = useSelect(
-		(select) => {
-			const postTypeObj = select('core').getPostType(queryPostType);
-			return postTypeObj?.labels?.singular_name || queryPostType;
-		},
-		[queryPostType]
-	);
-
 	const {
 		textAlign,
 		displayElement,
@@ -137,23 +128,6 @@ export default function DynamicTextEdit(props) {
 			};
 		},
 		[]
-	);
-
-	const pageForPostsId = wp.data.select('core').getSite()?.page_for_posts;
-
-	const pageForPostsTitle = useSelect(
-		(select) => {
-			if (!pageForPostsId) {
-				return null;
-			}
-			const page = select('core').getEntityRecord(
-				'postType',
-				'page',
-				pageForPostsId
-			);
-			return page?.title?.rendered || null;
-		},
-		[pageForPostsId]
 	);
 
 	let editContent;
@@ -221,12 +195,9 @@ export default function DynamicTextEdit(props) {
 		editContent = editAlertContent;
 	} else if (isInQueryLoop) {
 		const previewText = {
-			'post-type':
-				queryPostType === 'post' && pageForPostsTitle
-					? pageForPostsTitle
-					: postTypeLabel,
-			'post-slug': postTypeLabel + ' Slug',
-			'custom-field': customFieldName + ' (' + postTypeLabel + ')',
+			'post-type': __('Post Type Name', 'vk-blocks-pro'),
+			'post-slug': __('Post Slug', 'vk-blocks-pro'),
+			'custom-field': customFieldName,
 		}[displayElement];
 
 		editContent = (

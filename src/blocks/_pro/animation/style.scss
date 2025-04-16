@@ -44,6 +44,13 @@ $vk_animation_long_size: 9em;
 	}
 }
 
+.vk_animation-slide-down {
+	bottom: 3em;
+
+	&.vk_animation-active {
+		bottom: 0;
+	}
+}
 
 .vk_animation {
 
@@ -135,6 +142,25 @@ $vk_animation_long_size: 9em;
 
 }
 
+.vk_animation-slide-down {
+
+	&.vk_animation-range-short {
+		bottom: $vk_animation_short_size;
+	}
+
+	&.vk_animation-range-normal {
+		bottom: $vk_animation_normal_size;
+	}
+
+	&.vk_animation-range-long {
+		bottom: $vk_animation_long_size;
+	}
+
+	&.vk_animation-active {
+		bottom: 0;
+	}
+
+}
 .vk_animation {
 	&-trembling-x,
 	&-trembling-y,

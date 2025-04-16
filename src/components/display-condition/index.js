@@ -5,8 +5,8 @@ import {
 	BaseControl,
 	SelectControl,
 	CheckboxControl,
-	ButtonGroup,
-	Button,
+	__experimentalToggleGroupControl as ToggleGroupControl,
+	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
 	TextControl,
 	FormTokenField,
 } from '@wordpress/components';
@@ -284,24 +284,22 @@ export function DisplayCondition(props) {
 			<h4 className={`mt-0 mb-2`}>
 				{__('Taxonomy filter condition', 'vk-blocks-pro')}
 			</h4>
-			<ButtonGroup className={`mb-3`}>
-				<Button
-					isSmall
-					isPrimary={taxQueryRelation === 'OR'}
-					isSecondary={taxQueryRelation !== 'OR'}
-					onClick={() => setAttributes({ taxQueryRelation: 'OR' })}
-				>
-					{__('OR ( Whichever apply )', 'vk-blocks-pro')}
-				</Button>
-				<Button
-					isSmall
-					isPrimary={taxQueryRelation === 'AND'}
-					isSecondary={taxQueryRelation !== 'AND'}
-					onClick={() => setAttributes({ taxQueryRelation: 'AND' })}
-				>
-					{__('AND ( All apply )', 'vk-blocks-pro')}
-				</Button>
-			</ButtonGroup>
+			<ToggleGroupControl
+				value={taxQueryRelation}
+				onChange={(value) => setAttributes({ taxQueryRelation: value })}
+				isBlock
+				className="mb-3"
+			>
+				<ToggleGroupControlOption
+					value="OR"
+					label={__('OR ( Whichever apply )', 'vk-blocks-pro')}
+				/>
+				<ToggleGroupControlOption
+					value="AND"
+					label={__('AND ( All apply )', 'vk-blocks-pro')}
+				/>
+			</ToggleGroupControl>
+
 			{taxonomiesCheckBox}
 			{termFormTokenFields}
 			<BaseControl

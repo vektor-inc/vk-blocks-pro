@@ -62,9 +62,14 @@ $xxl-min: 1200px;
 	.vk_flow_frame_image {
 		max-width: 150px;
 		box-sizing: border-box;
+		img {
+			max-width: 100%;
+			height: auto;
+		}
 	}
 
-	&.vk_flow-arrow-on::after {
+	&.vk_flow-arrow-on::after,
+	> .vk_flow_frame_arrow {
 		position: relative;
 		content: "";
 		background: var(--vk_flow-arrow) center 50% no-repeat;
@@ -88,10 +93,15 @@ $xxl-min: 1200px;
 	}
 }
 
-//編集画面
-.block-editor-block-list__layout .block-editor-block-list__block{
-	&.vk_flow-arrow-on:focus:after{
-		position: relative;
-		box-shadow: none;
+// 編集画面
+// コア側のcssで矢印(after要素)の位置がおかしくなるので上書き
+.editor-styles-wrapper {
+	.vk_flow-arrow-on::after {
+		background: none;
+		display: unset;
+		height: unset;
+		width: unset;
+		margin: unset;
+		overflow: unset;
 	}
 }

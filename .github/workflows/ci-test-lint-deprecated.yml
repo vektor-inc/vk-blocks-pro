@@ -38,7 +38,15 @@ jobs:
     - name: Install @wordpress/env
       run: npm install -g @wordpress/env
     - name: Run @wordpress/env
-      run: npx wp-env start
+      run: |
+        n=0
+        until [ "$n" -ge 3 ]
+        do
+          npx wp-env start && break
+          n=$((n+1))
+          echo "Retrying wp-env start ($n)..."
+          sleep 5
+        done
     - name: Install WP-CLI
       run: |
         curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar

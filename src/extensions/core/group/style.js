@@ -234,62 +234,54 @@ import { assign } from 'lodash';
  * @return {Object} The modified block settings.
  */
 const overrideBlockSettings = (settings, name, currentDeprecated) => {
-	if (name === 'core/group' && currentDeprecated === null) {
-		const newDeprecated = [...settings.deprecated];
-		// Sort deprecated items in descending order of targetVersion to prevent index shifting
-		const sortedDeprecated = [...deprecated].sort(
+	if (name !== 'core/group') {
+		return settings;
+	}
+
+	// layout の値を取得
+	const layoutValue =
+		settings.supports && 'layout' in settings.supports
+			? settings.supports.layout
+			: {};
+
+	let newSettings = assign({}, settings, {
+		supports: {
+			...settings.supports,
+			layout: layoutValue,
+		},
+	});
+
+	// deprecated は currentDeprecated === null のときだけマージする
+	if (currentDeprecated === null) {
+		const newDeprecated = [...(settings.deprecated || [])];
+		const sorted = [...(Array.isArray(deprecated) ? deprecated : [])].sort(
 			(a, b) =>
 				(b.targetVersion || newDeprecated.length) -
 				(a.targetVersion || newDeprecated.length)
 		);
-
-		sortedDeprecated.forEach((deprecatedItem) => {
-			const targetIndex =
-				deprecatedItem.targetVersion || newDeprecated.length;
-			// Create a copy of the deprecatedItem without targetVersion
-			const itemToInsert = { ...deprecatedItem };
-			delete itemToInsert.targetVersion;
-			newDeprecated.splice(targetIndex, 0, itemToInsert);
+		sorted.forEach((item) => {
+			const index = item.targetVersion || newDeprecated.length;
+			const copy = { ...item };
+			delete copy.targetVersion;
+			newDeprecated.splice(index, 0, copy);
 		});
-		const newSettings = assign({}, settings, {
-			save,
+		newSettings = {
+			...newSettings,
 			deprecated: newDeprecated,
-		});
-
-		// Support for existing group blocks by adding default values for new attributes
-		if (!newSettings.attributes.linkUrl) {
-			newSettings.attributes.linkUrl = {
-				type: 'string',
-				default: '',
-			};
-		}
-		if (!newSettings.attributes.linkTarget) {
-			newSettings.attributes.linkTarget = {
-				type: 'string',
-				default: '',
-			};
-		}
-		if (!newSettings.attributes.relAttribute) {
-			newSettings.attributes.relAttribute = {
-				type: 'string',
-				default: '',
-			};
-		}
-		if (!newSettings.attributes.linkDescription) {
-			newSettings.attributes.linkDescription = {
-				type: 'string',
-				default: '',
-			};
-		}
-		if (!newSettings.attributes.tagName) {
-			newSettings.attributes.tagName = {
-				type: 'string',
-				default: 'div',
-			};
-		}
-		return newSettings;
+			save,
+		};
 	}
-	return settings;
+
+	newSettings.attributes = {
+		...(newSettings.attributes || {}),
+		linkUrl: { type: 'string', default: '' },
+		linkTarget: { type: 'string', default: '' },
+		relAttribute: { type: 'string', default: '' },
+		linkDescription: { type: 'string', default: '' },
+		tagName: { type: 'string', default: 'div' },
+	};
+
+	return newSettings;
 };
 
 addFilter(

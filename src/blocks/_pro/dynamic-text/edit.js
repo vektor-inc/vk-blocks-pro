@@ -197,7 +197,8 @@ export default function DynamicTextEdit(props) {
 		const previewText = {
 			'post-type': __('Post Type Name', 'vk-blocks-pro'),
 			'user-name': __('Current login user name', 'vk-blocks-pro'),
-			'custom-field': customFieldName + `__('Custom Field', 'vk-blocks-pro')`,
+			'custom-field':
+				customFieldName + `__('Custom Field', 'vk-blocks-pro')`,
 			'post-slug': __('Post Slug', 'vk-blocks-pro'),
 		}[displayElement];
 

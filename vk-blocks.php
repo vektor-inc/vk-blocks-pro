@@ -413,4 +413,3 @@ if ( ! function_exists( 'vk_blocks_deactivate_function' ) ) {
 		delete_option( 'vk_blocks_checked_flags' );
 	}
 }
-

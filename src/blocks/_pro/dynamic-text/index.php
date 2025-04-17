@@ -27,6 +27,8 @@ function vk_blocks_dynamic_text_get_attributes_default() {
 		'fieldType'                => 'text',
 		'isLinkSet'                => false,
 		'isLinkTarget'             => false,
+		'isVertical'             => false,
+		'isUpright'             => false,
 	);
 	return $attributes_default;
 }
@@ -87,7 +89,13 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 
 	$classes = 'vk_dynamicText';
 	if ( isset( $attributes['textAlign'] ) ) {
-		$classes = ' has-text-align-' . $attributes['textAlign'];
+		$classes .= ' has-text-align-' . $attributes['textAlign'];
+	}
+	if ( $attributes['isVertical'] ) {
+		$classes .= ' is-vertical';
+	}
+	if ( $attributes['isUpright'] ) {
+		$classes .= ' is-upright';
 	}
 	// block.json の Supports で設定したクラス名やスタイルを取得する
 	$wrapper_classes = get_block_wrapper_attributes( array( 'class' => $classes ) );
@@ -260,6 +268,14 @@ function vk_blocks_register_block_dynamic_text() {
 						'default' => false,
 					),
 					'isLinkTarget'             => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+					'isVertical'               => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+					'isUpright'               => array(
 						'type'    => 'boolean',
 						'default' => false,
 					),

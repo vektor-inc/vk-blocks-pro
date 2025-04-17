@@ -129,7 +129,11 @@ if ( ! function_exists( 'vk_blocks_is_pro' ) ) {
  * 無料版を無効化した後に書かないと関数の二重宣言などになるので注意
  */
 if ( ! function_exists( 'vk_blocks_loaded' ) ) {
-
+	/**
+	 * Load VK Blocks
+	 *
+	 * @return void
+	 */
 	function vk_blocks_loaded() {
 		// Composer のファイルを読み込み ( composer install --no-dev ).
 		require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';

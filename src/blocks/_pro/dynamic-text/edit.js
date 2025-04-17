@@ -202,7 +202,7 @@ export default function DynamicTextEdit(props) {
 
 		editContent = (
 			<TagName>
-				{previewText + ` (` + __('Preview text', 'vk-blocks-pro') + `)` || __('Preview text', 'vk-blocks-pro')}
+				{previewText + `(` + __('Preview', 'vk-blocks-pro') + `)` || __('Preview display', 'vk-blocks-pro')}
 			</TagName>
 		);
 	} else {

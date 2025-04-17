@@ -27,8 +27,8 @@ function vk_blocks_dynamic_text_get_attributes_default() {
 		'fieldType'                => 'text',
 		'isLinkSet'                => false,
 		'isLinkTarget'             => false,
-		'isVertical'             => false,
-		'isUpright'             => false,
+		'isVertical'               => false,
+		'isUpright'                => false,
 	);
 	return $attributes_default;
 }
@@ -275,7 +275,7 @@ function vk_blocks_register_block_dynamic_text() {
 						'type'    => 'boolean',
 						'default' => false,
 					),
-					'isUpright'               => array(
+					'isUpright'                => array(
 						'type'    => 'boolean',
 						'default' => false,
 					),

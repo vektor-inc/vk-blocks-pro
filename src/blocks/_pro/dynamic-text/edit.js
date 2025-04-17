@@ -471,7 +471,7 @@ export default function DynamicTextEdit(props) {
 					/>
 					<BaseControl>
 						<ToggleControl
-							label='Vertical writing'
+							label="Vertical writing"
 							checked={isVertical}
 							onChange={(value) =>
 								setAttributes({
@@ -482,7 +482,7 @@ export default function DynamicTextEdit(props) {
 						{isVertical === true && (
 							<>
 								<ToggleControl
-									label='upright text'
+									label="upright text"
 									checked={isUpright}
 									onChange={(value) =>
 										setAttributes({

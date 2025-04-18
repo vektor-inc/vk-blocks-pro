@@ -28,6 +28,10 @@ export default function save(props) {
 		bgFocalPointPC,
 		bgFocalPointTablet,
 		bgFocalPointMobile,
+		bgOffsetTop,
+		bgOffsetBottom,
+		bgOffsetLeft,
+		bgOffsetRight,
 		outerWidth,
 		padding_left_and_right, //eslint-disable-line camelcase
 		padding_top_and_bottom, //eslint-disable-line camelcase
@@ -57,6 +61,7 @@ export default function save(props) {
 		linkTarget,
 		relAttribute,
 		linkDescription,
+		bgOffsetUnit,
 	} = attributes;
 
 	let classPaddingLR;
@@ -90,10 +95,10 @@ export default function save(props) {
 	);
 
 	const backgroundStyles = {
-		backgroundImage: bgImage ? `url(${bgImage})` : undefined,
-		backgroundPosition: bgFocalPointPC
+		'--bg-image': bgImage ? `url(${bgImage})` : 'none',
+		'--bg-position': bgFocalPointPC
 			? `${bgFocalPointPC.x * 100}% ${bgFocalPointPC.y * 100}%`
-			: undefined,
+			: 'center',
 		'--bg-image-mobile': bgImageMobile
 			? `url(${bgImageMobile})`
 			: undefined,
@@ -106,6 +111,12 @@ export default function save(props) {
 		'--bg-position-tablet': bgFocalPointTablet
 			? `${bgFocalPointTablet.x * 100}% ${bgFocalPointTablet.y * 100}%`
 			: undefined,
+		...((bgOffsetTop || bgOffsetBottom || bgOffsetLeft || bgOffsetRight) && {
+			...(bgOffsetTop && { '--bg-offset-top': `${bgOffsetTop}${bgOffsetUnit}` }),
+			...(bgOffsetBottom && { '--bg-offset-bottom': `${bgOffsetBottom}${bgOffsetUnit}` }),
+			...(bgOffsetLeft && { '--bg-offset-left': `${bgOffsetLeft}${bgOffsetUnit}` }),
+			...(bgOffsetRight && { '--bg-offset-right': `${bgOffsetRight}${bgOffsetUnit}` })
+		}),
 		'--min-height-mobile': minHeightValueMobile
 			? `${minHeightValueMobile}${minHeightUnit}`
 			: 'auto',
@@ -259,6 +270,11 @@ export default function save(props) {
 					minHeightValuePC > 0 ||
 					minHeightValueTablet > 0 ||
 					minHeightValueMobile > 0,
+				[`has-background-offset`]:
+					bgOffsetTop !== 0 ||
+					bgOffsetBottom !== 0 ||
+					bgOffsetLeft !== 0 ||
+					bgOffsetRight !== 0,
 			}
 		),
 	});

@@ -23,6 +23,55 @@ $media-xxl-down: 1399.98px;
 	background-repeat: no-repeat;
 	position: relative;
 
+	// Background offset
+	&.has-background-offset {
+		// オーバーレイのオフセット
+		.vk_outer-background-area,
+		.vk_outer-background-area::before {
+			transform: translate(
+				calc(
+					(var(--bg-offset-left, 0px) * 1) + 
+					(var(--bg-offset-right, 0px) * -1)
+				),
+				calc(
+					(var(--bg-offset-top, 0px) * 1) + 
+					(var(--bg-offset-bottom, 0px) * -1)
+				)
+			);
+		}
+
+		// 背景画像のオフセット
+		// 左右のオフセット
+		&[style*="--bg-offset-left"]:not([style*="--bg-offset-top"]):not([style*="--bg-offset-bottom"]) {
+			background-position: left var(--bg-offset-left) center !important;
+		}
+		&[style*="--bg-offset-right"]:not([style*="--bg-offset-top"]):not([style*="--bg-offset-bottom"]) {
+			background-position: right var(--bg-offset-right) center !important;
+		}
+
+		// 上下のオフセット
+		&[style*="--bg-offset-top"]:not([style*="--bg-offset-left"]):not([style*="--bg-offset-right"]) {
+			background-position: center top var(--bg-offset-top) !important;
+		}
+		&[style*="--bg-offset-bottom"]:not([style*="--bg-offset-left"]):not([style*="--bg-offset-right"]) {
+			background-position: center bottom var(--bg-offset-bottom) !important;
+		}
+
+		// 組み合わせパターン
+		&[style*="--bg-offset-left"][style*="--bg-offset-top"] {
+			background-position: left var(--bg-offset-left) top var(--bg-offset-top) !important;
+		}
+		&[style*="--bg-offset-right"][style*="--bg-offset-top"] {
+			background-position: right var(--bg-offset-right) top var(--bg-offset-top) !important;
+		}
+		&[style*="--bg-offset-left"][style*="--bg-offset-bottom"] {
+			background-position: left var(--bg-offset-left) bottom var(--bg-offset-bottom) !important;
+		}
+		&[style*="--bg-offset-right"][style*="--bg-offset-bottom"] {
+			background-position: right var(--bg-offset-right) bottom var(--bg-offset-bottom) !important;
+		}
+	}
+
 	// リンク設定
 	& > .vkb-outer-link {
 		position: absolute;

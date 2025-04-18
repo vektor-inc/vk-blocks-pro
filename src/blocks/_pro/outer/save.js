@@ -6,6 +6,7 @@ import classnames from 'classnames';
 /**
  * Internal dependencies
  */
+import { __ } from '@wordpress/i18n';
 import { componentDivider } from './component-divider';
 import GenerateBgImage from './GenerateBgImage';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
@@ -304,8 +305,28 @@ export default function save(props) {
 		),
 	});
 
+
+	const GetLinkUrl = (
+		<a
+			href={linkUrl}
+			{...(linkTarget ? { target: linkTarget } : {})}
+			{...(relAttribute ? { rel: relAttribute } : {})}
+			className={`${prefix}-link`}
+		>
+			<span className="screen-reader-text">
+				{linkDescription
+					? linkDescription
+					: __('Outer link', 'vk-blocks-pro')}
+			</span>
+		</a>
+	);
+
 	return (
-		<div {...blockProps}>
+		<div
+			{...blockProps}
+			style={{ ...backgroundStyles, ...borderStyleProperty }}
+		>
+			{linkUrl && GetLinkUrl}
 			{GetBgImage}
 			<div>
 				{!hasBackgroundOffset &&
@@ -336,15 +357,6 @@ export default function save(props) {
 						lower_level_pc
 					)}
 			</div>
-			{linkUrl && (
-				<a
-					href={linkUrl}
-					className="vkb-outer-link"
-					target={linkTarget}
-					rel={relAttribute}
-					aria-label={linkDescription}
-				></a>
-			)}
 		</div>
 	);
 }

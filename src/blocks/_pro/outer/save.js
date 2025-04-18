@@ -305,7 +305,6 @@ export default function save(props) {
 		),
 	});
 
-
 	const GetLinkUrl = (
 		<a
 			href={linkUrl}

@@ -111,11 +111,22 @@ export default function save(props) {
 		'--bg-position-tablet': bgFocalPointTablet
 			? `${bgFocalPointTablet.x * 100}% ${bgFocalPointTablet.y * 100}%`
 			: undefined,
-		...((bgOffsetTop || bgOffsetBottom || bgOffsetLeft || bgOffsetRight) && {
-			...(bgOffsetTop && { '--bg-offset-top': `${bgOffsetTop}${bgOffsetUnit}` }),
-			...(bgOffsetBottom && { '--bg-offset-bottom': `${bgOffsetBottom}${bgOffsetUnit}` }),
-			...(bgOffsetLeft && { '--bg-offset-left': `${bgOffsetLeft}${bgOffsetUnit}` }),
-			...(bgOffsetRight && { '--bg-offset-right': `${bgOffsetRight}${bgOffsetUnit}` })
+		...((bgOffsetTop ||
+			bgOffsetBottom ||
+			bgOffsetLeft ||
+			bgOffsetRight) && {
+			...(bgOffsetTop && {
+				'--bg-offset-top': `${bgOffsetTop}${bgOffsetUnit}`,
+			}),
+			...(bgOffsetBottom && {
+				'--bg-offset-bottom': `${bgOffsetBottom}${bgOffsetUnit}`,
+			}),
+			...(bgOffsetLeft && {
+				'--bg-offset-left': `${bgOffsetLeft}${bgOffsetUnit}`,
+			}),
+			...(bgOffsetRight && {
+				'--bg-offset-right': `${bgOffsetRight}${bgOffsetUnit}`,
+			}),
 		}),
 		'--min-height-mobile': minHeightValueMobile
 			? `${minHeightValueMobile}${minHeightUnit}`

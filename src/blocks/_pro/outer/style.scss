@@ -70,6 +70,16 @@ $media-xxl-down: 1399.98px;
 		&[style*="--bg-offset-right"][style*="--bg-offset-bottom"] {
 			background-position: right var(--bg-offset-right) bottom var(--bg-offset-bottom) !important;
 		}
+
+		// モバイルでのオフセット制御
+		&.has-background-offset-disabled-mobile {
+			@media (max-width: $media-sm-down) {
+				--bg-offset-top: 0 !important;
+				--bg-offset-bottom: 0 !important;
+				--bg-offset-left: 0 !important;
+				--bg-offset-right: 0 !important;
+			}
+		}
 	}
 
 	// リンク設定

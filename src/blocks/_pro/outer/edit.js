@@ -93,6 +93,7 @@ export default function OuterEdit(props) {
 		linkDescription,
 		blockId,
 		bgOffsetUnit,
+		disableOffsetMobile,
 	} = attributes;
 
 	let classPaddingLR;
@@ -636,8 +637,11 @@ export default function OuterEdit(props) {
 			`vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 			{
 				[`has-border-color`]:
-					borderStyle !== 'none' && borderColor !== undefined,
+					!hasBackgroundOffset &&
+					borderStyle !== 'none' &&
+					borderColor !== undefined,
 				[`has-${borderColor}-border-color`]:
+					!hasBackgroundOffset &&
 					borderStyle !== 'none' &&
 					borderColor !== undefined &&
 					!isHexColor(borderColor),
@@ -645,11 +649,8 @@ export default function OuterEdit(props) {
 					minHeightValuePC > 0 ||
 					minHeightValueTablet > 0 ||
 					minHeightValueMobile > 0,
-				[`has-background-offset`]:
-					bgOffsetTop !== 0 ||
-					bgOffsetBottom !== 0 ||
-					bgOffsetLeft !== 0 ||
-					bgOffsetRight !== 0,
+				[`has-background-offset`]: hasBackgroundOffset,
+				[`has-background-offset-disabled-mobile`]: disableOffsetMobile,
 			}
 		),
 	});
@@ -1520,112 +1521,120 @@ export default function OuterEdit(props) {
 					title={__('Background Offset', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
-					<BaseControl>
-						<p className="block-editor-block-types-list__help">
-							{__(
-								'When using Background Offset, Border, Divider, and Focal Point settings will be temporarily disabled.',
-								'vk-blocks-pro'
-							)}
-						</p>
-						{(bgOffsetTop !== 0 ||
-							bgOffsetBottom !== 0 ||
-							bgOffsetLeft !== 0 ||
-							bgOffsetRight !== 0) && (
-							<div style={{ marginBottom: '1em' }}>
-								<Button
-									isSecondary
-									onClick={() => {
-										setAttributes({
-											bgOffsetTop: 0,
-											bgOffsetBottom: 0,
-											bgOffsetLeft: 0,
-											bgOffsetRight: 0,
-										});
-									}}
-								>
-									{__('Reset All Offsets', 'vk-blocks-pro')}
-								</Button>
-							</div>
+					<p className="block-editor-block-types-list__help">
+						{__(
+							'When using Background Offset, Border, Divider, and Focal Point settings will be temporarily disabled.',
+							'vk-blocks-pro'
 						)}
-						<SelectControl
-							label={__('Unit', 'vk-blocks-pro')}
-							value={bgOffsetUnit}
-							options={[
-								{ label: 'px', value: 'px' },
-								{ label: '%', value: '%' },
-								{ label: 'em', value: 'em' },
-								{ label: 'rem', value: 'rem' },
-								{ label: 'vw', value: 'vw' },
-								{ label: 'vh', value: 'vh' },
-							]}
-							onChange={(value) =>
-								setAttributes({ bgOffsetUnit: value })
-							}
-						/>
-
-						<p>{__('Vertical Offset', 'vk-blocks-pro')}</p>
+					</p>
+					<ToggleControl
+						label={__(
+							'Disable offset on mobile (under 576px)',
+							'vk-blocks-pro'
+						)}
+						checked={disableOffsetMobile}
+						onChange={(value) =>
+							setAttributes({ disableOffsetMobile: value })
+						}
+					/>
+					{(bgOffsetTop !== 0 ||
+						bgOffsetBottom !== 0 ||
+						bgOffsetLeft !== 0 ||
+						bgOffsetRight !== 0) && (
 						<div style={{ marginBottom: '1em' }}>
-							<RangeControl
-								label={__('Top', 'vk-blocks-pro')}
-								value={bgOffsetTop}
-								onChange={(value) => {
+							<Button
+								isSecondary
+								onClick={() => {
 									setAttributes({
-										bgOffsetTop: value,
-										bgOffsetBottom: 0,
-									});
-								}}
-								min={0}
-								max={getMaxOffset(bgOffsetUnit)}
-								step={bgOffsetUnit === 'px' ? 1 : 0.1}
-								disabled={bgOffsetBottom !== 0}
-							/>
-							<RangeControl
-								label={__('Bottom', 'vk-blocks-pro')}
-								value={bgOffsetBottom}
-								onChange={(value) => {
-									setAttributes({
-										bgOffsetBottom: value,
 										bgOffsetTop: 0,
-									});
-								}}
-								min={0}
-								max={getMaxOffset(bgOffsetUnit)}
-								step={bgOffsetUnit === 'px' ? 1 : 0.1}
-								disabled={bgOffsetTop !== 0}
-							/>
-						</div>
-						<p>{__('Horizontal Offset', 'vk-blocks-pro')}</p>
-						<div>
-							<RangeControl
-								label={__('Left', 'vk-blocks-pro')}
-								value={bgOffsetLeft}
-								onChange={(value) => {
-									setAttributes({
-										bgOffsetLeft: value,
+										bgOffsetBottom: 0,
+										bgOffsetLeft: 0,
 										bgOffsetRight: 0,
 									});
 								}}
-								min={0}
-								max={getMaxOffset(bgOffsetUnit)}
-								step={bgOffsetUnit === 'px' ? 1 : 0.1}
-								disabled={bgOffsetRight !== 0}
-							/>
-							<RangeControl
-								label={__('Right', 'vk-blocks-pro')}
-								value={bgOffsetRight}
-								onChange={(value) => {
-									setAttributes({
-										bgOffsetRight: value,
-										bgOffsetLeft: 0,
-									});
-								}}
-								min={0}
-								max={getMaxOffset(bgOffsetUnit)}
-								step={bgOffsetUnit === 'px' ? 1 : 0.1}
-								disabled={bgOffsetLeft !== 0}
-							/>
+							>
+								{__('Reset All Offsets', 'vk-blocks-pro')}
+							</Button>
 						</div>
-					</BaseControl>
+					)}
+					<SelectControl
+						label={__('Unit', 'vk-blocks-pro')}
+						value={bgOffsetUnit}
+						options={[
+							{ label: 'px', value: 'px' },
+							{ label: '%', value: '%' },
+							{ label: 'em', value: 'em' },
+							{ label: 'rem', value: 'rem' },
+							{ label: 'vw', value: 'vw' },
+							{ label: 'vh', value: 'vh' },
+						]}
+						onChange={(value) =>
+							setAttributes({ bgOffsetUnit: value })
+						}
+					/>
+
+					<p>{__('Vertical Offset', 'vk-blocks-pro')}</p>
+					<div style={{ marginBottom: '1em' }}>
+						<RangeControl
+							label={__('Top', 'vk-blocks-pro')}
+							value={bgOffsetTop}
+							onChange={(value) => {
+								setAttributes({
+									bgOffsetTop: value,
+									bgOffsetBottom: 0,
+								});
+							}}
+							min={0}
+							max={getMaxOffset(bgOffsetUnit)}
+							step={bgOffsetUnit === 'px' ? 1 : 0.1}
+							disabled={bgOffsetBottom !== 0}
+						/>
+						<RangeControl
+							label={__('Bottom', 'vk-blocks-pro')}
+							value={bgOffsetBottom}
+							onChange={(value) => {
+								setAttributes({
+									bgOffsetBottom: value,
+									bgOffsetTop: 0,
+								});
+							}}
+							min={0}
+							max={getMaxOffset(bgOffsetUnit)}
+							step={bgOffsetUnit === 'px' ? 1 : 0.1}
+							disabled={bgOffsetTop !== 0}
+						/>
+					</div>
+					<p>{__('Horizontal Offset', 'vk-blocks-pro')}</p>
+					<div>
+						<RangeControl
+							label={__('Left', 'vk-blocks-pro')}
+							value={bgOffsetLeft}
+							onChange={(value) => {
+								setAttributes({
+									bgOffsetLeft: value,
+									bgOffsetRight: 0,
+								});
+							}}
+							min={0}
+							max={getMaxOffset(bgOffsetUnit)}
+							step={bgOffsetUnit === 'px' ? 1 : 0.1}
+							disabled={bgOffsetRight !== 0}
+						/>
+						<RangeControl
+							label={__('Right', 'vk-blocks-pro')}
+							value={bgOffsetRight}
+							onChange={(value) => {
+								setAttributes({
+									bgOffsetRight: value,
+									bgOffsetLeft: 0,
+								});
+							}}
+							min={0}
+							max={getMaxOffset(bgOffsetUnit)}
+							step={bgOffsetUnit === 'px' ? 1 : 0.1}
+							disabled={bgOffsetLeft !== 0}
+						/>
+					</div>
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>

@@ -61,6 +61,7 @@ export default function save(props) {
 		relAttribute,
 		linkDescription,
 		bgOffsetUnit,
+		disableOffsetMobile,
 	} = attributes;
 
 	let classPaddingLR;
@@ -297,6 +298,7 @@ export default function save(props) {
 					minHeightValueTablet > 0 ||
 					minHeightValueMobile > 0,
 				[`has-background-offset`]: hasBackgroundOffset,
+				[`has-background-offset-disabled-mobile`]: disableOffsetMobile,
 			}
 		),
 	});

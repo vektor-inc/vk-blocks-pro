@@ -64,6 +64,14 @@
 		"isLinkTarget": {
 			"type": "boolean",
 			"default": false
+		},
+		"isVertical": {
+			"type": "boolean",
+			"default": false
+		},
+		"isUpright": {
+			"type": "boolean",
+			"default": false
 		}
 	},
 	"description": "Display dynamic text",

@@ -101,12 +101,15 @@ export default function OuterEdit(props) {
 		if (attributes.clientId !== undefined) {
 			setAttributes({ clientId: undefined });
 		}
+
+		// blockIdの設定（初期作成時または再利用ブロック以外での複製時）
 		if (
 			blockId === undefined ||
-			isParentReusableBlock(clientId) === false
+			(blockId !== clientId && !isParentReusableBlock(clientId))
 		) {
 			setAttributes({ blockId: clientId });
 		}
+
 		// 互換処理 #1187
 		if (borderStyle === 'none' && attributes.className) {
 			// 追加CSSクラスを半角文字列で分けて配列化

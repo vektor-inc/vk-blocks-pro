@@ -585,11 +585,22 @@ export default function OuterEdit(props) {
 		'--bg-position-tablet': bgFocalPointTablet
 			? `${bgFocalPointTablet.x * 100}% ${bgFocalPointTablet.y * 100}%`
 			: undefined,
-		...((bgOffsetTop || bgOffsetBottom || bgOffsetLeft || bgOffsetRight) && {
-			...(bgOffsetTop && { '--bg-offset-top': `${bgOffsetTop}${bgOffsetUnit}` }),
-			...(bgOffsetBottom && { '--bg-offset-bottom': `${bgOffsetBottom}${bgOffsetUnit}` }),
-			...(bgOffsetLeft && { '--bg-offset-left': `${bgOffsetLeft}${bgOffsetUnit}` }),
-			...(bgOffsetRight && { '--bg-offset-right': `${bgOffsetRight}${bgOffsetUnit}` })
+		...((bgOffsetTop ||
+			bgOffsetBottom ||
+			bgOffsetLeft ||
+			bgOffsetRight) && {
+			...(bgOffsetTop && {
+				'--bg-offset-top': `${bgOffsetTop}${bgOffsetUnit}`,
+			}),
+			...(bgOffsetBottom && {
+				'--bg-offset-bottom': `${bgOffsetBottom}${bgOffsetUnit}`,
+			}),
+			...(bgOffsetLeft && {
+				'--bg-offset-left': `${bgOffsetLeft}${bgOffsetUnit}`,
+			}),
+			...(bgOffsetRight && {
+				'--bg-offset-right': `${bgOffsetRight}${bgOffsetUnit}`,
+			}),
 		}),
 		'--min-height-mobile': minHeightValueMobile
 			? `${minHeightValueMobile}${minHeightUnit}`
@@ -645,6 +656,23 @@ export default function OuterEdit(props) {
 				return 100;
 			default:
 				return 500;
+		}
+	};
+
+	// bgOffsetUnit に基づいて動的に最大値を設定
+	const getMaxOffset = (unit) => {
+		switch (unit) {
+			case 'px':
+				return 1000;
+			case '%':
+				return 100;
+			case 'em':
+			case 'rem':
+			case 'vw':
+			case 'vh':
+				return 50;
+			default:
+				return 100;
 		}
 	};
 
@@ -1481,7 +1509,10 @@ export default function OuterEdit(props) {
 				>
 					<BaseControl>
 						{/* リセットボタン */}
-						{(bgOffsetTop !== 0 || bgOffsetBottom !== 0 || bgOffsetLeft !== 0 || bgOffsetRight !== 0) && (
+						{(bgOffsetTop !== 0 ||
+							bgOffsetBottom !== 0 ||
+							bgOffsetLeft !== 0 ||
+							bgOffsetRight !== 0) && (
 							<div style={{ marginBottom: '1em' }}>
 								<Button
 									isSecondary
@@ -1490,7 +1521,7 @@ export default function OuterEdit(props) {
 											bgOffsetTop: 0,
 											bgOffsetBottom: 0,
 											bgOffsetLeft: 0,
-											bgOffsetRight: 0
+											bgOffsetRight: 0,
 										});
 									}}
 								>
@@ -1507,9 +1538,11 @@ export default function OuterEdit(props) {
 								{ label: 'em', value: 'em' },
 								{ label: 'rem', value: 'rem' },
 								{ label: 'vw', value: 'vw' },
-								{ label: 'vh', value: 'vh' }
+								{ label: 'vh', value: 'vh' },
 							]}
-							onChange={(value) => setAttributes({ bgOffsetUnit: value })}
+							onChange={(value) =>
+								setAttributes({ bgOffsetUnit: value })
+							}
 						/>
 
 						<p>{__('Vertical Offset', 'vk-blocks-pro')}</p>
@@ -1518,13 +1551,13 @@ export default function OuterEdit(props) {
 								label={__('Top', 'vk-blocks-pro')}
 								value={bgOffsetTop}
 								onChange={(value) => {
-									setAttributes({ 
+									setAttributes({
 										bgOffsetTop: value,
-										bgOffsetBottom: 0
+										bgOffsetBottom: 0,
 									});
 								}}
 								min={0}
-								max={bgOffsetUnit === 'px' ? 1000 : bgOffsetUnit === '%' ? 100 : 50}
+								max={getMaxOffset(bgOffsetUnit)}
 								step={bgOffsetUnit === 'px' ? 1 : 0.1}
 								disabled={bgOffsetBottom !== 0}
 							/>
@@ -1532,13 +1565,13 @@ export default function OuterEdit(props) {
 								label={__('Bottom', 'vk-blocks-pro')}
 								value={bgOffsetBottom}
 								onChange={(value) => {
-									setAttributes({ 
+									setAttributes({
 										bgOffsetBottom: value,
-										bgOffsetTop: 0
+										bgOffsetTop: 0,
 									});
 								}}
 								min={0}
-								max={bgOffsetUnit === 'px' ? 1000 : bgOffsetUnit === '%' ? 100 : 50}
+								max={getMaxOffset(bgOffsetUnit)}
 								step={bgOffsetUnit === 'px' ? 1 : 0.1}
 								disabled={bgOffsetTop !== 0}
 							/>
@@ -1549,13 +1582,13 @@ export default function OuterEdit(props) {
 								label={__('Left', 'vk-blocks-pro')}
 								value={bgOffsetLeft}
 								onChange={(value) => {
-									setAttributes({ 
+									setAttributes({
 										bgOffsetLeft: value,
-										bgOffsetRight: 0
+										bgOffsetRight: 0,
 									});
 								}}
 								min={0}
-								max={bgOffsetUnit === 'px' ? 1000 : bgOffsetUnit === '%' ? 100 : 50}
+								max={getMaxOffset(bgOffsetUnit)}
 								step={bgOffsetUnit === 'px' ? 1 : 0.1}
 								disabled={bgOffsetRight !== 0}
 							/>
@@ -1563,13 +1596,13 @@ export default function OuterEdit(props) {
 								label={__('Right', 'vk-blocks-pro')}
 								value={bgOffsetRight}
 								onChange={(value) => {
-									setAttributes({ 
+									setAttributes({
 										bgOffsetRight: value,
-										bgOffsetLeft: 0
+										bgOffsetLeft: 0,
 									});
 								}}
 								min={0}
-								max={bgOffsetUnit === 'px' ? 1000 : bgOffsetUnit === '%' ? 100 : 50}
+								max={getMaxOffset(bgOffsetUnit)}
 								step={bgOffsetUnit === 'px' ? 1 : 0.1}
 								disabled={bgOffsetLeft !== 0}
 							/>

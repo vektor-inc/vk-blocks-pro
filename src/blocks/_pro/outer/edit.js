@@ -325,10 +325,23 @@ export default function OuterEdit(props) {
 		setAttributes({ borderColor: '#fff' });
 	}
 
-	//Dividerエフェクトがない時のみ枠線を追
+	// オフセットが設定されているかどうかをチェック
+	const hasBackgroundOffset =
+		bgOffsetTop !== 0 ||
+		bgOffsetBottom !== 0 ||
+		bgOffsetLeft !== 0 ||
+		bgOffsetRight !== 0;
+
+	//Dividerエフェクトがない時のみ枠線を追加
 	let borderStyleProperty = {};
 
-	if (!levelSettingPerDevice) {
+	// オフセットが設定されている場合は、BorderとDividerの設定を無効化
+	if (hasBackgroundOffset) {
+		borderStyleProperty = {
+			border: 'none',
+			borderRadius: '0px',
+		};
+	} else if (!levelSettingPerDevice) {
 		if (
 			upper_level === 0 && //eslint-disable-line camelcase
 			lower_level === 0 && //eslint-disable-line camelcase
@@ -1508,7 +1521,12 @@ export default function OuterEdit(props) {
 					initialOpen={false}
 				>
 					<BaseControl>
-						{/* リセットボタン */}
+						<p className="block-editor-block-types-list__help">
+							{__(
+								'When using Background Offset, Border, Divider, and Focal Point settings will be temporarily disabled.',
+								'vk-blocks-pro'
+							)}
+						</p>
 						{(bgOffsetTop !== 0 ||
 							bgOffsetBottom !== 0 ||
 							bgOffsetLeft !== 0 ||
@@ -1613,29 +1631,33 @@ export default function OuterEdit(props) {
 			<div {...blockProps}>
 				{GetBgImage}
 				<div>
-					{componentDivider(
-						upper_level,
-						upperDividerBgColor,
-						whichSideUpper,
-						dividerType,
-						levelSettingPerDevice,
-						upper_level_mobile,
-						upper_level_tablet,
-						upper_level_pc
-					)}
+					{!hasBackgroundOffset &&
+						whichSideUpper &&
+						componentDivider(
+							upper_level,
+							upperDividerBgColor,
+							whichSideUpper,
+							dividerType,
+							levelSettingPerDevice,
+							upper_level_mobile,
+							upper_level_tablet,
+							upper_level_pc
+						)}
 					<div className={containerClass}>
 						<InnerBlocks />
 					</div>
-					{componentDivider(
-						lower_level,
-						lowerDividerBgColor,
-						whichSideLower,
-						dividerType,
-						levelSettingPerDevice,
-						lower_level_mobile,
-						lower_level_tablet,
-						lower_level_pc
-					)}
+					{!hasBackgroundOffset &&
+						whichSideLower &&
+						componentDivider(
+							lower_level,
+							lowerDividerBgColor,
+							whichSideLower,
+							dividerType,
+							levelSettingPerDevice,
+							lower_level_mobile,
+							lower_level_tablet,
+							lower_level_pc
+						)}
 				</div>
 			</div>
 		</>

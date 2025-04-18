@@ -6,7 +6,6 @@ import classnames from 'classnames';
 /**
  * Internal dependencies
  */
-import { __ } from '@wordpress/i18n';
 import { componentDivider } from './component-divider';
 import GenerateBgImage from './GenerateBgImage';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
@@ -201,10 +200,23 @@ export default function save(props) {
 	// 編集画面とサイト上の切り替え
 	const containerClass = 'vk_outer_container';
 
+	// オフセットが設定されているかどうかをチェック
+	const hasBackgroundOffset =
+		bgOffsetTop !== 0 ||
+		bgOffsetBottom !== 0 ||
+		bgOffsetLeft !== 0 ||
+		bgOffsetRight !== 0;
+
 	// Dividerエフェクトがない時のみ枠線を追加
 	let borderStyleProperty = {};
-	//eslint-disable-next-line camelcase
-	if (!levelSettingPerDevice) {
+
+	// オフセットが設定されている場合は、BorderとDividerの設定を無効化
+	if (hasBackgroundOffset) {
+		borderStyleProperty = {
+			border: 'none',
+			borderRadius: '0px',
+		};
+	} else if (!levelSettingPerDevice) {
 		if (
 			upper_level === 0 && //eslint-disable-line camelcase
 			lower_level === 0 && //eslint-disable-line camelcase
@@ -272,8 +284,11 @@ export default function save(props) {
 			`vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 			{
 				[`has-border-color`]:
-					borderStyle !== 'none' && borderColor !== undefined,
+					!hasBackgroundOffset &&
+					borderStyle !== 'none' &&
+					borderColor !== undefined,
 				[`has-${borderColor}-border-color`]:
+					!hasBackgroundOffset &&
 					borderStyle !== 'none' &&
 					borderColor !== undefined &&
 					!isHexColor(borderColor),
@@ -281,62 +296,52 @@ export default function save(props) {
 					minHeightValuePC > 0 ||
 					minHeightValueTablet > 0 ||
 					minHeightValueMobile > 0,
-				[`has-background-offset`]:
-					bgOffsetTop !== 0 ||
-					bgOffsetBottom !== 0 ||
-					bgOffsetLeft !== 0 ||
-					bgOffsetRight !== 0,
+				[`has-background-offset`]: hasBackgroundOffset,
 			}
 		),
 	});
 
-	const GetLinkUrl = (
-		<a
-			href={linkUrl}
-			{...(linkTarget ? { target: linkTarget } : {})}
-			{...(relAttribute ? { rel: relAttribute } : {})}
-			className={`${prefix}-link`}
-		>
-			<span className="screen-reader-text">
-				{linkDescription
-					? linkDescription
-					: __('Outer link', 'vk-blocks-pro')}
-			</span>
-		</a>
-	);
-
 	return (
-		<div
-			{...blockProps}
-			style={{ ...backgroundStyles, ...borderStyleProperty }}
-		>
-			{linkUrl && GetLinkUrl}
+		<div {...blockProps}>
 			{GetBgImage}
 			<div>
-				{componentDivider(
-					upper_level,
-					upperDividerBgColor,
-					whichSideUpper,
-					dividerType,
-					levelSettingPerDevice,
-					upper_level_mobile,
-					upper_level_tablet,
-					upper_level_pc
-				)}
+				{!hasBackgroundOffset &&
+					whichSideUpper &&
+					componentDivider(
+						upper_level,
+						upperDividerBgColor,
+						whichSideUpper,
+						dividerType,
+						levelSettingPerDevice,
+						upper_level_mobile,
+						upper_level_tablet,
+						upper_level_pc
+					)}
 				<div className={containerClass}>
 					<InnerBlocks.Content />
 				</div>
-				{componentDivider(
-					lower_level,
-					lowerDividerBgColor,
-					whichSideLower,
-					dividerType,
-					levelSettingPerDevice,
-					lower_level_mobile,
-					lower_level_tablet,
-					lower_level_pc
-				)}
+				{!hasBackgroundOffset &&
+					whichSideLower &&
+					componentDivider(
+						lower_level,
+						lowerDividerBgColor,
+						whichSideLower,
+						dividerType,
+						levelSettingPerDevice,
+						lower_level_mobile,
+						lower_level_tablet,
+						lower_level_pc
+					)}
 			</div>
+			{linkUrl && (
+				<a
+					href={linkUrl}
+					className="vkb-outer-link"
+					target={linkTarget}
+					rel={relAttribute}
+					aria-label={linkDescription}
+				></a>
+			)}
 		</div>
 	);
 }

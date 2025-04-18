@@ -991,7 +991,8 @@ export default function OuterEdit(props) {
 											bgOffsetBottom !== 0 ||
 											bgOffsetLeft !== 0 ||
 											bgOffsetRight !== 0 ||
-											bgOffsetDisableMobile !== false) && (
+											bgOffsetDisableMobile !==
+												false) && (
 											<div
 												style={{ marginBottom: '1em' }}
 											>

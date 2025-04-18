@@ -310,3 +310,9 @@ $media-xxl-down: 1399.98px;
 @media (min-width: 992px) {
 	@include switchVisibility(block, none, none);
 }
+
+.vk-blocks-outer-tab-panel {
+	.components-tab-panel__tabs {
+		margin-bottom: 1.5rem;
+	}
+}

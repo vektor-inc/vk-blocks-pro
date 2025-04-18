@@ -31,6 +31,8 @@ export default function save(props) {
 		bgOffsetBottom,
 		bgOffsetLeft,
 		bgOffsetRight,
+		bgOffsetUnit,
+		bgOffsetDisableMobile,
 		outerWidth,
 		padding_left_and_right, //eslint-disable-line camelcase
 		padding_top_and_bottom, //eslint-disable-line camelcase
@@ -60,8 +62,6 @@ export default function save(props) {
 		linkTarget,
 		relAttribute,
 		linkDescription,
-		bgOffsetUnit,
-		disableOffsetMobile,
 	} = attributes;
 
 	let classPaddingLR;
@@ -298,7 +298,7 @@ export default function save(props) {
 					minHeightValueTablet > 0 ||
 					minHeightValueMobile > 0,
 				[`has-background-offset`]: hasBackgroundOffset,
-				[`has-background-offset-disabled-mobile`]: disableOffsetMobile,
+				[`has-background-offset-disabled-mobile`]: bgOffsetDisableMobile,
 			}
 		),
 	});

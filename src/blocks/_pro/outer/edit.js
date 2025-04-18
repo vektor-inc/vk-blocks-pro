@@ -59,6 +59,8 @@ export default function OuterEdit(props) {
 		bgOffsetBottom,
 		bgOffsetLeft,
 		bgOffsetRight,
+		bgOffsetUnit,
+		bgOffsetDisableMobile,
 		outerWidth,
 		padding_left_and_right, //eslint-disable-line camelcase
 		padding_top_and_bottom, //eslint-disable-line camelcase
@@ -92,8 +94,6 @@ export default function OuterEdit(props) {
 		relAttribute,
 		linkDescription,
 		blockId,
-		bgOffsetUnit,
-		disableOffsetMobile,
 	} = attributes;
 
 	let classPaddingLR;
@@ -650,7 +650,7 @@ export default function OuterEdit(props) {
 					minHeightValueTablet > 0 ||
 					minHeightValueMobile > 0,
 				[`has-background-offset`]: hasBackgroundOffset,
-				[`has-background-offset-disabled-mobile`]: disableOffsetMobile,
+				[`has-background-offset-disabled-mobile`]: bgOffsetDisableMobile,
 			}
 		),
 	});
@@ -1527,16 +1527,6 @@ export default function OuterEdit(props) {
 							'vk-blocks-pro'
 						)}
 					</p>
-					<ToggleControl
-						label={__(
-							'Disable offset on mobile (under 576px)',
-							'vk-blocks-pro'
-						)}
-						checked={disableOffsetMobile}
-						onChange={(value) =>
-							setAttributes({ disableOffsetMobile: value })
-						}
-					/>
 					{(bgOffsetTop !== 0 ||
 						bgOffsetBottom !== 0 ||
 						bgOffsetLeft !== 0 ||
@@ -1557,6 +1547,16 @@ export default function OuterEdit(props) {
 							</Button>
 						</div>
 					)}
+					<ToggleControl
+						label={__(
+							'Disable offset on mobile (under 576px)',
+							'vk-blocks-pro'
+						)}
+						checked={bgOffsetDisableMobile}
+						onChange={(value) =>
+							setAttributes({ bgOffsetDisableMobile: value })
+						}
+					/>
 					<SelectControl
 						label={__('Unit', 'vk-blocks-pro')}
 						value={bgOffsetUnit}

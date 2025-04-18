@@ -56,6 +56,30 @@
 			"type": "boolean",
 			"default": false
 		},
+		"bgOffsetTop": {
+			"type": "number",
+			"default": 0
+		},
+		"bgOffsetBottom": {
+			"type": "number",
+			"default": 0
+		},
+		"bgOffsetLeft": {
+			"type": "number",
+			"default": 0
+		},
+		"bgOffsetRight": {
+			"type": "number",
+			"default": 0
+		},
+		"bgOffsetUnit": {
+			"type": "string",
+			"default": "px"
+		},
+		"bgOffsetDisableMobile": {
+			"type": "boolean",
+			"default": false
+		},
 		"padding_left_and_right": {
 			"type": "string",
 			"default": "0"
@@ -184,26 +208,6 @@
 		},
 		"blockId": {
 			"type": "string"
-		},
-		"bgOffsetTop": {
-			"type": "number",
-			"default": 0
-		},
-		"bgOffsetBottom": {
-			"type": "number",
-			"default": 0
-		},
-		"bgOffsetLeft": {
-			"type": "number",
-			"default": 0
-		},
-		"bgOffsetRight": {
-			"type": "number",
-			"default": 0
-		},
-		"bgOffsetUnit": {
-			"type": "string",
-			"default": "px"
 		}
 	},
 	"description": "Set the background image, color, and border to show the layout and divisions.",

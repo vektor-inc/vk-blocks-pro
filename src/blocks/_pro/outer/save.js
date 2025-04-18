@@ -298,7 +298,8 @@ export default function save(props) {
 					minHeightValueTablet > 0 ||
 					minHeightValueMobile > 0,
 				[`has-background-offset`]: hasBackgroundOffset,
-				[`has-background-offset-disabled-mobile`]: bgOffsetDisableMobile,
+				[`has-background-offset-disabled-mobile`]:
+					bgOffsetDisableMobile,
 			}
 		),
 	});

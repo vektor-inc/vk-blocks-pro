@@ -110,6 +110,7 @@ e.g.
 
 = 1.101.0 =
 [ Specification change ][ Dynamic Text (Pro) ] Allows i-tags in custom field link text.
+[ Bug fix ][ Dynamic Text (Pro) ] Fixed incorrect behavior when the Dynamic Text block is placed inside a Query block on the editing screen.
 [ Bug Fix ][ Step (Pro) ] Fix it so that leaving the starting number for a step blank does not result in an error.
 
 = 1.100.0 =

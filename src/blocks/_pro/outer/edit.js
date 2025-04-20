@@ -1081,6 +1081,7 @@ export default function OuterEdit(props) {
 												onChange={(value) => {
 													setAttributes({
 														bgOffsetTop: value,
+														bgOffsetBottom: 0,
 													});
 												}}
 												min={0}
@@ -1090,6 +1091,7 @@ export default function OuterEdit(props) {
 														? 1
 														: 0.1
 												}
+												disabled={bgOffsetBottom !== 0}
 											/>
 											<RangeControl
 												label={__(
@@ -1100,6 +1102,7 @@ export default function OuterEdit(props) {
 												onChange={(value) => {
 													setAttributes({
 														bgOffsetBottom: value,
+														bgOffsetTop: 0,
 													});
 												}}
 												min={0}
@@ -1109,6 +1112,7 @@ export default function OuterEdit(props) {
 														? 1
 														: 0.1
 												}
+												disabled={bgOffsetTop !== 0}
 											/>
 										</div>
 										<p>
@@ -1127,6 +1131,7 @@ export default function OuterEdit(props) {
 												onChange={(value) => {
 													setAttributes({
 														bgOffsetLeft: value,
+														bgOffsetRight: 0,
 													});
 												}}
 												min={0}
@@ -1136,6 +1141,7 @@ export default function OuterEdit(props) {
 														? 1
 														: 0.1
 												}
+												disabled={bgOffsetRight !== 0}
 											/>
 											<RangeControl
 												label={__(
@@ -1146,6 +1152,7 @@ export default function OuterEdit(props) {
 												onChange={(value) => {
 													setAttributes({
 														bgOffsetRight: value,
+														bgOffsetLeft: 0,
 													});
 												}}
 												min={0}
@@ -1155,6 +1162,7 @@ export default function OuterEdit(props) {
 														? 1
 														: 0.1
 												}
+												disabled={bgOffsetLeft !== 0}
 											/>
 										</div>
 									</>

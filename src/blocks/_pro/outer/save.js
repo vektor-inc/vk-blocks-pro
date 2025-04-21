@@ -96,10 +96,10 @@ export default function save(props) {
 	);
 
 	const backgroundStyles = {
-		'--bg-image': bgImage ? `url(${bgImage})` : 'none',
-		'--bg-position': bgFocalPointPC
+		backgroundImage: bgImage ? `url(${bgImage})` : undefined,
+		backgroundPosition: bgFocalPointPC
 			? `${bgFocalPointPC.x * 100}% ${bgFocalPointPC.y * 100}%`
-			: 'center',
+			: undefined,
 		'--bg-image-mobile': bgImageMobile
 			? `url(${bgImageMobile})`
 			: undefined,

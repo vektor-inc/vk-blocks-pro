@@ -903,35 +903,22 @@ export default function OuterEdit(props) {
 										}
 										value={bgFocalPointPC}
 										onChange={(value) =>
-											onChangeBgFocalPoint(
-												value,
-												'PC'
-											)
+											onChangeBgFocalPoint(value, 'PC')
 										}
 										onDrag={(value) =>
-											onChangeBgFocalPoint(
-												value,
-												'PC'
-											)
+											onChangeBgFocalPoint(value, 'PC')
 										}
 									/>
 								</BaseControl>
 							)}
 							<ToggleControl
 								label={
-									__(
-										'Enable Focal Point',
-										'vk-blocks-pro'
-									) +
+									__('Enable Focal Point', 'vk-blocks-pro') +
 									__('(Tablet)', 'vk-blocks-pro')
 								}
 								checked={enableFocalPointTablet}
-								onChange={() =>
-									handleToggleChange('Tablet')
-								}
-								disabled={
-									!bgImageTablet && !bgImage
-								}
+								onChange={() => handleToggleChange('Tablet')}
+								disabled={!bgImageTablet && !bgImage}
 							/>
 							{enableFocalPointTablet && (
 								<BaseControl
@@ -941,17 +928,12 @@ export default function OuterEdit(props) {
 											'vk-blocks-pro'
 										) +
 										' ' +
-										__(
-											'(Tablet)',
-											'vk-blocks-pro'
-										)
+										__('(Tablet)', 'vk-blocks-pro')
 									}
 									id="vk_outer-focalPointPickerTablet"
 								>
 									<FocalPointPicker
-										url={
-											bgImageTablet || bgImage
-										}
+										url={bgImageTablet || bgImage}
 										value={bgFocalPointTablet}
 										onChange={(value) =>
 											onChangeBgFocalPoint(
@@ -970,20 +952,13 @@ export default function OuterEdit(props) {
 							)}
 							<ToggleControl
 								label={
-									__(
-										'Enable Focal Point',
-										'vk-blocks-pro'
-									) +
+									__('Enable Focal Point', 'vk-blocks-pro') +
 									__('(Mobile)', 'vk-blocks-pro')
 								}
 								checked={enableFocalPointMobile}
-								onChange={() =>
-									handleToggleChange('Mobile')
-								}
+								onChange={() => handleToggleChange('Mobile')}
 								disabled={
-									!bgImage &&
-									!bgImageTablet &&
-									!bgImageMobile
+									!bgImage && !bgImageTablet && !bgImageMobile
 								}
 							/>
 							{enableFocalPointMobile && (
@@ -994,10 +969,7 @@ export default function OuterEdit(props) {
 											'vk-blocks-pro'
 										) +
 										' ' +
-										__(
-											'(Mobile)',
-											'vk-blocks-pro'
-										)
+										__('(Mobile)', 'vk-blocks-pro')
 									}
 									id="vk_outer-focalPointPickerMobile"
 								>
@@ -1024,14 +996,20 @@ export default function OuterEdit(props) {
 								</BaseControl>
 							)}
 							<BaseControl
-								label={__('Background image Position', 'vk-blocks-pro')}
+								label={__(
+									'Background image Position',
+									'vk-blocks-pro'
+								)}
 								id={`vk_outer-bgPosition`}
 							>
 								<RadioControl
 									selected={bgPosition}
 									options={[
 										{
-											label: __('Repeat', 'vk-blocks-pro'),
+											label: __(
+												'Repeat',
+												'vk-blocks-pro'
+											),
 											value: 'repeat',
 										},
 										{
@@ -1068,7 +1046,7 @@ export default function OuterEdit(props) {
 						<>
 							<p className="block-editor-block-types-list__help">
 								{__(
-									'hen using Background Offset, Border, Divider, Background Position and Focal Point settings will be temporarily disabled.',
+									'hen using Background Offset, Border and Divider will be temporarily disabled.',
 									'vk-blocks-pro'
 								)}
 							</p>
@@ -1076,11 +1054,8 @@ export default function OuterEdit(props) {
 								bgOffsetBottom !== 0 ||
 								bgOffsetLeft !== 0 ||
 								bgOffsetRight !== 0 ||
-								bgOffsetDisableMobile !==
-									false) && (
-								<div
-									style={{ marginBottom: '1em' }}
-								>
+								bgOffsetDisableMobile !== false) && (
+								<div style={{ marginBottom: '1em' }}>
 									<Button
 										isSecondary
 										onClick={() => {
@@ -1129,18 +1104,10 @@ export default function OuterEdit(props) {
 								}
 							/>
 
-							<p>
-								{__(
-									'Vertical Offset',
-									'vk-blocks-pro'
-								)}
-							</p>
+							<p>{__('Vertical Offset', 'vk-blocks-pro')}</p>
 							<div style={{ marginBottom: '1em' }}>
 								<RangeControl
-									label={__(
-										'Top',
-										'vk-blocks-pro'
-									)}
+									label={__('Top', 'vk-blocks-pro')}
 									value={bgOffsetTop}
 									onChange={(value) => {
 										setAttributes({
@@ -1150,18 +1117,11 @@ export default function OuterEdit(props) {
 									}}
 									min={0}
 									max={getMaxOffset(bgOffsetUnit)}
-									step={
-										bgOffsetUnit === 'px'
-											? 1
-											: 0.1
-									}
+									step={bgOffsetUnit === 'px' ? 1 : 0.1}
 									disabled={bgOffsetBottom !== 0}
 								/>
 								<RangeControl
-									label={__(
-										'Bottom',
-										'vk-blocks-pro'
-									)}
+									label={__('Bottom', 'vk-blocks-pro')}
 									value={bgOffsetBottom}
 									onChange={(value) => {
 										setAttributes({
@@ -1171,26 +1131,14 @@ export default function OuterEdit(props) {
 									}}
 									min={0}
 									max={getMaxOffset(bgOffsetUnit)}
-									step={
-										bgOffsetUnit === 'px'
-											? 1
-											: 0.1
-									}
+									step={bgOffsetUnit === 'px' ? 1 : 0.1}
 									disabled={bgOffsetTop !== 0}
 								/>
 							</div>
-							<p>
-								{__(
-									'Horizontal Offset',
-									'vk-blocks-pro'
-								)}
-							</p>
+							<p>{__('Horizontal Offset', 'vk-blocks-pro')}</p>
 							<div>
 								<RangeControl
-									label={__(
-										'Left',
-										'vk-blocks-pro'
-									)}
+									label={__('Left', 'vk-blocks-pro')}
 									value={bgOffsetLeft}
 									onChange={(value) => {
 										setAttributes({
@@ -1200,18 +1148,11 @@ export default function OuterEdit(props) {
 									}}
 									min={0}
 									max={getMaxOffset(bgOffsetUnit)}
-									step={
-										bgOffsetUnit === 'px'
-											? 1
-											: 0.1
-									}
+									step={bgOffsetUnit === 'px' ? 1 : 0.1}
 									disabled={bgOffsetRight !== 0}
 								/>
 								<RangeControl
-									label={__(
-										'Right',
-										'vk-blocks-pro'
-									)}
+									label={__('Right', 'vk-blocks-pro')}
 									value={bgOffsetRight}
 									onChange={(value) => {
 										setAttributes({
@@ -1221,11 +1162,7 @@ export default function OuterEdit(props) {
 									}}
 									min={0}
 									max={getMaxOffset(bgOffsetUnit)}
-									step={
-										bgOffsetUnit === 'px'
-											? 1
-											: 0.1
-									}
+									step={bgOffsetUnit === 'px' ? 1 : 0.1}
 									disabled={bgOffsetLeft !== 0}
 								/>
 							</div>

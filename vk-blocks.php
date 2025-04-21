@@ -128,19 +128,28 @@ if ( ! function_exists( 'vk_blocks_is_pro' ) ) {
  * Start VK Blocks
  * 無料版を無効化した後に書かないと関数の二重宣言などになるので注意
  */
-
-// Composer のファイルを読み込み ( composer install --no-dev ).
-require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
-// Set plugin dir path.
-if ( ! defined( 'VK_BLOCKS_DIR_PATH' ) ) {
-	define( 'VK_BLOCKS_DIR_PATH', plugin_dir_path( __FILE__ ) );
+if ( ! function_exists( 'vk_blocks_loaded' ) ) {
+	/**
+	 * Load VK Blocks
+	 *
+	 * @return void
+	 */
+	function vk_blocks_loaded() {
+		// Composer のファイルを読み込み ( composer install --no-dev ).
+		require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
+		// Set plugin dir path.
+		if ( ! defined( 'VK_BLOCKS_DIR_PATH' ) ) {
+			define( 'VK_BLOCKS_DIR_PATH', plugin_dir_path( __FILE__ ) );
+		}
+		// Set Plugin Dir URL.
+		if ( ! defined( 'VK_BLOCKS_DIR_URL' ) ) {
+			define( 'VK_BLOCKS_DIR_URL', plugin_dir_url( __FILE__ ) );
+		}
+		// Load VK Blocks
+		require_once plugin_dir_path( __FILE__ ) . 'inc/vk-blocks-config.php';
+	}
+	add_action( 'plugins_loaded', 'vk_blocks_loaded' );
 }
-// Set Plugin Dir URL.
-if ( ! defined( 'VK_BLOCKS_DIR_URL' ) ) {
-	define( 'VK_BLOCKS_DIR_URL', plugin_dir_url( __FILE__ ) );
-}
-// Load VK Blocks
-require_once plugin_dir_path( __FILE__ ) . 'inc/vk-blocks-config.php';
 
 
 /****************************************************************************************
@@ -192,7 +201,7 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 			global $vk_blocks_update_checker;
 
 			$vk_blocks_update_checker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
-				'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=vk-blocks-pro',
+				'https://license.vektor-inc.co.jp/check/?action=get_metadata&slug=vk-blocks-pro',
 				__FILE__, // この処理を他の場所に移動するとここを変更しないといけなくなるので注意.
 				'vk-blocks-pro'
 			);
@@ -398,11 +407,13 @@ if ( function_exists( 'register_deactivation_hook' ) ) {
 	register_deactivation_hook( __FILE__, 'vk_blocks_deactivate_function' );
 }
 
-/**
- * Deactivate function
- *
- * @return void
- */
-function vk_blocks_deactivate_function() {
-	delete_option( 'vk_blocks_checked_flags' );
+if ( ! function_exists( 'vk_blocks_deactivate_function' ) ) {
+	/**
+	 * Deactivate function
+	 *
+	 * @return void
+	 */
+	function vk_blocks_deactivate_function() {
+		delete_option( 'vk_blocks_checked_flags' );
+	}
 }

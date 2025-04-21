@@ -109,6 +109,7 @@ e.g.
 == Changelog ==
 
 [ Bug Fix ][ Outer ] Removed unintended borders above and below separators.
+[ Bug Fix ][ Pro ] When VK Blocks Pro is activated, VK Blocks should be automatically deactivated.
 
 = 1.101.0 =
 [ Specification change ][ Dynamic Text (Pro) ] Allows i-tags in custom field link text.

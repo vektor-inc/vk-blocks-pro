@@ -108,7 +108,7 @@ e.g.
 
 == Changelog ==
 
-[ Bug Fix ][ Outer (Pro) ] Fixed unexpected margin affecting background color display due to layout flow styles in WordPress 6.8.
+[ Design Bug Fix ][ Outer (Pro) ] Fixed unexpected margin affecting background color display due to layout flow styles in WordPress 6.8.
 
 = 1.101.0 =
 [ Specification change ][ Dynamic Text (Pro) ] Allows i-tags in custom field link text.

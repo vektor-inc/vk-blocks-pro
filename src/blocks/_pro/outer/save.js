@@ -165,7 +165,7 @@ export default function save(props) {
 			classBgPosition = 'vk_outer-bgPosition-normal';
 		}
 	} else {
-		classBgPosition = '';
+		classBgPosition = 'vk_outer-bgPosition-normal';
 	}
 
 	// classPaddingLRの切り替え

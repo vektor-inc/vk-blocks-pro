@@ -28,7 +28,6 @@ import {
 	ToggleControl,
 	ToolbarGroup,
 	FocalPointPicker,
-	Button,
 	__experimentalToggleGroupControl as ToggleGroupControl,
 	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
 } from '@wordpress/components';
@@ -1050,31 +1049,6 @@ export default function OuterEdit(props) {
 									'vk-blocks-pro'
 								)}
 							</p>
-							{(bgOffsetTop !== 0 ||
-								bgOffsetBottom !== 0 ||
-								bgOffsetLeft !== 0 ||
-								bgOffsetRight !== 0 ||
-								bgOffsetDisableMobile !== false) && (
-								<div style={{ marginBottom: '1em' }}>
-									<Button
-										isSecondary
-										onClick={() => {
-											setAttributes({
-												bgOffsetTop: 0,
-												bgOffsetBottom: 0,
-												bgOffsetLeft: 0,
-												bgOffsetRight: 0,
-												bgOffsetDisableMobile: false,
-											});
-										}}
-									>
-										{__(
-											'Reset All Offsets',
-											'vk-blocks-pro'
-										)}
-									</Button>
-								</div>
-							)}
 							<ToggleControl
 								label={__(
 									'Disable offset on mobile',

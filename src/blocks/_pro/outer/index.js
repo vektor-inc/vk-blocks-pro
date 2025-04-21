@@ -31,7 +31,6 @@ const generateInlineCss = (attributes) => {
 		innerSideSpaceValueTablet,
 		innerSideSpaceValueMobile,
 		innerSideSpaceUnit,
-		bgOffsetUnit,
 	} = attributes;
 
 	//For recovering block.
@@ -46,9 +45,6 @@ const generateInlineCss = (attributes) => {
 	}
 	if (undefined === innerSideSpaceValuePC) {
 		innerSideSpaceValuePC = 0;
-	}
-	if (undefined === bgOffsetUnit) {
-		bgOffsetUnit = 'px';
 	}
 
 	const containerSelector = `.vk_outer.vkb-outer-${blockId} > div > .vk_outer_container`;

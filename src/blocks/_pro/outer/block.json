@@ -28,6 +28,10 @@
 			"type": "string",
 			"default": "normal"
 		},
+		"bgPositionType": {
+			"type": "string",
+			"default": "focalPoint"
+		},
 		"bgPosition": {
 			"type": "string",
 			"default": "normal"

@@ -289,15 +289,26 @@ export default function OuterEdit(props) {
 			? `vk_outer-width-${outerWidth} align${outerWidth}`
 			: 'vk_outer-width-normal';
 
+	// オフセットが設定されているかどうかをチェック
+	const hasBackgroundOffset =
+		bgOffsetTop !== 0 ||
+		bgOffsetBottom !== 0 ||
+		bgOffsetLeft !== 0 ||
+		bgOffsetRight !== 0;
+
 	//classBgPositionのクラス切り替え
-	if (bgPosition === 'parallax') {
-		classBgPosition = 'vk_outer-bgPosition-parallax vk-prlx';
-	} else if (bgPosition === 'fixed') {
-		classBgPosition = 'vk_outer-bgPosition-fixed';
-	} else if (bgPosition === 'repeat') {
-		classBgPosition = 'vk_outer-bgPosition-repeat';
+	if (!hasBackgroundOffset) {
+		if (bgPosition === 'parallax') {
+			classBgPosition = 'vk_outer-bgPosition-parallax vk-prlx';
+		} else if (bgPosition === 'fixed') {
+			classBgPosition = 'vk_outer-bgPosition-fixed';
+		} else if (bgPosition === 'repeat') {
+			classBgPosition = 'vk_outer-bgPosition-repeat';
+		} else {
+			classBgPosition = 'vk_outer-bgPosition-normal';
+		}
 	} else {
-		classBgPosition = 'vk_outer-bgPosition-normal';
+		classBgPosition = '';
 	}
 
 	//classPaddingLRのクラス切り替え
@@ -345,13 +356,6 @@ export default function OuterEdit(props) {
 	if (borderColor === null || borderColor === undefined) {
 		setAttributes({ borderColor: '#fff' });
 	}
-
-	// オフセットが設定されているかどうかをチェック
-	const hasBackgroundOffset =
-		bgOffsetTop !== 0 ||
-		bgOffsetBottom !== 0 ||
-		bgOffsetLeft !== 0 ||
-		bgOffsetRight !== 0;
 
 	//Dividerエフェクトがない時のみ枠線を追加
 	let borderStyleProperty = {};
@@ -1000,7 +1004,7 @@ export default function OuterEdit(props) {
 									<>
 										<p className="block-editor-block-types-list__help">
 											{__(
-												'When using Background Offset, Border, Divider, and Focal Point settings will be temporarily disabled.',
+												'When using Background Offset, Border, Divider, Background Position and Focal Point settings will be temporarily disabled.',
 												'vk-blocks-pro'
 											)}
 										</p>

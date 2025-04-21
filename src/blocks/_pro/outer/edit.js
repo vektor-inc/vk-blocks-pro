@@ -680,8 +680,6 @@ export default function OuterEdit(props) {
 		switch (unit) {
 			case 'px':
 				return 1000;
-			case '%':
-				return 100;
 			case 'em':
 			case 'rem':
 			case 'vw':
@@ -1033,7 +1031,6 @@ export default function OuterEdit(props) {
 											value={bgOffsetUnit}
 											options={[
 												{ label: 'px', value: 'px' },
-												{ label: '%', value: '%' },
 												{ label: 'em', value: 'em' },
 												{ label: 'rem', value: 'rem' },
 												{ label: 'vw', value: 'vw' },

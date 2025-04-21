@@ -108,6 +108,7 @@ e.g.
 
 == Changelog ==
 
+= 1.102.0 =
 [ Design Bug Fix ][ Outer (Pro) ] Fixed unexpected margin affecting background color display due to layout flow styles in WordPress 6.8.
 [ Design Bug Fix ][ Outer ] Removed unintended borders above and below separators.
 [ Bug Fix ][ Pro ] When VK Blocks Pro is activated, VK Blocks should be automatically deactivated.

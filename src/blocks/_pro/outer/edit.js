@@ -127,6 +127,25 @@ export default function OuterEdit(props) {
 				className: classnames(newClassName),
 			});
 		}
+		// 背景オフセットの互換処理
+		if (bgOffsetTop === undefined) {
+			setAttributes({ bgOffsetTop: 0 });
+		}
+		if (bgOffsetBottom === undefined) {
+			setAttributes({ bgOffsetBottom: 0 });
+		}
+		if (bgOffsetLeft === undefined) {
+			setAttributes({ bgOffsetLeft: 0 });
+		}
+		if (bgOffsetRight === undefined) {
+			setAttributes({ bgOffsetRight: 0 });
+		}
+		if (bgOffsetUnit === undefined) {
+			setAttributes({ bgOffsetUnit: 'px' });
+		}
+		if (bgOffsetDisableMobile === undefined) {
+			setAttributes({ bgOffsetDisableMobile: false });
+		}
 		// 前バージョンとの互換処理
 		if (
 			innerSideSpaceValuePC === undefined ||
@@ -1059,6 +1078,7 @@ export default function OuterEdit(props) {
 												onChange={(value) => {
 													setAttributes({
 														bgOffsetTop: value,
+														bgOffsetBottom: 0,
 													});
 												}}
 												min={0}
@@ -1068,6 +1088,7 @@ export default function OuterEdit(props) {
 														? 1
 														: 0.1
 												}
+												disabled={bgOffsetBottom !== 0}
 											/>
 											<RangeControl
 												label={__(
@@ -1078,6 +1099,7 @@ export default function OuterEdit(props) {
 												onChange={(value) => {
 													setAttributes({
 														bgOffsetBottom: value,
+														bgOffsetTop: 0,
 													});
 												}}
 												min={0}
@@ -1087,6 +1109,7 @@ export default function OuterEdit(props) {
 														? 1
 														: 0.1
 												}
+												disabled={bgOffsetTop !== 0}
 											/>
 										</div>
 										<p>
@@ -1105,6 +1128,7 @@ export default function OuterEdit(props) {
 												onChange={(value) => {
 													setAttributes({
 														bgOffsetLeft: value,
+														bgOffsetRight: 0,
 													});
 												}}
 												min={0}
@@ -1114,6 +1138,7 @@ export default function OuterEdit(props) {
 														? 1
 														: 0.1
 												}
+												disabled={bgOffsetRight !== 0}
 											/>
 											<RangeControl
 												label={__(
@@ -1124,6 +1149,7 @@ export default function OuterEdit(props) {
 												onChange={(value) => {
 													setAttributes({
 														bgOffsetRight: value,
+														bgOffsetLeft: 0,
 													});
 												}}
 												min={0}
@@ -1133,6 +1159,7 @@ export default function OuterEdit(props) {
 														? 1
 														: 0.1
 												}
+												disabled={bgOffsetLeft !== 0}
 											/>
 										</div>
 									</>

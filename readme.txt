@@ -3,8 +3,8 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,m
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.5
-Tested up to: 6.7
-Stable tag: 1.100.0.1
+Tested up to: 6.8
+Stable tag: 1.102.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -108,7 +108,9 @@ e.g.
 
 == Changelog ==
 
+
 [ Add function ][ Outer (Pro) ] Added background offset feature.
+[ Design Bug Fix ][ Balloon ] Fixed an issue where text inside balloon blocks unintentionally inherited the border color when using a color palette.
 
 = 1.102.0 =
 [ Design Bug Fix ][ Outer (Pro) ] Fixed unexpected margin affecting background color display due to layout flow styles in WordPress 6.8.

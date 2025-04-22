@@ -9,7 +9,7 @@ import {
 } from '@wordpress/components';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import { FontAwesome } from '@vkblocks/utils/font-awesome-new';
-import { Component, useState, useMemo } from '@wordpress/element';
+import { Component } from '@wordpress/element';
 import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import './style';
@@ -41,7 +41,6 @@ export const ButtonSettings = (props) => {
 		fontAwesomeIconAfter: propsFontAwesomeIconAfter,
 		iconSizeBefore: propsIconSizeBefore,
 		iconSizeAfter: propsIconSizeAfter,
-		subCaption: propsSubCaption,
 		buttonTextColorCustom: propsButtonTextColorCustom,
 		buttonColorCustom: propsButtonColorCustom,
 		borderRadius: propsBorderRadius,
@@ -53,25 +52,40 @@ export const ButtonSettings = (props) => {
 	// vk-blocks/buttonブロックの場合は必ず表示する（buttonColorとbuttonSizeが常に存在する）
 	// dynamic-textなど、他のブロックではbuttonColorとbuttonSizeの有無またはisButtonStyleでボタン設定かどうかを判断
 	const blockName = props.name || '';
-	const isButtonBlock = blockName === 'vk-blocks/button' || blockName.includes('/button');
-	
+	const isButtonBlock =
+		blockName === 'vk-blocks/button' || blockName.includes('/button');
+
 	// attributesとプロパティを両方対応できるようにする
 	const effectiveButtonColor = propsButtonColor || attributes.buttonColor;
 	const effectiveButtonType = propsButtonType || attributes.buttonType;
 	const effectiveButtonSize = propsButtonSize || attributes.buttonSize;
-	const effectiveButtonTextColorCustom = propsButtonTextColorCustom || attributes.buttonTextColorCustom;
-	const effectiveButtonColorCustom = propsButtonColorCustom || attributes.buttonColorCustom;
-	const effectiveBorderRadius = propsBorderRadius || attributes.borderRadius;
-	const effectiveSubCaption = propsSubCaption || attributes.subCaption;
+	const effectiveButtonTextColorCustom =
+		propsButtonTextColorCustom || attributes.buttonTextColorCustom;
+	const effectiveButtonColorCustom =
+		propsButtonColorCustom || attributes.buttonColorCustom;
 
 	// 直接渡されたプロパティの場合はtrue（dynamic-textなど）
-	const hasDirectButtonProps = isButtonStyle || !!propsButtonColor || !!propsButtonType || !!propsButtonSize;
+	const hasDirectButtonProps =
+		isButtonStyle ||
+		!!propsButtonColor ||
+		!!propsButtonType ||
+		!!propsButtonSize;
 
 	// このブロックがボタン設定をサポートしていない場合は表示しない
-	if (!isButtonBlock && !hasDirectButtonProps && attributes.buttonSize === undefined && attributes.buttonColor === undefined) {
+	if (
+		!isButtonBlock &&
+		!hasDirectButtonProps &&
+		attributes.buttonSize === undefined &&
+		attributes.buttonColor === undefined
+	) {
 		return (
 			<div className="vk-button-settings-not-available">
-				<p>{__('This component is not available for this block.', 'vk-blocks-pro')}</p>
+				<p>
+					{__(
+						'This component is not available for this block.',
+						'vk-blocks-pro'
+					)}
+				</p>
 			</div>
 		);
 	}
@@ -90,14 +104,11 @@ export const ButtonSettings = (props) => {
 		buttonWidth = 0,
 		buttonWidthTablet = 0,
 		buttonWidthMobile = 0,
-		content = ''
 	} = attributes;
 
 	// subCaptionとカスタムカラー関連は別途処理
-	const subCaption = effectiveSubCaption;
 	const buttonColorCustom = effectiveButtonColorCustom;
 	const buttonTextColorCustom = effectiveButtonTextColorCustom;
-	const borderRadius = effectiveBorderRadius;
 
 	// setAttributesが存在しない場合、渡されたpropsを使う（dynamic-text用）
 	const handleSetAttribute = (attrObj) => {
@@ -118,23 +129,11 @@ export const ButtonSettings = (props) => {
 					value={attributes.content}
 				/>
 			)}
-			
-			{attributes.subCaption !== undefined && (
-				<TextControl
-					label={__('Sub Caption:', 'vk-blocks-pro')}
-					onChange={(value) => handleSetAttribute({ subCaption: value })}
-					value={attributes.subCaption}
-				/>
-			)}
 
-			<h4 className="mt-0 mb-2">
-				{__('Button Size:', 'vk-blocks-pro')}
-			</h4>
+			<h4 className="mt-0 mb-2">{__('Button Size:', 'vk-blocks-pro')}</h4>
 			<ToggleGroupControl
 				value={buttonSize}
-				onChange={(value) =>
-					handleSetAttribute({ buttonSize: value })
-				}
+				onChange={(value) => handleSetAttribute({ buttonSize: value })}
 				isBlock
 			>
 				<ToggleGroupControlOption
@@ -150,7 +149,7 @@ export const ButtonSettings = (props) => {
 					label={__('Small', 'vk-blocks-pro')}
 				/>
 			</ToggleGroupControl>
-			
+
 			{!isInnerButton && attributes.buttonAlign !== undefined && (
 				<>
 					<h4 className="mt-0 mb-2">
@@ -198,9 +197,7 @@ export const ButtonSettings = (props) => {
 					<h4 className="mt-0 mb-2">
 						{__('Button Width:', 'vk-blocks-pro')}
 					</h4>
-					<p className="mt-0 mb-2">
-						{__('Mobile', 'vk-blocks-pro')}
-					</p>
+					<p className="mt-0 mb-2">{__('Mobile', 'vk-blocks-pro')}</p>
 					<ToggleGroupControl
 						value={String(buttonWidthMobile)}
 						onChange={(value) => {
@@ -210,31 +207,14 @@ export const ButtonSettings = (props) => {
 						}}
 						isBlock
 					>
-						<ToggleGroupControlOption
-							value="0"
-							label="Auto"
-						/>
-						<ToggleGroupControlOption
-							value="25"
-							label="25%"
-						/>
-						<ToggleGroupControlOption
-							value="50"
-							label="50%"
-						/>
-						<ToggleGroupControlOption
-							value="75"
-							label="75%"
-						/>
-						<ToggleGroupControlOption
-							value="100"
-							label="100%"
-						/>
+						<ToggleGroupControlOption value="0" label="Auto" />
+						<ToggleGroupControlOption value="25" label="25%" />
+						<ToggleGroupControlOption value="50" label="50%" />
+						<ToggleGroupControlOption value="75" label="75%" />
+						<ToggleGroupControlOption value="100" label="100%" />
 					</ToggleGroupControl>
-					
-					<p className="mt-0 mb-2">
-						{__('Tablet', 'vk-blocks-pro')}
-					</p>
+
+					<p className="mt-0 mb-2">{__('Tablet', 'vk-blocks-pro')}</p>
 					<ToggleGroupControl
 						value={String(buttonWidthTablet)}
 						onChange={(value) => {
@@ -244,31 +224,14 @@ export const ButtonSettings = (props) => {
 						}}
 						isBlock
 					>
-						<ToggleGroupControlOption
-							value="0"
-							label="Auto"
-						/>
-						<ToggleGroupControlOption
-							value="25"
-							label="25%"
-						/>
-						<ToggleGroupControlOption
-							value="50"
-							label="50%"
-						/>
-						<ToggleGroupControlOption
-							value="75"
-							label="75%"
-						/>
-						<ToggleGroupControlOption
-							value="100"
-							label="100%"
-						/>
+						<ToggleGroupControlOption value="0" label="Auto" />
+						<ToggleGroupControlOption value="25" label="25%" />
+						<ToggleGroupControlOption value="50" label="50%" />
+						<ToggleGroupControlOption value="75" label="75%" />
+						<ToggleGroupControlOption value="100" label="100%" />
 					</ToggleGroupControl>
 
-					<p className="mt-0 mb-2">
-						{__('PC', 'vk-blocks-pro')}
-					</p>
+					<p className="mt-0 mb-2">{__('PC', 'vk-blocks-pro')}</p>
 					<ToggleGroupControl
 						value={String(buttonWidth)}
 						onChange={(value) => {
@@ -278,26 +241,11 @@ export const ButtonSettings = (props) => {
 						}}
 						isBlock
 					>
-						<ToggleGroupControlOption
-							value="0"
-							label="Auto"
-						/>
-						<ToggleGroupControlOption
-							value="25"
-							label="25%"
-						/>
-						<ToggleGroupControlOption
-							value="50"
-							label="50%"
-						/>
-						<ToggleGroupControlOption
-							value="75"
-							label="75%"
-						/>
-						<ToggleGroupControlOption
-							value="100"
-							label="100%"
-						/>
+						<ToggleGroupControlOption value="0" label="Auto" />
+						<ToggleGroupControlOption value="25" label="25%" />
+						<ToggleGroupControlOption value="50" label="50%" />
+						<ToggleGroupControlOption value="75" label="75%" />
+						<ToggleGroupControlOption value="100" label="100%" />
 					</ToggleGroupControl>
 				</>
 			)}
@@ -339,7 +287,7 @@ export const ButtonSettings = (props) => {
 				)}
 			</p>
 
-			{('0' === buttonType) && attributes.buttonEffect !== undefined && (
+			{'0' === buttonType && attributes.buttonEffect !== undefined && (
 				<>
 					<h4 className="mt-0 mb-2">
 						{__('Button Effect:', 'vk-blocks-pro')}
@@ -363,9 +311,7 @@ export const ButtonSettings = (props) => {
 				</>
 			)}
 
-			<h4 className="mt-0 mb-2">
-				{__('Color', 'vk-blocks-pro')}
-			</h4>
+			<h4 className="mt-0 mb-2">{__('Color', 'vk-blocks-pro')}</h4>
 			<SelectControl
 				label={__('Default Color (Bootstrap)', 'vk-blocks-pro')}
 				value={buttonColor}
@@ -407,22 +353,22 @@ export const ButtonSettings = (props) => {
 						value: 'custom',
 					},
 				]}
-				onChange={(value) =>
-					handleSetAttribute({ buttonColor: value })
-				}
+				onChange={(value) => handleSetAttribute({ buttonColor: value })}
 			/>
-			
+
 			{/* dynamic-text用のアイコン選択UI */}
 			{isDynamicTextButtonSettings && (
 				<>
 					{/* dynamic-text用のサブキャプション設定 */}
 					<TextControl
 						label={__('Sub Caption:', 'vk-blocks-pro')}
-						onChange={(value) => handleSetAttribute({ subCaption: value })}
+						onChange={(value) =>
+							handleSetAttribute({ subCaption: value })
+						}
 						value={attributes.subCaption || ''}
 						className="mt-0 mb-3"
 					/>
-					
+
 					{/* dynamic-text用のカスタムカラー設定 */}
 					<BaseControl
 						label={__('Custom Color', 'vk-blocks-pro')}
@@ -443,7 +389,7 @@ export const ButtonSettings = (props) => {
 							<AdvancedColorPalette
 								schema={'buttonColorCustom'}
 								attributes={{
-									buttonColorCustom
+									buttonColorCustom,
 								}}
 								setAttributes={handleSetAttribute}
 							/>
@@ -456,14 +402,14 @@ export const ButtonSettings = (props) => {
 								<AdvancedColorPalette
 									schema={'buttonTextColorCustom'}
 									attributes={{
-										buttonTextColorCustom
+										buttonTextColorCustom,
 									}}
 									setAttributes={handleSetAttribute}
 								/>
 							</BaseControl>
 						)}
 					</BaseControl>
-					
+
 					{/* dynamic-text用のボーダーラジウス設定 */}
 					<h4 className="mt-0 mb-2">
 						{__('Button border radius', 'vk-blocks-pro')}
@@ -480,10 +426,8 @@ export const ButtonSettings = (props) => {
 							{ value: 'rem', label: 'rem', default: 1 },
 						]}
 					/>
-					
-					<h4 className="mt-0 mb-2">
-						{__('Icon', 'vk-blocks-pro')}
-					</h4>
+
+					<h4 className="mt-0 mb-2">{__('Icon', 'vk-blocks-pro')}</h4>
 					<BaseControl
 						id="vk-block-button-fa-before-text-dynamic"
 						label={__('Before text', 'vk-blocks-pro')}
@@ -491,7 +435,7 @@ export const ButtonSettings = (props) => {
 						<FontAwesome
 							attributeName={'fontAwesomeIconBefore'}
 							attributes={{
-								fontAwesomeIconBefore
+								fontAwesomeIconBefore,
 							}}
 							setAttributes={handleSetAttribute}
 						/>
@@ -516,7 +460,7 @@ export const ButtonSettings = (props) => {
 						<FontAwesome
 							attributeName={'fontAwesomeIconAfter'}
 							attributes={{
-								fontAwesomeIconAfter
+								fontAwesomeIconAfter,
 							}}
 							setAttributes={handleSetAttribute}
 						/>
@@ -537,7 +481,7 @@ export const ButtonSettings = (props) => {
 			)}
 
 			{/* 通常のボタン設定（buttonブロック用） */}
-			{(
+			{
 				<>
 					<BaseControl
 						label={__('Custom Color', 'vk-blocks-pro')}
@@ -642,7 +586,7 @@ export const ButtonSettings = (props) => {
 						]}
 					/>
 				</>
-			)}
+			}
 		</>
 	);
 };
@@ -785,4 +729,4 @@ export class VKBButton extends Component {
 			</a>
 		);
 	}
-} 
+}

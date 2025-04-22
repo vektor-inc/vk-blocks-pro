@@ -53,20 +53,20 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 	$attributes_default = vk_blocks_dynamic_text_get_attributes_default();
 	$attributes         = array_merge( $attributes_default, $attributes );
 
-	if ( 'custom-field' === $attributes['displayElement'] && ! $attributes['customFieldName'] ) {
+	if ( $attributes['displayElement'] === 'custom-field' && ! $attributes['customFieldName'] ) {
 		return;
 	}
-	if ( 'custom-field' === $attributes['displayElement'] && ! isset( $block->context['postId'] ) ) {
+	if ( $attributes['displayElement'] === 'custom-field' && ! isset( $block->context['postId'] ) ) {
 		return;
 	}
 
-	if ( 'text' === $attributes['fieldType'] ) {
+	if ( $attributes['fieldType'] === 'text' ) {
 		$custom_field_content = esc_html( get_post_meta( $block->context['postId'], $attributes['customFieldName'], true ) );
-	} elseif ( 'textarea' === $attributes['fieldType'] ) {
+	} elseif ( $attributes['fieldType'] === 'textarea' ) {
 		$custom_field_content = nl2br( esc_textarea( get_post_meta( $block->context['postId'], $attributes['customFieldName'], true ) ) );
-	} elseif ( 'wysiwyg' === $attributes['fieldType'] ) {
+	} elseif ( $attributes['fieldType'] === 'wysiwyg' ) {
 		$custom_field_content = wpautop( wp_kses_post( get_post_meta( $block->context['postId'], $attributes['customFieldName'], true ) ) );
-	} elseif ( 'url' === $attributes['fieldType'] ) {
+	} elseif ( $attributes['fieldType'] === 'url' ) {
 		$custom_field_url = esc_url( get_post_meta( $block->context['postId'], $attributes['customFieldName'], true ) );
 		if ( $attributes['isLinkSet'] ) {
 			$link_text = ! empty( $attributes['customFieldLinkText'] ) ? wp_kses( $attributes['customFieldLinkText'], array( 'i' => array( 'class' => array() ) ) ) : $custom_field_url;
@@ -224,7 +224,7 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 	if ( $attributes['tagName'] ) {
 		$block_content .= '<' . $attributes['tagName'] . ' ' . $wrapper_classes . '>';
 	}
-	if ( 'post-type' === $attributes['displayElement'] ) {
+	if ( $attributes['displayElement'] === 'post-type' ) {
 		// 投稿タイプの名前取得.
 		$post_type_info = VkHelpers::get_post_type_info();
 		$post_type_name = '';
@@ -234,7 +234,7 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 			$post_type_name = $post_type_info['name'];
 		}
 		$block_content .= $post_type_name;
-	} elseif ( 'ancestor-page' === $attributes['displayElement'] ) {
+	} elseif ( $attributes['displayElement'] === 'ancestor-page' ) {
 		$post = get_post();
 		// 親ページがない（＝先祖階層） && 先祖階層のページを非表示にするオプションが有効の場合は処理を終了.
 		if ( empty( $post->post_parent ) && $attributes['ancestorPageHiddenOption'] ) {
@@ -250,7 +250,7 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 			$ancestor_post_title = get_post( $post->ID )->post_title;
 		}
 		$block_content .= $ancestor_post_title;
-	} elseif ( 'parent-page' === $attributes['displayElement'] ) {
+	} elseif ( $attributes['displayElement'] === 'parent-page' ) {
 		$post = get_post();
 		// 親ページがない（＝先祖階層） && 親ページを非表示にするオプションが有効の場合は処理を終了.
 		if ( empty( $post->post_parent ) && $attributes['parentPageHiddenOption'] ) {
@@ -264,7 +264,7 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 			$parent_post_title = get_post( $post )->post_title;
 		}
 		$block_content .= $parent_post_title;
-	} elseif ( 'user-name' === $attributes['displayElement'] ) {
+	} elseif ( $attributes['displayElement'] === 'user-name' ) {
 		if ( is_user_logged_in() ) {
 			$current_user = wp_get_current_user();
 			if ( $current_user->display_name ) {
@@ -289,9 +289,9 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 				$block_content .= esc_html( $loggedout_text );
 			}
 		}
-	} elseif ( 'custom-field' === $attributes['displayElement'] ) {
+	} elseif ( $attributes['displayElement'] === 'custom-field' ) {
 		$block_content .= vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $block );
-	} elseif ( 'post-slug' === $attributes['displayElement'] ) {
+	} elseif ( $attributes['displayElement'] === 'post-slug' ) {
 		$post = isset( $block->context['postId'] ) ? get_post( $block->context['postId'] ) : null;
 		if ( $post ) {
 			$block_content .= esc_html( $post->post_name );

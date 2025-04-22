@@ -832,15 +832,14 @@ export default function OuterEdit(props) {
 						/>
 					</BaseControl>
 					<hr />
-					<h4>
-						{__('Background Position Type', 'vk-blocks-pro')}
-					</h4>
+					<h4>{__('Background Position Type', 'vk-blocks-pro')}</h4>
 					<p>
-						{__('Choose either Focal Point to adjust image focus or Background Offset to move background (only one at a time).', 'vk-blocks-pro')}
+						{__(
+							'Choose either Focal Point to adjust image focus or Background Offset to move background (only one at a time).',
+							'vk-blocks-pro'
+						)}
 					</p>
-					<BaseControl
-						id="vk_outer-bgPositionType"
-					>
+					<BaseControl id="vk_outer-bgPositionType">
 						<ToggleGroupControl
 							value={bgPositionType}
 							onChange={(value) => {

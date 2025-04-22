@@ -28,6 +28,7 @@ function vk_blocks_dynamic_text_get_attributes_default() {
 		'isLinkSet'                => false,
 		'isLinkTarget'             => false,
 		'isButtonStyle'            => false,
+		'buttonEffect'             => '',
 		'buttonColor'              => 'primary',
 		'buttonType'               => '0',
 		'buttonSize'               => 'md',
@@ -425,6 +426,10 @@ function vk_blocks_register_block_dynamic_text() {
 					'isButtonStyle'            => array(
 						'type'    => 'boolean',
 						'default' => false,
+					),
+					'buttonEffect'             => array(
+						'type'    => 'string',
+						'default' => '',
 					),
 					'buttonColor'              => array(
 						'type'    => 'string',

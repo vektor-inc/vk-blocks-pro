@@ -37,6 +37,7 @@ export const ButtonSettings = (props) => {
 		buttonColor: propsButtonColor,
 		buttonType: propsButtonType,
 		buttonSize: propsButtonSize,
+		buttonEffect: propsButtonEffect,
 		fontAwesomeIconBefore: propsFontAwesomeIconBefore,
 		fontAwesomeIconAfter: propsFontAwesomeIconAfter,
 		iconSizeBefore: propsIconSizeBefore,
@@ -59,6 +60,7 @@ export const ButtonSettings = (props) => {
 	const effectiveButtonColor = propsButtonColor || attributes.buttonColor;
 	const effectiveButtonType = propsButtonType || attributes.buttonType;
 	const effectiveButtonSize = propsButtonSize || attributes.buttonSize;
+	const effectiveButtonEffect = propsButtonEffect || attributes.buttonEffect;
 	const effectiveButtonTextColorCustom =
 		propsButtonTextColorCustom || attributes.buttonTextColorCustom;
 	const effectiveButtonColorCustom =
@@ -69,7 +71,8 @@ export const ButtonSettings = (props) => {
 		isButtonStyle ||
 		!!propsButtonColor ||
 		!!propsButtonType ||
-		!!propsButtonSize;
+		!!propsButtonSize ||
+		!!propsButtonEffect;
 
 	// このブロックがボタン設定をサポートしていない場合は表示しない
 	if (
@@ -94,8 +97,8 @@ export const ButtonSettings = (props) => {
 	const {
 		buttonSize = effectiveButtonSize || 'md',
 		buttonAlign = 'center',
+		buttonEffect = effectiveButtonEffect || 'none',
 		buttonType = effectiveButtonType || '0',
-		buttonEffect = 'none',
 		buttonColor = effectiveButtonColor || 'primary',
 		fontAwesomeIconBefore = propsFontAwesomeIconBefore,
 		fontAwesomeIconAfter = propsFontAwesomeIconAfter,
@@ -122,13 +125,11 @@ export const ButtonSettings = (props) => {
 
 	return (
 		<>
-			{attributes.content !== undefined && (
-				<TextControl
-					label={__('Button Text:', 'vk-blocks-pro')}
-					onChange={(value) => handleSetAttribute({ content: value })}
-					value={attributes.content}
-				/>
-			)}
+			<TextControl
+				label={__('Sub Caption', 'vk-blocks-pro')}
+				onChange={(value) => handleSetAttribute({ subCaption: value })}
+				value={attributes.subCaption}
+			/>
 
 			<h4 className="mt-0 mb-2">{__('Button Size:', 'vk-blocks-pro')}</h4>
 			<ToggleGroupControl
@@ -150,7 +151,49 @@ export const ButtonSettings = (props) => {
 				/>
 			</ToggleGroupControl>
 
-			{!isInnerButton && attributes.buttonAlign !== undefined && (
+			{!isInnerButton && !isDynamicText && attributes.buttonAlign !== undefined && (
+				<>
+					<h4 className="mt-0 mb-2">
+						{__('Button Position:', 'vk-blocks-pro')}
+					</h4>
+					<ToggleGroupControl
+						value={buttonAlign}
+						onChange={(value) =>
+							handleSetAttribute({ buttonAlign: value })
+						}
+						className="vk-button-align-control"
+						isBlock
+					>
+						<ToggleGroupControlOption
+							value="left"
+							label={__('Left', 'vk-blocks-pro')}
+						/>
+						<ToggleGroupControlOption
+							value="center"
+							label={__('Center', 'vk-blocks-pro')}
+						/>
+						<ToggleGroupControlOption
+							value="right"
+							label={__('Right', 'vk-blocks-pro')}
+						/>
+						<ToggleGroupControlOption
+							value="wide"
+							label={__('Wide', 'vk-blocks-pro')}
+						/>
+						<ToggleGroupControlOption
+							value="block"
+							label={__('Block', 'vk-blocks-pro')}
+						/>
+					</ToggleGroupControl>
+					<style>{`
+						.vk-button-align-control .components-toggle-group-control-option-base {
+							padding: 0;
+						}
+					`}</style>
+				</>
+			)}
+
+			{isDynamicText && (
 				<>
 					<h4 className="mt-0 mb-2">
 						{__('Button Position:', 'vk-blocks-pro')}
@@ -261,7 +304,7 @@ export const ButtonSettings = (props) => {
 					if (value === '1' || value === '2') {
 						handleSetAttribute({
 							buttonTextColorCustom: undefined,
-							buttonEffect: '',
+							buttonEffect: 'none',
 						});
 					}
 				}}
@@ -287,7 +330,7 @@ export const ButtonSettings = (props) => {
 				)}
 			</p>
 
-			{'0' === buttonType && attributes.buttonEffect !== undefined && (
+			{('0' === buttonType || buttonType === null) && (isDynamicText || attributes.buttonEffect !== undefined) && (
 				<>
 					<h4 className="mt-0 mb-2">
 						{__('Button Effect:', 'vk-blocks-pro')}
@@ -359,16 +402,6 @@ export const ButtonSettings = (props) => {
 			{/* dynamic-text用のアイコン選択UI */}
 			{isDynamicTextButtonSettings && (
 				<>
-					{/* dynamic-text用のサブキャプション設定 */}
-					<TextControl
-						label={__('Sub Caption:', 'vk-blocks-pro')}
-						onChange={(value) =>
-							handleSetAttribute({ subCaption: value })
-						}
-						value={attributes.subCaption || ''}
-						className="mt-0 mb-3"
-					/>
-
 					{/* dynamic-text用のカスタムカラー設定 */}
 					<BaseControl
 						label={__('Custom Color', 'vk-blocks-pro')}
@@ -723,7 +756,7 @@ export class VKBButton extends Component {
 					{parse(iconAfter)}
 				</div>
 				{/*サブキャプションが入力された時のみ表示*/}
-				{subCaption && (
+				{subCaption !== '' && (
 					<p className={'vk_button_link_subCaption'}>{subCaption}</p>
 				)}
 			</a>

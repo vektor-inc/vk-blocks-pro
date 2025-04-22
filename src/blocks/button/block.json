@@ -10,7 +10,8 @@
 			"selector": "span"
 		},
 		"subCaption": {
-			"type": "string"
+			"type": "string",
+			"default": ""
 		},
 		"buttonUrl": {
 			"type": "string"

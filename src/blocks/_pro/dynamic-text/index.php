@@ -101,7 +101,8 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 				$button_classes = 'vk_button_link';
 
 				// ボタンタイプに基づいてクラスを追加
-				if ( '0' === $attributes['buttonType'] || null === $attributes['buttonType'] ) {
+				$button_type = $attributes['buttonType'];
+				if ( '0' === $button_type || $button_type === null ) {
 					// 塗りつぶし
 					if ( 'custom' !== $attributes['buttonColor'] && empty( $attributes['buttonColorCustom'] ) ) {
 						$button_classes .= ' btn has-background has-vk-color-' . $attributes['buttonColor'] . '-background-color';
@@ -121,7 +122,7 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 							$button_classes .= ' has-' . $attributes['buttonTextColorCustom'] . '-color';
 						}
 					}
-				} elseif ( '1' === $attributes['buttonType'] ) {
+				} elseif ( '1' === $button_type ) {
 					// 塗りなし
 					if ( 'custom' !== $attributes['buttonColor'] && empty( $attributes['buttonColorCustom'] ) ) {
 						$button_classes .= ' btn has-text-color is-style-outline has-vk-color-' . $attributes['buttonColor'] . '-color';
@@ -132,7 +133,7 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 							$button_classes .= ' has-' . $attributes['buttonColorCustom'] . '-color';
 						}
 					}
-				} elseif ( '2' === $attributes['buttonType'] ) {
+				} elseif ( '2' === $button_type ) {
 					// テキストのみ
 					if ( 'custom' !== $attributes['buttonColor'] && empty( $attributes['buttonColorCustom'] ) ) {
 						$button_classes .= ' has-text-color vk_button_link-type-text has-vk-color-' . $attributes['buttonColor'] . '-color';
@@ -153,18 +154,20 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 
 				// カスタムカラーがHEXカラーの場合
 				if ( ! empty( $attributes['buttonColorCustom'] ) && preg_match( '/^#[a-fA-F0-9]{3,6}$/', $attributes['buttonColorCustom'] ) ) {
-					if ( '0' === $attributes['buttonType'] || null === $attributes['buttonType'] ) {
+					$button_type = $attributes['buttonType'];
+					if ( '0' === $button_type || $button_type === null ) {
 						$inline_style .= 'background-color:' . esc_attr( $attributes['buttonColorCustom'] ) . ';';
 					} else {
 						$inline_style .= 'color:' . esc_attr( $attributes['buttonColorCustom'] ) . ';';
-						if ( '1' === $attributes['buttonType'] ) {
+						if ( '1' === $button_type ) {
 							$inline_style .= 'border-color:' . esc_attr( $attributes['buttonColorCustom'] ) . ';';
 						}
 					}
 				}
 
 				// テキストカラーがHEXカラーの場合
-				if ( ( '0' === $attributes['buttonType'] || null === $attributes['buttonType'] ) &&
+				$button_type = $attributes['buttonType'];
+				if ( ( '0' === $button_type || $button_type === null ) &&
 					! empty( $attributes['buttonTextColorCustom'] ) &&
 					preg_match( '/^#[a-fA-F0-9]{3,6}$/', $attributes['buttonTextColorCustom'] ) ) {
 					$inline_style .= 'color:' . esc_attr( $attributes['buttonTextColorCustom'] ) . ';';

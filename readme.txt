@@ -108,7 +108,7 @@ e.g.
 
 == Changelog ==
 
-[ Design Bug Fix ][ Balloon ] Prevented unintended text color inheritance inside balloon blocks caused by `.has-text-color` class styles when using color palettes.
+[ Design Bug Fix ][ Balloon ] Prevented text inside balloon blocks from unintentionally inheriting the balloon’s color when using a color palette.
 
 = 1.102.0 =
 [ Design Bug Fix ][ Outer (Pro) ] Fixed unexpected margin affecting background color display due to layout flow styles in WordPress 6.8.

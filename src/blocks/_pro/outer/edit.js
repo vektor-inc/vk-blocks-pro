@@ -1045,7 +1045,7 @@ export default function OuterEdit(props) {
 						<>
 							<p className="block-editor-block-types-list__help">
 								{__(
-									'hen using Background Offset, Border and Divider will be temporarily disabled.',
+									'When using Background Offset, Border and Divider will be temporarily disabled.',
 									'vk-blocks-pro'
 								)}
 							</p>

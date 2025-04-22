@@ -1,5 +1,8 @@
 import { __ } from '@wordpress/i18n';
-import { ButtonSettings } from '@vkblocks/components/vkb-button-control';
+import {
+	ButtonSettings,
+	VKBButton,
+} from '@vkblocks/components/vkb-button-control';
 import {
 	PanelBody,
 	BaseControl,
@@ -305,7 +308,9 @@ export default function ButtonEdit(props) {
 					>
 						<URLInput
 							value={buttonUrl}
-							onChange={(value) => setAttributes({ buttonUrl: value })}
+							onChange={(value) =>
+								setAttributes({ buttonUrl: value })
+							}
 						/>
 					</BaseControl>
 					<CheckboxControl

@@ -101,8 +101,10 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 				$button_classes = 'vk_button_link';
 
 				// ボタンタイプに基づいてクラスを追加
-				$button_type = $attributes['buttonType'];
-				if ( '0' === $button_type || $button_type === null ) {
+				$button_type       = $attributes['buttonType'];
+				$is_default_button = '0' === $button_type;
+				$is_null_button    = null === $button_type;
+				if ( $is_default_button || $is_null_button ) {
 					// 塗りつぶし
 					if ( 'custom' !== $attributes['buttonColor'] && empty( $attributes['buttonColorCustom'] ) ) {
 						$button_classes .= ' btn has-background has-vk-color-' . $attributes['buttonColor'] . '-background-color';
@@ -154,8 +156,10 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 
 				// カスタムカラーがHEXカラーの場合
 				if ( ! empty( $attributes['buttonColorCustom'] ) && preg_match( '/^#[a-fA-F0-9]{3,6}$/', $attributes['buttonColorCustom'] ) ) {
-					$button_type = $attributes['buttonType'];
-					if ( '0' === $button_type || $button_type === null ) {
+					$button_type       = $attributes['buttonType'];
+					$is_default_button = '0' === $button_type;
+					$is_null_button    = null === $button_type;
+					if ( $is_default_button || $is_null_button ) {
 						$inline_style .= 'background-color:' . esc_attr( $attributes['buttonColorCustom'] ) . ';';
 					} else {
 						$inline_style .= 'color:' . esc_attr( $attributes['buttonColorCustom'] ) . ';';
@@ -166,8 +170,10 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 				}
 
 				// テキストカラーがHEXカラーの場合
-				$button_type = $attributes['buttonType'];
-				if ( ( '0' === $button_type || $button_type === null ) &&
+				$button_type       = $attributes['buttonType'];
+				$is_default_button = '0' === $button_type;
+				$is_null_button    = null === $button_type;
+				if ( ( $is_default_button || $is_null_button ) &&
 					! empty( $attributes['buttonTextColorCustom'] ) &&
 					preg_match( '/^#[a-fA-F0-9]{3,6}$/', $attributes['buttonTextColorCustom'] ) ) {
 					$inline_style .= 'color:' . esc_attr( $attributes['buttonTextColorCustom'] ) . ';';

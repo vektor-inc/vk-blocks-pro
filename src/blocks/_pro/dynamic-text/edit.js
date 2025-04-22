@@ -475,34 +475,47 @@ export default function DynamicTextEdit(props) {
 										label={__('Link Text', 'vk-blocks-pro')}
 										value={attributes.customFieldLinkText}
 										onChange={(value) =>
-										setAttributes({
-											customFieldLinkText: value,
-										})
+											setAttributes({
+												customFieldLinkText: value,
+											})
 										}
 									/>
 									<ToggleControl
-										label={__('Button Style', 'vk-blocks-pro')}
+										label={__(
+											'Button Style',
+											'vk-blocks-pro'
+										)}
 										checked={isButtonStyle}
 										onChange={(checked) =>
-											setAttributes({ isButtonStyle: checked })
+											setAttributes({
+												isButtonStyle: checked,
+											})
 										}
 									/>
 								</>
 							)}
 							{isButtonStyle && (
 								<>
-									<h4 className="mb-2">{__('Button Settings', 'vk-blocks-pro')}</h4>
+									<h4 className="mb-2">
+										{__('Button Settings', 'vk-blocks-pro')}
+									</h4>
 									<ButtonSettings
 										isButtonStyle={true}
 										buttonColor={buttonColor || 'primary'}
 										buttonType={buttonType || '0'}
 										buttonSize={buttonSize || 'md'}
-										fontAwesomeIconBefore={fontAwesomeIconBefore}
-										fontAwesomeIconAfter={fontAwesomeIconAfter}
+										fontAwesomeIconBefore={
+											fontAwesomeIconBefore
+										}
+										fontAwesomeIconAfter={
+											fontAwesomeIconAfter
+										}
 										iconSizeBefore={iconSizeBefore}
 										iconSizeAfter={iconSizeAfter}
 										borderRadius={borderRadius}
-										buttonTextColorCustom={buttonTextColorCustom}
+										buttonTextColorCustom={
+											buttonTextColorCustom
+										}
 										buttonColorCustom={buttonColorCustom}
 										lbsubCaption={subCaption}
 										attributeName={'fontAwesomeIconBefore'}
@@ -517,7 +530,7 @@ export default function DynamicTextEdit(props) {
 											borderRadius,
 											buttonTextColorCustom,
 											buttonColorCustom,
-											subCaption
+											subCaption,
 										}}
 										setAttributes={(attrObj) => {
 											setAttributes(attrObj);

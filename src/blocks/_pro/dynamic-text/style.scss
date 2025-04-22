@@ -1,3 +1,14 @@
 /*-------------------------------------------*/
 /* .dynamic-text
 /*-------------------------------------------*/
+.wp-block-vk-blocks-dynamic-text{
+  &.is-vertical{
+    writing-mode: vertical-rl; /* 縦書きモード */
+    &.is-upright{
+      text-orientation: upright;
+    }
+    &.has-text-align-right{
+      rotate: 180deg;
+    }
+  }
+}

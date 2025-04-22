@@ -116,6 +116,7 @@ e.g.
 [ Bug Fix ][ Pro ] When VK Blocks Pro is activated, VK Blocks should be automatically deactivated.
 
 = 1.101.0 =
+[ Add function ][ Dynamic Text (Pro) ] Vertical writing is now available.
 [ Specification change ][ Dynamic Text (Pro) ] Allows i-tags in custom field link text.
 [ Bug Fix ][ Step (Pro) ] Fix it so that leaving the starting number for a step blank does not result in an error.
 

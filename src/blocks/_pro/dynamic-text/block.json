@@ -81,6 +81,30 @@
 			"type": "string",
 			"default": "md"
 		},
+		"buttonAlign": {
+			"type": "string",
+			"default": "left"
+		},
+		"buttonEffect": {
+			"type": "string",
+			"default": ""
+		},
+		"fontAwesomeIconBefore": {
+			"type": "string",
+			"default": null
+		},
+		"fontAwesomeIconAfter": {
+			"type": "string",
+			"default": null
+		},
+		"iconSizeBefore": {
+			"type": "string",
+			"default": null
+		},
+		"iconSizeAfter": {
+			"type": "string",
+			"default": null
+		},
 		"borderRadius": {
 			"type": "string",
 			"default": null
@@ -93,15 +117,7 @@
 			"type": "string",
 			"default": null
 		},
-		"buttonAlign": {
-			"type": "string",
-			"default": null
-		},
-		"fontAwesomeIconBefore": {
-			"type": "string",
-			"default": null
-		},
-		"fontAwesomeIconAfter": {
+		"subCaption": {
 			"type": "string",
 			"default": null
 		}

@@ -31,6 +31,7 @@ function vk_blocks_dynamic_text_get_attributes_default() {
 		'buttonColor'              => 'primary',
 		'buttonType'               => '0',
 		'buttonSize'               => 'md',
+		'buttonAlign'              => 'left',
 		'fontAwesomeIconBefore'    => null,
 		'fontAwesomeIconAfter'     => null,
 		'borderRadius'             => null,
@@ -151,6 +152,18 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 				// ボタンサイズ
 				$button_classes .= ' btn-' . $attributes['buttonSize'];
 
+				// buttonAlign Block
+				if ( 'block' === $attributes['buttonAlign'] ) {
+					$button_classes .= ' btn-block';
+				} elseif ( 'wide' === $attributes['buttonAlign'] ) {
+					$button_classes .= ' btn-wide';
+				}
+
+				// ボタンエフェクト
+				if ( isset( $attributes['buttonEffect'] ) && 'shine' === $attributes['buttonEffect'] ) {
+					$button_classes .= ' vk_button_link-effect-shine';
+				}
+
 				// インラインスタイル
 				$inline_style = '';
 
@@ -228,6 +241,12 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 	}
 	if ( isset( $attributes['isButtonStyle'] ) && $attributes['isButtonStyle'] ) {
 		$classes .= ' vk_dynamicText_button';
+		if ( isset( $attributes['buttonAlign'] ) ) {
+			$classes .= ' vk_button-align-' . $attributes['buttonAlign'];
+		}
+	}
+	if ( isset( $attributes['buttonEffect'] ) && 'shine' === $attributes['buttonEffect'] ) {
+		$classes .= ' is-style-shine';
 	}
 	// block.json の Supports で設定したクラス名やスタイルを取得する
 	$wrapper_classes = get_block_wrapper_attributes( array( 'class' => $classes ) );
@@ -418,6 +437,10 @@ function vk_blocks_register_block_dynamic_text() {
 					'buttonSize'               => array(
 						'type'    => 'string',
 						'default' => 'md',
+					),
+					'buttonAlign'              => array(
+						'type'    => 'string',
+						'default' => 'left',
 					),
 					'fontAwesomeIconBefore'    => array(
 						'type'    => 'string',

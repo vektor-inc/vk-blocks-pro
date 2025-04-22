@@ -101,6 +101,8 @@ export default function DynamicTextEdit(props) {
 		buttonColor,
 		buttonType,
 		buttonSize,
+		buttonAlign,
+		buttonEffect,
 		fontAwesomeIconBefore,
 		fontAwesomeIconAfter,
 		iconSizeBefore,
@@ -119,6 +121,8 @@ export default function DynamicTextEdit(props) {
 	attributes.buttonColor = buttonColor;
 	attributes.buttonType = buttonType;
 	attributes.buttonSize = buttonSize;
+	attributes.buttonAlign = buttonAlign;
+	attributes.buttonEffect = buttonEffect;
 	attributes.fontAwesomeIconBefore = fontAwesomeIconBefore;
 	attributes.fontAwesomeIconAfter = fontAwesomeIconAfter;
 	attributes.iconSizeBefore = iconSizeBefore;
@@ -133,6 +137,9 @@ export default function DynamicTextEdit(props) {
 		className: classnames({
 			[`has-text-align-${textAlign}`]: textAlign,
 			'vk_dynamicText_button': isButtonStyle,
+			'btn-block': buttonAlign === 'block' && isButtonStyle,
+			'btn-wide': buttonAlign === 'wide' && isButtonStyle,
+			'is-style-shine': buttonEffect === 'shine',
 		}),
 	});
 
@@ -505,6 +512,8 @@ export default function DynamicTextEdit(props) {
 										buttonColor={buttonColor || 'primary'}
 										buttonType={buttonType || '0'}
 										buttonSize={buttonSize || 'md'}
+										buttonAlign={buttonAlign || 'left'}
+										buttonEffect={buttonEffect}
 										fontAwesomeIconBefore={
 											fontAwesomeIconBefore
 										}
@@ -518,12 +527,14 @@ export default function DynamicTextEdit(props) {
 											buttonTextColorCustom
 										}
 										buttonColorCustom={buttonColorCustom}
-										lbsubCaption={subCaption}
+										subCaption={subCaption}
 										attributeName={'fontAwesomeIconBefore'}
 										attributes={{
 											buttonColor,
 											buttonType,
 											buttonSize,
+											buttonAlign,
+											buttonEffect,
 											fontAwesomeIconBefore,
 											fontAwesomeIconAfter,
 											iconSizeBefore,

@@ -151,47 +151,49 @@ export const ButtonSettings = (props) => {
 				/>
 			</ToggleGroupControl>
 
-			{!isInnerButton && !isDynamicText && attributes.buttonAlign !== undefined && (
-				<>
-					<h4 className="mt-0 mb-2">
-						{__('Button Position:', 'vk-blocks-pro')}
-					</h4>
-					<ToggleGroupControl
-						value={buttonAlign}
-						onChange={(value) =>
-							handleSetAttribute({ buttonAlign: value })
-						}
-						className="vk-button-align-control"
-						isBlock
-					>
-						<ToggleGroupControlOption
-							value="left"
-							label={__('Left', 'vk-blocks-pro')}
-						/>
-						<ToggleGroupControlOption
-							value="center"
-							label={__('Center', 'vk-blocks-pro')}
-						/>
-						<ToggleGroupControlOption
-							value="right"
-							label={__('Right', 'vk-blocks-pro')}
-						/>
-						<ToggleGroupControlOption
-							value="wide"
-							label={__('Wide', 'vk-blocks-pro')}
-						/>
-						<ToggleGroupControlOption
-							value="block"
-							label={__('Block', 'vk-blocks-pro')}
-						/>
-					</ToggleGroupControl>
-					<style>{`
+			{!isInnerButton &&
+				!isDynamicText &&
+				attributes.buttonAlign !== undefined && (
+					<>
+						<h4 className="mt-0 mb-2">
+							{__('Button Position:', 'vk-blocks-pro')}
+						</h4>
+						<ToggleGroupControl
+							value={buttonAlign}
+							onChange={(value) =>
+								handleSetAttribute({ buttonAlign: value })
+							}
+							className="vk-button-align-control"
+							isBlock
+						>
+							<ToggleGroupControlOption
+								value="left"
+								label={__('Left', 'vk-blocks-pro')}
+							/>
+							<ToggleGroupControlOption
+								value="center"
+								label={__('Center', 'vk-blocks-pro')}
+							/>
+							<ToggleGroupControlOption
+								value="right"
+								label={__('Right', 'vk-blocks-pro')}
+							/>
+							<ToggleGroupControlOption
+								value="wide"
+								label={__('Wide', 'vk-blocks-pro')}
+							/>
+							<ToggleGroupControlOption
+								value="block"
+								label={__('Block', 'vk-blocks-pro')}
+							/>
+						</ToggleGroupControl>
+						<style>{`
 						.vk-button-align-control .components-toggle-group-control-option-base {
 							padding: 0;
 						}
 					`}</style>
-				</>
-			)}
+					</>
+				)}
 
 			{isDynamicText && (
 				<>
@@ -330,29 +332,30 @@ export const ButtonSettings = (props) => {
 				)}
 			</p>
 
-			{('0' === buttonType || buttonType === null) && (isDynamicText || attributes.buttonEffect !== undefined) && (
-				<>
-					<h4 className="mt-0 mb-2">
-						{__('Button Effect:', 'vk-blocks-pro')}
-					</h4>
-					<ToggleGroupControl
-						value={buttonEffect}
-						onChange={(value) =>
-							handleSetAttribute({ buttonEffect: value })
-						}
-						isBlock
-					>
-						<ToggleGroupControlOption
-							value="none"
-							label={__('None', 'vk-blocks-pro')}
-						/>
-						<ToggleGroupControlOption
-							value="shine"
-							label={__('Shine', 'vk-blocks-pro')}
-						/>
-					</ToggleGroupControl>
-				</>
-			)}
+			{('0' === buttonType || buttonType === null) &&
+				(isDynamicText || attributes.buttonEffect !== undefined) && (
+					<>
+						<h4 className="mt-0 mb-2">
+							{__('Button Effect:', 'vk-blocks-pro')}
+						</h4>
+						<ToggleGroupControl
+							value={buttonEffect}
+							onChange={(value) =>
+								handleSetAttribute({ buttonEffect: value })
+							}
+							isBlock
+						>
+							<ToggleGroupControlOption
+								value="none"
+								label={__('None', 'vk-blocks-pro')}
+							/>
+							<ToggleGroupControlOption
+								value="shine"
+								label={__('Shine', 'vk-blocks-pro')}
+							/>
+						</ToggleGroupControl>
+					</>
+				)}
 
 			<h4 className="mt-0 mb-2">{__('Color', 'vk-blocks-pro')}</h4>
 			<SelectControl

@@ -226,6 +226,9 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 	if ( isset( $attributes['textAlign'] ) ) {
 		$classes .= ' has-text-align-' . $attributes['textAlign'];
 	}
+	if ( isset( $attributes['isButtonStyle'] ) && $attributes['isButtonStyle'] ) {
+		$classes .= ' vk_dynamicText_button';
+	}
 	// block.json の Supports で設定したクラス名やスタイルを取得する
 	$wrapper_classes = get_block_wrapper_attributes( array( 'class' => $classes ) );
 

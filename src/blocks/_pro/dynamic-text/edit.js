@@ -132,6 +132,7 @@ export default function DynamicTextEdit(props) {
 	const blockProps = useBlockProps({
 		className: classnames({
 			[`has-text-align-${textAlign}`]: textAlign,
+			'vk_dynamicText_button': isButtonStyle,
 		}),
 	});
 

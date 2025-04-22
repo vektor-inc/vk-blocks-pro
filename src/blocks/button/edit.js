@@ -336,7 +336,7 @@ export default function ButtonEdit(props) {
 					lbFontAwesomeIconAfter={fontAwesomeIconAfter}
 					lbIconSizeBefore={iconSizeBefore}
 					lbIconSizeAfter={iconSizeAfter}
-					lbsubCaption={subCaption}
+					subCaption={subCaption}
 					inlineStyle={{
 						...inlineStyle,
 						borderRadius: attributes.borderRadius,

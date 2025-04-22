@@ -108,6 +108,8 @@ e.g.
 
 == Changelog ==
 
+[ Design Bug Fix ][ Balloon ] Fixed an issue where text inside balloon blocks unintentionally inherited the border color when using a color palette.
+
 = 1.102.0 =
 [ Design Bug Fix ][ Outer (Pro) ] Fixed unexpected margin affecting background color display due to layout flow styles in WordPress 6.8.
 [ Design Bug Fix ][ Outer ] Removed unintended borders above and below separators.

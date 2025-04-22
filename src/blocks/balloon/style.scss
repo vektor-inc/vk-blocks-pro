@@ -7,7 +7,7 @@
 		margin: 0;
 	}
 
-	p {
+	> * {
 		color: initial; // カラーパレットのcolorがあたってしまうので初期化する
 		&:first-of-type{
 			margin-top: 0;

@@ -37,13 +37,12 @@ export const ButtonSettings = (props) => {
 		buttonType: propsButtonType,
 		buttonSize: propsButtonSize,
 		buttonEffect: propsButtonEffect,
-		fontAwesomeIconBefore: propsFontAwesomeIconBefore,
-		fontAwesomeIconAfter: propsFontAwesomeIconAfter,
 		iconSizeBefore: propsIconSizeBefore,
 		iconSizeAfter: propsIconSizeAfter,
 		buttonTextColorCustom: propsButtonTextColorCustom,
 		buttonColorCustom: propsButtonColorCustom,
-		borderRadius: propsBorderRadius,
+		fontAwesomeIconBefore: propsFontAwesomeIconBefore,
+		fontAwesomeIconAfter: propsFontAwesomeIconAfter,
 	} = props;
 
 	// eslint-disable-next-line no-undef
@@ -54,10 +53,10 @@ export const ButtonSettings = (props) => {
 
 	// buttonColorCustomがundefinedの場合、buttonTextColorCustomもリセット
 	useEffect(() => {
-		if (buttonColorCustom === undefined) {
+		if (effectiveButtonColorCustom === undefined) {
 			handleSetAttribute({ buttonTextColorCustom: undefined });
 		}
-	}, [buttonColorCustom]);
+	}, [effectiveButtonColorCustom]);
 
 	// dynamic-textブロックの場合はtrue
 	const isDynamicText = props.isButtonStyle || false;
@@ -77,6 +76,10 @@ export const ButtonSettings = (props) => {
 		propsButtonTextColorCustom || attributes.buttonTextColorCustom;
 	const effectiveButtonColorCustom =
 		propsButtonColorCustom || attributes.buttonColorCustom;
+	const effectiveFontAwesomeIconBefore =
+		propsFontAwesomeIconBefore || attributes.fontAwesomeIconBefore;
+	const effectiveFontAwesomeIconAfter =
+		propsFontAwesomeIconAfter || attributes.fontAwesomeIconAfter;
 
 	// 直接渡されたプロパティの場合はtrue（dynamic-textなど）
 	const hasDirectButtonProps =
@@ -112,8 +115,6 @@ export const ButtonSettings = (props) => {
 		buttonEffect = effectiveButtonEffect || 'none',
 		buttonType = effectiveButtonType || '0',
 		buttonColor = effectiveButtonColor || 'primary',
-		fontAwesomeIconBefore = propsFontAwesomeIconBefore,
-		fontAwesomeIconAfter = propsFontAwesomeIconAfter,
 		iconSizeBefore = propsIconSizeBefore,
 		iconSizeAfter = propsIconSizeAfter,
 		buttonWidth = 0,
@@ -121,19 +122,11 @@ export const ButtonSettings = (props) => {
 		buttonWidthMobile = 0,
 	} = attributes;
 
-	// subCaptionとカスタムカラー関連は別途処理
-	const buttonColorCustom = effectiveButtonColorCustom;
-	const buttonTextColorCustom = effectiveButtonTextColorCustom;
-
-	// setAttributesが存在しない場合、渡されたpropsを使う（dynamic-text用）
 	const handleSetAttribute = (attrObj) => {
 		if (setAttributes) {
 			setAttributes(attrObj);
 		}
 	};
-
-	// dynamic-textブロックの場合はbuttonEffect,buttonWidthなどの不要項目を削除
-	const isDynamicTextButtonSettings = isDynamicText || isButtonStyle;
 
 	return (
 		<>
@@ -425,222 +418,108 @@ export const ButtonSettings = (props) => {
 				}}
 			/>
 
-			{/* dynamic-text用のアイコン選択UI */}
-			{isDynamicTextButtonSettings && (
-				<>
-					{/* dynamic-text用のカスタムカラー設定 */}
-					<BaseControl
-						label={__('Custom Color', 'vk-blocks-pro')}
-						id="vk-block-button-custom-color-dynamic"
-					>
+			<BaseControl
+				label={__('Custom Color', 'vk-blocks-pro')}
+				id="vk-block-button-custom-color"
+			>
+				<BaseControl
+					id="vk-block-button-custom-background-color"
+					label={
+						buttonType === '0' || buttonType === null
+							? __('Background Color', 'vk-blocks-pro')
+							: __('Button Color', 'vk-blocks-pro')
+					}
+					help={__(
+						'This color palette overrides the default color. If you want to use the default color, click the clear button.',
+						'vk-blocks-pro'
+					)}
+				>
+					<AdvancedColorPalette
+						schema={'buttonColorCustom'}
+						{...props}
+					/>
+				</BaseControl>
+				{(buttonType === '0' || buttonType === null) &&
+					effectiveButtonColorCustom !== undefined && (
 						<BaseControl
-							id="vk-block-button-custom-background-color-dynamic"
-							label={
-								buttonType === '0' || buttonType === null
-									? __('Background Color', 'vk-blocks-pro')
-									: __('Button Color', 'vk-blocks-pro')
-							}
-							help={__(
-								'This color palette overrides the default color. If you want to use the default color, click the clear button.',
-								'vk-blocks-pro'
-							)}
+							id="vk-block-button-custom-text-color"
+							label={__('Text Color', 'vk-blocks-pro')}
 						>
 							<AdvancedColorPalette
-								schema={'buttonColorCustom'}
-								{...props}
-							/>
-						</BaseControl>
-						{(buttonType === '0' || buttonType === null) &&
-							buttonTextColorCustom !== undefined && (
-								<BaseControl
-									id="vk-block-button-custom-text-color-dynamic"
-									label={__('Text Color', 'vk-blocks-pro')}
-								>
-									<AdvancedColorPalette
-										schema={'buttonTextColorCustom'}
-										{...props}
-									/>
-								</BaseControl>
-							)}
-					</BaseControl>
-
-					{/* dynamic-text用のボーダーラジウス設定 */}
-					<h4 className="mt-0 mb-2">
-						{__('Button border radius', 'vk-blocks-pro')}
-					</h4>
-					<UnitControl
-						value={propsBorderRadius}
-						onChange={(value) => {
-							handleSetAttribute({ borderRadius: value || null });
-						}}
-						units={[
-							{ value: 'px', label: 'px', default: 5 },
-							{ value: '%', label: '%', default: 5 },
-							{ value: 'em', label: 'em', default: 1 },
-							{ value: 'rem', label: 'rem', default: 1 },
-						]}
-					/>
-
-					<h4 className="mt-0 mb-2">{__('Icon', 'vk-blocks-pro')}</h4>
-					<BaseControl
-						id="vk-block-button-fa-before-text-dynamic"
-						label={__('Before text', 'vk-blocks-pro')}
-					>
-						<FontAwesome
-							attributeName={'fontAwesomeIconBefore'}
-							attributes={{
-								fontAwesomeIconBefore,
-							}}
-							setAttributes={handleSetAttribute}
-						/>
-						<UnitControl
-							label={__('Size', 'vk-blocks-pro')}
-							value={iconSizeBefore}
-							units={units}
-							onChange={(value) => {
-								handleSetAttribute({
-									iconSizeBefore: parseFloat(value)
-										? value
-										: null,
-								});
-							}}
-						/>
-					</BaseControl>
-					<hr />
-					<BaseControl
-						id="vk-block-button-fa-after-text-dynamic"
-						label={__('After text', 'vk-blocks-pro')}
-					>
-						<FontAwesome
-							attributeName={'fontAwesomeIconAfter'}
-							attributes={{
-								fontAwesomeIconAfter,
-							}}
-							setAttributes={handleSetAttribute}
-						/>
-						<UnitControl
-							label={__('Size', 'vk-blocks-pro')}
-							value={iconSizeAfter}
-							units={units}
-							onChange={(value) => {
-								handleSetAttribute({
-									iconSizeAfter: parseFloat(value)
-										? value
-										: null,
-								});
-							}}
-						/>
-					</BaseControl>
-				</>
-			)}
-
-			{/* 通常のボタン設定（buttonブロック用） */}
-			{
-				<>
-					<BaseControl
-						label={__('Custom Color', 'vk-blocks-pro')}
-						id="vk-block-button-custom-color"
-					>
-						<BaseControl
-							id="vk-block-button-custom-background-color"
-							label={
-								buttonType === '0' || buttonType === null
-									? __('Background Color', 'vk-blocks-pro')
-									: __('Button Color', 'vk-blocks-pro')
-							}
-							help={__(
-								'This color palette overrides the default color. If you want to use the default color, click the clear button.',
-								'vk-blocks-pro'
-							)}
-						>
-							<AdvancedColorPalette
-								schema={'buttonColorCustom'}
-								{...props}
-							/>
-						</BaseControl>
-						{(buttonType === '0' || buttonType === null) &&
-							buttonColorCustom !== undefined && (
-								<BaseControl
-									id="vk-block-button-custom-text-color"
-									label={__('Text Color', 'vk-blocks-pro')}
-								>
-									<AdvancedColorPalette
-										schema={'buttonTextColorCustom'}
-										{...props}
-									/>
-								</BaseControl>
-							)}
-					</BaseControl>
-
-					<BaseControl>
-						<h4 className="mt-0 mb-2">
-							{__('Icon', 'vk-blocks-pro') +
-								' ( ' +
-								iconFamily +
-								' )'}
-						</h4>
-						<BaseControl
-							id="vk-block-button-fa-before-text"
-							label={__('Before text', 'vk-blocks-pro')}
-						>
-							<FontAwesome
-								attributeName={'fontAwesomeIconBefore'}
-								{...props}
-							/>
-							<UnitControl
-								label={__('Size', 'vk-blocks-pro')}
-								value={iconSizeBefore}
-								units={units}
-								onChange={(value) => {
-									handleSetAttribute({
-										iconSizeBefore: parseFloat(value)
-											? value
-											: null,
-									});
+								schema={'buttonTextColorCustom'}
+								attributes={{
+									buttonTextColorCustom: effectiveButtonTextColorCustom,
 								}}
-							/>
-						</BaseControl>
-						<hr />
-						<BaseControl
-							id="vk-block-button-fa-after-text"
-							label={__('After text', 'vk-blocks-pro')}
-						>
-							<FontAwesome
-								attributeName={'fontAwesomeIconAfter'}
 								{...props}
 							/>
-							<UnitControl
-								label={__('Size', 'vk-blocks-pro')}
-								value={iconSizeAfter}
-								units={units}
-								onChange={(value) => {
-									handleSetAttribute({
-										iconSizeAfter: parseFloat(value)
-											? value
-											: null,
-									});
-								}}
-							/>
 						</BaseControl>
-					</BaseControl>
+					)}
+			</BaseControl>
 
-					<h4 className="mt-0 mb-2">
-						{__('Button border radius', 'vk-blocks-pro')}
-					</h4>
-					<UnitControl
-						value={attributes.borderRadius}
-						onChange={(value) => {
-							handleSetAttribute({ borderRadius: value || null });
-						}}
-						units={[
-							{ value: 'px', label: 'px', default: 5 },
-							{ value: '%', label: '%', default: 5 },
-							{ value: 'em', label: 'em', default: 1 },
-							{ value: 'rem', label: 'rem', default: 1 },
-						]}
-					/>
-				</>
-			}
+			<h4 className="mt-0 mb-2">
+				{__('Button border radius', 'vk-blocks-pro')}
+			</h4>
+			<UnitControl
+				value={attributes.borderRadius}
+				onChange={(value) => {
+					handleSetAttribute({ borderRadius: value || null });
+				}}
+				units={[
+					{ value: 'px', label: 'px', default: 5 },
+					{ value: '%', label: '%', default: 5 },
+					{ value: 'em', label: 'em', default: 1 },
+					{ value: 'rem', label: 'rem', default: 1 },
+				]}
+			/>
+
+			<h4 className="mt-0 mb-2">
+				{__('Icon', 'vk-blocks-pro') + ' ( ' + iconFamily + ' )'}
+			</h4>
+			<BaseControl
+				id="vk-block-button-fa-before-text"
+				label={__('Before text', 'vk-blocks-pro')}
+			>
+				<FontAwesome
+					attributeName={'fontAwesomeIconBefore'}
+					attributes={{
+						fontAwesomeIconBefore: effectiveFontAwesomeIconBefore,
+					}}
+					{...props}
+				/>
+				<UnitControl
+					label={__('Size', 'vk-blocks-pro')}
+					value={iconSizeBefore}
+					units={units}
+					onChange={(value) => {
+						handleSetAttribute({
+							iconSizeBefore: parseFloat(value) ? value : null,
+						});
+					}}
+				/>
+			</BaseControl>
+			<hr />
+			<BaseControl
+				id="vk-block-button-fa-after-text"
+				label={__('After text', 'vk-blocks-pro')}
+			>
+				<FontAwesome
+					attributeName={'fontAwesomeIconAfter'}
+					attributes={{
+						fontAwesomeIconAfter: effectiveFontAwesomeIconAfter,
+					}}
+					{...props}
+				/>
+				<UnitControl
+					label={__('Size', 'vk-blocks-pro')}
+					value={iconSizeAfter}
+					units={units}
+					onChange={(value) => {
+						handleSetAttribute({
+							iconSizeAfter: parseFloat(value) ? value : null,
+						});
+					}}
+				/>
+			</BaseControl>
 		</>
 	);
 };

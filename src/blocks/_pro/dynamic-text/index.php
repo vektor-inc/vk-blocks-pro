@@ -125,6 +125,9 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 						if ( preg_match( '/^[a-z0-9-]+$/', $attributes['buttonTextColorCustom'] ) ) {
 							$button_classes .= ' has-' . $attributes['buttonTextColorCustom'] . '-color';
 						}
+
+					$button_classes .= ' has-' . $attributes['buttonTextColorCustom'] . '-color';
+
 					}
 				} elseif ( '1' === $button_type ) {
 					// 塗りなし

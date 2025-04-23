@@ -399,7 +399,17 @@ export const ButtonSettings = (props) => {
 						value: 'custom',
 					},
 				]}
-				onChange={(value) => handleSetAttribute({ buttonColor: value })}
+				onChange={(value) => {
+					if (value !== 'custom') {
+						handleSetAttribute({
+							buttonColor: value,
+							buttonColorCustom: undefined,
+							buttonTextColorCustom: undefined
+						});
+					} else {
+						handleSetAttribute({ buttonColor: value });
+					}
+				}}
 			/>
 
 			{/* dynamic-text用のアイコン選択UI */}
@@ -429,16 +439,16 @@ export const ButtonSettings = (props) => {
 						</BaseControl>
 						{(buttonType === '0' || buttonType === null) &&
 							buttonTextColorCustom !== undefined && (
-							<BaseControl
-								id="vk-block-button-custom-text-color-dynamic"
-								label={__('Text Color', 'vk-blocks-pro')}
-							>
-								<AdvancedColorPalette
-									schema={'buttonTextColorCustom'}
-									{...props}
-								/>
-							</BaseControl>
-						)}
+								<BaseControl
+									id="vk-block-button-custom-text-color-dynamic"
+									label={__('Text Color', 'vk-blocks-pro')}
+								>
+									<AdvancedColorPalette
+										schema={'buttonTextColorCustom'}
+										{...props}
+									/>
+								</BaseControl>
+							)}
 					</BaseControl>
 
 					{/* dynamic-text用のボーダーラジウス設定 */}

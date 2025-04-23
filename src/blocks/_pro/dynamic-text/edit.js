@@ -17,10 +17,11 @@ import {
 	AlignmentControl,
 	BlockControls,
 	InspectorControls,
+	RichText,
 } from '@wordpress/block-editor';
 import { useSelect } from '@wordpress/data';
 import ServerSideRender from '@wordpress/server-side-render';
-import { ButtonSettings } from '@vkblocks/components/vkb-button-control';
+import { ButtonSettings, VKBButton } from '@vkblocks/components/vkb-button-control';
 
 /**
  * Render Select controls for the Dynamic text block.
@@ -83,6 +84,7 @@ function DynamicTextEditControls({ tagName, onSelectTagName }) {
 export default function DynamicTextEdit(props) {
 	const { attributes, setAttributes } = props;
 	const {
+		content,
 		textAlign,
 		displayElement,
 		tagName: TagName = '',
@@ -508,45 +510,68 @@ export default function DynamicTextEdit(props) {
 										{__('Button Setting', 'vk-blocks-pro')}
 									</h4>
 									<ButtonSettings
+										{...{
+											attributes: {
+												buttonColor,
+												buttonType,
+												buttonSize,
+												buttonAlign,
+												buttonEffect,
+												fontAwesomeIconBefore,
+												fontAwesomeIconAfter,
+												iconSizeBefore,
+												iconSizeAfter,
+												borderRadius,
+												buttonTextColorCustom,
+												buttonColorCustom,
+												subCaption,
+											},
+											setAttributes,
+											name: 'vk-blocks/dynamic-text'
+										}}
 										isButtonStyle={true}
-										buttonColor={buttonColor || 'primary'}
-										buttonType={buttonType || '0'}
-										buttonSize={buttonSize || 'md'}
-										buttonAlign={buttonAlign || 'left'}
-										buttonEffect={buttonEffect}
-										fontAwesomeIconBefore={
-											fontAwesomeIconBefore
-										}
-										fontAwesomeIconAfter={
-											fontAwesomeIconAfter
-										}
-										iconSizeBefore={iconSizeBefore}
-										iconSizeAfter={iconSizeAfter}
-										borderRadius={borderRadius}
-										buttonTextColorCustom={
-											buttonTextColorCustom
-										}
-										buttonColorCustom={buttonColorCustom}
+									/>
+									<VKBButton
+										lbTextColorCustom={buttonTextColorCustom}
+										lbColorCustom={buttonColorCustom}
+										lbColor={buttonColor}
+										lbType={buttonType}
+										lbAlign={buttonAlign}
+										lbSize={buttonSize}
+										lbFontAwesomeIconBefore={fontAwesomeIconBefore}
+										lbFontAwesomeIconAfter={fontAwesomeIconAfter}
+										lbIconSizeBefore={iconSizeBefore}
+										lbIconSizeAfter={iconSizeAfter}
 										subCaption={subCaption}
-										attributeName={'fontAwesomeIconBefore'}
-										attributes={{
-											buttonColor,
-											buttonType,
-											buttonSize,
-											buttonAlign,
-											buttonEffect,
-											fontAwesomeIconBefore,
-											fontAwesomeIconAfter,
-											iconSizeBefore,
-											iconSizeAfter,
-											borderRadius,
-											buttonTextColorCustom,
-											buttonColorCustom,
-											subCaption,
+										inlineStyle={{
+											color: buttonTextColorCustom,
+											backgroundColor: buttonColorCustom,
+											borderColor: buttonColorCustom,
+											borderWidth: attributes.borderWidth,
+											borderStyle: attributes.borderStyle,
+											borderRadius: attributes.borderRadius,
 										}}
-										setAttributes={(attrObj) => {
-											setAttributes(attrObj);
-										}}
+										lbRichtext={
+											<RichText
+												tagName={'span'}
+												className={'vk_button_link_txt'}
+												onChange={(value) =>
+													setAttributes({ content: value })
+												}
+												value={content}
+												placeholder={__('Input text', 'vk-blocks-pro')}
+												allowedFormats={[
+													'core/bold',
+													'core/italic',
+													'core/strikethrough',
+													'core/superscript',
+													'core/subscript',
+													'vk-blocks/responsive-br',
+													'vk-blocks/nowrap',
+													'vk-blocks/inline-font-size',
+												]}
+											/>
+										}
 									/>
 								</>
 							)}

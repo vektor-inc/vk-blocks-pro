@@ -51,14 +51,14 @@ export default function ButtonEdit(props) {
 		old_1_31_0,
 	} = attributes;
 
-	// eslint-disable-next-line no-undef
-	const iconFamily = vkFontAwesome.iconFamily;
 	// 親ブロックが vk-blocks/button-outer かどうか判定
 	const parents = select('core/block-editor').getBlockParentsByBlockName(
 		clientId,
 		['vk-blocks/button-outer']
 	);
 	const isInnerButton = parents.length ? true : false;
+
+	const { updateBlockAttributes } = dispatch('core/block-editor');
 
 	// 以前の値を切り替え
 	useEffect(() => {
@@ -128,35 +128,6 @@ export default function ButtonEdit(props) {
 		}
 	}, [clientId]);
 
-	const { updateBlockAttributes } = dispatch('core/block-editor');
-
-	// buttonColor が有効なら buttonColorCustom と buttonTextColorCustom を無効化
-	useEffect(() => {
-		if (buttonColor !== 'custom') {
-			updateBlockAttributes(clientId, {
-				buttonTextColorCustom: undefined,
-			});
-			updateBlockAttributes(clientId, { buttonColorCustom: undefined });
-		} else if (
-			buttonColorCustom === undefined &&
-			buttonColor === 'custom'
-		) {
-			updateBlockAttributes(clientId, { buttonColor: 'primary' });
-			updateBlockAttributes(clientId, {
-				buttonTextColorCustom: undefined,
-			});
-		}
-	}, [buttonColor]);
-
-	// buttonColorCustom が有効なら buttonColor を custom に
-	useEffect(() => {
-		if (buttonColorCustom !== undefined) {
-			updateBlockAttributes(clientId, { buttonColor: 'custom' });
-		} else if (buttonColor === 'custom') {
-			updateBlockAttributes(clientId, { buttonColor: 'primary' });
-		}
-	}, [buttonColorCustom]);
-
 	let containerClass;
 	if (
 		(buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) ||
@@ -187,25 +158,9 @@ export default function ButtonEdit(props) {
 		containerClass += ` is-style-${buttonEffect}`;
 	}
 
-	const units = [
-		{ value: 'px', label: 'px', default: 16 },
-		{ value: 'em', label: 'em', default: 1 },
-		{ value: 'rem', label: 'rem', default: 1 },
-	];
-
 	const blockProps = useBlockProps({
 		className: containerClass,
 	});
-
-	let inlineStyle = {};
-	if (
-		buttonTextColorCustom !== undefined &&
-		isHexColor(buttonTextColorCustom)
-	) {
-		inlineStyle = {
-			color: `${buttonTextColorCustom}`,
-		};
-	}
 
 	return (
 		<>
@@ -293,8 +248,6 @@ export default function ButtonEdit(props) {
 					<ButtonSettings
 						{...props}
 						isInnerButton={isInnerButton}
-						iconFamily={iconFamily}
-						units={units}
 					/>
 				</PanelBody>
 
@@ -338,7 +291,11 @@ export default function ButtonEdit(props) {
 					lbIconSizeAfter={iconSizeAfter}
 					subCaption={subCaption}
 					inlineStyle={{
-						...inlineStyle,
+						color: buttonTextColorCustom,
+						backgroundColor: buttonColorCustom,
+						borderColor: buttonColorCustom,
+						borderWidth: attributes.borderWidth,
+						borderStyle: attributes.borderStyle,
 						borderRadius: attributes.borderRadius,
 					}}
 					lbRichtext={

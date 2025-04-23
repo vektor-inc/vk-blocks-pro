@@ -1,3 +1,4 @@
+/* globals vkFontAwesome */
 import { __ } from '@wordpress/i18n';
 import {
 	SelectControl,
@@ -9,7 +10,7 @@ import {
 } from '@wordpress/components';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import { FontAwesome } from '@vkblocks/utils/font-awesome-new';
-import { Component } from '@wordpress/element';
+import { Component, useEffect } from '@wordpress/element';
 import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import './style';
@@ -25,10 +26,8 @@ export const ButtonSettings = (props) => {
 		attributes = {},
 		setAttributes,
 		isInnerButton = false,
-		iconFamily = 'Font Awesome',
 		units = [
-			{ value: 'px', label: 'px', default: 5 },
-			{ value: '%', label: '%', default: 5 },
+			{ value: 'px', label: 'px', default: 16 },
 			{ value: 'em', label: 'em', default: 1 },
 			{ value: 'rem', label: 'rem', default: 1 },
 		],
@@ -46,6 +45,19 @@ export const ButtonSettings = (props) => {
 		buttonColorCustom: propsButtonColorCustom,
 		borderRadius: propsBorderRadius,
 	} = props;
+
+	// eslint-disable-next-line no-undef
+	const iconFamily =
+		typeof vkFontAwesome !== 'undefined'
+			? vkFontAwesome.iconFamily
+			: 'Font Awesome';
+
+	// buttonColorCustomがundefinedの場合、buttonTextColorCustomもリセット
+	useEffect(() => {
+		if (buttonColorCustom === undefined) {
+			handleSetAttribute({ buttonTextColorCustom: undefined });
+		}
+	}, [buttonColorCustom]);
 
 	// dynamic-textブロックの場合はtrue
 	const isDynamicText = props.isButtonStyle || false;
@@ -400,11 +412,12 @@ export const ButtonSettings = (props) => {
 					},
 				]}
 				onChange={(value) => {
+					// カスタムカラー以外が選択された場合、カスタムカラーをリセット
 					if (value !== 'custom') {
 						handleSetAttribute({
 							buttonColor: value,
 							buttonColorCustom: undefined,
-							buttonTextColorCustom: undefined
+							buttonTextColorCustom: undefined,
 						});
 					} else {
 						handleSetAttribute({ buttonColor: value });

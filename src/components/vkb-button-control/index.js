@@ -424,23 +424,18 @@ export const ButtonSettings = (props) => {
 						>
 							<AdvancedColorPalette
 								schema={'buttonColorCustom'}
-								attributes={{
-									buttonColorCustom,
-								}}
-								setAttributes={handleSetAttribute}
+								{...props}
 							/>
 						</BaseControl>
-						{(buttonType === '0' || buttonType === null) && (
+						{(buttonType === '0' || buttonType === null) &&
+							buttonTextColorCustom !== undefined && (
 							<BaseControl
 								id="vk-block-button-custom-text-color-dynamic"
 								label={__('Text Color', 'vk-blocks-pro')}
 							>
 								<AdvancedColorPalette
 									schema={'buttonTextColorCustom'}
-									attributes={{
-										buttonTextColorCustom,
-									}}
-									setAttributes={handleSetAttribute}
+									{...props}
 								/>
 							</BaseControl>
 						)}

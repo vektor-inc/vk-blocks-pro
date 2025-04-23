@@ -108,11 +108,13 @@ e.g.
 
 == Changelog ==
 
+
+[ Add function ][ Outer (Pro) ] Added background offset feature.
 [ Design Bug Fix ][ Balloon ] Fixed an issue where text inside balloon blocks unintentionally inherited the border color when using a color palette.
 
 = 1.102.0 =
 [ Design Bug Fix ][ Outer (Pro) ] Fixed unexpected margin affecting background color display due to layout flow styles in WordPress 6.8.
-[ Design Bug Fix ][ Outer ] Removed unintended borders above and below separators.
+[ Design Bug Fix ][ Outer (Pro) ] Removed unintended borders above and below separators.
 [ Bug Fix ][ Pro ] When VK Blocks Pro is activated, VK Blocks should be automatically deactivated.
 
 = 1.101.0 =

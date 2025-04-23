@@ -31,14 +31,13 @@ function vk_blocks_dynamic_text_get_attributes_default() {
 		'buttonEffect'             => '',
 		'buttonColor'              => 'primary',
 		'buttonColorCustom'        => null,
+		'buttonTextColorCustom'    => null,
 		'buttonType'               => '0',
 		'buttonSize'               => 'md',
 		'buttonAlign'              => 'left',
 		'fontAwesomeIconBefore'    => null,
 		'fontAwesomeIconAfter'     => null,
 		'borderRadius'             => null,
-		'buttonColorCustom'        => null,
-		'buttonTextColorCustom'    => null,
 		'subCaption'               => null,
 	);
 	return $attributes_default;
@@ -466,14 +465,6 @@ function vk_blocks_register_block_dynamic_text() {
 						'default' => null,
 					),
 					'borderRadius'             => array(
-						'type'    => 'string',
-						'default' => null,
-					),
-					'buttonColorCustom'        => array(
-						'type'    => 'string',
-						'default' => null,
-					),
-					'buttonTextColorCustom'    => array(
 						'type'    => 'string',
 						'default' => null,
 					),

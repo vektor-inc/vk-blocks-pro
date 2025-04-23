@@ -20,7 +20,7 @@ import {
 	URLInput,
 } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
-import { dispatch, select } from '@wordpress/data';
+import { select } from '@wordpress/data';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { link, linkOff, keyboardReturn } from '@wordpress/icons';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
@@ -57,8 +57,6 @@ export default function ButtonEdit(props) {
 		['vk-blocks/button-outer']
 	);
 	const isInnerButton = parents.length ? true : false;
-
-	const { updateBlockAttributes } = dispatch('core/block-editor');
 
 	// 以前の値を切り替え
 	useEffect(() => {
@@ -245,10 +243,7 @@ export default function ButtonEdit(props) {
 					title={__('Button Setting', 'vk-blocks-pro')}
 					initialOpen={true}
 				>
-					<ButtonSettings
-						{...props}
-						isInnerButton={isInnerButton}
-					/>
+					<ButtonSettings {...props} isInnerButton={isInnerButton} />
 				</PanelBody>
 
 				<PanelBody

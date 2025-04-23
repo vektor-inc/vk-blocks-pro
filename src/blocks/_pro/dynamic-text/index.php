@@ -31,13 +31,14 @@ function vk_blocks_dynamic_text_get_attributes_default() {
 		'buttonEffect'             => '',
 		'buttonColor'              => 'primary',
 		'buttonColorCustom'        => null,
-		'buttonTextColorCustom'    => null,
 		'buttonType'               => '0',
 		'buttonSize'               => 'md',
 		'buttonAlign'              => 'left',
 		'fontAwesomeIconBefore'    => null,
 		'fontAwesomeIconAfter'     => null,
 		'borderRadius'             => null,
+		'buttonColorCustom'        => null,
+		'buttonTextColorCustom'    => null,
 		'subCaption'               => null,
 	);
 	return $attributes_default;
@@ -118,13 +119,32 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 						}
 					}
 
+// ボタンタイプに基づいてクラスを追加
+$button_type = $attributes['buttonType'];
+$is_default_button = '0' === $button_type;
+$is_null_button = null === $button_type;
+if ( $is_default_button || $is_null_button ) {
+    // 塗りつぶし
+    if ( 'custom' !== $attributes['buttonColor'] && empty( $attributes['buttonColorCustom'] ) ) {
+        $button_classes .= ' btn has-background has-vk-color-' . $attributes['buttonColor'] . '-background-color';
+    } else {
+        $button_classes .= ' btn has-background';
+        // カスタムパレットカラーの場合
+        if ( ! empty( $attributes['buttonColorCustom'] ) && preg_match( '/^[a-z0-9-]+$/', $attributes['buttonColorCustom'] ) ) {
+            $button_classes .= ' has-' . $attributes['buttonColorCustom'] . '-background-color';
+        }
+    }
+
 					// 文字色
 					if ( 'custom' === $attributes['buttonColor'] && ! empty( $attributes['buttonTextColorCustom'] ) ) {
-						$button_classes .= ' has-text-color';
-						// カスタムパレットカラーの場合
-						if ( preg_match( '/^[a-z0-9-]+$/', $attributes['buttonTextColorCustom'] ) ) {
-							$button_classes .= ' has-' . $attributes['buttonTextColorCustom'] . '-color';
+							$button_classes .= ' btn has-text-color has-vk-color-' . $attributes['buttonTextColorCustom'] . '-color';
+							// カスタムパレットカラーの場合
+							if ( preg_match( '/^[a-z0-9-]+$/', $attributes['buttonTextColorCustom'] ) ) {
+								$button_classes .= ' has-' . $attributes['buttonTextColorCustom'] . '-color';
+							}
 						}
+
+						// has-primary-hover-colorを追加
 						$button_classes .= ' has-' . $attributes['buttonTextColorCustom'] . '-color';
 					}
 				} elseif ( '1' === $button_type ) {
@@ -465,6 +485,14 @@ function vk_blocks_register_block_dynamic_text() {
 						'default' => null,
 					),
 					'borderRadius'             => array(
+						'type'    => 'string',
+						'default' => null,
+					),
+					'buttonColorCustom'        => array(
+						'type'    => 'string',
+						'default' => null,
+					),
+					'buttonTextColorCustom'    => array(
 						'type'    => 'string',
 						'default' => null,
 					),

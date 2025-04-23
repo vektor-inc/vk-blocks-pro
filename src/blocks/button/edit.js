@@ -287,7 +287,7 @@ export default function ButtonEdit(props) {
 			</BlockControls>
 			<InspectorControls>
 				<PanelBody
-					title={__('Button Settings', 'vk-blocks-pro')}
+					title={__('Button Setting', 'vk-blocks-pro')}
 					initialOpen={true}
 				>
 					<ButtonSettings

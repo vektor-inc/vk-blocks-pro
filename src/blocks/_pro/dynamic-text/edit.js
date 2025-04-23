@@ -505,7 +505,7 @@ export default function DynamicTextEdit(props) {
 							{isButtonStyle && (
 								<>
 									<h4 className="mb-2">
-										{__('Button Settings', 'vk-blocks-pro')}
+										{__('Button Setting', 'vk-blocks-pro')}
 									</h4>
 									<ButtonSettings
 										isButtonStyle={true}

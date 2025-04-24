@@ -499,9 +499,7 @@ export const ButtonSettings = (props) => {
 						units={units}
 						onChange={(value) => {
 							handleSetAttribute({
-								iconSizeAfter: parseFloat(value)
-									? value
-									: null,
+								iconSizeAfter: parseFloat(value) ? value : null,
 							});
 						}}
 					/>

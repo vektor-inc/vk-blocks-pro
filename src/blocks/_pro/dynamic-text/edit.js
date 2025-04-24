@@ -21,7 +21,10 @@ import {
 } from '@wordpress/block-editor';
 import { useSelect } from '@wordpress/data';
 import ServerSideRender from '@wordpress/server-side-render';
-import { ButtonSettings, VKBButton } from '@vkblocks/components/vkb-button-control';
+import {
+	ButtonSettings,
+	VKBButton,
+} from '@vkblocks/components/vkb-button-control';
 
 /**
  * Render Select controls for the Dynamic text block.
@@ -527,19 +530,25 @@ export default function DynamicTextEdit(props) {
 												subCaption,
 											},
 											setAttributes,
-											name: 'vk-blocks/dynamic-text'
+											name: 'vk-blocks/dynamic-text',
 										}}
 										isButtonStyle={true}
 									/>
 									<VKBButton
-										lbTextColorCustom={buttonTextColorCustom}
+										lbTextColorCustom={
+											buttonTextColorCustom
+										}
 										lbColorCustom={buttonColorCustom}
 										lbColor={buttonColor}
 										lbType={buttonType}
 										lbAlign={buttonAlign}
 										lbSize={buttonSize}
-										lbFontAwesomeIconBefore={fontAwesomeIconBefore}
-										lbFontAwesomeIconAfter={fontAwesomeIconAfter}
+										lbFontAwesomeIconBefore={
+											fontAwesomeIconBefore
+										}
+										lbFontAwesomeIconAfter={
+											fontAwesomeIconAfter
+										}
 										lbIconSizeBefore={iconSizeBefore}
 										lbIconSizeAfter={iconSizeAfter}
 										subCaption={subCaption}
@@ -549,17 +558,23 @@ export default function DynamicTextEdit(props) {
 											borderColor: buttonColorCustom,
 											borderWidth: attributes.borderWidth,
 											borderStyle: attributes.borderStyle,
-											borderRadius: attributes.borderRadius,
+											borderRadius:
+												attributes.borderRadius,
 										}}
 										lbRichtext={
 											<RichText
 												tagName={'span'}
 												className={'vk_button_link_txt'}
 												onChange={(value) =>
-													setAttributes({ content: value })
+													setAttributes({
+														content: value,
+													})
 												}
 												value={content}
-												placeholder={__('Input text', 'vk-blocks-pro')}
+												placeholder={__(
+													'Input text',
+													'vk-blocks-pro'
+												)}
 												allowedFormats={[
 													'core/bold',
 													'core/italic',

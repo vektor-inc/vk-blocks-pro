@@ -7,7 +7,7 @@ import classnames from 'classnames';
  */
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
-import { sanitizeSlug } from '@wordpress/utils';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 // import StaffMediaUpload from './staffMediaUpload';
 

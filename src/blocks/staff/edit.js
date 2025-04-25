@@ -23,7 +23,7 @@ import {
 } from '@wordpress/block-editor';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
-import { sanitizeSlug } from '@wordpress/utils';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 export default function StaffEdit(props) {
 	const { attributes, setAttributes, className, clientId } = props;

@@ -21,7 +21,7 @@ import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import parse from 'html-react-parser';
 import classnames from 'classnames';
-import { sanitizeSlug } from '@wordpress/utils';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 const renderTitle = (level, contents, tStyle, headingStyle) => {
 	switch (level) {

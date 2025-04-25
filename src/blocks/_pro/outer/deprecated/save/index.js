@@ -12,6 +12,7 @@ import save1_89_0 from './1.89.0/save';
 import save1_92_1 from './1.92.1/save';
 import save1_93_0 from './1.93.0/save';
 import save1_93_2 from './1.93.2/save';
+import save1_101_0 from './1.101.0/save';
 
 const blockAttributes = {
 	bgColor: {
@@ -207,7 +208,6 @@ const blockAttributes7 = {
 	},
 };
 
-/*
 // save1_89_0 から attributes を変更
 const blockAttributes8 = {
 	...blockAttributes7,
@@ -236,9 +236,44 @@ const blockAttributes8 = {
 	  default: false
 	},
 };
+
+
+/*
+// save1_101_0 から attributes を変更
+const blockAttributes9 = {
+	...blockAttributes8,
+	bgOffsetTop: {
+		type: 'number',
+		default: 0
+	},
+	bgOffsetBottom: {
+		type: 'number',
+		default: 0
+	},
+	bgOffsetLeft: {
+		type: 'number',
+		default: 0
+	},
+	bgOffsetRight: {
+		type: 'number',
+		default: 0
+	},
+	bgOffsetUnit: {
+		type: 'string',
+		default: 'px'
+	},
+	bgOffsetDisableMobile: {
+		type: 'boolean',
+		default: false
+	},
+};
 */
 
 const deprecated = [
+	{
+		attributes: blockAttributes8,
+		save: save1_101_0,
+	},
 	{
 		attributes: blockAttributes7,
 		save: save1_93_2,

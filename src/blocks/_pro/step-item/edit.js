@@ -5,8 +5,8 @@ import {
 	BaseControl,
 	SelectControl,
 	TextControl,
-	ButtonGroup,
-	Button,
+	__experimentalToggleGroupControl as ToggleGroupControl,
+	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
 } from '@wordpress/components';
 import {
 	InspectorControls,
@@ -124,29 +124,24 @@ export default function StepItemEdit(props) {
 							]}
 						/>
 					</BaseControl>
-					<BaseControl id="style-line" label="Line Style">
-						<ButtonGroup className={`mb-3`}>
-							<Button
-								isSmall
-								isPrimary={styleLine === 'default'}
-								isSecondary={styleLine !== 'default'}
-								onClick={() =>
-									setAttributes({ styleLine: 'default' })
-								}
-							>
-								{__('Default', 'vk-blocks-pro')}
-							</Button>
-							<Button
-								isSmall
-								isPrimary={styleLine === 'none'}
-								isSecondary={styleLine !== 'none'}
-								onClick={() =>
-									setAttributes({ styleLine: 'none' })
-								}
-							>
-								{__('None', 'vk-blocks-pro')}
-							</Button>
-						</ButtonGroup>
+					<BaseControl id="style-line">
+						<ToggleGroupControl
+							label={__('Line style', 'vk-blocks-pro')}
+							value={styleLine}
+							onChange={(value) =>
+								setAttributes({ styleLine: value })
+							}
+							isBlock
+						>
+							<ToggleGroupControlOption
+								value="default"
+								label={__('Default', 'vk-blocks-pro')}
+							/>
+							<ToggleGroupControlOption
+								value="none"
+								label={__('None', 'vk-blocks-pro')}
+							/>
+						</ToggleGroupControl>
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>

@@ -58,6 +58,11 @@ npm run translate
 翻訳は PoEdit などを使って `.po` ファイルを開いて編集するが、
 新たに翻訳箇所が追加された場合はメニューから「potファイルから更新」を選んで更新する
 
+## AI(Cursor)用コーディングルール
+.cursor/rules/*.mdc は Cursor用のコーディングルールです。
+coding-rule.mdc のファイル構成一覧は `npm run makerule:blocks` で自動的に生成します。
+
+
 ## PHPUnitテスト
 
 ```
@@ -92,7 +97,7 @@ npm run test:e2e ./test/e2e-tests/specs/xxxx.test.js
 wp-env の port を変更していて、単体でテストしたい場合
 （spacerの例）
 ```
-WP_BASE_URL='http://localhost:xxxx/' npm run test:e2e ./test/e2e-tests/specs/spacer.test.js    
+WP_BASE_URL='http://localhost:xxxx/' npm run test:e2e ./test/e2e-tests/specs/spacer.test.js
 ```
 
 ---

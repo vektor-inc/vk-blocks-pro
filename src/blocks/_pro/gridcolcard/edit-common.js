@@ -1,16 +1,18 @@
 import { __ } from '@wordpress/i18n';
 import {
-	// eslint-disable-next-line
-	__experimentalBoxControl as BoxControl,
+	__experimentalBoxControl as OldBoxControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
+	BoxControl as NewBoxControl,
 	__experimentalUnitControl as UnitControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
 	ComboboxControl,
 	ToggleControl,
-	Button,
-	ButtonGroup,
+	__experimentalToggleGroupControl as ToggleGroupControl,
+	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
 	BaseControl,
 } from '@wordpress/components';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import { AdvancedColorGradientControl } from '@vkblocks/components/advanced-color-gradient-control';
+
+const BoxControl = OldBoxControl || NewBoxControl; // Fallback to the new BoxControl if the old one is not available
 
 const CommonItemControl = (props) => {
 	const { attributes, setAttributes } = props;
@@ -71,36 +73,25 @@ const CommonItemControl = (props) => {
 				}
 			/>
 			<hr />
-			<label htmlFor="vk_hiddenControl-hiddenColumnHeaderMediaArea">
-				{__('Column header media area', 'vk-blocks-pro')}
-			</label>
-			<br />
-			<ButtonGroup className={`mb-3`}>
-				<Button
-					isSmall
-					isPrimary={headerDisplay === 'display'}
-					isSecondary={headerDisplay !== 'display'}
-					onClick={() => setAttributes({ headerDisplay: 'display' })}
-				>
-					{__('Display', 'vk-blocks-pro')}
-				</Button>
-				<Button
-					isSmall
-					isPrimary={headerDisplay === 'hide'}
-					isSecondary={headerDisplay !== 'hide'}
-					onClick={() => setAttributes({ headerDisplay: 'hide' })}
-				>
-					{__('Hide', 'vk-blocks-pro')}
-				</Button>
-				<Button
-					isSmall
-					isPrimary={headerDisplay === 'delete'}
-					isSecondary={headerDisplay !== 'delete'}
-					onClick={() => setAttributes({ headerDisplay: 'delete' })}
-				>
-					{__('Delete', 'vk-blocks-pro')}
-				</Button>
-			</ButtonGroup>
+			<ToggleGroupControl
+				label={__('Column header media area', 'vk-blocks-pro')}
+				value={headerDisplay}
+				onChange={(value) => setAttributes({ headerDisplay: value })}
+				isBlock
+			>
+				<ToggleGroupControlOption
+					value="display"
+					label={__('Display', 'vk-blocks-pro')}
+				/>
+				<ToggleGroupControlOption
+					value="hide"
+					label={__('Hide', 'vk-blocks-pro')}
+				/>
+				<ToggleGroupControlOption
+					value="delete"
+					label={__('Delete', 'vk-blocks-pro')}
+				/>
+			</ToggleGroupControl>
 			{(() => {
 				if (headerDisplay === 'display') {
 					return (
@@ -133,36 +124,25 @@ const CommonItemControl = (props) => {
 				}
 			})()}
 			<hr />
-			<label htmlFor="vk_hiddenControl-hiddenColumnFooterButtonArea">
-				{__('Column footer button area', 'vk-blocks-pro')}
-			</label>
-			<br />
-			<ButtonGroup className={`mb-3`}>
-				<Button
-					isSmall
-					isPrimary={footerDisplay === 'display'}
-					isSecondary={footerDisplay !== 'display'}
-					onClick={() => setAttributes({ footerDisplay: 'display' })}
-				>
-					{__('Display', 'vk-blocks-pro')}
-				</Button>
-				<Button
-					isSmall
-					isPrimary={footerDisplay === 'hide'}
-					isSecondary={footerDisplay !== 'hide'}
-					onClick={() => setAttributes({ footerDisplay: 'hide' })}
-				>
-					{__('Hide', 'vk-blocks-pro')}
-				</Button>
-				<Button
-					isSmall
-					isPrimary={footerDisplay === 'delete'}
-					isSecondary={footerDisplay !== 'delete'}
-					onClick={() => setAttributes({ footerDisplay: 'delete' })}
-				>
-					{__('Delete', 'vk-blocks-pro')}
-				</Button>
-			</ButtonGroup>
+			<ToggleGroupControl
+				label={__('Column footer button area', 'vk-blocks-pro')}
+				value={footerDisplay}
+				onChange={(value) => setAttributes({ footerDisplay: value })}
+				isBlock
+			>
+				<ToggleGroupControlOption
+					value="display"
+					label={__('Display', 'vk-blocks-pro')}
+				/>
+				<ToggleGroupControlOption
+					value="hide"
+					label={__('Hide', 'vk-blocks-pro')}
+				/>
+				<ToggleGroupControlOption
+					value="delete"
+					label={__('Delete', 'vk-blocks-pro')}
+				/>
+			</ToggleGroupControl>
 
 			<h4>{__('Color Settings', 'vk-blocks-pro')}</h4>
 			<BaseControl

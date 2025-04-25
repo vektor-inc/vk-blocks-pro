@@ -1,3 +1,4 @@
+/* globals MutationObserver */
 import classnames from 'classnames';
 
 // import WordPress Scripts
@@ -10,6 +11,7 @@ import {
 	TextControl,
 	ToggleControl,
 } from '@wordpress/components';
+import { useEffect } from '@wordpress/element';
 import {
 	useBlockProps,
 	AlignmentControl,
@@ -86,6 +88,7 @@ export default function DynamicTextEdit(props) {
 		ancestorPageHiddenOption,
 		parentPageHiddenOption,
 		customFieldName,
+		customFieldLinkText,
 		userNamePrefixText,
 		userNameSuffixText,
 		userNameLoggedOutText,
@@ -93,30 +96,41 @@ export default function DynamicTextEdit(props) {
 		fieldType,
 		isLinkSet,
 		isLinkTarget,
+		isVertical,
+		isUpright,
 	} = attributes;
 	attributes.ancestorPageHiddenOption = ancestorPageHiddenOption;
 	attributes.parentPageHiddenOption = parentPageHiddenOption;
 	attributes.isLinkSet = isLinkSet;
 	attributes.isLinkTarget = isLinkTarget;
+	attributes.isVertical = isVertical;
+	attributes.isUpright = isUpright;
+	attributes.customFieldLinkText = customFieldLinkText;
 
 	// Hooks.
 	const blockProps = useBlockProps({
 		className: classnames({
 			[`has-text-align-${textAlign}`]: textAlign,
+			'is-vertical': isVertical,
+			'is-upright': isUpright,
 		}),
 	});
 
-	const { postType, parentPageId, currentUser } = useSelect((select) => {
-		const { getCurrentPostType, getEditedPostAttribute } =
-			select('core/editor');
-		const { getCurrentUser } = select('core');
+	const { postType, parentPageId, currentUser, postSlug } = useSelect(
+		(select) => {
+			const { getCurrentPostType, getEditedPostAttribute } =
+				select('core/editor');
+			const { getCurrentUser } = select('core');
 
-		return {
-			postType: getCurrentPostType(),
-			parentPageId: getEditedPostAttribute('parent'),
-			currentUser: getCurrentUser(),
-		};
-	}, []);
+			return {
+				postType: getCurrentPostType(),
+				parentPageId: getEditedPostAttribute('parent'),
+				currentUser: getCurrentUser(),
+				postSlug: getEditedPostAttribute('slug'),
+			};
+		},
+		[]
+	);
 
 	let editContent;
 	const editAlertContent = (
@@ -170,6 +184,15 @@ export default function DynamicTextEdit(props) {
 				)}
 			</div>
 		);
+	} else if (displayElement === 'post-slug' && !postSlug) {
+		editContent = (
+			<div className="alert alert-warning text-center">
+				{__(
+					'Set the slug and save the post to display it.',
+					'vk-blocks-pro'
+				)}
+			</div>
+		);
 	} else if (displayElement === 'please-select') {
 		editContent = editAlertContent;
 	} else {
@@ -181,6 +204,29 @@ export default function DynamicTextEdit(props) {
 			/>
 		);
 	}
+
+	useEffect(() => {
+		const iframe = document.querySelector(
+			'.block-editor-iframe__container iframe'
+		);
+		const targetDocument = iframe?.contentWindow?.document || document;
+		const disableLinks = () => {
+			const links = targetDocument.querySelectorAll('.vk_dynamicText a');
+			links.forEach((link) => {
+				link.style.pointerEvents = 'none';
+			});
+		};
+
+		const observer = new MutationObserver(disableLinks);
+		const targetNode = targetDocument.querySelector('body');
+
+		if (targetNode) {
+			observer.observe(targetNode, { childList: true, subtree: true });
+			disableLinks();
+		}
+
+		return () => observer.disconnect();
+	}, [attributes]);
 
 	return (
 		<>
@@ -241,6 +287,10 @@ export default function DynamicTextEdit(props) {
 								{
 									value: 'custom-field',
 									label: __('Custom Field', 'vk-blocks-pro'),
+								},
+								{
+									value: 'post-slug',
+									label: __('Post Slug', 'vk-blocks-pro'),
 								},
 							]}
 						/>
@@ -400,6 +450,17 @@ export default function DynamicTextEdit(props) {
 									)}
 								</>
 							)}
+							{fieldType === 'url' && isLinkSet && (
+								<TextControl
+									label={__('Link Text', 'vk-blocks-pro')}
+									value={attributes.customFieldLinkText}
+									onChange={(value) =>
+										setAttributes({
+											customFieldLinkText: value,
+										})
+									}
+								/>
+							)}
 						</BaseControl>
 					)}
 					<DynamicTextEditControls
@@ -408,6 +469,30 @@ export default function DynamicTextEdit(props) {
 							setAttributes({ tagName: value })
 						}
 					/>
+					<BaseControl>
+						<ToggleControl
+							label="Vertical writing"
+							checked={isVertical}
+							onChange={(value) =>
+								setAttributes({
+									isVertical: value,
+								})
+							}
+						/>
+						{isVertical === true && (
+							<>
+								<ToggleControl
+									label="upright text"
+									checked={isUpright}
+									onChange={(value) =>
+										setAttributes({
+											isUpright: value,
+										})
+									}
+								/>
+							</>
+						)}
+					</BaseControl>
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>{editContent}</div>

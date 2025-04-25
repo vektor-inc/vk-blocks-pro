@@ -2,6 +2,7 @@
 	"apiVersion": 3,
 	"name": "vk-blocks/tab-item",
 	"category": "vk-blocks-cat",
+	"description": "A single item in a tab.",
 	"parent": ["vk-blocks/tab"],
 	"editorScript": "vk-blocks-build-js",
 	"editorStyle": "vk-blocks-build-editor-css",

@@ -94,6 +94,9 @@ export default function FlowEdit({ attributes, setAttributes, clientId }) {
 						/>
 					</div>
 				</div>
+				{arrowFlag === 'vk_flow-arrow-on' && (
+					<div className={'vk_flow_frame_arrow'}></div>
+				)}
 			</div>
 		</>
 	);

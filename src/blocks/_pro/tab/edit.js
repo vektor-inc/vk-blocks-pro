@@ -6,7 +6,7 @@ import {
 	store as blockEditorStore,
 } from '@wordpress/block-editor';
 import { PanelBody, RadioControl } from '@wordpress/components';
-import { useEffect } from '@wordpress/element';
+import { useEffect, useMemo } from '@wordpress/element';
 import { dispatch, useSelect } from '@wordpress/data';
 import { __, sprintf } from '@wordpress/i18n';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
@@ -56,7 +56,8 @@ export default function TabEdit(props) {
 	}, [clientId]);
 
 	const childBlocks = useSelect(
-		(select) => select(blockEditorStore).getBlock(clientId).innerBlocks
+		(select) => select(blockEditorStore).getBlock(clientId).innerBlocks,
+		[clientId]
 	);
 
 	useEffect(() => {
@@ -136,21 +137,20 @@ export default function TabEdit(props) {
 		setAttributes({ tabOptionJSON: JSON.stringify(tabOption) });
 	}, [className]);
 
+	const tabBodyBorderTop = useMemo(() => {
+		const tabOption = JSON.parse(tabOptionJSON);
+		return tabOption.tabBodyBorderTop;
+	}, [tabOptionJSON]);
+
 	useEffect(() => {
 		if (childBlocks) {
 			childBlocks.forEach((childBlock) => {
-				if (tabOption.tabBodyBorderTop === true) {
-					updateBlockAttributes(childBlock.clientId, {
-						tabBodyBorderTop: true,
-					});
-				} else {
-					updateBlockAttributes(childBlock.clientId, {
-						tabBodyBorderTop: false,
-					});
-				}
+				updateBlockAttributes(childBlock.clientId, {
+					tabBodyBorderTop,
+				});
 			});
 		}
-	}, [tabOption.tabBodyBorderTop]);
+	}, [tabBodyBorderTop, childBlocks]);
 
 	useEffect(() => {
 		if (childBlocks) {

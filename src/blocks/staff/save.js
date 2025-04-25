@@ -7,6 +7,7 @@ import classnames from 'classnames';
  */
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { sanitizeSlug } from '@wordpress/utils';
 
 // import StaffMediaUpload from './staffMediaUpload';
 
@@ -55,10 +56,8 @@ export default function save({ attributes, className }) {
 	let staffTextNameClassName = '';
 	if (vk_staff_nameColor !== undefined) {
 		staffTextNameClassName += ` has-text-color`;
-		if (isHexColor(vk_staff_nameColor)) {
-			staffNameColorInlineStyle = { color: `${vk_staff_nameColor}` };
-		} else {
-			staffTextNameClassName += ` has-${vk_staff_nameColor}-color`;
+		if (!isHexColor(vk_staff_nameColor)) {
+			staffTextNameClassName += ` has-${sanitizeSlug(vk_staff_nameColor)}-color`;
 		}
 	}
 
@@ -66,12 +65,8 @@ export default function save({ attributes, className }) {
 	let staffCaptionClassName = '';
 	if (vk_staff_captionColor !== undefined) {
 		staffCaptionClassName += ` has-text-color`;
-		if (isHexColor(vk_staff_captionColor)) {
-			staffCaptionColorInlineStyle = {
-				color: `${vk_staff_captionColor}`,
-			};
-		} else {
-			staffCaptionClassName += ` has-${vk_staff_captionColor}-color`;
+		if (!isHexColor(vk_staff_captionColor)) {
+			staffCaptionClassName += ` has-${sanitizeSlug(vk_staff_captionColor)}-color`;
 		}
 	}
 
@@ -79,12 +74,8 @@ export default function save({ attributes, className }) {
 	let staffPositionClassName = '';
 	if (vk_staff_positionColor !== undefined) {
 		staffPositionClassName += ` has-text-color`;
-		if (isHexColor(vk_staff_positionColor)) {
-			staffPositionColorInlineStyle = {
-				color: `${vk_staff_positionColor}`,
-			};
-		} else {
-			staffPositionClassName += ` has-${vk_staff_positionColor}-color`;
+		if (!isHexColor(vk_staff_positionColor)) {
+			staffPositionClassName += ` has-${sanitizeSlug(vk_staff_positionColor)}-color`;
 		}
 	}
 
@@ -92,12 +83,8 @@ export default function save({ attributes, className }) {
 	let staffProfileTitleClassName = '';
 	if (vk_staff_profileTitleColor !== undefined) {
 		staffProfileTitleClassName += ` has-text-color`;
-		if (isHexColor(vk_staff_profileTitleColor)) {
-			staffProfileTitleColorInlineStyle = {
-				color: `${vk_staff_profileTitleColor}`,
-			};
-		} else {
-			staffProfileTitleClassName += ` has-${vk_staff_profileTitleColor}-color`;
+		if (!isHexColor(vk_staff_profileTitleColor)) {
+			staffProfileTitleClassName += ` has-${sanitizeSlug(vk_staff_profileTitleColor)}-color`;
 		}
 	}
 
@@ -105,12 +92,8 @@ export default function save({ attributes, className }) {
 	let staffProfileTextClassName = '';
 	if (vk_staff_profileTextColor !== undefined) {
 		staffProfileTextClassName += ` has-text-color`;
-		if (isHexColor(vk_staff_profileTextColor)) {
-			staffProfileTextColorInlineStyle = {
-				color: `${vk_staff_profileTextColor}`,
-			};
-		} else {
-			staffProfileTextClassName += ` has-${vk_staff_profileTextColor}-color`;
+		if (!isHexColor(vk_staff_profileTextColor)) {
+			staffProfileTextClassName += ` has-${sanitizeSlug(vk_staff_profileTextColor)}-color`;
 		}
 	}
 

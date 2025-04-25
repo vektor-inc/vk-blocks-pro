@@ -3,6 +3,7 @@ import { RichText, useBlockProps } from '@wordpress/block-editor';
 import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import classnames from 'classnames';
+import { sanitizeSlug } from '@wordpress/utils';
 
 const renderTitle = (level, contents, tStyle, headingStyle) => {
 	switch (level) {
@@ -77,7 +78,7 @@ export default function save(props) {
 	if (titleColor !== undefined) {
 		headingColorClassName += `has-text-color`;
 		if (!isHexColor(titleColor)) {
-			headingColorClassName += ` has-${titleColor}-color`;
+			headingColorClassName += ` has-${sanitizeSlug(titleColor)}-color`;
 		}
 	}
 
@@ -108,7 +109,7 @@ export default function save(props) {
 	if (subTextColor !== undefined) {
 		subTextColorClassName += `has-text-color`;
 		if (!isHexColor(subTextColor)) {
-			subTextColorClassName += ` has-${subTextColor}-color`;
+			subTextColorClassName += ` has-${sanitizeSlug(subTextColor)}-color`;
 		}
 	}
 
@@ -135,7 +136,7 @@ export default function save(props) {
 	if (fontAwesomeIconColor !== undefined) {
 		iconColorClassName += `has-text-color`;
 		if (!isHexColor(fontAwesomeIconColor)) {
-			iconColorClassName += ` has-${fontAwesomeIconColor}-color`;
+			iconColorClassName += ` has-${sanitizeSlug(fontAwesomeIconColor)}-color`;
 		}
 	}
 

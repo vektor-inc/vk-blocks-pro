@@ -108,9 +108,9 @@ e.g.
 
 == Changelog ==
 
-
 [ Add function ][ Outer (Pro) ] Added background offset feature.
 [ Design Bug Fix ][ Balloon ] Fixed an issue where text inside balloon blocks unintentionally inherited the border color when using a color palette.
+[ Bug Fix ] Fixed broken class names when using Japanese in custom color slugs.
 [ Other ][ Tab (Pro) / Tab Item ] Added block description
 
 = 1.102.0 =

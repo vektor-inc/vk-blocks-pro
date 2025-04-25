@@ -9,6 +9,7 @@ import classnames from 'classnames';
 import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
 import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 export default function save(props) {
 	const { attributes } = props;
@@ -33,10 +34,11 @@ export default function save(props) {
 
 	// カラーパレットに対応
 	const wrapperClasses = classnames('vk_borderBox', {
-		[`vk_borderBox-color-${color}`]: !!color,
-		[`vk_borderBox-background-${bgColor}`]: !!bgColor,
+		[`vk_borderBox-color-${sanitizeSlug(color)}`]: !!color,
+		[`vk_borderBox-background-${sanitizeSlug(bgColor)}`]: !!bgColor,
 		[`has-text-color`]: !!borderColor,
-		[`has-${borderColor}-color`]: !!borderColor && !isHexColor(borderColor),
+		[`has-${sanitizeSlug(borderColor)}-color`]:
+			!!borderColor && !isHexColor(borderColor),
 	});
 	let wrapperStyle = {};
 	if (borderColor !== undefined && isHexColor(borderColor)) {
@@ -79,7 +81,7 @@ export default function save(props) {
 	// title背景
 	const titleClasses = classnames('vk_borderBox_title_container', {
 		[`has-background`]: isFill_title && !!borderColor,
-		[`has-${borderColor}-background-color`]:
+		[`has-${sanitizeSlug(borderColor)}-background-color`]:
 			isFill_title && !!borderColor && !isHexColor(borderColor),
 	});
 	let titleStyle = {};

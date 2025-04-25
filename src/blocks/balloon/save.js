@@ -1,5 +1,6 @@
 import { RichText, InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 export default function save({ attributes }) {
 	const {
@@ -60,8 +61,8 @@ export default function save({ attributes }) {
 			contentBorderClass += ` has-text-color`;
 			//カラーパレットの時
 			if (!isHexColor(balloonBorderColor)) {
-				iconImageBorderClass += ` has-${balloonBorderColor}-color`;
-				contentBorderClass += ` has-${balloonBorderColor}-color`;
+				iconImageBorderClass += ` has-${sanitizeSlug(balloonBorderColor)}-color`;
+				contentBorderClass += ` has-${sanitizeSlug(balloonBorderColor)}-color`;
 			}
 		}
 
@@ -254,7 +255,7 @@ export default function save({ attributes }) {
 		contentBackgroundClass += ` has-background-color`;
 		//カラーパレットの時
 		if (!isHexColor(balloonBgColor)) {
-			contentBackgroundClass += ` has-${balloonBgColor}-background-color`;
+			contentBackgroundClass += ` has-${sanitizeSlug(balloonBgColor)}-background-color`;
 		}
 	}
 

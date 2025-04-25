@@ -77,7 +77,7 @@ export default function StaffEdit(props) {
 		staffTextClassName = classnames('vk_staff_text', staffTextClassName);
 	}
 
-	let staffNameColorInlineStyle = {};
+	const staffNameColorInlineStyle = {};
 	let staffTextNameClassName = '';
 	if (vk_staff_nameColor !== undefined) {
 		staffTextNameClassName += ` has-text-color`;
@@ -86,7 +86,7 @@ export default function StaffEdit(props) {
 		}
 	}
 
-	let staffCaptionColorInlineStyle = {};
+	const staffCaptionColorInlineStyle = {};
 	let staffCaptionClassName = '';
 	if (vk_staff_captionColor !== undefined) {
 		staffCaptionClassName += ` has-text-color`;
@@ -95,7 +95,7 @@ export default function StaffEdit(props) {
 		}
 	}
 
-	let staffPositionColorInlineStyle = {};
+	const staffPositionColorInlineStyle = {};
 	let staffPositionClassName = '';
 	if (vk_staff_positionColor !== undefined) {
 		staffPositionClassName += ` has-text-color`;
@@ -104,7 +104,7 @@ export default function StaffEdit(props) {
 		}
 	}
 
-	let staffProfileTitleColorInlineStyle = {};
+	const staffProfileTitleColorInlineStyle = {};
 	let staffProfileTitleClassName = '';
 	if (vk_staff_profileTitleColor !== undefined) {
 		staffProfileTitleClassName += ` has-text-color`;
@@ -113,7 +113,7 @@ export default function StaffEdit(props) {
 		}
 	}
 
-	let staffProfileTextColorInlineStyle = {};
+	const staffProfileTextColorInlineStyle = {};
 	let staffProfileTextClassName = '';
 	if (vk_staff_profileTextColor !== undefined) {
 		staffProfileTextClassName += ` has-text-color`;

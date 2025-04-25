@@ -1,6 +1,5 @@
 import { InnerBlocks, useBlockProps, RichText } from '@wordpress/block-editor';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
-import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 export default function save(props) {
 	const { attributes } = props;
@@ -80,14 +79,14 @@ export default function save(props) {
 				if (tabOption.tabLabelBackground) {
 					tabColorClass = ' has-background';
 					if (!isHexColor(option.tabColor)) {
-						tabColorClass += ` has-${sanitizeSlug(option.tabColor)}-background-color`;
+						tabColorClass += ` has-${option.tabColor}-background-color`;
 					} else {
 						tabColorStyle.backgroundColor = option.tabColor;
 					}
 				} else if (tabOption.tabLabelBorderTop) {
 					tabSpanColorClass = ' has-border-top';
 					if (!isHexColor(option.tabColor)) {
-						tabSpanColorClass += ` has-${sanitizeSlug(option.tabColor)}-border-color`;
+						tabSpanColorClass += ` has-${option.tabColor}-border-color`;
 					} else {
 						tabSpanColorStyle.borderTopColor = option.tabColor;
 					}

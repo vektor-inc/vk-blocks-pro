@@ -229,13 +229,13 @@ export default function BalloonEdit(props) {
 				if (balloonBgColor !== undefined) {
 					triangleBorderColorBeforeClass += ` has-text-color`;
 					if (!isHexColor(balloonBgColor)) {
-						triangleBorderColorBeforeClass += ` has-${balloonBgColor}-color`;
+						triangleBorderColorBeforeClass += ` has-${sanitizeSlug(balloonBgColor)}-color`;
 					}
 				}
 				if (balloonBorderColor !== undefined) {
 					triangleBorderColorAfterClass += ` has-text-color`;
 					if (!isHexColor(balloonBorderColor)) {
-						triangleBorderColorAfterClass += ` has-${balloonBorderColor}-color`;
+						triangleBorderColorAfterClass += ` has-${sanitizeSlug(balloonBorderColor)}-color`;
 					}
 				}
 				//もくもくの時
@@ -243,13 +243,13 @@ export default function BalloonEdit(props) {
 				if (balloonBorderColor !== undefined) {
 					triangleBorderColorBeforeClass += ` has-text-color`;
 					if (!isHexColor(balloonBorderColor)) {
-						triangleBorderColorBeforeClass += ` has-${balloonBorderColor}-color`;
+						triangleBorderColorBeforeClass += ` has-${sanitizeSlug(balloonBorderColor)}-color`;
 					}
 				}
 				if (balloonBorderColor !== undefined) {
 					triangleBorderColorAfterClass += ` has-text-color`;
 					if (!isHexColor(balloonBorderColor)) {
-						triangleBorderColorAfterClass += ` has-${balloonBorderColor}-color`;
+						triangleBorderColorAfterClass += ` has-${sanitizeSlug(balloonBorderColor)}-color`;
 					}
 				}
 			}
@@ -275,13 +275,13 @@ export default function BalloonEdit(props) {
 				if (balloonBgColor !== undefined) {
 					triangleBorderColorBeforeClass += ` has-text-color`;
 					if (!isHexColor(balloonBgColor)) {
-						triangleBorderColorBeforeClass += ` has-${balloonBgColor}-color`;
+						triangleBorderColorBeforeClass += ` has-${sanitizeSlug(balloonBgColor)}-color`;
 					}
 				}
 				if (balloonBorderColor !== undefined) {
 					triangleBorderColorAfterClass += ` has-text-color`;
 					if (!isHexColor(balloonBorderColor)) {
-						triangleBorderColorAfterClass += ` has-${balloonBorderColor}-color`;
+						triangleBorderColorAfterClass += ` has-${sanitizeSlug(balloonBorderColor)}-color`;
 					}
 				}
 				// もくもくの時
@@ -291,8 +291,8 @@ export default function BalloonEdit(props) {
 					triangleBorderColorBeforeClass += ` has-text-color`;
 					triangleBorderColorAfterClass += ` has-text-color`;
 					if (!isHexColor(balloonBorderColor)) {
-						triangleBorderColorBeforeClass += ` has-${balloonBorderColor}-color`;
-						triangleBorderColorAfterClass += ` has-${balloonBorderColor}-color`;
+						triangleBorderColorBeforeClass += ` has-${sanitizeSlug(balloonBorderColor)}-color`;
+						triangleBorderColorAfterClass += ` has-${sanitizeSlug(balloonBorderColor)}-color`;
 					}
 				}
 			}
@@ -348,7 +348,7 @@ export default function BalloonEdit(props) {
 				if (balloonBgColor !== undefined) {
 					triangleBorderColorBeforeClass += ` has-text-color`;
 					if (!isHexColor(balloonBgColor)) {
-						triangleBorderColorBeforeClass += ` has-${balloonBgColor}-color`;
+						triangleBorderColorBeforeClass += ` has-${sanitizeSlug(balloonBgColor)}-color`;
 					}
 				}
 			}
@@ -373,7 +373,7 @@ export default function BalloonEdit(props) {
 				if (balloonBgColor !== undefined) {
 					triangleBorderColorBeforeClass += ` has-text-color`;
 					if (!isHexColor(balloonBgColor)) {
-						triangleBorderColorBeforeClass += ` has-${balloonBgColor}-color`;
+						triangleBorderColorBeforeClass += ` has-${sanitizeSlug(balloonBgColor)}-color`;
 					}
 				}
 			}

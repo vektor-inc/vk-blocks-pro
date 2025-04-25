@@ -162,7 +162,7 @@ export default function BorderBoxEdit(props) {
 		let iconStyle = ``;
 		const iconClasses = classnames('vk_borderBox_icon_border', {
 			[`has-background`]: !!borderColor,
-			[`has-${borderColor}-background-color`]:
+			[`has-${sanitizeSlug(borderColor)}-background-color`]:
 				!!borderColor && !isHexColor(borderColor),
 		});
 

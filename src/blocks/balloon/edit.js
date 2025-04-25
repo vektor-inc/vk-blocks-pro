@@ -21,6 +21,7 @@ import { __ } from '@wordpress/i18n';
  */
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 /*globals vk_blocks_params */
 
 // eslint-disable-next-line camelcase,no-undef
@@ -182,8 +183,8 @@ export default function BalloonEdit(props) {
 			contentBorderClass += ` has-text-color`;
 			//カラーパレットの時
 			if (!isHexColor(balloonBorderColor)) {
-				iconImageBorderClass += ` has-${balloonBorderColor}-color`;
-				contentBorderClass += ` has-${balloonBorderColor}-color`;
+				iconImageBorderClass += ` has-${sanitizeSlug(balloonBorderColor)}-color`;
+				contentBorderClass += ` has-${sanitizeSlug(balloonBorderColor)}-color`;
 			}
 		}
 
@@ -392,7 +393,7 @@ export default function BalloonEdit(props) {
 		contentBackgroundClass += ` has-background-color`;
 		//カラーパレットの時
 		if (!isHexColor(balloonBgColor)) {
-			contentBackgroundClass += ` has-${balloonBgColor}-background-color`;
+			contentBackgroundClass += ` has-${sanitizeSlug(balloonBgColor)}-background-color`;
 		}
 	}
 

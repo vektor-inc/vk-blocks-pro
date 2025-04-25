@@ -1,5 +1,6 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 export default function save({ attributes }) {
 	const { label, color, style, styleLine, outerPaddingBottom } = attributes;
@@ -15,7 +16,7 @@ export default function save({ attributes }) {
 			if (isHexColor(color)) {
 				inlineStyle = { backgroundColor: `${color}` };
 			} else {
-				styleClass += ` has-${color}-background-color`;
+				styleClass += ` has-${sanitizeSlug(color)}-background-color`;
 			}
 		}
 	} else if (style === 'outlined') {
@@ -25,7 +26,7 @@ export default function save({ attributes }) {
 			if (isHexColor(color)) {
 				inlineStyle = { color: `${color}` };
 			} else {
-				styleClass += ` has-${color}-color`;
+				styleClass += ` has-${sanitizeSlug(color)}-color`;
 			}
 		}
 	}

@@ -270,21 +270,21 @@ $media-xxl-down: 1399.98px;
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
 	.vk_outer_separator {
 		svg {
-		        transform: translateY(0.25px) scale(1.003);
-        		-webkit-transform: translateY(0.25px) scale(1.003);
+		        transform: translateY(0.25px) scale(1.0015);
+        		-webkit-transform: translateY(0.25px) scale(1.0015);
 			backface-visibility: hidden;
 			-webkit-backface-visibility: hidden;
 		}
 	}
 
 	.vk_outer_separator-position-upper svg {	
-		transform: rotate(180deg) translateY(0.25px) scale(1.003);
-        	-webkit-transform: rotate(180deg) translateY(0.25px) scale(1.003);
+		transform: rotate(180deg) translateY(0.25px) scale(1.0015);
+        	-webkit-transform: rotate(180deg) translateY(0.25px) scale(1.0015);
 	}
 
 	.vk_outer_separator-position-lower svg {
-		transform: translateY(0.25px) scale(1.003);
-		-webkit-transform: translateY(0.25px) scale(1.003);
+		transform: translateY(0.25px) scale(1.0015);
+		-webkit-transform: translateY(0.25px) scale(1.0015);
 	}
 }
 

@@ -43,7 +43,8 @@ const blockAttributes3 = {
 const blockAttributes4 = {
 	...blockAttributes3,
 	headingTag: {
-		type: 'string'
+		type: 'string',
+		default: 'h4'
 	}
 }
 

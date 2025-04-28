@@ -9,7 +9,7 @@ import save1_39_2 from './1.39.2/save';
 import save1_43_0 from './1.43.0/save';
 import save1_70_1 from './1.70.1/save';
 import save1_72_1 from './1.72.1/save';
-
+import save1_102_0 from './1.102.0/save';
 const blockAttributes = {
 	content: {
 		type: 'string',
@@ -166,8 +166,11 @@ const blockAttributes12 = {
 	},
 }
 
-
 export const deprecated = [
+	{
+		attributes: blockAttributes12,
+		save: save1_102_0,
+	},
 	{
 		attributes: blockAttributes12,
 		save: save1_72_1,

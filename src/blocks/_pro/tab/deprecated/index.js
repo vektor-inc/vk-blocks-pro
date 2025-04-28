@@ -2,6 +2,7 @@ import save1_73_0 from './1.73.0/save';
 import save1_74_0 from './1.74.0/save';
 import save1_75_0 from './1.75.0/save';
 import save1_78_0 from './1.78.0/save';
+import save1_102_0 from './1.102.0/save';
 
 const blockAttributes = {
 	tabOptionJSON: {
@@ -30,7 +31,6 @@ const blockAttributes = {
 	},
 };
 
-/*
 const blockAttributes2 = {
 	...blockAttributes,
 	tabDisplayOptionsSp: {
@@ -50,9 +50,12 @@ const blockAttributes2 = {
 		default: false
 	}
 }
-*/
 
 const deprecated = [
+	{
+		attributes: blockAttributes2,
+		save: save1_102_0,
+	},
 	{
 		attributes: blockAttributes,
 		save: save1_78_0,

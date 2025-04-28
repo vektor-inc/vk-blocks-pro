@@ -1,5 +1,6 @@
 import save1_75_0 from './1.75.0/save';
 import save1_76_2 from './1.76.2/save';
+import save1_102_0 from './1.102.0/save';
 
 const blockAttributes = {
 	tabLabel: {
@@ -25,6 +26,10 @@ const blockAttributes = {
 };
 
 const deprecated = [
+	{
+		attributes: blockAttributes,
+		save: save1_102_0,
+	},
 	{
 		attributes: blockAttributes,
 		save: save1_76_2,

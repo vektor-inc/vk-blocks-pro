@@ -379,14 +379,16 @@ export default function TabEdit(props) {
 					if (!isHexColor(childBlock.attributes.tabColor)) {
 						tabColorClass += ` has-${sanitizeSlug(childBlock.attributes.tabColor)}-background-color`;
 					} else {
-						tabColorStyle.backgroundColor = childBlock.attributes.tabColor;
+						tabColorStyle.backgroundColor =
+							childBlock.attributes.tabColor;
 					}
 				} else if (tabOption.tabLabelBorderTop) {
 					tabSpanColorClass = '';
 					if (!isHexColor(childBlock.attributes.tabColor)) {
 						tabSpanColorClass += ` has-${sanitizeSlug(childBlock.attributes.tabColor)}-border-color`;
 					} else {
-						tabSpanColorStyle.borderTopColor = childBlock.attributes.tabColor;
+						tabSpanColorStyle.borderTopColor =
+							childBlock.attributes.tabColor;
 					}
 					// Only set color if the label is active
 					if (firstActive === index) {
@@ -396,7 +398,10 @@ export default function TabEdit(props) {
 						);
 						if (borderColorClassMatch) {
 							// Correctly add the color class without duplicating 'has-border-top-HOGEHOGE'
-							tabSpanColorClass = tabSpanColorClass.replace(/ has-border-top-HOGEHOGE/, '');
+							tabSpanColorClass = tabSpanColorClass.replace(
+								/ has-border-top-HOGEHOGE/,
+								''
+							);
 							tabSpanColorClass += ` has-${sanitizeSlug(borderColorClassMatch[1])}-color`;
 						}
 					}

@@ -7,6 +7,7 @@ import OuterHook1_0_13 from './1.0.13/'
 // saveの数分必要
 export default [
 	// 後方互換
+	OuterHook1_60_0, // 1.102.0
 	OuterHook1_60_0, // 1.101.0
 	OuterHook1_60_0, // 1.93.2
 	OuterHook1_60_0, // 1.93.0

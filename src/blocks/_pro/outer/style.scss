@@ -255,13 +255,14 @@ $media-xxl-down: 1399.98px;
 .vk_outer_separator-position-upper {
 	svg {
 		top: 0;
-		transform: rotate(180deg);
+		transform: translateX(.25px) scale(1.003) rotate(180deg);
 	}
 }
 
 .vk_outer_separator-position-lower {
 	svg {
 		bottom: 0;
+		transform: translateX(.25px) scale(1.003);
 	}
 }
 

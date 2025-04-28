@@ -1,4 +1,5 @@
 /* eslint camelcase: 0 */
+import save1_102_0 from './1.102.0/save';
 import save1_36_2 from './1.36.2/save';
 import save1_20_0 from './1.20.0/save';
 
@@ -30,6 +31,10 @@ const blockAttributes = {
 };
 
 const deprecated = [
+	{
+		attributes: blockAttributes,
+		save: save1_102_0,
+	},
 	{
 		attributes: blockAttributes,
 		save: save1_36_2,

@@ -108,7 +108,7 @@ e.g.
 
 == Changelog ==
 
-
+[ Add function ][ Core Excerpt ] Added top and bottom margin settings to the toolbar.
 [ Add function ][ Outer (Pro) ] Added background offset feature.
 [ Design Bug Fix ][ Balloon ] Fixed an issue where text inside balloon blocks unintentionally inherited the border color when using a color palette.
 [ Other ][ Tab (Pro) / Tab Item ] Added block description

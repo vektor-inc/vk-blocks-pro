@@ -126,6 +126,10 @@ const MAY_USED_DYNAMIC_BLOCK = [
 ];
 
 export const isAddMargin = (blockName) => {
+	if (blockName === 'core/post-excerpt') {
+		return true; // 抜粋ブロックは強制的に許可
+	}
+
 	const addExclude = [
 		'vk-blocks/slider-item',
 		'vk-blocks/card-item',

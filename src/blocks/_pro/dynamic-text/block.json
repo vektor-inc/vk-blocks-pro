@@ -65,6 +65,14 @@
 			"type": "boolean",
 			"default": false
 		},
+		"isVertical": {
+			"type": "boolean",
+			"default": false
+		},
+		"isUpright": {
+			"type": "boolean",
+			"default": false
+		},
 		"isButtonStyle": {
 			"type": "boolean",
 			"default": false

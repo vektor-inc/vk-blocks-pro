@@ -102,6 +102,8 @@ export default function DynamicTextEdit(props) {
 		fieldType,
 		isLinkSet,
 		isLinkTarget,
+		isVertical,
+		isUpright,
 		isButtonStyle,
 		buttonColor,
 		buttonType,
@@ -121,6 +123,8 @@ export default function DynamicTextEdit(props) {
 	attributes.parentPageHiddenOption = parentPageHiddenOption;
 	attributes.isLinkSet = isLinkSet;
 	attributes.isLinkTarget = isLinkTarget;
+	attributes.isVertical = isVertical;
+	attributes.isUpright = isUpright;
 	attributes.customFieldLinkText = customFieldLinkText;
 	attributes.isButtonStyle = isButtonStyle;
 	attributes.buttonColor = buttonColor;
@@ -141,6 +145,8 @@ export default function DynamicTextEdit(props) {
 	const blockProps = useBlockProps({
 		className: classnames({
 			[`has-text-align-${textAlign}`]: textAlign,
+			'is-vertical': isVertical,
+			'is-upright': isUpright,
 			vk_dynamicText_button: isButtonStyle,
 			'btn-block': buttonAlign === 'block' && isButtonStyle,
 			'btn-wide': buttonAlign === 'wide' && isButtonStyle,
@@ -598,6 +604,30 @@ export default function DynamicTextEdit(props) {
 							setAttributes({ tagName: value })
 						}
 					/>
+					<BaseControl>
+						<ToggleControl
+							label="Vertical writing"
+							checked={isVertical}
+							onChange={(value) =>
+								setAttributes({
+									isVertical: value,
+								})
+							}
+						/>
+						{isVertical === true && (
+							<>
+								<ToggleControl
+									label="upright text"
+									checked={isUpright}
+									onChange={(value) =>
+										setAttributes({
+											isUpright: value,
+										})
+									}
+								/>
+							</>
+						)}
+					</BaseControl>
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>{editContent}</div>

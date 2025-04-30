@@ -168,7 +168,7 @@ function vk_blocks_post_list_slider_render_callback( $attributes ) {
 		'centeredSlides'      => $attributes['centeredSlides'],
 		'blockId'             => $attributes['blockId'],
 	);
-	$slider_data = json_encode( $slider_data );
+	$slider_data = wp_json_encode( $slider_data );
 
 	$classes = array(
 		'vk_post_list_slider',

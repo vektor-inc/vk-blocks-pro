@@ -24,6 +24,7 @@ import {
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 import { editSliderLaunch } from './edit-slider';
 import { MultiItemSetting } from './edit-multiItem';
+import HeightControl from '@vkblocks/components/height-control';
 
 // eslint-disable no-shadow
 export default function SliderEdit(props) {
@@ -49,6 +50,7 @@ export default function SliderEdit(props) {
 		centeredSlides,
 		navigationPosition,
 		blockId,
+		unit,
 	} = attributes;
 
 	useEffect(() => {
@@ -314,78 +316,17 @@ export default function SliderEdit(props) {
 					title={__('Height', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
-					<AdvancedUnitControl {...props} />
-					<BaseControl
-						label={__(
-							'Slide Height for each device.',
-							'vk-blocks-pro'
-						)}
-						id={`vk_slider-SlideHeight`}
-					>
-						<RangeControl
-							label={__('PC', 'vk-blocks-pro')}
-							value={pc}
-							onChange={(value) => {
-								if (
-									value === null ||
-									value === '' ||
-									value === undefined
-								) {
-									setAttributes({ pc: null });
-								} else {
-									setAttributes({
-										pc: parseFloat(Number(value)),
-									});
-								}
-							}}
-							min={0}
-							max={1000}
-							allowReset={true}
-							resetFallbackValue={null}
-						/>
-						<RangeControl
-							label={__('Tablet', 'vk-blocks-pro')}
-							value={tablet}
-							onChange={(value) => {
-								if (
-									value === null ||
-									value === '' ||
-									value === undefined
-								) {
-									setAttributes({ tablet: null });
-								} else {
-									setAttributes({
-										tablet: parseFloat(Number(value)),
-									});
-								}
-							}}
-							min={0}
-							max={1000}
-							allowReset={true}
-							resetFallbackValue={null}
-						/>
-						<RangeControl
-							label={__('Mobile', 'vk-blocks-pro')}
-							value={mobile}
-							onChange={(value) => {
-								if (
-									value === null ||
-									value === '' ||
-									value === undefined
-								) {
-									setAttributes({ mobile: null });
-								} else {
-									setAttributes({
-										mobile: parseFloat(Number(value)),
-									});
-								}
-							}}
-							min={0}
-							max={1000}
-							allowReset={true}
-							resetFallbackValue={null}
-						/>
-					</BaseControl>
+					<HeightControl
+						label={__('Slide Height for each device.', 'vk-blocks-pro')}
+						valuePC={pc}
+						valueTablet={tablet}
+						valueMobile={mobile}
+						unit={unit}
+						onChangePC={(value) => setAttributes({ pc: parseFloat(Number(value)) })}
+						onChangeTablet={(value) => setAttributes({ tablet: parseFloat(Number(value)) })}
+						onChangeMobile={(value) => setAttributes({ mobile: parseFloat(Number(value)) })}
+						onChangeUnit={(value) => setAttributes({ unit: value })}
+					/>
 				</PanelBody>
 				<PanelBody
 					title={__('Slider Settings', 'vk-blocks-pro')}

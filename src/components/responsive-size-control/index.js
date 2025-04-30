@@ -30,10 +30,14 @@ export default function ResponsiveSizeControl({
 	onChangeTablet,
 	onChangeMobile,
 	onChangeUnit,
-	maxPC = getMaxByUnit(unit),
-	maxTablet = getMaxByUnit(unit),
-	maxMobile = getMaxByUnit(unit),
+	maxPC,
+	maxTablet,
+	maxMobile,
 }) {
+	const defaultMaxPC = maxPC !== undefined ? maxPC : getMaxByUnit(unit);
+	const defaultMaxTablet = maxTablet !== undefined ? maxTablet : getMaxByUnit(unit);
+	const defaultMaxMobile = maxMobile !== undefined ? maxMobile : getMaxByUnit(unit);
+
 	return (
 		<>
 			<AdvancedUnitControl
@@ -49,7 +53,7 @@ export default function ResponsiveSizeControl({
 					value={valuePC}
 					onChange={onChangePC}
 					min={0}
-					max={maxPC}
+					max={defaultMaxPC}
 					step={getStepByUnit(unit)}
 				/>
 				<RangeControl
@@ -57,7 +61,7 @@ export default function ResponsiveSizeControl({
 					value={valueTablet}
 					onChange={onChangeTablet}
 					min={0}
-					max={maxTablet}
+					max={defaultMaxTablet}
 					step={getStepByUnit(unit)}
 				/>
 				<RangeControl
@@ -65,7 +69,7 @@ export default function ResponsiveSizeControl({
 					value={valueMobile}
 					onChange={onChangeMobile}
 					min={0}
-					max={maxMobile}
+					max={defaultMaxMobile}
 					step={getStepByUnit(unit)}
 				/>
 			</BaseControl>

@@ -260,7 +260,7 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 
 	$classes = 'vk_dynamicText';
 	if ( isset( $attributes['textAlign'] ) ) {
-		$classes ..= ' has-text-align-' . $attributes['textAlign'];
+		$classes .= ' has-text-align-' . $attributes['textAlign'];
 	}
 	if ( $attributes['isVertical'] ) {
 		$classes .= ' is-vertical';

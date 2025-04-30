@@ -13,7 +13,7 @@ import GenerateBgImage from './GenerateBgImage';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import LinkToolbar from '@vkblocks/components/link-toolbar';
-import HeightControl from '@vkblocks/components/height-control';
+import ResponsiveSizeControl from '@vkblocks/components/responsive-size-control';
 const prefix = 'vkb-outer';
 
 /**
@@ -695,16 +695,6 @@ export default function OuterEdit(props) {
 			default:
 				return 100;
 		}
-	};
-
-	const handleUnitChange = (newUnit) => {
-		const newMax = getMaxHeight(newUnit);
-		setAttributes({
-			minHeightUnit: newUnit,
-			minHeightValuePC: Math.min(minHeightValuePC, newMax),
-			minHeightValueTablet: Math.min(minHeightValueTablet, newMax),
-			minHeightValueMobile: Math.min(minHeightValueMobile, newMax),
-		});
 	};
 
 	useEffect(() => {
@@ -1632,7 +1622,7 @@ export default function OuterEdit(props) {
 					title={__('Min Height Setting', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
-					<HeightControl
+					<ResponsiveSizeControl
 						label={__('Min Height Setting', 'vk-blocks-pro')}
 						valuePC={minHeightValuePC}
 						valueTablet={minHeightValueTablet}
@@ -1644,7 +1634,7 @@ export default function OuterEdit(props) {
 								value,
 								minHeightUnit,
 								0,
-								getMaxHeight(minHeightUnit)
+								getMaxByUnit(minHeightUnit)
 							)
 						}
 						onChangeTablet={(value) =>
@@ -1653,7 +1643,7 @@ export default function OuterEdit(props) {
 								value,
 								minHeightUnit,
 								0,
-								getMaxHeight(minHeightUnit)
+								getMaxByUnit(minHeightUnit)
 							)
 						}
 						onChangeMobile={(value) =>
@@ -1662,10 +1652,10 @@ export default function OuterEdit(props) {
 								value,
 								minHeightUnit,
 								0,
-								getMaxHeight(minHeightUnit)
+								getMaxByUnit(minHeightUnit)
 							)
 						}
-						onChangeUnit={handleUnitChange}
+						onChangeUnit={(value) => setAttributes({ unit: value })}
 					/>
 				</PanelBody>
 			</InspectorControls>

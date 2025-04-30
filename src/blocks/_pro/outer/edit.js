@@ -13,6 +13,7 @@ import GenerateBgImage from './GenerateBgImage';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import LinkToolbar from '@vkblocks/components/link-toolbar';
+import HeightControl from '@vkblocks/components/height-control';
 const prefix = 'vkb-outer';
 
 /**
@@ -680,24 +681,6 @@ export default function OuterEdit(props) {
 			}
 		),
 	});
-
-	// minHeightUnit に基づいて動的に最大値を設定
-	const getMaxHeight = (unit) => {
-		switch (unit) {
-			case 'px':
-				return 1000;
-			case 'em':
-			case 'rem':
-				return 500;
-			case 'vh':
-			case 'svh':
-			case 'lvh':
-			case 'dvh':
-				return 100;
-			default:
-				return 500;
-		}
-	};
 
 	// bgOffsetUnit に基づいて動的に最大値を設定
 	const getMaxOffset = (unit) => {
@@ -1649,42 +1632,13 @@ export default function OuterEdit(props) {
 					title={__('Min Height Setting', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
-					<RangeControl
-						label={__('Mobile', 'vk-blocks-pro')}
-						value={minHeightValueMobile}
-						onChange={(value) =>
-							setAttributesByUnit(
-								'minHeightValueMobile',
-								value,
-								minHeightUnit,
-								0,
-								getMaxHeight(minHeightUnit)
-							)
-						}
-						min="0"
-						max={getMaxHeight(minHeightUnit)}
-						step={'px' === minHeightUnit ? 1 : 0.1}
-					/>
-					<RangeControl
-						label={__('Tablet', 'vk-blocks-pro')}
-						value={minHeightValueTablet}
-						onChange={(value) =>
-							setAttributesByUnit(
-								'minHeightValueTablet',
-								value,
-								minHeightUnit,
-								0,
-								getMaxHeight(minHeightUnit)
-							)
-						}
-						min="0"
-						max={getMaxHeight(minHeightUnit)}
-						step={'px' === minHeightUnit ? 1 : 0.1}
-					/>
-					<RangeControl
-						label={__('PC', 'vk-blocks-pro')}
-						value={minHeightValuePC}
-						onChange={(value) =>
+					<HeightControl
+						label={__('Min Height Setting', 'vk-blocks-pro')}
+						valuePC={minHeightValuePC}
+						valueTablet={minHeightValueTablet}
+						valueMobile={minHeightValueMobile}
+						unit={minHeightUnit}
+						onChangePC={(value) =>
 							setAttributesByUnit(
 								'minHeightValuePC',
 								value,
@@ -1693,44 +1647,25 @@ export default function OuterEdit(props) {
 								getMaxHeight(minHeightUnit)
 							)
 						}
-						min="0"
-						max={getMaxHeight(minHeightUnit)}
-						step={'px' === minHeightUnit ? 1 : 0.1}
-					/>
-					<SelectControl
-						label={__('Unit Type', 'vk-blocks-pro')}
-						value={minHeightUnit}
-						onChange={handleUnitChange}
-						options={[
-							{
-								value: 'px',
-								label: __('px', 'vk-blocks-pro'),
-							},
-							{
-								value: 'em',
-								label: __('em', 'vk-blocks-pro'),
-							},
-							{
-								value: 'rem',
-								label: __('rem', 'vk-blocks-pro'),
-							},
-							{
-								value: 'vh',
-								label: __('vh', 'vk-blocks-pro'),
-							},
-							{
-								value: 'svh',
-								label: __('svh', 'vk-blocks-pro'),
-							},
-							{
-								value: 'lvh',
-								label: __('lvh', 'vk-blocks-pro'),
-							},
-							{
-								value: 'dvh',
-								label: __('dvh', 'vk-blocks-pro'),
-							},
-						]}
+						onChangeTablet={(value) =>
+							setAttributesByUnit(
+								'minHeightValueTablet',
+								value,
+								minHeightUnit,
+								0,
+								getMaxHeight(minHeightUnit)
+							)
+						}
+						onChangeMobile={(value) =>
+							setAttributesByUnit(
+								'minHeightValueMobile',
+								value,
+								minHeightUnit,
+								0,
+								getMaxHeight(minHeightUnit)
+							)
+						}
+						onChangeUnit={handleUnitChange}
 					/>
 				</PanelBody>
 			</InspectorControls>

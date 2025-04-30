@@ -112,6 +112,7 @@ e.g.
 [ Add function ][ Outer (Pro) ] Added background offset feature.
 [ Design Bug Fix ][ Balloon ] Fixed an issue where text inside balloon blocks unintentionally inherited the border color when using a color palette.
 [ Other ][ Tab (Pro) / Tab Item ] Added block description
+[ Other ][ Outer (Pro) / Slider ] Refactored the numeric value & unit input for each device into a shared component
 
 = 1.102.0 =
 [ Design Bug Fix ][ Outer (Pro) ] Fixed unexpected margin affecting background color display due to layout flow styles in WordPress 6.8.

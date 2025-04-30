@@ -255,13 +255,14 @@ $media-xxl-down: 1399.98px;
 .vk_outer_separator-position-upper {
 	svg {
 		top: 0;
-		transform: rotate(180deg);
+		transform: translateX(0.25px) scale(1.008) rotate(180deg);
 	}
 }
 
 .vk_outer_separator-position-lower {
 	svg {
 		bottom: 0;
+		transform: translateX(0.25px) scale(1.008);
 	}
 }
 
@@ -269,21 +270,21 @@ $media-xxl-down: 1399.98px;
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
 	.vk_outer_separator {
 		svg {
-			transform: translateY(-0.5px) scale(1);
-			-webkit-transform: translateY(-0.5px) scale(1);
+		        transform: translateY(0.25px) scale(1.004);
+        		-webkit-transform: translateY(0.25px) scale(1.004);
 			backface-visibility: hidden;
 			-webkit-backface-visibility: hidden;
 		}
 	}
 
-	.vk_outer_separator-position-upper svg {
-		transform: rotate(180deg) translateY(0.5px) scale(1);
-		-webkit-transform: rotate(180deg) translateY(0.5px) scale(1);
+	.vk_outer_separator-position-upper svg {	
+		transform: rotate(180deg) translateY(0.25px) scale(1.004);
+        	-webkit-transform: rotate(180deg) translateY(0.25px) scale(1.004);
 	}
 
 	.vk_outer_separator-position-lower svg {
-		transform: translateY(0.5px) scale(1);
-		-webkit-transform: translateY(0.5px) scale(1);
+		transform: translateY(0.25px) scale(1.004);
+		-webkit-transform: translateY(0.25px) scale(1.004);
 	}
 }
 

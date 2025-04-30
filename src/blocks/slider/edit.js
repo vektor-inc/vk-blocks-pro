@@ -1,5 +1,4 @@
 import { AdvancedToggleControl } from '@vkblocks/components/advanced-toggle-control';
-import AdvancedUnitControl from '@vkblocks/components/advanced-unit-control';
 import { __ } from '@wordpress/i18n';
 import { useEffect } from '@wordpress/element';
 import {
@@ -16,7 +15,6 @@ import {
 	__experimentalToggleGroupControl as ToggleGroupControl,
 	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
 	SelectControl,
-	RangeControl,
 	ToolbarGroup,
 	ToolbarDropdownMenu,
 	Dashicon,
@@ -317,14 +315,23 @@ export default function SliderEdit(props) {
 					initialOpen={false}
 				>
 					<ResponsiveSizeControl
-						label={__('Slide Height for each device.', 'vk-blocks-pro')}
+						label={__(
+							'Slide Height for each device.',
+							'vk-blocks-pro'
+						)}
 						valuePC={pc}
 						valueTablet={tablet}
 						valueMobile={mobile}
 						unit={unit}
-						onChangePC={(value) => setAttributes({ pc: parseFloat(Number(value)) })}
-						onChangeTablet={(value) => setAttributes({ tablet: parseFloat(Number(value)) })}
-						onChangeMobile={(value) => setAttributes({ mobile: parseFloat(Number(value)) })}
+						onChangePC={(value) =>
+							setAttributes({ pc: parseFloat(Number(value)) })
+						}
+						onChangeTablet={(value) =>
+							setAttributes({ tablet: parseFloat(Number(value)) })
+						}
+						onChangeMobile={(value) =>
+							setAttributes({ mobile: parseFloat(Number(value)) })
+						}
 						onChangeUnit={(value) => setAttributes({ unit: value })}
 					/>
 				</PanelBody>

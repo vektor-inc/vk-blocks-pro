@@ -35,8 +35,10 @@ export default function ResponsiveSizeControl({
 	maxMobile,
 }) {
 	const defaultMaxPC = maxPC !== undefined ? maxPC : getMaxByUnit(unit);
-	const defaultMaxTablet = maxTablet !== undefined ? maxTablet : getMaxByUnit(unit);
-	const defaultMaxMobile = maxMobile !== undefined ? maxMobile : getMaxByUnit(unit);
+	const defaultMaxTablet =
+		maxTablet !== undefined ? maxTablet : getMaxByUnit(unit);
+	const defaultMaxMobile =
+		maxMobile !== undefined ? maxMobile : getMaxByUnit(unit);
 
 	return (
 		<>
@@ -44,10 +46,9 @@ export default function ResponsiveSizeControl({
 				attributes={{ unit }}
 				setAttributes={({ unit }) => {
 					onChangeUnit(unit);
-					handleUnitChange(unit, 'minHeightUnit', ['minHeightValuePC', 'minHeightValueTablet', 'minHeightValueMobile']);
 				}}
 			/>
-			<BaseControl label={label}>
+			<BaseControl label={label} id={`responsive-size-control-${label}`}>
 				<RangeControl
 					label="PC"
 					value={valuePC}

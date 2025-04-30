@@ -14,6 +14,7 @@ import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import LinkToolbar from '@vkblocks/components/link-toolbar';
 import ResponsiveSizeControl from '@vkblocks/components/responsive-size-control';
+import { getMaxByUnit } from '@vkblocks/components/responsive-size-control';
 const prefix = 'vkb-outer';
 
 /**
@@ -1527,95 +1528,20 @@ export default function OuterEdit(props) {
 					)}
 					initialOpen={false}
 				>
-					<RangeControl
-						label={__('Mobile', 'vk-blocks-pro')}
-						value={innerSideSpaceValueMobile}
-						onChange={(value) =>
-							setAttributesByUnit(
-								'innerSideSpaceValueMobile',
-								value,
-								innerSideSpaceUnit,
-								0,
-								100
-							)
-						}
-						min="0"
-						max="100"
-						step={'px' === innerSideSpaceUnit ? 1 : 0.1}
-					/>
-					<RangeControl
-						label={__('Tablet', 'vk-blocks-pro')}
-						value={innerSideSpaceValueTablet}
-						onChange={(value) =>
-							setAttributesByUnit(
-								'innerSideSpaceValueTablet',
-								value,
-								innerSideSpaceUnit,
-								0,
-								200
-							)
-						}
-						min="0"
-						max="200"
-						step={'px' === innerSideSpaceUnit ? 1 : 0.1}
-					/>
-					<RangeControl
-						label={__('PC', 'vk-blocks-pro')}
-						value={innerSideSpaceValuePC}
-						onChange={(value) =>
-							setAttributesByUnit(
-								'innerSideSpaceValuePC',
-								value,
-								innerSideSpaceUnit,
-								0,
-								300
-							)
-						}
-						min="0"
-						max="300"
-						step={'px' === innerSideSpaceUnit ? 1 : 0.1}
-					/>
-					<SelectControl
-						label={__('Unit Type', 'vk-blocks-pro')}
-						value={innerSideSpaceUnit}
-						onChange={(value) => {
-							setAttributes({
-								innerSideSpaceValueMobile: parseInt(
-									innerSideSpaceValueMobile
-								),
-							});
-							setAttributes({
-								innerSideSpaceValueTablet: parseInt(
-									innerSideSpaceValueTablet
-								),
-							});
-							setAttributes({
-								innerSideSpaceValuePC: parseInt(
-									innerSideSpaceValuePC
-								),
-							});
-							setAttributes({
-								innerSideSpaceUnit: value,
-							});
-						}}
-						options={[
-							{
-								value: 'px',
-								label: __('px', 'vk-blocks-pro'),
-							},
-							{
-								value: 'em',
-								label: __('em', 'vk-blocks-pro'),
-							},
-							{
-								value: 'rem',
-								label: __('rem', 'vk-blocks-pro'),
-							},
-							{
-								value: 'vw',
-								label: __('vw', 'vk-blocks-pro'),
-							},
-						]}
+					<ResponsiveSizeControl
+						label={__('Container Inner Side Space Setting', 'vk-blocks-pro')}
+						valuePC={innerSideSpaceValuePC}
+						valueTablet={innerSideSpaceValueTablet}
+						valueMobile={innerSideSpaceValueMobile}
+						unit={innerSideSpaceUnit}
+						onChangePC={(value) => setAttributes({ innerSideSpaceValuePC: parseInt(value) })}
+						onChangeTablet={(value) => setAttributes({ innerSideSpaceValueTablet: parseInt(value) })}
+						onChangeMobile={(value) => setAttributes({ innerSideSpaceValueMobile: parseInt(value) })}
+						onChangeUnit={(value) => setAttributes({ innerSideSpaceUnit: value })}
+						unitOptions={['px', 'em', 'rem', 'vw']}
+						maxPC={300}
+						maxTablet={200}
+						maxMobile={100}
 					/>
 				</PanelBody>
 				<PanelBody
@@ -1623,40 +1549,51 @@ export default function OuterEdit(props) {
 					initialOpen={false}
 				>
 					<ResponsiveSizeControl
-						label={__('Min Height Setting', 'vk-blocks-pro')}
-						valuePC={minHeightValuePC}
-						valueTablet={minHeightValueTablet}
-						valueMobile={minHeightValueMobile}
-						unit={minHeightUnit}
-						onChangePC={(value) =>
-							setAttributesByUnit(
-								'minHeightValuePC',
-								value,
-								minHeightUnit,
-								0,
-								getMaxByUnit(minHeightUnit)
-							)
-						}
-						onChangeTablet={(value) =>
-							setAttributesByUnit(
-								'minHeightValueTablet',
-								value,
-								minHeightUnit,
-								0,
-								getMaxByUnit(minHeightUnit)
-							)
-						}
-						onChangeMobile={(value) =>
-							setAttributesByUnit(
-								'minHeightValueMobile',
-								value,
-								minHeightUnit,
-								0,
-								getMaxByUnit(minHeightUnit)
-							)
-						}
-						onChangeUnit={(value) => setAttributes({ unit: value })}
-					/>
+	label={__('Min Height Setting', 'vk-blocks-pro')}
+	valuePC={minHeightValuePC}
+	valueTablet={minHeightValueTablet}
+	valueMobile={minHeightValueMobile}
+	unit={minHeightUnit}
+	onChangePC={(value) =>
+		setAttributesByUnit(
+			'minHeightValuePC',
+			value,
+			minHeightUnit,
+			0,
+			getMaxByUnit(minHeightUnit)
+		)
+	}
+	onChangeTablet={(value) =>
+		setAttributesByUnit(
+			'minHeightValueTablet',
+			value,
+			minHeightUnit,
+			0,
+			getMaxByUnit(minHeightUnit)
+		)
+	}
+	onChangeMobile={(value) =>
+		setAttributesByUnit(
+			'minHeightValueMobile',
+			value,
+			minHeightUnit,
+			0,
+			getMaxByUnit(minHeightUnit)
+		)
+	}
+	onChangeUnit={(unit) => {
+		setAttributes({ minHeightUnit: unit });
+		handleUnitChange(unit, 'minHeightUnit', [
+			'minHeightValuePC',
+			'minHeightValueTablet',
+			'minHeightValueMobile',
+		]);
+	}}
+	maxPC={getMaxByUnit(minHeightUnit)}
+	maxTablet={getMaxByUnit(minHeightUnit)}
+	maxMobile={getMaxByUnit(minHeightUnit)}
+/>
+
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>

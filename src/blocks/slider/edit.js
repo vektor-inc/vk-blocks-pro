@@ -24,7 +24,7 @@ import {
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 import { editSliderLaunch } from './edit-slider';
 import { MultiItemSetting } from './edit-multiItem';
-import HeightControl from '@vkblocks/components/height-control';
+import ResponsiveSizeControl from '@vkblocks/components/responsive-size-control';
 
 // eslint-disable no-shadow
 export default function SliderEdit(props) {
@@ -316,7 +316,7 @@ export default function SliderEdit(props) {
 					title={__('Height', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
-					<HeightControl
+					<ResponsiveSizeControl
 						label={__('Slide Height for each device.', 'vk-blocks-pro')}
 						valuePC={pc}
 						valueTablet={tablet}

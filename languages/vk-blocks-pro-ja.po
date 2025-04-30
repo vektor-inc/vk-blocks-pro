@@ -1775,7 +1775,7 @@ msgstr "svh"
 
 #: src/blocks/_pro/outer/edit.js:1452 src/utils/unit-options.js:30
 msgid "lvh"
-msgstr "vh"
+msgstr "lvh"
 
 #: src/blocks/_pro/outer/edit.js:1456 src/utils/unit-options.js:34
 msgid "dvh"

@@ -22,7 +22,9 @@ import {
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 import { editSliderLaunch } from './edit-slider';
 import { MultiItemSetting } from './edit-multiItem';
-import ResponsiveSizeControl from '@vkblocks/components/responsive-size-control';
+import ResponsiveSizeControl, {
+	getMaxByUnit,
+} from '@vkblocks/components/responsive-size-control';
 
 // eslint-disable no-shadow
 export default function SliderEdit(props) {
@@ -331,6 +333,9 @@ export default function SliderEdit(props) {
 							setAttributes({ mobile: value })
 						}
 						onChangeUnit={(value) => setAttributes({ unit: value })}
+						maxPC={getMaxByUnit(unit)}
+						maxTablet={getMaxByUnit(unit)}
+						maxMobile={getMaxByUnit(unit)}
 					/>
 				</PanelBody>
 				<PanelBody

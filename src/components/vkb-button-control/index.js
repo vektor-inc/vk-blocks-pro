@@ -737,7 +737,7 @@ export class VKBButton extends Component {
 					{parse(iconAfter)}
 				</div>
 				{/*サブキャプションが入力された時のみ表示*/}
-				{subCaption !== '' && (
+				{subCaption !== '' && subCaption !== undefined && (
 					<p className={'vk_button_link_subCaption'}>{subCaption}</p>
 				)}
 			</a>

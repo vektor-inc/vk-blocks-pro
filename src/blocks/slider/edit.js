@@ -323,15 +323,9 @@ export default function SliderEdit(props) {
 						valueTablet={tablet}
 						valueMobile={mobile}
 						unit={unit}
-						onChangePC={(value) =>
-							setAttributes({ pc: parseFloat(Number(value)) })
-						}
-						onChangeTablet={(value) =>
-							setAttributes({ tablet: parseFloat(Number(value)) })
-						}
-						onChangeMobile={(value) =>
-							setAttributes({ mobile: parseFloat(Number(value)) })
-						}
+						onChangePC={(value) => setAttributes({ pc: value })}
+						onChangeTablet={(value) => setAttributes({ tablet: value })}
+						onChangeMobile={(value) => setAttributes({ mobile: value })}
 						onChangeUnit={(value) => setAttributes({ unit: value })}
 					/>
 				</PanelBody>

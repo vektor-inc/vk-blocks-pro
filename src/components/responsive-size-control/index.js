@@ -65,7 +65,9 @@ export default function ResponsiveSizeControl({
 				<RangeControl
 					label="Tablet"
 					value={valueTablet}
-					onChange={(value) => handleValueChange(value, onChangeTablet)}
+					onChange={(value) =>
+						handleValueChange(value, onChangeTablet)
+					}
 					min={0}
 					max={defaultMaxTablet}
 					step={getStepByUnit(unit)}
@@ -73,7 +75,9 @@ export default function ResponsiveSizeControl({
 				<RangeControl
 					label="Mobile"
 					value={valueMobile}
-					onChange={(value) => handleValueChange(value, onChangeMobile)}
+					onChange={(value) =>
+						handleValueChange(value, onChangeMobile)
+					}
 					min={0}
 					max={defaultMaxMobile}
 					step={getStepByUnit(unit)}

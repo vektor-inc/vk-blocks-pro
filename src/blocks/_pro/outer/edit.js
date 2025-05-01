@@ -429,15 +429,6 @@ export default function OuterEdit(props) {
 		};
 	}
 
-	const setAttributesByUnit = (key, value, unit, min, max) => {
-		if ('px' === unit) {
-			value = parseInt(value);
-		}
-		setAttributes({
-			[key]: toNumber(value, min, max),
-		});
-	};
-
 	// useRefの定義
 	const blockRef = useRef(null);
 	const defaultFocalPoint = { x: 0.5, y: 0.5 };
@@ -1573,35 +1564,25 @@ export default function OuterEdit(props) {
 						valueMobile={minHeightValueMobile}
 						unit={minHeightUnit}
 						onChangePC={(value) =>
-							setAttributesByUnit(
-								'minHeightValuePC',
-								value,
-								minHeightUnit,
-								0,
-								getMaxByUnit(minHeightUnit)
-							)
+							setAttributes({
+								minHeightValuePC: value,
+							})
 						}
 						onChangeTablet={(value) =>
-							setAttributesByUnit(
-								'minHeightValueTablet',
-								value,
-								minHeightUnit,
-								0,
-								getMaxByUnit(minHeightUnit)
-							)
+							setAttributes({
+								minHeightValueTablet: value,
+							})
 						}
 						onChangeMobile={(value) =>
-							setAttributesByUnit(
-								'minHeightValueMobile',
-								value,
-								minHeightUnit,
-								0,
-								getMaxByUnit(minHeightUnit)
-							)
+							setAttributes({
+								minHeightValueMobile: value,
+							})
 						}
-						onChangeUnit={(unit) => {
-							setAttributes({ minHeightUnit: unit });
-						}}
+						onChangeUnit={(value) =>
+							setAttributes({
+								minHeightUnit: value,
+							})
+						}
 						maxPC={getMaxByUnit(minHeightUnit)}
 						maxTablet={getMaxByUnit(minHeightUnit)}
 						maxMobile={getMaxByUnit(minHeightUnit)}

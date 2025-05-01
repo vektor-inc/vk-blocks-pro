@@ -324,8 +324,12 @@ export default function SliderEdit(props) {
 						valueMobile={mobile}
 						unit={unit}
 						onChangePC={(value) => setAttributes({ pc: value })}
-						onChangeTablet={(value) => setAttributes({ tablet: value })}
-						onChangeMobile={(value) => setAttributes({ mobile: value })}
+						onChangeTablet={(value) =>
+							setAttributes({ tablet: value })
+						}
+						onChangeMobile={(value) =>
+							setAttributes({ mobile: value })
+						}
 						onChangeUnit={(value) => setAttributes({ unit: value })}
 					/>
 				</PanelBody>

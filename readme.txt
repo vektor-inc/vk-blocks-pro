@@ -109,6 +109,7 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Core Excerpt ] Added top and bottom margin settings to the toolbar.
+[ Add function ][ Dynamic Text (Pro) ] Added a mode to select a VK Button-style design when using a custom field of link type.
 [ Add function ][ Outer (Pro) ] Added background offset feature.
 [ Design Bug Fix ][ Outer (Pro) ] Removed unintended borders left and right separators.
 [ Design Bug Fix ][ Balloon ] Fixed an issue where text inside balloon blocks unintentionally inherited the border color when using a color palette.

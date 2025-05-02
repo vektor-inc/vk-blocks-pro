@@ -28,12 +28,6 @@ export default function save(props) {
 		bgFocalPointPC,
 		bgFocalPointTablet,
 		bgFocalPointMobile,
-		bgOffsetTop,
-		bgOffsetBottom,
-		bgOffsetLeft,
-		bgOffsetRight,
-		bgOffsetUnit,
-		bgOffsetDisableMobile,
 		outerWidth,
 		padding_left_and_right, //eslint-disable-line camelcase
 		padding_top_and_bottom, //eslint-disable-line camelcase
@@ -112,23 +106,6 @@ export default function save(props) {
 		'--bg-position-tablet': bgFocalPointTablet
 			? `${bgFocalPointTablet.x * 100}% ${bgFocalPointTablet.y * 100}%`
 			: undefined,
-		...((bgOffsetTop ||
-			bgOffsetBottom ||
-			bgOffsetLeft ||
-			bgOffsetRight) && {
-			...(bgOffsetTop && {
-				'--bg-offset-top': `${bgOffsetTop}${bgOffsetUnit}`,
-			}),
-			...(bgOffsetBottom && {
-				'--bg-offset-bottom': `${bgOffsetBottom}${bgOffsetUnit}`,
-			}),
-			...(bgOffsetLeft && {
-				'--bg-offset-left': `${bgOffsetLeft}${bgOffsetUnit}`,
-			}),
-			...(bgOffsetRight && {
-				'--bg-offset-right': `${bgOffsetRight}${bgOffsetUnit}`,
-			}),
-		}),
 		'--min-height-mobile': minHeightValueMobile
 			? `${minHeightValueMobile}${minHeightUnit}`
 			: 'auto',
@@ -146,24 +123,13 @@ export default function save(props) {
 			? `vk_outer-width-${outerWidth} align${outerWidth}`
 			: 'vk_outer-width-normal';
 
-	// オフセットが設定されているかどうかをチェック
-	const hasBackgroundOffset =
-		bgOffsetTop !== 0 ||
-		bgOffsetBottom !== 0 ||
-		bgOffsetLeft !== 0 ||
-		bgOffsetRight !== 0;
-
 	// classBgPositionのクラス切り替え
-	if (!hasBackgroundOffset) {
-		if (bgPosition === 'parallax') {
-			classBgPosition = 'vk_outer-bgPosition-parallax vk-prlx';
-		} else if (bgPosition === 'fixed') {
-			classBgPosition = 'vk_outer-bgPosition-fixed';
-		} else if (bgPosition === 'repeat') {
-			classBgPosition = 'vk_outer-bgPosition-repeat';
-		} else {
-			classBgPosition = 'vk_outer-bgPosition-normal';
-		}
+	if (bgPosition === 'parallax') {
+		classBgPosition = 'vk_outer-bgPosition-parallax vk-prlx';
+	} else if (bgPosition === 'fixed') {
+		classBgPosition = 'vk_outer-bgPosition-fixed';
+	} else if (bgPosition === 'repeat') {
+		classBgPosition = 'vk_outer-bgPosition-repeat';
 	} else {
 		classBgPosition = 'vk_outer-bgPosition-normal';
 	}
@@ -215,14 +181,8 @@ export default function save(props) {
 
 	// Dividerエフェクトがない時のみ枠線を追加
 	let borderStyleProperty = {};
-
-	// オフセットが設定されている場合は、BorderとDividerの設定を無効化
-	if (hasBackgroundOffset) {
-		borderStyleProperty = {
-			border: 'none',
-			borderRadius: '0px',
-		};
-	} else if (!levelSettingPerDevice) {
+	//eslint-disable-next-line camelcase
+	if (!levelSettingPerDevice) {
 		if (
 			upper_level === 0 && //eslint-disable-line camelcase
 			lower_level === 0 && //eslint-disable-line camelcase
@@ -290,11 +250,8 @@ export default function save(props) {
 			`vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 			{
 				[`has-border-color`]:
-					!hasBackgroundOffset &&
-					borderStyle !== 'none' &&
-					borderColor !== undefined,
+					borderStyle !== 'none' && borderColor !== undefined,
 				[`has-${borderColor}-border-color`]:
-					!hasBackgroundOffset &&
 					borderStyle !== 'none' &&
 					borderColor !== undefined &&
 					!isHexColor(borderColor),
@@ -302,9 +259,6 @@ export default function save(props) {
 					minHeightValuePC > 0 ||
 					minHeightValueTablet > 0 ||
 					minHeightValueMobile > 0,
-				[`has-background-offset`]: hasBackgroundOffset,
-				[`has-background-offset-disabled-mobile`]:
-					bgOffsetDisableMobile,
 			}
 		),
 	});
@@ -332,33 +286,29 @@ export default function save(props) {
 			{linkUrl && GetLinkUrl}
 			{GetBgImage}
 			<div>
-				{!hasBackgroundOffset &&
-					whichSideUpper &&
-					componentDivider(
-						upper_level,
-						upperDividerBgColor,
-						whichSideUpper,
-						dividerType,
-						levelSettingPerDevice,
-						upper_level_mobile,
-						upper_level_tablet,
-						upper_level_pc
-					)}
+				{componentDivider(
+					upper_level,
+					upperDividerBgColor,
+					whichSideUpper,
+					dividerType,
+					levelSettingPerDevice,
+					upper_level_mobile,
+					upper_level_tablet,
+					upper_level_pc
+				)}
 				<div className={containerClass}>
 					<InnerBlocks.Content />
 				</div>
-				{!hasBackgroundOffset &&
-					whichSideLower &&
-					componentDivider(
-						lower_level,
-						lowerDividerBgColor,
-						whichSideLower,
-						dividerType,
-						levelSettingPerDevice,
-						lower_level_mobile,
-						lower_level_tablet,
-						lower_level_pc
-					)}
+				{componentDivider(
+					lower_level,
+					lowerDividerBgColor,
+					whichSideLower,
+					dividerType,
+					levelSettingPerDevice,
+					lower_level_mobile,
+					lower_level_tablet,
+					lower_level_pc
+				)}
 			</div>
 		</div>
 	);

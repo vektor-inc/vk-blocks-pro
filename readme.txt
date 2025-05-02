@@ -108,12 +108,20 @@ e.g.
 
 == Changelog ==
 
+= 1.103.0 =
+[ Add function ][ Core Excerpt ] Added top and bottom margin settings to the toolbar.
+[ Add function ][ Outer (Pro) ] Added background offset feature.
+[ Design Bug Fix ][ Outer (Pro) ] Removed unintended borders left and right separators.
+[ Design Bug Fix ][ Balloon ] Fixed an issue where text inside balloon blocks unintentionally inherited the border color when using a color palette.
+[ Other ][ Tab (Pro) / Tab Item ] Added block description
+
 = 1.102.0 =
 [ Design Bug Fix ][ Outer (Pro) ] Fixed unexpected margin affecting background color display due to layout flow styles in WordPress 6.8.
-[ Design Bug Fix ][ Outer ] Removed unintended borders above and below separators.
+[ Design Bug Fix ][ Outer (Pro) ] Removed unintended borders above and below separators.
 [ Bug Fix ][ Pro ] When VK Blocks Pro is activated, VK Blocks should be automatically deactivated.
 
 = 1.101.0 =
+[ Add function ][ Dynamic Text (Pro) ] Vertical writing is now available.
 [ Specification change ][ Dynamic Text (Pro) ] Allows i-tags in custom field link text.
 [ Bug Fix ][ Step (Pro) ] Fix it so that leaving the starting number for a step blank does not result in an error.
 

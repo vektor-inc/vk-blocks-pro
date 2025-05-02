@@ -28,6 +28,8 @@ import {
 	ToggleControl,
 	ToolbarGroup,
 	FocalPointPicker,
+	__experimentalToggleGroupControl as ToggleGroupControl,
+	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
 } from '@wordpress/components';
 import {
 	InspectorControls,
@@ -48,12 +50,19 @@ export default function OuterEdit(props) {
 		bgImageTablet,
 		bgImageMobile,
 		bgPosition,
+		bgPositionType,
 		bgFocalPointPC,
 		bgFocalPointTablet,
 		bgFocalPointMobile,
 		enableFocalPointPC,
 		enableFocalPointTablet,
 		enableFocalPointMobile,
+		bgOffsetTop,
+		bgOffsetBottom,
+		bgOffsetLeft,
+		bgOffsetRight,
+		bgOffsetUnit,
+		bgOffsetDisableMobile,
 		outerWidth,
 		padding_left_and_right, //eslint-disable-line camelcase
 		padding_top_and_bottom, //eslint-disable-line camelcase
@@ -118,6 +127,25 @@ export default function OuterEdit(props) {
 			setAttributes({
 				className: classnames(newClassName),
 			});
+		}
+		// 背景オフセットの互換処理
+		if (bgOffsetTop === undefined) {
+			setAttributes({ bgOffsetTop: 0 });
+		}
+		if (bgOffsetBottom === undefined) {
+			setAttributes({ bgOffsetBottom: 0 });
+		}
+		if (bgOffsetLeft === undefined) {
+			setAttributes({ bgOffsetLeft: 0 });
+		}
+		if (bgOffsetRight === undefined) {
+			setAttributes({ bgOffsetRight: 0 });
+		}
+		if (bgOffsetUnit === undefined) {
+			setAttributes({ bgOffsetUnit: 'px' });
+		}
+		if (bgOffsetDisableMobile === undefined) {
+			setAttributes({ bgOffsetDisableMobile: false });
 		}
 		// 前バージョンとの互換処理
 		if (
@@ -262,15 +290,26 @@ export default function OuterEdit(props) {
 			? `vk_outer-width-${outerWidth} align${outerWidth}`
 			: 'vk_outer-width-normal';
 
+	// オフセットが設定されているかどうかをチェック
+	const hasBackgroundOffset =
+		bgOffsetTop !== 0 ||
+		bgOffsetBottom !== 0 ||
+		bgOffsetLeft !== 0 ||
+		bgOffsetRight !== 0;
+
 	//classBgPositionのクラス切り替え
-	if (bgPosition === 'parallax') {
-		classBgPosition = 'vk_outer-bgPosition-parallax vk-prlx';
-	} else if (bgPosition === 'fixed') {
-		classBgPosition = 'vk_outer-bgPosition-fixed';
-	} else if (bgPosition === 'repeat') {
-		classBgPosition = 'vk_outer-bgPosition-repeat';
+	if (!hasBackgroundOffset) {
+		if (bgPosition === 'parallax') {
+			classBgPosition = 'vk_outer-bgPosition-parallax vk-prlx';
+		} else if (bgPosition === 'fixed') {
+			classBgPosition = 'vk_outer-bgPosition-fixed';
+		} else if (bgPosition === 'repeat') {
+			classBgPosition = 'vk_outer-bgPosition-repeat';
+		} else {
+			classBgPosition = 'vk_outer-bgPosition-normal';
+		}
 	} else {
-		classBgPosition = 'vk_outer-bgPosition-normal';
+		classBgPosition = '';
 	}
 
 	//classPaddingLRのクラス切り替え
@@ -319,10 +358,16 @@ export default function OuterEdit(props) {
 		setAttributes({ borderColor: '#fff' });
 	}
 
-	//Dividerエフェクトがない時のみ枠線を追
+	//Dividerエフェクトがない時のみ枠線を追加
 	let borderStyleProperty = {};
 
-	if (!levelSettingPerDevice) {
+	// オフセットが設定されている場合は、BorderとDividerの設定を無効化
+	if (hasBackgroundOffset) {
+		borderStyleProperty = {
+			border: 'none',
+			borderRadius: '0px',
+		};
+	} else if (!levelSettingPerDevice) {
 		if (
 			upper_level === 0 && //eslint-disable-line camelcase
 			lower_level === 0 && //eslint-disable-line camelcase
@@ -579,6 +624,23 @@ export default function OuterEdit(props) {
 		'--bg-position-tablet': bgFocalPointTablet
 			? `${bgFocalPointTablet.x * 100}% ${bgFocalPointTablet.y * 100}%`
 			: undefined,
+		...((bgOffsetTop ||
+			bgOffsetBottom ||
+			bgOffsetLeft ||
+			bgOffsetRight) && {
+			...(bgOffsetTop && {
+				'--bg-offset-top': `${bgOffsetTop}${bgOffsetUnit}`,
+			}),
+			...(bgOffsetBottom && {
+				'--bg-offset-bottom': `${bgOffsetBottom}${bgOffsetUnit}`,
+			}),
+			...(bgOffsetLeft && {
+				'--bg-offset-left': `${bgOffsetLeft}${bgOffsetUnit}`,
+			}),
+			...(bgOffsetRight && {
+				'--bg-offset-right': `${bgOffsetRight}${bgOffsetUnit}`,
+			}),
+		}),
 		'--min-height-mobile': minHeightValueMobile
 			? `${minHeightValueMobile}${minHeightUnit}`
 			: 'auto',
@@ -600,8 +662,11 @@ export default function OuterEdit(props) {
 			`vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 			{
 				[`has-border-color`]:
-					borderStyle !== 'none' && borderColor !== undefined,
+					!hasBackgroundOffset &&
+					borderStyle !== 'none' &&
+					borderColor !== undefined,
 				[`has-${borderColor}-border-color`]:
+					!hasBackgroundOffset &&
 					borderStyle !== 'none' &&
 					borderColor !== undefined &&
 					!isHexColor(borderColor),
@@ -609,6 +674,9 @@ export default function OuterEdit(props) {
 					minHeightValuePC > 0 ||
 					minHeightValueTablet > 0 ||
 					minHeightValueMobile > 0,
+				[`has-background-offset`]: hasBackgroundOffset,
+				[`has-background-offset-disabled-mobile`]:
+					bgOffsetDisableMobile,
 			}
 		),
 	});
@@ -631,6 +699,21 @@ export default function OuterEdit(props) {
 		}
 	};
 
+	// bgOffsetUnit に基づいて動的に最大値を設定
+	const getMaxOffset = (unit) => {
+		switch (unit) {
+			case 'px':
+				return 1000;
+			case 'em':
+			case 'rem':
+			case 'vw':
+			case 'vh':
+				return 50;
+			default:
+				return 100;
+		}
+	};
+
 	const handleUnitChange = (newUnit) => {
 		const newMax = getMaxHeight(newUnit);
 		setAttributes({
@@ -640,6 +723,12 @@ export default function OuterEdit(props) {
 			minHeightValueMobile: Math.min(minHeightValueMobile, newMax),
 		});
 	};
+
+	useEffect(() => {
+		if (bgPositionType === undefined) {
+			setAttributes({ bgPositionType: 'focalPoint' });
+		}
+	}, []);
 
 	return (
 		<>
@@ -742,136 +831,322 @@ export default function OuterEdit(props) {
 							{...props}
 						/>
 					</BaseControl>
-					<ToggleControl
-						label={
-							__('Enable Focal Point', 'vk-blocks-pro') +
-							__('(PC)', 'vk-blocks-pro')
-						}
-						checked={enableFocalPointPC}
-						onChange={() => handleToggleChange('PC')}
-						disabled={!bgImage}
-					/>
-					{enableFocalPointPC && (
-						<BaseControl
-							label={
-								__('Focal Point Picker', 'vk-blocks-pro') +
-								' ' +
-								__('(PC)', 'vk-blocks-pro')
-							}
-							id="vk_outer-focalPointPickerPC"
+					<hr />
+					<h4>{__('Background Position Type', 'vk-blocks-pro')}</h4>
+					<p>
+						{__(
+							'Select either Focal Point to control the image’s focus, or Background Offset to shift the background position. (Only one option can be active at a time.)',
+							'vk-blocks-pro'
+						)}
+					</p>
+					<BaseControl id="vk_outer-bgPositionType">
+						<ToggleGroupControl
+							value={bgPositionType}
+							onChange={(value) => {
+								setAttributes({ bgPositionType: value });
+								// リセット処理
+								if (value === 'focalPoint') {
+									setAttributes({
+										bgOffsetTop: 0,
+										bgOffsetBottom: 0,
+										bgOffsetLeft: 0,
+										bgOffsetRight: 0,
+										bgOffsetDisableMobile: false,
+									});
+								} else {
+									setAttributes({
+										bgFocalPointPC: { x: 0.5, y: 0.5 },
+										bgFocalPointTablet: { x: 0.5, y: 0.5 },
+										bgFocalPointMobile: { x: 0.5, y: 0.5 },
+										enableFocalPointPC: false,
+										enableFocalPointTablet: false,
+										enableFocalPointMobile: false,
+									});
+								}
+							}}
+							isBlock
 						>
-							<FocalPointPicker
-								url={bgImage || bgImageTablet || bgImageMobile}
-								value={bgFocalPointPC}
-								onChange={(value) =>
-									onChangeBgFocalPoint(value, 'PC')
-								}
-								onDrag={(value) =>
-									onChangeBgFocalPoint(value, 'PC')
-								}
+							<ToggleGroupControlOption
+								value="focalPoint"
+								label={__('Focal Point', 'vk-blocks-pro')}
 							/>
-						</BaseControl>
-					)}
-					<ToggleControl
-						label={
-							__('Enable Focal Point', 'vk-blocks-pro') +
-							__('(Tablet)', 'vk-blocks-pro')
-						}
-						checked={enableFocalPointTablet}
-						onChange={() => handleToggleChange('Tablet')}
-						disabled={!bgImageTablet && !bgImage}
-					/>
-					{enableFocalPointTablet && (
-						<BaseControl
-							label={
-								__('Focal Point Picker', 'vk-blocks-pro') +
-								' ' +
-								__('(Tablet)', 'vk-blocks-pro')
-							}
-							id="vk_outer-focalPointPickerTablet"
-						>
-							<FocalPointPicker
-								url={bgImageTablet || bgImage}
-								value={bgFocalPointTablet}
-								onChange={(value) =>
-									onChangeBgFocalPoint(value, 'Tablet')
-								}
-								onDrag={(value) =>
-									onChangeBgFocalPoint(value, 'Tablet')
-								}
+							<ToggleGroupControlOption
+								value="offset"
+								label={__('Background Offset', 'vk-blocks-pro')}
 							/>
-						</BaseControl>
-					)}
-					<ToggleControl
-						label={
-							__('Enable Focal Point', 'vk-blocks-pro') +
-							__('(Mobile)', 'vk-blocks-pro')
-						}
-						checked={enableFocalPointMobile}
-						onChange={() => handleToggleChange('Mobile')}
-						disabled={!bgImage && !bgImageTablet && !bgImageMobile}
-					/>
-					{enableFocalPointMobile && (
-						<BaseControl
-							label={
-								__('Focal Point Picker', 'vk-blocks-pro') +
-								' ' +
-								__('(Mobile)', 'vk-blocks-pro')
-							}
-							id="vk_outer-focalPointPickerMobile"
-						>
-							<FocalPointPicker
-								url={bgImageMobile || bgImageTablet || bgImage}
-								value={bgFocalPointMobile}
-								onChange={(value) =>
-									onChangeBgFocalPoint(value, 'Mobile')
-								}
-								onDrag={(value) =>
-									onChangeBgFocalPoint(value, 'Mobile')
-								}
-							/>
-						</BaseControl>
-					)}
-					<BaseControl
-						label={__('Background image Position', 'vk-blocks-pro')}
-						help=""
-						id={`vk_outer-bgPosition`}
-					>
-						<RadioControl
-							selected={bgPosition}
-							options={[
-								{
-									label: __('Repeat', 'vk-blocks-pro'),
-									value: 'repeat',
-								},
-								{
-									label: __('Cover', 'vk-blocks-pro'),
-									value: 'normal',
-								},
-								{
-									label: __(
-										'Cover fixed (Not fixed on iPhone)',
-										'vk-blocks-pro'
-									),
-									value: 'fixed',
-									help: __(
-										'This will not work on iPhone.',
-										'vk-blocks-pro'
-									),
-								},
-								{
-									label: __(
-										'Parallax (Non-guaranteed)',
-										'vk-blocks-pro'
-									),
-									value: 'parallax',
-								},
-							]}
-							onChange={(value) =>
-								setAttributes({ bgPosition: value })
-							}
-						/>
+						</ToggleGroupControl>
 					</BaseControl>
+					{bgPositionType === 'focalPoint' && (
+						<>
+							<ToggleControl
+								label={
+									__('Enable Focal Point', 'vk-blocks-pro') +
+									__('(PC)', 'vk-blocks-pro')
+								}
+								checked={enableFocalPointPC}
+								onChange={() => handleToggleChange('PC')}
+								disabled={!bgImage}
+							/>
+							{enableFocalPointPC && (
+								<BaseControl
+									label={
+										__(
+											'Focal Point Picker',
+											'vk-blocks-pro'
+										) +
+										' ' +
+										__('(PC)', 'vk-blocks-pro')
+									}
+									id="vk_outer-focalPointPickerPC"
+								>
+									<FocalPointPicker
+										url={
+											bgImage ||
+											bgImageTablet ||
+											bgImageMobile
+										}
+										value={bgFocalPointPC}
+										onChange={(value) =>
+											onChangeBgFocalPoint(value, 'PC')
+										}
+										onDrag={(value) =>
+											onChangeBgFocalPoint(value, 'PC')
+										}
+									/>
+								</BaseControl>
+							)}
+							<ToggleControl
+								label={
+									__('Enable Focal Point', 'vk-blocks-pro') +
+									__('(Tablet)', 'vk-blocks-pro')
+								}
+								checked={enableFocalPointTablet}
+								onChange={() => handleToggleChange('Tablet')}
+								disabled={!bgImageTablet && !bgImage}
+							/>
+							{enableFocalPointTablet && (
+								<BaseControl
+									label={
+										__(
+											'Focal Point Picker',
+											'vk-blocks-pro'
+										) +
+										' ' +
+										__('(Tablet)', 'vk-blocks-pro')
+									}
+									id="vk_outer-focalPointPickerTablet"
+								>
+									<FocalPointPicker
+										url={bgImageTablet || bgImage}
+										value={bgFocalPointTablet}
+										onChange={(value) =>
+											onChangeBgFocalPoint(
+												value,
+												'Tablet'
+											)
+										}
+										onDrag={(value) =>
+											onChangeBgFocalPoint(
+												value,
+												'Tablet'
+											)
+										}
+									/>
+								</BaseControl>
+							)}
+							<ToggleControl
+								label={
+									__('Enable Focal Point', 'vk-blocks-pro') +
+									__('(Mobile)', 'vk-blocks-pro')
+								}
+								checked={enableFocalPointMobile}
+								onChange={() => handleToggleChange('Mobile')}
+								disabled={
+									!bgImage && !bgImageTablet && !bgImageMobile
+								}
+							/>
+							{enableFocalPointMobile && (
+								<BaseControl
+									label={
+										__(
+											'Focal Point Picker',
+											'vk-blocks-pro'
+										) +
+										' ' +
+										__('(Mobile)', 'vk-blocks-pro')
+									}
+									id="vk_outer-focalPointPickerMobile"
+								>
+									<FocalPointPicker
+										url={
+											bgImageMobile ||
+											bgImageTablet ||
+											bgImage
+										}
+										value={bgFocalPointMobile}
+										onChange={(value) =>
+											onChangeBgFocalPoint(
+												value,
+												'Mobile'
+											)
+										}
+										onDrag={(value) =>
+											onChangeBgFocalPoint(
+												value,
+												'Mobile'
+											)
+										}
+									/>
+								</BaseControl>
+							)}
+							<BaseControl
+								label={__(
+									'Background image Position',
+									'vk-blocks-pro'
+								)}
+								id={`vk_outer-bgPosition`}
+							>
+								<RadioControl
+									selected={bgPosition}
+									options={[
+										{
+											label: __(
+												'Repeat',
+												'vk-blocks-pro'
+											),
+											value: 'repeat',
+										},
+										{
+											label: __('Cover', 'vk-blocks-pro'),
+											value: 'normal',
+										},
+										{
+											label: __(
+												'Cover fixed (Not fixed on iPhone)',
+												'vk-blocks-pro'
+											),
+											value: 'fixed',
+											help: __(
+												'This will not work on iPhone.',
+												'vk-blocks-pro'
+											),
+										},
+										{
+											label: __(
+												'Parallax (Non-guaranteed)',
+												'vk-blocks-pro'
+											),
+											value: 'parallax',
+										},
+									]}
+									onChange={(value) =>
+										setAttributes({ bgPosition: value })
+									}
+								/>
+							</BaseControl>
+						</>
+					)}
+					{bgPositionType === 'offset' && (
+						<>
+							<p className="block-editor-block-types-list__help">
+								{__(
+									'When using Background Offset, Border and Divider will be temporarily disabled.',
+									'vk-blocks-pro'
+								)}
+							</p>
+							<ToggleControl
+								label={__(
+									'Disable offset on mobile',
+									'vk-blocks-pro'
+								)}
+								checked={bgOffsetDisableMobile}
+								onChange={(value) =>
+									setAttributes({
+										bgOffsetDisableMobile: value,
+									})
+								}
+							/>
+							<SelectControl
+								label={__('Unit', 'vk-blocks-pro')}
+								value={bgOffsetUnit}
+								options={[
+									{ label: 'px', value: 'px' },
+									{ label: 'em', value: 'em' },
+									{ label: 'rem', value: 'rem' },
+									{ label: 'vw', value: 'vw' },
+									{ label: 'vh', value: 'vh' },
+								]}
+								onChange={(value) =>
+									setAttributes({
+										bgOffsetUnit: value,
+									})
+								}
+							/>
+
+							<p>{__('Vertical Offset', 'vk-blocks-pro')}</p>
+							<div style={{ marginBottom: '1em' }}>
+								<RangeControl
+									label={__('Top', 'vk-blocks-pro')}
+									value={bgOffsetTop}
+									onChange={(value) => {
+										setAttributes({
+											bgOffsetTop: value,
+											bgOffsetBottom: 0,
+										});
+									}}
+									min={0}
+									max={getMaxOffset(bgOffsetUnit)}
+									step={bgOffsetUnit === 'px' ? 1 : 0.1}
+									disabled={bgOffsetBottom !== 0}
+								/>
+								<RangeControl
+									label={__('Bottom', 'vk-blocks-pro')}
+									value={bgOffsetBottom}
+									onChange={(value) => {
+										setAttributes({
+											bgOffsetBottom: value,
+											bgOffsetTop: 0,
+										});
+									}}
+									min={0}
+									max={getMaxOffset(bgOffsetUnit)}
+									step={bgOffsetUnit === 'px' ? 1 : 0.1}
+									disabled={bgOffsetTop !== 0}
+								/>
+							</div>
+							<p>{__('Horizontal Offset', 'vk-blocks-pro')}</p>
+							<div>
+								<RangeControl
+									label={__('Left', 'vk-blocks-pro')}
+									value={bgOffsetLeft}
+									onChange={(value) => {
+										setAttributes({
+											bgOffsetLeft: value,
+											bgOffsetRight: 0,
+										});
+									}}
+									min={0}
+									max={getMaxOffset(bgOffsetUnit)}
+									step={bgOffsetUnit === 'px' ? 1 : 0.1}
+									disabled={bgOffsetRight !== 0}
+								/>
+								<RangeControl
+									label={__('Right', 'vk-blocks-pro')}
+									value={bgOffsetRight}
+									onChange={(value) => {
+										setAttributes({
+											bgOffsetRight: value,
+											bgOffsetLeft: 0,
+										});
+									}}
+									min={0}
+									max={getMaxOffset(bgOffsetUnit)}
+									step={bgOffsetUnit === 'px' ? 1 : 0.1}
+									disabled={bgOffsetLeft !== 0}
+								/>
+							</div>
+						</>
+					)}
 				</PanelBody>
 
 				<PanelBody
@@ -1462,29 +1737,33 @@ export default function OuterEdit(props) {
 			<div {...blockProps}>
 				{GetBgImage}
 				<div>
-					{componentDivider(
-						upper_level,
-						upperDividerBgColor,
-						whichSideUpper,
-						dividerType,
-						levelSettingPerDevice,
-						upper_level_mobile,
-						upper_level_tablet,
-						upper_level_pc
-					)}
+					{!hasBackgroundOffset &&
+						whichSideUpper &&
+						componentDivider(
+							upper_level,
+							upperDividerBgColor,
+							whichSideUpper,
+							dividerType,
+							levelSettingPerDevice,
+							upper_level_mobile,
+							upper_level_tablet,
+							upper_level_pc
+						)}
 					<div className={containerClass}>
 						<InnerBlocks />
 					</div>
-					{componentDivider(
-						lower_level,
-						lowerDividerBgColor,
-						whichSideLower,
-						dividerType,
-						levelSettingPerDevice,
-						lower_level_mobile,
-						lower_level_tablet,
-						lower_level_pc
-					)}
+					{!hasBackgroundOffset &&
+						whichSideLower &&
+						componentDivider(
+							lower_level,
+							lowerDividerBgColor,
+							whichSideLower,
+							dividerType,
+							levelSettingPerDevice,
+							lower_level_mobile,
+							lower_level_tablet,
+							lower_level_pc
+						)}
 				</div>
 			</div>
 		</>

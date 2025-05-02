@@ -24,6 +24,65 @@ $media-xxl-down: 1399.98px;
 	position: relative;
 	isolation: isolate;
 
+	// Background offset
+	&.has-background-offset {
+		// オーバーレイのオフセット
+		.vk_outer-background-area,
+		.vk_outer-background-area::before {
+			transform: translate(
+				calc(
+					(var(--bg-offset-left, 0px) * 1) + 
+					(var(--bg-offset-right, 0px) * -1)
+				),
+				calc(
+					(var(--bg-offset-top, 0px) * 1) + 
+					(var(--bg-offset-bottom, 0px) * -1)
+				)
+			);
+		}
+
+		// 背景画像のオフセット
+		// 左右のオフセット
+		&[style*="--bg-offset-left"]:not([style*="--bg-offset-top"]):not([style*="--bg-offset-bottom"]) {
+			background-position: left var(--bg-offset-left) center !important;
+		}
+		&[style*="--bg-offset-right"]:not([style*="--bg-offset-top"]):not([style*="--bg-offset-bottom"]) {
+			background-position: right var(--bg-offset-right) center !important;
+		}
+
+		// 上下のオフセット
+		&[style*="--bg-offset-top"]:not([style*="--bg-offset-left"]):not([style*="--bg-offset-right"]) {
+			background-position: center top var(--bg-offset-top) !important;
+		}
+		&[style*="--bg-offset-bottom"]:not([style*="--bg-offset-left"]):not([style*="--bg-offset-right"]) {
+			background-position: center bottom var(--bg-offset-bottom) !important;
+		}
+
+		// 組み合わせパターン
+		&[style*="--bg-offset-left"][style*="--bg-offset-top"] {
+			background-position: left var(--bg-offset-left) top var(--bg-offset-top) !important;
+		}
+		&[style*="--bg-offset-right"][style*="--bg-offset-top"] {
+			background-position: right var(--bg-offset-right) top var(--bg-offset-top) !important;
+		}
+		&[style*="--bg-offset-left"][style*="--bg-offset-bottom"] {
+			background-position: left var(--bg-offset-left) bottom var(--bg-offset-bottom) !important;
+		}
+		&[style*="--bg-offset-right"][style*="--bg-offset-bottom"] {
+			background-position: right var(--bg-offset-right) bottom var(--bg-offset-bottom) !important;
+		}
+
+		// モバイルでのオフセット制御
+		&.has-background-offset-disabled-mobile {
+			@media (max-width: $media-sm-down) {
+				--bg-offset-top: 0 !important;
+				--bg-offset-bottom: 0 !important;
+				--bg-offset-left: 0 !important;
+				--bg-offset-right: 0 !important;
+			}
+		}
+	}
+
 	// リンク設定
 	& > .vkb-outer-link {
 		position: absolute;
@@ -196,13 +255,14 @@ $media-xxl-down: 1399.98px;
 .vk_outer_separator-position-upper {
 	svg {
 		top: 0;
-		transform: rotate(180deg);
+		transform: translateX(0.25px) scale(1.008) rotate(180deg);
 	}
 }
 
 .vk_outer_separator-position-lower {
 	svg {
 		bottom: 0;
+		transform: translateX(0.25px) scale(1.008);
 	}
 }
 
@@ -210,21 +270,21 @@ $media-xxl-down: 1399.98px;
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
 	.vk_outer_separator {
 		svg {
-			transform: translateY(-0.5px) scale(1);
-			-webkit-transform: translateY(-0.5px) scale(1);
+		        transform: translateY(0.25px) scale(1.004);
+        		-webkit-transform: translateY(0.25px) scale(1.004);
 			backface-visibility: hidden;
 			-webkit-backface-visibility: hidden;
 		}
 	}
 
-	.vk_outer_separator-position-upper svg {
-		transform: rotate(180deg) translateY(0.5px) scale(1);
-		-webkit-transform: rotate(180deg) translateY(0.5px) scale(1);
+	.vk_outer_separator-position-upper svg {	
+		transform: rotate(180deg) translateY(0.25px) scale(1.004);
+        	-webkit-transform: rotate(180deg) translateY(0.25px) scale(1.004);
 	}
 
 	.vk_outer_separator-position-lower svg {
-		transform: translateY(0.5px) scale(1);
-		-webkit-transform: translateY(0.5px) scale(1);
+		transform: translateY(0.25px) scale(1.004);
+		-webkit-transform: translateY(0.25px) scale(1.004);
 	}
 }
 
@@ -276,4 +336,10 @@ $media-xxl-down: 1399.98px;
 // Large devices (desktops, 992px以上)
 @media (min-width: 992px) {
 	@include switchVisibility(block, none, none);
+}
+
+.vk-blocks-outer-tab-panel {
+	.components-tab-panel__tabs {
+		margin-bottom: 1.5rem;
+	}
 }

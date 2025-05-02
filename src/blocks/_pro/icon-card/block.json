@@ -2,7 +2,7 @@
 	"apiVersion": 3,
 	"name": "vk-blocks/icon-card",
 	"category": "vk-blocks-cat",
-	"title": "Icon Card",
+	"title": "Icon Card(not recommended)",
 	"attributes": {
 		"col_xs": {
 			"type": "number",

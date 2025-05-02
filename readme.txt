@@ -114,6 +114,7 @@ e.g.
 [ Design Bug Fix ][ Outer (Pro) ] Removed unintended borders left and right separators.
 [ Design Bug Fix ][ Balloon ] Fixed an issue where text inside balloon blocks unintentionally inherited the border color when using a color palette.
 [ Other ][ Tab (Pro) / Tab Item ] Added block description
+[ Add function ][ Icon ] Added inherit parent element color option as default.
 
 = 1.102.0 =
 [ Design Bug Fix ][ Outer (Pro) ] Fixed unexpected margin affecting background color display due to layout flow styles in WordPress 6.8.

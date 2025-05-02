@@ -77,6 +77,9 @@ export default function IconEdit(props) {
 	const defaultIconSize = 'px' === iconSizeUnit ? 36 : 1;
 	const defaultIconMargin = 'px' === iconMarginUnit ? 22 : 1;
 
+	// 親のテキストカラーを継承するか？
+	const isColorInherit = iconColor === 'inherit' ? true : false;
+
 	/**
 	 * 親ブロックが vk-blocks/icon-outer でなければ設定項目を追加
 	 */
@@ -314,6 +317,15 @@ export default function IconEdit(props) {
 					/>
 				</PanelBody>
 				<PanelBody title={__('Color', 'vk-blocks-pro')}>
+					<CheckboxControl
+						label={__('Inherit Parent Color', 'vk-blocks-pro')}
+						checked={isColorInherit}
+						onChange={(checked) => {
+							setAttributes({
+								iconColor: checked ? 'inherit' : undefined,
+							});
+						}}
+					/>
 					<BaseControl
 						id={`vk_block_icon_color`}
 						label={

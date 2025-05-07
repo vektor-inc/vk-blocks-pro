@@ -801,7 +801,7 @@ export default function OuterEdit(props) {
 					<h4>{__('Background Position Type', 'vk-blocks-pro')}</h4>
 					<p>
 						{__(
-							'Choose either Focal Point to adjust image focus or Background Offset to move background (only one at a time).',
+							'Select either Focal Point to control the image’s focus, or Background Offset to shift the background position. (Only one option can be active at a time.)',
 							'vk-blocks-pro'
 						)}
 					</p>

@@ -108,6 +108,7 @@ e.g.
 
 == Changelog ==
 
+= 1.103.0 =
 [ Add function ][ Core Excerpt ] Added top and bottom margin settings to the toolbar.
 [ Add function ][ Outer (Pro) ] Added background offset feature.
 [ Design Bug Fix ][ Outer (Pro) ] Removed unintended borders left and right separators.

@@ -10,8 +10,8 @@ import toNumber from '@vkblocks/utils/to-number';
 import { AdvancedMediaUpload } from '@vkblocks/components/advanced-media-upload';
 import { componentDivider } from './component-divider';
 import GenerateBgImage from './GenerateBgImage';
-import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import LinkToolbar from '@vkblocks/components/link-toolbar';
 import ResponsiveSizeControl, {
@@ -32,6 +32,8 @@ import {
 	ToggleControl,
 	ToolbarGroup,
 	FocalPointPicker,
+	__experimentalToggleGroupControl as ToggleGroupControl,
+	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
 } from '@wordpress/components';
 import {
 	InspectorControls,
@@ -52,12 +54,19 @@ export default function OuterEdit(props) {
 		bgImageTablet,
 		bgImageMobile,
 		bgPosition,
+		bgPositionType,
 		bgFocalPointPC,
 		bgFocalPointTablet,
 		bgFocalPointMobile,
 		enableFocalPointPC,
 		enableFocalPointTablet,
 		enableFocalPointMobile,
+		bgOffsetTop,
+		bgOffsetBottom,
+		bgOffsetLeft,
+		bgOffsetRight,
+		bgOffsetUnit,
+		bgOffsetDisableMobile,
 		outerWidth,
 		padding_left_and_right, //eslint-disable-line camelcase
 		padding_top_and_bottom, //eslint-disable-line camelcase
@@ -122,6 +131,25 @@ export default function OuterEdit(props) {
 			setAttributes({
 				className: classnames(newClassName),
 			});
+		}
+		// 背景オフセットの互換処理
+		if (bgOffsetTop === undefined) {
+			setAttributes({ bgOffsetTop: 0 });
+		}
+		if (bgOffsetBottom === undefined) {
+			setAttributes({ bgOffsetBottom: 0 });
+		}
+		if (bgOffsetLeft === undefined) {
+			setAttributes({ bgOffsetLeft: 0 });
+		}
+		if (bgOffsetRight === undefined) {
+			setAttributes({ bgOffsetRight: 0 });
+		}
+		if (bgOffsetUnit === undefined) {
+			setAttributes({ bgOffsetUnit: 'px' });
+		}
+		if (bgOffsetDisableMobile === undefined) {
+			setAttributes({ bgOffsetDisableMobile: false });
 		}
 		// 前バージョンとの互換処理
 		if (
@@ -266,15 +294,26 @@ export default function OuterEdit(props) {
 			? `vk_outer-width-${outerWidth} align${outerWidth}`
 			: 'vk_outer-width-normal';
 
+	// オフセットが設定されているかどうかをチェック
+	const hasBackgroundOffset =
+		bgOffsetTop !== 0 ||
+		bgOffsetBottom !== 0 ||
+		bgOffsetLeft !== 0 ||
+		bgOffsetRight !== 0;
+
 	//classBgPositionのクラス切り替え
-	if (bgPosition === 'parallax') {
-		classBgPosition = 'vk_outer-bgPosition-parallax vk-prlx';
-	} else if (bgPosition === 'fixed') {
-		classBgPosition = 'vk_outer-bgPosition-fixed';
-	} else if (bgPosition === 'repeat') {
-		classBgPosition = 'vk_outer-bgPosition-repeat';
+	if (!hasBackgroundOffset) {
+		if (bgPosition === 'parallax') {
+			classBgPosition = 'vk_outer-bgPosition-parallax vk-prlx';
+		} else if (bgPosition === 'fixed') {
+			classBgPosition = 'vk_outer-bgPosition-fixed';
+		} else if (bgPosition === 'repeat') {
+			classBgPosition = 'vk_outer-bgPosition-repeat';
+		} else {
+			classBgPosition = 'vk_outer-bgPosition-normal';
+		}
 	} else {
-		classBgPosition = 'vk_outer-bgPosition-normal';
+		classBgPosition = '';
 	}
 
 	//classPaddingLRのクラス切り替え
@@ -323,10 +362,16 @@ export default function OuterEdit(props) {
 		setAttributes({ borderColor: '#fff' });
 	}
 
-	//Dividerエフェクトがない時のみ枠線を追
+	//Dividerエフェクトがない時のみ枠線を追加
 	let borderStyleProperty = {};
 
-	if (!levelSettingPerDevice) {
+	// オフセットが設定されている場合は、BorderとDividerの設定を無効化
+	if (hasBackgroundOffset) {
+		borderStyleProperty = {
+			border: 'none',
+			borderRadius: '0px',
+		};
+	} else if (!levelSettingPerDevice) {
 		if (
 			upper_level === 0 && //eslint-disable-line camelcase
 			lower_level === 0 && //eslint-disable-line camelcase
@@ -574,6 +619,23 @@ export default function OuterEdit(props) {
 		'--bg-position-tablet': bgFocalPointTablet
 			? `${bgFocalPointTablet.x * 100}% ${bgFocalPointTablet.y * 100}%`
 			: undefined,
+		...((bgOffsetTop ||
+			bgOffsetBottom ||
+			bgOffsetLeft ||
+			bgOffsetRight) && {
+			...(bgOffsetTop && {
+				'--bg-offset-top': `${bgOffsetTop}${bgOffsetUnit}`,
+			}),
+			...(bgOffsetBottom && {
+				'--bg-offset-bottom': `${bgOffsetBottom}${bgOffsetUnit}`,
+			}),
+			...(bgOffsetLeft && {
+				'--bg-offset-left': `${bgOffsetLeft}${bgOffsetUnit}`,
+			}),
+			...(bgOffsetRight && {
+				'--bg-offset-right': `${bgOffsetRight}${bgOffsetUnit}`,
+			}),
+		}),
 		'--min-height-mobile': minHeightValueMobile
 			? `${minHeightValueMobile}${minHeightUnit}`
 			: 'auto',
@@ -595,8 +657,11 @@ export default function OuterEdit(props) {
 			`vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 			{
 				[`has-border-color`]:
-					borderStyle !== 'none' && borderColor !== undefined,
+					!hasBackgroundOffset &&
+					borderStyle !== 'none' &&
+					borderColor !== undefined,
 				[`has-${sanitizeSlug(borderColor)}-border-color`]:
+					!hasBackgroundOffset &&
 					borderStyle !== 'none' &&
 					borderColor !== undefined &&
 					!isHexColor(borderColor),
@@ -604,6 +669,9 @@ export default function OuterEdit(props) {
 					minHeightValuePC > 0 ||
 					minHeightValueTablet > 0 ||
 					minHeightValueMobile > 0,
+				[`has-background-offset`]: hasBackgroundOffset,
+				[`has-background-offset-disabled-mobile`]:
+					bgOffsetDisableMobile,
 			}
 		),
 	});
@@ -1525,29 +1593,33 @@ export default function OuterEdit(props) {
 			<div {...blockProps}>
 				{GetBgImage}
 				<div>
-					{componentDivider(
-						upper_level,
-						upperDividerBgColor,
-						whichSideUpper,
-						dividerType,
-						levelSettingPerDevice,
-						upper_level_mobile,
-						upper_level_tablet,
-						upper_level_pc
-					)}
+					{!hasBackgroundOffset &&
+						whichSideUpper &&
+						componentDivider(
+							upper_level,
+							upperDividerBgColor,
+							whichSideUpper,
+							dividerType,
+							levelSettingPerDevice,
+							upper_level_mobile,
+							upper_level_tablet,
+							upper_level_pc
+						)}
 					<div className={containerClass}>
 						<InnerBlocks />
 					</div>
-					{componentDivider(
-						lower_level,
-						lowerDividerBgColor,
-						whichSideLower,
-						dividerType,
-						levelSettingPerDevice,
-						lower_level_mobile,
-						lower_level_tablet,
-						lower_level_pc
-					)}
+					{!hasBackgroundOffset &&
+						whichSideLower &&
+						componentDivider(
+							lower_level,
+							lowerDividerBgColor,
+							whichSideLower,
+							dividerType,
+							levelSettingPerDevice,
+							lower_level_mobile,
+							lower_level_tablet,
+							lower_level_pc
+						)}
 				</div>
 			</div>
 		</>

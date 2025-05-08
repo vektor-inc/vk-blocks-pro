@@ -108,12 +108,13 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ] Fixed an issue where Japanese characters in custom color names in block themes caused class names to break, preventing colors from being applied.
+
 = 1.103.0 =
 [ Add function ][ Core Excerpt ] Added top and bottom margin settings to the toolbar.
 [ Add function ][ Outer (Pro) ] Added background offset feature.
 [ Design Bug Fix ][ Outer (Pro) ] Removed unintended borders left and right separators.
 [ Design Bug Fix ][ Balloon ] Fixed an issue where text inside balloon blocks unintentionally inherited the border color when using a color palette.
-[ Bug Fix ] Fixed an issue where Japanese characters in custom color names in block themes caused class names to break, preventing colors from being applied.
 [ Other ][ Tab (Pro) / Tab Item ] Added block description
 [ Other ][ Outer (Pro) / Slider ] Refactored the numeric value & unit input for each device into a shared component
 

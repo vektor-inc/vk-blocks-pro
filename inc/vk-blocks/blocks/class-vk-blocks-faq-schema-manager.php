@@ -45,8 +45,8 @@ class VK_Blocks_Faq_Schema_Manager {
 
 			foreach ( $questions as $index => $question ) {
 				// HTML タグをすべて削除して1行にまとめる
-				$question_text = trim( preg_replace( "/\r|\n|\r\n|\n\n/", '', strip_tags( $doc->saveHTML( $question ) ) ) );
-				$answer_text   = null !== $answers->item( $index ) ? trim( preg_replace( "/\r|\n|\r\n|\n\n/", '', strip_tags( $doc->saveHTML( $answers->item( $index ) ) ) ) ) : '';
+				$question_text = trim( preg_replace( "/\r|\n|\r\n|\n\n/", '', wp_strip_all_tags( $doc->saveHTML( $question ) ) ) );
+				$answer_text   = null !== $answers->item( $index ) ? trim( preg_replace( "/\r|\n|\r\n|\n\n/", '', wp_strip_all_tags( $doc->saveHTML( $answers->item( $index ) ) ) ) ) : '';
 
 				self::$datas[] = array(
 					'@type'          => 'Question',

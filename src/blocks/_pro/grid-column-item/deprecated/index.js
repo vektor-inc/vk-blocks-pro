@@ -3,7 +3,6 @@ import save1_13_2 from './1.13.2/save';
 import save1_20_5 from './1.20.5/save';
 import save1_78_0 from './1.78.0/save';
 import save1_93_0 from './1.93.0/save';
-import save1_102_0 from './1.102.0/save';
 
 const blockAttributes = {
 	layout: {
@@ -148,10 +147,6 @@ const blockAttributes4 = {
 }
 
 const deprecated = [
-	{
-		attributes: blockAttributes4,
-		save: save1_102_0,
-	},
 	{
 		attributes: blockAttributes4,
 		migrate: (attributes) => {

@@ -1,7 +1,6 @@
 import save1_21_0 from './1.21.0/save';
 import save1_29_2 from './1.29.2/save';
 import save1_75_0 from './1.75.0/save';
-import save1_102_0 from './1.102.0/save';
 
 const blockAttributes = {
 	heading: {
@@ -40,19 +39,7 @@ const blockAttributes3 = {
 	}	
 }
 
-const blockAttributes4 = {
-	...blockAttributes3,
-	headingTag: {
-		type: 'string',
-		default: 'h4'
-	}
-}
-
 const deprecated = [
-	{
-		attributes: blockAttributes4,
-		save: save1_102_0,
-	},
 	{
 		attributes: blockAttributes3,
 		save: save1_75_0,

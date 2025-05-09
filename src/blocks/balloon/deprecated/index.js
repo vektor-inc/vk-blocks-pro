@@ -1,7 +1,6 @@
 import save1_20_5 from './1.20.5/save';
 import save1_20_7 from './1.20.7/save';
 import save1_89_0 from './1.89.0/save';
-import save1_102_0 from './1.102.0/save';
 
 const blockAttributes = {
 	content: {
@@ -111,10 +110,6 @@ const blockAttributes6 = {
 
 
 const deprecated = [
-	{
-		attributes: blockAttributes6,
-		save: save1_102_0,
-	},
 	{
 		attributes: blockAttributes6,
 		save: save1_89_0,

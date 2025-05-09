@@ -52,47 +52,65 @@ export default function save({ attributes, className }) {
 		staffTextClassName = classnames('vk_staff_text', staffTextClassName);
 	}
 
-	const staffNameColorInlineStyle = {};
+	let staffNameColorInlineStyle = {};
 	let staffTextNameClassName = '';
 	if (vk_staff_nameColor !== undefined) {
 		staffTextNameClassName += ` has-text-color`;
-		if (!isHexColor(vk_staff_nameColor)) {
+		if (isHexColor(vk_staff_nameColor)) {
+			staffNameColorInlineStyle = { color: `${vk_staff_nameColor}` };
+		} else {
 			staffTextNameClassName += ` has-${sanitizeSlug(vk_staff_nameColor)}-color`;
 		}
 	}
 
-	const staffCaptionColorInlineStyle = {};
+	let staffCaptionColorInlineStyle = {};
 	let staffCaptionClassName = '';
 	if (vk_staff_captionColor !== undefined) {
 		staffCaptionClassName += ` has-text-color`;
-		if (!isHexColor(vk_staff_captionColor)) {
+		if (isHexColor(vk_staff_captionColor)) {
+			staffCaptionColorInlineStyle = {
+				color: `${vk_staff_captionColor}`,
+			};
+		} else {
 			staffCaptionClassName += ` has-${sanitizeSlug(vk_staff_captionColor)}-color`;
 		}
 	}
 
-	const staffPositionColorInlineStyle = {};
+	let staffPositionColorInlineStyle = {};
 	let staffPositionClassName = '';
 	if (vk_staff_positionColor !== undefined) {
 		staffPositionClassName += ` has-text-color`;
-		if (!isHexColor(vk_staff_positionColor)) {
+		if (isHexColor(vk_staff_positionColor)) {
+			staffPositionColorInlineStyle = {
+				color: `${vk_staff_positionColor}`,
+			};
+		} else {
 			staffPositionClassName += ` has-${sanitizeSlug(vk_staff_positionColor)}-color`;
 		}
 	}
 
-	const staffProfileTitleColorInlineStyle = {};
+	let staffProfileTitleColorInlineStyle = {};
 	let staffProfileTitleClassName = '';
 	if (vk_staff_profileTitleColor !== undefined) {
 		staffProfileTitleClassName += ` has-text-color`;
-		if (!isHexColor(vk_staff_profileTitleColor)) {
+		if (isHexColor(vk_staff_profileTitleColor)) {
+			staffProfileTitleColorInlineStyle = {
+				color: `${vk_staff_profileTitleColor}`,
+			};
+		} else {
 			staffProfileTitleClassName += ` has-${sanitizeSlug(vk_staff_profileTitleColor)}-color`;
 		}
 	}
 
-	const staffProfileTextColorInlineStyle = {};
+	let staffProfileTextColorInlineStyle = {};
 	let staffProfileTextClassName = '';
 	if (vk_staff_profileTextColor !== undefined) {
 		staffProfileTextClassName += ` has-text-color`;
-		if (!isHexColor(vk_staff_profileTextColor)) {
+		if (isHexColor(vk_staff_profileTextColor)) {
+			staffProfileTextColorInlineStyle = {
+				color: `${vk_staff_profileTextColor}`,
+			};
+		} else {
 			staffProfileTextClassName += ` has-${sanitizeSlug(vk_staff_profileTextColor)}-color`;
 		}
 	}

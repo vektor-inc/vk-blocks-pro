@@ -2,7 +2,7 @@
 	"apiVersion": 3,
 	"name": "vk-blocks/heading",
 	"category": "vk-blocks-cat",
-	"title": "Heading(not recommended)",
+	"title": "Heading ( not recommended )",
 	"attributes": {
 		"anchor": {
 			"type": "string",

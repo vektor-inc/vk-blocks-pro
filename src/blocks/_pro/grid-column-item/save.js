@@ -2,6 +2,7 @@ import { __ } from '@wordpress/i18n';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 export default function save({ attributes }) {
 	// eslint-disable-next-line camelcase
@@ -72,7 +73,8 @@ export default function save({ attributes }) {
 	if (textColor !== undefined) {
 		vkGridColumnTextColorClassName += ` has-text-color`;
 		if (!isHexColor(textColor)) {
-			vkGridColumnTextColorClassName += ` has-${textColor}-color`;
+			const safeTextColor = sanitizeSlug(textColor);
+			vkGridColumnTextColorClassName += ` has-${safeTextColor}-color`;
 		}
 	}
 
@@ -80,7 +82,8 @@ export default function save({ attributes }) {
 	if (backgroundColor !== undefined) {
 		vkGridColumnbackgroundColorColorClassName += ` has-background-color`;
 		if (!isHexColor(backgroundColor)) {
-			vkGridColumnbackgroundColorColorClassName += ` has-${backgroundColor}-background-color`;
+			const safeBgColor = sanitizeSlug(backgroundColor);
+			vkGridColumnbackgroundColorColorClassName += ` has-${safeBgColor}-background-color`;
 		}
 	}
 

@@ -1,6 +1,7 @@
 import { Component } from '@wordpress/element';
 import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 export class VKBButton extends Component {
 	render() {
@@ -35,7 +36,7 @@ export class VKBButton extends Component {
 				aClass += ` btn has-background`;
 				// カスタムパレットカラーの場合
 				if (!isHexColor(buttonColorCustom)) {
-					aClass += ` has-${buttonColorCustom}-background-color`;
+					aClass += ` has-${sanitizeSlug(buttonColorCustom)}-background-color`;
 				}
 			}
 
@@ -47,7 +48,7 @@ export class VKBButton extends Component {
 				aClass += ` btn has-text-color`;
 				// カスタムパレットカラーの場合
 				if (!isHexColor(buttonTextColorCustom)) {
-					aClass += ` has-${buttonTextColorCustom}-color`;
+					aClass += ` has-${sanitizeSlug(buttonTextColorCustom)}-color`;
 				}
 			}
 			// 塗りなし
@@ -59,7 +60,7 @@ export class VKBButton extends Component {
 				aClass += ` btn has-text-color is-style-outline`;
 				// カスタムパレットカラーの場合
 				if (!isHexColor(buttonColorCustom)) {
-					aClass += ` has-${buttonColorCustom}-color`;
+					aClass += ` has-${sanitizeSlug(buttonColorCustom)}-color`;
 				}
 			}
 			// テキストのみ
@@ -71,7 +72,7 @@ export class VKBButton extends Component {
 				aClass += ` has-text-color vk_button_link-type-text`;
 				// カスタムパレットカラーの場合
 				if (!isHexColor(buttonColorCustom)) {
-					aClass += ` has-${buttonColorCustom}-color`;
+					aClass += ` has-${sanitizeSlug(buttonColorCustom)}-color`;
 				}
 			}
 		}

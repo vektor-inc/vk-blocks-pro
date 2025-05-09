@@ -7,6 +7,7 @@ import classnames from 'classnames';
  * Internal dependencies
  */
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 const componentDivider = (
 	level,
@@ -24,7 +25,8 @@ const componentDivider = (
 
 	const pathClassNames = classnames({
 		[`has-text-color`]: color !== undefined,
-		[`has-${color}-color`]: color !== undefined && !isHexColor(color),
+		[`has-${sanitizeSlug(color)}-color`]:
+			color !== undefined && !isHexColor(color),
 	});
 
 	// eslint-disable-next-line no-shadow
@@ -229,7 +231,7 @@ const componentDivider = (
 				fill={isHexColor(color) ? color : 'currentColor'}
 				className={classnames({
 					[`has-text-color`]: color !== undefined,
-					[`has-${color}-color`]:
+					[`has-${sanitizeSlug(color)}-color`]:
 						color !== undefined && !isHexColor(color),
 				})}
 			/>
@@ -272,7 +274,7 @@ const componentDivider = (
 				fill={isHexColor(color) ? color : 'currentColor'}
 				className={classnames({
 					[`has-text-color`]: color !== undefined,
-					[`has-${color}-color`]:
+					[`has-${sanitizeSlug(color)}-color`]:
 						color !== undefined && !isHexColor(color),
 				})}
 			/>

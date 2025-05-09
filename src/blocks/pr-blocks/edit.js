@@ -21,6 +21,7 @@ import {
 import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 export default function PrBlocksEdit(props) {
 	const { attributes, setAttributes } = props;
@@ -436,7 +437,7 @@ export class ComponentBlockEdit extends Component {
 						};
 						//カラーパレットの時
 					} else {
-						iconOuterClass = `has-background has-${color[blockNumArrIndex]}-background-color`;
+						iconOuterClass = `has-background has-${sanitizeSlug(color[blockNumArrIndex])}-background-color`;
 					}
 					// アイコン背景:背景なし
 				} else if (bgType[blockNumArrIndex] === '1') {
@@ -449,7 +450,7 @@ export class ComponentBlockEdit extends Component {
 						iconColor = color[blockNumArrIndex];
 						//カラーパレットの時
 					} else {
-						iconOuterClass = `has-text-color has-${color[blockNumArrIndex]}-color`;
+						iconOuterClass = `has-text-color has-${sanitizeSlug(color[blockNumArrIndex])}-color`;
 					}
 				}
 			}

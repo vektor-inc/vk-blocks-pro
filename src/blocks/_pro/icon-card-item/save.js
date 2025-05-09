@@ -3,6 +3,7 @@ import { RichText, useBlockProps } from '@wordpress/block-editor';
 import parse from 'html-react-parser';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 export default function save(props) {
 	const { attributes } = props;
@@ -40,7 +41,7 @@ export default function save(props) {
 				};
 				//カラーパレットの時
 			} else {
-				iconOuterClass = `has-background has-${color}-background-color`;
+				iconOuterClass = `has-background has-${sanitizeSlug(color)}-background-color`;
 			}
 			//アイコン背景:背景なし
 		} else if (bgType === '1') {
@@ -53,7 +54,7 @@ export default function save(props) {
 				iconColor = `${color}`;
 				//カラーパレットの時
 			} else {
-				iconOuterClass = `has-text-color has-${color}-color`;
+				iconOuterClass = `has-text-color has-${sanitizeSlug(color)}-color`;
 			}
 		}
 	}

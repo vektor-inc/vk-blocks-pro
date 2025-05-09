@@ -2,6 +2,7 @@ import { __ } from '@wordpress/i18n';
 import { Component } from '@wordpress/element';
 import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 export class VKBIcon extends Component {
 	render() {
@@ -49,7 +50,7 @@ export class VKBIcon extends Component {
 					};
 				} else {
 					// palette color
-					borderClass += ` has-${iconColor}-background-color`;
+					borderClass += ` has-${sanitizeSlug(iconColor)}-background-color`;
 				}
 			}
 		} else {
@@ -67,7 +68,7 @@ export class VKBIcon extends Component {
 					};
 				} else {
 					// palette color
-					borderClass += ` has-${iconColor}-color`;
+					borderClass += ` has-${sanitizeSlug(iconColor)}-color`;
 				}
 			}
 
@@ -126,7 +127,7 @@ export class VKBIcon extends Component {
 					fontStyle += ` color:${iconFontColor};`;
 				} else {
 					// palette color
-					fontClass += ` has-text-color has-${iconFontColor}-color `;
+					fontClass += ` has-text-color has-${sanitizeSlug(iconFontColor)}-color `;
 				}
 			}
 

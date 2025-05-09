@@ -22,6 +22,7 @@ import {
 	MediaUpload,
 } from '@wordpress/block-editor';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 
 export default function StaffEdit(props) {
@@ -83,7 +84,7 @@ export default function StaffEdit(props) {
 		if (isHexColor(vk_staff_nameColor)) {
 			staffNameColorInlineStyle = { color: `${vk_staff_nameColor}` };
 		} else {
-			staffTextNameClassName += ` has-${vk_staff_nameColor}-color`;
+			staffTextNameClassName += ` has-${sanitizeSlug(vk_staff_nameColor)}-color`;
 		}
 	}
 
@@ -96,7 +97,7 @@ export default function StaffEdit(props) {
 				color: `${vk_staff_captionColor}`,
 			};
 		} else {
-			staffCaptionClassName += ` has-${vk_staff_captionColor}-color`;
+			staffCaptionClassName += ` has-${sanitizeSlug(vk_staff_captionColor)}-color`;
 		}
 	}
 
@@ -109,7 +110,7 @@ export default function StaffEdit(props) {
 				color: `${vk_staff_positionColor}`,
 			};
 		} else {
-			staffPositionClassName += ` has-${vk_staff_positionColor}-color`;
+			staffPositionClassName += ` has-${sanitizeSlug(vk_staff_positionColor)}-color`;
 		}
 	}
 
@@ -122,7 +123,7 @@ export default function StaffEdit(props) {
 				color: `${vk_staff_profileTitleColor}`,
 			};
 		} else {
-			staffProfileTitleClassName += ` has-${vk_staff_profileTitleColor}-color`;
+			staffProfileTitleClassName += ` has-${sanitizeSlug(vk_staff_profileTitleColor)}-color`;
 		}
 	}
 
@@ -135,7 +136,7 @@ export default function StaffEdit(props) {
 				color: `${vk_staff_profileTextColor}`,
 			};
 		} else {
-			staffProfileTextClassName += ` has-${vk_staff_profileTextColor}-color`;
+			staffProfileTextClassName += ` has-${sanitizeSlug(vk_staff_profileTextColor)}-color`;
 		}
 	}
 

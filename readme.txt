@@ -108,6 +108,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ] Fixed an issue where Japanese characters in custom color names in block themes caused class names to break, preventing colors from being applied.
+
 = 1.103.0 =
 [ Add function ][ Core Excerpt ] Added top and bottom margin settings to the toolbar.
 [ Add function ][ Outer (Pro) ] Added background offset feature.

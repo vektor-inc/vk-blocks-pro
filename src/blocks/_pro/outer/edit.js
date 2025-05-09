@@ -11,6 +11,7 @@ import { AdvancedMediaUpload } from '@vkblocks/components/advanced-media-upload'
 import { componentDivider } from './component-divider';
 import GenerateBgImage from './GenerateBgImage';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import LinkToolbar from '@vkblocks/components/link-toolbar';
 import ResponsiveSizeControl, {
@@ -264,7 +265,7 @@ export default function OuterEdit(props) {
 
 	const bgColorClasses = classnames({
 		[`has-background`]: bgColor !== undefined,
-		[`has-${bgColor}-background-color`]:
+		[`has-${sanitizeSlug(bgColor)}-background-color`]:
 			bgColor !== undefined && !isHexColor(bgColor),
 		[`has-background-dim`]: opacity !== undefined,
 	});
@@ -659,7 +660,7 @@ export default function OuterEdit(props) {
 					!hasBackgroundOffset &&
 					borderStyle !== 'none' &&
 					borderColor !== undefined,
-				[`has-${borderColor}-border-color`]:
+				[`has-${sanitizeSlug(borderColor)}-border-color`]:
 					!hasBackgroundOffset &&
 					borderStyle !== 'none' &&
 					borderColor !== undefined &&

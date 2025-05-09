@@ -17,6 +17,7 @@ import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { useEffect } from '@wordpress/element';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 export default function StepItemEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -47,7 +48,7 @@ export default function StepItemEdit(props) {
 			if (isHexColor(color)) {
 				inlineStyle = { backgroundColor: `${color}` };
 			} else {
-				styleClass += ` has-${color}-background-color`;
+				styleClass += ` has-${sanitizeSlug(color)}-background-color`;
 			}
 		}
 	} else if (style === 'outlined') {
@@ -57,7 +58,7 @@ export default function StepItemEdit(props) {
 			if (isHexColor(color)) {
 				inlineStyle = { color: `${color}` };
 			} else {
-				styleClass += ` has-${color}-color`;
+				styleClass += ` has-${sanitizeSlug(color)}-color`;
 			}
 		}
 	}

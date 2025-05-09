@@ -17,6 +17,7 @@ import {
 	CheckboxControl,
 	RadioControl,
 } from '@wordpress/components';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 export default function IconCardItemedit(props) {
 	const { setAttributes, attributes } = props;
@@ -55,7 +56,7 @@ export default function IconCardItemedit(props) {
 				};
 				//カラーパレットの時
 			} else {
-				iconOuterClass = `has-background has-${color}-background-color`;
+				iconOuterClass = `has-background has-${sanitizeSlug(color)}-background-color`;
 			}
 			//アイコン背景:背景なし
 		} else if (bgType === '1') {
@@ -68,7 +69,7 @@ export default function IconCardItemedit(props) {
 				iconColor = `${color}`;
 				//カラーパレットの時
 			} else {
-				iconOuterClass = `has-text-color has-${color}-color`;
+				iconOuterClass = `has-text-color has-${sanitizeSlug(color)}-color`;
 			}
 		}
 	}

@@ -21,6 +21,7 @@ import { __ } from '@wordpress/i18n';
  */
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 /*globals vk_blocks_params */
 
 // eslint-disable-next-line camelcase,no-undef
@@ -182,8 +183,8 @@ export default function BalloonEdit(props) {
 			contentBorderClass += ` has-text-color`;
 			//カラーパレットの時
 			if (!isHexColor(balloonBorderColor)) {
-				iconImageBorderClass += ` has-${balloonBorderColor}-color`;
-				contentBorderClass += ` has-${balloonBorderColor}-color`;
+				iconImageBorderClass += ` has-${sanitizeSlug(balloonBorderColor)}-color`;
+				contentBorderClass += ` has-${sanitizeSlug(balloonBorderColor)}-color`;
 			}
 		}
 
@@ -228,13 +229,13 @@ export default function BalloonEdit(props) {
 				if (balloonBgColor !== undefined) {
 					triangleBorderColorBeforeClass += ` has-text-color`;
 					if (!isHexColor(balloonBgColor)) {
-						triangleBorderColorBeforeClass += ` has-${balloonBgColor}-color`;
+						triangleBorderColorBeforeClass += ` has-${sanitizeSlug(balloonBgColor)}-color`;
 					}
 				}
 				if (balloonBorderColor !== undefined) {
 					triangleBorderColorAfterClass += ` has-text-color`;
 					if (!isHexColor(balloonBorderColor)) {
-						triangleBorderColorAfterClass += ` has-${balloonBorderColor}-color`;
+						triangleBorderColorAfterClass += ` has-${sanitizeSlug(balloonBorderColor)}-color`;
 					}
 				}
 				//もくもくの時
@@ -242,13 +243,13 @@ export default function BalloonEdit(props) {
 				if (balloonBorderColor !== undefined) {
 					triangleBorderColorBeforeClass += ` has-text-color`;
 					if (!isHexColor(balloonBorderColor)) {
-						triangleBorderColorBeforeClass += ` has-${balloonBorderColor}-color`;
+						triangleBorderColorBeforeClass += ` has-${sanitizeSlug(balloonBorderColor)}-color`;
 					}
 				}
 				if (balloonBorderColor !== undefined) {
 					triangleBorderColorAfterClass += ` has-text-color`;
 					if (!isHexColor(balloonBorderColor)) {
-						triangleBorderColorAfterClass += ` has-${balloonBorderColor}-color`;
+						triangleBorderColorAfterClass += ` has-${sanitizeSlug(balloonBorderColor)}-color`;
 					}
 				}
 			}
@@ -274,13 +275,13 @@ export default function BalloonEdit(props) {
 				if (balloonBgColor !== undefined) {
 					triangleBorderColorBeforeClass += ` has-text-color`;
 					if (!isHexColor(balloonBgColor)) {
-						triangleBorderColorBeforeClass += ` has-${balloonBgColor}-color`;
+						triangleBorderColorBeforeClass += ` has-${sanitizeSlug(balloonBgColor)}-color`;
 					}
 				}
 				if (balloonBorderColor !== undefined) {
 					triangleBorderColorAfterClass += ` has-text-color`;
 					if (!isHexColor(balloonBorderColor)) {
-						triangleBorderColorAfterClass += ` has-${balloonBorderColor}-color`;
+						triangleBorderColorAfterClass += ` has-${sanitizeSlug(balloonBorderColor)}-color`;
 					}
 				}
 				// もくもくの時
@@ -290,8 +291,8 @@ export default function BalloonEdit(props) {
 					triangleBorderColorBeforeClass += ` has-text-color`;
 					triangleBorderColorAfterClass += ` has-text-color`;
 					if (!isHexColor(balloonBorderColor)) {
-						triangleBorderColorBeforeClass += ` has-${balloonBorderColor}-color`;
-						triangleBorderColorAfterClass += ` has-${balloonBorderColor}-color`;
+						triangleBorderColorBeforeClass += ` has-${sanitizeSlug(balloonBorderColor)}-color`;
+						triangleBorderColorAfterClass += ` has-${sanitizeSlug(balloonBorderColor)}-color`;
 					}
 				}
 			}
@@ -347,7 +348,7 @@ export default function BalloonEdit(props) {
 				if (balloonBgColor !== undefined) {
 					triangleBorderColorBeforeClass += ` has-text-color`;
 					if (!isHexColor(balloonBgColor)) {
-						triangleBorderColorBeforeClass += ` has-${balloonBgColor}-color`;
+						triangleBorderColorBeforeClass += ` has-${sanitizeSlug(balloonBgColor)}-color`;
 					}
 				}
 			}
@@ -372,7 +373,7 @@ export default function BalloonEdit(props) {
 				if (balloonBgColor !== undefined) {
 					triangleBorderColorBeforeClass += ` has-text-color`;
 					if (!isHexColor(balloonBgColor)) {
-						triangleBorderColorBeforeClass += ` has-${balloonBgColor}-color`;
+						triangleBorderColorBeforeClass += ` has-${sanitizeSlug(balloonBgColor)}-color`;
 					}
 				}
 			}
@@ -392,7 +393,7 @@ export default function BalloonEdit(props) {
 		contentBackgroundClass += ` has-background-color`;
 		//カラーパレットの時
 		if (!isHexColor(balloonBgColor)) {
-			contentBackgroundClass += ` has-${balloonBgColor}-background-color`;
+			contentBackgroundClass += ` has-${sanitizeSlug(balloonBgColor)}-background-color`;
 		}
 	}
 

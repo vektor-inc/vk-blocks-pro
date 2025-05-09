@@ -2,6 +2,7 @@
  * External dependencies
  */
 import classnames from 'classnames';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 /* eslint camelcase: 0 */
 import { __ } from '@wordpress/i18n';
@@ -57,7 +58,7 @@ export default function save(props) {
 	const opacityClass = opacity && opacity * 10;
 	const bgAreaClasses = classnames('vk_slider_item-background-area', {
 		[`has-background`]: bgColor !== undefined,
-		[`has-${bgColor}-background-color`]:
+		[`has-${sanitizeSlug(bgColor)}-background-color`]:
 			bgColor !== undefined && !isHexColor(bgColor),
 		[`has-background-dim`]: opacity !== undefined,
 		[`has-background-dim-${opacityClass}`]: opacityClass !== undefined,

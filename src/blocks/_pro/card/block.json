@@ -1,7 +1,7 @@
 {
 	"apiVersion": 3,
 	"name": "vk-blocks/card",
-	"title": "Card(not recommended)",
+	"title": "Card ( not recommended )",
 	"description": "A card where you can place images, headings, text, and links.",
 	"textdomain": "vk-blocks-pro",
 	"category": "vk-blocks-cat",

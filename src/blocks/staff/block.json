@@ -2,7 +2,7 @@
 	"apiVersion": 3,
 	"name": "vk-blocks/staff",
 	"category": "vk-blocks-cat",
-	"title": "Staff(not recommended)",
+	"title": "Staff ( not recommended )",
 	"description": "Used for staff introduction, company introduction, school introduction, menu, etc.",
 	"textdomain": "vk-blocks-pro",
 	"attributes": {

@@ -29,6 +29,18 @@ function vk_blocks_dynamic_text_get_attributes_default() {
 		'isLinkTarget'             => false,
 		'isVertical'               => false,
 		'isUpright'                => false,
+		'isButtonStyle'            => false,
+		'buttonEffect'             => '',
+		'buttonColor'              => 'primary',
+		'buttonColorCustom'        => null,
+		'buttonTextColorCustom'    => null,
+		'buttonType'               => '0',
+		'buttonSize'               => 'md',
+		'buttonAlign'              => 'left',
+		'fontAwesomeIconBefore'    => null,
+		'fontAwesomeIconAfter'     => null,
+		'borderRadius'             => null,
+		'subCaption'               => null,
 	);
 	return $attributes_default;
 }
@@ -62,10 +74,169 @@ function vk_blocks_dynamic_text_custom_field_render( $attributes, $content, $blo
 		$custom_field_url = esc_url( get_post_meta( $block->context['postId'], $attributes['customFieldName'], true ) );
 		if ( $attributes['isLinkSet'] ) {
 			$link_text = ! empty( $attributes['customFieldLinkText'] ) ? wp_kses( $attributes['customFieldLinkText'], array( 'i' => array( 'class' => array() ) ) ) : $custom_field_url;
+
+			// FontAwesomeアイコン処理
+			$icon_before = '';
+			$icon_after  = '';
+
+			if ( ! empty( $attributes['fontAwesomeIconBefore'] ) ) {
+				$fa_before_class = preg_match( '/class="(.*?)"/', $attributes['fontAwesomeIconBefore'], $matches ) ? $matches[1] . ' vk_button_link_before' : '';
+				$style_before    = ! empty( $attributes['iconSizeBefore'] ) ? ' style="font-size: ' . esc_attr( $attributes['iconSizeBefore'] ) . '"' : '';
+				$icon_before     = '<i class="' . esc_attr( $fa_before_class ) . '"' . $style_before . '></i>';
+			}
+
+			if ( ! empty( $attributes['fontAwesomeIconAfter'] ) ) {
+				$fa_after_class = preg_match( '/class="(.*?)"/', $attributes['fontAwesomeIconAfter'], $matches ) ? $matches[1] . ' vk_button_link_after' : '';
+				$style_after    = ! empty( $attributes['iconSizeAfter'] ) ? ' style="font-size: ' . esc_attr( $attributes['iconSizeAfter'] ) . '"' : '';
+				$icon_after     = '<i class="' . esc_attr( $fa_after_class ) . '"' . $style_after . '></i>';
+			}
+
 			if ( $attributes['isLinkTarget'] ) {
 				$custom_field_content = '<a href="' . $custom_field_url . '" target="_blank" rel="noreferrer noopener">' . $link_text . '</a>';
 			} else {
 				$custom_field_content = '<a href="' . $custom_field_url . '">' . $link_text . '</a>';
+			}
+
+			if ( $attributes['isButtonStyle'] ) {
+				// ボタンスタイルの場合はアイコン付きでHTMLを生成
+				$content_with_icons = $icon_before . $link_text . $icon_after;
+
+				// VKBButtonと同じクラス構造を使用
+				$button_classes = 'vk_button_link';
+
+				// ボタンタイプに基づいてクラスを追加
+				$button_type       = $attributes['buttonType'];
+				$is_default_button = '0' === $button_type;
+				$is_null_button    = null === $button_type;
+				if ( $is_default_button || $is_null_button ) {
+					// 塗りつぶし
+					if ( 'custom' !== $attributes['buttonColor'] && empty( $attributes['buttonColorCustom'] ) ) {
+						$button_classes .= ' btn has-background has-vk-color-' . $attributes['buttonColor'] . '-background-color';
+					} else {
+						$button_classes .= ' btn has-background';
+						// カスタムパレットカラーの場合
+						if ( ! empty( $attributes['buttonColorCustom'] ) && preg_match( '/^[a-z0-9-]+$/', $attributes['buttonColorCustom'] ) ) {
+							$button_classes .= ' has-' . $attributes['buttonColorCustom'] . '-background-color';
+						}
+					}
+
+					// ボタンタイプに基づいてクラスを追加
+					$button_type       = $attributes['buttonType'];
+					$is_default_button = '0' === $button_type;
+					$is_null_button    = null === $button_type;
+					if ( $is_default_button || $is_null_button ) {
+						// 塗りつぶし
+						if ( 'custom' !== $attributes['buttonColor'] && empty( $attributes['buttonColorCustom'] ) ) {
+							$button_classes .= ' btn has-background has-vk-color-' . $attributes['buttonColor'] . '-background-color';
+						} else {
+							$button_classes .= ' btn has-background';
+							// カスタムパレットカラーの場合
+							if ( ! empty( $attributes['buttonColorCustom'] ) && preg_match( '/^[a-z0-9-]+$/', $attributes['buttonColorCustom'] ) ) {
+								$button_classes .= ' has-' . $attributes['buttonColorCustom'] . '-background-color';
+							}
+						}
+
+										// 文字色
+						if ( 'custom' === $attributes['buttonColor'] && ! empty( $attributes['buttonTextColorCustom'] ) ) {
+							$button_classes .= ' btn has-text-color has-vk-color-' . $attributes['buttonTextColorCustom'] . '-color';
+							// カスタムパレットカラーの場合
+							if ( preg_match( '/^[a-z0-9-]+$/', $attributes['buttonTextColorCustom'] ) ) {
+								$button_classes .= ' has-' . $attributes['buttonTextColorCustom'] . '-color';
+							}
+						}
+
+						// has-primary-hover-colorを追加
+						$button_classes .= ' has-' . $attributes['buttonTextColorCustom'] . '-color';
+					}
+				} elseif ( '1' === $button_type ) {
+					// 塗りなし
+					if ( 'custom' !== $attributes['buttonColor'] && empty( $attributes['buttonColorCustom'] ) ) {
+						$button_classes .= ' btn has-text-color is-style-outline has-vk-color-' . $attributes['buttonColor'] . '-color';
+					} else {
+						$button_classes .= ' btn has-text-color is-style-outline';
+						// カスタムパレットカラーの場合
+						if ( ! empty( $attributes['buttonColorCustom'] ) && preg_match( '/^[a-z0-9-]+$/', $attributes['buttonColorCustom'] ) ) {
+							$button_classes .= ' has-' . $attributes['buttonColorCustom'] . '-color';
+						}
+					}
+				} elseif ( '2' === $button_type ) {
+					// テキストのみ
+					if ( 'custom' !== $attributes['buttonColor'] && empty( $attributes['buttonColorCustom'] ) ) {
+						$button_classes .= ' has-text-color vk_button_link-type-text has-vk-color-' . $attributes['buttonColor'] . '-color';
+					} else {
+						$button_classes .= ' has-text-color vk_button_link-type-text';
+						// カスタムパレットカラーの場合
+						if ( ! empty( $attributes['buttonColorCustom'] ) && preg_match( '/^[a-z0-9-]+$/', $attributes['buttonColorCustom'] ) ) {
+							$button_classes .= ' has-' . $attributes['buttonColorCustom'] . '-color';
+						}
+					}
+				}
+
+				// ボタンサイズ
+				$button_classes .= ' btn-' . $attributes['buttonSize'];
+
+				// buttonAlign Block
+				if ( 'block' === $attributes['buttonAlign'] ) {
+					$button_classes .= ' btn-block';
+				} elseif ( 'wide' === $attributes['buttonAlign'] ) {
+					$button_classes .= ' btn-wide';
+				}
+
+				// ボタンエフェクト
+				if ( isset( $attributes['buttonEffect'] ) && 'shine' === $attributes['buttonEffect'] ) {
+					$button_classes .= ' vk_button_link-effect-shine';
+				}
+
+				// インラインスタイル
+				$inline_style = '';
+
+				// カスタムカラーがHEXカラーの場合
+				if ( ! empty( $attributes['buttonColorCustom'] ) && preg_match( '/^#[a-fA-F0-9]{3,6}$/', $attributes['buttonColorCustom'] ) ) {
+					$button_type       = $attributes['buttonType'];
+					$is_default_button = '0' === $button_type;
+					$is_null_button    = null === $button_type;
+					if ( $is_default_button || $is_null_button ) {
+						$inline_style .= 'background-color:' . esc_attr( $attributes['buttonColorCustom'] ) . ';';
+					} else {
+						$inline_style .= 'color:' . esc_attr( $attributes['buttonColorCustom'] ) . ';';
+						if ( '1' === $button_type ) {
+							$inline_style .= 'border-color:' . esc_attr( $attributes['buttonColorCustom'] ) . ';';
+						}
+					}
+				}
+
+				// テキストカラーがHEXカラーの場合
+				$button_type       = $attributes['buttonType'];
+				$is_default_button = '0' === $button_type;
+				$is_null_button    = null === $button_type;
+				if ( ( $is_default_button || $is_null_button ) &&
+					! empty( $attributes['buttonTextColorCustom'] ) &&
+					preg_match( '/^#[a-fA-F0-9]{3,6}$/', $attributes['buttonTextColorCustom'] ) ) {
+					$inline_style .= 'color:' . esc_attr( $attributes['buttonTextColorCustom'] ) . ';';
+				}
+
+				// ボーダーラジウス
+				if ( ! empty( $attributes['borderRadius'] ) ) {
+					$inline_style .= 'border-radius:' . esc_attr( $attributes['borderRadius'] ) . ';';
+				}
+
+				$style_attr = ! empty( $inline_style ) ? ' style="' . $inline_style . '"' : '';
+
+				$custom_field_content = '<a href="' . $custom_field_url . '" class="' . $button_classes . '"'
+					. ( $attributes['isLinkTarget'] ? ' target="_blank" rel="noreferrer noopener"' : '' )
+					. ' role="button" aria-pressed="true"'
+					. $style_attr . '>';
+
+				$custom_field_content .= '<div class="vk_button_link_caption">' . $content_with_icons . '</div>';
+
+				// サブキャプションがある場合は表示
+				if ( ! empty( $attributes['subCaption'] ) ) {
+					$custom_field_content .= '<p class="vk_button_link_subCaption">' . esc_html( $attributes['subCaption'] ) . '</p>';
+				}
+
+				$custom_field_content .= '</a>';
+			} else {
+				$custom_field_content = '<a href="' . $custom_field_url . '"' . ( $attributes['isLinkTarget'] ? ' target="_blank" rel="noreferrer noopener"' : '' ) . '>' . $link_text . '</a>';
 			}
 		} else {
 			$custom_field_content = $custom_field_url;
@@ -96,6 +267,15 @@ function vk_blocks_dynamic_text_render_callback( $attributes, $content, $block )
 	}
 	if ( $attributes['isUpright'] ) {
 		$classes .= ' is-upright';
+	}
+	if ( isset( $attributes['isButtonStyle'] ) && $attributes['isButtonStyle'] ) {
+		$classes .= ' vk_dynamicText_button';
+		if ( isset( $attributes['buttonAlign'] ) ) {
+			$classes .= ' vk_button-align-' . $attributes['buttonAlign'];
+		}
+	}
+	if ( isset( $attributes['buttonEffect'] ) && 'shine' === $attributes['buttonEffect'] ) {
+		$classes .= ' is-style-shine';
 	}
 	// block.json の Supports で設定したクラス名やスタイルを取得する
 	$wrapper_classes = get_block_wrapper_attributes( array( 'class' => $classes ) );
@@ -203,7 +383,7 @@ function vk_blocks_register_block_dynamic_text() {
 	register_block_type(
 		__DIR__,
 		array(
-			'style'           => 'vk-blocks/dynamic-text',
+			'style'           => array( 'vk-blocks/dynamic-text', 'vk-blocks/button-control' ),
 			'editor_style'    => 'vk-blocks-build-editor-css',
 			'editor_script'   => 'vk-blocks-build-js',
 			'attributes'      => array_merge(
@@ -278,6 +458,62 @@ function vk_blocks_register_block_dynamic_text() {
 					'isUpright'                => array(
 						'type'    => 'boolean',
 						'default' => false,
+					),
+					'isButtonStyle'            => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+					'buttonEffect'             => array(
+						'type'    => 'string',
+						'default' => '',
+					),
+					'buttonColor'              => array(
+						'type'    => 'string',
+						'default' => 'primary',
+					),
+					'buttonType'               => array(
+						'type'    => 'string',
+						'default' => '0',
+					),
+					'buttonSize'               => array(
+						'type'    => 'string',
+						'default' => 'md',
+					),
+					'buttonAlign'              => array(
+						'type'    => 'string',
+						'default' => 'left',
+					),
+					'fontAwesomeIconBefore'    => array(
+						'type'    => 'string',
+						'default' => null,
+					),
+					'fontAwesomeIconAfter'     => array(
+						'type'    => 'string',
+						'default' => null,
+					),
+					'iconSizeBefore'           => array(
+						'type'    => 'string',
+						'default' => null,
+					),
+					'iconSizeAfter'            => array(
+						'type'    => 'string',
+						'default' => null,
+					),
+					'borderRadius'             => array(
+						'type'    => 'string',
+						'default' => null,
+					),
+					'buttonColorCustom'        => array(
+						'type'    => 'string',
+						'default' => null,
+					),
+					'buttonTextColorCustom'    => array(
+						'type'    => 'string',
+						'default' => null,
+					),
+					'subCaption'               => array(
+						'type'    => 'string',
+						'default' => null,
 					),
 				)
 			),

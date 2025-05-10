@@ -1,4 +1,4 @@
-import { VKBButton } from './component';
+import { VKBButton } from '@vkblocks/components/vkb-button-control';
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
@@ -87,7 +87,7 @@ export default function save(props) {
 				lbFontAwesomeIconAfter={fontAwesomeIconAfter}
 				lbIconSizeBefore={iconSizeBefore}
 				lbIconSizeAfter={iconSizeAfter}
-				lbsubCaption={subCaption}
+				subCaption={subCaption}
 				inlineStyle={btnInlineStyle}
 				lbRichtext={
 					<RichText.Content

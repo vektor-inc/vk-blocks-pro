@@ -72,6 +72,62 @@
 		"isUpright": {
 			"type": "boolean",
 			"default": false
+		},
+		"isButtonStyle": {
+			"type": "boolean",
+			"default": false
+		},
+		"buttonColor": {
+			"type": "string",
+			"default": "primary"
+		},
+		"buttonType": {
+			"type": "string",
+			"default": "0"
+		},
+		"buttonSize": {
+			"type": "string",
+			"default": "md"
+		},
+		"buttonAlign": {
+			"type": "string",
+			"default": "left"
+		},
+		"buttonEffect": {
+			"type": "string",
+			"default": ""
+		},
+		"fontAwesomeIconBefore": {
+			"type": "string",
+			"default": null
+		},
+		"fontAwesomeIconAfter": {
+			"type": "string",
+			"default": null
+		},
+		"iconSizeBefore": {
+			"type": "string",
+			"default": null
+		},
+		"iconSizeAfter": {
+			"type": "string",
+			"default": null
+		},
+		"borderRadius": {
+			"type": "string",
+			"default": null
+		},
+		"buttonColorCustom": {
+			"type": "string",
+			"default": null
+		},
+		"buttonTextColorCustom": {
+			"type": "string",
+			"default": null
+		},
+		"subCaption": {
+			"type": "string",
+			"default": null
 		}
 	},
 	"description": "Display dynamic text",

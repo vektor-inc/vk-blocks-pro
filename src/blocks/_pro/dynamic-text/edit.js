@@ -17,9 +17,14 @@ import {
 	AlignmentControl,
 	BlockControls,
 	InspectorControls,
+	RichText,
 } from '@wordpress/block-editor';
 import { useSelect } from '@wordpress/data';
 import ServerSideRender from '@wordpress/server-side-render';
+import {
+	ButtonSettings,
+	VKBButton,
+} from '@vkblocks/components/vkb-button-control';
 
 /**
  * Render Select controls for the Dynamic text block.
@@ -82,6 +87,7 @@ function DynamicTextEditControls({ tagName, onSelectTagName }) {
 export default function DynamicTextEdit(props) {
 	const { attributes, setAttributes } = props;
 	const {
+		content,
 		textAlign,
 		displayElement,
 		tagName: TagName = '',
@@ -98,6 +104,20 @@ export default function DynamicTextEdit(props) {
 		isLinkTarget,
 		isVertical,
 		isUpright,
+		isButtonStyle,
+		buttonColor,
+		buttonType,
+		buttonSize,
+		buttonAlign,
+		buttonEffect,
+		fontAwesomeIconBefore,
+		fontAwesomeIconAfter,
+		iconSizeBefore,
+		iconSizeAfter,
+		borderRadius,
+		buttonTextColorCustom,
+		buttonColorCustom,
+		subCaption,
 	} = attributes;
 	attributes.ancestorPageHiddenOption = ancestorPageHiddenOption;
 	attributes.parentPageHiddenOption = parentPageHiddenOption;
@@ -106,6 +126,20 @@ export default function DynamicTextEdit(props) {
 	attributes.isVertical = isVertical;
 	attributes.isUpright = isUpright;
 	attributes.customFieldLinkText = customFieldLinkText;
+	attributes.isButtonStyle = isButtonStyle;
+	attributes.buttonColor = buttonColor;
+	attributes.buttonType = buttonType;
+	attributes.buttonSize = buttonSize;
+	attributes.buttonAlign = buttonAlign;
+	attributes.buttonEffect = buttonEffect;
+	attributes.fontAwesomeIconBefore = fontAwesomeIconBefore;
+	attributes.fontAwesomeIconAfter = fontAwesomeIconAfter;
+	attributes.iconSizeBefore = iconSizeBefore;
+	attributes.iconSizeAfter = iconSizeAfter;
+	attributes.borderRadius = borderRadius;
+	attributes.buttonTextColorCustom = buttonTextColorCustom;
+	attributes.buttonColorCustom = buttonColorCustom;
+	attributes.subCaption = subCaption;
 
 	// Hooks.
 	const blockProps = useBlockProps({
@@ -113,6 +147,10 @@ export default function DynamicTextEdit(props) {
 			[`has-text-align-${textAlign}`]: textAlign,
 			'is-vertical': isVertical,
 			'is-upright': isUpright,
+			vk_dynamicText_button: isButtonStyle,
+			'btn-block': buttonAlign === 'block' && isButtonStyle,
+			'btn-wide': buttonAlign === 'wide' && isButtonStyle,
+			'is-style-shine': buttonEffect === 'shine',
 		}),
 	});
 
@@ -451,15 +489,112 @@ export default function DynamicTextEdit(props) {
 								</>
 							)}
 							{fieldType === 'url' && isLinkSet && (
-								<TextControl
-									label={__('Link Text', 'vk-blocks-pro')}
-									value={attributes.customFieldLinkText}
-									onChange={(value) =>
-										setAttributes({
-											customFieldLinkText: value,
-										})
-									}
-								/>
+								<>
+									<TextControl
+										label={__('Link Text', 'vk-blocks-pro')}
+										value={attributes.customFieldLinkText}
+										onChange={(value) =>
+											setAttributes({
+												customFieldLinkText: value,
+											})
+										}
+									/>
+									<ToggleControl
+										label={__(
+											'Button Style',
+											'vk-blocks-pro'
+										)}
+										checked={isButtonStyle}
+										onChange={(checked) =>
+											setAttributes({
+												isButtonStyle: checked,
+											})
+										}
+									/>
+								</>
+							)}
+							{isButtonStyle && (
+								<>
+									<h4 className="mb-2">
+										{__('Button Setting', 'vk-blocks-pro')}
+									</h4>
+									<ButtonSettings
+										{...{
+											attributes: {
+												buttonColor,
+												buttonType,
+												buttonSize,
+												buttonAlign,
+												buttonEffect,
+												fontAwesomeIconBefore,
+												fontAwesomeIconAfter,
+												iconSizeBefore,
+												iconSizeAfter,
+												borderRadius,
+												buttonTextColorCustom,
+												buttonColorCustom,
+												subCaption,
+											},
+											setAttributes,
+											name: 'vk-blocks/dynamic-text',
+										}}
+										isButtonStyle={true}
+									/>
+									<VKBButton
+										lbTextColorCustom={
+											buttonTextColorCustom
+										}
+										lbColorCustom={buttonColorCustom}
+										lbColor={buttonColor}
+										lbType={buttonType}
+										lbAlign={buttonAlign}
+										lbSize={buttonSize}
+										lbFontAwesomeIconBefore={
+											fontAwesomeIconBefore
+										}
+										lbFontAwesomeIconAfter={
+											fontAwesomeIconAfter
+										}
+										lbIconSizeBefore={iconSizeBefore}
+										lbIconSizeAfter={iconSizeAfter}
+										subCaption={subCaption}
+										inlineStyle={{
+											color: buttonTextColorCustom,
+											backgroundColor: buttonColorCustom,
+											borderColor: buttonColorCustom,
+											borderWidth: attributes.borderWidth,
+											borderStyle: attributes.borderStyle,
+											borderRadius:
+												attributes.borderRadius,
+										}}
+										lbRichtext={
+											<RichText
+												tagName={'span'}
+												className={'vk_button_link_txt'}
+												onChange={(value) =>
+													setAttributes({
+														content: value,
+													})
+												}
+												value={content}
+												placeholder={__(
+													'Input text',
+													'vk-blocks-pro'
+												)}
+												allowedFormats={[
+													'core/bold',
+													'core/italic',
+													'core/strikethrough',
+													'core/superscript',
+													'core/subscript',
+													'vk-blocks/responsive-br',
+													'vk-blocks/nowrap',
+													'vk-blocks/inline-font-size',
+												]}
+											/>
+										}
+									/>
+								</>
 							)}
 						</BaseControl>
 					)}

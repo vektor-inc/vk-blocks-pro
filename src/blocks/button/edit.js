@@ -41,6 +41,7 @@ export default function ButtonEdit(props) {
 		buttonColor,
 		buttonTextColorCustom,
 		buttonColorCustom,
+		buttonBorderColorCustom,
 		buttonAlign,
 		buttonWidthMobile,
 		buttonWidthTablet,
@@ -142,6 +143,7 @@ export default function ButtonEdit(props) {
 				buttonTextColorCustom: undefined,
 			});
 			updateBlockAttributes(clientId, { buttonColorCustom: undefined });
+			updateBlockAttributes(clientId, { buttonBorderColorCustom: undefined });
 		} else if (
 			buttonColorCustom === undefined &&
 			buttonColor === 'custom'
@@ -149,6 +151,7 @@ export default function ButtonEdit(props) {
 			updateBlockAttributes(clientId, { buttonColor: 'primary' });
 			updateBlockAttributes(clientId, {
 				buttonTextColorCustom: undefined,
+				buttonBorderColorCustom: undefined,
 			});
 		}
 	}, [buttonColor]);
@@ -629,6 +632,15 @@ export default function ButtonEdit(props) {
 								</BaseControl>
 							)}
 					</BaseControl>
+					<BaseControl
+						id={`vk_block_button_custom_border_color`}
+						label={__('Border Color', 'vk-blocks-pro')}
+					>
+						<AdvancedColorPalette
+							schema={'buttonBorderColorCustom'}
+							{...props}
+						/>
+					</BaseControl>
 					<BaseControl>
 						<h4 className={`mt-0 mb-2`}>
 							{__('Icon', 'vk-blocks-pro') +
@@ -701,6 +713,7 @@ export default function ButtonEdit(props) {
 				<VKBButton
 					lbTextColorCustom={buttonTextColorCustom}
 					lbColorCustom={buttonColorCustom}
+					lbBorderColorCustom={buttonBorderColorCustom}
 					lbColor={buttonColor}
 					lbType={buttonType}
 					lbAlign={buttonAlign}

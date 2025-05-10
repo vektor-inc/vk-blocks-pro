@@ -6,7 +6,6 @@ export class VKBButton extends Component {
 	render() {
 		const buttonTextColorCustom = this.props.lbTextColorCustom;
 		const buttonColorCustom = this.props.lbColorCustom;
-		const buttonBorderColorCustom = this.props.lbBorderColorCustom;
 		const buttonColor = this.props.lbColor;
 		const buttonType = this.props.lbType;
 		const buttonAlign = this.props.lbAlign;
@@ -58,13 +57,9 @@ export class VKBButton extends Component {
 				aClass += ` btn has-text-color is-style-outline has-vk-color-${buttonColor}-color`;
 			} else {
 				aClass += ` btn has-text-color is-style-outline`;
-				// カスタムパレットの色の場合
+				// カスタムパレットカラーの場合
 				if (!isHexColor(buttonColorCustom)) {
 					aClass += ` has-${buttonColorCustom}-color`;
-				}
-				// カスタムパレットの枠線の色の場合
-				if (!isHexColor(buttonBorderColorCustom)) {
-					aClass += ` has-${buttonBorderColorCustom}-border-color`;
 				}
 			}
 			// テキストのみ
@@ -94,11 +89,6 @@ export class VKBButton extends Component {
 			};
 		}
 		*/
-
-		// ボーダーカラー
-		if (buttonBorderColorCustom !== undefined && isHexColor(buttonBorderColorCustom)) {
-			aClass += ` has-border-color-${buttonBorderColorCustom.replace('#', '')}`;
-		}
 
 		aClass = `${aClass} btn-${buttonSize}`;
 

@@ -1,7 +1,7 @@
 {
 	"apiVersion": 3,
 	"name": "vk-blocks/pr-blocks",
-	"title": "PR Blocks (not recommended)",
+	"title": "PR Blocks ( not recommended )",
 	"category": "vk-blocks-cat",
 	"attributes": {
 		"heading1": {

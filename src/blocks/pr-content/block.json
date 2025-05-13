@@ -1,7 +1,7 @@
 {
 	"apiVersion": 3,
 	"name": "vk-blocks/pr-content",
-	"title": "PR Content",
+	"title": "PR Content ( not recommended )",
 	"description": "This is PR content where you can place images, headlines, text, and buttons.",
 	"category": "vk-blocks-cat",
 	"attributes": {

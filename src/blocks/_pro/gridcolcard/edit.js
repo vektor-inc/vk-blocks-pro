@@ -63,29 +63,58 @@ export default function Edit(props) {
 				const thisInnerBlocks = thisBlock[0].innerBlocks;
 
 				// インナーブロックをループ
-				thisInnerBlocks.forEach(function (thisInnerBlock) {
-					// 編集ロックがかかっていないものだけ上書きする
-					if (thisInnerBlock.attributes.editLock === false) {
-						// 子ブロックのattributeをアップデート
-						updateBlockAttributes(thisInnerBlock.clientId, {
-							// 子ブロックの編集モードを変更
-							// selfになってないと親を書き換えに帰ってくるので無限ループになる
-							editMode: 'self',
-
-							containerSpace: attributes.containerSpace,
-							headerImageAspectRatio:
-								attributes.headerImageAspectRatio,
-							headerImageFit: attributes.headerImageFit,
-							headerDisplay: attributes.headerDisplay,
-							footerDisplay: attributes.footerDisplay,
-							borderRadius: attributes.borderRadius,
-							border: attributes.border,
-							borderColor: attributes.borderColor,
-							borderWidth: attributes.borderWidth,
-							textColor: attributes.textColor,
-							backgroundColor: attributes.backgroundColor,
-							backgroundGradient: attributes.backgroundGradient,
-						});
+				thisInnerBlocks.forEach((thisInnerBlock) => {
+					const childAttrs = thisInnerBlock.attributes;
+				
+					// editLock が false かつ editMode が 'self' 以外なら親から更新する
+					if (childAttrs.editLock === false && childAttrs.editMode !== 'self') {
+						const updatedAttrs = {};
+				
+						// 差分があるものだけ更新オブジェクトに入れる
+						if (childAttrs.containerSpace !== attributes.containerSpace) {
+							updatedAttrs.containerSpace = attributes.containerSpace;
+						}
+						if (childAttrs.headerImageAspectRatio !== attributes.headerImageAspectRatio) {
+							updatedAttrs.headerImageAspectRatio = attributes.headerImageAspectRatio;
+						}
+						if (childAttrs.headerImageFit !== attributes.headerImageFit) {
+							updatedAttrs.headerImageFit = attributes.headerImageFit;
+						}
+						if (childAttrs.headerDisplay !== attributes.headerDisplay) {
+							updatedAttrs.headerDisplay = attributes.headerDisplay;
+						}
+						if (childAttrs.footerDisplay !== attributes.footerDisplay) {
+							updatedAttrs.footerDisplay = attributes.footerDisplay;
+						}
+						if (childAttrs.borderRadius !== attributes.borderRadius) {
+							updatedAttrs.borderRadius = attributes.borderRadius;
+						}
+						if (childAttrs.border !== attributes.border) {
+							updatedAttrs.border = attributes.border;
+						}
+						if (childAttrs.borderColor !== attributes.borderColor) {
+							updatedAttrs.borderColor = attributes.borderColor;
+						}
+						if (childAttrs.borderWidth !== attributes.borderWidth) {
+							updatedAttrs.borderWidth = attributes.borderWidth;
+						}
+						if (childAttrs.textColor !== attributes.textColor) {
+							updatedAttrs.textColor = attributes.textColor;
+						}
+						if (childAttrs.backgroundColor !== attributes.backgroundColor) {
+							updatedAttrs.backgroundColor = attributes.backgroundColor;
+						}
+						if (childAttrs.backgroundGradient !== attributes.backgroundGradient) {
+							updatedAttrs.backgroundGradient = attributes.backgroundGradient;
+						}
+				
+						// 差分が1つでもあれば更新する（+editMode: 'self' を追加）
+						if (Object.keys(updatedAttrs).length > 0) {
+							updateBlockAttributes(thisInnerBlock.clientId, {
+								...updatedAttrs,
+								editMode: 'self',
+							});
+						}
 					}
 				});
 			}

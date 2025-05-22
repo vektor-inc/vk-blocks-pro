@@ -108,7 +108,7 @@ e.g.
 
 == Changelog ==
 
-[ Specification change ][ Grid Column Card (Pro) ] Edit mode removed — only the selected item block is now editable.
+[ Specification change ][ Grid Column Card (Pro) ] Removed Edit mode — only the selected item block is now editable.
 [ Other ][ PR Content ][ Staff ][ Card ][ Icon Card ]Added "not recommended" to block name.
 
 = 1.103.0 =

@@ -187,7 +187,7 @@ export default function Edit(props) {
 					title={__('Edit mode', 'vk-blocks-pro')}
 					initialOpen={true}
 				>
-					<div className="components-base-control__help mt-0 alert alert-warning">
+					<div className="components-base-control__help alert alert-warning">
 						{__(
 							'If Edit Lock is disabled, changes made in this item block (such as color or image ratio) will be overwritten when the parent Grid Column Card block is re-selected.',
 							'vk-blocks-pro'

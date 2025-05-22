@@ -16,7 +16,7 @@ import {
 	BlockControls,
 	store as blockEditorStore,
 } from '@wordpress/block-editor';
-import { useSelect, useDispatch, dispatch } from '@wordpress/data';
+import { useSelect, useDispatch } from '@wordpress/data';
 import { useEffect, useState } from '@wordpress/element';
 import CommonItemControl from '../gridcolcard/edit-common.js';
 import classnames from 'classnames';
@@ -57,7 +57,7 @@ export default function Edit(props) {
 		relAttribute,
 	} = attributes;
 
-	// editModeは値として保持させずに常にすべてのカラムモードでスタートさせる
+	// editModeは値として保持させずに常に個別モードでスタートさせる
 	const [editMode, setEditMode] = useState('self');
 
 	const { rootClientId } = useSelect(
@@ -84,6 +84,7 @@ export default function Edit(props) {
 
 	const thisBlock = getBlocksByClientId(clientId);
 	// 親ブロック情報取得
+	const parentBlock = getBlocksByClientId(rootClientId);
 	useEffect(() => {
 		if (isParentReusableBlock(clientId) === false) {
 			// Send attribute to child
@@ -102,25 +103,6 @@ export default function Edit(props) {
 			}
 		}
 	}, [thisBlock, attributes]);
-
-	// editMode が all に変わったら親にフォーカス
-	useEffect(() => {
-		if (editMode === 'all') {
-			dispatch('core/block-editor').selectBlock(rootClientId);
-		}
-	}, [editMode]);
-
-	// 選択されたら self に戻す
-	const selectedBlockClientId = useSelect(
-		(select) => select(blockEditorStore).getSelectedBlockClientId(),
-		[]
-	);
-
-	useEffect(() => {
-		if (selectedBlockClientId === clientId && editMode !== 'self') {
-			setEditMode('self');
-		}
-	}, [selectedBlockClientId, editMode]);
 
 	// カラーパレットに対応
 	const containerClasses = classnames('vk_gridcolcard_item', {
@@ -225,22 +207,6 @@ export default function Edit(props) {
 					title={__('Edit mode', 'vk-blocks-pro')}
 					initialOpen={true}
 				>
-					<ToggleGroupControl
-						value={editMode}
-						onChange={(value) => setEditMode(value)}
-						isBlock
-					>
-						<ToggleGroupControlOption
-							value="all"
-							label={__('All columns', 'vk-blocks-pro')}
-						/>
-						<ToggleGroupControlOption
-							value="self"
-							label={__('This column only', 'vk-blocks-pro')}
-						/>
-					</ToggleGroupControl>
-
-					<hr />
 					<label htmlFor="vk_hiddenControl-hiddenEditLock">
 						{__('Edit Lock', 'vk-blocks-pro')}
 					</label>

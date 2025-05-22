@@ -16,7 +16,7 @@ import {
 	BlockControls,
 	store as blockEditorStore,
 } from '@wordpress/block-editor';
-import { useSelect, useDispatch } from '@wordpress/data';
+import { useSelect, useDispatch, dispatch } from '@wordpress/data';
 import { useEffect, useState } from '@wordpress/element';
 import CommonItemControl from '../gridcolcard/edit-common.js';
 import classnames from 'classnames';
@@ -58,7 +58,7 @@ export default function Edit(props) {
 	} = attributes;
 
 	// editModeは値として保持させずに常にすべてのカラムモードでスタートさせる
-	const [editMode, setEditMode] = useState('all');
+	const [editMode, setEditMode] = useState('self');
 
 	const { rootClientId } = useSelect(
 		(select) => {
@@ -84,7 +84,6 @@ export default function Edit(props) {
 
 	const thisBlock = getBlocksByClientId(clientId);
 	// 親ブロック情報取得
-	const parentBlock = getBlocksByClientId(rootClientId);
 	useEffect(() => {
 		if (isParentReusableBlock(clientId) === false) {
 			// Send attribute to child
@@ -101,60 +100,27 @@ export default function Edit(props) {
 					});
 				});
 			}
-
-			// Send attribute to parent
-			if (editMode === 'all') {
-				if (
-					parentBlock &&
-					parentBlock[0] &&
-					parentBlock[0].innerBlocks
-				) {
-					const parentInnerBlocks = parentBlock[0].innerBlocks;
-
-					// 兄弟ブロックの値の変更
-					parentInnerBlocks.forEach(function (thisInnerBlock) {
-						// 編集ロックがかかっていないものだけ上書きする
-						if (thisInnerBlock.attributes.editLock === false) {
-							updateBlockAttributes(thisInnerBlock.clientId, {
-								editMode: attributes.editMode,
-								containerSpace: attributes.containerSpace,
-								headerImageAspectRatio:
-									attributes.headerImageAspectRatio,
-								headerImageFit: attributes.headerImageFit,
-								headerDisplay: attributes.headerDisplay,
-								footerDisplay: attributes.footerDisplay,
-								borderRadius: attributes.borderRadius,
-								border: attributes.border,
-								borderColor: attributes.borderColor,
-								borderWidth: attributes.borderWidth,
-								textColor: attributes.textColor,
-								backgroundColor: attributes.backgroundColor,
-								backgroundGradient:
-									attributes.backgroundGradient,
-							});
-						}
-					});
-
-					// 子ブロックから親ブロックの値の変更
-					updateBlockAttributes(rootClientId, {
-						containerSpace: attributes.containerSpace,
-						headerImageAspectRatio:
-							attributes.headerImageAspectRatio,
-						headerImageFit: attributes.headerImageFit,
-						headerDisplay: attributes.headerDisplay,
-						footerDisplay: attributes.footerDisplay,
-						borderRadius: attributes.borderRadius,
-						border: attributes.border,
-						borderColor: attributes.borderColor,
-						borderWidth: attributes.borderWidth,
-						textColor: attributes.textColor,
-						backgroundColor: attributes.backgroundColor,
-						backgroundGradient: attributes.backgroundGradient,
-					});
-				}
-			}
 		}
 	}, [thisBlock, attributes]);
+
+	// editMode が all に変わったら親にフォーカス
+	useEffect(() => {
+		if (editMode === 'all') {
+			dispatch('core/block-editor').selectBlock(rootClientId);
+		}
+	}, [editMode]);
+
+	// 選択されたら self に戻す
+	const selectedBlockClientId = useSelect(
+		(select) => select(blockEditorStore).getSelectedBlockClientId(),
+		[]
+	);
+
+	useEffect(() => {
+		if (selectedBlockClientId === clientId && editMode !== 'self') {
+			setEditMode('self');
+		}
+	}, [selectedBlockClientId, editMode]);
 
 	// カラーパレットに対応
 	const containerClasses = classnames('vk_gridcolcard_item', {

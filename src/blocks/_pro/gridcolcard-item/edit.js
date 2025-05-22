@@ -1,8 +1,6 @@
 import { __ } from '@wordpress/i18n';
 import {
 	PanelBody,
-	__experimentalToggleGroupControl as ToggleGroupControl,
-	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
 	ToggleControl,
 	BaseControl,
 	CheckboxControl,
@@ -16,8 +14,8 @@ import {
 	BlockControls,
 	store as blockEditorStore,
 } from '@wordpress/block-editor';
-import { useSelect, useDispatch, dispatch } from '@wordpress/data';
-import { useEffect, useState } from '@wordpress/element';
+import { useSelect, useDispatch } from '@wordpress/data';
+import { useEffect } from '@wordpress/element';
 import CommonItemControl from '../gridcolcard/edit-common.js';
 import classnames from 'classnames';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
@@ -57,23 +55,6 @@ export default function Edit(props) {
 		relAttribute,
 	} = attributes;
 
-	// editModeは値として保持させずに常にすべてのカラムモードでスタートさせる
-	const [editMode, setEditMode] = useState('self');
-
-	const { rootClientId } = useSelect(
-		(select) => {
-			// 親ブロックのIDを取得するメソッドを取得
-			const { getBlockRootClientId } = select(blockEditorStore);
-			// 特ブロックのIDを取得
-			const rootId = getBlockRootClientId(clientId);
-
-			return {
-				rootClientId: rootId,
-			};
-		},
-		[clientId]
-	);
-
 	const { updateBlockAttributes } = useDispatch(blockEditorStore);
 
 	// 更に Header インナー に値を送る
@@ -102,25 +83,6 @@ export default function Edit(props) {
 			}
 		}
 	}, [thisBlock, attributes]);
-
-	// editMode が all に変わったら親にフォーカス
-	useEffect(() => {
-		if (editMode === 'all') {
-			dispatch('core/block-editor').selectBlock(rootClientId);
-		}
-	}, [editMode]);
-
-	// 選択されたら self に戻す
-	const selectedBlockClientId = useSelect(
-		(select) => select(blockEditorStore).getSelectedBlockClientId(),
-		[]
-	);
-
-	useEffect(() => {
-		if (selectedBlockClientId === clientId && editMode !== 'self') {
-			setEditMode('self');
-		}
-	}, [selectedBlockClientId, editMode]);
 
 	// カラーパレットに対応
 	const containerClasses = classnames('vk_gridcolcard_item', {
@@ -225,22 +187,12 @@ export default function Edit(props) {
 					title={__('Edit mode', 'vk-blocks-pro')}
 					initialOpen={true}
 				>
-					<ToggleGroupControl
-						value={editMode}
-						onChange={(value) => setEditMode(value)}
-						isBlock
-					>
-						<ToggleGroupControlOption
-							value="all"
-							label={__('All columns', 'vk-blocks-pro')}
-						/>
-						<ToggleGroupControlOption
-							value="self"
-							label={__('This column only', 'vk-blocks-pro')}
-						/>
-					</ToggleGroupControl>
-
-					<hr />
+					<div className="components-base-control__help alert alert-warning">
+						{__(
+							'If Edit Lock is disabled, changes made in this item block (such as color or image ratio) will be overwritten when the parent Grid Column Card block is re-selected.',
+							'vk-blocks-pro'
+						)}
+					</div>
 					<label htmlFor="vk_hiddenControl-hiddenEditLock">
 						{__('Edit Lock', 'vk-blocks-pro')}
 					</label>

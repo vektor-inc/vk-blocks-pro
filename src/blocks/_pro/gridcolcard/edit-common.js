@@ -24,6 +24,7 @@ const CommonItemControl = (props) => {
 		borderRadius,
 		border,
 		borderWidth,
+		borderStyle,
 		headerImageAspectRatio,
 		headerImageFit,
 	} = attributes;
@@ -61,6 +62,12 @@ const CommonItemControl = (props) => {
 			value: '16/9',
 			label: '16:9',
 		},
+	];
+
+	const borderStyleOptions = [
+		{ value: 'solid', label: __('Solid', 'vk-blocks-pro') },
+		{ value: 'dashed', label: __('Dashed', 'vk-blocks-pro') },
+		{ value: 'dotted', label: __('Dotted', 'vk-blocks-pro') },
 	];
 
 	return (
@@ -197,6 +204,20 @@ const CommonItemControl = (props) => {
 									{...props}
 								/>
 							</BaseControl>
+							<ToggleGroupControl
+								label={__('Border Style', 'vk-blocks-pro')}
+								value={borderStyle}
+								onChange={(value) => setAttributes({ borderStyle: value })}
+								isBlock
+							>
+								{borderStyleOptions.map((option) => (
+									<ToggleGroupControlOption
+										key={option.value}
+										value={option.value}
+										label={option.label}
+									/>
+								))}
+							</ToggleGroupControl>
 						</>
 					);
 				}

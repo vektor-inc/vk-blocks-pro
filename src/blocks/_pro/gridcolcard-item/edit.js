@@ -49,6 +49,7 @@ export default function Edit(props) {
 		border,
 		borderColor,
 		borderWidth,
+		borderStyle,
 		textColor,
 		backgroundColor,
 		backgroundGradient,
@@ -127,6 +128,7 @@ export default function Edit(props) {
 								border: attributes.border,
 								borderColor: attributes.borderColor,
 								borderWidth: attributes.borderWidth,
+								borderStyle: attributes.borderStyle,
 								textColor: attributes.textColor,
 								backgroundColor: attributes.backgroundColor,
 								backgroundGradient:
@@ -147,6 +149,7 @@ export default function Edit(props) {
 						border: attributes.border,
 						borderColor: attributes.borderColor,
 						borderWidth: attributes.borderWidth,
+						borderStyle: attributes.borderStyle,
 						textColor: attributes.textColor,
 						backgroundColor: attributes.backgroundColor,
 						backgroundGradient: attributes.backgroundGradient,
@@ -197,9 +200,14 @@ export default function Edit(props) {
 	// 線の色と太さ
 	if (border) {
 		style.borderWidth = borderWidth;
+		style.borderStyle = borderStyle;
 		if (isHexColor(borderColor)) {
 			// custom color
 			style.borderColor = `${borderColor}`;
+		}
+		if (isHexColor(borderStyle)) {
+			// custom color
+			style.borderStyle = `${borderStyle}`;
 		}
 	}
 

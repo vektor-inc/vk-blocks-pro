@@ -207,7 +207,9 @@ const CommonItemControl = (props) => {
 							<ToggleGroupControl
 								label={__('Border Style', 'vk-blocks-pro')}
 								value={borderStyle}
-								onChange={(value) => setAttributes({ borderStyle: value })}
+								onChange={(value) =>
+									setAttributes({ borderStyle: value })
+								}
 								isBlock
 							>
 								{borderStyleOptions.map((option) => (

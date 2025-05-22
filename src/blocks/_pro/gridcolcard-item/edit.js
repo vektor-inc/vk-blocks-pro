@@ -1,8 +1,6 @@
 import { __ } from '@wordpress/i18n';
 import {
 	PanelBody,
-	__experimentalToggleGroupControl as ToggleGroupControl,
-	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
 	ToggleControl,
 	BaseControl,
 	CheckboxControl,
@@ -17,7 +15,7 @@ import {
 	store as blockEditorStore,
 } from '@wordpress/block-editor';
 import { useSelect, useDispatch } from '@wordpress/data';
-import { useEffect, useState } from '@wordpress/element';
+import { useEffect } from '@wordpress/element';
 import CommonItemControl from '../gridcolcard/edit-common.js';
 import classnames from 'classnames';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
@@ -57,23 +55,6 @@ export default function Edit(props) {
 		relAttribute,
 	} = attributes;
 
-	// editModeは値として保持させずに常に個別モードでスタートさせる
-	const [editMode, setEditMode] = useState('self');
-
-	const { rootClientId } = useSelect(
-		(select) => {
-			// 親ブロックのIDを取得するメソッドを取得
-			const { getBlockRootClientId } = select(blockEditorStore);
-			// 特ブロックのIDを取得
-			const rootId = getBlockRootClientId(clientId);
-
-			return {
-				rootClientId: rootId,
-			};
-		},
-		[clientId]
-	);
-
 	const { updateBlockAttributes } = useDispatch(blockEditorStore);
 
 	// 更に Header インナー に値を送る
@@ -84,7 +65,6 @@ export default function Edit(props) {
 
 	const thisBlock = getBlocksByClientId(clientId);
 	// 親ブロック情報取得
-	const parentBlock = getBlocksByClientId(rootClientId);
 	useEffect(() => {
 		if (isParentReusableBlock(clientId) === false) {
 			// Send attribute to child
@@ -207,6 +187,12 @@ export default function Edit(props) {
 					title={__('Edit mode', 'vk-blocks-pro')}
 					initialOpen={true}
 				>
+					<div className="components-base-control__help mt-0 alert alert-warning">
+						{__(
+							'If Edit Lock is disabled, changes made in this item block (such as color or image ratio) will be overwritten when the parent Grid Column Card block is re-selected.',
+							'vk-blocks-pro'
+						)}
+					</div>
 					<label htmlFor="vk_hiddenControl-hiddenEditLock">
 						{__('Edit Lock', 'vk-blocks-pro')}
 					</label>

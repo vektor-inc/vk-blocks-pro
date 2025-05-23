@@ -1,25 +1,26 @@
-import { select } from '@wordpress/data';
-
 export const isAllowedBlock = (name, allowedBlocks) => {
 	return allowedBlocks.find((blockName) => blockName === name);
 };
 
-
 export const getAllHeadings = (blocks, headingBlocks, hasInnerBlocks) => {
-	let allHeadings = [];
-	blocks.forEach((block) => {
-		if (
-			isAllowedBlock(block.name, headingBlocks) &&
-			!block.attributes.excludeFromTOC
-		) {
+	const allHeadings = [];
+	const stack = [...blocks];
+
+	while (stack.length) {
+		const block = stack.pop();
+
+		const isHeading = isAllowedBlock(block.name, headingBlocks);
+		const isContainer = isAllowedBlock(block.name, hasInnerBlocks);
+
+		if (isHeading && !block.attributes.excludeFromTOC) {
 			allHeadings.push(block);
 		}
-		if (isAllowedBlock(block.name, hasInnerBlocks) && block.innerBlocks) {
-			allHeadings = allHeadings.concat(
-				getAllHeadings(block.innerBlocks, headingBlocks, hasInnerBlocks)
-			);
+
+		if (isContainer && Array.isArray(block.innerBlocks)) {
+			stack.push(...block.innerBlocks);
 		}
-	});
+	}
+
 	return allHeadings;
 };
 

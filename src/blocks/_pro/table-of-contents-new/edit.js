@@ -4,10 +4,7 @@ import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { dispatch, select, useSelect } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
 import parse from 'html-react-parser';
-import {
-	isAllowedBlock,
-	returnHtml,
-} from './toc-utils';
+import { isAllowedBlock, returnHtml } from './toc-utils';
 
 const useCurrentBlocks = () => {
 	return useSelect(

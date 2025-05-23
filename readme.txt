@@ -107,6 +107,8 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+[ Add function ][ Heading / Core Heading ] Added a visibility toggle to exclude headings from being displayed in the VK Blocks Table of Contents block.
 [ Other ][ PR Content ][ Staff ][ Card ][ Icon Card ]Added "not recommended" to block name.
 
 = 1.103.0 =

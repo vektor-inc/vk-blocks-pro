@@ -1,8 +1,6 @@
 import { __ } from '@wordpress/i18n';
 import {
 	PanelBody,
-	__experimentalToggleGroupControl as ToggleGroupControl,
-	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
 	ToggleControl,
 	BaseControl,
 	CheckboxControl,
@@ -17,7 +15,7 @@ import {
 	store as blockEditorStore,
 } from '@wordpress/block-editor';
 import { useSelect, useDispatch } from '@wordpress/data';
-import { useEffect, useState } from '@wordpress/element';
+import { useEffect } from '@wordpress/element';
 import CommonItemControl from '../gridcolcard/edit-common.js';
 import classnames from 'classnames';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
@@ -57,23 +55,6 @@ export default function Edit(props) {
 		relAttribute,
 	} = attributes;
 
-	// editModeは値として保持させずに常にすべてのカラムモードでスタートさせる
-	const [editMode, setEditMode] = useState('all');
-
-	const { rootClientId } = useSelect(
-		(select) => {
-			// 親ブロックのIDを取得するメソッドを取得
-			const { getBlockRootClientId } = select(blockEditorStore);
-			// 特ブロックのIDを取得
-			const rootId = getBlockRootClientId(clientId);
-
-			return {
-				rootClientId: rootId,
-			};
-		},
-		[clientId]
-	);
-
 	const { updateBlockAttributes } = useDispatch(blockEditorStore);
 
 	// 更に Header インナー に値を送る
@@ -84,7 +65,6 @@ export default function Edit(props) {
 
 	const thisBlock = getBlocksByClientId(clientId);
 	// 親ブロック情報取得
-	const parentBlock = getBlocksByClientId(rootClientId);
 	useEffect(() => {
 		if (isParentReusableBlock(clientId) === false) {
 			// Send attribute to child
@@ -100,58 +80,6 @@ export default function Edit(props) {
 						footerDisplay: attributes.footerDisplay,
 					});
 				});
-			}
-
-			// Send attribute to parent
-			if (editMode === 'all') {
-				if (
-					parentBlock &&
-					parentBlock[0] &&
-					parentBlock[0].innerBlocks
-				) {
-					const parentInnerBlocks = parentBlock[0].innerBlocks;
-
-					// 兄弟ブロックの値の変更
-					parentInnerBlocks.forEach(function (thisInnerBlock) {
-						// 編集ロックがかかっていないものだけ上書きする
-						if (thisInnerBlock.attributes.editLock === false) {
-							updateBlockAttributes(thisInnerBlock.clientId, {
-								editMode: attributes.editMode,
-								containerSpace: attributes.containerSpace,
-								headerImageAspectRatio:
-									attributes.headerImageAspectRatio,
-								headerImageFit: attributes.headerImageFit,
-								headerDisplay: attributes.headerDisplay,
-								footerDisplay: attributes.footerDisplay,
-								borderRadius: attributes.borderRadius,
-								border: attributes.border,
-								borderColor: attributes.borderColor,
-								borderWidth: attributes.borderWidth,
-								textColor: attributes.textColor,
-								backgroundColor: attributes.backgroundColor,
-								backgroundGradient:
-									attributes.backgroundGradient,
-							});
-						}
-					});
-
-					// 子ブロックから親ブロックの値の変更
-					updateBlockAttributes(rootClientId, {
-						containerSpace: attributes.containerSpace,
-						headerImageAspectRatio:
-							attributes.headerImageAspectRatio,
-						headerImageFit: attributes.headerImageFit,
-						headerDisplay: attributes.headerDisplay,
-						footerDisplay: attributes.footerDisplay,
-						borderRadius: attributes.borderRadius,
-						border: attributes.border,
-						borderColor: attributes.borderColor,
-						borderWidth: attributes.borderWidth,
-						textColor: attributes.textColor,
-						backgroundColor: attributes.backgroundColor,
-						backgroundGradient: attributes.backgroundGradient,
-					});
-				}
 			}
 		}
 	}, [thisBlock, attributes]);
@@ -259,22 +187,12 @@ export default function Edit(props) {
 					title={__('Edit mode', 'vk-blocks-pro')}
 					initialOpen={true}
 				>
-					<ToggleGroupControl
-						value={editMode}
-						onChange={(value) => setEditMode(value)}
-						isBlock
-					>
-						<ToggleGroupControlOption
-							value="all"
-							label={__('All columns', 'vk-blocks-pro')}
-						/>
-						<ToggleGroupControlOption
-							value="self"
-							label={__('This column only', 'vk-blocks-pro')}
-						/>
-					</ToggleGroupControl>
-
-					<hr />
+					<div className="components-base-control__help alert alert-warning">
+						{__(
+							'If Edit Lock is disabled, changes made in this item block (such as color or image ratio) will be overwritten when the parent Grid Column Card block is re-selected.',
+							'vk-blocks-pro'
+						)}
+					</div>
 					<label htmlFor="vk_hiddenControl-hiddenEditLock">
 						{__('Edit Lock', 'vk-blocks-pro')}
 					</label>

@@ -4,7 +4,12 @@ import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { dispatch, select, useSelect } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
 import parse from 'html-react-parser';
-import { isAllowedBlock, returnHtml } from './toc-utils';
+import {
+	isAllowedBlock,
+	returnHtml,
+	getHeadings,
+	getInnerHeadings,
+} from './toc-utils';
 
 const useCurrentBlocks = () => {
 	return useSelect(
@@ -21,24 +26,6 @@ const useBlocksByName = (blockName) => {
 		},
 		[blockName] // blockNameが変わったときだけ再評価
 	);
-};
-
-const getAllHeadings = (blocks, headingBlocks, hasInnerBlocks) => {
-	let allHeadings = [];
-	blocks.forEach((block) => {
-		if (
-			isAllowedBlock(block.name, headingBlocks) &&
-			!block.attributes.excludeFromTOC
-		) {
-			allHeadings.push(block);
-		}
-		if (isAllowedBlock(block.name, hasInnerBlocks) && block.innerBlocks) {
-			allHeadings = allHeadings.concat(
-				getAllHeadings(block.innerBlocks, headingBlocks, hasInnerBlocks)
-			);
-		}
-	});
-	return allHeadings;
 };
 
 export default function TOCEdit(props) {
@@ -89,11 +76,9 @@ export default function TOCEdit(props) {
 		});
 		// 目次ブロックをアップデート
 		const blocksOrder = getBlockOrder();
-		const allHeadings = getAllHeadings(
-			blocks,
-			headingBlocks,
-			hasInnerBlocks
-		);
+		const headings = getHeadings(headingBlocks);
+		const innerHeadings = getInnerHeadings(headingBlocks, hasInnerBlocks);
+		const allHeadings = headings.concat(innerHeadings);
 
 		const allHeadingsSorted = allHeadings.map((heading) => {
 			const index = blocksOrder.indexOf(heading.clientId);

@@ -107,6 +107,8 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+[ Specification change ][ Table of Contents (Pro) ] Removed the restriction that prevented nested headings from being displayed in the list.
 [ Other ][ PR Content ][ Staff ][ Card ][ Icon Card ]Added "not recommended" to block name.
 
 = 1.103.0 =

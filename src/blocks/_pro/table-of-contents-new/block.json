@@ -23,6 +23,10 @@
 		"className": {
 			"type": "string",
 			"default": ""
+		},
+		"excludeFromTOC": {
+			"type": "boolean",
+			"default": false
 		}
 	},
 	"supports": {

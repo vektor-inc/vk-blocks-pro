@@ -19,6 +19,16 @@ const blockAttributes = {
 	},
 };
 
+/* 次回対応おねがいします
+const blockAttributes2 = {
+	...blockAttributes,
+	excludeFromTOC: {
+		type: 'boolean',
+		default: false
+	}
+}
+*/
+
 const deprecated = [
 	{
 		attributes: blockAttributes,

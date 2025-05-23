@@ -108,12 +108,17 @@ e.g.
 
 == Changelog ==
 
+= 1.104.0 =
+[ Specification change / Bugfix ][ Grid Column Card (Pro) ] Removed Edit mode — only the selected item block is now editable.
+[ Other ][ PR Content ][ Staff ][ Card ][ Icon Card ]Added "not recommended" to block name.
+
 = 1.103.0 =
 [ Add function ][ Core Excerpt ] Added top and bottom margin settings to the toolbar.
 [ Add function ][ Outer (Pro) ] Added background offset feature.
 [ Design Bug Fix ][ Outer (Pro) ] Removed unintended borders left and right separators.
 [ Design Bug Fix ][ Balloon ] Fixed an issue where text inside balloon blocks unintentionally inherited the border color when using a color palette.
 [ Other ][ Tab (Pro) / Tab Item ] Added block description
+[ Other ][ Outer (Pro) / Slider ] Refactored the numeric value & unit input for each device into a shared component
 
 = 1.102.0 =
 [ Design Bug Fix ][ Outer (Pro) ] Fixed unexpected margin affecting background color display due to layout flow styles in WordPress 6.8.

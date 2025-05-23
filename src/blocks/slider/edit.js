@@ -1,5 +1,4 @@
 import { AdvancedToggleControl } from '@vkblocks/components/advanced-toggle-control';
-import AdvancedUnitControl from '@vkblocks/components/advanced-unit-control';
 import { __ } from '@wordpress/i18n';
 import { useEffect } from '@wordpress/element';
 import {
@@ -16,7 +15,6 @@ import {
 	__experimentalToggleGroupControl as ToggleGroupControl,
 	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
 	SelectControl,
-	RangeControl,
 	ToolbarGroup,
 	ToolbarDropdownMenu,
 	Dashicon,
@@ -24,6 +22,9 @@ import {
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 import { editSliderLaunch } from './edit-slider';
 import { MultiItemSetting } from './edit-multiItem';
+import ResponsiveSizeControl, {
+	getMaxByUnit,
+} from '@vkblocks/components/responsive-size-control';
 
 // eslint-disable no-shadow
 export default function SliderEdit(props) {
@@ -49,6 +50,7 @@ export default function SliderEdit(props) {
 		centeredSlides,
 		navigationPosition,
 		blockId,
+		unit,
 	} = attributes;
 
 	useEffect(() => {
@@ -314,78 +316,27 @@ export default function SliderEdit(props) {
 					title={__('Height', 'vk-blocks-pro')}
 					initialOpen={false}
 				>
-					<AdvancedUnitControl {...props} />
-					<BaseControl
+					<ResponsiveSizeControl
 						label={__(
 							'Slide Height for each device.',
 							'vk-blocks-pro'
 						)}
-						id={`vk_slider-SlideHeight`}
-					>
-						<RangeControl
-							label={__('PC', 'vk-blocks-pro')}
-							value={pc}
-							onChange={(value) => {
-								if (
-									value === null ||
-									value === '' ||
-									value === undefined
-								) {
-									setAttributes({ pc: null });
-								} else {
-									setAttributes({
-										pc: parseFloat(Number(value)),
-									});
-								}
-							}}
-							min={0}
-							max={1000}
-							allowReset={true}
-							resetFallbackValue={null}
-						/>
-						<RangeControl
-							label={__('Tablet', 'vk-blocks-pro')}
-							value={tablet}
-							onChange={(value) => {
-								if (
-									value === null ||
-									value === '' ||
-									value === undefined
-								) {
-									setAttributes({ tablet: null });
-								} else {
-									setAttributes({
-										tablet: parseFloat(Number(value)),
-									});
-								}
-							}}
-							min={0}
-							max={1000}
-							allowReset={true}
-							resetFallbackValue={null}
-						/>
-						<RangeControl
-							label={__('Mobile', 'vk-blocks-pro')}
-							value={mobile}
-							onChange={(value) => {
-								if (
-									value === null ||
-									value === '' ||
-									value === undefined
-								) {
-									setAttributes({ mobile: null });
-								} else {
-									setAttributes({
-										mobile: parseFloat(Number(value)),
-									});
-								}
-							}}
-							min={0}
-							max={1000}
-							allowReset={true}
-							resetFallbackValue={null}
-						/>
-					</BaseControl>
+						valuePC={pc}
+						valueTablet={tablet}
+						valueMobile={mobile}
+						unit={unit}
+						onChangePC={(value) => setAttributes({ pc: value })}
+						onChangeTablet={(value) =>
+							setAttributes({ tablet: value })
+						}
+						onChangeMobile={(value) =>
+							setAttributes({ mobile: value })
+						}
+						onChangeUnit={(value) => setAttributes({ unit: value })}
+						maxPC={getMaxByUnit(unit)}
+						maxTablet={getMaxByUnit(unit)}
+						maxMobile={getMaxByUnit(unit)}
+					/>
 				</PanelBody>
 				<PanelBody
 					title={__('Slider Settings', 'vk-blocks-pro')}

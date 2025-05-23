@@ -4,28 +4,23 @@ export const isAllowedBlock = (name, allowedBlocks) => {
 	return allowedBlocks.find((blockName) => blockName === name);
 };
 
-export const getHeadings = (headingBlocks) => {
-	const { getBlocks } = select('core/block-editor');
-	return getBlocks().filter((block) =>
-		isAllowedBlock(block.name, headingBlocks)
-	);
-};
 
-export const getInnerHeadings = (headingBlocks, hasInnerBlocks) => {
-	const { getBlocks } = select('core/block-editor');
-	const headings = [];
-
-	getBlocks().forEach(function (block) {
-		if (isAllowedBlock(block.name, hasInnerBlocks)) {
-			block.innerBlocks.forEach(function (innerBlock) {
-				if (isAllowedBlock(innerBlock.name, headingBlocks)) {
-					headings.push(innerBlock);
-				}
-			});
+export const getAllHeadings = (blocks, headingBlocks, hasInnerBlocks) => {
+	let allHeadings = [];
+	blocks.forEach((block) => {
+		if (
+			isAllowedBlock(block.name, headingBlocks) &&
+			!block.attributes.excludeFromTOC
+		) {
+			allHeadings.push(block);
+		}
+		if (isAllowedBlock(block.name, hasInnerBlocks) && block.innerBlocks) {
+			allHeadings = allHeadings.concat(
+				getAllHeadings(block.innerBlocks, headingBlocks, hasInnerBlocks)
+			);
 		}
 	});
-
-	return headings;
+	return allHeadings;
 };
 
 export const returnHtml = (sources) => {

@@ -7,8 +7,7 @@ import parse from 'html-react-parser';
 import {
 	isAllowedBlock,
 	returnHtml,
-	getHeadings,
-	getInnerHeadings,
+	getAllHeadings,
 } from './toc-utils';
 
 const useCurrentBlocks = () => {
@@ -76,9 +75,11 @@ export default function TOCEdit(props) {
 		});
 		// 目次ブロックをアップデート
 		const blocksOrder = getBlockOrder();
-		const headings = getHeadings(headingBlocks);
-		const innerHeadings = getInnerHeadings(headingBlocks, hasInnerBlocks);
-		const allHeadings = headings.concat(innerHeadings);
+		const allHeadings = getAllHeadings(
+			blocks,
+			headingBlocks,
+			hasInnerBlocks
+		);
 
 		const allHeadingsSorted = allHeadings.map((heading) => {
 			const index = blocksOrder.indexOf(heading.clientId);

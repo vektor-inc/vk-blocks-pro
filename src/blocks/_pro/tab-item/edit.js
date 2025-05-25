@@ -10,6 +10,7 @@ import { __ } from '@wordpress/i18n';
 import { select, dispatch } from '@wordpress/data';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { FontAwesome } from '@vkblocks/utils/font-awesome-new';
 
 export default function TabItemEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -157,6 +158,34 @@ export default function TabItemEdit(props) {
 						label={__('Tab Color', 'vk-blocks-pro')}
 					>
 						<AdvancedColorPalette schema={'tabColor'} {...props} />
+					</BaseControl>
+				</PanelBody>
+				<PanelBody title={__('Icon Setting', 'vk-blocks-pro')}>
+					<BaseControl
+						id={`vk_block_tab_icon_before`}
+						label={__('Icon Before', 'vk-blocks-pro')}
+					>
+						<FontAwesome
+							attributeName={'iconBefore'}
+							modeClass={true}
+							{...{
+								attributes,
+								setAttributes,
+							}}
+						/>
+					</BaseControl>
+					<BaseControl
+						id={`vk_block_tab_icon_after`}
+						label={__('Icon After', 'vk-blocks-pro')}
+					>
+						<FontAwesome
+							attributeName={'iconAfter'}
+							modeClass={true}
+							{...{
+								attributes,
+								setAttributes,
+							}}
+						/>
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>

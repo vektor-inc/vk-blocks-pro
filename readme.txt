@@ -110,8 +110,8 @@ e.g.
 
 = 1.104.0 =
 
-[ Add function ][ Tab (Pro) ] Added the ability to select tab items directly from the list view.
 [ Specification change / Bugfix ][ Grid Column Card (Pro) ] Removed Edit mode — only the selected item block is now editable.
+[ Bug fix ][ Tab ] Fixed tab items not being properly selected when clicked from the list view.
 [ Other ][ PR Content ][ Staff ][ Card ][ Icon Card ]Added "not recommended" to block name.
 
 = 1.103.0 =

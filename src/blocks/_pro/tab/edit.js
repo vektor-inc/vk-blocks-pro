@@ -632,29 +632,26 @@ export default function TabEdit(props) {
 					aria-selected={firstActive === index}
 					role="tab"
 				>
-					<div
+					<RichText
+						tagName="div"
 						className={tabSpanColorClass}
 						style={tabSpanColorStyle}
-					>
-						<RichText
-							tagName="span"
-							value={childBlock.attributes.tabLabel}
-							onChange={(content) => {
-								updateBlockAttributes(childBlock.clientId, {
-									tabLabel: content,
-								});
-							}}
-							placeholder={sprintf(
-								// translators: %s is the tab number
-								__('Tab Label [ %s ]', 'vk-blocks-pro'),
-								index + 1
-							)}
-							onClick={(e) => {
-								e.stopPropagation();
-								liOnClick(e, index);
-							}}
-						/>
-					</div>
+						value={childBlock.attributes.tabLabel}
+						onChange={(content) => {
+							updateBlockAttributes(childBlock.clientId, {
+								tabLabel: content,
+							});
+						}}
+						placeholder={sprintf(
+							// translators: %s is the tab number
+							__('Tab Label [ %s ]', 'vk-blocks-pro'),
+							index + 1
+						)}
+						onClick={(e) => {
+							e.stopPropagation();
+							liOnClick(e);
+						}}
+					/>
 				</li>
 			);
 		});

@@ -73,6 +73,8 @@ export default function TabEdit(props) {
 					tabLabel: childBlock.attributes.tabLabel,
 					tabColor: childBlock.attributes.tabColor,
 					blockId: childBlock.attributes.blockId,
+					iconBefore: childBlock.attributes.iconBefore,
+					iconAfter: childBlock.attributes.iconAfter,
 				});
 			});
 		}
@@ -372,6 +374,14 @@ export default function TabEdit(props) {
 			let tabSpanColorClass = '';
 			const tabSpanColorStyle = {};
 
+			// アイコンがある場合のクラスを追加
+			if (
+				childBlock.attributes.iconBefore ||
+				childBlock.attributes.iconAfter
+			) {
+				tabSpanColorClass += ' vk_tab_labels_label-icon';
+			}
+
 			if (childBlock.attributes.tabColor !== '') {
 				if (tabOption.tabLabelBackground) {
 					tabColorClass = ' has-background';
@@ -528,26 +538,43 @@ export default function TabEdit(props) {
 					aria-selected={firstActive === index}
 					role="tab"
 				>
-					<RichText
-						tagName="div"
+					<div
 						className={tabSpanColorClass}
 						style={tabSpanColorStyle}
-						value={childBlock.attributes.tabLabel}
-						onChange={(content) => {
-							updateBlockAttributes(childBlock.clientId, {
-								tabLabel: content,
-							});
-						}}
-						placeholder={sprintf(
-							// translators: %s is the tab number
-							__('Tab Label [ %s ]', 'vk-blocks-pro'),
-							index + 1
+					>
+						{childBlock.attributes.iconBefore && (
+							<span className="vk_tab_labels_label-icon-before">
+								<i
+									className={childBlock.attributes.iconBefore}
+								></i>
+							</span>
 						)}
-						onClick={(e) => {
-							e.stopPropagation();
-							liOnClick(e);
-						}}
-					/>
+						<RichText
+							tagName="span"
+							value={childBlock.attributes.tabLabel}
+							onChange={(content) => {
+								updateBlockAttributes(childBlock.clientId, {
+									tabLabel: content,
+								});
+							}}
+							placeholder={sprintf(
+								// translators: %s is the tab number
+								__('Tab Label [ %s ]', 'vk-blocks-pro'),
+								index + 1
+							)}
+							onClick={(e) => {
+								e.stopPropagation();
+								liOnClick(e, index);
+							}}
+						/>
+						{childBlock.attributes.iconAfter && (
+							<span className="vk_tab_labels_label-icon-after">
+								<i
+									className={childBlock.attributes.iconAfter}
+								></i>
+							</span>
+						)}
+					</div>
 				</li>
 			);
 		});

@@ -75,6 +75,10 @@ export default function save(props) {
 			let tabSpanColorClass = '';
 			const tabSpanColorStyle = {};
 
+			if (option.iconBefore || option.iconAfter) {
+				tabSpanColorClass += ' vk_tab_labels_label-icon';
+			}
+
 			if (option.tabColor !== '') {
 				if (tabOption.tabLabelBackground) {
 					tabColorClass = ' has-background';
@@ -139,12 +143,25 @@ export default function save(props) {
 						}
 					}}
 				>
-					<RichText.Content
-						tagName="div"
+					<div
 						className={tabSpanColorClass}
 						style={tabSpanColorStyle}
-						value={option.tabLabel}
-					/>
+					>
+						{option.iconBefore && (
+							<span className="vk_tab_labels_label-icon-before">
+								<i className={option.iconBefore}></i>
+							</span>
+						)}
+						<RichText.Content
+							tagName="span"
+							value={option.tabLabel}
+						/>
+						{option.iconAfter && (
+							<span className="vk_tab_labels_label-icon-after">
+								<i className={option.iconAfter}></i>
+							</span>
+						)}
+					</div>
 				</li>
 			);
 		});

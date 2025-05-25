@@ -60,6 +60,110 @@ export default function TabEdit(props) {
 		[clientId]
 	);
 
+	// 選択されたブロックを監視
+	const selectedBlockClientId = useSelect(
+		(select) => select(blockEditorStore).getSelectedBlockClientId(),
+		[]
+	);
+
+	// 選択されたブロックがタブアイテムの場合、対応するタブをアクティブにする
+	useEffect(() => {
+		if (selectedBlockClientId && childBlocks) {
+			const selectedTabIndex = childBlocks.findIndex(
+				(childBlock) => childBlock.clientId === selectedBlockClientId
+			);
+
+			if (selectedTabIndex !== -1 && selectedTabIndex !== firstActive) {
+				// firstActiveを更新
+				setAttributes({ firstActive: selectedTabIndex });
+
+				// タブラベルの見た目を更新
+				setTimeout(() => {
+					const iframe = document.querySelector(
+						'.block-editor-iframe__container iframe'
+					);
+					const targetDocument =
+						iframe?.contentWindow?.document || document;
+
+					const vkTab = targetDocument.querySelector('.vk_tab');
+					if (vkTab) {
+						const vkTabLabels =
+							vkTab.querySelector('.vk_tab_labels');
+						if (vkTabLabels) {
+							// 全てのタブラベルを取得
+							const allLabels = vkTabLabels.querySelectorAll(
+								'.vk_tab_labels_label'
+							);
+
+							// 全てのタブを非アクティブにする
+							allLabels.forEach((label) => {
+								label.classList.remove(
+									'vk_tab_labels_label-state-active'
+								);
+								label.classList.add(
+									'vk_tab_labels_label-state-inactive'
+								);
+								if (
+									!label
+										.closest('.vk_tab')
+										.classList.contains(
+											'is-style-vk_tab_labels-line'
+										)
+								) {
+									label.style.setProperty(
+										'background-color',
+										'var(--vk-color-bg-inactive)',
+										'important'
+									);
+								}
+							});
+
+							// 選択されたタブをアクティブにする
+							const targetLabel = allLabels[selectedTabIndex];
+							if (targetLabel) {
+								targetLabel.classList.add(
+									'vk_tab_labels_label-state-active'
+								);
+								targetLabel.classList.remove(
+									'vk_tab_labels_label-state-inactive'
+								);
+								targetLabel.style.removeProperty(
+									'background-color'
+								);
+
+								// タブボディの色を取得してラベルに適用
+								const selectedChildBlock =
+									childBlocks[selectedTabIndex];
+								const targetBlockId =
+									selectedChildBlock.attributes.blockId ||
+									selectedChildBlock.clientId;
+								const activeTabBody =
+									targetDocument.querySelector(
+										`#block-${targetBlockId}`
+									);
+								if (activeTabBody) {
+									const activeTabBodyStyle =
+										window.getComputedStyle(activeTabBody);
+									if (
+										!targetLabel
+											.closest('.vk_tab')
+											.classList.contains(
+												'is-style-vk_tab_labels-line'
+											)
+									) {
+										targetLabel.style.backgroundColor =
+											activeTabBodyStyle.borderTopColor ||
+											'';
+									}
+								}
+							}
+						}
+					}
+				}, 100);
+			}
+		}
+	}, [selectedBlockClientId, childBlocks, firstActive]);
+
 	useEffect(() => {
 		const tabOptionTemp = {
 			listArray: [],
@@ -528,26 +632,29 @@ export default function TabEdit(props) {
 					aria-selected={firstActive === index}
 					role="tab"
 				>
-					<RichText
-						tagName="div"
+					<div
 						className={tabSpanColorClass}
 						style={tabSpanColorStyle}
-						value={childBlock.attributes.tabLabel}
-						onChange={(content) => {
-							updateBlockAttributes(childBlock.clientId, {
-								tabLabel: content,
-							});
-						}}
-						placeholder={sprintf(
-							// translators: %s is the tab number
-							__('Tab Label [ %s ]', 'vk-blocks-pro'),
-							index + 1
-						)}
-						onClick={(e) => {
-							e.stopPropagation();
-							liOnClick(e);
-						}}
-					/>
+					>
+						<RichText
+							tagName="span"
+							value={childBlock.attributes.tabLabel}
+							onChange={(content) => {
+								updateBlockAttributes(childBlock.clientId, {
+									tabLabel: content,
+								});
+							}}
+							placeholder={sprintf(
+								// translators: %s is the tab number
+								__('Tab Label [ %s ]', 'vk-blocks-pro'),
+								index + 1
+							)}
+							onClick={(e) => {
+								e.stopPropagation();
+								liOnClick(e, index);
+							}}
+						/>
+					</div>
 				</li>
 			);
 		});

@@ -108,7 +108,7 @@ e.g.
 
 == Changelog ==
 
-[ Add function ][ Tab (Pro) ] Added support for inserting FontAwesome icons into tab labels to enhance visual customization.
+[ Add function ][ Tab (Pro) ] Added support for inserting FontAwesome icons into tab labels.
 
 = 1.104.0 =
 [ Specification change / Bugfix ][ Grid Column Card (Pro) ] Removed Edit mode — only the selected item block is now editable.

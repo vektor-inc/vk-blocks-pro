@@ -108,6 +108,8 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Grid Column Card (Pro) ] Added the ability to select the border style from "Solid", "Dashed", or "Dotted"
+
 = 1.104.0 =
 [ Specification change / Bugfix ][ Grid Column Card (Pro) ] Removed Edit mode — only the selected item block is now editable.
 [ Other ][ PR Content ][ Staff ][ Card ][ Icon Card ]Added "not recommended" to block name.

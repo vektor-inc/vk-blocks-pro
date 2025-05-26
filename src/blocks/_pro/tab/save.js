@@ -158,7 +158,11 @@ export default function save(props) {
 							</span>
 						)}
 						<RichText.Content
-							tagName="span"
+							tagName={
+								option.iconBefore || option.iconAfter
+									? 'span'
+									: undefined
+							}
 							value={option.tabLabel}
 						/>
 						{option.iconAfter && (

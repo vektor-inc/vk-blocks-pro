@@ -4,11 +4,7 @@ import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { dispatch, select, useSelect } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
 import parse from 'html-react-parser';
-import {
-	isAllowedBlock,
-	returnHtml,
-	getAllHeadings,
-} from './toc-utils';
+import { isAllowedBlock, returnHtml, getAllHeadings } from './toc-utils';
 
 const useCurrentBlocks = () => {
 	return useSelect(
@@ -38,7 +34,12 @@ export default function TOCEdit(props) {
 	const findBlocks = useBlocksByName('vk-blocks/table-of-contents-new');
 
 	// 再帰的にブロックを処理してアンカーを設定する関数
-	const processBlocksRecursively = (blocks, headingBlocks, hasInnerBlocks, updateBlockAttributes) => {
+	const processBlocksRecursively = (
+		blocks,
+		headingBlocks,
+		hasInnerBlocks,
+		updateBlockAttributes
+	) => {
 		blocks.forEach(function (block) {
 			// 見出しにカスタムIDを追加
 			if (
@@ -49,10 +50,19 @@ export default function TOCEdit(props) {
 					anchor: `vk-htags-${block.clientId}`,
 				});
 			}
-			
+
 			// InnerBlock内の見出しを再帰的に処理
-			if (isAllowedBlock(block.name, hasInnerBlocks) && block.innerBlocks && block.innerBlocks.length > 0) {
-				processBlocksRecursively(block.innerBlocks, headingBlocks, hasInnerBlocks, updateBlockAttributes);
+			if (
+				isAllowedBlock(block.name, hasInnerBlocks) &&
+				block.innerBlocks &&
+				block.innerBlocks.length > 0
+			) {
+				processBlocksRecursively(
+					block.innerBlocks,
+					headingBlocks,
+					hasInnerBlocks,
+					updateBlockAttributes
+				);
 			}
 		});
 	};
@@ -68,9 +78,14 @@ export default function TOCEdit(props) {
 
 		const headingBlocks = ['core/heading', 'vk-blocks/heading'];
 		const hasInnerBlocks = ['vk-blocks/outer', 'core/cover', 'core/group'];
-		
+
 		// 再帰的にブロックを処理
-		processBlocksRecursively(blocks, headingBlocks, hasInnerBlocks, updateBlockAttributes);
+		processBlocksRecursively(
+			blocks,
+			headingBlocks,
+			hasInnerBlocks,
+			updateBlockAttributes
+		);
 
 		// 目次ブロックをアップデート
 		const blocksOrder = getBlockOrder();

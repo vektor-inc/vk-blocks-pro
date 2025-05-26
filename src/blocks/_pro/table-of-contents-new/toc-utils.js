@@ -12,12 +12,15 @@ export const getAllHeadings = (blocks, headingBlocks, hasInnerBlocks) =>
 		}
 		if (isAllowedBlock(block.name, hasInnerBlocks) && block.innerBlocks) {
 			acc.push(
-				...getAllHeadings(block.innerBlocks, headingBlocks, hasInnerBlocks)
+				...getAllHeadings(
+					block.innerBlocks,
+					headingBlocks,
+					hasInnerBlocks
+				)
 			);
 		}
 		return acc;
 	}, []);
-
 
 export const returnHtml = (sources) => {
 	const countSeparater = '.';

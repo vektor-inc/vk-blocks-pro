@@ -132,7 +132,6 @@ export default function Edit(props) {
 			style.borderColor = `${borderColor}`;
 		}
 		if (isHexColor(borderStyle)) {
-			// custom color
 			style.borderStyle = `${borderStyle}`;
 		}
 	}

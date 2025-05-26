@@ -40,7 +40,8 @@
 			"default": ""
 		},
 		"blockId": {
-			"type": "string"
+			"type": "string",
+			"default": ""
 		}
 	},
 	"supports": {

@@ -557,7 +557,12 @@ export default function TabEdit(props) {
 							</span>
 						)}
 						<RichText
-							tagName="span"
+							tagName={
+								childBlock.attributes.iconBefore ||
+								childBlock.attributes.iconAfter
+									? 'span'
+									: undefined
+							}
 							value={childBlock.attributes.tabLabel}
 							onChange={(content) => {
 								updateBlockAttributes(childBlock.clientId, {

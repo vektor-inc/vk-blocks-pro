@@ -149,7 +149,12 @@ export default function save(props) {
 					>
 						{option.iconBefore && (
 							<span className="vk_tab_labels_label-icon-before">
-								<i className={option.iconBefore}></i>
+								<i
+									style={{
+										fontSize: option.iconSizeBefore,
+									}}
+									className={option.iconBefore}
+								></i>
 							</span>
 						)}
 						<RichText.Content
@@ -158,7 +163,12 @@ export default function save(props) {
 						/>
 						{option.iconAfter && (
 							<span className="vk_tab_labels_label-icon-after">
-								<i className={option.iconAfter}></i>
+								<i
+									style={{
+										fontSize: option.iconSizeAfter,
+									}}
+									className={option.iconAfter}
+								></i>
 							</span>
 						)}
 					</div>

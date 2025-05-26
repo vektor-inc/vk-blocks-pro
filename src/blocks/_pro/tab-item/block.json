@@ -33,6 +33,14 @@
 		"iconAfter": {
 			"type": "string",
 			"default": ""
+		},
+		"iconSizeBefore": {
+			"type": "string",
+			"default": ""
+		},
+		"iconSizeAfter": {
+			"type": "string",
+			"default": ""
 		}
 	},
 	"supports": {

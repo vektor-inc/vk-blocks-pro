@@ -75,6 +75,8 @@ export default function TabEdit(props) {
 					blockId: childBlock.attributes.blockId,
 					iconBefore: childBlock.attributes.iconBefore,
 					iconAfter: childBlock.attributes.iconAfter,
+					iconSizeBefore: childBlock.attributes.iconSizeBefore,
+					iconSizeAfter: childBlock.attributes.iconSizeAfter,
 				});
 			});
 		}
@@ -546,6 +548,11 @@ export default function TabEdit(props) {
 							<span className="vk_tab_labels_label-icon-before">
 								<i
 									className={childBlock.attributes.iconBefore}
+									style={{
+										fontSize:
+											childBlock.attributes
+												.iconSizeBefore,
+									}}
 								></i>
 							</span>
 						)}
@@ -571,6 +578,10 @@ export default function TabEdit(props) {
 							<span className="vk_tab_labels_label-icon-after">
 								<i
 									className={childBlock.attributes.iconAfter}
+									style={{
+										fontSize:
+											childBlock.attributes.iconSizeAfter,
+									}}
 								></i>
 							</span>
 						)}

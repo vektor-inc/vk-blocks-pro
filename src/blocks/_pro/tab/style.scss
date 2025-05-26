@@ -152,9 +152,10 @@ $xl-min: 1200px;
 			}
 			.vk_tab_labels_label-icon {
 				display: inline-flex;
-				width: 100%;
 				justify-content: center;
 				align-items: center;
+				width: 100%;
+				height: 100%;
 				gap: var(--vk-margin-xxs);
 				.vk_tab_labels_label-icon-before,
 				.vk_tab_labels_label-icon-after {

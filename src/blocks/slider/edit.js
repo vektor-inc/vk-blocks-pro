@@ -18,6 +18,8 @@ import {
 	ToolbarGroup,
 	ToolbarDropdownMenu,
 	Dashicon,
+	ToggleControl,
+	RangeControl,
 } from '@wordpress/components';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 import { editSliderLaunch } from './edit-slider';
@@ -51,6 +53,9 @@ export default function SliderEdit(props) {
 		navigationPosition,
 		blockId,
 		unit,
+		zoomAnimation,
+		zoomInitialScale,
+		zoomFinalScale,
 	} = attributes;
 
 	useEffect(() => {
@@ -159,6 +164,17 @@ export default function SliderEdit(props) {
 		if (editorMode === undefined) {
 			setAttributes({ editorMode: 'default' });
 		}
+
+		// ズームアニメーション設定の初期化
+		if (zoomAnimation === undefined) {
+			setAttributes({ zoomAnimation: false });
+		}
+		if (zoomInitialScale === undefined) {
+			setAttributes({ zoomInitialScale: 1 });
+		}
+		if (zoomFinalScale === undefined) {
+			setAttributes({ zoomFinalScale: 1.25 });
+		}
 	}, [clientId]);
 
 	// 複数枚動かすときに sliderPerView が小数だと微妙なので対処
@@ -205,6 +221,9 @@ export default function SliderEdit(props) {
 		slidesPerViewPC,
 		slidesPerGroup,
 		centeredSlides,
+		zoomAnimation,
+		zoomInitialScale,
+		zoomFinalScale,
 	};
 
 	// ページネーションの HTML
@@ -337,6 +356,54 @@ export default function SliderEdit(props) {
 						maxTablet={getMaxByUnit(unit)}
 						maxMobile={getMaxByUnit(unit)}
 					/>
+				</PanelBody>
+				<PanelBody
+					title={__('Zoom Animation', 'vk-blocks-pro')}
+					initialOpen={false}
+				>
+					<ToggleControl
+						label={__('Enable Zoom Animation', 'vk-blocks-pro')}
+						checked={zoomAnimation}
+						onChange={(value) =>
+							setAttributes({ zoomAnimation: value })
+						}
+						help={__(
+							'Enable zoom animation for slide background images.',
+							'vk-blocks-pro'
+						)}
+					/>
+					{zoomAnimation && (
+						<>
+							<RangeControl
+								label={__('Initial Scale', 'vk-blocks-pro')}
+								value={zoomInitialScale}
+								onChange={(value) =>
+									setAttributes({ zoomInitialScale: value })
+								}
+								min={1}
+								max={3}
+								step={0.05}
+								help={__(
+									'Initial scale of the background image (1 = original size).',
+									'vk-blocks-pro'
+								)}
+							/>
+							<RangeControl
+								label={__('Final Scale', 'vk-blocks-pro')}
+								value={zoomFinalScale}
+								onChange={(value) =>
+									setAttributes({ zoomFinalScale: value })
+								}
+								min={1}
+								max={3}
+								step={0.05}
+								help={__(
+									'Final scale of the background image after zoom animation.',
+									'vk-blocks-pro'
+								)}
+							/>
+						</>
+					)}
 				</PanelBody>
 				<PanelBody
 					title={__('Slider Settings', 'vk-blocks-pro')}

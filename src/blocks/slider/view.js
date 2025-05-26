@@ -4,6 +4,68 @@ document.defaultView.addEventListener('load', function () {
 	// 配列に変換。
 	sliderNodeList = Array.from(sliderNodeList);
 
+	// ズームアニメーション用のCSS生成関数
+	const generateZoomAnimationCss = (attributes, sliderId) => {
+		const {
+			zoomAnimation,
+			zoomInitialScale,
+			zoomFinalScale,
+			autoPlayDelay,
+			speed,
+		} = attributes;
+
+		let css = '';
+
+		if (zoomAnimation) {
+			// ズーム用のセレクターは ::before 専用にして、親要素への副作用を防ぐ
+			const zoomSelector = `.vk_slider_${sliderId}`;
+
+			css += `
+				.vk_slider_${sliderId} .vk_slider_item.swiper-slide-active::before,
+				.vk_slider_${sliderId} .vk_slider_item.swiper-slide-duplicate-active::before {
+					content: "";
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background-size: cover;
+					background-position: center;
+					background-image: inherit;
+					will-change: transform;
+					transform: scale(${zoomInitialScale !== undefined ? zoomInitialScale : 1});
+					transition: transform ${(autoPlayDelay + speed + autoPlayDelay * 0.5) / 1000 || 6}s linear;
+					z-index: -1;
+				}
+				
+				${zoomSelector} .vk_slider_item.swiper-slide-active::before,
+				${zoomSelector} .vk_slider_item.swiper-slide-duplicate-active::before {
+					transform: scale(${zoomFinalScale !== undefined ? zoomFinalScale : 1.25});
+				}
+				
+				${zoomSelector} .vk_slider_item.swiper-slide-prev::before,
+				${zoomSelector} .vk_slider_item.swiper-slide-next::before {
+					transform: scale(${zoomInitialScale !== undefined ? zoomInitialScale : 1});
+				}
+			`;
+		}
+
+		return css;
+	};
+
+	// ズームアニメーション用のスタイルを動的に追加
+	const addZoomAnimationStyles = (attributes, sliderId) => {
+		if (attributes.zoomAnimation) {
+			const css = generateZoomAnimationCss(attributes, sliderId);
+			if (css) {
+				const styleElement = document.createElement('style');
+				styleElement.type = 'text/css';
+				styleElement.innerHTML = css;
+				document.head.appendChild(styleElement);
+			}
+		}
+	};
+
 	if (sliderNodeList) {
 		for (const index in sliderNodeList) {
 			const sliderNode = sliderNodeList[index];
@@ -20,6 +82,9 @@ document.defaultView.addEventListener('load', function () {
 				// 1.36.0 より古い状態で保存されてる場合の互換処理
 				sliderId = attributes.clientId;
 			}
+
+			// ズームアニメーション用のスタイルを追加
+			addZoomAnimationStyles(attributes, sliderId);
 
 			let SwiperSetting = `
 			var swiper${index} = new Swiper ('.vk_slider_${sliderId}', {

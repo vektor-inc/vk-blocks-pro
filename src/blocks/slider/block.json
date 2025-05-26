@@ -87,6 +87,18 @@
 			"type": "string",
 			"default": "mobile-bottom"
 		},
+		"zoomAnimation": {
+			"type": "boolean",
+			"default": false
+		},
+		"zoomInitialScale": {
+			"type": "number",
+			"default": 1
+		},
+		"zoomFinalScale": {
+			"type": "number",
+			"default": 1.25
+		},
 		"blockId": {
 			"type": "string"
 		}

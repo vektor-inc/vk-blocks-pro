@@ -2,7 +2,6 @@ import save1_38_0 from './1.38.0/save';
 import save1_71_0 from './1.71.0/save';
 import save1_87_0 from './1.87.0/save';
 import save1_95_0 from './1.95.0/save';
-import save1_104_0 from './1.104.0/save';
 
 const blockAttributes = {
 	editLock: {
@@ -83,6 +82,7 @@ const blockAttributes3 = {
 	},
 };
 
+/* 次回対応おねがいします
 const blockAttributes4 = {
 	...blockAttributes3,
 	relAttribute: {
@@ -90,22 +90,9 @@ const blockAttributes4 = {
 		"default": ""
 	}
 };
-
-/* 次回対応おねがいします
-const blockAttributes5 = {
-	...blockAttributes4,
-	borderStyle: {
-		"type": "string",
-		"default": "solid"
-	},
-};
 */
 
 const deprecated = [
-	{
-		attributes: blockAttributes4,
-		save: save1_104_0,
-	},
 	{
 		attributes: blockAttributes3,
 		save: save1_95_0,

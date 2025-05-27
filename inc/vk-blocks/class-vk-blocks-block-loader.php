@@ -139,7 +139,7 @@ class VK_Blocks_Block_Loader {
 		// ↑の 編集画面の wp_register_style( 'vk-blocks-build-editor-css' だけだとテーマエディタの iframe でCSSが反映されないのでインラインで追加登録 .
 		$style_path = wp_normalize_path( VK_BLOCKS_DIR_PATH . '/build/block-build-editor.css' );
 		if ( file_exists( $style_path ) ) {
-			$dynamic_css = file_get_contents( $style_path );
+			$dynamic_css = file_get_contents( $style_path ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
 			wp_add_inline_style( 'wp-edit-blocks', $dynamic_css );
 		}
 

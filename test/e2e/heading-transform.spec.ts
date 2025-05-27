@@ -47,7 +47,7 @@ test.describe( 'Block', () => {
         await page.locator('#components-circular-option-picker-2-22').click();
 
         // 見出しに変換
-        await page.getByLabel('Heading(not recommended)', { exact: true }).click();
+        await page.getByLabel('Heading ( not recommended )', { exact: true }).click();
         await page.getByRole('menuitem', { name: 'Heading' }).click();
 
 		// 変換内容

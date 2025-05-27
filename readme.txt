@@ -110,6 +110,11 @@ e.g.
 
 [ Bug Fix ] Fixed an issue where Japanese characters in custom color names in block themes caused class names to break, preventing colors from being applied.
 
+= 1.104.0 =
+[ Specification change / Bugfix ][ Grid Column Card (Pro) ] Removed Edit mode — only the selected item block is now editable.
+[ Bug fix ][ Tab ] Fixed tab items not being properly selected when clicked from the list view.
+[ Other ][ PR Content ][ Staff ][ Card ][ Icon Card ]Added "not recommended" to block name.
+
 = 1.103.0 =
 [ Add function ][ Core Excerpt ] Added top and bottom margin settings to the toolbar.
 [ Add function ][ Outer (Pro) ] Added background offset feature.

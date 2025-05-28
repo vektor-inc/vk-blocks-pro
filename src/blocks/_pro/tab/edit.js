@@ -11,6 +11,7 @@ import { dispatch, useSelect } from '@wordpress/data';
 import { __, sprintf } from '@wordpress/i18n';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 export default function TabEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -402,15 +403,15 @@ export default function TabEdit(props) {
 				if (tabOption.tabLabelBackground) {
 					tabColorClass = ' has-background';
 					if (!isHexColor(childBlock.attributes.tabColor)) {
-						tabColorClass += ` has-${childBlock.attributes.tabColor}-background-color`;
+						tabColorClass += ` has-${sanitizeSlug(childBlock.attributes.tabColor)}-background-color`;
 					} else {
 						tabColorStyle.backgroundColor =
 							childBlock.attributes.tabColor;
 					}
 				} else if (tabOption.tabLabelBorderTop) {
-					tabSpanColorClass = ' has-border-top';
+					tabSpanColorClass = '';
 					if (!isHexColor(childBlock.attributes.tabColor)) {
-						tabSpanColorClass += ` has-${childBlock.attributes.tabColor}-border-color`;
+						tabSpanColorClass += ` has-${sanitizeSlug(childBlock.attributes.tabColor)}-border-color`;
 					} else {
 						tabSpanColorStyle.borderTopColor =
 							childBlock.attributes.tabColor;
@@ -422,7 +423,12 @@ export default function TabEdit(props) {
 							/has-(.*)-border-color/
 						);
 						if (borderColorClassMatch) {
-							tabSpanColorClass += ` has-${borderColorClassMatch[1]}-color`;
+							// Correctly add the color class without duplicating 'has-border-top-HOGEHOGE'
+							tabSpanColorClass = tabSpanColorClass.replace(
+								/ has-border-top-HOGEHOGE/,
+								''
+							);
+							tabSpanColorClass += ` has-${sanitizeSlug(borderColorClassMatch[1])}-color`;
 						}
 					}
 				}

@@ -4,12 +4,7 @@ import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { dispatch, select, useSelect } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
 import parse from 'html-react-parser';
-import {
-	isAllowedBlock,
-	returnHtml,
-	getHeadings,
-	getInnerHeadings,
-} from './toc-utils';
+import { isAllowedBlock, returnHtml, getAllHeadings } from './toc-utils';
 
 const useCurrentBlocks = () => {
 	return useSelect(
@@ -38,6 +33,40 @@ export default function TOCEdit(props) {
 	const blocks = useCurrentBlocks();
 	const findBlocks = useBlocksByName('vk-blocks/table-of-contents-new');
 
+	// 再帰的にブロックを処理してアンカーを設定する関数
+	const processBlocksRecursively = (
+		blocks,
+		headingBlocks,
+		hasInnerBlocks,
+		updateBlockAttributes
+	) => {
+		blocks.forEach(function (block) {
+			// 見出しにカスタムIDを追加
+			if (
+				block.attributes.anchor === undefined &&
+				isAllowedBlock(block.name, headingBlocks)
+			) {
+				updateBlockAttributes(block.clientId, {
+					anchor: `vk-htags-${block.clientId}`,
+				});
+			}
+
+			// InnerBlock内の見出しを再帰的に処理
+			if (
+				isAllowedBlock(block.name, hasInnerBlocks) &&
+				block.innerBlocks &&
+				block.innerBlocks.length > 0
+			) {
+				processBlocksRecursively(
+					block.innerBlocks,
+					headingBlocks,
+					hasInnerBlocks,
+					updateBlockAttributes
+				);
+			}
+		});
+	};
+
 	useEffect(() => {
 		// 投稿に目次ブロックがなければ処理を実行しない
 		if (!findBlocks) {
@@ -49,36 +78,22 @@ export default function TOCEdit(props) {
 
 		const headingBlocks = ['core/heading', 'vk-blocks/heading'];
 		const hasInnerBlocks = ['vk-blocks/outer', 'core/cover', 'core/group'];
-		blocks.forEach(function (block) {
-			// 見出しにカスタムIDを追加
-			if (
-				block.attributes.anchor === undefined &&
-				isAllowedBlock(block.name, headingBlocks)
-			) {
-				updateBlockAttributes(block.clientId, {
-					anchor: `vk-htags-${block.clientId}`,
-				});
 
-				// InnerBlock内の見出しにカスタムIDを追加
-			} else if (isAllowedBlock(block.name, hasInnerBlocks)) {
-				block.innerBlocks.forEach(function (innerBlock) {
-					// 見出しにカスタムIDを追加
-					if (
-						innerBlock.attributes.anchor === undefined &&
-						isAllowedBlock(innerBlock.name, headingBlocks)
-					) {
-						updateBlockAttributes(innerBlock.clientId, {
-							anchor: `vk-htags-${innerBlock.clientId}`,
-						});
-					}
-				});
-			}
-		});
+		// 再帰的にブロックを処理
+		processBlocksRecursively(
+			blocks,
+			headingBlocks,
+			hasInnerBlocks,
+			updateBlockAttributes
+		);
+
 		// 目次ブロックをアップデート
 		const blocksOrder = getBlockOrder();
-		const headings = getHeadings(headingBlocks);
-		const innerHeadings = getInnerHeadings(headingBlocks, hasInnerBlocks);
-		const allHeadings = headings.concat(innerHeadings);
+		const allHeadings = getAllHeadings(
+			blocks,
+			headingBlocks,
+			hasInnerBlocks
+		);
 
 		const allHeadingsSorted = allHeadings.map((heading) => {
 			const index = blocksOrder.indexOf(heading.clientId);

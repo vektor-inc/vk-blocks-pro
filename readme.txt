@@ -108,6 +108,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification change ][ Table of Contents (Pro) ] Removed the restriction that prevented nested headings from being displayed in the list.
+
 = 1.104.0 =
 
 [ Specification change / Bugfix ][ Grid Column Card (Pro) ] Removed Edit mode — only the selected item block is now editable.

@@ -1,6 +1,7 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 export default function save(props) {
 	const { attributes } = props;
@@ -18,7 +19,7 @@ export default function save(props) {
 			if (isHexColor(color)) {
 				inlineStyle = { backgroundColor: `${color}` };
 			} else {
-				styleClass += ` has-${color}-background-color`;
+				styleClass += ` has-${sanitizeSlug(color)}-background-color`;
 			}
 		}
 	} else if (style === 'outlined') {
@@ -28,7 +29,7 @@ export default function save(props) {
 			if (isHexColor(color)) {
 				inlineStyle = { color: `${color}` };
 			} else {
-				styleClass += ` has-${color}-color`;
+				styleClass += ` has-${sanitizeSlug(color)}-color`;
 			}
 		}
 	}

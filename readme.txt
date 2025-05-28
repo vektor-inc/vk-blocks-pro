@@ -109,9 +109,14 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Grid Column Card (Pro) ] Added the ability to select the border style from "Solid", "Dashed", or "Dotted"
+[ Specification change ][ Table of Contents (Pro) ] Removed the restriction that prevented nested headings from being displayed in the list.
+[ Bug Fix ] Fixed an issue where Japanese characters in custom color names in block themes caused class names to break, preventing colors from being applied.
+
+= 1.104.0 =
 
 = 1.104.0 =
 [ Specification change / Bugfix ][ Grid Column Card (Pro) ] Removed Edit mode — only the selected item block is now editable.
+[ Bug fix ][ Tab ] Fixed tab items not being properly selected when clicked from the list view.
 [ Other ][ PR Content ][ Staff ][ Card ][ Icon Card ]Added "not recommended" to block name.
 
 = 1.103.0 =

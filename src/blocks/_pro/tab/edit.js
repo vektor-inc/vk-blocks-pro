@@ -11,6 +11,7 @@ import { dispatch, useSelect } from '@wordpress/data';
 import { __, sprintf } from '@wordpress/i18n';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 export default function TabEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -59,6 +60,32 @@ export default function TabEdit(props) {
 		(select) => select(blockEditorStore).getBlock(clientId).innerBlocks,
 		[clientId]
 	);
+
+	// 選択されたブロックを監視
+	const selectedBlockClientId = useSelect(
+		(select) => select(blockEditorStore).getSelectedBlockClientId(),
+		[]
+	);
+
+	// 選択されたブロックがタブアイテムの場合、対応するタブをアクティブにする
+	useEffect(() => {
+		if (selectedBlockClientId && childBlocks) {
+			const selectedTabIndex = childBlocks.findIndex(
+				(childBlock) => childBlock.clientId === selectedBlockClientId
+			);
+
+			// 選択されたブロックが現在のタブブロックの子ブロックの場合のみ処理
+			if (selectedTabIndex !== -1 && selectedTabIndex !== firstActive) {
+				// firstActiveを更新
+				setAttributes({ firstActive: selectedTabIndex });
+
+				// タブラベルの見た目を更新
+				setTimeout(() => {
+					updateTabLabelAppearance(selectedTabIndex);
+				}, 100);
+			}
+		}
+	}, [selectedBlockClientId, childBlocks, firstActive, blockId, clientId]);
 
 	useEffect(() => {
 		const tabOptionTemp = {
@@ -376,15 +403,15 @@ export default function TabEdit(props) {
 				if (tabOption.tabLabelBackground) {
 					tabColorClass = ' has-background';
 					if (!isHexColor(childBlock.attributes.tabColor)) {
-						tabColorClass += ` has-${childBlock.attributes.tabColor}-background-color`;
+						tabColorClass += ` has-${sanitizeSlug(childBlock.attributes.tabColor)}-background-color`;
 					} else {
 						tabColorStyle.backgroundColor =
 							childBlock.attributes.tabColor;
 					}
 				} else if (tabOption.tabLabelBorderTop) {
-					tabSpanColorClass = ' has-border-top';
+					tabSpanColorClass = '';
 					if (!isHexColor(childBlock.attributes.tabColor)) {
-						tabSpanColorClass += ` has-${childBlock.attributes.tabColor}-border-color`;
+						tabSpanColorClass += ` has-${sanitizeSlug(childBlock.attributes.tabColor)}-border-color`;
 					} else {
 						tabSpanColorStyle.borderTopColor =
 							childBlock.attributes.tabColor;
@@ -396,7 +423,12 @@ export default function TabEdit(props) {
 							/has-(.*)-border-color/
 						);
 						if (borderColorClassMatch) {
-							tabSpanColorClass += ` has-${borderColorClassMatch[1]}-color`;
+							// Correctly add the color class without duplicating 'has-border-top-HOGEHOGE'
+							tabSpanColorClass = tabSpanColorClass.replace(
+								/ has-border-top-HOGEHOGE/,
+								''
+							);
+							tabSpanColorClass += ` has-${sanitizeSlug(borderColorClassMatch[1])}-color`;
 						}
 					}
 				}
@@ -560,8 +592,120 @@ export default function TabEdit(props) {
 
 	const blockProps = useBlockProps({
 		className: `vk_tab`,
-		id: `vk-tab-id-${blockId}`,
+		id: `vk-tab-id-${blockId || clientId}`,
 	});
+
+	// タブラベルの見た目を更新する共通関数
+	const updateTabLabelAppearance = (selectedTabIndex) => {
+		const iframe = document.querySelector(
+			'.block-editor-iframe__container iframe'
+		);
+		const targetDocument = iframe?.contentWindow?.document || document;
+
+		// 現在のタブブロックを特定
+		const targetBlockId = blockId || clientId;
+		let vkTab = targetDocument.querySelector(`#vk-tab-id-${targetBlockId}`);
+
+		// デバッグ：実際に存在するタブブロックを確認
+		const allVkTabs = targetDocument.querySelectorAll('.vk_tab');
+
+		// 見つからない場合は、block-プレフィックスで検索
+		if (!vkTab) {
+			vkTab = targetDocument.querySelector(`#block-${targetBlockId}`);
+		}
+
+		// 見つからない場合は、clientIdで再試行
+		if (!vkTab && blockId !== clientId) {
+			vkTab = targetDocument.querySelector(`#vk-tab-id-${clientId}`);
+			if (!vkTab) {
+				vkTab = targetDocument.querySelector(`#block-${clientId}`);
+			}
+		}
+
+		// それでも見つからない場合は、最初の.vk_tabを使用（単一の場合のみ）
+		if (!vkTab && allVkTabs.length === 1) {
+			vkTab = allVkTabs[0];
+		}
+
+		// 早期リターン: タブブロックが見つからない場合
+		if (!vkTab) {
+			return;
+		}
+
+		const vkTabLabels = vkTab.querySelector('.vk_tab_labels');
+		if (!vkTabLabels) {
+			return;
+		}
+
+		// 全てのタブラベルを取得
+		const allLabels = vkTabLabels.querySelectorAll('.vk_tab_labels_label');
+
+		// 変数の最適化: ラインスタイルかどうかを事前に計算
+		const isLineStyle = vkTab.classList.contains(
+			'is-style-vk_tab_labels-line'
+		);
+
+		// 全てのタブを非アクティブにする
+		allLabels.forEach((label) => {
+			label.classList.remove('vk_tab_labels_label-state-active');
+			label.classList.add('vk_tab_labels_label-state-inactive');
+			if (!isLineStyle) {
+				label.style.setProperty(
+					'background-color',
+					'var(--vk-color-bg-inactive)',
+					'important'
+				);
+			}
+		});
+
+		// 選択されたタブをアクティブにする
+		const targetLabel = allLabels[selectedTabIndex];
+		if (!targetLabel) {
+			return;
+		}
+
+		targetLabel.classList.add('vk_tab_labels_label-state-active');
+		targetLabel.classList.remove('vk_tab_labels_label-state-inactive');
+		targetLabel.style.removeProperty('background-color');
+
+		// タブボディの色を取得してラベルに適用
+		const selectedChildBlock = childBlocks[selectedTabIndex];
+		const tabBodyBlockId =
+			selectedChildBlock.attributes.blockId ||
+			selectedChildBlock.clientId;
+		const activeTabBody = targetDocument.querySelector(
+			`#block-${tabBodyBlockId}`
+		);
+
+		if (!activeTabBody || isLineStyle) {
+			return;
+		}
+
+		const activeTabBodyStyle = window.getComputedStyle(activeTabBody);
+		const borderTopColor = activeTabBodyStyle.borderTopColor;
+
+		if (
+			borderTopColor &&
+			borderTopColor !== 'rgba(0, 0, 0, 0)' &&
+			borderTopColor !== 'transparent'
+		) {
+			targetLabel.style.setProperty(
+				'background-color',
+				borderTopColor,
+				'important'
+			);
+		} else {
+			// フォールバック：タブの色属性を使用
+			const tabColor = selectedChildBlock.attributes.tabColor;
+			if (tabColor) {
+				targetLabel.style.setProperty(
+					'background-color',
+					tabColor,
+					'important'
+				);
+			}
+		}
+	};
 
 	return (
 		<>

@@ -83,6 +83,16 @@ const blockAttributes2 = {
 	},
 };
 
+/* 次回対応おねがいします
+const blockAttributes3 = {
+	...blockAttributes2,
+	borderStyle: {
+		type: 'string',
+		default: 'solid'
+	},
+};
+*/
+
 const deprecated = [
 	{
 		attributes: blockAttributes2,

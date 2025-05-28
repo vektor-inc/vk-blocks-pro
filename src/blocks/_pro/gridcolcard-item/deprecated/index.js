@@ -86,9 +86,14 @@ const blockAttributes3 = {
 const blockAttributes4 = {
 	...blockAttributes3,
 	relAttribute: {
-		"type": "string",
-		"default": ""
-	}
+		type: 'string',
+		default: ''
+	},
+	// v1.104.0 で追加
+	borderStyle: {
+		type: 'string',
+		default: 'solid'
+	},
 };
 */
 

@@ -48,6 +48,7 @@ export default function Edit(props) {
 		border,
 		borderColor,
 		borderWidth,
+		borderStyle,
 		textColor,
 		backgroundColor,
 		backgroundGradient,
@@ -127,9 +128,13 @@ export default function Edit(props) {
 	// 線の色と太さ
 	if (border) {
 		style.borderWidth = borderWidth;
+		style.borderStyle = borderStyle;
 		if (isHexColor(borderColor)) {
 			// custom color
 			style.borderColor = `${borderColor}`;
+		}
+		if (isHexColor(borderStyle)) {
+			style.borderStyle = `${borderStyle}`;
 		}
 	}
 

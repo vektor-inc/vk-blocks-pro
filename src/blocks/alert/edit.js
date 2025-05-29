@@ -11,11 +11,13 @@ import parse from 'html-react-parser';
 
 export default function AlertEdit(props) {
 	const { attributes, setAttributes } = props;
-	const { style, icon, iconText } = attributes;
+	const { style, icon, iconText, mobileIconPosition } = attributes;
 	const iconFamily = vkFontAwesome.iconFamily; // eslint-disable-line no-undef
 
 	const blockProps = useBlockProps({
-		className: `vk_alert alert alert-${style} ${icon ? 'has-alert-icon' : ''}`,
+		className: `vk_alert alert alert-${style} ${icon ? 'has-alert-icon' : ''} ${
+			mobileIconPosition === 'top' ? 'mobile-icon-top' : ''
+		}`,
 	});
 
 	let alertIcon = '';
@@ -79,6 +81,29 @@ export default function AlertEdit(props) {
 					>
 						<FontAwesome attributeName={'icon'} {...props} />
 					</BaseControl>
+					{icon && (
+						<BaseControl
+							label={__('Mobile Icon Position', 'vk-blocks-pro')}
+							id={`vk_alert-mobile-icon-position`}
+						>
+							<SelectControl
+								value={mobileIconPosition}
+								onChange={(value) =>
+									setAttributes({ mobileIconPosition: value })
+								}
+								options={[
+									{
+										label: __('Left (Default)', 'vk-blocks-pro'),
+										value: 'left',
+									},
+									{
+										label: __('Top', 'vk-blocks-pro'),
+										value: 'top',
+									},
+								]}
+							/>
+						</BaseControl>
+					)}
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>

@@ -64,7 +64,6 @@
 }
 
 .alert{
-
 	padding: 1em;
 	margin: 1em auto;
 	border-radius: 3px;
@@ -91,7 +90,26 @@
 	&.has-alert-icon {
 		padding: 1em 0;
 	}
+}
 
+/*-------------------------------------------*/
+/* スマートフォン表示
+/*-------------------------------------------*/
+@media (max-width: 767px) {
+	.vk_alert.has-alert-icon.mobile-icon-top {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto;
+		.vk_alert_icon {
+			width: 100%;
+			padding: 1em 0;
+		}
+		.vk_alert_content {
+			border-left: none;
+			border-top: 1.5px solid currentColor;
+			padding: 1em;
+			width: 100%;
+		}
+	}
 }
 
 /*-------------------------------------------*/

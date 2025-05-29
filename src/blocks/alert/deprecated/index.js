@@ -12,6 +12,16 @@ const blockAttributes = {
 	},
 };
 
+/* 次回対応をお願いします
+const blockAttributes2 = {
+	...blockAttributes,
+	mobileIconPosition: {
+		type: 'string',
+		default: 'left',
+	},
+}
+*/
+
 const deprecated = [
 	{
 		attributes: blockAttributes,

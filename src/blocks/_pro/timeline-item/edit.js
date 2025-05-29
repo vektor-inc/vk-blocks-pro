@@ -14,6 +14,7 @@ import {
 } from '@wordpress/block-editor';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 export default function TimelineItemEdit(props) {
 	const { attributes, setAttributes } = props;
@@ -33,7 +34,7 @@ export default function TimelineItemEdit(props) {
 			if (isHexColor(color)) {
 				inlineStyle = { backgroundColor: `${color}` };
 			} else {
-				styleClass += ` has-${color}-background-color`;
+				styleClass += ` has-${sanitizeSlug(color)}-background-color`;
 			}
 		}
 	} else if (style === 'outlined') {
@@ -43,7 +44,7 @@ export default function TimelineItemEdit(props) {
 			if (isHexColor(color)) {
 				inlineStyle = { color: `${color}` };
 			} else {
-				styleClass += ` has-${color}-color`;
+				styleClass += ` has-${sanitizeSlug(color)}-color`;
 			}
 		}
 	}

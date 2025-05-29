@@ -66,6 +66,10 @@
 			"type": "string",
 			"default": "1px"
 		},
+		"borderStyle": {
+			"type": "string",
+			"default": "solid"
+		},
 		"backgroundGradient": {
 			"type": "string"
 		},

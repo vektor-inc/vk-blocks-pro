@@ -82,6 +82,7 @@ export default function Edit(props) {
 							border: attributes.border,
 							borderColor: attributes.borderColor,
 							borderWidth: attributes.borderWidth,
+							borderStyle: attributes.borderStyle,
 							textColor: attributes.textColor,
 							backgroundColor: attributes.backgroundColor,
 							backgroundGradient: attributes.backgroundGradient,

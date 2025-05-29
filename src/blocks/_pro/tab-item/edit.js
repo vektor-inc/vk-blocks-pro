@@ -15,6 +15,7 @@ import { select, dispatch } from '@wordpress/data';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { FontAwesome } from '@vkblocks/utils/font-awesome-new';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 export default function TabItemEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -142,7 +143,7 @@ export default function TabItemEdit(props) {
 	if (tabBodyBorderTop) {
 		tabBodyClass = ' has-border-top';
 		if (!isHexColor(tabColor)) {
-			tabBodyClass += ` has-${tabColor}-border-color`;
+			tabBodyClass += ` has-${sanitizeSlug(tabColor)}-border-color`;
 		} else {
 			tabBodyStyle = {
 				borderTopColor: tabColor,

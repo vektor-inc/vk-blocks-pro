@@ -29,10 +29,11 @@
 		justify-content: center;
 		align-content: center;
 		height: 100%;
-		background-color: initial !important;
 		width: 75px;
+		gap: .375rem;
+		background-color: initial !important;
+		line-height: 1;
 		&_text:has(span:not(:empty)){
-			margin-top: .375rem;
 			margin-left: 0;
 			text-align: center;
 			font-size: 12px;
@@ -49,15 +50,17 @@
 		}
 	}
 	&.has-alert-icon {
-		display: grid;
-		grid-template-columns: 1fr 6fr;
+		display: flex;
 		align-items: center;
 		justify-content: center;
 		place-items: center;
+		padding: 1.25rem;
+		gap: .75rem;
 		> .vk_alert_content{
+			justify-content: center;
 			min-width: 0;
 			width: 100%;
-			padding: 0 1rem;
+			padding-left: .75rem;
 			border-left: 1.5px solid currentColor;
 		}
 	}
@@ -86,28 +89,22 @@
 			text-decoration: none;
 		}
 	}
-
-	&.has-alert-icon {
-		padding: 1em 0;
-	}
 }
 
 /*-------------------------------------------*/
 /* スマートフォン表示
 /*-------------------------------------------*/
-@media (max-width: 767px) {
+@media (max-width: 575px) {
 	.vk_alert.has-alert-icon.mobile-icon-top {
-		grid-template-columns: 1fr;
-		grid-template-rows: auto auto;
+		flex-wrap: wrap;
 		.vk_alert_icon {
 			width: 100%;
-			padding: 1em 0;
 		}
 		.vk_alert_content {
 			border-left: none;
 			border-top: 1.5px solid currentColor;
-			padding: 1em;
 			width: 100%;
+			padding: .75rem 0 0 0;
 		}
 	}
 }
@@ -120,11 +117,9 @@
 		&.has-alert-icon{
 			.vk_alert_content{
 				width: calc(100% - 1rem);
-				padding: 0 0 0 1rem;
 			}
 		}
 		.vk_alert_icon{
-			padding: .5rem;
 			&_icon > i{
 				margin-right: 0;
 			}
@@ -132,9 +127,8 @@
 	}
 	.alert {
 		&.has-alert-icon {
-		padding: 1em 1em 1em 0;
-  	  margin: 1em auto;
-		border-radius: 3px;
+			margin: 1em auto;
+			border-radius: 3px;
 		}
 		p {
 				margin-block-end: 0;

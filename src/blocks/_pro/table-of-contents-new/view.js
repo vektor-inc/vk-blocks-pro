@@ -44,8 +44,19 @@ document.addEventListener('DOMContentLoaded', () => {
 	};
 
 	tocBlocks.forEach((tocBlock) => {
-		// サーバーサイドから渡された設定を取得
-		const allowedLevels = window.vkBlocksTocSettings?.allowedHeadingLevels || [2, 3, 4];
+		// ブロックのカスタム設定を取得
+		const useCustomLevels = tocBlock.dataset.useCustomLevels === 'true';
+		const customLevels = useCustomLevels && tocBlock.dataset.customLevels
+			? tocBlock.dataset.customLevels.split(',')
+			: [];
+
+		// 許可された見出しレベルを決定
+		let allowedLevels;
+		if (useCustomLevels && customLevels.length > 0) {
+			allowedLevels = customLevels.map(level => parseInt(level.replace('h', '')));
+		} else {
+			allowedLevels = window.vkBlocksTocSettings?.allowedHeadingLevels || [2, 3, 4];
+		}
 
 		// ページ内の見出しを取得
 		const headings = Array.from(document.querySelectorAll('h2, h3, h4, h5, h6'))

@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { PanelBody, SelectControl, BaseControl } from '@wordpress/components';
+import { PanelBody, SelectControl, BaseControl, ToggleControl, ExternalLink, CheckboxControl } from '@wordpress/components';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { dispatch, select, useSelect } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
@@ -34,7 +34,7 @@ const useTocSettings = () => {
 
 export default function TOCEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
-	const { style, open, renderHtml } = attributes;
+	const { style, open, renderHtml, useCustomLevels, customHeadingLevels } = attributes;
 	const blockProps = useBlockProps({
 		className: `vk_tableOfContents vk_tableOfContents-style-${style} tabs`,
 	});
@@ -102,7 +102,8 @@ export default function TOCEdit(props) {
 		const allHeadings = getAllHeadings(
 			blocks,
 			headingBlocks,
-			hasInnerBlocks
+			hasInnerBlocks,
+			{ useCustomLevels, customHeadingLevels }
 		);
 
 		const allHeadingsSorted = allHeadings.map((heading) => {
@@ -127,7 +128,25 @@ export default function TOCEdit(props) {
 		updateBlockAttributes(clientId, {
 			renderHtml: render,
 		});
-	}, [blocks, tocSettings]);
+	}, [blocks, tocSettings, useCustomLevels, customHeadingLevels]);
+
+	const handleMaxLevelChange = (maxLevel) => {
+		const levels = ['h2'];
+		const levelNumbers = ['h3', 'h4', 'h5', 'h6'];
+		const maxIndex = levelNumbers.indexOf(maxLevel);
+		
+		if (maxIndex !== -1) {
+			levels.push(...levelNumbers.slice(0, maxIndex + 1));
+		}
+
+		setAttributes({ customHeadingLevels: levels });
+	};
+
+	// 現在の最大レベルを取得
+	const getCurrentMaxLevel = () => {
+		const maxLevel = customHeadingLevels[customHeadingLevels.length - 1];
+		return maxLevel || 'h2';
+	};
 
 	/* eslint jsx-a11y/label-has-associated-control: 0 */
 	return (
@@ -144,6 +163,52 @@ export default function TOCEdit(props) {
 								'vk-blocks-pro'
 							)}
 						</p>
+					</BaseControl>
+				</PanelBody>
+				<PanelBody
+					title={__('Heading Levels', 'vk-blocks-pro')}
+					initialOpen={true}
+				>
+					<BaseControl>
+						<p style={{ marginBottom: '1em' }}>
+							{__('To configure global heading levels, visit', 'vk-blocks-pro')}{' '}
+							<ExternalLink href="/wp-admin/options-general.php?page=vk_blocks_options#toc-setting">
+								{__('VK Blocks Settings', 'vk-blocks-pro')}
+							</ExternalLink>
+						</p>
+						<ToggleControl
+							label={__('Use custom heading levels', 'vk-blocks-pro')}
+							checked={useCustomLevels}
+							onChange={(value) =>
+								setAttributes({
+									useCustomLevels: value,
+									customHeadingLevels: value ? ['h2', 'h3'] : []
+								})
+							}
+							help={
+								useCustomLevels
+									? __('Using custom heading levels for this block.', 'vk-blocks-pro')
+									: __('Using global heading levels settings.', 'vk-blocks-pro')
+							}
+						/>
+						{useCustomLevels && (
+							<>
+								<p style={{ marginTop: '1em', marginBottom: '0.5em' }}>
+									{__('Include Headings Up To:', 'vk-blocks-pro')}
+								</p>
+								<SelectControl
+									value={getCurrentMaxLevel()}
+									options={[
+										{ label: 'H2', value: 'h2' },
+										{ label: 'H3', value: 'h3' },
+										{ label: 'H4', value: 'h4' },
+										{ label: 'H5', value: 'h5' },
+										{ label: 'H6', value: 'h6' }
+									]}
+									onChange={(value) => handleMaxLevelChange(value)}
+								/>
+							</>
+						)}
 					</BaseControl>
 				</PanelBody>
 				<PanelBody

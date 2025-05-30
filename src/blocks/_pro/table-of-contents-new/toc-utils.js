@@ -2,15 +2,20 @@ export const isAllowedBlock = (name, allowedBlocks) => {
 	return allowedBlocks.includes(name);
 };
 
-export const getAllHeadings = (blocks, headingBlocks, hasInnerBlocks) => {
-	// グローバル設定から許可されたレベルを取得
-	const globalAllowedLevels = window.vkBlocksTocSettings?.allowedHeadingLevels || [2, 3, 4];
+export const getAllHeadings = (blocks, headingBlocks, hasInnerBlocks, blockAttributes = {}) => {
+	// ブロック独自の設定を優先、なければグローバル設定を使用
+	let allowedLevels;
+	if (blockAttributes.useCustomLevels && blockAttributes.customHeadingLevels?.length > 0) {
+		allowedLevels = blockAttributes.customHeadingLevels.map(level => parseInt(level.replace('h', '')));
+	} else {
+		allowedLevels = window.vkBlocksTocSettings?.allowedHeadingLevels || [2, 3, 4];
+	}
 
 	return blocks.reduce((acc, block) => {
 		if (
 			isAllowedBlock(block.name, headingBlocks) &&
 			!block.attributes.excludeFromTOC &&
-			globalAllowedLevels.includes(block.attributes.level)
+			allowedLevels.includes(block.attributes.level)
 		) {
 			acc.push(block);
 		}
@@ -19,7 +24,8 @@ export const getAllHeadings = (blocks, headingBlocks, hasInnerBlocks) => {
 				...getAllHeadings(
 					block.innerBlocks,
 					headingBlocks,
-					hasInnerBlocks
+					hasInnerBlocks,
+					blockAttributes
 				)
 			);
 		}

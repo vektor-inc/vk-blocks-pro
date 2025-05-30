@@ -1,60 +1,53 @@
 import { __ } from '@wordpress/i18n';
 import { useContext } from '@wordpress/element';
 import { AdminContext } from './index';
+import { SelectControl } from '@wordpress/components';
 
 export default function AdminToc() {
 	const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
 
-	const handleHeadingLevelChange = (level, checked) => {
-		const currentLevels = vkBlocksOption.tocHeadingLevels || ['h2', 'h3', 'h4'];
-		let newLevels;
-
-		if (checked) {
-			newLevels = [...new Set([...currentLevels, level])].sort();
-		} else {
-			newLevels = currentLevels.filter((l) => l !== level);
+	const handleMaxLevelChange = (maxLevel) => {
+		const levels = ['h2'];
+		const levelNumbers = ['h3', 'h4', 'h5', 'h6'];
+		const maxIndex = levelNumbers.indexOf(maxLevel);
+		
+		if (maxIndex !== -1) {
+			levels.push(...levelNumbers.slice(0, maxIndex + 1));
 		}
 
 		setVkBlocksOption({
 			...vkBlocksOption,
-			tocHeadingLevels: newLevels,
+			tocHeadingLevels: levels,
 		});
+	};
+
+	// 現在の最大レベルを取得
+	const getCurrentMaxLevel = () => {
+		const currentLevels = vkBlocksOption.tocHeadingLevels || ['h2', 'h3', 'h4'];
+		const maxLevel = currentLevels[currentLevels.length - 1];
+		return maxLevel || 'h2';
 	};
 
 	return (
 		<div className="vk_admin_page_section" id="toc-setting">
 			<h3>{ __('Table of Contents Settings', 'vk-blocks-pro') }</h3>
 			<p>
-				{ __('Configure which heading levels should be included in the table of contents.', 'vk-blocks-pro') }
+				{ __('Configure the maximum heading level to include in the table of contents.', 'vk-blocks-pro') }
 			</p>
-			<table className="form-table">
-				<tbody>
-					<tr>
-						<th scope="row">
-							{ __('Heading Levels to Include', 'vk-blocks-pro') }
-						</th>
-						<td>
-							{['h2', 'h3', 'h4', 'h5', 'h6'].map((level) => (
-								<label key={level} style={{ marginRight: '1em' }}>
-									<input
-										type="checkbox"
-										value={level}
-										checked={
-											(vkBlocksOption.tocHeadingLevels || ['h2', 'h3', 'h4']).includes(
-												level
-											)
-										}
-										onChange={(e) =>
-											handleHeadingLevelChange(level, e.target.checked)
-										}
-									/>{' '}
-									{level.toUpperCase()}
-								</label>
-							))}
-						</td>
-					</tr>
-				</tbody>
-			</table>
+            <SelectControl
+				value={getCurrentMaxLevel()}
+				options={[
+					{ label: 'H2', value: 'h2' },
+					{ label: 'H3', value: 'h3' },
+					{ label: 'H4', value: 'h4' },
+					{ label: 'H5', value: 'h5' },
+					{ label: 'H6', value: 'h6' }
+				]}
+				onChange={(value) => handleMaxLevelChange(value)}
+			/>
+			<p className="description">
+				{ __('Headings from H2 up to the selected level will be included.', 'vk-blocks-pro') }
+			</p>
 		</div>
 	);
 } 

@@ -25,14 +25,12 @@ if ( ! class_exists( 'VK_Blocks_TOC_Settings' ) ) {
 		 */
 		private function get_toc_settings() {
 			$options = get_option( 'vk_blocks_options', array() );
-			$toc_levels = isset( $options['tocHeadingLevels'] ) ? $options['tocHeadingLevels'] : array( 'h2', 'h3', 'h4', 'h5', 'h6' );
-			
 			return array(
 				'allowedHeadingLevels' => array_map(
 					function( $level ) {
 						return intval( str_replace( 'h', '', $level ) );
 					},
-					$toc_levels
+					isset( $options['tocHeadingLevels'] ) ? $options['tocHeadingLevels'] : array( 'h2', 'h3', 'h4', 'h5', 'h6' )
 				),
 			);
 		}
@@ -43,28 +41,34 @@ if ( ! class_exists( 'VK_Blocks_TOC_Settings' ) ) {
 		public function register_settings() {
 			register_setting(
 				'vk_blocks_options',
-				'vk_blocks_toc_heading_levels',
+				'vk_blocks_options',
 				array(
-					'type'              => 'array',
+					'type'              => 'object',
 					'show_in_rest'      => true,
-					'default'           => array( 'h2', 'h3', 'h4' ),
-					'sanitize_callback' => array( $this, 'sanitize_heading_levels' ),
+					'default'           => array(
+						'tocHeadingLevels' => array( 'h2', 'h3', 'h4' )
+					),
+					'sanitize_callback' => array( $this, 'sanitize_options' ),
 				)
 			);
 		}
 
 		/**
-		 * Sanitize heading levels
+		 * Sanitize options
 		 *
 		 * @param array $input The input array.
 		 */
-		public function sanitize_heading_levels( $input ) {
-			if ( ! is_array( $input ) ) {
-				return array( 'h2', 'h3', 'h4' );
+		public function sanitize_options( $input ) {
+			if ( isset( $input['tocHeadingLevels'] ) ) {
+				$allowed_levels = array( 'h2', 'h3', 'h4', 'h5', 'h6' );
+				$input['tocHeadingLevels'] = array_values( 
+					array_intersect( 
+						(array) $input['tocHeadingLevels'], 
+						$allowed_levels 
+					)
+				);
 			}
-
-			$allowed_levels = array( 'h2', 'h3', 'h4', 'h5', 'h6' );
-			return array_values( array_intersect( $input, $allowed_levels ) );
+			return $input;
 		}
 
 		/**
@@ -98,14 +102,17 @@ if ( ! class_exists( 'VK_Blocks_TOC_Settings' ) ) {
 		 * Render heading levels field
 		 */
 		public function render_heading_levels_field() {
-			$options = get_option( 'vk_blocks_toc_heading_levels', array( 'h2', 'h3', 'h4' ) );
-			$levels  = array( 'h2', 'h3', 'h4', 'h5', 'h6' );
+			$options = get_option( 'vk_blocks_options', array() );
+			$current_levels = isset( $options['tocHeadingLevels'] ) 
+				? $options['tocHeadingLevels'] 
+				: array( 'h2', 'h3', 'h4' );
+			$levels = array( 'h2', 'h3', 'h4', 'h5', 'h6' );
 
 			foreach ( $levels as $level ) {
 				printf(
-					'<label><input type="checkbox" name="vk_blocks_toc_heading_levels[]" value="%s" %s> %s</label><br>',
+					'<label><input type="checkbox" name="vk_blocks_options[tocHeadingLevels][]" value="%s" %s> %s</label><br>',
 					esc_attr( $level ),
-					checked( in_array( $level, $options, true ), true, false ),
+					checked( in_array( $level, $current_levels, true ), true, false ),
 					esc_html( strtoupper( $level ) )
 				);
 			}
@@ -131,7 +138,7 @@ if ( ! class_exists( 'VK_Blocks_TOC_Settings' ) ) {
 					'vk-blocks/table-of-contents-new-script',
 					'vkBlocksTocSettings',
 					$this->get_toc_settings()
-			);
+				);
 			}
 		}
 	}

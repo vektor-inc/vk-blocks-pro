@@ -75,9 +75,8 @@ export default function VKBlocksAdmin() {
 				<AdminLoadSeparate />
 				{vkBlocksObject.isPro && <AdminNewFaq />}
 				{vkBlocksObject.isPro && <AdminBreadcrumb />}
-				{vkBlocksObject.isPro && <AdminTocSettings />}
-				{vkBlocksObject.isPro && <AdminCustomCss />}
 				{vkBlocksObject.isPro && <AdminToc />}
+				{vkBlocksObject.isPro && <AdminCustomCss />}
 				<BlockManager />
 				<BlockStyleManager />
 				<SaveButton

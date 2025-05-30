@@ -2,11 +2,15 @@ export const isAllowedBlock = (name, allowedBlocks) => {
 	return allowedBlocks.includes(name);
 };
 
-export const getAllHeadings = (blocks, headingBlocks, hasInnerBlocks) =>
-	blocks.reduce((acc, block) => {
+export const getAllHeadings = (blocks, headingBlocks, hasInnerBlocks) => {
+	// グローバル設定から許可されたレベルを取得
+	const globalAllowedLevels = window.vkBlocksTocSettings?.allowedHeadingLevels || [2, 3, 4];
+
+	return blocks.reduce((acc, block) => {
 		if (
 			isAllowedBlock(block.name, headingBlocks) &&
-			!block.attributes.excludeFromTOC
+			!block.attributes.excludeFromTOC &&
+			globalAllowedLevels.includes(block.attributes.level)
 		) {
 			acc.push(block);
 		}
@@ -21,6 +25,7 @@ export const getAllHeadings = (blocks, headingBlocks, hasInnerBlocks) =>
 		}
 		return acc;
 	}, []);
+};
 
 export const returnHtml = (sources) => {
 	const countSeparater = '.';

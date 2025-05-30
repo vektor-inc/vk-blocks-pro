@@ -30,6 +30,23 @@ function vk_blocks_register_block_table_of_contents_new() {
 			VK_BLOCKS_VERSION,
 			true
 		);
+
+		// フロントエンド用の設定を渡す
+		$options = get_option( 'vk_blocks_options', array() );
+		$toc_levels = isset( $options['tocHeadingLevels'] ) ? $options['tocHeadingLevels'] : array( 'h2', 'h3', 'h4' );
+		
+		wp_localize_script(
+			'vk-blocks/table-of-contents-new-script',
+			'vkBlocksTocSettings',
+			array(
+				'allowedHeadingLevels' => array_map(
+					function( $level ) {
+						return intval( str_replace( 'h', '', $level ) );
+					},
+					$toc_levels
+				),
+			)
+		);
 	}
 
 	// クラシックテーマ & 6.5 環境で $assets = array() のように空にしないと重複登録になるため

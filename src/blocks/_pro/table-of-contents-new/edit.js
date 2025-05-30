@@ -23,6 +23,15 @@ const useBlocksByName = (blockName) => {
 	);
 };
 
+// 設定の変更を監視するカスタムフック
+const useTocSettings = () => {
+	return useSelect((select) => {
+		const { getEntityRecord } = select('core');
+		const settings = getEntityRecord('root', 'site');
+		return settings?.vk_blocks_options?.tocHeadingLevels || ['h2', 'h3', 'h4'];
+	}, []);
+};
+
 export default function TOCEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const { style, open, renderHtml } = attributes;
@@ -32,6 +41,7 @@ export default function TOCEdit(props) {
 
 	const blocks = useCurrentBlocks();
 	const findBlocks = useBlocksByName('vk-blocks/table-of-contents-new');
+	const tocSettings = useTocSettings();
 
 	// 再帰的にブロックを処理してアンカーを設定する関数
 	const processBlocksRecursively = (
@@ -117,7 +127,7 @@ export default function TOCEdit(props) {
 		updateBlockAttributes(clientId, {
 			renderHtml: render,
 		});
-	}, [blocks]);
+	}, [blocks, tocSettings]);
 
 	/* eslint jsx-a11y/label-has-associated-control: 0 */
 	return (

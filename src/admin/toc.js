@@ -22,7 +22,7 @@ export default function AdminToc() {
 	};
 
 	return (
-		<div className="vk_admin_page_section">
+		<div className="vk_admin_page_section" id="toc-setting">
 			<h3>{ __('Table of Contents Settings', 'vk-blocks-pro') }</h3>
 			<p>
 				{ __('Configure which heading levels should be included in the table of contents.', 'vk-blocks-pro') }

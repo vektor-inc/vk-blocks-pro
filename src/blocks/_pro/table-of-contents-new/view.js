@@ -1,5 +1,3 @@
-// 目次リスト内のOBJ文字を除去
-// https://github.com/vektor-inc/vk-blocks-pro/pull/2078
 document.addEventListener('DOMContentLoaded', () => {
 	const tocBlocks = document.querySelectorAll('.wp-block-vk-blocks-table-of-contents-new');
 
@@ -43,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		};
 	};
 
+	// 目次のHTMLを生成
 	tocBlocks.forEach((tocBlock) => {
 		// ブロックのカスタム設定を取得
 		const useCustomLevels = tocBlock.dataset.useCustomLevels === 'true';
@@ -95,7 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 
-	// OBJ文字の除去
+	// 目次リスト内のOBJ文字を除去
+	// https://github.com/vektor-inc/vk-blocks-pro/pull/2078
 	document.querySelectorAll('.vk_tableOfContents_list li').forEach((item) => {
 		item.innerHTML = item.innerHTML.replace(/\uFFFC/g, ''); // U+FFFCはOBJのUnicodeです
 	});

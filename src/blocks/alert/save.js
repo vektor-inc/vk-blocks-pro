@@ -2,10 +2,12 @@ import { InnerBlocks, useBlockProps, RichText } from '@wordpress/block-editor';
 import parse from 'html-react-parser';
 
 export default function save({ attributes }) {
-	const { style, icon, iconText } = attributes;
+	const { style, icon, iconText, mobileIconPosition } = attributes;
 
 	const blockProps = useBlockProps.save({
-		className: `vk_alert alert alert-${style} ${icon ? 'has-alert-icon' : ''}`,
+		className: `vk_alert alert alert-${style} ${icon ? 'has-alert-icon' : ''} ${
+			mobileIconPosition === 'top' ? 'mobile-icon-top' : ''
+		}`,
 	});
 
 	let alertIcon = '';

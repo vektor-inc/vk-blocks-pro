@@ -29,12 +29,14 @@ export default function AdminToc() {
 	};
 
 	return (
-		<div className="vk_admin_page_section" id="toc-setting">
+		<section className="vk_admin_page_section" id="toc-setting">
 			<h3>{ __('Table of Contents Settings', 'vk-blocks-pro') }</h3>
 			<p>
 				{ __('Configure the maximum heading level to include in the table of contents.', 'vk-blocks-pro') }
 			</p>
-            <SelectControl
+			<SelectControl
+				name="vk_blocks_options[toc_heading_levels]"
+				className="vk_admin_selectControl"
 				value={getCurrentMaxLevel()}
 				options={[
 					{ label: 'H2', value: 'h2' },
@@ -48,6 +50,6 @@ export default function AdminToc() {
 			<p className="description">
 				{ __('Headings from H2 up to the selected level will be included.', 'vk-blocks-pro') }
 			</p>
-		</div>
+		</section>
 	);
 } 

@@ -61,6 +61,8 @@ if ( ! class_exists( 'VK_Blocks_TOC_Settings' ) ) {
 		public function sanitize_options( $input ) {
 			if ( isset( $input['tocHeadingLevels'] ) ) {
 				$max_level = $input['tocHeadingLevels'];
+
+				// Always include H2 as the minimum heading level in TOC
 				$levels = ['h2'];
 				$level_numbers = ['h3', 'h4', 'h5', 'h6'];
 				$max_index = array_search($max_level, $level_numbers);

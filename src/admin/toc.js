@@ -30,7 +30,7 @@ export default function AdminToc() {
 
 	return (
 		<section className="vk_admin_page_section" id="toc-setting">
-			<h3>{ __('Table of Contents Settings', 'vk-blocks-pro') }</h3>
+			<h3>{ __('Table of Contents Setting', 'vk-blocks-pro') }</h3>
 			<p>
 				{ __('Configure the maximum heading level to include in the table of contents.', 'vk-blocks-pro') }
 			</p>

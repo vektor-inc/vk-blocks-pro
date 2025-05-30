@@ -23,7 +23,7 @@ export default function AdminToc() {
 
 	// 現在の最大レベルを取得
 	const getCurrentMaxLevel = () => {
-		const currentLevels = vkBlocksOption.tocHeadingLevels || ['h2', 'h3', 'h4'];
+		const currentLevels = vkBlocksOption.tocHeadingLevels || ['h2', 'h3', 'h4', 'h5', 'h6'];
 		const maxLevel = currentLevels[currentLevels.length - 1];
 		return maxLevel || 'h2';
 	};

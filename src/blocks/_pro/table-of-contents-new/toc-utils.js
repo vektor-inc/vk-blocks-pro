@@ -8,7 +8,7 @@ export const getAllHeadings = (blocks, headingBlocks, hasInnerBlocks, blockAttri
 	if (blockAttributes.useCustomLevels && blockAttributes.customHeadingLevels?.length > 0) {
 		allowedLevels = blockAttributes.customHeadingLevels.map(level => parseInt(level.replace('h', '')));
 	} else {
-		allowedLevels = window.vkBlocksTocSettings?.allowedHeadingLevels || [2, 3, 4];
+		allowedLevels = window.vkBlocksTocSettings?.allowedHeadingLevels || [2, 3, 4, 5, 6];
 	}
 
 	return blocks.reduce((acc, block) => {

@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (useCustomLevels && customLevels.length > 0) {
 			allowedLevels = customLevels.map(level => parseInt(level.replace('h', '')));
 		} else {
-			allowedLevels = window.vkBlocksTocSettings?.allowedHeadingLevels || [2, 3, 4];
+			allowedLevels = window.vkBlocksTocSettings?.allowedHeadingLevels || [2, 3, 4, 5, 6];
 		}
 
 		// ページ内の見出しを取得

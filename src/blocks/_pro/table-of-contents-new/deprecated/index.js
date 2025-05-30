@@ -19,6 +19,22 @@ const blockAttributes = {
 	},
 };
 
+/*
+// ver.1.104.0 で追加
+// 上記以降でdeprecatedを更新するときに対応お願いします
+const blockAttributes2 = {
+	...blockAttributes,
+	useCustomLevels: {
+		type: 'boolean',
+		default: false,
+	},
+	customHeadingLevels: {
+		type: 'array',
+		default: [],
+	},
+};
+*/
+
 const deprecated = [
 	{
 		attributes: blockAttributes,

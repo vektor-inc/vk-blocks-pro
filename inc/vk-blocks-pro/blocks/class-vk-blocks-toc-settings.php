@@ -25,7 +25,7 @@ if ( ! class_exists( 'VK_Blocks_TOC_Settings' ) ) {
 		 */
 		private function get_toc_settings() {
 			$options = get_option( 'vk_blocks_options', array() );
-			$toc_levels = isset( $options['tocHeadingLevels'] ) ? $options['tocHeadingLevels'] : array( 'h2', 'h3', 'h4' );
+			$toc_levels = isset( $options['tocHeadingLevels'] ) ? $options['tocHeadingLevels'] : array( 'h2', 'h3', 'h4', 'h5', 'h6' );
 			
 			return array(
 				'allowedHeadingLevels' => array_map(
@@ -131,7 +131,7 @@ if ( ! class_exists( 'VK_Blocks_TOC_Settings' ) ) {
 					'vk-blocks/table-of-contents-new-script',
 					'vkBlocksTocSettings',
 					$this->get_toc_settings()
-				);
+			);
 			}
 		}
 	}

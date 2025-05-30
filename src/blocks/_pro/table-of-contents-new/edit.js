@@ -1,5 +1,11 @@
 import { __ } from '@wordpress/i18n';
-import { PanelBody, SelectControl, BaseControl, ToggleControl, ExternalLink, CheckboxControl } from '@wordpress/components';
+import {
+	PanelBody,
+	SelectControl,
+	BaseControl,
+	ToggleControl,
+	ExternalLink,
+} from '@wordpress/components';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { dispatch, select, useSelect } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
@@ -28,13 +34,16 @@ const useTocSettings = () => {
 	return useSelect((select) => {
 		const { getEntityRecord } = select('core');
 		const settings = getEntityRecord('root', 'site');
-		return settings?.vk_blocks_options?.tocHeadingLevels || ['h2', 'h3', 'h4'];
+		return (
+			settings?.vk_blocks_options?.tocHeadingLevels || ['h2', 'h3', 'h4']
+		);
 	}, []);
 };
 
 export default function TOCEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
-	const { style, open, renderHtml, useCustomLevels, customHeadingLevels } = attributes;
+	const { style, open, renderHtml, useCustomLevels, customHeadingLevels } =
+		attributes;
 	const blockProps = useBlockProps({
 		className: `vk_tableOfContents vk_tableOfContents-style-${style} tabs`,
 	});
@@ -134,7 +143,7 @@ export default function TOCEdit(props) {
 		const levels = ['h2'];
 		const levelNumbers = ['h3', 'h4', 'h5', 'h6'];
 		const maxIndex = levelNumbers.indexOf(maxLevel);
-		
+
 		if (maxIndex !== -1) {
 			levels.push(...levelNumbers.slice(0, maxIndex + 1));
 		}
@@ -171,30 +180,52 @@ export default function TOCEdit(props) {
 				>
 					<BaseControl>
 						<p style={{ marginBottom: '1em' }}>
-							{__('To configure global heading levels, visit', 'vk-blocks-pro')}{' '}
+							{__(
+								'To configure global heading levels, visit',
+								'vk-blocks-pro'
+							)}{' '}
 							<ExternalLink href="/wp-admin/options-general.php?page=vk_blocks_options#toc-setting">
 								{__('VK Blocks Settings', 'vk-blocks-pro')}
 							</ExternalLink>
 						</p>
 						<ToggleControl
-							label={__('Use custom heading levels', 'vk-blocks-pro')}
+							label={__(
+								'Use custom heading levels',
+								'vk-blocks-pro'
+							)}
 							checked={useCustomLevels}
 							onChange={(value) =>
 								setAttributes({
 									useCustomLevels: value,
-									customHeadingLevels: value ? ['h2', 'h3'] : []
+									customHeadingLevels: value
+										? ['h2', 'h3']
+										: [],
 								})
 							}
 							help={
 								useCustomLevels
-									? __('Using custom heading levels for this block.', 'vk-blocks-pro')
-									: __('Using global heading levels settings.', 'vk-blocks-pro')
+									? __(
+											'Using custom heading levels for this block.',
+											'vk-blocks-pro'
+										)
+									: __(
+											'Using global heading levels settings.',
+											'vk-blocks-pro'
+										)
 							}
 						/>
 						{useCustomLevels && (
 							<>
-								<p style={{ marginTop: '1em', marginBottom: '0.5em' }}>
-									{__('Include Headings Up To:', 'vk-blocks-pro')}
+								<p
+									style={{
+										marginTop: '1em',
+										marginBottom: '0.5em',
+									}}
+								>
+									{__(
+										'Include Headings Up To:',
+										'vk-blocks-pro'
+									)}
 								</p>
 								<SelectControl
 									value={getCurrentMaxLevel()}
@@ -203,9 +234,11 @@ export default function TOCEdit(props) {
 										{ label: 'H3', value: 'h3' },
 										{ label: 'H4', value: 'h4' },
 										{ label: 'H5', value: 'h5' },
-										{ label: 'H6', value: 'h6' }
+										{ label: 'H6', value: 'h6' },
 									]}
-									onChange={(value) => handleMaxLevelChange(value)}
+									onChange={(value) =>
+										handleMaxLevelChange(value)
+									}
 								/>
 							</>
 						)}

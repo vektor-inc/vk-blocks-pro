@@ -57,32 +57,35 @@ document.addEventListener('DOMContentLoaded', () => {
 			allowedLevels = window.vkBlocksTocSettings?.allowedHeadingLevels || [2, 3, 4, 5, 6];
 		}
 
-		// ページ内の見出しを取得
-		const headings = Array.from(document.querySelectorAll('h2, h3, h4, h5, h6'))
+		// 見出しの取得
+		let headings = Array.from(document.querySelectorAll('h2, h3, h4, h5, h6'))
 			.filter((heading) => {
 				const level = parseInt(heading.tagName.substring(1));
-				return allowedLevels.includes(level) && !heading.hasAttribute('data-exclude-from-toc');
-			});
+				// IDがある見出しのみを対象とする（the_contentを通した見出しのみ）
+				return heading.id && 
+					heading.id.startsWith('vk-htags-') && // the_contentで付与されたIDのみ
+					allowedLevels.includes(level) && 
+					!heading.hasAttribute('data-exclude-from-toc');
+			})
+			.map(heading => ({
+				level: parseInt(heading.tagName.substring(1)),
+				text: heading.textContent,
+				id: heading.id
+			}));
 
-		// 見出しにIDがない場合は追加
-		headings.forEach((heading) => {
-			if (!heading.id) {
-				heading.id = `vk-htags-${Math.random().toString(36).substring(2, 11)}`;
-			}
-		});
+		const filteredHeadings = headings.filter(heading => allowedLevels.includes(heading.level));
 
 		// 目次のHTMLを生成
 		const counter = createCounter();
-		const tocHtml = headings.map((heading) => {
-			const level = parseInt(heading.tagName.substring(1));
-			const number = counter.increment(level);
+		const tocHtml = filteredHeadings.map((heading) => {
+			const number = counter.increment(heading.level);
 			const baseClass = 'vk_tableOfContents_list_item';
 
 			return `
-				<li class="${baseClass} ${baseClass}-h-${level}">
+				<li class="${baseClass} ${baseClass}-h-${heading.level}">
 					<a href="#${heading.id}" class="${baseClass}_link">
 						<span class="${baseClass}_link_preNumber">${number}. </span>
-						${heading.textContent}
+						${heading.text}
 					</a>
 				</li>
 			`;

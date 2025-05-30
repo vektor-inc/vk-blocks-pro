@@ -12,6 +12,18 @@ const blockAttributes = {
 	},
 };
 
+/*
+// ver.1.104.0 で追加
+// 上記以降でdeprecatedを更新するときに対応お願いします
+const blockAttributes2 = {
+	...blockAttributes,
+	mobileIconPosition: {
+		type: 'string',
+		default: 'left',
+	},
+}
+*/
+
 const deprecated = [
 	{
 		attributes: blockAttributes,

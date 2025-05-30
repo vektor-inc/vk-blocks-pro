@@ -108,7 +108,9 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Tab (Pro) ] Added support for inserting FontAwesome icons into tab labels.
 [ Add function ][ Grid Column Card (Pro) ] Added the ability to select the border style from "Solid", "Dashed", or "Dotted"
+[ Add function ][ Alert ] Added option to position the icon at the top on mobile devices.
 [ Specification change ][ Table of Contents (Pro) ] Removed the restriction that prevented nested headings from being displayed in the list.
 [ Bug Fix ] Fixed an issue where Japanese characters in custom color names in block themes caused class names to break, preventing colors from being applied.
 

@@ -12,7 +12,9 @@ const blockAttributes = {
 	},
 };
 
-/* 次回対応をお願いします
+/*
+// ver.1.104.0 で追加
+// 上記以降でdeprecatedを更新するときに対応お願いします
 const blockAttributes2 = {
 	...blockAttributes,
 	mobileIconPosition: {

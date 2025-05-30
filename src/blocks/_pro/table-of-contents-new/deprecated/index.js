@@ -1,4 +1,5 @@
 import save1_78_0 from './1.78.0/save';
+import save1_104_0 from './1.104.0/save';
 
 const blockAttributes = {
 	style: {
@@ -36,6 +37,10 @@ const blockAttributes2 = {
 */
 
 const deprecated = [
+	{
+		attributes: blockAttributes,
+		save: save1_104_0,
+	},
 	{
 		attributes: blockAttributes,
 		save: save1_78_0,

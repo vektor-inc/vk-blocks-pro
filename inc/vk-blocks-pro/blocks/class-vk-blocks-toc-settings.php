@@ -60,13 +60,16 @@ if ( ! class_exists( 'VK_Blocks_TOC_Settings' ) ) {
 		 */
 		public function sanitize_options( $input ) {
 			if ( isset( $input['tocHeadingLevels'] ) ) {
-				$allowed_levels = array( 'h2', 'h3', 'h4', 'h5', 'h6' );
-				$input['tocHeadingLevels'] = array_values( 
-					array_intersect( 
-						(array) $input['tocHeadingLevels'], 
-						$allowed_levels 
-					)
-				);
+				$max_level = $input['tocHeadingLevels'];
+				$levels = ['h2'];
+				$level_numbers = ['h3', 'h4', 'h5', 'h6'];
+				$max_index = array_search($max_level, $level_numbers);
+				
+				if ($max_index !== false) {
+					$levels = array_merge($levels, array_slice($level_numbers, 0, $max_index + 1));
+				}
+				
+				$input['tocHeadingLevels'] = $levels;
 			}
 			return $input;
 		}
@@ -106,16 +109,24 @@ if ( ! class_exists( 'VK_Blocks_TOC_Settings' ) ) {
 			$current_levels = isset( $options['tocHeadingLevels'] ) 
 				? $options['tocHeadingLevels'] 
 				: array( 'h2', 'h3', 'h4' );
-			$levels = array( 'h2', 'h3', 'h4', 'h5', 'h6' );
-
-			foreach ( $levels as $level ) {
+			
+			// 現在の最大レベルを取得
+			$max_level = end($current_levels) ?: 'h2';
+			
+			echo '<select name="vk_blocks_options[tocHeadingLevels]" class="regular-text">';
+			foreach ( array('h2', 'h3', 'h4', 'h5', 'h6') as $level ) {
 				printf(
-					'<label><input type="checkbox" name="vk_blocks_options[tocHeadingLevels][]" value="%s" %s> %s</label><br>',
-					esc_attr( $level ),
-					checked( in_array( $level, $current_levels, true ), true, false ),
-					esc_html( strtoupper( $level ) )
+					'<option value="%s" %s>%s</option>',
+					esc_attr($level),
+					selected($level, $max_level, false),
+					esc_html(strtoupper($level))
 				);
 			}
+			echo '</select>';
+			
+			echo '<p class="description">' . 
+				esc_html__('Headings from H2 up to the selected level will be included.', 'vk-blocks-pro') . 
+				'</p>';
 		}
 
 		/**

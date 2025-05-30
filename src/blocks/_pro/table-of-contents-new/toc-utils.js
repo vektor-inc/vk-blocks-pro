@@ -14,7 +14,6 @@ export const getAllHeadings = (blocks, headingBlocks, hasInnerBlocks, blockAttri
 	return blocks.reduce((acc, block) => {
 		if (
 			isAllowedBlock(block.name, headingBlocks) &&
-			!block.attributes.excludeFromTOC &&
 			allowedLevels.includes(block.attributes.level)
 		) {
 			acc.push(block);

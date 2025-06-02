@@ -35,7 +35,13 @@ const useTocSettings = () => {
 		const { getEntityRecord } = select('core');
 		const settings = getEntityRecord('root', 'site');
 		return (
-			settings?.vk_blocks_options?.tocHeadingLevels || ['h2', 'h3', 'h4']
+			settings?.vk_blocks_options?.tocHeadingLevels || [
+				'h2',
+				'h3',
+				'h4',
+				'h5',
+				'h6',
+			]
 		);
 	}, []);
 };
@@ -153,8 +159,9 @@ export default function TOCEdit(props) {
 
 	// 現在の最大レベルを取得
 	const getCurrentMaxLevel = () => {
-		const maxLevel = customHeadingLevels[customHeadingLevels.length - 1];
-		return maxLevel || 'h2';
+		const maxLevel =
+			customHeadingLevels?.[customHeadingLevels.length - 1] || 'h2';
+		return maxLevel;
 	};
 
 	/* eslint jsx-a11y/label-has-associated-control: 0 */
@@ -198,7 +205,7 @@ export default function TOCEdit(props) {
 								setAttributes({
 									useCustomLevels: value,
 									customHeadingLevels: value
-										? ['h2', 'h3']
+										? ['h2', 'h3', 'h4', 'h5', 'h6']
 										: [],
 								})
 							}

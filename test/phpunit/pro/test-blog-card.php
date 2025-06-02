@@ -58,7 +58,7 @@ class BlogCard extends VK_UnitTestCase {
 		parent::setUp();
 		// wp_oembed_get()をモック化
 		add_filter( 'pre_oembed_result', function( $result, $url ) {
-			if ( strpos( $url, 'cannot-embed' ) !== false ) {
+			if ( strpos( $url, 'is_embeddable=false' ) !== false ) {
 				return false;
 			}
 			return $result;
@@ -107,10 +107,10 @@ class BlogCard extends VK_UnitTestCase {
 			// 外部リンク 埋め込み不可（is_embeddable=false）
 			array(
 				'content'  => '
-				<!-- wp:vk-blocks/blog-card {"url":"https://vektor-inc.co.jp/cannot-embed
+				<!-- wp:vk-blocks/blog-card {"url":"https://vektor-inc.co.jp/is_embeddable=false"} -->
 <div class="wp-block-vk-blocks-blog-card"></div>
 <!-- /wp:vk-blocks/blog-card -->',
-				'expected' => '<div %s>https://vektor-inc.co.jp/cannot-embed</div>',
+				'expected' => '<div %s>https://vektor-inc.co.jp/is_embeddable=false</div>',
 			),
 		);
 

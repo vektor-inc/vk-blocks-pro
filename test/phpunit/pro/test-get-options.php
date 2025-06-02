@@ -1225,6 +1225,7 @@ class GetOptionsTest extends VK_UnitTestCase {
 				),
 				'correct'  => array(
 					'block_category_position' => 'above-core-blocks',
+					'tocHeadingLevels' => array( 'h2' ),
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
 					'margin_size' => array(

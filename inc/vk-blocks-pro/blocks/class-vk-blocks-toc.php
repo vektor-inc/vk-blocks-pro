@@ -1,15 +1,15 @@
 <?php
 /**
- * TOC Settings
+ * TOC Block
  *
  * @package VK Blocks Pro
  */
 
-if ( ! class_exists( 'VK_Blocks_TOC_Settings' ) ) {
+if ( ! class_exists( 'VK_Blocks_TOC' ) ) {
 	/**
-	 * TOC Settings Class
+	 * TOC Block Class
 	 */
-	class VK_Blocks_TOC_Settings {
+	class VK_Blocks_TOC {
 		/**
 		 * Constructor
 		 */
@@ -31,21 +31,23 @@ if ( ! class_exists( 'VK_Blocks_TOC_Settings' ) ) {
 				return $content;
 			}
 
-			// 見出しタグにdata属性を追加
-			$pattern = '/<h([2-6])(.*?)>/i';
+			// 見出しタグにdata属性を追加.
+			$pattern     = '/<h([2-6])(.*?)>/i';
 			$replacement = '<h$1$2 data-vk-toc-heading>';
-			$content = preg_replace( $pattern, $replacement, $content );
+			$content     = preg_replace( $pattern, $replacement, $content );
 
 			return $content;
 		}
 
 		/**
 		 * Get TOC settings
+		 *
+		 * @return array
 		 */
 		private function get_toc_settings() {
 			$options = VK_Blocks_Options::get_options();
 			return array(
-				'tocHeadingLevels' => $options['tocHeadingLevels']
+				'tocHeadingLevels' => $options['tocHeadingLevels'],
 			);
 		}
 
@@ -54,7 +56,7 @@ if ( ! class_exists( 'VK_Blocks_TOC_Settings' ) ) {
 		 */
 		public function add_custom_fields() {
 			add_settings_section(
-				'vk_blocks_toc_settings',
+				'VK_Blocks_TOC',
 				__( 'Table of Contents Settings', 'vk-blocks-pro' ),
 				array( $this, 'section_description' ),
 				'vk-blocks-options'
@@ -65,7 +67,7 @@ if ( ! class_exists( 'VK_Blocks_TOC_Settings' ) ) {
 				__( 'Heading Levels to Include', 'vk-blocks-pro' ),
 				array( $this, 'render_heading_levels_field' ),
 				'vk-blocks-options',
-				'vk_blocks_toc_settings'
+				'VK_Blocks_TOC'
 			);
 		}
 
@@ -80,25 +82,25 @@ if ( ! class_exists( 'VK_Blocks_TOC_Settings' ) ) {
 		 * Render heading levels field
 		 */
 		public function render_heading_levels_field() {
-			$options = VK_Blocks_Options::get_options();
+			$options        = VK_Blocks_Options::get_options();
 			$current_levels = $options['tocHeadingLevels'];
-			
-			// 現在の最大レベルを取得
-			$max_level = end($current_levels) ?: 'h2';
-			
+
+			// 現在の最大レベルを取得.
+			$max_level = empty( $current_levels ) ? 'h2' : end( $current_levels );
+
 			echo '<select name="vk_blocks_options[tocHeadingLevels]" class="regular-text">';
-			foreach ( array('h2', 'h3', 'h4', 'h5', 'h6') as $level ) {
+			foreach ( array( 'h2', 'h3', 'h4', 'h5', 'h6' ) as $level ) {
 				printf(
 					'<option value="%s" %s>%s</option>',
-					esc_attr($level),
-					selected($level, $max_level, false),
-					esc_html(strtoupper($level))
+					esc_attr( $level ),
+					selected( $level, $max_level, false ),
+					esc_html( strtoupper( $level ) )
 				);
 			}
 			echo '</select>';
-			
-			echo '<p class="description">' . 
-				esc_html__('Headings from H2 up to the selected level will be included.', 'vk-blocks-pro') . 
+
+			echo '<p class="description">' .
+				esc_html__( 'Headings from H2 up to the selected level will be included.', 'vk-blocks-pro' ) .
 				'</p>';
 		}
 
@@ -127,5 +129,5 @@ if ( ! class_exists( 'VK_Blocks_TOC_Settings' ) ) {
 		}
 	}
 
-	new VK_Blocks_TOC_Settings();
-} 
+	new VK_Blocks_TOC();
+}

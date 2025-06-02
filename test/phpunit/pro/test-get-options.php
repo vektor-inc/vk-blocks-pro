@@ -54,6 +54,7 @@ class GetOptionsTest extends VK_UnitTestCase {
 				'option'  => null,
 				'correct' => array(
 					'block_category_position' => 'above-core-blocks',
+					'tocHeadingLevels' => array( 'h2' ),  // h2のみをデフォルトに変更
 					'balloon_border_width' => 1,
 					'margin_unit' => 'rem',
 					'margin_size' => array(
@@ -1360,6 +1361,28 @@ class GetOptionsTest extends VK_UnitTestCase {
 						),
 					),
 				),
+			),
+			// TOC設定のサニタイズ
+			array(
+				'option_check_target' => 'tocHeadingLevels',
+				'option'  => array(
+					'tocHeadingLevels' => array( 'h3', 'h4', 'h5' ),  // h2を含まない配列
+				),
+				'correct' => array( 'h2', 'h3', 'h4', 'h5' ),  // h2が自動的に追加される
+			),
+			array(
+				'option_check_target' => 'tocHeadingLevels',
+				'option'  => array(
+					'tocHeadingLevels' => array( 'h2', 'h4', 'h6' ),  // 不連続な見出しレベル
+				),
+				'correct' => array( 'h2', 'h3', 'h4' ),  // 最大レベルまでの連続した配列になる
+			),
+			array(
+				'option_check_target' => 'tocHeadingLevels',
+				'option'  => array(
+					'tocHeadingLevels' => array( 'h2', 'invalid', 'h3' ),  // 無効な値を含む
+				),
+				'correct' => array( 'h2', 'h3' ),  // 無効な値は除外される
 			),
 		);
 		print PHP_EOL;

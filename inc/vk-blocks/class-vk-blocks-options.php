@@ -87,13 +87,13 @@ class VK_Blocks_Options {
 			$allowed_levels = array( 'h2', 'h3', 'h4', 'h5', 'h6' );
 
 			// 最大レベルまでの値を取得
-			$max_level = end($options['tocHeadingLevels']);
-			$max_index = array_search($max_level, $allowed_levels);
-			
-			if ($max_index !== false) {
-				$options['tocHeadingLevels'] = array_slice($allowed_levels, 0, $max_index + 1);
+			$max_level = end( $options['tocHeadingLevels'] );
+			$max_index = array_search( $max_level, $allowed_levels );
+
+			if ( $max_index !== false ) {
+				$options['tocHeadingLevels'] = array_slice( $allowed_levels, 0, $max_index + 1 );
 			} else {
-				$options['tocHeadingLevels'] = array('h2');
+				$options['tocHeadingLevels'] = array( 'h2' );
 			}
 		}
 
@@ -143,13 +143,13 @@ class VK_Blocks_Options {
 			'block_category_position'     => array(
 				'type' => 'string',
 			),
-			'tocHeadingLevels'           => array(
+			'tocHeadingLevels'            => array(
 				'type'    => 'array',
 				'items'   => array(
 					'type' => 'string',
-					'enum' => array('h2', 'h3', 'h4', 'h5', 'h6'),
+					'enum' => array( 'h2', 'h3', 'h4', 'h5', 'h6' ),
 				),
-				'default' => array('h2', 'h3', 'h4', 'h5', 'h6'),
+				'default' => array( 'h2', 'h3', 'h4', 'h5', 'h6' ),
 			),
 			'balloon_border_width'        => array(
 				'type' => 'number',
@@ -448,7 +448,7 @@ class VK_Blocks_Options {
 	public static function get_vk_blocks_options_defaults( $activation = false ) {
 		$default = array(
 			'block_category_position'     => 'above-core-blocks',
-			'tocHeadingLevels'           => array('h2'),  // h2のみをデフォルトに
+			'tocHeadingLevels'            => array( 'h2' ),  // h2のみをデフォルトに
 			'balloon_border_width'        => 1,
 			'margin_unit'                 => 'rem',
 			'margin_size'                 => array(

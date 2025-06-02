@@ -11,7 +11,7 @@ require_once __DIR__ . '/extensions/common/custom-css-extension.php';
 require_once __DIR__ . '/extensions/common/custom-format.php';
 require_once __DIR__ . '/extensions/common/custom-block-style.php';
 require_once __DIR__ . '/blocks/class-vk-blocks-blog-card.php';
-require_once __DIR__ . '/blocks/class-vk-blocks-toc-settings.php';
+require_once __DIR__ . '/blocks/class-vk-blocks-toc.php';
 VK_Blocks_Blog_Card::init();
 require_once __DIR__ . '/App/RestAPI/BlockMeta/class-vk-blocks-pro-entrypoint.php';
 new Vk_Blocks_Pro_EntryPoint();

@@ -54,7 +54,7 @@ class BlogCard extends VK_UnitTestCase {
 	/**
 	 * Setup method.
 	 */
-	public function setUp() {
+	protected function setUp(): void {
 		parent::setUp();
 		// wp_oembed_get()をモック化
 		add_filter( 'pre_oembed_result', function( $result, $url ) {
@@ -63,7 +63,7 @@ class BlogCard extends VK_UnitTestCase {
 			}
 			return $result;
 		}, 10, 2 );
-	}
+	}	
 
 	public function test_vk_blocks_blog_card_render_callback() {
 
@@ -97,7 +97,6 @@ class BlogCard extends VK_UnitTestCase {
 				',
 			),
 			// 外部リンク 埋め込み不可（画像ファイル）
-			// 2024.3.28 以前は GitHub のURLでテストしていたが、GitHub は埋め込みができるようになったため、URLを変更
 			array(
 				'content'  => '
 				<!-- wp:vk-blocks/blog-card {"url":"https://vektor-inc.co.jp/data/photo_ishikawa.jpg"} -->

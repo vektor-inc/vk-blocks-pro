@@ -2,13 +2,33 @@ export const isAllowedBlock = (name, allowedBlocks) => {
 	return allowedBlocks.includes(name);
 };
 
-export const getAllHeadings = (blocks, headingBlocks, hasInnerBlocks, blockAttributes = {}) => {
+export const getAllHeadings = (
+	blocks,
+	headingBlocks,
+	hasInnerBlocks,
+	blockAttributes = {}
+) => {
 	// ブロック独自の設定を優先、なければグローバル設定を使用
 	let allowedLevels;
-	if (blockAttributes.useCustomLevels && blockAttributes.customHeadingLevels?.length > 0) {
-		allowedLevels = blockAttributes.customHeadingLevels.map(level => parseInt(level.replace('h', '')));
+	if (
+		blockAttributes.useCustomLevels &&
+		blockAttributes.customHeadingLevels?.length > 0
+	) {
+		allowedLevels = blockAttributes.customHeadingLevels.map((level) =>
+			parseInt(level.replace('h', ''))
+		);
 	} else {
-		allowedLevels = window.vkBlocksTocSettings?.allowedHeadingLevels || [2, 3, 4, 5, 6];
+		// グローバル設定を取得
+		const globalSettings = window.vkBlocksOptions?.tocHeadingLevels || [
+			'h2',
+			'h3',
+			'h4',
+			'h5',
+			'h6',
+		];
+		allowedLevels = globalSettings.map((level) =>
+			parseInt(level.replace('h', ''))
+		);
 	}
 
 	return blocks.reduce((acc, block) => {

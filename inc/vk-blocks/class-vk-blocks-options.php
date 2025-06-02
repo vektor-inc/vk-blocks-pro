@@ -88,9 +88,9 @@ class VK_Blocks_Options {
 
 			// 最大レベルまでの値を取得
 			$max_level = end( $options['tocHeadingLevels'] );
-			$max_index = array_search( $max_level, $allowed_levels );
+			$max_index = array_search( $max_level, $allowed_levels, true );
 
-			if ( $max_index !== false ) {
+			if ( false !== $max_index ) {
 				$options['tocHeadingLevels'] = array_slice( $allowed_levels, 0, $max_index + 1 );
 			} else {
 				$options['tocHeadingLevels'] = array( 'h2' );

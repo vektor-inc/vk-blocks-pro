@@ -1367,23 +1367,23 @@ class GetOptionsTest extends VK_UnitTestCase {
 			array(
 				'option_check_target' => 'tocHeadingLevels',
 				'option'  => array(
-					'tocHeadingLevels' => array( 'h3', 'h4', 'h5' ),  // h2を含まない配列
+					'tocHeadingLevels' => array( 'h3', 'h4', 'h5' ),
 				),
-				'correct' => array( 'h2', 'h3', 'h4', 'h5' ),  // h2が自動的に追加される
+				'correct' => array( 'h2', 'h3', 'h4', 'h5' ),
 			),
 			array(
 				'option_check_target' => 'tocHeadingLevels',
 				'option'  => array(
-					'tocHeadingLevels' => array( 'h2', 'h4', 'h6' ),  // 不連続な見出しレベル
+					'tocHeadingLevels' => array( 'h2', 'h4', 'h6' ),
 				),
-				'correct' => array( 'h2', 'h3', 'h4', 'h5', 'h6' ),  // 最大レベルまでの連続した配列になる
+				'correct' => array( 'h2', 'h3', 'h4', 'h5', 'h6' ),
 			),
 			array(
 				'option_check_target' => 'tocHeadingLevels',
 				'option'  => array(
-					'tocHeadingLevels' => array( 'h2', 'invalid', 'h3' ),  // 無効な値を含む
+					'tocHeadingLevels' => array( 'h2', 'invalid', 'h3' ),
 				),
-				'correct' => array( 'h2', 'h3' ),  // 無効な値は除外される
+				'correct' => array( 'h2', 'h3' ),
 			),
 		);
 		print PHP_EOL;

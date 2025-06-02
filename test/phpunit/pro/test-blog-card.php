@@ -97,6 +97,7 @@ class BlogCard extends VK_UnitTestCase {
 				',
 			),
 			// 外部リンク 埋め込み不可（画像ファイル）
+			// 2024.3.28 以前は GitHub のURLでテストしていたが、GitHub は埋め込みができるようになったため、URLを変更
 			array(
 				'content'  => '
 				<!-- wp:vk-blocks/blog-card {"url":"https://vektor-inc.co.jp/data/photo_ishikawa.jpg"} -->

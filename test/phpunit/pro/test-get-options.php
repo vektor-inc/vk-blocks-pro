@@ -1376,7 +1376,7 @@ class GetOptionsTest extends VK_UnitTestCase {
 				'option'  => array(
 					'tocHeadingLevels' => array( 'h2', 'h4', 'h6' ),  // 不連続な見出しレベル
 				),
-				'correct' => array( 'h2', 'h3', 'h4' ),  // 最大レベルまでの連続した配列になる
+				'correct' => array( 'h2', 'h3', 'h4', 'h5', 'h6' ),  // 最大レベルまでの連続した配列になる
 			),
 			array(
 				'option_check_target' => 'tocHeadingLevels',

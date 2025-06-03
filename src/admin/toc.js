@@ -3,9 +3,6 @@ import { useContext } from '@wordpress/element';
 import { AdminContext } from './index';
 import { SelectControl } from '@wordpress/components';
 
-// デフォルト値を定数として定義
-const DEFAULT_TOC_LEVELS = ['h2', 'h3', 'h4', 'h5', 'h6'];
-
 export default function AdminToc() {
 	const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
 
@@ -26,10 +23,16 @@ export default function AdminToc() {
 
 	// 現在の最大レベルを取得
 	const getCurrentMaxLevel = () => {
-		const currentLevels =
-			vkBlocksOption.tocHeadingLevels || DEFAULT_TOC_LEVELS;
+		const currentLevels = vkBlocksOption.tocHeadingLevels;
+		if (
+			!currentLevels ||
+			currentLevels.length === 0 ||
+			(currentLevels.length === 1 && currentLevels[0] === 'h2')
+		) {
+			return 'h6'; // デフォルトでh6
+		}
 		const maxLevel = currentLevels[currentLevels.length - 1];
-		return maxLevel || 'h2';
+		return maxLevel || 'h6';
 	};
 
 	return (

@@ -93,7 +93,10 @@ export default function AlertEdit(props) {
 								}
 								options={[
 									{
-										label: __('Left (Default)', 'vk-blocks-pro'),
+										label: __(
+											'Left (Default)',
+											'vk-blocks-pro'
+										),
 										value: 'left',
 									},
 									{

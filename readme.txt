@@ -113,6 +113,7 @@ e.g.
 [ Add function ][ Alert ] Added option to position the icon at the top on mobile devices.
 [ Specification change ][ Table of Contents (Pro) ] Removed the restriction that prevented nested headings from being displayed in the list.
 [ Bug Fix ] Fixed an issue where Japanese characters in custom color names in block themes caused class names to break, preventing colors from being applied.
+[ Bug Fix ][ Slider Item ] Reset margin-block-start by core.
 
 = 1.104.0 =
 

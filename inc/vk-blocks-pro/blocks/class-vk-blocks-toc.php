@@ -40,18 +40,6 @@ if ( ! class_exists( 'VK_Blocks_TOC' ) ) {
 		}
 
 		/**
-		 * Get TOC settings
-		 *
-		 * @return array
-		 */
-		private function get_toc_settings() {
-			$options = VK_Blocks_Options::get_options();
-			return array(
-				'tocHeadingLevels' => $options['tocHeadingLevels'],
-			);
-		}
-
-		/**
 		 * Add custom fields to VK Blocks settings page
 		 */
 		public function add_custom_fields() {
@@ -111,7 +99,7 @@ if ( ! class_exists( 'VK_Blocks_TOC' ) ) {
 			wp_localize_script(
 				'vk-blocks-build-js',
 				'vkBlocksOptions',
-				$this->get_toc_settings()
+				get_option('vk_blocks_options', array())
 			);
 		}
 
@@ -123,7 +111,7 @@ if ( ! class_exists( 'VK_Blocks_TOC' ) ) {
 				wp_localize_script(
 					'vk-blocks/table-of-contents-new-script',
 					'vkBlocksOptions',
-					$this->get_toc_settings()
+					get_option('vk_blocks_options', array())
 				);
 			}
 		}

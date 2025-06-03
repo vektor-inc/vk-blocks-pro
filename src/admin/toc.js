@@ -37,7 +37,7 @@ export default function AdminToc() {
 			<h3>{__('Table of Contents Setting', 'vk-blocks-pro')}</h3>
 			<p>
 				{__(
-					'Configure the maximum heading level to include in the table of contents.',
+					'Please specify a common heading level setting to be used across the site.',
 					'vk-blocks-pro'
 				)}
 			</p>

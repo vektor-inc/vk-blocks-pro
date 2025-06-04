@@ -11,7 +11,7 @@ import {
 	PanelBody,
 	ToggleControl,
 	SelectControl,
-	// Spinner, // 使用されていないため削除
+	Spinner,
 } from '@wordpress/components';
 
 export default function CategoryBadgeEdit(props) {
@@ -19,11 +19,24 @@ export default function CategoryBadgeEdit(props) {
 	const { hasLink, taxonomy, textAlign } = attributes;
 	const { postId, postType } = context;
 
+	// termColorを取得（VKTermColor::get_post_single_term_info() の返り値）
+	const { value: termColorInfo, isLoading } = useSelect(
+		(select) => {
+			return select('vk-blocks/term-color').getTermColorInfo(
+				postId,
+				taxonomy
+			);
+		},
+		[taxonomy]
+	);
+
 	// タクソノミー一覧を取得
 	const taxonomies =
 		useSelect(
 			(select) => {
 				const allTaxonomies = select('core').getTaxonomies();
+
+				// post_tagとタグタイプのタクソノミーを除外して返す
 				return allTaxonomies
 					? allTaxonomies.filter(
 							(_taxonomy) =>
@@ -35,48 +48,7 @@ export default function CategoryBadgeEdit(props) {
 			[postType]
 		) || [];
 
-	// タクソノミーが未設定の場合、自動でデフォルトを設定
-	const autoTaxonomy = taxonomy || (taxonomies.length > 0 ? 'category' : '');
-
-	// termColorを取得（VKTermColor::get_post_single_term_info() の返り値）
-	const { value: termColorInfo, isResolving: isLoading } = useSelect(
-		(select) => {
-			if (!autoTaxonomy) {
-				return { value: {}, isResolving: false };
-			}
-			return select('vk-blocks/term-color').getTermColorInfo(
-				postId,
-				autoTaxonomy
-			);
-		},
-		[autoTaxonomy, postId]
-	);
-
-	// 投稿に関連付けられたタームを取得
-	const terms =
-		useSelect(
-			(select) => {
-				if (!autoTaxonomy) {
-					return [];
-				}
-				return select('core').getEntityRecords(
-					'taxonomy',
-					autoTaxonomy,
-					{
-						per_page: -1,
-						post: postId,
-					}
-				);
-			},
-			[autoTaxonomy, postId]
-		) || [];
-
-	// const selectedTaxonomyName = autoTaxonomy
-	// 	? taxonomies.find((tax) => tax.slug === autoTaxonomy)?.name
-	// 	: __('Auto', 'vk-blocks-pro'); // 使用されていないため削除
-
-	const selectedTerm = terms && terms.length > 0 ? terms[0] : null;
-
+	// 対象のタームが見つからなかったらタクソノミ名を表示
 	const blockProps = useBlockProps({
 		className: classnames('vk_categoryBadge', {
 			[`has-text-align-${textAlign}`]: !!textAlign,
@@ -88,11 +60,17 @@ export default function CategoryBadgeEdit(props) {
 		},
 	});
 
-	// ターム名が未確定の場合は何も表示しない
-	const termName = isLoading || !selectedTerm ? null : selectedTerm.name;
+	const getLabelBySlug = (slug, taxonomies) =>
+		taxonomies.find((tax) => tax.slug === slug)?.name || 'Auto';
 
-	// url が未定義の場合は空文字を代入
-	const termUrl = termColorInfo?.term_url || '';
+	const selectedTaxonomyName = getLabelBySlug(taxonomy, taxonomies);
+
+	const url = termColorInfo?.term_url || '';
+	const termName = isLoading ? (
+		<Spinner />
+	) : (
+		termColorInfo?.term_name || `(${selectedTaxonomyName})`
+	);
 
 	return (
 		<>
@@ -116,7 +94,7 @@ export default function CategoryBadgeEdit(props) {
 					{taxonomies.length > 1 && (
 						<SelectControl
 							label={__('Select Taxonomy', 'vk-blocks-pro')}
-							value={autoTaxonomy}
+							value={taxonomy}
 							options={[
 								{
 									label: __('Auto', 'vk-blocks-pro'),
@@ -134,18 +112,17 @@ export default function CategoryBadgeEdit(props) {
 					)}
 				</PanelBody>
 			</InspectorControls>
-			{termName &&
-				(hasLink && termUrl ? (
-					<a
-						{...blockProps}
-						href={termUrl}
-						onClick={(event) => event.preventDefault()}
-					>
-						{termName}
-					</a>
-				) : (
-					<div {...blockProps}>{termName}</div>
-				))}
+			{hasLink && url ? (
+				<a
+					{...blockProps}
+					href={termColorInfo.term_url}
+					onClick={(event) => event.preventDefault()}
+				>
+					{termName}
+				</a>
+			) : (
+				<div {...blockProps}>{termName}</div>
+			)}
 		</>
 	);
 }

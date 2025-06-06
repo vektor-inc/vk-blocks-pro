@@ -108,9 +108,6 @@ e.g.
 
 == Changelog ==
 
-= 1.104.0.1 =
-[ Bug Fix ] Handled escaped Unicode quotes when parsing JSON strings.
-
 [ Add function ][ Tab (Pro) ] Added support for inserting FontAwesome icons into tab labels.
 [ Add function ][ Grid Column Card (Pro) ] Added the ability to select the border style from "Solid", "Dashed", or "Dotted"
 [ Add function ][ Alert ] Added option to position the icon at the top on mobile devices.

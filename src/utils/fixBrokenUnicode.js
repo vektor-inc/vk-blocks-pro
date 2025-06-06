@@ -8,9 +8,10 @@ export const isValidJson = (value) => {
 };
 
 export const fixBrokenUnicode = (text) => {
-	if (!isValidJson(text)) {
-		text = text.replace(/u0022/g, '"');
-	}
+       if (!isValidJson(text)) {
+               // Replace escaped Unicode double quotes with actual quotes.
+               text = text.replace(/\\u0022/g, '"');
+       }
 
 	return text;
 };

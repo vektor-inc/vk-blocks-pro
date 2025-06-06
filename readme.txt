@@ -116,8 +116,6 @@ e.g.
 [ Bug Fix ][ Slider Item ] Reset margin-block-start by core.
 
 = 1.104.0 =
-
-= 1.104.0 =
 [ Specification change / Bugfix ][ Grid Column Card (Pro) ] Removed Edit mode — only the selected item block is now editable.
 [ Bug fix ][ Tab ] Fixed tab items not being properly selected when clicked from the list view.
 [ Other ][ PR Content ][ Staff ][ Card ][ Icon Card ]Added "not recommended" to block name.

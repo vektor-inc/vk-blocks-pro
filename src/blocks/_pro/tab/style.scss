@@ -150,6 +150,21 @@ $xl-min: 1200px;
 				color: #fff;
 				opacity: 0.8;
 			}
+			.vk_tab_labels_label-icon {
+				display: inline-flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				height: 100%;
+				gap: var(--vk-margin-xxs);
+				.vk_tab_labels_label-icon-before,
+				.vk_tab_labels_label-icon-after {
+					margin: 0;
+					> i {
+						margin: 0;
+					}
+				}
+			}
 		}
 	}
 	&.wp-block-vk-blocks-tab { //theme.jsonが有効のlightning g3 でmarginが空いてしまうためクラス名追加

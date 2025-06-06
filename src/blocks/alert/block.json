@@ -22,6 +22,10 @@
 			"type": "string",
 			"source": "html",
 			"selector": "p"
+		},
+		"mobileIconPosition": {
+			"type": "string",
+			"default": "left"
 		}
 	},
 	"supports": {

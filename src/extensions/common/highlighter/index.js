@@ -42,7 +42,7 @@ export const highlighterOnApply = ({ color, value, onChange }) => {
 			type: name,
 			attributes: {
 				data: color,
-				style: `background: linear-gradient(transparent 60%,${hex2rgba(
+				style: `--vk-highlighter-color:${color};background: linear-gradient(transparent 60%,${hex2rgba(
 					color,
 					alpha
 				)} 0);`,

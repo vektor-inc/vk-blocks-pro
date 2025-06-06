@@ -1,0 +1,13 @@
+.vk_highlighter {
+  --vk-highlighter-color: #fffd6b;
+}
+
+[style*='writing-mode:vertical'],
+.is-vertical {
+  .vk_highlighter {
+    background: none !important;
+    border-left: 0.25em solid var(--vk-highlighter-color);
+    padding-left: 0.1em;
+    margin-left: -0.1em;
+  }
+}

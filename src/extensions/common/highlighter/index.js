@@ -33,23 +33,36 @@ export const setColorIfUndefined = (color) => {
 	return color;
 };
 
-//ハイライトカラーが選択されたら
-export const highlighterOnApply = ({ color, value, onChange }) => {
+
+export const highlighterOnApply = ({ color, value, onChange, direction }) => {
 	color = setColorIfUndefined(color);
+	const style = `--vk-highlighter-color: ${hex2rgba(color, alpha)};`;
 
 	onChange(
 		applyFormat(value, {
 			type: name,
 			attributes: {
 				data: color,
-				style: `background: linear-gradient(transparent 60%,${hex2rgba(
-					color,
-					alpha
-				)} 0);`,
+				style,
 			},
 		})
 	);
 };
+
+export function getGradientDirectionByWritingMode(contentRef) {
+	if (!contentRef?.current) return '';
+	let el = contentRef.current;
+	while (el) {
+		const writingMode = window.getComputedStyle(el).writingMode;
+		if (writingMode && writingMode.startsWith('vertical')) {
+			if (writingMode === 'vertical-rl') return 'to left';
+			if (writingMode === 'vertical-lr') return 'to right';
+			return 'to left'; // デフォルトで縦書きは左
+		}
+		el = el.parentElement;
+	}
+	return ''; // 横書き
+}
 
 function HighlighterEdit({
 	value,

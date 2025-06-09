@@ -13,7 +13,7 @@ import { Popover } from '@wordpress/components';
 /**
  * Internal dependencies
  */
-import { highlighColor as settings, highlighterOnApply } from './index';
+import { highlighColor as settings, highlighterOnApply, getGradientDirectionByWritingMode } from './index';
 
 export function getActiveColors(value, name) {
 	const activeColorFormat = getActiveFormat(value, name);
@@ -25,14 +25,16 @@ export function getActiveColors(value, name) {
 	return activeColorFormat.attributes.data;
 }
 
-function ColorPicker({ name, value, onChange, setIsAddingColor }) {
+function ColorPicker({ name, value, onChange, setIsAddingColor, contentRef }) {
 	const onColorChange = (color) => {
 		if (color) {
 			// select color on palette
+			const direction = getGradientDirectionByWritingMode(contentRef);
 			highlighterOnApply({
 				color,
 				value,
 				onChange,
+				direction,
 			});
 		} else {
 			// clear palette
@@ -81,6 +83,7 @@ export default function InlineColorUI({
 				value={value}
 				onChange={onChange}
 				setIsAddingColor={setIsAddingColor}
+				contentRef={contentRef}
 			/>
 		</Popover>
 	);

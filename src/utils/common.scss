@@ -862,3 +862,16 @@ $xxl-min: 1400px;
 		@include scrollable-table-scroll-hint;
 	}
 }
+
+/*-------------------------------------------*/
+/* 蛍光マーカー
+/*-------------------------------------------*/
+.vk_highlighter {
+  background: linear-gradient(transparent 60%, var(--vk-highlighter-color) 0);
+}
+[style*="vertical-rl"] .vk_highlighter {
+  background: linear-gradient(to left, transparent 60%, var(--vk-highlighter-color) 0);
+}
+[style*="vertical-lr"] .vk_highlighter {
+  background: linear-gradient(to right, transparent 60%, var(--vk-highlighter-color) 0);
+}

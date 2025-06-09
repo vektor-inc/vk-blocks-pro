@@ -51,6 +51,20 @@ class BlogCard extends VK_UnitTestCase {
 		wp_delete_post( self::$attachment_id, true );
 	}
 
+	/**
+	 * Setup method.
+	 */
+	protected function setUp(): void {
+		parent::setUp();
+		// wp_oembed_get()をモック化
+		add_filter( 'pre_oembed_result', function( $result, $url ) {
+			if ( strpos( $url, 'is_embeddable=false' ) !== false ) {
+				return false;
+			}
+			return $result;
+		}, 10, 2 );
+	}	
+
 	public function test_vk_blocks_blog_card_render_callback() {
 
 		print PHP_EOL;
@@ -82,14 +96,21 @@ class BlogCard extends VK_UnitTestCase {
 				</div>
 				',
 			),
-			// 外部リンク 埋め込み不可
-			// 2024.3.28 以前は GitHub のURLでテストしていたが、GitHub は埋め込みができるようになったため、URLを変更
+			// 外部リンク 埋め込み不可（画像ファイル）
 			array(
 				'content'  => '
 				<!-- wp:vk-blocks/blog-card {"url":"https://vektor-inc.co.jp/data/photo_ishikawa.jpg"} -->
 <div class="wp-block-vk-blocks-blog-card"></div>
 <!-- /wp:vk-blocks/blog-card -->',
 				'expected' => '<div %s>https://vektor-inc.co.jp/data/photo_ishikawa.jpg</div>',
+			),
+			// 外部リンク 埋め込み不可（is_embeddable=false）
+			array(
+				'content'  => '
+				<!-- wp:vk-blocks/blog-card {"url":"https://vektor-inc.co.jp/is_embeddable=false"} -->
+<div class="wp-block-vk-blocks-blog-card"></div>
+<!-- /wp:vk-blocks/blog-card -->',
+				'expected' => '<div %s>https://vektor-inc.co.jp/is_embeddable=false</div>',
 			),
 		);
 

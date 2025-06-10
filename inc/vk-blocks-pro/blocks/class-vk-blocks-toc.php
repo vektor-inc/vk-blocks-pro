@@ -14,6 +14,11 @@ if ( class_exists( 'VK_Blocks_TOC' ) ) {
  */
 class VK_Blocks_TOC {
 
+	/**
+	 * Class instance.
+	 *
+	 * @var VK_Blocks_TOC|null
+	 */
 	public static $instance = null;
 
 	/**
@@ -47,12 +52,20 @@ class VK_Blocks_TOC {
 		if ( ! has_block( 'vk-blocks/table-of-contents-new', $content ) ) {
 			return $content;
 		}
-		$options = get_option( 'vk_blocks_options', array() );
-		$levels = isset( $options['tocHeadingLevels'] ) ? $options['tocHeadingLevels'] : array( 'h2', 'h3', 'h4', 'h5', 'h6' );
-		$levels_regex = implode( '|', array_map( function( $h ) { return substr( $h, 1 ); }, $levels ) );
-		$pattern = '/<h(' . $levels_regex . ')(.*?)>/i';
-		$replacement = '<h$1$2 data-vk-toc-heading>';
-		$content = preg_replace( $pattern, $replacement, $content );
+		$options      = get_option( 'vk_blocks_options', array() );
+		$levels       = isset( $options['tocHeadingLevels'] ) ? $options['tocHeadingLevels'] : array( 'h2', 'h3', 'h4', 'h5', 'h6' );
+		$levels_regex = implode(
+			'|',
+			array_map(
+				function ( $h ) {
+					return substr( $h, 1 );
+				},
+				$levels
+			)
+		);
+		$pattern      = '/<h(' . $levels_regex . ')(.*?)>/i';
+		$replacement  = '<h$1$2 data-vk-toc-heading>';
+		$content      = preg_replace( $pattern, $replacement, $content );
 		return $content;
 	}
 

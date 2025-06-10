@@ -26,6 +26,9 @@ class VK_Blocks_TOC {
 		return $instance;
 	}
 
+	/**
+	 * Register hooks
+	 */
 	protected function register_hooks() {
 		add_action( 'admin_menu', array( $this, 'add_custom_fields' ) );
 		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_editor_assets' ) );

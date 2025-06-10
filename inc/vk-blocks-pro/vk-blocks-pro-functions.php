@@ -13,6 +13,7 @@ require_once __DIR__ . '/extensions/common/custom-block-style.php';
 require_once __DIR__ . '/blocks/class-vk-blocks-blog-card.php';
 require_once __DIR__ . '/blocks/class-vk-blocks-toc.php';
 VK_Blocks_Blog_Card::init();
+VK_Blocks_TOC::init();
 require_once __DIR__ . '/App/RestAPI/BlockMeta/class-vk-blocks-pro-entrypoint.php';
 new Vk_Blocks_Pro_EntryPoint();
 

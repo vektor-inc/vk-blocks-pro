@@ -51,7 +51,7 @@ export const TextStylePreview = (props) => {
 				declarations += `background-color: ${colorSlugToColorCode(textStyleListObj.background_color)};`;
 			}
 		} else if (!!textStyleListObj.background_color) {
-			declarations += `background: ${colorSlugToColorCode(textStyleListObj.background_color)};`;
+			declarations += `background-image: ${colorSlugToColorCode(textStyleListObj.background_color)};`;
 		}
 
 		let dynamic_css = '';

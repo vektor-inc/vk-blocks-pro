@@ -10,11 +10,40 @@
  */
 class TOCBlockTest extends WP_UnitTestCase {
 
+	/**
+	 * @var VK_Blocks_TOC|null TOCインスタンス
+	 */
+	private $toc_instance;
+
+	/**
+	 * @var array 元のオプション値を保存
+	 */
+	private $original_options;
+
 	public function setUp(): void {
 		parent::setUp();
-		if ( ! class_exists( 'VK_Blocks_TOC' ) ) {
-			require_once dirname( __FILE__, 4 ) . '/inc/vk-blocks-pro/blocks/class-vk-blocks-toc.php';
+
+		// 元のオプション値を保存
+		$this->original_options = get_option( 'vk_blocks_options', array() );
+
+		// TOCインスタンスを取得
+		$this->toc_instance = VK_Blocks_TOC::init();
+	}
+
+	public function tearDown(): void {
+		// オプション値を元に戻す
+		if ( ! empty( $this->original_options ) ) {
+			update_option( 'vk_blocks_options', $this->original_options );
+		} else {
+			delete_option( 'vk_blocks_options' );
 		}
+
+		$this->toc_instance = null;
+
+		// フィルターをリセット
+		remove_all_filters( 'pre_has_block' );
+
+		parent::tearDown();
 	}
 
 	/**
@@ -29,57 +58,105 @@ class TOCBlockTest extends WP_UnitTestCase {
 		}, 10, 2 );
 	}
 
-	private function get_fresh_toc_instance( $has_block, $options = null ) {
+			/**
+	 * テスト用にオプション値とhas_blockモックを設定
+	 *
+	 * @param bool $has_block TOCブロックが存在するかどうか
+	 * @param array|null $options vk_blocks_optionsの設定値
+	 */
+	private function setup_test_environment( $has_block, $options = null ) {
 		$this->set_has_block_mock( $has_block );
-		VK_Blocks_TOC::$instance = null;
+
+		// オプション設定
 		if ( is_null( $options ) ) {
 			delete_option( 'vk_blocks_options' );
 		} else {
 			update_option( 'vk_blocks_options', $options );
 		}
-		return VK_Blocks_TOC::init();
 	}
 
 	public function test_adds_data_attribute_when_toc_block_exists_and_default_levels() {
 		global $post; $post = null;
-		$toc = $this->get_fresh_toc_instance( true, array( 'tocHeadingLevels' => array( 'h2', 'h3', 'h4', 'h5', 'h6' ) ) );
+		$this->setup_test_environment( true, array( 'tocHeadingLevels' => array( 'h2', 'h3', 'h4', 'h5', 'h6' ) ) );
 		$input = '<!-- wp:vk-blocks/table-of-contents-new /--><h2>h2</h2><h3>h3</h3><h4>h4</h4><h5>h5</h5><h6>h6</h6><h1>h1</h1>';
 		$expected = '<!-- wp:vk-blocks/table-of-contents-new /--><h2 data-vk-toc-heading>h2</h2><h3 data-vk-toc-heading>h3</h3><h4 data-vk-toc-heading>h4</h4><h5 data-vk-toc-heading>h5</h5><h6 data-vk-toc-heading>h6</h6><h1>h1</h1>';
-		$this->assertEquals( $expected, $toc->mark_content_headings( $input ) );
+		$actual = $this->toc_instance->mark_content_headings( $input );
+
+		print PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+		print 'test_adds_data_attribute_when_toc_block_exists_and_default_levels' . PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+		print 'expected ::::' . $expected . PHP_EOL;
+		print 'actual   ::::' . $actual . PHP_EOL;
+		$this->assertEquals( $expected, $actual );
+		print PHP_EOL;
 	}
 
 	public function test_does_not_add_attribute_when_toc_block_not_exists() {
 		global $post; $post = null;
-		$this->set_has_block_mock( false );
-		VK_Blocks_TOC::$instance = null;
-		update_option( 'vk_blocks_options', array( 'tocHeadingLevels' => array( 'h2', 'h3', 'h4', 'h5', 'h6' ) ) );
-		$toc = VK_Blocks_TOC::init();
+		$this->setup_test_environment( false, array( 'tocHeadingLevels' => array( 'h2', 'h3', 'h4', 'h5', 'h6' ) ) );
 		$input = '<h2>h2</h2><h3>h3</h3>';
 		$expected = '<h2>h2</h2><h3>h3</h3>';
-		$this->assertEquals( $expected, $toc->mark_content_headings( $input ) );
+		$actual = $this->toc_instance->mark_content_headings( $input );
+
+		print PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+		print 'test_does_not_add_attribute_when_toc_block_not_exists' . PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+		print 'expected ::::' . $expected . PHP_EOL;
+		print 'actual   ::::' . $actual . PHP_EOL;
+		$this->assertEquals( $expected, $actual );
+		print PHP_EOL;
 	}
 
 	public function test_respects_custom_heading_levels() {
 		global $post; $post = null;
-		$toc = $this->get_fresh_toc_instance( true, array( 'tocHeadingLevels' => array( 'h2', 'h3', 'h4' ) ) );
+		$this->setup_test_environment( true, array( 'tocHeadingLevels' => array( 'h2', 'h3', 'h4' ) ) );
 		$input = '<!-- wp:vk-blocks/table-of-contents-new /--><h2>h2</h2><h3>h3</h3><h4>h4</h4>';
         $expected = '<!-- wp:vk-blocks/table-of-contents-new /--><h2 data-vk-toc-heading>h2</h2><h3 data-vk-toc-heading>h3</h3><h4 data-vk-toc-heading>h4</h4>';
-		$this->assertEquals( $expected, $toc->mark_content_headings( $input ) );
+		$actual = $this->toc_instance->mark_content_headings( $input );
+
+		print PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+		print 'test_respects_custom_heading_levels' . PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+		print 'expected ::::' . $expected . PHP_EOL;
+		print 'actual   ::::' . $actual . PHP_EOL;
+		$this->assertEquals( $expected, $actual );
+		print PHP_EOL;
 	}
 
 	public function test_default_levels_are_used_when_option_is_missing() {
 		global $post; $post = null;
-		$toc = $this->get_fresh_toc_instance( true, null );
+		$this->setup_test_environment( true, null );
 		$input = '<!-- wp:vk-blocks/table-of-contents-new /--><h2>h2</h2><h3>h3</h3>';
 		$expected = '<!-- wp:vk-blocks/table-of-contents-new /--><h2 data-vk-toc-heading>h2</h2><h3 data-vk-toc-heading>h3</h3>';
-		$this->assertEquals( $expected, $toc->mark_content_headings( $input ) );
+		$actual = $this->toc_instance->mark_content_headings( $input );
+
+		print PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+		print 'test_default_levels_are_used_when_option_is_missing' . PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+		print 'expected ::::' . $expected . PHP_EOL;
+		print 'actual   ::::' . $actual . PHP_EOL;
+		$this->assertEquals( $expected, $actual );
+		print PHP_EOL;
 	}
 
 	public function test_does_not_affect_other_tags_or_existing_attributes() {
 		global $post; $post = null;
-		$toc = $this->get_fresh_toc_instance( true, array( 'tocHeadingLevels' => array( 'h2' ) ) );
+		$this->setup_test_environment( true, array( 'tocHeadingLevels' => array( 'h2' ) ) );
 		$input = '<!-- wp:vk-blocks/table-of-contents-new /--><h2 class="foo">h2</h2><h3>h3</h3><p>p</p>';
 		$expected = '<!-- wp:vk-blocks/table-of-contents-new /--><h2 class="foo" data-vk-toc-heading>h2</h2><h3>h3</h3><p>p</p>';
-		$this->assertEquals( $expected, $toc->mark_content_headings( $input ) );
+		$actual = $this->toc_instance->mark_content_headings( $input );
+
+		print PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+		print 'test_does_not_affect_other_tags_or_existing_attributes' . PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+		print 'expected ::::' . $expected . PHP_EOL;
+		print 'actual   ::::' . $actual . PHP_EOL;
+		$this->assertEquals( $expected, $actual );
+		print PHP_EOL;
 	}
-} 
+}

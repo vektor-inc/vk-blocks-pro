@@ -19,7 +19,7 @@ class VK_Blocks_TOC {
 	 *
 	 * @var VK_Blocks_TOC|null
 	 */
-	public static $instance = null;
+	private static $instance = null;
 
 	/**
 	 * Initialize hooks

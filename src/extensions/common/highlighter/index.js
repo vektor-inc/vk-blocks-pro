@@ -33,6 +33,7 @@ export const setColorIfUndefined = (color) => {
 	return color;
 };
 
+//ハイライトカラーが選択されたら
 export const highlighterOnApply = ({ color, value, onChange }) => {
 	color = setColorIfUndefined(color);
 	const style = `--vk-highlighter-color: ${hex2rgba(color, alpha)};`;

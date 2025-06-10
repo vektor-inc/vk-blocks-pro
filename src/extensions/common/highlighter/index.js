@@ -33,8 +33,7 @@ export const setColorIfUndefined = (color) => {
 	return color;
 };
 
-
-export const highlighterOnApply = ({ color, value, onChange, direction }) => {
+export const highlighterOnApply = ({ color, value, onChange }) => {
 	color = setColorIfUndefined(color);
 	const style = `--vk-highlighter-color: ${hex2rgba(color, alpha)};`;
 
@@ -50,13 +49,19 @@ export const highlighterOnApply = ({ color, value, onChange, direction }) => {
 };
 
 export function getGradientDirectionByWritingMode(contentRef) {
-	if (!contentRef?.current) return '';
+	if (!contentRef?.current) {
+		return '';
+	}
 	let el = contentRef.current;
 	while (el) {
 		const writingMode = window.getComputedStyle(el).writingMode;
 		if (writingMode && writingMode.startsWith('vertical')) {
-			if (writingMode === 'vertical-rl') return 'to left';
-			if (writingMode === 'vertical-lr') return 'to right';
+			if (writingMode === 'vertical-rl') {
+				return 'to left';
+			}
+			if (writingMode === 'vertical-lr') {
+				return 'to right';
+			}
 			return 'to left'; // デフォルトで縦書きは左
 		}
 		el = el.parentElement;

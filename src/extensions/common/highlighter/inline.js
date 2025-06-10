@@ -13,7 +13,11 @@ import { Popover } from '@wordpress/components';
 /**
  * Internal dependencies
  */
-import { highlighColor as settings, highlighterOnApply, getGradientDirectionByWritingMode } from './index';
+import {
+	highlighColor as settings,
+	highlighterOnApply,
+	getGradientDirectionByWritingMode,
+} from './index';
 
 export function getActiveColors(value, name) {
 	const activeColorFormat = getActiveFormat(value, name);

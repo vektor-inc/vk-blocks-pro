@@ -14,16 +14,17 @@ if ( class_exists( 'VK_Blocks_TOC' ) ) {
  */
 class VK_Blocks_TOC {
 
+	public static $instance = null;
+
 	/**
 	 * Initialize hooks
 	 */
 	public static function init() {
-		static $instance = null;
-		if ( ! $instance ) {
-			$instance = new static();
-			$instance->register_hooks();
+		if ( ! self::$instance ) {
+			self::$instance = new static();
+			self::$instance->register_hooks();
 		}
-		return $instance;
+		return self::$instance;
 	}
 
 	/**
@@ -43,15 +44,15 @@ class VK_Blocks_TOC {
 	 * @return string
 	 */
 	public function mark_content_headings( $content ) {
-		if ( ! has_block( 'vk-blocks/table-of-contents-new' ) ) {
+		if ( ! has_block( 'vk-blocks/table-of-contents-new', $content ) ) {
 			return $content;
 		}
-
-		// 見出しタグにdata属性を追加.
-		$pattern     = '/<h([2-6])(.*?)>/i';
+		$options = get_option( 'vk_blocks_options', array() );
+		$levels = isset( $options['tocHeadingLevels'] ) ? $options['tocHeadingLevels'] : array( 'h2', 'h3', 'h4', 'h5', 'h6' );
+		$levels_regex = implode( '|', array_map( function( $h ) { return substr( $h, 1 ); }, $levels ) );
+		$pattern = '/<h(' . $levels_regex . ')(.*?)>/i';
 		$replacement = '<h$1$2 data-vk-toc-heading>';
-		$content     = preg_replace( $pattern, $replacement, $content );
-
+		$content = preg_replace( $pattern, $replacement, $content );
 		return $content;
 	}
 

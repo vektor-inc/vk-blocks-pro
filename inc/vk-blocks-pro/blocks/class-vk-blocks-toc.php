@@ -11,7 +11,7 @@ if ( class_exists( 'VK_Blocks_TOC' ) ) {
 
 /**
  * VK_Blocks_TOC
- */	
+ */
 class VK_Blocks_TOC {
 
 	/**
@@ -112,7 +112,7 @@ class VK_Blocks_TOC {
 		wp_localize_script(
 			'vk-blocks-build-js',
 			'vkBlocksOptions',
-			get_option('vk_blocks_options', array())
+			get_option( 'vk_blocks_options', array() )
 		);
 	}
 
@@ -124,7 +124,7 @@ class VK_Blocks_TOC {
 			wp_localize_script(
 				'vk-blocks/table-of-contents-new-script',
 				'vkBlocksOptions',
-				get_option('vk_blocks_options', array())
+				get_option( 'vk_blocks_options', array() )
 			);
 		}
 	}

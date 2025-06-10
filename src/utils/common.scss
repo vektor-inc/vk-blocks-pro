@@ -7,6 +7,27 @@
 }
 
 /*-------------------------------------------*/
+/* 蛍光マーカー
+/*-------------------------------------------*/
+@mixin vk-highlighter-gradient($direction: null) {
+	@if $direction == null {
+		background: linear-gradient(transparent 60%, var(--vk-highlighter-color) 0);
+	} @else {
+		background: linear-gradient(#{$direction}, transparent 60%, var(--vk-highlighter-color) 0);
+	}
+}
+
+.vk_highlighter {
+	@include vk-highlighter-gradient();
+}
+[style*="vertical-rl"] .vk_highlighter {
+	@include vk-highlighter-gradient(to left);
+}
+[style*="vertical-lr"] .vk_highlighter {
+	@include vk-highlighter-gradient(to right);
+}
+
+/*-------------------------------------------*/
 /* 余白（レスポンシブスペーサー,共通余白で使用）
 /*-------------------------------------------*/
 :root {
@@ -861,17 +882,4 @@ $xxl-min: 1400px;
 	.vk-scroll-hint {
 		@include scrollable-table-scroll-hint;
 	}
-}
-
-/*-------------------------------------------*/
-/* 蛍光マーカー
-/*-------------------------------------------*/
-.vk_highlighter {
-  background: linear-gradient(transparent 60%, var(--vk-highlighter-color) 0);
-}
-[style*="vertical-rl"] .vk_highlighter {
-  background: linear-gradient(to left, transparent 60%, var(--vk-highlighter-color) 0);
-}
-[style*="vertical-lr"] .vk_highlighter {
-  background: linear-gradient(to right, transparent 60%, var(--vk-highlighter-color) 0);
 }

@@ -67,5 +67,9 @@ function vk_blocks_register_block_table_of_contents_new() {
 		__DIR__,
 		$assets
 	);
+
+	if ( ! is_admin() ) {
+		wp_enqueue_script( 'vk-blocks/table-of-contents-new-script' );
+	}
 }
 add_action( 'init', 'vk_blocks_register_block_table_of_contents_new', 99 );

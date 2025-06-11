@@ -155,6 +155,6 @@ class VK_Blocks_TOC {
 	 */
 	public static function get_headings_from_content( $content ) {
 		preg_match_all( '/<h([2-6])(.*?)>(.*?)<\\/h\\1>/is', $content, $matches, PREG_SET_ORDER );
-		return $matches; // $matchesは各見出しの配列
+		return $matches;
 	}
 }

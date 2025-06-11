@@ -143,7 +143,7 @@ class VK_Blocks_Options {
 			'block_category_position'     => array(
 				'type' => 'string',
 			),
-			'toc_heading_levels'            => array(
+			'toc_heading_levels'          => array(
 				'type'    => 'array',
 				'items'   => array(
 					'type' => 'string',
@@ -448,7 +448,7 @@ class VK_Blocks_Options {
 	public static function get_vk_blocks_options_defaults( $activation = false ) {
 		$default = array(
 			'block_category_position'     => 'above-core-blocks',
-			'toc_heading_levels'            => array( 'h2' ),  // h2のみをデフォルトに
+			'toc_heading_levels'          => array( 'h2' ),
 			'balloon_border_width'        => 1,
 			'margin_unit'                 => 'rem',
 			'margin_size'                 => array(

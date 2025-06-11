@@ -68,7 +68,7 @@ class FormatCssTest extends VK_UnitTestCase {
 						),
 					),
 				),
-				'correct' => '.vk-format--1{color:#fffd6b;}.vk-format--1 { border:1px red solid; } .vk-format--1 { background: #f5f5f5; }.custom-format{font-weight:bold;font-style:italic;text-decoration:line-through;white-space:nowrap;font-size:#fff;color:#fff;background:linear-gradient(#fff 60%, rgba(255, 253, 107, 0.7) 0);}',
+				'correct' => '.vk-format--1{color:#fffd6b;}.vk-format--1 { border:1px red solid; } .vk-format--1 { background: #f5f5f5; }.custom-format{font-weight:bold;font-style:italic;text-decoration:line-through;white-space:nowrap;font-size:#fff;color:#fff;--vk-highlighter-color:rgba(255, 253, 107, 0.7);background-color:#fff;}.custom-format--vk-highlighter{font-weight:bold;font-style:italic;text-decoration:line-through;white-space:nowrap;font-size:#fff;color:#fff;--vk-highlighter-color:rgba(255, 253, 107, 0.7);background-color:#fff;}',
 			),
 		);
 		print PHP_EOL;

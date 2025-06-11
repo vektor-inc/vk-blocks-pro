@@ -52,8 +52,8 @@ class VK_Blocks_TOC {
 		if ( ! has_block( 'vk-blocks/table-of-contents-new' ) ) {
 			return $content;
 		}
-		$options = get_option( 'vk_blocks_options', array() );
-		$levels = isset( $options['toc_heading_levels'] ) ? $options['toc_heading_levels'] : array( 'h2', 'h3', 'h4', 'h5', 'h6' );
+		$options      = get_option( 'vk_blocks_options', array() );
+		$levels       = isset( $options['toc_heading_levels'] ) ? $options['toc_heading_levels'] : array( 'h2', 'h3', 'h4', 'h5', 'h6' );
 		$levels_regex = implode(
 			'|',
 			array_map(
@@ -64,9 +64,9 @@ class VK_Blocks_TOC {
 			)
 		);
 		// グローバル設定時のみ付与
-		$pattern = '/<h(' . $levels_regex . ')(.*?)>/i';
+		$pattern     = '/<h(' . $levels_regex . ')(.*?)>/i';
 		$replacement = '<h$1$2 data-vk-toc-heading>';
-		$content = preg_replace( $pattern, $replacement, $content );
+		$content     = preg_replace( $pattern, $replacement, $content );
 		return $content;
 	}
 

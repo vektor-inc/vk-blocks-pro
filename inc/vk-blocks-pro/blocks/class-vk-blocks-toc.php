@@ -53,7 +53,7 @@ class VK_Blocks_TOC {
 			return $content;
 		}
 		$options      = get_option( 'vk_blocks_options', array() );
-		$levels       = isset( $options['tocHeadingLevels'] ) ? $options['tocHeadingLevels'] : array( 'h2', 'h3', 'h4', 'h5', 'h6' );
+		$levels       = isset( $options['toc_heading_levels'] ) ? $options['toc_heading_levels'] : array( 'h2', 'h3', 'h4', 'h5', 'h6' );
 		$levels_regex = implode(
 			'|',
 			array_map(
@@ -101,12 +101,12 @@ class VK_Blocks_TOC {
 	 */
 	public function render_heading_levels_field() {
 		$options        = VK_Blocks_Options::get_options();
-		$current_levels = $options['tocHeadingLevels'];
+		$current_levels = $options['toc_heading_levels'];
 
 		// 現在の最大レベルを取得.
 		$max_level = empty( $current_levels ) ? 'h2' : end( $current_levels );
 
-		echo '<select name="vk_blocks_options[tocHeadingLevels]" class="regular-text">';
+		echo '<select name="vk_blocks_options[toc_heading_levels]" class="regular-text">';
 		foreach ( array( 'h2', 'h3', 'h4', 'h5', 'h6' ) as $level ) {
 			printf(
 				'<option value="%s" %s>%s</option>',

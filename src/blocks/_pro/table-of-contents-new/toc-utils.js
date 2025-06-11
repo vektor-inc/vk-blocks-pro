@@ -19,7 +19,7 @@ export const getAllHeadings = (
 		);
 	} else {
 		// グローバル設定を取得
-		const globalSettings = window.vkBlocksOptions?.tocHeadingLevels || [
+		const globalSettings = window.vkBlocksOptions?.toc_heading_levels || [
 			'h2',
 			'h3',
 			'h4',

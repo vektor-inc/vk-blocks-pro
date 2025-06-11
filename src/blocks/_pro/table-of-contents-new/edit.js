@@ -35,7 +35,7 @@ const useTocSettings = () => {
 		const { getEntityRecord } = select('core');
 		const settings = getEntityRecord('root', 'site');
 		return (
-			settings?.vk_blocks_options?.tocHeadingLevels || [
+			settings?.vk_blocks_options?.toc_heading_levels || [
 				'h2',
 				'h3',
 				'h4',

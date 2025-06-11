@@ -33,7 +33,7 @@ function vk_blocks_register_block_table_of_contents_new() {
 
 		// フロントエンド用の設定を渡す
 		$options    = get_option( 'vk_blocks_options', array() );
-		$toc_levels = isset( $options['tocHeadingLevels'] ) ? $options['tocHeadingLevels'] : array( 'h2', 'h3', 'h4', 'h5', 'h6' );
+		$toc_levels = isset( $options['toc_heading_levels'] ) ? $options['toc_heading_levels'] : array( 'h2', 'h3', 'h4', 'h5', 'h6' );
 
 		wp_localize_script(
 			'vk-blocks/table-of-contents-new-script',

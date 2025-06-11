@@ -17,13 +17,13 @@ export default function AdminToc() {
 
 		setVkBlocksOption({
 			...vkBlocksOption,
-			tocHeadingLevels: levels,
+			toc_heading_levels: levels,
 		});
 	};
 
 	// 現在の最大レベルを取得
 	const getCurrentMaxLevel = () => {
-		const currentLevels = vkBlocksOption.tocHeadingLevels;
+		const currentLevels = vkBlocksOption.toc_heading_levels;
 		if (
 			!currentLevels ||
 			currentLevels.length === 0 ||
@@ -45,7 +45,7 @@ export default function AdminToc() {
 				)}
 			</p>
 			<SelectControl
-				name="vk_blocks_options[tocHeadingLevels]"
+				name="vk_blocks_options[toc_heading_levels]"
 				className="vk_admin_selectControl"
 				value={getCurrentMaxLevel()}
 				options={[

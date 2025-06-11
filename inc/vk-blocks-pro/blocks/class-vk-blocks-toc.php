@@ -52,8 +52,8 @@ class VK_Blocks_TOC {
 		if ( ! has_block( 'vk-blocks/table-of-contents-new' ) ) {
 			return $content;
 		}
-		$options      = get_option( 'vk_blocks_options', array() );
-		$levels       = isset( $options['toc_heading_levels'] ) ? $options['toc_heading_levels'] : array( 'h2', 'h3', 'h4', 'h5', 'h6' );
+		$options = get_option( 'vk_blocks_options', array() );
+		$levels = isset( $options['toc_heading_levels'] ) ? $options['toc_heading_levels'] : array( 'h2', 'h3', 'h4', 'h5', 'h6' );
 		$levels_regex = implode(
 			'|',
 			array_map(
@@ -63,9 +63,10 @@ class VK_Blocks_TOC {
 				$levels
 			)
 		);
-		$pattern      = '/<h(' . $levels_regex . ')(.*?)>/i';
-		$replacement  = '<h$1$2 data-vk-toc-heading>';
-		$content      = preg_replace( $pattern, $replacement, $content );
+		// グローバル設定時のみ付与
+		$pattern = '/<h(' . $levels_regex . ')(.*?)>/i';
+		$replacement = '<h$1$2 data-vk-toc-heading>';
+		$content = preg_replace( $pattern, $replacement, $content );
 		return $content;
 	}
 
@@ -144,5 +145,13 @@ class VK_Blocks_TOC {
 				get_option( 'vk_blocks_options', array() )
 			);
 		}
+	}
+
+	/**
+	 * the_content内のh2〜h6を抽出する共通メソッド
+	 */
+	public static function get_headings_from_content( $content ) {
+		preg_match_all( '/<h([2-6])(.*?)>(.*?)<\\/h\\1>/is', $content, $matches, PREG_SET_ORDER );
+		return $matches; // $matchesは各見出しの配列
 	}
 }

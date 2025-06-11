@@ -2,11 +2,39 @@ export const isAllowedBlock = (name, allowedBlocks) => {
 	return allowedBlocks.includes(name);
 };
 
-export const getAllHeadings = (blocks, headingBlocks, hasInnerBlocks) =>
-	blocks.reduce((acc, block) => {
+export const getAllHeadings = (
+	blocks,
+	headingBlocks,
+	hasInnerBlocks,
+	blockAttributes = {}
+) => {
+	// ブロック独自の設定を優先、なければグローバル設定を使用
+	let allowedLevels;
+	if (
+		blockAttributes.useCustomLevels &&
+		blockAttributes.customHeadingLevels?.length > 0
+	) {
+		allowedLevels = blockAttributes.customHeadingLevels.map((level) =>
+			parseInt(level.replace('h', ''))
+		);
+	} else {
+		// グローバル設定を取得
+		const globalSettings = window.vkBlocksOptions?.toc_heading_levels || [
+			'h2',
+			'h3',
+			'h4',
+			'h5',
+			'h6',
+		];
+		allowedLevels = globalSettings.map((level) =>
+			parseInt(level.replace('h', ''))
+		);
+	}
+
+	return blocks.reduce((acc, block) => {
 		if (
 			isAllowedBlock(block.name, headingBlocks) &&
-			!block.attributes.excludeFromTOC
+			allowedLevels.includes(block.attributes.level)
 		) {
 			acc.push(block);
 		}
@@ -15,12 +43,14 @@ export const getAllHeadings = (blocks, headingBlocks, hasInnerBlocks) =>
 				...getAllHeadings(
 					block.innerBlocks,
 					headingBlocks,
-					hasInnerBlocks
+					hasInnerBlocks,
+					blockAttributes
 				)
 			);
 		}
 		return acc;
 	}, []);
+};
 
 export const returnHtml = (sources) => {
 	const countSeparater = '.';

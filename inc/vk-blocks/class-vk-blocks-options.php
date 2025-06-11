@@ -76,6 +76,27 @@ class VK_Blocks_Options {
 			}
 		}
 
+		// TOC設定のサニタイズ
+		if ( isset( $options['toc_heading_levels'] ) && is_array( $options['toc_heading_levels'] ) ) {
+			// 必ずh2を含める
+			if ( ! in_array( 'h2', $options['toc_heading_levels'], true ) ) {
+				array_unshift( $options['toc_heading_levels'], 'h2' );
+			}
+
+			// 許可された値のみを使用
+			$allowed_levels = array( 'h2', 'h3', 'h4', 'h5', 'h6' );
+
+			// 最大レベルまでの値を取得
+			$max_level = end( $options['toc_heading_levels'] );
+			$max_index = array_search( $max_level, $allowed_levels, true );
+
+			if ( false !== $max_index ) {
+				$options['toc_heading_levels'] = array_slice( $allowed_levels, 0, $max_index + 1 );
+			} else {
+				$options['toc_heading_levels'] = array( 'h2' );
+			}
+		}
+
 		return $options;
 	}
 
@@ -121,6 +142,14 @@ class VK_Blocks_Options {
 		$properties = array(
 			'block_category_position'     => array(
 				'type' => 'string',
+			),
+			'toc_heading_levels'          => array(
+				'type'    => 'array',
+				'items'   => array(
+					'type' => 'string',
+					'enum' => array( 'h2', 'h3', 'h4', 'h5', 'h6' ),
+				),
+				'default' => array( 'h2', 'h3', 'h4', 'h5', 'h6' ),
 			),
 			'balloon_border_width'        => array(
 				'type' => 'number',
@@ -419,6 +448,7 @@ class VK_Blocks_Options {
 	public static function get_vk_blocks_options_defaults( $activation = false ) {
 		$default = array(
 			'block_category_position'     => 'above-core-blocks',
+			'toc_heading_levels'          => array( 'h2' ),
 			'balloon_border_width'        => 1,
 			'margin_unit'                 => 'rem',
 			'margin_size'                 => array(

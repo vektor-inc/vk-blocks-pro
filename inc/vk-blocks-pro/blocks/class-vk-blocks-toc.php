@@ -49,7 +49,7 @@ class VK_Blocks_TOC {
 	 * @return string
 	 */
 	public function mark_content_headings( $content ) {
-		if ( ! has_block( 'vk-blocks/table-of-contents-new', $content ) ) {
+		if ( ! has_block( 'vk-blocks/table-of-contents-new' ) ) {
 			return $content;
 		}
 		$options      = get_option( 'vk_blocks_options', array() );

@@ -150,8 +150,8 @@ class VK_Blocks_TOC {
 	/**
 	 * The_content内のh2〜h6を抽出する共通メソッド
 	 *
-	 * @param string $content 投稿本文
-	 * @return array 見出し情報の配列
+	 * @param string $content 投稿本文.
+	 * @return array 見出し情報の配列.
 	 */
 	public static function get_headings_from_content( $content ) {
 		preg_match_all( '/<h([2-6])(.*?)>(.*?)<\\/h\\1>/is', $content, $matches, PREG_SET_ORDER );

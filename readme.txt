@@ -108,9 +108,9 @@ e.g.
 
 == Changelog ==
 
-[ Add function ][ Grid Column Card (Pro) ] Added the ability to select the border style from "S
+[ Add function ][ Grid Column Card (Pro) ] Added the ability to select the border style from "
 [ Add function ][ Tab (Pro) ] Added support for inserting FontAwesome icons into tab labels.
-[ Add function ][ Table of Contents (Pro) ] Added heading level control (global and per block).olid", "Dashed", or "Dotted"
+[ Add function ][ Table of Contents (Pro) ] Added heading level control (global and per block).
 [ Add function ][ Alert ] Added option to position the icon at the top on mobile devices.
 [ Add function ][ Heading / Core Heading ] Added Exclude from VK Table of Contents setting.
 [ Specification change ][ Blog Card (Pro) ] Changed the specification to not generate a blog card for URLs where is_embeddable is false

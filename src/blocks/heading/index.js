@@ -36,6 +36,7 @@ export const settings = {
 			fontAwesomeIconBefore: iconUser,
 			fontAwesomeIconAfter: '',
 			fontAwesomeIconColor: baseColor,
+			excludeFromToc: false,
 		},
 	},
 	edit,

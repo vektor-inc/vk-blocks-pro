@@ -108,6 +108,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Core Post title ] Added top and bottom margin settings to the toolbar.
 [ Add function ][ Tab (Pro) ] Added support for inserting FontAwesome icons into tab labels.
 [ Add function ][ Table of Contents (Pro) ] Added heading level control (global and per block).
 [ Add function ][ Grid Column Card (Pro) ] Added the ability to select the border style from "Solid", "Dashed", or "Dotted"

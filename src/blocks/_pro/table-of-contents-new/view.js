@@ -61,7 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
 				document.querySelectorAll('[data-vk-toc-heading]')
 			).filter((heading) => {
 				// data-vk-toc-excludeが付いているものは除外
-				if (heading.getAttribute('data-vk-toc-exclude') === 'true') return false;
+				if (heading.getAttribute('data-vk-toc-exclude') === 'true')
+					return false;
 				const level = parseInt(heading.tagName.substring(1));
 				return allowedLevels.includes(level);
 			});

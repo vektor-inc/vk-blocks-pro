@@ -18,11 +18,18 @@ export const ExcludeFromTocToggle = ({ attributes, setAttributes }) => {
 
 	return (
 		<InspectorControls>
-			<PanelBody title={__('Table of Contents Settings', 'vk-blocks-pro')}>
+			<PanelBody
+				title={__('Table of Contents Settings', 'vk-blocks-pro')}
+			>
 				<ToggleControl
-					label={__('Exclude this heading from Table of Contents', 'vk-blocks-pro')}
+					label={__(
+						'Exclude this heading from Table of Contents',
+						'vk-blocks-pro'
+					)}
 					checked={attributes.excludeFromToc}
-					onChange={(value) => setAttributes({ excludeFromToc: value })}
+					onChange={(value) =>
+						setAttributes({ excludeFromToc: value })
+					}
 					help={__(
 						'This setting only affects the VK Table of Contents block.',
 						'vk-blocks-pro'
@@ -31,4 +38,4 @@ export const ExcludeFromTocToggle = ({ attributes, setAttributes }) => {
 			</PanelBody>
 		</InspectorControls>
 	);
-}; 
+};

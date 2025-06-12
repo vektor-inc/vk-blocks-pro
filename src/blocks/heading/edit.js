@@ -397,7 +397,10 @@ export default function HeaddingEdit(props) {
 					/>
 					<AdvancedColorPalette schema={'subTextColor'} {...props} />
 				</PanelBody>
-				<ExcludeFromTocToggle attributes={attributes} setAttributes={setAttributes} />
+				<ExcludeFromTocToggle
+					attributes={attributes}
+					setAttributes={setAttributes}
+				/>
 			</InspectorControls>
 			<div {...blockProps}>
 				<div className={containerClass} style={cStyle}>

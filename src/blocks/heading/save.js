@@ -15,31 +15,31 @@ const renderTitle = (level, contents, tStyle, headingStyle, headingProps) => {
 			);
 		case 2:
 			return (
-				<h2 {...headingProps} style={tStyle} className={headingStyle}>
+				<h2 id={headingProps.id} {...headingProps} style={tStyle} className={headingStyle}>
 					{contents}
 				</h2>
 			);
 		case 3:
 			return (
-				<h3 {...headingProps} style={tStyle} className={headingStyle}>
+				<h3 id={headingProps.id} {...headingProps} style={tStyle} className={headingStyle}>
 					{contents}
 				</h3>
 			);
 		case 4:
 			return (
-				<h4 {...headingProps} style={tStyle} className={headingStyle}>
+				<h4 id={headingProps.id} {...headingProps} style={tStyle} className={headingStyle}>
 					{contents}
 				</h4>
 			);
 		case 5:
 			return (
-				<h5 {...headingProps} style={tStyle} className={headingStyle}>
+				<h5 id={headingProps.id} {...headingProps} style={tStyle} className={headingStyle}>
 					{contents}
 				</h5>
 			);
 		case 6:
 			return (
-				<h6 {...headingProps} style={tStyle} className={headingStyle}>
+				<h6 id={headingProps.id} {...headingProps} style={tStyle} className={headingStyle}>
 					{contents}
 				</h6>
 			);
@@ -205,9 +205,9 @@ export default function save(props) {
 
 	const headingProps = {
 		id: anchor || undefined,
-		...(excludeFromToc ? { 'data-vk-toc-exclude': 'true' } : {}),
 		style: tStyle,
 		className: headingStyle,
+		...(excludeFromToc ? { 'data-vk-toc-exclude': 'true' } : {}),
 	};
 
 	return (

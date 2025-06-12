@@ -1,4 +1,4 @@
-import { isExcludeFromToc } from '@vkblocks/utils/is-excludes-blocks';
+import { isExcludeFromToc } from '@vkblocks/utils/is-exclude-from-toc';
 
 export const isAllowedBlock = (name, allowedBlocks) => {
 	return allowedBlocks.includes(name);
@@ -160,3 +160,11 @@ export const returnHtml = (sources) => {
 
 	return returnHtmlContent || '';
 };
+
+// 目次用見出し取得
+const headings = Array.from(
+	document.querySelectorAll('[data-vk-toc-heading]:not([data-vk-toc-exclude="true"])')
+).filter((heading) => {
+	const level = parseInt(heading.tagName.substring(1));
+	return allowedLevels.includes(level);
+});

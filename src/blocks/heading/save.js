@@ -5,41 +5,41 @@ import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import classnames from 'classnames';
 import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
-const renderTitle = (level, contents, tStyle, headingStyle) => {
+const renderTitle = (level, contents, tStyle, headingStyle, headingProps) => {
 	switch (level) {
 		case 1:
 			return (
-				<h1 style={tStyle} className={headingStyle}>
+				<h1 {...headingProps} style={tStyle} className={headingStyle}>
 					{contents}
 				</h1>
 			);
 		case 2:
 			return (
-				<h2 style={tStyle} className={headingStyle}>
+				<h2 {...headingProps} style={tStyle} className={headingStyle}>
 					{contents}
 				</h2>
 			);
 		case 3:
 			return (
-				<h3 style={tStyle} className={headingStyle}>
+				<h3 {...headingProps} style={tStyle} className={headingStyle}>
 					{contents}
 				</h3>
 			);
 		case 4:
 			return (
-				<h4 style={tStyle} className={headingStyle}>
+				<h4 {...headingProps} style={tStyle} className={headingStyle}>
 					{contents}
 				</h4>
 			);
 		case 5:
 			return (
-				<h5 style={tStyle} className={headingStyle}>
+				<h5 {...headingProps} style={tStyle} className={headingStyle}>
 					{contents}
 				</h5>
 			);
 		case 6:
 			return (
-				<h6 style={tStyle} className={headingStyle}>
+				<h6 {...headingProps} style={tStyle} className={headingStyle}>
 					{contents}
 				</h6>
 			);
@@ -64,6 +64,8 @@ export default function save(props) {
 		fontAwesomeIconBefore,
 		fontAwesomeIconAfter,
 		fontAwesomeIconColor,
+		excludeFromToc,
+		anchor,
 	} = attributes;
 	const containerClass = `vk_heading vk_heading-style-${titleStyle}`;
 
@@ -201,10 +203,17 @@ export default function save(props) {
 		className: ``,
 	});
 
+	const headingProps = {
+		id: anchor,
+		...(excludeFromToc ? { 'data-vk-toc-exclude': 'true' } : {}),
+		style: tStyle,
+		className: headingStyle,
+	};
+
 	return (
 		<div {...blockProps}>
 			<div className={containerClass} style={cStyle}>
-				{renderTitle(level, titleContent, tStyle, headingStyle)}
+				{renderTitle(level, titleContent, tStyle, headingStyle, headingProps)}
 				{subtextContent}
 			</div>
 		</div>

@@ -204,7 +204,7 @@ export default function save(props) {
 	});
 
 	const headingProps = {
-		id: anchor,
+		...(anchor ? { id: anchor } : {}),
 		...(excludeFromToc ? { 'data-vk-toc-exclude': 'true' } : {}),
 		style: tStyle,
 		className: headingStyle,

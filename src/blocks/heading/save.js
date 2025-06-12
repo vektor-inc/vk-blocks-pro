@@ -199,21 +199,27 @@ export default function save(props) {
 		);
 	}
 
-	const blockProps = useBlockProps.save({
+	const { id, ...blockPropsWithoutId } = useBlockProps.save({
 		className: ``,
 	});
 
 	const headingProps = {
-		...(anchor ? { id: anchor } : {}),
+		id: anchor || undefined,
 		...(excludeFromToc ? { 'data-vk-toc-exclude': 'true' } : {}),
 		style: tStyle,
 		className: headingStyle,
 	};
 
 	return (
-		<div {...blockProps}>
+		<div {...blockPropsWithoutId}>
 			<div className={containerClass} style={cStyle}>
-				{renderTitle(level, titleContent, tStyle, headingStyle, headingProps)}
+				{renderTitle(
+					level,
+					titleContent,
+					tStyle,
+					headingStyle,
+					headingProps
+				)}
 				{subtextContent}
 			</div>
 		</div>

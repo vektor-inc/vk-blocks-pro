@@ -66,6 +66,10 @@
 		},
 		"fontAwesomeIconColor": {
 			"type": "string"
+		},
+		"excludeFromToc": {
+			"type": "boolean",
+			"default": false
 		}
 	},
 	"description": "This is a heading that allows you to set text size, subtext, icon, and margin.",

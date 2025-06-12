@@ -1,3 +1,5 @@
+import { isExcludeFromToc } from '@vkblocks/utils/is-excludes-blocks';
+
 export const isAllowedBlock = (name, allowedBlocks) => {
 	return allowedBlocks.includes(name);
 };
@@ -34,7 +36,8 @@ export const getAllHeadings = (
 	return blocks.reduce((acc, block) => {
 		if (
 			isAllowedBlock(block.name, headingBlocks) &&
-			allowedLevels.includes(block.attributes.level)
+			allowedLevels.includes(block.attributes.level) &&
+			!isExcludeFromToc(block.attributes)
 		) {
 			acc.push(block);
 		}

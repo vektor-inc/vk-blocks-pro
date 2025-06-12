@@ -50,6 +50,7 @@ import '@vkblocks/extensions/core/list/style';
 import '@vkblocks/extensions/core/columns/style';
 import '@vkblocks/extensions/core/table/style';
 import '@vkblocks/extensions/core/cover/style';
+import '@vkblocks/extensions/core/heading/style';
 import '@vkblocks/extensions/common/hidden-extension';
 import '@vkblocks/extensions/common/highlighter';
 import '@vkblocks/extensions/common/inline-font-size';

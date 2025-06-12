@@ -22,6 +22,7 @@ import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palett
 import parse from 'html-react-parser';
 import classnames from 'classnames';
 import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
+import { ExcludeFromTocToggle } from '@vkblocks/components/exclude-from-toc-toggle';
 
 const renderTitle = (level, contents, tStyle, headingStyle) => {
 	switch (level) {
@@ -396,6 +397,7 @@ export default function HeaddingEdit(props) {
 					/>
 					<AdvancedColorPalette schema={'subTextColor'} {...props} />
 				</PanelBody>
+				<ExcludeFromTocToggle attributes={attributes} setAttributes={setAttributes} />
 			</InspectorControls>
 			<div {...blockProps}>
 				<div className={containerClass} style={cStyle}>

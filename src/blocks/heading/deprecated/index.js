@@ -3,6 +3,7 @@ import save1_7_0 from './1.7.0/save';
 import save1_9_1 from './1.9.1/save';
 import save1_20_5 from './1.20.5/save';
 import save1_21_0 from './1.21.0/save';
+import save1_104_0 from './1.104.0/save';
 
 const blockAttributes = {
 	level: {
@@ -131,7 +132,22 @@ const blockAttributes4 = {
 	},
 }
 
+/* 次回対応をお願いします
+1.104.0 で excludeFromToc を追加
+const blockAttributes5 = {
+	...blockAttributes4,
+	excludeFromToc: {
+		type: 'boolean',
+		default: false,
+	},
+}
+*/
+
 const deprecated = [
+	{
+		attributes: blockAttributes4,
+		save: save1_104_0,
+	},
 	{
 		attributes: blockAttributes4,
 		save: save1_21_0,

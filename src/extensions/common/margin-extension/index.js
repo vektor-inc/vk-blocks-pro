@@ -126,8 +126,8 @@ const MAY_USED_DYNAMIC_BLOCK = [
 ];
 
 export const isAddMargin = (blockName) => {
-	if (blockName === 'core/post-excerpt') {
-		return true; // 抜粋ブロックは強制的に許可
+	if (blockName === 'core/post-excerpt' || blockName === 'core/post-title') {
+		return true; // 抜粋ブロックとタイトルブロックは強制的に許可
 	}
 
 	const addExclude = [

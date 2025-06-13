@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-05-26T04:35:22+00:00\n"
+"POT-Creation-Date: 2025-06-13T04:23:44+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -45,7 +45,7 @@ msgstr ""
 #: src/admin/balloon/index.js:148
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:75
 #: src/admin/custom-format/delete-item-button.js:74
-#: src/blocks/_pro/gridcolcard/edit-common.js:143
+#: src/blocks/_pro/gridcolcard/edit-common.js:150
 #: src/extensions/common/custom-block-variation/block-variation-list/item/title-area/delete-button/index.js:33
 msgid "Delete"
 msgstr ""
@@ -105,13 +105,13 @@ msgid "Under the WordPress default blocks"
 msgstr ""
 
 #: src/admin/block-manager/index.js:51
-#: src/admin/import-export/index.js:106
+#: src/admin/import-export/index.js:116
 #: inc/vk-blocks/admin/admin.php:118
 msgid "Block Manager Setting"
 msgstr ""
 
 #: src/admin/block-style-manager/index.js:27
-#: src/admin/import-export/index.js:115
+#: src/admin/import-export/index.js:125
 #: inc/vk-blocks/admin/admin.php:119
 msgid "Block Style Manager Setting"
 msgstr ""
@@ -250,9 +250,9 @@ msgid "Edit"
 msgstr ""
 
 #: src/admin/custom-css.js:20
-#: src/admin/import-export/index.js:96
+#: src/admin/import-export/index.js:106
 #: src/extensions/common/custom-css-extension/index.js:225
-#: inc/vk-blocks-pro/admin-pro/admin-pro.php:16
+#: inc/vk-blocks-pro/admin-pro/admin-pro.php:17
 msgid "Custom CSS Setting"
 msgstr ""
 
@@ -311,27 +311,27 @@ msgid "Nowrap"
 msgstr ""
 
 #: src/admin/custom-format/index.js:203
-#: src/blocks/_pro/step-item/edit.js:105
-#: src/blocks/_pro/timeline-item/edit.js:71
-#: src/blocks/border-box/edit.js:236
+#: src/blocks/_pro/step-item/edit.js:106
+#: src/blocks/_pro/timeline-item/edit.js:72
+#: src/blocks/border-box/edit.js:238
 #: src/blocks/button/edit.js:551
 #: src/blocks/icon/edit.js:316
-#: src/blocks/staff/edit.js:199
+#: src/blocks/staff/edit.js:200
 msgid "Color"
 msgstr ""
 
 #: src/admin/custom-format/index.js:208
-#: src/blocks/_pro/grid-column-item/edit.js:112
-#: src/blocks/_pro/gridcolcard/edit-common.js:149
+#: src/blocks/_pro/grid-column-item/edit.js:115
+#: src/blocks/_pro/gridcolcard/edit-common.js:156
 #: src/blocks/button/edit.js:623
-#: src/blocks/heading/edit.js:324
+#: src/blocks/heading/edit.js:325
 msgid "Text Color"
 msgstr ""
 
 #: src/admin/custom-format/index.js:239
-#: src/blocks/_pro/grid-column-item/edit.js:118
-#: src/blocks/_pro/gridcolcard/edit-common.js:155
-#: src/blocks/border-box/edit.js:248
+#: src/blocks/_pro/grid-column-item/edit.js:121
+#: src/blocks/_pro/gridcolcard/edit-common.js:162
+#: src/blocks/border-box/edit.js:250
 #: src/blocks/button/edit.js:606
 #: src/blocks/icon/edit.js:321
 msgid "Background Color"
@@ -436,16 +436,12 @@ msgstr ""
 msgid "Import Success"
 msgstr ""
 
-#: src/admin/import-export/index.js:124
+#: src/admin/import-export/index.js:134
 msgid "Font Awesome Custom Lists Setting"
 msgstr ""
 
-#: src/admin/import-export/index.js:135
+#: src/admin/import-export/index.js:145
 msgid "Custom Block Variation Setting"
-msgstr ""
-
-#: src/admin/import-export/index.js:148
-msgid "Breadcrumb Separator Setting"
 msgstr ""
 
 #: src/admin/import-export/index.js:15
@@ -453,13 +449,17 @@ msgstr ""
 msgid "License Key"
 msgstr ""
 
-#: src/admin/import-export/index.js:167
+#: src/admin/import-export/index.js:158
+msgid "Breadcrumb Separator Setting"
+msgstr ""
+
+#: src/admin/import-export/index.js:177
 #: inc/vk-blocks/admin/admin.php:120
 msgid "Import Export Tool"
 msgstr ""
 
 #: src/admin/import-export/index.js:65
-#: src/blocks/heading/edit.js:274
+#: src/blocks/heading/edit.js:275
 msgid "Margin Setting"
 msgstr ""
 
@@ -471,6 +471,12 @@ msgstr ""
 #: src/admin/import-export/index.js:86
 #: src/admin/new-faq.js:20
 msgid "FAQ Block Setting"
+msgstr ""
+
+#: src/admin/import-export/index.js:96
+#: src/admin/toc.js:40
+#: inc/vk-blocks-pro/admin-pro/admin-pro.php:16
+msgid "Table of Contents Setting"
 msgstr ""
 
 #: src/admin/license.js:24
@@ -510,7 +516,7 @@ msgid "ex)"
 msgstr ""
 
 #: src/admin/margin.js:141
-#: src/blocks/border-box/edit.js:200
+#: src/blocks/border-box/edit.js:202
 #: src/blocks/icon-outer/edit.js:151
 #: src/blocks/icon/edit.js:145
 msgid "Margin"
@@ -553,7 +559,7 @@ msgstr ""
 
 #: src/admin/margin.js:51
 #: src/blocks/_pro/accordion/edit.js:139
-#: src/blocks/_pro/outer/edit.js:1401
+#: src/blocks/_pro/outer/edit.js:1402
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:174
 #: src/blocks/button/edit.js:454
 #: src/blocks/slider/edit-multiItem.js:198
@@ -563,7 +569,7 @@ msgstr ""
 
 #: src/admin/margin.js:55
 #: src/blocks/_pro/accordion/edit.js:122
-#: src/blocks/_pro/outer/edit.js:1386
+#: src/blocks/_pro/outer/edit.js:1387
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:201
 #: src/blocks/button/edit.js:419
 #: src/blocks/slider/edit-multiItem.js:225
@@ -573,7 +579,7 @@ msgstr ""
 
 #: src/admin/margin.js:59
 #: src/blocks/_pro/accordion/edit.js:105
-#: src/blocks/_pro/outer/edit.js:1371
+#: src/blocks/_pro/outer/edit.js:1372
 #: src/blocks/_pro/post-list-slider/multi-item-setting.js:230
 #: src/blocks/button/edit.js:386
 #: src/blocks/slider/edit-multiItem.js:254
@@ -591,9 +597,9 @@ msgid "Please specify the size of the common margin used for responsive spacers,
 msgstr ""
 
 #: src/admin/margin.js:81
-#: src/blocks/_pro/grid-column-item/edit.js:183
+#: src/blocks/_pro/grid-column-item/edit.js:186
 #: src/blocks/_pro/grid-column/edit.js:83
-#: src/blocks/_pro/outer/edit.js:1036
+#: src/blocks/_pro/outer/edit.js:1037
 msgid "Unit"
 msgstr ""
 
@@ -624,6 +630,15 @@ msgstr ""
 #: src/admin/save-button.js:88
 #: src/extensions/common/custom-block-variation/save-button/index.js:75
 msgid "Save Success"
+msgstr ""
+
+#: src/admin/toc.js:42
+msgid "Please specify a common heading level setting to be used across the site."
+msgstr ""
+
+#: src/admin/toc.js:61
+#: inc/vk-blocks-pro/blocks/class-vk-blocks-toc.php:122
+msgid "Headings from H2 up to the selected level will be included."
 msgstr ""
 
 #: src/blocks/_pro/accordion/edit.js:160
@@ -673,7 +688,7 @@ msgid "Background color / Rounded / Border"
 msgstr ""
 
 #: src/blocks/_pro/accordion/index.js:47
-#: src/blocks/heading/edit.js:268
+#: src/blocks/heading/edit.js:269
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:304
 msgid "Plain"
 msgstr ""
@@ -704,7 +719,7 @@ msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:134
 #: src/blocks/_pro/tab/index.js:23
-#: src/blocks/balloon/edit.js:476
+#: src/blocks/balloon/edit.js:477
 #: src/blocks/button/edit.js:329
 #: src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:21
@@ -762,17 +777,17 @@ msgid "Trembling Y"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:84
-#: src/blocks/balloon/edit.js:560
+#: src/blocks/balloon/edit.js:561
 msgid "Trembling X"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:88
-#: src/blocks/balloon/edit.js:564
+#: src/blocks/balloon/edit.js:565
 msgid "Pounding"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:92
-#: src/blocks/balloon/edit.js:568
+#: src/blocks/balloon/edit.js:569
 msgid "Shaking"
 msgstr ""
 
@@ -865,8 +880,8 @@ msgid "Height"
 msgstr ""
 
 #: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:178
-#: src/blocks/_pro/outer/edit.js:1122
-#: src/blocks/balloon/edit.js:490
+#: src/blocks/_pro/outer/edit.js:1123
+#: src/blocks/balloon/edit.js:491
 msgid "Width"
 msgstr ""
 
@@ -1012,10 +1027,10 @@ msgstr ""
 
 #: src/blocks/_pro/card-item/edit.js:88
 #: src/blocks/flow/edit.js:84
-#: src/blocks/pr-blocks/edit.js:89
+#: src/blocks/pr-blocks/edit.js:90
 #: src/blocks/pr-content/deprecated/1.7.1/mediaUpload.js:68
 #: src/blocks/pr-content/mediaUpload.js:68
-#: src/blocks/staff/edit.js:359
+#: src/blocks/staff/edit.js:360
 #: src/components/advanced-media-upload/index.js:100
 msgid "Select image"
 msgstr ""
@@ -1224,11 +1239,11 @@ msgid "Setting up a link"
 msgstr ""
 
 #: src/blocks/_pro/dynamic-text/edit.js:439
-#: src/blocks/_pro/gridcolcard-item/edit.js:223
-#: src/blocks/_pro/icon-card-item/edit.js:128
+#: src/blocks/_pro/gridcolcard-item/edit.js:230
+#: src/blocks/_pro/icon-card-item/edit.js:129
 #: src/blocks/button/edit.js:284
 #: src/blocks/icon/edit.js:309
-#: src/blocks/pr-blocks/edit.js:262
+#: src/blocks/pr-blocks/edit.js:263
 #: src/blocks/pr-content/edit.js:131
 #: src/components/link-toolbar/index.js:321
 msgid "Open link new tab."
@@ -1285,7 +1300,7 @@ msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:147
 #: src/blocks/_pro/post-list-slider/edit.js:140
-#: src/blocks/_pro/table-of-contents-new/edit.js:125
+#: src/blocks/_pro/table-of-contents-new/edit.js:255
 #: src/components/column-layout-control/index.js:69
 msgid "Display type"
 msgstr ""
@@ -1307,13 +1322,14 @@ msgid "Fixed position"
 msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:173
-#: src/blocks/_pro/outer/edit.js:1055
+#: src/blocks/_pro/outer/edit.js:1056
+#: src/blocks/alert/edit.js:103
 msgid "Top"
 msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:175
-#: src/blocks/_pro/outer/edit.js:1100
-#: src/blocks/balloon/edit.js:434
+#: src/blocks/_pro/outer/edit.js:1101
+#: src/blocks/balloon/edit.js:435
 #: src/blocks/button/edit.js:359
 #: src/blocks/pr-content/edit.js:252
 #: src/components/display-items-control/index.js:140
@@ -1321,13 +1337,13 @@ msgid "Right"
 msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:179
-#: src/blocks/_pro/outer/edit.js:1069
+#: src/blocks/_pro/outer/edit.js:1070
 msgid "Bottom"
 msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:183
-#: src/blocks/_pro/outer/edit.js:1086
-#: src/blocks/balloon/edit.js:430
+#: src/blocks/_pro/outer/edit.js:1087
+#: src/blocks/balloon/edit.js:431
 #: src/blocks/button/edit.js:351
 #: src/blocks/pr-content/edit.js:256
 #: src/components/display-items-control/index.js:132
@@ -1395,33 +1411,33 @@ msgid "When enabled, the same content will not be shown again until the visitor 
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/deprecated/1.93.0/save.js:102
-#: src/blocks/_pro/grid-column-item/save.js:102
+#: src/blocks/_pro/grid-column-item/save.js:105
 msgid "Grid column item link"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:110
-#: src/blocks/_pro/gridcolcard/edit-common.js:147
+#: src/blocks/_pro/grid-column-item/edit.js:113
+#: src/blocks/_pro/gridcolcard/edit-common.js:154
 msgid "Color Settings"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:128
+#: src/blocks/_pro/grid-column-item/edit.js:131
 msgid "Margin setting inside the item"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:135
+#: src/blocks/_pro/grid-column-item/edit.js:138
 msgid "Padding (Top)"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:151
-#: src/blocks/_pro/outer/edit.js:1125
+#: src/blocks/_pro/grid-column-item/edit.js:154
+#: src/blocks/_pro/outer/edit.js:1126
 msgid "Padding (Left and Right)"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:167
+#: src/blocks/_pro/grid-column-item/edit.js:170
 msgid "Padding (Bottom)"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:196
+#: src/blocks/_pro/grid-column-item/edit.js:199
 #: src/blocks/_pro/grid-column/edit.js:96
 #: src/blocks/icon-outer/edit.js:184
 #: src/blocks/icon/edit.js:177
@@ -1429,7 +1445,7 @@ msgstr ""
 msgid "px"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:197
+#: src/blocks/_pro/grid-column-item/edit.js:200
 #: src/blocks/_pro/grid-column/edit.js:100
 #: src/blocks/icon-outer/edit.js:188
 #: src/blocks/icon/edit.js:181
@@ -1437,7 +1453,7 @@ msgstr ""
 msgid "em"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:198
+#: src/blocks/_pro/grid-column-item/edit.js:201
 #: src/blocks/_pro/grid-column/edit.js:104
 #: src/blocks/icon-outer/edit.js:192
 #: src/blocks/icon/edit.js:185
@@ -1445,7 +1461,7 @@ msgstr ""
 msgid "rem"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:199
+#: src/blocks/_pro/grid-column-item/edit.js:202
 #: src/blocks/_pro/grid-column/edit.js:108
 #: src/blocks/icon-outer/edit.js:196
 #: src/blocks/icon/edit.js:189
@@ -1469,149 +1485,175 @@ msgstr ""
 msgid "You can create a variety of layouts with grid column card blocks."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:187
+#: src/blocks/_pro/gridcolcard-item/edit.js:194
 msgid "Edit mode"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:191
+#: src/blocks/_pro/gridcolcard-item/edit.js:198
 msgid "If Edit Lock is disabled, changes made in this item block (such as color or image ratio) will be overwritten when the parent Grid Column Card block is re-selected."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:197
+#: src/blocks/_pro/gridcolcard-item/edit.js:204
 msgid "Edit Lock"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:200
+#: src/blocks/_pro/gridcolcard-item/edit.js:207
 msgid "Lock edits this block from the parent and other Grid Column Item block"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:211
+#: src/blocks/_pro/gridcolcard-item/edit.js:218
 msgid "Column Setting"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:215
-#: src/blocks/_pro/icon-card-item/edit.js:120
-#: src/blocks/pr-blocks/edit.js:254
+#: src/blocks/_pro/gridcolcard-item/edit.js:222
+#: src/blocks/_pro/icon-card-item/edit.js:121
+#: src/blocks/pr-blocks/edit.js:255
 msgid "Link URL:"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:231
+#: src/blocks/_pro/gridcolcard-item/edit.js:238
 #: src/components/link-toolbar/index.js:334
 msgid "Add noreferrer"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:239
+#: src/blocks/_pro/gridcolcard-item/edit.js:246
 #: src/components/link-toolbar/index.js:351
 msgid "Add nofollow"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:247
+#: src/blocks/_pro/gridcolcard-item/edit.js:254
 msgid "If you set a link URL, do not place the link element (text or button) in the Grid Column Card Item. It may not be displayed correctly."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:251
+#: src/blocks/_pro/gridcolcard-item/edit.js:258
 msgid "Make sure that no link is specified for the image block, etc."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:100
+#: src/blocks/_pro/gridcolcard/edit-common.js:107
 msgid "Card header image aspect ratio"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:113
+#: src/blocks/_pro/gridcolcard/edit-common.js:120
 msgid "Image fit to column"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:128
+#: src/blocks/_pro/gridcolcard/edit-common.js:135
 msgid "Column footer button area"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:135
-#: src/blocks/heading/edit.js:372
+#: src/blocks/_pro/gridcolcard/edit-common.js:142
+#: src/blocks/heading/edit.js:373
 msgid "Display"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:139
+#: src/blocks/_pro/gridcolcard/edit-common.js:146
 #: src/blocks/_pro/post-list-slider/edit.js:326
-#: src/blocks/heading/edit.js:376
+#: src/blocks/heading/edit.js:377
 #: src/blocks/slider/edit.js:483
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:166
+#: src/blocks/_pro/gridcolcard/edit-common.js:173
 msgid "Column Radius"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:172
-#: src/blocks/balloon/edit.js:318
+#: src/blocks/_pro/gridcolcard/edit-common.js:179
+#: src/blocks/balloon/edit.js:319
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:392
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:410
 msgid "Border"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:181
+#: src/blocks/_pro/gridcolcard/edit-common.js:188
 msgid "Border Width"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:192
-#: src/blocks/border-box/edit.js:239
+#: src/blocks/_pro/gridcolcard/edit-common.js:199
+#: src/blocks/border-box/edit.js:241
 #: src/extensions/core/group/style.js:119
 msgid "Border Color"
 msgstr ""
 
+#: src/blocks/_pro/gridcolcard/edit-common.js:208
+msgid "Border Style"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:68
+#: src/blocks/_pro/outer/edit.js:1450
+#: src/blocks/_pro/step-item/edit.js:119
+#: src/blocks/_pro/timeline-item/edit.js:89
+#: src/blocks/pr-content/edit.js:145
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:448
+msgid "Solid"
+msgstr ""
+
 #: src/blocks/_pro/gridcolcard/edit-common.js:69
+#: src/blocks/_pro/outer/edit.js:1458
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:460
+msgid "Dashed"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:70
+#: src/blocks/_pro/outer/edit.js:1454
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:456
+msgid "Dotted"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:76
 msgid "Column padding"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:77
+#: src/blocks/_pro/gridcolcard/edit-common.js:84
 msgid "Column header media area"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:120
+#: src/blocks/_pro/gridcolcard/edit.js:121
 msgid "Column Width Setting"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:124
+#: src/blocks/_pro/gridcolcard/edit.js:125
 msgid "If you specify the minimum column size on a tablet or PC with %, it will be easier to align the number of columns in the upper and lower rows according to the screen size."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:130
+#: src/blocks/_pro/gridcolcard/edit.js:131
 msgid "Column min width (Mobile)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:138
+#: src/blocks/_pro/gridcolcard/edit.js:139
 msgid "Column min width (Tablet / Optional)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:149
+#: src/blocks/_pro/gridcolcard/edit.js:150
 msgid "Column min width (PC / Optional)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:160
+#: src/blocks/_pro/gridcolcard/edit.js:161
 msgid "Column Gap Setting"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:164
+#: src/blocks/_pro/gridcolcard/edit.js:165
 msgid "Column gap size"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:170
+#: src/blocks/_pro/gridcolcard/edit.js:171
 msgid "Column row-gap size (optional)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:179
+#: src/blocks/_pro/gridcolcard/edit.js:180
 msgid "Specify all columns at once"
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/edit.js:118
+#: src/blocks/_pro/icon-card-item/edit.js:119
 msgid "Icon Card Setting"
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/edit.js:137
-#: src/blocks/_pro/step-item/edit.js:82
-#: src/blocks/alert/edit.js:73
-#: src/blocks/border-box/edit.js:272
+#: src/blocks/_pro/icon-card-item/edit.js:138
+#: src/blocks/_pro/step-item/edit.js:83
+#: src/blocks/_pro/tab-item/edit.js:181
+#: src/blocks/alert/edit.js:75
+#: src/blocks/border-box/edit.js:274
 #: src/blocks/button/edit.js:634
-#: src/blocks/heading/edit.js:335
+#: src/blocks/heading/edit.js:336
 #: src/blocks/icon/edit.js:293
 #: src/blocks/pr-content/edit.js:212
 #: src/components/scroll-hint/index.js:103
@@ -1621,32 +1663,32 @@ msgstr ""
 msgid "Icon"
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/edit.js:149
-#: src/blocks/pr-blocks/edit.js:281
+#: src/blocks/_pro/icon-card-item/edit.js:150
+#: src/blocks/pr-blocks/edit.js:282
 msgid "Icon Background:"
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/edit.js:153
+#: src/blocks/_pro/icon-card-item/edit.js:154
 #: src/blocks/button/edit.js:508
 #: src/blocks/icon-outer/edit.js:238
 #: src/blocks/icon/edit.js:235
-#: src/blocks/pr-blocks/edit.js:285
+#: src/blocks/pr-blocks/edit.js:286
 msgid "Solid color"
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/edit.js:157
+#: src/blocks/_pro/icon-card-item/edit.js:158
 #: src/blocks/button/edit.js:512
-#: src/blocks/pr-blocks/edit.js:289
+#: src/blocks/pr-blocks/edit.js:290
 msgid "No background"
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/edit.js:197
-#: src/blocks/pr-blocks/edit.js:534
+#: src/blocks/_pro/icon-card-item/edit.js:198
+#: src/blocks/pr-blocks/edit.js:535
 msgid "Input Title"
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/edit.js:219
-#: src/blocks/pr-blocks/edit.js:543
+#: src/blocks/_pro/icon-card-item/edit.js:220
+#: src/blocks/pr-blocks/edit.js:544
 msgid "Input Content"
 msgstr ""
 
@@ -1668,303 +1710,285 @@ msgstr ""
 #: src/blocks/_pro/outer/deprecated/save/1.92.1/save.js:252
 #: src/blocks/_pro/outer/deprecated/save/1.93.0/save.js:258
 #: src/blocks/_pro/outer/deprecated/save/1.93.2/save.js:252
-#: src/blocks/_pro/outer/save.js:322
+#: src/blocks/_pro/outer/save.js:323
 msgid "Outer link"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1001
+#: src/blocks/_pro/outer/edit.js:1002
 msgid "Parallax (Non-guaranteed)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1018
+#: src/blocks/_pro/outer/edit.js:1019
 msgid "When using Background Offset, Border and Divider will be temporarily disabled."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1024
+#: src/blocks/_pro/outer/edit.js:1025
 msgid "Disable offset on mobile"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1052
+#: src/blocks/_pro/outer/edit.js:1053
 msgid "Vertical Offset"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1083
+#: src/blocks/_pro/outer/edit.js:1084
 msgid "Horizontal Offset"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1119
+#: src/blocks/_pro/outer/edit.js:1120
 #: src/blocks/pr-content/edit.js:244
-#: src/blocks/slider-item/edit.js:209
+#: src/blocks/slider-item/edit.js:210
 msgid "Layout Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1132
+#: src/blocks/_pro/outer/edit.js:1133
 msgid "Fit to the Content area"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1139
+#: src/blocks/_pro/outer/edit.js:1140
 msgid "Add padding to the Outer area"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1146
+#: src/blocks/_pro/outer/edit.js:1147
 msgid "Remove padding from the Outer area"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1160
+#: src/blocks/_pro/outer/edit.js:1161
 msgid "Padding (Top and Bottom)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1168
+#: src/blocks/_pro/outer/edit.js:1169
 msgid "Use default padding"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1175
+#: src/blocks/_pro/outer/edit.js:1176
 msgid "Do not use default padding"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1189
+#: src/blocks/_pro/outer/edit.js:1190
 msgid "* If you select \"Do not use\" that, please set yourself it such as a spacer block."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1197
+#: src/blocks/_pro/outer/edit.js:1198
 msgid "Divider Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1202
-#: src/blocks/balloon/edit.js:439
+#: src/blocks/_pro/outer/edit.js:1203
+#: src/blocks/balloon/edit.js:440
 msgid "Type"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1210
+#: src/blocks/_pro/outer/edit.js:1211
 msgid "Tilt"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1214
+#: src/blocks/_pro/outer/edit.js:1215
 msgid "Curve"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1218
+#: src/blocks/_pro/outer/edit.js:1219
 msgid "Wave"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1222
+#: src/blocks/_pro/outer/edit.js:1223
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:346
 msgid "Triangle"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1226
+#: src/blocks/_pro/outer/edit.js:1227
 msgid "Large triangle"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1233
+#: src/blocks/_pro/outer/edit.js:1234
 msgid "Serrated"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1237
+#: src/blocks/_pro/outer/edit.js:1238
 msgid "Book"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1241
+#: src/blocks/_pro/outer/edit.js:1242
 msgid "Pyramid"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1248
+#: src/blocks/_pro/outer/edit.js:1249
 msgid "Settings for each device"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1261
+#: src/blocks/_pro/outer/edit.js:1262
 msgid "Upper Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1343
+#: src/blocks/_pro/outer/edit.js:1344
 msgid "Lower Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1426
+#: src/blocks/_pro/outer/edit.js:1427
 msgid "Border Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1431
+#: src/blocks/_pro/outer/edit.js:1432
 msgid "Border will disappear when divider effect is applied."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1437
+#: src/blocks/_pro/outer/edit.js:1438
 msgid "Border type"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1445
-#: src/blocks/_pro/step-item/edit.js:142
-#: src/blocks/_pro/timeline-item/edit.js:108
-#: src/blocks/balloon/edit.js:552
+#: src/blocks/_pro/outer/edit.js:1446
+#: src/blocks/_pro/step-item/edit.js:143
+#: src/blocks/_pro/timeline-item/edit.js:109
+#: src/blocks/balloon/edit.js:553
 #: src/blocks/button/edit.js:540
-#: src/blocks/staff/edit.js:177
+#: src/blocks/staff/edit.js:178
 msgid "None"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1449
-#: src/blocks/_pro/step-item/edit.js:118
-#: src/blocks/_pro/timeline-item/edit.js:88
-#: src/blocks/pr-content/edit.js:145
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:448
-msgid "Solid"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:1453
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:456
-msgid "Dotted"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:1457
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:460
-msgid "Dashed"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:1461
+#: src/blocks/_pro/outer/edit.js:1462
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:464
 msgid "Double"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1465
+#: src/blocks/_pro/outer/edit.js:1466
 msgid "Groove"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1469
+#: src/blocks/_pro/outer/edit.js:1470
 msgid "Ridge"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1473
+#: src/blocks/_pro/outer/edit.js:1474
 msgid "Inset"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1477
+#: src/blocks/_pro/outer/edit.js:1478
 msgid "Outset"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1489
+#: src/blocks/_pro/outer/edit.js:1490
 msgid "Border width"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1501
+#: src/blocks/_pro/outer/edit.js:1502
 #: src/blocks/icon-outer/edit.js:213
 #: src/blocks/icon/edit.js:206
 msgid "Border radius"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1524
+#: src/blocks/_pro/outer/edit.js:1525
 msgid "Container Inner Side Space Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:1561
+#: src/blocks/_pro/outer/edit.js:1562
 msgid "Min Height Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:730
-#: src/blocks/slider-item/edit.js:227
+#: src/blocks/_pro/outer/edit.js:731
+#: src/blocks/slider-item/edit.js:228
 msgid "Background Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:735
+#: src/blocks/_pro/outer/edit.js:736
 #: src/blocks/pr-content/edit.js:67
-#: src/blocks/slider-item/edit.js:231
+#: src/blocks/slider-item/edit.js:232
 msgid "Color Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:736
-#: src/blocks/slider-item/edit.js:233
+#: src/blocks/_pro/outer/edit.js:737
+#: src/blocks/slider-item/edit.js:234
 msgid "Color will overcome background image. If you want to display image, set opacity 0."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:748
-#: src/blocks/slider-item/edit.js:245
+#: src/blocks/_pro/outer/edit.js:749
+#: src/blocks/slider-item/edit.js:246
 msgid "Opacity Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:762
-#: src/blocks/slider-item/edit.js:280
+#: src/blocks/_pro/outer/edit.js:763
+#: src/blocks/slider-item/edit.js:281
 msgid "Background Image PC"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:779
-#: src/blocks/slider-item/edit.js:297
+#: src/blocks/_pro/outer/edit.js:780
+#: src/blocks/slider-item/edit.js:298
 msgid "Background Image Tablet"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:790
-#: src/blocks/slider-item/edit.js:308
+#: src/blocks/_pro/outer/edit.js:791
+#: src/blocks/slider-item/edit.js:309
 msgid "Background Image Mobile"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:801
+#: src/blocks/_pro/outer/edit.js:802
 msgid "Background Position Type"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:803
+#: src/blocks/_pro/outer/edit.js:804
 msgid "Select either Focal Point to control the image’s focus, or Background Offset to shift the background position. (Only one option can be active at a time.)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:837
+#: src/blocks/_pro/outer/edit.js:838
 msgid "Focal Point"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:841
+#: src/blocks/_pro/outer/edit.js:842
 msgid "Background Offset"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:864
+#: src/blocks/_pro/outer/edit.js:865
 msgid "(PC)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:901
+#: src/blocks/_pro/outer/edit.js:902
 msgid "(Tablet)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:925
+#: src/blocks/_pro/outer/edit.js:926
 msgid "Enable Focal Point"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:937
+#: src/blocks/_pro/outer/edit.js:938
 msgid "Focal Point Picker"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:942
+#: src/blocks/_pro/outer/edit.js:943
 msgid "(Mobile)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:969
+#: src/blocks/_pro/outer/edit.js:970
 msgid "Background image Position"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:979
+#: src/blocks/_pro/outer/edit.js:980
 msgid "Repeat"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:986
+#: src/blocks/_pro/outer/edit.js:987
 msgid "Cover"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:990
+#: src/blocks/_pro/outer/edit.js:991
 msgid "Cover fixed (Not fixed on iPhone)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:995
+#: src/blocks/_pro/outer/edit.js:996
 msgid "This will not work on iPhone."
 msgstr ""
 
-#: src/blocks/_pro/post-category-badge/edit.js:108
+#: src/blocks/_pro/post-category-badge/edit.js:100
+msgid "Auto"
+msgstr ""
+
+#: src/blocks/_pro/post-category-badge/edit.js:86
 #: inc/vk-blocks/admin/admin.php:135
 msgid "Setting"
 msgstr ""
 
-#: src/blocks/_pro/post-category-badge/edit.js:110
+#: src/blocks/_pro/post-category-badge/edit.js:88
 msgid "Enable Term Link"
 msgstr ""
 
-#: src/blocks/_pro/post-category-badge/edit.js:118
+#: src/blocks/_pro/post-category-badge/edit.js:96
 msgid "Select Taxonomy"
-msgstr ""
-
-#: src/blocks/_pro/post-category-badge/edit.js:122
-msgid "Auto"
 msgstr ""
 
 #: src/blocks/_pro/post-list-slider/edit.js:151
@@ -2048,12 +2072,12 @@ msgid "Pagination Type"
 msgstr ""
 
 #: src/blocks/_pro/post-list-slider/edit.js:302
-#: src/blocks/_pro/step-item/edit.js:138
-#: src/blocks/_pro/table-of-contents-new/edit.js:140
-#: src/blocks/_pro/timeline-item/edit.js:104
-#: src/blocks/heading/edit.js:264
+#: src/blocks/_pro/step-item/edit.js:139
+#: src/blocks/_pro/table-of-contents-new/edit.js:270
+#: src/blocks/_pro/timeline-item/edit.js:105
+#: src/blocks/heading/edit.js:265
 #: src/blocks/slider/edit.js:459
-#: src/blocks/staff/edit.js:173
+#: src/blocks/staff/edit.js:174
 #: src/components/advanced-color-gradient-control/index.js:47
 msgid "Default"
 msgstr ""
@@ -2188,34 +2212,34 @@ msgstr ""
 msgid "Input Internal Post URL"
 msgstr ""
 
-#: src/blocks/_pro/step-item/edit.js:101
-#: src/blocks/_pro/timeline-item/edit.js:68
+#: src/blocks/_pro/step-item/edit.js:102
+#: src/blocks/_pro/timeline-item/edit.js:69
 msgid "Ex,6:00AM"
 msgstr ""
 
-#: src/blocks/_pro/step-item/edit.js:108
-#: src/blocks/_pro/table-of-contents-new/edit.js:130
-#: src/blocks/_pro/timeline-item/edit.js:74
+#: src/blocks/_pro/step-item/edit.js:109
+#: src/blocks/_pro/table-of-contents-new/edit.js:260
+#: src/blocks/_pro/timeline-item/edit.js:75
 #: src/blocks/icon-outer/edit.js:229
 #: src/blocks/icon/edit.js:221
 msgid "Style"
 msgstr ""
 
-#: src/blocks/_pro/step-item/edit.js:122
-#: src/blocks/_pro/timeline-item/edit.js:84
+#: src/blocks/_pro/step-item/edit.js:123
+#: src/blocks/_pro/timeline-item/edit.js:85
 msgid "Outlined"
 msgstr ""
 
-#: src/blocks/_pro/step-item/edit.js:129
-#: src/blocks/_pro/timeline-item/edit.js:95
+#: src/blocks/_pro/step-item/edit.js:130
+#: src/blocks/_pro/timeline-item/edit.js:96
 msgid "Line style"
 msgstr ""
 
-#: src/blocks/_pro/step-item/edit.js:78
+#: src/blocks/_pro/step-item/edit.js:79
 msgid "Step Mark"
 msgstr ""
 
-#: src/blocks/_pro/step-item/edit.js:87
+#: src/blocks/_pro/step-item/edit.js:88
 msgid "If Font Awesome tags entered, it will overrides the number."
 msgstr ""
 
@@ -2223,84 +2247,111 @@ msgstr ""
 msgid "First Dot Number"
 msgstr ""
 
-#: src/blocks/_pro/tab-item/edit.js:154
+#: src/blocks/_pro/tab-item/edit.js:170
 msgid "Tab Color Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab-item/edit.js:157
+#: src/blocks/_pro/tab-item/edit.js:173
 msgid "Tab Color"
+msgstr ""
+
+#: src/blocks/_pro/tab-item/edit.js:178
+msgid "Tab Icon Setting"
+msgstr ""
+
+#: src/blocks/_pro/tab-item/edit.js:188
+#: src/blocks/button/edit.js:641
+#: src/blocks/heading/edit.js:340
+#: src/blocks/pr-content/edit.js:219
+#: src/components/scroll-hint/index.js:118
+msgid "Before text"
+msgstr ""
+
+#: src/blocks/_pro/tab-item/edit.js:213
+#: src/blocks/button/edit.js:663
+#: src/blocks/heading/edit.js:349
+#: src/blocks/pr-content/edit.js:231
+#: src/components/scroll-hint/index.js:143
+msgid "After text"
+msgstr ""
+
+#: src/blocks/_pro/tab-item/edit.js:221
+#: src/blocks/button/edit.js:670
+#: src/blocks/icon-outer/edit.js:90
+#: src/blocks/icon/edit.js:87
+msgid "Size"
 msgstr ""
 
 #: src/blocks/_pro/tab-item/index.js:18
 msgid "Tab Item"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:36
+#: src/blocks/_pro/tab/edit.js:37
 msgid "Tab 01"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:40
+#: src/blocks/_pro/tab/edit.js:41
 msgid "Tab 02"
 msgstr ""
 
 #. %s is the tab number
-#: src/blocks/_pro/tab/edit.js:543
+#: src/blocks/_pro/tab/edit.js:606
 msgid "Tab Label [ %s ]"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:569
+#: src/blocks/_pro/tab/edit.js:756
 msgid "Tab Size Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:571
+#: src/blocks/_pro/tab/edit.js:758
 msgid "Tab Size ( Smart Phone )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:588
+#: src/blocks/_pro/tab/edit.js:775
 msgid "Tab Size ( Tablet )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:605
+#: src/blocks/_pro/tab/edit.js:792
 msgid "Tab Size ( PC )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:609
+#: src/blocks/_pro/tab/edit.js:796
 msgid "Fit to the text"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:613
+#: src/blocks/_pro/tab/edit.js:800
 msgid "Monospaced"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:622
+#: src/blocks/_pro/tab/edit.js:809
 msgid "Tab Display Options"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:624
+#: src/blocks/_pro/tab/edit.js:811
 msgid "If there are many labels or the screen width is narrow, you can adjust it here. *Tab size setting will not be effective."
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:630
+#: src/blocks/_pro/tab/edit.js:817
 msgid "Tab Display Options ( Smart Phone )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:654
+#: src/blocks/_pro/tab/edit.js:841
 msgid "Tab Display Options ( Tablet )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:678
+#: src/blocks/_pro/tab/edit.js:865
 msgid "Tab Display Options ( PC )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:685
+#: src/blocks/_pro/tab/edit.js:872
 msgid "Not set"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:689
+#: src/blocks/_pro/tab/edit.js:876
 msgid "Scroll"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:693
+#: src/blocks/_pro/tab/edit.js:880
 msgid "Wrap to 2 rows"
 msgstr ""
 
@@ -2312,33 +2363,62 @@ msgstr ""
 msgid "Line"
 msgstr ""
 
+#: src/blocks/_pro/table-of-contents-new/deprecated/1.104.0/save.js:16
 #: src/blocks/_pro/table-of-contents-new/deprecated/1.78.0/save.js:16
-#: src/blocks/_pro/table-of-contents-new/edit.js:173
-#: src/blocks/_pro/table-of-contents-new/save.js:16
+#: src/blocks/_pro/table-of-contents-new/edit.js:303
+#: src/blocks/_pro/table-of-contents-new/save.js:21
 msgid "Table of Contents"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:112
+#: src/blocks/_pro/table-of-contents-new/edit.js:172
 msgid "Note on duplicating headings"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:117
+#: src/blocks/_pro/table-of-contents-new/edit.js:177
 msgid "If you duplicate a heading, the table of contents block will not work properly, please reassign the ID."
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:144
+#: src/blocks/_pro/table-of-contents-new/edit.js:185
+msgid "Heading Levels"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:190
+msgid "Global heading level settings:"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:195
+msgid "VK Blocks Settings"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:199
+msgid "Use custom heading levels"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:214
+msgid "Using custom heading levels for this block."
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:218
+msgid "Using global heading levels settings."
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:232
+msgid "Include Headings Up To:"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:274
 msgid "No frame"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:151
+#: src/blocks/_pro/table-of-contents-new/edit.js:281
 msgid "Default Display Status"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:159
+#: src/blocks/_pro/table-of-contents-new/edit.js:289
 msgid "OPEN"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:163
+#: src/blocks/_pro/table-of-contents-new/edit.js:293
 msgid "CLOSE"
 msgstr ""
 
@@ -2376,24 +2456,24 @@ msgstr ""
 msgid "This block will not be displayed because no taxonomy is selected."
 msgstr ""
 
-#: src/blocks/_pro/timeline-item/edit.js:64
+#: src/blocks/_pro/timeline-item/edit.js:65
 msgid "label"
 msgstr ""
 
-#: src/blocks/alert/edit.js:29
+#: src/blocks/alert/edit.js:31
 msgid "Icon Text"
 msgstr ""
 
-#: src/blocks/alert/edit.js:41
-#: src/blocks/heading/edit.js:255
+#: src/blocks/alert/edit.js:43
+#: src/blocks/heading/edit.js:256
 msgid "Style Settings"
 msgstr ""
 
-#: src/blocks/alert/edit.js:43
+#: src/blocks/alert/edit.js:45
 msgid "Alert Style"
 msgstr ""
 
-#: src/blocks/alert/edit.js:53
+#: src/blocks/alert/edit.js:55
 #: src/blocks/alert/variations.js:16
 #: src/blocks/button/edit.js:566
 #: src/blocks/pr-content/edit.js:171
@@ -2401,14 +2481,14 @@ msgstr ""
 msgid "Success"
 msgstr ""
 
-#: src/blocks/alert/edit.js:57
+#: src/blocks/alert/edit.js:59
 #: src/blocks/button/edit.js:570
 #: src/blocks/pr-content/edit.js:175
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:480
 msgid "Info"
 msgstr ""
 
-#: src/blocks/alert/edit.js:61
+#: src/blocks/alert/edit.js:63
 #: src/blocks/alert/variations.js:57
 #: src/blocks/button/edit.js:574
 #: src/blocks/pr-content/edit.js:179
@@ -2416,12 +2496,20 @@ msgstr ""
 msgid "Warning"
 msgstr ""
 
-#: src/blocks/alert/edit.js:65
+#: src/blocks/alert/edit.js:67
 #: src/blocks/alert/variations.js:76
 #: src/blocks/button/edit.js:578
 #: src/blocks/pr-content/edit.js:183
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:492
 msgid "Danger"
+msgstr ""
+
+#: src/blocks/alert/edit.js:86
+msgid "Mobile Icon Position"
+msgstr ""
+
+#: src/blocks/alert/edit.js:96
+msgid "Left (Default)"
 msgstr ""
 
 #: src/blocks/alert/variations.js:10
@@ -2488,120 +2576,120 @@ msgstr ""
 msgid "Archive title tag"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:142
+#: src/blocks/balloon/edit.js:143
 msgid "Image Border"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:145
+#: src/blocks/balloon/edit.js:146
 msgid "Add border to image"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:153
+#: src/blocks/balloon/edit.js:154
 msgid "* You can change border width on Setting > VK Blocks"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:160
+#: src/blocks/balloon/edit.js:161
 msgid "Border color of speech balloon"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:321
+#: src/blocks/balloon/edit.js:322
 msgid "Add border to balloon"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:411
+#: src/blocks/balloon/edit.js:412
 msgid "Balloon setting"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:413
-#: src/blocks/heading/edit.js:368
+#: src/blocks/balloon/edit.js:414
+#: src/blocks/heading/edit.js:369
 msgid "Position"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:416
+#: src/blocks/balloon/edit.js:417
 msgid "Please specify the layout of the balloon."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:442
+#: src/blocks/balloon/edit.js:443
 msgid "Please select the type of balloon."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:456
+#: src/blocks/balloon/edit.js:457
 msgid "Speech"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:460
+#: src/blocks/balloon/edit.js:461
 msgid "Thinking"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:465
+#: src/blocks/balloon/edit.js:466
 msgid "Image Style"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:480
+#: src/blocks/balloon/edit.js:481
 msgid "Rounded"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:484
+#: src/blocks/balloon/edit.js:485
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:406
 msgid "Circle"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:493
+#: src/blocks/balloon/edit.js:494
 msgid "100%"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:515
+#: src/blocks/balloon/edit.js:516
 msgid "Background color of speech balloon"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:526
+#: src/blocks/balloon/edit.js:527
 msgid "Default Icon Setting"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:531
+#: src/blocks/balloon/edit.js:532
 msgid "You can register default icons from Settings > VK Blocks in Admin."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:537
+#: src/blocks/balloon/edit.js:538
 msgid "Animation setting"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:539
+#: src/blocks/balloon/edit.js:540
 msgid "Please select the type of animation."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:556
+#: src/blocks/balloon/edit.js:557
 msgid "Trembling"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:597
-#: src/blocks/pr-blocks/edit.js:83
+#: src/blocks/balloon/edit.js:598
+#: src/blocks/pr-blocks/edit.js:84
 #: src/blocks/pr-content/deprecated/1.7.1/mediaUpload.js:130
 #: src/blocks/pr-content/mediaUpload.js:130
 msgid "Upload image"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:612
+#: src/blocks/balloon/edit.js:613
 msgid "Icon Name"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:205
+#: src/blocks/border-box/edit.js:207
 msgid "The margin-top of the first element and the margin-bottom of the last element in the border block will be automatically set to 0.If you want to add margins at the beginning and end, use a spacer block to specify height instead of margin."
 msgstr ""
 
-#: src/blocks/border-box/edit.js:218
+#: src/blocks/border-box/edit.js:220
 msgid "HTML element of the title"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:258
+#: src/blocks/border-box/edit.js:260
 msgid "Transparent"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:262
+#: src/blocks/border-box/edit.js:264
 msgid "White"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:51
+#: src/blocks/border-box/edit.js:52
 msgid "Please enter a title."
 msgstr ""
 
@@ -2730,26 +2818,6 @@ msgstr ""
 msgid "This color palette overrides the default color. If you want to use the default color, click the clear button."
 msgstr ""
 
-#: src/blocks/button/edit.js:641
-#: src/blocks/heading/edit.js:339
-#: src/blocks/pr-content/edit.js:219
-#: src/components/scroll-hint/index.js:118
-msgid "Before text"
-msgstr ""
-
-#: src/blocks/button/edit.js:663
-#: src/blocks/heading/edit.js:348
-#: src/blocks/pr-content/edit.js:231
-#: src/components/scroll-hint/index.js:143
-msgid "After text"
-msgstr ""
-
-#: src/blocks/button/edit.js:670
-#: src/blocks/icon-outer/edit.js:90
-#: src/blocks/icon/edit.js:87
-msgid "Size"
-msgstr ""
-
 #: src/blocks/button/edit.js:684
 msgid "Button border radius"
 msgstr ""
@@ -2839,40 +2907,40 @@ msgstr ""
 msgid "Input content"
 msgstr ""
 
-#: src/blocks/heading/edit.js:214
+#: src/blocks/heading/edit.js:215
 msgid "Input title…"
 msgstr ""
 
-#: src/blocks/heading/edit.js:229
+#: src/blocks/heading/edit.js:230
 msgid "Input sub text…"
 msgstr ""
 
-#: src/blocks/heading/edit.js:257
+#: src/blocks/heading/edit.js:258
 msgid "Heading style"
 msgstr ""
 
-#: src/blocks/heading/edit.js:276
+#: src/blocks/heading/edit.js:277
 msgid "Margin between Heading and sub text (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:293
+#: src/blocks/heading/edit.js:294
 msgid "Margin bottom size of after this block (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:310
+#: src/blocks/heading/edit.js:311
 msgid "Heading Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:357
+#: src/blocks/heading/edit.js:358
 #: src/blocks/icon/edit.js:330
 msgid "Icon Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:366
+#: src/blocks/heading/edit.js:367
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:384
+#: src/blocks/heading/edit.js:385
 msgid "Text size (rem)"
 msgstr ""
 
@@ -2904,7 +2972,7 @@ msgstr ""
 msgid "Icon Common Setting"
 msgstr ""
 
-#: src/blocks/icon/component.js:160
+#: src/blocks/icon/component.js:161
 msgid "Icon link"
 msgstr ""
 
@@ -2926,7 +2994,7 @@ msgid "Password Protected"
 msgstr ""
 
 #: src/blocks/page-content/edit.js:21
-#: src/blocks/staff/edit.js:257
+#: src/blocks/staff/edit.js:258
 msgid "Unspecified"
 msgstr ""
 
@@ -2938,47 +3006,47 @@ msgstr ""
 msgid "Select Page"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:102
+#: src/blocks/pr-blocks/edit.js:103
 msgid "PR Block1 Setting"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:121
+#: src/blocks/pr-blocks/edit.js:122
 msgid "Icon 1"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:150
+#: src/blocks/pr-blocks/edit.js:151
 msgid "When you have an image. Image is displayed with priority"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:156
+#: src/blocks/pr-blocks/edit.js:157
 msgid "PR Image 1"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:177
+#: src/blocks/pr-blocks/edit.js:178
 msgid "PR Block2 Setting"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:196
+#: src/blocks/pr-blocks/edit.js:197
 msgid "Icon 2"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:231
+#: src/blocks/pr-blocks/edit.js:232
 msgid "PR Image 2"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:252
+#: src/blocks/pr-blocks/edit.js:253
 msgid "PR Block3 Setting"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:271
+#: src/blocks/pr-blocks/edit.js:272
 msgid "Icon 3"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:300
+#: src/blocks/pr-blocks/edit.js:301
 msgid "When you have an image. Image is displayed with priority."
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:306
+#: src/blocks/pr-blocks/edit.js:307
 msgid "PR Image 3"
 msgstr ""
 
@@ -3033,23 +3101,23 @@ msgstr ""
 
 #: src/blocks/slider-item/deprecated/1.76.0/save.js:83
 #: src/blocks/slider-item/deprecated/1.94.0/save.js:90
-#: src/blocks/slider-item/save.js:91
+#: src/blocks/slider-item/save.js:92
 msgid "Slider item link"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:213
+#: src/blocks/slider-item/edit.js:214
 msgid "Vertical align"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:259
+#: src/blocks/slider-item/edit.js:260
 msgid "Background Image Size"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:266
+#: src/blocks/slider-item/edit.js:267
 msgid "cover"
 msgstr ""
 
-#: src/blocks/slider-item/edit.js:270
+#: src/blocks/slider-item/edit.js:271
 msgid "repeat"
 msgstr ""
 
@@ -3145,63 +3213,63 @@ msgstr ""
 msgid "Spacer Settings"
 msgstr ""
 
-#: src/blocks/staff/edit.js:145
+#: src/blocks/staff/edit.js:146
 msgid "Layout"
 msgstr ""
 
-#: src/blocks/staff/edit.js:158
+#: src/blocks/staff/edit.js:159
 msgid "Image left"
 msgstr ""
 
-#: src/blocks/staff/edit.js:163
+#: src/blocks/staff/edit.js:164
 msgid "Image border"
 msgstr ""
 
-#: src/blocks/staff/edit.js:182
+#: src/blocks/staff/edit.js:183
 msgid "Alt text"
 msgstr ""
 
-#: src/blocks/staff/edit.js:184
+#: src/blocks/staff/edit.js:185
 msgid "Set the alt text for profile image"
 msgstr ""
 
-#: src/blocks/staff/edit.js:202
+#: src/blocks/staff/edit.js:203
 msgid "Staff name"
 msgstr ""
 
-#: src/blocks/staff/edit.js:212
+#: src/blocks/staff/edit.js:213
 msgid "Name caption"
 msgstr ""
 
-#: src/blocks/staff/edit.js:251
+#: src/blocks/staff/edit.js:252
 msgid "Heading Font"
 msgstr ""
 
-#: src/blocks/staff/edit.js:253
+#: src/blocks/staff/edit.js:254
 msgid "Font"
 msgstr ""
 
-#: src/blocks/staff/edit.js:261
+#: src/blocks/staff/edit.js:262
 msgid "minchoBody"
 msgstr ""
 
-#: src/blocks/staff/edit.js:284
+#: src/blocks/staff/edit.js:285
 msgid "Your Name"
 msgstr ""
 
-#: src/blocks/staff/edit.js:296
+#: src/blocks/staff/edit.js:297
 msgid "Caption"
 msgstr ""
 
-#: src/blocks/staff/edit.js:308
+#: src/blocks/staff/edit.js:309
 msgid "Role position"
 msgstr ""
 
-#: src/blocks/staff/edit.js:321
+#: src/blocks/staff/edit.js:322
 msgid "Profile title"
 msgstr ""
 
-#: src/blocks/staff/edit.js:337
+#: src/blocks/staff/edit.js:338
 msgid "Profile text"
 msgstr ""
 
@@ -4131,6 +4199,18 @@ msgstr ""
 
 #: inc/vk-blocks-pro/admin-pro/admin-pro.php:14
 msgid "FAQ Setting"
+msgstr ""
+
+#: inc/vk-blocks-pro/blocks/class-vk-blocks-toc.php:79
+msgid "Table of Contents Settings"
+msgstr ""
+
+#: inc/vk-blocks-pro/blocks/class-vk-blocks-toc.php:86
+msgid "Heading Levels to Include"
+msgstr ""
+
+#: inc/vk-blocks-pro/blocks/class-vk-blocks-toc.php:97
+msgid "Configure which heading levels should be included in the table of contents."
 msgstr ""
 
 #: inc/vk-blocks/admin/admin.php:83

@@ -5,32 +5,49 @@ import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import classnames from 'classnames';
 import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
-const renderTitle = (level, contents, tStyle, headingStyle, headingId, hasToc) => {
-	const headingProps = {
-		style: tStyle,
-		className: headingStyle,
-		...(headingId && { id: headingId }),
-		...(hasToc && { 'data-vk-toc-heading': true })
-	};
-
+const renderTitle = (level, contents, tStyle, headingStyle) => {
 	switch (level) {
 		case 1:
-			return <h1 {...headingProps}>{contents}</h1>;
+			return (
+				<h1 style={tStyle} className={headingStyle}>
+					{contents}
+				</h1>
+			);
 		case 2:
-			return <h2 {...headingProps}>{contents}</h2>;
+			return (
+				<h2 style={tStyle} className={headingStyle}>
+					{contents}
+				</h2>
+			);
 		case 3:
-			return <h3 {...headingProps}>{contents}</h3>;
+			return (
+				<h3 style={tStyle} className={headingStyle}>
+					{contents}
+				</h3>
+			);
 		case 4:
-			return <h4 {...headingProps}>{contents}</h4>;
+			return (
+				<h4 style={tStyle} className={headingStyle}>
+					{contents}
+				</h4>
+			);
 		case 5:
-			return <h5 {...headingProps}>{contents}</h5>;
+			return (
+				<h5 style={tStyle} className={headingStyle}>
+					{contents}
+				</h5>
+			);
 		case 6:
-			return <h6 {...headingProps}>{contents}</h6>;
+			return (
+				<h6 style={tStyle} className={headingStyle}>
+					{contents}
+				</h6>
+			);
 	}
 };
 
 export default function save(props) {
-	const { attributes, clientId } = props;
+	const { attributes } = props;
 	const {
 		level,
 		align,
@@ -47,7 +64,6 @@ export default function save(props) {
 		fontAwesomeIconBefore,
 		fontAwesomeIconAfter,
 		fontAwesomeIconColor,
-		anchor,
 	} = attributes;
 	const containerClass = `vk_heading vk_heading-style-${titleStyle}`;
 
@@ -185,13 +201,10 @@ export default function save(props) {
 		className: ``,
 	});
 
-	// 見出しのIDを生成
-	const headingId = anchor || (clientId ? `vk-htags-${clientId}` : null);
-
 	return (
 		<div {...blockProps}>
 			<div className={containerClass} style={cStyle}>
-				{renderTitle(level, titleContent, tStyle, headingStyle, headingId, !!headingId)}
+				{renderTitle(level, titleContent, tStyle, headingStyle)}
 				{subtextContent}
 			</div>
 		</div>

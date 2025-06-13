@@ -31,6 +31,7 @@ import AdminCustomCss from '@vkblocks/admin/custom-css';
 import BlockStyleManager from '@vkblocks/admin/block-style-manager';
 import AdminImportExport from '@vkblocks/admin/import-export';
 import { SaveButton } from '@vkblocks/admin/save-button';
+import AdminToc from '@vkblocks/admin/toc';
 /*globals vkBlocksObject */
 
 export const AdminContext = createContext();
@@ -74,6 +75,7 @@ export default function VKBlocksAdmin() {
 				<AdminLoadSeparate />
 				{vkBlocksObject.isPro && <AdminNewFaq />}
 				{vkBlocksObject.isPro && <AdminBreadcrumb />}
+				{vkBlocksObject.isPro && <AdminToc />}
 				{vkBlocksObject.isPro && <AdminCustomCss />}
 				<BlockManager />
 				<BlockStyleManager />

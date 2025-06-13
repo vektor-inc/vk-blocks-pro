@@ -188,11 +188,11 @@ export default function TOCEdit(props) {
 					<BaseControl>
 						<p style={{ marginBottom: '1em' }}>
 							{__(
-								'To configure global heading levels, visit',
+								'Global heading level settings:',
 								'vk-blocks-pro'
 							)}{' '}
 							<ExternalLink href="/wp-admin/options-general.php?page=vk_blocks_options#toc-setting">
-								{__('VK Blocks Settings', 'vk-blocks-pro')}
+								{__('VK Blocks Setting', 'vk-blocks-pro')}
 							</ExternalLink>
 						</p>
 						<ToggleControl

@@ -110,6 +110,7 @@ e.g.
 
 [ Add function ][ Tab (Pro) ] Added support for inserting FontAwesome icons into tab labels.
 [ Add function ][ Table of Contents (Pro) ] Added heading level control (global and per block).
+[ Add function ][ Table of Contents (Pro) ] Added the ability to exclude individual headings.
 [ Add function ][ Grid Column Card (Pro) ] Added the ability to select the border style from "Solid", "Dashed", or "Dotted"
 [ Add function ][ Alert ] Added option to position the icon at the top on mobile devices.
 [ Specification change ][ Blog Card (Pro) ] Changed the specification to not generate a blog card for URLs where is_embeddable is false

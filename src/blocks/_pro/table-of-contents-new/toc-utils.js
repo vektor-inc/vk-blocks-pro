@@ -36,7 +36,11 @@ export const getAllHeadings = (
 			isAllowedBlock(block.name, headingBlocks) &&
 			allowedLevels.includes(block.attributes.level)
 		) {
-			acc.push(block);
+			// 除外リストに含まれていない見出しのみ追加
+			const headingId = block.attributes.anchor || `vk-htags-${block.clientId}`;
+			if (!blockAttributes.excludedHeadings?.includes(headingId)) {
+				acc.push(block);
+			}
 		}
 		if (isAllowedBlock(block.name, hasInnerBlocks) && block.innerBlocks) {
 			acc.push(

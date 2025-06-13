@@ -4,14 +4,14 @@ import { __ } from '@wordpress/i18n';
 
 export default function save(props) {
 	const { attributes } = props;
-	const { style, open, renderHtml, useCustomLevels, customHeadingLevels } =
-		attributes;
+	const { style, open, renderHtml, useCustomLevels, customHeadingLevels, excludedHeadings } = attributes;
 	const blockProps = useBlockProps.save({
 		className: `vk_tableOfContents vk_tableOfContents-style-${style} tabs`,
 		'data-use-custom-levels': useCustomLevels ? 'true' : 'false',
-		'data-custom-levels': useCustomLevels
-			? customHeadingLevels.join(',')
+		'data-toc-heading-levels': useCustomLevels
+			? JSON.stringify(customHeadingLevels)
 			: '',
+		'data-excluded-headings': JSON.stringify(excludedHeadings || []),
 	});
 	/* eslint jsx-a11y/label-has-associated-control: 0 */
 	return (

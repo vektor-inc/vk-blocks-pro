@@ -5,10 +5,11 @@ import {
 	BaseControl,
 	ToggleControl,
 	ExternalLink,
+	TextControl,
 } from '@wordpress/components';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { dispatch, select, useSelect } from '@wordpress/data';
-import { useEffect } from '@wordpress/element';
+import { useEffect, useState } from '@wordpress/element';
 import parse from 'html-react-parser';
 import { isAllowedBlock, returnHtml, getAllHeadings } from './toc-utils';
 
@@ -48,8 +49,7 @@ const useTocSettings = () => {
 
 export default function TOCEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
-	const { style, open, renderHtml, useCustomLevels, customHeadingLevels } =
-		attributes;
+	const { style, open, renderHtml, useCustomLevels, customHeadingLevels, excludedHeadings } = attributes;
 	const blockProps = useBlockProps({
 		className: `vk_tableOfContents vk_tableOfContents-style-${style} tabs`,
 	});
@@ -57,6 +57,11 @@ export default function TOCEdit(props) {
 	const blocks = useCurrentBlocks();
 	const findBlocks = useBlocksByName('vk-blocks/table-of-contents-new');
 	const tocSettings = useTocSettings();
+
+	// 見出しブロックの一覧を取得
+	const headingBlocks = useBlocksByName('vk-blocks/heading');
+	const coreHeadingBlocks = useBlocksByName('core/heading');
+	const allHeadings = [...headingBlocks, ...coreHeadingBlocks];
 
 	// 再帰的にブロックを処理してアンカーを設定する関数
 	const processBlocksRecursively = (
@@ -118,7 +123,7 @@ export default function TOCEdit(props) {
 			blocks,
 			headingBlocks,
 			hasInnerBlocks,
-			{ useCustomLevels, customHeadingLevels }
+			{ useCustomLevels, customHeadingLevels, excludedHeadings }
 		);
 
 		const allHeadingsSorted = allHeadings.map((heading) => {
@@ -143,7 +148,17 @@ export default function TOCEdit(props) {
 		updateBlockAttributes(clientId, {
 			renderHtml: render,
 		});
-	}, [blocks, tocSettings, useCustomLevels, customHeadingLevels]);
+	}, [blocks, tocSettings, useCustomLevels, customHeadingLevels, excludedHeadings]);
+
+	// 見出しの順番を取得する関数
+	const getHeadingOrder = (heading) => {
+		const blocksOrder = select('core/block-editor').getBlockOrder();
+		const index = blocksOrder.indexOf(heading.clientId);
+		const rootIndex = blocksOrder.indexOf(
+			select('core/block-editor').getBlockRootClientId(heading.clientId)
+		);
+		return index >= 0 ? index : rootIndex >= 0 ? rootIndex : Infinity;
+	};
 
 	const handleMaxLevelChange = (maxLevel) => {
 		const levels = ['h2'];
@@ -249,6 +264,43 @@ export default function TOCEdit(props) {
 								/>
 							</>
 						)}
+					</BaseControl>
+				</PanelBody>
+				<PanelBody
+					title={__('Exclude Headings', 'vk-blocks-pro')}
+					initialOpen={false}
+				>
+					<BaseControl>
+						<p style={{ marginBottom: '1em' }}>
+							{__(
+								'Select headings to exclude from the table of contents.',
+								'vk-blocks-pro'
+							)}
+						</p>
+						{allHeadings
+							.filter(heading => {
+								const headingLevel = heading.attributes.level || 2;
+								return headingLevel !== 1; // h1を除外
+							})
+							.sort((a, b) => getHeadingOrder(a) - getHeadingOrder(b))
+							.map((heading) => {
+								const headingId = heading.attributes.anchor || `vk-htags-${heading.clientId}`;
+								const headingText = heading.attributes.title || heading.attributes.content;
+								const isExcluded = excludedHeadings.includes(headingId);
+								return (
+									<ToggleControl
+										key={headingId}
+										label={`${headingText} (${headingId})`}
+										checked={isExcluded}
+										onChange={(value) => {
+											const newExcludedHeadings = value
+												? [...excludedHeadings, headingId]
+												: excludedHeadings.filter(id => id !== headingId);
+											setAttributes({ excludedHeadings: newExcludedHeadings });
+										}}
+									/>
+								);
+							})}
 					</BaseControl>
 				</PanelBody>
 				<PanelBody

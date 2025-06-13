@@ -2,58 +2,44 @@ export const isAllowedBlock = (name, allowedBlocks) => {
 	return allowedBlocks.includes(name);
 };
 
-export const getAllHeadings = (
-	blocks,
-	headingBlocks,
-	hasInnerBlocks,
-	blockAttributes = {}
-) => {
-	// ブロック独自の設定を優先、なければグローバル設定を使用
-	let allowedLevels;
-	if (
-		blockAttributes.useCustomLevels &&
-		blockAttributes.customHeadingLevels?.length > 0
-	) {
-		allowedLevels = blockAttributes.customHeadingLevels.map((level) =>
-			parseInt(level.replace('h', ''))
-		);
-	} else {
-		// グローバル設定を取得
-		const globalSettings = window.vkBlocksOptions?.toc_heading_levels || [
-			'h2',
-			'h3',
-			'h4',
-			'h5',
-			'h6',
-		];
-		allowedLevels = globalSettings.map((level) =>
-			parseInt(level.replace('h', ''))
-		);
-	}
+export const getAllHeadings = (blocks, headingBlocks, hasInnerBlocks, options) => {
+	const { useCustomLevels, customHeadingLevels, excludedHeadings = [] } = options;
+	const headings = [];
 
-	return blocks.reduce((acc, block) => {
-		if (
-			isAllowedBlock(block.name, headingBlocks) &&
-			allowedLevels.includes(block.attributes.level)
-		) {
-			// 除外リストに含まれていない見出しのみ追加
-			const headingId = block.attributes.anchor || `vk-htags-${block.clientId}`;
-			if (!blockAttributes.excludedHeadings?.includes(headingId)) {
-				acc.push(block);
+	const processBlock = (block) => {
+		if (isAllowedBlock(block.name, headingBlocks)) {
+			const level = block.attributes.level || 2;
+			const headingId = block.name === 'vk-blocks/heading' 
+				? block.attributes.anchor || `vk-htags-${block.clientId}`
+				: block.attributes.anchor || `vk-htags-${block.clientId}`;
+
+			// 除外設定のチェック
+			const isExcluded = excludedHeadings?.includes(headingId) || false;
+
+			// レベル設定のチェック
+			const allowedLevels = useCustomLevels
+				? customHeadingLevels || ['h2', 'h3', 'h4', 'h5', 'h6']
+				: ['h2', 'h3', 'h4', 'h5', 'h6'];
+			const isAllowedLevel = allowedLevels.includes(`h${level}`);
+
+			if (!isExcluded && isAllowedLevel) {
+				headings.push({
+					clientId: block.clientId,
+					attributes: {
+						...block.attributes,
+						anchor: headingId
+					}
+				});
 			}
 		}
+
 		if (isAllowedBlock(block.name, hasInnerBlocks) && block.innerBlocks) {
-			acc.push(
-				...getAllHeadings(
-					block.innerBlocks,
-					headingBlocks,
-					hasInnerBlocks,
-					blockAttributes
-				)
-			);
+			block.innerBlocks.forEach(processBlock);
 		}
-		return acc;
-	}, []);
+	};
+
+	blocks.forEach(processBlock);
+	return headings;
 };
 
 export const returnHtml = (sources) => {

@@ -48,7 +48,14 @@ const useTocSettings = () => {
 
 export default function TOCEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
-	const { style, open, renderHtml, useCustomLevels, customHeadingLevels, excludedHeadings } = attributes;
+	const {
+		style,
+		open,
+		renderHtml,
+		useCustomLevels,
+		customHeadingLevels,
+		excludedHeadings,
+	} = attributes;
 	const blockProps = useBlockProps({
 		className: `vk_tableOfContents vk_tableOfContents-style-${style} tabs`,
 	});
@@ -147,19 +154,27 @@ export default function TOCEdit(props) {
 		updateBlockAttributes(clientId, {
 			renderHtml: render,
 		});
-	}, [blocks, tocSettings, useCustomLevels, customHeadingLevels, excludedHeadings]);
+	}, [
+		blocks,
+		tocSettings,
+		useCustomLevels,
+		customHeadingLevels,
+		excludedHeadings,
+	]);
 
 	// 見出しの順番を取得する関数
 	const getHeadingOrder = (heading) => {
 		const blocksOrder = select('core/block-editor').getBlockOrder();
 		const index = blocksOrder.indexOf(heading.clientId);
-		const rootIndex = blocksOrder.indexOf(
-			select('core/block-editor').getBlockRootClientId(heading.clientId)
-		);
 
 		if (index >= 0) {
 			return index;
 		}
+
+		const rootIndex = blocksOrder.indexOf(
+			select('core/block-editor').getBlockRootClientId(heading.clientId)
+		);
+
 		if (rootIndex >= 0) {
 			return rootIndex;
 		}
@@ -329,15 +344,24 @@ export default function TOCEdit(props) {
 							)}
 						</p>
 						{allHeadings
-							.filter(heading => {
-								const headingLevel = heading.attributes.level || 2;
+							.filter((heading) => {
+								const headingLevel =
+									heading.attributes.level || 2;
 								return headingLevel !== 1; // h1を除外
 							})
-							.sort((a, b) => getHeadingOrder(a) - getHeadingOrder(b))
+							.sort(
+								(a, b) =>
+									getHeadingOrder(a) - getHeadingOrder(b)
+							)
 							.map((heading) => {
-								const headingId = heading.attributes.anchor || `vk-htags-${heading.clientId}`;
-								const headingText = heading.attributes.title || heading.attributes.content;
-								const isExcluded = excludedHeadings.includes(headingId);
+								const headingId =
+									heading.attributes.anchor ||
+									`vk-htags-${heading.clientId}`;
+								const headingText =
+									heading.attributes.title ||
+									heading.attributes.content;
+								const isExcluded =
+									excludedHeadings.includes(headingId);
 								return (
 									<ToggleControl
 										key={headingId}
@@ -345,9 +369,17 @@ export default function TOCEdit(props) {
 										checked={isExcluded}
 										onChange={(value) => {
 											const newExcludedHeadings = value
-												? [...excludedHeadings, headingId]
-												: excludedHeadings.filter(id => id !== headingId);
-											setAttributes({ excludedHeadings: newExcludedHeadings });
+												? [
+														...excludedHeadings,
+														headingId,
+													]
+												: excludedHeadings.filter(
+														(id) => id !== headingId
+													);
+											setAttributes({
+												excludedHeadings:
+													newExcludedHeadings,
+											});
 										}}
 									/>
 								);

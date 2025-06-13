@@ -6,6 +6,9 @@ export const getAllHeadings = (blocks, headingBlocks, hasInnerBlocks, options) =
 	const { useCustomLevels, customHeadingLevels, excludedHeadings = [] } = options;
 	const headings = [];
 
+	// グローバル設定を取得
+	const globalSettings = window.vkBlocksOptions?.toc_heading_levels || ['h2', 'h3', 'h4', 'h5', 'h6'];
+
 	const processBlock = (block) => {
 		if (isAllowedBlock(block.name, headingBlocks)) {
 			const level = block.attributes.level || 2;
@@ -19,7 +22,7 @@ export const getAllHeadings = (blocks, headingBlocks, hasInnerBlocks, options) =
 			// レベル設定のチェック
 			const allowedLevels = useCustomLevels
 				? customHeadingLevels || ['h2', 'h3', 'h4', 'h5', 'h6']
-				: ['h2', 'h3', 'h4', 'h5', 'h6'];
+				: globalSettings;
 			const isAllowedLevel = allowedLevels.includes(`h${level}`);
 
 			if (!isExcluded && isAllowedLevel) {

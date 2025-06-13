@@ -5,11 +5,10 @@ import {
 	BaseControl,
 	ToggleControl,
 	ExternalLink,
-	TextControl,
 } from '@wordpress/components';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { dispatch, select, useSelect } from '@wordpress/data';
-import { useEffect, useState } from '@wordpress/element';
+import { useEffect } from '@wordpress/element';
 import parse from 'html-react-parser';
 import { isAllowedBlock, returnHtml, getAllHeadings } from './toc-utils';
 

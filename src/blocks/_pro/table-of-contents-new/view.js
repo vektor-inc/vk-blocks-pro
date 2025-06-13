@@ -46,11 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			? JSON.parse(tocBlock.dataset.excludedHeadings)
 			: [];
 
-		console.log('=== TOC Debug Info ===');
-		console.log('useCustomLevels:', useCustomLevels);
-		console.log('customLevels:', customLevels);
-		console.log('excludedHeadings:', excludedHeadings);
-
 		let allowedLevels;
 		if (customLevels && customLevels.length > 0) {
 			allowedLevels = customLevels.map((l) =>
@@ -61,39 +56,19 @@ document.addEventListener('DOMContentLoaded', () => {
 			allowedLevels = window.vkBlocksTocSettings
 				?.allowedHeadingLevels || [2, 3, 4, 5, 6];
 		}
-		console.log('allowedLevels:', allowedLevels);
 
 		// 見出しを取得
 		const allHeadings = Array.from(
 			document.querySelectorAll('[data-vk-toc-heading]ng]')
 		);
 
-		console.log('All headings:', allHeadings.map(h => ({
-			id: h.id,
-			level: parseInt(h.tagName.substring(1)),
-			text: h.textContent
-		})));
-
 		const headings = allHeadings.filter((heading) => {
 			const level = parseInt(heading.tagName.substring(1));
 			const headingId = heading.id;
 			const isAllowed = allowedLevels.includes(level);
 			const isExcluded = excludedHeadings.includes(headingId);
-			console.log('Heading check:', {
-				id: headingId,
-				level,
-				isAllowed,
-				isExcluded,
-				text: heading.textContent
-			});
 			return isAllowed && !isExcluded;
 		});
-
-		console.log('Filtered headings:', headings.map(h => ({
-			id: h.id,
-			level: parseInt(h.tagName.substring(1)),
-			text: h.textContent
-		})));
 
 		// 目次HTMLを生成
 		let h2Count = 0,

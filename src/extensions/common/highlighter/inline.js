@@ -16,8 +16,28 @@ import { Popover } from '@wordpress/components';
 import {
 	highlighColor as settings,
 	highlighterOnApply,
-	getGradientDirectionByWritingMode,
 } from './index';
+
+export function getGradientDirectionByWritingMode(contentRef) {
+	if (!contentRef?.current) {
+		return '';
+	}
+	let el = contentRef.current;
+	while (el) {
+		const writingMode = window.getComputedStyle(el).writingMode;
+		if (writingMode && writingMode.startsWith('vertical')) {
+			if (writingMode === 'vertical-rl') {
+				return 'to left';
+			}
+			if (writingMode === 'vertical-lr') {
+				return 'to right';
+			}
+			return 'to left'; // デフォルトで縦書きは左
+		}
+		el = el.parentElement;
+	}
+	return ''; // 横書き
+}
 
 export function getActiveColors(value, name) {
 	const activeColorFormat = getActiveFormat(value, name);

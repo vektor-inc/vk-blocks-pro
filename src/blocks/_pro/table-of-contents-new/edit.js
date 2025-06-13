@@ -156,7 +156,14 @@ export default function TOCEdit(props) {
 		const rootIndex = blocksOrder.indexOf(
 			select('core/block-editor').getBlockRootClientId(heading.clientId)
 		);
-		return index >= 0 ? index : rootIndex >= 0 ? rootIndex : Infinity;
+
+		if (index >= 0) {
+			return index;
+		}
+		if (rootIndex >= 0) {
+			return rootIndex;
+		}
+		return Infinity;
 	};
 
 	const handleMaxLevelChange = (maxLevel) => {

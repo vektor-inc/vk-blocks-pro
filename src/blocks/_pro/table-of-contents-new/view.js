@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		const customLevels = tocBlock.dataset.tocHeadingLevels
 			? JSON.parse(tocBlock.dataset.tocHeadingLevels)
 			: null;
-		const useCustomLevels = tocBlock.dataset.useCustomLevels === 'true';
 		const excludedHeadings = tocBlock.dataset.excludedHeadings
 			? JSON.parse(tocBlock.dataset.excludedHeadings)
 			: [];

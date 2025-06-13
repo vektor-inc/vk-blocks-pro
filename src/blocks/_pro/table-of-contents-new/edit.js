@@ -54,7 +54,7 @@ export default function TOCEdit(props) {
 		renderHtml,
 		useCustomLevels,
 		customHeadingLevels,
-		excludedHeadings,
+		excludedHeadings = [],
 	} = attributes;
 	const blockProps = useBlockProps({
 		className: `vk_tableOfContents vk_tableOfContents-style-${style} tabs`,
@@ -360,8 +360,7 @@ export default function TOCEdit(props) {
 								const headingText =
 									heading.attributes.title ||
 									heading.attributes.content;
-								const isExcluded =
-									excludedHeadings.includes(headingId);
+								const isExcluded = excludedHeadings.includes(headingId);
 								return (
 									<ToggleControl
 										key={headingId}
@@ -369,16 +368,12 @@ export default function TOCEdit(props) {
 										checked={isExcluded}
 										onChange={(value) => {
 											const newExcludedHeadings = value
-												? [
-														...excludedHeadings,
-														headingId,
-													]
+												? [...excludedHeadings, headingId]
 												: excludedHeadings.filter(
 														(id) => id !== headingId
 													);
 											setAttributes({
-												excludedHeadings:
-													newExcludedHeadings,
+												excludedHeadings: newExcludedHeadings,
 											});
 										}}
 									/>

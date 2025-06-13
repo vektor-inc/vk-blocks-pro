@@ -335,14 +335,9 @@ export default function TOCEdit(props) {
 				<PanelBody
 					title={__('Exclude Headings', 'vk-blocks-pro')}
 					initialOpen={false}
+					help={__('Select headings to exclude from the table of contents.', 'vk-blocks-pro')}
 				>
 					<BaseControl>
-						<p style={{ marginBottom: '1em' }}>
-							{__(
-								'Select headings to exclude from the table of contents.',
-								'vk-blocks-pro'
-							)}
-						</p>
 						{allHeadings
 							.filter((heading) => {
 								const headingLevel =
@@ -364,7 +359,7 @@ export default function TOCEdit(props) {
 								return (
 									<ToggleControl
 										key={headingId}
-										label={`${headingText} (${headingId})`}
+										label={`${headingText}`}
 										checked={isExcluded}
 										onChange={(value) => {
 											const newExcludedHeadings = value

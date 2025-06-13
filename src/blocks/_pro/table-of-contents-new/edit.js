@@ -203,6 +203,51 @@ export default function TOCEdit(props) {
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
+					title={__('Display type', 'vk-blocks-pro')}
+					initialOpen={false}
+				>
+					<BaseControl
+						id={`vk-toc-style`}
+						label={__('Style', 'vk-blocks-pro')}
+					>
+						<SelectControl
+							value={style}
+							onChange={(value) =>
+								setAttributes({ style: value })
+							}
+							options={[
+								{
+									value: 'default',
+									label: __('Default', 'vk-blocks-pro'),
+								},
+								{
+									value: '',
+									label: __('No frame', 'vk-blocks-pro'),
+								},
+							]}
+						/>
+					</BaseControl>
+					<BaseControl
+						id={`vk_toc-displayStaus`}
+						label={__('Default Display Status', 'vk-blocks-pro')}
+					>
+						<SelectControl
+							value={open}
+							onChange={(value) => setAttributes({ open: value })}
+							options={[
+								{
+									value: 'open',
+									label: __('OPEN', 'vk-blocks-pro'),
+								},
+								{
+									value: 'close',
+									label: __('CLOSE', 'vk-blocks-pro'),
+								},
+							]}
+						/>
+					</BaseControl>
+				</PanelBody>
+				<PanelBody
 					title={__('Heading Levels', 'vk-blocks-pro')}
 					initialOpen={true}
 				>
@@ -307,51 +352,6 @@ export default function TOCEdit(props) {
 									/>
 								);
 							})}
-					</BaseControl>
-				</PanelBody>
-				<PanelBody
-					title={__('Display type', 'vk-blocks-pro')}
-					initialOpen={false}
-				>
-					<BaseControl
-						id={`vk-toc-style`}
-						label={__('Style', 'vk-blocks-pro')}
-					>
-						<SelectControl
-							value={style}
-							onChange={(value) =>
-								setAttributes({ style: value })
-							}
-							options={[
-								{
-									value: 'default',
-									label: __('Default', 'vk-blocks-pro'),
-								},
-								{
-									value: '',
-									label: __('No frame', 'vk-blocks-pro'),
-								},
-							]}
-						/>
-					</BaseControl>
-					<BaseControl
-						id={`vk_toc-displayStaus`}
-						label={__('Default Display Status', 'vk-blocks-pro')}
-					>
-						<SelectControl
-							value={open}
-							onChange={(value) => setAttributes({ open: value })}
-							options={[
-								{
-									value: 'open',
-									label: __('OPEN', 'vk-blocks-pro'),
-								},
-								{
-									value: 'close',
-									label: __('CLOSE', 'vk-blocks-pro'),
-								},
-							]}
-						/>
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>

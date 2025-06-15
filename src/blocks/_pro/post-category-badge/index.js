@@ -1,5 +1,5 @@
 /**
- * New Badge
+ * Category Badge
  *
  */
 // import React

@@ -1,3 +1,5 @@
+import { useSelect } from '@wordpress/data';
+
 export const isAllowedBlock = (name, allowedBlocks) => {
 	return allowedBlocks.includes(name);
 };
@@ -145,8 +147,30 @@ export const returnHtml = (sources) => {
 				</li>
 			`;
 			})
-			.join(''); // Arrayを結合して、1つのHTML文字列に変換
+			.join('');
 	}
 
 	return returnHtmlContent || '';
+};
+
+// 再帰的にブロックを取得する関数
+export const getAllBlocksRecursively = (blocks) => {
+	let allBlocks = [];
+	blocks.forEach((block) => {
+		allBlocks.push(block);
+		if (block.innerBlocks && block.innerBlocks.length > 0) {
+			allBlocks = allBlocks.concat(getAllBlocksRecursively(block.innerBlocks));
+		}
+	});
+	return allBlocks;
+};
+
+// すべての見出しブロックを取得する関数
+export const getAllHeadingBlocks = (blocks) => {
+	const allBlocks = getAllBlocksRecursively(blocks);
+	return allBlocks.filter(
+		(block) =>
+			block.name === 'vk-blocks/heading' ||
+			block.name === 'core/heading'
+	);
 };

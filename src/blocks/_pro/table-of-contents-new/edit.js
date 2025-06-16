@@ -7,44 +7,11 @@ import {
 	ExternalLink,
 } from '@wordpress/components';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
-import { dispatch, select, useSelect } from '@wordpress/data';
+import { dispatch, select } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
 import parse from 'html-react-parser';
 import { isAllowedBlock, returnHtml, getAllHeadings } from './toc-utils';
-
-const useCurrentBlocks = () => {
-	return useSelect(
-		(select) => select('core/block-editor').getBlocks(),
-		[] // 固定のセレクションなので空の依存配列でOK
-	);
-};
-
-const useBlocksByName = (blockName) => {
-	return useSelect(
-		(select) => {
-			const { getBlocks } = select('core/block-editor');
-			return getBlocks().filter((block) => block.name === blockName);
-		},
-		[blockName] // blockNameが変わったときだけ再評価
-	);
-};
-
-// 設定の変更を監視するカスタムフック
-const useTocSettings = () => {
-	return useSelect((select) => {
-		const { getEntityRecord } = select('core');
-		const settings = getEntityRecord('root', 'site');
-		return (
-			settings?.vk_blocks_options?.toc_heading_levels || [
-				'h2',
-				'h3',
-				'h4',
-				'h5',
-				'h6',
-			]
-		);
-	}, []);
-};
+import { useCurrentBlocks, useBlocksByName, useAllHeadingBlocks, useTocSettings } from './toc-hooks';
 
 export default function TOCEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -65,9 +32,7 @@ export default function TOCEdit(props) {
 	const tocSettings = useTocSettings();
 
 	// 見出しブロックの一覧を取得
-	const headingBlocks = useBlocksByName('vk-blocks/heading');
-	const coreHeadingBlocks = useBlocksByName('core/heading');
-	const allHeadings = [...headingBlocks, ...coreHeadingBlocks];
+	const allHeadings = useAllHeadingBlocks();
 
 	// 再帰的にブロックを処理してアンカーを設定する関数
 	const processBlocksRecursively = (
@@ -359,7 +324,9 @@ export default function TOCEdit(props) {
 								return (
 									<ToggleControl
 										key={headingId}
-										label={`${headingText}`}
+										label={
+											<span dangerouslySetInnerHTML={{ __html: headingText }} />
+										}
 										checked={isExcluded}
 										onChange={(value) => {
 											const newExcludedHeadings = value

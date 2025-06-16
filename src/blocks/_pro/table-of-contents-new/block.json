@@ -31,6 +31,10 @@
 		"useCustomLevels": {
 			"type": "boolean",
 			"default": false
+		},
+		"excludedHeadings": {
+			"type": "array",
+			"default": []
 		}
 	},
 	"supports": {

@@ -111,6 +111,7 @@ e.g.
 [ Add function ][ Core Post title ] Added top and bottom margin settings to the toolbar.
 [ Add function ][ Tab (Pro) ] Added support for inserting FontAwesome icons into tab labels.
 [ Add function ][ Table of Contents (Pro) ] Added heading level control (global and per block).
+[ Add function ][ Table of Contents (Pro) ] Added the ability to exclude individual headings.
 [ Add function ][ Grid Column Card (Pro) ] Added the ability to select the border style from "Solid", "Dashed", or "Dotted"
 [ Add function ][ Alert ] Added option to position the icon at the top on mobile devices.
 [ Add function ][ Classic FAQ ] Added support for converting Classic FAQ block to new FAQ block from the toolbar.

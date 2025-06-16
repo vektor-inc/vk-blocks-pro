@@ -41,7 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		const customLevels = tocBlock.dataset.tocHeadingLevels
 			? JSON.parse(tocBlock.dataset.tocHeadingLevels)
 			: null;
-		const useCustomLevels = tocBlock.dataset.useCustomLevels === 'true';
+		const excludedHeadings = tocBlock.dataset.excludedHeadings
+			? JSON.parse(tocBlock.dataset.excludedHeadings)
+			: [];
 
 		let allowedLevels;
 		if (customLevels && customLevels.length > 0) {
@@ -54,76 +56,71 @@ document.addEventListener('DOMContentLoaded', () => {
 				?.allowedHeadingLevels || [2, 3, 4, 5, 6];
 		}
 
-		// useCustomLevelsがfalseのときだけulを書き換える
-		if (!useCustomLevels) {
-			// 見出しを取得
-			const headings = Array.from(
-				document.querySelectorAll('[data-vk-toc-heading]')
-			).filter((heading) => {
+		// 見出しを取得
+		const allHeadings = Array.from(
+			document.querySelectorAll('[data-vk-toc-heading]ng]')
+		);
+
+		const headings = allHeadings.filter((heading) => {
+			const level = parseInt(heading.tagName.substring(1));
+			const headingId = heading.id;
+			const isAllowed = allowedLevels.includes(level);
+			const isExcluded = excludedHeadings.includes(headingId);
+			return isAllowed && !isExcluded;
+		});
+
+		// 目次HTMLを生成
+		let h2Count = 0,
+			h3Count = 0,
+			h4Count = 0,
+			h5Count = 0,
+			h6Count = 0;
+		const tocHtml = headings
+			.map((heading) => {
 				const level = parseInt(heading.tagName.substring(1));
-				return allowedLevels.includes(level);
-			});
-
-			// 見出しにIDがなければ付与
-			headings.forEach((heading) => {
-				if (!heading.id) {
-					heading.id = `vk-htags-${Math.random().toString(36).substring(2, 11)}`;
+				let number;
+				if (level === 2) {
+					h2Count++;
+					h3Count = 0;
+					h4Count = 0;
+					h5Count = 0;
+					h6Count = 0;
+					number = h2Count;
+				} else if (level === 3) {
+					h3Count++;
+					h4Count = 0;
+					h5Count = 0;
+					h6Count = 0;
+					number = `${h2Count}.${h3Count}`;
+				} else if (level === 4) {
+					h4Count++;
+					h5Count = 0;
+					h6Count = 0;
+					number = `${h2Count}.${h3Count || 1}.${h4Count}`;
+				} else if (level === 5) {
+					h5Count++;
+					h6Count = 0;
+					number = `${h2Count}.${h3Count || 1}.${h4Count || 1}.${h5Count}`;
+				} else if (level === 6) {
+					h6Count++;
+					number = `${h2Count}.${h3Count || 1}.${h4Count || 1}.${h5Count || 1}.${h6Count}`;
 				}
-			});
+				const baseClass = 'vk_tableOfContents_list_item';
+				return `
+				<li class="${baseClass} ${baseClass}-h-${level}">
+					<a href="#${heading.id}" class="${baseClass}_link">
+						<span class="${baseClass}_link_preNumber">${number}. </span>
+						${heading.textContent}
+					</a>
+				</li>
+			`;
+			})
+			.join('');
 
-			// 目次HTMLを生成
-			let h2Count = 0,
-				h3Count = 0,
-				h4Count = 0,
-				h5Count = 0,
-				h6Count = 0;
-			const tocHtml = headings
-				.map((heading) => {
-					const level = parseInt(heading.tagName.substring(1));
-					let number;
-					if (level === 2) {
-						h2Count++;
-						h3Count = 0;
-						h4Count = 0;
-						h5Count = 0;
-						h6Count = 0;
-						number = h2Count;
-					} else if (level === 3) {
-						h3Count++;
-						h4Count = 0;
-						h5Count = 0;
-						h6Count = 0;
-						number = `${h2Count}.${h3Count}`;
-					} else if (level === 4) {
-						h4Count++;
-						h5Count = 0;
-						h6Count = 0;
-						number = `${h2Count}.${h3Count || 1}.${h4Count}`;
-					} else if (level === 5) {
-						h5Count++;
-						h6Count = 0;
-						number = `${h2Count}.${h3Count || 1}.${h4Count || 1}.${h5Count}`;
-					} else if (level === 6) {
-						h6Count++;
-						number = `${h2Count}.${h3Count || 1}.${h4Count || 1}.${h5Count || 1}.${h6Count}`;
-					}
-					const baseClass = 'vk_tableOfContents_list_item';
-					return `
-					<li class="${baseClass} ${baseClass}-h-${level}">
-						<a href="#${heading.id}" class="${baseClass}_link">
-							<span class="${baseClass}_link_preNumber">${number}. </span>
-							${heading.textContent}
-						</a>
-					</li>
-				`;
-				})
-				.join('');
-
-			// ulを書き換え
-			const tocList = tocBlock.querySelector('.vk_tableOfContents_list');
-			if (tocList) {
-				tocList.innerHTML = tocHtml;
-			}
+		// ulを書き換え
+		const tocList = tocBlock.querySelector('.vk_tableOfContents_list');
+		if (tocList) {
+			tocList.innerHTML = tocHtml;
 		}
 	});
 });

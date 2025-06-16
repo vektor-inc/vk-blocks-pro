@@ -33,6 +33,10 @@ const blockAttributes2 = {
 		type: 'array',
 		default: [],
 	},
+ 	excludedHeadings: {
+		type: 'array',
+		default: [],
+	},
 };
 */
 

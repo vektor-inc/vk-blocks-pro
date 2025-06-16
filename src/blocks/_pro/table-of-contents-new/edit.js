@@ -10,27 +10,39 @@ import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { dispatch, select, useSelect } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
 import parse from 'html-react-parser';
-import { isAllowedBlock, returnHtml, getAllHeadings } from './toc-utils';
+import {
+	isAllowedBlock,
+	returnHtml,
+	getAllHeadings,
+	getAllHeadingBlocks,
+} from './toc-utils';
 
-const useCurrentBlocks = () => {
-	return useSelect(
-		(select) => select('core/block-editor').getBlocks(),
-		[] // 固定のセレクションなので空の依存配列でOK
-	);
+// 現在のブロックを取得するカスタムフック
+export const useCurrentBlocks = () => {
+	return useSelect((select) => select('core/block-editor').getBlocks(), []);
 };
 
-const useBlocksByName = (blockName) => {
+// 指定された名前のブロックを取得するカスタムフック
+export const useBlocksByName = (blockName) => {
 	return useSelect(
 		(select) => {
 			const { getBlocks } = select('core/block-editor');
 			return getBlocks().filter((block) => block.name === blockName);
 		},
-		[blockName] // blockNameが変わったときだけ再評価
+		[blockName]
 	);
 };
 
+// 見出しブロックを再帰的に取得するカスタムフック
+export const useAllHeadingBlocks = () => {
+	return useSelect((select) => {
+		const { getBlocks } = select('core/block-editor');
+		return getAllHeadingBlocks(getBlocks());
+	}, []);
+};
+
 // 設定の変更を監視するカスタムフック
-const useTocSettings = () => {
+export const useTocSettings = () => {
 	return useSelect((select) => {
 		const { getEntityRecord } = select('core');
 		const settings = getEntityRecord('root', 'site');
@@ -48,8 +60,14 @@ const useTocSettings = () => {
 
 export default function TOCEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
-	const { style, open, renderHtml, useCustomLevels, customHeadingLevels } =
-		attributes;
+	const {
+		style,
+		open,
+		renderHtml,
+		useCustomLevels,
+		customHeadingLevels,
+		excludedHeadings = [],
+	} = attributes;
 	const blockProps = useBlockProps({
 		className: `vk_tableOfContents vk_tableOfContents-style-${style} tabs`,
 	});
@@ -57,6 +75,9 @@ export default function TOCEdit(props) {
 	const blocks = useCurrentBlocks();
 	const findBlocks = useBlocksByName('vk-blocks/table-of-contents-new');
 	const tocSettings = useTocSettings();
+
+	// 見出しブロックの一覧を取得
+	const allHeadings = useAllHeadingBlocks();
 
 	// 再帰的にブロックを処理してアンカーを設定する関数
 	const processBlocksRecursively = (
@@ -118,7 +139,7 @@ export default function TOCEdit(props) {
 			blocks,
 			headingBlocks,
 			hasInnerBlocks,
-			{ useCustomLevels, customHeadingLevels }
+			{ useCustomLevels, customHeadingLevels, excludedHeadings }
 		);
 
 		const allHeadingsSorted = allHeadings.map((heading) => {
@@ -143,7 +164,32 @@ export default function TOCEdit(props) {
 		updateBlockAttributes(clientId, {
 			renderHtml: render,
 		});
-	}, [blocks, tocSettings, useCustomLevels, customHeadingLevels]);
+	}, [
+		blocks,
+		tocSettings,
+		useCustomLevels,
+		customHeadingLevels,
+		excludedHeadings,
+	]);
+
+	// 見出しの順番を取得する関数
+	const getHeadingOrder = (heading) => {
+		const blocksOrder = select('core/block-editor').getBlockOrder();
+		const index = blocksOrder.indexOf(heading.clientId);
+
+		if (index >= 0) {
+			return index;
+		}
+
+		const rootIndex = blocksOrder.indexOf(
+			select('core/block-editor').getBlockRootClientId(heading.clientId)
+		);
+
+		if (rootIndex >= 0) {
+			return rootIndex;
+		}
+		return Infinity;
+	};
 
 	const handleMaxLevelChange = (maxLevel) => {
 		const levels = ['h2'];
@@ -179,6 +225,51 @@ export default function TOCEdit(props) {
 								'vk-blocks-pro'
 							)}
 						</p>
+					</BaseControl>
+				</PanelBody>
+				<PanelBody
+					title={__('Display type', 'vk-blocks-pro')}
+					initialOpen={false}
+				>
+					<BaseControl
+						id={`vk-toc-style`}
+						label={__('Style', 'vk-blocks-pro')}
+					>
+						<SelectControl
+							value={style}
+							onChange={(value) =>
+								setAttributes({ style: value })
+							}
+							options={[
+								{
+									value: 'default',
+									label: __('Default', 'vk-blocks-pro'),
+								},
+								{
+									value: '',
+									label: __('No frame', 'vk-blocks-pro'),
+								},
+							]}
+						/>
+					</BaseControl>
+					<BaseControl
+						id={`vk_toc-displayStaus`}
+						label={__('Default Display Status', 'vk-blocks-pro')}
+					>
+						<SelectControl
+							value={open}
+							onChange={(value) => setAttributes({ open: value })}
+							options={[
+								{
+									value: 'open',
+									label: __('OPEN', 'vk-blocks-pro'),
+								},
+								{
+									value: 'close',
+									label: __('CLOSE', 'vk-blocks-pro'),
+								},
+							]}
+						/>
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
@@ -252,48 +343,61 @@ export default function TOCEdit(props) {
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
-					title={__('Display type', 'vk-blocks-pro')}
+					title={__('Exclude Headings', 'vk-blocks-pro')}
 					initialOpen={false}
+					help={__(
+						'Select headings to exclude from the table of contents.',
+						'vk-blocks-pro'
+					)}
 				>
-					<BaseControl
-						id={`vk-toc-style`}
-						label={__('Style', 'vk-blocks-pro')}
-					>
-						<SelectControl
-							value={style}
-							onChange={(value) =>
-								setAttributes({ style: value })
-							}
-							options={[
-								{
-									value: 'default',
-									label: __('Default', 'vk-blocks-pro'),
-								},
-								{
-									value: '',
-									label: __('No frame', 'vk-blocks-pro'),
-								},
-							]}
-						/>
-					</BaseControl>
-					<BaseControl
-						id={`vk_toc-displayStaus`}
-						label={__('Default Display Status', 'vk-blocks-pro')}
-					>
-						<SelectControl
-							value={open}
-							onChange={(value) => setAttributes({ open: value })}
-							options={[
-								{
-									value: 'open',
-									label: __('OPEN', 'vk-blocks-pro'),
-								},
-								{
-									value: 'close',
-									label: __('CLOSE', 'vk-blocks-pro'),
-								},
-							]}
-						/>
+					<BaseControl>
+						{allHeadings
+							.filter((heading) => {
+								const headingLevel =
+									heading.attributes.level || 2;
+								return headingLevel !== 1; // h1を除外
+							})
+							.sort(
+								(a, b) =>
+									getHeadingOrder(a) - getHeadingOrder(b)
+							)
+							.map((heading) => {
+								const headingId =
+									heading.attributes.anchor ||
+									`vk-htags-${heading.clientId}`;
+								const headingText =
+									heading.attributes.title ||
+									heading.attributes.content;
+								const isExcluded =
+									excludedHeadings.includes(headingId);
+								return (
+									<ToggleControl
+										key={headingId}
+										label={
+											<span
+												dangerouslySetInnerHTML={{
+													__html: headingText,
+												}}
+											/>
+										}
+										checked={isExcluded}
+										onChange={(value) => {
+											const newExcludedHeadings = value
+												? [
+														...excludedHeadings,
+														headingId,
+													]
+												: excludedHeadings.filter(
+														(id) => id !== headingId
+													);
+											setAttributes({
+												excludedHeadings:
+													newExcludedHeadings,
+											});
+										}}
+									/>
+								);
+							})}
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>

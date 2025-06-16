@@ -1,5 +1,3 @@
-import { useSelect } from '@wordpress/data';
-
 export const isAllowedBlock = (name, allowedBlocks) => {
 	return allowedBlocks.includes(name);
 };

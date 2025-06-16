@@ -36,16 +36,14 @@ export const setColorIfUndefined = (color) => {
 //ハイライトカラーが選択されたら
 export const highlighterOnApply = ({ color, value, onChange }) => {
 	color = setColorIfUndefined(color);
+	const style = `--vk-highlighter-color: ${hex2rgba(color, alpha)};`;
 
 	onChange(
 		applyFormat(value, {
 			type: name,
 			attributes: {
 				data: color,
-				style: `background: linear-gradient(transparent 60%,${hex2rgba(
-					color,
-					alpha
-				)} 0);`,
+				style,
 			},
 		})
 	);

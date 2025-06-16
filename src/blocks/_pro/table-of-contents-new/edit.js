@@ -10,14 +10,16 @@ import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { dispatch, select, useSelect } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
 import parse from 'html-react-parser';
-import { isAllowedBlock, returnHtml, getAllHeadings, getAllHeadingBlocks } from './toc-utils';
+import {
+	isAllowedBlock,
+	returnHtml,
+	getAllHeadings,
+	getAllHeadingBlocks,
+} from './toc-utils';
 
 // 現在のブロックを取得するカスタムフック
 export const useCurrentBlocks = () => {
-	return useSelect(
-		(select) => select('core/block-editor').getBlocks(),
-		[]
-	);
+	return useSelect((select) => select('core/block-editor').getBlocks(), []);
 };
 
 // 指定された名前のブロックを取得するカスタムフック
@@ -54,7 +56,7 @@ export const useTocSettings = () => {
 			]
 		);
 	}, []);
-}; 
+};
 
 export default function TOCEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -343,7 +345,10 @@ export default function TOCEdit(props) {
 				<PanelBody
 					title={__('Exclude Headings', 'vk-blocks-pro')}
 					initialOpen={false}
-					help={__('Select headings to exclude from the table of contents.', 'vk-blocks-pro')}
+					help={__(
+						'Select headings to exclude from the table of contents.',
+						'vk-blocks-pro'
+					)}
 				>
 					<BaseControl>
 						{allHeadings
@@ -363,22 +368,31 @@ export default function TOCEdit(props) {
 								const headingText =
 									heading.attributes.title ||
 									heading.attributes.content;
-								const isExcluded = excludedHeadings.includes(headingId);
+								const isExcluded =
+									excludedHeadings.includes(headingId);
 								return (
 									<ToggleControl
 										key={headingId}
 										label={
-											<span dangerouslySetInnerHTML={{ __html: headingText }} />
+											<span
+												dangerouslySetInnerHTML={{
+													__html: headingText,
+												}}
+											/>
 										}
 										checked={isExcluded}
 										onChange={(value) => {
 											const newExcludedHeadings = value
-												? [...excludedHeadings, headingId]
+												? [
+														...excludedHeadings,
+														headingId,
+													]
 												: excludedHeadings.filter(
 														(id) => id !== headingId
 													);
 											setAttributes({
-												excludedHeadings: newExcludedHeadings,
+												excludedHeadings:
+													newExcludedHeadings,
 											});
 										}}
 									/>

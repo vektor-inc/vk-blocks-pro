@@ -2,19 +2,35 @@ export const isAllowedBlock = (name, allowedBlocks) => {
 	return allowedBlocks.includes(name);
 };
 
-export const getAllHeadings = (blocks, headingBlocks, hasInnerBlocks, options) => {
-	const { useCustomLevels, customHeadingLevels, excludedHeadings = [] } = options;
+export const getAllHeadings = (
+	blocks,
+	headingBlocks,
+	hasInnerBlocks,
+	options
+) => {
+	const {
+		useCustomLevels,
+		customHeadingLevels,
+		excludedHeadings = [],
+	} = options;
 	const headings = [];
 
 	// グローバル設定を取得
-	const globalSettings = window.vkBlocksOptions?.toc_heading_levels || ['h2', 'h3', 'h4', 'h5', 'h6'];
+	const globalSettings = window.vkBlocksOptions?.toc_heading_levels || [
+		'h2',
+		'h3',
+		'h4',
+		'h5',
+		'h6',
+	];
 
 	const processBlock = (block) => {
 		if (isAllowedBlock(block.name, headingBlocks)) {
 			const level = block.attributes.level || 2;
-			const headingId = block.name === 'vk-blocks/heading' 
-				? block.attributes.anchor || `vk-htags-${block.clientId}`
-				: block.attributes.anchor || `vk-htags-${block.clientId}`;
+			const headingId =
+				block.name === 'vk-blocks/heading'
+					? block.attributes.anchor || `vk-htags-${block.clientId}`
+					: block.attributes.anchor || `vk-htags-${block.clientId}`;
 
 			// 除外設定のチェック
 			const isExcluded = excludedHeadings?.includes(headingId) || false;
@@ -30,8 +46,8 @@ export const getAllHeadings = (blocks, headingBlocks, hasInnerBlocks, options) =
 					clientId: block.clientId,
 					attributes: {
 						...block.attributes,
-						anchor: headingId
-					}
+						anchor: headingId,
+					},
 				});
 			}
 		}
@@ -157,7 +173,9 @@ export const getAllBlocksRecursively = (blocks) => {
 	blocks.forEach((block) => {
 		allBlocks.push(block);
 		if (block.innerBlocks && block.innerBlocks.length > 0) {
-			allBlocks = allBlocks.concat(getAllBlocksRecursively(block.innerBlocks));
+			allBlocks = allBlocks.concat(
+				getAllBlocksRecursively(block.innerBlocks)
+			);
 		}
 	});
 	return allBlocks;
@@ -168,7 +186,6 @@ export const getAllHeadingBlocks = (blocks) => {
 	const allBlocks = getAllBlocksRecursively(blocks);
 	return allBlocks.filter(
 		(block) =>
-			block.name === 'vk-blocks/heading' ||
-			block.name === 'core/heading'
+			block.name === 'vk-blocks/heading' || block.name === 'core/heading'
 	);
 };

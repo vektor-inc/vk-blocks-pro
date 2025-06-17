@@ -2,22 +2,12 @@
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { applyFormat, getActiveFormat } from '@wordpress/rich-text';
+import { applyFormat } from '@wordpress/rich-text';
 import hex2rgba from '@vkblocks/utils/hex-to-rgba';
 
 export const name = 'vk-blocks/highlighter';
 export const alpha = 0.7;
 export const defaultColor = '#fffd6b';
-
-export const highlighColor = {
-	title: __('Highlighter', 'vk-blocks-pro'),
-	tagName: 'span',
-	className: 'vk_highlighter',
-	attributes: {
-		data: 'data-color',
-		style: 'style',
-	},
-};
 
 // 色が指定されていなかったらデフォルトカラーを指定する
 export const setColorIfUndefined = (color) => {
@@ -43,12 +33,12 @@ export const highlighterOnApply = ({ color, value, onChange }) => {
 	);
 };
 
-export function getActiveColors(value, name) {
-	const activeColorFormat = getActiveFormat(value, name);
-
-	if (!activeColorFormat) {
-		return undefined;
-	}
-
-	return activeColorFormat.attributes.data;
-}
+export const highlighColor = {
+	title: __('Highlighter', 'vk-blocks-pro'),
+	tagName: 'span',
+	className: 'vk_highlighter',
+	attributes: {
+		data: 'data-color',
+		style: 'style',
+	},
+};

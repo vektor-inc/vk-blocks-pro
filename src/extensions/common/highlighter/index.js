@@ -1,7 +1,6 @@
 /**
  * WordPress dependencies
  */
-import { __ } from '@wordpress/i18n';
 import { useCallback, useState } from '@wordpress/element';
 import { registerFormatType, getActiveFormat } from '@wordpress/rich-text';
 import {
@@ -14,11 +13,22 @@ import { Icon } from '@wordpress/components';
  * Internal dependencies
  */
 import { ReactComponent as IconSVG } from './icon.svg';
-import { default as InlineColorUI } from './inline';
-import { name, alpha, highlighterOnApply, highlighColor } from './common';
 import hex2rgba from '@vkblocks/utils/hex-to-rgba';
+import { default as InlineColorUI } from './inline';
+import {
+	name,
+	alpha,
+	highlighColor as settings,
+	highlighterOnApply,
+} from './common';
 
-function HighlighterEdit({ value, onChange, isActive, contentRef }) {
+function HighlighterEdit({
+	value,
+	onChange,
+	isActive,
+	activeAttributes,
+	contentRef,
+}) {
 	const shortcutType = 'primary';
 	const shortcutChar = 'h';
 
@@ -55,7 +65,7 @@ function HighlighterEdit({ value, onChange, isActive, contentRef }) {
 				onUse={() => setIsAddingColor(true)}
 			/>
 			<RichTextToolbarButton
-				title={__('Highlighter', 'vk-blocks-pro')}
+				title={settings.title}
 				onClick={() => {
 					if (heightlightColor === undefined) {
 						// set default color on initial
@@ -81,18 +91,21 @@ function HighlighterEdit({ value, onChange, isActive, contentRef }) {
 			{isAddingColor && (
 				<InlineColorUI
 					name={name}
+					onClose={disableIsAddingColor}
+					activeAttributes={activeAttributes}
 					value={value}
 					onChange={onChange}
 					contentRef={contentRef}
 					setIsAddingColor={setIsAddingColor}
-					onClose={disableIsAddingColor}
 				/>
 			)}
 		</>
 	);
 }
 
-registerFormatType(name, {
-	...highlighColor,
+const highlighColor = {
+	...settings,
 	edit: HighlighterEdit,
-});
+};
+
+registerFormatType(name, highlighColor);

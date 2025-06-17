@@ -13,7 +13,7 @@ import { Popover } from '@wordpress/components';
 /**
  * Internal dependencies
  */
-import { highlighterOnApply, highlighColor as settings } from './common';
+import { highlighColor as settings, highlighterOnApply } from './common';
 
 export function getGradientDirectionByWritingMode(contentRef) {
 	if (!contentRef?.current) {

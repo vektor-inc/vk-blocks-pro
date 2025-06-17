@@ -121,6 +121,7 @@ e.g.
 [ Bug Fix ] Fixed an issue where Japanese characters in custom color names in block themes caused class names to break, preventing colors from being applied.
 [ Bug Fix ][ Category Badge (Pro) ] Fixed missing badge in Query Loop when no category or term was selected.
 [ Bug Fix ][ Slider Item ] Reset margin-block-start by core.
+[ Bug Fix ][ Highlighter ] Resolved circular dependency issue.
 
 = 1.104.0 =
 [ Specification change / Bugfix ][ Grid Column Card (Pro) ] Removed Edit mode — only the selected item block is now editable.

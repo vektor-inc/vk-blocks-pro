@@ -13,7 +13,7 @@ import { Popover } from '@wordpress/components';
 /**
  * Internal dependencies
  */
-import { name, highlighterOnApply } from './common';
+import { highlighterOnApply } from './common';
 
 const settings = {
 	tagName: 'span',

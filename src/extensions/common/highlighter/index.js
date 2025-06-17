@@ -3,10 +3,7 @@
  */
 import { __ } from '@wordpress/i18n';
 import { useCallback, useState } from '@wordpress/element';
-import {
-	registerFormatType,
-	getActiveFormat,
-} from '@wordpress/rich-text';
+import { registerFormatType, getActiveFormat } from '@wordpress/rich-text';
 import {
 	RichTextToolbarButton,
 	RichTextShortcut,
@@ -19,7 +16,7 @@ import { Icon } from '@wordpress/components';
 import { ReactComponent as IconSVG } from './icon.svg';
 import hex2rgba from '@vkblocks/utils/hex-to-rgba';
 import { default as InlineColorUI } from './inline';
-import { name, alpha, defaultColor, highlighterOnApply } from './common';
+import { name, alpha, highlighterOnApply } from './common';
 
 function HighlighterEdit({
 	value,

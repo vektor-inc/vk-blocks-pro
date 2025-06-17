@@ -30,4 +30,4 @@ export const highlighterOnApply = ({ color, value, onChange }) => {
 			},
 		})
 	);
-}; 
+};

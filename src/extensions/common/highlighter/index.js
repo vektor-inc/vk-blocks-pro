@@ -14,17 +14,11 @@ import { Icon } from '@wordpress/components';
  * Internal dependencies
  */
 import { ReactComponent as IconSVG } from './icon.svg';
-import hex2rgba from '@vkblocks/utils/hex-to-rgba';
 import { default as InlineColorUI } from './inline';
-import { name, alpha, highlighterOnApply } from './common';
+import { name, alpha, highlighterOnApply, highlighColor } from './common';
+import hex2rgba from '@vkblocks/utils/hex-to-rgba';
 
-function HighlighterEdit({
-	value,
-	onChange,
-	isActive,
-	activeAttributes,
-	contentRef,
-}) {
+function HighlighterEdit({ value, onChange, isActive, contentRef }) {
 	const shortcutType = 'primary';
 	const shortcutChar = 'h';
 
@@ -87,27 +81,18 @@ function HighlighterEdit({
 			{isAddingColor && (
 				<InlineColorUI
 					name={name}
-					onClose={disableIsAddingColor}
-					activeAttributes={activeAttributes}
 					value={value}
 					onChange={onChange}
 					contentRef={contentRef}
 					setIsAddingColor={setIsAddingColor}
+					onClose={disableIsAddingColor}
 				/>
 			)}
 		</>
 	);
 }
 
-export const highlighColor = {
-	title: __('Highlighter', 'vk-blocks-pro'),
-	tagName: 'span',
-	className: 'vk_highlighter',
-	attributes: {
-		data: 'data-color',
-		style: 'style',
-	},
+registerFormatType(name, {
+	...highlighColor,
 	edit: HighlighterEdit,
-};
-
-registerFormatType(name, highlighColor);
+});

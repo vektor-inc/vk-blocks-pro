@@ -5,7 +5,6 @@ import { __ } from '@wordpress/i18n';
 import { useCallback, useState } from '@wordpress/element';
 import {
 	registerFormatType,
-	applyFormat,
 	getActiveFormat,
 } from '@wordpress/rich-text';
 import {
@@ -20,34 +19,7 @@ import { Icon } from '@wordpress/components';
 import { ReactComponent as IconSVG } from './icon.svg';
 import hex2rgba from '@vkblocks/utils/hex-to-rgba';
 import { default as InlineColorUI } from './inline';
-
-const name = 'vk-blocks/highlighter';
-export const alpha = 0.7;
-export const defaultColor = '#fffd6b';
-
-// 色が指定されていなかったらデフォルトカラーを指定する
-export const setColorIfUndefined = (color) => {
-	if (color === undefined) {
-		color = defaultColor;
-	}
-	return color;
-};
-
-//ハイライトカラーが選択されたら
-export const highlighterOnApply = ({ color, value, onChange }) => {
-	color = setColorIfUndefined(color);
-	const style = `--vk-highlighter-color: ${hex2rgba(color, alpha)};`;
-
-	onChange(
-		applyFormat(value, {
-			type: name,
-			attributes: {
-				data: color,
-				style,
-			},
-		})
-	);
-};
+import { name, alpha, defaultColor, highlighterOnApply } from './common';
 
 function HighlighterEdit({
 	value,

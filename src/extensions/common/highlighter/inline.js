@@ -13,10 +13,16 @@ import { Popover } from '@wordpress/components';
 /**
  * Internal dependencies
  */
-import {
-	highlighColor as settings,
-	highlighterOnApply,
-} from './index';
+import { name, highlighterOnApply } from './common';
+
+const settings = {
+	tagName: 'span',
+	className: 'vk_highlighter',
+	attributes: {
+		data: 'data-color',
+		style: 'style',
+	},
+};
 
 export function getGradientDirectionByWritingMode(contentRef) {
 	if (!contentRef?.current) {

@@ -120,6 +120,7 @@ e.g.
 [ Specification change ][ Table of Contents (Pro) ] Removed the restriction that prevented nested headings from being displayed in the list.
 [ Bug Fix ] Fixed an issue where Japanese characters in custom color names in block themes caused class names to break, preventing colors from being applied.
 [ Bug Fix ][ Category Badge (Pro) ] Fixed missing badge in Query Loop when no category or term was selected.
+[ Bug Fix ][ Grid Column Card (Pro) ] Fixed the column padding adjustment slider's initial state functionality issue.
 [ Bug Fix ][ Slider Item ] Reset margin-block-start by core.
 
 = 1.104.0 =

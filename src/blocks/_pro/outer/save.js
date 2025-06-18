@@ -2,6 +2,7 @@
  * External dependencies
  */
 import classnames from 'classnames';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 /**
  * Internal dependencies
@@ -73,7 +74,7 @@ export default function save(props) {
 
 	const bgColorClasses = classnames({
 		[`has-background`]: bgColor !== undefined,
-		[`has-${bgColor}-background-color`]:
+		[`has-${sanitizeSlug(bgColor)}-background-color`]:
 			bgColor !== undefined && !isHexColor(bgColor),
 		[`has-background-dim`]: opacity !== undefined,
 	});
@@ -293,7 +294,7 @@ export default function save(props) {
 					!hasBackgroundOffset &&
 					borderStyle !== 'none' &&
 					borderColor !== undefined,
-				[`has-${borderColor}-border-color`]:
+				[`has-${sanitizeSlug(borderColor)}-border-color`]:
 					!hasBackgroundOffset &&
 					borderStyle !== 'none' &&
 					borderColor !== undefined &&

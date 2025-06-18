@@ -1,30 +1,63 @@
-import { select } from '@wordpress/data';
-
 export const isAllowedBlock = (name, allowedBlocks) => {
-	return allowedBlocks.find((blockName) => blockName === name);
+	return allowedBlocks.includes(name);
 };
 
-export const getHeadings = (headingBlocks) => {
-	const { getBlocks } = select('core/block-editor');
-	return getBlocks().filter((block) =>
-		isAllowedBlock(block.name, headingBlocks)
-	);
-};
-
-export const getInnerHeadings = (headingBlocks, hasInnerBlocks) => {
-	const { getBlocks } = select('core/block-editor');
+export const getAllHeadings = (
+	blocks,
+	headingBlocks,
+	hasInnerBlocks,
+	options
+) => {
+	const {
+		useCustomLevels,
+		customHeadingLevels,
+		excludedHeadings = [],
+	} = options;
 	const headings = [];
 
-	getBlocks().forEach(function (block) {
-		if (isAllowedBlock(block.name, hasInnerBlocks)) {
-			block.innerBlocks.forEach(function (innerBlock) {
-				if (isAllowedBlock(innerBlock.name, headingBlocks)) {
-					headings.push(innerBlock);
-				}
-			});
-		}
-	});
+	// グローバル設定を取得
+	const globalSettings = window.vkBlocksOptions?.toc_heading_levels || [
+		'h2',
+		'h3',
+		'h4',
+		'h5',
+		'h6',
+	];
 
+	const processBlock = (block) => {
+		if (isAllowedBlock(block.name, headingBlocks)) {
+			const level = block.attributes.level || 2;
+			const headingId =
+				block.name === 'vk-blocks/heading'
+					? block.attributes.anchor || `vk-htags-${block.clientId}`
+					: block.attributes.anchor || `vk-htags-${block.clientId}`;
+
+			// 除外設定のチェック
+			const isExcluded = excludedHeadings?.includes(headingId) || false;
+
+			// レベル設定のチェック
+			const allowedLevels = useCustomLevels
+				? customHeadingLevels || ['h2', 'h3', 'h4', 'h5', 'h6']
+				: globalSettings;
+			const isAllowedLevel = allowedLevels.includes(`h${level}`);
+
+			if (!isExcluded && isAllowedLevel) {
+				headings.push({
+					clientId: block.clientId,
+					attributes: {
+						...block.attributes,
+						anchor: headingId,
+					},
+				});
+			}
+		}
+
+		if (isAllowedBlock(block.name, hasInnerBlocks) && block.innerBlocks) {
+			block.innerBlocks.forEach(processBlock);
+		}
+	};
+
+	blocks.forEach(processBlock);
 	return headings;
 };
 
@@ -128,8 +161,31 @@ export const returnHtml = (sources) => {
 				</li>
 			`;
 			})
-			.join(''); // Arrayを結合して、1つのHTML文字列に変換
+			.join('');
 	}
 
 	return returnHtmlContent || '';
+};
+
+// 再帰的にブロックを取得する関数
+export const getAllBlocksRecursively = (blocks) => {
+	let allBlocks = [];
+	blocks.forEach((block) => {
+		allBlocks.push(block);
+		if (block.innerBlocks && block.innerBlocks.length > 0) {
+			allBlocks = allBlocks.concat(
+				getAllBlocksRecursively(block.innerBlocks)
+			);
+		}
+	});
+	return allBlocks;
+};
+
+// すべての見出しブロックを取得する関数
+export const getAllHeadingBlocks = (blocks) => {
+	const allBlocks = getAllBlocksRecursively(blocks);
+	return allBlocks.filter(
+		(block) =>
+			block.name === 'vk-blocks/heading' || block.name === 'core/heading'
+	);
 };

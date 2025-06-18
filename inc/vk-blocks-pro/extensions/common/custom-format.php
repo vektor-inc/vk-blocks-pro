@@ -37,7 +37,8 @@ function vk_blocks_get_custom_format_lists_inline_css() {
 		$highlighter_color = ! empty( $custom_format['highlighter'] ) && $custom_format['highlighter'] ? $custom_format['highlighter'] : VK_Blocks_Global_Settings::HIGHLIGHTER_COLOR;
 		if ( $custom_format['is_active_highlighter'] && ! empty( $custom_format['background_color'] ) ) {
 			// background_colorとhighlighter両方
-			$declarations .= 'background:linear-gradient(' . vk_blocks_get_color_code( $custom_format['background_color'] ) . ' 60%, ' . vk_blocks_get_hex_to_rgba( $highlighter_color, '0.7' ) . ' 0);';
+			$declarations .= '--vk-highlighter-color:' . vk_blocks_get_hex_to_rgba( $highlighter_color, '0.7' ) . ';';
+			$declarations .= 'background-color:' . vk_blocks_get_color_code( $custom_format['background_color'] ) . ';';
 		}
 		if ( ! $custom_format['is_active_highlighter'] && ! empty( $custom_format['background_color'] ) ) {
 			// background_colorのみ
@@ -45,12 +46,16 @@ function vk_blocks_get_custom_format_lists_inline_css() {
 		}
 		if ( $custom_format['is_active_highlighter'] && empty( $custom_format['background_color'] ) ) {
 			// highlighterのみ
-			$declarations .= 'background:linear-gradient(transparent 60%, ' . vk_blocks_get_hex_to_rgba( $highlighter_color, '0.7' ) . ' 0);';
+			$declarations .= '--vk-highlighter-color:' . vk_blocks_get_hex_to_rgba( $highlighter_color, '0.7' ) . ';';
 		}
 
 		// declarationsからCSSを出力
 		if ( $declarations ) {
 			$dynamic_css .= '.' . $custom_format['class_name'] . '{' . $declarations . '}';
+			// is_active_highlighterがONの場合は--vk-highlighterクラスも出力
+			if ( ! empty( $custom_format['is_active_highlighter'] ) ) {
+				$dynamic_css .= '.' . $custom_format['class_name'] . '--vk-highlighter{' . $declarations . '}';
+			}
 		}
 
 		// custom_cssからCSSを出力

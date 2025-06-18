@@ -10,6 +10,11 @@ import { colorSlugToColorCode } from '@vkblocks/admin/utils/color-slug-to-color-
 import hex2rgba from '@vkblocks/utils/hex-to-rgba';
 /*globals vkBlocksObject */
 
+const getPreviewClassName = (obj) =>
+	obj.is_active_highlighter
+		? obj.class_name + '--vk-highlighter'
+		: obj.class_name;
+
 export const TextStylePreview = (props) => {
 	const { textStyleListObj } = props;
 
@@ -39,43 +44,26 @@ export const TextStylePreview = (props) => {
 		const highlighterColor = !!textStyleListObj.highlighter
 			? textStyleListObj.highlighter
 			: vkBlocksObject.highlighterColor;
-		if (
-			textStyleListObj.is_active_highlighter &&
-			!!textStyleListObj.background_color
-		) {
-			// background_colorとhighlighter両方
-			declarations += `background: linear-gradient(${colorSlugToColorCode(
-				textStyleListObj.background_color
-			)} 60%,${hex2rgba(highlighterColor, 0.7)} 0)`;
-		} else if (
-			!textStyleListObj.is_active_highlighter &&
-			!!textStyleListObj.background_color
-		) {
-			// background_colorのみ
-			declarations += `background: ${colorSlugToColorCode(
-				textStyleListObj.background_color
-			)}`;
-		} else if (
-			textStyleListObj.is_active_highlighter &&
-			!!!textStyleListObj.background_color
-		) {
-			// highlighterのみ
-			declarations += `background: linear-gradient(transparent 60%,${hex2rgba(
-				highlighterColor,
-				0.7
-			)} 0)`;
+		if (textStyleListObj.is_active_highlighter) {
+			declarations += `--vk-highlighter-color: ${hex2rgba(highlighterColor, 0.7)};`;
+			declarations += `background: linear-gradient(transparent 60%, var(--vk-highlighter-color) 0);`;
+			if (!!textStyleListObj.background_color) {
+				declarations += `background-color: ${colorSlugToColorCode(textStyleListObj.background_color)};`;
+			}
+		} else if (!!textStyleListObj.background_color) {
+			declarations += `background-image: ${colorSlugToColorCode(textStyleListObj.background_color)};`;
 		}
 
 		let dynamic_css = '';
 		if (declarations) {
-			dynamic_css += `.${textStyleListObj.class_name} { ${declarations} }`;
+			dynamic_css += `.${getPreviewClassName(textStyleListObj)} { ${declarations} }`;
 		}
 
 		if (textStyleListObj.custom_css) {
 			// selectorをクラスに変換する
 			dynamic_css += textStyleListObj.custom_css.replace(
 				/selector/g,
-				'.' + textStyleListObj.class_name
+				'.' + getPreviewClassName(textStyleListObj)
 			);
 		}
 
@@ -95,7 +83,13 @@ export const TextStylePreview = (props) => {
 						return <style>{cssTag}</style>;
 					}
 				})()}
-				<span className={textStyleListObj.class_name}>
+				<span
+					className={
+						textStyleListObj.is_active_highlighter
+							? getPreviewClassName(textStyleListObj)
+							: getPreviewClassName(textStyleListObj)
+					}
+				>
 					{__('Preview Text', 'vk-blocks-pro')}
 				</span>
 			</p>

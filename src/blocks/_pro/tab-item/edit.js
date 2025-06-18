@@ -5,15 +5,28 @@ import {
 } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
-import { PanelBody, BaseControl } from '@wordpress/components';
+import {
+	PanelBody,
+	BaseControl,
+	__experimentalUnitControl as UnitControl,
+} from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { select, dispatch } from '@wordpress/data';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { FontAwesome } from '@vkblocks/utils/font-awesome-new';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 export default function TabItemEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
-	const { tabBodyActive, tabColor, tabBodyBorderTop, blockId } = attributes;
+	const {
+		tabBodyActive,
+		tabColor,
+		tabBodyBorderTop,
+		iconSizeBefore,
+		iconSizeAfter,
+		blockId,
+	} = attributes;
 
 	const { updateBlockAttributes } = dispatch('core/block-editor');
 
@@ -130,13 +143,16 @@ export default function TabItemEdit(props) {
 	if (tabBodyBorderTop) {
 		tabBodyClass = ' has-border-top';
 		if (!isHexColor(tabColor)) {
-			tabBodyClass += ` has-${tabColor}-border-color`;
+			tabBodyClass += ` has-${sanitizeSlug(tabColor)}-border-color`;
 		} else {
 			tabBodyStyle = {
 				borderTopColor: tabColor,
 			};
 		}
 	}
+
+	// eslint-disable-next-line no-undef
+	const iconFamily = vkFontAwesome.iconFamily;
 
 	const blockProps = useBlockProps({
 		className: `vk_tab_bodys_body${activeBodyClass}${tabBodyClass}`,
@@ -157,6 +173,65 @@ export default function TabItemEdit(props) {
 						label={__('Tab Color', 'vk-blocks-pro')}
 					>
 						<AdvancedColorPalette schema={'tabColor'} {...props} />
+					</BaseControl>
+				</PanelBody>
+				<PanelBody title={__('Tab Icon Setting', 'vk-blocks-pro')}>
+					<BaseControl>
+						<h4 className={`mt-0 mb-2`}>
+							{__('Icon', 'vk-blocks-pro') +
+								' ( ' +
+								iconFamily +
+								' )'}
+						</h4>
+						<BaseControl
+							id={`vk_block_tab_fa_before_text`}
+							label={__('Before text', 'vk-blocks-pro')}
+						>
+							<FontAwesome
+								attributeName={'iconBefore'}
+								modeClass={true}
+								{...props}
+							/>
+							<UnitControl
+								label={__('Size', 'vk-blocks-pro')}
+								value={iconSizeBefore}
+								units={[
+									{ value: 'px', label: 'px', default: 16 },
+									{ value: 'em', label: 'em', default: 1 },
+									{ value: 'rem', label: 'rem', default: 1 },
+								]}
+								onChange={(value) => {
+									setAttributes({
+										iconSizeBefore: value || null,
+									});
+								}}
+							/>
+						</BaseControl>
+						<hr />
+						<BaseControl
+							id={`vk_block_tab_fa_after_text`}
+							label={__('After text', 'vk-blocks-pro')}
+						>
+							<FontAwesome
+								attributeName={'iconAfter'}
+								modeClass={true}
+								{...props}
+							/>
+							<UnitControl
+								label={__('Size', 'vk-blocks-pro')}
+								value={iconSizeAfter}
+								units={[
+									{ value: 'px', label: 'px', default: 16 },
+									{ value: 'em', label: 'em', default: 1 },
+									{ value: 'rem', label: 'rem', default: 1 },
+								]}
+								onChange={(value) => {
+									setAttributes({
+										iconSizeAfter: value || null,
+									});
+								}}
+							/>
+						</BaseControl>
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>

@@ -23,6 +23,18 @@
 		"className": {
 			"type": "string",
 			"default": ""
+		},
+		"customHeadingLevels": {
+			"type": "array",
+			"default": []
+		},
+		"useCustomLevels": {
+			"type": "boolean",
+			"default": false
+		},
+		"excludedHeadings": {
+			"type": "array",
+			"default": []
 		}
 	},
 	"supports": {

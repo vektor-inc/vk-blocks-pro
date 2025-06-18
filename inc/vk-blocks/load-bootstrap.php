@@ -40,7 +40,7 @@ function vk_blocks_load_bootstrap_for_site_editor() {
 		if ( wp_is_block_theme() && is_admin() ) {
 			$style_path = wp_normalize_path( VK_BLOCKS_DIR_PATH . '/build/bootstrap_vk_using.css' );
 			if ( file_exists( $style_path ) ) {
-				$dynamic_css = file_get_contents( $style_path );
+				$dynamic_css = file_get_contents( $style_path ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
 				wp_add_inline_style( 'wp-edit-blocks', $dynamic_css );
 			}
 		}

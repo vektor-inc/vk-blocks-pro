@@ -1,5 +1,6 @@
 import { InnerBlocks, useBlockProps, RichText } from '@wordpress/block-editor';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 export default function save(props) {
 	const { attributes } = props;
@@ -75,18 +76,22 @@ export default function save(props) {
 			let tabSpanColorClass = '';
 			const tabSpanColorStyle = {};
 
+			if (option.iconBefore || option.iconAfter) {
+				tabSpanColorClass += ' vk_tab_labels_label-icon';
+			}
+
 			if (option.tabColor !== '') {
 				if (tabOption.tabLabelBackground) {
 					tabColorClass = ' has-background';
 					if (!isHexColor(option.tabColor)) {
-						tabColorClass += ` has-${option.tabColor}-background-color`;
+						tabColorClass += ` has-${sanitizeSlug(option.tabColor)}-background-color`;
 					} else {
 						tabColorStyle.backgroundColor = option.tabColor;
 					}
 				} else if (tabOption.tabLabelBorderTop) {
 					tabSpanColorClass = ' has-border-top';
 					if (!isHexColor(option.tabColor)) {
-						tabSpanColorClass += ` has-${option.tabColor}-border-color`;
+						tabSpanColorClass += ` has-${sanitizeSlug(option.tabColor)}-border-color`;
 					} else {
 						tabSpanColorStyle.borderTopColor = option.tabColor;
 					}
@@ -97,7 +102,7 @@ export default function save(props) {
 							/has-(.*)-border-color/
 						);
 						if (borderColorClassMatch) {
-							tabSpanColorClass += ` has-${borderColorClassMatch[1]}-color`;
+							tabSpanColorClass += ` has-${sanitizeSlug(borderColorClassMatch[1])}-color`;
 						}
 					}
 				}
@@ -139,12 +144,39 @@ export default function save(props) {
 						}
 					}}
 				>
-					<RichText.Content
-						tagName="div"
+					<div
 						className={tabSpanColorClass}
 						style={tabSpanColorStyle}
-						value={option.tabLabel}
-					/>
+					>
+						{option.iconBefore && (
+							<span className="vk_tab_labels_label-icon-before">
+								<i
+									style={{
+										fontSize: option.iconSizeBefore,
+									}}
+									className={option.iconBefore}
+								></i>
+							</span>
+						)}
+						<RichText.Content
+							tagName={
+								option.iconBefore || option.iconAfter
+									? 'span'
+									: undefined
+							}
+							value={option.tabLabel}
+						/>
+						{option.iconAfter && (
+							<span className="vk_tab_labels_label-icon-after">
+								<i
+									style={{
+										fontSize: option.iconSizeAfter,
+									}}
+									className={option.iconAfter}
+								></i>
+							</span>
+						)}
+					</div>
 				</li>
 			);
 		});

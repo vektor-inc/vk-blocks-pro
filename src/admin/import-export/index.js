@@ -93,6 +93,16 @@ export const OPTION_DEFAULT_SETTINGS = [
 		isShow: !!vkBlocksObject.isPro,
 	},
 	{
+		groupTitle: __('Table of Contents Setting', 'vk-blocks-pro'),
+		options: [
+			{
+				name: 'toc_heading_levels',
+			},
+		],
+		isImport: !!vkBlocksObject.isPro,
+		isShow: !!vkBlocksObject.isPro,
+	},
+	{
 		groupTitle: __('Custom CSS Setting', 'vk-blocks-pro'),
 		options: [
 			{

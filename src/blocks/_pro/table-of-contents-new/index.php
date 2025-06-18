@@ -30,6 +30,23 @@ function vk_blocks_register_block_table_of_contents_new() {
 			VK_BLOCKS_VERSION,
 			true
 		);
+
+		// フロントエンド用の設定を渡す
+		$options    = get_option( 'vk_blocks_options', array() );
+		$toc_levels = isset( $options['toc_heading_levels'] ) ? $options['toc_heading_levels'] : array( 'h2', 'h3', 'h4', 'h5', 'h6' );
+
+		wp_localize_script(
+			'vk-blocks/table-of-contents-new-script',
+			'vkBlocksTocSettings',
+			array(
+				'allowedHeadingLevels' => array_map(
+					function ( $level ) {
+						return intval( str_replace( 'h', '', $level ) );
+					},
+					$toc_levels
+				),
+			)
+		);
 	}
 
 	// クラシックテーマ & 6.5 環境で $assets = array() のように空にしないと重複登録になるため
@@ -50,5 +67,9 @@ function vk_blocks_register_block_table_of_contents_new() {
 		__DIR__,
 		$assets
 	);
+
+	if ( ! is_admin() ) {
+		wp_enqueue_script( 'vk-blocks/table-of-contents-new-script' );
+	}
 }
 add_action( 'init', 'vk_blocks_register_block_table_of_contents_new', 99 );

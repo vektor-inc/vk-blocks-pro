@@ -78,7 +78,7 @@ const CommonItemControl = (props) => {
 
 		['top', 'right', 'bottom', 'left'].forEach((side) => {
 			const value = containerSpace[side];
-			if (value && !value.includes('px')) {
+			if (value && /^\d+$/.test(value)) {
 				newContainerSpace[side] = `${value}px`;
 				hasChanged = true;
 			} else {

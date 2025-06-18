@@ -11,6 +11,7 @@ import {
 } from '@wordpress/components';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import { AdvancedColorGradientControl } from '@vkblocks/components/advanced-color-gradient-control';
+import { useEffect } from '@wordpress/element';
 
 const BoxControl = OldBoxControl || NewBoxControl; // Fallback to the new BoxControl if the old one is not available
 
@@ -69,6 +70,28 @@ const CommonItemControl = (props) => {
 		{ value: 'dashed', label: __('Dashed', 'vk-blocks-pro') },
 		{ value: 'dotted', label: __('Dotted', 'vk-blocks-pro') },
 	];
+
+	// containerSpaceの値に単位がない場合、pxを追加
+	useEffect(() => {
+		if (containerSpace) {
+			const newContainerSpace = {};
+			let hasChanged = false;
+
+			['top', 'right', 'bottom', 'left'].forEach((side) => {
+				const value = containerSpace[side];
+				if (value && !value.includes('px')) {
+					newContainerSpace[side] = `${value}px`;
+					hasChanged = true;
+				} else {
+					newContainerSpace[side] = value;
+				}
+			});
+
+			if (hasChanged) {
+				setAttributes({ containerSpace: newContainerSpace });
+			}
+		}
+	}, []);
 
 	return (
 		<>

@@ -73,25 +73,23 @@ const CommonItemControl = (props) => {
 
 	// containerSpaceの値に単位がない場合、pxを追加
 	useEffect(() => {
-		if (containerSpace) {
-			const newContainerSpace = {};
-			let hasChanged = false;
+		const newContainerSpace = {};
+		let hasChanged = false;
 
-			['top', 'right', 'bottom', 'left'].forEach((side) => {
-				const value = containerSpace[side];
-				if (value && !value.includes('px')) {
-					newContainerSpace[side] = `${value}px`;
-					hasChanged = true;
-				} else {
-					newContainerSpace[side] = value;
-				}
-			});
-
-			if (hasChanged) {
-				setAttributes({ containerSpace: newContainerSpace });
+		['top', 'right', 'bottom', 'left'].forEach((side) => {
+			const value = containerSpace[side];
+			if (value && !value.includes('px')) {
+				newContainerSpace[side] = `${value}px`;
+				hasChanged = true;
+			} else {
+				newContainerSpace[side] = value;
 			}
+		});
+
+		if (hasChanged) {
+			setAttributes({ containerSpace: newContainerSpace });
 		}
-	}, []);
+	}, [containerSpace, setAttributes]);
 
 	return (
 		<>

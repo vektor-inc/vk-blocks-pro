@@ -1,5 +1,5 @@
 /* eslint camelcase: 0 */
-import save1_104_0 from './1.104.0/save';
+import save1_105_0 from './1.105.0/save';
 import save1_80_1 from './1.80.1/save';
 import save1_51_0 from './1.51.0/save';
 import save1_48_1 from './1.48.1/save';
@@ -179,7 +179,7 @@ const blockAttributes10 = {
 }
 
 /*
-// 1.104.0 時点からの変更点
+// 1.105.0 時点からの変更点
 const blockAttributes11 = {
 	...blockAttributes10,
 	zoomAnimation: {
@@ -200,7 +200,7 @@ const blockAttributes11 = {
 const deprecated = [
 	{
 		attributes: blockAttributes10,
-		save: save1_104_0,
+		save: save1_105_0,
 	},
 	{
 		attributes: blockAttributes9,

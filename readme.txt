@@ -108,6 +108,8 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Slider ] Added zoom animation feature.
+
 = 1.105.0 =
 [ Add function ][ Core Post title ] Added top and bottom margin settings to the toolbar.
 [ Add function ][ Tab (Pro) ] Added support for inserting FontAwesome icons into tab labels.

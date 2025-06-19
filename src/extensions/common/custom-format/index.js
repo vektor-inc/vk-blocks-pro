@@ -13,9 +13,12 @@ import { ReactComponent as IconSVG } from './icon.svg';
 
 if (window.vk_blocks_params) {
 	vk_blocks_params.custom_format_lists.forEach((formatList) => {
-		if (!formatList.title) return;
+		if (!formatList.title) {
+			return;
+		}
 
-		const name = formatList.class_name && `vk-blocks/${formatList.class_name}`;
+		const name =
+			formatList.class_name && `vk-blocks/${formatList.class_name}`;
 		const title = formatList.title;
 		const className = formatList.is_active_highlighter
 			? `${formatList.class_name}--vk-highlighter`
@@ -31,7 +34,10 @@ if (window.vk_blocks_params) {
 					<RichTextToolbarButton
 						title={
 							<>
-								<Icon icon={IconSVG} style={{ marginRight: '8px' }} />
+								<Icon
+									icon={IconSVG}
+									style={{ marginRight: '8px' }}
+								/>
 								<span className={className}>{title}</span>
 							</>
 						}

@@ -15,7 +15,6 @@ import save from './save';
 import transforms from './transforms';
 import { __ } from '@wordpress/i18n';
 
-
 const { name } = metadata;
 
 export { metadata, name };

@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.5
 Tested up to: 6.8
-Stable tag: 1.102.0.1
+Stable tag: 1.104.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -108,6 +108,7 @@ e.g.
 
 == Changelog ==
 
+= 1.105.0 =
 [ Add function ][ Core Post title ] Added top and bottom margin settings to the toolbar.
 [ Add function ][ Tab (Pro) ] Added support for inserting FontAwesome icons into tab labels.
 [ Add function ][ Table of Contents (Pro) ] Added heading level control (global and per block).

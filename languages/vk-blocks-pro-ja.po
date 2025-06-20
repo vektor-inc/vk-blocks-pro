@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2025-06-13T04:21:46+00:00\n"
+"POT-Creation-Date: 2025-06-20T00:14:16+00:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -374,7 +374,7 @@ msgstr "ブロックツールバーのよく使う書式設定を登録するこ
 msgid "Toolbar title"
 msgstr "ツールバー タイトル"
 
-#: src/admin/custom-format/preview.js:99
+#: src/admin/custom-format/preview.js:93
 msgid "Preview Text"
 msgstr "プレビューテキスト"
 
@@ -710,7 +710,7 @@ msgstr "短い"
 
 #: src/blocks/_pro/animation/edit.js:134 src/blocks/_pro/tab/index.js:23
 #: src/blocks/balloon/edit.js:477 src/blocks/button/edit.js:329
-#: src/blocks/faq/index.js:26 src/blocks/faq2/index.js:21
+#: src/blocks/faq/index.js:27 src/blocks/faq2/index.js:21
 #: src/extensions/common/inline-font-size/inline.js:28
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:522
 msgid "Normal"
@@ -1298,7 +1298,7 @@ msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:147
 #: src/blocks/_pro/post-list-slider/edit.js:140
-#: src/blocks/_pro/table-of-contents-new/edit.js:255
+#: src/blocks/_pro/table-of-contents-new/edit.js:231
 #: src/components/column-layout-control/index.js:69
 msgid "Display type"
 msgstr "表示タイプ"
@@ -2061,7 +2061,7 @@ msgstr "ページネーションの種類"
 
 #: src/blocks/_pro/post-list-slider/edit.js:302
 #: src/blocks/_pro/step-item/edit.js:139
-#: src/blocks/_pro/table-of-contents-new/edit.js:270
+#: src/blocks/_pro/table-of-contents-new/edit.js:246
 #: src/blocks/_pro/timeline-item/edit.js:105 src/blocks/heading/edit.js:265
 #: src/blocks/slider/edit.js:459 src/blocks/staff/edit.js:174
 #: src/components/advanced-color-gradient-control/index.js:47
@@ -2219,7 +2219,7 @@ msgid "Ex,6:00AM"
 msgstr "例) 午前 6:00"
 
 #: src/blocks/_pro/step-item/edit.js:109
-#: src/blocks/_pro/table-of-contents-new/edit.js:260
+#: src/blocks/_pro/table-of-contents-new/edit.js:236
 #: src/blocks/_pro/timeline-item/edit.js:75 src/blocks/icon-outer/edit.js:229
 #: src/blocks/icon/edit.js:221
 msgid "Style"
@@ -2365,67 +2365,75 @@ msgstr "ライン"
 
 #: src/blocks/_pro/table-of-contents-new/deprecated/1.104.0/save.js:16
 #: src/blocks/_pro/table-of-contents-new/deprecated/1.78.0/save.js:16
-#: src/blocks/_pro/table-of-contents-new/edit.js:303
-#: src/blocks/_pro/table-of-contents-new/save.js:21
+#: src/blocks/_pro/table-of-contents-new/edit.js:407
+#: src/blocks/_pro/table-of-contents-new/save.js:30
 msgid "Table of Contents"
 msgstr "目次"
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:172
+#: src/blocks/_pro/table-of-contents-new/edit.js:218
 msgid "Note on duplicating headings"
 msgstr "見出し複製時の注意"
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:177
+#: src/blocks/_pro/table-of-contents-new/edit.js:223
 msgid ""
 "If you duplicate a heading, the table of contents block will not work "
 "properly, please reassign the ID."
 msgstr ""
 "見出しを複製すると目次ブロックが適切に動作しません。IDを振り直してください。"
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:185
-msgid "Heading Levels"
-msgstr "見出しレベル設定"
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:190
-msgid "Global heading level settings:"
-msgstr "サイト全体の見出しレベル設定はこちら："
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:195
-#, fuzzy
-#| msgid "VK Blocks Setting"
-msgid "VK Blocks Settings"
-msgstr "VK Blocks 設定"
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:199
-msgid "Use custom heading levels"
-msgstr "独自の見出しレベルを使用する"
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:214
-msgid "Using custom heading levels for this block."
-msgstr "このブロックには独自の見出しレベルを使用中。"
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:218
-msgid "Using global heading levels settings."
-msgstr "このブロックには全体設定の見出しレベルを使用中。"
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:232
-msgid "Include Headings Up To:"
-msgstr "見出しレベルの上限："
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:274
+#: src/blocks/_pro/table-of-contents-new/edit.js:250
 msgid "No frame"
 msgstr "枠無し"
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:281
+#: src/blocks/_pro/table-of-contents-new/edit.js:257
 msgid "Default Display Status"
 msgstr "初期表示状態"
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:289
+#: src/blocks/_pro/table-of-contents-new/edit.js:265
 msgid "OPEN"
 msgstr "OPEN"
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:293
+#: src/blocks/_pro/table-of-contents-new/edit.js:269
 msgid "CLOSE"
 msgstr "CLOSE"
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:276
+msgid "Heading Levels"
+msgstr "見出しレベル設定"
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:281
+msgid "Global heading level settings:"
+msgstr "サイト全体の見出しレベル設定はこちら："
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:286
+msgid "VK Blocks Setting"
+msgstr "VK Blocks 設定"
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:290
+msgid "Use custom heading levels"
+msgstr "独自の見出しレベルを使用する"
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:305
+msgid "Using custom heading levels for this block."
+msgstr "このブロックには独自の見出しレベルを使用中。"
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:309
+msgid "Using global heading levels settings."
+msgstr "このブロックには全体設定の見出しレベルを使用中。"
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:323
+msgid "Include Headings Up To:"
+msgstr "見出しレベルの上限："
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:346
+#, fuzzy
+#| msgid "Include Headings Up To:"
+msgid "Exclude Headings"
+msgstr "見出しレベルの上限："
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:348
+msgid "Select headings to exclude from the table of contents."
+msgstr ""
 
 #: src/blocks/_pro/taxonomy/edit.js:107
 msgid "Taxonomy Block Option"
@@ -2848,27 +2856,27 @@ msgstr "Pro版は回答部分を開閉式にできます"
 msgid "Please enter a question."
 msgstr "質問を入力してください。"
 
-#: src/blocks/faq/index.js:31 src/blocks/faq2/index.js:26
+#: src/blocks/faq/index.js:32 src/blocks/faq2/index.js:26
 msgid "Bgfill Circle"
 msgstr "背景塗り 円形"
 
-#: src/blocks/faq/index.js:35 src/blocks/faq2/index.js:30
+#: src/blocks/faq/index.js:36 src/blocks/faq2/index.js:30
 msgid "Bgfill Square"
 msgstr "背景塗り ピン角"
 
-#: src/blocks/faq/index.js:39 src/blocks/faq2/index.js:34
+#: src/blocks/faq/index.js:40 src/blocks/faq2/index.js:34
 msgid "Bgfill Rounded"
 msgstr "背景塗り 角丸"
 
-#: src/blocks/faq/index.js:43 src/blocks/faq2/index.js:38
+#: src/blocks/faq/index.js:44 src/blocks/faq2/index.js:38
 msgid "Border Circle"
 msgstr "枠線 円形"
 
-#: src/blocks/faq/index.js:47 src/blocks/faq2/index.js:42
+#: src/blocks/faq/index.js:48 src/blocks/faq2/index.js:42
 msgid "Border Square"
 msgstr "枠線 ピン角"
 
-#: src/blocks/faq/index.js:51 src/blocks/faq2/index.js:46
+#: src/blocks/faq/index.js:52 src/blocks/faq2/index.js:46
 msgid "Border Rounded"
 msgstr "枠線 角丸"
 
@@ -3791,7 +3799,7 @@ msgstr ""
 "複数のブロックを非表示にする場合は、最初にグループブロックに設定し、そのグ"
 "ループブロックに対して非表示にします。"
 
-#: src/extensions/common/highlighter/index.js:136
+#: src/extensions/common/highlighter/index.js:134
 msgid "Highlighter"
 msgstr "蛍光マーカー"
 

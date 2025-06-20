@@ -366,7 +366,7 @@ msgstr ""
 msgid "Toolbar title"
 msgstr ""
 
-#: src/admin/custom-format/preview.js:99
+#: src/admin/custom-format/preview.js:93
 msgid "Preview Text"
 msgstr ""
 
@@ -718,7 +718,7 @@ msgstr ""
 #: src/blocks/_pro/tab/index.js:23
 #: src/blocks/balloon/edit.js:477
 #: src/blocks/button/edit.js:329
-#: src/blocks/faq/index.js:26
+#: src/blocks/faq/index.js:27
 #: src/blocks/faq2/index.js:21
 #: src/extensions/common/inline-font-size/inline.js:28
 msgid "Normal"
@@ -1308,7 +1308,7 @@ msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:147
 #: src/blocks/_pro/post-list-slider/edit.js:140
-#: src/blocks/_pro/table-of-contents-new/edit.js:255
+#: src/blocks/_pro/table-of-contents-new/edit.js:231
 #: src/components/column-layout-control/index.js:69
 msgid "Display type"
 msgstr ""
@@ -2094,7 +2094,7 @@ msgstr ""
 
 #: src/blocks/_pro/post-list-slider/edit.js:302
 #: src/blocks/_pro/step-item/edit.js:139
-#: src/blocks/_pro/table-of-contents-new/edit.js:270
+#: src/blocks/_pro/table-of-contents-new/edit.js:246
 #: src/blocks/_pro/timeline-item/edit.js:105
 #: src/blocks/heading/edit.js:265
 #: src/blocks/slider/edit.js:459
@@ -2251,7 +2251,7 @@ msgid "Ex,6:00AM"
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:109
-#: src/blocks/_pro/table-of-contents-new/edit.js:260
+#: src/blocks/_pro/table-of-contents-new/edit.js:236
 #: src/blocks/_pro/timeline-item/edit.js:75
 #: src/blocks/icon-outer/edit.js:229
 #: src/blocks/icon/edit.js:221
@@ -2400,63 +2400,71 @@ msgstr ""
 
 #: src/blocks/_pro/table-of-contents-new/deprecated/1.104.0/save.js:16
 #: src/blocks/_pro/table-of-contents-new/deprecated/1.78.0/save.js:16
-#: src/blocks/_pro/table-of-contents-new/edit.js:303
-#: src/blocks/_pro/table-of-contents-new/save.js:21
+#: src/blocks/_pro/table-of-contents-new/edit.js:407
+#: src/blocks/_pro/table-of-contents-new/save.js:30
 msgid "Table of Contents"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:172
+#: src/blocks/_pro/table-of-contents-new/edit.js:218
 msgid "Note on duplicating headings"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:177
+#: src/blocks/_pro/table-of-contents-new/edit.js:223
 msgid ""
 "If you duplicate a heading, the table of contents block will not work "
 "properly, please reassign the ID."
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:185
-msgid "Heading Levels"
-msgstr ""
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:190
-msgid "Global heading level settings:"
-msgstr ""
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:195
-msgid "VK Blocks Settings"
-msgstr ""
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:199
-msgid "Use custom heading levels"
-msgstr ""
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:214
-msgid "Using custom heading levels for this block."
-msgstr ""
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:218
-msgid "Using global heading levels settings."
-msgstr ""
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:232
-msgid "Include Headings Up To:"
-msgstr ""
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:274
+#: src/blocks/_pro/table-of-contents-new/edit.js:250
 msgid "No frame"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:281
+#: src/blocks/_pro/table-of-contents-new/edit.js:257
 msgid "Default Display Status"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:289
+#: src/blocks/_pro/table-of-contents-new/edit.js:265
 msgid "OPEN"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:293
+#: src/blocks/_pro/table-of-contents-new/edit.js:269
 msgid "CLOSE"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:276
+msgid "Heading Levels"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:281
+msgid "Global heading level settings:"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:286
+msgid "VK Blocks Setting"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:290
+msgid "Use custom heading levels"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:305
+msgid "Using custom heading levels for this block."
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:309
+msgid "Using global heading levels settings."
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:323
+msgid "Include Headings Up To:"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:346
+msgid "Exclude Headings"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:348
+msgid "Select headings to exclude from the table of contents."
 msgstr ""
 
 #: src/blocks/_pro/taxonomy/edit.js:107
@@ -2878,32 +2886,32 @@ msgstr ""
 msgid "Please enter a question."
 msgstr ""
 
-#: src/blocks/faq/index.js:31
+#: src/blocks/faq/index.js:32
 #: src/blocks/faq2/index.js:26
 msgid "Bgfill Circle"
 msgstr ""
 
-#: src/blocks/faq/index.js:35
+#: src/blocks/faq/index.js:36
 #: src/blocks/faq2/index.js:30
 msgid "Bgfill Square"
 msgstr ""
 
-#: src/blocks/faq/index.js:39
+#: src/blocks/faq/index.js:40
 #: src/blocks/faq2/index.js:34
 msgid "Bgfill Rounded"
 msgstr ""
 
-#: src/blocks/faq/index.js:43
+#: src/blocks/faq/index.js:44
 #: src/blocks/faq2/index.js:38
 msgid "Border Circle"
 msgstr ""
 
-#: src/blocks/faq/index.js:47
+#: src/blocks/faq/index.js:48
 #: src/blocks/faq2/index.js:42
 msgid "Border Square"
 msgstr ""
 
-#: src/blocks/faq/index.js:51
+#: src/blocks/faq/index.js:52
 #: src/blocks/faq2/index.js:46
 msgid "Border Rounded"
 msgstr ""
@@ -3803,7 +3811,7 @@ msgid ""
 "the next, hide for the that group block."
 msgstr ""
 
-#: src/extensions/common/highlighter/index.js:136
+#: src/extensions/common/highlighter/index.js:134
 msgid "Highlighter"
 msgstr ""
 

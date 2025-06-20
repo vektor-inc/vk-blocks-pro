@@ -109,6 +109,7 @@ e.g.
 == Changelog ==
 
 [ Other ][ Highlighter ] Resolved circular dependency issue.
+[ Bug Fix ][ Grid Column Card (Pro) ] Fixed the column padding adjustment slider's initial state functionality issue.
 
 = 1.105.0 =
 [ Add function ][ Core Post title ] Added top and bottom margin settings to the toolbar.

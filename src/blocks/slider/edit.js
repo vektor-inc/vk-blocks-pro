@@ -177,6 +177,13 @@ export default function SliderEdit(props) {
 		}
 	}, [clientId]);
 
+	// ズームアニメーションが有効になった時にエフェクトをfadeに変更
+	useEffect(() => {
+		if (zoomAnimation && effect !== 'fade') {
+			setAttributes({ effect: 'fade' });
+		}
+	}, [zoomAnimation]);
+
 	// 複数枚動かすときに sliderPerView が小数だと微妙なので対処
 	useEffect(() => {
 		if (slidesPerGroup === 'slides-per-view') {

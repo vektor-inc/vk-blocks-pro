@@ -54,6 +54,7 @@ class GetOptionsTest extends VK_UnitTestCase {
 				'option'  => null,
 				'correct' => array(
 					'block_category_position' => 'above-core-blocks',
+					'toc_heading_levels' => array( 'h2' ),  // h2のみをデフォルトに変更
 					'balloon_border_width' => 1,
 					'margin_unit' => 'rem',
 					'margin_size' => array(
@@ -1224,6 +1225,7 @@ class GetOptionsTest extends VK_UnitTestCase {
 				),
 				'correct'  => array(
 					'block_category_position' => 'above-core-blocks',
+					'toc_heading_levels' => array( 'h2' ),
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
 					'margin_size' => array(
@@ -1360,6 +1362,28 @@ class GetOptionsTest extends VK_UnitTestCase {
 						),
 					),
 				),
+			),
+			// TOC設定のサニタイズ
+			array(
+				'option_check_target' => 'toc_heading_levels',
+				'option'  => array(
+					'toc_heading_levels' => array( 'h3', 'h4', 'h5' ),
+				),
+				'correct' => array( 'h2', 'h3', 'h4', 'h5' ),
+			),
+			array(
+				'option_check_target' => 'toc_heading_levels',
+				'option'  => array(
+					'toc_heading_levels' => array( 'h2', 'h4', 'h6' ),
+				),
+				'correct' => array( 'h2', 'h3', 'h4', 'h5', 'h6' ),
+			),
+			array(
+				'option_check_target' => 'toc_heading_levels',
+				'option'  => array(
+					'toc_heading_levels' => array( 'h2', 'invalid', 'h3' ),
+				),
+				'correct' => array( 'h2', 'h3' ),
 			),
 		);
 		print PHP_EOL;

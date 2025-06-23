@@ -24,6 +24,28 @@ const blockAttributes = {
 	}
 };
 
+/* 次回対応おねがいします
+const blockAttributes2 = {
+	...blockAttributes,
+	iconBefore: {
+		type: 'string',
+		default: ''
+	},
+	iconAfter: {
+		type: 'string',
+		default: ''
+	},
+	iconSizeBefore: {
+		type: 'string',
+		default: ''
+	},
+	iconSizeAfter: {
+		type: 'string',
+		default: ''
+	}
+};
+*/
+
 const deprecated = [
 	{
 		attributes: blockAttributes,

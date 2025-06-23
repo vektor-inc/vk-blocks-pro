@@ -115,6 +115,8 @@ $media-xxl-down: 1399.98px;
 	position: relative;
 	margin-left:auto;
 	margin-right:auto;
+	// コアが :root :where(.is-layout-constrained) > * { margin-block-start: var(--wp--custom--spacing--small); } とか付けてくるため打ち消し
+	margin-block-start: 0;
 }
 // :where を無しにすると、テーマが指定する .container の指定より強くなって上書きしてしまうため、:where を指定
 :where(.vk_slider_item_container):where(.container) {

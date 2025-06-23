@@ -1,5 +1,6 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 export default function save(props) {
 	const { attributes } = props;
@@ -15,7 +16,7 @@ export default function save(props) {
 	if (tabBodyBorderTop) {
 		tabBodyClass = ' has-border-top';
 		if (!isHexColor(tabColor)) {
-			tabBodyClass += ` has-${tabColor}-border-color`;
+			tabBodyClass += ` has-${sanitizeSlug(tabColor)}-border-color`;
 		} else {
 			tabBodyStyle = {
 				borderTopColor: tabColor,

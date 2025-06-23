@@ -81,6 +81,14 @@ class VK_Blocks_Blog_Card {
 			return $blog_card_data;
 		}
 
+		// URLが埋め込み可能かチェック
+		$is_embeddable = wp_oembed_get( $url );
+		if ( ! $is_embeddable ) {
+			$blog_card_data['url']          = $url;
+			$blog_card_data['cannot_embed'] = true;
+			return $blog_card_data;
+		}
+
 		// URLのHTMLを$bodyに入れる
 		$body = $response['body'];
 		// 取得したHTMLを今のサイトの文字コードにencode

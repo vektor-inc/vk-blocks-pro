@@ -23,6 +23,22 @@
 			"type": "boolean",
 			"default": true
 		},
+		"iconBefore": {
+			"type": "string",
+			"default": ""
+		},
+		"iconAfter": {
+			"type": "string",
+			"default": ""
+		},
+		"iconSizeBefore": {
+			"type": "string",
+			"default": ""
+		},
+		"iconSizeAfter": {
+			"type": "string",
+			"default": ""
+		},
 		"blockId": {
 			"type": "string",
 			"default": ""

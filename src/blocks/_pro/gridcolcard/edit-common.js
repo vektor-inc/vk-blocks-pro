@@ -11,6 +11,7 @@ import {
 } from '@wordpress/components';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import { AdvancedColorGradientControl } from '@vkblocks/components/advanced-color-gradient-control';
+import { useEffect } from '@wordpress/element';
 
 const BoxControl = OldBoxControl || NewBoxControl; // Fallback to the new BoxControl if the old one is not available
 
@@ -24,6 +25,7 @@ const CommonItemControl = (props) => {
 		borderRadius,
 		border,
 		borderWidth,
+		borderStyle,
 		headerImageAspectRatio,
 		headerImageFit,
 	} = attributes;
@@ -62,6 +64,32 @@ const CommonItemControl = (props) => {
 			label: '16:9',
 		},
 	];
+
+	const borderStyleOptions = [
+		{ value: 'solid', label: __('Solid', 'vk-blocks-pro') },
+		{ value: 'dashed', label: __('Dashed', 'vk-blocks-pro') },
+		{ value: 'dotted', label: __('Dotted', 'vk-blocks-pro') },
+	];
+
+	// containerSpaceの値に単位がない場合、pxを追加
+	useEffect(() => {
+		const newContainerSpace = {};
+		let hasChanged = false;
+
+		['top', 'right', 'bottom', 'left'].forEach((side) => {
+			const value = containerSpace[side];
+			if (value && /^\d+$/.test(value)) {
+				newContainerSpace[side] = `${value}px`;
+				hasChanged = true;
+			} else {
+				newContainerSpace[side] = value;
+			}
+		});
+
+		if (hasChanged) {
+			setAttributes({ containerSpace: newContainerSpace });
+		}
+	}, [containerSpace, setAttributes]);
 
 	return (
 		<>
@@ -197,6 +225,22 @@ const CommonItemControl = (props) => {
 									{...props}
 								/>
 							</BaseControl>
+							<ToggleGroupControl
+								label={__('Border Style', 'vk-blocks-pro')}
+								value={borderStyle}
+								onChange={(value) =>
+									setAttributes({ borderStyle: value })
+								}
+								isBlock
+							>
+								{borderStyleOptions.map((option) => (
+									<ToggleGroupControlOption
+										key={option.value}
+										value={option.value}
+										label={option.label}
+									/>
+								))}
+							</ToggleGroupControl>
 						</>
 					);
 				}

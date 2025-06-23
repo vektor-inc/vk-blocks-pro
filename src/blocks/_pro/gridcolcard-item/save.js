@@ -2,6 +2,7 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { isGradientStyle } from '@vkblocks/utils/is-gradient-style';
 import classnames from 'classnames';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 export default function save(props) {
 	const { attributes } = props;
@@ -15,6 +16,7 @@ export default function save(props) {
 		border,
 		borderColor,
 		borderWidth,
+		borderStyle,
 		backgroundGradient,
 		url,
 		urlOpenType,
@@ -27,17 +29,18 @@ export default function save(props) {
 		[`vk_gridcolcard_item-noFooter`]: footerDisplay === 'delete',
 		[`has-background`]: !!backgroundColor,
 		[`has-border-color`]: !!border,
-		[`has-${backgroundColor}-background-color`]:
+		[`has-${sanitizeSlug(backgroundColor)}-background-color`]:
 			!!backgroundColor && !isHexColor(backgroundColor),
-		[`has-${backgroundGradient}-gradient-background`]:
+		[`has-${sanitizeSlug(backgroundGradient)}-gradient-background`]:
 			!!backgroundGradient && !isGradientStyle(backgroundGradient),
-		[`has-${borderColor}-border-color`]:
+		[`has-${sanitizeSlug(borderColor)}-border-color`]:
 			!!border && !!borderColor && !isHexColor(borderColor),
 	});
 
 	const innerClasses = classnames('vk_gridcolcard_item_container', {
 		[`has-text-color`]: !!textColor,
-		[`has-${textColor}-color`]: !!textColor && !isHexColor(textColor),
+		[`has-${sanitizeSlug(textColor)}-color`]:
+			!!textColor && !isHexColor(textColor),
 	});
 
 	const style = {
@@ -63,9 +66,13 @@ export default function save(props) {
 	// 線の色と太さ
 	if (border) {
 		style.borderWidth = borderWidth;
+		style.borderStyle = borderStyle;
 		if (isHexColor(borderColor)) {
 			// custom color
 			style.borderColor = `${borderColor}`;
+		}
+		if (borderStyle) {
+			style.borderStyle = `${borderStyle}`;
 		}
 	}
 

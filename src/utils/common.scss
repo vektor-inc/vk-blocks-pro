@@ -7,6 +7,30 @@
 }
 
 /*-------------------------------------------*/
+/* 蛍光マーカー
+/*-------------------------------------------*/
+@mixin vk-highlighter-gradient($direction: null) {
+	@if $direction == null {
+		background-image: linear-gradient(transparent 60%, var(--vk-highlighter-color) 0);
+	} @else {
+		background-image: linear-gradient(#{$direction}, transparent 60%, var(--vk-highlighter-color) 0);
+	}
+}
+
+.vk_highlighter,
+[class*="--vk-highlighter"] {
+	@include vk-highlighter-gradient();
+}
+[style*="vertical-rl"] .vk_highlighter,
+[style*="vertical-rl"] [class*="--vk-highlighter"] {
+	@include vk-highlighter-gradient(to left);
+}
+[style*="vertical-lr"] .vk_highlighter,
+[style*="vertical-lr"] [class*="--vk-highlighter"] {
+	@include vk-highlighter-gradient(to right);
+}
+
+/*-------------------------------------------*/
 /* 余白（レスポンシブスペーサー,共通余白で使用）
 /*-------------------------------------------*/
 :root {

@@ -13,7 +13,28 @@ import { Popover } from '@wordpress/components';
 /**
  * Internal dependencies
  */
-import { highlighColor as settings, highlighterOnApply } from './index';
+import { highlighColor as settings, highlighterOnApply } from './common';
+
+export function getGradientDirectionByWritingMode(contentRef) {
+	if (!contentRef?.current) {
+		return '';
+	}
+	let el = contentRef.current;
+	while (el) {
+		const writingMode = window.getComputedStyle(el).writingMode;
+		if (writingMode && writingMode.startsWith('vertical')) {
+			if (writingMode === 'vertical-rl') {
+				return 'to left';
+			}
+			if (writingMode === 'vertical-lr') {
+				return 'to right';
+			}
+			return 'to left'; // デフォルトで縦書きは左
+		}
+		el = el.parentElement;
+	}
+	return ''; // 横書き
+}
 
 export function getActiveColors(value, name) {
 	const activeColorFormat = getActiveFormat(value, name);
@@ -25,14 +46,16 @@ export function getActiveColors(value, name) {
 	return activeColorFormat.attributes.data;
 }
 
-function ColorPicker({ name, value, onChange, setIsAddingColor }) {
+function ColorPicker({ name, value, onChange, setIsAddingColor, contentRef }) {
 	const onColorChange = (color) => {
 		if (color) {
 			// select color on palette
+			const direction = getGradientDirectionByWritingMode(contentRef);
 			highlighterOnApply({
 				color,
 				value,
 				onChange,
+				direction,
 			});
 		} else {
 			// clear palette
@@ -81,6 +104,7 @@ export default function InlineColorUI({
 				value={value}
 				onChange={onChange}
 				setIsAddingColor={setIsAddingColor}
+				contentRef={contentRef}
 			/>
 		</Popover>
 	);

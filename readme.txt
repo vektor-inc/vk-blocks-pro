@@ -108,6 +108,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Slider ] Fix an issue where the inner element of a slide item does not match the content width in the edit screen.
+
 = 1.105.1 =
 [ Bug Fix ][ Grid Column Card (Pro) ] Fixed the column padding adjustment slider's initial state functionality issue.
 [ Other ][ Highlighter ] Resolved circular dependency issue.

@@ -50,6 +50,14 @@
 			"type": "boolean",
 			"default": false
 		},
+		"showCloseButton": {
+			"type": "boolean",
+			"default": false
+		},
+		"closeButtonText": {
+			"type": "string",
+			"default": "×"
+		},
 		"clientId": {
 			"type": "string"
 		},

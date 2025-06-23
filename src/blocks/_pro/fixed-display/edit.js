@@ -40,6 +40,8 @@ export default function FixedDisplayEdit(props) {
 		displayAfterSeconds,
 		hideAfterSeconds,
 		dontShowAgain,
+		showCloseButton,
+		closeButtonText,
 	} = attributes;
 
 	const [tempScrollTiming, setTempScrollTiming] = useState(
@@ -106,6 +108,8 @@ export default function FixedDisplayEdit(props) {
 					? scrollPersistVisible
 					: false,
 			scrollTimingUnit: scrollTimingUnit || 'px',
+			showCloseButton: showCloseButton !== undefined ? showCloseButton : false,
+			closeButtonText: closeButtonText || '×',
 		});
 	}, [
 		clientId,
@@ -114,6 +118,8 @@ export default function FixedDisplayEdit(props) {
 		blockId,
 		scrollPersistVisible,
 		scrollTimingUnit,
+		showCloseButton,
+		closeButtonText,
 	]);
 
 	const handlePositionChange = (newPosition) => {
@@ -240,6 +246,28 @@ export default function FixedDisplayEdit(props) {
 								units={units}
 							/>
 						</>
+					)}
+				</PanelBody>
+				<PanelBody title={__('Close Button Settings', 'vk-blocks-pro')}>
+					<ToggleControl
+						label={__('Show close button', 'vk-blocks-pro')}
+						checked={showCloseButton}
+						onChange={(value) =>
+							setAttributes({ showCloseButton: value })
+						}
+						help={__(
+							'When enabled, a close button will be displayed that allows users to hide the fixed display.',
+							'vk-blocks-pro'
+						)}
+					/>
+					{showCloseButton && (
+						<TextControl
+							label={__('Close button text', 'vk-blocks-pro')}
+							value={closeButtonText}
+							onChange={(value) =>
+								setAttributes({ closeButtonText: value })
+							}
+						/>
 					)}
 				</PanelBody>
 				{mode === 'show-on-scroll' && (
@@ -375,6 +403,15 @@ export default function FixedDisplayEdit(props) {
 				)}
 			</InspectorControls>
 			<div {...blockProps}>
+				{showCloseButton && (
+					<button
+						className="vk_fixed-display-close-button"
+						type="button"
+						aria-label={__('Close', 'vk-blocks-pro')}
+					>
+						{closeButtonText}
+					</button>
+				)}
 				<InnerBlocks
 					templateLock={false}
 					template={[['core/paragraph']]}

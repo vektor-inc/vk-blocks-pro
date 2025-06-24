@@ -3,7 +3,7 @@
  */
 import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
-import { PanelBody } from '@wordpress/components';
+import { PanelBody, Notice } from '@wordpress/components';
 import {
 	InspectorControls,
 	ColorPalette,
@@ -12,6 +12,7 @@ import {
 } from '@wordpress/block-editor';
 import { select } from '@wordpress/data';
 import { createHigherOrderComponent } from '@wordpress/compose';
+import React, { useEffect } from 'react';
 
 /**
  * Internal dependencies
@@ -87,7 +88,7 @@ addFilter('blocks.registerBlockType', 'vk-blocks/list-style', addAttribute);
 export const addBlockControl = createHigherOrderComponent(
 	(BlockEdit) => (props) => {
 		const { name, attributes, setAttributes } = props;
-		const { color, className } = attributes;
+		const { color, className, ordered } = attributes;
 		if (!isValidBlockType(name)) {
 			return <BlockEdit {...props} />;
 		}
@@ -99,10 +100,32 @@ export const addBlockControl = createHigherOrderComponent(
 			return <BlockEdit {...props} />;
 		}
 
+		// 順序付きリストで番号付きスタイルが適用されているかチェック
+		const hasNumberedStyle = className && (
+			className.includes('is-style-vk-numbered-square-mark') ||
+			className.includes('is-style-vk-numbered-circle-mark')
+		);
+
 		return (
 			<>
 				<BlockEdit {...props} />
 				<InspectorControls>
+					{ordered && hasNumberedStyle && (
+						<PanelBody
+							title={__('Notice', 'vk-blocks-pro')}
+							initialOpen={true}
+						>
+							<Notice
+								status="info"
+								isDismissible={false}
+							>
+								{__(
+									'Numbered styles (square or circle) now support WordPress standard list settings such as "Start value" and "Reverse order".',
+									'vk-blocks-pro'
+								)}
+							</Notice>
+						</PanelBody>
+					)}
 					<PanelBody
 						title={__('List Icon Color', 'vk-blocks-pro')}
 						initialOpen={false}
@@ -176,7 +199,7 @@ addFilter('editor.BlockEdit', 'vk-blocks/list-style', addBlockControl);
 const withElementsStyles = createHigherOrderComponent(
 	(BlockListBlock) => (props) => {
 		const { name, attributes, clientId } = props;
-		const { color, className } = attributes;
+		const { color, className, ordered, reversed, start } = attributes;
 		if (!isValidBlockType(name)) {
 			return <BlockListBlock {...props} />;
 		}
@@ -195,6 +218,50 @@ const withElementsStyles = createHigherOrderComponent(
 		if (!isLagerThanWp62()) {
 			return <BlockListBlock {...props} />;
 		}
+
+		// 番号付きスタイル＆順序付きリストの場合、liにdata-vk-numberを付与
+		const hasNumberedStyle = nowClassArray.some((item) =>
+			item === 'is-style-vk-numbered-square-mark' || item === 'is-style-vk-numbered-circle-mark'
+		);
+		useEffect(() => {
+			if (ordered && hasNumberedStyle) {
+				const block = document.getElementById(`block-${clientId}`);
+				if (!block) return;
+
+				const updateNumbers = () => {
+					const lis = block.querySelectorAll('li');
+					const count = lis.length;
+					let startValue = 1;
+					if (typeof start === 'number') {
+						startValue = start;
+					}
+					if (reversed) {
+						let li_number = (typeof start === 'number') ? startValue : count;
+						lis.forEach((li, i) => {
+							li.setAttribute('data-vk-number', li_number);
+							li_number--;
+						});
+					} else {
+						let li_number = startValue;
+						lis.forEach((li, i) => {
+							li.setAttribute('data-vk-number', li_number);
+							li_number++;
+						});
+					}
+				};
+
+				updateNumbers();
+
+				const observer = new MutationObserver(() => {
+					updateNumbers();
+				});
+				observer.observe(block, { childList: true, subtree: true });
+
+				return () => {
+					observer.disconnect();
+				};
+			}
+		}, [ordered, hasNumberedStyle, reversed, start, clientId]);
 
 		if (!color) {
 			return <BlockListBlock {...props} />;

@@ -90,21 +90,23 @@ class VKBCoreListNumberedStyleTest extends VK_UnitTestCase {
 		print 'Result: ' . $result_4 . PHP_EOL;
 		$this->assertStringNotContainsString( 'data-vk-number', $result_4 );
 
-		// テストケース5: 順序なしリストの場合（data-vk-number属性が付与されない）
+		// テストケース5: 順序なしリストの場合（番号付きスタイルが適用されるが、start/reversedは無視される）
 		$block_content_5 = '<ul><li>Item 1</li><li>Item 2</li></ul>';
 		$block_5 = array(
 			'attrs' => array(
 				'ordered' => false,
 				'className' => 'is-style-vk-numbered-square-mark',
-				'start' => 1,
-				'reversed' => false,
+				'start' => 5,
+				'reversed' => true,
 			),
 			'values' => '<li>Item 1</li><li>Item 2</li>',
 		);
 		$result_5 = vk_blocks_render_core_list( $block_content_5, $block_5 );
 		print 'Test 5 - Unordered list:' . PHP_EOL;
 		print 'Result: ' . $result_5 . PHP_EOL;
-		$this->assertStringNotContainsString( 'data-vk-number', $result_5 );
+		// 順序なしリストの場合は常に1から開始される
+		$this->assertStringContainsString( 'data-vk-number="1"', $result_5 );
+		$this->assertStringContainsString( 'data-vk-number="2"', $result_5 );
 	}
 
 	/**
@@ -224,5 +226,42 @@ class VKBCoreListNumberedStyleTest extends VK_UnitTestCase {
 			$this->assertStringContainsString( 'data-vk-number="1"', $result );
 			$this->assertStringContainsString( 'data-vk-number="2"', $result );
 		}
+	}
+
+	/**
+	 * 入れ子リストでの data-vk-number の付与と色指定のテスト
+	 *
+	 * @return void
+	 */
+	public function test_vk_blocks_render_core_list_numbered_style_nested() {
+		print PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+		print 'test_vk_blocks_render_core_list_numbered_style_nested' . PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+
+		// 親リスト: 番号付きスタイル、子リスト: 番号付きスタイル
+		$block_content = '<ol><li>親1<ol><li>子1</li><li>子2</li></ol></li><li>親2</li></ol>';
+		$block = array(
+			'attrs' => array(
+				'ordered' => true,
+				'className' => 'is-style-vk-numbered-square-mark',
+				'color' => 'custom--1',
+				'start' => 1,
+				'reversed' => false,
+			),
+			'values' => '<li>親1<ol><li>子1</li><li>子2</li></ol></li><li>親2</li>',
+		);
+		$result = vk_blocks_render_core_list( $block_content, $block );
+		print 'Test - Nested numbered style:' . PHP_EOL;
+		print 'Result: ' . $result . PHP_EOL;
+
+		// 親リストの番号
+		$this->assertStringContainsString( 'data-vk-number="1"', $result );
+		$this->assertStringContainsString( 'data-vk-number="2"', $result );
+		// 子リストの番号
+		$this->assertStringContainsString( '<li data-vk-number="1">子1</li>', $result );
+		$this->assertStringContainsString( '<li data-vk-number="2">子2</li>', $result );
+		// 色指定が正規化されているか
+		$this->assertStringContainsString( '--wp--preset--color--custom-1', $result );
 	}
 } 

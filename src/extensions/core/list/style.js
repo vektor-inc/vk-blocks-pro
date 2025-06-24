@@ -88,7 +88,7 @@ addFilter('blocks.registerBlockType', 'vk-blocks/list-style', addAttribute);
 export const addBlockControl = createHigherOrderComponent(
 	(BlockEdit) => (props) => {
 		const { name, attributes, setAttributes } = props;
-		const { color, className, ordered } = attributes;
+		const { color, className, ordered, reversed, start } = attributes;
 		if (!isValidBlockType(name)) {
 			return <BlockEdit {...props} />;
 		}
@@ -100,80 +100,90 @@ export const addBlockControl = createHigherOrderComponent(
 			return <BlockEdit {...props} />;
 		}
 
-		// 順序付きリストで番号付きスタイルが適用されているかチェック
-		const hasNumberedStyle = className && (
-			className.includes('is-style-vk-numbered-square-mark') ||
-			className.includes('is-style-vk-numbered-circle-mark')
-		);
+		// 順序なしリストに切り替えた時にreversedとstartをリセット
+		useEffect(() => {
+			if (!ordered && (reversed || (start && start !== 1))) {
+				setAttributes({
+					reversed: false,
+					start: 1
+				});
+			}
+		}, [ordered, reversed, start, setAttributes]);
 
-		return (
-			<>
-				<BlockEdit {...props} />
-				<InspectorControls>
-					<PanelBody
-						title={__('List Icon Color', 'vk-blocks-pro')}
-						initialOpen={false}
-					>
-						<ColorPalette
-							value={colorSlugToColorCode(color)}
-							disableCustomColors={
-								isLagerThanWp62() ? false : true
-							}
-							onChange={(newColor) => {
-								// 色コードを colorSet から探して色データを取得
-								const ColorValue = getColorObjectByColorValue(
-									colorSet,
-									newColor
-								);
+	// 順序付きリストで番号付きスタイルが適用されているかチェック
+	const hasNumberedStyle = className && (
+		className.includes('is-style-vk-numbered-square-mark') ||
+		className.includes('is-style-vk-numbered-circle-mark')
+	);
 
-								// 現在のクラス名を配列化
-								const nowClassArray =
-									className && className.split(' ');
+	return (
+		<>
+			<BlockEdit {...props} />
+			<InspectorControls>
+				<PanelBody
+					title={__('List Icon Color', 'vk-blocks-pro')}
+					initialOpen={false}
+				>
+					<ColorPalette
+						value={colorSlugToColorCode(color)}
+						disableCustomColors={
+							isLagerThanWp62() ? false : true
+						}
+						onChange={(newColor) => {
+							// 色コードを colorSet から探して色データを取得
+							const ColorValue = getColorObjectByColorValue(
+								colorSet,
+								newColor
+							);
 
-								// 新しいクラス名の配列
-								let newClassNameArray = nowClassArray
-									? nowClassArray
-									: [];
+							// 現在のクラス名を配列化
+							const nowClassArray =
+								className && className.split(' ');
 
-								// 互換処理:設定されていたクラス名vk-has-〇〇-colorを削除する
-								if (nowClassArray) {
-									newClassNameArray = nowClassArray.filter(
-										(item) => {
-											return !item.match(
-												/vk-has-(.*)-color/
-											);
-										}
-									);
-								}
+							// 新しいクラス名の配列
+							let newClassNameArray = nowClassArray
+								? nowClassArray
+								: [];
 
-								// 6.2未満の場合
-								if (!isLagerThanWp62()) {
-									// newColorがあれば新しいクラス名を追加する
-									if (newColor !== undefined) {
-										// コアのテキストカラーと被らないようにvk-has-〇〇-colorを追加する
-										newClassNameArray.push(
-											`vk-has-${ColorValue.slug}-color`
+							// 互換処理:設定されていたクラス名vk-has-〇〇-colorを削除する
+							if (nowClassArray) {
+								newClassNameArray = nowClassArray.filter(
+									(item) => {
+										return !item.match(
+											/vk-has-(.*)-color/
 										);
 									}
+								);
+							}
+
+							// 6.2未満の場合
+							if (!isLagerThanWp62()) {
+								// newColorがあれば新しいクラス名を追加する
+								if (newColor !== undefined) {
+									// コアのテキストカラーと被らないようにvk-has-〇〇-colorを追加する
+									newClassNameArray.push(
+										`vk-has-${ColorValue.slug}-color`
+									);
 								}
+							}
 
-								const newClassName =
-									newClassNameArray.join(' ');
+							const newClassName =
+								newClassNameArray.join(' ');
 
-								setAttributes({
-									className: newClassName,
-									color: ColorValue?.slug
-										? ColorValue?.slug
-										: newColor,
-								});
-							}}
-						/>
-					</PanelBody>
-				</InspectorControls>
-			</>
-		);
-	},
-	'addMyCustomBlockControls'
+							setAttributes({
+								className: newClassName,
+								color: ColorValue?.slug
+									? ColorValue?.slug
+									: newColor,
+							});
+						}}
+					/>
+				</PanelBody>
+			</InspectorControls>
+		</>
+	);
+},
+'addMyCustomBlockControls'
 );
 addFilter('editor.BlockEdit', 'vk-blocks/list-style', addBlockControl);
 
@@ -208,36 +218,36 @@ const withElementsStyles = createHigherOrderComponent(
 			item === 'is-style-vk-numbered-square-mark' || item === 'is-style-vk-numbered-circle-mark'
 		);
 		useEffect(() => {
-			if (ordered && hasNumberedStyle) {
+			if (hasNumberedStyle) {
 				const block = document.getElementById(`block-${clientId}`);
 				if (!block) return;
 
-				const updateNumbers = () => {
-					const lis = block.querySelectorAll('li');
-					const count = lis.length;
-					let startValue = 1;
-					if (typeof start === 'number') {
-						startValue = start;
-					}
-					if (reversed) {
-						let li_number = (typeof start === 'number') ? startValue : count;
-						lis.forEach((li, i) => {
-							li.setAttribute('data-vk-number', li_number);
+				function setNumbersRecursive(listEl) {
+					const isOrdered = listEl.tagName === 'OL';
+					const isReversed = isOrdered && listEl.hasAttribute('reversed');
+					const start = isOrdered && listEl.hasAttribute('start') ? parseInt(listEl.getAttribute('start'), 10) : 1;
+					const lis = Array.from(listEl.children).filter(child => child.tagName === 'LI');
+					let li_number = isReversed ? lis.length + start - 1 : start;
+					lis.forEach(li => {
+						li.setAttribute('data-vk-number', li_number);
+						// 子リストがあれば再帰
+						Array.from(li.children).forEach(child => {
+							if (child.tagName === 'OL' || child.tagName === 'UL') {
+								setNumbersRecursive(child);
+							}
+						});
+						if (isReversed) {
 							li_number--;
-						});
-					} else {
-						let li_number = startValue;
-						lis.forEach((li, i) => {
-							li.setAttribute('data-vk-number', li_number);
+						} else {
 							li_number++;
-						});
-					}
-				};
+						}
+					});
+				}
 
-				updateNumbers();
+				setNumbersRecursive(block);
 
 				const observer = new MutationObserver(() => {
-					updateNumbers();
+					setNumbersRecursive(block);
 				});
 				observer.observe(block, { childList: true, subtree: true });
 

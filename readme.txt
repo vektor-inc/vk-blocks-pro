@@ -108,6 +108,8 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Core List ] Added support for WordPress standard list settings (start value and reverse order) in numbered styles (square and circle marks).
+
 = 1.105.1 =
 [ Bug Fix ][ Grid Column Card (Pro) ] Fixed the column padding adjustment slider's initial state functionality issue.
 [ Other ][ Highlighter ] Resolved circular dependency issue.

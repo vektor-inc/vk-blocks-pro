@@ -245,7 +245,7 @@ const withElementsStyles = createHigherOrderComponent(
 					observer.disconnect();
 				};
 			}
-		}, [ordered, hasNumberedStyle, reversed, start, clientId]);
+		}, [ordered, hasNumberedStyle, reversed, start, clientId, color]);
 
 		if (!color) {
 			return <BlockListBlock {...props} />;

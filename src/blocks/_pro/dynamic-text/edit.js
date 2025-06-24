@@ -80,7 +80,11 @@ function DynamicTextEditControls({ tagName, onSelectTagName }) {
 }
 
 export default function DynamicTextEdit(props) {
-	const { attributes, setAttributes } = props;
+	const { attributes, setAttributes, context } = props;
+
+	const isInQueryLoop =
+		context?.queryId !== undefined && context?.queryId !== null;
+
 	const {
 		textAlign,
 		displayElement,
@@ -195,6 +199,20 @@ export default function DynamicTextEdit(props) {
 		);
 	} else if (displayElement === 'please-select') {
 		editContent = editAlertContent;
+	} else if (isInQueryLoop) {
+		const previewText = {
+			'post-type': __('Post Type Name', 'vk-blocks-pro'),
+			'user-name': __('Current login user name', 'vk-blocks-pro'),
+			'custom-field':
+				customFieldName + `__('Custom Field', 'vk-blocks-pro')`,
+			'post-slug': __('Post Slug', 'vk-blocks-pro'),
+		}[displayElement];
+
+		editContent = (
+			<TagName>
+				{previewText || __('Preview display', 'vk-blocks-pro')}
+			</TagName>
+		);
 	} else {
 		editContent = (
 			<ServerSideRender
@@ -394,6 +412,12 @@ export default function DynamicTextEdit(props) {
 									setAttributes({ customFieldName: value })
 								}
 							/>
+							<div className="alert alert-warning mt-0 mb-4">
+								{__(
+									'This custom field may not be displayed if the field is not available or has no value in the content.',
+									'vk-blocks-pro'
+								)}
+							</div>
 							<SelectControl
 								label={__('Field Type', 'vk-blocks-pro')}
 								value={fieldType}

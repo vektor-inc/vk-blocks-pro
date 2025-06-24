@@ -18,7 +18,9 @@ function vk_blocks_get_color_code( $value ) {
 	if ( preg_match( '/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/', $value ) ) {
 		$return = $value;
 	} else {
-		$return = 'var(--wp--preset--color--' . $value . ')';
+		// -- を - に正規化
+		$slug = str_replace('--', '-', $value);
+		$return = 'var(--wp--preset--color--' . $slug . ')';
 	}
 	return $return;
 }

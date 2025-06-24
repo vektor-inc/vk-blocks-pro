@@ -275,19 +275,6 @@ ol {
 				height: 26px;
 				text-align: center;
 			}
-
-			ul,
-			ol {
-				counter-reset: num_inner;
-				content: counter(num_inner);
-
-				li {
-					&:before {
-						counter-increment: num_inner;
-						content: counter(num_inner);
-					}
-				}
-			}
 		}
 	}
 
@@ -314,19 +301,6 @@ ol {
 				height: 26px;
 				text-align: center;
 				border-radius: 2px;
-			}
-
-			ul,
-			ol {
-				counter-reset: num_inner;
-				content: counter(num_inner);
-
-				li {
-					&:before {
-						counter-increment: num_inner;
-						content: counter(num_inner);
-					}
-				}
 			}
 		}
 	}

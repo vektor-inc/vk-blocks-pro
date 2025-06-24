@@ -227,7 +227,9 @@ const withElementsStyles = createHigherOrderComponent(
 					const isReversed = isOrdered && listEl.hasAttribute('reversed');
 					const start = isOrdered && listEl.hasAttribute('start') ? parseInt(listEl.getAttribute('start'), 10) : 1;
 					const lis = Array.from(listEl.children).filter(child => child.tagName === 'LI');
-					let li_number = isReversed ? lis.length + start - 1 : start;
+					const li_count = lis.length;
+					let li_number = isReversed ? li_count + start - 1 : start;
+					
 					lis.forEach(li => {
 						li.setAttribute('data-vk-number', li_number);
 						// 子リストがあれば再帰

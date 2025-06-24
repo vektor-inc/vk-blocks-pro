@@ -110,22 +110,6 @@ export const addBlockControl = createHigherOrderComponent(
 			<>
 				<BlockEdit {...props} />
 				<InspectorControls>
-					{ordered && hasNumberedStyle && (
-						<PanelBody
-							title={__('Notice', 'vk-blocks-pro')}
-							initialOpen={true}
-						>
-							<Notice
-								status="info"
-								isDismissible={false}
-							>
-								{__(
-									'Numbered styles (square or circle) now support WordPress standard list settings such as "Start value" and "Reverse order".',
-									'vk-blocks-pro'
-								)}
-							</Notice>
-						</PanelBody>
-					)}
 					<PanelBody
 						title={__('List Icon Color', 'vk-blocks-pro')}
 						initialOpen={false}

@@ -143,8 +143,12 @@ function vk_blocks_set_number_recursive( $html ) {
 				$li_nodes[] = $child;
 			}
 		}
+		$start = 1;
+		if ( $list->nodeName === 'ol' && $list->hasAttribute('start') ) {
+			$start = intval( $list->getAttribute('start') );
+		}
 		$li_count = count( $li_nodes );
-		$li_number = $is_reversed ? $li_count : 1;
+		$li_number = $is_reversed ? $li_count + $start - 1 : $start;
 		foreach ( $li_nodes as $li ) {
 			$li->setAttribute( 'data-vk-number', $li_number );
 			// 入れ子リストがあれば再帰

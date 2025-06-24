@@ -251,7 +251,6 @@ ol {
 	}
 
 	&.is-style-vk-numbered-circle-mark {
-		counter-reset: number;
 		list-style-type: none;
 
 		li {
@@ -262,7 +261,7 @@ ol {
 				position: absolute;
 				left: 0;
 				counter-increment: number;
-				content: counter(number);
+				content: attr(data-vk-number);
 				margin-left: -1.8em;
 				background: #222;
 				color: #fff;
@@ -293,8 +292,6 @@ ol {
 	}
 
 	&.is-style-vk-numbered-square-mark {
-		counter-reset: number;
-		list-style-type: none;
 
 		li {
 			position: relative;
@@ -304,7 +301,7 @@ ol {
 				position: absolute;
 				left: -0.3em;
 				counter-increment: number;
-				content: counter(number);
+				content: attr(data-vk-number);
 				margin-left: -25px;
 				background: #222;
 				color: #fff;
@@ -336,6 +333,19 @@ ol {
 
 	&.is-style-vk-numbered-circle-mark,
 	&.is-style-vk-numbered-square-mark {
+		list-style-type: none;
+
+		// WordPressのstart属性に対応
+		&[start] {
+			counter-reset: number calc(var(--start-value, 1) - 1);
+		}
+
+		// WordPressのreversed属性に対応
+		&[reversed] {
+			counter-reset: number 0;
+		}
+
+		// マークのサイズ
 		&.fa-lg {
 			li::before {
 				left: -0.8em;

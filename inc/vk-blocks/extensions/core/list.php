@@ -68,31 +68,54 @@ function vk_blocks_render_core_list( $block_content, $block ) {
 				$li_number++;
 			}
 		}
-		$processor = $li_processor;
+		$block_content = $li_processor->get_updated_html();
+	} else {
+		$block_content = $processor->get_updated_html();
 	}
 
-	// 番号付きスタイルでWordPressの標準設定をサポート
-	$has_numbered_style = ! empty( $block['attrs']['className'] ) && (
-		strpos( $block['attrs']['className'], 'is-style-vk-numbered-square-mark' ) !== false ||
-		strpos( $block['attrs']['className'], 'is-style-vk-numbered-circle-mark' ) !== false
+	// 色設定の処理
+	if ( empty( $block['attrs']['color'] ) ) {
+		return $block_content;
+	}
+
+	$list_styles = array();
+	if ( ! empty( $block['attrs']['className'] ) && strpos( $block['attrs']['className'], 'is-style-vk-numbered-square-mark' ) !== false ) {
+		$list_styles = array(
+			array(
+				'selector'     => ".is-style-vk-numbered-square-mark.{$unique_classname} li::before",
+				'declarations' => array(
+					'color'            => '#fff',
+					'background-color' => vk_blocks_get_color_code( $block['attrs']['color'] ) . ' !important',
+				),
+			),
+		);
+	} elseif ( ! empty( $block['attrs']['className'] ) && strpos( $block['attrs']['className'], 'is-style-vk-numbered-circle-mark' ) !== false ) {
+		$list_styles = array(
+			array(
+				'selector'     => ".is-style-vk-numbered-circle-mark.{$unique_classname} li::before",
+				'declarations' => array(
+					'color'            => '#fff',
+					'background-color' => vk_blocks_get_color_code( $block['attrs']['color'] ) . ' !important',
+				),
+			),
+		);
+	} else {
+		$list_styles = array(
+			array(
+				'selector'     => ".{$unique_classname} li::marker,.{$unique_classname} li::before",
+				'declarations' => array(
+					'color' => vk_blocks_get_color_code( $block['attrs']['color'] ) . ' !important',
+				),
+			),
+		);
+	}
+
+	wp_style_engine_get_stylesheet_from_css_rules(
+		$list_styles,
+		array(
+			'context' => 'vk-blocks',
+		)
 	);
-
-	if ( $has_numbered_style && ! empty( $block['attrs']['ordered'] ) ) {
-		// start属性の処理
-		if ( ! empty( $block['attrs']['start'] ) ) {
-			$processor->set_attribute( 'style', '--start-value: ' . intval( $block['attrs']['start'] ) . ';' );
-		}
-
-		// reversed属性の処理
-		if ( ! empty( $block['attrs']['reversed'] ) ) {
-			// リストアイテムの数をカウント
-			$list_items = substr_count( $block['values'], '<li>' );
-			$current_style = $processor->get_attribute( 'style' );
-			$new_style = $current_style ? $current_style . ' --list-item-count: ' . $list_items . ';' : '--list-item-count: ' . $list_items . ';';
-			$processor->set_attribute( 'style', $new_style );
-		}
-	}
-
-	return $processor->get_updated_html();
+	return $block_content;
 }
 add_filter( 'render_block_core/list', 'vk_blocks_render_core_list', 10, 2 );

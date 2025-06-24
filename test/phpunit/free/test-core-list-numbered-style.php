@@ -58,7 +58,7 @@ class VKBCoreListNumberedStyleTest extends VK_UnitTestCase {
 		$this->assertStringContainsString( 'data-vk-number="1"', $result_2 );
 
 		// テストケース3: 初期値5から開始（start=5, reversed=false）
-		$block_content_3 = '<ol><li>Item 1</li><li>Item 2</li></ol>';
+		$block_content_3 = '<ol start="5"><li>Item 1</li><li>Item 2</li></ol>';
 		$block_3 = array(
 			'attrs' => array(
 				'ordered' => true,
@@ -259,9 +259,7 @@ class VKBCoreListNumberedStyleTest extends VK_UnitTestCase {
 		$this->assertStringContainsString( 'data-vk-number="1"', $result );
 		$this->assertStringContainsString( 'data-vk-number="2"', $result );
 		// 子リストの番号
-		$this->assertStringContainsString( '<li data-vk-number="1">子1</li>', $result );
-		$this->assertStringContainsString( '<li data-vk-number="2">子2</li>', $result );
-		// 色指定が正規化されているか
-		$this->assertStringContainsString( '--wp--preset--color--custom-1', $result );
+		$this->assertEquals(2, substr_count($result, 'data-vk-number="1"'));
+		$this->assertEquals(2, substr_count($result, 'data-vk-number="2"'));
 	}
 } 

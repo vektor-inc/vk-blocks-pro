@@ -8,6 +8,7 @@ import SliderHook1_2_1 from './1.2.1';
 import SliderHook1_0_16 from './1.0.16';
 
 export default [
+	SliderHook1_48_1, // 1.104.0 index.jsにZoom Animation機能。次回save.jsやindex.jsを更新する際に新規フォルダを追加。
 	SliderHook1_48_1, // 1.80.1
 	SliderHook1_48_1, // 1.51.0
 	SliderHook1_48_1, // 1.48.1

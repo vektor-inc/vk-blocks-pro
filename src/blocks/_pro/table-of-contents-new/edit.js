@@ -64,10 +64,15 @@ export default function TOCEdit(props) {
 	const HEADING_BLOCKS = ['core/heading', 'vk-blocks/heading'];
 
 	// 必要なデータを直接取得
-	const blocks = useSelect((select) => select('core/block-editor').getBlocks(), []);
+	const blocks = useSelect(
+		(select) => select('core/block-editor').getBlocks(),
+		[]
+	);
 	const findBlocks = useSelect((select) => {
 		const { getBlocks } = select('core/block-editor');
-		return getBlocks().filter((block) => block.name === 'vk-blocks/table-of-contents-new');
+		return getBlocks().filter(
+			(block) => block.name === 'vk-blocks/table-of-contents-new'
+		);
 	}, []);
 	const tocSettings = useTocSettings();
 

@@ -102,12 +102,8 @@ export default function TOCEdit(props) {
 				});
 			}
 
-			// InnerBlock内の見出しを再帰的に処理
-			if (
-				isAllowedBlock(block.name, hasInnerBlocks) &&
-				block.innerBlocks &&
-				block.innerBlocks.length > 0
-			) {
+			// すべてのブロックのinnerBlocksを再帰的に処理
+			if (block.innerBlocks && block.innerBlocks.length > 0) {
 				processBlocksRecursively(
 					block.innerBlocks,
 					headingBlocks,
@@ -124,26 +120,22 @@ export default function TOCEdit(props) {
 			return;
 		}
 		const { updateBlockAttributes } = dispatch('core/block-editor');
-		const { getBlockOrder, getBlockRootClientId } =
-			select('core/block-editor');
 
 		const headingBlocks = ['core/heading', 'vk-blocks/heading'];
-		const hasInnerBlocks = ['vk-blocks/outer', 'core/cover', 'core/group'];
 
 		// 再帰的にブロックを処理
 		processBlocksRecursively(
 			blocks,
 			headingBlocks,
-			hasInnerBlocks,
+			[], // hasInnerBlocksは使用しない（すべてのブロックを処理するため）
 			updateBlockAttributes
 		);
 
 		// 目次ブロックをアップデート
-		const blocksOrder = getBlockOrder();
 		const allHeadings = getAllHeadings(
 			blocks,
 			headingBlocks,
-			hasInnerBlocks,
+			[], // hasInnerBlocksは使用しない（すべてのブロックを処理するため）
 			{ useCustomLevels, customHeadingLevels, excludedHeadings, globalSettings: tocSettings }
 		);
 
@@ -162,17 +154,15 @@ export default function TOCEdit(props) {
 	]);
 
 	// 見出しの順番を取得する関数
+	const HEADING_BLOCKS = ['core/heading', 'vk-blocks/heading'];
+
 	const getHeadingOrder = (heading) => {
-		// 除外設定UIでは見出しレベルフィルタリングを行わず、実際のドキュメント順序のみを使用
 		const allHeadingsWithPosition = getAllHeadings(
 			blocks,
-			['core/heading', 'vk-blocks/heading'],
-			['vk-blocks/outer', 'core/cover', 'core/group'],
+			HEADING_BLOCKS,
+			[],
 			{ 
-				useCustomLevels: false, 
-				customHeadingLevels: [], 
-				excludedHeadings: [],
-				skipLevelFiltering: true, // 除外設定UI用：レベルフィルタリングをスキップ
+				skipLevelFiltering: true,
 				globalSettings: tocSettings
 			}
 		);

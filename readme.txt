@@ -108,6 +108,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Core List ] Fixed list items not applying colors selected from the Japanese-named color palette.
+
 = 1.105.1 =
 [ Bug Fix ][ Grid Column Card (Pro) ] Fixed the column padding adjustment slider's initial state functionality issue.
 [ Other ][ Highlighter ] Resolved circular dependency issue.

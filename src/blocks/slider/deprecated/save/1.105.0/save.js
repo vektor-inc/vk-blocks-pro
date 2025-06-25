@@ -17,9 +17,6 @@ export default function save({ attributes }) {
 		slidesPerGroup,
 		navigationPosition,
 		centeredSlides,
-		zoomAnimation,
-		zoomInitialScale,
-		zoomFinalScale,
 	} = attributes;
 
 	const sliderData = {
@@ -37,9 +34,6 @@ export default function save({ attributes }) {
 		slidesPerViewPC,
 		slidesPerGroup,
 		centeredSlides,
-		zoomAnimation,
-		zoomInitialScale,
-		zoomFinalScale,
 	};
 
 	let alignClass = '';

@@ -44,7 +44,7 @@ export const useAllHeadingBlocks = () => {
 // 設定の変更を監視するカスタムフック
 export const useTocSettings = () => {
 	return useSelect((select) => {
-		// まず、エンティティから取得を試行
+		// エンティティから取得を試行
 		const { getEntityRecord } = select('core');
 		const settings = getEntityRecord('root', 'site');
 		let tocLevels = settings?.vk_blocks_options?.toc_heading_levels;

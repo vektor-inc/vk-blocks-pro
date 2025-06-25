@@ -41,7 +41,7 @@ export const getAllHeadings = (
 		useCustomLevels,
 		customHeadingLevels,
 		excludedHeadings = [],
-		skipLevelFiltering = false, // 除外設定UI用のオプション
+		skipLevelFiltering = false, // 除外設定用
 		globalSettings = ['h2', 'h3', 'h4', 'h5', 'h6'], // グローバル設定を引数から取得
 	} = options;
 	const headings = [];

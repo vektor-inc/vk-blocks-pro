@@ -7,7 +7,7 @@ import {
 	ExternalLink,
 } from '@wordpress/components';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
-import { dispatch, select, useSelect } from '@wordpress/data';
+import { dispatch, useSelect } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
 import parse from 'html-react-parser';
 import {
@@ -48,17 +48,17 @@ export const useTocSettings = () => {
 		const { getEntityRecord } = select('core');
 		const settings = getEntityRecord('root', 'site');
 		let tocLevels = settings?.vk_blocks_options?.toc_heading_levels;
-		
+
 		// エンティティから取得できない場合は、wp_optionsから直接取得
 		if (!tocLevels && window.vkBlocksOptions?.toc_heading_levels) {
 			tocLevels = window.vkBlocksOptions.toc_heading_levels;
 		}
-		
+
 		// それでも取得できない場合はデフォルト値を使用
 		if (!tocLevels) {
 			tocLevels = ['h2', 'h3', 'h4', 'h5', 'h6'];
 		}
-		
+
 		return tocLevels;
 	}, []);
 };
@@ -122,22 +122,20 @@ export default function TOCEdit(props) {
 		const { updateBlockAttributes } = dispatch('core/block-editor');
 
 		// 再帰的にブロックを処理
-		processBlocksRecursively(
-			blocks,
-			HEADING_BLOCKS,
-			updateBlockAttributes
-		);
+		processBlocksRecursively(blocks, HEADING_BLOCKS, updateBlockAttributes);
 
 		// 目次ブロックをアップデート
-		const headingsForRender = getAllHeadings(
-			blocks,
-			HEADING_BLOCKS,
-			[],
-			{ useCustomLevels, customHeadingLevels, excludedHeadings, globalSettings: tocSettings }
-		);
+		const headingsForRender = getAllHeadings(blocks, HEADING_BLOCKS, [], {
+			useCustomLevels,
+			customHeadingLevels,
+			excludedHeadings,
+			globalSettings: tocSettings,
+		});
 
 		// 新しい位置計算ロジックにより、headingsForRenderは既に正しい順序でソートされている
-		const render = returnHtml(headingsForRender.map(heading => ({ block: heading })));
+		const render = returnHtml(
+			headingsForRender.map((heading) => ({ block: heading }))
+		);
 
 		updateBlockAttributes(clientId, {
 			renderHtml: render,
@@ -157,13 +155,15 @@ export default function TOCEdit(props) {
 			blocks,
 			HEADING_BLOCKS,
 			[],
-			{ 
+			{
 				skipLevelFiltering: true,
-				globalSettings: tocSettings
+				globalSettings: tocSettings,
 			}
 		);
-		
-		const foundHeading = allHeadingsWithPosition.find(h => h.clientId === heading.clientId);
+
+		const foundHeading = allHeadingsWithPosition.find(
+			(h) => h.clientId === heading.clientId
+		);
 		return foundHeading ? foundHeading.position : Infinity;
 	};
 
@@ -190,15 +190,15 @@ export default function TOCEdit(props) {
 	const isHeadingDisabledByLevel = (heading) => {
 		const headingLevel = heading.attributes.level || 2;
 		const headingLevelStr = `h${headingLevel}`;
-		
+
 		// カスタムレベル設定が有効な場合
 		if (useCustomLevels && customHeadingLevels) {
 			return !customHeadingLevels.includes(headingLevelStr);
 		}
-		
+
 		// グローバル設定を使用する場合
 		const globalSettings = tocSettings || ['h2', 'h3', 'h4', 'h5', 'h6'];
-		
+
 		return !globalSettings.includes(headingLevelStr);
 	};
 
@@ -363,8 +363,9 @@ export default function TOCEdit(props) {
 									heading.attributes.content;
 								const isExcluded =
 									excludedHeadings.includes(headingId);
-								const isDisabled = isHeadingDisabledByLevel(heading);
-								
+								const isDisabled =
+									isHeadingDisabledByLevel(heading);
+
 								return (
 									<ToggleControl
 										key={headingId}

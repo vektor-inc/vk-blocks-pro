@@ -17,22 +17,6 @@ import {
 	getAllHeadingBlocks,
 } from './toc-utils';
 
-// 現在のブロックを取得するカスタムフック
-export const useCurrentBlocks = () => {
-	return useSelect((select) => select('core/block-editor').getBlocks(), []);
-};
-
-// 指定された名前のブロックを取得するカスタムフック
-export const useBlocksByName = (blockName) => {
-	return useSelect(
-		(select) => {
-			const { getBlocks } = select('core/block-editor');
-			return getBlocks().filter((block) => block.name === blockName);
-		},
-		[blockName]
-	);
-};
-
 // 見出しブロックを再帰的に取得するカスタムフック
 export const useAllHeadingBlocks = () => {
 	return useSelect((select) => {
@@ -79,8 +63,12 @@ export default function TOCEdit(props) {
 
 	const HEADING_BLOCKS = ['core/heading', 'vk-blocks/heading'];
 
-	const blocks = useCurrentBlocks();
-	const findBlocks = useBlocksByName('vk-blocks/table-of-contents-new');
+	// 必要なデータを直接取得
+	const blocks = useSelect((select) => select('core/block-editor').getBlocks(), []);
+	const findBlocks = useSelect((select) => {
+		const { getBlocks } = select('core/block-editor');
+		return getBlocks().filter((block) => block.name === 'vk-blocks/table-of-contents-new');
+	}, []);
 	const tocSettings = useTocSettings();
 
 	// 見出しブロックの一覧を取得
@@ -132,7 +120,6 @@ export default function TOCEdit(props) {
 			globalSettings: tocSettings,
 		});
 
-		// 新しい位置計算ロジックにより、headingsForRenderは既に正しい順序でソートされている
 		const render = returnHtml(
 			headingsForRender.map((heading) => ({ block: heading }))
 		);
@@ -148,9 +135,8 @@ export default function TOCEdit(props) {
 		excludedHeadings,
 	]);
 
-	// 見出しの順番を取得する関数（パフォーマンス最適化）
+	// 見出しの順番を取得する関数
 	const getHeadingOrder = (heading) => {
-		// 除外設定UI用の見出し一覧をメモ化
 		const allHeadingsWithPosition = getAllHeadings(
 			blocks,
 			HEADING_BLOCKS,

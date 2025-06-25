@@ -5,26 +5,32 @@ export const isAllowedBlock = (name, allowedBlocks) => {
 /**
  * 見出しブロックの正確な位置を計算する関数
  * すべてのブロックのinnerBlocksを再帰的に処理して位置を特定
- * @param {Object} block - 対象の見出しブロック
- * @param {Array} allBlocks - すべてのブロックの配列
- * @returns {number} 見出しの位置（0ベース）
+ * @param {Object} block     - 対象の見出しブロック
+ * @param {Array}  allBlocks - すべてのブロックの配列
+ * @return {number} 見出しの位置（0ベース）
  */
 export const getHeadingPosition = (block, allBlocks) => {
 	let position = 0;
-	
+
 	const calculatePosition = (blocks, currentPosition = 0) => {
 		for (let i = 0; i < blocks.length; i++) {
 			const currentBlock = blocks[i];
-			
+
 			// 見出しブロックの場合、位置を記録
 			if (currentBlock.clientId === block.clientId) {
 				position = currentPosition + i;
 				return true; // 見つかった
 			}
-			
+
 			// 入れ子ブロックを再帰的に処理
-			if (currentBlock.innerBlocks && currentBlock.innerBlocks.length > 0) {
-				const found = calculatePosition(currentBlock.innerBlocks, currentPosition + i);
+			if (
+				currentBlock.innerBlocks &&
+				currentBlock.innerBlocks.length > 0
+			) {
+				const found = calculatePosition(
+					currentBlock.innerBlocks,
+					currentPosition + i
+				);
 				if (found) {
 					return true;
 				}
@@ -32,7 +38,7 @@ export const getHeadingPosition = (block, allBlocks) => {
 		}
 		return false;
 	};
-	
+
 	calculatePosition(allBlocks);
 	return position;
 };
@@ -75,10 +81,10 @@ export const getAllHeadings = (
 			if (!isExcluded && isAllowedLevel) {
 				// 見出しの正確な位置を計算
 				const position = getHeadingPosition(block, blocks);
-				
+
 				headings.push({
 					clientId: block.clientId,
-					position: position,
+					position,
 					attributes: {
 						...block.attributes,
 						anchor: headingId,
@@ -94,10 +100,10 @@ export const getAllHeadings = (
 	};
 
 	blocks.forEach(processBlock);
-	
+
 	// 位置に基づいてソート
 	headings.sort((a, b) => a.position - b.position);
-	
+
 	return headings;
 };
 

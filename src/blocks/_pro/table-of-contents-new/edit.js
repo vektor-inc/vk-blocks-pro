@@ -7,7 +7,7 @@ import {
 	ExternalLink,
 } from '@wordpress/components';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
-import { dispatch, select, useSelect } from '@wordpress/data';
+import { dispatch, useSelect } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
 import parse from 'html-react-parser';
 import {
@@ -16,22 +16,6 @@ import {
 	getAllHeadings,
 	getAllHeadingBlocks,
 } from './toc-utils';
-
-// 現在のブロックを取得するカスタムフック
-export const useCurrentBlocks = () => {
-	return useSelect((select) => select('core/block-editor').getBlocks(), []);
-};
-
-// 指定された名前のブロックを取得するカスタムフック
-export const useBlocksByName = (blockName) => {
-	return useSelect(
-		(select) => {
-			const { getBlocks } = select('core/block-editor');
-			return getBlocks().filter((block) => block.name === blockName);
-		},
-		[blockName]
-	);
-};
 
 // 見出しブロックを再帰的に取得するカスタムフック
 export const useAllHeadingBlocks = () => {
@@ -44,17 +28,22 @@ export const useAllHeadingBlocks = () => {
 // 設定の変更を監視するカスタムフック
 export const useTocSettings = () => {
 	return useSelect((select) => {
+		// エンティティから取得を試行
 		const { getEntityRecord } = select('core');
 		const settings = getEntityRecord('root', 'site');
-		return (
-			settings?.vk_blocks_options?.toc_heading_levels || [
-				'h2',
-				'h3',
-				'h4',
-				'h5',
-				'h6',
-			]
-		);
+		let tocLevels = settings?.vk_blocks_options?.toc_heading_levels;
+
+		// エンティティから取得できない場合は、wp_optionsから直接取得
+		if (!tocLevels && window.vkBlocksOptions?.toc_heading_levels) {
+			tocLevels = window.vkBlocksOptions.toc_heading_levels;
+		}
+
+		// それでも取得できない場合はデフォルト値を使用
+		if (!tocLevels) {
+			tocLevels = ['h2', 'h3', 'h4', 'h5', 'h6'];
+		}
+
+		return tocLevels;
 	}, []);
 };
 
@@ -72,8 +61,19 @@ export default function TOCEdit(props) {
 		className: `vk_tableOfContents vk_tableOfContents-style-${style} tabs`,
 	});
 
-	const blocks = useCurrentBlocks();
-	const findBlocks = useBlocksByName('vk-blocks/table-of-contents-new');
+	const HEADING_BLOCKS = ['core/heading', 'vk-blocks/heading'];
+
+	// 必要なデータを直接取得
+	const blocks = useSelect(
+		(select) => select('core/block-editor').getBlocks(),
+		[]
+	);
+	const findBlocks = useSelect((select) => {
+		const { getBlocks } = select('core/block-editor');
+		return getBlocks().filter(
+			(block) => block.name === 'vk-blocks/table-of-contents-new'
+		);
+	}, []);
 	const tocSettings = useTocSettings();
 
 	// 見出しブロックの一覧を取得
@@ -83,7 +83,6 @@ export default function TOCEdit(props) {
 	const processBlocksRecursively = (
 		blocks,
 		headingBlocks,
-		hasInnerBlocks,
 		updateBlockAttributes
 	) => {
 		blocks.forEach(function (block) {
@@ -97,16 +96,11 @@ export default function TOCEdit(props) {
 				});
 			}
 
-			// InnerBlock内の見出しを再帰的に処理
-			if (
-				isAllowedBlock(block.name, hasInnerBlocks) &&
-				block.innerBlocks &&
-				block.innerBlocks.length > 0
-			) {
+			// すべてのブロックのinnerBlocksを再帰的に処理
+			if (block.innerBlocks && block.innerBlocks.length > 0) {
 				processBlocksRecursively(
 					block.innerBlocks,
 					headingBlocks,
-					hasInnerBlocks,
 					updateBlockAttributes
 				);
 			}
@@ -119,47 +113,21 @@ export default function TOCEdit(props) {
 			return;
 		}
 		const { updateBlockAttributes } = dispatch('core/block-editor');
-		const { getBlockOrder, getBlockRootClientId } =
-			select('core/block-editor');
-
-		const headingBlocks = ['core/heading', 'vk-blocks/heading'];
-		const hasInnerBlocks = ['vk-blocks/outer', 'core/cover', 'core/group'];
 
 		// 再帰的にブロックを処理
-		processBlocksRecursively(
-			blocks,
-			headingBlocks,
-			hasInnerBlocks,
-			updateBlockAttributes
-		);
+		processBlocksRecursively(blocks, HEADING_BLOCKS, updateBlockAttributes);
 
 		// 目次ブロックをアップデート
-		const blocksOrder = getBlockOrder();
-		const allHeadings = getAllHeadings(
-			blocks,
-			headingBlocks,
-			hasInnerBlocks,
-			{ useCustomLevels, customHeadingLevels, excludedHeadings }
-		);
-
-		const allHeadingsSorted = allHeadings.map((heading) => {
-			const index = blocksOrder.indexOf(heading.clientId);
-			const rootIndex = blocksOrder.indexOf(
-				getBlockRootClientId(heading.clientId)
-			);
-			let finalIndex;
-
-			if (index >= 0) {
-				finalIndex = index;
-			} else if (rootIndex >= 0) {
-				finalIndex = rootIndex;
-			}
-
-			return { index: finalIndex, block: heading };
+		const headingsForRender = getAllHeadings(blocks, HEADING_BLOCKS, [], {
+			useCustomLevels,
+			customHeadingLevels,
+			excludedHeadings,
+			globalSettings: tocSettings,
 		});
-		allHeadingsSorted.sort((first, second) => first.index - second.index);
 
-		const render = returnHtml(allHeadingsSorted);
+		const render = returnHtml(
+			headingsForRender.map((heading) => ({ block: heading }))
+		);
 
 		updateBlockAttributes(clientId, {
 			renderHtml: render,
@@ -174,21 +142,20 @@ export default function TOCEdit(props) {
 
 	// 見出しの順番を取得する関数
 	const getHeadingOrder = (heading) => {
-		const blocksOrder = select('core/block-editor').getBlockOrder();
-		const index = blocksOrder.indexOf(heading.clientId);
-
-		if (index >= 0) {
-			return index;
-		}
-
-		const rootIndex = blocksOrder.indexOf(
-			select('core/block-editor').getBlockRootClientId(heading.clientId)
+		const allHeadingsWithPosition = getAllHeadings(
+			blocks,
+			HEADING_BLOCKS,
+			[],
+			{
+				skipLevelFiltering: true,
+				globalSettings: tocSettings,
+			}
 		);
 
-		if (rootIndex >= 0) {
-			return rootIndex;
-		}
-		return Infinity;
+		const foundHeading = allHeadingsWithPosition.find(
+			(h) => h.clientId === heading.clientId
+		);
+		return foundHeading ? foundHeading.position : Infinity;
 	};
 
 	const handleMaxLevelChange = (maxLevel) => {
@@ -208,6 +175,22 @@ export default function TOCEdit(props) {
 		const maxLevel =
 			customHeadingLevels?.[customHeadingLevels.length - 1] || 'h2';
 		return maxLevel;
+	};
+
+	// 見出しレベル設定で既に除外されているかどうかを判定する関数
+	const isHeadingDisabledByLevel = (heading) => {
+		const headingLevel = heading.attributes.level || 2;
+		const headingLevelStr = `h${headingLevel}`;
+
+		// カスタムレベル設定が有効な場合
+		if (useCustomLevels && customHeadingLevels) {
+			return !customHeadingLevels.includes(headingLevelStr);
+		}
+
+		// グローバル設定を使用する場合
+		const globalSettings = tocSettings || ['h2', 'h3', 'h4', 'h5', 'h6'];
+
+		return !globalSettings.includes(headingLevelStr);
 	};
 
 	/* eslint jsx-a11y/label-has-associated-control: 0 */
@@ -345,12 +328,13 @@ export default function TOCEdit(props) {
 				<PanelBody
 					title={__('Exclude Headings', 'vk-blocks-pro')}
 					initialOpen={false}
-					help={__(
-						'Select headings to exclude from the table of contents.',
-						'vk-blocks-pro'
-					)}
 				>
-					<BaseControl>
+					<BaseControl
+						help={__(
+							'Select headings to exclude from the table of contents. Headings that are already excluded by heading level settings are disabled.',
+							'vk-blocks-pro'
+						)}
+					>
 						{allHeadings
 							.filter((heading) => {
 								const headingLevel =
@@ -370,6 +354,9 @@ export default function TOCEdit(props) {
 									heading.attributes.content;
 								const isExcluded =
 									excludedHeadings.includes(headingId);
+								const isDisabled =
+									isHeadingDisabledByLevel(heading);
+
 								return (
 									<ToggleControl
 										key={headingId}
@@ -381,6 +368,7 @@ export default function TOCEdit(props) {
 											/>
 										}
 										checked={isExcluded}
+										disabled={isDisabled}
 										onChange={(value) => {
 											const newExcludedHeadings = value
 												? [

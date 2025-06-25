@@ -108,6 +108,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Slider ] Added zoom animation feature.
 [ Bug fix ][ Core List ] Fixed list items not applying colors selected from the Japanese-named color palette.
 
 = 1.105.1 =

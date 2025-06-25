@@ -25,5 +25,10 @@
 		max-width:100%;
 		margin-block-start: 0;
 	}
-
+	&.vk_slider--zoom {
+		.vk_slider_item {
+			position: relative;
+			overflow: hidden;
+		}
+	}
 }

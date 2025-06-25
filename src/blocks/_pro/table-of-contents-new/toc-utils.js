@@ -2,7 +2,13 @@ export const isAllowedBlock = (name, allowedBlocks) => {
 	return allowedBlocks.includes(name);
 };
 
-// 見出しブロックの正確な位置を計算する関数
+/**
+ * 見出しブロックの正確な位置を計算する関数
+ * すべてのブロックのinnerBlocksを再帰的に処理して位置を特定
+ * @param {Object} block - 対象の見出しブロック
+ * @param {Array} allBlocks - すべてのブロックの配列
+ * @returns {number} 見出しの位置（0ベース）
+ */
 export const getHeadingPosition = (block, allBlocks) => {
 	let position = 0;
 	
@@ -81,7 +87,8 @@ export const getAllHeadings = (
 			}
 		}
 
-		if (isAllowedBlock(block.name, hasInnerBlocks) && block.innerBlocks) {
+		// すべてのブロックのinnerBlocksを再帰的に処理
+		if (block.innerBlocks && block.innerBlocks.length > 0) {
 			block.innerBlocks.forEach(processBlock);
 		}
 	};

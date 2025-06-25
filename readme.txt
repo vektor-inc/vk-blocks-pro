@@ -109,7 +109,7 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Slider ] Added zoom animation feature.
-[ Bug Fix ][ Table of Contents (Pro) ] Fixed nested headings order and disabled state in exclude headings UI to display correctly according to document order and heading level settings.
+[ Bug Fix ][ Table of Contents (Pro) ] Fixed exclude headings UI showing wrong order and missing disabled state for level-filtered headings.
 
 = 1.105.1 =
 [ Bug Fix ][ Grid Column Card (Pro) ] Fixed the column padding adjustment slider's initial state functionality issue.

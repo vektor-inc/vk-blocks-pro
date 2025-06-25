@@ -77,6 +77,8 @@ export default function TOCEdit(props) {
 		className: `vk_tableOfContents vk_tableOfContents-style-${style} tabs`,
 	});
 
+	const HEADING_BLOCKS = ['core/heading', 'vk-blocks/heading'];
+
 	const blocks = useCurrentBlocks();
 	const findBlocks = useBlocksByName('vk-blocks/table-of-contents-new');
 	const tocSettings = useTocSettings();
@@ -88,7 +90,6 @@ export default function TOCEdit(props) {
 	const processBlocksRecursively = (
 		blocks,
 		headingBlocks,
-		hasInnerBlocks,
 		updateBlockAttributes
 	) => {
 		blocks.forEach(function (block) {
@@ -107,7 +108,6 @@ export default function TOCEdit(props) {
 				processBlocksRecursively(
 					block.innerBlocks,
 					headingBlocks,
-					hasInnerBlocks,
 					updateBlockAttributes
 				);
 			}
@@ -121,26 +121,23 @@ export default function TOCEdit(props) {
 		}
 		const { updateBlockAttributes } = dispatch('core/block-editor');
 
-		const headingBlocks = ['core/heading', 'vk-blocks/heading'];
-
 		// 再帰的にブロックを処理
 		processBlocksRecursively(
 			blocks,
-			headingBlocks,
-			[], // hasInnerBlocksは使用しない（すべてのブロックを処理するため）
+			HEADING_BLOCKS,
 			updateBlockAttributes
 		);
 
 		// 目次ブロックをアップデート
-		const allHeadings = getAllHeadings(
+		const headingsForRender = getAllHeadings(
 			blocks,
-			headingBlocks,
-			[], // hasInnerBlocksは使用しない（すべてのブロックを処理するため）
+			HEADING_BLOCKS,
+			[],
 			{ useCustomLevels, customHeadingLevels, excludedHeadings, globalSettings: tocSettings }
 		);
 
-		// 新しい位置計算ロジックにより、allHeadingsは既に正しい順序でソートされている
-		const render = returnHtml(allHeadings.map(heading => ({ block: heading })));
+		// 新しい位置計算ロジックにより、headingsForRenderは既に正しい順序でソートされている
+		const render = returnHtml(headingsForRender.map(heading => ({ block: heading })));
 
 		updateBlockAttributes(clientId, {
 			renderHtml: render,
@@ -153,10 +150,9 @@ export default function TOCEdit(props) {
 		excludedHeadings,
 	]);
 
-	// 見出しの順番を取得する関数
-	const HEADING_BLOCKS = ['core/heading', 'vk-blocks/heading'];
-
+	// 見出しの順番を取得する関数（パフォーマンス最適化）
 	const getHeadingOrder = (heading) => {
+		// 除外設定UI用の見出し一覧をメモ化
 		const allHeadingsWithPosition = getAllHeadings(
 			blocks,
 			HEADING_BLOCKS,

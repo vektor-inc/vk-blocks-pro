@@ -140,11 +140,11 @@ if ( ! function_exists( 'vk_blocks_set_number_recursive' ) ) {
 	function vk_blocks_set_number_recursive( $html ) {
 		libxml_use_internal_errors( true );
 		$doc = new DOMDocument();
-		
+
 		// 複数の方法でエンコーディングを検出
-		$encoding = vk_blocks_get_safe_encoding( $html );
+		$encoding        = vk_blocks_get_safe_encoding( $html );
 		$xml_declaration = '<?xml encoding="' . $encoding . '" ?>';
-		
+
 		// phpcs:disable PHPCompatibility.Constants.NewConstants
 		$doc->loadHTML( $xml_declaration . $html, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD );
 		// phpcs:enable PHPCompatibility.Constants.NewConstants
@@ -197,10 +197,16 @@ if ( ! function_exists( 'vk_blocks_set_number_recursive' ) ) {
 		return $html;
 	}
 
+	/**
+	 * Get safe encoding for HTML processing.
+	 *
+	 * @param string $html HTML content.
+	 * @return string Encoding string.
+	 */
 	function vk_blocks_get_safe_encoding( $html ) {
 		// WordPressの設定を優先
 		$wp_encoding = get_option( 'blog_charset', 'UTF-8' );
-		
+
 		// HTMLのmetaタグをチェック
 		if ( preg_match( '/<meta[^>]*charset=["\']?([^"\'>]+)/i', $html, $matches ) ) {
 			$meta_encoding = $matches[1];
@@ -209,7 +215,7 @@ if ( ! function_exists( 'vk_blocks_set_number_recursive' ) ) {
 				return $wp_encoding;
 			}
 		}
-		
+
 		// 最終的にはWordPressの設定を使用
 		return $wp_encoding;
 	}

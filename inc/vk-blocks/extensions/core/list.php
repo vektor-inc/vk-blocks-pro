@@ -50,7 +50,7 @@ function vk_blocks_render_core_list( $block_content, $block ) {
 		$block_content = vk_blocks_set_number_recursive( $block_content );
 
 		// ルートul/olタグにユニーククラス名とスタイルクラス名を付与
-		$root_tag = !empty($block['attrs']['ordered']) ? 'ol' : 'ul';
+		$root_tag   = ! empty( $block['attrs']['ordered'] ) ? 'ol' : 'ul';
 		$root_class = $unique_classname;
 		if ( ! empty( $block['attrs']['className'] ) ) {
 			$class_array = explode( ' ', $block['attrs']['className'] );
@@ -67,7 +67,7 @@ function vk_blocks_render_core_list( $block_content, $block ) {
 			1,
 			$count
 		);
-		if ( $count === 0 ) {
+		if ( 0 === $count ) {
 			// もともとclass属性がなければ追加
 			$block_content = preg_replace(
 				'/<' . $root_tag . '(.*?)(?=>)/',
@@ -128,50 +128,64 @@ function vk_blocks_render_core_list( $block_content, $block ) {
 add_filter( 'render_block_core/list', 'vk_blocks_render_core_list', 10, 2 );
 
 if ( ! function_exists( 'vk_blocks_set_number_recursive' ) ) {
-function vk_blocks_set_number_recursive( $html ) {
-	libxml_use_internal_errors( true );
-	$doc = new DOMDocument();
-	$doc->loadHTML('<?xml encoding="utf-8" ?>' . $html, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+	/**
+	 * Set number recursively for list items.
+	 *
+	 * @param string $html HTML content.
+	 * @return string
+	 */
+	function vk_blocks_set_number_recursive( $html ) {
+		libxml_use_internal_errors( true );
+		$doc = new DOMDocument();
+		// phpcs:disable PHPCompatibility.Constants.NewConstants
+		$doc->loadHTML( '<?xml encoding="utf-8" ?>' . $html, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD );
+		// phpcs:enable PHPCompatibility.Constants.NewConstants
 
-	$process_list = function( $list ) use ( &$process_list, $doc ) {
-		// reversed属性の有無
-		$is_reversed = $list->nodeName === 'ol' && $list->hasAttribute('reversed');
-		// 直下liのみ
-		$li_nodes = [];
-		foreach ( $list->childNodes as $child ) {
-			if ( $child instanceof DOMElement && $child->nodeName === 'li' ) {
-				$li_nodes[] = $child;
-			}
-		}
-		$start = 1;
-		if ( $list->nodeName === 'ol' && $list->hasAttribute('start') ) {
-			$start = intval( $list->getAttribute('start') );
-		}
-		$li_count = count( $li_nodes );
-		$li_number = $is_reversed ? $li_count + $start - 1 : $start;
-		foreach ( $li_nodes as $li ) {
-			$li->setAttribute( 'data-vk-number', $li_number );
-			// 入れ子リストがあれば再帰
-			foreach ( $li->childNodes as $li_child ) {
-				if ( $li_child instanceof DOMElement && ( $li_child->nodeName === 'ol' || $li_child->nodeName === 'ul' ) ) {
-					$process_list( $li_child );
+		$process_list = function ( $list_element ) use ( &$process_list, $doc ) {
+			// reversed属性の有無
+			// phpcs:disable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
+			$is_reversed = 'ol' === $list_element->nodeName && $list_element->hasAttribute( 'reversed' );
+			// 直下liのみ
+			$li_nodes = array();
+			foreach ( $list_element->childNodes as $child ) {
+				if ( $child instanceof DOMElement && 'li' === $child->nodeName ) {
+					$li_nodes[] = $child;
 				}
 			}
-			if ( $is_reversed ) {
-				$li_number--;
-			} else {
-				$li_number++;
+			$start = 1;
+			if ( 'ol' === $list_element->nodeName && $list_element->hasAttribute( 'start' ) ) {
+				$start = intval( $list_element->getAttribute( 'start' ) );
+			}
+			// phpcs:enable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
+			$li_count  = count( $li_nodes );
+			$li_number = $is_reversed ? $li_count + $start - 1 : $start;
+			foreach ( $li_nodes as $li ) {
+				$li->setAttribute( 'data-vk-number', $li_number );
+				// 入れ子リストがあれば再帰
+				// phpcs:disable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
+				foreach ( $li->childNodes as $li_child ) {
+					if ( $li_child instanceof DOMElement && ( 'ol' === $li_child->nodeName || 'ul' === $li_child->nodeName ) ) {
+						$process_list( $li_child );
+					}
+				}
+				// phpcs:enable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
+				if ( $is_reversed ) {
+					--$li_number;
+				} else {
+					++$li_number;
+				}
+			}
+		};
+		// ルートのol/ulを探して処理
+		// phpcs:disable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
+		foreach ( $doc->childNodes as $node ) {
+			if ( $node instanceof DOMElement && ( 'ol' === $node->nodeName || 'ul' === $node->nodeName ) ) {
+				$process_list( $node );
 			}
 		}
-	};
-	// ルートのol/ulを探して処理
-	foreach ( $doc->childNodes as $node ) {
-		if ( $node instanceof DOMElement && ( $node->nodeName === 'ol' || $node->nodeName === 'ul' ) ) {
-			$process_list( $node );
-		}
+		// phpcs:enable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
+		$html = $doc->saveHTML();
+		$html = preg_replace( '/^<\?xml.*?\?>/', '', $html );
+		return $html;
 	}
-	$html = $doc->saveHTML();
-	$html = preg_replace( '/^<\?xml.*?\?>/', '', $html );
-	return $html;
-}
 }

@@ -14,7 +14,10 @@
  */
 function vk_blocks_render_core_list( $block_content, $block ) {
 	// 以前の形式 vk-has-(.*)-colorで保存されている場合
-	$has_deprecated_classname = ! empty( $block['attrs']['className'] ) && preg_match( '/vk-has-(.*)-color/', $block['attrs']['className'] );
+	$has_deprecated_classname = ! empty( $block['attrs']['className'] ) && strpos( $block['attrs']['className'], 'vk-has-(.*)-color' ) !== false;
+	if ( $has_deprecated_classname ) {
+		return $block_content;
+	}
 
 	// WP6.2未満の場合
 	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {

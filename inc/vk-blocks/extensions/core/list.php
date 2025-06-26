@@ -141,7 +141,7 @@ if ( ! function_exists( 'vk_blocks_set_number_recursive' ) ) {
 		libxml_use_internal_errors( true );
 		$doc = new DOMDocument();
 		// phpcs:disable PHPCompatibility.Constants.NewConstants
-		$doc->loadHTML( '<?xml encoding="utf-8" ?>' . $html, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD );
+		$doc->loadHTML( $html, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD );
 		// phpcs:enable PHPCompatibility.Constants.NewConstants
 
 		$process_list = function ( $list_element ) use ( &$process_list, $doc ) {

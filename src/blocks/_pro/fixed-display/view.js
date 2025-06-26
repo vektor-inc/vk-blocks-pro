@@ -12,31 +12,6 @@ function getSessionStorageFlag(key) {
 // 状態管理用のマップを初期化
 const blockStates = new Map();
 
-// Closeボタンの初期化
-function initializeCloseButtons() {
-	const closeButtons = document.querySelectorAll('.vk_fixed-display-close-button');
-	
-	closeButtons.forEach((button) => {
-		// 既にイベントリスナーが設定されている場合はスキップ
-		if (button.hasAttribute('data-close-initialized')) {
-			return;
-		}
-		
-		button.setAttribute('data-close-initialized', 'true');
-		
-		button.addEventListener('click', (e) => {
-			e.preventDefault();
-			e.stopPropagation();
-			
-			// 親要素（固定表示ブロック）を非表示にする
-			const fixedDisplay = button.closest('.vk_fixed-display');
-			if (fixedDisplay) {
-				fixedDisplay.style.display = 'none';
-			}
-		});
-	});
-}
-
 // スクロールタイミング設定
 window.addEventListener('scroll', function () {
 	const items = document.querySelectorAll(
@@ -200,14 +175,8 @@ function initializeDisplayHide() {
 }
 
 window.initializeDisplayHide = initializeDisplayHide;
-window.addEventListener('DOMContentLoaded', () => {
-	initializeCloseButtons();
-	initializeDisplayHide();
-});
-window.addEventListener('load', () => {
-	initializeCloseButtons();
-	initializeDisplayHide();
-});
+window.addEventListener('DOMContentLoaded', initializeDisplayHide);
+window.addEventListener('load', initializeDisplayHide);
 
 // 単位をピクセル値に変換する関数
 function convertUnitToPixels(value, unit) {

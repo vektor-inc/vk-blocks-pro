@@ -14,8 +14,6 @@ export default function save({ attributes }) {
 		hideAfterSeconds,
 		dontShowAgain,
 		blockId,
-		showCloseButton,
-		closeButtonText,
 	} = attributes;
 
 	// dataAttributesとクラスを初期化
@@ -57,12 +55,6 @@ export default function save({ attributes }) {
 		dataAttributes['data-dont-show-again'] = 'true';
 	}
 
-	// Closeボタンの設定
-	if (showCloseButton) {
-		dataAttributes['data-show-close-button'] = 'true';
-		dataAttributes['data-close-button-text'] = closeButtonText || '×';
-	}
-
 	// ブロックのプロパティを設定し、不要なクラスが残らないようにする
 	const blockProps = useBlockProps.save({
 		className: `vk_fixed-display vk_fixed-display-position-${position} ${
@@ -81,15 +73,6 @@ export default function save({ attributes }) {
 
 	return (
 		<div {...blockProps}>
-			{showCloseButton && (
-				<button
-					className="vk_fixed-display-close-button"
-					type="button"
-					aria-label="Close"
-				>
-					{closeButtonText || '×'}
-				</button>
-			)}
 			<InnerBlocks.Content />
 		</div>
 	);

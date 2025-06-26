@@ -260,11 +260,11 @@ const withElementsStyles = createHigherOrderComponent(
 				const observer = new MutationObserver(() => {
 					setNumbersRecursive(block);
 				});
-				observer.observe(block, { 
-					childList: true, 
+				observer.observe(block, {
+					childList: true,
 					subtree: true,
 					attributes: true,
-					attributeFilter: ['reversed', 'start']
+					attributeFilter: ['reversed', 'start'],
 				});
 
 				return () => {

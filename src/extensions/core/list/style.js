@@ -1,9 +1,11 @@
+/* globals MutationObserver */
+
 /**
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
-import { PanelBody, Notice } from '@wordpress/components';
+import { PanelBody } from '@wordpress/components';
 import {
 	InspectorControls,
 	ColorPalette,
@@ -105,85 +107,79 @@ export const addBlockControl = createHigherOrderComponent(
 			if (!ordered && (reversed || (start && start !== 1))) {
 				setAttributes({
 					reversed: false,
-					start: 1
+					start: 1,
 				});
 			}
 		}, [ordered, reversed, start, setAttributes]);
 
-	// 順序付きリストで番号付きスタイルが適用されているかチェック
-	const hasNumberedStyle = className && (
-		className.includes('is-style-vk-numbered-square-mark') ||
-		className.includes('is-style-vk-numbered-circle-mark')
-	);
-
-	return (
-		<>
-			<BlockEdit {...props} />
-			<InspectorControls>
-				<PanelBody
-					title={__('List Icon Color', 'vk-blocks-pro')}
-					initialOpen={false}
-				>
-					<ColorPalette
-						value={colorSlugToColorCode(color)}
-						disableCustomColors={
-							isLagerThanWp62() ? false : true
-						}
-						onChange={(newColor) => {
-							// 色コードを colorSet から探して色データを取得
-							const ColorValue = getColorObjectByColorValue(
-								colorSet,
-								newColor
-							);
-
-							// 現在のクラス名を配列化
-							const nowClassArray =
-								className && className.split(' ');
-
-							// 新しいクラス名の配列
-							let newClassNameArray = nowClassArray
-								? nowClassArray
-								: [];
-
-							// 互換処理:設定されていたクラス名vk-has-〇〇-colorを削除する
-							if (nowClassArray) {
-								newClassNameArray = nowClassArray.filter(
-									(item) => {
-										return !item.match(
-											/vk-has-(.*)-color/
-										);
-									}
-								);
+		return (
+			<>
+				<BlockEdit {...props} />
+				<InspectorControls>
+					<PanelBody
+						title={__('List Icon Color', 'vk-blocks-pro')}
+						initialOpen={false}
+					>
+						<ColorPalette
+							value={colorSlugToColorCode(color)}
+							disableCustomColors={
+								isLagerThanWp62() ? false : true
 							}
+							onChange={(newColor) => {
+								// 色コードを colorSet から探して色データを取得
+								const ColorValue = getColorObjectByColorValue(
+									colorSet,
+									newColor
+								);
 
-							// 6.2未満の場合
-							if (!isLagerThanWp62()) {
-								// newColorがあれば新しいクラス名を追加する
-								if (newColor !== undefined) {
-									// コアのテキストカラーと被らないようにvk-has-〇〇-colorを追加する
-									newClassNameArray.push(
-										`vk-has-${ColorValue.slug}-color`
+								// 現在のクラス名を配列化
+								const nowClassArray =
+									className && className.split(' ');
+
+								// 新しいクラス名の配列
+								let newClassNameArray = nowClassArray
+									? nowClassArray
+									: [];
+
+								// 互換処理:設定されていたクラス名vk-has-〇〇-colorを削除する
+								if (nowClassArray) {
+									newClassNameArray = nowClassArray.filter(
+										(item) => {
+											return !item.match(
+												/vk-has-(.*)-color/
+											);
+										}
 									);
 								}
-							}
 
-							const newClassName =
-								newClassNameArray.join(' ');
+								// 6.2未満の場合
+								if (!isLagerThanWp62()) {
+									// newColorがあれば新しいクラス名を追加する
+									if (newColor !== undefined) {
+										// コアのテキストカラーと被らないようにvk-has-〇〇-colorを追加する
+										newClassNameArray.push(
+											`vk-has-${ColorValue.slug}-color`
+										);
+									}
+								}
 
-							setAttributes({
-								className: newClassName,
-								color: ColorValue?.slug
-									? ColorValue?.slug
-									: newColor,
-							});
-						}}
-					/>
-				</PanelBody>
-			</InspectorControls>
-		</>
-	);
-},
-'addMyCustomBlockControls'
+								const newClassName =
+									newClassNameArray.join(' ');
+
+								setAttributes({
+									className: newClassName,
+									color: ColorValue?.slug
+										? ColorValue?.slug
+										: newColor,
+								});
+							}}
+						/>
+					</PanelBody>
+				</InspectorControls>
+			</>
+		);
+	},
+	'addMyCustomBlockControls'
 );
 addFilter('editor.BlockEdit', 'vk-blocks/list-style', addBlockControl);
 
@@ -214,27 +210,40 @@ const withElementsStyles = createHigherOrderComponent(
 		}
 
 		// 番号付きスタイル＆順序付きリストの場合、liにdata-vk-numberを付与
-		const hasNumberedStyle = nowClassArray.some((item) =>
-			item === 'is-style-vk-numbered-square-mark' || item === 'is-style-vk-numbered-circle-mark'
+		const hasNumberedStyle = nowClassArray.some(
+			(item) =>
+				item === 'is-style-vk-numbered-square-mark' ||
+				item === 'is-style-vk-numbered-circle-mark'
 		);
 		useEffect(() => {
 			if (hasNumberedStyle) {
 				const block = document.getElementById(`block-${clientId}`);
-				if (!block) return;
+				if (!block) {
+					return;
+				}
 
 				function setNumbersRecursive(listEl) {
 					const isOrdered = listEl.tagName === 'OL';
-					const isReversed = isOrdered && listEl.hasAttribute('reversed');
-					const start = isOrdered && listEl.hasAttribute('start') ? parseInt(listEl.getAttribute('start'), 10) : 1;
-					const lis = Array.from(listEl.children).filter(child => child.tagName === 'LI');
+					const isReversed =
+						isOrdered && listEl.hasAttribute('reversed');
+					const start =
+						isOrdered && listEl.hasAttribute('start')
+							? parseInt(listEl.getAttribute('start'), 10)
+							: 1;
+					const lis = Array.from(listEl.children).filter(
+						(child) => child.tagName === 'LI'
+					);
 					const li_count = lis.length;
 					let li_number = isReversed ? li_count + start - 1 : start;
-					
-					lis.forEach(li => {
+
+					lis.forEach((li) => {
 						li.setAttribute('data-vk-number', li_number);
 						// 子リストがあれば再帰
-						Array.from(li.children).forEach(child => {
-							if (child.tagName === 'OL' || child.tagName === 'UL') {
+						Array.from(li.children).forEach((child) => {
+							if (
+								child.tagName === 'OL' ||
+								child.tagName === 'UL'
+							) {
 								setNumbersRecursive(child);
 							}
 						});

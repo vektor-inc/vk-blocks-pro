@@ -257,22 +257,19 @@ const withElementsStyles = createHigherOrderComponent(
 
 				setNumbersRecursive(block);
 
-				// MutationObserverが利用可能かチェック
-				if (typeof MutationObserver !== 'undefined') {
-					const observer = new MutationObserver(() => {
-						setNumbersRecursive(block);
-					});
-					observer.observe(block, { 
-						childList: true, 
-						subtree: true,
-						attributes: true,
-						attributeFilter: ['reversed', 'start']
-					});
+				const observer = new MutationObserver(() => {
+					setNumbersRecursive(block);
+				});
+				observer.observe(block, { 
+					childList: true, 
+					subtree: true,
+					attributes: true,
+					attributeFilter: ['reversed', 'start']
+				});
 
-					return () => {
-						observer.disconnect();
-					};
-				}
+				return () => {
+					observer.disconnect();
+				};
 			}
 		}, [ordered, hasNumberedStyle, reversed, start, clientId, color]);
 

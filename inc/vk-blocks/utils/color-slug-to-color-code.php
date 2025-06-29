@@ -36,14 +36,15 @@ function vk_blocks_get_color_code( $value ) {
 		} else {
 			$return = $value;
 		}
+	} elseif ( preg_match( '/^[a-zA-Z]+$/', $value ) ) {
+		// 色名（red, blue, blackなど）- ハイフンを含まない場合
+		$return = $value;
 	} elseif ( strpos( $value, '-' ) !== false ) {
 		// WordPressコアの命名規則に合わせてハイフンを正規化
 		$slug = str_replace( '--', '-', $value );
 		// 末尾のハイフンを削除
 		$slug   = rtrim( $slug, '-' );
 		$return = 'var(--wp--preset--color--' . $slug . ')';
-	} elseif ( preg_match( '/^[a-zA-Z]+$/', $value ) ) {
-		$return = $value;
 	} else {
 		// WordPressコアの命名規則に合わせてハイフンを正規化
 		$slug = str_replace( '--', '-', $value );

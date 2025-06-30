@@ -52,7 +52,7 @@ export const getAllHeadings = (
 			}
 		}
 
-		if (isAllowedBlock(block.name, hasInnerBlocks) && block.innerBlocks) {
+		if (block.innerBlocks && block.innerBlocks.length > 0) {
 			block.innerBlocks.forEach(processBlock);
 		}
 	};

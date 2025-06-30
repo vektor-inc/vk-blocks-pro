@@ -108,6 +108,8 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Slider ] Added zoom animation feature.
+
 = 1.105.1 =
 [ Bug Fix ][ Grid Column Card (Pro) ] Fixed the column padding adjustment slider's initial state functionality issue.
 [ Other ][ Highlighter ] Resolved circular dependency issue.

@@ -5,7 +5,6 @@ export const isAllowedBlock = (name, allowedBlocks) => {
 export const getAllHeadings = (
 	blocks,
 	headingBlocks,
-	hasInnerBlocks,
 	options
 ) => {
 	const {

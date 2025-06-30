@@ -132,17 +132,56 @@
 	cursor: pointer;
 	font-size: 18px;
 	line-height: 1;
-	z-index: 1;
-	transition: background-color 0.2s ease;
+	z-index: 2;
+	transition: all 0.3s;
+	
+	// 親要素がtop位置の場合（右上に配置）
+	.vk_fixed-display-position-top & {
+		top: 10px;
+		right: 10px;
+	}
+	
+	// 親要素がright位置の場合（右端に配置）
+	.vk_fixed-display-position-right & {
+		top: 10px;
+		right: 0px;
+	}
+	
+	// 親要素がbottom位置の場合（右上に配置）
+	.vk_fixed-display-position-bottom & {
+		top: 10px;
+		right: 10px;
+	}
+	
+	// 親要素がleft位置の場合（左端に配置）
+	.vk_fixed-display-position-left & {
+		top: 10px;
+		right: auto;
+		left: 10px;
+	}
+	
+	// 親要素がfrom-top位置の場合（右上に配置）
+	.vk_fixed-display-position-from-top & {
+		top: 10px;
+		right: 10px;
+	}
+	
+	// 親要素がfrom-bottom位置の場合（右上に配置）
+	.vk_fixed-display-position-from-bottom & {
+		top: 10px;
+		right: 10px;
+	}
 	
 	&:hover {
-		background: rgba(0, 0, 0, 0.9);
+		opacity: 0.8;
 	}
 	
 	&:focus {
-		outline: 2px solid #007cba;
+		outline: 2px solid var(--vk-color-primary);
 		outline-offset: 2px;
+		opacity: 0.8;
 	}
+
 }
 
 /*-------------------------------------------*/

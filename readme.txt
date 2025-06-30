@@ -109,6 +109,7 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Slider ] Added zoom animation feature.
+[ Specification change ][ Table of Contents (Pro) ] Removed the restriction that prevented nested headings from being displayed in the list.
 
 = 1.105.1 =
 [ Bug Fix ][ Grid Column Card (Pro) ] Fixed the column padding adjustment slider's initial state functionality issue.

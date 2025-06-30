@@ -17,6 +17,18 @@ class colorSlugToClorCodeTest extends VK_UnitTestCase {
 				'value'  => 'black',
 				'correct' => 'var(--wp--preset--color--black)',
 			),
+			array(
+				'value'  => 'custom-',
+				'correct' => 'var(--wp--preset--color--custom)',
+			),
+			array(
+				'value'  => 'my--color',
+				'correct' => 'var(--wp--preset--color--my-color)',
+			),
+			array(
+				'value'  => 'custom---',
+				'correct' => 'var(--wp--preset--color--custom)',
+			),
 		);
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;

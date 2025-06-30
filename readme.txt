@@ -108,6 +108,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Fixed Display (Pro) ] Added close button feature.
 [ Add function ][ Slider ] Added zoom animation feature.
 
 = 1.105.1 =

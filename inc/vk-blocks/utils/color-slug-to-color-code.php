@@ -38,7 +38,7 @@ function vk_blocks_get_color_code( $value ) {
 		}
 	} elseif ( strpos( $value, '-' ) !== false ) {
 		// ハイフンを含む場合はWordPressカラーパレットのスラッグとして処理
-		$slug = str_replace( '--', '-', $value );
+		$slug   = str_replace( '--', '-', $value );
 		$slug   = rtrim( $slug, '-' );
 		$return = 'var(--wp--preset--color--' . $slug . ')';
 	} elseif ( preg_match( '/^[a-zA-Z]+$/', $value ) ) {

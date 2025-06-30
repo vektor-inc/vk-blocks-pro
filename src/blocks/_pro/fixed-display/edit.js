@@ -46,6 +46,7 @@ export default function FixedDisplayEdit(props) {
 		closeButtonText,
 		closeButtonBackgroundColor,
 		closeButtonTextColor,
+		closeButtonBorderRadius,
 	} = attributes;
 
 	const [tempScrollTiming, setTempScrollTiming] = useState(
@@ -117,6 +118,7 @@ export default function FixedDisplayEdit(props) {
 			closeButtonText: closeButtonText || '×',
 			closeButtonBackgroundColor: closeButtonBackgroundColor || '#000000',
 			closeButtonTextColor: closeButtonTextColor || '#ffffff',
+			closeButtonBorderRadius: closeButtonBorderRadius || null,
 		});
 	}, [
 		clientId,
@@ -129,6 +131,7 @@ export default function FixedDisplayEdit(props) {
 		closeButtonText,
 		closeButtonBackgroundColor,
 		closeButtonTextColor,
+		closeButtonBorderRadius,
 	]);
 
 	const handlePositionChange = (newPosition) => {
@@ -304,6 +307,21 @@ export default function FixedDisplayEdit(props) {
 									{...props}
 								/>
 							</BaseControl>
+							<h4 className={`mt-0 mb-2`}>
+								{__('Close button border radius', 'vk-blocks-pro')}
+							</h4>
+							<UnitControl
+								value={closeButtonBorderRadius}
+								onChange={(value) => {
+									setAttributes({ closeButtonBorderRadius: value || null });
+								}}
+								units={[
+									{ value: 'px', label: 'px', default: 15 },
+									{ value: '%', label: '%', default: 50 },
+									{ value: 'em', label: 'em', default: 1 },
+									{ value: 'rem', label: 'rem', default: 1 },
+								]}
+							/>
 						</>
 					)}
 				</PanelBody>
@@ -449,6 +467,7 @@ export default function FixedDisplayEdit(props) {
 						style={{
 							backgroundColor: closeButtonBackgroundColor,
 							color: closeButtonTextColor,
+							borderRadius: closeButtonBorderRadius,
 						}}
 					>
 						{closeButtonText}

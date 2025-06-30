@@ -11,7 +11,6 @@ import { dispatch, select, useSelect } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
 import parse from 'html-react-parser';
 import {
-	isAllowedBlock,
 	returnHtml,
 	getAllHeadings,
 	getAllHeadingBlocks,

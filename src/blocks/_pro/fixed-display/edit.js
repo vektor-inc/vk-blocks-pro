@@ -308,12 +308,17 @@ export default function FixedDisplayEdit(props) {
 								/>
 							</BaseControl>
 							<h4 className={`mt-0 mb-2`}>
-								{__('Close button border radius', 'vk-blocks-pro')}
+								{__(
+									'Close button border radius',
+									'vk-blocks-pro'
+								)}
 							</h4>
 							<UnitControl
 								value={closeButtonBorderRadius}
 								onChange={(value) => {
-									setAttributes({ closeButtonBorderRadius: value || null });
+									setAttributes({
+										closeButtonBorderRadius: value || null,
+									});
 								}}
 								units={[
 									{ value: 'px', label: 'px', default: 15 },

@@ -108,8 +108,8 @@ e.g.
 
 == Changelog ==
 
-[ Add function ][ Button ] Migrated link functionality to use the enhanced Link Toolbar component with improved UX, accessibility features, and SEO options.
 [ Add function ][ Slider ] Added zoom animation feature.
+[ Specification change ][ Button ] Migrated link functionality to use the enhanced Link Toolbar component with improved UX, accessibility features, and SEO options.
 
 = 1.105.1 =
 [ Bug Fix ][ Grid Column Card (Pro) ] Fixed the column padding adjustment slider's initial state functionality issue.

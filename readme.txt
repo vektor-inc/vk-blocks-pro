@@ -110,6 +110,7 @@ e.g.
 
 [ Add function ][ Slider ] Added zoom animation feature.
 [ Specification change ][ Button ] Migrated link functionality to use the enhanced Link Toolbar component with improved UX, accessibility features, and SEO options.
+[ Bug fix ][ Core List ] Fixed an issue where list items were not applying colors selected from Japanese-named color palettes and semi-transparent colors.
 
 = 1.105.1 =
 [ Bug Fix ][ Grid Column Card (Pro) ] Fixed the column padding adjustment slider's initial state functionality issue.

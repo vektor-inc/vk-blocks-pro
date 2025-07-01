@@ -10,7 +10,6 @@ export default function save(props) {
 		buttonUrl,
 		buttonTarget,
 		relAttribute,
-		linkDescription,
 		buttonSize,
 		buttonType,
 		buttonEffect,
@@ -86,7 +85,6 @@ export default function save(props) {
 				lbUrl={buttonUrl}
 				lbTarget={buttonTarget}
 				lbRelAttribute={relAttribute}
-				lbLinkDescription={linkDescription}
 				lbFontAwesomeIconBefore={fontAwesomeIconBefore}
 				lbFontAwesomeIconAfter={fontAwesomeIconAfter}
 				lbIconSizeBefore={iconSizeBefore}

@@ -14,7 +14,6 @@ export class VKBButton extends Component {
 		const buttonUrl = this.props.lbUrl;
 		const buttonTarget = this.props.lbTarget;
 		const relAttribute = this.props.lbRelAttribute;
-		const linkDescription = this.props.lbLinkDescription;
 		let fontAwesomeIconBefore = this.props.lbFontAwesomeIconBefore;
 		let fontAwesomeIconAfter = this.props.lbFontAwesomeIconAfter;
 		const iconSizeBefore = this.props.lbIconSizeBefore;
@@ -148,7 +147,6 @@ export class VKBButton extends Component {
 				aria-pressed={true}
 				target={buttonTarget ? '_blank' : null}
 				rel={relValue}
-				aria-label={linkDescription || undefined}
 			>
 				<div className={'vk_button_link_caption'}>
 					{parse(iconBefore)}

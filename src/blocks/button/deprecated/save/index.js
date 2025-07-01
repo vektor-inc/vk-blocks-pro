@@ -174,10 +174,6 @@ const blockAttributes13 = {
 		type: 'string',
 		default: null,
 	},
-	linkDescription: {
-		type: 'string',
-		default: null,
-	},
 }
 */
 

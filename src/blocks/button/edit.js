@@ -32,7 +32,6 @@ export default function ButtonEdit(props) {
 		buttonUrl,
 		buttonTarget,
 		relAttribute,
-		linkDescription,
 		buttonSize,
 		buttonType,
 		buttonEffect,
@@ -231,8 +230,6 @@ export default function ButtonEdit(props) {
 						setLinkTarget={(value) => setAttributes({ buttonTarget: value === '_blank' })}
 						relAttribute={relAttribute || ''}
 						setRelAttribute={(value) => setAttributes({ relAttribute: value })}
-						linkDescription={linkDescription || ''}
-						setLinkDescription={(value) => setAttributes({ linkDescription: value })}
 					/>
 				</ToolbarGroup>
 			</BlockControls>

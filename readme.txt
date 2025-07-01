@@ -108,6 +108,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Button ] Migrated link functionality to use the enhanced Link Toolbar component with improved UX, accessibility features, and SEO options.
 [ Add function ][ Slider ] Added zoom animation feature.
 
 = 1.105.1 =

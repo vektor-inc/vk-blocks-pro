@@ -1,12 +1,12 @@
 /**
- * 目次ブロックで使用する共通ユーティリティ関数
+ * 見出しレベル設定に関する共通ユーティリティ関数
  */
 
 /**
  * 最大レベルに基づいて見出しレベル配列を生成する
- * 
+ *
  * @param {string} maxLevel - 最大レベル（'h2', 'h3', 'h4', 'h5', 'h6'）
- * @returns {Array} 見出しレベル配列（例：['h2', 'h3', 'h4']）
+ * @return {Array} 見出しレベル配列（例：['h2', 'h3', 'h4']）
  */
 export const generateHeadingLevels = (maxLevel) => {
 	const levels = ['h2'];
@@ -22,9 +22,9 @@ export const generateHeadingLevels = (maxLevel) => {
 
 /**
  * 現在の見出しレベル配列から最大レベルを取得する
- * 
+ *
  * @param {Array} currentLevels - 現在の見出しレベル配列
- * @returns {string} 最大レベル（デフォルト：'h2'）
+ * @return {string} 最大レベル（デフォルト：'h2'）
  */
 export const getCurrentMaxLevel = (currentLevels) => {
 	if (
@@ -36,4 +36,4 @@ export const getCurrentMaxLevel = (currentLevels) => {
 	}
 	const maxLevel = currentLevels[currentLevels.length - 1];
 	return maxLevel || 'h2';
-}; 
+};

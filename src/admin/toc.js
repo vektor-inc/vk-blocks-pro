@@ -2,18 +2,16 @@ import { __ } from '@wordpress/i18n';
 import { useContext } from '@wordpress/element';
 import { AdminContext } from './index';
 import { SelectControl } from '@wordpress/components';
+import {
+	generateHeadingLevels,
+	getCurrentMaxLevel,
+} from '@vkblocks/utils/heading-level-utils';
 
 export default function AdminToc() {
 	const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
 
 	const handleMaxLevelChange = (maxLevel) => {
-		const levels = ['h2'];
-		const levelNumbers = ['h3', 'h4', 'h5', 'h6'];
-		const maxIndex = levelNumbers.indexOf(maxLevel);
-
-		if (maxIndex !== -1) {
-			levels.push(...levelNumbers.slice(0, maxIndex + 1));
-		}
+		const levels = generateHeadingLevels(maxLevel);
 
 		setVkBlocksOption({
 			...vkBlocksOption,
@@ -22,17 +20,8 @@ export default function AdminToc() {
 	};
 
 	// 現在の最大レベルを取得
-	const getCurrentMaxLevel = () => {
-		const currentLevels = vkBlocksOption.toc_heading_levels;
-		if (
-			!currentLevels ||
-			currentLevels.length === 0 ||
-			(currentLevels.length === 1 && currentLevels[0] === 'h2')
-		) {
-			return 'h6'; // デフォルトでh6
-		}
-		const maxLevel = currentLevels[currentLevels.length - 1];
-		return maxLevel || 'h6';
+	const getCurrentMaxLevelForAdmin = () => {
+		return getCurrentMaxLevel(vkBlocksOption.toc_heading_levels);
 	};
 
 	return (
@@ -47,7 +36,7 @@ export default function AdminToc() {
 			<SelectControl
 				name="vk_blocks_options[toc_heading_levels]"
 				className="vk_admin_selectControl"
-				value={getCurrentMaxLevel()}
+				value={getCurrentMaxLevelForAdmin()}
 				options={[
 					{ label: 'H2', value: 'h2' },
 					{ label: 'H3', value: 'h3' },

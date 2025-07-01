@@ -109,6 +109,7 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Slider ] Added zoom animation feature.
+[ Bug fix ][ Button ] Add fallback to vk color primary.
 [ Bug fix ][ Core List ] Fixed an issue where list items were not applying colors selected from Japanese-named color palettes and semi-transparent colors.
 
 = 1.105.1 =

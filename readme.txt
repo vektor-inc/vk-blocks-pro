@@ -110,6 +110,7 @@ e.g.
 
 [ Add function ][ Slider ] Added zoom animation feature.
 [ Add function ][ Core List ] Added support for WordPress standard list settings (start value and reverse order) in numbered styles.
+[ Bug fix ][ Core List ] Fixed an issue where list items were not applying colors selected from Japanese-named color palettes and semi-transparent colors.
 
 = 1.105.1 =
 [ Bug Fix ][ Grid Column Card (Pro) ] Fixed the column padding adjustment slider's initial state functionality issue.

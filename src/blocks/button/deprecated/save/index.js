@@ -166,6 +166,20 @@ const blockAttributes12 = {
 	},
 }
 
+/*
+// v1.105.1 リンク機能の追加に伴う属性の追加
+const blockAttributes13 = {
+	...blockAttributes12,
+	relAttribute: {
+		type: 'string',
+		default: null,
+	},
+	linkDescription: {
+		type: 'string',
+		default: null,
+	},
+}
+*/
 
 export const deprecated = [
 	{

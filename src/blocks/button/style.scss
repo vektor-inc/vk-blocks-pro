@@ -52,7 +52,7 @@ a.vk_button_link {
 		background-color: $vk-color-dark;
 	}
 	.has-vk-color-primary-color {
-		color: var(--wp--preset--color--vk-color-primary);
+		color: var(--wp--preset--color--vk-color-primary, #337ab7);
 	}
 	.has-vk-color-secondary-color {
 		color: $vk-color-secondary;
@@ -188,7 +188,7 @@ a.vk_button_link {
 		&:hover {
 			/* 応急処置：規定カラー */
 			&.has-vk-color-primary-color {
-				background-color: var(--wp--preset--color--vk-color-primary);
+				background-color: var(--wp--preset--color--vk-color-primary, #337ab7);
 			}
 			&.has-vk-color-secondary-color {
 				background-color: $vk-color-secondary;
@@ -250,7 +250,7 @@ a.vk_button_link {
 			}
 			/* 応急処置：カラーパレットVK */
 			&.has-vk-color-primary-color {
-				background-color: var(--wp--preset--color--vk-color-primary);
+				background-color: var(--wp--preset--color--vk-color-primary, #337ab7);
 			}
 			&.has-vk-color-primary-dark-color {
 				background-color: var(--wp--preset--color--vk-color-primary-dark);

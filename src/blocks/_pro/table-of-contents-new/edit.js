@@ -113,7 +113,6 @@ export default function TOCEdit(props) {
 		const allHeadings = getAllHeadings(
 			blocks,
 			headingBlocks,
-			[],
 			{ useCustomLevels, customHeadingLevels, excludedHeadings }
 		);
 

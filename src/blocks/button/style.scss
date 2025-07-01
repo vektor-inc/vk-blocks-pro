@@ -401,7 +401,6 @@ a.vk_button_link {
 			// .btn指定がないと編集画面で標準の .btn の指定に負ける
 			// X-T9で .has-background に対して padding:0; 指定しているので、左右余白が 0 にならないように上書き
 			padding: 0.6em 1.5rem;
-			-webkit-user-select: text;
 			user-select: text;
 			text-decoration: none;
 			font-size: calc( 1rem * 1 );

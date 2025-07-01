@@ -110,11 +110,11 @@ export default function TOCEdit(props) {
 
 		// 目次ブロックをアップデート
 		const blocksOrder = getBlockOrder();
-		const allHeadings = getAllHeadings(
-			blocks,
-			headingBlocks,
-			{ useCustomLevels, customHeadingLevels, excludedHeadings }
-		);
+		const allHeadings = getAllHeadings(blocks, headingBlocks, {
+			useCustomLevels,
+			customHeadingLevels,
+			excludedHeadings,
+		});
 
 		const allHeadingsSorted = allHeadings.map((heading) => {
 			const index = blocksOrder.indexOf(heading.clientId);
@@ -149,7 +149,9 @@ export default function TOCEdit(props) {
 	// 見出しの順番を取得する関数
 	const getHeadingOrder = (heading) => {
 		const allBlocks = getAllBlocksRecursively(blocks);
-		const index = allBlocks.findIndex(block => block.clientId === heading.clientId);
+		const index = allBlocks.findIndex(
+			(block) => block.clientId === heading.clientId
+		);
 		return index >= 0 ? index : Infinity;
 	};
 

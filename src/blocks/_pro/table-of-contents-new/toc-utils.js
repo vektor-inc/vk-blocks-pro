@@ -2,11 +2,7 @@ export const isAllowedBlock = (name, allowedBlocks) => {
 	return allowedBlocks.includes(name);
 };
 
-export const getAllHeadings = (
-	blocks,
-	headingBlocks,
-	options
-) => {
+export const getAllHeadings = (blocks, headingBlocks, options) => {
 	const {
 		useCustomLevels,
 		customHeadingLevels,

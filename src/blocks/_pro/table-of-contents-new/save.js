@@ -18,7 +18,9 @@ export default function save(props) {
 		'data-custom-levels': useCustomLevels
 			? JSON.stringify(customHeadingLevels)
 			: '',
-		'data-toc-heading-levels': useCustomLevels ? JSON.stringify(customHeadingLevels) : undefined,
+		'data-toc-heading-levels': useCustomLevels
+			? JSON.stringify(customHeadingLevels)
+			: undefined,
 		...(excludedHeadings?.length > 0 && {
 			'data-excluded-headings': JSON.stringify(excludedHeadings),
 		}),

@@ -2,12 +2,7 @@ export const isAllowedBlock = (name, allowedBlocks) => {
 	return allowedBlocks.includes(name);
 };
 
-export const getAllHeadings = (
-	blocks,
-	headingBlocks,
-	hasInnerBlocks,
-	options
-) => {
+export const getAllHeadings = (blocks, headingBlocks, options) => {
 	const {
 		useCustomLevels,
 		customHeadingLevels,
@@ -52,7 +47,7 @@ export const getAllHeadings = (
 			}
 		}
 
-		if (isAllowedBlock(block.name, hasInnerBlocks) && block.innerBlocks) {
+		if (block.innerBlocks && block.innerBlocks.length > 0) {
 			block.innerBlocks.forEach(processBlock);
 		}
 	};

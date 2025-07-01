@@ -110,6 +110,7 @@ e.g.
 
 [ Add function ][ Slider ] Added zoom animation feature.
 [ Specification change ][ Table of Contents (Pro) ] Removed the restriction that prevented nested headings from being displayed in the list.
+[ Bug fix ][ Table of Contents (Pro) ] Fixed H2 selection issue in heading level settings and improved code structure.
 [ Bug fix ][ Core List ] Fixed an issue where list items were not applying colors selected from Japanese-named color palettes and semi-transparent colors.
 
 = 1.105.1 =

@@ -111,6 +111,7 @@ e.g.
 [ Add function ][ Slider ] Added zoom animation feature.
 [ Bug Fix ][ Table of Contents (Pro) ] Fixed exclude headings UI showing wrong order and missing disabled state for level-filtered headings.
 [ Specification change ][ Table of Contents (Pro) ] Removed the restriction that prevented nested headings from being displayed in the list.
+[ Bug fix ][ Button ] Add fallback to vk color primary.
 [ Bug fix ][ Core List ] Fixed an issue where list items were not applying colors selected from Japanese-named color palettes and semi-transparent colors.
 
 = 1.105.1 =

@@ -21,7 +21,7 @@ $vk-color-dark:#343a40;
 
 .vk_button{ // ← V2以降に編集画面用CSSファイルに移植すること
 	.btn.has-vk-color-primary-background-color {
-		background-color: var(--wp--preset--color--vk-color-primary);
+		background-color: var(--wp--preset--color--vk-color-primary, #337ab7)
 	}
 	.btn.has-vk-color-secondary-background-color {
 		background-color: $vk-color-secondary;
@@ -46,7 +46,7 @@ $vk-color-dark:#343a40;
 		background-color: $vk-color-dark;
 	}
 	.btn.has-vk-color-primary-color {
-		color: var(--wp--preset--color--vk-color-primary);
+		color: var(--wp--preset--color--vk-color-primary, #337ab7);
 	}
 	.btn.has-vk-color-secondary-color {
 		color: $vk-color-secondary;

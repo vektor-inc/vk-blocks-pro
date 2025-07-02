@@ -49,6 +49,7 @@ export const getAllHeadings = (
 	hasInnerBlocks,
 	options
 ) => {
+export const getAllHeadings = (blocks, headingBlocks, options) => {
 	const {
 		useCustomLevels,
 		customHeadingLevels,

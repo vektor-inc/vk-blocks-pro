@@ -11,10 +11,10 @@ import { dispatch, useSelect } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
 import parse from 'html-react-parser';
 import {
-	isAllowedBlock,
 	returnHtml,
 	getAllHeadings,
 	getAllHeadingBlocks,
+	getAllBlocksRecursively,
 } from './toc-utils';
 
 // 見出しブロックを再帰的に取得するカスタムフック
@@ -45,6 +45,12 @@ export const useTocSettings = () => {
 
 		return tocLevels;
 	}, []);
+};
+
+const stripHtml = (html) => {
+	const tmp = document.createElement('div');
+	tmp.innerHTML = html;
+	return tmp.textContent || tmp.innerText || '';
 };
 
 export default function TOCEdit(props) {
@@ -123,6 +129,46 @@ export default function TOCEdit(props) {
 			customHeadingLevels,
 			excludedHeadings,
 			globalSettings: tocSettings,
+
+		const { getBlockOrder, getBlockRootClientId } =
+			select('core/block-editor');
+
+		const headingBlocks = ['core/heading', 'vk-blocks/heading'];
+
+		// すべての見出しブロックを取得
+		const allHeadingBlocks = getAllHeadingBlocks(blocks);
+
+		// 見出しにカスタムIDを追加
+		allHeadingBlocks.forEach((block) => {
+			if (block.attributes.anchor === undefined) {
+				updateBlockAttributes(block.clientId, {
+					anchor: `vk-htags-${block.clientId}`,
+				});
+			}
+		});
+
+		// 目次ブロックをアップデート
+		const blocksOrder = getBlockOrder();
+		const allHeadings = getAllHeadings(blocks, headingBlocks, {
+			useCustomLevels,
+			customHeadingLevels,
+			excludedHeadings,
+		});
+
+		const allHeadingsSorted = allHeadings.map((heading) => {
+			const index = blocksOrder.indexOf(heading.clientId);
+			const rootIndex = blocksOrder.indexOf(
+				getBlockRootClientId(heading.clientId)
+			);
+			let finalIndex;
+
+			if (index >= 0) {
+				finalIndex = index;
+			} else if (rootIndex >= 0) {
+				finalIndex = rootIndex;
+			}
+
+			return { index: finalIndex, block: heading };
 		});
 
 		const render = returnHtml(
@@ -156,6 +202,11 @@ export default function TOCEdit(props) {
 			(h) => h.clientId === heading.clientId
 		);
 		return foundHeading ? foundHeading.position : Infinity;
+		const allBlocks = getAllBlocksRecursively(blocks);
+		const index = allBlocks.findIndex(
+			(block) => block.clientId === heading.clientId
+		);
+		return index >= 0 ? index : Infinity;
 	};
 
 	const handleMaxLevelChange = (maxLevel) => {
@@ -360,13 +411,7 @@ export default function TOCEdit(props) {
 								return (
 									<ToggleControl
 										key={headingId}
-										label={
-											<span
-												dangerouslySetInnerHTML={{
-													__html: headingText,
-												}}
-											/>
-										}
+										label={stripHtml(headingText)}
 										checked={isExcluded}
 										disabled={isDisabled}
 										onChange={(value) => {

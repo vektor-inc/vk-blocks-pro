@@ -17,23 +17,7 @@ import {
 	getAllBlocksRecursively,
 } from './toc-utils';
 
-// 現在のブロックを取得するカスタムフック
-export const useCurrentBlocks = () => {
-	return useSelect((select) => select('core/block-editor').getBlocks(), []);
-};
-
-// 指定された名前のブロックを取得するカスタムフック
-export const useBlocksByName = (blockName) => {
-	return useSelect(
-		(select) => {
-			const { getBlocks } = select('core/block-editor');
-			return getBlocks().filter((block) => block.name === blockName);
-		},
-		[blockName]
-	);
-};
-
-// 見出しブロックを再帰的に取得するカスタムフック
+// 見出しブロックを再帰的に取得
 export const useAllHeadingBlocks = () => {
 	return useSelect((select) => {
 		const { getBlocks } = select('core/block-editor');
@@ -41,12 +25,12 @@ export const useAllHeadingBlocks = () => {
 	}, []);
 };
 
-// 設定の変更を監視するカスタムフック
+// 設定の変更を監視
 export const useTocSettings = () => {
 	return useSelect((select) => {
 		const { getEntityRecord } = select('core');
 		const settings = getEntityRecord('root', 'site');
-
+		
 		// グローバル設定を取得（フォールバック付き）
 		const globalSettings = settings?.vk_blocks_options
 			?.toc_heading_levels ||
@@ -82,18 +66,13 @@ export default function TOCEdit(props) {
 		className: `vk_tableOfContents vk_tableOfContents-style-${style} tabs`,
 	});
 
-	const blocks = useCurrentBlocks();
-	const findBlocks = useBlocksByName('vk-blocks/table-of-contents-new');
+	const blocks = useSelect((select) => select('core/block-editor').getBlocks(), []);
 	const tocSettings = useTocSettings();
 
 	// 見出しブロックの一覧を取得
 	const allHeadings = useAllHeadingBlocks();
 
 	useEffect(() => {
-		// 投稿に目次ブロックがなければ処理を実行しない
-		if (!findBlocks) {
-			return;
-		}
 		const { updateBlockAttributes } = dispatch('core/block-editor');
 
 		const headingBlocks = ['core/heading', 'vk-blocks/heading'];

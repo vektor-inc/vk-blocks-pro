@@ -1,6 +1,6 @@
 import { AdvancedToggleControl } from '@vkblocks/components/advanced-toggle-control';
 import { __ } from '@wordpress/i18n';
-import { useEffect } from '@wordpress/element';
+import { useEffect, useRef } from '@wordpress/element';
 import {
 	InspectorControls,
 	BlockControls,
@@ -18,6 +18,8 @@ import {
 	ToolbarGroup,
 	ToolbarDropdownMenu,
 	Dashicon,
+	ToggleControl,
+	RangeControl,
 } from '@wordpress/components';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 import { editSliderLaunch } from './edit-slider';
@@ -51,7 +53,13 @@ export default function SliderEdit(props) {
 		navigationPosition,
 		blockId,
 		unit,
+		zoomAnimation,
+		zoomInitialScale,
+		zoomFinalScale,
 	} = attributes;
+
+	// 追加: 前回のzoomAnimation値を保持
+	const prevZoomAnimation = useRef(zoomAnimation);
 
 	useEffect(() => {
 		let timer;
@@ -159,7 +167,27 @@ export default function SliderEdit(props) {
 		if (editorMode === undefined) {
 			setAttributes({ editorMode: 'default' });
 		}
+
+		// ズームアニメーション設定の初期化
+		if (zoomAnimation === undefined) {
+			setAttributes({ zoomAnimation: false });
+		}
+		if (zoomInitialScale === undefined) {
+			setAttributes({ zoomInitialScale: 1 });
+		}
+		if (zoomFinalScale === undefined) {
+			setAttributes({ zoomFinalScale: 1.25 });
+		}
 	}, [clientId]);
+
+	// ズームアニメーションが有効になった時にエフェクトをfadeに変更
+	useEffect(() => {
+		// false→trueになった瞬間だけ
+		if (!prevZoomAnimation.current && zoomAnimation) {
+			setAttributes({ effect: 'fade' });
+		}
+		prevZoomAnimation.current = zoomAnimation;
+	}, [zoomAnimation]);
 
 	// 複数枚動かすときに sliderPerView が小数だと微妙なので対処
 	useEffect(() => {
@@ -205,6 +233,9 @@ export default function SliderEdit(props) {
 		slidesPerViewPC,
 		slidesPerGroup,
 		centeredSlides,
+		zoomAnimation,
+		zoomInitialScale,
+		zoomFinalScale,
 	};
 
 	// ページネーションの HTML
@@ -311,32 +342,6 @@ export default function SliderEdit(props) {
 							/>
 						</ToggleGroupControl>
 					</BaseControl>
-				</PanelBody>
-				<PanelBody
-					title={__('Height', 'vk-blocks-pro')}
-					initialOpen={false}
-				>
-					<ResponsiveSizeControl
-						label={__(
-							'Slide Height for each device.',
-							'vk-blocks-pro'
-						)}
-						valuePC={pc}
-						valueTablet={tablet}
-						valueMobile={mobile}
-						unit={unit}
-						onChangePC={(value) => setAttributes({ pc: value })}
-						onChangeTablet={(value) =>
-							setAttributes({ tablet: value })
-						}
-						onChangeMobile={(value) =>
-							setAttributes({ mobile: value })
-						}
-						onChangeUnit={(value) => setAttributes({ unit: value })}
-						maxPC={getMaxByUnit(unit)}
-						maxTablet={getMaxByUnit(unit)}
-						maxMobile={getMaxByUnit(unit)}
-					/>
 				</PanelBody>
 				<PanelBody
 					title={__('Slider Settings', 'vk-blocks-pro')}
@@ -502,6 +507,80 @@ export default function SliderEdit(props) {
 					</BaseControl>
 				</PanelBody>
 				<MultiItemSetting {...props} />
+				<PanelBody
+					title={__('Height', 'vk-blocks-pro')}
+					initialOpen={false}
+				>
+					<ResponsiveSizeControl
+						label={__(
+							'Slide Height for each device.',
+							'vk-blocks-pro'
+						)}
+						valuePC={pc}
+						valueTablet={tablet}
+						valueMobile={mobile}
+						unit={unit}
+						onChangePC={(value) => setAttributes({ pc: value })}
+						onChangeTablet={(value) =>
+							setAttributes({ tablet: value })
+						}
+						onChangeMobile={(value) =>
+							setAttributes({ mobile: value })
+						}
+						onChangeUnit={(value) => setAttributes({ unit: value })}
+						maxPC={getMaxByUnit(unit)}
+						maxTablet={getMaxByUnit(unit)}
+						maxMobile={getMaxByUnit(unit)}
+					/>
+				</PanelBody>
+				<PanelBody
+					title={__('Zoom Animation', 'vk-blocks-pro')}
+					initialOpen={false}
+				>
+					<ToggleControl
+						label={__('Enable Zoom Animation', 'vk-blocks-pro')}
+						checked={zoomAnimation}
+						onChange={(value) =>
+							setAttributes({ zoomAnimation: value })
+						}
+						help={__(
+							'Enable zoom animation for slide background images.',
+							'vk-blocks-pro'
+						)}
+					/>
+					{zoomAnimation && (
+						<>
+							<RangeControl
+								label={__('Initial Scale', 'vk-blocks-pro')}
+								value={zoomInitialScale}
+								onChange={(value) =>
+									setAttributes({ zoomInitialScale: value })
+								}
+								min={1}
+								max={3}
+								step={0.05}
+								help={__(
+									'Initial scale of the background image (1 = original size).',
+									'vk-blocks-pro'
+								)}
+							/>
+							<RangeControl
+								label={__('Final Scale', 'vk-blocks-pro')}
+								value={zoomFinalScale}
+								onChange={(value) =>
+									setAttributes({ zoomFinalScale: value })
+								}
+								min={1}
+								max={3}
+								step={0.05}
+								help={__(
+									'Final scale of the background image after zoom animation.',
+									'vk-blocks-pro'
+								)}
+							/>
+						</>
+					)}
+				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps} data-vkb-slider={JSON.stringify(sliderData)}>
 				<div className={`vk_slider_wrapper`}>

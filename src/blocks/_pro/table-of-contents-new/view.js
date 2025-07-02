@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		// 見出しを取得
 		const allHeadings = Array.from(
-			document.querySelectorAll('[data-vk-toc-heading]ng]')
+			document.querySelectorAll('[data-vk-toc-heading]')
 		);
 
 		const headings = allHeadings.filter((heading) => {

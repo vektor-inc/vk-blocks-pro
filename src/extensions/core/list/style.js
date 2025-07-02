@@ -17,6 +17,7 @@ import { createHigherOrderComponent } from '@wordpress/compose';
  * Internal dependencies
  */
 import { colorSlugToColorCode } from '@vkblocks/utils/color-slug-to-color-code';
+import { sanitizeSlug } from '@vkblocks/utils/sanitizeSlug';
 
 /**
  * External dependencies
@@ -204,7 +205,8 @@ const withElementsStyles = createHigherOrderComponent(
 		const ColorValue = getColorObjectByAttributeValues(colorSet, color);
 		let colorValue;
 		if (ColorValue.slug !== undefined) {
-			colorValue = `var(--wp--preset--color--${ColorValue.slug})`;
+			const safeSlug = sanitizeSlug(ColorValue.slug);
+			colorValue = `var(--wp--preset--color--${safeSlug})`;
 		} else {
 			colorValue = color;
 		}

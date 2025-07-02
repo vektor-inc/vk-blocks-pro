@@ -17,7 +17,7 @@ import {
 	getAllBlocksRecursively,
 } from './toc-utils';
 
-// 見出しブロックを再帰的に取得
+// 見出しブロックを再帰的に取得するカスタムフック
 export const useAllHeadingBlocks = () => {
 	return useSelect((select) => {
 		const { getBlocks } = select('core/block-editor');
@@ -25,12 +25,12 @@ export const useAllHeadingBlocks = () => {
 	}, []);
 };
 
-// 設定の変更を監視
+// 設定の変更を監視するカスタムフック
 export const useTocSettings = () => {
 	return useSelect((select) => {
 		const { getEntityRecord } = select('core');
 		const settings = getEntityRecord('root', 'site');
-		
+
 		// グローバル設定を取得（フォールバック付き）
 		const globalSettings = settings?.vk_blocks_options
 			?.toc_heading_levels ||
@@ -66,7 +66,10 @@ export default function TOCEdit(props) {
 		className: `vk_tableOfContents vk_tableOfContents-style-${style} tabs`,
 	});
 
-	const blocks = useSelect((select) => select('core/block-editor').getBlocks(), []);
+	const blocks = useSelect(
+		(select) => select('core/block-editor').getBlocks(),
+		[]
+	);
 	const tocSettings = useTocSettings();
 
 	// 見出しブロックの一覧を取得

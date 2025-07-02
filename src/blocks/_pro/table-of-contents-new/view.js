@@ -60,9 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		// useCustomLevelsがtrueなら、h2〜h6すべてを対象にする
 		let allHeadings;
 		if (useCustomLevels) {
-			allHeadings = Array.from(document.querySelectorAll('h2, h3, h4, h5, h6'));
+			allHeadings = Array.from(
+				document.querySelectorAll('h2, h3, h4, h5, h6')
+			);
 		} else {
-			allHeadings = Array.from(document.querySelectorAll('[data-vk-toc-heading]'));
+			allHeadings = Array.from(
+				document.querySelectorAll('[data-vk-toc-heading]')
+			);
 		}
 
 		const headings = allHeadings.filter((heading) => {

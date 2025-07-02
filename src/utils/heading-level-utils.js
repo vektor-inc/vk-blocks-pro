@@ -27,10 +27,7 @@ export const generateHeadingLevels = (maxLevel) => {
  * @return {string} 最大レベル（デフォルト：'h6'）
  */
 export const getCurrentMaxLevel = (currentLevels) => {
-	if (
-		!currentLevels ||
-		currentLevels.length === 0
-	) {
+	if (!currentLevels || currentLevels.length === 0) {
 		return 'h6';
 	}
 	const maxLevel = currentLevels[currentLevels.length - 1];

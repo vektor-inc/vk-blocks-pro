@@ -109,6 +109,7 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Slider ] Added zoom animation feature.
+[ Specification change ][ Table of Contents (Pro) ] Removed the restriction that prevented nested headings from being displayed in the list.
 [ Bug fix ][ Button ] Add fallback to vk color primary.
 [ Bug fix ][ Core List ] Fixed an issue where list items were not applying colors selected from Japanese-named color palettes and semi-transparent colors.
 

@@ -52,6 +52,27 @@ class VK_Blocks_TOC {
 		if ( ! has_block( 'vk-blocks/table-of-contents-new' ) ) {
 			return $content;
 		}
+
+		// カスタム設定を使用している目次ブロックがあるかチェック
+		$blocks = parse_blocks( $content );
+		$has_custom_levels = false;
+		
+		foreach ( $blocks as $block ) {
+			if ( 'vk-blocks/table-of-contents-new' === $block['blockName'] ) {
+				$use_custom_levels = isset( $block['attrs']['useCustomLevels'] ) ? $block['attrs']['useCustomLevels'] : false;
+				if ( $use_custom_levels ) {
+					$has_custom_levels = true;
+					break;
+				}
+			}
+		}
+
+		// カスタム設定を使用している場合は、data-vk-toc-heading属性を付与しない
+		if ( $has_custom_levels ) {
+			return $content;
+		}
+
+		// グローバル設定時のみdata-vk-toc-heading属性を付与
 		$options      = get_option( 'vk_blocks_options', array() );
 		$levels       = isset( $options['toc_heading_levels'] ) ? $options['toc_heading_levels'] : array( 'h2', 'h3', 'h4', 'h5', 'h6' );
 		$levels_regex = implode(
@@ -63,7 +84,6 @@ class VK_Blocks_TOC {
 				$levels
 			)
 		);
-		// グローバル設定時のみ付与
 		$pattern     = '/<h(' . $levels_regex . ')(.*?)>/i';
 		$replacement = '<h$1$2 data-vk-toc-heading>';
 		$content     = preg_replace( $pattern, $replacement, $content );
@@ -139,10 +159,38 @@ class VK_Blocks_TOC {
 	 */
 	public function enqueue_front_assets() {
 		if ( has_block( 'vk-blocks/table-of-contents-new' ) ) {
+			// カスタム設定を使用している目次ブロックがあるかチェック
+			global $post;
+			$content = $post->post_content;
+			$blocks = parse_blocks( $content );
+			$has_custom_levels = false;
+			
+			foreach ( $blocks as $block ) {
+				if ( 'vk-blocks/table-of-contents-new' === $block['blockName'] ) {
+					$use_custom_levels = isset( $block['attrs']['useCustomLevels'] ) ? $block['attrs']['useCustomLevels'] : false;
+					if ( $use_custom_levels ) {
+						$has_custom_levels = true;
+						break;
+					}
+				}
+			}
+
+			// カスタム設定の場合、the_content内の見出しを抽出
+			$content_headings = array();
+			if ( $has_custom_levels ) {
+				$content_headings = self::get_headings_from_content( $content );
+			}
+
 			wp_localize_script(
 				'vk-blocks/table-of-contents-new-script',
 				'vkBlocksOptions',
-				get_option( 'vk_blocks_options', array() )
+				array_merge(
+					get_option( 'vk_blocks_options', array() ),
+					array(
+						'contentHeadings' => $content_headings,
+						'hasCustomLevels' => $has_custom_levels,
+					)
+				)
 			);
 		}
 	}

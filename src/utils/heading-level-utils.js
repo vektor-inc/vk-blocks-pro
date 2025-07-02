@@ -24,16 +24,15 @@ export const generateHeadingLevels = (maxLevel) => {
  * 現在の見出しレベル配列から最大レベルを取得する
  *
  * @param {Array} currentLevels - 現在の見出しレベル配列
- * @return {string} 最大レベル（デフォルト：'h2'）
+ * @return {string} 最大レベル（デフォルト：'h6'）
  */
 export const getCurrentMaxLevel = (currentLevels) => {
 	if (
 		!currentLevels ||
-		currentLevels.length === 0 ||
-		(currentLevels.length === 1 && currentLevels[0] === 'h2')
+		currentLevels.length === 0
 	) {
-		return 'h2';
+		return 'h6';
 	}
 	const maxLevel = currentLevels[currentLevels.length - 1];
-	return maxLevel || 'h2';
+	return maxLevel || 'h6';
 };

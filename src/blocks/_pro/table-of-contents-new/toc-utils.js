@@ -2,107 +2,77 @@ export const isAllowedBlock = (name, allowedBlocks) => {
 	return allowedBlocks.includes(name);
 };
 
-/**
- * 見出しブロックの正確な位置を計算する関数
- * すべてのブロックのinnerBlocksを再帰的に処理して位置を特定
- * @param {Object} block     - 対象の見出しブロック
- * @param {Array}  allBlocks - すべてのブロックの配列
- * @return {number} 見出しの位置（0ベース）
- */
-export const getHeadingPosition = (block, allBlocks) => {
-	let position = 0;
-
-	const calculatePosition = (blocks, currentPosition = 0) => {
-		for (let i = 0; i < blocks.length; i++) {
-			const currentBlock = blocks[i];
-
-			// 見出しブロックの場合、位置を記録
-			if (currentBlock.clientId === block.clientId) {
-				position = currentPosition + i;
-				return true; // 見つかった
-			}
-
-			// 入れ子ブロックを再帰的に処理
-			if (
-				currentBlock.innerBlocks &&
-				currentBlock.innerBlocks.length > 0
-			) {
-				const found = calculatePosition(
-					currentBlock.innerBlocks,
-					currentPosition + i
-				);
-				if (found) {
-					return true;
-				}
-			}
-		}
-		return false;
-	};
-
-	calculatePosition(allBlocks);
-	return position;
-};
-
-export const getAllHeadings = (
-	blocks,
-	headingBlocks,
-	hasInnerBlocks,
-	options
-) => {
 export const getAllHeadings = (blocks, headingBlocks, options) => {
 	const {
 		useCustomLevels,
 		customHeadingLevels,
 		excludedHeadings = [],
-		skipLevelFiltering = false, // 除外設定用
-		globalSettings = ['h2', 'h3', 'h4', 'h5', 'h6'], // グローバル設定を引数から取得
 	} = options;
 	const headings = [];
 
-	const processBlock = (block) => {
-		if (isAllowedBlock(block.name, headingBlocks)) {
-			const level = block.attributes.level || 2;
-			const headingId =
-				block.name === 'vk-blocks/heading'
-					? block.attributes.anchor || `vk-htags-${block.clientId}`
-					: block.attributes.anchor || `vk-htags-${block.clientId}`;
+	// グローバル設定を取得
+	const globalSettings = window.vkBlocksOptions?.toc_heading_levels || [
+		'h2',
+		'h3',
+		'h4',
+		'h5',
+		'h6',
+	];
 
-			// 除外設定のチェック
-			const isExcluded = excludedHeadings?.includes(headingId) || false;
+	// すべてのブロックを再帰的に取得して位置情報を付与
+	const allBlocksWithPosition = [];
+	let position = 0;
 
-			// レベル設定のチェック（skipLevelFilteringがtrueの場合はスキップ）
-			let isAllowedLevel = true;
-			if (!skipLevelFiltering) {
-				const allowedLevels = useCustomLevels
-					? customHeadingLevels || ['h2', 'h3', 'h4', 'h5', 'h6']
-					: globalSettings;
-				isAllowedLevel = allowedLevels.includes(`h${level}`);
-			}
+	const processBlockWithPosition = (block, depth = 0) => {
+		allBlocksWithPosition.push({
+			...block,
+			position: position++,
+			depth,
+		});
 
-			if (!isExcluded && isAllowedLevel) {
-				// 見出しの正確な位置を計算
-				const position = getHeadingPosition(block, blocks);
-
-				headings.push({
-					clientId: block.clientId,
-					position,
-					attributes: {
-						...block.attributes,
-						anchor: headingId,
-					},
-				});
-			}
-		}
-
-		// すべてのブロックのinnerBlocksを再帰的に処理
 		if (block.innerBlocks && block.innerBlocks.length > 0) {
-			block.innerBlocks.forEach(processBlock);
+			block.innerBlocks.forEach((innerBlock) =>
+				processBlockWithPosition(innerBlock, depth + 1)
+			);
 		}
 	};
 
-	blocks.forEach(processBlock);
+	blocks.forEach((block) => processBlockWithPosition(block));
 
-	// 位置に基づいてソート
+	// 見出しブロックのみを抽出し、位置情報に基づいてソート
+	const headingBlocksWithPosition = allBlocksWithPosition.filter((block) =>
+		isAllowedBlock(block.name, headingBlocks)
+	);
+
+	headingBlocksWithPosition.forEach((block) => {
+		const level = block.attributes.level || 2;
+		const headingId =
+			block.name === 'vk-blocks/heading'
+				? block.attributes.anchor || `vk-htags-${block.clientId}`
+				: block.attributes.anchor || `vk-htags-${block.clientId}`;
+
+		// 除外設定のチェック
+		const isExcluded = excludedHeadings?.includes(headingId) || false;
+
+		// レベル設定のチェック
+		const allowedLevels = useCustomLevels
+			? customHeadingLevels || ['h2', 'h3', 'h4', 'h5', 'h6']
+			: globalSettings;
+		const isAllowedLevel = allowedLevels.includes(`h${level}`);
+
+		if (!isExcluded && isAllowedLevel) {
+			headings.push({
+				clientId: block.clientId,
+				position: block.position,
+				attributes: {
+					...block.attributes,
+					anchor: headingId,
+				},
+			});
+		}
+	});
+
+	// 位置情報に基づいてソート
 	headings.sort((a, b) => a.position - b.position);
 
 	return headings;

@@ -54,9 +54,9 @@ class VK_Blocks_TOC {
 		}
 
 		// カスタム設定を使用している目次ブロックがあるかチェック
-		$blocks = parse_blocks( $content );
+		$blocks            = parse_blocks( $content );
 		$has_custom_levels = false;
-		
+
 		foreach ( $blocks as $block ) {
 			if ( 'vk-blocks/table-of-contents-new' === $block['blockName'] ) {
 				$use_custom_levels = isset( $block['attrs']['useCustomLevels'] ) ? $block['attrs']['useCustomLevels'] : false;
@@ -84,9 +84,9 @@ class VK_Blocks_TOC {
 				$levels
 			)
 		);
-		$pattern     = '/<h(' . $levels_regex . ')(.*?)>/i';
-		$replacement = '<h$1$2 data-vk-toc-heading>';
-		$content     = preg_replace( $pattern, $replacement, $content );
+		$pattern      = '/<h(' . $levels_regex . ')(.*?)>/i';
+		$replacement  = '<h$1$2 data-vk-toc-heading>';
+		$content      = preg_replace( $pattern, $replacement, $content );
 		return $content;
 	}
 
@@ -161,10 +161,10 @@ class VK_Blocks_TOC {
 		if ( has_block( 'vk-blocks/table-of-contents-new' ) ) {
 			// カスタム設定を使用している目次ブロックがあるかチェック
 			global $post;
-			$content = $post->post_content;
-			$blocks = parse_blocks( $content );
+			$content           = $post->post_content;
+			$blocks            = parse_blocks( $content );
 			$has_custom_levels = false;
-			
+
 			foreach ( $blocks as $block ) {
 				if ( 'vk-blocks/table-of-contents-new' === $block['blockName'] ) {
 					$use_custom_levels = isset( $block['attrs']['useCustomLevels'] ) ? $block['attrs']['useCustomLevels'] : false;

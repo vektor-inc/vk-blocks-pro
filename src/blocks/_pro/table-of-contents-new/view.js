@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	);
 	tocBlocks.forEach((tocBlock) => {
 		// カスタム属性があればそれを使う
+		const useCustomLevels = tocBlock.dataset.useCustomLevels === 'true';
 		const customLevels = tocBlock.dataset.tocHeadingLevels
 			? JSON.parse(tocBlock.dataset.tocHeadingLevels)
 			: null;
@@ -56,10 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
 				?.allowedHeadingLevels || [2, 3, 4, 5, 6];
 		}
 
-		// 見出しを取得
-		const allHeadings = Array.from(
-			document.querySelectorAll('[data-vk-toc-heading]')
-		);
+		// useCustomLevelsがtrueなら、h2〜h6すべてを対象にする
+		let allHeadings;
+		if (useCustomLevels) {
+			allHeadings = Array.from(document.querySelectorAll('h2, h3, h4, h5, h6'));
+		} else {
+			allHeadings = Array.from(document.querySelectorAll('[data-vk-toc-heading]'));
+		}
 
 		const headings = allHeadings.filter((heading) => {
 			const level = parseInt(heading.tagName.substring(1));

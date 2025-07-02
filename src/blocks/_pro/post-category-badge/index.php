@@ -16,7 +16,33 @@
 function vk_blocks_post_category_badge_render_callback( $attributes, $content, $block ) {
 	$post     = get_post( $block->context['postId'] );
 	$taxonomy = isset( $attributes['taxonomy'] ) ? $attributes['taxonomy'] : '';
+	$max_display_count = isset( $attributes['maxDisplayCount'] ) ? $attributes['maxDisplayCount'] : 0;
 
+	// 複数表示の場合（maxDisplayCount >= 0）
+	if ( $max_display_count >= 0 ) {
+		$terms = get_the_terms( $post, $taxonomy ?: 'category' );
+		if ( ! $terms || is_wp_error( $terms ) ) {
+			return '';
+		}
+
+		$output = '';
+		$count = 0;
+		
+		foreach ( $terms as $term ) {
+			// 0の場合は全て表示、それ以外は指定数まで
+			if ( $max_display_count !== 0 && $count >= $max_display_count ) {
+				break;
+			}
+			
+			// 各バッジを個別に出力（supportsのスタイルが適用される）
+			$output .= vk_blocks_render_single_badge( $term, $attributes, $block );
+			$count++;
+		}
+		
+		return '<div class="vk_categoryBadge_multiple" style="display: flex; gap: 0.5em; flex-wrap: wrap;">' . $output . '</div>';
+	}
+
+	// 単一表示の場合（maxDisplayCount = 0、従来の処理）
 	if ( class_exists( '\VektorInc\VK_Term_Color\VkTermColor' ) && method_exists( '\VektorInc\VK_Term_Color\VkTermColor', 'get_post_single_term_info' ) ) {
 		$term_color_info = \VektorInc\VK_Term_Color\VkTermColor::get_post_single_term_info( $post, array( 'taxonomy' => $taxonomy ) );
 	} else {
@@ -45,6 +71,55 @@ function vk_blocks_post_category_badge_render_callback( $attributes, $content, $
 		return '<a ' . $wrapper_attributes . ' href="' . $term_color_info['term_url'] . '">' . $term_color_info['term_name'] . '</a>';
 	} else {
 		return '<div ' . $wrapper_attributes . '>' . $term_color_info['term_name'] . '</div>';
+	}
+}
+
+/**
+ * Render single badge
+ *
+ * @param WP_Term  $term Term object.
+ * @param array    $attributes Block attributes.
+ * @param WP_Block $block Block context.
+ * @return string
+ */
+function vk_blocks_render_single_badge( $term, $attributes, $block ) {
+	$classes = array( 'vk_categoryBadge' );
+	$align_class_name = empty( $attributes['textAlign'] ) ? '' : "has-text-align-{$attributes['textAlign']}";
+
+	if ( ! empty( $align_class_name ) ) {
+		array_push( $classes, $align_class_name );
+	}
+
+	// タームの色情報を取得（簡易版）
+	$color = '#999999';
+	$text_color = '#FFFFFF';
+	
+	// VK_Term_Colorが利用可能な場合は色情報を取得
+	if ( class_exists( '\VektorInc\VK_Term_Color\VkTermColor' ) ) {
+		// タームのメタデータから色情報を取得
+		$term_color = get_term_meta( $term->term_id, 'term_color', true );
+		$term_text_color = get_term_meta( $term->term_id, 'term_text_color', true );
+		
+		if ( $term_color ) {
+			$color = $term_color;
+		}
+		if ( $term_text_color ) {
+			$text_color = $term_text_color;
+		}
+	}
+
+	$wrapper_attributes = get_block_wrapper_attributes(
+		array(
+			'class' => implode( ' ', $classes ),
+			'style' => 'background-color: ' . $color . ';' .
+						'color:' . $text_color . ';',
+		)
+	);
+
+	if ( $attributes['hasLink'] ) {
+		return '<a ' . $wrapper_attributes . ' href="' . get_term_link( $term ) . '">' . $term->name . '</a>';
+	} else {
+		return '<div ' . $wrapper_attributes . '>' . $term->name . '</div>';
 	}
 }
 

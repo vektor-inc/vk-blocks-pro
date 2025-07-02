@@ -11,10 +11,10 @@ import { dispatch, select, useSelect } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
 import parse from 'html-react-parser';
 import {
-	isAllowedBlock,
 	returnHtml,
 	getAllHeadings,
 	getAllHeadingBlocks,
+	getAllBlocksRecursively,
 } from './toc-utils';
 
 // 現在のブロックを取得するカスタムフック
@@ -58,6 +58,12 @@ export const useTocSettings = () => {
 	}, []);
 };
 
+const stripHtml = (html) => {
+	const tmp = document.createElement('div');
+	tmp.innerHTML = html;
+	return tmp.textContent || tmp.innerText || '';
+};
+
 export default function TOCEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const {
@@ -79,40 +85,6 @@ export default function TOCEdit(props) {
 	// 見出しブロックの一覧を取得
 	const allHeadings = useAllHeadingBlocks();
 
-	// 再帰的にブロックを処理してアンカーを設定する関数
-	const processBlocksRecursively = (
-		blocks,
-		headingBlocks,
-		hasInnerBlocks,
-		updateBlockAttributes
-	) => {
-		blocks.forEach(function (block) {
-			// 見出しにカスタムIDを追加
-			if (
-				block.attributes.anchor === undefined &&
-				isAllowedBlock(block.name, headingBlocks)
-			) {
-				updateBlockAttributes(block.clientId, {
-					anchor: `vk-htags-${block.clientId}`,
-				});
-			}
-
-			// InnerBlock内の見出しを再帰的に処理
-			if (
-				isAllowedBlock(block.name, hasInnerBlocks) &&
-				block.innerBlocks &&
-				block.innerBlocks.length > 0
-			) {
-				processBlocksRecursively(
-					block.innerBlocks,
-					headingBlocks,
-					hasInnerBlocks,
-					updateBlockAttributes
-				);
-			}
-		});
-	};
-
 	useEffect(() => {
 		// 投稿に目次ブロックがなければ処理を実行しない
 		if (!findBlocks) {
@@ -123,24 +95,26 @@ export default function TOCEdit(props) {
 			select('core/block-editor');
 
 		const headingBlocks = ['core/heading', 'vk-blocks/heading'];
-		const hasInnerBlocks = ['vk-blocks/outer', 'core/cover', 'core/group'];
 
-		// 再帰的にブロックを処理
-		processBlocksRecursively(
-			blocks,
-			headingBlocks,
-			hasInnerBlocks,
-			updateBlockAttributes
-		);
+		// すべての見出しブロックを取得
+		const allHeadingBlocks = getAllHeadingBlocks(blocks);
+
+		// 見出しにカスタムIDを追加
+		allHeadingBlocks.forEach((block) => {
+			if (block.attributes.anchor === undefined) {
+				updateBlockAttributes(block.clientId, {
+					anchor: `vk-htags-${block.clientId}`,
+				});
+			}
+		});
 
 		// 目次ブロックをアップデート
 		const blocksOrder = getBlockOrder();
-		const allHeadings = getAllHeadings(
-			blocks,
-			headingBlocks,
-			hasInnerBlocks,
-			{ useCustomLevels, customHeadingLevels, excludedHeadings }
-		);
+		const allHeadings = getAllHeadings(blocks, headingBlocks, {
+			useCustomLevels,
+			customHeadingLevels,
+			excludedHeadings,
+		});
 
 		const allHeadingsSorted = allHeadings.map((heading) => {
 			const index = blocksOrder.indexOf(heading.clientId);
@@ -174,21 +148,11 @@ export default function TOCEdit(props) {
 
 	// 見出しの順番を取得する関数
 	const getHeadingOrder = (heading) => {
-		const blocksOrder = select('core/block-editor').getBlockOrder();
-		const index = blocksOrder.indexOf(heading.clientId);
-
-		if (index >= 0) {
-			return index;
-		}
-
-		const rootIndex = blocksOrder.indexOf(
-			select('core/block-editor').getBlockRootClientId(heading.clientId)
+		const allBlocks = getAllBlocksRecursively(blocks);
+		const index = allBlocks.findIndex(
+			(block) => block.clientId === heading.clientId
 		);
-
-		if (rootIndex >= 0) {
-			return rootIndex;
-		}
-		return Infinity;
+		return index >= 0 ? index : Infinity;
 	};
 
 	const handleMaxLevelChange = (maxLevel) => {
@@ -373,13 +337,7 @@ export default function TOCEdit(props) {
 								return (
 									<ToggleControl
 										key={headingId}
-										label={
-											<span
-												dangerouslySetInnerHTML={{
-													__html: headingText,
-												}}
-											/>
-										}
+										label={stripHtml(headingText)}
 										checked={isExcluded}
 										onChange={(value) => {
 											const newExcludedHeadings = value

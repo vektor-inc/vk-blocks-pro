@@ -174,11 +174,7 @@ export default function CategoryBadgeEdit(props) {
 						)}
 					</PanelBody>
 				</InspectorControls>
-				<div style={{ 
-					display: 'flex', 
-					gap: gap, 
-					flexWrap: 'wrap' 
-				}}>
+				<div className="vk_categoryBadge_multiple" style={{ gap: gap }}>
 					{displayCategories.length > 0 ? (
 						displayCategories.map((category) => {
 							// カテゴリーオブジェクトから直接term_colorを取得

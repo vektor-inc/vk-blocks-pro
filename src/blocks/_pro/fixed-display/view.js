@@ -14,20 +14,22 @@ const blockStates = new Map();
 
 // Closeボタンの初期化
 function initializeCloseButtons() {
-	const closeButtons = document.querySelectorAll('.vk_fixed-display-close-button');
-	
+	const closeButtons = document.querySelectorAll(
+		'.vk_fixed-display-close-button'
+	);
+
 	closeButtons.forEach((button) => {
 		// 既にイベントリスナーが設定されている場合はスキップ
 		if (button.hasAttribute('data-close-initialized')) {
 			return;
 		}
-		
+
 		button.setAttribute('data-close-initialized', 'true');
-		
+
 		button.addEventListener('click', (e) => {
 			e.preventDefault();
 			e.stopPropagation();
-			
+
 			// 親要素（固定表示ブロック）を非表示にする
 			const fixedDisplay = button.closest('.vk_fixed-display');
 			if (fixedDisplay) {

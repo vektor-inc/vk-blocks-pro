@@ -12,9 +12,11 @@ import {
 	PanelRow,
 	RadioControl,
 	TextControl,
+	BaseControl,
 } from '@wordpress/components';
 import { useRef, useState, useEffect } from '@wordpress/element';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
+import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 
 const units = [
 	{ value: 'px', label: 'px' },
@@ -42,6 +44,9 @@ export default function FixedDisplayEdit(props) {
 		dontShowAgain,
 		showCloseButton,
 		closeButtonText,
+		closeButtonBackgroundColor,
+		closeButtonTextColor,
+		closeButtonBorderRadius,
 	} = attributes;
 
 	const [tempScrollTiming, setTempScrollTiming] = useState(
@@ -108,8 +113,12 @@ export default function FixedDisplayEdit(props) {
 					? scrollPersistVisible
 					: false,
 			scrollTimingUnit: scrollTimingUnit || 'px',
-			showCloseButton: showCloseButton !== undefined ? showCloseButton : false,
+			showCloseButton:
+				showCloseButton !== undefined ? showCloseButton : false,
 			closeButtonText: closeButtonText || '×',
+			closeButtonBackgroundColor: closeButtonBackgroundColor || '#000000',
+			closeButtonTextColor: closeButtonTextColor || '#ffffff',
+			closeButtonBorderRadius: closeButtonBorderRadius || null,
 		});
 	}, [
 		clientId,
@@ -120,6 +129,9 @@ export default function FixedDisplayEdit(props) {
 		scrollTimingUnit,
 		showCloseButton,
 		closeButtonText,
+		closeButtonBackgroundColor,
+		closeButtonTextColor,
+		closeButtonBorderRadius,
 	]);
 
 	const handlePositionChange = (newPosition) => {
@@ -261,13 +273,61 @@ export default function FixedDisplayEdit(props) {
 						)}
 					/>
 					{showCloseButton && (
-						<TextControl
-							label={__('Close button text', 'vk-blocks-pro')}
-							value={closeButtonText}
-							onChange={(value) =>
-								setAttributes({ closeButtonText: value })
-							}
-						/>
+						<>
+							<TextControl
+								label={__('Close button text', 'vk-blocks-pro')}
+								value={closeButtonText}
+								onChange={(value) =>
+									setAttributes({ closeButtonText: value })
+								}
+							/>
+							<BaseControl
+								id={`vk-fixed-display-close-bg-color-${blockId}`}
+								label={__('Background color', 'vk-blocks-pro')}
+								help={__(
+									'This color palette overrides the default color. If you want to use the default color, click the clear button.',
+									'vk-blocks-pro'
+								)}
+							>
+								<AdvancedColorPalette
+									schema={'closeButtonBackgroundColor'}
+									{...props}
+								/>
+							</BaseControl>
+							<BaseControl
+								id={`vk-fixed-display-close-text-color-${blockId}`}
+								label={__('Text color', 'vk-blocks-pro')}
+								help={__(
+									'This color palette overrides the default color. If you want to use the default color, click the clear button.',
+									'vk-blocks-pro'
+								)}
+							>
+								<AdvancedColorPalette
+									schema={'closeButtonTextColor'}
+									{...props}
+								/>
+							</BaseControl>
+							<h4 className={`mt-0 mb-2`}>
+								{__(
+									'Close button border radius',
+									'vk-blocks-pro'
+								)}
+							</h4>
+							<UnitControl
+								value={closeButtonBorderRadius}
+								onChange={(value) => {
+									setAttributes({
+										closeButtonBorderRadius: value || null,
+									});
+								}}
+								units={[
+									{ value: 'px', label: 'px', default: 15 },
+									{ value: '%', label: '%', default: 50 },
+									{ value: 'em', label: 'em', default: 1 },
+									{ value: 'rem', label: 'rem', default: 1 },
+								]}
+							/>
+						</>
 					)}
 				</PanelBody>
 				{mode === 'show-on-scroll' && (
@@ -407,9 +467,24 @@ export default function FixedDisplayEdit(props) {
 					<button
 						className="vk_fixed-display-close-button"
 						type="button"
-						aria-label={__('Close', 'vk-blocks-pro')}
+						aria-label={__('Close fixed display', 'vk-blocks-pro')}
+						aria-describedby={`vk-fixed-display-close-${blockId}`}
+						style={{
+							backgroundColor: closeButtonBackgroundColor,
+							color: closeButtonTextColor,
+							borderRadius: closeButtonBorderRadius,
+						}}
 					>
 						{closeButtonText}
+						<span
+							id={`vk-fixed-display-close-${blockId}`}
+							className="screen-reader-text"
+						>
+							{__(
+								'Click to hide this fixed display element',
+								'vk-blocks-pro'
+							)}
+						</span>
 					</button>
 				)}
 				<InnerBlocks

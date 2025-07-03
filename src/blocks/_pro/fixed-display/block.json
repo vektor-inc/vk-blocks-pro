@@ -58,6 +58,18 @@
 			"type": "string",
 			"default": "×"
 		},
+		"closeButtonBackgroundColor": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"closeButtonTextColor": {
+			"type": "string",
+			"default": "#ffffff"
+		},
+		"closeButtonBorderRadius": {
+			"type": "string",
+			"default": null
+		},
 		"clientId": {
 			"type": "string"
 		},

@@ -118,31 +118,33 @@
 // Closeボタン
 .vk_fixed-display-close-button {
 	position: absolute;
-	top: 10px;
-	right: 10px;
+	top: 3px;
+	right: 3px;
 	background: rgba(0, 0, 0, 0.7);
 	color: white;
 	border: none;
 	border-radius: 50%;
-	width: 30px;
-	height: 30px;
+	width: 20px;
+	height: 20px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
 	font-size: 18px;
 	line-height: 1;
-	z-index: 1;
-	transition: background-color 0.2s ease;
-	
+	z-index: 2;
+	transition: all 0.3s;
+		
 	&:hover {
-		background: rgba(0, 0, 0, 0.9);
+		opacity: 0.8;
 	}
 	
 	&:focus {
-		outline: 2px solid #007cba;
+		outline: 2px solid var(--vk-color-primary);
 		outline-offset: 2px;
+		opacity: 0.8;
 	}
+
 }
 
 /*-------------------------------------------*/

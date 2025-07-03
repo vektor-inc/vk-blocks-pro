@@ -56,12 +56,66 @@ const generateHeightCss = (attributes, cssSelector = '') => {
 	return css;
 };
 
+const generateZoomAnimationCss = (attributes = '') => {
+	const {
+		blockId,
+		zoomAnimation,
+		zoomInitialScale,
+		zoomFinalScale,
+		autoPlayDelay,
+		speed,
+	} = attributes;
+
+	let css = '';
+
+	if (zoomAnimation) {
+		// ズーム用のセレクターは ::before 専用にして、親要素への副作用を防ぐ
+		const zoomSelector = `.vk_slider_${blockId}`;
+
+		css += `
+			${zoomSelector} .vk_slider_item {
+				position: relative;
+				overflow: hidden;
+			}
+			
+			${zoomSelector} .vk_slider_item::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-size: cover;
+				background-position: center;
+				background-image: inherit;
+				will-change: transform;
+				transform: scale(${zoomInitialScale !== undefined ? zoomInitialScale : 1});
+				transition: transform ${(autoPlayDelay + speed + autoPlayDelay * 0.5) / 1000 || 6}s linear;
+			}
+			
+			${zoomSelector} .vk_slider_item.swiper-slide-active::before,
+			${zoomSelector} .vk_slider_item.swiper-slide-duplicate-active::before {
+				transform: scale(${zoomFinalScale !== undefined ? zoomFinalScale : 1.25});
+			}
+			
+			${zoomSelector} .vk_slider_item.swiper-slide-prev::before,
+			${zoomSelector} .vk_slider_item.swiper-slide-next::before {
+				transform: scale(${zoomInitialScale !== undefined ? zoomInitialScale : 1});
+			}
+		`;
+	}
+
+	return css;
+};
+
 // Add column css for editor.
 const vkbwithClientIdClassName = createHigherOrderComponent(
 	(BlockListBlock) => {
 		return (props) => {
 			if ('vk-blocks/slider' === props.name) {
-				const cssTag = generateHeightCss(props.attributes, '');
+				const heightCss = generateHeightCss(props.attributes, '');
+				const zoomCss = generateZoomAnimationCss(props.attributes, '');
+				const cssTag = heightCss + zoomCss;
 				return (
 					<>
 						<BlockListBlock {...props} />
@@ -102,7 +156,9 @@ const addSwiperConfig = (el, type, attributes) => {
 		// 最新版
 		if (-1 === deprecatedFuncIndex) {
 			const cssSelector = `.vk_slider_${attributes.blockId},`;
-			const cssTag = generateHeightCss(attributes, cssSelector);
+			const heightCss = generateHeightCss(attributes, cssSelector);
+			const zoomCss = generateZoomAnimationCss(attributes, cssSelector);
+			const cssTag = heightCss + zoomCss;
 			return (
 				<>
 					{el}

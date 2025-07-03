@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 6.5
 Tested up to: 6.8
-Stable tag: 1.104.0.1
+Stable tag: 1.105.1.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -107,6 +107,13 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 1.106.0 =
+[ Add function ][ Slider ] Added zoom animation feature.
+[ Specification change ][ Table of Contents (Pro) ] Removed the restriction that prevented nested headings from being displayed in the list.
+[ Bug fix ][ Button ] Add fallback to vk color primary.
+[ Bug fix ][ Core List ] Fixed an issue where list items were not applying colors selected from Japanese-named color palettes and semi-transparent colors.
+[ Bug Fix ][ Slider ] Fix an issue where the inner element of a slide item does not match the content width in the edit screen.
 
 = 1.105.1 =
 [ Bug Fix ][ Grid Column Card (Pro) ] Fixed the column padding adjustment slider's initial state functionality issue.

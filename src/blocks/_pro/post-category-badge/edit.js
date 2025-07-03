@@ -18,12 +18,12 @@ import {
 
 export default function CategoryBadgeEdit(props) {
 	const { attributes, setAttributes, context } = props;
-	const { 
-		taxonomy, 
-		hasLink, 
+	const {
+		taxonomy,
+		hasLink,
 		textAlign,
 		maxDisplayCount,
-		gap = '0.5em'
+		gap = '0.5em',
 	} = attributes;
 	const { postId, postType } = context;
 
@@ -45,8 +45,15 @@ export default function CategoryBadgeEdit(props) {
 	// 投稿のカテゴリー一覧を取得
 	const categories = useSelect(
 		(select) => {
-			if (!postId) return [];
-			return select('core').getEntityRecords('taxonomy', 'category', { per_page: 100, post: postId }) || [];
+			if (!postId) {
+				return [];
+			}
+			return (
+				select('core').getEntityRecords('taxonomy', 'category', {
+					per_page: 100,
+					post: postId,
+				}) || []
+			);
 		},
 		[postId]
 	);
@@ -75,7 +82,9 @@ export default function CategoryBadgeEdit(props) {
 			[`has-text-align-${textAlign}`]: !!textAlign,
 		}),
 		style: {
-			backgroundColor: !isLoading && (termColorInfo?.color ?? DEFAULT_BACKGROUND_COLOR),
+			backgroundColor:
+				!isLoading &&
+				(termColorInfo?.color ?? DEFAULT_BACKGROUND_COLOR),
 			color: termColorInfo?.text_color ?? DEFAULT_TEXT_COLOR,
 			opacity: !isLoading && !termColorInfo?.term_name ? 0.3 : 1,
 		},
@@ -86,15 +95,18 @@ export default function CategoryBadgeEdit(props) {
 
 	const selectedTaxonomyName = getLabelBySlug(taxonomy, taxonomies);
 
-	let displayName = termColorInfo?.term_name || `(${selectedTaxonomyName})`;
-	let displayUrl = termColorInfo?.term_url || '';
-	let displayColor = termColorInfo?.color ?? DEFAULT_BACKGROUND_COLOR;
-	let displayTextColor = termColorInfo?.text_color ?? DEFAULT_TEXT_COLOR;
+	const displayName = termColorInfo?.term_name || `(${selectedTaxonomyName})`;
+	const displayUrl = termColorInfo?.term_url || '';
+	const displayColor = termColorInfo?.color ?? DEFAULT_BACKGROUND_COLOR;
+	const displayTextColor = termColorInfo?.text_color ?? DEFAULT_TEXT_COLOR;
 
 	// 複数表示の場合（maxDisplayCount >= 0）
 	if (maxDisplayCount >= 0) {
-		const displayCategories = maxDisplayCount === 0 ? categories : categories.slice(0, maxDisplayCount);
-		
+		const displayCategories =
+			maxDisplayCount === 0
+				? categories
+				: categories.slice(0, maxDisplayCount);
+
 		// カテゴリーが見つからない場合の表示用スタイル
 		const noCategoriesBlockProps = useBlockProps({
 			className: classnames('vk_categoryBadge', {
@@ -106,14 +118,14 @@ export default function CategoryBadgeEdit(props) {
 				opacity: !isLoading && !termColorInfo?.term_name ? 0.3 : 1,
 			},
 		});
-		
+
 		// カテゴリーが見つからない場合の表示
 		const noCategoriesDisplay = isLoading ? (
 			<Spinner />
 		) : (
 			<span style={{ opacity: 0.5 }}>{`(${selectedTaxonomyName})`}</span>
 		);
-		
+
 		return (
 			<>
 				<BlockControls>
@@ -134,12 +146,17 @@ export default function CategoryBadgeEdit(props) {
 							}}
 							min={0}
 							max={10}
-							help={__('Set to 0 for all categories, 1 for single display, 2 or more for multiple display', 'vk-blocks-pro')}
+							help={__(
+								'Set to 0 for all categories, 1 for single display, 2 or more for multiple display',
+								'vk-blocks-pro'
+							)}
 						/>
 						<UnitControl
 							label={__('Gap between badges', 'vk-blocks-pro')}
 							value={gap || '0.5em'}
-							onChange={(value) => setAttributes({ gap: value || '0.5em' })}
+							onChange={(value) =>
+								setAttributes({ gap: value || '0.5em' })
+							}
 							units={[
 								{ value: 'px', label: 'px' },
 								{ value: 'em', label: 'em' },
@@ -174,13 +191,15 @@ export default function CategoryBadgeEdit(props) {
 						)}
 					</PanelBody>
 				</InspectorControls>
-				<div style={{ 
-					display: 'flex', 
-					gap: gap, 
-					flexWrap: 'wrap' 
-				}}>
+				<div
+					style={{
+						display: 'flex',
+						gap,
+						flexWrap: 'wrap',
+					}}
+				>
 					{displayCategories.length > 0 ? (
-						displayCategories.map((category, index) => (
+						displayCategories.map((category) => (
 							<span
 								key={category.id}
 								{...blockProps}
@@ -222,12 +241,17 @@ export default function CategoryBadgeEdit(props) {
 						}}
 						min={0}
 						max={10}
-						help={__('Set to 0 for all categories, 1 for single display, 2 or more for multiple display', 'vk-blocks-pro')}
+						help={__(
+							'Set to 0 for all categories, 1 for single display, 2 or more for multiple display',
+							'vk-blocks-pro'
+						)}
 					/>
 					<UnitControl
 						label={__('バッジ間の間隔', 'vk-blocks-pro')}
 						value={gap || '0.5em'}
-						onChange={(value) => setAttributes({ gap: value || '0.5em' })}
+						onChange={(value) =>
+							setAttributes({ gap: value || '0.5em' })
+						}
 						units={[
 							{ value: 'px', label: 'px' },
 							{ value: 'em', label: 'em' },

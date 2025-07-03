@@ -7,7 +7,7 @@
 
 .vk_fixed-display {
 	position: fixed;
-	margin-block-start: 0;
+	margin-block-start: 0 !important;
 	z-index: 99999;
 	
 	> * {
@@ -21,6 +21,7 @@
 	}
 }
 
+// モード別スタイル
 .vk_fixed-display-mode {
 	
 	&-always-visible {
@@ -114,6 +115,38 @@
 	}
 }
 
+// Closeボタン
+.vk_fixed-display-close-button {
+	position: absolute;
+	top: 3px;
+	right: 3px;
+	background: rgba(0, 0, 0, 0.7);
+	color: white;
+	border: none;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	font-size: 18px;
+	line-height: 1;
+	z-index: 2;
+	transition: all 0.3s;
+		
+	&:hover {
+		opacity: 0.8;
+	}
+	
+	&:focus {
+		outline: 2px solid var(--vk-color-primary);
+		outline-offset: 2px;
+		opacity: 0.8;
+	}
+
+}
+
 /*-------------------------------------------*/
 /* 編集画面用
 /*-------------------------------------------*/
@@ -124,6 +157,15 @@
 		&.is-timed-hide,
 		&.is-timed-display {
 				opacity: unset;
+		}
+		
+		// 編集画面でのCloseボタン
+		.vk_fixed-display-close-button {
+			background: #007cba;
+			
+			&:hover {
+				background: #005a87;
+			}
 		}
 	}
 
@@ -170,13 +212,13 @@
 	
 	.vk_fixed-display-position {
 		&-top {
-			top: var(--admin-bar-offset);
+			margin-top: var(--admin-bar-offset);
 		}
 		&-from-top {
-			top: calc(50svh + var(--admin-bar-offset));
+			margin-top: calc(50svh + var(--admin-bar-offset));
 		}
 		&-from-bottom {
 			bottom: calc(50svh + var(--admin-bar-offset));
 		}
-	}	
+	}
 }

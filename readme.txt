@@ -108,7 +108,7 @@ e.g.
 
 == Changelog ==
 
-[ Add function ][ Category Badge (Pro) ] Added support for displaying multiple category badges
+[ Add function ][ Category Badge (Pro) ] Added support for displaying multiple category badges.
 
 = 1.106.0 =
 [ Add function ][ Slider ] Added zoom animation feature.

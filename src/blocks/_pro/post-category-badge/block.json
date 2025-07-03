@@ -23,7 +23,17 @@
 		},
 		"maxDisplayCount": {
 			"type": "number",
-			"default": 1
+			"default": 0
+		},
+		"gap": {
+			"type": "object",
+			"default": {
+				"top": "0.5em",
+				"right": "0.5em",
+				"bottom": "0.5em",
+				"left": "0.5em"
+			},
+			"description": "複数バッジ時の間隔（BoxControl用）"
 		}
 	},
 	"supports": {

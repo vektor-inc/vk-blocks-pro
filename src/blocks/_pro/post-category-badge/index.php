@@ -17,6 +17,7 @@ function vk_blocks_post_category_badge_render_callback( $attributes, $content, $
 	$post     = get_post( $block->context['postId'] );
 	$taxonomy = isset( $attributes['taxonomy'] ) ? $attributes['taxonomy'] : '';
 	$max_display_count = isset( $attributes['maxDisplayCount'] ) ? $attributes['maxDisplayCount'] : 0;
+	$gap = isset( $attributes['gap'] ) ? $attributes['gap'] : '0.5em';
 
 	// 複数表示の場合（maxDisplayCount >= 0）
 	if ( $max_display_count >= 0 ) {
@@ -25,75 +26,21 @@ function vk_blocks_post_category_badge_render_callback( $attributes, $content, $
 			return '';
 		}
 
-		$display_categories = $max_display_count === 0 ? $terms : array_slice($terms, 0, $max_display_count);
+		$output = '';
+		$count = 0;
 		
-		// 単一表示の場合（maxDisplayCount = 1）
-		if ( $max_display_count === 1 ) {
-			$category = $display_categories[0] ?? null;
-			
-			if ( $category ) {
-				$badge_html = sprintf(
-					'<span %s style="background-color: %s; color: %s; padding: 0.25em 0.75em; border-radius: 0.25em; font-size: 0.8rem; font-weight: 500;">%s</span>',
-					get_block_wrapper_attributes(),
-					esc_attr($category->term_meta['color']),
-					esc_attr($category->term_meta['text_color']),
-					esc_html($category->name)
-				);
-				
-				if ( $attributes['hasLink'] ) {
-					$badge_html = sprintf(
-						'<a href="%s" %s>%s</a>',
-						esc_url(get_term_link($category)),
-						get_block_wrapper_attributes(),
-						$badge_html
-					);
-				}
-				
-				return $badge_html;
-			} else {
-				return sprintf(
-					'<span %s style="opacity: 0.5;">%s</span>',
-					get_block_wrapper_attributes(),
-					__('No categories found', 'vk-blocks-pro')
-				);
-			}
-		}
-		
-		// 複数表示の場合（maxDisplayCount = 0 または 2以上）
-		$badges = array();
-		foreach ( $display_categories as $category ) {
-			$badge_html = sprintf(
-				'<span %s style="background-color: %s; color: %s; padding: 0.25em 0.75em; border-radius: 0.25em; font-size: 0.8rem; font-weight: 500;">%s</span>',
-				get_block_wrapper_attributes(),
-				esc_attr($category->term_meta['color']),
-				esc_attr($category->term_meta['text_color']),
-				esc_html($category->name)
-			);
-			
-			if ( $attributes['hasLink'] ) {
-				$badge_html = sprintf(
-					'<a href="%s" %s>%s</a>',
-					esc_url(get_term_link($category)),
-					get_block_wrapper_attributes(),
-					$badge_html
-				);
+		foreach ( $terms as $term ) {
+			// 0の場合は全て表示、それ以外は指定数まで
+			if ( $max_display_count !== 0 && $count >= $max_display_count ) {
+				break;
 			}
 			
-			$badges[] = $badge_html;
+			// 各バッジを個別に出力（supportsのスタイルが適用される）
+			$output .= vk_blocks_render_single_badge( $term, $attributes, $block );
+			$count++;
 		}
 		
-		if ( ! empty( $badges ) ) {
-			return sprintf(
-				'<div style="display: flex; gap: 0.5em; flex-wrap: wrap;">%s</div>',
-				implode('', $badges)
-			);
-		} else {
-			return sprintf(
-				'<span %s style="opacity: 0.5;">%s</span>',
-				get_block_wrapper_attributes(),
-				__('No categories found', 'vk-blocks-pro')
-			);
-		}
+		return '<div class="vk_categoryBadge_multiple" style="display: flex; gap: ' . esc_attr( $gap ) . '; flex-wrap: wrap;">' . $output . '</div>';
 	}
 
 	// 単一表示の場合（maxDisplayCount = 0、従来の処理）

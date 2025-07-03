@@ -13,6 +13,7 @@ import {
 	SelectControl,
 	Spinner,
 	RangeControl,
+	__experimentalBoxControl as BoxControl,
 } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 
@@ -24,7 +25,8 @@ export default function CategoryBadgeEdit(props) {
 		taxonomy, 
 		hasLink, 
 		textAlign,
-		maxDisplayCount = 1
+		maxDisplayCount = 0,
+		gap = { top: '0.5em', right: '0.5em', bottom: '0.5em', left: '0.5em' }
 	} = attributes;
 	const { postId, postType } = context;
 
@@ -114,77 +116,6 @@ export default function CategoryBadgeEdit(props) {
 	if (maxDisplayCount >= 0) {
 		const displayCategories = maxDisplayCount === 0 ? categories : categories.slice(0, maxDisplayCount);
 		
-		// 単一表示の場合（maxDisplayCount = 1）
-		if (maxDisplayCount === 1) {
-			const category = displayCategories[0];
-			
-			return (
-				<>
-					<BlockControls>
-						<AlignmentToolbar
-							value={textAlign}
-							onChange={(nextAlign) => {
-								setAttributes({ textAlign: nextAlign });
-							}}
-						/>
-					</BlockControls>
-					<InspectorControls>
-						<PanelBody title={__('Setting', 'vk-blocks-pro')}>
-							<RangeControl
-								label={__('Max Display Count', 'vk-blocks-pro')}
-								value={maxDisplayCount}
-								onChange={(count) => {
-									setAttributes({ maxDisplayCount: count });
-								}}
-								min={0}
-								max={10}
-								help={__('Set to 0 for all categories, 1 for single display, 2 or more for multiple display', 'vk-blocks-pro')}
-							/>
-							<ToggleControl
-								label={__('Enable Term Link', 'vk-blocks-pro')}
-								checked={hasLink}
-								onChange={(checked) =>
-									setAttributes({ hasLink: checked })
-								}
-							/>
-							{taxonomies.length > 1 && (
-								<SelectControl
-									label={__('Select Taxonomy', 'vk-blocks-pro')}
-									value={taxonomy}
-									options={[
-										{
-											label: __('Auto', 'vk-blocks-pro'),
-											value: '',
-										},
-										...taxonomies.map((tax) => ({
-											label: tax.name,
-											value: tax.slug,
-										})),
-									]}
-									onChange={(selectedSlug) => {
-										setAttributes({ taxonomy: selectedSlug });
-									}}
-								/>
-							)}
-						</PanelBody>
-					</InspectorControls>
-					{category ? (
-						<span
-							{...blockProps}
-							style={{
-								...blockProps.style
-							}}
-						>
-							{category.name}
-						</span>
-					) : (
-						<span style={{ opacity: 0.5 }}>{__('No categories found', 'vk-blocks-pro')}</span>
-					)}
-				</>
-			);
-		}
-		
-		// 複数表示の場合（maxDisplayCount = 0 または 2以上）
 		return (
 			<>
 				<BlockControls>
@@ -207,6 +138,16 @@ export default function CategoryBadgeEdit(props) {
 							max={10}
 							help={__('Set to 0 for all categories, 1 for single display, 2 or more for multiple display', 'vk-blocks-pro')}
 						/>
+						{maxDisplayCount > 1 && (
+							<BoxControl
+								label={__('ブロックの間隔', 'vk-blocks-pro')}
+								values={gap}
+								onChange={(values) => setAttributes({ gap: values })}
+								allowReset
+								linked
+								help={__('複数バッジ時のみ有効', 'vk-blocks-pro')}
+							/>
+						)}
 						<ToggleControl
 							label={__('Enable Term Link', 'vk-blocks-pro')}
 							checked={hasLink}
@@ -235,14 +176,14 @@ export default function CategoryBadgeEdit(props) {
 						)}
 					</PanelBody>
 				</InspectorControls>
-				<div style={{ display: 'flex', gap: '0.5em', flexWrap: 'wrap' }}>
+				<div style={{ display: 'flex', gap: gap.top, flexWrap: 'wrap' }}>
 					{displayCategories.length > 0 ? (
 						displayCategories.map((category, index) => (
 							<span
 								key={category.id}
 								{...blockProps}
 								style={{
-									...blockProps.style
+									...blockProps.style,
 								}}
 							>
 								{category.name}
@@ -279,6 +220,16 @@ export default function CategoryBadgeEdit(props) {
 						max={10}
 						help={__('Set to 0 for all categories, 1 for single display, 2 or more for multiple display', 'vk-blocks-pro')}
 					/>
+					{maxDisplayCount > 1 && (
+						<BoxControl
+							label={__('ブロックの間隔', 'vk-blocks-pro')}
+							values={gap}
+							onChange={(values) => setAttributes({ gap: values })}
+							allowReset
+							linked
+							help={__('複数バッジ時のみ有効', 'vk-blocks-pro')}
+						/>
+					)}
 					<ToggleControl
 						label={__('Enable Term Link', 'vk-blocks-pro')}
 						checked={hasLink}

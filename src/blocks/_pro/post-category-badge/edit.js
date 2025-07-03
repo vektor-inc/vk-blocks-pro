@@ -13,7 +13,7 @@ import {
 	SelectControl,
 	Spinner,
 	RangeControl,
-	BoxControl,
+	__experimentalUnitControl as UnitControl,
 } from '@wordpress/components';
 
 export default function CategoryBadgeEdit(props) {
@@ -23,7 +23,7 @@ export default function CategoryBadgeEdit(props) {
 		hasLink, 
 		textAlign,
 		maxDisplayCount,
-		gap = { top: '0.5em', right: '0.5em', bottom: '0.5em', left: '0.5em' }
+		gap = '0.5em'
 	} = attributes;
 	const { postId, postType } = context;
 
@@ -136,16 +136,16 @@ export default function CategoryBadgeEdit(props) {
 							max={10}
 							help={__('Set to 0 for all categories, 1 for single display, 2 or more for multiple display', 'vk-blocks-pro')}
 						/>
-						{maxDisplayCount !== 1 && (
-							<BoxControl
-								label={__('ブロックの間隔', 'vk-blocks-pro')}
-								values={gap}
-								onChange={(values) => setAttributes({ gap: values })}
-								allowReset
-								linked
-								help={__('複数バッジ時のみ有効', 'vk-blocks-pro')}
-							/>
-						)}
+						<UnitControl
+							label={__('Gap between badges', 'vk-blocks-pro')}
+							value={gap || '0.5em'}
+							onChange={(value) => setAttributes({ gap: value || '0.5em' })}
+							units={[
+								{ value: 'px', label: 'px' },
+								{ value: 'em', label: 'em' },
+								{ value: 'rem', label: 'rem' },
+							]}
+						/>
 						<ToggleControl
 							label={__('Enable Term Link', 'vk-blocks-pro')}
 							checked={hasLink}
@@ -174,7 +174,11 @@ export default function CategoryBadgeEdit(props) {
 						)}
 					</PanelBody>
 				</InspectorControls>
-				<div style={{ display: 'flex', gap: gap.top, flexWrap: 'wrap' }}>
+				<div style={{ 
+					display: 'flex', 
+					gap: gap, 
+					flexWrap: 'wrap' 
+				}}>
 					{displayCategories.length > 0 ? (
 						displayCategories.map((category, index) => (
 							<span
@@ -220,16 +224,16 @@ export default function CategoryBadgeEdit(props) {
 						max={10}
 						help={__('Set to 0 for all categories, 1 for single display, 2 or more for multiple display', 'vk-blocks-pro')}
 					/>
-					{maxDisplayCount !== 1 && (
-						<BoxControl
-							label={__('ブロックの間隔', 'vk-blocks-pro')}
-							values={gap}
-							onChange={(values) => setAttributes({ gap: values })}
-							allowReset
-							linked
-							help={__('複数バッジ時のみ有効', 'vk-blocks-pro')}
-						/>
-					)}
+					<UnitControl
+						label={__('バッジ間の間隔', 'vk-blocks-pro')}
+						value={gap || '0.5em'}
+						onChange={(value) => setAttributes({ gap: value || '0.5em' })}
+						units={[
+							{ value: 'px', label: 'px' },
+							{ value: 'em', label: 'em' },
+							{ value: 'rem', label: 'rem' },
+						]}
+					/>
 					<ToggleControl
 						label={__('Enable Term Link', 'vk-blocks-pro')}
 						checked={hasLink}

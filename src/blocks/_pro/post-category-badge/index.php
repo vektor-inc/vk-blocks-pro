@@ -27,8 +27,8 @@ function vk_blocks_post_category_badge_render_callback( $attributes, $content, $
 	// gapの値を取得（topを使用）
 	$gap_value = isset( $gap['top'] ) ? $gap['top'] : '0.5em';
 
-	// 複数表示の場合（maxDisplayCount >= 0）
-	if ( $max_display_count >= 0 ) {
+	// 複数表示の場合（maxDisplayCount === 0 または 2以上）
+	if ( $max_display_count === 0 || $max_display_count >= 2 ) {
 		$terms = get_the_terms( $post, $taxonomy ?: 'category' );
 		if ( ! $terms || is_wp_error( $terms ) ) {
 			return '';
@@ -36,22 +36,17 @@ function vk_blocks_post_category_badge_render_callback( $attributes, $content, $
 
 		$output = '';
 		$count = 0;
-		
 		foreach ( $terms as $term ) {
-			// 0の場合は全て表示、それ以外は指定数まで
 			if ( $max_display_count !== 0 && $count >= $max_display_count ) {
 				break;
 			}
-			
-			// 各バッジを個別に出力（supportsのスタイルが適用される）
 			$output .= vk_blocks_render_single_badge( $term, $attributes, $block );
 			$count++;
 		}
-		
 		return '<div class="vk_categoryBadge_multiple" style="display: flex; gap: ' . esc_attr( $gap_value ) . '; flex-wrap: wrap;">' . $output . '</div>';
 	}
 
-	// 単一表示の場合（maxDisplayCount = 0、従来の処理）
+	// 単一表示の場合（maxDisplayCount === 1）
 	if ( class_exists( '\VektorInc\VK_Term_Color\VkTermColor' ) && method_exists( '\VektorInc\VK_Term_Color\VkTermColor', 'get_post_single_term_info' ) ) {
 		$term_color_info = \VektorInc\VK_Term_Color\VkTermColor::get_post_single_term_info( $post, array( 'taxonomy' => $taxonomy ) );
 	} else {
@@ -99,22 +94,22 @@ function vk_blocks_render_single_badge( $term, $attributes, $block ) {
 		array_push( $classes, $align_class_name );
 	}
 
-	// タームの色情報を取得（簡易版）
 	$color = '#999999';
-	$text_color = '#FFFFFF';
-	
-	// VK_Term_Colorが利用可能な場合は色情報を取得
+	$text_color = '';
 	if ( class_exists( '\VektorInc\VK_Term_Color\VkTermColor' ) ) {
-		// タームのメタデータから色情報を取得
 		$term_color = get_term_meta( $term->term_id, 'term_color', true );
-		$term_text_color = get_term_meta( $term->term_id, 'term_text_color', true );
-		
 		if ( $term_color ) {
 			$color = $term_color;
 		}
+		$term_text_color = get_term_meta( $term->term_id, 'term_text_color', true );
 		if ( $term_text_color ) {
 			$text_color = $term_text_color;
+		} else {
+			// term_text_colorがなければ自動判定
+			$text_color = \VektorInc\VK_Term_Color\VkTermColor::get_dynamic_text_color( $color );
 		}
+	} else {
+		$text_color = '#FFFFFF';
 	}
 
 	$wrapper_attributes = get_block_wrapper_attributes(

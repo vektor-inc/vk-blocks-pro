@@ -15,12 +15,6 @@
 		"textAlign": {
 			"type": "string"
 		},
-		"categoryId": {
-			"type": "number"
-		},
-		"categoryName": {
-			"type": "string"
-		},
 		"maxDisplayCount": {
 			"type": "number",
 			"default": 0
@@ -32,8 +26,7 @@
 				"right": "0.5em",
 				"bottom": "0.5em",
 				"left": "0.5em"
-			},
-			"description": "複数バッジ時の間隔（BoxControl用）"
+			}
 		}
 	},
 	"supports": {

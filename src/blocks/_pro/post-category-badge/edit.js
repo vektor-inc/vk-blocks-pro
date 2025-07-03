@@ -13,22 +13,23 @@ import {
 	SelectControl,
 	Spinner,
 	RangeControl,
-	__experimentalBoxControl as BoxControl,
+	BoxControl,
 } from '@wordpress/components';
-import { useEffect } from '@wordpress/element';
 
 export default function CategoryBadgeEdit(props) {
 	const { attributes, setAttributes, context } = props;
 	const { 
-		categoryId, 
-		categoryName, 
 		taxonomy, 
 		hasLink, 
 		textAlign,
-		maxDisplayCount = 0,
+		maxDisplayCount,
 		gap = { top: '0.5em', right: '0.5em', bottom: '0.5em', left: '0.5em' }
 	} = attributes;
 	const { postId, postType } = context;
+
+	// デフォルト色の定数
+	const DEFAULT_BACKGROUND_COLOR = '#999999';
+	const DEFAULT_TEXT_COLOR = '#FFFFFF';
 
 	// termColorを取得（VKTermColor::get_post_single_term_info() の返り値）
 	const { value: termColorInfo, isLoading } = useSelect(
@@ -74,8 +75,8 @@ export default function CategoryBadgeEdit(props) {
 			[`has-text-align-${textAlign}`]: !!textAlign,
 		}),
 		style: {
-			backgroundColor: !isLoading && (termColorInfo?.color ?? '#999999'),
-			color: termColorInfo?.text_color ?? '#FFFFFF',
+			backgroundColor: !isLoading && (termColorInfo?.color ?? DEFAULT_BACKGROUND_COLOR),
+			color: termColorInfo?.text_color ?? DEFAULT_TEXT_COLOR,
 			opacity: !isLoading && !termColorInfo?.term_name ? 0.3 : 1,
 		},
 	});
@@ -85,36 +86,33 @@ export default function CategoryBadgeEdit(props) {
 
 	const selectedTaxonomyName = getLabelBySlug(taxonomy, taxonomies);
 
-	// categoryId, categoryName があればそれを表示
-	let displayName = categoryName;
-	let displayUrl = '';
-	let displayColor = '#999999';
-	let displayTextColor = '#FFFFFF';
-
-	if (categoryId && categoryName) {
-		// 必要ならURLや色も親から渡す or ここで取得
-		// 例: displayUrl = `/category/${categoryId}`;
-	} else {
-		// 従来通り termColorInfo から取得
-		displayName = termColorInfo?.term_name || `(${selectedTaxonomyName})`;
-		displayUrl = termColorInfo?.term_url || '';
-		displayColor = termColorInfo?.color ?? '#999999';
-		displayTextColor = termColorInfo?.text_color ?? '#FFFFFF';
-	}
-
-	// categoryId未設定時に自動セット
-	useEffect(() => {
-		if (!categoryId && categories.length > 0) {
-			setAttributes({
-				categoryId: categories[0].id,
-				categoryName: categories[0].name,
-			});
-		}
-	}, [categoryId, categories]);
+	let displayName = termColorInfo?.term_name || `(${selectedTaxonomyName})`;
+	let displayUrl = termColorInfo?.term_url || '';
+	let displayColor = termColorInfo?.color ?? DEFAULT_BACKGROUND_COLOR;
+	let displayTextColor = termColorInfo?.text_color ?? DEFAULT_TEXT_COLOR;
 
 	// 複数表示の場合（maxDisplayCount >= 0）
 	if (maxDisplayCount >= 0) {
 		const displayCategories = maxDisplayCount === 0 ? categories : categories.slice(0, maxDisplayCount);
+		
+		// カテゴリーが見つからない場合の表示用スタイル
+		const noCategoriesBlockProps = useBlockProps({
+			className: classnames('vk_categoryBadge', {
+				[`has-text-align-${textAlign}`]: !!textAlign,
+			}),
+			style: {
+				backgroundColor: displayColor,
+				color: displayTextColor,
+				opacity: !isLoading && !termColorInfo?.term_name ? 0.3 : 1,
+			},
+		});
+		
+		// カテゴリーが見つからない場合の表示
+		const noCategoriesDisplay = isLoading ? (
+			<Spinner />
+		) : (
+			<span style={{ opacity: 0.5 }}>{`(${selectedTaxonomyName})`}</span>
+		);
 		
 		return (
 			<>
@@ -138,7 +136,7 @@ export default function CategoryBadgeEdit(props) {
 							max={10}
 							help={__('Set to 0 for all categories, 1 for single display, 2 or more for multiple display', 'vk-blocks-pro')}
 						/>
-						{maxDisplayCount > 1 && (
+						{maxDisplayCount !== 1 && (
 							<BoxControl
 								label={__('ブロックの間隔', 'vk-blocks-pro')}
 								values={gap}
@@ -190,7 +188,9 @@ export default function CategoryBadgeEdit(props) {
 							</span>
 						))
 					) : (
-						<span style={{ opacity: 0.5 }}>{__('No categories found', 'vk-blocks-pro')}</span>
+						<span {...noCategoriesBlockProps}>
+							{noCategoriesDisplay}
+						</span>
 					)}
 				</div>
 			</>
@@ -220,7 +220,7 @@ export default function CategoryBadgeEdit(props) {
 						max={10}
 						help={__('Set to 0 for all categories, 1 for single display, 2 or more for multiple display', 'vk-blocks-pro')}
 					/>
-					{maxDisplayCount > 1 && (
+					{maxDisplayCount !== 1 && (
 						<BoxControl
 							label={__('ブロックの間隔', 'vk-blocks-pro')}
 							values={gap}

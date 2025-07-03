@@ -108,6 +108,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Table of Contents (Pro) ] Fixed H2 selection issue in heading level settings and improved code structure.
+
 = 1.106.0 =
 [ Add function ][ Slider ] Added zoom animation feature.
 [ Specification change ][ Table of Contents (Pro) ] Removed the restriction that prevented nested headings from being displayed in the list.

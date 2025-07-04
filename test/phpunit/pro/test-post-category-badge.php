@@ -335,4 +335,55 @@ class PostCategoryBadgeTest extends VK_UnitTestCase {
         $this->assertEquals($expected, $return);
 	}
   
+	public function test_category_badge_multiple_taxonomies() {
+        $test_term_0 = $this->test_terms['terms']['test_taxonomy_0'][0];
+        $test_term_2 = $this->test_terms['terms']['test_taxonomy_1'][0];
+
+        // 投稿に両方のタームを付与
+        $post_id = wp_insert_post( array(
+            'post_title'   => 'Multiple Taxonomies Post',
+            'post_content' => '<!-- wp:paragraph --><p>This is my page.</p><!-- /wp:paragraph -->',
+            'post_type'    => 'post',
+            'post_status'  => 'publish',
+            'tax_input' => array(
+                'test_taxonomy_0' => array( $test_term_0['id'] ),
+                'test_taxonomy_1' => array( $test_term_2['id'] ),
+            ),
+        ));
+
+        $context = array(
+            'postId' => $post_id,
+            'postType' => 'post'
+        );
+
+        $parsed_block = array(
+            'blockName' => "vk-blocks/post-category-badge",
+            'attrs' => array(
+                'hasLink' => false,
+                'maxDisplayCount' => 0,
+                'taxonomy' => '', // auto
+                'gap' => '0.5em'
+            )
+        );
+
+        $block = new WP_Block( $parsed_block, $context );
+        $return = $block->render();
+
+        // 期待される出力
+        $expected = '<div class="vk_categoryBadge_multiple" style="display: flex; gap: 0.5em; flex-wrap: wrap;">';
+        $expected .= '<div style="background-color: #999999;color:#FFFFFF;" class="vk_categoryBadge wp-block-vk-blocks-post-category-badge">Uncategorized</div>';
+        $expected .= '<div style="background-color: ' . $test_term_0['color'] . ';color:' . $test_term_0['correct_text_color'] . ';" class="vk_categoryBadge wp-block-vk-blocks-post-category-badge">' . $test_term_0['name'] . '</div>';
+        $expected .= '<div style="background-color: ' . $test_term_2['color'] . ';color:' . $test_term_2['correct_text_color'] . ';" class="vk_categoryBadge wp-block-vk-blocks-post-category-badge">' . $test_term_2['name'] . '</div>';
+        $expected .= '</div>';
+
+        print PHP_EOL;
+        print '------------------------------------' . PHP_EOL;
+        print 'PostCategoryBadgeTest::test_category_badge_multiple_taxonomies' . PHP_EOL;
+        print '------------------------------------' . PHP_EOL;
+        print 'return  :' . $return . PHP_EOL;
+        print 'correct :' . $expected . PHP_EOL;
+
+        $this->assertEquals($expected, $return);
+    }
+  
 };

@@ -14,34 +14,44 @@
  * @return string
  */
 function vk_blocks_post_category_badge_render_callback( $attributes, $content, $block ) {
-	$post     = get_post( $block->context['postId'] );
-	$taxonomy = isset( $attributes['taxonomy'] ) ? $attributes['taxonomy'] : '';
+	$post              = get_post( $block->context['postId'] );
+	$taxonomy          = isset( $attributes['taxonomy'] ) ? $attributes['taxonomy'] : '';
 	$max_display_count = isset( $attributes['maxDisplayCount'] ) ? $attributes['maxDisplayCount'] : 0;
-	$gap = isset( $attributes['gap'] ) ? $attributes['gap'] : array( 'top' => '0.5em', 'right' => '0.5em', 'bottom' => '0.5em', 'left' => '0.5em' );
+	$gap               = isset( $attributes['gap'] ) ? $attributes['gap'] : array(
+		'top'    => '0.5em',
+		'right'  => '0.5em',
+		'bottom' => '0.5em',
+		'left'   => '0.5em',
+	);
 
 	// gapが文字列の場合は配列に変換（後方互換性）
 	if ( is_string( $gap ) ) {
-		$gap = array( 'top' => $gap, 'right' => $gap, 'bottom' => $gap, 'left' => $gap );
+		$gap = array(
+			'top'    => $gap,
+			'right'  => $gap,
+			'bottom' => $gap,
+			'left'   => $gap,
+		);
 	}
 
 	// gapの値を取得（topを使用）
 	$gap_value = isset( $gap['top'] ) ? $gap['top'] : '0.5em';
 
 	// 複数表示の場合（maxDisplayCount === 0 または 2以上）
-	if ( $max_display_count === 0 || $max_display_count >= 2 ) {
-		$terms = get_the_terms( $post, $taxonomy ?: 'category' );
+	if ( 0 === $max_display_count || $max_display_count >= 2 ) {
+		$terms = get_the_terms( $post, $taxonomy ? $taxonomy : 'category' );
 		if ( ! $terms || is_wp_error( $terms ) ) {
 			return '';
 		}
 
 		$output = '';
-		$count = 0;
+		$count  = 0;
 		foreach ( $terms as $term ) {
-			if ( $max_display_count !== 0 && $count >= $max_display_count ) {
+			if ( 0 !== $max_display_count && $count >= $max_display_count ) {
 				break;
 			}
-			$output .= vk_blocks_render_single_badge( $term, $attributes, $block );
-			$count++;
+			$output .= vk_blocks_render_single_badge( $term, $attributes );
+			++$count;
 		}
 		return '<div class="vk_categoryBadge_multiple" style="display: flex; gap: ' . esc_attr( $gap_value ) . '; flex-wrap: wrap;">' . $output . '</div>';
 	}
@@ -81,20 +91,19 @@ function vk_blocks_post_category_badge_render_callback( $attributes, $content, $
 /**
  * Render single badge
  *
- * @param WP_Term  $term Term object.
- * @param array    $attributes Block attributes.
- * @param WP_Block $block Block context.
+ * @param WP_Term $term Term object.
+ * @param array   $attributes Block attributes.
  * @return string
  */
-function vk_blocks_render_single_badge( $term, $attributes, $block ) {
-	$classes = array( 'vk_categoryBadge' );
+function vk_blocks_render_single_badge( $term, $attributes ) {
+	$classes          = array( 'vk_categoryBadge' );
 	$align_class_name = empty( $attributes['textAlign'] ) ? '' : "has-text-align-{$attributes['textAlign']}";
 
 	if ( ! empty( $align_class_name ) ) {
 		array_push( $classes, $align_class_name );
 	}
 
-	$color = '#999999';
+	$color      = '#999999';
 	$text_color = '';
 	if ( class_exists( '\VektorInc\VK_Term_Color\VkTermColor' ) ) {
 		$term_color = get_term_meta( $term->term_id, 'term_color', true );

@@ -41,7 +41,7 @@ export default function CategoryBadgeEdit(props) {
 					taxonomy
 				);
 			}
-			
+
 			// 自動選択の場合：最初に見つかったタームの情報を取得
 			const allTaxonomies = select('core').getTaxonomies();
 			if (!allTaxonomies) {
@@ -50,7 +50,7 @@ export default function CategoryBadgeEdit(props) {
 					'category'
 				);
 			}
-			
+
 			// 投稿タイプに利用可能なタクソノミーを取得
 			const availableTaxonomies = allTaxonomies.filter(
 				(_taxonomy) =>
@@ -58,10 +58,13 @@ export default function CategoryBadgeEdit(props) {
 					_taxonomy.hierarchical &&
 					_taxonomy.types.includes(postType)
 			);
-			
+
 			// 最初に見つかったタクソノミーを使用
-			const targetTaxonomy = availableTaxonomies.length > 0 ? availableTaxonomies[0].slug : 'category';
-			
+			const targetTaxonomy =
+				availableTaxonomies.length > 0
+					? availableTaxonomies[0].slug
+					: 'category';
+
 			return select('vk-blocks/term-color').getTermColorInfo(
 				postId,
 				targetTaxonomy
@@ -76,7 +79,7 @@ export default function CategoryBadgeEdit(props) {
 			if (!postId) {
 				return [];
 			}
-			
+
 			// 特定のタクソノミーが選択されている場合
 			if (taxonomy) {
 				return (
@@ -86,13 +89,13 @@ export default function CategoryBadgeEdit(props) {
 					}) || []
 				);
 			}
-			
+
 			// 自動選択の場合：投稿に設定されているすべてのタクソノミーからタームを取得
 			const allTaxonomies = select('core').getTaxonomies();
 			if (!allTaxonomies) {
 				return [];
 			}
-			
+
 			// 投稿タイプに利用可能なタクソノミーを取得
 			const availableTaxonomies = allTaxonomies.filter(
 				(_taxonomy) =>
@@ -100,22 +103,23 @@ export default function CategoryBadgeEdit(props) {
 					_taxonomy.hierarchical &&
 					_taxonomy.types.includes(postType)
 			);
-			
+
 			// 各タクソノミーからタームを取得
 			let allTerms = [];
 			availableTaxonomies.forEach((tax) => {
-				const terms = select('core').getEntityRecords('taxonomy', tax.slug, {
-					per_page: 100,
-					post: postId,
-				}) || [];
+				const terms =
+					select('core').getEntityRecords('taxonomy', tax.slug, {
+						per_page: 100,
+						post: postId,
+					}) || [];
 				// タームにタクソノミー情報を追加
-				terms.forEach(term => {
+				terms.forEach((term) => {
 					term.taxonomy_slug = tax.slug;
 					term.taxonomy_name = tax.name;
 				});
 				allTerms = [...allTerms, ...terms];
 			});
-			
+
 			return allTerms;
 		},
 		[postId, taxonomy, postType]
@@ -271,7 +275,11 @@ export default function CategoryBadgeEdit(props) {
 										backgroundColor: bgColor,
 										color: textColor,
 									}}
-									title={category.taxonomy_name ? `${category.taxonomy_name}: ${category.name}` : category.name}
+									title={
+										category.taxonomy_name
+											? `${category.taxonomy_name}: ${category.name}`
+											: category.name
+									}
 								>
 									{category.name}
 								</span>

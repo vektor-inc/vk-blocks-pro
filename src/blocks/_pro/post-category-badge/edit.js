@@ -169,24 +169,27 @@ export default function CategoryBadgeEdit(props) {
 	const displayColor = termColorInfo?.color ?? DEFAULT_BACKGROUND_COLOR;
 	const displayTextColor = termColorInfo?.text_color ?? DEFAULT_TEXT_COLOR;
 
+	// すべてのuseBlockPropsを条件分岐の外で呼び出す
+	const noCategoriesBlockProps = useBlockProps({
+		className: classnames('vk_categoryBadge', {
+			[`has-text-align-${textAlign}`]: !!textAlign,
+		}),
+		style: {
+			backgroundColor: displayColor,
+			color: displayTextColor,
+			opacity: hasAnyTerm ? 1 : 0.3,
+		},
+	});
+
+	// 共通の設定コンポーネント
+	const isMultipleDisplay = maxDisplayCount === 0 || maxDisplayCount > 1;
+
 	// 複数表示の場合（maxDisplayCount >= 0）
-	if (maxDisplayCount === 0 || maxDisplayCount > 1) {
+	if (isMultipleDisplay) {
 		const displayCategories =
 			maxDisplayCount === 0
 				? categories
 				: categories.slice(0, maxDisplayCount);
-
-		// カテゴリーが見つからない場合の表示用スタイル
-		const noCategoriesBlockProps = useBlockProps({
-			className: classnames('vk_categoryBadge', {
-				[`has-text-align-${textAlign}`]: !!textAlign,
-			}),
-			style: {
-				backgroundColor: displayColor,
-				color: displayTextColor,
-				opacity: hasAnyTerm ? 1 : 0.3,
-			},
-		});
 
 		// カテゴリーが見つからない場合の表示
 		const noCategoriesDisplay = isLoading ? (
@@ -302,7 +305,7 @@ export default function CategoryBadgeEdit(props) {
 		);
 	}
 
-	// 単一表示の場合（maxDisplayCount = 0、従来の処理）
+	// 単一表示の場合（maxDisplayCount = 1、従来の処理）
 	return (
 		<>
 			<BlockControls>
@@ -315,6 +318,19 @@ export default function CategoryBadgeEdit(props) {
 			</BlockControls>
 			<InspectorControls>
 				<PanelBody title={__('Setting', 'vk-blocks-pro')}>
+					<RangeControl
+						label={__('Max Display Count', 'vk-blocks-pro')}
+						value={maxDisplayCount}
+						onChange={(count) => {
+							setAttributes({ maxDisplayCount: count });
+						}}
+						min={0}
+						max={10}
+						help={__(
+							'Set to 0 for all categories, 1 for single display, 2 or more for multiple display',
+							'vk-blocks-pro'
+						)}
+					/>
 					<ToggleControl
 						label={__('Enable Term Link', 'vk-blocks-pro')}
 						checked={hasLink}
@@ -338,31 +354,6 @@ export default function CategoryBadgeEdit(props) {
 						onChange={(selectedSlug) => {
 							setAttributes({ taxonomy: selectedSlug });
 						}}
-					/>
-					<RangeControl
-						label={__('Max Display Count', 'vk-blocks-pro')}
-						value={maxDisplayCount}
-						onChange={(count) => {
-							setAttributes({ maxDisplayCount: count });
-						}}
-						min={0}
-						max={10}
-						help={__(
-							'Set to 0 for all categories, 1 for single display, 2 or more for multiple display',
-							'vk-blocks-pro'
-						)}
-					/>
-					<UnitControl
-						label={__('Gap between badges', 'vk-blocks-pro')}
-						value={gap || '0.5em'}
-						onChange={(value) =>
-							setAttributes({ gap: value || '0.5em' })
-						}
-						units={[
-							{ value: 'px', label: 'px' },
-							{ value: 'em', label: 'em' },
-							{ value: 'rem', label: 'rem' },
-						]}
 					/>
 				</PanelBody>
 			</InspectorControls>

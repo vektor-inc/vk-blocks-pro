@@ -66,20 +66,32 @@ function vk_blocks_post_category_badge_render_callback( $attributes, $content, $
 	}
 
 	// 単一表示の場合（maxDisplayCount === 1）
-	// 特定のタクソノミーが選択されている場合
 	if ( $taxonomy ) {
 		$target_taxonomy = $taxonomy;
+		$terms = get_the_terms( $post, $target_taxonomy );
+		if ( $terms && ! is_wp_error( $terms ) ) {
+			$term = $terms[0];
+		} else {
+			return '';
+		}
 	} else {
-		// 自動選択の場合：投稿に設定されている最初のタクソノミーを使用
-		$post_type            = get_post_type( $post );
-		$taxonomies           = get_object_taxonomies( $post_type, 'objects' );
-		$available_taxonomies = array();
+		// 自動選択の場合：投稿に設定されているすべてのタクソノミーを順に見て、最初に見つかったタームを使う
+		$post_type  = get_post_type( $post );
+		$taxonomies = get_object_taxonomies( $post_type, 'objects' );
+		$term = null;
 		foreach ( $taxonomies as $tax_slug => $tax_obj ) {
 			if ( 'post_tag' !== $tax_slug && $tax_obj->hierarchical ) {
-				$available_taxonomies[] = $tax_slug;
+				$terms = get_the_terms( $post, $tax_slug );
+				if ( $terms && ! is_wp_error( $terms ) && ! empty( $terms ) ) {
+					$term = $terms[0];
+					break;
+				}
 			}
 		}
-		$target_taxonomy = ! empty( $available_taxonomies ) ? $available_taxonomies[0] : 'category';
+		if ( ! $term ) {
+			return '';
+		}
+		$target_taxonomy = $term->taxonomy;
 	}
 
 	if ( class_exists( '\VektorInc\VK_Term_Color\VkTermColor' ) && method_exists( '\VektorInc\VK_Term_Color\VkTermColor', 'get_post_single_term_info' ) ) {

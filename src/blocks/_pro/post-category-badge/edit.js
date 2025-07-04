@@ -146,17 +146,8 @@ export default function CategoryBadgeEdit(props) {
 
 	// 対象のタームが見つからなかったらタクソノミ名を表示
 	const hasAnyTerm = categories.length > 0;
-	const blockProps = useBlockProps({
-		className: classnames('vk_categoryBadge', {
-			[`has-text-align-${textAlign}`]: !!textAlign,
-		}),
-		style: {
-			backgroundColor:
-				!isLoading &&
-				(termColorInfo?.color ?? DEFAULT_BACKGROUND_COLOR),
-			color: termColorInfo?.text_color ?? DEFAULT_TEXT_COLOR,
-			opacity: hasAnyTerm ? 1 : 0.3,
-		},
+	const badgeClassName = classnames('vk_categoryBadge', {
+		[`has-text-align-${textAlign}`]: !!textAlign,
 	});
 
 	const getLabelBySlug = (slug, taxonomies) =>
@@ -269,9 +260,8 @@ export default function CategoryBadgeEdit(props) {
 							return (
 								<span
 									key={category.id}
-									{...blockProps}
+									className={badgeClassName}
 									style={{
-										...blockProps.style,
 										backgroundColor: bgColor,
 										color: textColor,
 									}}
@@ -361,14 +351,23 @@ export default function CategoryBadgeEdit(props) {
 			</InspectorControls>
 			{hasLink && displayUrl ? (
 				<a
-					{...blockProps}
+					{...useBlockProps({
+						className: badgeClassName,
+						style: {
+							backgroundColor: displayColor,
+							color: displayTextColor,
+							opacity: hasAnyTerm ? 1 : 0.3,
+						},
+					})}
 					href={displayUrl}
 					onClick={(event) => event.preventDefault()}
 				>
 					{displayName}
 				</a>
 			) : (
-				<div {...blockProps}>{displayName}</div>
+				<div {...useBlockProps({ className: badgeClassName })}>
+					{displayName}
+				</div>
 			)}
 		</>
 	);

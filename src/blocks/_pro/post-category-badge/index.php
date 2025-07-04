@@ -47,10 +47,10 @@ function vk_blocks_post_category_badge_render_callback( $attributes, $content, $
 			}
 		} else {
 			// 自動選択の場合：投稿に設定されているすべてのタクソノミーからタームを取得
-			$post_type = get_post_type( $post );
+			$post_type  = get_post_type( $post );
 			$taxonomies = get_object_taxonomies( $post_type, 'objects' );
-			$all_terms = array();
-			
+			$all_terms  = array();
+
 			foreach ( $taxonomies as $tax_slug => $tax_obj ) {
 				if ( 'post_tag' !== $tax_slug && $tax_obj->hierarchical ) {
 					$terms = get_the_terms( $post, $tax_slug );
@@ -64,7 +64,7 @@ function vk_blocks_post_category_badge_render_callback( $attributes, $content, $
 					}
 				}
 			}
-			
+
 			if ( empty( $all_terms ) ) {
 				return '';
 			}
@@ -89,8 +89,8 @@ function vk_blocks_post_category_badge_render_callback( $attributes, $content, $
 		$target_taxonomy = $taxonomy;
 	} else {
 		// 自動選択の場合：投稿に設定されている最初のタクソノミーを使用
-		$post_type = get_post_type( $post );
-		$taxonomies = get_object_taxonomies( $post_type, 'objects' );
+		$post_type            = get_post_type( $post );
+		$taxonomies           = get_object_taxonomies( $post_type, 'objects' );
 		$available_taxonomies = array();
 		foreach ( $taxonomies as $tax_slug => $tax_obj ) {
 			if ( 'post_tag' !== $tax_slug && $tax_obj->hierarchical ) {

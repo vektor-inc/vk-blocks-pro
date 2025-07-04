@@ -7,7 +7,7 @@ import {
 	ExternalLink,
 } from '@wordpress/components';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
-import { dispatch, useSelect } from '@wordpress/data';
+import { dispatch, select, useSelect } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
 import parse from 'html-react-parser';
 import {
@@ -20,6 +20,22 @@ import {
 	generateHeadingLevels,
 	getCurrentMaxLevel,
 } from '@vkblocks/utils/heading-level-utils';
+
+// 現在のブロックを取得するカスタムフック
+export const useCurrentBlocks = () => {
+	return useSelect((select) => select('core/block-editor').getBlocks(), []);
+};
+
+// 指定された名前のブロックを取得するカスタムフック
+export const useBlocksByName = (blockName) => {
+	return useSelect(
+		(select) => {
+			const { getBlocks } = select('core/block-editor');
+			return getBlocks().filter((block) => block.name === blockName);
+		},
+		[blockName]
+	);
+};
 
 // 見出しブロックを再帰的に取得するカスタムフック
 export const useAllHeadingBlocks = () => {
@@ -34,19 +50,15 @@ export const useTocSettings = () => {
 	return useSelect((select) => {
 		const { getEntityRecord } = select('core');
 		const settings = getEntityRecord('root', 'site');
-
-		// グローバル設定を取得（フォールバック付き）
-		const globalSettings = settings?.vk_blocks_options
-			?.toc_heading_levels ||
-			window.vkBlocksOptions?.toc_heading_levels || [
+		return (
+			settings?.vk_blocks_options?.toc_heading_levels || [
 				'h2',
 				'h3',
 				'h4',
 				'h5',
 				'h6',
-			];
-
-		return globalSettings;
+			]
+		);
 	}, []);
 };
 
@@ -70,17 +82,21 @@ export default function TOCEdit(props) {
 		className: `vk_tableOfContents vk_tableOfContents-style-${style} tabs`,
 	});
 
-	const blocks = useSelect(
-		(select) => select('core/block-editor').getBlocks(),
-		[]
-	);
+	const blocks = useCurrentBlocks();
+	const findBlocks = useBlocksByName('vk-blocks/table-of-contents-new');
 	const tocSettings = useTocSettings();
 
 	// 見出しブロックの一覧を取得
 	const allHeadings = useAllHeadingBlocks();
 
 	useEffect(() => {
+		// 投稿に目次ブロックがなければ処理を実行しない
+		if (!findBlocks) {
+			return;
+		}
 		const { updateBlockAttributes } = dispatch('core/block-editor');
+		const { getBlockOrder, getBlockRootClientId } =
+			select('core/block-editor');
 
 		const headingBlocks = ['core/heading', 'vk-blocks/heading'];
 
@@ -97,17 +113,29 @@ export default function TOCEdit(props) {
 		});
 
 		// 目次ブロックをアップデート
+		const blocksOrder = getBlockOrder();
 		const allHeadings = getAllHeadings(blocks, headingBlocks, {
 			useCustomLevels,
 			customHeadingLevels,
 			excludedHeadings,
 		});
 
-		// 新しい位置情報ベースのソートを使用（getAllHeadings内で既にソート済み）
-		const allHeadingsSorted = allHeadings.map((heading) => ({
-			index: heading.position,
-			block: heading,
-		}));
+		const allHeadingsSorted = allHeadings.map((heading) => {
+			const index = blocksOrder.indexOf(heading.clientId);
+			const rootIndex = blocksOrder.indexOf(
+				getBlockRootClientId(heading.clientId)
+			);
+			let finalIndex;
+
+			if (index >= 0) {
+				finalIndex = index;
+			} else if (rootIndex >= 0) {
+				finalIndex = rootIndex;
+			}
+
+			return { index: finalIndex, block: heading };
+		});
+		allHeadingsSorted.sort((first, second) => first.index - second.index);
 
 		const render = returnHtml(allHeadingsSorted);
 
@@ -299,45 +327,8 @@ export default function TOCEdit(props) {
 								const headingText =
 									heading.attributes.title ||
 									heading.attributes.content;
-								const headingLevel =
-									heading.attributes.level || 2;
 								const isExcluded =
 									excludedHeadings.includes(headingId);
-
-								// 見出しレベル設定で除外された見出しレベルかチェック
-								const allowedLevels = useCustomLevels
-									? customHeadingLevels || [
-											'h2',
-											'h3',
-											'h4',
-											'h5',
-											'h6',
-										]
-									: tocSettings ||
-										window.vkBlocksOptions
-											?.toc_heading_levels || [
-											'h2',
-											'h3',
-											'h4',
-											'h5',
-											'h6',
-										];
-								const isAllowedLevel = allowedLevels.includes(
-									`h${headingLevel}`
-								);
-
-								// 無効な見出しレベルは非活性化状態で表示
-								if (!isAllowedLevel) {
-									return (
-										<ToggleControl
-											key={headingId}
-											label={`${stripHtml(headingText)}`}
-											checked={false}
-											disabled={true}
-										/>
-									);
-								}
-
 								return (
 									<ToggleControl
 										key={headingId}

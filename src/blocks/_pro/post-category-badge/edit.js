@@ -169,7 +169,7 @@ export default function CategoryBadgeEdit(props) {
 	const displayColor = termColorInfo?.color ?? DEFAULT_BACKGROUND_COLOR;
 	const displayTextColor = termColorInfo?.text_color ?? DEFAULT_TEXT_COLOR;
 
-	// すべてのuseBlockPropsを条件分岐の外で呼び出す
+	// カテゴリーが見つからない場合の表示用スタイル
 	const noCategoriesBlockProps = useBlockProps({
 		className: classnames('vk_categoryBadge', {
 			[`has-text-align-${textAlign}`]: !!textAlign,

@@ -34,28 +34,91 @@ export default function CategoryBadgeEdit(props) {
 	// termColorを取得（VKTermColor::get_post_single_term_info() の返り値）
 	const { value: termColorInfo, isLoading } = useSelect(
 		(select) => {
+			// 特定のタクソノミーが選択されている場合
+			if (taxonomy) {
+				return select('vk-blocks/term-color').getTermColorInfo(
+					postId,
+					taxonomy
+				);
+			}
+			
+			// 自動選択の場合：最初に見つかったタームの情報を取得
+			const allTaxonomies = select('core').getTaxonomies();
+			if (!allTaxonomies) {
+				return select('vk-blocks/term-color').getTermColorInfo(
+					postId,
+					'category'
+				);
+			}
+			
+			// 投稿タイプに利用可能なタクソノミーを取得
+			const availableTaxonomies = allTaxonomies.filter(
+				(_taxonomy) =>
+					_taxonomy.slug !== 'post_tag' &&
+					_taxonomy.hierarchical &&
+					_taxonomy.types.includes(postType)
+			);
+			
+			// 最初に見つかったタクソノミーを使用
+			const targetTaxonomy = availableTaxonomies.length > 0 ? availableTaxonomies[0].slug : 'category';
+			
 			return select('vk-blocks/term-color').getTermColorInfo(
 				postId,
-				taxonomy
+				targetTaxonomy
 			);
 		},
-		[taxonomy]
+		[postId, taxonomy, postType]
 	);
 
-	// 投稿のカテゴリー一覧を取得
+	// 投稿のターム一覧を取得（複数タクソノミー対応）
 	const categories = useSelect(
 		(select) => {
 			if (!postId) {
 				return [];
 			}
-			return (
-				select('core').getEntityRecords('taxonomy', 'category', {
+			
+			// 特定のタクソノミーが選択されている場合
+			if (taxonomy) {
+				return (
+					select('core').getEntityRecords('taxonomy', taxonomy, {
+						per_page: 100,
+						post: postId,
+					}) || []
+				);
+			}
+			
+			// 自動選択の場合：投稿に設定されているすべてのタクソノミーからタームを取得
+			const allTaxonomies = select('core').getTaxonomies();
+			if (!allTaxonomies) {
+				return [];
+			}
+			
+			// 投稿タイプに利用可能なタクソノミーを取得
+			const availableTaxonomies = allTaxonomies.filter(
+				(_taxonomy) =>
+					_taxonomy.slug !== 'post_tag' &&
+					_taxonomy.hierarchical &&
+					_taxonomy.types.includes(postType)
+			);
+			
+			// 各タクソノミーからタームを取得
+			let allTerms = [];
+			availableTaxonomies.forEach((tax) => {
+				const terms = select('core').getEntityRecords('taxonomy', tax.slug, {
 					per_page: 100,
 					post: postId,
-				}) || []
-			);
+				}) || [];
+				// タームにタクソノミー情報を追加
+				terms.forEach(term => {
+					term.taxonomy_slug = tax.slug;
+					term.taxonomy_name = tax.name;
+				});
+				allTerms = [...allTerms, ...terms];
+			});
+			
+			return allTerms;
 		},
-		[postId]
+		[postId, taxonomy, postType]
 	);
 
 	// タクソノミー一覧を取得
@@ -69,7 +132,8 @@ export default function CategoryBadgeEdit(props) {
 					? allTaxonomies.filter(
 							(_taxonomy) =>
 								_taxonomy.slug !== 'post_tag' &&
-								_taxonomy.hierarchical
+								_taxonomy.hierarchical &&
+								_taxonomy.types.includes(postType)
 						)
 					: [];
 			},
@@ -77,6 +141,7 @@ export default function CategoryBadgeEdit(props) {
 		) || [];
 
 	// 対象のタームが見つからなかったらタクソノミ名を表示
+	const hasAnyTerm = categories.length > 0;
 	const blockProps = useBlockProps({
 		className: classnames('vk_categoryBadge', {
 			[`has-text-align-${textAlign}`]: !!textAlign,
@@ -86,7 +151,7 @@ export default function CategoryBadgeEdit(props) {
 				!isLoading &&
 				(termColorInfo?.color ?? DEFAULT_BACKGROUND_COLOR),
 			color: termColorInfo?.text_color ?? DEFAULT_TEXT_COLOR,
-			opacity: !isLoading && !termColorInfo?.term_name ? 0.3 : 1,
+			opacity: hasAnyTerm ? 1 : 0.3,
 		},
 	});
 
@@ -115,7 +180,7 @@ export default function CategoryBadgeEdit(props) {
 			style: {
 				backgroundColor: displayColor,
 				color: displayTextColor,
-				opacity: !isLoading && !termColorInfo?.term_name ? 0.3 : 1,
+				opacity: hasAnyTerm ? 1 : 0.3,
 			},
 		});
 
@@ -170,25 +235,23 @@ export default function CategoryBadgeEdit(props) {
 								setAttributes({ hasLink: checked })
 							}
 						/>
-						{taxonomies.length > 1 && (
-							<SelectControl
-								label={__('Select Taxonomy', 'vk-blocks-pro')}
-								value={taxonomy}
-								options={[
-									{
-										label: __('Auto', 'vk-blocks-pro'),
-										value: '',
-									},
-									...taxonomies.map((tax) => ({
-										label: tax.name,
-										value: tax.slug,
-									})),
-								]}
-								onChange={(selectedSlug) => {
-									setAttributes({ taxonomy: selectedSlug });
-								}}
-							/>
-						)}
+						<SelectControl
+							label={__('Select Taxonomy', 'vk-blocks-pro')}
+							value={taxonomy}
+							options={[
+								{
+									label: __('Auto', 'vk-blocks-pro'),
+									value: '',
+								},
+								...taxonomies.map((tax) => ({
+									label: tax.name,
+									value: tax.slug,
+								})),
+							]}
+							onChange={(selectedSlug) => {
+								setAttributes({ taxonomy: selectedSlug });
+							}}
+						/>
 					</PanelBody>
 				</InspectorControls>
 				<div className="vk_categoryBadge_multiple" style={{ gap }}>
@@ -208,6 +271,7 @@ export default function CategoryBadgeEdit(props) {
 										backgroundColor: bgColor,
 										color: textColor,
 									}}
+									title={category.taxonomy_name ? `${category.taxonomy_name}: ${category.name}` : category.name}
 								>
 									{category.name}
 								</span>
@@ -268,25 +332,23 @@ export default function CategoryBadgeEdit(props) {
 							setAttributes({ hasLink: checked })
 						}
 					/>
-					{taxonomies.length > 1 && (
-						<SelectControl
-							label={__('Select Taxonomy', 'vk-blocks-pro')}
-							value={taxonomy}
-							options={[
-								{
-									label: __('Auto', 'vk-blocks-pro'),
-									value: '',
-								},
-								...taxonomies.map((tax) => ({
-									label: tax.name,
-									value: tax.slug,
-								})),
-							]}
-							onChange={(selectedSlug) => {
-								setAttributes({ taxonomy: selectedSlug });
-							}}
-						/>
-					)}
+					<SelectControl
+						label={__('Select Taxonomy', 'vk-blocks-pro')}
+						value={taxonomy}
+						options={[
+							{
+								label: __('Auto', 'vk-blocks-pro'),
+								value: '',
+							},
+							...taxonomies.map((tax) => ({
+								label: tax.name,
+								value: tax.slug,
+							})),
+						]}
+						onChange={(selectedSlug) => {
+							setAttributes({ taxonomy: selectedSlug });
+						}}
+					/>
 				</PanelBody>
 			</InspectorControls>
 			{hasLink && displayUrl ? (

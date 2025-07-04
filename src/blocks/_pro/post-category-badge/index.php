@@ -39,9 +39,36 @@ function vk_blocks_post_category_badge_render_callback( $attributes, $content, $
 
 	// 複数表示の場合（maxDisplayCount === 0 または 2以上）
 	if ( 0 === $max_display_count || $max_display_count >= 2 ) {
-		$terms = get_the_terms( $post, $taxonomy ? $taxonomy : 'category' );
-		if ( ! $terms || is_wp_error( $terms ) ) {
-			return '';
+		// 特定のタクソノミーが選択されている場合
+		if ( $taxonomy ) {
+			$terms = get_the_terms( $post, $taxonomy );
+			if ( ! $terms || is_wp_error( $terms ) ) {
+				return '';
+			}
+		} else {
+			// 自動選択の場合：投稿に設定されているすべてのタクソノミーからタームを取得
+			$post_type = get_post_type( $post );
+			$taxonomies = get_object_taxonomies( $post_type, 'objects' );
+			$all_terms = array();
+			
+			foreach ( $taxonomies as $tax_slug => $tax_obj ) {
+				if ( 'post_tag' !== $tax_slug && $tax_obj->hierarchical ) {
+					$terms = get_the_terms( $post, $tax_slug );
+					if ( $terms && ! is_wp_error( $terms ) ) {
+						// タームにタクソノミー情報を追加
+						foreach ( $terms as $term ) {
+							$term->taxonomy_slug = $tax_slug;
+							$term->taxonomy_name = $tax_obj->label;
+						}
+						$all_terms = array_merge( $all_terms, $terms );
+					}
+				}
+			}
+			
+			if ( empty( $all_terms ) ) {
+				return '';
+			}
+			$terms = $all_terms;
 		}
 
 		$output = '';
@@ -57,8 +84,24 @@ function vk_blocks_post_category_badge_render_callback( $attributes, $content, $
 	}
 
 	// 単一表示の場合（maxDisplayCount === 1）
+	// 特定のタクソノミーが選択されている場合
+	if ( $taxonomy ) {
+		$target_taxonomy = $taxonomy;
+	} else {
+		// 自動選択の場合：投稿に設定されている最初のタクソノミーを使用
+		$post_type = get_post_type( $post );
+		$taxonomies = get_object_taxonomies( $post_type, 'objects' );
+		$available_taxonomies = array();
+		foreach ( $taxonomies as $tax_slug => $tax_obj ) {
+			if ( 'post_tag' !== $tax_slug && $tax_obj->hierarchical ) {
+				$available_taxonomies[] = $tax_slug;
+			}
+		}
+		$target_taxonomy = ! empty( $available_taxonomies ) ? $available_taxonomies[0] : 'category';
+	}
+
 	if ( class_exists( '\VektorInc\VK_Term_Color\VkTermColor' ) && method_exists( '\VektorInc\VK_Term_Color\VkTermColor', 'get_post_single_term_info' ) ) {
-		$term_color_info = \VektorInc\VK_Term_Color\VkTermColor::get_post_single_term_info( $post, array( 'taxonomy' => $taxonomy ) );
+		$term_color_info = \VektorInc\VK_Term_Color\VkTermColor::get_post_single_term_info( $post, array( 'taxonomy' => $target_taxonomy ) );
 	} else {
 		return '';
 	}

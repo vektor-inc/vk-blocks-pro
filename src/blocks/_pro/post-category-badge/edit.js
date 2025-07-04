@@ -146,6 +146,18 @@ export default function CategoryBadgeEdit(props) {
 
 	// 対象のタームが見つからなかったらタクソノミ名を表示
 	const hasAnyTerm = categories.length > 0;
+
+	const getLabelBySlug = (slug, taxonomies) =>
+		taxonomies.find((tax) => tax.slug === slug)?.name || 'Auto';
+
+	const selectedTaxonomyName = getLabelBySlug(taxonomy, taxonomies);
+
+	const displayName = termColorInfo?.term_name || `(${selectedTaxonomyName})`;
+	const displayUrl = termColorInfo?.term_url || '';
+	const displayColor = termColorInfo?.color ?? DEFAULT_BACKGROUND_COLOR;
+	const displayTextColor = termColorInfo?.text_color ?? DEFAULT_TEXT_COLOR;
+
+	// 共通のblockProps（条件分岐の外で定義）
 	const blockProps = useBlockProps({
 		className: classnames('vk_categoryBadge', {
 			[`has-text-align-${textAlign}`]: !!textAlign,
@@ -159,34 +171,24 @@ export default function CategoryBadgeEdit(props) {
 		},
 	});
 
-	const getLabelBySlug = (slug, taxonomies) =>
-		taxonomies.find((tax) => tax.slug === slug)?.name || 'Auto';
+	// カテゴリーが見つからない場合の表示用スタイル（条件分岐の外で定義）
+	const noCategoriesBlockProps = useBlockProps({
+		className: classnames('vk_categoryBadge', {
+			[`has-text-align-${textAlign}`]: !!textAlign,
+		}),
+		style: {
+			backgroundColor: displayColor,
+			color: displayTextColor,
+			opacity: hasAnyTerm ? 1 : 0.3,
+		},
+	});
 
-	const selectedTaxonomyName = getLabelBySlug(taxonomy, taxonomies);
-
-	const displayName = termColorInfo?.term_name || `(${selectedTaxonomyName})`;
-	const displayUrl = termColorInfo?.term_url || '';
-	const displayColor = termColorInfo?.color ?? DEFAULT_BACKGROUND_COLOR;
-	const displayTextColor = termColorInfo?.text_color ?? DEFAULT_TEXT_COLOR;
-
-	// 複数表示の場合（maxDisplayCount >= 0）
-	if (maxDisplayCount >= 0) {
+	// 複数表示の場合（maxDisplayCount > 1 または maxDisplayCount = 0）
+	if (maxDisplayCount > 1 || maxDisplayCount === 0) {
 		const displayCategories =
 			maxDisplayCount === 0
 				? categories
 				: categories.slice(0, maxDisplayCount);
-
-		// カテゴリーが見つからない場合の表示用スタイル
-		const noCategoriesBlockProps = useBlockProps({
-			className: classnames('vk_categoryBadge', {
-				[`has-text-align-${textAlign}`]: !!textAlign,
-			}),
-			style: {
-				backgroundColor: displayColor,
-				color: displayTextColor,
-				opacity: hasAnyTerm ? 1 : 0.3,
-			},
-		});
 
 		// カテゴリーが見つからない場合の表示
 		const noCategoriesDisplay = isLoading ? (
@@ -295,7 +297,7 @@ export default function CategoryBadgeEdit(props) {
 		);
 	}
 
-	// 単一表示の場合（maxDisplayCount = 0、従来の処理）
+	// 単一表示の場合（maxDisplayCount = 1 または maxDisplayCount < 0）
 	return (
 		<>
 			<BlockControls>

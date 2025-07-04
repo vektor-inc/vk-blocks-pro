@@ -320,7 +320,7 @@ class PostCategoryBadgeTest extends VK_UnitTestCase {
         $return = $block->render();
 
         // 期待される出力（複数バッジ）
-        $expected = '<div class="vk_categoryBadge_multiple" style="display: flex; gap: 0.5em; flex-wrap: wrap;">';
+        $expected = '<div class="vk_categoryBadge_multiple" style="gap: 0.5em;">';
         $expected .= '<div style="background-color: ' . $test_category_0['color'] . ';color:' . $test_category_0['correct_text_color'] . ';" class="vk_categoryBadge has-text-align-right wp-block-vk-blocks-post-category-badge">' . $test_category_0['name'] . '</div>';
         $expected .= '<div style="background-color: ' . $test_category_1['color'] . ';color:' . $test_category_1['correct_text_color'] . ';" class="vk_categoryBadge has-text-align-right wp-block-vk-blocks-post-category-badge">' . $test_category_1['name'] . '</div>';
         $expected .= '</div>';
@@ -369,8 +369,7 @@ class PostCategoryBadgeTest extends VK_UnitTestCase {
         $block = new WP_Block( $parsed_block, $context );
         $return = $block->render();
 
-        // 期待される出力
-        $expected = '<div class="vk_categoryBadge_multiple" style="display: flex; gap: 0.5em; flex-wrap: wrap;">';
+        $expected = '<div class="vk_categoryBadge_multiple" style="gap: 0.5em;">';
         $expected .= '<div style="background-color: #999999;color:#FFFFFF;" class="vk_categoryBadge wp-block-vk-blocks-post-category-badge">Uncategorized</div>';
         $expected .= '<div style="background-color: ' . $test_term_0['color'] . ';color:' . $test_term_0['correct_text_color'] . ';" class="vk_categoryBadge wp-block-vk-blocks-post-category-badge">' . $test_term_0['name'] . '</div>';
         $expected .= '<div style="background-color: ' . $test_term_2['color'] . ';color:' . $test_term_2['correct_text_color'] . ';" class="vk_categoryBadge wp-block-vk-blocks-post-category-badge">' . $test_term_2['name'] . '</div>';

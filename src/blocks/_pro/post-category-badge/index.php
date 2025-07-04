@@ -17,25 +17,7 @@ function vk_blocks_post_category_badge_render_callback( $attributes, $content, $
 	$post              = get_post( $block->context['postId'] );
 	$taxonomy          = isset( $attributes['taxonomy'] ) ? $attributes['taxonomy'] : '';
 	$max_display_count = isset( $attributes['maxDisplayCount'] ) ? $attributes['maxDisplayCount'] : 0;
-	$gap               = isset( $attributes['gap'] ) ? $attributes['gap'] : array(
-		'top'    => '0.5em',
-		'right'  => '0.5em',
-		'bottom' => '0.5em',
-		'left'   => '0.5em',
-	);
-
-	// gapが文字列の場合は配列に変換（後方互換性）
-	if ( is_string( $gap ) ) {
-		$gap = array(
-			'top'    => $gap,
-			'right'  => $gap,
-			'bottom' => $gap,
-			'left'   => $gap,
-		);
-	}
-
-	// gapの値を取得（topを使用）
-	$gap_value = isset( $gap['top'] ) ? $gap['top'] : '0.5em';
+	$gap               = isset( $attributes['gap'] ) ? $attributes['gap'] : '0.5em';
 
 	// 複数表示の場合（maxDisplayCount === 0 または 2以上）
 	if ( 0 === $max_display_count || $max_display_count >= 2 ) {
@@ -80,7 +62,7 @@ function vk_blocks_post_category_badge_render_callback( $attributes, $content, $
 			$output .= vk_blocks_render_single_badge( $term, $attributes );
 			++$count;
 		}
-		return '<div class="vk_categoryBadge_multiple" style="display: flex; gap: ' . esc_attr( $gap_value ) . '; flex-wrap: wrap;">' . $output . '</div>';
+		return '<div class="vk_categoryBadge_multiple" style="display: flex; gap: ' . esc_attr( $gap ) . '; flex-wrap: wrap;">' . $output . '</div>';
 	}
 
 	// 単一表示の場合（maxDisplayCount === 1）

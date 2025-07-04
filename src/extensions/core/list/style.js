@@ -1,3 +1,5 @@
+/* globals MutationObserver */
+
 /**
  * WordPress dependencies
  */
@@ -12,6 +14,7 @@ import {
 } from '@wordpress/block-editor';
 import { select } from '@wordpress/data';
 import { createHigherOrderComponent } from '@wordpress/compose';
+import React, { useEffect } from 'react';
 
 /**
  * Internal dependencies
@@ -88,7 +91,7 @@ addFilter('blocks.registerBlockType', 'vk-blocks/list-style', addAttribute);
 export const addBlockControl = createHigherOrderComponent(
 	(BlockEdit) => (props) => {
 		const { name, attributes, setAttributes } = props;
-		const { color, className } = attributes;
+		const { color, className, ordered, reversed, start } = attributes;
 		if (!isValidBlockType(name)) {
 			return <BlockEdit {...props} />;
 		}
@@ -99,6 +102,16 @@ export const addBlockControl = createHigherOrderComponent(
 		if (!isLagerThanWp62() && !isVKColorPaletteManager(colorSet)) {
 			return <BlockEdit {...props} />;
 		}
+
+		// 順序なしリストに切り替えた時にreversedとstartをリセット
+		useEffect(() => {
+			if (!ordered && (reversed || (start && start !== 1))) {
+				setAttributes({
+					reversed: false,
+					start: 1,
+				});
+			}
+		}, [ordered, reversed, start, setAttributes]);
 
 		return (
 			<>
@@ -177,7 +190,7 @@ addFilter('editor.BlockEdit', 'vk-blocks/list-style', addBlockControl);
 const withElementsStyles = createHigherOrderComponent(
 	(BlockListBlock) => (props) => {
 		const { name, attributes, clientId } = props;
-		const { color, className } = attributes;
+		const { color, className, ordered, reversed, start } = attributes;
 		if (!isValidBlockType(name)) {
 			return <BlockListBlock {...props} />;
 		}
@@ -196,6 +209,70 @@ const withElementsStyles = createHigherOrderComponent(
 		if (!isLagerThanWp62()) {
 			return <BlockListBlock {...props} />;
 		}
+
+		// 番号付きスタイル＆順序付きリストの場合、liにdata-vk-numberを付与
+		const hasNumberedStyle = nowClassArray.some(
+			(item) =>
+				item === 'is-style-vk-numbered-square-mark' ||
+				item === 'is-style-vk-numbered-circle-mark'
+		);
+		useEffect(() => {
+			if (hasNumberedStyle) {
+				const block = document.getElementById(`block-${clientId}`);
+				if (!block) {
+					return;
+				}
+
+				function setNumbersRecursive(listEl) {
+					const isOrdered = listEl.tagName === 'OL';
+					const isReversed =
+						isOrdered && listEl.hasAttribute('reversed');
+					const start =
+						isOrdered && listEl.hasAttribute('start')
+							? parseInt(listEl.getAttribute('start'), 10)
+							: 1;
+					const lis = Array.from(listEl.children).filter(
+						(child) => child.tagName === 'LI'
+					);
+					const li_count = lis.length;
+					let li_number = isReversed ? li_count + start - 1 : start;
+
+					lis.forEach((li) => {
+						li.setAttribute('data-vk-number', li_number);
+						// 子リストがあれば再帰
+						Array.from(li.children).forEach((child) => {
+							if (
+								child.tagName === 'OL' ||
+								child.tagName === 'UL'
+							) {
+								setNumbersRecursive(child);
+							}
+						});
+						if (isReversed) {
+							li_number--;
+						} else {
+							li_number++;
+						}
+					});
+				}
+
+				setNumbersRecursive(block);
+
+				const observer = new MutationObserver(() => {
+					setNumbersRecursive(block);
+				});
+				observer.observe(block, {
+					childList: true,
+					subtree: true,
+					attributes: true,
+					attributeFilter: ['reversed', 'start'],
+				});
+
+				return () => {
+					observer.disconnect();
+				};
+			}
+		}, [ordered, hasNumberedStyle, reversed, start, clientId, color]);
 
 		if (!color) {
 			return <BlockListBlock {...props} />;

@@ -366,18 +366,19 @@ const LinkToolbar = (props) => {
 										/>
 									</>
 								)}
-							{typeof setLinkDescription === 'function' && (
-								<TextControl
-									label={__(
-										'Accessibility link description',
-										'vk-blocks-pro'
-									)}
-									value={linkDescription}
-									onChange={(value) =>
-										setLinkDescription(value)
-									}
-								/>
-							)}
+							{linkDescription !== undefined &&
+								typeof setLinkDescription === 'function' && (
+									<TextControl
+										label={__(
+											'Accessibility link description',
+											'vk-blocks-pro'
+										)}
+										value={linkDescription}
+										onChange={(value) =>
+											setLinkDescription(value)
+										}
+									/>
+								)}
 						</form>
 					</div>
 				)}

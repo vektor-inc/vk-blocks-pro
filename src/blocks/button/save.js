@@ -9,6 +9,7 @@ export default function save(props) {
 		subCaption,
 		buttonUrl,
 		buttonTarget,
+		relAttribute,
 		buttonSize,
 		buttonType,
 		buttonEffect,
@@ -83,6 +84,7 @@ export default function save(props) {
 				lbSize={buttonSize}
 				lbUrl={buttonUrl}
 				lbTarget={buttonTarget}
+				lbRelAttribute={relAttribute}
 				lbFontAwesomeIconBefore={fontAwesomeIconBefore}
 				lbFontAwesomeIconAfter={fontAwesomeIconAfter}
 				lbIconSizeBefore={iconSizeBefore}

@@ -170,7 +170,7 @@ export default function CategoryBadgeEdit(props) {
 	const displayTextColor = termColorInfo?.text_color ?? DEFAULT_TEXT_COLOR;
 
 	// 複数表示の場合（maxDisplayCount >= 0）
-	if (maxDisplayCount >= 0) {
+	if (maxDisplayCount === 0 || maxDisplayCount > 1) {
 		const displayCategories =
 			maxDisplayCount === 0
 				? categories

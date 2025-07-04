@@ -62,13 +62,13 @@ function vk_blocks_post_category_badge_render_callback( $attributes, $content, $
 			$output .= vk_blocks_render_single_badge( $term, $attributes );
 			++$count;
 		}
-		return '<div class="vk_categoryBadge_multiple" style="display: flex; gap: ' . esc_attr( $gap ) . '; flex-wrap: wrap;">' . $output . '</div>';
+		return '<div class="vk_categoryBadge_multiple" style="gap: ' . esc_attr( $gap ) . ';">' . $output . '</div>';
 	}
 
 	// 単一表示の場合（maxDisplayCount === 1）
 	if ( $taxonomy ) {
 		$target_taxonomy = $taxonomy;
-		$terms = get_the_terms( $post, $target_taxonomy );
+		$terms           = get_the_terms( $post, $target_taxonomy );
 		if ( $terms && ! is_wp_error( $terms ) ) {
 			$term = $terms[0];
 		} else {
@@ -78,7 +78,7 @@ function vk_blocks_post_category_badge_render_callback( $attributes, $content, $
 		// 自動選択の場合：投稿に設定されているすべてのタクソノミーを順に見て、最初に見つかったタームを使う
 		$post_type  = get_post_type( $post );
 		$taxonomies = get_object_taxonomies( $post_type, 'objects' );
-		$term = null;
+		$term       = null;
 		foreach ( $taxonomies as $tax_slug => $tax_obj ) {
 			if ( 'post_tag' !== $tax_slug && $tax_obj->hierarchical ) {
 				$terms = get_the_terms( $post, $tax_slug );

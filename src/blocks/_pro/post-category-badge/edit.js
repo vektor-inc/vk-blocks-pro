@@ -170,7 +170,7 @@ export default function CategoryBadgeEdit(props) {
 	const displayTextColor = termColorInfo?.text_color ?? DEFAULT_TEXT_COLOR;
 
 	// カテゴリーが見つからない場合の表示用スタイル
-	const noCategoriesBlockProps = useBlockProps({
+	const fallbackBlockProps = useBlockProps({
 		className: classnames('vk_categoryBadge', {
 			[`has-text-align-${textAlign}`]: !!textAlign,
 		}),
@@ -296,7 +296,7 @@ export default function CategoryBadgeEdit(props) {
 							);
 						})
 					) : (
-						<span {...noCategoriesBlockProps}>
+						<span {...fallbackBlockProps}>
 							{noCategoriesDisplay}
 						</span>
 					)}

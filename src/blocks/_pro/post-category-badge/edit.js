@@ -207,6 +207,30 @@ export default function CategoryBadgeEdit(props) {
 				</BlockControls>
 				<InspectorControls>
 					<PanelBody title={__('Setting', 'vk-blocks-pro')}>
+						<ToggleControl
+							label={__('Enable Term Link', 'vk-blocks-pro')}
+							checked={hasLink}
+							onChange={(checked) =>
+								setAttributes({ hasLink: checked })
+							}
+						/>
+						<SelectControl
+							label={__('Select Taxonomy', 'vk-blocks-pro')}
+							value={taxonomy}
+							options={[
+								{
+									label: __('Auto', 'vk-blocks-pro'),
+									value: '',
+								},
+								...taxonomies.map((tax) => ({
+									label: tax.name,
+									value: tax.slug,
+								})),
+							]}
+							onChange={(selectedSlug) => {
+								setAttributes({ taxonomy: selectedSlug });
+							}}
+						/>
 						<RangeControl
 							label={__('Max Display Count', 'vk-blocks-pro')}
 							value={maxDisplayCount}
@@ -231,30 +255,6 @@ export default function CategoryBadgeEdit(props) {
 								{ value: 'em', label: 'em' },
 								{ value: 'rem', label: 'rem' },
 							]}
-						/>
-						<ToggleControl
-							label={__('Enable Term Link', 'vk-blocks-pro')}
-							checked={hasLink}
-							onChange={(checked) =>
-								setAttributes({ hasLink: checked })
-							}
-						/>
-						<SelectControl
-							label={__('Select Taxonomy', 'vk-blocks-pro')}
-							value={taxonomy}
-							options={[
-								{
-									label: __('Auto', 'vk-blocks-pro'),
-									value: '',
-								},
-								...taxonomies.map((tax) => ({
-									label: tax.name,
-									value: tax.slug,
-								})),
-							]}
-							onChange={(selectedSlug) => {
-								setAttributes({ taxonomy: selectedSlug });
-							}}
 						/>
 					</PanelBody>
 				</InspectorControls>
@@ -308,31 +308,6 @@ export default function CategoryBadgeEdit(props) {
 			</BlockControls>
 			<InspectorControls>
 				<PanelBody title={__('Setting', 'vk-blocks-pro')}>
-					<RangeControl
-						label={__('Max Display Count', 'vk-blocks-pro')}
-						value={maxDisplayCount}
-						onChange={(count) => {
-							setAttributes({ maxDisplayCount: count });
-						}}
-						min={0}
-						max={10}
-						help={__(
-							'Set to 0 for all categories, 1 for single display, 2 or more for multiple display',
-							'vk-blocks-pro'
-						)}
-					/>
-					<UnitControl
-						label={__('バッジ間の間隔', 'vk-blocks-pro')}
-						value={gap || '0.5em'}
-						onChange={(value) =>
-							setAttributes({ gap: value || '0.5em' })
-						}
-						units={[
-							{ value: 'px', label: 'px' },
-							{ value: 'em', label: 'em' },
-							{ value: 'rem', label: 'rem' },
-						]}
-					/>
 					<ToggleControl
 						label={__('Enable Term Link', 'vk-blocks-pro')}
 						checked={hasLink}
@@ -356,6 +331,31 @@ export default function CategoryBadgeEdit(props) {
 						onChange={(selectedSlug) => {
 							setAttributes({ taxonomy: selectedSlug });
 						}}
+					/>
+					<RangeControl
+						label={__('Max Display Count', 'vk-blocks-pro')}
+						value={maxDisplayCount}
+						onChange={(count) => {
+							setAttributes({ maxDisplayCount: count });
+						}}
+						min={0}
+						max={10}
+						help={__(
+							'Set to 0 for all categories, 1 for single display, 2 or more for multiple display',
+							'vk-blocks-pro'
+						)}
+					/>
+					<UnitControl
+						label={__('Gap between badges', 'vk-blocks-pro')}
+						value={gap || '0.5em'}
+						onChange={(value) =>
+							setAttributes({ gap: value || '0.5em' })
+						}
+						units={[
+							{ value: 'px', label: 'px' },
+							{ value: 'em', label: 'em' },
+							{ value: 'rem', label: 'rem' },
+						]}
 					/>
 				</PanelBody>
 			</InspectorControls>

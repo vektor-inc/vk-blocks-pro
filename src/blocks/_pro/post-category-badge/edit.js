@@ -146,18 +146,6 @@ export default function CategoryBadgeEdit(props) {
 
 	// 対象のタームが見つからなかったらタクソノミ名を表示
 	const hasAnyTerm = categories.length > 0;
-
-	const getLabelBySlug = (slug, taxonomies) =>
-		taxonomies.find((tax) => tax.slug === slug)?.name || 'Auto';
-
-	const selectedTaxonomyName = getLabelBySlug(taxonomy, taxonomies);
-
-	const displayName = termColorInfo?.term_name || `(${selectedTaxonomyName})`;
-	const displayUrl = termColorInfo?.term_url || '';
-	const displayColor = termColorInfo?.color ?? DEFAULT_BACKGROUND_COLOR;
-	const displayTextColor = termColorInfo?.text_color ?? DEFAULT_TEXT_COLOR;
-
-	// 共通のblockProps（条件分岐の外で定義）
 	const blockProps = useBlockProps({
 		className: classnames('vk_categoryBadge', {
 			[`has-text-align-${textAlign}`]: !!textAlign,
@@ -171,24 +159,34 @@ export default function CategoryBadgeEdit(props) {
 		},
 	});
 
-	// カテゴリーが見つからない場合の表示用スタイル（条件分岐の外で定義）
-	const noCategoriesBlockProps = useBlockProps({
-		className: classnames('vk_categoryBadge', {
-			[`has-text-align-${textAlign}`]: !!textAlign,
-		}),
-		style: {
-			backgroundColor: displayColor,
-			color: displayTextColor,
-			opacity: hasAnyTerm ? 1 : 0.3,
-		},
-	});
+	const getLabelBySlug = (slug, taxonomies) =>
+		taxonomies.find((tax) => tax.slug === slug)?.name || 'Auto';
 
-	// 複数表示の場合（maxDisplayCount > 1 または maxDisplayCount = 0）
-	if (maxDisplayCount > 1 || maxDisplayCount === 0) {
+	const selectedTaxonomyName = getLabelBySlug(taxonomy, taxonomies);
+
+	const displayName = termColorInfo?.term_name || `(${selectedTaxonomyName})`;
+	const displayUrl = termColorInfo?.term_url || '';
+	const displayColor = termColorInfo?.color ?? DEFAULT_BACKGROUND_COLOR;
+	const displayTextColor = termColorInfo?.text_color ?? DEFAULT_TEXT_COLOR;
+
+	// 複数表示の場合（maxDisplayCount >= 0）
+	if (maxDisplayCount >= 0) {
 		const displayCategories =
 			maxDisplayCount === 0
 				? categories
 				: categories.slice(0, maxDisplayCount);
+
+		// カテゴリーが見つからない場合の表示用スタイル
+		const noCategoriesBlockProps = useBlockProps({
+			className: classnames('vk_categoryBadge', {
+				[`has-text-align-${textAlign}`]: !!textAlign,
+			}),
+			style: {
+				backgroundColor: displayColor,
+				color: displayTextColor,
+				opacity: hasAnyTerm ? 1 : 0.3,
+			},
+		});
 
 		// カテゴリーが見つからない場合の表示
 		const noCategoriesDisplay = isLoading ? (
@@ -196,6 +194,13 @@ export default function CategoryBadgeEdit(props) {
 		) : (
 			<span style={{ opacity: 0.5 }}>{`(${selectedTaxonomyName})`}</span>
 		);
+
+		// カテゴリーが1個の場合は単一表示、2個以上の場合は複数表示
+		const isMultiple = displayCategories.length > 1;
+		const containerClassName = isMultiple
+			? 'vk_categoryBadge_multiple'
+			: '';
+		const containerStyle = isMultiple ? { gap } : {};
 
 		return (
 			<>
@@ -209,30 +214,6 @@ export default function CategoryBadgeEdit(props) {
 				</BlockControls>
 				<InspectorControls>
 					<PanelBody title={__('Setting', 'vk-blocks-pro')}>
-						<ToggleControl
-							label={__('Enable Term Link', 'vk-blocks-pro')}
-							checked={hasLink}
-							onChange={(checked) =>
-								setAttributes({ hasLink: checked })
-							}
-						/>
-						<SelectControl
-							label={__('Select Taxonomy', 'vk-blocks-pro')}
-							value={taxonomy}
-							options={[
-								{
-									label: __('Auto', 'vk-blocks-pro'),
-									value: '',
-								},
-								...taxonomies.map((tax) => ({
-									label: tax.name,
-									value: tax.slug,
-								})),
-							]}
-							onChange={(selectedSlug) => {
-								setAttributes({ taxonomy: selectedSlug });
-							}}
-						/>
 						<RangeControl
 							label={__('Max Display Count', 'vk-blocks-pro')}
 							value={maxDisplayCount}
@@ -258,9 +239,33 @@ export default function CategoryBadgeEdit(props) {
 								{ value: 'rem', label: 'rem' },
 							]}
 						/>
+						<ToggleControl
+							label={__('Enable Term Link', 'vk-blocks-pro')}
+							checked={hasLink}
+							onChange={(checked) =>
+								setAttributes({ hasLink: checked })
+							}
+						/>
+						<SelectControl
+							label={__('Select Taxonomy', 'vk-blocks-pro')}
+							value={taxonomy}
+							options={[
+								{
+									label: __('Auto', 'vk-blocks-pro'),
+									value: '',
+								},
+								...taxonomies.map((tax) => ({
+									label: tax.name,
+									value: tax.slug,
+								})),
+							]}
+							onChange={(selectedSlug) => {
+								setAttributes({ taxonomy: selectedSlug });
+							}}
+						/>
 					</PanelBody>
 				</InspectorControls>
-				<div className="vk_categoryBadge_multiple" style={{ gap }}>
+				<div className={containerClassName} style={containerStyle}>
 					{displayCategories.length > 0 ? (
 						displayCategories.map((category) => {
 							// カテゴリーオブジェクトから直接term_colorを取得
@@ -297,7 +302,7 @@ export default function CategoryBadgeEdit(props) {
 		);
 	}
 
-	// 単一表示の場合（maxDisplayCount = 1 または maxDisplayCount < 0）
+	// 単一表示の場合（maxDisplayCount = 0、従来の処理）
 	return (
 		<>
 			<BlockControls>

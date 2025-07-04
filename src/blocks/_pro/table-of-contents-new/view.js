@@ -84,7 +84,26 @@ document.addEventListener('DOMContentLoaded', () => {
 			// グローバル設定の場合：data-vk-toc-heading属性を持つ見出しを取得（PHP側でthe_content内の見出しに付与済み）
 			allHeadings = Array.from(
 				document.querySelectorAll('[data-vk-toc-heading]')
-			);
+			).map((heading) => {
+				// vk-blocks/headingブロックの場合、IDは親要素にある
+				let headingId = heading.id;
+				if (
+					!headingId &&
+					heading.closest('.wp-block-vk-blocks-heading')
+				) {
+					headingId = heading.closest(
+						'.wp-block-vk-blocks-heading'
+					).id;
+				}
+
+				return {
+					element: heading,
+					level: parseInt(heading.tagName.substring(1)),
+					id: headingId,
+					tagName: heading.tagName,
+					textContent: heading.textContent,
+				};
+			});
 		}
 
 		const headings = allHeadings.filter((heading) => {

@@ -19,40 +19,62 @@ export const getAllHeadings = (blocks, headingBlocks, options) => {
 		'h6',
 	];
 
-	const processBlock = (block) => {
-		if (isAllowedBlock(block.name, headingBlocks)) {
-			const level = block.attributes.level || 2;
-			const headingId =
-				block.name === 'vk-blocks/heading'
-					? block.attributes.anchor || `vk-htags-${block.clientId}`
-					: block.attributes.anchor || `vk-htags-${block.clientId}`;
+	// すべてのブロックを再帰的に取得して位置情報を付与
+	const allBlocksWithPosition = [];
+	let position = 0;
 
-			// 除外設定のチェック
-			const isExcluded = excludedHeadings?.includes(headingId) || false;
-
-			// レベル設定のチェック
-			const allowedLevels = useCustomLevels
-				? customHeadingLevels || ['h2', 'h3', 'h4', 'h5', 'h6']
-				: globalSettings;
-			const isAllowedLevel = allowedLevels.includes(`h${level}`);
-
-			if (!isExcluded && isAllowedLevel) {
-				headings.push({
-					clientId: block.clientId,
-					attributes: {
-						...block.attributes,
-						anchor: headingId,
-					},
-				});
-			}
-		}
+	const processBlockWithPosition = (block, depth = 0) => {
+		allBlocksWithPosition.push({
+			...block,
+			position: position++,
+			depth,
+		});
 
 		if (block.innerBlocks && block.innerBlocks.length > 0) {
-			block.innerBlocks.forEach(processBlock);
+			block.innerBlocks.forEach((innerBlock) =>
+				processBlockWithPosition(innerBlock, depth + 1)
+			);
 		}
 	};
 
-	blocks.forEach(processBlock);
+	blocks.forEach((block) => processBlockWithPosition(block));
+
+	// 見出しブロックのみを抽出し、位置情報に基づいてソート
+	const headingBlocksWithPosition = allBlocksWithPosition.filter((block) =>
+		isAllowedBlock(block.name, headingBlocks)
+	);
+
+	headingBlocksWithPosition.forEach((block) => {
+		const level = block.attributes.level || 2;
+		const headingId =
+			block.name === 'vk-blocks/heading'
+				? block.attributes.anchor || `vk-htags-${block.clientId}`
+				: block.attributes.anchor || `vk-htags-${block.clientId}`;
+
+		// 除外設定のチェック
+		const isExcluded = excludedHeadings?.includes(headingId) || false;
+
+		// レベル設定のチェック
+		const allowedLevels = useCustomLevels
+			? customHeadingLevels || ['h2', 'h3', 'h4', 'h5', 'h6']
+			: globalSettings;
+		const isAllowedLevel = allowedLevels.includes(`h${level}`);
+
+		if (!isExcluded && isAllowedLevel) {
+			headings.push({
+				clientId: block.clientId,
+				position: block.position,
+				attributes: {
+					...block.attributes,
+					anchor: headingId,
+				},
+			});
+		}
+	});
+
+	// 位置情報に基づいてソート
+	headings.sort((a, b) => a.position - b.position);
+
 	return headings;
 };
 

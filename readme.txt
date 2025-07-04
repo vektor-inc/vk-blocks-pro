@@ -109,6 +109,7 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Category Badge (Pro) ] Added support for displaying multiple category badges.
+[ Bug fix ][ Table of Contents (Pro) ] Fixed H2 selection issue in heading level settings and improved code structure.
 
 = 1.106.0 =
 [ Add function ][ Slider ] Added zoom animation feature.

@@ -16,8 +16,8 @@
 function vk_blocks_post_category_badge_render_callback( $attributes, $content, $block ) {
 	$post              = get_post( $block->context['postId'] );
 	$taxonomy          = isset( $attributes['taxonomy'] ) ? $attributes['taxonomy'] : '';
-	$max_display_count = isset( $attributes['maxDisplayCount'] ) && is_numeric( $attributes['maxDisplayCount'] ) 
-		? (int) $attributes['maxDisplayCount'] 
+	$max_display_count = isset( $attributes['maxDisplayCount'] ) && is_numeric( $attributes['maxDisplayCount'] )
+		? (int) $attributes['maxDisplayCount']
 		: 1;
 	$gap               = isset( $attributes['gap'] ) ? $attributes['gap'] : '0.5em';
 

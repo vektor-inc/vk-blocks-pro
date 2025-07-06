@@ -11,10 +11,17 @@ import {
 	PanelBody,
 	ToggleControl,
 	SelectControl,
-	Spinner,
 	RangeControl,
 	__experimentalUnitControl as UnitControl,
+	Spinner,
 } from '@wordpress/components';
+
+// 表示モードの定数
+const DISPLAY_MODES = {
+	ALL: 0,
+	SINGLE: 1,
+	MULTIPLE_MIN: 2,
+};
 
 export default function CategoryBadgeEdit(props) {
 	const { attributes, setAttributes, context } = props;
@@ -182,12 +189,14 @@ export default function CategoryBadgeEdit(props) {
 	});
 
 	// 共通の設定コンポーネント
-	const isMultipleDisplay = maxDisplayCount === 0 || maxDisplayCount > 1;
+	const isMultipleDisplay =
+		maxDisplayCount === DISPLAY_MODES.ALL ||
+		maxDisplayCount >= DISPLAY_MODES.MULTIPLE_MIN;
 
 	// 複数表示の場合（maxDisplayCount >= 0）
 	if (isMultipleDisplay) {
 		const displayCategories =
-			maxDisplayCount === 0
+			maxDisplayCount === DISPLAY_MODES.ALL
 				? categories
 				: categories.slice(0, maxDisplayCount);
 

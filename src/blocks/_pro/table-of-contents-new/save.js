@@ -15,7 +15,6 @@ export default function save(props) {
 	} = attributes;
 
 	// blockIdからユニークIDを生成
-	// edit.jsのuseEffectにより、blockIdは必ず存在する
 	const checkboxId = `chck-toc-${blockId}`;
 	const labelId = `vk-tab-label-toc-${blockId}`;
 

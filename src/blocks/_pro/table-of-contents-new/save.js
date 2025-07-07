@@ -14,7 +14,7 @@ export default function save(props) {
 		blockId,
 	} = attributes;
 
-	// attributesからblockIdを取得（フォールバック対応）
+	// attributesからblockIdを取得
 	const uniqueId = blockId || 'fallback-id';
 	const checkboxId = `chck-toc-${uniqueId}`;
 	const labelId = `vk-tab-label-toc-${uniqueId}`;

@@ -5,22 +5,25 @@ document.addEventListener('DOMContentLoaded', () => {
 		item.innerHTML = item.innerHTML.replace(/\uFFFC/g, ''); // U+FFFCはOBJのUnicodeです
 	});
 
-	// 開/閉 切り替え (:before 疑似要素のアクセシビリティ問題に対応 #2087)
-	document.querySelectorAll('#vk-tab-label').forEach((item) => {
+	// 各目次ブロックごとに独立した開/閉 切り替え処理 (:before 疑似要素のアクセシビリティ問題に対応 #2087)
+	document.querySelectorAll('.wp-block-vk-blocks-table-of-contents-new').forEach((tocBlock) => {
+		const item = tocBlock.querySelector('.vk_tableOfContents_openCloseBtn');
+		if (!item) return;
+		
 		const status = item.previousElementSibling; // チェックボックス
 		const tabContent = item
 			.closest('.tab')
 			.querySelector('.tab_content-open, .tab_content-close');
 		const initialStateOpen =
-			tabContent.classList.contains('tab_content-open');
+			tabContent && tabContent.classList.contains('tab_content-open');
 
 		// 初期状態に基づいてボタンのテキストとチェックボックスの状態を設定
 		if (initialStateOpen) {
 			item.textContent = 'CLOSE';
-			status.checked = true;
+			if (status) status.checked = true;
 		} else {
 			item.textContent = 'OPEN';
-			status.checked = false;
+			if (status) status.checked = false;
 		}
 
 		// ボタンクリック時にテキストをトグル
@@ -91,7 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			// PHP側から取得した見出しとDOM要素の見出しで構造が異なるため、統一する
 			const level =
 				heading.level || parseInt(heading.tagName.substring(1));
-			const headingId = heading.id || heading.getAttribute('id') || '';
+			// DOM要素かどうかを判定してIDを取得
+			const headingId = heading.id || (heading.getAttribute ? heading.getAttribute('id') : '') || '';
 			const isAllowed = allowedLevels.includes(level);
 			const isExcluded = excludedHeadings.includes(headingId);
 			return isAllowed && !isExcluded;
@@ -107,8 +111,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			.map((heading) => {
 				const level =
 					heading.level || parseInt(heading.tagName.substring(1));
+				// DOM要素かどうかを判定してIDを取得
 				const headingId =
-					heading.id || heading.getAttribute('id') || '';
+					heading.id || (heading.getAttribute ? heading.getAttribute('id') : '') || '';
 				const headingText = heading.textContent || '';
 
 				let number;

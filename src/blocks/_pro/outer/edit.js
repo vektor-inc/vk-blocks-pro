@@ -132,42 +132,6 @@ export default function OuterEdit(props) {
 				className: classnames(newClassName),
 			});
 		}
-
-		// padding_left_and_rightの設定をコアのpadding設定に移行
-		if (
-			padding_left_and_right &&
-			padding_left_and_right !== '0' &&
-			!attributes.style?.spacing?.padding
-		) {
-			let paddingValue = '';
-
-			// padding_left_and_rightの値に応じてpadding値を設定
-			if (padding_left_and_right === '1') {
-				// "Add padding to the Outer area" - デフォルトのpadding値を使用
-				paddingValue = 'var(--wp--preset--spacing--50)'; // 1.5rem相当
-			} else if (padding_left_and_right === '2') {
-				// "Remove padding from the Outer area" - 0に設定
-				paddingValue = '0';
-			}
-
-			if (paddingValue) {
-				setAttributes({
-					style: {
-						...attributes.style,
-						spacing: {
-							...attributes.style?.spacing,
-							padding: {
-								left: paddingValue,
-								right: paddingValue,
-							},
-						},
-					},
-					// 移行完了後は古い設定をクリア
-					padding_left_and_right: '0',
-				});
-			}
-		}
-
 		// 背景オフセットの互換処理
 		if (bgOffsetTop === undefined) {
 			setAttributes({ bgOffsetTop: 0 });
@@ -838,7 +802,7 @@ export default function OuterEdit(props) {
 					<h4>{__('Background Position Type', 'vk-blocks-pro')}</h4>
 					<p>
 						{__(
-							"Select either Focal Point to control the image's focus, or Background Offset to shift the background position. (Only one option can be active at a time.)",
+							'Select either Focal Point to control the image’s focus, or Background Offset to shift the background position. (Only one option can be active at a time.)',
 							'vk-blocks-pro'
 						)}
 					</p>
@@ -1158,6 +1122,41 @@ export default function OuterEdit(props) {
 				>
 					<p>{__('Width', 'vk-blocks-pro')} </p>
 					<BaseControl>
+						<RadioControl
+							label={__(
+								'Padding (Left and Right)',
+								'vk-blocks-pro'
+							)}
+							selected={padding_left_and_right} //eslint-disable-line camelcase
+							options={[
+								{
+									label: __(
+										'Fit to the Content area',
+										'vk-blocks-pro'
+									),
+									value: '0',
+								},
+								{
+									label: __(
+										'Add padding to the Outer area',
+										'vk-blocks-pro'
+									),
+									value: '1',
+								},
+								{
+									label: __(
+										'Remove padding from the Outer area',
+										'vk-blocks-pro'
+									),
+									value: '2',
+								},
+							]}
+							onChange={(value) =>
+								setAttributes({
+									padding_left_and_right: value,
+								})
+							}
+						/>
 						<RadioControl
 							label={__(
 								'Padding (Top and Bottom)',

@@ -178,6 +178,15 @@ class Vk_Blocks_PostList {
 						),
 					);
 					break;
+				case 'within-year':
+					$date_query = array(
+						array(
+							'column'    => 'post_date_gmt',
+							'after'     => gmdate( 'Y-m-d', strtotime( '-1 year' ) ),
+							'inclusive' => true,
+						),
+					);
+					break;
 			}
 		}
 

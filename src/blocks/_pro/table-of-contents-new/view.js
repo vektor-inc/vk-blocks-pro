@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		item.innerHTML = item.innerHTML.replace(/\uFFFC/g, ''); // U+FFFCはOBJのUnicodeです
 	});
 
-	// 各目次ブロックごとに独立した開/閉 切り替え処理 (:before 疑似要素のアクセシビリティ問題に対応 #2087)
+	// 開/閉 切り替え (:before 疑似要素のアクセシビリティ問題に対応 #2087)
 	document
 		.querySelectorAll('.wp-block-vk-blocks-table-of-contents-new')
 		.forEach((tocBlock) => {

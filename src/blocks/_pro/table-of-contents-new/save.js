@@ -14,8 +14,26 @@ export default function save(props) {
 		blockId,
 	} = attributes;
 
-	// attributesからblockIdを取得
-	const uniqueId = blockId || 'fallback-id';
+	// blockIdが空の場合、renderHtmlから決定的な値を生成
+	// 既存ブロックとの互換性を保つため
+	let uniqueId = blockId;
+	if (!uniqueId) {
+		// ビット演算子を使わないハッシュ関数（ESLintのno-bitwiseルール対応）
+		const hashCode = (str) => {
+			let hash = 0;
+			if (str.length === 0) return hash;
+			for (let i = 0; i < str.length; i++) {
+				const char = str.charCodeAt(i);
+				hash = ((hash * 31) + char) % 2147483647;
+			}
+			return Math.abs(hash).toString(36);
+		};
+		
+		// renderHtmlとその他の属性から決定的なIDを生成
+		const hashInput = `${renderHtml || ''}-${style}-${open}-${JSON.stringify(customHeadingLevels)}-${JSON.stringify(excludedHeadings)}`;
+		uniqueId = `legacy-${hashCode(hashInput)}`;
+	}
+	
 	const checkboxId = `chck-toc-${uniqueId}`;
 	const labelId = `vk-tab-label-toc-${uniqueId}`;
 

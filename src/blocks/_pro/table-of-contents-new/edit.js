@@ -78,13 +78,15 @@ export default function TOCEdit(props) {
 		customHeadingLevels,
 		excludedHeadings = [],
 	} = attributes;
-	
+
 	// より確実にユニークなIDを生成
 	// clientIdの短縮版（ハイフンを除去して最後8文字）を使用
-	const shortClientId = clientId ? clientId.replace(/-/g, '').slice(-8) : Math.random().toString(36).substr(2, 8);
+	const shortClientId = clientId
+		? clientId.replace(/-/g, '').slice(-8)
+		: Math.random().toString(36).substr(2, 8);
 	const uniqueId = `toc-${shortClientId}`;
 	const checkboxId = `chck-${uniqueId}`;
-	
+
 	const blockProps = useBlockProps({
 		className: `vk_tableOfContents vk_tableOfContents-style-${style} tabs`,
 	});

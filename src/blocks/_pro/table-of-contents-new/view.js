@@ -6,35 +6,45 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	// 各目次ブロックごとに独立した開/閉 切り替え処理 (:before 疑似要素のアクセシビリティ問題に対応 #2087)
-	document.querySelectorAll('.wp-block-vk-blocks-table-of-contents-new').forEach((tocBlock) => {
-		const item = tocBlock.querySelector('.vk_tableOfContents_openCloseBtn');
-		if (!item) return;
-		
-		const status = item.previousElementSibling; // チェックボックス
-		const tabContent = item
-			.closest('.tab')
-			.querySelector('.tab_content-open, .tab_content-close');
-		const initialStateOpen =
-			tabContent && tabContent.classList.contains('tab_content-open');
-
-		// 初期状態に基づいてボタンのテキストとチェックボックスの状態を設定
-		if (initialStateOpen) {
-			item.textContent = 'CLOSE';
-			if (status) status.checked = true;
-		} else {
-			item.textContent = 'OPEN';
-			if (status) status.checked = false;
-		}
-
-		// ボタンクリック時にテキストをトグル
-		item.addEventListener('click', function () {
-			if (status && status.type === 'checkbox') {
-				setTimeout(() => {
-					item.textContent = status.checked ? 'CLOSE' : 'OPEN';
-				}, 0);
+	document
+		.querySelectorAll('.wp-block-vk-blocks-table-of-contents-new')
+		.forEach((tocBlock) => {
+			const item = tocBlock.querySelector(
+				'.vk_tableOfContents_openCloseBtn'
+			);
+			if (!item) {
+				return;
 			}
+
+			const status = item.previousElementSibling; // チェックボックス
+			const tabContent = item
+				.closest('.tab')
+				.querySelector('.tab_content-open, .tab_content-close');
+			const initialStateOpen =
+				tabContent && tabContent.classList.contains('tab_content-open');
+
+			// 初期状態に基づいてボタンのテキストとチェックボックスの状態を設定
+			if (initialStateOpen) {
+				item.textContent = 'CLOSE';
+				if (status) {
+					status.checked = true;
+				}
+			} else {
+				item.textContent = 'OPEN';
+				if (status) {
+					status.checked = false;
+				}
+			}
+
+			// ボタンクリック時にテキストをトグル
+			item.addEventListener('click', function () {
+				if (status && status.type === 'checkbox') {
+					setTimeout(() => {
+						item.textContent = status.checked ? 'CLOSE' : 'OPEN';
+					}, 0);
+				}
+			});
 		});
-	});
 
 	const tocBlocks = document.querySelectorAll(
 		'.wp-block-vk-blocks-table-of-contents-new'
@@ -95,7 +105,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			const level =
 				heading.level || parseInt(heading.tagName.substring(1));
 			// DOM要素かどうかを判定してIDを取得
-			const headingId = heading.id || (heading.getAttribute ? heading.getAttribute('id') : '') || '';
+			const headingId =
+				heading.id ||
+				(heading.getAttribute ? heading.getAttribute('id') : '') ||
+				'';
 			const isAllowed = allowedLevels.includes(level);
 			const isExcluded = excludedHeadings.includes(headingId);
 			return isAllowed && !isExcluded;
@@ -113,7 +126,9 @@ document.addEventListener('DOMContentLoaded', () => {
 					heading.level || parseInt(heading.tagName.substring(1));
 				// DOM要素かどうかを判定してIDを取得
 				const headingId =
-					heading.id || (heading.getAttribute ? heading.getAttribute('id') : '') || '';
+					heading.id ||
+					(heading.getAttribute ? heading.getAttribute('id') : '') ||
+					'';
 				const headingText = heading.textContent || '';
 
 				let number;

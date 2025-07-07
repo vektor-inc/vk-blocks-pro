@@ -109,6 +109,7 @@ e.g.
 == Changelog ==
 
 [ Bug fix ][ Table of Contents (Pro) ] Fixed H2 selection issue in heading level settings and improved code structure.
+[ Bug fix ][ Table of Contents (Pro) ] Fixed an issue where clicking the close button on one table of contents block would affect other blocks when multiple blocks were placed on the same page.
 
 = 1.106.0 =
 [ Add function ][ Slider ] Added zoom animation feature.

@@ -14,11 +14,10 @@ export default function save(props) {
 		blockId,
 	} = attributes;
 
-	// blockIdを使ってユニークIDを生成
-	// 編集画面でuseEffectにより必ずblockIdが設定されるため、フォールバックは不要
-	const uniqueId = blockId || 'fallback-id';
-	const checkboxId = `chck-toc-${uniqueId}`;
-	const labelId = `vk-tab-label-toc-${uniqueId}`;
+	// blockIdからユニークIDを生成
+	// edit.jsのuseEffectにより、blockIdは必ず存在する
+	const checkboxId = `chck-toc-${blockId}`;
+	const labelId = `vk-tab-label-toc-${blockId}`;
 
 	const blockProps = useBlockProps.save({
 		className: `vk_tableOfContents vk_tableOfContents-style-${style} tabs`,

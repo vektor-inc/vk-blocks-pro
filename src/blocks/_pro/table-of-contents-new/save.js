@@ -3,7 +3,7 @@ import parse from 'html-react-parser';
 import { __ } from '@wordpress/i18n';
 
 export default function save(props) {
-	const { attributes, clientId } = props;
+	const { attributes } = props;
 	const {
 		style,
 		open,
@@ -11,16 +11,13 @@ export default function save(props) {
 		useCustomLevels,
 		customHeadingLevels,
 		excludedHeadings,
+		blockId,
 	} = attributes;
 
-	// より確実にユニークなIDを生成
-	// clientIdの短縮版（ハイフンを除去して最後8文字）を使用
-	const shortClientId = clientId
-		? clientId.replace(/-/g, '').slice(-8)
-		: Math.random().toString(36).substr(2, 8);
-	const uniqueId = `toc-${shortClientId}`;
-	const checkboxId = `chck-${uniqueId}`;
-	const labelId = `vk-tab-label-${uniqueId}`;
+	// attributesからblockIdを取得（フォールバック対応）
+	const uniqueId = blockId || 'fallback-id';
+	const checkboxId = `chck-toc-${uniqueId}`;
+	const labelId = `vk-tab-label-toc-${uniqueId}`;
 
 	const blockProps = useBlockProps.save({
 		className: `vk_tableOfContents vk_tableOfContents-style-${style} tabs`,

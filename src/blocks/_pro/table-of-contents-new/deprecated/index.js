@@ -37,6 +37,17 @@ const blockAttributes2 = {
 	},
 };
 
+/*
+// ver.1.106.0 で追加
+// 上記以降でdeprecatedを更新するときに対応お願いします
+const blockAttributes3 = {
+	...blockAttributes2,
+	blockId: {
+		type: 'string',
+		default: '',
+	},
+};
+*/
 
 const deprecated = [
 	{

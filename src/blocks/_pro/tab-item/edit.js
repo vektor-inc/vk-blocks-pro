@@ -92,7 +92,7 @@ export default function TabItemEdit(props) {
 			const tabOptionJSON = parentTabBlock.attributes.tabOptionJSON;
 			const childBlocks = parentTabBlock.innerBlocks;
 
-			if (tabOptionJSON && childBlocks && tabColor) {
+			if (tabOptionJSON && childBlocks) {
 				const tabOption = JSON.parse(tabOptionJSON);
 				if (
 					Object.keys(tabOption).length !== 0 &&
@@ -106,15 +106,17 @@ export default function TabItemEdit(props) {
 						}
 					});
 					if (childIndex !== -1) {
-						tabOption.listArray[childIndex].tabColor = tabColor;
-						updateBlockAttributes(parentTabBlock.clientId, {
-							tabOptionJSON: JSON.stringify(tabOption),
-						});
+						if (tabOption.listArray[childIndex].tabColor !== tabColor) {
+							tabOption.listArray[childIndex].tabColor = tabColor || '';
+							updateBlockAttributes(parentTabBlock.clientId, {
+								tabOptionJSON: JSON.stringify(tabOption),
+							});
+						}
 					}
 				}
 			}
 		}
-	}, [tabColor]);
+	}, [tabColor, clientId, parentTabBlock, updateBlockAttributes]);
 
 	// Add vk_block-margin-0 class to existing tab group blocks
 	useEffect(() => {

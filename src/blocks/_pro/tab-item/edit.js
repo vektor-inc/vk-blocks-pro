@@ -106,8 +106,12 @@ export default function TabItemEdit(props) {
 						}
 					});
 					if (childIndex !== -1) {
-						if (tabOption.listArray[childIndex].tabColor !== tabColor) {
-							tabOption.listArray[childIndex].tabColor = tabColor || '';
+						if (
+							tabOption.listArray[childIndex].tabColor !==
+							tabColor
+						) {
+							tabOption.listArray[childIndex].tabColor =
+								tabColor || '';
 							updateBlockAttributes(parentTabBlock.clientId, {
 								tabOptionJSON: JSON.stringify(tabOption),
 							});

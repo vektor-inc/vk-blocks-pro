@@ -61,23 +61,25 @@ document.addEventListener('DOMContentLoaded', () => {
 		let allHeadings;
 		if (useCustomLevels && window.vkBlocksOptions?.contentHeadings) {
 			// カスタム設定の場合：PHP側で抽出された見出しを使用
-			allHeadings = window.vkBlocksOptions.contentHeadings.map(match => {
-				const level = parseInt(match[1]);
-				const attributes = match[2];
-				const content = match[3];
-				
-				// 属性からIDを抽出
-				const idMatch = attributes.match(/id=["']([^"']+)["']/);
-				const id = idMatch ? idMatch[1] : '';
-				
-				return {
-					level: level,
-					id: id,
-					content: content,
-					tagName: `H${level}`,
-					textContent: content.replace(/<[^>]*>/g, '') // HTMLタグを除去
-				};
-			});
+			allHeadings = window.vkBlocksOptions.contentHeadings.map(
+				(match) => {
+					const level = parseInt(match[1]);
+					const attributes = match[2];
+					const content = match[3];
+
+					// 属性からIDを抽出
+					const idMatch = attributes.match(/id=["']([^"']+)["']/);
+					const id = idMatch ? idMatch[1] : '';
+
+					return {
+						level,
+						id,
+						content,
+						tagName: `H${level}`,
+						textContent: content.replace(/<[^>]*>/g, ''), // HTMLタグを除去
+					};
+				}
+			);
 		} else {
 			// グローバル設定の場合：data-vk-toc-heading属性を持つ見出しを取得（PHP側でthe_content内の見出しに付与済み）
 			allHeadings = Array.from(
@@ -87,7 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		const headings = allHeadings.filter((heading) => {
 			// PHP側から取得した見出しとDOM要素の見出しで構造が異なるため、統一する
-			const level = heading.level || parseInt(heading.tagName.substring(1));
+			const level =
+				heading.level || parseInt(heading.tagName.substring(1));
 			const headingId = heading.id || heading.getAttribute('id') || '';
 			const isAllowed = allowedLevels.includes(level);
 			const isExcluded = excludedHeadings.includes(headingId);
@@ -102,10 +105,12 @@ document.addEventListener('DOMContentLoaded', () => {
 			h6Count = 0;
 		const tocHtml = headings
 			.map((heading) => {
-				const level = heading.level || parseInt(heading.tagName.substring(1));
-				const headingId = heading.id || heading.getAttribute('id') || '';
+				const level =
+					heading.level || parseInt(heading.tagName.substring(1));
+				const headingId =
+					heading.id || heading.getAttribute('id') || '';
 				const headingText = heading.textContent || '';
-				
+
 				let number;
 				if (level === 2) {
 					h2Count++;

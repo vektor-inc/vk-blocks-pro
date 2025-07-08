@@ -28,21 +28,29 @@ document.defaultView.addEventListener('load', function () {
 			const config = {
 				autoplay: attributes.autoPlay
 					? {
-						delay: Number(attributes.autoPlayDelay) || 2500,
-						disableOnInteraction: !!attributes.autoPlayStop,
-						stopOnLastSlide: !attributes.loop,
-					}
+							delay: Number(attributes.autoPlayDelay) || 2500,
+							disableOnInteraction: !!attributes.autoPlayStop,
+							stopOnLastSlide: !attributes.loop,
+						}
 					: false,
 				pagination:
 					attributes.pagination !== 'hide'
 						? {
-							el: '.swiper-pagination',
-							clickable: true,
-							type: attributes.pagination,
-							renderFraction: function (currentClass, totalClass) {
-								return '<span class="' + currentClass + '"></span>' + ' / ' + '<span class="' + totalClass + '"></span>';
-							},
-						}
+								el: '.swiper-pagination',
+								clickable: true,
+								type: attributes.pagination,
+								renderFraction(currentClass, totalClass) {
+									return (
+										'<span class="' +
+										currentClass +
+										'"></span>' +
+										' / ' +
+										'<span class="' +
+										totalClass +
+										'"></span>'
+									);
+								},
+							}
 						: false,
 				speed: Number(attributes.speed) || 300,
 				loop: !!attributes.loop,
@@ -55,14 +63,16 @@ document.defaultView.addEventListener('load', function () {
 
 			if (attributes.effect !== 'fade') {
 				if (attributes.slidesPerViewMobile) {
-					config.slidesPerView = Number(attributes.slidesPerViewMobile);
-					config.slidesPerGroup = 
+					config.slidesPerView = Number(
+						attributes.slidesPerViewMobile
+					);
+					config.slidesPerGroup =
 						attributes.slidesPerGroup === 'slides-per-view'
 							? Number(attributes.slidesPerViewMobile)
 							: 1;
 				} else if (attributes.slidesPerView) {
 					config.slidesPerView = Number(attributes.slidesPerView);
-					config.slidesPerGroup = 
+					config.slidesPerGroup =
 						attributes.slidesPerGroup === 'slides-per-view'
 							? Number(attributes.slidesPerView)
 							: 1;
@@ -77,7 +87,9 @@ document.defaultView.addEventListener('load', function () {
 					config.breakpoints = {};
 					if (attributes.slidesPerViewTablet) {
 						config.breakpoints[576] = {
-							slidesPerView: Number(attributes.slidesPerViewTablet),
+							slidesPerView: Number(
+								attributes.slidesPerViewTablet
+							),
 							slidesPerGroup:
 								attributes.slidesPerGroup === 'slides-per-view'
 									? Number(attributes.slidesPerViewTablet)
@@ -113,4 +125,4 @@ document.defaultView.addEventListener('load', function () {
 			}
 		}
 	}
-}); 
+});

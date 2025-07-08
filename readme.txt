@@ -108,7 +108,8 @@ e.g.
 
 == Changelog ==
 
-[ Bug fix ][ Post List (Pro) / Post List Slider (Pro) ] Fixed XSS vulnerability.
+[ Bug fix ][ Slider / Post List Slider (Pro) ] Improved initialization process to prevent XSS vulnerability.
+[ Bug fix ][ Slider / Post List Slider (Pro) ] Fixed XSS vulnerability.
 [ Bug fix ][ Table of Contents (Pro) ] Fixed H2 selection issue in heading level settings and improved code structure.
 
 = 1.106.0 =

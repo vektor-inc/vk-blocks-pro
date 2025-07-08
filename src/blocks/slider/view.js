@@ -84,65 +84,54 @@ document.defaultView.addEventListener('load', function () {
 				sliderId = attributes.clientId;
 			}
 
-			// ズームアニメーション用のスタイル
+			// ズームアニメーション用のスタイルを追加
 			addZoomAnimationStyles(attributes, sliderId);
 
 			// Swiper設定オブジェクトを組み立て
 			const config = {
 				autoplay: attributes.autoPlay
 					? {
-							delay: Number(attributes.autoPlayDelay) || 2500,
-							disableOnInteraction: !!attributes.autoPlayStop,
-							stopOnLastSlide: !attributes.loop,
-						}
+						delay: Number(attributes.autoPlayDelay) || 2500,
+						disableOnInteraction: !!attributes.autoPlayStop,
+						stopOnLastSlide: !attributes.loop,
+					}
 					: false,
 				pagination:
 					attributes.pagination !== 'hide'
 						? {
-								el: '.swiper-pagination',
-								clickable: true,
-								type: attributes.pagination,
-								renderFraction(currentClass, totalClass) {
-									return (
-										'<span class="' +
-										currentClass +
-										'"></span>' +
-										' / ' +
-										'<span class="' +
-										totalClass +
-										'"></span>'
-									);
-								},
-							}
-						: undefined,
-				speed: Number(attributes.speed) || 500,
-				effect:
-					typeof attributes.effect === 'string'
-						? attributes.effect
-						: 'slide',
+							el: '.swiper-pagination',
+							clickable: true,
+							type: attributes.pagination,
+							renderFraction: function (currentClass, totalClass) {
+								return '<span class="' + currentClass + '"></span>' + ' / ' + '<span class="' + totalClass + '"></span>';
+							},
+						}
+						: false,
+				speed: Number(attributes.speed) || 300,
 				loop: !!attributes.loop,
+				effect: attributes.effect || 'slide',
 				navigation: {
 					nextEl: '.swiper-button-next',
 					prevEl: '.swiper-button-prev',
 				},
 			};
-			// breakpointsやcenteredSlidesなども必要に応じて追加
-			if (
-				attributes.slidesPerViewMobile ||
-				attributes.slidesPerView ||
-				attributes.slidesPerViewTablet ||
-				attributes.slidesPerViewPC
-			) {
-				config.slidesPerView =
-					Number(attributes.slidesPerViewMobile) ||
-					Number(attributes.slidesPerView) ||
-					1;
-				config.slidesPerGroup = 1;
-				if (
-					attributes.slidesPerGroup &&
-					attributes.slidesPerGroup === 'slides-per-view'
-				) {
-					config.slidesPerGroup = config.slidesPerView;
+
+			if (attributes.effect !== 'fade') {
+				if (attributes.slidesPerViewMobile) {
+					config.slidesPerView = Number(attributes.slidesPerViewMobile);
+					config.slidesPerGroup = 
+						attributes.slidesPerGroup === 'slides-per-view'
+							? Number(attributes.slidesPerViewMobile)
+							: 1;
+				} else if (attributes.slidesPerView) {
+					config.slidesPerView = Number(attributes.slidesPerView);
+					config.slidesPerGroup = 
+						attributes.slidesPerGroup === 'slides-per-view'
+							? Number(attributes.slidesPerView)
+							: 1;
+				} else {
+					config.slidesPerView = 1;
+					config.slidesPerGroup = 1;
 				}
 				if (
 					attributes.slidesPerViewTablet ||
@@ -151,9 +140,7 @@ document.defaultView.addEventListener('load', function () {
 					config.breakpoints = {};
 					if (attributes.slidesPerViewTablet) {
 						config.breakpoints[576] = {
-							slidesPerView: Number(
-								attributes.slidesPerViewTablet
-							),
+							slidesPerView: Number(attributes.slidesPerViewTablet),
 							slidesPerGroup:
 								attributes.slidesPerGroup === 'slides-per-view'
 									? Number(attributes.slidesPerViewTablet)
@@ -170,10 +157,11 @@ document.defaultView.addEventListener('load', function () {
 						};
 					}
 				}
+				if (attributes.centeredSlides) {
+					config.centeredSlides = !!attributes.centeredSlides;
+				}
 			}
-			if (attributes.centeredSlides) {
-				config.centeredSlides = !!attributes.centeredSlides;
-			}
+
 			// Swiperインスタンスをwindow変数に格納
 			window[`swiper${index}`] = new Swiper(
 				`.vk_slider_${sliderId}`,
@@ -188,4 +176,4 @@ document.defaultView.addEventListener('load', function () {
 			}
 		}
 	}
-});
+}); 

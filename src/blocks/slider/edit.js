@@ -538,7 +538,10 @@ export default function SliderEdit(props) {
 					initialOpen={false}
 				>
 					<ToggleControl
-						label={__('Enable zoom animation for slide background images', 'vk-blocks-pro')}
+						label={__(
+							'Enable zoom animation for slide background images',
+							'vk-blocks-pro'
+						)}
 						checked={zoomAnimation}
 						onChange={(value) =>
 							setAttributes({ zoomAnimation: value })
@@ -547,7 +550,10 @@ export default function SliderEdit(props) {
 					{zoomAnimation && (
 						<>
 							<RangeControl
-								label={__('Initial Background Scale', 'vk-blocks-pro')}
+								label={__(
+									'Initial Background Scale',
+									'vk-blocks-pro'
+								)}
 								value={zoomInitialScale}
 								onChange={(value) =>
 									setAttributes({ zoomInitialScale: value })
@@ -557,7 +563,10 @@ export default function SliderEdit(props) {
 								step={0.05}
 							/>
 							<RangeControl
-								label={__('Final Background Scale', 'vk-blocks-pro')}
+								label={__(
+									'Final Background Scale',
+									'vk-blocks-pro'
+								)}
 								value={zoomFinalScale}
 								onChange={(value) =>
 									setAttributes({ zoomFinalScale: value })
@@ -567,7 +576,10 @@ export default function SliderEdit(props) {
 								step={0.05}
 							/>
 							<p className="vk_slider_zoomAnimation_help">
-								{__('1 means original size. Larger values will zoom in the background image.', 'vk-blocks-pro')}
+								{__(
+									'1 means original size. Larger values will zoom in the background image.',
+									'vk-blocks-pro'
+								)}
 							</p>
 						</>
 					)}

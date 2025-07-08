@@ -15,6 +15,8 @@ import {
 	__experimentalUnitControl as UnitControl,
 	Spinner,
 } from '@wordpress/components';
+import { useState, useEffect } from '@wordpress/element';
+import apiFetch from '@wordpress/api-fetch';
 
 // 表示モードの定数
 const DISPLAY_MODES = {
@@ -148,7 +150,6 @@ export default function CategoryBadgeEdit(props) {
 		[postId, taxonomy, postType]
 	);
 
-	// タクソノミー一覧を取得
 	const taxonomies =
 		useSelect(
 			(select) => {
@@ -157,6 +158,26 @@ export default function CategoryBadgeEdit(props) {
 			},
 			[postType]
 		) || [];
+
+	// 表示モード判定
+	const isMultipleDisplay =
+		maxDisplayCount === DISPLAY_MODES.ALL ||
+		maxDisplayCount >= DISPLAY_MODES.MULTIPLE_MIN;
+
+	// 複数表示時の各タームの色情報を取得
+	const [termColors, setTermColors] = useState({});
+
+	useEffect(() => {
+		async function fetchColors() {
+			const colors = {};
+			for (const term of terms) {
+				const res = await apiFetch({ path: `/vk-term-color/v1/term-color?term_id=${term.id}` });
+				colors[term.id] = res;
+			}
+			setTermColors(colors);
+		}
+		if (terms.length) fetchColors();
+	}, [terms]);
 
 	// 共通の値を計算
 	const hasAnyTerm = terms.length > 0;
@@ -193,11 +214,6 @@ export default function CategoryBadgeEdit(props) {
 			value: tax.slug,
 		})),
 	];
-
-	// 表示モード判定
-	const isMultipleDisplay =
-		maxDisplayCount === DISPLAY_MODES.ALL ||
-		maxDisplayCount >= DISPLAY_MODES.MULTIPLE_MIN;
 
 	// 共通のコントロール部分
 	const renderControls = () => (
@@ -266,14 +282,12 @@ export default function CategoryBadgeEdit(props) {
 				? terms
 				: terms.slice(0, maxDisplayCount);
 
-		// タームが見つからない場合の表示
 		const noTermsDisplay = isLoading ? (
 			<Spinner />
 		) : (
 			<span style={{ opacity: 0.5 }}>{`(${selectedTaxonomyName})`}</span>
 		);
 
-		// タームが1個の場合は単一表示、2個以上の場合は複数表示
 		const isMultiple = displayTerms.length > 1;
 		const containerClassName = isMultiple
 			? 'vk_categoryBadge_multiple'
@@ -286,19 +300,15 @@ export default function CategoryBadgeEdit(props) {
 				<div className={containerClassName} style={containerStyle}>
 					{displayTerms.length > 0 ? (
 						displayTerms.map((term) => {
-							// タームオブジェクトから直接term_colorを取得
-							const bgColor = term.term_color || '#999999';
-							const textColor =
-								term.term_text_color || '#FFFFFF';
-
+							const colorInfo = termColors[term.id] || {};
 							return (
 								<span
 									key={term.id}
 									{...blockProps}
 									style={{
 										...blockProps.style,
-										backgroundColor: bgColor,
-										color: textColor,
+										backgroundColor: colorInfo.color || '#999999',
+										color: colorInfo.text_color || '#FFFFFF',
 									}}
 									title={
 										term.taxonomy_name

@@ -171,12 +171,16 @@ export default function CategoryBadgeEdit(props) {
 		async function fetchColors() {
 			const colors = {};
 			for (const term of terms) {
-				const res = await apiFetch({ path: `/vk-term-color/v1/term-color?term_id=${term.id}` });
+				const res = await apiFetch({
+					path: `/vk-term-color/v1/term-color?term_id=${term.id}`,
+				});
 				colors[term.id] = res;
 			}
 			setTermColors(colors);
 		}
-		if (terms.length) fetchColors();
+		if (terms.length) {
+			fetchColors();
+		}
 	}, [terms]);
 
 	// 共通の値を計算
@@ -307,8 +311,10 @@ export default function CategoryBadgeEdit(props) {
 									{...blockProps}
 									style={{
 										...blockProps.style,
-										backgroundColor: colorInfo.color || '#999999',
-										color: colorInfo.text_color || '#FFFFFF',
+										backgroundColor:
+											colorInfo.color || '#999999',
+										color:
+											colorInfo.text_color || '#FFFFFF',
 									}}
 									title={
 										term.taxonomy_name

@@ -103,7 +103,7 @@ export default function CategoryBadgeEdit(props) {
 	);
 
 	// 投稿のターム一覧を取得（複数タクソノミー対応）
-	const categories = useSelect(
+	const terms = useSelect(
 		(select) => {
 			if (!postId) {
 				return [];
@@ -130,17 +130,17 @@ export default function CategoryBadgeEdit(props) {
 			// 各タクソノミーからタームを取得
 			let allTerms = [];
 			availableTaxonomies.forEach((tax) => {
-				const terms =
+				const taxonomyTerms =
 					select('core').getEntityRecords('taxonomy', tax.slug, {
 						per_page: 100,
 						post: postId,
 					}) || [];
 				// タームにタクソノミー情報を追加
-				terms.forEach((term) => {
+				taxonomyTerms.forEach((term) => {
 					term.taxonomy_slug = tax.slug;
 					term.taxonomy_name = tax.name;
 				});
-				allTerms = [...allTerms, ...terms];
+				allTerms = [...allTerms, ...taxonomyTerms];
 			});
 
 			return allTerms;
@@ -159,7 +159,7 @@ export default function CategoryBadgeEdit(props) {
 		) || [];
 
 	// 共通の値を計算
-	const hasAnyTerm = categories.length > 0;
+	const hasAnyTerm = terms.length > 0;
 	const getLabelBySlug = (slug, taxonomies) =>
 		taxonomies.find((tax) => tax.slug === slug)?.name || 'Auto';
 	const selectedTaxonomyName = getLabelBySlug(taxonomy, taxonomies);
@@ -221,7 +221,7 @@ export default function CategoryBadgeEdit(props) {
 						min={0}
 						max={10}
 						help={__(
-							'Set to 0 for all categories, 1 for single display, 2 or more for multiple display',
+							'Set to 0 for all terms, 1 for single display, 2 or more for multiple display',
 							'vk-blocks-pro'
 						)}
 					/>
@@ -261,20 +261,20 @@ export default function CategoryBadgeEdit(props) {
 
 	// 複数表示の場合
 	if (isMultipleDisplay) {
-		const displayCategories =
+		const displayTerms =
 			maxDisplayCount === DISPLAY_MODES.ALL
-				? categories
-				: categories.slice(0, maxDisplayCount);
+				? terms
+				: terms.slice(0, maxDisplayCount);
 
-		// カテゴリーが見つからない場合の表示
-		const noCategoriesDisplay = isLoading ? (
+		// タームが見つからない場合の表示
+		const noTermsDisplay = isLoading ? (
 			<Spinner />
 		) : (
 			<span style={{ opacity: 0.5 }}>{`(${selectedTaxonomyName})`}</span>
 		);
 
-		// カテゴリーが1個の場合は単一表示、2個以上の場合は複数表示
-		const isMultiple = displayCategories.length > 1;
+		// タームが1個の場合は単一表示、2個以上の場合は複数表示
+		const isMultiple = displayTerms.length > 1;
 		const containerClassName = isMultiple
 			? 'vk_categoryBadge_multiple'
 			: '';
@@ -284,16 +284,16 @@ export default function CategoryBadgeEdit(props) {
 			<>
 				{renderControls()}
 				<div className={containerClassName} style={containerStyle}>
-					{displayCategories.length > 0 ? (
-						displayCategories.map((category) => {
-							// カテゴリーオブジェクトから直接term_colorを取得
-							const bgColor = category.term_color || '#999999';
+					{displayTerms.length > 0 ? (
+						displayTerms.map((term) => {
+							// タームオブジェクトから直接term_colorを取得
+							const bgColor = term.term_color || '#999999';
 							const textColor =
-								category.term_text_color || '#FFFFFF';
+								term.term_text_color || '#FFFFFF';
 
 							return (
 								<span
-									key={category.id}
+									key={term.id}
 									{...blockProps}
 									style={{
 										...blockProps.style,
@@ -301,17 +301,17 @@ export default function CategoryBadgeEdit(props) {
 										color: textColor,
 									}}
 									title={
-										category.taxonomy_name
-											? `${category.taxonomy_name}: ${category.name}`
-											: category.name
+										term.taxonomy_name
+											? `${term.taxonomy_name}: ${term.name}`
+											: term.name
 									}
 								>
-									{category.name}
+									{term.name}
 								</span>
 							);
 						})
 					) : (
-						<span {...blockProps}>{noCategoriesDisplay}</span>
+						<span {...blockProps}>{noTermsDisplay}</span>
 					)}
 				</div>
 			</>

@@ -84,7 +84,7 @@ document.defaultView.addEventListener('load', function () {
 				sliderId = attributes.clientId;
 			}
 
-			// ズームアニメーション用のスタイル
+			// ズームアニメーション用のスタイルを追加
 			addZoomAnimationStyles(attributes, sliderId);
 
 			// Swiper設定オブジェクトを組み立て

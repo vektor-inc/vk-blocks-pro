@@ -109,6 +109,7 @@ e.g.
 == Changelog ==
 
 [ Specification change ][ Button ] Migrated link functionality to use the enhanced Link Toolbar component with improved UX, accessibility features, and SEO options.
+[ Bug fix ][ Tab (Pro) ] Fixed custom color palette colors not applying correctly when selecting them for the first time.
 [ Bug fix ][ Table of Contents (Pro) ] Fixed H2 selection issue in heading level settings and improved code structure.
 
 = 1.106.0 =

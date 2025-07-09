@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
-	// 見出し情報を取得
+	// PHP側から渡された見出し情報を取得
 	const headings = window.vkBlocksOptions?.contentHeadings || [];
 	if (!headings.length) {
 		return;
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const tocHtml = headings
 		.filter((heading) => {
 			const level = parseInt(heading[0]);
-			const headingId = (heading[1].match(/id="([^"]+)"/) || [])[1] || '';
+			const headingId = heading[1].replace(' id="', '').replace('"', '');
 			return (
 				allowedLevels.includes(level) &&
 				!excludedHeadings.includes(headingId)
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 		.map((heading) => {
 			const level = parseInt(heading[0]);
-			const headingId = (heading[1].match(/id="([^"]+)"/) || [])[1] || '';
+			const headingId = heading[1].replace(' id="', '').replace('"', '');
 			const headingText = heading[2];
 
 			// カウンターを更新

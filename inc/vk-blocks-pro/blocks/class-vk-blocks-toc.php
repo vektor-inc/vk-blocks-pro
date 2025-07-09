@@ -75,19 +75,21 @@ class VK_Blocks_TOC {
 		// グローバル設定時のみdata-vk-toc-heading属性を付与
 		$options      = get_option( 'vk_blocks_options', array() );
 		$levels       = isset( $options['toc_heading_levels'] ) ? $options['toc_heading_levels'] : array( 'h2', 'h3', 'h4', 'h5', 'h6' );
-		$levels_regex = implode(
-			'|',
-			array_map(
-				function ( $h ) {
-					return substr( $h, 1 );
-				},
-				$levels
-			)
-		);
-		$pattern      = '/<h(' . $levels_regex . ')(.*?)>/i';
-		$replacement  = '<h$1$2 data-vk-toc-heading>';
-		$content      = preg_replace( $pattern, $replacement, $content );
-		return $content;
+
+		// parse_blocksを使用してブロックを解析
+		$blocks = parse_blocks( $content );
+		$modified_content = '';
+
+		foreach ( $blocks as $block ) {
+			if ( in_array( $block['blockName'], array( 'core/heading', 'vk-blocks/heading' ), true ) ) {
+				// 見出しブロックの場合、data-vk-toc-heading属性を追加
+				$block['innerHTML'] = str_replace( '<h', '<h data-vk-toc-heading', $block['innerHTML'] );
+				$block['innerContent'][0] = $block['innerHTML'];
+			}
+			$modified_content .= serialize_block( $block );
+		}
+
+		return $modified_content;
 	}
 
 	/**
@@ -159,10 +161,15 @@ class VK_Blocks_TOC {
 	 */
 	public function enqueue_front_assets() {
 		if ( has_block( 'vk-blocks/table-of-contents-new' ) ) {
-			// カスタム設定を使用している目次ブロックがあるかチェック
 			global $post;
-			$content           = $post->post_content;
-			$blocks            = parse_blocks( $content );
+			if ( ! $post ) {
+				return;
+			}
+
+			$content = $post->post_content;
+
+			// カスタム設定を使用している目次ブロックがあるかチェック
+			$blocks = parse_blocks( $content );
 			$has_custom_levels = false;
 
 			foreach ( $blocks as $block ) {
@@ -175,21 +182,16 @@ class VK_Blocks_TOC {
 				}
 			}
 
-			// カスタム設定の場合、the_content内の見出しを抽出
-			$content_headings = array();
-			if ( $has_custom_levels ) {
-				$content_headings = self::get_headings_from_content( $content );
-			}
+			// 見出しを抽出
+			$content_headings = self::get_headings_from_content( $content );
 
 			wp_localize_script(
 				'vk-blocks/table-of-contents-new-script',
 				'vkBlocksOptions',
-				array_merge(
-					get_option( 'vk_blocks_options', array() ),
-					array(
-						'contentHeadings' => $content_headings,
-						'hasCustomLevels' => $has_custom_levels,
-					)
+				array(
+					'contentHeadings' => $content_headings,
+					'hasCustomLevels' => $has_custom_levels,
+					'tocHeadingLevels' => get_option( 'vk_blocks_options', array() )['toc_heading_levels'] ?? array( 'h2', 'h3', 'h4', 'h5', 'h6' ),
 				)
 			);
 		}
@@ -202,7 +204,59 @@ class VK_Blocks_TOC {
 	 * @return array 見出し情報の配列.
 	 */
 	public static function get_headings_from_content( $content ) {
-		preg_match_all( '/<h([2-6])(.*?)>(.*?)<\\/h\\1>/is', $content, $matches, PREG_SET_ORDER );
-		return $matches;
+		
+		// parse_blocksを使用してブロックを解析
+		$blocks = parse_blocks( $content );
+		
+		$headings = array();
+		
+		// 再帰的にブロックを探索する関数
+		$extract_headings = function( $block ) use ( &$extract_headings, &$headings ) {
+
+			// core/headingとvk-blocks/headingブロックのみを処理
+			if ( in_array( $block['blockName'], array( 'core/heading', 'vk-blocks/heading' ), true ) ) {
+				
+				// レベルを取得
+				$level = isset( $block['attrs']['level'] ) ? $block['attrs']['level'] : 2;
+				
+				// IDを取得（複数のソースをチェック）
+				$id = '';
+				if ( isset( $block['attrs']['anchor'] ) ) {
+					$id = $block['attrs']['anchor'];
+				} elseif ( isset( $block['attrs']['id'] ) ) {
+					$id = $block['attrs']['id'];
+				} elseif ( preg_match( '/id="([^"]+)"/', $block['innerHTML'], $matches ) ) {
+					$id = $matches[1];
+				}
+
+				// コンテンツを取得
+				$content = '';
+				if ( preg_match( '/<h[1-6][^>]*>(.*?)<\/h[1-6]>/is', $block['innerHTML'], $matches ) ) {
+					$content = wp_strip_all_tags( $matches[1] );
+				}
+
+				if ( ! empty( $content ) ) {
+					$headings[] = array(
+						$level,
+						! empty( $id ) ? ' id="' . esc_attr( $id ) . '"' : '',
+						$content,
+					);
+				}
+			}
+
+			// インナーブロックがある場合は再帰的に処理
+			if ( ! empty( $block['innerBlocks'] ) ) {
+				foreach ( $block['innerBlocks'] as $inner_block ) {
+					$extract_headings( $inner_block );
+				}
+			}
+		};
+
+		// 各ブロックを処理
+		foreach ( $blocks as $block ) {
+			$extract_headings( $block );
+		}
+
+		return $headings;
 	}
 }

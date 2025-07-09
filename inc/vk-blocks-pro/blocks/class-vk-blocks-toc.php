@@ -39,55 +39,6 @@ class VK_Blocks_TOC {
 		add_action( 'admin_menu', array( $this, 'add_custom_fields' ) );
 		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_editor_assets' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_front_assets' ) );
-		add_filter( 'the_content', array( $this, 'mark_content_headings' ), 9 );
-	}
-
-	/**
-	 * Mark headings in the content
-	 *
-	 * @param string $content The content.
-	 * @return string
-	 */
-	public function mark_content_headings( $content ) {
-		if ( ! has_block( 'vk-blocks/table-of-contents-new' ) ) {
-			return $content;
-		}
-
-		// カスタム設定を使用している目次ブロックがあるかチェック
-		$blocks            = parse_blocks( $content );
-		$has_custom_levels = false;
-
-		foreach ( $blocks as $block ) {
-			if ( 'vk-blocks/table-of-contents-new' === $block['blockName'] ) {
-				$use_custom_levels = isset( $block['attrs']['useCustomLevels'] ) ? $block['attrs']['useCustomLevels'] : false;
-				if ( $use_custom_levels ) {
-					$has_custom_levels = true;
-					break;
-				}
-			}
-		}
-
-		// カスタム設定を使用している場合は、data-vk-toc-heading属性を付与しない
-		if ( $has_custom_levels ) {
-			return $content;
-		}
-
-		// グローバル設定時のみdata-vk-toc-heading属性を付与
-		$options      = get_option( 'vk_blocks_options', array() );
-		$levels       = isset( $options['toc_heading_levels'] ) ? $options['toc_heading_levels'] : array( 'h2', 'h3', 'h4', 'h5', 'h6' );
-		$levels_regex = implode(
-			'|',
-			array_map(
-				function ( $h ) {
-					return substr( $h, 1 );
-				},
-				$levels
-			)
-		);
-		$pattern      = '/<h(' . $levels_regex . ')(.*?)>/i';
-		$replacement  = '<h$1$2 data-vk-toc-heading>';
-		$content      = preg_replace( $pattern, $replacement, $content );
-		return $content;
 	}
 
 	/**

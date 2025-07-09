@@ -1,5 +1,3 @@
-どうしよう、、、だから
-
 <?php
 /**
  * VK_Blocks_TOC class

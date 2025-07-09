@@ -880,7 +880,7 @@ e.g.
 
 = 1.27.0 =
 [ Add function ][ Font Awesome ] Cope with Font Awesome 6
-[ Add function ][ Post-List (Pro) ] Add no-post message filter hook
+[ Add function ][ Post List (Pro) ] Add no-post message filter hook
 [ Bug fix ][ Outer(Pro) ] cope with custom color palette
 
 = 1.26.2 =
@@ -955,7 +955,7 @@ Cope with WordPress 5.9
 [ Bug fix ][ button ] fix block-block size
 
 = 1.21.0 =
-[ Add function ][ Post-List (Pro) ] add date filtering
+[ Add function ][ Post List (Pro) ] add date filtering
 [ Bug fix ][ Balloon ] Balloon icon background color when custom color is selected
 [ Bug fix ][ Group ] fix alert style custom color
 

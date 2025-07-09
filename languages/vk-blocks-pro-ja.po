@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2025-06-20T00:14:16+00:00\n"
+"POT-Creation-Date: 2025-07-08T07:44:05+00:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -42,7 +42,7 @@ msgstr "キャンセル"
 #: src/admin/balloon/delete-button.js:69 src/admin/balloon/index.js:148
 #: src/admin/custom-block-style/item/title-area/delete-button/index.js:75
 #: src/admin/custom-format/delete-item-button.js:74
-#: src/blocks/_pro/gridcolcard/edit-common.js:150
+#: src/blocks/_pro/gridcolcard/edit-common.js:171
 #: src/extensions/common/custom-block-variation/block-variation-list/item/title-area/delete-button/index.js:33
 msgid "Delete"
 msgstr "削除"
@@ -321,14 +321,14 @@ msgstr "色"
 
 #: src/admin/custom-format/index.js:208
 #: src/blocks/_pro/grid-column-item/edit.js:115
-#: src/blocks/_pro/gridcolcard/edit-common.js:156 src/blocks/button/edit.js:623
+#: src/blocks/_pro/gridcolcard/edit-common.js:177 src/blocks/button/edit.js:623
 #: src/blocks/heading/edit.js:325
 msgid "Text Color"
 msgstr "文字の色"
 
 #: src/admin/custom-format/index.js:239
 #: src/blocks/_pro/grid-column-item/edit.js:121
-#: src/blocks/_pro/gridcolcard/edit-common.js:162
+#: src/blocks/_pro/gridcolcard/edit-common.js:183
 #: src/blocks/border-box/edit.js:250 src/blocks/button/edit.js:606
 #: src/blocks/icon/edit.js:321
 msgid "Background Color"
@@ -470,7 +470,7 @@ msgstr "分割読み込み設定"
 msgid "FAQ Block Setting"
 msgstr "FAQブロック設定"
 
-#: src/admin/import-export/index.js:96 src/admin/toc.js:40
+#: src/admin/import-export/index.js:96 src/admin/toc.js:29
 #: inc/vk-blocks-pro/admin-pro/admin-pro.php:16
 msgid "Table of Contents Setting"
 msgstr "目次ブロック設定"
@@ -625,12 +625,12 @@ msgstr "変更を保存"
 msgid "Save Success"
 msgstr "保存しました"
 
-#: src/admin/toc.js:42
+#: src/admin/toc.js:31
 msgid ""
 "Please specify a common heading level setting to be used across the site."
 msgstr "目次ブロックで使用する共通の見出しレベル設定を指定してください。"
 
-#: src/admin/toc.js:61 inc/vk-blocks-pro/blocks/class-vk-blocks-toc.php:122
+#: src/admin/toc.js:50 inc/vk-blocks-pro/blocks/class-vk-blocks-toc.php:142
 msgid "Headings from H2 up to the selected level will be included."
 msgstr "H2から選択されたレベルまでの見出しが含まれます。"
 
@@ -858,7 +858,7 @@ msgid "2:3"
 msgstr "2:3"
 
 #: src/blocks/_pro/blog-card-featured-image/dimension-controls.js:156
-#: src/blocks/slider/edit.js:316
+#: src/blocks/slider/edit.js:511
 msgid "Height"
 msgstr "高さ"
 
@@ -1072,7 +1072,7 @@ msgstr "ボタンの文字"
 msgid "Image Height"
 msgstr "画像高さ"
 
-#: src/blocks/_pro/card/edit.js:88 src/blocks/slider/edit.js:320
+#: src/blocks/_pro/card/edit.js:88 src/blocks/slider/edit.js:515
 msgid "Slide Height for each device."
 msgstr "デバイス毎の高さ"
 
@@ -1298,7 +1298,7 @@ msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:147
 #: src/blocks/_pro/post-list-slider/edit.js:140
-#: src/blocks/_pro/table-of-contents-new/edit.js:231
+#: src/blocks/_pro/table-of-contents-new/edit.js:190
 #: src/components/column-layout-control/index.js:69
 msgid "Display type"
 msgstr "表示タイプ"
@@ -1415,7 +1415,7 @@ msgid "Grid column item link"
 msgstr "グリッドカラムアイテムリンク"
 
 #: src/blocks/_pro/grid-column-item/edit.js:113
-#: src/blocks/_pro/gridcolcard/edit-common.js:154
+#: src/blocks/_pro/gridcolcard/edit-common.js:175
 msgid "Color Settings"
 msgstr "色設定"
 
@@ -1531,81 +1531,81 @@ msgstr ""
 msgid "Make sure that no link is specified for the image block, etc."
 msgstr "画像ブロックなどにもリンクが指定されていないか注意してください。"
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:107
+#: src/blocks/_pro/gridcolcard/edit-common.js:105
+msgid "Column header media area"
+msgstr "カラムヘッダーメディアエリア"
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:128
 msgid "Card header image aspect ratio"
 msgstr "カードヘッダー画像 縦横比"
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:120
+#: src/blocks/_pro/gridcolcard/edit-common.js:141
 msgid "Image fit to column"
 msgstr "画像とカラム内の余白をなくす"
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:135
+#: src/blocks/_pro/gridcolcard/edit-common.js:156
 msgid "Column footer button area"
 msgstr "カラムフッターボタンエリア"
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:142
+#: src/blocks/_pro/gridcolcard/edit-common.js:163
 #: src/blocks/heading/edit.js:373
 msgid "Display"
 msgstr "表示"
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:146
+#: src/blocks/_pro/gridcolcard/edit-common.js:167
 #: src/blocks/_pro/post-list-slider/edit.js:326 src/blocks/heading/edit.js:377
-#: src/blocks/slider/edit.js:483
+#: src/blocks/slider/edit.js:488
 msgid "Hide"
 msgstr "非表示"
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:173
+#: src/blocks/_pro/gridcolcard/edit-common.js:194
 msgid "Column Radius"
 msgstr "カラムの角丸の大きさ"
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:179
+#: src/blocks/_pro/gridcolcard/edit-common.js:200
 #: src/blocks/balloon/edit.js:319
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:392
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:410
 msgid "Border"
 msgstr "枠線"
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:188
+#: src/blocks/_pro/gridcolcard/edit-common.js:209
 msgid "Border Width"
 msgstr "線の幅"
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:199
+#: src/blocks/_pro/gridcolcard/edit-common.js:220
 #: src/blocks/border-box/edit.js:241 src/extensions/core/group/style.js:119
 msgid "Border Color"
 msgstr "線の色"
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:208
+#: src/blocks/_pro/gridcolcard/edit-common.js:229
 #, fuzzy
 #| msgid "Border type"
 msgid "Border Style"
 msgstr "枠線の種類"
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:68
+#: src/blocks/_pro/gridcolcard/edit-common.js:69
 #: src/blocks/_pro/outer/edit.js:1450 src/blocks/_pro/step-item/edit.js:119
 #: src/blocks/_pro/timeline-item/edit.js:89 src/blocks/pr-content/edit.js:145
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:448
 msgid "Solid"
 msgstr "直線"
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:69
+#: src/blocks/_pro/gridcolcard/edit-common.js:70
 #: src/blocks/_pro/outer/edit.js:1458
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:460
 msgid "Dashed"
 msgstr "破線"
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:70
+#: src/blocks/_pro/gridcolcard/edit-common.js:71
 #: src/blocks/_pro/outer/edit.js:1454
 #: inc/vk-blocks/class-vk-blocks-global-settings.php:456
 msgid "Dotted"
 msgstr "点線"
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:76
+#: src/blocks/_pro/gridcolcard/edit-common.js:97
 msgid "Column padding"
 msgstr "カラムの余白"
-
-#: src/blocks/_pro/gridcolcard/edit-common.js:84
-msgid "Column header media area"
-msgstr "カラムヘッダーメディアエリア"
 
 #: src/blocks/_pro/gridcolcard/edit.js:121
 msgid "Column Width Setting"
@@ -2019,70 +2019,70 @@ msgstr "メディア"
 msgid "Text 1 Column"
 msgstr "テキスト 1 カラム"
 
-#: src/blocks/_pro/post-list-slider/edit.js:185 src/blocks/slider/edit.js:342
+#: src/blocks/_pro/post-list-slider/edit.js:185 src/blocks/slider/edit.js:347
 msgid "Slider Settings"
 msgstr "スライド設定"
 
-#: src/blocks/_pro/post-list-slider/edit.js:189 src/blocks/slider/edit.js:346
+#: src/blocks/_pro/post-list-slider/edit.js:189 src/blocks/slider/edit.js:351
 msgid "Effect"
 msgstr "エフェクト"
 
-#: src/blocks/_pro/post-list-slider/edit.js:199 src/blocks/slider/edit.js:356
+#: src/blocks/_pro/post-list-slider/edit.js:199 src/blocks/slider/edit.js:361
 msgid "Slide"
 msgstr "スライド"
 
-#: src/blocks/_pro/post-list-slider/edit.js:203 src/blocks/slider/edit.js:360
+#: src/blocks/_pro/post-list-slider/edit.js:203 src/blocks/slider/edit.js:365
 msgid "Fade"
 msgstr "フェード"
 
-#: src/blocks/_pro/post-list-slider/edit.js:210 src/blocks/slider/edit.js:367
+#: src/blocks/_pro/post-list-slider/edit.js:210 src/blocks/slider/edit.js:372
 msgid "Loop"
 msgstr "ループ"
 
-#: src/blocks/_pro/post-list-slider/edit.js:220 src/blocks/slider/edit.js:377
+#: src/blocks/_pro/post-list-slider/edit.js:220 src/blocks/slider/edit.js:382
 msgid "AutoPlay"
 msgstr "自動再生"
 
-#: src/blocks/_pro/post-list-slider/edit.js:230 src/blocks/slider/edit.js:387
+#: src/blocks/_pro/post-list-slider/edit.js:230 src/blocks/slider/edit.js:392
 msgid "Stop AutoPlay when swipe"
 msgstr "スワイプ時に自動再生を停止"
 
-#: src/blocks/_pro/post-list-slider/edit.js:240 src/blocks/slider/edit.js:397
+#: src/blocks/_pro/post-list-slider/edit.js:240 src/blocks/slider/edit.js:402
 msgid "Display Time"
 msgstr "表示時間"
 
-#: src/blocks/_pro/post-list-slider/edit.js:267 src/blocks/slider/edit.js:424
+#: src/blocks/_pro/post-list-slider/edit.js:267 src/blocks/slider/edit.js:429
 msgid "Change Speed"
 msgstr "切り替え時間"
 
-#: src/blocks/_pro/post-list-slider/edit.js:291 src/blocks/slider/edit.js:448
+#: src/blocks/_pro/post-list-slider/edit.js:291 src/blocks/slider/edit.js:453
 msgid "Pagination Type"
 msgstr "ページネーションの種類"
 
 #: src/blocks/_pro/post-list-slider/edit.js:302
 #: src/blocks/_pro/step-item/edit.js:139
-#: src/blocks/_pro/table-of-contents-new/edit.js:246
+#: src/blocks/_pro/table-of-contents-new/edit.js:205
 #: src/blocks/_pro/timeline-item/edit.js:105 src/blocks/heading/edit.js:265
-#: src/blocks/slider/edit.js:459 src/blocks/staff/edit.js:174
+#: src/blocks/slider/edit.js:464 src/blocks/staff/edit.js:174
 #: src/components/advanced-color-gradient-control/index.js:47
 msgid "Default"
 msgstr "標準"
 
-#: src/blocks/_pro/post-list-slider/edit.js:306 src/blocks/slider/edit.js:463
+#: src/blocks/_pro/post-list-slider/edit.js:306 src/blocks/slider/edit.js:468
 msgid "Number of slides"
 msgstr "スライドの枚数"
 
-#: src/blocks/_pro/post-list-slider/edit.js:319 src/blocks/slider/edit.js:476
+#: src/blocks/_pro/post-list-slider/edit.js:319 src/blocks/slider/edit.js:481
 msgid "Navigation Position"
 msgstr "ナビゲーションの位置"
 
 #: src/blocks/_pro/post-list-slider/edit.js:330 src/blocks/button/edit.js:355
-#: src/blocks/slider/edit.js:487
+#: src/blocks/slider/edit.js:492
 #: src/components/display-items-control/index.js:136
 msgid "Center"
 msgstr "中央"
 
-#: src/blocks/_pro/post-list-slider/edit.js:334 src/blocks/slider/edit.js:491
+#: src/blocks/_pro/post-list-slider/edit.js:334 src/blocks/slider/edit.js:496
 msgid "Bottom on Mobile device"
 msgstr "モバイルでは下部に表示"
 
@@ -2219,7 +2219,7 @@ msgid "Ex,6:00AM"
 msgstr "例) 午前 6:00"
 
 #: src/blocks/_pro/step-item/edit.js:109
-#: src/blocks/_pro/table-of-contents-new/edit.js:236
+#: src/blocks/_pro/table-of-contents-new/edit.js:195
 #: src/blocks/_pro/timeline-item/edit.js:75 src/blocks/icon-outer/edit.js:229
 #: src/blocks/icon/edit.js:221
 msgid "Style"
@@ -2365,73 +2365,71 @@ msgstr "ライン"
 
 #: src/blocks/_pro/table-of-contents-new/deprecated/1.104.0/save.js:16
 #: src/blocks/_pro/table-of-contents-new/deprecated/1.78.0/save.js:16
-#: src/blocks/_pro/table-of-contents-new/edit.js:407
-#: src/blocks/_pro/table-of-contents-new/save.js:30
+#: src/blocks/_pro/table-of-contents-new/edit.js:360
+#: src/blocks/_pro/table-of-contents-new/save.js:33
 msgid "Table of Contents"
 msgstr "目次"
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:218
+#: src/blocks/_pro/table-of-contents-new/edit.js:177
 msgid "Note on duplicating headings"
 msgstr "見出し複製時の注意"
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:223
+#: src/blocks/_pro/table-of-contents-new/edit.js:182
 msgid ""
 "If you duplicate a heading, the table of contents block will not work "
 "properly, please reassign the ID."
 msgstr ""
 "見出しを複製すると目次ブロックが適切に動作しません。IDを振り直してください。"
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:250
+#: src/blocks/_pro/table-of-contents-new/edit.js:209
 msgid "No frame"
 msgstr "枠無し"
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:257
+#: src/blocks/_pro/table-of-contents-new/edit.js:216
 msgid "Default Display Status"
 msgstr "初期表示状態"
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:265
+#: src/blocks/_pro/table-of-contents-new/edit.js:224
 msgid "OPEN"
 msgstr "OPEN"
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:269
+#: src/blocks/_pro/table-of-contents-new/edit.js:228
 msgid "CLOSE"
 msgstr "CLOSE"
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:276
+#: src/blocks/_pro/table-of-contents-new/edit.js:235
 msgid "Heading Levels"
-msgstr "見出しレベル設定"
+msgstr "見出しレベル"
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:281
+#: src/blocks/_pro/table-of-contents-new/edit.js:240
 msgid "Global heading level settings:"
 msgstr "サイト全体の見出しレベル設定はこちら："
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:286
+#: src/blocks/_pro/table-of-contents-new/edit.js:245
 msgid "VK Blocks Setting"
 msgstr "VK Blocks 設定"
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:290
+#: src/blocks/_pro/table-of-contents-new/edit.js:249
 msgid "Use custom heading levels"
 msgstr "独自の見出しレベルを使用する"
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:305
+#: src/blocks/_pro/table-of-contents-new/edit.js:264
 msgid "Using custom heading levels for this block."
 msgstr "このブロックには独自の見出しレベルを使用中。"
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:309
+#: src/blocks/_pro/table-of-contents-new/edit.js:268
 msgid "Using global heading levels settings."
 msgstr "このブロックには全体設定の見出しレベルを使用中。"
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:323
+#: src/blocks/_pro/table-of-contents-new/edit.js:282
 msgid "Include Headings Up To:"
 msgstr "見出しレベルの上限："
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:346
-#, fuzzy
-#| msgid "Include Headings Up To:"
+#: src/blocks/_pro/table-of-contents-new/edit.js:305
 msgid "Exclude Headings"
-msgstr "見出しレベルの上限："
+msgstr "除外する見出し"
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:348
+#: src/blocks/_pro/table-of-contents-new/edit.js:307
 msgid "Select headings to exclude from the table of contents."
 msgstr ""
 
@@ -3177,33 +3175,53 @@ msgstr ""
 "スライドをループさせたい場合、配置されたスライドアイテムの数は、1ビューに表示"
 "したいアイテム数の2倍以上である必要があります。"
 
-#: src/blocks/slider/edit.js:259
+#: src/blocks/slider/edit.js:290
 msgid "Change Slide Editor Mode"
 msgstr "スライド編集モードの変更"
 
-#: src/blocks/slider/edit.js:262
+#: src/blocks/slider/edit.js:293
 msgid "Edit ( Stacked Layout ) Mode"
 msgstr "編集（縦積み配置）モード"
 
-#: src/blocks/slider/edit.js:272
+#: src/blocks/slider/edit.js:303
 msgid "Preview ( Slide ) Mode"
 msgstr "プレビュー（スライド）モード"
 
-#: src/blocks/slider/edit.js:287
+#: src/blocks/slider/edit.js:318
 msgid "Editor Setting"
 msgstr "エディタ設定"
 
-#: src/blocks/slider/edit.js:291
+#: src/blocks/slider/edit.js:322
 msgid "Editor Mode"
 msgstr "編集モード"
 
-#: src/blocks/slider/edit.js:303
+#: src/blocks/slider/edit.js:334
 msgid "Edit ( Stacked Layout )"
 msgstr "編集（縦積み配置）"
 
-#: src/blocks/slider/edit.js:310
+#: src/blocks/slider/edit.js:341
 msgid "Preview ( Slide )"
 msgstr "プレビュー（スライド）"
+
+#: src/blocks/slider/edit.js:537
+msgid "Zoom Animation"
+msgstr "ズームアニメーション"
+
+#: src/blocks/slider/edit.js:541
+msgid "Enable zoom animation for slide background images"
+msgstr "スライドの背景画像にズームアニメーションを適用する"
+
+#: src/blocks/slider/edit.js:550
+msgid "Initial Background Scale"
+msgstr "背景画像の開始倍率"
+
+#: src/blocks/slider/edit.js:560
+msgid "Final Background Scale"
+msgstr "背景画像の終了倍率"
+
+#: src/blocks/slider/edit.js:570
+msgid "1 means original size. Larger values will zoom in the background image."
+msgstr "1は元のサイズです。大きい値ほど背景画像が拡大されます。"
 
 #: src/blocks/spacer/advanced-spacer-control.js:15
 msgid "height"
@@ -3799,7 +3817,7 @@ msgstr ""
 "複数のブロックを非表示にする場合は、最初にグループブロックに設定し、そのグ"
 "ループブロックに対して非表示にします。"
 
-#: src/extensions/common/highlighter/index.js:134
+#: src/extensions/common/highlighter/common.js:37
 msgid "Highlighter"
 msgstr "蛍光マーカー"
 
@@ -3930,7 +3948,7 @@ msgstr ""
 "theme.json が有効なテーマの場合は「枠線」パネルから色指定が可能になったため、"
 "ここでの色指定は非推奨になりました。"
 
-#: src/extensions/core/list/style.js:107
+#: src/extensions/core/list/style.js:108
 msgid "List Icon Color"
 msgstr "リストアイコンの色"
 
@@ -4306,19 +4324,19 @@ msgstr "ヘルプが必要な場合はこのサイトの管理者にお問い合
 msgid "FAQ Setting"
 msgstr "FAQ ブロックの設定"
 
-#: inc/vk-blocks-pro/blocks/class-vk-blocks-toc.php:79
+#: inc/vk-blocks-pro/blocks/class-vk-blocks-toc.php:99
 #, fuzzy
 #| msgid "Table of Contents Setting"
 msgid "Table of Contents Settings"
 msgstr "目次ブロック設定"
 
-#: inc/vk-blocks-pro/blocks/class-vk-blocks-toc.php:86
+#: inc/vk-blocks-pro/blocks/class-vk-blocks-toc.php:106
 #, fuzzy
 #| msgid "Heading style"
 msgid "Heading Levels to Include"
 msgstr "見出しスタイル"
 
-#: inc/vk-blocks-pro/blocks/class-vk-blocks-toc.php:97
+#: inc/vk-blocks-pro/blocks/class-vk-blocks-toc.php:117
 msgid ""
 "Configure which heading levels should be included in the table of contents."
 msgstr ""
@@ -5404,6 +5422,24 @@ msgid ""
 "Displays a simple schedule and other information that is useful for "
 "explaining the order."
 msgstr "順番を説明する時に便利でシンプルなスケジュールなどを表示します。"
+
+#~ msgid "Enable Zoom Animation"
+#~ msgstr "ズームアニメーションを有効にする"
+
+#~ msgid "Initial scale of the background image (1 = original size)."
+#~ msgstr "背景画像の初期倍率（1 = 元のサイズ）"
+
+#~ msgid "Final scale of the background image after zoom animation."
+#~ msgstr "ズームアニメーション後の背景画像の最終倍率"
+
+#, fuzzy
+#~| msgid "Tab Display Options"
+#~ msgid "Max Display Count"
+#~ msgstr "タブ表示オプション"
+
+#, fuzzy
+#~ msgid "Final Scale"
+#~ msgstr "縮尺"
 
 #, fuzzy
 #~| msgid ""

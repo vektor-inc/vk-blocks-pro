@@ -73,17 +73,17 @@ class VK_Blocks_TOC {
 		}
 
 		// グローバル設定時のみdata-vk-toc-heading属性を付与
-		$options      = get_option( 'vk_blocks_options', array() );
-		$levels       = isset( $options['toc_heading_levels'] ) ? $options['toc_heading_levels'] : array( 'h2', 'h3', 'h4', 'h5', 'h6' );
+		$options = get_option( 'vk_blocks_options', array() );
+		$levels  = isset( $options['toc_heading_levels'] ) ? $options['toc_heading_levels'] : array( 'h2', 'h3', 'h4', 'h5', 'h6' );
 
 		// parse_blocksを使用してブロックを解析
-		$blocks = parse_blocks( $content );
+		$blocks           = parse_blocks( $content );
 		$modified_content = '';
 
 		foreach ( $blocks as $block ) {
 			if ( in_array( $block['blockName'], array( 'core/heading', 'vk-blocks/heading' ), true ) ) {
 				// 見出しブロックの場合、data-vk-toc-heading属性を追加
-				$block['innerHTML'] = str_replace( '<h', '<h data-vk-toc-heading', $block['innerHTML'] );
+				$block['innerHTML']       = str_replace( '<h', '<h data-vk-toc-heading', $block['innerHTML'] );
 				$block['innerContent'][0] = $block['innerHTML'];
 			}
 			$modified_content .= serialize_block( $block );
@@ -169,7 +169,7 @@ class VK_Blocks_TOC {
 			$content = $post->post_content;
 
 			// カスタム設定を使用している目次ブロックがあるかチェック
-			$blocks = parse_blocks( $content );
+			$blocks            = parse_blocks( $content );
 			$has_custom_levels = false;
 
 			foreach ( $blocks as $block ) {
@@ -185,13 +185,18 @@ class VK_Blocks_TOC {
 			// 見出しを抽出
 			$content_headings = self::get_headings_from_content( $content );
 
+			// オプションを取得
+			$options = get_option( 'vk_blocks_options', array() );
+			// 配列アクセスとnull合体演算子を分解
+			$toc_heading_levels = isset( $options['toc_heading_levels'] ) ? $options['toc_heading_levels'] : array( 'h2', 'h3', 'h4', 'h5', 'h6' );
+
 			wp_localize_script(
 				'vk-blocks/table-of-contents-new-script',
 				'vkBlocksOptions',
 				array(
-					'contentHeadings' => $content_headings,
-					'hasCustomLevels' => $has_custom_levels,
-					'tocHeadingLevels' => get_option( 'vk_blocks_options', array() )['toc_heading_levels'] ?? array( 'h2', 'h3', 'h4', 'h5', 'h6' ),
+					'contentHeadings'  => $content_headings,
+					'hasCustomLevels'  => $has_custom_levels,
+					'tocHeadingLevels' => $toc_heading_levels,
 				)
 			);
 		}
@@ -204,21 +209,21 @@ class VK_Blocks_TOC {
 	 * @return array 見出し情報の配列.
 	 */
 	public static function get_headings_from_content( $content ) {
-		
+
 		// parse_blocksを使用してブロックを解析
 		$blocks = parse_blocks( $content );
-		
+
 		$headings = array();
-		
+
 		// 再帰的にブロックを探索する関数
-		$extract_headings = function( $block ) use ( &$extract_headings, &$headings ) {
+		$extract_headings = function ( $block ) use ( &$extract_headings, &$headings ) {
 
 			// core/headingとvk-blocks/headingブロックのみを処理
 			if ( in_array( $block['blockName'], array( 'core/heading', 'vk-blocks/heading' ), true ) ) {
-				
+
 				// レベルを取得
 				$level = isset( $block['attrs']['level'] ) ? $block['attrs']['level'] : 2;
-				
+
 				// IDを取得（複数のソースをチェック）
 				$id = '';
 				if ( isset( $block['attrs']['anchor'] ) ) {

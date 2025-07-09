@@ -1,3 +1,5 @@
+どうしよう、、、だから
+
 <?php
 /**
  * VK_Blocks_TOC class
@@ -39,64 +41,55 @@ class VK_Blocks_TOC {
 		add_action( 'admin_menu', array( $this, 'add_custom_fields' ) );
 		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_editor_assets' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_front_assets' ) );
+		add_filter( 'the_content', array( $this, 'mark_content_headings' ), 9 );
 	}
 
 	/**
-	 * Get headings from the content.
+	 * Mark headings in the content
 	 *
 	 * @param string $content The content.
 	 * @return string
 	 */
-	public static function get_headings_from_content( $content ) {
-		$blocks   = parse_blocks( $content );
-		$headings = array();
-
-		// 再帰的にブロックを探索する関数
-		$extract_headings = function ( $block ) use ( &$extract_headings, &$headings ) {
-			// core/headingとvk-blocks/headingブロックのみを処理
-			if ( in_array( $block['blockName'], array( 'core/heading', 'vk-blocks/heading' ), true ) ) {
-				// レベルを取得
-				$level = isset( $block['attrs']['level'] ) ? $block['attrs']['level'] : 2;
-
-				// IDを取得（複数のソースをチェック）
-				$id = '';
-				if ( isset( $block['attrs']['anchor'] ) ) {
-					$id = $block['attrs']['anchor'];
-				} elseif ( isset( $block['attrs']['id'] ) ) {
-					$id = $block['attrs']['id'];
-				} elseif ( preg_match( '/id="([^"]+)"/', $block['innerHTML'], $matches ) ) {
-					$id = $matches[1];
-				}
-
-				// コンテンツを取得
-				$content = '';
-				if ( preg_match( '/<h[1-6][^>]*>(.*?)<\/h[1-6]>/is', $block['innerHTML'], $matches ) ) {
-					$content = wp_strip_all_tags( $matches[1] );
-				}
-
-				if ( ! empty( $content ) ) {
-					$headings[] = array(
-						$level,
-						! empty( $id ) ? ' id="' . esc_attr( $id ) . '"' : '',
-						$content,
-					);
-				}
-			}
-
-			// インナーブロックがある場合は再帰的に処理
-			if ( ! empty( $block['innerBlocks'] ) ) {
-				foreach ( $block['innerBlocks'] as $inner_block ) {
-					$extract_headings( $inner_block );
-				}
-			}
-		};
-
-		// 各ブロックを処理
-		foreach ( $blocks as $block ) {
-			$extract_headings( $block );
+	public function mark_content_headings( $content ) {
+		if ( ! has_block( 'vk-blocks/table-of-contents-new' ) ) {
+			return $content;
 		}
 
-		return $headings;
+		// カスタム設定を使用している目次ブロックがあるかチェック
+		$blocks            = parse_blocks( $content );
+		$has_custom_levels = false;
+
+		foreach ( $blocks as $block ) {
+			if ( 'vk-blocks/table-of-contents-new' === $block['blockName'] ) {
+				$use_custom_levels = isset( $block['attrs']['useCustomLevels'] ) ? $block['attrs']['useCustomLevels'] : false;
+				if ( $use_custom_levels ) {
+					$has_custom_levels = true;
+					break;
+				}
+			}
+		}
+
+		// カスタム設定を使用している場合は、data-vk-toc-heading属性を付与しない
+		if ( $has_custom_levels ) {
+			return $content;
+		}
+
+		// グローバル設定時のみdata-vk-toc-heading属性を付与
+		$options      = get_option( 'vk_blocks_options', array() );
+		$levels       = isset( $options['toc_heading_levels'] ) ? $options['toc_heading_levels'] : array( 'h2', 'h3', 'h4', 'h5', 'h6' );
+		$levels_regex = implode(
+			'|',
+			array_map(
+				function ( $h ) {
+					return substr( $h, 1 );
+				},
+				$levels
+			)
+		);
+		$pattern      = '/<h(' . $levels_regex . ')(.*?)>/i';
+		$replacement  = '<h$1$2 data-vk-toc-heading>';
+		$content      = preg_replace( $pattern, $replacement, $content );
+		return $content;
 	}
 
 	/**
@@ -168,24 +161,97 @@ class VK_Blocks_TOC {
 	 */
 	public function enqueue_front_assets() {
 		if ( has_block( 'vk-blocks/table-of-contents-new' ) ) {
+			// カスタム設定を使用している目次ブロックがあるかチェック
 			global $post;
-			if ( ! $post ) {
-				return;
+			$content           = $post->post_content;
+			$blocks            = parse_blocks( $content );
+			$has_custom_levels = false;
+
+			foreach ( $blocks as $block ) {
+				if ( 'vk-blocks/table-of-contents-new' === $block['blockName'] ) {
+					$use_custom_levels = isset( $block['attrs']['useCustomLevels'] ) ? $block['attrs']['useCustomLevels'] : false;
+					if ( $use_custom_levels ) {
+						$has_custom_levels = true;
+						break;
+					}
+				}
 			}
 
-			$content            = $post->post_content;
-			$content_headings   = self::get_headings_from_content( $content );
-			$options            = get_option( 'vk_blocks_options', array() );
-			$toc_heading_levels = isset( $options['toc_heading_levels'] ) ? $options['toc_heading_levels'] : array( 'h2', 'h3', 'h4', 'h5', 'h6' );
+			// カスタム設定の場合、the_content内の見出しを抽出
+			$content_headings = array();
+			if ( $has_custom_levels ) {
+				$content_headings = self::get_headings_from_content( $content );
+			}
 
 			wp_localize_script(
 				'vk-blocks/table-of-contents-new-script',
 				'vkBlocksOptions',
-				array(
-					'contentHeadings'  => $content_headings,
-					'tocHeadingLevels' => $toc_heading_levels,
+				array_merge(
+					get_option( 'vk_blocks_options', array() ),
+					array(
+						'contentHeadings' => $content_headings,
+						'hasCustomLevels' => $has_custom_levels,
+					)
 				)
 			);
 		}
+	}
+
+	/**
+	 * The_content内のh2〜h6を抽出する共通メソッド
+	 *
+	 * @param string $content 投稿本文.
+	 * @return array 見出し情報の配列.
+	 */
+	public static function get_headings_from_content( $content ) {
+		$blocks   = parse_blocks( $content );
+		$headings = array();
+
+		// 再帰的にブロックを探索する関数
+		$extract_headings = function ( $block ) use ( &$extract_headings, &$headings ) {
+			// core/headingとvk-blocks/headingブロックのみを処理
+			if ( in_array( $block['blockName'], array( 'core/heading', 'vk-blocks/heading' ), true ) ) {
+				// レベルを取得
+				$level = isset( $block['attrs']['level'] ) ? $block['attrs']['level'] : 2;
+
+				// IDを取得（複数のソースをチェック）
+				$id = '';
+				if ( isset( $block['attrs']['anchor'] ) ) {
+					$id = $block['attrs']['anchor'];
+				} elseif ( isset( $block['attrs']['id'] ) ) {
+					$id = $block['attrs']['id'];
+				} elseif ( preg_match( '/id="([^"]+)"/', $block['innerHTML'], $matches ) ) {
+					$id = $matches[1];
+				}
+
+				// コンテンツを取得
+				$content = '';
+				if ( preg_match( '/<h[1-6][^>]*>(.*?)<\/h[1-6]>/is', $block['innerHTML'], $matches ) ) {
+					$content = wp_strip_all_tags( $matches[1] );
+				}
+
+				if ( ! empty( $content ) ) {
+					$headings[] = array(
+						$level,
+						! empty( $id ) ? ' id="' . esc_attr( $id ) . '"' : '',
+						$content,
+					);
+				}
+			}
+
+			// インナーブロックがある場合は再帰的に処理
+			if ( ! empty( $block['innerBlocks'] ) ) {
+				foreach ( $block['innerBlocks'] as $inner_block ) {
+					$extract_headings( $inner_block );
+				}
+			}
+		};
+
+		// 各ブロックを処理
+		foreach ( $blocks as $block ) {
+			$extract_headings( $block );
+		}
+
+		return $headings;
 	}
 }

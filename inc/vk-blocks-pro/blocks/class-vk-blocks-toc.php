@@ -42,7 +42,7 @@ class VK_Blocks_TOC {
 	}
 
 	/**
-	 * Mark headings in the content
+	 * Get headings from the content.
 	 *
 	 * @param string $content The content.
 	 * @return string

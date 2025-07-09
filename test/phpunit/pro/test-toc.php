@@ -80,57 +80,73 @@ class TOCBlockTest extends WP_UnitTestCase {
 		$this->setup_test_environment($has_block, $options);
 		$this->create_post_and_set_global($input);
 
-		$actual = $this->toc_instance->mark_content_headings($input);
+		$actual = VK_Blocks_TOC::get_headings_from_content($input);
 
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
 		print $label . PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
-		print 'expected ::::' . $expected . PHP_EOL;
-		print 'actual   ::::' . $actual . PHP_EOL;
+		print 'expected ::::' . json_encode($expected) . PHP_EOL;
+		print 'actual   ::::' . json_encode($actual) . PHP_EOL;
 		$this->assertEquals($expected, $actual);
 		print PHP_EOL;
 	}
 
 	public function test_toc_patterns() {
 		$cases = [
-			// 基本的なIDの付与テスト
+			// 基本的な見出し抽出テスト
 			[
-				'label' => 'test_adds_id_to_headings_when_toc_exists',
-				'input' => '<!-- wp:vk-blocks/table-of-contents-new /--><h2>h2</h2><h3>h3</h3>',
-				'expected' => '<!-- wp:vk-blocks/table-of-contents-new /--><h2>h2</h2><h3>h3</h3>',
+				'label' => 'test_extracts_headings_when_toc_exists',
+				'input' => '<!-- wp:heading {"level":2} --><h2>h2</h2><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>h3</h3><!-- /wp:heading -->',
+				'expected' => [
+					[2, '', 'h2'],
+					[3, '', 'h3']
+				],
 				'has_block' => true,
 				'options' => ['toc_heading_levels' => ['h2','h3']],
 			],
 			// TOCブロックが存在しない場合
 			[
-				'label' => 'test_no_changes_when_toc_not_exists',
-				'input' => '<h2>h2</h2><h3>h3</h3>',
-				'expected' => '<h2>h2</h2><h3>h3</h3>',
+				'label' => 'test_extracts_headings_when_toc_not_exists',
+				'input' => '<!-- wp:heading {"level":2} --><h2>h2</h2><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>h3</h3><!-- /wp:heading -->',
+				'expected' => [
+					[2, '', 'h2'],
+					[3, '', 'h3']
+				],
 				'has_block' => false,
 				'options' => ['toc_heading_levels' => ['h2','h3','h4','h5','h6']],
 			],
 			// カスタム見出しレベル設定のテスト
 			[
-				'label' => 'test_respects_custom_heading_levels',
-				'input' => '<!-- wp:vk-blocks/table-of-contents-new /--><h2>h2</h2><h3>h3</h3><h4>h4</h4>',
-				'expected' => '<!-- wp:vk-blocks/table-of-contents-new /--><h2>h2</h2><h3>h3</h3><h4>h4</h4>',
+				'label' => 'test_extracts_headings_with_custom_levels',
+				'input' => '<!-- wp:heading {"level":2} --><h2>h2</h2><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>h3</h3><!-- /wp:heading --><!-- wp:heading {"level":4} --><h4>h4</h4><!-- /wp:heading -->',
+				'expected' => [
+					[2, '', 'h2'],
+					[3, '', 'h3'],
+					[4, '', 'h4']
+				],
 				'has_block' => true,
 				'options' => ['toc_heading_levels' => ['h2','h3']],
 			],
 			// border-boxブロック内の見出しのテスト
 			[
 				'label' => 'test_border_box_headings',
-				'input' => '<!-- wp:vk-blocks/table-of-contents-new /--><!-- wp:vk-blocks/border-box --><div class="wp-block-vk-blocks-border-box"><h4>border box heading</h4></div><!-- /wp:vk-blocks/border-box --><h2>normal h2</h2>',
-				'expected' => '<!-- wp:vk-blocks/table-of-contents-new /--><!-- wp:vk-blocks/border-box --><div class="wp-block-vk-blocks-border-box"><h4>border box heading</h4></div><!-- /wp:vk-blocks/border-box --><h2>normal h2</h2>',
+				'input' => '<!-- wp:vk-blocks/border-box --><div class="wp-block-vk-blocks-border-box"><!-- wp:heading {"level":4} --><h4>border box heading</h4><!-- /wp:heading --></div><!-- /wp:vk-blocks/border-box --><!-- wp:heading {"level":2} --><h2>normal h2</h2><!-- /wp:heading -->',
+				'expected' => [
+					[4, '', 'border box heading'],
+					[2, '', 'normal h2']
+				],
 				'has_block' => true,
 				'options' => ['toc_heading_levels' => ['h2','h3','h4']],
 			],
 			// blog-card-site-titleブロック内の見出しのテスト
 			[
 				'label' => 'test_blog_card_site_title_headings',
-				'input' => '<!-- wp:vk-blocks/table-of-contents-new /--><!-- wp:vk-blocks/blog-card --><div class="wp-block-vk-blocks-blog-card"><!-- wp:vk-blocks/blog-card-site-title --><h3>site title</h3><!-- /wp:vk-blocks/blog-card-site-title --></div><!-- /wp:vk-blocks/blog-card --><h2>normal h2</h2>',
-				'expected' => '<!-- wp:vk-blocks/table-of-contents-new /--><!-- wp:vk-blocks/blog-card --><div class="wp-block-vk-blocks-blog-card"><!-- wp:vk-blocks/blog-card-site-title --><h3>site title</h3><!-- /wp:vk-blocks/blog-card-site-title --></div><!-- /wp:vk-blocks/blog-card --><h2>normal h2</h2>',
+				'input' => '<!-- wp:vk-blocks/blog-card --><div class="wp-block-vk-blocks-blog-card"><!-- wp:vk-blocks/blog-card-site-title --><!-- wp:heading {"level":3} --><h3>site title</h3><!-- /wp:heading --><!-- /wp:vk-blocks/blog-card-site-title --></div><!-- /wp:vk-blocks/blog-card --><!-- wp:heading {"level":2} --><h2>normal h2</h2><!-- /wp:heading -->',
+				'expected' => [
+					[3, '', 'site title'],
+					[2, '', 'normal h2']
+				],
 				'has_block' => true,
 				'options' => ['toc_heading_levels' => ['h2','h3']],
 			],

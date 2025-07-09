@@ -108,6 +108,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Table of Contents (Pro) ] Fixed unwanted headings in site-wide settings by limiting extraction to core/heading and vk-blocks/heading blocks only.
 [ Bug fix ][ Table of Contents (Pro) ] Fixed H2 selection issue in heading level settings and improved code structure.
 
 = 1.106.0 =

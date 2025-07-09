@@ -42,10 +42,10 @@ class VK_Blocks_TOC {
 	}
 
 	/**
-	 * The_content内のh2〜h6を抽出する共通メソッド
+	 * Mark headings in the content
 	 *
-	 * @param string $content 投稿本文.
-	 * @return array 見出し情報の配列.
+	 * @param string $content The content.
+	 * @return string
 	 */
 	public static function get_headings_from_content( $content ) {
 		$blocks   = parse_blocks( $content );

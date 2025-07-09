@@ -1,5 +1,6 @@
+// 目次リスト内のOBJ文字を除去
+// https://github.com/vektor-inc/vk-blocks-pro/pull/2078
 document.addEventListener('DOMContentLoaded', () => {
-	// OBJ文字を除去
 	const tocBlock = document.querySelector('.vk_tableOfContents');
 	const tocList = document.querySelector('.vk_tableOfContents_list');
 	if (!tocList || !tocBlock) {

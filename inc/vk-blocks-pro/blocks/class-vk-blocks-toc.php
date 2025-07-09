@@ -173,16 +173,16 @@ class VK_Blocks_TOC {
 				return;
 			}
 
-			$content           = $post->post_content;
-			$content_headings = self::get_headings_from_content( $content );
-			$options          = get_option( 'vk_blocks_options', array() );
+			$content            = $post->post_content;
+			$content_headings   = self::get_headings_from_content( $content );
+			$options            = get_option( 'vk_blocks_options', array() );
 			$toc_heading_levels = isset( $options['toc_heading_levels'] ) ? $options['toc_heading_levels'] : array( 'h2', 'h3', 'h4', 'h5', 'h6' );
 
 			wp_localize_script(
 				'vk-blocks/table-of-contents-new-script',
 				'vkBlocksOptions',
 				array(
-					'contentHeadings'   => $content_headings,
+					'contentHeadings'  => $content_headings,
 					'tocHeadingLevels' => $toc_heading_levels,
 				)
 			);

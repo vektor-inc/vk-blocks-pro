@@ -137,8 +137,8 @@ class VK_Blocks_TOC {
 				array_merge(
 					get_option( 'vk_blocks_options', array() ),
 					array(
-						'contentHeadings' => $content_headings,
-						'hasCustomLevels' => $has_custom_levels,
+						'contentHeadings'     => $content_headings,
+						'hasCustomLevels'     => $has_custom_levels,
 						'customHeadingLevels' => $custom_levels,
 					)
 				)

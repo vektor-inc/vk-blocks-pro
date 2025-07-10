@@ -43,7 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// 見出しレベルの設定を取得
 	let allowedLevels;
-	if (window.vkBlocksOptions?.hasCustomLevels && window.vkBlocksOptions?.customHeadingLevels?.length) {
+	if (
+		window.vkBlocksOptions?.hasCustomLevels &&
+		window.vkBlocksOptions?.customHeadingLevels?.length
+	) {
 		// カスタム設定の場合
 		allowedLevels = window.vkBlocksOptions.customHeadingLevels.map((l) =>
 			parseInt(l.replace('h', ''))

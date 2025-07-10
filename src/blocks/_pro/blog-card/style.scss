@@ -12,8 +12,8 @@
 	// URLInputとボタンのレイアウト調整
 	.vk-blocks-blog-card-url-input-wrapper {
 		display: grid;
-		grid-template-columns: 1fr auto;
-		gap: 16px;
+		grid-template-columns: 1fr auto auto;
+		gap: 8px;
 		width: 100%;
 
 		.wp-block-embed__placeholder-input {
@@ -25,6 +25,7 @@
 		.components-button {
 			white-space: nowrap;
 			height: auto;
+			min-width: 0;
 		}
 	}
 

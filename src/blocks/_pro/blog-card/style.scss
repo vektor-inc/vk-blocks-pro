@@ -10,33 +10,15 @@
 	}
 
 	// URLInputとボタンのレイアウト調整
-	.vk-blocks-blog-card-url-input-wrapper {
-		display: grid;
-		grid-template-columns: 1fr auto auto;
-		gap: 8px;
-		width: 100%;
+	.components-placeholder__fieldset form {
+		flex-wrap: initial;
 
-		.wp-block-embed__placeholder-input {
+		.components-base-control  {
 			width: 100%;
-			min-width: 0;
-			box-sizing: border-box;
 		}
 
-		.components-button {
-			white-space: nowrap;
-			height: auto;
-			min-width: 0;
-		}
-	}
-
-	@media (max-width: 600px) {
-		.vk-blocks-blog-card-url-input-wrapper {
-			grid-template-columns: 1fr;
-			.wp-block-embed__placeholder-input,
-			.components-button {
-				width: 100%;
-				min-width: 0;
-			}
+		button {
+			height: 100%;
 		}
 	}
 }

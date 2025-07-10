@@ -25,7 +25,6 @@ const URLPlaceholder = ({
 			)}
 		>
 			<form onSubmit={onSubmit}>
-				<div className="vk-blocks-blog-card-url-input-wrapper">
 					<URLInput
 						__nextHasNoMarginBottom
 						value={value || ''}
@@ -39,7 +38,6 @@ const URLPlaceholder = ({
 					<Button variant="primary" type="submit">
 						{_x('Embed', 'button label')}
 					</Button>
-				</div>
 			</form>
 			{cannotEmbed && (
 				<div className="components-placeholder__error">

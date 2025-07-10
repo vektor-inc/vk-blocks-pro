@@ -42,9 +42,18 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	// 見出しレベルの設定を取得
-	const allowedLevels = window.vkBlocksOptions?.tocHeadingLevels?.map((l) =>
-		parseInt(l.replace('h', ''))
-	) || [2, 3, 4, 5, 6];
+	let allowedLevels;
+	if (window.vkBlocksOptions?.hasCustomLevels && window.vkBlocksOptions?.customHeadingLevels?.length) {
+		// カスタム設定の場合
+		allowedLevels = window.vkBlocksOptions.customHeadingLevels.map((l) =>
+			parseInt(l.replace('h', ''))
+		);
+	} else {
+		// グローバル設定の場合
+		allowedLevels = window.vkBlocksOptions?.toc_heading_levels?.map((l) =>
+			parseInt(l.replace('h', ''))
+		) || [2, 3, 4, 5, 6];
+	}
 
 	// 除外する見出しのIDを取得
 	const excludedHeadings = tocBlock.dataset.excludedHeadings

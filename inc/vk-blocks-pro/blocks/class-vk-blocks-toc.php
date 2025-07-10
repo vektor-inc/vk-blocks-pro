@@ -115,22 +115,21 @@ class VK_Blocks_TOC {
 			$content           = $post->post_content;
 			$blocks            = parse_blocks( $content );
 			$has_custom_levels = false;
+			$custom_levels     = array();
 
 			foreach ( $blocks as $block ) {
 				if ( 'vk-blocks/table-of-contents-new' === $block['blockName'] ) {
 					$use_custom_levels = isset( $block['attrs']['useCustomLevels'] ) ? $block['attrs']['useCustomLevels'] : false;
 					if ( $use_custom_levels ) {
 						$has_custom_levels = true;
+						$custom_levels     = isset( $block['attrs']['customHeadingLevels'] ) ? $block['attrs']['customHeadingLevels'] : array();
 						break;
 					}
 				}
 			}
 
-			// カスタム設定の場合、the_content内の見出しを抽出
-			$content_headings = array();
-			if ( $has_custom_levels ) {
-				$content_headings = self::get_headings_from_content( $content );
-			}
+			// 見出し情報を抽出（グローバル設定とカスタム設定の両方で使用）
+			$content_headings = self::get_headings_from_content( $content );
 
 			wp_localize_script(
 				'vk-blocks/table-of-contents-new-script',
@@ -140,6 +139,7 @@ class VK_Blocks_TOC {
 					array(
 						'contentHeadings' => $content_headings,
 						'hasCustomLevels' => $has_custom_levels,
+						'customHeadingLevels' => $custom_levels,
 					)
 				)
 			);

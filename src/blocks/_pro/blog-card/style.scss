@@ -8,4 +8,21 @@
 			}
 		}
 	}
+
+	// URLInputとボタンのレイアウト調整
+	.vk-blocks-blog-card-url-input-wrapper {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		width: 100%;
+
+		.block-editor-url-input {
+			flex: 1;
+			min-width: 0;
+		}
+
+		.components-button {
+			flex-shrink: 0;
+		}
+	}
 }

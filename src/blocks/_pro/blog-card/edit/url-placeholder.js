@@ -25,19 +25,19 @@ const URLPlaceholder = ({
 			)}
 		>
 			<form onSubmit={onSubmit}>
-					<URLInput
-						__nextHasNoMarginBottom
-						value={value || ''}
-						onChange={(newValue) => {
-							onChange({ target: { value: newValue } });
-						}}
-						placeholder={__('Enter URL to embed here…')}
-						className="components-placeholder__input"
-						aria-label={label}
-					/>
-					<Button variant="primary" type="submit">
-						{_x('Embed', 'button label')}
-					</Button>
+				<URLInput
+					__nextHasNoMarginBottom
+					value={value || ''}
+					onChange={(newValue) => {
+						onChange({ target: { value: newValue } });
+					}}
+					placeholder={__('Enter URL to embed here…')}
+					className="components-placeholder__input"
+					aria-label={label}
+				/>
+				<Button variant="primary" type="submit">
+					{_x('Embed', 'button label')}
+				</Button>
 			</form>
 			{cannotEmbed && (
 				<div className="components-placeholder__error">

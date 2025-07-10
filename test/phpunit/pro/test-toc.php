@@ -164,26 +164,6 @@ class TOCBlockTest extends WP_UnitTestCase {
 				'options' => ['toc_heading_levels' => ['h2']],
 			],
 			[
-				'label' => 'test_excludes_border_box_heading',
-				'input' => '<!-- wp:vk-blocks/table-of-contents-new /--><!-- wp:heading {"level":2} --><h2>normal heading</h2><!-- /wp:heading --><!-- wp:vk-blocks/border-box {"heading":"border box heading","headingTag":"h3"} --><div class="vk_borderBox is-style-vk_borderBox-style-solid-kado-tit-tab"><div class="vk_borderBox_title_container"><div class="vk_borderBox_icon_border"><i class="fas fa-info-circle"></i></div><h3 class="vk_borderBox_title">border box heading</h3></div><div class="vk_borderBox_body"></div></div><!-- /wp:vk-blocks/border-box --><!-- wp:heading {"level":4} --><h4>another normal heading</h4><!-- /wp:heading -->',
-				'expected' => [
-					[2, '', 'normal heading'],
-					[4, '', 'another normal heading'],
-				],
-				'has_block' => true,
-				'options' => ['toc_heading_levels' => ['h2','h3','h4']],
-			],
-			[
-				'label' => 'test_excludes_blog_card_title_heading',
-				'input' => '<!-- wp:vk-blocks/table-of-contents-new /--><!-- wp:heading {"level":2} --><h2>normal heading</h2><!-- /wp:heading --><!-- wp:vk-blocks-pro/blog-card-title {"level":3,"textAlign":"left"} --><h3 class="has-text-align-left">blog card title</h3><!-- /wp:vk-blocks-pro/blog-card-title --><!-- wp:heading {"level":4} --><h4>another normal heading</h4><!-- /wp:heading -->',
-				'expected' => [
-					[2, '', 'normal heading'],
-					[4, '', 'another normal heading'],
-				],
-				'has_block' => true,
-				'options' => ['toc_heading_levels' => ['h2','h3','h4']],
-			],
-			[
 				'label' => 'test_excludes_mixed_non_heading_blocks',
 				'input' => '<!-- wp:vk-blocks/table-of-contents-new /--><!-- wp:heading {"level":2} --><h2>normal heading</h2><!-- /wp:heading --><!-- wp:vk-blocks/border-box {"heading":"border box h3","headingTag":"h3"} --><div class="vk_borderBox"><div class="vk_borderBox_title_container"><h3 class="vk_borderBox_title">border box h3</h3></div></div><!-- /wp:vk-blocks/border-box --><!-- wp:vk-blocks-pro/blog-card-title {"level":4} --><h4>blog card h4</h4><!-- /wp:vk-blocks-pro/blog-card-title --><!-- wp:heading {"level":5} --><h5>normal heading h5</h5><!-- /wp:heading -->',
 				'expected' => [

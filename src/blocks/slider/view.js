@@ -1,3 +1,4 @@
+/* global Swiper */
 document.defaultView.addEventListener('load', function () {
 	// //data-vkb-slider属性のNodeを取得
 	let sliderNodeList = document.querySelectorAll('[data-vkb-slider]');
@@ -86,127 +87,104 @@ document.defaultView.addEventListener('load', function () {
 			// ズームアニメーション用のスタイルを追加
 			addZoomAnimationStyles(attributes, sliderId);
 
-			let SwiperSetting = `
-			var swiper${index} = new Swiper ('.vk_slider_${sliderId}', {
-			`;
-
-			if (attributes.autoPlay) {
-				SwiperSetting += `
-				autoplay: {
-					delay: ${attributes.autoPlayDelay},
-					disableOnInteraction: ${attributes.autoPlayStop},
-					stopOnLastSlide: ${!attributes.loop},
+			// Swiper設定オブジェクトを組み立て
+			const config = {
+				autoplay: attributes.autoPlay
+					? {
+							delay: Number(attributes.autoPlayDelay) || 2500,
+							disableOnInteraction: !!attributes.autoPlayStop,
+							stopOnLastSlide: !attributes.loop,
+						}
+					: false,
+				pagination:
+					attributes.pagination !== 'hide'
+						? {
+								el: '.swiper-pagination',
+								clickable: true,
+								type: attributes.pagination,
+								renderFraction(currentClass, totalClass) {
+									return (
+										'<span class="' +
+										currentClass +
+										'"></span>' +
+										' / ' +
+										'<span class="' +
+										totalClass +
+										'"></span>'
+									);
+								},
+							}
+						: false,
+				speed: Number(attributes.speed) || 300,
+				loop: !!attributes.loop,
+				effect: attributes.effect || 'slide',
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
 				},
-				`;
-			}
-
-			if (attributes.pagination !== 'hide') {
-				SwiperSetting += `
-				pagination: {
-					el: '.swiper-pagination',
-					clickable : true,
-					type: '${attributes.pagination}',
-					renderFraction: function (currentClass, totalClass) {
-						return '<span class="' + currentClass + '"></span>' + ' / ' + '<span class="' + totalClass + '"></span>';
-					},
-				},
-				`;
-			}
-
-			if (attributes.speed) {
-				SwiperSetting += `
-				speed: ${attributes.speed},
-				`;
-			}
+			};
 
 			if (attributes.effect !== 'fade') {
 				if (attributes.slidesPerViewMobile) {
-					SwiperSetting += `slidesPerView: ${attributes.slidesPerViewMobile},`;
-					if (
-						attributes.slidesPerGroup &&
-						attributes.slidesPerGroup === 'slides-per-view' &&
-						Number.isInteger(attributes.slidesPerViewMobile)
-					) {
-						SwiperSetting += `slidesPerGroup: ${attributes.slidesPerViewMobile},`;
-					} else {
-						SwiperSetting += `slidesPerGroup: 1,`;
-					}
+					config.slidesPerView = Number(
+						attributes.slidesPerViewMobile
+					);
+					config.slidesPerGroup =
+						attributes.slidesPerGroup === 'slides-per-view'
+							? Number(attributes.slidesPerViewMobile)
+							: 1;
 				} else if (attributes.slidesPerView) {
-					SwiperSetting += `slidesPerView: ${attributes.slidesPerView},`;
-					if (
-						attributes.slidesPerGroup &&
-						attributes.slidesPerGroup === 'slides-per-view' &&
-						Number.isInteger(attributes.slidesPerView)
-					) {
-						SwiperSetting += `slidesPerGroup: ${attributes.slidesPerView},`;
-					} else {
-						SwiperSetting += `slidesPerGroup: 1,`;
-					}
+					config.slidesPerView = Number(attributes.slidesPerView);
+					config.slidesPerGroup =
+						attributes.slidesPerGroup === 'slides-per-view'
+							? Number(attributes.slidesPerView)
+							: 1;
 				} else {
-					SwiperSetting += `slidesPerView: 1,`;
-					SwiperSetting += `slidesPerGroup: 1,`;
+					config.slidesPerView = 1;
+					config.slidesPerGroup = 1;
 				}
 				if (
 					attributes.slidesPerViewTablet ||
 					attributes.slidesPerViewPC
 				) {
-					// Responsive breakpoints
-					SwiperSetting += `breakpoints: {`;
+					config.breakpoints = {};
 					if (attributes.slidesPerViewTablet) {
-						SwiperSetting += `576: {`;
-						SwiperSetting += `slidesPerView: ${attributes.slidesPerViewTablet},`;
-						if (
-							attributes.slidesPerGroup &&
-							attributes.slidesPerGroup === 'slides-per-view' &&
-							Number.isInteger(attributes.slidesPerViewTablet)
-						) {
-							SwiperSetting += `slidesPerGroup: ${attributes.slidesPerViewTablet},`;
-						}
-						SwiperSetting += `},`;
+						config.breakpoints[576] = {
+							slidesPerView: Number(
+								attributes.slidesPerViewTablet
+							),
+							slidesPerGroup:
+								attributes.slidesPerGroup === 'slides-per-view'
+									? Number(attributes.slidesPerViewTablet)
+									: 1,
+						};
 					}
 					if (attributes.slidesPerViewPC) {
-						SwiperSetting += `992: {`;
-						SwiperSetting += `slidesPerView: ${attributes.slidesPerViewPC},`;
-						if (
-							attributes.slidesPerGroup &&
-							attributes.slidesPerGroup === 'slides-per-view' &&
-							Number.isInteger(attributes.slidesPerViewPC)
-						) {
-							SwiperSetting += `slidesPerGroup: ${attributes.slidesPerViewPC},`;
-						}
-						SwiperSetting += `},`;
+						config.breakpoints[992] = {
+							slidesPerView: Number(attributes.slidesPerViewPC),
+							slidesPerGroup:
+								attributes.slidesPerGroup === 'slides-per-view'
+									? Number(attributes.slidesPerViewPC)
+									: 1,
+						};
 					}
-					SwiperSetting += `},`;
 				}
 				if (attributes.centeredSlides) {
-					SwiperSetting += `centeredSlides: ${attributes.centeredSlides},`;
+					config.centeredSlides = !!attributes.centeredSlides;
 				}
 			}
 
-			if (attributes.loop) {
-				SwiperSetting += `
-				loop: ${attributes.loop},
-				`;
-			}
-
-			if (attributes.effect) {
-				SwiperSetting += `
-				effect: '${attributes.effect}',
-				`;
-			}
-
-			SwiperSetting += `
-				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
-				},
-			});`;
-			// eslint-disable-next-line no-eval
-			eval(SwiperSetting);
+			// Swiperインスタンスをwindow変数に格納
+			window[`swiper${index}`] = new Swiper(
+				`.vk_slider_${sliderId}`,
+				config
+			);
 			// ページネーションがOFFの時非表示
-			if (attributes.pagination === 'hide') {
-				// eslint-disable-next-line no-eval
-				eval(`swiper${index}.pagination.destroy();`);
+			if (
+				attributes.pagination === 'hide' &&
+				window[`swiper${index}`]?.pagination
+			) {
+				window[`swiper${index}`].pagination.destroy();
 			}
 		}
 	}

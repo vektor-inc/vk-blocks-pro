@@ -11,13 +11,7 @@ export default function save(props) {
 		useCustomLevels,
 		customHeadingLevels,
 		excludedHeadings,
-		blockId,
 	} = attributes;
-
-	// blockIdからユニークIDを生成
-	const checkboxId = `chck-toc-${blockId}`;
-	const labelId = `vk-tab-label-toc-${blockId}`;
-
 	const blockProps = useBlockProps.save({
 		className: `vk_tableOfContents vk_tableOfContents-style-${style} tabs`,
 		'data-use-custom-levels': useCustomLevels ? 'true' : 'false',
@@ -38,11 +32,11 @@ export default function save(props) {
 				<div className={'vk_tableOfContents_title'}>
 					{__('Table of Contents', 'vk-blocks-pro')}
 				</div>
-				<input type="checkbox" id={checkboxId} />
+				<input type="checkbox" id="chck1" />
 				<label
 					className={`tab-label vk_tableOfContents_openCloseBtn button_status button_status-${open}`}
-					htmlFor={checkboxId}
-					id={labelId}
+					htmlFor="chck1"
+					id="vk-tab-label"
 				>
 					{'open' === open && <>CLOSE</>}
 					{'open' !== open && <>OPEN</>}

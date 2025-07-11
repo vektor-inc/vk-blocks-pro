@@ -139,24 +139,24 @@ $toc-left-margin: 1rem;
 	}
 
 	// 編集画面、または ver 1.76.2 以前で疑似要素を使用時
-	.button_status-open:not(#vk-tab-label) {
+	.button_status-open:not(#vk-tab-label):not([id^="vk-tab-label-toc-"]) {
 		&::before {
 			content: "CLOSE";
 		}
 	}
-	.button_status-close:not(#vk-tab-label) {
+	.button_status-close:not(#vk-tab-label):not([id^="vk-tab-label-toc-"]) {
 		&::before {
 			content: "OPEN";
 		}
 	}
 	// :checked
 	input:checked {
-		~ .button_status-open:not(#vk-tab-label) {
+		~ .button_status-open:not(#vk-tab-label):not([id^="vk-tab-label-toc-"]) {
 			&::before {
 				content: "OPEN";
 			}
 		}
-		~ .button_status-close:not(#vk-tab-label) {
+		~ .button_status-close:not(#vk-tab-label):not([id^="vk-tab-label-toc-"]) {
 			&::before {
 				content: "CLOSE";
 			}

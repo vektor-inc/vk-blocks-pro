@@ -77,7 +77,21 @@ export default function TOCEdit(props) {
 		useCustomLevels,
 		customHeadingLevels,
 		excludedHeadings = [],
+		blockId,
 	} = attributes;
+
+	// blockIdが空の場合のみ、新しいIDを生成してattributesに保存
+	useEffect(() => {
+		if (!blockId) {
+			const newId = Math.random().toString(36).substr(2, 8);
+			setAttributes({ blockId: newId });
+		}
+	}, [blockId, setAttributes]);
+
+	// blockIdが存在する場合はそれを使用、なければ仮のIDを使用
+	const uniqueId = blockId || 'temp-id';
+	const checkboxId = `vk-tab-label-toc-${uniqueId}`;
+
 	const blockProps = useBlockProps({
 		className: `vk_tableOfContents vk_tableOfContents-style-${style} tabs`,
 	});
@@ -355,10 +369,10 @@ export default function TOCEdit(props) {
 					<div className={'vk_tableOfContents_title'}>
 						{__('Table of Contents', 'vk-blocks-pro')}
 					</div>
-					<input type="checkbox" id="chck1" />
+					<input type="checkbox" id={checkboxId} />
 					<label
 						className={`tab-label vk_tableOfContents_openCloseBtn button_status button_status-${open}`}
-						htmlFor="chck1"
+						htmlFor={checkboxId}
 					/>
 					<ul
 						className={`vk_tableOfContents_list tab_content-${open}`}

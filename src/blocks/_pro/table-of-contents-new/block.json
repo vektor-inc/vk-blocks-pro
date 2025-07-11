@@ -8,6 +8,10 @@
 	"editorScript": "vk-blocks-build-js",
 	"editorStyle": "vk-blocks-build-editor-css",
 	"attributes": {
+		"blockId": {
+			"type": "string",
+			"default": ""
+		},
 		"style": {
 			"type": "string",
 			"default": "default"

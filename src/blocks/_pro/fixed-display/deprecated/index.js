@@ -72,6 +72,28 @@ const blockAttributes3 = {
 	},
 };
 
+/*
+const blockAttributes4 = {
+	...blockAttributes3,
+	closeButtonText: {
+		type: 'string',
+		default: '✕',
+	},
+	closeButtonBorderRadius: {
+		type: 'string',
+		default: '0',
+	},
+	closeButtonTextColor: {
+		type: 'string',
+		default: '#ffffff',
+	},
+	closeButtonBackgroundColor: {
+		type: 'string',
+		default: '#000000',
+	},
+};
+*/
+
 const deprecated = [
 	{
 		attributes: blockAttributes3,

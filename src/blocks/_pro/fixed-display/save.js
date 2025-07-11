@@ -14,6 +14,11 @@ export default function save({ attributes }) {
 		hideAfterSeconds,
 		dontShowAgain,
 		blockId,
+		showCloseButton,
+		closeButtonText,
+		closeButtonBackgroundColor,
+		closeButtonTextColor,
+		closeButtonBorderRadius,
 	} = attributes;
 
 	// dataAttributesとクラスを初期化
@@ -55,6 +60,18 @@ export default function save({ attributes }) {
 		dataAttributes['data-dont-show-again'] = 'true';
 	}
 
+	// Closeボタンの設定
+	if (showCloseButton) {
+		dataAttributes['data-show-close-button'] = 'true';
+		dataAttributes['data-close-button-text'] = closeButtonText || '×';
+		dataAttributes['data-close-button-bg-color'] =
+			closeButtonBackgroundColor || '#000000';
+		dataAttributes['data-close-button-text-color'] =
+			closeButtonTextColor || '#ffffff';
+		dataAttributes['data-close-button-border-radius'] =
+			closeButtonBorderRadius || null;
+	}
+
 	// ブロックのプロパティを設定し、不要なクラスが残らないようにする
 	const blockProps = useBlockProps.save({
 		className: `vk_fixed-display vk_fixed-display-position-${position} ${
@@ -73,6 +90,28 @@ export default function save({ attributes }) {
 
 	return (
 		<div {...blockProps}>
+			{showCloseButton && (
+				<button
+					className="vk_fixed-display-close-button"
+					type="button"
+					aria-label="Close fixed display"
+					aria-describedby={`vk-fixed-display-close-${blockId}`}
+					style={{
+						backgroundColor:
+							closeButtonBackgroundColor || '#000000',
+						color: closeButtonTextColor || '#ffffff',
+						borderRadius: closeButtonBorderRadius,
+					}}
+				>
+					{closeButtonText || '×'}
+					<span
+						id={`vk-fixed-display-close-${blockId}`}
+						className="screen-reader-text"
+					>
+						Click to hide this fixed display element
+					</span>
+				</button>
+			)}
 			<InnerBlocks.Content />
 		</div>
 	);

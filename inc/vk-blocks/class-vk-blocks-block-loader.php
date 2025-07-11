@@ -77,7 +77,7 @@ class VK_Blocks_Block_Loader {
 		if ( self::should_load_separate_assets() ) {
 			// 分割読み込み有効化.
 			add_filter( 'should_load_separate_core_block_assets', '__return_true' );
-			
+
 			// ブロックレンダリング時にアセットを動的に読み込む
 			add_filter( 'render_block', array( $this, 'load_block_assets_on_render' ), 10, 2 );
 		}
@@ -86,7 +86,7 @@ class VK_Blocks_Block_Loader {
 		if ( function_exists( 'wp_should_load_block_assets_on_demand' ) && self::should_load_assets_on_demand() ) {
 			// WordPress 6.8のブロックアセットオンデマンド読み込みを有効化
 			add_filter( 'should_load_block_assets_on_demand', '__return_true' );
-			
+
 			// ブロックレンダリング時にアセットを動的に読み込む
 			add_filter( 'render_block', array( $this, 'load_block_assets_on_render' ), 10, 2 );
 		}
@@ -336,12 +336,12 @@ class VK_Blocks_Block_Loader {
 		}
 
 		$block_name = $block['blockName'];
-		
+
 		// VK Blocksのブロックかどうかをチェック
 		if ( strpos( $block_name, 'vk-blocks/' ) === 0 ) {
 			$block_slug = str_replace( 'vk-blocks/', '', $block_name );
 			$block_info = $this->get_block_info( $block_slug );
-			
+
 			if ( $block_info ) {
 				// Pro版ブロックの場合
 				if ( $block_info['is_pro'] ) {
@@ -352,7 +352,7 @@ class VK_Blocks_Block_Loader {
 					$style_path = VK_BLOCKS_DIR_PATH . 'build/' . $block_slug . '/style.css';
 					$style_url  = VK_BLOCKS_DIR_URL . 'build/' . $block_slug . '/style.css';
 				}
-				
+
 				// スタイルファイルが存在する場合のみ読み込み
 				if ( file_exists( $style_path ) ) {
 					$style_handle = 'vk-blocks/' . $block_slug;

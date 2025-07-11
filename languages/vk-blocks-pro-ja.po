@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2025-07-08T07:44:05+00:00\n"
+"POT-Creation-Date: 2025-07-11T00:43:02+00:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -2365,7 +2365,7 @@ msgstr "ライン"
 
 #: src/blocks/_pro/table-of-contents-new/deprecated/1.104.0/save.js:16
 #: src/blocks/_pro/table-of-contents-new/deprecated/1.78.0/save.js:16
-#: src/blocks/_pro/table-of-contents-new/edit.js:360
+#: src/blocks/_pro/table-of-contents-new/edit.js:356
 #: src/blocks/_pro/table-of-contents-new/save.js:33
 msgid "Table of Contents"
 msgstr "目次"
@@ -2428,10 +2428,6 @@ msgstr "見出しレベルの上限："
 #: src/blocks/_pro/table-of-contents-new/edit.js:305
 msgid "Exclude Headings"
 msgstr "除外する見出し"
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:307
-msgid "Select headings to exclude from the table of contents."
-msgstr ""
 
 #: src/blocks/_pro/taxonomy/edit.js:107
 msgid "Taxonomy Block Option"
@@ -2512,10 +2508,8 @@ msgid "Danger"
 msgstr "Danger"
 
 #: src/blocks/alert/edit.js:86
-#, fuzzy
-#| msgid "Role position"
 msgid "Mobile Icon Position"
-msgstr "役職"
+msgstr "モバイル時のアイコン位置"
 
 #: src/blocks/alert/edit.js:96
 msgid "Left (Default)"
@@ -3211,15 +3205,15 @@ msgstr "ズームアニメーション"
 msgid "Enable zoom animation for slide background images"
 msgstr "スライドの背景画像にズームアニメーションを適用する"
 
-#: src/blocks/slider/edit.js:550
+#: src/blocks/slider/edit.js:553
 msgid "Initial Background Scale"
 msgstr "背景画像の開始倍率"
 
-#: src/blocks/slider/edit.js:560
+#: src/blocks/slider/edit.js:566
 msgid "Final Background Scale"
 msgstr "背景画像の終了倍率"
 
-#: src/blocks/slider/edit.js:570
+#: src/blocks/slider/edit.js:579
 msgid "1 means original size. Larger values will zoom in the background image."
 msgstr "1は元のサイズです。大きい値ほど背景画像が拡大されます。"
 
@@ -4351,14 +4345,10 @@ msgid "Blocks"
 msgstr "Blocks"
 
 #: inc/vk-blocks/admin/admin.php:100
-#, fuzzy
-#| msgid "Blocks setting"
 msgid "Blocks Setting"
 msgstr "Blocks 設定"
 
 #: inc/vk-blocks/admin/admin.php:110
-#, fuzzy
-#| msgid "Balloon Setting"
 msgid "Balloon Block Setting"
 msgstr "吹き出しブロック設定"
 
@@ -5139,9 +5129,6 @@ msgstr "グリッドカラムアイテム"
 
 #: inc/vk-blocks/build/blocks/_pro/grid-column-item/block.json
 #: src/blocks/_pro/grid-column-item/block.json
-#, fuzzy
-#| msgctxt "block description"
-#| msgid "One item in a grit column block."
 msgctxt "block description"
 msgid "One item in a grid column block."
 msgstr "グリッドカラムブロック内の1つのアイテムです。"
@@ -5356,20 +5343,19 @@ msgstr "順番を説明する時に便利でステップマークを設定し表
 
 #: inc/vk-blocks/build/blocks/_pro/tab-item/block.json
 #: src/blocks/_pro/tab-item/block.json
-#, fuzzy
-#| msgctxt "block description"
-#| msgid "A single item in a card block."
 msgctxt "block description"
 msgid "A single item in a tab."
-msgstr "アイコンカード内の１つのアイテムです。"
+msgstr "タブ内の１つのアイテムです。"
 
 #: inc/vk-blocks/build/blocks/_pro/tab/block.json
 #: src/blocks/_pro/tab/block.json
 msgctxt "block description"
 msgid ""
-"These are tabs where you can place various items. Click on the heading to "
+"These are tabs where you can place various items. Click on the tab label to "
 "switch between them."
 msgstr ""
+"様々なアイテムを配置できるタブです。タブラベルをクリックして切り替えてくださ"
+"い。"
 
 #: inc/vk-blocks/build/blocks/_pro/table-of-contents-new/block.json
 #: src/blocks/_pro/table-of-contents-new/block.json

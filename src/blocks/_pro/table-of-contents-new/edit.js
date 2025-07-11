@@ -16,6 +16,10 @@ import {
 	getAllHeadingBlocks,
 	getAllBlocksRecursively,
 } from './toc-utils';
+import {
+	generateHeadingLevels,
+	getCurrentMaxLevel,
+} from '@vkblocks/utils/heading-level-utils';
 
 // 現在のブロックを取得するカスタムフック
 export const useCurrentBlocks = () => {
@@ -156,22 +160,13 @@ export default function TOCEdit(props) {
 	};
 
 	const handleMaxLevelChange = (maxLevel) => {
-		const levels = ['h2'];
-		const levelNumbers = ['h3', 'h4', 'h5', 'h6'];
-		const maxIndex = levelNumbers.indexOf(maxLevel);
-
-		if (maxIndex !== -1) {
-			levels.push(...levelNumbers.slice(0, maxIndex + 1));
-		}
-
+		const levels = generateHeadingLevels(maxLevel);
 		setAttributes({ customHeadingLevels: levels });
 	};
 
 	// 現在の最大レベルを取得
-	const getCurrentMaxLevel = () => {
-		const maxLevel =
-			customHeadingLevels?.[customHeadingLevels.length - 1] || 'h2';
-		return maxLevel;
+	const getCurrentMaxLevelForBlock = () => {
+		return getCurrentMaxLevel(customHeadingLevels);
 	};
 
 	/* eslint jsx-a11y/label-has-associated-control: 0 */
@@ -290,7 +285,7 @@ export default function TOCEdit(props) {
 									)}
 								</p>
 								<SelectControl
-									value={getCurrentMaxLevel()}
+									value={getCurrentMaxLevelForBlock()}
 									options={[
 										{ label: 'H2', value: 'h2' },
 										{ label: 'H3', value: 'h3' },
@@ -309,10 +304,6 @@ export default function TOCEdit(props) {
 				<PanelBody
 					title={__('Exclude Headings', 'vk-blocks-pro')}
 					initialOpen={false}
-					help={__(
-						'Select headings to exclude from the table of contents.',
-						'vk-blocks-pro'
-					)}
 				>
 					<BaseControl>
 						{allHeadings

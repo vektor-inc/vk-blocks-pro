@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	);
 	tocBlocks.forEach((tocBlock) => {
 		// カスタム属性があればそれを使う
+		const useCustomLevels = tocBlock.dataset.useCustomLevels === 'true';
 		const customLevels = tocBlock.dataset.tocHeadingLevels
 			? JSON.parse(tocBlock.dataset.tocHeadingLevels)
 			: null;
@@ -56,14 +57,41 @@ document.addEventListener('DOMContentLoaded', () => {
 				?.allowedHeadingLevels || [2, 3, 4, 5, 6];
 		}
 
-		// 見出しを取得
-		const allHeadings = Array.from(
-			document.querySelectorAll('[data-vk-toc-heading]')
-		);
+		// カスタム設定の場合はPHP側で抽出された見出しを使用、グローバル設定の場合はdata-vk-toc-heading属性を持つ見出しを使用
+		let allHeadings;
+		if (useCustomLevels && window.vkBlocksOptions?.contentHeadings) {
+			// カスタム設定の場合：PHP側で抽出された見出しを使用
+			allHeadings = window.vkBlocksOptions.contentHeadings.map(
+				(match) => {
+					const level = parseInt(match[1]);
+					const attributes = match[2];
+					const content = match[3];
+
+					// 属性からIDを抽出
+					const idMatch = attributes.match(/id=["']([^"']+)["']/);
+					const id = idMatch ? idMatch[1] : '';
+
+					return {
+						level,
+						id,
+						content,
+						tagName: `H${level}`,
+						textContent: content.replace(/<[^>]*>/g, ''), // HTMLタグを除去
+					};
+				}
+			);
+		} else {
+			// グローバル設定の場合：data-vk-toc-heading属性を持つ見出しを取得（PHP側でthe_content内の見出しに付与済み）
+			allHeadings = Array.from(
+				document.querySelectorAll('[data-vk-toc-heading]')
+			);
+		}
 
 		const headings = allHeadings.filter((heading) => {
-			const level = parseInt(heading.tagName.substring(1));
-			const headingId = heading.id;
+			// PHP側から取得した見出しとDOM要素の見出しで構造が異なるため、統一する
+			const level =
+				heading.level || parseInt(heading.tagName.substring(1));
+			const headingId = heading.id || heading.getAttribute('id') || '';
 			const isAllowed = allowedLevels.includes(level);
 			const isExcluded = excludedHeadings.includes(headingId);
 			return isAllowed && !isExcluded;
@@ -77,7 +105,12 @@ document.addEventListener('DOMContentLoaded', () => {
 			h6Count = 0;
 		const tocHtml = headings
 			.map((heading) => {
-				const level = parseInt(heading.tagName.substring(1));
+				const level =
+					heading.level || parseInt(heading.tagName.substring(1));
+				const headingId =
+					heading.id || heading.getAttribute('id') || '';
+				const headingText = heading.textContent || '';
+
 				let number;
 				if (level === 2) {
 					h2Count++;
@@ -108,9 +141,9 @@ document.addEventListener('DOMContentLoaded', () => {
 				const baseClass = 'vk_tableOfContents_list_item';
 				return `
 				<li class="${baseClass} ${baseClass}-h-${level}">
-					<a href="#${heading.id}" class="${baseClass}_link">
+					<a href="#${headingId}" class="${baseClass}_link">
 						<span class="${baseClass}_link_preNumber">${number}. </span>
-						${heading.textContent}
+						${headingText}
 					</a>
 				</li>
 			`;

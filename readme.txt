@@ -17,7 +17,7 @@ This is a plugin that extends Gutenberg's blocks.
 
 [ Blocks ]
 * Alert
-* Ballon
+* Balloon
 * Border Box
 * Button
 * Classic FAQ
@@ -68,7 +68,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Responsive BR
 * Columns direction
 * Custom CSS [ Pro ]
-* Link toolber
+* Link toolbar
 
 [ Settings ]
 * Balloon
@@ -86,7 +86,7 @@ This is a plugin that extends Gutenberg's blocks.
 
 [ Editing and correction ]
 
-The source code of this plug-in is below.
+The source code of this plugin is below.
 https://github.com/vektor-inc/vk-blocks
 
 == Installation ==
@@ -109,6 +109,7 @@ e.g.
 == Changelog ==
 
 [ Add function ][ Fixed Display (Pro) ] Added close button feature.
+[ Bug fix ][ Table of Contents (Pro) ] Fixed H2 selection issue in heading level settings and improved code structure.
 
 = 1.106.0 =
 [ Add function ][ Slider ] Added zoom animation feature.
@@ -185,7 +186,7 @@ e.g.
 [ Specification change ][ Visual Embed ] Added aligncenter when iframeWidth is set to a value other than "100%".
 [ Design Bug Fix ][ Table ] Fixed overlapping borders when using vertical cells, and ensured the border color follows the theme settings.
 [ Editor Design Bug Fix ][ Animation (Pro) / Fixed Display (Pro) / New Badge (Pro) / Category Badge (Pro) ] Fixed elements not becoming semi-transparent when set to be hidden in the editing screen.
-[ Editor Design Bug Fix ][ Ballon ] Fixed a layout distortion issue when enabling the vk_hidden setting in the editor.
+[ Editor Design Bug Fix ][ Balloon ] Fixed a layout distortion issue when enabling the vk_hidden setting in the editor.
 [ Bug fix ][ Ancestor Page List ] Fixed a warning message that appeared on the console when placing blocks.
 
 = 1.96.2 =
@@ -243,7 +244,7 @@ e.g.
 
 = 1.93.0 =
 [ Add function ][ Link toolbar ][ Outer (Pro) ] Added settings for "rel" and link description.
-[ Add function ][ Ballon ] Add default avatar.
+[ Add function ][ Balloon ] Add default avatar.
 [ Other ][ Post list (Pro) / Post list slider (Pro) ] Refactored "Display Conditions" by modularizing them into components.
 [ Bug fix ][ Post List (Pro) ][ Post List Slider (Pro) ] Fixed missing "No relevant posts." message when no post types are selected.
 [ Bug fix ][ Table of Contents (Pro) ] Fix line break.
@@ -494,7 +495,7 @@ e.g.
 [ Add function ][ Dynamic Text (Pro) ] Add feature to display logged-in username.
 [ Specification change ][ Hidden extension ] Add VK Icon
 [ Specification change ][ Outer (Pro) ] Allowed decimal points in 'Container Inner Side Space Setting'.
-[ Specification change ][ Headding ] Marked as Not Recommended
+[ Specification change ][ Heading ] Marked as Not Recommended
 
 = 1.67.0 =
 [ Add Block ][ Category Badge (Pro) ] Creates badges displaying linked categories or terms for posts, with flexible design customization.
@@ -878,7 +879,7 @@ e.g.
 
 = 1.27.0 =
 [ Add function ][ Font Awesome ] Cope with Font Awesome 6
-[ Add function ][ Post-List (Pro) ] Add no-post message filter hook
+[ Add function ][ Post List (Pro) ] Add no-post message filter hook
 [ Bug fix ][ Outer(Pro) ] cope with custom color palette
 
 = 1.26.2 =
@@ -953,7 +954,7 @@ Cope with WordPress 5.9
 [ Bug fix ][ button ] fix block-block size
 
 = 1.21.0 =
-[ Add function ][ Post-List (Pro) ] add date filtering
+[ Add function ][ Post List (Pro) ] add date filtering
 [ Bug fix ][ Balloon ] Balloon icon background color when custom color is selected
 [ Bug fix ][ Group ] fix alert style custom color
 
@@ -1280,10 +1281,10 @@ Cope with WordPress 5.9
 [ Add function ][ Balloon ] Add border function
 
 = 1.0.4 =
-[ Bug fix ][Table of Contents] fix bug for deprecated.
+[ Bug fix ][ Table of Contents ] fix bug for deprecated.
 
 = 1.0.3 =
-[ Bug fix ][Spacer] fix bug for deprecated.
+[ Bug fix ][ Spacer ] fix bug for deprecated.
 
 = 1.0.2 =
 [ Bug fix ] fix bug when instert block.
@@ -1291,7 +1292,7 @@ Cope with WordPress 5.9
 = 1.0.1 =
 
 = 1.0.0 =
-[ Other ][All] Refactoring all blocks.
+[ Other ][ All ] Refactoring all blocks.
 
 = 0.57.4 =
 [ Specification change ] Load Term Color on init
@@ -1324,7 +1325,7 @@ Cope with WordPress 5.9
 = 0.55.0 =
 [ Add function ][ Outer ] Background image repeat
 [ Bug fix ] fix can not save on some plugin using enviroment
-[ Specification change ][ Headding ] delete font weight specification from Plain style
+[ Specification change ][ Heading ] delete font weight specification from Plain style
 
 = 0.54.2 =
 [ Bug fix ][ Slider ] Fix slider broken in page.

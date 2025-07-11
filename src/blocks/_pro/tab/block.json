@@ -2,7 +2,7 @@
 	"apiVersion": 3,
 	"name": "vk-blocks/tab",
 	"category": "vk-blocks-cat",
-	"description": "These are tabs where you can place various items. Click on the heading to switch between them.",
+	"description": "These are tabs where you can place various items. Click on the tab label to switch between them.",
 	"editorScript": "vk-blocks-build-js",
 	"editorStyle": "vk-blocks-build-editor-css",
 	"attributes": {

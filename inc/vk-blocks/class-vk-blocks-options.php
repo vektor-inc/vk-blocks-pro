@@ -282,6 +282,9 @@ class VK_Blocks_Options {
 			'load_separate_option'        => array(
 				'type' => 'boolean',
 			),
+			'load_assets_on_demand_option' => array(
+				'type' => 'boolean',
+			),
 			'vk_blocks_pro_license_key'   => array(
 				'type' => 'string',
 			),
@@ -492,6 +495,7 @@ class VK_Blocks_Options {
 				),
 			),
 			'load_separate_option'        => false,
+			'load_assets_on_demand_option' => false,
 			'vk_blocks_pro_license_key'   => null,
 			'new_faq_accordion'           => 'disable',
 			'show_custom_css_editor_flag' => 'show',

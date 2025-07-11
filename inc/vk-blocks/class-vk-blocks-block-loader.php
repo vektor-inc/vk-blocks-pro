@@ -77,6 +77,18 @@ class VK_Blocks_Block_Loader {
 		if ( self::should_load_separate_assets() ) {
 			// 分割読み込み有効化.
 			add_filter( 'should_load_separate_core_block_assets', '__return_true' );
+			
+			// ブロックレンダリング時にアセットを動的に読み込む
+			add_filter( 'render_block', array( $this, 'load_block_assets_on_render' ), 10, 2 );
+		}
+
+		// WordPress 6.8以降でブロックアセットのオンデマンド読み込みが有効な場合
+		if ( function_exists( 'wp_should_load_block_assets_on_demand' ) && self::should_load_assets_on_demand() ) {
+			// WordPress 6.8のブロックアセットオンデマンド読み込みを有効化
+			add_filter( 'should_load_block_assets_on_demand', '__return_true' );
+			
+			// ブロックレンダリング時にアセットを動的に読み込む
+			add_filter( 'render_block', array( $this, 'load_block_assets_on_render' ), 10, 2 );
 		}
 	}
 
@@ -275,6 +287,24 @@ class VK_Blocks_Block_Loader {
 	}
 
 	/**
+	 * Should_load_assets_on_demand
+	 * ブロックアセットのオンデマンド読み込みを有効化するかどうか
+	 * true : load assets on demand
+	 * false: load all assets
+	 *
+	 * @return bool
+	 */
+	public static function should_load_assets_on_demand() {
+		$vk_blocks_options = get_option( 'vk_blocks_options' );
+		if ( function_exists( 'wp_should_load_block_assets_on_demand' ) && ! empty( $vk_blocks_options['load_assets_on_demand_option'] ) ) {
+			$bool = true;
+		} else {
+			$bool = false;
+		}
+		return apply_filters( 'vk_blocks_should_load_assets_on_demand', $bool );
+	}
+
+	/**
 	 * ブロックのロード
 	 *
 	 * @param string $block_name 読み込むブロック名.
@@ -291,6 +321,49 @@ class VK_Blocks_Block_Loader {
 		if ( file_exists( $require_file_path ) ) {
 			require_once $require_file_path;
 		}
+	}
+
+	/**
+	 * ブロックレンダリング時にアセットを動的に読み込む
+	 *
+	 * @param string $block_content ブロックコンテンツ.
+	 * @param array  $block ブロック情報.
+	 * @return string
+	 */
+	public function load_block_assets_on_render( $block_content, $block ) {
+		if ( empty( $block['blockName'] ) ) {
+			return $block_content;
+		}
+
+		$block_name = $block['blockName'];
+		
+		// VK Blocksのブロックかどうかをチェック
+		if ( strpos( $block_name, 'vk-blocks/' ) === 0 ) {
+			$block_slug = str_replace( 'vk-blocks/', '', $block_name );
+			$block_info = $this->get_block_info( $block_slug );
+			
+			if ( $block_info ) {
+				// Pro版ブロックの場合
+				if ( $block_info['is_pro'] ) {
+					$style_path = VK_BLOCKS_DIR_PATH . 'build/_pro/' . $block_slug . '/style.css';
+					$style_url  = VK_BLOCKS_DIR_URL . 'build/_pro/' . $block_slug . '/style.css';
+				} else {
+					// 無料版ブロックの場合
+					$style_path = VK_BLOCKS_DIR_PATH . 'build/' . $block_slug . '/style.css';
+					$style_url  = VK_BLOCKS_DIR_URL . 'build/' . $block_slug . '/style.css';
+				}
+				
+				// スタイルファイルが存在する場合のみ読み込み
+				if ( file_exists( $style_path ) ) {
+					$style_handle = 'vk-blocks/' . $block_slug;
+					if ( ! wp_style_is( $style_handle, 'enqueued' ) ) {
+						wp_enqueue_style( $style_handle, $style_url, array(), VK_BLOCKS_VERSION );
+					}
+				}
+			}
+		}
+
+		return $block_content;
 	}
 
 	/**

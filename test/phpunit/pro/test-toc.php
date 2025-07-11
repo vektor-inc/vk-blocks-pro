@@ -94,14 +94,14 @@ class TOCBlockTest extends WP_UnitTestCase {
 		$this->setup_test_environment($has_block, $options);
 		$this->create_post_and_set_global($input);
 
-		$actual = $this->toc_instance->mark_content_headings($input);
+		$actual = VK_Blocks_TOC::get_headings_from_content($input);
 
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
 		print $label . PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
-		print 'expected ::::' . $expected . PHP_EOL;
-		print 'actual   ::::' . $actual . PHP_EOL;
+		print 'expected ::::' . json_encode($expected) . PHP_EOL;
+		print 'actual   ::::' . json_encode($actual) . PHP_EOL;
 		$this->assertEquals($expected, $actual);
 		print PHP_EOL;
 	}
@@ -110,38 +110,68 @@ class TOCBlockTest extends WP_UnitTestCase {
 		$cases = [
 			[
 				'label' => 'test_adds_data_attribute_when_toc_block_exists_and_default_levels',
-				'input' => '<!-- wp:vk-blocks/table-of-contents-new /--><h2>h2</h2><h3>h3</h3><h4>h4</h4><h5>h5</h5><h6>h6</h6><h1>h1</h1>',
-				'expected' => '<!-- wp:vk-blocks/table-of-contents-new /--><h2 data-vk-toc-heading>h2</h2><h3 data-vk-toc-heading>h3</h3><h4 data-vk-toc-heading>h4</h4><h5 data-vk-toc-heading>h5</h5><h6 data-vk-toc-heading>h6</h6><h1>h1</h1>',
+				'input' => '<!-- wp:vk-blocks/table-of-contents-new /--><!-- wp:heading {"level":2} --><h2>h2</h2><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>h3</h3><!-- /wp:heading --><!-- wp:heading {"level":4} --><h4>h4</h4><!-- /wp:heading --><!-- wp:heading {"level":5} --><h5>h5</h5><!-- /wp:heading --><!-- wp:heading {"level":6} --><h6>h6</h6><!-- /wp:heading --><!-- wp:heading {"level":1} --><h1>h1</h1><!-- /wp:heading -->',
+				'expected' => [
+					[2, '', 'h2'],
+					[3, '', 'h3'],
+					[4, '', 'h4'],
+					[5, '', 'h5'],
+					[6, '', 'h6'],
+					[1, '', 'h1'],
+				],
 				'has_block' => true,
 				'options' => ['toc_heading_levels' => ['h2','h3','h4','h5','h6']],
 			],
 			[
 				'label' => 'test_does_not_add_attribute_when_toc_block_not_exists',
-				'input' => '<h2>h2</h2><h3>h3</h3>',
-				'expected' => '<h2>h2</h2><h3>h3</h3>',
+				'input' => '<!-- wp:heading {"level":2} --><h2>h2</h2><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>h3</h3><!-- /wp:heading -->',
+				'expected' => [
+					[2, '', 'h2'],
+					[3, '', 'h3'],
+				],
 				'has_block' => false,
 				'options' => ['toc_heading_levels' => ['h2','h3','h4','h5','h6']],
 			],
 			[
 				'label' => 'test_respects_custom_heading_levels',
-				'input' => '<!-- wp:vk-blocks/table-of-contents-new /--><h2>h2</h2><h3>h3</h3><h4>h4</h4>',
-				'expected' => '<!-- wp:vk-blocks/table-of-contents-new /--><h2 data-vk-toc-heading>h2</h2><h3 data-vk-toc-heading>h3</h3><h4 data-vk-toc-heading>h4</h4>',
+				'input' => '<!-- wp:vk-blocks/table-of-contents-new /--><!-- wp:heading {"level":2} --><h2>h2</h2><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>h3</h3><!-- /wp:heading --><!-- wp:heading {"level":4} --><h4>h4</h4><!-- /wp:heading -->',
+				'expected' => [
+					[2, '', 'h2'],
+					[3, '', 'h3'],
+					[4, '', 'h4'],
+				],
 				'has_block' => true,
 				'options' => ['toc_heading_levels' => ['h2','h3','h4']],
 			],
 			[
 				'label' => 'test_default_levels_are_used_when_option_is_missing',
-				'input' => '<!-- wp:vk-blocks/table-of-contents-new /--><h2>h2</h2><h3>h3</h3>',
-				'expected' => '<!-- wp:vk-blocks/table-of-contents-new /--><h2 data-vk-toc-heading>h2</h2><h3 data-vk-toc-heading>h3</h3>',
+				'input' => '<!-- wp:vk-blocks/table-of-contents-new /--><!-- wp:heading {"level":2} --><h2>h2</h2><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>h3</h3><!-- /wp:heading -->',
+				'expected' => [
+					[2, '', 'h2'],
+					[3, '', 'h3'],
+				],
 				'has_block' => true,
 				'options' => null,
 			],
 			[
 				'label' => 'test_does_not_affect_other_tags_or_existing_attributes',
-				'input' => '<!-- wp:vk-blocks/table-of-contents-new /--><h2 class="foo">h2</h2><h3>h3</h3><p>p</p>',
-				'expected' => '<!-- wp:vk-blocks/table-of-contents-new /--><h2 class="foo" data-vk-toc-heading>h2</h2><h3>h3</h3><p>p</p>',
+				'input' => '<!-- wp:vk-blocks/table-of-contents-new /--><!-- wp:heading {"level":2} --><h2 class="foo">h2</h2><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>h3</h3><!-- /wp:heading --><p>p</p>',
+				'expected' => [
+					[2, '', 'h2'],
+					[3, '', 'h3'],
+				],
 				'has_block' => true,
 				'options' => ['toc_heading_levels' => ['h2']],
+			],
+			[
+				'label' => 'test_excludes_mixed_non_heading_blocks',
+				'input' => '<!-- wp:vk-blocks/table-of-contents-new /--><!-- wp:heading {"level":2} --><h2>normal heading</h2><!-- /wp:heading --><!-- wp:vk-blocks/border-box {"heading":"border box h3","headingTag":"h3"} --><div class="vk_borderBox"><div class="vk_borderBox_title_container"><h3 class="vk_borderBox_title">border box h3</h3></div></div><!-- /wp:vk-blocks/border-box --><!-- wp:vk-blocks-pro/blog-card-title {"level":4} --><h4>blog card h4</h4><!-- /wp:vk-blocks-pro/blog-card-title --><!-- wp:heading {"level":5} --><h5>normal heading h5</h5><!-- /wp:heading -->',
+				'expected' => [
+					[2, '', 'normal heading'],
+					[5, '', 'normal heading h5'],
+				],
+				'has_block' => true,
+				'options' => ['toc_heading_levels' => ['h2','h3','h4','h5']],
 			],
 		];
 

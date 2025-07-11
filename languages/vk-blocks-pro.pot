@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-07-08T07:44:26+00:00\n"
+"POT-Creation-Date: 2025-07-11T00:59:59+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vk-blocks-pro\n"
@@ -2365,7 +2365,7 @@ msgstr ""
 
 #: src/blocks/_pro/table-of-contents-new/deprecated/1.104.0/save.js:16
 #: src/blocks/_pro/table-of-contents-new/deprecated/1.78.0/save.js:16
-#: src/blocks/_pro/table-of-contents-new/edit.js:360
+#: src/blocks/_pro/table-of-contents-new/edit.js:356
 #: src/blocks/_pro/table-of-contents-new/save.js:33
 msgid "Table of Contents"
 msgstr ""
@@ -2424,10 +2424,6 @@ msgstr ""
 
 #: src/blocks/_pro/table-of-contents-new/edit.js:305
 msgid "Exclude Headings"
-msgstr ""
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:307
-msgid "Select headings to exclude from the table of contents."
 msgstr ""
 
 #: src/blocks/_pro/taxonomy/edit.js:107
@@ -3197,15 +3193,15 @@ msgstr ""
 msgid "Enable zoom animation for slide background images"
 msgstr ""
 
-#: src/blocks/slider/edit.js:550
+#: src/blocks/slider/edit.js:553
 msgid "Initial Background Scale"
 msgstr ""
 
-#: src/blocks/slider/edit.js:560
+#: src/blocks/slider/edit.js:566
 msgid "Final Background Scale"
 msgstr ""
 
-#: src/blocks/slider/edit.js:570
+#: src/blocks/slider/edit.js:579
 msgid "1 means original size. Larger values will zoom in the background image."
 msgstr ""
 
@@ -5218,7 +5214,7 @@ msgstr ""
 #: inc/vk-blocks/build/blocks/_pro/tab/block.json
 #: src/blocks/_pro/tab/block.json
 msgctxt "block description"
-msgid "These are tabs where you can place various items. Click on the heading to switch between them."
+msgid "These are tabs where you can place various items. Click on the tab label to switch between them."
 msgstr ""
 
 #: inc/vk-blocks/build/blocks/_pro/table-of-contents-new/block.json

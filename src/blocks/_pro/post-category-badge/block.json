@@ -14,6 +14,14 @@
 		},
 		"textAlign": {
 			"type": "string"
+		},
+		"maxDisplayCount": {
+			"type": "number",
+			"default": 1
+		},
+		"gap": {
+			"type": "string",
+			"default": "0.5em"
 		}
 	},
 	"supports": {

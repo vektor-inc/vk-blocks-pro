@@ -108,6 +108,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Category Badge (Pro) ] Added support for displaying multiple category badges.
 [ Bug fix ][ Slider / Post List Slider (Pro) ] Fixed XSS vulnerability.
 [ Bug fix ][ Table of Contents (Pro) ] Fixed H2 selection issue in heading level settings and improved code structure.
 

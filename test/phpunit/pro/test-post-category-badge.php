@@ -143,7 +143,8 @@ class PostCategoryBadgeTest extends VK_UnitTestCase {
                 ),
                 'attributes' => array(
                     'hasLink' => false,
-                    'textAlign' => 'right'
+                    'textAlign' => 'right',
+                    'maxDisplayCount' => 1
                 ),
                 'correct' => '<div style="background-color: ' . $test_category_0['color'] . ';color:'. $test_category_0['correct_text_color'] . ';" class="vk_categoryBadge has-text-align-right wp-block-vk-blocks-post-category-badge">' . $test_category_0['name'] . '</div>'
             ),
@@ -158,7 +159,8 @@ class PostCategoryBadgeTest extends VK_UnitTestCase {
                 ),
                 'attributes' => array(
                     'hasLink' => true,
-                    'textAlign' => 'right'
+                    'textAlign' => 'right',
+                    'maxDisplayCount' => 1
                 ),
                 'correct' => '<a style="background-color: ' . $test_category_0['color'] . ';color:'. $test_category_0['correct_text_color'] . ';" class="vk_categoryBadge has-text-align-right wp-block-vk-blocks-post-category-badge" href="'. site_url() . '/?cat=' . $test_category_0['id'] . '">' . $test_category_0['name'] . '</a>'
             ),
@@ -172,7 +174,8 @@ class PostCategoryBadgeTest extends VK_UnitTestCase {
                     'post_category' => array(  $test_category_1['id'] )
                 ),
                 'attributes' => array(
-                    'hasLink' => true
+                    'hasLink' => true,
+                    'maxDisplayCount' => 1
                 ),
                 'correct' => '<a style="background-color: ' . $test_category_1['color'] . ';color:'. $test_category_1['correct_text_color'] . ';" class="vk_categoryBadge wp-block-vk-blocks-post-category-badge" href="'. site_url() . '/?cat=' . $test_category_1['id'] . '">' . $test_category_1['name'] . '</a>'
             ),            
@@ -188,7 +191,8 @@ class PostCategoryBadgeTest extends VK_UnitTestCase {
                 'attributes' => array(
                     'hasLink' => true,
                     'taxonomy' => 'test_taxonomy_0',
-                    'textAlign' => 'right'
+                    'textAlign' => 'right',
+                    'maxDisplayCount' => 1
                 ),
                 'correct' => '<a style="background-color: ' . $test_term_0['color'] . ';color:'. $test_term_0['correct_text_color'] . ';" class="vk_categoryBadge has-text-align-right wp-block-vk-blocks-post-category-badge" href="'. site_url() . '/?test_taxonomy_0=' . $test_term_0['slug'] . '">' . $test_term_0['name'] . '</a>'
             ), 
@@ -203,7 +207,8 @@ class PostCategoryBadgeTest extends VK_UnitTestCase {
                 ),
                 'attributes' => array(
                     'hasLink' => true,
-                    'taxonomy' => 'test_taxonomy_0'
+                    'taxonomy' => 'test_taxonomy_0',
+                    'maxDisplayCount' => 1
                 ),
                 'correct' => '<a style="background-color: ' . $test_term_1['color'] . ';color:'. $test_term_1['correct_text_color'] . ';" class="vk_categoryBadge wp-block-vk-blocks-post-category-badge" href="'. site_url() . '/?test_taxonomy_0=' . $test_term_1['slug'] . '">' . $test_term_1['name'] . '</a>'
             ),             
@@ -219,7 +224,8 @@ class PostCategoryBadgeTest extends VK_UnitTestCase {
                 'attributes' => array(
                     'hasLink' => true,
                     'taxonomy' => 'test_taxonomy_1',
-                    'textAlign' => 'right'
+                    'textAlign' => 'right',
+                    'maxDisplayCount' => 1
                 ),
                 'correct' => '<a style="background-color: ' . $test_term_2['color'] . ';color:'. $test_term_2['correct_text_color'] . ';" class="vk_categoryBadge has-text-align-right wp-block-vk-blocks-post-category-badge" href="'. site_url() . '/?test_taxonomy_1=' . $test_term_2['slug'] . '">' . $test_term_2['name'] . '</a>'
             ), 
@@ -234,7 +240,8 @@ class PostCategoryBadgeTest extends VK_UnitTestCase {
                 ),
                 'attributes' => array(
                     'hasLink' => true,
-                    'taxonomy' => 'test_taxonomy_1'
+                    'taxonomy' => 'test_taxonomy_1',
+                    'maxDisplayCount' => 1
                 ),
                 'correct' => '<a style="background-color: ' . $test_term_3['color'] . ';color:'. $test_term_3['correct_text_color'] . ';" class="vk_categoryBadge wp-block-vk-blocks-post-category-badge" href="'. site_url() . '/?test_taxonomy_1=' . $test_term_3['slug'] . '">' . $test_term_3['name'] . '</a>'
             ),  
@@ -249,7 +256,8 @@ class PostCategoryBadgeTest extends VK_UnitTestCase {
                 ),
                 'attributes' => array(
                     'hasLink' => true,
-                    'textAlign' => 'right'
+                    'textAlign' => 'right',
+                    'maxDisplayCount' => 1
                 ),
                 'correct' => '<a style="background-color: #999999;color:#FFFFFF;" class="vk_categoryBadge has-text-align-right wp-block-vk-blocks-post-category-badge" href="'. site_url() . '/?cat=1">Uncategorized</a>'
             ), 
@@ -278,5 +286,103 @@ class PostCategoryBadgeTest extends VK_UnitTestCase {
             $this->assertEquals($test['correct'], $return);
         }
 	}
+  
+	public function test_category_badge_multiple() {
+        $test_category_0 = $this->test_terms['categories'][0];
+        $test_category_1 = $this->test_terms['categories'][1];
+
+        // 複数カテゴリーを持つ投稿を作成
+        $post_id = wp_insert_post( array(
+            'post_title'   => 'Multiple Categories Post',
+            'post_content' => '<!-- wp:paragraph --><p>This is my page.</p><!-- /wp:paragraph -->',
+            'post_type'    => 'post',
+            'post_status'  => 'publish',
+            'post_category' => array( $test_category_0['id'], $test_category_1['id'] )
+        ));
+
+        $context = array(
+            'postId' => $post_id,
+            'postType' => 'post'
+        );
+
+        // 複数表示のテスト（maxDisplayCount = 0）
+        $parsed_block = array(
+            'blockName' => "vk-blocks/post-category-badge",
+            'attrs' => array(
+                'hasLink' => false,
+                'textAlign' => 'right',
+                'maxDisplayCount' => 0,
+                'gap' => '0.5em'
+            )
+        );
+
+        $block = new WP_Block( $parsed_block, $context );
+        $return = $block->render();
+
+        // 期待される出力（複数バッジ）
+        $expected = '<div class="vk_categoryBadge_multiple" style="gap: 0.5em;">';
+        $expected .= '<div style="background-color: ' . $test_category_0['color'] . ';color:' . $test_category_0['correct_text_color'] . ';" class="vk_categoryBadge has-text-align-right wp-block-vk-blocks-post-category-badge">' . $test_category_0['name'] . '</div>';
+        $expected .= '<div style="background-color: ' . $test_category_1['color'] . ';color:' . $test_category_1['correct_text_color'] . ';" class="vk_categoryBadge has-text-align-right wp-block-vk-blocks-post-category-badge">' . $test_category_1['name'] . '</div>';
+        $expected .= '</div>';
+
+        print PHP_EOL;
+        print '------------------------------------' . PHP_EOL;
+        print 'PostCategoryBadgeTest::test_category_badge_multiple' . PHP_EOL;
+        print '------------------------------------' . PHP_EOL;
+        print 'return  :' . $return . PHP_EOL;
+        print 'correct :' . $expected . PHP_EOL;
+
+        $this->assertEquals($expected, $return);
+	}
+  
+	public function test_category_badge_multiple_taxonomies() {
+        $test_term_0 = $this->test_terms['terms']['test_taxonomy_0'][0];
+        $test_term_2 = $this->test_terms['terms']['test_taxonomy_1'][0];
+
+        // 投稿に両方のタームを付与
+        $post_id = wp_insert_post( array(
+            'post_title'   => 'Multiple Taxonomies Post',
+            'post_content' => '<!-- wp:paragraph --><p>This is my page.</p><!-- /wp:paragraph -->',
+            'post_type'    => 'post',
+            'post_status'  => 'publish',
+            'tax_input' => array(
+                'test_taxonomy_0' => array( $test_term_0['id'] ),
+                'test_taxonomy_1' => array( $test_term_2['id'] ),
+            ),
+        ));
+
+        $context = array(
+            'postId' => $post_id,
+            'postType' => 'post'
+        );
+
+        $parsed_block = array(
+            'blockName' => "vk-blocks/post-category-badge",
+            'attrs' => array(
+                'hasLink' => false,
+                'maxDisplayCount' => 0,
+                'taxonomy' => '', // auto
+                'gap' => '0.5em'
+            )
+        );
+
+        $block = new WP_Block( $parsed_block, $context );
+        $return = $block->render();
+
+        $expected = '<div class="vk_categoryBadge_multiple" style="gap: 0.5em;">';
+        $expected .= '<div style="background-color: #999999;color:#FFFFFF;" class="vk_categoryBadge wp-block-vk-blocks-post-category-badge">Uncategorized</div>';
+        $expected .= '<div style="background-color: ' . $test_term_0['color'] . ';color:' . $test_term_0['correct_text_color'] . ';" class="vk_categoryBadge wp-block-vk-blocks-post-category-badge">' . $test_term_0['name'] . '</div>';
+        $expected .= '<div style="background-color: ' . $test_term_2['color'] . ';color:' . $test_term_2['correct_text_color'] . ';" class="vk_categoryBadge wp-block-vk-blocks-post-category-badge">' . $test_term_2['name'] . '</div>';
+        $expected .= '</div>';
+
+        print PHP_EOL;
+        print '------------------------------------' . PHP_EOL;
+        print 'PostCategoryBadgeTest::test_category_badge_multiple_taxonomies' . PHP_EOL;
+        print '------------------------------------' . PHP_EOL;
+        print 'return  :' . $return . PHP_EOL;
+        print 'correct :' . $expected . PHP_EOL;
+
+        $this->assertEquals($expected, $return);
+    }
   
 };

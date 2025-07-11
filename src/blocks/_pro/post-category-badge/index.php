@@ -14,11 +14,90 @@
  * @return string
  */
 function vk_blocks_post_category_badge_render_callback( $attributes, $content, $block ) {
-	$post     = get_post( $block->context['postId'] );
-	$taxonomy = isset( $attributes['taxonomy'] ) ? $attributes['taxonomy'] : '';
+	$post              = get_post( $block->context['postId'] );
+	$taxonomy          = isset( $attributes['taxonomy'] ) ? $attributes['taxonomy'] : '';
+	$max_display_count = isset( $attributes['maxDisplayCount'] ) && is_numeric( $attributes['maxDisplayCount'] )
+		? (int) $attributes['maxDisplayCount']
+		: 1;
+	$gap               = isset( $attributes['gap'] ) ? $attributes['gap'] : '0.5em';
+
+	// 複数表示の場合（maxDisplayCount === 0 または 2以上）
+	if ( 0 === $max_display_count || $max_display_count >= 2 ) {
+		// 特定のタクソノミーが選択されている場合
+		if ( $taxonomy ) {
+			$terms = get_the_terms( $post, $taxonomy );
+			if ( ! $terms || is_wp_error( $terms ) ) {
+				return '';
+			}
+		} else {
+			// 自動選択の場合：投稿に設定されているすべてのタクソノミーからタームを取得
+			$post_type  = get_post_type( $post );
+			$taxonomies = get_object_taxonomies( $post_type, 'objects' );
+			$all_terms  = array();
+
+			foreach ( $taxonomies as $tax_slug => $tax_obj ) {
+				if ( 'post_tag' !== $tax_slug && $tax_obj->hierarchical ) {
+					$terms = get_the_terms( $post, $tax_slug );
+					if ( $terms && ! is_wp_error( $terms ) ) {
+						// タームにタクソノミー情報を追加
+						foreach ( $terms as $term ) {
+							$term->taxonomy_slug = $tax_slug;
+							$term->taxonomy_name = $tax_obj->label;
+						}
+						$all_terms = array_merge( $all_terms, $terms );
+					}
+				}
+			}
+
+			if ( empty( $all_terms ) ) {
+				return '';
+			}
+			$terms = $all_terms;
+		}
+
+		$output = '';
+		$count  = 0;
+		foreach ( $terms as $term ) {
+			if ( 0 !== $max_display_count && $count >= $max_display_count ) {
+				break;
+			}
+			$output .= vk_blocks_render_single_badge( $term, $attributes );
+			++$count;
+		}
+		return '<div class="vk_categoryBadge_multiple" style="gap: ' . esc_attr( $gap ) . ';">' . $output . '</div>';
+	}
+
+	// 単一表示の場合（maxDisplayCount === 1）
+	if ( $taxonomy ) {
+		$target_taxonomy = $taxonomy;
+		$terms           = get_the_terms( $post, $target_taxonomy );
+		if ( $terms && ! is_wp_error( $terms ) ) {
+			$term = $terms[0];
+		} else {
+			return '';
+		}
+	} else {
+		// 自動選択の場合：投稿に設定されているすべてのタクソノミーを順に見て、最初に見つかったタームを使う
+		$post_type  = get_post_type( $post );
+		$taxonomies = get_object_taxonomies( $post_type, 'objects' );
+		$term       = null;
+		foreach ( $taxonomies as $tax_slug => $tax_obj ) {
+			if ( 'post_tag' !== $tax_slug && $tax_obj->hierarchical ) {
+				$terms = get_the_terms( $post, $tax_slug );
+				if ( $terms && ! is_wp_error( $terms ) && ! empty( $terms ) ) {
+					$term = $terms[0];
+					break;
+				}
+			}
+		}
+		if ( ! $term ) {
+			return '';
+		}
+		$target_taxonomy = $term->taxonomy;
+	}
 
 	if ( class_exists( '\VektorInc\VK_Term_Color\VkTermColor' ) && method_exists( '\VektorInc\VK_Term_Color\VkTermColor', 'get_post_single_term_info' ) ) {
-		$term_color_info = \VektorInc\VK_Term_Color\VkTermColor::get_post_single_term_info( $post, array( 'taxonomy' => $taxonomy ) );
+		$term_color_info = \VektorInc\VK_Term_Color\VkTermColor::get_post_single_term_info( $post, array( 'taxonomy' => $target_taxonomy ) );
 	} else {
 		return '';
 	}
@@ -45,6 +124,54 @@ function vk_blocks_post_category_badge_render_callback( $attributes, $content, $
 		return '<a ' . $wrapper_attributes . ' href="' . $term_color_info['term_url'] . '">' . $term_color_info['term_name'] . '</a>';
 	} else {
 		return '<div ' . $wrapper_attributes . '>' . $term_color_info['term_name'] . '</div>';
+	}
+}
+
+/**
+ * Render single badge
+ *
+ * @param WP_Term $term Term object.
+ * @param array   $attributes Block attributes.
+ * @return string
+ */
+function vk_blocks_render_single_badge( $term, $attributes ) {
+	$classes          = array( 'vk_categoryBadge' );
+	$align_class_name = empty( $attributes['textAlign'] ) ? '' : "has-text-align-{$attributes['textAlign']}";
+
+	if ( ! empty( $align_class_name ) ) {
+		array_push( $classes, $align_class_name );
+	}
+
+	$color      = '#999999';
+	$text_color = '';
+	if ( class_exists( '\VektorInc\VK_Term_Color\VkTermColor' ) ) {
+		$term_color = get_term_meta( $term->term_id, 'term_color', true );
+		if ( $term_color ) {
+			$color = $term_color;
+		}
+		$term_text_color = get_term_meta( $term->term_id, 'term_text_color', true );
+		if ( $term_text_color ) {
+			$text_color = $term_text_color;
+		} else {
+			// term_text_colorがなければ自動判定
+			$text_color = \VektorInc\VK_Term_Color\VkTermColor::get_dynamic_text_color( $color );
+		}
+	} else {
+		$text_color = '#FFFFFF';
+	}
+
+	$wrapper_attributes = get_block_wrapper_attributes(
+		array(
+			'class' => implode( ' ', $classes ),
+			'style' => 'background-color: ' . $color . ';' .
+						'color:' . $text_color . ';',
+		)
+	);
+
+	if ( $attributes['hasLink'] ) {
+		return '<a ' . $wrapper_attributes . ' href="' . get_term_link( $term ) . '">' . $term->name . '</a>';
+	} else {
+		return '<div ' . $wrapper_attributes . '>' . $term->name . '</div>';
 	}
 }
 

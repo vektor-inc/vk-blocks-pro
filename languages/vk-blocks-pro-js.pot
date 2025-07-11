@@ -464,7 +464,7 @@ msgid "FAQ Block Setting"
 msgstr ""
 
 #: src/admin/import-export/index.js:96
-#: src/admin/toc.js:40
+#: src/admin/toc.js:29
 msgid "Table of Contents Setting"
 msgstr ""
 
@@ -631,11 +631,11 @@ msgstr ""
 msgid "Save Success"
 msgstr ""
 
-#: src/admin/toc.js:42
+#: src/admin/toc.js:31
 msgid "Please specify a common heading level setting to be used across the site."
 msgstr ""
 
-#: src/admin/toc.js:61
+#: src/admin/toc.js:50
 msgid "Headings from H2 up to the selected level will be included."
 msgstr ""
 
@@ -1308,7 +1308,7 @@ msgstr ""
 
 #: src/blocks/_pro/fixed-display/edit.js:147
 #: src/blocks/_pro/post-list-slider/edit.js:140
-#: src/blocks/_pro/table-of-contents-new/edit.js:195
+#: src/blocks/_pro/table-of-contents-new/edit.js:190
 #: src/components/column-layout-control/index.js:69
 msgid "Display type"
 msgstr ""
@@ -2094,7 +2094,7 @@ msgstr ""
 
 #: src/blocks/_pro/post-list-slider/edit.js:302
 #: src/blocks/_pro/step-item/edit.js:139
-#: src/blocks/_pro/table-of-contents-new/edit.js:210
+#: src/blocks/_pro/table-of-contents-new/edit.js:205
 #: src/blocks/_pro/timeline-item/edit.js:105
 #: src/blocks/heading/edit.js:265
 #: src/blocks/slider/edit.js:464
@@ -2251,7 +2251,7 @@ msgid "Ex,6:00AM"
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:109
-#: src/blocks/_pro/table-of-contents-new/edit.js:200
+#: src/blocks/_pro/table-of-contents-new/edit.js:195
 #: src/blocks/_pro/timeline-item/edit.js:75
 #: src/blocks/icon-outer/edit.js:229
 #: src/blocks/icon/edit.js:221
@@ -2400,71 +2400,67 @@ msgstr ""
 
 #: src/blocks/_pro/table-of-contents-new/deprecated/1.104.0/save.js:16
 #: src/blocks/_pro/table-of-contents-new/deprecated/1.78.0/save.js:16
-#: src/blocks/_pro/table-of-contents-new/edit.js:365
+#: src/blocks/_pro/table-of-contents-new/edit.js:356
 #: src/blocks/_pro/table-of-contents-new/save.js:33
 msgid "Table of Contents"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:182
+#: src/blocks/_pro/table-of-contents-new/edit.js:177
 msgid "Note on duplicating headings"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:187
+#: src/blocks/_pro/table-of-contents-new/edit.js:182
 msgid ""
 "If you duplicate a heading, the table of contents block will not work "
 "properly, please reassign the ID."
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:214
+#: src/blocks/_pro/table-of-contents-new/edit.js:209
 msgid "No frame"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:221
+#: src/blocks/_pro/table-of-contents-new/edit.js:216
 msgid "Default Display Status"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:229
+#: src/blocks/_pro/table-of-contents-new/edit.js:224
 msgid "OPEN"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:233
+#: src/blocks/_pro/table-of-contents-new/edit.js:228
 msgid "CLOSE"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:240
+#: src/blocks/_pro/table-of-contents-new/edit.js:235
 msgid "Heading Levels"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:245
+#: src/blocks/_pro/table-of-contents-new/edit.js:240
 msgid "Global heading level settings:"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:250
+#: src/blocks/_pro/table-of-contents-new/edit.js:245
 msgid "VK Blocks Setting"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:254
+#: src/blocks/_pro/table-of-contents-new/edit.js:249
 msgid "Use custom heading levels"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:269
+#: src/blocks/_pro/table-of-contents-new/edit.js:264
 msgid "Using custom heading levels for this block."
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:273
+#: src/blocks/_pro/table-of-contents-new/edit.js:268
 msgid "Using global heading levels settings."
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:287
+#: src/blocks/_pro/table-of-contents-new/edit.js:282
 msgid "Include Headings Up To:"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:310
+#: src/blocks/_pro/table-of-contents-new/edit.js:305
 msgid "Exclude Headings"
-msgstr ""
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:312
-msgid "Select headings to exclude from the table of contents."
 msgstr ""
 
 #: src/blocks/_pro/taxonomy/edit.js:107
@@ -3246,27 +3242,19 @@ msgid "Zoom Animation"
 msgstr ""
 
 #: src/blocks/slider/edit.js:541
-msgid "Enable Zoom Animation"
+msgid "Enable zoom animation for slide background images"
 msgstr ""
 
-#: src/blocks/slider/edit.js:546
-msgid "Enable zoom animation for slide background images."
+#: src/blocks/slider/edit.js:553
+msgid "Initial Background Scale"
 msgstr ""
 
-#: src/blocks/slider/edit.js:554
-msgid "Initial Scale"
+#: src/blocks/slider/edit.js:566
+msgid "Final Background Scale"
 msgstr ""
 
-#: src/blocks/slider/edit.js:562
-msgid "Initial scale of the background image (1 = original size)."
-msgstr ""
-
-#: src/blocks/slider/edit.js:568
-msgid "Final Scale"
-msgstr ""
-
-#: src/blocks/slider/edit.js:576
-msgid "Final scale of the background image after zoom animation."
+#: src/blocks/slider/edit.js:579
+msgid "1 means original size. Larger values will zoom in the background image."
 msgstr ""
 
 #: src/blocks/spacer/advanced-spacer-control.js:15

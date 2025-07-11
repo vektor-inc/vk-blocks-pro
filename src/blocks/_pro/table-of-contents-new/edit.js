@@ -318,10 +318,6 @@ export default function TOCEdit(props) {
 				<PanelBody
 					title={__('Exclude Headings', 'vk-blocks-pro')}
 					initialOpen={false}
-					help={__(
-						'Select headings to exclude from the table of contents.',
-						'vk-blocks-pro'
-					)}
 				>
 					<BaseControl>
 						{allHeadings

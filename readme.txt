@@ -109,6 +109,7 @@ e.g.
 == Changelog ==
 
 [ Bug fix ][ Table of Contents ] Limit heading extraction to heading blocks in site-wide settings.
+[ Bug fix ][ Slider / Post List Slider (Pro) ] Fixed XSS vulnerability.
 [ Bug fix ][ Table of Contents (Pro) ] Fixed H2 selection issue in heading level settings and improved code structure.
 
 = 1.106.0 =

@@ -107,7 +107,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-
+[ Post-List (Pro) ] [ Add function ] We have added items within the past year to the date filtering.
 [ Bug fix ][ Table of Contents (Pro) ] Fixed H2 selection issue in heading level settings and improved code structure.
 
 = 1.106.0 =

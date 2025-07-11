@@ -108,6 +108,8 @@ e.g.
 
 == Changelog ==
 
+[ Add function ] Added WordPress 6.8 block assets on-demand loading feature for improved performance.
+[ Add function ][ Core List ] Added support for WordPress standard list settings (start value and reverse order) in numbered styles.
 [ Bug fix ][ Table of Contents (Pro) ] Fixed H2 selection issue in heading level settings and improved code structure.
 
 = 1.106.0 =

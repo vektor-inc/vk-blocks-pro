@@ -136,10 +136,10 @@ class VK_Blocks_Options {
 	 */
 	public static function get_vk_blocks_options_properties() {
 		$properties = array(
-			'block_category_position'     => array(
+			'block_category_position'      => array(
 				'type' => 'string',
 			),
-			'toc_heading_levels'          => array(
+			'toc_heading_levels'           => array(
 				'type'    => 'array',
 				'items'   => array(
 					'type' => 'string',
@@ -147,13 +147,13 @@ class VK_Blocks_Options {
 				),
 				'default' => array( 'h2', 'h3', 'h4', 'h5', 'h6' ),
 			),
-			'balloon_border_width'        => array(
+			'balloon_border_width'         => array(
 				'type' => 'number',
 			),
-			'margin_unit'                 => array(
+			'margin_unit'                  => array(
 				'type' => 'string',
 			),
-			'margin_size'                 => array(
+			'margin_size'                  => array(
 				'type'       => 'object',
 				'properties' => array(
 					'xxl' => array(
@@ -279,19 +279,22 @@ class VK_Blocks_Options {
 					),
 				),
 			),
-			'load_separate_option'        => array(
+			'load_separate_option'         => array(
 				'type' => 'boolean',
 			),
-			'vk_blocks_pro_license_key'   => array(
+			'load_assets_on_demand_option' => array(
+				'type' => 'boolean',
+			),
+			'vk_blocks_pro_license_key'    => array(
 				'type' => 'string',
 			),
-			'new_faq_accordion'           => array(
+			'new_faq_accordion'            => array(
 				'type' => 'string',
 			),
-			'show_custom_css_editor_flag' => array(
+			'show_custom_css_editor_flag'  => array(
 				'type' => 'string',
 			),
-			'custom_format_lists'         => array(
+			'custom_format_lists'          => array(
 				'type'  => 'array',
 				'items' => array(
 					'type'       => 'object',
@@ -335,10 +338,10 @@ class VK_Blocks_Options {
 					),
 				),
 			),
-			'disable_block_lists'         => array(
+			'disable_block_lists'          => array(
 				'type' => 'array',
 			),
-			'custom_block_style_lists'    => array(
+			'custom_block_style_lists'     => array(
 				'type'  => 'array',
 				'items' => array(
 					'type'       => 'object',
@@ -361,7 +364,7 @@ class VK_Blocks_Options {
 					),
 				),
 			),
-			'balloon_meta_lists'          => array(
+			'balloon_meta_lists'           => array(
 				'type'  => 'array',
 				'items' => array(
 					'type'       => 'object',
@@ -375,7 +378,7 @@ class VK_Blocks_Options {
 					),
 				),
 			),
-			'disable_block_style_lists'   => array(
+			'disable_block_style_lists'    => array(
 				'type'  => 'array',
 				'items' => array(
 					'type'       => 'object',
@@ -389,10 +392,10 @@ class VK_Blocks_Options {
 					),
 				),
 			),
-			'icon_custom_lists'           => array(
+			'icon_custom_lists'            => array(
 				'type' => 'array',
 			),
-			'block_variation_lists'       => array(
+			'block_variation_lists'        => array(
 				'type'  => 'array',
 				'items' => array(
 					'type'       => 'object',
@@ -443,11 +446,11 @@ class VK_Blocks_Options {
 	 */
 	public static function get_vk_blocks_options_defaults( $activation = false ) {
 		$default = array(
-			'block_category_position'     => 'above-core-blocks',
-			'toc_heading_levels'          => array( 'h2' ),
-			'balloon_border_width'        => 1,
-			'margin_unit'                 => 'rem',
-			'margin_size'                 => array(
+			'block_category_position'      => 'above-core-blocks',
+			'toc_heading_levels'           => array( 'h2' ),
+			'balloon_border_width'         => 1,
+			'margin_unit'                  => 'rem',
+			'margin_size'                  => array(
 				'xxl' => array(
 					'mobile' => null,
 					'tablet' => null,
@@ -491,11 +494,12 @@ class VK_Blocks_Options {
 					'custom' => '',
 				),
 			),
-			'load_separate_option'        => false,
-			'vk_blocks_pro_license_key'   => null,
-			'new_faq_accordion'           => 'disable',
-			'show_custom_css_editor_flag' => 'show',
-			'custom_format_lists'         => array(
+			'load_separate_option'         => false,
+			'load_assets_on_demand_option' => false,
+			'vk_blocks_pro_license_key'    => null,
+			'new_faq_accordion'            => 'disable',
+			'show_custom_css_editor_flag'  => 'show',
+			'custom_format_lists'          => array(
 				array(
 					'title'                 => null,
 					'font_weight_bold'      => false,
@@ -511,12 +515,12 @@ class VK_Blocks_Options {
 					'custom_css'            => null,
 				),
 			),
-			'disable_block_lists'         => $activation ? self::get_deprecated_lists() : array(),
-			'custom_block_style_lists'    => array(),
-			'balloon_meta_lists'          => array(),
-			'disable_block_style_lists'   => array(),
-			'icon_custom_lists'           => array(),
-			'block_variation_lists'       => array(),
+			'disable_block_lists'          => $activation ? self::get_deprecated_lists() : array(),
+			'custom_block_style_lists'     => array(),
+			'balloon_meta_lists'           => array(),
+			'disable_block_style_lists'    => array(),
+			'icon_custom_lists'            => array(),
+			'block_variation_lists'        => array(),
 		);
 		return $default;
 	}

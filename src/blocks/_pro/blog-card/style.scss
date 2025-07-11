@@ -8,4 +8,17 @@
 			}
 		}
 	}
+
+	// URLInputとボタンのレイアウト調整
+	.components-placeholder__fieldset form {
+		flex-wrap: initial;
+
+		.components-base-control  {
+			width: 100%;
+		}
+
+		button {
+			height: 100%;
+		}
+	}
 }

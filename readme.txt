@@ -108,6 +108,7 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Blog Card (Pro) ] Added internal link search and suggestions feature.
 [ Bug fix ][ Table of Contents (Pro) ] Fixed H2 selection issue in heading level settings and improved code structure.
 
 = 1.106.0 =

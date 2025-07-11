@@ -3,7 +3,7 @@
  */
 import { __, _x } from '@wordpress/i18n';
 import { Button, Placeholder } from '@wordpress/components';
-import { BlockIcon } from '@wordpress/block-editor';
+import { BlockIcon, URLInput } from '@wordpress/block-editor';
 
 const URLPlaceholder = ({
 	icon,
@@ -25,13 +25,15 @@ const URLPlaceholder = ({
 			)}
 		>
 			<form onSubmit={onSubmit}>
-				<input
-					type="url"
+				<URLInput
+					__nextHasNoMarginBottom
 					value={value || ''}
+					onChange={(newValue) => {
+						onChange({ target: { value: newValue } });
+					}}
+					placeholder={__('Enter URL to embed here…')}
 					className="components-placeholder__input"
 					aria-label={label}
-					placeholder={__('Enter URL to embed here…')}
-					onChange={onChange}
 				/>
 				<Button variant="primary" type="submit">
 					{_x('Embed', 'button label')}

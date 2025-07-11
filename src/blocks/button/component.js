@@ -13,6 +13,7 @@ export class VKBButton extends Component {
 		const buttonSize = this.props.lbSize;
 		const buttonUrl = this.props.lbUrl;
 		const buttonTarget = this.props.lbTarget;
+		const relAttribute = this.props.lbRelAttribute;
 		let fontAwesomeIconBefore = this.props.lbFontAwesomeIconBefore;
 		let fontAwesomeIconAfter = this.props.lbFontAwesomeIconAfter;
 		const iconSizeBefore = this.props.lbIconSizeBefore;
@@ -130,6 +131,12 @@ export class VKBButton extends Component {
 			btnInlineStyle.borderRadius = borderRadius;
 		}
 
+		// rel属性の設定
+		let relValue = 'noopener';
+		if (relAttribute) {
+			relValue = relAttribute.includes('noopener') ? relAttribute : `${relAttribute} noopener`;
+		}
+
 		return (
 			/* eslint react/jsx-no-target-blank: 0 */
 			<a
@@ -139,7 +146,7 @@ export class VKBButton extends Component {
 				role={'button'}
 				aria-pressed={true}
 				target={buttonTarget ? '_blank' : null}
-				rel={'noopener'}
+				rel={relValue}
 			>
 				<div className={'vk_button_link_caption'}>
 					{parse(iconBefore)}

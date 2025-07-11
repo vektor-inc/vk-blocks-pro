@@ -5,14 +5,10 @@ import {
 	SelectControl,
 	PanelBody,
 	BaseControl,
-	CheckboxControl,
 	TextControl,
 	__experimentalToggleGroupControl as ToggleGroupControl,
 	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
-	Button,
 	ToolbarGroup,
-	ToolbarButton,
-	Dropdown,
 	__experimentalUnitControl as UnitControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
 } from '@wordpress/components';
 import {
@@ -20,14 +16,14 @@ import {
 	InspectorControls,
 	useBlockProps,
 	BlockControls,
-	URLInput,
 } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
 import { dispatch, select } from '@wordpress/data';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
-import { link, linkOff, keyboardReturn } from '@wordpress/icons';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
+import LinkToolbar from '@vkblocks/components/link-toolbar';
+
 export default function ButtonEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const {
@@ -35,6 +31,7 @@ export default function ButtonEdit(props) {
 		subCaption,
 		buttonUrl,
 		buttonTarget,
+		relAttribute,
 		buttonSize,
 		buttonType,
 		buttonEffect,
@@ -219,82 +216,20 @@ export default function ButtonEdit(props) {
 		};
 	}
 
+	// buttonTargetをlink-toolbarのlinkTargetに変換
+	const linkTarget = buttonTarget ? '_blank' : '';
+
 	return (
 		<>
 			<BlockControls>
 				<ToolbarGroup>
-					<Dropdown
-						renderToggle={({ isOpen, onToggle }) => {
-							const setLink = () => {
-								if (isOpen && buttonUrl !== '') {
-									// linkOff
-									setAttributes({ buttonUrl: '' });
-								}
-								onToggle();
-							};
-							return (
-								<ToolbarButton
-									aria-expanded={isOpen}
-									icon={
-										buttonUrl !== '' && isOpen
-											? linkOff
-											: link
-									}
-									isActive={
-										buttonUrl !== '' && isOpen
-											? true
-											: false
-									}
-									label={
-										buttonUrl !== '' && isOpen
-											? __('Unlink')
-											: __(
-													'Input Link URL',
-													'vk-blocks-pro'
-												)
-									}
-									onClick={setLink}
-								/>
-							);
-						}}
-						renderContent={(params) => {
-							return (
-								<form
-									onSubmit={() => {
-										params.onClose();
-									}}
-								>
-									<div className="vk-block-editor-url-input-wrapper">
-										<URLInput
-											__nextHasNoMarginBottom
-											value={buttonUrl}
-											onChange={(value) => {
-												setAttributes({
-													buttonUrl: value,
-												});
-											}}
-										/>
-										<Button
-											icon={keyboardReturn}
-											label={__('Submit')}
-											type="submit"
-										/>
-									</div>
-									<CheckboxControl
-										label={__(
-											'Open link new tab.',
-											'vk-blocks-pro'
-										)}
-										checked={buttonTarget}
-										onChange={(checked) =>
-											setAttributes({
-												buttonTarget: checked,
-											})
-										}
-									/>
-								</form>
-							);
-						}}
+					<LinkToolbar
+						linkUrl={buttonUrl || ''}
+						setLinkUrl={(value) => setAttributes({ buttonUrl: value })}
+						linkTarget={linkTarget}
+						setLinkTarget={(value) => setAttributes({ buttonTarget: value === '_blank' })}
+						relAttribute={relAttribute || ''}
+						setRelAttribute={(value) => setAttributes({ relAttribute: value })}
 					/>
 				</ToolbarGroup>
 			</BlockControls>
